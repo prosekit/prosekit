@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor" href="#editor">editor</a>: [`Editor`](core.md#editor)</code>
+<code data-typedoc-code><a id="editor" href="#editor">editor</a>: [`Editor`](core.md#editor)</code>
 
 </dt>
 
@@ -30,7 +30,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentref" href="#contentref">contentRef</a>: (`element`: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void`</code>
+<code data-typedoc-code><a id="contentref" href="#contentref">contentRef</a>: (`element`: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void`</code>
 
 </dt>
 
@@ -40,7 +40,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view" href="#view">view</a>: [`EditorView`](pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view" href="#view">view</a>: [`EditorView`](pm/view.md#editorview)</code>
 
 </dt>
 
@@ -50,7 +50,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mark" href="#mark">mark</a>: `Writable`\<[`Mark`](pm/model.md#mark)\></code>
+<code data-typedoc-code><a id="mark" href="#mark">mark</a>: `Writable`\<[`Mark`](pm/model.md#mark)\></code>
 
 </dt>
 
@@ -68,7 +68,7 @@ Options for [defineSvelteMarkView](#definesveltemarkview).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="name" href="#name">name</a>: `string`</code>
+<code data-typedoc-code><a id="name" href="#name">name</a>: `string`</code>
 
 </dt>
 
@@ -84,7 +84,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="as" href="#as">as</a><i>?</i>: `MarkViewDOMSpec`</code>
+<code data-typedoc-code><a id="as" href="#as">as</a><i>?</i>: `MarkViewDOMSpec`</code>
 
 </dt>
 
@@ -94,7 +94,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentas" href="#contentas">contentAs</a><i>?</i>: `MarkViewDOMSpec`</code>
+<code data-typedoc-code><a id="contentas" href="#contentas">contentAs</a><i>?</i>: `MarkViewDOMSpec`</code>
 
 </dt>
 
@@ -104,7 +104,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="component" href="#component">component</a>: [`SvelteMarkViewComponent`](#sveltemarkviewcomponent)</code>
+<code data-typedoc-code><a id="component" href="#component">component</a>: [`SvelteMarkViewComponent`](#sveltemarkviewcomponent)</code>
 
 </dt>
 
@@ -114,7 +114,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignoremutation" href="#ignoremutation">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="ignoremutation" href="#ignoremutation">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -124,7 +124,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="destroy" href="#destroy">destroy</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="destroy" href="#destroy">destroy</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -140,7 +140,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentref-1" href="#contentref-1">contentRef</a>: (`element`: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void`</code>
+<code data-typedoc-code><a id="contentref-1" href="#contentref-1">contentRef</a>: (`element`: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void`</code>
 
 </dt>
 
@@ -150,7 +150,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view-1" href="#view-1">view</a>: [`EditorView`](pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view-1" href="#view-1">view</a>: [`EditorView`](pm/view.md#editorview)</code>
 
 </dt>
 
@@ -160,7 +160,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getpos" href="#getpos">getPos</a>: () => `undefined` \| `number`</code>
+<code data-typedoc-code><a id="getpos" href="#getpos">getPos</a>: () => `undefined` \| `number`</code>
 
 </dt>
 
@@ -170,7 +170,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setattrs" href="#setattrs">setAttrs</a>: (`attrs`: [`Attrs`](pm/model.md#attrs-4)) => `void`</code>
+<code data-typedoc-code><a id="setattrs" href="#setattrs">setAttrs</a>: (`attrs`: [`Attrs`](pm/model.md#attrs-4)) => `void`</code>
 
 </dt>
 
@@ -180,7 +180,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node" href="#node">node</a>: `Writable`\<[`ProseMirrorNode`](pm/model.md#prosemirrornode)\></code>
+<code data-typedoc-code><a id="node" href="#node">node</a>: `Writable`\<[`ProseMirrorNode`](pm/model.md#prosemirrornode)\></code>
 
 </dt>
 
@@ -190,7 +190,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selected" href="#selected">selected</a>: `Writable`\<`boolean`\></code>
+<code data-typedoc-code><a id="selected" href="#selected">selected</a>: `Writable`\<`boolean`\></code>
 
 </dt>
 
@@ -200,7 +200,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="decorations" href="#decorations">decorations</a>: `Writable`\<readonly [`Decoration`](pm/view.md#decoration)[]\></code>
+<code data-typedoc-code><a id="decorations" href="#decorations">decorations</a>: `Writable`\<readonly [`Decoration`](pm/view.md#decoration)[]\></code>
 
 </dt>
 
@@ -210,7 +210,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="innerdecorations" href="#innerdecorations">innerDecorations</a>: `Writable`\<[`DecorationSource`](pm/view.md#decorationsource)\></code>
+<code data-typedoc-code><a id="innerdecorations" href="#innerdecorations">innerDecorations</a>: `Writable`\<[`DecorationSource`](pm/view.md#decorationsource)\></code>
 
 </dt>
 
@@ -228,7 +228,7 @@ Options for [defineSvelteNodeView](#definesveltenodeview).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="name-1" href="#name-1">name</a>: `string`</code>
+<code data-typedoc-code><a id="name-1" href="#name-1">name</a>: `string`</code>
 
 </dt>
 
@@ -244,7 +244,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="as-1" href="#as-1">as</a><i>?</i>: `NodeViewDOMSpec`</code>
+<code data-typedoc-code><a id="as-1" href="#as-1">as</a><i>?</i>: `NodeViewDOMSpec`</code>
 
 </dt>
 
@@ -254,7 +254,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentas-1" href="#contentas-1">contentAs</a><i>?</i>: `NodeViewDOMSpec`</code>
+<code data-typedoc-code><a id="contentas-1" href="#contentas-1">contentAs</a><i>?</i>: `NodeViewDOMSpec`</code>
 
 </dt>
 
@@ -264,7 +264,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="component-1" href="#component-1">component</a>: [`SvelteNodeViewComponent`](#sveltenodeviewcomponent)</code>
+<code data-typedoc-code><a id="component-1" href="#component-1">component</a>: [`SvelteNodeViewComponent`](#sveltenodeviewcomponent)</code>
 
 </dt>
 
@@ -274,7 +274,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="update" href="#update">update</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `decorations`: readonly [`Decoration`](pm/view.md#decoration)[], `innerDecorations`: [`DecorationSource`](pm/view.md#decorationsource)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="update" href="#update">update</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `decorations`: readonly [`Decoration`](pm/view.md#decoration)[], `innerDecorations`: [`DecorationSource`](pm/view.md#decorationsource)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -284,7 +284,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignoremutation-1" href="#ignoremutation-1">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="ignoremutation-1" href="#ignoremutation-1">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -294,7 +294,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selectnode" href="#selectnode">selectNode</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="selectnode" href="#selectnode">selectNode</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -304,7 +304,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="deselectnode" href="#deselectnode">deselectNode</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="deselectnode" href="#deselectnode">deselectNode</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -314,7 +314,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setselection" href="#setselection">setSelection</a><i>?</i>: (`anchor`: `number`, `head`: `number`, `root`: [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`</code>
+<code data-typedoc-code><a id="setselection" href="#setselection">setSelection</a><i>?</i>: (`anchor`: `number`, `head`: `number`, `root`: [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`</code>
 
 </dt>
 
@@ -324,7 +324,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="stopevent" href="#stopevent">stopEvent</a><i>?</i>: (`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`</code>
+<code data-typedoc-code><a id="stopevent" href="#stopevent">stopEvent</a><i>?</i>: (`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`</code>
 
 </dt>
 
@@ -334,7 +334,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="destroy-1" href="#destroy-1">destroy</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="destroy-1" href="#destroy-1">destroy</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -344,7 +344,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onupdate" href="#onupdate">onUpdate</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="onupdate" href="#onupdate">onUpdate</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -360,7 +360,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor-1" href="#editor-1">editor</a><i>?</i>: [`Editor`](core.md#editor)\<`any`\></code>
+<code data-typedoc-code><a id="editor-1" href="#editor-1">editor</a><i>?</i>: [`Editor`](core.md#editor)\<`any`\></code>
 
 </dt>
 
@@ -377,7 +377,7 @@ editor from the nearest `ProseKit` component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](core.md#priority-1)</code>
+<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](core.md#priority-1)</code>
 
 </dt>
 
@@ -397,7 +397,7 @@ Optional priority to add the extension with.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="sveltemarkviewcomponent" href="#sveltemarkviewcomponent">SvelteMarkViewComponent</a> = `Component`\<[`SvelteMarkViewProps`](#sveltemarkviewprops)\></code>
+<code data-typedoc-code>type <a id="sveltemarkviewcomponent" href="#sveltemarkviewcomponent">SvelteMarkViewComponent</a> = `Component`\<[`SvelteMarkViewProps`](#sveltemarkviewprops)\></code>
 
 </dt>
 
@@ -415,7 +415,7 @@ Optional priority to add the extension with.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="sveltenodeviewcomponent" href="#sveltenodeviewcomponent">SvelteNodeViewComponent</a> = `Component`\<[`SvelteNodeViewProps`](#sveltenodeviewprops)\></code>
+<code data-typedoc-code>type <a id="sveltenodeviewcomponent" href="#sveltenodeviewcomponent">SvelteNodeViewComponent</a> = `Component`\<[`SvelteNodeViewProps`](#sveltenodeviewprops)\></code>
 
 </dt>
 
@@ -453,7 +453,7 @@ The root component for a ProseKit editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definesveltemarkview" href="#definesveltemarkview">defineSvelteMarkView</a>(`options`: [`SvelteMarkViewOptions`](#sveltemarkviewoptions)): [`Extension`](core.md#extension-1)</code>
+<code data-typedoc-code><i>function</i> <a id="definesveltemarkview" href="#definesveltemarkview">defineSvelteMarkView</a>(`options`: [`SvelteMarkViewOptions`](#sveltemarkviewoptions)): [`Extension`](core.md#extension-1)</code>
 
 </dt>
 
@@ -473,7 +473,7 @@ Defines a mark view using a Svelte component.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definesveltenodeview" href="#definesveltenodeview">defineSvelteNodeView</a>(`options`: [`SvelteNodeViewOptions`](#sveltenodeviewoptions)): [`Extension`](core.md#extension-1)</code>
+<code data-typedoc-code><i>function</i> <a id="definesveltenodeview" href="#definesveltenodeview">defineSvelteNodeView</a>(`options`: [`SvelteNodeViewOptions`](#sveltenodeviewoptions)): [`Extension`](core.md#extension-1)</code>
 
 </dt>
 
@@ -493,7 +493,7 @@ Defines a node view using a Svelte component.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="usedocchange" href="#usedocchange">useDocChange</a>(`handler`: (`doc`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="usedocchange" href="#usedocchange">useDocChange</a>(`handler`: (`doc`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 
@@ -513,7 +513,7 @@ Calls the given handler whenever the editor document changes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="useeditor" href="#useeditor">useEditor</a>\<E\>(`options?`: `object`): `Readable`\<[`Editor`](core.md#editor)\<`E`\>\></code>
+<code data-typedoc-code><i>function</i> <a id="useeditor" href="#useeditor">useEditor</a>\<E\>(`options?`: `object`): `Readable`\<[`Editor`](core.md#editor)\<`E`\>\></code>
 
 </dt>
 
@@ -533,7 +533,7 @@ Retrieves the editor instance from the nearest ProseKit component.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="useextension" href="#useextension">useExtension</a>\<T\>(`extension`: `Readable`\<`null` \| `T`\>, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="useextension" href="#useextension">useExtension</a>\<T\>(`extension`: `Readable`\<`null` \| `T`\>, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 
@@ -553,7 +553,7 @@ Add an extension to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="usekeymap" href="#usekeymap">useKeymap</a>(`keymapStore`: `Readable`\<[`Keymap`](core.md#keymap)\>, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="usekeymap" href="#usekeymap">useKeymap</a>(`keymapStore`: `Readable`\<[`Keymap`](core.md#keymap)\>, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 
@@ -567,7 +567,7 @@ Add an extension to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="usestateupdate" href="#usestateupdate">useStateUpdate</a>(`handler`: (`state`: [`EditorState`](pm/state.md#editorstate)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="usestateupdate" href="#usestateupdate">useStateUpdate</a>(`handler`: (`state`: [`EditorState`](pm/state.md#editorstate)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 

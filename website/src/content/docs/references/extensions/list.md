@@ -16,7 +16,7 @@ The attributes of a list node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="kind" href="#kind">kind</a><i>?</i>: `"toggle"` \| `"bullet"` \| `"ordered"` \| `"task"`</code>
+<code data-typedoc-code><a id="kind" href="#kind">kind</a><i>?</i>: `"toggle"` \| `"bullet"` \| `"ordered"` \| `"task"`</code>
 
 </dt>
 
@@ -32,7 +32,7 @@ The kind of list node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="order" href="#order">order</a><i>?</i>: `null` \| `number`</code>
+<code data-typedoc-code><a id="order" href="#order">order</a><i>?</i>: `null` \| `number`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ The optional order of the list node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="checked" href="#checked">checked</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="checked" href="#checked">checked</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -64,7 +64,7 @@ Whether the list node is checked if its `kind` is `"task"`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="collapsed" href="#collapsed">collapsed</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="collapsed" href="#collapsed">collapsed</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -84,7 +84,7 @@ Whether the list node is collapsed if its `kind` is `"toggle"`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelist" href="#definelist">defineList</a>(): `ListExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelist" href="#definelist">defineList</a>(): `ListExtension`</code>
 
 </dt>
 

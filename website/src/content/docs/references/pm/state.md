@@ -26,7 +26,7 @@ A state holds a number of built-in fields, and plugins can
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">EditorState</a>(): [`EditorState`](#editorstate)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">EditorState</a>(): [`EditorState`](#editorstate)</code>
 
 </dt>
 
@@ -38,7 +38,7 @@ A state holds a number of built-in fields, and plugins can
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc-1" href="#doc-1">doc</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="doc-1" href="#doc-1">doc</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -54,7 +54,7 @@ The current document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selection-1" href="#selection-1">selection</a>: [`Selection`](#selection-3)</code>
+<code data-typedoc-code><a id="selection-1" href="#selection-1">selection</a>: [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -70,7 +70,7 @@ The selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="storedmarks-1" href="#storedmarks-1">storedMarks</a>: `null` \| readonly [`Mark`](model.md#mark)[]</code>
+<code data-typedoc-code><a id="storedmarks-1" href="#storedmarks-1">storedMarks</a>: `null` \| readonly [`Mark`](model.md#mark)[]</code>
 
 </dt>
 
@@ -89,7 +89,7 @@ no explicit marks have been set.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="schema-1" href="#schema-1">schema</a>(): [`Schema`](model.md#schema-3)</code>
+<code data-typedoc-code>get <a id="schema-1" href="#schema-1">schema</a>(): [`Schema`](model.md#schema-3)</code>
 
 </dt>
 
@@ -105,7 +105,7 @@ The schema of the state's document.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="plugins-1" href="#plugins-1">plugins</a>(): readonly [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\>[]</code>
+<code data-typedoc-code>get <a id="plugins-1" href="#plugins-1">plugins</a>(): readonly [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\>[]</code>
 
 </dt>
 
@@ -121,7 +121,7 @@ The plugins that are active in this state.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="tr" href="#tr">tr</a>(): [`Transaction`](#transaction)</code>
+<code data-typedoc-code>get <a id="tr" href="#tr">tr</a>(): [`Transaction`](#transaction)</code>
 
 </dt>
 
@@ -175,7 +175,7 @@ instances with the property names they use in the JSON object.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply" href="#apply">apply</a>(`tr`: [`Transaction`](#transaction)): [`EditorState`](#editorstate)</code>
+<code data-typedoc-code><a id="apply" href="#apply">apply</a>(`tr`: [`Transaction`](#transaction)): [`EditorState`](#editorstate)</code>
 
 </dt>
 
@@ -191,7 +191,7 @@ Apply the given transaction to produce a new state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="applytransaction" href="#applytransaction">applyTransaction</a>(`rootTr`: [`Transaction`](#transaction)): `object`</code>
+<code data-typedoc-code><a id="applytransaction" href="#applytransaction">applyTransaction</a>(`rootTr`: [`Transaction`](#transaction)): `object`</code>
 
 </dt>
 
@@ -211,7 +211,7 @@ plugins) along with the new state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="reconfigure" href="#reconfigure">reconfigure</a>(`config`: `object`): [`EditorState`](#editorstate)</code>
+<code data-typedoc-code><a id="reconfigure" href="#reconfigure">reconfigure</a>(`config`: `object`): [`EditorState`](#editorstate)</code>
 
 </dt>
 
@@ -232,7 +232,7 @@ configuration object..
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson" href="#tojson">toJSON</a>(`pluginFields?`: `object`): `any`</code>
+<code data-typedoc-code><a id="tojson" href="#tojson">toJSON</a>(`pluginFields?`: `object`): `any`</code>
 
 </dt>
 
@@ -264,7 +264,7 @@ may influence that state and the view that contains it.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">ProseMirrorPlugin</a>\<PluginState\>(`spec`: [`PluginSpec`](#pluginspec)\<`PluginState`\>): [`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\></code>
+<code data-typedoc-code>new <a id="constructor-1" href="#constructor-1">ProseMirrorPlugin</a>\<PluginState\>(`spec`: [`PluginSpec`](#pluginspec)\<`PluginState`\>): [`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\></code>
 
 </dt>
 
@@ -316,7 +316,7 @@ The [props](https://prosemirror.net/docs/ref/#view.EditorProps) exported by this
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getstate" href="#getstate">getState</a>(`state`: [`EditorState`](#editorstate)): `undefined` \| `PluginState`</code>
+<code data-typedoc-code><a id="getstate" href="#getstate">getState</a>(`state`: [`EditorState`](#editorstate)): `undefined` \| `PluginState`</code>
 
 </dt>
 
@@ -345,7 +345,7 @@ active in a state.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">PluginKey</a>\<PluginState\>(`name?`: `string`): [`PluginKey`](#pluginkey)\<`PluginState`\></code>
+<code data-typedoc-code>new <a id="constructor-2" href="#constructor-2">PluginKey</a>\<PluginState\>(`name?`: `string`): [`PluginKey`](#pluginkey)\<`PluginState`\></code>
 
 </dt>
 
@@ -363,7 +363,7 @@ Create a plugin key.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="get" href="#get">get</a>(`state`: [`EditorState`](#editorstate)): `undefined` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\></code>
+<code data-typedoc-code><a id="get" href="#get">get</a>(`state`: [`EditorState`](#editorstate)): `undefined` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\></code>
 
 </dt>
 
@@ -380,7 +380,7 @@ state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getstate-2" href="#getstate-2">getState</a>(`state`: [`EditorState`](#editorstate)): `undefined` \| `PluginState`</code>
+<code data-typedoc-code><a id="getstate-2" href="#getstate-2">getState</a>(`state`: [`EditorState`](#editorstate)): `undefined` \| `PluginState`</code>
 
 </dt>
 
@@ -425,7 +425,7 @@ input, and a `"uiEvent"` property of that may be `"paste"`,
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-3" href="#constructor-3">Transaction</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Transaction`](#transaction)</code>
+<code data-typedoc-code>new <a id="constructor-3" href="#constructor-3">Transaction</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Transaction`](#transaction)</code>
 
 </dt>
 
@@ -443,7 +443,7 @@ Create a transform that starts with the given document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="time" href="#time">time</a>: `number`</code>
+<code data-typedoc-code><a id="time" href="#time">time</a>: `number`</code>
 
 </dt>
 
@@ -460,7 +460,7 @@ format as `Date.now()`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="storedmarks-2" href="#storedmarks-2">storedMarks</a>: `null` \| readonly [`Mark`](model.md#mark)[]</code>
+<code data-typedoc-code><a id="storedmarks-2" href="#storedmarks-2">storedMarks</a>: `null` \| readonly [`Mark`](model.md#mark)[]</code>
 
 </dt>
 
@@ -476,7 +476,7 @@ The stored marks set by this transaction, if any.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc-2" href="#doc-2">doc</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="doc-2" href="#doc-2">doc</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -543,7 +543,7 @@ A mapping with the maps for each of the steps in this transform.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="selection-2" href="#selection-2">selection</a>(): [`Selection`](#selection-3)</code>
+<code data-typedoc-code>get <a id="selection-2" href="#selection-2">selection</a>(): [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -562,7 +562,7 @@ transaction, but can be overwritten with
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="selectionset" href="#selectionset">selectionSet</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="selectionset" href="#selectionset">selectionSet</a>(): `boolean`</code>
 
 </dt>
 
@@ -578,7 +578,7 @@ Whether the selection was explicitly updated by this transaction.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="storedmarksset" href="#storedmarksset">storedMarksSet</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="storedmarksset" href="#storedmarksset">storedMarksSet</a>(): `boolean`</code>
 
 </dt>
 
@@ -594,7 +594,7 @@ Whether the stored marks were explicitly set for this transaction.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isgeneric" href="#isgeneric">isGeneric</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isgeneric" href="#isgeneric">isGeneric</a>(): `boolean`</code>
 
 </dt>
 
@@ -611,7 +611,7 @@ and can thus safely be extended.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="scrolledintoview" href="#scrolledintoview">scrolledIntoView</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="scrolledintoview" href="#scrolledintoview">scrolledIntoView</a>(): `boolean`</code>
 
 </dt>
 
@@ -627,7 +627,7 @@ True when this transaction has had `scrollIntoView` called on it.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="before" href="#before">before</a>(): [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="before" href="#before">before</a>(): [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -643,7 +643,7 @@ The starting document.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="docchanged" href="#docchanged">docChanged</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="docchanged" href="#docchanged">docChanged</a>(): `boolean`</code>
 
 </dt>
 
@@ -662,7 +662,7 @@ steps).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setselection" href="#setselection">setSelection</a>(`selection`: [`Selection`](#selection-3)): `this`</code>
+<code data-typedoc-code><a id="setselection" href="#setselection">setSelection</a>(`selection`: [`Selection`](#selection-3)): `this`</code>
 
 </dt>
 
@@ -679,7 +679,7 @@ selection that the editor gets when the transaction is applied.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setstoredmarks" href="#setstoredmarks">setStoredMarks</a>(`marks`: `null` \| readonly [`Mark`](model.md#mark)[]): `this`</code>
+<code data-typedoc-code><a id="setstoredmarks" href="#setstoredmarks">setStoredMarks</a>(`marks`: `null` \| readonly [`Mark`](model.md#mark)[]): `this`</code>
 
 </dt>
 
@@ -695,7 +695,7 @@ Set the current stored marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ensuremarks" href="#ensuremarks">ensureMarks</a>(`marks`: readonly [`Mark`](model.md#mark)[]): `this`</code>
+<code data-typedoc-code><a id="ensuremarks" href="#ensuremarks">ensureMarks</a>(`marks`: readonly [`Mark`](model.md#mark)[]): `this`</code>
 
 </dt>
 
@@ -713,7 +713,7 @@ this is already the case.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addstoredmark" href="#addstoredmark">addStoredMark</a>(`mark`: [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="addstoredmark" href="#addstoredmark">addStoredMark</a>(`mark`: [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -729,7 +729,7 @@ Add a mark to the set of stored marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removestoredmark" href="#removestoredmark">removeStoredMark</a>(`mark`: [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="removestoredmark" href="#removestoredmark">removeStoredMark</a>(`mark`: [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -745,7 +745,7 @@ Remove a mark or mark type from the set of stored marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="settime" href="#settime">setTime</a>(`time`: `number`): `this`</code>
+<code data-typedoc-code><a id="settime" href="#settime">setTime</a>(`time`: `number`): `this`</code>
 
 </dt>
 
@@ -761,7 +761,7 @@ Update the timestamp for the transaction.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replaceselection" href="#replaceselection">replaceSelection</a>(`slice`: [`Slice`](model.md#slice)): `this`</code>
+<code data-typedoc-code><a id="replaceselection" href="#replaceselection">replaceSelection</a>(`slice`: [`Slice`](model.md#slice)): `this`</code>
 
 </dt>
 
@@ -777,7 +777,7 @@ Replace the current selection with the given slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replaceselectionwith" href="#replaceselectionwith">replaceSelectionWith</a>(`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `inheritMarks?`: `boolean`): `this`</code>
+<code data-typedoc-code><a id="replaceselectionwith" href="#replaceselectionwith">replaceSelectionWith</a>(`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `inheritMarks?`: `boolean`): `this`</code>
 
 </dt>
 
@@ -795,7 +795,7 @@ place where it is inserted.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="deleteselection" href="#deleteselection">deleteSelection</a>(): `this`</code>
+<code data-typedoc-code><a id="deleteselection" href="#deleteselection">deleteSelection</a>(): `this`</code>
 
 </dt>
 
@@ -811,7 +811,7 @@ Delete the selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inserttext" href="#inserttext">insertText</a>(`text`: `string`, `from?`: `number`, `to?`: `number`): `this`</code>
+<code data-typedoc-code><a id="inserttext" href="#inserttext">insertText</a>(`text`: `string`, `from?`: `number`, `to?`: `number`): `this`</code>
 
 </dt>
 
@@ -828,7 +828,7 @@ with a text node containing the given string.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setmeta" href="#setmeta">setMeta</a>(`key`: `string` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\> \| [`PluginKey`](#pluginkey)\<`any`\>, `value`: `any`): `this`</code>
+<code data-typedoc-code><a id="setmeta" href="#setmeta">setMeta</a>(`key`: `string` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\> \| [`PluginKey`](#pluginkey)\<`any`\>, `value`: `any`): `this`</code>
 
 </dt>
 
@@ -845,7 +845,7 @@ name or by plugin.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmeta" href="#getmeta">getMeta</a>(`key`: `string` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\> \| [`PluginKey`](#pluginkey)\<`any`\>): `any`</code>
+<code data-typedoc-code><a id="getmeta" href="#getmeta">getMeta</a>(`key`: `string` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\> \| [`PluginKey`](#pluginkey)\<`any`\>): `any`</code>
 
 </dt>
 
@@ -861,7 +861,7 @@ Retrieve a metadata property for a given name or plugin.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="scrollintoview" href="#scrollintoview">scrollIntoView</a>(): `this`</code>
+<code data-typedoc-code><a id="scrollintoview" href="#scrollintoview">scrollIntoView</a>(): `this`</code>
 
 </dt>
 
@@ -878,7 +878,7 @@ when updated to the state produced by this transaction.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="step" href="#step">step</a>(`step`: [`Step`](transform.md#step)): `this`</code>
+<code data-typedoc-code><a id="step" href="#step">step</a>(`step`: [`Step`](transform.md#step)): `this`</code>
 
 </dt>
 
@@ -895,7 +895,7 @@ error when the step fails.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="maybestep" href="#maybestep">maybeStep</a>(`step`: [`Step`](transform.md#step)): [`StepResult`](transform.md#stepresult)</code>
+<code data-typedoc-code><a id="maybestep" href="#maybestep">maybeStep</a>(`step`: [`Step`](transform.md#step)): [`StepResult`](transform.md#stepresult)</code>
 
 </dt>
 
@@ -912,7 +912,7 @@ fails. Returns the step result.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace" href="#replace">replace</a>(`from`: `number`, `to?`: `number`, `slice?`: [`Slice`](model.md#slice)): `this`</code>
+<code data-typedoc-code><a id="replace" href="#replace">replace</a>(`from`: `number`, `to?`: `number`, `slice?`: [`Slice`](model.md#slice)): `this`</code>
 
 </dt>
 
@@ -929,7 +929,7 @@ given `slice`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacewith" href="#replacewith">replaceWith</a>(`from`: `number`, `to`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
+<code data-typedoc-code><a id="replacewith" href="#replacewith">replaceWith</a>(`from`: `number`, `to`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
 
 </dt>
 
@@ -946,7 +946,7 @@ fragment, node, or array of nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="delete" href="#delete">delete</a>(`from`: `number`, `to`: `number`): `this`</code>
+<code data-typedoc-code><a id="delete" href="#delete">delete</a>(`from`: `number`, `to`: `number`): `this`</code>
 
 </dt>
 
@@ -962,7 +962,7 @@ Delete the content between the given positions.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="insert" href="#insert">insert</a>(`pos`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
+<code data-typedoc-code><a id="insert" href="#insert">insert</a>(`pos`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
 
 </dt>
 
@@ -978,7 +978,7 @@ Insert the given content at the given position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacerange" href="#replacerange">replaceRange</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](model.md#slice)): `this`</code>
+<code data-typedoc-code><a id="replacerange" href="#replacerange">replaceRange</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](model.md#slice)): `this`</code>
 
 </dt>
 
@@ -1010,7 +1010,7 @@ control over what happens.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacerangewith" href="#replacerangewith">replaceRangeWith</a>(`from`: `number`, `to`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `this`</code>
+<code data-typedoc-code><a id="replacerangewith" href="#replacerangewith">replaceRangeWith</a>(`from`: `number`, `to`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `this`</code>
 
 </dt>
 
@@ -1032,7 +1032,7 @@ that parent node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="deleterange" href="#deleterange">deleteRange</a>(`from`: `number`, `to`: `number`): `this`</code>
+<code data-typedoc-code><a id="deleterange" href="#deleterange">deleteRange</a>(`from`: `number`, `to`: `number`): `this`</code>
 
 </dt>
 
@@ -1049,7 +1049,7 @@ parent nodes until a valid replace is found.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="lift" href="#lift">lift</a>(`range`: [`NodeRange`](model.md#noderange), `target`: `number`): `this`</code>
+<code data-typedoc-code><a id="lift" href="#lift">lift</a>(`range`: [`NodeRange`](model.md#noderange), `target`: `number`): `this`</code>
 
 </dt>
 
@@ -1069,7 +1069,7 @@ sure the lift is valid.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="join" href="#join">join</a>(`pos`: `number`, `depth?`: `number`): `this`</code>
+<code data-typedoc-code><a id="join" href="#join">join</a>(`pos`: `number`, `depth?`: `number`): `this`</code>
 
 </dt>
 
@@ -1086,7 +1086,7 @@ last and first siblings are also joined, and so on.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="wrap" href="#wrap">wrap</a>(`range`: [`NodeRange`](model.md#noderange), `wrappers`: readonly `object`[]): `this`</code>
+<code data-typedoc-code><a id="wrap" href="#wrap">wrap</a>(`range`: [`NodeRange`](model.md#noderange), `wrappers`: readonly `object`[]): `this`</code>
 
 </dt>
 
@@ -1104,7 +1104,7 @@ probably be computed with [`findWrapping`](https://prosemirror.net/docs/ref/#tra
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`from`: `number`, `to`: `undefined` \| `number`, `type`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-4)): `this`</code>
+<code data-typedoc-code><a id="setblocktype" href="#setblocktype">setBlockType</a>(`from`: `number`, `to`: `undefined` \| `number`, `type`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-4)): `this`</code>
 
 </dt>
 
@@ -1121,7 +1121,7 @@ the given node type with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setnodemarkup" href="#setnodemarkup">setNodeMarkup</a>(`pos`: `number`, `type?`: `null` \| [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `marks?`: readonly [`Mark`](model.md#mark)[]): `this`</code>
+<code data-typedoc-code><a id="setnodemarkup" href="#setnodemarkup">setNodeMarkup</a>(`pos`: `number`, `type?`: `null` \| [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `marks?`: readonly [`Mark`](model.md#mark)[]): `this`</code>
 
 </dt>
 
@@ -1138,7 +1138,7 @@ When `type` isn't given, the existing node type is preserved,
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setnodeattribute" href="#setnodeattribute">setNodeAttribute</a>(`pos`: `number`, `attr`: `string`, `value`: `any`): `this`</code>
+<code data-typedoc-code><a id="setnodeattribute" href="#setnodeattribute">setNodeAttribute</a>(`pos`: `number`, `attr`: `string`, `value`: `any`): `this`</code>
 
 </dt>
 
@@ -1156,7 +1156,7 @@ to set attributes on the document itself.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setdocattribute" href="#setdocattribute">setDocAttribute</a>(`attr`: `string`, `value`: `any`): `this`</code>
+<code data-typedoc-code><a id="setdocattribute" href="#setdocattribute">setDocAttribute</a>(`attr`: `string`, `value`: `any`): `this`</code>
 
 </dt>
 
@@ -1172,7 +1172,7 @@ Set a single attribute on the document to a new value.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addnodemark" href="#addnodemark">addNodeMark</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="addnodemark" href="#addnodemark">addNodeMark</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1188,7 +1188,7 @@ Add a mark to the node at position `pos`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removenodemark" href="#removenodemark">removeNodeMark</a>(`pos`: `number`, `mark`: [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="removenodemark" href="#removenodemark">removeNodeMark</a>(`pos`: `number`, `mark`: [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1205,7 +1205,7 @@ position `pos`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="split" href="#split">split</a>(`pos`: `number`, `depth?`: `number`, `typesAfter?`: (`null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: `null` \| [`Attrs`](model.md#attrs-4); \})[]): `this`</code>
+<code data-typedoc-code><a id="split" href="#split">split</a>(`pos`: `number`, `depth?`: `number`, `typesAfter?`: (`null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: `null` \| [`Attrs`](model.md#attrs-4); \})[]): `this`</code>
 
 </dt>
 
@@ -1225,7 +1225,7 @@ use after the split (with the outermost nodes coming first).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addmark" href="#addmark">addMark</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="addmark" href="#addmark">addMark</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1241,7 +1241,7 @@ Add the given mark to the inline content between `from` and `to`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removemark" href="#removemark">removeMark</a>(`from`: `number`, `to`: `number`, `mark?`: `null` \| [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="removemark" href="#removemark">removeMark</a>(`from`: `number`, `to`: `number`, `mark?`: `null` \| [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1260,7 +1260,7 @@ remove all marks of any type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clearincompatible" href="#clearincompatible">clearIncompatible</a>(`pos`: `number`, `parentType`: [`NodeType`](model.md#nodetype), `match?`: [`ContentMatch`](model.md#contentmatch-1)): `this`</code>
+<code data-typedoc-code><a id="clearincompatible" href="#clearincompatible">clearIncompatible</a>(`pos`: `number`, `parentType`: [`NodeType`](model.md#nodetype), `match?`: [`ContentMatch`](model.md#contentmatch-1)): `this`</code>
 
 </dt>
 
@@ -1290,7 +1290,7 @@ extend this. Should not be instantiated directly.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-4" href="#constructor-4">Selection</a>(`$anchor`: [`ResolvedPos`](model.md#resolvedpos), `$head`: [`ResolvedPos`](model.md#resolvedpos), `ranges?`: readonly [`SelectionRange`](#selectionrange)[]): [`Selection`](#selection-3)</code>
+<code data-typedoc-code>new <a id="constructor-4" href="#constructor-4">Selection</a>(`$anchor`: [`ResolvedPos`](model.md#resolvedpos), `$head`: [`ResolvedPos`](model.md#resolvedpos), `ranges?`: readonly [`SelectionRange`](#selectionrange)[]): [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -1344,7 +1344,7 @@ the selection is modified).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ranges" href="#ranges">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
+<code data-typedoc-code><a id="ranges" href="#ranges">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
 
 </dt>
 
@@ -1360,7 +1360,7 @@ The ranges covered by the selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="visible" href="#visible">visible</a>: `boolean`</code>
+<code data-typedoc-code><a id="visible" href="#visible">visible</a>: `boolean`</code>
 
 </dt>
 
@@ -1380,7 +1380,7 @@ Defaults to `true`.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="anchor-1" href="#anchor-1">anchor</a>(): `number`</code>
+<code data-typedoc-code>get <a id="anchor-1" href="#anchor-1">anchor</a>(): `number`</code>
 
 </dt>
 
@@ -1396,7 +1396,7 @@ The selection's anchor, as an unresolved position.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="head-1" href="#head-1">head</a>(): `number`</code>
+<code data-typedoc-code>get <a id="head-1" href="#head-1">head</a>(): `number`</code>
 
 </dt>
 
@@ -1412,7 +1412,7 @@ The selection's head.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from" href="#from">from</a>(): `number`</code>
+<code data-typedoc-code>get <a id="from" href="#from">from</a>(): `number`</code>
 
 </dt>
 
@@ -1428,7 +1428,7 @@ The lower bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to" href="#to">to</a>(): `number`</code>
+<code data-typedoc-code>get <a id="to" href="#to">to</a>(): `number`</code>
 
 </dt>
 
@@ -1444,7 +1444,7 @@ The upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-1" href="#from-1">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="from-1" href="#from-1">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -1460,7 +1460,7 @@ The resolved lower  bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-1" href="#to-1">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="to-1" href="#to-1">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -1476,7 +1476,7 @@ The resolved upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="empty" href="#empty">empty</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="empty" href="#empty">empty</a>(): `boolean`</code>
 
 </dt>
 
@@ -1527,7 +1527,7 @@ thing. `doc` should be the new document to which we are mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content" href="#content">content</a>(): [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="content" href="#content">content</a>(): [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -1543,7 +1543,7 @@ Get the content of this selection as a slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace-2" href="#replace-2">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
+<code data-typedoc-code><a id="replace-2" href="#replace-2">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
 
 </dt>
 
@@ -1560,7 +1560,7 @@ delete the selection. Will append to the given transaction.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacewith-2" href="#replacewith-2">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
+<code data-typedoc-code><a id="replacewith-2" href="#replacewith-2">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
 
 </dt>
 
@@ -1706,7 +1706,7 @@ clash with classes from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getbookmark" href="#getbookmark">getBookmark</a>(): [`SelectionBookmark`](#selectionbookmark)</code>
+<code data-typedoc-code><a id="getbookmark" href="#getbookmark">getBookmark</a>(): [`SelectionBookmark`](#selectionbookmark)</code>
 
 </dt>
 
@@ -1738,7 +1738,7 @@ Represents a selected range in a document.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-5" href="#constructor-5">SelectionRange</a>(`$from`: [`ResolvedPos`](model.md#resolvedpos), `$to`: [`ResolvedPos`](model.md#resolvedpos)): [`SelectionRange`](#selectionrange)</code>
+<code data-typedoc-code>new <a id="constructor-5" href="#constructor-5">SelectionRange</a>(`$from`: [`ResolvedPos`](model.md#resolvedpos), `$to`: [`ResolvedPos`](model.md#resolvedpos)): [`SelectionRange`](#selectionrange)</code>
 
 </dt>
 
@@ -1801,7 +1801,7 @@ position).
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-6" href="#constructor-6">TextSelection</a>(`$anchor`: [`ResolvedPos`](model.md#resolvedpos), `$head?`: [`ResolvedPos`](model.md#resolvedpos)): [`TextSelection`](#textselection)</code>
+<code data-typedoc-code>new <a id="constructor-6" href="#constructor-6">TextSelection</a>(`$anchor`: [`ResolvedPos`](model.md#resolvedpos), `$head?`: [`ResolvedPos`](model.md#resolvedpos)): [`TextSelection`](#textselection)</code>
 
 </dt>
 
@@ -1853,7 +1853,7 @@ the selection is modified).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ranges-1" href="#ranges-1">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
+<code data-typedoc-code><a id="ranges-1" href="#ranges-1">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
 
 </dt>
 
@@ -1869,7 +1869,7 @@ The ranges covered by the selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="visible-1" href="#visible-1">visible</a>: `boolean`</code>
+<code data-typedoc-code><a id="visible-1" href="#visible-1">visible</a>: `boolean`</code>
 
 </dt>
 
@@ -1889,7 +1889,7 @@ Defaults to `true`.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="anchor-3" href="#anchor-3">anchor</a>(): `number`</code>
+<code data-typedoc-code>get <a id="anchor-3" href="#anchor-3">anchor</a>(): `number`</code>
 
 </dt>
 
@@ -1905,7 +1905,7 @@ The selection's anchor, as an unresolved position.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="head-3" href="#head-3">head</a>(): `number`</code>
+<code data-typedoc-code>get <a id="head-3" href="#head-3">head</a>(): `number`</code>
 
 </dt>
 
@@ -1921,7 +1921,7 @@ The selection's head.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-3" href="#from-3">from</a>(): `number`</code>
+<code data-typedoc-code>get <a id="from-3" href="#from-3">from</a>(): `number`</code>
 
 </dt>
 
@@ -1937,7 +1937,7 @@ The lower bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-3" href="#to-3">to</a>(): `number`</code>
+<code data-typedoc-code>get <a id="to-3" href="#to-3">to</a>(): `number`</code>
 
 </dt>
 
@@ -1953,7 +1953,7 @@ The upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-4" href="#from-4">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="from-4" href="#from-4">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -1969,7 +1969,7 @@ The resolved lower  bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-4" href="#to-4">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="to-4" href="#to-4">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -1985,7 +1985,7 @@ The resolved upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="empty-1" href="#empty-1">empty</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="empty-1" href="#empty-1">empty</a>(): `boolean`</code>
 
 </dt>
 
@@ -2001,7 +2001,7 @@ Indicates whether the selection contains any content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="cursor" href="#cursor">$cursor</a>(): `null` \| [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="cursor" href="#cursor">$cursor</a>(): `null` \| [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -2020,7 +2020,7 @@ empty text selection), and null otherwise.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content-2" href="#content-2">content</a>(): [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="content-2" href="#content-2">content</a>(): [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -2036,7 +2036,7 @@ Get the content of this selection as a slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacewith-4" href="#replacewith-4">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
+<code data-typedoc-code><a id="replacewith-4" href="#replacewith-4">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
 
 </dt>
 
@@ -2163,7 +2163,7 @@ clash with classes from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-3" href="#map-3">map</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `mapping`: [`Mappable`](transform.md#mappable)): [`Selection`](#selection-3)</code>
+<code data-typedoc-code><a id="map-3" href="#map-3">map</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `mapping`: [`Mappable`](transform.md#mappable)): [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -2180,7 +2180,7 @@ thing. `doc` should be the new document to which we are mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace-4" href="#replace-4">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
+<code data-typedoc-code><a id="replace-4" href="#replace-4">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
 
 </dt>
 
@@ -2197,7 +2197,7 @@ delete the selection. Will append to the given transaction.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq-2" href="#eq-2">eq</a>(`other`: [`Selection`](#selection-3)): `boolean`</code>
+<code data-typedoc-code><a id="eq-2" href="#eq-2">eq</a>(`other`: [`Selection`](#selection-3)): `boolean`</code>
 
 </dt>
 
@@ -2213,7 +2213,7 @@ Test whether the selection is the same as another selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getbookmark-2" href="#getbookmark-2">getBookmark</a>(): [`TextBookmark`](https://prosemirror.net/docs/ref/#state.TextBookmark)</code>
+<code data-typedoc-code><a id="getbookmark-2" href="#getbookmark-2">getBookmark</a>(): [`TextBookmark`](https://prosemirror.net/docs/ref/#state.TextBookmark)</code>
 
 </dt>
 
@@ -2235,7 +2235,7 @@ returns the bookmark for that.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-5" href="#tojson-5">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-5" href="#tojson-5">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2305,7 +2305,7 @@ point directly before and after the selected node, `anchor` equals
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-7" href="#constructor-7">NodeSelection</a>(`$pos`: [`ResolvedPos`](model.md#resolvedpos)): [`NodeSelection`](#nodeselection)</code>
+<code data-typedoc-code>new <a id="constructor-7" href="#constructor-7">NodeSelection</a>(`$pos`: [`ResolvedPos`](model.md#resolvedpos)): [`NodeSelection`](#nodeselection)</code>
 
 </dt>
 
@@ -2358,7 +2358,7 @@ the selection is modified).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ranges-2" href="#ranges-2">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
+<code data-typedoc-code><a id="ranges-2" href="#ranges-2">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
 
 </dt>
 
@@ -2374,7 +2374,7 @@ The ranges covered by the selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="visible-2" href="#visible-2">visible</a>: `boolean`</code>
+<code data-typedoc-code><a id="visible-2" href="#visible-2">visible</a>: `boolean`</code>
 
 </dt>
 
@@ -2392,7 +2392,7 @@ Defaults to `true`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node" href="#node">node</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="node" href="#node">node</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -2410,7 +2410,7 @@ The selected node.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="anchor-5" href="#anchor-5">anchor</a>(): `number`</code>
+<code data-typedoc-code>get <a id="anchor-5" href="#anchor-5">anchor</a>(): `number`</code>
 
 </dt>
 
@@ -2426,7 +2426,7 @@ The selection's anchor, as an unresolved position.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="head-5" href="#head-5">head</a>(): `number`</code>
+<code data-typedoc-code>get <a id="head-5" href="#head-5">head</a>(): `number`</code>
 
 </dt>
 
@@ -2442,7 +2442,7 @@ The selection's head.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-5" href="#from-5">from</a>(): `number`</code>
+<code data-typedoc-code>get <a id="from-5" href="#from-5">from</a>(): `number`</code>
 
 </dt>
 
@@ -2458,7 +2458,7 @@ The lower bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-5" href="#to-5">to</a>(): `number`</code>
+<code data-typedoc-code>get <a id="to-5" href="#to-5">to</a>(): `number`</code>
 
 </dt>
 
@@ -2474,7 +2474,7 @@ The upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-6" href="#from-6">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="from-6" href="#from-6">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -2490,7 +2490,7 @@ The resolved lower  bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-6" href="#to-6">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="to-6" href="#to-6">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -2506,7 +2506,7 @@ The resolved upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="empty-2" href="#empty-2">empty</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="empty-2" href="#empty-2">empty</a>(): `boolean`</code>
 
 </dt>
 
@@ -2524,7 +2524,7 @@ Indicates whether the selection contains any content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace-6" href="#replace-6">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
+<code data-typedoc-code><a id="replace-6" href="#replace-6">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
 
 </dt>
 
@@ -2541,7 +2541,7 @@ delete the selection. Will append to the given transaction.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacewith-6" href="#replacewith-6">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
+<code data-typedoc-code><a id="replacewith-6" href="#replacewith-6">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
 
 </dt>
 
@@ -2668,7 +2668,7 @@ clash with classes from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-5" href="#map-5">map</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `mapping`: [`Mappable`](transform.md#mappable)): [`Selection`](#selection-3)</code>
+<code data-typedoc-code><a id="map-5" href="#map-5">map</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `mapping`: [`Mappable`](transform.md#mappable)): [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -2685,7 +2685,7 @@ thing. `doc` should be the new document to which we are mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content-4" href="#content-4">content</a>(): [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="content-4" href="#content-4">content</a>(): [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -2701,7 +2701,7 @@ Get the content of this selection as a slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq-4" href="#eq-4">eq</a>(`other`: [`Selection`](#selection-3)): `boolean`</code>
+<code data-typedoc-code><a id="eq-4" href="#eq-4">eq</a>(`other`: [`Selection`](#selection-3)): `boolean`</code>
 
 </dt>
 
@@ -2717,7 +2717,7 @@ Test whether the selection is the same as another selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-7" href="#tojson-7">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-7" href="#tojson-7">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2736,7 +2736,7 @@ this for a custom selection class, make sure to give the object a
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getbookmark-4" href="#getbookmark-4">getBookmark</a>(): [`NodeBookmark`](https://prosemirror.net/docs/ref/#state.NodeBookmark)</code>
+<code data-typedoc-code><a id="getbookmark-4" href="#getbookmark-4">getBookmark</a>(): [`NodeBookmark`](https://prosemirror.net/docs/ref/#state.NodeBookmark)</code>
 
 </dt>
 
@@ -2804,7 +2804,7 @@ document).
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-8" href="#constructor-8">AllSelection</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`AllSelection`](#allselection)</code>
+<code data-typedoc-code>new <a id="constructor-8" href="#constructor-8">AllSelection</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`AllSelection`](#allselection)</code>
 
 </dt>
 
@@ -2856,7 +2856,7 @@ the selection is modified).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ranges-3" href="#ranges-3">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
+<code data-typedoc-code><a id="ranges-3" href="#ranges-3">ranges</a>: readonly [`SelectionRange`](#selectionrange)[]</code>
 
 </dt>
 
@@ -2872,7 +2872,7 @@ The ranges covered by the selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="visible-3" href="#visible-3">visible</a>: `boolean`</code>
+<code data-typedoc-code><a id="visible-3" href="#visible-3">visible</a>: `boolean`</code>
 
 </dt>
 
@@ -2892,7 +2892,7 @@ Defaults to `true`.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="anchor-7" href="#anchor-7">anchor</a>(): `number`</code>
+<code data-typedoc-code>get <a id="anchor-7" href="#anchor-7">anchor</a>(): `number`</code>
 
 </dt>
 
@@ -2908,7 +2908,7 @@ The selection's anchor, as an unresolved position.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="head-7" href="#head-7">head</a>(): `number`</code>
+<code data-typedoc-code>get <a id="head-7" href="#head-7">head</a>(): `number`</code>
 
 </dt>
 
@@ -2924,7 +2924,7 @@ The selection's head.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-7" href="#from-7">from</a>(): `number`</code>
+<code data-typedoc-code>get <a id="from-7" href="#from-7">from</a>(): `number`</code>
 
 </dt>
 
@@ -2940,7 +2940,7 @@ The lower bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-7" href="#to-7">to</a>(): `number`</code>
+<code data-typedoc-code>get <a id="to-7" href="#to-7">to</a>(): `number`</code>
 
 </dt>
 
@@ -2956,7 +2956,7 @@ The upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="from-8" href="#from-8">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="from-8" href="#from-8">$from</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -2972,7 +2972,7 @@ The resolved lower  bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="to-8" href="#to-8">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
+<code data-typedoc-code>get <a id="to-8" href="#to-8">$to</a>(): [`ResolvedPos`](model.md#resolvedpos)</code>
 
 </dt>
 
@@ -2988,7 +2988,7 @@ The resolved upper bound of the selection's main range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="empty-3" href="#empty-3">empty</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="empty-3" href="#empty-3">empty</a>(): `boolean`</code>
 
 </dt>
 
@@ -3006,7 +3006,7 @@ Indicates whether the selection contains any content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content-6" href="#content-6">content</a>(): [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="content-6" href="#content-6">content</a>(): [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -3022,7 +3022,7 @@ Get the content of this selection as a slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacewith-8" href="#replacewith-8">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
+<code data-typedoc-code><a id="replacewith-8" href="#replacewith-8">replaceWith</a>(`tr`: [`Transaction`](#transaction), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `void`</code>
 
 </dt>
 
@@ -3149,7 +3149,7 @@ clash with classes from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace-8" href="#replace-8">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
+<code data-typedoc-code><a id="replace-8" href="#replace-8">replace</a>(`tr`: [`Transaction`](#transaction), `content?`: [`Slice`](model.md#slice)): `void`</code>
 
 </dt>
 
@@ -3166,7 +3166,7 @@ delete the selection. Will append to the given transaction.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-9" href="#tojson-9">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-9" href="#tojson-9">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -3185,7 +3185,7 @@ this for a custom selection class, make sure to give the object a
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-7" href="#map-7">map</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`AllSelection`](#allselection)</code>
+<code data-typedoc-code><a id="map-7" href="#map-7">map</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`AllSelection`](#allselection)</code>
 
 </dt>
 
@@ -3202,7 +3202,7 @@ thing. `doc` should be the new document to which we are mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq-6" href="#eq-6">eq</a>(`other`: [`Selection`](#selection-3)): `boolean`</code>
+<code data-typedoc-code><a id="eq-6" href="#eq-6">eq</a>(`other`: [`Selection`](#selection-3)): `boolean`</code>
 
 </dt>
 
@@ -3218,7 +3218,7 @@ Test whether the selection is the same as another selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getbookmark-6" href="#getbookmark-6">getBookmark</a>(): `object`</code>
+<code data-typedoc-code><a id="getbookmark-6" href="#getbookmark-6">getBookmark</a>(): `object`</code>
 
 </dt>
 
@@ -3249,7 +3249,7 @@ The type of object passed to
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="schema" href="#schema">schema</a><i>?</i>: [`Schema`](model.md#schema-3)\<`any`, `any`\></code>
+<code data-typedoc-code><a id="schema" href="#schema">schema</a><i>?</i>: [`Schema`](model.md#schema-3)\<`any`, `any`\></code>
 
 </dt>
 
@@ -3265,7 +3265,7 @@ The schema to use (only relevant if no `doc` is specified).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc" href="#doc">doc</a><i>?</i>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="doc" href="#doc">doc</a><i>?</i>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -3282,7 +3282,7 @@ provided.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selection" href="#selection">selection</a><i>?</i>: [`Selection`](#selection-3)</code>
+<code data-typedoc-code><a id="selection" href="#selection">selection</a><i>?</i>: [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -3298,7 +3298,7 @@ A valid selection in the document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="storedmarks" href="#storedmarks">storedMarks</a><i>?</i>: `null` \| readonly [`Mark`](model.md#mark)[]</code>
+<code data-typedoc-code><a id="storedmarks" href="#storedmarks">storedMarks</a><i>?</i>: `null` \| readonly [`Mark`](model.md#mark)[]</code>
 
 </dt>
 
@@ -3314,7 +3314,7 @@ The initial set of [stored marks](https://prosemirror.net/docs/ref/#state.Editor
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="plugins" href="#plugins">plugins</a><i>?</i>: readonly [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\>[]</code>
+<code data-typedoc-code><a id="plugins" href="#plugins">plugins</a><i>?</i>: readonly [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\>[]</code>
 
 </dt>
 
@@ -3358,7 +3358,7 @@ read via [`Plugin.spec`](https://prosemirror.net/docs/ref/#state.Plugin.spec).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="props" href="#props">props</a><i>?</i>: [`EditorProps`](view.md#editorprops)\<[`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\>\></code>
+<code data-typedoc-code><a id="props" href="#props">props</a><i>?</i>: [`EditorProps`](view.md#editorprops)\<[`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\>\></code>
 
 </dt>
 
@@ -3376,7 +3376,7 @@ their `this` binding.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="state" href="#state">state</a><i>?</i>: [`StateField`](#statefield)\<`PluginState`\></code>
+<code data-typedoc-code><a id="state" href="#state">state</a><i>?</i>: [`StateField`](#statefield)\<`PluginState`\></code>
 
 </dt>
 
@@ -3393,7 +3393,7 @@ extra slot in the state object in which it can keep its own data.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="key" href="#key">key</a><i>?</i>: [`PluginKey`](#pluginkey)\<`any`\></code>
+<code data-typedoc-code><a id="key" href="#key">key</a><i>?</i>: [`PluginKey`](#pluginkey)\<`any`\></code>
 
 </dt>
 
@@ -3412,7 +3412,7 @@ without having access to the plugin instance object.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view" href="#view">view</a><i>?</i>: (`view`: [`EditorView`](view.md#editorview)) => [`PluginView`](#pluginview)</code>
+<code data-typedoc-code><a id="view" href="#view">view</a><i>?</i>: (`view`: [`EditorView`](view.md#editorview)) => [`PluginView`](#pluginview)</code>
 
 </dt>
 
@@ -3431,7 +3431,7 @@ editor view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="filtertransaction" href="#filtertransaction">filterTransaction</a><i>?</i>: (`tr`: [`Transaction`](#transaction), `state`: [`EditorState`](#editorstate)) => `boolean`</code>
+<code data-typedoc-code><a id="filtertransaction" href="#filtertransaction">filterTransaction</a><i>?</i>: (`tr`: [`Transaction`](#transaction), `state`: [`EditorState`](#editorstate)) => `boolean`</code>
 
 </dt>
 
@@ -3449,7 +3449,7 @@ returning false).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="appendtransaction" href="#appendtransaction">appendTransaction</a><i>?</i>: (`transactions`: readonly [`Transaction`](#transaction)[], `oldState`: [`EditorState`](#editorstate), `newState`: [`EditorState`](#editorstate)) => `undefined` \| `null` \| [`Transaction`](#transaction)</code>
+<code data-typedoc-code><a id="appendtransaction" href="#appendtransaction">appendTransaction</a><i>?</i>: (`transactions`: readonly [`Transaction`](#transaction)[], `oldState`: [`EditorState`](#editorstate), `newState`: [`EditorState`](#editorstate)) => `undefined` \| `null` \| [`Transaction`](#transaction)</code>
 
 </dt>
 
@@ -3481,7 +3481,7 @@ always called with the plugin instance as their `this` binding.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="init" href="#init">init</a>: (`config`: [`EditorStateConfig`](#editorstateconfig), `instance`: [`EditorState`](#editorstate)) => `T`</code>
+<code data-typedoc-code><a id="init" href="#init">init</a>: (`config`: [`EditorStateConfig`](#editorstateconfig), `instance`: [`EditorState`](#editorstate)) => `T`</code>
 
 </dt>
 
@@ -3500,7 +3500,7 @@ not have values for plugin fields initialized after this one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-2" href="#apply-2">apply</a>: (`tr`: [`Transaction`](#transaction), `value`: `T`, `oldState`: [`EditorState`](#editorstate), `newState`: [`EditorState`](#editorstate)) => `T`</code>
+<code data-typedoc-code><a id="apply-2" href="#apply-2">apply</a>: (`tr`: [`Transaction`](#transaction), `value`: `T`, `oldState`: [`EditorState`](#editorstate), `newState`: [`EditorState`](#editorstate)) => `T`</code>
 
 </dt>
 
@@ -3519,7 +3519,7 @@ coming after this one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-2" href="#tojson-2">toJSON</a><i>?</i>: (`value`: `T`) => `any`</code>
+<code data-typedoc-code><a id="tojson-2" href="#tojson-2">toJSON</a><i>?</i>: (`value`: `T`) => `any`</code>
 
 </dt>
 
@@ -3536,7 +3536,7 @@ JSON serialization for the field.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fromjson-2" href="#fromjson-2">fromJSON</a><i>?</i>: (`config`: [`EditorStateConfig`](#editorstateconfig), `value`: `any`, `state`: [`EditorState`](#editorstate)) => `T`</code>
+<code data-typedoc-code><a id="fromjson-2" href="#fromjson-2">fromJSON</a><i>?</i>: (`config`: [`EditorStateConfig`](#editorstateconfig), `value`: `any`, `state`: [`EditorState`](#editorstate)) => `T`</code>
 
 </dt>
 
@@ -3563,7 +3563,7 @@ to make the history handle it well.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-2" href="#map-2">map</a>: (`mapping`: [`Mappable`](transform.md#mappable)) => [`SelectionBookmark`](#selectionbookmark)</code>
+<code data-typedoc-code><a id="map-2" href="#map-2">map</a>: (`mapping`: [`Mappable`](transform.md#mappable)) => [`SelectionBookmark`](#selectionbookmark)</code>
 
 </dt>
 
@@ -3579,7 +3579,7 @@ Map the bookmark through a set of changes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="resolve" href="#resolve">resolve</a>: (`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Selection`](#selection-3)</code>
+<code data-typedoc-code><a id="resolve" href="#resolve">resolve</a>: (`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Selection`](#selection-3)</code>
 
 </dt>
 
@@ -3598,7 +3598,7 @@ mapping made the bookmark invalid.
 
 ### PluginView {#pluginview}
 
-<code data-typedoc-code><i></i> type <a id="pluginview" href="#pluginview">PluginView</a> = \{ `update?`: (`view`: [`EditorView`](view.md#editorview), `prevState`: [`EditorState`](#editorstate)) => `void`; `destroy?`: () => `void`; \}</code>
+<code data-typedoc-code>type <a id="pluginview" href="#pluginview">PluginView</a> = \{ `update?`: (`view`: [`EditorView`](view.md#editorview), `prevState`: [`EditorState`](#editorstate)) => `void`; `destroy?`: () => `void`; \}</code>
 
 A stateful object that can be installed in an editor by a
 [plugin](https://prosemirror.net/docs/ref/#state.PluginSpec.view).
@@ -3609,7 +3609,7 @@ A stateful object that can be installed in an editor by a
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="update" href="#update">update</a><i>?</i>: (`view`: [`EditorView`](view.md#editorview), `prevState`: [`EditorState`](#editorstate)) => `void`</code>
+<code data-typedoc-code><a id="update" href="#update">update</a><i>?</i>: (`view`: [`EditorView`](view.md#editorview), `prevState`: [`EditorState`](#editorstate)) => `void`</code>
 
 </dt>
 
@@ -3625,7 +3625,7 @@ Called whenever the view's state is updated.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="destroy" href="#destroy">destroy</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="destroy" href="#destroy">destroy</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -3646,7 +3646,7 @@ with different plugins.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="command" href="#command">Command</a> = (`state`: [`EditorState`](#editorstate), `dispatch?`: (`tr`: [`Transaction`](#transaction)) => `void`, `view?`: [`EditorView`](view.md#editorview)) => `boolean`</code>
+<code data-typedoc-code>type <a id="command" href="#command">Command</a> = (`state`: [`EditorState`](#editorstate), `dispatch?`: (`tr`: [`Transaction`](#transaction)) => `void`, `view?`: [`EditorView`](view.md#editorview)) => `boolean`</code>
 
 </dt>
 

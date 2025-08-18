@@ -16,7 +16,7 @@ Options for [defineSearchQuery](#definesearchquery)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="search" href="#search">search</a>: `string`</code>
+<code data-typedoc-code><a id="search" href="#search">search</a>: `string`</code>
 
 </dt>
 
@@ -32,7 +32,7 @@ The search string (or regular expression).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace" href="#replace">replace</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="replace" href="#replace">replace</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ The replace text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="casesensitive" href="#casesensitive">caseSensitive</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="casesensitive" href="#casesensitive">caseSensitive</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -68,7 +68,7 @@ Indicates whether the search is case-sensitive
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="literal" href="#literal">literal</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="literal" href="#literal">literal</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -90,7 +90,7 @@ behavior is disabled.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regexp" href="#regexp">regexp</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="regexp" href="#regexp">regexp</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -110,7 +110,7 @@ When true, the search string is interpreted as a regular expression.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="wholeword" href="#wholeword">wholeWord</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="wholeword" href="#wholeword">wholeWord</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -134,7 +134,7 @@ Enable whole-word matching.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definesearchquery" href="#definesearchquery">defineSearchQuery</a>(`options`: [`SearchQueryOptions`](#searchqueryoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definesearchquery" href="#definesearchquery">defineSearchQuery</a>(`options`: [`SearchQueryOptions`](#searchqueryoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -154,7 +154,7 @@ Defines an extension that stores a current search query and replace string.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definesearchcommands" href="#definesearchcommands">defineSearchCommands</a>(): `SearchCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definesearchcommands" href="#definesearchcommands">defineSearchCommands</a>(): `SearchCommandsExtension`</code>
 
 </dt>
 

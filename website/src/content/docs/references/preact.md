@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor" href="#editor">editor</a>: [`Editor`](core.md#editor)</code>
+<code data-typedoc-code><a id="editor" href="#editor">editor</a>: [`Editor`](core.md#editor)</code>
 
 </dt>
 
@@ -24,7 +24,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="children" href="#children">children</a><i>?</i>: `ComponentChildren`</code>
+<code data-typedoc-code><a id="children" href="#children">children</a><i>?</i>: `ComponentChildren`</code>
 
 </dt>
 
@@ -40,7 +40,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor-1" href="#editor-1">editor</a><i>?</i>: [`Editor`](core.md#editor)\<`any`\></code>
+<code data-typedoc-code><a id="editor-1" href="#editor-1">editor</a><i>?</i>: [`Editor`](core.md#editor)\<`any`\></code>
 
 </dt>
 
@@ -57,7 +57,7 @@ editor from the nearest `ProseKit` component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](core.md#priority-1)</code>
+<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](core.md#priority-1)</code>
 
 </dt>
 
@@ -97,7 +97,7 @@ The root component for a ProseKit editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="usedocchange" href="#usedocchange">useDocChange</a>(`handler`: (`doc`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="usedocchange" href="#usedocchange">useDocChange</a>(`handler`: (`doc`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 
@@ -117,7 +117,7 @@ Calls the given handler whenever the editor document changes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="useeditor" href="#useeditor">useEditor</a>\<E\>(`options?`: `object`): [`Editor`](core.md#editor)\<`E`\></code>
+<code data-typedoc-code><i>function</i> <a id="useeditor" href="#useeditor">useEditor</a>\<E\>(`options?`: `object`): [`Editor`](core.md#editor)\<`E`\></code>
 
 </dt>
 
@@ -137,7 +137,7 @@ Retrieves the editor instance from the nearest ProseKit component.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="useextension" href="#useextension">useExtension</a>(`extension`: `null` \| [`Extension`](core.md#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="useextension" href="#useextension">useExtension</a>(`extension`: `null` \| [`Extension`](core.md#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 
@@ -157,7 +157,7 @@ Add an extension to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="usekeymap" href="#usekeymap">useKeymap</a>(`keymap`: [`Keymap`](core.md#keymap), `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="usekeymap" href="#usekeymap">useKeymap</a>(`keymap`: [`Keymap`](core.md#keymap), `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 
@@ -171,7 +171,7 @@ Add an extension to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="usestateupdate" href="#usestateupdate">useStateUpdate</a>(`handler`: (`state`: [`EditorState`](pm/state.md#editorstate)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="usestateupdate" href="#usestateupdate">useStateUpdate</a>(`handler`: (`state`: [`EditorState`](pm/state.md#editorstate)) => `void`, `options?`: [`UseExtensionOptions`](#useextensionoptions)): `void`</code>
 
 </dt>
 

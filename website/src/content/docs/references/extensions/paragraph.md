@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineparagraph" href="#defineparagraph">defineParagraph</a>(): `ParagraphExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineparagraph" href="#defineparagraph">defineParagraph</a>(): `ParagraphExtension`</code>
 
 </dt>
 

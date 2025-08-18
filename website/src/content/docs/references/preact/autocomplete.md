@@ -22,7 +22,7 @@ Props for the [AutocompleteItem](#autocompleteitem) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="value" href="#value">value</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="value" href="#value">value</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -44,7 +44,7 @@ If not provided, the value is the item's text content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onselect" href="#onselect">onSelect</a><i>?</i>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>) => `void`</code>
+<code data-typedoc-code><a id="onselect" href="#onselect">onSelect</a><i>?</i>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>) => `void`</code>
 
 </dt>
 
@@ -62,7 +62,7 @@ Props for the [AutocompleteList](#autocompletelist) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="filter" href="#filter">filter</a><i>?</i>: `null` \| `ItemFilter`</code>
+<code data-typedoc-code><a id="filter" href="#filter">filter</a><i>?</i>: `null` \| `ItemFilter`</code>
 
 </dt>
 
@@ -86,7 +86,7 @@ shown.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onvaluechange" href="#onvaluechange">onValueChange</a><i>?</i>: (`event`: `string`) => `void`</code>
+<code data-typedoc-code><a id="onvaluechange" href="#onvaluechange">onValueChange</a><i>?</i>: (`event`: `string`) => `void`</code>
 
 </dt>
 
@@ -104,7 +104,7 @@ Props for the [AutocompletePopover](#autocompletepopover) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy" href="#strategy">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy" href="#strategy">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -124,7 +124,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate" href="#autoupdate">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate" href="#autoupdate">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -148,7 +148,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform" href="#transform">transform</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="transform" href="#transform">transform</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -170,7 +170,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="flip" href="#flip">flip</a><i>?</i>: `boolean` \| `Placement`[]</code>
+<code data-typedoc-code><a id="flip" href="#flip">flip</a><i>?</i>: `boolean` \| `Placement`[]</code>
 
 </dt>
 
@@ -193,7 +193,7 @@ provide an array of placements to try sequentially if the preferred
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="shift" href="#shift">shift</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="shift" href="#shift">shift</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -213,7 +213,7 @@ Whether the floating element should shift to keep it in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -234,7 +234,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth" href="#samewidth">sameWidth</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth" href="#samewidth">sameWidth</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -255,7 +255,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight" href="#sameheight">sameHeight</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight" href="#sameheight">sameHeight</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -276,7 +276,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hide" href="#hide">hide</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hide" href="#hide">hide</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -297,7 +297,7 @@ floating element is fully clipped.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary" href="#rootboundary">rootBoundary</a><i>?</i>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary" href="#rootboundary">rootBoundary</a><i>?</i>: `RootBoundary`</code>
 
 </dt>
 
@@ -318,7 +318,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext" href="#elementcontext">elementContext</a><i>?</i>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext" href="#elementcontext">elementContext</a><i>?</i>: `ElementContext`</code>
 
 </dt>
 
@@ -340,7 +340,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary" href="#altboundary">altBoundary</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary" href="#altboundary">altBoundary</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -362,7 +362,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex" href="#regex">regex</a><i>?</i>: `null` \| [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex" href="#regex">regex</a><i>?</i>: `null` \| [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -382,7 +382,7 @@ The regular expression to match the query text to autocomplete.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement" href="#placement">placement</a><i>?</i>: `Placement`</code>
+<code data-typedoc-code><a id="placement" href="#placement">placement</a><i>?</i>: `Placement`</code>
 
 </dt>
 
@@ -402,7 +402,7 @@ The placement of the popover, relative to the text cursor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -422,7 +422,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -440,7 +440,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist" href="#hoist">hoist</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hoist" href="#hoist">hoist</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -458,7 +458,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport" href="#fitviewport">fitViewport</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport" href="#fitviewport">fitViewport</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -476,7 +476,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary" href="#boundary">boundary</a><i>?</i>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary" href="#boundary">boundary</a><i>?</i>: `Boundary`</code>
 
 </dt>
 
@@ -496,7 +496,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding" href="#overflowpadding">overflowPadding</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding" href="#overflowpadding">overflowPadding</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -514,7 +514,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onopenchange" href="#onopenchange">onOpenChange</a><i>?</i>: (`event`: `boolean`) => `void`</code>
+<code data-typedoc-code><a id="onopenchange" href="#onopenchange">onOpenChange</a><i>?</i>: (`event`: `boolean`) => `void`</code>
 
 </dt>
 
@@ -524,7 +524,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onquerychange" href="#onquerychange">onQueryChange</a><i>?</i>: (`event`: `string`) => `void`</code>
+<code data-typedoc-code><a id="onquerychange" href="#onquerychange">onQueryChange</a><i>?</i>: (`event`: `string`) => `void`</code>
 
 </dt>
 

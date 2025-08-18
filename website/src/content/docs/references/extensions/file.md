@@ -18,7 +18,7 @@ A class that represents a upload task.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">UploadTask</a>\<Result\>(`options`: `object`): [`UploadTask`](#uploadtask)\<`Result`\></code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">UploadTask</a>\<Result\>(`options`: `object`): [`UploadTask`](#uploadtask)\<`Result`\></code>
 
 </dt>
 
@@ -89,7 +89,7 @@ A promise that fulfills once the upload is complete, or rejects if an error occu
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="subscribeprogress" href="#subscribeprogress">subscribeProgress</a>(`callback`: (`progress`: [`UploadProgress`](#uploadprogress)) => `void`): `VoidFunction`</code>
+<code data-typedoc-code><a id="subscribeprogress" href="#subscribeprogress">subscribeProgress</a>(`callback`: (`progress`: [`UploadProgress`](#uploadprogress)) => `void`): `VoidFunction`</code>
 
 </dt>
 
@@ -143,7 +143,7 @@ Deletes an upload task by its object URL.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view" href="#view">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view" href="#view">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
 
 </dt>
 
@@ -159,7 +159,7 @@ The editor view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="event" href="#event">event</a>: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)</code>
+<code data-typedoc-code><a id="event" href="#event">event</a>: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)</code>
 
 </dt>
 
@@ -175,7 +175,7 @@ The event that triggered the drop.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="file" href="#file">file</a>: [`File`](https://developer.mozilla.org/docs/Web/API/File)</code>
+<code data-typedoc-code><a id="file" href="#file">file</a>: [`File`](https://developer.mozilla.org/docs/Web/API/File)</code>
 
 </dt>
 
@@ -191,7 +191,7 @@ The file that was dropped.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos" href="#pos">pos</a>: `number`</code>
+<code data-typedoc-code><a id="pos" href="#pos">pos</a>: `number`</code>
 
 </dt>
 
@@ -213,7 +213,7 @@ The position of the document where the file was dropped.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view-1" href="#view-1">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view-1" href="#view-1">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
 
 </dt>
 
@@ -229,7 +229,7 @@ The editor view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="event-1" href="#event-1">event</a>: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)</code>
+<code data-typedoc-code><a id="event-1" href="#event-1">event</a>: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)</code>
 
 </dt>
 
@@ -245,7 +245,7 @@ The event that triggered the paste.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="file-1" href="#file-1">file</a>: [`File`](https://developer.mozilla.org/docs/Web/API/File)</code>
+<code data-typedoc-code><a id="file-1" href="#file-1">file</a>: [`File`](https://developer.mozilla.org/docs/Web/API/File)</code>
 
 </dt>
 
@@ -269,7 +269,7 @@ An interface representing the upload progress.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="loaded" href="#loaded">loaded</a>: `number`</code>
+<code data-typedoc-code><a id="loaded" href="#loaded">loaded</a>: `number`</code>
 
 </dt>
 
@@ -279,7 +279,7 @@ An interface representing the upload progress.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="total" href="#total">total</a>: `number`</code>
+<code data-typedoc-code><a id="total" href="#total">total</a>: `number`</code>
 
 </dt>
 
@@ -295,7 +295,7 @@ An interface representing the upload progress.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="file-2" href="#file-2">file</a>: [`File`](https://developer.mozilla.org/docs/Web/API/File)</code>
+<code data-typedoc-code><a id="file-2" href="#file-2">file</a>: [`File`](https://developer.mozilla.org/docs/Web/API/File)</code>
 
 </dt>
 
@@ -311,7 +311,7 @@ The file to be uploaded.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onprogress" href="#onprogress">onProgress</a>: (`progress`: [`UploadProgress`](#uploadprogress)) => `void`</code>
+<code data-typedoc-code><a id="onprogress" href="#onprogress">onProgress</a>: (`progress`: [`UploadProgress`](#uploadprogress)) => `void`</code>
 
 </dt>
 
@@ -331,7 +331,7 @@ A callback function that should be called with the upload progress updates.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="uploader" href="#uploader">Uploader</a>\<Result\> = (`options`: [`UploaderOptions`](#uploaderoptions)) => [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`Result`\></code>
+<code data-typedoc-code>type <a id="uploader" href="#uploader">Uploader</a>\<Result\> = (`options`: [`UploaderOptions`](#uploaderoptions)) => [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`Result`\></code>
 
 </dt>
 
@@ -352,7 +352,7 @@ function to upload files to your desired destination.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definefiledrophandler" href="#definefiledrophandler">defineFileDropHandler</a>(`handler`: `FileDropHandler`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definefiledrophandler" href="#definefiledrophandler">defineFileDropHandler</a>(`handler`: `FileDropHandler`): `PlainExtension`</code>
 
 </dt>
 
@@ -366,7 +366,7 @@ function to upload files to your desired destination.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definefilepastehandler" href="#definefilepastehandler">defineFilePasteHandler</a>(`handler`: `FilePasteHandler`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definefilepastehandler" href="#definefilepastehandler">defineFilePasteHandler</a>(`handler`: `FilePasteHandler`): `PlainExtension`</code>
 
 </dt>
 

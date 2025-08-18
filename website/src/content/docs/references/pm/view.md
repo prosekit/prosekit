@@ -22,7 +22,7 @@ several variants—see the static members of this class for details.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">Decoration</a>(): [`Decoration`](#decoration)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">Decoration</a>(): [`Decoration`](#decoration)</code>
 
 </dt>
 
@@ -69,7 +69,7 @@ decorations](https://prosemirror.net/docs/ref/#view.Decoration^widget).
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="spec" href="#spec">spec</a>(): `any`</code>
+<code data-typedoc-code>get <a id="spec" href="#spec">spec</a>(): `any`</code>
 
 </dt>
 
@@ -157,7 +157,7 @@ updates create a new value.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">DecorationSet</a>(): [`DecorationSet`](#decorationset)</code>
+<code data-typedoc-code>new <a id="constructor-1" href="#constructor-1">DecorationSet</a>(): [`DecorationSet`](#decorationset)</code>
 
 </dt>
 
@@ -205,7 +205,7 @@ you must make a copy if you want need to preserve that.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="find" href="#find">find</a>(`start?`: `number`, `end?`: `number`, `predicate?`: (`spec`: `any`) => `boolean`): [`Decoration`](#decoration)[]</code>
+<code data-typedoc-code><a id="find" href="#find">find</a>(`start?`: `number`, `end?`: `number`, `predicate?`: (`spec`: `any`) => `boolean`): [`Decoration`](#decoration)[]</code>
 
 </dt>
 
@@ -226,7 +226,7 @@ assumed to match.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-1" href="#map-1">map</a>(`mapping`: [`Mapping`](transform.md#mapping), `doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `options?`: `object`): [`DecorationSet`](#decorationset)</code>
+<code data-typedoc-code><a id="map-1" href="#map-1">map</a>(`mapping`: [`Mapping`](transform.md#mapping), `doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `options?`: `object`): [`DecorationSet`](#decorationset)</code>
 
 </dt>
 
@@ -243,7 +243,7 @@ document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="add" href="#add">add</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `decorations`: [`Decoration`](#decoration)[]): [`DecorationSet`](#decorationset)</code>
+<code data-typedoc-code><a id="add" href="#add">add</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `decorations`: [`Decoration`](#decoration)[]): [`DecorationSet`](#decorationset)</code>
 
 </dt>
 
@@ -262,7 +262,7 @@ structure.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="remove" href="#remove">remove</a>(`decorations`: [`Decoration`](#decoration)[]): [`DecorationSet`](#decorationset)</code>
+<code data-typedoc-code><a id="remove" href="#remove">remove</a>(`decorations`: [`Decoration`](#decoration)[]): [`DecorationSet`](#decorationset)</code>
 
 </dt>
 
@@ -279,7 +279,7 @@ the ones in the given array.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="forchild-2" href="#forchild-2">forChild</a>(`offset`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`DecorationSet`](#decorationset) \| [`DecorationGroup`](https://prosemirror.net/docs/ref/#view.DecorationGroup)</code>
+<code data-typedoc-code><a id="forchild-2" href="#forchild-2">forChild</a>(`offset`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`DecorationSet`](#decorationset) \| [`DecorationGroup`](https://prosemirror.net/docs/ref/#view.DecorationGroup)</code>
 
 </dt>
 
@@ -295,7 +295,7 @@ Extract a DecorationSource containing decorations for the given child node at th
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="foreachset-2" href="#foreachset-2">forEachSet</a>(`f`: (`set`: [`DecorationSet`](#decorationset)) => `void`): `void`</code>
+<code data-typedoc-code><a id="foreachset-2" href="#foreachset-2">forEachSet</a>(`f`: (`set`: [`DecorationSet`](#decorationset)) => `void`): `void`</code>
 
 </dt>
 
@@ -323,7 +323,7 @@ editable document. Its state and behavior are determined by its
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">EditorView</a>(`place`: `null` \| [`Node`](https://developer.mozilla.org/docs/Web/API/Node) \| (`editor`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void` \| \{ `mount`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement); \}, `props`: [`DirectEditorProps`](#directeditorprops)): [`EditorView`](#editorview)</code>
+<code data-typedoc-code>new <a id="constructor-2" href="#constructor-2">EditorView</a>(`place`: `null` \| [`Node`](https://developer.mozilla.org/docs/Web/API/Node) \| (`editor`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void` \| \{ `mount`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement); \}, `props`: [`DirectEditorProps`](#directeditorprops)): [`EditorView`](#editorview)</code>
 
 </dt>
 
@@ -345,7 +345,7 @@ added to the document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="state" href="#state">state</a>: [`EditorState`](state.md#editorstate)</code>
+<code data-typedoc-code><a id="state" href="#state">state</a>: [`EditorState`](state.md#editorstate)</code>
 
 </dt>
 
@@ -378,7 +378,7 @@ should not directly interfere with its content.)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editable" href="#editable">editable</a>: `boolean`</code>
+<code data-typedoc-code><a id="editable" href="#editable">editable</a>: `boolean`</code>
 
 </dt>
 
@@ -394,7 +394,7 @@ Indicates whether the editor is currently [editable](https://prosemirror.net/doc
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dragging" href="#dragging">dragging</a>: `null` \| \{ `slice`: [`Slice`](model.md#slice); `move`: `boolean`; \}</code>
+<code data-typedoc-code><a id="dragging" href="#dragging">dragging</a>: `null` \| \{ `slice`: [`Slice`](model.md#slice); `move`: `boolean`; \}</code>
 
 </dt>
 
@@ -412,7 +412,7 @@ copied or moved. At any other time, it is null.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dispatch" href="#dispatch">dispatch</a>: (`tr`: [`Transaction`](state.md#transaction)) => `void`</code>
+<code data-typedoc-code><a id="dispatch" href="#dispatch">dispatch</a>: (`tr`: [`Transaction`](state.md#transaction)) => `void`</code>
 
 </dt>
 
@@ -436,7 +436,7 @@ easily passed around.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="composing" href="#composing">composing</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="composing" href="#composing">composing</a>(): `boolean`</code>
 
 </dt>
 
@@ -454,7 +454,7 @@ is active.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="props" href="#props">props</a>(): [`DirectEditorProps`](#directeditorprops)</code>
+<code data-typedoc-code>get <a id="props" href="#props">props</a>(): [`DirectEditorProps`](#directeditorprops)</code>
 
 </dt>
 
@@ -470,7 +470,7 @@ The view's current [props](https://prosemirror.net/docs/ref/#view.EditorProps).
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="root" href="#root">root</a>(): [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)</code>
+<code data-typedoc-code>get <a id="root" href="#root">root</a>(): [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)</code>
 
 </dt>
 
@@ -489,7 +489,7 @@ root if the editor is inside one.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isdestroyed" href="#isdestroyed">isDestroyed</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isdestroyed" href="#isdestroyed">isDestroyed</a>(): `boolean`</code>
 
 </dt>
 
@@ -509,7 +509,7 @@ used anymore).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="update-1" href="#update-1">update</a>(`props`: [`DirectEditorProps`](#directeditorprops)): `void`</code>
+<code data-typedoc-code><a id="update-1" href="#update-1">update</a>(`props`: [`DirectEditorProps`](#directeditorprops)): `void`</code>
 
 </dt>
 
@@ -526,7 +526,7 @@ the DOM.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setprops" href="#setprops">setProps</a>(`props`: [`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`DirectEditorProps`](#directeditorprops)\>): `void`</code>
+<code data-typedoc-code><a id="setprops" href="#setprops">setProps</a>(`props`: [`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`DirectEditorProps`](#directeditorprops)\>): `void`</code>
 
 </dt>
 
@@ -544,7 +544,7 @@ view.props, props))`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](state.md#editorstate)): `void`</code>
+<code data-typedoc-code><a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](state.md#editorstate)): `void`</code>
 
 </dt>
 
@@ -563,7 +563,7 @@ other props.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="someprop" href="#someprop">someProp</a>\<PropName, Result\>(`propName`: `PropName`, `f`: (`value`: [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`EditorProps`](#editorprops)\<`any`\>\[`PropName`\]\>) => `Result`): `undefined` \| `Result`</code>
+<code data-typedoc-code><a id="someprop" href="#someprop">someProp</a>\<PropName, Result\>(`propName`: `PropName`, `f`: (`value`: [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`EditorProps`](#editorprops)\<`any`\>\[`PropName`\]\>) => `Result`): `undefined` \| `Result`</code>
 
 </dt>
 
@@ -586,7 +586,7 @@ the identity function (the prop value is returned directly).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="someprop" href="#someprop">someProp</a>\<PropName\>(`propName`: `PropName`): `undefined` \| [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`EditorProps`](#editorprops)\<`any`\>\[`PropName`\]\></code>
+<code data-typedoc-code><a id="someprop" href="#someprop">someProp</a>\<PropName\>(`propName`: `PropName`): `undefined` \| [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`EditorProps`](#editorprops)\<`any`\>\[`PropName`\]\></code>
 
 </dt>
 
@@ -607,7 +607,7 @@ the identity function (the prop value is returned directly).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hasfocus" href="#hasfocus">hasFocus</a>(): `boolean`</code>
+<code data-typedoc-code><a id="hasfocus" href="#hasfocus">hasFocus</a>(): `boolean`</code>
 
 </dt>
 
@@ -623,7 +623,7 @@ Query whether the view has focus.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="focus" href="#focus">focus</a>(): `void`</code>
+<code data-typedoc-code><a id="focus" href="#focus">focus</a>(): `void`</code>
 
 </dt>
 
@@ -639,7 +639,7 @@ Focus the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="updateroot" href="#updateroot">updateRoot</a>(): `void`</code>
+<code data-typedoc-code><a id="updateroot" href="#updateroot">updateRoot</a>(): `void`</code>
 
 </dt>
 
@@ -656,7 +656,7 @@ shadow tree, call this to make it recompute its root.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="posatcoords" href="#posatcoords">posAtCoords</a>(`coords`: `object`): `null` \| \{ `pos`: `number`; `inside`: `number`; \}</code>
+<code data-typedoc-code><a id="posatcoords" href="#posatcoords">posAtCoords</a>(`coords`: `object`): `null` \| \{ `pos`: `number`; `inside`: `number`; \}</code>
 
 </dt>
 
@@ -678,7 +678,7 @@ the top level, not in any node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="coordsatpos" href="#coordsatpos">coordsAtPos</a>(`pos`: `number`, `side?`: `number`): `object`</code>
+<code data-typedoc-code><a id="coordsatpos" href="#coordsatpos">coordsAtPos</a>(`pos`: `number`, `side?`: `number`): `object`</code>
 
 </dt>
 
@@ -699,7 +699,7 @@ otherwise the element after.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="domatpos" href="#domatpos">domAtPos</a>(`pos`: `number`, `side?`: `number`): `object`</code>
+<code data-typedoc-code><a id="domatpos" href="#domatpos">domAtPos</a>(`pos`: `number`, `side?`: `number`): `object`</code>
 
 </dt>
 
@@ -722,7 +722,7 @@ only inspect it (and even that is usually not necessary).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodedom" href="#nodedom">nodeDOM</a>(`pos`: `number`): `null` \| [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
+<code data-typedoc-code><a id="nodedom" href="#nodedom">nodeDOM</a>(`pos`: `number`): `null` \| [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
 
 </dt>
 
@@ -745,7 +745,7 @@ immediately overriden by the editor as it redraws the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="posatdom" href="#posatdom">posAtDOM</a>(`node`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `offset`: `number`, `bias?`: `number`): `number`</code>
+<code data-typedoc-code><a id="posatdom" href="#posatdom">posAtDOM</a>(`node`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `offset`: `number`, `bias?`: `number`): `number`</code>
 
 </dt>
 
@@ -768,7 +768,7 @@ node to use when the position is inside a leaf node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="endoftextblock" href="#endoftextblock">endOfTextblock</a>(`dir`: `"up"` \| `"down"` \| `"left"` \| `"right"` \| `"forward"` \| `"backward"`, `state?`: [`EditorState`](state.md#editorstate)): `boolean`</code>
+<code data-typedoc-code><a id="endoftextblock" href="#endoftextblock">endOfTextblock</a>(`dir`: `"up"` \| `"down"` \| `"left"` \| `"right"` \| `"forward"` \| `"backward"`, `state?`: [`EditorState`](state.md#editorstate)): `boolean`</code>
 
 </dt>
 
@@ -789,7 +789,7 @@ pass a different state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pastehtml" href="#pastehtml">pasteHTML</a>(`html`: `string`, `event?`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)): `boolean`</code>
+<code data-typedoc-code><a id="pastehtml" href="#pastehtml">pasteHTML</a>(`html`: `string`, `event?`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)): `boolean`</code>
 
 </dt>
 
@@ -807,7 +807,7 @@ Run the editor's paste logic with the given HTML string. The
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pastetext" href="#pastetext">pasteText</a>(`text`: `string`, `event?`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)): `boolean`</code>
+<code data-typedoc-code><a id="pastetext" href="#pastetext">pasteText</a>(`text`: `string`, `event?`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)): `boolean`</code>
 
 </dt>
 
@@ -823,7 +823,7 @@ Run the editor's paste logic with the given plain-text input.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="serializeforclipboard" href="#serializeforclipboard">serializeForClipboard</a>(`slice`: [`Slice`](model.md#slice)): `object`</code>
+<code data-typedoc-code><a id="serializeforclipboard" href="#serializeforclipboard">serializeForClipboard</a>(`slice`: [`Slice`](model.md#slice)): `object`</code>
 
 </dt>
 
@@ -844,7 +844,7 @@ different from the given input due to hooks like
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="destroy-2" href="#destroy-2">destroy</a>(): `void`</code>
+<code data-typedoc-code><a id="destroy-2" href="#destroy-2">destroy</a>(): `void`</code>
 
 </dt>
 
@@ -861,7 +861,7 @@ views](https://prosemirror.net/docs/ref/#view.NodeView).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dispatchevent" href="#dispatchevent">dispatchEvent</a>(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)): `void`</code>
+<code data-typedoc-code><a id="dispatchevent" href="#dispatchevent">dispatchEvent</a>(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)): `void`</code>
 
 </dt>
 
@@ -887,7 +887,7 @@ and passed to [node views](https://prosemirror.net/docs/ref/#view.EditorProps.no
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map" href="#map">map</a>: (`mapping`: [`Mapping`](transform.md#mapping), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`DecorationSource`](#decorationsource)</code>
+<code data-typedoc-code><a id="map" href="#map">map</a>: (`mapping`: [`Mapping`](transform.md#mapping), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`DecorationSource`](#decorationsource)</code>
 
 </dt>
 
@@ -906,7 +906,7 @@ document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="forchild" href="#forchild">forChild</a>(`offset`: `number`, `child`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`DecorationSource`](#decorationsource)</code>
+<code data-typedoc-code><a id="forchild" href="#forchild">forChild</a>(`offset`: `number`, `child`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`DecorationSource`](#decorationsource)</code>
 
 </dt>
 
@@ -922,7 +922,7 @@ Extract a DecorationSource containing decorations for the given child node at th
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="foreachset" href="#foreachset">forEachSet</a>(`f`: (`set`: [`DecorationSet`](#decorationset)) => `void`): `void`</code>
+<code data-typedoc-code><a id="foreachset" href="#foreachset">forEachSet</a>(`f`: (`set`: [`DecorationSet`](#decorationset)) => `void`): `void`</code>
 
 </dt>
 
@@ -953,7 +953,7 @@ Objects returned as node views must conform to this interface.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dom" href="#dom">dom</a>: [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
+<code data-typedoc-code><a id="dom" href="#dom">dom</a>: [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
 
 </dt>
 
@@ -969,7 +969,7 @@ The outer DOM node that represents the document node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentdom" href="#contentdom">contentDOM</a><i>?</i>: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="contentdom" href="#contentdom">contentDOM</a><i>?</i>: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -990,7 +990,7 @@ is not present, the node view itself is responsible for rendering
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="update" href="#update">update</a><i>?</i>: (`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `decorations`: readonly [`Decoration`](#decoration)[], `innerDecorations`: [`DecorationSource`](#decorationsource)) => `boolean`</code>
+<code data-typedoc-code><a id="update" href="#update">update</a><i>?</i>: (`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `decorations`: readonly [`Decoration`](#decoration)[], `innerDecorations`: [`DecorationSource`](#decorationsource)) => `boolean`</code>
 
 </dt>
 
@@ -1015,7 +1015,7 @@ nodes will be handled by ProseMirror.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="multitype" href="#multitype">multiType</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="multitype" href="#multitype">multiType</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1036,7 +1036,7 @@ return `false` for types you cannot handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selectnode" href="#selectnode">selectNode</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="selectnode" href="#selectnode">selectNode</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -1053,7 +1053,7 @@ node selection) is displayed.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="deselectnode" href="#deselectnode">deselectNode</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="deselectnode" href="#deselectnode">deselectNode</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -1070,7 +1070,7 @@ When defining a `selectNode` method, you should also provide a
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setselection" href="#setselection">setSelection</a><i>?</i>: (`anchor`: `number`, `head`: `number`, `root`: [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`</code>
+<code data-typedoc-code><a id="setselection" href="#setselection">setSelection</a><i>?</i>: (`anchor`: `number`, `head`: `number`, `root`: [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`</code>
 
 </dt>
 
@@ -1090,7 +1090,7 @@ override it you can do something else.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="stopevent" href="#stopevent">stopEvent</a><i>?</i>: (`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`</code>
+<code data-typedoc-code><a id="stopevent" href="#stopevent">stopEvent</a><i>?</i>: (`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`</code>
 
 </dt>
 
@@ -1108,7 +1108,7 @@ which this returns true are not handled by the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignoremutation" href="#ignoremutation">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](#viewmutationrecord)) => `boolean`</code>
+<code data-typedoc-code><a id="ignoremutation" href="#ignoremutation">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](#viewmutationrecord)) => `boolean`</code>
 
 </dt>
 
@@ -1126,7 +1126,7 @@ the range around the mutation, true if it can safely be ignored.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="destroy" href="#destroy">destroy</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="destroy" href="#destroy">destroy</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -1157,7 +1157,7 @@ Objects returned as mark views must conform to this interface.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dom-1" href="#dom-1">dom</a>: [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
+<code data-typedoc-code><a id="dom-1" href="#dom-1">dom</a>: [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
 
 </dt>
 
@@ -1173,7 +1173,7 @@ The outer DOM node that represents the document node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentdom-1" href="#contentdom-1">contentDOM</a><i>?</i>: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="contentdom-1" href="#contentdom-1">contentDOM</a><i>?</i>: `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -1190,7 +1190,7 @@ present, the `dom` property is used as the content DOM.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignoremutation-1" href="#ignoremutation-1">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](#viewmutationrecord)) => `boolean`</code>
+<code data-typedoc-code><a id="ignoremutation-1" href="#ignoremutation-1">ignoreMutation</a><i>?</i>: (`mutation`: [`ViewMutationRecord`](#viewmutationrecord)) => `boolean`</code>
 
 </dt>
 
@@ -1208,7 +1208,7 @@ the range around the mutation, true if it can safely be ignored.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="destroy-1" href="#destroy-1">destroy</a><i>?</i>: () => `void`</code>
+<code data-typedoc-code><a id="destroy-1" href="#destroy-1">destroy</a><i>?</i>: () => `void`</code>
 
 </dt>
 
@@ -1247,7 +1247,7 @@ about.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="aria-uicontext-request" href="#aria-uicontext-request">aria-ui/context-request</a>: `ContextRequestEvent`\<`unknown`\></code>
+<code data-typedoc-code><a id="aria-uicontext-request" href="#aria-uicontext-request">aria-ui/context-request</a>: `ContextRequestEvent`\<`unknown`\></code>
 
 </dt>
 
@@ -1257,7 +1257,7 @@ about.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="aria-uicontext-provider" href="#aria-uicontext-provider">aria-ui/context-provider</a>: `ContextProviderEvent`</code>
+<code data-typedoc-code><a id="aria-uicontext-provider" href="#aria-uicontext-provider">aria-ui/context-provider</a>: `ContextProviderEvent`</code>
 
 </dt>
 
@@ -1291,7 +1291,7 @@ functions, and is used to pass in the plugin type when defining a
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledomevents" href="#handledomevents">handleDOMEvents</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="handledomevents" href="#handledomevents">handleDOMEvents</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -1313,7 +1313,7 @@ default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlekeydown" href="#handlekeydown">handleKeyDown</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handlekeydown" href="#handlekeydown">handleKeyDown</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1329,7 +1329,7 @@ Called when the editor receives a `keydown` event.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlekeypress" href="#handlekeypress">handleKeyPress</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handlekeypress" href="#handlekeypress">handleKeyPress</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1345,7 +1345,7 @@ Handler for `keypress` events.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handletextinput" href="#handletextinput">handleTextInput</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handletextinput" href="#handletextinput">handleTextInput</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1363,7 +1363,7 @@ behavior of actually inserting the text is suppressed.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handleclickon" href="#handleclickon">handleClickOn</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handleclickon" href="#handleclickon">handleClickOn</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1380,7 +1380,7 @@ Called for each node around a click, from the inside out. The
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handleclick" href="#handleclick">handleClick</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handleclick" href="#handleclick">handleClick</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1397,7 +1397,7 @@ have been called.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledoubleclickon" href="#handledoubleclickon">handleDoubleClickOn</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handledoubleclickon" href="#handledoubleclickon">handleDoubleClickOn</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1413,7 +1413,7 @@ Called for each node around a double click.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledoubleclick" href="#handledoubleclick">handleDoubleClick</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handledoubleclick" href="#handledoubleclick">handleDoubleClick</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1429,7 +1429,7 @@ Called when the editor is double-clicked, after `handleDoubleClickOn`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handletripleclickon" href="#handletripleclickon">handleTripleClickOn</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handletripleclickon" href="#handletripleclickon">handleTripleClickOn</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1445,7 +1445,7 @@ Called for each node around a triple click.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handletripleclick" href="#handletripleclick">handleTripleClick</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handletripleclick" href="#handletripleclick">handleTripleClick</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1461,7 +1461,7 @@ Called when the editor is triple-clicked, after `handleTripleClickOn`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlepaste" href="#handlepaste">handlePaste</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handlepaste" href="#handlepaste">handlePaste</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1479,7 +1479,7 @@ the event to get at the raw content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledrop" href="#handledrop">handleDrop</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice), `moved`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handledrop" href="#handledrop">handleDrop</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice), `moved`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1497,7 +1497,7 @@ thus be deleted).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlescrolltoselection" href="#handlescrolltoselection">handleScrollToSelection</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview)) => `boolean`</code>
+<code data-typedoc-code><a id="handlescrolltoselection" href="#handlescrolltoselection">handleScrollToSelection</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview)) => `boolean`</code>
 
 </dt>
 
@@ -1516,7 +1516,7 @@ handlers or the default behavior should be tried.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dragcopies" href="#dragcopies">dragCopies</a><i>?</i>: (`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
+<code data-typedoc-code><a id="dragcopies" href="#dragcopies">dragCopies</a><i>?</i>: (`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
 
 </dt>
 
@@ -1534,7 +1534,7 @@ used on macOS, `ctrlKey` on other platforms.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="createselectionbetween" href="#createselectionbetween">createSelectionBetween</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-3)</code>
+<code data-typedoc-code><a id="createselectionbetween" href="#createselectionbetween">createSelectionBetween</a><i>?</i>: (`this`: `P`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-3)</code>
 
 </dt>
 
@@ -1551,7 +1551,7 @@ reading a DOM selection between the given anchor and head.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="domparser" href="#domparser">domParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
+<code data-typedoc-code><a id="domparser" href="#domparser">domParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
 
 </dt>
 
@@ -1570,7 +1570,7 @@ editor's schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformpastedhtml" href="#transformpastedhtml">transformPastedHTML</a><i>?</i>: (`this`: `P`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`</code>
+<code data-typedoc-code><a id="transformpastedhtml" href="#transformpastedhtml">transformPastedHTML</a><i>?</i>: (`this`: `P`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`</code>
 
 </dt>
 
@@ -1587,7 +1587,7 @@ for example to clean it up.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardparser" href="#clipboardparser">clipboardParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
+<code data-typedoc-code><a id="clipboardparser" href="#clipboardparser">clipboardParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
 
 </dt>
 
@@ -1605,7 +1605,7 @@ the clipboard. When not given, the value of the
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformpastedtext" href="#transformpastedtext">transformPastedText</a><i>?</i>: (`this`: `P`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`</code>
+<code data-typedoc-code><a id="transformpastedtext" href="#transformpastedtext">transformPastedText</a><i>?</i>: (`this`: `P`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`</code>
 
 </dt>
 
@@ -1622,7 +1622,7 @@ the text is pasted as plain text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardtextparser" href="#clipboardtextparser">clipboardTextParser</a><i>?</i>: (`this`: `P`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="clipboardtextparser" href="#clipboardtextparser">clipboardTextParser</a><i>?</i>: (`this`: `P`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -1644,7 +1644,7 @@ The `plain` flag will be true when the text is pasted as plain text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformpasted" href="#transformpasted">transformPasted</a><i>?</i>: (`this`: `P`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="transformpasted" href="#transformpasted">transformPasted</a><i>?</i>: (`this`: `P`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -1661,7 +1661,7 @@ before it is applied to the document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformcopied" href="#transformcopied">transformCopied</a><i>?</i>: (`this`: `P`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="transformcopied" href="#transformcopied">transformCopied</a><i>?</i>: (`this`: `P`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -1678,7 +1678,7 @@ serialized to the clipboard.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodeviews" href="#nodeviews">nodeViews</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="nodeviews" href="#nodeviews">nodeViews</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -1718,7 +1718,7 @@ object.)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="markviews" href="#markviews">markViews</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="markviews" href="#markviews">markViews</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -1738,7 +1738,7 @@ is inline.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardserializer" href="#clipboardserializer">clipboardSerializer</a><i>?</i>: [`DOMSerializer`](model.md#domserializer)</code>
+<code data-typedoc-code><a id="clipboardserializer" href="#clipboardserializer">clipboardSerializer</a><i>?</i>: [`DOMSerializer`](model.md#domserializer)</code>
 
 </dt>
 
@@ -1760,7 +1760,7 @@ implementing a compatible method.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardtextserializer" href="#clipboardtextserializer">clipboardTextSerializer</a><i>?</i>: (`this`: `P`, `content`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => `string`</code>
+<code data-typedoc-code><a id="clipboardtextserializer" href="#clipboardtextserializer">clipboardTextSerializer</a><i>?</i>: (`this`: `P`, `content`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => `string`</code>
 
 </dt>
 
@@ -1779,7 +1779,7 @@ selected range.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="decorations" href="#decorations">decorations</a><i>?</i>: (`this`: `P`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)</code>
+<code data-typedoc-code><a id="decorations" href="#decorations">decorations</a><i>?</i>: (`this`: `P`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)</code>
 
 </dt>
 
@@ -1796,7 +1796,7 @@ view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editable-1" href="#editable-1">editable</a><i>?</i>: (`this`: `P`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`</code>
+<code data-typedoc-code><a id="editable-1" href="#editable-1">editable</a><i>?</i>: (`this`: `P`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`</code>
 
 </dt>
 
@@ -1813,7 +1813,7 @@ editable.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attributes" href="#attributes">attributes</a><i>?</i>: \{\[`name`: `string`\]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`</code>
+<code data-typedoc-code><a id="attributes" href="#attributes">attributes</a><i>?</i>: \{\[`name`: `string`\]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`</code>
 
 </dt>
 
@@ -1836,7 +1836,7 @@ the value provided first (as in
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="scrollthreshold" href="#scrollthreshold">scrollThreshold</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
+<code data-typedoc-code><a id="scrollthreshold" href="#scrollthreshold">scrollThreshold</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
 
 </dt>
 
@@ -1854,7 +1854,7 @@ cursor into view, scrolling takes place. Defaults to 0.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="scrollmargin" href="#scrollmargin">scrollMargin</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
+<code data-typedoc-code><a id="scrollmargin" href="#scrollmargin">scrollMargin</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
 
 </dt>
 
@@ -1880,7 +1880,7 @@ fields that can't be used in plugins:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledomevents-1" href="#handledomevents-1">handleDOMEvents</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="handledomevents-1" href="#handledomevents-1">handleDOMEvents</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -1902,7 +1902,7 @@ default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlekeydown-1" href="#handlekeydown-1">handleKeyDown</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handlekeydown-1" href="#handlekeydown-1">handleKeyDown</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1918,7 +1918,7 @@ Called when the editor receives a `keydown` event.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlekeypress-1" href="#handlekeypress-1">handleKeyPress</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handlekeypress-1" href="#handlekeypress-1">handleKeyPress</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1934,7 +1934,7 @@ Handler for `keypress` events.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handletextinput-1" href="#handletextinput-1">handleTextInput</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handletextinput-1" href="#handletextinput-1">handleTextInput</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1952,7 +1952,7 @@ behavior of actually inserting the text is suppressed.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handleclickon-1" href="#handleclickon-1">handleClickOn</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handleclickon-1" href="#handleclickon-1">handleClickOn</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1969,7 +1969,7 @@ Called for each node around a click, from the inside out. The
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handleclick-1" href="#handleclick-1">handleClick</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handleclick-1" href="#handleclick-1">handleClick</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -1986,7 +1986,7 @@ have been called.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledoubleclickon-1" href="#handledoubleclickon-1">handleDoubleClickOn</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handledoubleclickon-1" href="#handledoubleclickon-1">handleDoubleClickOn</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -2002,7 +2002,7 @@ Called for each node around a double click.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledoubleclick-1" href="#handledoubleclick-1">handleDoubleClick</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handledoubleclick-1" href="#handledoubleclick-1">handleDoubleClick</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -2018,7 +2018,7 @@ Called when the editor is double-clicked, after `handleDoubleClickOn`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handletripleclickon-1" href="#handletripleclickon-1">handleTripleClickOn</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handletripleclickon-1" href="#handletripleclickon-1">handleTripleClickOn</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -2034,7 +2034,7 @@ Called for each node around a triple click.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handletripleclick-1" href="#handletripleclick-1">handleTripleClick</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handletripleclick-1" href="#handletripleclick-1">handleTripleClick</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -2050,7 +2050,7 @@ Called when the editor is triple-clicked, after `handleTripleClickOn`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlepaste-1" href="#handlepaste-1">handlePaste</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice)) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handlepaste-1" href="#handlepaste-1">handlePaste</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -2068,7 +2068,7 @@ the event to get at the raw content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handledrop-1" href="#handledrop-1">handleDrop</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice), `moved`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code><a id="handledrop-1" href="#handledrop-1">handleDrop</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice), `moved`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -2086,7 +2086,7 @@ thus be deleted).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handlescrolltoselection-1" href="#handlescrolltoselection-1">handleScrollToSelection</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview)) => `boolean`</code>
+<code data-typedoc-code><a id="handlescrolltoselection-1" href="#handlescrolltoselection-1">handleScrollToSelection</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview)) => `boolean`</code>
 
 </dt>
 
@@ -2105,7 +2105,7 @@ handlers or the default behavior should be tried.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dragcopies-1" href="#dragcopies-1">dragCopies</a><i>?</i>: (`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
+<code data-typedoc-code><a id="dragcopies-1" href="#dragcopies-1">dragCopies</a><i>?</i>: (`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
 
 </dt>
 
@@ -2123,7 +2123,7 @@ used on macOS, `ctrlKey` on other platforms.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="createselectionbetween-1" href="#createselectionbetween-1">createSelectionBetween</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-3)</code>
+<code data-typedoc-code><a id="createselectionbetween-1" href="#createselectionbetween-1">createSelectionBetween</a><i>?</i>: (`this`: `any`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-3)</code>
 
 </dt>
 
@@ -2140,7 +2140,7 @@ reading a DOM selection between the given anchor and head.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="domparser-1" href="#domparser-1">domParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
+<code data-typedoc-code><a id="domparser-1" href="#domparser-1">domParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
 
 </dt>
 
@@ -2159,7 +2159,7 @@ editor's schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformpastedhtml-1" href="#transformpastedhtml-1">transformPastedHTML</a><i>?</i>: (`this`: `any`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`</code>
+<code data-typedoc-code><a id="transformpastedhtml-1" href="#transformpastedhtml-1">transformPastedHTML</a><i>?</i>: (`this`: `any`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`</code>
 
 </dt>
 
@@ -2176,7 +2176,7 @@ for example to clean it up.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardparser-1" href="#clipboardparser-1">clipboardParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
+<code data-typedoc-code><a id="clipboardparser-1" href="#clipboardparser-1">clipboardParser</a><i>?</i>: [`DOMParser`](model.md#domparser)</code>
 
 </dt>
 
@@ -2194,7 +2194,7 @@ the clipboard. When not given, the value of the
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformpastedtext-1" href="#transformpastedtext-1">transformPastedText</a><i>?</i>: (`this`: `any`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`</code>
+<code data-typedoc-code><a id="transformpastedtext-1" href="#transformpastedtext-1">transformPastedText</a><i>?</i>: (`this`: `any`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`</code>
 
 </dt>
 
@@ -2211,7 +2211,7 @@ the text is pasted as plain text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardtextparser-1" href="#clipboardtextparser-1">clipboardTextParser</a><i>?</i>: (`this`: `any`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="clipboardtextparser-1" href="#clipboardtextparser-1">clipboardTextParser</a><i>?</i>: (`this`: `any`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -2233,7 +2233,7 @@ The `plain` flag will be true when the text is pasted as plain text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformpasted-1" href="#transformpasted-1">transformPasted</a><i>?</i>: (`this`: `any`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="transformpasted-1" href="#transformpasted-1">transformPasted</a><i>?</i>: (`this`: `any`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -2250,7 +2250,7 @@ before it is applied to the document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transformcopied-1" href="#transformcopied-1">transformCopied</a><i>?</i>: (`this`: `any`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
+<code data-typedoc-code><a id="transformcopied-1" href="#transformcopied-1">transformCopied</a><i>?</i>: (`this`: `any`, `slice`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice)</code>
 
 </dt>
 
@@ -2267,7 +2267,7 @@ serialized to the clipboard.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodeviews-1" href="#nodeviews-1">nodeViews</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="nodeviews-1" href="#nodeviews-1">nodeViews</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -2307,7 +2307,7 @@ object.)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="markviews-1" href="#markviews-1">markViews</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="markviews-1" href="#markviews-1">markViews</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -2327,7 +2327,7 @@ is inline.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardserializer-1" href="#clipboardserializer-1">clipboardSerializer</a><i>?</i>: [`DOMSerializer`](model.md#domserializer)</code>
+<code data-typedoc-code><a id="clipboardserializer-1" href="#clipboardserializer-1">clipboardSerializer</a><i>?</i>: [`DOMSerializer`](model.md#domserializer)</code>
 
 </dt>
 
@@ -2349,7 +2349,7 @@ implementing a compatible method.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clipboardtextserializer-1" href="#clipboardtextserializer-1">clipboardTextSerializer</a><i>?</i>: (`this`: `any`, `content`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => `string`</code>
+<code data-typedoc-code><a id="clipboardtextserializer-1" href="#clipboardtextserializer-1">clipboardTextSerializer</a><i>?</i>: (`this`: `any`, `content`: [`Slice`](model.md#slice), `view`: [`EditorView`](#editorview)) => `string`</code>
 
 </dt>
 
@@ -2368,7 +2368,7 @@ selected range.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="decorations-1" href="#decorations-1">decorations</a><i>?</i>: (`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)</code>
+<code data-typedoc-code><a id="decorations-1" href="#decorations-1">decorations</a><i>?</i>: (`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)</code>
 
 </dt>
 
@@ -2385,7 +2385,7 @@ view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editable-2" href="#editable-2">editable</a><i>?</i>: (`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`</code>
+<code data-typedoc-code><a id="editable-2" href="#editable-2">editable</a><i>?</i>: (`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`</code>
 
 </dt>
 
@@ -2402,7 +2402,7 @@ editable.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attributes-1" href="#attributes-1">attributes</a><i>?</i>: \{\[`name`: `string`\]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`</code>
+<code data-typedoc-code><a id="attributes-1" href="#attributes-1">attributes</a><i>?</i>: \{\[`name`: `string`\]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`</code>
 
 </dt>
 
@@ -2425,7 +2425,7 @@ the value provided first (as in
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="scrollthreshold-1" href="#scrollthreshold-1">scrollThreshold</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
+<code data-typedoc-code><a id="scrollthreshold-1" href="#scrollthreshold-1">scrollThreshold</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
 
 </dt>
 
@@ -2443,7 +2443,7 @@ cursor into view, scrolling takes place. Defaults to 0.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="scrollmargin-1" href="#scrollmargin-1">scrollMargin</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
+<code data-typedoc-code><a id="scrollmargin-1" href="#scrollmargin-1">scrollMargin</a><i>?</i>: `number` \| \{ `top`: `number`; `right`: `number`; `bottom`: `number`; `left`: `number`; \}</code>
 
 </dt>
 
@@ -2460,7 +2460,7 @@ below the cursor when it is scrolled into view. Defaults to 5.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="state-1" href="#state-1">state</a>: [`EditorState`](state.md#editorstate)</code>
+<code data-typedoc-code><a id="state-1" href="#state-1">state</a>: [`EditorState`](state.md#editorstate)</code>
 
 </dt>
 
@@ -2476,7 +2476,7 @@ The current state of the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="plugins" href="#plugins">plugins</a><i>?</i>: readonly [`ProseMirrorPlugin`](state.md#prosemirrorplugin)\<`any`\>[]</code>
+<code data-typedoc-code><a id="plugins" href="#plugins">plugins</a><i>?</i>: readonly [`ProseMirrorPlugin`](state.md#prosemirrorplugin)\<`any`\>[]</code>
 
 </dt>
 
@@ -2498,7 +2498,7 @@ present in the state to work.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dispatchtransaction" href="#dispatchtransaction">dispatchTransaction</a><i>?</i>: (`tr`: [`Transaction`](state.md#transaction)) => `void`</code>
+<code data-typedoc-code><a id="dispatchtransaction" href="#dispatchtransaction">dispatchTransaction</a><i>?</i>: (`tr`: [`Transaction`](state.md#transaction)) => `void`</code>
 
 </dt>
 
@@ -2520,7 +2520,7 @@ the view instance as its `this` binding.
 
 ### DecorationAttrs {#decorationattrs}
 
-<code data-typedoc-code><i></i> type <a id="decorationattrs" href="#decorationattrs">DecorationAttrs</a> = \{\[`attribute`: `string`\]: `undefined` \| `string`; `nodeName?`: `string`; `class?`: `string`; `style?`: `string`; \}</code>
+<code data-typedoc-code>type <a id="decorationattrs" href="#decorationattrs">DecorationAttrs</a> = \{\[`attribute`: `string`\]: `undefined` \| `string`; `nodeName?`: `string`; `class?`: `string`; `style?`: `string`; \}</code>
 
 A set of attributes to add to a decorated node. Most properties
 simply directly correspond to DOM attributes of the same name,
@@ -2550,7 +2550,7 @@ Any other properties are treated as regular DOM attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodename" href="#nodename">nodeName</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="nodename" href="#nodename">nodeName</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -2567,7 +2567,7 @@ this type (and the other attributes are applied to this element).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="class" href="#class">class</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="class" href="#class">class</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -2584,7 +2584,7 @@ _added_ to the classes that the node already had.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="style" href="#style">style</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="style" href="#style">style</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -2604,7 +2604,7 @@ A string of CSS to be _added_ to the node's existing `style` property.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="viewmutationrecord" href="#viewmutationrecord">ViewMutationRecord</a> = [`MutationRecord`](https://developer.mozilla.org/docs/Web/API/MutationRecord) \| \{ `type`: `"selection"`; `target`: [`DOMNode`](https://prosemirror.net/docs/ref/#view.DOMNode); \}</code>
+<code data-typedoc-code>type <a id="viewmutationrecord" href="#viewmutationrecord">ViewMutationRecord</a> = [`MutationRecord`](https://developer.mozilla.org/docs/Web/API/MutationRecord) \| \{ `type`: `"selection"`; `target`: [`DOMNode`](https://prosemirror.net/docs/ref/#view.DOMNode); \}</code>
 
 </dt>
 
@@ -2628,7 +2628,7 @@ a selection change, the record will have a `type` property of
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="nodeviewconstructor" href="#nodeviewconstructor">NodeViewConstructor</a> = (`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `view`: [`EditorView`](#editorview), `getPos`: () => `number` \| `undefined`, `decorations`: readonly [`Decoration`](#decoration)[], `innerDecorations`: [`DecorationSource`](#decorationsource)) => [`NodeView`](#nodeview)</code>
+<code data-typedoc-code>type <a id="nodeviewconstructor" href="#nodeviewconstructor">NodeViewConstructor</a> = (`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `view`: [`EditorView`](#editorview), `getPos`: () => `number` \| `undefined`, `decorations`: readonly [`Decoration`](#decoration)[], `innerDecorations`: [`DecorationSource`](#decorationsource)) => [`NodeView`](#nodeview)</code>
 
 </dt>
 
@@ -2649,7 +2649,7 @@ create [node views](https://prosemirror.net/docs/ref/#view.NodeView).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="markviewconstructor" href="#markviewconstructor">MarkViewConstructor</a> = (`mark`: [`Mark`](model.md#mark), `view`: [`EditorView`](#editorview), `inline`: `boolean`) => [`MarkView`](#markview)</code>
+<code data-typedoc-code>type <a id="markviewconstructor" href="#markviewconstructor">MarkViewConstructor</a> = (`mark`: [`Mark`](model.md#mark), `view`: [`EditorView`](#editorview), `inline`: `boolean`) => [`MarkView`](#markview)</code>
 
 </dt>
 

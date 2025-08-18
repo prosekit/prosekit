@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="blockquotecommandsextension" href="#blockquotecommandsextension">BlockquoteCommandsExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Commands`: \{ `setBlockquote`: \[\]; `insertBlockquote`: \[\]; `toggleBlockquote`: \[\]; \}; \}\></code>
+<code data-typedoc-code>type <a id="blockquotecommandsextension" href="#blockquotecommandsextension">BlockquoteCommandsExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Commands`: \{ `setBlockquote`: \[\]; `insertBlockquote`: \[\]; `toggleBlockquote`: \[\]; \}; \}\></code>
 
 </dt>
 
@@ -26,7 +26,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="blockquotespecextension" href="#blockquotespecextension">BlockquoteSpecExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Nodes`: \{ `blockquote`: [`Attrs`](../pm/model.md#attrs-4); \}; \}\></code>
+<code data-typedoc-code>type <a id="blockquotespecextension" href="#blockquotespecextension">BlockquoteSpecExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Nodes`: \{ `blockquote`: [`Attrs`](../pm/model.md#attrs-4); \}; \}\></code>
 
 </dt>
 
@@ -40,7 +40,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineblockquoteinputrule" href="#defineblockquoteinputrule">defineBlockquoteInputRule</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineblockquoteinputrule" href="#defineblockquoteinputrule">defineBlockquoteInputRule</a>(): `PlainExtension`</code>
 
 </dt>
 
@@ -61,7 +61,7 @@ line followed by a space.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineblockquotespec" href="#defineblockquotespec">defineBlockquoteSpec</a>(): [`BlockquoteSpecExtension`](#blockquotespecextension)</code>
+<code data-typedoc-code><i>function</i> <a id="defineblockquotespec" href="#defineblockquotespec">defineBlockquoteSpec</a>(): [`BlockquoteSpecExtension`](#blockquotespecextension)</code>
 
 </dt>
 
@@ -75,7 +75,7 @@ line followed by a space.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineblockquote" href="#defineblockquote">defineBlockquote</a>(): `BlockquoteExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineblockquote" href="#defineblockquote">defineBlockquote</a>(): `BlockquoteExtension`</code>
 
 </dt>
 

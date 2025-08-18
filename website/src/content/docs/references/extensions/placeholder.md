@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placeholder" href="#placeholder">placeholder</a>: `string` \| (`state`: [`EditorState`](../pm/state.md#editorstate)) => `string`</code>
+<code data-typedoc-code><a id="placeholder" href="#placeholder">placeholder</a>: `string` \| (`state`: [`EditorState`](../pm/state.md#editorstate)) => `string`</code>
 
 </dt>
 
@@ -31,7 +31,7 @@ receives the current editor state and returns a string.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy" href="#strategy">strategy</a><i>?</i>: `"doc"` \| `"block"` \| (`state`: [`EditorState`](../pm/state.md#editorstate)) => `boolean`</code>
+<code data-typedoc-code><a id="strategy" href="#strategy">strategy</a><i>?</i>: `"doc"` \| `"block"` \| (`state`: [`EditorState`](../pm/state.md#editorstate)) => `boolean`</code>
 
 </dt>
 
@@ -64,7 +64,7 @@ shown.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineplaceholder" href="#defineplaceholder">definePlaceholder</a>(`options`: [`PlaceholderOptions`](#placeholderoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineplaceholder" href="#defineplaceholder">definePlaceholder</a>(`options`: [`PlaceholderOptions`](#placeholderoptions)): `PlainExtension`</code>
 
 </dt>
 

@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definereadonly" href="#definereadonly">defineReadonly</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definereadonly" href="#definereadonly">defineReadonly</a>(): `PlainExtension`</code>
 
 </dt>
 

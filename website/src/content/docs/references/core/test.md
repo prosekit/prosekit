@@ -16,7 +16,7 @@ An editor for testing purposes.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="mounted" href="#mounted">mounted</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="mounted" href="#mounted">mounted</a>(): `boolean`</code>
 
 </dt>
 
@@ -32,7 +32,7 @@ Whether the editor is mounted.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="view" href="#view">view</a>(): [`EditorView`](../pm/view.md#editorview)</code>
+<code data-typedoc-code>get <a id="view" href="#view">view</a>(): [`EditorView`](../pm/view.md#editorview)</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ The editor view.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="schema" href="#schema">schema</a>(): [`Schema`](../pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
+<code data-typedoc-code>get <a id="schema" href="#schema">schema</a>(): [`Schema`](../pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
 
 </dt>
 
@@ -64,7 +64,7 @@ The editor schema.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="state" href="#state">state</a>(): [`EditorState`](../pm/state.md#editorstate)</code>
+<code data-typedoc-code>get <a id="state" href="#state">state</a>(): [`EditorState`](../pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -80,7 +80,7 @@ The editor's current state.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="focused" href="#focused">focused</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="focused" href="#focused">focused</a>(): `boolean`</code>
 
 </dt>
 
@@ -96,7 +96,7 @@ Whether the editor is focused.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="commands" href="#commands">commands</a>(): [`ExtractCommandActions`](../core.md#extractcommandactions)\<`E`\></code>
+<code data-typedoc-code>get <a id="commands" href="#commands">commands</a>(): [`ExtractCommandActions`](../core.md#extractcommandactions)\<`E`\></code>
 
 </dt>
 
@@ -112,7 +112,7 @@ All [CommandAction](../core.md#commandaction)s defined by the editor.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="nodes" href="#nodes">nodes</a>(): [`ExtractNodeActions`](../core.md#extractnodeactions)\<`E`\></code>
+<code data-typedoc-code>get <a id="nodes" href="#nodes">nodes</a>(): [`ExtractNodeActions`](../core.md#extractnodeactions)\<`E`\></code>
 
 </dt>
 
@@ -128,7 +128,7 @@ All [NodeAction](../core.md#nodeaction)s defined by the editor.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="marks" href="#marks">marks</a>(): [`ExtractMarkActions`](../core.md#extractmarkactions)\<`E`\></code>
+<code data-typedoc-code>get <a id="marks" href="#marks">marks</a>(): [`ExtractMarkActions`](../core.md#extractmarkactions)\<`E`\></code>
 
 </dt>
 
@@ -146,7 +146,7 @@ All [MarkAction](../core.md#markaction)s defined by the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mount" href="#mount">mount</a>(`place`: `undefined` \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)): `void`</code>
+<code data-typedoc-code><a id="mount" href="#mount">mount</a>(`place`: `undefined` \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)): `void`</code>
 
 </dt>
 
@@ -163,7 +163,7 @@ Pass `null` or `undefined` to unmount the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="unmount" href="#unmount">unmount</a>(): `void`</code>
+<code data-typedoc-code><a id="unmount" href="#unmount">unmount</a>(): `void`</code>
 
 </dt>
 
@@ -179,7 +179,7 @@ Unmount the editor. This is equivalent to `mount(null)`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="focus" href="#focus">focus</a>(): `void`</code>
+<code data-typedoc-code><a id="focus" href="#focus">focus</a>(): `void`</code>
 
 </dt>
 
@@ -195,7 +195,7 @@ Focus the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="blur" href="#blur">blur</a>(): `void`</code>
+<code data-typedoc-code><a id="blur" href="#blur">blur</a>(): `void`</code>
 
 </dt>
 
@@ -211,7 +211,7 @@ Blur the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="use" href="#use">use</a>(`extension`: [`Extension`](../core.md#extension-1)): `VoidFunction`</code>
+<code data-typedoc-code><a id="use" href="#use">use</a>(`extension`: [`Extension`](../core.md#extension-1)): `VoidFunction`</code>
 
 </dt>
 
@@ -228,7 +228,7 @@ extension.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](../pm/state.md#editorstate)): `void`</code>
+<code data-typedoc-code><a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](../pm/state.md#editorstate)): `void`</code>
 
 </dt>
 
@@ -249,7 +249,7 @@ directly manipulate the editor's state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setcontent" href="#setcontent">setContent</a>(`content`: `string` \| [`ProseMirrorNode`](../pm/model.md#prosemirrornode) \| [`NodeJSON`](../core.md#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), `selection?`: [`Selection`](../pm/state.md#selection-3) \| `"start"` \| [`SelectionJSON`](../core.md#selectionjson) \| `"end"`): `void`</code>
+<code data-typedoc-code><a id="setcontent" href="#setcontent">setContent</a>(`content`: `string` \| [`ProseMirrorNode`](../pm/model.md#prosemirrornode) \| [`NodeJSON`](../core.md#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), `selection?`: [`Selection`](../pm/state.md#selection-3) \| `"start"` \| [`SelectionJSON`](../core.md#selectionjson) \| `"end"`): `void`</code>
 
 </dt>
 
@@ -265,7 +265,7 @@ Update the editor's document and selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getdocjson" href="#getdocjson">getDocJSON</a>(): [`NodeJSON`](../core.md#nodejson)</code>
+<code data-typedoc-code><a id="getdocjson" href="#getdocjson">getDocJSON</a>(): [`NodeJSON`](../core.md#nodejson)</code>
 
 </dt>
 
@@ -281,7 +281,7 @@ Return a JSON object representing the editor's current document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getdochtml" href="#getdochtml">getDocHTML</a>(`options?`: `getDocHTMLOptions`): `string`</code>
+<code data-typedoc-code><a id="getdochtml" href="#getdochtml">getDocHTML</a>(`options?`: `getDocHTMLOptions`): `string`</code>
 
 </dt>
 
@@ -297,7 +297,7 @@ Return a HTML string representing the editor's current document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="exec" href="#exec">exec</a>(`command`: [`Command`](../pm/state.md#command)): `boolean`</code>
+<code data-typedoc-code><a id="exec" href="#exec">exec</a>(`command`: [`Command`](../pm/state.md#command)): `boolean`</code>
 
 </dt>
 
@@ -314,7 +314,7 @@ executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canexec" href="#canexec">canExec</a>(`command`: [`Command`](../pm/state.md#command)): `boolean`</code>
+<code data-typedoc-code><a id="canexec" href="#canexec">canExec</a>(`command`: [`Command`](../pm/state.md#command)): `boolean`</code>
 
 </dt>
 
@@ -331,7 +331,7 @@ can be executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="set" href="#set">set</a>(`doc`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode)): `void`</code>
+<code data-typedoc-code><a id="set" href="#set">set</a>(`doc`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode)): `void`</code>
 
 </dt>
 
@@ -357,7 +357,7 @@ editor.set(doc) // "Hello" is selected.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="dispatchevent" href="#dispatchevent">dispatchEvent</a>(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)): `void`</code>
+<code data-typedoc-code><a id="dispatchevent" href="#dispatchevent">dispatchEvent</a>(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)): `void`</code>
 
 </dt>
 
@@ -371,7 +371,7 @@ editor.set(doc) // "Hello" is selected.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="createtesteditor" href="#createtesteditor">createTestEditor</a>\<E\>(`options`: [`EditorOptions`](../core.md#editoroptions)\<`E`\>): [`TestEditor`](#testeditor)\<`E`\></code>
+<code data-typedoc-code><i>function</i> <a id="createtesteditor" href="#createtesteditor">createTestEditor</a>\<E\>(`options`: [`EditorOptions`](../core.md#editoroptions)\<`E`\>): [`TestEditor`](#testeditor)\<`E`\></code>
 
 </dt>
 

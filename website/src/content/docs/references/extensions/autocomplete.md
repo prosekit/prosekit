@@ -18,7 +18,7 @@ An autocomplete rule that can be used to create an autocomplete extension.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">AutocompleteRule</a>(`options`: [`AutocompleteRuleOptions`](#autocompleteruleoptions)): [`AutocompleteRule`](#autocompleterule)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">AutocompleteRule</a>(`options`: [`AutocompleteRuleOptions`](#autocompleteruleoptions)): [`AutocompleteRule`](#autocompleterule)</code>
 
 </dt>
 
@@ -36,7 +36,7 @@ Options for the [MatchHandler](#matchhandler) callback.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="state" href="#state">state</a>: [`EditorState`](../pm/state.md#editorstate)</code>
+<code data-typedoc-code><a id="state" href="#state">state</a>: [`EditorState`](../pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -52,7 +52,7 @@ The editor state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="match" href="#match">match</a>: `RegExpExecArray`</code>
+<code data-typedoc-code><a id="match" href="#match">match</a>: `RegExpExecArray`</code>
 
 </dt>
 
@@ -68,7 +68,7 @@ The result of `RegExp.exec`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from" href="#from">from</a>: `number`</code>
+<code data-typedoc-code><a id="from" href="#from">from</a>: `number`</code>
 
 </dt>
 
@@ -84,7 +84,7 @@ The start position of the matched text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to" href="#to">to</a>: `number`</code>
+<code data-typedoc-code><a id="to" href="#to">to</a>: `number`</code>
 
 </dt>
 
@@ -100,7 +100,7 @@ The end position of the matched text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignorematch" href="#ignorematch">ignoreMatch</a>: () => `void`</code>
+<code data-typedoc-code><a id="ignorematch" href="#ignorematch">ignoreMatch</a>: () => `void`</code>
 
 </dt>
 
@@ -117,7 +117,7 @@ function when the user presses the `Escape` key.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="deletematch" href="#deletematch">deleteMatch</a>: () => `void`</code>
+<code data-typedoc-code><a id="deletematch" href="#deletematch">deleteMatch</a>: () => `void`</code>
 
 </dt>
 
@@ -143,7 +143,7 @@ Options for the [CanMatchPredicate](#canmatchpredicate) callback.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="state-1" href="#state-1">state</a>: [`EditorState`](../pm/state.md#editorstate)</code>
+<code data-typedoc-code><a id="state-1" href="#state-1">state</a>: [`EditorState`](../pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -167,7 +167,7 @@ Options for creating an [AutocompleteRule](#autocompleterule)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -187,7 +187,7 @@ For a mention, you might use `/@\w*$/`
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onenter" href="#onenter">onEnter</a>: [`MatchHandler`](#matchhandler)</code>
+<code data-typedoc-code><a id="onenter" href="#onenter">onEnter</a>: [`MatchHandler`](#matchhandler)</code>
 
 </dt>
 
@@ -204,7 +204,7 @@ subsequent updates while the rule continues to match.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onleave" href="#onleave">onLeave</a><i>?</i>: `VoidFunction`</code>
+<code data-typedoc-code><a id="onleave" href="#onleave">onLeave</a><i>?</i>: `VoidFunction`</code>
 
 </dt>
 
@@ -220,7 +220,7 @@ A callback that is called when the rule stops matching.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canmatch" href="#canmatch">canMatch</a><i>?</i>: [`CanMatchPredicate`](#canmatchpredicate)</code>
+<code data-typedoc-code><a id="canmatch" href="#canmatch">canMatch</a><i>?</i>: [`CanMatchPredicate`](#canmatchpredicate)</code>
 
 </dt>
 
@@ -242,7 +242,7 @@ selections that are not inside a code block or code mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="matchhandler" href="#matchhandler">MatchHandler</a> = (`options`: [`MatchHandlerOptions`](#matchhandleroptions)) => `void`</code>
+<code data-typedoc-code>type <a id="matchhandler" href="#matchhandler">MatchHandler</a> = (`options`: [`MatchHandlerOptions`](#matchhandleroptions)) => `void`</code>
 
 </dt>
 
@@ -263,7 +263,7 @@ subsequent updates while the rule continues to match.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="canmatchpredicate" href="#canmatchpredicate">CanMatchPredicate</a> = (`options`: [`CanMatchOptions`](#canmatchoptions)) => `boolean`</code>
+<code data-typedoc-code>type <a id="canmatchpredicate" href="#canmatchpredicate">CanMatchPredicate</a> = (`options`: [`CanMatchOptions`](#canmatchoptions)) => `boolean`</code>
 
 </dt>
 
@@ -283,7 +283,7 @@ A predicate to determine if the rule can be applied in the current editor state.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineautocomplete" href="#defineautocomplete">defineAutocomplete</a>(`rule`: [`AutocompleteRule`](#autocompleterule)): [`Extension`](../core.md#extension-1)</code>
+<code data-typedoc-code><i>function</i> <a id="defineautocomplete" href="#defineautocomplete">defineAutocomplete</a>(`rule`: [`AutocompleteRule`](#autocompleterule)): [`Extension`](../core.md#extension-1)</code>
 
 </dt>
 

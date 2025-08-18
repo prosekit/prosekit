@@ -16,7 +16,7 @@ Options for [EnterRuleHandler](#enterrulehandler).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="state" href="#state">state</a>: [`EditorState`](../pm/state.md#editorstate)</code>
+<code data-typedoc-code><a id="state" href="#state">state</a>: [`EditorState`](../pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -32,7 +32,7 @@ The current editor state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from" href="#from">from</a>: `number`</code>
+<code data-typedoc-code><a id="from" href="#from">from</a>: `number`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ The start position of the matched text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to" href="#to">to</a>: `number`</code>
+<code data-typedoc-code><a id="to" href="#to">to</a>: `number`</code>
 
 </dt>
 
@@ -64,7 +64,7 @@ The end position of the matched text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="match" href="#match">match</a>: `RegExpExecArray`</code>
+<code data-typedoc-code><a id="match" href="#match">match</a>: `RegExpExecArray`</code>
 
 </dt>
 
@@ -88,7 +88,7 @@ Options for [defineTextBlockEnterRule](#definetextblockenterrule).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex-1" href="#regex-1">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex-1" href="#regex-1">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -104,7 +104,7 @@ The regular expression to match against. It should end with `$`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type" href="#type">type</a>: `string` \| [`NodeType`](../pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type" href="#type">type</a>: `string` \| [`NodeType`](../pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -120,7 +120,7 @@ The node type to replace the matched text with.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](../pm/model.md#attrs-4) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](../pm/model.md#attrs-4) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -137,7 +137,7 @@ with the matched result from the regular expression.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="stop-1" href="#stop-1">stop</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="stop-1" href="#stop-1">stop</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -161,7 +161,7 @@ Whether to stop further handlers from being called if this rule is triggered.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="enterrulehandler" href="#enterrulehandler">EnterRuleHandler</a> = (`options`: [`EnterRuleHandlerOptions`](#enterrulehandleroptions)) => [`Transaction`](../pm/state.md#transaction) \| `null`</code>
+<code data-typedoc-code>type <a id="enterrulehandler" href="#enterrulehandler">EnterRuleHandler</a> = (`options`: [`EnterRuleHandlerOptions`](#enterrulehandleroptions)) => [`Transaction`](../pm/state.md#transaction) \| `null`</code>
 
 </dt>
 
@@ -175,7 +175,7 @@ Whether to stop further handlers from being called if this rule is triggered.
 
 ### EnterRuleOptions {#enterruleoptions}
 
-<code data-typedoc-code><i></i> type <a id="enterruleoptions" href="#enterruleoptions">EnterRuleOptions</a> = \{ `regex`: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp); `handler`: [`EnterRuleHandler`](#enterrulehandler); `stop?`: `boolean`; \}</code>
+<code data-typedoc-code>type <a id="enterruleoptions" href="#enterruleoptions">EnterRuleOptions</a> = \{ `regex`: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp); `handler`: [`EnterRuleHandler`](#enterrulehandler); `stop?`: `boolean`; \}</code>
 
 Options for [defineEnterRule](#defineenterrule).
 
@@ -185,7 +185,7 @@ Options for [defineEnterRule](#defineenterrule).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -201,7 +201,7 @@ The regular expression to match against. It should end with `$`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handler" href="#handler">handler</a>: [`EnterRuleHandler`](#enterrulehandler)</code>
+<code data-typedoc-code><a id="handler" href="#handler">handler</a>: [`EnterRuleHandler`](#enterrulehandler)</code>
 
 </dt>
 
@@ -217,7 +217,7 @@ A function to be called when an enter rule is triggered.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="stop" href="#stop">stop</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="stop" href="#stop">stop</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -241,7 +241,7 @@ Whether to stop further handlers from being called if this rule is triggered.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineenterrule" href="#defineenterrule">defineEnterRule</a>(`options`: [`EnterRuleOptions`](#enterruleoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineenterrule" href="#defineenterrule">defineEnterRule</a>(`options`: [`EnterRuleOptions`](#enterruleoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -263,7 +263,7 @@ with `$`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetextblockenterrule" href="#definetextblockenterrule">defineTextBlockEnterRule</a>(`options`: [`TextBlockEnterRuleOptions`](#textblockenterruleoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetextblockenterrule" href="#definetextblockenterrule">defineTextBlockEnterRule</a>(`options`: [`TextBlockEnterRuleOptions`](#textblockenterruleoptions)): `PlainExtension`</code>
 
 </dt>
 

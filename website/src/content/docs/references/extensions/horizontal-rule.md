@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="horizontalrulecommandsextension" href="#horizontalrulecommandsextension">HorizontalRuleCommandsExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Commands`: \{ `insertHorizontalRule`: \[\]; \}; \}\></code>
+<code data-typedoc-code>type <a id="horizontalrulecommandsextension" href="#horizontalrulecommandsextension">HorizontalRuleCommandsExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Commands`: \{ `insertHorizontalRule`: \[\]; \}; \}\></code>
 
 </dt>
 
@@ -26,7 +26,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="horizontalrulespecextension" href="#horizontalrulespecextension">HorizontalRuleSpecExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Nodes`: \{ `horizontalRule`: [`Attrs`](../pm/model.md#attrs-4); \}; \}\></code>
+<code data-typedoc-code>type <a id="horizontalrulespecextension" href="#horizontalrulespecextension">HorizontalRuleSpecExtension</a> = [`Extension`](../core.md#extension-1)\<\{ `Nodes`: \{ `horizontalRule`: [`Attrs`](../pm/model.md#attrs-4); \}; \}\></code>
 
 </dt>
 
@@ -40,7 +40,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="horizontalruleextension" href="#horizontalruleextension">HorizontalRuleExtension</a> = `Union`\<\[[`HorizontalRuleSpecExtension`](#horizontalrulespecextension), [`HorizontalRuleCommandsExtension`](#horizontalrulecommandsextension)\]\></code>
+<code data-typedoc-code>type <a id="horizontalruleextension" href="#horizontalruleextension">HorizontalRuleExtension</a> = `Union`\<\[[`HorizontalRuleSpecExtension`](#horizontalrulespecextension), [`HorizontalRuleCommandsExtension`](#horizontalrulecommandsextension)\]\></code>
 
 </dt>
 
@@ -54,7 +54,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="inserthorizontalrule" href="#inserthorizontalrule">insertHorizontalRule</a>(): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="inserthorizontalrule" href="#inserthorizontalrule">insertHorizontalRule</a>(): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -74,7 +74,7 @@ Returns a command that inserts a horizontal rule at the current selection.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definehorizontalrulecommands" href="#definehorizontalrulecommands">defineHorizontalRuleCommands</a>(): [`HorizontalRuleCommandsExtension`](#horizontalrulecommandsextension)</code>
+<code data-typedoc-code><i>function</i> <a id="definehorizontalrulecommands" href="#definehorizontalrulecommands">defineHorizontalRuleCommands</a>(): [`HorizontalRuleCommandsExtension`](#horizontalrulecommandsextension)</code>
 
 </dt>
 
@@ -88,7 +88,7 @@ Returns a command that inserts a horizontal rule at the current selection.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definehorizontalruleinputrule" href="#definehorizontalruleinputrule">defineHorizontalRuleInputRule</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definehorizontalruleinputrule" href="#definehorizontalruleinputrule">defineHorizontalRuleInputRule</a>(): `PlainExtension`</code>
 
 </dt>
 
@@ -106,7 +106,7 @@ Returns a command that inserts a horizontal rule at the current selection.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definehorizontalrulespec" href="#definehorizontalrulespec">defineHorizontalRuleSpec</a>(): [`HorizontalRuleSpecExtension`](#horizontalrulespecextension)</code>
+<code data-typedoc-code><i>function</i> <a id="definehorizontalrulespec" href="#definehorizontalrulespec">defineHorizontalRuleSpec</a>(): [`HorizontalRuleSpecExtension`](#horizontalrulespecextension)</code>
 
 </dt>
 
@@ -120,7 +120,7 @@ Returns a command that inserts a horizontal rule at the current selection.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definehorizontalrule" href="#definehorizontalrule">defineHorizontalRule</a>(): [`HorizontalRuleExtension`](#horizontalruleextension)</code>
+<code data-typedoc-code><i>function</i> <a id="definehorizontalrule" href="#definehorizontalrule">defineHorizontalRule</a>(): [`HorizontalRuleExtension`](#horizontalruleextension)</code>
 
 </dt>
 

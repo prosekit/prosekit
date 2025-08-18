@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="level" href="#level">level</a>: `number`</code>
+<code data-typedoc-code><a id="level" href="#level">level</a>: `number`</code>
 
 </dt>
 
@@ -28,7 +28,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineheading" href="#defineheading">defineHeading</a>(): `HeadingExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineheading" href="#defineheading">defineHeading</a>(): `HeadingExtension`</code>
 
 </dt>
 

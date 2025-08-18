@@ -14,7 +14,7 @@ Re-exports from [prosemirror-keymap](https://github.com/ProseMirror/prosemirror-
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="keymap" href="#keymap">keymap</a>(`bindings`: `object`): [`ProseMirrorPlugin`](state.md#prosemirrorplugin)</code>
+<code data-typedoc-code><i>function</i> <a id="keymap" href="#keymap">keymap</a>(`bindings`: `object`): [`ProseMirrorPlugin`](state.md#prosemirrorplugin)</code>
 
 </dt>
 
@@ -62,7 +62,7 @@ the array get to dispatch first).
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="keydownhandler" href="#keydownhandler">keydownHandler</a>(`bindings`: `object`): (`view`: [`EditorView`](view.md#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean`</code>
+<code data-typedoc-code><i>function</i> <a id="keydownhandler" href="#keydownhandler">keydownHandler</a>(`bindings`: `object`): (`view`: [`EditorView`](view.md#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean`</code>
 
 </dt>
 

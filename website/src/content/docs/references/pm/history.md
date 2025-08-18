@@ -96,7 +96,7 @@ scroll the selection into view.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="closehistory" href="#closehistory">closeHistory</a>(`tr`: [`Transaction`](state.md#transaction)): [`Transaction`](state.md#transaction)</code>
+<code data-typedoc-code><i>function</i> <a id="closehistory" href="#closehistory">closeHistory</a>(`tr`: [`Transaction`](state.md#transaction)): [`Transaction`](state.md#transaction)</code>
 
 </dt>
 
@@ -118,7 +118,7 @@ require a separate undo command to undo).
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="history" href="#history">history</a>(`config?`: [`HistoryOptions`](https://prosemirror.net/docs/ref/#history.HistoryOptions)): [`ProseMirrorPlugin`](state.md#prosemirrorplugin)</code>
+<code data-typedoc-code><i>function</i> <a id="history" href="#history">history</a>(`config?`: [`HistoryOptions`](https://prosemirror.net/docs/ref/#history.HistoryOptions)): [`ProseMirrorPlugin`](state.md#prosemirrorplugin)</code>
 
 </dt>
 
@@ -144,7 +144,7 @@ to prevent it from being rolled back by undo.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="undodepth" href="#undodepth">undoDepth</a>(`state`: [`EditorState`](state.md#editorstate)): `any`</code>
+<code data-typedoc-code><i>function</i> <a id="undodepth" href="#undodepth">undoDepth</a>(`state`: [`EditorState`](state.md#editorstate)): `any`</code>
 
 </dt>
 
@@ -164,7 +164,7 @@ The amount of undoable events available in a given state.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="redodepth" href="#redodepth">redoDepth</a>(`state`: [`EditorState`](state.md#editorstate)): `any`</code>
+<code data-typedoc-code><i>function</i> <a id="redodepth" href="#redodepth">redoDepth</a>(`state`: [`EditorState`](state.md#editorstate)): `any`</code>
 
 </dt>
 

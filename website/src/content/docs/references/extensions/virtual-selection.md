@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definevirtualselection" href="#definevirtualselection">defineVirtualSelection</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definevirtualselection" href="#definevirtualselection">defineVirtualSelection</a>(): `PlainExtension`</code>
 
 </dt>
 

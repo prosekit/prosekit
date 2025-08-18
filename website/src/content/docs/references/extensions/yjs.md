@@ -16,7 +16,7 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="awareness" href="#awareness">awareness</a>: `Awareness`</code>
+<code data-typedoc-code><a id="awareness" href="#awareness">awareness</a>: `Awareness`</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fragment" href="#fragment">fragment</a>: `YXmlFragment`</code>
+<code data-typedoc-code><a id="fragment" href="#fragment">fragment</a>: `YXmlFragment`</code>
 
 </dt>
 
@@ -56,7 +56,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc" href="#doc">doc</a>: `Doc`</code>
+<code data-typedoc-code><a id="doc" href="#doc">doc</a>: `Doc`</code>
 
 </dt>
 
@@ -72,7 +72,7 @@ The Yjs instance handles the state of shared data.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="awareness-1" href="#awareness-1">awareness</a>: `Awareness`</code>
+<code data-typedoc-code><a id="awareness-1" href="#awareness-1">awareness</a>: `Awareness`</code>
 
 </dt>
 
@@ -88,7 +88,7 @@ The Awareness instance.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fragment-1" href="#fragment-1">fragment</a><i>?</i>: `YXmlFragment`</code>
+<code data-typedoc-code><a id="fragment-1" href="#fragment-1">fragment</a><i>?</i>: `YXmlFragment`</code>
 
 </dt>
 
@@ -105,7 +105,7 @@ The Yjs XmlFragment to use. If not provided,
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sync" href="#sync">sync</a><i>?</i>: `YSyncOpts`</code>
+<code data-typedoc-code><a id="sync" href="#sync">sync</a><i>?</i>: `YSyncOpts`</code>
 
 </dt>
 
@@ -121,7 +121,7 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="undo" href="#undo">undo</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="undo" href="#undo">undo</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -137,7 +137,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="cursor" href="#cursor">cursor</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="cursor" href="#cursor">cursor</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -157,7 +157,7 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="yjscursorpluginoptions" href="#yjscursorpluginoptions">YjsCursorPluginOptions</a> = [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`Parameters`](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)\<*typeof* `yCursorPlugin`\>\[`1`\]\></code>
+<code data-typedoc-code>type <a id="yjscursorpluginoptions" href="#yjscursorpluginoptions">YjsCursorPluginOptions</a> = [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`Parameters`](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)\<*typeof* `yCursorPlugin`\>\[`1`\]\></code>
 
 </dt>
 
@@ -177,7 +177,7 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="yjssyncpluginoptions" href="#yjssyncpluginoptions">YjsSyncPluginOptions</a> = [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`Parameters`](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)\<*typeof* `ySyncPlugin`\>\[`1`\]\></code>
+<code data-typedoc-code>type <a id="yjssyncpluginoptions" href="#yjssyncpluginoptions">YjsSyncPluginOptions</a> = [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`Parameters`](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)\<*typeof* `ySyncPlugin`\>\[`1`\]\></code>
 
 </dt>
 
@@ -197,7 +197,7 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="yjsundopluginoptions" href="#yjsundopluginoptions">YjsUndoPluginOptions</a> = [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`Parameters`](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)\<*typeof* `originalYUndoPlugin`\>\[`0`\]\></code>
+<code data-typedoc-code>type <a id="yjsundopluginoptions" href="#yjsundopluginoptions">YjsUndoPluginOptions</a> = [`NonNullable`](https://www.typescriptlang.org/docs/handbook/utility-types.html#nonnullabletype)\<[`Parameters`](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)\<*typeof* `originalYUndoPlugin`\>\[`0`\]\></code>
 
 </dt>
 
@@ -217,7 +217,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineyjscommands" href="#defineyjscommands">defineYjsCommands</a>(): `YjsCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineyjscommands" href="#defineyjscommands">defineYjsCommands</a>(): `YjsCommandsExtension`</code>
 
 </dt>
 
@@ -231,7 +231,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineyjscursorplugin" href="#defineyjscursorplugin">defineYjsCursorPlugin</a>(`options`: [`YjsCursorOptions`](#yjscursoroptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineyjscursorplugin" href="#defineyjscursorplugin">defineYjsCursorPlugin</a>(`options`: [`YjsCursorOptions`](#yjscursoroptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -245,7 +245,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineyjskeymap" href="#defineyjskeymap">defineYjsKeymap</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineyjskeymap" href="#defineyjskeymap">defineYjsKeymap</a>(): `PlainExtension`</code>
 
 </dt>
 
@@ -259,7 +259,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineyjssyncplugin" href="#defineyjssyncplugin">defineYjsSyncPlugin</a>(`options`: [`YjsSyncOptions`](#yjssyncoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineyjssyncplugin" href="#defineyjssyncplugin">defineYjsSyncPlugin</a>(`options`: [`YjsSyncOptions`](#yjssyncoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -273,7 +273,7 @@ Options for the `y-prosemirror`'s `yUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineyjs" href="#defineyjs">defineYjs</a>(`options`: [`YjsOptions`](#yjsoptions)): `YjsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineyjs" href="#defineyjs">defineYjs</a>(`options`: [`YjsOptions`](#yjsoptions)): `YjsExtension`</code>
 
 </dt>
 

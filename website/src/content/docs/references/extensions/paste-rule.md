@@ -16,7 +16,7 @@ The options for [defineMarkPasteRule](#definemarkpasterule).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -33,7 +33,7 @@ all instances of the mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type" href="#type">type</a>: `string` \| [`MarkType`](../pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type" href="#type">type</a>: `string` \| [`MarkType`](../pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -49,7 +49,7 @@ The mark type to apply to the matched text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getattrs" href="#getattrs">getAttrs</a><i>?</i>: (`match`: `RegExpExecArray`) => `undefined` \| `null` \| `false` \| [`Attrs`](../pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="getattrs" href="#getattrs">getAttrs</a><i>?</i>: (`match`: `RegExpExecArray`) => `undefined` \| `null` \| `false` \| [`Attrs`](../pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -71,7 +71,7 @@ or `undefined`, that is interpreted as an empty/default set of attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="shouldskip" href="#shouldskip">shouldSkip</a><i>?</i>: (`node`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode)) => `boolean`</code>
+<code data-typedoc-code><a id="shouldskip" href="#shouldskip">shouldSkip</a><i>?</i>: (`node`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode)) => `boolean`</code>
 
 </dt>
 
@@ -96,7 +96,7 @@ Options for [PasteRuleHandler](#pasterulehandler).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="slice" href="#slice">slice</a>: [`Slice`](../pm/model.md#slice)</code>
+<code data-typedoc-code><a id="slice" href="#slice">slice</a>: [`Slice`](../pm/model.md#slice)</code>
 
 </dt>
 
@@ -112,7 +112,7 @@ The slice to be pasted.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view" href="#view">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view" href="#view">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
 
 </dt>
 
@@ -128,7 +128,7 @@ The editor view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="plain" href="#plain">plain</a>: `boolean`</code>
+<code data-typedoc-code><a id="plain" href="#plain">plain</a>: `boolean`</code>
 
 </dt>
 
@@ -153,7 +153,7 @@ Options for [definePasteRule](#definepasterule).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="handler" href="#handler">handler</a>: [`PasteRuleHandler`](#pasterulehandler)</code>
+<code data-typedoc-code><a id="handler" href="#handler">handler</a>: [`PasteRuleHandler`](#pasterulehandler)</code>
 
 </dt>
 
@@ -173,7 +173,7 @@ A function to be called when a paste rule is triggered.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="pasterulehandler" href="#pasterulehandler">PasteRuleHandler</a> = (`options`: [`PasteRuleHandlerOptions`](#pasterulehandleroptions)) => [`Slice`](../pm/model.md#slice)</code>
+<code data-typedoc-code>type <a id="pasterulehandler" href="#pasterulehandler">PasteRuleHandler</a> = (`options`: [`PasteRuleHandlerOptions`](#pasterulehandleroptions)) => [`Slice`](../pm/model.md#slice)</code>
 
 </dt>
 
@@ -194,7 +194,7 @@ applied to the document.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemarkpasterule" href="#definemarkpasterule">defineMarkPasteRule</a>(`options`: [`MarkPasteRuleOptions`](#markpasteruleoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definemarkpasterule" href="#definemarkpasterule">defineMarkPasteRule</a>(`options`: [`MarkPasteRuleOptions`](#markpasteruleoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -214,7 +214,7 @@ Defines a paste rule that applies marks based on regex patterns.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definepasterule" href="#definepasterule">definePasteRule</a>(`options`: [`PasteRuleOptions`](#pasteruleoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definepasterule" href="#definepasterule">definePasteRule</a>(`options`: [`PasteRuleOptions`](#pasteruleoptions)): `PlainExtension`</code>
 
 </dt>
 

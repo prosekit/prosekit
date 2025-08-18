@@ -16,7 +16,7 @@ The options for [defineMarkRule](#definemarkrule).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -33,7 +33,7 @@ all instances of the mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type" href="#type">type</a>: `string` \| [`MarkType`](../pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type" href="#type">type</a>: `string` \| [`MarkType`](../pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -49,7 +49,7 @@ The mark type to apply to the matched text.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](../pm/model.md#attrs-4) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](../pm/model.md#attrs-4) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -74,7 +74,7 @@ with the matched result from the regular expression.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemarkrule" href="#definemarkrule">defineMarkRule</a>(`options`: [`MarkRuleOptions`](#markruleoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definemarkrule" href="#definemarkrule">defineMarkRule</a>(`options`: [`MarkRuleOptions`](#markruleoptions)): `PlainExtension`</code>
 
 </dt>
 

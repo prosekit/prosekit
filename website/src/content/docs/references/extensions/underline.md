@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineunderline" href="#defineunderline">defineUnderline</a>(): `UnderlineExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineunderline" href="#defineunderline">defineUnderline</a>(): `UnderlineExtension`</code>
 
 </dt>
 

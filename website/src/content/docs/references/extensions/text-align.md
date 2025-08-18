@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="types" href="#types">types</a>: `NodeName`[]</code>
+<code data-typedoc-code><a id="types" href="#types">types</a>: `NodeName`[]</code>
 
 </dt>
 
@@ -36,7 +36,7 @@ The names of node to add the attribute to.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="default" href="#default">default</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="default" href="#default">default</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -60,7 +60,7 @@ The default value for the attribute.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetextalign" href="#definetextalign">defineTextAlign</a>\<NodeName\>(`options`: [`TextAlignOptions`](#textalignoptions)\<`NodeName`\>): `TextAlignExtension`\<`NodeName`\></code>
+<code data-typedoc-code><i>function</i> <a id="definetextalign" href="#definetextalign">defineTextAlign</a>\<NodeName\>(`options`: [`TextAlignOptions`](#textalignoptions)\<`NodeName`\>): `TextAlignExtension`\<`NodeName`\></code>
 
 </dt>
 

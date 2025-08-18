@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="row" href="#row">row</a>: `number`</code>
+<code data-typedoc-code><a id="row" href="#row">row</a>: `number`</code>
 
 </dt>
 
@@ -30,7 +30,7 @@ The number of rows in the table.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="col" href="#col">col</a>: `number`</code>
+<code data-typedoc-code><a id="col" href="#col">col</a>: `number`</code>
 
 </dt>
 
@@ -46,7 +46,7 @@ The number of columns in the table.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="header" href="#header">header</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="header" href="#header">header</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -72,7 +72,7 @@ Whether the table has a header row.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="anchor" href="#anchor">anchor</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="anchor" href="#anchor">anchor</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -89,7 +89,7 @@ anchor will be used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="head" href="#head">head</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="head" href="#head">head</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -112,7 +112,7 @@ head will be used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="anchor-1" href="#anchor-1">anchor</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="anchor-1" href="#anchor-1">anchor</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -129,7 +129,7 @@ anchor will be used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="head-1" href="#head-1">head</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="head-1" href="#head-1">head</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -152,7 +152,7 @@ head will be used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos" href="#pos">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos" href="#pos">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -175,7 +175,7 @@ anchor will be used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-1" href="#pos-1">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos-1" href="#pos-1">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -200,7 +200,7 @@ Options for [moveTableColumn](#movetablecolumn)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from" href="#from">from</a>: `number`</code>
+<code data-typedoc-code><a id="from" href="#from">from</a>: `number`</code>
 
 </dt>
 
@@ -216,7 +216,7 @@ The source column index to move from.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to" href="#to">to</a>: `number`</code>
+<code data-typedoc-code><a id="to" href="#to">to</a>: `number`</code>
 
 </dt>
 
@@ -232,7 +232,7 @@ The destination column index to move to.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="select" href="#select">select</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="select" href="#select">select</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -252,7 +252,7 @@ Whether to select the moved column after the operation.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-2" href="#pos-2">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos-2" href="#pos-2">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -276,7 +276,7 @@ Options for [moveTableRow](#movetablerow)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-1" href="#from-1">from</a>: `number`</code>
+<code data-typedoc-code><a id="from-1" href="#from-1">from</a>: `number`</code>
 
 </dt>
 
@@ -292,7 +292,7 @@ The source row index to move from.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-1" href="#to-1">to</a>: `number`</code>
+<code data-typedoc-code><a id="to-1" href="#to-1">to</a>: `number`</code>
 
 </dt>
 
@@ -308,7 +308,7 @@ The destination row index to move to.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="select-1" href="#select-1">select</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="select-1" href="#select-1">select</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -328,7 +328,7 @@ Whether to select the moved row after the operation.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-3" href="#pos-3">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos-3" href="#pos-3">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -369,7 +369,7 @@ table, and move the cursor there.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="inserttable" href="#inserttable">insertTable</a>(`options`: [`InsertTableOptions`](#inserttableoptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="inserttable" href="#inserttable">insertTable</a>(`options`: [`InsertTableOptions`](#inserttableoptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -390,7 +390,7 @@ a header row.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="selecttablecolumn" href="#selecttablecolumn">selectTableColumn</a>(`options?`: [`SelectTableColumnOptions`](#selecttablecolumnoptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="selecttablecolumn" href="#selecttablecolumn">selectTableColumn</a>(`options?`: [`SelectTableColumnOptions`](#selecttablecolumnoptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -408,7 +408,7 @@ a header row.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="selecttablerow" href="#selecttablerow">selectTableRow</a>(`options?`: [`SelectTableRowOptions`](#selecttablerowoptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="selecttablerow" href="#selecttablerow">selectTableRow</a>(`options?`: [`SelectTableRowOptions`](#selecttablerowoptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -426,7 +426,7 @@ a header row.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="selecttablecell" href="#selecttablecell">selectTableCell</a>(`options?`: [`SelectTableCellOptions`](#selecttablecelloptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="selecttablecell" href="#selecttablecell">selectTableCell</a>(`options?`: [`SelectTableCellOptions`](#selecttablecelloptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -444,7 +444,7 @@ a header row.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="selecttable" href="#selecttable">selectTable</a>(`options?`: [`SelectTableOptions`](#selecttableoptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="selecttable" href="#selecttable">selectTable</a>(`options?`: [`SelectTableOptions`](#selecttableoptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -462,7 +462,7 @@ a header row.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetablecommands" href="#definetablecommands">defineTableCommands</a>(): `TableCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetablecommands" href="#definetablecommands">defineTableCommands</a>(): `TableCommandsExtension`</code>
 
 </dt>
 
@@ -482,7 +482,7 @@ Adds commands for working with `table` nodes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="movetablecolumn" href="#movetablecolumn">moveTableColumn</a>(`options`: [`MoveTableColumnOptions`](#movetablecolumnoptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="movetablecolumn" href="#movetablecolumn">moveTableColumn</a>(`options`: [`MoveTableColumnOptions`](#movetablecolumnoptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -502,7 +502,7 @@ Move a table column from index `origin` to index `target`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="movetablerow" href="#movetablerow">moveTableRow</a>(`options`: [`MoveTableRowOptions`](#movetablerowoptions)): [`Command`](../pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="movetablerow" href="#movetablerow">moveTableRow</a>(`options`: [`MoveTableRowOptions`](#movetablerowoptions)): [`Command`](../pm/state.md#command)</code>
 
 </dt>
 
@@ -522,7 +522,7 @@ Move a table row from index `origin` to index `target`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetableplugins" href="#definetableplugins">defineTablePlugins</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetableplugins" href="#definetableplugins">defineTablePlugins</a>(): `PlainExtension`</code>
 
 </dt>
 
@@ -540,7 +540,7 @@ Move a table row from index `origin` to index `target`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetableheadercellspec" href="#definetableheadercellspec">defineTableHeaderCellSpec</a>(): `TableHeaderCellSpecExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetableheadercellspec" href="#definetableheadercellspec">defineTableHeaderCellSpec</a>(): `TableHeaderCellSpecExtension`</code>
 
 </dt>
 
@@ -554,7 +554,7 @@ Move a table row from index `origin` to index `target`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="iscellselection" href="#iscellselection">isCellSelection</a>(`value`: `unknown`): `value is CellSelection`</code>
+<code data-typedoc-code><i>function</i> <a id="iscellselection" href="#iscellselection">isCellSelection</a>(`value`: `unknown`): `value is CellSelection`</code>
 
 </dt>
 
@@ -574,7 +574,7 @@ Checks if the given object is a `CellSelection` instance.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetable" href="#definetable">defineTable</a>(): `TableExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetable" href="#definetable">defineTable</a>(): `TableExtension`</code>
 
 </dt>
 

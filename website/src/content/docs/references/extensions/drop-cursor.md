@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="color" href="#color">color</a><i>?</i>: `string` \| `false`</code>
+<code data-typedoc-code><a id="color" href="#color">color</a><i>?</i>: `string` \| `false`</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ The color of the cursor.  Use `false` to apply no color and rely only on class.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width" href="#width">width</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="width" href="#width">width</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -54,7 +54,7 @@ The precise width of the cursor in pixels.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="class" href="#class">class</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="class" href="#class">class</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -74,7 +74,7 @@ A CSS class name to add to the cursor element.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedropcursor" href="#definedropcursor">defineDropCursor</a>(`options?`: [`DropCursorOptions`](#dropcursoroptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedropcursor" href="#definedropcursor">defineDropCursor</a>(`options?`: [`DropCursorOptions`](#dropcursoroptions)): `PlainExtension`</code>
 
 </dt>
 

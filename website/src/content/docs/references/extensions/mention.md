@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="id" href="#id">id</a>: `string`</code>
+<code data-typedoc-code><a id="id" href="#id">id</a>: `string`</code>
 
 </dt>
 
@@ -24,7 +24,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="value" href="#value">value</a>: `string`</code>
+<code data-typedoc-code><a id="value" href="#value">value</a>: `string`</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="kind" href="#kind">kind</a>: `string`</code>
+<code data-typedoc-code><a id="kind" href="#kind">kind</a>: `string`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definementionspec" href="#definementionspec">defineMentionSpec</a>(): `MentionSpecExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definementionspec" href="#definementionspec">defineMentionSpec</a>(): `MentionSpecExtension`</code>
 
 </dt>
 
@@ -66,7 +66,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definementioncommands" href="#definementioncommands">defineMentionCommands</a>(): `MentionCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definementioncommands" href="#definementioncommands">defineMentionCommands</a>(): `MentionCommandsExtension`</code>
 
 </dt>
 
@@ -80,7 +80,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemention" href="#definemention">defineMention</a>(): `MentionExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definemention" href="#definemention">defineMention</a>(): `MentionExtension`</code>
 
 </dt>
 

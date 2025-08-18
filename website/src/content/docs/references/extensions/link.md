@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="href" href="#href">href</a>: `string`</code>
+<code data-typedoc-code><a id="href" href="#href">href</a>: `string`</code>
 
 </dt>
 
@@ -24,7 +24,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="target" href="#target">target</a><i>?</i>: `null` \| `string`</code>
+<code data-typedoc-code><a id="target" href="#target">target</a><i>?</i>: `null` \| `string`</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rel" href="#rel">rel</a><i>?</i>: `null` \| `string`</code>
+<code data-typedoc-code><a id="rel" href="#rel">rel</a><i>?</i>: `null` \| `string`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelinkcommands" href="#definelinkcommands">defineLinkCommands</a>(): `LinkCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelinkcommands" href="#definelinkcommands">defineLinkCommands</a>(): `LinkCommandsExtension`</code>
 
 </dt>
 
@@ -62,7 +62,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelink" href="#definelink">defineLink</a>(): `LinkExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelink" href="#definelink">defineLink</a>(): `LinkExtension`</code>
 
 </dt>
 

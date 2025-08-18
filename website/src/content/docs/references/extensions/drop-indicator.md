@@ -16,7 +16,7 @@ Options for [defineDropIndicator](#definedropindicator).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onshow" href="#onshow">onShow</a><i>?</i>: [`ShowHandler`](#showhandler)</code>
+<code data-typedoc-code><a id="onshow" href="#onshow">onShow</a><i>?</i>: [`ShowHandler`](#showhandler)</code>
 
 </dt>
 
@@ -32,7 +32,7 @@ A callback that is called when the drop indicator should be shown.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onhide" href="#onhide">onHide</a><i>?</i>: `VoidFunction`</code>
+<code data-typedoc-code><a id="onhide" href="#onhide">onHide</a><i>?</i>: `VoidFunction`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ A callback that is called when the drop indicator should be hidden.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ondrag" href="#ondrag">onDrag</a><i>?</i>: [`DragEventHandler`](#drageventhandler)</code>
+<code data-typedoc-code><a id="ondrag" href="#ondrag">onDrag</a><i>?</i>: [`DragEventHandler`](#drageventhandler)</code>
 
 </dt>
 
@@ -74,7 +74,7 @@ Options for [DragEventHandler](#drageventhandler).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view" href="#view">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view" href="#view">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
 
 </dt>
 
@@ -90,7 +90,7 @@ The editor's view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos" href="#pos">pos</a>: `number`</code>
+<code data-typedoc-code><a id="pos" href="#pos">pos</a>: `number`</code>
 
 </dt>
 
@@ -106,7 +106,7 @@ The drop position in current document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="event" href="#event">event</a>: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)</code>
+<code data-typedoc-code><a id="event" href="#event">event</a>: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)</code>
 
 </dt>
 
@@ -130,7 +130,7 @@ Options for [ShowHandler](#showhandler).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="view-1" href="#view-1">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
+<code data-typedoc-code><a id="view-1" href="#view-1">view</a>: [`EditorView`](../pm/view.md#editorview)</code>
 
 </dt>
 
@@ -146,7 +146,7 @@ The editor's view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-1" href="#pos-1">pos</a>: `number`</code>
+<code data-typedoc-code><a id="pos-1" href="#pos-1">pos</a>: `number`</code>
 
 </dt>
 
@@ -162,7 +162,7 @@ The ProseMirror position that the drop indicator should be shown at.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="line" href="#line">line</a>: `Line`</code>
+<code data-typedoc-code><a id="line" href="#line">line</a>: `Line`</code>
 
 </dt>
 
@@ -182,7 +182,7 @@ The line that the drop indicator should be shown at.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="drageventhandler" href="#drageventhandler">DragEventHandler</a> = (`options`: [`DragEventHandlerOptions`](#drageventhandleroptions)) => `boolean`</code>
+<code data-typedoc-code>type <a id="drageventhandler" href="#drageventhandler">DragEventHandler</a> = (`options`: [`DragEventHandlerOptions`](#drageventhandleroptions)) => `boolean`</code>
 
 </dt>
 
@@ -204,7 +204,7 @@ indicator.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="showhandler" href="#showhandler">ShowHandler</a> = (`options`: [`ShowHandlerOptions`](#showhandleroptions)) => `void`</code>
+<code data-typedoc-code>type <a id="showhandler" href="#showhandler">ShowHandler</a> = (`options`: [`ShowHandlerOptions`](#showhandleroptions)) => `void`</code>
 
 </dt>
 
@@ -224,7 +224,7 @@ A function that will be called when the drop indicator should be shown.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedropindicator" href="#definedropindicator">defineDropIndicator</a>(`options?`: [`DropIndicatorOptions`](#dropindicatoroptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedropindicator" href="#definedropindicator">defineDropIndicator</a>(`options?`: [`DropIndicatorOptions`](#dropindicatoroptions)): `PlainExtension`</code>
 
 </dt>
 

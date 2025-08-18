@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definehardbreak" href="#definehardbreak">defineHardBreak</a>(): `HardBreakExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definehardbreak" href="#definehardbreak">defineHardBreak</a>(): `HardBreakExtension`</code>
 
 </dt>
 

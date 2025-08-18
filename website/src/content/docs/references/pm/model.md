@@ -25,7 +25,7 @@ attributes they have.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">Mark</a>(): [`Mark`](#mark)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">Mark</a>(): [`Mark`](#mark)</code>
 
 </dt>
 
@@ -136,7 +136,7 @@ unsorted array of marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addtoset" href="#addtoset">addToSet</a>(`set`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
+<code data-typedoc-code><a id="addtoset" href="#addtoset">addToSet</a>(`set`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
 
 </dt>
 
@@ -156,7 +156,7 @@ those are replaced by this one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removefromset" href="#removefromset">removeFromSet</a>(`set`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
+<code data-typedoc-code><a id="removefromset" href="#removefromset">removeFromSet</a>(`set`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
 
 </dt>
 
@@ -173,7 +173,7 @@ mark is not in the set, the set itself is returned.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isinset" href="#isinset">isInSet</a>(`set`: readonly [`Mark`](#mark)[]): `boolean`</code>
+<code data-typedoc-code><a id="isinset" href="#isinset">isInSet</a>(`set`: readonly [`Mark`](#mark)[]): `boolean`</code>
 
 </dt>
 
@@ -189,7 +189,7 @@ Test whether this mark is in the given set of marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq" href="#eq">eq</a>(`other`: [`Mark`](#mark)): `boolean`</code>
+<code data-typedoc-code><a id="eq" href="#eq">eq</a>(`other`: [`Mark`](#mark)): `boolean`</code>
 
 </dt>
 
@@ -206,7 +206,7 @@ another mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson" href="#tojson">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson" href="#tojson">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -233,7 +233,7 @@ marks of various types to DOM nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">DOMSerializer</a>(`nodes`: `object`, `marks`: `object`): [`DOMSerializer`](#domserializer)</code>
+<code data-typedoc-code>new <a id="constructor-1" href="#constructor-1">DOMSerializer</a>(`nodes`: `object`, `marks`: `object`): [`DOMSerializer`](#domserializer)</code>
 
 </dt>
 
@@ -291,7 +291,7 @@ The mark serialization functions.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="serializefragment" href="#serializefragment">serializeFragment</a>(`fragment`: [`ProseMirrorFragment`](#prosemirrorfragment), `options?`: `object`, `target?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment)</code>
+<code data-typedoc-code><a id="serializefragment" href="#serializefragment">serializeFragment</a>(`fragment`: [`ProseMirrorFragment`](#prosemirrorfragment), `options?`: `object`, `target?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment)</code>
 
 </dt>
 
@@ -310,7 +310,7 @@ nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="serializenode" href="#serializenode">serializeNode</a>(`node`: [`ProseMirrorNode`](#prosemirrornode), `options?`: `object`): [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
+<code data-typedoc-code><a id="serializenode" href="#serializenode">serializeNode</a>(`node`: [`ProseMirrorNode`](#prosemirrornode), `options?`: `object`): [`Node`](https://developer.mozilla.org/docs/Web/API/Node)</code>
 
 </dt>
 
@@ -415,7 +415,7 @@ numbers as `this.depth + value`.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">ResolvedPos</a>(): [`ResolvedPos`](#resolvedpos)</code>
+<code data-typedoc-code>new <a id="constructor-2" href="#constructor-2">ResolvedPos</a>(): [`ResolvedPos`](#resolvedpos)</code>
 
 </dt>
 
@@ -459,7 +459,7 @@ The offset this position has into its parent node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="depth" href="#depth">depth</a>: `number`</code>
+<code data-typedoc-code><a id="depth" href="#depth">depth</a>: `number`</code>
 
 </dt>
 
@@ -479,7 +479,7 @@ points into a top-level paragraph, 1, and so on.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="parent" href="#parent">parent</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="parent" href="#parent">parent</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -497,7 +497,7 @@ the parent—text nodes are ‘flat’ in this model, and have no content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="doc" href="#doc">doc</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="doc" href="#doc">doc</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -513,7 +513,7 @@ The root node in which the position was resolved.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="textoffset" href="#textoffset">textOffset</a>(): `number`</code>
+<code data-typedoc-code>get <a id="textoffset" href="#textoffset">textOffset</a>(): `number`</code>
 
 </dt>
 
@@ -531,7 +531,7 @@ Will be zero for positions that point between nodes.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="nodeafter" href="#nodeafter">nodeAfter</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="nodeafter" href="#nodeafter">nodeAfter</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -549,7 +549,7 @@ position is returned.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="nodebefore" href="#nodebefore">nodeBefore</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="nodebefore" href="#nodebefore">nodeBefore</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -569,7 +569,7 @@ before the position is returned.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node" href="#node">node</a>(`depth?`: `null` \| `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="node" href="#node">node</a>(`depth?`: `null` \| `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -586,7 +586,7 @@ same as `p.parent`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="index" href="#index">index</a>(`depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="index" href="#index">index</a>(`depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -604,7 +604,7 @@ example, `p.index(0)` is 1 and `p.index(1)` is 2.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="indexafter" href="#indexafter">indexAfter</a>(`depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="indexafter" href="#indexafter">indexAfter</a>(`depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -621,7 +621,7 @@ given level.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="start" href="#start">start</a>(`depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="start" href="#start">start</a>(`depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -638,7 +638,7 @@ level.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="end" href="#end">end</a>(`depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="end" href="#end">end</a>(`depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -655,7 +655,7 @@ level.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="before" href="#before">before</a>(`depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="before" href="#before">before</a>(`depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -673,7 +673,7 @@ position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="after" href="#after">after</a>(`depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="after" href="#after">after</a>(`depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -690,7 +690,7 @@ given level, or the original position when `depth` is `this.depth + 1`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="posatindex" href="#posatindex">posAtIndex</a>(`index`: `number`, `depth?`: `null` \| `number`): `number`</code>
+<code data-typedoc-code><a id="posatindex" href="#posatindex">posAtIndex</a>(`index`: `number`, `depth?`: `null` \| `number`): `number`</code>
 
 </dt>
 
@@ -707,7 +707,7 @@ given depth (which defaults to `this.depth`).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marks-1" href="#marks-1">marks</a>(): readonly [`Mark`](#mark)[]</code>
+<code data-typedoc-code><a id="marks-1" href="#marks-1">marks</a>(): readonly [`Mark`](#mark)[]</code>
 
 </dt>
 
@@ -726,7 +726,7 @@ node after it (if any) are returned.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marksacross" href="#marksacross">marksAcross</a>(`$end`: [`ResolvedPos`](#resolvedpos)): `null` \| readonly [`Mark`](#mark)[]</code>
+<code data-typedoc-code><a id="marksacross" href="#marksacross">marksAcross</a>(`$end`: [`ResolvedPos`](#resolvedpos)): `null` \| readonly [`Mark`](#mark)[]</code>
 
 </dt>
 
@@ -747,7 +747,7 @@ case no marks should be preserved).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="shareddepth" href="#shareddepth">sharedDepth</a>(`pos`: `number`): `number`</code>
+<code data-typedoc-code><a id="shareddepth" href="#shareddepth">sharedDepth</a>(`pos`: `number`): `number`</code>
 
 </dt>
 
@@ -764,7 +764,7 @@ position share the same parent nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="blockrange" href="#blockrange">blockRange</a>(`other?`: [`ResolvedPos`](#resolvedpos), `pred?`: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => `boolean`): `null` \| [`NodeRange`](#noderange)</code>
+<code data-typedoc-code><a id="blockrange" href="#blockrange">blockRange</a>(`other?`: [`ResolvedPos`](#resolvedpos), `pred?`: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => `boolean`): `null` \| [`NodeRange`](#noderange)</code>
 
 </dt>
 
@@ -786,7 +786,7 @@ node to see if a range into that parent is acceptable.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameparent" href="#sameparent">sameParent</a>(`other`: [`ResolvedPos`](#resolvedpos)): `boolean`</code>
+<code data-typedoc-code><a id="sameparent" href="#sameparent">sameParent</a>(`other`: [`ResolvedPos`](#resolvedpos)): `boolean`</code>
 
 </dt>
 
@@ -802,7 +802,7 @@ Query whether the given position shares the same parent node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="max" href="#max">max</a>(`other`: [`ResolvedPos`](#resolvedpos)): [`ResolvedPos`](#resolvedpos)</code>
+<code data-typedoc-code><a id="max" href="#max">max</a>(`other`: [`ResolvedPos`](#resolvedpos)): [`ResolvedPos`](#resolvedpos)</code>
 
 </dt>
 
@@ -818,7 +818,7 @@ Return the greater of this and the given position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="min" href="#min">min</a>(`other`: [`ResolvedPos`](#resolvedpos)): [`ResolvedPos`](#resolvedpos)</code>
+<code data-typedoc-code><a id="min" href="#min">min</a>(`other`: [`ResolvedPos`](#resolvedpos)): [`ResolvedPos`](#resolvedpos)</code>
 
 </dt>
 
@@ -845,7 +845,7 @@ ends in the same node.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-3" href="#constructor-3">NodeRange</a>(`$from`: [`ResolvedPos`](#resolvedpos), `$to`: [`ResolvedPos`](#resolvedpos), `depth`: `number`): [`NodeRange`](#noderange)</code>
+<code data-typedoc-code>new <a id="constructor-3" href="#constructor-3">NodeRange</a>(`$from`: [`ResolvedPos`](#resolvedpos), `$to`: [`ResolvedPos`](#resolvedpos), `depth`: `number`): [`NodeRange`](#noderange)</code>
 
 </dt>
 
@@ -919,7 +919,7 @@ The depth of the node that this range points into.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="start-2" href="#start-2">start</a>(): `number`</code>
+<code data-typedoc-code>get <a id="start-2" href="#start-2">start</a>(): `number`</code>
 
 </dt>
 
@@ -935,7 +935,7 @@ The position at the start of the range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="end-2" href="#end-2">end</a>(): `number`</code>
+<code data-typedoc-code>get <a id="end-2" href="#end-2">end</a>(): `number`</code>
 
 </dt>
 
@@ -951,7 +951,7 @@ The position at the end of the range.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="parent-1" href="#parent-1">parent</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="parent-1" href="#parent-1">parent</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -967,7 +967,7 @@ The parent node that the range points into.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="startindex" href="#startindex">startIndex</a>(): `number`</code>
+<code data-typedoc-code>get <a id="startindex" href="#startindex">startIndex</a>(): `number`</code>
 
 </dt>
 
@@ -983,7 +983,7 @@ The start index of the range in the parent node.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="endindex" href="#endindex">endIndex</a>(): `number`</code>
+<code data-typedoc-code>get <a id="endindex" href="#endindex">endIndex</a>(): `number`</code>
 
 </dt>
 
@@ -1010,7 +1010,7 @@ given an invalid replacement.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-4" href="#constructor-4">ReplaceError</a>(`message?`: `string`): [`ReplaceError`](#replaceerror)</code>
+<code data-typedoc-code>new <a id="constructor-4" href="#constructor-4">ReplaceError</a>(`message?`: `string`): [`ReplaceError`](#replaceerror)</code>
 
 </dt>
 
@@ -1022,7 +1022,7 @@ given an invalid replacement.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-4" href="#constructor-4">ReplaceError</a>(`message?`: `string`, `options?`: `ErrorOptions`): [`ReplaceError`](#replaceerror)</code>
+<code data-typedoc-code>new <a id="constructor-4" href="#constructor-4">ReplaceError</a>(`message?`: `string`, `options?`: `ErrorOptions`): [`ReplaceError`](#replaceerror)</code>
 
 </dt>
 
@@ -1044,7 +1044,7 @@ both side are ‘open’ (cut through).
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-5" href="#constructor-5">Slice</a>(`content`: [`ProseMirrorFragment`](#prosemirrorfragment), `openStart`: `number`, `openEnd`: `number`): [`Slice`](#slice)</code>
+<code data-typedoc-code>new <a id="constructor-5" href="#constructor-5">Slice</a>(`content`: [`ProseMirrorFragment`](#prosemirrorfragment), `openStart`: `number`, `openEnd`: `number`): [`Slice`](#slice)</code>
 
 </dt>
 
@@ -1137,7 +1137,7 @@ The empty slice.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="size" href="#size">size</a>(): `number`</code>
+<code data-typedoc-code>get <a id="size" href="#size">size</a>(): `number`</code>
 
 </dt>
 
@@ -1155,7 +1155,7 @@ The size this slice would add when inserted into a document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq-2" href="#eq-2">eq</a>(`other`: [`Slice`](#slice)): `boolean`</code>
+<code data-typedoc-code><a id="eq-2" href="#eq-2">eq</a>(`other`: [`Slice`](#slice)): `boolean`</code>
 
 </dt>
 
@@ -1171,7 +1171,7 @@ Tests whether this slice is equal to another slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-2" href="#tojson-2">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-2" href="#tojson-2">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -1232,7 +1232,7 @@ defined by an array of [rules](https://prosemirror.net/docs/ref/#model.ParseRule
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-6" href="#constructor-6">DOMParser</a>(`schema`: [`Schema`](#schema-3), `rules`: readonly [`ParseRule`](#parserule)[]): [`DOMParser`](#domparser)</code>
+<code data-typedoc-code>new <a id="constructor-6" href="#constructor-6">DOMParser</a>(`schema`: [`Schema`](#schema-3), `rules`: readonly [`ParseRule`](#parserule)[]): [`DOMParser`](#domparser)</code>
 
 </dt>
 
@@ -1286,7 +1286,7 @@ uses, in order of precedence.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parse" href="#parse">parse</a>(`dom`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options?`: [`ParseOptions`](#parseoptions)): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="parse" href="#parse">parse</a>(`dom`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options?`: [`ParseOptions`](#parseoptions)): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -1302,7 +1302,7 @@ Parse a document from the content of a DOM node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parseslice" href="#parseslice">parseSlice</a>(`dom`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options?`: [`ParseOptions`](#parseoptions)): [`Slice`](#slice)</code>
+<code data-typedoc-code><a id="parseslice" href="#parseslice">parseSlice</a>(`dom`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options?`: [`ParseOptions`](#parseoptions)): [`Slice`](#slice)</code>
 
 </dt>
 
@@ -1354,7 +1354,7 @@ represents.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-7" href="#constructor-7">NodeType</a>(): [`NodeType`](#nodetype)</code>
+<code data-typedoc-code>new <a id="constructor-7" href="#constructor-7">NodeType</a>(): [`NodeType`](#nodetype)</code>
 
 </dt>
 
@@ -1414,7 +1414,7 @@ The spec that this type is based on
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inlinecontent" href="#inlinecontent">inlineContent</a>: `boolean`</code>
+<code data-typedoc-code><a id="inlinecontent" href="#inlinecontent">inlineContent</a>: `boolean`</code>
 
 </dt>
 
@@ -1430,7 +1430,7 @@ True if this node type has inline content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isblock" href="#isblock">isBlock</a>: `boolean`</code>
+<code data-typedoc-code><a id="isblock" href="#isblock">isBlock</a>: `boolean`</code>
 
 </dt>
 
@@ -1446,7 +1446,7 @@ True if this is a block type
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="istext" href="#istext">isText</a>: `boolean`</code>
+<code data-typedoc-code><a id="istext" href="#istext">isText</a>: `boolean`</code>
 
 </dt>
 
@@ -1462,7 +1462,7 @@ True if this is the text node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentmatch" href="#contentmatch">contentMatch</a>: [`ContentMatch`](#contentmatch-1)</code>
+<code data-typedoc-code><a id="contentmatch" href="#contentmatch">contentMatch</a>: [`ContentMatch`](#contentmatch-1)</code>
 
 </dt>
 
@@ -1478,7 +1478,7 @@ The starting match of the node type's content expression.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="markset" href="#markset">markSet</a>: `null` \| readonly [`MarkType`](#marktype-1)[]</code>
+<code data-typedoc-code><a id="markset" href="#markset">markSet</a>: `null` \| readonly [`MarkType`](#marktype-1)[]</code>
 
 </dt>
 
@@ -1497,7 +1497,7 @@ are allowed.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isinline" href="#isinline">isInline</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isinline" href="#isinline">isInline</a>(): `boolean`</code>
 
 </dt>
 
@@ -1513,7 +1513,7 @@ True if this is an inline type.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="istextblock" href="#istextblock">isTextblock</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="istextblock" href="#istextblock">isTextblock</a>(): `boolean`</code>
 
 </dt>
 
@@ -1530,7 +1530,7 @@ content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isleaf" href="#isleaf">isLeaf</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isleaf" href="#isleaf">isLeaf</a>(): `boolean`</code>
 
 </dt>
 
@@ -1546,7 +1546,7 @@ True for node types that allow no content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isatom" href="#isatom">isAtom</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isatom" href="#isatom">isAtom</a>(): `boolean`</code>
 
 </dt>
 
@@ -1563,7 +1563,7 @@ directly editable content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="whitespace" href="#whitespace">whitespace</a>(): `"pre"` \| `"normal"`</code>
+<code data-typedoc-code>get <a id="whitespace" href="#whitespace">whitespace</a>(): `"pre"` \| `"normal"`</code>
 
 </dt>
 
@@ -1581,7 +1581,7 @@ The node type's [whitespace](https://prosemirror.net/docs/ref/#model.NodeSpec.wh
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isingroup" href="#isingroup">isInGroup</a>(`group`: `string`): `boolean`</code>
+<code data-typedoc-code><a id="isingroup" href="#isingroup">isInGroup</a>(`group`: `string`): `boolean`</code>
 
 </dt>
 
@@ -1598,7 +1598,7 @@ Return true when this node type is part of the given
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hasrequiredattrs" href="#hasrequiredattrs">hasRequiredAttrs</a>(): `boolean`</code>
+<code data-typedoc-code><a id="hasrequiredattrs" href="#hasrequiredattrs">hasRequiredAttrs</a>(): `boolean`</code>
 
 </dt>
 
@@ -1614,7 +1614,7 @@ Tells you whether this node type has any required attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="compatiblecontent" href="#compatiblecontent">compatibleContent</a>(`other`: [`NodeType`](#nodetype)): `boolean`</code>
+<code data-typedoc-code><a id="compatiblecontent" href="#compatiblecontent">compatibleContent</a>(`other`: [`NodeType`](#nodetype)): `boolean`</code>
 
 </dt>
 
@@ -1631,7 +1631,7 @@ the given node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="create" href="#create">create</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: `null` \| [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="create" href="#create">create</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: `null` \| [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -1652,7 +1652,7 @@ set of marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="createchecked" href="#createchecked">createChecked</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: `null` \| [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="createchecked" href="#createchecked">createChecked</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: `null` \| [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -1670,7 +1670,7 @@ if it doesn't match.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="createandfill" href="#createandfill">createAndFill</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: `null` \| [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="createandfill" href="#createandfill">createAndFill</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: `null` \| [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -1691,7 +1691,7 @@ always be created, this will always succeed if you pass null or
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="validcontent" href="#validcontent">validContent</a>(`content`: [`ProseMirrorFragment`](#prosemirrorfragment)): `boolean`</code>
+<code data-typedoc-code><a id="validcontent" href="#validcontent">validContent</a>(`content`: [`ProseMirrorFragment`](#prosemirrorfragment)): `boolean`</code>
 
 </dt>
 
@@ -1708,7 +1708,7 @@ type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="allowsmarktype" href="#allowsmarktype">allowsMarkType</a>(`markType`: [`MarkType`](#marktype-1)): `boolean`</code>
+<code data-typedoc-code><a id="allowsmarktype" href="#allowsmarktype">allowsMarkType</a>(`markType`: [`MarkType`](#marktype-1)): `boolean`</code>
 
 </dt>
 
@@ -1724,7 +1724,7 @@ Check whether the given mark type is allowed in this node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="allowsmarks" href="#allowsmarks">allowsMarks</a>(`marks`: readonly [`Mark`](#mark)[]): `boolean`</code>
+<code data-typedoc-code><a id="allowsmarks" href="#allowsmarks">allowsMarks</a>(`marks`: readonly [`Mark`](#mark)[]): `boolean`</code>
 
 </dt>
 
@@ -1740,7 +1740,7 @@ Test whether the given set of marks are allowed in this node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="allowedmarks" href="#allowedmarks">allowedMarks</a>(`marks`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
+<code data-typedoc-code><a id="allowedmarks" href="#allowedmarks">allowedMarks</a>(`marks`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
 
 </dt>
 
@@ -1769,7 +1769,7 @@ instantiated once per `Schema`.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-8" href="#constructor-8">MarkType</a>(): [`MarkType`](#marktype-1)</code>
+<code data-typedoc-code>new <a id="constructor-8" href="#constructor-8">MarkType</a>(): [`MarkType`](#marktype-1)</code>
 
 </dt>
 
@@ -1831,7 +1831,7 @@ The spec on which the type is based.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="create-2" href="#create-2">create</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4)): [`Mark`](#mark)</code>
+<code data-typedoc-code><a id="create-2" href="#create-2">create</a>(`attrs?`: `null` \| [`Attrs`](#attrs-4)): [`Mark`](#mark)</code>
 
 </dt>
 
@@ -1849,7 +1849,7 @@ they have defaults, will be added.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removefromset-2" href="#removefromset-2">removeFromSet</a>(`set`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
+<code data-typedoc-code><a id="removefromset-2" href="#removefromset-2">removeFromSet</a>(`set`: readonly [`Mark`](#mark)[]): readonly [`Mark`](#mark)[]</code>
 
 </dt>
 
@@ -1866,7 +1866,7 @@ without it is returned. Otherwise, the input set is returned.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isinset-2" href="#isinset-2">isInSet</a>(`set`: readonly [`Mark`](#mark)[]): `undefined` \| [`Mark`](#mark)</code>
+<code data-typedoc-code><a id="isinset-2" href="#isinset-2">isInSet</a>(`set`: readonly [`Mark`](#mark)[]): `undefined` \| [`Mark`](#mark)</code>
 
 </dt>
 
@@ -1882,7 +1882,7 @@ Tests whether there is a mark of this type in the given set.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="excludes" href="#excludes">excludes</a>(`other`: [`MarkType`](#marktype-1)): `boolean`</code>
+<code data-typedoc-code><a id="excludes" href="#excludes">excludes</a>(`other`: [`MarkType`](#marktype-1)): `boolean`</code>
 
 </dt>
 
@@ -1915,7 +1915,7 @@ marks in this schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-9" href="#constructor-9">Schema</a>\<Nodes, Marks\>(`spec`: [`SchemaSpec`](#schemaspec)\<`Nodes`, `Marks`\>): [`Schema`](#schema-3)\<`Nodes`, `Marks`\></code>
+<code data-typedoc-code>new <a id="constructor-9" href="#constructor-9">Schema</a>\<Nodes, Marks\>(`spec`: [`SchemaSpec`](#schemaspec)\<`Nodes`, `Marks`\>): [`Schema`](#schema-3)\<`Nodes`, `Marks`\></code>
 
 </dt>
 
@@ -1933,7 +1933,7 @@ Construct a schema from a schema [specification](https://prosemirror.net/docs/re
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="spec-2" href="#spec-2">spec</a>: `object`</code>
+<code data-typedoc-code><a id="spec-2" href="#spec-2">spec</a>: `object`</code>
 
 </dt>
 
@@ -1953,7 +1953,7 @@ properties are
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodes-4" href="#nodes-4">nodes</a>: `{ readonly [name in string]: NodeType }` & `object`</code>
+<code data-typedoc-code><a id="nodes-4" href="#nodes-4">nodes</a>: `{ readonly [name in string]: NodeType }` & `object`</code>
 
 </dt>
 
@@ -1969,7 +1969,7 @@ An object mapping the schema's node names to node type objects.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marks-7" href="#marks-7">marks</a>: `{ readonly [name in string]: MarkType }` & `object`</code>
+<code data-typedoc-code><a id="marks-7" href="#marks-7">marks</a>: `{ readonly [name in string]: MarkType }` & `object`</code>
 
 </dt>
 
@@ -1985,7 +1985,7 @@ A map from mark names to mark type objects.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="linebreakreplacement-1" href="#linebreakreplacement-1">linebreakReplacement</a>: `null` \| [`NodeType`](#nodetype)</code>
+<code data-typedoc-code><a id="linebreakreplacement-1" href="#linebreakreplacement-1">linebreakReplacement</a>: `null` \| [`NodeType`](#nodetype)</code>
 
 </dt>
 
@@ -2003,7 +2003,7 @@ in this schema, if any.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topnodetype" href="#topnodetype">topNodeType</a>: [`NodeType`](#nodetype)</code>
+<code data-typedoc-code><a id="topnodetype" href="#topnodetype">topNodeType</a>: [`NodeType`](#nodetype)</code>
 
 </dt>
 
@@ -2020,7 +2020,7 @@ for this schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="cached" href="#cached">cached</a>: `object`</code>
+<code data-typedoc-code><a id="cached" href="#cached">cached</a>: `object`</code>
 
 </dt>
 
@@ -2038,7 +2038,7 @@ in it, try to use property names unlikely to clash.)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodefromjson" href="#nodefromjson">nodeFromJSON</a>: (`json`: `any`) => [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="nodefromjson" href="#nodefromjson">nodeFromJSON</a>: (`json`: `any`) => [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2055,7 +2055,7 @@ bound.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="markfromjson-2" href="#markfromjson-2">markFromJSON</a>: (`json`: `any`) => [`Mark`](#mark)</code>
+<code data-typedoc-code><a id="markfromjson-2" href="#markfromjson-2">markFromJSON</a>: (`json`: `any`) => [`Mark`](#mark)</code>
 
 </dt>
 
@@ -2074,7 +2074,7 @@ bound.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node-3" href="#node-3">node</a>(`type`: `string` \| [`NodeType`](#nodetype), `attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="node-3" href="#node-3">node</a>(`type`: `string` \| [`NodeType`](#nodetype), `attrs?`: `null` \| [`Attrs`](#attrs-4), `content?`: [`ProseMirrorNode`](#prosemirrornode) \| [`ProseMirrorFragment`](#prosemirrorfragment) \| readonly [`ProseMirrorNode`](#prosemirrornode)[], `marks?`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2093,7 +2093,7 @@ nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="text" href="#text">text</a>(`text`: `string`, `marks?`: `null` \| readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="text" href="#text">text</a>(`text`: `string`, `marks?`: `null` \| readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2110,7 +2110,7 @@ allowed.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mark-4" href="#mark-4">mark</a>(`type`: `string` \| [`MarkType`](#marktype-1), `attrs?`: `null` \| [`Attrs`](#attrs-4)): [`Mark`](#mark)</code>
+<code data-typedoc-code><a id="mark-4" href="#mark-4">mark</a>(`type`: `string` \| [`MarkType`](#marktype-1), `attrs?`: `null` \| [`Attrs`](#attrs-4)): [`Mark`](#mark)</code>
 
 </dt>
 
@@ -2140,7 +2140,7 @@ instances whenever needed. The API tries to make this easy.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-10" href="#constructor-10">ProseMirrorFragment</a>(): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code>new <a id="constructor-10" href="#constructor-10">ProseMirrorFragment</a>(): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2205,7 +2205,7 @@ its content nodes.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="firstchild" href="#firstchild">firstChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="firstchild" href="#firstchild">firstChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2221,7 +2221,7 @@ The first child of the fragment, or `null` if it is empty.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="lastchild" href="#lastchild">lastChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="lastchild" href="#lastchild">lastChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2237,7 +2237,7 @@ The last child of the fragment, or `null` if it is empty.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="childcount" href="#childcount">childCount</a>(): `number`</code>
+<code data-typedoc-code>get <a id="childcount" href="#childcount">childCount</a>(): `number`</code>
 
 </dt>
 
@@ -2307,7 +2307,7 @@ fragment containing those nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodesbetween" href="#nodesbetween">nodesBetween</a>(`from`: `number`, `to`: `number`, `f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `start`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`, `nodeStart?`: `number`, `parent?`: [`ProseMirrorNode`](#prosemirrornode)): `void`</code>
+<code data-typedoc-code><a id="nodesbetween" href="#nodesbetween">nodesBetween</a>(`from`: `number`, `to`: `number`, `f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `start`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`, `nodeStart?`: `number`, `parent?`: [`ProseMirrorNode`](#prosemirrornode)): `void`</code>
 
 </dt>
 
@@ -2325,7 +2325,7 @@ into a node when the callback returns `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="descendants" href="#descendants">descendants</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `pos`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`): `void`</code>
+<code data-typedoc-code><a id="descendants" href="#descendants">descendants</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `pos`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`): `void`</code>
 
 </dt>
 
@@ -2343,7 +2343,7 @@ relative to the start of the fragment. The callback may return
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="textbetween" href="#textbetween">textBetween</a>(`from`: `number`, `to`: `number`, `blockSeparator?`: `null` \| `string`, `leafText?`: `null` \| `string` \| (`leafNode`: [`ProseMirrorNode`](#prosemirrornode)) => `string`): `string`</code>
+<code data-typedoc-code><a id="textbetween" href="#textbetween">textBetween</a>(`from`: `number`, `to`: `number`, `blockSeparator?`: `null` \| `string`, `leafText?`: `null` \| `string` \| (`leafNode`: [`ProseMirrorNode`](#prosemirrornode)) => `string`): `string`</code>
 
 </dt>
 
@@ -2360,7 +2360,7 @@ Extract the text between `from` and `to`. See the same method on
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="append" href="#append">append</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="append" href="#append">append</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2377,7 +2377,7 @@ fragment and the other.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="cut" href="#cut">cut</a>(`from`: `number`, `to?`: `number`): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="cut" href="#cut">cut</a>(`from`: `number`, `to?`: `number`): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2393,7 +2393,7 @@ Cut out the sub-fragment between the two given positions.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacechild" href="#replacechild">replaceChild</a>(`index`: `number`, `node`: [`ProseMirrorNode`](#prosemirrornode)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="replacechild" href="#replacechild">replaceChild</a>(`index`: `number`, `node`: [`ProseMirrorNode`](#prosemirrornode)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2410,7 +2410,7 @@ replaced by the given node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addtostart" href="#addtostart">addToStart</a>(`node`: [`ProseMirrorNode`](#prosemirrornode)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="addtostart" href="#addtostart">addToStart</a>(`node`: [`ProseMirrorNode`](#prosemirrornode)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2427,7 +2427,7 @@ fragment.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addtoend" href="#addtoend">addToEnd</a>(`node`: [`ProseMirrorNode`](#prosemirrornode)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="addtoend" href="#addtoend">addToEnd</a>(`node`: [`ProseMirrorNode`](#prosemirrornode)): [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2444,7 +2444,7 @@ fragment.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq-4" href="#eq-4">eq</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment)): `boolean`</code>
+<code data-typedoc-code><a id="eq-4" href="#eq-4">eq</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment)): `boolean`</code>
 
 </dt>
 
@@ -2460,7 +2460,7 @@ Compare this fragment to another one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="child" href="#child">child</a>(`index`: `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="child" href="#child">child</a>(`index`: `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2477,7 +2477,7 @@ index is out of range.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="maybechild" href="#maybechild">maybeChild</a>(`index`: `number`): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="maybechild" href="#maybechild">maybeChild</a>(`index`: `number`): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2493,7 +2493,7 @@ Get the child node at the given index, if it exists.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="foreach" href="#foreach">forEach</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `offset`: `number`, `index`: `number`) => `void`): `void`</code>
+<code data-typedoc-code><a id="foreach" href="#foreach">forEach</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `offset`: `number`, `index`: `number`) => `void`): `void`</code>
 
 </dt>
 
@@ -2510,7 +2510,7 @@ into this parent node, and its index.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="finddiffstart" href="#finddiffstart">findDiffStart</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment), `pos?`: `number`): `null` \| `number`</code>
+<code data-typedoc-code><a id="finddiffstart" href="#finddiffstart">findDiffStart</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment), `pos?`: `number`): `null` \| `number`</code>
 
 </dt>
 
@@ -2527,7 +2527,7 @@ fragment differ, or `null` if they are the same.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="finddiffend" href="#finddiffend">findDiffEnd</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment), `pos?`: `number`, `otherPos?`: `number`): `null` \| \{ `a`: `number`; `b`: `number`; \}</code>
+<code data-typedoc-code><a id="finddiffend" href="#finddiffend">findDiffEnd</a>(`other`: [`ProseMirrorFragment`](#prosemirrorfragment), `pos?`: `number`, `otherPos?`: `number`): `null` \| \{ `a`: `number`; `b`: `number`; \}</code>
 
 </dt>
 
@@ -2546,7 +2546,7 @@ nodes, an object with two separate positions is returned.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tostring" href="#tostring">toString</a>(): `string`</code>
+<code data-typedoc-code><a id="tostring" href="#tostring">toString</a>(): `string`</code>
 
 </dt>
 
@@ -2562,7 +2562,7 @@ Return a debugging string that describes this fragment.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-4" href="#tojson-4">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-4" href="#tojson-4">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2591,7 +2591,7 @@ position is a valid end of the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-11" href="#constructor-11">ContentMatch</a>(): [`ContentMatch`](#contentmatch-1)</code>
+<code data-typedoc-code>new <a id="constructor-11" href="#constructor-11">ContentMatch</a>(): [`ContentMatch`](#contentmatch-1)</code>
 
 </dt>
 
@@ -2621,7 +2621,7 @@ True when this match state represents a valid end of the node.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="defaulttype" href="#defaulttype">defaultType</a>(): `null` \| [`NodeType`](#nodetype)</code>
+<code data-typedoc-code>get <a id="defaulttype" href="#defaulttype">defaultType</a>(): `null` \| [`NodeType`](#nodetype)</code>
 
 </dt>
 
@@ -2638,7 +2638,7 @@ be generated.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="edgecount" href="#edgecount">edgeCount</a>(): `number`</code>
+<code data-typedoc-code>get <a id="edgecount" href="#edgecount">edgeCount</a>(): `number`</code>
 
 </dt>
 
@@ -2657,7 +2657,7 @@ automaton that describes the content expression.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="matchtype" href="#matchtype">matchType</a>(`type`: [`NodeType`](#nodetype)): `null` \| [`ContentMatch`](#contentmatch-1)</code>
+<code data-typedoc-code><a id="matchtype" href="#matchtype">matchType</a>(`type`: [`NodeType`](#nodetype)): `null` \| [`ContentMatch`](#contentmatch-1)</code>
 
 </dt>
 
@@ -2674,7 +2674,7 @@ successful.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="matchfragment" href="#matchfragment">matchFragment</a>(`frag`: [`ProseMirrorFragment`](#prosemirrorfragment), `start?`: `number`, `end?`: `number`): `null` \| [`ContentMatch`](#contentmatch-1)</code>
+<code data-typedoc-code><a id="matchfragment" href="#matchfragment">matchFragment</a>(`frag`: [`ProseMirrorFragment`](#prosemirrorfragment), `start?`: `number`, `end?`: `number`): `null` \| [`ContentMatch`](#contentmatch-1)</code>
 
 </dt>
 
@@ -2691,7 +2691,7 @@ successful.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fillbefore" href="#fillbefore">fillBefore</a>(`after`: [`ProseMirrorFragment`](#prosemirrorfragment), `toEnd?`: `boolean`, `startIndex?`: `number`): `null` \| [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="fillbefore" href="#fillbefore">fillBefore</a>(`after`: [`ProseMirrorFragment`](#prosemirrorfragment), `toEnd?`: `boolean`, `startIndex?`: `number`): `null` \| [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -2712,7 +2712,7 @@ content expression.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="findwrapping" href="#findwrapping">findWrapping</a>(`target`: [`NodeType`](#nodetype)): `null` \| readonly [`NodeType`](#nodetype)[]</code>
+<code data-typedoc-code><a id="findwrapping" href="#findwrapping">findWrapping</a>(`target`: [`NodeType`](#nodetype)): `null` \| readonly [`NodeType`](#nodetype)[]</code>
 
 </dt>
 
@@ -2731,7 +2731,7 @@ exists.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="edge" href="#edge">edge</a>(`n`: `number`): [`MatchEdge`](https://prosemirror.net/docs/ref/#model.MatchEdge)</code>
+<code data-typedoc-code><a id="edge" href="#edge">edge</a>(`n`: `number`): [`MatchEdge`](https://prosemirror.net/docs/ref/#model.MatchEdge)</code>
 
 </dt>
 
@@ -2769,7 +2769,7 @@ tree shape like this (without back pointers) makes easy.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-12" href="#constructor-12">ProseMirrorNode</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>new <a id="constructor-12" href="#constructor-12">ProseMirrorNode</a>(): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2866,7 +2866,7 @@ For text nodes, this contains the node's text content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="children" href="#children">children</a>(): readonly [`ProseMirrorNode`](#prosemirrornode)[]</code>
+<code data-typedoc-code>get <a id="children" href="#children">children</a>(): readonly [`ProseMirrorNode`](#prosemirrornode)[]</code>
 
 </dt>
 
@@ -2882,7 +2882,7 @@ The array of this node's child nodes.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="nodesize" href="#nodesize">nodeSize</a>(): `number`</code>
+<code data-typedoc-code>get <a id="nodesize" href="#nodesize">nodeSize</a>(): `number`</code>
 
 </dt>
 
@@ -2902,7 +2902,7 @@ start and end token).
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="childcount-1" href="#childcount-1">childCount</a>(): `number`</code>
+<code data-typedoc-code>get <a id="childcount-1" href="#childcount-1">childCount</a>(): `number`</code>
 
 </dt>
 
@@ -2918,7 +2918,7 @@ The number of children that the node has.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="textcontent" href="#textcontent">textContent</a>(): `string`</code>
+<code data-typedoc-code>get <a id="textcontent" href="#textcontent">textContent</a>(): `string`</code>
 
 </dt>
 
@@ -2935,7 +2935,7 @@ children.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="firstchild-1" href="#firstchild-1">firstChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="firstchild-1" href="#firstchild-1">firstChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2952,7 +2952,7 @@ children.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="lastchild-1" href="#lastchild-1">lastChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="lastchild-1" href="#lastchild-1">lastChild</a>(): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -2969,7 +2969,7 @@ children.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isblock-1" href="#isblock-1">isBlock</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isblock-1" href="#isblock-1">isBlock</a>(): `boolean`</code>
 
 </dt>
 
@@ -2985,7 +2985,7 @@ True when this is a block (non-inline node)
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="istextblock-1" href="#istextblock-1">isTextblock</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="istextblock-1" href="#istextblock-1">isTextblock</a>(): `boolean`</code>
 
 </dt>
 
@@ -3002,7 +3002,7 @@ content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="inlinecontent-1" href="#inlinecontent-1">inlineContent</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="inlinecontent-1" href="#inlinecontent-1">inlineContent</a>(): `boolean`</code>
 
 </dt>
 
@@ -3018,7 +3018,7 @@ True when this node allows inline content.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isinline-1" href="#isinline-1">isInline</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isinline-1" href="#isinline-1">isInline</a>(): `boolean`</code>
 
 </dt>
 
@@ -3035,7 +3035,7 @@ appear among text).
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="istext-1" href="#istext-1">isText</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="istext-1" href="#istext-1">isText</a>(): `boolean`</code>
 
 </dt>
 
@@ -3051,7 +3051,7 @@ True when this is a text node.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isleaf-1" href="#isleaf-1">isLeaf</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isleaf-1" href="#isleaf-1">isLeaf</a>(): `boolean`</code>
 
 </dt>
 
@@ -3067,7 +3067,7 @@ True when this is a leaf node.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="isatom-1" href="#isatom-1">isAtom</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="isatom-1" href="#isatom-1">isAtom</a>(): `boolean`</code>
 
 </dt>
 
@@ -3105,7 +3105,7 @@ Deserialize a node from its JSON representation.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="child-2" href="#child-2">child</a>(`index`: `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="child-2" href="#child-2">child</a>(`index`: `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3122,7 +3122,7 @@ index is out of range.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="maybechild-2" href="#maybechild-2">maybeChild</a>(`index`: `number`): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="maybechild-2" href="#maybechild-2">maybeChild</a>(`index`: `number`): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3138,7 +3138,7 @@ Get the child node at the given index, if it exists.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="foreach-2" href="#foreach-2">forEach</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `offset`: `number`, `index`: `number`) => `void`): `void`</code>
+<code data-typedoc-code><a id="foreach-2" href="#foreach-2">forEach</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `offset`: `number`, `index`: `number`) => `void`): `void`</code>
 
 </dt>
 
@@ -3155,7 +3155,7 @@ into this parent node, and its index.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodesbetween-2" href="#nodesbetween-2">nodesBetween</a>(`from`: `number`, `to`: `number`, `f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `pos`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`, `startPos?`: `number`): `void`</code>
+<code data-typedoc-code><a id="nodesbetween-2" href="#nodesbetween-2">nodesBetween</a>(`from`: `number`, `to`: `number`, `f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `pos`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`, `startPos?`: `number`): `void`</code>
 
 </dt>
 
@@ -3178,7 +3178,7 @@ starting position to count from.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="descendants-2" href="#descendants-2">descendants</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `pos`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`): `void`</code>
+<code data-typedoc-code><a id="descendants-2" href="#descendants-2">descendants</a>(`f`: (`node`: [`ProseMirrorNode`](#prosemirrornode), `pos`: `number`, `parent`: `null` \| [`ProseMirrorNode`](#prosemirrornode), `index`: `number`) => `boolean` \| `void`): `void`</code>
 
 </dt>
 
@@ -3195,7 +3195,7 @@ descend into a node when the callback returns `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="textbetween-2" href="#textbetween-2">textBetween</a>(`from`: `number`, `to`: `number`, `blockSeparator?`: `null` \| `string`, `leafText?`: `null` \| `string` \| (`leafNode`: [`ProseMirrorNode`](#prosemirrornode)) => `string`): `string`</code>
+<code data-typedoc-code><a id="textbetween-2" href="#textbetween-2">textBetween</a>(`from`: `number`, `to`: `number`, `blockSeparator?`: `null` \| `string`, `leafText?`: `null` \| `string` \| (`leafNode`: [`ProseMirrorNode`](#prosemirrornode)) => `string`): `string`</code>
 
 </dt>
 
@@ -3215,7 +3215,7 @@ inserted for every non-text leaf node encountered, otherwise
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eq-6" href="#eq-6">eq</a>(`other`: [`ProseMirrorNode`](#prosemirrornode)): `boolean`</code>
+<code data-typedoc-code><a id="eq-6" href="#eq-6">eq</a>(`other`: [`ProseMirrorNode`](#prosemirrornode)): `boolean`</code>
 
 </dt>
 
@@ -3231,7 +3231,7 @@ Test whether two nodes represent the same piece of document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samemarkup" href="#samemarkup">sameMarkup</a>(`other`: [`ProseMirrorNode`](#prosemirrornode)): `boolean`</code>
+<code data-typedoc-code><a id="samemarkup" href="#samemarkup">sameMarkup</a>(`other`: [`ProseMirrorNode`](#prosemirrornode)): `boolean`</code>
 
 </dt>
 
@@ -3248,7 +3248,7 @@ those of another. Returns `true` if both have the same markup.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hasmarkup" href="#hasmarkup">hasMarkup</a>(`type`: [`NodeType`](#nodetype), `attrs?`: `null` \| [`Attrs`](#attrs-4), `marks?`: readonly [`Mark`](#mark)[]): `boolean`</code>
+<code data-typedoc-code><a id="hasmarkup" href="#hasmarkup">hasMarkup</a>(`type`: [`NodeType`](#nodetype), `attrs?`: `null` \| [`Attrs`](#attrs-4), `marks?`: readonly [`Mark`](#mark)[]): `boolean`</code>
 
 </dt>
 
@@ -3265,7 +3265,7 @@ attributes, and marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="copy" href="#copy">copy</a>(`content?`: `null` \| [`ProseMirrorFragment`](#prosemirrorfragment)): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="copy" href="#copy">copy</a>(`content?`: `null` \| [`ProseMirrorFragment`](#prosemirrorfragment)): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3282,7 +3282,7 @@ the given content (or empty, if no content is given).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mark-6" href="#mark-6">mark</a>(`marks`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="mark-6" href="#mark-6">mark</a>(`marks`: readonly [`Mark`](#mark)[]): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3299,7 +3299,7 @@ of the node's own marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="cut-2" href="#cut-2">cut</a>(`from`: `number`, `to?`: `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="cut-2" href="#cut-2">cut</a>(`from`: `number`, `to?`: `number`): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3317,7 +3317,7 @@ the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="slice-1" href="#slice-1">slice</a>(`from`: `number`, `to?`: `number`, `includeParents?`: `boolean`): [`Slice`](#slice)</code>
+<code data-typedoc-code><a id="slice-1" href="#slice-1">slice</a>(`from`: `number`, `to?`: `number`, `includeParents?`: `boolean`): [`Slice`](#slice)</code>
 
 </dt>
 
@@ -3334,7 +3334,7 @@ return it as a `Slice` object.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace" href="#replace">replace</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](#slice)): [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="replace" href="#replace">replace</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](#slice)): [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3355,7 +3355,7 @@ into. If any of this is violated, an error of type
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodeat" href="#nodeat">nodeAt</a>(`pos`: `number`): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="nodeat" href="#nodeat">nodeAt</a>(`pos`: `number`): `null` \| [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3371,7 +3371,7 @@ Find the node directly after the given position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="childafter" href="#childafter">childAfter</a>(`pos`: `number`): `object`</code>
+<code data-typedoc-code><a id="childafter" href="#childafter">childAfter</a>(`pos`: `number`): `object`</code>
 
 </dt>
 
@@ -3389,7 +3389,7 @@ node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="childbefore" href="#childbefore">childBefore</a>(`pos`: `number`): `object`</code>
+<code data-typedoc-code><a id="childbefore" href="#childbefore">childBefore</a>(`pos`: `number`): `object`</code>
 
 </dt>
 
@@ -3407,7 +3407,7 @@ node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="resolve" href="#resolve">resolve</a>(`pos`: `number`): [`ResolvedPos`](#resolvedpos)</code>
+<code data-typedoc-code><a id="resolve" href="#resolve">resolve</a>(`pos`: `number`): [`ResolvedPos`](#resolvedpos)</code>
 
 </dt>
 
@@ -3424,7 +3424,7 @@ Resolve the given position in the document, returning an
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rangehasmark" href="#rangehasmark">rangeHasMark</a>(`from`: `number`, `to`: `number`, `type`: [`MarkType`](#marktype-1) \| [`Mark`](#mark)): `boolean`</code>
+<code data-typedoc-code><a id="rangehasmark" href="#rangehasmark">rangeHasMark</a>(`from`: `number`, `to`: `number`, `type`: [`MarkType`](#marktype-1) \| [`Mark`](#mark)): `boolean`</code>
 
 </dt>
 
@@ -3441,7 +3441,7 @@ between the two given positions.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tostring-2" href="#tostring-2">toString</a>(): `string`</code>
+<code data-typedoc-code><a id="tostring-2" href="#tostring-2">toString</a>(): `string`</code>
 
 </dt>
 
@@ -3458,7 +3458,7 @@ purposes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentmatchat" href="#contentmatchat">contentMatchAt</a>(`index`: `number`): [`ContentMatch`](#contentmatch-1)</code>
+<code data-typedoc-code><a id="contentmatchat" href="#contentmatchat">contentMatchAt</a>(`index`: `number`): [`ContentMatch`](#contentmatch-1)</code>
 
 </dt>
 
@@ -3474,7 +3474,7 @@ Get the content match in this node at the given index.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canreplace" href="#canreplace">canReplace</a>(`from`: `number`, `to`: `number`, `replacement?`: [`ProseMirrorFragment`](#prosemirrorfragment), `start?`: `number`, `end?`: `number`): `boolean`</code>
+<code data-typedoc-code><a id="canreplace" href="#canreplace">canReplace</a>(`from`: `number`, `to`: `number`, `replacement?`: [`ProseMirrorFragment`](#prosemirrorfragment), `start?`: `number`, `end?`: `number`): `boolean`</code>
 
 </dt>
 
@@ -3494,7 +3494,7 @@ replacement fragment.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canreplacewith" href="#canreplacewith">canReplaceWith</a>(`from`: `number`, `to`: `number`, `type`: [`NodeType`](#nodetype), `marks?`: readonly [`Mark`](#mark)[]): `boolean`</code>
+<code data-typedoc-code><a id="canreplacewith" href="#canreplacewith">canReplaceWith</a>(`from`: `number`, `to`: `number`, `type`: [`NodeType`](#nodetype), `marks?`: readonly [`Mark`](#mark)[]): `boolean`</code>
 
 </dt>
 
@@ -3511,7 +3511,7 @@ a node of the given type would leave the node's content valid.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canappend" href="#canappend">canAppend</a>(`other`: [`ProseMirrorNode`](#prosemirrornode)): `boolean`</code>
+<code data-typedoc-code><a id="canappend" href="#canappend">canAppend</a>(`other`: [`ProseMirrorNode`](#prosemirrornode)): `boolean`</code>
 
 </dt>
 
@@ -3530,7 +3530,7 @@ merging completely incompatible nodes).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="check" href="#check">check</a>(): `void`</code>
+<code data-typedoc-code><a id="check" href="#check">check</a>(): `void`</code>
 
 </dt>
 
@@ -3547,7 +3547,7 @@ schema, and raise an exception when they do not.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-6" href="#tojson-6">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-6" href="#tojson-6">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -3573,7 +3573,7 @@ These are the options recognized by the
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="preservewhitespace" href="#preservewhitespace">preserveWhitespace</a><i>?</i>: `boolean` \| `"full"`</code>
+<code data-typedoc-code><a id="preservewhitespace" href="#preservewhitespace">preserveWhitespace</a><i>?</i>: `boolean` \| `"full"`</code>
 
 </dt>
 
@@ -3591,7 +3591,7 @@ spaces, and `"full"` to preserve whitespace entirely.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="findpositions" href="#findpositions">findPositions</a><i>?</i>: `object`[]</code>
+<code data-typedoc-code><a id="findpositions" href="#findpositions">findPositions</a><i>?</i>: `object`[]</code>
 
 </dt>
 
@@ -3611,7 +3611,7 @@ in the parsed content will not be written to.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-1" href="#from-1">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from-1" href="#from-1">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -3627,7 +3627,7 @@ The child node index to start parsing from.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-1" href="#to-1">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to-1" href="#to-1">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -3643,7 +3643,7 @@ The child node index to stop parsing at.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topnode" href="#topnode">topNode</a><i>?</i>: [`ProseMirrorNode`](#prosemirrornode)</code>
+<code data-typedoc-code><a id="topnode" href="#topnode">topNode</a><i>?</i>: [`ProseMirrorNode`](#prosemirrornode)</code>
 
 </dt>
 
@@ -3662,7 +3662,7 @@ as the top container.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topmatch" href="#topmatch">topMatch</a><i>?</i>: [`ContentMatch`](#contentmatch-1)</code>
+<code data-typedoc-code><a id="topmatch" href="#topmatch">topMatch</a><i>?</i>: [`ContentMatch`](#contentmatch-1)</code>
 
 </dt>
 
@@ -3679,7 +3679,7 @@ top node is matched against.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="context" href="#context">context</a><i>?</i>: [`ResolvedPos`](#resolvedpos)</code>
+<code data-typedoc-code><a id="context" href="#context">context</a><i>?</i>: [`ResolvedPos`](#resolvedpos)</code>
 
 </dt>
 
@@ -3706,7 +3706,7 @@ Fields that may be present in both [tag](https://prosemirror.net/docs/ref/#model
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="priority" href="#priority">priority</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -3726,7 +3726,7 @@ constructing a parser, the order of the rule array is used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="consuming" href="#consuming">consuming</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="consuming" href="#consuming">consuming</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3745,7 +3745,7 @@ after it should also run.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="context-1" href="#context-1">context</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="context-1" href="#context-1">context</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -3771,7 +3771,7 @@ character, as in `"blockquote/|list_item/"`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mark-1" href="#mark-1">mark</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="mark-1" href="#mark-1">mark</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -3787,7 +3787,7 @@ The name of the mark type to wrap the matched content in.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignore" href="#ignore">ignore</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="ignore" href="#ignore">ignore</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3803,7 +3803,7 @@ When true, ignore content that matches this rule.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="closeparent" href="#closeparent">closeParent</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="closeparent" href="#closeparent">closeParent</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3820,7 +3820,7 @@ the current node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="skip" href="#skip">skip</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="skip" href="#skip">skip</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3837,7 +3837,7 @@ its content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-1" href="#attrs-1">attrs</a><i>?</i>: [`Attrs`](#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-1" href="#attrs-1">attrs</a><i>?</i>: [`Attrs`](#attrs-4)</code>
 
 </dt>
 
@@ -3862,7 +3862,7 @@ Parse rule targeting a DOM element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="priority-1" href="#priority-1">priority</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="priority-1" href="#priority-1">priority</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -3882,7 +3882,7 @@ constructing a parser, the order of the rule array is used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="consuming-1" href="#consuming-1">consuming</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="consuming-1" href="#consuming-1">consuming</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3901,7 +3901,7 @@ after it should also run.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="context-2" href="#context-2">context</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="context-2" href="#context-2">context</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -3927,7 +3927,7 @@ character, as in `"blockquote/|list_item/"`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mark-2" href="#mark-2">mark</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="mark-2" href="#mark-2">mark</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -3943,7 +3943,7 @@ The name of the mark type to wrap the matched content in.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignore-1" href="#ignore-1">ignore</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="ignore-1" href="#ignore-1">ignore</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3959,7 +3959,7 @@ When true, ignore content that matches this rule.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="closeparent-1" href="#closeparent-1">closeParent</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="closeparent-1" href="#closeparent-1">closeParent</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3976,7 +3976,7 @@ the current node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="skip-1" href="#skip-1">skip</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="skip-1" href="#skip-1">skip</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -3993,7 +3993,7 @@ its content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-2" href="#attrs-2">attrs</a><i>?</i>: [`Attrs`](#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-2" href="#attrs-2">attrs</a><i>?</i>: [`Attrs`](#attrs-4)</code>
 
 </dt>
 
@@ -4010,7 +4010,7 @@ Attributes for the node or mark created by this rule. When
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tag" href="#tag">tag</a>: `string`</code>
+<code data-typedoc-code><a id="tag" href="#tag">tag</a>: `string`</code>
 
 </dt>
 
@@ -4026,7 +4026,7 @@ A CSS selector describing the kind of DOM elements to match.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="namespace" href="#namespace">namespace</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="namespace" href="#namespace">namespace</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4043,7 +4043,7 @@ namespace matches or this property is null.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node-2" href="#node-2">node</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="node-2" href="#node-2">node</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4063,7 +4063,7 @@ or `mark` property will be derived from its position).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getattrs" href="#getattrs">getAttrs</a><i>?</i>: (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `null` \| `false` \| [`Attrs`](#attrs-4)</code>
+<code data-typedoc-code><a id="getattrs" href="#getattrs">getAttrs</a><i>?</i>: (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `null` \| `false` \| [`Attrs`](#attrs-4)</code>
 
 </dt>
 
@@ -4083,7 +4083,7 @@ that is interpreted as an empty/default set of attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="contentelement" href="#contentelement">contentElement</a><i>?</i>: `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="contentelement" href="#contentelement">contentElement</a><i>?</i>: `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -4104,7 +4104,7 @@ to the parser.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getcontent" href="#getcontent">getContent</a><i>?</i>: (`node`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `schema`: [`Schema`](#schema-3)) => [`ProseMirrorFragment`](#prosemirrorfragment)</code>
+<code data-typedoc-code><a id="getcontent" href="#getcontent">getContent</a><i>?</i>: (`node`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `schema`: [`Schema`](#schema-3)) => [`ProseMirrorFragment`](#prosemirrorfragment)</code>
 
 </dt>
 
@@ -4122,7 +4122,7 @@ this function is used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="preservewhitespace-1" href="#preservewhitespace-1">preserveWhitespace</a><i>?</i>: `boolean` \| `"full"`</code>
+<code data-typedoc-code><a id="preservewhitespace-1" href="#preservewhitespace-1">preserveWhitespace</a><i>?</i>: `boolean` \| `"full"`</code>
 
 </dt>
 
@@ -4150,7 +4150,7 @@ A parse rule targeting a style property.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="priority-2" href="#priority-2">priority</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="priority-2" href="#priority-2">priority</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -4170,7 +4170,7 @@ constructing a parser, the order of the rule array is used.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="consuming-2" href="#consuming-2">consuming</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="consuming-2" href="#consuming-2">consuming</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4189,7 +4189,7 @@ after it should also run.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="context-3" href="#context-3">context</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="context-3" href="#context-3">context</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4215,7 +4215,7 @@ character, as in `"blockquote/|list_item/"`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mark-3" href="#mark-3">mark</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="mark-3" href="#mark-3">mark</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4231,7 +4231,7 @@ The name of the mark type to wrap the matched content in.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="ignore-2" href="#ignore-2">ignore</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="ignore-2" href="#ignore-2">ignore</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4247,7 +4247,7 @@ When true, ignore content that matches this rule.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="closeparent-2" href="#closeparent-2">closeParent</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="closeparent-2" href="#closeparent-2">closeParent</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4264,7 +4264,7 @@ the current node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="skip-2" href="#skip-2">skip</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="skip-2" href="#skip-2">skip</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4281,7 +4281,7 @@ its content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-3" href="#attrs-3">attrs</a><i>?</i>: [`Attrs`](#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-3" href="#attrs-3">attrs</a><i>?</i>: [`Attrs`](#attrs-4)</code>
 
 </dt>
 
@@ -4298,7 +4298,7 @@ Attributes for the node or mark created by this rule. When
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="style" href="#style">style</a>: `string`</code>
+<code data-typedoc-code><a id="style" href="#style">style</a>: `string`</code>
 
 </dt>
 
@@ -4321,7 +4321,7 @@ not nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tag-1" href="#tag-1">tag</a><i>?</i>: `undefined`</code>
+<code data-typedoc-code><a id="tag-1" href="#tag-1">tag</a><i>?</i>: `undefined`</code>
 
 </dt>
 
@@ -4339,7 +4339,7 @@ Given to make TS see ParseRule as a tagged union
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clearmark" href="#clearmark">clearMark</a><i>?</i>: (`mark`: [`Mark`](#mark)) => `boolean`</code>
+<code data-typedoc-code><a id="clearmark" href="#clearmark">clearMark</a><i>?</i>: (`mark`: [`Mark`](#mark)) => `boolean`</code>
 
 </dt>
 
@@ -4355,7 +4355,7 @@ Style rules can remove marks from the set of active marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getattrs-1" href="#getattrs-1">getAttrs</a><i>?</i>: (`node`: `string`) => `null` \| `false` \| [`Attrs`](#attrs-4)</code>
+<code data-typedoc-code><a id="getattrs-1" href="#getattrs-1">getAttrs</a><i>?</i>: (`node`: `string`) => `null` \| `false` \| [`Attrs`](#attrs-4)</code>
 
 </dt>
 
@@ -4381,7 +4381,7 @@ constructor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodes-2" href="#nodes-2">nodes</a>: `{ [name in string]: NodeSpec }` \| `OrderedMap`\<[`NodeSpec`](#nodespec)\></code>
+<code data-typedoc-code><a id="nodes-2" href="#nodes-2">nodes</a>: `{ [name in string]: NodeSpec }` \| `OrderedMap`\<[`NodeSpec`](#nodespec)\></code>
 
 </dt>
 
@@ -4402,7 +4402,7 @@ precedence by default, and which nodes come first in a given
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marks-4" href="#marks-4">marks</a><i>?</i>: `{ [name in string]: MarkSpec }` \| `OrderedMap`\<[`MarkSpec`](#markspec)\></code>
+<code data-typedoc-code><a id="marks-4" href="#marks-4">marks</a><i>?</i>: `{ [name in string]: MarkSpec }` \| `OrderedMap`\<[`MarkSpec`](#markspec)\></code>
 
 </dt>
 
@@ -4421,7 +4421,7 @@ rules](https://prosemirror.net/docs/ref/#model.MarkSpec.parseDOM) are tried.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topnode-1" href="#topnode-1">topNode</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="topnode-1" href="#topnode-1">topNode</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4465,7 +4465,7 @@ other code via [`NodeType.spec`](https://prosemirror.net/docs/ref/#model.NodeTyp
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="disabledropcursor" href="#disabledropcursor">disableDropCursor</a><i>?</i>: `boolean` \| (`view`: [`EditorView`](view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
+<code data-typedoc-code><a id="disabledropcursor" href="#disabledropcursor">disableDropCursor</a><i>?</i>: `boolean` \| (`view`: [`EditorView`](view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
 
 </dt>
 
@@ -4475,7 +4475,7 @@ other code via [`NodeType.spec`](https://prosemirror.net/docs/ref/#model.NodeTyp
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content-1" href="#content-1">content</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="content-1" href="#content-1">content</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4493,7 +4493,7 @@ the node does not allow any content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marks-5" href="#marks-5">marks</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="marks-5" href="#marks-5">marks</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4513,7 +4513,7 @@ marks, other nodes default to not allowing marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="group" href="#group">group</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="group" href="#group">group</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4531,7 +4531,7 @@ schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4547,7 +4547,7 @@ Should be set to true for inline nodes. (Implied for text nodes.)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="atom" href="#atom">atom</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="atom" href="#atom">atom</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4565,7 +4565,7 @@ content and should be treated as a single unit in the view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-5" href="#attrs-5">attrs</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="attrs-5" href="#attrs-5">attrs</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -4581,7 +4581,7 @@ The attributes that nodes of this type get.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selectable" href="#selectable">selectable</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="selectable" href="#selectable">selectable</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4599,7 +4599,7 @@ nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="draggable" href="#draggable">draggable</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="draggable" href="#draggable">draggable</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4616,7 +4616,7 @@ being selected. Defaults to false.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="code" href="#code">code</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="code" href="#code">code</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4633,7 +4633,7 @@ causes some commands to behave differently.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="whitespace-1" href="#whitespace-1">whitespace</a><i>?</i>: `"pre"` \| `"normal"`</code>
+<code data-typedoc-code><a id="whitespace-1" href="#whitespace-1">whitespace</a><i>?</i>: `"pre"` \| `"normal"`</code>
 
 </dt>
 
@@ -4657,7 +4657,7 @@ and/or styling.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="definingascontext" href="#definingascontext">definingAsContext</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="definingascontext" href="#definingascontext">definingAsContext</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4676,7 +4676,7 @@ whereas defining nodes persist and wrap the inserted content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="definingforcontent" href="#definingforcontent">definingForContent</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="definingforcontent" href="#definingforcontent">definingForContent</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4694,7 +4694,7 @@ textblock types, and possibly list items, are marked as defining.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defining" href="#defining">defining</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="defining" href="#defining">defining</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4712,7 +4712,7 @@ When enabled, enables both
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isolating" href="#isolating">isolating</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="isolating" href="#isolating">isolating</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4731,7 +4731,7 @@ should probably have this enabled is a table cell.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todom" href="#todom">toDOM</a><i>?</i>: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => [`DOMOutputSpec`](#domoutputspec)</code>
+<code data-typedoc-code><a id="todom" href="#todom">toDOM</a><i>?</i>: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => [`DOMOutputSpec`](#domoutputspec)</code>
 
 </dt>
 
@@ -4758,7 +4758,7 @@ shouldn't override that in your text node spec.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parsedom" href="#parsedom">parseDOM</a><i>?</i>: readonly [`TagParseRule`](#tagparserule)[]</code>
+<code data-typedoc-code><a id="parsedom" href="#parsedom">parseDOM</a><i>?</i>: readonly [`TagParseRule`](#tagparserule)[]</code>
 
 </dt>
 
@@ -4779,7 +4779,7 @@ parsing rules in your schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todebugstring" href="#todebugstring">toDebugString</a><i>?</i>: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => `string`</code>
+<code data-typedoc-code><a id="todebugstring" href="#todebugstring">toDebugString</a><i>?</i>: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => `string`</code>
 
 </dt>
 
@@ -4796,7 +4796,7 @@ to a string representation for debugging (e.g. in error messages).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="leaftext" href="#leaftext">leafText</a><i>?</i>: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => `string`</code>
+<code data-typedoc-code><a id="leaftext" href="#leaftext">leafText</a><i>?</i>: (`node`: [`ProseMirrorNode`](#prosemirrornode)) => `string`</code>
 
 </dt>
 
@@ -4815,7 +4815,7 @@ this type should be serialized to a string (as used by
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="linebreakreplacement" href="#linebreakreplacement">linebreakReplacement</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="linebreakreplacement" href="#linebreakreplacement">linebreakReplacement</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4865,7 +4865,7 @@ working with the mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-6" href="#attrs-6">attrs</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="attrs-6" href="#attrs-6">attrs</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -4881,7 +4881,7 @@ The attributes that marks of this type get.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inclusive" href="#inclusive">inclusive</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inclusive" href="#inclusive">inclusive</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4899,7 +4899,7 @@ parent node). Defaults to true.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="excludes-2" href="#excludes-2">excludes</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="excludes-2" href="#excludes-2">excludes</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4927,7 +4927,7 @@ coexist (as long as they have different attributes).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="group-1" href="#group-1">group</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="group-1" href="#group-1">group</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -4943,7 +4943,7 @@ The group or space-separated groups to which this mark belongs.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="spanning" href="#spanning">spanning</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="spanning" href="#spanning">spanning</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4960,7 +4960,7 @@ nodes when serialized to DOM/HTML. Defaults to true.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="code-1" href="#code-1">code</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="code-1" href="#code-1">code</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -4977,7 +4977,7 @@ commands and extensions to treat it differently.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todom-1" href="#todom-1">toDOM</a><i>?</i>: (`mark`: [`Mark`](#mark), `inline`: `boolean`) => [`DOMOutputSpec`](#domoutputspec)</code>
+<code data-typedoc-code><a id="todom-1" href="#todom-1">toDOM</a><i>?</i>: (`mark`: [`Mark`](#mark), `inline`: `boolean`) => [`DOMOutputSpec`](#domoutputspec)</code>
 
 </dt>
 
@@ -4996,7 +4996,7 @@ the top node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parsedom-1" href="#parsedom-1">parseDOM</a><i>?</i>: readonly [`ParseRule`](#parserule)[]</code>
+<code data-typedoc-code><a id="parsedom-1" href="#parsedom-1">parseDOM</a><i>?</i>: readonly [`ParseRule`](#parserule)[]</code>
 
 </dt>
 
@@ -5023,7 +5023,7 @@ marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="default" href="#default">default</a><i>?</i>: `any`</code>
+<code data-typedoc-code><a id="default" href="#default">default</a><i>?</i>: `any`</code>
 
 </dt>
 
@@ -5042,7 +5042,7 @@ created.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="validate" href="#validate">validate</a><i>?</i>: `string` \| (`value`: `any`) => `void`</code>
+<code data-typedoc-code><a id="validate" href="#validate">validate</a><i>?</i>: `string` \| (`value`: `any`) => `void`</code>
 
 </dt>
 
@@ -5065,7 +5065,7 @@ raise an error when the value is not one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="splittable" href="#splittable">splittable</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="splittable" href="#splittable">splittable</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -5093,7 +5093,7 @@ the attribute value to be correctly inherited across different block types.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="domoutputspec" href="#domoutputspec">DOMOutputSpec</a> = `string` \| [`DOMNode`](https://prosemirror.net/docs/ref/#model.DOMNode) \| \{ `dom`: [`DOMNode`](https://prosemirror.net/docs/ref/#model.DOMNode); `contentDOM?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement); \} \| readonly \[`string`, `...any[]`\]</code>
+<code data-typedoc-code>type <a id="domoutputspec" href="#domoutputspec">DOMOutputSpec</a> = `string` \| [`DOMNode`](https://prosemirror.net/docs/ref/#model.DOMNode) \| \{ `dom`: [`DOMNode`](https://prosemirror.net/docs/ref/#model.DOMNode); `contentDOM?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement); \} \| readonly \[`string`, `...any[]`\]</code>
 
 </dt>
 
@@ -5128,7 +5128,7 @@ node.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="parserule" href="#parserule">ParseRule</a> = [`TagParseRule`](#tagparserule) \| [`StyleParseRule`](#styleparserule)</code>
+<code data-typedoc-code>type <a id="parserule" href="#parserule">ParseRule</a> = [`TagParseRule`](#tagparserule) \| [`StyleParseRule`](#styleparserule)</code>
 
 </dt>
 
@@ -5149,7 +5149,7 @@ style as a ProseMirror node or mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="attrs-4" href="#attrs-4">Attrs</a> = `object`</code>
+<code data-typedoc-code>type <a id="attrs-4" href="#attrs-4">Attrs</a> = `object`</code>
 
 </dt>
 

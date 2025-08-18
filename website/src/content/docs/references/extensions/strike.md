@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definestrike" href="#definestrike">defineStrike</a>(): `StrikeExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definestrike" href="#definestrike">defineStrike</a>(): `StrikeExtension`</code>
 
 </dt>
 

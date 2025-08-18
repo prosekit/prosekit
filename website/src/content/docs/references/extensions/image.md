@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="src" href="#src">src</a><i>?</i>: `null` \| `string`</code>
+<code data-typedoc-code><a id="src" href="#src">src</a><i>?</i>: `null` \| `string`</code>
 
 </dt>
 
@@ -24,7 +24,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width" href="#width">width</a><i>?</i>: `null` \| `number`</code>
+<code data-typedoc-code><a id="width" href="#width">width</a><i>?</i>: `null` \| `number`</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="height" href="#height">height</a><i>?</i>: `null` \| `number`</code>
+<code data-typedoc-code><a id="height" href="#height">height</a><i>?</i>: `null` \| `number`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineimage" href="#defineimage">defineImage</a>(): `ImageExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineimage" href="#defineimage">defineImage</a>(): `ImageExtension`</code>
 
 </dt>
 

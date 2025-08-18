@@ -14,7 +14,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="awareness" href="#awareness">awareness</a>: `CursorAwareness`</code>
+<code data-typedoc-code><a id="awareness" href="#awareness">awareness</a>: `CursorAwareness`</code>
 
 </dt>
 
@@ -24,7 +24,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getselection" href="#getselection">getSelection</a><i>?</i>: (`state`: [`EditorState`](../pm/state.md#editorstate)) => [`Selection`](../pm/state.md#selection-3)</code>
+<code data-typedoc-code><a id="getselection" href="#getselection">getSelection</a><i>?</i>: (`state`: [`EditorState`](../pm/state.md#editorstate)) => [`Selection`](../pm/state.md#selection-3)</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="createcursor" href="#createcursor">createCursor</a><i>?</i>: (`user`: `` `${number}` ``) => [`Element`](https://developer.mozilla.org/docs/Web/API/Element)</code>
+<code data-typedoc-code><a id="createcursor" href="#createcursor">createCursor</a><i>?</i>: (`user`: `` `${number}` ``) => [`Element`](https://developer.mozilla.org/docs/Web/API/Element)</code>
 
 </dt>
 
@@ -44,7 +44,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="createselection" href="#createselection">createSelection</a><i>?</i>: (`user`: `` `${number}` ``) => [`DecorationAttrs`](../pm/view.md#decorationattrs)</code>
+<code data-typedoc-code><a id="createselection" href="#createselection">createSelection</a><i>?</i>: (`user`: `` `${number}` ``) => [`DecorationAttrs`](../pm/view.md#decorationattrs)</code>
 
 </dt>
 
@@ -60,7 +60,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc" href="#doc">doc</a>: `LoroDocType`</code>
+<code data-typedoc-code><a id="doc" href="#doc">doc</a>: `LoroDocType`</code>
 
 </dt>
 
@@ -76,7 +76,7 @@ The Loro instance handles the state of shared data.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="awareness-1" href="#awareness-1">awareness</a>: `CursorAwareness`</code>
+<code data-typedoc-code><a id="awareness-1" href="#awareness-1">awareness</a>: `CursorAwareness`</code>
 
 </dt>
 
@@ -92,7 +92,7 @@ The Awareness instance.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sync" href="#sync">sync</a><i>?</i>: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\<`LoroSyncPluginProps`, `"doc"`\></code>
+<code data-typedoc-code><a id="sync" href="#sync">sync</a><i>?</i>: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\<`LoroSyncPluginProps`, `"doc"`\></code>
 
 </dt>
 
@@ -108,7 +108,7 @@ Extra options for `LoroSyncPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="undo" href="#undo">undo</a><i>?</i>: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\<`LoroUndoPluginProps`, `"doc"`\></code>
+<code data-typedoc-code><a id="undo" href="#undo">undo</a><i>?</i>: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\<`LoroUndoPluginProps`, `"doc"`\></code>
 
 </dt>
 
@@ -124,7 +124,7 @@ Extra options for the `LoroUndoPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="cursor" href="#cursor">cursor</a><i>?</i>: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\<[`LoroCursorOptions`](#lorocursoroptions), `"awareness"`\></code>
+<code data-typedoc-code><a id="cursor" href="#cursor">cursor</a><i>?</i>: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\<[`LoroCursorOptions`](#lorocursoroptions), `"awareness"`\></code>
 
 </dt>
 
@@ -144,7 +144,7 @@ Extra options for `LoroCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelorocommands" href="#definelorocommands">defineLoroCommands</a>(): `LoroCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelorocommands" href="#definelorocommands">defineLoroCommands</a>(): `LoroCommandsExtension`</code>
 
 </dt>
 
@@ -158,7 +158,7 @@ Extra options for `LoroCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelorocursorplugin" href="#definelorocursorplugin">defineLoroCursorPlugin</a>(`options`: [`LoroCursorOptions`](#lorocursoroptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelorocursorplugin" href="#definelorocursorplugin">defineLoroCursorPlugin</a>(`options`: [`LoroCursorOptions`](#lorocursoroptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -172,7 +172,7 @@ Extra options for `LoroCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelorokeymap" href="#definelorokeymap">defineLoroKeymap</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelorokeymap" href="#definelorokeymap">defineLoroKeymap</a>(): `PlainExtension`</code>
 
 </dt>
 
@@ -186,7 +186,7 @@ Extra options for `LoroCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definelorosyncplugin" href="#definelorosyncplugin">defineLoroSyncPlugin</a>(`options`: `LoroSyncPluginProps`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definelorosyncplugin" href="#definelorosyncplugin">defineLoroSyncPlugin</a>(`options`: `LoroSyncPluginProps`): `PlainExtension`</code>
 
 </dt>
 
@@ -200,7 +200,7 @@ Extra options for `LoroCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineloroundoplugin" href="#defineloroundoplugin">defineLoroUndoPlugin</a>(`options`: `LoroUndoPluginProps`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineloroundoplugin" href="#defineloroundoplugin">defineLoroUndoPlugin</a>(`options`: `LoroUndoPluginProps`): `PlainExtension`</code>
 
 </dt>
 
@@ -214,7 +214,7 @@ Extra options for `LoroCursorPlugin`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineloro" href="#defineloro">defineLoro</a>(`options`: [`LoroOptions`](#lorooptions)): `LoroExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineloro" href="#defineloro">defineLoro</a>(`options`: [`LoroOptions`](#lorooptions)): `LoroExtension`</code>
 
 </dt>
 

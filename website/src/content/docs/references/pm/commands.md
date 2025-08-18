@@ -525,7 +525,7 @@ Depending on the detected platform, this will hold
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="splitblockas" href="#splitblockas">splitBlockAs</a>(`splitNode?`: (`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `atEnd`: `boolean`, `$from`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: [`Attrs`](model.md#attrs-4); \}): [`Command`](state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="splitblockas" href="#splitblockas">splitBlockAs</a>(`splitNode?`: (`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `atEnd`: `boolean`, `$from`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: [`Attrs`](model.md#attrs-4); \}): [`Command`](state.md#command)</code>
 
 </dt>
 
@@ -546,7 +546,7 @@ a custom function to determine the type of the newly split off block.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="wrapin" href="#wrapin">wrapIn</a>(`nodeType`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4)): [`Command`](state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="wrapin" href="#wrapin">wrapIn</a>(`nodeType`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4)): [`Command`](state.md#command)</code>
 
 </dt>
 
@@ -567,7 +567,7 @@ attributes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`nodeType`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4)): [`Command`](state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`nodeType`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4)): [`Command`](state.md#command)</code>
 
 </dt>
 
@@ -588,7 +588,7 @@ given node type with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="togglemark" href="#togglemark">toggleMark</a>(`markType`: [`MarkType`](model.md#marktype-1), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `options?`: `object`): [`Command`](state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="togglemark" href="#togglemark">toggleMark</a>(`markType`: [`MarkType`](model.md#marktype-1), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `options?`: `object`): [`Command`](state.md#command)</code>
 
 </dt>
 
@@ -614,7 +614,7 @@ document.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="autojoin" href="#autojoin">autoJoin</a>(`command`: [`Command`](state.md#command), `isJoinable`: readonly `string`[] \| (`before`: [`ProseMirrorNode`](model.md#prosemirrornode), `after`: [`ProseMirrorNode`](model.md#prosemirrornode)) => `boolean`): [`Command`](state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="autojoin" href="#autojoin">autoJoin</a>(`command`: [`Command`](state.md#command), `isJoinable`: readonly `string`[] \| (`before`: [`ProseMirrorNode`](model.md#prosemirrornode), `after`: [`ProseMirrorNode`](model.md#prosemirrornode)) => `boolean`): [`Command`](state.md#command)</code>
 
 </dt>
 
@@ -639,7 +639,7 @@ array.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="chaincommands" href="#chaincommands">chainCommands</a>(...`commands`: readonly [`Command`](state.md#command)[]): [`Command`](state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="chaincommands" href="#chaincommands">chainCommands</a>(...`commands`: readonly [`Command`](state.md#command)[]): [`Command`](state.md#command)</code>
 
 </dt>
 

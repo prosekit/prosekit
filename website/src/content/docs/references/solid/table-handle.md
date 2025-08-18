@@ -16,7 +16,7 @@ Props for the [TableHandleColumnRoot](#tablehandlecolumnroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy" href="#strategy">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy" href="#strategy">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -36,7 +36,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate" href="#autoupdate">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate" href="#autoupdate">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -60,7 +60,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform" href="#transform">transform</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="transform" href="#transform">transform</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -82,7 +82,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -102,7 +102,7 @@ The distance between the reference and floating element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -123,7 +123,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport" href="#fitviewport">fitViewport</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport" href="#fitviewport">fitViewport</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -144,7 +144,7 @@ the viewport.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth" href="#samewidth">sameWidth</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth" href="#samewidth">sameWidth</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -165,7 +165,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight" href="#sameheight">sameHeight</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight" href="#sameheight">sameHeight</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -186,7 +186,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -207,7 +207,7 @@ multiple lines.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary" href="#boundary">boundary</a><i>?</i>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary" href="#boundary">boundary</a><i>?</i>: `Boundary`</code>
 
 </dt>
 
@@ -228,7 +228,7 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary" href="#rootboundary">rootBoundary</a><i>?</i>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary" href="#rootboundary">rootBoundary</a><i>?</i>: `RootBoundary`</code>
 
 </dt>
 
@@ -249,7 +249,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding" href="#overflowpadding">overflowPadding</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding" href="#overflowpadding">overflowPadding</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -270,7 +270,7 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext" href="#elementcontext">elementContext</a><i>?</i>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext" href="#elementcontext">elementContext</a><i>?</i>: `ElementContext`</code>
 
 </dt>
 
@@ -292,7 +292,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary" href="#altboundary">altBoundary</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary" href="#altboundary">altBoundary</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -314,7 +314,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement" href="#placement">placement</a><i>?</i>: `Placement`</code>
+<code data-typedoc-code><a id="placement" href="#placement">placement</a><i>?</i>: `Placement`</code>
 
 </dt>
 
@@ -334,7 +334,7 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist" href="#hoist">hoist</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hoist" href="#hoist">hoist</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -363,7 +363,7 @@ Props for the [TableHandleColumnTrigger](#tablehandlecolumntrigger) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor" href="#editor">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\></code>
+<code data-typedoc-code><a id="editor" href="#editor">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\></code>
 
 </dt>
 
@@ -381,7 +381,7 @@ Props for the [TableHandleDragPreview](#tablehandledragpreview) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor-1" href="#editor-1">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`any`\></code>
+<code data-typedoc-code><a id="editor-1" href="#editor-1">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`any`\></code>
 
 </dt>
 
@@ -399,7 +399,7 @@ Props for the [TableHandleDropIndicator](#tablehandledropindicator) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor-2" href="#editor-2">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\></code>
+<code data-typedoc-code><a id="editor-2" href="#editor-2">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\></code>
 
 </dt>
 
@@ -417,7 +417,7 @@ Props for the [TableHandlePopoverContent](#tablehandlepopovercontent) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="eventtarget" href="#eventtarget">eventTarget</a><i>?</i>: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `TypedEventTarget`\<`"keydown"`\></code>
+<code data-typedoc-code><a id="eventtarget" href="#eventtarget">eventTarget</a><i>?</i>: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `TypedEventTarget`\<`"keydown"`\></code>
 
 </dt>
 
@@ -434,7 +434,7 @@ different element to listen for keydown events.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy-1" href="#strategy-1">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy-1" href="#strategy-1">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -454,7 +454,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate-1" href="#autoupdate-1">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate-1" href="#autoupdate-1">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -478,7 +478,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist-1" href="#hoist-1">hoist</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hoist-1" href="#hoist-1">hoist</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -501,7 +501,7 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform-1" href="#transform-1">transform</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="transform-1" href="#transform-1">transform</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -523,7 +523,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="flip" href="#flip">flip</a><i>?</i>: `boolean` \| `Placement`[]</code>
+<code data-typedoc-code><a id="flip" href="#flip">flip</a><i>?</i>: `boolean` \| `Placement`[]</code>
 
 </dt>
 
@@ -546,7 +546,7 @@ provide an array of placements to try sequentially if the preferred
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="shift" href="#shift">shift</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="shift" href="#shift">shift</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -566,7 +566,7 @@ Whether the floating element should shift to keep it in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap-1" href="#overlap-1">overlap</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="overlap-1" href="#overlap-1">overlap</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -587,7 +587,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport-1" href="#fitviewport-1">fitViewport</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport-1" href="#fitviewport-1">fitViewport</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -608,7 +608,7 @@ the viewport.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth-1" href="#samewidth-1">sameWidth</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth-1" href="#samewidth-1">sameWidth</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -629,7 +629,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight-1" href="#sameheight-1">sameHeight</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight-1" href="#sameheight-1">sameHeight</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -650,7 +650,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline-1" href="#inline-1">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline-1" href="#inline-1">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -671,7 +671,7 @@ multiple lines.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hide" href="#hide">hide</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hide" href="#hide">hide</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -692,7 +692,7 @@ floating element is fully clipped.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary-1" href="#boundary-1">boundary</a><i>?</i>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary-1" href="#boundary-1">boundary</a><i>?</i>: `Boundary`</code>
 
 </dt>
 
@@ -713,7 +713,7 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary-1" href="#rootboundary-1">rootBoundary</a><i>?</i>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary-1" href="#rootboundary-1">rootBoundary</a><i>?</i>: `RootBoundary`</code>
 
 </dt>
 
@@ -734,7 +734,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding-1" href="#overflowpadding-1">overflowPadding</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding-1" href="#overflowpadding-1">overflowPadding</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -755,7 +755,7 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext-1" href="#elementcontext-1">elementContext</a><i>?</i>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext-1" href="#elementcontext-1">elementContext</a><i>?</i>: `ElementContext`</code>
 
 </dt>
 
@@ -777,7 +777,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary-1" href="#altboundary-1">altBoundary</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary-1" href="#altboundary-1">altBoundary</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -799,7 +799,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement-1" href="#placement-1">placement</a><i>?</i>: `Placement`</code>
+<code data-typedoc-code><a id="placement-1" href="#placement-1">placement</a><i>?</i>: `Placement`</code>
 
 </dt>
 
@@ -817,7 +817,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset-1" href="#offset-1">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset-1" href="#offset-1">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -837,7 +837,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor-3" href="#editor-3">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`any`\></code>
+<code data-typedoc-code><a id="editor-3" href="#editor-3">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`any`\></code>
 
 </dt>
 
@@ -847,7 +847,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onescapekeydown" href="#onescapekeydown">onEscapeKeyDown</a><i>?</i>: (`event`: `EscapeKeyDownEvent`) => `void`</code>
+<code data-typedoc-code><a id="onescapekeydown" href="#onescapekeydown">onEscapeKeyDown</a><i>?</i>: (`event`: `EscapeKeyDownEvent`) => `void`</code>
 
 </dt>
 
@@ -857,7 +857,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onpointerdownoutside" href="#onpointerdownoutside">onPointerDownOutside</a><i>?</i>: (`event`: `PointerDownOutsideEvent`) => `void`</code>
+<code data-typedoc-code><a id="onpointerdownoutside" href="#onpointerdownoutside">onPointerDownOutside</a><i>?</i>: (`event`: `PointerDownOutsideEvent`) => `void`</code>
 
 </dt>
 
@@ -867,7 +867,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onfocusoutside" href="#onfocusoutside">onFocusOutside</a><i>?</i>: (`event`: `FocusOutsideEvent`) => `void`</code>
+<code data-typedoc-code><a id="onfocusoutside" href="#onfocusoutside">onFocusOutside</a><i>?</i>: (`event`: `FocusOutsideEvent`) => `void`</code>
 
 </dt>
 
@@ -877,7 +877,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="oninteractoutside" href="#oninteractoutside">onInteractOutside</a><i>?</i>: (`event`: `InteractOutsideEvent`) => `void`</code>
+<code data-typedoc-code><a id="oninteractoutside" href="#oninteractoutside">onInteractOutside</a><i>?</i>: (`event`: `InteractOutsideEvent`) => `void`</code>
 
 </dt>
 
@@ -895,7 +895,7 @@ Props for the [TableHandlePopoverItem](#tablehandlepopoveritem) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="value" href="#value">value</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="value" href="#value">value</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -916,7 +916,7 @@ list. By default, a random value is generated.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="query" href="#query">query</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="query" href="#query">query</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -936,7 +936,7 @@ The query string to filter the listbox items.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="filter" href="#filter">filter</a><i>?</i>: `ItemFilter`</code>
+<code data-typedoc-code><a id="filter" href="#filter">filter</a><i>?</i>: `ItemFilter`</code>
 
 </dt>
 
@@ -956,7 +956,7 @@ The filter function to determine if an item should be shown in the listbox.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onselect" href="#onselect">onSelect</a><i>?</i>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>) => `void`</code>
+<code data-typedoc-code><a id="onselect" href="#onselect">onSelect</a><i>?</i>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>) => `void`</code>
 
 </dt>
 
@@ -980,7 +980,7 @@ Props for the [TableHandleRowRoot](#tablehandlerowroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy-2" href="#strategy-2">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy-2" href="#strategy-2">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -1000,7 +1000,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate-2" href="#autoupdate-2">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate-2" href="#autoupdate-2">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -1024,7 +1024,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform-2" href="#transform-2">transform</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="transform-2" href="#transform-2">transform</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1046,7 +1046,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset-2" href="#offset-2">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset-2" href="#offset-2">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -1066,7 +1066,7 @@ The distance between the reference and floating element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap-2" href="#overlap-2">overlap</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="overlap-2" href="#overlap-2">overlap</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1087,7 +1087,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport-2" href="#fitviewport-2">fitViewport</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport-2" href="#fitviewport-2">fitViewport</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1108,7 +1108,7 @@ the viewport.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth-2" href="#samewidth-2">sameWidth</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth-2" href="#samewidth-2">sameWidth</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1129,7 +1129,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight-2" href="#sameheight-2">sameHeight</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight-2" href="#sameheight-2">sameHeight</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1150,7 +1150,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline-2" href="#inline-2">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline-2" href="#inline-2">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1171,7 +1171,7 @@ multiple lines.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary-2" href="#boundary-2">boundary</a><i>?</i>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary-2" href="#boundary-2">boundary</a><i>?</i>: `Boundary`</code>
 
 </dt>
 
@@ -1192,7 +1192,7 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary-2" href="#rootboundary-2">rootBoundary</a><i>?</i>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary-2" href="#rootboundary-2">rootBoundary</a><i>?</i>: `RootBoundary`</code>
 
 </dt>
 
@@ -1213,7 +1213,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding-2" href="#overflowpadding-2">overflowPadding</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding-2" href="#overflowpadding-2">overflowPadding</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -1234,7 +1234,7 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext-2" href="#elementcontext-2">elementContext</a><i>?</i>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext-2" href="#elementcontext-2">elementContext</a><i>?</i>: `ElementContext`</code>
 
 </dt>
 
@@ -1256,7 +1256,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary-2" href="#altboundary-2">altBoundary</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary-2" href="#altboundary-2">altBoundary</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1278,7 +1278,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement-2" href="#placement-2">placement</a><i>?</i>: `Placement`</code>
+<code data-typedoc-code><a id="placement-2" href="#placement-2">placement</a><i>?</i>: `Placement`</code>
 
 </dt>
 
@@ -1298,7 +1298,7 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist-2" href="#hoist-2">hoist</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hoist-2" href="#hoist-2">hoist</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1327,7 +1327,7 @@ Props for the [TableHandleRowTrigger](#tablehandlerowtrigger) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="editor-4" href="#editor-4">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\></code>
+<code data-typedoc-code><a id="editor-4" href="#editor-4">editor</a><i>?</i>: `null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\></code>
 
 </dt>
 
@@ -1337,7 +1337,7 @@ Props for the [TableHandleRowTrigger](#tablehandlerowtrigger) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onselect-1" href="#onselect-1">onSelect</a><i>?</i>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>) => `void`</code>
+<code data-typedoc-code><a id="onselect-1" href="#onselect-1">onSelect</a><i>?</i>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>) => `void`</code>
 
 </dt>
 

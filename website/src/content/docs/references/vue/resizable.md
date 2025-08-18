@@ -16,7 +16,7 @@ Props for the [ResizableHandle](#resizablehandle) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="position" href="#position">position</a><i>?</i>: `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`</code>
+<code data-typedoc-code><a id="position" href="#position">position</a><i>?</i>: `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`</code>
 
 </dt>
 
@@ -50,7 +50,7 @@ Props for the [ResizableRoot](#resizableroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width" href="#width">width</a><i>?</i>: `null` \| `number`</code>
+<code data-typedoc-code><a id="width" href="#width">width</a><i>?</i>: `null` \| `number`</code>
 
 </dt>
 
@@ -60,7 +60,7 @@ Props for the [ResizableRoot](#resizableroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="height" href="#height">height</a><i>?</i>: `null` \| `number`</code>
+<code data-typedoc-code><a id="height" href="#height">height</a><i>?</i>: `null` \| `number`</code>
 
 </dt>
 
@@ -70,7 +70,7 @@ Props for the [ResizableRoot](#resizableroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="aspectratio" href="#aspectratio">aspectRatio</a><i>?</i>: `null` \| `number`</code>
+<code data-typedoc-code><a id="aspectratio" href="#aspectratio">aspectRatio</a><i>?</i>: `null` \| `number`</code>
 
 </dt>
 
@@ -88,7 +88,7 @@ Emits for the [ResizableRoot](#resizableroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="resizestart" href="#resizestart">resizeStart</a>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\>) => `void`</code>
+<code data-typedoc-code><a id="resizestart" href="#resizestart">resizeStart</a>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\>) => `void`</code>
 
 </dt>
 
@@ -98,7 +98,7 @@ Emits for the [ResizableRoot](#resizableroot) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="resizeend" href="#resizeend">resizeEnd</a>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\>) => `void`</code>
+<code data-typedoc-code><a id="resizeend" href="#resizeend">resizeEnd</a>: (`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\>) => `void`</code>
 
 </dt>
 

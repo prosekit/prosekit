@@ -28,7 +28,7 @@ Props for the [BlockHandlePopover](#blockhandlepopover) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy" href="#strategy">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy" href="#strategy">strategy</a><i>?</i>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate" href="#autoupdate">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate" href="#autoupdate">autoUpdate</a><i>?</i>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -72,7 +72,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform" href="#transform">transform</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="transform" href="#transform">transform</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -94,7 +94,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -114,7 +114,7 @@ The distance between the reference and floating element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -135,7 +135,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport" href="#fitviewport">fitViewport</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport" href="#fitviewport">fitViewport</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -156,7 +156,7 @@ the viewport.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth" href="#samewidth">sameWidth</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth" href="#samewidth">sameWidth</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -177,7 +177,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight" href="#sameheight">sameHeight</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight" href="#sameheight">sameHeight</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -198,7 +198,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -219,7 +219,7 @@ multiple lines.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary" href="#boundary">boundary</a><i>?</i>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary" href="#boundary">boundary</a><i>?</i>: `Boundary`</code>
 
 </dt>
 
@@ -240,7 +240,7 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary" href="#rootboundary">rootBoundary</a><i>?</i>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary" href="#rootboundary">rootBoundary</a><i>?</i>: `RootBoundary`</code>
 
 </dt>
 
@@ -261,7 +261,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding" href="#overflowpadding">overflowPadding</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding" href="#overflowpadding">overflowPadding</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -282,7 +282,7 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext" href="#elementcontext">elementContext</a><i>?</i>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext" href="#elementcontext">elementContext</a><i>?</i>: `ElementContext`</code>
 
 </dt>
 
@@ -304,7 +304,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary" href="#altboundary">altBoundary</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary" href="#altboundary">altBoundary</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -326,7 +326,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement" href="#placement">placement</a><i>?</i>: `Placement`</code>
+<code data-typedoc-code><a id="placement" href="#placement">placement</a><i>?</i>: `Placement`</code>
 
 </dt>
 
@@ -346,7 +346,7 @@ The placement of the popover, relative to the hovered block.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist" href="#hoist">hoist</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="hoist" href="#hoist">hoist</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -367,7 +367,7 @@ to place the floating element on top of other page content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="onstatechange" href="#onstatechange">onStateChange</a><i>?</i>: (`event`: `null` \| \{ `node`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode); `pos`: `number`; \}) => `void`</code>
+<code data-typedoc-code><a id="onstatechange" href="#onstatechange">onStateChange</a><i>?</i>: (`event`: `null` \| \{ `node`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode); `pos`: `number`; \}) => `void`</code>
 
 </dt>
 

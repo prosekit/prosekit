@@ -16,7 +16,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">TooltipContentElement</a>(): [`TooltipContentElement`](#tooltipcontentelement)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">TooltipContentElement</a>(): [`TooltipContentElement`](#tooltipcontentelement)</code>
 
 </dt>
 
@@ -28,7 +28,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy" href="#strategy">strategy</a>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy" href="#strategy">strategy</a>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -48,7 +48,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement" href="#placement">placement</a>: `Placement`</code>
+<code data-typedoc-code><a id="placement" href="#placement">placement</a>: `Placement`</code>
 
 </dt>
 
@@ -68,7 +68,7 @@ The initial placement of the floating element
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate" href="#autoupdate">autoUpdate</a>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate" href="#autoupdate">autoUpdate</a>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -92,7 +92,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist" href="#hoist">hoist</a>: `boolean`</code>
+<code data-typedoc-code><a id="hoist" href="#hoist">hoist</a>: `boolean`</code>
 
 </dt>
 
@@ -115,7 +115,7 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform" href="#transform">transform</a>: `boolean`</code>
+<code data-typedoc-code><a id="transform" href="#transform">transform</a>: `boolean`</code>
 
 </dt>
 
@@ -137,7 +137,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset" href="#offset">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -157,7 +157,7 @@ The distance between the reference and floating element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="flip" href="#flip">flip</a>: `boolean` \| `Placement`[]</code>
+<code data-typedoc-code><a id="flip" href="#flip">flip</a>: `boolean` \| `Placement`[]</code>
 
 </dt>
 
@@ -180,7 +180,7 @@ provide an array of placements to try sequentially if the preferred
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="shift" href="#shift">shift</a>: `boolean`</code>
+<code data-typedoc-code><a id="shift" href="#shift">shift</a>: `boolean`</code>
 
 </dt>
 
@@ -200,7 +200,7 @@ Whether the floating element should shift to keep it in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap" href="#overlap">overlap</a>: `boolean`</code>
+<code data-typedoc-code><a id="overlap" href="#overlap">overlap</a>: `boolean`</code>
 
 </dt>
 
@@ -221,7 +221,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport" href="#fitviewport">fitViewport</a>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport" href="#fitviewport">fitViewport</a>: `boolean`</code>
 
 </dt>
 
@@ -242,7 +242,7 @@ the viewport.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth" href="#samewidth">sameWidth</a>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth" href="#samewidth">sameWidth</a>: `boolean`</code>
 
 </dt>
 
@@ -263,7 +263,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight" href="#sameheight">sameHeight</a>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight" href="#sameheight">sameHeight</a>: `boolean`</code>
 
 </dt>
 
@@ -284,7 +284,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline" href="#inline">inline</a>: `boolean`</code>
+<code data-typedoc-code><a id="inline" href="#inline">inline</a>: `boolean`</code>
 
 </dt>
 
@@ -305,7 +305,7 @@ multiple lines.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hide" href="#hide">hide</a>: `boolean`</code>
+<code data-typedoc-code><a id="hide" href="#hide">hide</a>: `boolean`</code>
 
 </dt>
 
@@ -326,7 +326,7 @@ floating element is fully clipped.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary" href="#boundary">boundary</a>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary" href="#boundary">boundary</a>: `Boundary`</code>
 
 </dt>
 
@@ -347,7 +347,7 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary" href="#rootboundary">rootBoundary</a>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary" href="#rootboundary">rootBoundary</a>: `RootBoundary`</code>
 
 </dt>
 
@@ -368,7 +368,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding" href="#overflowpadding">overflowPadding</a>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding" href="#overflowpadding">overflowPadding</a>: `number`</code>
 
 </dt>
 
@@ -389,7 +389,7 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext" href="#elementcontext">elementContext</a>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext" href="#elementcontext">elementContext</a>: `ElementContext`</code>
 
 </dt>
 
@@ -411,7 +411,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary" href="#altboundary">altBoundary</a>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary" href="#altboundary">altBoundary</a>: `boolean`</code>
 
 </dt>
 
@@ -441,7 +441,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">TooltipRootElement</a>(): [`TooltipRootElement`](#tooltiprootelement)</code>
+<code data-typedoc-code>new <a id="constructor-1" href="#constructor-1">TooltipRootElement</a>(): [`TooltipRootElement`](#tooltiprootelement)</code>
 
 </dt>
 
@@ -453,7 +453,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="opendelay" href="#opendelay">openDelay</a>: `number`</code>
+<code data-typedoc-code><a id="opendelay" href="#opendelay">openDelay</a>: `number`</code>
 
 </dt>
 
@@ -473,7 +473,7 @@ The delay in milliseconds before the tooltip opens.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="closedelay" href="#closedelay">closeDelay</a>: `number`</code>
+<code data-typedoc-code><a id="closedelay" href="#closedelay">closeDelay</a>: `number`</code>
 
 </dt>
 
@@ -493,7 +493,7 @@ The delay in milliseconds before the tooltip closes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="open" href="#open">open</a>: `boolean`</code>
+<code data-typedoc-code><a id="open" href="#open">open</a>: `boolean`</code>
 
 </dt>
 
@@ -521,7 +521,7 @@ Whether the popover is open.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">TooltipTriggerElement</a>(): [`TooltipTriggerElement`](#tooltiptriggerelement)</code>
+<code data-typedoc-code>new <a id="constructor-2" href="#constructor-2">TooltipTriggerElement</a>(): [`TooltipTriggerElement`](#tooltiptriggerelement)</code>
 
 </dt>
 
@@ -537,7 +537,7 @@ Whether the popover is open.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="strategy-1" href="#strategy-1">strategy</a>: `"fixed"` \| `"absolute"`</code>
+<code data-typedoc-code><a id="strategy-1" href="#strategy-1">strategy</a>: `"fixed"` \| `"absolute"`</code>
 
 </dt>
 
@@ -557,7 +557,7 @@ The strategy to use for positioning
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="placement-1" href="#placement-1">placement</a>: `Placement`</code>
+<code data-typedoc-code><a id="placement-1" href="#placement-1">placement</a>: `Placement`</code>
 
 </dt>
 
@@ -577,7 +577,7 @@ The initial placement of the floating element
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="autoupdate-1" href="#autoupdate-1">autoUpdate</a>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
+<code data-typedoc-code><a id="autoupdate-1" href="#autoupdate-1">autoUpdate</a>: `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)</code>
 
 </dt>
 
@@ -601,7 +601,7 @@ https://floating-ui.com/docs/autoUpdate
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hoist-1" href="#hoist-1">hoist</a>: `boolean`</code>
+<code data-typedoc-code><a id="hoist-1" href="#hoist-1">hoist</a>: `boolean`</code>
 
 </dt>
 
@@ -624,7 +624,7 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="transform-1" href="#transform-1">transform</a>: `boolean`</code>
+<code data-typedoc-code><a id="transform-1" href="#transform-1">transform</a>: `boolean`</code>
 
 </dt>
 
@@ -646,7 +646,7 @@ performant, but can cause conflicts with transform animations.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="offset-1" href="#offset-1">offset</a><i>?</i>: `OffsetOptions`</code>
+<code data-typedoc-code><a id="offset-1" href="#offset-1">offset</a><i>?</i>: `OffsetOptions`</code>
 
 </dt>
 
@@ -666,7 +666,7 @@ The distance between the reference and floating element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="flip-1" href="#flip-1">flip</a>: `boolean` \| `Placement`[]</code>
+<code data-typedoc-code><a id="flip-1" href="#flip-1">flip</a>: `boolean` \| `Placement`[]</code>
 
 </dt>
 
@@ -689,7 +689,7 @@ provide an array of placements to try sequentially if the preferred
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="shift-1" href="#shift-1">shift</a>: `boolean`</code>
+<code data-typedoc-code><a id="shift-1" href="#shift-1">shift</a>: `boolean`</code>
 
 </dt>
 
@@ -709,7 +709,7 @@ Whether the floating element should shift to keep it in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overlap-1" href="#overlap-1">overlap</a>: `boolean`</code>
+<code data-typedoc-code><a id="overlap-1" href="#overlap-1">overlap</a>: `boolean`</code>
 
 </dt>
 
@@ -730,7 +730,7 @@ in view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="fitviewport-1" href="#fitviewport-1">fitViewport</a>: `boolean`</code>
+<code data-typedoc-code><a id="fitviewport-1" href="#fitviewport-1">fitViewport</a>: `boolean`</code>
 
 </dt>
 
@@ -751,7 +751,7 @@ the viewport.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="samewidth-1" href="#samewidth-1">sameWidth</a>: `boolean`</code>
+<code data-typedoc-code><a id="samewidth-1" href="#samewidth-1">sameWidth</a>: `boolean`</code>
 
 </dt>
 
@@ -772,7 +772,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="sameheight-1" href="#sameheight-1">sameHeight</a>: `boolean`</code>
+<code data-typedoc-code><a id="sameheight-1" href="#sameheight-1">sameHeight</a>: `boolean`</code>
 
 </dt>
 
@@ -793,7 +793,7 @@ reference element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline-1" href="#inline-1">inline</a>: `boolean`</code>
+<code data-typedoc-code><a id="inline-1" href="#inline-1">inline</a>: `boolean`</code>
 
 </dt>
 
@@ -814,7 +814,7 @@ multiple lines.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="hide-1" href="#hide-1">hide</a>: `boolean`</code>
+<code data-typedoc-code><a id="hide-1" href="#hide-1">hide</a>: `boolean`</code>
 
 </dt>
 
@@ -835,7 +835,7 @@ floating element is fully clipped.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="boundary-1" href="#boundary-1">boundary</a>: `Boundary`</code>
+<code data-typedoc-code><a id="boundary-1" href="#boundary-1">boundary</a>: `Boundary`</code>
 
 </dt>
 
@@ -856,7 +856,7 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="rootboundary-1" href="#rootboundary-1">rootBoundary</a>: `RootBoundary`</code>
+<code data-typedoc-code><a id="rootboundary-1" href="#rootboundary-1">rootBoundary</a>: `RootBoundary`</code>
 
 </dt>
 
@@ -877,7 +877,7 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="overflowpadding-1" href="#overflowpadding-1">overflowPadding</a>: `number`</code>
+<code data-typedoc-code><a id="overflowpadding-1" href="#overflowpadding-1">overflowPadding</a>: `number`</code>
 
 </dt>
 
@@ -898,7 +898,7 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="elementcontext-1" href="#elementcontext-1">elementContext</a>: `ElementContext`</code>
+<code data-typedoc-code><a id="elementcontext-1" href="#elementcontext-1">elementContext</a>: `ElementContext`</code>
 
 </dt>
 
@@ -920,7 +920,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="altboundary-1" href="#altboundary-1">altBoundary</a>: `boolean`</code>
+<code data-typedoc-code><a id="altboundary-1" href="#altboundary-1">altBoundary</a>: `boolean`</code>
 
 </dt>
 
@@ -952,7 +952,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="opendelay-1" href="#opendelay-1">openDelay</a>: `number`</code>
+<code data-typedoc-code><a id="opendelay-1" href="#opendelay-1">openDelay</a>: `number`</code>
 
 </dt>
 
@@ -972,7 +972,7 @@ The delay in milliseconds before the tooltip opens.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="closedelay-1" href="#closedelay-1">closeDelay</a>: `number`</code>
+<code data-typedoc-code><a id="closedelay-1" href="#closedelay-1">closeDelay</a>: `number`</code>
 
 </dt>
 
@@ -992,7 +992,7 @@ The delay in milliseconds before the tooltip closes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="open-1" href="#open-1">open</a>: `boolean`</code>
+<code data-typedoc-code><a id="open-1" href="#open-1">open</a>: `boolean`</code>
 
 </dt>
 
@@ -1018,7 +1018,7 @@ Whether the popover is open.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="openchange" href="#openchange">openChange</a>: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`boolean`\></code>
+<code data-typedoc-code><a id="openchange" href="#openchange">openChange</a>: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`boolean`\></code>
 
 </dt>
 

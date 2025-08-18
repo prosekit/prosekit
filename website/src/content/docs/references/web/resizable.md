@@ -16,7 +16,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">ResizableHandleElement</a>(): [`ResizableHandleElement`](#resizablehandleelement)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">ResizableHandleElement</a>(): [`ResizableHandleElement`](#resizablehandleelement)</code>
 
 </dt>
 
@@ -28,7 +28,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="position" href="#position">position</a>: `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`</code>
+<code data-typedoc-code><a id="position" href="#position">position</a>: `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`</code>
 
 </dt>
 
@@ -56,7 +56,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">ResizableRootElement</a>(): [`ResizableRootElement`](#resizablerootelement)</code>
+<code data-typedoc-code>new <a id="constructor-1" href="#constructor-1">ResizableRootElement</a>(): [`ResizableRootElement`](#resizablerootelement)</code>
 
 </dt>
 
@@ -68,7 +68,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width" href="#width">width</a>: `null` \| `number`</code>
+<code data-typedoc-code><a id="width" href="#width">width</a>: `null` \| `number`</code>
 
 </dt>
 
@@ -78,7 +78,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="height" href="#height">height</a>: `null` \| `number`</code>
+<code data-typedoc-code><a id="height" href="#height">height</a>: `null` \| `number`</code>
 
 </dt>
 
@@ -88,7 +88,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="aspectratio" href="#aspectratio">aspectRatio</a>: `null` \| `number`</code>
+<code data-typedoc-code><a id="aspectratio" href="#aspectratio">aspectRatio</a>: `null` \| `number`</code>
 
 </dt>
 
@@ -104,7 +104,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="position-1" href="#position-1">position</a>: `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`</code>
+<code data-typedoc-code><a id="position-1" href="#position-1">position</a>: `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`</code>
 
 </dt>
 
@@ -130,7 +130,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width-1" href="#width-1">width</a>: `null` \| `number`</code>
+<code data-typedoc-code><a id="width-1" href="#width-1">width</a>: `null` \| `number`</code>
 
 </dt>
 
@@ -140,7 +140,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="height-1" href="#height-1">height</a>: `null` \| `number`</code>
+<code data-typedoc-code><a id="height-1" href="#height-1">height</a>: `null` \| `number`</code>
 
 </dt>
 
@@ -150,7 +150,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="aspectratio-1" href="#aspectratio-1">aspectRatio</a>: `null` \| `number`</code>
+<code data-typedoc-code><a id="aspectratio-1" href="#aspectratio-1">aspectRatio</a>: `null` \| `number`</code>
 
 </dt>
 
@@ -166,7 +166,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="resizestart" href="#resizestart">resizeStart</a>: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\></code>
+<code data-typedoc-code><a id="resizestart" href="#resizestart">resizeStart</a>: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\></code>
 
 </dt>
 
@@ -176,7 +176,7 @@ The position of the handle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="resizeend" href="#resizeend">resizeEnd</a>: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\></code>
+<code data-typedoc-code><a id="resizeend" href="#resizeend">resizeEnd</a>: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `width`: `number`; `height`: `number`; \}\></code>
 
 </dt>
 

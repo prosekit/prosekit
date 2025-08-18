@@ -12,7 +12,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definegapcursor" href="#definegapcursor">defineGapCursor</a>(): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definegapcursor" href="#definegapcursor">defineGapCursor</a>(): `PlainExtension`</code>
 
 </dt>
 

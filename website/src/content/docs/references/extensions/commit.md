@@ -16,7 +16,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">CommitRecorder</a>(): [`CommitRecorder`](#commitrecorder)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">CommitRecorder</a>(): [`CommitRecorder`](#commitrecorder)</code>
 
 </dt>
 
@@ -28,7 +28,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="commit-1" href="#commit-1">commit</a>(): `null` \| [`Commit`](#commit)</code>
+<code data-typedoc-code><a id="commit-1" href="#commit-1">commit</a>(): `null` \| [`Commit`](#commit)</code>
 
 </dt>
 
@@ -53,7 +53,7 @@ A JSON representation of a commit.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc" href="#doc">doc</a>: [`NodeJSON`](../core.md#nodejson)</code>
+<code data-typedoc-code><a id="doc" href="#doc">doc</a>: [`NodeJSON`](../core.md#nodejson)</code>
 
 </dt>
 
@@ -69,7 +69,7 @@ The current doc node in the JSON format
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parent" href="#parent">parent</a>: [`NodeJSON`](../core.md#nodejson)</code>
+<code data-typedoc-code><a id="parent" href="#parent">parent</a>: [`NodeJSON`](../core.md#nodejson)</code>
 
 </dt>
 
@@ -85,7 +85,7 @@ The parent node in the JSON format
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="steps" href="#steps">steps</a>: [`StepJSON`](../core.md#stepjson)[]</code>
+<code data-typedoc-code><a id="steps" href="#steps">steps</a>: [`StepJSON`](../core.md#stepjson)[]</code>
 
 </dt>
 
@@ -106,7 +106,7 @@ current doc node.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definecommitviewer" href="#definecommitviewer">defineCommitViewer</a>(`commit`: [`Commit`](#commit)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definecommitviewer" href="#definecommitviewer">defineCommitViewer</a>(`commit`: [`Commit`](#commit)): `PlainExtension`</code>
 
 </dt>
 
@@ -126,7 +126,7 @@ Define an extension to display the changes from the given commit in the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definecommitrecorder" href="#definecommitrecorder">defineCommitRecorder</a>(`commitRecorder`: [`CommitRecorder`](#commitrecorder)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definecommitrecorder" href="#definecommitrecorder">defineCommitRecorder</a>(`commitRecorder`: [`CommitRecorder`](#commitrecorder)): `PlainExtension`</code>
 
 </dt>
 

@@ -16,7 +16,7 @@ Props for the [DropIndicator](#dropindicator) component.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width" href="#width">width</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="width" href="#width">width</a><i>?</i>: `number`</code>
 
 </dt>
 

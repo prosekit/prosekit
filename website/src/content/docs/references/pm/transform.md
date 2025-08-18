@@ -21,7 +21,7 @@ information.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">MapResult</a>(): [`MapResult`](#mapresult-1)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">MapResult</a>(): [`MapResult`](#mapresult-1)</code>
 
 </dt>
 
@@ -51,7 +51,7 @@ The mapped version of the position.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="deleted" href="#deleted">deleted</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="deleted" href="#deleted">deleted</a>(): `boolean`</code>
 
 </dt>
 
@@ -69,7 +69,7 @@ argument from the document.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="deletedbefore" href="#deletedbefore">deletedBefore</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="deletedbefore" href="#deletedbefore">deletedBefore</a>(): `boolean`</code>
 
 </dt>
 
@@ -85,7 +85,7 @@ Tells you whether the token before the mapped position was deleted.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="deletedafter" href="#deletedafter">deletedAfter</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="deletedafter" href="#deletedafter">deletedAfter</a>(): `boolean`</code>
 
 </dt>
 
@@ -101,7 +101,7 @@ True when the token after the mapped position was deleted.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="deletedacross" href="#deletedacross">deletedAcross</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="deletedacross" href="#deletedacross">deletedAcross</a>(): `boolean`</code>
 
 </dt>
 
@@ -132,7 +132,7 @@ post-step version.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">StepMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code>new <a id="constructor-1" href="#constructor-1">StepMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -170,7 +170,7 @@ A StepMap that contains no changed ranges.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mapresult-2" href="#mapresult-2">mapResult</a>(`pos`: `number`, `assoc?`: `number`): [`MapResult`](#mapresult-1)</code>
+<code data-typedoc-code><a id="mapresult-2" href="#mapresult-2">mapResult</a>(`pos`: `number`, `assoc?`: `number`): [`MapResult`](#mapresult-1)</code>
 
 </dt>
 
@@ -191,7 +191,7 @@ is deleted, the position itself is only considered deleted when
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-1" href="#map-1">map</a>(`pos`: `number`, `assoc?`: `number`): `number`</code>
+<code data-typedoc-code><a id="map-1" href="#map-1">map</a>(`pos`: `number`, `assoc?`: `number`): `number`</code>
 
 </dt>
 
@@ -210,7 +210,7 @@ move when a chunk of content is inserted at the mapped position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="foreach" href="#foreach">forEach</a>(`f`: (`oldStart`: `number`, `oldEnd`: `number`, `newStart`: `number`, `newEnd`: `number`) => `void`): `void`</code>
+<code data-typedoc-code><a id="foreach" href="#foreach">forEach</a>(`f`: (`oldStart`: `number`, `oldEnd`: `number`, `newStart`: `number`, `newEnd`: `number`) => `void`): `void`</code>
 
 </dt>
 
@@ -227,7 +227,7 @@ this map.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert" href="#invert">invert</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="invert" href="#invert">invert</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -277,7 +277,7 @@ collaboration or history management.)
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">Mapping</a>(`maps?`: readonly [`StepMap`](#stepmap)[], `from?`: `number`, `to?`: `number`): [`Mapping`](#mapping)</code>
+<code data-typedoc-code>new <a id="constructor-2" href="#constructor-2">Mapping</a>(`maps?`: readonly [`StepMap`](#stepmap)[], `from?`: `number`, `to?`: `number`): [`Mapping`](#mapping)</code>
 
 </dt>
 
@@ -295,7 +295,7 @@ Create a new mapping with the given position maps.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from" href="#from">from</a>: `number`</code>
+<code data-typedoc-code><a id="from" href="#from">from</a>: `number`</code>
 
 </dt>
 
@@ -312,7 +312,7 @@ The starting position in the `maps` array, used when `map` or
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to" href="#to">to</a>: `number`</code>
+<code data-typedoc-code><a id="to" href="#to">to</a>: `number`</code>
 
 </dt>
 
@@ -330,7 +330,7 @@ The end position in the `maps` array.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="maps" href="#maps">maps</a>(): readonly [`StepMap`](#stepmap)[]</code>
+<code data-typedoc-code>get <a id="maps" href="#maps">maps</a>(): readonly [`StepMap`](#stepmap)[]</code>
 
 </dt>
 
@@ -348,7 +348,7 @@ The step maps in this mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="slice" href="#slice">slice</a>(`from?`: `number`, `to?`: `number`): [`Mapping`](#mapping)</code>
+<code data-typedoc-code><a id="slice" href="#slice">slice</a>(`from?`: `number`, `to?`: `number`): [`Mapping`](#mapping)</code>
 
 </dt>
 
@@ -364,7 +364,7 @@ Create a mapping that maps only through a part of this one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="appendmap" href="#appendmap">appendMap</a>(`map`: [`StepMap`](#stepmap), `mirrors?`: `number`): `void`</code>
+<code data-typedoc-code><a id="appendmap" href="#appendmap">appendMap</a>(`map`: [`StepMap`](#stepmap), `mirrors?`: `number`): `void`</code>
 
 </dt>
 
@@ -382,7 +382,7 @@ image of this one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="appendmapping" href="#appendmapping">appendMapping</a>(`mapping`: [`Mapping`](#mapping)): `void`</code>
+<code data-typedoc-code><a id="appendmapping" href="#appendmapping">appendMapping</a>(`mapping`: [`Mapping`](#mapping)): `void`</code>
 
 </dt>
 
@@ -399,7 +399,7 @@ mirroring information).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmirror" href="#getmirror">getMirror</a>(`n`: `number`): `undefined` \| `number`</code>
+<code data-typedoc-code><a id="getmirror" href="#getmirror">getMirror</a>(`n`: `number`): `undefined` \| `number`</code>
 
 </dt>
 
@@ -417,7 +417,7 @@ given offset, in this mapping (as per the second argument to
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="appendmappinginverted" href="#appendmappinginverted">appendMappingInverted</a>(`mapping`: [`Mapping`](#mapping)): `void`</code>
+<code data-typedoc-code><a id="appendmappinginverted" href="#appendmappinginverted">appendMappingInverted</a>(`mapping`: [`Mapping`](#mapping)): `void`</code>
 
 </dt>
 
@@ -433,7 +433,7 @@ Append the inverse of the given mapping to this one.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-2" href="#invert-2">invert</a>(): [`Mapping`](#mapping)</code>
+<code data-typedoc-code><a id="invert-2" href="#invert-2">invert</a>(): [`Mapping`](#mapping)</code>
 
 </dt>
 
@@ -449,7 +449,7 @@ Create an inverted version of this mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-3" href="#map-3">map</a>(`pos`: `number`, `assoc?`: `number`): `number`</code>
+<code data-typedoc-code><a id="map-3" href="#map-3">map</a>(`pos`: `number`, `assoc?`: `number`): `number`</code>
 
 </dt>
 
@@ -465,7 +465,7 @@ Map a position through this mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mapresult-4" href="#mapresult-4">mapResult</a>(`pos`: `number`, `assoc?`: `number`): [`MapResult`](#mapresult-1)</code>
+<code data-typedoc-code><a id="mapresult-4" href="#mapresult-4">mapResult</a>(`pos`: `number`, `assoc?`: `number`): [`MapResult`](#mapresult-1)</code>
 
 </dt>
 
@@ -500,7 +500,7 @@ JSON-serialization identifier using
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-3" href="#constructor-3">Step</a>(): [`Step`](#step)</code>
+<code data-typedoc-code>new <a id="constructor-3" href="#constructor-3">Step</a>(): [`Step`](#step)</code>
 
 </dt>
 
@@ -567,7 +567,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap" href="#getmap">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap" href="#getmap">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -620,7 +620,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge" href="#merge">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge" href="#merge">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -668,7 +668,7 @@ new document or a failure value.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-4" href="#constructor-4">StepResult</a>(): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code>new <a id="constructor-4" href="#constructor-4">StepResult</a>(): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -778,7 +778,7 @@ that they can be chained.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-5" href="#constructor-5">Transform</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Transform`](#transform)</code>
+<code data-typedoc-code>new <a id="constructor-5" href="#constructor-5">Transform</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Transform`](#transform)</code>
 
 </dt>
 
@@ -796,7 +796,7 @@ Create a transform that starts with the given document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc-1" href="#doc-1">doc</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="doc-1" href="#doc-1">doc</a>: [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -863,7 +863,7 @@ A mapping with the maps for each of the steps in this transform.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="before" href="#before">before</a>(): [`ProseMirrorNode`](model.md#prosemirrornode)</code>
+<code data-typedoc-code>get <a id="before" href="#before">before</a>(): [`ProseMirrorNode`](model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -879,7 +879,7 @@ The starting document.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="docchanged" href="#docchanged">docChanged</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="docchanged" href="#docchanged">docChanged</a>(): `boolean`</code>
 
 </dt>
 
@@ -898,7 +898,7 @@ steps).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="step-1" href="#step-1">step</a>(`step`: [`Step`](#step)): `this`</code>
+<code data-typedoc-code><a id="step-1" href="#step-1">step</a>(`step`: [`Step`](#step)): `this`</code>
 
 </dt>
 
@@ -915,7 +915,7 @@ error when the step fails.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="maybestep" href="#maybestep">maybeStep</a>(`step`: [`Step`](#step)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="maybestep" href="#maybestep">maybeStep</a>(`step`: [`Step`](#step)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -932,7 +932,7 @@ fails. Returns the step result.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replace" href="#replace">replace</a>(`from`: `number`, `to?`: `number`, `slice?`: [`Slice`](model.md#slice)): `this`</code>
+<code data-typedoc-code><a id="replace" href="#replace">replace</a>(`from`: `number`, `to?`: `number`, `slice?`: [`Slice`](model.md#slice)): `this`</code>
 
 </dt>
 
@@ -949,7 +949,7 @@ given `slice`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacewith" href="#replacewith">replaceWith</a>(`from`: `number`, `to`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
+<code data-typedoc-code><a id="replacewith" href="#replacewith">replaceWith</a>(`from`: `number`, `to`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
 
 </dt>
 
@@ -966,7 +966,7 @@ fragment, node, or array of nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="delete" href="#delete">delete</a>(`from`: `number`, `to`: `number`): `this`</code>
+<code data-typedoc-code><a id="delete" href="#delete">delete</a>(`from`: `number`, `to`: `number`): `this`</code>
 
 </dt>
 
@@ -982,7 +982,7 @@ Delete the content between the given positions.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="insert" href="#insert">insert</a>(`pos`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
+<code data-typedoc-code><a id="insert" href="#insert">insert</a>(`pos`: `number`, `content`: [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]): `this`</code>
 
 </dt>
 
@@ -998,7 +998,7 @@ Insert the given content at the given position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacerange" href="#replacerange">replaceRange</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](model.md#slice)): `this`</code>
+<code data-typedoc-code><a id="replacerange" href="#replacerange">replaceRange</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](model.md#slice)): `this`</code>
 
 </dt>
 
@@ -1030,7 +1030,7 @@ control over what happens.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="replacerangewith" href="#replacerangewith">replaceRangeWith</a>(`from`: `number`, `to`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `this`</code>
+<code data-typedoc-code><a id="replacerangewith" href="#replacerangewith">replaceRangeWith</a>(`from`: `number`, `to`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode)): `this`</code>
 
 </dt>
 
@@ -1052,7 +1052,7 @@ that parent node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="deleterange" href="#deleterange">deleteRange</a>(`from`: `number`, `to`: `number`): `this`</code>
+<code data-typedoc-code><a id="deleterange" href="#deleterange">deleteRange</a>(`from`: `number`, `to`: `number`): `this`</code>
 
 </dt>
 
@@ -1069,7 +1069,7 @@ parent nodes until a valid replace is found.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="lift" href="#lift">lift</a>(`range`: [`NodeRange`](model.md#noderange), `target`: `number`): `this`</code>
+<code data-typedoc-code><a id="lift" href="#lift">lift</a>(`range`: [`NodeRange`](model.md#noderange), `target`: `number`): `this`</code>
 
 </dt>
 
@@ -1089,7 +1089,7 @@ sure the lift is valid.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="join" href="#join">join</a>(`pos`: `number`, `depth?`: `number`): `this`</code>
+<code data-typedoc-code><a id="join" href="#join">join</a>(`pos`: `number`, `depth?`: `number`): `this`</code>
 
 </dt>
 
@@ -1106,7 +1106,7 @@ last and first siblings are also joined, and so on.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="wrap" href="#wrap">wrap</a>(`range`: [`NodeRange`](model.md#noderange), `wrappers`: readonly `object`[]): `this`</code>
+<code data-typedoc-code><a id="wrap" href="#wrap">wrap</a>(`range`: [`NodeRange`](model.md#noderange), `wrappers`: readonly `object`[]): `this`</code>
 
 </dt>
 
@@ -1124,7 +1124,7 @@ probably be computed with [`findWrapping`](https://prosemirror.net/docs/ref/#tra
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`from`: `number`, `to`: `undefined` \| `number`, `type`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-4)): `this`</code>
+<code data-typedoc-code><a id="setblocktype" href="#setblocktype">setBlockType</a>(`from`: `number`, `to`: `undefined` \| `number`, `type`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-4)): `this`</code>
 
 </dt>
 
@@ -1141,7 +1141,7 @@ the given node type with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setnodemarkup" href="#setnodemarkup">setNodeMarkup</a>(`pos`: `number`, `type?`: `null` \| [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `marks?`: readonly [`Mark`](model.md#mark)[]): `this`</code>
+<code data-typedoc-code><a id="setnodemarkup" href="#setnodemarkup">setNodeMarkup</a>(`pos`: `number`, `type?`: `null` \| [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `marks?`: readonly [`Mark`](model.md#mark)[]): `this`</code>
 
 </dt>
 
@@ -1158,7 +1158,7 @@ When `type` isn't given, the existing node type is preserved,
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setnodeattribute" href="#setnodeattribute">setNodeAttribute</a>(`pos`: `number`, `attr`: `string`, `value`: `any`): `this`</code>
+<code data-typedoc-code><a id="setnodeattribute" href="#setnodeattribute">setNodeAttribute</a>(`pos`: `number`, `attr`: `string`, `value`: `any`): `this`</code>
 
 </dt>
 
@@ -1176,7 +1176,7 @@ to set attributes on the document itself.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setdocattribute" href="#setdocattribute">setDocAttribute</a>(`attr`: `string`, `value`: `any`): `this`</code>
+<code data-typedoc-code><a id="setdocattribute" href="#setdocattribute">setDocAttribute</a>(`attr`: `string`, `value`: `any`): `this`</code>
 
 </dt>
 
@@ -1192,7 +1192,7 @@ Set a single attribute on the document to a new value.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addnodemark" href="#addnodemark">addNodeMark</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="addnodemark" href="#addnodemark">addNodeMark</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1208,7 +1208,7 @@ Add a mark to the node at position `pos`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removenodemark" href="#removenodemark">removeNodeMark</a>(`pos`: `number`, `mark`: [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="removenodemark" href="#removenodemark">removeNodeMark</a>(`pos`: `number`, `mark`: [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1225,7 +1225,7 @@ position `pos`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="split" href="#split">split</a>(`pos`: `number`, `depth?`: `number`, `typesAfter?`: (`null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: `null` \| [`Attrs`](model.md#attrs-4); \})[]): `this`</code>
+<code data-typedoc-code><a id="split" href="#split">split</a>(`pos`: `number`, `depth?`: `number`, `typesAfter?`: (`null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: `null` \| [`Attrs`](model.md#attrs-4); \})[]): `this`</code>
 
 </dt>
 
@@ -1245,7 +1245,7 @@ use after the split (with the outermost nodes coming first).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="addmark" href="#addmark">addMark</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="addmark" href="#addmark">addMark</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1261,7 +1261,7 @@ Add the given mark to the inline content between `from` and `to`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removemark" href="#removemark">removeMark</a>(`from`: `number`, `to`: `number`, `mark?`: `null` \| [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
+<code data-typedoc-code><a id="removemark" href="#removemark">removeMark</a>(`from`: `number`, `to`: `number`, `mark?`: `null` \| [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)): `this`</code>
 
 </dt>
 
@@ -1280,7 +1280,7 @@ remove all marks of any type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="clearincompatible" href="#clearincompatible">clearIncompatible</a>(`pos`: `number`, `parentType`: [`NodeType`](model.md#nodetype), `match?`: [`ContentMatch`](model.md#contentmatch-1)): `this`</code>
+<code data-typedoc-code><a id="clearincompatible" href="#clearincompatible">clearIncompatible</a>(`pos`: `number`, `parentType`: [`NodeType`](model.md#nodetype), `match?`: [`ContentMatch`](model.md#contentmatch-1)): `this`</code>
 
 </dt>
 
@@ -1309,7 +1309,7 @@ Add a mark to all inline content between two positions.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-6" href="#constructor-6">AddMarkStep</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): [`AddMarkStep`](#addmarkstep)</code>
+<code data-typedoc-code>new <a id="constructor-6" href="#constructor-6">AddMarkStep</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): [`AddMarkStep`](#addmarkstep)</code>
 
 </dt>
 
@@ -1377,7 +1377,7 @@ The mark to add.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-2" href="#getmap-2">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-2" href="#getmap-2">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -1431,7 +1431,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-2" href="#apply-2">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-2" href="#apply-2">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -1450,7 +1450,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-6" href="#invert-6">invert</a>(): [`Step`](#step)</code>
+<code data-typedoc-code><a id="invert-6" href="#invert-6">invert</a>(): [`Step`](#step)</code>
 
 </dt>
 
@@ -1467,7 +1467,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-7" href="#map-7">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="map-7" href="#map-7">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -1485,7 +1485,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-2" href="#merge-2">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-2" href="#merge-2">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -1503,7 +1503,7 @@ steps can't be merged.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-2" href="#tojson-2">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-2" href="#tojson-2">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -1532,7 +1532,7 @@ Remove a mark from all inline content between two positions.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-7" href="#constructor-7">RemoveMarkStep</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): [`RemoveMarkStep`](#removemarkstep)</code>
+<code data-typedoc-code>new <a id="constructor-7" href="#constructor-7">RemoveMarkStep</a>(`from`: `number`, `to`: `number`, `mark`: [`Mark`](model.md#mark)): [`RemoveMarkStep`](#removemarkstep)</code>
 
 </dt>
 
@@ -1600,7 +1600,7 @@ The mark to remove.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-4" href="#getmap-4">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-4" href="#getmap-4">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -1654,7 +1654,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-4" href="#apply-4">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-4" href="#apply-4">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -1673,7 +1673,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-8" href="#invert-8">invert</a>(): [`Step`](#step)</code>
+<code data-typedoc-code><a id="invert-8" href="#invert-8">invert</a>(): [`Step`](#step)</code>
 
 </dt>
 
@@ -1690,7 +1690,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-9" href="#map-9">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="map-9" href="#map-9">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -1708,7 +1708,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-4" href="#merge-4">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-4" href="#merge-4">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -1726,7 +1726,7 @@ steps can't be merged.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-4" href="#tojson-4">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-4" href="#tojson-4">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -1755,7 +1755,7 @@ Add a mark to a specific node.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-8" href="#constructor-8">AddNodeMarkStep</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): [`AddNodeMarkStep`](#addnodemarkstep)</code>
+<code data-typedoc-code>new <a id="constructor-8" href="#constructor-8">AddNodeMarkStep</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): [`AddNodeMarkStep`](#addnodemarkstep)</code>
 
 </dt>
 
@@ -1807,7 +1807,7 @@ The mark to add.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-6" href="#getmap-6">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-6" href="#getmap-6">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -1825,7 +1825,7 @@ and the new document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-6" href="#merge-6">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-6" href="#merge-6">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -1879,7 +1879,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-6" href="#apply-6">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-6" href="#apply-6">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -1898,7 +1898,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-10" href="#invert-10">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Step`](#step)</code>
+<code data-typedoc-code><a id="invert-10" href="#invert-10">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Step`](#step)</code>
 
 </dt>
 
@@ -1915,7 +1915,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-11" href="#map-11">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="map-11" href="#map-11">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -1933,7 +1933,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-6" href="#tojson-6">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-6" href="#tojson-6">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -1962,7 +1962,7 @@ Remove a mark from a specific node.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-9" href="#constructor-9">RemoveNodeMarkStep</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): [`RemoveNodeMarkStep`](#removenodemarkstep)</code>
+<code data-typedoc-code>new <a id="constructor-9" href="#constructor-9">RemoveNodeMarkStep</a>(`pos`: `number`, `mark`: [`Mark`](model.md#mark)): [`RemoveNodeMarkStep`](#removenodemarkstep)</code>
 
 </dt>
 
@@ -2014,7 +2014,7 @@ The mark to remove.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-8" href="#getmap-8">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-8" href="#getmap-8">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -2032,7 +2032,7 @@ and the new document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-8" href="#merge-8">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-8" href="#merge-8">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -2086,7 +2086,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-8" href="#apply-8">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-8" href="#apply-8">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -2105,7 +2105,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-12" href="#invert-12">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Step`](#step)</code>
+<code data-typedoc-code><a id="invert-12" href="#invert-12">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`Step`](#step)</code>
 
 </dt>
 
@@ -2122,7 +2122,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-13" href="#map-13">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="map-13" href="#map-13">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -2140,7 +2140,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-8" href="#tojson-8">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-8" href="#tojson-8">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2169,7 +2169,7 @@ Replace a part of the document with a slice of new content.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-10" href="#constructor-10">ReplaceStep</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](model.md#slice)): [`ReplaceStep`](#replacestep)</code>
+<code data-typedoc-code>new <a id="constructor-10" href="#constructor-10">ReplaceStep</a>(`from`: `number`, `to`: `number`, `slice`: [`Slice`](model.md#slice)): [`ReplaceStep`](#replacestep)</code>
 
 </dt>
 
@@ -2279,7 +2279,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-10" href="#apply-10">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-10" href="#apply-10">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -2298,7 +2298,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-10" href="#getmap-10">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-10" href="#getmap-10">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -2316,7 +2316,7 @@ and the new document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-14" href="#invert-14">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`ReplaceStep`](#replacestep)</code>
+<code data-typedoc-code><a id="invert-14" href="#invert-14">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`ReplaceStep`](#replacestep)</code>
 
 </dt>
 
@@ -2333,7 +2333,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-15" href="#map-15">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`ReplaceStep`](#replacestep)</code>
+<code data-typedoc-code><a id="map-15" href="#map-15">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`ReplaceStep`](#replacestep)</code>
 
 </dt>
 
@@ -2351,7 +2351,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-10" href="#merge-10">merge</a>(`other`: [`Step`](#step)): `null` \| [`ReplaceStep`](#replacestep)</code>
+<code data-typedoc-code><a id="merge-10" href="#merge-10">merge</a>(`other`: [`Step`](#step)): `null` \| [`ReplaceStep`](#replacestep)</code>
 
 </dt>
 
@@ -2369,7 +2369,7 @@ steps can't be merged.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-10" href="#tojson-10">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-10" href="#tojson-10">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2400,7 +2400,7 @@ slice.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-11" href="#constructor-11">ReplaceAroundStep</a>(`from`: `number`, `to`: `number`, `gapFrom`: `number`, `gapTo`: `number`, `slice`: [`Slice`](model.md#slice), `insert`: `number`): [`ReplaceAroundStep`](#replacearoundstep)</code>
+<code data-typedoc-code>new <a id="constructor-11" href="#constructor-11">ReplaceAroundStep</a>(`from`: `number`, `to`: `number`, `gapFrom`: `number`, `gapTo`: `number`, `slice`: [`Slice`](model.md#slice), `insert`: `number`): [`ReplaceAroundStep`](#replacearoundstep)</code>
 
 </dt>
 
@@ -2520,7 +2520,7 @@ inserted.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-12" href="#merge-12">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-12" href="#merge-12">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -2574,7 +2574,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-12" href="#apply-12">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-12" href="#apply-12">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -2593,7 +2593,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-12" href="#getmap-12">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-12" href="#getmap-12">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -2611,7 +2611,7 @@ and the new document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-16" href="#invert-16">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`ReplaceAroundStep`](#replacearoundstep)</code>
+<code data-typedoc-code><a id="invert-16" href="#invert-16">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`ReplaceAroundStep`](#replacearoundstep)</code>
 
 </dt>
 
@@ -2628,7 +2628,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-17" href="#map-17">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`ReplaceAroundStep`](#replacearoundstep)</code>
+<code data-typedoc-code><a id="map-17" href="#map-17">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`ReplaceAroundStep`](#replacearoundstep)</code>
 
 </dt>
 
@@ -2646,7 +2646,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-12" href="#tojson-12">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-12" href="#tojson-12">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2675,7 +2675,7 @@ Update an attribute in a specific node.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-12" href="#constructor-12">AttrStep</a>(`pos`: `number`, `attr`: `string`, `value`: `any`): [`AttrStep`](#attrstep)</code>
+<code data-typedoc-code>new <a id="constructor-12" href="#constructor-12">AttrStep</a>(`pos`: `number`, `attr`: `string`, `value`: `any`): [`AttrStep`](#attrstep)</code>
 
 </dt>
 
@@ -2737,7 +2737,7 @@ The attribute to set.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-14" href="#merge-14">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-14" href="#merge-14">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -2774,7 +2774,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-14" href="#apply-14">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-14" href="#apply-14">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -2793,7 +2793,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-14" href="#getmap-14">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-14" href="#getmap-14">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -2811,7 +2811,7 @@ and the new document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-18" href="#invert-18">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`AttrStep`](#attrstep)</code>
+<code data-typedoc-code><a id="invert-18" href="#invert-18">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`AttrStep`](#attrstep)</code>
 
 </dt>
 
@@ -2828,7 +2828,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-19" href="#map-19">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`AttrStep`](#attrstep)</code>
+<code data-typedoc-code><a id="map-19" href="#map-19">map</a>(`mapping`: [`Mappable`](#mappable)): `null` \| [`AttrStep`](#attrstep)</code>
 
 </dt>
 
@@ -2846,7 +2846,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-14" href="#tojson-14">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-14" href="#tojson-14">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -2892,7 +2892,7 @@ Update an attribute in the doc node.
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor-13" href="#constructor-13">DocAttrStep</a>(`attr`: `string`, `value`: `any`): [`DocAttrStep`](#docattrstep)</code>
+<code data-typedoc-code>new <a id="constructor-13" href="#constructor-13">DocAttrStep</a>(`attr`: `string`, `value`: `any`): [`DocAttrStep`](#docattrstep)</code>
 
 </dt>
 
@@ -2938,7 +2938,7 @@ The attribute to set.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="merge-16" href="#merge-16">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><a id="merge-16" href="#merge-16">merge</a>(`other`: [`Step`](#step)): `null` \| [`Step`](#step)</code>
 
 </dt>
 
@@ -2975,7 +2975,7 @@ that's unlikely to clash with steps from other modules.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="apply-16" href="#apply-16">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
+<code data-typedoc-code><a id="apply-16" href="#apply-16">apply</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`StepResult`](#stepresult)</code>
 
 </dt>
 
@@ -2994,7 +2994,7 @@ transformed document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getmap-16" href="#getmap-16">getMap</a>(): [`StepMap`](#stepmap)</code>
+<code data-typedoc-code><a id="getmap-16" href="#getmap-16">getMap</a>(): [`StepMap`](#stepmap)</code>
 
 </dt>
 
@@ -3012,7 +3012,7 @@ and the new document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="invert-20" href="#invert-20">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`DocAttrStep`](#docattrstep)</code>
+<code data-typedoc-code><a id="invert-20" href="#invert-20">invert</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)): [`DocAttrStep`](#docattrstep)</code>
 
 </dt>
 
@@ -3029,7 +3029,7 @@ was before the step as argument.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map-21" href="#map-21">map</a>(`mapping`: [`Mappable`](#mappable)): `this`</code>
+<code data-typedoc-code><a id="map-21" href="#map-21">map</a>(`mapping`: [`Mappable`](#mappable)): `this`</code>
 
 </dt>
 
@@ -3047,7 +3047,7 @@ the step was entirely deleted by the mapping.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="tojson-16" href="#tojson-16">toJSON</a>(): `any`</code>
+<code data-typedoc-code><a id="tojson-16" href="#tojson-16">toJSON</a>(): `any`</code>
 
 </dt>
 
@@ -3092,7 +3092,7 @@ Such objects conform to this interface.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="map" href="#map">map</a>: (`pos`: `number`, `assoc?`: `number`) => `number`</code>
+<code data-typedoc-code><a id="map" href="#map">map</a>: (`pos`: `number`, `assoc?`: `number`) => `number`</code>
 
 </dt>
 
@@ -3111,7 +3111,7 @@ move when a chunk of content is inserted at the mapped position.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mapresult" href="#mapresult">mapResult</a>: (`pos`: `number`, `assoc?`: `number`) => [`MapResult`](#mapresult-1)</code>
+<code data-typedoc-code><a id="mapresult" href="#mapresult">mapResult</a>: (`pos`: `number`, `assoc?`: `number`) => [`MapResult`](#mapresult-1)</code>
 
 </dt>
 
@@ -3136,7 +3136,7 @@ is deleted, the position itself is only considered deleted when
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="lifttarget" href="#lifttarget">liftTarget</a>(`range`: [`NodeRange`](model.md#noderange)): `null` \| `number`</code>
+<code data-typedoc-code><i>function</i> <a id="lifttarget" href="#lifttarget">liftTarget</a>(`range`: [`NodeRange`](model.md#noderange)): `null` \| `number`</code>
 
 </dt>
 
@@ -3158,7 +3158,7 @@ can be lifted. Will not go across
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="findwrapping" href="#findwrapping">findWrapping</a>(`range`: [`NodeRange`](model.md#noderange), `nodeType`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `innerRange?`: [`NodeRange`](model.md#noderange)): `null` \| `object`[]</code>
+<code data-typedoc-code><i>function</i> <a id="findwrapping" href="#findwrapping">findWrapping</a>(`range`: [`NodeRange`](model.md#noderange), `nodeType`: [`NodeType`](model.md#nodetype), `attrs?`: `null` \| [`Attrs`](model.md#attrs-4), `innerRange?`: [`NodeRange`](model.md#noderange)): `null` \| `object`[]</code>
 
 </dt>
 
@@ -3183,7 +3183,7 @@ content of `range`.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="cansplit" href="#cansplit">canSplit</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `depth?`: `number`, `typesAfter?`: (`null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: `null` \| [`Attrs`](model.md#attrs-4); \})[]): `boolean`</code>
+<code data-typedoc-code><i>function</i> <a id="cansplit" href="#cansplit">canSplit</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `depth?`: `number`, `typesAfter?`: (`null` \| \{ `type`: [`NodeType`](model.md#nodetype); `attrs?`: `null` \| [`Attrs`](model.md#attrs-4); \})[]): `boolean`</code>
 
 </dt>
 
@@ -3203,7 +3203,7 @@ Check whether splitting at the given position is allowed.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="canjoin" href="#canjoin">canJoin</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`): `boolean`</code>
+<code data-typedoc-code><i>function</i> <a id="canjoin" href="#canjoin">canJoin</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`): `boolean`</code>
 
 </dt>
 
@@ -3224,7 +3224,7 @@ joined.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="joinpoint" href="#joinpoint">joinPoint</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `dir?`: `number`): `undefined` \| `number`</code>
+<code data-typedoc-code><i>function</i> <a id="joinpoint" href="#joinpoint">joinPoint</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `dir?`: `number`): `undefined` \| `number`</code>
 
 </dt>
 
@@ -3246,7 +3246,7 @@ point, if any.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="insertpoint" href="#insertpoint">insertPoint</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `nodeType`: [`NodeType`](model.md#nodetype)): `null` \| `number`</code>
+<code data-typedoc-code><i>function</i> <a id="insertpoint" href="#insertpoint">insertPoint</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `nodeType`: [`NodeType`](model.md#nodetype)): `null` \| `number`</code>
 
 </dt>
 
@@ -3269,7 +3269,7 @@ null if no position was found.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="droppoint" href="#droppoint">dropPoint</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `slice`: [`Slice`](model.md#slice)): `null` \| `number`</code>
+<code data-typedoc-code><i>function</i> <a id="droppoint" href="#droppoint">dropPoint</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `pos`: `number`, `slice`: [`Slice`](model.md#slice)): `null` \| `number`</code>
 
 </dt>
 
@@ -3292,7 +3292,7 @@ start or end of that node. Returns null when no position was found.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="replacestep-1" href="#replacestep-1">replaceStep</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `from`: `number`, `to?`: `number`, `slice?`: [`Slice`](model.md#slice)): `null` \| [`Step`](#step)</code>
+<code data-typedoc-code><i>function</i> <a id="replacestep-1" href="#replacestep-1">replaceStep</a>(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `from`: `number`, `to?`: `number`, `slice?`: [`Slice`](model.md#slice)): `null` \| [`Step`](#step)</code>
 
 </dt>
 

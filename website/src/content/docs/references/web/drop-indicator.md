@@ -16,7 +16,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> new <a id="constructor" href="#constructor">DropIndicatorElement</a>(): [`DropIndicatorElement`](#dropindicatorelement)</code>
+<code data-typedoc-code>new <a id="constructor" href="#constructor">DropIndicatorElement</a>(): [`DropIndicatorElement`](#dropindicatorelement)</code>
 
 </dt>
 
@@ -28,7 +28,7 @@ sidebar:
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width" href="#width">width</a>: `number`</code>
+<code data-typedoc-code><a id="width" href="#width">width</a>: `number`</code>
 
 </dt>
 
@@ -54,7 +54,7 @@ The line width in pixels.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="width-1" href="#width-1">width</a>: `number`</code>
+<code data-typedoc-code><a id="width-1" href="#width-1">width</a>: `number`</code>
 
 </dt>
 

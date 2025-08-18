@@ -16,7 +16,7 @@ Options for [defineMarkInputRule](#definemarkinputrule).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
+<code data-typedoc-code><a id="regex" href="#regex">regex</a>: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)</code>
 
 </dt>
 
@@ -34,7 +34,7 @@ will be deleted.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type" href="#type">type</a>: `string` \| [`MarkType`](../pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type" href="#type">type</a>: `string` \| [`MarkType`](../pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -50,7 +50,7 @@ The type of mark to set.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](../pm/model.md#attrs-4) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](../pm/model.md#attrs-4) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -66,7 +66,7 @@ Attributes to set on the mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="incodemark" href="#incodemark">inCodeMark</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="incodemark" href="#incodemark">inCodeMark</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -90,7 +90,7 @@ Whether this rule should fire inside marks marked as [code](https://prosemirror.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineinputrule" href="#defineinputrule">defineInputRule</a>(`rule`: [`InputRule`](https://prosemirror.net/docs/ref/#inputrules.InputRule)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineinputrule" href="#defineinputrule">defineInputRule</a>(`rule`: [`InputRule`](https://prosemirror.net/docs/ref/#inputrules.InputRule)): `PlainExtension`</code>
 
 </dt>
 
@@ -110,7 +110,7 @@ Defines an input rule extension.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemarkinputrule" href="#definemarkinputrule">defineMarkInputRule</a>(`options`: [`MarkInputRuleOptions`](#markinputruleoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definemarkinputrule" href="#definemarkinputrule">defineMarkInputRule</a>(`options`: [`MarkInputRuleOptions`](#markinputruleoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -131,7 +131,7 @@ pattern is typed.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetextblockinputrule" href="#definetextblockinputrule">defineTextBlockInputRule</a>(`options`: `object`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetextblockinputrule" href="#definetextblockinputrule">defineTextBlockInputRule</a>(`options`: `object`): `PlainExtension`</code>
 
 </dt>
 
@@ -154,7 +154,7 @@ See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.t
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definewrappinginputrule" href="#definewrappinginputrule">defineWrappingInputRule</a>(`options`: `object`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definewrappinginputrule" href="#definewrappinginputrule">defineWrappingInputRule</a>(`options`: `object`): `PlainExtension`</code>
 
 </dt>
 

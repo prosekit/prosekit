@@ -93,7 +93,7 @@ ProseKit extension priority.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="mounted" href="#mounted">mounted</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="mounted" href="#mounted">mounted</a>(): `boolean`</code>
 
 </dt>
 
@@ -109,7 +109,7 @@ Whether the editor is mounted.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="view" href="#view">view</a>(): [`EditorView`](pm/view.md#editorview)</code>
+<code data-typedoc-code>get <a id="view" href="#view">view</a>(): [`EditorView`](pm/view.md#editorview)</code>
 
 </dt>
 
@@ -125,7 +125,7 @@ The editor view.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="schema" href="#schema">schema</a>(): [`Schema`](pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
+<code data-typedoc-code>get <a id="schema" href="#schema">schema</a>(): [`Schema`](pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
 
 </dt>
 
@@ -141,7 +141,7 @@ The editor schema.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="state" href="#state">state</a>(): [`EditorState`](pm/state.md#editorstate)</code>
+<code data-typedoc-code>get <a id="state" href="#state">state</a>(): [`EditorState`](pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -157,7 +157,7 @@ The editor's current state.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="focused" href="#focused">focused</a>(): `boolean`</code>
+<code data-typedoc-code>get <a id="focused" href="#focused">focused</a>(): `boolean`</code>
 
 </dt>
 
@@ -173,7 +173,7 @@ Whether the editor is focused.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="commands" href="#commands">commands</a>(): [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
+<code data-typedoc-code>get <a id="commands" href="#commands">commands</a>(): [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
 
 </dt>
 
@@ -189,7 +189,7 @@ All [CommandAction](#commandaction)s defined by the editor.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="nodes" href="#nodes">nodes</a>(): [`ExtractNodeActions`](#extractnodeactions)\<`E`\></code>
+<code data-typedoc-code>get <a id="nodes" href="#nodes">nodes</a>(): [`ExtractNodeActions`](#extractnodeactions)\<`E`\></code>
 
 </dt>
 
@@ -205,7 +205,7 @@ All [NodeAction](#nodeaction)s defined by the editor.
 
 <dt>
 
-<code data-typedoc-code>get <i></i> <a id="marks" href="#marks">marks</a>(): [`ExtractMarkActions`](#extractmarkactions)\<`E`\></code>
+<code data-typedoc-code>get <a id="marks" href="#marks">marks</a>(): [`ExtractMarkActions`](#extractmarkactions)\<`E`\></code>
 
 </dt>
 
@@ -223,7 +223,7 @@ All [MarkAction](#markaction)s defined by the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="mount" href="#mount">mount</a>(`place`: `undefined` \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)): `void`</code>
+<code data-typedoc-code><a id="mount" href="#mount">mount</a>(`place`: `undefined` \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)): `void`</code>
 
 </dt>
 
@@ -240,7 +240,7 @@ Pass `null` or `undefined` to unmount the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="unmount" href="#unmount">unmount</a>(): `void`</code>
+<code data-typedoc-code><a id="unmount" href="#unmount">unmount</a>(): `void`</code>
 
 </dt>
 
@@ -256,7 +256,7 @@ Unmount the editor. This is equivalent to `mount(null)`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="focus" href="#focus">focus</a>(): `void`</code>
+<code data-typedoc-code><a id="focus" href="#focus">focus</a>(): `void`</code>
 
 </dt>
 
@@ -272,7 +272,7 @@ Focus the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="blur" href="#blur">blur</a>(): `void`</code>
+<code data-typedoc-code><a id="blur" href="#blur">blur</a>(): `void`</code>
 
 </dt>
 
@@ -288,7 +288,7 @@ Blur the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="use" href="#use">use</a>(`extension`: [`Extension`](#extension-1)): `VoidFunction`</code>
+<code data-typedoc-code><a id="use" href="#use">use</a>(`extension`: [`Extension`](#extension-1)): `VoidFunction`</code>
 
 </dt>
 
@@ -305,7 +305,7 @@ extension.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): `void`</code>
+<code data-typedoc-code><a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): `void`</code>
 
 </dt>
 
@@ -326,7 +326,7 @@ directly manipulate the editor's state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="setcontent" href="#setcontent">setContent</a>(`content`: `string` \| [`ProseMirrorNode`](pm/model.md#prosemirrornode) \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), `selection?`: [`Selection`](pm/state.md#selection-3) \| `"start"` \| [`SelectionJSON`](#selectionjson) \| `"end"`): `void`</code>
+<code data-typedoc-code><a id="setcontent" href="#setcontent">setContent</a>(`content`: `string` \| [`ProseMirrorNode`](pm/model.md#prosemirrornode) \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), `selection?`: [`Selection`](pm/state.md#selection-3) \| `"start"` \| [`SelectionJSON`](#selectionjson) \| `"end"`): `void`</code>
 
 </dt>
 
@@ -342,7 +342,7 @@ Update the editor's document and selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getdocjson" href="#getdocjson">getDocJSON</a>(): [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-code><a id="getdocjson" href="#getdocjson">getDocJSON</a>(): [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -358,7 +358,7 @@ Return a JSON object representing the editor's current document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="getdochtml" href="#getdochtml">getDocHTML</a>(`options?`: `getDocHTMLOptions`): `string`</code>
+<code data-typedoc-code><a id="getdochtml" href="#getdochtml">getDocHTML</a>(`options?`: `getDocHTMLOptions`): `string`</code>
 
 </dt>
 
@@ -374,7 +374,7 @@ Return a HTML string representing the editor's current document.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="exec" href="#exec">exec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
+<code data-typedoc-code><a id="exec" href="#exec">exec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
 
 </dt>
 
@@ -391,7 +391,7 @@ executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canexec" href="#canexec">canExec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
+<code data-typedoc-code><a id="canexec" href="#canexec">canExec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
 
 </dt>
 
@@ -414,7 +414,7 @@ can be executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type" href="#type">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type" href="#type">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -430,7 +430,7 @@ The type of the mark to add.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs" href="#attrs">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -446,7 +446,7 @@ The attributes of the mark to add.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from" href="#from">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from" href="#from">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -462,7 +462,7 @@ The start position of the document. By default it will be the start position of 
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to" href="#to">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to" href="#to">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -484,7 +484,7 @@ The end position of the document. By default it will be the end position of curr
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-1" href="#type-1">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type-1" href="#type-1">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -506,7 +506,7 @@ The type of the mark to expand.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos" href="#pos">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos" href="#pos">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -529,7 +529,7 @@ current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node" href="#node">node</a><i>?</i>: [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="node" href="#node">node</a><i>?</i>: [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -545,7 +545,7 @@ The node to insert. Either this or `type` must be provided.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-2" href="#type-2">type</a><i>?</i>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type-2" href="#type-2">type</a><i>?</i>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -561,7 +561,7 @@ The type of the node to insert. Either this or `node` must be provided.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-1" href="#attrs-1">attrs</a><i>?</i>: [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-1" href="#attrs-1">attrs</a><i>?</i>: [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -577,7 +577,7 @@ When `type` is provided, the attributes of the node to insert.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-1" href="#pos-1">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos-1" href="#pos-1">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -600,7 +600,7 @@ position of current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-3" href="#type-3">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type-3" href="#type-3">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -616,7 +616,7 @@ The type of the mark to remove.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-2" href="#attrs-2">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-2" href="#attrs-2">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -632,7 +632,7 @@ If attrs is given, remove precisely the mark with the given attrs. Otherwise, re
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-1" href="#from-1">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from-1" href="#from-1">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -648,7 +648,7 @@ The start position of the document. By default it will be the start position of 
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-1" href="#to-1">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to-1" href="#to-1">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -670,7 +670,7 @@ The end position of the document. By default it will be the end position of curr
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-4" href="#type-4">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type-4" href="#type-4">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -686,7 +686,7 @@ The type of the node to remove.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-2" href="#pos-2">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos-2" href="#pos-2">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -709,7 +709,7 @@ anchor position of current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-5" href="#type-5">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type-5" href="#type-5">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -719,7 +719,7 @@ anchor position of current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-3" href="#attrs-3">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-3" href="#attrs-3">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -729,7 +729,7 @@ anchor position of current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-2" href="#from-2">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from-2" href="#from-2">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -739,7 +739,7 @@ anchor position of current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-2" href="#to-2">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to-2" href="#to-2">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -755,7 +755,7 @@ anchor position of current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-6" href="#type-6">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype) \| `string`[] \| [`NodeType`](pm/model.md#nodetype)[]</code>
+<code data-typedoc-code><a id="type-6" href="#type-6">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype) \| `string`[] \| [`NodeType`](pm/model.md#nodetype)[]</code>
 
 </dt>
 
@@ -773,7 +773,7 @@ If current node is not of this type, the command will do nothing.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-4" href="#attrs-4">attrs</a>: [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-4" href="#attrs-4">attrs</a>: [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -789,7 +789,7 @@ The attributes to set.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-3" href="#pos-3">pos</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="pos-3" href="#pos-3">pos</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -812,7 +812,7 @@ containing the current selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-7" href="#type-7">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
+<code data-typedoc-code><a id="type-7" href="#type-7">type</a>: `string` \| [`MarkType`](pm/model.md#marktype-1)</code>
 
 </dt>
 
@@ -828,7 +828,7 @@ The mark type to toggle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-5" href="#attrs-5">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-5" href="#attrs-5">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -844,7 +844,7 @@ The optional attributes to set on the mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="removewhenpresent" href="#removewhenpresent">removeWhenPresent</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="removewhenpresent" href="#removewhenpresent">removeWhenPresent</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -866,7 +866,7 @@ already and part doesn't, the mark is removed (`true`) or added
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="enterinlineatoms" href="#enterinlineatoms">enterInlineAtoms</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="enterinlineatoms" href="#enterinlineatoms">enterInlineAtoms</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -894,7 +894,7 @@ completely covered by a selection range.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-8" href="#type-8">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type-8" href="#type-8">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -910,7 +910,7 @@ The type of the node to toggle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-6" href="#attrs-6">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-6" href="#attrs-6">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -932,7 +932,7 @@ The attributes of the node to toggle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-9" href="#type-9">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type-9" href="#type-9">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -948,7 +948,7 @@ The type of the node to toggle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-7" href="#attrs-7">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-7" href="#attrs-7">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -970,7 +970,7 @@ The attributes of the node to toggle.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-3" href="#from-3">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from-3" href="#from-3">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -986,7 +986,7 @@ The start position of the document. By default it will be the start position of 
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-3" href="#to-3">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to-3" href="#to-3">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -1010,7 +1010,7 @@ Options for [unsetMark](#unsetmark).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-4" href="#from-4">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from-4" href="#from-4">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -1026,7 +1026,7 @@ The start position of the document. By default it will be the start position of 
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-4" href="#to-4">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to-4" href="#to-4">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -1048,7 +1048,7 @@ The end position of the document. By default it will be the end position of curr
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-10" href="#type-10">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="type-10" href="#type-10">type</a>: `string` \| [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -1064,7 +1064,7 @@ The node type to wrap the selected textblock with.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodetype" href="#nodetype">nodeType</a><i>?</i>: [`NodeType`](pm/model.md#nodetype)</code>
+<code data-typedoc-code><a id="nodetype" href="#nodetype">nodeType</a><i>?</i>: [`NodeType`](pm/model.md#nodetype)</code>
 
 </dt>
 
@@ -1082,7 +1082,7 @@ Use `nodeSpec` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-8" href="#attrs-8">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code><a id="attrs-8" href="#attrs-8">attrs</a><i>?</i>: `null` \| [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -1110,7 +1110,7 @@ current editor selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodeaction" href="#nodeaction">NodeAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="nodeaction" href="#nodeaction">NodeAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -1128,7 +1128,7 @@ Creates a node with attributes and any number of children.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="nodeaction" href="#nodeaction">NodeAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="nodeaction" href="#nodeaction">NodeAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -1146,7 +1146,7 @@ Creates a node with any number of children.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isactive" href="#isactive">isActive</a>: (`attrs?`: `Attrs`) => `boolean`</code>
+<code data-typedoc-code><a id="isactive" href="#isactive">isActive</a>: (`attrs?`: `Attrs`) => `boolean`</code>
 
 </dt>
 
@@ -1176,7 +1176,7 @@ current editor selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="markaction" href="#markaction">MarkAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
+<code data-typedoc-code><a id="markaction" href="#markaction">MarkAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
 
 </dt>
 
@@ -1194,7 +1194,7 @@ Applies a mark with attributes and any number of children.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="markaction" href="#markaction">MarkAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
+<code data-typedoc-code><a id="markaction" href="#markaction">MarkAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
 
 </dt>
 
@@ -1212,7 +1212,7 @@ Applies a mark with any number of children.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isactive-1" href="#isactive-1">isActive</a>: (`attrs?`: `Attrs`) => `boolean`</code>
+<code data-typedoc-code><a id="isactive-1" href="#isactive-1">isActive</a>: (`attrs?`: `Attrs`) => `boolean`</code>
 
 </dt>
 
@@ -1236,7 +1236,7 @@ with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="extension" href="#extension">extension</a>: `E`</code>
+<code data-typedoc-code><a id="extension" href="#extension">extension</a>: `E`</code>
 
 </dt>
 
@@ -1252,7 +1252,7 @@ The extension to use when creating the editor.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaultcontent" href="#defaultcontent">defaultContent</a><i>?</i>: `string` \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="defaultcontent" href="#defaultcontent">defaultContent</a><i>?</i>: `string` \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -1269,7 +1269,7 @@ ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaultdoc" href="#defaultdoc">defaultDoc</a><i>?</i>: [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-code><a id="defaultdoc" href="#defaultdoc">defaultDoc</a><i>?</i>: [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -1290,7 +1290,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaulthtml" href="#defaulthtml">defaultHTML</a><i>?</i>: `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="defaulthtml" href="#defaulthtml">defaultHTML</a><i>?</i>: `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -1311,7 +1311,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaultselection" href="#defaultselection">defaultSelection</a><i>?</i>: [`SelectionJSON`](#selectionjson)</code>
+<code data-typedoc-code><a id="defaultselection" href="#defaultselection">defaultSelection</a><i>?</i>: [`SelectionJSON`](#selectionjson)</code>
 
 </dt>
 
@@ -1334,7 +1334,7 @@ editor. It's only used when `defaultContent` is also provided.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaultcontent-1" href="#defaultcontent-1">defaultContent</a><i>?</i>: `string` \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="defaultcontent-1" href="#defaultcontent-1">defaultContent</a><i>?</i>: `string` \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -1351,7 +1351,7 @@ ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaultdoc-1" href="#defaultdoc-1">defaultDoc</a><i>?</i>: [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-code><a id="defaultdoc-1" href="#defaultdoc-1">defaultDoc</a><i>?</i>: [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -1372,7 +1372,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaulthtml-1" href="#defaulthtml-1">defaultHTML</a><i>?</i>: `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><a id="defaulthtml-1" href="#defaulthtml-1">defaultHTML</a><i>?</i>: `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -1393,7 +1393,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defaultselection-1" href="#defaultselection-1">defaultSelection</a><i>?</i>: [`SelectionJSON`](#selectionjson)</code>
+<code data-typedoc-code><a id="defaultselection-1" href="#defaultselection-1">defaultSelection</a><i>?</i>: [`SelectionJSON`](#selectionjson)</code>
 
 </dt>
 
@@ -1418,7 +1418,7 @@ Options for [defineHistory](#definehistory).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="depth" href="#depth">depth</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="depth" href="#depth">depth</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -1439,7 +1439,7 @@ are discarded.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="newgroupdelay" href="#newgroupdelay">newGroupDelay</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="newgroupdelay" href="#newgroupdelay">newGroupDelay</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -1502,7 +1502,7 @@ working with the mark.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="name" href="#name">name</a>: `MarkName`</code>
+<code data-typedoc-code><a id="name" href="#name">name</a>: `MarkName`</code>
 
 </dt>
 
@@ -1518,7 +1518,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-12" href="#attrs-12">attrs</a><i>?</i>: \{ \[K in string \| number \| symbol\]: AttrSpec\<Attrs\[K\]\> \}</code>
+<code data-typedoc-code><a id="attrs-12" href="#attrs-12">attrs</a><i>?</i>: \{ \[K in string \| number \| symbol\]: AttrSpec\<Attrs\[K\]\> \}</code>
 
 </dt>
 
@@ -1534,7 +1534,7 @@ The attributes that marks of this type get.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inclusive" href="#inclusive">inclusive</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inclusive" href="#inclusive">inclusive</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1552,7 +1552,7 @@ parent node). Defaults to true.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="excludes" href="#excludes">excludes</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="excludes" href="#excludes">excludes</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -1580,7 +1580,7 @@ coexist (as long as they have different attributes).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="group" href="#group">group</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="group" href="#group">group</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -1596,7 +1596,7 @@ The group or space-separated groups to which this mark belongs.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="spanning" href="#spanning">spanning</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="spanning" href="#spanning">spanning</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1613,7 +1613,7 @@ nodes when serialized to DOM/HTML. Defaults to true.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="code" href="#code">code</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="code" href="#code">code</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1630,7 +1630,7 @@ commands and extensions to treat it differently.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todom" href="#todom">toDOM</a><i>?</i>: (`mark`: [`Mark`](pm/model.md#mark), `inline`: `boolean`) => [`DOMOutputSpec`](pm/model.md#domoutputspec)</code>
+<code data-typedoc-code><a id="todom" href="#todom">toDOM</a><i>?</i>: (`mark`: [`Mark`](pm/model.md#mark), `inline`: `boolean`) => [`DOMOutputSpec`](pm/model.md#domoutputspec)</code>
 
 </dt>
 
@@ -1649,7 +1649,7 @@ the top node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parsedom" href="#parsedom">parseDOM</a><i>?</i>: readonly [`ParseRule`](pm/model.md#parserule)[]</code>
+<code data-typedoc-code><a id="parsedom" href="#parsedom">parseDOM</a><i>?</i>: readonly [`ParseRule`](pm/model.md#parserule)[]</code>
 
 </dt>
 
@@ -1673,7 +1673,7 @@ corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-11" href="#type-11">type</a>: `MarkName`</code>
+<code data-typedoc-code><a id="type-11" href="#type-11">type</a>: `MarkName`</code>
 
 </dt>
 
@@ -1689,7 +1689,7 @@ The name of the mark type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attr" href="#attr">attr</a>: `AttrName`</code>
+<code data-typedoc-code><a id="attr" href="#attr">attr</a>: `AttrName`</code>
 
 </dt>
 
@@ -1705,7 +1705,7 @@ The name of the attribute.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todom-1" href="#todom-1">toDOM</a><i>?</i>: (`value`: `AttrType`) => `undefined` \| `null` \| \[`string`, `string`\]</code>
+<code data-typedoc-code><a id="todom-1" href="#todom-1">toDOM</a><i>?</i>: (`value`: `AttrType`) => `undefined` \| `null` \| \[`string`, `string`\]</code>
 
 </dt>
 
@@ -1724,7 +1724,7 @@ be prepended to the existing `style` attribute on the DOM node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parsedom-1" href="#parsedom-1">parseDOM</a><i>?</i>: (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `AttrType`</code>
+<code data-typedoc-code><a id="parsedom-1" href="#parsedom-1">parseDOM</a><i>?</i>: (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `AttrType`</code>
 
 </dt>
 
@@ -1740,7 +1740,7 @@ Parses the attribute value from the DOM.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="default" href="#default">default</a><i>?</i>: `AttrType`</code>
+<code data-typedoc-code><a id="default" href="#default">default</a><i>?</i>: `AttrType`</code>
 
 </dt>
 
@@ -1758,7 +1758,7 @@ or mark of a type that has them is created.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="validate" href="#validate">validate</a><i>?</i>: `string` \| (`value`: `unknown`) => `void`</code>
+<code data-typedoc-code><a id="validate" href="#validate">validate</a><i>?</i>: `string` \| (`value`: `unknown`) => `void`</code>
 
 </dt>
 
@@ -1787,7 +1787,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="name-1" href="#name-1">name</a>: `string`</code>
+<code data-typedoc-code><a id="name-1" href="#name-1">name</a>: `string`</code>
 
 </dt>
 
@@ -1797,7 +1797,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="constructor" href="#constructor">constructor</a>: [`MarkViewConstructor`](pm/view.md#markviewconstructor)</code>
+<code data-typedoc-code><a id="constructor" href="#constructor">constructor</a>: [`MarkViewConstructor`](pm/view.md#markviewconstructor)</code>
 
 </dt>
 
@@ -1832,7 +1832,7 @@ other code via [`NodeType.spec`](https://prosemirror.net/docs/ref/#model.NodeTyp
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="name-2" href="#name-2">name</a>: `NodeName`</code>
+<code data-typedoc-code><a id="name-2" href="#name-2">name</a>: `NodeName`</code>
 
 </dt>
 
@@ -1848,7 +1848,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topnode" href="#topnode">topNode</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="topnode" href="#topnode">topNode</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1865,7 +1865,7 @@ top-level node type in a schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-14" href="#attrs-14">attrs</a><i>?</i>: \{ \[key in string \| number \| symbol\]: AttrSpec\<Attrs\[key\]\> \}</code>
+<code data-typedoc-code><a id="attrs-14" href="#attrs-14">attrs</a><i>?</i>: \{ \[key in string \| number \| symbol\]: AttrSpec\<Attrs\[key\]\> \}</code>
 
 </dt>
 
@@ -1881,7 +1881,7 @@ The attributes that nodes of this type get.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="disabledropcursor" href="#disabledropcursor">disableDropCursor</a><i>?</i>: `boolean` \| (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
+<code data-typedoc-code><a id="disabledropcursor" href="#disabledropcursor">disableDropCursor</a><i>?</i>: `boolean` \| (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`</code>
 
 </dt>
 
@@ -1891,7 +1891,7 @@ The attributes that nodes of this type get.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content" href="#content">content</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="content" href="#content">content</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -1909,7 +1909,7 @@ the node does not allow any content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marks-1" href="#marks-1">marks</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="marks-1" href="#marks-1">marks</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -1929,7 +1929,7 @@ marks, other nodes default to not allowing marks.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="group-1" href="#group-1">group</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="group-1" href="#group-1">group</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -1947,7 +1947,7 @@ schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="inline" href="#inline">inline</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1963,7 +1963,7 @@ Should be set to true for inline nodes. (Implied for text nodes.)
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="atom" href="#atom">atom</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="atom" href="#atom">atom</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1981,7 +1981,7 @@ content and should be treated as a single unit in the view.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selectable" href="#selectable">selectable</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="selectable" href="#selectable">selectable</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -1999,7 +1999,7 @@ nodes.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="draggable" href="#draggable">draggable</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="draggable" href="#draggable">draggable</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2016,7 +2016,7 @@ being selected. Defaults to false.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="code-1" href="#code-1">code</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="code-1" href="#code-1">code</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2033,7 +2033,7 @@ causes some commands to behave differently.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="whitespace" href="#whitespace">whitespace</a><i>?</i>: `"pre"` \| `"normal"`</code>
+<code data-typedoc-code><a id="whitespace" href="#whitespace">whitespace</a><i>?</i>: `"pre"` \| `"normal"`</code>
 
 </dt>
 
@@ -2057,7 +2057,7 @@ and/or styling.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="definingascontext" href="#definingascontext">definingAsContext</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="definingascontext" href="#definingascontext">definingAsContext</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2076,7 +2076,7 @@ whereas defining nodes persist and wrap the inserted content.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="definingforcontent" href="#definingforcontent">definingForContent</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="definingforcontent" href="#definingforcontent">definingForContent</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2094,7 +2094,7 @@ textblock types, and possibly list items, are marked as defining.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="defining" href="#defining">defining</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="defining" href="#defining">defining</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2112,7 +2112,7 @@ When enabled, enables both
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="isolating" href="#isolating">isolating</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="isolating" href="#isolating">isolating</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2131,7 +2131,7 @@ should probably have this enabled is a table cell.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todom-2" href="#todom-2">toDOM</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => [`DOMOutputSpec`](pm/model.md#domoutputspec)</code>
+<code data-typedoc-code><a id="todom-2" href="#todom-2">toDOM</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => [`DOMOutputSpec`](pm/model.md#domoutputspec)</code>
 
 </dt>
 
@@ -2158,7 +2158,7 @@ shouldn't override that in your text node spec.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parsedom-2" href="#parsedom-2">parseDOM</a><i>?</i>: readonly [`TagParseRule`](pm/model.md#tagparserule)[]</code>
+<code data-typedoc-code><a id="parsedom-2" href="#parsedom-2">parseDOM</a><i>?</i>: readonly [`TagParseRule`](pm/model.md#tagparserule)[]</code>
 
 </dt>
 
@@ -2179,7 +2179,7 @@ parsing rules in your schema.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todebugstring" href="#todebugstring">toDebugString</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`</code>
+<code data-typedoc-code><a id="todebugstring" href="#todebugstring">toDebugString</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`</code>
 
 </dt>
 
@@ -2196,7 +2196,7 @@ to a string representation for debugging (e.g. in error messages).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="leaftext" href="#leaftext">leafText</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`</code>
+<code data-typedoc-code><a id="leaftext" href="#leaftext">leafText</a><i>?</i>: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`</code>
 
 </dt>
 
@@ -2215,7 +2215,7 @@ this type should be serialized to a string (as used by
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="linebreakreplacement" href="#linebreakreplacement">linebreakReplacement</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="linebreakreplacement" href="#linebreakreplacement">linebreakReplacement</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2243,7 +2243,7 @@ appropriate.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-12" href="#type-12">type</a>: `NodeName`</code>
+<code data-typedoc-code><a id="type-12" href="#type-12">type</a>: `NodeName`</code>
 
 </dt>
 
@@ -2259,7 +2259,7 @@ The name of the node type.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attr-1" href="#attr-1">attr</a>: `AttrName`</code>
+<code data-typedoc-code><a id="attr-1" href="#attr-1">attr</a>: `AttrName`</code>
 
 </dt>
 
@@ -2275,7 +2275,7 @@ The name of the attribute.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="splittable" href="#splittable">splittable</a><i>?</i>: `boolean`</code>
+<code data-typedoc-code><a id="splittable" href="#splittable">splittable</a><i>?</i>: `boolean`</code>
 
 </dt>
 
@@ -2297,7 +2297,7 @@ splitting the node by pressing `Enter`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="todom-3" href="#todom-3">toDOM</a><i>?</i>: (`value`: `AttrType`) => `undefined` \| `null` \| \[`string`, `string`\]</code>
+<code data-typedoc-code><a id="todom-3" href="#todom-3">toDOM</a><i>?</i>: (`value`: `AttrType`) => `undefined` \| `null` \| \[`string`, `string`\]</code>
 
 </dt>
 
@@ -2316,7 +2316,7 @@ be prepended to the existing `style` attribute on the DOM node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="parsedom-3" href="#parsedom-3">parseDOM</a><i>?</i>: (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `AttrType`</code>
+<code data-typedoc-code><a id="parsedom-3" href="#parsedom-3">parseDOM</a><i>?</i>: (`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `AttrType`</code>
 
 </dt>
 
@@ -2332,7 +2332,7 @@ Parses the attribute value from the DOM.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="default-1" href="#default-1">default</a><i>?</i>: `AttrType`</code>
+<code data-typedoc-code><a id="default-1" href="#default-1">default</a><i>?</i>: `AttrType`</code>
 
 </dt>
 
@@ -2350,7 +2350,7 @@ or mark of a type that has them is created.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="validate-1" href="#validate-1">validate</a><i>?</i>: `string` \| (`value`: `unknown`) => `void`</code>
+<code data-typedoc-code><a id="validate-1" href="#validate-1">validate</a><i>?</i>: `string` \| (`value`: `unknown`) => `void`</code>
 
 </dt>
 
@@ -2379,7 +2379,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="name-3" href="#name-3">name</a>: `string`</code>
+<code data-typedoc-code><a id="name-3" href="#name-3">name</a>: `string`</code>
 
 </dt>
 
@@ -2389,7 +2389,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="constructor-1" href="#constructor-1">constructor</a>: [`NodeViewConstructor`](pm/view.md#nodeviewconstructor)</code>
+<code data-typedoc-code><a id="constructor-1" href="#constructor-1">constructor</a>: [`NodeViewConstructor`](pm/view.md#nodeviewconstructor)</code>
 
 </dt>
 
@@ -2407,7 +2407,7 @@ It also has a `canExec` method to check if the command can be applied.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="commandaction" href="#commandaction">CommandAction</a>(...`args`: `Args`): `boolean`</code>
+<code data-typedoc-code><a id="commandaction" href="#commandaction">CommandAction</a>(...`args`: `Args`): `boolean`</code>
 
 </dt>
 
@@ -2426,7 +2426,7 @@ executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canexec-2" href="#canexec-2">canExec</a>(...`args`: `Args`): `boolean`</code>
+<code data-typedoc-code><a id="canexec-2" href="#canexec-2">canExec</a>(...`args`: `Args`): `boolean`</code>
 
 </dt>
 
@@ -2443,7 +2443,7 @@ can be executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="canapply" href="#canapply">canApply</a>(...`args`: `Args`): `boolean`</code>
+<code data-typedoc-code><a id="canapply" href="#canapply">canApply</a>(...`args`: `Args`): `boolean`</code>
 
 </dt>
 
@@ -2469,7 +2469,7 @@ Use `canExec` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="extension-2" href="#extension-2">extension</a>: [`Extension`](#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\> \| [`Extension`](#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>[]</code>
+<code data-typedoc-code><a id="extension-2" href="#extension-2">extension</a>: [`Extension`](#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\> \| [`Extension`](#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>[]</code>
 
 </dt>
 
@@ -2479,7 +2479,7 @@ Use `canExec` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](#priority-1)</code>
+<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](#priority-1)</code>
 
 </dt>
 
@@ -2489,7 +2489,7 @@ Use `canExec` instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="schema-1" href="#schema-1">schema</a>: `null` \| [`Schema`](pm/model.md#schema-3)\<`any`, `any`\></code>
+<code data-typedoc-code><a id="schema-1" href="#schema-1">schema</a>: `null` \| [`Schema`](pm/model.md#schema-3)\<`any`, `any`\></code>
 
 </dt>
 
@@ -2513,7 +2513,7 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-13" href="#type-13">type</a>: `string`</code>
+<code data-typedoc-code><a id="type-13" href="#type-13">type</a>: `string`</code>
 
 </dt>
 
@@ -2523,7 +2523,7 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="marks-2" href="#marks-2">marks</a><i>?</i>: `object`[]</code>
+<code data-typedoc-code><a id="marks-2" href="#marks-2">marks</a><i>?</i>: `object`[]</code>
 
 </dt>
 
@@ -2533,7 +2533,7 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="text" href="#text">text</a><i>?</i>: `string`</code>
+<code data-typedoc-code><a id="text" href="#text">text</a><i>?</i>: `string`</code>
 
 </dt>
 
@@ -2543,7 +2543,7 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="content-1" href="#content-1">content</a><i>?</i>: [`NodeJSON`](#nodejson)[]</code>
+<code data-typedoc-code><a id="content-1" href="#content-1">content</a><i>?</i>: [`NodeJSON`](#nodejson)[]</code>
 
 </dt>
 
@@ -2553,7 +2553,7 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="attrs-15" href="#attrs-15">attrs</a><i>?</i>: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\></code>
+<code data-typedoc-code><a id="attrs-15" href="#attrs-15">attrs</a><i>?</i>: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\></code>
 
 </dt>
 
@@ -2571,7 +2571,7 @@ A JSON representation of the prosemirror selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="anchor" href="#anchor">anchor</a>: `number`</code>
+<code data-typedoc-code><a id="anchor" href="#anchor">anchor</a>: `number`</code>
 
 </dt>
 
@@ -2581,7 +2581,7 @@ A JSON representation of the prosemirror selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="head" href="#head">head</a>: `number`</code>
+<code data-typedoc-code><a id="head" href="#head">head</a>: `number`</code>
 
 </dt>
 
@@ -2591,7 +2591,7 @@ A JSON representation of the prosemirror selection.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="type-14" href="#type-14">type</a>: `string`</code>
+<code data-typedoc-code><a id="type-14" href="#type-14">type</a>: `string`</code>
 
 </dt>
 
@@ -2609,7 +2609,7 @@ A JSON representation of the prosemirror state.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="doc" href="#doc">doc</a>: [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-code><a id="doc" href="#doc">doc</a>: [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -2625,7 +2625,7 @@ The main `ProseMirror` doc.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="selection" href="#selection">selection</a>: [`SelectionJSON`](#selectionjson)</code>
+<code data-typedoc-code><a id="selection" href="#selection">selection</a>: [`SelectionJSON`](#selectionjson)</code>
 
 </dt>
 
@@ -2661,7 +2661,7 @@ A JSON representation of the prosemirror step.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="steptype" href="#steptype">stepType</a>: `string`</code>
+<code data-typedoc-code><a id="steptype" href="#steptype">stepType</a>: `string`</code>
 
 </dt>
 
@@ -2683,7 +2683,7 @@ The type of the step.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="node-1" href="#node-1">node</a>: [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="node-1" href="#node-1">node</a>: [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -2699,7 +2699,7 @@ The closest parent node that satisfies the predicate.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="pos-4" href="#pos-4">pos</a>: `number`</code>
+<code data-typedoc-code><a id="pos-4" href="#pos-4">pos</a>: `number`</code>
 
 </dt>
 
@@ -2715,7 +2715,7 @@ The position directly before the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="start" href="#start">start</a>: `number`</code>
+<code data-typedoc-code><a id="start" href="#start">start</a>: `number`</code>
 
 </dt>
 
@@ -2731,7 +2731,7 @@ The position at the start of the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="depth-1" href="#depth-1">depth</a>: `number`</code>
+<code data-typedoc-code><a id="depth-1" href="#depth-1">depth</a>: `number`</code>
 
 </dt>
 
@@ -2753,7 +2753,7 @@ The depth of the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="domparser" href="#domparser">DOMParser</a><i>?</i>: *typeof* [`DOMParser`](pm/model.md#domparser)</code>
+<code data-typedoc-code><a id="domparser" href="#domparser">DOMParser</a><i>?</i>: *typeof* [`DOMParser`](pm/model.md#domparser)</code>
 
 </dt>
 
@@ -2763,7 +2763,7 @@ The depth of the node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="preservewhitespace" href="#preservewhitespace">preserveWhitespace</a><i>?</i>: `boolean` \| `"full"`</code>
+<code data-typedoc-code><a id="preservewhitespace" href="#preservewhitespace">preserveWhitespace</a><i>?</i>: `boolean` \| `"full"`</code>
 
 </dt>
 
@@ -2781,7 +2781,7 @@ spaces, and `"full"` to preserve whitespace entirely.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="findpositions" href="#findpositions">findPositions</a><i>?</i>: `object`[]</code>
+<code data-typedoc-code><a id="findpositions" href="#findpositions">findPositions</a><i>?</i>: `object`[]</code>
 
 </dt>
 
@@ -2801,7 +2801,7 @@ in the parsed content will not be written to.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="from-5" href="#from-5">from</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="from-5" href="#from-5">from</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -2817,7 +2817,7 @@ The child node index to start parsing from.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="to-5" href="#to-5">to</a><i>?</i>: `number`</code>
+<code data-typedoc-code><a id="to-5" href="#to-5">to</a><i>?</i>: `number`</code>
 
 </dt>
 
@@ -2833,7 +2833,7 @@ The child node index to stop parsing at.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topnode-1" href="#topnode-1">topNode</a><i>?</i>: [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><a id="topnode-1" href="#topnode-1">topNode</a><i>?</i>: [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -2852,7 +2852,7 @@ as the top container.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="topmatch" href="#topmatch">topMatch</a><i>?</i>: [`ContentMatch`](pm/model.md#contentmatch-1)</code>
+<code data-typedoc-code><a id="topmatch" href="#topmatch">topMatch</a><i>?</i>: [`ContentMatch`](pm/model.md#contentmatch-1)</code>
 
 </dt>
 
@@ -2869,7 +2869,7 @@ top node is matched against.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="context" href="#context">context</a><i>?</i>: [`ResolvedPos`](pm/model.md#resolvedpos)</code>
+<code data-typedoc-code><a id="context" href="#context">context</a><i>?</i>: [`ResolvedPos`](pm/model.md#resolvedpos)</code>
 
 </dt>
 
@@ -2893,7 +2893,7 @@ given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="domserializer" href="#domserializer">DOMSerializer</a><i>?</i>: `object`</code>
+<code data-typedoc-code><a id="domserializer" href="#domserializer">DOMSerializer</a><i>?</i>: `object`</code>
 
 </dt>
 
@@ -2909,7 +2909,7 @@ given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="document" href="#document">document</a><i>?</i>: [`Document`](https://developer.mozilla.org/docs/Web/API/Document)</code>
+<code data-typedoc-code><a id="document" href="#document">document</a><i>?</i>: [`Document`](https://developer.mozilla.org/docs/Web/API/Document)</code>
 
 </dt>
 
@@ -2933,7 +2933,7 @@ testing environments.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="schema-2" href="#schema-2">schema</a>: [`Schema`](pm/model.md#schema-3)</code>
+<code data-typedoc-code><a id="schema-2" href="#schema-2">schema</a>: [`Schema`](pm/model.md#schema-3)</code>
 
 </dt>
 
@@ -2953,7 +2953,7 @@ The editor schema to use.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="nodechild" href="#nodechild">NodeChild</a> = [`ProseMirrorNode`](pm/model.md#prosemirrornode) \| `string` \| [`NodeChild`](#nodechild)[]</code>
+<code data-typedoc-code>type <a id="nodechild" href="#nodechild">NodeChild</a> = [`ProseMirrorNode`](pm/model.md#prosemirrornode) \| `string` \| [`NodeChild`](#nodechild)[]</code>
 
 </dt>
 
@@ -2973,7 +2973,7 @@ Available children parameters for [NodeAction](#nodeaction) and [MarkAction](#ma
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="nodebuilder" href="#nodebuilder">NodeBuilder</a> = [`NodeAction`](#nodeaction)</code>
+<code data-typedoc-code>type <a id="nodebuilder" href="#nodebuilder">NodeBuilder</a> = [`NodeAction`](#nodeaction)</code>
 
 </dt>
 
@@ -2995,7 +2995,7 @@ Use type [NodeAction](#nodeaction) instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="markbuilder" href="#markbuilder">MarkBuilder</a> = [`MarkAction`](#markaction)</code>
+<code data-typedoc-code>type <a id="markbuilder" href="#markbuilder">MarkBuilder</a> = [`MarkAction`](#markaction)</code>
 
 </dt>
 
@@ -3017,7 +3017,7 @@ Use type [MarkAction](#markaction) instead.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="docchangehandler" href="#docchangehandler">DocChangeHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `prevState`: [`EditorState`](pm/state.md#editorstate)) => `void`</code>
+<code data-typedoc-code>type <a id="docchangehandler" href="#docchangehandler">DocChangeHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `prevState`: [`EditorState`](pm/state.md#editorstate)) => `void`</code>
 
 </dt>
 
@@ -3037,7 +3037,7 @@ A function that is called when the editor document is changed.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="domeventhandler" href="#domeventhandler">DOMEventHandler</a>\<Event\> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`DOMEventMap`](pm/view.md#domeventmap)\[`Event`\]) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="domeventhandler" href="#domeventhandler">DOMEventHandler</a>\<Event\> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`DOMEventMap`](pm/view.md#domeventmap)\[`Event`\]) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3060,7 +3060,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="keydownhandler" href="#keydownhandler">KeyDownHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="keydownhandler" href="#keydownhandler">KeyDownHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3074,7 +3074,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="keypresshandler" href="#keypresshandler">KeyPressHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="keypresshandler" href="#keypresshandler">KeyPressHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3088,7 +3088,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="textinputhandler" href="#textinputhandler">TextInputHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `from`: `number`, `to`: `number`, `text`: `string`) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="textinputhandler" href="#textinputhandler">TextInputHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `from`: `number`, `to`: `number`, `text`: `string`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3102,7 +3102,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="clickonhandler" href="#clickonhandler">ClickOnHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="clickonhandler" href="#clickonhandler">ClickOnHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3116,7 +3116,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="clickhandler" href="#clickhandler">ClickHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="clickhandler" href="#clickhandler">ClickHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3130,7 +3130,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="doubleclickonhandler" href="#doubleclickonhandler">DoubleClickOnHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="doubleclickonhandler" href="#doubleclickonhandler">DoubleClickOnHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3144,7 +3144,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="doubleclickhandler" href="#doubleclickhandler">DoubleClickHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="doubleclickhandler" href="#doubleclickhandler">DoubleClickHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3158,7 +3158,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="tripleclickonhandler" href="#tripleclickonhandler">TripleClickOnHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="tripleclickonhandler" href="#tripleclickonhandler">TripleClickOnHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3172,7 +3172,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="tripleclickhandler" href="#tripleclickhandler">TripleClickHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="tripleclickhandler" href="#tripleclickhandler">TripleClickHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3186,7 +3186,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="pastehandler" href="#pastehandler">PasteHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](pm/model.md#slice)) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="pastehandler" href="#pastehandler">PasteHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](pm/model.md#slice)) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3200,7 +3200,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="drophandler" href="#drophandler">DropHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](pm/model.md#slice), `moved`: `boolean`) => `boolean` \| `void`</code>
+<code data-typedoc-code>type <a id="drophandler" href="#drophandler">DropHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](pm/model.md#slice), `moved`: `boolean`) => `boolean` \| `void`</code>
 
 </dt>
 
@@ -3214,7 +3214,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="scrolltoselectionhandler" href="#scrolltoselectionhandler">ScrollToSelectionHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview)) => `boolean`</code>
+<code data-typedoc-code>type <a id="scrolltoselectionhandler" href="#scrolltoselectionhandler">ScrollToSelectionHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview)) => `boolean`</code>
 
 </dt>
 
@@ -3228,7 +3228,7 @@ you want to allow the default behavior).
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="focuschangehandler" href="#focuschangehandler">FocusChangeHandler</a> = (`hasFocus`: `boolean`) => `void`</code>
+<code data-typedoc-code>type <a id="focuschangehandler" href="#focuschangehandler">FocusChangeHandler</a> = (`hasFocus`: `boolean`) => `void`</code>
 
 </dt>
 
@@ -3248,7 +3248,7 @@ A function that is called when the editor gains or loses focus.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="mounthandler" href="#mounthandler">MountHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview)) => `void`</code>
+<code data-typedoc-code>type <a id="mounthandler" href="#mounthandler">MountHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview)) => `void`</code>
 
 </dt>
 
@@ -3268,7 +3268,7 @@ A function that is called when the editor view is mounted.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="updatehandler" href="#updatehandler">UpdateHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `prevState`: [`EditorState`](pm/state.md#editorstate)) => `void`</code>
+<code data-typedoc-code>type <a id="updatehandler" href="#updatehandler">UpdateHandler</a> = (`view`: [`EditorView`](pm/view.md#editorview), `prevState`: [`EditorState`](pm/state.md#editorstate)) => `void`</code>
 
 </dt>
 
@@ -3288,7 +3288,7 @@ A function that is called when the editor state is updated.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="unmounthandler" href="#unmounthandler">UnmountHandler</a> = () => `void`</code>
+<code data-typedoc-code>type <a id="unmounthandler" href="#unmounthandler">UnmountHandler</a> = () => `void`</code>
 
 </dt>
 
@@ -3308,7 +3308,7 @@ A function that is called when the editor view is unmounted.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="anyattrs" href="#anyattrs">AnyAttrs</a> = [`Attrs`](pm/model.md#attrs-4)</code>
+<code data-typedoc-code>type <a id="anyattrs" href="#anyattrs">AnyAttrs</a> = [`Attrs`](pm/model.md#attrs-4)</code>
 
 </dt>
 
@@ -3324,7 +3324,7 @@ An object holding the attributes of a node.
 
 ### AttrSpec\<AttrType\> {#attrspec}
 
-<code data-typedoc-code><i></i> type <a id="attrspec" href="#attrspec">AttrSpec</a>\<AttrType\> = \{ `default?`: `AttrType`; `validate?`: `string` \| (`value`: `unknown`) => `void`; \}</code>
+<code data-typedoc-code>type <a id="attrspec" href="#attrspec">AttrSpec</a>\<AttrType\> = \{ `default?`: `AttrType`; `validate?`: `string` \| (`value`: `unknown`) => `void`; \}</code>
 
 #### Properties
 
@@ -3332,7 +3332,7 @@ An object holding the attributes of a node.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="default-2" href="#default-2">default</a><i>?</i>: `AttrType`</code>
+<code data-typedoc-code><a id="default-2" href="#default-2">default</a><i>?</i>: `AttrType`</code>
 
 </dt>
 
@@ -3350,7 +3350,7 @@ or mark of a type that has them is created.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="validate-2" href="#validate-2">validate</a><i>?</i>: `string` \| (`value`: `unknown`) => `void`</code>
+<code data-typedoc-code><a id="validate-2" href="#validate-2">validate</a><i>?</i>: `string` \| (`value`: `unknown`) => `void`</code>
 
 </dt>
 
@@ -3377,7 +3377,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractnodes" href="#extractnodes">ExtractNodes</a>\<E\> = `SimplifyDeeper`\<`SimplifyUnion`\<`ExtractTyping`\<`E`\>\[`"Nodes"`\]\>\></code>
+<code data-typedoc-code>type <a id="extractnodes" href="#extractnodes">ExtractNodes</a>\<E\> = `SimplifyDeeper`\<`SimplifyUnion`\<`ExtractTyping`\<`E`\>\[`"Nodes"`\]\>\></code>
 
 </dt>
 
@@ -3395,7 +3395,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractmarks" href="#extractmarks">ExtractMarks</a>\<E\> = `SimplifyDeeper`\<`SimplifyUnion`\<`ExtractTyping`\<`E`\>\[`"Marks"`\]\>\></code>
+<code data-typedoc-code>type <a id="extractmarks" href="#extractmarks">ExtractMarks</a>\<E\> = `SimplifyDeeper`\<`SimplifyUnion`\<`ExtractTyping`\<`E`\>\[`"Marks"`\]\>\></code>
 
 </dt>
 
@@ -3413,7 +3413,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractcommandcreators" href="#extractcommandcreators">ExtractCommandCreators</a>\<E\> = `ToCommandCreators`\<`ExtractCommands`\<`E`\>\></code>
+<code data-typedoc-code>type <a id="extractcommandcreators" href="#extractcommandcreators">ExtractCommandCreators</a>\<E\> = `ToCommandCreators`\<`ExtractCommands`\<`E`\>\></code>
 
 </dt>
 
@@ -3431,7 +3431,7 @@ one of those types.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractcommandactions" href="#extractcommandactions">ExtractCommandActions</a>\<E\> = `ToCommandAction`\<`ExtractCommands`\<`E`\>\></code>
+<code data-typedoc-code>type <a id="extractcommandactions" href="#extractcommandactions">ExtractCommandActions</a>\<E\> = `ToCommandAction`\<`ExtractCommands`\<`E`\>\></code>
 
 </dt>
 
@@ -3451,7 +3451,7 @@ Extracts the [CommandAction](#commandaction)s from an extension type.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractnodeactions" href="#extractnodeactions">ExtractNodeActions</a>\<E\> = `ToNodeAction`\<[`ExtractNodes`](#extractnodes)\<`E`\>\></code>
+<code data-typedoc-code>type <a id="extractnodeactions" href="#extractnodeactions">ExtractNodeActions</a>\<E\> = `ToNodeAction`\<[`ExtractNodes`](#extractnodes)\<`E`\>\></code>
 
 </dt>
 
@@ -3471,7 +3471,7 @@ Extracts the [NodeAction](#nodeaction)s from an extension type.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractmarkactions" href="#extractmarkactions">ExtractMarkActions</a>\<E\> = `ToMarkAction`\<[`ExtractMarks`](#extractmarks)\<`E`\>\></code>
+<code data-typedoc-code>type <a id="extractmarkactions" href="#extractmarkactions">ExtractMarkActions</a>\<E\> = `ToMarkAction`\<[`ExtractMarks`](#extractmarks)\<`E`\>\></code>
 
 </dt>
 
@@ -3491,7 +3491,7 @@ Extracts the [MarkAction](#markaction)s from an extension type.
 
 <dt>
 
-<code data-typedoc-code><i></i> type <a id="extractcommandappliers" href="#extractcommandappliers">ExtractCommandAppliers</a>\<E\> = [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
+<code data-typedoc-code>type <a id="extractcommandappliers" href="#extractcommandappliers">ExtractCommandAppliers</a>\<E\> = [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
 
 </dt>
 
@@ -3555,7 +3555,7 @@ It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with strict
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="addmark" href="#addmark">addMark</a>(`options`: [`AddMarkOptions`](#addmarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="addmark" href="#addmark">addMark</a>(`options`: [`AddMarkOptions`](#addmarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3575,7 +3575,7 @@ Returns a command that adds the given mark with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="expandmark" href="#expandmark">expandMark</a>(`options`: [`ExpandMarkOptions`](#expandmarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="expandmark" href="#expandmark">expandMark</a>(`options`: [`ExpandMarkOptions`](#expandmarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3595,7 +3595,7 @@ Expands the selection to include the entire mark at the current position.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="insertdefaultblock" href="#insertdefaultblock">insertDefaultBlock</a>(`options?`: [`InsertDefaultBlockOptions`](#insertdefaultblockoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="insertdefaultblock" href="#insertdefaultblock">insertDefaultBlock</a>(`options?`: [`InsertDefaultBlockOptions`](#insertdefaultblockoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3616,7 +3616,7 @@ the given position.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="insertnode" href="#insertnode">insertNode</a>(`options`: [`InsertNodeOptions`](#insertnodeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="insertnode" href="#insertnode">insertNode</a>(`options`: [`InsertNodeOptions`](#insertnodeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3637,7 +3637,7 @@ the given position.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="removemark" href="#removemark">removeMark</a>(`options`: [`RemoveMarkOptions`](#removemarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="removemark" href="#removemark">removeMark</a>(`options`: [`RemoveMarkOptions`](#removemarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3657,7 +3657,7 @@ Returns a command that removes the given mark.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="removenode" href="#removenode">removeNode</a>(`options`: [`RemoveNodeOptions`](#removenodeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="removenode" href="#removenode">removeNode</a>(`options`: [`RemoveNodeOptions`](#removenodeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3677,7 +3677,7 @@ Returns a command to remove the nearest ancestor node of a specific type from th
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`options`: [`SetBlockTypeOptions`](#setblocktypeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`options`: [`SetBlockTypeOptions`](#setblocktypeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3698,7 +3698,7 @@ type with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="setnodeattrs" href="#setnodeattrs">setNodeAttrs</a>(`options`: [`SetNodeAttrsOptions`](#setnodeattrsoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="setnodeattrs" href="#setnodeattrs">setNodeAttrs</a>(`options`: [`SetNodeAttrsOptions`](#setnodeattrsoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3718,7 +3718,7 @@ Returns a command that set the attributes of the current node.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="togglemark" href="#togglemark">toggleMark</a>(`options`: [`ToggleMarkOptions`](#togglemarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="togglemark" href="#togglemark">toggleMark</a>(`options`: [`ToggleMarkOptions`](#togglemarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3738,7 +3738,7 @@ Returns a command that toggles the given mark with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="togglenode" href="#togglenode">toggleNode</a>(`options`: [`ToggleNodeOptions`](#togglenodeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="togglenode" href="#togglenode">toggleNode</a>(`options`: [`ToggleNodeOptions`](#togglenodeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3759,7 +3759,7 @@ with the given attributes.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="togglewrap" href="#togglewrap">toggleWrap</a>(`options`: [`ToggleWrapOptions`](#togglewrapoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="togglewrap" href="#togglewrap">toggleWrap</a>(`options`: [`ToggleWrapOptions`](#togglewrapoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3780,7 +3780,7 @@ lifting it up into its parent.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="unsetblocktype" href="#unsetblocktype">unsetBlockType</a>(`options?`: [`UnsetBlockTypeOptions`](#unsetblocktypeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="unsetblocktype" href="#unsetblocktype">unsetBlockType</a>(`options?`: [`UnsetBlockTypeOptions`](#unsetblocktypeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3801,7 +3801,7 @@ to the default type (usually `paragraph`).
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="unsetmark" href="#unsetmark">unsetMark</a>(`options?`: [`UnsetMarkOptions`](#unsetmarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="unsetmark" href="#unsetmark">unsetMark</a>(`options?`: [`UnsetMarkOptions`](#unsetmarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3821,7 +3821,7 @@ Returns a command that removes all marks.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="wrap" href="#wrap">wrap</a>(`options`: [`WrapOptions`](#wrapoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-code><i>function</i> <a id="wrap" href="#wrap">wrap</a>(`options`: [`WrapOptions`](#wrapoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3841,7 +3841,7 @@ Returns a command that wraps the selected textblock with the given node type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="createeditor" href="#createeditor">createEditor</a>\<E\>(`options`: [`EditorOptions`](#editoroptions)\<`E`\>): [`Editor`](#editor)\<`E`\></code>
+<code data-typedoc-code><i>function</i> <a id="createeditor" href="#createeditor">createEditor</a>\<E\>(`options`: [`EditorOptions`](#editoroptions)\<`E`\>): [`Editor`](#editor)\<`E`\></code>
 
 </dt>
 
@@ -3861,7 +3861,7 @@ Returns a command that wraps the selected textblock with the given node type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="union" href="#union">union</a>\<E\>(...`exts`: `E`): `Union`\<`E`\></code>
+<code data-typedoc-code><i>function</i> <a id="union" href="#union">union</a>\<E\>(...`exts`: `E`): `Union`\<`E`\></code>
 
 </dt>
 
@@ -3904,7 +3904,7 @@ function defineFancyNodes() {
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="union" href="#union">union</a>\<E\>(`exts`: `E`): `Union`\<`E`\></code>
+<code data-typedoc-code><i>function</i> <a id="union" href="#union">union</a>\<E\>(`exts`: `E`): `Union`\<`E`\></code>
 
 </dt>
 
@@ -3949,7 +3949,7 @@ function defineFancyNodes() {
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="withpriority" href="#withpriority">withPriority</a>\<T\>(`extension`: `T`, `priority`: [`Priority`](#priority-1)): `T`</code>
+<code data-typedoc-code><i>function</i> <a id="withpriority" href="#withpriority">withPriority</a>\<T\>(`extension`: `T`, `priority`: [`Priority`](#priority-1)): `T`</code>
 
 </dt>
 
@@ -3977,7 +3977,7 @@ const extension = withPriority(defineMyExtension(), Priority.high)
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definecommands" href="#definecommands">defineCommands</a>\<T\>(`commands`: `T`): [`Extension`](#extension-1)\<\{ `Commands`: \{ \[K in string \| number \| symbol\]: Parameters\<T\[K\]\> \}; \}\></code>
+<code data-typedoc-code><i>function</i> <a id="definecommands" href="#definecommands">defineCommands</a>\<T\>(`commands`: `T`): [`Extension`](#extension-1)\<\{ `Commands`: \{ \[K in string \| number \| symbol\]: Parameters\<T\[K\]\> \}; \}\></code>
 
 </dt>
 
@@ -3991,7 +3991,7 @@ const extension = withPriority(defineMyExtension(), Priority.high)
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definebasecommands" href="#definebasecommands">defineBaseCommands</a>(): `BaseCommandsExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definebasecommands" href="#definebasecommands">defineBaseCommands</a>(): `BaseCommandsExtension`</code>
 
 </dt>
 
@@ -4011,7 +4011,7 @@ Add some base commands
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedefaultstate" href="#definedefaultstate">defineDefaultState</a>(`options`: [`DefaultStateOptions`](#defaultstateoptions)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedefaultstate" href="#definedefaultstate">defineDefaultState</a>(`options`: [`DefaultStateOptions`](#defaultstateoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -4031,7 +4031,7 @@ Define a default state for the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedoc" href="#definedoc">defineDoc</a>(): `DocExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedoc" href="#definedoc">defineDoc</a>(): `DocExtension`</code>
 
 </dt>
 
@@ -4057,7 +4057,7 @@ import { defineDoc } from 'prosekit/extensions/doc'
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedocchangehandler" href="#definedocchangehandler">defineDocChangeHandler</a>(`handler`: [`DocChangeHandler`](#docchangehandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedocchangehandler" href="#definedocchangehandler">defineDocChangeHandler</a>(`handler`: [`DocChangeHandler`](#docchangehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4077,7 +4077,7 @@ Registers a event handler that is called when the editor document is changed.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedomeventhandler" href="#definedomeventhandler">defineDOMEventHandler</a>\<Event\>(`event`: `Event`, `handler`: [`DOMEventHandler`](#domeventhandler)\<`Event`\>): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedomeventhandler" href="#definedomeventhandler">defineDOMEventHandler</a>\<Event\>(`event`: `Event`, `handler`: [`DOMEventHandler`](#domeventhandler)\<`Event`\>): `PlainExtension`</code>
 
 </dt>
 
@@ -4097,7 +4097,7 @@ Register a new event handler for the given event type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definekeydownhandler" href="#definekeydownhandler">defineKeyDownHandler</a>(`handler`: [`KeyDownHandler`](#keydownhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definekeydownhandler" href="#definekeydownhandler">defineKeyDownHandler</a>(`handler`: [`KeyDownHandler`](#keydownhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4117,7 +4117,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown](https://p
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definekeypresshandler" href="#definekeypresshandler">defineKeyPressHandler</a>(`handler`: [`KeyPressHandler`](#keypresshandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definekeypresshandler" href="#definekeypresshandler">defineKeyPressHandler</a>(`handler`: [`KeyPressHandler`](#keypresshandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4137,7 +4137,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetextinputhandler" href="#definetextinputhandler">defineTextInputHandler</a>(`handler`: [`TextInputHandler`](#textinputhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetextinputhandler" href="#definetextinputhandler">defineTextInputHandler</a>(`handler`: [`TextInputHandler`](#textinputhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4157,7 +4157,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput](https:/
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineclickonhandler" href="#defineclickonhandler">defineClickOnHandler</a>(`handler`: [`ClickOnHandler`](#clickonhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineclickonhandler" href="#defineclickonhandler">defineClickOnHandler</a>(`handler`: [`ClickOnHandler`](#clickonhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4177,7 +4177,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineclickhandler" href="#defineclickhandler">defineClickHandler</a>(`handler`: [`ClickHandler`](#clickhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineclickhandler" href="#defineclickhandler">defineClickHandler</a>(`handler`: [`ClickHandler`](#clickhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4197,7 +4197,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClick](https://pro
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedoubleclickonhandler" href="#definedoubleclickonhandler">defineDoubleClickOnHandler</a>(`handler`: [`DoubleClickOnHandler`](#doubleclickonhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedoubleclickonhandler" href="#definedoubleclickonhandler">defineDoubleClickOnHandler</a>(`handler`: [`DoubleClickOnHandler`](#doubleclickonhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4217,7 +4217,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn](htt
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedoubleclickhandler" href="#definedoubleclickhandler">defineDoubleClickHandler</a>(`handler`: [`DoubleClickHandler`](#doubleclickhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedoubleclickhandler" href="#definedoubleclickhandler">defineDoubleClickHandler</a>(`handler`: [`DoubleClickHandler`](#doubleclickhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4237,7 +4237,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick](https
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetripleclickonhandler" href="#definetripleclickonhandler">defineTripleClickOnHandler</a>(`handler`: [`TripleClickOnHandler`](#tripleclickonhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetripleclickonhandler" href="#definetripleclickonhandler">defineTripleClickOnHandler</a>(`handler`: [`TripleClickOnHandler`](#tripleclickonhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4257,7 +4257,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn](htt
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetripleclickhandler" href="#definetripleclickhandler">defineTripleClickHandler</a>(`handler`: [`TripleClickHandler`](#tripleclickhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetripleclickhandler" href="#definetripleclickhandler">defineTripleClickHandler</a>(`handler`: [`TripleClickHandler`](#tripleclickhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4277,7 +4277,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick](https
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definepastehandler" href="#definepastehandler">definePasteHandler</a>(`handler`: [`PasteHandler`](#pastehandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definepastehandler" href="#definepastehandler">definePasteHandler</a>(`handler`: [`PasteHandler`](#pastehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4297,7 +4297,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste](https://pro
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definedrophandler" href="#definedrophandler">defineDropHandler</a>(`handler`: [`DropHandler`](#drophandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definedrophandler" href="#definedrophandler">defineDropHandler</a>(`handler`: [`DropHandler`](#drophandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4317,7 +4317,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop](https://pros
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definescrolltoselectionhandler" href="#definescrolltoselectionhandler">defineScrollToSelectionHandler</a>(`handler`: [`ScrollToSelectionHandler`](#scrolltoselectionhandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definescrolltoselectionhandler" href="#definescrolltoselectionhandler">defineScrollToSelectionHandler</a>(`handler`: [`ScrollToSelectionHandler`](#scrolltoselectionhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4337,7 +4337,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection]
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definefocuschangehandler" href="#definefocuschangehandler">defineFocusChangeHandler</a>(`handler`: [`FocusChangeHandler`](#focuschangehandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definefocuschangehandler" href="#definefocuschangehandler">defineFocusChangeHandler</a>(`handler`: [`FocusChangeHandler`](#focuschangehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4357,7 +4357,7 @@ Registers a event handler that is called when the editor gains or loses focus.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemounthandler" href="#definemounthandler">defineMountHandler</a>(`handler`: [`MountHandler`](#mounthandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definemounthandler" href="#definemounthandler">defineMountHandler</a>(`handler`: [`MountHandler`](#mounthandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4377,7 +4377,7 @@ Registers a event handler that is called when the editor view is mounted.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineupdatehandler" href="#defineupdatehandler">defineUpdateHandler</a>(`handler`: [`UpdateHandler`](#updatehandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineupdatehandler" href="#defineupdatehandler">defineUpdateHandler</a>(`handler`: [`UpdateHandler`](#updatehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4397,7 +4397,7 @@ Registers a event handler that is called when the editor state is updated.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineunmounthandler" href="#defineunmounthandler">defineUnmountHandler</a>(`handler`: [`UnmountHandler`](#unmounthandler)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineunmounthandler" href="#defineunmounthandler">defineUnmountHandler</a>(`handler`: [`UnmountHandler`](#unmounthandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4417,7 +4417,7 @@ Registers a event handler that is called when the editor view is unmounted.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definehistory" href="#definehistory">defineHistory</a>(`options`: [`HistoryOptions`](#historyoptions)): `HistoryExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definehistory" href="#definehistory">defineHistory</a>(`options`: [`HistoryOptions`](#historyoptions)): `HistoryExtension`</code>
 
 </dt>
 
@@ -4437,7 +4437,7 @@ Add undo/redo history to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definebasekeymap" href="#definebasekeymap">defineBaseKeymap</a>(`options?`: `object`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definebasekeymap" href="#definebasekeymap">defineBaseKeymap</a>(`options?`: `object`): `PlainExtension`</code>
 
 </dt>
 
@@ -4457,7 +4457,7 @@ Defines some basic key bindings.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definekeymap" href="#definekeymap">defineKeymap</a>(`keymap`: [`Keymap`](#keymap)): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definekeymap" href="#definekeymap">defineKeymap</a>(`keymap`: [`Keymap`](#keymap)): `PlainExtension`</code>
 
 </dt>
 
@@ -4475,7 +4475,7 @@ Defines some basic key bindings.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemarkspec" href="#definemarkspec">defineMarkSpec</a>\<Mark, Attrs\>(`options`: [`MarkSpecOptions`](#markspecoptions)\<`Mark`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: Attrs }`; \}\></code>
+<code data-typedoc-code><i>function</i> <a id="definemarkspec" href="#definemarkspec">defineMarkSpec</a>\<Mark, Attrs\>(`options`: [`MarkSpecOptions`](#markspecoptions)\<`Mark`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: Attrs }`; \}\></code>
 
 </dt>
 
@@ -4493,7 +4493,7 @@ Defines some basic key bindings.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemarkattr" href="#definemarkattr">defineMarkAttr</a>\<MarkType, AttrName, AttrType\>(`options`: [`MarkAttrOptions`](#markattroptions)\<`MarkType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: AttrType }`; \}\></code>
+<code data-typedoc-code><i>function</i> <a id="definemarkattr" href="#definemarkattr">defineMarkAttr</a>\<MarkType, AttrName, AttrType\>(`options`: [`MarkAttrOptions`](#markattroptions)\<`MarkType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: AttrType }`; \}\></code>
 
 </dt>
 
@@ -4511,7 +4511,7 @@ Defines some basic key bindings.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definemarkview" href="#definemarkview">defineMarkView</a>(`options`: [`MarkViewOptions`](#markviewoptions)): [`Extension`](#extension-1)</code>
+<code data-typedoc-code><i>function</i> <a id="definemarkview" href="#definemarkview">defineMarkView</a>(`options`: [`MarkViewOptions`](#markviewoptions)): [`Extension`](#extension-1)</code>
 
 </dt>
 
@@ -4525,7 +4525,7 @@ Defines some basic key bindings.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definenodespec" href="#definenodespec">defineNodeSpec</a>\<Node, Attrs\>(`options`: [`NodeSpecOptions`](#nodespecoptions)\<`Node`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: Attrs }`; \}\></code>
+<code data-typedoc-code><i>function</i> <a id="definenodespec" href="#definenodespec">defineNodeSpec</a>\<Node, Attrs\>(`options`: [`NodeSpecOptions`](#nodespecoptions)\<`Node`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: Attrs }`; \}\></code>
 
 </dt>
 
@@ -4545,7 +4545,7 @@ Defines a node type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definenodeattr" href="#definenodeattr">defineNodeAttr</a>\<NodeType, AttrName, AttrType\>(`options`: [`NodeAttrOptions`](#nodeattroptions)\<`NodeType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: { [K in string]: AttrType } }`; \}\></code>
+<code data-typedoc-code><i>function</i> <a id="definenodeattr" href="#definenodeattr">defineNodeAttr</a>\<NodeType, AttrName, AttrType\>(`options`: [`NodeAttrOptions`](#nodeattroptions)\<`NodeType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: { [K in string]: AttrType } }`; \}\></code>
 
 </dt>
 
@@ -4565,7 +4565,7 @@ Defines an attribute for a node type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definenodeview" href="#definenodeview">defineNodeView</a>(`options`: [`NodeViewOptions`](#nodeviewoptions)): [`Extension`](#extension-1)</code>
+<code data-typedoc-code><i>function</i> <a id="definenodeview" href="#definenodeview">defineNodeView</a>(`options`: [`NodeViewOptions`](#nodeviewoptions)): [`Extension`](#extension-1)</code>
 
 </dt>
 
@@ -4579,7 +4579,7 @@ Defines an attribute for a node type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineparagraph" href="#defineparagraph">defineParagraph</a>(): `ParagraphSpecExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineparagraph" href="#defineparagraph">defineParagraph</a>(): `ParagraphSpecExtension`</code>
 
 </dt>
 
@@ -4607,7 +4607,7 @@ import { defineParagraph } from 'prosekit/extensions/paragraph'
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="defineplugin" href="#defineplugin">definePlugin</a>(`plugin`: [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[] \| (`context`: `object`) => [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[]): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="defineplugin" href="#defineplugin">definePlugin</a>(`plugin`: [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[] \| (`context`: `object`) => [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[]): `PlainExtension`</code>
 
 </dt>
 
@@ -4627,7 +4627,7 @@ Adds a ProseMirror plugin to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="definetext" href="#definetext">defineText</a>(): `TextExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definetext" href="#definetext">defineText</a>(): `TextExtension`</code>
 
 </dt>
 
@@ -4653,7 +4653,7 @@ import { defineText } from 'prosekit/extensions/text'
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="findparentnodeoftype" href="#findparentnodeoftype">findParentNodeOfType</a>(`type`: `string` \| [`NodeType`](pm/model.md#nodetype), `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
+<code data-typedoc-code><i>function</i> <a id="findparentnodeoftype" href="#findparentnodeoftype">findParentNodeOfType</a>(`type`: `string` \| [`NodeType`](pm/model.md#nodetype), `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
 
 </dt>
 
@@ -4673,7 +4673,7 @@ Finds the closest parent node that matches the given node type.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="findparentnode" href="#findparentnode">findParentNode</a>(`predicate`: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `boolean`, `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
+<code data-typedoc-code><i>function</i> <a id="findparentnode" href="#findparentnode">findParentNode</a>(`predicate`: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `boolean`, `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
 
 </dt>
 
@@ -4693,7 +4693,7 @@ Find the closest parent node that satisfies the predicate.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="jsonfromstate" href="#jsonfromstate">jsonFromState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): [`StateJSON`](#statejson)</code>
+<code data-typedoc-code><i>function</i> <a id="jsonfromstate" href="#jsonfromstate">jsonFromState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): [`StateJSON`](#statejson)</code>
 
 </dt>
 
@@ -4720,7 +4720,7 @@ const json = jsonFromState(state)
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="statefromjson" href="#statefromjson">stateFromJSON</a>(`json`: [`StateJSON`](#statejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`EditorState`](pm/state.md#editorstate)</code>
+<code data-typedoc-code><i>function</i> <a id="statefromjson" href="#statefromjson">stateFromJSON</a>(`json`: [`StateJSON`](#statejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`EditorState`](pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -4747,7 +4747,7 @@ const state = stateFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="jsonfromnode" href="#jsonfromnode">jsonFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)): [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-code><i>function</i> <a id="jsonfromnode" href="#jsonfromnode">jsonFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)): [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -4774,7 +4774,7 @@ const json = jsonFromNode(node)
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="nodefromjson" href="#nodefromjson">nodeFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><i>function</i> <a id="nodefromjson" href="#nodefromjson">nodeFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -4801,7 +4801,7 @@ const node = nodeFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="nodefromelement" href="#nodefromelement">nodeFromElement</a>(`element`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><i>function</i> <a id="nodefromelement" href="#nodefromelement">nodeFromElement</a>(`element`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -4828,7 +4828,7 @@ const node = nodeFromElement(element, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="elementfromnode" href="#elementfromnode">elementFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><i>function</i> <a id="elementfromnode" href="#elementfromnode">elementFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -4855,7 +4855,7 @@ const element = elementFromNode(node)
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="nodefromhtml" href="#nodefromhtml">nodeFromHTML</a>(`html`: `string`, `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-code><i>function</i> <a id="nodefromhtml" href="#nodefromhtml">nodeFromHTML</a>(`html`: `string`, `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -4882,7 +4882,7 @@ const node = nodeFromHTML(html, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="htmlfromnode" href="#htmlfromnode">htmlFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
+<code data-typedoc-code><i>function</i> <a id="htmlfromnode" href="#htmlfromnode">htmlFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
 
 </dt>
 
@@ -4909,7 +4909,7 @@ const html = htmlFromNode(node)
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="elementfromjson" href="#elementfromjson">elementFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-code><i>function</i> <a id="elementfromjson" href="#elementfromjson">elementFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -4936,7 +4936,7 @@ const element = elementFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="jsonfromhtml" href="#jsonfromhtml">jsonFromHTML</a>(`html`: `string`, `options`: [`DOMDocumentOptions`](#domdocumentoptions) & [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-code><i>function</i> <a id="jsonfromhtml" href="#jsonfromhtml">jsonFromHTML</a>(`html`: `string`, `options`: [`DOMDocumentOptions`](#domdocumentoptions) & [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -4963,7 +4963,7 @@ const json = jsonFromHTML(html, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="htmlfromjson" href="#htmlfromjson">htmlFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
+<code data-typedoc-code><i>function</i> <a id="htmlfromjson" href="#htmlfromjson">htmlFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
 
 </dt>
 
@@ -4990,7 +4990,7 @@ const html = htmlFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="setselectionaround" href="#setselectionaround">setSelectionAround</a>(`tr`: [`Transaction`](pm/state.md#transaction), `pos`: `number`): `void`</code>
+<code data-typedoc-code><i>function</i> <a id="setselectionaround" href="#setselectionaround">setSelectionAround</a>(`tr`: [`Transaction`](pm/state.md#transaction), `pos`: `number`): `void`</code>
 
 </dt>
 
@@ -5004,7 +5004,7 @@ const html = htmlFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="isprosemirrornode" href="#isprosemirrornode">isProseMirrorNode</a>(`value`: `unknown`): `value is ProseMirrorNode`</code>
+<code data-typedoc-code><i>function</i> <a id="isprosemirrornode" href="#isprosemirrornode">isProseMirrorNode</a>(`value`: `unknown`): `value is ProseMirrorNode`</code>
 
 </dt>
 
@@ -5024,7 +5024,7 @@ Checks if the given object is a [ProseMirrorNode](pm/model.md#prosemirrornode) i
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="ismark" href="#ismark">isMark</a>(`value`: `unknown`): `value is Mark`</code>
+<code data-typedoc-code><i>function</i> <a id="ismark" href="#ismark">isMark</a>(`value`: `unknown`): `value is Mark`</code>
 
 </dt>
 
@@ -5044,7 +5044,7 @@ Checks if the given object is a [Mark](pm/model.md#mark) instance.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="isfragment" href="#isfragment">isFragment</a>(`value`: `unknown`): `value is ProseMirrorFragment`</code>
+<code data-typedoc-code><i>function</i> <a id="isfragment" href="#isfragment">isFragment</a>(`value`: `unknown`): `value is ProseMirrorFragment`</code>
 
 </dt>
 
@@ -5064,7 +5064,7 @@ Checks if the given object is a [Fragment](pm/model.md#prosemirrorfragment) inst
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="isslice" href="#isslice">isSlice</a>(`value`: `unknown`): `value is Slice`</code>
+<code data-typedoc-code><i>function</i> <a id="isslice" href="#isslice">isSlice</a>(`value`: `unknown`): `value is Slice`</code>
 
 </dt>
 
@@ -5084,7 +5084,7 @@ Checks if the given object is a [Slice](pm/model.md#slice) instance.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="isselection" href="#isselection">isSelection</a>(`value`: `unknown`): `value is Selection`</code>
+<code data-typedoc-code><i>function</i> <a id="isselection" href="#isselection">isSelection</a>(`value`: `unknown`): `value is Selection`</code>
 
 </dt>
 
@@ -5104,7 +5104,7 @@ Checks if the given object is a [Selection](pm/state.md#selection-3) instance.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="istextselection" href="#istextselection">isTextSelection</a>(`value`: [`Selection`](pm/state.md#selection-3)): `value is TextSelection`</code>
+<code data-typedoc-code><i>function</i> <a id="istextselection" href="#istextselection">isTextSelection</a>(`value`: [`Selection`](pm/state.md#selection-3)): `value is TextSelection`</code>
 
 </dt>
 
@@ -5124,7 +5124,7 @@ Checks if the given object is a [TextSelection](pm/state.md#textselection) insta
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="isnodeselection" href="#isnodeselection">isNodeSelection</a>(`value`: [`Selection`](pm/state.md#selection-3)): `value is NodeSelection`</code>
+<code data-typedoc-code><i>function</i> <a id="isnodeselection" href="#isnodeselection">isNodeSelection</a>(`value`: [`Selection`](pm/state.md#selection-3)): `value is NodeSelection`</code>
 
 </dt>
 
@@ -5144,7 +5144,7 @@ Checks if the given object is a [NodeSelection](pm/state.md#nodeselection) insta
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <i></i> <a id="isallselection" href="#isallselection">isAllSelection</a>(`value`: [`Selection`](pm/state.md#selection-3)): `value is AllSelection`</code>
+<code data-typedoc-code><i>function</i> <a id="isallselection" href="#isallselection">isAllSelection</a>(`value`: [`Selection`](pm/state.md#selection-3)): `value is AllSelection`</code>
 
 </dt>
 

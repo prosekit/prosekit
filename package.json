@@ -33,7 +33,7 @@
     "typecheck": "tsc --build tsconfig.json"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.5",
+    "@changesets/cli": "^2.29.6",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.25.0",
     "@ocavue/eslint-config": "^3.3.1",
@@ -46,10 +46,10 @@
     "dprint": "^0.50.1",
     "eslint": "^9.33.0",
     "monorepo-typescript-references": "^1.1.0",
-    "pkg-pr-new": "^0.0.54",
+    "pkg-pr-new": "^0.0.55",
     "playwright": "^1.54.2",
     "size-limit": "^11.2.0",
-    "turbo": "^2.5.5",
+    "turbo": "^2.5.6",
     "typescript": "~5.9.2",
     "unocss": "^66.4.2",
     "vitest": "^3.2.4"

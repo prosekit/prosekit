@@ -29,11 +29,11 @@ const typedocConfig = {
   plugin: [
     'typedoc-plugin-markdown',
     '@prosekit/typedoc-plugin',
+    'typedoc-plugin-md',
     'typedoc-plugin-frontmatter',
     'typedoc-plugin-mdn-links',
     'typedoc-plugin-external-package-links',
   ],
-  theme: 'my-markdown-theme',
   githubPages: false,
   disableSources: true,
 

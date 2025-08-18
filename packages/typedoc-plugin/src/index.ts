@@ -3,8 +3,6 @@ import {
   type MarkdownApplication,
 } from 'typedoc-plugin-markdown'
 
-import { MyMarkdownTheme } from './markdown-theme'
-
 export function load(app: MarkdownApplication) {
   app.renderer.on(
     MarkdownPageEvent.BEGIN,
@@ -26,7 +24,4 @@ export function load(app: MarkdownApplication) {
       }
     },
   )
-
-  // Define the markdown theme
-  app.renderer.defineTheme('my-markdown-theme', MyMarkdownTheme)
 }

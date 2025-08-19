@@ -48,7 +48,7 @@
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
     "@prosemirror-adapter/core": "^0.4.2",
-    "@prosemirror-adapter/react": "^0.4.1"
+    "@prosemirror-adapter/react": "^0.4.2"
   },
   "peerDependencies": {
     "react": ">= 18.2.0",

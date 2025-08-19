@@ -600,8 +600,8 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.2
+        version: 0.4.2
       '@prosemirror-adapter/react':
         specifier: ^0.4.1
         version: 0.4.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -646,8 +646,8 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.2
+        version: 0.4.2
       '@prosemirror-adapter/solid':
         specifier: ^0.4.1
         version: 0.4.1(solid-js@1.9.9)
@@ -683,8 +683,8 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.2
+        version: 0.4.2
       '@prosemirror-adapter/svelte':
         specifier: ^0.4.1
         version: 0.4.1(svelte@5.38.1)
@@ -748,8 +748,8 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.2
+        version: 0.4.2
       '@prosemirror-adapter/vue':
         specifier: ^0.4.1
         version: 0.4.1(vue@3.5.18(typescript@5.9.2))
@@ -2338,6 +2338,9 @@ packages:
 
   '@prosemirror-adapter/core@0.4.0':
     resolution: {integrity: sha512-feLFTIvbpQDnWspZv+rjTPmqpeJ8++VM/gDnBaDNLsAEvrwmO1IHc0oyrRBl/9x3Er3tU/WXc86TlOidsN1aEg==}
+
+  '@prosemirror-adapter/core@0.4.2':
+    resolution: {integrity: sha512-KY6itNthouclsf8GGliKuqaklT5pEY12d4guKmGTpOcLeq8u3XcTSTyCgspoi6HCKtUdKscLP+WWIFQae1U/IA==}
 
   '@prosemirror-adapter/react@0.4.1':
     resolution: {integrity: sha512-m2OdJoAGqXYHFi2vfy0DICTdOqUP2zDYfHe1cKQMM6Ri2M4n07c8812xBUkFBasLlfYm+d82N6ebTA6+B/0qEg==}
@@ -9217,6 +9220,12 @@ snapshots:
   '@prosemirror-adapter/core@0.4.0':
     dependencies:
       tslib: 2.8.1
+
+  '@prosemirror-adapter/core@0.4.2':
+    dependencies:
+      prosemirror-model: 1.25.3
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.40.1
 
   '@prosemirror-adapter/react@0.4.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:

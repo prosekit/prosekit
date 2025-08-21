@@ -52,12 +52,12 @@
     "@aria-ui/popover": "^0.0.28",
     "@aria-ui/presence": "^0.0.20",
     "@aria-ui/tooltip": "^0.0.30",
-    "@floating-ui/dom": "^1.7.3",
+    "@floating-ui/dom": "^1.7.4",
     "@ocavue/utils": "^0.7.1",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^1.21.6",
+    "@zag-js/dom-query": "^1.21.7",
     "prosemirror-tables": "^1.7.1"
   },
   "devDependencies": {

@@ -686,8 +686,8 @@ importers:
         specifier: ^0.4.2
         version: 0.4.2
       '@prosemirror-adapter/svelte':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@150
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@150(svelte@5.38.2)
+        specifier: ^0.4.3
+        version: 0.4.3(svelte@5.38.2)
     devDependencies:
       '@prosekit/config-vitest':
         specifier: workspace:*
@@ -2351,10 +2351,6 @@ packages:
   '@prosemirror-adapter/core@0.4.2':
     resolution: {integrity: sha512-KY6itNthouclsf8GGliKuqaklT5pEY12d4guKmGTpOcLeq8u3XcTSTyCgspoi6HCKtUdKscLP+WWIFQae1U/IA==}
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@56114d14922794bdbd516c414d11c8b009819e20':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@56114d14922794bdbd516c414d11c8b009819e20}
-    version: 0.4.2
-
   '@prosemirror-adapter/react@0.4.2':
     resolution: {integrity: sha512-fdjH/qc9tcoHmMQIK/fe2hMalOk7nBZCaC7tllfVPqojl2xGJhkatm2oi6xqodzB10Ji0J5xsJxSS9DuZsz/3g==}
     peerDependencies:
@@ -2374,9 +2370,8 @@ packages:
       solid-js:
         optional: true
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@150':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@150}
-    version: 0.4.2
+  '@prosemirror-adapter/svelte@0.4.3':
+    resolution: {integrity: sha512-/FPZ76qzwAC5nekVTQNOsQRFjYIlLCj4aVYtlNuI38RVWjmfbnOW+niFzvxoBZt3E+saY0WGAFIEdnId2IApnA==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
@@ -9260,12 +9255,6 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.40.1
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@56114d14922794bdbd516c414d11c8b009819e20':
-    dependencies:
-      prosemirror-model: 1.25.3
-      prosemirror-state: 1.4.3
-      prosemirror-view: 1.40.1
-
   '@prosemirror-adapter/react@0.4.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.2
@@ -9287,9 +9276,9 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.9
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@150(svelte@5.38.2)':
+  '@prosemirror-adapter/svelte@0.4.3(svelte@5.38.2)':
     dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@56114d14922794bdbd516c414d11c8b009819e20
+      '@prosemirror-adapter/core': 0.4.2
       nanoid: 5.1.5
       prosemirror-model: 1.25.3
       prosemirror-state: 1.4.3

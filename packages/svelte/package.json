@@ -70,8 +70,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.0",
-    "@prosemirror-adapter/svelte": "^0.4.1"
+    "@prosemirror-adapter/core": "^0.4.2",
+    "@prosemirror-adapter/svelte": "^0.4.3"
   },
   "peerDependencies": {
     "svelte": ">= 5.0.0"
@@ -83,8 +83,8 @@
   },
   "devDependencies": {
     "@prosekit/config-vitest": "workspace:*",
-    "@sveltejs/package": "^2.4.1",
-    "@types/node": "^20.19.10",
+    "@sveltejs/package": "^2.5.0",
+    "@types/node": "^20.19.11",
     "read-pkg": "^9.0.1",
     "svelte": "^5.38.1",
     "svelte-check": "^4.3.1",

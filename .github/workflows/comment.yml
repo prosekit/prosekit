@@ -1,10 +1,27 @@
-name: Slash command
+name: Comment
 
 on:
   issue_comment:
-    types: [created]
+    types: [created, edited]
 
 jobs:
+  hide-bot-comment:
+    if: github.event.issue.pull_request
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - id: hide-comment
+        uses: int128/hide-comment-action@v1
+        with:
+          authors: |
+            github-actions[bot]
+            changeset-bot[bot]
+            coderabbitai[bot]
+            pkg-pr-new[bot]
+
   run-command:
     if: github.event.issue.pull_request && github.event.comment.body ==  '/docs'
     runs-on: ubuntu-latest

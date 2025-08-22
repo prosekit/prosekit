@@ -2,7 +2,7 @@ name: Comment
 
 on:
   issue_comment:
-    types: [created, edited]
+    types: [created]
 
 jobs:
   hide-bot-comment:

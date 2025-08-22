@@ -1,0 +1,18 @@
+name: hide-bot-comment
+
+on:
+  pull_request:
+
+jobs:
+  hide-bot-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: hide-comment
+        uses: int128/hide-comment-action@v1.43.0
+        with:
+          authors: |
+            github-actions
+            changeset-bot
+            coderabbitai
+            pkg-pr-new

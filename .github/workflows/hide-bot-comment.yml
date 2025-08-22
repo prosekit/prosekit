@@ -1,3 +1,5 @@
+name: hide-bot-comment
+
 on:
   pull_request:
 

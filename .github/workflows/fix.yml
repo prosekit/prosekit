@@ -1,6 +1,6 @@
 # https://autofix.ci/setup
 
-name: autofix.ci
+name: fix
 
 on:
   pull_request:

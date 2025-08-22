@@ -5,23 +5,6 @@ on:
     types: [created]
 
 jobs:
-  hide-bot-comment:
-    if: github.event.issue.pull_request
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - id: hide-comment
-        uses: int128/hide-comment-action@v1.43.0
-        with:
-          authors: |
-            github-actions
-            changeset-bot
-            coderabbitai
-            pkg-pr-new
-
   run-command:
     if: github.event.issue.pull_request && github.event.comment.body ==  '/docs'
     runs-on: ubuntu-latest

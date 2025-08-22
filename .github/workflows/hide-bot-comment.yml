@@ -1,5 +1,3 @@
-name: Hide bot comment
-
 on:
   pull_request:
 

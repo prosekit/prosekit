@@ -4,7 +4,6 @@ export {
 } from './table'
 export {
   defineTableCommands,
-  exitTable,
   selectTable,
   selectTableCell,
   selectTableColumn,
@@ -19,6 +18,7 @@ export {
   moveTableColumn,
   type MoveTableColumnOptions,
 } from './table-commands/move-table-column'
+export { exitTable } from './table-commands/exit-table'
 export {
   insertTable,
   type InsertTableOptions,

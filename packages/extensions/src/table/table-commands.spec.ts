@@ -10,7 +10,6 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../testing'
-import { inputText } from '../testing/keyboard'
 
 import { isCellSelection } from './table-utils'
 
@@ -32,42 +31,6 @@ function setup() {
 }
 
 
-describe('exitTable', () => {
-  it('can exist a table', async () => {
-    const { editor, n: { doc, table, tr, td, p } } = setup()
-    const doc1 = doc(
-      table(
-        //
-        tr(td('<a>'), td()),
-        tr(td(), td()),
-      ),
-    )
-    editor.set(doc1)
-
-    await inputText('foo')
-    const doc2 = doc(
-      table(
-        //
-        tr(td('foo'), td()),
-        tr(td(), td()),
-      ),
-    )
-    expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
-
-    editor.commands.exitTable()
-    await inputText('bar')
-
-    const doc3 = doc(
-      table(
-        //
-        tr(td('foo'), td()),
-        tr(td(), td()),
-      ),
-      p('bar'),
-    )
-    expect(editor.state.doc.toJSON()).toEqual(doc3.toJSON())
-  })
-})
 
 describe('deleteCellSelection', () => {
   it('can clear the content in the selected table cells', () => {

@@ -7,7 +7,6 @@ import {
   addColumnBefore,
   addRowAfter,
   addRowBefore,
-  deleteCellSelection,
   deleteColumn,
   deleteRow,
   deleteTable,
@@ -15,6 +14,7 @@ import {
   splitCell,
 } from 'prosemirror-tables'
 
+import { deleteCellSelection } from './table-commands/delete-cell-selection'
 import { exitTable } from './table-commands/exit-table'
 import {
   insertTable,

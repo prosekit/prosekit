@@ -4,10 +4,9 @@ import {
   it,
 } from 'vitest'
 
-import { setupTest } from '../testing'
-
-import { isCellSelection } from './table-utils'
-import { setCellSelection } from './test-utils'
+import { setupTest } from '../../testing'
+import { isCellSelection } from '../table-utils'
+import { setCellSelection } from '../test-utils'
 
 describe('deleteCellSelection', () => {
   it('can clear the content in the selected table cells', () => {
@@ -40,4 +39,3 @@ describe('deleteCellSelection', () => {
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 })
-

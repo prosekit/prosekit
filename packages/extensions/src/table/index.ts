@@ -5,12 +5,10 @@ export {
 export {
   defineTableCommands,
   exitTable,
-  insertTable,
   selectTable,
   selectTableCell,
   selectTableColumn,
   selectTableRow,
-  type InsertTableOptions,
   type SelectTableCellOptions,
   type SelectTableColumnOptions,
   type SelectTableOptions,
@@ -21,6 +19,10 @@ export {
   moveTableColumn,
   type MoveTableColumnOptions,
 } from './table-commands/move-table-column'
+export {
+  insertTable,
+  type InsertTableOptions,
+} from './table-commands/insert-table'
 export {
   moveTableRow,
   type MoveTableRowOptions,

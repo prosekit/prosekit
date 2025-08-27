@@ -6,10 +6,8 @@ export {
   defineTableCommands,
   selectTable,
   selectTableCell,
-  selectTableRow,
   type SelectTableCellOptions,
   type SelectTableOptions,
-  type SelectTableRowOptions,
   type TableCommandsExtension,
 } from './table-commands'
 export {
@@ -29,6 +27,10 @@ export {
   selectTableColumn,
   type SelectTableColumnOptions,
 } from './table-commands/select-table-column'
+export {
+  selectTableRow,
+  type SelectTableRowOptions,
+} from './table-commands/select-table-row'
 export { defineTableDropIndicator } from './table-drop-indicator'
 export { defineTablePlugins } from './table-plugins'
 export {

@@ -88,7 +88,7 @@
     "read-pkg": "^9.0.1",
     "svelte": "^5.38.1",
     "svelte-check": "^4.3.1",
-    "tsx": "^4.20.4",
+    "tsx": "^4.20.5",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4"
   },

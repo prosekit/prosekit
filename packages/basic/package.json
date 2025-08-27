@@ -48,7 +48,7 @@
     "@types/jsdom": "^21.1.7",
     "happy-dom": "^18.0.1",
     "jsdom": "^26.1.0",
-    "tsdown": "^0.14.1",
+    "tsdown": "^0.14.2",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4"
   },

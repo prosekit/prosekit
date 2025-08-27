@@ -57,13 +57,13 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^1.21.7",
+    "@zag-js/dom-query": "^1.22.0",
     "prosemirror-tables": "^1.7.1"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.14.1",
+    "tsdown": "^0.14.2",
     "type-fest": "^4.41.0",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4"

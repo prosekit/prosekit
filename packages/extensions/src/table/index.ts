@@ -10,15 +10,15 @@ export {
   type SelectTableOptions,
   type TableCommandsExtension,
 } from './table-commands'
-export {
-  moveTableColumn,
-  type MoveTableColumnOptions,
-} from './table-commands/move-table-column'
 export { exitTable } from './table-commands/exit-table'
 export {
   insertTable,
   type InsertTableOptions,
 } from './table-commands/insert-table'
+export {
+  moveTableColumn,
+  type MoveTableColumnOptions,
+} from './table-commands/move-table-column'
 export {
   moveTableRow,
   type MoveTableRowOptions,

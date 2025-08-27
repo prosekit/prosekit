@@ -1,15 +1,7 @@
-import {
-  defaultBlockAt,
-} from '@prosekit/core'
-import {
-  TextSelection,
-} from '@prosekit/pm/state'
-import type {
-  Command,
-} from '@prosekit/pm/state'
-import type {
-  TableRole,
-} from 'prosemirror-tables'
+import { defaultBlockAt } from '@prosekit/core'
+import { TextSelection } from '@prosekit/pm/state'
+import type { Command } from '@prosekit/pm/state'
+import type { TableRole } from 'prosemirror-tables'
 
 /**
  * When the selection is in a table node, create a default block after the table

@@ -30,8 +30,6 @@ function setup() {
   return { editor, n, setCellSelection }
 }
 
-
-
 describe('deleteCellSelection', () => {
   it('can clear the content in the selected table cells', () => {
     const { editor, n: { doc, table, tr, td }, setCellSelection } = setup()
@@ -63,8 +61,6 @@ describe('deleteCellSelection', () => {
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 })
-
-
 
 describe('selectTableCell', () => {
   it('can select a table cell', () => {

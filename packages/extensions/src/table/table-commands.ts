@@ -2,9 +2,7 @@ import {
   defineCommands,
   type Extension,
 } from '@prosekit/core'
-import type {
-  Command,
-} from '@prosekit/pm/state'
+import type { Command } from '@prosekit/pm/state'
 import {
   addColumnAfter,
   addColumnBefore,
@@ -45,10 +43,6 @@ import {
   findCellPos,
   findTable,
 } from './table-utils'
-
-
-
-
 
 /**
  * @public

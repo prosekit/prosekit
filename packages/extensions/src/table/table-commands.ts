@@ -2,20 +2,17 @@ import {
   defineCommands,
   type Extension,
 } from '@prosekit/core'
-import type { Command } from '@prosekit/pm/state'
 import {
   addColumnAfter,
   addColumnBefore,
   addRowAfter,
   addRowBefore,
-  CellSelection,
   deleteCellSelection,
   deleteColumn,
   deleteRow,
   deleteTable,
   mergeCells,
   splitCell,
-  TableMap,
 } from 'prosemirror-tables'
 
 import { exitTable } from './table-commands/exit-table'
@@ -47,8 +44,6 @@ import {
   selectTableRow,
   type SelectTableRowOptions,
 } from './table-commands/select-table-row'
-import { findTable } from './table-utils'
-
 
 /**
  * @internal

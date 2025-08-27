@@ -141,12 +141,12 @@ jobs:
         run: pnpm run build
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.5.0
+        uses: lycheeverse/lychee-action@v2.6.1
         with:
           workingDirectory: website/dist
           args: >
             --include-fragments
-            --fallback-extensions html
+            --index-files 'index.html'
             --root-dir "$PWD"
             --no-progress
             --format detailed

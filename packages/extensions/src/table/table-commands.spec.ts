@@ -1,8 +1,3 @@
-import type {
-  Command,
-  Selection,
-} from '@prosekit/pm/state'
-import { CellSelection } from 'prosemirror-tables'
 import {
   describe,
   expect,
@@ -12,27 +7,14 @@ import {
 import { setupTest } from '../testing'
 
 import { isCellSelection } from './table-utils'
-
-function setup() {
-  const { editor, n } = setupTest()
-
-  // TODO: add a new command "selectTableCells" so that
-  // we don't need to write this command in every test
-  const setCellSelection = (from: number, to: number) => {
-    const command: Command = (state, dispatch) => {
-      const selection = CellSelection.create(state.doc, from, to)
-      dispatch?.(state.tr.setSelection(selection))
-      return true
-    }
-    editor.exec(command)
-  }
-
-  return { editor, n, setCellSelection }
-}
+import {
+  inspectSelectedCells,
+  setCellSelection,
+} from './test-utils'
 
 describe('deleteCellSelection', () => {
   it('can clear the content in the selected table cells', () => {
-    const { editor, n: { doc, table, tr, td }, setCellSelection } = setup()
+    const { editor, n: { doc, table, tr, td } } = setupTest()
     const doc1 = doc(
       table(
         tr(/*2*/ td('1'), /*7*/ td('2') /*12*/),
@@ -44,7 +26,7 @@ describe('deleteCellSelection', () => {
     )
 
     editor.set(doc1)
-    setCellSelection(2, 19)
+    editor.exec(setCellSelection(2, 19))
     expect(isCellSelection(editor.state.selection)).toBe(true)
 
     editor.commands.deleteCellSelection()
@@ -64,7 +46,7 @@ describe('deleteCellSelection', () => {
 
 describe('selectTableCell', () => {
   it('can select a table cell', () => {
-    const { editor, n: { doc, table, tr, td } } = setup()
+    const { editor, n: { doc, table, tr, td } } = setupTest()
     const doc1 = doc(
       table(
         //
@@ -89,7 +71,7 @@ describe('selectTableCell', () => {
 
 describe('selectTable', () => {
   it('can select the whole table', () => {
-    const { editor, n: { doc, table, tr, td } } = setup()
+    const { editor, n: { doc, table, tr, td } } = setupTest()
     const doc1 = doc(
       table(
         //
@@ -114,14 +96,3 @@ describe('selectTable', () => {
     `)
   })
 })
-
-function inspectSelectedCells(selection: Selection) {
-  if (isCellSelection(selection)) {
-    const cells: string[] = []
-    selection.forEachCell((node) => {
-      cells.push(node.textContent)
-    })
-    return cells
-  }
-  return []
-}

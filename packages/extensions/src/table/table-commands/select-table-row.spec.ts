@@ -1,4 +1,3 @@
-import type { Selection } from '@prosekit/pm/state'
 import {
   describe,
   expect,
@@ -6,7 +5,7 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../../testing'
-import { isCellSelection } from '../table-utils'
+import { inspectSelectedCells } from '../test-utils'
 
 describe('selectTableRow', () => {
   it('can select the whole table row', () => {
@@ -31,14 +30,3 @@ describe('selectTableRow', () => {
     `)
   })
 })
-
-function inspectSelectedCells(selection: Selection) {
-  if (isCellSelection(selection)) {
-    const cells: string[] = []
-    selection.forEachCell((node) => {
-      cells.push(node.textContent)
-    })
-    return cells
-  }
-  return []
-}

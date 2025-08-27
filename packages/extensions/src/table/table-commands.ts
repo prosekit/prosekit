@@ -32,6 +32,10 @@ import {
   type MoveTableRowOptions,
 } from './table-commands/move-table-row'
 import {
+  selectTableCell,
+  type SelectTableCellOptions,
+} from './table-commands/select-table-cell'
+import {
   selectTableColumn,
   type SelectTableColumnOptions,
 } from './table-commands/select-table-column'
@@ -39,41 +43,7 @@ import {
   selectTableRow,
   type SelectTableRowOptions,
 } from './table-commands/select-table-row'
-import {
-  findCellPos,
-  findTable,
-} from './table-utils'
-
-/**
- * @public
- */
-export interface SelectTableCellOptions {
-  /**
-   * A hit position of the table cell to select from. By default, the selection
-   * anchor will be used.
-   */
-  pos?: number
-}
-
-/**
- * @public
- */
-export function selectTableCell(options?: SelectTableCellOptions): Command {
-  return (state, dispatch) => {
-    const $cellPos = findCellPos(
-      state.doc,
-      options?.pos ?? state.selection.anchor,
-    )
-    if (!$cellPos) {
-      return false
-    }
-    if (dispatch) {
-      const selection = new CellSelection($cellPos)
-      dispatch(state.tr.setSelection(selection))
-    }
-    return true
-  }
-}
+import { findTable } from './table-utils'
 
 /**
  * @public

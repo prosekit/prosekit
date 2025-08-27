@@ -5,8 +5,6 @@ export {
 export {
   defineTableCommands,
   selectTable,
-  selectTableCell,
-  type SelectTableCellOptions,
   type SelectTableOptions,
   type TableCommandsExtension,
 } from './table-commands'
@@ -23,6 +21,10 @@ export {
   moveTableRow,
   type MoveTableRowOptions,
 } from './table-commands/move-table-row'
+export {
+  selectTableCell,
+  type SelectTableCellOptions,
+} from './table-commands/select-table-cell'
 export {
   selectTableColumn,
   type SelectTableColumnOptions,

@@ -146,10 +146,10 @@ jobs:
           workingDirectory: website/dist
           args: >
             --include-fragments
+            --index-files 'index.html'
             --root-dir "$PWD"
             --no-progress
             --format detailed
-            --index-files 'index.html'
             './**/*.html'
           debug: false
           fail: true

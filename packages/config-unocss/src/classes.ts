@@ -15,7 +15,7 @@ function cn(...args: Array<string | undefined | null | false>): string {
 const CSS_DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
 
 const CSS_FLOATING_MENU = cn(
-  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-background shadow-lg',
+  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
   CSS_DEFAULT_HIDDEN,
 )
 
@@ -49,7 +49,7 @@ const CSS_FLOATING_MENU_ITEM = cn(
 )
 
 const CSS_BUTTON_BASE = cn(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
 
 const CSS_BUTTON_VARIANT_PRIMARY = cn(
@@ -66,7 +66,7 @@ const CSS_BUTTON_SIZE_SM = 'h-9 px-3'
 const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const CSS_INPUT = cn(
-  'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition',
+  'flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition',
   // border
   'border box-border border-gray-200 dark:border-gray-800 border-solid',
   // ring
@@ -81,7 +81,7 @@ const CSS_INPUT = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const CSS_EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-background color-black dark:color-white',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 color-black dark:color-white',
 )
 
 // A scrolling container for the editor content and floating menus.
@@ -213,7 +213,7 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-background hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
+  'flex items-center box-border justify-center bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
   'overflow-hidden',
   'duration-150 transition-discrete transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',

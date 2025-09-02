@@ -6,8 +6,7 @@ const COLORS: Array<[string, string, string]> = [
   ['fakefakefake1', 'white', 'gray-950'],
   ['fakefakefake2', 'white', 'gray-950'],
 
-  // Current task: remove the following colors one by one.
-  ['background', 'white', 'gray-950'],
+  // All real colors have been removed!
 ]
 
 const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const

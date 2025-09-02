@@ -3,10 +3,8 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-import { replaceColor } from './colors'
-
 function cn(...args: Array<string | undefined | null | false>): string {
-  return twMerge(replaceColor(clsx(...args)))
+  return twMerge(clsx(...args))
 }
 
 // For those elements that need to toggle visibility based on the `data-state`
@@ -15,7 +13,7 @@ function cn(...args: Array<string | undefined | null | false>): string {
 const CSS_DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
 
 const CSS_FLOATING_MENU = cn(
-  'z-10 box-border rounded-lg border border-border bg-background shadow-lg',
+  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
   CSS_DEFAULT_HIDDEN,
 )
 
@@ -45,19 +43,19 @@ const CSS_POPOVER_ANIMATE = cn(
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(
-  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-[focused]:bg-secondary',
+  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-[focused]:bg-gray-100 dark:data-[focused]:bg-gray-800',
 )
 
 const CSS_BUTTON_BASE = cn(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
 
 const CSS_BUTTON_VARIANT_PRIMARY = cn(
-  'bg-primary text-primary-foreground hover:bg-primary/90',
+  'bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90',
 )
 
 const CSS_BUTTON_VARIANT_SECONDARY = cn(
-  'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+  'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 hover:bg-gray-100/80 dark:hover:bg-gray-800/80',
 )
 
 const CSS_BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
@@ -66,11 +64,11 @@ const CSS_BUTTON_SIZE_SM = 'h-9 px-3'
 const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const CSS_INPUT = cn(
-  'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  'flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition',
   // border
-  'border box-border border-border border-solid',
+  'border box-border border-gray-200 dark:border-gray-800 border-solid',
   // ring
-  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
+  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0',
   // outline
   'outline-hidden focus-visible:outline-hidden',
   // file
@@ -81,7 +79,7 @@ const CSS_INPUT = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const CSS_EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-background color-black dark:color-white',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 color-black dark:color-white',
 )
 
 // A scrolling container for the editor content and floating menus.
@@ -142,15 +140,15 @@ export const CSS_LANGUAGE_SELECT = cn(
 
 const CSS_TOP_BAR = cn(
   'z-2 box-border',
-  'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
+  'border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b',
 )
 
 export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
 
 export const CSS_TOGGLE_BUTTON = cn(
-  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-ring disabled:pointer-events-none min-w-9 min-h-9',
-  'text-secondary-foreground disabled:text-secondary-foreground/50',
-  'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
+  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9',
+  'text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50',
+  'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700',
 )
 
 export const CSS_IMAGE_UPLOAD_CARD = cn(
@@ -205,15 +203,15 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded-sm text-muted-foreground/50 cursor-pointer',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
 )
 
 export const CSS_BLOCK_HANDLE_DRAG = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded-sm text-muted-foreground/50 cursor-grab',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-muted-foreground/50 border border-border border-solid p-0',
+  'flex items-center box-border justify-center bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
   'overflow-hidden',
   'duration-150 transition-discrete transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
@@ -250,12 +248,12 @@ export const CSS_TABLE_CELL_MENU_ITEM = cn(
 )
 
 export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
-  'text-xs tracking-widest text-muted-foreground',
+  'text-xs tracking-widest text-gray-500 dark:text-gray-500',
 )
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
 export const CSS_TOOLTIP_CONTENT = cn(
-  'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-xs',
+  'z-50 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
   CSS_POPOVER_ANIMATE,
 )
 

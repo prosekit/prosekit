@@ -5,7 +5,6 @@ import {
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
-import { Colors } from './colors'
 import {
   getWatchFilePaths,
   loadClasses,
@@ -21,7 +20,6 @@ export const preset: PresetFactory = () => {
       },
     },
     safelist: Array.from(new Set(Object.values(loadClasses()).flatMap(value => value.split(' ')))),
-    shortcuts: Colors,
     configDeps: [...getWatchFilePaths({ includeClasses: false })],
   })
 }

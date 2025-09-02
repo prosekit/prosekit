@@ -17,7 +17,7 @@ class ClassLoader {
 
   get(): Record<string, string> {
     if (!this.cachedClasses) {
-      this.cachedClasses = loadClasses()
+      this.cachedClasses = this.load()
     }
     return this.cachedClasses
   }

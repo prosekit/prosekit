@@ -1,6 +1,6 @@
 // @unocss-include
 
-const COLORS = [
+const COLORS: Array<[string, string, string]> = [
   ['background', 'white', 'gray-950'],
   ['foreground', 'gray-900', 'gray-50'],
   ['primary', 'gray-900', 'gray-50'],
@@ -13,7 +13,7 @@ const COLORS = [
   ['border', 'gray-200', 'gray-800'],
   ['input', 'gray-200', 'gray-800'],
   ['ring', 'gray-900', 'gray-300'],
-] as const
+]
 
 const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const
 

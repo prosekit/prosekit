@@ -8,7 +8,6 @@ const COLORS: Array<[string, string, string]> = [
 
   // Current task: remove the following colors one by one.
   ['background', 'white', 'gray-950'],
-  ['foreground', 'gray-900', 'gray-50'],
 ]
 
 const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const

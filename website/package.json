@@ -31,6 +31,7 @@
     "@iconify-json/logos": "^1.2.9",
     "@iconify-json/lucide": "^1.2.64",
     "@iconify-json/tabler": "^1.2.22",
+    "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^0.7.1",
     "@playwright/test": "^1.55.0",
     "@prosekit/config-vitest": "workspace:*",

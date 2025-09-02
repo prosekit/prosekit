@@ -7,6 +7,7 @@
     "./.astro/**/*",
     "./tests/**/*",
     "build/**/*",
+    "build/**/*.json",
     "src/*.ts",
     "src/components/**/*",
     "src/pages/**/*",

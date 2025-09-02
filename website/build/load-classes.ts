@@ -1,11 +1,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+import { findRoot } from '@manypkg/find-root'
 import { exec } from 'tinyexec'
 
-let cachedClasses: Record<string, string> | undefined
+const rootDir = await findRoot(process.cwd())
 
-const CLASS_JSON_PATH = path.join(import.meta.dirname, 'classes.gen.json')
+const CLASS_JSON_PATH = path.join(rootDir.rootDir, 'website/build/classes.gen.json')
+
+let cachedClasses: Record<string, string> | undefined
 
 export function getClasses(): Record<string, string> {
   if (!cachedClasses) {

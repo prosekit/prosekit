@@ -847,6 +847,9 @@ importers:
       '@iconify-json/tabler':
         specifier: ^1.2.22
         version: 1.2.22
+      '@manypkg/find-root':
+        specifier: ^3.1.0
+        version: 3.1.0
       '@ocavue/utils':
         specifier: ^0.7.1
         version: 0.7.1

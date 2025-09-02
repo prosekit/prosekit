@@ -66,7 +66,7 @@ const CSS_BUTTON_SIZE_SM = 'h-9 px-3'
 const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const CSS_INPUT = cn(
-  'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition',
   // border
   'border box-border border-gray-200 dark:border-gray-800 border-solid',
   // ring
@@ -205,15 +205,15 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded-sm text-muted-foreground/50 cursor-pointer',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
 )
 
 export const CSS_BLOCK_HANDLE_DRAG = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded-sm text-muted-foreground/50 cursor-grab',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-muted-foreground/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
+  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
   'overflow-hidden',
   'duration-150 transition-discrete transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
@@ -250,7 +250,7 @@ export const CSS_TABLE_CELL_MENU_ITEM = cn(
 )
 
 export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
-  'text-xs tracking-widest text-muted-foreground',
+  'text-xs tracking-widest text-gray-500 dark:text-gray-500',
 )
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')

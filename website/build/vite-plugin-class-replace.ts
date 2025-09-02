@@ -1,44 +1,21 @@
-import fs from 'node:fs'
 import path from 'node:path'
 
 import type { ViteUserConfig } from 'astro'
 import MagicString from 'magic-string'
 import { exec } from 'tinyexec'
 
+import {
+  getClasses,
+  refreshClasses,
+} from './load-classes'
+
 type Plugin = Required<ViteUserConfig>['plugins'][number]
 
 const PLUGIN_NAME = '@prosekit/vite-plugin-class-replace'
 const CLASS_TS_PATH = path.join(import.meta.dirname, 'classes.ts')
-const CLASS_JSON_PATH = path.join(import.meta.dirname, 'classes.gen.json')
-
-class ClassLoader {
-  private cachedClasses: Record<string, string> | undefined
-
-  get(): Record<string, string> {
-    if (!this.cachedClasses) {
-      this.cachedClasses = this.load()
-    }
-    return this.cachedClasses
-  }
-
-  private load() {
-    const json = fs.readFileSync(CLASS_JSON_PATH, 'utf-8')
-    return JSON.parse(json) as Record<string, string>
-  }
-
-  async refresh() {
-    this.cachedClasses = undefined
-    await exec('pnpm', ['run', '-w', 'build:css'], {
-      timeout: 10_000,
-      throwOnError: true,
-    })
-    this.cachedClasses = undefined
-  }
-}
 
 export function classReplace(): Plugin {
   const moduleIds = new Set<string>()
-  const classLoader = new ClassLoader()
 
   return {
     name: PLUGIN_NAME,
@@ -57,7 +34,7 @@ export function classReplace(): Plugin {
           throwOnError: true,
         })
 
-        await classLoader.refresh()
+        await refreshClasses()
 
         const modulesToInvalidate = Array.from(moduleIds)
           .map(moduleId => server.moduleGraph.getModuleById(moduleId))
@@ -89,7 +66,7 @@ export function classReplace(): Plugin {
       }
 
       moduleIds.add(id)
-      const classes = classLoader.get()
+      const classes = getClasses()
 
       const ms = new MagicString(code)
 

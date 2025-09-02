@@ -1,6 +1,6 @@
-import * as classesModule from '../../../../build/classes'
+import { getClasses } from '../../../../build/load-classes'
 
-const classes = classesModule as Record<string, string>
+const classes = getClasses()
 
 export function replaceClassNames(code: string): string {
   return code.replaceAll(

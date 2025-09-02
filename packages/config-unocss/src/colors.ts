@@ -10,7 +10,6 @@ const COLORS: Array<[string, string, string]> = [
   ['background', 'white', 'gray-950'],
   ['foreground', 'gray-900', 'gray-50'],
   ['primary', 'gray-900', 'gray-50'],
-  ['primary-foreground', 'gray-50', 'gray-900'],
 ]
 
 const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const

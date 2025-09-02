@@ -53,7 +53,7 @@ const CSS_BUTTON_BASE = cn(
 )
 
 const CSS_BUTTON_VARIANT_PRIMARY = cn(
-  'bg-primary text-primary-foreground hover:bg-primary/90',
+  'bg-primary text-gray-50 dark:text-gray-900 hover:bg-primary/90',
 )
 
 const CSS_BUTTON_VARIANT_SECONDARY = cn(
@@ -255,7 +255,7 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
 export const CSS_TOOLTIP_CONTENT = cn(
-  'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-xs',
+  'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
   CSS_POPOVER_ANIMATE,
 )
 

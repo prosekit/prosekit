@@ -45,7 +45,7 @@ const CSS_POPOVER_ANIMATE = cn(
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(
-  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-[focused]:bg-secondary',
+  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-[focused]:bg-gray-100 dark:data-[focused]:bg-gray-800',
 )
 
 const CSS_BUTTON_BASE = cn(
@@ -57,7 +57,7 @@ const CSS_BUTTON_VARIANT_PRIMARY = cn(
 )
 
 const CSS_BUTTON_VARIANT_SECONDARY = cn(
-  'bg-secondary text-gray-900 dark:text-gray-50 hover:bg-secondary/80',
+  'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 hover:bg-gray-100/80 dark:hover:bg-gray-800/80',
 )
 
 const CSS_BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
@@ -150,7 +150,7 @@ export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-cente
 export const CSS_TOGGLE_BUTTON = cn(
   'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9',
   'text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50',
-  'bg-transparent hover:bg-secondary data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700',
+  'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700',
 )
 
 export const CSS_IMAGE_UPLOAD_CARD = cn(
@@ -205,15 +205,15 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
 )
 
 export const CSS_BLOCK_HANDLE_DRAG = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
+  'flex items-center box-border justify-center bg-background hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
   'overflow-hidden',
   'duration-150 transition-discrete transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',

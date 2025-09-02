@@ -3,7 +3,6 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-
 function cn(...args: Array<string | undefined | null | false>): string {
   return twMerge(clsx(...args))
 }

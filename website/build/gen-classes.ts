@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { isDeepStrictEqual } from 'node:util'
 
 import * as Classes from './classes'
 
@@ -20,4 +21,17 @@ for (const [key, value] of Object.entries(Classes)) {
   }
 }
 
-fs.writeFileSync(path.join(import.meta.dirname, 'classes.gen.json'), code)
+const filePath = path.join(import.meta.dirname, 'classes.gen.json')
+let needWrite = true
+if (fs.existsSync(filePath)) {
+  try {
+    const existing = JSON.parse(fs.readFileSync(filePath, 'utf8')) as Record<string, string>
+    needWrite = !isDeepStrictEqual(existing, Classes)
+  } catch (err) {
+    console.warn(`Failed to read or parse existing ${filePath}:`, err)
+  }
+}
+
+if (needWrite) {
+  fs.writeFileSync(filePath, code)
+}

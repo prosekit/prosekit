@@ -6,6 +6,8 @@
     "./*.js",
     "./.astro/**/*",
     "./tests/**/*",
+    "build/**/*",
+    "build/**/*.json",
     "src/*.ts",
     "src/components/**/*",
     "src/pages/**/*",
@@ -20,9 +22,6 @@
     },
   },
   "references": [
-    {
-      "path": "../packages/config-unocss/tsconfig.json",
-    },
     {
       "path": "../packages/config-vitest/tsconfig.json",
     },

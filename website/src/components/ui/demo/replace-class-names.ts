@@ -1,10 +1,8 @@
-import { once } from '@ocavue/utils'
-import { loadClasses } from '@prosekit/config-unocss/files'
+import { getClasses } from '../../../../build/load-classes'
 
-const getClasses = once(loadClasses)
+const classes = getClasses()
 
 export function replaceClassNames(code: string): string {
-  const classes = getClasses()
   return code.replaceAll(
     /(CSS_[\dA-Z_]+)/g,
     (match) => {

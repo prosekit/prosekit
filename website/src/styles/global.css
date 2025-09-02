@@ -5,7 +5,7 @@
 @import "tw-animate-css";
 @import "./starlight.css";
 
-@source "../../../packages/config-unocss/lib/classes.gen.json";
+@source "../../build/classes.gen.json";
 @custom-variant dark (&:where(.dark, .dark *));
 @plugin "@egoist/tailwindcss-icons";
 

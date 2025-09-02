@@ -12,10 +12,9 @@ import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-lin
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import starlightThemeNova from 'starlight-theme-nova'
-// import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
-import { classReplace } from './vite-plugin-class-replace'
+import { classReplace } from './build/vite-plugin-class-replace'
 
 type Sidebar = StarlightUserConfig['sidebar']
 
@@ -133,9 +132,6 @@ const config: AstroUserConfig = {
         }),
       ].filter(x => !!x),
     }),
-    // UnoCSS({
-    //   inspector: false,
-    // }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
       include: ['src/*/react/**/*.tsx'],

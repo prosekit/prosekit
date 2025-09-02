@@ -3,7 +3,7 @@ import path from 'node:path'
 
 import memoize from 'just-memoize'
 
-import { exampleMeta } from '../../../../example.meta'
+import exampleMeta from '../../../../example.meta.json' with { type: 'json' }
 
 import { replaceClassNames } from './replace-class-names'
 

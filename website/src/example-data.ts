@@ -1,6 +1,6 @@
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 
-import { exampleMeta } from '../example.meta'
+import exampleMeta from '../example.meta.json' with { type: 'json' }
 
 export const stories = Array.from(new Set(exampleMeta.examples.map((example) => example.story)))
 

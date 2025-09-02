@@ -33,4 +33,5 @@
   "[css]": {
     "editor.defaultFormatter": "dprint.dprint",
   },
+  "tailwindCSS.experimental.configFile": "./website/src/styles/global.css",
 }

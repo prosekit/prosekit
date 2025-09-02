@@ -6,6 +6,7 @@
     "./*.js",
     "./.astro/**/*",
     "./tests/**/*",
+    "build/**/*",
     "src/*.ts",
     "src/components/**/*",
     "src/pages/**/*",

@@ -15,7 +15,7 @@ import starlightThemeNova from 'starlight-theme-nova'
 // import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
-import { classReplace } from './vite-plugin-class-replace'
+import { classReplace } from './build/vite-plugin-class-replace'
 
 type Sidebar = StarlightUserConfig['sidebar']
 

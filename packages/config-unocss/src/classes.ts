@@ -57,7 +57,7 @@ const CSS_BUTTON_VARIANT_PRIMARY = cn(
 )
 
 const CSS_BUTTON_VARIANT_SECONDARY = cn(
-  'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+  'bg-secondary text-gray-900 dark:text-gray-50 hover:bg-secondary/80',
 )
 
 const CSS_BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
@@ -149,7 +149,7 @@ export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-cente
 
 export const CSS_TOGGLE_BUTTON = cn(
   'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9',
-  'text-secondary-foreground disabled:text-secondary-foreground/50',
+  'text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50',
   'bg-transparent hover:bg-secondary data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700',
 )
 

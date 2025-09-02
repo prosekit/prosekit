@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.15.1",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -35,8 +35,8 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.6",
     "@changesets/types": "^6.1.0",
-    "@manypkg/cli": "^0.25.0",
-    "@ocavue/eslint-config": "^3.3.2",
+    "@manypkg/cli": "^0.25.1",
+    "@ocavue/eslint-config": "^3.3.3",
     "@ocavue/tsconfig": "^0.4.0",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",

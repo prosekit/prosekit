@@ -8,7 +8,6 @@ export default defineESLintConfig(
     },
     vue: true,
     markdown: true,
-    unocss: true,
     command: true,
   },
   {

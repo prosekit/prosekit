@@ -49,7 +49,7 @@ const CSS_FLOATING_MENU_ITEM = cn(
 )
 
 const CSS_BUTTON_BASE = cn(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
 
 const CSS_BUTTON_VARIANT_PRIMARY = cn(
@@ -70,7 +70,7 @@ const CSS_INPUT = cn(
   // border
   'border box-border border-border border-solid',
   // ring
-  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
+  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0',
   // outline
   'outline-hidden focus-visible:outline-hidden',
   // file
@@ -148,7 +148,7 @@ const CSS_TOP_BAR = cn(
 export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
 
 export const CSS_TOGGLE_BUTTON = cn(
-  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-ring disabled:pointer-events-none min-w-9 min-h-9',
+  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9',
   'text-secondary-foreground disabled:text-secondary-foreground/50',
   'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
 )

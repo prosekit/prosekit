@@ -3,10 +3,9 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-import { replaceColor } from './colors'
 
 function cn(...args: Array<string | undefined | null | false>): string {
-  return twMerge(replaceColor(clsx(...args)))
+  return twMerge(clsx(...args))
 }
 
 // For those elements that need to toggle visibility based on the `data-state`

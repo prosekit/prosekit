@@ -11,7 +11,6 @@ export function getWatchFilePaths({ includeClasses = true }: { includeClasses?: 
   const root = getRoot()
   return [
     'index.ts',
-    'colors.ts',
     ...(includeClasses ? ['classes.ts'] : []),
   ].map(
     file => path.join(root, 'packages/config-unocss/src', file),

@@ -929,6 +929,9 @@ importers:
       bits-ui:
         specifier: ^2.9.4
         version: 2.9.4(@internationalized/date@3.8.1)(svelte@5.38.6)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       colorjs.io:
         specifier: ^0.5.2
         version: 0.5.2
@@ -1010,6 +1013,9 @@ importers:
       svelte-check:
         specifier: ^4.3.1
         version: 4.3.1(picomatch@4.0.3)(svelte@5.38.6)(typescript@5.9.2)
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
       tailwindcss:
         specifier: ^4.1.12
         version: 4.1.12

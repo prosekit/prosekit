@@ -2,7 +2,6 @@ import path from 'node:path'
 
 import type { ViteUserConfig } from 'astro'
 import MagicString from 'magic-string'
-import { exec } from 'tinyexec'
 
 import {
   getClasses,
@@ -28,11 +27,6 @@ export function classReplace(): Plugin {
         if (!CLASS_TS_PATH.includes(file)) {
           return
         }
-
-        await exec('pnpm', ['run', '-w', 'build:css'], {
-          timeout: 10_000,
-          throwOnError: true,
-        })
 
         await refreshClasses()
 

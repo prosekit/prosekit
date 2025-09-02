@@ -15,7 +15,7 @@ function cn(...args: Array<string | undefined | null | false>): string {
 const CSS_DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
 
 const CSS_FLOATING_MENU = cn(
-  'z-10 box-border rounded-lg border border-border bg-background shadow-lg',
+  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-background shadow-lg',
   CSS_DEFAULT_HIDDEN,
 )
 
@@ -68,7 +68,7 @@ const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 const CSS_INPUT = cn(
   'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
   // border
-  'border box-border border-border border-solid',
+  'border box-border border-gray-200 dark:border-gray-800 border-solid',
   // ring
   'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0',
   // outline
@@ -142,7 +142,7 @@ export const CSS_LANGUAGE_SELECT = cn(
 
 const CSS_TOP_BAR = cn(
   'z-2 box-border',
-  'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
+  'border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b',
 )
 
 export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
@@ -213,7 +213,7 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-muted-foreground/50 border border-border border-solid p-0',
+  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-muted-foreground/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
   'overflow-hidden',
   'duration-150 transition-discrete transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',

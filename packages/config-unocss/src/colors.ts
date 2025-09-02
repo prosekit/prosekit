@@ -1,6 +1,12 @@
 // @unocss-include
 
 const COLORS: Array<[string, string, string]> = [
+  // Keep the following two colors so that COLOR_REGEX won't crash during
+  // the process of cleaning up COLORS array.
+  ['fakefakefake1', 'white', 'gray-950'],
+  ['fakefakefake2', 'white', 'gray-950'],
+
+  // Current task: remove the following colors one by one.
   ['background', 'white', 'gray-950'],
   ['foreground', 'gray-900', 'gray-50'],
   ['primary', 'gray-900', 'gray-50'],

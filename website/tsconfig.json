@@ -10,6 +10,7 @@
     "src/components/**/*",
     "src/pages/**/*",
     "src/content/**/*",
+    "*.json",
   ],
   "compilerOptions": {
     "jsx": "preserve",

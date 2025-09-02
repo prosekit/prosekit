@@ -1,38 +1,55 @@
-import {
-  getWatchFilePaths,
-  loadClasses,
-} from '@prosekit/config-unocss/files'
+import fs from 'node:fs'
+import path from 'node:path'
+
+import { loadClasses } from '@prosekit/config-unocss/files'
 import type { ViteUserConfig } from 'astro'
 import MagicString from 'magic-string'
 import { exec } from 'tinyexec'
 
 type Plugin = Required<ViteUserConfig>['plugins'][number]
 
-const pluginName = '@prosekit/vite-plugin-class-replace'
+const PLUGIN_NAME = '@prosekit/vite-plugin-class-replace'
+const CLASS_TS_PATH = path.join(import.meta.dirname, 'classes.ts')
+const CLASS_JSON_PATH = path.join(import.meta.dirname, 'classes.gen.json')
 
-export function classReplace(): Plugin {
-  const watchFilePaths = getWatchFilePaths()
+class ClassLoader {
+  private cachedClasses: Record<string, string> | undefined
 
-  let cachedClasses: Record<string, string> | undefined
-
-  const getClasses = (): Record<string, string> => {
-    if (!cachedClasses) {
-      cachedClasses = loadClasses()
+  get(): Record<string, string> {
+    if (!this.cachedClasses) {
+      this.cachedClasses = loadClasses()
     }
-    return cachedClasses
+    return this.cachedClasses
   }
 
+  private load() {
+    const json = fs.readFileSync(CLASS_JSON_PATH, 'utf-8')
+    return JSON.parse(json) as Record<string, string>
+  }
+
+  async refresh() {
+    this.cachedClasses = undefined
+    await exec('pnpm', ['run', '-w', 'build:css'], {
+      timeout: 10_000,
+      throwOnError: true,
+    })
+    this.cachedClasses = undefined
+  }
+}
+
+export function classReplace(): Plugin {
   const moduleIds = new Set<string>()
+  const classLoader = new ClassLoader()
 
   return {
-    name: pluginName,
+    name: PLUGIN_NAME,
 
     enforce: 'pre',
 
     configureServer(server) {
-      server.watcher.add(watchFilePaths)
+      server.watcher.add(CLASS_TS_PATH)
       server.watcher.on('all', async (event, file) => {
-        if (!watchFilePaths.includes(file)) {
+        if (!CLASS_TS_PATH.includes(file)) {
           return
         }
 
@@ -41,7 +58,7 @@ export function classReplace(): Plugin {
           throwOnError: true,
         })
 
-        cachedClasses = undefined
+        await classLoader.refresh()
 
         const modulesToInvalidate = Array.from(moduleIds)
           .map(moduleId => server.moduleGraph.getModuleById(moduleId))
@@ -73,7 +90,7 @@ export function classReplace(): Plugin {
       }
 
       moduleIds.add(id)
-      const classes = getClasses()
+      const classes = classLoader.get()
 
       const ms = new MagicString(code)
 
@@ -82,7 +99,7 @@ export function classReplace(): Plugin {
         (input) => {
           const output = classes[input]
           if (output == null) {
-            const message = `[${pluginName}] Unable to replace the class name "${input}" in ${id}`
+            const message = `[${PLUGIN_NAME}] Unable to replace the class name "${input}" in ${id}`
             if (process.env.NODE_ENV === 'development') {
               console.warn(message)
               return input

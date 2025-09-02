@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { loadClasses } from '@prosekit/config-unocss/files'
 import type { ViteUserConfig } from 'astro'
 import MagicString from 'magic-string'
 import { exec } from 'tinyexec'

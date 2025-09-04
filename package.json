@@ -12,8 +12,6 @@
     "build:website": "pnpm --filter='./website' run build",
     "build:typedoc": "pnpm --filter='./website' run build:typedoc",
     "build:css": "pnpm --filter='./website' run build:css",
-    "build:tsdown": "pnpm --filter='./packages/*' --sequential run build:tsdown",
-    "build:tsc": "pnpm --filter='./packages/*' --sequential run build:tsc",
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",

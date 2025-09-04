@@ -56,7 +56,7 @@
   },
   "pnpm": {
     "overrides": {
-      "rolldown-plugin-dts": "https://pkg.pr.new/rolldown-plugin-dts@e52ed01"
+      "rolldown-plugin-dts": "https://pkg.pr.new/rolldown-plugin-dts@98"
     },
     "patchedDependencies": {}
   }

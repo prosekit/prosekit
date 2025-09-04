@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  rolldown-plugin-dts: https://pkg.pr.new/rolldown-plugin-dts@e52ed01
+  rolldown-plugin-dts: https://pkg.pr.new/rolldown-plugin-dts@98
 
 importers:
 
@@ -6199,8 +6199,8 @@ packages:
   rfdc@1.4.1:
     resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
 
-  rolldown-plugin-dts@https://pkg.pr.new/rolldown-plugin-dts@e52ed01:
-    resolution: {tarball: https://pkg.pr.new/rolldown-plugin-dts@e52ed01}
+  rolldown-plugin-dts@https://pkg.pr.new/rolldown-plugin-dts@98:
+    resolution: {tarball: https://pkg.pr.new/rolldown-plugin-dts@98}
     version: 0.15.10
     engines: {node: '>=20.18.0'}
     peerDependencies:
@@ -13844,7 +13844,7 @@ snapshots:
 
   rfdc@1.4.1: {}
 
-  rolldown-plugin-dts@https://pkg.pr.new/rolldown-plugin-dts@e52ed01(rolldown@1.0.0-beta.34)(typescript@5.9.2)(vue-tsc@3.0.6(typescript@5.9.2)):
+  rolldown-plugin-dts@https://pkg.pr.new/rolldown-plugin-dts@98(rolldown@1.0.0-beta.34)(typescript@5.9.2)(vue-tsc@3.0.6(typescript@5.9.2)):
     dependencies:
       '@babel/generator': 7.28.3
       '@babel/parser': 7.28.3
@@ -14509,7 +14509,7 @@ snapshots:
       empathic: 2.0.0
       hookable: 5.5.3
       rolldown: 1.0.0-beta.34
-      rolldown-plugin-dts: https://pkg.pr.new/rolldown-plugin-dts@e52ed01(rolldown@1.0.0-beta.34)(typescript@5.9.2)(vue-tsc@3.0.6(typescript@5.9.2))
+      rolldown-plugin-dts: https://pkg.pr.new/rolldown-plugin-dts@98(rolldown@1.0.0-beta.34)(typescript@5.9.2)(vue-tsc@3.0.6(typescript@5.9.2))
       semver: 7.7.2
       tinyexec: 1.0.1
       tinyglobby: 0.2.14

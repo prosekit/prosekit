@@ -153,7 +153,8 @@
     "./web/tooltip": "./src/web/tooltip.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",

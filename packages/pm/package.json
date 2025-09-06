@@ -38,7 +38,8 @@
     "./view/style/prosemirror.css": "./src/view/style/prosemirror.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",

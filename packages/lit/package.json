@@ -37,7 +37,8 @@
     "./tooltip": "./src/components/tooltip/index.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",

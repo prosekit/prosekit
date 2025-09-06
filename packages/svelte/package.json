@@ -61,7 +61,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts"

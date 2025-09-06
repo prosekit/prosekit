@@ -31,7 +31,8 @@
     "./typography.css": "./src/typography.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",

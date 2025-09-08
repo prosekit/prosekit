@@ -30,7 +30,8 @@
     "./test": "./src/test/index.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",

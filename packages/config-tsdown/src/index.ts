@@ -22,9 +22,9 @@ export function config(input?: Options): Options {
 
   const output: Options = {
     entry,
-    sourcemap: false,
+    sourcemap: true,
     clean: false,
-    dts: true,
+    dts: { build: true, incremental: true, sourcemap: true },
     // Bundling CSS files to remove the `@import` statements. This increases the
     // compability of the output.
     noExternal: [/\.css$/i],

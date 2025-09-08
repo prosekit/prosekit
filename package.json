@@ -53,7 +53,9 @@
     "vitest": "^3.2.4"
   },
   "pnpm": {
-    "overrides": {},
+    "overrides": {
+      "rolldown-plugin-dts": "0.16.0"
+    },
     "patchedDependencies": {}
   }
 }

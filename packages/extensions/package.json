@@ -74,7 +74,8 @@
     "./yjs/style.css": "./src/yjs/style.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",

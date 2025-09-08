@@ -20,11 +20,10 @@ type PasteRulePayload = (options: { slice: Slice; view: EditorView; plain: boole
 const pasteRuleFacet = defineFacet<PasteRulePayload, PluginPayload>({
   reduce: () => {
     let handlers: PasteRulePayload[] = []
-    let isPlainText = false
 
-    const transformPasted = (slice: Slice, view: EditorView): Slice => {
+    const transformPasted = (slice: Slice, view: EditorView, plain: boolean): Slice => {
       for (const handler of handlers) {
-        slice = handler({ slice, view, plain: isPlainText })
+        slice = handler({ slice, view, plain })
       }
       return slice
     }
@@ -33,16 +32,6 @@ const pasteRuleFacet = defineFacet<PasteRulePayload, PluginPayload>({
       key: new PluginKey('prosekit-paste-rule'),
       props: {
         transformPasted,
-        // TODO: Remove the following two methods once
-        // https://github.com/ProseMirror/prosemirror-view/pull/183 is released
-        transformPastedText: (text, plain) => {
-          isPlainText = plain
-          return text
-        },
-        transformPastedHTML(html) {
-          isPlainText = false
-          return html
-        },
       },
     })
 

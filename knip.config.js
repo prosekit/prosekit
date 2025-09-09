@@ -1,4 +1,12 @@
 /**
+ * @param {string} text
+ * @returns {string}
+ */
+function css(text) {
+  return [...text.matchAll(/(?<=@)import[^;]+/g)].join('\n')
+}
+
+/**
  * @type {import('knip').KnipConfig}
  */
 const config = {
@@ -27,6 +35,9 @@ const config = {
         'tw-animate-css',
       ],
     },
+  },
+  compilers: {
+    css,
   },
 }
 

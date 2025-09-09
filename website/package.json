@@ -35,7 +35,6 @@
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^0.7.1",
     "@playwright/test": "^1.55.0",
-    "@prosekit/config-vitest": "workspace:*",
     "@tailwindcss/vite": "^4.1.13",
     "@types/diffable-html": "^5.0.2",
     "@types/react": "^19.1.12",

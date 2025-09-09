@@ -3,7 +3,10 @@
  * @returns {string}
  */
 function css(text) {
-  return [...text.matchAll(/(?<=@)import[^;]+/g)].join('\n')
+  const output = [...text.matchAll(/(?<=@(?:import|plugin)\s+)[^;]+/g)]
+    .map(match => `import ${match[0]}`)
+    .join('\n')
+  return output
 }
 
 /**
@@ -18,21 +21,15 @@ const config = {
         'src/examples/**/*',
         'src/shared/**/*',
         'tests/helper.ts',
+        'src/styles/global.css',
       ],
       ignoreUnresolved: [
         './my-prosemirror-highlight-parser',
       ],
       ignoreDependencies: [
-        '@egoist/tailwindcss-icons',
-        '@iconify-json/bxl',
-        '@iconify-json/logos',
-        '@iconify-json/lucide',
-        '@iconify-json/tabler',
-        '@prosekit/config-vitest',
+        /@iconify-json\/.*/,
         'babel-plugin-react-compiler',
         'sharp',
-        'tailwindcss',
-        'tw-animate-css',
       ],
     },
   },

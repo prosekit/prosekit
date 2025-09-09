@@ -2,19 +2,22 @@
   "extends": "@ocavue/tsconfig/dom/root.json",
   "references": [
     {
-      "path": "../config-tsdown/tsconfig.json",
+        "path": "../config-tsdown/tsconfig.json"
     },
     {
-      "path": "../config-vitest/tsconfig.json",
+        "path": "../config-vitest/tsconfig.json"
     },
     {
-      "path": "../core/tsconfig.json",
+        "path": "../core/tsconfig.json"
     },
     {
-      "path": "../extensions/tsconfig.json",
+        "path": "../extensions/tsconfig.json"
     },
     {
-      "path": "./tsconfig.build.json",
+        "path": "../pm/tsconfig.json"
     },
-  ],
+    {
+        "path": "./tsconfig.build.json"
+    }
+],
 }

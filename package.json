@@ -22,7 +22,7 @@
     "fix:tsconfig": "monorepo-typescript-references fix",
     "dev": "pnpm --filter='./website' run dev",
     "gen": "turbo run gen --force",
-    "lint": "eslint . && pnpm -r --sequential run lint",
+    "lint": "eslint . && pnpm -r --sequential run lint && knip",
     "preview": "pnpm --filter='./website' run preview",
     "pretest": "pnpm run test:install",
     "pretest:e2e": "pnpm run test:install",

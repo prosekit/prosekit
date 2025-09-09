@@ -5,8 +5,8 @@
  * @returns {string}
  */
 function css(text) {
-  const output = [...text.matchAll(/(?<=@(?:import|plugin)\s+)[^;]+/g)]
-    .map(match => `import ${match[0]}`)
+  const output = [...text.matchAll(/@(?:import|plugin)\s+([^;]+)/g)]
+    .map(match => `import ${match[1]}`)
     .join('\n')
   return output
 }

@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/prosekit/prosekit/issues"
   },
-  "keywords": [
+  "keywords": [ 
     "ProseMirror"
   ],
   "sideEffects": false,

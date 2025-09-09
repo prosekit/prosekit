@@ -22,7 +22,6 @@
         "sharp",
         "tailwindcss",
         "tw-animate-css",
-        "tsx",
       ],
     },
   },

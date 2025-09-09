@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
+  "workspaces": {
+    "website": {
+      "entry": [
+        "**/*.stories.ts",
+      ],
+    },
+  },
+}

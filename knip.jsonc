@@ -6,6 +6,10 @@
         "src/stories/*.stories.ts",
         "src/examples/**/*",
         "src/shared/**/*",
+        "tests/helper.ts",
+      ],
+      "ignoreUnresolved": [
+        "./my-prosemirror-highlight-parser",
       ],
       "ignoreDependencies": [
         "@egoist/tailwindcss-icons",

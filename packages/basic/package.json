@@ -40,7 +40,8 @@
   },
   "dependencies": {
     "@prosekit/core": "workspace:^",
-    "@prosekit/extensions": "workspace:^"
+    "@prosekit/extensions": "workspace:^",
+    "@prosekit/pm": "workspace:^"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",

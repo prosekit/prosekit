@@ -80,6 +80,9 @@ importers:
       '@prosekit/extensions':
         specifier: workspace:^
         version: link:../extensions
+      '@prosekit/pm':
+        specifier: workspace:^
+        version: link:../pm
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*

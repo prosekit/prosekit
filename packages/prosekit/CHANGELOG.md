@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.15.5
+
+### Patch Changes
+
+- [`0e18cce`](https://github.com/ocavue/prosekit/commit/0e18cceae67ed5ad5c1c18e2f4d469cdfa596fff) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/pm)
+
+  Include source code and source map files in published packages. This makes it easier to use IDEs' "Go to Definition" feature and inspect the source code.
+
 ## 0.15.4
 
 ### Patch Changes

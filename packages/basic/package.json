@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/basic",
   "type": "module",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": false,
   "description": "A quick starter for ProseKit",
   "author": {

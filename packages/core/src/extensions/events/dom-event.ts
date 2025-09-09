@@ -64,12 +64,12 @@ export function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(
 /**
  * @internal
  */
-export type DOMEventPayload = [event: string, handler: DOMEventHandler]
+type DOMEventPayload = [event: string, handler: DOMEventHandler]
 
 /**
  * @internal
  */
-export const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
+const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
   {
     reduce: () => {
       const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}

@@ -76,7 +76,7 @@ export function sortFiles<T extends { path: string }>(files: T[]): T[] {
   })
 }
 
-export function findExample(meta: ExampleMeta, name: string) {
+function findExample(meta: ExampleMeta, name: string) {
   return meta.examples.find((c) => c.name === name)
 }
 

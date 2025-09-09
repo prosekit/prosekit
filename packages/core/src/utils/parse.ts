@@ -196,7 +196,7 @@ export function elementFromHTML(
 /**
  * @internal
  */
-export function htmlFromElement(element: HTMLElement): string {
+function htmlFromElement(element: HTMLElement): string {
   return element.outerHTML
 }
 

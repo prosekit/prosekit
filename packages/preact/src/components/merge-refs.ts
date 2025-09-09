@@ -4,7 +4,7 @@ import type { Ref } from 'preact'
  * Assigns a value to a ref.
  * @returns The ref cleanup callback, if any.
  */
-export function assignRef<T>(
+function assignRef<T>(
   ref: Ref<T> | undefined,
   value: T | null,
 ): VoidFunction | undefined | void {

@@ -3,7 +3,7 @@ import { readPackageUpSync } from 'read-package-up'
 import type { Options } from 'tsdown'
 
 export function config(input?: Options): Options {
-  const pkg = readPackageUpSync()
+  const pkg = readPackageUpSync({ cwd: input?.cwd })
   if (!pkg) {
     throw new Error('No package.json found')
   }

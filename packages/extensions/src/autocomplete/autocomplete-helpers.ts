@@ -49,7 +49,7 @@ export interface PredictionPluginState {
 /**
  * @internal
  */
-export interface PredictionTransactionMeta {
+interface PredictionTransactionMeta {
   /**
    * The from position that should be ignored.
    */

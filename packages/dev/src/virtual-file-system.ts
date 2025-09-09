@@ -301,4 +301,3 @@ class VirtualFileSystem {
 }
 
 export const vfs = new VirtualFileSystem()
-export { type VirtualFile }

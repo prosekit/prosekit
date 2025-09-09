@@ -73,14 +73,3 @@ export function defineLoro(options: LoroOptions): LoroExtension {
     Priority.high,
   )
 }
-
-export {
-  defineLoroCommands,
-  defineLoroCursorPlugin,
-  defineLoroKeymap,
-  defineLoroSyncPlugin,
-  defineLoroUndoPlugin,
-  type LoroCursorOptions,
-  type LoroSyncPluginProps,
-  type LoroUndoPluginProps,
-}

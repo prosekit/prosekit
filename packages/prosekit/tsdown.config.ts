@@ -4,7 +4,7 @@ import {
   type UserConfig,
 } from 'tsdown'
 
-const configObject = config()
+const configObject = config({ cwd: import.meta.dirname })
 
 const entries = configObject.entry
 

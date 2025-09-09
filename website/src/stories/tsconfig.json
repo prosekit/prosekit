@@ -2,6 +2,32 @@
   "extends": "@ocavue/tsconfig/dom/app.json",
   "include": ["./*"],
   "references": [
-    { "path": "../../../packages/prosekit" },
+    {
+      "path": "../../../packages/prosekit",
+    },
+    {
+      "path": "../examples/vue/tsconfig.json",
+    },
+    {
+      "path": "../examples/react/tsconfig.json",
+    },
+    {
+      "path": "../examples/svelte/tsconfig.json",
+    },
+    {
+      "path": "../examples/vanilla/tsconfig.json",
+    },
+    {
+      "path": "../examples/preact/tsconfig.json",
+    },
+    {
+      "path": "../examples/solid/tsconfig.json",
+    },
+    {
+      "path": "../examples/lit/tsconfig.json",
+    },
   ],
+  "compilerOptions": {
+    "jsx": "preserve",
+  },
 }

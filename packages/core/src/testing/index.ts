@@ -204,7 +204,7 @@ function defineCodeBlock(): CodeBlockExtension {
   })
 }
 
-export type BlockquoteExtension = Extension<{
+type BlockquoteExtension = Extension<{
   Nodes: {
     blockquote: Attrs
   }

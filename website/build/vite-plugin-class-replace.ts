@@ -23,7 +23,7 @@ export function classReplace(): Plugin {
 
     configureServer(server) {
       server.watcher.add(CLASS_TS_PATH)
-      server.watcher.on('all', async (event, file) => {
+      server.watcher.on('all', async (_event, file) => {
         if (!CLASS_TS_PATH.includes(file)) {
           return
         }

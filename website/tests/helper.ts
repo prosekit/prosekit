@@ -9,7 +9,7 @@ import diffableHtml from 'diffable-html'
 
 import exampleMeta from '../example.meta.json' with { type: 'json' }
 
-export const IS_APPLE = process.platform === 'darwin'
+const IS_APPLE = process.platform === 'darwin'
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
 
 function getExamples(story: string) {

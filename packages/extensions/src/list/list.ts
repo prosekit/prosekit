@@ -16,16 +16,6 @@ import {
   defineListSpec,
   type ListSpecExtension,
 } from './list-spec'
-import type { ListAttrs } from './list-types'
-
-export { ListDOMSerializer } from 'prosemirror-flat-list'
-export type {
-  DedentListOptions,
-  IndentListOptions,
-  ToggleCollapsedOptions,
-  UnwrapListOptions,
-  WrapInListGetAttrs,
-} from 'prosemirror-flat-list'
 
 /**
  * @internal
@@ -45,15 +35,4 @@ export function defineList(): ListExtension {
     defineListSerializer(),
     defineListDropIndicator(),
   )
-}
-
-export {
-  defineListCommands,
-  defineListInputRules,
-  defineListKeymap,
-  defineListPlugins,
-  defineListSpec,
-  type ListAttrs,
-  type ListCommandsExtension,
-  type ListSpecExtension,
 }

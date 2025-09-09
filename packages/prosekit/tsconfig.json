@@ -12,9 +12,6 @@
       "path": "../config-tsdown/tsconfig.json",
     },
     {
-      "path": "../config-vitest/tsconfig.json",
-    },
-    {
       "path": "../core/tsconfig.json",
     },
     {

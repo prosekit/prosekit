@@ -78,7 +78,7 @@ interface MarkPasteRuleHandlerOptions {
   shouldSkip?: (node: ProseMirrorNode) => boolean
 }
 
-export function replaceMarkInSlice(options: MarkPasteRuleHandlerOptions, slice: Slice): Slice {
+function replaceMarkInSlice(options: MarkPasteRuleHandlerOptions, slice: Slice): Slice {
   const newFragment = replaceMarkInFragment(options, slice.content)
   if (!newFragment) {
     return slice

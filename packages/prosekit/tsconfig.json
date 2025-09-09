@@ -6,46 +6,46 @@
   ],
   "references": [
     {
-        "path": "../basic/tsconfig.json"
+      "path": "../basic/tsconfig.json",
     },
     {
-        "path": "../config-tsdown/tsconfig.json"
+      "path": "../config-tsdown/tsconfig.json",
     },
     {
-        "path": "../core/tsconfig.json"
+      "path": "../core/tsconfig.json",
     },
     {
-        "path": "../extensions/tsconfig.json"
+      "path": "../extensions/tsconfig.json",
     },
     {
-        "path": "../lit/tsconfig.json"
+      "path": "../lit/tsconfig.json",
     },
     {
-        "path": "../pm/tsconfig.json"
+      "path": "../pm/tsconfig.json",
     },
     {
-        "path": "../preact/tsconfig.json"
+      "path": "../preact/tsconfig.json",
     },
     {
-        "path": "../react/tsconfig.json"
+      "path": "../react/tsconfig.json",
     },
     {
-        "path": "../solid/tsconfig.json"
+      "path": "../solid/tsconfig.json",
     },
     {
-        "path": "../svelte/tsconfig.json"
+      "path": "../svelte/tsconfig.json",
     },
     {
-        "path": "../typedoc-plugin/tsconfig.json"
+      "path": "../typedoc-plugin/tsconfig.json",
     },
     {
-        "path": "../vue/tsconfig.json"
+      "path": "../vue/tsconfig.json",
     },
     {
-        "path": "../web/tsconfig.json"
+      "path": "../web/tsconfig.json",
     },
     {
-        "path": "./tsconfig.build.json"
-    }
-],
+      "path": "./tsconfig.build.json",
+    },
+  ],
 }

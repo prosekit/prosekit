@@ -4,7 +4,7 @@
     "./*.ts",
     "./*.mjs",
     "./*.js",
-    "./.astro/**/*",
+    "./.astro/*",
     "./tests/**/*",
     "build/**/*",
     "build/**/*.json",

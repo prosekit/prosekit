@@ -13,12 +13,14 @@
     "build:if-not-exists": "if [ ! -d dist ]; then pnpm run build; fi",
     "preview": "pnpm run build:if-not-exists && astro preview",
     "dev": "astro dev",
-    "lint": "pnpm run lint:svelte && pnpm run lint:vue",
+    "lint": "pnpm run lint:svelte && pnpm run lint:vue && pnpm run lint:astro",
     "lint:svelte": "svelte-check --no-tsconfig",
     "lint:vue": "vue-tsc --build src/examples/vue/tsconfig.json",
+    "lint:astro": "astro check",
     "test": "playwright test"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/preact": "^4.1.0",
     "@astrojs/react": "^4.3.0",
     "@astrojs/solid-js": "^5.1.0",

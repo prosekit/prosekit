@@ -45,14 +45,3 @@ export function defineList(): ListExtension {
     defineListDropIndicator(),
   )
 }
-
-export {
-  defineListCommands,
-  defineListInputRules,
-  defineListKeymap,
-  defineListPlugins,
-  defineListSpec,
-  type ListAttrs,
-  type ListCommandsExtension,
-  type ListSpecExtension,
-}

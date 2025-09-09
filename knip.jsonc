@@ -5,7 +5,7 @@
       "entry": [
         "src/stories/*.stories.ts",
         "src/examples/**/*",
-        "src/styles/global.css",
+        "src/shared/**/*",
       ],
       "ignoreDependencies": [
         "@egoist/tailwindcss-icons",

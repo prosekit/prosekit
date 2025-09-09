@@ -71,8 +71,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tsdown": "^0.14.2",
-    "typescript": "~5.9.2",
-    "vitest": "^3.2.4"
+    "typescript": "~5.9.2"
   },
   "publishConfig": {
     "exports": {

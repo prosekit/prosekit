@@ -9,7 +9,7 @@ import {
   type RootPayload,
 } from './root'
 
-export type CommandPayload = CommandCreators
+type CommandPayload = CommandCreators
 
 export const commandFacet: Facet<CommandPayload, RootPayload> = defineFacet({
   reducer: (inputs) => {

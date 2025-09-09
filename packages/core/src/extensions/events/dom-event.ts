@@ -64,7 +64,7 @@ export function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(
 /**
  * @internal
  */
-export type DOMEventPayload = [event: string, handler: DOMEventHandler]
+type DOMEventPayload = [event: string, handler: DOMEventHandler]
 
 /**
  * @internal

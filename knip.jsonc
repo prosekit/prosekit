@@ -3,7 +3,8 @@
   "workspaces": {
     "website": {
       "entry": [
-        "**/*.stories.ts",
+        "src/stories/*.stories.ts",
+        "src/examples/**/*.{ts,tsx,vue,svelte}",
       ],
     },
   },

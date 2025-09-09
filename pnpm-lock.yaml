@@ -80,9 +80,6 @@ importers:
       '@prosekit/extensions':
         specifier: workspace:^
         version: link:../extensions
-      '@prosekit/pm':
-        specifier: workspace:^
-        version: link:../pm
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -753,9 +750,6 @@ importers:
 
   packages/web:
     dependencies:
-      '@aria-ui/collection':
-        specifier: ^0.0.6
-        version: 0.0.6
       '@aria-ui/core':
         specifier: ^0.0.22
         version: 0.0.22

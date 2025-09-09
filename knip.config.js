@@ -19,7 +19,7 @@ const config = {
   workspaces: {
     './packages/prosekit': {
       entry: [
-        'src/**/style-css.ts',
+        'src/**/*-css.ts',
       ],
     },
     './website': {

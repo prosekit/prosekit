@@ -17,14 +17,6 @@ import {
   type ListSpecExtension,
 } from './list-spec'
 
-export type {
-  DedentListOptions,
-  IndentListOptions,
-  ToggleCollapsedOptions,
-  UnwrapListOptions,
-  WrapInListGetAttrs,
-} from 'prosemirror-flat-list'
-
 /**
  * @internal
  */

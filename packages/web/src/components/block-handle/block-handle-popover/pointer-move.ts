@@ -138,7 +138,7 @@ function isWithinRect(rect: Rect, x: number, y: number) {
   return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom
 }
 
-export interface Rect {
+interface Rect {
   top: number
   right: number
   bottom: number

@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
+  "exclude": ["optionalPeerDependencies"],
   "workspaces": {
     "website": {
       "entry": [

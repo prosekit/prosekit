@@ -16,7 +16,6 @@ import {
   defineListSpec,
   type ListSpecExtension,
 } from './list-spec'
-import type { ListAttrs } from './list-types'
 
 export type {
   DedentListOptions,

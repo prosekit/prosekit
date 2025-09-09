@@ -33,7 +33,7 @@ export function getEditorContentJSON(
   }
 }
 
-export function getEditorContentNode(
+function getEditorContentNode(
   schema: Schema,
   content: NodeJSON | string | HTMLElement | ProseMirrorNode,
 ): ProseMirrorNode {

@@ -23,7 +23,7 @@ const config = {
         'src/examples/**/*',
         'src/shared/**/*',
         'tests/helper.ts',
-        'src/styles/global.css',
+        'src/styles/*.css',
       ],
       ignoreUnresolved: [
         './my-prosemirror-highlight-parser',

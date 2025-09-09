@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * @param {string} text
  * @returns {string}
@@ -13,7 +15,7 @@ function css(text) {
  * @type {import('knip').KnipConfig}
  */
 const config = {
-  exclude: ['optionalPeerDependencies'],
+  exclude: ['optionalPeerDependencies', 'binaries'],
   workspaces: {
     website: {
       entry: [

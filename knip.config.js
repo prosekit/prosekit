@@ -17,7 +17,12 @@ function css(text) {
 const config = {
   exclude: ['optionalPeerDependencies', 'binaries'],
   workspaces: {
-    website: {
+    './packages/prosekit': {
+      entry: [
+        'src/**/style-css.ts',
+      ],
+    },
+    './website': {
       entry: [
         'src/stories/*.stories.ts',
         'src/examples/**/*',

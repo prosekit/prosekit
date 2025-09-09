@@ -166,7 +166,7 @@ const defaultApplyMark: ApplyMarkFunction = (
   return children.map((node) => node.mark(mark.addToSet(node.marks)))
 }
 
-export function buildNode(
+function buildNode(
   type: NodeType,
   args: [Attrs | NodeChild | null | undefined, ...NodeChild[]],
   createNode: CreateNodeFunction,

@@ -18,7 +18,6 @@ import {
 } from './list-spec'
 import type { ListAttrs } from './list-types'
 
-export { ListDOMSerializer } from 'prosemirror-flat-list'
 export type {
   DedentListOptions,
   IndentListOptions,

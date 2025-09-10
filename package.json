@@ -33,7 +33,7 @@
     "typecheck": "tsc --build tsconfig.json"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.6",
+    "@changesets/cli": "^2.29.7",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.25.1",
     "@ocavue/eslint-config": "^3.3.3",
@@ -55,9 +55,7 @@
     "vitest": "^3.2.4"
   },
   "pnpm": {
-    "overrides": {
-      "rolldown-plugin-dts": "0.16.1"
-    },
+    "overrides": {},
     "patchedDependencies": {}
   }
 }

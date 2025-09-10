@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  rolldown-plugin-dts: 0.16.2
-
 importers:
 
   .:

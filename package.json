@@ -56,7 +56,6 @@
   },
   "pnpm": {
     "overrides": {
-      "rolldown-plugin-dts": "0.16.2"
     },
     "patchedDependencies": {}
   }

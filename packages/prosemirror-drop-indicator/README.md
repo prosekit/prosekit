@@ -4,17 +4,16 @@
 
 A module for [ProseMirror](https://prosemirror.net/) that provides a drop indicator plugin.
 
-This module implements a plugin that controls the behavior of the drop indicator.
+This package serves a similar purpose to the [`prosemirror-dropcursor`](https://github.com/ProseMirror/prosemirror-dropcursor) package, but with the following differences:
 
-This package provides the similar goal as the [`prosemirror-dropcursor`](https://github.com/ProseMirror/prosemirror-dropcursor) package, but with the following differences:
-
-- Unlike the `prosemirror-dropcursor`, `prosemirror-drop-indicator` doesn't drop the indicator directly. Instead, you need to provide some callbacks to control the behavior of the drop indicator.
-- It provides better drop position prediction then `prosemirror-dropcursor`.
+- It doesn't render the indicator directly. Instead, you provide callbacks to control the drop indicator's behavior.
+- It provides better drop-position prediction, especially for nested nodes.
+- It has not yet implemented the vertical drop indicator.
 
 ## API documentation
 
 - [prosemirror-drop-indicator](https://doc.deno.land/https://esm.sh/prosemirror-drop-indicator)
 
-## License 
+## License
 
 MIT

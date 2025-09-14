@@ -1,6 +1,6 @@
-import type { Slice } from '@prosekit/pm/model'
-import type { NodeSelection } from '@prosekit/pm/state'
-import type { EditorView } from '@prosekit/pm/view'
+import type { Slice } from 'prosemirror-model'
+import type { NodeSelection } from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 
 /**
  * A function that will be called when the `dragover` event is fired. You can

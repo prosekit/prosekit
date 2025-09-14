@@ -5,48 +5,26 @@ import {
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
-
-import { createDropIndicatorPlugin } from './drop-indicator-plugin'
 import type {
   DragEventHandler,
+  DropIndicatorPluginOptions,
   ShowHandler,
-} from './types'
+} from 'prosemirror-drop-indicator'
+import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
 
 /**
  * @internal
  */
 export function defineDropIndicatorPayload(
-  payload: DropIndicatorPayload,
+  payload: DropIndicatorPluginOptions,
 ): PlainExtension {
   return defineFacetPayload(dropIndicatorFacet, [payload]) as PlainExtension
 }
 
-/**
- * @internal
- */
-export interface DropIndicatorPayload {
-  /**
-   * A callback that is called when the drop indicator should be shown.
-   */
-  onShow?: ShowHandler
-
-  /**
-   * A callback that is called when the drop indicator should be hidden.
-   */
-  onHide?: VoidFunction
-
-  /**
-   * A callback that is called when the `dragover` event is fired. You can
-   * return `false` to disable the current drop point and thus hide the drop
-   * indicator.
-   */
-  onDrag?: DragEventHandler
-}
-
-const dropIndicatorFacet = defineFacet<DropIndicatorPayload, PluginPayload>({
+const dropIndicatorFacet = defineFacet<DropIndicatorPluginOptions, PluginPayload>({
   parent: pluginFacet,
   singleton: true,
-  reducer: (payloads: DropIndicatorPayload[]): PluginPayload => {
+  reducer: (payloads: DropIndicatorPluginOptions[]): PluginPayload => {
     let showHandlers = payloads.map(p => p.onShow).filter(x => !!x)
     let hideHandlers = payloads.map(p => p.onHide).filter(x => !!x)
     let dragHandlers = payloads.map(p => p.onDrag).filter(x => !!x)

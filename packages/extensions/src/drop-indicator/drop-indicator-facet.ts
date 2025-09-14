@@ -5,12 +5,11 @@ import {
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
-
-import { createDropIndicatorPlugin } from './drop-indicator-plugin'
+import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
 import type {
   DragEventHandler,
   ShowHandler,
-} from './types'
+} from 'prosemirror-drop-indicator'
 
 /**
  * @internal

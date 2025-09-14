@@ -1,0 +1,74 @@
+{
+  "name": "prosemirror-drop-indicator",
+  "type": "module",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A ProseMirror plugin for drop indicator",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
+    "directory": "packages/prosemirror-drop-indicator"
+  },
+  "bugs": {
+    "url": "https://github.com/prosekit/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@ocavue/utils": "^0.7.1",
+    "prosemirror-model": "^1.25.3",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.41.0"
+  },
+  "devDependencies": {
+    "@prosekit/config-tsdown": "workspace:*",
+    "tsdown": "^0.15.0",
+    "typescript": "~5.9.2"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosemirror-drop-indicator.d.ts",
+        "default": "./dist/prosemirror-drop-indicator.js"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosemirror-drop-indicator.js",
+    "module": "./dist/prosemirror-drop-indicator.js",
+    "types": "./dist/prosemirror-drop-indicator.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosemirror-drop-indicator.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosemirror-drop-indicator": "./src/index.ts"
+    }
+  }
+}

@@ -1,8 +1,3 @@
-export {
-  defineDropIndicator,
-  type DropIndicatorExtension,
-  type DropIndicatorOptions,
-} from './drop-indicator'
 export type {
   DragEventHandler,
   DragEventHandlerOptions,
@@ -11,4 +6,9 @@ export type {
   ShowHandler,
   ShowHandlerOptions,
   ViewDragging,
-} from './types'
+} from 'prosemirror-drop-indicator'
+export {
+  defineDropIndicator,
+  type DropIndicatorExtension,
+  type DropIndicatorOptions,
+} from './drop-indicator'

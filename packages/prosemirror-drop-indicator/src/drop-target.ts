@@ -1,7 +1,7 @@
 import { isHTMLElement } from '@ocavue/utils'
-import { isNodeSelection } from '@prosekit/core'
-import type { ProseMirrorNode } from '@prosekit/pm/model'
-import type { EditorView } from '@prosekit/pm/view'
+import type { Node as ProseMirrorNode } from 'prosemirror-model'
+import { NodeSelection } from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 
 import type { DragEventHandler } from './types'
 
@@ -161,7 +161,7 @@ function isDraggingToItself(view: EditorView, pos: number) {
   if (!move) return
 
   const selection = view.state.selection
-  if (!isNodeSelection(selection)) return
+  if (!(selection instanceof NodeSelection)) return
 
   const { from, to } = selection
   return from <= pos && pos <= to

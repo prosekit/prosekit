@@ -1,12 +1,12 @@
-import type { ResolvedPos } from '@prosekit/pm/model'
+import type { ResolvedPos } from 'prosemirror-model'
 import {
   NodeSelection,
   Plugin,
   PluginKey,
   TextSelection,
   type PluginView,
-} from '@prosekit/pm/state'
-import type { EditorView } from '@prosekit/pm/view'
+} from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 
 import {
   buildGetTarget,
@@ -19,16 +19,31 @@ import type {
 } from './types'
 
 /**
- * @internal
+ * @public
  */
-interface DropIndicatorPluginOptions {
-  onDrag: DragEventHandler
+export interface DropIndicatorPluginOptions {
+  /**
+   * A callback that is called when the drop indicator should be shown.
+   */
   onShow: ShowHandler
+
+  /**
+   * A callback that is called when the drop indicator should be hidden.
+   */
   onHide: VoidFunction
+
+  /**
+   * A callback that is called when the `dragover` event is fired. You can
+   * return `false` to disable the current drop point and thus hide the drop
+   * indicator.
+   */
+  onDrag: DragEventHandler
 }
 
 /**
- * @internal
+ * @public
+ *
+ * @param options - The options for the drop indicator plugin.
  */
 export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): Plugin {
   let getTarget: GetTarget | undefined

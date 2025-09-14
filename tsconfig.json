@@ -38,6 +38,9 @@
       "path": "./packages/prosekit/tsconfig.json",
     },
     {
+      "path": "./packages/prosemirror-drop-indicator/tsconfig.json",
+    },
+    {
       "path": "./packages/react/tsconfig.json",
     },
     {

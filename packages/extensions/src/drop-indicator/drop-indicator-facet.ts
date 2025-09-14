@@ -8,6 +8,7 @@ import {
 import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
 import type {
   DragEventHandler,
+  DropIndicatorPluginOptions,
   ShowHandler,
 } from 'prosemirror-drop-indicator'
 
@@ -23,24 +24,7 @@ export function defineDropIndicatorPayload(
 /**
  * @internal
  */
-export interface DropIndicatorPayload {
-  /**
-   * A callback that is called when the drop indicator should be shown.
-   */
-  onShow?: ShowHandler
-
-  /**
-   * A callback that is called when the drop indicator should be hidden.
-   */
-  onHide?: VoidFunction
-
-  /**
-   * A callback that is called when the `dragover` event is fired. You can
-   * return `false` to disable the current drop point and thus hide the drop
-   * indicator.
-   */
-  onDrag?: DragEventHandler
-}
+export type DropIndicatorPayload = Partial<DropIndicatorPluginOptions>
 
 const dropIndicatorFacet = defineFacet<DropIndicatorPayload, PluginPayload>({
   parent: pluginFacet,

@@ -1,7 +1,7 @@
 {
   "name": "prosemirror-drop-indicator",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "description": "A ProseMirror plugin for drop indicator",
   "author": {

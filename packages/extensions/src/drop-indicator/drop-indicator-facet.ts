@@ -5,31 +5,26 @@ import {
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
-import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
 import type {
   DragEventHandler,
   DropIndicatorPluginOptions,
   ShowHandler,
 } from 'prosemirror-drop-indicator'
+import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
 
 /**
  * @internal
  */
 export function defineDropIndicatorPayload(
-  payload: DropIndicatorPayload,
+  payload: DropIndicatorPluginOptions,
 ): PlainExtension {
   return defineFacetPayload(dropIndicatorFacet, [payload]) as PlainExtension
 }
 
-/**
- * @internal
- */
-export type DropIndicatorPayload = Partial<DropIndicatorPluginOptions>
-
-const dropIndicatorFacet = defineFacet<DropIndicatorPayload, PluginPayload>({
+const dropIndicatorFacet = defineFacet<DropIndicatorPluginOptions, PluginPayload>({
   parent: pluginFacet,
   singleton: true,
-  reducer: (payloads: DropIndicatorPayload[]): PluginPayload => {
+  reducer: (payloads: DropIndicatorPluginOptions[]): PluginPayload => {
     let showHandlers = payloads.map(p => p.onShow).filter(x => !!x)
     let hideHandlers = payloads.map(p => p.onHide).filter(x => !!x)
     let dragHandlers = payloads.map(p => p.onDrag).filter(x => !!x)

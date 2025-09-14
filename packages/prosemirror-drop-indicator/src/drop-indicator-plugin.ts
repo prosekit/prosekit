@@ -25,19 +25,19 @@ export interface DropIndicatorPluginOptions {
   /**
    * A callback that is called when the drop indicator should be shown.
    */
-  onShow: ShowHandler
+  onShow?: ShowHandler
 
   /**
    * A callback that is called when the drop indicator should be hidden.
    */
-  onHide: VoidFunction
+  onHide?: VoidFunction
 
   /**
    * A callback that is called when the `dragover` event is fired. You can
    * return `false` to disable the current drop point and thus hide the drop
    * indicator.
    */
-  onDrag: DragEventHandler
+  onDrag?: DragEventHandler
 }
 
 /**
@@ -120,7 +120,7 @@ function createDropIndicatorView(view: EditorView, getTarget: GetTarget, options
     hasDragOverEvent = false
     hideId = setTimeout(() => {
       if (hasDragOverEvent) return
-      options.onHide()
+      options.onHide?.()
     }, 30)
   }
 
@@ -142,7 +142,7 @@ function createDropIndicatorView(view: EditorView, getTarget: GetTarget, options
     } else {
       const [pos, [x1, y1, x2, y2]] = target
       const line = { p1: { x: x1, y: y1 }, p2: { x: x2, y: y2 } }
-      options.onShow({ view, pos, line })
+      options.onShow?.({ view, pos, line })
     }
   }
 

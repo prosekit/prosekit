@@ -14,6 +14,30 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "slash-menu",
+      "type": "registry:component",
+      "title": "Slash Menu",
+      "description": "A slash menu component",
+      "files": [
+        {
+          "path": "registry/slash-menu/slash-menu-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/slash-menu/slash-menu-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/slash-menu/slash-menu-empty.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/slash-menu/index.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }

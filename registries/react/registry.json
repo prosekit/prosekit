@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "prosekit-react",
+  "homepage": "https://prosekit.dev",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "A simple hello world component",
+      "files": [
+        {
+          "path": "registry/button/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

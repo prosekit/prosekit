@@ -812,6 +812,21 @@ importers:
 
   registries/react:
     devDependencies:
+      '@types/react':
+        specifier: ^19.1.12
+        version: 19.1.12
+      '@types/react-dom':
+        specifier: ^19.1.9
+        version: 19.1.9(@types/react@19.1.12)
+      prosekit:
+        specifier: workspace:^
+        version: link:../../packages/prosekit
+      react:
+        specifier: ^19.1.1
+        version: 19.1.1
+      react-dom:
+        specifier: ^19.1.1
+        version: 19.1.1(react@19.1.1)
       shadcn:
         specifier: ^3.2.1
         version: 3.2.1(@types/node@20.19.11)(typescript@5.9.2)

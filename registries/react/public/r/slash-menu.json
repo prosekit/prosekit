@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slash-menu",
+  "type": "registry:component",
+  "title": "Slash Menu",
+  "description": "A slash menu component",
+  "files": [
+    {
+      "path": "registry/slash-menu/slash-menu-root.tsx",
+      "content": "import { canUseRegexLookbehind } from 'prosekit/core'\nimport {\n  AutocompleteList,\n  AutocompletePopover,\n} from 'prosekit/react/autocomplete'\n\nimport SlashMenuEmpty from './slash-menu-empty'\nimport SlashMenuItem, { type SlashMenuItemProps } from './slash-menu-item'\n\nexport interface SlashMenuRootProps {\n  items: SlashMenuItemProps[]\n}\n\nexport default function SlashMenuRoot({ items }: SlashMenuRootProps) {\n  // Match inputs like \"/\", \"/table\", \"/heading 1\" etc. Do not match \"/ heading\".\n  const regex = canUseRegexLookbehind() ? /(?<!\\S)\\/(|\\S.*)$/u : /\\/(|\\S.*)$/u\n\n  return (\n    <AutocompletePopover regex={regex} className=\"CSS_AUTOCOMPLETE_MENU\">\n      <AutocompleteList>\n        {items.map((item) => <SlashMenuItem key={item.label} {...item} />)}\n        <SlashMenuEmpty />\n      </AutocompleteList>\n    </AutocompletePopover>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/slash-menu/slash-menu-item.tsx",
+      "content": "import { AutocompleteItem } from 'prosekit/react/autocomplete'\n\nexport interface SlashMenuItemProps {\n  label: string\n  kbd?: string\n  onSelect: () => void\n}\n\nexport default function SlashMenuItem(props: SlashMenuItemProps) {\n  return (\n    <AutocompleteItem onSelect={props.onSelect} className=\"CSS_AUTOCOMPLETE_MENU_ITEM\">\n      <span>{props.label}</span>\n      {props.kbd && <kbd className=\"CSS_AUTOCOMPLETE_MENU_KEYBOARD\">{props.kbd}</kbd>}\n    </AutocompleteItem>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/slash-menu/slash-menu-empty.tsx",
+      "content": "import { AutocompleteEmpty } from 'prosekit/react/autocomplete'\n\nexport default function SlashMenuEmpty() {\n  return (\n    <AutocompleteEmpty className=\"CSS_AUTOCOMPLETE_MENU_ITEM\">\n      <span>No results</span>\n    </AutocompleteEmpty>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/slash-menu/index.ts",
+      "content": "export { default as SlashMenuEmpty } from './slash-menu-empty'\nexport { default as SlashMenuItem } from './slash-menu-item'\nexport { default as SlashMenuRoot } from './slash-menu-root'\n",
+      "type": "registry:lib"
+    }
+  ]
+}

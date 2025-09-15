@@ -4,4 +4,9 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
   },
+  "references": [
+    {
+      "path": "../../packages/prosekit/tsconfig.json",
+    },
+  ],
 }

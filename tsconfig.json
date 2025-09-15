@@ -59,6 +59,9 @@
       "path": "./packages/web/tsconfig.json",
     },
     {
+      "path": "./registries/react/tsconfig.json",
+    },
+    {
       "path": "./website/tsconfig.json",
     },
   ],

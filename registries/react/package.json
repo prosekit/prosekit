@@ -1,0 +1,11 @@
+{
+  "name": "@prosekit/registry-react",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "React component registry for ProseKit",
+  "devDependencies": {
+    "shadcn": "^3.2.1",
+    "typescript": "^5.9.2"
+  }
+}

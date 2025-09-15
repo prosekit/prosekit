@@ -3,3 +3,4 @@ packages:
   - website
   - examples/*
   - packages/*
+  - registries/*

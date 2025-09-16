@@ -6,7 +6,6 @@ export default defineESLintConfig(
   {
     react: {
       files: ['**/react/**/*.?([cm])[jt]s?(x)'],
-      reactCompiler: true,
     },
     vue: true,
     markdown: true,

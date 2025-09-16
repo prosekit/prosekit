@@ -11,7 +11,7 @@
   "dependencies": {
     "@manypkg/find-root": "^3.1.0",
     "@manypkg/get-packages": "^3.1.0",
-    "@sindresorhus/slugify": "^2.2.1",
+    "@sindresorhus/slugify": "^3.0.0",
     "@types/fs-extra": "^11.0.4",
     "fs-extra": "^11.3.1",
     "lodash-es": "^4.17.21",

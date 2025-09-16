@@ -105,7 +105,7 @@ test('Singleton Root Facet Node', () => {
   expect(singletonRootNode.getOutput()).toEqual([
     null,
     null,
-    sum([...value1, sum(value2), sum(value3), ...[sum(value2), sum(value3)]]),
+    sum([...value1, sum(value2), sum(value3), sum(value2), sum(value3)]),
     null,
     null,
   ])

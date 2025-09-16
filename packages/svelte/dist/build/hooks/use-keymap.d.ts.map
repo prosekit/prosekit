@@ -1,0 +1,1 @@
+{"version":3,"file":"use-keymap.d.ts","sourceRoot":"","sources":["../../../src/hooks/use-keymap.ts"],"names":[],"mappings":"AAAA,OAAO,EAEL,KAAK,MAAM,EACZ,MAAM,gBAAgB,CAAA;AACvB,OAAO,EAEL,KAAK,QAAQ,EACd,MAAM,cAAc,CAAA;AAErB,OAAO,EAEL,KAAK,mBAAmB,EACzB,MAAM,iBAAiB,CAAA;AAExB,wBAAgB,SAAS,CACvB,WAAW,EAAE,QAAQ,CAAC,MAAM,CAAC,EAC7B,OAAO,CAAC,EAAE,mBAAmB,GAC5B,IAAI,CAGN"}

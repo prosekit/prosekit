@@ -1,0 +1,2 @@
+import { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter } from "./shiki-highlighter-chunk-DSPM0T27.js";
+export { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter };

@@ -14,6 +14,10 @@ type ParagraphCommandsExtension = Extension<{
 /**
  * @internal
  */
+
+/**
+ * @internal
+ */
 declare function defineParagraphCommands(): ParagraphCommandsExtension;
 //#endregion
 //#region src/paragraph/paragraph-spec.d.ts

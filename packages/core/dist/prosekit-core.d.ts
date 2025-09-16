@@ -1,4 +1,4 @@
-import { AnyAttrs, AttrSpec, CommandAction, CommandCreator, CommandTyping, DOMDocumentOptions, DOMParserOptions, DOMSerializerOptions, Editor, EditorOptions, Extension, ExtensionTyping, ExtractCommandActions, ExtractCommandAppliers, ExtractCommandCreators, ExtractCommands, ExtractMarkActions, ExtractMarks, ExtractNodeActions, ExtractNodes, ExtractTyping, JSONParserOptions, MarkAction, MarkBuilder, MarkTyping, NodeAction, NodeBuilder, NodeChild, NodeJSON, NodeTyping, PickSubType, PlainExtension, Priority, SelectionJSON, SimplifyDeeper, SimplifyUnion, StateJSON, StepJSON, ToMarkAction, ToNodeAction, Union, UnionExtension, createEditor, elementFromJSON, elementFromNode, htmlFromJSON, htmlFromNode, jsonFromHTML, jsonFromNode, jsonFromState, nodeFromElement, nodeFromHTML, nodeFromJSON, stateFromJSON } from "./editor-DJF6qOXa.js";
+import { AnyAttrs, AttrSpec, CommandAction, CommandCreator, CommandTyping, DOMDocumentOptions, DOMParserOptions, DOMSerializerOptions, Editor, EditorOptions, Extension, ExtensionTyping, ExtractCommandActions, ExtractCommandAppliers, ExtractCommandCreators, ExtractCommands, ExtractMarkActions, ExtractMarks, ExtractNodeActions, ExtractNodes, ExtractTyping, JSONParserOptions, MarkAction, MarkBuilder, MarkTyping, NodeAction, NodeBuilder, NodeChild, NodeJSON, NodeTyping, PickSubType, PlainExtension, Priority, SelectionJSON, SimplifyDeeper, SimplifyUnion, StateJSON, StepJSON, ToMarkAction, ToNodeAction, Union, UnionExtension, createEditor, elementFromJSON, elementFromNode, htmlFromJSON, htmlFromNode, jsonFromHTML, jsonFromNode, jsonFromState, nodeFromElement, nodeFromHTML, nodeFromJSON, stateFromJSON } from "./editor-CfkZ4TNU.js";
 import { AllSelection, Command, EditorState, EditorStateConfig, NodeSelection, Plugin, Selection, TextSelection, Transaction } from "@prosekit/pm/state";
 import { Attrs as Attrs$1, ContentMatch, DOMSerializer, Fragment, Mark as Mark$1, MarkSpec, MarkType as MarkType$1, Node as Node$1, NodeSpec, NodeType as NodeType$1, ProseMirrorFragment, ProseMirrorNode, ResolvedPos, Schema, Slice } from "@prosekit/pm/model";
 import { DOMEventMap, EditorView, MarkViewConstructor, NodeView, NodeViewConstructor } from "@prosekit/pm/view";
@@ -422,6 +422,9 @@ declare class ProseKitError extends Error {}
 declare class EditorNotFoundError extends ProseKitError {
   constructor();
 }
+/**
+ * @internal
+ */
 //#endregion
 //#region src/types/any-function.d.ts
 /**
@@ -458,6 +461,11 @@ type InsertTextOptions = {
   from?: number;
   to?: number;
 };
+/**
+ * Returns a command that inserts the given text.
+ *
+ * @public
+ */
 //#endregion
 //#region src/extensions/command.d.ts
 declare function defineCommands<T extends Record<string, CommandCreator> = Record<string, CommandCreator>>(commands: T): Extension<{
@@ -582,11 +590,18 @@ declare function defineDocChangeHandler(handler: DocChangeHandler): PlainExtensi
  */
 type DOMEventHandler<Event extends keyof DOMEventMap = string> = (view: EditorView, event: DOMEventMap[Event]) => boolean | void;
 /**
+ * @internal
+ */
+
+/**
  * Register a new event handler for the given event type.
  *
  * @public
  */
 declare function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(event: Event, handler: DOMEventHandler<Event>): PlainExtension;
+/**
+ * @internal
+ */
 //#endregion
 //#region src/facets/facet-types.d.ts
 /**
@@ -1441,6 +1456,9 @@ declare function isNodeSelection(value: Selection): value is NodeSelection;
  * @public
  */
 declare function isAllSelection(value: Selection): value is AllSelection;
+/**
+ * @internal
+ */
 //#endregion
 //#region src/utils/unicode.d.ts
 /**

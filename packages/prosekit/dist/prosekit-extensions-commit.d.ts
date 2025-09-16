@@ -1,1 +1,2 @@
 export * from "@prosekit/extensions/commit";
+export {};

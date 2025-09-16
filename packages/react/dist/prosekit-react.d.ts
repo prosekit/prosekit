@@ -38,6 +38,10 @@ interface ReactMarkViewOptions extends CoreMarkViewUserOptions<ReactMarkViewComp
   name: string;
 }
 /**
+ * @internal
+ */
+
+/**
  * Defines a mark view using a React component.
  *
  * @public
@@ -64,6 +68,10 @@ interface ReactNodeViewOptions extends CoreNodeViewUserOptions<ReactNodeViewComp
    */
   name: string;
 }
+/**
+ * @internal
+ */
+
 /**
  * Defines a node view using a React component.
  *

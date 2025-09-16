@@ -1,1 +1,2 @@
 export * from "@prosekit/vue/drop-indicator";
+export {};

@@ -38,6 +38,10 @@ interface SolidMarkViewOptions extends CoreMarkViewUserOptions<SolidMarkViewComp
   name: string;
 }
 /**
+ * @internal
+ */
+
+/**
  * Defines a mark view using a Solid component.
  *
  * @public
@@ -64,6 +68,10 @@ interface SolidNodeViewOptions extends CoreNodeViewUserOptions<SolidNodeViewComp
    */
   name: string;
 }
+/**
+ * @internal
+ */
+
 /**
  * Defines a node view using a Solid component.
  *

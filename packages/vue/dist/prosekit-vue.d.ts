@@ -37,6 +37,10 @@ interface VueMarkViewOptions extends CoreMarkViewUserOptions<VueMarkViewComponen
   name: string;
 }
 /**
+ * @internal
+ */
+
+/**
  * Defines a mark view using a Vue component.
  *
  * @public
@@ -63,6 +67,10 @@ interface VueNodeViewOptions extends CoreNodeViewUserOptions<VueNodeViewComponen
    */
   name: string;
 }
+/**
+ * @internal
+ */
+
 /**
  * Defines a node view using a Vue component.
  *

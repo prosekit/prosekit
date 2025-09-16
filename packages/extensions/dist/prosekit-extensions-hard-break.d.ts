@@ -14,6 +14,10 @@ type HardBreakCommandsExtension = Extension<{
 /**
  * @internal
  */
+
+/**
+ * @internal
+ */
 declare function defineHardBreakCommands(): HardBreakCommandsExtension;
 //#endregion
 //#region src/hard-break/hard-break-spec.d.ts

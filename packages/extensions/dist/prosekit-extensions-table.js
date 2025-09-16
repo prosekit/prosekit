@@ -1,4 +1,0 @@
-import "./drop-indicator-E7nCfdnR.js";
-import { defineTable, defineTableCellSpec, defineTableCommands, defineTableDropIndicator, defineTableHeaderCellSpec, defineTablePlugins, defineTableRowSpec, defineTableSpec, exitTable, findTable, insertTable, isCellSelection, moveTableColumn, moveTableRow, selectTable, selectTableCell, selectTableColumn, selectTableRow } from "./table-DV3F8wCL.js";
-
-export { defineTable, defineTableCellSpec, defineTableCommands, defineTableDropIndicator, defineTableHeaderCellSpec, defineTablePlugins, defineTableRowSpec, defineTableSpec, exitTable, findTable, insertTable, isCellSelection, moveTableColumn, moveTableRow, selectTable, selectTableCell, selectTableColumn, selectTableRow };

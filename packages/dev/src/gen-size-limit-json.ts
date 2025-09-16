@@ -35,10 +35,10 @@ async function* iterateExports(pkg: Package) {
       .join('/')
 
     const subPackage = await vfs.getPackageByName(subPackageName)
-    const ignored: string[] = sortedUniq([
+    const ignored: string[] = sortedUniq(
       // Ignore peer dependencies
-      ...Object.keys(subPackage.packageJson.peerDependencies ?? {}),
-    ])
+      Object.keys(subPackage.packageJson.peerDependencies ?? {}),
+    )
 
     const entryPath = typeof entry === 'string' ? entry : entry.default
     assert(entryPath, `Unexpected entry: ${JSON.stringify(entry)}. entryName: ${entryName}. package name: ${pkg.packageJson.name}.`)

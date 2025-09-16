@@ -48,8 +48,8 @@
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^21.1.7",
     "happy-dom": "^18.0.1",
-    "jsdom": "^27.0.0",
-    "tsdown": "^0.15.1",
+    "jsdom": "^26.1.0",
+    "tsdown": "^0.15.0",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4"
   },

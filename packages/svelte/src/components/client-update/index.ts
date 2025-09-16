@@ -1,1 +1,3 @@
-export { default as ClientUpdate } from './client-update.svelte'
+import ClientUpdate from './client-update.svelte'
+
+export { ClientUpdate }

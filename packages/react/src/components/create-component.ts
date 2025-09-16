@@ -86,7 +86,8 @@ export function createComponent<
       for (const [name, value] of Object.entries(properties)) {
         if (value !== undefined) {
           // @ts-expect-error: we know that name is a valid property name
-          el[name] = value as unknown
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react-compiler/react-compiler
+          el[name] = value as unknown as any
         }
       }
     }, [el, ...propNames.map((name) => properties[name])])

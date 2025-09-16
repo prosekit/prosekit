@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "prosekit-react",
+  "homepage": "https://prosekit.dev",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "A simple hello world component",
+      "files": [
+        {
+          "path": "registry/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slash-menu",
+      "type": "registry:component",
+      "title": "Slash Menu",
+      "description": "A slash menu component",
+      "files": [
+        {
+          "path": "registry/slash-menu/slash-menu-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/slash-menu/slash-menu-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/slash-menu/slash-menu-empty.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/slash-menu/index.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}

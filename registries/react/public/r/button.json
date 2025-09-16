@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:component",
+  "title": "Button",
+  "description": "A simple hello world component",
+  "files": [
+    {
+      "path": "registry/button.tsx",
+      "content": "import {\n  TooltipContent,\n  TooltipRoot,\n  TooltipTrigger,\n} from 'prosekit/react/tooltip'\nimport type { ReactNode } from 'react'\n\nexport default function Button({\n  pressed,\n  disabled,\n  onClick,\n  tooltip,\n  children,\n}: {\n  pressed?: boolean\n  disabled?: boolean\n  onClick?: VoidFunction\n  tooltip?: string\n  children: ReactNode\n}) {\n  return (\n    <TooltipRoot>\n      <TooltipTrigger className=\"CSS_TOOLTIP_TRIGGER\">\n        <button\n          data-state={pressed ? 'on' : 'off'}\n          disabled={disabled}\n          onClick={() => onClick?.()}\n          onMouseDown={(event) => event.preventDefault()}\n          className=\"CSS_TOGGLE_BUTTON\"\n        >\n          {children}\n          {tooltip ? <span className=\"sr-only\">{tooltip}</span> : null}\n        </button>\n      </TooltipTrigger>\n      {tooltip\n        ? (\n          <TooltipContent className=\"CSS_TOOLTIP_CONTENT\">\n            {tooltip}\n          </TooltipContent>\n        )\n        : null}\n    </TooltipRoot>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

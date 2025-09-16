@@ -45,7 +45,7 @@
     "just-map-values": "^3.2.0",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.41.0"
+    "type-fest": "^5.0.0"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",

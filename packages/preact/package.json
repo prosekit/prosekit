@@ -61,7 +61,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "preact": "^10.27.2",
-    "tsdown": "^0.15.1",
+    "tsdown": "^0.15.2",
     "typescript": "~5.9.2"
   },
   "publishConfig": {

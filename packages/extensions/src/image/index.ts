@@ -4,6 +4,7 @@ export {
 } from './image'
 export {
   defineImageCommands,
+  insertImage,
   type ImageCommandsExtension,
 } from './image-commands'
 export {

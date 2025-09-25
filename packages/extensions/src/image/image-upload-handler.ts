@@ -23,23 +23,25 @@ import type { ImageAttrs } from './image-spec'
  */
 export interface ImageUploadHandlerOptions {
   /**
-   * The uploader to use to upload the file. It should return a promise that
-   * resolves to the URL of the uploaded image file.
+   * The uploader used to upload the file. It should return a promise that
+   * resolves to the URL of the uploaded image.
    */
   uploader: Uploader<string>
   /**
-   * Returns true if the pasted file should be uploaded and inserted as an
-   * image. By default, only if the content type starts with `image/`.
+   * Determines whether a pasted file should be uploaded and inserted as an
+   * image. By default, only files with a content type starting with `image/`
+   * are handled.
    */
-  canPaste?: (options: FilePasteHandlerOptions) => boolean
+  shouldPaste?: (options: FilePasteHandlerOptions) => boolean
   /**
-   * Returns true if the dropped file should be uploaded and inserted as an
-   * image. By default, only if the content type starts with `image/`.
+   * Determines whether a dropped file should be uploaded and inserted as an
+   * image. By default, only files with a content type starting with `image/`
+   * are handled.
    */
-  canDrop?: (options: FileDropHandlerOptions) => boolean
+  shouldDrop?: (options: FileDropHandlerOptions) => boolean
 }
 
-function defaultCanHandle({ file }: { file: File }): boolean {
+function isImageFile({ file }: { file: File }): boolean {
   // Only handle image files by default
   return file.type.startsWith('image/')
 }
@@ -52,8 +54,8 @@ function defaultCanHandle({ file }: { file: File }): boolean {
  */
 export function defineImageUploadHandler({
   uploader,
-  canPaste = defaultCanHandle,
-  canDrop = defaultCanHandle,
+  shouldPaste = isImageFile,
+  shouldDrop = isImageFile,
 }: ImageUploadHandlerOptions): PlainExtension {
   const uploadHandler = (view: EditorView, file: File, pos?: number): boolean => {
     const uploadTask = new UploadTask({ file, uploader })
@@ -63,12 +65,12 @@ export function defineImageUploadHandler({
   }
 
   const pasteHandler: FilePasteHandler = (options) => {
-    if (!canPaste(options)) return false
+    if (!shouldPaste(options)) return false
     return uploadHandler(options.view, options.file)
   }
 
   const dropHandler: FileDropHandler = (options) => {
-    if (!canDrop(options)) return false
+    if (!shouldDrop(options)) return false
     return uploadHandler(options.view, options.file, options.pos)
   }
 

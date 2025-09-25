@@ -6,7 +6,7 @@ sidebar:
 
 ## Classes
 
-### UploadTask\<Result\> {#uploadtask}
+### UploadTask {#uploadtask}
 
 A class that represents a upload task.
 
@@ -371,7 +371,7 @@ other handlers.
 
 ***
 
-### Uploader()\<Result\> {#uploader}
+### Uploader() {#uploader}
 
 <dl>
 

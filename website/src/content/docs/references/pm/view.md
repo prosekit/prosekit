@@ -1265,7 +1265,7 @@ about.
 
 ***
 
-### EditorProps\<P\> {#editorprops}
+### EditorProps {#editorprops}
 
 Props are configuration values that can be passed to an editor view
 or included in a plugin. This interface lists the supported props.

@@ -85,7 +85,7 @@ ProseKit extension priority.
 
 ## Classes
 
-### Editor\<E\> {#editor}
+### Editor {#editor}
 
 #### Accessors
 
@@ -1096,7 +1096,7 @@ Optional attributes to apply to the node.
 
 ***
 
-### NodeAction()\<Attrs\> {#nodeaction}
+### NodeAction() {#nodeaction}
 
 A function for creating a node with optional attributes and any number of
 children.
@@ -1162,7 +1162,7 @@ with the given attributes.
 
 ***
 
-### MarkAction()\<Attrs\> {#markaction}
+### MarkAction() {#markaction}
 
 A function for applying a mark with optional attributes and any number of
 children.
@@ -1228,7 +1228,7 @@ with the given attributes.
 
 ***
 
-### EditorOptions\<E\> {#editoroptions}
+### EditorOptions {#editoroptions}
 
 #### Properties
 
@@ -1474,7 +1474,7 @@ started.
 
 ***
 
-### MarkSpecOptions\<MarkName, Attrs\> {#markspecoptions}
+### MarkSpecOptions {#markspecoptions}
 
 #### Indexable
 
@@ -1665,7 +1665,7 @@ corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec
 
 ***
 
-### MarkAttrOptions\<MarkName, AttrName, AttrType\> {#markattroptions}
+### MarkAttrOptions {#markattroptions}
 
 #### Properties
 
@@ -1805,7 +1805,7 @@ one of those types.
 
 ***
 
-### NodeSpecOptions\<NodeName, Attrs\> {#nodespecoptions}
+### NodeSpecOptions {#nodespecoptions}
 
 #### Indexable
 
@@ -2235,7 +2235,7 @@ appropriate.
 
 ***
 
-### NodeAttrOptions\<NodeName, AttrName, AttrType\> {#nodeattroptions}
+### NodeAttrOptions {#nodeattroptions}
 
 #### Properties
 
@@ -2397,7 +2397,7 @@ one of those types.
 
 ***
 
-### CommandAction()\<Args\> {#commandaction}
+### CommandAction() {#commandaction}
 
 A function to apply a command to the editor. It will return `true` if the command was applied, and `false` otherwise.
 
@@ -2461,7 +2461,7 @@ Use `canExec` instead.
 
 ***
 
-### Extension\<T\> {#extension-1}
+### Extension {#extension-1}
 
 #### Properties
 
@@ -3031,7 +3031,7 @@ A function that is called when the editor document is changed.
 
 ***
 
-### DOMEventHandler()\<Event\> {#domeventhandler}
+### DOMEventHandler() {#domeventhandler}
 
 <dl>
 
@@ -3322,7 +3322,7 @@ An object holding the attributes of a node.
 
 ***
 
-### AttrSpec\<AttrType\> {#attrspec}
+### AttrSpec {#attrspec}
 
 <code data-typedoc-code>type <a id="attrspec" href="#attrspec">AttrSpec</a>\<AttrType\> = \{ `default?`: `AttrType`; `validate?`: `string` \| (`value`: `unknown`) => `void`; \}</code>
 
@@ -3371,7 +3371,7 @@ one of those types.
 
 ***
 
-### ExtractNodes\<E\> {#extractnodes}
+### ExtractNodes {#extractnodes}
 
 <dl>
 
@@ -3389,7 +3389,7 @@ one of those types.
 
 ***
 
-### ExtractMarks\<E\> {#extractmarks}
+### ExtractMarks {#extractmarks}
 
 <dl>
 
@@ -3407,7 +3407,7 @@ one of those types.
 
 ***
 
-### ExtractCommandCreators\<E\> {#extractcommandcreators}
+### ExtractCommandCreators {#extractcommandcreators}
 
 <dl>
 
@@ -3425,7 +3425,7 @@ one of those types.
 
 ***
 
-### ExtractCommandActions\<E\> {#extractcommandactions}
+### ExtractCommandActions {#extractcommandactions}
 
 <dl>
 
@@ -3445,7 +3445,7 @@ Extracts the [CommandAction](#commandaction)s from an extension type.
 
 ***
 
-### ExtractNodeActions\<E\> {#extractnodeactions}
+### ExtractNodeActions {#extractnodeactions}
 
 <dl>
 
@@ -3465,7 +3465,7 @@ Extracts the [NodeAction](#nodeaction)s from an extension type.
 
 ***
 
-### ExtractMarkActions\<E\> {#extractmarkactions}
+### ExtractMarkActions {#extractmarkactions}
 
 <dl>
 
@@ -3485,7 +3485,7 @@ Extracts the [MarkAction](#markaction)s from an extension type.
 
 ***
 
-### ~~ExtractCommandAppliers\<E\>~~ {#extractcommandappliers}
+### ~~ExtractCommandAppliers~~ {#extractcommandappliers}
 
 <dl>
 

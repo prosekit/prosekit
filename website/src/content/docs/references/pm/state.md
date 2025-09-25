@@ -250,7 +250,7 @@ way `JSON.stringify` calls `toString` methods.
 
 ***
 
-### ProseMirrorPlugin\<PluginState\> {#prosemirrorplugin}
+### ProseMirrorPlugin {#prosemirrorplugin}
 
 Plugins bundle functionality that can be added to an editor.
 They are part of the [editor state](https://prosemirror.net/docs/ref/#state.EditorState) and
@@ -330,7 +330,7 @@ Extract the plugin's state field from an editor state.
 
 ***
 
-### PluginKey\<PluginState\> {#pluginkey}
+### PluginKey {#pluginkey}
 
 A key is used to [tag](https://prosemirror.net/docs/ref/#state.PluginSpec.key) plugins in a way
 that makes it possible to find them, given an editor state.
@@ -3328,7 +3328,7 @@ The plugins that should be active in this state.
 
 ***
 
-### PluginSpec\<PluginState\> {#pluginspec}
+### PluginSpec {#pluginspec}
 
 This is the type passed to the [`Plugin`](https://prosemirror.net/docs/ref/#state.Plugin)
 constructor. It provides a definition for a plugin.
@@ -3468,7 +3468,7 @@ already saw.
 
 ***
 
-### StateField\<T\> {#statefield}
+### StateField {#statefield}
 
 A plugin spec may provide a state field (under its
 [`state`](https://prosemirror.net/docs/ref/#state.PluginSpec.state) property) of this type, which

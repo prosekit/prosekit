@@ -6,7 +6,7 @@ sidebar:
 
 ## Interfaces
 
-### TextAlignOptions\<NodeName\> {#textalignoptions}
+### TextAlignOptions {#textalignoptions}
 
 #### Properties
 

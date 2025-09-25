@@ -6,7 +6,7 @@ sidebar:
 
 ## Interfaces
 
-### TestEditor\<E\> {#testeditor}
+### TestEditor {#testeditor}
 
 An editor for testing purposes.
 

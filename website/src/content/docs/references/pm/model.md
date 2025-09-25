@@ -2001,7 +2001,7 @@ Queries whether a given mark type is
 
 ***
 
-### Schema\<Nodes, Marks\> {#schema-3}
+### Schema {#schema-3}
 
 A document schema. Holds [node](https://prosemirror.net/docs/ref/#model.NodeType) and [mark
 type](https://prosemirror.net/docs/ref/#model.MarkType) objects for the nodes and marks that may
@@ -4474,7 +4474,7 @@ created by this rule. Called with the style's value.
 
 ***
 
-### SchemaSpec\<Nodes, Marks\> {#schemaspec}
+### SchemaSpec {#schemaspec}
 
 An object describing a schema, as passed to the [`Schema`](https://prosemirror.net/docs/ref/#model.Schema)
 constructor.

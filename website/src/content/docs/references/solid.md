@@ -425,7 +425,7 @@ Optional priority to add the extension with.
 
 ***
 
-### MaybeAccessor\<T\> {#maybeaccessor}
+### MaybeAccessor {#maybeaccessor}
 
 <dl>
 

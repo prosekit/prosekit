@@ -362,7 +362,7 @@ The name of the node type.
 
 ***
 
-### UseEditorDerivedOptions\<E\> {#useeditorderivedoptions}
+### UseEditorDerivedOptions {#useeditorderivedoptions}
 
 #### Properties
 

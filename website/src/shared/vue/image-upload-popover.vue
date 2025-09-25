@@ -1,72 +1,75 @@
 <script setup lang="ts">
-import { UploadTask } from "prosekit/extensions/file";
-import { useEditor } from "prosekit/vue";
+import { UploadTask } from 'prosekit/extensions/file'
+import { useEditor } from 'prosekit/vue'
 import {
   PopoverContent,
   PopoverRoot,
   PopoverTrigger,
-} from "prosekit/vue/popover";
-import { computed, ref } from "vue";
+} from 'prosekit/vue/popover'
+import {
+  computed,
+  ref,
+} from 'vue'
 
-import Button from "./button.vue";
-import type { EditorExtension } from "./extension";
-import { sampleUploader } from "./upload-file";
+import Button from './button.vue'
+import type { EditorExtension } from './extension'
+import { sampleUploader } from './upload-file'
 
 const props = defineProps<{
-  disabled: Boolean;
-  tooltip: string;
-}>();
+  disabled: Boolean
+  tooltip: string
+}>()
 
-const open = ref(false);
-const webUrl = ref("");
-const objectUrl = ref("");
-const url = computed(() => webUrl.value || objectUrl.value);
-const editor = useEditor<EditorExtension>();
+const open = ref(false)
+const webUrl = ref('')
+const objectUrl = ref('')
+const url = computed(() => webUrl.value || objectUrl.value)
+const editor = useEditor<EditorExtension>()
 
 function handleFileChange(event: Event) {
-  const file = (event.target as HTMLInputElement)?.files?.[0];
+  const file = (event.target as HTMLInputElement)?.files?.[0]
 
   if (file) {
     const uploadTask = new UploadTask({
       file,
       uploader: sampleUploader,
-    });
-    objectUrl.value = uploadTask.objectURL;
-    webUrl.value = "";
+    })
+    objectUrl.value = uploadTask.objectURL
+    webUrl.value = ''
   } else {
-    objectUrl.value = "";
+    objectUrl.value = ''
   }
 }
 
 function handleWebUrlChange(event: Event) {
-  const url = (event.target as HTMLInputElement)?.value;
+  const url = (event.target as HTMLInputElement)?.value
 
   if (url) {
-    webUrl.value = url;
-    objectUrl.value = "";
+    webUrl.value = url
+    objectUrl.value = ''
   } else {
-    webUrl.value = "";
+    webUrl.value = ''
   }
 }
 
 function deferResetState() {
   setTimeout(() => {
-    webUrl.value = "";
-    objectUrl.value = "";
-  }, 300);
+    webUrl.value = ''
+    objectUrl.value = ''
+  }, 300)
 }
 
 function handleSubmit() {
-  editor.value.commands.insertImage({ src: url.value });
-  deferResetState();
-  open.value = false;
+  editor.value.commands.insertImage({ src: url.value })
+  deferResetState()
+  open.value = false
 }
 
 function handleOpenChange(openValue: boolean) {
   if (!openValue) {
-    deferResetState();
+    deferResetState()
   }
-  open.value = openValue;
+  open.value = openValue
 }
 </script>
 

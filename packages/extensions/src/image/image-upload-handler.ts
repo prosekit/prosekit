@@ -19,7 +19,7 @@ import {
 import type { ImageAttrs } from './image-spec'
 
 /**
- * Options for {@link ImageUploadHandler}.
+ * Options for {@link defineImageUploadHandler}.
  */
 export interface ImageUploadHandlerOptions {
   /**

@@ -10,7 +10,7 @@ import {
 } from 'prosekit/react'
 
 import ImageView from './image-view'
-import { sampleUploader } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 export function defineExtension() {
   return union(

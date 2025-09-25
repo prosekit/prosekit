@@ -15,7 +15,7 @@ import {
 
 import CodeBlockView from './code-block-view.vue'
 import ImageView from './image-view.vue'
-import { sampleUploader } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 export function defineExtension() {
   return union(

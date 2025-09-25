@@ -15,7 +15,7 @@ import {
 
 import CodeBlockView from './code-block-view'
 import ImageView from './image-view'
-import { sampleUploader } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 export function defineExtension() {
   return union(

@@ -13,7 +13,7 @@ import {
 
 import Button from './button'
 import type { EditorExtension } from './extension'
-import { sampleUploader } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 export const ImageUploadPopover: FC<{
   tooltip: string

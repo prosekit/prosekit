@@ -5,6 +5,7 @@ import {
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
 import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+import { defineImageUploadHandler } from 'prosekit/extensions/image'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import {
@@ -14,7 +15,7 @@ import {
 
 import CodeBlockView from './code-block-view.vue'
 import ImageView from './image-view.vue'
-import { defineImageFileHandlers } from './upload-file'
+import { tmpfilesUploader } from './upload-file'
 
 export function defineExtension() {
   return union(
@@ -33,7 +34,9 @@ export function defineExtension() {
       name: 'image',
       component: ImageView as VueNodeViewComponent,
     }),
-    defineImageFileHandlers(),
+    defineImageUploadHandler({
+      uploader: tmpfilesUploader,
+    }),
   )
 }
 

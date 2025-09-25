@@ -12,3 +12,7 @@ export {
   type ImageAttrs,
   type ImageSpecExtension,
 } from './image-spec'
+export {
+  defineImageUploadHandler,
+  type ImageUploadHandlerOptions,
+} from './image-upload-handler'

@@ -17,7 +17,10 @@ export type ImageCommandsExtension = Extension<{
 }>
 
 /**
- * @internal
+ * Returns a command that inserts an image node with the given attributes at the
+ * current selection position.
+ *
+ * @public
  */
 export function insertImage(attrs?: ImageAttrs): Command {
   return insertNode({ type: 'image', attrs })

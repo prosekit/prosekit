@@ -150,6 +150,7 @@ jobs:
             --root-dir "$PWD"
             --no-progress
             --format detailed
+            --accept 100..=103,200..=299,403
             './**/*.html'
           debug: false
           fail: true

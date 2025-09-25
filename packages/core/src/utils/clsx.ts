@@ -1,5 +1,7 @@
 import clsxLite from 'clsx/lite'
 
+// This type declaration can be removed if https://github.com/lukeed/clsx/pull/110 gets merged and released
+
 /**
  * A utility for constructing `className` strings conditionally.
  *

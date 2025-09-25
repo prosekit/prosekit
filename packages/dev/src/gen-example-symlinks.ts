@@ -401,16 +401,23 @@ export async function genExampleSymlinks() {
   }
 
   // 1. Ensure that there are no unexpected symlinks
+  const unexpectedSymlinks: string[] = []
   for (const symlink of existingSymlinks) {
     if (!expectedTargetPaths.has(symlink)) {
       const relativeSymlink = path.relative(rootDir, symlink)
-      const message = [
-        `Unexpected symlink found: ${relativeSymlink}`,
-        `This symlink is not defined in the mapping in '${currentFilePath}'.`,
-        'Please remove it manually or add it to the mapping.',
-      ].join('\n')
-      throw new Error(message)
+      unexpectedSymlinks.push(relativeSymlink)
     }
+  }
+  if (unexpectedSymlinks.length > 0) {
+    const message = [
+      `Unexpected symlinks found.`,
+      `The following symlinks are not defined in ${currentFilePath}.`,
+      `Please remove them manually or add them to the mapping.`,
+      '',
+      ...unexpectedSymlinks,
+      '',
+    ].join('\n')
+    throw new Error(message)
   }
 
   // 2. Create all symlinks from the mapping

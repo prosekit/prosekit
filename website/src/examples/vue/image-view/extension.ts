@@ -7,7 +7,7 @@ import {
 } from 'prosekit/vue'
 
 import ImageView from './image-view.vue'
-import { tmpfilesUploader } from './upload-file'
+import { sampleUploader } from './upload-file'
 
 export function defineExtension() {
   return union(
@@ -17,7 +17,7 @@ export function defineExtension() {
       component: ImageView as VueNodeViewComponent,
     }),
     defineImageUploadHandler({
-      uploader: tmpfilesUploader,
+      uploader: sampleUploader,
     }),
   )
 }

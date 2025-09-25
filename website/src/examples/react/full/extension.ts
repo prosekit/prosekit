@@ -15,7 +15,7 @@ import {
 
 import CodeBlockView from './code-block-view'
 import ImageView from './image-view'
-import { tmpfilesUploader } from './upload-file'
+import { sampleUploader } from './upload-file'
 
 export function defineExtension() {
   return union(
@@ -35,7 +35,7 @@ export function defineExtension() {
       component: ImageView satisfies ReactNodeViewComponent,
     }),
     defineImageUploadHandler({
-      uploader: tmpfilesUploader,
+      uploader: sampleUploader,
     }),
   )
 }

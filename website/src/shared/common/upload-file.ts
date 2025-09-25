@@ -5,9 +5,9 @@ import type { Uploader } from 'prosekit/extensions/file'
  * uploaded file.
  *
  * This function is only for demonstration purposes. All uploaded files will be
- * deleted after 1 hour.
+ * deleted by the server after 1 hour.
  */
-export const tmpfilesUploader: Uploader<string> = ({
+export const sampleUploader: Uploader<string> = ({
   file,
   onProgress,
 }): Promise<string> => {

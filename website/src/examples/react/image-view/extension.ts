@@ -10,7 +10,7 @@ import {
 } from 'prosekit/react'
 
 import ImageView from './image-view'
-import { tmpfilesUploader } from './upload-file'
+import { sampleUploader } from './upload-file'
 
 export function defineExtension() {
   return union(
@@ -21,7 +21,7 @@ export function defineExtension() {
     }),
     defineImageUploadHandler(
       {
-        uploader: tmpfilesUploader,
+        uploader: sampleUploader,
       },
     ),
   )

@@ -33,6 +33,16 @@ const mapping: Record<string, string[]> = {
     'examples/react/mark-rule/',
     'examples/vue/mark-rule/',
   ],
+  'shared/common/sample-uploader.ts': [
+    /// keep-sorted
+    'examples/react/full/',
+    'examples/react/image-view/',
+    'examples/react/toolbar/',
+    'examples/vue/full/',
+    'examples/vue/image-view/',
+    'shared/react/',
+    'shared/vue/',
+  ],
   'shared/common/tag-data.ts': [
     /// keep-sorted
     'examples/react/full/',
@@ -50,16 +60,6 @@ const mapping: Record<string, string[]> = {
     'examples/solid/typography/',
     'examples/svelte/typography/',
     'examples/vue/typography/',
-  ],
-  'shared/common/upload-file.ts': [
-    /// keep-sorted
-    'examples/react/full/',
-    'examples/react/image-view/',
-    'examples/react/toolbar/',
-    'examples/vue/full/',
-    'examples/vue/image-view/',
-    'shared/react/',
-    'shared/vue/',
   ],
   'shared/common/user-data.ts': [
     /// keep-sorted

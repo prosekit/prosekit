@@ -5,7 +5,7 @@ inputs:
   node-version:
     description: The version of node.js
     required: false
-    default: "20"
+    default: "22"
 
 runs:
   using: composite
@@ -25,6 +25,10 @@ runs:
         node-version: ${{ inputs.node-version }}
         cache: pnpm
         registry-url: "https://registry.npmjs.org"
+
+    - name: Check npm version
+      run: npm --version
+      shell: bash
 
     # Update npm to use OIDC publishing
     # https://docs.npmjs.com/trusted-publishers

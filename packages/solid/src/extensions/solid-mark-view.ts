@@ -46,9 +46,19 @@ function withMarkViewProps(
   component: SolidMarkViewComponent,
 ): Component<SolidMarkViewProps> {
   return function MarkViewPropsWrapper() {
-    const props: Accessor<SolidMarkViewProps> = useMarkViewContext()
-
-    return createComponent(component, props())
+    const context: Accessor<SolidMarkViewProps> = useMarkViewContext()
+    const props: SolidMarkViewProps = {
+      get contentRef() {
+        return context().contentRef
+      },
+      get view() {
+        return context().view
+      },
+      get mark() {
+        return context().mark
+      },
+    }
+    return createComponent(component, props)
   }
 }
 

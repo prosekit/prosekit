@@ -7,6 +7,7 @@ import {
 } from 'prosekit/solid/resizable'
 import {
   createEffect,
+  createMemo,
   createSignal,
   onCleanup,
   Show,
@@ -21,11 +22,6 @@ export default function ImageView(props: SolidNodeViewProps) {
   const [aspectRatio, setAspectRatio] = createSignal<number | undefined>()
   const [error, setError] = createSignal<string | undefined>()
   const [progress, setProgress] = createSignal(0)
-
-  createEffect(() => {
-    const selected = props.selected
-    console.debug('SOLID Image view', { selected })
-  })
 
   createEffect(() => {
     if (!uploading()) {
@@ -84,7 +80,7 @@ export default function ImageView(props: SolidNodeViewProps) {
       height={attrs().height ?? undefined}
       aspectRatio={aspectRatio()}
       class="CSS_IMAGE_RESIZEALE"
-      data-selected={selected() ? '' : undefined}
+      attr:data-selected={selected() ? '' : undefined}
       onResizeEnd={handleResizeEnd}
     >
       <Show when={url() && !error()}>

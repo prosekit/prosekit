@@ -1741,33 +1741,6 @@
       ]
     },
     {
-      "name": "preact-image-view",
-      "framework": "preact",
-      "story": "image-view",
-      "files": [
-        {
-          "path": "editor.tsx",
-          "hidden": false
-        },
-        {
-          "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "image-view.tsx",
-          "hidden": false
-        },
-        {
-          "path": "sample-doc-image.ts",
-          "hidden": false
-        },
-        {
-          "path": "sample-uploader.ts",
-          "hidden": false
-        }
-      ]
-    },
-    {
       "name": "preact-readonly",
       "framework": "preact",
       "story": "readonly",

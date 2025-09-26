@@ -6,7 +6,6 @@ export default { component }
 export const Minimal = { args: { story: 'minimal' } }
 export const BlockHandle = { args: { story: 'block-handle' } }
 export const Keymap = { args: { story: 'keymap' } }
-export const ImageView = { args: { story: 'image-view' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
 export const Table = { args: { story: 'table' } }

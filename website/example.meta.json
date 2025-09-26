@@ -300,11 +300,11 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "image-view.tsx",
           "hidden": false
         },
         {
-          "path": "image-view.tsx",
+          "path": "sample-doc-image.ts",
           "hidden": false
         },
         {
@@ -1138,11 +1138,11 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "image-view.vue",
           "hidden": false
         },
         {
-          "path": "image-view.vue",
+          "path": "sample-doc-image.ts",
           "hidden": false
         },
         {

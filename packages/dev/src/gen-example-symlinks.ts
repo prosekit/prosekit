@@ -33,6 +33,11 @@ const mapping: Record<string, string[]> = {
     'examples/react/mark-rule/',
     'examples/vue/mark-rule/',
   ],
+  'shared/common/sample-doc-image.ts': [
+    /// keep-sorted
+    'examples/react/image-view/',
+    'examples/vue/image-view/',
+  ],
   'shared/common/sample-uploader.ts': [
     /// keep-sorted
     'examples/react/full/',

@@ -4,16 +4,17 @@ title: File
 
 import Demo from '@/components/ui/demo/demo.astro';
 import { CodeFile } from 'starlight-theme-nova/components';
+import { Aside } from '@astrojs/starlight/components'
 
-Handle file pasting, dropping and uploading in the editor.
+Handle file pasting, dropping, and uploading in the editor.
 
 ## Usage
 
-It's common to upload files to a remote server when pasting or dropping files into the editor. Here are two approaches to implement this functionality:
+It's common to upload files to a remote server when pasting or dropping them into the editor. Here are two approaches to implement this functionality:
 
 ### Basic Approach: Update After Upload
 
-The simplest method is to update the document after uploading the file and receiving the file URL:
+The simplest method is to update the document after uploading the file and receiving its URL:
 
 ```ts twoslash
 function myUploader(file: File): Promise<string> {
@@ -37,13 +38,11 @@ async function handleUpload(view: EditorView, file: File, pos?: number) {
   // Attributes for the image node
   const attrs: ImageAttrs = { src: url }
 
-  const command: Command = pos
-    // For paste event, `pos` is undefined. The image node will be 
-    // inserted at current text cursor position.
-    ? insertNode({ type: 'image', attrs, pos })
-    // For drop, `pos` is the drop position. The image node will be 
-    // inserted at the drop position.
-    : insertNode({ type: 'image', attrs })
+  // For paste events, `pos` is undefined. The image node will be
+  // inserted at the current text cursor position.
+  // For drop events, `pos` is the drop position. The image node will be
+  // inserted at the drop position.
+  const command: Command = insertNode({ type: 'image', attrs, pos })
   return command(view.state, view.dispatch, view)
 }
 
@@ -60,8 +59,9 @@ const imageDropExtension = defineFileDropHandler(({ view, file, pos }) => {
 })
 ```
 
-Note: For image, you can also use the [`defineImageUploadHandler`] to handle the upload and insert the image node. This is a more advanced approach, as it allows the editor to show 
-the images immediately before the upload is complete. You can check the full example at [image-view].
+<Aside>
+For images, you can also use [`defineImageUploadHandler`] to handle the upload and insert the image node. This is a more advanced approach, as it allows the editor to show the images immediately, even before the upload is complete. You can see the full example at [image-view].
+</Aside>
 
 ## API Reference
 

@@ -19,6 +19,39 @@ import {
 import type { ImageAttrs } from './image-spec'
 
 /**
+ * A predicate to determine if the pasted file should be uploaded and inserted as an image.
+ */
+export type ImageCanPastePredicate = (options: FilePasteHandlerOptions) => boolean
+
+/**
+ * A predicate to determine if the dropped file should be uploaded and inserted as an image.
+ */
+export type ImageCanDropPredicate = (options: FileDropHandlerOptions) => boolean
+
+/**
+ * A handler to be called when an error occurs during the upload.
+ */
+export type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) => void
+
+/**
+ * Options for the {@link ImageUploadErrorHandler} callback.
+ */
+export interface ImageUploadErrorHandlerOptions {
+  /**
+   * The file that was uploaded.
+   */
+  file: File
+  /**
+   * The error that occurred during the upload.
+   */
+  error: unknown
+  /**
+   * The upload task that was used to upload the file.
+   */
+  uploadTask: UploadTask<string>
+}
+
+/**
  * Options for {@link defineImageUploadHandler}.
  */
 export interface ImageUploadHandlerOptions {
@@ -28,22 +61,29 @@ export interface ImageUploadHandlerOptions {
    */
   uploader: Uploader<string>
   /**
-   * Determines whether a pasted file should be uploaded and inserted as an
-   * image. By default, only files with a content type starting with `image/`
-   * are handled.
+   * A predicate to determine if the pasted file should be uploaded and inserted as an image.
+   * If not provided, it defaults to only allowing paste of files with a content type starting with `image/`.
    */
-  shouldPaste?: (options: FilePasteHandlerOptions) => boolean
+  canPaste?: ImageCanPastePredicate
   /**
-   * Determines whether a dropped file should be uploaded and inserted as an
-   * image. By default, only files with a content type starting with `image/`
-   * are handled.
+   * A predicate to determine if the dropped file should be uploaded and inserted as an image.
+   * If not provided, it defaults to only allowing drop of files with a content type starting with `image/`.
    */
-  shouldDrop?: (options: FileDropHandlerOptions) => boolean
+  canDrop?: ImageCanDropPredicate
+  /**
+   * A handler to be called when an error occurs during the upload.
+   * If not provided, it defaults to logging the error to the console.
+   */
+  onError?: ImageUploadErrorHandler
 }
 
-function isImageFile({ file }: { file: File }): boolean {
+function defaultCanUpload({ file }: { file: File }): boolean {
   // Only handle image files by default
   return file.type.startsWith('image/')
+}
+
+const defaultOnError: ImageUploadErrorHandler = ({ error }) => {
+  console.error('[prosekit] Failed to upload image:', error)
 }
 
 /**
@@ -54,28 +94,56 @@ function isImageFile({ file }: { file: File }): boolean {
  */
 export function defineImageUploadHandler({
   uploader,
-  shouldPaste = isImageFile,
-  shouldDrop = isImageFile,
+  canPaste = defaultCanUpload,
+  canDrop = defaultCanUpload,
+  onError = defaultOnError,
 }: ImageUploadHandlerOptions): PlainExtension {
-  const uploadHandler = (view: EditorView, file: File, pos?: number): boolean => {
+  const handleInsert = (view: EditorView, file: File, pos?: number): boolean => {
     const uploadTask = new UploadTask({ file, uploader })
-    const attrs: ImageAttrs = { src: uploadTask.objectURL }
+    const objectURL = uploadTask.objectURL
+    const attrs: ImageAttrs = { src: objectURL }
+    uploadTask.finished.then((resultURL) => {
+      if (!view.isDestroyed) {
+        replaceImageURL(view, objectURL, resultURL)
+      }
+    }).catch((error) => {
+      onError({ file, error, uploadTask })
+    })
     const command = insertNode({ type: 'image', attrs, pos })
     return command(view.state, view.dispatch, view)
   }
 
-  const pasteHandler: FilePasteHandler = (options) => {
-    if (!shouldPaste(options)) return false
-    return uploadHandler(options.view, options.file)
+  const handlePaste: FilePasteHandler = (options) => {
+    if (!canPaste(options)) return false
+    return handleInsert(options.view, options.file)
   }
 
-  const dropHandler: FileDropHandler = (options) => {
-    if (!shouldDrop(options)) return false
-    return uploadHandler(options.view, options.file, options.pos)
+  const handleDrop: FileDropHandler = (options) => {
+    if (!canDrop(options)) return false
+    return handleInsert(options.view, options.file, options.pos)
   }
 
   return union(
-    defineFilePasteHandler(pasteHandler),
-    defineFileDropHandler(dropHandler),
+    defineFilePasteHandler(handlePaste),
+    defineFileDropHandler(handleDrop),
   )
+}
+
+function replaceImageURL(view: EditorView, fromURL: string, toURL: string) {
+  const positions: number[] = []
+  view.state.doc.descendants((node, pos) => {
+    if (node.type.name === 'image') {
+      const attrs = node.attrs as ImageAttrs
+      if (attrs.src === fromURL) {
+        positions.push(pos)
+      }
+    }
+  })
+  if (positions.length > 0) {
+    const tr = view.state.tr
+    for (const pos of positions) {
+      tr.setNodeAttribute(pos, 'src', toURL)
+    }
+    view.dispatch(tr)
+  }
 }

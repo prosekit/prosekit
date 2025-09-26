@@ -14,5 +14,9 @@ export {
 } from './image-spec'
 export {
   defineImageUploadHandler,
+  type ImageCanDropPredicate,
+  type ImageCanPastePredicate,
+  type ImageUploadErrorHandler,
+  type ImageUploadErrorHandlerOptions,
   type ImageUploadHandlerOptions,
 } from './image-upload-handler'

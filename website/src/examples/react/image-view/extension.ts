@@ -1,8 +1,6 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import {
-  defineImageUploadHandler,
-} from 'prosekit/extensions/image'
+import { defineImageUploadHandler } from 'prosekit/extensions/image'
 import {
   defineReactNodeView,
   type ReactNodeViewComponent,
@@ -25,7 +23,5 @@ export function defineExtension() {
     ),
   )
 }
-
-
 
 export type EditorExtension = ReturnType<typeof defineExtension>

@@ -24,7 +24,7 @@ const error = ref<string | undefined>()
 const progress = ref(0)
 
 watchEffect((onCleanup) => {
-  if (!url.value.startsWith('blob:')) return
+  if (!uploading.value) return
 
   const uploadTask = UploadTask.get<string>(url.value)
   if (!uploadTask) return

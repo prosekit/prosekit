@@ -16,25 +16,23 @@ export default function ImageView(props: SolidNodeViewProps) {
   const attrs = () => props.node.attrs as ImageAttrs
   const url = () => attrs().src || ''
   const uploading = () => url().startsWith('blob:')
+  const selected = () => props.selected
 
   const [aspectRatio, setAspectRatio] = createSignal<number | undefined>()
   const [error, setError] = createSignal<string | undefined>()
   const [progress, setProgress] = createSignal(0)
-  const [selected, setSelected] = createSignal(props.selected)
 
   createEffect(() => {
-    setSelected(props.selected)
+    const selected = props.selected
+    console.debug('SOLID Image view', { selected })
   })
 
   createEffect(() => {
-    setProgress(0)
-
     if (!uploading()) {
       setError(undefined)
       return
     }
 
-    setError(undefined)
     const uploadTask = UploadTask.get<string>(url())
     if (!uploadTask) return
 

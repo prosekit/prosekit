@@ -111,6 +111,7 @@ export function defineImageUploadHandler({
         onError({ file, error, uploadTask })
       } else {
         replaceImageURL(view, objectURL, resultURL)
+        UploadTask.delete(objectURL)
       }
     }).catch((error) => {
       onError({ file, error, uploadTask })
@@ -135,12 +136,12 @@ export function defineImageUploadHandler({
   )
 }
 
-function replaceImageURL(view: EditorView, fromURL: string, toURL: string) {
+function replaceImageURL(view: EditorView, oldURL: string, newURL: string) {
   const positions: number[] = []
   view.state.doc.descendants((node, pos) => {
     if (node.type.name === 'image') {
       const attrs = node.attrs as ImageAttrs
-      if (attrs.src === fromURL) {
+      if (attrs.src === oldURL) {
         positions.push(pos)
       }
     }
@@ -148,7 +149,7 @@ function replaceImageURL(view: EditorView, fromURL: string, toURL: string) {
   if (positions.length > 0) {
     const tr = view.state.tr
     for (const pos of positions) {
-      tr.setNodeAttribute(pos, 'src', toURL)
+      tr.setNodeAttribute(pos, 'src', newURL)
     }
     view.dispatch(tr)
   }

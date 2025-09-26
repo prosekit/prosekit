@@ -1,3 +1,5 @@
+import { ProseKitError } from '@prosekit/core'
+
 /**
  * An interface representing the upload progress.
  */
@@ -45,6 +47,16 @@ export class UploadTask<Result> {
   protected done = false
 
   /**
+   * If the upload is complete successfully, this will be the result of the upload.
+   */
+  protected result: Result | undefined
+
+  /**
+   * If the upload is complete with an error, this will be the error that occurred.
+   */
+  protected error: Error | undefined
+
+  /**
    * A promise that fulfills once the upload is complete, or rejects if an error occurs.
    */
   readonly finished: Promise<Result>
@@ -63,8 +75,16 @@ export class UploadTask<Result> {
       const maybePromise = uploader({
         file,
         onProgress: (progress) => {
-          for (const subscriber of this.subscribers) {
-            subscriber(progress)
+          if (typeof progress.total !== 'number') {
+            throw new TypeError('total must be a number')
+          }
+          if (typeof progress.loaded !== 'number') {
+            throw new TypeError('loaded must be a number')
+          }
+          if (progress.loaded > 0) {
+            for (const subscriber of this.subscribers) {
+              subscriber(progress)
+            }
           }
         },
       })
@@ -72,13 +92,14 @@ export class UploadTask<Result> {
         (result) => {
           this.done = true
           URL.revokeObjectURL(this.objectURL)
+          this.result = result
           resolve(result)
         },
-        (error) => {
+        (err) => {
           this.done = true
-          reject(
-            new Error('[prosekit] Failed to upload file', { cause: error }),
-          )
+          const error = new ProseKitError('[prosekit] Failed to upload file', { cause: err })
+          this.error = error
+          reject(error)
         },
       )
     })
@@ -100,7 +121,7 @@ export class UploadTask<Result> {
   }
 
   /**
-   * Finds an upload task by its object URL.
+   * Finds an upload task from the global store by its object URL.
    */
   static get<Result = unknown>(
     objectURL: string,
@@ -109,7 +130,7 @@ export class UploadTask<Result> {
   }
 
   /**
-   * Deletes an upload task by its object URL.
+   * Deletes an upload task from the global store by its object URL.
    */
   static delete(objectURL: string): void {
     store.delete(objectURL)

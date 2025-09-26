@@ -35,6 +35,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/common/sample-doc-image.ts': [
     /// keep-sorted
+    'examples/preact/image-view/',
     'examples/react/image-view/',
     'examples/svelte/image-view/',
     'examples/solid/image-view/',
@@ -45,6 +46,7 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/image-view/',
     'examples/react/toolbar/',
+    'examples/preact/image-view/',
     'examples/svelte/image-view/',
     'examples/solid/image-view/',
     'examples/vue/full/',
@@ -121,6 +123,10 @@ const mapping: Record<string, string[]> = {
   'shared/preact/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/preact/keymap/',
+  ],
+  'shared/preact/image-view.tsx': [
+    /// keep-sorted
+    'examples/preact/image-view/',
   ],
 
   // React

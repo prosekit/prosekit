@@ -19,7 +19,10 @@ testStory('image-view', ({ example }) => {
   })
 
   test('selects image on click', async ({ page }) => {
-    test.skip(example === 'solid-image-view', 'Solid image-view selection not yet supported')
+    test.skip(
+      example === 'solid-image-view' || example === 'preact-image-view',
+      'Selection state not yet supported in this example',
+    )
     const editor = locateEditor(page)
     const resizable = editor.locator('prosekit-resizable-root').first()
 

@@ -1,0 +1,1 @@
+../../../shared/preact/image-view.tsx

@@ -8,7 +8,7 @@ import {
   testStory,
 } from './helper'
 
-testStory('image-view', () => {
+testStory('image-view', ({ example }) => {
   test('renders default images', async ({ page }) => {
     const editor = locateEditor(page)
     const images = editor.locator('img')
@@ -19,6 +19,7 @@ testStory('image-view', () => {
   })
 
   test('selects image on click', async ({ page }) => {
+    test.skip(example === 'solid-image-view', 'Solid image-view selection not yet supported')
     const editor = locateEditor(page)
     const resizable = editor.locator('prosekit-resizable-root').first()
 

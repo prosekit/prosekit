@@ -2547,6 +2547,33 @@
       ]
     },
     {
+      "name": "solid-image-view",
+      "framework": "solid",
+      "story": "image-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-image.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-keymap",
       "framework": "solid",
       "story": "keymap",

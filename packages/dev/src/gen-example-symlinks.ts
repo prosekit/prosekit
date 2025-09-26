@@ -37,6 +37,7 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/react/image-view/',
     'examples/svelte/image-view/',
+    'examples/solid/image-view/',
     'examples/vue/image-view/',
   ],
   'shared/common/sample-uploader.ts': [
@@ -45,6 +46,7 @@ const mapping: Record<string, string[]> = {
     'examples/react/image-view/',
     'examples/react/toolbar/',
     'examples/svelte/image-view/',
+    'examples/solid/image-view/',
     'examples/vue/full/',
     'examples/vue/image-view/',
     'shared/react/',
@@ -227,6 +229,10 @@ const mapping: Record<string, string[]> = {
   'shared/solid/drop-indicator.tsx': [
     /// keep-sorted
     'examples/solid/block-handle/',
+  ],
+  'shared/solid/image-view.tsx': [
+    /// keep-sorted
+    'examples/solid/image-view/',
   ],
   'shared/solid/table-handle.tsx': [
     /// keep-sorted

@@ -30,46 +30,41 @@ import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { Command } from 'prosekit/pm/state'
 import type { EditorView } from 'prosekit/pm/view'
 
-async function handleFile(view: EditorView, file: File, pos?: number) {
+async function handleUpload(view: EditorView, file: File, pos?: number) {
   // Upload the file to a remote server and get the URL
   const url: string = await myUploader(file)
 
   // Attributes for the image node
   const attrs: ImageAttrs = { src: url }
 
-  // For paste, insert the image node at current text cursor position.
-  // For drop, insert the image node at the drop position.
   const command: Command = pos
+    // For paste event, `pos` is undefined. The image node will be 
+    // inserted at current text cursor position.
     ? insertNode({ type: 'image', attrs, pos })
+    // For drop, `pos` is the drop position. The image node will be 
+    // inserted at the drop position.
     : insertNode({ type: 'image', attrs })
   return command(view.state, view.dispatch, view)
 }
 
 const imagePasteExtension = defineFilePasteHandler(({ view, file }) => {
   if (!file.type.startsWith('image/')) return false
-  void handleFile(view, file)
+  void handleUpload(view, file)
   return true
 })
 
 const imageDropExtension = defineFileDropHandler(({ view, file, pos }) => {
   if (!file.type.startsWith('image/')) return false
-  void handleFile(view, file, pos)
+  void handleUpload(view, file, pos)
   return true
 })
 ```
 
-### Advanced Approach: Immediate Display with UploadTask
-
-To improve user experience, especially with slow uploads, you can insert the node immediately and update it once the upload is complete:
-
-First, create an `UploadTask` instance on paste or drop:
-
-<CodeFile path="src/shared/common/upload-file.ts" />
-
-Then, use the `UploadTask` in your node view. When the upload is complete, update the node's `attrs` with the new file URL:
-
-You can check the full example [here](/examples/image-view).
+Note: For image, you can also use the [`defineImageUploadHandler`] to handle the upload and insert the image node. This is a more advanced approach, as it allows the editor to show 
+the images immediately before the upload is complete. You can check the full example at [image-view].
 
 ## API Reference
 
 - [prosekit/extensions/file](/references/extensions/file)
+- [`defineImageUploadHandler`](/references/extensions/image#defineimageuploadhandler)
+- [image-view](/examples/image-view)

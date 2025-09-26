@@ -29,18 +29,18 @@ export default function ImageView(props: ReactNodeViewProps) {
 
     let canceled = false
 
-    const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
-      if (canceled) return
-      setProgress(loaded / total)
-    })
     uploadTask.finished.catch((error) => {
       if (canceled) return
       setError(String(error))
     })
+    const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
+      if (canceled) return
+      setProgress(loaded / total)
+    })
 
     return () => {
-      unsubscribeProgress()
       canceled = true
+      unsubscribeProgress()
     }
   }, [url, setAttrs])
 

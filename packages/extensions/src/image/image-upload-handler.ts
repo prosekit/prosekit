@@ -1,5 +1,6 @@
 import {
   insertNode,
+  ProseKitError,
   union,
   type PlainExtension,
 } from '@prosekit/core'
@@ -103,7 +104,12 @@ export function defineImageUploadHandler({
     const objectURL = uploadTask.objectURL
     const attrs: ImageAttrs = { src: objectURL }
     uploadTask.finished.then((resultURL) => {
-      if (!view.isDestroyed) {
+      if (view.isDestroyed) {
+        return
+      } else if (typeof resultURL !== 'string') {
+        const error = new ProseKitError(`Unexpected upload result. Expected a string but got ${typeof resultURL}`)
+        onError({ file, error, uploadTask })
+      } else {
         replaceImageURL(view, objectURL, resultURL)
       }
     }).catch((error) => {

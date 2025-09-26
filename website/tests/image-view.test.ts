@@ -22,6 +22,7 @@ testStory('image-view', () => {
     const editor = locateEditor(page)
     const resizable = editor.locator('prosekit-resizable-root').first()
 
+    await expect(resizable).toBeVisible()
     await expect(resizable).not.toHaveAttribute('data-selected', '')
     await resizable.click()
     await expect(resizable).toHaveAttribute('data-selected', '')

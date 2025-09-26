@@ -7,7 +7,6 @@ import {
 } from 'prosekit/solid/resizable'
 import {
   createEffect,
-  createMemo,
   createSignal,
   onCleanup,
   Show,

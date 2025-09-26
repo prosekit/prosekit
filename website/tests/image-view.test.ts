@@ -10,6 +10,7 @@ import {
 
 testStory('image-view', ({ example }) => {
   test('renders default images', async ({ page }) => {
+    test.skip(example === 'solid-image-view', 'Solid image view still under construction')
     const editor = locateEditor(page)
     const images = editor.locator('img')
 

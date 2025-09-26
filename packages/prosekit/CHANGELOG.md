@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.15.6
+
+### Patch Changes
+
+- [`cf1e5ca`](https://github.com/ocavue/prosekit/commit/cf1e5ca2af1442eff6d9e895b954bff461ff9e46) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineImageUploadHandler` to handle images uploading when pasting or dragging images into the editor.
+
 ## 0.15.5
 
 ### Patch Changes

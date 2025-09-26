@@ -1,13 +1,16 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import type { ImageAttrs as BaseImageAttrs } from 'prosekit/extensions/image'
+import {
+  defineImageUploadHandler,
+  type ImageAttrs as BaseImageAttrs,
+} from 'prosekit/extensions/image'
 import {
   defineReactNodeView,
   type ReactNodeViewComponent,
 } from 'prosekit/react'
 
 import ImageView from './image-view'
-import { defineImageFileHandlers } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 export function defineExtension() {
   return union(
@@ -16,7 +19,11 @@ export function defineExtension() {
       name: 'image',
       component: ImageView satisfies ReactNodeViewComponent,
     }),
-    defineImageFileHandlers(),
+    defineImageUploadHandler(
+      {
+        uploader: sampleUploader,
+      },
+    ),
   )
 }
 

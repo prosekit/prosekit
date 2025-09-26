@@ -13,7 +13,7 @@ import {
 
 import Button from './button'
 import type { EditorExtension } from './extension'
-import { tmpfilesUploader } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 export const ImageUploadPopover: FC<{
   tooltip: string
@@ -35,7 +35,7 @@ export const ImageUploadPopover: FC<{
     if (file) {
       const uploadTask = new UploadTask({
         file,
-        uploader: tmpfilesUploader,
+        uploader: sampleUploader,
       })
       setObjectUrl(uploadTask.objectURL)
       setWebUrl('')

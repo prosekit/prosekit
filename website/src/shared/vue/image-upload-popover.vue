@@ -13,7 +13,7 @@ import {
 
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
-import { tmpfilesUploader } from './upload-file'
+import { sampleUploader } from './sample-uploader'
 
 const props = defineProps<{
   disabled: Boolean
@@ -32,7 +32,7 @@ function handleFileChange(event: Event) {
   if (file) {
     const uploadTask = new UploadTask({
       file,
-      uploader: tmpfilesUploader,
+      uploader: sampleUploader,
     })
     objectUrl.value = uploadTask.objectURL
     webUrl.value = ''
@@ -105,11 +105,7 @@ function handleOpenChange(openValue: boolean) {
           @input="handleFileChange"
         />
       </template>
-      <button
-        v-if="url"
-        class="CSS_IMAGE_UPLOAD_BUTTON"
-        @click="handleSubmit"
-      >
+      <button v-if="url" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
         Insert Image
       </button>
     </PopoverContent>

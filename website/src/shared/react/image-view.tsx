@@ -22,49 +22,25 @@ export default function ImageView(props: ReactNodeViewProps) {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    if (!url.startsWith('blob:')) {
-      return
-    }
+    if (!url.startsWith('blob:')) return
 
     const uploadTask = UploadTask.get<string>(url)
-    if (!uploadTask) {
-      return
-    }
+    if (!uploadTask) return
 
-    const abortController = new AbortController()
-    void uploadTask.finished
-      .then((resultUrl) => {
-        if (resultUrl && typeof resultUrl === 'string') {
-          if (abortController.signal.aborted) {
-            return
-          }
-          setAttrs({ src: resultUrl })
-        } else {
-          if (abortController.signal.aborted) {
-            return
-          }
-          setError('Unexpected upload result')
-        }
-        UploadTask.delete(uploadTask.objectURL)
-      })
-      .catch((error) => {
-        if (abortController.signal.aborted) {
-          return
-        }
-        setError(String(error))
-        UploadTask.delete(uploadTask.objectURL)
-      })
-    const unsubscribe = uploadTask.subscribeProgress(({ loaded, total }) => {
-      if (abortController.signal.aborted) {
-        return
-      }
-      if (total > 0) {
-        setProgress(loaded / total)
-      }
+    let canceled = false
+
+    uploadTask.finished.catch((error) => {
+      if (canceled) return
+      setError(String(error))
     })
+    const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
+      if (canceled) return
+      setProgress(loaded / total)
+    })
+
     return () => {
-      unsubscribe()
-      abortController.abort()
+      canceled = true
+      unsubscribeProgress()
     }
   }, [url, setAttrs])
 

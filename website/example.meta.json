@@ -184,6 +184,10 @@
           "hidden": false
         },
         {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        },
+        {
           "path": "slash-menu-empty.tsx",
           "hidden": false
         },
@@ -205,10 +209,6 @@
         },
         {
           "path": "tag-menu.tsx",
-          "hidden": false
-        },
-        {
-          "path": "upload-file.ts",
           "hidden": false
         },
         {
@@ -300,15 +300,15 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
-          "hidden": false
-        },
-        {
           "path": "image-view.tsx",
           "hidden": false
         },
         {
-          "path": "upload-file.ts",
+          "path": "sample-doc-image.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
           "hidden": false
         }
       ]
@@ -683,7 +683,7 @@
           "hidden": false
         },
         {
-          "path": "upload-file.ts",
+          "path": "sample-uploader.ts",
           "hidden": false
         },
         {
@@ -1060,6 +1060,10 @@
           "hidden": false
         },
         {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        },
+        {
           "path": "slash-menu-empty.vue",
           "hidden": false
         },
@@ -1081,10 +1085,6 @@
         },
         {
           "path": "tag-menu.vue",
-          "hidden": false
-        },
-        {
-          "path": "upload-file.ts",
           "hidden": false
         },
         {
@@ -1138,15 +1138,15 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
-          "hidden": false
-        },
-        {
           "path": "image-view.vue",
           "hidden": false
         },
         {
-          "path": "upload-file.ts",
+          "path": "sample-doc-image.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
           "hidden": false
         }
       ]

@@ -46,9 +46,34 @@ function withNodeViewProps(
   component: SolidNodeViewComponent,
 ): Component<SolidNodeViewProps> {
   return function NodeViewPropsWrapper() {
-    const props: Accessor<SolidNodeViewProps> = useNodeViewContext()
-
-    return createComponent(component, props())
+    const context: Accessor<SolidNodeViewProps> = useNodeViewContext()
+    const props: SolidNodeViewProps = {
+      get contentRef() {
+        return context().contentRef
+      },
+      get view() {
+        return context().view
+      },
+      get getPos() {
+        return context().getPos
+      },
+      get setAttrs() {
+        return context().setAttrs
+      },
+      get node() {
+        return context().node
+      },
+      get selected() {
+        return context().selected
+      },
+      get decorations() {
+        return context().decorations
+      },
+      get innerDecorations() {
+        return context().innerDecorations
+      },
+    }
+    return createComponent(component, props)
   }
 }
 

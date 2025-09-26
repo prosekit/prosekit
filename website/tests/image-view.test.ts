@@ -20,7 +20,7 @@ testStory('image-view', () => {
 
   test('selects image on click', async ({ page }) => {
     const editor = locateEditor(page)
-    const resizable = editor.locator('.CSS_IMAGE_RESIZEALE').first()
+    const resizable = editor.locator('prosekit-resizable-root').first()
 
     await expect(resizable).not.toHaveAttribute('data-selected', '')
     await resizable.click()

@@ -2,7 +2,6 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import {
   defineImageUploadHandler,
-  type ImageAttrs as BaseImageAttrs,
 } from 'prosekit/extensions/image'
 import {
   defineReactNodeView,
@@ -27,9 +26,6 @@ export function defineExtension() {
   )
 }
 
-export type ImageAttrs = BaseImageAttrs & {
-  width: number | null
-  height: number | null
-}
+
 
 export type EditorExtension = ReturnType<typeof defineExtension>

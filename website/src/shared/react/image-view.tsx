@@ -22,7 +22,7 @@ export default function ImageView(props: ReactNodeViewProps) {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    if (!url.startsWith('blob:')) return
+    if (!uploading) return
 
     const uploadTask = UploadTask.get<string>(url)
     if (!uploadTask) return
@@ -42,7 +42,7 @@ export default function ImageView(props: ReactNodeViewProps) {
       canceled = true
       unsubscribeProgress()
     }
-  }, [url, setAttrs])
+  }, [url, uploading, setAttrs])
 
   const handleImageLoad = (event: SyntheticEvent) => {
     const img = event.target as HTMLImageElement

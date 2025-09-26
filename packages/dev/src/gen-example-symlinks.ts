@@ -36,6 +36,8 @@ const mapping: Record<string, string[]> = {
   'shared/common/sample-doc-image.ts': [
     /// keep-sorted
     'examples/react/image-view/',
+    'examples/solid/image-view/',
+    'examples/svelte/image-view/',
     'examples/vue/image-view/',
   ],
   'shared/common/sample-uploader.ts': [
@@ -43,6 +45,8 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/image-view/',
     'examples/react/toolbar/',
+    'examples/solid/image-view/',
+    'examples/svelte/image-view/',
     'examples/vue/full/',
     'examples/vue/image-view/',
     'shared/react/',
@@ -226,6 +230,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/block-handle/',
   ],
+  'shared/solid/image-view.tsx': [
+    /// keep-sorted
+    'examples/solid/image-view/',
+  ],
   'shared/solid/table-handle.tsx': [
     /// keep-sorted
     'examples/solid/table/',
@@ -268,6 +276,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/svelte/block-handle/',
     'examples/svelte/full/',
+  ],
+  'shared/svelte/image-view.svelte': [
+    /// keep-sorted
+    'examples/svelte/image-view/',
   ],
   'shared/svelte/slash-menu-empty.svelte': [
     /// keep-sorted

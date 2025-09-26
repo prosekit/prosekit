@@ -6,10 +6,10 @@ import {
   ResizableRoot,
 } from 'prosekit/solid/resizable'
 import {
-  Show,
   createEffect,
   createSignal,
   onCleanup,
+  Show,
 } from 'solid-js'
 
 export default function ImageView(props: SolidNodeViewProps) {

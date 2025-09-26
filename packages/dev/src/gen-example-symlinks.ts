@@ -36,8 +36,8 @@ const mapping: Record<string, string[]> = {
   'shared/common/sample-doc-image.ts': [
     /// keep-sorted
     'examples/react/image-view/',
-    'examples/svelte/image-view/',
     'examples/solid/image-view/',
+    'examples/svelte/image-view/',
     'examples/vue/image-view/',
   ],
   'shared/common/sample-uploader.ts': [
@@ -45,8 +45,8 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/image-view/',
     'examples/react/toolbar/',
-    'examples/svelte/image-view/',
     'examples/solid/image-view/',
+    'examples/svelte/image-view/',
     'examples/vue/full/',
     'examples/vue/image-view/',
     'shared/react/',

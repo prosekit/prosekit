@@ -23,7 +23,6 @@ watchPostEffect((onCleanup) => {
 <template>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
-      <Toolbar />
       <div class="CSS_EDITOR_SCROLLING">
         <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
       </div>

@@ -2,25 +2,23 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import { defineImageUploadHandler } from 'prosekit/extensions/image'
 import {
-  defineReactNodeView,
-  type ReactNodeViewComponent,
-} from 'prosekit/react'
+  defineSvelteNodeView,
+  type SvelteNodeViewComponent,
+} from 'prosekit/svelte'
 
-import ImageView from './image-view'
+import ImageView from './image-view.svelte'
 import { sampleUploader } from './sample-uploader'
 
 export function defineExtension() {
   return union(
     defineBasicExtension(),
-    defineReactNodeView({
+    defineSvelteNodeView({
       name: 'image',
-      component: ImageView satisfies ReactNodeViewComponent,
+      component: ImageView as SvelteNodeViewComponent,
     }),
-    defineImageUploadHandler(
-      {
-        uploader: sampleUploader,
-      },
-    ),
+    defineImageUploadHandler({
+      uploader: sampleUploader,
+    }),
   )
 }
 

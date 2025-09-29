@@ -75,16 +75,8 @@ export class UploadTask<Result> {
       const maybePromise = uploader({
         file,
         onProgress: (progress) => {
-          if (typeof progress.total !== 'number') {
-            throw new TypeError('total must be a number')
-          }
-          if (typeof progress.loaded !== 'number') {
-            throw new TypeError('loaded must be a number')
-          }
-          if (progress.loaded > 0) {
-            for (const subscriber of this.subscribers) {
-              subscriber(progress)
-            }
+          for (const subscriber of this.subscribers) {
+            subscriber(progress)
           }
         },
       })

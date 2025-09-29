@@ -22,7 +22,7 @@ export default function ImageView(props: ReactNodeViewProps) {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    if (!url.startsWith('blob:')) return
+    if (!uploading) return
 
     const uploadTask = UploadTask.get<string>(url)
     if (!uploadTask) return
@@ -35,14 +35,14 @@ export default function ImageView(props: ReactNodeViewProps) {
     })
     const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
       if (canceled) return
-      setProgress(loaded / total)
+      setProgress(total ? loaded / total : 0)
     })
 
     return () => {
       canceled = true
       unsubscribeProgress()
     }
-  }, [url, setAttrs])
+  }, [url, uploading, setAttrs])
 
   const handleImageLoad = (event: SyntheticEvent) => {
     const img = event.target as HTMLImageElement
@@ -63,13 +63,13 @@ export default function ImageView(props: ReactNodeViewProps) {
       aspectRatio={aspectRatio}
       onResizeEnd={(event) => setAttrs(event.detail)}
       data-selected={props.selected ? '' : undefined}
-      className="CSS_IMAGE_RESIZEALE"
+      className="CSS_IMAGE_RESIZABLE"
     >
       {url && !error && (
         <img
           src={url}
           onLoad={handleImageLoad}
-          className="CSS_IMAGE_RESIZEALE_IMAGE"
+          className="CSS_IMAGE_RESIZABLE_IMAGE"
         />
       )}
       {uploading && !error && (
@@ -87,7 +87,7 @@ export default function ImageView(props: ReactNodeViewProps) {
         </div>
       )}
       <ResizableHandle
-        className="CSS_IMAGE_RESIZEALE_HANDLE"
+        className="CSS_IMAGE_RESIZABLE_HANDLE"
         position="bottom-right"
       >
         <div className="CSS_ICON_CORNER_HANDLE"></div>

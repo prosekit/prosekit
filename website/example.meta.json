@@ -2134,6 +2134,33 @@
       ]
     },
     {
+      "name": "svelte-image-view",
+      "framework": "svelte",
+      "story": "image-view",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.svelte",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-image.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-italic",
       "framework": "svelte",
       "story": "italic",
@@ -2515,6 +2542,33 @@
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-image-view",
+      "framework": "solid",
+      "story": "image-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-image.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
           "hidden": false
         }
       ]

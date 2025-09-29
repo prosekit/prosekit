@@ -24,7 +24,7 @@ const error = ref<string | undefined>()
 const progress = ref(0)
 
 watchEffect((onCleanup) => {
-  if (!url.value.startsWith('blob:')) return
+  if (!uploading.value) return
 
   const uploadTask = UploadTask.get<string>(url.value)
   if (!uploadTask) return
@@ -37,7 +37,7 @@ watchEffect((onCleanup) => {
   })
   const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
     if (canceled) return
-    progress.value = loaded / total
+    progress.value = total ? loaded / total : 0
   })
 
   onCleanup(() => {
@@ -69,13 +69,13 @@ function handleImageLoad(event: Event) {
     :height="attrs.height ?? undefined"
     :aspect-ratio="aspectRatio"
     :data-selected="props.selected.value ? '' : undefined"
-    class="CSS_IMAGE_RESIZEALE"
+    class="CSS_IMAGE_RESIZABLE"
     @resize-end="(event) => setAttrs(event.detail)"
   >
     <img
       v-if="url && !error"
       :src="url"
-      class="CSS_IMAGE_RESIZEALE_IMAGE"
+      class="CSS_IMAGE_RESIZABLE_IMAGE"
       @load="handleImageLoad"
     />
 
@@ -88,7 +88,7 @@ function handleImageLoad(event: Event) {
       <div class="CSS_IMAGE_UPLOAD_ERROR_MESSAGE">Failed to upload image</div>
     </div>
 
-    <ResizableHandle class="CSS_IMAGE_RESIZEALE_HANDLE" position="bottom-right">
+    <ResizableHandle class="CSS_IMAGE_RESIZABLE_HANDLE" position="bottom-right">
       <div class="CSS_ICON_CORNER_HANDLE"></div>
     </ResizableHandle>
   </ResizableRoot>

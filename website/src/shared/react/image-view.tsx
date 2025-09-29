@@ -35,7 +35,7 @@ export default function ImageView(props: ReactNodeViewProps) {
     })
     const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
       if (canceled) return
-      setProgress(loaded / total)
+      setProgress(total ? loaded / total : 0)
     })
 
     return () => {

@@ -37,7 +37,7 @@ watchEffect((onCleanup) => {
   })
   const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
     if (canceled) return
-    progress.value = loaded / total
+    progress.value = total ? loaded / total : 0
   })
 
   onCleanup(() => {

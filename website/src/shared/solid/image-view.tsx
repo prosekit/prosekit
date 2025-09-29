@@ -40,7 +40,7 @@ export default function ImageView(props: SolidNodeViewProps) {
 
     const unsubscribe = uploadTask.subscribeProgress(({ loaded, total }) => {
       if (canceled) return
-      setProgress(loaded / total)
+      setProgress(total ? loaded / total : 0)
     })
 
     onCleanup(() => {

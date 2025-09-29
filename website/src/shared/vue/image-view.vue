@@ -69,13 +69,13 @@ function handleImageLoad(event: Event) {
     :height="attrs.height ?? undefined"
     :aspect-ratio="aspectRatio"
     :data-selected="props.selected.value ? '' : undefined"
-    class="CSS_IMAGE_RESIZEALE"
+    class="CSS_IMAGE_RESIZABLE"
     @resize-end="(event) => setAttrs(event.detail)"
   >
     <img
       v-if="url && !error"
       :src="url"
-      class="CSS_IMAGE_RESIZEALE_IMAGE"
+      class="CSS_IMAGE_RESIZABLE_IMAGE"
       @load="handleImageLoad"
     />
 
@@ -88,7 +88,7 @@ function handleImageLoad(event: Event) {
       <div class="CSS_IMAGE_UPLOAD_ERROR_MESSAGE">Failed to upload image</div>
     </div>
 
-    <ResizableHandle class="CSS_IMAGE_RESIZEALE_HANDLE" position="bottom-right">
+    <ResizableHandle class="CSS_IMAGE_RESIZABLE_HANDLE" position="bottom-right">
       <div class="CSS_ICON_CORNER_HANDLE"></div>
     </ResizableHandle>
   </ResizableRoot>

@@ -78,7 +78,7 @@ export default function ImageView(props: SolidNodeViewProps) {
       width={attrs().width ?? undefined}
       height={attrs().height ?? undefined}
       aspectRatio={aspectRatio()}
-      class="CSS_IMAGE_RESIZEALE"
+      class="CSS_IMAGE_RESIZABLE"
       attr:data-selected={selected() ? '' : undefined}
       onResizeEnd={handleResizeEnd}
     >
@@ -86,7 +86,7 @@ export default function ImageView(props: SolidNodeViewProps) {
         <img
           src={url()}
           onLoad={handleImageLoad}
-          class="CSS_IMAGE_RESIZEALE_IMAGE"
+          class="CSS_IMAGE_RESIZABLE_IMAGE"
         />
       </Show>
 
@@ -104,7 +104,7 @@ export default function ImageView(props: SolidNodeViewProps) {
         </div>
       </Show>
 
-      <ResizableHandle class="CSS_IMAGE_RESIZEALE_HANDLE" position="bottom-right">
+      <ResizableHandle class="CSS_IMAGE_RESIZABLE_HANDLE" position="bottom-right">
         <div class="CSS_ICON_CORNER_HANDLE"></div>
       </ResizableHandle>
     </ResizableRoot>

@@ -73,14 +73,14 @@ function handleResizeEnd(event: CustomEvent<{ width: number; height: number }>) 
   width={attrs.width ?? undefined}
   height={attrs.height ?? undefined}
   aspectRatio={aspectRatio}
-  class="CSS_IMAGE_RESIZEALE"
+  class="CSS_IMAGE_RESIZABLE"
   data-selected={$selected ? '' : undefined}
   onResizeEnd={handleResizeEnd}
 >
   {#if url && !error}
     <img
       src={url}
-      class="CSS_IMAGE_RESIZEALE_IMAGE"
+      class="CSS_IMAGE_RESIZABLE_IMAGE"
       on:load={handleImageLoad}
     />
   {/if}
@@ -99,7 +99,7 @@ function handleResizeEnd(event: CustomEvent<{ width: number; height: number }>) 
     </div>
   {/if}
 
-  <ResizableHandle class="CSS_IMAGE_RESIZEALE_HANDLE" position="bottom-right">
+  <ResizableHandle class="CSS_IMAGE_RESIZABLE_HANDLE" position="bottom-right">
     <div class="CSS_ICON_CORNER_HANDLE"></div>
   </ResizableHandle>
 </ResizableRoot>

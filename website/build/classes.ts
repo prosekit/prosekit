@@ -164,17 +164,17 @@ export const CSS_IMAGE_UPLOAD_BUTTON = cn(
   'w-full',
 )
 
-export const CSS_IMAGE_RESIZEALE = cn(
+export const CSS_IMAGE_RESIZABLE = cn(
   'relative flex items-center justify-center box-border overflow-hidden my-2 group',
   'max-h-[600px] max-w-full min-h-[64px] min-w-[64px]',
   'outline-2 outline-transparent data-selected:outline-blue-500 outline-solid',
 )
 
-export const CSS_IMAGE_RESIZEALE_IMAGE = cn(
+export const CSS_IMAGE_RESIZABLE_IMAGE = cn(
   'h-full w-full max-w-full max-h-full object-contain',
 )
 
-export const CSS_IMAGE_RESIZEALE_HANDLE = cn(
+export const CSS_IMAGE_RESIZABLE_HANDLE = cn(
   'absolute bottom-0 right-0 rounded-sm m-1.5 p-1 transition',
   'bg-gray-900/30 active:bg-gray-800/60 hover:bg-gray-800/60 text-white/50 active:text-white/80',
   'active:translate-x-0.5 active:translate-y-0.5',

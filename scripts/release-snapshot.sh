@@ -26,12 +26,13 @@ for attempt in 1 2 3 4 5; do
   exit_code=$?
 
   if [ "$exit_code" -eq 0 ]; then
+    echo "publish succeeded"
     break
   elif [ "$attempt" -eq 5 ]; then
-    echo "pkg-pr-new publish failed after ${attempt} attempts (exit ${exit_code})" >&2
+    echo "publish failed after ${attempt} attempts (exit ${exit_code})" >&2
     exit "$exit_code"
   else
-    echo "pkg-pr-new failed (exit ${exit_code}). Retrying in 5s..." >&2
+    echo "publish failed (exit ${exit_code}). Retrying in 5s..." >&2
     sleep 5
   fi
 done

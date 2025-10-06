@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.2",
-    "@prosemirror-adapter/solid": "^0.4.2"
+    "@prosemirror-adapter/core": "^0.4.5",
+    "@prosemirror-adapter/solid": "^0.4.5"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"
@@ -63,7 +63,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "solid-js": "^1.9.9",
-    "tsdown": "^0.15.4",
+    "tsdown": "^0.15.6",
     "typescript": "~5.9.2"
   },
   "publishConfig": {

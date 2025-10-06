@@ -15,6 +15,7 @@
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
+    "ci:publish:snapshot": "pkg-pr-new publish --pnpm",
     "fix": "pnpm run fix:manypkg && pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:eslint && pnpm run fix:dprint",
     "fix:manypkg": "manypkg fix",
     "fix:dprint": "dprint fmt",

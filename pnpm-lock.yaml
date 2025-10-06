@@ -419,12 +419,6 @@ importers:
       '@prosekit/web':
         specifier: workspace:^
         version: link:../web
-      '@prosemirror-adapter/core':
-        specifier: ^0.4.5
-        version: 0.4.5
-      '@prosemirror-adapter/preact':
-        specifier: ^0.4.5
-        version: 0.4.5(preact@10.27.2)
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -2350,14 +2344,6 @@ packages:
 
   '@prosemirror-adapter/core@0.4.5':
     resolution: {integrity: sha512-22uU2dWD2VDw2fVM1vzFlhFpp8Cow3LiWh2kltUFwzkCTHTvkn9AsuI7YF5QvYyzMXzwFIixfG11WZRDj3oZgw==}
-
-  '@prosemirror-adapter/preact@0.4.5':
-    resolution: {integrity: sha512-O5YZFrpJjIJ3ckmT1pxuUt1wyE4h9MR6ouV2B8YVZh74hsQSuDG+CQt3ILZUtHxbKyWvcKw5hoHe3dlPWtNqfw==}
-    peerDependencies:
-      preact: ^10.0.0
-    peerDependenciesMeta:
-      preact:
-        optional: true
 
   '@prosemirror-adapter/react@0.4.5':
     resolution: {integrity: sha512-z+A6IRJwn17F0VUiPDDD/DkJuwVxo51uxsFfE4aubEcTcvbFvlqqcn4g4P7nGSvPjqLojqZHP4BBOd6ArMrXAg==}
@@ -9329,16 +9315,6 @@ snapshots:
       prosemirror-model: 1.25.3
       prosemirror-state: 1.4.3
       prosemirror-view: 1.41.1
-
-  '@prosemirror-adapter/preact@0.4.5(preact@10.27.2)':
-    dependencies:
-      '@prosemirror-adapter/core': 0.4.5
-      nanoid: 5.1.6
-      prosemirror-model: 1.25.3
-      prosemirror-state: 1.4.3
-      prosemirror-view: 1.41.1
-    optionalDependencies:
-      preact: 10.27.2
 
   '@prosemirror-adapter/react@0.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:

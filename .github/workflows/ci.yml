@@ -110,20 +110,7 @@ jobs:
 
       - name: Publish snapshot packages
         if: ${{ github.event_name == 'pull_request' }}
-        run: >
-          ./node_modules/.bin/pkg-pr-new publish --pnpm
-          ./packages/basic
-          ./packages/core
-          ./packages/extensions
-          ./packages/lit
-          ./packages/pm
-          ./packages/preact
-          ./packages/prosekit
-          ./packages/react
-          ./packages/solid
-          ./packages/svelte
-          ./packages/vue
-          ./packages/web
+        run: ./scripts/release-snapshot.sh
 
   linkcheck:
     runs-on: ubuntu-latest

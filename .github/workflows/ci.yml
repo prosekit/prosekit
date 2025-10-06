@@ -110,7 +110,15 @@ jobs:
 
       - name: Publish snapshot packages
         if: ${{ github.event_name == 'pull_request' }}
-        run: ./scripts/release-snapshot.sh
+        run: |
+          for attempt in 1 2 3 4 5; do
+            echo "Attempt ${attempt} to publish snapshot packages..."
+            if pnpm run ci:publish:snapshot; then
+              echo "Publish snapshot packages succeeded"
+              break
+            fi
+            sleep 5
+          done
 
   linkcheck:
     runs-on: ubuntu-latest

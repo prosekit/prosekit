@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.2",
-    "@prosemirror-adapter/react": "^0.4.4"
+    "@prosemirror-adapter/core": "^0.4.5",
+    "@prosemirror-adapter/react": "^0.4.5"
   },
   "peerDependencies": {
     "react": ">= 18.2.0",
@@ -66,11 +66,11 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tsdown": "^0.15.4",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tsdown": "^0.15.6",
     "typescript": "~5.9.2"
   },
   "publishConfig": {

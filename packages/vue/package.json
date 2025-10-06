@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.2",
-    "@prosemirror-adapter/vue": "^0.4.2"
+    "@prosemirror-adapter/core": "^0.4.5",
+    "@prosemirror-adapter/vue": "^0.4.5"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"
@@ -64,10 +64,10 @@
     "@prosekit/config-vitest": "workspace:*",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/test-utils": "^2.4.6",
-    "tsdown": "^0.15.4",
+    "tsdown": "^0.15.6",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
-    "vue": "^3.5.21"
+    "vue": "^3.5.22"
   },
   "publishConfig": {
     "exports": {

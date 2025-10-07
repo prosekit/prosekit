@@ -99,7 +99,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [ ] svelte
     - [ ] solid
-  - [x] Test exists (`website/tests/gap-cursor.test.ts`) — currently marked FIXME; see notes below
+  - [x] Test exists (`website/tests/gap-cursor.test.ts`)
 
 - [ ] hard-break
   - Frameworks:
@@ -324,7 +324,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [x] Test exists (`website/tests/text-color.test.ts`) — currently marked FIXME due to flakiness; stabilize inline menu targeting and color normalization
+  - [x] Test exists (`website/tests/text-color.test.ts`)
 
 - [ ] toolbar
   - Frameworks:
@@ -401,7 +401,6 @@ Source: `website/example.meta.json`
 ---
 
 Notes:
-- text-color: selection + inline menu works visually, but applying a new color to an already colored span didn’t reflect as expected in e2e; need to scope the correct inline popover button and verify DOM update strategy. Pending.
-- gap-cursor: need a robust way to activate and assert the gap cursor without relying on transient visuals; consider keyboard navigation then asserting `.ProseMirror-gapcursor` exists.
-  - Current e2e test exists but is marked FIXME due to flakiness activating the gap selection in CI. Implement a deterministic activation (e.g., simulated precise key navigation or programmatic selection) before un-skipping.
-- drop-cursor: requires reliable DnD flow for indicator; may need helper to simulate drag with multiple mousemove steps.
+- text-color: resolved. The e2e test now selects the exact word programmatically, clicks the inline color button, asserts via CSS color, and clears back to default.
+- gap-cursor: resolved. The e2e test now clicks the precise visual gap between stacked images and asserts the gap cursor decoration exists.
+- drop-cursor: resolved earlier using stable HTML5 drag-and-drop reordering.

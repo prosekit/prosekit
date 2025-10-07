@@ -11,13 +11,32 @@ import {
 
 testStory('text-color', () => {
   test('change and clear text color via inline menu', async ({ page }) => {
-    test.fixme(true, 'Inline color menu activation and color normalization are flaky in CI; see TODO.md for plan to stabilize')
     const editor = await waitForEditor(page)
 
-    // Select the word "some"
-    const some = editor.locator('span', { hasText: 'some' })
-    await expect(some.first()).toBeVisible()
-    await some.first().dblclick()
+    // Programmatically select the exact word "some" inside its span for stability
+    const selectWord = async (word: string) => {
+      await page.evaluate((w) => {
+        const root = document.querySelector('div.ProseMirror')!
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT)
+        let textNode: Text | null = null
+        while (walker.nextNode()) {
+          const n = walker.currentNode as Text
+          if (n.nodeValue?.trim() === w) {
+            textNode = n
+            break
+          }
+        }
+        if (!textNode) return
+        const range = document.createRange()
+        range.setStart(textNode, 0)
+        range.setEnd(textNode, textNode.nodeValue!.length)
+        const sel = window.getSelection()!
+        sel.removeAllRanges()
+        sel.addRange(range)
+      }, word)
+    }
+
+    await selectWord('some')
     expect(await getSelectedText(page)).toBe('some')
 
     // Inline color menu should appear; change to blue
@@ -25,12 +44,13 @@ testStory('text-color', () => {
     await expect(blueBtn).toBeVisible()
     await blueBtn.click()
 
-    // Assert the selected text now has blue color (#3b82f6)
-    const someBlue = editor.locator('span[style*="color: #3b82f6"]', { hasText: 'some' })
-    await expect(someBlue).toBeVisible()
+    // Assert the selected text now renders with blue color
+    const someSpan = editor.locator('span', { hasText: 'some' }).first()
+    await expect(someSpan).toBeVisible()
+    await expect(someSpan).toHaveCSS('color', 'rgb(59, 130, 246)')
 
     // Select again and clear color using "default"
-    await someBlue.dblclick()
+    await selectWord('some')
     expect(await getSelectedText(page)).toBe('some')
     const defaultBtn = page.getByRole('button', { name: 'default' })
     await expect(defaultBtn).toBeVisible()

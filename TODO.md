@@ -11,14 +11,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] blockquote
+- [x] blockquote
 
   - Frameworks:
     - [x] react
     - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] bold
 

@@ -189,7 +189,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [x] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/list.test.ts`)
+  - [x] Test exists (`website/tests/list.test.ts`)
 
 - [ ] list-custom-checkbox
   - Frameworks:

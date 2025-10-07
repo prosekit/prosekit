@@ -16,10 +16,10 @@ testStory('bold', () => {
 
     await emptyEditor(page)
 
-    // Turn on bold, type text -> should be wrapped in <strong>/<b>
+    // Turn on bold, type text -> should be wrapped in <strong>
     await boldBtn.click()
     await editor.pressSequentially('hello')
-    const strongHello = editor.locator('strong, b', { hasText: /hello/ })
+    const strongHello = editor.locator('strong', { hasText: /hello/ })
     await expect(strongHello).toBeVisible()
 
     // Turn off bold, type more -> should not be bold
@@ -27,7 +27,7 @@ testStory('bold', () => {
     await editor.pressSequentially(' world')
     await expect(strongHello).toBeVisible()
     await expect(editor).toContainText('hello world')
-    await expect(editor.locator('strong, b', { hasText: /world/ })).toHaveCount(0)
+    await expect(editor.locator('strong', { hasText: /world/ })).toHaveCount(0)
   })
 
   test('toggle on selection', async ({ page }) => {
@@ -47,11 +47,11 @@ testStory('bold', () => {
 
     // Apply bold to selection
     await boldBtn.click()
-    const strongWorld = editor.locator('strong, b', { hasText: /world/ })
+    const strongWorld = editor.locator('strong', { hasText: /world/ })
     await expect(strongWorld).toBeVisible()
 
     // Toggle bold off for the same selection
     await boldBtn.click()
-    await expect(editor.locator('strong, b', { hasText: /world/ })).toHaveCount(0)
+    await expect(editor.locator('strong', { hasText: /world/ })).toHaveCount(0)
   })
 })

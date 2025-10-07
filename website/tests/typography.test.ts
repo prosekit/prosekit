@@ -36,7 +36,7 @@ testStory('typography', () => {
     // Horizontal rule
     await expect(editor.locator('hr')).toBeVisible()
 
-    // Image (alt may be dropped by schema)
+    // Image
     await expect(editor.locator('img')).toBeVisible()
 
     // Table

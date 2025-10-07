@@ -290,13 +290,13 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] strike
+- [x] strike
 
   - Frameworks:
     - [x] react
     - [x] preact
     - [x] vue
-    - [ ] svelte
+    - [x] svelte
     - [x] solid
 
 - [ ] table
@@ -344,13 +344,13 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] underline
+- [x] underline
 
   - Frameworks:
     - [x] react
     - [x] preact
     - [x] vue
-    - [ ] svelte
+    - [x] svelte
     - [x] solid
 
 - [ ] unmount

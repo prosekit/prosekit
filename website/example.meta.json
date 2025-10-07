@@ -2705,6 +2705,29 @@
       ]
     },
     {
+      "name": "svelte-strike",
+      "framework": "svelte",
+      "story": "strike",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-table",
       "framework": "svelte",
       "story": "table",
@@ -2780,6 +2803,29 @@
         },
         {
           "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-underline",
+      "framework": "svelte",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
           "hidden": false
         }
       ]

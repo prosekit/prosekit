@@ -21,9 +21,11 @@ export const loaders = {
   'readonly': () => import('./readonly/editor.svelte'),
   'save-json': () => import('./save-json/editor.svelte'),
   'slash-menu': () => import('./slash-menu/editor.svelte'),
+  'strike': () => import('./strike/editor.svelte'),
   'table': () => import('./table/editor.svelte'),
   'text-align': () => import('./text-align/editor.svelte'),
   'toolbar': () => import('./toolbar/editor.svelte'),
   'typography': () => import('./typography/editor.svelte'),
+  'underline': () => import('./underline/editor.svelte'),
   'word-counter': () => import('./word-counter/editor.svelte'),
 }

@@ -20,4 +20,5 @@ export const loaders = {
   'table': lazy(() => import('./table/editor')),
   'text-align': lazy(() => import('./text-align/editor')),
   'typography': lazy(() => import('./typography/editor')),
+  'underline': lazy(() => import('./underline/editor')),
 }

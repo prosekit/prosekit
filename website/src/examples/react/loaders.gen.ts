@@ -35,6 +35,7 @@ export const loaders = {
   'table': lazy(() => import('./table/editor')),
   'toolbar': lazy(() => import('./toolbar/editor')),
   'typography': lazy(() => import('./typography/editor')),
+  'underline': lazy(() => import('./underline/editor')),
   'unmount': lazy(() => import('./unmount/editor')),
   'user-menu': lazy(() => import('./user-menu/editor')),
   'user-menu-dynamic': lazy(() => import('./user-menu-dynamic/editor')),

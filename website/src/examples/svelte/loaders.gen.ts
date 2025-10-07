@@ -25,5 +25,6 @@ export const loaders = {
   'text-align': () => import('./text-align/editor.svelte'),
   'toolbar': () => import('./toolbar/editor.svelte'),
   'typography': () => import('./typography/editor.svelte'),
+  'underline': () => import('./underline/editor.svelte'),
   'word-counter': () => import('./word-counter/editor.svelte'),
 }

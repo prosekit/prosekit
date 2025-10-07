@@ -344,14 +344,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] underline
+- [x] underline
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
-    - [ ] svelte
-    - [ ] solid
+    - [x] svelte
+    - [x] solid
 
 - [ ] unmount
 

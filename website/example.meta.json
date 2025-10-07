@@ -800,6 +800,29 @@
       ]
     },
     {
+      "name": "react-underline",
+      "framework": "react",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-unmount",
       "framework": "react",
       "story": "unmount",
@@ -2082,6 +2105,29 @@
       ]
     },
     {
+      "name": "preact-underline",
+      "framework": "preact",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-minimal",
       "framework": "svelte",
       "story": "minimal",
@@ -2678,6 +2724,29 @@
       ]
     },
     {
+      "name": "svelte-underline",
+      "framework": "svelte",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-word-counter",
       "framework": "svelte",
       "story": "word-counter",
@@ -3102,6 +3171,29 @@
         },
         {
           "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-underline",
+      "framework": "solid",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]

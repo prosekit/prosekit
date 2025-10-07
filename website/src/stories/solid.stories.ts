@@ -21,3 +21,4 @@ export const Strike = { args: { story: 'strike' } }
 export const Table = { args: { story: 'table' } }
 export const TextAlign = { args: { story: 'text-align' } }
 export const Typography = { args: { story: 'typography' } }
+export const Underline = { args: { story: 'underline' } }

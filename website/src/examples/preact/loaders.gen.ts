@@ -16,4 +16,5 @@ export const loaders = {
   'strike': lazy(() => import('./strike/editor')),
   'table': lazy(() => import('./table/editor')),
   'typography': lazy(() => import('./typography/editor')),
+  'underline': lazy(() => import('./underline/editor')),
 }

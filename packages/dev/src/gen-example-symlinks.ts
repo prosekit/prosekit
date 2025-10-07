@@ -116,6 +116,7 @@ const mapping: Record<string, string[]> = {
     'examples/preact/keymap/',
     'examples/preact/readonly/',
     'examples/preact/strike/',
+    'examples/preact/underline/',
   ],
   'shared/preact/drop-indicator.tsx': [
     /// keep-sorted
@@ -177,6 +178,7 @@ const mapping: Record<string, string[]> = {
     'examples/react/search/',
     'examples/react/strike/',
     'examples/react/toolbar/',
+    'examples/react/underline/',
     'examples/react/yjs/',
   ],
   'shared/react/code-block-view.tsx': [
@@ -256,6 +258,7 @@ const mapping: Record<string, string[]> = {
     'examples/solid/readonly/',
     'examples/solid/strike/',
     'examples/solid/text-align/',
+    'examples/solid/underline/',
   ],
   'shared/solid/code-block-view.tsx': [
     /// keep-sorted
@@ -303,6 +306,7 @@ const mapping: Record<string, string[]> = {
     'examples/svelte/strike/',
     'examples/svelte/text-align/',
     'examples/svelte/toolbar/',
+    'examples/svelte/underline/',
   ],
   'shared/svelte/code-block-view.svelte': [
     /// keep-sorted

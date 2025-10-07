@@ -36,7 +36,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [x] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/change-tracking.test.ts`)
+  - [x] Test exists (`website/tests/change-tracking.test.ts`)
 
 - [ ] code
   - Frameworks:

@@ -38,14 +38,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [ ] solid
 
-- [ ] code
+- [x] code
 
   - Frameworks:
     - [x] react
     - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] code-block
 
@@ -146,14 +146,14 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] italic
+- [x] italic
 
   - Frameworks:
     - [x] react
     - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] keymap
 
@@ -297,7 +297,7 @@ Source: `website/example.meta.json`
     - [x] preact
     - [x] vue
     - [ ] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] table
 
@@ -351,7 +351,7 @@ Source: `website/example.meta.json`
     - [x] preact
     - [x] vue
     - [ ] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] unmount
 

@@ -12,16 +12,22 @@ The file `TODO.md` tracks which story/framework combinations are missing (unchec
 
 ## Setup
 
+Please follow CONTRIBUTING.md to setup the project. Make sure `pnpm install` is successful.
+
 Before starting, run the development server in the background (required for e2e tests):
+
 ```bash
 pnpm -w dev
 ```
+
+This should start the development server at https://localhost:4321. Please use `lsof -i :4321` to check if the server is running.
 
 ## Implementation Loop
 
 For each unchecked checkbox in TODO.md, follow these steps:
 
 1. **Implement ONE example** (one story + one framework combination)
+
    - Pick only ONE framework for ONE story at a time
    - Look at existing implementations in `website/src/examples/` for reference
    - Reuse shared components/utilities from `website/src/shared/` when possible
@@ -29,6 +35,7 @@ For each unchecked checkbox in TODO.md, follow these steps:
 2. **Update TODO.md** to check off the completed checkbox
 
 3. **Run validation commands** (must all pass):
+
    ```bash
    pnpm -w gen                                             # Generate symlinks and update metadata
    pnpm -w fix:dprint                                      # Format code
@@ -43,6 +50,7 @@ For each unchecked checkbox in TODO.md, follow these steps:
 ## Handling Failures
 
 If you encounter persistent issues with a specific example after multiple attempts:
+
 - Add a comment in TODO.md to skip that example
 - Move on to the next unchecked item
 - Continue until all viable examples are complete

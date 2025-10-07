@@ -7,9 +7,7 @@ import {
   type Extension,
 } from '@prosekit/core'
 import { useSyncExternalStore } from 'preact/compat'
-import {
-  useMemo,
-} from 'preact/hooks'
+import { useMemo } from 'preact/hooks'
 
 import { useEditorContext } from '../contexts/editor-context'
 

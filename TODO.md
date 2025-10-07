@@ -387,7 +387,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [x] svelte
     - [ ] solid
-  - [x] Test exists (`website/tests/word-counter.test.ts`)
+  - [x] Test exists (`website/tests/word-counter.test.ts`) — verifies counters change after additional typing
 
 - [ ] yjs
   - Frameworks:

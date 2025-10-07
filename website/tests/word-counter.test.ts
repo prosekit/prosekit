@@ -19,5 +19,10 @@ testStory('word-counter', () => {
 
     await expect(page.getByText('Word Count: 3')).toBeVisible()
     await expect(page.getByText('Character Count: 13')).toBeVisible()
+
+    // Type more words and verify both counters update accordingly
+    await editor.pressSequentially(' four five')
+    await expect(page.getByText('Word Count: 5')).toBeVisible()
+    await expect(page.getByText('Character Count: 23')).toBeVisible()
   })
 })

@@ -204,6 +204,25 @@
       ]
     },
     {
+      "name": "react-emoji-rules",
+      "framework": "react",
+      "story": "emoji-rules",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-full",
       "framework": "react",
       "story": "full",
@@ -796,6 +815,29 @@
       ]
     },
     {
+      "name": "react-text-align",
+      "framework": "react",
+      "story": "text-align",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-toolbar",
       "framework": "react",
       "story": "toolbar",
@@ -1167,6 +1209,25 @@
         },
         {
           "path": "sample-doc-drop-cursor.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-emoji-rules",
+      "framework": "vue",
+      "story": "emoji-rules",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
           "hidden": false
         }
       ]
@@ -2024,6 +2085,25 @@
       ]
     },
     {
+      "name": "preact-emoji-rules",
+      "framework": "preact",
+      "story": "emoji-rules",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-hard-break",
       "framework": "preact",
       "story": "hard-break",
@@ -2280,6 +2360,29 @@
         },
         {
           "path": "table-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-text-align",
+      "framework": "preact",
+      "story": "text-align",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -3178,6 +3281,25 @@
         },
         {
           "path": "sample-doc-drop-cursor.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-emoji-rules",
+      "framework": "solid",
+      "story": "emoji-rules",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
           "hidden": false
         }
       ]

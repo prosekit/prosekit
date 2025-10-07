@@ -74,14 +74,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] emoji-rules
+- [x] emoji-rules
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
-    - [ ] vue
+    - [x] react
+    - [x] preact
+    - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] full
 
@@ -110,7 +110,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] heading
+- [x] heading
 
   - Frameworks:
     - [x] react
@@ -308,11 +308,11 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] text-align
+- [x] text-align
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [x] svelte
     - [x] solid

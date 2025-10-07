@@ -9,6 +9,7 @@ export const loaders = {
   'change-tracking': lazy(() => import('./change-tracking/editor')),
   'code': lazy(() => import('./code/editor')),
   'drop-cursor': lazy(() => import('./drop-cursor/editor')),
+  'emoji-rules': lazy(() => import('./emoji-rules/editor')),
   'hard-break': lazy(() => import('./hard-break/editor')),
   'heading': lazy(() => import('./heading/editor')),
   'horizontal-rule': lazy(() => import('./horizontal-rule/editor')),
@@ -20,6 +21,7 @@ export const loaders = {
   'slash-menu': lazy(() => import('./slash-menu/editor')),
   'strike': lazy(() => import('./strike/editor')),
   'table': lazy(() => import('./table/editor')),
+  'text-align': lazy(() => import('./text-align/editor')),
   'typography': lazy(() => import('./typography/editor')),
   'underline': lazy(() => import('./underline/editor')),
 }

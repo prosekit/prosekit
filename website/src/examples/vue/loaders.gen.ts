@@ -10,6 +10,7 @@ export const loaders = {
   'code-block': defineAsyncComponent(() => import('./code-block/editor.vue')),
   'code-block-themes': defineAsyncComponent(() => import('./code-block-themes/editor.vue')),
   'drop-cursor': defineAsyncComponent(() => import('./drop-cursor/editor.vue')),
+  'emoji-rules': defineAsyncComponent(() => import('./emoji-rules/editor.vue')),
   'full': defineAsyncComponent(() => import('./full/editor.vue')),
   'hard-break': defineAsyncComponent(() => import('./hard-break/editor.vue')),
   'heading': defineAsyncComponent(() => import('./heading/editor.vue')),

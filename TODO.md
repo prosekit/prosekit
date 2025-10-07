@@ -342,7 +342,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [x] svelte
     - [x] solid
-  - [ ] Test missing (`website/tests/typography.test.ts`)
+  - [x] Test exists (`website/tests/typography.test.ts`)
 
 - [ ] underline
   - Frameworks:

@@ -2570,6 +2570,29 @@
       ]
     },
     {
+      "name": "solid-bold",
+      "framework": "solid",
+      "story": "bold",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-code-block",
       "framework": "solid",
       "story": "code-block",

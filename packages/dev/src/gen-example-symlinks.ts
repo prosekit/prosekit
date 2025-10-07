@@ -240,6 +240,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/solid/button.tsx': [
     /// keep-sorted
+    'examples/solid/bold/',
     'examples/solid/code-block/',
     'examples/solid/hard-break/',
     'examples/solid/heading/',

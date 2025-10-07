@@ -20,14 +20,14 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] bold
+- [x] bold
 
   - Frameworks:
     - [x] react
     - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] change-tracking
 

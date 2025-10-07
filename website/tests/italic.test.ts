@@ -19,16 +19,15 @@ testStory('italic', () => {
     // Turn on italic, type text -> should be wrapped in <em>
     await italicBtn.click()
     await editor.pressSequentially('hello')
-    const html1 = await editor.innerHTML()
-    expect(html1).toContain('<em>hello</em>')
+    const emHello = editor.locator('em', { hasText: /hello/ })
+    await expect(emHello).toBeVisible()
 
     // Turn off italic, type more -> should not be italic
     await italicBtn.click()
     await editor.pressSequentially(' world')
-    const html2 = await editor.innerHTML()
-    expect(html2).toContain('<em>hello</em>')
-    expect(html2).toContain(' world')
-    expect(html2).not.toContain('<em> world</em>')
+    await expect(emHello).toBeVisible()
+    await expect(editor).toContainText('hello world')
+    await expect(editor.locator('em', { hasText: /world/ })).toHaveCount(0)
   })
 
   test('toggle on selection', async ({ page }) => {
@@ -48,12 +47,11 @@ testStory('italic', () => {
 
     // Apply italic to selection
     await italicBtn.click()
-    let html = await editor.innerHTML()
-    expect(html).toContain('<em>world</em>')
+    const emWorld = editor.locator('em', { hasText: /world/ })
+    await expect(emWorld).toBeVisible()
 
     // Toggle italic off for the same selection
     await italicBtn.click()
-    html = await editor.innerHTML()
-    expect(html).not.toContain('<em>world</em>')
+    await expect(editor.locator('em', { hasText: /world/ })).toHaveCount(0)
   })
 })

@@ -324,7 +324,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/text-color.test.ts`)
+  - [x] Test exists (`website/tests/text-color.test.ts`) — currently marked FIXME due to flakiness; stabilize inline menu targeting and color normalization
 
 - [ ] toolbar
   - Frameworks:

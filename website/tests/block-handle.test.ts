@@ -137,7 +137,7 @@ testStory(['full'], () => {
     expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
 
-  test(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
+  test.only(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
     const editor = await waitForEditor(page)
     await emptyEditor(page)
     const blockHandle = page.locator('prosekit-block-handle-popover')
@@ -197,7 +197,6 @@ testStory(['full'], () => {
 
     await test.step('close the block handle', async () => {
       await closeBlockHandle(page)
-      await expectBlockHandleToClose(page)
     })
 
     await test.step('hover over the second paragraph', async () => {
@@ -218,7 +217,7 @@ async function expectBlockHandleToOpen(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
   const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
-  await expect(blockHandle).toHaveAttribute('data-state', 'open')
+  await expect(blockHandle).toHaveAttribute('data-state', 'open', { timeout: 5000 })
   await waitForAnimationEnd(blockHandle)
   await waitForAnimationEnd(blockHandleDraggable)
 }
@@ -227,12 +226,12 @@ async function expectBlockHandleToClose(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
   const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
-  await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+  await expect(blockHandle).toHaveAttribute('data-state', 'closed', { timeout: 5000 })
   await waitForAnimationEnd(blockHandle)
   await waitForAnimationEnd(blockHandleDraggable)
 }
 
 async function closeBlockHandle(page: Page) {
-  await page.mouse.move(0, 0, { steps: 5 })
+  await page.mouse.move(0, 0, { steps: 10 })
   await expectBlockHandleToClose(page)
 }

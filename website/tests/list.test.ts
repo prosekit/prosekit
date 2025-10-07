@@ -53,7 +53,7 @@ testStory('list', () => {
 
     await expect(orderedBtn).toBeVisible()
     await orderedBtn.click()
-    await expect(orderedList.first()).toHaveCount(0)
+    await expect(orderedList).toHaveCount(0)
   })
 
   test('toggle task list', async ({ page }) => {
@@ -67,7 +67,7 @@ testStory('list', () => {
     await expect(taskList.locator('input[type="checkbox"]').first()).toBeVisible()
 
     await taskBtn.click()
-    await expect(taskList.first()).toHaveCount(0)
+    await expect(taskList).toHaveCount(0)
   })
 
   test('toggle toggle-list', async ({ page }) => {
@@ -80,6 +80,6 @@ testStory('list', () => {
     await expect(toggleList.locator('p', { hasText: 'Toggle' })).toBeVisible()
 
     await toggleBtn.click()
-    await expect(toggleList.first()).toHaveCount(0)
+    await expect(toggleList).toHaveCount(0)
   })
 })

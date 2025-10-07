@@ -1,4 +1,7 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
 import { testStory } from './helper'
 
@@ -26,4 +29,3 @@ testStory('yjs', () => {
     await expect(b).toContainText('Hi', { timeout: 30000 })
   })
 })
-

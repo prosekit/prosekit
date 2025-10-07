@@ -56,6 +56,6 @@ testStory('underline', () => {
     // Toggle underline off for the same selection
     await expect(underlineBtn).toBeVisible()
     await underlineBtn.click()
-    await expect(editor.locator('u', { hasText: /world/ })).toHaveCount(0)
+    await expect(underWorld).toHaveCount(0)
   })
 })

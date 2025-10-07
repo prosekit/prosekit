@@ -9,4 +9,6 @@ export const loaders = {
   'slash-menu': lazy(() => import('./slash-menu/editor')),
   'table': lazy(() => import('./table/editor')),
   'typography': lazy(() => import('./typography/editor')),
+  'image-view': lazy(() => import('./image-view/editor')),
+  'link-mark-view': lazy(() => import('./link-mark-view/editor')),
 }

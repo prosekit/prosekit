@@ -15,7 +15,7 @@ Source: `website/example.meta.json`
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
     - [ ] svelte
     - [ ] solid

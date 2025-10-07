@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.15.7
+
+### Patch Changes
+
+- [`79eb0e7`](https://github.com/ocavue/prosekit/commit/79eb0e7c51bb3c72104c789e250dc9738e882f29) ![](https://prosekit.dev/b/preact)
+
+  Add complete Preact support with node/mark views and useEditorDerivedValue hook. Preact now has feature parity with React, including:
+
+  - `definePreactNodeView` for custom node views
+  - `definePreactMarkView` for custom mark views
+  - `useEditorDerivedValue` hook for reactive state derivation
+
 ## 0.15.6
 
 ### Patch Changes

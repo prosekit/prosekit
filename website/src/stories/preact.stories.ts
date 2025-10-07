@@ -9,6 +9,7 @@ export const Blockquote = { args: { story: 'blockquote' } }
 export const Bold = { args: { story: 'bold' } }
 export const ChangeTracking = { args: { story: 'change-tracking' } }
 export const Code = { args: { story: 'code' } }
+export const DropCursor = { args: { story: 'drop-cursor' } }
 export const Heading = { args: { story: 'heading' } }
 export const HorizontalRule = { args: { story: 'horizontal-rule' } }
 export const ImageView = { args: { story: 'image-view' } }

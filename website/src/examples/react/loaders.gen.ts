@@ -10,6 +10,7 @@ export const loaders = {
   'code': lazy(() => import('./code/editor')),
   'code-block': lazy(() => import('./code-block/editor')),
   'code-block-themes': lazy(() => import('./code-block-themes/editor')),
+  'drop-cursor': lazy(() => import('./drop-cursor/editor')),
   'full': lazy(() => import('./full/editor')),
   'gap-cursor': lazy(() => import('./gap-cursor/editor')),
   'heading': lazy(() => import('./heading/editor')),

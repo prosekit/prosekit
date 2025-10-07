@@ -185,6 +185,25 @@
       ]
     },
     {
+      "name": "react-drop-cursor",
+      "framework": "react",
+      "story": "drop-cursor",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-drop-cursor.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-full",
       "framework": "react",
       "story": "full",
@@ -1935,6 +1954,25 @@
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-drop-cursor",
+      "framework": "preact",
+      "story": "drop-cursor",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-drop-cursor.ts",
           "hidden": false
         }
       ]

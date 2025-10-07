@@ -65,11 +65,11 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [ ] solid
 
-- [ ] drop-cursor
+- [x] drop-cursor
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [x] svelte
     - [x] solid

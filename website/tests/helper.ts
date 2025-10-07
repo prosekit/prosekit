@@ -227,8 +227,8 @@ export async function dragAndDrop(
   await page.mouse.up()
 }
 
-export async function emptyEditor(page: Page) {
-  const editor = await waitForEditor(page)
+export async function emptyEditor(page: Page, options?: { editor?: Locator }) {
+  const editor = options?.editor ?? (await waitForEditor(page))
   await editor.press(IS_APPLE ? 'Meta+a' : 'Control+a')
   await editor.press('Backspace')
   await editor.press('Backspace')

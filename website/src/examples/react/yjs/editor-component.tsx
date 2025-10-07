@@ -11,19 +11,19 @@ import * as Y from 'yjs'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
 
-export default function EditorComponent() {
+export default function EditorComponent({ room }: { room?: string }) {
   const editor = useMemo(() => {
     const doc = new Y.Doc()
     const provider = new WebsocketProvider(
       // Use the public ws server from yjs
       'wss://demos.yjs.dev/ws',
-      'github.com/prosekit',
+      `github.com/prosekit/room_${room}`,
       doc,
     )
 
     const extension = defineExtension(doc, provider.awareness)
     return createEditor({ extension })
-  }, [])
+  }, [room])
 
   return (
     <ProseKit editor={editor}>

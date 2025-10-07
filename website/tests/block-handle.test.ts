@@ -24,28 +24,19 @@ testStory(['full'], () => {
 
     // Hover over a block and measure the position of the block handle
     const measure = async (block: Locator) => {
-      await test.step('expect block to be visible', async () => {
+      await test.step('open block handle', async () => {
         await expect(block).toBeVisible()
-      })
-      await test.step('expect block handle to be attached', async () => {
         await expect(blockHandle).toBeAttached()
-      })
-      await test.step('hover over block', async () => {
         await hover(block)
-      })
-      await test.step('expect block handle to open', async () => {
         await expectBlockHandleToOpen(page)
       })
 
-      const box = await test.step('get bounding box', async () => {
+      const box = await test.step('measure block handle', async () => {
         return await getBoundingBox(blockHandleDraggable)
       })
 
       await test.step('close block handle', async () => {
         await closeBlockHandle(page)
-      })
-      await test.step('expect block handle to close', async () => {
-        await expectBlockHandleToClose(page)
       })
 
       return box
@@ -236,22 +227,12 @@ async function expectBlockHandleToClose(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
   const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
-  await test.step('expect block handle to have attribute data-state closed', async () => {
-    await expect(blockHandle).toHaveAttribute('data-state', 'closed')
-  })
-  await test.step('wait for block handle animation end', async () => {
-    await waitForAnimationEnd(blockHandle)
-  })
-  await test.step('wait for block handle draggable animation end', async () => {
-    await waitForAnimationEnd(blockHandleDraggable)
-  })
+  await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+  await waitForAnimationEnd(blockHandle)
+  await waitForAnimationEnd(blockHandleDraggable)
 }
 
 async function closeBlockHandle(page: Page) {
-  await test.step('move mouse to the top-left corner', async () => {
-    await page.mouse.move(0, 0, { steps: 5 })
-  })
-  await test.step('expect block handle to close', async () => {
-    await expectBlockHandleToClose(page)
-  })
+  await page.mouse.move(0, 0, { steps: 5 })
+  await expectBlockHandleToClose(page)
 }

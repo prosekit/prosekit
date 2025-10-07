@@ -81,7 +81,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [x] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/emoji-rules.test.ts`)
+  - [x] Test exists (`website/tests/emoji-rules.test.ts`)
 
 - [ ] full
   - Frameworks:

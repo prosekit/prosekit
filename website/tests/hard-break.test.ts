@@ -1,6 +1,12 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { testStory, waitForEditor } from './helper'
+import {
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('hard-break', () => {
   test('insert hard break via toolbar and keyboard', async ({ page }) => {
@@ -25,4 +31,3 @@ testStory('hard-break', () => {
     await expect(editor.getByText('B')).toBeVisible()
   })
 })
-

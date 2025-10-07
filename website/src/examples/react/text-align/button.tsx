@@ -1,10 +1,9 @@
-import type { ReactNode } from 'react'
-
 import {
   TooltipContent,
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/react/tooltip'
+import type { ReactNode } from 'react'
 
 export default function Button({
   pressed,

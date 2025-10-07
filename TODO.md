@@ -293,8 +293,8 @@ Source: `website/example.meta.json`
 - [ ] strike
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [ ] svelte
     - [ ] solid
@@ -347,8 +347,8 @@ Source: `website/example.meta.json`
 - [ ] underline
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [ ] svelte
     - [ ] solid

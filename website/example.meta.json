@@ -712,6 +712,29 @@
       ]
     },
     {
+      "name": "react-strike",
+      "framework": "react",
+      "story": "strike",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-table",
       "framework": "react",
       "story": "table",
@@ -772,6 +795,29 @@
         },
         {
           "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-underline",
+      "framework": "react",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -2067,6 +2113,29 @@
       ]
     },
     {
+      "name": "preact-strike",
+      "framework": "preact",
+      "story": "strike",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-table",
       "framework": "preact",
       "story": "table",
@@ -2096,6 +2165,29 @@
         },
         {
           "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-underline",
+      "framework": "preact",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]

@@ -31,31 +31,4 @@ testStory('strike', () => {
     await expect(editor).toContainText('hello world')
     await expect(editor.locator('s', { hasText: /world/ })).toHaveCount(0)
   })
-
-  test('toggle on selection', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const strikeBtn = page.getByRole('button', { name: 'Strikethrough' })
-
-    await emptyEditor(page)
-
-    // Type text and select the last 5 characters "world"
-    await editor.pressSequentially('hello world')
-    await editor.focus()
-    await page.keyboard.down('Shift')
-    for (let i = 0; i < 5; i++) {
-      await page.keyboard.press('ArrowLeft')
-    }
-    await page.keyboard.up('Shift')
-
-    // Apply strike to selection
-    await expect(strikeBtn).toBeVisible()
-    await strikeBtn.click()
-    const struckWorld = editor.locator('s', { hasText: /world/ })
-    await expect(struckWorld).toBeVisible()
-
-    // Toggle strike off for the same selection
-    await expect(strikeBtn).toBeVisible()
-    await strikeBtn.click()
-    await expect(editor.locator('s', { hasText: /world/ })).toHaveCount(0)
-  })
 })

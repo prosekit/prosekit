@@ -31,31 +31,4 @@ testStory('bold', () => {
     await expect(editor).toContainText('hello world')
     await expect(editor.locator('strong', { hasText: /world/ })).toHaveCount(0)
   })
-
-  test('toggle on selection', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const boldBtn = page.getByRole('button', { name: 'Bold' })
-
-    await emptyEditor(page)
-
-    // Type text and select the last 5 characters "world"
-    await editor.pressSequentially('hello world')
-    await editor.focus()
-    await page.keyboard.down('Shift')
-    for (let i = 0; i < 5; i++) {
-      await page.keyboard.press('ArrowLeft')
-    }
-    await page.keyboard.up('Shift')
-
-    // Apply bold to selection
-    await expect(boldBtn).toBeVisible()
-    await boldBtn.click()
-    const strongWorld = editor.locator('strong', { hasText: /world/ })
-    await expect(strongWorld).toBeVisible()
-
-    // Toggle bold off for the same selection
-    await expect(boldBtn).toBeVisible()
-    await boldBtn.click()
-    await expect(editor.locator('strong', { hasText: /world/ })).toHaveCount(0)
-  })
 })

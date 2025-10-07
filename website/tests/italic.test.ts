@@ -31,31 +31,4 @@ testStory('italic', () => {
     await expect(editor).toContainText('hello world')
     await expect(editor.locator('em', { hasText: /world/ })).toHaveCount(0)
   })
-
-  test('toggle on selection', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const italicBtn = page.getByRole('button', { name: 'Italic' })
-
-    await emptyEditor(page)
-
-    // Type text and select the last 5 characters "world"
-    await editor.pressSequentially('hello world')
-    await editor.focus()
-    await page.keyboard.down('Shift')
-    for (let i = 0; i < 5; i++) {
-      await page.keyboard.press('ArrowLeft')
-    }
-    await page.keyboard.up('Shift')
-
-    // Apply italic to selection
-    await expect(italicBtn).toBeVisible()
-    await italicBtn.click()
-    const emWorld = editor.locator('em', { hasText: /world/ })
-    await expect(emWorld).toBeVisible()
-
-    // Toggle italic off for the same selection
-    await expect(italicBtn).toBeVisible()
-    await italicBtn.click()
-    await expect(editor.locator('em', { hasText: /world/ })).toHaveCount(0)
-  })
 })

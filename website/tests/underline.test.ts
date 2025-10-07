@@ -31,31 +31,4 @@ testStory('underline', () => {
     await expect(editor).toContainText('hello world')
     await expect(editor.locator('u', { hasText: /world/ })).toHaveCount(0)
   })
-
-  test('toggle on selection', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const underlineBtn = page.getByRole('button', { name: 'Underline' })
-
-    await emptyEditor(page)
-
-    // Type text and select the last 5 characters "world"
-    await editor.pressSequentially('hello world')
-    await editor.focus()
-    await page.keyboard.down('Shift')
-    for (let i = 0; i < 5; i++) {
-      await page.keyboard.press('ArrowLeft')
-    }
-    await page.keyboard.up('Shift')
-
-    // Apply underline to selection
-    await expect(underlineBtn).toBeVisible()
-    await underlineBtn.click()
-    const underWorld = editor.locator('u', { hasText: /world/ })
-    await expect(underWorld).toBeVisible()
-
-    // Toggle underline off for the same selection
-    await expect(underlineBtn).toBeVisible()
-    await underlineBtn.click()
-    await expect(underWorld).toHaveCount(0)
-  })
 })

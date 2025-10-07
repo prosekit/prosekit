@@ -13,6 +13,7 @@ export const loaders = {
   'drop-cursor': lazy(() => import('./drop-cursor/editor')),
   'full': lazy(() => import('./full/editor')),
   'gap-cursor': lazy(() => import('./gap-cursor/editor')),
+  'hard-break': lazy(() => import('./hard-break/editor')),
   'heading': lazy(() => import('./heading/editor')),
   'horizontal-rule': lazy(() => import('./horizontal-rule/editor')),
   'image-view': lazy(() => import('./image-view/editor')),

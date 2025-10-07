@@ -12,6 +12,7 @@ export const loaders = {
   'drop-cursor': () => import('./drop-cursor/editor.svelte'),
   'emoji-rules': () => import('./emoji-rules/editor.svelte'),
   'full': () => import('./full/editor.svelte'),
+  'hard-break': () => import('./hard-break/editor.svelte'),
   'heading': () => import('./heading/editor.svelte'),
   'horizontal-rule': () => import('./horizontal-rule/editor.svelte'),
   'image-view': () => import('./image-view/editor.svelte'),

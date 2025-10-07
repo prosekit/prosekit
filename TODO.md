@@ -101,13 +101,13 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] hard-break
+- [x] hard-break
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
-    - [ ] vue
-    - [ ] svelte
+    - [x] react
+    - [x] preact
+    - [x] vue
+    - [x] svelte
     - [x] solid
 
 - [ ] heading

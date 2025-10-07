@@ -11,6 +11,7 @@ export const loaders = {
   'code-block-themes': defineAsyncComponent(() => import('./code-block-themes/editor.vue')),
   'drop-cursor': defineAsyncComponent(() => import('./drop-cursor/editor.vue')),
   'full': defineAsyncComponent(() => import('./full/editor.vue')),
+  'hard-break': defineAsyncComponent(() => import('./hard-break/editor.vue')),
   'heading': defineAsyncComponent(() => import('./heading/editor.vue')),
   'horizontal-rule': defineAsyncComponent(() => import('./horizontal-rule/editor.vue')),
   'image-view': defineAsyncComponent(() => import('./image-view/editor.vue')),

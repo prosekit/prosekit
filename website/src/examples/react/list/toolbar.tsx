@@ -38,6 +38,7 @@ export default function Toolbar() {
         pressed={items.bullet.isActive}
         disabled={!items.bullet.canExec}
         onClick={items.bullet.command}
+        tooltip="Bullet"
       >
         <div className="CSS_ICON_LIST_BULLET" />
       </Button>
@@ -46,6 +47,7 @@ export default function Toolbar() {
         pressed={items.ordered.isActive}
         disabled={!items.ordered.canExec}
         onClick={items.ordered.command}
+        tooltip="Ordered"
       >
         <div className="CSS_ICON_LIST_ORDERED" />
       </Button>
@@ -54,6 +56,7 @@ export default function Toolbar() {
         pressed={items.task.isActive}
         disabled={!items.task.canExec}
         onClick={items.task.command}
+        tooltip="Task"
       >
         <div className="CSS_ICON_LIST_TASK" />
       </Button>
@@ -62,6 +65,7 @@ export default function Toolbar() {
         pressed={items.toggle.isActive}
         disabled={!items.toggle.canExec}
         onClick={items.toggle.command}
+        tooltip="Toggle"
       >
         <div className="CSS_ICON_LIST_TOGGLE" />
       </Button>

@@ -24,35 +24,41 @@ testStory(['full'], () => {
 
     // Hover over a block and measure the position of the block handle
     const measure = async (block: Locator) => {
-      await expect(block).toBeVisible()
-      await expect(blockHandle).toBeAttached()
+      await test.step('open block handle', async () => {
+        await expect(block).toBeVisible()
+        await expect(blockHandle).toBeAttached()
+        await hover(block)
+        await expectBlockHandleToOpen(page)
+      })
 
-      await hover(block)
-      await expectBlockHandleToOpen(page)
+      const box = await test.step('measure block handle', async () => {
+        return await getBoundingBox(blockHandleDraggable)
+      })
 
-      const box = await getBoundingBox(blockHandleDraggable)
-
-      await closeBlockHandle(page)
-      await expectBlockHandleToClose(page)
+      await test.step('close block handle', async () => {
+        await closeBlockHandle(page)
+      })
 
       return box
     }
 
-    // Insert paragraphs
-    await editor.pressSequentially('Paragraph 1')
-    await editor.press('Enter')
-    await editor.pressSequentially('Paragraph 2')
-    await editor.press('Enter')
-    await editor.pressSequentially('Paragraph 3')
-    await editor.press('Enter')
+    await test.step('insert paragraphs', async () => {
+      await editor.pressSequentially('Paragraph 1')
+      await editor.press('Enter')
+      await editor.pressSequentially('Paragraph 2')
+      await editor.press('Enter')
+      await editor.pressSequentially('Paragraph 3')
+      await editor.press('Enter')
+    })
 
-    // Insert a code block
-    await editor.pressSequentially('```javascript')
-    await editor.press('Enter')
-    await editor.pressSequentially('code block')
-    await editor.press('Enter')
-    await editor.press('Enter')
-    await editor.press('Enter')
+    await test.step('insert a code block', async () => {
+      await editor.pressSequentially('```javascript')
+      await editor.press('Enter')
+      await editor.pressSequentially('code block')
+      await editor.press('Enter')
+      await editor.press('Enter')
+      await editor.press('Enter')
+    })
 
     // Measure the position of the block handle
     const p1 = editor.locator('p', { hasText: 'Paragraph 1' })
@@ -60,12 +66,12 @@ testStory(['full'], () => {
     const p3 = editor.locator('p', { hasText: 'Paragraph 3' })
     const pre = editor.locator('pre', { hasText: 'code block' })
 
-    const boxHandleP1 = await measure(p1)
-    const boxHandleP2 = await measure(p2)
-    const boxHandleP3 = await measure(p3)
-    const boxHandlePre = await measure(pre)
-    const boxEditor = await getBoundingBox(editor)
-    const boxPre = await getBoundingBox(pre)
+    const boxHandleP1 = await test.step('measure p1', () => measure(p1))
+    const boxHandleP2 = await test.step('measure p2', () => measure(p2))
+    const boxHandleP3 = await test.step('measure p3', () => measure(p3))
+    const boxHandlePre = await test.step('measure pre', () => measure(pre))
+    const boxEditor = await test.step('measure editor', () => getBoundingBox(editor))
+    const boxPre = await test.step('measure pre', () => getBoundingBox(pre))
 
     // Expect the block handle to be inside the editor
     expect(boxEditor.x).toBeLessThan(boxHandleP1.x)
@@ -191,7 +197,6 @@ testStory(['full'], () => {
 
     await test.step('close the block handle', async () => {
       await closeBlockHandle(page)
-      await expectBlockHandleToClose(page)
     })
 
     await test.step('hover over the second paragraph', async () => {
@@ -212,7 +217,7 @@ async function expectBlockHandleToOpen(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
   const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
-  await expect(blockHandle).toHaveAttribute('data-state', 'open')
+  await expect(blockHandle).toHaveAttribute('data-state', 'open', { timeout: 5000 })
   await waitForAnimationEnd(blockHandle)
   await waitForAnimationEnd(blockHandleDraggable)
 }
@@ -221,12 +226,12 @@ async function expectBlockHandleToClose(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
   const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
-  await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+  await expect(blockHandle).toHaveAttribute('data-state', 'closed', { timeout: 5000 })
   await waitForAnimationEnd(blockHandle)
   await waitForAnimationEnd(blockHandleDraggable)
 }
 
 async function closeBlockHandle(page: Page) {
-  await page.mouse.move(0, 0, { steps: 100 })
+  await page.mouse.move(0, 0, { steps: 10 })
   await expectBlockHandleToClose(page)
 }

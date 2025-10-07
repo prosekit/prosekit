@@ -9,7 +9,7 @@ function getToolbarItems(editor: Editor<EditorExtension>) {
     blockquote: {
       isActive: editor.nodes.blockquote.isActive(),
       canExec: editor.commands.toggleBlockquote.canExec(),
-      command: () => editor.commands.setBlockquote(),
+      command: () => editor.commands.toggleBlockquote(),
     },
   }
 }

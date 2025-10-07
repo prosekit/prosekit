@@ -171,7 +171,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/link.test.ts`)
+  - [x] Test exists (`website/tests/link.test.ts`)
 
 - [ ] link-mark-view
   - Frameworks:

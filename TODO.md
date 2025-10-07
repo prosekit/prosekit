@@ -153,7 +153,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [x] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/italic.test.ts`)
+  - [x] Test exists (`website/tests/italic.test.ts`)
 
 - [ ] keymap
   - Frameworks:

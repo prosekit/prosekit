@@ -126,7 +126,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/horizontal-rule.test.ts`)
+  - [x] Test exists (`website/tests/horizontal-rule.test.ts`)
 
 - [ ] image-view
   - Frameworks:

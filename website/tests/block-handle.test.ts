@@ -38,21 +38,23 @@ testStory(['full'], () => {
       return box
     }
 
-    // Insert paragraphs
-    await editor.pressSequentially('Paragraph 1')
-    await editor.press('Enter')
-    await editor.pressSequentially('Paragraph 2')
-    await editor.press('Enter')
-    await editor.pressSequentially('Paragraph 3')
-    await editor.press('Enter')
+    await test.step('insert paragraphs', async () => {
+      await editor.pressSequentially('Paragraph 1')
+      await editor.press('Enter')
+      await editor.pressSequentially('Paragraph 2')
+      await editor.press('Enter')
+      await editor.pressSequentially('Paragraph 3')
+      await editor.press('Enter')
+    })
 
-    // Insert a code block
-    await editor.pressSequentially('```javascript')
-    await editor.press('Enter')
-    await editor.pressSequentially('code block')
-    await editor.press('Enter')
-    await editor.press('Enter')
-    await editor.press('Enter')
+    await test.step('insert a code block', async () => {
+      await editor.pressSequentially('```javascript')
+      await editor.press('Enter')
+      await editor.pressSequentially('code block')
+      await editor.press('Enter')
+      await editor.press('Enter')
+      await editor.press('Enter')
+    })
 
     // Measure the position of the block handle
     const p1 = editor.locator('p', { hasText: 'Paragraph 1' })
@@ -60,12 +62,12 @@ testStory(['full'], () => {
     const p3 = editor.locator('p', { hasText: 'Paragraph 3' })
     const pre = editor.locator('pre', { hasText: 'code block' })
 
-    const boxHandleP1 = await measure(p1)
-    const boxHandleP2 = await measure(p2)
-    const boxHandleP3 = await measure(p3)
-    const boxHandlePre = await measure(pre)
-    const boxEditor = await getBoundingBox(editor)
-    const boxPre = await getBoundingBox(pre)
+    const boxHandleP1 = await test.step('measure p1', () => measure(p1))
+    const boxHandleP2 = await test.step('measure p2', () => measure(p2))
+    const boxHandleP3 = await test.step('measure p3', () => measure(p3))
+    const boxHandlePre = await test.step('measure pre', () => measure(pre))
+    const boxEditor = await test.step('measure editor', () => getBoundingBox(editor))
+    const boxPre = await test.step('measure pre', () => getBoundingBox(pre))
 
     // Expect the block handle to be inside the editor
     expect(boxEditor.x).toBeLessThan(boxHandleP1.x)

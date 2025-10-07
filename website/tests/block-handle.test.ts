@@ -249,7 +249,7 @@ async function expectBlockHandleToClose(page: Page) {
 
 async function closeBlockHandle(page: Page) {
   await test.step('move mouse to the top-left corner', async () => {
-    await page.mouse.move(0, 0, { steps: 100 })
+    await page.mouse.move(0, 0, { steps: 5 })
   })
   await test.step('expect block handle to close', async () => {
     await expectBlockHandleToClose(page)

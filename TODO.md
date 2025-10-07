@@ -369,7 +369,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/user-menu.test.ts`)
+  - [x] Test exists (`website/tests/user-menu.test.ts`)
 
 - [ ] user-menu-dynamic
   - Frameworks:

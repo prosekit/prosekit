@@ -15,17 +15,17 @@ export const defaultContent: NodeJSON = {
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/150x150/8bd450/ffffff/png',
-        width: 150,
-        height: 150,
+        src: 'https://static.photos/white/200x200/1',
+        width: 160,
+        height: 160,
       },
     },
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/150x75/965fd4/ffffff/png',
-        width: 150,
-        height: 75,
+        src: 'https://static.photos/yellow/640x360/42',
+        width: 240,
+        height: 135,
       },
     },
   ],

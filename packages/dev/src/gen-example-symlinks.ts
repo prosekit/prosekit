@@ -33,6 +33,22 @@ const mapping: Record<string, string[]> = {
     'examples/react/mark-rule/',
     'examples/vue/mark-rule/',
   ],
+  'shared/common/sample-doc-code-block.ts': [
+    /// keep-sorted
+    'examples/react/code-block-themes/',
+    'examples/react/code-block/',
+    'examples/solid/code-block/',
+    'examples/svelte/code-block-themes/',
+    'examples/svelte/code-block/',
+    'examples/vue/code-block-themes/',
+    'examples/vue/code-block/',
+  ],
+  'shared/common/sample-doc-drop-cursor.ts': [
+    /// keep-sorted
+    'examples/solid/drop-cursor/',
+    'examples/svelte/drop-cursor/',
+    'examples/vue/drop-cursor/',
+  ],
   'shared/common/sample-doc-image.ts': [
     /// keep-sorted
     'examples/preact/image-view/',

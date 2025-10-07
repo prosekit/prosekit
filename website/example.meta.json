@@ -102,7 +102,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -129,7 +129,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -959,7 +959,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -986,7 +986,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -1009,7 +1009,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-drop-cursor.ts",
           "hidden": false
         }
       ]
@@ -1999,11 +1999,11 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "emoji.ts",
           "hidden": false
         },
         {
-          "path": "emoji.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -2030,7 +2030,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -2053,7 +2053,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-drop-cursor.ts",
           "hidden": false
         }
       ]
@@ -2518,7 +2518,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-code-block.ts",
           "hidden": false
         },
         {
@@ -2541,7 +2541,7 @@
           "hidden": false
         },
         {
-          "path": "default-doc.ts",
+          "path": "sample-doc-drop-cursor.ts",
           "hidden": false
         }
       ]

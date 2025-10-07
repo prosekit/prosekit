@@ -81,7 +81,7 @@ const defaultContent: NodeJSON = {
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/120x80',
+        src: 'https://static.photos/minimal/320x240/42',
       },
     },
     {

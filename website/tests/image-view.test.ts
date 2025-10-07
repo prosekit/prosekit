@@ -14,8 +14,8 @@ testStory('image-view', () => {
     const images = editor.locator('img')
 
     await expect(images).toHaveCount(2)
-    await expect(images.first()).toHaveAttribute('src', /placehold\.co\/150x150/)
-    await expect(images.nth(1)).toHaveAttribute('src', /placehold\.co\/150x75/)
+    await expect(images.nth(0)).toHaveAttribute('src', 'https://static.photos/white/200x200/1')
+    await expect(images.nth(1)).toHaveAttribute('src', 'https://static.photos/yellow/640x360/42')
   })
 
   test('selects image on click', async ({ page }) => {

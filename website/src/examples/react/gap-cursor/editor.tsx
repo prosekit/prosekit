@@ -25,6 +25,6 @@ export default function Editor() {
 
 const defaultContent = `
 <p>Click the gap between two images or press arrow keys to see the gap cursor between two images</p>
-<img src="https://placehold.co/200x100" />
-<img src="https://placehold.co/200x100" />
+<img src="https://static.photos/minimal/640x360/42" />
+<img src="https://static.photos/minimal/640x360/42" />
 `

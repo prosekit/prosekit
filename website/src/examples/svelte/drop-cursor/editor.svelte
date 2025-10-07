@@ -4,8 +4,8 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import { defaultContent } from './default-doc'
 import { defineExtension } from './extension'
+import { defaultContent } from './sample-doc-drop-cursor'
 
 const editor = createEditor({ extension: defineExtension(), defaultContent })
 

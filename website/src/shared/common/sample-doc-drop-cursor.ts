@@ -15,25 +15,25 @@ export const defaultContent: NodeJSON = {
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/120x60/f59e0b/FFF?text=Amber',
+        src: 'https://static.photos/yellow/320x240/42',
       },
     },
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/120x60/84cc16/FFF?text=Lime',
+        src: 'https://static.photos/green/320x240/40',
       },
     },
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/120x60/06b6d4/FFF?text=Cyan',
+        src: 'https://static.photos/blue/320x240/187',
       },
     },
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/120x60/f43f5e/FFF?text=Rose',
+        src: 'https://static.photos/red/320x240/188',
       },
     },
   ],

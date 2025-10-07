@@ -43,7 +43,7 @@ magic.transform(thoughts)
 
 <h2>Images that captivate.</h2>
 
-<img src="https://picsum.photos/id/302/300/200" alt="The future of writing">
+<img src="https://static.photos/season/320x240/107" alt="The future of writing">
 
 <p>Drag the handle in the bottom right corner to resize.</p>
 

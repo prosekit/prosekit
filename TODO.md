@@ -41,8 +41,8 @@ Source: `website/example.meta.json`
 - [ ] code
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [x] svelte
     - [ ] solid
@@ -114,7 +114,7 @@ Source: `website/example.meta.json`
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
     - [x] svelte
     - [x] solid
@@ -123,7 +123,7 @@ Source: `website/example.meta.json`
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [ ] vue
     - [ ] svelte
     - [ ] solid
@@ -149,8 +149,8 @@ Source: `website/example.meta.json`
 - [ ] italic
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [x] svelte
     - [ ] solid

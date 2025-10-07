@@ -119,14 +119,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] horizontal-rule
+- [x] horizontal-rule
 
   - Frameworks:
     - [x] react
     - [x] preact
-    - [ ] vue
-    - [ ] svelte
-    - [ ] solid
+    - [x] vue
+    - [x] svelte
+    - [x] solid
 
 - [ ] image-view
 

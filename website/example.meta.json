@@ -1240,6 +1240,29 @@
       ]
     },
     {
+      "name": "vue-horizontal-rule",
+      "framework": "vue",
+      "story": "horizontal-rule",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        },
+        {
+          "path": "button.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-image-view",
       "framework": "vue",
       "story": "image-view",
@@ -2521,6 +2544,29 @@
       ]
     },
     {
+      "name": "svelte-horizontal-rule",
+      "framework": "svelte",
+      "story": "horizontal-rule",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-image-view",
       "framework": "svelte",
       "story": "image-view",
@@ -3033,6 +3079,29 @@
       "name": "solid-heading",
       "framework": "solid",
       "story": "heading",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-horizontal-rule",
+      "framework": "solid",
+      "story": "horizontal-rule",
       "files": [
         {
           "path": "editor.tsx",

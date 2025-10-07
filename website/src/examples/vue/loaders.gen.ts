@@ -12,6 +12,7 @@ export const loaders = {
   'drop-cursor': defineAsyncComponent(() => import('./drop-cursor/editor.vue')),
   'full': defineAsyncComponent(() => import('./full/editor.vue')),
   'heading': defineAsyncComponent(() => import('./heading/editor.vue')),
+  'horizontal-rule': defineAsyncComponent(() => import('./horizontal-rule/editor.vue')),
   'image-view': defineAsyncComponent(() => import('./image-view/editor.vue')),
   'inline-menu': defineAsyncComponent(() => import('./inline-menu/editor.vue')),
   'italic': defineAsyncComponent(() => import('./italic/editor.vue')),

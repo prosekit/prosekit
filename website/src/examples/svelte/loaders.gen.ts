@@ -13,6 +13,7 @@ export const loaders = {
   'emoji-rules': () => import('./emoji-rules/editor.svelte'),
   'full': () => import('./full/editor.svelte'),
   'heading': () => import('./heading/editor.svelte'),
+  'horizontal-rule': () => import('./horizontal-rule/editor.svelte'),
   'image-view': () => import('./image-view/editor.svelte'),
   'italic': () => import('./italic/editor.svelte'),
   'keymap': () => import('./keymap/editor.svelte'),

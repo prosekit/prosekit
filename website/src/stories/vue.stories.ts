@@ -13,6 +13,7 @@ export const CodeBlockThemes = { args: { story: 'code-block-themes' } }
 export const DropCursor = { args: { story: 'drop-cursor' } }
 export const Full = { args: { story: 'full' } }
 export const Heading = { args: { story: 'heading' } }
+export const HorizontalRule = { args: { story: 'horizontal-rule' } }
 export const ImageView = { args: { story: 'image-view' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Italic = { args: { story: 'italic' } }

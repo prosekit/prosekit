@@ -1714,6 +1714,33 @@
       ]
     },
     {
+      "name": "preact-image-view",
+      "framework": "preact",
+      "story": "image-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-image.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-keymap",
       "framework": "preact",
       "story": "keymap",
@@ -1736,6 +1763,25 @@
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-link-mark-view",
+      "framework": "preact",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.tsx",
           "hidden": false
         }
       ]

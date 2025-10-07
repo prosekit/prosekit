@@ -207,7 +207,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/loro.test.ts`)
+  - [x] Test exists (`website/tests/loro.test.ts`)
 
 - [ ] mark-rule
   - Frameworks:

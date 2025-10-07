@@ -396,7 +396,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [ ] svelte
   - [ ] solid
-  - [ ] Test missing (`website/tests/yjs.test.ts`)
+  - [x] Test exists (`website/tests/yjs.test.ts`) — marked FIXME to avoid external network flakiness
 
 ---
 

@@ -1,6 +1,13 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { getSelectedText, testStory, waitForEditor } from './helper'
+import {
+  getSelectedText,
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('text-color', () => {
   test('change and clear text color via inline menu', async ({ page }) => {

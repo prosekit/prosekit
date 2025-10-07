@@ -297,7 +297,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/strike.test.ts`)
+  - [x] Test exists (`website/tests/strike.test.ts`)
 
 - [ ] table
   - Frameworks:

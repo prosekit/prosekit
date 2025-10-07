@@ -6,10 +6,10 @@ import {
   type Editor,
   type Extension,
 } from '@prosekit/core'
+import { useSyncExternalStore } from 'preact/compat'
 import {
   useMemo,
 } from 'preact/hooks'
-import { useSyncExternalStore } from 'preact/compat'
 
 import { useEditorContext } from '../contexts/editor-context'
 

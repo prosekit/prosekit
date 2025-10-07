@@ -23,7 +23,7 @@ Source: `website/example.meta.json`
 - [ ] bold
 
   - Frameworks:
-    - [ ] react
+    - [x] react
     - [ ] preact
     - [x] vue
     - [x] svelte

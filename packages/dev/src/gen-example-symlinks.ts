@@ -156,6 +156,7 @@ const mapping: Record<string, string[]> = {
   'shared/react/button.tsx': [
     /// keep-sorted
     'examples/react/blockquote/',
+    'examples/react/bold/',
     'examples/react/code-block/',
     'examples/react/full/',
     'examples/react/heading/',

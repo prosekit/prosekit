@@ -290,14 +290,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] strike
+- [x] strike
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
-    - [ ] svelte
-    - [ ] solid
+    - [x] svelte
+    - [x] solid
 
 - [ ] table
 

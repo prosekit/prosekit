@@ -351,7 +351,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/underline.test.ts`)
+  - [x] Test exists (`website/tests/underline.test.ts`)
 
 - [ ] unmount
   - Frameworks:

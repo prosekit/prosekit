@@ -47,11 +47,11 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] code-block
+- [x] code-block
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
     - [x] svelte
     - [x] solid

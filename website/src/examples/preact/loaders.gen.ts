@@ -8,6 +8,7 @@ export const loaders = {
   'bold': lazy(() => import('./bold/editor')),
   'change-tracking': lazy(() => import('./change-tracking/editor')),
   'code': lazy(() => import('./code/editor')),
+  'code-block': lazy(() => import('./code-block/editor')),
   'drop-cursor': lazy(() => import('./drop-cursor/editor')),
   'emoji-rules': lazy(() => import('./emoji-rules/editor')),
   'hard-break': lazy(() => import('./hard-break/editor')),

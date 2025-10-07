@@ -2066,6 +2066,37 @@
       ]
     },
     {
+      "name": "preact-code-block",
+      "framework": "preact",
+      "story": "code-block",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-code-block.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-drop-cursor",
       "framework": "preact",
       "story": "drop-cursor",

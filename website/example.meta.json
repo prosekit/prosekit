@@ -2269,6 +2269,40 @@
       ]
     },
     {
+      "name": "preact-mark-rule",
+      "framework": "preact",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-placeholder",
+      "framework": "preact",
+      "story": "placeholder",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-readonly",
       "framework": "preact",
       "story": "readonly",
@@ -2421,6 +2455,25 @@
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-word-counter",
+      "framework": "preact",
+      "story": "word-counter",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "word-counter.tsx",
           "hidden": false
         }
       ]
@@ -2910,6 +2963,40 @@
         },
         {
           "path": "toolbar.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-mark-rule",
+      "framework": "svelte",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-placeholder",
+      "framework": "svelte",
+      "story": "placeholder",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
           "hidden": false
         }
       ]
@@ -3470,6 +3557,40 @@
       ]
     },
     {
+      "name": "solid-mark-rule",
+      "framework": "solid",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-placeholder",
+      "framework": "solid",
+      "story": "placeholder",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-readonly",
       "framework": "solid",
       "story": "readonly",
@@ -3622,6 +3743,25 @@
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-word-counter",
+      "framework": "solid",
+      "story": "word-counter",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "word-counter.tsx",
           "hidden": false
         }
       ]

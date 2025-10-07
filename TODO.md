@@ -209,14 +209,14 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] mark-rule
+- [x] mark-rule
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
-    - [ ] svelte
-    - [ ] solid
+    - [x] svelte
+    - [x] solid
 
 - [ ] minimal
 
@@ -227,14 +227,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] placeholder
+- [x] placeholder
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
-    - [ ] svelte
-    - [ ] solid
+    - [x] svelte
+    - [x] solid
 
 - [ ] readonly
 
@@ -380,14 +380,14 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] word-counter
+- [x] word-counter
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] yjs
   - Frameworks:

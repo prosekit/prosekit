@@ -17,6 +17,8 @@ export const loaders = {
   'italic': lazy(() => import('./italic/editor')),
   'keymap': lazy(() => import('./keymap/editor')),
   'link-mark-view': lazy(() => import('./link-mark-view/editor')),
+  'mark-rule': lazy(() => import('./mark-rule/editor')),
+  'placeholder': lazy(() => import('./placeholder/editor')),
   'readonly': lazy(() => import('./readonly/editor')),
   'slash-menu': lazy(() => import('./slash-menu/editor')),
   'strike': lazy(() => import('./strike/editor')),
@@ -24,4 +26,5 @@ export const loaders = {
   'text-align': lazy(() => import('./text-align/editor')),
   'typography': lazy(() => import('./typography/editor')),
   'underline': lazy(() => import('./underline/editor')),
+  'word-counter': lazy(() => import('./word-counter/editor')),
 }

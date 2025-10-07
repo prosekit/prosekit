@@ -9,6 +9,7 @@ export const Blockquote = { args: { story: 'blockquote' } }
 export const Bold = { args: { story: 'bold' } }
 export const Code = { args: { story: 'code' } }
 export const ImageView = { args: { story: 'image-view' } }
+export const Italic = { args: { story: 'italic' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const LinkMarkView = { args: { story: 'link-mark-view' } }
 export const Readonly = { args: { story: 'readonly' } }

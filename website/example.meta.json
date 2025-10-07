@@ -383,6 +383,29 @@
       ]
     },
     {
+      "name": "react-italic",
+      "framework": "react",
+      "story": "italic",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-keymap",
       "framework": "react",
       "story": "keymap",
@@ -1856,6 +1879,29 @@
       ]
     },
     {
+      "name": "preact-italic",
+      "framework": "preact",
+      "story": "italic",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-keymap",
       "framework": "preact",
       "story": "keymap",
@@ -2780,6 +2826,29 @@
         },
         {
           "path": "sample-uploader.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-italic",
+      "framework": "solid",
+      "story": "italic",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]

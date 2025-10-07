@@ -11,6 +11,7 @@ export const loaders = {
   'hard-break': lazy(() => import('./hard-break/editor')),
   'heading': lazy(() => import('./heading/editor')),
   'image-view': lazy(() => import('./image-view/editor')),
+  'italic': lazy(() => import('./italic/editor')),
   'keymap': lazy(() => import('./keymap/editor')),
   'link-mark-view': lazy(() => import('./link-mark-view/editor')),
   'readonly': lazy(() => import('./readonly/editor')),

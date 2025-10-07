@@ -146,14 +146,14 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] italic
+- [x] italic
 
   - Frameworks:
-    - [ ] react
-    - [ ] preact
+    - [x] react
+    - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] keymap
 

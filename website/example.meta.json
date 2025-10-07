@@ -104,6 +104,29 @@
       ]
     },
     {
+      "name": "react-code",
+      "framework": "react",
+      "story": "code",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-code-block",
       "framework": "react",
       "story": "code-block",
@@ -1783,6 +1806,29 @@
       ]
     },
     {
+      "name": "preact-code",
+      "framework": "preact",
+      "story": "code",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-image-view",
       "framework": "preact",
       "story": "image-view",
@@ -2573,6 +2619,29 @@
       "name": "solid-bold",
       "framework": "solid",
       "story": "bold",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-code",
+      "framework": "solid",
+      "story": "code",
       "files": [
         {
           "path": "editor.tsx",

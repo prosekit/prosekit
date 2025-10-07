@@ -111,6 +111,7 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/blockquote/',
     'examples/preact/bold/',
+    'examples/preact/code/',
     'examples/preact/keymap/',
     'examples/preact/readonly/',
   ],
@@ -159,6 +160,7 @@ const mapping: Record<string, string[]> = {
     'examples/react/blockquote/',
     'examples/react/bold/',
     'examples/react/code-block/',
+    'examples/react/code/',
     'examples/react/full/',
     'examples/react/heading/',
     'examples/react/horizontal-rule/',
@@ -242,6 +244,7 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/bold/',
     'examples/solid/code-block/',
+    'examples/solid/code/',
     'examples/solid/hard-break/',
     'examples/solid/heading/',
     'examples/solid/keymap/',

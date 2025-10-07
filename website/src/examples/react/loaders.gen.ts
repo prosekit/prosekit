@@ -7,6 +7,7 @@ export const loaders = {
   'blockquote': lazy(() => import('./blockquote/editor')),
   'bold': lazy(() => import('./bold/editor')),
   'change-tracking': lazy(() => import('./change-tracking/editor')),
+  'code': lazy(() => import('./code/editor')),
   'code-block': lazy(() => import('./code-block/editor')),
   'code-block-themes': lazy(() => import('./code-block-themes/editor')),
   'full': lazy(() => import('./full/editor')),

@@ -11,8 +11,8 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div class="CSS_TOOLBAR">
     <Button
       :pressed="editor.nodes.horizontalRule.isActive()"
-      @click="() => editor.commands.insertHorizontalRule()"
       tooltip="Divider"
+      @click="() => editor.commands.insertHorizontalRule()"
     >
       <div class="CSS_ICON_MINUS"></div>
     </Button>

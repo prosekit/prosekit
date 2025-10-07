@@ -45,7 +45,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [x] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/code.test.ts`)
+  - [x] Test exists (`website/tests/code.test.ts`)
 
 - [ ] code-block
   - Frameworks:

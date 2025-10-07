@@ -236,12 +236,22 @@ async function expectBlockHandleToClose(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
   const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
-  await expect(blockHandle).toHaveAttribute('data-state', 'closed')
-  await waitForAnimationEnd(blockHandle)
-  await waitForAnimationEnd(blockHandleDraggable)
+  await test.step('expect block handle to have attribute data-state closed', async () => {
+    await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+  })
+  await test.step('wait for block handle animation end', async () => {
+    await waitForAnimationEnd(blockHandle)
+  })
+  await test.step('wait for block handle draggable animation end', async () => {
+    await waitForAnimationEnd(blockHandleDraggable)
+  })
 }
 
 async function closeBlockHandle(page: Page) {
-  await page.mouse.move(0, 0, { steps: 100 })
-  await expectBlockHandleToClose(page)
+  await test.step('move mouse to the top-left corner', async () => {
+    await page.mouse.move(0, 0, { steps: 100 })
+  })
+  await test.step('expect block handle to close', async () => {
+    await expectBlockHandleToClose(page)
+  })
 }

@@ -137,7 +137,7 @@ testStory(['full'], () => {
     expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
 
-  test.only(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
+  test(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
     const editor = await waitForEditor(page)
     await emptyEditor(page)
     const blockHandle = page.locator('prosekit-block-handle-popover')

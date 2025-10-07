@@ -35,6 +35,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/common/sample-doc-image.ts': [
     /// keep-sorted
+    'examples/preact/image-view/',
     'examples/react/image-view/',
     'examples/solid/image-view/',
     'examples/svelte/image-view/',
@@ -42,6 +43,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/common/sample-uploader.ts': [
     /// keep-sorted
+    'examples/preact/image-view/',
     'examples/react/full/',
     'examples/react/image-view/',
     'examples/react/toolbar/',
@@ -97,6 +99,10 @@ const mapping: Record<string, string[]> = {
   'shared/preact/drop-indicator.tsx': [
     /// keep-sorted
     'examples/preact/block-handle/',
+  ],
+  'shared/preact/image-view.tsx': [
+    /// keep-sorted
+    'examples/preact/image-view/',
   ],
   'shared/preact/slash-menu-empty.tsx': [
     /// keep-sorted

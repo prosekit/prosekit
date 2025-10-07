@@ -1,3 +1,8 @@
+import type { JSX } from 'preact'
+import {
+  useEffect,
+  useState,
+} from 'preact/hooks'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { PreactNodeViewProps } from 'prosekit/preact'
@@ -5,11 +10,6 @@ import {
   ResizableHandle,
   ResizableRoot,
 } from 'prosekit/preact/resizable'
-import {
-  useEffect,
-  useState,
-} from 'preact/hooks'
-import type { JSX } from 'preact'
 
 export default function ImageView(props: PreactNodeViewProps) {
   const { setAttrs, node } = props
@@ -61,7 +61,7 @@ export default function ImageView(props: PreactNodeViewProps) {
       width={attrs.width ?? undefined}
       height={attrs.height ?? undefined}
       aspectRatio={aspectRatio}
-      onResizeEnd={(event: CustomEvent) => setAttrs(event.detail)}
+      onResizeEnd={(event) => setAttrs(event.detail)}
       data-selected={props.selected ? '' : undefined}
       className="CSS_IMAGE_RESIZABLE"
     >

@@ -4,11 +4,11 @@ import { lazy } from 'preact/compat'
 export const loaders = {
   'minimal': lazy(() => import('./minimal/editor')),
   'block-handle': lazy(() => import('./block-handle/editor')),
+  'image-view': lazy(() => import('./image-view/editor')),
   'keymap': lazy(() => import('./keymap/editor')),
+  'link-mark-view': lazy(() => import('./link-mark-view/editor')),
   'readonly': lazy(() => import('./readonly/editor')),
   'slash-menu': lazy(() => import('./slash-menu/editor')),
   'table': lazy(() => import('./table/editor')),
   'typography': lazy(() => import('./typography/editor')),
-  'image-view': lazy(() => import('./image-view/editor')),
-  'link-mark-view': lazy(() => import('./link-mark-view/editor')),
 }

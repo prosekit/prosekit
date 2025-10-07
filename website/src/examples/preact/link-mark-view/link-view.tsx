@@ -1,8 +1,8 @@
-import type { PreactMarkViewProps } from 'prosekit/preact'
 import {
   useEffect,
   useState,
 } from 'preact/hooks'
+import type { PreactMarkViewProps } from 'prosekit/preact'
 
 const colors = [
   '#f06292',

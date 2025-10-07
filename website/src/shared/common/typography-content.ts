@@ -51,7 +51,7 @@ export const typographyContent = `
 
 <h2>Images</h2>
 
-<img src="https://picsum.photos/600/300" alt="Sample image" />
+<img src="https://static.photos/blurred/640x360/42" alt="Sample image" />
 
 <h2>Tables</h2>
 

@@ -5,8 +5,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { defaultContent } from './default-doc'
 import { defineExtension } from './extension'
+import { defaultContent } from './sample-doc-code-block'
 import Toolbar from './toolbar'
 
 export default function Editor() {

@@ -36,11 +36,16 @@ testStory(['full'], () => {
       await test.step('expect block handle to open', async () => {
         await expectBlockHandleToOpen(page)
       })
+      const box = await test.step('get bounding box', async () => {
+        return await getBoundingBox(blockHandleDraggable)
+      })
 
-      const box = await getBoundingBox(blockHandleDraggable)
-
-      await closeBlockHandle(page)
-      await expectBlockHandleToClose(page)
+      await test.step('close block handle', async () => {
+        await closeBlockHandle(page)
+      })
+      await test.step('expect block handle to close', async () => {
+        await expectBlockHandleToClose(page)
+      })
 
       return box
     }

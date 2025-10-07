@@ -2,7 +2,7 @@
 
 Source: `website/example.meta.json`
 
-- [ ] block-handle
+- [x] block-handle
 
   - Frameworks:
     - [x] react
@@ -128,7 +128,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] image-view
+- [x] image-view
 
   - Frameworks:
     - [x] react
@@ -155,7 +155,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] keymap
+- [x] keymap
 
   - Frameworks:
     - [x] react
@@ -173,7 +173,7 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] link-mark-view
+- [x] link-mark-view
 
   - Frameworks:
     - [x] react
@@ -182,14 +182,14 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] list
+- [x] list
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [x] vue
     - [x] svelte
-    - [ ] solid
+    - [x] solid
 
 - [ ] list-custom-checkbox
 

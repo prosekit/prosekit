@@ -6,6 +6,7 @@ export default { component }
 export const Minimal = { args: { story: 'minimal' } }
 export const BlockHandle = { args: { story: 'block-handle' } }
 export const Blockquote = { args: { story: 'blockquote' } }
+export const Bold = { args: { story: 'bold' } }
 export const ChangeTracking = { args: { story: 'change-tracking' } }
 export const CodeBlock = { args: { story: 'code-block' } }
 export const CodeBlockThemes = { args: { story: 'code-block-themes' } }

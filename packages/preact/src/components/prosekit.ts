@@ -1,4 +1,5 @@
 import type { Editor } from '@prosekit/core'
+import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/preact'
 import {
   h,
   type ComponentChildren,
@@ -6,6 +7,8 @@ import {
 } from 'preact'
 
 import { EditorContextProvider } from '../contexts/editor-context'
+import { PreactMarkViewConsumer } from '../extensions/preact-mark-view'
+import { PreactNodeViewConsumer } from '../extensions/preact-node-view'
 
 export interface ProseKitProps {
   editor: Editor
@@ -20,5 +23,15 @@ export interface ProseKitProps {
 export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   const { editor, children } = props
 
-  return h(EditorContextProvider, { value: editor, children })
+  return h(
+    ProsemirrorAdapterProvider,
+    null,
+    h(
+      EditorContextProvider,
+      { value: editor },
+      h(PreactNodeViewConsumer, null),
+      h(PreactMarkViewConsumer, null),
+      children,
+    ),
+  )
 }

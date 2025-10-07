@@ -16,10 +16,10 @@ testStory('underline', () => {
 
     await emptyEditor(page)
 
-    // Turn on underline, type text -> should be wrapped in <u> or styled span
+    // Turn on underline, type text -> should be wrapped in <u>
     await underlineBtn.click()
     await editor.pressSequentially('hello')
-    const underHello = editor.locator('u, span[style*="text-decoration-line: underline"], span[style*="text-decoration: underline"]', { hasText: /hello/ })
+    const underHello = editor.locator('u', { hasText: /hello/ })
     await expect(underHello).toBeVisible()
 
     // Turn off underline, type more -> should not be underlined
@@ -27,9 +27,7 @@ testStory('underline', () => {
     await editor.pressSequentially(' world')
     await expect(underHello).toBeVisible()
     await expect(editor).toContainText('hello world')
-    await expect(
-      editor.locator('u, span[style*="text-decoration-line: underline"], span[style*="text-decoration: underline"]', { hasText: /world/ }),
-    ).toHaveCount(0)
+    await expect(editor.locator('u', { hasText: /world/ })).toHaveCount(0)
   })
 
   test('toggle on selection', async ({ page }) => {
@@ -49,13 +47,11 @@ testStory('underline', () => {
 
     // Apply underline to selection
     await underlineBtn.click()
-    const underWorld = editor.locator('u, span[style*="text-decoration-line: underline"], span[style*="text-decoration: underline"]', { hasText: /world/ })
+    const underWorld = editor.locator('u', { hasText: /world/ })
     await expect(underWorld).toBeVisible()
 
     // Toggle underline off for the same selection
     await underlineBtn.click()
-    await expect(
-      editor.locator('u, span[style*="text-decoration-line: underline"], span[style*="text-decoration: underline"]', { hasText: /world/ }),
-    ).toHaveCount(0)
+    await expect(editor.locator('u', { hasText: /world/ })).toHaveCount(0)
   })
 })

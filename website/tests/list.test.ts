@@ -1,6 +1,7 @@
 import {
   expect,
   test,
+  type Page,
 } from '@playwright/test'
 
 import {
@@ -9,72 +10,76 @@ import {
   waitForEditor,
 } from './helper'
 
+async function setup(page: Page) {
+  const editor = await waitForEditor(page)
+  return {
+    editor,
+    bulletBtn: page.getByRole('button', { name: 'Bullet' }),
+    orderedBtn: page.getByRole('button', { name: 'Ordered' }),
+    taskBtn: page.getByRole('button', { name: 'Task' }),
+    toggleBtn: page.getByRole('button', { name: 'Toggle' }),
+    bulletList: editor.locator('.prosemirror-flat-list[data-list-kind="bullet"]'),
+    orderedList: editor.locator('.prosemirror-flat-list[data-list-kind="ordered"]'),
+    taskList: editor.locator('.prosemirror-flat-list[data-list-kind="task"]'),
+    toggleList: editor.locator('.prosemirror-flat-list[data-list-kind="toggle"]'),
+  }
+}
+
 testStory('list', () => {
   test('toggle bullet list', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const btn = page.getByRole('button', { name: 'Bullet' })
+    const { editor, bulletBtn, bulletList } = await setup(page)
 
     await emptyEditor(page)
     await editor.pressSequentially('Item')
 
-    await expect(btn).toBeVisible()
-    await btn.click()
-    await expect(
-      editor.locator('.prosemirror-flat-list[data-list-kind="bullet"] p', { hasText: 'Item' }),
-    ).toBeVisible()
+    await expect(bulletBtn).toBeVisible()
+    await bulletBtn.click()
+    await expect(bulletList.locator('p', { hasText: 'Item' })).toBeVisible()
 
-    await expect(btn).toBeVisible()
-    await btn.click()
-    await expect(editor.locator('.prosemirror-flat-list[data-list-kind="bullet"]')).toHaveCount(0)
+    await expect(bulletBtn).toBeVisible()
+    await bulletBtn.click()
+    await expect(bulletList).toHaveCount(0)
   })
 
   test('toggle ordered list', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const btn = page.getByRole('button', { name: 'Ordered' })
+    const { editor, orderedBtn, orderedList } = await setup(page)
 
     await emptyEditor(page)
     await editor.pressSequentially('Item')
 
-    await expect(btn).toBeVisible()
-    await btn.click()
-    await expect(
-      editor.locator('.prosemirror-flat-list[data-list-kind="ordered"] p', { hasText: 'Item' }),
-    ).toBeVisible()
+    await expect(orderedBtn).toBeVisible()
+    await orderedBtn.click()
+    await expect(orderedList.locator('p', { hasText: 'Item' })).toBeVisible()
 
-    await expect(btn).toBeVisible()
-    await btn.click()
-    await expect(editor.locator('.prosemirror-flat-list[data-list-kind="ordered"]').first()).toHaveCount(0)
+    await expect(orderedBtn).toBeVisible()
+    await orderedBtn.click()
+    await expect(orderedList.first()).toHaveCount(0)
   })
 
   test('toggle task list', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const btn = page.getByRole('button', { name: 'Task' })
+    const { editor, taskBtn, taskList } = await setup(page)
 
     await emptyEditor(page)
     await editor.pressSequentially('Task')
 
-    await btn.click()
-    const taskList = editor.locator('.prosemirror-flat-list[data-list-kind="task"]')
+    await taskBtn.click()
     await expect(taskList).toBeVisible()
     await expect(taskList.locator('input[type="checkbox"]').first()).toBeVisible()
 
-    await btn.click()
-    await expect(editor.locator('.prosemirror-flat-list[data-list-kind="task"]').first()).toHaveCount(0)
+    await taskBtn.click()
+    await expect(taskList.first()).toHaveCount(0)
   })
 
   test('toggle toggle-list', async ({ page }) => {
-    const editor = await waitForEditor(page)
-    const btn = page.getByRole('button', { name: 'Toggle' })
+    const { editor, toggleBtn, toggleList } = await setup(page)
 
     await emptyEditor(page)
     await editor.pressSequentially('Toggle')
 
-    await btn.click()
-    await expect(
-      editor.locator('.prosemirror-flat-list[data-list-kind="toggle"] p', { hasText: 'Toggle' }),
-    ).toBeVisible()
+    await toggleBtn.click()
+    await expect(toggleList.locator('p', { hasText: 'Toggle' })).toBeVisible()
 
-    await btn.click()
-    await expect(editor.locator('.prosemirror-flat-list[data-list-kind="toggle"]').first()).toHaveCount(0)
+    await toggleBtn.click()
+    await expect(toggleList.first()).toHaveCount(0)
   })
 })

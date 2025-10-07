@@ -12,6 +12,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
       :disabled="!editor.commands.toggleList.canExec({ kind: 'bullet' })"
+      tooltip="Bullet"
       @click="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
       <div class="CSS_ICON_LIST_BULLET" />
@@ -20,6 +21,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'ordered' })"
       :disabled="!editor.commands.toggleList.canExec({ kind: 'ordered' })"
+      tooltip="Ordered"
       @click="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
       <div class="CSS_ICON_LIST_ORDERED" />
@@ -28,6 +30,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'task' })"
       :disabled="!editor.commands.toggleList.canExec({ kind: 'task' })"
+      tooltip="Task"
       @click="() => editor.commands.toggleList({ kind: 'task' })"
     >
       <div class="CSS_ICON_LIST_TASK" />
@@ -36,6 +39,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'toggle' })"
       :disabled="!editor.commands.toggleList.canExec({ kind: 'toggle' })"
+      tooltip="Toggle"
       @click="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
       <div class="CSS_ICON_LIST_TOGGLE" />

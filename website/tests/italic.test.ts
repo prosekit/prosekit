@@ -17,12 +17,14 @@ testStory('italic', () => {
     await emptyEditor(page)
 
     // Turn on italic, type text -> should be wrapped in <em>
+    await expect(italicBtn).toBeVisible()
     await italicBtn.click()
     await editor.pressSequentially('hello')
     const emHello = editor.locator('em', { hasText: /hello/ })
     await expect(emHello).toBeVisible()
 
     // Turn off italic, type more -> should not be italic
+    await expect(italicBtn).toBeVisible()
     await italicBtn.click()
     await editor.pressSequentially(' world')
     await expect(emHello).toBeVisible()
@@ -46,11 +48,13 @@ testStory('italic', () => {
     await page.keyboard.up('Shift')
 
     // Apply italic to selection
+    await expect(italicBtn).toBeVisible()
     await italicBtn.click()
     const emWorld = editor.locator('em', { hasText: /world/ })
     await expect(emWorld).toBeVisible()
 
     // Toggle italic off for the same selection
+    await expect(italicBtn).toBeVisible()
     await italicBtn.click()
     await expect(editor.locator('em', { hasText: /world/ })).toHaveCount(0)
   })

@@ -17,12 +17,14 @@ testStory('bold', () => {
     await emptyEditor(page)
 
     // Turn on bold, type text -> should be wrapped in <strong>
+    await expect(boldBtn).toBeVisible()
     await boldBtn.click()
     await editor.pressSequentially('hello')
     const strongHello = editor.locator('strong', { hasText: /hello/ })
     await expect(strongHello).toBeVisible()
 
     // Turn off bold, type more -> should not be bold
+    await expect(boldBtn).toBeVisible()
     await boldBtn.click()
     await editor.pressSequentially(' world')
     await expect(strongHello).toBeVisible()
@@ -46,11 +48,13 @@ testStory('bold', () => {
     await page.keyboard.up('Shift')
 
     // Apply bold to selection
+    await expect(boldBtn).toBeVisible()
     await boldBtn.click()
     const strongWorld = editor.locator('strong', { hasText: /world/ })
     await expect(strongWorld).toBeVisible()
 
     // Toggle bold off for the same selection
+    await expect(boldBtn).toBeVisible()
     await boldBtn.click()
     await expect(editor.locator('strong', { hasText: /world/ })).toHaveCount(0)
   })

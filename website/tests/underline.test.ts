@@ -17,12 +17,14 @@ testStory('underline', () => {
     await emptyEditor(page)
 
     // Turn on underline, type text -> should be wrapped in <u>
+    await expect(underlineBtn).toBeVisible()
     await underlineBtn.click()
     await editor.pressSequentially('hello')
     const underHello = editor.locator('u', { hasText: /hello/ })
     await expect(underHello).toBeVisible()
 
     // Turn off underline, type more -> should not be underlined
+    await expect(underlineBtn).toBeVisible()
     await underlineBtn.click()
     await editor.pressSequentially(' world')
     await expect(underHello).toBeVisible()
@@ -46,11 +48,13 @@ testStory('underline', () => {
     await page.keyboard.up('Shift')
 
     // Apply underline to selection
+    await expect(underlineBtn).toBeVisible()
     await underlineBtn.click()
     const underWorld = editor.locator('u', { hasText: /world/ })
     await expect(underWorld).toBeVisible()
 
     // Toggle underline off for the same selection
+    await expect(underlineBtn).toBeVisible()
     await underlineBtn.click()
     await expect(editor.locator('u', { hasText: /world/ })).toHaveCount(0)
   })

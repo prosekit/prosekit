@@ -33,6 +33,7 @@ testStory('link', () => {
     await expect(linkMenu).toBeHidden()
 
     // Open link menu, placeholder shown
+    await expect(linkButton).toBeVisible()
     await linkButton.click()
     await expect(linkMenu).toBeVisible()
     await expect(linkMenu.getByRole('textbox')).toHaveAttribute(
@@ -60,6 +61,7 @@ testStory('link', () => {
     await page.keyboard.up('Shift')
 
     // Open link menu again, value prefilled, then remove the link
+    await expect(linkButton).toBeVisible()
     await linkButton.click()
     await expect(linkMenu).toBeVisible()
     await expect(linkMenu.getByRole('textbox')).toHaveValue(

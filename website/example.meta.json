@@ -2287,6 +2287,10 @@
         {
           "path": "extension.ts",
           "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
         }
       ]
     },

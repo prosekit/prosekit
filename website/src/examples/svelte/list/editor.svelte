@@ -8,6 +8,7 @@ import {
 } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { defineExtension } from './extension'
+import Toolbar from './toolbar.svelte'
 
 const defaultContent: NodeJSON = {
   type: 'doc',
@@ -65,6 +66,7 @@ const mount = (element: HTMLElement) => {
 
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
+    <Toolbar />
     <div class="CSS_EDITOR_SCROLLING">
       <div use:mount class="CSS_EDITOR_CONTENT"></div>
     </div>

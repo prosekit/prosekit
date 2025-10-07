@@ -17,12 +17,14 @@ testStory('strike', () => {
     await emptyEditor(page)
 
     // Turn on strike, type text -> should be wrapped in <s>/<del> or styled span
+    await expect(strikeBtn).toBeVisible()
     await strikeBtn.click()
     await editor.pressSequentially('hello')
     const struckHello = editor.locator('s, del, span[style*="line-through"]', { hasText: /hello/ })
     await expect(struckHello).toBeVisible()
 
     // Turn off strike, type more -> should not be struck
+    await expect(strikeBtn).toBeVisible()
     await strikeBtn.click()
     await editor.pressSequentially(' world')
     await expect(struckHello).toBeVisible()
@@ -46,11 +48,13 @@ testStory('strike', () => {
     await page.keyboard.up('Shift')
 
     // Apply strike to selection
+    await expect(strikeBtn).toBeVisible()
     await strikeBtn.click()
     const struckWorld = editor.locator('s, del, span[style*="line-through"]', { hasText: /world/ })
     await expect(struckWorld).toBeVisible()
 
     // Toggle strike off for the same selection
+    await expect(strikeBtn).toBeVisible()
     await strikeBtn.click()
     await expect(editor.locator('s, del, span[style*="line-through"]', { hasText: /world/ })).toHaveCount(0)
   })

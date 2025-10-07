@@ -3,6 +3,7 @@
 export const loaders = {
   'minimal': () => import('./minimal/editor.svelte'),
   'block-handle': () => import('./block-handle/editor.svelte'),
+  'blockquote': () => import('./blockquote/editor.svelte'),
   'bold': () => import('./bold/editor.svelte'),
   'change-tracking': () => import('./change-tracking/editor.svelte'),
   'code': () => import('./code/editor.svelte'),

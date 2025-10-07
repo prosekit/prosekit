@@ -17,7 +17,7 @@ Source: `website/example.meta.json`
     - [x] react
     - [x] preact
     - [x] vue
-    - [ ] svelte
+    - [x] svelte
     - [ ] solid
 
 - [ ] bold

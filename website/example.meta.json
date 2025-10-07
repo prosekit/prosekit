@@ -1936,6 +1936,29 @@
       ]
     },
     {
+      "name": "svelte-blockquote",
+      "framework": "svelte",
+      "story": "blockquote",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-bold",
       "framework": "svelte",
       "story": "bold",

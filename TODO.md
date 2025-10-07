@@ -33,7 +33,7 @@ Source: `website/example.meta.json`
 
   - Frameworks:
     - [x] react
-    - [ ] preact
+    - [x] preact
     - [ ] vue
     - [x] svelte
     - [ ] solid

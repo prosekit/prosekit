@@ -1783,6 +1783,25 @@
       ]
     },
     {
+      "name": "preact-change-tracking",
+      "framework": "preact",
+      "story": "change-tracking",
+      "files": [
+        {
+          "path": "editor-diff.tsx",
+          "hidden": false
+        },
+        {
+          "path": "editor-main.tsx",
+          "hidden": false
+        },
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-image-view",
       "framework": "preact",
       "story": "image-view",

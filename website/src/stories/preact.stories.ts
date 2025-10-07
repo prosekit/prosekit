@@ -7,6 +7,7 @@ export const Minimal = { args: { story: 'minimal' } }
 export const BlockHandle = { args: { story: 'block-handle' } }
 export const Blockquote = { args: { story: 'blockquote' } }
 export const Bold = { args: { story: 'bold' } }
+export const ChangeTracking = { args: { story: 'change-tracking' } }
 export const ImageView = { args: { story: 'image-view' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const LinkMarkView = { args: { story: 'link-mark-view' } }

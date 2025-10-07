@@ -218,7 +218,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] minimal
+- [x] minimal
 
   - Frameworks:
     - [x] react
@@ -236,7 +236,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] readonly
+- [x] readonly
 
   - Frameworks:
     - [x] react
@@ -281,7 +281,7 @@ Source: `website/example.meta.json`
     - [ ] svelte
     - [ ] solid
 
-- [ ] slash-menu
+- [x] slash-menu
 
   - Frameworks:
     - [x] react
@@ -299,7 +299,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [x] solid
 
-- [ ] table
+- [x] table
 
   - Frameworks:
     - [x] react
@@ -335,7 +335,7 @@ Source: `website/example.meta.json`
     - [x] svelte
     - [ ] solid
 
-- [ ] typography
+- [x] typography
 
   - Frameworks:
     - [x] react

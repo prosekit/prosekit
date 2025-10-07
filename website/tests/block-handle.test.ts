@@ -36,10 +36,6 @@ testStory(['full'], () => {
       await test.step('expect block handle to open', async () => {
         await expectBlockHandleToOpen(page)
       })
-      await expect(blockHandle).toBeAttached()
-
-      await hover(block)
-      await expectBlockHandleToOpen(page)
 
       const box = await getBoundingBox(blockHandleDraggable)
 

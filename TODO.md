@@ -18,7 +18,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [ ] Test missing (`website/tests/blockquote.test.ts`)
+  - [x] Test exists (`website/tests/blockquote.test.ts`)
 
 - [ ] bold
   - Frameworks:

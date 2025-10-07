@@ -297,7 +297,7 @@ Source: `website/example.meta.json`
     - [x] vue
     - [ ] svelte
     - [ ] solid
-  - [x] Test exists (`website/tests/strike.test.ts`)
+  - [x] Test exists (`website/tests/strike.test.ts`) — uses <s> as the canonical selector
 
 - [ ] table
   - Frameworks:

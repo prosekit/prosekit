@@ -24,7 +24,18 @@ testStory(['full'], () => {
 
     // Hover over a block and measure the position of the block handle
     const measure = async (block: Locator) => {
-      await expect(block).toBeVisible()
+      await test.step('expect block to be visible', async () => {
+        await expect(block).toBeVisible()
+      })
+      await test.step('expect block handle to be attached', async () => {
+        await expect(blockHandle).toBeAttached()
+      })
+      await test.step('hover over block', async () => {
+        await hover(block)
+      })
+      await test.step('expect block handle to open', async () => {
+        await expectBlockHandleToOpen(page)
+      })
       await expect(blockHandle).toBeAttached()
 
       await hover(block)

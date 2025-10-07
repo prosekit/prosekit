@@ -108,7 +108,7 @@ Source: `website/example.meta.json`
     - [ ] vue
     - [ ] svelte
     - [x] solid
-  - [ ] Test missing (`website/tests/hard-break.test.ts`)
+  - [x] Test exists (`website/tests/hard-break.test.ts`)
 
 - [ ] heading
   - Frameworks:

@@ -395,5 +395,12 @@ Source: `website/example.meta.json`
     - [ ] preact
     - [ ] vue
     - [ ] svelte
-    - [ ] solid
+  - [ ] solid
   - [ ] Test missing (`website/tests/yjs.test.ts`)
+
+---
+
+Notes:
+- text-color: selection + inline menu works visually, but applying a new color to an already colored span didn’t reflect as expected in e2e; need to scope the correct inline popover button and verify DOM update strategy. Pending.
+- gap-cursor: need a robust way to activate and assert the gap cursor without relying on transient visuals; consider keyboard navigation then asserting `.ProseMirror-gapcursor` exists.
+- drop-cursor: requires reliable DnD flow for indicator; may need helper to simulate drag with multiple mousemove steps.

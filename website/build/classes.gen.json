@@ -43,6 +43,7 @@
   "CSS_ICON_REDO": "i-lucide-redo-2 size-5 block",
   "CSS_ICON_SEARCH": "i-lucide-search size-5 block",
   "CSS_ICON_STRIKE": "i-lucide-strikethrough size-5 block",
+  "CSS_ICON_STRIKETHROUGH": "i-lucide-strikethrough size-5 block",
   "CSS_ICON_TABLE_COLUMN_HANDLE": "i-lucide-grip-horizontal size-5 block",
   "CSS_ICON_TABLE_ROW_HANDLE": "i-lucide-grip-vertical size-5 block",
   "CSS_ICON_UNDERLINE": "i-lucide-underline size-5 block",

@@ -285,6 +285,7 @@ const mapping: Record<string, string[]> = {
     'examples/svelte/heading/',
     'examples/svelte/italic/',
     'examples/svelte/keymap/',
+    'examples/svelte/list/',
     'examples/svelte/readonly/',
     'examples/svelte/text-align/',
     'examples/svelte/toolbar/',

@@ -40,7 +40,7 @@
     "@ocavue/utils": "^0.7.1",
     "prosemirror-model": "^1.25.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.41.2"
+    "prosemirror-view": "^1.41.3"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",

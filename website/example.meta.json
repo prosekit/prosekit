@@ -2291,6 +2291,10 @@
         {
           "path": "toolbar.svelte",
           "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
         }
       ]
     },

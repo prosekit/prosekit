@@ -2206,6 +2206,10 @@
           "hidden": false
         },
         {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        },
+        {
           "path": "slash-menu-empty.svelte",
           "hidden": false
         },

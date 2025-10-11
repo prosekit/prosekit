@@ -15,6 +15,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
     <>
       <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
         <select
+          aria-label="Code block language"
           className="CSS_LANGUAGE_SELECT"
           onChange={(event) => setLanguage(event.target.value)}
           value={language || ''}

@@ -20,6 +20,7 @@ const handleLanguageChange = (event: Event) => {
 
 <div class="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
   <select
+    aria-label="Code block language"
     class="CSS_LANGUAGE_SELECT"
     onchange={handleLanguageChange}
     value={language || ''}

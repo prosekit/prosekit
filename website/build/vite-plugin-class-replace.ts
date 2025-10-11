@@ -69,7 +69,7 @@ export function classReplace(): Plugin {
         (input) => {
           const output = classes[input]
           if (output == null) {
-            const message = `[${PLUGIN_NAME}] Unable to replace the class name "${input}" in ${id}`
+            const message = `[${PLUGIN_NAME}] Unable to replace the class name "${input}" in ${id}. All available classes are ${Object.keys(classes).sort().join(', ')}`
             if (process.env.NODE_ENV === 'development') {
               console.warn(message)
               return input

@@ -20,7 +20,11 @@ const language = computed({
 
 <template>
   <div class="CSS_LANGUAGE_WRAPPER" contenteditable="false">
-    <select v-model="language" class="CSS_LANGUAGE_SELECT">
+    <select
+      v-model="language"
+      class="CSS_LANGUAGE_SELECT"
+      aria-label="Code block language"
+    >
       <option value="">Plain Text</option>
       <option
         v-for="info of shikiBundledLanguagesInfo"

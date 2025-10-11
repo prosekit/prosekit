@@ -6,40 +6,34 @@ import {
 import type { ParentProps } from 'solid-js'
 import { Show } from 'solid-js'
 
-export default function Button({
-  pressed,
-  disabled,
-  onClick,
-  tooltip,
-  children,
-}: ParentProps<{
-  pressed: () => boolean
-  disabled?: () => boolean
-  onClick?: () => void
-  tooltip?: string
-}>) {
+export default function Button(
+  props: ParentProps<{
+    pressed: () => boolean
+    disabled?: () => boolean
+    onClick?: () => void
+    tooltip?: string
+  }>,
+) {
   return (
     <TooltipRoot>
       <TooltipTrigger class="CSS_TOOLTIP_TRIGGER">
         <button
-          data-state={pressed() ? 'on' : 'off'}
-          disabled={disabled?.()}
-          onClick={() => onClick?.()}
+          data-state={props.pressed() ? 'on' : 'off'}
+          disabled={props.disabled?.()}
+          onClick={() => props.onClick?.()}
           onMouseDown={(event) => event.preventDefault()}
           class="CSS_TOGGLE_BUTTON"
         >
-          {children}
-          <Show when={tooltip}>
-            {(content) => <span class="sr-only">{content()}</span>}
+          {props.children}
+          <Show when={props.tooltip}>
+            <span class="sr-only">{props.tooltip}</span>
           </Show>
         </button>
       </TooltipTrigger>
-      <Show when={tooltip}>
-        {(content) => (
-          <TooltipContent class="CSS_TOOLTIP_CONTENT">
-            {content()}
-          </TooltipContent>
-        )}
+      <Show when={props.tooltip}>
+        <TooltipContent class="CSS_TOOLTIP_CONTENT">
+          {props.tooltip}
+        </TooltipContent>
       </Show>
     </TooltipRoot>
   )

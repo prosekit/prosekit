@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.15.8
+
+### Patch Changes
+
+- [`ae8e86e`](https://github.com/ocavue/prosekit/commit/ae8e86ef2bcf062e8dfb4d7360bcf98b357ffc7e) ![](https://prosekit.dev/b/basic)
+
+  Add a vertical margin to `<img>` and `<video>` in `prosekit/basic/typography.css` to improve spacing between content.
+
+- [`5c16f02`](https://github.com/ocavue/prosekit/commit/5c16f02aeff0071f51b7190f46c1eae5689001d7) ![](https://prosekit.dev/b/extensions)
+
+  Add a new `uploadImage` command to upload an image file and insert an image node with a temporary URL, which is replaced once the upload completes.
+
 ## 0.15.7
 
 ### Patch Changes

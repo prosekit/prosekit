@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.15.8
+
+### Patch Changes
+
+- [`ae8e86e`](https://github.com/ocavue/prosekit/commit/ae8e86ef2bcf062e8dfb4d7360bcf98b357ffc7e) ![](https://prosekit.dev/b/basic)
+
+  Add a vertical margin to `<img>` and `<video>` in `prosekit/basic/typography.css` to improve spacing between content.
+
 ## 0.15.7
 
 ### Patch Changes

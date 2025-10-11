@@ -1,3 +1,4 @@
+import type { JSX } from 'preact'
 import { useState } from 'preact/hooks'
 import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
@@ -7,7 +8,6 @@ import {
   useEditorDerivedValue,
 } from 'prosekit/preact'
 import { InlinePopover } from 'prosekit/preact/inline-popover'
-import type { JSX } from 'preact'
 
 import Button from './button'
 import type { EditorExtension } from './extension'

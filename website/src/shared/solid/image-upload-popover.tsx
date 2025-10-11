@@ -75,11 +75,11 @@ export function ImageUploadPopover({
     setOpen(false)
   }
 
-  const handleOpenChange = (event: CustomEvent<boolean>) => {
-    if (!event.detail) {
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (!nextOpen) {
       deferResetState()
     }
-    setOpen(event.detail)
+    setOpen(nextOpen)
   }
 
   return (

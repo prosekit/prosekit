@@ -30,14 +30,14 @@ export default function Button({
         >
           {children}
           <Show when={tooltip}>
-            {(content) => <span class="sr-only">{content}</span>}
+            {(content) => <span class="sr-only">{content()}</span>}
           </Show>
         </button>
       </TooltipTrigger>
       <Show when={tooltip}>
         {(content) => (
           <TooltipContent class="CSS_TOOLTIP_CONTENT">
-            {content}
+            {content()}
           </TooltipContent>
         )}
       </Show>

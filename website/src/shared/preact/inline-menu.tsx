@@ -100,7 +100,7 @@ export default function InlineMenu() {
         <Button
           pressed={items.bold.isActive}
           disabled={!items.bold.canExec}
-          onClick={items.bold.command}
+          onClick={() => items.bold.command()}
           tooltip="Bold"
         >
           <div className="CSS_ICON_BOLD"></div>
@@ -109,7 +109,7 @@ export default function InlineMenu() {
         <Button
           pressed={items.italic.isActive}
           disabled={!items.italic.canExec}
-          onClick={items.italic.command}
+          onClick={() => items.italic.command()}
           tooltip="Italic"
         >
           <div className="CSS_ICON_ITALIC"></div>
@@ -118,7 +118,7 @@ export default function InlineMenu() {
         <Button
           pressed={items.underline.isActive}
           disabled={!items.underline.canExec}
-          onClick={items.underline.command}
+          onClick={() => items.underline.command()}
           tooltip="Underline"
         >
           <div className="CSS_ICON_UNDERLINE"></div>
@@ -127,7 +127,7 @@ export default function InlineMenu() {
         <Button
           pressed={items.strike.isActive}
           disabled={!items.strike.canExec}
-          onClick={items.strike.command}
+          onClick={() => items.strike.command()}
           tooltip="Strikethrough"
         >
           <div className="CSS_ICON_STRIKE"></div>
@@ -136,7 +136,7 @@ export default function InlineMenu() {
         <Button
           pressed={items.code.isActive}
           disabled={!items.code.canExec}
-          onClick={items.code.command}
+          onClick={() => items.code.command()}
           tooltip="Code"
         >
           <div className="CSS_ICON_CODE"></div>

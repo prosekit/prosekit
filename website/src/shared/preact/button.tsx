@@ -1,30 +1,32 @@
-import type { ComponentChild } from 'preact'
+import type { ComponentChild, JSX } from 'preact'
 import {
   TooltipContent,
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/preact/tooltip'
 
-export default function Button({
-  pressed,
-  disabled,
-  onClick,
-  tooltip,
-  children,
-}: {
-  pressed?: boolean
-  disabled?: boolean
-  onClick?: VoidFunction
-  tooltip?: string
-  children: ComponentChild
-}) {
+export default function Button(
+  {
+    pressed,
+    disabled,
+    onClick,
+    tooltip,
+    children,
+  }: {
+    pressed?: boolean
+    disabled?: boolean
+    onClick?: JSX.MouseEventHandler<HTMLButtonElement>
+    tooltip?: string
+    children: ComponentChild
+  },
+) {
   return (
     <TooltipRoot>
       <TooltipTrigger className="CSS_TOOLTIP_TRIGGER">
         <button
           data-state={pressed ? 'on' : 'off'}
           disabled={disabled}
-          onClick={() => onClick?.()}
+          onClick={onClick}
           onMouseDown={(event) => event.preventDefault()}
           className="CSS_TOGGLE_BUTTON"
         >

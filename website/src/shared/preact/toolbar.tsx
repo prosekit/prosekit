@@ -112,7 +112,7 @@ export default function Toolbar() {
       <Button
         pressed={items.undo.isActive}
         disabled={!items.undo.canExec}
-        onClick={items.undo.command}
+        onClick={() => items.undo.command()}
         tooltip="Undo"
       >
         <div className="CSS_ICON_UNDO" />
@@ -121,7 +121,7 @@ export default function Toolbar() {
       <Button
         pressed={items.redo.isActive}
         disabled={!items.redo.canExec}
-        onClick={items.redo.command}
+        onClick={() => items.redo.command()}
         tooltip="Redo"
       >
         <div className="CSS_ICON_REDO" />
@@ -130,7 +130,7 @@ export default function Toolbar() {
       <Button
         pressed={items.bold.isActive}
         disabled={!items.bold.canExec}
-        onClick={items.bold.command}
+        onClick={() => items.bold.command()}
         tooltip="Bold"
       >
         <div className="CSS_ICON_BOLD" />
@@ -139,7 +139,7 @@ export default function Toolbar() {
       <Button
         pressed={items.italic.isActive}
         disabled={!items.italic.canExec}
-        onClick={items.italic.command}
+        onClick={() => items.italic.command()}
         tooltip="Italic"
       >
         <div className="CSS_ICON_ITALIC" />
@@ -148,7 +148,7 @@ export default function Toolbar() {
       <Button
         pressed={items.underline.isActive}
         disabled={!items.underline.canExec}
-        onClick={items.underline.command}
+        onClick={() => items.underline.command()}
         tooltip="Underline"
       >
         <div className="CSS_ICON_UNDERLINE" />
@@ -157,7 +157,7 @@ export default function Toolbar() {
       <Button
         pressed={items.strike.isActive}
         disabled={!items.strike.canExec}
-        onClick={items.strike.command}
+        onClick={() => items.strike.command()}
         tooltip="Strike"
       >
         <div className="CSS_ICON_STRIKE" />
@@ -166,7 +166,7 @@ export default function Toolbar() {
       <Button
         pressed={items.code.isActive}
         disabled={!items.code.canExec}
-        onClick={items.code.command}
+        onClick={() => items.code.command()}
         tooltip="Code"
       >
         <div className="CSS_ICON_CODE" />
@@ -175,7 +175,7 @@ export default function Toolbar() {
       <Button
         pressed={items.codeBlock.isActive}
         disabled={!items.codeBlock.canExec}
-        onClick={items.codeBlock.command}
+        onClick={() => items.codeBlock.command()}
         tooltip="Code Block"
       >
         <div className="CSS_ICON_CODE_BLOCK" />
@@ -184,7 +184,7 @@ export default function Toolbar() {
       <Button
         pressed={items.heading1.isActive}
         disabled={!items.heading1.canExec}
-        onClick={items.heading1.command}
+        onClick={() => items.heading1.command()}
         tooltip="Heading 1"
       >
         <div className="CSS_ICON_H1" />
@@ -193,7 +193,7 @@ export default function Toolbar() {
       <Button
         pressed={items.heading2.isActive}
         disabled={!items.heading2.canExec}
-        onClick={items.heading2.command}
+        onClick={() => items.heading2.command()}
         tooltip="Heading 2"
       >
         <div className="CSS_ICON_H2" />
@@ -202,7 +202,7 @@ export default function Toolbar() {
       <Button
         pressed={items.heading3.isActive}
         disabled={!items.heading3.canExec}
-        onClick={items.heading3.command}
+        onClick={() => items.heading3.command()}
         tooltip="Heading 3"
       >
         <div className="CSS_ICON_H3" />
@@ -211,7 +211,7 @@ export default function Toolbar() {
       <Button
         pressed={items.horizontalRule.isActive}
         disabled={!items.horizontalRule.canExec}
-        onClick={items.horizontalRule.command}
+        onClick={() => items.horizontalRule.command()}
         tooltip="Divider"
       >
         <div className="CSS_ICON_MINUS"></div>
@@ -220,7 +220,7 @@ export default function Toolbar() {
       <Button
         pressed={items.bulletList.isActive}
         disabled={!items.bulletList.canExec}
-        onClick={items.bulletList.command}
+        onClick={() => items.bulletList.command()}
         tooltip="Bullet List"
       >
         <div className="CSS_ICON_LIST_BULLET" />
@@ -229,7 +229,7 @@ export default function Toolbar() {
       <Button
         pressed={items.orderedList.isActive}
         disabled={!items.orderedList.canExec}
-        onClick={items.orderedList.command}
+        onClick={() => items.orderedList.command()}
         tooltip="Ordered List"
       >
         <div className="CSS_ICON_LIST_ORDERED" />
@@ -238,7 +238,7 @@ export default function Toolbar() {
       <Button
         pressed={items.taskList.isActive}
         disabled={!items.taskList.canExec}
-        onClick={items.taskList.command}
+        onClick={() => items.taskList.command()}
         tooltip="Task List"
       >
         <div className="CSS_ICON_LIST_TASK" />
@@ -247,7 +247,7 @@ export default function Toolbar() {
       <Button
         pressed={items.toggleList.isActive}
         disabled={!items.toggleList.canExec}
-        onClick={items.toggleList.command}
+        onClick={() => items.toggleList.command()}
         tooltip="Toggle List"
       >
         <div className="CSS_ICON_LIST_TOGGLE" />
@@ -256,7 +256,7 @@ export default function Toolbar() {
       <Button
         pressed={items.indentList.isActive}
         disabled={!items.indentList.canExec}
-        onClick={items.indentList.command}
+        onClick={() => items.indentList.command()}
         tooltip="Increase indentation"
       >
         <div className="CSS_ICON_LIST_INDENT" />
@@ -265,7 +265,7 @@ export default function Toolbar() {
       <Button
         pressed={items.dedentList.isActive}
         disabled={!items.dedentList.canExec}
-        onClick={items.dedentList.command}
+        onClick={() => items.dedentList.command()}
         tooltip="Decrease indentation"
       >
         <div className="CSS_ICON_LIST_DEDENT" />

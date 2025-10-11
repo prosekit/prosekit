@@ -15,14 +15,12 @@ import Button from './button'
 import type { EditorExtension } from './extension'
 import { sampleUploader } from './sample-uploader'
 
-export function ImageUploadPopover({
-  tooltip,
-  disabled,
-  children,
-}: ParentProps<{
-  tooltip: string
-  disabled: () => boolean
-}>) {
+export function ImageUploadPopover(
+  props: ParentProps<{
+    tooltip: string
+    disabled: () => boolean
+  }>,
+) {
   const [open, setOpen] = createSignal(false)
   const [webUrl, setWebUrl] = createSignal('')
   const [objectUrl, setObjectUrl] = createSignal('')
@@ -87,10 +85,10 @@ export function ImageUploadPopover({
       <PopoverTrigger>
         <Button
           pressed={() => open()}
-          disabled={disabled}
-          tooltip={tooltip}
+          disabled={props.disabled}
+          tooltip={props.tooltip}
         >
-          {children}
+          {props.children}
         </Button>
       </PopoverTrigger>
 

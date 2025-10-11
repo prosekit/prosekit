@@ -22,6 +22,7 @@ export default function CodeBlockView(props: PreactNodeViewProps) {
     <>
       <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
         <select
+          aria-label="Code block language"
           className="CSS_LANGUAGE_SELECT"
           onChange={handleLanguageChange}
           value={language}

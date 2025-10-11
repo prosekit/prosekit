@@ -7,7 +7,7 @@ import {
 } from 'prosekit/svelte/popover'
 import Button from './button.svelte'
 import type { EditorExtension } from './extension'
-import { sampleUploader } from '../common/sample-uploader'
+import { sampleUploader } from './sample-uploader'
 
 export let disabled: boolean
 export let tooltip: string

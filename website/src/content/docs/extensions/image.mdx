@@ -26,9 +26,42 @@ const extension = defineImage()
 const editor = createEditor({ extension })
 
 // ---cut---
-editor.commands.insertImage({ src: 'https://static.photos/200x200/42' })
+editor.commands.insertImage({ src: 'https://static.photos/200x200' })
 ```
+
+### `uploadImage`
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import {
+  defineImage,
+  uploadImage,
+  type UploadImageOptions,
+} from 'prosekit/extensions/image'
+
+const extension = defineImage()
+const editor = createEditor({ extension })
+declare const file: File
+declare const upload: (file: File) => Promise<string>
+
+// ---cut---
+editor.commands.uploadImage({
+  // The file to upload
+  file,
+
+  // Upload the file to a remote server and get the URL
+  uploader: async ({ file }) => {
+    return await upload(file)
+  },
+})
+```
+
+You can reuse the `uploadImage` command when handling paste or drop uploads. For a convenience wrapper that wires it into the editor automatically, use `defineImageUploadHandler`.
 
 ## API Reference
 
 - [prosekit/extensions/image](/references/extensions/image)
+
+{/* Link references */}
+
+[`defineImageUploadHandler`]: /references/extensions/image#defineimageuploadhandler

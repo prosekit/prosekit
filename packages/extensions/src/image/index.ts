@@ -4,9 +4,16 @@ export {
 } from './image'
 export {
   defineImageCommands,
-  insertImage,
   type ImageCommandsExtension,
 } from './image-commands'
+export { insertImage } from './image-commands/insert-image'
+export {
+  replaceImageURL,
+  uploadImage,
+  type ImageUploadErrorHandler,
+  type ImageUploadErrorHandlerOptions,
+  type UploadImageOptions,
+} from './image-commands/upload-image'
 export {
   defineImageSpec,
   type ImageAttrs,
@@ -16,7 +23,5 @@ export {
   defineImageUploadHandler,
   type ImageCanDropPredicate,
   type ImageCanPastePredicate,
-  type ImageUploadErrorHandler,
-  type ImageUploadErrorHandlerOptions,
   type ImageUploadHandlerOptions,
 } from './image-upload-handler'

@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { UploadTask } from 'prosekit/extensions/file'
 import { useEditor } from 'prosekit/vue'
 import {
   PopoverContent,
   PopoverRoot,
   PopoverTrigger,
 } from 'prosekit/vue/popover'
-import {
-  computed,
-  ref,
-} from 'vue'
+import { ref } from 'vue'
 
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
@@ -21,48 +17,46 @@ const props = defineProps<{
 }>()
 
 const open = ref(false)
-const webUrl = ref('')
-const objectUrl = ref('')
-const url = computed(() => webUrl.value || objectUrl.value)
+const url = ref('')
+const file = ref<File | null>(null)
 const editor = useEditor<EditorExtension>()
 
 function handleFileChange(event: Event) {
-  const file = (event.target as HTMLInputElement)?.files?.[0]
+  const nextFile = (event.target as HTMLInputElement)?.files?.[0] ?? null
 
-  if (file) {
-    const uploadTask = new UploadTask({
-      file,
-      uploader: sampleUploader,
-    })
-    objectUrl.value = uploadTask.objectURL
-    webUrl.value = ''
-  } else {
-    objectUrl.value = ''
+  file.value = nextFile
+  if (nextFile) {
+    url.value = ''
   }
 }
 
-function handleWebUrlChange(event: Event) {
-  const url = (event.target as HTMLInputElement)?.value
+function handleUrlChange(event: Event) {
+  const nextUrl = (event.target as HTMLInputElement)?.value ?? ''
 
-  if (url) {
-    webUrl.value = url
-    objectUrl.value = ''
-  } else {
-    webUrl.value = ''
+  url.value = nextUrl
+  if (nextUrl) {
+    file.value = null
   }
 }
 
 function deferResetState() {
   setTimeout(() => {
-    webUrl.value = ''
-    objectUrl.value = ''
+    url.value = ''
+    file.value = null
   }, 300)
 }
 
 function handleSubmit() {
-  editor.value.commands.insertImage({ src: url.value })
-  deferResetState()
+  const src = url.value
+  const nextFile = file.value
+
+  if (src) {
+    editor.value.commands.insertImage({ src })
+  } else if (nextFile) {
+    editor.value.commands.uploadImage({ file: nextFile, uploader: sampleUploader })
+  }
   open.value = false
+  deferResetState()
 }
 
 function handleOpenChange(openValue: boolean) {
@@ -86,17 +80,17 @@ function handleOpenChange(openValue: boolean) {
     </PopoverTrigger>
 
     <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-      <template v-if="!objectUrl">
+      <template v-if="!file">
         <label>Embed Link</label>
         <input
           class="CSS_IMAGE_UPLOAD_INPUT"
           placeholder="Paste the image link..."
           type="url"
-          :value="webUrl"
-          @input="handleWebUrlChange"
+          :value="url"
+          @input="handleUrlChange"
         />
       </template>
-      <template v-if="!webUrl">
+      <template v-if="!url">
         <label>Upload</label>
         <input
           class="CSS_IMAGE_UPLOAD_INPUT"
@@ -107,6 +101,9 @@ function handleOpenChange(openValue: boolean) {
       </template>
       <button v-if="url" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
         Insert Image
+      </button>
+      <button v-if="file" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
+        Upload Image
       </button>
     </PopoverContent>
   </PopoverRoot>

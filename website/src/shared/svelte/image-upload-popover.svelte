@@ -7,47 +7,47 @@ import {
 } from 'prosekit/svelte/popover'
 import Button from './button.svelte'
 import type { EditorExtension } from './extension'
+import { sampleUploader } from '../common/sample-uploader'
 
 export let disabled: boolean
 export let tooltip: string
 
 let open = false
-let webUrl = ''
-let objectUrl = ''
-$: url = webUrl || objectUrl
+let url = ''
+let file: File | null = null
 const editor = useEditor<EditorExtension>()
 
 const handleFileChange = (event: Event) => {
-  const file = (event.target as HTMLInputElement)?.files?.[0]
+  const nextFile = (event.target as HTMLInputElement)?.files?.[0] ?? null
 
-  if (file) {
-    objectUrl = URL.createObjectURL(file)
-    webUrl = ''
-  } else {
-    objectUrl = ''
+  file = nextFile
+  if (nextFile) {
+    url = ''
   }
 }
 
-const handleWebUrlChange = (event: Event) => {
-  const url = (event.target as HTMLInputElement)?.value
+const handleUrlChange = (event: Event) => {
+  const nextUrl = (event.target as HTMLInputElement)?.value ?? ''
 
-  if (url) {
-    webUrl = url
-    objectUrl = ''
-  } else {
-    webUrl = ''
+  url = nextUrl
+  if (nextUrl) {
+    file = null
   }
 }
 
 const deferResetState = () => {
   setTimeout(() => {
-    webUrl = ''
-    objectUrl = ''
+    url = ''
+    file = null
   }, 300)
 }
 
 const handleSubmit = () => {
-  $editor.commands.insertImage({ src: url })
+  if (url) {
+    $editor.commands.insertImage({ src: url })
+  } else if (file) {
+    $editor.commands.uploadImage({ file, uploader: sampleUploader })
+  }
   deferResetState()
   open = false
 }
@@ -68,29 +68,34 @@ const handleOpenChange = (openValue: boolean) => {
   </PopoverTrigger>
 
   <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-    {#if !objectUrl}
+    {#if !file}
       <label for="embed-link-input">Embed Link</label>
       <input
         class="CSS_IMAGE_UPLOAD_INPUT"
         placeholder="Paste the image link..."
         type="url"
-        value={webUrl}
-        on:input={handleWebUrlChange}
+        value={url}
+        on:input={handleUrlChange}
         id="embed-link-input"
       />
     {/if}
-    {#if !webUrl}
+    {#if !url}
       <label for="upload-input">Upload</label>
       <input
         class="CSS_IMAGE_UPLOAD_INPUT"
         accept="image/*"
         type="file"
-        on:input={handleFileChange}
+        on:change={handleFileChange}
       />
     {/if}
     {#if url}
       <button class="CSS_IMAGE_UPLOAD_BUTTON" on:click={handleSubmit}>
         Insert Image
+      </button>
+    {/if}
+    {#if file}
+      <button class="CSS_IMAGE_UPLOAD_BUTTON" on:click={handleSubmit}>
+        Upload Image
       </button>
     {/if}
   </PopoverContent>

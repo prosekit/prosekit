@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.5",
-    "@prosemirror-adapter/vue": "^0.4.5"
+    "@prosemirror-adapter/core": "^0.4.6",
+    "@prosemirror-adapter/vue": "^0.4.6"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"

@@ -384,6 +384,10 @@ const mapping: Record<string, string[]> = {
     'examples/svelte/block-handle/',
     'examples/svelte/full/',
   ],
+  'shared/svelte/image-upload-popover.svelte': [
+    /// keep-sorted
+    'examples/svelte/full/',
+  ],
   'shared/svelte/image-view.svelte': [
     /// keep-sorted
     'examples/svelte/image-view/',

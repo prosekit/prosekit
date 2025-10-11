@@ -5,6 +5,7 @@ export default { component }
 
 export const Minimal = { args: { story: 'minimal' } }
 export const BlockHandle = { args: { story: 'block-handle' } }
+export const Full = { args: { story: 'full' } }
 export const ImageView = { args: { story: 'image-view' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const LinkMarkView = { args: { story: 'link-mark-view' } }

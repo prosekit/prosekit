@@ -24,6 +24,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/common/default-content-full.ts': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/react/full/',
     'examples/svelte/full/',
     'examples/vue/full/',
@@ -59,6 +60,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/common/sample-uploader.ts': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/image-view/',
     'examples/react/full/',
     'examples/react/image-view/',
@@ -67,16 +69,19 @@ const mapping: Record<string, string[]> = {
     'examples/svelte/image-view/',
     'examples/vue/full/',
     'examples/vue/image-view/',
+    'shared/preact/',
     'shared/react/',
     'shared/vue/',
   ],
   'shared/common/tag-data.ts': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/react/full/',
     'examples/react/user-menu/',
     'examples/svelte/full/',
     'examples/vue/full/',
     'examples/vue/user-menu/',
+    'shared/preact/',
     'shared/react/',
     'shared/vue/',
   ],
@@ -90,6 +95,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/common/user-data.ts': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/react/full/',
     'examples/react/user-menu-dynamic/',
     'examples/react/user-menu/',
@@ -97,6 +103,7 @@ const mapping: Record<string, string[]> = {
     'examples/vue/full/',
     'examples/vue/user-menu-dynamic/',
     'examples/vue/user-menu/',
+    'shared/preact/',
     'shared/react/',
     'shared/vue/',
   ],
@@ -106,35 +113,63 @@ const mapping: Record<string, string[]> = {
   'shared/preact/block-handle.tsx': [
     /// keep-sorted
     'examples/preact/block-handle/',
+    'examples/preact/full/',
   ],
   'shared/preact/button.tsx': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/keymap/',
     'examples/preact/readonly/',
+  ],
+  'shared/preact/code-block-view.tsx': [
+    /// keep-sorted
+    'examples/preact/full/',
   ],
   'shared/preact/drop-indicator.tsx': [
     /// keep-sorted
     'examples/preact/block-handle/',
+    'examples/preact/full/',
+  ],
+  'shared/preact/image-upload-popover.tsx': [
+    /// keep-sorted
+    'examples/preact/full/',
   ],
   'shared/preact/image-view.tsx': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/image-view/',
+  ],
+  'shared/preact/inline-menu.tsx': [
+    /// keep-sorted
+    'examples/preact/full/',
   ],
   'shared/preact/slash-menu-empty.tsx': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/slash-menu/',
   ],
   'shared/preact/slash-menu-item.tsx': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/slash-menu/',
   ],
   'shared/preact/slash-menu.tsx': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/slash-menu/',
   ],
   'shared/preact/table-handle.tsx': [
     /// keep-sorted
+    'examples/preact/full/',
     'examples/preact/table/',
+  ],
+  'shared/preact/tag-menu.tsx': [
+    /// keep-sorted
+    'examples/preact/full/',
+  ],
+  'shared/preact/toolbar.tsx': [
+    /// keep-sorted
+    'examples/preact/full/',
   ],
   'shared/preact/use-readonly.ts': [
     /// keep-sorted
@@ -143,6 +178,10 @@ const mapping: Record<string, string[]> = {
   'shared/preact/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/preact/keymap/',
+  ],
+  'shared/preact/user-menu.tsx': [
+    /// keep-sorted
+    'examples/preact/full/',
   ],
 
   // React

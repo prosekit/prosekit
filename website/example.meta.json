@@ -2202,6 +2202,10 @@
           "hidden": false
         },
         {
+          "path": "image-view.svelte",
+          "hidden": false
+        },
+        {
           "path": "inline-menu.svelte",
           "hidden": false
         },

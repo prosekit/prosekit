@@ -1,4 +1,3 @@
-import { UploadTask } from 'prosekit/extensions/file'
 import { useEditor } from 'prosekit/solid'
 import {
   PopoverContent,
@@ -22,55 +21,52 @@ export function ImageUploadPopover(
   }>,
 ) {
   const [open, setOpen] = createSignal(false)
-  const [webUrl, setWebUrl] = createSignal('')
-  const [objectUrl, setObjectUrl] = createSignal('')
+  const [url, setUrl] = createSignal('')
+  const [file, setFile] = createSignal<File | null>(null)
 
   const editor = useEditor<EditorExtension>()
-
-  const url = () => webUrl() || objectUrl()
 
   const handleFileChange = (event: Event & { currentTarget: HTMLInputElement }) => {
     const file = event.currentTarget.files?.[0]
 
     if (file) {
-      const uploadTask = new UploadTask({
-        file,
-        uploader: sampleUploader,
-      })
-      setObjectUrl(uploadTask.objectURL)
-      setWebUrl('')
+      setFile(file)
+      setUrl('')
     } else {
-      setObjectUrl('')
+      setFile(null)
     }
   }
 
-  const handleWebUrlChange = (
+  const handleUrlChange = (
     event: InputEvent & { currentTarget: HTMLInputElement },
   ) => {
     const nextUrl = event.currentTarget.value
     if (nextUrl) {
-      setWebUrl(nextUrl)
-      setObjectUrl('')
+      setUrl(nextUrl)
+      setFile(null)
     } else {
-      setWebUrl('')
+      setUrl('')
     }
   }
 
   const deferResetState = () => {
     setTimeout(() => {
-      setWebUrl('')
-      setObjectUrl('')
+      setUrl('')
+      setFile(null)
     }, 300)
   }
 
   const handleSubmit = () => {
     const src = url()
-    if (!src) {
-      return
+    const nextFile = file()
+
+    if (src) {
+      editor().commands.insertImage({ src })
+    } else if (nextFile) {
+      editor().commands.uploadImage({ file: nextFile, uploader: sampleUploader })
     }
-    editor().commands.insertImage({ src })
-    deferResetState()
     setOpen(false)
+    deferResetState()
   }
 
   const handleOpenChange = (nextOpen: boolean) => {
@@ -93,20 +89,20 @@ export function ImageUploadPopover(
       </PopoverTrigger>
 
       <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-        <Show when={!objectUrl()}>
+        <Show when={!file()}>
           <>
             <label>Embed Link</label>
             <input
               class="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
-              value={webUrl()}
-              onInput={handleWebUrlChange}
+              value={url()}
+              onInput={handleUrlChange}
             />
           </>
         </Show>
 
-        <Show when={!webUrl()}>
+        <Show when={!url()}>
           <>
             <label>Upload</label>
             <input
@@ -121,6 +117,12 @@ export function ImageUploadPopover(
         <Show when={url()}>
           <button class="CSS_IMAGE_UPLOAD_BUTTON" type="button" onClick={handleSubmit}>
             Insert Image
+          </button>
+        </Show>
+
+        <Show when={file()}>
+          <button class="CSS_IMAGE_UPLOAD_BUTTON" type="button" onClick={handleSubmit}>
+            Upload Image
           </button>
         </Show>
       </PopoverContent>

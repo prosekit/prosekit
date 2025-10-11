@@ -390,6 +390,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/svelte/image-view.svelte': [
     /// keep-sorted
+    'examples/svelte/full/',
     'examples/svelte/image-view/',
   ],
   'shared/svelte/slash-menu-empty.svelte': [

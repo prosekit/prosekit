@@ -66,55 +66,53 @@ function testSingleStory(
     checkConsoleWarnings = true,
   }: TestStoryOptions = {},
 ) {
-  test.describe('story:' + story, () => {
-    for (const example of getExamples(story)) {
-      test.describe('example:' + example.name, () => {
-        const uncaughtErrors: Error[] = []
-        const consoleErrors: string[] = []
-        const consoleWarnings: string[] = []
+  for (const example of getExamples(story)) {
+    test.describe(example.framework + '/' + example.story, () => {
+      const uncaughtErrors: Error[] = []
+      const consoleErrors: string[] = []
+      const consoleWarnings: string[] = []
 
-        const handlePageError = (error: Error) => {
-          uncaughtErrors.push(error)
+      const handlePageError = (error: Error) => {
+        uncaughtErrors.push(error)
+      }
+
+      const handleConsole = (message: ConsoleMessage) => {
+        if (message.type() === 'error') {
+          consoleErrors.push(message.text())
+        } else if (message.type() === 'warning') {
+          consoleWarnings.push(message.text())
         }
+      }
 
-        const handleConsole = (message: ConsoleMessage) => {
-          if (message.type() === 'error') {
-            consoleErrors.push(message.text())
-          } else if (message.type() === 'warning') {
-            consoleWarnings.push(message.text())
-          }
-        }
+      test.beforeEach(async ({ page }) => {
+        uncaughtErrors.length = 0
+        consoleErrors.length = 0
+        consoleWarnings.length = 0
 
-        test.beforeEach(async ({ page }) => {
-          uncaughtErrors.length = 0
-          consoleErrors.length = 0
-          consoleWarnings.length = 0
+        page.on('pageerror', handlePageError)
+        page.on('console', handleConsole)
 
-          page.on('pageerror', handlePageError)
-          page.on('console', handleConsole)
-
-          await page.goto('-/' + example.framework + '/' + example.story)
-        })
-
-        test.afterEach(({ page }) => {
-          page.off('pageerror', handlePageError)
-          page.off('console', handleConsole)
-
-          if (checkUncaughtErrors) {
-            expect(uncaughtErrors, 'Expected no uncaught errors').toEqual([])
-          }
-          if (checkConsoleErrors) {
-            expect(consoleErrors, 'Expected no console errors').toEqual([])
-          }
-          if (checkConsoleWarnings) {
-            expect(consoleWarnings, 'Expected no console warnings').toEqual([])
-          }
-        })
-
-        callback({ example: example.name })
+        await page.goto('-/' + example.framework + '/' + example.story)
       })
-    }
-  })
+
+      test.afterEach(({ page }) => {
+        page.off('pageerror', handlePageError)
+        page.off('console', handleConsole)
+
+        if (checkUncaughtErrors) {
+          expect(uncaughtErrors, 'Expected no uncaught errors').toEqual([])
+        }
+        if (checkConsoleErrors) {
+          expect(consoleErrors, 'Expected no console errors').toEqual([])
+        }
+        if (checkConsoleWarnings) {
+          expect(consoleWarnings, 'Expected no console warnings').toEqual([])
+        }
+      })
+
+      callback({ example: example.name })
+    })
+  }
 }
 
 export function testStory(

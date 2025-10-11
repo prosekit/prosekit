@@ -1,0 +1,13 @@
+
+<h1 style="text-align: left;">
+  Heading
+</h1>
+<p style="text-align: left;">
+  First paragraph
+</p>
+<p style="text-align: center;">
+  Second paragraph
+</p>
+<p style="text-align: right;">
+  Third paragraph
+</p>

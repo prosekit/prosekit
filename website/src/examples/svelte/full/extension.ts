@@ -5,6 +5,7 @@ import {
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
 import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+import { defineImageUploadHandler } from 'prosekit/extensions/image'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import {
@@ -13,6 +14,8 @@ import {
 } from 'prosekit/svelte'
 
 import CodeBlockView from './code-block-view.svelte'
+import ImageView from './image-view.svelte'
+import { sampleUploader } from './sample-uploader'
 
 export function defineExtension() {
   return union(
@@ -21,12 +24,19 @@ export function defineExtension() {
     defineMention(),
     defineCodeBlock(),
     defineCodeBlockShiki(),
+    defineHorizontalRule(),
     defineSvelteNodeView({
       name: 'codeBlock',
       contentAs: 'code',
       component: CodeBlockView as unknown as SvelteNodeViewComponent,
     }),
-    defineHorizontalRule(),
+    defineSvelteNodeView({
+      name: 'image',
+      component: ImageView as SvelteNodeViewComponent,
+    }),
+    defineImageUploadHandler({
+      uploader: sampleUploader,
+    }),
   )
 }
 

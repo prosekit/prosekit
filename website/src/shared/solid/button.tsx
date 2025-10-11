@@ -1,11 +1,10 @@
-import type { ParentProps } from 'solid-js'
-import { Show } from 'solid-js'
-
 import {
   TooltipContent,
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/solid/tooltip'
+import type { ParentProps } from 'solid-js'
+import { Show } from 'solid-js'
 
 export default function Button({
   pressed,

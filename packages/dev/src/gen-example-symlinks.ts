@@ -340,10 +340,6 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/full/',
   ],
-  'shared/solid/user-menu.tsx': [
-    /// keep-sorted
-    'examples/solid/full/',
-  ],
   'shared/solid/use-readonly.ts': [
     /// keep-sorted
     'examples/solid/readonly/',
@@ -351,6 +347,10 @@ const mapping: Record<string, string[]> = {
   'shared/solid/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/solid/keymap/',
+  ],
+  'shared/solid/user-menu.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
   ],
 
   // Svelte

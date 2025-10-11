@@ -5,7 +5,11 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from 'prosekit/solid/popover'
-import { createSignal, Show, type ParentProps } from 'solid-js'
+import {
+  createSignal,
+  Show,
+  type ParentProps,
+} from 'solid-js'
 
 import Button from './button'
 import type { EditorExtension } from './extension'

@@ -1,9 +1,14 @@
-import { createEffect, createMemo, createSignal, Show } from 'solid-js'
 import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/solid'
 import { InlinePopover } from 'prosekit/solid/inline-popover'
+import {
+  createEffect,
+  createMemo,
+  createSignal,
+  Show,
+} from 'solid-js'
 
 import Button from './button'
 import type { EditorExtension } from './extension'

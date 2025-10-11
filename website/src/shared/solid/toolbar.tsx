@@ -1,6 +1,6 @@
-import { createMemo } from 'solid-js'
 import type { Editor } from 'prosekit/core'
 import { useEditor } from 'prosekit/solid'
+import { createMemo } from 'solid-js'
 
 import Button from './button'
 import type { EditorExtension } from './extension'

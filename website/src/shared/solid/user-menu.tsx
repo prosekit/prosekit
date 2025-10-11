@@ -1,4 +1,3 @@
-import { For } from 'solid-js'
 import { useEditor } from 'prosekit/solid'
 import {
   AutocompleteEmpty,
@@ -6,6 +5,7 @@ import {
   AutocompleteList,
   AutocompletePopover,
 } from 'prosekit/solid/autocomplete'
+import { For } from 'solid-js'
 
 import type { EditorExtension } from './extension'
 import { users } from './user-data'

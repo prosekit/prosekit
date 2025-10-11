@@ -1,4 +1,3 @@
-import { UploadTask } from 'prosekit/extensions/file'
 import { useEditor } from 'prosekit/react'
 import {
   PopoverContent,
@@ -21,9 +20,8 @@ export const ImageUploadPopover: FC<{
   children: ReactNode
 }> = ({ tooltip, disabled, children }) => {
   const [open, setOpen] = useState(false)
-  const [webUrl, setWebUrl] = useState('')
-  const [objectUrl, setObjectUrl] = useState('')
-  const url = webUrl || objectUrl
+  const [url, setUrl] = useState('')
+  const [file, setFile] = useState<File | null>(null)
 
   const editor = useEditor<EditorExtension>()
 
@@ -33,41 +31,41 @@ export const ImageUploadPopover: FC<{
     const file = event.target.files?.[0]
 
     if (file) {
-      const uploadTask = new UploadTask({
-        file,
-        uploader: sampleUploader,
-      })
-      setObjectUrl(uploadTask.objectURL)
-      setWebUrl('')
+      setFile(file)
+      setUrl('')
     } else {
-      setObjectUrl('')
+      setFile(null)
     }
   }
 
-  const handleWebUrlChange: React.ChangeEventHandler<HTMLInputElement> = (
+  const handleUrlChange: React.ChangeEventHandler<HTMLInputElement> = (
     event,
   ) => {
     const url = event.target.value
 
     if (url) {
-      setWebUrl(url)
-      setObjectUrl('')
+      setUrl(url)
+      setFile(null)
     } else {
-      setWebUrl('')
+      setUrl('')
     }
   }
 
   const deferResetState = () => {
     setTimeout(() => {
-      setWebUrl('')
-      setObjectUrl('')
+      setUrl('')
+      setFile(null)
     }, 300)
   }
 
   const handleSubmit = () => {
-    editor.commands.insertImage({ src: url })
-    deferResetState()
+    if (url) {
+      editor.commands.insertImage({ src: url })
+    } else if (file) {
+      editor.commands.uploadImage({ file, uploader: sampleUploader })
+    }
     setOpen(false)
+    deferResetState()
   }
 
   const handleOpenChange = (open: boolean) => {
@@ -86,20 +84,20 @@ export const ImageUploadPopover: FC<{
       </PopoverTrigger>
 
       <PopoverContent className="CSS_IMAGE_UPLOAD_CARD">
-        {objectUrl ? null : (
+        {file ? null : (
           <>
             <label>Embed Link</label>
             <input
               className="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
-              value={webUrl}
-              onChange={handleWebUrlChange}
+              value={url}
+              onChange={handleUrlChange}
             />
           </>
         )}
 
-        {webUrl ? null : (
+        {url ? null : (
           <>
             <label>Upload</label>
             <input
@@ -115,6 +113,14 @@ export const ImageUploadPopover: FC<{
           ? (
             <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
               Insert Image
+            </button>
+          )
+          : null}
+
+        {file
+          ? (
+            <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+              Upload Image
             </button>
           )
           : null}

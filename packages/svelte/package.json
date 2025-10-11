@@ -72,8 +72,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.5",
-    "@prosemirror-adapter/svelte": "^0.4.5"
+    "@prosemirror-adapter/core": "^0.4.6",
+    "@prosemirror-adapter/svelte": "^0.4.6"
   },
   "peerDependencies": {
     "svelte": ">= 5.0.0"

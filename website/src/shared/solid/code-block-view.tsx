@@ -16,6 +16,7 @@ export default function CodeBlockView(props: SolidNodeViewProps) {
     <>
       <div class="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
         <select
+          aria-label="Code block language"
           class="CSS_LANGUAGE_SELECT"
           onChange={(event) => setLanguage(event.target.value)}
           value={language || ''}

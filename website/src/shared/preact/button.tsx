@@ -1,4 +1,7 @@
-import type { ComponentChild, JSX } from 'preact'
+import type {
+  ComponentChild,
+  JSX,
+} from 'preact'
 import {
   TooltipContent,
   TooltipRoot,

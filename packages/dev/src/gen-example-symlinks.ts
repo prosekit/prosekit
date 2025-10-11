@@ -26,6 +26,7 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/full/',
     'examples/react/full/',
+    'examples/solid/full/',
     'examples/svelte/full/',
     'examples/vue/full/',
   ],
@@ -65,12 +66,14 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/image-view/',
     'examples/react/toolbar/',
+    'examples/solid/full/',
     'examples/solid/image-view/',
     'examples/svelte/image-view/',
     'examples/vue/full/',
     'examples/vue/image-view/',
     'shared/preact/',
     'shared/react/',
+    'shared/solid/',
     'shared/vue/',
   ],
   'shared/common/tag-data.ts': [
@@ -78,11 +81,13 @@ const mapping: Record<string, string[]> = {
     'examples/preact/full/',
     'examples/react/full/',
     'examples/react/user-menu/',
+    'examples/solid/full/',
     'examples/svelte/full/',
     'examples/vue/full/',
     'examples/vue/user-menu/',
     'shared/preact/',
     'shared/react/',
+    'shared/solid/',
     'shared/vue/',
   ],
   'shared/common/typography-content.ts': [
@@ -99,12 +104,14 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/user-menu-dynamic/',
     'examples/react/user-menu/',
+    'examples/solid/full/',
     'examples/svelte/full/',
     'examples/vue/full/',
     'examples/vue/user-menu-dynamic/',
     'examples/vue/user-menu/',
     'shared/preact/',
     'shared/react/',
+    'shared/solid/',
     'shared/vue/',
   ],
 
@@ -273,10 +280,12 @@ const mapping: Record<string, string[]> = {
   'shared/solid/block-handle.tsx': [
     /// keep-sorted
     'examples/solid/block-handle/',
+    'examples/solid/full/',
   ],
   'shared/solid/button.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
+    'examples/solid/full/',
     'examples/solid/hard-break/',
     'examples/solid/heading/',
     'examples/solid/keymap/',
@@ -286,18 +295,54 @@ const mapping: Record<string, string[]> = {
   'shared/solid/code-block-view.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
+    'examples/solid/full/',
   ],
   'shared/solid/drop-indicator.tsx': [
     /// keep-sorted
     'examples/solid/block-handle/',
+    'examples/solid/full/',
+  ],
+  'shared/solid/image-upload-popover.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
   ],
   'shared/solid/image-view.tsx': [
     /// keep-sorted
+    'examples/solid/full/',
     'examples/solid/image-view/',
+  ],
+  'shared/solid/inline-menu.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
+  ],
+  'shared/solid/slash-menu-empty.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
+  ],
+  'shared/solid/slash-menu-item.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
+  ],
+  'shared/solid/slash-menu.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
   ],
   'shared/solid/table-handle.tsx': [
     /// keep-sorted
+    'examples/solid/full/',
     'examples/solid/table/',
+  ],
+  'shared/solid/tag-menu.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
+  ],
+  'shared/solid/toolbar.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
+  ],
+  'shared/solid/user-menu.tsx': [
+    /// keep-sorted
+    'examples/solid/full/',
   ],
   'shared/solid/use-readonly.ts': [
     /// keep-sorted

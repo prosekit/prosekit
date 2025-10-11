@@ -2642,6 +2642,93 @@
       ]
     },
     {
+      "name": "solid-full",
+      "framework": "solid",
+      "story": "full",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
+          "hidden": false
+        },
+        {
+          "path": "image-upload-popover.tsx",
+          "hidden": false
+        },
+        {
+          "path": "image-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-empty.tsx",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-item.tsx",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "tag-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "tag-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "user-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-hard-break",
       "framework": "solid",
       "story": "hard-break",

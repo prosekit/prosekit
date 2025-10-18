@@ -76,6 +76,7 @@ function handleImageLoad(event: Event) {
       v-if="url && !error"
       :src="url"
       class="CSS_IMAGE_RESIZABLE_IMAGE"
+      alt="upload preview"
       @load="handleImageLoad"
     />
 

@@ -12,12 +12,12 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "typedoc": "^0.28.13",
+    "typedoc": "^0.28.14",
     "typedoc-plugin-markdown": "^4.9.0"
   },
   "devDependencies": {
     "@types/node": "^20.19.11",
-    "tsdown": "^0.15.6",
-    "typescript": "~5.9.2"
+    "tsdown": "^0.15.7",
+    "typescript": "~5.9.3"
   }
 }

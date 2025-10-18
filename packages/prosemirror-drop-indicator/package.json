@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
-    "tsdown": "^0.15.6",
+    "tsdown": "^0.15.7",
     "typescript": "~5.9.2"
   },
   "publishConfig": {

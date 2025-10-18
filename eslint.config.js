@@ -5,7 +5,10 @@ import { defineESLintConfig } from '@ocavue/eslint-config'
 export default defineESLintConfig(
   {
     react: {
-      files: ['**/react/**/*.?([cm])[jt]s?(x)'],
+      // React eslint rules are disabled because of the issue: https://github.com/facebook/react/issues/34775
+      // TODO: Enable this when the issue is fixed.
+      // files: ['**/react/**/*.?([cm])[jt]s?(x)'],
+      files: ['**/react_TEMPORARILY_DISABLED.tsx'],
     },
     vue: true,
     markdown: true,

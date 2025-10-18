@@ -86,6 +86,7 @@ export default function ImageView(props: SolidNodeViewProps) {
         <img
           src={url()}
           onLoad={handleImageLoad}
+          alt="upload preview"
           class="CSS_IMAGE_RESIZABLE_IMAGE"
         />
       </Show>

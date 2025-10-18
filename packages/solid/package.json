@@ -63,8 +63,8 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "solid-js": "^1.9.9",
-    "tsdown": "^0.15.6",
-    "typescript": "~5.9.2"
+    "tsdown": "^0.15.7",
+    "typescript": "~5.9.3"
   },
   "publishConfig": {
     "exports": {

@@ -146,6 +146,8 @@ jobs:
             --no-progress
             --format detailed
             --accept 100..=103,200..=299,403
+            --retry-wait-time 5
+            --max-retries 5
             './**/*.html'
           debug: false
           fail: true

@@ -69,6 +69,7 @@ export default function ImageView(props: ReactNodeViewProps) {
         <img
           src={url}
           onLoad={handleImageLoad}
+          alt="upload preview"
           className="CSS_IMAGE_RESIZABLE_IMAGE"
         />
       )}

@@ -44,7 +44,7 @@
     "astro-rehype-relative-markdown-links": "^0.18.1",
     "astrobook": "^0.9.1",
     "babel-plugin-react-compiler": "19.1.0-rc.3",
-    "bits-ui": "^2.11.8",
+    "bits-ui": "^2.14.0",
     "clsx": "^2.1.1",
     "colorjs.io": "^0.5.2",
     "diffable-html": "^6.0.1",

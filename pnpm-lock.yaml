@@ -97,7 +97,7 @@ importers:
         specifier: ^27.0.1
         version: 27.0.1(postcss@8.5.6)
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -118,7 +118,7 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -179,7 +179,7 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -325,7 +325,7 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       type-fest:
         specifier: ^5.1.0
@@ -362,7 +362,7 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -402,7 +402,7 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -436,7 +436,7 @@ importers:
         specifier: ^10.27.2
         version: 10.27.2
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -515,7 +515,7 @@ importers:
         specifier: ^5.41.0
         version: 5.41.0
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typedoc:
         specifier: ^0.28.14
@@ -567,7 +567,7 @@ importers:
         specifier: workspace:*
         version: link:../config-tsdown
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -610,7 +610,7 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -644,7 +644,7 @@ importers:
         specifier: ^1.9.9
         version: 1.9.9
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -703,7 +703,7 @@ importers:
         specifier: ^20.19.11
         version: 20.19.15
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -740,7 +740,7 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
@@ -804,7 +804,7 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.15.8
+        specifier: ^0.15.9
         version: 0.15.9(oxc-resolver@11.8.3)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))
       type-fest:
         specifier: ^5.1.0

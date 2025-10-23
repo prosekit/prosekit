@@ -119,7 +119,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/diffable-html": "^5.0.2",
-    "@vitest/browser": "^3.2.4",
+    "@vitest/browser": "^4.0.1",
     "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
     "loro-crdt": "^1.8.4",
@@ -133,7 +133,7 @@
     "type-fest": "^5.1.0",
     "typescript": "~5.9.3",
     "unified": "^11.0.5",
-    "vitest": "^3.2.4",
+    "vitest": "^4.0.1",
     "y-prosemirror": "^1.3.7",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.27"

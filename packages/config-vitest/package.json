@@ -11,6 +11,9 @@
       "default": "./src/config-vitest.js"
     }
   },
+  "dependencies": {
+    "@vitest/browser-playwright": "^4.0.1"
+  },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
     "lodash-es": "^4.17.21",

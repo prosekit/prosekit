@@ -1,9 +1,9 @@
-import { userEvent } from '@vitest/browser/context'
 import {
   describe,
   expect,
   it,
 } from 'vitest'
+import { userEvent } from 'vitest/browser'
 
 import { setupTest } from '../testing'
 

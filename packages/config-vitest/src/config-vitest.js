@@ -1,7 +1,6 @@
 // @ts-check
 
-/// <reference types="@vitest/browser/providers/playwright" />
-
+import { playwright } from '@vitest/browser-playwright'
 import { merge } from 'lodash-es'
 
 /** @type {import('vitest/config').UserWorkspaceConfig} */
@@ -12,7 +11,13 @@ const defaultConfig = {
   test: {
     browser: {
       enabled: true,
-      provider: 'playwright',
+      provider: playwright({
+        launchOptions: {},
+        contextOptions: {
+          hasTouch: true,
+          permissions: ['clipboard-read', 'clipboard-write'],
+        },
+      }),
       headless: true,
       ui: false,
       fileParallelism: false,
@@ -20,10 +25,6 @@ const defaultConfig = {
       instances: [
         {
           browser: 'chromium',
-          context: {
-            hasTouch: true,
-            permissions: ['clipboard-read', 'clipboard-write'],
-          },
         },
       ],
     },

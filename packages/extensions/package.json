@@ -119,7 +119,6 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/diffable-html": "^5.0.2",
-    "@vitest/browser-playwright": "^4.0.1",
     "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
     "loro-crdt": "^1.8.4",

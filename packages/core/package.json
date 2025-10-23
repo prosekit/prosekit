@@ -51,7 +51,6 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/diffable-html": "^5.0.2",
-    "@vitest/browser-playwright": "^4.0.1",
     "diffable-html": "^6.0.1",
     "tsdown": "^0.15.9",
     "typescript": "~5.9.3",

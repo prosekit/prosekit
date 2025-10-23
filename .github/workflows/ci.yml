@@ -148,6 +148,7 @@ jobs:
             --accept 100..=103,200..=299,403
             --retry-wait-time 5
             --max-retries 5
+            --exclude 'https://floating-ui.com'
             './**/*.html'
           debug: false
           fail: true

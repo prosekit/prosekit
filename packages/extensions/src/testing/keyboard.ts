@@ -1,5 +1,5 @@
 import { isApple } from '@prosekit/core'
-import { userEvent } from '@vitest/browser/context'
+import { userEvent } from 'vitest/browser'
 
 /**
  * @example

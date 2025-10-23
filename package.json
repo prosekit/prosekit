@@ -42,7 +42,7 @@
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
     "@types/node": "^20.19.11",
-    "@vitest/browser": "^4.0.1",
+    "@vitest/browser-playwright": "^4.0.1",
     "@vitest/coverage-v8": "^4.0.1",
     "dprint": "^0.50.2",
     "eslint": "^9.38.0",

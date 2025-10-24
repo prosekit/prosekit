@@ -40,6 +40,10 @@ const config = {
       ],
     },
   },
+  ignoreIssues: {
+    // Remove this once this PR is merged: https://github.com/webpro-nl/knip/pull/1320
+    'vitest.config.ts': ['unlisted'],
+  },
   compilers: {
     css,
   },

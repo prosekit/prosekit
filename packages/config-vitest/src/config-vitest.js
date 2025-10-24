@@ -5,12 +5,14 @@ import { merge } from 'lodash-es'
 
 /** @type {import('vitest/config').UserWorkspaceConfig} */
 const defaultConfig = {
-  optimizeDeps: {
-    include: ['@vitest/coverage-v8/browser'],
-  },
   test: {
+    maxWorkers: process.env.CI ? 1 : 2,
     browser: {
       enabled: true,
+      viewport: {
+        width: 900,
+        height: 600,
+      },
       provider: playwright({
         launchOptions: {},
         contextOptions: {
@@ -20,7 +22,7 @@ const defaultConfig = {
       }),
       headless: true,
       ui: false,
-      fileParallelism: false,
+      fileParallelism: true,
       screenshotFailures: false,
       instances: [
         {

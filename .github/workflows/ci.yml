@@ -65,7 +65,7 @@ jobs:
       - name: Run e2e tests
         run: pnpm run test:e2e
 
-  test-e2e-vitest:
+  test-e2e-vitest-browser-mode:
     runs-on: ubuntu-latest
 
     needs: [build]

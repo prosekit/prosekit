@@ -10,6 +10,6 @@ export default defineConfig({
       include: ['packages/**/src/**'],
     },
     fileParallelism: false,
-    projects: ['packages/*'],
+    projects: ['./packages/*', './website'],
   },
 })

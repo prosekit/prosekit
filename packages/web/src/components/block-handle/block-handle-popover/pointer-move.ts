@@ -40,8 +40,26 @@ export function defineElementHoverHandler(handler: ElementHoverHandler): PlainEx
     handler(reference, { node, pos })
   }
 
+  let lastX = -1
+  let lastY = -1
+  let lastTime = -1
+
   const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
     const { x, y } = event
+
+    // Simple performance optimization. If the pointer is not moving, we don't
+    // want to recalculate the block handle position within a short period of
+    // time window.
+    if (lastX === x && lastY === y) {
+      const now = Date.now()
+      if (now - lastTime < 100) {
+        return
+      }
+      lastTime = now
+    }
+    lastX = x
+    lastY = y
+
     const block = findBlockByCoords(view, x, y)
     if (!block) {
       handler(null, null)
@@ -71,6 +89,7 @@ export function defineElementHoverHandler(handler: ElementHoverHandler): PlainEx
 
   return union(
     defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
+    defineDOMEventHandler('pointerenter', handlePointerEvent),
     defineDOMEventHandler('pointerout', handlePointerEvent),
     defineDOMEventHandler('keypress', () => handler(null, null)),
   )

@@ -8,6 +8,7 @@ CHANGELOG.md
 .yalc
 yalc.lock
 dist
+.eslintcache
 
 .cache
 .DS_Store

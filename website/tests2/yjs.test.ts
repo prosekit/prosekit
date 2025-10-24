@@ -2,20 +2,18 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { userEvent } from 'vitest/browser'
 
 import {
   emptyEditor,
   expectLocatorToHaveCount,
+  locateEditor,
   testStory,
 } from './helper'
 
 testStory('yjs', () => {
   it('synchronizes content across two editors', async () => {
-    const editors = page.locate('div.ProseMirror')
+    const editors = locateEditor()
     await expectLocatorToHaveCount(editors, 2)
 
     const editorA = editors.nth(0)

@@ -23,9 +23,6 @@
   },
   "references": [
     {
-      "path": "../packages/config-vitest/tsconfig.json",
-    },
-    {
       "path": "../packages/prosekit/tsconfig.json",
     },
     {

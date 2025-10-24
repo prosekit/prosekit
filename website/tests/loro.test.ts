@@ -36,8 +36,4 @@ testStory('loro', () => {
       await expect(a).toContainText('World', { timeout: 15000 })
     })
   })
-}, {
-  // TODO: Console errors are not expected in the tests
-  checkConsoleErrors: false,
-  checkConsoleWarnings: false,
 })

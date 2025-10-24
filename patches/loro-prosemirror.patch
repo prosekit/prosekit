@@ -1,5 +1,5 @@
 diff --git a/dist/index.mjs b/dist/index.mjs
-index dff78dd8f39aa31b61fe25b0fdabbe85c8093ec1..7d442f87a4d4f316abfd40bf53d41905032f58dd 100644
+index dff78dd8f39aa31b61fe25b0fdabbe85c8093ec1..7b777843b974c81899693d4f8483c1d9fb06bba3 100644
 --- a/dist/index.mjs
 +++ b/dist/index.mjs
 @@ -890,11 +890,12 @@ const undo = (state, dispatch) => {
@@ -16,11 +16,12 @@ index dff78dd8f39aa31b61fe25b0fdabbe85c8093ec1..7d442f87a4d4f316abfd40bf53d41905
      return undoState.undoManager.undo();
    } else {
      return undoState.undoManager.canUndo();
-@@ -906,10 +907,10 @@ const redo = (state, dispatch) => {
+@@ -905,11 +906,11 @@ const redo = (state, dispatch) => {
+   if (!undoState) {
      return false;
    }
-   undoState.isUndoing.current = true;
 +  if (dispatch) {
+   undoState.isUndoing.current = true;
    setTimeout(() => {
      undoState.isUndoing.current = false;
    }, 0);

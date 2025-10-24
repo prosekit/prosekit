@@ -1,0 +1,31 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index dff78dd8f39aa31b61fe25b0fdabbe85c8093ec1..7b777843b974c81899693d4f8483c1d9fb06bba3 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -890,11 +890,12 @@ const undo = (state, dispatch) => {
+   if (!undoState) {
+     return false;
+   }
++  // See https://github.com/loro-dev/loro-prosemirror/pull/40
++  if (dispatch) {
+   undoState.isUndoing.current = true;
+   setTimeout(() => {
+     undoState.isUndoing.current = false;
+   }, 0);
+-  if (dispatch) {
+     return undoState.undoManager.undo();
+   } else {
+     return undoState.undoManager.canUndo();
+@@ -905,11 +906,11 @@ const redo = (state, dispatch) => {
+   if (!undoState) {
+     return false;
+   }
++  if (dispatch) {
+   undoState.isUndoing.current = true;
+   setTimeout(() => {
+     undoState.isUndoing.current = false;
+   }, 0);
+-  if (dispatch) {
+     return undoState.undoManager.redo();
+   } else {
+     return undoState.undoManager.canRedo();

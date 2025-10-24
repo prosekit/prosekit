@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  loro-prosemirror:
+    hash: 4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815
+    path: patches/loro-prosemirror.patch
+
 importers:
 
   .:
@@ -303,7 +308,7 @@ importers:
         version: 1.8.4
       loro-prosemirror:
         specifier: ^0.3.1
-        version: 0.3.1(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -493,7 +498,7 @@ importers:
         version: 1.8.4
       loro-prosemirror:
         specifier: ^0.3.1
-        version: 0.3.1(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -911,7 +916,7 @@ importers:
         version: 1.8.4
       loro-prosemirror:
         specifier: ^0.3.1
-        version: 0.3.1(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       magic-string:
         specifier: ^0.30.19
         version: 0.30.19
@@ -12614,7 +12619,7 @@ snapshots:
 
   loro-crdt@1.8.4: {}
 
-  loro-prosemirror@0.3.1(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3):
+  loro-prosemirror@0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3):
     dependencies:
       lib0: 0.2.114
       loro-crdt: 1.8.4

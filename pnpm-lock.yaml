@@ -1019,6 +1019,9 @@ importers:
       vitest:
         specifier: ^4.0.3
         version: 4.0.3(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.3)(@vitest/ui@4.0.3)(happy-dom@20.0.7)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
+      vitest-browser-commands:
+        specifier: ^0.1.1
+        version: 0.1.1(@vitest/browser-playwright@4.0.3)(vitest@4.0.3)
       vitest-browser-preact:
         specifier: ^0.1.2
         version: 0.1.2(@vitest/browser@4.0.3(vite@6.3.6(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.3))(preact@10.27.2)(vitest@4.0.3)
@@ -7215,6 +7218,17 @@ packages:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-beta.0
     peerDependenciesMeta:
       vite:
+        optional: true
+
+  vitest-browser-commands@0.1.1:
+    resolution: {integrity: sha512-Y+z+CtT3Cutzf4CjRwKCJa4zr3o1LUSURFjCJ/v4EtY05GsProoZtC4w6ym4hNctOFZAYKVvJppUeP+9x/aWQA==}
+    peerDependencies:
+      '@vitest/browser-playwright': ^4.0.3
+      vitest: ^4.0.3
+    peerDependenciesMeta:
+      '@vitest/browser-playwright':
+        optional: true
+      vitest:
         optional: true
 
   vitest-browser-preact@0.1.2:
@@ -15200,6 +15214,11 @@ snapshots:
   vitefu@1.1.1(vite@6.3.6(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)):
     optionalDependencies:
       vite: 6.3.6(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
+
+  vitest-browser-commands@0.1.1(@vitest/browser-playwright@4.0.3)(vitest@4.0.3):
+    optionalDependencies:
+      '@vitest/browser-playwright': 4.0.3(playwright@1.56.1)(vite@6.3.6(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.3)
+      vitest: 4.0.3(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.3)(@vitest/ui@4.0.3)(happy-dom@20.0.7)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
 
   vitest-browser-preact@0.1.2(@vitest/browser@4.0.3(vite@6.3.6(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.3))(preact@10.27.2)(vitest@4.0.3):
     dependencies:

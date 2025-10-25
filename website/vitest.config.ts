@@ -7,9 +7,9 @@ import react from '@vitejs/plugin-react'
 import vue from '@vitejs/plugin-vue'
 import solid from 'vite-plugin-solid'
 import wasm from 'vite-plugin-wasm'
+import { playwrightCommands } from 'vitest-browser-commands'
 
 import { classReplace } from './build/vite-plugin-class-replace'
-import { VitestBrowserCommands } from './build/vitest-commands'
 
 const debug = false
 
@@ -18,7 +18,7 @@ export default config({
     wasm(),
     classReplace(),
     tailwindcss(),
-    VitestBrowserCommands(),
+    playwrightCommands(),
 
     react({ include: ['**/react/**/*.tsx'] }),
     vue({ include: ['**/vue/**/*.vue'] }),

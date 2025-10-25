@@ -1,45 +1,57 @@
 import {
   LoroDoc,
   type AwarenessListener,
+  type PeerID,
 } from 'loro-crdt'
 import {
   CursorAwareness,
   type LoroDocType,
 } from 'loro-prosemirror'
 import {
-  useEffect,
   useState,
+  useSyncExternalStore,
 } from 'react'
 
 import EditorComponent from './editor-component'
 
 export default function Page() {
-  const { loroA, awarenessA, loroB, awarenessB } = useLoroDocs()
+  const [loroStore] = useState(() => new LoroStore())
+  const loroState = useSyncExternalStore(loroStore.subscribe, loroStore.getSnapshot)
 
   return (
     <div className="h-full flex flex-col gap-2">
-      <EditorComponent loro={loroA} awareness={awarenessA} />
-      <EditorComponent loro={loroB} awareness={awarenessB} />
+      <EditorComponent loro={loroState.loroA} awareness={loroState.awarenessA} />
+      <EditorComponent loro={loroState.loroB} awareness={loroState.awarenessB} />
     </div>
   )
 }
 
-function useLoroDocs() {
-  const [loroState] = useState(() => {
+class LoroStore {
+  private state: {
+    loroA: LoroDocType
+    loroB: LoroDocType
+    idA: PeerID
+    idB: PeerID
+    awarenessA: CursorAwareness
+    awarenessB: CursorAwareness
+  }
+
+  constructor() {
     const loroA: LoroDocType = new LoroDoc()
     const loroB: LoroDocType = new LoroDoc()
-
-    const idA = loroA.peerIdStr
     const idB = loroB.peerIdStr
-
+    const idA = loroA.peerIdStr
     const awarenessA = new CursorAwareness(idA)
     const awarenessB = new CursorAwareness(idB)
+    this.state = { loroA, loroB, idA, idB, awarenessA, awarenessB }
+  }
 
-    return { loroA, loroB, idA, idB, awarenessA, awarenessB }
-  })
+  getSnapshot = () => {
+    return this.state
+  }
 
-  useEffect(() => {
-    const { loroA, loroB, idA, idB, awarenessA, awarenessB } = loroState
+  subscribe = () => {
+    const { loroA, loroB, idA, idB, awarenessA, awarenessB } = this.state
     const unsubscribeA = loroA.subscribeLocalUpdates((updates) => {
       loroB.import(updates)
     })
@@ -64,7 +76,5 @@ function useLoroDocs() {
       unsubscribeA()
       unsubscribeB()
     }
-  }, [loroState])
-
-  return loroState
+  }
 }

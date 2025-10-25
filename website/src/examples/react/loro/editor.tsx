@@ -39,8 +39,8 @@ class LoroStore {
   constructor() {
     const loroA: LoroDocType = new LoroDoc()
     const loroB: LoroDocType = new LoroDoc()
-    const idB = loroB.peerIdStr
     const idA = loroA.peerIdStr
+    const idB = loroB.peerIdStr
     const awarenessA = new CursorAwareness(idA)
     const awarenessB = new CursorAwareness(idB)
     this.state = { loroA, loroB, idA, idB, awarenessA, awarenessB }

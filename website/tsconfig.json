@@ -6,6 +6,7 @@
     "./*.js",
     "./.astro/*",
     "./tests/**/*",
+    "./tests2/**/*",
     "build/**/*",
     "build/**/*.json",
     "src/*.ts",
@@ -22,6 +23,9 @@
     },
   },
   "references": [
+    {
+      "path": "../packages/config-vitest/tsconfig.json",
+    },
     {
       "path": "../packages/prosekit/tsconfig.json",
     },

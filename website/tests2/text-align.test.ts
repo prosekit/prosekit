@@ -1,0 +1,94 @@
+import {
+  expect,
+  it,
+} from 'vitest'
+import {
+  page,
+  userEvent,
+} from 'vitest/browser'
+
+import {
+  emptyEditor,
+  getEditorHTML,
+  locateEditor,
+  MOD_KEY,
+  testStory,
+  waitForEditor,
+} from './helper'
+
+testStory('text-align', () => {
+  it('commands', async () => {
+    const btnL = page.getByRole('button', { name: 'Left' })
+    const btnR = page.getByRole('button', { name: 'Right' })
+    await waitForEditor()
+
+    expect(getEditorHTML()).toMatchSnapshot()
+
+    await resetCursor()
+    await btnL.click()
+    expect(getEditorHTML()).toMatchSnapshot()
+
+    await resetCursor()
+    await btnR.click()
+    expect(getEditorHTML()).toMatchSnapshot()
+
+    await resetCursor()
+    await userEvent.keyboard('{Enter}')
+    await resetCursor()
+  })
+
+  it('inheritance', async () => {
+    await emptyEditor()
+
+    const btnC = page.getByRole('button', { name: 'Center' })
+    const editor = await waitForEditor()
+
+    await userEvent.type(editor, '# H1')
+    await btnC.click()
+    await userEvent.keyboard('{Enter}')
+    await userEvent.type(editor, 'Paragraph')
+
+    // Both the heading and paragraph nodes should align to center
+    expect(getEditorHTML()).toMatchSnapshot()
+  })
+
+  it('keymap', async () => {
+    await emptyEditor()
+    const editor = await waitForEditor()
+
+    await userEvent.type(editor, 'paragraph')
+
+    const check = (expected: 'left' | 'right' | 'center' | 'justify') => {
+      for (const value of ['left', 'right', 'center', 'justify'] as const) {
+        const html = getEditorHTML().replaceAll(' ', '')
+        if (value === expected) {
+          expect(html).toContain(`text-align:` + value)
+        } else {
+          expect(html).not.toContain(`text-align:` + value)
+        }
+      }
+    }
+
+    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}r{/Shift}{/${MOD_KEY}}`)
+    check('right')
+
+    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}l{/Shift}{/${MOD_KEY}}`)
+    check('left')
+
+    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}e{/Shift}{/${MOD_KEY}}`)
+    check('center')
+
+    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}j{/Shift}{/${MOD_KEY}}`)
+    check('justify')
+  })
+})
+
+// Dumb way to move the text cursor to the start of the document
+async function resetCursor() {
+  const editor = locateEditor()
+  await editor.click()
+  for (let i = 0; i < 20; i++) {
+    await userEvent.keyboard('{ArrowUp}')
+    await userEvent.keyboard('{ArrowLeft}')
+  }
+}

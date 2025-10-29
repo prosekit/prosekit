@@ -1,6 +1,3 @@
-import '../src/styles/global.css'
-import './helpers/locator'
-
 import {
   beforeEach,
   describe,

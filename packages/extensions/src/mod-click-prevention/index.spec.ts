@@ -1,9 +1,16 @@
-import { createEditor } from '@prosekit/core'
+import {
+  createEditor,
+  union,
+} from '@prosekit/core'
 import {
   describe,
   expect,
   it,
 } from 'vitest'
+
+import { defineDoc } from '../doc'
+import { defineParagraph } from '../paragraph'
+import { defineText } from '../text'
 
 import { defineModClickPrevention } from './index'
 
@@ -14,21 +21,38 @@ describe('defineModClickPrevention', () => {
   })
 
   it('can be used in an editor', () => {
+    const extension = union(
+      defineDoc(),
+      defineParagraph(),
+      defineText(),
+      defineModClickPrevention(),
+    )
     const editor = createEditor({
-      extensions: [defineModClickPrevention()],
+      extension,
     })
     expect(editor).toBeDefined()
     editor.unmount()
   })
 
   it('registers plugin with correct key', () => {
+    const extension = union(
+      defineDoc(),
+      defineParagraph(),
+      defineText(),
+      defineModClickPrevention(),
+    )
     const editor = createEditor({
-      extensions: [defineModClickPrevention()],
+      extension,
     })
+    const div = document.body.appendChild(document.createElement('div'))
+    editor.mount(div)
     const plugin = editor.view.state.plugins.find(
-      (p) => (p as any).key && (p as any).key.startsWith?.('prosekit-mod-click-prevention'),
+      (p) =>
+        (p as any).key &&
+        String((p as any).key).includes('prosekit-mod-click-prevention'),
     )
     expect(plugin).toBeDefined()
     editor.unmount()
+    document.body.removeChild(div)
   })
 })

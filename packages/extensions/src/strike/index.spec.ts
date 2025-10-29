@@ -1,9 +1,16 @@
-import { createEditor } from '@prosekit/core'
+import {
+  createEditor,
+  union,
+} from '@prosekit/core'
 import {
   describe,
   expect,
   it,
 } from 'vitest'
+
+import { defineDoc } from '../doc'
+import { defineParagraph } from '../paragraph'
+import { defineText } from '../text'
 
 import {
   defineStrike,
@@ -40,8 +47,14 @@ describe('strike extension', () => {
   })
 
   it('can be used in an editor', () => {
+    const extension = union(
+      defineDoc(),
+      defineParagraph(),
+      defineText(),
+      defineStrike(),
+    )
     const editor = createEditor({
-      extensions: [defineStrike()],
+      extension,
     })
     expect(editor).toBeDefined()
     expect(editor.commands.toggleStrike).toBeDefined()
@@ -49,8 +62,14 @@ describe('strike extension', () => {
   })
 
   it('toggleStrike command works', () => {
+    const extension = union(
+      defineDoc(),
+      defineParagraph(),
+      defineText(),
+      defineStrike(),
+    )
     const editor = createEditor({
-      extensions: [defineStrike()],
+      extension,
     })
     const result = editor.commands.toggleStrike()
     expect(typeof result).toBe('boolean')

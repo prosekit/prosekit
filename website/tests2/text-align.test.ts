@@ -22,15 +22,60 @@ testStory('text-align', () => {
     const btnR = page.getByRole('button', { name: 'Right' })
     await waitForEditor()
 
-    expect(getEditorHTML()).toMatchSnapshot()
+    expect(getEditorHTML()).toMatchInlineSnapshot(`
+      "
+      <h1 style="text-align: center;">
+        Heading
+      </h1>
+      <p style="text-align: left;">
+        First paragraph
+      </p>
+      <p style="text-align: center;">
+        Second paragraph
+      </p>
+      <p style="text-align: right;">
+        Third paragraph
+      </p>
+      "
+    `)
 
     await resetCursor()
     await btnL.click()
-    expect(getEditorHTML()).toMatchSnapshot()
+    expect(getEditorHTML()).toMatchInlineSnapshot(`
+      "
+      <h1 style="text-align: left;">
+        Heading
+      </h1>
+      <p style="text-align: left;">
+        First paragraph
+      </p>
+      <p style="text-align: center;">
+        Second paragraph
+      </p>
+      <p style="text-align: right;">
+        Third paragraph
+      </p>
+      "
+    `)
 
     await resetCursor()
     await btnR.click()
-    expect(getEditorHTML()).toMatchSnapshot()
+    expect(getEditorHTML()).toMatchInlineSnapshot(`
+      "
+      <h1 style="text-align: right;">
+        Heading
+      </h1>
+      <p style="text-align: left;">
+        First paragraph
+      </p>
+      <p style="text-align: center;">
+        Second paragraph
+      </p>
+      <p style="text-align: right;">
+        Third paragraph
+      </p>
+      "
+    `)
 
     await resetCursor()
     await userEvent.keyboard('{Enter}')
@@ -49,7 +94,16 @@ testStory('text-align', () => {
     await userEvent.type(editor, 'Paragraph')
 
     // Both the heading and paragraph nodes should align to center
-    expect(getEditorHTML()).toMatchSnapshot()
+    expect(getEditorHTML()).toMatchInlineSnapshot(`
+      "
+      <h1 style="text-align: center;">
+        H1
+      </h1>
+      <p style="text-align: center;">
+        Paragraph
+      </p>
+      "
+    `)
   })
 
   it('keymap', async () => {

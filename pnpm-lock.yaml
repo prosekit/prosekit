@@ -304,11 +304,11 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       loro-crdt:
-        specifier: ^1.8.4
-        version: 1.8.4
+        specifier: ^1.8.5
+        version: 1.8.5
       loro-prosemirror:
         specifier: ^0.3.1
-        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.5)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -494,11 +494,11 @@ importers:
         specifier: ^0.25.11
         version: 0.25.11
       loro-crdt:
-        specifier: ^1.8.4
-        version: 1.8.4
+        specifier: ^1.8.5
+        version: 1.8.5
       loro-prosemirror:
         specifier: ^0.3.1
-        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.5)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -933,11 +933,11 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       loro-crdt:
-        specifier: ^1.8.4
-        version: 1.8.4
+        specifier: ^1.8.5
+        version: 1.8.5
       loro-prosemirror:
         specifier: ^0.3.1
-        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+        version: 0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.5)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       magic-string:
         specifier: ^0.30.19
         version: 0.30.19
@@ -5292,8 +5292,8 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
-  loro-crdt@1.8.4:
-    resolution: {integrity: sha512-ZUi7Sf8A5OJ8aHcrUyvF1er2RaaWIe/zNwhprfuFQTXUNu2xavxAqvDtXjvXSDXk/iPPYeYKRe00ApVa3MlqsA==}
+  loro-crdt@1.8.5:
+    resolution: {integrity: sha512-sWWOjzV05RT/NrD42THaihg8kQGNTzPzroyEap7PzyXYIg9JPlTA6MWqt8gLqhpWKhYD2niisljB2+4iwGUZWA==}
 
   loro-prosemirror@0.3.1:
     resolution: {integrity: sha512-oREzbYvvCiLDLB1PVlY+N1CNlvskQDpms3eHRjWNbkUgm8b6TvBm2vF+NeU+knAXHjEnx6eik/eWJ9g92Uk3xQ==}
@@ -12740,12 +12740,12 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  loro-crdt@1.8.4: {}
+  loro-crdt@1.8.5: {}
 
-  loro-prosemirror@0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.4)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3):
+  loro-prosemirror@0.3.1(patch_hash=4f35641728971446efb136da43c2f38b7b1db4d1f97d78cde0615f3891999815)(loro-crdt@1.8.5)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3):
     dependencies:
       lib0: 0.2.114
-      loro-crdt: 1.8.4
+      loro-crdt: 1.8.5
       prosemirror-model: 1.25.3
       prosemirror-state: 1.4.3
       prosemirror-view: 1.41.3

@@ -10,7 +10,6 @@ import {
 } from 'vitest'
 import { mouse } from 'vitest-browser-commands/playwright'
 import {
-  commands,
   locators,
   page,
   userEvent,

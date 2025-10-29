@@ -11,8 +11,6 @@ import { playwrightCommands } from 'vitest-browser-commands'
 
 import { classReplace } from './build/vite-plugin-class-replace'
 
-const debug = false
-
 export default config({
   plugins: [
     wasm(),
@@ -26,11 +24,4 @@ export default config({
     solid({ include: ['**/solid/**/*.tsx'] }),
     preact({ include: ['**/preact/**/*.tsx'] }),
   ],
-  test: {
-    include: ['test/**/*.test.ts'],
-    browser: {
-      headless: !debug,
-      ui: debug,
-    },
-  },
 })

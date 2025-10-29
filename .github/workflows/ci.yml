@@ -36,7 +36,6 @@ jobs:
     strategy:
       matrix:
         shard: [1, 2, 3, 4]
-        shardTotal: [4]
 
     steps:
       - uses: actions/checkout@v5
@@ -47,7 +46,7 @@ jobs:
         run: pnpm run test:install
 
       - name: Run tests
-        run: pnpm run test --shard=${{ matrix.shard }}/${{ matrix.shardTotal }}
+        run: pnpm run test --shard=${{ matrix.shard }}/4
 
   build:
     runs-on: ubuntu-latest

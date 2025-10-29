@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   test: {
     slowTestThreshold: 2000,
-    reporters: ['tree'],
+    reporters: ['verbose'],
     coverage: {
       enabled: false,
       reporter: ['text-summary', 'text', 'html', 'json', 'json-summary'],

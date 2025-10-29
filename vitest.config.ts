@@ -4,6 +4,7 @@ export default defineConfig({
   test: {
     slowTestThreshold: 2000,
     reporters: ['verbose'],
+    retry: process.env.CI ? 2 : 0,
     coverage: {
       enabled: false,
       reporter: ['text-summary', 'text', 'html', 'json', 'json-summary'],

@@ -40,10 +40,7 @@ export async function moveSelection(direction: 'forward' | 'backward', count: nu
  * Moves the text selection to the start of the first editable element.
  */
 export async function moveSelectionToStart(): Promise<void> {
-  const selection = window.getSelection()
-  if (!selection) {
-    throw new Error('Unable to access the current document selection.')
-  }
+  const selection = getSelection()
   const node = selection.anchorNode
   if (!node) {
     throw new Error('Unable to find the node that contains the selection.')

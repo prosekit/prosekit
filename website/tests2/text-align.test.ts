@@ -9,6 +9,7 @@ import {
 
 import {
   emptyEditor,
+  focusEditor,
   getEditorHTML,
   MOD_KEY,
   testStory,
@@ -39,6 +40,7 @@ testStory('text-align', () => {
       "
     `)
 
+    await focusEditor()
     await moveSelectionToStart()
     await btnL.click()
     expect(getEditorHTML()).toMatchInlineSnapshot(`

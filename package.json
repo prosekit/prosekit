@@ -32,11 +32,8 @@
     "pretest:e2e": "pnpm run test:install",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",
-    "test:e2e": "pnpm --filter='./website' run test",
-    "test:e2e:vitest": "vitest --project prosekit-website",
     "test:install": "playwright install chromium",
-    "typecheck": "tsc --build tsconfig.json",
-    "wip_test": "pnpm run typecheck && pnpm run lint:eslint && vitest run --project prosekit-website  --bail 1"
+    "typecheck": "tsc --build tsconfig.json"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",

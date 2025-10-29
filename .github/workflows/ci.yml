@@ -30,8 +30,13 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-  test-unit:
+  test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]
+        shardTotal: [4]
 
     steps:
       - uses: actions/checkout@v5
@@ -41,39 +46,8 @@ jobs:
       - name: Install Playwright
         run: pnpm run test:install
 
-      - name: Run unit tests
-        run: pnpm run test:coverage
-
-  test-e2e-playwright:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v5
-
-      - uses: ./.github/actions/setup
-
-      - name: Install Playwright
-        run: pnpm run test:install
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Run e2e tests
-        run: pnpm run test:e2e
-
-  test-e2e-vitest-browser-mode:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v5
-
-      - uses: ./.github/actions/setup
-
-      - name: Install Playwright
-        run: pnpm run test:install
-
-      - name: Run e2e tests
-        run: pnpm run test:e2e:vitest
+      - name: Run tests
+        run: pnpm run test --shard=${{ matrix.shard }}/${{ matrix.shardTotal }}
 
   build:
     runs-on: ubuntu-latest

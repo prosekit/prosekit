@@ -27,7 +27,7 @@ export default config({
     preact({ include: ['**/preact/**/*.tsx'] }),
   ],
   test: {
-    include: ['tests2/**/*.test.ts'],
+    include: ['test/**/*.test.ts'],
     browser: {
       headless: !debug,
       ui: debug,

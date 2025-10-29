@@ -208,13 +208,14 @@ describe('defineList', () => {
     `,
     )
 
-    const markdown1 = markdownFromHTML(html1.replaceAll('<p>', '').replaceAll('</p>', ''))
+    const markdown1 = markdownFromHTML(html1)
     expect(markdown1).toMatchInlineSnapshot(`
       "* Bullet
 
       1. Ordered
 
       * [x] Checked
+
       * [ ] Unchecked
       "
     `)
@@ -234,19 +235,23 @@ describe('defineList', () => {
       </ol>
       <ul class="contains-task-list">
         <li class="task-list-item">
-          <input
-            type="checkbox"
-            checked
-            disabled
-          >
-          Checked
+          <p>
+            <input
+              type="checkbox"
+              checked
+              disabled
+            >
+            Checked
+          </p>
         </li>
         <li class="task-list-item">
-          <input
-            type="checkbox"
-            disabled
-          >
-          Unchecked
+          <p>
+            <input
+              type="checkbox"
+              disabled
+            >
+            Unchecked
+          </p>
         </li>
       </ul>
       "

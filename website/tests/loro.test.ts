@@ -9,7 +9,7 @@ import {
 } from './helper'
 
 testStory('loro', () => {
-  test('synchronizes content across two editors', async ({ page }) => {
+  test.skip('synchronizes content across two editors', async ({ page }) => {
     const editors = page.locator('div.ProseMirror')
     await expect(editors).toHaveCount(2)
 

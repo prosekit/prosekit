@@ -242,6 +242,7 @@ export const CSS_TABLE_HANDLE_MENU = cn(
 export const CSS_TABLE_CELL_MENU_ITEM = cn(
   'relative min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
+  'data-[danger]:text-red-500',
   CSS_FLOATING_MENU_ITEM,
 )
 

@@ -1,4 +1,5 @@
-import { useEditor } from 'prosekit/preact'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/preact'
 import {
   TableHandleColumnRoot,
   TableHandleColumnTrigger,
@@ -13,8 +14,45 @@ import {
 
 import type { EditorExtension } from './extension'
 
+function getTableHandleState(editor: Editor<EditorExtension>) {
+  return {
+    addTableColumnBefore: {
+      canExec: editor.commands.addTableColumnBefore.canExec(),
+      command: () => editor.commands.addTableColumnBefore(),
+    },
+    addTableColumnAfter: {
+      canExec: editor.commands.addTableColumnAfter.canExec(),
+      command: () => editor.commands.addTableColumnAfter(),
+    },
+    deleteCellSelection: {
+      canExec: editor.commands.deleteCellSelection.canExec(),
+      command: () => editor.commands.deleteCellSelection(),
+    },
+    deleteTableColumn: {
+      canExec: editor.commands.deleteTableColumn.canExec(),
+      command: () => editor.commands.deleteTableColumn(),
+    },
+    addTableRowAbove: {
+      canExec: editor.commands.addTableRowAbove.canExec(),
+      command: () => editor.commands.addTableRowAbove(),
+    },
+    addTableRowBelow: {
+      canExec: editor.commands.addTableRowBelow.canExec(),
+      command: () => editor.commands.addTableRowBelow(),
+    },
+    deleteTableRow: {
+      canExec: editor.commands.deleteTableRow.canExec(),
+      command: () => editor.commands.deleteTableRow(),
+    },
+    deleteTable: {
+      canExec: editor.commands.deleteTable.canExec(),
+      command: () => editor.commands.deleteTable(),
+    },
+  }
+}
+
 export default function TableHandle() {
-  const editor = useEditor<EditorExtension>({ update: true })
+  const state = useEditorDerivedValue(getTableHandleState)
 
   return (
     <TableHandleRoot className="contents">
@@ -25,78 +63,95 @@ export default function TableHandle() {
           <div className="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
         </TableHandleColumnTrigger>
         <TableHandlePopoverContent className="CSS_TABLE_HANDLE_MENU">
-          {editor.commands.addTableColumnBefore.canExec() && (
+          {state.addTableColumnBefore.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.addTableColumnBefore()}
+              onSelect={state.addTableColumnBefore.command}
             >
               <span>Insert Left</span>
             </TableHandlePopoverItem>
           )}
-          {editor.commands.addTableColumnAfter.canExec() && (
+          {state.addTableColumnAfter.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.addTableColumnAfter()}
+              onSelect={state.addTableColumnAfter.command}
             >
               <span>Insert Right</span>
             </TableHandlePopoverItem>
           )}
-          {editor.commands.deleteCellSelection.canExec() && (
+          {state.deleteCellSelection.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.deleteCellSelection()}
+              onSelect={state.deleteCellSelection.command}
             >
               <span>Clear Contents</span>
               <span className="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
             </TableHandlePopoverItem>
           )}
-          {editor.commands.deleteTableColumn.canExec() && (
+          {state.deleteTableColumn.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.deleteTableColumn()}
+              onSelect={state.deleteTableColumn.command}
             >
               <span>Delete Column</span>
             </TableHandlePopoverItem>
           )}
+          {state.deleteTable.canExec && (
+            <TableHandlePopoverItem
+              className="CSS_TABLE_CELL_MENU_ITEM"
+              data-danger
+              onSelect={state.deleteTable.command}
+            >
+              <span>Delete Table</span>
+            </TableHandlePopoverItem>
+          )}
         </TableHandlePopoverContent>
       </TableHandleColumnRoot>
-
       <TableHandleRowRoot className="CSS_TABLE_ROW_HANDLE">
         <TableHandleRowTrigger className="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div className="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </TableHandleRowTrigger>
         <TableHandlePopoverContent className="CSS_TABLE_HANDLE_MENU">
-          {editor.commands.addTableRowAbove.canExec() && (
+          {state.addTableRowAbove.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.addTableRowAbove()}
+              onSelect={state.addTableRowAbove.command}
             >
               <span>Insert Above</span>
             </TableHandlePopoverItem>
           )}
-          {editor.commands.addTableRowBelow.canExec() && (
+          {state.addTableRowBelow.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.addTableRowBelow()}
+              onSelect={state.addTableRowBelow.command}
             >
               <span>Insert Below</span>
             </TableHandlePopoverItem>
           )}
-          {editor.commands.deleteCellSelection.canExec() && (
+          {state.deleteCellSelection.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.deleteCellSelection()}
+              onSelect={state.deleteCellSelection.command}
             >
               <span>Clear Contents</span>
               <span className="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
             </TableHandlePopoverItem>
           )}
-          {editor.commands.deleteTableRow.canExec() && (
+          {state.deleteTableRow.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => editor.commands.deleteTableRow()}
+              onSelect={state.deleteTableRow.command}
             >
               <span>Delete Row</span>
+            </TableHandlePopoverItem>
+          )}
+          {state.deleteTable.canExec && (
+            <TableHandlePopoverItem
+              className="CSS_TABLE_CELL_MENU_ITEM"
+              data-danger
+              onSelect={state.deleteTable.command}
+            >
+              <span>Delete Table</span>
             </TableHandlePopoverItem>
           )}
         </TableHandlePopoverContent>

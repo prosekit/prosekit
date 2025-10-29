@@ -270,8 +270,8 @@ importers:
         specifier: ^1.8.2
         version: 1.8.2
       prosemirror-flat-list:
-        specifier: ^0.5.7
-        version: 0.5.7
+        specifier: ^0.5.8
+        version: 0.5.8
       prosemirror-gapcursor:
         specifier: ^1.4.0
         version: 1.4.0
@@ -315,6 +315,9 @@ importers:
       rehype-remark:
         specifier: ^10.0.1
         version: 10.0.1
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
       remark-html:
         specifier: ^16.0.1
         version: 16.0.1
@@ -934,6 +937,9 @@ importers:
       rehype-remark:
         specifier: ^10.0.1
         version: 10.0.1
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
       remark-html:
         specifier: ^16.0.1
         version: 16.0.1
@@ -5934,8 +5940,8 @@ packages:
   prosemirror-dropcursor@1.8.2:
     resolution: {integrity: sha512-CCk6Gyx9+Tt2sbYk5NK0nB1ukHi2ryaRgadV/LvyNuO3ena1payM2z6Cg0vO1ebK8cxbzo41ku2DE5Axj1Zuiw==}
 
-  prosemirror-flat-list@0.5.7:
-    resolution: {integrity: sha512-1+xRgwRm8XGc64n5agB9fRUBSSmKwXs2VgcbLAyAwrIC7HopaHiXFctiWORl7YgXciJIQCyI6FLtfS3h+Txb2Q==}
+  prosemirror-flat-list@0.5.8:
+    resolution: {integrity: sha512-QHeogWkwVktecyFcCnWpJUs8d3gJ/D5H+67X1dqAIKPUCBJjsc5DNQMZ68QJ5gPHn0v6HYCIaCcQlZZu+YTvcA==}
 
   prosemirror-gapcursor@1.4.0:
     resolution: {integrity: sha512-z00qvurSdCEWUIulij/isHaqu4uLS8r/Fi61IbjdIPJEonQgggbJsLnstW7Lgdk4zQ68/yr6B6bf7sJXowIgdQ==}
@@ -13728,7 +13734,7 @@ snapshots:
       prosemirror-transform: 1.10.4
       prosemirror-view: 1.41.3
 
-  prosemirror-flat-list@0.5.7:
+  prosemirror-flat-list@0.5.8:
     dependencies:
       prosemirror-commands: 1.7.1
       prosemirror-inputrules: 1.5.1

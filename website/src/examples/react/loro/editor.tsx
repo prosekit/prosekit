@@ -1,57 +1,45 @@
 import {
   LoroDoc,
   type AwarenessListener,
-  type PeerID,
 } from 'loro-crdt'
 import {
   CursorAwareness,
   type LoroDocType,
 } from 'loro-prosemirror'
 import {
+  useEffect,
   useState,
-  useSyncExternalStore,
 } from 'react'
 
 import EditorComponent from './editor-component'
 
 export default function Page() {
-  const [loroStore] = useState(() => new LoroStore())
-  const loroState = useSyncExternalStore(loroStore.subscribe, loroStore.getSnapshot)
+  const { loroA, awarenessA, loroB, awarenessB } = useLoroDocs()
 
   return (
     <div className="h-full flex flex-col gap-2">
-      <EditorComponent loro={loroState.loroA} awareness={loroState.awarenessA} />
-      <EditorComponent loro={loroState.loroB} awareness={loroState.awarenessB} />
+      <EditorComponent loro={loroA} awareness={awarenessA} />
+      <EditorComponent loro={loroB} awareness={awarenessB} />
     </div>
   )
 }
 
-class LoroStore {
-  private state: {
-    loroA: LoroDocType
-    loroB: LoroDocType
-    idA: PeerID
-    idB: PeerID
-    awarenessA: CursorAwareness
-    awarenessB: CursorAwareness
-  }
-
-  constructor() {
+function useLoroDocs() {
+  const [loroState] = useState(() => {
     const loroA: LoroDocType = new LoroDoc()
     const loroB: LoroDocType = new LoroDoc()
+
     const idA = loroA.peerIdStr
     const idB = loroB.peerIdStr
+
     const awarenessA = new CursorAwareness(idA)
     const awarenessB = new CursorAwareness(idB)
-    this.state = { loroA, loroB, idA, idB, awarenessA, awarenessB }
-  }
 
-  getSnapshot = () => {
-    return this.state
-  }
+    return { loroA, loroB, idA, idB, awarenessA, awarenessB }
+  })
 
-  subscribe = () => {
-    const { loroA, loroB, idA, idB, awarenessA, awarenessB } = this.state
+  useEffect(() => {
+    const { loroA, loroB, idA, idB, awarenessA, awarenessB } = loroState
     const unsubscribeA = loroA.subscribeLocalUpdates((updates) => {
       loroB.import(updates)
     })
@@ -76,5 +64,7 @@ class LoroStore {
       unsubscribeA()
       unsubscribeB()
     }
-  }
+  }, [loroState])
+
+  return loroState
 }

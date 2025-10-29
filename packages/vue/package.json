@@ -66,7 +66,7 @@
     "@vue/test-utils": "^2.4.6",
     "tsdown": "^0.15.9",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.3",
+    "vitest": "^4.0.4",
     "vue": "^3.5.22"
   },
   "publishConfig": {

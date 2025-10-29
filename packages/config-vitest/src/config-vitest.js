@@ -3,6 +3,8 @@
 import { playwright } from '@vitest/browser-playwright'
 import { merge } from 'lodash-es'
 
+const debug = !!process.env.debug && !process.env.CI
+
 /** @type {import('vitest/config').UserWorkspaceConfig} */
 const defaultConfig = {
   test: {
@@ -20,10 +22,10 @@ const defaultConfig = {
           permissions: ['clipboard-read', 'clipboard-write'],
         },
       }),
-      headless: true,
-      ui: false,
+      headless: !debug,
+      ui: debug,
       fileParallelism: true,
-      screenshotFailures: false,
+      screenshotFailures: debug,
       instances: [
         {
           browser: 'chromium',

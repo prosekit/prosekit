@@ -2,7 +2,8 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    reporters: ['tree'],
+    slowTestThreshold: 2000,
+    reporters: ['verbose'],
     coverage: {
       enabled: false,
       reporter: ['text-summary', 'text', 'html', 'json', 'json-summary'],
@@ -10,6 +11,6 @@ export default defineConfig({
       include: ['packages/**/src/**'],
     },
     fileParallelism: false,
-    projects: ['packages/*'],
+    projects: ['./packages/*', './website'],
   },
 })

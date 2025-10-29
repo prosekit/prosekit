@@ -30,45 +30,23 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-  test-unit:
+  test:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v5
-
-      - uses: ./.github/actions/setup
-
-      - name: Install Playwright
-        run: pnpm run test:install
-
-      - name: Run unit tests
-        run: pnpm run test:coverage
-
-  test-e2e:
-    runs-on: ubuntu-latest
-
-    needs: [build]
 
     strategy:
-      fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4, 5]
+        shard: [1, 2, 3]
 
     steps:
       - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
-
       - name: Install Playwright
         run: pnpm run test:install
 
-      - name: Build
-        run: pnpm run build
-
-      - name: Run e2e tests
-        run: pnpm run test:e2e --shard="${{ matrix.shard }}/5"
+      - name: Run tests
+        run: pnpm run test --shard=${{ matrix.shard }}/3
 
   build:
     runs-on: ubuntu-latest

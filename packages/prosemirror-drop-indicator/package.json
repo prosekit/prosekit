@@ -37,7 +37,7 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^0.7.1",
+    "@ocavue/utils": "^0.8.1",
     "prosemirror-model": "^1.25.3",
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.41.3"

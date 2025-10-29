@@ -35,6 +35,11 @@ const mapping: Record<string, string[]> = {
     'examples/react/mark-rule/',
     'examples/vue/mark-rule/',
   ],
+  'shared/common/markdown.ts': [
+    /// keep-sorted
+    'examples/react/save-markdown/',
+    'examples/vue/save-markdown/',
+  ],
   'shared/common/sample-doc-code-block.ts': [
     /// keep-sorted
     'examples/react/code-block-themes/',

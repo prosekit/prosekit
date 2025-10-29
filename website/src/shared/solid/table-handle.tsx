@@ -61,7 +61,7 @@ export default function TableHandle() {
           {editor().commands.deleteTable.canExec() && (
             <TableHandlePopoverItem
               class="CSS_TABLE_CELL_MENU_ITEM"
-              data-danger
+              attr:data-danger
               onSelect={() => editor().commands.deleteTable()}
             >
               <span>Delete Table</span>
@@ -110,7 +110,7 @@ export default function TableHandle() {
           {editor().commands.deleteTable.canExec() && (
             <TableHandlePopoverItem
               class="CSS_TABLE_CELL_MENU_ITEM"
-              data-danger
+              attr:data-danger
               onSelect={() => editor().commands.deleteTable()}
             >
               <span>Delete Table</span>

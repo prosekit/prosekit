@@ -15,9 +15,6 @@
       "path": "../pm/tsconfig.json",
     },
     {
-      "path": "../prosemirror-drop-indicator/tsconfig.json",
-    },
-    {
       "path": "./tsconfig.build.json",
     },
   ],

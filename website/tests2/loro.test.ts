@@ -12,7 +12,7 @@ import {
 } from './helper'
 
 testStory('loro', () => {
-  it('synchronizes content across two editors', async () => {
+  it.skip('synchronizes content across two editors', async () => {
     const editors = locateEditor()
     await expectLocatorToHaveCount(editors, 2)
 

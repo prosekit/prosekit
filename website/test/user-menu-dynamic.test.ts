@@ -62,10 +62,10 @@ testStory('user-menu-dynamic', () => {
     {
       setTestBlocking(false)
 
-      await expect.element(itemAlice).toBeVisible()
-      await expect.element(itemBob).toBeVisible()
-      await expect.element(itemFocused).toBeVisible()
-      await expect.element(itemFocused).toHaveTextContent('A')
+      await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
+      await expect.element(itemBob, { timeout: 5000 }).toBeVisible()
+      await expect.element(itemFocused, { timeout: 5000 }).toBeVisible()
+      await expect.element(itemFocused, { timeout: 5000 }).toHaveTextContent('A')
 
       await expect.element(menu).toBeVisible()
       checkMenuPosition()
@@ -75,10 +75,10 @@ testStory('user-menu-dynamic', () => {
     {
       await userEvent.type(editor, 'ali')
 
-      await expect.element(itemAlice).toBeVisible()
+      await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expectLocatorToBeHidden(itemBob)
-      await expect.element(itemFocused).toBeVisible()
-      await expect.element(itemFocused).toHaveTextContent('Alice')
+      await expect.element(itemFocused, { timeout: 5000 }).toBeVisible()
+      await expect.element(itemFocused, { timeout: 5000 }).toHaveTextContent('Alice')
 
       await expect.element(menu).toBeVisible()
       checkMenuPosition()

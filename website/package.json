@@ -34,7 +34,7 @@
     "@iconify-json/lucide": "^1.2.70",
     "@iconify-json/tabler": "^1.2.23",
     "@manypkg/find-root": "^3.1.0",
-    "@ocavue/utils": "^0.7.1",
+    "@ocavue/utils": "^0.8.1",
     "@playwright/test": "^1.56.1",
     "@preact/preset-vite": "^2.10.2",
     "@prosekit/config-vitest": "workspace:*",

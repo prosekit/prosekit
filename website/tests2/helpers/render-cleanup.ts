@@ -1,7 +1,7 @@
-const cleanupFunctions: Array<() => void | Promise<void>> = []
+const cleanupFunctions = new Set<() => void | Promise<void>>()
 
 export function registerCleanupFunction(cleanupFunction: () => void | Promise<void>) {
-  cleanupFunctions.push(cleanupFunction)
+  cleanupFunctions.add(cleanupFunction)
 }
 
 export async function runCleanupFunctions() {

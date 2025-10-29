@@ -1,4 +1,5 @@
 import '../src/styles/global.css'
+import './helpers/locator'
 
 import diffableHtml from 'diffable-html'
 import {
@@ -8,11 +9,9 @@ import {
   type ExpectPollOptions,
 } from 'vitest'
 import {
-  locators,
   page,
   userEvent,
   type Locator,
-  type LocatorOptions,
 } from 'vitest/browser'
 import { mouse } from 'vitest-browser-commands/playwright'
 
@@ -28,22 +27,6 @@ export {
 
 const IS_APPLE = window.navigator.userAgent.includes('Mac')
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
-
-declare module 'vitest/browser' {
-  interface LocatorSelectors {
-    locate(selector: string, options?: LocatorOptions): Locator
-  }
-}
-
-locators.extend({
-  locate(selector: string, options?: LocatorOptions): Locator | string {
-    if (!options) {
-      return selector
-    }
-    const locator = page.locate(selector)
-    return locator.filter(options)
-  },
-})
 
 function getExamples(story: string) {
   const examples = exampleMeta.examples.filter(

@@ -86,7 +86,7 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "prosemirror-changeset": "^2.3.1",
-    "prosemirror-drop-indicator": "workspace:^",
+    "prosemirror-drop-indicator": "^0.1.2",
     "prosemirror-dropcursor": "^1.8.2",
     "prosemirror-flat-list": "^0.5.7",
     "prosemirror-gapcursor": "^1.4.0",

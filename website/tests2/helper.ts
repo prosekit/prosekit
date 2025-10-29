@@ -5,7 +5,6 @@ import {
   beforeEach,
   describe,
   expect,
-  it,
   type ExpectPollOptions,
 } from 'vitest'
 import { mouse } from 'vitest-browser-commands/playwright'
@@ -54,124 +53,57 @@ interface TestStoryCallbackOptions {
   example: string
 }
 
-interface TestStoryOptions {
-  /**
-   * Whether to check for uncaught errors.
-   *
-   * If `true`, the test will fail if there are uncaught runtime errors.
-   *
-   * @default true
-   */
-  checkUncaughtErrors?: boolean
-
-  /**
-   * Whether to check for console errors.
-   *
-   * If `true`, the test will fail if there are console errors.
-   *
-   * @default true
-   */
-  checkConsoleErrors?: boolean
-
-  /**
-   * Whether to check for console warnings.
-   *
-   * If `true`, the test will fail if there are console warnings.
-   *
-   * @default true
-   */
-  checkConsoleWarnings?: boolean
-}
-
-const cleanupFunctions: Record<string, () => void | Promise<void>> = {}
-
-function registerCleanupFunction(name: string, cleanupFunction: () => void | Promise<void>) {
-  if (cleanupFunctions[name]) {
-    return
-  }
-  cleanupFunctions[name] = cleanupFunction
-}
-
-async function runCleanupFunctions() {
-  for (const cleanupFunction of Object.values(cleanupFunctions)) {
-    await cleanupFunction()
-  }
-}
-
 function testSingleStory(
   story: string,
   callback: (options: TestStoryCallbackOptions) => void,
-  // TODO: the following options are not used yet. Don't implement them yet. We
-  // might or might not need to remove them in the future.
-  {}: TestStoryOptions = {},
 ) {
   for (const example of getExamples(story)) {
     describe(example.framework + '/' + example.story, () => {
       beforeEach(async () => {
-        await runCleanupFunctions()
+        await renderExample(example.framework, example.story)
       })
-
-      if (example.framework === 'react') {
-        beforeEach(async () => {
-          const pure = await import('vitest-browser-react/pure')
-          const { ReactExample } = await import('../src/examples/react/example')
-          const React = await import('react')
-          registerCleanupFunction(example.framework, pure.cleanup)
-          await pure.render(React.createElement(ReactExample, { story: example.story }))
-        })
-        callback({ example: example.name })
-      } else if (example.framework === 'vue') {
-        beforeEach(async () => {
-          const pure = await import('vitest-browser-vue/pure')
-          const { VueExample } = await import('../src/examples/vue/example')
-          registerCleanupFunction(example.framework, pure.cleanup)
-          pure.render(VueExample, { props: { story: example.story } })
-        })
-        callback({ example: example.name })
-      } else if (example.framework === 'svelte') {
-        beforeEach(async () => {
-          const pure = await import('vitest-browser-svelte/pure')
-          const { SvelteExample } = await import('../src/examples/svelte/example')
-          registerCleanupFunction(example.framework, pure.cleanup)
-          pure.render(SvelteExample, { story: example.story })
-        })
-        callback({ example: example.name })
-      } else if (example.framework === 'solid') {
-        beforeEach(async () => {
-          const pure = await import('vitest-browser-solid/pure')
-          const { SolidExample } = await import('../src/examples/solid/example')
-          const { default: h } = await import('solid-js/h')
-          registerCleanupFunction(example.framework, pure.cleanup)
-          pure.render(h(SolidExample, { story: example.story }))
-        })
-        callback({ example: example.name })
-      } else if (example.framework === 'preact') {
-        beforeEach(async () => {
-          const pure = await import('vitest-browser-preact/pure')
-          const { PreactExample } = await import('../src/examples/preact/example')
-          const Preact = await import('preact')
-          registerCleanupFunction(example.framework, pure.cleanup)
-          pure.render(Preact.createElement(PreactExample, { story: example.story }))
-        })
-        callback({ example: example.name })
-      } else {
-        it.skip(`The ${example.framework} framework is not supported yet for vitest browser tests`, () => {
-          expect(1 + 1).toBe(2)
-        })
-      }
+      callback({ example: example.name })
     })
   }
+}
+
+async function renderExample(framework: string, story: string) {
+  if (framework === 'react') {
+    const { renderReactExample } = await import('./helpers/render-react')
+    return await renderReactExample(story)
+  }
+
+  if (framework === 'vue') {
+    const { renderVueExample } = await import('./helpers/render-vue')
+    return await renderVueExample(story)
+  }
+
+  if (framework === 'svelte') {
+    const { renderSvelteExample } = await import('./helpers/render-svelte')
+    return await renderSvelteExample(story)
+  }
+
+  if (framework === 'solid') {
+    const { renderSolidExample } = await import('./helpers/render-solid')
+    return await renderSolidExample(story)
+  }
+
+  if (framework === 'preact') {
+    const { renderPreactExample } = await import('./helpers/render-preact')
+    return await renderPreactExample(story)
+  }
+
+  throw new Error(`The ${framework} framework is not supported`)
 }
 
 export function testStory(
   story: string | string[],
   callback: (options: TestStoryCallbackOptions) => void,
-  options?: TestStoryOptions,
 ) {
   const stories = Array.isArray(story) ? story : [story]
 
   for (const story of stories) {
-    testSingleStory(story, callback, options)
+    testSingleStory(story, callback)
   }
 }
 

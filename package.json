@@ -58,8 +58,6 @@
   },
   "pnpm": {
     "overrides": {},
-    "patchedDependencies": {
-      "loro-prosemirror": "patches/loro-prosemirror.patch"
-    }
+    "patchedDependencies": {}
   }
 }

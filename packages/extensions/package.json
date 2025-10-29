@@ -122,7 +122,7 @@
     "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
     "loro-crdt": "^1.8.5",
-    "loro-prosemirror": "^0.3.1",
+    "loro-prosemirror": "^0.3.5",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-html": "^16.0.1",

@@ -6,23 +6,19 @@
 Update the DOM output for task list clipboard serialization to include a
 checkbox element inside the list item.
 
-For instance, given the following content:
+For instance, set the following content to the editor and call `editor.getDocHTML()`:
 
 ```ts
 editor.setContent({
   type: "doc",
-  content: [
-    {
-      type: "list",
-      attrs: { kind: "task", checked: true },
-      content: [
-        {
-          type: "paragraph",
-          content: [{ type: "text", text: "Foo" }],
-        },
-      ],
-    },
-  ],
+  content: [{
+    type: "list",
+    attrs: { kind: "task", checked: true },
+    content: [{ 
+      type: "paragraph", 
+      content: [{ type: "text", text: "Foo" }],
+    }],
+  }],
 });
 console.log(editor.getDocHTML());
 ```

@@ -43,19 +43,13 @@ Run `pnpm run dev` to start the development server:
 
 ProseKit has unit and integration tests.
 
-### Unit Tests
+### Tests
 
 - Run all: `pnpm run test`
 - Run specific test: `pnpm run test [test-file-path]`
 - Run with coverage report: `pnpm run test:coverage`
-- Files: Located in `packages/` with `.spec.ts` suffix
+- Files: Located in `packages/` with `.spec.ts` suffix, and in `website/test/` with `.test.ts` suffix
 - Coverage report: `coverage/` directory
-
-### Integration Tests
-
-- Run all: `pnpm run test:e2e`
-- Run specific test: `pnpm run test:e2e [test-file-name]`
-- Files: Located in `website/tests/` with `.test.ts` suffix
 
 ## Pull Requests
 

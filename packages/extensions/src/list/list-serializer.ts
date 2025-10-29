@@ -39,7 +39,7 @@ export function defineListSerializer(): PlainExtension {
   })
 }
 
-export function normalizeElementTree<T extends Element | DocumentFragment>(
+function normalizeElementTree<T extends Element | DocumentFragment>(
   node: T,
 ): T {
   if (isElementLike(node)) {

@@ -3,7 +3,7 @@ import {
   sleep,
 } from '@ocavue/utils'
 
-export function getSelection(): Selection {
+function getSelection(): Selection {
   const selection = window.getSelection()
   if (!selection) {
     throw new Error('Unable to access the current document selection.')

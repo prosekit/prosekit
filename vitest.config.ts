@@ -10,6 +10,7 @@ export default defineConfig({
       reporter: ['text-summary', 'text', 'html', 'json', 'json-summary'],
       provider: 'v8',
       include: ['packages/**/src/**'],
+      exclude: ['packages/dev/**/*', 'packages/config-*/**/*'],
     },
     fileParallelism: false,
     projects: ['./packages/*', './website'],

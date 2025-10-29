@@ -1,10 +1,5 @@
-import '../src/styles/global.css'
-import './helpers/locator'
-
 import diffableHtml from 'diffable-html'
 import {
-  beforeEach,
-  describe,
   expect,
   type ExpectPollOptions,
 } from 'vitest'
@@ -13,9 +8,11 @@ import {
   userEvent,
   type Locator,
 } from 'vitest/browser'
-import { mouse } from 'vitest-browser-commands/playwright'
 
-import exampleMeta from '../example.meta.json' with { type: 'json' }
+export {
+  hover,
+  unhover,
+} from './helpers/mouse'
 
 export {
   collapseSelection,
@@ -25,78 +22,10 @@ export {
   moveSelection,
 } from './helpers/selection'
 
+export { testStory } from './helpers/test-story'
+
 const IS_APPLE = window.navigator.userAgent.includes('Mac')
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
-
-function getExamples(story: string) {
-  const examples = exampleMeta.examples.filter(
-    (example) => example.story === story,
-  )
-
-  if (examples.length === 0) {
-    throw new Error(`No examples found for story "${story}"`)
-  }
-
-  return examples
-}
-
-interface TestStoryCallbackOptions {
-  example: string
-}
-
-function testSingleStory(
-  story: string,
-  callback: (options: TestStoryCallbackOptions) => void,
-) {
-  for (const example of getExamples(story)) {
-    describe(example.framework + '/' + example.story, () => {
-      beforeEach(async () => {
-        await renderExample(example.framework, example.story)
-      })
-      callback({ example: example.name })
-    })
-  }
-}
-
-async function renderExample(framework: string, story: string) {
-  if (framework === 'react') {
-    const { renderReactExample } = await import('./helpers/render-react')
-    return await renderReactExample(story)
-  }
-
-  if (framework === 'vue') {
-    const { renderVueExample } = await import('./helpers/render-vue')
-    return await renderVueExample(story)
-  }
-
-  if (framework === 'svelte') {
-    const { renderSvelteExample } = await import('./helpers/render-svelte')
-    return await renderSvelteExample(story)
-  }
-
-  if (framework === 'solid') {
-    const { renderSolidExample } = await import('./helpers/render-solid')
-    return await renderSolidExample(story)
-  }
-
-  if (framework === 'preact') {
-    const { renderPreactExample } = await import('./helpers/render-preact')
-    return await renderPreactExample(story)
-  }
-
-  throw new Error(`The ${framework} framework is not supported`)
-}
-
-export function testStory(
-  story: string | string[],
-  callback: (options: TestStoryCallbackOptions) => void,
-) {
-  const stories = Array.isArray(story) ? story : [story]
-
-  for (const story of stories) {
-    testSingleStory(story, callback)
-  }
-}
 
 export function locateEditor(): Locator {
   return page.locate('div.ProseMirror')
@@ -160,11 +89,6 @@ export function getBoundingBox(locator: Locator): BoundingBox {
     width: rect.width,
     height: rect.height,
   }
-}
-
-export async function unhover(): Promise<void> {
-  const body = page.locate('body')
-  await hover(body, { position: { x: 0, y: 0 } })
 }
 
 export async function waitForAnimationEnd(locator: Locator): Promise<void> {
@@ -265,53 +189,4 @@ export async function pasteHtmlToEditor(
   })
 
   element.dispatchEvent(event)
-}
-
-/**
- * Hover over an element.
- *
- * This could be more reliable than `locator.hover()` because it sends multiple
- * mouse move events.
- */
-export async function hover(locator: Locator, options?: {
-  /**
-   * A point to use relative to the top-left corner of element padding box. If
-   * not specified, points to the center of the element.
-   */
-  position?: { x: number; y: number }
-
-  /**
-   * How many mouse move events to send.
-   */
-  steps?: number
-}) {
-  await expect.element(locator).toBeVisible()
-  const box = locator.element().getBoundingClientRect()
-
-  // Coordinates relative to the top-left corner of the element.
-  const x = options?.position?.x ?? Math.floor(box.width / 2)
-  const y = options?.position?.y ?? Math.floor(box.height / 2)
-
-  const steps = options?.steps ?? 10
-  await mouse.move(x + box.x, y + box.y, { steps })
-}
-
-/**
- * Drag an element over another element.
- *
- * This is more reliable than `locator.dragTo()` because it sends multiple mouse
- * move events.
- */
-export async function dragAndDrop(
-  startLocator: Locator,
-  endLocator: Locator,
-  options?: {
-    startPosition?: { x: number; y: number }
-    endPosition?: { x: number; y: number }
-  },
-) {
-  await hover(startLocator, { position: options?.startPosition })
-  await mouse.down()
-  await hover(endLocator, { position: options?.endPosition })
-  await mouse.up()
 }

@@ -88,7 +88,7 @@
     "prosemirror-changeset": "^2.3.1",
     "prosemirror-drop-indicator": "^0.1.2",
     "prosemirror-dropcursor": "^1.8.2",
-    "prosemirror-flat-list": "^0.5.7",
+    "prosemirror-flat-list": "https://pkg.pr.new/ocavue/prosemirror-flat-list@276",
     "prosemirror-gapcursor": "^1.4.0",
     "prosemirror-highlight": "^0.13.0",
     "prosemirror-search": "^1.1.0",

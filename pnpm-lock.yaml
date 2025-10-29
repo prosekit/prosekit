@@ -386,10 +386,10 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       prosemirror-model:
-        specifier: ^1.25.3
+        specifier: ^1.25.4
         version: 1.25.4
       prosemirror-state:
-        specifier: ^1.4.3
+        specifier: ^1.4.4
         version: 1.4.4
       prosemirror-transform:
         specifier: ^1.10.4

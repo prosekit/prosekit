@@ -8,6 +8,7 @@ import {
 } from 'vitest/browser'
 
 import {
+  focusEditor,
   locateEditor,
   testStory,
 } from './helper'
@@ -48,9 +49,3 @@ testStory('readonly', () => {
     await expect.element(editor).toHaveTextContent('baz')
   })
 })
-
-async function focusEditor() {
-  const editor = locateEditor()
-  await editor.click()
-  await userEvent.keyboard('{ArrowRight}')
-}

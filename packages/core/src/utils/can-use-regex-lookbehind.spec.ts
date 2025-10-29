@@ -1,4 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { canUseRegexLookbehind } from './can-use-regex-lookbehind'
 

@@ -1,6 +1,14 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
-import { arraySubtract, toReversed, uniqPush } from './array'
+import {
+  arraySubtract,
+  toReversed,
+  uniqPush,
+} from './array'
 
 describe('array utilities', () => {
   describe('uniqPush', () => {

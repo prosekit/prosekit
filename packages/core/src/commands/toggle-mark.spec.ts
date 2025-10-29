@@ -1,7 +1,11 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
-import { toggleMark } from './toggle-mark'
 import { createTestEditor } from '../test/test-editor'
+import { toggleMark } from './toggle-mark'
 
 describe('toggleMark', () => {
   it('creates a command', () => {

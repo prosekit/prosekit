@@ -1,6 +1,14 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
-import { DOMDocumentNotFoundError, EditorNotFoundError, ProseKitError } from './error'
+import {
+  DOMDocumentNotFoundError,
+  EditorNotFoundError,
+  ProseKitError,
+} from './error'
 
 describe('error', () => {
   it('creates ProseKitError', () => {

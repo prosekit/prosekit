@@ -4,6 +4,7 @@ import {
   type PlainExtension,
 } from '@prosekit/core'
 import {
+  findCheckboxInListItem,
   joinListElements,
   listToDOM,
 } from 'prosemirror-flat-list'
@@ -71,7 +72,7 @@ function normalizeTaskList(node: Element): void {
     return
   }
 
-  const checkbox = findCheckbox(marker)
+  const checkbox = findCheckboxInListItem(marker)
   if (!checkbox) {
     return
   }
@@ -88,23 +89,4 @@ function normalizeTaskList(node: Element): void {
 
   node.replaceChildren(...content.children)
   textBlock.prepend(checkbox)
-}
-
-function findCheckbox(node: Element): HTMLInputElement | undefined {
-  if (
-    isInputElement(node) && node.type === 'checkbox'
-  ) {
-    return node
-  }
-
-  for (const child of node.children) {
-    const checkbox = findCheckbox(child)
-    if (checkbox) {
-      return checkbox
-    }
-  }
-}
-
-function isInputElement(node: Element): node is HTMLInputElement {
-  return node.tagName === 'INPUT'
 }

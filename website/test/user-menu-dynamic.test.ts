@@ -11,6 +11,7 @@ import {
   expectLocatorToBeHidden,
   getBoundingBox,
   testStory,
+  unhover,
   waitForEditor,
 } from './helpers'
 
@@ -25,6 +26,9 @@ testStory('user-menu-dynamic', () => {
     const itemLoading = menuItems.getByText('Loading...')
     const itemNoResults = menuItems.getByText('No results')
     const itemFocused = menu.locate('[role="option"][data-focused="true"]')
+
+    // Reset the mouse position
+    await unhover()
 
     // Ensure that the menu is positioned correctly inside the editor
     const checkMenuPosition = () => {

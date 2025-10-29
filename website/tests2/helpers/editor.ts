@@ -13,7 +13,7 @@ export function locateEditor(): Locator {
   return page.locate('div.ProseMirror')
 }
 
-export function locateFocusedEditor(): Locator {
+function locateFocusedEditor(): Locator {
   return page.locate('div.ProseMirror.ProseMirror-focused')
 }
 

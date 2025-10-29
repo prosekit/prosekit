@@ -8,7 +8,6 @@ export {
   focusEditor,
   getEditorHTML,
   locateEditor,
-  locateFocusedEditor,
   MOD_KEY,
   pasteHtmlToEditor,
   waitForEditor,

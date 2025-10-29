@@ -28,7 +28,6 @@ const config = {
         'src/examples/**/*',
         'src/shared/**/*',
         'tests/helper.ts',
-        'tests2/helper.ts',
         'src/styles/*.css',
       ],
       ignoreUnresolved: [

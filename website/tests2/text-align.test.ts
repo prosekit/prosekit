@@ -12,10 +12,10 @@ import {
   focusEditor,
   getEditorHTML,
   MOD_KEY,
+  moveSelectionToStart,
   testStory,
   waitForEditor,
 } from './helpers'
-import { moveSelectionToStart } from './helpers/selection'
 
 testStory('text-align', () => {
   it('commands', async () => {

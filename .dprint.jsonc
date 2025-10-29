@@ -12,6 +12,7 @@
     "importDeclaration.forceMultiLine": "whenMultiple",
     "exportDeclaration.sortTypeOnlyExports": "last",
     "importDeclaration.sortTypeOnlyImports": "last",
+    "module.sortImportDeclarations": "maintain",
   },
   "json": {
     "jsonTrailingCommaFiles": ["tsconfig.json", ".vscode/settings.json"],

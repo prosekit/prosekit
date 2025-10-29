@@ -7,7 +7,6 @@ import {
   expect,
   type ExpectPollOptions,
 } from 'vitest'
-import { mouse } from 'vitest-browser-commands/playwright'
 import {
   locators,
   page,
@@ -15,6 +14,7 @@ import {
   type Locator,
   type LocatorOptions,
 } from 'vitest/browser'
+import { mouse } from 'vitest-browser-commands/playwright'
 
 import exampleMeta from '../example.meta.json' with { type: 'json' }
 

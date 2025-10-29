@@ -1,5 +1,5 @@
 import './locator'
-import '../src/styles/global.css'
+import '../../src/styles/global.css'
 
 export { waitForAnimationEnd } from './animation'
 export {

@@ -9,21 +9,6 @@ import {
   type Locator,
 } from 'vitest/browser'
 
-export {
-  hover,
-  unhover,
-} from './mouse'
-
-export {
-  collapseSelection,
-  extendSelection,
-  getSelectedHtml,
-  getSelectedText,
-  moveSelection,
-} from './selection'
-
-export { testStory } from './test-story'
-
 const IS_APPLE = window.navigator.userAgent.includes('Mac')
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
 

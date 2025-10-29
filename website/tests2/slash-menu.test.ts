@@ -15,7 +15,7 @@ import {
   getEditorHTML,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory(['slash-menu', 'full'], () => {
   it('execute command', async () => {

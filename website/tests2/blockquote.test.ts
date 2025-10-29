@@ -11,7 +11,7 @@ import {
   emptyEditor,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('blockquote', () => {
   it('toggle blockquote on current paragraph', async () => {

@@ -11,7 +11,7 @@ import {
   emptyEditor,
   expectLocatorToHaveCount,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('change-tracking', () => {
   it('save commits and restore previous version', async () => {

@@ -8,7 +8,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('keymap', () => {
   it('keymap', async () => {

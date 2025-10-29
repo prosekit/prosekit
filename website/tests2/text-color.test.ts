@@ -11,7 +11,7 @@ import {
   moveSelection,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('text-color', () => {
   it('change and clear text color via inline menu', async ({}) => {

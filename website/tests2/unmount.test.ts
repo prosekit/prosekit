@@ -7,7 +7,7 @@ import { page } from 'vitest/browser'
 import {
   expectLocatorToHaveCount,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('unmount', () => {
   it('unmount', async () => {

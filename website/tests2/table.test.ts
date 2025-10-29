@@ -18,7 +18,7 @@ import {
   pasteHtmlToEditor,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('table', () => {
   it('default table content', async () => {

@@ -8,7 +8,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('drop-cursor', () => {
   it('reorders images by HTML5 drag-and-drop', async () => {

@@ -13,7 +13,7 @@ import {
   getBoundingBox,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('gap-cursor', () => {
   it('shows gap cursor between stacked images', async () => {

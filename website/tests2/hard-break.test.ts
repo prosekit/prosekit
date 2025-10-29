@@ -11,7 +11,7 @@ import {
   expectLocatorToHaveCount,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('hard-break', () => {
   it('insert hard break via toolbar and keyboard', async () => {

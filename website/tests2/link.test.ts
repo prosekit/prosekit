@@ -14,7 +14,7 @@ import {
   getSelectedText,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('link', () => {
   it('add, show, and remove link via inline menu', async () => {

@@ -11,7 +11,7 @@ import {
   emptyEditor,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('user-menu', () => {
   it('insert user and tag mentions via autocomplete', async () => {

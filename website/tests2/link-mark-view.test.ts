@@ -7,7 +7,7 @@ import {
 import {
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('link-mark-view', () => {
   it('link-mark-view', async () => {

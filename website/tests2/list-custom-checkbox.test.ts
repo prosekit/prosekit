@@ -7,7 +7,7 @@ import {
 import {
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('list-custom-checkbox', () => {
   it('list-custom-checkbox', async () => {

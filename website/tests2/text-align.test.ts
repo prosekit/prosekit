@@ -14,7 +14,7 @@ import {
   MOD_KEY,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 import { moveSelectionToStart } from './helpers/selection'
 
 testStory('text-align', () => {

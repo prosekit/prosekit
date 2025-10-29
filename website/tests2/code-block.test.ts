@@ -9,7 +9,7 @@ import {
   expectLocatorToNotExist,
   locateEditor,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('code-block', () => {
   it('input rule', async () => {

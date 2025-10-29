@@ -17,7 +17,7 @@ import {
   unhover,
   waitForAnimationEnd,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory(['full'], () => {
   it('show block handle on hover', async () => {

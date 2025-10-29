@@ -15,7 +15,7 @@ import {
   moveSelection,
   testStory,
   waitForEditor,
-} from './editor'
+} from './helpers'
 
 testStory('save-markdown', () => {
   it('save-markdown', async () => {

@@ -12,7 +12,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('horizontal-rule', () => {
   it('insert divider and continue typing', async () => {

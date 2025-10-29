@@ -9,7 +9,7 @@ import {
   expectLocatorToNotExist,
   locateEditor,
   testStory,
-} from './editor'
+} from './helpers'
 
 testStory('placeholder', () => {
   it('shows when empty, hides on input, and reappears after clearing', async () => {

@@ -23,7 +23,7 @@ ProseKit is a monorepo using pnpm workspaces:
 - `website/` - Documentation and examples
   - `src/content/` - Documentation markdown
   - `src/examples/` - Live demos.
-  - `tests/` - Integration tests
+  - `test/` - Integration tests
 
 ## Development
 
@@ -41,14 +41,10 @@ Run `pnpm run dev` to start the development server:
 
 ## Testing
 
-ProseKit has unit and integration tests.
-
-### Tests
-
 - Run all: `pnpm run test`
 - Run specific test: `pnpm run test [test-file-path]`
 - Run with coverage report: `pnpm run test:coverage`
-- Files: Located in `packages/` with `.spec.ts` suffix, and in `website/test/` with `.test.ts` suffix
+- Files: Unit tests located in `packages/` with `.spec.ts` suffix, and integration tests in `website/test/` with `.test.ts` suffix
 - Coverage report: `coverage/` directory
 
 ## Pull Requests

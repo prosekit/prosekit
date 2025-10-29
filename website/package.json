@@ -17,8 +17,7 @@
     "lint:svelte": "svelte-check --no-tsconfig",
     "lint:vue": "vue-tsc --build src/examples/vue/tsconfig.json",
     "lint:astro": "astro check",
-    "test": "playwright test",
-    "test2": "vitest"
+    "test": "vitest"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -35,7 +34,6 @@
     "@iconify-json/tabler": "^1.2.23",
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^0.8.1",
-    "@playwright/test": "^1.56.1",
     "@preact/preset-vite": "^2.10.2",
     "@prosekit/config-vitest": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^5.1.1",

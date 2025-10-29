@@ -1,10 +1,10 @@
+import { sleep } from '@ocavue/utils'
 import {
   expect,
   it,
 } from 'vitest'
 
 import {
-  sleep,
   testStory,
   waitForEditor,
 } from './helper'

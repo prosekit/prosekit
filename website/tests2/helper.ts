@@ -18,6 +18,14 @@ import {
 
 import exampleMeta from '../example.meta.json' with { type: 'json' }
 
+export {
+  collapseSelection,
+  extendSelection,
+  getSelectedHtml,
+  getSelectedText,
+  moveSelection,
+} from './helpers/selection'
+
 const IS_APPLE = window.navigator.userAgent.includes('Mac')
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
 
@@ -126,72 +134,11 @@ export async function expectEditorToBeFocused(): Promise<void> {
   await expect.element(locateFocusedEditor()).toBeVisible()
 }
 
-export function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
-export async function collapseSelection(direction: 'start' | 'end'): Promise<void> {
-  const selection = getSelection()
-  if (direction === 'start') {
-    selection.collapseToStart()
-  } else {
-    selection.collapseToEnd()
-  }
-
-  // Wait for the selection to be updated
-  await sleep(1)
-}
-
-export async function moveSelection(direction: 'forward' | 'backward', count: number, granularity: 'character' | 'line' = 'character'): Promise<void> {
-  const selection = getSelection()
-  for (let i = 0; i < count; i++) {
-    selection.modify('move', direction, granularity)
-  }
-
-  // Wait for the selection to be updated
-  await sleep(1)
-}
-
-export async function extendSelection(direction: 'forward' | 'backward', count: number): Promise<void> {
-  const selection = getSelection()
-  for (let i = 0; i < count; i++) {
-    selection.modify('extend', direction, 'character')
-  }
-
-  // Wait for the selection to be updated
-  await sleep(1)
-}
-
 interface BoundingBox {
   x: number
   y: number
   width: number
   height: number
-}
-
-function getSelection(): Selection {
-  const selection = window.getSelection()
-  if (!selection) {
-    throw new Error('Unable to access the current document selection.')
-  }
-  return selection
-}
-
-export function getSelectedText(): string {
-  const selection = getSelection()
-  return selection.toString()
-}
-
-export function getSelectedHtml(): string {
-  const selection = getSelection()
-  let output = ''
-  for (let i = 0; i < selection.rangeCount; i++) {
-    const range = selection.getRangeAt(i)
-    const container = document.createElement('div')
-    container.appendChild(range.cloneContents())
-    output += container.innerHTML
-  }
-  return output
 }
 
 export async function emptyEditor(options?: { editor?: Locator }) {

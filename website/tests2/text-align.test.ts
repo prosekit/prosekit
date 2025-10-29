@@ -10,11 +10,11 @@ import {
 import {
   emptyEditor,
   getEditorHTML,
-  locateEditor,
   MOD_KEY,
   testStory,
   waitForEditor,
 } from './helper'
+import { moveSelectionToStart } from './helpers/selection'
 
 testStory('text-align', () => {
   it('commands', async () => {
@@ -39,7 +39,7 @@ testStory('text-align', () => {
       "
     `)
 
-    await resetCursor()
+    await moveSelectionToStart()
     await btnL.click()
     expect(getEditorHTML()).toMatchInlineSnapshot(`
       "
@@ -58,7 +58,7 @@ testStory('text-align', () => {
       "
     `)
 
-    await resetCursor()
+    await moveSelectionToStart()
     await btnR.click()
     expect(getEditorHTML()).toMatchInlineSnapshot(`
       "
@@ -76,10 +76,6 @@ testStory('text-align', () => {
       </p>
       "
     `)
-
-    await resetCursor()
-    await userEvent.keyboard('{Enter}')
-    await resetCursor()
   })
 
   it('inheritance', async () => {
@@ -136,13 +132,3 @@ testStory('text-align', () => {
     check('justify')
   })
 })
-
-// Dumb way to move the text cursor to the start of the document
-async function resetCursor() {
-  const editor = locateEditor()
-  await editor.click()
-  for (let i = 0; i < 20; i++) {
-    await userEvent.keyboard('{ArrowUp}')
-    await userEvent.keyboard('{ArrowLeft}')
-  }
-}

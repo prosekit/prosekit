@@ -145,8 +145,8 @@ importers:
   packages/core:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.7.1
-        version: 0.7.1
+        specifier: ^0.8.1
+        version: 0.8.1
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
@@ -252,8 +252,8 @@ importers:
   packages/extensions:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.7.1
-        version: 0.7.1
+        specifier: ^0.8.1
+        version: 0.8.1
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -551,8 +551,8 @@ importers:
   packages/prosemirror-drop-indicator:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.7.1
-        version: 0.7.1
+        specifier: ^0.8.1
+        version: 0.8.1
       prosemirror-model:
         specifier: ^1.25.3
         version: 1.25.3
@@ -779,8 +779,8 @@ importers:
         specifier: ^1.7.4
         version: 1.7.4
       '@ocavue/utils':
-        specifier: ^0.7.1
-        version: 0.7.1
+        specifier: ^0.8.1
+        version: 0.8.1
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -858,8 +858,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^0.7.1
-        version: 0.7.1
+        specifier: ^0.8.1
+        version: 0.8.1
       '@playwright/test':
         specifier: ^1.56.1
         version: 1.56.1
@@ -2133,6 +2133,9 @@ packages:
 
   '@ocavue/utils@0.7.1':
     resolution: {integrity: sha512-gY/YWdyTPGx8YTT0q/0tQJs6kPJ2XeXRPfdzWLt+wefIOuwb1n5Nq3GwKM/AY+Wab3dbx6w+MkX8VSbrm3l6Xg==}
+
+  '@ocavue/utils@0.8.1':
+    resolution: {integrity: sha512-MdjR7B9HqonNmdUENjuPysZLsaU21d0QqNSFw41d9Qm9PbO+n+a/Cv7sP+SLvHglMNsHtudSg948sF9oxEa/Qg==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -9134,6 +9137,8 @@ snapshots:
   '@ocavue/tsconfig@0.5.0': {}
 
   '@ocavue/utils@0.7.1': {}
+
+  '@ocavue/utils@0.8.1': {}
 
   '@octokit/action@6.1.0':
     dependencies:

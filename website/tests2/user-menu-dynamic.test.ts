@@ -12,7 +12,7 @@ import {
   getBoundingBox,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('user-menu-dynamic', () => {
   it('user-menu-dynamic', async () => {

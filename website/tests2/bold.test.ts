@@ -11,7 +11,7 @@ import {
   emptyEditor,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('bold', () => {
   it('toggle via toolbar while typing', async () => {

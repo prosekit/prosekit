@@ -16,7 +16,7 @@ import {
   moveSelection,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory(['inline-menu', 'full'], () => {
   it('show and dismiss', async () => {

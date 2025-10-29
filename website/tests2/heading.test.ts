@@ -10,7 +10,7 @@ import {
   locateEditor,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('heading', () => {
   it('default content', async () => {

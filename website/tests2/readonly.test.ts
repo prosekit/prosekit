@@ -11,7 +11,7 @@ import {
   focusEditor,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('readonly', () => {
   it('readonly', async () => {

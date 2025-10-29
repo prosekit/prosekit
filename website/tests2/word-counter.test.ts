@@ -11,7 +11,7 @@ import {
   emptyEditor,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('word-counter', () => {
   it('updates counts as you type', async () => {

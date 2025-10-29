@@ -11,7 +11,7 @@ import {
   expectLocatorToHaveCount,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('search', () => {
   it('search', async () => {

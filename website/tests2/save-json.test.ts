@@ -15,7 +15,7 @@ import {
   moveSelection,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('save-json', () => {
   it('save-json', async () => {

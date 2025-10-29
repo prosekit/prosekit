@@ -11,7 +11,7 @@ import {
   emptyEditor,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 async function setup() {
   const editor = await waitForEditor()

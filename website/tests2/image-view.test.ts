@@ -8,7 +8,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('image-view', () => {
   it('renders default images', async () => {

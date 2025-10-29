@@ -9,7 +9,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('yjs', () => {
   it('synchronizes content across two editors', async () => {

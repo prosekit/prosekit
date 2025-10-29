@@ -13,7 +13,7 @@ import {
   extendSelection,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('code', () => {
   it('toggle code mark via toolbar', async () => {

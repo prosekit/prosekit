@@ -7,7 +7,7 @@ import { userEvent } from 'vitest/browser'
 import {
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('minimal', () => {
   it('typing', async () => {

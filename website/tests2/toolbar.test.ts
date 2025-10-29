@@ -12,7 +12,7 @@ import {
   extendSelection,
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('toolbar', () => {
   it('bold and heading buttons work', async () => {

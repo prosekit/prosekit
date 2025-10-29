@@ -12,7 +12,7 @@ import {
   expectLocatorToNotExist,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('strike', () => {
   it('toggle via toolbar while typing', async () => {

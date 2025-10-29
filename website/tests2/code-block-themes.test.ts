@@ -10,7 +10,7 @@ import {
 import {
   testStory,
   waitForEditor,
-} from './helper'
+} from './editor'
 
 testStory('code-block-themes', () => {
   it('code-block-themes', async () => {

@@ -12,7 +12,7 @@ import {
 export {
   hover,
   unhover,
-} from './helpers/mouse'
+} from './mouse'
 
 export {
   collapseSelection,
@@ -20,9 +20,9 @@ export {
   getSelectedHtml,
   getSelectedText,
   moveSelection,
-} from './helpers/selection'
+} from './selection'
 
-export { testStory } from './helpers/test-story'
+export { testStory } from './test-story'
 
 const IS_APPLE = window.navigator.userAgent.includes('Mac')
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
@@ -91,10 +91,6 @@ export function getBoundingBox(locator: Locator): BoundingBox {
   }
 }
 
-export async function waitForAnimationEnd(locator: Locator): Promise<void> {
-  await expect.poll(() => checkElementIsStable(locator)).toBe(true)
-}
-
 function isElementVisible(element: Element): boolean {
   const rect = element.getBoundingClientRect()
   if (rect.width === 0 && rect.height === 0) {
@@ -109,51 +105,6 @@ function isElementVisible(element: Element): boolean {
   }
 
   return true
-}
-
-// Based on https://github.com/microsoft/playwright/blob/21bb265aa1f290b297cc7c9c78596a785216b667/packages/injected/src/injectedScript.ts#L651
-function checkElementIsStable(locator: Locator, stableCount = 2): Promise<boolean> {
-  const continuePolling = Symbol('continuePolling')
-  let lastRect: { x: number; y: number; width: number; height: number } | undefined
-  let stableCounter = 0
-
-  const check = () => {
-    const element = locator.element()
-    const clientRect = element.getBoundingClientRect()
-    const rect = {
-      x: clientRect.top,
-      y: clientRect.left,
-      width: clientRect.width,
-      height: clientRect.height,
-    }
-    if (lastRect) {
-      const samePosition = rect.x === lastRect.x
-        && rect.y === lastRect.y
-        && rect.width === lastRect.width
-        && rect.height === lastRect.height
-      if (!samePosition) return false
-      stableCounter += 1
-      if (stableCounter >= stableCount) return true
-    }
-    lastRect = rect
-    return continuePolling
-  }
-
-  const { promise, resolve, reject } = Promise.withResolvers<boolean>()
-
-  const start = () => {
-    try {
-      const success = check()
-      if (success !== continuePolling) resolve(success)
-      else requestAnimationFrame(start)
-    } catch (e) {
-      reject(e)
-    }
-  }
-
-  requestAnimationFrame(start)
-
-  return promise
 }
 
 export function getEditorHTML(): string {

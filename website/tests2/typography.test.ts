@@ -7,7 +7,7 @@ import { page } from 'vitest/browser'
 import {
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('typography', () => {
   it('renders headings, lists, code, and media', async () => {

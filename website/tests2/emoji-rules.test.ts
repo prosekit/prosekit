@@ -11,7 +11,7 @@ import {
   emptyEditor,
   locateEditor,
   testStory,
-} from './helper'
+} from './editor'
 
 testStory('emoji-rules', () => {
   it('convert :apple: and :banana: on Enter', async () => {

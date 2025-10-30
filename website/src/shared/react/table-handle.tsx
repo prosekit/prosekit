@@ -44,6 +44,10 @@ function getTableHandleState(editor: Editor<EditorExtension>) {
       canExec: editor.commands.deleteTableRow.canExec(),
       command: () => editor.commands.deleteTableRow(),
     },
+    deleteTable: {
+      canExec: editor.commands.deleteTable.canExec(),
+      command: () => editor.commands.deleteTable(),
+    },
   }
 }
 
@@ -92,6 +96,15 @@ export default function TableHandle() {
               <span>Delete Column</span>
             </TableHandlePopoverItem>
           )}
+          {state.deleteTable.canExec && (
+            <TableHandlePopoverItem
+              className="CSS_TABLE_CELL_MENU_ITEM"
+              data-danger
+              onSelect={state.deleteTable.command}
+            >
+              <span>Delete Table</span>
+            </TableHandlePopoverItem>
+          )}
         </TableHandlePopoverContent>
       </TableHandleColumnRoot>
       <TableHandleRowRoot className="CSS_TABLE_ROW_HANDLE">
@@ -130,6 +143,15 @@ export default function TableHandle() {
               onSelect={state.deleteTableRow.command}
             >
               <span>Delete Row</span>
+            </TableHandlePopoverItem>
+          )}
+          {state.deleteTable.canExec && (
+            <TableHandlePopoverItem
+              className="CSS_TABLE_CELL_MENU_ITEM"
+              data-danger
+              onSelect={state.deleteTable.command}
+            >
+              <span>Delete Table</span>
             </TableHandlePopoverItem>
           )}
         </TableHandlePopoverContent>

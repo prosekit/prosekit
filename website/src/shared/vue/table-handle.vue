@@ -55,6 +55,14 @@ const editor = useEditor<EditorExtension>({ update: true })
         >
           <span>Delete Column</span>
         </TableHandlePopoverItem>
+        <TableHandlePopoverItem
+          v-if="editor.commands.deleteTable.canExec()"
+          class="CSS_TABLE_CELL_MENU_ITEM"
+          data-danger
+          @select="editor.commands.deleteTable"
+        >
+          <span>Delete Table</span>
+        </TableHandlePopoverItem>
       </TableHandlePopoverContent>
     </TableHandleColumnRoot>
     <TableHandleRowRoot class="CSS_TABLE_ROW_HANDLE">
@@ -90,6 +98,14 @@ const editor = useEditor<EditorExtension>({ update: true })
           @select="editor.commands.deleteTableRow"
         >
           <span>Delete Row</span>
+        </TableHandlePopoverItem>
+        <TableHandlePopoverItem
+          v-if="editor.commands.deleteTable.canExec()"
+          class="CSS_TABLE_CELL_MENU_ITEM"
+          data-danger
+          @select="editor.commands.deleteTable"
+        >
+          <span>Delete Table</span>
         </TableHandlePopoverItem>
       </TableHandlePopoverContent>
     </TableHandleRowRoot>

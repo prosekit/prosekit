@@ -57,6 +57,15 @@ const editor = useEditor<EditorExtension>({ update: true })
           <span>Delete Column</span>
         </TableHandlePopoverItem>
       {/if}
+      {#if $editor.commands.deleteTable.canExec()}
+        <TableHandlePopoverItem
+          class="CSS_TABLE_CELL_MENU_ITEM"
+          data-danger
+          onSelect={$editor.commands.deleteTable}
+        >
+          <span>Delete Table</span>
+        </TableHandlePopoverItem>
+      {/if}
     </TableHandlePopoverContent>
   </TableHandleColumnRoot>
   <TableHandleRowRoot class="CSS_TABLE_ROW_HANDLE">
@@ -95,6 +104,15 @@ const editor = useEditor<EditorExtension>({ update: true })
           onSelect={$editor.commands.deleteTableRow}
         >
           <span>Delete Row</span>
+        </TableHandlePopoverItem>
+      {/if}
+      {#if $editor.commands.deleteTable.canExec()}
+        <TableHandlePopoverItem
+          class="CSS_TABLE_CELL_MENU_ITEM"
+          data-danger
+          onSelect={$editor.commands.deleteTable}
+        >
+          <span>Delete Table</span>
         </TableHandlePopoverItem>
       {/if}
     </TableHandlePopoverContent>

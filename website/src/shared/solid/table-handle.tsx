@@ -58,9 +58,17 @@ export default function TableHandle() {
               <span>Delete Column</span>
             </TableHandlePopoverItem>
           )}
+          {editor().commands.deleteTable.canExec() && (
+            <TableHandlePopoverItem
+              class="CSS_TABLE_CELL_MENU_ITEM"
+              attr:data-danger
+              onSelect={() => editor().commands.deleteTable()}
+            >
+              <span>Delete Table</span>
+            </TableHandlePopoverItem>
+          )}
         </TableHandlePopoverContent>
       </TableHandleColumnRoot>
-
       <TableHandleRowRoot class="CSS_TABLE_ROW_HANDLE">
         <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
@@ -97,6 +105,15 @@ export default function TableHandle() {
               onSelect={() => editor().commands.deleteTableRow()}
             >
               <span>Delete Row</span>
+            </TableHandlePopoverItem>
+          )}
+          {editor().commands.deleteTable.canExec() && (
+            <TableHandlePopoverItem
+              class="CSS_TABLE_CELL_MENU_ITEM"
+              attr:data-danger
+              onSelect={() => editor().commands.deleteTable()}
+            >
+              <span>Delete Table</span>
             </TableHandlePopoverItem>
           )}
         </TableHandlePopoverContent>

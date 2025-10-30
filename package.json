@@ -31,6 +31,7 @@
     "pretest": "pnpm run test:install",
     "pretest:e2e": "pnpm run test:install",
     "test": "vitest",
+    "test:run": "vitest run",
     "test:coverage": "vitest run --coverage.enabled",
     "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json"

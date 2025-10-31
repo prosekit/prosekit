@@ -8,12 +8,6 @@ import { useMemo } from 'react'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
 
-const defaultContent = `
-  <p><i>This is italic</i></p>
-  <p><em>This is italic too</em></p>
-  <p><span>This is normal text</span></p>
-`
-
 export default function Editor() {
   const editor = useMemo(() => {
     return createEditor({ extension: defineExtension(), defaultContent })
@@ -30,3 +24,9 @@ export default function Editor() {
     </ProseKit>
   )
 }
+
+const defaultContent = `
+  <p><i>This is italic</i></p>
+  <p><em>This is italic too</em></p>
+  <p><span>This is normal text</span></p>
+`

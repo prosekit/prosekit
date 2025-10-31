@@ -94,23 +94,31 @@ export function testStoryConsistency(story: string) {
   }
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    let baselineHTML: string | undefined
-    let baselineExample: string | undefined
+    let htmlToGroups = new Map<string, string[]>()
 
     for (const example of examples) {
       const screen = await renderExample(example.framework, example.story)
       await waitForEditor()
 
-      let html = await waitForStableHTML(screen.baseElement)
-
-      if (!baselineHTML) {
-        baselineHTML = html
-        baselineExample = example.name
+      const html = await waitForStableHTML(screen.baseElement)
+      const group = htmlToGroups.get(html)
+      if (!group) {
+        htmlToGroups.set(html, [example.name])
       } else {
-        const message = `Expected "${example.name}" and "${baselineExample}" to render the same HTML`
-        expect(html, message).toEqual(baselineHTML)
+        group.push(example.name)
       }
     }
+
+    if (htmlToGroups.size <= 1) {
+      return
+    }
+
+    const iterator = htmlToGroups.entries()
+    const [html1, frameworks1] = iterator.next().value!
+    const [html2, frameworks2] = iterator.next().value!
+
+    const message = `Expected "${frameworks1.join(', ')}" and "${frameworks2.join(', ')}" to render the same HTML`
+    expect(html1, message).toEqual(html2)
   })
 }
 

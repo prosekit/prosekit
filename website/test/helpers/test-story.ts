@@ -1,3 +1,4 @@
+import { sleep } from '@ocavue/utils'
 import {
   beforeEach,
   describe,
@@ -100,7 +101,7 @@ export function testStoryConsistency(story: string) {
       const screen = await renderExample(example.framework, example.story)
       await waitForEditor()
 
-      let html = await waitForStableHTML(screen.container)
+      let html = await waitForStableHTML(screen.baseElement)
 
       if (!baselineHTML) {
         baselineHTML = html
@@ -113,13 +114,15 @@ export function testStoryConsistency(story: string) {
   })
 }
 
-async function waitForStableHTML(element: Element, stableCount = 3, maxAttempts: number = 100): Promise<string> {
+async function waitForStableHTML(element: Element, stableCount = 10, maxAttempts: number = 100): Promise<string> {
   let stableHTML: string = ''
   let stableCounter = 0
   let attempts = 0
 
   while (stableCounter < stableCount && attempts < maxAttempts) {
-    let html = element.innerHTML
+    attempts += 1
+
+    let html = formatHTML(element.innerHTML)
     // Replace random ids
     html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
     // Remove Solid framework wrapper divs with display: contents
@@ -128,10 +131,10 @@ async function waitForStableHTML(element: Element, stableCount = 3, maxAttempts:
     html = html.replaceAll(/\s*<\/div>\s*(<\/(?:span|a)>)/g, '$1')
 
     if (html === stableHTML) {
-      stableCount += 1
+      stableCounter += 1
     } else {
       stableHTML = html
-      stableCount = 0
+      stableCounter = 0
     }
 
     await new Promise((resolve) => requestAnimationFrame(resolve))

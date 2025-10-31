@@ -95,7 +95,8 @@ export function testStoryConsistency(story: string) {
       const screen = await renderExample(example.framework, example.story)
       await waitForEditor()
 
-      const html = formatHTML(screen.container.innerHTML)
+      let html = formatHTML(screen.container.innerHTML)
+      html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
 
       if (!baselineHtml) {
         baselineHtml = html

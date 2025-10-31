@@ -94,28 +94,27 @@ export function testStoryConsistency(story: string) {
   }
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    const items: [string, string][] = []
+    const htmlToExamples = new Map<string, string[]>()
     for (const example of examples) {
       const html = await getStableHTML(example.framework, example.story)
-      items.push([example.name, html])
+      const group = htmlToExamples.get(html) || []
+      group.push(example.name)
+      htmlToExamples.set(html, group)
     }
-    const nameToHTML = Object.fromEntries(items)
 
-    const htmlToGroups: Map<string, string[]> = Map.groupBy(examples.map(example => example.name), (name) => nameToHTML[name])
-
-    if (htmlToGroups.size <= 1) {
+    if (htmlToExamples.size <= 1) {
       return
     }
 
-    const iterator = htmlToGroups.entries()
-    const [html1, frameworks1] = iterator.next().value!
-    const [html2, frameworks2] = iterator.next().value!
+    const iterator = htmlToExamples.entries()
+    const [html1, examples1] = iterator.next().value!
+    const [html2, examples2] = iterator.next().value!
 
-    let message = `Expected "${frameworks1.join(', ')}" and "${frameworks2.join(', ')}" to render the same HTML.`
+    let message = `Expected "${examples1.join(', ')}" and "${examples2.join(', ')}" to render the same HTML.`
     message += '\n'
-    message += '='.repeat(20) + ' HTML from ' + frameworks1.join(', ') + ' ' + '='.repeat(20) + '\n'
+    message += '='.repeat(20) + ' HTML from ' + examples1.join(', ') + ' ' + '='.repeat(20) + '\n'
     message += html1 + '\n'
-    message += '='.repeat(20) + ' HTML from ' + frameworks2.join(', ') + ' ' + '='.repeat(20) + '\n'
+    message += '='.repeat(20) + ' HTML from ' + examples2.join(', ') + ' ' + '='.repeat(20) + '\n'
     message += html2 + '\n'
     message += '='.repeat(20) + ' END ' + '='.repeat(20) + '\n'
 
@@ -129,7 +128,7 @@ async function getStableHTML(framework: string, story: string): Promise<string> 
   return await waitForStableHTML(screen.container)
 }
 
-async function waitForStableHTML(element: Element, stableCount = 2, maxAttempts: number = 100): Promise<string> {
+async function waitForStableHTML(element: Element, stableCount = 1, maxAttempts: number = 100): Promise<string> {
   let stableHTML: string = ''
   let stableCounter = 0
   let attempts = 0

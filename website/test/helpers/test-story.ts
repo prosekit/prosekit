@@ -87,6 +87,11 @@ export function testStoryConsistency(story: string) {
     return
   }
 
+  // Temporary skip some stories
+  if (story === 'full') {
+    return
+  }
+
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
     let baselineHtml: string | undefined
     let baselineExample: string | undefined

@@ -1,6 +1,9 @@
+import formatHTML from 'diffable-html'
 import {
   beforeEach,
   describe,
+  expect,
+  it,
 } from 'vitest'
 
 import exampleMeta from '../../example.meta.json' with { type: 'json' }
@@ -17,20 +20,20 @@ function getExamples(story: string) {
   return examples
 }
 
-interface TestStoryCallbackOptions {
-  example: string
-}
-
 function testSingleStory(
   story: string,
-  callback: (options: TestStoryCallbackOptions) => void,
+  callback: (options: { framework: string; story: string; example: string }) => void,
 ) {
   for (const example of getExamples(story)) {
     describe(example.framework + '/' + example.story, () => {
       beforeEach(async () => {
         await renderExample(example.framework, example.story)
       })
-      callback({ example: example.name })
+      callback({
+        framework: example.framework,
+        story: example.story,
+        example: example.name,
+      })
     })
   }
 }
@@ -66,11 +69,42 @@ async function renderExample(framework: string, story: string) {
 
 export function testStory(
   story: string | string[],
-  callback: (options: TestStoryCallbackOptions) => void,
+  callback: (options: { framework: string; story: string; example: string }) => void,
 ) {
   const stories = Array.isArray(story) ? story : [story]
 
   for (const story of stories) {
     testSingleStory(story, callback)
   }
+}
+
+export function testStorySnapshot(
+  story: string,
+) {
+  const examples = getExamples(story)
+  if (examples.length <= 1) {
+    return
+  }
+
+  it(`should render the same "${story}" example across ${examples.length} frameworks`, async () => {
+    let expectedHtml: string | undefined
+    let expectedFramework: string | undefined
+
+    for (let example of examples) {
+      const screen = await renderExample(example.framework, example.story)
+      const container = screen.container
+      const html = formatHTML(container.innerHTML)
+
+      if (!expectedHtml || !expectedFramework) {
+        expectedHtml = html
+        expectedFramework = example.framework
+        continue
+      }
+
+      if (expectedHtml !== html) {
+        const message = `Expected the "${story}" example to render the same in the ${example.framework} framework than in the ${expectedFramework} framework`
+        expect(html, message).toEqual(expectedHtml)
+      }
+    }
+  })
 }

@@ -12,6 +12,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('horizontal-rule')

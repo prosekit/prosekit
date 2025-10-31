@@ -11,6 +11,7 @@ import {
   expectLocatorToBeHidden,
   getBoundingBox,
   testStory,
+  testStoryConsistency,
   unhover,
   waitForEditor,
 } from './helpers'

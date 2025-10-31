@@ -7,6 +7,7 @@ import { page } from 'vitest/browser'
 import {
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('typography')

@@ -13,6 +13,7 @@ import {
   extendSelection,
   getSelectedText,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

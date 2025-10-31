@@ -12,6 +12,7 @@ import {
   expectLocatorToHaveCount,
   getBoundingBox,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

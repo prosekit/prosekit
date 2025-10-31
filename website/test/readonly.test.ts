@@ -11,6 +11,7 @@ import {
   focusEditor,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('readonly')

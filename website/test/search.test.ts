@@ -10,6 +10,7 @@ import {
 import {
   expectLocatorToHaveCount,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

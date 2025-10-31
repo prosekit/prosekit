@@ -6,6 +6,7 @@ import { userEvent } from 'vitest/browser'
 
 import {
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

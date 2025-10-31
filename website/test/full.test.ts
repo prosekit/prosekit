@@ -15,6 +15,7 @@ import {
   getEditorHTML,
   locateEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

@@ -9,6 +9,7 @@ import {
   expectLocatorToNotExist,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('code-block')

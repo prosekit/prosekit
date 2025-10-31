@@ -7,6 +7,7 @@ import { page } from 'vitest/browser'
 import {
   expectLocatorToHaveCount,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('unmount')

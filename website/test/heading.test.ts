@@ -9,6 +9,7 @@ import {
   expectLocatorToNotExist,
   locateEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

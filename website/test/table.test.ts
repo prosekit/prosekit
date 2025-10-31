@@ -17,6 +17,7 @@ import {
   hover,
   pasteHtmlToEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

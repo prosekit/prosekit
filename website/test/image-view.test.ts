@@ -8,6 +8,7 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('image-view')

@@ -11,6 +11,7 @@ import {
   emptyEditor,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('word-counter')

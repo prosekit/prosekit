@@ -9,6 +9,7 @@ import {
 
 import {
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

@@ -14,6 +14,7 @@ import {
   MOD_KEY,
   moveSelection,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

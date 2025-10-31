@@ -11,6 +11,7 @@ import {
   emptyEditor,
   extendSelection,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

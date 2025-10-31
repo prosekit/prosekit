@@ -10,6 +10,7 @@ import {
   getSelectedText,
   moveSelection,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 

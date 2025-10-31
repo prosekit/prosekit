@@ -11,6 +11,7 @@ import {
   emptyEditor,
   expectLocatorToHaveCount,
   testStory,
+  testStoryConsistency,
 } from './helpers'
 
 testStoryConsistency('change-tracking')

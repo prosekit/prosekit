@@ -86,6 +86,7 @@ const handleOpenChange = (openValue: boolean) => {
         accept="image/*"
         type="file"
         on:change={handleFileChange}
+        id="upload-input"
       />
     {/if}
     {#if url}

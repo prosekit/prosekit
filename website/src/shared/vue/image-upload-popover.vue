@@ -81,8 +81,9 @@ function handleOpenChange(openValue: boolean) {
 
     <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
       <template v-if="!file">
-        <label>Embed Link</label>
+        <label htmlFor="embed-link-input">Embed Link</label>
         <input
+          id="embed-link-input"
           class="CSS_IMAGE_UPLOAD_INPUT"
           placeholder="Paste the image link..."
           type="url"
@@ -91,8 +92,9 @@ function handleOpenChange(openValue: boolean) {
         />
       </template>
       <template v-if="!url">
-        <label>Upload</label>
+        <label htmlFor="upload-input">Upload</label>
         <input
+          id="upload-input"
           class="CSS_IMAGE_UPLOAD_INPUT"
           accept="image/*"
           type="file"

@@ -86,25 +86,27 @@ export const ImageUploadPopover: FC<{
       <PopoverContent className="CSS_IMAGE_UPLOAD_CARD">
         {file ? null : (
           <>
-            <label>Embed Link</label>
+            <label htmlFor="embed-link-input">Embed Link</label>
             <input
               className="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
               value={url || undefined}
               onChange={handleUrlChange}
+              id="embed-link-input"
             />
           </>
         )}
 
         {url ? null : (
           <>
-            <label>Upload</label>
+            <label htmlFor="upload-input">Upload</label>
             <input
               className="CSS_IMAGE_UPLOAD_INPUT"
               accept="image/*"
               type="file"
               onChange={handleFileChange}
+              id="upload-input"
             />
           </>
         )}

@@ -88,8 +88,10 @@ export function testStoryConsistency(story: string) {
     return
   }
 
-  // Temporary skip some stories
-  if (story === 'full' || story === 'keymap' || story === 'link-mark-view') {
+  // Temporary skip some stories.
+  // TODO: Remove the skipping
+  const skipStories = ['full', 'keymap', 'link-mark-view']
+  if (skipStories.includes(story)) {
     return
   }
 
@@ -109,14 +111,17 @@ export function testStoryConsistency(story: string) {
     const iterator = htmlToExamples.entries()
     const [html1, examples1] = iterator.next().value!
     const [html2, examples2] = iterator.next().value!
+    const label1 = examples1.join(', ')
+    const label2 = examples2.join(', ')
 
-    let message = `Expected "${examples1.join(', ')}" and "${examples2.join(', ')}" to render the same HTML.`
+    let message = `Expected "${label1}" and "${label2}" to render the same HTML.`
     message += '\n'
-    message += '='.repeat(20) + ' HTML from ' + examples1.join(', ') + ' ' + '='.repeat(20) + '\n'
+    message += '='.repeat(20) + ' HTML from ' + label1 + ' ' + '='.repeat(20) + '\n'
     message += html1 + '\n'
-    message += '='.repeat(20) + ' HTML from ' + examples2.join(', ') + ' ' + '='.repeat(20) + '\n'
+    message += '='.repeat(20) + ' END of ' + label1 + ' ' + '='.repeat(20) + '\n'
+    message += '='.repeat(20) + ' HTML from ' + label2 + ' ' + '='.repeat(20) + '\n'
     message += html2 + '\n'
-    message += '='.repeat(20) + ' END ' + '='.repeat(20) + '\n'
+    message += '='.repeat(20) + ' END of ' + label2 + ' ' + '='.repeat(20) + '\n'
 
     expect(html1, message).toEqual(html2)
   })
@@ -128,7 +133,7 @@ async function getStableHTML(framework: string, story: string): Promise<string> 
   return await waitForStableHTML(screen.container)
 }
 
-async function waitForStableHTML(element: Element, stableCount = 2, maxAttempts: number = 100): Promise<string> {
+async function waitForStableHTML(element: Element, stableCount = 3, maxAttempts: number = 100): Promise<string> {
   let stableHTML: string = ''
   let stableCounter = 0
   let attempts = 0

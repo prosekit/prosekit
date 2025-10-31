@@ -34,7 +34,7 @@ function handleTagInsert(id: number, label: string) {
         class="CSS_AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleTagInsert(tag.id, tag.label)"
       >
-        {{ tag.label }}
+        #{{ tag.label }}
       </AutocompleteItem>
     </AutocompleteList>
   </AutocompletePopover>

@@ -102,6 +102,10 @@ export function testStoryConsistency(story: string) {
 
       let html = formatHTML(screen.container.innerHTML)
       html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
+      // Remove Solid framework wrapper divs with display: contents
+      html = html.replaceAll(/<div style="display: contents;">\s*/g, '')
+      html = html.replaceAll(/<div style="display:\s*contents;">\s*/g, '')
+      html = html.replaceAll(/\s*<\/div>\s*(<\/(?:span|a)>)/g, '$1')
 
       if (!baselineHtml) {
         baselineHtml = html

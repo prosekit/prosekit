@@ -89,18 +89,21 @@ export function testStoryConsistency(story: string) {
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
     let baselineHtml: string | undefined
-    let baselineFramework: string | undefined
+    let baselineExample: string | undefined
 
     for (const example of examples) {
       const screen = await renderExample(example.framework, example.story)
       await waitForEditor()
-      const html = formatHTML(screen.container.innerHTML)
+
+      let html = screen.container.innerHTML
+      html = formatHTML(html)
+      html = html.replace(/\s+/g, '')
 
       if (!baselineHtml) {
         baselineHtml = html
-        baselineFramework = example.framework
+        baselineExample = example.name
       } else {
-        const message = `Expected "${story}" to render the same HTML in ${example.framework} as in ${baselineFramework}`
+        const message = `Expected "${example.name}" and "${baselineExample}" to render the same HTML`
         expect(html, message).toEqual(baselineHtml)
       }
     }

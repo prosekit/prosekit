@@ -1,10 +1,11 @@
-import diffableHtml from 'diffable-html'
 import { expect } from 'vitest'
 import {
   page,
   userEvent,
   type Locator,
 } from 'vitest/browser'
+
+import { formatHTML } from './format-html'
 
 const IS_APPLE = window.navigator.userAgent.includes('Mac')
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
@@ -40,10 +41,6 @@ export function getEditorHTML(): string {
   const editor = locateEditor()
   const html = editor.element().innerHTML
   return formatHTML(html)
-}
-
-function formatHTML(html: string) {
-  return diffableHtml(html)
 }
 
 export async function focusEditor(options?: { editor?: Locator }) {

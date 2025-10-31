@@ -1,4 +1,3 @@
-import formatHTML from 'diffable-html'
 import {
   beforeEach,
   describe,
@@ -9,6 +8,7 @@ import {
 import exampleMeta from '../../example.meta.json' with { type: 'json' }
 
 import { waitForEditor } from './editor'
+import { formatHTML } from './format-html'
 
 function getExamples(story: string) {
   const examples = exampleMeta.examples.filter(

@@ -93,27 +93,49 @@ export function testStoryConsistency(story: string) {
   }
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    let baselineHtml: string | undefined
+    let baselineHTML: string | undefined
     let baselineExample: string | undefined
 
     for (const example of examples) {
       const screen = await renderExample(example.framework, example.story)
       await waitForEditor()
 
-      let html = formatHTML(screen.container.innerHTML)
-      html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
-      // Remove Solid framework wrapper divs with display: contents
-      html = html.replaceAll(/<div style="display: contents;">\s*/g, '')
-      html = html.replaceAll(/<div style="display:\s*contents;">\s*/g, '')
-      html = html.replaceAll(/\s*<\/div>\s*(<\/(?:span|a)>)/g, '$1')
+      let html = await waitForStableHTML(screen.container)
 
-      if (!baselineHtml) {
-        baselineHtml = html
+      if (!baselineHTML) {
+        baselineHTML = html
         baselineExample = example.name
       } else {
         const message = `Expected "${example.name}" and "${baselineExample}" to render the same HTML`
-        expect(html, message).toEqual(baselineHtml)
+        expect(html, message).toEqual(baselineHTML)
       }
     }
   })
+}
+
+async function waitForStableHTML(element: Element, stableCount = 3, maxAttempts: number = 100): Promise<string> {
+  let stableHTML: string = ''
+  let stableCounter = 0
+  let attempts = 0
+
+  while (stableCounter < stableCount && attempts < maxAttempts) {
+    let html = element.innerHTML
+    // Replace random ids
+    html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
+    // Remove Solid framework wrapper divs with display: contents
+    html = html.replaceAll(/<div style="display: contents;">\s*/g, '')
+    html = html.replaceAll(/<div style="display:\s*contents;">\s*/g, '')
+    html = html.replaceAll(/\s*<\/div>\s*(<\/(?:span|a)>)/g, '$1')
+
+    if (html === stableHTML) {
+      stableCount += 1
+    } else {
+      stableHTML = html
+      stableCount = 0
+    }
+
+    await new Promise((resolve) => requestAnimationFrame(resolve))
+  }
+
+  return stableHTML
 }

@@ -128,7 +128,7 @@ async function getStableHTML(framework: string, story: string): Promise<string> 
   return await waitForStableHTML(screen.container)
 }
 
-async function waitForStableHTML(element: Element, stableCount = 1, maxAttempts: number = 100): Promise<string> {
+async function waitForStableHTML(element: Element, stableCount = 2, maxAttempts: number = 100): Promise<string> {
   let stableHTML: string = ''
   let stableCounter = 0
   let attempts = 0

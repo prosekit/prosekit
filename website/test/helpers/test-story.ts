@@ -1,4 +1,3 @@
-import { sleep } from '@ocavue/utils'
 import {
   beforeEach,
   describe,

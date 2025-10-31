@@ -8,6 +8,8 @@ import {
 
 import exampleMeta from '../../example.meta.json' with { type: 'json' }
 
+import { waitForEditor } from './editor'
+
 function getExamples(story: string) {
   const examples = exampleMeta.examples.filter(
     (example) => example.story === story,
@@ -86,19 +88,21 @@ export function testStoryConsistency(story: string) {
   }
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    // Render the first framework example as the baseline
-    const firstExample = examples[0]
-    const firstScreen = await renderExample(firstExample.framework, firstExample.story)
-    const expectedHtml = formatHTML(firstScreen.container.innerHTML)
+    let baselineHtml: string | undefined
+    let baselineFramework: string | undefined
 
-    // Compare each remaining framework against the baseline
-    for (let i = 1; i < examples.length; i++) {
-      const example = examples[i]
+    for (const example of examples) {
       const screen = await renderExample(example.framework, example.story)
-      const actualHtml = formatHTML(screen.container.innerHTML)
+      await waitForEditor()
+      const html = formatHTML(screen.container.innerHTML)
 
-      const message = `Expected "${story}" to render the same HTML in ${example.framework} as in ${firstExample.framework}`
-      expect(actualHtml, message).toEqual(expectedHtml)
+      if (!baselineHtml) {
+        baselineHtml = html
+        baselineFramework = example.framework
+      } else {
+        const message = `Expected "${story}" to render the same HTML in ${example.framework} as in ${baselineFramework}`
+        expect(html, message).toEqual(baselineHtml)
+      }
     }
   })
 }

@@ -45,7 +45,6 @@ export default function Toolbar() {
         pressed={items.left.isActive}
         disabled={!items.left.canExec}
         onClick={items.left.command}
-        tooltip="Left"
       >
         Left
       </Button>
@@ -54,7 +53,6 @@ export default function Toolbar() {
         pressed={items.center.isActive}
         disabled={!items.center.canExec}
         onClick={items.center.command}
-        tooltip="Center"
       >
         Center
       </Button>
@@ -63,7 +61,6 @@ export default function Toolbar() {
         pressed={items.right.isActive}
         disabled={!items.right.canExec}
         onClick={items.right.command}
-        tooltip="Right"
       >
         Right
       </Button>
@@ -72,7 +69,6 @@ export default function Toolbar() {
         pressed={items.justify.isActive}
         disabled={!items.justify.canExec}
         onClick={items.justify.command}
-        tooltip="Justify"
       >
         Justify
       </Button>

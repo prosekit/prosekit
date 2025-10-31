@@ -11,7 +11,10 @@ import {
   emptyEditor,
   expectLocatorToHaveCount,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('change-tracking')
 
 testStory('change-tracking', () => {
   it('save commits and restore previous version', async () => {

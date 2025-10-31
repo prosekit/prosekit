@@ -31,4 +31,7 @@ export {
   moveSelection,
   moveSelectionToStart,
 } from './selection'
-export { testStory } from './test-story'
+export {
+  testStory,
+  testStoryConsistency,
+} from './test-story'

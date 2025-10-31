@@ -7,7 +7,10 @@ import { page } from 'vitest/browser'
 import {
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('typography')
 
 testStory('typography', () => {
   it('renders headings, lists, code, and media', async () => {

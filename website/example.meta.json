@@ -1762,6 +1762,14 @@
           "hidden": false
         },
         {
+          "path": "image-upload-popover.vue",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
+          "hidden": false
+        },
+        {
           "path": "button.vue",
           "hidden": false
         }
@@ -2745,6 +2753,14 @@
         },
         {
           "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "image-upload-popover.svelte",
+          "hidden": false
+        },
+        {
+          "path": "sample-uploader.ts",
           "hidden": false
         },
         {

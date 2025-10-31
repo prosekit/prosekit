@@ -9,8 +9,11 @@ import {
 
 import {
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('code-block-themes')
 
 testStory('code-block-themes', () => {
   it('code-block-themes', async () => {

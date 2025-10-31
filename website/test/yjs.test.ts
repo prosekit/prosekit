@@ -9,7 +9,10 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('yjs')
 
 testStory('yjs', () => {
   it('synchronizes content across two editors', async () => {

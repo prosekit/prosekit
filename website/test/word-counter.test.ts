@@ -11,7 +11,10 @@ import {
   emptyEditor,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('word-counter')
 
 testStory('word-counter', () => {
   it('updates counts as you type', async () => {

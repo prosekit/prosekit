@@ -10,6 +10,7 @@ import {
 import {
   emptyEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 
@@ -27,6 +28,8 @@ async function setup() {
     toggleList: editor.locate('.prosemirror-flat-list[data-list-kind="toggle"]'),
   }
 }
+
+testStoryConsistency('list')
 
 testStory('list', () => {
   it('toggle bullet list', async () => {

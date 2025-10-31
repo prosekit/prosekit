@@ -13,7 +13,10 @@ import {
   extendSelection,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('code')
 
 testStory('code', () => {
   it('toggle code mark via toolbar', async () => {

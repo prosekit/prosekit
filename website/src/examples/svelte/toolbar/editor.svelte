@@ -18,8 +18,8 @@ const mount = (element: HTMLElement) => {
 
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
+    <Toolbar />
     <div class="CSS_EDITOR_SCROLLING">
-      <Toolbar />
       <div use:mount class="CSS_EDITOR_CONTENT"></div>
     </div>
   </div>

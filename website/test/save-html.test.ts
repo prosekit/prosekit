@@ -14,8 +14,11 @@ import {
   MOD_KEY,
   moveSelection,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('save-html')
 
 testStory('save-html', () => {
   it('save-html', async () => {

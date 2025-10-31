@@ -15,8 +15,11 @@ import {
   getEditorHTML,
   locateEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('full')
 
 testStory('full', () => {
   it('default content', async () => {

@@ -75,8 +75,10 @@ const mapping: Record<string, string[]> = {
     'examples/solid/image-view/',
     'examples/svelte/full/',
     'examples/svelte/image-view/',
+    'examples/svelte/toolbar/',
     'examples/vue/full/',
     'examples/vue/image-view/',
+    'examples/vue/toolbar/',
     'shared/preact/',
     'shared/react/',
     'shared/solid/',
@@ -394,6 +396,7 @@ const mapping: Record<string, string[]> = {
   'shared/svelte/image-upload-popover.svelte': [
     /// keep-sorted
     'examples/svelte/full/',
+    'examples/svelte/toolbar/',
   ],
   'shared/svelte/image-view.svelte': [
     /// keep-sorted
@@ -469,6 +472,7 @@ const mapping: Record<string, string[]> = {
   'shared/vue/image-upload-popover.vue': [
     /// keep-sorted
     'examples/vue/full/',
+    'examples/vue/toolbar/',
   ],
   'shared/vue/image-view.vue': [
     /// keep-sorted

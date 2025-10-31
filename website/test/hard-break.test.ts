@@ -10,8 +10,11 @@ import {
 import {
   expectLocatorToHaveCount,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('hard-break')
 
 testStory('hard-break', () => {
   it('insert hard break via toolbar and keyboard', async () => {

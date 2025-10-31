@@ -10,8 +10,11 @@ import {
 import {
   expectLocatorToHaveCount,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('search')
 
 testStory('search', () => {
   it('search', async () => {

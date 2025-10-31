@@ -80,7 +80,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Strike"
       @click="() => editor.commands.toggleStrike()"
     >
-      <div class="CSS_ICON_STRIKE" />
+      <div class="CSS_ICON_STRIKETHROUGH" />
     </Button>
 
     <Button

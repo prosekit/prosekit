@@ -6,8 +6,11 @@ import {
 
 import {
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('link-mark-view')
 
 testStory('link-mark-view', () => {
   it('link-mark-view', async () => {

@@ -23,7 +23,7 @@ export default function Editor() {
       <div className="CSS_EDITOR_VIEWPORT">
         <Toolbar />
         <div className="CSS_EDITOR_SCROLLING">
-          <div ref={editor.mount} spellCheck={false} className="CSS_EDITOR_CONTENT"></div>
+          <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
         </div>
       </div>
     </ProseKit>

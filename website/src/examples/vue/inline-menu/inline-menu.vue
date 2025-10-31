@@ -77,10 +77,10 @@ function handleLinkUpdate(href?: string) {
     <Button
       :pressed="editor.marks.strike.isActive()"
       :disabled="!editor.commands.toggleStrike.canExec()"
-      tooltip="Strike"
+      tooltip="Strikethrough"
       @click="() => editor.commands.toggleStrike()"
     >
-      <div class="CSS_ICON_STRIKE" />
+      <div class="CSS_ICON_STRIKETHROUGH" />
     </Button>
 
     <Button

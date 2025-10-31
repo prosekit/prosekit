@@ -6,8 +6,11 @@ import { userEvent } from 'vitest/browser'
 
 import {
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('mark-rule')
 
 testStory('mark-rule', () => {
   it('hashtag', async () => {

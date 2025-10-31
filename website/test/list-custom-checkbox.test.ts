@@ -6,8 +6,11 @@ import {
 
 import {
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('list-custom-checkbox')
 
 testStory('list-custom-checkbox', () => {
   it('list-custom-checkbox', async () => {

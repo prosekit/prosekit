@@ -10,8 +10,11 @@ import {
 import {
   emptyEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('blockquote')
 
 testStory('blockquote', () => {
   it('toggle blockquote on current paragraph', async () => {

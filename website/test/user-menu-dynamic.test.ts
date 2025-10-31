@@ -11,9 +11,12 @@ import {
   expectLocatorToBeHidden,
   getBoundingBox,
   testStory,
+  testStoryConsistency,
   unhover,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('user-menu-dynamic')
 
 testStory('user-menu-dynamic', () => {
   it('user-menu-dynamic', async () => {

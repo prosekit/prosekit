@@ -11,7 +11,10 @@ import {
   focusEditor,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('readonly')
 
 testStory('readonly', () => {
   it('readonly', async () => {

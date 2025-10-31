@@ -59,7 +59,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     onClick={() => $editor.commands.toggleStrike()}
     tooltip="Strike"
   >
-    <div class="CSS_ICON_STRIKE"></div>
+    <div class="CSS_ICON_STRIKETHROUGH"></div>
   </Button>
 
   <Button

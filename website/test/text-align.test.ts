@@ -14,8 +14,11 @@ import {
   MOD_KEY,
   moveSelectionToStart,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('text-align')
 
 testStory('text-align', () => {
   it('commands', async () => {

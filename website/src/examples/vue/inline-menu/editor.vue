@@ -33,7 +33,6 @@ watchPostEffect((onCleanup) => {
       <div class="CSS_EDITOR_SCROLLING">
         <div
           ref="editorRef"
-          spellcheck="false"
           class="CSS_EDITOR_CONTENT"
         />
         <InlineMenu />

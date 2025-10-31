@@ -17,8 +17,11 @@ import {
   hover,
   pasteHtmlToEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('table')
 
 testStory('table', () => {
   it('default table content', async () => {

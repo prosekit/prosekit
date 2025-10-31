@@ -9,7 +9,10 @@ import {
   expectLocatorToHaveCount,
   locateEditor,
   testStory,
+  testStoryConsistency,
 } from './helpers'
+
+testStoryConsistency('loro')
 
 testStory('loro', () => {
   it('synchronizes content across two editors', async () => {

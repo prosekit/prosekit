@@ -9,8 +9,11 @@ import {
   expectLocatorToNotExist,
   locateEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('heading')
 
 testStory('heading', () => {
   it('default content', async () => {

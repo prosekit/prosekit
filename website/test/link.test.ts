@@ -13,8 +13,11 @@ import {
   extendSelection,
   getSelectedText,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('link')
 
 testStory('link', () => {
   it('add, show, and remove link via inline menu', async () => {

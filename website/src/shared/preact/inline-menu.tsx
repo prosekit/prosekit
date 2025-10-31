@@ -130,7 +130,7 @@ export default function InlineMenu() {
           onClick={() => items.strike.command()}
           tooltip="Strikethrough"
         >
-          <div className="CSS_ICON_STRIKE"></div>
+          <div className="CSS_ICON_STRIKETHROUGH"></div>
         </Button>
 
         <Button

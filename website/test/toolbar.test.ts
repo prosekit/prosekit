@@ -11,8 +11,11 @@ import {
   emptyEditor,
   extendSelection,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('toolbar')
 
 testStory('toolbar', () => {
   it('bold and heading buttons work', async () => {

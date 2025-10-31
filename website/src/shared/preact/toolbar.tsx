@@ -160,7 +160,7 @@ export default function Toolbar() {
         onClick={() => items.strike.command()}
         tooltip="Strike"
       >
-        <div className="CSS_ICON_STRIKE" />
+        <div className="CSS_ICON_STRIKETHROUGH" />
       </Button>
 
       <Button

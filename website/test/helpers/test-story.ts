@@ -94,20 +94,14 @@ export function testStoryConsistency(story: string) {
   }
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    let htmlToGroups = new Map<string, string[]>()
-
+    const items: [string, string][] = []
     for (const example of examples) {
-      const screen = await renderExample(example.framework, example.story)
-      await waitForEditor()
-
-      const html = await waitForStableHTML(screen.baseElement)
-      const group = htmlToGroups.get(html)
-      if (!group) {
-        htmlToGroups.set(html, [example.name])
-      } else {
-        group.push(example.name)
-      }
+      const html = await getStableHTML(example.framework, example.story)
+      items.push([example.name, html])
     }
+    const nameToHTML = Object.fromEntries(items)
+
+    const htmlToGroups: Map<string, string[]> = Map.groupBy(examples.map(example => example.name), (name) => nameToHTML[name])
 
     if (htmlToGroups.size <= 1) {
       return
@@ -117,12 +111,25 @@ export function testStoryConsistency(story: string) {
     const [html1, frameworks1] = iterator.next().value!
     const [html2, frameworks2] = iterator.next().value!
 
-    const message = `Expected "${frameworks1.join(', ')}" and "${frameworks2.join(', ')}" to render the same HTML`
+    let message = `Expected "${frameworks1.join(', ')}" and "${frameworks2.join(', ')}" to render the same HTML.`
+    message += '\n'
+    message += '='.repeat(20) + ' HTML from ' + frameworks1.join(', ') + ' ' + '='.repeat(20) + '\n'
+    message += html1 + '\n'
+    message += '='.repeat(20) + ' HTML from ' + frameworks2.join(', ') + ' ' + '='.repeat(20) + '\n'
+    message += html2 + '\n'
+    message += '='.repeat(20) + ' END ' + '='.repeat(20) + '\n'
+
     expect(html1, message).toEqual(html2)
   })
 }
 
-async function waitForStableHTML(element: Element, stableCount = 10, maxAttempts: number = 100): Promise<string> {
+async function getStableHTML(framework: string, story: string): Promise<string> {
+  const screen = await renderExample(framework, story)
+  await waitForEditor()
+  return await waitForStableHTML(screen.container)
+}
+
+async function waitForStableHTML(element: Element, stableCount = 2, maxAttempts: number = 100): Promise<string> {
   let stableHTML: string = ''
   let stableCounter = 0
   let attempts = 0

@@ -9,6 +9,7 @@ import exampleMeta from '../../example.meta.json' with { type: 'json' }
 
 import { waitForEditor } from './editor'
 import { formatHTML } from './format-html'
+import { waitForStableElement } from './query'
 
 function getExamples(story: string) {
   const examples = exampleMeta.examples.filter(
@@ -145,30 +146,11 @@ export function testStoryConsistency(story: string) {
 async function getStableHTML(framework: string, story: string): Promise<string> {
   const screen = await renderExample(framework, story)
   await waitForEditor()
-  return await waitForStableHTML(screen.container)
-}
+  await waitForStableElement(() => screen.container)
 
-async function waitForStableHTML(element: Element, stableCount = 3, maxAttempts: number = 100): Promise<string> {
-  let stableHTML: string = ''
-  let stableCounter = 0
-  let attempts = 0
+  let html = formatHTML(screen.container.innerHTML)
+  // Replace random ids
+  html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
 
-  while (stableCounter < stableCount && attempts < maxAttempts) {
-    attempts += 1
-
-    let html = formatHTML(element.innerHTML)
-    // Replace random ids
-    html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
-
-    if (html === stableHTML) {
-      stableCounter += 1
-    } else {
-      stableHTML = html
-      stableCounter = 0
-    }
-
-    await new Promise((resolve) => requestAnimationFrame(resolve))
-  }
-
-  return stableHTML
+  return html
 }

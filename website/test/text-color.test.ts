@@ -9,6 +9,7 @@ import {
   extendSelection,
   getSelectedText,
   moveSelection,
+  moveSelectionToStart,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -23,7 +24,7 @@ testStory('text-color', () => {
 
     const selectWord = async (start: number, end: number) => {
       // Move the cursor to the beginning of the editor
-      await moveSelection('backward', 100)
+      await moveSelectionToStart()
       // Move the cursor to the beginning of the word
       await moveSelection('forward', start)
       // Select the word

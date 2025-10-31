@@ -62,6 +62,29 @@
       ]
     },
     {
+      "name": "react-bold",
+      "framework": "react",
+      "story": "bold",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-change-tracking",
       "framework": "react",
       "story": "change-tracking",
@@ -76,6 +99,29 @@
         },
         {
           "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-code",
+      "framework": "react",
+      "story": "code",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -134,6 +180,44 @@
         },
         {
           "path": "theme-selector.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-drop-cursor",
+      "framework": "react",
+      "story": "drop-cursor",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "sample-doc-drop-cursor.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-emoji-rules",
+      "framework": "react",
+      "story": "emoji-rules",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
           "hidden": false
         }
       ]
@@ -241,6 +325,29 @@
       ]
     },
     {
+      "name": "react-hard-break",
+      "framework": "react",
+      "story": "hard-break",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-heading",
       "framework": "react",
       "story": "heading",
@@ -328,6 +435,29 @@
         },
         {
           "path": "inline-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-italic",
+      "framework": "react",
+      "story": "italic",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
           "hidden": false
         },
         {
@@ -643,6 +773,29 @@
       ]
     },
     {
+      "name": "react-strike",
+      "framework": "react",
+      "story": "strike",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-table",
       "framework": "react",
       "story": "table",
@@ -657,6 +810,56 @@
         },
         {
           "path": "table-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-text-align",
+      "framework": "react",
+      "story": "text-align",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-text-color",
+      "framework": "react",
+      "story": "text-color",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "text-color.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -703,6 +906,29 @@
         },
         {
           "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-underline",
+      "framework": "react",
+      "story": "underline",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]

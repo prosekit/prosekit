@@ -1,14 +1,12 @@
-import type {
-  Editor,
-  NodeAction,
-} from 'prosekit/core'
+import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
 
 function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
-  return Object.values(editor.nodes).some((node: NodeAction) => {
+  return Object.values(editor.nodes).some((node) => {
+    // @ts-expect-error - textAlign attribute may not exist on all node types
     return node.isActive({ textAlign: value })
   })
 }

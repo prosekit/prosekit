@@ -469,6 +469,7 @@ const mapping: Record<string, string[]> = {
   'shared/vue/image-upload-popover.vue': [
     /// keep-sorted
     'examples/vue/full/',
+    'examples/vue/toolbar/',
   ],
   'shared/vue/image-view.vue': [
     /// keep-sorted

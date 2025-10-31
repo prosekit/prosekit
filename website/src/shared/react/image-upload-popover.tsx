@@ -91,7 +91,7 @@ export const ImageUploadPopover: FC<{
               className="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
-              value={url}
+              value={url || undefined}
               onChange={handleUrlChange}
             />
           </>

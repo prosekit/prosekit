@@ -86,7 +86,7 @@ function handleOpenChange(openValue: boolean) {
           class="CSS_IMAGE_UPLOAD_INPUT"
           placeholder="Paste the image link..."
           type="url"
-          :value="url"
+          :value="url || undefined"
           @input="handleUrlChange"
         />
       </template>

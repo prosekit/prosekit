@@ -3,6 +3,7 @@ import { useEditor } from 'prosekit/vue'
 
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
+import ImageUploadPopover from './image-upload-popover.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
@@ -71,5 +72,12 @@ const editor = useEditor<EditorExtension>({ update: true })
     >
       <div class="CSS_ICON_H3" />
     </Button>
+
+    <ImageUploadPopover
+      :disabled="!editor.commands.insertImage.canExec()"
+      tooltip="Insert Image"
+    >
+      <div class="CSS_ICON_IMAGE" />
+    </ImageUploadPopover>
   </div>
 </template>

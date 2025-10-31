@@ -10,7 +10,10 @@ import Toolbar from './toolbar'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension() })
+    return createEditor({
+      extension: defineExtension(),
+      defaultContent: 'The content is readonly. Press the buttons above to toggle the readonly mode.',
+    })
   }, [])
 
   return (

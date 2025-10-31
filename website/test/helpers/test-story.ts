@@ -78,33 +78,27 @@ export function testStory(
   }
 }
 
-export function testStoryConsistency(
-  story: string,
-) {
+export function testStoryConsistency(story: string) {
   const examples = getExamples(story)
+
   if (examples.length <= 1) {
     return
   }
 
-  it(`should render the same "${story}" example across ${examples.length} frameworks`, async () => {
-    let expectedHtml: string | undefined
-    let expectedFramework: string | undefined
+  it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
+    // Render the first framework example as the baseline
+    const firstExample = examples[0]
+    const firstScreen = await renderExample(firstExample.framework, firstExample.story)
+    const expectedHtml = formatHTML(firstScreen.container.innerHTML)
 
-    for (let example of examples) {
+    // Compare each remaining framework against the baseline
+    for (let i = 1; i < examples.length; i++) {
+      const example = examples[i]
       const screen = await renderExample(example.framework, example.story)
-      const container = screen.container
-      const html = formatHTML(container.innerHTML)
+      const actualHtml = formatHTML(screen.container.innerHTML)
 
-      if (!expectedHtml || !expectedFramework) {
-        expectedHtml = html
-        expectedFramework = example.framework
-        continue
-      }
-
-      if (expectedHtml !== html) {
-        const message = `Expected the "${story}" example to render the same in the ${example.framework} framework than in the ${expectedFramework} framework`
-        expect(html, message).toEqual(expectedHtml)
-      }
+      const message = `Expected "${story}" to render the same HTML in ${example.framework} as in ${firstExample.framework}`
+      expect(actualHtml, message).toEqual(expectedHtml)
     }
   })
 }

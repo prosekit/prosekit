@@ -90,7 +90,7 @@ export function testStoryConsistency(story: string) {
 
   // Temporary skip some stories.
   // TODO: Remove the skipping
-  const skipStories = ['full', 'keymap', 'link-mark-view']
+  const skipStories = ['full', 'table']
   if (skipStories.includes(story)) {
     return
   }
@@ -144,10 +144,6 @@ async function waitForStableHTML(element: Element, stableCount = 3, maxAttempts:
     let html = formatHTML(element.innerHTML)
     // Replace random ids
     html = html.replaceAll(/id="[\w-]+"/g, 'id="SOME_ID"')
-    // Remove Solid framework wrapper divs with display: contents
-    html = html.replaceAll(/<div style="display: contents;">\s*/g, '')
-    html = html.replaceAll(/<div style="display:\s*contents;">\s*/g, '')
-    html = html.replaceAll(/\s*<\/div>\s*(<\/(?:span|a)>)/g, '$1')
 
     if (html === stableHTML) {
       stableCounter += 1

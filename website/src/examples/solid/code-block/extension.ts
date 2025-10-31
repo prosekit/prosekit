@@ -1,9 +1,6 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import {
-  defineCodeBlock,
-  defineCodeBlockShiki,
-} from 'prosekit/extensions/code-block'
+import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 import {
   defineSolidNodeView,
   type SolidNodeViewComponent,
@@ -14,7 +11,6 @@ import CodeBlockView from './code-block-view'
 export function defineExtension() {
   return union(
     defineBasicExtension(),
-    defineCodeBlock(),
     defineCodeBlockShiki(),
     defineSolidNodeView({
       name: 'codeBlock',

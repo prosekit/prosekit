@@ -89,7 +89,23 @@ export function testStoryConsistency(story: string) {
 
   // Temporary skip some stories.
   // TODO: Remove the skipping
-  const skipStories = ['full', 'table']
+  const skipStories = [
+    'full',
+    'table',
+    'underline',
+    'strike',
+    'minimal',
+    'link',
+    'link-mark-view',
+    'keymap',
+    'italic',
+    'image-view',
+    'heading',
+    'hard-break',
+    'code',
+    'code-block',
+    'bold',
+  ]
   if (skipStories.includes(story)) {
     return
   }

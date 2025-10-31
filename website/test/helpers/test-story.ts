@@ -97,7 +97,6 @@ export function testStoryConsistency(story: string) {
 
       let html = screen.container.innerHTML
       html = formatHTML(html)
-      html = html.replace(/\s+/g, '')
 
       if (!baselineHtml) {
         baselineHtml = html

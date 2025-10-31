@@ -12,6 +12,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('heading')
+
 testStory('heading', () => {
   it('default content', async () => {
     const editor = await waitForEditor()

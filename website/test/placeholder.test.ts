@@ -11,6 +11,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('placeholder')
+
 testStory('placeholder', () => {
   it('shows when empty, hides on input, and reappears after clearing', async () => {
     const editor = locateEditor()

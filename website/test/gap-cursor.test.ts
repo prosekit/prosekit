@@ -15,6 +15,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('gap-cursor')
+
 testStory('gap-cursor', () => {
   it('shows gap cursor between stacked images', async () => {
     const editor = await waitForEditor()

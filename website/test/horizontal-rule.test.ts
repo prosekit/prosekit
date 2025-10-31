@@ -14,6 +14,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('horizontal-rule')
+
 testStory('horizontal-rule', () => {
   it('insert divider and continue typing', async () => {
     const editor = locateEditor()

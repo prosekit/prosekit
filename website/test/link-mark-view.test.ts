@@ -9,6 +9,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('link-mark-view')
+
 testStory('link-mark-view', () => {
   it('link-mark-view', async () => {
     const editor = await waitForEditor()

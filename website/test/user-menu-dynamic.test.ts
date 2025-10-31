@@ -15,6 +15,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('user-menu-dynamic')
+
 testStory('user-menu-dynamic', () => {
   it('user-menu-dynamic', async () => {
     const editor = await waitForEditor()

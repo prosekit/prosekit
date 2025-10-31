@@ -10,6 +10,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('image-view')
+
 testStory('image-view', () => {
   it('renders default images', async () => {
     const editor = locateEditor()

@@ -17,6 +17,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('text-align')
+
 testStory('text-align', () => {
   it('commands', async () => {
     const btnL = page.getByRole('button', { name: 'Left' })

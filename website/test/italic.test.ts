@@ -13,6 +13,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('italic')
+
 testStory('italic', () => {
   it('toggle via toolbar while typing', async () => {
     const editor = await waitForEditor()

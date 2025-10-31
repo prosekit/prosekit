@@ -11,6 +11,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('loro')
+
 testStory('loro', () => {
   it('synchronizes content across two editors', async () => {
     const editors = locateEditor()

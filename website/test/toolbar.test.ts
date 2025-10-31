@@ -14,6 +14,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('toolbar')
+
 testStory('toolbar', () => {
   it('bold and heading buttons work', async () => {
     const editor = await waitForEditor()

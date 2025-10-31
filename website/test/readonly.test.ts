@@ -13,6 +13,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('readonly')
+
 testStory('readonly', () => {
   it('readonly', async () => {
     const editor = locateEditor()

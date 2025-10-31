@@ -9,6 +9,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('minimal')
+
 testStory('minimal', () => {
   it('typing', async () => {
     const editor = await waitForEditor()

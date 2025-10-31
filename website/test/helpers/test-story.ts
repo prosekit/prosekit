@@ -78,7 +78,7 @@ export function testStory(
   }
 }
 
-export function testStorySnapshot(
+export function testStoryConsistency(
   story: string,
 ) {
   const examples = getExamples(story)

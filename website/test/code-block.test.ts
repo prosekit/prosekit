@@ -11,6 +11,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('code-block')
+
 testStory('code-block', () => {
   it('input rule', async () => {
     const editor = locateEditor()

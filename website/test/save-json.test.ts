@@ -17,6 +17,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('save-json')
+
 testStory('save-json', () => {
   it('save-json', async () => {
     const editor = await waitForEditor()

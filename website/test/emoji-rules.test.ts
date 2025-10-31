@@ -13,6 +13,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('emoji-rules')
+
 testStory('emoji-rules', () => {
   it('convert :apple: and :banana: on Enter', async () => {
     const editor = locateEditor()

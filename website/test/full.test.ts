@@ -18,6 +18,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('full')
+
 testStory('full', () => {
   it('default content', async () => {
     await waitForEditor()

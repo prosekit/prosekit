@@ -9,6 +9,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('mark-rule')
+
 testStory('mark-rule', () => {
   it('hashtag', async () => {
     const editor = await waitForEditor()

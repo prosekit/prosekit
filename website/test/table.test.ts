@@ -20,6 +20,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('table')
+
 testStory('table', () => {
   it('default table content', async () => {
     const { expectTableContentToBe } = await setup()

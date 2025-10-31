@@ -14,6 +14,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('underline')
+
 testStory('underline', () => {
   it('toggle via toolbar while typing', async () => {
     const editor = locateEditor()

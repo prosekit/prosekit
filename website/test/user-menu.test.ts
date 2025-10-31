@@ -13,6 +13,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('user-menu')
+
 testStory('user-menu', () => {
   it('insert user and tag mentions via autocomplete', async () => {
     const editor = await waitForEditor()

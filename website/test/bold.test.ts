@@ -10,8 +10,11 @@ import {
 import {
   emptyEditor,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('bold')
 
 testStory('bold', () => {
   it('toggle via toolbar while typing', async () => {

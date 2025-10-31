@@ -13,6 +13,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('change-tracking')
+
 testStory('change-tracking', () => {
   it('save commits and restore previous version', async () => {
     const editor = page.locate('div.ProseMirror[contenteditable="true"]').first()

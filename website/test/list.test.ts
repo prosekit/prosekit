@@ -28,6 +28,8 @@ async function setup() {
   }
 }
 
+testStoryConsistency('list')
+
 testStory('list', () => {
   it('toggle bullet list', async () => {
     const { editor, bulletBtn, bulletList } = await setup()

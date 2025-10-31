@@ -12,6 +12,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('code-block-themes')
+
 testStory('code-block-themes', () => {
   it('code-block-themes', async () => {
     const editor = await waitForEditor()

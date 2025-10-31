@@ -13,6 +13,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('text-color')
+
 testStory('text-color', () => {
   it('change and clear text color via inline menu', async ({}) => {
     const editor = await waitForEditor()

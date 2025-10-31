@@ -13,6 +13,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('search')
+
 testStory('search', () => {
   it('search', async () => {
     const editor = await waitForEditor()

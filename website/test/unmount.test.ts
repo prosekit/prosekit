@@ -9,6 +9,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('unmount')
+
 testStory('unmount', () => {
   it('unmount', async () => {
     const editor = page.locate('.ProseMirror')

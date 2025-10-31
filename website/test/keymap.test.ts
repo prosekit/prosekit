@@ -10,6 +10,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('keymap')
+
 testStory('keymap', () => {
   it('keymap', async () => {
     const editor = locateEditor()

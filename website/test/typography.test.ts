@@ -9,6 +9,8 @@ import {
   testStory,
 } from './helpers'
 
+testStoryConsistency('typography')
+
 testStory('typography', () => {
   it('renders headings, lists, code, and media', async () => {
     const editor = locateEditor()

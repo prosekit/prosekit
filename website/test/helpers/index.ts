@@ -33,5 +33,5 @@ export {
 } from './selection'
 export {
   testStory,
-  testStorySnapshot,
+  testStoryConsistency,
 } from './test-story'

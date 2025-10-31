@@ -14,10 +14,13 @@ import {
   getBoundingBox,
   hover,
   testStory,
+  testStoryConsistency,
   unhover,
   waitForAnimationEnd,
   waitForEditor,
 } from './helpers'
+
+testStoryConsistency('full')
 
 testStory(['full'], () => {
   it('show block handle on hover', async () => {

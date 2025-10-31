@@ -17,6 +17,8 @@ import {
   waitForEditor,
 } from './helpers'
 
+testStoryConsistency('save-markdown')
+
 testStory('save-markdown', () => {
   it('save-markdown', async () => {
     const editor = await waitForEditor()

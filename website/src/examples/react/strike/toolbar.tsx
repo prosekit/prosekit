@@ -23,9 +23,9 @@ export default function Toolbar() {
         pressed={items.strike.isActive}
         disabled={!items.strike.canExec}
         onClick={items.strike.command}
-        tooltip="Strike"
+        tooltip="Strikethrough"
       >
-        Strike
+        Strikethrough
       </Button>
     </div>
   )

@@ -8,7 +8,7 @@ import Button from './button'
 import type { EditorExtension } from './extension'
 
 function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
-  return Object.values(editor.nodes).some((node: NodeAction<any>) => {
+  return Object.values(editor.nodes).some((node: NodeAction) => {
     return node.isActive({ textAlign: value })
   })
 }

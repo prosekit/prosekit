@@ -95,8 +95,7 @@ export function testStoryConsistency(story: string) {
       const screen = await renderExample(example.framework, example.story)
       await waitForEditor()
 
-      let html = screen.container.innerHTML
-      html = formatHTML(html)
+      const html = formatHTML(screen.container.innerHTML)
 
       if (!baselineHtml) {
         baselineHtml = html

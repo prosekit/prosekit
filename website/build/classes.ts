@@ -86,7 +86,7 @@ export const CSS_EDITOR_VIEWPORT = cn(
 
 // A scrolling container for the editor content and floating menus.
 export const CSS_EDITOR_SCROLLING = cn(
-  'relative w-full flex-1 box-border overflow-y-scroll',
+  'relative w-full flex-1 box-border overflow-y-auto',
 )
 
 // Use this class for the contenteditable element.

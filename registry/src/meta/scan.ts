@@ -361,7 +361,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
           continue
         }
 
-        item.registryDependencies.add(`@prosekit/${targetItemName}`)
+        item.registryDependencies.add(`https://prosekit.dev/r/${targetItemName}.json`)
         item.meta.internalDependencies.add(targetItemName)
       } else {
         const dependency = normalizeExternalDependency(specifier)

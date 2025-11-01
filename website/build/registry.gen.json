@@ -9,10 +9,10 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-default-content-drag-and-drop",
-        "@prosekit/react-ui-block-handle",
-        "@prosekit/react-ui-code-block-view",
-        "@prosekit/react-ui-drop-indicator"
+        "https://prosekit.dev/r/react-sample-default-content-drag-and-drop.json",
+        "https://prosekit.dev/r/react-ui-block-handle.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json",
+        "https://prosekit.dev/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit",
@@ -65,7 +65,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -114,7 +114,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -208,7 +208,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -257,9 +257,9 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-sample-doc-code-block",
-        "@prosekit/react-ui-code-block-view",
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json",
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -313,8 +313,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-sample-doc-code-block",
-        "@prosekit/react-ui-code-block-view"
+        "https://prosekit.dev/r/react-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json"
       ],
       "dependencies": [
         "prosekit",
@@ -373,7 +373,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-sample-doc-drop-cursor"
+        "https://prosekit.dev/r/react-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
         "prosekit",
@@ -462,20 +462,20 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-sample-doc-full",
-        "@prosekit/react-sample-sample-uploader",
-        "@prosekit/react-sample-tag-data",
-        "@prosekit/react-sample-user-data",
-        "@prosekit/react-ui-block-handle",
-        "@prosekit/react-ui-code-block-view",
-        "@prosekit/react-ui-drop-indicator",
-        "@prosekit/react-ui-image-view",
-        "@prosekit/react-ui-inline-menu",
-        "@prosekit/react-ui-slash-menu",
-        "@prosekit/react-ui-table-handle",
-        "@prosekit/react-ui-tag-menu",
-        "@prosekit/react-ui-toolbar",
-        "@prosekit/react-ui-user-menu"
+        "https://prosekit.dev/r/react-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/react-sample-sample-uploader.json",
+        "https://prosekit.dev/r/react-sample-tag-data.json",
+        "https://prosekit.dev/r/react-sample-user-data.json",
+        "https://prosekit.dev/r/react-ui-block-handle.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json",
+        "https://prosekit.dev/r/react-ui-drop-indicator.json",
+        "https://prosekit.dev/r/react-ui-image-view.json",
+        "https://prosekit.dev/r/react-ui-inline-menu.json",
+        "https://prosekit.dev/r/react-ui-slash-menu.json",
+        "https://prosekit.dev/r/react-ui-table-handle.json",
+        "https://prosekit.dev/r/react-ui-tag-menu.json",
+        "https://prosekit.dev/r/react-ui-toolbar.json",
+        "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -600,7 +600,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -651,7 +651,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -700,7 +700,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -749,9 +749,9 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-sample-doc-image",
-        "@prosekit/react-sample-sample-uploader",
-        "@prosekit/react-ui-image-view"
+        "https://prosekit.dev/r/react-sample-sample-doc-image.json",
+        "https://prosekit.dev/r/react-sample-sample-uploader.json",
+        "https://prosekit.dev/r/react-ui-image-view.json"
       ],
       "dependencies": [
         "prosekit",
@@ -800,7 +800,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-inline-menu"
+        "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -847,7 +847,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -896,7 +896,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -953,7 +953,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-inline-menu"
+        "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1045,7 +1045,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1094,7 +1094,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1149,7 +1149,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "loro-crdt",
@@ -1323,7 +1323,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1492,7 +1492,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-search"
+        "https://prosekit.dev/r/react-ui-search.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1539,7 +1539,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-slash-menu"
+        "https://prosekit.dev/r/react-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1586,7 +1586,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1637,7 +1637,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-table-handle"
+        "https://prosekit.dev/r/react-ui-table-handle.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1682,7 +1682,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1733,7 +1733,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1790,8 +1790,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-sample-uploader",
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-sample-sample-uploader.json",
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1881,7 +1881,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -1975,10 +1975,10 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-tag-data",
-        "@prosekit/react-sample-user-data",
-        "@prosekit/react-ui-tag-menu",
-        "@prosekit/react-ui-user-menu"
+        "https://prosekit.dev/r/react-sample-tag-data.json",
+        "https://prosekit.dev/r/react-sample-user-data.json",
+        "https://prosekit.dev/r/react-ui-tag-menu.json",
+        "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2030,8 +2030,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-sample-user-data",
-        "@prosekit/react-ui-user-menu"
+        "https://prosekit.dev/r/react-sample-user-data.json",
+        "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2090,7 +2090,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-word-counter"
+        "https://prosekit.dev/r/react-ui-word-counter.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2135,7 +2135,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-toolbar"
+        "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2527,7 +2527,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2604,7 +2604,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -2648,7 +2648,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button"
+        "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -2805,8 +2805,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/react-ui-button",
-        "@prosekit/react-ui-image-upload-popover"
+        "https://prosekit.dev/r/react-ui-button.json",
+        "https://prosekit.dev/r/react-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -2916,20 +2916,20 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/vue-sample-sample-doc-full",
-        "@prosekit/vue-sample-sample-uploader",
-        "@prosekit/vue-sample-tag-data",
-        "@prosekit/vue-sample-user-data",
-        "@prosekit/vue-ui-block-handle",
-        "@prosekit/vue-ui-code-block-view",
-        "@prosekit/vue-ui-drop-indicator",
-        "@prosekit/vue-ui-image-view",
-        "@prosekit/vue-ui-inline-menu",
-        "@prosekit/vue-ui-slash-menu",
-        "@prosekit/vue-ui-table-handle",
-        "@prosekit/vue-ui-tag-menu",
-        "@prosekit/vue-ui-toolbar",
-        "@prosekit/vue-ui-user-menu"
+        "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
+        "https://prosekit.dev/r/vue-sample-tag-data.json",
+        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-ui-block-handle.json",
+        "https://prosekit.dev/r/vue-ui-code-block-view.json",
+        "https://prosekit.dev/r/vue-ui-drop-indicator.json",
+        "https://prosekit.dev/r/vue-ui-image-view.json",
+        "https://prosekit.dev/r/vue-ui-inline-menu.json",
+        "https://prosekit.dev/r/vue-ui-slash-menu.json",
+        "https://prosekit.dev/r/vue-ui-table-handle.json",
+        "https://prosekit.dev/r/vue-ui-tag-menu.json",
+        "https://prosekit.dev/r/vue-ui-toolbar.json",
+        "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -3381,7 +3381,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/vue-ui-button"
+        "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -3458,7 +3458,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/vue-ui-button"
+        "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -3615,8 +3615,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/vue-ui-button",
-        "@prosekit/vue-ui-image-upload-popover"
+        "https://prosekit.dev/r/vue-ui-button.json",
+        "https://prosekit.dev/r/vue-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -3694,10 +3694,10 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-sample-default-content-drag-and-drop",
-        "@prosekit/preact-ui-block-handle",
-        "@prosekit/preact-ui-code-block-view",
-        "@prosekit/preact-ui-drop-indicator"
+        "https://prosekit.dev/r/preact-sample-default-content-drag-and-drop.json",
+        "https://prosekit.dev/r/preact-ui-block-handle.json",
+        "https://prosekit.dev/r/preact-ui-code-block-view.json",
+        "https://prosekit.dev/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
         "preact",
@@ -3750,7 +3750,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-toolbar"
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "preact",
@@ -3844,8 +3844,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-sample-sample-doc-code-block",
-        "@prosekit/preact-ui-code-block-view"
+        "https://prosekit.dev/r/preact-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/preact-ui-code-block-view.json"
       ],
       "dependencies": [
         "preact",
@@ -3904,20 +3904,20 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-sample-sample-doc-full",
-        "@prosekit/preact-sample-sample-uploader",
-        "@prosekit/preact-sample-tag-data",
-        "@prosekit/preact-sample-user-data",
-        "@prosekit/preact-ui-block-handle",
-        "@prosekit/preact-ui-code-block-view",
-        "@prosekit/preact-ui-drop-indicator",
-        "@prosekit/preact-ui-image-view",
-        "@prosekit/preact-ui-inline-menu",
-        "@prosekit/preact-ui-slash-menu",
-        "@prosekit/preact-ui-table-handle",
-        "@prosekit/preact-ui-tag-menu",
-        "@prosekit/preact-ui-toolbar",
-        "@prosekit/preact-ui-user-menu"
+        "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
+        "https://prosekit.dev/r/preact-sample-tag-data.json",
+        "https://prosekit.dev/r/preact-sample-user-data.json",
+        "https://prosekit.dev/r/preact-ui-block-handle.json",
+        "https://prosekit.dev/r/preact-ui-code-block-view.json",
+        "https://prosekit.dev/r/preact-ui-drop-indicator.json",
+        "https://prosekit.dev/r/preact-ui-image-view.json",
+        "https://prosekit.dev/r/preact-ui-inline-menu.json",
+        "https://prosekit.dev/r/preact-ui-slash-menu.json",
+        "https://prosekit.dev/r/preact-ui-table-handle.json",
+        "https://prosekit.dev/r/preact-ui-tag-menu.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json",
+        "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
         "preact",
@@ -4042,7 +4042,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-toolbar"
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "preact",
@@ -4091,7 +4091,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-toolbar"
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "preact",
@@ -4140,9 +4140,9 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-sample-sample-doc-image",
-        "@prosekit/preact-sample-sample-uploader",
-        "@prosekit/preact-ui-image-view"
+        "https://prosekit.dev/r/preact-sample-sample-doc-image.json",
+        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
+        "https://prosekit.dev/r/preact-ui-image-view.json"
       ],
       "dependencies": [
         "preact",
@@ -4191,7 +4191,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-inline-menu"
+        "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
         "preact",
@@ -4238,7 +4238,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-button"
+        "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
         "preact",
@@ -4295,7 +4295,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-inline-menu"
+        "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
         "preact",
@@ -4387,7 +4387,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-toolbar"
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "preact",
@@ -4436,7 +4436,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-toolbar"
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "preact",
@@ -4608,7 +4608,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-button"
+        "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
         "preact",
@@ -4777,8 +4777,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-sample-sample-uploader",
-        "@prosekit/preact-ui-toolbar"
+        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "preact",
@@ -5164,7 +5164,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-button"
+        "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
         "preact",
@@ -5241,7 +5241,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-button"
+        "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -5398,8 +5398,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/preact-ui-button",
-        "@prosekit/preact-ui-image-upload-popover"
+        "https://prosekit.dev/r/preact-ui-button.json",
+        "https://prosekit.dev/r/preact-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -5477,20 +5477,20 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/svelte-sample-sample-doc-full",
-        "@prosekit/svelte-sample-sample-uploader",
-        "@prosekit/svelte-sample-tag-data",
-        "@prosekit/svelte-sample-user-data",
-        "@prosekit/svelte-ui-block-handle",
-        "@prosekit/svelte-ui-code-block-view",
-        "@prosekit/svelte-ui-drop-indicator",
-        "@prosekit/svelte-ui-image-view",
-        "@prosekit/svelte-ui-inline-menu",
-        "@prosekit/svelte-ui-slash-menu",
-        "@prosekit/svelte-ui-table-handle",
-        "@prosekit/svelte-ui-tag-menu",
-        "@prosekit/svelte-ui-toolbar",
-        "@prosekit/svelte-ui-user-menu"
+        "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
+        "https://prosekit.dev/r/svelte-sample-tag-data.json",
+        "https://prosekit.dev/r/svelte-sample-user-data.json",
+        "https://prosekit.dev/r/svelte-ui-block-handle.json",
+        "https://prosekit.dev/r/svelte-ui-code-block-view.json",
+        "https://prosekit.dev/r/svelte-ui-drop-indicator.json",
+        "https://prosekit.dev/r/svelte-ui-image-view.json",
+        "https://prosekit.dev/r/svelte-ui-inline-menu.json",
+        "https://prosekit.dev/r/svelte-ui-slash-menu.json",
+        "https://prosekit.dev/r/svelte-ui-table-handle.json",
+        "https://prosekit.dev/r/svelte-ui-tag-menu.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json",
+        "https://prosekit.dev/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5940,7 +5940,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/svelte-ui-button"
+        "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6016,7 +6016,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/svelte-ui-button"
+        "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -6172,8 +6172,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/svelte-ui-button",
-        "@prosekit/svelte-ui-image-upload-popover"
+        "https://prosekit.dev/r/svelte-ui-button.json",
+        "https://prosekit.dev/r/svelte-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -6251,20 +6251,20 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/solid-sample-sample-doc-full",
-        "@prosekit/solid-sample-sample-uploader",
-        "@prosekit/solid-sample-tag-data",
-        "@prosekit/solid-sample-user-data",
-        "@prosekit/solid-ui-block-handle",
-        "@prosekit/solid-ui-code-block-view",
-        "@prosekit/solid-ui-drop-indicator",
-        "@prosekit/solid-ui-image-view",
-        "@prosekit/solid-ui-inline-menu",
-        "@prosekit/solid-ui-slash-menu",
-        "@prosekit/solid-ui-table-handle",
-        "@prosekit/solid-ui-tag-menu",
-        "@prosekit/solid-ui-toolbar",
-        "@prosekit/solid-ui-user-menu"
+        "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
+        "https://prosekit.dev/r/solid-sample-tag-data.json",
+        "https://prosekit.dev/r/solid-sample-user-data.json",
+        "https://prosekit.dev/r/solid-ui-block-handle.json",
+        "https://prosekit.dev/r/solid-ui-code-block-view.json",
+        "https://prosekit.dev/r/solid-ui-drop-indicator.json",
+        "https://prosekit.dev/r/solid-ui-image-view.json",
+        "https://prosekit.dev/r/solid-ui-inline-menu.json",
+        "https://prosekit.dev/r/solid-ui-slash-menu.json",
+        "https://prosekit.dev/r/solid-ui-table-handle.json",
+        "https://prosekit.dev/r/solid-ui-tag-menu.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json",
+        "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit",
@@ -6350,7 +6350,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "@prosekit/solid-ui-toolbar"
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -6769,7 +6769,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/solid-ui-button"
+        "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit",
@@ -6846,7 +6846,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/solid-ui-button"
+        "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -7006,8 +7006,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "@prosekit/solid-ui-button",
-        "@prosekit/solid-ui-image-upload-popover"
+        "https://prosekit.dev/r/solid-ui-button.json",
+        "https://prosekit.dev/r/solid-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",

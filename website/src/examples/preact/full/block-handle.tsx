@@ -1,1 +1,0 @@
-../../../shared/preact/block-handle.tsx

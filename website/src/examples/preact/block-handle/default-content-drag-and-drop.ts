@@ -1,1 +1,0 @@
-../../../shared/common/default-content-drag-and-drop.ts

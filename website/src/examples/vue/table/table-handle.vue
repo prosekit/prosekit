@@ -1,1 +1,0 @@
-../../../shared/vue/table-handle.vue

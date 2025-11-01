@@ -3,10 +3,11 @@ import path from 'node:path'
 import type { ViteUserConfig } from 'astro'
 import MagicString from 'magic-string'
 
+import { refreshClasses } from './load-classes'
 import {
-  getClasses,
-  refreshClasses,
-} from './load-classes'
+  CLASS_NAME_REGEXP,
+  classNameReplacer,
+} from './replace-classes'
 
 type Plugin = Required<ViteUserConfig>['plugins'][number]
 
@@ -60,24 +61,13 @@ export function classReplace(): Plugin {
       }
 
       moduleIds.add(id)
-      const classes = getClasses()
 
       const ms = new MagicString(code)
 
       ms.replaceAll(
-        /CSS_(\w+)/g,
+        CLASS_NAME_REGEXP,
         (input) => {
-          const output = classes[input]
-          if (output == null) {
-            const message = `[${PLUGIN_NAME}] Unable to replace the class name "${input}" in ${id}. All available classes are ${Object.keys(classes).sort().join(', ')}`
-            if (process.env.NODE_ENV === 'development') {
-              console.warn(message)
-              return input
-            } else {
-              throw new Error(message)
-            }
-          }
-          return output
+          return classNameReplacer(input, id)
         },
       )
       return {

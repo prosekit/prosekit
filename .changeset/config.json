@@ -9,6 +9,7 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "@prosekit/dev",
+    "prosekit-registry",
     "prosekit-website"
   ]
 }

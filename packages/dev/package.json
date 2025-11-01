@@ -5,6 +5,9 @@
   "private": true,
   "description": "Internal development tools for ProseKit",
   "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "gen": "tsx src/gen.ts"
   },
@@ -12,8 +15,6 @@
     "@manypkg/find-root": "^3.1.0",
     "@manypkg/get-packages": "^3.1.0",
     "@sindresorhus/slugify": "^3.0.0",
-    "@types/fs-extra": "^11.0.4",
-    "fs-extra": "^11.3.2",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0"
   },

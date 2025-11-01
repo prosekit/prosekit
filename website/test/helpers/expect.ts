@@ -5,15 +5,11 @@ import {
 import type { Locator } from 'vitest/browser'
 
 export async function expectLocatorToHaveCount(locator: Locator, count: number, options?: ExpectPollOptions): Promise<void> {
-  await expect.poll(() => {
-    return locator.elements()
-  }, options).toHaveLength(count)
+  await expect.poll(() => locator.elements(), options).toHaveLength(count)
 }
 
 export async function expectLocatorToNotExist(locator: Locator, options?: ExpectPollOptions): Promise<void> {
-  await expect.poll(() => {
-    return locator
-  }, options).not.toBeInTheDocument()
+  await expect.element(locator, options).not.toBeInTheDocument()
 }
 
 export async function expectLocatorToBeHidden(locator: Locator, options?: ExpectPollOptions): Promise<void> {

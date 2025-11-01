@@ -4,7 +4,7 @@ import {
   render,
 } from 'vitest-browser-preact/pure'
 
-import { PreactExample } from '../../src/examples/preact/example'
+import { PreactExample } from '../../src/examples/preact/preact-example'
 
 import {
   registerCleanupFunction,

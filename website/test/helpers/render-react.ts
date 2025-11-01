@@ -4,7 +4,7 @@ import {
   render,
 } from 'vitest-browser-react/pure'
 
-import { ReactExample } from '../../src/examples/react/example'
+import { ReactExample } from '../../src/examples/react/react-example'
 
 import {
   registerCleanupFunction,

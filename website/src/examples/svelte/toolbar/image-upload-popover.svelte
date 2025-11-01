@@ -1,1 +1,0 @@
-../../../shared/svelte/image-upload-popover.svelte

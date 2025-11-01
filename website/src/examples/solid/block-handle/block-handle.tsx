@@ -1,1 +1,0 @@
-../../../shared/solid/block-handle.tsx

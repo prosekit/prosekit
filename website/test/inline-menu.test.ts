@@ -20,7 +20,6 @@ import {
 } from './helpers'
 
 testStoryConsistency('inline-menu')
-testStoryConsistency('full')
 
 testStory(['inline-menu', 'full'], () => {
   it('show and dismiss', async () => {

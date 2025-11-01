@@ -1,5 +1,6 @@
 ignoreWorkspaceRootCheck: true
 packages:
   - website
+  - registry
   - examples/*
   - packages/*

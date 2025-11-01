@@ -19,7 +19,10 @@ import {
   waitForEditor,
 } from './helpers'
 
-testStoryConsistency('full')
+testStoryConsistency('full', {
+  shouldWaitForShiki: true,
+  shouldWaitForImageToLoad: true,
+})
 
 testStory('full', () => {
   it('default content', async () => {

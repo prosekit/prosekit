@@ -1,6 +1,0 @@
-{
-  "extends": "@ocavue/tsconfig/dom/app.json",
-  "references": [
-    { "path": "../../../../packages/prosekit" },
-  ],
-}

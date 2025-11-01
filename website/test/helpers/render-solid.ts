@@ -4,7 +4,7 @@ import {
   render,
 } from 'vitest-browser-solid/pure'
 
-import { SolidExample } from '../../src/examples/solid/example'
+import { SolidExample } from '../../src/examples/solid/solid-example'
 
 import {
   registerCleanupFunction,

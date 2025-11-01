@@ -1,1 +1,0 @@
-../../../shared/svelte/table-handle.svelte

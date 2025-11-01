@@ -1,1 +1,0 @@
-../../../shared/solid/table-handle.tsx

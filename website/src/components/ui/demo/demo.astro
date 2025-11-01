@@ -1,8 +1,6 @@
 ---
-import exampleMeta from '../../../../example.meta.json' with { type: 'json' }
 import MultipleFrameworksDemo from './multiple-frameworks-demo.svelte'
-
-import LitStory from '../../../stories/lit.astro'
+import registry from '../../../../build/registry.gen.json'
 import PreactStory from '../../../stories/preact.astro'
 import ReactStory from '../../../stories/react.astro'
 import SolidStory from '../../../stories/solid.astro'
@@ -18,17 +16,16 @@ interface Props {
 
 const { story, showCode }: Props = Astro.props
 
-const examples = exampleMeta.examples.filter((example) => example.story === story)
+const examples = registry.items.filter((example) => example.meta.story === story)
 
 if (examples.length === 0) {
   throw new Error(`Unable to find examples for story ${story}`)
 }
 
-const frameworks = examples.map((example) => example.framework)
+const frameworks = examples.map((example) => example.meta.framework)
 ---
 
 <MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:load>
-  {frameworks.includes('lit') && <Fragment slot="slot-story-lit"><LitStory story={story} /></Fragment>}
   {frameworks.includes('preact') && <Fragment slot="slot-story-preact"><PreactStory story={story} /></Fragment>}
   {frameworks.includes('react') && <Fragment slot="slot-story-react"><ReactStory story={story} /></Fragment>}
   {frameworks.includes('solid') && <Fragment slot="slot-story-solid"><SolidStory story={story} /></Fragment>}
@@ -36,7 +33,6 @@ const frameworks = examples.map((example) => example.framework)
   {frameworks.includes('vanilla') && <Fragment slot="slot-story-vanilla"><VanillaStory story={story} /></Fragment>}
   {frameworks.includes('vue') && <Fragment slot="slot-story-vue"><VueStory story={story} /></Fragment>}
 
-  {frameworks.includes('lit') && <Fragment slot="slot-code-lit"><DemoCodeGroup story={story} framework={'lit'} /></Fragment>}
   {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
   {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
   {frameworks.includes('solid') && <Fragment slot="slot-code-solid"><DemoCodeGroup story={story} framework={'solid'} /></Fragment>}

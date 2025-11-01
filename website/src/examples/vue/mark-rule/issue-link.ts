@@ -1,1 +1,0 @@
-../../../shared/common/issue-link.ts

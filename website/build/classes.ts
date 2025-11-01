@@ -75,6 +75,10 @@ const CSS_INPUT = cn(
   'disabled:cursor-not-allowed disabled:opacity-50',
 )
 
+export const CSS_MINIMAL_EDITOR = cn(
+  'outline-solid p-4',
+)
+
 // The outermost container of the editor. It limits the height of the editor.
 export const CSS_EDITOR_VIEWPORT = cn(
   'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white',

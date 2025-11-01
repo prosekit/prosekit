@@ -1,1 +1,0 @@
-../../../shared/vue/drop-indicator.vue

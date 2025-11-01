@@ -1,1 +1,0 @@
-../../../shared/vue/user-menu.vue

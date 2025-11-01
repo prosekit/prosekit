@@ -5,6 +5,7 @@ export const loaders = {
   'minimal': lazy(() => import('./minimal/editor')),
   'block-handle': lazy(() => import('./block-handle/editor')),
   'full': lazy(() => import('./full/editor')),
+  'heading': lazy(() => import('./heading/editor')),
   'image-view': lazy(() => import('./image-view/editor')),
   'keymap': lazy(() => import('./keymap/editor')),
   'link-mark-view': lazy(() => import('./link-mark-view/editor')),

@@ -1,5 +1,5 @@
 import type { Editor } from 'prosekit/core'
-import { useEditorDerivedValue } from 'prosekit/solid'
+import { useEditorDerivedValue } from 'prosekit/preact'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
@@ -28,27 +28,30 @@ export default function Toolbar() {
   const items = useEditorDerivedValue(getToolbarItems)
 
   return (
-    <div class="CSS_TOOLBAR">
+    <div className="CSS_TOOLBAR">
       <Button
-        pressed={() => items().heading1.isActive}
-        disabled={() => !items().heading1.canExec}
-        onClick={() => items().heading1.command()}
+        pressed={items.heading1.isActive}
+        disabled={!items.heading1.canExec}
+        onClick={items.heading1.command}
+        tooltip="Heading 1"
       >
         H1
       </Button>
 
       <Button
-        pressed={() => items().heading2.isActive}
-        disabled={() => !items().heading2.canExec}
-        onClick={() => items().heading2.command()}
+        pressed={items.heading2.isActive}
+        disabled={!items.heading2.canExec}
+        onClick={items.heading2.command}
+        tooltip="Heading 2"
       >
         H2
       </Button>
 
       <Button
-        pressed={() => items().heading3.isActive}
-        disabled={() => !items().heading3.canExec}
-        onClick={() => items().heading3.command()}
+        pressed={items.heading3.isActive}
+        disabled={!items.heading3.canExec}
+        onClick={items.heading3.command}
+        tooltip="Heading 3"
       >
         H3
       </Button>

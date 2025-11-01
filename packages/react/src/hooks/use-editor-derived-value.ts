@@ -16,17 +16,19 @@ import { useEditorContext } from '../contexts/editor-context'
 export interface UseEditorDerivedOptions<E extends Extension = any> {
   /**
    * The editor to add the extension to. If not provided, it will use the
-   * editor from the nearest `ProseKit` component.
+   * editor from the nearest `<ProseKit>` component.
    */
   editor?: Editor<E>
 }
 
 /**
- * A hook that runs a function to derive a value from the editor instance after
- * editor state changes.
+ * Runs a function to derive a value from the editor instance after editor state
+ * changes.
  *
  * This is useful when you need to render something based on the editor state,
  * for example, whether the selected text is wrapped in an italic mark.
+ *
+ * It returns the derived value that updates whenever the editor state changes.
  *
  * @public
  */

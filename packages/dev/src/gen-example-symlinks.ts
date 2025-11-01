@@ -134,6 +134,7 @@ const mapping: Record<string, string[]> = {
   'shared/preact/button.tsx': [
     /// keep-sorted
     'examples/preact/full/',
+    'examples/preact/heading/',
     'examples/preact/keymap/',
     'examples/preact/readonly/',
   ],

@@ -34,6 +34,11 @@ export function serializeItem(item: ItemAccumulator): RegistryItem {
       accumulatedFiles: Array.from(item.meta.accumulatedFiles).sort(),
       internalDependencies: Array.from(item.meta.internalDependencies).sort(),
     },
+    css: item.meta.hasIcons
+      ? {
+        '@plugin @egoist/tailwindcss-icons': {},
+      }
+      : undefined,
   }
 }
 

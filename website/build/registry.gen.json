@@ -2419,6 +2419,9 @@
           "registry/src/react/ui/block-handle/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -2590,6 +2593,9 @@
           "registry/src/react/ui/image-view/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -2631,6 +2637,9 @@
         "internalDependencies": [
           "react-ui-button"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -2672,6 +2681,9 @@
         "internalDependencies": [
           "react-ui-button"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -2750,6 +2762,9 @@
           "registry/src/react/ui/table-handle/table-handle.tsx"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -2826,6 +2841,9 @@
           "react-ui-button",
           "react-ui-image-upload-popover"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -3256,6 +3274,9 @@
           "registry/src/vue/ui/block-handle/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -3426,6 +3447,9 @@
           "registry/src/vue/ui/image-view/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -3467,6 +3491,9 @@
         "internalDependencies": [
           "vue-ui-button"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -3545,6 +3572,9 @@
           "registry/src/vue/ui/table-handle/table-handle.vue"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -3621,6 +3651,9 @@
           "vue-ui-button",
           "vue-ui-image-upload-popover"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5022,6 +5055,9 @@
           "registry/src/preact/ui/block-handle/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5194,6 +5230,9 @@
           "registry/src/preact/ui/image-view/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5235,6 +5274,9 @@
         "internalDependencies": [
           "preact-ui-button"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5313,6 +5355,9 @@
           "registry/src/preact/ui/table-handle/table-handle.tsx"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5389,6 +5434,9 @@
           "preact-ui-button",
           "preact-ui-image-upload-popover"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5785,6 +5833,9 @@
           "registry/src/svelte/ui/block-handle/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5954,6 +6005,9 @@
           "registry/src/svelte/ui/image-view/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -5994,6 +6048,9 @@
         "internalDependencies": [
           "svelte-ui-button"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6072,6 +6129,9 @@
           "registry/src/svelte/ui/table-handle/table-handle.svelte"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6148,6 +6208,9 @@
           "svelte-ui-button",
           "svelte-ui-image-upload-popover"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6596,6 +6659,9 @@
           "registry/src/solid/ui/block-handle/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6769,6 +6835,9 @@
           "registry/src/solid/ui/image-view/index.ts"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6810,6 +6879,9 @@
         "internalDependencies": [
           "solid-ui-button"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6890,6 +6962,9 @@
           "registry/src/solid/ui/table-handle/table-handle.tsx"
         ],
         "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -6968,6 +7043,9 @@
           "solid-ui-button",
           "solid-ui-image-upload-popover"
         ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {

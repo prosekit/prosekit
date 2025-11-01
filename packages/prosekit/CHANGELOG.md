@@ -1,5 +1,80 @@
 # prosekit
 
+## 0.16.0
+
+### Minor Changes
+
+- [`39cd42d`](https://github.com/ocavue/prosekit/commit/39cd42dff8b8fe1dc24bb3f05730eac5aedf8042) ![](https://prosekit.dev/b/extensions)
+
+  Update the DOM output for task list clipboard serialization to include a
+  checkbox element inside the list item.
+
+  For instance, set the following content to the editor and call `editor.getDocHTML()`:
+
+  ```ts
+  editor.setContent({
+    type: "doc",
+    content: [
+      {
+        type: "list",
+        attrs: { kind: "task", checked: true },
+        content: [
+          {
+            type: "paragraph",
+            content: [{ type: "text", text: "Foo" }],
+          },
+        ],
+      },
+    ],
+  });
+  console.log(editor.getDocHTML());
+  ```
+
+  The previous output was:
+
+  ```html
+  <div>
+    <ul>
+      <li
+        class="prosemirror-flat-list"
+        data-list-kind="task"
+        data-list-checked=""
+      >
+        <p>Foo</p>
+      </li>
+    </ul>
+  </div>
+  ```
+
+  The new output is:
+
+  ```html
+  <div>
+    <ul>
+      <li
+        class="prosemirror-flat-list"
+        data-list-kind="task"
+        data-list-checked=""
+      >
+        <p>
+          <input type="checkbox" checked="" />
+          Foo
+        </p>
+      </li>
+    </ul>
+  </div>
+  ```
+
+- [`2c45905`](https://github.com/ocavue/prosekit/commit/2c45905cb7ff3a8a479564a451c15cd145fcbb47) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)
+
+  Add `useEditorDerivedValue` to derive a value from the editor instance after editor state changes.
+
+### Patch Changes
+
+- [`2eb5e28`](https://github.com/ocavue/prosekit/commit/2eb5e28f75b00a6bb7326f178f3a3823f0b4c686) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror packages.
+
 ## 0.15.8
 
 ### Patch Changes

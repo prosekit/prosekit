@@ -27,7 +27,7 @@ export interface UseEditorDerivedOptions<E extends Extension = any> {
  * This is useful when you need to render something based on the editor state,
  * for example, whether the selected text is wrapped in an italic mark.
  *
- * It returns a shallow reactive ref of the derived value that updates whenever the editor
+ * It returns a shallow ref of the derived value that updates whenever the editor
  * state changes.
  *
  * @public

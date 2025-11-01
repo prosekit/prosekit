@@ -32,7 +32,7 @@ export default function Toolbar() {
       <Button
         pressed={() => items().heading1.isActive}
         disabled={() => !items().heading1.canExec}
-        onClick={() => items().heading1.command}
+        onClick={() => items().heading1.command()}
       >
         H1
       </Button>
@@ -40,7 +40,7 @@ export default function Toolbar() {
       <Button
         pressed={() => items().heading2.isActive}
         disabled={() => !items().heading2.canExec}
-        onClick={() => items().heading2.command}
+        onClick={() => items().heading2.command()}
       >
         H2
       </Button>
@@ -48,7 +48,7 @@ export default function Toolbar() {
       <Button
         pressed={() => items().heading3.isActive}
         disabled={() => !items().heading3.canExec}
-        onClick={() => items().heading3.command}
+        onClick={() => items().heading3.command()}
       >
         H3
       </Button>

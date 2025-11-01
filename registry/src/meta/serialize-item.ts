@@ -28,6 +28,7 @@ export function serializeItem(item: ItemAccumulator): RegistryItem {
         target: sourceToTargetPath(filePath),
       })),
     meta: {
+      hasIcons: item.meta.hasIcons,
       story: item.story,
       framework: item.framework,
       accumulatedFiles: Array.from(item.meta.accumulatedFiles).sort(),

@@ -18,6 +18,7 @@ const defaultConfig = {
       provider: playwright({
         launchOptions: {},
         contextOptions: {
+          reducedMotion: 'reduce',
           hasTouch: true,
           permissions: ['clipboard-read', 'clipboard-write'],
         },

@@ -36,6 +36,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "block-handle",
         "framework": "react",
         "accumulatedFiles": [
@@ -88,6 +89,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "blockquote",
         "framework": "react",
         "accumulatedFiles": [
@@ -136,6 +138,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "bold",
         "framework": "react",
         "accumulatedFiles": [
@@ -187,6 +190,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "change-tracking",
         "framework": "react",
         "accumulatedFiles": [
@@ -228,6 +232,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "code",
         "framework": "react",
         "accumulatedFiles": [
@@ -278,6 +283,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "code-block",
         "framework": "react",
         "accumulatedFiles": [
@@ -342,6 +348,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "code-block-themes",
         "framework": "react",
         "accumulatedFiles": [
@@ -390,6 +397,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "drop-cursor",
         "framework": "react",
         "accumulatedFiles": [
@@ -436,6 +444,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "emoji-rules",
         "framework": "react",
         "accumulatedFiles": [
@@ -490,6 +499,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "full",
         "framework": "react",
         "accumulatedFiles": [
@@ -573,6 +583,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "gap-cursor",
         "framework": "react",
         "accumulatedFiles": [
@@ -618,6 +629,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "hard-break",
         "framework": "react",
         "accumulatedFiles": [
@@ -663,6 +675,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "heading",
         "framework": "react",
         "accumulatedFiles": [
@@ -711,6 +724,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "horizontal-rule",
         "framework": "react",
         "accumulatedFiles": [
@@ -761,6 +775,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "image-view",
         "framework": "react",
         "accumulatedFiles": [
@@ -809,6 +824,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "inline-menu",
         "framework": "react",
         "accumulatedFiles": [
@@ -855,6 +871,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "italic",
         "framework": "react",
         "accumulatedFiles": [
@@ -913,6 +930,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "keymap",
         "framework": "react",
         "accumulatedFiles": [
@@ -959,6 +977,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "link",
         "framework": "react",
         "accumulatedFiles": [
@@ -1008,6 +1027,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "link-mark-view",
         "framework": "react",
         "accumulatedFiles": [
@@ -1049,6 +1069,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "list",
         "framework": "react",
         "accumulatedFiles": [
@@ -1102,6 +1123,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "list-custom-checkbox",
         "framework": "react",
         "accumulatedFiles": [
@@ -1158,6 +1180,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "loro",
         "framework": "react",
         "accumulatedFiles": [
@@ -1210,6 +1233,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "mark-rule",
         "framework": "react",
         "accumulatedFiles": [
@@ -1244,6 +1268,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "minimal",
         "framework": "react",
         "accumulatedFiles": [
@@ -1281,6 +1306,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "placeholder",
         "framework": "react",
         "accumulatedFiles": [
@@ -1331,6 +1357,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "readonly",
         "framework": "react",
         "accumulatedFiles": [
@@ -1370,6 +1397,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "save-html",
         "framework": "react",
         "accumulatedFiles": [
@@ -1402,6 +1430,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "save-json",
         "framework": "react",
         "accumulatedFiles": [
@@ -1446,6 +1475,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "save-markdown",
         "framework": "react",
         "accumulatedFiles": [
@@ -1486,6 +1516,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "search",
         "framework": "react",
         "accumulatedFiles": [
@@ -1532,6 +1563,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "slash-menu",
         "framework": "react",
         "accumulatedFiles": [
@@ -1583,6 +1615,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "strike",
         "framework": "react",
         "accumulatedFiles": [
@@ -1628,6 +1661,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "table",
         "framework": "react",
         "accumulatedFiles": [
@@ -1677,6 +1711,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "text-align",
         "framework": "react",
         "accumulatedFiles": [
@@ -1732,6 +1767,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "text-color",
         "framework": "react",
         "accumulatedFiles": [
@@ -1779,6 +1815,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "toolbar",
         "framework": "react",
         "accumulatedFiles": [
@@ -1827,6 +1864,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "typography",
         "framework": "react",
         "accumulatedFiles": [
@@ -1867,6 +1905,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "underline",
         "framework": "react",
         "accumulatedFiles": [
@@ -1918,6 +1957,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "unmount",
         "framework": "react",
         "accumulatedFiles": [
@@ -1962,6 +2002,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "user-menu",
         "framework": "react",
         "accumulatedFiles": [
@@ -2024,6 +2065,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "user-menu-dynamic",
         "framework": "react",
         "accumulatedFiles": [
@@ -2072,6 +2114,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "word-counter",
         "framework": "react",
         "accumulatedFiles": [
@@ -2124,6 +2167,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "yjs",
         "framework": "react",
         "accumulatedFiles": [
@@ -2158,6 +2202,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2183,6 +2228,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2208,6 +2254,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2231,6 +2278,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2256,6 +2304,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2281,6 +2330,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2304,6 +2354,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2327,6 +2378,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2342,6 +2394,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -2357,6 +2411,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2389,6 +2444,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2420,6 +2476,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2451,6 +2508,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2485,6 +2543,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2505,6 +2564,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "react"
       ],
@@ -2521,6 +2582,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2539,6 +2601,8 @@
         "@prosekit/react-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "react"
       ],
@@ -2555,6 +2619,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2577,6 +2642,8 @@
         "@prosekit/react-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "react"
       ],
@@ -2593,6 +2660,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2638,6 +2706,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2656,6 +2725,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -2671,6 +2742,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2702,6 +2774,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2721,6 +2794,8 @@
         "@prosekit/react-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -2736,6 +2811,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2774,6 +2850,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2805,6 +2882,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2857,6 +2935,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "full",
         "framework": "vue",
         "accumulatedFiles": [
@@ -2935,6 +3014,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "minimal",
         "framework": "vue",
         "accumulatedFiles": [
@@ -2959,6 +3039,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -2984,6 +3065,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3009,6 +3091,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3032,6 +3115,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3057,6 +3141,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3082,6 +3167,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3105,6 +3191,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3128,6 +3215,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3143,6 +3231,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -3158,6 +3248,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3189,6 +3280,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3220,6 +3312,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3251,6 +3344,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3285,6 +3379,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3305,6 +3400,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "vue"
       ],
@@ -3321,6 +3418,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3339,6 +3437,8 @@
         "@prosekit/vue-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "vue"
       ],
@@ -3355,6 +3455,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3400,6 +3501,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3418,6 +3520,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -3433,6 +3537,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3464,6 +3569,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3483,6 +3589,8 @@
         "@prosekit/vue-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -3498,6 +3606,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3536,6 +3645,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3578,6 +3688,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "block-handle",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3630,6 +3741,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "blockquote",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3681,6 +3793,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "change-tracking",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3733,6 +3846,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "code-block-themes",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3794,6 +3908,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "full",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3877,6 +3992,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "gap-cursor",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3917,6 +4033,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "heading",
         "framework": "preact",
         "accumulatedFiles": [
@@ -3965,6 +4082,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "horizontal-rule",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4015,6 +4133,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "image-view",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4063,6 +4182,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "inline-menu",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4119,6 +4239,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "keymap",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4165,6 +4286,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "link",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4214,6 +4336,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "link-mark-view",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4255,6 +4378,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "list",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4308,6 +4432,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "list-custom-checkbox",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4360,6 +4485,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "mark-rule",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4394,6 +4520,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "minimal",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4431,6 +4558,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "placeholder",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4481,6 +4609,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "readonly",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4520,6 +4649,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "save-html",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4552,6 +4682,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "save-json",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4596,6 +4727,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "save-markdown",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4637,6 +4769,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "toolbar",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4672,6 +4805,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4697,6 +4831,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4722,6 +4857,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4745,6 +4881,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4770,6 +4907,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4795,6 +4933,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4818,6 +4957,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4841,6 +4981,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4856,6 +4997,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -4871,6 +5014,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4903,6 +5047,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4935,6 +5080,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -4966,6 +5112,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5000,6 +5147,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5020,6 +5168,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "preact",
         "prosekit"
       ],
@@ -5036,6 +5186,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5054,6 +5205,8 @@
         "@prosekit/preact-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "preact",
         "prosekit"
       ],
@@ -5070,6 +5223,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5115,6 +5269,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5133,6 +5288,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5148,6 +5305,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5179,6 +5337,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5198,6 +5357,8 @@
         "@prosekit/preact-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5213,6 +5374,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5251,6 +5413,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -5302,6 +5465,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "full",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5379,6 +5543,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "minimal",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5403,6 +5568,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5428,6 +5594,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5453,6 +5620,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5476,6 +5644,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5501,6 +5670,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5526,6 +5696,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5549,6 +5720,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5572,6 +5744,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5587,6 +5760,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5602,6 +5777,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5633,6 +5809,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5664,6 +5841,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5695,6 +5873,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5728,6 +5907,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5748,6 +5928,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "svelte"
       ],
@@ -5764,6 +5946,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5782,6 +5965,8 @@
         "@prosekit/svelte-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5797,6 +5982,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5842,6 +6028,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5860,6 +6047,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5875,6 +6064,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5906,6 +6096,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5925,6 +6116,8 @@
         "@prosekit/svelte-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5940,6 +6133,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -5978,6 +6172,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -6030,6 +6225,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "full",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6115,6 +6311,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "heading",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6156,6 +6353,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "minimal",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6180,6 +6378,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6205,6 +6404,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6230,6 +6430,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6253,6 +6454,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6278,6 +6480,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6303,6 +6506,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6326,6 +6530,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6349,6 +6554,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6364,6 +6570,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6380,6 +6588,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6412,6 +6621,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6444,6 +6654,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6476,6 +6687,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6510,6 +6722,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6530,6 +6743,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6546,6 +6761,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6564,6 +6780,8 @@
         "@prosekit/solid-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6580,6 +6798,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6626,6 +6845,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6644,6 +6864,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6660,6 +6882,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6692,6 +6915,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6711,6 +6935,8 @@
         "@prosekit/solid-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6727,6 +6953,7 @@
         }
       ],
       "meta": {
+        "hasIcons": true,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -6766,6 +6993,7 @@
         }
       ],
       "meta": {
+        "hasIcons": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [

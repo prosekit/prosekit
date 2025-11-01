@@ -35,6 +35,7 @@ export interface ItemAccumulator {
   readonly registryDependencies: Set<string>
   readonly dependencies: Set<string>
   readonly meta: {
+    hasIcons: boolean
     readonly accumulatedFiles: Set<string>
     readonly internalDependencies: Set<string>
   }

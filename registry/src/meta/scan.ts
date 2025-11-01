@@ -122,6 +122,7 @@ function createItemAccumulator(
     registryDependencies: new Set<string>(),
     dependencies: new Set<string>(),
     meta: {
+      hasIcons: false,
       accumulatedFiles: new Set<string>(),
       internalDependencies: new Set<string>(),
     },
@@ -258,6 +259,14 @@ function collectImportSpecifiersFromSource(
 }
 
 /**
+ * Check if a file has any icons.
+ */
+async function checkHasIcons(filePath: string): Promise<boolean> {
+  const source = await vfs.read(filePath)
+  return source.includes('CSS_ICON_')
+}
+
+/**
  * Extract all import specifiers from a file, supporting TS/TSX/JS, Vue, and Svelte.
  */
 async function extractImportSpecifiersFromFilePath(
@@ -391,6 +400,19 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
   for (const item of itemsByName.values()) {
     collectFilesFromDependencies(item)
+  }
+
+  for (const item of itemsByName.values()) {
+    for (const file of item.files) {
+      if (await checkHasIcons(file)) {
+        item.meta.hasIcons = true
+        break
+      }
+    }
+    if (item.meta.hasIcons) {
+      item.dependencies.add('@iconify-json/lucide')
+      item.dependencies.add('@egoist/tailwindcss-icons')
+    }
   }
 
   const sortedItems = Array.from(itemsByName.values())

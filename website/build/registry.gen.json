@@ -2342,6 +2342,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -2505,6 +2507,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "react"
       ],
@@ -2539,6 +2543,8 @@
         "@prosekit/react-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "react"
       ],
@@ -2577,6 +2583,8 @@
         "@prosekit/react-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "react"
       ],
@@ -2656,6 +2664,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -2721,6 +2731,8 @@
         "@prosekit/react-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -3143,6 +3155,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -3305,6 +3319,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "vue"
       ],
@@ -3339,6 +3355,8 @@
         "@prosekit/vue-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "vue"
       ],
@@ -3418,6 +3436,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -3483,6 +3503,8 @@
         "@prosekit/vue-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -4856,6 +4878,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5020,6 +5044,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "preact",
         "prosekit"
       ],
@@ -5054,6 +5080,8 @@
         "@prosekit/preact-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "preact",
         "prosekit"
       ],
@@ -5133,6 +5161,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5198,6 +5228,8 @@
         "@prosekit/preact-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5587,6 +5619,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5748,6 +5782,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "svelte"
       ],
@@ -5782,6 +5818,8 @@
         "@prosekit/svelte-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5860,6 +5898,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -5925,6 +5965,8 @@
         "@prosekit/svelte-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit"
       ],
       "files": [
@@ -6364,6 +6406,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6530,6 +6574,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6564,6 +6610,8 @@
         "@prosekit/solid-ui-button"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6644,6 +6692,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],
@@ -6711,6 +6761,8 @@
         "@prosekit/solid-ui-image-upload-popover"
       ],
       "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
         "prosekit",
         "solid-js"
       ],

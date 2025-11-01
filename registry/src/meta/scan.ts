@@ -403,14 +403,16 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
   }
 
   for (const item of itemsByName.values()) {
-    let hasIcons = false
     for (const file of item.files) {
       if (await checkHasIcons(file)) {
-        hasIcons = true
+        item.meta.hasIcons = true
         break
       }
     }
-    item.meta.hasIcons = hasIcons
+    if (item.meta.hasIcons) {
+      item.dependencies.add('@iconify-json/lucide')
+      item.dependencies.add('@egoist/tailwindcss-icons')
+    }
   }
 
   const sortedItems = Array.from(itemsByName.values())

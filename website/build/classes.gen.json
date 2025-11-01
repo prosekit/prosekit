@@ -63,6 +63,7 @@
   "CSS_KEYMAP_FIELDSET": "mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow-sm min-w-0",
   "CSS_LANGUAGE_SELECT": "outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight) opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80",
   "CSS_LANGUAGE_WRAPPER": "relative mx-2 top-3 h-0 select-none overflow-visible text-xs",
+  "CSS_MINIMAL_EDITOR": "outline-solid p-4",
   "CSS_SEARCH": "z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b grid grid-cols-[min-content_1fr_min-content] gap-2 p-2",
   "CSS_SEARCH_CONTROLLER": "flex items-center justify-between gap-1",
   "CSS_SEARCH_ICON_BUTTON": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 h-10 w-10",

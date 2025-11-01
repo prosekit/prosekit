@@ -11,15 +11,17 @@ import {
 import {
   dragAndDrop,
   emptyEditor,
+  expectLocatorToBeHidden,
   expectLocatorToHaveCount,
-  expectLocatorToNotExist,
   getBoundingBox,
   hover,
   pasteHtmlToEditor,
   testStory,
   testStoryConsistency,
+  unhover,
   waitForEditor,
 } from './helpers'
+import { waitForStableElement } from './helpers/query'
 
 testStoryConsistency('table')
 
@@ -63,8 +65,8 @@ testStory(['table', 'full'], () => {
     } = await setup()
 
     // Handles are hidden before hover
-    await expectLocatorToNotExist(rowHandle)
-    await expectLocatorToNotExist(colHandle)
+    await expectLocatorToBeHidden(rowHandle)
+    await expectLocatorToBeHidden(colHandle)
 
     // Row handle selects the first row
     await hoverCell('A1')
@@ -257,7 +259,9 @@ testStory(['table', 'full'], () => {
 })
 
 async function setup() {
+  await unhover()
   const editor = await waitForEditor()
+  await waitForStableElement(() => editor.element())
 
   const rowHandle = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-row-trigger')
   const colHandle = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-column-trigger')

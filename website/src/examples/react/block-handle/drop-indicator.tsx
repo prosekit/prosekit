@@ -1,1 +1,0 @@
-../../../shared/react/drop-indicator.tsx

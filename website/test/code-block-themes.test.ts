@@ -13,7 +13,9 @@ import {
   waitForEditor,
 } from './helpers'
 
-testStoryConsistency('code-block-themes')
+testStoryConsistency('code-block-themes', {
+  shouldWaitForShiki: true,
+})
 
 testStory('code-block-themes', () => {
   it('code-block-themes', async () => {

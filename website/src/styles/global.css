@@ -6,6 +6,7 @@
 @import "./starlight.css";
 
 @source "../../build/classes.gen.json";
+@source "../../../registry/src/";
 @custom-variant dark (&:where(.dark, .dark *));
 @plugin "@egoist/tailwindcss-icons";
 

@@ -3,7 +3,7 @@ import {
   render,
 } from 'vitest-browser-vue/pure'
 
-import { VueExample } from '../../src/examples/vue/example'
+import { VueExample } from '../../src/examples/vue/vue-example'
 
 import {
   registerCleanupFunction,

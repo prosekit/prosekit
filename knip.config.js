@@ -22,11 +22,17 @@ const config = {
         'src/**/*-css.ts',
       ],
     },
+    './registry': {
+      entry: [
+        'src/*/examples/*/*',
+        'src/*/sample/*',
+        'src/*/shims-*.d.ts',
+      ],
+    },
     './website': {
       entry: [
         'src/stories/*.stories.ts',
         'src/examples/**/*',
-        'src/shared/**/*',
         'src/styles/*.css',
       ],
       ignoreUnresolved: [
@@ -36,6 +42,14 @@ const config = {
         /@iconify-json\/.*/,
         'babel-plugin-react-compiler',
         'sharp',
+        'rehype-parse',
+        'rehype-remark',
+        'remark-gfm',
+        'remark-html',
+        'remark-parse',
+        'remark-stringify',
+        'unified',
+        'y-websocket',
       ],
     },
   },

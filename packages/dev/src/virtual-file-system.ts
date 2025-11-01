@@ -227,7 +227,7 @@ class VirtualFileSystem {
   }
 
   async updateJSON(filePath: string, json: any) {
-    const file = await this.getFile(filePath)
+    const file = await this.ensureFile(filePath)
     file.updateJSON(json)
   }
 

@@ -19,7 +19,6 @@ import {
 } from './helpers'
 
 testStoryConsistency('slash-menu')
-testStoryConsistency('full')
 
 testStory(['slash-menu', 'full'], () => {
   it('execute command', async () => {

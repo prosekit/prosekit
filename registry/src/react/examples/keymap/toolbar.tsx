@@ -1,0 +1,29 @@
+import { useState } from 'react'
+
+import { Button } from '../../ui/button'
+
+import { useSubmitKeymap } from './use-submit-keymap'
+
+export default function Toolbar(props: {
+  onSubmit: (hotkey: string) => void
+}) {
+  const [hotkey, setHotkey] = useState<'Shift-Enter' | 'Enter'>('Shift-Enter')
+  useSubmitKeymap(hotkey, props.onSubmit)
+
+  return (
+    <div className="CSS_TOOLBAR">
+      <Button
+        pressed={hotkey === 'Shift-Enter'}
+        onClick={() => setHotkey('Shift-Enter')}
+      >
+        <span className="mr-1">Submit with</span>
+        <kbd>Shift + Enter</kbd>
+      </Button>
+
+      <Button pressed={hotkey === 'Enter'} onClick={() => setHotkey('Enter')}>
+        <span className="mr-1">Submit with</span>
+        <kbd>Enter</kbd>
+      </Button>
+    </div>
+  )
+}

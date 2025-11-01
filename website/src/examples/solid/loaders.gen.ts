@@ -1,20 +1,8 @@
-// This file is generated from gen-website-pages.ts
+// This file is generated from update-website-pages.ts
 import { lazy } from 'solid-js'
 
 export const loaders = {
-  'minimal': lazy(() => import('./minimal/editor')),
-  'block-handle': lazy(() => import('./block-handle/editor')),
-  'code-block': lazy(() => import('./code-block/editor')),
-  'drop-cursor': lazy(() => import('./drop-cursor/editor')),
-  'full': lazy(() => import('./full/editor')),
-  'hard-break': lazy(() => import('./hard-break/editor')),
-  'heading': lazy(() => import('./heading/editor')),
-  'image-view': lazy(() => import('./image-view/editor')),
-  'keymap': lazy(() => import('./keymap/editor')),
-  'link-mark-view': lazy(() => import('./link-mark-view/editor')),
-  'readonly': lazy(() => import('./readonly/editor')),
-  'slash-menu': lazy(() => import('./slash-menu/editor')),
-  'table': lazy(() => import('./table/editor')),
-  'text-align': lazy(() => import('./text-align/editor')),
-  'typography': lazy(() => import('./typography/editor')),
+  'full': lazy(() => import('prosekit-registry/solid/examples/full').then((m) => ({ default: m.ExampleEditor }))),
+  'heading': lazy(() => import('prosekit-registry/solid/examples/heading').then((m) => ({ default: m.ExampleEditor }))),
+  'minimal': lazy(() => import('prosekit-registry/solid/examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
 }

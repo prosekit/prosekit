@@ -1,1 +1,0 @@
-../../../shared/preact/drop-indicator.tsx

@@ -12,7 +12,9 @@ import {
   testStoryConsistency,
 } from './helpers'
 
-testStoryConsistency('code-block')
+testStoryConsistency('code-block', {
+  shouldWaitForShiki: true,
+})
 
 testStory('code-block', () => {
   it('input rule', async () => {

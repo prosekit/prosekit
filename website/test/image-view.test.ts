@@ -11,7 +11,9 @@ import {
   testStoryConsistency,
 } from './helpers'
 
-testStoryConsistency('image-view')
+testStoryConsistency('image-view', {
+  shouldWaitForImageToLoad: true,
+})
 
 testStory('image-view', () => {
   it('renders default images', async () => {

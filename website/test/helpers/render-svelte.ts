@@ -3,7 +3,7 @@ import {
   render,
 } from 'vitest-browser-svelte/pure'
 
-import { SvelteExample } from '../../src/examples/svelte/example'
+import { SvelteExample } from '../../src/examples/svelte/svelte-example'
 
 import {
   registerCleanupFunction,

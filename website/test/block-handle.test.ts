@@ -20,9 +20,9 @@ import {
   waitForEditor,
 } from './helpers'
 
-testStoryConsistency('full')
+testStoryConsistency('block-handle')
 
-testStory(['full'], () => {
+testStory(['block-handle'], () => {
   it('show block handle on hover', async () => {
     const editor = await waitForEditor()
     await emptyEditor()

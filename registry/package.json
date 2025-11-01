@@ -1,0 +1,271 @@
+{
+  "name": "prosekit-registry",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ProseKit registry",
+  "exports": {
+    ".": "./src/index.ts",
+    "./preact/examples/block-handle": {
+      "default": "./src/preact/examples/block-handle/index.ts"
+    },
+    "./preact/examples/blockquote": {
+      "default": "./src/preact/examples/blockquote/index.ts"
+    },
+    "./preact/examples/change-tracking": {
+      "default": "./src/preact/examples/change-tracking/index.ts"
+    },
+    "./preact/examples/code-block-themes": {
+      "default": "./src/preact/examples/code-block-themes/index.ts"
+    },
+    "./preact/examples/full": {
+      "default": "./src/preact/examples/full/index.ts"
+    },
+    "./preact/examples/gap-cursor": {
+      "default": "./src/preact/examples/gap-cursor/index.ts"
+    },
+    "./preact/examples/heading": {
+      "default": "./src/preact/examples/heading/index.ts"
+    },
+    "./preact/examples/horizontal-rule": {
+      "default": "./src/preact/examples/horizontal-rule/index.ts"
+    },
+    "./preact/examples/image-view": {
+      "default": "./src/preact/examples/image-view/index.ts"
+    },
+    "./preact/examples/inline-menu": {
+      "default": "./src/preact/examples/inline-menu/index.ts"
+    },
+    "./preact/examples/keymap": {
+      "default": "./src/preact/examples/keymap/index.ts"
+    },
+    "./preact/examples/link": {
+      "default": "./src/preact/examples/link/index.ts"
+    },
+    "./preact/examples/link-mark-view": {
+      "default": "./src/preact/examples/link-mark-view/index.ts"
+    },
+    "./preact/examples/list": {
+      "default": "./src/preact/examples/list/index.ts"
+    },
+    "./preact/examples/list-custom-checkbox": {
+      "default": "./src/preact/examples/list-custom-checkbox/index.ts"
+    },
+    "./preact/examples/mark-rule": {
+      "default": "./src/preact/examples/mark-rule/index.ts"
+    },
+    "./preact/examples/minimal": {
+      "default": "./src/preact/examples/minimal/index.ts"
+    },
+    "./preact/examples/placeholder": {
+      "default": "./src/preact/examples/placeholder/index.ts"
+    },
+    "./preact/examples/readonly": {
+      "default": "./src/preact/examples/readonly/index.ts"
+    },
+    "./preact/examples/save-html": {
+      "default": "./src/preact/examples/save-html/index.ts"
+    },
+    "./preact/examples/save-json": {
+      "default": "./src/preact/examples/save-json/index.ts"
+    },
+    "./preact/examples/save-markdown": {
+      "default": "./src/preact/examples/save-markdown/index.ts"
+    },
+    "./preact/examples/toolbar": {
+      "default": "./src/preact/examples/toolbar/index.ts"
+    },
+    "./react/examples/block-handle": {
+      "default": "./src/react/examples/block-handle/index.ts"
+    },
+    "./react/examples/blockquote": {
+      "default": "./src/react/examples/blockquote/index.ts"
+    },
+    "./react/examples/bold": {
+      "default": "./src/react/examples/bold/index.ts"
+    },
+    "./react/examples/change-tracking": {
+      "default": "./src/react/examples/change-tracking/index.ts"
+    },
+    "./react/examples/code": {
+      "default": "./src/react/examples/code/index.ts"
+    },
+    "./react/examples/code-block": {
+      "default": "./src/react/examples/code-block/index.ts"
+    },
+    "./react/examples/code-block-themes": {
+      "default": "./src/react/examples/code-block-themes/index.ts"
+    },
+    "./react/examples/drop-cursor": {
+      "default": "./src/react/examples/drop-cursor/index.ts"
+    },
+    "./react/examples/emoji-rules": {
+      "default": "./src/react/examples/emoji-rules/index.ts"
+    },
+    "./react/examples/full": {
+      "default": "./src/react/examples/full/index.ts"
+    },
+    "./react/examples/gap-cursor": {
+      "default": "./src/react/examples/gap-cursor/index.ts"
+    },
+    "./react/examples/hard-break": {
+      "default": "./src/react/examples/hard-break/index.ts"
+    },
+    "./react/examples/heading": {
+      "default": "./src/react/examples/heading/index.ts"
+    },
+    "./react/examples/horizontal-rule": {
+      "default": "./src/react/examples/horizontal-rule/index.ts"
+    },
+    "./react/examples/image-view": {
+      "default": "./src/react/examples/image-view/index.ts"
+    },
+    "./react/examples/inline-menu": {
+      "default": "./src/react/examples/inline-menu/index.ts"
+    },
+    "./react/examples/italic": {
+      "default": "./src/react/examples/italic/index.ts"
+    },
+    "./react/examples/keymap": {
+      "default": "./src/react/examples/keymap/index.ts"
+    },
+    "./react/examples/link": {
+      "default": "./src/react/examples/link/index.ts"
+    },
+    "./react/examples/link-mark-view": {
+      "default": "./src/react/examples/link-mark-view/index.ts"
+    },
+    "./react/examples/list": {
+      "default": "./src/react/examples/list/index.ts"
+    },
+    "./react/examples/list-custom-checkbox": {
+      "default": "./src/react/examples/list-custom-checkbox/index.ts"
+    },
+    "./react/examples/loro": {
+      "default": "./src/react/examples/loro/index.ts"
+    },
+    "./react/examples/mark-rule": {
+      "default": "./src/react/examples/mark-rule/index.ts"
+    },
+    "./react/examples/minimal": {
+      "default": "./src/react/examples/minimal/index.ts"
+    },
+    "./react/examples/placeholder": {
+      "default": "./src/react/examples/placeholder/index.ts"
+    },
+    "./react/examples/readonly": {
+      "default": "./src/react/examples/readonly/index.ts"
+    },
+    "./react/examples/save-html": {
+      "default": "./src/react/examples/save-html/index.ts"
+    },
+    "./react/examples/save-json": {
+      "default": "./src/react/examples/save-json/index.ts"
+    },
+    "./react/examples/save-markdown": {
+      "default": "./src/react/examples/save-markdown/index.ts"
+    },
+    "./react/examples/search": {
+      "default": "./src/react/examples/search/index.ts"
+    },
+    "./react/examples/slash-menu": {
+      "default": "./src/react/examples/slash-menu/index.ts"
+    },
+    "./react/examples/strike": {
+      "default": "./src/react/examples/strike/index.ts"
+    },
+    "./react/examples/table": {
+      "default": "./src/react/examples/table/index.ts"
+    },
+    "./react/examples/text-align": {
+      "default": "./src/react/examples/text-align/index.ts"
+    },
+    "./react/examples/text-color": {
+      "default": "./src/react/examples/text-color/index.ts"
+    },
+    "./react/examples/toolbar": {
+      "default": "./src/react/examples/toolbar/index.ts"
+    },
+    "./react/examples/typography": {
+      "default": "./src/react/examples/typography/index.ts"
+    },
+    "./react/examples/underline": {
+      "default": "./src/react/examples/underline/index.ts"
+    },
+    "./react/examples/unmount": {
+      "default": "./src/react/examples/unmount/index.ts"
+    },
+    "./react/examples/user-menu": {
+      "default": "./src/react/examples/user-menu/index.ts"
+    },
+    "./react/examples/user-menu-dynamic": {
+      "default": "./src/react/examples/user-menu-dynamic/index.ts"
+    },
+    "./react/examples/word-counter": {
+      "default": "./src/react/examples/word-counter/index.ts"
+    },
+    "./react/examples/yjs": {
+      "default": "./src/react/examples/yjs/index.ts"
+    },
+    "./solid/examples/full": {
+      "default": "./src/solid/examples/full/index.ts"
+    },
+    "./solid/examples/heading": {
+      "default": "./src/solid/examples/heading/index.ts"
+    },
+    "./solid/examples/minimal": {
+      "default": "./src/solid/examples/minimal/index.ts"
+    },
+    "./svelte/examples/full": {
+      "default": "./src/svelte/examples/full/index.ts"
+    },
+    "./svelte/examples/minimal": {
+      "default": "./src/svelte/examples/minimal/index.ts"
+    },
+    "./vue/examples/full": {
+      "default": "./src/vue/examples/full/index.ts"
+    },
+    "./vue/examples/minimal": {
+      "default": "./src/vue/examples/minimal/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "lint": "pnpm run lint:svelte && pnpm run lint:vue",
+    "lint:svelte": "svelte-check --tsconfig src/svelte/tsconfig.json",
+    "lint:vue": "vue-tsc --build src/vue/tsconfig.json"
+  },
+  "dependencies": {
+    "loro-crdt": "^1.8.8",
+    "loro-prosemirror": "^0.3.6",
+    "preact": "^10.27.2",
+    "rehype-parse": "^9.0.1",
+    "rehype-remark": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "solid-js": "^1.9.10",
+    "svelte": "^5.43.0",
+    "unified": "^11.0.5",
+    "vue": "^3.5.22",
+    "y-protocols": "^1.0.6",
+    "y-websocket": "^3.0.0",
+    "yjs": "^13.6.27"
+  },
+  "devDependencies": {
+    "@ocavue/utils": "^0.8.1",
+    "@prosekit/dev": "workspace:*",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "change-case": "^5.4.4",
+    "parse-imports-exports": "^0.2.4",
+    "prosekit": "workspace:*",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "shadcn": "^3.5.0",
+    "svelte-check": "^4.3.3",
+    "tsx": "^4.20.6",
+    "vue-tsc": "^3.1.2"
+  }
+}

@@ -143,7 +143,7 @@ const config: AstroUserConfig = {
     }),
     svelte(),
     vue(),
-    solid({ include: ['src/*/solid/**/*.tsx'] }),
+    solid({ include: ['**/solid/**/*.tsx'] }),
     astrobook({
       directory: 'src/stories',
       title: 'ProseKit',

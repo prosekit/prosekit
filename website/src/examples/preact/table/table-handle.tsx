@@ -1,1 +1,0 @@
-../../../shared/preact/table-handle.tsx

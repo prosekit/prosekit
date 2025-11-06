@@ -236,7 +236,7 @@
     "lint:vue": "vue-tsc --build src/vue/tsconfig.json"
   },
   "dependencies": {
-    "loro-crdt": "^1.8.8",
+    "loro-crdt": "^1.8.9",
     "loro-prosemirror": "^0.3.6",
     "preact": "^10.27.2",
     "rehype-parse": "^9.0.1",
@@ -246,9 +246,9 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.9.10",
-    "svelte": "^5.43.0",
+    "svelte": "^5.43.3",
     "unified": "^11.0.5",
-    "vue": "^3.5.22",
+    "vue": "^3.5.23",
     "y-protocols": "^1.0.6",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.27"
@@ -266,6 +266,6 @@
     "shadcn": "^3.5.0",
     "svelte-check": "^4.3.3",
     "tsx": "^4.20.6",
-    "vue-tsc": "^3.1.2"
+    "vue-tsc": "^3.1.3"
   }
 }

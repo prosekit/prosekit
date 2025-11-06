@@ -23,19 +23,16 @@ import { definePlugin } from './plugin'
 
 describe('plugin', () => {
   it('maintains plugin order in state based on priority', () => {
-    const key1 = new PluginKey('plugin-key-1')
-    const key2 = new PluginKey('plugin-key-2')
-    const key3 = new PluginKey('plugin-key-3')
-    const key4 = new PluginKey('plugin-key-4')
+    const plugin1 = new Plugin({ key: new PluginKey('plugin-key-1') })
+    const plugin2 = new Plugin({ key: new PluginKey('plugin-key-2') })
+    const plugin3 = new Plugin({ key: new PluginKey('plugin-key-3') })
+    const plugin4 = new Plugin({ key: new PluginKey('plugin-key-4') })
+    const plugin5 = new Plugin({ key: new PluginKey('plugin-key-5') })
 
-    const plugin1 = new Plugin({ key: key1 })
-    const plugin2 = new Plugin({ key: key2 })
-    const plugin3 = new Plugin({ key: key3 })
-    const plugin4 = new Plugin({ key: key4 })
-
-    const extension1 = definePlugin([plugin1, plugin4]) // default priority
+    const extension1 = definePlugin(() => [plugin1, plugin5]) // default priority
     const extension2 = withPriority(definePlugin(plugin2), Priority.highest)
-    const extension3 = withPriority(definePlugin(() => plugin3), Priority.lowest)
+    const extension3 = withPriority(definePlugin([plugin3]), Priority.lowest)
+    const extension4 = definePlugin(plugin4) // default priority
 
     const { editor } = setupTestFromExtension(union(
       defineDoc(),
@@ -44,6 +41,7 @@ describe('plugin', () => {
       extension1,
       extension2,
       extension3,
+      extension4,
     ))
 
     const pluginKeys = editor.state.plugins.map((plugin): string | undefined => {
@@ -51,13 +49,20 @@ describe('plugin', () => {
       if (plugin === plugin2) return 'plugin-key-2'
       if (plugin === plugin3) return 'plugin-key-3'
       if (plugin === plugin4) return 'plugin-key-4'
+      if (plugin === plugin5) return 'plugin-key-5'
       return undefined
     }).filter(Boolean)
 
     // The plugins with the highest priority should be listed
     // first in state. The plugins with the same priority should be listed in
     // the order of the extensions.
-    expect(pluginKeys).toEqual(['plugin-key-2', 'plugin-key-1', 'plugin-key-4', 'plugin-key-3'])
+    expect(pluginKeys).toEqual([
+      'plugin-key-2',
+      'plugin-key-1',
+      'plugin-key-5',
+      'plugin-key-4',
+      'plugin-key-3',
+    ])
   })
 
   it('calls handlers in priority order with highest priority first', () => {
@@ -101,6 +106,10 @@ describe('plugin', () => {
     expect(handleKeyDown3).toHaveBeenCalledTimes(1)
 
     // The event handlers of the plugins with the highest priority should be called first
-    expect(callOrder).toEqual(['highest', 'default', 'lowest'])
+    expect(callOrder).toEqual([
+      'highest',
+      'default',
+      'lowest',
+    ])
   })
 })

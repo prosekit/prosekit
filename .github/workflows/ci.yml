@@ -58,13 +58,6 @@ jobs:
       - uses: ./.github/actions/setup
 
       - uses: ./.github/actions/cache
-        id: cache
-
-      # Make the following step faster by building all packages
-      # declarations together.
-      - name: Prepare type declarations
-        if: ${{ steps.cache.outputs.cache-hit == '' }}
-        run: cd packages/prosekit && pnpm run build:tsc
 
       - name: Build packages
         run: pnpm run build:package
@@ -95,6 +88,9 @@ jobs:
             if pnpm run ci:publish:snapshot; then
               echo "Publish snapshot packages succeeded"
               break
+            elif [ ${attempt} -eq 5 ]; then
+              echo "Publish snapshot packages failed"
+              exit 1
             fi
             sleep 5
           done

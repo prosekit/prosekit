@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.16.1
+
+### Patch Changes
+
+- [`a12beee`](https://github.com/ocavue/prosekit/commit/a12beeee68583c0ef21fc05be4ff3036d21760ba) ![](https://prosekit.dev/b/core)
+
+  Ensure state merges respect extension priority so higher-priority extensions win.
+
 ## 0.16.0
 
 ### Minor Changes

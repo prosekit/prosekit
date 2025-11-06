@@ -15,6 +15,7 @@ import {
   type StatePayload,
 } from '../facets/state'
 import type { PlainExtension } from '../types/extension'
+import { toReversed } from '../utils/array'
 
 /**
  * Adds a ProseMirror plugin to the editor.
@@ -51,6 +52,7 @@ export type PluginPayload =
 export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
   reducer: (payloads): StatePayload => {
     return ({ schema }) => {
+      // An array of plugins from lower to higher priority.
       const plugins: ProseMirrorPlugin[] = []
 
       for (const payload of payloads) {
@@ -68,7 +70,11 @@ export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
         }
       }
 
-      return { plugins }
+      // An array of plugins from higher to lower priority. This matches the
+      // order of plugins required by ProseMirror.
+      const reversedPlugins = toReversed(plugins)
+
+      return { plugins: reversedPlugins }
     }
   },
   parent: stateFacet,

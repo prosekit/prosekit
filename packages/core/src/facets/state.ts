@@ -25,6 +25,7 @@ export type StatePayload = (ctx: { schema: Schema }) => EditorStateConfig
 
 export const stateFacet: Facet<StatePayload, RootPayload> = defineFacet({
   reduce: () => {
+    // An array of state payloads from lower to higher priority.
     let callbacks: StatePayload[] = []
 
     const state: StatePayload = (ctx) => {
@@ -34,22 +35,21 @@ export const stateFacet: Facet<StatePayload, RootPayload> = defineFacet({
       const markSet = new Set<Mark>()
       const pluginSet = new Set<Plugin>()
 
-      // ProseKit resolves conflicts by letting later extensions override the
-      // earlier ones, so `callbacks` is ordered from lowest to highest priority.
-      // ProseMirror evaluates plugins in the opposite direction. Reverse the
-      // list so we walk from highest to lowest priority while merging.
+      // An array of state payloads from higher to lower priority. This matches the
+      // order of plugins required by ProseMirror.
       const reversedCallbacks = toReversed(callbacks)
 
       for (const callback of reversedCallbacks) {
         const config = callback(ctx)
 
-        doc = doc || config.doc
-        selection = selection || config.selection
-        schema = schema || config.schema
+        doc ||= config.doc
+        selection ||= config.selection
+        schema ||= config.schema
 
         for (const mark of (config.storedMarks ?? [])) {
           markSet.add(mark)
         }
+
         for (const plugin of (config.plugins ?? [])) {
           pluginSet.add(plugin)
         }

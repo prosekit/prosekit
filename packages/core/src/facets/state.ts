@@ -51,6 +51,7 @@ export const stateFacet: Facet<StatePayload, RootPayload> = defineFacet({
         }
 
         for (const plugin of (config.plugins ?? [])) {
+          // `config.plugins` is an array of plugins from higher to lower priority.
           pluginSet.add(plugin)
         }
       }

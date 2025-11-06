@@ -95,6 +95,9 @@ jobs:
             if pnpm run ci:publish:snapshot; then
               echo "Publish snapshot packages succeeded"
               break
+            elif [ ${attempt} -eq 5 ]; then
+              echo "Publish snapshot packages failed"
+              exit 1
             fi
             sleep 5
           done

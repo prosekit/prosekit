@@ -30,18 +30,7 @@ export function definePlugin(
     | Plugin[]
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
 ): PlainExtension {
-  if (
-    plugin instanceof Plugin
-    || (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin))
-  ) {
-    return definePluginPayload(() => plugin)
-  }
-
-  if (typeof plugin === 'function') {
-    return definePluginPayload(plugin)
-  }
-
-  throw new TypeError('Invalid plugin')
+  return definePluginPayload(plugin)
 }
 
 function definePluginPayload(payload: PluginPayload): PlainExtension {
@@ -79,11 +68,6 @@ export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
         }
       }
 
-      // In ProseMirror, the plugins at the beginning have a higher priority.
-      // However, in ProseKit, the extensions at the end have a higher priority
-      // because we want to easily override the default behaviors by appending
-      // new extensions. Therefore, we need to reverse plugins here.
-      plugins.reverse()
       return { plugins }
     }
   },

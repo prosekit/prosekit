@@ -1,9 +1,8 @@
+import { SvelteRenderer } from 'prosekit-registry/svelte/renderer'
 import {
   cleanup,
   render,
 } from 'vitest-browser-svelte/pure'
-
-import { SvelteExample } from '../../src/examples/svelte/svelte-example'
 
 import {
   registerCleanupFunction,
@@ -14,5 +13,5 @@ registerCleanupFunction(cleanup)
 
 export async function renderSvelteExample(story: string) {
   await runCleanupFunctions()
-  return render(SvelteExample, { story })
+  return render(SvelteRenderer, { story })
 }

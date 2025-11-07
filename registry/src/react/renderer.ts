@@ -1,16 +1,19 @@
+import type { JSX } from 'react'
 import {
   createElement,
-  type JSX,
-} from 'preact'
-import { Suspense } from 'preact/compat'
+  Suspense,
+} from 'react'
 
 import { loaders } from './loaders.gen'
 
-export function PreactExample({ story }: { story: string }): JSX.Element {
+export function ReactRenderer({ story }: { story: string }): JSX.Element {
   const Example = loaders[story as keyof typeof loaders]
+  if (!Example) {
+    console.warn(`[ReactRenderer] No example found for story ${story}`)
+  }
   const fallback = createElement('div', null)
   const children = Example ? createElement(Example, null) : null
   return createElement(Suspense, { fallback }, children)
 }
 
-PreactExample.displayName = 'PreactExample'
+ReactRenderer.displayName = 'ReactRenderer'

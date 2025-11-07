@@ -1,10 +1,9 @@
 import { createElement } from 'preact'
+import { PreactRenderer } from 'prosekit-registry/preact/renderer'
 import {
   cleanup,
   render,
 } from 'vitest-browser-preact/pure'
-
-import { PreactExample } from '../../src/examples/preact/preact-example'
 
 import {
   registerCleanupFunction,
@@ -15,5 +14,5 @@ registerCleanupFunction(cleanup)
 
 export async function renderPreactExample(story: string) {
   await runCleanupFunctions()
-  return render(createElement(PreactExample, { story }))
+  return render(createElement(PreactRenderer, { story }))
 }

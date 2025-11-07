@@ -75,6 +75,7 @@
     "./preact/examples/toolbar": {
       "default": "./src/preact/examples/toolbar/index.ts"
     },
+    "./preact/renderer": "./src/preact/renderer.ts",
     "./react/examples/block-handle": {
       "default": "./src/react/examples/block-handle/index.ts"
     },
@@ -207,6 +208,7 @@
     "./react/examples/yjs": {
       "default": "./src/react/examples/yjs/index.ts"
     },
+    "./react/renderer": "./src/react/renderer.ts",
     "./solid/examples/full": {
       "default": "./src/solid/examples/full/index.ts"
     },
@@ -216,12 +218,14 @@
     "./solid/examples/minimal": {
       "default": "./src/solid/examples/minimal/index.ts"
     },
+    "./solid/renderer": "./src/solid/renderer.ts",
     "./svelte/examples/full": {
       "default": "./src/svelte/examples/full/index.ts"
     },
     "./svelte/examples/minimal": {
       "default": "./src/svelte/examples/minimal/index.ts"
     },
+    "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vue/examples/block-handle": {
       "default": "./src/vue/examples/block-handle/index.ts"
     },
@@ -323,7 +327,8 @@
     },
     "./vue/examples/yjs": {
       "default": "./src/vue/examples/yjs/index.ts"
-    }
+    },
+    "./vue/renderer": "./src/vue/renderer.ts"
   },
   "scripts": {
     "gen": "tsx src/gen.ts",

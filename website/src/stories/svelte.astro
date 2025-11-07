@@ -1,5 +1,5 @@
 ---
-import { SvelteExample } from '../examples/svelte/svelte-example'
+import { SvelteRenderer } from 'prosekit-registry/svelte/renderer'
 import Container from './container.astro'
 
 interface Props {
@@ -8,5 +8,5 @@ interface Props {
 ---
 
 <Container>
-  <SvelteExample story={Astro.props.story} client:only="svelte" />
+  <SvelteRenderer story={Astro.props.story} client:only="svelte" />
 </Container>

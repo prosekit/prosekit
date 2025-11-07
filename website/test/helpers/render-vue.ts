@@ -1,9 +1,8 @@
+import { VueRenderer } from 'prosekit-registry/vue/renderer'
 import {
   cleanup,
   render,
 } from 'vitest-browser-vue/pure'
-
-import { VueExample } from '../../src/examples/vue/vue-example'
 
 import {
   registerCleanupFunction,
@@ -14,5 +13,5 @@ registerCleanupFunction(cleanup)
 
 export async function renderVueExample(story: string) {
   await runCleanupFunctions()
-  return render(VueExample, { props: { story } })
+  return render(VueRenderer, { props: { story } })
 }

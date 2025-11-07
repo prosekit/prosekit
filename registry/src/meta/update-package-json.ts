@@ -28,6 +28,11 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
   const pkg = await vfs.getPackageByName('prosekit-registry')
   const exports: Record<string, unknown> = {
     '.': './src/index.ts',
+    './react/renderer': './src/react/renderer.ts',
+    './preact/renderer': './src/preact/renderer.ts',
+    './vue/renderer': './src/vue/renderer.ts',
+    './solid/renderer': './src/solid/renderer.ts',
+    './svelte/renderer': './src/svelte/renderer.ts',
   }
   for (const item of items) {
     fillExports(item, exports)

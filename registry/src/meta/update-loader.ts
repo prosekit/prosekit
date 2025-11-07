@@ -1,0 +1,118 @@
+import { basename } from 'node:path'
+
+import { vfs } from '@prosekit/dev'
+
+import type { ItemAccumulator } from './types'
+
+export async function updateLoader(items: ItemAccumulator[]) {
+  if (items.some((item) => item.framework === 'preact')) {
+    await vfs.updateText(
+      'registry/src/preact/loaders.gen.ts',
+      genPreactLoaders(items),
+    )
+  }
+
+  if (items.some((item) => item.framework === 'react')) {
+    await vfs.updateText(
+      'registry/src/react/loaders.gen.ts',
+      genReactLoaders(items),
+    )
+  }
+
+  if (items.some((item) => item.framework === 'vue')) {
+    await vfs.updateText(
+      'registry/src/vue/loaders.gen.ts',
+      genVueLoaders(items),
+    )
+  }
+
+  if (items.some((item) => item.framework === 'solid')) {
+    await vfs.updateText(
+      'registry/src/solid/loaders.gen.ts',
+      genSolidLoaders(items),
+    )
+  }
+
+  if (items.some((item) => item.framework === 'svelte')) {
+    await vfs.updateText(
+      'registry/src/svelte/loaders.gen.ts',
+      genSvelteLoaders(items),
+    )
+  }
+}
+
+function genPreactLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import { lazy } from 'preact/compat'`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'preact')
+      .map((example) => `  '${example.story}': lazy(() => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor }))),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genReactLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import { lazy } from 'react'`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'react')
+      .map((example) => `  '${example.story}': lazy(() => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor }))),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genVueLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import { defineAsyncComponent } from 'vue'`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'vue')
+      .map((example) => `  '${example.story}': defineAsyncComponent(() => import('./examples/${example.story}').then((m) => m.ExampleEditor)),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genSolidLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import { lazy } from 'solid-js'`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'solid')
+      .map((example) => `  '${example.story}': lazy(() => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor }))),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genSvelteLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'svelte')
+      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor })),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+const currentFilename = basename(import.meta.filename)

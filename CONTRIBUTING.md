@@ -22,8 +22,9 @@ ProseKit is a monorepo using pnpm workspaces:
   - `prosekit/` - Main umbrella package that re-exports functionality
 - `website/` - Documentation and examples
   - `src/content/` - Documentation markdown
-  - `src/examples/` - Live demos.
-  - `test/` - Integration tests
+- `registry/` - Framework examples and shared UI components
+  - `src/` - Examples and components
+  - `test/` - Tests
 
 ## Development
 
@@ -41,10 +42,10 @@ Run `pnpm run dev` to start the development server:
 
 ## Testing
 
-- Run all: `pnpm run test`
+- Run all: `pnpm run test:run`
 - Run specific test: `pnpm run test [test-file-path]`
 - Run with coverage report: `pnpm run test:coverage`
-- Files: Unit tests located in `packages/` with `.spec.ts` suffix, and integration tests in `website/test/` with `.test.ts` suffix
+- Files: Unit tests located in `packages/` with `.spec.ts` suffix, and integration tests in `registry/test/` with `.test.ts` suffix
 - Coverage report: `coverage/` directory
 
 ## Pull Requests

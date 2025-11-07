@@ -1,5 +1,6 @@
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import path from 'node:path'
+import { styleText } from 'node:util'
 
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
@@ -19,14 +20,6 @@ import starlightThemeNova from 'starlight-theme-nova'
 import wasm from 'vite-plugin-wasm'
 
 type Sidebar = StarlightUserConfig['sidebar']
-
-function copyRegistry(): void {
-  const rootDir = path.join(import.meta.dirname, '..')
-  const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
-  const targetDir = path.join(rootDir, 'website', 'public', 'r')
-
-  fs.cpSync(sourceDir, targetDir, { recursive: true })
-}
 
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
@@ -166,7 +159,17 @@ const config: AstroUserConfig = {
     {
       name: 'copy-registry',
       hooks: {
-        'astro:build:done': copyRegistry,
+        'astro:config:done': async ({ logger }) => {
+          const startTime = Date.now()
+          const rootDir = path.join(import.meta.dirname, '..')
+          const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
+          const targetDir = path.join(rootDir, 'website', 'public', 'r')
+          logger.info(`copying registry from ${styleText('blue', sourceDir)} to ${styleText('blue', targetDir)}`)
+          await fs.cp(sourceDir, targetDir, { recursive: true })
+          const endTime = Date.now()
+          const duration = endTime - startTime
+          logger.info(`copied registry in ${styleText('green', `${duration}ms`)}`)
+        },
       },
     },
   ],

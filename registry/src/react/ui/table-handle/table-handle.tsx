@@ -98,7 +98,7 @@ export default function TableHandle() {
           {state.deleteTable.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              data-danger
+              data-danger=""
               onSelect={state.deleteTable.command}
             >
               <span>Delete Table</span>
@@ -147,7 +147,7 @@ export default function TableHandle() {
           {state.deleteTable.canExec && (
             <TableHandlePopoverItem
               className="CSS_TABLE_CELL_MENU_ITEM"
-              data-danger
+              data-danger=""
               onSelect={state.deleteTable.command}
             >
               <span>Delete Table</span>

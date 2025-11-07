@@ -7,7 +7,7 @@ import {
 
 import registry from '../../build/registry.gen.json'
 
-import { waitForEditor } from './editor'
+import { locateEditor } from './editor'
 import { formatHTML } from './format-html'
 import { waitForStableElement } from './query'
 
@@ -172,7 +172,7 @@ async function getStableHTML(
   const screen = await renderExample(framework, story)
 
   if (shouldWaitForEditor) {
-    await waitForEditor()
+    await expect.element(locateEditor().first()).toBeVisible()
   }
   if (shouldWaitForShiki) {
     await waitForShiki(screen.container)
@@ -192,6 +192,8 @@ async function getStableHTML(
   let html = formatHTML(clone.innerHTML)
   // Replace random ids
   html = html.replaceAll(/ id="[\w-]+"/g, ' id="SOME_ID"')
+  // Replace random value attributes
+  html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
   // Replace styles with display: none
   html = html.replaceAll(/style="[^"]*display: none[^"]*"/g, 'style="display: none"')
 

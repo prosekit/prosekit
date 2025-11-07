@@ -1,5 +1,5 @@
 // This is the default content for the full example.
-export const DEFAULT_CONTENT = `
+export const defaultContent = `
 <h1>The editor that thinks like you</h1>
 
 <p>Every keystroke flows naturally. Every feature appears exactly when you need it. This is <strong>writing without barriers</strong>.</p>

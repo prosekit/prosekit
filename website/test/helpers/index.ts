@@ -1,5 +1,5 @@
-import './locator'
 import '../../src/styles/global.css'
+import './locator'
 
 export { waitForAnimationEnd } from './animation'
 export {
@@ -30,6 +30,7 @@ export {
   getSelectedText,
   moveSelection,
   moveSelectionToStart,
+  selectText,
 } from './selection'
 export {
   testStory,

@@ -117,7 +117,7 @@ const config: AstroUserConfig = {
         Hero: './src/components/overrides/Hero.astro',
       },
       customCss: [
-        './src/styles/global.css',
+        './src/styles/tailwind.css',
         './src/styles/typedoc.css',
       ],
       plugins: [
@@ -151,7 +151,7 @@ const config: AstroUserConfig = {
       directory: 'src/stories',
       title: 'ProseKit',
       subpath: 'playground/',
-      css: ['./src/styles/global.css'],
+      css: ['./src/styles/tailwind.css'],
       dashboardSubpath: '/',
       previewSubpath: '-/',
     }),

@@ -209,6 +209,8 @@
       "default": "./src/react/examples/yjs/index.ts"
     },
     "./react/renderer": "./src/react/renderer.ts",
+    "./registry.gen.json": "./src/registry.gen.json",
+    "./replace-class-names": "./src/meta/replace-classes.ts",
     "./solid/examples/full": {
       "default": "./src/solid/examples/full/index.ts"
     },
@@ -226,6 +228,7 @@
       "default": "./src/svelte/examples/minimal/index.ts"
     },
     "./svelte/renderer": "./src/svelte/renderer.ts",
+    "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": {
       "default": "./src/vue/examples/block-handle/index.ts"
     },

@@ -20,6 +20,7 @@
       "outputLogs": "new-only"
     },
     "gen": {
+      "dependsOn": ["^gen"],
       "inputs": ["src/"],
       "outputs": ["../*/tsconfig.json"],
       "outputLogs": "new-only"

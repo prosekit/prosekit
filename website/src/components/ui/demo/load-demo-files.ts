@@ -2,8 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import memoize from 'just-memoize'
-
-import registry from '../../../../build/registry.gen.json'
+import registry from 'prosekit-registry/registry.gen.json'
 
 import { replaceClassNames } from './replace-class-names'
 

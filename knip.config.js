@@ -32,7 +32,6 @@ const config = {
     './website': {
       entry: [
         'src/stories/*.stories.ts',
-        'src/examples/**/*',
         'src/styles/*.css',
       ],
       ignoreUnresolved: [

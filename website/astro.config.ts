@@ -1,3 +1,7 @@
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { styleText } from 'node:util'
+
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -11,10 +15,9 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
+import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import starlightThemeNova from 'starlight-theme-nova'
 import wasm from 'vite-plugin-wasm'
-
-import { classReplace } from './build/vite-plugin-class-replace'
 
 type Sidebar = StarlightUserConfig['sidebar']
 
@@ -114,7 +117,7 @@ const config: AstroUserConfig = {
         Hero: './src/components/overrides/Hero.astro',
       },
       customCss: [
-        './src/styles/global.css',
+        './src/styles/tailwind.css',
         './src/styles/typedoc.css',
       ],
       plugins: [
@@ -148,11 +151,36 @@ const config: AstroUserConfig = {
       directory: 'src/stories',
       title: 'ProseKit',
       subpath: 'playground/',
-      css: ['./src/styles/global.css'],
+      css: ['./src/styles/tailwind.css'],
       dashboardSubpath: '/',
       previewSubpath: '-/',
     }),
     minifyHTML(),
+    {
+      name: 'copy-registry',
+      hooks: {
+        'astro:config:done': async ({ logger }) => {
+          const startTime = Date.now()
+          const rootDir = path.join(import.meta.dirname, '..')
+          const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
+          const targetDir = path.join(rootDir, 'website', 'public', 'r')
+          try {
+            await fs.access(sourceDir)
+          } catch {
+            logger.info(`sourceDir does not exist: ${styleText('blue', sourceDir)}, skipping registry copy`)
+            return
+          }
+          await fs.cp(sourceDir, targetDir, { recursive: true })
+          const endTime = Date.now()
+          const duration = endTime - startTime
+          logger.info(
+            `copied registry from ${styleText('blue', sourceDir)} `
+              + `to ${styleText('blue', targetDir)} `
+              + `in ${styleText('green', `${duration}ms`)}`,
+          )
+        },
+      },
+    },
   ],
   vite: {
     plugins: [

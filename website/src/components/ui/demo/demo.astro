@@ -1,11 +1,10 @@
 ---
 import MultipleFrameworksDemo from './multiple-frameworks-demo.svelte'
-import registry from '../../../../build/registry.gen.json'
+import registry from 'prosekit-registry/registry.gen.json'
 import PreactStory from '../../../stories/preact.astro'
 import ReactStory from '../../../stories/react.astro'
 import SolidStory from '../../../stories/solid.astro'
 import SvelteStory from '../../../stories/svelte.astro'
-import VanillaStory from '../../../stories/vanilla.astro'
 import VueStory from '../../../stories/vue.astro'
 import DemoCodeGroup from './demo-code-group.astro'
 
@@ -30,13 +29,11 @@ const frameworks = examples.map((example) => example.meta.framework)
   {frameworks.includes('react') && <Fragment slot="slot-story-react"><ReactStory story={story} /></Fragment>}
   {frameworks.includes('solid') && <Fragment slot="slot-story-solid"><SolidStory story={story} /></Fragment>}
   {frameworks.includes('svelte') && <Fragment slot="slot-story-svelte"><SvelteStory story={story} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-story-vanilla"><VanillaStory story={story} /></Fragment>}
   {frameworks.includes('vue') && <Fragment slot="slot-story-vue"><VueStory story={story} /></Fragment>}
 
   {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
   {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
   {frameworks.includes('solid') && <Fragment slot="slot-code-solid"><DemoCodeGroup story={story} framework={'solid'} /></Fragment>}
   {frameworks.includes('svelte') && <Fragment slot="slot-code-svelte"><DemoCodeGroup story={story} framework={'svelte'} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-code-vanilla"><DemoCodeGroup story={story} framework={'vanilla'} /></Fragment>}
   {frameworks.includes('vue') && <Fragment slot="slot-code-vue"><DemoCodeGroup story={story} framework={'vue'} /></Fragment>}
 </MultipleFrameworksDemo>

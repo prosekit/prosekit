@@ -834,6 +834,12 @@ importers:
         specifier: ^13.6.27
         version: 13.6.27
     devDependencies:
+      '@egoist/tailwindcss-icons':
+        specifier: ^1.9.0
+        version: 1.9.0(tailwindcss@4.1.16)
+      '@manypkg/find-root':
+        specifier: ^3.1.0
+        version: 3.1.0
       '@ocavue/utils':
         specifier: ^0.8.1
         version: 0.8.1
@@ -879,6 +885,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      colorjs.io:
+        specifier: ^0.5.2
+        version: 0.5.2
       diffable-html:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1035,9 +1044,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      colorjs.io:
-        specifier: ^0.5.2
-        version: 0.5.2
       fdir:
         specifier: ^6.5.0
         version: 6.5.0(picomatch@4.0.3)

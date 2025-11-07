@@ -358,6 +358,8 @@
     "yjs": "^13.6.27"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.9.0",
+    "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^0.8.1",
     "@preact/preset-vite": "^2.10.2",
     "@prosekit/config-vitest": "workspace:*",
@@ -373,6 +375,7 @@
     "@vitest/ui": "^4.0.7",
     "change-case": "^5.4.4",
     "clsx": "^2.1.1",
+    "colorjs.io": "^0.5.2",
     "diffable-html": "^6.0.1",
     "fast-fuzzy": "^1.12.0",
     "magic-string": "^0.30.21",

@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { vfs } from '@prosekit/dev'
+import { findRoot } from '@manypkg/find-root'
 import { exec } from 'tinyexec'
 
-const rootDir = await vfs.getRootDir()
+const rootDir: string = (await findRoot(process.cwd())).rootDir
 
 const CLASS_JSON_PATH = 'registry/src/classes.gen.json'
 

@@ -60,6 +60,8 @@
   },
   "pnpm": {
     "overrides": {},
-    "patchedDependencies": {}
+    "patchedDependencies": {
+      "picocolors": "patches/picocolors.patch"
+    }
   }
 }

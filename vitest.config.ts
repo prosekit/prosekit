@@ -13,6 +13,6 @@ export default defineConfig({
       exclude: ['packages/dev/**/*', 'packages/config-*/**/*'],
     },
     fileParallelism: false,
-    projects: ['./packages/*', './website'],
+    projects: ['./packages/*', './registry'],
   },
 })

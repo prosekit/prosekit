@@ -5,16 +5,19 @@
   },
   "references": [
     {
-      "path": "../packages/prosekit/tsconfig.json",
+      "path": "../packages/config-vitest/tsconfig.json",
     },
     {
       "path": "../packages/dev/tsconfig.json",
     },
     {
-      "path": "./src/react/tsconfig.json",
+      "path": "../packages/prosekit/tsconfig.json",
     },
     {
       "path": "./src/preact/tsconfig.json",
+    },
+    {
+      "path": "./src/react/tsconfig.json",
     },
     {
       "path": "./src/solid/tsconfig.json",

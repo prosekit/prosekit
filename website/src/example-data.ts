@@ -1,5 +1,4 @@
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
-
 import registry from 'prosekit-registry/registry.gen.json'
 
 export const stories = Array.from(

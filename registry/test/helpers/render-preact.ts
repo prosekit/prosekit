@@ -1,9 +1,10 @@
 import { createElement } from 'preact'
-import { PreactRenderer } from 'prosekit-registry/preact/renderer'
 import {
   cleanup,
   render,
 } from 'vitest-browser-preact/pure'
+
+import { PreactRenderer } from 'prosekit-registry/preact/renderer'
 
 import {
   registerCleanupFunction,

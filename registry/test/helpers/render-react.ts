@@ -1,9 +1,10 @@
-import { ReactRenderer } from 'prosekit-registry/react/renderer'
 import { createElement } from 'react'
 import {
   cleanup,
   render,
 } from 'vitest-browser-react/pure'
+
+import { ReactRenderer } from 'prosekit-registry/react/renderer'
 
 import {
   registerCleanupFunction,

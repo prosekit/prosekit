@@ -1,8 +1,9 @@
-import { VueRenderer } from 'prosekit-registry/vue/renderer'
 import {
   cleanup,
   render,
 } from 'vitest-browser-vue/pure'
+
+import { VueRenderer } from 'prosekit-registry/vue/renderer'
 
 import {
   registerCleanupFunction,

@@ -1,8 +1,9 @@
-import { SvelteRenderer } from 'prosekit-registry/svelte/renderer'
 import {
   cleanup,
   render,
 } from 'vitest-browser-svelte/pure'
+
+import { SvelteRenderer } from 'prosekit-registry/svelte/renderer'
 
 import {
   registerCleanupFunction,

@@ -361,6 +361,8 @@
     "@types/react-dom": "^19.2.2",
     "change-case": "^5.4.4",
     "clsx": "^2.1.1",
+    "fast-fuzzy": "^1.12.0",
+    "magic-string": "^0.30.21",
     "parse-imports-exports": "^0.2.4",
     "prosekit": "workspace:*",
     "react": "^19.2.0",
@@ -368,7 +370,9 @@
     "shadcn": "^3.5.0",
     "svelte-check": "^4.3.3",
     "tailwind-merge": "^3.3.1",
+    "tinyexec": "^1.0.2",
     "tsx": "^4.20.6",
+    "vite": "^6.4.1",
     "vue-tsc": "^3.1.3"
   }
 }

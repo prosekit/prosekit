@@ -1,3 +1,6 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -11,12 +14,19 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
+import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import starlightThemeNova from 'starlight-theme-nova'
 import wasm from 'vite-plugin-wasm'
 
-import { classReplace } from './build/vite-plugin-class-replace'
-
 type Sidebar = StarlightUserConfig['sidebar']
+
+function copyRegistry(): void {
+  const rootDir = path.join(import.meta.dirname, '..')
+  const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
+  const targetDir = path.join(rootDir, 'website', 'public', 'r')
+
+  fs.cpSync(sourceDir, targetDir, { recursive: true })
+}
 
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
@@ -153,6 +163,12 @@ const config: AstroUserConfig = {
       previewSubpath: '-/',
     }),
     minifyHTML(),
+    {
+      name: 'copy-registry',
+      hooks: {
+        'astro:build:done': copyRegistry,
+      },
+    },
   ],
   vite: {
     plugins: [

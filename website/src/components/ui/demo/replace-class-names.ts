@@ -1,1 +1,1 @@
-export { replaceClassNames } from '../../../../build/replace-classes'
+export { replaceClassNames } from 'prosekit-registry/replace-class-names'

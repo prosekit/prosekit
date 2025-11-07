@@ -6,9 +6,6 @@
   "description": "The website for ProseKit",
   "scripts": {
     "astro": "astro",
-    "gen": "pnpm run gen:css && pnpm run gen:registry",
-    "gen:css": "tsx build/gen-classes.ts",
-    "gen:registry": "tsx build/gen-registry.ts",
     "build": "pnpm run build:typedoc && pnpm run build:astro",
     "build:typedoc": "bash build-typedoc.sh",
     "build:astro": "astro build",

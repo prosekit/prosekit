@@ -1,12 +1,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { findRoot } from '@manypkg/find-root'
+import { vfs } from '@prosekit/dev'
 import { exec } from 'tinyexec'
 
-const rootDir = await findRoot(process.cwd())
+const rootDir = await vfs.getRootDir()
 
-const CLASS_JSON_PATH = path.join(rootDir.rootDir, 'website/build/classes.gen.json')
+const CLASS_JSON_PATH = 'registry/src/classes.gen.json'
 
 let cachedClasses: Record<string, string> | undefined
 
@@ -18,7 +18,8 @@ export function getClasses(): Record<string, string> {
 }
 
 function loadClasses(): Record<string, string> {
-  const json = fs.readFileSync(CLASS_JSON_PATH, 'utf-8')
+  const filePath = path.join(rootDir, CLASS_JSON_PATH)
+  const json = fs.readFileSync(filePath, 'utf-8')
   return JSON.parse(json) as Record<string, string>
 }
 

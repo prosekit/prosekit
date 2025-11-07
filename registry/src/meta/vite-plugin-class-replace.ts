@@ -1,7 +1,7 @@
 import path from 'node:path'
 
-import type { ViteUserConfig } from 'astro'
 import MagicString from 'magic-string'
+import type { Plugin as VitePlugin } from 'vite'
 
 import { refreshClasses } from './load-classes'
 import {
@@ -9,12 +9,10 @@ import {
   classNameReplacer,
 } from './replace-classes'
 
-type Plugin = Required<ViteUserConfig>['plugins'][number]
-
 const PLUGIN_NAME = '@prosekit/vite-plugin-class-replace'
 const CLASS_TS_PATH = path.join(import.meta.dirname, 'classes.ts')
 
-export function classReplace(): Plugin {
+export function classReplace(): VitePlugin {
   const moduleIds = new Set<string>()
 
   return {

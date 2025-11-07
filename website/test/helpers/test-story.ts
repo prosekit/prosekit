@@ -5,7 +5,7 @@ import {
   it,
 } from 'vitest'
 
-import registry from '../../build/registry.gen.json'
+import registry from 'prosekit-registry/registry.gen.json'
 
 import { locateEditor } from './editor'
 import { formatHTML } from './format-html'

@@ -164,11 +164,20 @@ const config: AstroUserConfig = {
           const rootDir = path.join(import.meta.dirname, '..')
           const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
           const targetDir = path.join(rootDir, 'website', 'public', 'r')
-          logger.info(`copying registry from ${styleText('blue', sourceDir)} to ${styleText('blue', targetDir)}`)
+          try {
+            await fs.access(sourceDir)
+          } catch {
+            logger.info(`sourceDir does not exist: ${styleText('blue', sourceDir)}, skipping registry copy`)
+            return
+          }
           await fs.cp(sourceDir, targetDir, { recursive: true })
           const endTime = Date.now()
           const duration = endTime - startTime
-          logger.info(`copied registry in ${styleText('green', `${duration}ms`)}`)
+          logger.info(
+            `copied registry from ${styleText('blue', sourceDir)} `
+              + `to ${styleText('blue', targetDir)} `
+              + `in ${styleText('green', `${duration}ms`)}`,
+          )
         },
       },
     },

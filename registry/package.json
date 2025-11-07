@@ -222,11 +222,107 @@
     "./svelte/examples/minimal": {
       "default": "./src/svelte/examples/minimal/index.ts"
     },
+    "./vue/examples/block-handle": {
+      "default": "./src/vue/examples/block-handle/index.ts"
+    },
+    "./vue/examples/blockquote": {
+      "default": "./src/vue/examples/blockquote/index.ts"
+    },
+    "./vue/examples/bold": {
+      "default": "./src/vue/examples/bold/index.ts"
+    },
+    "./vue/examples/code": {
+      "default": "./src/vue/examples/code/index.ts"
+    },
+    "./vue/examples/code-block": {
+      "default": "./src/vue/examples/code-block/index.ts"
+    },
+    "./vue/examples/code-block-themes": {
+      "default": "./src/vue/examples/code-block-themes/index.ts"
+    },
+    "./vue/examples/drop-cursor": {
+      "default": "./src/vue/examples/drop-cursor/index.ts"
+    },
+    "./vue/examples/emoji-rules": {
+      "default": "./src/vue/examples/emoji-rules/index.ts"
+    },
     "./vue/examples/full": {
       "default": "./src/vue/examples/full/index.ts"
     },
+    "./vue/examples/gap-cursor": {
+      "default": "./src/vue/examples/gap-cursor/index.ts"
+    },
+    "./vue/examples/hard-break": {
+      "default": "./src/vue/examples/hard-break/index.ts"
+    },
+    "./vue/examples/heading": {
+      "default": "./src/vue/examples/heading/index.ts"
+    },
+    "./vue/examples/horizontal-rule": {
+      "default": "./src/vue/examples/horizontal-rule/index.ts"
+    },
+    "./vue/examples/image-view": {
+      "default": "./src/vue/examples/image-view/index.ts"
+    },
+    "./vue/examples/inline-menu": {
+      "default": "./src/vue/examples/inline-menu/index.ts"
+    },
+    "./vue/examples/italic": {
+      "default": "./src/vue/examples/italic/index.ts"
+    },
+    "./vue/examples/keymap": {
+      "default": "./src/vue/examples/keymap/index.ts"
+    },
+    "./vue/examples/link": {
+      "default": "./src/vue/examples/link/index.ts"
+    },
+    "./vue/examples/list": {
+      "default": "./src/vue/examples/list/index.ts"
+    },
+    "./vue/examples/list-custom-checkbox": {
+      "default": "./src/vue/examples/list-custom-checkbox/index.ts"
+    },
+    "./vue/examples/loro": {
+      "default": "./src/vue/examples/loro/index.ts"
+    },
     "./vue/examples/minimal": {
       "default": "./src/vue/examples/minimal/index.ts"
+    },
+    "./vue/examples/placeholder": {
+      "default": "./src/vue/examples/placeholder/index.ts"
+    },
+    "./vue/examples/search": {
+      "default": "./src/vue/examples/search/index.ts"
+    },
+    "./vue/examples/slash-menu": {
+      "default": "./src/vue/examples/slash-menu/index.ts"
+    },
+    "./vue/examples/strike": {
+      "default": "./src/vue/examples/strike/index.ts"
+    },
+    "./vue/examples/table": {
+      "default": "./src/vue/examples/table/index.ts"
+    },
+    "./vue/examples/text-color": {
+      "default": "./src/vue/examples/text-color/index.ts"
+    },
+    "./vue/examples/toolbar": {
+      "default": "./src/vue/examples/toolbar/index.ts"
+    },
+    "./vue/examples/typography": {
+      "default": "./src/vue/examples/typography/index.ts"
+    },
+    "./vue/examples/underline": {
+      "default": "./src/vue/examples/underline/index.ts"
+    },
+    "./vue/examples/user-menu": {
+      "default": "./src/vue/examples/user-menu/index.ts"
+    },
+    "./vue/examples/word-counter": {
+      "default": "./src/vue/examples/word-counter/index.ts"
+    },
+    "./vue/examples/yjs": {
+      "default": "./src/vue/examples/yjs/index.ts"
     }
   },
   "scripts": {

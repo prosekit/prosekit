@@ -5,26 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-table'
 import { TableHandle } from '../../ui/table-handle'
 
 import { defineExtension } from './extension'
-
-const defaultContent = `
-<table><tbody>
-  <tr>
-    <td>A1</td>
-    <td>B1</td>
-    <td>C1</td>
-    <td>D1</td>
-  </tr>
-  <tr>
-    <td>A2</td>
-    <td>B2</td>
-    <td>C2</td>
-    <td>D2</td>
-  </tr>
-</tbody></table>
-`
 
 export default function Editor() {
   const editor = useMemo(() => {

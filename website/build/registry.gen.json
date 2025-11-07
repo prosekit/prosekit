@@ -1045,6 +1045,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-list.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -1076,6 +1077,7 @@
           "registry/src/react/examples/list/editor.tsx",
           "registry/src/react/examples/list/extension.ts",
           "registry/src/react/examples/list/index.ts",
+          "registry/src/react/sample/sample-doc-list.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -1084,6 +1086,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-list",
           "react-ui-toolbar"
         ]
       }
@@ -1094,6 +1097,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-list-custom-checkbox.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -1131,6 +1135,7 @@
           "registry/src/react/examples/list-custom-checkbox/editor.tsx",
           "registry/src/react/examples/list-custom-checkbox/extension.ts",
           "registry/src/react/examples/list-custom-checkbox/index.ts",
+          "registry/src/react/sample/sample-doc-list-custom-checkbox.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -1139,6 +1144,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-list-custom-checkbox",
           "react-ui-toolbar"
         ]
       }
@@ -1637,6 +1643,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-table.json",
         "https://prosekit.dev/r/react-ui-table-handle.json"
       ],
       "dependencies": [
@@ -1668,10 +1675,12 @@
           "registry/src/react/examples/table/editor.tsx",
           "registry/src/react/examples/table/extension.ts",
           "registry/src/react/examples/table/index.ts",
+          "registry/src/react/sample/sample-doc-table.ts",
           "registry/src/react/ui/table-handle/index.ts",
           "registry/src/react/ui/table-handle/table-handle.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-table",
           "react-ui-table-handle"
         ]
       }
@@ -2314,6 +2323,82 @@
       }
     },
     {
+      "name": "react-sample-sample-doc-list",
+      "title": "react-sample-sample-doc-list",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-list.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-list.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-list-custom-checkbox",
+      "title": "react-sample-sample-doc-list-custom-checkbox",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-list-custom-checkbox.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list-custom-checkbox.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-table",
+      "title": "react-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "react-sample-sample-uploader",
       "title": "react-sample-sample-uploader",
       "type": "registry:component",
@@ -2911,6 +2996,414 @@
       }
     },
     {
+      "name": "vue-example-block-handle",
+      "title": "vue-example-block-handle",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-default-content-drag-and-drop.json",
+        "https://prosekit.dev/r/vue-ui-block-handle.json",
+        "https://prosekit.dev/r/vue-ui-code-block-view.json",
+        "https://prosekit.dev/r/vue-ui-drop-indicator.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/block-handle/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/block-handle/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/block-handle/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "block-handle",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/block-handle/editor.vue",
+          "registry/src/vue/examples/block-handle/extension.ts",
+          "registry/src/vue/examples/block-handle/index.ts",
+          "registry/src/vue/sample/default-content-drag-and-drop.ts",
+          "registry/src/vue/ui/block-handle/block-handle.vue",
+          "registry/src/vue/ui/block-handle/index.ts",
+          "registry/src/vue/ui/code-block-view/code-block-view.vue",
+          "registry/src/vue/ui/code-block-view/index.ts",
+          "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+          "registry/src/vue/ui/drop-indicator/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-default-content-drag-and-drop",
+          "vue-ui-block-handle",
+          "vue-ui-code-block-view",
+          "vue-ui-drop-indicator"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-blockquote",
+      "title": "vue-example-blockquote",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/blockquote/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/blockquote/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/blockquote/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "blockquote",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/blockquote/editor.vue",
+          "registry/src/vue/examples/blockquote/extension.ts",
+          "registry/src/vue/examples/blockquote/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-bold",
+      "title": "vue-example-bold",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/bold/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/bold/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/bold/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/bold/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/bold/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/bold/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "bold",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/bold/editor.vue",
+          "registry/src/vue/examples/bold/extension.ts",
+          "registry/src/vue/examples/bold/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-code",
+      "title": "vue-example-code",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/code/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/code/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/code/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/code/editor.vue",
+          "registry/src/vue/examples/code/extension.ts",
+          "registry/src/vue/examples/code/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-code-block",
+      "title": "vue-example-code-block",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/vue-ui-code-block-view.json",
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/code-block/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/code-block/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/code-block/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/code-block/editor.vue",
+          "registry/src/vue/examples/code-block/extension.ts",
+          "registry/src/vue/examples/code-block/index.ts",
+          "registry/src/vue/sample/sample-doc-code-block.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/code-block-view/code-block-view.vue",
+          "registry/src/vue/ui/code-block-view/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-code-block",
+          "vue-ui-code-block-view",
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-code-block-themes",
+      "title": "vue-example-code-block-themes",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/vue-ui-code-block-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/code-block-themes/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/code-block-themes/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/code-block-themes/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/code-block-themes/theme-selector.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/theme-selector.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/code-block-themes/toolbar.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/toolbar.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block-themes",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/code-block-themes/editor.vue",
+          "registry/src/vue/examples/code-block-themes/extension.ts",
+          "registry/src/vue/examples/code-block-themes/index.ts",
+          "registry/src/vue/examples/code-block-themes/theme-selector.vue",
+          "registry/src/vue/examples/code-block-themes/toolbar.vue",
+          "registry/src/vue/sample/sample-doc-code-block.ts",
+          "registry/src/vue/ui/code-block-view/code-block-view.vue",
+          "registry/src/vue/ui/code-block-view/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-code-block",
+          "vue-ui-code-block-view"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-drop-cursor",
+      "title": "vue-example-drop-cursor",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-drop-cursor.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/drop-cursor/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/drop-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/drop-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "drop-cursor",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/drop-cursor/editor.vue",
+          "registry/src/vue/examples/drop-cursor/extension.ts",
+          "registry/src/vue/examples/drop-cursor/index.ts",
+          "registry/src/vue/sample/sample-doc-drop-cursor.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-drop-cursor"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-emoji-rules",
+      "title": "vue-example-emoji-rules",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/emoji-rules/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/emoji-rules/emoji.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/emoji.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/emoji-rules/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/emoji-rules/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "emoji-rules",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/emoji-rules/editor.vue",
+          "registry/src/vue/examples/emoji-rules/emoji.ts",
+          "registry/src/vue/examples/emoji-rules/extension.ts",
+          "registry/src/vue/examples/emoji-rules/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-example-full",
       "title": "vue-example-full",
       "type": "registry:block",
@@ -3010,6 +3503,612 @@
       }
     },
     {
+      "name": "vue-example-gap-cursor",
+      "title": "vue-example-gap-cursor",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/gap-cursor/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/gap-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/gap-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "gap-cursor",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/gap-cursor/editor.vue",
+          "registry/src/vue/examples/gap-cursor/extension.ts",
+          "registry/src/vue/examples/gap-cursor/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-example-hard-break",
+      "title": "vue-example-hard-break",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/hard-break/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/hard-break/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/hard-break/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/hard-break/toolbar.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/toolbar.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "hard-break",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/hard-break/editor.vue",
+          "registry/src/vue/examples/hard-break/extension.ts",
+          "registry/src/vue/examples/hard-break/index.ts",
+          "registry/src/vue/examples/hard-break/toolbar.vue",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-heading",
+      "title": "vue-example-heading",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/heading/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/heading/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/heading/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/heading/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/heading/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/heading/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "heading",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/heading/editor.vue",
+          "registry/src/vue/examples/heading/extension.ts",
+          "registry/src/vue/examples/heading/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-horizontal-rule",
+      "title": "vue-example-horizontal-rule",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/horizontal-rule/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/horizontal-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/horizontal-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "horizontal-rule",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/horizontal-rule/editor.vue",
+          "registry/src/vue/examples/horizontal-rule/extension.ts",
+          "registry/src/vue/examples/horizontal-rule/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-image-view",
+      "title": "vue-example-image-view",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-image.json",
+        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
+        "https://prosekit.dev/r/vue-ui-image-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/image-view/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/image-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/image-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "image-view",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/image-view/editor.vue",
+          "registry/src/vue/examples/image-view/extension.ts",
+          "registry/src/vue/examples/image-view/index.ts",
+          "registry/src/vue/sample/sample-doc-image.ts",
+          "registry/src/vue/sample/sample-uploader.ts",
+          "registry/src/vue/ui/image-view/image-view.vue",
+          "registry/src/vue/ui/image-view/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-image",
+          "vue-sample-sample-uploader",
+          "vue-ui-image-view"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-inline-menu",
+      "title": "vue-example-inline-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/inline-menu/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/inline-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/inline-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "inline-menu",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/inline-menu/editor.vue",
+          "registry/src/vue/examples/inline-menu/extension.ts",
+          "registry/src/vue/examples/inline-menu/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/inline-menu/index.ts",
+          "registry/src/vue/ui/inline-menu/inline-menu.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-inline-menu"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-italic",
+      "title": "vue-example-italic",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/italic/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/italic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/italic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "italic",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/italic/editor.vue",
+          "registry/src/vue/examples/italic/extension.ts",
+          "registry/src/vue/examples/italic/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-keymap",
+      "title": "vue-example-keymap",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/keymap/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/keymap/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/keymap/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/keymap/toolbar.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/toolbar.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/keymap/use-submit-keymap.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/use-submit-keymap.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "keymap",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/keymap/editor.vue",
+          "registry/src/vue/examples/keymap/extension.ts",
+          "registry/src/vue/examples/keymap/index.ts",
+          "registry/src/vue/examples/keymap/toolbar.vue",
+          "registry/src/vue/examples/keymap/use-submit-keymap.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-link",
+      "title": "vue-example-link",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/link/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/link/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/link/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "link",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/link/editor.vue",
+          "registry/src/vue/examples/link/extension.ts",
+          "registry/src/vue/examples/link/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/inline-menu/index.ts",
+          "registry/src/vue/ui/inline-menu/inline-menu.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-inline-menu"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-list",
+      "title": "vue-example-list",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-list.json",
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/list/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/list/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/list/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "list",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/list/editor.vue",
+          "registry/src/vue/examples/list/extension.ts",
+          "registry/src/vue/examples/list/index.ts",
+          "registry/src/vue/sample/sample-doc-list.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-list",
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-list-custom-checkbox",
+      "title": "vue-example-list-custom-checkbox",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-list-custom-checkbox.json",
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/list-custom-checkbox/custom-list.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/custom-list.css"
+        },
+        {
+          "path": "registry/src/vue/examples/list-custom-checkbox/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/list-custom-checkbox/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/list-custom-checkbox/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "list-custom-checkbox",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/list-custom-checkbox/custom-list.css",
+          "registry/src/vue/examples/list-custom-checkbox/editor.vue",
+          "registry/src/vue/examples/list-custom-checkbox/extension.ts",
+          "registry/src/vue/examples/list-custom-checkbox/index.ts",
+          "registry/src/vue/sample/sample-doc-list-custom-checkbox.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-list-custom-checkbox",
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-loro",
+      "title": "vue-example-loro",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "loro-crdt",
+        "loro-prosemirror",
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/loro/editor-component.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor-component.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/loro/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/loro/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/loro/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "loro",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/loro/editor-component.vue",
+          "registry/src/vue/examples/loro/editor.vue",
+          "registry/src/vue/examples/loro/extension.ts",
+          "registry/src/vue/examples/loro/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "vue-example-minimal",
       "title": "vue-example-minimal",
       "type": "registry:block",
@@ -3040,6 +4139,593 @@
           "registry/src/vue/examples/minimal/index.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-example-placeholder",
+      "title": "vue-example-placeholder",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/placeholder/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/placeholder/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/placeholder/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/placeholder/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/placeholder/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/placeholder/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "placeholder",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/placeholder/editor.vue",
+          "registry/src/vue/examples/placeholder/extension.ts",
+          "registry/src/vue/examples/placeholder/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-example-search",
+      "title": "vue-example-search",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-search.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/search/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/search/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "search",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/search/editor.vue",
+          "registry/src/vue/examples/search/extension.ts",
+          "registry/src/vue/examples/search/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/search/index.ts",
+          "registry/src/vue/ui/search/search.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-search"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-slash-menu",
+      "title": "vue-example-slash-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-slash-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/slash-menu/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/slash-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "slash-menu",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/slash-menu/editor.vue",
+          "registry/src/vue/examples/slash-menu/extension.ts",
+          "registry/src/vue/examples/slash-menu/index.ts",
+          "registry/src/vue/ui/slash-menu/index.ts",
+          "registry/src/vue/ui/slash-menu/slash-menu-empty.vue",
+          "registry/src/vue/ui/slash-menu/slash-menu-item.vue",
+          "registry/src/vue/ui/slash-menu/slash-menu.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-slash-menu"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-strike",
+      "title": "vue-example-strike",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/strike/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/strike/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/strike/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/strike/toolbar.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/toolbar.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "strike",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/strike/editor.vue",
+          "registry/src/vue/examples/strike/extension.ts",
+          "registry/src/vue/examples/strike/index.ts",
+          "registry/src/vue/examples/strike/toolbar.vue",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-table",
+      "title": "vue-example-table",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/vue-ui-table-handle.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/table/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/table/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/table/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "table",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/table/editor.vue",
+          "registry/src/vue/examples/table/extension.ts",
+          "registry/src/vue/examples/table/index.ts",
+          "registry/src/vue/sample/sample-doc-table.ts",
+          "registry/src/vue/ui/table-handle/index.ts",
+          "registry/src/vue/ui/table-handle/table-handle.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-table",
+          "vue-ui-table-handle"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-text-color",
+      "title": "vue-example-text-color",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/text-color/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/text-color/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/text-color/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/text-color/inline-menu.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/inline-menu.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/text-color/text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "text-color",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/text-color/editor.vue",
+          "registry/src/vue/examples/text-color/extension.ts",
+          "registry/src/vue/examples/text-color/index.ts",
+          "registry/src/vue/examples/text-color/inline-menu.vue",
+          "registry/src/vue/examples/text-color/text-color.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-toolbar",
+      "title": "vue-example-toolbar",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/toolbar/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/toolbar/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "toolbar",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/toolbar/editor.vue",
+          "registry/src/vue/examples/toolbar/extension.ts",
+          "registry/src/vue/examples/toolbar/index.ts",
+          "registry/src/vue/sample/sample-uploader.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-uploader",
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-typography",
+      "title": "vue-example-typography",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/typography/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/typography/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/typography/typography-content.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/typography-content.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "typography",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/typography/editor.vue",
+          "registry/src/vue/examples/typography/index.ts",
+          "registry/src/vue/examples/typography/typography-content.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-example-underline",
+      "title": "vue-example-underline",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/underline/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/underline/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/underline/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/underline/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/underline/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/underline/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "underline",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/underline/editor.vue",
+          "registry/src/vue/examples/underline/extension.ts",
+          "registry/src/vue/examples/underline/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-user-menu",
+      "title": "vue-example-user-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-tag-data.json",
+        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-ui-tag-menu.json",
+        "https://prosekit.dev/r/vue-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/user-menu/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "user-menu",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/user-menu/editor.vue",
+          "registry/src/vue/examples/user-menu/extension.ts",
+          "registry/src/vue/examples/user-menu/index.ts",
+          "registry/src/vue/sample/tag-data.ts",
+          "registry/src/vue/sample/user-data.ts",
+          "registry/src/vue/ui/tag-menu/index.ts",
+          "registry/src/vue/ui/tag-menu/tag-menu.vue",
+          "registry/src/vue/ui/user-menu/index.ts",
+          "registry/src/vue/ui/user-menu/user-menu.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-tag-data",
+          "vue-sample-user-data",
+          "vue-ui-tag-menu",
+          "vue-ui-user-menu"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-word-counter",
+      "title": "vue-example-word-counter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-word-counter.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/word-counter/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/word-counter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "word-counter",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/word-counter/editor.vue",
+          "registry/src/vue/examples/word-counter/extension.ts",
+          "registry/src/vue/examples/word-counter/index.ts",
+          "registry/src/vue/ui/word-counter/index.ts",
+          "registry/src/vue/ui/word-counter/word-counter.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-word-counter"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-yjs",
+      "title": "vue-example-yjs",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue",
+        "y-protocols",
+        "y-websocket",
+        "yjs"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/yjs/editor-component.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor-component.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/yjs/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/yjs/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/yjs/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "yjs",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/yjs/editor-component.vue",
+          "registry/src/vue/examples/yjs/editor.vue",
+          "registry/src/vue/examples/yjs/extension.ts",
+          "registry/src/vue/examples/yjs/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-toolbar"
+        ]
       }
     },
     {
@@ -3164,6 +4850,82 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-list",
+      "title": "vue-sample-sample-doc-list",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-list.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-list.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-list-custom-checkbox",
+      "title": "vue-sample-sample-doc-list-custom-checkbox",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-list-custom-checkbox.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list-custom-checkbox.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-table",
+      "title": "vue-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-table.ts"
         ],
         "internalDependencies": []
       }
@@ -3497,6 +5259,50 @@
       }
     },
     {
+      "name": "vue-ui-search",
+      "title": "vue-ui-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/ui/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/index.ts"
+        },
+        {
+          "path": "registry/src/vue/ui/search/search.vue",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/search.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/search/index.ts",
+          "registry/src/vue/ui/search/search.vue"
+        ],
+        "internalDependencies": [
+          "vue-ui-button"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
+      }
+    },
+    {
       "name": "vue-ui-slash-menu",
       "title": "vue-ui-slash-menu",
       "type": "registry:component",
@@ -3684,6 +5490,38 @@
         "accumulatedFiles": [
           "registry/src/vue/ui/user-menu/index.ts",
           "registry/src/vue/ui/user-menu/user-menu.vue"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-ui-word-counter",
+      "title": "vue-ui-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/ui/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/index.ts"
+        },
+        {
+          "path": "registry/src/vue/ui/word-counter/word-counter.vue",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/word-counter.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/ui/word-counter/index.ts",
+          "registry/src/vue/ui/word-counter/word-counter.vue"
         ],
         "internalDependencies": []
       }
@@ -4387,6 +6225,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-list.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
@@ -4418,6 +6257,7 @@
           "registry/src/preact/examples/list/editor.tsx",
           "registry/src/preact/examples/list/extension.ts",
           "registry/src/preact/examples/list/index.ts",
+          "registry/src/preact/sample/sample-doc-list.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts",
           "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
@@ -4426,6 +6266,7 @@
           "registry/src/preact/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-sample-doc-list",
           "preact-ui-toolbar"
         ]
       }
@@ -4436,6 +6277,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-list-custom-checkbox.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
@@ -4473,6 +6315,7 @@
           "registry/src/preact/examples/list-custom-checkbox/editor.tsx",
           "registry/src/preact/examples/list-custom-checkbox/extension.ts",
           "registry/src/preact/examples/list-custom-checkbox/index.ts",
+          "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts",
           "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
@@ -4481,6 +6324,7 @@
           "registry/src/preact/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-sample-doc-list-custom-checkbox",
           "preact-ui-toolbar"
         ]
       }
@@ -4945,6 +6789,58 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-list",
+      "title": "preact-sample-sample-doc-list",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-list.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-list.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-list-custom-checkbox",
+      "title": "preact-sample-sample-doc-list-custom-checkbox",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list-custom-checkbox.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts"
         ],
         "internalDependencies": []
       }

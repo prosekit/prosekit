@@ -1,4 +1,7 @@
-import { vfs } from '@prosekit/dev'
+import {
+  sortObject,
+  vfs,
+} from '@prosekit/dev'
 
 import type { ItemAccumulator } from './types'
 
@@ -30,6 +33,6 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
     fillExports(item, exports)
   }
   // @ts-expect-error - exports is not in the type
-  pkg.packageJson['exports'] = exports
+  pkg.packageJson['exports'] = sortObject(exports)
   await vfs.updatePackage(pkg)
 }

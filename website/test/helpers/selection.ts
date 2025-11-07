@@ -2,6 +2,8 @@ import {
   isElement,
   sleep,
 } from '@ocavue/utils'
+import { expect } from 'vitest'
+import type { Locator } from 'vitest/browser'
 
 function getSelection(): Selection {
   const selection = window.getSelection()
@@ -89,4 +91,28 @@ export function getSelectedHtml(): string {
     output += container.innerHTML
   }
   return output
+}
+
+export async function selectText(locator: Locator, start: number, end: number, expectedText: string) {
+  const action = async () => {
+    // Focus the element
+    const element = locator.element()
+    if (element.ownerDocument.activeElement !== element) {
+      element.focus()
+      await sleep(1)
+    }
+    // Move the cursor to the beginning of the editor
+    await moveSelectionToStart()
+    // Move the cursor to the beginning of the word
+    await moveSelection('forward', start)
+    // Select the word
+    await extendSelection('forward', end - start)
+
+    return getSelectedText()
+  }
+
+  await expect.poll(action, {
+    timeout: 2000,
+    message: `Expected text ${JSON.stringify(expectedText)} from position ${start}-${end} to be selected in element ${locator.selector}`,
+  }).toBe(expectedText)
 }

@@ -8,10 +8,8 @@ import {
 } from 'vitest/browser'
 
 import {
-  collapseSelection,
   emptyEditor,
-  extendSelection,
-  getSelectedText,
+  selectText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -32,8 +30,7 @@ testStory('link', () => {
     // Type text and select the word "world"
     await userEvent.click(editor)
     await userEvent.type(editor, 'Hello world')
-    await extendSelection('backward', 5)
-    expect(getSelectedText()).toBe('world')
+    await selectText(editor, 6, 11, 'world')
 
     // Main menu visible, link menu hidden
     await expect.element(mainMenu).toBeVisible()
@@ -53,10 +50,7 @@ testStory('link', () => {
     await expect.element(linkTag).toBeVisible()
 
     // Reselect text to show main menu again
-    await collapseSelection('end')
-    expect(getSelectedText()).toBe('')
-    await extendSelection('backward', 5)
-    expect(getSelectedText()).toBe('world')
+    await selectText(editor, 6, 11, 'world')
 
     // Open link menu again, value prefilled, then remove the link
     await expect.element(linkButton).toBeVisible()

@@ -6,7 +6,6 @@
     "./*.js",
     "./*.json",
     ".astro/*",
-    "test/**/*",
     "build/**/*",
     "build/**/*.json",
     "src/**/*",

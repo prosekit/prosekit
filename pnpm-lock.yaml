@@ -837,21 +837,51 @@ importers:
       '@ocavue/utils':
         specifier: ^0.8.1
         version: 0.8.1
+      '@preact/preset-vite':
+        specifier: ^2.10.2
+        version: 2.10.2(@babel/core@7.28.4)(preact@10.27.2)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      '@prosekit/config-vitest':
+        specifier: workspace:*
+        version: link:../packages/config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.1.1
+        version: 5.1.1(svelte@5.43.3)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      '@tailwindcss/vite':
+        specifier: ^4.1.16
+        version: 4.1.16(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      '@types/diffable-html':
+        specifier: ^5.0.2
+        version: 5.0.2
       '@types/react':
         specifier: ^19.2.2
         version: 19.2.2
       '@types/react-dom':
         specifier: ^19.2.2
         version: 19.2.2(@types/react@19.2.2)
+      '@vitejs/plugin-react':
+        specifier: ^5.1.0
+        version: 5.1.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      '@vitejs/plugin-vue':
+        specifier: ^6.0.1
+        version: 6.0.1(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.23(typescript@5.9.3))
+      '@vitest/browser-playwright':
+        specifier: ^4.0.7
+        version: 4.0.7(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(playwright@1.56.1)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.7)
+      '@vitest/ui':
+        specifier: ^4.0.7
+        version: 4.0.7(vitest@4.0.7)
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      diffable-html:
+        specifier: ^6.0.1
+        version: 6.0.1
       fast-fuzzy:
         specifier: ^1.12.0
         version: 1.12.0
@@ -879,15 +909,48 @@ importers:
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
+      tailwindcss:
+        specifier: ^4.1.16
+        version: 4.1.16
       tinyexec:
         specifier: ^1.0.2
         version: 1.0.2
       tsx:
         specifier: ^4.20.6
         version: 4.20.6
+      tw-animate-css:
+        specifier: ^1.4.0
+        version: 1.4.0
       vite:
         specifier: ^6.4.1
         version: 6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
+      vite-plugin-solid:
+        specifier: ^2.11.10
+        version: 2.11.10(solid-js@1.9.10)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      vite-plugin-wasm:
+        specifier: ^3.5.0
+        version: 3.5.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      vitest:
+        specifier: ^4.0.7
+        version: 4.0.7(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.7)(@vitest/ui@4.0.7)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest-browser-commands:
+        specifier: ^0.1.2
+        version: 0.1.2(@vitest/browser-playwright@4.0.7)(vitest@4.0.7)
+      vitest-browser-preact:
+        specifier: ^0.1.2
+        version: 0.1.2(@vitest/browser@4.0.7(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.7))(preact@10.27.2)(vitest@4.0.7)
+      vitest-browser-react:
+        specifier: ^2.0.2
+        version: 2.0.2(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vitest@4.0.7)
+      vitest-browser-solid:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.9.10)(vitest@4.0.7)
+      vitest-browser-svelte:
+        specifier: ^2.0.1
+        version: 2.0.1(svelte@5.43.3)(vitest@4.0.7)
+      vitest-browser-vue:
+        specifier: ^2.0.1
+        version: 2.0.1(vitest@4.0.7)(vue@3.5.23(typescript@5.9.3))
       vue-tsc:
         specifier: ^3.1.3
         version: 3.1.3(typescript@5.9.3)
@@ -936,21 +999,9 @@ importers:
       '@ocavue/utils':
         specifier: ^0.8.1
         version: 0.8.1
-      '@preact/preset-vite':
-        specifier: ^2.10.2
-        version: 2.10.2(@babel/core@7.28.4)(preact@10.27.2)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../packages/config-vitest
-      '@sveltejs/vite-plugin-svelte':
-        specifier: ^5.1.1
-        version: 5.1.1(svelte@5.43.3)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
       '@tailwindcss/vite':
         specifier: ^4.1.16
         version: 4.1.16(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
-      '@types/diffable-html':
-        specifier: ^5.0.2
-        version: 5.0.2
       '@types/react':
         specifier: ^19.2.2
         version: 19.2.2
@@ -963,12 +1014,6 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
         version: 6.0.1(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.23(typescript@5.9.3))
-      '@vitest/browser-playwright':
-        specifier: ^4.0.7
-        version: 4.0.7(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(playwright@1.56.1)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.7)
-      '@vitest/ui':
-        specifier: ^4.0.7
-        version: 4.0.7(vitest@4.0.7)
       astro:
         specifier: ^5.15.3
         version: 5.15.3(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.50.2)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
@@ -993,12 +1038,6 @@ importers:
       colorjs.io:
         specifier: ^0.5.2
         version: 0.5.2
-      diffable-html:
-        specifier: ^6.0.1
-        version: 6.0.1
-      fast-fuzzy:
-        specifier: ^1.12.0
-        version: 1.12.0
       fdir:
         specifier: ^6.5.0
         version: 6.5.0(picomatch@4.0.3)
@@ -1011,9 +1050,6 @@ importers:
       loro-prosemirror:
         specifier: ^0.3.6
         version: 0.3.6(loro-crdt@1.8.9)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
-      magic-string:
-        specifier: ^0.30.21
-        version: 0.30.21
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -1086,33 +1122,9 @@ importers:
       unified:
         specifier: ^11.0.5
         version: 11.0.5
-      vite-plugin-solid:
-        specifier: ^2.11.10
-        version: 2.11.10(solid-js@1.9.10)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
       vite-plugin-wasm:
         specifier: ^3.5.0
         version: 3.5.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
-      vitest:
-        specifier: ^4.0.7
-        version: 4.0.7(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.7)(@vitest/ui@4.0.7)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
-      vitest-browser-commands:
-        specifier: ^0.1.2
-        version: 0.1.2(@vitest/browser-playwright@4.0.7)(vitest@4.0.7)
-      vitest-browser-preact:
-        specifier: ^0.1.2
-        version: 0.1.2(@vitest/browser@4.0.7(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.7))(preact@10.27.2)(vitest@4.0.7)
-      vitest-browser-react:
-        specifier: ^2.0.2
-        version: 2.0.2(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vitest@4.0.7)
-      vitest-browser-solid:
-        specifier: ^1.0.1
-        version: 1.0.1(solid-js@1.9.10)(vitest@4.0.7)
-      vitest-browser-svelte:
-        specifier: ^2.0.1
-        version: 2.0.1(svelte@5.43.3)(vitest@4.0.7)
-      vitest-browser-vue:
-        specifier: ^2.0.1
-        version: 2.0.1(vitest@4.0.7)(vue@3.5.23(typescript@5.9.3))
       vue:
         specifier: ^3.5.23
         version: 3.5.23(typescript@5.9.3)

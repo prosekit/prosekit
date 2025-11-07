@@ -32,5 +32,6 @@
     "src/meta/**/*",
     "src/*.ts",
     "src/*.json",
+    "test/",
   ],
 }

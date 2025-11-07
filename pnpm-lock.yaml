@@ -1002,9 +1002,6 @@ importers:
       '@iconify-json/tabler':
         specifier: ^1.2.23
         version: 1.2.23
-      '@manypkg/find-root':
-        specifier: ^3.1.0
-        version: 3.1.0
       '@ocavue/utils':
         specifier: ^0.8.1
         version: 0.8.1
@@ -1017,12 +1014,6 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.2
         version: 19.2.2(@types/react@19.2.2)
-      '@vitejs/plugin-react':
-        specifier: ^5.1.0
-        version: 5.1.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
-      '@vitejs/plugin-vue':
-        specifier: ^6.0.1
-        version: 6.0.1(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.23(typescript@5.9.3))
       astro:
         specifier: ^5.15.3
         version: 5.15.3(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.50.2)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
@@ -1041,9 +1032,6 @@ importers:
       bits-ui:
         specifier: ^2.14.2
         version: 2.14.2(@internationalized/date@3.9.0)(svelte@5.43.3)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       fdir:
         specifier: ^6.5.0
         version: 6.5.0(picomatch@4.0.3)
@@ -1107,18 +1095,9 @@ importers:
       svelte:
         specifier: ^5.43.3
         version: 5.43.3
-      tailwind-merge:
-        specifier: ^3.3.1
-        version: 3.3.1
       tailwindcss:
         specifier: ^4.1.16
         version: 4.1.16
-      tinyexec:
-        specifier: ^1.0.2
-        version: 1.0.2
-      tsx:
-        specifier: ^4.20.6
-        version: 4.20.6
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0

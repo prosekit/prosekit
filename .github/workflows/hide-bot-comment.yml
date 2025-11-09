@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - id: hide-comment
-        uses: int128/hide-comment-action@v1.46.0
+        uses: int128/hide-comment-action@v1.47.0
         with:
           authors: |
             github-actions

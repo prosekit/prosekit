@@ -1,0 +1,27 @@
+diff --git a/package.json b/package.json
+index 372d4b642cf553e8234986a22441cce3aea3d11f..a77344812fbed4117b1a793132257f641c590001 100644
+--- a/package.json
++++ b/package.json
+@@ -2,10 +2,8 @@
+   "name": "picocolors",
+   "version": "1.1.1",
+   "main": "./picocolors.js",
++  "module": "./picocolors.browser.mjs",
+   "types": "./picocolors.d.ts",
+-  "browser": {
+-    "./picocolors.js": "./picocolors.browser.js"
+-  },
+   "sideEffects": false,
+   "description": "The tiniest and the fastest library for terminal output formatting with ANSI colors",
+   "files": [
+diff --git a/picocolors.browser.mjs b/picocolors.browser.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..5dcfc4fb09eeefea673ddda77f19074323d15ec6
+--- /dev/null
++++ b/picocolors.browser.mjs
+@@ -0,0 +1,5 @@
++var x=String;
++var create=function() {return {isColorSupported:false,reset:x,bold:x,dim:x,italic:x,underline:x,inverse:x,hidden:x,strikethrough:x,black:x,red:x,green:x,yellow:x,blue:x,magenta:x,cyan:x,white:x,gray:x,bgBlack:x,bgRed:x,bgGreen:x,bgYellow:x,bgBlue:x,bgMagenta:x,bgCyan:x,bgWhite:x,blackBright:x,redBright:x,greenBright:x,yellowBright:x,blueBright:x,magentaBright:x,cyanBright:x,whiteBright:x,bgBlackBright:x,bgRedBright:x,bgGreenBright:x,bgYellowBright:x,bgBlueBright:x,bgMagentaBright:x,bgCyanBright:x,bgWhiteBright:x}};
++// Workaround for issue https://github.com/withastro/astro/issues/14692
++export default create();
++export const createColors = create;

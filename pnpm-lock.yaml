@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  picocolors:
+    hash: 70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61
+    path: patches/picocolors.patch
+
 importers:
 
   .:
@@ -8974,7 +8979,7 @@ snapshots:
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
       js-tokens: 4.0.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
 
   '@babel/compat-data@7.28.4': {}
 
@@ -9274,7 +9279,7 @@ snapshots:
       mri: 1.2.0
       p-limit: 2.3.0
       package-manager-detector: 0.2.11
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       resolve-from: 5.0.0
       semver: 7.7.3
       spawndamnit: 3.0.1
@@ -9300,7 +9305,7 @@ snapshots:
     dependencies:
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       semver: 7.7.3
 
   '@changesets/get-release-plan@4.0.13':
@@ -9324,7 +9329,7 @@ snapshots:
 
   '@changesets/logger@0.1.1':
     dependencies:
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
 
   '@changesets/parse@0.4.1':
     dependencies:
@@ -9346,7 +9351,7 @@ snapshots:
       '@changesets/types': 6.1.0
       fs-extra: 7.0.1
       p-filter: 2.1.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
 
   '@changesets/should-skip-package@0.1.2':
     dependencies:
@@ -9990,7 +9995,7 @@ snapshots:
       p-limit: 6.2.0
       package-json: 10.0.1
       parse-github-url: 1.0.3
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       sembear: 0.7.0
       semver: 7.7.3
       tinyexec: 1.0.2
@@ -10351,7 +10356,7 @@ snapshots:
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.28.4)
       debug: 4.4.3
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       vite: 6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
       vite-prerender-plugin: 0.5.12(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
     transitivePeerDependencies:
@@ -11688,7 +11693,7 @@ snapshots:
       p-limit: 6.2.0
       p-queue: 8.1.1
       package-manager-detector: 1.3.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       picomatch: 4.0.3
       prompts: 2.4.2
       rehype: 13.0.2
@@ -13900,7 +13905,7 @@ snapshots:
       js-yaml: 4.1.0
       minimist: 1.2.8
       oxc-resolver: 11.12.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       picomatch: 4.0.3
       smol-toml: 1.4.2
       strip-json-comments: 5.0.2
@@ -14636,7 +14641,7 @@ snapshots:
       is-node-process: 1.2.0
       outvariant: 1.4.3
       path-to-regexp: 6.3.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       rettime: 0.7.0
       statuses: 2.0.2
       strict-event-emitter: 0.5.1
@@ -14659,7 +14664,7 @@ snapshots:
 
   nanospinner@1.2.2:
     dependencies:
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
 
   napi-postinstall@0.3.3: {}
 
@@ -15015,7 +15020,7 @@ snapshots:
 
   perfect-debounce@1.0.0: {}
 
-  picocolors@1.1.1: {}
+  picocolors@1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61): {}
 
   picomatch@2.3.1: {}
 
@@ -15079,7 +15084,7 @@ snapshots:
   postcss@8.5.6:
     dependencies:
       nanoid: 3.3.11
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       source-map-js: 1.2.1
 
   preact-render-to-string@6.6.1(preact@10.27.2):
@@ -15945,7 +15950,7 @@ snapshots:
       jiti: 2.6.1
       lilconfig: 3.1.3
       nanospinner: 1.2.2
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       tinyglobby: 0.2.15
 
   slash@3.0.0: {}
@@ -16180,7 +16185,7 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.31
       chokidar: 4.0.3
       fdir: 6.5.0(picomatch@4.0.3)
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       sade: 1.8.1
       svelte: 5.43.5
       typescript: 5.9.3
@@ -16648,7 +16653,7 @@ snapshots:
     dependencies:
       browserslist: 4.27.0
       escalade: 3.2.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
 
   uri-js@4.4.1:
     dependencies:
@@ -16703,7 +16708,7 @@ snapshots:
       fs-extra: 11.3.2
       open: 10.2.0
       perfect-debounce: 1.0.0
-      picocolors: 1.1.1
+      picocolors: 1.1.1(patch_hash=70a20cca66767226cbd057abe3aa9deb8ba4d69c047fb7e26bd56cc3d5784d61)
       sirv: 3.0.2
       vite: 6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
     transitivePeerDependencies:

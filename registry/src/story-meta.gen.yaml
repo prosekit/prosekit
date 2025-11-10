@@ -5,7 +5,7 @@
 - name: bold
   frameworks: [react, vue, preact]
 - name: change-tracking
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: code
   frameworks: [react, vue, preact]
 - name: code-block
@@ -37,7 +37,7 @@
 - name: link
   frameworks: [react, vue, preact]
 - name: link-mark-view
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: list
   frameworks: [react, vue, preact]
 - name: list-custom-checkbox
@@ -45,19 +45,19 @@
 - name: loro
   frameworks: [react, vue, preact]
 - name: mark-rule
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]
 - name: placeholder
   frameworks: [react, vue, preact]
 - name: readonly
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: save-html
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: save-json
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: save-markdown
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: search
   frameworks: [react, vue, preact]
 - name: slash-menu
@@ -67,7 +67,7 @@
 - name: table
   frameworks: [react, vue, preact]
 - name: text-align
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: text-color
   frameworks: [react, vue, preact]
 - name: toolbar
@@ -77,11 +77,11 @@
 - name: underline
   frameworks: [react, vue, preact]
 - name: unmount
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: user-menu
   frameworks: [react, vue, preact]
 - name: user-menu-dynamic
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: word-counter
   frameworks: [react, vue, preact]
 - name: yjs

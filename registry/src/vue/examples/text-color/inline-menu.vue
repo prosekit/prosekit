@@ -72,8 +72,8 @@ useKeymap({
       v-for="color in colorState"
       :key="color.name"
       :pressed="color.isActive"
-      :on-click="() => toggleTextColor(color.value)"
       :tooltip="color.name"
+      @click="() => toggleTextColor(color.value)"
     >
       <span :style="{ color: color.value }">A</span>
     </Button>

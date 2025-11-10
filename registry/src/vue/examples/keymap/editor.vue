@@ -33,7 +33,7 @@ watchPostEffect((onCleanup) => {
 <template>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
-      <Toolbar :on-submit="pushSubmission" />
+      <Toolbar @submit="pushSubmission" />
       <div class="CSS_EDITOR_SCROLLING">
         <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
       </div>

@@ -105,8 +105,8 @@ function handleLinkUpdate(href?: string) {
       v-if="items.bold"
       :pressed="items.bold.isActive"
       :disabled="!items.bold.canExec"
-      :on-click="items.bold.command"
       tooltip="Bold"
+      @click="items.bold.command"
     >
       <div class="CSS_ICON_BOLD"></div>
     </Button>
@@ -114,8 +114,8 @@ function handleLinkUpdate(href?: string) {
       v-if="items.italic"
       :pressed="items.italic.isActive"
       :disabled="!items.italic.canExec"
-      :on-click="items.italic.command"
       tooltip="Italic"
+      @click="items.italic.command"
     >
       <div class="CSS_ICON_ITALIC"></div>
     </Button>
@@ -123,8 +123,8 @@ function handleLinkUpdate(href?: string) {
       v-if="items.underline"
       :pressed="items.underline.isActive"
       :disabled="!items.underline.canExec"
-      :on-click="items.underline.command"
       tooltip="Underline"
+      @click="items.underline.command"
     >
       <div class="CSS_ICON_UNDERLINE"></div>
     </Button>
@@ -132,8 +132,8 @@ function handleLinkUpdate(href?: string) {
       v-if="items.strike"
       :pressed="items.strike.isActive"
       :disabled="!items.strike.canExec"
-      :on-click="items.strike.command"
       tooltip="Strikethrough"
+      @click="items.strike.command"
     >
       <div class="CSS_ICON_STRIKETHROUGH"></div>
     </Button>
@@ -141,19 +141,19 @@ function handleLinkUpdate(href?: string) {
       v-if="items.code"
       :pressed="items.code.isActive"
       :disabled="!items.code.canExec"
-      :on-click="items.code.command"
       tooltip="Code"
+      @click="items.code.command"
     >
       <div class="CSS_ICON_CODE"></div>
     </Button>
     <Button
       v-if="items.link?.canExec && items.link"
       :pressed="items.link.isActive"
-      :on-click="() => {
+      tooltip="Link"
+      @click="() => {
         items.link!.command()
         toggleLinkMenuOpen()
       }"
-      tooltip="Link"
     >
       <div class="CSS_ICON_LINK"></div>
     </Button>

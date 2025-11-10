@@ -8,9 +8,8 @@ import {
 } from 'prosekit/vue/resizable'
 import {
   computed,
-  onUnmounted,
   ref,
-  watch,
+  watchEffect,
 } from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
@@ -23,8 +22,8 @@ const aspectRatio = ref<number | undefined>()
 const error = ref<string | undefined>()
 const progress = ref(0)
 
-watch(uploading, (isUploading) => {
-  if (!isUploading) return
+watchEffect((onCleanup) => {
+  if (!uploading.value) return
 
   const uploadTask = UploadTask.get<string>(url.value)
   if (!uploadTask) return
@@ -40,11 +39,11 @@ watch(uploading, (isUploading) => {
     progress.value = total ? loaded / total : 0
   })
 
-  onUnmounted(() => {
+  onCleanup(() => {
     canceled = true
     unsubscribeProgress()
   })
-}, { immediate: true })
+})
 
 function handleImageLoad(event: Event) {
   const img = event.target as HTMLImageElement

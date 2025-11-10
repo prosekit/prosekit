@@ -17,17 +17,20 @@ import {
 } from 'prosekit/preact'
 
 export default function Editor() {
-  const [defaultContent, setDefaultContent] = useState<NodeJSON | undefined>()
+  // A list of saved documents, stored as JSON strings
   const [records, setRecords] = useState<string[]>([])
+  // Whether there are unsaved changes
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
+  // A key to force a re-render of the editor
   const [key, setKey] = useState(1)
 
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({ extension, defaultContent })
-  }, [defaultContent])
+    return createEditor({ extension })
+  }, [])
 
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
+  useDocChange(handleDocChange, { editor })
 
   const handleSave = useCallback(() => {
     const record = JSON.stringify(editor.getDocJSON())
@@ -36,12 +39,10 @@ export default function Editor() {
   }, [editor])
 
   const handleLoad = useCallback((record: string) => {
-    setDefaultContent(JSON.parse(record) as NodeJSON)
+    editor.setContent(JSON.parse(record) as NodeJSON)
     setHasUnsavedChange(false)
     setKey((prev) => prev + 1)
   }, [])
-
-  useDocChange(handleDocChange, { editor })
 
   return (
     <div className="CSS_EDITOR_VIEWPORT">

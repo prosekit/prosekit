@@ -16,7 +16,7 @@ Avoid destructuring component props across all frameworks. Destructuring breaks 
 
 ```tsx
 function Foo(props: FooProps) {
-  return <div>{props.foo}</div>
+  return <div>{props.foo}</div>;
 }
 ```
 
@@ -24,7 +24,7 @@ function Foo(props: FooProps) {
 
 ```tsx
 function Foo({ foo }: FooProps) {
-  return <div>{foo}</div>
+  return <div>{foo}</div>;
 }
 ```
 
@@ -33,8 +33,54 @@ function Foo({ foo }: FooProps) {
 To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content using the following format:
 
 ```ts
-import type { NodeJSON } from 'prosekit/core'
+import type { NodeJSON } from "prosekit/core";
 
-export const defaultContent: NodeJSON = { /* ... */ }
+export const defaultContent: NodeJSON = {
+  /* ... */
+};
 ```
 
+### Vue-Specific Guidelines
+
+#### Event Handlers
+
+Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue templates.
+
+**Good:**
+
+```
+<Component @query-change="handleQueryChange" />
+```
+
+**Bad:**
+
+```
+<Component :on-query-change="handleQueryChange" />
+```
+
+#### Side Effects with Cleanup
+
+Prefer `watchEffect` over `watch` to track reactive dependencies automatically.
+
+**Good:**
+
+```ts
+watchEffect((onCleanup) => {
+  const value = valueRef.value;
+  // do something with value
+  onCleanup(() => {
+    // cleanup logic
+  });
+});
+```
+
+**Bad:**
+
+```ts
+watch([valueRef], (newValue, oldValue, onCleanup) => {
+  // do something with newValue
+  onCleanup(() => {
+    // cleanup logic
+  });
+});
+```

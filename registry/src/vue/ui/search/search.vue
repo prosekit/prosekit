@@ -83,7 +83,7 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
 
 <template>
   <div class="CSS_SEARCH">
-    <Button tooltip="Toggle Replace" :on-click="toggleReplace">
+    <Button tooltip="Toggle Replace" @click="toggleReplace">
       <span
         :data-rotate="showReplace ? '' : undefined"
         class="CSS_ICON_CHEVRON_RIGHT CSS_TOGGLE_ROTATE"
@@ -99,17 +99,17 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
     <div class="CSS_SEARCH_CONTROLLER">
       <Button
         tooltip="Previous (Shift Enter)"
-        :on-click="editor.commands.findPrev"
+        @click="editor.commands.findPrev"
       >
         <span class="CSS_ICON_ARROW_LEFT" />
       </Button>
       <Button
         tooltip="Next (Enter)"
-        :on-click="editor.commands.findNext"
+        @click="editor.commands.findNext"
       >
         <span class="CSS_ICON_ARROW_RIGHT" />
       </Button>
-      <Button tooltip="Close" :on-click="props.onClose">
+      <Button tooltip="Close" @click="props.onClose">
         <span class="CSS_ICON_CLOSE" />
       </Button>
     </div>
@@ -124,13 +124,13 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
       <div class="CSS_SEARCH_CONTROLLER">
         <Button
           tooltip="Replace (Enter)"
-          :on-click="editor.commands.replaceNext"
+          @click="editor.commands.replaceNext"
         >
           Replace
         </Button>
         <Button
           tooltip="Replace All (Shift Enter)"
-          :on-click="editor.commands.replaceAll"
+          @click="editor.commands.replaceAll"
         >
           All
         </Button>

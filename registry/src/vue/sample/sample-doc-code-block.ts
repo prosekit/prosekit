@@ -1,8 +1,32 @@
 import type { NodeJSON } from 'prosekit/core'
 
-const js = `async function start() {\n  while (true) {\n    await sleep();\n    await eat();\n    await code('JavaScript!');\n  }\n}`
-const py = `async def start():\n    while True:\n        await sleep()\n        await eat()\n        await code("Python!")`
-const go = `func start() {\n\tfor {\n\t\tsleep()\n\t\teat()\n\t\tcode("Go!")\n\t}\n}`
+const js = `
+async function start() {
+  while (true) {
+    await sleep()
+    await eat()
+    await code('JavaScript!')
+  }
+}
+`.trim()
+
+const py = `
+async def start():
+    while True:
+        await sleep()
+        await eat()
+        await code('Python!')
+`.trim()
+
+const go = `
+func start() {
+	for {
+		sleep()
+		eat()
+		code('Go!')
+	}
+}
+`.trim()
 
 export const defaultContent: NodeJSON = {
   type: 'doc',

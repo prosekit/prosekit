@@ -65,7 +65,7 @@
 - name: strike
   frameworks: [react, vue, preact, svelte]
 - name: table
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: text-align
   frameworks: [react, vue, preact]
 - name: text-color

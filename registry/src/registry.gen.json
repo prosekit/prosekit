@@ -12111,6 +12111,53 @@
       }
     },
     {
+      "name": "svelte-example-table",
+      "title": "svelte-example-table",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/svelte-ui-table-handle.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/table/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/table/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/table/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "table",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/table/editor.svelte",
+          "registry/src/svelte/examples/table/extension.ts",
+          "registry/src/svelte/examples/table/index.ts",
+          "registry/src/svelte/sample/sample-doc-table.ts",
+          "registry/src/svelte/ui/table-handle/index.ts",
+          "registry/src/svelte/ui/table-handle/table-handle.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-table",
+          "svelte-ui-table-handle"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12600,6 +12647,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-strike.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-table",
+      "title": "svelte-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-table.ts"
         ],
         "internalDependencies": []
       }

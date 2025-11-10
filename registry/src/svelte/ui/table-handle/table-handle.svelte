@@ -98,7 +98,7 @@ const state = useEditorDerivedValue(getTableHandleState)
       {#if $state.deleteTable.canExec}
         <TableHandlePopoverItem
           class="CSS_TABLE_CELL_MENU_ITEM"
-          data-danger
+          data-danger=""
           onSelect={$state.deleteTable.command}
         >
           <span>Delete Table</span>
@@ -147,7 +147,7 @@ const state = useEditorDerivedValue(getTableHandleState)
       {#if $state.deleteTable.canExec}
         <TableHandlePopoverItem
           class="CSS_TABLE_CELL_MENU_ITEM"
-          data-danger
+          data-danger=""
           onSelect={$state.deleteTable.command}
         >
           <span>Delete Table</span>

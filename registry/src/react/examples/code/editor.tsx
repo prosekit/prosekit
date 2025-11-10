@@ -5,14 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-code'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
-
-const defaultContent = `
-  <p><code>This is code</code></p>
-  <p><span>This is normal text</span></p>
-`
 
 export default function Editor() {
   const editor = useMemo(() => {

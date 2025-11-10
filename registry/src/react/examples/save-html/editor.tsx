@@ -17,8 +17,10 @@ import {
   useState,
 } from 'react'
 
+import { defaultContent as sampleDefaultContent } from '../../sample/sample-doc-save-html'
+
 export default function Editor() {
-  const [defaultContent, setDefaultContent] = useState<NodeJSON | undefined>()
+  const [defaultContent, setDefaultContent] = useState<NodeJSON>(sampleDefaultContent)
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
   const [key, setKey] = useState(1)

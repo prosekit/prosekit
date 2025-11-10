@@ -5,6 +5,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-word-counter'
 import { WordCounter } from '../../ui/word-counter'
 
 import { defineExtension } from './extension'
@@ -14,7 +15,7 @@ export default function Editor() {
     const extension = defineExtension()
     return createEditor({
       extension,
-      defaultContent: 'Start typing and observe the word count update below.',
+      defaultContent,
     })
   }, [])
 

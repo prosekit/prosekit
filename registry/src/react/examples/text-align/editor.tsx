@@ -5,13 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-text-align'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
-
-const defaultContent = '<h1 style="text-align:center;">Heading</h1>'
-  + '<p style="text-align:left;">First paragraph</p>'
-  + '<p style="text-align:center;">Second paragraph</p>'
-  + '<p style="text-align:right;">Third paragraph</p>'
 
 export default function Editor() {
   const editor = useMemo(() => {

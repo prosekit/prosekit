@@ -5,14 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-underline'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
-
-const defaultContent = `
-  <p><u>This is underline</u></p>
-  <p><span>This is normal text</span></p>
-`
 
 export default function Editor() {
   const editor = useMemo(() => {

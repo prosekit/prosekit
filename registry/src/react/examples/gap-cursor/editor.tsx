@@ -5,6 +5,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-gap-cursor'
+
 import { defineExtension } from './extension'
 
 export default function Editor() {
@@ -22,9 +24,3 @@ export default function Editor() {
     </ProseKit>
   )
 }
-
-const defaultContent = `
-<p>Click the gap between two images or press arrow keys to see the gap cursor between two images</p>
-<img src="https://static.photos/minimal/320x180/42" />
-<img src="https://static.photos/minimal/320x180/42" />
-`

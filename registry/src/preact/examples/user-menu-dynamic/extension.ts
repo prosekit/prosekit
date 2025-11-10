@@ -7,7 +7,7 @@ export function defineExtension() {
   return union(
     defineBasicExtension(),
     definePlaceholder({
-      placeholder: 'Type @ to metion someone...',
+      placeholder: 'Type @ to mention someone...',
     }),
     defineMention(),
   )

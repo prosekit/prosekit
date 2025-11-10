@@ -11854,6 +11854,38 @@
       }
     },
     {
+      "name": "svelte-example-save-html",
+      "title": "svelte-example-save-html",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/save-html/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/save-html/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-html",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/save-html/editor.svelte",
+          "registry/src/svelte/examples/save-html/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

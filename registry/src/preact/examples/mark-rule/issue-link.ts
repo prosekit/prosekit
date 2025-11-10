@@ -28,7 +28,7 @@ export function defineIssueLink() {
       regex: /#(\d+)/g,
       type: 'issueLink',
       attrs: (match) => {
-        return { issueNumber: Number.parseInt(match[1]) }
+        return { issueNumber: Number.parseInt(match[1] || '0') }
       },
     }),
   )

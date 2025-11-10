@@ -43,7 +43,7 @@
 - name: list-custom-checkbox
   frameworks: [react, vue, preact, svelte]
 - name: loro
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: mark-rule
   frameworks: [react, vue, preact]
 - name: minimal

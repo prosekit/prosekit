@@ -11629,6 +11629,63 @@
       }
     },
     {
+      "name": "svelte-example-loro",
+      "title": "svelte-example-loro",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "loro-crdt",
+        "loro-prosemirror",
+        "prosekit",
+        "svelte"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/loro/editor-component.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor-component.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/loro/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/loro/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/loro/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "loro",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/loro/editor-component.svelte",
+          "registry/src/svelte/examples/loro/editor.svelte",
+          "registry/src/svelte/examples/loro/extension.ts",
+          "registry/src/svelte/examples/loro/index.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",

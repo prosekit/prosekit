@@ -123,6 +123,7 @@
     "./svelte/examples/link-mark-view": "./src/svelte/examples/link-mark-view/index.ts",
     "./svelte/examples/list": "./src/svelte/examples/list/index.ts",
     "./svelte/examples/list-custom-checkbox": "./src/svelte/examples/list-custom-checkbox/index.ts",
+    "./svelte/examples/loro": "./src/svelte/examples/loro/index.ts",
     "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",

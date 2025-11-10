@@ -53,11 +53,11 @@
 - name: readonly
   frameworks: [react, vue, preact]
 - name: save-html
-  frameworks: [react, vue, preact]
+  frameworks: [react, preact]
 - name: save-json
-  frameworks: [react, vue, preact]
+  frameworks: [react, preact]
 - name: save-markdown
-  frameworks: [react, vue, preact]
+  frameworks: [react, preact]
 - name: search
   frameworks: [react, vue, preact]
 - name: slash-menu

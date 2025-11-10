@@ -127,6 +127,7 @@
     "./svelte/examples/mark-rule": "./src/svelte/examples/mark-rule/index.ts",
     "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/examples/placeholder": "./src/svelte/examples/placeholder/index.ts",
+    "./svelte/examples/readonly": "./src/svelte/examples/readonly/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",

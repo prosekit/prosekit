@@ -27,4 +27,5 @@ export const loaders = {
   'mark-rule': () => import('./examples/mark-rule').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
   'placeholder': () => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor })),
+  'readonly': () => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor })),
 }

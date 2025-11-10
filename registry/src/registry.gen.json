@@ -11800,6 +11800,60 @@
       }
     },
     {
+      "name": "svelte-example-readonly",
+      "title": "svelte-example-readonly",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-readonly.json",
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "svelte"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/readonly/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/readonly/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/readonly/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/readonly/toolbar.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/toolbar.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "readonly",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/readonly/editor.svelte",
+          "registry/src/svelte/examples/readonly/extension.ts",
+          "registry/src/svelte/examples/readonly/index.ts",
+          "registry/src/svelte/examples/readonly/toolbar.svelte",
+          "registry/src/svelte/sample/sample-doc-readonly.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-readonly",
+          "svelte-ui-button"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12211,6 +12265,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-readonly",
+      "title": "svelte-sample-sample-doc-readonly",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-readonly.ts"
         ],
         "internalDependencies": []
       }

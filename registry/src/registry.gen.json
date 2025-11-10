@@ -11572,6 +11572,63 @@
       }
     },
     {
+      "name": "svelte-example-list-custom-checkbox",
+      "title": "svelte-example-list-custom-checkbox",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-list-custom-checkbox.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/list-custom-checkbox/custom-list.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/custom-list.css"
+        },
+        {
+          "path": "registry/src/svelte/examples/list-custom-checkbox/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/list-custom-checkbox/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/list-custom-checkbox/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "list-custom-checkbox",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/list-custom-checkbox/custom-list.css",
+          "registry/src/svelte/examples/list-custom-checkbox/editor.svelte",
+          "registry/src/svelte/examples/list-custom-checkbox/extension.ts",
+          "registry/src/svelte/examples/list-custom-checkbox/index.ts",
+          "registry/src/svelte/sample/sample-doc-list-custom-checkbox.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-list-custom-checkbox",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
@@ -11989,6 +12046,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-list.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-list-custom-checkbox",
+      "title": "svelte-sample-sample-doc-list-custom-checkbox",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-list-custom-checkbox.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list-custom-checkbox.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-list-custom-checkbox.ts"
         ],
         "internalDependencies": []
       }

@@ -43,4 +43,5 @@ export const loaders = {
   'unmount': () => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor })),
   'user-menu': () => import('./examples/user-menu').then((m) => ({ default: m.ExampleEditor })),
   'user-menu-dynamic': () => import('./examples/user-menu-dynamic').then((m) => ({ default: m.ExampleEditor })),
+  'word-counter': () => import('./examples/word-counter').then((m) => ({ default: m.ExampleEditor })),
 }

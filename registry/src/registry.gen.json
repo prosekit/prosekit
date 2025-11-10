@@ -12569,6 +12569,53 @@
       }
     },
     {
+      "name": "svelte-example-word-counter",
+      "title": "svelte-example-word-counter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-word-counter.json",
+        "https://prosekit.dev/r/svelte-ui-word-counter.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/word-counter/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/word-counter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "word-counter",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/word-counter/editor.svelte",
+          "registry/src/svelte/examples/word-counter/extension.ts",
+          "registry/src/svelte/examples/word-counter/index.ts",
+          "registry/src/svelte/sample/sample-doc-word-counter.ts",
+          "registry/src/svelte/ui/word-counter/index.ts",
+          "registry/src/svelte/ui/word-counter/word-counter.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-word-counter",
+          "svelte-ui-word-counter"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -13193,6 +13240,32 @@
       }
     },
     {
+      "name": "svelte-sample-sample-doc-word-counter",
+      "title": "svelte-sample-sample-doc-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-word-counter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-word-counter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-word-counter.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-uploader",
       "title": "svelte-sample-sample-uploader",
       "type": "registry:component",
@@ -13750,6 +13823,38 @@
         "accumulatedFiles": [
           "registry/src/svelte/ui/user-menu/index.ts",
           "registry/src/svelte/ui/user-menu/user-menu.svelte"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-ui-word-counter",
+      "title": "svelte-ui-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/ui/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/ui/word-counter/word-counter.svelte",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/word-counter.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/ui/word-counter/index.ts",
+          "registry/src/svelte/ui/word-counter/word-counter.svelte"
         ],
         "internalDependencies": []
       }

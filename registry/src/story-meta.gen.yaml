@@ -83,6 +83,6 @@
 - name: user-menu-dynamic
   frameworks: [react, vue, preact, svelte]
 - name: word-counter
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: yjs
   frameworks: [react, vue, preact]

@@ -35,19 +35,13 @@ The `union` function should be called with individual arguments, not an array.
 **Correct:**
 
 ```ts
-return union(
-  defineBasicExtension(),
-  defineCodeBlockView(),
-)
+return union(defineBasicExtension(), defineCodeBlockView());
 ```
 
 **Incorrect:**
 
 ```ts
-return union([
-  defineBasicExtension(),
-  defineCodeBlockView(),
-])
+return union([defineBasicExtension(), defineCodeBlockView()]);
 ```
 
 ### Default Content Location
@@ -107,7 +101,6 @@ watch([valueRef], (newValue, oldValue, onCleanup) => {
 });
 ```
 
-
 ## Svelte-Specific Guidelines
 
 ### Syntax
@@ -139,4 +132,28 @@ Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead o
 </script>
 
 <div>{name} {doubled}</div>
+```
+
+## Solid-Specific Guidelines
+
+### Use `attr:` for data attributes
+
+Use `attr:` for data attributes
+
+**Good:**
+
+```tsx
+<SolidComponent
+  attr:data-testid="test-id"
+  attr:data-selected={selected ? "" : undefined}
+/>
+```
+
+**Bad:**
+
+```tsx
+<SolidComponent
+  data-testid="test-id"
+  data-selected={selected ? "" : undefined}
+/>
 ```

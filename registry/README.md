@@ -30,4 +30,11 @@ function Foo({ foo }: FooProps) {
 
 ### Default Content Location
 
-To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content as `defaultContent`.
+To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content using the following format:
+
+```ts
+import type { NodeJSON } from 'prosekit/core'
+
+export const defaultContent: NodeJSON = { /* ... */ }
+```
+

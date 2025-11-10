@@ -10,7 +10,6 @@ import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
   jsonFromHTML,
-  type NodeJSON,
 } from 'prosekit/core'
 import {
   ProseKit,

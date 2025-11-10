@@ -4937,6 +4937,39 @@
       }
     },
     {
+      "name": "vue-example-save-json",
+      "title": "vue-example-save-json",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/save-json/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/save-json/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-json",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/save-json/editor.vue",
+          "registry/src/vue/examples/save-json/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-example-search",
       "title": "vue-example-search",
       "type": "registry:block",

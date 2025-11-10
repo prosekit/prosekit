@@ -55,7 +55,7 @@
 - name: save-html
   frameworks: [react, preact]
 - name: save-json
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: save-markdown
   frameworks: [react, preact]
 - name: search

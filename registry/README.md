@@ -99,10 +99,12 @@ Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead o
   interface Props {
     name: string;
   }
-  const { name }: Props = $props();
+  const props: Props = $props();
   let count = $state(0);
   let doubled = $derived(count * 2);
 </script>
+
+<div>{props.name} {doubled}</div>
 ```
 
 **Bad:**
@@ -113,4 +115,6 @@ Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead o
   let count = 0;
   $: doubled = count * 2;
 </script>
+
+<div>{name} {doubled}</div>
 ```

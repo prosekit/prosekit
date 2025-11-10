@@ -46,3 +46,4 @@ export const Unmount = { args: { story: 'unmount' } }
 export const UserMenu = { args: { story: 'user-menu' } }
 export const UserMenuDynamic = { args: { story: 'user-menu-dynamic' } }
 export const WordCounter = { args: { story: 'word-counter' } }
+export const Yjs = { args: { story: 'yjs' } }

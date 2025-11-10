@@ -12616,6 +12616,64 @@
       }
     },
     {
+      "name": "svelte-example-yjs",
+      "title": "svelte-example-yjs",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "svelte",
+        "y-protocols",
+        "y-websocket",
+        "yjs"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/yjs/editor-component.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor-component.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/yjs/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/yjs/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/yjs/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "yjs",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/yjs/editor-component.svelte",
+          "registry/src/svelte/examples/yjs/editor.svelte",
+          "registry/src/svelte/examples/yjs/extension.ts",
+          "registry/src/svelte/examples/yjs/index.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

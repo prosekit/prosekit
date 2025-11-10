@@ -144,6 +144,7 @@
     "./svelte/examples/user-menu": "./src/svelte/examples/user-menu/index.ts",
     "./svelte/examples/user-menu-dynamic": "./src/svelte/examples/user-menu-dynamic/index.ts",
     "./svelte/examples/word-counter": "./src/svelte/examples/word-counter/index.ts",
+    "./svelte/examples/yjs": "./src/svelte/examples/yjs/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",

@@ -16,7 +16,7 @@ Avoid destructuring component props across all frameworks. Destructuring breaks 
 
 ```tsx
 function Foo(props: FooProps) {
-  return <div>{props.foo}</div>
+  return <div>{props.foo}</div>;
 }
 ```
 
@@ -24,7 +24,7 @@ function Foo(props: FooProps) {
 
 ```tsx
 function Foo({ foo }: FooProps) {
-  return <div>{foo}</div>
+  return <div>{foo}</div>;
 }
 ```
 
@@ -33,9 +33,11 @@ function Foo({ foo }: FooProps) {
 To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content using the following format:
 
 ```ts
-import type { NodeJSON } from 'prosekit/core'
+import type { NodeJSON } from "prosekit/core";
 
-export const defaultContent: NodeJSON = { /* ... */ }
+export const defaultContent: NodeJSON = {
+  /* ... */
+};
 ```
 
 ### Vue-Specific Guidelines
@@ -44,51 +46,41 @@ export const defaultContent: NodeJSON = { /* ... */ }
 
 Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue templates.
 
-**Correct:**
+**Good:**
 
-```vue
-<Component
-  @query-change="handleQueryChange"
-  @open-change="handleOpenChange"
-/>
+```
+<Component @query-change="handleQueryChange" />
 ```
 
-**Incorrect:**
+**Bad:**
 
-```vue
-<Component
-  :on-query-change="handleQueryChange"
-  :on-open-change="handleOpenChange"
-/>
+```
+<Component :on-query-change="handleQueryChange" />
 ```
 
 #### Side Effects with Cleanup
 
-Prefer `watchEffect` with cleanup over `watch` when dealing with side effects that require cleanup (like timers or subscriptions).
+Prefer `watchEffect` over `watch` to track reactive dependencies automatically.
 
-**Correct:**
+**Good:**
 
 ```ts
 watchEffect((onCleanup) => {
-  const id = setTimeout(() => {
-    // do something
-  }, 500)
-
+  const value = valueRef.value;
+  // do something with value
   onCleanup(() => {
-    clearTimeout(id)
-  })
-})
+    // cleanup logic
+  });
+});
 ```
 
-**Incorrect:**
+**Bad:**
 
 ```ts
-watch([dependency], () => {
-  const id = setTimeout(() => {
-    // do something
-  }, 500)
-
-  // No cleanup mechanism
-})
+watch([valueRef], (newValue, oldValue, onCleanup) => {
+  // do something with newValue
+  onCleanup(() => {
+    // cleanup logic
+  });
+});
 ```
-

@@ -31,6 +31,7 @@ export const loaders = {
   'readonly': defineAsyncComponent(() => import('./examples/readonly').then((m) => m.ExampleEditor)),
   'save-html': defineAsyncComponent(() => import('./examples/save-html').then((m) => m.ExampleEditor)),
   'save-json': defineAsyncComponent(() => import('./examples/save-json').then((m) => m.ExampleEditor)),
+  'save-markdown': defineAsyncComponent(() => import('./examples/save-markdown').then((m) => m.ExampleEditor)),
   'search': defineAsyncComponent(() => import('./examples/search').then((m) => m.ExampleEditor)),
   'slash-menu': defineAsyncComponent(() => import('./examples/slash-menu').then((m) => m.ExampleEditor)),
   'strike': defineAsyncComponent(() => import('./examples/strike').then((m) => m.ExampleEditor)),

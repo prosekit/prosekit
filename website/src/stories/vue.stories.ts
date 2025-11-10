@@ -32,6 +32,7 @@ export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const SaveHtml = { args: { story: 'save-html' } }
 export const SaveJson = { args: { story: 'save-json' } }
+export const SaveMarkdown = { args: { story: 'save-markdown' } }
 export const Search = { args: { story: 'search' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
 export const Strike = { args: { story: 'strike' } }

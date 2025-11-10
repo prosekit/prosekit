@@ -134,6 +134,7 @@
     "./vue/examples/readonly": "./src/vue/examples/readonly/index.ts",
     "./vue/examples/save-html": "./src/vue/examples/save-html/index.ts",
     "./vue/examples/save-json": "./src/vue/examples/save-json/index.ts",
+    "./vue/examples/save-markdown": "./src/vue/examples/save-markdown/index.ts",
     "./vue/examples/search": "./src/vue/examples/search/index.ts",
     "./vue/examples/slash-menu": "./src/vue/examples/slash-menu/index.ts",
     "./vue/examples/strike": "./src/vue/examples/strike/index.ts",

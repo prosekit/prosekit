@@ -10,27 +10,27 @@ import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
   jsonFromHTML,
-  type NodeJSON,
 } from 'prosekit/core'
 import {
   ProseKit,
   useDocChange,
 } from 'prosekit/preact'
 
-import { defaultContent as sampleDefaultContent } from '../../sample/sample-doc-save-html'
-
 export default function Editor() {
-  const [defaultContent, setDefaultContent] = useState<NodeJSON>(sampleDefaultContent)
+  // A list of saved documents, stored as HTML strings
   const [records, setRecords] = useState<string[]>([])
+  // Whether there are unsaved changes
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
+  // A key to force a re-render of the editor
   const [key, setKey] = useState(1)
 
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({ extension, defaultContent })
-  }, [defaultContent])
+    return createEditor({ extension })
+  }, [])
 
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
+  useDocChange(handleDocChange, { editor })
 
   const handleSave = useCallback(() => {
     const record = editor.getDocHTML()
@@ -40,14 +40,12 @@ export default function Editor() {
 
   const handleLoad = useCallback(
     (record: string) => {
-      setDefaultContent(jsonFromHTML(record, { schema: editor.schema }))
+      editor.setContent(jsonFromHTML(record, { schema: editor.schema }))
       setHasUnsavedChange(false)
       setKey((prev) => prev + 1)
     },
     [editor.schema],
   )
-
-  useDocChange(handleDocChange, { editor })
 
   return (
     <div className="CSS_EDITOR_VIEWPORT">

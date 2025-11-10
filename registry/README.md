@@ -2,7 +2,7 @@
 
 The registry contains framework examples and shared UI components. Source files are organized in `registry/src`, with dedicated directories for each supported framework: `react`, `vue`, `svelte`, `solid`, and `preact`.
 
-## Implementation Guidelines
+## Common Guidelines
 
 ### Same DOM Across Frameworks
 
@@ -40,9 +40,9 @@ export const defaultContent: NodeJSON = {
 };
 ```
 
-### Vue-Specific Guidelines
+## Vue-Specific Guidelines
 
-#### Event Handlers
+### Event Handlers
 
 Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue templates.
 
@@ -58,7 +58,7 @@ Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue t
 <Component :on-query-change="handleQueryChange" />
 ```
 
-#### Side Effects with Cleanup
+### Side Effects with Cleanup
 
 Prefer `watchEffect` over `watch` to track reactive dependencies automatically.
 

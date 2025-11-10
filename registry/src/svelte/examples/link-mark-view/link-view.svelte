@@ -44,5 +44,4 @@ function bindContentRef(element: HTMLAnchorElement) {
 }
 </script>
 
-<a use:bindContentRef {href} style:color={color} style:transition="color 1s ease-in-out">
-</a>
+<a use:bindContentRef {href} style:color={color} style:transition="color 1s ease-in-out"> </a>

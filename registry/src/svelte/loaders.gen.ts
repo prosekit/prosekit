@@ -12,6 +12,7 @@ export const loaders = {
   'emoji-rules': () => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor })),
   'full': () => import('./examples/full').then((m) => ({ default: m.ExampleEditor })),
   'gap-cursor': () => import('./examples/gap-cursor').then((m) => ({ default: m.ExampleEditor })),
+  'hard-break': () => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor })),
   'heading': () => import('./examples/heading').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

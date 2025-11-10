@@ -11069,6 +11069,59 @@
       }
     },
     {
+      "name": "svelte-example-hard-break",
+      "title": "svelte-example-hard-break",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-hard-break.json",
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/hard-break/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/hard-break/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/hard-break/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/hard-break/toolbar.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/toolbar.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "hard-break",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/hard-break/editor.svelte",
+          "registry/src/svelte/examples/hard-break/extension.ts",
+          "registry/src/svelte/examples/hard-break/index.ts",
+          "registry/src/svelte/examples/hard-break/toolbar.svelte",
+          "registry/src/svelte/sample/sample-doc-hard-break.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-hard-break",
+          "svelte-ui-button"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-heading",
       "title": "svelte-example-heading",
       "type": "registry:block",
@@ -11329,6 +11382,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-hard-break",
+      "title": "svelte-sample-sample-doc-hard-break",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-hard-break.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-hard-break.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-hard-break.ts"
         ],
         "internalDependencies": []
       }

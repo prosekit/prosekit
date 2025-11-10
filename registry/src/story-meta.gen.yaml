@@ -1,88 +1,88 @@
 - name: block-handle
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: blockquote
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: bold
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: change-tracking
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: code
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: code-block
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: code-block-themes
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: drop-cursor
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: emoji-rules
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: full
   frameworks: [react, vue, preact, svelte, solid]
 - name: gap-cursor
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: hard-break
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: heading
-  frameworks: [react, vue, preact, solid]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: horizontal-rule
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: image-view
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: inline-menu
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: italic
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: keymap
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: link
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: link-mark-view
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: list
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: list-custom-checkbox
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: loro
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: mark-rule
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]
 - name: placeholder
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: readonly
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: save-html
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: save-json
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: save-markdown
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: search
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: slash-menu
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: strike
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: table
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: text-align
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: text-color
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: toolbar
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: typography
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: underline
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: unmount
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: user-menu
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: user-menu-dynamic
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: word-counter
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: yjs
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]

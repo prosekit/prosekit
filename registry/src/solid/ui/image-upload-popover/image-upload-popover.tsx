@@ -8,6 +8,7 @@ import {
 } from 'prosekit/solid/popover'
 import {
   createSignal,
+  createUniqueId,
   Show,
   type JSX,
 } from 'solid-js'
@@ -23,6 +24,7 @@ export default function ImageUploadPopover(props: {
   const [open, setOpen] = createSignal(false)
   const [url, setUrl] = createSignal('')
   const [file, setFile] = createSignal<File | null>(null)
+  const ariaId = createUniqueId()
 
   const editor = useEditor<ImageExtension>()
 
@@ -84,8 +86,9 @@ export default function ImageUploadPopover(props: {
 
       <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
         <Show when={!file()}>
-          <label>Embed Link</label>
+          <label for={`id-link-${ariaId}`}>Embed Link</label>
           <input
+            id={`id-link-${ariaId}`}
             class="CSS_IMAGE_UPLOAD_INPUT"
             placeholder="Paste the image link..."
             type="url"
@@ -95,8 +98,9 @@ export default function ImageUploadPopover(props: {
         </Show>
 
         <Show when={!url()}>
-          <label>Upload</label>
+          <label for={`id-upload-${ariaId}`}>Upload</label>
           <input
+            id={`id-upload-${ariaId}`}
             class="CSS_IMAGE_UPLOAD_INPUT"
             accept="image/*"
             type="file"

@@ -33,8 +33,9 @@ export default function Editor() {
   const handleRestore = useCallback(
     (id: string) => {
       const index = commits.findIndex((commit) => commit.id === id)
-      if (index === -1) return
-      const doc = commits[index].commit.doc
+      const commit = commits[index]
+      if (index === -1 || !commit) return
+      const doc = commit.commit.doc
       setDefaultContent(doc)
       setCommits((commits) => commits.slice(index))
       setKey((key) => key + 1)

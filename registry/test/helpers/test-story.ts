@@ -190,11 +190,13 @@ async function getStableHTML(
   removeSelectValueAttributes(clone)
 
   let html = formatHTML(clone.innerHTML)
-  // Replace random ids
+  // Replace "id" attributes
   html = html.replaceAll(/ id="[\w-]+"/g, ' id="SOME_ID"')
-  // Replace random value attributes
+  // Replace "for" attributes in <label> elements
+  html = html.replaceAll(/ for="[\w-]+"/g, ' for="SOME_ID"')
+  // Replace "value" attributes
   html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
-  // Replace styles with display: none
+  // Remove unused styles for hidden elements
   html = html.replaceAll(/style="[^"]*display: none[^"]*"/g, 'style="display: none"')
 
   return html

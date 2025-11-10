@@ -22,6 +22,7 @@ const props: Props = $props()
 let open = $state(false)
 let url = $state('')
 let file = $state<File | null>(null)
+const ariaId = $props.id()
 
 const editor = useEditor<ImageExtension>()
 
@@ -83,8 +84,9 @@ function handleOpenChange(isOpen: boolean) {
 
   <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
     {#if !file}
-      <label>Embed Link</label>
+      <label for="id-link-{ariaId}">Embed Link</label>
       <input
+        id="id-link-{ariaId}"
         class="CSS_IMAGE_UPLOAD_INPUT"
         placeholder="Paste the image link..."
         type="url"
@@ -94,8 +96,9 @@ function handleOpenChange(isOpen: boolean) {
     {/if}
 
     {#if !url}
-      <label>Upload</label>
+      <label for="id-upload-{ariaId}">Upload</label>
       <input
+        id="id-upload-{ariaId}"
         class="CSS_IMAGE_UPLOAD_INPUT"
         accept="image/*"
         type="file"

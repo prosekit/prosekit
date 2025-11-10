@@ -2,7 +2,7 @@
 
 The registry contains framework examples and shared UI components. Source files are organized in `registry/src`, with dedicated directories for each supported framework: `react`, `vue`, `svelte`, `solid`, and `preact`.
 
-## Implementation Guidelines
+## Common Guidelines
 
 ### Same DOM Across Frameworks
 
@@ -28,6 +28,28 @@ function Foo({ foo }: FooProps) {
 }
 ```
 
+### Union Call Convention
+
+The `union` function should be called with individual arguments, not an array.
+
+**Correct:**
+
+```ts
+return union(
+  defineBasicExtension(),
+  defineCodeBlockView(),
+)
+```
+
+**Incorrect:**
+
+```ts
+return union([
+  defineBasicExtension(),
+  defineCodeBlockView(),
+])
+```
+
 ### Default Content Location
 
 To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content using the following format:
@@ -40,9 +62,9 @@ export const defaultContent: NodeJSON = {
 };
 ```
 
-### Vue-Specific Guidelines
+## Vue-Specific Guidelines
 
-#### Event Handlers
+### Event Handlers
 
 Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue templates.
 
@@ -58,7 +80,7 @@ Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue t
 <Component :on-query-change="handleQueryChange" />
 ```
 
-#### Side Effects with Cleanup
+### Side Effects with Cleanup
 
 Prefer `watchEffect` over `watch` to track reactive dependencies automatically.
 
@@ -83,4 +105,38 @@ watch([valueRef], (newValue, oldValue, onCleanup) => {
     // cleanup logic
   });
 });
+```
+
+
+## Svelte-Specific Guidelines
+
+### Syntax
+
+Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead of legacy syntax.
+
+**Good:**
+
+```svelte
+<script lang="ts">
+  interface Props {
+    name: string;
+  }
+  const props: Props = $props();
+  let count = $state(0);
+  let doubled = $derived(count * 2);
+</script>
+
+<div>{props.name} {doubled}</div>
+```
+
+**Bad:**
+
+```svelte
+<script lang="ts">
+  export let name = 'World';
+  let count = 0;
+  $: doubled = count * 2;
+</script>
+
+<div>{name} {doubled}</div>
 ```

@@ -10781,6 +10781,66 @@
       }
     },
     {
+      "name": "svelte-example-code-block-themes",
+      "title": "svelte-example-code-block-themes",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/svelte-ui-code-block-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "svelte"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/code-block-themes/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/code-block-themes/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/code-block-themes/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/code-block-themes/theme-selector.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/theme-selector.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/code-block-themes/toolbar.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/toolbar.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block-themes",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/code-block-themes/editor.svelte",
+          "registry/src/svelte/examples/code-block-themes/extension.ts",
+          "registry/src/svelte/examples/code-block-themes/index.ts",
+          "registry/src/svelte/examples/code-block-themes/theme-selector.svelte",
+          "registry/src/svelte/examples/code-block-themes/toolbar.svelte",
+          "registry/src/svelte/sample/sample-doc-code-block.ts",
+          "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+          "registry/src/svelte/ui/code-block-view/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-code-block",
+          "svelte-ui-code-block-view"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",

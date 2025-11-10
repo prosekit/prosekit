@@ -11,7 +11,7 @@
 - name: code-block
   frameworks: [react, vue, preact, svelte]
 - name: code-block-themes
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: drop-cursor
   frameworks: [react, vue, preact]
 - name: emoji-rules

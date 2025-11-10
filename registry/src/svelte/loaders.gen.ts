@@ -7,6 +7,7 @@ export const loaders = {
   'change-tracking': () => import('./examples/change-tracking').then((m) => ({ default: m.ExampleEditor })),
   'code': () => import('./examples/code').then((m) => ({ default: m.ExampleEditor })),
   'code-block': () => import('./examples/code-block').then((m) => ({ default: m.ExampleEditor })),
+  'code-block-themes': () => import('./examples/code-block-themes').then((m) => ({ default: m.ExampleEditor })),
   'full': () => import('./examples/full').then((m) => ({ default: m.ExampleEditor })),
   'heading': () => import('./examples/heading').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),

@@ -84,3 +84,33 @@ watch([valueRef], (newValue, oldValue, onCleanup) => {
   });
 });
 ```
+
+
+## Svelte-Specific Guidelines
+
+### Syntax
+
+Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead of legacy syntax.
+
+**Good:**
+
+```svelte
+<script lang="ts">
+  interface Props {
+    name: string;
+  }
+  const { name }: Props = $props();
+  let count = $state(0);
+  let doubled = $derived(count * 2);
+</script>
+```
+
+**Bad:**
+
+```svelte
+<script lang="ts">
+  export let name = 'World';
+  let count = 0;
+  $: doubled = count * 2;
+</script>
+```

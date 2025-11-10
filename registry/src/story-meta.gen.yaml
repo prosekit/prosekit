@@ -1,0 +1,88 @@
+- name: block-handle
+  frameworks: [react, vue, preact]
+- name: blockquote
+  frameworks: [react, vue, preact]
+- name: bold
+  frameworks: [react, vue, preact]
+- name: change-tracking
+  frameworks: [react, preact]
+- name: code
+  frameworks: [react, vue, preact]
+- name: code-block
+  frameworks: [react, vue, preact]
+- name: code-block-themes
+  frameworks: [react, vue, preact]
+- name: drop-cursor
+  frameworks: [react, vue, preact]
+- name: emoji-rules
+  frameworks: [react, vue, preact]
+- name: full
+  frameworks: [react, vue, preact, svelte, solid]
+- name: gap-cursor
+  frameworks: [react, vue, preact]
+- name: hard-break
+  frameworks: [react, vue, preact]
+- name: heading
+  frameworks: [react, vue, preact, solid]
+- name: horizontal-rule
+  frameworks: [react, vue, preact]
+- name: image-view
+  frameworks: [react, vue, preact]
+- name: inline-menu
+  frameworks: [react, vue, preact]
+- name: italic
+  frameworks: [react, vue, preact]
+- name: keymap
+  frameworks: [react, vue, preact]
+- name: link
+  frameworks: [react, vue, preact]
+- name: link-mark-view
+  frameworks: [react, preact]
+- name: list
+  frameworks: [react, vue, preact]
+- name: list-custom-checkbox
+  frameworks: [react, vue, preact]
+- name: loro
+  frameworks: [react, vue, preact]
+- name: mark-rule
+  frameworks: [react, preact]
+- name: minimal
+  frameworks: [react, vue, preact, svelte, solid]
+- name: placeholder
+  frameworks: [react, vue, preact]
+- name: readonly
+  frameworks: [react, preact]
+- name: save-html
+  frameworks: [react, preact]
+- name: save-json
+  frameworks: [react, preact]
+- name: save-markdown
+  frameworks: [react, preact]
+- name: search
+  frameworks: [react, vue, preact]
+- name: slash-menu
+  frameworks: [react, vue, preact]
+- name: strike
+  frameworks: [react, vue, preact]
+- name: table
+  frameworks: [react, vue, preact]
+- name: text-align
+  frameworks: [react, preact]
+- name: text-color
+  frameworks: [react, vue, preact]
+- name: toolbar
+  frameworks: [react, vue, preact]
+- name: typography
+  frameworks: [react, vue, preact]
+- name: underline
+  frameworks: [react, vue, preact]
+- name: unmount
+  frameworks: [react, preact]
+- name: user-menu
+  frameworks: [react, vue, preact]
+- name: user-menu-dynamic
+  frameworks: [react, preact]
+- name: word-counter
+  frameworks: [react, vue, preact]
+- name: yjs
+  frameworks: [react, vue, preact]

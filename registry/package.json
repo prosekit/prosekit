@@ -143,7 +143,6 @@
     "./vue/examples/underline": "./src/vue/examples/underline/index.ts",
     "./vue/examples/unmount": "./src/vue/examples/unmount/index.ts",
     "./vue/examples/user-menu": "./src/vue/examples/user-menu/index.ts",
-    "./vue/examples/user-menu-dynamic": "./src/vue/examples/user-menu-dynamic/index.ts",
     "./vue/examples/word-counter": "./src/vue/examples/word-counter/index.ts",
     "./vue/examples/yjs": "./src/vue/examples/yjs/index.ts",
     "./vue/renderer": "./src/vue/renderer.ts"

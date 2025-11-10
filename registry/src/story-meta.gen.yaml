@@ -67,7 +67,7 @@
 - name: table
   frameworks: [react, vue, preact, svelte]
 - name: text-align
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: text-color
   frameworks: [react, vue, preact]
 - name: toolbar

@@ -135,6 +135,7 @@
     "./svelte/examples/slash-menu": "./src/svelte/examples/slash-menu/index.ts",
     "./svelte/examples/strike": "./src/svelte/examples/strike/index.ts",
     "./svelte/examples/table": "./src/svelte/examples/table/index.ts",
+    "./svelte/examples/text-align": "./src/svelte/examples/text-align/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",

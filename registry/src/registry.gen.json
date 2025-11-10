@@ -12158,6 +12158,59 @@
       }
     },
     {
+      "name": "svelte-example-text-align",
+      "title": "svelte-example-text-align",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-text-align.json",
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/text-align/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-align/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-align/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-align/toolbar.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/toolbar.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "text-align",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/text-align/editor.svelte",
+          "registry/src/svelte/examples/text-align/extension.ts",
+          "registry/src/svelte/examples/text-align/index.ts",
+          "registry/src/svelte/examples/text-align/toolbar.svelte",
+          "registry/src/svelte/sample/sample-doc-text-align.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-text-align",
+          "svelte-ui-button"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12673,6 +12726,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-text-align",
+      "title": "svelte-sample-sample-doc-text-align",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-text-align.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-align.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-text-align.ts"
         ],
         "internalDependencies": []
       }

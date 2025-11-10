@@ -35,4 +35,5 @@ export const loaders = {
   'slash-menu': () => import('./examples/slash-menu').then((m) => ({ default: m.ExampleEditor })),
   'strike': () => import('./examples/strike').then((m) => ({ default: m.ExampleEditor })),
   'table': () => import('./examples/table').then((m) => ({ default: m.ExampleEditor })),
+  'text-align': () => import('./examples/text-align').then((m) => ({ default: m.ExampleEditor })),
 }

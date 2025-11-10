@@ -12271,6 +12271,57 @@
       }
     },
     {
+      "name": "svelte-example-toolbar",
+      "title": "svelte-example-toolbar",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/toolbar/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/toolbar/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "toolbar",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/toolbar/editor.svelte",
+          "registry/src/svelte/examples/toolbar/extension.ts",
+          "registry/src/svelte/examples/toolbar/index.ts",
+          "registry/src/svelte/sample/sample-uploader.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-uploader",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

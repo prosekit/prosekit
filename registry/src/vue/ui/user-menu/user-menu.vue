@@ -33,8 +33,8 @@ function handleUserInsert(id: number, username: string) {
   <AutocompletePopover
     :regex="/@\w*$/"
     class="CSS_AUTOCOMPLETE_MENU"
-    :on-query-change="props.onQueryChange"
-    :on-open-change="props.onOpenChange"
+    @query-change="props.onQueryChange"
+    @open-change="props.onOpenChange"
   >
     <AutocompleteList>
       <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">

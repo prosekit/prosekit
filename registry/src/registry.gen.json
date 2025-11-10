@@ -5573,6 +5573,66 @@
       }
     },
     {
+      "name": "vue-example-user-menu-dynamic",
+      "title": "vue-example-user-menu-dynamic",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "user-menu-dynamic",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+          "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+          "registry/src/vue/examples/user-menu-dynamic/index.ts",
+          "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+          "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+          "registry/src/vue/sample/user-data.ts",
+          "registry/src/vue/ui/user-menu/index.ts",
+          "registry/src/vue/ui/user-menu/user-menu.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-user-data",
+          "vue-ui-user-menu"
+        ]
+      }
+    },
+    {
       "name": "vue-example-word-counter",
       "title": "vue-example-word-counter",
       "type": "registry:block",

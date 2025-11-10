@@ -44,4 +44,5 @@ function bindContentRef(element: HTMLAnchorElement) {
 }
 </script>
 
-<a use:bindContentRef {href} style:color={color} style:transition="color 1s ease-in-out"> </a>
+<!-- svelte-ignore a11y_consider_explicit_label -->
+<a use:bindContentRef {href} style:color={color} style:transition="color 1s ease-in-out"></a>

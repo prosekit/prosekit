@@ -10528,6 +10528,61 @@
       }
     },
     {
+      "name": "svelte-example-code-block",
+      "title": "svelte-example-code-block",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/svelte-ui-code-block-view.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/code-block/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/code-block/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/code-block/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/code-block/editor.svelte",
+          "registry/src/svelte/examples/code-block/extension.ts",
+          "registry/src/svelte/examples/code-block/index.ts",
+          "registry/src/svelte/sample/sample-doc-code-block.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+          "registry/src/svelte/ui/code-block-view/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-code-block",
+          "svelte-ui-code-block-view",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",

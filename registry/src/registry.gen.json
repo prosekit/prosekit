@@ -11026,6 +11026,49 @@
       }
     },
     {
+      "name": "svelte-example-gap-cursor",
+      "title": "svelte-example-gap-cursor",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-gap-cursor.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/gap-cursor/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/gap-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/gap-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "gap-cursor",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/gap-cursor/editor.svelte",
+          "registry/src/svelte/examples/gap-cursor/extension.ts",
+          "registry/src/svelte/examples/gap-cursor/index.ts",
+          "registry/src/svelte/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-gap-cursor"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-heading",
       "title": "svelte-example-heading",
       "type": "registry:block",
@@ -11260,6 +11303,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-gap-cursor",
+      "title": "svelte-sample-sample-doc-gap-cursor",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-gap-cursor.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-gap-cursor.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-gap-cursor.ts"
         ],
         "internalDependencies": []
       }

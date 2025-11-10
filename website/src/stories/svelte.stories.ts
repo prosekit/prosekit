@@ -13,5 +13,6 @@ export const CodeBlockThemes = { args: { story: 'code-block-themes' } }
 export const DropCursor = { args: { story: 'drop-cursor' } }
 export const EmojiRules = { args: { story: 'emoji-rules' } }
 export const Full = { args: { story: 'full' } }
+export const GapCursor = { args: { story: 'gap-cursor' } }
 export const Heading = { args: { story: 'heading' } }
 export const Minimal = { args: { story: 'minimal' } }

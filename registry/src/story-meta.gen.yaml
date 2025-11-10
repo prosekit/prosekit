@@ -19,7 +19,7 @@
 - name: full
   frameworks: [react, vue, preact, svelte, solid]
 - name: gap-cursor
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: hard-break
   frameworks: [react, vue, preact]
 - name: heading

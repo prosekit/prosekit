@@ -11,6 +11,7 @@ export const loaders = {
   'drop-cursor': () => import('./examples/drop-cursor').then((m) => ({ default: m.ExampleEditor })),
   'emoji-rules': () => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor })),
   'full': () => import('./examples/full').then((m) => ({ default: m.ExampleEditor })),
+  'gap-cursor': () => import('./examples/gap-cursor').then((m) => ({ default: m.ExampleEditor })),
   'heading': () => import('./examples/heading').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

@@ -111,6 +111,7 @@
     "./svelte/examples/drop-cursor": "./src/svelte/examples/drop-cursor/index.ts",
     "./svelte/examples/emoji-rules": "./src/svelte/examples/emoji-rules/index.ts",
     "./svelte/examples/full": "./src/svelte/examples/full/index.ts",
+    "./svelte/examples/gap-cursor": "./src/svelte/examples/gap-cursor/index.ts",
     "./svelte/examples/heading": "./src/svelte/examples/heading/index.ts",
     "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",

@@ -9,12 +9,13 @@ import {
   watchPostEffect,
 } from 'vue'
 
+import { defaultContent } from '../../sample/sample-doc-heading'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent: '<h1>H1</h1>' })
+const editor = createEditor({ extension, defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

@@ -15,7 +15,10 @@ import { Toolbar } from '../../ui/toolbar'
 import { defineExtension } from './extension'
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent })
+const editor = createEditor({
+  extension,
+  defaultContent,
+})
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

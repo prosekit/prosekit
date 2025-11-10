@@ -9,18 +9,10 @@ import {
   watchPostEffect,
 } from 'vue'
 
+import { defaultContent } from '../../sample/sample-doc-text-color'
+
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.vue'
-
-const defaultContent = '<p>'
-  + '<span style="color: #ef4444">Select</span> '
-  + '<span style="color: #f97316">some</span> '
-  + '<span style="color: #eab308">text</span> '
-  + '<span style="color: #22c55e">to</span> '
-  + '<span style="color: #3b82f6">change</span> '
-  + '<span style="color: #6366f1">the</span> '
-  + '<span style="color: #a855f7">color</span> '
-  + '</p>'
 
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultContent })

@@ -9,14 +9,10 @@ import {
   watchPostEffect,
 } from 'vue'
 
+import { defaultContent } from '../../sample/sample-doc-code'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
-
-const defaultContent = `
-  <p><code>This is code</code></p>
-  <p><span>This is normal text</span></p>
-`
 
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultContent })

@@ -9,20 +9,10 @@ import {
   watchPostEffect,
 } from 'vue'
 
+import { defaultContent } from '../../sample/sample-doc-hard-break'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
-
-const defaultContent = `<p>
-O'er all the hilltops<br />
-Is quiet now,<br />
-In all the treetops<br />
-Hearest thou<br />
-Hardly a breath;<br />
-The birds are asleep in the trees:<br />
-Wait, soon like these<br />
-Thou too shalt rest.<br />
-</p>
-`
 
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultContent })

@@ -10631,6 +10631,50 @@
       }
     },
     {
+      "name": "svelte-example-change-tracking",
+      "title": "svelte-example-change-tracking",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/change-tracking/editor-diff.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-diff.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/change-tracking/editor-main.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-main.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/change-tracking/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/change-tracking/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "change-tracking",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/change-tracking/editor-diff.svelte",
+          "registry/src/svelte/examples/change-tracking/editor-main.svelte",
+          "registry/src/svelte/examples/change-tracking/editor.svelte",
+          "registry/src/svelte/examples/change-tracking/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-example-code-block",
       "title": "svelte-example-code-block",
       "type": "registry:block",

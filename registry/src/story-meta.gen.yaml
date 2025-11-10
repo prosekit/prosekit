@@ -5,7 +5,7 @@
 - name: bold
   frameworks: [react, vue, preact, svelte]
 - name: change-tracking
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: code
   frameworks: [react, vue, preact]
 - name: code-block

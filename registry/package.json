@@ -105,6 +105,7 @@
     "./svelte/examples/bold": "./src/svelte/examples/bold/index.ts",
     "./svelte/examples/code-block": "./src/svelte/examples/code-block/index.ts",
     "./svelte/examples/full": "./src/svelte/examples/full/index.ts",
+    "./svelte/examples/heading": "./src/svelte/examples/heading/index.ts",
     "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",

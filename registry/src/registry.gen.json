@@ -10729,6 +10729,57 @@
       }
     },
     {
+      "name": "svelte-example-heading",
+      "title": "svelte-example-heading",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-heading.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/heading/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/heading/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/heading/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/heading/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/heading/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/heading/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "heading",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/heading/editor.svelte",
+          "registry/src/svelte/examples/heading/extension.ts",
+          "registry/src/svelte/examples/heading/index.ts",
+          "registry/src/svelte/sample/sample-doc-heading.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-heading",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
@@ -10860,6 +10911,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-heading",
+      "title": "svelte-sample-sample-doc-heading",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-heading.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-heading.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-heading.ts"
         ],
         "internalDependencies": []
       }

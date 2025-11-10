@@ -23,7 +23,7 @@
 - name: hard-break
   frameworks: [react, vue, preact]
 - name: heading
-  frameworks: [react, vue, preact, solid]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: horizontal-rule
   frameworks: [react, vue, preact]
 - name: image-view

@@ -11963,6 +11963,55 @@
       }
     },
     {
+      "name": "svelte-example-search",
+      "title": "svelte-example-search",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-search.json",
+        "https://prosekit.dev/r/svelte-ui-search.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/search/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/search/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "search",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/search/editor.svelte",
+          "registry/src/svelte/examples/search/extension.ts",
+          "registry/src/svelte/examples/search/index.ts",
+          "registry/src/svelte/sample/sample-doc-search.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/search/index.ts",
+          "registry/src/svelte/ui/search/search.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-search",
+          "svelte-ui-search"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12405,6 +12454,32 @@
       }
     },
     {
+      "name": "svelte-sample-sample-doc-search",
+      "title": "svelte-sample-sample-doc-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-search.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-search.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-uploader",
       "title": "svelte-sample-sample-uploader",
       "type": "registry:component",
@@ -12721,6 +12796,49 @@
           "registry/src/svelte/ui/button/index.ts",
           "registry/src/svelte/ui/inline-menu/index.ts",
           "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-ui-button"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
+      }
+    },
+    {
+      "name": "svelte-ui-search",
+      "title": "svelte-ui-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/ui/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/ui/search/search.svelte",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/search.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/search/index.ts",
+          "registry/src/svelte/ui/search/search.svelte"
         ],
         "internalDependencies": [
           "svelte-ui-button"

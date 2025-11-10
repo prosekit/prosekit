@@ -59,7 +59,7 @@
 - name: save-markdown
   frameworks: [react, vue, preact, svelte]
 - name: search
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: slash-menu
   frameworks: [react, vue, preact]
 - name: strike

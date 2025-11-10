@@ -116,6 +116,7 @@
     "./svelte/examples/heading": "./src/svelte/examples/heading/index.ts",
     "./svelte/examples/horizontal-rule": "./src/svelte/examples/horizontal-rule/index.ts",
     "./svelte/examples/image-view": "./src/svelte/examples/image-view/index.ts",
+    "./svelte/examples/inline-menu": "./src/svelte/examples/inline-menu/index.ts",
     "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",

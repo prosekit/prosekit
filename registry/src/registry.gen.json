@@ -11271,6 +11271,55 @@
       }
     },
     {
+      "name": "svelte-example-inline-menu",
+      "title": "svelte-example-inline-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-inline-menu.json",
+        "https://prosekit.dev/r/svelte-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/inline-menu/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/inline-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/inline-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "inline-menu",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/inline-menu/editor.svelte",
+          "registry/src/svelte/examples/inline-menu/extension.ts",
+          "registry/src/svelte/examples/inline-menu/index.ts",
+          "registry/src/svelte/sample/sample-doc-inline-menu.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/inline-menu/index.ts",
+          "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-inline-menu",
+          "svelte-ui-inline-menu"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
@@ -11558,6 +11607,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-inline-menu",
+      "title": "svelte-sample-sample-doc-inline-menu",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-inline-menu.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-inline-menu.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-inline-menu.ts"
         ],
         "internalDependencies": []
       }

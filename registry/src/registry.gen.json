@@ -12410,6 +12410,50 @@
       }
     },
     {
+      "name": "svelte-example-unmount",
+      "title": "svelte-example-unmount",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/unmount/editor-component.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor-component.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/unmount/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/unmount/extension-component.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/extension-component.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/unmount/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "unmount",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/unmount/editor-component.svelte",
+          "registry/src/svelte/examples/unmount/editor.svelte",
+          "registry/src/svelte/examples/unmount/extension-component.svelte",
+          "registry/src/svelte/examples/unmount/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

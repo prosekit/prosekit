@@ -40,4 +40,5 @@ export const loaders = {
   'toolbar': () => import('./examples/toolbar').then((m) => ({ default: m.ExampleEditor })),
   'typography': () => import('./examples/typography').then((m) => ({ default: m.ExampleEditor })),
   'underline': () => import('./examples/underline').then((m) => ({ default: m.ExampleEditor })),
+  'unmount': () => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor })),
 }

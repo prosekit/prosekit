@@ -140,6 +140,7 @@
     "./svelte/examples/toolbar": "./src/svelte/examples/toolbar/index.ts",
     "./svelte/examples/typography": "./src/svelte/examples/typography/index.ts",
     "./svelte/examples/underline": "./src/svelte/examples/underline/index.ts",
+    "./svelte/examples/unmount": "./src/svelte/examples/unmount/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",

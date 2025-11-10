@@ -130,6 +130,7 @@
     "./svelte/examples/readonly": "./src/svelte/examples/readonly/index.ts",
     "./svelte/examples/save-html": "./src/svelte/examples/save-html/index.ts",
     "./svelte/examples/save-json": "./src/svelte/examples/save-json/index.ts",
+    "./svelte/examples/save-markdown": "./src/svelte/examples/save-markdown/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",

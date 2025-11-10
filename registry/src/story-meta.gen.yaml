@@ -57,7 +57,7 @@
 - name: save-json
   frameworks: [react, vue, preact, svelte]
 - name: save-markdown
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: search
   frameworks: [react, vue, preact]
 - name: slash-menu

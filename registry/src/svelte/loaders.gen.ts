@@ -30,4 +30,5 @@ export const loaders = {
   'readonly': () => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor })),
   'save-html': () => import('./examples/save-html').then((m) => ({ default: m.ExampleEditor })),
   'save-json': () => import('./examples/save-json').then((m) => ({ default: m.ExampleEditor })),
+  'save-markdown': () => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor })),
 }

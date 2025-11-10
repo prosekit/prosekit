@@ -11918,6 +11918,51 @@
       }
     },
     {
+      "name": "svelte-example-save-markdown",
+      "title": "svelte-example-save-markdown",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "rehype-parse",
+        "rehype-remark",
+        "remark-gfm",
+        "remark-html",
+        "remark-parse",
+        "remark-stringify",
+        "unified"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/save-markdown/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/save-markdown/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/save-markdown/markdown.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/markdown.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-markdown",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/save-markdown/editor.svelte",
+          "registry/src/svelte/examples/save-markdown/index.ts",
+          "registry/src/svelte/examples/save-markdown/markdown.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

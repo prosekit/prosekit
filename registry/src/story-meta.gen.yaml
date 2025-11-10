@@ -31,7 +31,7 @@
 - name: inline-menu
   frameworks: [react, vue, preact, svelte]
 - name: italic
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: keymap
   frameworks: [react, vue, preact]
 - name: link

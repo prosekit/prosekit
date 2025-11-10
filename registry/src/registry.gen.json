@@ -11320,6 +11320,57 @@
       }
     },
     {
+      "name": "svelte-example-italic",
+      "title": "svelte-example-italic",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-italic.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/italic/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/italic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/italic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "italic",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/italic/editor.svelte",
+          "registry/src/svelte/examples/italic/extension.ts",
+          "registry/src/svelte/examples/italic/index.ts",
+          "registry/src/svelte/sample/sample-doc-italic.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-italic",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
@@ -11633,6 +11684,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-inline-menu.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-italic",
+      "title": "svelte-sample-sample-doc-italic",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-italic.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-italic.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-italic.ts"
         ],
         "internalDependencies": []
       }

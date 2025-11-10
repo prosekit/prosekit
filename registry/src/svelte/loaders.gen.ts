@@ -17,5 +17,6 @@ export const loaders = {
   'horizontal-rule': () => import('./examples/horizontal-rule').then((m) => ({ default: m.ExampleEditor })),
   'image-view': () => import('./examples/image-view').then((m) => ({ default: m.ExampleEditor })),
   'inline-menu': () => import('./examples/inline-menu').then((m) => ({ default: m.ExampleEditor })),
+  'italic': () => import('./examples/italic').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

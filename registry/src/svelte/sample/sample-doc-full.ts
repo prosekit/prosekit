@@ -1,84 +1,310 @@
-// This is the default content for the full example.
-export const defaultContent = `
-<h1>The editor that thinks like you</h1>
+import type { NodeJSON } from 'prosekit/core'
 
-<p>Every keystroke flows naturally. Every feature appears exactly when you need it. This is <strong>writing without barriers</strong>.</p>
-
-<h2>Text that shines.</h2>
-
-<p>Make your words <strong>bold</strong>, <em>italic</em>, <u>underlined</u>, or <s>crossed out</s>. Add <code>inline code</code> that stands out. Create <a href="https://prosekit.dev">links</a> that connect.</p>
-
-<p>Select any text to format it. Type <code>@</code> to mention <span data-id="39" data-mention="user" contenteditable="false">@someone</span> or <code>#</code> for <span data-id="1" data-mention="tag" contenteditable="false">#topics</span>. Press <code>/</code> and discover what's possible.</p>
-
-
-<h2>Lists that organize.</h2>
-
-<ul>
-  <li>Bullet points that guide thoughts</li>
-  <li>Nested lists for complex ideas
-    <ul>
-      <li>Sub-points flow naturally</li>
-    </ul>
-  </li>
-  <li>Tasks that focus
-    <ul>
-      <li><input type="checkbox" checked>Done feels good</li>
-      <li><input type="checkbox">Todo drives action</li>
-    </ul>
-  </li>
-</ul>
-
-<ol>
-  <li>Numbered steps</li>
-  <li>Sequential thinking</li>
-  <li>Clear progress</li>
-</ol>
-
-<h2>Code that inspires.</h2>
-
-<pre data-language="javascript"><code>// Code that reads like poetry
-const magic = createEditor()
-magic.transform(thoughts)
-</code></pre>
-
-<h2>Images that captivate.</h2>
-
-<img src="https://static.photos/season/320x240/107" alt="The future of writing">
-
-<p>Drag the handle in the bottom right corner to resize.</p>
-
-<h2>Tables that structure.</h2>
-
-<table>
-  <tr>
-    <td><strong>Feature</strong></td>
-    <td><strong>How to use</strong></td>
-    <td><strong>Result</strong></td>
-  </tr>
-  <tr>
-    <td>Format text</td>
-    <td>Select and choose</td>
-    <td>Perfect styling</td>
-  </tr>
-  <tr>
-    <td>Add mentions</td>
-    <td>Type @ and name</td>
-    <td>Connected ideas</td>
-  </tr>
-  <tr>
-    <td>Insert anything</td>
-    <td>Press / for menu</td>
-    <td>Endless possibilities</td>
-  </tr>
-</table>
-
-<h2>Quotes that inspire.</h2>
-
-<blockquote>
-  <p>"This is not just an editor. This is how writing should feel."</p>
-</blockquote>
-
-<hr>
-
-<p>Start typing. Everything else just flows.</p>
-`
+export const defaultContent: NodeJSON = {
+  type: 'doc',
+  content: [
+    {
+      type: 'heading',
+      attrs: { level: 1 },
+      content: [{ type: 'text', text: 'The editor that thinks like you' }],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'Every keystroke flows naturally. Every feature appears exactly when you need it. This is ' },
+        { type: 'text', marks: [{ type: 'bold' }], text: 'writing without barriers' },
+        { type: 'text', text: '.' },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Text that shines.' }],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'Make your words ' },
+        { type: 'text', marks: [{ type: 'bold' }], text: 'bold' },
+        { type: 'text', text: ', ' },
+        { type: 'text', marks: [{ type: 'italic' }], text: 'italic' },
+        { type: 'text', text: ', ' },
+        { type: 'text', marks: [{ type: 'underline' }], text: 'underlined' },
+        { type: 'text', text: ', or ' },
+        { type: 'text', marks: [{ type: 'strike' }], text: 'crossed out' },
+        { type: 'text', text: '. Add ' },
+        { type: 'text', marks: [{ type: 'code' }], text: 'inline code' },
+        { type: 'text', text: ' that stands out. Create ' },
+        {
+          type: 'text',
+          marks: [{ type: 'link', attrs: { href: 'https://prosekit.dev' } }],
+          text: 'links',
+        },
+        { type: 'text', text: ' that connect.' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'Select any text to format it. Type ' },
+        { type: 'text', marks: [{ type: 'code' }], text: '@' },
+        { type: 'text', text: ' to mention ' },
+        { type: 'mention', attrs: { id: '39', value: '@someone', kind: 'user' } },
+        { type: 'text', text: ' or ' },
+        { type: 'text', marks: [{ type: 'code' }], text: '#' },
+        { type: 'text', text: ' for ' },
+        { type: 'mention', attrs: { id: '1', value: '#topics', kind: 'tag' } },
+        { type: 'text', text: '. Press ' },
+        { type: 'text', marks: [{ type: 'code' }], text: '/' },
+        { type: 'text', text: " and discover what's possible." },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Lists that organize.' }],
+    },
+    {
+      type: 'list',
+      attrs: { kind: 'bullet', order: null, checked: false, collapsed: false },
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Bullet points that guide thoughts' }] },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: { kind: 'bullet', order: null, checked: false, collapsed: false },
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Nested lists for complex ideas' }] },
+        {
+          type: 'list',
+          attrs: { kind: 'bullet', order: null, checked: false, collapsed: false },
+          content: [
+            { type: 'paragraph', content: [{ type: 'text', text: 'Sub-points flow naturally' }] },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: { kind: 'bullet', order: null, checked: false, collapsed: false },
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Tasks that focus' }] },
+        {
+          type: 'list',
+          attrs: { kind: 'task', order: null, checked: true, collapsed: false },
+          content: [
+            { type: 'paragraph', content: [{ type: 'text', text: 'Done feels good' }] },
+          ],
+        },
+        {
+          type: 'list',
+          attrs: { kind: 'task', order: null, checked: false, collapsed: false },
+          content: [
+            { type: 'paragraph', content: [{ type: 'text', text: 'Todo drives action' }] },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: { kind: 'ordered', order: null, checked: false, collapsed: false },
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Numbered steps' }] },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: { kind: 'ordered', order: null, checked: false, collapsed: false },
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Sequential thinking' }] },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: { kind: 'ordered', order: null, checked: false, collapsed: false },
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Clear progress' }] },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Code that inspires.' }],
+    },
+    {
+      type: 'codeBlock',
+      attrs: { language: 'javascript' },
+      content: [
+        {
+          type: 'text',
+          text: '// Code that reads like poetry\nconst magic = createEditor()\nmagic.transform(thoughts)\n',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Images that captivate.' }],
+    },
+    {
+      type: 'image',
+      attrs: {
+        src: 'https://static.photos/season/320x240/107',
+      },
+    },
+    {
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'Drag the handle in the bottom right corner to resize.' },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Tables that structure.' }],
+    },
+    {
+      type: 'table',
+      content: [
+        {
+          type: 'tableRow',
+          content: [
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                {
+                  type: 'paragraph',
+                  content: [{ type: 'text', marks: [{ type: 'bold' }], text: 'Feature' }],
+                },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                {
+                  type: 'paragraph',
+                  content: [{ type: 'text', marks: [{ type: 'bold' }], text: 'How to use' }],
+                },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                {
+                  type: 'paragraph',
+                  content: [{ type: 'text', marks: [{ type: 'bold' }], text: 'Result' }],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'tableRow',
+          content: [
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Format text' }] },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Select and choose' }] },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Perfect styling' }] },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'tableRow',
+          content: [
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Add mentions' }] },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Type @ and name' }] },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Connected ideas' }] },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'tableRow',
+          content: [
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Insert anything' }] },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Press / for menu' }] },
+              ],
+            },
+            {
+              type: 'tableCell',
+              attrs: {},
+              content: [
+                { type: 'paragraph', content: [{ type: 'text', text: 'Endless possibilities' }] },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Quotes that inspire.' }],
+    },
+    {
+      type: 'blockquote',
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: '"This is not just an editor. This is how writing should feel."',
+            },
+          ],
+        },
+      ],
+    },
+    { type: 'horizontalRule' },
+    {
+      type: 'paragraph',
+      content: [{ type: 'text', text: 'Start typing. Everything else just flows.' }],
+    },
+  ],
+}

@@ -25,7 +25,7 @@
 - name: heading
   frameworks: [react, vue, preact, svelte, solid]
 - name: horizontal-rule
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: image-view
   frameworks: [react, vue, preact]
 - name: inline-menu

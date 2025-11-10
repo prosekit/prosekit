@@ -11173,6 +11173,54 @@
       }
     },
     {
+      "name": "svelte-example-horizontal-rule",
+      "title": "svelte-example-horizontal-rule",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/horizontal-rule/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/horizontal-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/horizontal-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "horizontal-rule",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/horizontal-rule/editor.svelte",
+          "registry/src/svelte/examples/horizontal-rule/extension.ts",
+          "registry/src/svelte/examples/horizontal-rule/index.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",

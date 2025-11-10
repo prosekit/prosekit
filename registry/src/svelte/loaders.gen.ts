@@ -42,4 +42,5 @@ export const loaders = {
   'underline': () => import('./examples/underline').then((m) => ({ default: m.ExampleEditor })),
   'unmount': () => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor })),
   'user-menu': () => import('./examples/user-menu').then((m) => ({ default: m.ExampleEditor })),
+  'user-menu-dynamic': () => import('./examples/user-menu-dynamic').then((m) => ({ default: m.ExampleEditor })),
 }

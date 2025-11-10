@@ -28,6 +28,28 @@ function Foo({ foo }: FooProps) {
 }
 ```
 
+### Union Call Convention
+
+The `union` function should be called with individual arguments, not an array.
+
+**Correct:**
+
+```ts
+return union(
+  defineBasicExtension(),
+  defineCodeBlockView(),
+)
+```
+
+**Incorrect:**
+
+```ts
+return union([
+  defineBasicExtension(),
+  defineCodeBlockView(),
+])
+```
+
 ### Default Content Location
 
 To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content using the following format:

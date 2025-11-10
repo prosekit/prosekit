@@ -10841,6 +10841,49 @@
       }
     },
     {
+      "name": "svelte-example-drop-cursor",
+      "title": "svelte-example-drop-cursor",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-drop-cursor.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/drop-cursor/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/drop-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/drop-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "drop-cursor",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/drop-cursor/editor.svelte",
+          "registry/src/svelte/examples/drop-cursor/extension.ts",
+          "registry/src/svelte/examples/drop-cursor/index.ts",
+          "registry/src/svelte/sample/sample-doc-drop-cursor.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-drop-cursor"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",

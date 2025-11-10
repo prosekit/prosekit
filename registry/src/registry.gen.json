@@ -11221,6 +11221,56 @@
       }
     },
     {
+      "name": "svelte-example-image-view",
+      "title": "svelte-example-image-view",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-image.json",
+        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
+        "https://prosekit.dev/r/svelte-ui-image-view.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/image-view/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/image-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/image-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "image-view",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/image-view/editor.svelte",
+          "registry/src/svelte/examples/image-view/extension.ts",
+          "registry/src/svelte/examples/image-view/index.ts",
+          "registry/src/svelte/sample/sample-doc-image.ts",
+          "registry/src/svelte/sample/sample-uploader.ts",
+          "registry/src/svelte/ui/image-view/image-view.svelte",
+          "registry/src/svelte/ui/image-view/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-image",
+          "svelte-sample-sample-uploader",
+          "svelte-ui-image-view"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",

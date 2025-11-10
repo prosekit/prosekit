@@ -27,7 +27,7 @@
 - name: horizontal-rule
   frameworks: [react, vue, preact, svelte]
 - name: image-view
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: inline-menu
   frameworks: [react, vue, preact]
 - name: italic

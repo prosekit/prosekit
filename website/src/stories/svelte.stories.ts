@@ -17,4 +17,5 @@ export const GapCursor = { args: { story: 'gap-cursor' } }
 export const HardBreak = { args: { story: 'hard-break' } }
 export const Heading = { args: { story: 'heading' } }
 export const HorizontalRule = { args: { story: 'horizontal-rule' } }
+export const ImageView = { args: { story: 'image-view' } }
 export const Minimal = { args: { story: 'minimal' } }

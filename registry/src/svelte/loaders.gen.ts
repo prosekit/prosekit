@@ -15,5 +15,6 @@ export const loaders = {
   'hard-break': () => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor })),
   'heading': () => import('./examples/heading').then((m) => ({ default: m.ExampleEditor })),
   'horizontal-rule': () => import('./examples/horizontal-rule').then((m) => ({ default: m.ExampleEditor })),
+  'image-view': () => import('./examples/image-view').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

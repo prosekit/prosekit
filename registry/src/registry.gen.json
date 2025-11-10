@@ -12322,6 +12322,43 @@
       }
     },
     {
+      "name": "svelte-example-typography",
+      "title": "svelte-example-typography",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/typography/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/typography/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "typography",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/typography/editor.svelte",
+          "registry/src/svelte/examples/typography/index.ts",
+          "registry/src/svelte/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-typography"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12889,6 +12926,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-typography",
+      "title": "svelte-sample-sample-doc-typography",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-typography.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-typography.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-typography.ts"
         ],
         "internalDependencies": []
       }

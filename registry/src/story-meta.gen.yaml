@@ -73,7 +73,7 @@
 - name: toolbar
   frameworks: [react, vue, preact, svelte]
 - name: typography
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: underline
   frameworks: [react, vue, preact]
 - name: unmount

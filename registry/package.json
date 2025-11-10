@@ -138,6 +138,7 @@
     "./svelte/examples/text-align": "./src/svelte/examples/text-align/index.ts",
     "./svelte/examples/text-color": "./src/svelte/examples/text-color/index.ts",
     "./svelte/examples/toolbar": "./src/svelte/examples/toolbar/index.ts",
+    "./svelte/examples/typography": "./src/svelte/examples/typography/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",

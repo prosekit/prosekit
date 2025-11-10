@@ -38,4 +38,5 @@ export const loaders = {
   'text-align': () => import('./examples/text-align').then((m) => ({ default: m.ExampleEditor })),
   'text-color': () => import('./examples/text-color').then((m) => ({ default: m.ExampleEditor })),
   'toolbar': () => import('./examples/toolbar').then((m) => ({ default: m.ExampleEditor })),
+  'typography': () => import('./examples/typography').then((m) => ({ default: m.ExampleEditor })),
 }

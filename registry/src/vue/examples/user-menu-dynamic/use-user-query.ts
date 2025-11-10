@@ -1,7 +1,6 @@
 import type { Ref } from 'vue'
 import {
   ref,
-  watch,
   watchEffect,
 } from 'vue'
 

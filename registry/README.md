@@ -38,3 +38,57 @@ import type { NodeJSON } from 'prosekit/core'
 export const defaultContent: NodeJSON = { /* ... */ }
 ```
 
+### Vue-Specific Guidelines
+
+#### Event Handlers
+
+Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue templates.
+
+**Correct:**
+
+```vue
+<Component
+  @query-change="handleQueryChange"
+  @open-change="handleOpenChange"
+/>
+```
+
+**Incorrect:**
+
+```vue
+<Component
+  :on-query-change="handleQueryChange"
+  :on-open-change="handleOpenChange"
+/>
+```
+
+#### Side Effects with Cleanup
+
+Prefer `watchEffect` with cleanup over `watch` when dealing with side effects that require cleanup (like timers or subscriptions).
+
+**Correct:**
+
+```ts
+watchEffect((onCleanup) => {
+  const id = setTimeout(() => {
+    // do something
+  }, 500)
+
+  onCleanup(() => {
+    clearTimeout(id)
+  })
+})
+```
+
+**Incorrect:**
+
+```ts
+watch([dependency], () => {
+  const id = setTimeout(() => {
+    // do something
+  }, 500)
+
+  // No cleanup mechanism
+})
+```
+

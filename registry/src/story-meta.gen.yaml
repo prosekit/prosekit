@@ -49,7 +49,7 @@
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]
 - name: placeholder
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: readonly
   frameworks: [react, vue, preact]
 - name: save-html

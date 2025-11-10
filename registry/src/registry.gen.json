@@ -12455,6 +12455,60 @@
       }
     },
     {
+      "name": "svelte-example-user-menu",
+      "title": "svelte-example-user-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-tag-data.json",
+        "https://prosekit.dev/r/svelte-sample-user-data.json",
+        "https://prosekit.dev/r/svelte-ui-tag-menu.json",
+        "https://prosekit.dev/r/svelte-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/user-menu/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/user-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/user-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "user-menu",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/user-menu/editor.svelte",
+          "registry/src/svelte/examples/user-menu/extension.ts",
+          "registry/src/svelte/examples/user-menu/index.ts",
+          "registry/src/svelte/sample/tag-data.ts",
+          "registry/src/svelte/sample/user-data.ts",
+          "registry/src/svelte/ui/tag-menu/index.ts",
+          "registry/src/svelte/ui/tag-menu/tag-menu.svelte",
+          "registry/src/svelte/ui/user-menu/index.ts",
+          "registry/src/svelte/ui/user-menu/user-menu.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-tag-data",
+          "svelte-sample-user-data",
+          "svelte-ui-tag-menu",
+          "svelte-ui-user-menu"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

@@ -79,7 +79,7 @@
 - name: unmount
   frameworks: [react, vue, preact, svelte]
 - name: user-menu
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: user-menu-dynamic
   frameworks: [react, vue, preact]
 - name: word-counter

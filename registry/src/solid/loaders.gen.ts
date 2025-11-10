@@ -6,6 +6,7 @@ export const loaders = {
   'blockquote': lazy(() => import('./examples/blockquote').then((m) => ({ default: m.ExampleEditor }))),
   'bold': lazy(() => import('./examples/bold').then((m) => ({ default: m.ExampleEditor }))),
   'change-tracking': lazy(() => import('./examples/change-tracking').then((m) => ({ default: m.ExampleEditor }))),
+  'code': lazy(() => import('./examples/code').then((m) => ({ default: m.ExampleEditor }))),
   'full': lazy(() => import('./examples/full').then((m) => ({ default: m.ExampleEditor }))),
   'heading': lazy(() => import('./examples/heading').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),

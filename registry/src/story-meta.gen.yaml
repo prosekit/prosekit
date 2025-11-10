@@ -7,7 +7,7 @@
 - name: change-tracking
   frameworks: [react, vue, preact, svelte, solid]
 - name: code
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: code-block
   frameworks: [react, vue, preact, svelte]
 - name: code-block-themes

@@ -10675,6 +10675,57 @@
       }
     },
     {
+      "name": "svelte-example-code",
+      "title": "svelte-example-code",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-code.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/code/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/code/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/code/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/code/editor.svelte",
+          "registry/src/svelte/examples/code/extension.ts",
+          "registry/src/svelte/examples/code/index.ts",
+          "registry/src/svelte/sample/sample-doc-code.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-code",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-code-block",
       "title": "svelte-example-code-block",
       "type": "registry:block",
@@ -10958,6 +11009,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-bold.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-code",
+      "title": "svelte-sample-sample-doc-code",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-code.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-code.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-code.ts"
         ],
         "internalDependencies": []
       }

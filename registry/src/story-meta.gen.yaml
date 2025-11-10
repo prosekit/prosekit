@@ -1,5 +1,5 @@
 - name: block-handle
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: blockquote
   frameworks: [react, vue, preact, svelte]
 - name: bold

@@ -3,6 +3,7 @@ import component from './svelte.astro'
 
 export default { component }
 
+export const BlockHandle = { args: { story: 'block-handle' } }
 export const Blockquote = { args: { story: 'blockquote' } }
 export const Bold = { args: { story: 'bold' } }
 export const CodeBlock = { args: { story: 'code-block' } }

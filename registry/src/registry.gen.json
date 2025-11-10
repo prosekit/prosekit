@@ -11371,6 +11371,57 @@
       }
     },
     {
+      "name": "svelte-example-keymap",
+      "title": "svelte-example-keymap",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "svelte"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/keymap/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/keymap/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/keymap/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/keymap/toolbar.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/toolbar.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "keymap",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/keymap/editor.svelte",
+          "registry/src/svelte/examples/keymap/extension.ts",
+          "registry/src/svelte/examples/keymap/index.ts",
+          "registry/src/svelte/examples/keymap/toolbar.svelte",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-ui-button"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",

@@ -33,7 +33,7 @@
 - name: italic
   frameworks: [react, vue, preact, svelte]
 - name: keymap
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: link
   frameworks: [react, vue, preact]
 - name: link-mark-view

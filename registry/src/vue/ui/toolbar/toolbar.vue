@@ -162,8 +162,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.undo"
       :pressed="items.undo.isActive"
       :disabled="!items.undo.canExec"
-      :on-click="items.undo.command"
       tooltip="Undo"
+      @click="items.undo.command"
     >
       <div class="CSS_ICON_UNDO" />
     </Button>
@@ -171,8 +171,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.redo"
       :pressed="items.redo.isActive"
       :disabled="!items.redo.canExec"
-      :on-click="items.redo.command"
       tooltip="Redo"
+      @click="items.redo.command"
     >
       <div class="CSS_ICON_REDO" />
     </Button>
@@ -181,8 +181,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.bold"
       :pressed="items.bold.isActive"
       :disabled="!items.bold.canExec"
-      :on-click="items.bold.command"
       tooltip="Bold"
+      @click="items.bold.command"
     >
       <div class="CSS_ICON_BOLD" />
     </Button>
@@ -190,8 +190,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.italic"
       :pressed="items.italic.isActive"
       :disabled="!items.italic.canExec"
-      :on-click="items.italic.command"
       tooltip="Italic"
+      @click="items.italic.command"
     >
       <div class="CSS_ICON_ITALIC" />
     </Button>
@@ -199,8 +199,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.underline"
       :pressed="items.underline.isActive"
       :disabled="!items.underline.canExec"
-      :on-click="items.underline.command"
       tooltip="Underline"
+      @click="items.underline.command"
     >
       <div class="CSS_ICON_UNDERLINE" />
     </Button>
@@ -208,8 +208,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.strike"
       :pressed="items.strike.isActive"
       :disabled="!items.strike.canExec"
-      :on-click="items.strike.command"
       tooltip="Strike"
+      @click="items.strike.command"
     >
       <div class="CSS_ICON_STRIKETHROUGH" />
     </Button>
@@ -217,8 +217,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.code"
       :pressed="items.code.isActive"
       :disabled="!items.code.canExec"
-      :on-click="items.code.command"
       tooltip="Code"
+      @click="items.code.command"
     >
       <div class="CSS_ICON_CODE" />
     </Button>
@@ -226,8 +226,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.codeBlock"
       :pressed="items.codeBlock.isActive"
       :disabled="!items.codeBlock.canExec"
-      :on-click="items.codeBlock.command"
       tooltip="Code Block"
+      @click="items.codeBlock.command"
     >
       <div class="CSS_ICON_CODE_BLOCK" />
     </Button>
@@ -235,8 +235,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.heading1"
       :pressed="items.heading1.isActive"
       :disabled="!items.heading1.canExec"
-      :on-click="items.heading1.command"
       tooltip="Heading 1"
+      @click="items.heading1.command"
     >
       <div class="CSS_ICON_H1" />
     </Button>
@@ -244,8 +244,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.heading2"
       :pressed="items.heading2.isActive"
       :disabled="!items.heading2.canExec"
-      :on-click="items.heading2.command"
       tooltip="Heading 2"
+      @click="items.heading2.command"
     >
       <div class="CSS_ICON_H2" />
     </Button>
@@ -253,8 +253,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.heading3"
       :pressed="items.heading3.isActive"
       :disabled="!items.heading3.canExec"
-      :on-click="items.heading3.command"
       tooltip="Heading 3"
+      @click="items.heading3.command"
     >
       <div class="CSS_ICON_H3" />
     </Button>
@@ -262,8 +262,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.horizontalRule"
       :pressed="items.horizontalRule.isActive"
       :disabled="!items.horizontalRule.canExec"
-      :on-click="items.horizontalRule.command"
       tooltip="Divider"
+      @click="items.horizontalRule.command"
     >
       <div class="CSS_ICON_MINUS"></div>
     </Button>
@@ -271,8 +271,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.blockquote"
       :pressed="items.blockquote.isActive"
       :disabled="!items.blockquote.canExec"
-      :on-click="items.blockquote.command"
       tooltip="Blockquote"
+      @click="items.blockquote.command"
     >
       <div class="CSS_ICON_BLOCKQUOTE" />
     </Button>
@@ -280,8 +280,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.bulletList"
       :pressed="items.bulletList.isActive"
       :disabled="!items.bulletList.canExec"
-      :on-click="items.bulletList.command"
       tooltip="Bullet List"
+      @click="items.bulletList.command"
     >
       <div class="CSS_ICON_LIST_BULLET" />
     </Button>
@@ -289,8 +289,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.orderedList"
       :pressed="items.orderedList.isActive"
       :disabled="!items.orderedList.canExec"
-      :on-click="items.orderedList.command"
       tooltip="Ordered List"
+      @click="items.orderedList.command"
     >
       <div class="CSS_ICON_LIST_ORDERED" />
     </Button>
@@ -298,8 +298,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.taskList"
       :pressed="items.taskList.isActive"
       :disabled="!items.taskList.canExec"
-      :on-click="items.taskList.command"
       tooltip="Task List"
+      @click="items.taskList.command"
     >
       <div class="CSS_ICON_LIST_TASK" />
     </Button>
@@ -307,8 +307,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.toggleList"
       :pressed="items.toggleList.isActive"
       :disabled="!items.toggleList.canExec"
-      :on-click="items.toggleList.command"
       tooltip="Toggle List"
+      @click="items.toggleList.command"
     >
       <div class="CSS_ICON_LIST_TOGGLE" />
     </Button>
@@ -316,8 +316,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.indentList"
       :pressed="items.indentList.isActive"
       :disabled="!items.indentList.canExec"
-      :on-click="items.indentList.command"
       tooltip="Increase indentation"
+      @click="items.indentList.command"
     >
       <div class="CSS_ICON_LIST_INDENT" />
     </Button>
@@ -325,8 +325,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       v-if="items.dedentList"
       :pressed="items.dedentList.isActive"
       :disabled="!items.dedentList.canExec"
-      :on-click="items.dedentList.command"
       tooltip="Decrease indentation"
+      @click="items.dedentList.command"
     >
       <div class="CSS_ICON_LIST_DEDENT" />
     </Button>

@@ -21,72 +21,72 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
     <AutocompleteList>
       <SlashMenuItem
         label="Text"
-        :on-select="() => editor.commands.setParagraph()"
+        @select="() => editor.commands.setParagraph()"
       />
 
       <SlashMenuItem
         label="Heading 1"
         kbd="#"
-        :on-select="() => editor.commands.setHeading({ level: 1 })"
+        @select="() => editor.commands.setHeading({ level: 1 })"
       />
 
       <SlashMenuItem
         label="Heading 2"
         kbd="##"
-        :on-select="() => editor.commands.setHeading({ level: 2 })"
+        @select="() => editor.commands.setHeading({ level: 2 })"
       />
 
       <SlashMenuItem
         label="Heading 3"
         kbd="###"
-        :on-select="() => editor.commands.setHeading({ level: 3 })"
+        @select="() => editor.commands.setHeading({ level: 3 })"
       />
 
       <SlashMenuItem
         label="Bullet list"
         kbd="-"
-        :on-select="() => editor.commands.wrapInList({ kind: 'bullet' })"
+        @select="() => editor.commands.wrapInList({ kind: 'bullet' })"
       />
 
       <SlashMenuItem
         label="Ordered list"
         kbd="1."
-        :on-select="() => editor.commands.wrapInList({ kind: 'ordered' })"
+        @select="() => editor.commands.wrapInList({ kind: 'ordered' })"
       />
 
       <SlashMenuItem
         label="Task list"
         kbd="[]"
-        :on-select="() => editor.commands.wrapInList({ kind: 'task' })"
+        @select="() => editor.commands.wrapInList({ kind: 'task' })"
       />
 
       <SlashMenuItem
         label="Toggle list"
         kbd=">>"
-        :on-select="() => editor.commands.wrapInList({ kind: 'toggle' })"
+        @select="() => editor.commands.wrapInList({ kind: 'toggle' })"
       />
 
       <SlashMenuItem
         label="Quote"
         kbd=">"
-        :on-select="() => editor.commands.setBlockquote()"
+        @select="() => editor.commands.setBlockquote()"
       />
 
       <SlashMenuItem
         label="Table"
-        :on-select="() => editor.commands.insertTable({ row: 3, col: 3 })"
+        @select="() => editor.commands.insertTable({ row: 3, col: 3 })"
       />
 
       <SlashMenuItem
         label="Divider"
         kbd="---"
-        :on-select="() => editor.commands.insertHorizontalRule()"
+        @select="() => editor.commands.insertHorizontalRule()"
       />
 
       <SlashMenuItem
         label="Code"
         kbd="```"
-        :on-select="() => editor.commands.setCodeBlock()"
+        @select="() => editor.commands.setCodeBlock()"
       />
 
       <SlashMenuEmpty />

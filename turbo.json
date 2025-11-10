@@ -22,7 +22,7 @@
     "gen": {
       "dependsOn": ["^gen"],
       "inputs": ["src/"],
-      "outputs": ["../*/tsconfig.json"],
+      "outputs": ["../*/tsconfig.json", "./**/*.gen.*"],
       "outputLogs": "new-only"
     }
   }

@@ -5,11 +5,9 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { defineExtension } from './extension'
+import { defaultContent } from '../../sample/sample-doc-link-mark-view'
 
-const defaultContent = `
-  <p>Here is a link that changes color every second: <a href="https://www.example.com">example link</a>
-`
+import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {

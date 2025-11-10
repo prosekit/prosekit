@@ -5,7 +5,7 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { DEFAULT_DRAG_AND_DROP_CONTENT } from '../../sample/default-content-drag-and-drop'
+import { defaultContent } from '../../sample/sample-doc-block-handle'
 import { BlockHandle } from '../../ui/block-handle'
 import { DropIndicator } from '../../ui/drop-indicator'
 
@@ -14,7 +14,7 @@ import { defineExtension } from './extension'
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension, defaultContent: DEFAULT_DRAG_AND_DROP_CONTENT })
+    return createEditor({ extension, defaultContent })
   }, [])
 
   return (

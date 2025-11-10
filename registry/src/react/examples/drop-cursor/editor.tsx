@@ -5,14 +5,14 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { defaultDropCursorContent } from '../../sample/sample-doc-drop-cursor'
+import { defaultContent } from '../../sample/sample-doc-drop-cursor'
 
 import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension, defaultContent: defaultDropCursorContent })
+    return createEditor({ extension, defaultContent })
   }, [])
 
   return (

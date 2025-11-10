@@ -16,9 +16,7 @@ function fillExports(item: ItemAccumulator, exports: Record<string, unknown>): v
   if (!story) {
     throw new Error(`Expected story to be defined for example ${item.name}`)
   }
-  exports[`./${framework}/examples/${story}`] = {
-    default: `./src/${framework}/examples/${story}/index.ts`,
-  }
+  exports[`./${framework}/examples/${story}`] = `./src/${framework}/examples/${story}/index.ts`
 }
 
 /**
@@ -27,7 +25,6 @@ function fillExports(item: ItemAccumulator, exports: Record<string, unknown>): v
 export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void> {
   const pkg = await vfs.getPackageByName('prosekit-registry')
   const exports: Record<string, unknown> = {
-    '.': './src/index.ts',
     './vite-plugin-class-replace': './src/meta/vite-plugin-class-replace.ts',
     './replace-class-names': './src/meta/replace-classes.ts',
     './registry.gen.json': './src/registry.gen.json',

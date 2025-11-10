@@ -5,20 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-hard-break'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
-
-const defaultContent = `<p>
-O'er all the hilltops<br />
-Is quiet now,<br />
-In all the treetops<br />
-Hearest thou<br />
-Hardly a breath;<br />
-The birds are asleep in the trees:<br />
-Wait, soon like these<br />
-Thou too shalt rest.<br />
-</p>
-`
 
 export default function Editor() {
   const editor = useMemo(() => {

@@ -9,13 +9,10 @@ import {
   watchPostEffect,
 } from 'vue'
 
+import { defaultContent } from '../../sample/sample-doc-strike'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
-
-const defaultContent = `
-  <p><s>This is strike</s></p>
-  <p><span>This is normal text</span></p>
-`
 
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultContent })

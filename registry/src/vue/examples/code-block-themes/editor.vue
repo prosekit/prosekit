@@ -15,7 +15,10 @@ import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent })
+const editor = createEditor({
+  extension,
+  defaultContent,
+})
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

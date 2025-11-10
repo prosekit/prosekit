@@ -10,6 +10,7 @@ import {
   watchPostEffect,
 } from 'vue'
 
+import { defaultContent } from '../../sample/sample-doc-search'
 import { Search } from '../../ui/search'
 
 import { defineExtension } from './extension'
@@ -17,14 +18,7 @@ import { defineExtension } from './extension'
 const extension = defineExtension()
 const editor = createEditor({
   extension,
-  defaultContent: '<p>Baa, baa, black sheep,</p>'
-    + '<p>Have you any wool?</p>'
-    + '<p>Yes, sir, yes, sir,</p>'
-    + '<p>Three bags full;</p>'
-    + '<p>One for the master,</p>'
-    + '<p>And one for the dame,</p>'
-    + '<p>And one for the little boy</p>'
-    + '<p>Who lives down the lane.</p>',
+  defaultContent,
 })
 
 const editorRef = ref<HTMLDivElement | null>(null)

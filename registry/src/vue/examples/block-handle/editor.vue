@@ -9,14 +9,14 @@ import {
   watchPostEffect,
 } from 'vue'
 
-import { DEFAULT_DRAG_AND_DROP_CONTENT } from '../../sample/default-content-drag-and-drop'
+import { defaultContent } from '../../sample/sample-doc-block-handle'
 import { BlockHandle } from '../../ui/block-handle'
 import { DropIndicator } from '../../ui/drop-indicator'
 
 import { defineExtension } from './extension'
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent: DEFAULT_DRAG_AND_DROP_CONTENT })
+const editor = createEditor({ extension, defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

@@ -10,10 +10,10 @@ import {
   watchPostEffect,
 } from 'vue'
 
-import { typographyContent } from './typography-content'
+import { defaultContent } from '../../sample/sample-doc-typography'
 
 const extension = defineBasicExtension()
-const editor = createEditor({ extension, defaultContent: typographyContent })
+const editor = createEditor({ extension, defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

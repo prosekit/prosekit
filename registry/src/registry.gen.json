@@ -9,7 +9,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-default-content-drag-and-drop.json",
+        "https://prosekit.dev/r/react-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/react-ui-block-handle.json",
         "https://prosekit.dev/r/react-ui-code-block-view.json",
         "https://prosekit.dev/r/react-ui-drop-indicator.json"
@@ -43,7 +43,7 @@
           "registry/src/react/examples/block-handle/editor.tsx",
           "registry/src/react/examples/block-handle/extension.ts",
           "registry/src/react/examples/block-handle/index.ts",
-          "registry/src/react/sample/default-content-drag-and-drop.ts",
+          "registry/src/react/sample/sample-doc-block-handle.ts",
           "registry/src/react/ui/block-handle/block-handle.tsx",
           "registry/src/react/ui/block-handle/index.ts",
           "registry/src/react/ui/code-block-view/code-block-view.tsx",
@@ -52,7 +52,7 @@
           "registry/src/react/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "react-sample-default-content-drag-and-drop",
+          "react-sample-sample-doc-block-handle",
           "react-ui-block-handle",
           "react-ui-code-block-view",
           "react-ui-drop-indicator"
@@ -114,6 +114,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -145,6 +146,7 @@
           "registry/src/react/examples/bold/editor.tsx",
           "registry/src/react/examples/bold/extension.ts",
           "registry/src/react/examples/bold/index.ts",
+          "registry/src/react/sample/sample-doc-bold.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -153,6 +155,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-bold",
           "react-ui-toolbar"
         ]
       }
@@ -208,6 +211,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-code.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -239,6 +243,7 @@
           "registry/src/react/examples/code/editor.tsx",
           "registry/src/react/examples/code/extension.ts",
           "registry/src/react/examples/code/index.ts",
+          "registry/src/react/sample/sample-doc-code.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -247,6 +252,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-code",
           "react-ui-toolbar"
         ]
       }
@@ -560,7 +566,9 @@
       "title": "react-example-gap-cursor",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-gap-cursor.json"
+      ],
       "dependencies": [
         "prosekit",
         "react"
@@ -589,9 +597,12 @@
         "accumulatedFiles": [
           "registry/src/react/examples/gap-cursor/editor.tsx",
           "registry/src/react/examples/gap-cursor/extension.ts",
-          "registry/src/react/examples/gap-cursor/index.ts"
+          "registry/src/react/examples/gap-cursor/index.ts",
+          "registry/src/react/sample/sample-doc-gap-cursor.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "react-sample-sample-doc-gap-cursor"
+        ]
       }
     },
     {
@@ -600,6 +611,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
@@ -637,10 +649,12 @@
           "registry/src/react/examples/hard-break/extension.ts",
           "registry/src/react/examples/hard-break/index.ts",
           "registry/src/react/examples/hard-break/toolbar.tsx",
+          "registry/src/react/sample/sample-doc-hard-break.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-hard-break",
           "react-ui-button"
         ]
       }
@@ -651,6 +665,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -682,6 +697,7 @@
           "registry/src/react/examples/heading/editor.tsx",
           "registry/src/react/examples/heading/extension.ts",
           "registry/src/react/examples/heading/index.ts",
+          "registry/src/react/sample/sample-doc-heading.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -690,6 +706,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-heading",
           "react-ui-toolbar"
         ]
       }
@@ -800,6 +817,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
@@ -831,12 +849,14 @@
           "registry/src/react/examples/inline-menu/editor.tsx",
           "registry/src/react/examples/inline-menu/extension.ts",
           "registry/src/react/examples/inline-menu/index.ts",
+          "registry/src/react/sample/sample-doc-inline-menu.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/inline-menu/index.ts",
           "registry/src/react/ui/inline-menu/inline-menu.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-inline-menu",
           "react-ui-inline-menu"
         ]
       }
@@ -847,6 +867,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -878,6 +899,7 @@
           "registry/src/react/examples/italic/editor.tsx",
           "registry/src/react/examples/italic/extension.ts",
           "registry/src/react/examples/italic/index.ts",
+          "registry/src/react/sample/sample-doc-italic.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -886,6 +908,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-italic",
           "react-ui-toolbar"
         ]
       }
@@ -953,6 +976,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-link.json",
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
@@ -984,12 +1008,14 @@
           "registry/src/react/examples/link/editor.tsx",
           "registry/src/react/examples/link/extension.ts",
           "registry/src/react/examples/link/index.ts",
+          "registry/src/react/sample/sample-doc-link.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/inline-menu/index.ts",
           "registry/src/react/ui/inline-menu/inline-menu.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-link",
           "react-ui-inline-menu"
         ]
       }
@@ -999,7 +1025,9 @@
       "title": "react-example-link-mark-view",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-link-mark-view.json"
+      ],
       "dependencies": [
         "prosekit",
         "react"
@@ -1034,9 +1062,12 @@
           "registry/src/react/examples/link-mark-view/editor.tsx",
           "registry/src/react/examples/link-mark-view/extension.ts",
           "registry/src/react/examples/link-mark-view/index.ts",
-          "registry/src/react/examples/link-mark-view/link-view.tsx"
+          "registry/src/react/examples/link-mark-view/link-view.tsx",
+          "registry/src/react/sample/sample-doc-link-mark-view.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "react-sample-sample-doc-link-mark-view"
+        ]
       }
     },
     {
@@ -1329,6 +1360,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
@@ -1372,10 +1404,12 @@
           "registry/src/react/examples/readonly/index.ts",
           "registry/src/react/examples/readonly/toolbar.tsx",
           "registry/src/react/examples/readonly/use-readonly.ts",
+          "registry/src/react/sample/sample-doc-readonly.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-readonly",
           "react-ui-button"
         ]
       }
@@ -1385,7 +1419,9 @@
       "title": "react-example-save-html",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-save-html.json"
+      ],
       "dependencies": [
         "prosekit",
         "react"
@@ -1408,9 +1444,12 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/examples/save-html/editor.tsx",
-          "registry/src/react/examples/save-html/index.ts"
+          "registry/src/react/examples/save-html/index.ts",
+          "registry/src/react/sample/sample-doc-save-html.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "react-sample-sample-doc-save-html"
+        ]
       }
     },
     {
@@ -1498,6 +1537,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-search.json",
         "https://prosekit.dev/r/react-ui-search.json"
       ],
       "dependencies": [
@@ -1529,12 +1569,14 @@
           "registry/src/react/examples/search/editor.tsx",
           "registry/src/react/examples/search/extension.ts",
           "registry/src/react/examples/search/index.ts",
+          "registry/src/react/sample/sample-doc-search.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/search/index.ts",
           "registry/src/react/ui/search/search.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-search",
           "react-ui-search"
         ]
       }
@@ -1592,6 +1634,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
@@ -1629,10 +1672,12 @@
           "registry/src/react/examples/strike/extension.ts",
           "registry/src/react/examples/strike/index.ts",
           "registry/src/react/examples/strike/toolbar.tsx",
+          "registry/src/react/sample/sample-doc-strike.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-strike",
           "react-ui-button"
         ]
       }
@@ -1691,6 +1736,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-text-align.json",
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
@@ -1728,10 +1774,12 @@
           "registry/src/react/examples/text-align/extension.ts",
           "registry/src/react/examples/text-align/index.ts",
           "registry/src/react/examples/text-align/toolbar.tsx",
+          "registry/src/react/sample/sample-doc-text-align.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-text-align",
           "react-ui-button"
         ]
       }
@@ -1742,6 +1790,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
@@ -1785,10 +1834,12 @@
           "registry/src/react/examples/text-color/index.ts",
           "registry/src/react/examples/text-color/inline-menu.tsx",
           "registry/src/react/examples/text-color/text-color.ts",
+          "registry/src/react/sample/sample-doc-text-color.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-text-color",
           "react-ui-button"
         ]
       }
@@ -1850,7 +1901,9 @@
       "title": "react-example-typography",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-typography.json"
+      ],
       "dependencies": [
         "prosekit",
         "react"
@@ -1865,11 +1918,6 @@
           "path": "registry/src/react/examples/typography/index.ts",
           "type": "registry:component",
           "target": "components/editor/examples/typography/index.ts"
-        },
-        {
-          "path": "registry/src/react/examples/typography/typography-content.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/typography/typography-content.ts"
         }
       ],
       "meta": {
@@ -1879,9 +1927,11 @@
         "accumulatedFiles": [
           "registry/src/react/examples/typography/editor.tsx",
           "registry/src/react/examples/typography/index.ts",
-          "registry/src/react/examples/typography/typography-content.ts"
+          "registry/src/react/sample/sample-doc-typography.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "react-sample-sample-doc-typography"
+        ]
       }
     },
     {
@@ -1890,6 +1940,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
@@ -1921,6 +1972,7 @@
           "registry/src/react/examples/underline/editor.tsx",
           "registry/src/react/examples/underline/extension.ts",
           "registry/src/react/examples/underline/index.ts",
+          "registry/src/react/sample/sample-doc-underline.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts",
           "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
@@ -1929,6 +1981,7 @@
           "registry/src/react/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-underline",
           "react-ui-toolbar"
         ]
       }
@@ -2099,6 +2152,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-word-counter.json",
         "https://prosekit.dev/r/react-ui-word-counter.json"
       ],
       "dependencies": [
@@ -2130,10 +2184,12 @@
           "registry/src/react/examples/word-counter/editor.tsx",
           "registry/src/react/examples/word-counter/extension.ts",
           "registry/src/react/examples/word-counter/index.ts",
+          "registry/src/react/sample/sample-doc-word-counter.ts",
           "registry/src/react/ui/word-counter/index.ts",
           "registry/src/react/ui/word-counter/word-counter.tsx"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-word-counter",
           "react-ui-word-counter"
         ]
       }
@@ -2197,17 +2253,19 @@
       }
     },
     {
-      "name": "react-sample-default-content-drag-and-drop",
-      "title": "react-sample-default-content-drag-and-drop",
+      "name": "react-sample-sample-doc-block-handle",
+      "title": "react-sample-sample-doc-block-handle",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
-          "path": "registry/src/react/sample/default-content-drag-and-drop.ts",
+          "path": "registry/src/react/sample/sample-doc-block-handle.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/default-content-drag-and-drop.ts"
+          "target": "components/editor/sample/sample-doc-block-handle.ts"
         }
       ],
       "meta": {
@@ -2215,7 +2273,59 @@
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
-          "registry/src/react/sample/default-content-drag-and-drop.ts"
+          "registry/src/react/sample/sample-doc-block-handle.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-bold",
+      "title": "react-sample-sample-doc-bold",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-bold.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-bold.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-bold.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-code",
+      "title": "react-sample-sample-doc-code",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-code.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-code.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-code.ts"
         ],
         "internalDependencies": []
       }
@@ -2278,7 +2388,9 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/react/sample/sample-doc-full.ts",
@@ -2292,6 +2404,84 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-gap-cursor",
+      "title": "react-sample-sample-doc-gap-cursor",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-gap-cursor.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-gap-cursor.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-hard-break",
+      "title": "react-sample-sample-doc-hard-break",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-hard-break.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-hard-break.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-hard-break.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-heading",
+      "title": "react-sample-sample-doc-heading",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-heading.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-heading.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-heading.ts"
         ],
         "internalDependencies": []
       }
@@ -2318,6 +2508,110 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-inline-menu",
+      "title": "react-sample-sample-doc-inline-menu",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-inline-menu.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-inline-menu.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-inline-menu.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-italic",
+      "title": "react-sample-sample-doc-italic",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-italic.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-italic.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-link",
+      "title": "react-sample-sample-doc-link",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-link-mark-view",
+      "title": "react-sample-sample-doc-link-mark-view",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-link-mark-view.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link-mark-view.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-link-mark-view.ts"
         ],
         "internalDependencies": []
       }
@@ -2375,12 +2669,118 @@
       }
     },
     {
+      "name": "react-sample-sample-doc-readonly",
+      "title": "react-sample-sample-doc-readonly",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-save-html",
+      "title": "react-sample-sample-doc-save-html",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-save-html.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-save-html.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-save-html.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-search",
+      "title": "react-sample-sample-doc-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-search.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-search.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-strike",
+      "title": "react-sample-sample-doc-strike",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-strike.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-strike.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-strike.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "react-sample-sample-doc-table",
       "title": "react-sample-sample-doc-table",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/react/sample/sample-doc-table.ts",
@@ -2394,6 +2794,136 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-text-align",
+      "title": "react-sample-sample-doc-text-align",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-text-align.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-align.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-text-align.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-text-color",
+      "title": "react-sample-sample-doc-text-color",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-typography",
+      "title": "react-sample-sample-doc-typography",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-typography.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-typography.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-underline",
+      "title": "react-sample-sample-doc-underline",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-underline.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-underline.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-word-counter",
+      "title": "react-sample-sample-doc-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-word-counter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-word-counter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-word-counter.ts"
         ],
         "internalDependencies": []
       }
@@ -3001,7 +3531,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-default-content-drag-and-drop.json",
+        "https://prosekit.dev/r/vue-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/vue-ui-block-handle.json",
         "https://prosekit.dev/r/vue-ui-code-block-view.json",
         "https://prosekit.dev/r/vue-ui-drop-indicator.json"
@@ -3035,7 +3565,7 @@
           "registry/src/vue/examples/block-handle/editor.vue",
           "registry/src/vue/examples/block-handle/extension.ts",
           "registry/src/vue/examples/block-handle/index.ts",
-          "registry/src/vue/sample/default-content-drag-and-drop.ts",
+          "registry/src/vue/sample/sample-doc-block-handle.ts",
           "registry/src/vue/ui/block-handle/block-handle.vue",
           "registry/src/vue/ui/block-handle/index.ts",
           "registry/src/vue/ui/code-block-view/code-block-view.vue",
@@ -3044,7 +3574,7 @@
           "registry/src/vue/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "vue-sample-default-content-drag-and-drop",
+          "vue-sample-sample-doc-block-handle",
           "vue-ui-block-handle",
           "vue-ui-code-block-view",
           "vue-ui-drop-indicator"
@@ -3106,6 +3636,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
@@ -3137,6 +3668,7 @@
           "registry/src/vue/examples/bold/editor.vue",
           "registry/src/vue/examples/bold/extension.ts",
           "registry/src/vue/examples/bold/index.ts",
+          "registry/src/vue/sample/sample-doc-bold.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
@@ -3145,6 +3677,7 @@
           "registry/src/vue/ui/toolbar/toolbar.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-bold",
           "vue-ui-toolbar"
         ]
       }
@@ -3155,6 +3688,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-code.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
@@ -3186,6 +3720,7 @@
           "registry/src/vue/examples/code/editor.vue",
           "registry/src/vue/examples/code/extension.ts",
           "registry/src/vue/examples/code/index.ts",
+          "registry/src/vue/sample/sample-doc-code.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
@@ -3194,6 +3729,7 @@
           "registry/src/vue/ui/toolbar/toolbar.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-code",
           "vue-ui-toolbar"
         ]
       }
@@ -3507,7 +4043,9 @@
       "title": "vue-example-gap-cursor",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-gap-cursor.json"
+      ],
       "dependencies": [
         "prosekit",
         "vue"
@@ -3536,9 +4074,12 @@
         "accumulatedFiles": [
           "registry/src/vue/examples/gap-cursor/editor.vue",
           "registry/src/vue/examples/gap-cursor/extension.ts",
-          "registry/src/vue/examples/gap-cursor/index.ts"
+          "registry/src/vue/examples/gap-cursor/index.ts",
+          "registry/src/vue/sample/sample-doc-gap-cursor.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "vue-sample-sample-doc-gap-cursor"
+        ]
       }
     },
     {
@@ -3547,6 +4088,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
@@ -3584,10 +4126,12 @@
           "registry/src/vue/examples/hard-break/extension.ts",
           "registry/src/vue/examples/hard-break/index.ts",
           "registry/src/vue/examples/hard-break/toolbar.vue",
+          "registry/src/vue/sample/sample-doc-hard-break.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-hard-break",
           "vue-ui-button"
         ]
       }
@@ -3598,6 +4142,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
@@ -3629,6 +4174,7 @@
           "registry/src/vue/examples/heading/editor.vue",
           "registry/src/vue/examples/heading/extension.ts",
           "registry/src/vue/examples/heading/index.ts",
+          "registry/src/vue/sample/sample-doc-heading.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
@@ -3637,6 +4183,7 @@
           "registry/src/vue/ui/toolbar/toolbar.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-heading",
           "vue-ui-toolbar"
         ]
       }
@@ -3747,6 +4294,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
@@ -3778,12 +4326,14 @@
           "registry/src/vue/examples/inline-menu/editor.vue",
           "registry/src/vue/examples/inline-menu/extension.ts",
           "registry/src/vue/examples/inline-menu/index.ts",
+          "registry/src/vue/sample/sample-doc-inline-menu.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/inline-menu/index.ts",
           "registry/src/vue/ui/inline-menu/inline-menu.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-inline-menu",
           "vue-ui-inline-menu"
         ]
       }
@@ -3794,6 +4344,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
@@ -3825,6 +4376,7 @@
           "registry/src/vue/examples/italic/editor.vue",
           "registry/src/vue/examples/italic/extension.ts",
           "registry/src/vue/examples/italic/index.ts",
+          "registry/src/vue/sample/sample-doc-italic.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
@@ -3833,6 +4385,7 @@
           "registry/src/vue/ui/toolbar/toolbar.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-italic",
           "vue-ui-toolbar"
         ]
       }
@@ -3900,6 +4453,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-link.json",
         "https://prosekit.dev/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
@@ -3931,12 +4485,14 @@
           "registry/src/vue/examples/link/editor.vue",
           "registry/src/vue/examples/link/extension.ts",
           "registry/src/vue/examples/link/index.ts",
+          "registry/src/vue/sample/sample-doc-link.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/inline-menu/index.ts",
           "registry/src/vue/ui/inline-menu/inline-menu.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-link",
           "vue-ui-inline-menu"
         ]
       }
@@ -4186,6 +4742,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-search.json",
         "https://prosekit.dev/r/vue-ui-search.json"
       ],
       "dependencies": [
@@ -4217,12 +4774,14 @@
           "registry/src/vue/examples/search/editor.vue",
           "registry/src/vue/examples/search/extension.ts",
           "registry/src/vue/examples/search/index.ts",
+          "registry/src/vue/sample/sample-doc-search.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/search/index.ts",
           "registry/src/vue/ui/search/search.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-search",
           "vue-ui-search"
         ]
       }
@@ -4280,6 +4839,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
@@ -4317,10 +4877,12 @@
           "registry/src/vue/examples/strike/extension.ts",
           "registry/src/vue/examples/strike/index.ts",
           "registry/src/vue/examples/strike/toolbar.vue",
+          "registry/src/vue/sample/sample-doc-strike.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-strike",
           "vue-ui-button"
         ]
       }
@@ -4379,6 +4941,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
@@ -4422,10 +4985,12 @@
           "registry/src/vue/examples/text-color/index.ts",
           "registry/src/vue/examples/text-color/inline-menu.vue",
           "registry/src/vue/examples/text-color/text-color.ts",
+          "registry/src/vue/sample/sample-doc-text-color.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-text-color",
           "vue-ui-button"
         ]
       }
@@ -4487,7 +5052,9 @@
       "title": "vue-example-typography",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-typography.json"
+      ],
       "dependencies": [
         "prosekit",
         "vue"
@@ -4502,11 +5069,6 @@
           "path": "registry/src/vue/examples/typography/index.ts",
           "type": "registry:component",
           "target": "components/editor/examples/typography/index.ts"
-        },
-        {
-          "path": "registry/src/vue/examples/typography/typography-content.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/typography/typography-content.ts"
         }
       ],
       "meta": {
@@ -4516,9 +5078,11 @@
         "accumulatedFiles": [
           "registry/src/vue/examples/typography/editor.vue",
           "registry/src/vue/examples/typography/index.ts",
-          "registry/src/vue/examples/typography/typography-content.ts"
+          "registry/src/vue/sample/sample-doc-typography.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "vue-sample-sample-doc-typography"
+        ]
       }
     },
     {
@@ -4527,6 +5091,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
@@ -4558,6 +5123,7 @@
           "registry/src/vue/examples/underline/editor.vue",
           "registry/src/vue/examples/underline/extension.ts",
           "registry/src/vue/examples/underline/index.ts",
+          "registry/src/vue/sample/sample-doc-underline.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts",
           "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
@@ -4566,6 +5132,7 @@
           "registry/src/vue/ui/toolbar/toolbar.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-underline",
           "vue-ui-toolbar"
         ]
       }
@@ -4631,6 +5198,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-word-counter.json",
         "https://prosekit.dev/r/vue-ui-word-counter.json"
       ],
       "dependencies": [
@@ -4662,10 +5230,12 @@
           "registry/src/vue/examples/word-counter/editor.vue",
           "registry/src/vue/examples/word-counter/extension.ts",
           "registry/src/vue/examples/word-counter/index.ts",
+          "registry/src/vue/sample/sample-doc-word-counter.ts",
           "registry/src/vue/ui/word-counter/index.ts",
           "registry/src/vue/ui/word-counter/word-counter.vue"
         ],
         "internalDependencies": [
+          "vue-sample-sample-doc-word-counter",
           "vue-ui-word-counter"
         ]
       }
@@ -4729,17 +5299,19 @@
       }
     },
     {
-      "name": "vue-sample-default-content-drag-and-drop",
-      "title": "vue-sample-default-content-drag-and-drop",
+      "name": "vue-sample-sample-doc-block-handle",
+      "title": "vue-sample-sample-doc-block-handle",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
-          "path": "registry/src/vue/sample/default-content-drag-and-drop.ts",
+          "path": "registry/src/vue/sample/sample-doc-block-handle.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/default-content-drag-and-drop.ts"
+          "target": "components/editor/sample/sample-doc-block-handle.ts"
         }
       ],
       "meta": {
@@ -4747,7 +5319,59 @@
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
-          "registry/src/vue/sample/default-content-drag-and-drop.ts"
+          "registry/src/vue/sample/sample-doc-block-handle.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-bold",
+      "title": "vue-sample-sample-doc-bold",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-bold.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-bold.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-bold.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-code",
+      "title": "vue-sample-sample-doc-code",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-code.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-code.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-code.ts"
         ],
         "internalDependencies": []
       }
@@ -4810,7 +5434,9 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/vue/sample/sample-doc-full.ts",
@@ -4824,6 +5450,84 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-gap-cursor",
+      "title": "vue-sample-sample-doc-gap-cursor",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-gap-cursor.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-gap-cursor.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-hard-break",
+      "title": "vue-sample-sample-doc-hard-break",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-hard-break.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-hard-break.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-hard-break.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-heading",
+      "title": "vue-sample-sample-doc-heading",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-heading.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-heading.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-heading.ts"
         ],
         "internalDependencies": []
       }
@@ -4850,6 +5554,84 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-inline-menu",
+      "title": "vue-sample-sample-doc-inline-menu",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-inline-menu.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-inline-menu.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-inline-menu.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-italic",
+      "title": "vue-sample-sample-doc-italic",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-italic.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-italic.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-link",
+      "title": "vue-sample-sample-doc-link",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-link.ts"
         ],
         "internalDependencies": []
       }
@@ -4907,12 +5689,66 @@
       }
     },
     {
+      "name": "vue-sample-sample-doc-search",
+      "title": "vue-sample-sample-doc-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-search.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-search.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-strike",
+      "title": "vue-sample-sample-doc-strike",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-strike.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-strike.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-strike.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-sample-sample-doc-table",
       "title": "vue-sample-sample-doc-table",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/vue/sample/sample-doc-table.ts",
@@ -4926,6 +5762,110 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-text-color",
+      "title": "vue-sample-sample-doc-text-color",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-typography",
+      "title": "vue-sample-sample-doc-typography",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-typography.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-typography.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-underline",
+      "title": "vue-sample-sample-doc-underline",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-underline.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-underline.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-word-counter",
+      "title": "vue-sample-sample-doc-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-word-counter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-word-counter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-word-counter.ts"
         ],
         "internalDependencies": []
       }
@@ -5532,7 +6472,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-default-content-drag-and-drop.json",
+        "https://prosekit.dev/r/preact-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/preact-ui-block-handle.json",
         "https://prosekit.dev/r/preact-ui-code-block-view.json",
         "https://prosekit.dev/r/preact-ui-drop-indicator.json"
@@ -5566,7 +6506,7 @@
           "registry/src/preact/examples/block-handle/editor.tsx",
           "registry/src/preact/examples/block-handle/extension.ts",
           "registry/src/preact/examples/block-handle/index.ts",
-          "registry/src/preact/sample/default-content-drag-and-drop.ts",
+          "registry/src/preact/sample/sample-doc-block-handle.ts",
           "registry/src/preact/ui/block-handle/block-handle.tsx",
           "registry/src/preact/ui/block-handle/index.ts",
           "registry/src/preact/ui/code-block-view/code-block-view.tsx",
@@ -5575,7 +6515,7 @@
           "registry/src/preact/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "preact-sample-default-content-drag-and-drop",
+          "preact-sample-sample-doc-block-handle",
           "preact-ui-block-handle",
           "preact-ui-code-block-view",
           "preact-ui-drop-indicator"
@@ -5632,6 +6572,58 @@
       }
     },
     {
+      "name": "preact-example-bold",
+      "title": "preact-example-bold",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-bold.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/bold/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/bold/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/bold/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/bold/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/bold/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/bold/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "bold",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/bold/editor.tsx",
+          "registry/src/preact/examples/bold/extension.ts",
+          "registry/src/preact/examples/bold/index.ts",
+          "registry/src/preact/sample/sample-doc-bold.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-bold",
+          "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "preact-example-change-tracking",
       "title": "preact-example-change-tracking",
       "type": "registry:block",
@@ -5674,6 +6666,114 @@
           "registry/src/preact/examples/change-tracking/index.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-example-code",
+      "title": "preact-example-code",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-code.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/code/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/code/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/code/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/code/editor.tsx",
+          "registry/src/preact/examples/code/extension.ts",
+          "registry/src/preact/examples/code/index.ts",
+          "registry/src/preact/sample/sample-doc-code.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-code",
+          "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-code-block",
+      "title": "preact-example-code-block",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/preact-ui-code-block-view.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/code-block/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/code-block/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/code-block/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/code-block/editor.tsx",
+          "registry/src/preact/examples/code-block/extension.ts",
+          "registry/src/preact/examples/code-block/index.ts",
+          "registry/src/preact/sample/sample-doc-code-block.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+          "registry/src/preact/ui/code-block-view/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-code-block",
+          "preact-ui-code-block-view",
+          "preact-ui-toolbar"
+        ]
       }
     },
     {
@@ -5734,6 +6834,95 @@
           "preact-sample-sample-doc-code-block",
           "preact-ui-code-block-view"
         ]
+      }
+    },
+    {
+      "name": "preact-example-drop-cursor",
+      "title": "preact-example-drop-cursor",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-drop-cursor.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/drop-cursor/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/drop-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/drop-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "drop-cursor",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/drop-cursor/editor.tsx",
+          "registry/src/preact/examples/drop-cursor/extension.ts",
+          "registry/src/preact/examples/drop-cursor/index.ts",
+          "registry/src/preact/sample/sample-doc-drop-cursor.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-drop-cursor"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-emoji-rules",
+      "title": "preact-example-emoji-rules",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/emoji-rules/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/emoji-rules/emoji.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/emoji.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/emoji-rules/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/emoji-rules/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "emoji-rules",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/emoji-rules/editor.tsx",
+          "registry/src/preact/examples/emoji-rules/emoji.ts",
+          "registry/src/preact/examples/emoji-rules/extension.ts",
+          "registry/src/preact/examples/emoji-rules/index.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -5840,7 +7029,9 @@
       "title": "preact-example-gap-cursor",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-gap-cursor.json"
+      ],
       "dependencies": [
         "preact",
         "prosekit"
@@ -5869,9 +7060,66 @@
         "accumulatedFiles": [
           "registry/src/preact/examples/gap-cursor/editor.tsx",
           "registry/src/preact/examples/gap-cursor/extension.ts",
-          "registry/src/preact/examples/gap-cursor/index.ts"
+          "registry/src/preact/examples/gap-cursor/index.ts",
+          "registry/src/preact/sample/sample-doc-gap-cursor.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "preact-sample-sample-doc-gap-cursor"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-hard-break",
+      "title": "preact-example-hard-break",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-hard-break.json",
+        "https://prosekit.dev/r/preact-ui-button.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/hard-break/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/hard-break/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/hard-break/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/hard-break/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/hard-break/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "hard-break",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/hard-break/editor.tsx",
+          "registry/src/preact/examples/hard-break/extension.ts",
+          "registry/src/preact/examples/hard-break/index.ts",
+          "registry/src/preact/examples/hard-break/toolbar.tsx",
+          "registry/src/preact/sample/sample-doc-hard-break.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-hard-break",
+          "preact-ui-button"
+        ]
       }
     },
     {
@@ -5880,6 +7128,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
@@ -5911,6 +7160,7 @@
           "registry/src/preact/examples/heading/editor.tsx",
           "registry/src/preact/examples/heading/extension.ts",
           "registry/src/preact/examples/heading/index.ts",
+          "registry/src/preact/sample/sample-doc-heading.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts",
           "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
@@ -5919,6 +7169,7 @@
           "registry/src/preact/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-sample-doc-heading",
           "preact-ui-toolbar"
         ]
       }
@@ -6029,6 +7280,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
@@ -6060,13 +7312,67 @@
           "registry/src/preact/examples/inline-menu/editor.tsx",
           "registry/src/preact/examples/inline-menu/extension.ts",
           "registry/src/preact/examples/inline-menu/index.ts",
+          "registry/src/preact/sample/sample-doc-inline-menu.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts",
           "registry/src/preact/ui/inline-menu/index.ts",
           "registry/src/preact/ui/inline-menu/inline-menu.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-sample-doc-inline-menu",
           "preact-ui-inline-menu"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-italic",
+      "title": "preact-example-italic",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-italic.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/italic/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/italic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/italic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/italic/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "italic",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/italic/editor.tsx",
+          "registry/src/preact/examples/italic/extension.ts",
+          "registry/src/preact/examples/italic/index.ts",
+          "registry/src/preact/sample/sample-doc-italic.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-italic",
+          "preact-ui-toolbar"
         ]
       }
     },
@@ -6133,6 +7439,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-link.json",
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
@@ -6164,12 +7471,14 @@
           "registry/src/preact/examples/link/editor.tsx",
           "registry/src/preact/examples/link/extension.ts",
           "registry/src/preact/examples/link/index.ts",
+          "registry/src/preact/sample/sample-doc-link.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts",
           "registry/src/preact/ui/inline-menu/index.ts",
           "registry/src/preact/ui/inline-menu/inline-menu.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-sample-doc-link",
           "preact-ui-inline-menu"
         ]
       }
@@ -6179,7 +7488,9 @@
       "title": "preact-example-link-mark-view",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-link-mark-view.json"
+      ],
       "dependencies": [
         "preact",
         "prosekit"
@@ -6214,9 +7525,12 @@
           "registry/src/preact/examples/link-mark-view/editor.tsx",
           "registry/src/preact/examples/link-mark-view/extension.ts",
           "registry/src/preact/examples/link-mark-view/index.ts",
-          "registry/src/preact/examples/link-mark-view/link-view.tsx"
+          "registry/src/preact/examples/link-mark-view/link-view.tsx",
+          "registry/src/preact/sample/sample-doc-link-mark-view.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "preact-sample-sample-doc-link-mark-view"
+        ]
       }
     },
     {
@@ -6325,6 +7639,63 @@
         ],
         "internalDependencies": [
           "preact-sample-sample-doc-list-custom-checkbox",
+          "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-loro",
+      "title": "preact-example-loro",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "loro-crdt",
+        "loro-prosemirror",
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/loro/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/loro/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/loro/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/loro/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "loro",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/loro/editor-component.tsx",
+          "registry/src/preact/examples/loro/editor.tsx",
+          "registry/src/preact/examples/loro/extension.ts",
+          "registry/src/preact/examples/loro/index.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
           "preact-ui-toolbar"
         ]
       }
@@ -6452,6 +7823,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
@@ -6495,10 +7867,12 @@
           "registry/src/preact/examples/readonly/index.ts",
           "registry/src/preact/examples/readonly/toolbar.tsx",
           "registry/src/preact/examples/readonly/use-readonly.ts",
+          "registry/src/preact/sample/sample-doc-readonly.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "preact-sample-sample-doc-readonly",
           "preact-ui-button"
         ]
       }
@@ -6508,7 +7882,9 @@
       "title": "preact-example-save-html",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-save-html.json"
+      ],
       "dependencies": [
         "preact",
         "prosekit"
@@ -6531,9 +7907,12 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/examples/save-html/editor.tsx",
-          "registry/src/preact/examples/save-html/index.ts"
+          "registry/src/preact/examples/save-html/index.ts",
+          "registry/src/preact/sample/sample-doc-save-html.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "preact-sample-sample-doc-save-html"
+        ]
       }
     },
     {
@@ -6616,6 +7995,319 @@
       }
     },
     {
+      "name": "preact-example-search",
+      "title": "preact-example-search",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-search.json",
+        "https://prosekit.dev/r/preact-ui-search.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/search/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/search/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "search",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/search/editor.tsx",
+          "registry/src/preact/examples/search/extension.ts",
+          "registry/src/preact/examples/search/index.ts",
+          "registry/src/preact/sample/sample-doc-search.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/search/index.ts",
+          "registry/src/preact/ui/search/search.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-search",
+          "preact-ui-search"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-slash-menu",
+      "title": "preact-example-slash-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-ui-slash-menu.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/slash-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/slash-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "slash-menu",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/slash-menu/editor.tsx",
+          "registry/src/preact/examples/slash-menu/extension.ts",
+          "registry/src/preact/examples/slash-menu/index.ts",
+          "registry/src/preact/ui/slash-menu/index.ts",
+          "registry/src/preact/ui/slash-menu/slash-menu-empty.tsx",
+          "registry/src/preact/ui/slash-menu/slash-menu-item.tsx",
+          "registry/src/preact/ui/slash-menu/slash-menu.tsx"
+        ],
+        "internalDependencies": [
+          "preact-ui-slash-menu"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-strike",
+      "title": "preact-example-strike",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-strike.json",
+        "https://prosekit.dev/r/preact-ui-button.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/strike/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/strike/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/strike/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/strike/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "strike",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/strike/editor.tsx",
+          "registry/src/preact/examples/strike/extension.ts",
+          "registry/src/preact/examples/strike/index.ts",
+          "registry/src/preact/examples/strike/toolbar.tsx",
+          "registry/src/preact/sample/sample-doc-strike.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-strike",
+          "preact-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-table",
+      "title": "preact-example-table",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/preact-ui-table-handle.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/table/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/table/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/table/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "table",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/table/editor.tsx",
+          "registry/src/preact/examples/table/extension.ts",
+          "registry/src/preact/examples/table/index.ts",
+          "registry/src/preact/sample/sample-doc-table.ts",
+          "registry/src/preact/ui/table-handle/index.ts",
+          "registry/src/preact/ui/table-handle/table-handle.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-table",
+          "preact-ui-table-handle"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-text-align",
+      "title": "preact-example-text-align",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-text-align.json",
+        "https://prosekit.dev/r/preact-ui-button.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/text-align/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/text-align/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/text-align/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/text-align/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "text-align",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/text-align/editor.tsx",
+          "registry/src/preact/examples/text-align/extension.ts",
+          "registry/src/preact/examples/text-align/index.ts",
+          "registry/src/preact/examples/text-align/toolbar.tsx",
+          "registry/src/preact/sample/sample-doc-text-align.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-text-align",
+          "preact-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-text-color",
+      "title": "preact-example-text-color",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-text-color.json",
+        "https://prosekit.dev/r/preact-ui-button.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/text-color/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/text-color/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/text-color/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/text-color/inline-menu.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/inline-menu.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/text-color/text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "text-color",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/text-color/editor.tsx",
+          "registry/src/preact/examples/text-color/extension.ts",
+          "registry/src/preact/examples/text-color/index.ts",
+          "registry/src/preact/examples/text-color/inline-menu.tsx",
+          "registry/src/preact/examples/text-color/text-color.ts",
+          "registry/src/preact/sample/sample-doc-text-color.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-text-color",
+          "preact-ui-button"
+        ]
+      }
+    },
+    {
       "name": "preact-example-toolbar",
       "title": "preact-example-toolbar",
       "type": "registry:block",
@@ -6668,17 +8360,375 @@
       }
     },
     {
-      "name": "preact-sample-default-content-drag-and-drop",
-      "title": "preact-sample-default-content-drag-and-drop",
+      "name": "preact-example-typography",
+      "title": "preact-example-typography",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-typography.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/typography/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/typography/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "typography",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/typography/editor.tsx",
+          "registry/src/preact/examples/typography/index.ts",
+          "registry/src/preact/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-typography"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-underline",
+      "title": "preact-example-underline",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-underline.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/underline/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/underline/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/underline/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/underline/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/underline/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/underline/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "underline",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/underline/editor.tsx",
+          "registry/src/preact/examples/underline/extension.ts",
+          "registry/src/preact/examples/underline/index.ts",
+          "registry/src/preact/sample/sample-doc-underline.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-underline",
+          "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-unmount",
+      "title": "preact-example-unmount",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/unmount/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/unmount/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/unmount/extension-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/extension-component.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/unmount/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "unmount",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/unmount/editor-component.tsx",
+          "registry/src/preact/examples/unmount/editor.tsx",
+          "registry/src/preact/examples/unmount/extension-component.tsx",
+          "registry/src/preact/examples/unmount/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-example-user-menu",
+      "title": "preact-example-user-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-tag-data.json",
+        "https://prosekit.dev/r/preact-sample-user-data.json",
+        "https://prosekit.dev/r/preact-ui-tag-menu.json",
+        "https://prosekit.dev/r/preact-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/user-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/user-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/user-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "user-menu",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/user-menu/editor.tsx",
+          "registry/src/preact/examples/user-menu/extension.ts",
+          "registry/src/preact/examples/user-menu/index.ts",
+          "registry/src/preact/sample/tag-data.ts",
+          "registry/src/preact/sample/user-data.ts",
+          "registry/src/preact/ui/tag-menu/index.ts",
+          "registry/src/preact/ui/tag-menu/tag-menu.tsx",
+          "registry/src/preact/ui/user-menu/index.ts",
+          "registry/src/preact/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-tag-data",
+          "preact-sample-user-data",
+          "preact-ui-tag-menu",
+          "preact-ui-user-menu"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-user-menu-dynamic",
+      "title": "preact-example-user-menu-dynamic",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-user-data.json",
+        "https://prosekit.dev/r/preact-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/user-menu-dynamic/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/user-menu-dynamic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/user-menu-dynamic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/user-menu-dynamic/use-user-query.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "user-menu-dynamic",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/user-menu-dynamic/editor.tsx",
+          "registry/src/preact/examples/user-menu-dynamic/extension.ts",
+          "registry/src/preact/examples/user-menu-dynamic/index.ts",
+          "registry/src/preact/examples/user-menu-dynamic/use-user-query.ts",
+          "registry/src/preact/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "registry/src/preact/sample/user-data.ts",
+          "registry/src/preact/ui/user-menu/index.ts",
+          "registry/src/preact/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-user-data",
+          "preact-ui-user-menu"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-word-counter",
+      "title": "preact-example-word-counter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-word-counter.json",
+        "https://prosekit.dev/r/preact-ui-word-counter.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/word-counter/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/word-counter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "word-counter",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/word-counter/editor.tsx",
+          "registry/src/preact/examples/word-counter/extension.ts",
+          "registry/src/preact/examples/word-counter/index.ts",
+          "registry/src/preact/sample/sample-doc-word-counter.ts",
+          "registry/src/preact/ui/word-counter/index.ts",
+          "registry/src/preact/ui/word-counter/word-counter.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-word-counter",
+          "preact-ui-word-counter"
+        ]
+      }
+    },
+    {
+      "name": "preact-example-yjs",
+      "title": "preact-example-yjs",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit",
+        "y-protocols",
+        "y-websocket",
+        "yjs"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/yjs/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/yjs/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/yjs/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/yjs/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "yjs",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/yjs/editor-component.tsx",
+          "registry/src/preact/examples/yjs/editor.tsx",
+          "registry/src/preact/examples/yjs/extension.ts",
+          "registry/src/preact/examples/yjs/index.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-block-handle",
+      "title": "preact-sample-sample-doc-block-handle",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
-          "path": "registry/src/preact/sample/default-content-drag-and-drop.ts",
+          "path": "registry/src/preact/sample/sample-doc-block-handle.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/default-content-drag-and-drop.ts"
+          "target": "components/editor/sample/sample-doc-block-handle.ts"
         }
       ],
       "meta": {
@@ -6686,7 +8736,59 @@
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
-          "registry/src/preact/sample/default-content-drag-and-drop.ts"
+          "registry/src/preact/sample/sample-doc-block-handle.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-bold",
+      "title": "preact-sample-sample-doc-bold",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-bold.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-bold.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-bold.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-code",
+      "title": "preact-sample-sample-doc-code",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-code.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-code.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-code.ts"
         ],
         "internalDependencies": []
       }
@@ -6749,7 +8851,9 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/preact/sample/sample-doc-full.ts",
@@ -6763,6 +8867,84 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-gap-cursor",
+      "title": "preact-sample-sample-doc-gap-cursor",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-gap-cursor.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-gap-cursor.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-hard-break",
+      "title": "preact-sample-sample-doc-hard-break",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-hard-break.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-hard-break.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-hard-break.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-heading",
+      "title": "preact-sample-sample-doc-heading",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-heading.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-heading.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-heading.ts"
         ],
         "internalDependencies": []
       }
@@ -6789,6 +8971,110 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-inline-menu",
+      "title": "preact-sample-sample-doc-inline-menu",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-inline-menu.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-inline-menu.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-inline-menu.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-italic",
+      "title": "preact-sample-sample-doc-italic",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-italic.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-italic.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-link",
+      "title": "preact-sample-sample-doc-link",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-link-mark-view",
+      "title": "preact-sample-sample-doc-link-mark-view",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-link-mark-view.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link-mark-view.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-link-mark-view.ts"
         ],
         "internalDependencies": []
       }
@@ -6841,6 +9127,266 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-readonly",
+      "title": "preact-sample-sample-doc-readonly",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-save-html",
+      "title": "preact-sample-sample-doc-save-html",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-save-html.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-save-html.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-save-html.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-search",
+      "title": "preact-sample-sample-doc-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-search.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-search.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-strike",
+      "title": "preact-sample-sample-doc-strike",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-strike.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-strike.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-strike.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-table",
+      "title": "preact-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-text-align",
+      "title": "preact-sample-sample-doc-text-align",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-text-align.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-align.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-text-align.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-text-color",
+      "title": "preact-sample-sample-doc-text-color",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-typography",
+      "title": "preact-sample-sample-doc-typography",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-typography.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-typography.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-underline",
+      "title": "preact-sample-sample-doc-underline",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-underline.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-underline.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-word-counter",
+      "title": "preact-sample-sample-doc-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-word-counter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-word-counter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-word-counter.ts"
         ],
         "internalDependencies": []
       }
@@ -7176,6 +9722,50 @@
       }
     },
     {
+      "name": "preact-ui-search",
+      "title": "preact-ui-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-ui-button.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/ui/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/index.ts"
+        },
+        {
+          "path": "registry/src/preact/ui/search/search.tsx",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/search.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/search/index.ts",
+          "registry/src/preact/ui/search/search.tsx"
+        ],
+        "internalDependencies": [
+          "preact-ui-button"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
+      }
+    },
+    {
       "name": "preact-ui-slash-menu",
       "title": "preact-ui-slash-menu",
       "type": "registry:component",
@@ -7368,6 +9958,38 @@
       }
     },
     {
+      "name": "preact-ui-word-counter",
+      "title": "preact-ui-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/ui/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/index.ts"
+        },
+        {
+          "path": "registry/src/preact/ui/word-counter/word-counter.tsx",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/word-counter.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/ui/word-counter/index.ts",
+          "registry/src/preact/ui/word-counter/word-counter.tsx"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",
@@ -7498,30 +10120,6 @@
       }
     },
     {
-      "name": "svelte-sample-default-content-drag-and-drop",
-      "title": "svelte-sample-default-content-drag-and-drop",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/svelte/sample/default-content-drag-and-drop.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/default-content-drag-and-drop.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "svelte",
-        "accumulatedFiles": [
-          "registry/src/svelte/sample/default-content-drag-and-drop.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
       "name": "svelte-sample-sample-doc-code-block",
       "title": "svelte-sample-sample-doc-code-block",
       "type": "registry:component",
@@ -7579,7 +10177,9 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/svelte/sample/sample-doc-full.ts",
@@ -8246,6 +10846,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
@@ -8277,6 +10878,7 @@
           "registry/src/solid/examples/heading/editor.tsx",
           "registry/src/solid/examples/heading/extension.ts",
           "registry/src/solid/examples/heading/index.ts",
+          "registry/src/solid/sample/sample-doc-heading.ts",
           "registry/src/solid/ui/button/button.tsx",
           "registry/src/solid/ui/button/index.ts",
           "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
@@ -8285,6 +10887,7 @@
           "registry/src/solid/ui/toolbar/toolbar.tsx"
         ],
         "internalDependencies": [
+          "solid-sample-sample-doc-heading",
           "solid-ui-toolbar"
         ]
       }
@@ -8318,30 +10921,6 @@
         "accumulatedFiles": [
           "registry/src/solid/examples/minimal/editor.tsx",
           "registry/src/solid/examples/minimal/index.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "solid-sample-default-content-drag-and-drop",
-      "title": "solid-sample-default-content-drag-and-drop",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/solid/sample/default-content-drag-and-drop.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/default-content-drag-and-drop.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "solid",
-        "accumulatedFiles": [
-          "registry/src/solid/sample/default-content-drag-and-drop.ts"
         ],
         "internalDependencies": []
       }
@@ -8404,7 +10983,9 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
       "files": [
         {
           "path": "registry/src/solid/sample/sample-doc-full.ts",
@@ -8418,6 +10999,32 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-heading",
+      "title": "solid-sample-sample-doc-heading",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-heading.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-heading.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-heading.ts"
         ],
         "internalDependencies": []
       }

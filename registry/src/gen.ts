@@ -10,6 +10,7 @@ import { updateLoader } from './meta/update-loader'
 import { updatePackageJSON } from './meta/update-package-json'
 import { updateRegistryItems } from './meta/update-registry-item-json'
 import { updateRegistry } from './meta/update-registry-json'
+import { updateStoryMeta } from './meta/update-story-meta'
 import { updateWebsitePages } from './meta/update-website-pages'
 
 async function gen() {
@@ -23,6 +24,7 @@ async function gen() {
   await updateRegistry(items, 'registry/src/registry.gen.json')
   await updateRegistry(items, 'registry/dist/r/registry.json')
   await updateRegistryItems(items, 'registry/dist/r/', replaceClassNames)
+  await updateStoryMeta(items)
   await vfs.commit()
 }
 

@@ -5,16 +5,15 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-readonly'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
 
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({
-      extension,
-      defaultContent: 'The content is readonly. Press the buttons above to toggle the readonly mode.',
-    })
+    return createEditor({ extension, defaultContent })
   }, [])
 
   return (

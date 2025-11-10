@@ -5,332 +5,140 @@
   "private": true,
   "description": "ProseKit registry",
   "exports": {
-    ".": "./src/index.ts",
-    "./preact/examples/block-handle": {
-      "default": "./src/preact/examples/block-handle/index.ts"
-    },
-    "./preact/examples/blockquote": {
-      "default": "./src/preact/examples/blockquote/index.ts"
-    },
-    "./preact/examples/change-tracking": {
-      "default": "./src/preact/examples/change-tracking/index.ts"
-    },
-    "./preact/examples/code-block-themes": {
-      "default": "./src/preact/examples/code-block-themes/index.ts"
-    },
-    "./preact/examples/full": {
-      "default": "./src/preact/examples/full/index.ts"
-    },
-    "./preact/examples/gap-cursor": {
-      "default": "./src/preact/examples/gap-cursor/index.ts"
-    },
-    "./preact/examples/heading": {
-      "default": "./src/preact/examples/heading/index.ts"
-    },
-    "./preact/examples/horizontal-rule": {
-      "default": "./src/preact/examples/horizontal-rule/index.ts"
-    },
-    "./preact/examples/image-view": {
-      "default": "./src/preact/examples/image-view/index.ts"
-    },
-    "./preact/examples/inline-menu": {
-      "default": "./src/preact/examples/inline-menu/index.ts"
-    },
-    "./preact/examples/keymap": {
-      "default": "./src/preact/examples/keymap/index.ts"
-    },
-    "./preact/examples/link": {
-      "default": "./src/preact/examples/link/index.ts"
-    },
-    "./preact/examples/link-mark-view": {
-      "default": "./src/preact/examples/link-mark-view/index.ts"
-    },
-    "./preact/examples/list": {
-      "default": "./src/preact/examples/list/index.ts"
-    },
-    "./preact/examples/list-custom-checkbox": {
-      "default": "./src/preact/examples/list-custom-checkbox/index.ts"
-    },
-    "./preact/examples/mark-rule": {
-      "default": "./src/preact/examples/mark-rule/index.ts"
-    },
-    "./preact/examples/minimal": {
-      "default": "./src/preact/examples/minimal/index.ts"
-    },
-    "./preact/examples/placeholder": {
-      "default": "./src/preact/examples/placeholder/index.ts"
-    },
-    "./preact/examples/readonly": {
-      "default": "./src/preact/examples/readonly/index.ts"
-    },
-    "./preact/examples/save-html": {
-      "default": "./src/preact/examples/save-html/index.ts"
-    },
-    "./preact/examples/save-json": {
-      "default": "./src/preact/examples/save-json/index.ts"
-    },
-    "./preact/examples/save-markdown": {
-      "default": "./src/preact/examples/save-markdown/index.ts"
-    },
-    "./preact/examples/toolbar": {
-      "default": "./src/preact/examples/toolbar/index.ts"
-    },
+    "./preact/examples/block-handle": "./src/preact/examples/block-handle/index.ts",
+    "./preact/examples/blockquote": "./src/preact/examples/blockquote/index.ts",
+    "./preact/examples/bold": "./src/preact/examples/bold/index.ts",
+    "./preact/examples/change-tracking": "./src/preact/examples/change-tracking/index.ts",
+    "./preact/examples/code": "./src/preact/examples/code/index.ts",
+    "./preact/examples/code-block": "./src/preact/examples/code-block/index.ts",
+    "./preact/examples/code-block-themes": "./src/preact/examples/code-block-themes/index.ts",
+    "./preact/examples/drop-cursor": "./src/preact/examples/drop-cursor/index.ts",
+    "./preact/examples/emoji-rules": "./src/preact/examples/emoji-rules/index.ts",
+    "./preact/examples/full": "./src/preact/examples/full/index.ts",
+    "./preact/examples/gap-cursor": "./src/preact/examples/gap-cursor/index.ts",
+    "./preact/examples/hard-break": "./src/preact/examples/hard-break/index.ts",
+    "./preact/examples/heading": "./src/preact/examples/heading/index.ts",
+    "./preact/examples/horizontal-rule": "./src/preact/examples/horizontal-rule/index.ts",
+    "./preact/examples/image-view": "./src/preact/examples/image-view/index.ts",
+    "./preact/examples/inline-menu": "./src/preact/examples/inline-menu/index.ts",
+    "./preact/examples/italic": "./src/preact/examples/italic/index.ts",
+    "./preact/examples/keymap": "./src/preact/examples/keymap/index.ts",
+    "./preact/examples/link": "./src/preact/examples/link/index.ts",
+    "./preact/examples/link-mark-view": "./src/preact/examples/link-mark-view/index.ts",
+    "./preact/examples/list": "./src/preact/examples/list/index.ts",
+    "./preact/examples/list-custom-checkbox": "./src/preact/examples/list-custom-checkbox/index.ts",
+    "./preact/examples/loro": "./src/preact/examples/loro/index.ts",
+    "./preact/examples/mark-rule": "./src/preact/examples/mark-rule/index.ts",
+    "./preact/examples/minimal": "./src/preact/examples/minimal/index.ts",
+    "./preact/examples/placeholder": "./src/preact/examples/placeholder/index.ts",
+    "./preact/examples/readonly": "./src/preact/examples/readonly/index.ts",
+    "./preact/examples/save-html": "./src/preact/examples/save-html/index.ts",
+    "./preact/examples/save-json": "./src/preact/examples/save-json/index.ts",
+    "./preact/examples/save-markdown": "./src/preact/examples/save-markdown/index.ts",
+    "./preact/examples/search": "./src/preact/examples/search/index.ts",
+    "./preact/examples/slash-menu": "./src/preact/examples/slash-menu/index.ts",
+    "./preact/examples/strike": "./src/preact/examples/strike/index.ts",
+    "./preact/examples/table": "./src/preact/examples/table/index.ts",
+    "./preact/examples/text-align": "./src/preact/examples/text-align/index.ts",
+    "./preact/examples/text-color": "./src/preact/examples/text-color/index.ts",
+    "./preact/examples/toolbar": "./src/preact/examples/toolbar/index.ts",
+    "./preact/examples/typography": "./src/preact/examples/typography/index.ts",
+    "./preact/examples/underline": "./src/preact/examples/underline/index.ts",
+    "./preact/examples/unmount": "./src/preact/examples/unmount/index.ts",
+    "./preact/examples/user-menu": "./src/preact/examples/user-menu/index.ts",
+    "./preact/examples/user-menu-dynamic": "./src/preact/examples/user-menu-dynamic/index.ts",
+    "./preact/examples/word-counter": "./src/preact/examples/word-counter/index.ts",
+    "./preact/examples/yjs": "./src/preact/examples/yjs/index.ts",
     "./preact/renderer": "./src/preact/renderer.ts",
-    "./react/examples/block-handle": {
-      "default": "./src/react/examples/block-handle/index.ts"
-    },
-    "./react/examples/blockquote": {
-      "default": "./src/react/examples/blockquote/index.ts"
-    },
-    "./react/examples/bold": {
-      "default": "./src/react/examples/bold/index.ts"
-    },
-    "./react/examples/change-tracking": {
-      "default": "./src/react/examples/change-tracking/index.ts"
-    },
-    "./react/examples/code": {
-      "default": "./src/react/examples/code/index.ts"
-    },
-    "./react/examples/code-block": {
-      "default": "./src/react/examples/code-block/index.ts"
-    },
-    "./react/examples/code-block-themes": {
-      "default": "./src/react/examples/code-block-themes/index.ts"
-    },
-    "./react/examples/drop-cursor": {
-      "default": "./src/react/examples/drop-cursor/index.ts"
-    },
-    "./react/examples/emoji-rules": {
-      "default": "./src/react/examples/emoji-rules/index.ts"
-    },
-    "./react/examples/full": {
-      "default": "./src/react/examples/full/index.ts"
-    },
-    "./react/examples/gap-cursor": {
-      "default": "./src/react/examples/gap-cursor/index.ts"
-    },
-    "./react/examples/hard-break": {
-      "default": "./src/react/examples/hard-break/index.ts"
-    },
-    "./react/examples/heading": {
-      "default": "./src/react/examples/heading/index.ts"
-    },
-    "./react/examples/horizontal-rule": {
-      "default": "./src/react/examples/horizontal-rule/index.ts"
-    },
-    "./react/examples/image-view": {
-      "default": "./src/react/examples/image-view/index.ts"
-    },
-    "./react/examples/inline-menu": {
-      "default": "./src/react/examples/inline-menu/index.ts"
-    },
-    "./react/examples/italic": {
-      "default": "./src/react/examples/italic/index.ts"
-    },
-    "./react/examples/keymap": {
-      "default": "./src/react/examples/keymap/index.ts"
-    },
-    "./react/examples/link": {
-      "default": "./src/react/examples/link/index.ts"
-    },
-    "./react/examples/link-mark-view": {
-      "default": "./src/react/examples/link-mark-view/index.ts"
-    },
-    "./react/examples/list": {
-      "default": "./src/react/examples/list/index.ts"
-    },
-    "./react/examples/list-custom-checkbox": {
-      "default": "./src/react/examples/list-custom-checkbox/index.ts"
-    },
-    "./react/examples/loro": {
-      "default": "./src/react/examples/loro/index.ts"
-    },
-    "./react/examples/mark-rule": {
-      "default": "./src/react/examples/mark-rule/index.ts"
-    },
-    "./react/examples/minimal": {
-      "default": "./src/react/examples/minimal/index.ts"
-    },
-    "./react/examples/placeholder": {
-      "default": "./src/react/examples/placeholder/index.ts"
-    },
-    "./react/examples/readonly": {
-      "default": "./src/react/examples/readonly/index.ts"
-    },
-    "./react/examples/save-html": {
-      "default": "./src/react/examples/save-html/index.ts"
-    },
-    "./react/examples/save-json": {
-      "default": "./src/react/examples/save-json/index.ts"
-    },
-    "./react/examples/save-markdown": {
-      "default": "./src/react/examples/save-markdown/index.ts"
-    },
-    "./react/examples/search": {
-      "default": "./src/react/examples/search/index.ts"
-    },
-    "./react/examples/slash-menu": {
-      "default": "./src/react/examples/slash-menu/index.ts"
-    },
-    "./react/examples/strike": {
-      "default": "./src/react/examples/strike/index.ts"
-    },
-    "./react/examples/table": {
-      "default": "./src/react/examples/table/index.ts"
-    },
-    "./react/examples/text-align": {
-      "default": "./src/react/examples/text-align/index.ts"
-    },
-    "./react/examples/text-color": {
-      "default": "./src/react/examples/text-color/index.ts"
-    },
-    "./react/examples/toolbar": {
-      "default": "./src/react/examples/toolbar/index.ts"
-    },
-    "./react/examples/typography": {
-      "default": "./src/react/examples/typography/index.ts"
-    },
-    "./react/examples/underline": {
-      "default": "./src/react/examples/underline/index.ts"
-    },
-    "./react/examples/unmount": {
-      "default": "./src/react/examples/unmount/index.ts"
-    },
-    "./react/examples/user-menu": {
-      "default": "./src/react/examples/user-menu/index.ts"
-    },
-    "./react/examples/user-menu-dynamic": {
-      "default": "./src/react/examples/user-menu-dynamic/index.ts"
-    },
-    "./react/examples/word-counter": {
-      "default": "./src/react/examples/word-counter/index.ts"
-    },
-    "./react/examples/yjs": {
-      "default": "./src/react/examples/yjs/index.ts"
-    },
+    "./react/examples/block-handle": "./src/react/examples/block-handle/index.ts",
+    "./react/examples/blockquote": "./src/react/examples/blockquote/index.ts",
+    "./react/examples/bold": "./src/react/examples/bold/index.ts",
+    "./react/examples/change-tracking": "./src/react/examples/change-tracking/index.ts",
+    "./react/examples/code": "./src/react/examples/code/index.ts",
+    "./react/examples/code-block": "./src/react/examples/code-block/index.ts",
+    "./react/examples/code-block-themes": "./src/react/examples/code-block-themes/index.ts",
+    "./react/examples/drop-cursor": "./src/react/examples/drop-cursor/index.ts",
+    "./react/examples/emoji-rules": "./src/react/examples/emoji-rules/index.ts",
+    "./react/examples/full": "./src/react/examples/full/index.ts",
+    "./react/examples/gap-cursor": "./src/react/examples/gap-cursor/index.ts",
+    "./react/examples/hard-break": "./src/react/examples/hard-break/index.ts",
+    "./react/examples/heading": "./src/react/examples/heading/index.ts",
+    "./react/examples/horizontal-rule": "./src/react/examples/horizontal-rule/index.ts",
+    "./react/examples/image-view": "./src/react/examples/image-view/index.ts",
+    "./react/examples/inline-menu": "./src/react/examples/inline-menu/index.ts",
+    "./react/examples/italic": "./src/react/examples/italic/index.ts",
+    "./react/examples/keymap": "./src/react/examples/keymap/index.ts",
+    "./react/examples/link": "./src/react/examples/link/index.ts",
+    "./react/examples/link-mark-view": "./src/react/examples/link-mark-view/index.ts",
+    "./react/examples/list": "./src/react/examples/list/index.ts",
+    "./react/examples/list-custom-checkbox": "./src/react/examples/list-custom-checkbox/index.ts",
+    "./react/examples/loro": "./src/react/examples/loro/index.ts",
+    "./react/examples/mark-rule": "./src/react/examples/mark-rule/index.ts",
+    "./react/examples/minimal": "./src/react/examples/minimal/index.ts",
+    "./react/examples/placeholder": "./src/react/examples/placeholder/index.ts",
+    "./react/examples/readonly": "./src/react/examples/readonly/index.ts",
+    "./react/examples/save-html": "./src/react/examples/save-html/index.ts",
+    "./react/examples/save-json": "./src/react/examples/save-json/index.ts",
+    "./react/examples/save-markdown": "./src/react/examples/save-markdown/index.ts",
+    "./react/examples/search": "./src/react/examples/search/index.ts",
+    "./react/examples/slash-menu": "./src/react/examples/slash-menu/index.ts",
+    "./react/examples/strike": "./src/react/examples/strike/index.ts",
+    "./react/examples/table": "./src/react/examples/table/index.ts",
+    "./react/examples/text-align": "./src/react/examples/text-align/index.ts",
+    "./react/examples/text-color": "./src/react/examples/text-color/index.ts",
+    "./react/examples/toolbar": "./src/react/examples/toolbar/index.ts",
+    "./react/examples/typography": "./src/react/examples/typography/index.ts",
+    "./react/examples/underline": "./src/react/examples/underline/index.ts",
+    "./react/examples/unmount": "./src/react/examples/unmount/index.ts",
+    "./react/examples/user-menu": "./src/react/examples/user-menu/index.ts",
+    "./react/examples/user-menu-dynamic": "./src/react/examples/user-menu-dynamic/index.ts",
+    "./react/examples/word-counter": "./src/react/examples/word-counter/index.ts",
+    "./react/examples/yjs": "./src/react/examples/yjs/index.ts",
     "./react/renderer": "./src/react/renderer.ts",
     "./registry.gen.json": "./src/registry.gen.json",
     "./replace-class-names": "./src/meta/replace-classes.ts",
-    "./solid/examples/full": {
-      "default": "./src/solid/examples/full/index.ts"
-    },
-    "./solid/examples/heading": {
-      "default": "./src/solid/examples/heading/index.ts"
-    },
-    "./solid/examples/minimal": {
-      "default": "./src/solid/examples/minimal/index.ts"
-    },
+    "./solid/examples/full": "./src/solid/examples/full/index.ts",
+    "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
+    "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",
     "./solid/renderer": "./src/solid/renderer.ts",
-    "./svelte/examples/full": {
-      "default": "./src/svelte/examples/full/index.ts"
-    },
-    "./svelte/examples/minimal": {
-      "default": "./src/svelte/examples/minimal/index.ts"
-    },
+    "./svelte/examples/full": "./src/svelte/examples/full/index.ts",
+    "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
-    "./vue/examples/block-handle": {
-      "default": "./src/vue/examples/block-handle/index.ts"
-    },
-    "./vue/examples/blockquote": {
-      "default": "./src/vue/examples/blockquote/index.ts"
-    },
-    "./vue/examples/bold": {
-      "default": "./src/vue/examples/bold/index.ts"
-    },
-    "./vue/examples/code": {
-      "default": "./src/vue/examples/code/index.ts"
-    },
-    "./vue/examples/code-block": {
-      "default": "./src/vue/examples/code-block/index.ts"
-    },
-    "./vue/examples/code-block-themes": {
-      "default": "./src/vue/examples/code-block-themes/index.ts"
-    },
-    "./vue/examples/drop-cursor": {
-      "default": "./src/vue/examples/drop-cursor/index.ts"
-    },
-    "./vue/examples/emoji-rules": {
-      "default": "./src/vue/examples/emoji-rules/index.ts"
-    },
-    "./vue/examples/full": {
-      "default": "./src/vue/examples/full/index.ts"
-    },
-    "./vue/examples/gap-cursor": {
-      "default": "./src/vue/examples/gap-cursor/index.ts"
-    },
-    "./vue/examples/hard-break": {
-      "default": "./src/vue/examples/hard-break/index.ts"
-    },
-    "./vue/examples/heading": {
-      "default": "./src/vue/examples/heading/index.ts"
-    },
-    "./vue/examples/horizontal-rule": {
-      "default": "./src/vue/examples/horizontal-rule/index.ts"
-    },
-    "./vue/examples/image-view": {
-      "default": "./src/vue/examples/image-view/index.ts"
-    },
-    "./vue/examples/inline-menu": {
-      "default": "./src/vue/examples/inline-menu/index.ts"
-    },
-    "./vue/examples/italic": {
-      "default": "./src/vue/examples/italic/index.ts"
-    },
-    "./vue/examples/keymap": {
-      "default": "./src/vue/examples/keymap/index.ts"
-    },
-    "./vue/examples/link": {
-      "default": "./src/vue/examples/link/index.ts"
-    },
-    "./vue/examples/list": {
-      "default": "./src/vue/examples/list/index.ts"
-    },
-    "./vue/examples/list-custom-checkbox": {
-      "default": "./src/vue/examples/list-custom-checkbox/index.ts"
-    },
-    "./vue/examples/loro": {
-      "default": "./src/vue/examples/loro/index.ts"
-    },
-    "./vue/examples/minimal": {
-      "default": "./src/vue/examples/minimal/index.ts"
-    },
-    "./vue/examples/placeholder": {
-      "default": "./src/vue/examples/placeholder/index.ts"
-    },
-    "./vue/examples/search": {
-      "default": "./src/vue/examples/search/index.ts"
-    },
-    "./vue/examples/slash-menu": {
-      "default": "./src/vue/examples/slash-menu/index.ts"
-    },
-    "./vue/examples/strike": {
-      "default": "./src/vue/examples/strike/index.ts"
-    },
-    "./vue/examples/table": {
-      "default": "./src/vue/examples/table/index.ts"
-    },
-    "./vue/examples/text-color": {
-      "default": "./src/vue/examples/text-color/index.ts"
-    },
-    "./vue/examples/toolbar": {
-      "default": "./src/vue/examples/toolbar/index.ts"
-    },
-    "./vue/examples/typography": {
-      "default": "./src/vue/examples/typography/index.ts"
-    },
-    "./vue/examples/underline": {
-      "default": "./src/vue/examples/underline/index.ts"
-    },
-    "./vue/examples/user-menu": {
-      "default": "./src/vue/examples/user-menu/index.ts"
-    },
-    "./vue/examples/word-counter": {
-      "default": "./src/vue/examples/word-counter/index.ts"
-    },
-    "./vue/examples/yjs": {
-      "default": "./src/vue/examples/yjs/index.ts"
-    },
+    "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",
+    "./vue/examples/blockquote": "./src/vue/examples/blockquote/index.ts",
+    "./vue/examples/bold": "./src/vue/examples/bold/index.ts",
+    "./vue/examples/code": "./src/vue/examples/code/index.ts",
+    "./vue/examples/code-block": "./src/vue/examples/code-block/index.ts",
+    "./vue/examples/code-block-themes": "./src/vue/examples/code-block-themes/index.ts",
+    "./vue/examples/drop-cursor": "./src/vue/examples/drop-cursor/index.ts",
+    "./vue/examples/emoji-rules": "./src/vue/examples/emoji-rules/index.ts",
+    "./vue/examples/full": "./src/vue/examples/full/index.ts",
+    "./vue/examples/gap-cursor": "./src/vue/examples/gap-cursor/index.ts",
+    "./vue/examples/hard-break": "./src/vue/examples/hard-break/index.ts",
+    "./vue/examples/heading": "./src/vue/examples/heading/index.ts",
+    "./vue/examples/horizontal-rule": "./src/vue/examples/horizontal-rule/index.ts",
+    "./vue/examples/image-view": "./src/vue/examples/image-view/index.ts",
+    "./vue/examples/inline-menu": "./src/vue/examples/inline-menu/index.ts",
+    "./vue/examples/italic": "./src/vue/examples/italic/index.ts",
+    "./vue/examples/keymap": "./src/vue/examples/keymap/index.ts",
+    "./vue/examples/link": "./src/vue/examples/link/index.ts",
+    "./vue/examples/list": "./src/vue/examples/list/index.ts",
+    "./vue/examples/list-custom-checkbox": "./src/vue/examples/list-custom-checkbox/index.ts",
+    "./vue/examples/loro": "./src/vue/examples/loro/index.ts",
+    "./vue/examples/minimal": "./src/vue/examples/minimal/index.ts",
+    "./vue/examples/placeholder": "./src/vue/examples/placeholder/index.ts",
+    "./vue/examples/search": "./src/vue/examples/search/index.ts",
+    "./vue/examples/slash-menu": "./src/vue/examples/slash-menu/index.ts",
+    "./vue/examples/strike": "./src/vue/examples/strike/index.ts",
+    "./vue/examples/table": "./src/vue/examples/table/index.ts",
+    "./vue/examples/text-color": "./src/vue/examples/text-color/index.ts",
+    "./vue/examples/toolbar": "./src/vue/examples/toolbar/index.ts",
+    "./vue/examples/typography": "./src/vue/examples/typography/index.ts",
+    "./vue/examples/underline": "./src/vue/examples/underline/index.ts",
+    "./vue/examples/user-menu": "./src/vue/examples/user-menu/index.ts",
+    "./vue/examples/word-counter": "./src/vue/examples/word-counter/index.ts",
+    "./vue/examples/yjs": "./src/vue/examples/yjs/index.ts",
     "./vue/renderer": "./src/vue/renderer.ts"
   },
   "scripts": {
@@ -341,7 +149,7 @@
   },
   "dependencies": {
     "loro-crdt": "^1.8.9",
-    "loro-prosemirror": "^0.3.6",
+    "loro-prosemirror": "^0.3.7",
     "preact": "^10.27.2",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",

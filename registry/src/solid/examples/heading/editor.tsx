@@ -5,13 +5,14 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
+import { defaultContent } from '../../sample/sample-doc-heading'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
 export default function Editor(): JSX.Element {
   const extension = defineExtension()
-  const editor = createEditor({ extension, defaultContent: '<h1>H1</h1>' })
+  const editor = createEditor({ extension, defaultContent })
 
   return (
     <ProseKit editor={editor}>

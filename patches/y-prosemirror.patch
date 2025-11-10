@@ -1,0 +1,15 @@
+diff --git a/src/lib.js b/src/lib.js
+index 3f484971b5daae6d81b17afb01e238b170d0b03b..f10b3e7232c33bbd129dc3f61377350b1a2ad39a 100644
+--- a/src/lib.js
++++ b/src/lib.js
+@@ -27,6 +27,10 @@ const updateMetas = () => {
+     const tr = view.state.tr
+     const syncState = ySyncPluginKey.getState(view.state)
+     if (syncState && syncState.binding && !syncState.binding.isDestroyed) {
++      // See: https://github.com/yjs/y-prosemirror/pull/200
++      if (view.isDestroyed) {
++        return
++      }
+       metas.forEach((val, key) => {
+         tr.setMeta(key, val)
+       })

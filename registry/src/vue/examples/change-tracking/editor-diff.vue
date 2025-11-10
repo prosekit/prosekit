@@ -10,7 +10,10 @@ import {
 } from 'prosekit/extensions/commit'
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { ProseKit } from 'prosekit/vue'
-import { watchEffect } from 'vue'
+import {
+  ref,
+  watchPostEffect,
+} from 'vue'
 
 const props = defineProps<{ commit: Commit }>()
 
@@ -22,7 +25,9 @@ const editor = createEditor({
   ),
 })
 
-watchEffect((onCleanup) => {
+const editorRef = ref<HTMLDivElement | null>(null)
+watchPostEffect((onCleanup) => {
+  editor.mount(editorRef.value)
   onCleanup(() => editor.unmount())
 })
 </script>
@@ -31,7 +36,7 @@ watchEffect((onCleanup) => {
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
-        <div :ref="editor.mount" class="CSS_EDITOR_CONTENT"></div>
+        <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
       </div>
     </div>
   </ProseKit>

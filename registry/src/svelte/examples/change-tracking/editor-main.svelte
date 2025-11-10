@@ -14,15 +14,19 @@ import {
 } from 'prosekit/extensions/commit'
 import { ProseKit } from 'prosekit/svelte'
 
-export let commitRecorder: CommitRecorder
-export let defaultContent: NodeJSON | undefined = undefined
-export let key: number = 0
+interface Props {
+  commitRecorder: CommitRecorder
+  defaultContent?: NodeJSON
+  key?: number
+}
 
-$: extension = union(
+const props: Props = $props()
+
+let extension = $derived(union(
   defineBasicExtension(),
-  defineCommitRecorder(commitRecorder),
-)
-$: editor = createEditor({ extension, defaultContent })
+  defineCommitRecorder(props.commitRecorder),
+))
+let editor = $derived(createEditor({ extension, defaultContent: props.defaultContent }))
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)
@@ -30,7 +34,7 @@ const mount = (element: HTMLElement) => {
 }
 </script>
 
-{#key key}
+{#key props.key}
   <ProseKit {editor}>
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">

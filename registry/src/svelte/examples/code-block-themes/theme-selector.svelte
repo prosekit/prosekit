@@ -5,10 +5,7 @@ import {
   type ShikiBundledTheme,
 } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/svelte'
-import {
-  derived,
-  writable,
-} from 'svelte/store'
+import { derived, writable } from 'svelte/store'
 
 const theme = writable<ShikiBundledTheme>('github-dark')
 const extension = derived(theme, ($theme) => {
@@ -27,7 +24,7 @@ function handleChange(event: Event) {
 <select
   id="code-block-theme-selector"
   value={$theme}
-  on:change={handleChange}
+  onchange={handleChange}
   class="CSS_TOGGLE_BUTTON"
 >
   {#each shikiBundledThemesInfo as info (info.id)}

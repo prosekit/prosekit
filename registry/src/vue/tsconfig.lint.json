@@ -1,0 +1,11 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "outDir": "${configDir}/node_modules/.cache/tsconfig_lint/out"
+  },
+  "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"],
+  "references": [
+    { "path": "../../../packages/prosekit" }
+  ]
+}

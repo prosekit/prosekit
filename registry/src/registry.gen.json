@@ -12012,6 +12012,52 @@
       }
     },
     {
+      "name": "svelte-example-slash-menu",
+      "title": "svelte-example-slash-menu",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-slash-menu.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/slash-menu/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/slash-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "slash-menu",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/slash-menu/editor.svelte",
+          "registry/src/svelte/examples/slash-menu/extension.ts",
+          "registry/src/svelte/examples/slash-menu/index.ts",
+          "registry/src/svelte/ui/slash-menu/index.ts",
+          "registry/src/svelte/ui/slash-menu/slash-menu-empty.svelte",
+          "registry/src/svelte/ui/slash-menu/slash-menu-item.svelte",
+          "registry/src/svelte/ui/slash-menu/slash-menu.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-ui-slash-menu"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",

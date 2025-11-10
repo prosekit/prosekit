@@ -32,4 +32,5 @@ export const loaders = {
   'save-json': () => import('./examples/save-json').then((m) => ({ default: m.ExampleEditor })),
   'save-markdown': () => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor })),
   'search': () => import('./examples/search').then((m) => ({ default: m.ExampleEditor })),
+  'slash-menu': () => import('./examples/slash-menu').then((m) => ({ default: m.ExampleEditor })),
 }

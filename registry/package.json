@@ -120,6 +120,7 @@
     "./svelte/examples/italic": "./src/svelte/examples/italic/index.ts",
     "./svelte/examples/keymap": "./src/svelte/examples/keymap/index.ts",
     "./svelte/examples/link": "./src/svelte/examples/link/index.ts",
+    "./svelte/examples/link-mark-view": "./src/svelte/examples/link-mark-view/index.ts",
     "./svelte/examples/minimal": "./src/svelte/examples/minimal/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",

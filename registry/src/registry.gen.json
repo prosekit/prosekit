@@ -11471,6 +11471,56 @@
       }
     },
     {
+      "name": "svelte-example-link-mark-view",
+      "title": "svelte-example-link-mark-view",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "svelte"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/link-mark-view/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/link-mark-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/link-mark-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/link-mark-view/link-view.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/link-view.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "link-mark-view",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/link-mark-view/editor.svelte",
+          "registry/src/svelte/examples/link-mark-view/extension.ts",
+          "registry/src/svelte/examples/link-mark-view/index.ts",
+          "registry/src/svelte/examples/link-mark-view/link-view.svelte",
+          "registry/src/svelte/sample/sample-doc-link-mark-view.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-link-mark-view"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
@@ -11836,6 +11886,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-link-mark-view",
+      "title": "svelte-sample-sample-doc-link-mark-view",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-link-mark-view.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link-mark-view.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-link-mark-view.ts"
         ],
         "internalDependencies": []
       }

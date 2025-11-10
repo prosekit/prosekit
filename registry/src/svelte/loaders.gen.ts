@@ -20,5 +20,6 @@ export const loaders = {
   'italic': () => import('./examples/italic').then((m) => ({ default: m.ExampleEditor })),
   'keymap': () => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor })),
   'link': () => import('./examples/link').then((m) => ({ default: m.ExampleEditor })),
+  'link-mark-view': () => import('./examples/link-mark-view').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

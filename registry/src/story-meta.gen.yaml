@@ -37,7 +37,7 @@
 - name: link
   frameworks: [react, vue, preact, svelte]
 - name: link-mark-view
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: list
   frameworks: [react, vue, preact]
 - name: list-custom-checkbox

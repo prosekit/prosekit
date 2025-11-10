@@ -5032,6 +5032,11 @@
       ],
       "files": [
         {
+          "path": "registry/src/vue/examples/save-markdown/editor-component.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/editor-component.vue"
+        },
+        {
           "path": "registry/src/vue/examples/save-markdown/editor.vue",
           "type": "registry:component",
           "target": "components/editor/examples/save-markdown/editor.vue"
@@ -5052,6 +5057,7 @@
         "story": "save-markdown",
         "framework": "vue",
         "accumulatedFiles": [
+          "registry/src/vue/examples/save-markdown/editor-component.vue",
           "registry/src/vue/examples/save-markdown/editor.vue",
           "registry/src/vue/examples/save-markdown/index.ts",
           "registry/src/vue/examples/save-markdown/markdown.ts"

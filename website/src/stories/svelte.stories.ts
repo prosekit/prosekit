@@ -38,3 +38,4 @@ export const SlashMenu = { args: { story: 'slash-menu' } }
 export const Strike = { args: { story: 'strike' } }
 export const Table = { args: { story: 'table' } }
 export const TextAlign = { args: { story: 'text-align' } }
+export const TextColor = { args: { story: 'text-color' } }

@@ -12211,6 +12211,65 @@
       }
     },
     {
+      "name": "svelte-example-text-color",
+      "title": "svelte-example-text-color",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-text-color.json",
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/text-color/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-color/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-color/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-color/inline-menu.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/inline-menu.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/text-color/text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "text-color",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/text-color/editor.svelte",
+          "registry/src/svelte/examples/text-color/extension.ts",
+          "registry/src/svelte/examples/text-color/index.ts",
+          "registry/src/svelte/examples/text-color/inline-menu.svelte",
+          "registry/src/svelte/examples/text-color/text-color.ts",
+          "registry/src/svelte/sample/sample-doc-text-color.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-text-color",
+          "svelte-ui-button"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12752,6 +12811,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-text-align.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-text-color",
+      "title": "svelte-sample-sample-doc-text-color",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-text-color.ts"
         ],
         "internalDependencies": []
       }

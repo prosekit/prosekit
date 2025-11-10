@@ -11422,6 +11422,55 @@
       }
     },
     {
+      "name": "svelte-example-link",
+      "title": "svelte-example-link",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-link.json",
+        "https://prosekit.dev/r/svelte-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/link/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/link/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/link/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "link",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/link/editor.svelte",
+          "registry/src/svelte/examples/link/extension.ts",
+          "registry/src/svelte/examples/link/index.ts",
+          "registry/src/svelte/sample/sample-doc-link.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/inline-menu/index.ts",
+          "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-link",
+          "svelte-ui-inline-menu"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
@@ -11761,6 +11810,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-link",
+      "title": "svelte-sample-sample-doc-link",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-link.ts"
         ],
         "internalDependencies": []
       }

@@ -19,5 +19,6 @@ export const loaders = {
   'inline-menu': () => import('./examples/inline-menu').then((m) => ({ default: m.ExampleEditor })),
   'italic': () => import('./examples/italic').then((m) => ({ default: m.ExampleEditor })),
   'keymap': () => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor })),
+  'link': () => import('./examples/link').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

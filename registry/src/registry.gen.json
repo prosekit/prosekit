@@ -11686,6 +11686,50 @@
       }
     },
     {
+      "name": "svelte-example-mark-rule",
+      "title": "svelte-example-mark-rule",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/mark-rule/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/mark-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/mark-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/mark-rule/issue-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/issue-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "mark-rule",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/mark-rule/editor.svelte",
+          "registry/src/svelte/examples/mark-rule/extension.ts",
+          "registry/src/svelte/examples/mark-rule/index.ts",
+          "registry/src/svelte/examples/mark-rule/issue-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",

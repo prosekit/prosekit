@@ -24,5 +24,6 @@ export const loaders = {
   'list': () => import('./examples/list').then((m) => ({ default: m.ExampleEditor })),
   'list-custom-checkbox': () => import('./examples/list-custom-checkbox').then((m) => ({ default: m.ExampleEditor })),
   'loro': () => import('./examples/loro').then((m) => ({ default: m.ExampleEditor })),
+  'mark-rule': () => import('./examples/mark-rule').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

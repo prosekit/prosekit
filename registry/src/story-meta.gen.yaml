@@ -45,7 +45,7 @@
 - name: loro
   frameworks: [react, vue, preact, svelte]
 - name: mark-rule
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]
 - name: placeholder

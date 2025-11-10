@@ -33,4 +33,5 @@ export const loaders = {
   'save-markdown': () => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor })),
   'search': () => import('./examples/search').then((m) => ({ default: m.ExampleEditor })),
   'slash-menu': () => import('./examples/slash-menu').then((m) => ({ default: m.ExampleEditor })),
+  'strike': () => import('./examples/strike').then((m) => ({ default: m.ExampleEditor })),
 }

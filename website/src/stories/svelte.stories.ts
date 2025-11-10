@@ -35,3 +35,4 @@ export const SaveJson = { args: { story: 'save-json' } }
 export const SaveMarkdown = { args: { story: 'save-markdown' } }
 export const Search = { args: { story: 'search' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
+export const Strike = { args: { story: 'strike' } }

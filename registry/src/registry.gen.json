@@ -12058,6 +12058,59 @@
       }
     },
     {
+      "name": "svelte-example-strike",
+      "title": "svelte-example-strike",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-strike.json",
+        "https://prosekit.dev/r/svelte-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/strike/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/strike/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/strike/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/strike/toolbar.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/toolbar.svelte"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "strike",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/strike/editor.svelte",
+          "registry/src/svelte/examples/strike/extension.ts",
+          "registry/src/svelte/examples/strike/index.ts",
+          "registry/src/svelte/examples/strike/toolbar.svelte",
+          "registry/src/svelte/sample/sample-doc-strike.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-strike",
+          "svelte-ui-button"
+        ]
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -12521,6 +12574,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-strike",
+      "title": "svelte-sample-sample-doc-strike",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-strike.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-strike.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-strike.ts"
         ],
         "internalDependencies": []
       }

@@ -1,6 +1,9 @@
 import type { ComponentChild } from 'preact'
 import type { JSX } from 'preact'
-import { useState } from 'preact/hooks'
+import {
+  useId,
+  useState,
+} from 'preact/hooks'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/preact'
@@ -21,6 +24,7 @@ export default function ImageUploadPopover(props: {
   const [open, setOpen] = useState(false)
   const [url, setUrl] = useState('')
   const [file, setFile] = useState<File | null>(null)
+  const ariaId = useId()
 
   const editor = useEditor<ImageExtension>()
 
@@ -85,8 +89,9 @@ export default function ImageUploadPopover(props: {
       <PopoverContent className="CSS_IMAGE_UPLOAD_CARD">
         {file ? null : (
           <>
-            <label>Embed Link</label>
+            <label htmlFor={`id-link-${ariaId}`}>Embed Link</label>
             <input
+              id={`id-link-${ariaId}`}
               className="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
@@ -98,8 +103,9 @@ export default function ImageUploadPopover(props: {
 
         {url ? null : (
           <>
-            <label>Upload</label>
+            <label htmlFor={`id-upload-${ariaId}`}>Upload</label>
             <input
+              id={`id-upload-${ariaId}`}
               className="CSS_IMAGE_UPLOAD_INPUT"
               accept="image/*"
               type="file"

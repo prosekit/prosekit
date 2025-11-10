@@ -192,6 +192,8 @@ async function getStableHTML(
   let html = formatHTML(clone.innerHTML)
   // Replace random ids
   html = html.replaceAll(/ id="[\w-]+"/g, ' id="SOME_ID"')
+  // Replace <label for="..."> with <label>
+  html = html.replaceAll(/ for="[\w-]+"/g, ' for="SOME_ID"')
   // Replace random value attributes
   html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
   // Replace styles with display: none

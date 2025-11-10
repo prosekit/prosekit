@@ -7,7 +7,10 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from 'prosekit/vue/popover'
-import { ref } from 'vue'
+import {
+  ref,
+  useId,
+} from 'vue'
 
 import { Button } from '../button'
 
@@ -20,6 +23,7 @@ const props = defineProps<{
 const open = ref(false)
 const url = ref('')
 const file = ref<File | null>(null)
+const ariaId = useId()
 
 const editor = useEditor<ImageExtension>()
 
@@ -81,9 +85,10 @@ function handleOpenChange(isOpen: boolean) {
     </PopoverTrigger>
 
     <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-      <label v-if="!file">Embed Link</label>
+      <label v-if="!file" :for="`id-link-${ariaId}`">Embed Link</label>
       <input
         v-if="!file"
+        :id="`id-link-${ariaId}`"
         class="CSS_IMAGE_UPLOAD_INPUT"
         placeholder="Paste the image link..."
         type="url"
@@ -91,9 +96,10 @@ function handleOpenChange(isOpen: boolean) {
         @input="handleUrlChange"
       />
 
-      <label v-if="!url">Upload</label>
+      <label v-if="!url" :for="`id-upload-${ariaId}`">Upload</label>
       <input
         v-if="!url"
+        :id="`id-upload-${ariaId}`"
         class="CSS_IMAGE_UPLOAD_INPUT"
         accept="image/*"
         type="file"

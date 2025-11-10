@@ -7,6 +7,7 @@ import {
   PopoverTrigger,
 } from 'prosekit/react/popover'
 import {
+  useId,
   useState,
   type ReactNode,
 } from 'react'
@@ -22,6 +23,7 @@ export default function ImageUploadPopover(props: {
   const [open, setOpen] = useState(false)
   const [url, setUrl] = useState('')
   const [file, setFile] = useState<File | null>(null)
+  const ariaId = useId()
 
   const editor = useEditor<ImageExtension>()
 
@@ -86,8 +88,9 @@ export default function ImageUploadPopover(props: {
       <PopoverContent className="CSS_IMAGE_UPLOAD_CARD">
         {file ? null : (
           <>
-            <label>Embed Link</label>
+            <label htmlFor={`id-link-${ariaId}`}>Embed Link</label>
             <input
+              id={`id-link-${ariaId}`}
               className="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
@@ -99,8 +102,9 @@ export default function ImageUploadPopover(props: {
 
         {url ? null : (
           <>
-            <label>Upload</label>
+            <label htmlFor={`id-upload-${ariaId}`}>Upload</label>
             <input
+              id={`id-upload-${ariaId}`}
               className="CSS_IMAGE_UPLOAD_INPUT"
               accept="image/*"
               type="file"

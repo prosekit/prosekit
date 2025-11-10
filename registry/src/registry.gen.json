@@ -13974,6 +13974,55 @@
       }
     },
     {
+      "name": "solid-example-blockquote",
+      "title": "solid-example-blockquote",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/blockquote/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/blockquote/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/blockquote/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "blockquote",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/blockquote/editor.tsx",
+          "registry/src/solid/examples/blockquote/extension.ts",
+          "registry/src/solid/examples/blockquote/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",

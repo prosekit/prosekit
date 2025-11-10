@@ -1,7 +1,7 @@
 - name: block-handle
   frameworks: [react, vue, preact, svelte, solid]
 - name: blockquote
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: bold
   frameworks: [react, vue, preact, svelte]
 - name: change-tracking

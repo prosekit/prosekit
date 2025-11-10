@@ -12220,7 +12220,8 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {

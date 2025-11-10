@@ -69,8 +69,8 @@ class VirtualFile {
     this.update(JSON.stringify(json, null, 2) + '\n')
   }
 
-  updateYaml(yaml: any) {
-    this.update(Yaml.dump(yaml))
+  updateYaml(yaml: any, options?: Yaml.DumpOptions) {
+    this.update(Yaml.dump(yaml, options))
   }
 
   async commit(): Promise<boolean> {
@@ -217,6 +217,16 @@ class VirtualFileSystem {
     return await file.read()
   }
 
+  async readJSON(filePath: string) {
+    const file = await this.ensureFile(filePath)
+    return await file.readJSON()
+  }
+
+  async readYaml(filePath: string) {
+    const file = await this.ensureFile(filePath)
+    return await file.readYaml()
+  }
+
   async updateText(filePath: string, content: string) {
     const file = await this.ensureFile(filePath)
     file.update(content)
@@ -229,6 +239,11 @@ class VirtualFileSystem {
   async updateJSON(filePath: string, json: any) {
     const file = await this.ensureFile(filePath)
     file.updateJSON(json)
+  }
+
+  async updateYaml(filePath: string, yaml: any, options?: Yaml.DumpOptions) {
+    const file = await this.ensureFile(filePath)
+    file.updateYaml(yaml, options)
   }
 
   async updatePackage(pkg: Package) {

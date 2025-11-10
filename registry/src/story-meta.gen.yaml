@@ -39,7 +39,7 @@
 - name: link-mark-view
   frameworks: [react, vue, preact, svelte]
 - name: list
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: list-custom-checkbox
   frameworks: [react, vue, preact]
 - name: loro

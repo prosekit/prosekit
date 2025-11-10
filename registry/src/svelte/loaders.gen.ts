@@ -21,5 +21,6 @@ export const loaders = {
   'keymap': () => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor })),
   'link': () => import('./examples/link').then((m) => ({ default: m.ExampleEditor })),
   'link-mark-view': () => import('./examples/link-mark-view').then((m) => ({ default: m.ExampleEditor })),
+  'list': () => import('./examples/list').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
 }

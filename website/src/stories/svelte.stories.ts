@@ -23,4 +23,5 @@ export const Italic = { args: { story: 'italic' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const Link = { args: { story: 'link' } }
 export const LinkMarkView = { args: { story: 'link-mark-view' } }
+export const List = { args: { story: 'list' } }
 export const Minimal = { args: { story: 'minimal' } }

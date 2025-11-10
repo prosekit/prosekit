@@ -1419,9 +1419,7 @@
       "title": "react-example-save-html",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-save-html.json"
-      ],
+      "registryDependencies": [],
       "dependencies": [
         "prosekit",
         "react"
@@ -1444,12 +1442,9 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/examples/save-html/editor.tsx",
-          "registry/src/react/examples/save-html/index.ts",
-          "registry/src/react/sample/sample-doc-save-html.ts"
+          "registry/src/react/examples/save-html/index.ts"
         ],
-        "internalDependencies": [
-          "react-sample-sample-doc-save-html"
-        ]
+        "internalDependencies": []
       }
     },
     {
@@ -2690,32 +2685,6 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-readonly.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "react-sample-sample-doc-save-html",
-      "title": "react-sample-sample-doc-save-html",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [
-        "prosekit"
-      ],
-      "files": [
-        {
-          "path": "registry/src/react/sample/sample-doc-save-html.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/sample-doc-save-html.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "react",
-        "accumulatedFiles": [
-          "registry/src/react/sample/sample-doc-save-html.ts"
         ],
         "internalDependencies": []
       }
@@ -4934,6 +4903,39 @@
           "vue-sample-sample-doc-readonly",
           "vue-ui-button"
         ]
+      }
+    },
+    {
+      "name": "vue-example-save-html",
+      "title": "vue-example-save-html",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/save-html/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/save-html/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-html",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/save-html/editor.vue",
+          "registry/src/vue/examples/save-html/index.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -8292,9 +8294,7 @@
       "title": "preact-example-save-html",
       "type": "registry:block",
       "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-save-html.json"
-      ],
+      "registryDependencies": [],
       "dependencies": [
         "preact",
         "prosekit"
@@ -8317,12 +8317,9 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/examples/save-html/editor.tsx",
-          "registry/src/preact/examples/save-html/index.ts",
-          "registry/src/preact/sample/sample-doc-save-html.ts"
+          "registry/src/preact/examples/save-html/index.ts"
         ],
-        "internalDependencies": [
-          "preact-sample-sample-doc-save-html"
-        ]
+        "internalDependencies": []
       }
     },
     {
@@ -9563,32 +9560,6 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-readonly.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "preact-sample-sample-doc-save-html",
-      "title": "preact-sample-sample-doc-save-html",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [
-        "prosekit"
-      ],
-      "files": [
-        {
-          "path": "registry/src/preact/sample/sample-doc-save-html.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/sample-doc-save-html.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "preact",
-        "accumulatedFiles": [
-          "registry/src/preact/sample/sample-doc-save-html.ts"
         ],
         "internalDependencies": []
       }

@@ -53,7 +53,7 @@
 - name: readonly
   frameworks: [react, vue, preact]
 - name: save-html
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact]
 - name: save-json
   frameworks: [react, vue, preact]
 - name: save-markdown

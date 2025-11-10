@@ -29,5 +29,11 @@ export default defineESLintConfig(
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
       'unicorn/prefer-single-call': 'off',
     },
+    ignores: ['**/*.md'],
+  },
+  {
+    rules: {
+      'unicorn/prefer-single-call': 'off',
+    },
   },
 )

@@ -97,6 +97,7 @@
     "./react/renderer": "./src/react/renderer.ts",
     "./registry.gen.json": "./src/registry.gen.json",
     "./replace-class-names": "./src/meta/replace-classes.ts",
+    "./solid/examples/block-handle": "./src/solid/examples/block-handle/index.ts",
     "./solid/examples/full": "./src/solid/examples/full/index.ts",
     "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",

@@ -13918,6 +13918,62 @@
       }
     },
     {
+      "name": "solid-example-block-handle",
+      "title": "solid-example-block-handle",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-block-handle.json",
+        "https://prosekit.dev/r/solid-ui-block-handle.json",
+        "https://prosekit.dev/r/solid-ui-code-block-view.json",
+        "https://prosekit.dev/r/solid-ui-drop-indicator.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/block-handle/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/block-handle/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/block-handle/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "block-handle",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/block-handle/editor.tsx",
+          "registry/src/solid/examples/block-handle/extension.ts",
+          "registry/src/solid/examples/block-handle/index.ts",
+          "registry/src/solid/sample/sample-doc-block-handle.ts",
+          "registry/src/solid/ui/block-handle/block-handle.tsx",
+          "registry/src/solid/ui/block-handle/index.ts",
+          "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+          "registry/src/solid/ui/code-block-view/index.ts",
+          "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/solid/ui/drop-indicator/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-block-handle",
+          "solid-ui-block-handle",
+          "solid-ui-code-block-view",
+          "solid-ui-drop-indicator"
+        ]
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",
@@ -14097,6 +14153,32 @@
         "accumulatedFiles": [
           "registry/src/solid/examples/minimal/editor.tsx",
           "registry/src/solid/examples/minimal/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-block-handle",
+      "title": "solid-sample-sample-doc-block-handle",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-block-handle.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-block-handle.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-block-handle.ts"
         ],
         "internalDependencies": []
       }

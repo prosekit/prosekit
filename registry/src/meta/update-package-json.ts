@@ -16,9 +16,7 @@ function fillExports(item: ItemAccumulator, exports: Record<string, unknown>): v
   if (!story) {
     throw new Error(`Expected story to be defined for example ${item.name}`)
   }
-  exports[`./${framework}/examples/${story}`] = {
-    default: `./src/${framework}/examples/${story}/index.ts`,
-  }
+  exports[`./${framework}/examples/${story}`] = `./src/${framework}/examples/${story}/index.ts`
 }
 
 /**

@@ -3683,6 +3683,51 @@
       }
     },
     {
+      "name": "vue-example-change-tracking",
+      "title": "vue-example-change-tracking",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/change-tracking/editor-diff.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-diff.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/change-tracking/editor-main.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-main.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/change-tracking/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/change-tracking/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "change-tracking",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/change-tracking/editor-diff.vue",
+          "registry/src/vue/examples/change-tracking/editor-main.vue",
+          "registry/src/vue/examples/change-tracking/editor.vue",
+          "registry/src/vue/examples/change-tracking/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-example-code",
       "title": "vue-example-code",
       "type": "registry:block",
@@ -4498,6 +4543,56 @@
       }
     },
     {
+      "name": "vue-example-link-mark-view",
+      "title": "vue-example-link-mark-view",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-link-mark-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/link-mark-view/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/link-mark-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/link-mark-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/link-mark-view/link-view.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/link-view.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "link-mark-view",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/link-mark-view/editor.vue",
+          "registry/src/vue/examples/link-mark-view/extension.ts",
+          "registry/src/vue/examples/link-mark-view/index.ts",
+          "registry/src/vue/examples/link-mark-view/link-view.vue",
+          "registry/src/vue/sample/sample-doc-link-mark-view.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-link-mark-view"
+        ]
+      }
+    },
+    {
       "name": "vue-example-list",
       "title": "vue-example-list",
       "type": "registry:block",
@@ -4665,6 +4760,51 @@
       }
     },
     {
+      "name": "vue-example-mark-rule",
+      "title": "vue-example-mark-rule",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/mark-rule/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/mark-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/mark-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/mark-rule/issue-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/issue-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "mark-rule",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/mark-rule/editor.vue",
+          "registry/src/vue/examples/mark-rule/extension.ts",
+          "registry/src/vue/examples/mark-rule/index.ts",
+          "registry/src/vue/examples/mark-rule/issue-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-example-minimal",
       "title": "vue-example-minimal",
       "type": "registry:block",
@@ -4732,6 +4872,183 @@
           "registry/src/vue/examples/placeholder/editor.vue",
           "registry/src/vue/examples/placeholder/extension.ts",
           "registry/src/vue/examples/placeholder/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-example-readonly",
+      "title": "vue-example-readonly",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-readonly.json",
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/readonly/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/readonly/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/readonly/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/readonly/toolbar.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/toolbar.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/readonly/use-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/use-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "readonly",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/readonly/editor.vue",
+          "registry/src/vue/examples/readonly/extension.ts",
+          "registry/src/vue/examples/readonly/index.ts",
+          "registry/src/vue/examples/readonly/toolbar.vue",
+          "registry/src/vue/examples/readonly/use-readonly.ts",
+          "registry/src/vue/sample/sample-doc-readonly.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-readonly",
+          "vue-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-save-html",
+      "title": "vue-example-save-html",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-save-html.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/save-html/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/save-html/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-html",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/save-html/editor.vue",
+          "registry/src/vue/examples/save-html/index.ts",
+          "registry/src/vue/sample/sample-doc-save-html.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-save-html"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-save-json",
+      "title": "vue-example-save-json",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/save-json/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/save-json/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-json",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/save-json/editor.vue",
+          "registry/src/vue/examples/save-json/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-example-save-markdown",
+      "title": "vue-example-save-markdown",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "rehype-parse",
+        "rehype-remark",
+        "remark-gfm",
+        "remark-html",
+        "remark-parse",
+        "remark-stringify",
+        "unified",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/save-markdown/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/save-markdown/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/save-markdown/markdown.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/markdown.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "save-markdown",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/save-markdown/editor.vue",
+          "registry/src/vue/examples/save-markdown/index.ts",
+          "registry/src/vue/examples/save-markdown/markdown.ts"
         ],
         "internalDependencies": []
       }
@@ -4932,6 +5249,60 @@
         "internalDependencies": [
           "vue-sample-sample-doc-table",
           "vue-ui-table-handle"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-text-align",
+      "title": "vue-example-text-align",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-text-align.json",
+        "https://prosekit.dev/r/vue-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/text-align/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/text-align/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/text-align/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/text-align/toolbar.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/toolbar.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "text-align",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/text-align/editor.vue",
+          "registry/src/vue/examples/text-align/extension.ts",
+          "registry/src/vue/examples/text-align/index.ts",
+          "registry/src/vue/examples/text-align/toolbar.vue",
+          "registry/src/vue/sample/sample-doc-text-align.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-text-align",
+          "vue-ui-button"
         ]
       }
     },
@@ -5138,6 +5509,51 @@
       }
     },
     {
+      "name": "vue-example-unmount",
+      "title": "vue-example-unmount",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/unmount/editor-component.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor-component.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/unmount/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/unmount/extension-component.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/extension-component.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/unmount/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "unmount",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/unmount/editor-component.vue",
+          "registry/src/vue/examples/unmount/editor.vue",
+          "registry/src/vue/examples/unmount/extension-component.vue",
+          "registry/src/vue/examples/unmount/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-example-user-menu",
       "title": "vue-example-user-menu",
       "type": "registry:block",
@@ -5188,6 +5604,66 @@
           "vue-sample-tag-data",
           "vue-sample-user-data",
           "vue-ui-tag-menu",
+          "vue-ui-user-menu"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-user-menu-dynamic",
+      "title": "vue-example-user-menu-dynamic",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "user-menu-dynamic",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+          "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+          "registry/src/vue/examples/user-menu-dynamic/index.ts",
+          "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+          "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+          "registry/src/vue/sample/user-data.ts",
+          "registry/src/vue/ui/user-menu/index.ts",
+          "registry/src/vue/ui/user-menu/user-menu.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-user-data",
           "vue-ui-user-menu"
         ]
       }
@@ -5637,6 +6113,32 @@
       }
     },
     {
+      "name": "vue-sample-sample-doc-link-mark-view",
+      "title": "vue-sample-sample-doc-link-mark-view",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-link-mark-view.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link-mark-view.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-link-mark-view.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-sample-sample-doc-list",
       "title": "vue-sample-sample-doc-list",
       "type": "registry:component",
@@ -5684,6 +6186,58 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-readonly",
+      "title": "vue-sample-sample-doc-readonly",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-save-html",
+      "title": "vue-sample-sample-doc-save-html",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-save-html.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-save-html.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-save-html.ts"
         ],
         "internalDependencies": []
       }
@@ -5762,6 +6316,32 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-text-align",
+      "title": "vue-sample-sample-doc-text-align",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-text-align.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-align.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-text-align.ts"
         ],
         "internalDependencies": []
       }

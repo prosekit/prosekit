@@ -14075,6 +14075,51 @@
       }
     },
     {
+      "name": "solid-example-change-tracking",
+      "title": "solid-example-change-tracking",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/change-tracking/editor-diff.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-diff.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/change-tracking/editor-main.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-main.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/change-tracking/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/change-tracking/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "change-tracking",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/change-tracking/editor-diff.tsx",
+          "registry/src/solid/examples/change-tracking/editor-main.tsx",
+          "registry/src/solid/examples/change-tracking/editor.tsx",
+          "registry/src/solid/examples/change-tracking/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",

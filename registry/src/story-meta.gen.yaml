@@ -15,7 +15,7 @@
 - name: drop-cursor
   frameworks: [react, vue, preact, svelte]
 - name: emoji-rules
-  frameworks: [react, vue, preact]
+  frameworks: [react, vue, preact, svelte]
 - name: full
   frameworks: [react, vue, preact, svelte, solid]
 - name: gap-cursor

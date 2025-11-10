@@ -10884,6 +10884,50 @@
       }
     },
     {
+      "name": "svelte-example-emoji-rules",
+      "title": "svelte-example-emoji-rules",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/emoji-rules/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/emoji-rules/emoji.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/emoji.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/emoji-rules/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/emoji-rules/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "emoji-rules",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/emoji-rules/editor.svelte",
+          "registry/src/svelte/examples/emoji-rules/emoji.ts",
+          "registry/src/svelte/examples/emoji-rules/extension.ts",
+          "registry/src/svelte/examples/emoji-rules/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",

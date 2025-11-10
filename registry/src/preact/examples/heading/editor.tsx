@@ -5,13 +5,14 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
+import { defaultContent } from '../../sample/sample-doc-heading'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension(), defaultContent: '<h1>H1</h1>' })
+    return createEditor({ extension: defineExtension(), defaultContent })
   }, [])
 
   return (

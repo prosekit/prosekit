@@ -5,18 +5,21 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { defaultContent } from '../../sample/sample-doc-gap-cursor'
+import { defaultContent } from '../../sample/sample-doc-code-block'
+import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension(), defaultContent })
+    const extension = defineExtension()
+    return createEditor({ extension, defaultContent })
   }, [])
 
   return (
     <ProseKit editor={editor}>
       <div className="CSS_EDITOR_VIEWPORT">
+        <Toolbar />
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
         </div>

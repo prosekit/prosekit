@@ -5,13 +5,14 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { defaultContent } from '../../sample/sample-doc-gap-cursor'
+import { defaultContent } from '../../sample/sample-doc-drop-cursor'
 
 import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension(), defaultContent })
+    const extension = defineExtension()
+    return createEditor({ extension, defaultContent })
   }, [])
 
   return (

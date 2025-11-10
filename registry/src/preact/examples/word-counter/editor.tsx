@@ -5,13 +5,18 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { defaultContent } from '../../sample/sample-doc-gap-cursor'
+import { defaultContent } from '../../sample/sample-doc-word-counter'
+import { WordCounter } from '../../ui/word-counter'
 
 import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension(), defaultContent })
+    const extension = defineExtension()
+    return createEditor({
+      extension,
+      defaultContent,
+    })
   }, [])
 
   return (
@@ -19,6 +24,7 @@ export default function Editor() {
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+          <WordCounter />
         </div>
       </div>
     </ProseKit>

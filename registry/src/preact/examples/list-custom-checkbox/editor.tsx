@@ -14,7 +14,10 @@ import { defineExtension } from './extension'
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension, defaultContent })
+    return createEditor({
+      extension,
+      defaultContent,
+    })
   }, [])
 
   return (

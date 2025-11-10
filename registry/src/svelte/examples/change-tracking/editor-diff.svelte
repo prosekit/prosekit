@@ -11,14 +11,18 @@ import {
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { ProseKit } from 'prosekit/svelte'
 
-export let commit: Commit
+interface Props {
+  commit: Commit
+}
 
-$: extension = union(
+const props: Props = $props()
+
+let extension = $derived(union(
   defineBasicExtension(),
   defineReadonly(),
-  defineCommitViewer(commit),
-)
-$: editor = createEditor({ extension })
+  defineCommitViewer(props.commit),
+))
+let editor = $derived(createEditor({ extension }))
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

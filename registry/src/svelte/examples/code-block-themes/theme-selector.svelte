@@ -27,7 +27,7 @@ function handleChange(event: Event) {
 <select
   id="code-block-theme-selector"
   value={$theme}
-  on:change={handleChange}
+  onchange={handleChange}
   class="CSS_TOGGLE_BUTTON"
 >
   {#each shikiBundledThemesInfo as info (info.id)}

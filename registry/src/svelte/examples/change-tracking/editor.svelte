@@ -38,7 +38,7 @@ function handleRestore(id: string) {
     <div class="max-h-md">
       <EditorMain {key} {defaultContent} {commitRecorder} />
     </div>
-    <button on:click={handleCommit} class="CSS_BUTTON_PRIMARY">
+    <button onclick={handleCommit} class="CSS_BUTTON_PRIMARY">
       Save
     </button>
   </div>
@@ -54,7 +54,7 @@ function handleRestore(id: string) {
           </span>
           <button
             class="underline opacity-50 hover:opacity-100"
-            on:click={() => handleRestore(commit.id)}
+            onclick={() => handleRestore(commit.id)}
           >
             Restore
           </button>

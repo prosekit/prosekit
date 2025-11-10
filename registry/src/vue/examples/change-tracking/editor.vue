@@ -26,8 +26,9 @@ function handleCommit() {
 
 function handleRestore(id: string) {
   const index = commits.value.findIndex((commit) => commit.id === id)
-  if (index === -1) return
-  const doc = commits.value[index].commit.doc
+  const commit = commits.value[index]
+  if (index === -1 || !commit) return
+  const doc = commit.commit.doc
   defaultContent.value = doc
   commits.value = commits.value.slice(index)
   key.value = key.value + 1

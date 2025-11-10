@@ -12,17 +12,35 @@
     "./preact/examples/blockquote": {
       "default": "./src/preact/examples/blockquote/index.ts"
     },
+    "./preact/examples/bold": {
+      "default": "./src/preact/examples/bold/index.ts"
+    },
     "./preact/examples/change-tracking": {
       "default": "./src/preact/examples/change-tracking/index.ts"
     },
+    "./preact/examples/code": {
+      "default": "./src/preact/examples/code/index.ts"
+    },
+    "./preact/examples/code-block": {
+      "default": "./src/preact/examples/code-block/index.ts"
+    },
     "./preact/examples/code-block-themes": {
       "default": "./src/preact/examples/code-block-themes/index.ts"
+    },
+    "./preact/examples/drop-cursor": {
+      "default": "./src/preact/examples/drop-cursor/index.ts"
+    },
+    "./preact/examples/emoji-rules": {
+      "default": "./src/preact/examples/emoji-rules/index.ts"
     },
     "./preact/examples/full": {
       "default": "./src/preact/examples/full/index.ts"
     },
     "./preact/examples/gap-cursor": {
       "default": "./src/preact/examples/gap-cursor/index.ts"
+    },
+    "./preact/examples/hard-break": {
+      "default": "./src/preact/examples/hard-break/index.ts"
     },
     "./preact/examples/heading": {
       "default": "./src/preact/examples/heading/index.ts"
@@ -35,6 +53,9 @@
     },
     "./preact/examples/inline-menu": {
       "default": "./src/preact/examples/inline-menu/index.ts"
+    },
+    "./preact/examples/italic": {
+      "default": "./src/preact/examples/italic/index.ts"
     },
     "./preact/examples/keymap": {
       "default": "./src/preact/examples/keymap/index.ts"
@@ -50,6 +71,9 @@
     },
     "./preact/examples/list-custom-checkbox": {
       "default": "./src/preact/examples/list-custom-checkbox/index.ts"
+    },
+    "./preact/examples/loro": {
+      "default": "./src/preact/examples/loro/index.ts"
     },
     "./preact/examples/mark-rule": {
       "default": "./src/preact/examples/mark-rule/index.ts"
@@ -72,8 +96,47 @@
     "./preact/examples/save-markdown": {
       "default": "./src/preact/examples/save-markdown/index.ts"
     },
+    "./preact/examples/search": {
+      "default": "./src/preact/examples/search/index.ts"
+    },
+    "./preact/examples/slash-menu": {
+      "default": "./src/preact/examples/slash-menu/index.ts"
+    },
+    "./preact/examples/strike": {
+      "default": "./src/preact/examples/strike/index.ts"
+    },
+    "./preact/examples/table": {
+      "default": "./src/preact/examples/table/index.ts"
+    },
+    "./preact/examples/text-align": {
+      "default": "./src/preact/examples/text-align/index.ts"
+    },
+    "./preact/examples/text-color": {
+      "default": "./src/preact/examples/text-color/index.ts"
+    },
     "./preact/examples/toolbar": {
       "default": "./src/preact/examples/toolbar/index.ts"
+    },
+    "./preact/examples/typography": {
+      "default": "./src/preact/examples/typography/index.ts"
+    },
+    "./preact/examples/underline": {
+      "default": "./src/preact/examples/underline/index.ts"
+    },
+    "./preact/examples/unmount": {
+      "default": "./src/preact/examples/unmount/index.ts"
+    },
+    "./preact/examples/user-menu": {
+      "default": "./src/preact/examples/user-menu/index.ts"
+    },
+    "./preact/examples/user-menu-dynamic": {
+      "default": "./src/preact/examples/user-menu-dynamic/index.ts"
+    },
+    "./preact/examples/word-counter": {
+      "default": "./src/preact/examples/word-counter/index.ts"
+    },
+    "./preact/examples/yjs": {
+      "default": "./src/preact/examples/yjs/index.ts"
     },
     "./preact/renderer": "./src/preact/renderer.ts",
     "./react/examples/block-handle": {
@@ -341,7 +404,7 @@
   },
   "dependencies": {
     "loro-crdt": "^1.8.9",
-    "loro-prosemirror": "^0.3.6",
+    "loro-prosemirror": "^0.3.7",
     "preact": "^10.27.2",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",

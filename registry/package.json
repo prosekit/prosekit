@@ -101,6 +101,7 @@
     "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",
     "./solid/renderer": "./src/solid/renderer.ts",
+    "./svelte/examples/blockquote": "./src/svelte/examples/blockquote/index.ts",
     "./svelte/examples/bold": "./src/svelte/examples/bold/index.ts",
     "./svelte/examples/code-block": "./src/svelte/examples/code-block/index.ts",
     "./svelte/examples/full": "./src/svelte/examples/full/index.ts",

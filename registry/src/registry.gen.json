@@ -10477,6 +10477,54 @@
       }
     },
     {
+      "name": "svelte-example-blockquote",
+      "title": "svelte-example-blockquote",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/blockquote/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/blockquote/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/blockquote/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/blockquote/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "blockquote",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/blockquote/editor.svelte",
+          "registry/src/svelte/examples/blockquote/extension.ts",
+          "registry/src/svelte/examples/blockquote/index.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-bold",
       "title": "svelte-example-bold",
       "type": "registry:block",

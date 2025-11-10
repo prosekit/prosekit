@@ -5,7 +5,6 @@
   "private": true,
   "description": "ProseKit registry",
   "exports": {
-    ".": "./src/index.ts",
     "./preact/examples/block-handle": {
       "default": "./src/preact/examples/block-handle/index.ts"
     },

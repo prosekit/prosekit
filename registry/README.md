@@ -35,19 +35,13 @@ The `union` function should be called with individual arguments, not an array.
 **Correct:**
 
 ```ts
-return union(
-  defineBasicExtension(),
-  defineCodeBlockView(),
-)
+return union(defineBasicExtension(), defineCodeBlockView());
 ```
 
 **Incorrect:**
 
 ```ts
-return union([
-  defineBasicExtension(),
-  defineCodeBlockView(),
-])
+return union([defineBasicExtension(), defineCodeBlockView()]);
 ```
 
 ### Default Content Location
@@ -107,7 +101,6 @@ watch([valueRef], (newValue, oldValue, onCleanup) => {
 });
 ```
 
-
 ## Svelte-Specific Guidelines
 
 ### Syntax
@@ -139,4 +132,68 @@ Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead o
 </script>
 
 <div>{name} {doubled}</div>
+```
+
+## Solid-Specific Guidelines
+
+### Use `attr:` for data attributes
+
+Use `attr:` for data attributes
+
+**Good:**
+
+```tsx
+<SolidComponent
+  attr:data-testid="test-id"
+  attr:data-selected={selected ? "" : undefined}
+/>
+```
+
+**Bad:**
+
+```tsx
+<SolidComponent
+  data-testid="test-id"
+  data-selected={selected ? "" : undefined}
+/>
+```
+
+### Explicitly specify the return type of components
+
+**Good:**
+
+```tsx
+import type { JSX } from 'solid-js'
+
+export default function Foo(): JSX.Element {
+  return <div>Foo</div>
+}
+```
+
+**Bad:**
+
+```tsx
+export default function Foo() {
+  return <div>Foo</div>
+}
+```
+
+### Use `For` instead of `.map()`
+
+**Good:**
+
+```tsx
+<div> 
+  <For each={items}>
+    {(item) => <div>{item}</div>}
+  </For>
+</div>
+```
+
+**Bad:**
+
+```tsx
+<div>{items.map((item) => (
+  <div>{item}</div>)
+)}</div>
 ```

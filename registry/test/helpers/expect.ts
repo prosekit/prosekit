@@ -12,37 +12,73 @@ export async function expectLocatorToNotExist(locator: Locator, options?: Expect
   await expect.element(locator, options).not.toBeInTheDocument()
 }
 
-export async function expectLocatorToBeHidden(locator: Locator, options?: ExpectPollOptions): Promise<void> {
-  const message: string = [
-    options?.message || '',
-    `Expect locator '${locator.selector}' to be hidden, but found at least one visible element`,
-  ].filter(Boolean).join(': ')
-
-  await expect.poll(() => {
-    return findVisibleElement(locator)
-  }, { ...options, message }).toBe(undefined)
+export async function expectLocatorToBeHidden(locator: Locator, options?: {
+  timeout?: number
+  interval?: number
+}): Promise<void> {
+  const message = `Expect locator '${locator.selector}' to be hidden, but found at least one visible element`
+  await expect.poll(() => checkLocatorVisibility(locator), { ...options, message }).toEqual({
+    isVisible: false,
+    reason: expect.any(String) as string,
+  })
 }
 
-function isElementVisible(element: Element): boolean {
+interface ElementVisibility {
+  isVisible: boolean
+  reason: string
+}
+
+/**
+ * Checks if an element is visible
+ */
+function checkElementVisibility(element: Element): ElementVisibility {
   const rect = element.getBoundingClientRect()
-  if (rect.width === 0 && rect.height === 0) {
-    return false
+  const { width, height } = rect
+  if (width === 0 && height === 0) {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: width=${width}, height=${height}.`,
+    }
   }
 
   const style = window.getComputedStyle(element)
-  if (style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) {
-    return false
-  }
-
-  return true
-}
-
-function findVisibleElement(locator: Locator): Element | undefined {
-  const elements = locator.elements()
-  for (const element of elements) {
-    if (isElementVisible(element)) {
-      return element
+  const { visibility, display } = style
+  const opacity = Number(style.opacity)
+  if (visibility === 'hidden') {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: visibility=${visibility}.`,
     }
   }
-  return undefined
+  if (display === 'none') {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: display=${display}.`,
+    }
+  }
+  if (opacity === 0) {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: opacity=${opacity}.`,
+    }
+  }
+
+  return {
+    isVisible: true,
+    reason: `Element is visible: width=${width}, height=${height}, visibility=${visibility}, display=${display}, opacity=${opacity}.`,
+  }
+}
+
+function checkLocatorVisibility(locator: Locator): ElementVisibility {
+  const elements = locator.elements()
+  if (elements.length === 0) {
+    return {
+      isVisible: false,
+      reason: `Locator '${locator.selector}' has no elements.`,
+    }
+  }
+  const results = elements.map(checkElementVisibility)
+  const isVisible = results.some(result => result.isVisible)
+  const reason = results.map(result => result.reason).join('\n')
+  return { isVisible, reason }
 }

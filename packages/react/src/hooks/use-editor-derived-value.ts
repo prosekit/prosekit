@@ -54,7 +54,7 @@ export function useEditorDerivedValue<E extends Extension, Derived>(
     return createEditorStore(editor, derive)
   }, [editor, derive])
 
-  return useSyncExternalStore(subscribe, getSnapshot)
+  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot)
 }
 
 function createEditorStore<Derived, E extends Extension = any>(editor: Editor<E>, derive: (editor: Editor<E>) => Derived) {

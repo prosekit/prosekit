@@ -14228,6 +14228,66 @@
       }
     },
     {
+      "name": "solid-example-code-block-themes",
+      "title": "solid-example-code-block-themes",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/solid-ui-code-block-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/code-block-themes/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/code-block-themes/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/code-block-themes/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/code-block-themes/theme-selector.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/theme-selector.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/code-block-themes/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block-themes/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block-themes",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/code-block-themes/editor.tsx",
+          "registry/src/solid/examples/code-block-themes/extension.ts",
+          "registry/src/solid/examples/code-block-themes/index.ts",
+          "registry/src/solid/examples/code-block-themes/theme-selector.tsx",
+          "registry/src/solid/examples/code-block-themes/toolbar.tsx",
+          "registry/src/solid/sample/sample-doc-code-block.ts",
+          "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+          "registry/src/solid/ui/code-block-view/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-code-block",
+          "solid-ui-code-block-view"
+        ]
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",

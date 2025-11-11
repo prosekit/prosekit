@@ -6,8 +6,6 @@
   "linked": [],
   "access": "public",
   "baseBranch": "master",
-  "updateInternalDependencies": "patch",
-  "bumpVersionsWithWorkspaceProtocolOnly": true,
   "ignore": [
     "@prosekit/dev",
     "prosekit-registry",

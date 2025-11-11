@@ -14172,6 +14172,62 @@
       }
     },
     {
+      "name": "solid-example-code-block",
+      "title": "solid-example-code-block",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-code-block.json",
+        "https://prosekit.dev/r/solid-ui-code-block-view.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/code-block/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/code-block/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/code-block/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/code-block/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "code-block",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/code-block/editor.tsx",
+          "registry/src/solid/examples/code-block/extension.ts",
+          "registry/src/solid/examples/code-block/index.ts",
+          "registry/src/solid/sample/sample-doc-code-block.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+          "registry/src/solid/ui/code-block-view/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-code-block",
+          "solid-ui-code-block-view",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",

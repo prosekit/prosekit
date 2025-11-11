@@ -14698,32 +14698,6 @@
       }
     },
     {
-      "name": "solid-sample-sample-doc-image",
-      "title": "solid-sample-sample-doc-image",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [
-        "prosekit"
-      ],
-      "files": [
-        {
-          "path": "registry/src/solid/sample/sample-doc-image.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/sample-doc-image.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "solid",
-        "accumulatedFiles": [
-          "registry/src/solid/sample/sample-doc-image.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
       "name": "solid-sample-sample-uploader",
       "title": "solid-sample-sample-uploader",
       "type": "registry:component",

@@ -8,6 +8,9 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/ai/tsconfig.json",
+    },
+    {
       "path": "./packages/basic/tsconfig.json",
     },
     {

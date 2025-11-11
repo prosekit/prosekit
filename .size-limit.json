@@ -1,5 +1,9 @@
 [
   {
+    "name": "prosekit/ai",
+    "path": "packages/prosekit/dist/prosekit-ai.js"
+  },
+  {
     "name": "prosekit/basic",
     "path": "packages/prosekit/dist/prosekit-basic.js"
   },

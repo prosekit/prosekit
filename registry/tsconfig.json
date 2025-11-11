@@ -5,6 +5,9 @@
   },
   "references": [
     {
+      "path": "../packages/ai/tsconfig.json",
+    },
+    {
       "path": "../packages/config-vitest/tsconfig.json",
     },
     {

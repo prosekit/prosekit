@@ -7,4 +7,3 @@ export default config({
     },
   },
 })
-

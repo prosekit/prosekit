@@ -1,15 +1,19 @@
-import type { Command, EditorState, Transaction } from '@prosekit/pm/state'
-import type { EditorView } from '@prosekit/pm/view'
+import { DOMParser } from '@prosekit/pm/model'
+import type {
+  Command,
+  EditorState,
+  Transaction,
+} from '@prosekit/pm/state'
 import {
   Plugin,
   PluginKey,
   TextSelection,
 } from '@prosekit/pm/state'
+import type { EditorView } from '@prosekit/pm/view'
 import {
   Decoration,
   DecorationSet,
 } from '@prosekit/pm/view'
-import { DOMParser } from '@prosekit/pm/model'
 
 /**
  * 流式状态接口
@@ -23,12 +27,11 @@ interface StreamingState {
 /**
  * 流式插件的 PluginKey
  */
-export const streamingPluginKey: PluginKey<StreamingState> =
-  new PluginKey<StreamingState>('streaming')
+export const streamingPluginKey: PluginKey<StreamingState> = new PluginKey<StreamingState>('streaming')
 
 /**
  * 创建流式状态管理插件
- * 
+ *
  * 该插件负责：
  * 1. 管理流式内容的状态（范围）
  * 2. 为流式内容区域添加样式装饰（Decoration）
@@ -101,7 +104,6 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
           },
         )
 
-
         return DecorationSet.create(state.doc, [decoration])
       },
 
@@ -114,9 +116,8 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
 
         // 检查当前光标位置是否在流式区域内
         const selectionFrom = state.selection.from
-        const isInStreamingArea =
-          selectionFrom >= streamingState.from &&
-          selectionFrom <= streamingState.to
+        const isInStreamingArea = selectionFrom >= streamingState.from
+          && selectionFrom <= streamingState.to
 
         // 如果在流式区域内，则不可编辑
         return !isInStreamingArea
@@ -124,7 +125,6 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
     },
   })
 }
-
 
 /**
  * 流式内容处理选项
@@ -142,7 +142,7 @@ export interface StreamContentOptions {
 
   /**
    * 回调函数，接收一个 write 函数用于写入 chunk 内容
-   * 
+   *
    * @param write - 写入函数，每次调用会累积内容并更新编辑器
    * @example
    * ```ts
@@ -159,7 +159,7 @@ export interface StreamContentOptions {
 
 /**
  * 处理 HTML 字符串流的异步函数
- * 
+ *
  * 简化实现：每次接收到 chunk 后，累积所有内容并全量解析替换
  */
 async function handleHtmlStreaming(
@@ -180,13 +180,13 @@ async function handleHtmlStreaming(
   // 流开始：先删除 from 到 to 之间的内容（如果存在），然后通知插件流开始
   const { state } = view
   const startTr = state.tr
-  
+
   if (to > from) {
     startTr.delete(from, to)
     // 更新当前状态
     currentStreamEndPos = from
   }
-  
+
   // 通知插件流开始（流式输出期间必定阻止编辑）
   startTr.setMeta(streamingPluginKey, {
     streamStarted: true,
@@ -251,10 +251,10 @@ async function handleHtmlStreaming(
 
 /**
  * 创建一个 streamContent 命令
- * 
+ *
  * @param options - 流式内容选项
  * @returns ProseMirror 命令
- * 
+ *
  * @example
  * ```ts
  * const command = streamContentCommand({
@@ -292,4 +292,3 @@ export function streamContentCommand(
     return true
   }
 }
-

@@ -1629,7 +1629,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://prosekit.dev/r/react-ui-button.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json"
       ],
       "dependencies": [
         "@prosekit/ai",
@@ -1674,10 +1675,13 @@
           "registry/src/react/examples/stream-content/stream-content.css",
           "registry/src/react/examples/stream-content/toolbar.tsx",
           "registry/src/react/ui/button/button.tsx",
-          "registry/src/react/ui/button/index.ts"
+          "registry/src/react/ui/button/index.ts",
+          "registry/src/react/ui/code-block-view/code-block-view.tsx",
+          "registry/src/react/ui/code-block-view/index.ts"
         ],
         "internalDependencies": [
-          "react-ui-button"
+          "react-ui-button",
+          "react-ui-code-block-view"
         ]
       }
     },

@@ -6,7 +6,7 @@ import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 import { defineExtension } from './extension'
-import Toolbar from './toolbar';
+import Toolbar from './toolbar'
 import './stream-content.css'
 
 export default function Editor() {
@@ -26,4 +26,3 @@ export default function Editor() {
     </ProseKit>
   )
 }
-

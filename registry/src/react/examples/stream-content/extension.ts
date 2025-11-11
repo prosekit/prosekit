@@ -1,17 +1,18 @@
 import {
-  defineCommands,
-  union,
-} from 'prosekit/core'
-import {
   createStreamingPlugin,
   streamContentCommand,
 } from '@prosekit/ai'
-import { definePlugin } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'
+import {
+  defineCommands,
+  union,
+} from 'prosekit/core'
+import { definePlugin } from 'prosekit/core'
 import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
+
 import { defineCodeBlockView } from '../../ui/code-block-view'
 
 export function defineExtension() {
@@ -24,7 +25,6 @@ export function defineExtension() {
     defineHorizontalRule(),
     defineCodeBlockView(),
     definePlugin(createStreamingPlugin()),
-
     // 定义流式内容命令
     defineCommands({
       streamContent: () => (state, dispatch, view) => {
@@ -62,4 +62,3 @@ export function defineExtension() {
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>
-

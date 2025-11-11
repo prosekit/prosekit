@@ -12,8 +12,10 @@
       "path": "../core/tsconfig.json",
     },
     {
+      "path": "../pm/tsconfig.json",
+    },
+    {
       "path": "./tsconfig.build.json",
     },
   ],
 }
-

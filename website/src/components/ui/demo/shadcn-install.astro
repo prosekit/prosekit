@@ -1,0 +1,59 @@
+---
+import registry from 'prosekit-registry/registry.gen.json'
+import ShadcnInstallCode from './shadcn-install-code.svelte'
+import Code from 'starlight-theme-nova/components/Code.astro'
+
+interface Props {
+  story: string
+}
+
+const { story }: Props = Astro.props
+
+const examples = registry.items.filter((example) => example.meta.story === story)
+
+if (examples.length === 0) {
+  throw new Error(`Unable to find examples for story ${story}`)
+}
+
+const frameworks = examples.map((example) => example.meta.framework)
+---
+
+<div class="not-content mb-6">
+  <ShadcnInstallCode frameworks={frameworks} client:idle>
+    {
+      frameworks.includes('preact') && (
+        <Fragment slot="slot-preact">
+          <Code lang="bash" code={`npx shadcn@latest add @prosekit/preact-example-${story}`} />
+        </Fragment>
+      )
+    }
+    {
+      frameworks.includes('react') && (
+        <Fragment slot="slot-react">
+          <Code lang="bash" code={`npx shadcn@latest add @prosekit/react-example-${story}`} />
+        </Fragment>
+      )
+    }
+    {
+      frameworks.includes('solid') && (
+        <Fragment slot="slot-solid">
+          <Code lang="bash" code={`npx shadcn@latest add @prosekit/solid-example-${story}`} />
+        </Fragment>
+      )
+    }
+    {
+      frameworks.includes('svelte') && (
+        <Fragment slot="slot-svelte">
+          <Code lang="bash" code={`npx shadcn@latest add @prosekit/svelte-example-${story}`} />
+        </Fragment>
+      )
+    }
+    {
+      frameworks.includes('vue') && (
+        <Fragment slot="slot-vue">
+          <Code lang="bash" code={`npx shadcn@latest add @prosekit/vue-example-${story}`} />
+        </Fragment>
+      )
+    }
+  </ShadcnInstallCode>
+</div>

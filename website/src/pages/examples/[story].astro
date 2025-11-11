@@ -6,6 +6,7 @@ import {
   exampleSidebar,
   stories,
 } from '../../example-data'
+import ShadcnInstall from '@/components/ui/demo/shadcn-install.astro'
 
 export function getStaticPaths() {
   return stories.map((story) => ({
@@ -17,5 +18,6 @@ const story = Astro.params.story
 ---
 
 <StarlightPage frontmatter={{ title: 'Example: ' + story, tableOfContents: false, pagefind: false }} sidebar={exampleSidebar}>
+  <ShadcnInstall story={story} />
   <Demo story={story} />
 </StarlightPage>

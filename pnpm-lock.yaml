@@ -1067,9 +1067,6 @@ importers:
       react-dom:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
-      runed:
-        specifier: ^0.36.0
-        version: 0.36.0(svelte@5.43.6)(zod@3.25.76)
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -7006,18 +7003,6 @@ packages:
       svelte: ^5.7.0
     peerDependenciesMeta:
       '@sveltejs/kit':
-        optional: true
-
-  runed@0.36.0:
-    resolution: {integrity: sha512-CK84KPwAausPQEyWF9t6miCuNW5isAKPMswDsz7jhdueiZZ9du/UrgWc/aggLts8QuppT8KucryrHDFBAqk9Ww==}
-    peerDependencies:
-      '@sveltejs/kit': ^2.21.0
-      svelte: ^5.7.0
-      zod: ^4.1.0
-    peerDependenciesMeta:
-      '@sveltejs/kit':
-        optional: true
-      zod:
         optional: true
 
   sade@1.8.1:
@@ -15655,15 +15640,6 @@ snapshots:
       esm-env: 1.2.2
       lz-string: 1.5.0
       svelte: 5.43.6
-
-  runed@0.36.0(svelte@5.43.6)(zod@3.25.76):
-    dependencies:
-      dequal: 2.0.3
-      esm-env: 1.2.2
-      lz-string: 1.5.0
-      svelte: 5.43.6
-    optionalDependencies:
-      zod: 3.25.76
 
   sade@1.8.1:
     dependencies:

@@ -1,31 +1,47 @@
-import { PersistedState } from 'runed'
+const STORAGE_KEY = 'prosekit-docs-framework'
 
-export function useFramework(frameworks: string[]): {
-  get current(): string
-  set current(value: string)
-} {
-  return typeof window === 'undefined'
-    ? useFrameworkServer(frameworks)
-    : useFrameworkClient(frameworks)
+function getPerfectFramework(): string | undefined | null {
+  return typeof localStorage !== 'undefined'
+    ? localStorage.getItem(STORAGE_KEY)
+    : undefined
 }
 
-function useFrameworkServer(frameworks: string[]) {
-  return { current: frameworks[0] }
-}
-
-function useFrameworkClient(frameworks: string[]) {
-  const defaultFramework = frameworks[0]
-  const state = new PersistedState('prosekit-docs-framework', defaultFramework)
-  return {
-    get current() {
-      const persisted = state.current
-      if (frameworks.includes(persisted)) {
-        return persisted
-      }
-      return defaultFramework
-    },
-    set current(value) {
-      state.current = value
-    },
+function setPerfectFramework(value: string) {
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem(STORAGE_KEY, value)
   }
+  for (const subscription of subscriptions) {
+    subscription()
+  }
+}
+
+const subscriptions = new Set<() => void>()
+
+export function useFramework(frameworks: string[]) {
+  let perfectFramework = getPerfectFramework()
+  let initialFramework = (perfectFramework && frameworks.includes(perfectFramework)) ? perfectFramework : frameworks[0]
+  let framework = $state<string>(initialFramework)
+
+  const refresh = () => {
+    let perfectFramework = getPerfectFramework()
+    if (perfectFramework && frameworks.includes(perfectFramework) && perfectFramework !== framework) {
+      framework = perfectFramework
+    }
+  }
+
+  $effect(() => {
+    subscriptions.add(refresh)
+    return () => {
+      subscriptions.delete(refresh)
+    }
+  })
+
+  const set = (value: string) => {
+    framework = value
+    setPerfectFramework(value)
+  }
+
+  const get = () => framework
+
+  return [get, set] as const
 }

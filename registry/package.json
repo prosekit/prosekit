@@ -100,7 +100,6 @@
     "./solid/examples/block-handle": "./src/solid/examples/block-handle/index.ts",
     "./solid/examples/blockquote": "./src/solid/examples/blockquote/index.ts",
     "./solid/examples/bold": "./src/solid/examples/bold/index.ts",
-    "./solid/examples/change-tracking": "./src/solid/examples/change-tracking/index.ts",
     "./solid/examples/code": "./src/solid/examples/code/index.ts",
     "./solid/examples/code-block": "./src/solid/examples/code-block/index.ts",
     "./solid/examples/code-block-themes": "./src/solid/examples/code-block-themes/index.ts",

@@ -123,7 +123,12 @@ export function createComponent<
 
     const mergedRef = useMemo(() => mergeRefs([ref, setEl]), [ref])
 
-    return createElement(tagName, { ...attributes, ref: mergedRef })
+    return createElement(tagName, {
+      ...attributes,
+      // Suppress hydration warnings for web components as the attributes are set after the component is mounted.
+      suppressHydrationWarning: true,
+      ref: mergedRef,
+    })
   })
 
   Component.displayName = displayName

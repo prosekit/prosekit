@@ -26,11 +26,13 @@ export function ThemeSelector(): JSX.Element {
         onChange={(event) => setTheme(event.target.value)}
         class="CSS_TOGGLE_BUTTON"
       >
-        {shikiBundledThemesInfo.map((info) => (
-          <option value={info.id}>
-            {info.id}
-          </option>
-        ))}
+        <For each={shikiBundledThemesInfo}>
+          {(info) => (
+            <option value={info.id}>
+              {info.id}
+            </option>
+          )}
+        </For>
       </select>
     </>
   )

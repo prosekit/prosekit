@@ -6,7 +6,4 @@ export {
   defineSelectBlockCommands,
   type SelectBlockCommandsExtension,
 } from './select-block-commands'
-export {
-  defineSelectBlockKeymap
-} from './select-block-keymap'
-
+export { defineSelectBlockKeymap } from './select-block-keymap'

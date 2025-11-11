@@ -1582,6 +1582,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-select-block.json",
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
@@ -1619,10 +1620,12 @@
           "registry/src/react/examples/select-block/extension.ts",
           "registry/src/react/examples/select-block/index.ts",
           "registry/src/react/examples/select-block/toolbar.tsx",
+          "registry/src/react/sample/sample-doc-select-block.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
         ],
         "internalDependencies": [
+          "react-sample-sample-doc-select-block",
           "react-ui-button"
         ]
       }
@@ -2762,6 +2765,32 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-select-block",
+      "title": "react-sample-sample-doc-select-block",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-select-block.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-select-block.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-select-block.ts"
         ],
         "internalDependencies": []
       }

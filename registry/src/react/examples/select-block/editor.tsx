@@ -5,9 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from '../../sample/sample-doc-select-block'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
-import { defaultContent } from '../../sample/sample-doc-select-block'
 
 export default function Editor() {
   const editor = useMemo(() => {
@@ -26,5 +27,3 @@ export default function Editor() {
     </ProseKit>
   )
 }
-
-

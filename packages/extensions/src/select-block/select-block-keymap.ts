@@ -1,8 +1,12 @@
-import { defineKeymap, type PlainExtension } from '@prosekit/core'
+import {
+  defineKeymap,
+  type PlainExtension,
+} from '@prosekit/core'
 import {
   AllSelection,
   type Command,
 } from '@prosekit/pm/state'
+
 import {
   isBlockSelected as isBlockSelectedUtil,
   selectCurrentBlock,
@@ -36,4 +40,3 @@ export function defineSelectBlockKeymap(): PlainExtension {
     'Mod-a': selectAllOrBlockCommand,
   })
 }
-

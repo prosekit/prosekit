@@ -1,8 +1,9 @@
-import type { Command } from '@prosekit/pm/state'
 import {
   defineCommands,
   type Extension,
 } from '@prosekit/core'
+import type { Command } from '@prosekit/pm/state'
+
 import { selectCurrentBlock } from './select-block-utils'
 
 /**
@@ -23,4 +24,3 @@ export function defineSelectBlockCommands(): SelectBlockCommandsExtension {
     },
   })
 }
-

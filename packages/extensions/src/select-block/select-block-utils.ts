@@ -1,11 +1,13 @@
-import { findParentNode, type FindParentNodeResult } from '@prosekit/core'
+import {
+  findParentNode,
+  type FindParentNodeResult,
+} from '@prosekit/core'
 import {
   NodeSelection,
   TextSelection,
   type Command,
   type Selection,
 } from '@prosekit/pm/state'
-
 
 export function findCurrentBlock(selection: Selection): FindParentNodeResult | null {
   const { $from } = selection
@@ -18,11 +20,11 @@ export function findCurrentBlock(selection: Selection): FindParentNodeResult | n
 
   let block: FindParentNodeResult | null = textBlock
     ? {
-        node: textBlock.node,
-        pos: textBlock.pos,
-        start: textBlock.start,
-        depth: textBlock.depth,
-      }
+      node: textBlock.node,
+      pos: textBlock.pos,
+      start: textBlock.start,
+      depth: textBlock.depth,
+    }
     : null
 
   // If text block exists, search upward for the nearest non-text block ancestor (without crossing doc)
@@ -52,11 +54,11 @@ export function findCurrentBlock(selection: Selection): FindParentNodeResult | n
     )
     block = nonText
       ? {
-          node: nonText.node,
-          pos: nonText.pos,
-          start: nonText.start,
-          depth: nonText.depth,
-        }
+        node: nonText.node,
+        pos: nonText.pos,
+        start: nonText.start,
+        depth: nonText.depth,
+      }
       : null
   }
 
@@ -116,5 +118,3 @@ export const selectCurrentBlock: Command = (state, dispatch) => {
   }
   return true
 }
-
-

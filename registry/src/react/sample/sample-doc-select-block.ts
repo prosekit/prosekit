@@ -183,5 +183,3 @@ export const defaultContent: NodeJSON = {
     },
   ],
 }
-
-

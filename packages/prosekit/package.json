@@ -163,11 +163,11 @@
     "build:typedoc": "typedoc"
   },
   "dependencies": {
-    "@prosekit/pm": "workspace:*",
     "@prosekit/basic": "workspace:*",
     "@prosekit/core": "workspace:*",
     "@prosekit/extensions": "workspace:*",
     "@prosekit/lit": "workspace:*",
+    "@prosekit/pm": "workspace:*",
     "@prosekit/preact": "workspace:*",
     "@prosekit/react": "workspace:*",
     "@prosekit/solid": "workspace:*",
@@ -178,14 +178,14 @@
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
     "loro-prosemirror": ">= 0.0.7",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0"
+    "vue": ">= 3.0.0",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {

@@ -14332,6 +14332,51 @@
       }
     },
     {
+      "name": "solid-example-emoji-rules",
+      "title": "solid-example-emoji-rules",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/emoji-rules/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/emoji-rules/emoji.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/emoji.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/emoji-rules/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/emoji-rules/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/emoji-rules/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "emoji-rules",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/emoji-rules/editor.tsx",
+          "registry/src/solid/examples/emoji-rules/emoji.ts",
+          "registry/src/solid/examples/emoji-rules/extension.ts",
+          "registry/src/solid/examples/emoji-rules/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",

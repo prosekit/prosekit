@@ -24,8 +24,8 @@ const config = {
     },
     './registry': {
       entry: [
-        'src/*/examples/*/*',
-        'src/*/sample/*',
+        'src/*/examples/*/index.ts',
+        'src/*/examples/*/extension.ts',
         'src/*/shims-*.d.ts',
       ],
     },
@@ -41,13 +41,8 @@ const config = {
         /@iconify-json\/.*/,
         'babel-plugin-react-compiler',
         'sharp',
-        'rehype-parse',
-        'rehype-remark',
-        'remark-gfm',
-        'remark-html',
-        'remark-parse',
-        'remark-stringify',
-        'unified',
+
+        // Required by code blocks in documentation
         'y-websocket',
       ],
     },

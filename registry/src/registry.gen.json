@@ -14288,6 +14288,50 @@
       }
     },
     {
+      "name": "solid-example-drop-cursor",
+      "title": "solid-example-drop-cursor",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-drop-cursor.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/drop-cursor/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/drop-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/drop-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/drop-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "drop-cursor",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/drop-cursor/editor.tsx",
+          "registry/src/solid/examples/drop-cursor/extension.ts",
+          "registry/src/solid/examples/drop-cursor/index.ts",
+          "registry/src/solid/sample/sample-doc-drop-cursor.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-drop-cursor"
+        ]
+      }
+    },
+    {
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",

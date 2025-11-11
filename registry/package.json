@@ -104,6 +104,7 @@
     "./solid/examples/code": "./src/solid/examples/code/index.ts",
     "./solid/examples/code-block": "./src/solid/examples/code-block/index.ts",
     "./solid/examples/code-block-themes": "./src/solid/examples/code-block-themes/index.ts",
+    "./solid/examples/drop-cursor": "./src/solid/examples/drop-cursor/index.ts",
     "./solid/examples/full": "./src/solid/examples/full/index.ts",
     "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",

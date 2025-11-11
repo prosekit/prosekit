@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.16.2
+
+### Patch Changes
+
+- [`633300a`](https://github.com/ocavue/prosekit/commit/633300acea1221d3d6791bc9c5bcb63fc8cde239) ![](https://prosekit.dev/b/react)
+
+  Resolve SSR issue in `useEditorDerivedValue` hook.
+
+- [`acf5354`](https://github.com/ocavue/prosekit/commit/acf53543e728cc5eb4d843a70f9232dc30d5e680) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
 ## 0.16.1
 
 ### Patch Changes

@@ -150,10 +150,7 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
-        # Only run this step if the CLOUDFLARE_PAGES_API_TOKEN is set (i.e. it's
-        # not from a fork). Notice that secrets cannot be directly referenced in
-        # `if:` conditionals.
-        if: ${{ env.CLOUDFLARE_PAGES_API_TOKEN != '' }}
+        if: ${{ !github.event.repository.fork }}
         with:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}

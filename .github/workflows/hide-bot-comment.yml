@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - id: hide-comment
+        if: ${{ !github.event.repository.fork }}
         uses: int128/hide-comment-action@v1.47.0
         with:
           authors: |

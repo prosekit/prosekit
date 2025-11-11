@@ -65,8 +65,12 @@ class VirtualFile {
     this.updated = true
   }
 
-  updateJSON(json: any) {
-    this.update(JSON.stringify(json, null, 2) + '\n')
+  updateJSON(json: any, { minify = false }: { minify?: boolean } = {}) {
+    let text = JSON.stringify(json, null, minify ? undefined : 2)
+    if (!minify) {
+      text += '\n'
+    }
+    this.update(text)
   }
 
   updateYaml(yaml: any, options?: Yaml.DumpOptions) {
@@ -236,9 +240,9 @@ class VirtualFileSystem {
     return await this.updateText(path.join(pkg.relativeDir, filePath), content)
   }
 
-  async updateJSON(filePath: string, json: any) {
+  async updateJSON(filePath: string, json: any, options?: { minify?: boolean }) {
     const file = await this.ensureFile(filePath)
-    file.updateJSON(json)
+    file.updateJSON(json, options)
   }
 
   async updateYaml(filePath: string, yaml: any, options?: Yaml.DumpOptions) {

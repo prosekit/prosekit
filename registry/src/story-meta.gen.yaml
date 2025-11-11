@@ -60,6 +60,8 @@
   frameworks: [react, vue, preact, svelte]
 - name: search
   frameworks: [react, vue, preact, svelte]
+- name: select-block
+  frameworks: [react]
 - name: slash-menu
   frameworks: [react, vue, preact, svelte]
 - name: strike

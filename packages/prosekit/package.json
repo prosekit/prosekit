@@ -68,6 +68,7 @@
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
     "./extensions/search": "./src/extensions/search.gen.ts",
     "./extensions/search/style.css": "./src/extensions/search/style.css",
+    "./extensions/select-block": "./src/extensions/select-block.gen.ts",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/table": "./src/extensions/table.gen.ts",
     "./extensions/table/style.css": "./src/extensions/table/style.css",
@@ -162,11 +163,11 @@
     "build:typedoc": "typedoc"
   },
   "dependencies": {
+    "@prosekit/pm": "workspace:*",
     "@prosekit/basic": "workspace:*",
     "@prosekit/core": "workspace:*",
     "@prosekit/extensions": "workspace:*",
     "@prosekit/lit": "workspace:*",
-    "@prosekit/pm": "workspace:*",
     "@prosekit/preact": "workspace:*",
     "@prosekit/react": "workspace:*",
     "@prosekit/solid": "workspace:*",
@@ -177,14 +178,14 @@
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
     "loro-prosemirror": ">= 0.0.7",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
@@ -404,6 +405,10 @@
       },
       "./extensions/search/style.css": {
         "default": "./dist/extensions/search/style.css"
+      },
+      "./extensions/select-block": {
+        "types": "./dist/prosekit-extensions-select-block.d.ts",
+        "default": "./dist/prosekit-extensions-select-block.js"
       },
       "./extensions/strike": {
         "types": "./dist/prosekit-extensions-strike.d.ts",
@@ -842,6 +847,9 @@
         "extensions/search": [
           "./dist/prosekit-extensions-search.d.ts"
         ],
+        "extensions/select-block": [
+          "./dist/prosekit-extensions-select-block.d.ts"
+        ],
         "extensions/strike": [
           "./dist/prosekit-extensions-strike.d.ts"
         ],
@@ -1136,6 +1144,7 @@
       "prosekit-extensions-readonly": "./src/extensions/readonly.gen.ts",
       "prosekit-extensions-search": "./src/extensions/search.gen.ts",
       "extensions/search/style": "./src/extensions/search/style.css",
+      "prosekit-extensions-select-block": "./src/extensions/select-block.gen.ts",
       "prosekit-extensions-strike": "./src/extensions/strike.gen.ts",
       "prosekit-extensions-table": "./src/extensions/table.gen.ts",
       "extensions/table/style": "./src/extensions/table/style.css",

@@ -125,20 +125,30 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
  */
 export interface StreamContentOptions {
   /**
-   * 内容流（异步迭代器）
+   * 流式输出内容要覆盖的范围起始位置
    */
-  stream: AsyncIterable<string>
+  from: number
 
   /**
-   * 插入内容的起始位置，默认为当前光标位置
+   * 流式输出内容要覆盖的范围结束位置
    */
-  from?: number
+  to: number
 
   /**
-   * 是否在流式输出期间阻止用户编辑该区域
-   * @default true
+   * 回调函数，接收一个 write 函数用于写入 chunk 内容
+   * 
+   * @param write - 写入函数，每次调用会累积内容并更新编辑器
+   * @example
+   * ```ts
+   * onStream: async (write) => {
+   *   for (const chunk of chunks) {
+   *     write(chunk)
+   *     await delay(100)
+   *   }
+   * }
+   * ```
    */
-  preventEditing?: boolean
+  onStream: (write: (chunk: string) => void) => Promise<void> | void
 }
 
 /**
@@ -150,11 +160,10 @@ async function handleHtmlStreaming(
   view: EditorView,
   options: StreamContentOptions,
 ): Promise<void> {
-  const { stream, from: initialFrom, preventEditing = true } = options
+  const { from, to, onStream } = options
 
   let htmlBuffer = ''
-  const streamStartPos = initialFrom ?? view.state.selection.from
-  let currentStreamEndPos = streamStartPos
+  let currentStreamEndPos = from
 
   const schema = view.state.schema
   const domParser = DOMParser.fromSchema(schema)
@@ -162,63 +171,73 @@ async function handleHtmlStreaming(
   // 创建一个临时 DOM 容器用于解析 HTML
   const tempDiv = document.createElement('div')
 
-  // 流开始：通知插件
-  if (preventEditing) {
-    view.dispatch(
-      view.state.tr.setMeta(streamingPluginKey, {
-        streamStarted: true,
-        from: streamStartPos,
-        to: streamStartPos,
-      }),
-    )
+  // 流开始：先删除 from 到 to 之间的内容（如果存在）
+  const { state } = view
+  if (to > from) {
+    const tr = state.tr
+    tr.delete(from, to)
+    tr.setMeta(streamingPluginKey, { streamUpdating: true })
+    tr.setMeta('addToHistory', false)
+    view.dispatch(tr)
+    // 更新当前状态
+    currentStreamEndPos = from
+  }
+
+  // 通知插件流开始（流式输出期间必定阻止编辑）
+  view.dispatch(
+    view.state.tr.setMeta(streamingPluginKey, {
+      streamStarted: true,
+      from,
+      to: from,
+    }),
+  )
+
+  // 创建 write 函数，用于写入 chunk
+  const write = (chunk: string): void => {
+    // 1. 累积 HTML 内容
+    htmlBuffer += chunk
+
+    // 2. 解析累积后的所有内容
+    tempDiv.innerHTML = htmlBuffer
+    const newSlice = domParser.parseSlice(tempDiv)
+
+    const { state } = view
+    const tr = state.tr
+
+    // 3. 替换文档中的流式内容区域（从 from 到当前结束位置）
+    tr.replace(from, currentStreamEndPos, newSlice)
+
+    // 4. 更新当前流末尾位置
+    currentStreamEndPos = from + newSlice.size
+
+    // 5. 移动光标到新内容的末尾
+    const newSelection = TextSelection.create(tr.doc, currentStreamEndPos)
+    tr.setSelection(newSelection)
+    tr.scrollIntoView()
+
+    // 6. 标记这个事务来自流式更新，并且不计入 undo 历史
+    tr.setMeta(streamingPluginKey, { streamUpdating: true })
+    tr.setMeta('addToHistory', false)
+
+    // 7. 分发事务
+    view.dispatch(tr)
   }
 
   try {
-    for await (const chunk of stream) {
-      // 1. 累积 HTML 内容
-      htmlBuffer += chunk
-
-      // 2. 解析累积后的所有内容
-      tempDiv.innerHTML = htmlBuffer
-      const newSlice = domParser.parseSlice(tempDiv)
-
-      const { state } = view
-      const tr = state.tr
-
-      // 3. 替换文档中的流式内容区域
-      tr.replace(streamStartPos, currentStreamEndPos, newSlice)
-
-      // 4. 更新当前流末尾位置
-      currentStreamEndPos = streamStartPos + newSlice.size
-
-      // 5. 移动光标到新内容的末尾
-      const newSelection = TextSelection.create(tr.doc, currentStreamEndPos)
-      tr.setSelection(newSelection)
-      tr.scrollIntoView()
-
-      // 6. 标记这个事务来自流式更新，并且不计入 undo 历史
-      tr.setMeta(streamingPluginKey, { streamUpdating: true })
-      tr.setMeta('addToHistory', false)
-
-      // 7. 分发事务
-      view.dispatch(tr)
-    }
+    // 调用用户提供的 onStream 回调，传入 write 函数
+    await onStream(write)
 
     // 通知插件流已结束
-    if (preventEditing) {
-      view.dispatch(
-        view.state.tr.setMeta(streamingPluginKey, { streamEnded: true }),
-      )
-    }
+    view.dispatch(
+      view.state.tr.setMeta(streamingPluginKey, { streamEnded: true }),
+    )
   } catch (error) {
     console.error('流式内容处理失败:', error)
 
     // 确保在出错时也结束流式状态
-    if (preventEditing) {
-      view.dispatch(
-        view.state.tr.setMeta(streamingPluginKey, { streamEnded: true }),
-      )
-    }
+    view.dispatch(
+      view.state.tr.setMeta(streamingPluginKey, { streamEnded: true }),
+    )
   }
 }
 
@@ -231,12 +250,14 @@ async function handleHtmlStreaming(
  * @example
  * ```ts
  * const command = streamContentCommand({
- *   stream: async function* () {
+ *   from: 0,
+ *   to: 10,
+ *   onStream: async (write) => {
  *     for (const chunk of chunks) {
- *       yield chunk
+ *       write(chunk)
  *       await delay(100)
  *     }
- *   }(),
+ *   },
  * })
  * ```
  */

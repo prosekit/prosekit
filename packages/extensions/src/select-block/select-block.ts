@@ -7,6 +7,7 @@ import {
   defineSelectBlockCommands,
   type SelectBlockCommandsExtension,
 } from './select-block-commands'
+import { defineSelectBlockKeymap } from './select-block-keymap'
 
 /**
  * @internal
@@ -19,6 +20,7 @@ export type SelectBlockExtension = Union<[SelectBlockCommandsExtension]>
 export function defineSelectBlock(): SelectBlockExtension {
   return union(
     defineSelectBlockCommands(),
+    defineSelectBlockKeymap(),
   )
 }
 

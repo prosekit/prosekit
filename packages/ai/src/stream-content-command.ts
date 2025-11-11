@@ -64,11 +64,19 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
 
         // 流进行中，需要根据事务的映射更新范围
         if (oldState.active) {
+          // 如果 meta 中有新的位置信息，使用它；否则使用 mapping 来追踪位置变化
+          if (meta?.from !== undefined && meta?.to !== undefined) {
+            return {
+              active: true,
+              from: meta.from,
+              to: meta.to,
+            }
+          }
+          // 使用 mapping 来追踪位置变化（当文档结构改变时，位置会自动映射）
           return {
             active: true,
-            // 使用 mapping 来追踪位置变化
-            from: meta?.from ?? oldState.from,
-            to: meta?.to ?? oldState.to,
+            from: tr.mapping.map(oldState.from),
+            to: tr.mapping.map(oldState.to),
           }
         }
 
@@ -93,8 +101,6 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
           },
         )
 
-        console.log('decoration', decoration)
-        console.log('streamingState', streamingState)
 
         return DecorationSet.create(state.doc, [decoration])
       },
@@ -171,26 +177,24 @@ async function handleHtmlStreaming(
   // 创建一个临时 DOM 容器用于解析 HTML
   const tempDiv = document.createElement('div')
 
-  // 流开始：先删除 from 到 to 之间的内容（如果存在）
+  // 流开始：先删除 from 到 to 之间的内容（如果存在），然后通知插件流开始
   const { state } = view
+  const startTr = state.tr
+  
   if (to > from) {
-    const tr = state.tr
-    tr.delete(from, to)
-    tr.setMeta(streamingPluginKey, { streamUpdating: true })
-    tr.setMeta('addToHistory', false)
-    view.dispatch(tr)
+    startTr.delete(from, to)
     // 更新当前状态
     currentStreamEndPos = from
   }
-
+  
   // 通知插件流开始（流式输出期间必定阻止编辑）
-  view.dispatch(
-    view.state.tr.setMeta(streamingPluginKey, {
-      streamStarted: true,
-      from,
-      to: from,
-    }),
-  )
+  startTr.setMeta(streamingPluginKey, {
+    streamStarted: true,
+    from,
+    to: from,
+  })
+  startTr.setMeta('addToHistory', false)
+  view.dispatch(startTr)
 
   // 创建 write 函数，用于写入 chunk
   const write = (chunk: string): void => {
@@ -215,8 +219,12 @@ async function handleHtmlStreaming(
     tr.setSelection(newSelection)
     tr.scrollIntoView()
 
-    // 6. 标记这个事务来自流式更新，并且不计入 undo 历史
-    tr.setMeta(streamingPluginKey, { streamUpdating: true })
+    // 6. 标记这个事务来自流式更新，并传递最新的位置信息
+    tr.setMeta(streamingPluginKey, {
+      streamUpdating: true,
+      from,
+      to: currentStreamEndPos,
+    })
     tr.setMeta('addToHistory', false)
 
     // 7. 分发事务

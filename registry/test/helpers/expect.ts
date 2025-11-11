@@ -12,17 +12,14 @@ export async function expectLocatorToNotExist(locator: Locator, options?: Expect
   await expect.element(locator, options).not.toBeInTheDocument()
 }
 
-export async function expectLocatorToBeHidden(locator: Locator, options?: ExpectPollOptions): Promise<void> {
-  const message: string = [
-    options?.message || '',
-    `Expect locator '${locator.selector}' to be hidden, but found at least one visible element`,
-  ].filter(Boolean).join(': ')
-
-  await expect.poll(() => {
-    return findVisibleElement(locator)
-  }, { ...options, message }).toEqual({
+export async function expectLocatorToBeHidden(locator: Locator, options?: {
+  timeout?: number
+  interval?: number
+}): Promise<void> {
+  const message = `Expect locator '${locator.selector}' to be hidden, but found at least one visible element`
+  await expect.poll(() => findVisibleElement(locator), { ...options, message }).toEqual({
     isVisible: false,
-    reason: expect.anything() as string,
+    reason: expect.any(String) as string,
   })
 }
 

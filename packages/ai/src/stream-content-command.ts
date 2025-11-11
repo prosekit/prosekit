@@ -67,8 +67,8 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
           return {
             active: true,
             // 使用 mapping 来追踪位置变化
-            from: tr.mapping.map(oldState.from),
-            to: tr.mapping.map(oldState.to),
+            from: meta?.from ?? oldState.from,
+            to: meta?.to ?? oldState.to,
           }
         }
 
@@ -92,6 +92,9 @@ export function createStreamingPlugin(): Plugin<StreamingState> {
             class: 'is-streaming',
           },
         )
+
+        console.log('decoration', decoration)
+        console.log('streamingState', streamingState)
 
         return DecorationSet.create(state.doc, [decoration])
       },
@@ -141,9 +144,7 @@ export interface StreamContentOptions {
 /**
  * 处理 HTML 字符串流的异步函数
  * 
- * 使用混合策略：
- * - 已完成的块：一次性解析并提交，不再重复解析
- * - 活动块：每次更新时重新解析，依赖 ProseMirror 的 diff 算法实现增量更新
+ * 简化实现：每次接收到 chunk 后，累积所有内容并全量解析替换
  */
 async function handleHtmlStreaming(
   view: EditorView,
@@ -152,9 +153,8 @@ async function handleHtmlStreaming(
   const { stream, from: initialFrom, preventEditing = true } = options
 
   let htmlBuffer = ''
-  let committedBoundaryInText = 0 // 文本缓冲区中最后一个已确认的块边界位置
-  let committedBoundaryInDoc = initialFrom ?? view.state.selection.from // 文档中已确认的块边界位置
-  let currentStreamEndPos = committedBoundaryInDoc // 当前流内容的末尾位置
+  const streamStartPos = initialFrom ?? view.state.selection.from
+  let currentStreamEndPos = streamStartPos
 
   const schema = view.state.schema
   const domParser = DOMParser.fromSchema(schema)
@@ -167,8 +167,8 @@ async function handleHtmlStreaming(
     view.dispatch(
       view.state.tr.setMeta(streamingPluginKey, {
         streamStarted: true,
-        from: committedBoundaryInDoc,
-        to: committedBoundaryInDoc,
+        from: streamStartPos,
+        to: streamStartPos,
       }),
     )
   }
@@ -178,108 +178,30 @@ async function handleHtmlStreaming(
       // 1. 累积 HTML 内容
       htmlBuffer += chunk
 
-      // 2. 寻找新的完整块边界
-      // 这里我们寻找闭合的块级标签，如 </p>, </li>, </h1>-</h6>, </div> 等
-      const blockBoundaryRegex = /<\/(p|li|h[1-6]|div|blockquote|pre|code|ul|ol|table|tr|td|th)>/g
-      let lastMatchIndex = -1
-      let match: RegExpExecArray | null
-
-      // 从上次确认的边界之后开始查找
-      const searchStart = committedBoundaryInText
-      const searchText = htmlBuffer.substring(searchStart)
-
-      while ((match = blockBoundaryRegex.exec(searchText)) !== null) {
-        lastMatchIndex = searchStart + match.index + match[0].length
-      }
+      // 2. 解析累积后的所有内容
+      tempDiv.innerHTML = htmlBuffer
+      const newSlice = domParser.parseSlice(tempDiv)
 
       const { state } = view
       const tr = state.tr
 
-      if (lastMatchIndex !== -1) {
-        // 情况 A：找到了新的完整块边界
-        const newlyCompletedPart = htmlBuffer.substring(
-          committedBoundaryInText,
-          lastMatchIndex,
-        )
-        const activePart = htmlBuffer.substring(lastMatchIndex)
+      // 3. 替换文档中的流式内容区域
+      tr.replace(streamStartPos, currentStreamEndPos, newSlice)
 
-        // 解析已完成的部分
-        tempDiv.innerHTML = newlyCompletedPart
-        const completedSlice = domParser.parseSlice(tempDiv)
+      // 4. 更新当前流末尾位置
+      currentStreamEndPos = streamStartPos + newSlice.size
 
-        // 解析活动部分
-        tempDiv.innerHTML = activePart
-        const activeSlice = domParser.parseSlice(tempDiv)
-
-        // 替换旧的活动块为已完成的部分
-        tr.replace(committedBoundaryInDoc, currentStreamEndPos, completedSlice)
-
-        // 更新已确认边界
-        committedBoundaryInDoc += completedSlice.size
-
-        // 在已确认边界后插入新的活动块
-        tr.insert(committedBoundaryInDoc, activeSlice.content)
-
-        // 更新当前流末尾位置
-        currentStreamEndPos = committedBoundaryInDoc + activeSlice.size
-
-        // 更新文本缓冲区边界
-        committedBoundaryInText = lastMatchIndex
-      } else {
-        // 情况 B：没有找到新的完整块边界（仍在活动块中）
-        const activePart = htmlBuffer.substring(committedBoundaryInText)
-
-        // 只解析活动部分
-        tempDiv.innerHTML = activePart
-        const activeSlice = domParser.parseSlice(tempDiv)
-
-        // 替换文档中的活动区域
-        tr.replace(committedBoundaryInDoc, currentStreamEndPos, activeSlice)
-
-        // 更新当前流末尾位置
-        currentStreamEndPos = committedBoundaryInDoc + activeSlice.size
-      }
-
-      // 移动光标到新内容的末尾
+      // 5. 移动光标到新内容的末尾
       const newSelection = TextSelection.create(tr.doc, currentStreamEndPos)
       tr.setSelection(newSelection)
       tr.scrollIntoView()
 
-      // 标记这个事务来自流式更新，并且不计入 undo 历史
+      // 6. 标记这个事务来自流式更新，并且不计入 undo 历史
       tr.setMeta(streamingPluginKey, { streamUpdating: true })
       tr.setMeta('addToHistory', false)
 
-      // 更新插件中的流式范围
-      if (preventEditing) {
-        tr.setMeta(streamingPluginKey, {
-          streamUpdating: true,
-          // 让插件的 apply 函数通过 mapping 自动计算新位置
-        })
-      }
-
-      // 分发事务
+      // 7. 分发事务
       view.dispatch(tr)
-    }
-
-    // 流结束：最后一次更新，确保所有内容都被正确解析
-    const finalTr = view.state.tr
-    const remainingPart = htmlBuffer.substring(committedBoundaryInText)
-
-    if (remainingPart.trim()) {
-      tempDiv.innerHTML = remainingPart
-      const finalSlice = domParser.parseSlice(tempDiv)
-
-      finalTr.replace(committedBoundaryInDoc, currentStreamEndPos, finalSlice)
-      const finalPos = committedBoundaryInDoc + finalSlice.size
-
-      const finalSelection = TextSelection.create(finalTr.doc, finalPos)
-      finalTr.setSelection(finalSelection)
-      finalTr.scrollIntoView()
-
-      finalTr.setMeta(streamingPluginKey, { streamUpdating: true })
-      finalTr.setMeta('addToHistory', false)
-
-      view.dispatch(finalTr)
     }
 
     // 通知插件流已结束

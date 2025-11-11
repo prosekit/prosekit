@@ -8,18 +8,24 @@ import {
   streamContentCommand,
 } from '@prosekit/ai'
 import { definePlugin } from 'prosekit/core'
-import { defineDoc } from 'prosekit/extensions/doc'
-import { defineParagraph } from 'prosekit/extensions/paragraph'
-import { defineText } from 'prosekit/extensions/text'
+import { defineBasicExtension } from 'prosekit/basic'
+import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+import { defineMention } from 'prosekit/extensions/mention'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
+import { defineCodeBlockView } from '../../ui/code-block-view'
 
 export function defineExtension() {
   return union(
-    defineBaseKeymap(),
-    defineDoc(),
-    defineText(),
-    defineParagraph(),
     // 添加流式插件
+    defineBasicExtension(),
+    definePlaceholder({ placeholder: 'Press / for commands...' }),
+    defineMention(),
+    defineCodeBlockShiki(),
+    defineHorizontalRule(),
+    defineCodeBlockView(),
     definePlugin(createStreamingPlugin()),
+
     // 定义流式内容命令
     defineCommands({
       streamContent: () => streamContentCommand({
@@ -53,7 +59,7 @@ async function* createMockHtmlStream(): AsyncIterable<string> {
 
   for (const part of parts) {
     // 模拟网络延迟
-    await new Promise((resolve) => setTimeout(resolve, 10000))
+    await new Promise((resolve) => setTimeout(resolve, 2200))
     yield part
   }
 }

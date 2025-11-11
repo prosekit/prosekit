@@ -1,4 +1,5 @@
 ---
+'prosekit': patch
 "@prosekit/pm": patch
 ---
 

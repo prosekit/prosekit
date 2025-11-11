@@ -17,19 +17,21 @@ export async function expectLocatorToBeHidden(locator: Locator, options?: {
   interval?: number
 }): Promise<void> {
   const message = `Expect locator '${locator.selector}' to be hidden, but found at least one visible element`
-  await expect.poll(() => findVisibleElement(locator), { ...options, message }).toEqual({
+  await expect.poll(() => checkLocatorVisibility(locator), { ...options, message }).toEqual({
     isVisible: false,
     reason: expect.any(String) as string,
   })
 }
 
+interface ElementVisibility {
+  isVisible: boolean
+  reason: string
+}
+
 /**
  * Checks if an element is visible
  */
-function isElementVisible(element: Element): {
-  isVisible: boolean
-  reason: string
-} {
+function checkElementVisibility(element: Element): ElementVisibility {
   const rect = element.getBoundingClientRect()
   const { width, height } = rect
   if (width === 0 && height === 0) {
@@ -67,12 +69,16 @@ function isElementVisible(element: Element): {
   }
 }
 
-function findVisibleElement(locator: Locator): Element | undefined {
+function checkLocatorVisibility(locator: Locator): ElementVisibility {
   const elements = locator.elements()
-  for (const element of elements) {
-    if (isElementVisible(element)) {
-      return element
+  if (elements.length === 0) {
+    return {
+      isVisible: false,
+      reason: `Locator '${locator.selector}' has no elements.`,
     }
   }
-  return undefined
+  const results = elements.map(checkElementVisibility)
+  const isVisible = results.some(result => result.isVisible)
+  const reason = results.map(result => result.reason).join('\n')
+  return { isVisible, reason }
 }

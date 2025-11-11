@@ -31,8 +31,8 @@ interface Props {
 const props: Props = $props()
 
 const { frameworks, story } = props
-const frameworkRef = useFramework(frameworks)
-const framework = $derived(frameworkRef.current)
+const [getFramework, setFramework] = useFramework(frameworks)
+const framework = $derived(getFramework())
 
 let showCode = $state(props.showCode ?? true)
 </script>
@@ -48,7 +48,7 @@ let showCode = $state(props.showCode ?? true)
       <FrameworkSelect
         {frameworks}
         {framework}
-        onFrameworkChange={f => frameworkRef.current = f}
+        onFrameworkChange={setFramework}
       />
       <span class="flex-1"></span>
       <ShowCodeSwitch

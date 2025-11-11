@@ -7,6 +7,7 @@ import { useExtension } from 'prosekit/solid'
 import {
   createMemo,
   createSignal,
+  For,
   type JSX,
 } from 'solid-js'
 

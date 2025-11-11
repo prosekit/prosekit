@@ -30,7 +30,6 @@ export function useFramework(frameworks: string[]) {
   }
 
   $effect(() => {
-    console.log('framework', framework)
     subscriptions.add(refresh)
     return () => {
       subscriptions.delete(refresh)

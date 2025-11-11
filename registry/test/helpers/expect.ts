@@ -20,21 +20,54 @@ export async function expectLocatorToBeHidden(locator: Locator, options?: Expect
 
   await expect.poll(() => {
     return findVisibleElement(locator)
-  }, { ...options, message }).toBe(undefined)
+  }, { ...options, message }).toEqual({
+    isVisible: false,
+    reason: expect.anything() as string,
+  })
 }
 
-function isElementVisible(element: Element): boolean {
+/**
+ * Checks if an element is visible
+ */
+function isElementVisible(element: Element): {
+  isVisible: boolean
+  reason: string
+} {
   const rect = element.getBoundingClientRect()
-  if (rect.width === 0 && rect.height === 0) {
-    return false
+  const { width, height } = rect
+  if (width === 0 && height === 0) {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: width=${width}, height=${height}.`,
+    }
   }
 
   const style = window.getComputedStyle(element)
-  if (style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) {
-    return false
+  const { visibility, display } = style
+  const opacity = Number(style.opacity)
+  if (visibility === 'hidden') {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: visibility=${visibility}.`,
+    }
+  }
+  if (display === 'none') {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: display=${display}.`,
+    }
+  }
+  if (opacity === 0) {
+    return {
+      isVisible: false,
+      reason: `Element is not visible: opacity=${opacity}.`,
+    }
   }
 
-  return true
+  return {
+    isVisible: true,
+    reason: `Element is visible: width=${width}, height=${height}, visibility=${visibility}, display=${display}, opacity=${opacity}.`,
+  }
 }
 
 function findVisibleElement(locator: Locator): Element | undefined {

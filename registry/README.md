@@ -157,3 +157,43 @@ Use `attr:` for data attributes
   data-selected={selected ? "" : undefined}
 />
 ```
+
+### Explicitly specify the return type of components
+
+**Good:**
+
+```tsx
+import type { JSX } from 'solid-js'
+
+export default function Foo(): JSX.Element {
+  return <div>Foo</div>
+}
+```
+
+**Bad:**
+
+```tsx
+export default function Foo() {
+  return <div>Foo</div>
+}
+```
+
+### Use `For` instead of `.map()`
+
+**Good:**
+
+```tsx
+<div> 
+  <For each={items}>
+    {(item) => <div>{item}</div>}
+  </For>
+</div>
+```
+
+**Bad:**
+
+```tsx
+<div>{items.map((item) => (
+  <div>{item}</div>)
+)}</div>
+```

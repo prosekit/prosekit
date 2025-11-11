@@ -198,8 +198,10 @@ async function getStableHTML(
   html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
   // Remove unused styles for hidden elements
   html = html.replaceAll(/style="[^"]*display: none[^"]*"/g, 'style="display: none"')
+  // Remove React suppressHydrationWarning attribute
+  html = html.replaceAll(/ suppresshydrationwarning="true"/gi, '')
 
-  return html
+  return formatHTML(html)
 }
 
 // Remove display: contents divs in the clone, since solid.js v1 needs to

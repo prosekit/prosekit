@@ -76,6 +76,9 @@ importers:
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
+      '@prosekit/pm':
+        specifier: workspace:^
+        version: link:../pm
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -882,6 +885,9 @@ importers:
       '@preact/preset-vite':
         specifier: ^2.10.2
         version: 2.10.2(@babel/core@7.28.4)(preact@10.27.2)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
+      '@prosekit/ai':
+        specifier: workspace:*
+        version: link:../packages/ai
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../packages/config-vitest

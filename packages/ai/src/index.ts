@@ -6,5 +6,10 @@
  * @packageDocumentation
  */
 
-export {}
+export {
+  createStreamingPlugin,
+  streamContentCommand,
+  streamingPluginKey,
+  type StreamContentOptions,
+} from './stream-content-command'
 

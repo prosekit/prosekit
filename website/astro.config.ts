@@ -114,7 +114,7 @@ async function copiedRegistry(logger: AstroIntegrationLogger) {
         throw new Error(`sourceDir does not exist: ${styleText('blue', sourceDir)}`)
       }
 
-      logger.info(`sourceDir does not exist: ${styleText('blue', sourceDir)}, trying to build it...`)
+      logger.warn(`sourceDir does not exist: ${styleText('blue', sourceDir)}, trying to build it...`)
       await exec('pnpm', ['-w', 'gen'], {
         timeout: 20_000,
         throwOnError: true,
@@ -196,24 +196,7 @@ const config: AstroUserConfig = {
       name: 'copy-registry',
       hooks: {
         'astro:config:done': async ({ logger }) => {
-          const startTime = Date.now()
-          const rootDir = path.join(import.meta.dirname, '..')
-          const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
-          const targetDir = path.join(rootDir, 'website', 'public', 'r')
-          try {
-            await fs.access(sourceDir)
-          } catch {
-            logger.info(`sourceDir does not exist: ${styleText('blue', sourceDir)}, skipping registry copy`)
-            return
-          }
-          await fs.cp(sourceDir, targetDir, { recursive: true })
-          const endTime = Date.now()
-          const duration = endTime - startTime
-          logger.info(
-            `copied registry from ${styleText('blue', sourceDir)} `
-              + `to ${styleText('blue', targetDir)} `
-              + `in ${styleText('green', `${duration}ms`)}`,
-          )
+          await copiedRegistry(logger)
         },
       },
     },

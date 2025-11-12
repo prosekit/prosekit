@@ -69,7 +69,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   packages/basic:
     dependencies:
@@ -96,17 +96,17 @@ importers:
         specifier: ^20.0.10
         version: 20.0.10
       jsdom:
-        specifier: ^27.1.0
-        version: 27.1.0(postcss@8.5.6)
+        specifier: ^27.2.0
+        version: 27.2.0(postcss@8.5.6)
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   packages/config-tsdown:
     devDependencies:
@@ -120,8 +120,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -182,14 +182,14 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   packages/dev:
     dependencies:
@@ -322,8 +322,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       type-fest:
         specifier: ^5.2.0
         version: 5.2.0
@@ -335,7 +335,7 @@ importers:
         version: 11.0.5
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
       y-prosemirror:
         specifier: ^1.3.7
         version: 1.3.7(patch_hash=532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
@@ -359,8 +359,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -399,8 +399,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -433,8 +433,8 @@ importers:
         specifier: ^10.27.2
         version: 10.27.2
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -485,8 +485,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3
       '@types/react-dom':
-        specifier: ^19.2.2
-        version: 19.2.2(@types/react@19.2.3)
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.3)
       esbuild:
         specifier: ^0.27.0
         version: 0.27.0
@@ -512,8 +512,8 @@ importers:
         specifier: ^5.43.6
         version: 5.43.6
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typedoc:
         specifier: ^0.28.14
         version: 0.28.14(typescript@5.9.3)
@@ -573,8 +573,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3
       '@types/react-dom':
-        specifier: ^19.2.2
-        version: 19.2.2(@types/react@19.2.3)
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.3)
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -582,8 +582,8 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -616,8 +616,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -675,8 +675,8 @@ importers:
         specifier: ^20.19.11
         version: 20.19.15
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -712,14 +712,14 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
       vue:
         specifier: ^3.5.24
         version: 3.5.24(typescript@5.9.3)
@@ -776,8 +776,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.16.2
-        version: 0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+        specifier: ^0.16.3
+        version: 0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       type-fest:
         specifier: ^5.2.0
         version: 5.2.0
@@ -786,7 +786,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   registry:
     dependencies:
@@ -870,8 +870,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3
       '@types/react-dom':
-        specifier: ^19.2.2
-        version: 19.2.2(@types/react@19.2.3)
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.3)
       '@vitejs/plugin-react':
         specifier: ^5.1.0
         version: 5.1.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
@@ -946,7 +946,7 @@ importers:
         version: 3.5.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
       vitest:
         specifier: ^4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
       vitest-browser-commands:
         specifier: ^0.1.2
         version: 0.1.2(@vitest/browser-playwright@4.0.8)(vitest@4.0.8)
@@ -955,7 +955,7 @@ importers:
         version: 0.1.2(@vitest/browser@4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.8))(preact@10.27.2)(vitest@4.0.8)
       vitest-browser-react:
         specifier: ^2.0.2
-        version: 2.0.2(@types/react-dom@19.2.2(@types/react@19.2.3))(@types/react@19.2.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vitest@4.0.8)
+        version: 2.0.2(@types/react-dom@19.2.3(@types/react@19.2.3))(@types/react@19.2.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vitest@4.0.8)
       vitest-browser-solid:
         specifier: ^1.0.1
         version: 1.0.1(solid-js@1.9.10)(vitest@4.0.8)
@@ -979,7 +979,7 @@ importers:
         version: 4.1.3(@babel/core@7.28.4)(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(preact@10.27.2)(tsx@4.20.6)(yaml@2.8.1)
       '@astrojs/react':
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.19.15)(@types/react-dom@19.2.2(@types/react@19.2.3))(@types/react@19.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tsx@4.20.6)(yaml@2.8.1)
+        version: 4.4.2(@types/node@20.19.15)(@types/react-dom@19.2.3(@types/react@19.2.3))(@types/react@19.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tsx@4.20.6)(yaml@2.8.1)
       '@astrojs/solid-js':
         specifier: ^5.1.3
         version: 5.1.3(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(solid-js@1.9.10)(tsx@4.20.6)(yaml@2.8.1)
@@ -1017,8 +1017,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3
       '@types/react-dom':
-        specifier: ^19.2.2
-        version: 19.2.2(@types/react@19.2.3)
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.3)
       astro:
         specifier: ^5.15.5
         version: 5.15.5(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.50.2)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
@@ -1103,8 +1103,8 @@ importers:
 
 packages:
 
-  '@acemir/cssom@0.9.20':
-    resolution: {integrity: sha512-YUSA5jW8qn/c6nZUlFsn2Nt5qFFRBcGTgL9CzbiZbJCtEFY0Nv/ycO3BHT9tLjus9++zOYWe5mLCRIesuay25g==}
+  '@acemir/cssom@0.9.23':
+    resolution: {integrity: sha512-2kJ1HxBKzPLbmhZpxBiTZggjtgCwKg1ma5RHShxvd6zgqhDEdEkzpiwe7jLkI2p2BrZvFCXIihdoMkl1H39VnA==}
 
   '@actions/core@1.11.1':
     resolution: {integrity: sha512-hXJCSrkwfA46Vd9Z3q4cpEpHB1rL5NG04+/rbqW9d3+CSvtB1tYe8UTpAlixa1vj0m/ULglfEK2UKxMGxCxv5A==}
@@ -3296,8 +3296,8 @@ packages:
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
-  '@types/react-dom@19.2.2':
-    resolution: {integrity: sha512-9KQPoO6mZCi7jcIStSnlOWn2nEF3mNmyr3rIAsGnAbQKYbRLyqmeSc39EVgtxXVia+LMT8j3knZLAZAh+xLmrw==}
+  '@types/react-dom@19.2.3':
+    resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
     peerDependencies:
       '@types/react': ^19.2.0
 
@@ -4215,8 +4215,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  cssstyle@5.3.2:
-    resolution: {integrity: sha512-zDMqXh8Vs1CdRYZQ2M633m/SFgcjlu8RB8b/1h82i+6vpArF507NSYIWJHGlJaTWoS+imcnctmEz43txhbVkOw==}
+  cssstyle@5.3.3:
+    resolution: {integrity: sha512-OytmFH+13/QXONJcC75QNdMtKpceNk3u8ThBjyyYjkEcy/ekBwR1mMAuNvi3gdBPW3N5TlCzQ0WZw8H0lN/bDw==}
     engines: {node: '>=20'}
 
   csstype@3.1.3:
@@ -5597,8 +5597,8 @@ packages:
     resolution: {integrity: sha512-Hicd6JK5Njt2QB6XYFS7ok9e37O8AYk3jTcppG4YVQnYjOemymvTcmc7OWsmq/Qqj5TdRFO5/x/tIPmBeRtGHg==}
     engines: {node: '>=12.0.0'}
 
-  jsdom@27.1.0:
-    resolution: {integrity: sha512-Pcfm3eZ+eO4JdZCXthW9tCDT3nF4K+9dmeZ+5X39n+Kqz0DDIABRP5CAEOHRFZk8RGuC2efksTJxrjp8EXCunQ==}
+  jsdom@27.2.0:
+    resolution: {integrity: sha512-454TI39PeRDW1LgpyLPyURtB4Zx1tklSr6+OFOipsxGUH1WMTvk6C65JQdrj455+DP2uJ1+veBEHTGFKWVLFoA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
@@ -6279,6 +6279,14 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
+  obug@0.1.1:
+    resolution: {integrity: sha512-idmtuvNcQDncavr1pJDd9oCsU+2HWDlg+M/LquTUoi8HTEvm5PtY/dws7whAP1iu3vbrigdTVE/iUvMeKILBDg==}
+    peerDependencies:
+      ms: ^2.0.0
+    peerDependenciesMeta:
+      ms:
+        optional: true
+
   ofetch@1.4.1:
     resolution: {integrity: sha512-QZj2DfGplQAr2oj9KzceK9Hwz6Whxazmn85yYeVuS3u9XTMOGMRx0kO95MQ+vLsj/S/NwBDMMLU5hpxvI6Tklw==}
 
@@ -6953,8 +6961,8 @@ packages:
   rfdc@1.4.1:
     resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
 
-  rolldown-plugin-dts@0.17.5:
-    resolution: {integrity: sha512-dYzjLdhgsSIPmOCPJdDXiD6AUotAHVkGLNlSMdi3VmvTqk7O9H7uGzG2WGzgnDxZq6kZh31vZUbp9ZFoOhpySA==}
+  rolldown-plugin-dts@0.17.6:
+    resolution: {integrity: sha512-yX7kDS7Pm9HyVdKKtgfLiRS4wwu+dA4c7KUmOTWKgheu3he4pcT6Wk0Ht59Xm+1pHuoWYv3DvFPqxeF1AyW82A==}
     engines: {node: '>=20.18.0'}
     peerDependencies:
       '@ts-macro/tsc': ^0.3.6
@@ -7512,8 +7520,8 @@ packages:
     resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
     engines: {node: '>=6'}
 
-  tsdown@0.16.2:
-    resolution: {integrity: sha512-ZyHFO5DduN2TxY47hHPGZRZz5XSQbDYFl8L4BkLJlzYeHuX0cx5mZkonq7Xm4OC/z8BxWY+ai4kwvevup4Lwlw==}
+  tsdown@0.16.3:
+    resolution: {integrity: sha512-uciWbZs71/Yj5Mr++gk+Ry3cp4c4PGluLscJ8dbGLHyKFjo1Hrtn+Ix/BIulIKsrnECwwvDge24WKHzdJmCCQg==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -8465,7 +8473,7 @@ packages:
 
 snapshots:
 
-  '@acemir/cssom@0.9.20': {}
+  '@acemir/cssom@0.9.23': {}
 
   '@actions/core@1.11.1':
     dependencies:
@@ -8794,10 +8802,10 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/react@4.4.2(@types/node@20.19.15)(@types/react-dom@19.2.2(@types/react@19.2.3))(@types/react@19.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tsx@4.20.6)(yaml@2.8.1)':
+  '@astrojs/react@4.4.2(@types/node@20.19.15)(@types/react-dom@19.2.3(@types/react@19.2.3))(@types/react@19.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tsx@4.20.6)(yaml@2.8.1)':
     dependencies:
       '@types/react': 19.2.3
-      '@types/react-dom': 19.2.2(@types/react@19.2.3)
+      '@types/react-dom': 19.2.3(@types/react@19.2.3)
       '@vitejs/plugin-react': 4.7.0(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
@@ -10880,7 +10888,7 @@ snapshots:
 
   '@types/normalize-package-data@2.4.4': {}
 
-  '@types/react-dom@19.2.2(@types/react@19.2.3)':
+  '@types/react-dom@19.2.3(@types/react@19.2.3)':
     dependencies:
       '@types/react': 19.2.3
 
@@ -11148,7 +11156,7 @@ snapshots:
       '@vitest/mocker': 4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
       playwright: 1.56.1
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -11164,7 +11172,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
       ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
@@ -11185,7 +11193,7 @@ snapshots:
       magicast: 0.5.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
     optionalDependencies:
       '@vitest/browser': 4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.8)
     transitivePeerDependencies:
@@ -11235,7 +11243,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   '@vitest/utils@4.0.8':
     dependencies:
@@ -12057,7 +12065,7 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssstyle@5.3.2(postcss@8.5.6):
+  cssstyle@5.3.3(postcss@8.5.6):
     dependencies:
       '@asamuzakjp/css-color': 4.0.4
       '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.6)
@@ -13763,11 +13771,11 @@ snapshots:
 
   jsdoc-type-pratt-parser@4.1.0: {}
 
-  jsdom@27.1.0(postcss@8.5.6):
+  jsdom@27.2.0(postcss@8.5.6):
     dependencies:
-      '@acemir/cssom': 0.9.20
+      '@acemir/cssom': 0.9.23
       '@asamuzakjp/dom-selector': 6.7.4
-      cssstyle: 5.3.2(postcss@8.5.6)
+      cssstyle: 5.3.3(postcss@8.5.6)
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
@@ -14729,6 +14737,10 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
+  obug@0.1.1(ms@2.1.3):
+    optionalDependencies:
+      ms: 2.1.3
+
   ofetch@1.4.1:
     dependencies:
       destr: 2.0.5
@@ -15550,24 +15562,24 @@ snapshots:
 
   rfdc@1.4.1: {}
 
-  rolldown-plugin-dts@0.17.5(oxc-resolver@11.12.0)(rolldown@1.0.0-beta.49)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3)):
+  rolldown-plugin-dts@0.17.6(ms@2.1.3)(oxc-resolver@11.12.0)(rolldown@1.0.0-beta.49)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3)):
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/parser': 7.28.5
       '@babel/types': 7.28.5
       ast-kit: 2.2.0
       birpc: 2.8.0
-      debug: 4.4.3
       dts-resolver: 2.1.3(oxc-resolver@11.12.0)
       get-tsconfig: 4.13.0
       magic-string: 0.30.21
+      obug: 0.1.1(ms@2.1.3)
       rolldown: 1.0.0-beta.49
     optionalDependencies:
       typescript: 5.9.3
       vue-tsc: 3.1.3(typescript@5.9.3)
     transitivePeerDependencies:
+      - ms
       - oxc-resolver
-      - supports-color
 
   rolldown@1.0.0-beta.49:
     dependencies:
@@ -16264,17 +16276,17 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.16.2(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3)):
+  tsdown@0.16.3(ms@2.1.3)(oxc-resolver@11.12.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3)):
     dependencies:
       ansis: 4.2.0
       cac: 6.7.14
       chokidar: 4.0.3
-      debug: 4.4.3
       diff: 8.0.2
       empathic: 2.0.0
       hookable: 5.5.3
+      obug: 0.1.1(ms@2.1.3)
       rolldown: 1.0.0-beta.49
-      rolldown-plugin-dts: 0.17.5(oxc-resolver@11.12.0)(rolldown@1.0.0-beta.49)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
+      rolldown-plugin-dts: 0.17.6(ms@2.1.3)(oxc-resolver@11.12.0)(rolldown@1.0.0-beta.49)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
       semver: 7.7.3
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
@@ -16286,8 +16298,8 @@ snapshots:
     transitivePeerDependencies:
       - '@ts-macro/tsc'
       - '@typescript/native-preview'
+      - ms
       - oxc-resolver
-      - supports-color
       - synckit
       - vue-tsc
 
@@ -16751,40 +16763,40 @@ snapshots:
   vitest-browser-commands@0.1.2(@vitest/browser-playwright@4.0.8)(vitest@4.0.8):
     optionalDependencies:
       '@vitest/browser-playwright': 4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(playwright@1.56.1)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.8)
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   vitest-browser-preact@0.1.2(@vitest/browser@4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.8))(preact@10.27.2)(vitest@4.0.8):
     dependencies:
       '@vitest/browser': 4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.8)
       preact: 10.27.2
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
-  vitest-browser-react@2.0.2(@types/react-dom@19.2.2(@types/react@19.2.3))(@types/react@19.2.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vitest@4.0.8):
+  vitest-browser-react@2.0.2(@types/react-dom@19.2.3(@types/react@19.2.3))(@types/react@19.2.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vitest@4.0.8):
     dependencies:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
     optionalDependencies:
       '@types/react': 19.2.3
-      '@types/react-dom': 19.2.2(@types/react@19.2.3)
+      '@types/react-dom': 19.2.3(@types/react@19.2.3)
 
   vitest-browser-solid@1.0.1(solid-js@1.9.10)(vitest@4.0.8):
     dependencies:
       solid-js: 1.9.10
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   vitest-browser-svelte@2.0.1(svelte@5.43.6)(vitest@4.0.8):
     dependencies:
       svelte: 5.43.6
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
 
   vitest-browser-vue@2.0.1(vitest@4.0.8)(vue@3.5.24(typescript@5.9.3)):
     dependencies:
       '@vue/test-utils': 2.4.6
-      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
       vue: 3.5.24(typescript@5.9.3)
 
-  vitest@4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1):
+  vitest@4.0.8(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.8)(@vitest/ui@4.0.8)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.8
       '@vitest/mocker': 4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
@@ -16812,7 +16824,7 @@ snapshots:
       '@vitest/browser-playwright': 4.0.8(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(playwright@1.56.1)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.8)
       '@vitest/ui': 4.0.8(vitest@4.0.8)
       happy-dom: 20.0.10
-      jsdom: 27.1.0(postcss@8.5.6)
+      jsdom: 27.2.0(postcss@8.5.6)
     transitivePeerDependencies:
       - jiti
       - less

@@ -32,7 +32,7 @@
     "@ocavue/utils": "^0.8.1",
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.3",
-    "@types/react-dom": "^19.2.2",
+    "@types/react-dom": "^19.2.3",
     "astro": "^5.15.5",
     "astro-minify-html-swc": "^0.1.8",
     "astro-rehype-relative-markdown-links": "^0.18.1",

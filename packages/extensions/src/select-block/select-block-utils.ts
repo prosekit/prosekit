@@ -2,6 +2,7 @@ import {
   findParentNode,
   type FindParentNodeResult,
 } from '@prosekit/core'
+import type { ResolvedPos } from '@prosekit/pm/model'
 import {
   NodeSelection,
   TextSelection,
@@ -111,7 +112,42 @@ export function isBlockSelected(selection: Selection): boolean {
 
   const selectionFrom = selection.from
   const selectionTo = selection.to
+
+  // If selection fully covers a text block, check if there's a container block
+  // If so, check if the container block is selected instead
+  if (node.isTextblock && selectionFrom === blockFrom && selectionTo === blockTo) {
+    const containerBlock = findContainerBlock($from, block)
+    if (containerBlock) {
+      const containerFrom = containerBlock.start
+      const containerTo = containerBlock.start + containerBlock.node.content.size
+      // Check if selection matches the container block
+      return selectionFrom === containerFrom && selectionTo === containerTo
+    }
+  }
+
   return selectionFrom === blockFrom && selectionTo === blockTo
+}
+
+/**
+ * Find the container block (non-text block) that contains the text block
+ */
+function findContainerBlock($pos: ResolvedPos, textBlock: FindParentNodeResult): FindParentNodeResult | null {
+  const textBlockDepth = textBlock.depth
+  // Search upward for the nearest non-text block ancestor (without crossing doc)
+  for (let d = textBlockDepth - 1; d > 0; d--) {
+    const ancestor = $pos.node(d)
+    if (ancestor.isBlock && !ancestor.isTextblock) {
+      const pos = $pos.before(d)
+      const start = $pos.start(d)
+      return {
+        node: ancestor,
+        pos,
+        start,
+        depth: d,
+      }
+    }
+  }
+  return null
 }
 
 export const selectCurrentBlock: Command = (state, dispatch) => {
@@ -137,9 +173,51 @@ export const selectCurrentBlock: Command = (state, dispatch) => {
     return true
   }
 
-  // Single block selection - use existing logic
-  const { node, start, pos } = fromBlock
+  // Single block selection
+  const block = fromBlock
+  const { node, start, pos } = block
 
+  // Check if the selection fully covers a text block, and if there's a container block
+  // If so, we should select the container block instead
+  if (!node.isTextblock && !node.isAtom) {
+    // Already a container block, select it
+    if (dispatch) {
+      const tr = state.tr
+      const from = start
+      const to = start + node.content.size
+      tr.setSelection(TextSelection.create(tr.doc, from, to))
+      tr.scrollIntoView()
+      dispatch(tr)
+    }
+    return true
+  }
+
+  // If it's a text block, check if selection fully covers it
+  if (node.isTextblock) {
+    const textBlockFrom = start
+    const textBlockTo = start + node.content.size
+    const selectionFrom = selection.from
+    const selectionTo = selection.to
+
+    // If selection fully covers the text block, check for container block
+    if (selectionFrom === textBlockFrom && selectionTo === textBlockTo) {
+      const containerBlock = findContainerBlock($from, { node, pos, start, depth: block.depth })
+      if (containerBlock) {
+        // Select the container block instead
+        if (dispatch) {
+          const tr = state.tr
+          const from = containerBlock.start
+          const to = containerBlock.start + containerBlock.node.content.size
+          tr.setSelection(TextSelection.create(tr.doc, from, to))
+          tr.scrollIntoView()
+          dispatch(tr)
+        }
+        return true
+      }
+    }
+  }
+
+  // Default: select the found block
   if (dispatch) {
     const tr = state.tr
     if (node.isAtom) {

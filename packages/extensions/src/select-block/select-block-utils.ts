@@ -11,6 +11,33 @@ import {
 } from '@prosekit/pm/state'
 
 function findCurrentBlock(selection: Selection): FindParentNodeResult | null {
+  // Handle NodeSelection directly - return the selected node
+  if (selection instanceof NodeSelection) {
+    const node = selection.node
+    const pos = selection.$anchor.pos
+    const $pos = selection.$anchor
+    const depth = $pos.depth
+
+    // For atomic nodes (like images), return the node itself
+    if (node.isAtom) {
+      return {
+        node,
+        pos,
+        start: pos,
+        depth,
+      }
+    }
+
+    // For non-atomic nodes, calculate the start position
+    const start = $pos.start(depth)
+    return {
+      node,
+      pos,
+      start,
+      depth,
+    }
+  }
+
   const { $from } = selection
 
   // Prefer text block
@@ -83,11 +110,23 @@ function findCurrentBlock(selection: Selection): FindParentNodeResult | null {
 }
 
 export function isBlockSelected(selection: Selection): boolean {
+  // Handle NodeSelection directly
+  if (selection instanceof NodeSelection) {
+    const block = findCurrentBlock(selection)
+    if (!block) return false
+    return selection.$anchor.pos === block.pos
+  }
+
   const { $from, $to } = selection
 
   // Find blocks at both ends of the selection
-  const fromBlock = findCurrentBlock(TextSelection.create(selection.$anchor.doc, $from.pos, $from.pos))
-  const toBlock = findCurrentBlock(TextSelection.create(selection.$anchor.doc, $to.pos, $to.pos))
+  const fromBlock = findCurrentBlock(selection)
+  // For multi-block selections, we need to check the end position
+  // Create a temporary selection at the end position to find the block
+  const endSelection = $from.pos !== $to.pos
+    ? TextSelection.create(selection.$anchor.doc, $to.pos, $to.pos)
+    : selection
+  const toBlock = findCurrentBlock(endSelection)
 
   if (!fromBlock || !toBlock) return false
 
@@ -102,13 +141,9 @@ export function isBlockSelected(selection: Selection): boolean {
 
   // Single block selection
   const block = fromBlock
-  const { start, node, pos } = block
+  const { start, node } = block
   const blockFrom = start
   const blockTo = start + node.content.size
-
-  if (selection instanceof NodeSelection) {
-    return selection.$anchor.pos === pos
-  }
 
   const selectionFrom = selection.from
   const selectionTo = selection.to
@@ -152,11 +187,38 @@ function findContainerBlock($pos: ResolvedPos, textBlock: FindParentNodeResult):
 
 export const selectCurrentBlock: Command = (state, dispatch) => {
   const { selection } = state
+
+  // Handle NodeSelection directly - keep it as NodeSelection
+  if (selection instanceof NodeSelection) {
+    const block = findCurrentBlock(selection)
+    if (!block) return false
+
+    if (dispatch) {
+      const tr = state.tr
+      // For atomic nodes, keep as NodeSelection
+      if (block.node.isAtom) {
+        tr.setSelection(NodeSelection.create(tr.doc, block.pos))
+      } else {
+        // For non-atomic nodes, select the entire node content
+        const from = block.start
+        const to = block.start + block.node.content.size
+        tr.setSelection(TextSelection.create(tr.doc, from, to))
+      }
+      tr.scrollIntoView()
+      dispatch(tr)
+    }
+    return true
+  }
+
   const { $from, $to } = selection
 
   // Find blocks at both ends of the selection
-  const fromBlock = findCurrentBlock(TextSelection.create(state.doc, $from.pos, $from.pos))
-  const toBlock = findCurrentBlock(TextSelection.create(state.doc, $to.pos, $to.pos))
+  const fromBlock = findCurrentBlock(selection)
+  // For multi-block selections, we need to check the end position
+  const endSelection = $from.pos !== $to.pos
+    ? TextSelection.create(state.doc, $to.pos, $to.pos)
+    : selection
+  const toBlock = findCurrentBlock(endSelection)
 
   if (!fromBlock || !toBlock) return false
 

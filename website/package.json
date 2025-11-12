@@ -14,7 +14,7 @@
     "dev": "astro dev",
     "lint": "pnpm run lint:astro",
     "lint:astro": "astro check",
-    "test": "vitest"
+    "test": "playwright test"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",

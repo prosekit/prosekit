@@ -8,7 +8,7 @@ import { scanRegistry } from './meta/scan'
 import { updateRegistryItems } from './meta/update-registry-item-json'
 import { updateRegistry } from './meta/update-registry-json'
 
-async function gen() {
+async function build() {
   if (skipGen()) return
 
   const items = await scanRegistry()
@@ -17,4 +17,4 @@ async function gen() {
   await vfs.commit()
 }
 
-await gen()
+await build()

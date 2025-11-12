@@ -9,6 +9,11 @@ CHANGELOG.md
 yalc.lock
 dist
 .eslintcache
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/
+**/playwright/.auth/
 
 .cache
 .DS_Store
@@ -27,4 +32,3 @@ website/src/content/docs/references
 vite.config.ts.timestamp*
 .svelte-kit
 test-results
-playwright-report

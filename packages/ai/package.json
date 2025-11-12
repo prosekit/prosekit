@@ -1,0 +1,78 @@
+{
+  "name": "@prosekit/ai",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "description": "AI-related extensions for ProseKit",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
+    "directory": "packages/ai"
+  },
+  "bugs": {
+    "url": "https://github.com/prosekit/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror",
+    "AI"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@prosekit/core": "workspace:^",
+    "@prosekit/pm": "workspace:^"
+  },
+  "devDependencies": {
+    "@prosekit/config-tsdown": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "@types/jsdom": "^27.0.0",
+    "happy-dom": "^20.0.10",
+    "jsdom": "^27.1.0",
+    "tsdown": "^0.16.1",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.8"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-ai.d.ts",
+        "default": "./dist/prosekit-ai.js"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosekit-ai.js",
+    "module": "./dist/prosekit-ai.js",
+    "types": "./dist/prosekit-ai.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-ai.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-ai": "./src/index.ts"
+    }
+  }
+}

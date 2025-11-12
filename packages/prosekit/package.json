@@ -27,6 +27,7 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./ai": "./src/ai.gen.ts",
     "./basic": "./src/basic.gen.ts",
     "./basic/style.css": "./src/basic/style.css",
     "./basic/typography.css": "./src/basic/typography.css",
@@ -162,6 +163,7 @@
     "build:typedoc": "typedoc"
   },
   "dependencies": {
+    "@prosekit/ai": "workspace:*",
     "@prosekit/basic": "workspace:*",
     "@prosekit/core": "workspace:*",
     "@prosekit/extensions": "workspace:*",
@@ -248,6 +250,10 @@
       ".": {
         "types": "./dist/prosekit.d.ts",
         "default": "./dist/prosekit.js"
+      },
+      "./ai": {
+        "types": "./dist/prosekit-ai.d.ts",
+        "default": "./dist/prosekit-ai.js"
       },
       "./basic": {
         "types": "./dist/prosekit-basic.d.ts",
@@ -743,6 +749,9 @@
         ".": [
           "./dist/prosekit.d.ts"
         ],
+        "ai": [
+          "./dist/prosekit-ai.d.ts"
+        ],
         "basic": [
           "./dist/prosekit-basic.d.ts"
         ],
@@ -1095,6 +1104,7 @@
       "prosekit-pm-transform": "./src/pm/transform.ts",
       "prosekit-pm-view": "./src/pm/view.ts",
       "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
+      "prosekit-ai": "./src/ai.gen.ts",
       "prosekit-basic": "./src/basic.gen.ts",
       "basic/style": "./src/basic/style.css",
       "basic/typography": "./src/basic/typography.css",

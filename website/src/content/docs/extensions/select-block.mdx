@@ -1,0 +1,81 @@
+---
+title: Select Block
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `select-block` extension provides a command and keyboard shortcut to select the current block. When pressing `Ctrl-A` (or `Cmd-A` on Mac), it first selects the current block, and if the block is already selected, it selects the entire document.
+
+<Demo story="select-block" />
+
+## Usage
+
+```ts twoslash
+import { defineSelectBlock } from 'prosekit/extensions/select-block'
+
+const extension = defineSelectBlock()
+```
+
+## Commands
+
+### `selectBlock`
+
+Selects the current block. The extension intelligently determines which block to select:
+
+- If the cursor is in a text block (paragraph, heading), it selects that block
+- If the cursor is in a container block (blockquote, list), it selects the container block
+- If the selection spans multiple blocks, it selects all the blocks from the first to the last
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSelectBlock } from 'prosekit/extensions/select-block'
+
+const extension = defineSelectBlock()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.selectBlock()
+```
+
+## Keyboard Shortcuts
+
+| Non-Apple | Apple   | Description                                                             |
+| --------- | ------- | ----------------------------------------------------------------------- |
+| `Ctrl-A`  | `Cmd-A` | First press: select current block. Second press: select entire document |
+
+## Behavior
+
+The `selectBlock` command and `Ctrl-A` shortcut have the following behavior:
+
+1. **First press**: Selects the current block
+   - If the cursor is in a paragraph, it selects the paragraph
+   - If the cursor is in a heading, it selects the heading
+   - If the cursor is in a blockquote, it selects the entire blockquote
+   - If the cursor is in a list, it selects the entire list
+   - If the selection spans multiple blocks, it selects all blocks from first to last
+
+2. **Second press** (when block is already selected): Selects the entire document
+
+3. **When already all selected**: Does nothing (keeps the all selection)
+
+## Examples
+
+### Selecting a Paragraph
+
+When the cursor is in a paragraph, pressing `Ctrl-A` selects the entire paragraph.
+
+### Selecting a Blockquote
+
+When the cursor is inside a blockquote, pressing `Ctrl-A` selects the entire blockquote container, not just the paragraph inside it.
+
+### Selecting a List
+
+When the cursor is inside a list item, pressing `Ctrl-A` selects the entire list container.
+
+### Selecting Multiple Blocks
+
+When the selection spans multiple blocks (e.g., from the middle of one paragraph to the middle of another), pressing `Ctrl-A` selects all blocks from the first to the last.
+
+## API Reference
+
+- [prosekit/extensions/select-block](/references/extensions/select-block)

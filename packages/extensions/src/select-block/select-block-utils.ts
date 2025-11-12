@@ -10,7 +10,7 @@ import {
   type Selection,
 } from '@prosekit/pm/state'
 
-export function findCurrentBlock(selection: Selection): FindParentNodeResult | null {
+function findCurrentBlock(selection: Selection): FindParentNodeResult | null {
   const { $from } = selection
 
   // Prefer text block

@@ -48,7 +48,7 @@
     "@types/node": "^20.19.11",
     "@vitest/coverage-v8": "^4.0.8",
     "dprint": "^0.50.2",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.1",
     "knip": "^5.69.0",
     "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.60",

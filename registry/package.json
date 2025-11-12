@@ -263,7 +263,7 @@
     "vite-plugin-wasm": "^3.5.0",
     "vitest": "^4.0.8",
     "vitest-browser-commands": "^0.1.2",
-    "vitest-browser-preact": "^0.1.2",
+    "vitest-browser-preact": "^1.0.0",
     "vitest-browser-react": "^2.0.2",
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.0.1",

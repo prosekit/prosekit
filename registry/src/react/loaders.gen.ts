@@ -33,6 +33,7 @@ export const loaders = {
   'save-json': lazy(() => import('./examples/save-json').then((m) => ({ default: m.ExampleEditor }))),
   'save-markdown': lazy(() => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor }))),
   'search': lazy(() => import('./examples/search').then((m) => ({ default: m.ExampleEditor }))),
+  'select-block': lazy(() => import('./examples/select-block').then((m) => ({ default: m.ExampleEditor }))),
   'slash-menu': lazy(() => import('./examples/slash-menu').then((m) => ({ default: m.ExampleEditor }))),
   'strike': lazy(() => import('./examples/strike').then((m) => ({ default: m.ExampleEditor }))),
   'table': lazy(() => import('./examples/table').then((m) => ({ default: m.ExampleEditor }))),

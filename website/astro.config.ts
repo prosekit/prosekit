@@ -115,7 +115,7 @@ async function copiedRegistry(logger: AstroIntegrationLogger) {
       }
 
       logger.warn(`sourceDir does not exist: ${styleText('blue', sourceDir)}, trying to build it...`)
-      await exec('pnpm', ['-w', 'gen'], {
+      await exec('pnpm', ['-w', 'build:registry'], {
         timeout: 20_000,
         throwOnError: true,
       })

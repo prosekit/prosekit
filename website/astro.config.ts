@@ -10,13 +10,17 @@ import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import tailwindcss from '@tailwindcss/vite'
-import type { AstroUserConfig } from 'astro'
+import type {
+  AstroIntegrationLogger,
+  AstroUserConfig,
+} from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import starlightThemeNova from 'starlight-theme-nova'
+import { exec } from 'tinyexec'
 import wasm from 'vite-plugin-wasm'
 
 type Sidebar = StarlightUserConfig['sidebar']
@@ -95,6 +99,36 @@ const sidebar: Sidebar = [
   },
 ]
 
+async function copiedRegistry(logger: AstroIntegrationLogger) {
+  const startTime = Date.now()
+  const rootDir = path.join(import.meta.dirname, '..')
+  const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
+  const targetDir = path.join(rootDir, 'website', 'public', 'r')
+
+  let maxAttempts = 2
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      await fs.access(sourceDir)
+    } catch {
+      if (attempt === maxAttempts) {
+        throw new Error(`sourceDir does not exist: ${styleText('blue', sourceDir)}`)
+      }
+
+      logger.warn(`sourceDir does not exist: ${styleText('blue', sourceDir)}, trying to build it...`)
+      await exec('pnpm', ['-w', 'build:registry'], { timeout: 20_000, throwOnError: true })
+      break
+    }
+  }
+  await fs.cp(sourceDir, targetDir, { recursive: true })
+  const endTime = Date.now()
+  const duration = endTime - startTime
+  logger.info(
+    `copied registry from ${styleText('blue', sourceDir)} `
+      + `to ${styleText('blue', targetDir)} `
+      + `in ${styleText('green', `${duration}ms`)}`,
+  )
+}
+
 // https://astro.build/config
 const config: AstroUserConfig = {
   integrations: [
@@ -160,24 +194,7 @@ const config: AstroUserConfig = {
       name: 'copy-registry',
       hooks: {
         'astro:config:done': async ({ logger }) => {
-          const startTime = Date.now()
-          const rootDir = path.join(import.meta.dirname, '..')
-          const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
-          const targetDir = path.join(rootDir, 'website', 'public', 'r')
-          try {
-            await fs.access(sourceDir)
-          } catch {
-            logger.info(`sourceDir does not exist: ${styleText('blue', sourceDir)}, skipping registry copy`)
-            return
-          }
-          await fs.cp(sourceDir, targetDir, { recursive: true })
-          const endTime = Date.now()
-          const duration = endTime - startTime
-          logger.info(
-            `copied registry from ${styleText('blue', sourceDir)} `
-              + `to ${styleText('blue', targetDir)} `
-              + `in ${styleText('green', `${duration}ms`)}`,
-          )
+          await copiedRegistry(logger)
         },
       },
     },

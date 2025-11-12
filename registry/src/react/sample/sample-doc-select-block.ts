@@ -6,7 +6,7 @@ export const defaultContent: NodeJSON = {
     {
       type: 'heading',
       attrs: { level: 1 },
-      content: [{ type: 'text', text: 'Select the whole block with one click' }],
+      content: [{ type: 'text', text: 'Select blocks with Ctrl+A' }],
     },
     {
       type: 'paragraph',

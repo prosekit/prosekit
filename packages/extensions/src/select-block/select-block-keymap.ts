@@ -8,7 +8,7 @@ import {
 } from '@prosekit/pm/state'
 
 import {
-  isBlockSelected as isBlockSelectedUtil,
+  isBlockSelected,
   selectCurrentBlock,
 } from './select-block-utils'
 
@@ -24,7 +24,7 @@ const selectAllOrBlockCommand: Command = (state, dispatch) => {
   }
 
   // If current block is already selected (but not all), then select all
-  if (isBlockSelectedUtil(selection)) {
+  if (isBlockSelected(selection)) {
     if (dispatch) {
       dispatch(state.tr.setSelection(new AllSelection(state.doc)))
     }

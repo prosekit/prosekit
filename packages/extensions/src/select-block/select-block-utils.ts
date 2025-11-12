@@ -82,9 +82,25 @@ export function findCurrentBlock(selection: Selection): FindParentNodeResult | n
 }
 
 export function isBlockSelected(selection: Selection): boolean {
-  const block = findCurrentBlock(selection)
-  if (!block) return false
+  const { $from, $to } = selection
 
+  // Find blocks at both ends of the selection
+  const fromBlock = findCurrentBlock(TextSelection.create(selection.$anchor.doc, $from.pos, $from.pos))
+  const toBlock = findCurrentBlock(TextSelection.create(selection.$anchor.doc, $to.pos, $to.pos))
+
+  if (!fromBlock || !toBlock) return false
+
+  // If selection spans multiple blocks, check if all blocks are selected
+  if (fromBlock.start !== toBlock.start) {
+    const selectionFrom = selection.from
+    const selectionTo = selection.to
+    const firstBlockFrom = fromBlock.start
+    const lastBlockTo = toBlock.start + toBlock.node.content.size
+    return selectionFrom === firstBlockFrom && selectionTo === lastBlockTo
+  }
+
+  // Single block selection
+  const block = fromBlock
   const { start, node, pos } = block
   const blockFrom = start
   const blockTo = start + node.content.size
@@ -99,10 +115,30 @@ export function isBlockSelected(selection: Selection): boolean {
 }
 
 export const selectCurrentBlock: Command = (state, dispatch) => {
-  const block = findCurrentBlock(state.selection)
-  if (!block) return false
+  const { selection } = state
+  const { $from, $to } = selection
 
-  const { node, start, pos } = block
+  // Find blocks at both ends of the selection
+  const fromBlock = findCurrentBlock(TextSelection.create(state.doc, $from.pos, $from.pos))
+  const toBlock = findCurrentBlock(TextSelection.create(state.doc, $to.pos, $to.pos))
+
+  if (!fromBlock || !toBlock) return false
+
+  // If selection spans multiple blocks, select from first block start to last block end
+  if (fromBlock.start !== toBlock.start) {
+    if (dispatch) {
+      const tr = state.tr
+      const from = fromBlock.start
+      const to = toBlock.start + toBlock.node.content.size
+      tr.setSelection(TextSelection.create(tr.doc, from, to))
+      tr.scrollIntoView()
+      dispatch(tr)
+    }
+    return true
+  }
+
+  // Single block selection - use existing logic
+  const { node, start, pos } = fromBlock
 
   if (dispatch) {
     const tr = state.tr

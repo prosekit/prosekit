@@ -150,7 +150,7 @@ describe('selectBlock keymap and command', () => {
     const doc = n.doc(n.paragraph('Hello <a>world'))
     editor.set(doc)
 
-    const result = editor.commands.selectBlock?.()
+    const result = editor.commands.selectBlock()
 
     expect(result).toBe(true)
     const selection = editor.state.selection
@@ -177,10 +177,6 @@ describe('selectBlock keymap and command', () => {
   it('should select nested list item correctly', async () => {
     const { editor, n } = setupTestWithSelectBlock()
 
-    const doc = n.doc(
-      n.list({ kind: 'bullet' }, n.paragraph('Item 1'), n.list({ kind: 'bullet' }, n.paragraph('Nested 1'), n.paragraph('Nested 2'))),
-    )
-    editor.set(doc)
     // Place cursor in nested item using <a> tag
     const docWithCursor = n.doc(
       n.list({ kind: 'bullet' }, n.paragraph('Item 1'), n.list({ kind: 'bullet' }, n.paragraph('Nested <a>1'), n.paragraph('Nested 2'))),

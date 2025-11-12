@@ -1,7 +1,5 @@
 import {
   defineKeymap,
-  Priority,
-  withPriority,
   type PlainExtension,
 } from '@prosekit/core'
 import {
@@ -30,7 +28,7 @@ const selectAllOrBlockCommand: Command = (state, dispatch) => {
     if (dispatch) {
       dispatch(state.tr.setSelection(new AllSelection(state.doc)))
     }
-    return true
+    return false
   }
 
   // Otherwise select current block
@@ -38,10 +36,7 @@ const selectAllOrBlockCommand: Command = (state, dispatch) => {
 }
 
 export function defineSelectBlockKeymap(): PlainExtension {
-  return withPriority(
-    defineKeymap({
-      'Mod-a': selectAllOrBlockCommand,
-    }),
-    Priority.highest,
-  )
+  return defineKeymap({
+    'Mod-a': selectAllOrBlockCommand,
+  })
 }

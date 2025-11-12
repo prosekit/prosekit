@@ -10,6 +10,7 @@
     "build/**/*.json",
     "src/**/*",
     "src/**/*.json",
+    "test/**/*",
   ],
   "compilerOptions": {
     "jsx": "preserve",

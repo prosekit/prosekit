@@ -14,7 +14,7 @@
     "dev": "astro dev",
     "lint": "pnpm run lint:astro",
     "lint:astro": "astro check",
-    "test": "vitest"
+    "test": "playwright test"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
@@ -30,7 +30,9 @@
     "@iconify-json/lucide": "^1.2.73",
     "@iconify-json/tabler": "^1.2.23",
     "@ocavue/utils": "^0.8.1",
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/vite": "^4.1.17",
+    "@types/node": "^20.19.11",
     "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.15.5",

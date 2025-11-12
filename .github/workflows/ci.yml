@@ -49,6 +49,25 @@ jobs:
       - name: Run tests
         run: pnpm run test --shard=${{ matrix.shard }}/5
 
+  test-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: ./.github/actions/setup
+
+      - uses: ./.github/actions/cache
+
+      - name: Build website
+        run: pnpm run build:website
+
+      - name: Install Playwright
+        run: pnpm run test:install
+
+      - name: Run e2e tests
+        run: pnpm run test:e2e
+
   build:
     runs-on: ubuntu-latest
 

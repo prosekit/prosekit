@@ -39,7 +39,7 @@ describe('selectBlock keymap and command', () => {
     expect(selection).toBeInstanceOf(TextSelection)
     expect(
       editor.state.selection.content().content.toString(),
-    ).toMatchInlineSnapshot(`"<paragraph("Hello world")>"`）
+    ).toMatchInlineSnapshot(`"<paragraph("Hello world")>"`)
   })
 
   it('should select all on second Ctrl-A after selecting block', async () => {

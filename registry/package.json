@@ -106,6 +106,7 @@
     "./solid/examples/drop-cursor": "./src/solid/examples/drop-cursor/index.ts",
     "./solid/examples/emoji-rules": "./src/solid/examples/emoji-rules/index.ts",
     "./solid/examples/full": "./src/solid/examples/full/index.ts",
+    "./solid/examples/hard-break": "./src/solid/examples/hard-break/index.ts",
     "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
     "./solid/examples/italic": "./src/solid/examples/italic/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",

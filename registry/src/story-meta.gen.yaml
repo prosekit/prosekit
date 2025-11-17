@@ -21,7 +21,7 @@
 - name: gap-cursor
   frameworks: [react, vue, preact, svelte]
 - name: hard-break
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: heading
   frameworks: [react, vue, preact, svelte, solid]
 - name: horizontal-rule

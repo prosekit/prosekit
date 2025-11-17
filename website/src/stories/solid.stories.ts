@@ -17,5 +17,6 @@ export const Heading = { args: { story: 'heading' } }
 export const Italic = { args: { story: 'italic' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const Placeholder = { args: { story: 'placeholder' } }
+export const Readonly = { args: { story: 'readonly' } }
 export const Strike = { args: { story: 'strike' } }
 export const Underline = { args: { story: 'underline' } }

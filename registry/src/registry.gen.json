@@ -14661,6 +14661,66 @@
       }
     },
     {
+      "name": "solid-example-readonly",
+      "title": "solid-example-readonly",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-readonly.json",
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/readonly/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/readonly/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/readonly/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/readonly/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/toolbar.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/readonly/use-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/readonly/use-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "readonly",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/readonly/editor.tsx",
+          "registry/src/solid/examples/readonly/extension.ts",
+          "registry/src/solid/examples/readonly/index.ts",
+          "registry/src/solid/examples/readonly/toolbar.tsx",
+          "registry/src/solid/examples/readonly/use-readonly.ts",
+          "registry/src/solid/sample/sample-doc-readonly.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-readonly",
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",
@@ -14996,6 +15056,32 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-readonly",
+      "title": "solid-sample-sample-doc-readonly",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-readonly.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-readonly.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-readonly.ts"
         ],
         "internalDependencies": []
       }

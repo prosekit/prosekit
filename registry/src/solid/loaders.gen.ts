@@ -16,5 +16,6 @@ export const loaders = {
   'italic': lazy(() => import('./examples/italic').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor }))),
+  'strike': lazy(() => import('./examples/strike').then((m) => ({ default: m.ExampleEditor }))),
   'underline': lazy(() => import('./examples/underline').then((m) => ({ default: m.ExampleEditor }))),
 }

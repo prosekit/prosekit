@@ -111,6 +111,7 @@
     "./solid/examples/italic": "./src/solid/examples/italic/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",
     "./solid/examples/placeholder": "./src/solid/examples/placeholder/index.ts",
+    "./solid/examples/strike": "./src/solid/examples/strike/index.ts",
     "./solid/examples/underline": "./src/solid/examples/underline/index.ts",
     "./solid/renderer": "./src/solid/renderer.ts",
     "./svelte/examples/block-handle": "./src/svelte/examples/block-handle/index.ts",

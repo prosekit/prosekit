@@ -63,7 +63,7 @@
 - name: slash-menu
   frameworks: [react, vue, preact, svelte]
 - name: strike
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: table
   frameworks: [react, vue, preact, svelte]
 - name: text-align

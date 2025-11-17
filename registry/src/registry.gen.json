@@ -14661,6 +14661,60 @@
       }
     },
     {
+      "name": "solid-example-strike",
+      "title": "solid-example-strike",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-strike.json",
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/strike/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/strike/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/strike/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/strike/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/strike/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "strike",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/strike/editor.tsx",
+          "registry/src/solid/examples/strike/extension.ts",
+          "registry/src/solid/examples/strike/index.ts",
+          "registry/src/solid/examples/strike/toolbar.tsx",
+          "registry/src/solid/sample/sample-doc-strike.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-strike",
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
       "name": "solid-example-underline",
       "title": "solid-example-underline",
       "type": "registry:block",
@@ -14942,6 +14996,32 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-strike",
+      "title": "solid-sample-sample-doc-strike",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-strike.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-strike.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-strike.ts"
         ],
         "internalDependencies": []
       }

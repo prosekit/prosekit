@@ -107,6 +107,7 @@
     "./solid/examples/emoji-rules": "./src/solid/examples/emoji-rules/index.ts",
     "./solid/examples/full": "./src/solid/examples/full/index.ts",
     "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
+    "./solid/examples/italic": "./src/solid/examples/italic/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",
     "./solid/renderer": "./src/solid/renderer.ts",
     "./svelte/examples/block-handle": "./src/svelte/examples/block-handle/index.ts",

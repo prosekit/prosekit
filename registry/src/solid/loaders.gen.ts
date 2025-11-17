@@ -12,5 +12,6 @@ export const loaders = {
   'emoji-rules': lazy(() => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor }))),
   'full': lazy(() => import('./examples/full').then((m) => ({ default: m.ExampleEditor }))),
   'heading': lazy(() => import('./examples/heading').then((m) => ({ default: m.ExampleEditor }))),
+  'italic': lazy(() => import('./examples/italic').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
 }

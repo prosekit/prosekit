@@ -14568,6 +14568,45 @@
       }
     },
     {
+      "name": "solid-example-placeholder",
+      "title": "solid-example-placeholder",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/placeholder/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/placeholder/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/placeholder/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/placeholder/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/placeholder/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/placeholder/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "placeholder",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/placeholder/editor.tsx",
+          "registry/src/solid/examples/placeholder/extension.ts",
+          "registry/src/solid/examples/placeholder/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-underline",
       "title": "solid-example-underline",
       "type": "registry:block",

@@ -21,7 +21,7 @@
 - name: gap-cursor
   frameworks: [react, vue, preact, svelte]
 - name: hard-break
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: heading
   frameworks: [react, vue, preact, svelte, solid]
 - name: horizontal-rule
@@ -31,7 +31,7 @@
 - name: inline-menu
   frameworks: [react, vue, preact, svelte]
 - name: italic
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: keymap
   frameworks: [react, vue, preact, svelte]
 - name: link
@@ -49,9 +49,9 @@
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]
 - name: placeholder
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: readonly
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: save-html
   frameworks: [react, vue, preact, svelte]
 - name: save-json
@@ -63,7 +63,7 @@
 - name: slash-menu
   frameworks: [react, vue, preact, svelte]
 - name: strike
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: table
   frameworks: [react, vue, preact, svelte]
 - name: text-align
@@ -75,7 +75,7 @@
 - name: typography
   frameworks: [react, vue, preact, svelte]
 - name: underline
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: unmount
   frameworks: [react, vue, preact, svelte]
 - name: user-menu

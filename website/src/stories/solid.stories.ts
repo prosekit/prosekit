@@ -15,3 +15,4 @@ export const Full = { args: { story: 'full' } }
 export const Heading = { args: { story: 'heading' } }
 export const Italic = { args: { story: 'italic' } }
 export const Minimal = { args: { story: 'minimal' } }
+export const Underline = { args: { story: 'underline' } }

@@ -27,11 +27,15 @@ export async function hover(locator: Locator, options?: {
   const box = locator.element().getBoundingClientRect()
 
   // Coordinates relative to the top-left corner of the element.
-  const x = options?.position?.x ?? Math.floor(box.width / 2)
-  const y = options?.position?.y ?? Math.floor(box.height / 2)
+  const relativeX = options?.position?.x ?? Math.floor(box.width / 2)
+  const relativeY = options?.position?.y ?? Math.floor(box.height / 2)
 
   const steps = options?.steps ?? 10
-  await mouse.move(x + box.x, y + box.y, { steps })
+
+  const targetX = box.x + relativeX
+  const targetY = box.y + relativeY
+
+  await mouse.move(targetX, targetY, { steps })
 }
 
 export async function unhover(): Promise<void> {

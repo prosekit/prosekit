@@ -1,19 +1,22 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
+import { findRoot } from '@manypkg/find-root'
 import memoize from 'just-memoize'
 import registry from 'prosekit-registry/registry.gen.json'
 
 import { replaceClassNames } from './replace-class-names'
 
+const rootDir: string = (await findRoot(process.cwd())).rootDir
+
 async function loadDemoFileImpl(
   filePath: string,
 ) {
-  const absFilePath = path.join(process.cwd(), '..', filePath)
+  const absFilePath = path.join(rootDir, filePath)
   const fileContent = await fs.readFile(absFilePath, 'utf-8')
   return ({
     title: filePath,
-    code: replaceClassNames(fileContent),
+    code: replaceClassNames(fileContent, absFilePath),
     lang: (absFilePath.split('.').pop() || 'plaintext') as 'plaintext',
   })
 }

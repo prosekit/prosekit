@@ -1,4 +1,6 @@
+import fs from 'node:fs'
 import path from 'node:path'
+import { styleText } from 'node:util'
 
 import MagicString from 'magic-string'
 import type { Plugin as VitePlugin } from 'vite'
@@ -10,7 +12,7 @@ import {
 } from './replace-classes'
 
 const PLUGIN_NAME = '@prosekit/vite-plugin-class-replace'
-const CLASS_TS_PATH = path.join(import.meta.dirname, 'classes.ts')
+const CLASS_TS_PATH = path.join(import.meta.dirname, '..', 'classes.ts')
 
 export function classReplace(): VitePlugin {
   const moduleIds = new Set<string>()
@@ -21,12 +23,18 @@ export function classReplace(): VitePlugin {
     enforce: 'pre',
 
     configureServer(server) {
+      // Ensure the file exists
+      if (!fs.existsSync(CLASS_TS_PATH)) {
+        throw new Error(`Class file does not exist: ${CLASS_TS_PATH}`)
+      }
+
       server.watcher.add(CLASS_TS_PATH)
       server.watcher.on('all', async (_event, file) => {
         if (!CLASS_TS_PATH.includes(file)) {
           return
         }
 
+        server.config.logger.info('Refreshing classes from ' + styleText('blue', CLASS_TS_PATH))
         await refreshClasses()
 
         const modulesToInvalidate = Array.from(moduleIds)

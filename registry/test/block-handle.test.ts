@@ -26,6 +26,7 @@ testStory(['block-handle'], () => {
   it('show block handle on hover', async () => {
     const editor = await waitForEditor()
     await emptyEditor()
+    await unhover()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')

@@ -12,14 +12,14 @@ import type { ItemAccumulator } from './types'
 export async function updateRegistryItems(
   items: ItemAccumulator[],
   outputDir: string,
-  updateText: (content: string) => string,
+  updateText: (fileContent: string, filePath: string) => string,
 ): Promise<void> {
   for (const item of items) {
     const itemJson = serializeItem(item)
     itemJson['$schema'] = 'https://ui.shadcn.com/schema/registry-item.json'
     for (const file of itemJson.files ?? []) {
-      const text = await vfs.read(file.path)
-      file['content'] = updateText(text)
+      const fileContent = await vfs.read(file.path)
+      file['content'] = updateText(fileContent, file.path)
     }
 
     registryItemSchema.parse(itemJson)

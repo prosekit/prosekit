@@ -17,10 +17,10 @@ export async function expectLocatorToBeHidden(locator: Locator, options?: {
   interval?: number
 }): Promise<void> {
   const message = `Expect locator '${locator.selector}' to be hidden, but found at least one visible element`
-  await expect.poll(() => checkLocatorVisibility(locator), { ...options, message }).toEqual({
-    isVisible: false,
-    reason: expect.any(String) as string,
-  })
+  await expect.poll(() => {
+    const { isVisible, reason } = checkLocatorVisibility(locator)
+    return isVisible ? reason : undefined
+  }, { ...options, message }).toBeUndefined()
 }
 
 interface ElementVisibility {

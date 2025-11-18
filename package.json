@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.21.0",
+  "packageManager": "pnpm@10.22.0",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -12,7 +12,6 @@
     "build:website": "pnpm --filter='./website' run build",
     "build:typedoc": "pnpm --filter='./website' run build:typedoc",
     "build:registry": "pnpm --filter='./registry' run build",
-    "build:css": "pnpm --filter='./website' run build:css",
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
@@ -47,17 +46,17 @@
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
     "@types/node": "^20.19.11",
-    "@vitest/coverage-v8": "^4.0.8",
+    "@vitest/coverage-v8": "^4.0.10",
     "dprint": "^0.50.2",
     "eslint": "^9.39.1",
-    "knip": "^5.69.0",
+    "knip": "^5.70.0",
     "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.60",
     "playwright": "^1.56.1",
     "size-limit": "^11.2.0",
     "turbo": "^2.6.1",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.10"
   },
   "pnpm": {
     "overrides": {},

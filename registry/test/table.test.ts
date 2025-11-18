@@ -259,9 +259,10 @@ testStory(['table', 'full'], () => {
 })
 
 async function setup() {
-  await unhover()
   const editor = await waitForEditor()
   await waitForStableElement(() => editor.element())
+
+  await unhover()
 
   const rowHandle = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-row-trigger')
   const colHandle = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-column-trigger')

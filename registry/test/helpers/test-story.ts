@@ -1,3 +1,5 @@
+import '../../src/tailwind.css'
+
 import {
   beforeEach,
   describe,
@@ -141,14 +143,6 @@ export function testStoryConsistency(story: string, {
         break
       }
     }
-
-    // message += '\n'
-    // message += '='.repeat(20) + ' HTML from ' + label1 + ' ' + '='.repeat(20) + '\n'
-    // message += html1 + '\n'
-    // message += '='.repeat(20) + ' END of ' + label1 + ' ' + '='.repeat(20) + '\n'
-    // message += '='.repeat(20) + ' HTML from ' + label2 + ' ' + '='.repeat(20) + '\n'
-    // message += html2 + '\n'
-    // message += '='.repeat(20) + ' END of ' + label2 + ' ' + '='.repeat(20) + '\n'
 
     expect(html1, message).toEqual(html2)
   })

@@ -9,13 +9,8 @@ interface BoundingBox {
 
 export function getBoundingBox(locator: Locator): BoundingBox {
   const element = locator.element()
-  const rect = element.getBoundingClientRect()
-  return {
-    x: rect.x,
-    y: rect.y,
-    width: rect.width,
-    height: rect.height,
-  }
+  const { x, y, width, height } = element.getBoundingClientRect()
+  return { x, y, width, height }
 }
 
 export async function waitForStableElement(

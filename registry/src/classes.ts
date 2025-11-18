@@ -215,7 +215,7 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
 const CSS_TABLE_HANDLE_BASE = cn(
   'flex items-center box-border justify-center bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
   'overflow-hidden',
-  'duration-150 transition-discrete transition',
+  'motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
   'data-[state=closed]:scale-95 starting:scale-95 scale-100',
 )

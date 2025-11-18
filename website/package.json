@@ -29,6 +29,7 @@
     "@iconify-json/logos": "^1.2.10",
     "@iconify-json/lucide": "^1.2.73",
     "@iconify-json/tabler": "^1.2.23",
+    "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^0.8.1",
     "@playwright/test": "^1.56.1",
     "@tailwindcss/vite": "^4.1.17",

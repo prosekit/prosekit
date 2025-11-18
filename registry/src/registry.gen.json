@@ -1624,6 +1624,68 @@
       }
     },
     {
+      "name": "react-example-stream-content",
+      "title": "react-example-stream-content",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-ui-button.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json"
+      ],
+      "dependencies": [
+        "@prosekit/ai",
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/stream-content/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/stream-content/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/stream-content/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/stream-content/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/stream-content/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/stream-content/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/stream-content/stream-content.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/stream-content/stream-content.css"
+        },
+        {
+          "path": "registry/src/react/examples/stream-content/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/stream-content/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "stream-content",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/stream-content/editor.tsx",
+          "registry/src/react/examples/stream-content/extension.ts",
+          "registry/src/react/examples/stream-content/index.ts",
+          "registry/src/react/examples/stream-content/stream-content.css",
+          "registry/src/react/examples/stream-content/toolbar.tsx",
+          "registry/src/react/ui/button/button.tsx",
+          "registry/src/react/ui/button/index.ts",
+          "registry/src/react/ui/code-block-view/code-block-view.tsx",
+          "registry/src/react/ui/code-block-view/index.ts"
+        ],
+        "internalDependencies": [
+          "react-ui-button",
+          "react-ui-code-block-view"
+        ]
+      }
+    },
+    {
       "name": "react-example-strike",
       "title": "react-example-strike",
       "type": "registry:block",

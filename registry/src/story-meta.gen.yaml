@@ -62,6 +62,8 @@
   frameworks: [react, vue, preact, svelte]
 - name: slash-menu
   frameworks: [react, vue, preact, svelte]
+- name: stream-content
+  frameworks: [react]
 - name: strike
   frameworks: [react, vue, preact, svelte, solid]
 - name: table

@@ -1,5 +1,3 @@
-// @vitest-environment node
-
 import { createEditor } from '@prosekit/core'
 import {
   describe,
@@ -12,6 +10,10 @@ import { defineBasicExtension } from './index'
 describe('Node.js environment', () => {
   it('is not a browser environment', () => {
     expect(typeof window).toBe('undefined')
+  })
+
+  it('is a Node.js environment', () => {
+    expect(typeof globalThis.process).toBe('object')
   })
 
   it('can create an editor', () => {

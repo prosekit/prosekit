@@ -209,6 +209,7 @@
   },
   "scripts": {
     "gen": "tsx src/gen.ts",
+    "gen:classes": "tsx src/gen-classes.ts",
     "build": "tsx src/build.ts",
     "lint": "pnpm run lint:svelte && pnpm run lint:vue",
     "lint:svelte": "svelte-check --tsconfig src/svelte/tsconfig.json",

@@ -5,6 +5,7 @@ import { findRoot } from '@manypkg/find-root'
 import { exec } from 'tinyexec'
 
 const rootDir: string = (await findRoot(process.cwd())).rootDir
+const cwd = path.join(rootDir, 'registry')
 
 const CLASS_JSON_PATH = 'registry/src/classes.gen.json'
 
@@ -25,9 +26,10 @@ function loadClasses(): Record<string, string> {
 
 export async function refreshClasses() {
   cachedClasses = undefined
-  await exec('pnpm', ['run', '-w', 'build:css'], {
+  await exec('pnpm', ['run', 'gen:classes'], {
     timeout: 10_000,
     throwOnError: true,
+    nodeOptions: { cwd },
   })
   cachedClasses = undefined
 }

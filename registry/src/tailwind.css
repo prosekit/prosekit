@@ -1,6 +1,8 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 @import "tw-animate-css";
+@import "prosekit/basic/style.css";
+@import "prosekit/basic/typography.css";
 
 @source "../../../registry/src/";
 @custom-variant dark (&:where(.dark, .dark *));

@@ -380,6 +380,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/select-block",
+    "path": "packages/prosekit/dist/prosekit-extensions-select-block.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/strike",
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
     "ignore": [

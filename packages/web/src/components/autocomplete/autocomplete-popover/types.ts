@@ -27,6 +27,13 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
   regex: RegExp | null
 
   /**
+   * Whether to hide the popover when the editor loses focus.
+   *
+   * @default false
+   */
+  hideOnBlur: boolean
+
+  /**
    * The placement of the popover, relative to the text cursor.
    *
    * @default "bottom-start"
@@ -74,6 +81,7 @@ export const autocompletePopoverProps: PropDeclarations<AutocompletePopoverProps
   ...overlayPositionerProps,
   editor: { default: null },
   regex: { default: null },
+  hideOnBlur: { default: false },
   placement: { default: 'bottom-start' },
   offset: { default: 4 },
   inline: { default: true },

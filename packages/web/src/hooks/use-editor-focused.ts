@@ -21,10 +21,10 @@ export function useEditorFocused(
 ): ReadonlySignal<boolean> {
   const initialFocused: boolean = editor.get()?.focused ?? false
   const focused: Signal<boolean> = createSignal(initialFocused)
+  const delayFocused: Signal<boolean> = createSignal(initialFocused)
+
   const extension = defineFocusChangeHandler((value: boolean) => focused.set(value))
   useEditorExtension(host, editor, extension)
-
-  const delayFocused: Signal<boolean> = createSignal(false)
 
   // When the editor is focused, its selection might change, which would cause
   // some other changes to the editor like decorations to be updated. To avoid

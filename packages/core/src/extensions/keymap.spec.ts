@@ -130,7 +130,7 @@ describe('keymap', () => {
     expect(callOrder).toEqual(['highest', 'default', 'lowest'])
   })
 
-  it.only('can merge multiple keymaps with different key names', async () => {
+  it('can merge the same key with different variations', async () => {
     const called: string[] = []
     const { editor } = setupTestFromExtension(union(
       defineDoc(),

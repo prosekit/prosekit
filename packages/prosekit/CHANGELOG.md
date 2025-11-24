@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.16.3
+
+### Patch Changes
+
+- [`ce7cf17`](https://github.com/ocavue/prosekit/commit/ce7cf17e856dd1a5c96ac42568bbc2e7cf0562d2) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where the same keybinding key with different variants were not merged correctly.
+
 ## 0.16.2
 
 ### Patch Changes

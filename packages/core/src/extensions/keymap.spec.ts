@@ -8,7 +8,13 @@ import {
 
 import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
-import { setupTest } from '../testing'
+import {
+  defineDoc,
+  defineParagraph,
+  defineText,
+  setupTest,
+  setupTestFromExtension,
+} from '../testing'
 import { Priority } from '../types/priority'
 
 import {
@@ -121,5 +127,38 @@ describe('keymap', () => {
 
     // Highest priority should be called first
     expect(callOrder).toEqual(['highest', 'default', 'lowest'])
+  })
+
+  it('can merge multiple keymaps with different key names', () => {
+    const called: string[] = []
+    const { editor } = setupTestFromExtension(union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+    ))
+    const record = (label: string): Command => {
+      return () => {
+        called.push(label)
+        return false
+      }
+    }
+
+    const keymap: Keymap = {
+      'ctrl-b': record('ctrl-b'),
+      'Ctrl-b': record('Ctrl-b'),
+      'CTRL-b': record('CTRL-b'),
+      'ctrl-B': record('ctrl-B'),
+      'Ctrl-B': record('Ctrl-B'),
+      'CTRL-B': record('CTRL-B'),
+    }
+
+    editor.use(defineKeymap(keymap))
+    editor.view.dispatchEvent(new KeyboardEvent('keydown', { key: 'B', ctrlKey: true }))
+
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "CTRL-B",
+      ]
+    `)
   })
 })

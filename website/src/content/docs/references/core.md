@@ -6,7 +6,7 @@ sidebar:
 
 ## Enumerations
 
-### Priority {#priority-1}
+### Priority {#priority-2}
 
 ProseKit extension priority.
 
@@ -1458,6 +1458,55 @@ started.
 
 ***
 
+### BaseKeymapOptions {#basekeymapoptions}
+
+#### Properties
+
+<dl>
+
+<dt>
+
+<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](#priority-2)</code>
+
+</dt>
+
+<dd>
+
+The priority of the keymap.
+
+###### Default
+
+`Priority.low`
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dt>
+
+<code data-typedoc-code><a id="preferblockselection" href="#preferblockselection">preferBlockSelection</a><i>?</i>: `boolean`</code>
+
+</dt>
+
+<dd>
+
+If `true`, the first `Mod-a` press selects the current block that the
+cursor is in, and a second press selects the entire document.
+
+If `false`, `Mod-a` immediately selects the entire document.
+
+###### Default
+
+`true`
+
+</dd>
+
+</dl>
+
+***
+
 ### Keymap {#keymap}
 
 A set of keybindings. Please read the
@@ -2482,7 +2531,7 @@ Use `canExec` instead.
 
 <dt>
 
-<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](#priority-1)</code>
+<code data-typedoc-code><a id="priority-1" href="#priority-1">priority</a><i>?</i>: [`Priority`](#priority-2)</code>
 
 </dt>
 
@@ -3675,6 +3724,48 @@ Returns a command to remove the nearest ancestor node of a specific type from th
 
 ***
 
+### selectAll() {#selectall}
+
+<dl>
+
+<dt>
+
+<code data-typedoc-code><i>function</i> <a id="selectall" href="#selectall">selectAll</a>(): [`Command`](pm/state.md#command)</code>
+
+</dt>
+
+<dd>
+
+Returns a command that selects the whole document.
+
+</dd>
+
+</dl>
+
+***
+
+### selectBlock() {#selectblock}
+
+<dl>
+
+<dt>
+
+<code data-typedoc-code><i>function</i> <a id="selectblock" href="#selectblock">selectBlock</a>(): [`Command`](pm/state.md#command)</code>
+
+</dt>
+
+<dd>
+
+Returns a command to expand the text selection to cover the current block
+node. If the text selection spans multiple blocks, it will select all
+blocks in the selection.
+
+</dd>
+
+</dl>
+
+***
+
 ### setBlockType() {#setblocktype}
 
 <dl>
@@ -3953,7 +4044,7 @@ function defineFancyNodes() {
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <a id="withpriority" href="#withpriority">withPriority</a>\<T\>(`extension`: `T`, `priority`: [`Priority`](#priority-1)): `T`</code>
+<code data-typedoc-code><i>function</i> <a id="withpriority" href="#withpriority">withPriority</a>\<T\>(`extension`: `T`, `priority`: [`Priority`](#priority-2)): `T`</code>
 
 </dt>
 
@@ -4441,7 +4532,7 @@ Add undo/redo history to the editor.
 
 <dt>
 
-<code data-typedoc-code><i>function</i> <a id="definebasekeymap" href="#definebasekeymap">defineBaseKeymap</a>(`options?`: `object`): `PlainExtension`</code>
+<code data-typedoc-code><i>function</i> <a id="definebasekeymap" href="#definebasekeymap">defineBaseKeymap</a>(`options`: [`BaseKeymapOptions`](#basekeymapoptions)): `PlainExtension`</code>
 
 </dt>
 

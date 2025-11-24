@@ -400,7 +400,7 @@ editor from the nearest `<ProseKit>` component.
 
 <dt>
 
-<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](core.md#priority-1)</code>
+<code data-typedoc-code><a id="priority" href="#priority">priority</a><i>?</i>: [`Priority`](core.md#priority-2)</code>
 
 </dt>
 

@@ -15,6 +15,7 @@ import {
   setupTest,
   setupTestFromExtension,
 } from '../testing'
+import { pressKey } from '../testing/keyboard'
 import { Priority } from '../types/priority'
 
 import {
@@ -129,13 +130,14 @@ describe('keymap', () => {
     expect(callOrder).toEqual(['highest', 'default', 'lowest'])
   })
 
-  it('can merge multiple keymaps with different key names', () => {
+  it('can merge multiple keymaps with different key names', async () => {
     const called: string[] = []
     const { editor } = setupTestFromExtension(union(
       defineDoc(),
       defineText(),
       defineParagraph(),
     ))
+
     const record = (label: string): Command => {
       return () => {
         called.push(label)
@@ -143,21 +145,31 @@ describe('keymap', () => {
       }
     }
 
-    const keymap: Keymap = {
-      'ctrl-b': record('ctrl-b'),
-      'Ctrl-b': record('Ctrl-b'),
-      'CTRL-b': record('CTRL-b'),
-      'ctrl-B': record('ctrl-B'),
-      'Ctrl-B': record('Ctrl-B'),
-      'CTRL-B': record('CTRL-B'),
-    }
+    const keybindings = [
+      'ctrl-b',
+      'Ctrl-b',
+      'CTRL-b',
+      'ctrl-B',
+      'Ctrl-B',
+      'CTRL-B',
+    ]
 
+    const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
     editor.use(defineKeymap(keymap))
-    editor.view.dispatchEvent(new KeyboardEvent('keydown', { key: 'B', ctrlKey: true }))
 
+    called.length = 0
+    await pressKey('Control-b')
     expect(called).toMatchInlineSnapshot(`
       [
-        "CTRL-B",
+        "CTRL-b",
+      ]
+    `)
+
+    called.length = 0
+    await pressKey('Control-Shift-B')
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "CTRL-b",
       ]
     `)
   })

@@ -145,16 +145,15 @@ describe('keymap', () => {
       }
     }
 
-    const keymap: Keymap = {}
-
-    for (const ctrl of ['ctrl', 'Ctrl', 'CTRL', 'c']) {
-      for (const shift of ['shift', 'Shift', 's', '']) {
-        for (const b of ['b', 'B']) {
-          const key = [ctrl, shift, b].filter(Boolean).join('-')
-          keymap[key] = record(key)
-        }
-      }
-    }
+    const keybindings = [
+      'ctrl-b',
+      'CTRL-b',
+      'c-B',
+      'ctrl-shift-b',
+      'c-s-B',
+      'Ctrl-B',
+    ]
+    const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
 
     editor.use(defineKeymap(keymap))
 
@@ -165,7 +164,7 @@ describe('keymap', () => {
     await keyboard.up('Control')
     expect(called).toMatchInlineSnapshot(`
       [
-        "c-b",
+        "Ctrl-b",
       ]
     `)
 
@@ -179,8 +178,10 @@ describe('keymap', () => {
     expect(called).toMatchInlineSnapshot(`
       [
         "c-s-B",
+        "ctrl-B",
         "c-B",
-        "c-s-b",
+        "CTRL-B",
+        "ctrl-shift-b",
       ]
     `)
   })

@@ -154,34 +154,34 @@ describe('keymap', () => {
           keymap[key] = record(key)
         }
       }
-      editor.use(defineKeymap(keymap))
+    }
 
-      called.length = 0
-      await keyboard.down('Control')
-      await keyboard.down('b')
-      await keyboard.up('b')
-      await keyboard.up('Control')
+    editor.use(defineKeymap(keymap))
 
-      expect(called).toMatchInlineSnapshot(`
+    called.length = 0
+    await keyboard.down('Control')
+    await keyboard.down('b')
+    await keyboard.up('b')
+    await keyboard.up('Control')
+    expect(called).toMatchInlineSnapshot(`
       [
-        "ctrl-b",
+        "c-b",
       ]
     `)
 
-      called.length = 0
-      await keyboard.down('Control')
-      await keyboard.down('Shift')
-      await keyboard.down('B')
-      await keyboard.up('B')
-      await keyboard.up('Shift')
-      await keyboard.up('Control')
-      expect(called).toMatchInlineSnapshot(`
-        [
-          "ctrl-s-B",
-          "ctrl-B",
-          "ctrl-s-b",
-        ]
-      `)
-    }
+    called.length = 0
+    await keyboard.down('Control')
+    await keyboard.down('Shift')
+    await keyboard.down('B')
+    await keyboard.up('B')
+    await keyboard.up('Shift')
+    await keyboard.up('Control')
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "c-s-B",
+        "c-B",
+        "c-s-b",
+      ]
+    `)
   })
 })

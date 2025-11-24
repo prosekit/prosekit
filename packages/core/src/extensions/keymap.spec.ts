@@ -170,7 +170,8 @@ describe('keymap', () => {
     await keyboard.up('Control')
     expect(called).toMatchInlineSnapshot(`
       [
-        "Ctrl-b",
+        "ctrl-b",
+        "CTRL-b",
       ]
     `)
 
@@ -184,9 +185,8 @@ describe('keymap', () => {
     expect(called).toMatchInlineSnapshot(`
       [
         "c-s-B",
-        "ctrl-B",
         "c-B",
-        "CTRL-B",
+        "Ctrl-B",
         "ctrl-shift-b",
       ]
     `)

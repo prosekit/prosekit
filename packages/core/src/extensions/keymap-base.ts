@@ -6,15 +6,20 @@ import {
   joinTextblockBackward,
   liftEmptyBlock,
   newlineInCode,
+  selectAll,
   selectNodeBackward,
 } from '@prosekit/pm/commands'
 import { splitSplittableBlock } from 'prosemirror-splittable'
 
+import { selectBlockCommand } from '../commands/select-block'
 import { withPriority } from '../editor/with-priority'
 import type { PlainExtension } from '../types/extension'
 import { Priority } from '../types/priority'
 
-import { defineKeymap } from './keymap'
+import {
+  defineKeymap,
+  type Keymap,
+} from './keymap'
 
 // Replace `splitBlock` with `splitSplittableBlock`
 const customEnter = chainCommands(
@@ -31,30 +36,49 @@ const customBackspace = chainCommands(
   selectNodeBackward,
 )
 
-const customBaseKeymap = {
-  ...baseKeymap,
-  Enter: customEnter,
-  Backspace: customBackspace,
-}
-
 /**
  * @internal
  */
 export type BaseKeymapExtension = PlainExtension
 
 /**
- * Defines some basic key bindings.
- *
  * @public
  */
-export function defineBaseKeymap(options?: {
+export interface BaseKeymapOptions {
   /**
    * The priority of the keymap.
    *
    * @default Priority.low
    */
   priority?: Priority
-}): BaseKeymapExtension {
-  const priority = options?.priority ?? Priority.low
-  return withPriority(defineKeymap(customBaseKeymap), priority)
+
+  /**
+   * If `true`, the first `Mod-a` press selects the current block that the
+   * cursor is in, and a second press selects the entire document.
+   *
+   * If `false`, `Mod-a` immediately selects the entire document.
+   *
+   * @default true
+   */
+  preferBlockSelection?: boolean
+}
+
+/**
+ * Defines some basic key bindings.
+ *
+ * @param options
+ *
+ * @public
+ */
+export function defineBaseKeymap({
+  priority = Priority.low,
+  preferBlockSelection = true,
+}: BaseKeymapOptions = {}): BaseKeymapExtension {
+  const keymap: Keymap = {
+    ...baseKeymap,
+    'Mod-a': preferBlockSelection ? chainCommands(selectBlockCommand, selectAll) : selectAll,
+    'Enter': customEnter,
+    'Backspace': customBackspace,
+  }
+  return withPriority(defineKeymap(keymap), priority)
 }

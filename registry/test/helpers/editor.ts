@@ -1,9 +1,9 @@
 import { expect } from 'vitest'
 import {
   page,
-  userEvent,
   type Locator,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { formatHTML } from './format-html'
 
@@ -32,9 +32,10 @@ export async function expectEditorToBeFocused(): Promise<void> {
 export async function emptyEditor(options?: { editor?: Locator }) {
   const editor = options?.editor ?? (await waitForEditor())
   await focusEditor({ editor })
-  await userEvent.keyboard(`{${MOD_KEY}>}{a}{/${MOD_KEY}}`)
-  await userEvent.keyboard('{Backspace}')
-  await userEvent.keyboard('{Backspace}')
+  await keyboard.press('ControlOrMeta+a')
+  await keyboard.press('ControlOrMeta+a')
+  await keyboard.press('Backspace')
+  await keyboard.press('Backspace')
 }
 
 export function getEditorHTML(): string {

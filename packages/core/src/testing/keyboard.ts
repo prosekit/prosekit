@@ -1,5 +1,6 @@
-import { isApple } from '@prosekit/core'
 import { userEvent } from 'vitest/browser'
+
+import { isApple } from '@prosekit/core'
 
 /**
  * @example
@@ -28,6 +29,7 @@ export async function pressKey(input: string) {
     // Release a previously pressed key
     seq.push('{/' + key + '}')
   }
+  const key = seq.join('')
   return await userEvent.keyboard(seq.join(''))
 }
 

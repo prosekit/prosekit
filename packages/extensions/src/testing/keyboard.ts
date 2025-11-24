@@ -11,8 +11,7 @@ import { userEvent } from 'vitest/browser'
  *
  * @internal
  */
-
-export async function pressKey(input: string) {
+export async function pressKey(input: string): Promise<void> {
   const keys = input.split('-').map((key) => {
     if (key.toLowerCase() === 'mod') {
       return isApple ? 'Meta' : 'Control'
@@ -31,6 +30,6 @@ export async function pressKey(input: string) {
   return await userEvent.keyboard(seq.join(''))
 }
 
-export async function inputText(input: string) {
+export async function inputText(input: string): Promise<void> {
   return await userEvent.keyboard(input)
 }

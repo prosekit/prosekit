@@ -5,6 +5,22 @@ import {
 
 import { isTextSelection } from '../utils/type-assertion'
 
+// Based on https://github.com/ProseMirror/prosemirror-commands/blob/1.7.1/src/commands.ts#L507-L521
+function getTextblockEndpoint(selection: TextSelection, side: number): number | undefined {
+  const $pos = side < 0 ? selection.$from : selection.$to
+  let depth = $pos.depth
+  while ($pos.node(depth).isInline) {
+    if (!depth) {
+      return
+    }
+    depth--
+  }
+  if (!$pos.node(depth).isTextblock) {
+    return
+  }
+  return side < 0 ? $pos.start(depth) : $pos.end(depth)
+}
+
 /**
  * @internal
  */
@@ -14,11 +30,13 @@ export const selectBlockCommand: Command = (state, dispatch) => {
     return false
   }
 
-  const { $from, $to } = selection
-  const expectedFrom = $from.start()
-  const expectedTo = $to.end()
+  const expectedFrom = getTextblockEndpoint(selection, -1)
+  const expectedTo = getTextblockEndpoint(selection, 1)
+  if (expectedFrom == null || expectedTo == null) {
+    return false
+  }
 
-  if ($from.pos <= expectedFrom && $to.pos >= expectedTo) {
+  if (selection.from <= expectedFrom && selection.to >= expectedTo) {
     return false
   }
 

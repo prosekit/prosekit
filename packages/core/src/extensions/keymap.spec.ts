@@ -5,6 +5,7 @@ import {
   it,
   vi,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
@@ -15,7 +16,6 @@ import {
   setupTest,
   setupTestFromExtension,
 } from '../testing'
-import { pressKey } from '../testing/keyboard'
 import { Priority } from '../types/priority'
 
 import {
@@ -145,36 +145,43 @@ describe('keymap', () => {
       }
     }
 
-    const keybindings = [
-      'ctrl-B',
-      // 'Ctrl-B',
-      // 'CTRL-B',
-      'ctrl-b',
-      // 'Ctrl-b',
-      // 'CTRL-b',
-      'ctrl-shift-b',
-      // 'Ctrl-shift-b',
-      // 'CTRL-shift-b',
-    ]
+    const keymap: Keymap = {}
 
-    const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
-    editor.use(defineKeymap(keymap))
+    for (const ctrl of ['ctrl', 'Ctrl', 'CTRL', 'c']) {
+      for (const shift of ['shift', 'Shift', 's', '']) {
+        for (const b of ['b', 'B']) {
+          const key = [ctrl, shift, b].filter(Boolean).join('-')
+          keymap[key] = record(key)
+        }
+      }
+      editor.use(defineKeymap(keymap))
 
-    called.length = 0
-    await pressKey('Control-b')
-    expect(called).toMatchInlineSnapshot(`
+      called.length = 0
+      await keyboard.down('Control')
+      await keyboard.down('b')
+      await keyboard.up('b')
+      await keyboard.up('Control')
+
+      expect(called).toMatchInlineSnapshot(`
       [
         "ctrl-b",
       ]
     `)
 
-    called.length = 0
-    await pressKey('')
-    expect(called).toMatchInlineSnapshot(`
-      [
-        "ctrl-shift-b",
-        "ctrl-b",
-      ]
-    `)
+      called.length = 0
+      await keyboard.down('Control')
+      await keyboard.down('Shift')
+      await keyboard.down('B')
+      await keyboard.up('B')
+      await keyboard.up('Shift')
+      await keyboard.up('Control')
+      expect(called).toMatchInlineSnapshot(`
+        [
+          "ctrl-s-B",
+          "ctrl-B",
+          "ctrl-s-b",
+        ]
+      `)
+    }
   })
 })

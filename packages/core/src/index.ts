@@ -151,6 +151,7 @@ export {
 export {
   defineBaseKeymap,
   type BaseKeymapExtension,
+  type BaseKeymapOptions,
 } from './extensions/keymap-base'
 export {
   defineMarkAttr,

@@ -190,6 +190,9 @@ importers:
       vitest:
         specifier: ^4.0.10
         version: 4.0.10(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.10)(@vitest/ui@4.0.10)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
+      vitest-browser-commands:
+        specifier: ^0.2.0
+        version: 0.2.0(@vitest/browser-playwright@4.0.10)(vitest@4.0.10)
 
   packages/dev:
     dependencies:
@@ -948,8 +951,8 @@ importers:
         specifier: ^4.0.10
         version: 4.0.10(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.10)(@vitest/ui@4.0.10)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)
       vitest-browser-commands:
-        specifier: ^0.1.2
-        version: 0.1.2(@vitest/browser-playwright@4.0.10)(vitest@4.0.10)
+        specifier: ^0.2.0
+        version: 0.2.0(@vitest/browser-playwright@4.0.10)(vitest@4.0.10)
       vitest-browser-preact:
         specifier: ^1.0.0
         version: 1.0.0(preact@10.27.2)(vitest@4.0.10)
@@ -8028,8 +8031,8 @@ packages:
       vite:
         optional: true
 
-  vitest-browser-commands@0.1.2:
-    resolution: {integrity: sha512-5pTKL1lcCg+Och6dfRcmRXPnzqyA8FxtDW+w81VfLXUkFJUSPP1bam6mm2rw/7isqFuGTMtzJK6i8Gh4R8a0Ww==}
+  vitest-browser-commands@0.2.0:
+    resolution: {integrity: sha512-BOPn+s4fm6Wah6aBkFmcmsAJ1GnDStBiPeFILt4ZYcEXxfnzua5FS1gBnXWe12U5YNnVjlhtEtIg4bPjknmdlg==}
     peerDependencies:
       '@vitest/browser-playwright': ^4.0.3
       vitest: ^4.0.3
@@ -16778,7 +16781,7 @@ snapshots:
     optionalDependencies:
       vite: 6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
 
-  vitest-browser-commands@0.1.2(@vitest/browser-playwright@4.0.10)(vitest@4.0.10):
+  vitest-browser-commands@0.2.0(@vitest/browser-playwright@4.0.10)(vitest@4.0.10):
     optionalDependencies:
       '@vitest/browser-playwright': 4.0.10(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(playwright@1.56.1)(vite@6.4.1(@types/node@20.19.15)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.10)
       vitest: 4.0.10(@types/debug@4.1.12)(@types/node@20.19.15)(@vitest/browser-playwright@4.0.10)(@vitest/ui@4.0.10)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.11.6(@types/node@20.19.15)(typescript@5.9.3))(tsx@4.20.6)(yaml@2.8.1)

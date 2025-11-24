@@ -15,6 +15,7 @@ import {
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { PlainExtension } from '../types/extension'
 import { toReversed } from '../utils/array'
+import { isApple } from '../utils/env'
 
 import {
   pluginFacet,
@@ -22,6 +23,9 @@ import {
 } from './plugin'
 
 /**
+ * A set of keybindings. Please read the
+ * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
+ *
  * @public
  */
 export interface Keymap {
@@ -29,6 +33,9 @@ export interface Keymap {
 }
 
 /**
+ * Adds a set of keybindings to the editor. Please read the
+ * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
+ *
  * @public
  */
 export function defineKeymap(keymap: Keymap): PlainExtension {
@@ -81,7 +88,8 @@ function mergeKeymaps(keymaps: Keymap[]): Keymap {
 
   for (const keymap of keymaps) {
     for (const [key, command] of Object.entries(keymap)) {
-      const commands = bindings[key] || (bindings[key] = [])
+      const normalizedKey = normalizeKeyName(key)
+      const commands = bindings[normalizedKey] ||= []
       commands.push(command)
     }
   }
@@ -91,6 +99,29 @@ function mergeKeymaps(keymaps: Keymap[]): Keymap {
 
 function mergeCommands(commands: Command[]): Command {
   return chainCommands(...commands)
+}
+
+// Copied from https://github.com/ProseMirror/prosemirror-keymap/blob/1.2.3/src/keymap.ts#L8
+function normalizeKeyName(name: string) {
+  let parts = name.split(/-(?!$)/), result = parts[parts.length - 1]
+  if (result == 'Space') result = ' '
+  let alt, ctrl, shift, meta
+  for (let i = 0; i < parts.length - 1; i++) {
+    let mod = parts[i]
+    if (/^(cmd|meta|m)$/i.test(mod)) meta = true
+    else if (/^a(lt)?$/i.test(mod)) alt = true
+    else if (/^(c|ctrl|control)$/i.test(mod)) ctrl = true
+    else if (/^s(hift)?$/i.test(mod)) shift = true
+    else if (/^mod$/i.test(mod)) {
+      if (isApple) meta = true
+      else ctrl = true
+    } else throw new Error('Unrecognized modifier name: ' + mod)
+  }
+  if (alt) result = 'Alt-' + result
+  if (ctrl) result = 'Ctrl-' + result
+  if (meta) result = 'Meta-' + result
+  if (shift) result = 'Shift-' + result
+  return result
 }
 
 const keymapPluginKey = new PluginKey('prosekit-keymap')

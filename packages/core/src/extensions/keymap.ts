@@ -22,6 +22,9 @@ import {
 } from './plugin'
 
 /**
+ * A set of keybindings. Please read the
+ * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
+ *
  * @public
  */
 export interface Keymap {
@@ -29,6 +32,9 @@ export interface Keymap {
 }
 
 /**
+ * Adds a set of keybindings to the editor. Please read the
+ * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
+ *
  * @public
  */
 export function defineKeymap(keymap: Keymap): PlainExtension {

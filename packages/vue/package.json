@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": false,
   "description": "Vue components and utilities for ProseKit",
   "author": {

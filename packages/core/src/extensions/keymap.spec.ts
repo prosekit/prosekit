@@ -130,7 +130,7 @@ describe('keymap', () => {
     expect(callOrder).toEqual(['highest', 'default', 'lowest'])
   })
 
-  it('can merge the same key with different variations', async () => {
+  it('can merge keybindings with different variants', async () => {
     const called: string[] = []
     const { editor } = setupTestFromExtension(union(
       defineDoc(),
@@ -146,12 +146,18 @@ describe('keymap', () => {
     }
 
     const keybindings = [
+      // Match Ctrl-b
       'ctrl-b',
       'CTRL-b',
+
+      // Match Ctrl-Shift-b
       'c-B',
       'ctrl-shift-b',
       'c-s-B',
       'Ctrl-B',
+
+      // Do not match
+      'ctrl-c',
     ]
     const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
 

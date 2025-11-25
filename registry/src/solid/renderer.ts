@@ -5,7 +5,7 @@ import h from 'solid-js/h'
 import { loaders } from './loaders.gen'
 
 interface ExampleProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export function SolidRenderer({ story, props }: { story: string; props?: ExampleProps }): JSX.Element | JSX.FunctionElement {

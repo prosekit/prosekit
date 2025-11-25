@@ -19,7 +19,7 @@ import { Search } from '../../ui/search'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

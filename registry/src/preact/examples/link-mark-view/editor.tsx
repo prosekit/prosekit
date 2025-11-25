@@ -13,7 +13,7 @@ import { sampleContent } from '../../sample/sample-doc-link-mark-view'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

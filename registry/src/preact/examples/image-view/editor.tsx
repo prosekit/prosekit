@@ -13,7 +13,7 @@ import { sampleContent } from '../../sample/sample-doc-image'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

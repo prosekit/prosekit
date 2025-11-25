@@ -17,7 +17,7 @@ import { sampleContent } from '../../sample/sample-doc-link-mark-view'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

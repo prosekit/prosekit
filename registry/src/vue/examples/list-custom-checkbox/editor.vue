@@ -19,7 +19,7 @@ import { Toolbar } from '../../ui/toolbar'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

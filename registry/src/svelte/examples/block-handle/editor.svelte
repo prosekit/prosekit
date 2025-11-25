@@ -15,7 +15,7 @@ import { DropIndicator } from '../../ui/drop-indicator'
 import { defineExtension } from './extension'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

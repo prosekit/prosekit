@@ -13,7 +13,7 @@ import { sampleContent } from '../../sample/sample-doc-gap-cursor'
 import { defineExtension } from './extension'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

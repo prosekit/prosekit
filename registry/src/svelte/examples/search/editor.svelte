@@ -15,7 +15,7 @@ import { Search } from '../../ui/search'
 import { defineExtension } from './extension'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

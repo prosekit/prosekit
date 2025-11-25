@@ -14,7 +14,7 @@ import { WordCounter } from '../../ui/word-counter'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

@@ -16,7 +16,7 @@ import { useMemo } from 'react'
 
 export default function EditorMain(props: {
   commitRecorder: CommitRecorder
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }) {
   const editor = useMemo(() => {
     const extension = union(

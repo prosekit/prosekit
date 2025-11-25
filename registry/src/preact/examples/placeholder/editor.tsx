@@ -19,7 +19,7 @@ import {
 import { defineExtension } from './extension'
 
 export default function Editor(props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }) {
   const editor = useMemo(() => {

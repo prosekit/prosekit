@@ -16,7 +16,7 @@ import {
 import { defineExtension } from './extension'
 
 const props = $props<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }>()
 

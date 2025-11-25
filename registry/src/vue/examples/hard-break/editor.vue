@@ -18,7 +18,7 @@ import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

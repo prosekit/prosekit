@@ -16,7 +16,7 @@ import {
 import { sampleContent } from '../../sample/sample-doc-typography'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineBasicExtension()

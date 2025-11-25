@@ -20,7 +20,7 @@ import {
 
 const props = defineProps<{
   commitRecorder: CommitRecorder
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const editor = createEditor({

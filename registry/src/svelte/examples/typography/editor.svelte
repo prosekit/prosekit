@@ -12,7 +12,7 @@ import { ProseKit } from 'prosekit/svelte'
 import { sampleContent } from '../../sample/sample-doc-typography'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineBasicExtension()

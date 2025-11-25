@@ -8,7 +8,7 @@ import type { NodeJSON } from 'prosekit/core'
 import { loaders } from './loaders.gen'
 
 interface ExampleProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export function PreactRenderer({ story, props }: { story: string; props?: ExampleProps }): JSX.Element {

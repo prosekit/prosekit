@@ -13,7 +13,7 @@ import { sampleContent } from '../../sample/sample-doc-link-mark-view'
 import { defineExtension } from './extension'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

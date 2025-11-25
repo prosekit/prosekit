@@ -14,7 +14,7 @@ import { Toolbar } from '../../ui/toolbar'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

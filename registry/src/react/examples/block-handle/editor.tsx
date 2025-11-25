@@ -15,7 +15,7 @@ import { DropIndicator } from '../../ui/drop-indicator'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

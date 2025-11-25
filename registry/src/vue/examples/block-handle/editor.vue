@@ -19,7 +19,7 @@ import { DropIndicator } from '../../ui/drop-indicator'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

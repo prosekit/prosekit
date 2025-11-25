@@ -20,7 +20,7 @@ import {
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }>()
 

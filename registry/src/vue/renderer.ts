@@ -7,7 +7,7 @@ import {
 import { loaders } from './loaders.gen'
 
 interface ExampleProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export const VueRenderer = defineComponent(

@@ -16,7 +16,7 @@ import { ProseKit } from 'prosekit/svelte'
 
 interface Props {
   commitRecorder: CommitRecorder
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
   key?: number
 }
 

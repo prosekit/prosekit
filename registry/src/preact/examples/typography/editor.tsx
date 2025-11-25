@@ -12,7 +12,7 @@ import { ProseKit } from 'prosekit/preact'
 import { sampleContent } from '../../sample/sample-doc-typography'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

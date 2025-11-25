@@ -8,7 +8,7 @@ import {
 import { loaders } from './loaders.gen'
 
 interface ExampleProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export function ReactRenderer({ story, props }: { story: string; props?: ExampleProps }): JSX.Element {

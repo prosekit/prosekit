@@ -14,7 +14,7 @@ import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.svelte'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

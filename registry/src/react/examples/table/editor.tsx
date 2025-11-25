@@ -14,7 +14,7 @@ import { TableHandle } from '../../ui/table-handle'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps) {

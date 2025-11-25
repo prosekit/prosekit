@@ -17,7 +17,7 @@ import { sampleContent } from '../../sample/sample-doc-image'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

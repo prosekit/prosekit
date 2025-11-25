@@ -24,7 +24,7 @@ import { UserMenu } from '../../ui/user-menu'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps): JSX.Element {

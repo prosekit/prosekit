@@ -14,7 +14,7 @@ import { TableHandle } from '../../ui/table-handle'
 import { defineExtension } from './extension'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

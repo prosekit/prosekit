@@ -13,7 +13,7 @@ import { sampleContent } from '../../sample/sample-doc-drop-cursor'
 import { defineExtension } from './extension'
 
 interface EditorProps {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }
 
 export default function Editor(props: EditorProps): JSX.Element {

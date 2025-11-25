@@ -18,7 +18,7 @@ import { WordCounter } from '../../ui/word-counter'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

@@ -18,7 +18,7 @@ import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.vue'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

@@ -28,7 +28,7 @@ import { UserMenu } from '../../ui/user-menu'
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }>()
 
 const extension = defineExtension()

@@ -14,7 +14,7 @@ import { InlineMenu } from '../../ui/inline-menu'
 import { defineExtension } from './extension'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

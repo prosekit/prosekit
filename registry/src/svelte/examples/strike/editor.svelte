@@ -14,7 +14,7 @@ import { defineExtension } from './extension'
 import Toolbar from './toolbar.svelte'
 
 const props: {
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()

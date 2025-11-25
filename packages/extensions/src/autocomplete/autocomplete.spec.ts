@@ -64,11 +64,15 @@ function setupSlashMenu() {
   }
 
   const showSelection = (): string => {
-    const pos = editor.state.selection.$from.pos
-    const doc = editor.state.doc
-    const textBackward = doc.textBetween(0, pos, '\n')
-    const textForward = doc.textBetween(pos, doc.content.size, '\n')
-    return textBackward + '<cursor>' + textForward
+    const { selection, doc } = editor.state
+    const textBackward = doc.textBetween(0, selection.from, '\n')
+    const textSelected = doc.textBetween(selection.from, selection.to, '\n')
+    const textForward = doc.textBetween(selection.to, doc.content.size, '\n')
+    if (selection.empty) {
+      return textBackward + '<cursor>' + textForward
+    } else {
+      return textBackward + '<selection>' + textSelected + '<selection>' + textForward
+    }
   }
 
   return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText, showSelection }
@@ -229,6 +233,21 @@ describe('defineAutocomplete', () => {
       <cursor>"
     `)
     expect(isMatching()).toBe(false)
+  })
+
+  it('can keep the match when selecting the text', async () => {
+    const { isMatching, showSelection } = setupSlashMenu()
+
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/page')
+    expect(showSelection()).toMatchInlineSnapshot(`"/page<cursor>"`)
+    expect(isMatching()).toBe(true)
+
+    await pressKey('Shift-ArrowLeft-ArrowLeft')
+    expect(showSelection()).toMatchInlineSnapshot(`"/pa<selection>ge<selection>"`)
+    expect(isMatching()).toBe(true)
   })
 
   it('can ignore the match by moving the text cursor outside of the match', async () => {

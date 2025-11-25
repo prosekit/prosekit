@@ -42,7 +42,7 @@ export default function Editor() {
     editor.setContent(JSON.parse(record) as NodeJSON)
     setHasUnsavedChange(false)
     setKey((prev) => prev + 1)
-  }, [])
+  }, [editor])
 
   return (
     <div className="CSS_EDITOR_VIEWPORT">

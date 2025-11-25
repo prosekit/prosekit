@@ -18,6 +18,6 @@ export async function renderPreactExample(story: string, initialContent?: NodeJS
   await runCleanupFunctions()
   return render(createElement(PreactRenderer, {
     story,
-    exampleProps: { initialContent },
+    exampleProps: initialContent ? { initialContent } : {},
   }))
 }

@@ -2087,7 +2087,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-user-data.json",
+        "https://prosekit.dev/r/react-sample-query-users.json",
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
@@ -2131,12 +2131,13 @@
           "registry/src/react/examples/user-menu-dynamic/index.ts",
           "registry/src/react/examples/user-menu-dynamic/use-user-query.ts",
           "registry/src/react/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "registry/src/react/sample/query-users.ts",
           "registry/src/react/sample/user-data.ts",
           "registry/src/react/ui/user-menu/index.ts",
           "registry/src/react/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
-          "react-sample-user-data",
+          "react-sample-query-users",
           "react-ui-user-menu"
         ]
       }
@@ -2244,6 +2245,35 @@
         ],
         "internalDependencies": [
           "react-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "react-sample-query-users",
+      "title": "react-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/react/sample/query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/query-users.ts",
+          "registry/src/react/sample/user-data.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-user-data"
         ]
       }
     },
@@ -5578,7 +5608,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-sample-query-users.json",
         "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
@@ -5622,12 +5652,13 @@
           "registry/src/vue/examples/user-menu-dynamic/index.ts",
           "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
           "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+          "registry/src/vue/sample/query-users.ts",
           "registry/src/vue/sample/user-data.ts",
           "registry/src/vue/ui/user-menu/index.ts",
           "registry/src/vue/ui/user-menu/user-menu.vue"
         ],
         "internalDependencies": [
-          "vue-sample-user-data",
+          "vue-sample-query-users",
           "vue-ui-user-menu"
         ]
       }
@@ -5735,6 +5766,35 @@
         ],
         "internalDependencies": [
           "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-sample-query-users",
+      "title": "vue-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/query-users.ts",
+          "registry/src/vue/sample/user-data.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-user-data"
         ]
       }
     },
@@ -9068,7 +9128,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-user-data.json",
+        "https://prosekit.dev/r/preact-sample-query-users.json",
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
@@ -9112,12 +9172,13 @@
           "registry/src/preact/examples/user-menu-dynamic/index.ts",
           "registry/src/preact/examples/user-menu-dynamic/use-user-query.ts",
           "registry/src/preact/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "registry/src/preact/sample/query-users.ts",
           "registry/src/preact/sample/user-data.ts",
           "registry/src/preact/ui/user-menu/index.ts",
           "registry/src/preact/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
-          "preact-sample-user-data",
+          "preact-sample-query-users",
           "preact-ui-user-menu"
         ]
       }
@@ -9225,6 +9286,35 @@
         ],
         "internalDependencies": [
           "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "preact-sample-query-users",
+      "title": "preact-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/query-users.ts",
+          "registry/src/preact/sample/user-data.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-user-data"
         ]
       }
     },
@@ -12514,12 +12604,11 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-user-data.json",
+        "https://prosekit.dev/r/svelte-sample-query-users.json",
         "https://prosekit.dev/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -12538,9 +12627,9 @@
           "target": "components/editor/examples/user-menu-dynamic/index.ts"
         },
         {
-          "path": "registry/src/svelte/examples/user-menu-dynamic/use-user-query.ts",
+          "path": "registry/src/svelte/examples/user-menu-dynamic/use-user-query.svelte.ts",
           "type": "registry:component",
-          "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts"
+          "target": "components/editor/examples/user-menu-dynamic/use-user-query.svelte.ts"
         },
         {
           "path": "registry/src/svelte/examples/user-menu-dynamic/user-menu-dynamic.svelte",
@@ -12556,14 +12645,15 @@
           "registry/src/svelte/examples/user-menu-dynamic/editor.svelte",
           "registry/src/svelte/examples/user-menu-dynamic/extension.ts",
           "registry/src/svelte/examples/user-menu-dynamic/index.ts",
-          "registry/src/svelte/examples/user-menu-dynamic/use-user-query.ts",
+          "registry/src/svelte/examples/user-menu-dynamic/use-user-query.svelte.ts",
           "registry/src/svelte/examples/user-menu-dynamic/user-menu-dynamic.svelte",
+          "registry/src/svelte/sample/query-users.ts",
           "registry/src/svelte/sample/user-data.ts",
           "registry/src/svelte/ui/user-menu/index.ts",
           "registry/src/svelte/ui/user-menu/user-menu.svelte"
         ],
         "internalDependencies": [
-          "svelte-sample-user-data",
+          "svelte-sample-query-users",
           "svelte-ui-user-menu"
         ]
       }
@@ -12670,6 +12760,35 @@
         ],
         "internalDependencies": [
           "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "svelte-sample-query-users",
+      "title": "svelte-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/query-users.ts",
+          "registry/src/svelte/sample/user-data.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-user-data"
         ]
       }
     },

@@ -18,6 +18,6 @@ export async function renderReactExample(story: string, initialContent?: NodeJSO
   await runCleanupFunctions()
   return await render(createElement(ReactRenderer, {
     story,
-    exampleProps: { initialContent },
+    exampleProps: initialContent ? { initialContent } : {},
   }))
 }

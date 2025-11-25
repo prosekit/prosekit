@@ -18,7 +18,7 @@ import {
 
 testStoryConsistency('user-menu-dynamic')
 
-testStory('user-menu-dynamic', () => {
+testStory({ story: 'user-menu-dynamic' }, () => {
   it('user-menu-dynamic', async () => {
     const editor = await waitForEditor()
 
@@ -49,7 +49,7 @@ testStory('user-menu-dynamic', () => {
       expect(menuBox.y).toBeGreaterThan(editorBox.y)
     }
 
-    setTestBlocking(true)
+    await updateNetworkStatus('offline')
 
     // Show loading
     {
@@ -67,7 +67,7 @@ testStory('user-menu-dynamic', () => {
 
     // Show all users
     {
-      setTestBlocking(false)
+      await updateNetworkStatus('fast')
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expect.element(itemBob, { timeout: 5000 }).toBeVisible()
@@ -188,12 +188,21 @@ testStory('user-menu-dynamic', () => {
   })
 })
 
-function setTestBlocking(value: boolean): void {
-  window._PROSEKIT_TEST_BLOCKING = value
-}
-
-declare global {
-  interface Window {
-    _PROSEKIT_TEST_BLOCKING: boolean | undefined
+async function updateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
+  {
+    const { simulateNetworkStatus } = await import('../src/react/sample/query-users')
+    simulateNetworkStatus(status)
+  }
+  {
+    const { simulateNetworkStatus } = await import('../src/preact/sample/query-users')
+    simulateNetworkStatus(status)
+  }
+  {
+    const { simulateNetworkStatus } = await import('../src/svelte/sample/query-users')
+    simulateNetworkStatus(status)
+  }
+  {
+    const { simulateNetworkStatus } = await import('../src/vue/sample/query-users')
+    simulateNetworkStatus(status)
   }
 }

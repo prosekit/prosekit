@@ -20,7 +20,7 @@ export default function Editor() {
     { id: string; date: Date; commit: Commit }[]
   >([])
   const [key, setKey] = useState(0)
-  const [defaultContent, setDefaultContent] = useState<NodeJSON | undefined>()
+  const [initialContent, setInitialContent] = useState<NodeJSON | undefined>()
   const commitRecorder = useMemo(() => new CommitRecorder(), [])
 
   const handleCommit = useCallback(() => {
@@ -36,7 +36,7 @@ export default function Editor() {
       const commit = commits[index]
       if (index === -1 || !commit) return
       const doc = commit.commit.doc
-      setDefaultContent(doc)
+      setInitialContent(doc)
       setCommits((commits) => commits.slice(index))
       setKey((key) => key + 1)
     },
@@ -49,7 +49,7 @@ export default function Editor() {
         <div className="max-h-md">
           <EditorMain
             key={key}
-            defaultContent={defaultContent}
+            initialContent={initialContent}
             commitRecorder={commitRecorder}
           />
         </div>

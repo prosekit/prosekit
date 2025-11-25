@@ -30,12 +30,12 @@ export interface LoroOptions {
   doc: LoroDocType
 
   /**
-   * The (legacy) Awareness instance.
+   * The (legacy) Awareness instance. One of `awareness` or `presence` must be provided.
    */
   awareness?: CursorAwareness
 
   /**
-   * The CursorEphemeralStore instance.
+   * The CursorEphemeralStore instance. One of `awareness` or `presence` must be provided.
    */
   presence?: CursorEphemeralStore
 

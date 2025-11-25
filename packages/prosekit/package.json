@@ -176,7 +176,7 @@
   },
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
-    "loro-prosemirror": ">= 0.4.0",
+    "loro-prosemirror": ">= 0.4.1",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
@@ -225,7 +225,7 @@
     "@types/react-dom": "^19.2.3",
     "esbuild": "^0.27.0",
     "loro-crdt": "^1.10.0",
-    "loro-prosemirror": "^0.4.0",
+    "loro-prosemirror": "^0.4.1",
     "preact": "^10.27.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

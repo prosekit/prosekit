@@ -199,4 +199,14 @@ async function updateNetworkState(state: 'connected' | 'disconnected') {
     updateMockNetworkConnected(state === 'connected')
     updateMockDelay(0)
   }
+  {
+    const { updateMockNetworkConnected, updateMockDelay } = await import('../src/svelte/sample/query-users')
+    updateMockNetworkConnected(state === 'connected')
+    updateMockDelay(0)
+  }
+  {
+    const { updateMockNetworkConnected, updateMockDelay } = await import('../src/vue/sample/query-users')
+    updateMockNetworkConnected(state === 'connected')
+    updateMockDelay(0)
+  }
 }

@@ -26,8 +26,8 @@ importers:
         specifier: ^3.6.3
         version: 3.6.3(@types/estree@1.0.8)(@typescript-eslint/parser@8.48.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.48.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(jsonc-eslint-parser@2.4.1)(typescript@5.9.3)
       '@ocavue/tsconfig':
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: ^0.6.1
+        version: 0.6.1
       '@size-limit/esbuild-why':
         specifier: ^11.2.0
         version: 11.2.0(size-limit@11.2.0)
@@ -304,8 +304,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.3.7
-        version: 0.3.7(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.0
+        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -497,8 +497,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.3.7
-        version: 0.3.7(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.0
+        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -797,8 +797,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.3.7
-        version: 0.3.7(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.0
+        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -1059,8 +1059,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.3.7
-        version: 0.3.7(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.0
+        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -2429,8 +2429,8 @@ packages:
   '@ocavue/eslint-config@3.6.3':
     resolution: {integrity: sha512-h6xPP54VFZ9sT+9Zql92R40/4u7cRmfG97sjSb0sKJ0XQu1toBjSMz28idhxK8f6cqnhMzTg4NiBK8ISOsRx5Q==}
 
-  '@ocavue/tsconfig@0.5.0':
-    resolution: {integrity: sha512-j7ys2K6hnUKTJNQL48ZrCxB64Arml48MBcdGt/EDQXvP8k/s1GvNUeBxUx7+hKXojOQ1L9E3FkpXwTg3DDjduA==}
+  '@ocavue/tsconfig@0.6.1':
+    resolution: {integrity: sha512-HCGHOT7S8nb7D/CP0FRYUt+IpYvnVu0fCPF9FE7BbXiJeg6UKB7wRINGq7cIGhWRDuQxpJ4tfVT9awi81z8bHw==}
 
   '@ocavue/utils@0.7.1':
     resolution: {integrity: sha512-gY/YWdyTPGx8YTT0q/0tQJs6kPJ2XeXRPfdzWLt+wefIOuwb1n5Nq3GwKM/AY+Wab3dbx6w+MkX8VSbrm3l6Xg==}
@@ -5884,10 +5884,10 @@ packages:
   loro-crdt@1.10.0:
     resolution: {integrity: sha512-Fms27q9IaDANUe5OACQL6qLMhJasMXzjRkyK+NAIiPQXGBK2VAp6C7pAr9fzuKbL71YyDgA4Pv69RGwiScWSPg==}
 
-  loro-prosemirror@0.3.7:
-    resolution: {integrity: sha512-dNw6fiogjY4HUydlFZT0AR2lmj5zrOB2O3a5QKFFRzV9HNbTIqc1dWEIy+1aBDYxJgBRcHDClBBCwTL6vJyJ/A==}
+  loro-prosemirror@0.4.0:
+    resolution: {integrity: sha512-wX+aOO3NNyaScNu6qayzOdnYciPfTkGCQY/Rl2ZmwSWVw2kEad0XSkRUf3/xKRY3hPu5T+CL6juTOpZePkoO8A==}
     peerDependencies:
-      loro-crdt: ^1.4.0
+      loro-crdt: ^1.10.0
       prosemirror-model: ^1.18.1
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.0
@@ -10121,7 +10121,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@ocavue/tsconfig@0.5.0': {}
+  '@ocavue/tsconfig@0.6.1': {}
 
   '@ocavue/utils@0.7.1': {}
 
@@ -14008,7 +14008,7 @@ snapshots:
 
   loro-crdt@1.10.0: {}
 
-  loro-prosemirror@0.3.7(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3):
+  loro-prosemirror@0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3):
     dependencies:
       lib0: 0.2.114
       loro-crdt: 1.10.0

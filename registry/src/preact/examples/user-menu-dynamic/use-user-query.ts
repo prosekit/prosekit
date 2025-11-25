@@ -3,13 +3,14 @@ import {
   useState,
 } from 'preact/hooks'
 
-import { users as allUsers } from '../../sample/user-data'
+import type { User } from '../../sample/query-users'
+import { queryUsers } from '../../sample/query-users'
 
 /**
  * Simulate a user searching with some delay.
  */
 export function useUserQuery(query: string, enabled: boolean) {
-  const [users, setUsers] = useState<{ name: string; id: number }[]>([])
+  const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -18,47 +19,19 @@ export function useUserQuery(query: string, enabled: boolean) {
       return
     }
 
+    let cancelled = false
     setLoading(true)
-
-    const searchQuery = query.toLowerCase()
-
-    const id = setTimeout(async () => {
-      await waitForTestBlocking()
-
+    void queryUsers(query).then((users) => {
+      if (cancelled) {
+        return
+      }
+      setUsers(users)
       setLoading(false)
-
-      setUsers(
-        allUsers
-          .filter((user) => user.name.toLowerCase().includes(searchQuery))
-          .slice(0, 10),
-      )
-    }, 500)
-
+    })
     return () => {
-      clearTimeout(id)
+      cancelled = true
     }
   }, [enabled, query])
 
   return { loading, users }
-}
-
-/**
- * Use a global variable to simulate a network request delay.
- */
-async function waitForTestBlocking() {
-  return await new Promise((resolve) => {
-    const id = setInterval(() => {
-      const hasTestBlocking = !!window._PROSEKIT_TEST_BLOCKING
-      if (!hasTestBlocking) {
-        clearInterval(id)
-        resolve(true)
-      }
-    }, 100)
-  })
-}
-
-declare global {
-  interface Window {
-    _PROSEKIT_TEST_BLOCKING: boolean | undefined
-  }
 }

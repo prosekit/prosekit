@@ -18,7 +18,7 @@ import {
 
 testStoryConsistency('user-menu-dynamic')
 
-testStory({ story: 'user-menu-dynamic', frameworks: ['vue', 'react', 'preact', 'svelte'] }, () => {
+testStory({ story: 'user-menu-dynamic' }, () => {
   it('user-menu-dynamic', async () => {
     const editor = await waitForEditor()
 

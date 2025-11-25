@@ -4,13 +4,13 @@ import {
 } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import type {
+  CursorAwareness,
   CursorEphemeralStore,
   CursorPluginOptions,
 } from 'loro-prosemirror'
 import {
   LoroCursorPlugin,
   LoroEphemeralCursorPlugin,
-  type CursorAwareness,
 } from 'loro-prosemirror'
 
 export interface LoroCursorOptions extends CursorPluginOptions {

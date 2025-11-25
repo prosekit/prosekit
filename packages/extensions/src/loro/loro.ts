@@ -8,6 +8,7 @@ import {
 import type {
   CursorAwareness,
   CursorEphemeralStore,
+  CursorPluginOptions,
   LoroDocType,
   LoroSyncPluginProps,
   LoroUndoPluginProps,
@@ -17,10 +18,7 @@ import {
   defineLoroCommands,
   type LoroCommandsExtension,
 } from './loro-commands'
-import {
-  defineLoroCursorPlugin,
-  type CursorPluginOptions,
-} from './loro-cursor-plugin'
+import { defineLoroCursorPlugin } from './loro-cursor-plugin'
 import { defineLoroKeymap } from './loro-keymap'
 import { defineLoroSyncPlugin } from './loro-sync-plugin'
 import { defineLoroUndoPlugin } from './loro-undo-plugin'

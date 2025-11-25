@@ -213,6 +213,21 @@ describe('defineAutocomplete', () => {
     expect(isMatching()).toBe(true)
   })
 
+  it('can dismiss the match by creating a new paragraph', async () => {
+    const { isMatching, showSelection } = setupSlashMenu()
+
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(true)
+
+    await pressKey('Enter')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(false)
+  })
+
   it('can ignore the match by moving the text cursor outside of the match', async () => {
     const { onEnter, isMatching, getMatchingText, showSelection } = setupSlashMenu()
 

@@ -1,31 +1,12 @@
 <script lang="ts">
-import { onDestroy } from 'svelte'
-
 import { UserMenu } from '../../ui/user-menu'
 
-import { useUserQuery } from './use-user-query'
+import { useUserQuery } from './use-user-query.svelte'
 
 let query = $state('')
 let open = $state(false)
-let loading = $state(true)
-let users = $state<{ id: number; name: string }[]>([])
 
-const userQuery = useUserQuery({
-  onLoadingChange(value) {
-    loading = value
-  },
-  onUsersChange(value) {
-    users = value
-  },
-})
-
-$effect(() => {
-  userQuery.run(query, open)
-})
-
-onDestroy(() => {
-  userQuery.destroy()
-})
+const { getLoading, getUsers } = useUserQuery(() => query, () => open)
 
 function handleQueryChange(value: string) {
   query = value
@@ -37,8 +18,8 @@ function handleOpenChange(value: boolean) {
 </script>
 
 <UserMenu
-  {users}
-  {loading}
+  users={getUsers()}
+  loading={getLoading()}
   onQueryChange={handleQueryChange}
   onOpenChange={handleOpenChange}
 />

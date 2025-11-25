@@ -13,6 +13,8 @@ import {
   type JSX,
 } from 'solid-js'
 
+const regex = /#[\da-z]*$/i
+
 export default function TagMenu(props: { tags: { id: number; label: string }[] }): JSX.Element {
   const editor = useEditor<Union<[MentionExtension, BasicExtension]>>()
 
@@ -27,7 +29,7 @@ export default function TagMenu(props: { tags: { id: number; label: string }[] }
 
   return (
     <AutocompletePopover
-      regex={/#[\da-z]*$/i}
+      regex={regex}
       class="CSS_AUTOCOMPLETE_MENU"
     >
       <AutocompleteList>

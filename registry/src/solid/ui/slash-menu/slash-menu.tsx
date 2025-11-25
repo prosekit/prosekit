@@ -10,11 +10,11 @@ import type { JSX } from 'solid-js'
 import SlashMenuEmpty from './slash-menu-empty'
 import SlashMenuItem from './slash-menu-item'
 
+// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
+const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
+
 export default function SlashMenu(): JSX.Element {
   const editor = useEditor<BasicExtension>()
-
-  // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
 
   return (
     <AutocompletePopover regex={regex} class="CSS_AUTOCOMPLETE_MENU">

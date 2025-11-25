@@ -1,6 +1,9 @@
 <script lang="ts">
 import type { BasicExtension } from 'prosekit/basic'
-import type { Union } from 'prosekit/core'
+import {
+  canUseRegexLookbehind,
+  type Union,
+} from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/svelte'
 import {
@@ -30,10 +33,13 @@ function handleUserInsert(id: number, username: string) {
   })
   $editor.commands.insertText({ text: ' ' })
 }
+
+// Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
+const regex = canUseRegexLookbehind() ? /(?<!\S)@(|\S.*)$/u : /@(|\S.*)$/u
 </script>
 
 <AutocompletePopover
-  regex={/@\w*$/}
+  {regex}
   class="CSS_AUTOCOMPLETE_MENU"
   onQueryChange={props.onQueryChange}
   onOpenChange={props.onOpenChange}

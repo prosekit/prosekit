@@ -26,10 +26,12 @@ function handleTagInsert(id: number, label: string) {
   })
   $editor.commands.insertText({ text: ' ' })
 }
+
+const regex = /#[\da-z]*$/i
 </script>
 
 <AutocompletePopover
-  regex={/#[\da-z]*$/i}
+  {regex}
   class="CSS_AUTOCOMPLETE_MENU"
 >
   <AutocompleteList>

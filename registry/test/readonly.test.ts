@@ -9,16 +9,16 @@ import {
 
 import {
   focusEditor,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('readonly')
 
 testStory('readonly', () => {
   it('readonly', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
     const readonlyButton = page.getByRole('button', { name: 'Readonly' })
     const editableButton = page.getByRole('button', { name: 'Editable' })

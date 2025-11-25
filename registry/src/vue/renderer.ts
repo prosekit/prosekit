@@ -1,3 +1,4 @@
+import type { NodeJSON } from 'prosekit/core'
 import {
   defineComponent,
   h,
@@ -5,13 +6,22 @@ import {
 
 import { loaders } from './loaders.gen'
 
+interface ExampleProps {
+  initialContent?: NodeJSON
+}
+
+interface Props {
+  story: string
+  exampleProps?: ExampleProps
+}
+
 export const VueRenderer = defineComponent(
-  ({ story }: { story: string }) => {
-    const Example = loaders[story as keyof typeof loaders]
+  (props: Props) => {
+    const Example = loaders[props.story as keyof typeof loaders]
     if (!Example) {
-      console.warn(`[VueRenderer] No example found for story ${story}`)
+      console.warn(`[VueRenderer] No example found for story ${props.story}`)
     }
-    return () => (Example ? h(Example) : h('div'))
+    return () => (Example ? h(Example, props.exampleProps ?? null) : h('div'))
   },
-  { name: 'VueRenderer', props: ['story'] },
+  { name: 'VueRenderer', props: ['story', 'exampleProps'] },
 )

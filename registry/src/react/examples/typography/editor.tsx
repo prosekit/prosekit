@@ -2,16 +2,24 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { defaultContent } from '../../sample/sample-doc-typography'
+import { sampleContent } from '../../sample/sample-doc-typography'
 
-export default function Editor() {
+interface EditorProps {
+  initialContent?: NodeJSON
+}
+
+export default function Editor(props: EditorProps) {
+  const defaultContent = props.initialContent ?? sampleContent
   const editor = useMemo(() => {
     return createEditor({ extension: defineBasicExtension(), defaultContent })
-  }, [])
+  }, [defaultContent])
 
   return (
     <ProseKit editor={editor}>

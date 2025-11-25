@@ -5,9 +5,7 @@ import {
 import { userEvent } from 'vitest/browser'
 
 import {
-  emptyEditor,
   expectLocatorToNotExist,
-  locateEditor,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -15,21 +13,9 @@ import {
 
 testStoryConsistency('heading')
 
-testStory('heading', () => {
-  it('default content', async () => {
-    const editor = await waitForEditor()
-
-    await expect.element(editor.locate('h1')).toBeVisible()
-    await expectLocatorToNotExist(editor.locate('h2'))
-    await expectLocatorToNotExist(editor.locate('h3'))
-    await expectLocatorToNotExist(editor.locate('h4'))
-    await expectLocatorToNotExist(editor.locate('h5'))
-    await expectLocatorToNotExist(editor.locate('h6'))
-  })
-
+testStory({ story: 'heading', emptyContent: true }, () => {
   it('input rule', async () => {
-    const editor = locateEditor()
-    await emptyEditor()
+    const editor = await waitForEditor()
     await editor.click()
 
     await expectLocatorToNotExist(editor.locate('h1'))

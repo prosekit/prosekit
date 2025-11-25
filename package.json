@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.23.0",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -41,27 +41,34 @@
     "@changesets/cli": "^2.29.7",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.25.1",
-    "@ocavue/eslint-config": "^3.6.1",
-    "@ocavue/tsconfig": "^0.5.0",
+    "@ocavue/eslint-config": "^3.6.3",
+    "@ocavue/tsconfig": "^0.6.1",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
-    "@types/node": "^20.19.11",
-    "@vitest/coverage-v8": "^4.0.10",
+    "@types/node": "^24.10.1",
+    "@vitest/coverage-v8": "^4.0.14",
     "dprint": "^0.50.2",
     "eslint": "^9.39.1",
-    "knip": "^5.70.0",
+    "knip": "^5.70.2",
     "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.60",
-    "playwright": "^1.56.1",
+    "playwright": "^1.57.0",
     "size-limit": "^11.2.0",
     "turbo": "^2.6.1",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.10"
+    "vitest": "^4.0.14"
   },
   "pnpm": {
     "overrides": {},
     "patchedDependencies": {
       "y-prosemirror": "patches/y-prosemirror.patch"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "dprint",
+      "esbuild",
+      "msw",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }

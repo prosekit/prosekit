@@ -1,3 +1,4 @@
+import { isDeepEqual } from '@ocavue/utils'
 import type {
   ProseMirrorNode,
   Schema,
@@ -40,7 +41,6 @@ import type {
   SelectionJSON,
 } from '../types/model'
 import { assert } from '../utils/assert'
-import { deepEquals } from '../utils/deep-equals'
 import {
   getEditorContentDoc,
   getEditorSelection,
@@ -176,7 +176,7 @@ export class EditorInstance {
     return this.getState().doc
   }
 
-  private getProp<PropName extends keyof EditorProps>(propName: PropName): EditorProps[PropName] | undefined {
+  private getProp<PropName extends keyof EditorProps>(propName: PropName): Partial<EditorProps>[PropName] {
     return this.view?.someProp(propName) ?? this.directEditorProps[propName]
   }
 
@@ -264,14 +264,14 @@ export class EditorInstance {
     const newPayload = this.tree.getRootOutput()
     const newPlugins = [...(newPayload?.state?.plugins ?? [])]
 
-    if (!deepEquals(oldPlugins, newPlugins)) {
+    if (!isDeepEqual(oldPlugins, newPlugins)) {
       const state = view.state.reconfigure({ plugins: newPlugins })
       view.updateState(state)
     }
 
     if (
       newPayload?.commands
-      && !deepEquals(oldPayload?.commands, newPayload?.commands)
+      && !isDeepEqual(oldPayload?.commands, newPayload?.commands)
     ) {
       const commands = newPayload.commands
       const names = Object.keys(commands)

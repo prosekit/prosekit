@@ -5,10 +5,17 @@ import {
   it,
   vi,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
-import { setupTest } from '../testing'
+import {
+  defineDoc,
+  defineParagraph,
+  defineText,
+  setupTest,
+  setupTestFromExtension,
+} from '../testing'
 import { Priority } from '../types/priority'
 
 import {
@@ -121,5 +128,67 @@ describe('keymap', () => {
 
     // Highest priority should be called first
     expect(callOrder).toEqual(['highest', 'default', 'lowest'])
+  })
+
+  it('can merge keybindings with different variants', async () => {
+    const called: string[] = []
+    const { editor } = setupTestFromExtension(union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+    ))
+
+    const record = (label: string): Command => {
+      return () => {
+        called.push(label)
+        return false
+      }
+    }
+
+    const keybindings = [
+      // Match Ctrl-b
+      'ctrl-b',
+      'CTRL-b',
+
+      // Match Ctrl-Shift-b
+      'c-B',
+      'ctrl-shift-b',
+      'c-s-B',
+      'Ctrl-B',
+
+      // Do not match
+      'ctrl-c',
+    ]
+    const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
+
+    editor.use(defineKeymap(keymap))
+
+    called.length = 0
+    await keyboard.down('Control')
+    await keyboard.down('b')
+    await keyboard.up('b')
+    await keyboard.up('Control')
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "ctrl-b",
+        "CTRL-b",
+      ]
+    `)
+
+    called.length = 0
+    await keyboard.down('Control')
+    await keyboard.down('Shift')
+    await keyboard.down('B')
+    await keyboard.up('B')
+    await keyboard.up('Shift')
+    await keyboard.up('Control')
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "c-s-B",
+        "c-B",
+        "Ctrl-B",
+        "ctrl-shift-b",
+      ]
+    `)
   })
 })

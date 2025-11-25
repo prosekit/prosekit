@@ -2,7 +2,6 @@ import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
-import { sortedUniq } from 'lodash-es'
 
 import { asyncFrom } from './async-from'
 import { getPackageJsonPublishExports } from './get-package-json-exports'
@@ -35,7 +34,7 @@ async function* iterateExports(pkg: Package) {
       .join('/')
 
     const subPackage = await vfs.getPackageByName(subPackageName)
-    const ignored: string[] = sortedUniq(
+    const ignored = new Set<string>(
       // Ignore peer dependencies
       Object.keys(subPackage.packageJson.peerDependencies ?? {}),
     )
@@ -46,7 +45,7 @@ async function* iterateExports(pkg: Package) {
     yield {
       name: path.normalize(path.join('prosekit', entryName)),
       path: path.normalize(path.join('packages/prosekit', entryPath)),
-      ignore: ignored.length > 0 ? ignored : undefined,
+      ignore: ignored.size > 0 ? Array.from(ignored) : undefined,
     }
   }
 }

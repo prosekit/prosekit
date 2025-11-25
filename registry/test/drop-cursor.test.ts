@@ -6,16 +6,16 @@ import { userEvent } from 'vitest/browser'
 
 import {
   expectLocatorToHaveCount,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('drop-cursor')
 
 testStory('drop-cursor', () => {
   it('reorders images by HTML5 drag-and-drop', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
     const images = editor.locate('img')
     await expectLocatorToHaveCount(images, 4)

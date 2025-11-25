@@ -1,3 +1,5 @@
+import { DefaultMap } from '@ocavue/utils'
+
 import { isPublicPackage } from './is-public-package'
 import { vfs } from './virtual-file-system'
 
@@ -22,7 +24,7 @@ export async function genChangesetConfigJson() {
  */
 async function getVisiblePackages(): Promise<Set<string>> {
   const packages = await vfs.getPackages()
-  const packageToDependencies = new Map<string, string[]>()
+  const packageToDependencies = new DefaultMap<string, string[]>(() => [])
   for (const pkg of packages) {
     const dependencies = Object.keys(pkg.packageJson.dependencies || {})
     const devDependencies = Object.keys(pkg.packageJson.devDependencies || {})
@@ -37,7 +39,7 @@ async function getVisiblePackages(): Promise<Set<string>> {
     if (!name) {
       break
     }
-    const dependencies = packageToDependencies.get(name) || []
+    const dependencies = packageToDependencies.get(name)
     for (const dependency of dependencies) {
       if (!seen.has(dependency)) {
         seen.add(dependency)

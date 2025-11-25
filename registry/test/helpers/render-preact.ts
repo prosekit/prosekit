@@ -1,4 +1,5 @@
 import { createElement } from 'preact'
+import type { NodeJSON } from 'prosekit/core'
 import {
   cleanup,
   render,
@@ -13,7 +14,10 @@ import {
 
 registerCleanupFunction(cleanup)
 
-export async function renderPreactExample(story: string) {
+export async function renderPreactExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
-  return render(createElement(PreactRenderer, { story }))
+  return render(createElement(PreactRenderer, {
+    story,
+    exampleProps: initialContent ? { initialContent } : {},
+  }))
 }

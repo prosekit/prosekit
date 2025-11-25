@@ -28,7 +28,7 @@ func start() {
 }
 `.trim()
 
-export const defaultContent: NodeJSON = {
+export const sampleContent: NodeJSON = {
   type: 'doc',
   content: [
     {

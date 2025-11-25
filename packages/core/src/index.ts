@@ -22,6 +22,8 @@ export {
   removeNode,
   type RemoveNodeOptions,
 } from './commands/remove-node'
+export { selectAll } from './commands/select-all'
+export { selectBlock } from './commands/select-block'
 export {
   setBlockType,
   type SetBlockTypeOptions,
@@ -151,6 +153,7 @@ export {
 export {
   defineBaseKeymap,
   type BaseKeymapExtension,
+  type BaseKeymapOptions,
 } from './extensions/keymap-base'
 export {
   defineMarkAttr,

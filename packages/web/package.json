@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/web",
   "type": "module",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "private": false,
   "description": "A collection of web components for ProseKit",
   "author": {
@@ -53,20 +53,20 @@
     "@aria-ui/presence": "^0.0.20",
     "@aria-ui/tooltip": "^0.0.30",
     "@floating-ui/dom": "^1.7.4",
-    "@ocavue/utils": "^0.8.1",
+    "@ocavue/utils": "^1.0.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^1.28.0",
+    "@zag-js/dom-query": "^1.29.1",
     "prosemirror-tables": "^1.8.1"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.16.5",
+    "tsdown": "^0.16.7",
     "type-fest": "^5.2.0",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.10"
+    "vitest": "^4.0.14"
   },
   "publishConfig": {
     "exports": {

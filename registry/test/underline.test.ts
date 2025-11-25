@@ -10,16 +10,16 @@ import {
 import {
   emptyEditor,
   expectLocatorToNotExist,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('underline')
 
 testStory('underline', () => {
   it('toggle via toolbar while typing', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     const underlineBtn = page.getByRole('button', { name: 'Underline' })
 
     await emptyEditor()

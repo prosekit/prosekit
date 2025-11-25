@@ -1,3 +1,5 @@
+import type { NodeJSON } from 'prosekit/core'
+import type { ComponentProps } from 'svelte'
 import {
   cleanup,
   render,
@@ -12,7 +14,12 @@ import {
 
 registerCleanupFunction(cleanup)
 
-export async function renderSvelteExample(story: string) {
+export async function renderSvelteExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
-  return render(SvelteRenderer, { story })
+  type Props = ComponentProps<typeof SvelteRenderer>
+  const props: Props = {
+    story,
+    exampleProps: initialContent ? { initialContent } : {},
+  }
+  return render(SvelteRenderer, props)
 }

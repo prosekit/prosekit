@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": false,
   "description": "Solid components and utilities for ProseKit",
   "author": {
@@ -63,7 +63,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "solid-js": "^1.9.10",
-    "tsdown": "^0.16.5",
+    "tsdown": "^0.16.7",
     "typescript": "~5.9.3"
   },
   "publishConfig": {

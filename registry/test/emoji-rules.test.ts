@@ -9,16 +9,16 @@ import {
 
 import {
   emptyEditor,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('emoji-rules')
 
 testStory('emoji-rules', () => {
   it('convert :apple: and :banana: on Enter', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     await emptyEditor()
 
     await editor.click()

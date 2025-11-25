@@ -12,6 +12,8 @@ import {
   DecorationSet,
 } from '@prosekit/pm/view'
 
+import { isNotNullish } from '../../../core/src/utils/type-assertion'
+
 import {
   getPluginState,
   getTrMeta,
@@ -52,14 +54,20 @@ export function createAutocompletePlugin({
         }
 
         // Handle position mapping changes
-        const ignores = Array.from(new Set(prevValue.ignores.map(pos => tr.mapping.map(pos))))
+        const ignores: number[] = []
+        for (const ignore of prevValue.ignores) {
+          const result = tr.mapping.mapResult(ignore)
+          if (result.deletedBefore) continue
+          if (ignores.includes(result.pos)) continue
+          ignores.push(result.pos)
+        }
         const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
 
         if (!meta) {
           if (prevMatching) {
             const { selection } = newState
             // If the text selection is before the matching or after the matching
-            if (selection.to <= prevMatching.from || selection.from >= prevMatching.to + 1) {
+            if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
               ignores.push(prevMatching.from)
               return { matching: null, ignores }
             }

@@ -55,7 +55,15 @@ function setupSlashMenu() {
     return getMatching().match[0]
   }
 
-  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText }
+  const showSelection = (): string => {
+    const pos = editor.state.selection.$from.pos
+    const doc = editor.state.doc
+    const textBackward = doc.textBetween(0, pos)
+    const textForward = doc.textBetween(pos, doc.content.size)
+    return textBackward + '<cursor>' + textForward
+  }
+
+  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText, showSelection }
 }
 
 describe('defineAutocomplete', () => {
@@ -139,35 +147,70 @@ describe('defineAutocomplete', () => {
   })
 
   it('can ignore the match by moving the text cursor outside of the match', async () => {
-    const { onEnter, isMatching, getMatchingText } = setupSlashMenu()
+    const { onEnter, isMatching, getMatchingText, showSelection } = setupSlashMenu()
 
     expect(onEnter).not.toHaveBeenCalled()
 
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+
     await inputText('a ')
-    // a <text_cursor>
+    expect(showSelection()).toMatchInlineSnapshot(`"a <cursor>"`)
     expect(isMatching()).toBe(false)
 
     await inputText('/')
-    // a /<text_cursor>
+    expect(showSelection()).toMatchInlineSnapshot(`"a /<cursor>"`)
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/')
 
     await inputText('b')
-    // a /b<text_cursor>
+    expect(showSelection()).toMatchInlineSnapshot(`"a /b<cursor>"`)
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/b')
 
     await pressKey('ArrowLeft')
-    // a /<text_cursor>b
+    expect(showSelection()).toMatchInlineSnapshot(`"a /<cursor>b"`)
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/b')
 
     await pressKey('ArrowLeft')
-    // a <text_cursor>/b
+    expect(showSelection()).toMatchInlineSnapshot(`"a <cursor>/b"`)
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/b')
+
+    await pressKey('ArrowLeft')
+    expect(showSelection()).toMatchInlineSnapshot(`"a<cursor> /b"`)
     expect(isMatching()).toBe(false)
 
     await pressKey('ArrowRight')
-    // a/<text_cursor> b
+    expect(showSelection()).toMatchInlineSnapshot(`"a <cursor>/b"`)
+    expect(isMatching()).toBe(false)
+
+    await pressKey('ArrowRight')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /<cursor>b"`)
+    expect(isMatching()).toBe(false)
+
+    await pressKey('Backspace')
+    await pressKey('Backspace')
+    expect(showSelection()).toMatchInlineSnapshot(`"a<cursor>b"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText(' /')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /<cursor>b"`)
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/')
+
+    await inputText('c')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /c<cursor>b"`)
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/c')
+
+    await inputText('d')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /cd<cursor>b"`)
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/cd')
+
+    await pressKey('ArrowRight')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /cdb<cursor>"`)
     expect(isMatching()).toBe(false)
   })
 })

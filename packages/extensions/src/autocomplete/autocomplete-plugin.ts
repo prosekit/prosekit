@@ -12,8 +12,6 @@ import {
   DecorationSet,
 } from '@prosekit/pm/view'
 
-import { isNotNullish } from '../../../core/src/utils/type-assertion'
-
 import {
   getPluginState,
   getTrMeta,

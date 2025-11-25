@@ -23,8 +23,8 @@ export default function EditorMain(props: {
       defineBasicExtension(),
       defineCommitRecorder(props.commitRecorder),
     )
-    return createEditor({ extension, defaultContent: props.defaultContent })
-  }, [props.commitRecorder, props.defaultContent])
+    return createEditor({ extension, defaultContent: props.initialContent })
+  }, [props.commitRecorder, props.initialContent])
 
   return (
     <ProseKit editor={editor}>

@@ -26,7 +26,7 @@ let extension = $derived(union(
   defineBasicExtension(),
   defineCommitRecorder(props.commitRecorder),
 ))
-let editor = $derived(createEditor({ extension, defaultContent: props.defaultContent }))
+let editor = $derived(createEditor({ extension, defaultContent: props.initialContent }))
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

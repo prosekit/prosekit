@@ -17,7 +17,7 @@ interface EditorProps {
 }
 
 export default function Editor(props: EditorProps): JSX.Element {
-  const defaultContent = props.defaultContent ?? sampleContent
+  const defaultContent = props.initialContent ?? sampleContent
   const extension = defineExtension()
   const editor = createEditor({ extension, defaultContent })
 

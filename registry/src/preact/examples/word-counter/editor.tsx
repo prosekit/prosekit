@@ -18,7 +18,7 @@ interface EditorProps {
 }
 
 export default function Editor(props: EditorProps) {
-  const defaultContent = props.defaultContent ?? sampleContent
+  const defaultContent = props.initialContent ?? sampleContent
   const editor = useMemo(() => {
     const extension = defineExtension()
     return createEditor({

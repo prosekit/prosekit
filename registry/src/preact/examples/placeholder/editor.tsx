@@ -24,8 +24,8 @@ export default function Editor(props: {
 }) {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension, defaultContent: props.defaultContent })
-  }, [props.defaultContent])
+    return createEditor({ extension, defaultContent: props.initialContent })
+  }, [props.initialContent])
 
   const handleDocChange = useCallback(
     (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc)),

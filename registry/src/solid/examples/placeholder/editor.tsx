@@ -20,7 +20,7 @@ export default function Editor(props: {
   onDocUpdate?: (doc: NodeJSON) => void
 }): JSX.Element {
   const extension = defineExtension()
-  const editor = createEditor({ extension, defaultContent: props.defaultContent })
+  const editor = createEditor({ extension, defaultContent: props.initialContent })
 
   const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
   useDocChange(handleDocChange, { editor })

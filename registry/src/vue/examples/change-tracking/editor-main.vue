@@ -28,7 +28,7 @@ const editor = createEditor({
     defineBasicExtension(),
     defineCommitRecorder(props.commitRecorder),
   ),
-  defaultContent: props.defaultContent,
+  defaultContent: props.initialContent,
 })
 
 const editorRef = ref<HTMLDivElement | null>(null)

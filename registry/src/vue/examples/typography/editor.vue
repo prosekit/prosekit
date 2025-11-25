@@ -20,7 +20,7 @@ const props = defineProps<{
 }>()
 
 const extension = defineBasicExtension()
-const defaultContent = props.defaultContent ?? sampleContent
+const defaultContent = props.initialContent ?? sampleContent
 const editor = createEditor({ extension, defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)

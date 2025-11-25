@@ -1,11 +1,5 @@
-export async function formatHTML(html: string) {
-  const prettier = await import('prettier')
-  const prettierHTML = await import('prettier/plugins/html')
+import diffableHtml from 'diffable-html'
 
-  return await prettier.format(html, {
-    parser: 'html',
-    htmlWhitespaceSensitivity: 'ignore',
-    plugins: [prettierHTML],
-    printWidth: 180,
-  })
+export function formatHTML(html: string): string {
+  return diffableHtml(html)
 }

@@ -1,8 +1,11 @@
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
+import registry from 'prosekit-registry/registry.gen.json'
 
-import { exampleMeta } from '../example.meta'
-
-export const stories = Array.from(new Set(exampleMeta.examples.map((example) => example.story)))
+export const stories = Array.from(
+  new Set(
+    registry.items.map((item) => item.meta.story).filter(story => !!story),
+  ),
+).sort()
 
 type Sidebar = StarlightUserConfig['sidebar']
 

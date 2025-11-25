@@ -77,7 +77,16 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
     decorations: (state) => {
       const { selection, doc } = state
 
-      if (selection.empty || !getFocusState(state)) {
+      if (
+        selection.empty
+        || !getFocusState(state)
+        // When `selection.visible` is false, it indicates that the selection is
+        // rendered by the editor and it's not a native browser selection. An
+        // example of this is `NodeSelection`. In this situation, since the
+        // editor already shows the selection, we don't need to display a
+        // virtual selection.
+        || !selection.visible
+      ) {
         return null
       }
 

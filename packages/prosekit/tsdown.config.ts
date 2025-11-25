@@ -1,7 +1,10 @@
 import { config } from '@prosekit/config-tsdown'
-import { defineConfig } from 'tsdown'
+import {
+  defineConfig,
+  type UserConfig,
+} from 'tsdown'
 
-const configObject = config()
+const configObject = config({ cwd: import.meta.dirname })
 
 const entries = configObject.entry
 
@@ -14,5 +17,24 @@ if (typeof entries !== 'object') {
 const entriesWithoutCSS = Object.fromEntries(
   Object.entries(entries).filter(([, value]) => !value.endsWith('.css')),
 )
+const entriesWithCSS = Object.fromEntries(
+  Object.entries(entries).filter(([, value]) => value.endsWith('.css')),
+)
 
-export default defineConfig({ ...configObject, entry: entriesWithoutCSS })
+const configObjectWithoutCSS: UserConfig = {
+  ...configObject,
+  entry: entriesWithoutCSS,
+  hooks: {
+    'build:done': async () => {
+      const esbuild = await import('esbuild')
+      await esbuild.build({
+        entryPoints: entriesWithCSS,
+        bundle: true,
+        outdir: 'dist',
+        target: 'chrome100',
+      })
+    },
+  },
+}
+
+export default defineConfig(configObjectWithoutCSS)

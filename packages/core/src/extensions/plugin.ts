@@ -15,6 +15,7 @@ import {
   type StatePayload,
 } from '../facets/state'
 import type { PlainExtension } from '../types/extension'
+import { toReversed } from '../utils/array'
 
 /**
  * Adds a ProseMirror plugin to the editor.
@@ -30,18 +31,7 @@ export function definePlugin(
     | Plugin[]
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
 ): PlainExtension {
-  if (
-    plugin instanceof Plugin
-    || (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin))
-  ) {
-    return definePluginPayload(() => plugin)
-  }
-
-  if (typeof plugin === 'function') {
-    return definePluginPayload(plugin)
-  }
-
-  throw new TypeError('Invalid plugin')
+  return definePluginPayload(plugin)
 }
 
 function definePluginPayload(payload: PluginPayload): PlainExtension {
@@ -62,6 +52,7 @@ export type PluginPayload =
 export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
   reducer: (payloads): StatePayload => {
     return ({ schema }) => {
+      // An array of plugins from lower to higher priority.
       const plugins: ProseMirrorPlugin[] = []
 
       for (const payload of payloads) {
@@ -79,12 +70,11 @@ export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
         }
       }
 
-      // In ProseMirror, the plugins at the beginning have a higher priority.
-      // However, in ProseKit, the extensions at the end have a higher priority
-      // because we want to easily override the default behaviors by appending
-      // new extensions. Therefore, we need to reverse plugins here.
-      plugins.reverse()
-      return { plugins }
+      // An array of plugins from higher to lower priority. This matches the
+      // order of plugins required by ProseMirror.
+      const reversedPlugins = toReversed(plugins)
+
+      return { plugins: reversedPlugins }
     }
   },
   parent: stateFacet,

@@ -29,10 +29,6 @@ import {
   type DocExtension,
 } from '@prosekit/extensions/doc'
 import {
-  defineDropCursor,
-  type DropCursorExtension,
-} from '@prosekit/extensions/drop-cursor'
-import {
   defineGapCursor,
   type GapCursorExtension,
 } from '@prosekit/extensions/gap-cursor'
@@ -121,7 +117,6 @@ export type BasicExtension = Union<
     BaseKeymapExtension,
     BaseCommandsExtension,
     HistoryExtension,
-    DropCursorExtension,
     GapCursorExtension,
     VirtualSelectionExtension,
     ModClickPreventionExtension,
@@ -154,7 +149,6 @@ export type BasicExtension = Union<
  * - {@link defineBaseKeymap}
  * - {@link defineBaseCommands}
  * - {@link defineHistory}
- * - {@link defineDropCursor}
  * - {@link defineGapCursor}
  * - {@link defineVirtualSelection}
  * - {@link defineModClickPrevention}
@@ -186,7 +180,6 @@ export function defineBasicExtension(): BasicExtension {
     defineBaseKeymap(),
     defineBaseCommands(),
     defineHistory(),
-    defineDropCursor(),
     defineGapCursor(),
     defineVirtualSelection(),
     defineModClickPrevention(),

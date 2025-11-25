@@ -86,8 +86,8 @@ export function createComponent<
       for (const [name, value] of Object.entries(properties)) {
         if (value !== undefined) {
           // @ts-expect-error: we know that name is a valid property name
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react-compiler/react-compiler
-          el[name] = value as unknown as any
+          // eslint-disable-next-line react-hooks/immutability
+          el[name] = value
         }
       }
     }, [el, ...propNames.map((name) => properties[name])])
@@ -124,7 +124,12 @@ export function createComponent<
 
     const mergedRef = useMemo(() => mergeRefs([ref, setEl]), [ref])
 
-    return createElement(tagName, { ...attributes, ref: mergedRef })
+    return createElement(tagName, {
+      ...attributes,
+      // Suppress hydration warnings for web components as the attributes are set after the component is mounted.
+      suppressHydrationWarning: true,
+      ref: mergedRef,
+    })
   })
 
   Component.displayName = displayName

@@ -13,7 +13,7 @@ import { usePriorityExtension } from './use-priority-extension'
 export interface UseExtensionOptions {
   /**
    * The editor to add the extension to. If not provided, it will use the
-   * editor from the nearest `ProseKit` component.
+   * editor from the nearest `<ProseKit>` component.
    */
   editor?: MaybeAccessor<Editor>
 

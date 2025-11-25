@@ -1,1 +1,0 @@
-../../../shared/svelte/use-readonly.ts

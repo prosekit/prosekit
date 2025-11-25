@@ -47,6 +47,21 @@ export interface MatchHandlerOptions {
 export type MatchHandler = (options: MatchHandlerOptions) => void
 
 /**
+ * Options for the {@link CanMatchPredicate} callback.
+ */
+export interface CanMatchOptions {
+  /**
+   * The editor state.
+   */
+  state: EditorState
+}
+
+/**
+ * A predicate to determine if the rule can be applied in the current editor state.
+ */
+export type CanMatchPredicate = (options: CanMatchOptions) => boolean
+
+/**
  * Options for creating an {@link AutocompleteRule}
  */
 export interface AutocompleteRuleOptions {
@@ -54,7 +69,7 @@ export interface AutocompleteRuleOptions {
    * The regular expression to match against the text before the cursor. The
    * last match before the cursor is used.
    *
-   * For a slash menu, you might use `/\/(|\S.*)$/u`.
+   * For a slash menu, you might use `/(?<!\S)\/(|\S.*)$/u`.
    * For a mention, you might use `/@\w*$/`
    */
   regex: RegExp
@@ -75,7 +90,7 @@ export interface AutocompleteRuleOptions {
    * state. If not provided, it defaults to only allowing matches in empty
    * selections that are not inside a code block or code mark.
    */
-  canMatch?: (options: { state: EditorState }) => boolean
+  canMatch?: CanMatchPredicate
 }
 
 /**

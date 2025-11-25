@@ -1,0 +1,34 @@
+import {
+  expect,
+  it,
+} from 'vitest'
+import {
+  page,
+  userEvent,
+} from 'vitest/browser'
+
+import {
+  emptyEditor,
+  testStory,
+  testStoryConsistency,
+  waitForEditor,
+} from './helpers'
+
+testStoryConsistency('emoji-rules')
+
+testStory('emoji-rules', () => {
+  it('convert :apple: and :banana: on Enter', async () => {
+    const editor = await waitForEditor()
+    await emptyEditor()
+
+    await editor.click()
+    await userEvent.type(editor, ':apple:')
+    await userEvent.keyboard('{Enter}')
+    await expect.element(page.getByText('🍎')).toBeVisible()
+
+    await userEvent.keyboard('{Enter}')
+    await userEvent.type(editor, ':banana:')
+    await userEvent.keyboard('{Enter}')
+    await expect.element(page.getByText('🍌')).toBeVisible()
+  })
+})

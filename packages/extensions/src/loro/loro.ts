@@ -7,6 +7,8 @@ import {
 } from '@prosekit/core'
 import type {
   CursorAwareness,
+  CursorEphemeralStore,
+  CursorPluginOptions,
   LoroDocType,
   LoroSyncPluginProps,
   LoroUndoPluginProps,
@@ -16,10 +18,7 @@ import {
   defineLoroCommands,
   type LoroCommandsExtension,
 } from './loro-commands'
-import {
-  defineLoroCursorPlugin,
-  type LoroCursorOptions,
-} from './loro-cursor-plugin'
+import { defineLoroCursorPlugin } from './loro-cursor-plugin'
 import { defineLoroKeymap } from './loro-keymap'
 import { defineLoroSyncPlugin } from './loro-sync-plugin'
 import { defineLoroUndoPlugin } from './loro-undo-plugin'
@@ -31,9 +30,14 @@ export interface LoroOptions {
   doc: LoroDocType
 
   /**
-   * The Awareness instance.
+   * The (legacy) Awareness instance. One of `awareness` or `presence` must be provided.
    */
-  awareness: CursorAwareness
+  awareness?: CursorAwareness
+
+  /**
+   * The CursorEphemeralStore instance. One of `awareness` or `presence` must be provided.
+   */
+  presence?: CursorEphemeralStore
 
   /**
    * Extra options for `LoroSyncPlugin`.
@@ -46,9 +50,9 @@ export interface LoroOptions {
   undo?: Omit<LoroUndoPluginProps, 'doc'>
 
   /**
-   * Extra options for `LoroCursorPlugin`.
+   * Extra options for `LoroCursorPlugin` or `LoroEphemeralCursorPlugin`.
    */
-  cursor?: Omit<LoroCursorOptions, 'awareness'>
+  cursor?: CursorPluginOptions
 }
 
 /**
@@ -60,27 +64,16 @@ export type LoroExtension = Union<[LoroCommandsExtension, PlainExtension]>
  * @public
  */
 export function defineLoro(options: LoroOptions): LoroExtension {
-  const { doc, awareness, sync, undo, cursor } = options
+  const { doc, awareness, presence, sync, undo, cursor } = options
 
   return withPriority(
     union([
       defineLoroKeymap(),
       defineLoroCommands(),
-      defineLoroCursorPlugin({ ...cursor, awareness }),
+      defineLoroCursorPlugin({ ...cursor, awareness, presence }),
       defineLoroUndoPlugin({ ...undo, doc }),
       defineLoroSyncPlugin({ ...sync, doc }),
     ]),
     Priority.high,
   )
-}
-
-export {
-  defineLoroCommands,
-  defineLoroCursorPlugin,
-  defineLoroKeymap,
-  defineLoroSyncPlugin,
-  defineLoroUndoPlugin,
-  type LoroCursorOptions,
-  type LoroSyncPluginProps,
-  type LoroUndoPluginProps,
 }

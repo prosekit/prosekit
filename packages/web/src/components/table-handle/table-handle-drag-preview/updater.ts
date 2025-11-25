@@ -1,0 +1,101 @@
+import {
+  createComputed,
+  useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+} from '@aria-ui/core'
+import {
+  computePosition,
+  type ReferenceElement,
+} from '@floating-ui/dom'
+import type { Editor } from '@prosekit/core'
+
+import { assignStyles } from '../../../utils/assign-styles'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
+import {
+  tableHandleDndContext,
+  tableHandleRootContext,
+} from '../context'
+import { getDndRelatedDOMs } from '../dnd'
+
+export function useUpdatePreviewPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
+  const dndContext = tableHandleDndContext.consume(host)
+  const rootContext = tableHandleRootContext.consume(host)
+
+  const draggingSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.dragging
+  })
+
+  const clientXSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.x
+  })
+
+  const clientYSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.y
+  })
+
+  useEffect(host, () => {
+    const view = getSafeEditorView(editor.get())
+    if (!view) return
+
+    if (!draggingSignal.get()) return
+
+    const { draggingIndex, direction } = dndContext.peek()
+    const x = clientXSignal.get()
+    const y = clientYSignal.get()
+
+    const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
+    if (!relatedDOMs) return
+    const { cell } = relatedDOMs
+
+    let cancelled = false
+
+    void computePosition(
+      getVirtualElement(cell, x, y),
+      host,
+      { placement: direction === 'row' ? 'right' : 'bottom' },
+    ).then(({ x, y }) => {
+      if (cancelled) return
+
+      if (direction === 'row') {
+        assignStyles(host, {
+          top: `${y}px`,
+        })
+        return
+      }
+
+      if (direction === 'col') {
+        assignStyles(host, {
+          left: `${x}px`,
+        })
+        return
+      }
+    })
+
+    return () => {
+      cancelled = true
+    }
+  })
+}
+
+function getVirtualElement(cell: HTMLTableCellElement, x: number, y: number): ReferenceElement {
+  return {
+    contextElement: cell,
+    getBoundingClientRect: () => {
+      const rect = cell.getBoundingClientRect()
+      return {
+        width: rect.width,
+        height: rect.height,
+        right: x + rect.width / 2,
+        bottom: y + rect.height / 2,
+        top: y - rect.height / 2,
+        left: x - rect.width / 2,
+        x: x - rect.width / 2,
+        y: y - rect.height / 2,
+      }
+    },
+  }
+}

@@ -40,9 +40,27 @@ export function defineElementHoverHandler(handler: ElementHoverHandler): PlainEx
     handler(reference, { node, pos })
   }
 
+  let lastX = -1
+  let lastY = -1
+  let lastTime = -1
+
   const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
     const { x, y } = event
-    const block = findBlockByCoordinate(view, x, y)
+
+    // Simple performance optimization. If the pointer is not moving, we don't
+    // want to recalculate the block handle position within a short period of
+    // time window.
+    if (lastX === x && lastY === y) {
+      const now = Date.now()
+      if (now - lastTime < 100) {
+        return
+      }
+      lastTime = now
+    }
+    lastX = x
+    lastY = y
+
+    const block = findBlockByCoords(view, x, y)
     if (!block) {
       handler(null, null)
       return
@@ -71,14 +89,14 @@ export function defineElementHoverHandler(handler: ElementHoverHandler): PlainEx
 
   return union(
     defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
+    defineDOMEventHandler('pointerenter', handlePointerEvent),
     defineDOMEventHandler('pointerout', handlePointerEvent),
     defineDOMEventHandler('keypress', () => handler(null, null)),
   )
 }
 
-function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: ProseMirrorNode; pos: number } | undefined {
-  const dom = view.dom
-  const rect = getClientRect(dom)
+function findBlockByCoords(view: EditorView, x: number, y: number): { node: ProseMirrorNode; pos: number } | undefined {
+  const rect = getClientRect(view.dom)
   if (!isWithinRect(rect, x, y)) {
     return
   }
@@ -107,7 +125,7 @@ function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: 
       const childDOM = view.nodeDOM(positions[i])
       const childRect = getNodeRect(childDOM)
       if (!childRect) {
-        console.warn('[prosekit] Unable to get rect at position', positions[i])
+        console.warn(`[prosekit] Unable to get rect at position: ${positions[i]}`)
         return
       }
       if (childRect.top > y) {
@@ -139,7 +157,7 @@ function isWithinRect(rect: Rect, x: number, y: number) {
   return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom
 }
 
-export interface Rect {
+interface Rect {
   top: number
   right: number
   bottom: number

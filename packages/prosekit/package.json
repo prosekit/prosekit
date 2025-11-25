@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.13.5",
+  "version": "0.16.3",
   "private": false,
   "description": "ProseKit: A toolkit for building rich text editors.",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/prosekit"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -42,6 +42,7 @@
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+    "./extensions/drop-indicator": "./src/extensions/drop-indicator.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
@@ -61,6 +62,7 @@
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
     "./extensions/paragraph": "./src/extensions/paragraph.gen.ts",
+    "./extensions/paste-rule": "./src/extensions/paste-rule.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
@@ -79,6 +81,7 @@
     "./lit": "./src/lit.gen.ts",
     "./lit/autocomplete": "./src/lit/autocomplete.gen.ts",
     "./lit/block-handle": "./src/lit/block-handle.gen.ts",
+    "./lit/drop-indicator": "./src/lit/drop-indicator.gen.ts",
     "./lit/inline-popover": "./src/lit/inline-popover.gen.ts",
     "./lit/popover": "./src/lit/popover.gen.ts",
     "./lit/resizable": "./src/lit/resizable.gen.ts",
@@ -97,6 +100,7 @@
     "./preact": "./src/preact.gen.ts",
     "./preact/autocomplete": "./src/preact/autocomplete.gen.ts",
     "./preact/block-handle": "./src/preact/block-handle.gen.ts",
+    "./preact/drop-indicator": "./src/preact/drop-indicator.gen.ts",
     "./preact/inline-popover": "./src/preact/inline-popover.gen.ts",
     "./preact/popover": "./src/preact/popover.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
@@ -105,6 +109,7 @@
     "./react": "./src/react.gen.ts",
     "./react/autocomplete": "./src/react/autocomplete.gen.ts",
     "./react/block-handle": "./src/react/block-handle.gen.ts",
+    "./react/drop-indicator": "./src/react/drop-indicator.gen.ts",
     "./react/inline-popover": "./src/react/inline-popover.gen.ts",
     "./react/popover": "./src/react/popover.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
@@ -113,6 +118,7 @@
     "./solid": "./src/solid.gen.ts",
     "./solid/autocomplete": "./src/solid/autocomplete.gen.ts",
     "./solid/block-handle": "./src/solid/block-handle.gen.ts",
+    "./solid/drop-indicator": "./src/solid/drop-indicator.gen.ts",
     "./solid/inline-popover": "./src/solid/inline-popover.gen.ts",
     "./solid/popover": "./src/solid/popover.gen.ts",
     "./solid/resizable": "./src/solid/resizable.gen.ts",
@@ -121,6 +127,7 @@
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete": "./src/svelte/autocomplete.gen.ts",
     "./svelte/block-handle": "./src/svelte/block-handle.gen.ts",
+    "./svelte/drop-indicator": "./src/svelte/drop-indicator.gen.ts",
     "./svelte/inline-popover": "./src/svelte/inline-popover.gen.ts",
     "./svelte/popover": "./src/svelte/popover.gen.ts",
     "./svelte/resizable": "./src/svelte/resizable.gen.ts",
@@ -129,6 +136,7 @@
     "./vue": "./src/vue.gen.ts",
     "./vue/autocomplete": "./src/vue/autocomplete.gen.ts",
     "./vue/block-handle": "./src/vue/block-handle.gen.ts",
+    "./vue/drop-indicator": "./src/vue/drop-indicator.gen.ts",
     "./vue/inline-popover": "./src/vue/inline-popover.gen.ts",
     "./vue/popover": "./src/vue/popover.gen.ts",
     "./vue/resizable": "./src/vue/resizable.gen.ts",
@@ -137,6 +145,7 @@
     "./web": "./src/web.ts",
     "./web/autocomplete": "./src/web/autocomplete.gen.ts",
     "./web/block-handle": "./src/web/block-handle.gen.ts",
+    "./web/drop-indicator": "./src/web/drop-indicator.gen.ts",
     "./web/inline-popover": "./src/web/inline-popover.gen.ts",
     "./web/popover": "./src/web/popover.gen.ts",
     "./web/resizable": "./src/web/resizable.gen.ts",
@@ -144,11 +153,12 @@
     "./web/tooltip": "./src/web/tooltip.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsdown": "tsdown && tsup",
+    "build:tsdown": "tsdown",
     "build:typedoc": "typedoc"
   },
   "dependencies": {
@@ -165,8 +175,8 @@
     "@prosekit/web": "workspace:*"
   },
   "peerDependencies": {
-    "loro-crdt": ">= 0.16.7",
-    "loro-prosemirror": ">= 0.0.7",
+    "loro-crdt": ">= 1.10.0",
+    "loro-prosemirror": ">= 0.4.1",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
@@ -210,27 +220,27 @@
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
-    "@prosekit/config-vitest": "workspace:*",
-    "@types/react": "^19.1.7",
-    "@types/react-dom": "^19.1.6",
-    "loro-crdt": "^1.5.8",
-    "loro-prosemirror": "^0.2.3",
-    "postcss": "^8.5.4",
-    "postcss-import": "^16.1.0",
-    "preact": "^10.26.8",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "solid-js": "^1.9.7",
-    "svelte": "^5.33.18",
-    "tsdown": "^0.12.7",
-    "tsup": "^8.5.0",
-    "typedoc": "^0.27.9",
-    "typedoc-plugin-external-package-links": "^0.1.0",
-    "typedoc-plugin-md": "^0.6.0",
-    "typedoc-plugin-mdn-links": "^5.0.2",
-    "typescript": "~5.8.3",
-    "vue": "^3.5.16",
-    "y-prosemirror": "^1.3.5",
+    "@prosekit/typedoc-plugin": "workspace:*",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "esbuild": "^0.27.0",
+    "loro-crdt": "^1.10.0",
+    "loro-prosemirror": "^0.4.1",
+    "preact": "^10.27.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "solid-js": "^1.9.10",
+    "svelte": "^5.44.0",
+    "tsdown": "^0.16.7",
+    "typedoc": "^0.28.14",
+    "typedoc-plugin-external-package-links": "^0.2.0",
+    "typedoc-plugin-frontmatter": "^1.3.1",
+    "typedoc-plugin-markdown": "^4.9.0",
+    "typedoc-plugin-md": "^0.7.1",
+    "typedoc-plugin-mdn-links": "^5.0.10",
+    "typescript": "~5.9.3",
+    "vue": "^3.5.25",
+    "y-prosemirror": "^1.3.7",
     "yjs": "^13.6.27"
   },
   "publishConfig": {
@@ -295,6 +305,10 @@
       "./extensions/drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
+      },
+      "./extensions/drop-indicator": {
+        "types": "./dist/prosekit-extensions-drop-indicator.d.ts",
+        "default": "./dist/prosekit-extensions-drop-indicator.js"
       },
       "./extensions/enter-rule": {
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
@@ -369,6 +383,10 @@
         "types": "./dist/prosekit-extensions-paragraph.d.ts",
         "default": "./dist/prosekit-extensions-paragraph.js"
       },
+      "./extensions/paste-rule": {
+        "types": "./dist/prosekit-extensions-paste-rule.d.ts",
+        "default": "./dist/prosekit-extensions-paste-rule.js"
+      },
       "./extensions/placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
         "default": "./dist/prosekit-extensions-placeholder.js"
@@ -435,6 +453,10 @@
       "./lit/block-handle": {
         "types": "./dist/prosekit-lit-block-handle.d.ts",
         "default": "./dist/prosekit-lit-block-handle.js"
+      },
+      "./lit/drop-indicator": {
+        "types": "./dist/prosekit-lit-drop-indicator.d.ts",
+        "default": "./dist/prosekit-lit-drop-indicator.js"
       },
       "./lit/inline-popover": {
         "types": "./dist/prosekit-lit-inline-popover.d.ts",
@@ -507,6 +529,10 @@
         "types": "./dist/prosekit-preact-block-handle.d.ts",
         "default": "./dist/prosekit-preact-block-handle.js"
       },
+      "./preact/drop-indicator": {
+        "types": "./dist/prosekit-preact-drop-indicator.d.ts",
+        "default": "./dist/prosekit-preact-drop-indicator.js"
+      },
       "./preact/inline-popover": {
         "types": "./dist/prosekit-preact-inline-popover.d.ts",
         "default": "./dist/prosekit-preact-inline-popover.js"
@@ -538,6 +564,10 @@
       "./react/block-handle": {
         "types": "./dist/prosekit-react-block-handle.d.ts",
         "default": "./dist/prosekit-react-block-handle.js"
+      },
+      "./react/drop-indicator": {
+        "types": "./dist/prosekit-react-drop-indicator.d.ts",
+        "default": "./dist/prosekit-react-drop-indicator.js"
       },
       "./react/inline-popover": {
         "types": "./dist/prosekit-react-inline-popover.d.ts",
@@ -571,6 +601,10 @@
         "types": "./dist/prosekit-solid-block-handle.d.ts",
         "default": "./dist/prosekit-solid-block-handle.js"
       },
+      "./solid/drop-indicator": {
+        "types": "./dist/prosekit-solid-drop-indicator.d.ts",
+        "default": "./dist/prosekit-solid-drop-indicator.js"
+      },
       "./solid/inline-popover": {
         "types": "./dist/prosekit-solid-inline-popover.d.ts",
         "default": "./dist/prosekit-solid-inline-popover.js"
@@ -602,6 +636,10 @@
       "./svelte/block-handle": {
         "types": "./dist/prosekit-svelte-block-handle.d.ts",
         "default": "./dist/prosekit-svelte-block-handle.js"
+      },
+      "./svelte/drop-indicator": {
+        "types": "./dist/prosekit-svelte-drop-indicator.d.ts",
+        "default": "./dist/prosekit-svelte-drop-indicator.js"
       },
       "./svelte/inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
@@ -635,6 +673,10 @@
         "types": "./dist/prosekit-vue-block-handle.d.ts",
         "default": "./dist/prosekit-vue-block-handle.js"
       },
+      "./vue/drop-indicator": {
+        "types": "./dist/prosekit-vue-drop-indicator.d.ts",
+        "default": "./dist/prosekit-vue-drop-indicator.js"
+      },
       "./vue/inline-popover": {
         "types": "./dist/prosekit-vue-inline-popover.d.ts",
         "default": "./dist/prosekit-vue-inline-popover.js"
@@ -666,6 +708,10 @@
       "./web/block-handle": {
         "types": "./dist/prosekit-web-block-handle.d.ts",
         "default": "./dist/prosekit-web-block-handle.js"
+      },
+      "./web/drop-indicator": {
+        "types": "./dist/prosekit-web-drop-indicator.d.ts",
+        "default": "./dist/prosekit-web-drop-indicator.js"
       },
       "./web/inline-popover": {
         "types": "./dist/prosekit-web-inline-popover.d.ts",
@@ -733,6 +779,9 @@
         "extensions/drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
+        "extensions/drop-indicator": [
+          "./dist/prosekit-extensions-drop-indicator.d.ts"
+        ],
         "extensions/enter-rule": [
           "./dist/prosekit-extensions-enter-rule.d.ts"
         ],
@@ -781,6 +830,9 @@
         "extensions/paragraph": [
           "./dist/prosekit-extensions-paragraph.d.ts"
         ],
+        "extensions/paste-rule": [
+          "./dist/prosekit-extensions-paste-rule.d.ts"
+        ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
         ],
@@ -819,6 +871,9 @@
         ],
         "lit/block-handle": [
           "./dist/prosekit-lit-block-handle.d.ts"
+        ],
+        "lit/drop-indicator": [
+          "./dist/prosekit-lit-drop-indicator.d.ts"
         ],
         "lit/inline-popover": [
           "./dist/prosekit-lit-inline-popover.d.ts"
@@ -871,6 +926,9 @@
         "preact/block-handle": [
           "./dist/prosekit-preact-block-handle.d.ts"
         ],
+        "preact/drop-indicator": [
+          "./dist/prosekit-preact-drop-indicator.d.ts"
+        ],
         "preact/inline-popover": [
           "./dist/prosekit-preact-inline-popover.d.ts"
         ],
@@ -894,6 +952,9 @@
         ],
         "react/block-handle": [
           "./dist/prosekit-react-block-handle.d.ts"
+        ],
+        "react/drop-indicator": [
+          "./dist/prosekit-react-drop-indicator.d.ts"
         ],
         "react/inline-popover": [
           "./dist/prosekit-react-inline-popover.d.ts"
@@ -919,6 +980,9 @@
         "solid/block-handle": [
           "./dist/prosekit-solid-block-handle.d.ts"
         ],
+        "solid/drop-indicator": [
+          "./dist/prosekit-solid-drop-indicator.d.ts"
+        ],
         "solid/inline-popover": [
           "./dist/prosekit-solid-inline-popover.d.ts"
         ],
@@ -942,6 +1006,9 @@
         ],
         "svelte/block-handle": [
           "./dist/prosekit-svelte-block-handle.d.ts"
+        ],
+        "svelte/drop-indicator": [
+          "./dist/prosekit-svelte-drop-indicator.d.ts"
         ],
         "svelte/inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"
@@ -967,6 +1034,9 @@
         "vue/block-handle": [
           "./dist/prosekit-vue-block-handle.d.ts"
         ],
+        "vue/drop-indicator": [
+          "./dist/prosekit-vue-drop-indicator.d.ts"
+        ],
         "vue/inline-popover": [
           "./dist/prosekit-vue-inline-popover.d.ts"
         ],
@@ -991,6 +1061,9 @@
         "web/block-handle": [
           "./dist/prosekit-web-block-handle.d.ts"
         ],
+        "web/drop-indicator": [
+          "./dist/prosekit-web-drop-indicator.d.ts"
+        ],
         "web/inline-popover": [
           "./dist/prosekit-web-inline-popover.d.ts"
         ],
@@ -1012,6 +1085,16 @@
   "dev": {
     "entry": {
       "prosekit": "./src/index.ts",
+      "prosekit-pm": "./src/pm.ts",
+      "prosekit-pm-commands": "./src/pm/commands.ts",
+      "prosekit-pm-history": "./src/pm/history.ts",
+      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
+      "prosekit-pm-keymap": "./src/pm/keymap.ts",
+      "prosekit-pm-model": "./src/pm/model.ts",
+      "prosekit-pm-state": "./src/pm/state.ts",
+      "prosekit-pm-transform": "./src/pm/transform.ts",
+      "prosekit-pm-view": "./src/pm/view.ts",
+      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-basic": "./src/basic.gen.ts",
       "basic/style": "./src/basic/style.css",
       "basic/typography": "./src/basic/typography.css",
@@ -1027,6 +1110,7 @@
       "extensions/commit/style": "./src/extensions/commit/style.css",
       "prosekit-extensions-doc": "./src/extensions/doc.gen.ts",
       "prosekit-extensions-drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+      "prosekit-extensions-drop-indicator": "./src/extensions/drop-indicator.gen.ts",
       "prosekit-extensions-enter-rule": "./src/extensions/enter-rule.gen.ts",
       "prosekit-extensions-file": "./src/extensions/file.gen.ts",
       "prosekit-extensions-gap-cursor": "./src/extensions/gap-cursor.gen.ts",
@@ -1046,6 +1130,7 @@
       "prosekit-extensions-mention": "./src/extensions/mention.gen.ts",
       "prosekit-extensions-mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
       "prosekit-extensions-paragraph": "./src/extensions/paragraph.gen.ts",
+      "prosekit-extensions-paste-rule": "./src/extensions/paste-rule.gen.ts",
       "prosekit-extensions-placeholder": "./src/extensions/placeholder.gen.ts",
       "extensions/placeholder/style": "./src/extensions/placeholder/style.css",
       "prosekit-extensions-readonly": "./src/extensions/readonly.gen.ts",
@@ -1064,24 +1149,16 @@
       "prosekit-lit": "./src/lit.gen.ts",
       "prosekit-lit-autocomplete": "./src/lit/autocomplete.gen.ts",
       "prosekit-lit-block-handle": "./src/lit/block-handle.gen.ts",
+      "prosekit-lit-drop-indicator": "./src/lit/drop-indicator.gen.ts",
       "prosekit-lit-inline-popover": "./src/lit/inline-popover.gen.ts",
       "prosekit-lit-popover": "./src/lit/popover.gen.ts",
       "prosekit-lit-resizable": "./src/lit/resizable.gen.ts",
       "prosekit-lit-table-handle": "./src/lit/table-handle.gen.ts",
       "prosekit-lit-tooltip": "./src/lit/tooltip.gen.ts",
-      "prosekit-pm": "./src/pm.ts",
-      "prosekit-pm-commands": "./src/pm/commands.ts",
-      "prosekit-pm-history": "./src/pm/history.ts",
-      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
-      "prosekit-pm-keymap": "./src/pm/keymap.ts",
-      "prosekit-pm-model": "./src/pm/model.ts",
-      "prosekit-pm-state": "./src/pm/state.ts",
-      "prosekit-pm-transform": "./src/pm/transform.ts",
-      "prosekit-pm-view": "./src/pm/view.ts",
-      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-preact": "./src/preact.gen.ts",
       "prosekit-preact-autocomplete": "./src/preact/autocomplete.gen.ts",
       "prosekit-preact-block-handle": "./src/preact/block-handle.gen.ts",
+      "prosekit-preact-drop-indicator": "./src/preact/drop-indicator.gen.ts",
       "prosekit-preact-inline-popover": "./src/preact/inline-popover.gen.ts",
       "prosekit-preact-popover": "./src/preact/popover.gen.ts",
       "prosekit-preact-resizable": "./src/preact/resizable.gen.ts",
@@ -1090,6 +1167,7 @@
       "prosekit-react": "./src/react.gen.ts",
       "prosekit-react-autocomplete": "./src/react/autocomplete.gen.ts",
       "prosekit-react-block-handle": "./src/react/block-handle.gen.ts",
+      "prosekit-react-drop-indicator": "./src/react/drop-indicator.gen.ts",
       "prosekit-react-inline-popover": "./src/react/inline-popover.gen.ts",
       "prosekit-react-popover": "./src/react/popover.gen.ts",
       "prosekit-react-resizable": "./src/react/resizable.gen.ts",
@@ -1098,6 +1176,7 @@
       "prosekit-solid": "./src/solid.gen.ts",
       "prosekit-solid-autocomplete": "./src/solid/autocomplete.gen.ts",
       "prosekit-solid-block-handle": "./src/solid/block-handle.gen.ts",
+      "prosekit-solid-drop-indicator": "./src/solid/drop-indicator.gen.ts",
       "prosekit-solid-inline-popover": "./src/solid/inline-popover.gen.ts",
       "prosekit-solid-popover": "./src/solid/popover.gen.ts",
       "prosekit-solid-resizable": "./src/solid/resizable.gen.ts",
@@ -1106,6 +1185,7 @@
       "prosekit-svelte": "./src/svelte.gen.ts",
       "prosekit-svelte-autocomplete": "./src/svelte/autocomplete.gen.ts",
       "prosekit-svelte-block-handle": "./src/svelte/block-handle.gen.ts",
+      "prosekit-svelte-drop-indicator": "./src/svelte/drop-indicator.gen.ts",
       "prosekit-svelte-inline-popover": "./src/svelte/inline-popover.gen.ts",
       "prosekit-svelte-popover": "./src/svelte/popover.gen.ts",
       "prosekit-svelte-resizable": "./src/svelte/resizable.gen.ts",
@@ -1114,6 +1194,7 @@
       "prosekit-vue": "./src/vue.gen.ts",
       "prosekit-vue-autocomplete": "./src/vue/autocomplete.gen.ts",
       "prosekit-vue-block-handle": "./src/vue/block-handle.gen.ts",
+      "prosekit-vue-drop-indicator": "./src/vue/drop-indicator.gen.ts",
       "prosekit-vue-inline-popover": "./src/vue/inline-popover.gen.ts",
       "prosekit-vue-popover": "./src/vue/popover.gen.ts",
       "prosekit-vue-resizable": "./src/vue/resizable.gen.ts",
@@ -1122,6 +1203,7 @@
       "prosekit-web": "./src/web.ts",
       "prosekit-web-autocomplete": "./src/web/autocomplete.gen.ts",
       "prosekit-web-block-handle": "./src/web/block-handle.gen.ts",
+      "prosekit-web-drop-indicator": "./src/web/drop-indicator.gen.ts",
       "prosekit-web-inline-popover": "./src/web/inline-popover.gen.ts",
       "prosekit-web-popover": "./src/web/popover.gen.ts",
       "prosekit-web-resizable": "./src/web/resizable.gen.ts",

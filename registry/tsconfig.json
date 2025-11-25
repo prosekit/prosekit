@@ -1,0 +1,40 @@
+{
+  "extends": "@ocavue/tsconfig/es/root.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+  },
+  "references": [
+    {
+      "path": "../packages/config-vitest/tsconfig.json",
+    },
+    {
+      "path": "../packages/dev/tsconfig.json",
+    },
+    {
+      "path": "../packages/prosekit/tsconfig.json",
+    },
+    {
+      "path": "./src/preact/tsconfig.json",
+    },
+    {
+      "path": "./src/react/tsconfig.json",
+    },
+    {
+      "path": "./src/solid/tsconfig.json",
+    },
+    {
+      "path": "./src/svelte/tsconfig.json",
+    },
+    {
+      "path": "./src/vue/tsconfig.json",
+    },
+  ],
+  "include": [
+    "./*.ts",
+    "./*.json",
+    "src/meta/**/*",
+    "src/*.ts",
+    "src/*.json",
+    "test/",
+  ],
+}

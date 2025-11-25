@@ -1,1 +1,0 @@
-../../../shared/preact/use-readonly.ts

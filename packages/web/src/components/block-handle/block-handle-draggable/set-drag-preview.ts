@@ -1,7 +1,8 @@
-import { assignStyles } from '../../../utils/asset-styles'
+import { assignStyles } from '../../../utils/assign-styles'
+import { deepCloneElement } from '../../../utils/clone-element'
+import { getClientRect } from '../../../utils/get-client-rect'
+import { injectStyle } from '../../../utils/inject-style'
 import { maxZIndex } from '../../../utils/max-z-index'
-
-import { deepCloneElement } from './deep-clone-element'
 
 /**
  * Sets a drag preview image for the given element and ensures the preview position
@@ -15,8 +16,11 @@ import { deepCloneElement } from './deep-clone-element'
  * - Removes the container from the document body after the next frame.
  */
 export function setDragPreview(event: DragEvent, element: HTMLElement): void {
-  const rect = element.getBoundingClientRect()
-  const { width, height, x: elementX, y: elementY } = rect
+  const { top, bottom, left, right } = getClientRect(element)
+  const width = right - left
+  const height = bottom - top
+  const elementX = left
+  const elementY = top
 
   const { clientX, clientY } = event
 
@@ -38,8 +42,17 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     // context, so we don't need to do that here.
     // https://github.com/atlassian/pragmatic-drag-and-drop/blob/56276552/packages/core/src/public-utils/element/custom-native-drag-preview/set-custom-native-drag-preview.ts#L60
     position: 'fixed',
-    top: '0',
-    left: '0',
+
+    // The element is positioned off-screen to avoid capturing the content of
+    // the page on Safari when the dragging element has a transparent background
+    // on Safari. See https://github.com/prosekit/prosekit/issues/1153 for more
+    // details.
+    top: '-1000vh',
+    left: '-1000vw',
+
+    // The element should not be interactive.
+    pointerEvents: 'none',
+
     zIndex: maxZIndex,
 
     // Only reliable cross browser technique found to push a drag preview away
@@ -53,14 +66,19 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     height: `${height + borderY}px`,
   })
 
-  const clonedElement = deepCloneElement(element)
-  assignStyles(clonedElement, {
-    outline: 'none',
-    opacity: '0.5',
-  })
+  const [clonedElement, styleText] = deepCloneElement(element, true)
+
+  // A hardcoded opacity.
+  clonedElement.style.setProperty('opacity', '0.5', 'important')
+  // The bounding client rect doesn't include the margin, so we need to remove
+  // the margin too from the cloned element so that it can fit the container.
+  clonedElement.style.setProperty('margin', '0', 'important')
+  // Hide the outline of the cloned element.
+  clonedElement.style.setProperty('outline-color', 'transparent', 'important')
 
   document.body.appendChild(container)
   container.appendChild(clonedElement)
+  injectStyle(container, styleText)
 
   event.dataTransfer?.setDragImage(container, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
 

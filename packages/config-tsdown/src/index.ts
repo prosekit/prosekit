@@ -1,9 +1,9 @@
 import { merge } from 'lodash-es'
 import { readPackageUpSync } from 'read-package-up'
-import type { Options } from 'tsdown'
+import type { UserConfig } from 'tsdown'
 
-export function config(input?: Options): Options {
-  const pkg = readPackageUpSync()
+export function config(input?: UserConfig): UserConfig {
+  const pkg = readPackageUpSync({ cwd: input?.cwd })
   if (!pkg) {
     throw new Error('No package.json found')
   }
@@ -20,16 +20,15 @@ export function config(input?: Options): Options {
     throw new Error(`Unable to find the field "dev.entry" in ${pkg.path}`)
   }
 
-  const output: Options = {
+  const output: UserConfig = {
     entry,
-    sourcemap: false,
+    sourcemap: true,
     clean: false,
-    dts: {
-      isolatedDeclarations: true,
-    },
+    dts: { build: true, incremental: true, sourcemap: true },
     // Bundling CSS files to remove the `@import` statements. This increases the
     // compability of the output.
     noExternal: [/\.css$/i],
+    fixedExtension: false,
     target: [
       'es2023',
       'firefox116', // firefox116 is the latest version that doesn't support CSS nesting.
@@ -39,6 +38,6 @@ export function config(input?: Options): Options {
   return deepMergeOptions(output, input)
 }
 
-function deepMergeOptions(a: Options, b?: Options): Options {
+function deepMergeOptions(a: UserConfig, b?: UserConfig): UserConfig {
   return merge({}, a, b)
 }

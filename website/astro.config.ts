@@ -1,3 +1,7 @@
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { styleText } from 'node:util'
+
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -5,15 +9,18 @@ import starlight from '@astrojs/starlight'
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
-import type { AstroUserConfig } from 'astro'
+import tailwindcss from '@tailwindcss/vite'
+import type {
+  AstroIntegrationLogger,
+  AstroUserConfig,
+} from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeSlugCustomId from 'rehype-slug-custom-id'
+import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import starlightThemeNova from 'starlight-theme-nova'
-import UnoCSS from 'unocss/astro'
+import { exec } from 'tinyexec'
 import wasm from 'vite-plugin-wasm'
 
 type Sidebar = StarlightUserConfig['sidebar']
@@ -21,10 +28,15 @@ type Sidebar = StarlightUserConfig['sidebar']
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
-  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
-  return names.map(name => {
-    const isLeaf = name.split('/').length === 1
-    const style = isLeaf ? 'font-weight: 600;' : 'margin-inline-start: 1rem;'
+  return filePaths.map(filePath => {
+    // Remove the file extension
+    let name = filePath.replace(/\.mdx?/, '')
+
+    // Remove the dot because Starlight doesn't allow '.' in the slug
+    name = name.replaceAll('.', '')
+
+    const isLeaf = name.includes('/')
+    const style = isLeaf ? 'margin-inline-start: 1rem;' : 'font-weight: 600;'
     return { slug: `references/${name}`, attrs: { style } }
   })
 }
@@ -87,6 +99,36 @@ const sidebar: Sidebar = [
   },
 ]
 
+async function copiedRegistry(logger: AstroIntegrationLogger) {
+  const startTime = Date.now()
+  const rootDir = path.join(import.meta.dirname, '..')
+  const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
+  const targetDir = path.join(rootDir, 'website', 'public', 'r')
+
+  let maxAttempts = 2
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      await fs.access(sourceDir)
+    } catch {
+      if (attempt === maxAttempts) {
+        throw new Error(`sourceDir does not exist: ${styleText('blue', sourceDir)}`)
+      }
+
+      logger.warn(`sourceDir does not exist: ${styleText('blue', sourceDir)}, trying to build it...`)
+      await exec('pnpm', ['-w', 'build:registry'], { timeout: 20_000, throwOnError: true })
+      break
+    }
+  }
+  await fs.cp(sourceDir, targetDir, { recursive: true })
+  const endTime = Date.now()
+  const duration = endTime - startTime
+  logger.info(
+    `copied registry from ${styleText('blue', sourceDir)} `
+      + `to ${styleText('blue', targetDir)} `
+      + `in ${styleText('green', `${duration}ms`)}`,
+  )
+}
+
 // https://astro.build/config
 const config: AstroUserConfig = {
   integrations: [
@@ -98,11 +140,20 @@ const config: AstroUserConfig = {
           label: 'GitHub',
           href: 'https://github.com/prosekit/prosekit',
         },
+        {
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://prosekit.dev/chat',
+        },
       ],
       sidebar: sidebar,
       components: {
         Hero: './src/components/overrides/Hero.astro',
       },
+      customCss: [
+        './src/styles/tailwind.css',
+        './src/styles/typedoc.css',
+      ],
       plugins: [
         starlightThemeNova({
           nav: [
@@ -116,12 +167,11 @@ const config: AstroUserConfig = {
             },
           ],
         }),
-      ],
+      ].filter(x => !!x),
     }),
-    UnoCSS(),
-    preact({ include: ['src/*/preact/**/*'] }),
+    preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
-      include: ['src/*/react/**/*'],
+      include: ['src/*/react/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],
@@ -130,16 +180,31 @@ const config: AstroUserConfig = {
     }),
     svelte(),
     vue(),
-    solid({ include: ['src/*/solid/**/*'] }),
+    solid({ include: ['**/solid/**/*.tsx'] }),
     astrobook({
       directory: 'src/stories',
       title: 'ProseKit',
-      subpath: 'astrobook',
+      subpath: 'playground/',
+      css: ['./src/styles/tailwind.css'],
+      dashboardSubpath: '/',
+      previewSubpath: '-/',
     }),
     minifyHTML(),
+    {
+      name: 'copy-registry',
+      hooks: {
+        'astro:config:done': async ({ logger }) => {
+          await copiedRegistry(logger)
+        },
+      },
+    },
   ],
   vite: {
-    plugins: [wasm()],
+    plugins: [
+      classReplace(),
+      wasm(),
+      tailwindcss(),
+    ],
     optimizeDeps: {
       // Ensures that Vite can detect all dependencies that need to be pre-bundled.
       // This avoids the need for full-page reloads when opening a page.
@@ -147,9 +212,10 @@ const config: AstroUserConfig = {
     },
   },
   markdown: {
+    // Disable smartypants to prevent converting "..." into "…"
+    smartypants: false,
+
     rehypePlugins: [
-      [rehypeSlugCustomId, { enableCustomId: true }],
-      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
   },

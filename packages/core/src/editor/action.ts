@@ -33,7 +33,14 @@ export type NodeChild = ProseMirrorNode | string | NodeChild[]
  * @public
  */
 export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
+  /**
+   * Creates a node with attributes and any number of children.
+   */
   (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode
+
+  /**
+   * Creates a node with any number of children.
+   */
   (...children: NodeChild[]): ProseMirrorNode
 
   /**
@@ -45,7 +52,7 @@ export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
 }
 
 /**
- * A function for creating a mark with optional attributes and any number of
+ * A function for applying a mark with optional attributes and any number of
  * children.
  *
  * It also has a `isActive` method for checking if the mark is active in the
@@ -54,7 +61,14 @@ export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
  * @public
  */
 export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
+  /**
+   * Applies a mark with attributes and any number of children.
+   */
   (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode[]
+
+  /**
+   * Applies a mark with any number of children.
+   */
   (...children: NodeChild[]): ProseMirrorNode[]
 
   /**
@@ -152,7 +166,7 @@ const defaultApplyMark: ApplyMarkFunction = (
   return children.map((node) => node.mark(mark.addToSet(node.marks)))
 }
 
-export function buildNode(
+function buildNode(
   type: NodeType,
   args: [Attrs | NodeChild | null | undefined, ...NodeChild[]],
   createNode: CreateNodeFunction,

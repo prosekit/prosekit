@@ -16,18 +16,16 @@ import { defineEnterRule } from '../enter-rule'
 import { defineInputRule } from '../input-rule'
 import { defineMarkRule } from '../mark-rule'
 
+import { defineLinkPasteRule } from './link-paste-rule'
 import {
   LINK_ENTER_RE,
   LINK_INPUT_RE,
   LINK_MARK_RE,
 } from './link-regex'
+import type { LinkAttrs } from './link-types'
 
-/**
- * @public
- */
-export interface LinkAttrs {
-  href: string
-}
+export { defineLinkPasteRule }
+export type { LinkAttrs }
 
 /**
  * @internal
@@ -47,6 +45,8 @@ export function defineLinkSpec(): LinkSpecExtension {
     inclusive: false,
     attrs: {
       href: { validate: 'string' },
+      target: { default: null, validate: 'string|null' },
+      rel: { default: null, validate: 'string|null' },
     },
     parseDOM: [
       {
@@ -54,13 +54,15 @@ export function defineLinkSpec(): LinkSpecExtension {
         getAttrs: (dom: HTMLElement) => {
           return {
             href: dom.getAttribute('href') || '',
+            target: dom.getAttribute('target') || null,
+            rel: dom.getAttribute('rel') || null,
           }
         },
       },
     ],
     toDOM(node) {
-      const { href } = node.attrs as LinkAttrs
-      return ['a', { href }, 0]
+      const { href, target, rel } = node.attrs as LinkAttrs
+      return ['a', { href, target, rel }, 0]
     },
   })
 }
@@ -149,5 +151,6 @@ export function defineLink(): LinkExtension {
     defineLinkCommands(),
     defineLinkInputRule(),
     defineLinkEnterRule(),
+    defineLinkPasteRule(),
   )
 }

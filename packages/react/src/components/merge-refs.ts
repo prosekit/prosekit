@@ -4,10 +4,10 @@ import type { Ref } from 'react'
  * Assigns a value to a ref.
  * @returns The ref cleanup callback, if any.
  */
-export function assignRef<T>(
+function assignRef<T>(
   ref: Ref<T> | undefined,
   value: T | null,
-): VoidFunction | undefined | void {
+): VoidFunction | void {
   if (typeof ref === 'function') {
     return ref(value)
   } else if (ref) {

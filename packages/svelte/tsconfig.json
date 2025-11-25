@@ -3,9 +3,6 @@
   "include": ["./*.js", "./*.ts", "./scripts"],
   "references": [
     {
-      "path": "../config-vitest/tsconfig.json",
-    },
-    {
       "path": "../core/tsconfig.json",
     },
     {

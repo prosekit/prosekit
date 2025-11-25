@@ -23,9 +23,9 @@ import {
 
 /**
  * A function to handle the events fired on the editable DOM element. Returns
- * `true` to indicate that it handled the given event. you are responsible for
- * calling `preventDefault` yourself (or not, if you want to allow the default
- * behavior).
+ * `true` to indicate that it handled the given event. When returning `true`,
+ * you are responsible for calling `event.preventDefault()` yourself (or not, if
+ * you want to allow the default behavior).
  *
  * @public
  */
@@ -64,12 +64,12 @@ export function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(
 /**
  * @internal
  */
-export type DOMEventPayload = [event: string, handler: DOMEventHandler]
+type DOMEventPayload = [event: string, handler: DOMEventHandler]
 
 /**
  * @internal
  */
-export const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
+const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
   {
     reduce: () => {
       const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}

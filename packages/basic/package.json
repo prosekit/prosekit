@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/basic",
   "type": "module",
-  "version": "0.5.2",
+  "version": "0.6.6",
   "private": false,
   "description": "A quick starter for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/basic"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -31,7 +31,8 @@
     "./typography.css": "./src/typography.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
@@ -45,9 +46,12 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.12.7",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "@types/jsdom": "^27.0.0",
+    "happy-dom": "^20.0.10",
+    "jsdom": "^27.2.0",
+    "tsdown": "^0.16.7",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.14"
   },
   "publishConfig": {
     "exports": {

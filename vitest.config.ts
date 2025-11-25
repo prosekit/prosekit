@@ -2,14 +2,17 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
+    slowTestThreshold: 2000,
+    reporters: ['verbose'],
+    retry: process.env.CI ? 3 : 0,
     coverage: {
       enabled: false,
-      all: true,
       reporter: ['text-summary', 'text', 'html', 'json', 'json-summary'],
       provider: 'v8',
-      include: ['packages/**'],
+      include: ['packages/**/src/**'],
+      exclude: ['packages/dev/**/*', 'packages/config-*/**/*'],
     },
     fileParallelism: false,
-    projects: ['packages/*'],
+    projects: ['./packages/*', './registry'],
   },
 })

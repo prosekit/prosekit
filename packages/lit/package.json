@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.4.14",
+  "version": "0.5.3",
   "private": false,
   "description": "Lit components and utilities for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/lit"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -29,6 +29,7 @@
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.gen.ts",
     "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./drop-indicator": "./src/components/drop-indicator/index.gen.ts",
     "./inline-popover": "./src/components/inline-popover/index.gen.ts",
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
@@ -36,7 +37,8 @@
     "./tooltip": "./src/components/tooltip/index.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
@@ -48,9 +50,8 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.12.7",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "tsdown": "^0.16.7",
+    "typescript": "~5.9.3"
   },
   "publishConfig": {
     "exports": {
@@ -65,6 +66,10 @@
       "./block-handle": {
         "types": "./dist/prosekit-lit-block-handle.d.ts",
         "default": "./dist/prosekit-lit-block-handle.js"
+      },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-lit-drop-indicator.d.ts",
+        "default": "./dist/prosekit-lit-drop-indicator.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-lit-inline-popover.d.ts",
@@ -102,6 +107,9 @@
         "block-handle": [
           "./dist/prosekit-lit-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-lit-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-lit-inline-popover.d.ts"
         ],
@@ -125,6 +133,7 @@
       "prosekit-lit": "./src/index.ts",
       "prosekit-lit-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-lit-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-lit-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-lit-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-lit-popover": "./src/components/popover/index.gen.ts",
       "prosekit-lit-resizable": "./src/components/resizable/index.gen.ts",

@@ -1,3 +1,4 @@
+.claude
 CLAUDE.md
 CHANGELOG.md
 !packages/prosekit/CHANGELOG.md
@@ -7,6 +8,12 @@ CHANGELOG.md
 .yalc
 yalc.lock
 dist
+.eslintcache
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/
+**/playwright/.auth/
 
 .cache
 .DS_Store
@@ -25,4 +32,3 @@ website/src/content/docs/references
 vite.config.ts.timestamp*
 .svelte-kit
 test-results
-playwright-report

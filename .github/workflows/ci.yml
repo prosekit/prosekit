@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
@@ -23,28 +23,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
       - name: Typecheck
         run: pnpm run typecheck
 
-  test-unit:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: ./.github/actions/setup
-
-      - name: Install Playwright
-        run: pnpm run test:install
-
-      - name: Run unit tests
-        run: pnpm run test:coverage
-
-  test-e2e:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -53,99 +39,142 @@ jobs:
         shard: [1, 2, 3, 4, 5]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
       - name: Install Playwright
         run: pnpm run test:install
 
-      - name: Build
+      - name: Run tests
+        run: pnpm run test --shard=${{ matrix.shard }}/5
+
+  test-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: ./.github/actions/setup
+
+      - uses: ./.github/actions/cache
+
+      - name: Build website
         run: pnpm run build:website
 
+      - name: Install Playwright
+        run: pnpm run test:install
+
       - name: Run e2e tests
-        run: pnpm run test:e2e --shard="${{ matrix.shard }}/5"
+        run: pnpm run test:e2e
 
   build:
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
-      - name: Build
+      - uses: ./.github/actions/cache
+
+      - name: Build packages
+        run: pnpm run build:package
+
+      - name: Build website
+        run: pnpm run build
+
+  publish-snapshot:
+    runs-on: ubuntu-latest
+
+    needs: [build]
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: ./.github/actions/setup
+
+      - uses: ./.github/actions/cache
+
+      - name: Build packages
         run: pnpm run build:package
 
       - name: Publish snapshot packages
         if: ${{ github.event_name == 'pull_request' }}
-        run: >
-          ./node_modules/.bin/pkg-pr-new publish --pnpm
-          ./packages/basic
-          ./packages/core
-          ./packages/extensions
-          ./packages/lit
-          ./packages/pm
-          ./packages/preact
-          ./packages/prosekit
-          ./packages/react
-          ./packages/solid
-          ./packages/svelte
-          ./packages/vue
-          ./packages/web
+        run: |
+          for attempt in 1 2 3 4 5; do
+            echo "Attempt ${attempt} to publish snapshot packages..."
+            if pnpm run ci:publish:snapshot; then
+              echo "Publish snapshot packages succeeded"
+              break
+            elif [ ${attempt} -eq 5 ]; then
+              echo "Publish snapshot packages failed"
+              exit 1
+            fi
+            sleep 5
+          done
 
   linkcheck:
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+    needs: [build]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
+      - uses: ./.github/actions/cache
+
       - name: Build
-        run: pnpm run build:website
+        run: pnpm run build
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.4.1
+        uses: lycheeverse/lychee-action@v2.7.0
         with:
-          args: --root-dir "$PWD/website/dist" --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
+          workingDirectory: website/dist
+          args: >
+            --include-fragments
+            --index-files 'index.html'
+            --root-dir "$PWD"
+            --no-progress
+            --format detailed
+            --accept 100..=103,200..=299,403
+            --retry-wait-time 5
+            --max-retries 5
+            --exclude 'https://floating-ui.com'
+            './**/*.html'
+          debug: false
           fail: true
+          failIfEmpty: true
 
   deploy:
     runs-on: ubuntu-latest
 
+    needs: [build]
+
     env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
       CLOUDFLARE_PAGES_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ./.github/actions/setup
 
+      - uses: ./.github/actions/cache
+
       - name: Build
-        run: pnpm run build:website
+        run: pnpm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        # Only run this step if the CLOUDFLARE_PAGES_API_TOKEN is set (i.e. it's
-        # not from a fork). Notice that secrets cannot be directly referenced in
-        # `if:` conditionals.
-        if: ${{ env.CLOUDFLARE_PAGES_API_TOKEN != '' }}
+        uses: cloudflare/wrangler-action@v3
+        if: >
+          github.event_name == 'push' ||
+          github.event.pull_request.head.repo.full_name == github.repository
         with:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: prosekit-dev
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          directory: website/dist
+          command: pages deploy website/dist --project-name=prosekit-dev
         timeout-minutes: 5

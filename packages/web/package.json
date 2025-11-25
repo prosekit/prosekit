@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/web",
   "type": "module",
-  "version": "0.5.10",
+  "version": "0.7.7",
   "private": false,
   "description": "A collection of web components for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/web"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -29,6 +29,7 @@
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.gen.ts",
     "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./drop-indicator": "./src/components/drop-indicator/index.gen.ts",
     "./inline-popover": "./src/components/inline-popover/index.gen.ts",
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
@@ -36,34 +37,36 @@
     "./tooltip": "./src/components/tooltip/index.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@aria-ui/collection": "^0.0.5",
-    "@aria-ui/core": "^0.0.21",
-    "@aria-ui/listbox": "^0.0.24",
-    "@aria-ui/menu": "^0.0.19",
-    "@aria-ui/overlay": "^0.0.24",
-    "@aria-ui/popover": "^0.0.27",
-    "@aria-ui/presence": "^0.0.19",
-    "@aria-ui/tooltip": "^0.0.29",
-    "@floating-ui/dom": "^1.7.1",
-    "@ocavue/utils": "^0.5.0",
+    "@aria-ui/core": "^0.0.22",
+    "@aria-ui/listbox": "^0.0.25",
+    "@aria-ui/menu": "^0.0.21",
+    "@aria-ui/overlay": "^0.0.25",
+    "@aria-ui/popover": "^0.0.28",
+    "@aria-ui/presence": "^0.0.20",
+    "@aria-ui/tooltip": "^0.0.30",
+    "@floating-ui/dom": "^1.7.4",
+    "@ocavue/utils": "^1.0.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "prosemirror-tables": "^1.7.1"
+    "@zag-js/dom-query": "^1.29.1",
+    "prosemirror-tables": "^1.8.1"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.12.7",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "tsdown": "^0.16.7",
+    "type-fest": "^5.2.0",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.14"
   },
   "publishConfig": {
     "exports": {
@@ -78,6 +81,10 @@
       "./block-handle": {
         "types": "./dist/prosekit-web-block-handle.d.ts",
         "default": "./dist/prosekit-web-block-handle.js"
+      },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-web-drop-indicator.d.ts",
+        "default": "./dist/prosekit-web-drop-indicator.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-web-inline-popover.d.ts",
@@ -115,6 +122,9 @@
         "block-handle": [
           "./dist/prosekit-web-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-web-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-web-inline-popover.d.ts"
         ],
@@ -138,6 +148,7 @@
       "prosekit-web": "./src/index.ts",
       "prosekit-web-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-web-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-web-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-web-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-web-popover": "./src/components/popover/index.gen.ts",
       "prosekit-web-resizable": "./src/components/resizable/index.gen.ts",

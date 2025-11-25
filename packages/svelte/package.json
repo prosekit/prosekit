@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.6.10",
+  "version": "0.8.2",
   "private": false,
   "description": "Svelte components and utilities for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/svelte"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -34,6 +34,10 @@
     "./block-handle": {
       "svelte": "./src/components/block-handle/index.gen.ts",
       "default": "./src/components/block-handle/index.gen.ts"
+    },
+    "./drop-indicator": {
+      "svelte": "./src/components/drop-indicator/index.gen.ts",
+      "default": "./src/components/drop-indicator/index.gen.ts"
     },
     "./inline-popover": {
       "svelte": "./src/components/inline-popover/index.gen.ts",
@@ -57,17 +61,19 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts"
+    "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts",
+    "lint": "svelte-check"
   },
   "dependencies": {
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.0",
-    "@prosemirror-adapter/svelte": "^0.4.1"
+    "@prosemirror-adapter/core": "^0.4.6",
+    "@prosemirror-adapter/svelte": "^0.4.6"
   },
   "peerDependencies": {
     "svelte": ">= 5.0.0"
@@ -78,15 +84,13 @@
     }
   },
   "devDependencies": {
-    "@prosekit/config-vitest": "workspace:*",
-    "@sveltejs/package": "^2.3.11",
-    "@types/node": "^20.17.29",
-    "read-pkg": "^9.0.1",
-    "svelte": "^5.33.18",
-    "svelte-check": "^4.2.1",
-    "tsx": "^4.19.4",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "@sveltejs/package": "^2.5.6",
+    "@types/node": "^24.10.1",
+    "read-pkg": "^10.0.0",
+    "svelte": "^5.44.0",
+    "svelte-check": "^4.3.4",
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.3"
   },
   "publishConfig": {
     "exports": {
@@ -103,6 +107,11 @@
         "types": "./dist/prosekit-svelte-block-handle.d.ts",
         "svelte": "./dist/prosekit-svelte-block-handle.js",
         "default": "./dist/prosekit-svelte-block-handle.js"
+      },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-svelte-drop-indicator.d.ts",
+        "svelte": "./dist/prosekit-svelte-drop-indicator.js",
+        "default": "./dist/prosekit-svelte-drop-indicator.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
@@ -145,6 +154,9 @@
         "block-handle": [
           "./dist/prosekit-svelte-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-svelte-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"
         ],
@@ -168,6 +180,7 @@
       "prosekit-svelte": "./src/index.ts",
       "prosekit-svelte-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-svelte-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-svelte-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-svelte-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-svelte-popover": "./src/components/popover/index.gen.ts",
       "prosekit-svelte-resizable": "./src/components/resizable/index.gen.ts",

@@ -4,10 +4,13 @@
     "./*.ts",
     "./*.mjs",
     "./*.js",
-    "./.astro/**/*",
-    "./tests/**/*",
-    "src/*.ts",
-    "src/components/**/*",
+    "./*.json",
+    ".astro/*",
+    "build/**/*",
+    "build/**/*.json",
+    "src/**/*",
+    "src/**/*.json",
+    "test/**/*",
   ],
   "compilerOptions": {
     "jsx": "preserve",
@@ -18,55 +21,10 @@
   },
   "references": [
     {
-      "path": "../packages/config-unocss/tsconfig.json",
-    },
-    {
-      "path": "../packages/config-vitest/tsconfig.json",
-    },
-    {
       "path": "../packages/prosekit/tsconfig.json",
     },
     {
-      "path": "./src/examples/lit/tsconfig.json",
-    },
-    {
-      "path": "./src/examples/preact/tsconfig.json",
-    },
-    {
-      "path": "./src/examples/react/tsconfig.json",
-    },
-    {
-      "path": "./src/examples/solid/tsconfig.json",
-    },
-    {
-      "path": "./src/examples/svelte/tsconfig.json",
-    },
-    {
-      "path": "./src/examples/vanilla/tsconfig.json",
-    },
-    {
-      "path": "./src/examples/vue/tsconfig.json",
-    },
-    {
-      "path": "./src/shared/common/tsconfig.json",
-    },
-    {
-      "path": "./src/shared/preact/tsconfig.json",
-    },
-    {
-      "path": "./src/shared/react/tsconfig.json",
-    },
-    {
-      "path": "./src/shared/solid/tsconfig.json",
-    },
-    {
-      "path": "./src/shared/svelte/tsconfig.json",
-    },
-    {
-      "path": "./src/shared/vue/tsconfig.json",
-    },
-    {
-      "path": "./src/stories/tsconfig.json",
+      "path": "../registry/tsconfig.json",
     },
   ],
 }

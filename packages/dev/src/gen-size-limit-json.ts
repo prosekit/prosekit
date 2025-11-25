@@ -2,11 +2,10 @@ import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
-import { sortedUniq } from 'lodash-es'
 
-import { asyncFrom } from './async-from.js'
-import { getPackageJsonPublishExports } from './get-package-json-exports.js'
-import { vfs } from './virtual-file-system.js'
+import { asyncFrom } from './async-from'
+import { getPackageJsonPublishExports } from './get-package-json-exports'
+import { vfs } from './virtual-file-system'
 
 export async function genSizeLimitJson() {
   const pkg = await vfs.getPackageByName('prosekit')
@@ -35,10 +34,10 @@ async function* iterateExports(pkg: Package) {
       .join('/')
 
     const subPackage = await vfs.getPackageByName(subPackageName)
-    const ignored: string[] = sortedUniq([
+    const ignored = new Set<string>(
       // Ignore peer dependencies
-      ...Object.keys(subPackage.packageJson.peerDependencies ?? {}),
-    ])
+      Object.keys(subPackage.packageJson.peerDependencies ?? {}),
+    )
 
     const entryPath = typeof entry === 'string' ? entry : entry.default
     assert(entryPath, `Unexpected entry: ${JSON.stringify(entry)}. entryName: ${entryName}. package name: ${pkg.packageJson.name}.`)
@@ -46,7 +45,7 @@ async function* iterateExports(pkg: Package) {
     yield {
       name: path.normalize(path.join('prosekit', entryName)),
       path: path.normalize(path.join('packages/prosekit', entryPath)),
-      ignore: ignored.length > 0 ? ignored : undefined,
+      ignore: ignored.size > 0 ? Array.from(ignored) : undefined,
     }
   }
 }

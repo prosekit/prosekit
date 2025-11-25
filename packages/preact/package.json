@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.4.15",
+  "version": "0.6.2",
   "private": false,
   "description": "Preact components and utilities for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/preact"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -29,6 +29,7 @@
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.gen.ts",
     "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./drop-indicator": "./src/components/drop-indicator/index.gen.ts",
     "./inline-popover": "./src/components/inline-popover/index.gen.ts",
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
@@ -36,7 +37,8 @@
     "./tooltip": "./src/components/tooltip/index.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
@@ -45,7 +47,9 @@
   "dependencies": {
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@prosekit/web": "workspace:^"
+    "@prosekit/web": "workspace:^",
+    "@prosemirror-adapter/core": "^0.4.6",
+    "@prosemirror-adapter/preact": "^0.4.6"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0"
@@ -58,10 +62,9 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "preact": "^10.26.8",
-    "tsdown": "^0.12.7",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "preact": "^10.27.2",
+    "tsdown": "^0.16.7",
+    "typescript": "~5.9.3"
   },
   "publishConfig": {
     "exports": {
@@ -76,6 +79,10 @@
       "./block-handle": {
         "types": "./dist/prosekit-preact-block-handle.d.ts",
         "default": "./dist/prosekit-preact-block-handle.js"
+      },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-preact-drop-indicator.d.ts",
+        "default": "./dist/prosekit-preact-drop-indicator.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-preact-inline-popover.d.ts",
@@ -113,6 +120,9 @@
         "block-handle": [
           "./dist/prosekit-preact-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-preact-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-preact-inline-popover.d.ts"
         ],
@@ -136,6 +146,7 @@
       "prosekit-preact": "./src/index.ts",
       "prosekit-preact-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-preact-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-preact-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-preact-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-preact-popover": "./src/components/popover/index.gen.ts",
       "prosekit-preact-resizable": "./src/components/resizable/index.gen.ts",

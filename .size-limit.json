@@ -120,6 +120,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-extensions-drop-indicator.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/enter-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js",
     "ignore": [
@@ -310,6 +320,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/paste-rule",
+    "path": "packages/prosekit/dist/prosekit-extensions-paste-rule.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/placeholder",
     "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
     "ignore": [
@@ -472,6 +492,10 @@
     "path": "packages/prosekit/dist/prosekit-lit-block-handle.js"
   },
   {
+    "name": "prosekit/lit/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-lit-drop-indicator.js"
+  },
+  {
     "name": "prosekit/lit/inline-popover",
     "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
   },
@@ -553,6 +577,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-preact-drop-indicator.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/inline-popover",
     "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js",
     "ignore": [
@@ -606,6 +637,14 @@
   {
     "name": "prosekit/react/block-handle",
     "path": "packages/prosekit/dist/prosekit-react-block-handle.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-react-drop-indicator.js",
     "ignore": [
       "react",
       "react-dom"
@@ -673,6 +712,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-solid-drop-indicator.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/inline-popover",
     "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js",
     "ignore": [
@@ -729,6 +775,13 @@
     ]
   },
   {
+    "name": "prosekit/vue/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-vue-drop-indicator.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/vue/inline-popover",
     "path": "packages/prosekit/dist/prosekit-vue-inline-popover.js",
     "ignore": [
@@ -774,6 +827,10 @@
   {
     "name": "prosekit/web/block-handle",
     "path": "packages/prosekit/dist/prosekit-web-block-handle.js"
+  },
+  {
+    "name": "prosekit/web/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-web-drop-indicator.js"
   },
   {
     "name": "prosekit/web/inline-popover",

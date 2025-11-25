@@ -132,6 +132,7 @@ export function nodeFromJSON(
  * ```ts
  * const element = document.getElementById('content')
  * const node = nodeFromElement(element, { schema: editor.schema })
+ * ```
  */
 export function nodeFromElement(
   element: DOMNode,
@@ -195,7 +196,7 @@ export function elementFromHTML(
 /**
  * @internal
  */
-export function htmlFromElement(element: HTMLElement): string {
+function htmlFromElement(element: HTMLElement): string {
   return element.outerHTML
 }
 
@@ -211,6 +212,7 @@ export function htmlFromElement(element: HTMLElement): string {
  * ```ts
  * const html = '<p>Hello, world!</p>'
  * const node = nodeFromHTML(html, { schema: editor.schema })
+ * ```
  */
 export function nodeFromHTML(
   html: string,

@@ -15,10 +15,16 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
+import { useScrolling } from '../../../hooks/use-scrolling'
+import { useSelecting } from '../../../hooks/use-selecting'
 import {
+  defaultTableHandleDndContext,
+  tableHandleDndContext,
   tableHandleRootContext,
+  type TableHandleDndContext,
   type TableHandleRootContext,
 } from '../context'
+import { useDrop } from '../hooks/use-drop'
 import {
   getHoveringCell,
   isHoveringCellInfoEqual,
@@ -37,20 +43,25 @@ export function useTableHandleRoot(
   const { editor } = state
 
   const context = createSignal<TableHandleRootContext>(null)
+  const dndContext = createSignal<TableHandleDndContext>(defaultTableHandleDndContext)
 
   const hoveringCell = useHoveringCell(host, editor)
   const typing = useEditorTyping(host, editor)
   const isInTable = createComputed(() => !!hoveringCell.get())
   const selecting = useSelecting(host, editor, isInTable)
+  const scrolling = useScrolling(host)
+  const canShow = createComputed(() => {
+    return !typing.get() && !selecting.get() && !scrolling.get()
+  })
 
   useEffect(host, () => {
-    const typingValue = typing.get()
-    const selectingValue = selecting.get()
-    const hoveringCellValue = hoveringCell.get()
-    context.set(typingValue || selectingValue ? null : hoveringCellValue)
+    context.set(canShow.get() ? hoveringCell.get() : null)
   })
 
   tableHandleRootContext.provide(host, context)
+  tableHandleDndContext.provide(host, dndContext)
+
+  useDrop(host, editor, dndContext)
 }
 
 function useHoveringCell(
@@ -79,47 +90,4 @@ function defineCellHoverHandler(
     return handler(hoveringCell ?? null)
   }
   return defineDOMEventHandler('pointerover', pointerHandler)
-}
-
-/**
- * Detect if the user is selecting text by dragging.
- */
-function useSelecting(
-  host: ConnectableElement,
-  editor: ReadonlySignal<Editor | null>,
-  isInTable: ReadonlySignal<boolean>,
-) {
-  const selecting = createSignal(false)
-
-  useEffect(host, () => {
-    if (!isInTable.get()) {
-      return
-    }
-
-    const root = editor.peek()?.view.root
-    if (!root) {
-      return
-    }
-
-    const pointerDownHandler = (event: Event) => {
-      const target = event.target
-      if (!target || host.contains(event.target as Node)) {
-        return
-      }
-      selecting.set(true)
-    }
-    const pointerUpHandler = () => {
-      selecting.set(false)
-    }
-
-    root.addEventListener('pointerdown', pointerDownHandler)
-    root.addEventListener('pointerup', pointerUpHandler)
-
-    return () => {
-      root.removeEventListener('pointerdown', pointerDownHandler)
-      root.removeEventListener('pointerup', pointerUpHandler)
-    }
-  })
-
-  return selecting
 }

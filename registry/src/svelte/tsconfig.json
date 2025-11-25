@@ -1,0 +1,10 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+  },
+  "include": ["./**/*.ts", "./**/*.svelte", "./shims-svelte.d.ts"],
+  "references": [
+    { "path": "../../../packages/prosekit" },
+  ],
+}

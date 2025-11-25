@@ -1,9 +1,13 @@
 import {
   defineCommands,
-  insertNode,
   type Extension,
 } from '@prosekit/core'
 
+import { insertImage } from './image-commands/insert-image'
+import {
+  uploadImage,
+  type UploadImageOptions,
+} from './image-commands/upload-image'
 import type { ImageAttrs } from './image-spec'
 
 /**
@@ -12,6 +16,7 @@ import type { ImageAttrs } from './image-spec'
 export type ImageCommandsExtension = Extension<{
   Commands: {
     insertImage: [attrs?: ImageAttrs]
+    uploadImage: [options: UploadImageOptions]
   }
 }>
 
@@ -20,8 +25,7 @@ export type ImageCommandsExtension = Extension<{
  */
 export function defineImageCommands(): ImageCommandsExtension {
   return defineCommands({
-    insertImage: (attrs?: ImageAttrs) => {
-      return insertNode({ type: 'image', attrs })
-    },
+    insertImage,
+    uploadImage,
   })
 }

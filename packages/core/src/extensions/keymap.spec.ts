@@ -5,9 +5,18 @@ import {
   it,
   vi,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
-import { createEditor } from '../editor/editor'
-import { defineTestExtension } from '../testing'
+import { union } from '../editor/union'
+import { withPriority } from '../editor/with-priority'
+import {
+  defineDoc,
+  defineParagraph,
+  defineText,
+  setupTest,
+  setupTestFromExtension,
+} from '../testing'
+import { Priority } from '../types/priority'
 
 import {
   defineKeymap,
@@ -16,10 +25,7 @@ import {
 
 describe('keymap', () => {
   it('can register and unregister keymap', () => {
-    const div = document.body.appendChild(document.createElement('div'))
-    const extension = defineTestExtension()
-    const editor = createEditor({ extension })
-    editor.mount(div)
+    const { editor } = setupTest()
 
     const command1: Command = vi.fn(() => false)
     const command2: Command = vi.fn(() => false)
@@ -56,10 +62,7 @@ describe('keymap', () => {
   })
 
   it('can skip unnecessary plugin update', () => {
-    const div = document.body.appendChild(document.createElement('div'))
-    const extension = defineTestExtension()
-    const editor = createEditor({ extension })
-    editor.mount(div)
+    const { editor } = setupTest()
 
     const command1: Command = vi.fn(() => false)
     const command2: Command = vi.fn(() => false)
@@ -85,5 +88,107 @@ describe('keymap', () => {
     expect(plugins1).toEqual(plugins2)
     expect(plugins2).toEqual(plugins3)
     expect(plugins3).toEqual(plugins4)
+  })
+
+  it('respects priority and calls highest priority first', () => {
+    const { editor } = setupTest()
+
+    const callOrder: string[] = []
+
+    const command1: Command = vi.fn(() => {
+      callOrder.push('default')
+      return false
+    })
+    const command2: Command = vi.fn(() => {
+      callOrder.push('highest')
+      return false
+    })
+    const command3: Command = vi.fn(() => {
+      callOrder.push('lowest')
+      return false
+    })
+
+    const keymap1: Keymap = { ArrowUp: command1 }
+    const keymap2: Keymap = { ArrowUp: command2 }
+    const keymap3: Keymap = { ArrowUp: command3 }
+
+    const extension1 = defineKeymap(keymap1)
+    const extension2 = withPriority(defineKeymap(keymap2), Priority.highest)
+    const extension3 = withPriority(defineKeymap(keymap3), Priority.lowest)
+
+    const combinedExtension = union(extension1, extension2, extension3)
+    editor.use(combinedExtension)
+
+    editor.view.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' }))
+
+    // All commands should be called since none returns true
+    expect(command1).toHaveBeenCalledTimes(1)
+    expect(command2).toHaveBeenCalledTimes(1)
+    expect(command3).toHaveBeenCalledTimes(1)
+
+    // Highest priority should be called first
+    expect(callOrder).toEqual(['highest', 'default', 'lowest'])
+  })
+
+  it('can merge keybindings with different variants', async () => {
+    const called: string[] = []
+    const { editor } = setupTestFromExtension(union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+    ))
+
+    const record = (label: string): Command => {
+      return () => {
+        called.push(label)
+        return false
+      }
+    }
+
+    const keybindings = [
+      // Match Ctrl-b
+      'ctrl-b',
+      'CTRL-b',
+
+      // Match Ctrl-Shift-b
+      'c-B',
+      'ctrl-shift-b',
+      'c-s-B',
+      'Ctrl-B',
+
+      // Do not match
+      'ctrl-c',
+    ]
+    const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
+
+    editor.use(defineKeymap(keymap))
+
+    called.length = 0
+    await keyboard.down('Control')
+    await keyboard.down('b')
+    await keyboard.up('b')
+    await keyboard.up('Control')
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "ctrl-b",
+        "CTRL-b",
+      ]
+    `)
+
+    called.length = 0
+    await keyboard.down('Control')
+    await keyboard.down('Shift')
+    await keyboard.down('B')
+    await keyboard.up('B')
+    await keyboard.up('Shift')
+    await keyboard.up('Control')
+    expect(called).toMatchInlineSnapshot(`
+      [
+        "c-s-B",
+        "c-B",
+        "Ctrl-B",
+        "ctrl-shift-b",
+      ]
+    `)
   })
 })

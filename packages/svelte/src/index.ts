@@ -17,6 +17,10 @@ export {
 export { useDocChange } from './hooks/use-doc-change'
 export { useEditor } from './hooks/use-editor'
 export {
+  useEditorDerivedValue,
+  type UseEditorDerivedOptions,
+} from './hooks/use-editor-derived-value'
+export {
   useExtension,
   type UseExtensionOptions,
 } from './hooks/use-extension'

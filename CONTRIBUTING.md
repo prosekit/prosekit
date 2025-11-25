@@ -22,15 +22,16 @@ ProseKit is a monorepo using pnpm workspaces:
   - `prosekit/` - Main umbrella package that re-exports functionality
 - `website/` - Documentation and examples
   - `src/content/` - Documentation markdown
-  - `src/examples/` - Live demos.
-  - `tests/` - Integration tests
+- `registry/` - Framework examples and shared UI components
+  - `src/` - Examples and components
+  - `test/` - Tests
 
 ## Development
 
 Run `pnpm run dev` to start the development server:
 
 - Website: https://localhost:4321
-- Playground: https://localhost:4321/astrobook
+- Playground: https://localhost:4321/playground
 
 ## Common Commands
 
@@ -41,21 +42,11 @@ Run `pnpm run dev` to start the development server:
 
 ## Testing
 
-ProseKit has unit and integration tests.
-
-### Unit Tests
-
-- Run all: `pnpm run test`
+- Run all: `pnpm run test:run`
 - Run specific test: `pnpm run test [test-file-path]`
 - Run with coverage report: `pnpm run test:coverage`
-- Files: Located in `packages/` with `.spec.ts` suffix
+- Files: Unit tests located in `packages/` with `.spec.ts` suffix, and integration tests in `registry/test/` with `.test.ts` suffix
 - Coverage report: `coverage/` directory
-
-### Integration Tests
-
-- Run all: `pnpm run test:e2e`
-- Run specific test: `pnpm run test:e2e [test-file-name]`
-- Files: Located in `website/tests/` with `.test.ts` suffix
 
 ## Pull Requests
 
@@ -64,3 +55,7 @@ ProseKit has unit and integration tests.
 3. Run `pnpm run fix` to fix linting and formatting issues.
 4. Run `pnpm run typecheck` to check for type errors.
 5. Make sure all tests pass before submitting a PR.
+
+## Community
+
+Join our Discord server for help and to discuss development: [ProseKit Discord](https://prosekit.dev/chat)

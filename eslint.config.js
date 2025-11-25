@@ -1,14 +1,19 @@
+// @ts-check
+
 import { defineESLintConfig } from '@ocavue/eslint-config'
 
 export default defineESLintConfig(
   {
     react: {
-      files: ['**/react/**/*.?([cm])[jt]s?(x)'],
-      reactCompiler: true,
+      files: [
+        '**/react/**/*.ts',
+        '**/react/**/*.tsx',
+        '**/preact/**/*.ts',
+        '**/preact/**/*.tsx',
+      ],
     },
     vue: true,
     markdown: true,
-    unocss: true,
     command: true,
   },
   {
@@ -24,6 +29,19 @@ export default defineESLintConfig(
   {
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
+    },
+    ignores: ['**/*.md', '**/*.md/**/*'],
+  },
+  {
+    rules: {
+      'unicorn/prefer-single-call': 'off',
+    },
+  },
+  {
+    rules: {
+      // Disable this rule because of https://github.com/facebook/react/issues/34775
+      // TODO: Enable this when the issue is fixed.
+      'react-hooks/refs': 'off',
     },
   },
 )

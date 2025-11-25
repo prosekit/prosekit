@@ -15,6 +15,7 @@ import {
   defineTestExtension,
   setupTestFromExtension,
 } from '../testing'
+import { pasteFiles } from '../testing/clipboard'
 
 import { defineFilePasteHandler } from './file-paste-handler'
 
@@ -58,6 +59,9 @@ describe('file paste handler', () => {
     defineFallbackPasteHandler(fallbackHandler),
   )
   const { editor } = setupTestFromExtension(extension)
+  const paste = (files: File[]) => {
+    pasteFiles(editor.view, files)
+  }
 
   beforeEach(() => {
     pngHandler.mockClear()
@@ -65,31 +69,22 @@ describe('file paste handler', () => {
     fallbackHandler.mockClear()
   })
 
-  const pasteFiles = (files: File[]) => {
-    editor.view.pasteHTML('<div></div>', {
-      clipboardData: {
-        // @ts-expect-error: disable type checking for testing
-        files,
-      },
-    })
-  }
-
   it('should handle file pasting', () => {
-    pasteFiles([new File([''], 'test.png', { type: 'image/png' })])
+    paste([new File([''], 'test.png', { type: 'image/png' })])
     expect(pngHandler).toHaveBeenCalled()
     expect(imageHandler).not.toHaveBeenCalled()
     expect(fallbackHandler).not.toHaveBeenCalled()
   })
 
   it('should handle priority', () => {
-    pasteFiles([new File([''], 'test.jpg', { type: 'image/jpg' })])
+    paste([new File([''], 'test.jpg', { type: 'image/jpg' })])
     expect(pngHandler).not.toHaveBeenCalled()
     expect(imageHandler).toHaveBeenCalled()
     expect(fallbackHandler).not.toHaveBeenCalled()
   })
 
   it('should handle multiple files', () => {
-    pasteFiles([
+    paste([
       new File([''], 'test.png', { type: 'image/png' }),
       new File([''], 'test.pdf', { type: 'application/pdf' }),
     ])

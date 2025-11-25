@@ -1,0 +1,129 @@
+---
+title: Running on Node.js
+sidebar:
+  order: 60
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+ProseKit can run in Node.js environments for background processing, CLI applications, and Server-Side Rendering (SSR). The primary limitation is that **DOM-dependent APIs are unavailable** unless you provide a DOM implementation.
+
+## Create an editor in Node.js
+
+You can create an editor and execute commands just like in a browser environment:
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// Set content with JSON
+editor.setContent({
+  type: 'doc',
+  content: [
+    { type: 'paragraph', content: [{ type: 'text', text: 'Hello, Node.js!' }] },
+  ],
+})
+
+// Run commands
+editor.commands.insertImage({
+  src: 'https://example.com/logo.png',
+  width: 120,
+  height: 60,
+})
+
+// Get the document as JSON
+const json = editor.getDocJSON()
+console.log(json)
+```
+
+## DOM-dependent APIs are unavailable
+
+In a standard Node.js environment there is **no DOM**, so methods requiring DOM access will throw errors:
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// ---cut---
+// ❌ Mounting fails without DOM
+editor.mount(document.createElement('div'))
+// ❌ HTML serialization requires DOM APIs
+editor.getDocHTML()
+// ❌ HTML parsing requires DOM APIs
+editor.setContent('<p>HTML input</p>')
+```
+
+Two strategies can address the absence of DOM APIs in server environments.
+
+## SSR strategy 1: Browser pre-rendering
+
+The simplest approach for server-side rendering is **client-side pre-rendering**: allow the browser to convert documents to HTML and store the result.
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// ---cut---
+// Browser code
+const html = editor.getDocHTML()
+await fetch('/api/save', { method: 'POST', body: html })
+```
+
+The backend can then serve this static HTML without requiring DOM access.
+
+## SSR strategy 2: Server-side DOM simulation
+
+For JSON-to-HTML conversion within Node.js, use a headless DOM library such as [**jsdom**](https://github.com/jsdom/jsdom) or [**happy-dom**](https://github.com/capricorn86/happy-dom).
+
+<Aside type="note">
+  Headless DOM implementations are sufficient for most use cases but may not perfectly replicate browser rendering behavior.
+</Aside>
+
+### Using jsdom
+
+```ts
+import { JSDOM } from 'jsdom'
+
+// Initialize virtual DOM
+const dom = new JSDOM('')
+const document = dom.window.document
+
+editor.setContent({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
+})
+editor.commands.insertText({ text: 'Bar' })
+
+// Provide the document to getDocHTML
+const html = editor.getDocHTML({ document })
+console.log(html) // => <div><p>BarFoo</p></div>
+```
+
+### Using happy-dom
+
+```ts
+import { Window } from 'happy-dom'
+
+// Initialize virtual DOM
+const window = new Window()
+const document = window.document
+
+editor.setContent({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
+})
+editor.commands.insertText({ text: 'Bar' })
+
+// Provide the document to getDocHTML
+const html = editor.getDocHTML({ document })
+console.log(html) // => <div><p>BarFoo</p></div>
+```

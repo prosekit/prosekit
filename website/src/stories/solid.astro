@@ -1,5 +1,5 @@
 ---
-import { SolidExample } from '../examples/solid/example'
+import { SolidRenderer } from 'prosekit-registry/solid/renderer'
 import Container from './container.astro'
 
 interface Props {
@@ -8,5 +8,5 @@ interface Props {
 ---
 
 <Container>
-  <SolidExample story={Astro.props.story} client:only="solid-js" />
+  <SolidRenderer story={Astro.props.story} client:only="solid-js" />
 </Container>

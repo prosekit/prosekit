@@ -1,5 +1,5 @@
 ---
-import { VueExample } from '../examples/vue/example'
+import { VueRenderer } from 'prosekit-registry/vue/renderer'
 import Container from './container.astro'
 
 interface Props {
@@ -8,5 +8,5 @@ interface Props {
 ---
 
 <Container>
-  <VueExample story={Astro.props.story} client:only="vue" />
+  <VueRenderer story={Astro.props.story} client:only="vue" />
 </Container>

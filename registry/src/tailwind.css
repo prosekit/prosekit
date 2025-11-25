@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "prosekit/basic/style.css";
+@import "prosekit/basic/typography.css";
+
+@source "../../../registry/src/";
+@custom-variant dark (&:where(.dark, .dark *));
+@plugin "@egoist/tailwindcss-icons";

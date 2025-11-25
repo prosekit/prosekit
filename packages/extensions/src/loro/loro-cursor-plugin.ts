@@ -2,27 +2,37 @@ import {
   definePlugin,
   type PlainExtension,
 } from '@prosekit/core'
+import type { Plugin } from '@prosekit/pm/state'
 import type {
-  EditorState,
-  Selection,
-} from '@prosekit/pm/state'
-import type { DecorationAttrs } from '@prosekit/pm/view'
-import type { PeerID } from 'loro-crdt'
+  CursorAwareness,
+  CursorEphemeralStore,
+  CursorPluginOptions,
+} from 'loro-prosemirror'
 import {
   LoroCursorPlugin,
-  type CursorAwareness,
+  LoroEphemeralCursorPlugin,
 } from 'loro-prosemirror'
 
-export interface LoroCursorOptions {
-  awareness: CursorAwareness
-  getSelection?: (state: EditorState) => Selection
-  createCursor?: (user: PeerID) => Element
-  createSelection?: (user: PeerID) => DecorationAttrs
+export interface LoroCursorOptions extends CursorPluginOptions {
+  awareness?: CursorAwareness
+  presence?: CursorEphemeralStore
 }
 
 export function defineLoroCursorPlugin(
   options: LoroCursorOptions,
 ): PlainExtension {
-  const { awareness, ...rest } = options
-  return definePlugin(LoroCursorPlugin(awareness, rest))
+  return definePlugin(createLoroCursorPlugin(options))
+}
+
+function createLoroCursorPlugin(options: LoroCursorOptions): Plugin {
+  const { awareness, presence, ...rest } = options
+  if (awareness && presence) {
+    throw new Error('Only one of awareness and presence can be provided')
+  } else if (awareness) {
+    return LoroCursorPlugin(awareness, rest)
+  } else if (presence) {
+    return LoroEphemeralCursorPlugin(presence, rest)
+  } else {
+    throw new Error('Either awareness or presence must be provided')
+  }
 }

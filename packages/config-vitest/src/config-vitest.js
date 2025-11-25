@@ -1,29 +1,35 @@
 // @ts-check
 
-/// <reference types="@vitest/browser/providers/playwright" />
-
+import { playwright } from '@vitest/browser-playwright'
 import { merge } from 'lodash-es'
+
+const debug = !!process.env.debug && !process.env.CI
 
 /** @type {import('vitest/config').UserWorkspaceConfig} */
 const defaultConfig = {
-  optimizeDeps: {
-    include: ['@vitest/coverage-v8/browser'],
-  },
   test: {
+    maxWorkers: process.env.CI ? 1 : 2,
     browser: {
       enabled: true,
-      provider: 'playwright',
-      headless: true,
-      ui: false,
-      fileParallelism: false,
-      screenshotFailures: false,
+      viewport: {
+        width: 900,
+        height: 600,
+      },
+      provider: playwright({
+        launchOptions: {},
+        contextOptions: {
+          reducedMotion: 'reduce',
+          hasTouch: true,
+          permissions: ['clipboard-read', 'clipboard-write'],
+        },
+      }),
+      headless: !debug,
+      ui: debug,
+      fileParallelism: true,
+      screenshotFailures: debug,
       instances: [
         {
           browser: 'chromium',
-          context: {
-            hasTouch: true,
-            permissions: ['clipboard-read', 'clipboard-write'],
-          },
         },
       ],
     },

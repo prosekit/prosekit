@@ -1,10 +1,10 @@
 import {
+  createComputed,
   createSignal,
   useAttribute,
-  useEffect,
   type ConnectableElement,
   type ReadonlySignal,
-  type SignalState,
+  type SetupOptions,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
@@ -12,8 +12,10 @@ import type { VirtualElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
+import { useScrolling } from '../../../hooks/use-scrolling'
 import {
   blockPopoverContext,
+  draggingContext,
   type BlockPopoverContext,
   type HoverState,
 } from '../context'
@@ -22,14 +24,17 @@ import {
   defineElementHoverHandler,
   type ElementHoverHandler,
 } from './pointer-move'
-import type { BlockHandlePopoverProps } from './types'
+import type {
+  BlockHandlePopoverEvents,
+  BlockHandlePopoverProps,
+} from './types'
 
 /**
  * @internal
  */
 export function useBlockHandlePopover(
   host: ConnectableElement,
-  { state }: { state: SignalState<BlockHandlePopoverProps> },
+  { state, emit }: SetupOptions<BlockHandlePopoverProps, BlockHandlePopoverEvents>,
 ): void {
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)
@@ -38,15 +43,19 @@ export function useBlockHandlePopover(
   const context = createSignal<BlockPopoverContext>(null)
   blockPopoverContext.provide(host, context)
 
-  const open = createSignal(false)
+  const dragging = createSignal(false)
+  draggingContext.provide(host, dragging)
 
-  useEffect(host, () => {
-    open.set(!!context.get())
+  const scrolling = useScrolling(host)
+  const open = createComputed(() => {
+    return !!context.get() && !scrolling.get()
   })
 
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)
     context.set(hoverState)
+    const stateChangeDetails = hoverState ? { node: hoverState.node, pos: hoverState.pos } : null
+    emit('stateChange', stateChangeDetails)
   })
 
   useAttribute(host, 'data-state', () => (open.get() ? 'open' : 'closed'))

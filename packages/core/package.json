@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/core",
   "type": "module",
-  "version": "0.8.2",
+  "version": "0.8.7",
   "private": false,
   "description": "Core features for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -30,29 +30,32 @@
     "./test": "./src/test/index.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^0.5.0",
+    "@ocavue/utils": "^1.0.0",
     "@prosekit/pm": "workspace:^",
     "clsx": "^2.1.1",
     "just-clone": "^6.2.0",
     "just-map-values": "^3.2.0",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.41.0"
+    "type-fest": "^5.2.0"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@vitest/browser": "^3.2.3",
-    "tsdown": "^0.12.7",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "@types/diffable-html": "^5.0.2",
+    "diffable-html": "^6.0.1",
+    "tsdown": "^0.16.7",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.14",
+    "vitest-browser-commands": "^0.2.0"
   },
   "publishConfig": {
     "exports": {

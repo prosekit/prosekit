@@ -1,4 +1,8 @@
-div.ProseMirror {
+:root {
+  --prosekit-node-selection-color: rgba(57, 136, 255, 0.2);
+}
+
+.ProseMirror {
   & {
     /* Disable margin collapsing */
     display: flex;
@@ -94,7 +98,7 @@ div.ProseMirror {
   & video {
     width: min-content;
     max-width: 100%;
-    margin: 0;
+    margin: 0.5em 0;
   }
 
   & code {
@@ -162,13 +166,13 @@ div.ProseMirror {
     &:has(> div.list-content > h1) {
       &::before,
       & > .list-marker {
-        top: 1em;
+        top: 0.75em;
       }
     }
     &:has(> div.list-content > h2) {
       &::before,
       & > .list-marker {
-        top: 0.6em;
+        top: 0.5em;
       }
     }
     &:has(> div.list-content > h3) {
@@ -186,29 +190,15 @@ div.ProseMirror {
     &:has(> div.list-content > h5) {
       &::before,
       & > .list-marker {
-        top: -0.1em;
+        top: -0.2em;
       }
     }
     &:has(> div.list-content > h6) {
       &::before,
       & > .list-marker {
-        top: -0.1em;
+        top: -0.3em;
       }
     }
-  }
-
-  /*
-   In Chrome, when an editor is styled with a background color and a selected
-   node is dragged, the dragged element inherits this background color, along
-   with an additional shadow effect. This visual is not ideal, especially when
-   the dragged element lacks any margin or padding. To address this issue, we
-   adjust the z-index of the dragged element as a workaround, preventing it from
-   inheriting the background color.
-
-   See also https://stackoverflow.com/a/61812377
-   */
-  .ProseMirror-selectednode {
-    z-index: calc(infinity);
   }
 
   /*
@@ -217,5 +207,17 @@ div.ProseMirror {
    */
   div[data-node-view-root="true"] {
     display: contents;
+  }
+
+  & .ProseMirror-selectednode {
+    border-radius: 0.2rem;
+    outline-color: var(--prosekit-node-selection-color);
+    outline-style: solid;
+    outline-width: 0.3rem;
+    background-color: var(--prosekit-node-selection-color);
+  }
+
+  &.prosekit-dragging {
+    --prosekit-node-selection-color: transparent;
   }
 }

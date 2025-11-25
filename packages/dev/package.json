@@ -5,29 +5,31 @@
   "private": true,
   "description": "Internal development tools for ProseKit",
   "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "gen": "tsx src/gen.ts"
   },
   "dependencies": {
-    "@manypkg/find-root": "^3.0.0",
-    "@manypkg/get-packages": "^3.0.0",
-    "@sindresorhus/slugify": "^2.2.1",
-    "@types/fs-extra": "^11.0.4",
-    "fs-extra": "^11.3.0",
+    "@manypkg/find-root": "^3.1.0",
+    "@manypkg/get-packages": "^3.1.0",
+    "@sindresorhus/slugify": "^3.0.0",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0"
   },
   "devDependencies": {
     "@changesets/read": "^0.6.5",
+    "@ocavue/utils": "^1.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.17.29",
+    "@types/node": "^24.10.1",
     "change-case": "^5.4.4",
     "execa": "^9.6.0",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "json5": "^2.2.3",
-    "tsx": "^4.19.4",
-    "type-fest": "^4.41.0",
-    "typescript": "~5.8.3"
+    "tsx": "^4.20.6",
+    "type-fest": "^5.2.0",
+    "typescript": "~5.9.3"
   }
 }

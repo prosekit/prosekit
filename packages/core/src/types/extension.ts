@@ -40,7 +40,6 @@ export interface Extension<
 > {
   extension: Extension | Extension[]
   priority?: Priority
-  _type?: T
 
   /**
    * @public
@@ -48,6 +47,9 @@ export interface Extension<
    * The schema that this extension represents.
    */
   schema: Schema | null
+
+  /** @internal */
+  _type?: T
 }
 
 /**

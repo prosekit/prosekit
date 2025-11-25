@@ -1,5 +1,314 @@
 # prosekit
 
+## 0.16.3
+
+### Patch Changes
+
+- [`ce7cf17`](https://github.com/ocavue/prosekit/commit/ce7cf17e856dd1a5c96ac42568bbc2e7cf0562d2) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where the same keybinding key with different variants were not merged correctly.
+
+## 0.16.2
+
+### Patch Changes
+
+- [`633300a`](https://github.com/ocavue/prosekit/commit/633300acea1221d3d6791bc9c5bcb63fc8cde239) ![](https://prosekit.dev/b/react)
+
+  Resolve SSR issue in `useEditorDerivedValue` hook.
+
+- [`acf5354`](https://github.com/ocavue/prosekit/commit/acf53543e728cc5eb4d843a70f9232dc30d5e680) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+## 0.16.1
+
+### Patch Changes
+
+- [`a12beee`](https://github.com/ocavue/prosekit/commit/a12beeee68583c0ef21fc05be4ff3036d21760ba) ![](https://prosekit.dev/b/core)
+
+  Ensure state merges respect extension priority so higher-priority extensions win.
+
+## 0.16.0
+
+### Minor Changes
+
+- [`39cd42d`](https://github.com/ocavue/prosekit/commit/39cd42dff8b8fe1dc24bb3f05730eac5aedf8042) ![](https://prosekit.dev/b/extensions)
+
+  Update the DOM output for task list clipboard serialization to include a
+  checkbox element inside the list item.
+
+  For instance, set the following content to the editor and call `editor.getDocHTML()`:
+
+  ```ts
+  editor.setContent({
+    type: "doc",
+    content: [
+      {
+        type: "list",
+        attrs: { kind: "task", checked: true },
+        content: [
+          {
+            type: "paragraph",
+            content: [{ type: "text", text: "Foo" }],
+          },
+        ],
+      },
+    ],
+  });
+  console.log(editor.getDocHTML());
+  ```
+
+  The previous output was:
+
+  ```html
+  <div>
+    <ul>
+      <li
+        class="prosemirror-flat-list"
+        data-list-kind="task"
+        data-list-checked=""
+      >
+        <p>Foo</p>
+      </li>
+    </ul>
+  </div>
+  ```
+
+  The new output is:
+
+  ```html
+  <div>
+    <ul>
+      <li
+        class="prosemirror-flat-list"
+        data-list-kind="task"
+        data-list-checked=""
+      >
+        <p>
+          <input type="checkbox" checked="" />
+          Foo
+        </p>
+      </li>
+    </ul>
+  </div>
+  ```
+
+- [`2c45905`](https://github.com/ocavue/prosekit/commit/2c45905cb7ff3a8a479564a451c15cd145fcbb47) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)
+
+  Add `useEditorDerivedValue` to derive a value from the editor instance after editor state changes.
+
+### Patch Changes
+
+- [`2eb5e28`](https://github.com/ocavue/prosekit/commit/2eb5e28f75b00a6bb7326f178f3a3823f0b4c686) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror packages.
+
+## 0.15.8
+
+### Patch Changes
+
+- [`ae8e86e`](https://github.com/ocavue/prosekit/commit/ae8e86ef2bcf062e8dfb4d7360bcf98b357ffc7e) ![](https://prosekit.dev/b/basic)
+
+  Add a vertical margin to `<img>` and `<video>` in `prosekit/basic/typography.css` to improve spacing between content.
+
+- [`5c16f02`](https://github.com/ocavue/prosekit/commit/5c16f02aeff0071f51b7190f46c1eae5689001d7) ![](https://prosekit.dev/b/extensions)
+
+  Add a new `uploadImage` command to upload an image file and insert an image node with a temporary URL, which is replaced once the upload completes.
+
+## 0.15.7
+
+### Patch Changes
+
+- [`79eb0e7`](https://github.com/ocavue/prosekit/commit/79eb0e7c51bb3c72104c789e250dc9738e882f29) ![](https://prosekit.dev/b/preact)
+
+  Add complete Preact support with node/mark views and useEditorDerivedValue hook. Preact now has feature parity with React, including:
+
+  - `definePreactNodeView` for custom node views
+  - `definePreactMarkView` for custom mark views
+  - `useEditorDerivedValue` hook for reactive state derivation
+
+## 0.15.6
+
+### Patch Changes
+
+- [`cf1e5ca`](https://github.com/ocavue/prosekit/commit/cf1e5ca2af1442eff6d9e895b954bff461ff9e46) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineImageUploadHandler` to handle images uploading when pasting or dragging images into the editor.
+
+- [`21ec272`](https://github.com/ocavue/prosekit/commit/21ec2721dbbe26a5a3fcc5d8227b1fa68b5a3580) ![](https://prosekit.dev/b/solid)
+
+  Fix an issue where the Solid node view and mark view props were not updated when the editor state changed.
+
+## 0.15.5
+
+### Patch Changes
+
+- [`0e18cce`](https://github.com/ocavue/prosekit/commit/0e18cceae67ed5ad5c1c18e2f4d469cdfa596fff) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/pm)
+
+  Include source code and source map files in published packages. This makes it easier to use IDEs' "Go to Definition" feature and inspect the source code.
+
+## 0.15.4
+
+### Patch Changes
+
+- [`c674b43`](https://github.com/ocavue/prosekit/commit/c674b43ba55babc160f89783f3120b4455c0ee07) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/web)
+
+  Hide the extra drop indicator when moving a table column or row by dragging the table handle.
+
+- [`e8b70cd`](https://github.com/ocavue/prosekit/commit/e8b70cd0ac30e11fb9ea4aacfb5e5a4af925a989) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview includes unexpected background content on Safari.
+
+- [`94b90b6`](https://github.com/ocavue/prosekit/commit/94b90b6448b42ce6df2f41000cd4fb256645f602) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview of an image displays an incorrect size.
+
+- [`cc598a0`](https://github.com/ocavue/prosekit/commit/cc598a0c0bec001e03f008aaddf9191bc2442338) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where table drag handle doesn't work on Firefox.
+
+## 0.15.3
+
+### Patch Changes
+
+- [`a5ffd43`](https://github.com/ocavue/prosekit/commit/a5ffd4375f4c365f0deb97a4fd5c5fbacccdc2a2) ![](https://prosekit.dev/b/extensions)
+
+  Now links in pasted text are automatically converted to links.
+
+- [`a5ffd43`](https://github.com/ocavue/prosekit/commit/a5ffd4375f4c365f0deb97a4fd5c5fbacccdc2a2) ![](https://prosekit.dev/b/extensions)
+
+  Add `definePasteRule` for transforming pasted content.
+
+  Add `defineMarkPasteRule` for applying marks to pasted content.
+
+## 0.15.2
+
+### Patch Changes
+
+- [`52e82ba`](https://github.com/ocavue/prosekit/commit/52e82badcba517efbe7f6ad3c0145042eeadca47) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the ordered number in the list node wasn't positioned correctly during dragging.
+
+- [`b6ef783`](https://github.com/ocavue/prosekit/commit/b6ef783abe632570694baf39becd4967e1912150) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where a list node might be moved to the wrong position when dropping.
+
+- [`3e7ca52`](https://github.com/ocavue/prosekit/commit/3e7ca52e552b082dea4ca87033c23a6e01a5130f) ![](https://prosekit.dev/b/web)
+
+  Add semi-transparent background color to table drag preview.
+
+## 0.15.1
+
+### Patch Changes
+
+- [`4abab2e`](https://github.com/ocavue/prosekit/commit/4abab2e6cb4d3de2efed54cc1cc234f00acf0437) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview has an incorrect position when the dragging element has a margin.
+
+- [`3c52a64`](https://github.com/ocavue/prosekit/commit/3c52a64e1d59bbe3e906bb1dd3b36a325566f0ac) ![](https://prosekit.dev/b/extensions)
+
+  Don't show the drop indicator when dragging a node to the same position.
+
+- [`4abab2e`](https://github.com/ocavue/prosekit/commit/4abab2e6cb4d3de2efed54cc1cc234f00acf0437) ![](https://prosekit.dev/b/basic)
+
+  Improve the node selection style in `prosekit/basic/typography.css`. Add a new
+  CSS variable `--prosekit-node-selection-color` to customize the color of the
+  node selection background.
+
+- [`382b6da`](https://github.com/ocavue/prosekit/commit/382b6da0bed49f199bf34ff5e758a7b0176ae119) ![](https://prosekit.dev/b/web)
+
+  Hide block handles and table handles during scrollling.
+
+- [`4abab2e`](https://github.com/ocavue/prosekit/commit/4abab2e6cb4d3de2efed54cc1cc234f00acf0437) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where the virtual selection and the node selection are both shown.
+
+## 0.15.0
+
+### Minor Changes
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Add `<DropIndicator />` component to replace `defineDropCursor` extension.
+
+  The new `<DropIndicator />` component provides improved drag-and-drop visual feedback when dragging content into the editor. This replaces the previous `defineDropCursor` extension that was based on the [`prosemirror-dropcursor`](https://github.com/ProseMirror/prosemirror-dropcursor) package. The component offers more accurate positioning for nested lists, better support for customization and animations.
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/basic)
+
+  Remove `defineDropCursor` from `defineBasicExtension`.
+
+  The `defineDropCursor` extension has been removed from the basic extension bundle as it is being replaced by the new `<DropIndicator />` component, which provides better positioning and customization options.
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/basic)
+
+  Adjust list marker positioning in `prosekit/basic/typography.css`.
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/extensions)
+
+  List nodes with `bullet` and `toggle` kinds now use SVG icons instead of text-based markers. This provides better visual consistency and customization options.
+
+  Available CSS variables for icon customization:
+
+  - `--prosekit-list-bullet-icon`: The icon for bullet lists
+  - `--prosekit-list-toggle-open-icon`: The icon for toggle lists when expanded
+  - `--prosekit-list-toggle-closed-icon`: The icon for toggle lists when collapsed
+
+### Patch Changes
+
+- [`8417673`](https://github.com/ocavue/prosekit/commit/8417673c6762f784e443327b617d4e12cd711add) ![](https://prosekit.dev/b/web)
+
+  Improve the positioning of the table handles during scrolling.
+
+## 0.14.2
+
+### Patch Changes
+
+- [`941c94f`](https://github.com/ocavue/prosekit/commit/941c94f1c00047feb98f21f55734602905d123f5) ![](https://prosekit.dev/b/extensions)
+
+  Add `language-*` class to `<code>` elements in code blocks. This improves compatibility with the remark/rehype ecosystem that expect this class naming convention.
+
+## 0.14.1
+
+### Patch Changes
+
+- [`71c0584`](https://github.com/ocavue/prosekit/commit/71c0584d748ffc7670a087c94a500e7113f08e2f) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview might have different sizes when dragging a row or column of a table.
+
+## 0.14.0
+
+### Minor Changes
+
+- [`f9ebe7e`](https://github.com/ocavue/prosekit/commit/f9ebe7e9d5e2e94fdba20384c3871a6988101954) ![](https://prosekit.dev/b/web)
+
+  You can now easily drag and drop table rows and columns by incorporating the new `<TableHandleDragPreview/>` and `<TableHandleDropIndicator/>` components.
+
+### Patch Changes
+
+- [`eb7d253`](https://github.com/ocavue/prosekit/commit/eb7d25326710e8263a5bfb49fd1a17c50069e853) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where a table handle menu item doesn't fire the `select` event after the second click.
+
+- [`f0d4985`](https://github.com/ocavue/prosekit/commit/f0d49852ca621476c27fe544eee8d7fc61954c0a) ![](https://prosekit.dev/b/core)
+
+  Deprecate `collectChildren` utility.
+
+- [`f9ebe7e`](https://github.com/ocavue/prosekit/commit/f9ebe7e9d5e2e94fdba20384c3871a6988101954) ![](https://prosekit.dev/b/extensions)
+
+  Add `moveTableColumn` and `moveTableRow` commands.
+
+- [`c3b1079`](https://github.com/ocavue/prosekit/commit/c3b1079ccc4e71536815251295bb6c115fe3b337) ![](https://prosekit.dev/b/web)
+
+  Add a new `stateChange` event to the `BlockHandlePopover` component.
+
+## 0.13.6
+
+### Patch Changes
+
+- [`1e5e3a3`](https://github.com/ocavue/prosekit/commit/1e5e3a3b57e07d2721779343059284d6cddb51e8) ![](https://prosekit.dev/b/extensions)
+
+  Add `target` and `rel` attributes to link.
+
 ## 0.13.5
 
 ### Patch Changes
@@ -35,8 +344,8 @@
     ```tsx
     // ✅ Good: derive function is memoized
     const isBoldActive = useEditorDerivedValue(
-      useCallback((editor) => editor.marks.bold.isActive(), []),
-    )
+      useCallback((editor) => editor.marks.bold.isActive(), [])
+    );
     ```
 
   - **If defined outside a component, it's naturally stable:**
@@ -44,11 +353,11 @@
     ```tsx
     // ✅ Good: derive function is stable (defined outside)
     function getBoldState(editor) {
-      return editor.marks.bold.isActive()
+      return editor.marks.bold.isActive();
     }
 
     function MyComponent() {
-      const isBoldActive = useEditorDerivedValue(getBoldState)
+      const isBoldActive = useEditorDerivedValue(getBoldState);
       // ...
     }
     ```
@@ -58,8 +367,8 @@
     ```tsx
     // ❌ Bad: derive function is not memoized
     const isBoldActive = useEditorDerivedValue((editor) =>
-      editor.marks.bold.isActive(),
-    )
+      editor.marks.bold.isActive()
+    );
     ```
 
   ### Migration Example
@@ -68,13 +377,13 @@
 
   ```tsx
   // Before
-  import { useEditor } from 'prosekit/react'
+  import { useEditor } from "prosekit/react";
 
-  import Button from './button'
-  import type { EditorExtension } from './extension'
+  import Button from "./button";
+  import type { EditorExtension } from "./extension";
 
   export default function Toolbar() {
-    const editor = useEditor<EditorExtension>({ update: true })
+    const editor = useEditor<EditorExtension>({ update: true });
 
     return (
       <div className="CSS_TOOLBAR">
@@ -95,17 +404,17 @@
           H2
         </Button>
       </div>
-    )
+    );
   }
   ```
 
   ```tsx
   // After
-  import type { Editor } from 'prosekit/core'
-  import { useEditorDerivedValue } from 'prosekit/react'
+  import type { Editor } from "prosekit/core";
+  import { useEditorDerivedValue } from "prosekit/react";
 
-  import Button from './button'
-  import type { EditorExtension } from './extension'
+  import Button from "./button";
+  import type { EditorExtension } from "./extension";
 
   function getToolbarItems(editor: Editor<EditorExtension>) {
     return {
@@ -119,11 +428,11 @@
         canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
         command: () => editor.commands.toggleHeading({ level: 2 }),
       },
-    }
+    };
   }
 
   export default function Toolbar() {
-    const items = useEditorDerivedValue(getToolbarItems)
+    const items = useEditorDerivedValue(getToolbarItems);
 
     return (
       <div className="CSS_TOOLBAR">
@@ -145,7 +454,7 @@
           H2
         </Button>
       </div>
-    )
+    );
   }
   ```
 
@@ -236,15 +545,15 @@
   _Before_:
 
   ```ts
-  import { defineDoc, defineText, defineParagraph } from 'prosekit/core'
+  import { defineDoc, defineText, defineParagraph } from "prosekit/core";
   ```
 
   _After_:
 
   ```ts
-  import { defineDoc } from 'prosekit/extensions/doc'
-  import { defineText } from 'prosekit/extensions/text'
-  import { defineParagraph } from 'prosekit/extensions/paragraph'
+  import { defineDoc } from "prosekit/extensions/doc";
+  import { defineText } from "prosekit/extensions/text";
+  import { defineParagraph } from "prosekit/extensions/paragraph";
   ```
 
 - [`581ed6f`](https://github.com/ocavue/prosekit/commit/581ed6f8e36b29d805e4b81e1b452e71454350f1) ![](https://prosekit.dev/b/extensions)
@@ -417,7 +726,7 @@
   // Previous code example
   <ResizableRoot
     onSizeChangeEnd={(size) => {
-      handle(size.width, size.height)
+      handle(size.width, size.height);
     }}
   />
   ```
@@ -426,7 +735,7 @@
   // Updated code example
   <ResizableRoot
     onResizeEnd={(event) => {
-      handle(event.size.width, event.size.height)
+      handle(event.size.width, event.size.height);
     }}
   />
   ```
@@ -1386,8 +1695,8 @@
   Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
 
   ```js
-  import 'prosekit/basic/style.css'
-  import 'prosekit/basic/typography.css'
+  import "prosekit/basic/style.css";
+  import "prosekit/basic/typography.css";
   ```
 
 ### Patch Changes
@@ -1508,9 +1817,9 @@
   Add new readonly extension.
 
   ```ts
-  import { defineReadonly } from 'prosekit/extensions/readonly'
+  import { defineReadonly } from "prosekit/extensions/readonly";
 
-  const extension = defineReadonly()
+  const extension = defineReadonly();
   ```
 
 - [`0c60503`](https://github.com/ocavue/prosekit/commit/0c60503) ![](https://prosekit.dev/b/preact) !![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)

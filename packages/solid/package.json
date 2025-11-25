@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.4.15",
+  "version": "0.6.2",
   "private": false,
   "description": "Solid components and utilities for ProseKit",
   "author": {
@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/solid"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -29,6 +29,7 @@
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.gen.ts",
     "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./drop-indicator": "./src/components/drop-indicator/index.gen.ts",
     "./inline-popover": "./src/components/inline-popover/index.gen.ts",
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
@@ -36,7 +37,8 @@
     "./tooltip": "./src/components/tooltip/index.gen.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
@@ -46,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.0",
-    "@prosemirror-adapter/solid": "^0.4.1"
+    "@prosemirror-adapter/core": "^0.4.6",
+    "@prosemirror-adapter/solid": "^0.4.6"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"
@@ -60,10 +62,9 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "solid-js": "^1.9.7",
-    "tsdown": "^0.12.7",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.3"
+    "solid-js": "^1.9.10",
+    "tsdown": "^0.16.7",
+    "typescript": "~5.9.3"
   },
   "publishConfig": {
     "exports": {
@@ -78,6 +79,10 @@
       "./block-handle": {
         "types": "./dist/prosekit-solid-block-handle.d.ts",
         "default": "./dist/prosekit-solid-block-handle.js"
+      },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-solid-drop-indicator.d.ts",
+        "default": "./dist/prosekit-solid-drop-indicator.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-solid-inline-popover.d.ts",
@@ -115,6 +120,9 @@
         "block-handle": [
           "./dist/prosekit-solid-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-solid-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-solid-inline-popover.d.ts"
         ],
@@ -138,6 +146,7 @@
       "prosekit-solid": "./src/index.ts",
       "prosekit-solid-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-solid-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-solid-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-solid-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-solid-popover": "./src/components/popover/index.gen.ts",
       "prosekit-solid-resizable": "./src/components/resizable/index.gen.ts",

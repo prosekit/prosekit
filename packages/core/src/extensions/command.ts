@@ -23,6 +23,7 @@ import {
   type RemoveNodeOptions,
 } from '../commands/remove-node'
 import { selectAll } from '../commands/select-all'
+import { selectBlock } from '../commands/select-block'
 import {
   setBlockType,
   type SetBlockTypeOptions,
@@ -78,6 +79,7 @@ export type BaseCommandsExtension = Extension<{
     setNodeAttrs: [options: SetNodeAttrsOptions]
     insertDefaultBlock: [options?: InsertDefaultBlockOptions]
     selectAll: []
+    selectBlock: []
     addMark: [options: AddMarkOptions]
     removeMark: [options: RemoveMarkOptions]
     unsetBlockType: [options?: UnsetBlockTypeOptions]
@@ -109,6 +111,8 @@ export function defineBaseCommands(): BaseCommandsExtension {
     insertDefaultBlock,
 
     selectAll,
+
+    selectBlock,
 
     addMark,
 

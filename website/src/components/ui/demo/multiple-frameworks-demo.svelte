@@ -31,8 +31,8 @@ interface Props {
 const props: Props = $props()
 
 const { frameworks, story } = props
-const frameworkRef = useFramework(frameworks)
-const framework = $derived(frameworkRef.current)
+const [getFramework, setFramework] = useFramework(frameworks)
+const framework = $derived(getFramework())
 
 let showCode = $state(props.showCode ?? true)
 </script>
@@ -40,7 +40,7 @@ let showCode = $state(props.showCode ?? true)
 <div
   class={[
     'not-content',
-    'flex flex-col border border-border rounded-lg my-4 bg-background overflow-hidden divide-y',
+    'flex flex-col rounded-lg my-4 bg-background overflow-hidden border border-border divide-y divide-border',
   ]}
 >
   <div>
@@ -48,7 +48,7 @@ let showCode = $state(props.showCode ?? true)
       <FrameworkSelect
         {frameworks}
         {framework}
-        onFrameworkChange={f => frameworkRef.current = f}
+        onFrameworkChange={setFramework}
       />
       <span class="flex-1"></span>
       <ShowCodeSwitch

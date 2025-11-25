@@ -66,9 +66,3 @@ export const applyMarkForTest: ApplyMarkFunction = (
     return newNode
   })
 }
-
-export function extractTags(
-  node: TaggedProseMirrorNode,
-): Record<string, number> {
-  return node.tags ?? {}
-}

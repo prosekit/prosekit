@@ -14,9 +14,6 @@
       "path": "./packages/config-tsdown/tsconfig.json",
     },
     {
-      "path": "./packages/config-unocss/tsconfig.json",
-    },
-    {
       "path": "./packages/config-vitest/tsconfig.json",
     },
     {
@@ -50,10 +47,16 @@
       "path": "./packages/svelte/tsconfig.json",
     },
     {
+      "path": "./packages/typedoc-plugin/tsconfig.json",
+    },
+    {
       "path": "./packages/vue/tsconfig.json",
     },
     {
       "path": "./packages/web/tsconfig.json",
+    },
+    {
+      "path": "./registry/tsconfig.json",
     },
     {
       "path": "./website/tsconfig.json",

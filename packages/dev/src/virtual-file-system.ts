@@ -9,19 +9,18 @@ import {
 } from '@manypkg/get-packages'
 import Yaml from 'js-yaml'
 import JSON5 from 'json5'
-import { sortBy } from 'lodash-es'
 
-import { findRootDir } from './find-root-dir.js'
+import { findRootDir } from './find-root-dir'
 import {
   isPrivatePackage,
   isPublicPackage,
-} from './is-public-package.js'
-import { isSubDirectory } from './is-sub-directory.js'
-import { listGitFiles } from './list-git-files.js'
-import { normalizePackageJson } from './normalize-package-json.js'
-import { removePath } from './remove-path.js'
-import { writeJson } from './write-json.js'
-import { writeText } from './write-text.js'
+} from './is-public-package'
+import { isSubDirectory } from './is-sub-directory'
+import { listGitFiles } from './list-git-files'
+import { normalizePackageJson } from './normalize-package-json'
+import { removePath } from './remove-path'
+import { writeJson } from './write-json'
+import { writeText } from './write-text'
 
 class VirtualFile {
   public distConetnt: string | null = null
@@ -69,8 +68,8 @@ class VirtualFile {
     this.update(JSON.stringify(json, null, 2) + '\n')
   }
 
-  updateYaml(yaml: any) {
-    this.update(Yaml.dump(yaml))
+  updateYaml(yaml: any, options?: Yaml.DumpOptions) {
+    this.update(Yaml.dump(yaml, options))
   }
 
   async commit(): Promise<boolean> {
@@ -128,18 +127,7 @@ class VirtualFileSystem {
   async getPackages() {
     if (!this.store.packages) {
       const { packages } = await getPackages(await this.getRootDir())
-      this.store.packages = sortBy(
-        sortBy(packages, (pkg) => pkg.packageJson.name),
-        (pkg) => {
-          if (pkg.packageJson.name === 'prosekit') {
-            return 1
-          } else if (pkg.packageJson.name === '@prosekit/pm') {
-            return 2
-          } else {
-            return 3
-          }
-        },
-      )
+      this.store.packages = packages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
     }
     return this.store.packages
   }
@@ -217,6 +205,16 @@ class VirtualFileSystem {
     return await file.read()
   }
 
+  async readJSON(filePath: string) {
+    const file = await this.ensureFile(filePath)
+    return await file.readJSON()
+  }
+
+  async readYaml(filePath: string) {
+    const file = await this.ensureFile(filePath)
+    return await file.readYaml()
+  }
+
   async updateText(filePath: string, content: string) {
     const file = await this.ensureFile(filePath)
     file.update(content)
@@ -227,8 +225,13 @@ class VirtualFileSystem {
   }
 
   async updateJSON(filePath: string, json: any) {
-    const file = await this.getFile(filePath)
+    const file = await this.ensureFile(filePath)
     file.updateJSON(json)
+  }
+
+  async updateYaml(filePath: string, yaml: any, options?: Yaml.DumpOptions) {
+    const file = await this.ensureFile(filePath)
+    file.updateYaml(yaml, options)
   }
 
   async updatePackage(pkg: Package) {
@@ -301,4 +304,3 @@ class VirtualFileSystem {
 }
 
 export const vfs = new VirtualFileSystem()
-export { type VirtualFile }

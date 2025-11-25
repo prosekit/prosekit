@@ -8,10 +8,15 @@ interface ExampleProps {
   initialContent?: NodeJSON
 }
 
-export function SolidRenderer({ story, props }: { story: string; props?: ExampleProps }): JSX.Element | JSX.FunctionElement {
-  const Example = loaders[story as keyof typeof loaders]
+interface Props {
+  story: string
+  exampleProps?: ExampleProps
+}
+
+export function SolidRenderer(props: Props): JSX.Element | JSX.FunctionElement {
+  const Example = loaders[props.story as keyof typeof loaders]
   if (!Example) {
-    console.warn(`[SolidRenderer] No example found for story ${story}`)
+    console.warn(`[SolidRenderer] No example found for story ${props.story}`)
   }
-  return Example ? h(Example, props) : null
+  return Example ? h(Example, props.exampleProps ?? null) : null
 }

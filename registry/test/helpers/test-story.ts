@@ -1,5 +1,6 @@
 import '../../src/tailwind.css'
 
+import type { NodeJSON } from 'prosekit/core'
 import {
   beforeEach,
   describe,
@@ -47,30 +48,38 @@ function testSingleStory(
   }
 }
 
-async function renderExample(framework: string, story: string, emptyContent: boolean) {
+async function renderExample(framework: string, story: string, empty: boolean) {
+  const emptyContent: NodeJSON = {
+    type: 'doc',
+    content: [
+      { type: 'paragraph', content: [] },
+    ],
+  }
+  const initialContent = empty ? emptyContent : undefined
+
   if (framework === 'react') {
     const { renderReactExample } = await import('./render-react')
-    return await renderReactExample(story, emptyContent)
+    return await renderReactExample(story, initialContent)
   }
 
   if (framework === 'vue') {
     const { renderVueExample } = await import('./render-vue')
-    return await renderVueExample(story, emptyContent)
+    return await renderVueExample(story, initialContent)
   }
 
   if (framework === 'svelte') {
     const { renderSvelteExample } = await import('./render-svelte')
-    return await renderSvelteExample(story, emptyContent)
+    return await renderSvelteExample(story, initialContent)
   }
 
   if (framework === 'solid') {
     const { renderSolidExample } = await import('./render-solid')
-    return await renderSolidExample(story, emptyContent)
+    return await renderSolidExample(story, initialContent)
   }
 
   if (framework === 'preact') {
     const { renderPreactExample } = await import('./render-preact')
-    return await renderPreactExample(story, emptyContent)
+    return await renderPreactExample(story, initialContent)
   }
 
   throw new Error(`The ${framework} framework is not supported`)

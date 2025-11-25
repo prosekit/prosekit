@@ -1,3 +1,4 @@
+import type { NodeJSON } from 'prosekit/core'
 import type { ComponentProps } from 'svelte'
 import {
   cleanup,
@@ -10,18 +11,15 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
-import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderSvelteExample(story: string, emptyContent: boolean) {
+export async function renderSvelteExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
   type Props = ComponentProps<typeof SvelteRenderer>
   const props: Props = {
     story,
-    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
+    exampleProps: { initialContent },
   }
-
-  // Use `as unknown as Props` to bypass the incorrect type in vitest-browser-svelte
-  return render(SvelteRenderer, { props } as unknown as Props)
+  return render(SvelteRenderer, props)
 }

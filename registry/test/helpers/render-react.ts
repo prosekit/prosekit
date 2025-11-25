@@ -1,3 +1,4 @@
+import type { NodeJSON } from 'prosekit/core'
 import { createElement } from 'react'
 import {
   cleanup,
@@ -10,14 +11,13 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
-import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderReactExample(story: string, emptyContent: boolean) {
+export async function renderReactExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
   return await render(createElement(ReactRenderer, {
     story,
-    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
+    exampleProps: { initialContent },
   }))
 }

@@ -5,7 +5,7 @@ import { loaders } from './loaders.gen'
 
 const props: {
   story: string
-  props?: Record<string, unknown>
+  exampleProps?: Record<string, unknown>
 } = $props()
 
 let loader = loaders[props.story as keyof typeof loaders]
@@ -18,7 +18,7 @@ onMount(() => {
 
 {#if mounted}
   {#await loader() then { default: LazyComponent }}
-    <LazyComponent {...(props.props as Record<string, never>)} />
+    <LazyComponent {...(props.exampleProps as Record<string, never>)} />
   {/await}
 {:else}
   <div></div>

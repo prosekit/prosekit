@@ -1,4 +1,5 @@
 import { createElement } from 'preact'
+import type { NodeJSON } from 'prosekit/core'
 import {
   cleanup,
   render,
@@ -10,14 +11,13 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
-import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderPreactExample(story: string, emptyContent: boolean) {
+export async function renderPreactExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
   return render(createElement(PreactRenderer, {
     story,
-    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
+    exampleProps: { initialContent },
   }))
 }

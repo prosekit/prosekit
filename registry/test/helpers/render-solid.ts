@@ -1,3 +1,4 @@
+import type { NodeJSON } from 'prosekit/core'
 import h from 'solid-js/h'
 import {
   cleanup,
@@ -10,14 +11,13 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
-import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderSolidExample(story: string, emptyContent: boolean) {
+export async function renderSolidExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
   return render(h(SolidRenderer, {
     story,
-    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
+    exampleProps: { initialContent },
   }))
 }

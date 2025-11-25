@@ -50,7 +50,10 @@ export interface PredictionPluginState {
  * @internal
  */
 export type PredictionTransactionMeta = {
+  type: 'enter'
   matching: PredictionPluginMatching
+} | {
+  type: 'leave'
 }
 
 export function getPluginState(state: EditorState): PredictionPluginState | undefined {

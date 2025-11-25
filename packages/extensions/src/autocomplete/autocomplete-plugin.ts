@@ -29,8 +29,9 @@ import type { AutocompleteRule } from './autocomplete-rule'
  * Workflow:
  *
  * 1. {@link handleTextInput}: called when text is inputted. Returns a new matching as a
- *    transaction meta if possible. This is the only way to create a new
+ *    transaction meta if possible. This is the only place to create a new
  *    matching if there is no existing matching.
+ * 2.
  */
 export function createAutocompletePlugin({
   getRules,
@@ -105,7 +106,7 @@ export function createAutocompletePlugin({
         }
 
         // If a new matching is being entered from `handleTextInput`
-        if (meta) {
+        if (meta.type === 'enter') {
           // Ignore the previous matching if it is not the same as the new matching
           if (
             prevMatching
@@ -117,6 +118,11 @@ export function createAutocompletePlugin({
 
           // Return the new matching
           return { matching: meta.matching, ignores }
+        }
+
+        // If a matching is being exited
+        if (meta.type === 'leave') {
+          return { matching: null, ignores }
         }
 
         throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
@@ -235,7 +241,7 @@ function handleTextInput(
   )
 
   if (currMatching) {
-    return { matching: currMatching }
+    return { type: 'enter', matching: currMatching }
   }
 }
 

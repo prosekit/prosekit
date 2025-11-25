@@ -18,6 +18,10 @@ export function useUserQuery(query: string, enabled: boolean) {
   }
 
   useEffect(() => {
+    if (!enabled) {
+      return
+    }
+
     let cancelled = false
 
     void (async () => {

@@ -19,9 +19,19 @@ import {
   setTrMeta,
   type PredictionPluginMatching,
   type PredictionPluginState,
+  type PredictionTransactionMeta,
 } from './autocomplete-helpers'
 import type { AutocompleteRule } from './autocomplete-rule'
 
+/**
+ * Creates a plugin that handles autocomplete functionality.
+ *
+ * Workflow:
+ *
+ * 1. {@link handleTextInput}: called when text is inputted. Returns a new matching as a
+ *    transaction meta if possible. This is the only way to create a new
+ *    matching if there is no existing matching.
+ */
 export function createAutocompletePlugin({
   getRules,
 }: {
@@ -95,7 +105,7 @@ export function createAutocompletePlugin({
         }
 
         // If a new matching is being entered from `handleTextInput`
-        if (meta.type === 'enter') {
+        if (meta) {
           // Ignore the previous matching if it is not the same as the new matching
           if (
             prevMatching
@@ -107,14 +117,6 @@ export function createAutocompletePlugin({
 
           // Return the new matching
           return { matching: meta.matching, ignores }
-        }
-
-        // If an existing matching is being exited from `handleTextInput`
-        if (meta.type === 'leave') {
-          if (prevMatching) {
-            ignores.add(prevMatching.from)
-          }
-          return { matching: null, ignores }
         }
 
         throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
@@ -182,8 +184,10 @@ export function createAutocompletePlugin({
 
     props: {
       handleTextInput: (view, from, to, textAdded, getTr) => {
-        const tr = handleTextInput(view, from, to, textAdded, getTr, getRules)
-        if (tr) {
+        const meta = handleTextInput(view, from, to, textAdded, getRules)
+        if (meta) {
+          const tr = getTr()
+          setTrMeta(tr, meta)
           view.dispatch(tr)
           return true
         }
@@ -209,9 +213,8 @@ function handleTextInput(
   from: number,
   to: number,
   textAdded: string,
-  getTr: () => Transaction,
   getRules: () => AutocompleteRule[],
-): Transaction | undefined {
+): PredictionTransactionMeta | undefined {
   // Only handle insertions
   if (from !== to) {
     return
@@ -222,7 +225,6 @@ function handleTextInput(
 
   const pluginState = getPluginState(view.state)
   const ignores = pluginState?.ignores ?? new Set<number>()
-  const prevMatching = pluginState?.matching
 
   const currMatching = matchRule(
     view.state,
@@ -233,9 +235,7 @@ function handleTextInput(
   )
 
   if (currMatching) {
-    return setTrMeta(getTr(), { type: 'enter', matching: currMatching })
-  } else if (prevMatching) {
-    return setTrMeta(getTr(), { type: 'leave' })
+    return { matching: currMatching }
   }
 }
 

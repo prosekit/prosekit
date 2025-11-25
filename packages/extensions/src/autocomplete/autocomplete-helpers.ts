@@ -49,11 +49,8 @@ export interface PredictionPluginState {
 /**
  * @internal
  */
-type PredictionTransactionMeta = {
-  type: 'enter'
+export type PredictionTransactionMeta = {
   matching: PredictionPluginMatching
-} | {
-  type: 'leave'
 }
 
 export function getPluginState(state: EditorState): PredictionPluginState | undefined {

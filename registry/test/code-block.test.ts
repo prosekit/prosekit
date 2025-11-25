@@ -10,6 +10,7 @@ import {
   locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('code-block', {
@@ -18,7 +19,7 @@ testStoryConsistency('code-block', {
 
 testStory('code-block', () => {
   it('input rule', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
     // Type triple backticks and press space to create a code block
     await clearEditor()
@@ -40,7 +41,7 @@ testStory('code-block', () => {
   })
 
   it('enter rule', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
     // Type triple backticks and press enter to create a code block
     await clearEditor()

@@ -1,3 +1,4 @@
+import type { NodeJSON } from 'prosekit/core'
 import {
   cleanup,
   render,
@@ -12,7 +13,12 @@ import {
 
 registerCleanupFunction(cleanup)
 
-export async function renderVueExample(story: string) {
+export async function renderVueExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
-  return render(VueRenderer, { props: { story } })
+  return render(VueRenderer, {
+    props: {
+      story,
+      exampleProps: { initialContent },
+    },
+  })
 }

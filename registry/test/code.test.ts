@@ -8,21 +8,22 @@ import {
 } from 'vitest/browser'
 
 import {
-  emptyEditor,
   expectLocatorToNotExist,
   extendSelection,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('code')
 
-testStory('code', () => {
+testStory({ story: 'code', emptyContent: true }, () => {
   it('toggle code mark via toolbar', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
-    await emptyEditor()
+    // Initially no code
+    await expectLocatorToNotExist(editor.locate('code'))
+
     await editor.click()
     await userEvent.type(editor, 'hello')
     await extendSelection('backward', 5)

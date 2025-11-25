@@ -1,5 +1,4 @@
 import {
-  beforeEach,
   describe,
   expect,
   it,
@@ -10,10 +9,8 @@ import {
 } from 'vitest/browser'
 
 import {
-  emptyEditor,
   expectLocatorToNotExist,
   getEditorHTML,
-  locateEditor,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -31,14 +28,10 @@ testStory('full', () => {
   })
 })
 
-testStory('full', () => {
-  beforeEach(async () => {
-    await emptyEditor()
-  })
-
+testStory({ story: 'full', emptyContent: true }, () => {
   describe('link', () => {
     it('press Space to insert a link', async () => {
-      const editor = locateEditor()
+      const editor = await waitForEditor()
       const url = 'https://www.example.com?query=query#fragment'
       const link = editor.locate(`a[href="${url}"]`, { hasText: url })
 
@@ -56,7 +49,7 @@ testStory('full', () => {
     })
 
     it('press Space to insert a link ends with a period', async () => {
-      const editor = locateEditor()
+      const editor = await waitForEditor()
       const url = 'https://example.com'
       const link = editor.locate(`a[href="${url}"]`, { hasText: url })
 
@@ -74,7 +67,7 @@ testStory('full', () => {
     })
 
     it('press Enter to insert', async () => {
-      const editor = locateEditor()
+      const editor = await waitForEditor()
       const url = 'https://www.example.com?query=query#fragment'
       const link = editor.locate(`a[href="${url}"]`, { hasText: url })
 
@@ -92,7 +85,7 @@ testStory('full', () => {
     })
 
     it('press Enter to insert a link ends with a period', async () => {
-      const editor = locateEditor()
+      const editor = await waitForEditor()
       const url = 'https://example.com'
       const link = editor.locate(`a[href="${url}"]`, { hasText: url })
 
@@ -196,7 +189,7 @@ testStory('full', () => {
 
   describe('toolbar', () => {
     it('press Space to insert an image', async () => {
-      const editor = locateEditor()
+      const editor = await waitForEditor()
       await userEvent.click(editor)
 
       await userEvent.type(editor, 'Foo')

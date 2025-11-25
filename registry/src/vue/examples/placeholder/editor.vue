@@ -20,12 +20,12 @@ import {
 import { defineExtension } from './extension'
 
 const props = defineProps<{
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }>()
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent: props.defaultContent })
+const editor = createEditor({ extension, defaultContent: props.initialContent })
 
 const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
 useDocChange(handleDocChange, { editor })

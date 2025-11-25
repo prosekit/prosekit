@@ -51,7 +51,7 @@ To provide default content for an example, create a file at `registry/src/<frame
 ```ts
 import type { NodeJSON } from "prosekit/core";
 
-export const defaultContent: NodeJSON = {
+export const sampleContent: NodeJSON = {
   /* ... */
 };
 ```

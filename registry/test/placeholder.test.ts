@@ -7,16 +7,16 @@ import { userEvent } from 'vitest/browser'
 import {
   emptyEditor,
   expectLocatorToNotExist,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('placeholder')
 
 testStory('placeholder', () => {
   it('shows when empty, hides on input, and reappears after clearing', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
     const placeholder = editor.locate(
       "p.prosekit-placeholder[data-placeholder='Type something...']",

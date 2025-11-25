@@ -6,9 +6,9 @@ import { page } from 'vitest/browser'
 
 import {
   expectLocatorToHaveCount,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('image-view', {
@@ -17,7 +17,7 @@ testStoryConsistency('image-view', {
 
 testStory('image-view', () => {
   it('renders default images', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     const images = editor.locate('img')
 
     await expectLocatorToHaveCount(images, 2)
@@ -28,7 +28,7 @@ testStory('image-view', () => {
 
 testStory(['full', 'image-view'], () => {
   it('selects image on click', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     const resizable = editor.locate('prosekit-resizable-root', { has: page.locate('img') }).first()
 
     await expect.element(resizable).toBeVisible()

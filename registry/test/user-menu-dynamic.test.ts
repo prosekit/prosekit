@@ -18,7 +18,7 @@ import {
 
 testStoryConsistency('user-menu-dynamic')
 
-testStory({ story: 'user-menu-dynamic', frameworks: ['vue', 'react'] }, () => {
+testStory({ story: 'user-menu-dynamic', frameworks: ['vue', 'react', 'preact'] }, () => {
   it('user-menu-dynamic', async () => {
     const editor = await waitForEditor()
 
@@ -203,6 +203,11 @@ declare global {
 async function updateNetworkState(state: 'connected' | 'disconnected') {
   {
     const { updateMockNetworkConnected, updateMockDelay } = await import('../src/react/sample/query-users')
+    updateMockNetworkConnected(state === 'connected')
+    updateMockDelay(0)
+  }
+  {
+    const { updateMockNetworkConnected, updateMockDelay } = await import('../src/preact/sample/query-users')
     updateMockNetworkConnected(state === 'connected')
     updateMockDelay(0)
   }

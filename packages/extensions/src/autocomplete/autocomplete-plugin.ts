@@ -28,16 +28,17 @@ import type { AutocompleteRule } from './autocomplete-rule'
  *
  * Workflow:
  *
- * 1. {@link handleTextInput}: called when text is inputted. Returns a new
- *    matching as a transaction meta if possible. This is the only place to
- *    create a new matching if there is no existing matching.
+ * 1. {@link handleTextInput}: called when text is going to be input, but the
+ *    transaction is not yet created. Injects a new matching as a transaction
+ *    meta if applicable. This is the only place to create a new matching if
+ *    there is no existing matching.
  * 2. {@link handleTransaction}: called when a transaction is going to be
  *    applied. Updates the plugin state based on the transaction. This step
- *    determines if an existing matching should be removed, and if a new
- *    matching should be created or updated.
+ *    determines if a matching should be created, updated or removed.
  * 3. {@link handleUpdate}: called when the editor state is updated. This is the
  *    place to call `onMatch` and register `deleteMatch` and `ignoreMatch`
  *    callbacks.
+ * 4. {@link getDecorations}: creates the decorations for the current matching.
  */
 export function createAutocompletePlugin({
   getRules,
@@ -71,17 +72,7 @@ export function createAutocompletePlugin({
         }
         return false
       },
-      decorations: (state: EditorState) => {
-        const pluginState = getPluginState(state)
-        if (pluginState?.matching) {
-          const { from, to } = pluginState.matching
-          const deco = Decoration.inline(from, to, {
-            class: 'prosemirror-prediction-match',
-          })
-          return DecorationSet.create(state.doc, [deco])
-        }
-        return null
-      },
+      decorations: getDecorations,
     },
   })
 }
@@ -259,6 +250,18 @@ function handleUpdate(view: EditorView, prevState: EditorState): void {
       ignoreMatch,
     })
   }
+}
+
+function getDecorations(state: EditorState): DecorationSet | null {
+  const pluginState = getPluginState(state)
+  if (pluginState?.matching) {
+    const { from, to } = pluginState.matching
+    const deco = Decoration.inline(from, to, {
+      class: 'prosemirror-prediction-match',
+    })
+    return DecorationSet.create(state.doc, [deco])
+  }
+  return null
 }
 
 const MAX_MATCH = 200

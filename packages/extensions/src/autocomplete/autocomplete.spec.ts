@@ -66,8 +66,8 @@ function setupSlashMenu() {
   const showSelection = (): string => {
     const pos = editor.state.selection.$from.pos
     const doc = editor.state.doc
-    const textBackward = doc.textBetween(0, pos)
-    const textForward = doc.textBetween(pos, doc.content.size)
+    const textBackward = doc.textBetween(0, pos, '\n')
+    const textForward = doc.textBetween(pos, doc.content.size, '\n')
     return textBackward + '<cursor>' + textForward
   }
 
@@ -224,7 +224,10 @@ describe('defineAutocomplete', () => {
     expect(isMatching()).toBe(true)
 
     await pressKey('Enter')
-    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(showSelection()).toMatchInlineSnapshot(`
+      "/
+      <cursor>"
+    `)
     expect(isMatching()).toBe(false)
   })
 

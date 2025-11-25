@@ -377,6 +377,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       `[${filename}] Unable to resolve the following imports:`,
       unresolvedImports,
     )
+    throw new Error(`Unable to resolve some imports`)
   }
 
   const collectedItemNames = new Set<string>()

@@ -307,6 +307,6 @@ function mapMatching(matching: PredictionPluginMatching, mapping: Mapping): Pred
     rule: matching.rule,
     match: matching.match,
     from: mapping.map(matching.from),
-    to: mapping.map(matching.to),
+    to: mapping.map(matching.to, -1),
   }
 }

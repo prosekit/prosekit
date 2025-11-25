@@ -2,6 +2,7 @@ import { defineUpdateHandler } from '@prosekit/core'
 import type { EditorState } from '@prosekit/pm/state'
 import { useMemo } from 'preact/hooks'
 
+import { useEventCallback } from './use-event-callback'
 import {
   useExtension,
   type UseExtensionOptions,
@@ -16,9 +17,10 @@ export function useStateUpdate(
   handler: (state: EditorState) => void,
   options?: UseExtensionOptions,
 ): void {
+  const memoizedHandler = useEventCallback(handler)
   const extension = useMemo(
-    () => defineUpdateHandler((view) => handler(view.state)),
-    [handler],
+    () => defineUpdateHandler((view) => memoizedHandler(view.state)),
+    [memoizedHandler],
   )
   useExtension(extension, options)
 }

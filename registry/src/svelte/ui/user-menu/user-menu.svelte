@@ -35,7 +35,7 @@ function handleUserInsert(id: number, username: string) {
 }
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex = canUseRegexLookbehind() ? /(?<!\S)@(|\S.*)$/u : /@(|\S.*)$/u
+const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 </script>
 
 <AutocompletePopover

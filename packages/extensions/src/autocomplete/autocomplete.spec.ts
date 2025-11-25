@@ -26,7 +26,7 @@ import {
 } from './autocomplete-rule'
 
 function setupSlashMenu() {
-  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
+  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 
   let matching: MatchHandlerOptions | null = null
 

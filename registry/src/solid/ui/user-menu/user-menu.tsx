@@ -17,7 +17,7 @@ import {
 } from 'solid-js'
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex = canUseRegexLookbehind() ? /(?<!\S)@(|\S.*)$/u : /@(|\S.*)$/u
+const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 
 export default function UserMenu(props: {
   users: { id: number; name: string }[]

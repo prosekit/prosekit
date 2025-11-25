@@ -13,7 +13,7 @@ import SlashMenuItem from './slash-menu-item.vue'
 const editor = useEditor<BasicExtension>()
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
+const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 </script>
 
 <template>

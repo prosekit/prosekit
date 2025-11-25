@@ -130,7 +130,7 @@ function handleTransaction(
   const ignores = new Set<number>()
   for (const ignore of prevValue.ignores) {
     const result = tr.mapping.mapResult(ignore)
-    if (!result.deletedBefore) {
+    if (!result.deletedBefore && !result.deletedAfter) {
       ignores.add(result.pos)
     }
   }

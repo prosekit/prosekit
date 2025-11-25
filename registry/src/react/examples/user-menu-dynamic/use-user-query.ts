@@ -13,22 +13,23 @@ export function useUserQuery(query: string, enabled: boolean) {
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    if (!enabled) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setUsers([])
-      return
-    }
+  if (!enabled && users.length > 0) {
+    setUsers([])
+  }
 
+  useEffect(() => {
     let cancelled = false
-    setLoading(true)
-    void queryUsers(query).then((users) => {
+
+    void (async () => {
+      setLoading(true)
+      const filteredUsers = await queryUsers(query)
       if (cancelled) {
         return
       }
-      setUsers(users)
+      setUsers(filteredUsers)
       setLoading(false)
-    })
+    })()
+
     return () => {
       cancelled = true
     }

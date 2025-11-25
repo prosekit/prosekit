@@ -49,9 +49,9 @@
     "@types/jsdom": "^27.0.0",
     "happy-dom": "^20.0.10",
     "jsdom": "^27.2.0",
-    "tsdown": "^0.16.6",
+    "tsdown": "^0.16.7",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.13"
+    "vitest": "^4.0.14"
   },
   "publishConfig": {
     "exports": {

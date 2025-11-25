@@ -9,7 +9,6 @@ import {
 } from '@manypkg/get-packages'
 import Yaml from 'js-yaml'
 import JSON5 from 'json5'
-import { sortBy } from 'lodash-es'
 
 import { findRootDir } from './find-root-dir'
 import {
@@ -128,18 +127,7 @@ class VirtualFileSystem {
   async getPackages() {
     if (!this.store.packages) {
       const { packages } = await getPackages(await this.getRootDir())
-      this.store.packages = sortBy(
-        sortBy(packages, (pkg) => pkg.packageJson.name),
-        (pkg) => {
-          if (pkg.packageJson.name === 'prosekit') {
-            return 1
-          } else if (pkg.packageJson.name === '@prosekit/pm') {
-            return 2
-          } else {
-            return 3
-          }
-        },
-      )
+      this.store.packages = packages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
     }
     return this.store.packages
   }

@@ -38,7 +38,7 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^0.8.1",
+    "@ocavue/utils": "^1.0.0",
     "@prosekit/pm": "workspace:^",
     "clsx": "^2.1.1",
     "just-clone": "^6.2.0",
@@ -52,9 +52,9 @@
     "@prosekit/config-vitest": "workspace:*",
     "@types/diffable-html": "^5.0.2",
     "diffable-html": "^6.0.1",
-    "tsdown": "^0.16.6",
+    "tsdown": "^0.16.7",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.13",
+    "vitest": "^4.0.14",
     "vitest-browser-commands": "^0.2.0"
   },
   "publishConfig": {

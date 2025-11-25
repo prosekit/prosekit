@@ -6,13 +6,15 @@ export interface User {
 }
 
 const connectHandlers: VoidFunction[] = []
-let mockNetworkStatus: 'fast' | 'slow' | 'offline' = 'slow'
+let networkStatus: 'fast' | 'slow' | 'offline' = 'slow'
 
 /**
  * A utility function to simulate different network states. Useful for testing.
+ *
+ * @internal
  */
-export function updateMockNetworkStatus(status: 'fast' | 'slow' | 'offline') {
-  mockNetworkStatus = status
+export function simulateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
+  networkStatus = status
   if (status !== 'offline') {
     connectHandlers.forEach((handler) => handler())
     connectHandlers.length = 0
@@ -23,11 +25,11 @@ export function updateMockNetworkStatus(status: 'fast' | 'slow' | 'offline') {
  * Simulate a user searching with some delay.
  */
 export async function queryUsers(query: string): Promise<User[]> {
-  if (mockNetworkStatus === 'offline') {
+  if (networkStatus === 'offline') {
     await new Promise<void>((resolve) => connectHandlers.push(resolve))
   }
-  if (mockNetworkStatus === 'slow') {
-    await new Promise<void>((resolve) => setTimeout(() => resolve(), 300))
+  if (networkStatus === 'slow') {
+    await new Promise<void>((resolve) => setTimeout(resolve, 300))
   }
 
   const normalizedQuery = query.toLowerCase().trim()

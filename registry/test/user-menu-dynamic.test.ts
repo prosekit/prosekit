@@ -190,14 +190,21 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
 async function updateNetworkState(state: 'connected' | 'disconnected') {
   const status = state === 'connected' ? 'fast' : 'offline'
-  const modules = await Promise.all([
-    import('../src/react/sample/query-users'),
-    import('../src/preact/sample/query-users'),
-    import('../src/svelte/sample/query-users'),
-    import('../src/vue/sample/query-users'),
-  ])
 
-  for (const module of modules) {
-    module.updateMockNetworkStatus(status)
+  {
+    const { simulateNetworkStatus } = await import('../src/react/sample/query-users')
+    simulateNetworkStatus(status)
+  }
+  {
+    const { simulateNetworkStatus } = await import('../src/preact/sample/query-users')
+    simulateNetworkStatus(status)
+  }
+  {
+    const { simulateNetworkStatus } = await import('../src/svelte/sample/query-users')
+    simulateNetworkStatus(status)
+  }
+  {
+    const { simulateNetworkStatus } = await import('../src/vue/sample/query-users')
+    simulateNetworkStatus(status)
   }
 }

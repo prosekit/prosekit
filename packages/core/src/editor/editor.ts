@@ -176,7 +176,7 @@ export class EditorInstance {
     return this.getState().doc
   }
 
-  private getProp<PropName extends keyof EditorProps>(propName: PropName): EditorProps[PropName] | undefined {
+  private getProp<PropName extends keyof EditorProps>(propName: PropName): Partial<EditorProps>[PropName] {
     return this.view?.someProp(propName) ?? this.directEditorProps[propName]
   }
 

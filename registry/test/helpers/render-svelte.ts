@@ -19,7 +19,7 @@ export async function renderSvelteExample(story: string, emptyContent: boolean) 
   type Props = ComponentProps<typeof SvelteRenderer>
   const props: Props = {
     story,
-    props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
   }
 
   // Use `as unknown as Props` to bypass the incorrect type in vitest-browser-svelte

@@ -18,6 +18,6 @@ export async function renderReactExample(story: string, emptyContent: boolean) {
   await runCleanupFunctions()
   return await render(createElement(ReactRenderer, {
     story,
-    props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
   }))
 }

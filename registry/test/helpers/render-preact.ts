@@ -18,6 +18,6 @@ export async function renderPreactExample(story: string, emptyContent: boolean) 
   await runCleanupFunctions()
   return render(createElement(PreactRenderer, {
     story,
-    props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+    props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
   }))
 }

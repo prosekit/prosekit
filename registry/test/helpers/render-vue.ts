@@ -18,7 +18,7 @@ export async function renderVueExample(story: string, emptyContent: boolean) {
   return render(VueRenderer, {
     props: {
       story,
-      props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+      props: emptyContent ? { initialContent: EMPTY_CONTENT } : undefined,
     },
   })
 }

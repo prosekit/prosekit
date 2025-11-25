@@ -1,5 +1,6 @@
 import '../../src/tailwind.css'
 
+import { DefaultMap } from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
 import {
   beforeEach,
@@ -135,7 +136,7 @@ export function testStoryConsistency(story: string, {
   }
 
   it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    const htmlToExamples = new Map<string, string[]>()
+    const htmlToExamples = new DefaultMap<string, string[]>(() => [])
     for (const example of examples) {
       const html = await getStableHTML({
         framework: example.framework,
@@ -144,9 +145,7 @@ export function testStoryConsistency(story: string, {
         shouldWaitForEditor,
         shouldWaitForImageToLoad,
       })
-      const group = htmlToExamples.get(html) || []
-      group.push(example.example)
-      htmlToExamples.set(html, group)
+      htmlToExamples.get(html).push(example.example)
     }
 
     if (htmlToExamples.size <= 1) {

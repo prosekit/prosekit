@@ -236,7 +236,7 @@
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.9.0",
     "@manypkg/find-root": "^3.1.0",
-    "@ocavue/utils": "^0.8.1",
+    "@ocavue/utils": "^0.9.0",
     "@preact/preset-vite": "^2.10.2",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",

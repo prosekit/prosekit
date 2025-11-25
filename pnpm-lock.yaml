@@ -145,8 +145,8 @@ importers:
   packages/core:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.8.1
-        version: 0.8.1
+        specifier: ^0.9.0
+        version: 0.9.0
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
@@ -215,6 +215,9 @@ importers:
       '@changesets/read':
         specifier: ^0.6.5
         version: 0.6.5
+      '@ocavue/utils':
+        specifier: ^0.9.0
+        version: 0.9.0
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
@@ -249,8 +252,8 @@ importers:
   packages/extensions:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.8.1
-        version: 0.8.1
+        specifier: ^0.9.0
+        version: 0.9.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -754,8 +757,8 @@ importers:
         specifier: ^1.7.4
         version: 1.7.4
       '@ocavue/utils':
-        specifier: ^0.8.1
-        version: 0.8.1
+        specifier: ^0.9.0
+        version: 0.9.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -849,8 +852,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^0.8.1
-        version: 0.8.1
+        specifier: ^0.9.0
+        version: 0.9.0
       '@preact/preset-vite':
         specifier: ^2.10.2
         version: 2.10.2(@babel/core@7.28.5)(preact@10.27.2)(vite@6.4.1(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1))
@@ -1014,8 +1017,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^0.8.1
-        version: 0.8.1
+        specifier: ^0.9.0
+        version: 0.9.0
       '@playwright/test':
         specifier: ^1.56.1
         version: 1.56.1
@@ -2437,6 +2440,9 @@ packages:
 
   '@ocavue/utils@0.8.1':
     resolution: {integrity: sha512-MdjR7B9HqonNmdUENjuPysZLsaU21d0QqNSFw41d9Qm9PbO+n+a/Cv7sP+SLvHglMNsHtudSg948sF9oxEa/Qg==}
+
+  '@ocavue/utils@0.9.0':
+    resolution: {integrity: sha512-aPQK0NP4noULYJ3jvYoS+lPqg6FiHtarqqMG+eQlKmVpU5oCWD1qoMj6ffrCpNLoRF/CGTSq5lopSxIY2RH0Jg==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -10126,6 +10132,8 @@ snapshots:
   '@ocavue/utils@0.7.1': {}
 
   '@ocavue/utils@0.8.1': {}
+
+  '@ocavue/utils@0.9.0': {}
 
   '@octokit/action@6.1.0':
     dependencies:

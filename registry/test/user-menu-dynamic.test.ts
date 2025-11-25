@@ -49,7 +49,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       expect(menuBox.y).toBeGreaterThan(editorBox.y)
     }
 
-    await updateNetworkState('disconnected')
+    await updateNetworkStatus('offline')
 
     // Show loading
     {
@@ -67,7 +67,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Show all users
     {
-      await updateNetworkState('connected')
+      await updateNetworkStatus('fast')
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expect.element(itemBob, { timeout: 5000 }).toBeVisible()
@@ -188,9 +188,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
   })
 })
 
-async function updateNetworkState(state: 'connected' | 'disconnected') {
-  const status = state === 'connected' ? 'fast' : 'offline'
-
+async function updateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
   {
     const { simulateNetworkStatus } = await import('../src/react/sample/query-users')
     simulateNetworkStatus(status)

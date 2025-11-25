@@ -96,8 +96,8 @@
     "shiki": "^3.15.0"
   },
   "peerDependencies": {
-    "loro-crdt": ">= 0.16.7",
-    "loro-prosemirror": ">= 0.0.7",
+    "loro-crdt": ">= 1.10.0",
+    "loro-prosemirror": ">= 0.4.0",
     "y-prosemirror": ">= 1.2.9",
     "yjs": ">= 13.6.18"
   },

@@ -7,6 +7,7 @@ import {
 } from '@prosekit/core'
 import type {
   CursorAwareness,
+  CursorEphemeralStore,
   LoroDocType,
   LoroSyncPluginProps,
   LoroUndoPluginProps,
@@ -18,7 +19,7 @@ import {
 } from './loro-commands'
 import {
   defineLoroCursorPlugin,
-  type LoroCursorOptions,
+  type CursorPluginOptions,
 } from './loro-cursor-plugin'
 import { defineLoroKeymap } from './loro-keymap'
 import { defineLoroSyncPlugin } from './loro-sync-plugin'
@@ -31,9 +32,14 @@ export interface LoroOptions {
   doc: LoroDocType
 
   /**
-   * The Awareness instance.
+   * The (legacy) Awareness instance.
    */
-  awareness: CursorAwareness
+  awareness?: CursorAwareness
+
+  /**
+   * The CursorEphemeralStore instance.
+   */
+  presence?: CursorEphemeralStore
 
   /**
    * Extra options for `LoroSyncPlugin`.
@@ -46,9 +52,9 @@ export interface LoroOptions {
   undo?: Omit<LoroUndoPluginProps, 'doc'>
 
   /**
-   * Extra options for `LoroCursorPlugin`.
+   * Extra options for `LoroCursorPlugin` or `LoroEphemeralCursorPlugin`.
    */
-  cursor?: Omit<LoroCursorOptions, 'awareness'>
+  cursor?: CursorPluginOptions
 }
 
 /**
@@ -60,13 +66,13 @@ export type LoroExtension = Union<[LoroCommandsExtension, PlainExtension]>
  * @public
  */
 export function defineLoro(options: LoroOptions): LoroExtension {
-  const { doc, awareness, sync, undo, cursor } = options
+  const { doc, awareness, presence, sync, undo, cursor } = options
 
   return withPriority(
     union([
       defineLoroKeymap(),
       defineLoroCommands(),
-      defineLoroCursorPlugin({ ...cursor, awareness }),
+      defineLoroCursorPlugin({ ...cursor, awareness, presence }),
       defineLoroUndoPlugin({ ...undo, doc }),
       defineLoroSyncPlugin({ ...sync, doc }),
     ]),

@@ -16,15 +16,15 @@ import { useMemo } from 'react'
 
 export default function EditorMain(props: {
   commitRecorder: CommitRecorder
-  defaultContent?: NodeJSON
+  initialContent?: NodeJSON
 }) {
   const editor = useMemo(() => {
     const extension = union(
       defineBasicExtension(),
       defineCommitRecorder(props.commitRecorder),
     )
-    return createEditor({ extension, defaultContent: props.defaultContent })
-  }, [props.commitRecorder, props.defaultContent])
+    return createEditor({ extension, defaultContent: props.initialContent })
+  }, [props.commitRecorder, props.initialContent])
 
   return (
     <ProseKit editor={editor}>

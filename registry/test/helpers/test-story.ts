@@ -1,5 +1,6 @@
 import '../../src/tailwind.css'
 
+import type { NodeJSON } from 'prosekit/core'
 import {
   beforeEach,
   describe,
@@ -32,55 +33,89 @@ function getExamples(story: string) {
 
 function testSingleStory(
   story: string,
+  emptyContent: boolean,
+  frameworks: string[] | undefined,
   callback: (options: { framework: string; story: string; example: string }) => void,
 ) {
   for (const example of getExamples(story)) {
-    describe(example.framework + '/' + example.story, () => {
+    const shouldSkip = frameworks ? !frameworks.includes(example.framework) : false
+    describe.skipIf(shouldSkip)(example.framework + '/' + example.story, () => {
       beforeEach(async () => {
-        await renderExample(example.framework, example.story)
+        await renderExample(example.framework, example.story, emptyContent)
       })
       callback(example)
     })
   }
 }
 
-async function renderExample(framework: string, story: string) {
+async function renderExample(framework: string, story: string, empty: boolean) {
+  const emptyContent: NodeJSON = {
+    type: 'doc',
+    content: [
+      { type: 'paragraph', content: [] },
+    ],
+  }
+  const initialContent = empty ? emptyContent : undefined
+
   if (framework === 'react') {
     const { renderReactExample } = await import('./render-react')
-    return await renderReactExample(story)
+    return await renderReactExample(story, initialContent)
   }
 
   if (framework === 'vue') {
     const { renderVueExample } = await import('./render-vue')
-    return await renderVueExample(story)
+    return await renderVueExample(story, initialContent)
   }
 
   if (framework === 'svelte') {
     const { renderSvelteExample } = await import('./render-svelte')
-    return await renderSvelteExample(story)
+    return await renderSvelteExample(story, initialContent)
   }
 
   if (framework === 'solid') {
     const { renderSolidExample } = await import('./render-solid')
-    return await renderSolidExample(story)
+    return await renderSolidExample(story, initialContent)
   }
 
   if (framework === 'preact') {
     const { renderPreactExample } = await import('./render-preact')
-    return await renderPreactExample(story)
+    return await renderPreactExample(story, initialContent)
   }
 
   throw new Error(`The ${framework} framework is not supported`)
 }
 
+interface TestStoryOptions {
+  /**
+   * The story or stories to test.
+   */
+  story: string | string[]
+  /**
+   * Whether to render the story with empty content by passing an empty content
+   * to the example.
+   *
+   * @default false
+   */
+  emptyContent?: boolean
+  /**
+   * If provided, only test the story for the given frameworks.
+   */
+  frameworks?: string[]
+}
+
 export function testStory(
-  story: string | string[],
+  options: string | string[] | TestStoryOptions,
   callback: (options: { framework: string; story: string; example: string }) => void,
 ) {
+  const {
+    story,
+    emptyContent = false,
+    frameworks,
+  } = (typeof options === 'string' || Array.isArray(options)) ? { story: options } : options
   const stories = Array.isArray(story) ? story : [story]
 
   for (const story of stories) {
-    testSingleStory(story, callback)
+    testSingleStory(story, emptyContent, frameworks, callback)
   }
 }
 
@@ -163,7 +198,7 @@ async function getStableHTML(
     shouldWaitForImageToLoad: boolean
   },
 ): Promise<string> {
-  const screen = await renderExample(framework, story)
+  const screen = await renderExample(framework, story, false)
 
   if (shouldWaitForEditor) {
     await expect.element(locateEditor().first()).toBeVisible()

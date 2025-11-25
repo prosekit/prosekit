@@ -5,16 +5,16 @@ import {
 import { page } from 'vitest/browser'
 
 import {
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('typography')
 
 testStory('typography', () => {
   it('renders headings, lists, code, and media', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
 
     await expect.element(editor.locate('h1', { hasText: 'ProseKit Typography' })).toBeVisible()
 

@@ -3,15 +3,23 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/search/style.css'
 
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
-import { defaultContent } from '../../sample/sample-doc-search'
+import { sampleContent } from '../../sample/sample-doc-search'
 import { Search } from '../../ui/search'
 
 import { defineExtension } from './extension'
 
+const props: {
+  initialContent?: NodeJSON
+} = $props()
+
 const extension = defineExtension()
+const defaultContent = props.initialContent ?? sampleContent
 const editor = createEditor({
   extension,
   defaultContent,

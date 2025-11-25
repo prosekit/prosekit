@@ -9,16 +9,16 @@ import {
 
 import {
   emptyEditor,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('word-counter')
 
 testStory('word-counter', () => {
   it('updates counts as you type', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     await emptyEditor()
 
     await editor.click()

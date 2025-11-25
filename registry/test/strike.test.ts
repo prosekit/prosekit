@@ -10,16 +10,16 @@ import {
 import {
   emptyEditor,
   expectLocatorToNotExist,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('strike')
 
 testStory('strike', () => {
   it('toggle via toolbar while typing', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     const strikeBtn = page.getByRole('button', { name: 'Strikethrough' })
 
     await emptyEditor()

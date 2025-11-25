@@ -3,12 +3,20 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
-import { defaultContent } from '../../sample/sample-doc-typography'
+import { sampleContent } from '../../sample/sample-doc-typography'
+
+const props: {
+  initialContent?: NodeJSON
+} = $props()
 
 const extension = defineBasicExtension()
+const defaultContent = props.initialContent ?? sampleContent
 const editor = createEditor({ extension, defaultContent })
 
 const mount = (element: HTMLElement) => {

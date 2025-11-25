@@ -1,6 +1,7 @@
 import {
   definePlugin,
   isInCodeBlock,
+  isTextSelection,
   maybeRun,
   type PlainExtension,
 } from '@prosekit/core'
@@ -98,7 +99,7 @@ function createPlaceholderDecoration(
   if (!placeholderText) return null
 
   const { selection } = state
-  if (!selection.empty) return null
+  if (!selection.empty || !isTextSelection(selection)) return null
 
   const $pos = selection.$anchor
   const node = $pos.parent

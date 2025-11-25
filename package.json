@@ -52,7 +52,7 @@
     "knip": "^5.70.2",
     "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.60",
-    "playwright": "^1.56.1",
+    "playwright": "^1.57.0",
     "size-limit": "^11.2.0",
     "turbo": "^2.6.1",
     "typescript": "~5.9.3",

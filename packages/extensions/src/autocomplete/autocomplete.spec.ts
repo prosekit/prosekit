@@ -30,8 +30,16 @@ function setupSlashMenu() {
 
   let matching: MatchHandlerOptions | null = null
 
-  const onEnter = vi.fn<MatchHandler>((options) => matching = options)
-  const onLeave = vi.fn<VoidFunction>(() => matching = null)
+  const onEnter = vi.fn<MatchHandler>((options) => {
+    matching = options
+  })
+  const onLeave = vi.fn<VoidFunction>(() => {
+    if (matching) {
+      matching = null
+    } else {
+      throw new Error('onLeave should not be called when there is no matching')
+    }
+  })
 
   const rule = new AutocompleteRule({ regex, onEnter, onLeave })
   const extension = union(defineTestExtension(), defineAutocomplete(rule))

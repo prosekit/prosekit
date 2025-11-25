@@ -30,7 +30,7 @@
     "@iconify-json/lucide": "^1.2.75",
     "@iconify-json/tabler": "^1.2.23",
     "@manypkg/find-root": "^3.1.0",
-    "@ocavue/utils": "^0.9.0",
+    "@ocavue/utils": "^1.0.0",
     "@playwright/test": "^1.56.1",
     "@tailwindcss/vite": "^4.1.17",
     "@types/node": "^24.10.1",

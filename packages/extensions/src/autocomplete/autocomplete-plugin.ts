@@ -195,6 +195,9 @@ function handleTransaction(
 
   // If a matching is being exited
   if (meta.type === 'leave') {
+    if (prevMatching) {
+      ignores.add(prevMatching.from)
+    }
     return { matching: null, ignores }
   }
 

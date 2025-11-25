@@ -169,6 +169,50 @@ describe('defineAutocomplete', () => {
     expect(isMatching()).toBe(false)
   })
 
+  it('can recover the match after dismissing from Backspace', async () => {
+    const { isMatching, showSelection } = setupSlashMenu()
+
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(true)
+
+    await pressKey('Backspace')
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(true)
+  })
+
+  it('can recover the match after dismissing from onLeave', async () => {
+    const { isMatching, showSelection, getMatching } = setupSlashMenu()
+
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(true)
+
+    const matching = getMatching()
+    expect(matching).toBeTruthy()
+    matching?.ignoreMatch()
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await pressKey('Backspace')
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(true)
+  })
+
   it('can ignore the match by moving the text cursor outside of the match', async () => {
     const { onEnter, isMatching, getMatchingText, showSelection } = setupSlashMenu()
 

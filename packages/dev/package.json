@@ -22,7 +22,7 @@
     "@changesets/read": "^0.6.5",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.19.11",
+    "@types/node": "^24.10.1",
     "change-case": "^5.4.4",
     "execa": "^9.6.0",
     "js-yaml": "^4.1.1",

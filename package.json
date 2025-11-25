@@ -45,7 +45,7 @@
     "@ocavue/tsconfig": "^0.5.0",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
-    "@types/node": "^20.19.11",
+    "@types/node": "^24.10.1",
     "@vitest/coverage-v8": "^4.0.10",
     "dprint": "^0.50.2",
     "eslint": "^9.39.1",

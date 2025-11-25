@@ -66,11 +66,11 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@types/react": "^19.2.6",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "tsdown": "^0.16.5",
+    "tsdown": "^0.16.6",
     "typescript": "~5.9.3"
   },
   "publishConfig": {

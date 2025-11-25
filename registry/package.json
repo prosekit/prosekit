@@ -216,7 +216,7 @@
     "lint:vue": "vue-tsc --build src/vue/tsconfig.lint.json"
   },
   "dependencies": {
-    "loro-crdt": "^1.9.0",
+    "loro-crdt": "^1.10.0",
     "loro-prosemirror": "^0.3.7",
     "preact": "^10.27.2",
     "rehype-parse": "^9.0.1",
@@ -226,9 +226,9 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.9.10",
-    "svelte": "^5.43.10",
+    "svelte": "^5.44.0",
     "unified": "^11.0.5",
-    "vue": "^3.5.24",
+    "vue": "^3.5.25",
     "y-protocols": "^1.0.6",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.27"
@@ -243,7 +243,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.1.1",
     "@tailwindcss/vite": "^4.1.17",
     "@types/diffable-html": "^5.0.2",
-    "@types/react": "^19.2.6",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "@vitejs/plugin-vue": "^6.0.2",
@@ -276,6 +276,6 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.0.1",
     "vitest-browser-vue": "^2.0.1",
-    "vue-tsc": "^3.1.4"
+    "vue-tsc": "^3.1.5"
   }
 }

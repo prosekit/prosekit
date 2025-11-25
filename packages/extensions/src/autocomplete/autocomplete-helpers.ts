@@ -29,7 +29,6 @@ export interface PredictionPluginMatching {
   from: number
   to: number
   match: RegExpExecArray
-  parentStart: number
 }
 
 /**

@@ -246,10 +246,7 @@ function matchRule(
       continue
     }
 
-    const $from = state.selection.$from
-    const parentStart = $from.start($from.depth)
-
-    return { rule, match, from, to, parentStart }
+    return { rule, match, from, to }
   }
 }
 
@@ -259,6 +256,5 @@ function mapMatching(matching: PredictionPluginMatching, mapping: Mapping): Pred
     match: matching.match,
     from: mapping.map(matching.from),
     to: mapping.map(matching.to),
-    parentStart: mapping.map(matching.parentStart),
   }
 }

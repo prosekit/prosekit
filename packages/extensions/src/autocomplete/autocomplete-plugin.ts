@@ -28,10 +28,14 @@ import type { AutocompleteRule } from './autocomplete-rule'
  *
  * Workflow:
  *
- * 1. {@link handleTextInput}: called when text is inputted. Returns a new matching as a
- *    transaction meta if possible. This is the only place to create a new
- *    matching if there is no existing matching.
- * 2.
+ * 1. {@link handleTextInput}: called when text is inputted. Returns a new
+ *    matching as a transaction meta if possible. This is the only place to
+ *    create a new matching if there is no existing matching.
+ * 2. {@link handleTransaction}: called when a transaction is applied. Updates
+ *    the plugin state based on the transaction. This step determines if an
+ *    existing matching should be removed, and if a new matching should be
+ *    created or updated.
+ * 3.
  */
 export function createAutocompletePlugin({
   getRules,
@@ -45,87 +49,8 @@ export function createAutocompletePlugin({
       init: (): PredictionPluginState => {
         return { ignores: new Set(), matching: null }
       },
-      apply: (
-        tr: Transaction,
-        prevValue: PredictionPluginState,
-        oldState: EditorState,
-        newState: EditorState,
-      ): PredictionPluginState => {
-        const meta = getTrMeta(tr)
-
-        if (
-          !meta
-          && !tr.docChanged
-          && oldState.selection.eq(newState.selection)
-        ) {
-          // No changes
-          return prevValue
-        }
-
-        // Handle position mapping changes
-        const ignores = new Set<number>()
-        for (const ignore of prevValue.ignores) {
-          const result = tr.mapping.mapResult(ignore)
-          if (!result.deletedBefore) {
-            ignores.add(result.pos)
-          }
-        }
-
-        const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
-
-        // If there is no new matching from `handleTextInput`
-        if (!meta) {
-          if (!prevMatching) {
-            return { matching: null, ignores }
-          }
-
-          const { selection } = newState
-          // If the text selection is before the matching or after the matching,
-          // we leave the matching
-          if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
-            ignores.add(prevMatching.from)
-            return { matching: null, ignores }
-          }
-
-          // Get the text between the existing matching
-          const text = newState.doc.textBetween(
-            prevMatching.from,
-            prevMatching.to,
-            null,
-            OBJECT_REPLACEMENT_CHARACTER,
-          )
-          // Check the text again to see if it still matches the rule
-          const currMatching = matchRule(
-            newState,
-            getRules(),
-            text,
-            prevMatching.to,
-            ignores,
-          )
-          return { matching: currMatching ?? null, ignores }
-        }
-
-        // If a new matching is being entered from `handleTextInput`
-        if (meta.type === 'enter') {
-          // Ignore the previous matching if it is not the same as the new matching
-          if (
-            prevMatching
-            && prevMatching.rule !== meta.matching.rule
-            && prevMatching.from !== meta.matching.from
-          ) {
-            ignores.add(prevMatching.from)
-          }
-
-          // Return the new matching
-          return { matching: meta.matching, ignores }
-        }
-
-        // If a matching is being exited
-        if (meta.type === 'leave') {
-          return { matching: null, ignores }
-        }
-
-        throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
+      apply: (tr, prevValue, oldState, newState): PredictionPluginState => {
+        return handleTransaction(tr, prevValue, oldState, newState, getRules)
       },
     },
 
@@ -243,6 +168,90 @@ function handleTextInput(
   if (currMatching) {
     return { type: 'enter', matching: currMatching }
   }
+}
+
+function handleTransaction(
+  tr: Transaction,
+  prevValue: PredictionPluginState,
+  oldState: EditorState,
+  newState: EditorState,
+  getRules: () => AutocompleteRule[],
+): PredictionPluginState {
+  const meta = getTrMeta(tr)
+
+  if (
+    !meta
+    && !tr.docChanged
+    && oldState.selection.eq(newState.selection)
+  ) {
+    // No changes
+    return prevValue
+  }
+
+  // Handle position mapping changes
+  const ignores = new Set<number>()
+  for (const ignore of prevValue.ignores) {
+    const result = tr.mapping.mapResult(ignore)
+    if (!result.deletedBefore) {
+      ignores.add(result.pos)
+    }
+  }
+
+  const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
+
+  // If there is no new matching from `handleTextInput`
+  if (!meta) {
+    if (!prevMatching) {
+      return { matching: null, ignores }
+    }
+
+    const { selection } = newState
+    // If the text selection is before the matching or after the matching,
+    // we leave the matching
+    if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
+      ignores.add(prevMatching.from)
+      return { matching: null, ignores }
+    }
+
+    // Get the text between the existing matching
+    const text = newState.doc.textBetween(
+      prevMatching.from,
+      prevMatching.to,
+      null,
+      OBJECT_REPLACEMENT_CHARACTER,
+    )
+    // Check the text again to see if it still matches the rule
+    const currMatching = matchRule(
+      newState,
+      getRules(),
+      text,
+      prevMatching.to,
+      ignores,
+    )
+    return { matching: currMatching ?? null, ignores }
+  }
+
+  // If a new matching is being entered from `handleTextInput`
+  if (meta.type === 'enter') {
+    // Ignore the previous matching if it is not the same as the new matching
+    if (
+      prevMatching
+      && prevMatching.rule !== meta.matching.rule
+      && prevMatching.from !== meta.matching.from
+    ) {
+      ignores.add(prevMatching.from)
+    }
+
+    // Return the new matching
+    return { matching: meta.matching, ignores }
+  }
+
+  // If a matching is being exited
+  if (meta.type === 'leave') {
+    return { matching: null, ignores }
+  }
+
+  throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
 }
 
 const MAX_MATCH = 200

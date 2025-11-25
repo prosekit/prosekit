@@ -62,6 +62,13 @@
     "overrides": {},
     "patchedDependencies": {
       "y-prosemirror": "patches/y-prosemirror.patch"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "dprint",
+      "esbuild",
+      "msw",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }

@@ -2,6 +2,7 @@ import { defineDocChangeHandler } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { useMemo } from 'preact/hooks'
 
+import { useEventCallback } from './use-event-callback'
 import {
   useExtension,
   type UseExtensionOptions,
@@ -16,9 +17,10 @@ export function useDocChange(
   handler: (doc: ProseMirrorNode) => void,
   options?: UseExtensionOptions,
 ): void {
+  const memoizedHandler = useEventCallback(handler)
   const extension = useMemo(
-    () => defineDocChangeHandler((view) => handler(view.state.doc)),
-    [handler],
+    () => defineDocChangeHandler((view) => memoizedHandler(view.state.doc)),
+    [memoizedHandler],
   )
   useExtension(extension, options)
 }

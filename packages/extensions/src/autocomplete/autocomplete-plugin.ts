@@ -32,7 +32,7 @@ export function createAutocompletePlugin({
 
     state: {
       init: (): PredictionPluginState => {
-        return { ignores: [], matching: null }
+        return { ignores: new Set(), matching: null }
       },
       apply: (
         tr: Transaction,
@@ -52,14 +52,13 @@ export function createAutocompletePlugin({
         }
 
         // Handle position mapping changes
-        const ignoreSet = new Set<number>()
+        const ignores = new Set<number>()
         for (const ignore of prevValue.ignores) {
           const result = tr.mapping.mapResult(ignore)
           if (!result.deletedBefore) {
-            ignoreSet.add(result.pos)
+            ignores.add(result.pos)
           }
         }
-        const ignores = Array.from(ignoreSet)
 
         const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
 
@@ -73,7 +72,7 @@ export function createAutocompletePlugin({
           // If the text selection is before the matching or after the matching,
           // we leave the matching
           if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
-            ignores.push(prevMatching.from)
+            ignores.add(prevMatching.from)
             return { matching: null, ignores }
           }
 
@@ -103,7 +102,7 @@ export function createAutocompletePlugin({
             && prevMatching.rule !== meta.matching.rule
             && prevMatching.from !== meta.matching.from
           ) {
-            ignores.push(prevMatching.from)
+            ignores.add(prevMatching.from)
           }
 
           // Return the new matching
@@ -113,7 +112,7 @@ export function createAutocompletePlugin({
         // If an existing matching is being exited from `handleTextInput`
         if (meta.type === 'leave') {
           if (prevMatching) {
-            ignores.push(prevMatching.from)
+            ignores.add(prevMatching.from)
           }
           return { matching: null, ignores }
         }
@@ -137,7 +136,7 @@ export function createAutocompletePlugin({
 
         if (
           currValue?.matching
-          && !currValue.ignores.includes(currValue.matching.from)
+          && !currValue.ignores.has(currValue.matching.from)
         ) {
           // Activate the current rule
 
@@ -222,7 +221,7 @@ function handleTextInput(
   const textFull = textBackward + textAdded
 
   const pluginState = getPluginState(view.state)
-  const ignores = pluginState?.ignores ?? []
+  const ignores = pluginState?.ignores ?? new Set<number>()
   const prevMatching = pluginState?.matching
 
   const currMatching = matchRule(
@@ -258,7 +257,7 @@ function matchRule(
   rules: AutocompleteRule[],
   text: string,
   to: number,
-  ignores: Array<number>,
+  ignores: Set<number>,
 ): PredictionPluginMatching | undefined {
   for (const rule of rules) {
     if (!rule.canMatch({ state })) {
@@ -274,7 +273,7 @@ function matchRule(
     const from = to - text.length + match.index
 
     // Check if the matching should be ignored
-    if (ignores.includes(from)) {
+    if (ignores.has(from)) {
       continue
     }
 

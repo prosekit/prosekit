@@ -18,7 +18,7 @@ import {
 
 testStoryConsistency('user-menu-dynamic')
 
-testStory('user-menu-dynamic', () => {
+testStory({ story: 'user-menu-dynamic', frameworks: ['vue', 'react'] }, () => {
   it('user-menu-dynamic', async () => {
     const editor = await waitForEditor()
 
@@ -49,6 +49,7 @@ testStory('user-menu-dynamic', () => {
       expect(menuBox.y).toBeGreaterThan(editorBox.y)
     }
 
+    await updateNetworkState('disconnected')
     setTestBlocking(true)
 
     // Show loading
@@ -67,6 +68,7 @@ testStory('user-menu-dynamic', () => {
 
     // Show all users
     {
+      await updateNetworkState('connected')
       setTestBlocking(false)
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
@@ -195,5 +197,13 @@ function setTestBlocking(value: boolean): void {
 declare global {
   interface Window {
     _PROSEKIT_TEST_BLOCKING: boolean | undefined
+  }
+}
+
+async function updateNetworkState(state: 'connected' | 'disconnected') {
+  {
+    const { updateMockNetworkConnected, updateMockDelay } = await import('../src/react/sample/query-users')
+    updateMockNetworkConnected(state === 'connected')
+    updateMockDelay(0)
   }
 }

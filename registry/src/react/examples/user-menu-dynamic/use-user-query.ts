@@ -3,13 +3,14 @@ import {
   useState,
 } from 'react'
 
-import { queryUsersWithDelay } from '../../sample/query-users'
+import type { User } from '../../sample/query-users'
+import { queryUsers } from '../../sample/query-users'
 
 /**
  * Simulate a user searching with some delay.
  */
 export function useUserQuery(query: string, enabled: boolean) {
-  const [users, setUsers] = useState<{ name: string; id: number }[]>([])
+  const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export function useUserQuery(query: string, enabled: boolean) {
 
     let cancelled = false
     setLoading(true)
-    void queryUsersWithDelay(query).then((users) => {
+    void queryUsers(query).then((users) => {
       if (cancelled) {
         return
       }

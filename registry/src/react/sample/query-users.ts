@@ -5,21 +5,47 @@ export interface User {
   name: string
 }
 
-export function queryUsers(query: string): Promise<User[]> {
-  const lowerCaseQuery = query.toLowerCase()
-  const filteredUsers = users
-    .filter((user) => user.name.toLowerCase().includes(lowerCaseQuery))
-    .slice(0, 10)
-  return Promise.resolve(filteredUsers)
+let mockDelay = 300
+let mockNetworkConnected = true
+const networkConnectedHandlers: VoidFunction[] = []
+
+/**
+ * A utility function to simulate a network connection. Useful for testing.
+ */
+export function updateMockNetworkConnected(connected: boolean) {
+  mockNetworkConnected = connected
+  if (connected) {
+    networkConnectedHandlers.forEach((handler) => handler())
+    networkConnectedHandlers.length = 0
+  }
+}
+
+/**
+ * A utility function to simulate different query delays. Useful for testing.
+ */
+export function updateMockDelay(delay: number) {
+  mockDelay = delay
 }
 
 /**
  * Simulate a user searching with some delay.
  */
-export function queryUsersWithDelay(query: string, delayMilliseconds: number = 300): Promise<User[]> {
-  return new Promise((resolve) => {
+export async function queryUsers(query: string): Promise<User[]> {
+  if (!mockNetworkConnected) {
+    await new Promise<void>((resolve) => {
+      networkConnectedHandlers.push(resolve)
+    })
+  }
+
+  await new Promise((resolve) => {
     setTimeout(() => {
-      resolve(queryUsers(query))
-    }, delayMilliseconds)
+      resolve(true)
+    }, mockDelay)
   })
+
+  const normalizedQuery = query.toLowerCase().trim()
+  const filteredUsers = users
+    .filter((user) => user.name.toLowerCase().includes(normalizedQuery))
+    .slice(0, 10)
+  return filteredUsers
 }

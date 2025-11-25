@@ -29,6 +29,7 @@ export interface PredictionPluginMatching {
   from: number
   to: number
   match: RegExpExecArray
+  parentStart: number
 }
 
 /**
@@ -38,7 +39,7 @@ export interface PredictionPluginState {
   /**
    * The matching positions that should be ignored.
    */
-  ignores: number[]
+  ignores: Array<number>
 
   /**
    * The current active matching.
@@ -49,11 +50,11 @@ export interface PredictionPluginState {
 /**
  * @internal
  */
-interface PredictionTransactionMeta {
-  /**
-   * The from position that should be ignored.
-   */
-  ignore: number
+type PredictionTransactionMeta = {
+  type: 'enter'
+  matching: PredictionPluginMatching
+} | {
+  type: 'leave'
 }
 
 export function getPluginState(state: EditorState): PredictionPluginState | undefined {

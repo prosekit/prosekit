@@ -1,9 +1,12 @@
 import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
+import type { ResolvedPos } from '@prosekit/pm/model'
 import {
   Plugin,
   type EditorState,
   type Transaction,
 } from '@prosekit/pm/state'
+import type { Mapping } from '@prosekit/pm/transform'
+import type { EditorView } from '@prosekit/pm/view'
 import {
   Decoration,
   DecorationSet,
@@ -39,51 +42,52 @@ export function createAutocompletePlugin({
       ): PredictionPluginState => {
         const meta = getTrMeta(tr)
 
-        // No changes
         if (
-          !tr.docChanged
+          !meta
+          && !tr.docChanged
           && oldState.selection.eq(newState.selection)
-          && !meta
         ) {
+          // No changes
           return prevValue
         }
 
-        // Receiving a meta means that we are ignoring a match
-        if (meta) {
-          let ignores = prevValue.ignores
-          if (!ignores.includes(meta.ignore)) {
-            ignores = [...ignores, meta.ignore]
+        // Handle position mapping changes
+        const ignores = Array.from(new Set(prevValue.ignores.map(pos => tr.mapping.map(pos))))
+        const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
+
+        if (!meta) {
+          if (prevMatching) {
+            const $from = newState.selection.$from
+            const parentStart = $from.start($from.depth)
+            if (prevMatching.parentStart !== parentStart) {
+              // The text cursor has moved to a different block, so we ignore the previous matching
+              ignores.push(prevMatching.from)
+              return { matching: null, ignores }
+            }
+          }
+          return { matching: prevMatching, ignores }
+        }
+
+        // A new matching is being entered
+        if (meta.type === 'enter') {
+          // Ignore the previous matching if it is not the same as the new matching
+          if (prevMatching && prevMatching.rule !== meta.matching.rule) {
+            ignores.push(prevMatching.from)
+          }
+
+          // Return the new matching
+          return { matching: meta.matching, ignores }
+        }
+
+        // Exiting a matching
+        if (meta.type === 'leave') {
+          if (prevMatching) {
+            ignores.push(prevMatching.from)
           }
           return { matching: null, ignores }
         }
 
-        // Calculate the new ignores
-        const ignores = new Set(prevValue.ignores.map(pos => tr.mapping.map(pos)))
-
-        // If there was a matching before, but the text cursor moves outside of
-        // it now, we ignore that match.
-        if (prevValue.matching) {
-          let { from: prevMatchingFrom, to: prevMatchingTo } = prevValue.matching
-
-          prevMatchingFrom = tr.mapping.map(prevMatchingFrom)
-          prevMatchingTo = tr.mapping.map(prevMatchingTo)
-
-          // If the previous matching is not empty
-          if (prevMatchingFrom < prevMatchingTo) {
-            let { from: selectionFrom, to: selectionTo } = newState.selection
-
-            // If the text selection is before the matching or after the matching
-            if (selectionTo <= prevMatchingFrom || selectionFrom >= prevMatchingTo + 1) {
-              ignores.add(prevMatchingFrom)
-            }
-          }
-        }
-
-        // Calculate the new matching
-        let matching = calcPluginStateMatching(newState, getRules(), ignores)
-
-        // Return the new matching and ignores
-        return { matching, ignores: Array.from(ignores) }
+        throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
       },
     },
 
@@ -130,7 +134,7 @@ export function createAutocompletePlugin({
 
           const ignoreMatch = () => {
             view.dispatch(
-              setTrMeta(view.state.tr, { ignore: from }),
+              setTrMeta(view.state.tr, { type: 'leave' }),
             )
           }
 
@@ -147,6 +151,14 @@ export function createAutocompletePlugin({
     }),
 
     props: {
+      handleTextInput: (view, from, to, textAdded, getTr) => {
+        const tr = handleTextInput(view, from, to, textAdded, getTr, getRules)
+        if (tr) {
+          view.dispatch(tr)
+          return true
+        }
+        return false
+      },
       decorations: (state: EditorState) => {
         const pluginState = getPluginState(state)
         if (pluginState?.matching) {
@@ -162,45 +174,92 @@ export function createAutocompletePlugin({
   })
 }
 
+function handleTextInput(
+  view: EditorView,
+  from: number,
+  to: number,
+  textAdded: string,
+  getTr: () => Transaction,
+  getRules: () => AutocompleteRule[],
+): Transaction | undefined {
+  // Only handle insertions
+  if (from !== to) {
+    return
+  }
+
+  const textBackward = getTextBackward(view.state.doc.resolve(from))
+  const textFull = textBackward + textAdded
+
+  const pluginState = getPluginState(view.state)
+  const ignores = pluginState?.ignores ?? []
+  const prevMatching = pluginState?.matching
+
+  const currMatching = matchRule(
+    view.state,
+    getRules(),
+    textFull,
+    to + textAdded.length,
+    ignores,
+  )
+
+  if (currMatching) {
+    return setTrMeta(getTr(), { type: 'enter', matching: currMatching })
+  } else if (prevMatching) {
+    return setTrMeta(getTr(), { type: 'leave' })
+  }
+}
+
 const MAX_MATCH = 200
 
-function calcPluginStateMatching(
-  state: EditorState,
-  rules: AutocompleteRule[],
-  ignores: Set<number>,
-): PredictionPluginMatching | null {
-  const $pos = state.selection.$from
-
+/** Get the text before the given position at the current block. */
+function getTextBackward($pos: ResolvedPos): string {
   const parentOffset: number = $pos.parentOffset
-
-  const textBefore: string = $pos.parent.textBetween(
+  return $pos.parent.textBetween(
     Math.max(0, parentOffset - MAX_MATCH),
     parentOffset,
     null,
     OBJECT_REPLACEMENT_CHARACTER,
   )
+}
 
+function matchRule(
+  state: EditorState,
+  rules: AutocompleteRule[],
+  text: string,
+  to: number,
+  ignores: Array<number>,
+): PredictionPluginMatching | undefined {
   for (const rule of rules) {
     if (!rule.canMatch({ state })) {
       continue
     }
 
     rule.regex.lastIndex = 0
-    const match = rule.regex.exec(textBefore)
+    const match = rule.regex.exec(text)
     if (!match) {
       continue
     }
 
-    const to = $pos.pos
-    const from = to - textBefore.length + match.index
+    const from = to - text.length + match.index
 
     // Check if the matching should be ignored
-    if (ignores.has(from)) {
+    if (ignores.includes(from)) {
       continue
     }
 
-    return { rule, match, from, to }
-  }
+    const $from = state.selection.$from
+    const parentStart = $from.start($from.depth)
 
-  return null
+    return { rule, match, from, to, parentStart }
+  }
+}
+
+function mapMatching(matching: PredictionPluginMatching, mapping: Mapping): PredictionPluginMatching {
+  return {
+    rule: matching.rule,
+    match: matching.match,
+    from: mapping.map(matching.from),
+    to: mapping.map(matching.to),
+    parentStart: mapping.map(matching.parentStart),
+  }
 }

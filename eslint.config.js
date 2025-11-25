@@ -5,10 +5,12 @@ import { defineESLintConfig } from '@ocavue/eslint-config'
 export default defineESLintConfig(
   {
     react: {
-      // React eslint rules are disabled because of the issue: https://github.com/facebook/react/issues/34775
-      // TODO: Enable this when the issue is fixed.
-      // files: ['**/react/**/*.?([cm])[jt]s?(x)'],
-      files: ['**/react_TEMPORARILY_DISABLED.tsx'],
+      files: [
+        '**/react/**/*.ts',
+        '**/react/**/*.tsx',
+        '**/preact/**/*.ts',
+        '**/preact/**/*.tsx',
+      ],
     },
     vue: true,
     markdown: true,
@@ -33,6 +35,13 @@ export default defineESLintConfig(
   {
     rules: {
       'unicorn/prefer-single-call': 'off',
+    },
+  },
+  {
+    rules: {
+      // Disable this rule because of https://github.com/facebook/react/issues/34775
+      // TODO: Enable this when the issue is fixed.
+      'react-hooks/refs': 'off',
     },
   },
 )

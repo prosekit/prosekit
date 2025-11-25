@@ -5,43 +5,30 @@ export interface User {
   name: string
 }
 
-let mockDelay = 300
-let mockNetworkConnected = true
-const networkConnectedHandlers: VoidFunction[] = []
+const connectHandlers: VoidFunction[] = []
+let mockNetworkStatus: 'fast' | 'slow' | 'offline' = 'slow'
 
 /**
- * A utility function to simulate a network connection. Useful for testing.
+ * A utility function to simulate different network states. Useful for testing.
  */
-export function updateMockNetworkConnected(connected: boolean) {
-  mockNetworkConnected = connected
-  if (connected) {
-    networkConnectedHandlers.forEach((handler) => handler())
-    networkConnectedHandlers.length = 0
+export function updateMockNetworkStatus(status: 'fast' | 'slow' | 'offline') {
+  mockNetworkStatus = status
+  if (status !== 'offline') {
+    connectHandlers.forEach((handler) => handler())
+    connectHandlers.length = 0
   }
-}
-
-/**
- * A utility function to simulate different query delays. Useful for testing.
- */
-export function updateMockDelay(delay: number) {
-  mockDelay = delay
 }
 
 /**
  * Simulate a user searching with some delay.
  */
 export async function queryUsers(query: string): Promise<User[]> {
-  if (!mockNetworkConnected) {
-    await new Promise<void>((resolve) => {
-      networkConnectedHandlers.push(resolve)
-    })
+  if (mockNetworkStatus === 'offline') {
+    await new Promise<void>((resolve) => connectHandlers.push(resolve))
   }
-
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true)
-    }, mockDelay)
-  })
+  if (mockNetworkStatus === 'slow') {
+    await new Promise<void>((resolve) => setTimeout(() => resolve(), 300))
+  }
 
   const normalizedQuery = query.toLowerCase().trim()
   const filteredUsers = users

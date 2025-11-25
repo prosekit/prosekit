@@ -175,8 +175,8 @@
     "@prosekit/web": "workspace:*"
   },
   "peerDependencies": {
-    "loro-crdt": ">= 0.16.7",
-    "loro-prosemirror": ">= 0.0.7",
+    "loro-crdt": ">= 1.10.0",
+    "loro-prosemirror": ">= 0.4.0",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",

@@ -154,12 +154,28 @@ describe('defineAutocomplete', () => {
     expect(editor.state.doc.textContent).toBe('/aa')
   })
 
+  it('can dismiss the match by deleting the matched text', async () => {
+    const { isMatching, showSelection } = setupSlashMenu()
+
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
+    expect(isMatching()).toBe(true)
+
+    await pressKey('Backspace')
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+  })
+
   it('can ignore the match by moving the text cursor outside of the match', async () => {
     const { onEnter, isMatching, getMatchingText, showSelection } = setupSlashMenu()
 
     expect(onEnter).not.toHaveBeenCalled()
 
     expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
 
     await inputText('a ')
     expect(showSelection()).toMatchInlineSnapshot(`"a <cursor>"`)

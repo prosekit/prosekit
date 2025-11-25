@@ -9,7 +9,6 @@ import {
 } from 'vitest/browser'
 
 import {
-  emptyEditor,
   expectLocatorToHaveCount,
   getBoundingBox,
   hover,
@@ -22,10 +21,9 @@ import {
 
 testStoryConsistency('block-handle')
 
-testStory(['block-handle'], () => {
+testStory({ story: 'block-handle', emptyContent: true }, () => {
   it('show block handle on hover', async () => {
     const editor = await waitForEditor()
-    await emptyEditor()
     await unhover()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
@@ -92,7 +90,6 @@ testStory(['block-handle'], () => {
 
   it(`position the block handle correctly when changing the hover node type`, async () => {
     const editor = await waitForEditor()
-    await emptyEditor()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const h1 = editor.locate('h1')
@@ -136,7 +133,6 @@ testStory(['block-handle'], () => {
 
   it(`position the block handle when hovering over a list node with multiple paragraphs`, async () => {
     const editor = await waitForEditor()
-    await emptyEditor()
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 

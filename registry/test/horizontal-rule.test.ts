@@ -10,16 +10,16 @@ import {
 import {
   emptyEditor,
   expectLocatorToHaveCount,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('horizontal-rule')
 
 testStory('horizontal-rule', () => {
   it('insert divider and continue typing', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     const dividerButton = page.getByRole('button', { name: 'Divider' })
 
     await emptyEditor()

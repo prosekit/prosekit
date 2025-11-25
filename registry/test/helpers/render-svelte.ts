@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'svelte'
 import {
   cleanup,
   render,
@@ -9,10 +10,18 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
+import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderSvelteExample(story: string) {
+export async function renderSvelteExample(story: string, emptyContent: boolean) {
   await runCleanupFunctions()
-  return render(SvelteRenderer, { story })
+  type Props = ComponentProps<typeof SvelteRenderer>
+  const props: Props = {
+    story,
+    props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+  }
+
+  // Use `as unknown as Props` to bypass the incorrect type in vitest-browser-svelte
+  return render(SvelteRenderer, { props } as unknown as Props)
 }

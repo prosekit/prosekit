@@ -68,6 +68,8 @@ export async function moveSelectionToStart(): Promise<void> {
 }
 
 export async function extendSelection(direction: 'forward' | 'backward', count: number): Promise<void> {
+  await waitForSelectionUpdate()
+
   const selection = getSelection()
   for (let i = 0; i < count; i++) {
     selection.modify('extend', direction, 'character')

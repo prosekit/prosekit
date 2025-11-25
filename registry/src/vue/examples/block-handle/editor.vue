@@ -2,20 +2,28 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import {
   ref,
   watchPostEffect,
 } from 'vue'
 
-import { defaultContent } from '../../sample/sample-doc-block-handle'
+import { sampleContent } from '../../sample/sample-doc-block-handle'
 import { BlockHandle } from '../../ui/block-handle'
 import { DropIndicator } from '../../ui/drop-indicator'
 
 import { defineExtension } from './extension'
 
+const props = defineProps<{
+  defaultContent?: NodeJSON
+}>()
+
 const extension = defineExtension()
+const defaultContent = props.defaultContent ?? sampleContent
 const editor = createEditor({ extension, defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)

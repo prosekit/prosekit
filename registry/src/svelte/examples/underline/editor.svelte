@@ -2,15 +2,23 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
-import { defaultContent } from '../../sample/sample-doc-underline'
+import { sampleContent } from '../../sample/sample-doc-underline'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
+const props: {
+  defaultContent?: NodeJSON
+} = $props()
+
 const extension = defineExtension()
+const defaultContent = props.defaultContent ?? sampleContent
 const editor = createEditor({ extension, defaultContent })
 
 const mount = (element: HTMLElement) => {

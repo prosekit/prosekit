@@ -1,6 +1,6 @@
 import type { NodeJSON } from 'prosekit/core'
 
-export const defaultContent: NodeJSON = {
+export const sampleContent: NodeJSON = {
   type: 'doc',
   content: [
     {

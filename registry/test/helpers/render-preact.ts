@@ -10,10 +10,14 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
+import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderPreactExample(story: string) {
+export async function renderPreactExample(story: string, emptyContent: boolean) {
   await runCleanupFunctions()
-  return render(createElement(PreactRenderer, { story }))
+  return render(createElement(PreactRenderer, {
+    story,
+    props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+  }))
 }

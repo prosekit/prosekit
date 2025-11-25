@@ -6,16 +6,16 @@ import {
 
 import {
   expectLocatorToHaveCount,
-  locateEditor,
   testStory,
   testStoryConsistency,
+  waitForEditor,
 } from './helpers'
 
 testStoryConsistency('keymap')
 
 testStory('keymap', () => {
   it('keymap', async () => {
-    const editor = locateEditor()
+    const editor = await waitForEditor()
     const listItems = page.getByRole('listitem')
 
     const shiftEnterButton = page.getByRole('button', {

@@ -3,22 +3,30 @@ import 'prosekit/basic/typography.css'
 import './custom-list.css'
 
 import { useMemo } from 'preact/hooks'
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { defaultContent } from '../../sample/sample-doc-list-custom-checkbox'
+import { sampleContent } from '../../sample/sample-doc-list-custom-checkbox'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
-export default function Editor() {
+interface EditorProps {
+  defaultContent?: NodeJSON
+}
+
+export default function Editor(props: EditorProps) {
+  const defaultContent = props.defaultContent ?? sampleContent
   const editor = useMemo(() => {
     const extension = defineExtension()
     return createEditor({
       extension,
       defaultContent,
     })
-  }, [])
+  }, [defaultContent])
 
   return (
     <ProseKit editor={editor}>

@@ -3,21 +3,22 @@ import { onMount } from 'svelte'
 
 import { loaders } from './loaders.gen'
 
-export let story: string = ''
+const props: {
+  story: string
+  props?: Record<string, unknown>
+} = $props()
 
-let loader: (typeof loaders)[keyof typeof loaders] | undefined
+let loader = loaders[props.story as keyof typeof loaders]
+let mounted = $state(false)
 
 onMount(() => {
-  loader = loaders[story as keyof typeof loaders]
-  if (!loader) {
-    console.warn(`[SvelteRenderer] No example found for story ${story}`)
-  }
+  mounted = true
 })
 </script>
 
-{#if loader}
+{#if mounted}
   {#await loader() then { default: LazyComponent }}
-    <LazyComponent />
+    <LazyComponent {...(props.props as Record<string, never>)} />
   {/await}
 {:else}
   <div></div>

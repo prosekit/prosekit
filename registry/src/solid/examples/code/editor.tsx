@@ -1,16 +1,24 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { defaultContent } from '../../sample/sample-doc-code'
+import { sampleContent } from '../../sample/sample-doc-code'
 import { Toolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
-export default function Editor(): JSX.Element {
+interface EditorProps {
+  defaultContent?: NodeJSON
+}
+
+export default function Editor(props: EditorProps): JSX.Element {
+  const defaultContent = props.defaultContent ?? sampleContent
   const extension = defineExtension()
   const editor = createEditor({ extension, defaultContent })
 

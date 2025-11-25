@@ -10,10 +10,14 @@ import {
   registerCleanupFunction,
   runCleanupFunctions,
 } from './render-cleanup'
+import { EMPTY_CONTENT } from './render-empty-content'
 
 registerCleanupFunction(cleanup)
 
-export async function renderReactExample(story: string) {
+export async function renderReactExample(story: string, emptyContent: boolean) {
   await runCleanupFunctions()
-  return await render(createElement(ReactRenderer, { story }))
+  return await render(createElement(ReactRenderer, {
+    story,
+    props: emptyContent ? { defaultContent: EMPTY_CONTENT } : undefined,
+  }))
 }

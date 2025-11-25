@@ -50,7 +50,6 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     }
 
     await updateNetworkState('disconnected')
-    setTestBlocking(true)
 
     // Show loading
     {
@@ -69,7 +68,6 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     // Show all users
     {
       await updateNetworkState('connected')
-      setTestBlocking(false)
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expect.element(itemBob, { timeout: 5000 }).toBeVisible()
@@ -189,16 +187,6 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     }
   })
 })
-
-function setTestBlocking(value: boolean): void {
-  window._PROSEKIT_TEST_BLOCKING = value
-}
-
-declare global {
-  interface Window {
-    _PROSEKIT_TEST_BLOCKING: boolean | undefined
-  }
-}
 
 async function updateNetworkState(state: 'connected' | 'disconnected') {
   {

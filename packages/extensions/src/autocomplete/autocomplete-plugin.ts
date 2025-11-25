@@ -31,11 +31,13 @@ import type { AutocompleteRule } from './autocomplete-rule'
  * 1. {@link handleTextInput}: called when text is inputted. Returns a new
  *    matching as a transaction meta if possible. This is the only place to
  *    create a new matching if there is no existing matching.
- * 2. {@link handleTransaction}: called when a transaction is applied. Updates
- *    the plugin state based on the transaction. This step determines if an
- *    existing matching should be removed, and if a new matching should be
- *    created or updated.
- * 3.
+ * 2. {@link handleTransaction}: called when a transaction is going to be
+ *    applied. Updates the plugin state based on the transaction. This step
+ *    determines if an existing matching should be removed, and if a new
+ *    matching should be created or updated.
+ * 3. {@link handleUpdate}: called when the editor state is updated. This is the
+ *    place to call `onMatch` and register `deleteMatch` and `ignoreMatch`
+ *    callbacks.
  */
 export function createAutocompletePlugin({
   getRules,
@@ -55,62 +57,7 @@ export function createAutocompletePlugin({
     },
 
     view: () => ({
-      update: (view, prevState) => {
-        const prevValue = getPluginState(prevState)
-        const currValue = getPluginState(view.state)
-
-        if (
-          prevValue?.matching
-          && prevValue.matching.rule !== currValue?.matching?.rule
-        ) {
-          // Deactivate the previous rule
-          prevValue.matching.rule.onLeave?.()
-        }
-
-        if (
-          currValue?.matching
-          && !currValue.ignores.has(currValue.matching.from)
-        ) {
-          // Activate the current rule
-
-          const { from, to, match, rule } = currValue.matching
-
-          const textContent = view.state.doc.textBetween(
-            from,
-            to,
-            null,
-            OBJECT_REPLACEMENT_CHARACTER,
-          )
-
-          const deleteMatch = () => {
-            if (
-              view.state.doc.textBetween(
-                from,
-                to,
-                null,
-                OBJECT_REPLACEMENT_CHARACTER,
-              ) === textContent
-            ) {
-              view.dispatch(view.state.tr.delete(from, to))
-            }
-          }
-
-          const ignoreMatch = () => {
-            view.dispatch(
-              setTrMeta(view.state.tr, { type: 'leave' }),
-            )
-          }
-
-          rule.onMatch({
-            state: view.state,
-            match,
-            from,
-            to,
-            deleteMatch,
-            ignoreMatch,
-          })
-        }
-      },
+      update: handleUpdate,
     }),
 
     props: {
@@ -252,6 +199,63 @@ function handleTransaction(
   }
 
   throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
+}
+
+function handleUpdate(view: EditorView, prevState: EditorState): void {
+  const prevValue = getPluginState(prevState)
+  const currValue = getPluginState(view.state)
+
+  if (
+    prevValue?.matching
+    && prevValue.matching.rule !== currValue?.matching?.rule
+  ) {
+    // Deactivate the previous rule
+    prevValue.matching.rule.onLeave?.()
+  }
+
+  if (
+    currValue?.matching
+    && !currValue.ignores.has(currValue.matching.from)
+  ) {
+    // Activate the current rule
+
+    const { from, to, match, rule } = currValue.matching
+
+    const textContent = view.state.doc.textBetween(
+      from,
+      to,
+      null,
+      OBJECT_REPLACEMENT_CHARACTER,
+    )
+
+    const deleteMatch = () => {
+      if (
+        view.state.doc.textBetween(
+          from,
+          to,
+          null,
+          OBJECT_REPLACEMENT_CHARACTER,
+        ) === textContent
+      ) {
+        view.dispatch(view.state.tr.delete(from, to))
+      }
+    }
+
+    const ignoreMatch = () => {
+      view.dispatch(
+        setTrMeta(view.state.tr, { type: 'leave' }),
+      )
+    }
+
+    rule.onMatch({
+      state: view.state,
+      match,
+      from,
+      to,
+      deleteMatch,
+      ignoreMatch,
+    })
+  }
 }
 
 const MAX_MATCH = 200

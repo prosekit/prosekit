@@ -1,5 +1,8 @@
 import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
-import type { ResolvedPos } from '@prosekit/pm/model'
+import type {
+  ProseMirrorNode,
+  ResolvedPos,
+} from '@prosekit/pm/model'
 import {
   Plugin,
   type EditorState,
@@ -152,12 +155,7 @@ function handleTransaction(
     }
 
     // Get the text between the existing matching
-    const text = newState.doc.textBetween(
-      prevMatching.from,
-      prevMatching.to,
-      null,
-      OBJECT_REPLACEMENT_CHARACTER,
-    )
+    const text = getTextBetween(newState.doc, prevMatching.from, prevMatching.to)
     // Check the text again to see if it still matches the rule
     const currMatching = matchRule(
       newState,
@@ -211,22 +209,10 @@ function handleUpdate(view: EditorView, prevState: EditorState): void {
 
     const { from, to, match, rule } = currValue.matching
 
-    const textContent = view.state.doc.textBetween(
-      from,
-      to,
-      null,
-      OBJECT_REPLACEMENT_CHARACTER,
-    )
+    const textContent = getTextBetween(view.state.doc, from, to)
 
     const deleteMatch = () => {
-      if (
-        view.state.doc.textBetween(
-          from,
-          to,
-          null,
-          OBJECT_REPLACEMENT_CHARACTER,
-        ) === textContent
-      ) {
+      if (getTextBetween(view.state.doc, from, to) === textContent) {
         view.dispatch(view.state.tr.delete(from, to))
       }
     }
@@ -265,9 +251,17 @@ const MAX_MATCH = 200
 /** Get the text before the given position at the current block. */
 function getTextBackward($pos: ResolvedPos): string {
   const parentOffset: number = $pos.parentOffset
-  return $pos.parent.textBetween(
+  return getTextBetween(
+    $pos.parent,
     Math.max(0, parentOffset - MAX_MATCH),
     parentOffset,
+  )
+}
+
+function getTextBetween(node: ProseMirrorNode, from: number, to: number): string {
+  return node.textBetween(
+    from,
+    to,
     null,
     OBJECT_REPLACEMENT_CHARACTER,
   )

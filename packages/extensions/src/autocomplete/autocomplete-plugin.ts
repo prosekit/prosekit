@@ -172,11 +172,7 @@ function handleTransaction(
   // If a new matching is being entered from `handleTextInput`
   if (meta.type === 'enter') {
     // Ignore the previous matching if it is not the same as the new matching
-    if (
-      prevMatching
-      && prevMatching.rule !== meta.matching.rule
-      && prevMatching.from !== meta.matching.from
-    ) {
+    if (prevMatching && prevMatching.from !== meta.matching.from) {
       ignores.add(prevMatching.from)
     }
 

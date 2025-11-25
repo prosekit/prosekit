@@ -7,7 +7,7 @@ import type { Ref } from 'react'
 function assignRef<T>(
   ref: Ref<T> | undefined,
   value: T | null,
-): VoidFunction | undefined | void {
+): VoidFunction | void {
   if (typeof ref === 'function') {
     return ref(value)
   } else if (ref) {

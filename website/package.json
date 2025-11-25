@@ -45,7 +45,7 @@
     "fdir": "^6.5.0",
     "just-memoize": "^2.2.0",
     "loro-crdt": "^1.10.0",
-    "loro-prosemirror": "^0.4.0",
+    "loro-prosemirror": "^0.4.1",
     "preact": "^10.27.2",
     "prosekit": "workspace:*",
     "prosekit-registry": "workspace:*",

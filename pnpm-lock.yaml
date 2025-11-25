@@ -304,8 +304,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.4.0
-        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.1
+        version: 0.4.1(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -497,8 +497,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.4.0
-        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.1
+        version: 0.4.1(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -797,8 +797,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.4.0
-        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.1
+        version: 0.4.1(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -1059,8 +1059,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       loro-prosemirror:
-        specifier: ^0.4.0
-        version: 0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+        specifier: ^0.4.1
+        version: 0.4.1(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       preact:
         specifier: ^10.27.2
         version: 10.27.2
@@ -5884,8 +5884,8 @@ packages:
   loro-crdt@1.10.0:
     resolution: {integrity: sha512-Fms27q9IaDANUe5OACQL6qLMhJasMXzjRkyK+NAIiPQXGBK2VAp6C7pAr9fzuKbL71YyDgA4Pv69RGwiScWSPg==}
 
-  loro-prosemirror@0.4.0:
-    resolution: {integrity: sha512-wX+aOO3NNyaScNu6qayzOdnYciPfTkGCQY/Rl2ZmwSWVw2kEad0XSkRUf3/xKRY3hPu5T+CL6juTOpZePkoO8A==}
+  loro-prosemirror@0.4.1:
+    resolution: {integrity: sha512-Nly6ECBCaGKkXmycYSZFlSJaI4juhzH5ZjvYL0Eu2vLebvLcKx6sPtmpM/6KYp69CSBrF6xL1Q31B0rk2Z8qSA==}
     peerDependencies:
       loro-crdt: ^1.10.0
       prosemirror-model: ^1.18.1
@@ -14008,7 +14008,7 @@ snapshots:
 
   loro-crdt@1.10.0: {}
 
-  loro-prosemirror@0.4.0(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3):
+  loro-prosemirror@0.4.1(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3):
     dependencies:
       lib0: 0.2.114
       loro-crdt: 1.10.0

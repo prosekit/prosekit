@@ -19,7 +19,7 @@ export async function renderSvelteExample(story: string, initialContent?: NodeJS
   type Props = ComponentProps<typeof SvelteRenderer>
   const props: Props = {
     story,
-    exampleProps: { initialContent },
+    exampleProps: initialContent ? { initialContent } : {},
   }
   return render(SvelteRenderer, props)
 }

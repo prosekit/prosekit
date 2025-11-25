@@ -18,6 +18,6 @@ export async function renderSolidExample(story: string, initialContent?: NodeJSO
   await runCleanupFunctions()
   return render(h(SolidRenderer, {
     story,
-    exampleProps: { initialContent },
+    exampleProps: initialContent ? { initialContent } : {},
   }))
 }

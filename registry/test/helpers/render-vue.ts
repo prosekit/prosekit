@@ -18,7 +18,7 @@ export async function renderVueExample(story: string, initialContent?: NodeJSON)
   return render(VueRenderer, {
     props: {
       story,
-      exampleProps: { initialContent },
+      exampleProps: initialContent ? { initialContent } : {},
     },
   })
 }

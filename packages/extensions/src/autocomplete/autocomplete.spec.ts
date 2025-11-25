@@ -143,31 +143,31 @@ describe('defineAutocomplete', () => {
 
     expect(onEnter).not.toHaveBeenCalled()
 
-    await inputText('a')
-    // a<text_cursor>
+    await inputText('a ')
+    // a <text_cursor>
     expect(isMatching()).toBe(false)
 
     await inputText('/')
-    // a/<text_cursor>
+    // a /<text_cursor>
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/')
 
     await inputText('b')
-    // a/b<text_cursor>
+    // a /b<text_cursor>
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/b')
 
     await pressKey('ArrowLeft')
-    // a/<text_cursor>b
+    // a /<text_cursor>b
     expect(isMatching()).toBe(true)
-    expect(getMatchingText()).toBe('/')
+    expect(getMatchingText()).toBe('/b')
 
     await pressKey('ArrowLeft')
-    // a<text_cursor>/b
+    // a <text_cursor>/b
     expect(isMatching()).toBe(false)
 
     await pressKey('ArrowRight')
-    // a/<text_cursor>b
+    // a/<text_cursor> b
     expect(isMatching()).toBe(false)
   })
 })

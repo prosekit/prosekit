@@ -57,10 +57,9 @@ export function createAutocompletePlugin({
 
         if (!meta) {
           if (prevMatching) {
-            const $from = newState.selection.$from
-            const parentStart = $from.start($from.depth)
-            if (prevMatching.parentStart !== parentStart) {
-              // The text cursor has moved to a different block, so we ignore the previous matching
+            const { selection } = newState
+            // If the text selection is before the matching or after the matching
+            if (selection.to <= prevMatching.from || selection.from >= prevMatching.to + 1) {
               ignores.push(prevMatching.from)
               return { matching: null, ignores }
             }

@@ -87,8 +87,8 @@ export interface AutocompleteRuleOptions {
 
   /**
    * A predicate to determine if the rule can be applied in the current editor
-   * state. If not provided, it defaults to only allowing matches in empty
-   * selections that are not inside a code block or code mark.
+   * state. If not provided, it defaults to only allowing matches that are not
+   * inside a code block or code mark.
    */
   canMatch?: CanMatchPredicate
 }

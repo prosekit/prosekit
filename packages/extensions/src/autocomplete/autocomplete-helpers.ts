@@ -8,17 +8,26 @@ import {
 import type { AutocompleteRule } from './autocomplete-rule'
 
 export function defaultCanMatch({ state }: { state: EditorState }): boolean {
-  return state.selection.empty && !isInsideCode(state.selection.$from)
+  const $pos = state.selection.$from
+  return !isInsideCodeBlock($pos) && !isInsideCodeMark($pos)
 }
 
-function isInsideCode($pos: ResolvedPos): boolean {
+function isInsideCodeBlock($pos: ResolvedPos): boolean {
   for (let d = $pos.depth; d > 0; d--) {
     if ($pos.node(d).type.spec.code) {
       return true
     }
   }
+  return false
+}
 
-  return $pos.marks().some((mark) => mark.type.name === 'code')
+function isInsideCodeMark($pos: ResolvedPos): boolean {
+  for (const mark of $pos.marks()) {
+    if (mark.type.spec.code) {
+      return true
+    }
+  }
+  return false
 }
 
 /**

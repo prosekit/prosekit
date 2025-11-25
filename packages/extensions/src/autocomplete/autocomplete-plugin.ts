@@ -52,31 +52,57 @@ export function createAutocompletePlugin({
         }
 
         // Handle position mapping changes
-        const ignores: number[] = []
+        const ignoreSet = new Set<number>()
         for (const ignore of prevValue.ignores) {
           const result = tr.mapping.mapResult(ignore)
-          if (result.deletedBefore) continue
-          if (ignores.includes(result.pos)) continue
-          ignores.push(result.pos)
+          if (!result.deletedBefore) {
+            ignoreSet.add(result.pos)
+          }
         }
+        const ignores = Array.from(ignoreSet)
+
         const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
 
+        // If there is no new matching from `handleTextInput`
         if (!meta) {
-          if (prevMatching) {
-            const { selection } = newState
-            // If the text selection is before the matching or after the matching
-            if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
-              ignores.push(prevMatching.from)
-              return { matching: null, ignores }
-            }
+          if (!prevMatching) {
+            return { matching: null, ignores }
           }
-          return { matching: prevMatching, ignores }
+
+          const { selection } = newState
+          // If the text selection is before the matching or after the matching,
+          // we leave the matching
+          if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
+            ignores.push(prevMatching.from)
+            return { matching: null, ignores }
+          }
+
+          // Get the text between the existing matching
+          const text = newState.doc.textBetween(
+            prevMatching.from,
+            prevMatching.to,
+            null,
+            OBJECT_REPLACEMENT_CHARACTER,
+          )
+          // Check the text again to see if it still matches the rule
+          const currMatching = matchRule(
+            newState,
+            getRules(),
+            text,
+            prevMatching.to,
+            ignores,
+          )
+          return { matching: currMatching ?? null, ignores }
         }
 
-        // A new matching is being entered
+        // If a new matching is being entered from `handleTextInput`
         if (meta.type === 'enter') {
           // Ignore the previous matching if it is not the same as the new matching
-          if (prevMatching && prevMatching.rule !== meta.matching.rule) {
+          if (
+            prevMatching
+            && prevMatching.rule !== meta.matching.rule
+            && prevMatching.from !== meta.matching.from
+          ) {
             ignores.push(prevMatching.from)
           }
 
@@ -84,7 +110,7 @@ export function createAutocompletePlugin({
           return { matching: meta.matching, ignores }
         }
 
-        // Exiting a matching
+        // If an existing matching is being exited from `handleTextInput`
         if (meta.type === 'leave') {
           if (prevMatching) {
             ignores.push(prevMatching.from)

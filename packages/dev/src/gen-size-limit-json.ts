@@ -4,16 +4,28 @@ import path from 'node:path'
 import type { Package } from '@manypkg/get-packages'
 
 import { asyncFrom } from './async-from'
+import { debug } from './debug'
 import { getPackageJsonPublishExports } from './get-package-json-exports'
-import { vfs } from './virtual-file-system'
+import { vfs } from './vfs'
+import { getPackageByName } from './workspace-packages'
 
-export async function genSizeLimitJson() {
-  const pkg = await vfs.getPackageByName('prosekit')
+export async function genSizeLimitJson(): Promise<void> {
+  debug('genSizeLimitJson start')
+  const pkg = await getPackageByName('prosekit')
   const sizeLimitConfig = await asyncFrom(iterateExports(pkg))
-  await vfs.updateJSON('.size-limit.json', sizeLimitConfig)
+  vfs.updateJSON('.size-limit.json', sizeLimitConfig)
+  debug('genSizeLimitJson done')
 }
 
-async function* iterateExports(pkg: Package) {
+async function* iterateExports(pkg: Package): AsyncGenerator<
+  {
+    name: string
+    path: string
+    ignore?: string[]
+  },
+  void,
+  unknown
+> {
   const exports = getPackageJsonPublishExports(pkg) ?? {}
 
   for (const [entryName, entry] of Object.entries(exports)) {
@@ -33,7 +45,7 @@ async function* iterateExports(pkg: Package) {
       .slice(0, 2)
       .join('/')
 
-    const subPackage = await vfs.getPackageByName(subPackageName)
+    const subPackage = await getPackageByName(subPackageName)
     const ignored = new Set<string>(
       // Ignore peer dependencies
       Object.keys(subPackage.packageJson.peerDependencies ?? {}),

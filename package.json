@@ -22,7 +22,7 @@
     "fix:eslint": "eslint . --fix --cache",
     "fix:tsconfig": "monorepo-typescript-references fix",
     "dev": "pnpm --filter='./website' run dev",
-    "gen": "turbo run gen --force",
+    "gen": "pnpm -r --sequential run gen",
     "lint": "pnpm run lint:eslint && pnpm run lint:packages && pnpm run lint:knip",
     "lint:eslint": "eslint . --cache",
     "lint:packages": "pnpm -r --sequential run lint",

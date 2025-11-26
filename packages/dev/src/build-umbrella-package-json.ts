@@ -3,11 +3,16 @@ import path from 'node:path'
 import type { PackageJson } from 'type-fest'
 
 import { getPackageJsonExports } from './get-package-json-exports'
-import { vfs } from './virtual-file-system'
+import { cleanGeneratedFilesInPackage } from './package-files'
+import { vfs } from './vfs'
+import {
+  getPackageByName,
+  getScopedPublicPackages,
+} from './workspace-packages'
 
-export async function buildUmbrellaPackageJson() {
-  const umbrellaPackage = await vfs.getPackageByName('prosekit')
-  await vfs.cleanGeneratedFilesInPackage(umbrellaPackage)
+export async function buildUmbrellaPackageJson(): Promise<void> {
+  const umbrellaPackage = await getPackageByName('prosekit')
+  await cleanGeneratedFilesInPackage(umbrellaPackage)
 
   const pkgExports: Record<string, string> = { '.': './src/index.ts' }
   const pkgDependencies: Record<string, string> = {}
@@ -21,7 +26,7 @@ export async function buildUmbrellaPackageJson() {
   // @ts-expect-error: peerDependenciesMeta is not in the type
   umbrellaPackage.packageJson.peerDependenciesMeta = pkgPeerDependenciesMeta
 
-  const scopedPackages = await vfs.getScopedPublicPackages()
+  const scopedPackages = await getScopedPublicPackages()
 
   for (const pkg of scopedPackages) {
     const packageJson = pkg.packageJson as PackageJson
@@ -61,7 +66,7 @@ async function ensureEntry({
   entry: string
   // Where the result will be written to
   exports: Record<string, string>
-}) {
+}): Promise<void> {
   // Example: extension-foo
   const packageSubName = packageName.split('/')[1]
 
@@ -88,24 +93,19 @@ async function ensureEntry({
   exports[reExportEntry] = reExportFilePath
 
   const importName = path.normalize(packageName + '/' + entry)
+  const targetPath = path.join(cwd, reExportFilePath)
   if (reExportFilePath.endsWith('.css')) {
-    await vfs.updateText(
-      path.join(cwd, reExportFilePath),
-      formatCssReExportFile(importName),
-    )
+    vfs.updateText(targetPath, formatCssReExportFile(importName))
   } else {
-    await vfs.updateText(
-      path.join(cwd, reExportFilePath),
-      formatTsReExportFile(importName),
-    )
+    vfs.updateText(targetPath, formatTsReExportFile(importName))
   }
 }
 
-function ensureFileExtension(filePath: string, defaultExtension = '.ts') {
+function ensureFileExtension(filePath: string, defaultExtension = '.ts'): string {
   return filePath + (path.extname(filePath) ? '' : defaultExtension)
 }
 
-function formatTsReExportFile(importName: string) {
+function formatTsReExportFile(importName: string): string {
   const importNameWithoutPrefix = importName.startsWith('@')
     ? importName.slice(1)
     : importName
@@ -121,6 +121,6 @@ export * from '${importName}'
   )
 }
 
-function formatCssReExportFile(importName: string) {
+function formatCssReExportFile(importName: string): string {
   return `@import '${importName}';\n`
 }

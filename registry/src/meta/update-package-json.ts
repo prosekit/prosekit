@@ -1,4 +1,7 @@
+import path from 'node:path'
+
 import {
+  getPackageByName,
   sortObject,
   vfs,
 } from '@prosekit/dev'
@@ -23,7 +26,7 @@ function fillExports(item: ItemAccumulator, exports: Record<string, unknown>): v
  * Update the package.json
  */
 export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void> {
-  const pkg = await vfs.getPackageByName('prosekit-registry')
+  const pkg = await getPackageByName('prosekit-registry')
   const exports: Record<string, unknown> = {
     './vite-plugin-class-replace': './src/meta/vite-plugin-class-replace.ts',
     './replace-class-names': './src/meta/replace-classes.ts',
@@ -39,5 +42,5 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
   }
   // @ts-expect-error - exports is not in the type
   pkg.packageJson['exports'] = sortObject(exports)
-  await vfs.updatePackage(pkg)
+  vfs.updateJSON(path.join(pkg.relativeDir, 'package.json'), pkg.packageJson)
 }

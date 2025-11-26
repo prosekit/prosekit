@@ -11,10 +11,7 @@ import { syncWorkspacePackages } from './workspace-sync'
 async function gen(): Promise<boolean> {
   debug('gen start')
 
-  if (skipGen()) {
-    console.warn('[gen] skipGen() returned true')
-    return false
-  }
+  if (skipGen()) return false
 
   await genComponents()
   debug('gen gen-components done')

@@ -14,10 +14,7 @@ import { updateStoryMeta } from './meta/update-story-meta'
 import { updateWebsitePages } from './meta/update-website-pages'
 
 async function gen() {
-  if (skipGen()) {
-    debug('registry skip')
-    return
-  }
+  if (skipGen()) return
 
   debug('registry start')
   const items = await scanRegistry()

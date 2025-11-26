@@ -8,7 +8,7 @@ import { updateClasses } from './meta/update-classes'
 async function gen() {
   if (skipGen()) return
 
-  await updateClasses()
+  updateClasses()
   await vfs.commit()
 }
 

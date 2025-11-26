@@ -12,7 +12,7 @@ async function build() {
   if (skipGen()) return
 
   const items = await scanRegistry()
-  await updateRegistry(items, 'registry/dist/r/registry.json')
+  updateRegistry(items, 'registry/dist/r/registry.json')
   await updateRegistryItems(items, 'registry/dist/r/', replaceClassNames)
   await vfs.commit()
 }

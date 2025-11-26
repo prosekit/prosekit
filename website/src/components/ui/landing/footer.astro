@@ -46,24 +46,20 @@ const linkGroups = [
 
 <footer class="border-t border-border border-solid -mx-(--sl-content-pad-x) mt-15 pt-10 border-0">
   <div class="flex flex-wrap justify-between w-full max-w-4xl mx-auto px-8 py-5">
-    {
-      linkGroups.map(group => (
-        <div class="py-5 px-2 min-w-[130px]">
-          <h3 class="font-semibold uppercase text-gray-900 dark:text-white text-sm">
-            {group.label}
-          </h3>
-          <ul class="mt-4 list-none p-0 grid gap-4 text-sm">
-            {
-              group.links.map(link => (
-                <li>
-                  <HiddenLink href={link.link}>{link.label}</HiddenLink>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      ))
-    }
+    {linkGroups.map(group => (
+      <div class="py-5 px-2 min-w-[130px]">
+        <h3 class="font-semibold uppercase text-gray-900 dark:text-white text-sm">
+          {group.label}
+        </h3>
+        <ul class="mt-4 list-none p-0 grid gap-4 text-sm">
+          {group.links.map(link => (
+            <li>
+              <HiddenLink href={link.link}>{link.label}</HiddenLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 
   <div class="mt-5 pt-20 text-center border-t border-border border-solid border-0">

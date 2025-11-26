@@ -1,5 +1,7 @@
 import { getPackages } from '@manypkg/get-packages'
+import { once } from '@ocavue/utils'
 
+import { debug } from './debug'
 import {
   isPrivatePackage,
   isPublicPackage,
@@ -7,10 +9,13 @@ import {
 import { ROOT_DIR } from './root-dir'
 
 /** Returns all workspace packages sorted by name. */
-export async function getWorkspacePackages() {
+export const getWorkspacePackages = once(async () => {
+  debug('getWorkspacePackages start')
   const { packages } = await getPackages(ROOT_DIR)
-  return packages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
-}
+  const sortedPackages = packages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
+  debug('getWorkspacePackages done packages=%d', sortedPackages.length)
+  return sortedPackages
+})
 
 /** Finds a package by its name. */
 export async function getPackageByName(name: string) {

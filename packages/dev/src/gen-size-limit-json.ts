@@ -7,11 +7,14 @@ import { asyncFrom } from './async-from'
 import { getPackageJsonPublishExports } from './get-package-json-exports'
 import { vfs } from './vfs'
 import { getPackageByName } from './workspace-packages'
+import { debug } from './debug'
 
 export async function genSizeLimitJson() {
+  debug('genSizeLimitJson start')
   const pkg = await getPackageByName('prosekit')
   const sizeLimitConfig = await asyncFrom(iterateExports(pkg))
   vfs.updateJSON('.size-limit.json', sizeLimitConfig)
+  debug('genSizeLimitJson done')
 }
 
 async function* iterateExports(pkg: Package) {

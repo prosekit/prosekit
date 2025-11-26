@@ -314,8 +314,10 @@ async function extractImportSpecifiersFromFilePath(
 
 async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
   debug('scan start')
+
   const gitFiles = await listGitFiles(ROOT_DIR, { patterns: REGISTRY_GLOB_PATTERNS })
   debug('scan tracked-files=%d', gitFiles.length)
+
   const gitFileSet = new Set(gitFiles)
   const registryFiles = gitFiles.filter((filePath) => {
     return FRAMEWORKS.some((framework) => {
@@ -390,6 +392,8 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       }
     }
   }
+
+  debug('scan unresolvedImports=%d', unresolvedImports.length)
 
   if (unresolvedImports.length > 0) {
     console.warn(

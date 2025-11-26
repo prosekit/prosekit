@@ -4,10 +4,10 @@ import {
   normalize,
 } from 'node:path'
 
-import { globby } from 'globby'
 import type { DumpOptions } from 'js-yaml'
 
 import { isSubDirectory } from './is-sub-directory'
+import { listGitFiles } from './list-git-files'
 import { VirtualFile } from './virtual-file'
 
 /**
@@ -78,7 +78,7 @@ export class VirtualFileSystem {
   /** Returns all tracked files under a directory. */
   async getFilePathsByDir(dir: string) {
     const normalizedDir = normalize(dir)
-    const diskFiles = await this.listFiles(normalizedDir)
+    const diskFiles = await listGitFiles(this.rootDir, { patterns: normalizedDir })
     const virtualFiles = []
     for (const file of this.files.values()) {
       if (file.deleted) continue
@@ -118,21 +118,5 @@ export class VirtualFileSystem {
       this.files.set(normalizedPath, file)
     }
     return file
-  }
-
-  /** Lists tracked files under a directory using glob patterns. */
-  private async listFiles(dir: string) {
-    const normalizedDir = normalize(dir).replace(/^[./\\]+/, '').replace(/\\/g, '/')
-    const trimmed = normalizedDir.replace(/\/$/, '')
-    const pattern = trimmed.length > 0 ? `${trimmed}/**/*` : '**/*'
-    const files = await globby(pattern, {
-      cwd: this.rootDir,
-      dot: true,
-      absolute: false,
-      gitignore: true,
-      onlyFiles: true,
-      followSymbolicLinks: false,
-    })
-    return files.map((file) => normalize(file))
   }
 }

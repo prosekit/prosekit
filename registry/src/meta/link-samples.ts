@@ -32,7 +32,11 @@ async function areHardLinked(file1: string, file2: string): Promise<boolean> {
   try {
     const stat1 = await fs.lstat(file1)
     const stat2 = await fs.lstat(file2)
-    return stat1.ino === stat2.ino
+    return (
+      stat1.ino === stat2.ino &&
+      stat1.dev === stat2.dev &&
+      stat1.nlink > 1
+    )
   } catch {
     return false
   }

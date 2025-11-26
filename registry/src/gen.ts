@@ -3,6 +3,7 @@ import {
   vfs,
 } from '@prosekit/dev'
 
+import { linkSamples } from './meta/link-samples'
 import { scanRegistry } from './meta/scan'
 import { updateClasses } from './meta/update-classes'
 import { updateLoader } from './meta/update-loader'
@@ -15,6 +16,7 @@ async function gen() {
   if (skipGen()) return
 
   const items = await scanRegistry()
+  await linkSamples(items)
   await updatePackageJSON(items)
   await updateWebsitePages(items)
   await updateLoader(items)

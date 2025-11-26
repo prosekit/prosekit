@@ -1,3 +1,4 @@
+import type { Debugger } from 'obug'
 import { createDebug } from 'obug'
 
-export const debug = createDebug('prosekit:dev')
+export const debug: Debugger = createDebug('prosekit:dev')

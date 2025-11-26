@@ -8,7 +8,7 @@ import { pathExists } from 'path-exists'
 /**
  * Removes a path if it exists.
  */
-export async function removePath(filePath: string) {
+export async function removePath(filePath: string): Promise<boolean> {
   if (await pathExists(filePath)) {
     await fs.rm(filePath, { force: true })
     return true
@@ -19,7 +19,7 @@ export async function removePath(filePath: string) {
 /**
  * Writes JSON to disk only when contents change.
  */
-export async function writeJson(filePath: string, json: unknown) {
+export async function writeJson(filePath: string, json: unknown): Promise<boolean> {
   let previous: unknown
   let hadPrevious = true
   try {
@@ -43,7 +43,7 @@ export async function writeJson(filePath: string, json: unknown) {
 /**
  * Writes text to disk only when contents change.
  */
-export async function writeText(filePath: string, text: string) {
+export async function writeText(filePath: string, text: string): Promise<boolean> {
   let previous: string | null = null
   try {
     previous = await fs.readFile(filePath, 'utf8')

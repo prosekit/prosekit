@@ -68,6 +68,14 @@ const MODULE_RESOLUTION_EXTENSIONS = [
   '.css',
 ]
 
+// Handle TypeScript convention: .js imports can resolve to .ts source files
+const TS_MAPPING: Record<string, string> = {
+  '.js': '.ts',
+  '.jsx': '.tsx',
+  '.mjs': '.mts',
+  '.cjs': '.cts',
+}
+
 interface ClassificationResult {
   readonly framework: Framework
   readonly category: ItemCategory
@@ -181,14 +189,8 @@ function* generateCandidatePaths({
 
   if (ext) {
     yield base
-    // Handle TypeScript convention: .js imports can resolve to .ts source files
-    const tsMapping: Record<string, string> = {
-      '.js': '.ts',
-      '.jsx': '.tsx',
-      '.mjs': '.mts',
-      '.cjs': '.cts',
-    }
-    for (const [jsExt, tsExt] of Object.entries(tsMapping)) {
+
+    for (const [jsExt, tsExt] of Object.entries(TS_MAPPING)) {
       if (base.endsWith(jsExt)) {
         yield base.slice(0, -jsExt.length) + tsExt
       }

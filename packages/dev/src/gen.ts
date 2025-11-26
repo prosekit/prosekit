@@ -5,43 +5,40 @@ import { genComponents } from './gen-components'
 import { genPackageJson } from './gen-package-json'
 import { genSizeLimitJson } from './gen-size-limit-json'
 import { skipGen } from './skip-gen'
-import { sleep } from './sleep'
 import { vfs } from './vfs'
 import { syncWorkspacePackages } from './workspace-sync'
 
-async function genAll(): Promise<boolean> {
+async function gen(): Promise<boolean> {
+  debug('gen start')
+
   if (skipGen()) {
     console.warn('[gen] skipGen() returned true')
     return false
   }
 
-  debug('gen:start')
   await genComponents()
+  debug('gen gen-components done')
+
   await genPackageJson()
+  debug('gen gen-package-json done')
+
   await genChangesetConfigJson()
+  debug('gen gen-changeset-config-json done')
+
   await genSizeLimitJson()
+  debug('gen gen-size-limit-json done')
+
   await genChangeset()
+  debug('gen gen-changeset done')
+
   await syncWorkspacePackages()
+  debug('gen sync-workspace-packages done')
+
   const updated = await vfs.commit()
-  debug('gen:done updated=%s', updated)
+  debug('gen commit done')
+
+  debug('gen done updated=%s', updated)
   return updated
 }
 
-async function main() {
-  for (let i = 1; i <= 10; i++) {
-    if (i === 10) {
-      console.warn('[warning] gen.ts: genAll() cannot update all files within 10 attempts')
-    }
-
-    if (debug.enabled) {
-      debug('attempt %d', i)
-    }
-    const updated = await genAll()
-    if (!updated) {
-      return
-    }
-    await sleep(1000)
-  }
-}
-
-await main()
+await gen()

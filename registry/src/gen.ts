@@ -15,16 +15,19 @@ import { updateWebsitePages } from './meta/update-website-pages'
 
 async function gen() {
   if (skipGen()) {
-    debug('registry:skip')
+    debug('registry skip')
     return
   }
 
+  debug('registry start')
   const items = await scanRegistry()
-  debug('registry:items=%d', items.length)
+  debug('registry scan done')
 
   await linkSamples(items)
+  debug('registry link-samples done')
 
   await updatePackageJSON(items)
+  debug('registry update-package-json done')
 
   updateWebsitePages(items)
 
@@ -35,9 +38,12 @@ async function gen() {
   updateRegistry(items, 'registry/src/registry.gen.json')
 
   await updateStoryMeta(items)
+  debug('registry update-story-meta done')
 
   const updated = await vfs.commit()
-  debug('registry:done updated=%s', updated)
+  debug('registry commit done')
+
+  debug('registry done updated=%s', updated)
 }
 
 await gen()

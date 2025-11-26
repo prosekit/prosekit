@@ -103,15 +103,10 @@ export class VirtualFileSystem {
 
   /** Flushes pending changes to disk. */
   async commit(): Promise<boolean> {
-    let updated = false
     process.chdir(this.rootDir)
-    for (const file of this.files.values()) {
-      if (await file.commit()) {
-        updated = true
-      }
-    }
+    const updated = await Promise.all(this.files.values().map((file) => file.commit()))
     this.files.clear()
-    return updated
+    return updated.some((updated) => updated)
   }
 
   /** Ensures a file entry exists before mutating it. */

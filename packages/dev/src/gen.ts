@@ -23,7 +23,7 @@ async function genAll(): Promise<boolean> {
   await genChangeset()
   await syncWorkspacePackages()
   const updated = await vfs.commit()
-  debug('gen:done %s', updated)
+  debug('gen:done updated=%s', updated)
   return updated
 }
 

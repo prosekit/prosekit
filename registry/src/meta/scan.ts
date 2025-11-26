@@ -313,8 +313,9 @@ async function extractImportSpecifiersFromFilePath(
 }
 
 async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
+  debug('scan start')
   const gitFiles = await listGitFiles(ROOT_DIR, { patterns: REGISTRY_GLOB_PATTERNS })
-  debug('scan:tracked-files %d', gitFiles.length)
+  debug('scan tracked-files=%d', gitFiles.length)
   const gitFileSet = new Set(gitFiles)
   const registryFiles = gitFiles.filter((filePath) => {
     return FRAMEWORKS.some((framework) => {
@@ -444,15 +445,10 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       )
     })
 
-  debug('scan:items %d', sortedItems.length)
+  debug('scan done items=%d', sortedItems.length)
   return sortedItems
 }
 
-export const scanRegistry = once(async () => {
-  debug('scan:start')
-  const result = await scanRegistryImpl()
-  debug('scan:done')
-  return result
-})
+export const scanRegistry = once(scanRegistryImpl)
 
 const filename = basename(import.meta.filename)

@@ -17,11 +17,15 @@ export async function genSizeLimitJson(): Promise<void> {
   debug('genSizeLimitJson done')
 }
 
-async function* iterateExports(pkg: Package): AsyncGenerator<{
-  name: string
-  path: string
-  ignore?: string[]
-}, void, unknown> {
+async function* iterateExports(pkg: Package): AsyncGenerator<
+  {
+    name: string
+    path: string
+    ignore?: string[]
+  },
+  void,
+  unknown
+> {
   const exports = getPackageJsonPublishExports(pkg) ?? {}
 
   for (const [entryName, entry] of Object.entries(exports)) {

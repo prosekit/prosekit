@@ -10,7 +10,7 @@ import {
   getScopedPublicPackages,
 } from './workspace-packages'
 
-export async function buildUmbrellaPackageJson() {
+export async function buildUmbrellaPackageJson(): Promise<void> {
   const umbrellaPackage = await getPackageByName('prosekit')
   await cleanGeneratedFilesInPackage(umbrellaPackage)
 
@@ -66,7 +66,7 @@ async function ensureEntry({
   entry: string
   // Where the result will be written to
   exports: Record<string, string>
-}) {
+}): Promise<void> {
   // Example: extension-foo
   const packageSubName = packageName.split('/')[1]
 
@@ -101,11 +101,11 @@ async function ensureEntry({
   }
 }
 
-function ensureFileExtension(filePath: string, defaultExtension = '.ts') {
+function ensureFileExtension(filePath: string, defaultExtension = '.ts'): string {
   return filePath + (path.extname(filePath) ? '' : defaultExtension)
 }
 
-function formatTsReExportFile(importName: string) {
+function formatTsReExportFile(importName: string): string {
   const importNameWithoutPrefix = importName.startsWith('@')
     ? importName.slice(1)
     : importName
@@ -121,6 +121,6 @@ export * from '${importName}'
   )
 }
 
-function formatCssReExportFile(importName: string) {
+function formatCssReExportFile(importName: string): string {
   return `@import '${importName}';\n`
 }

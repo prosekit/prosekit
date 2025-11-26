@@ -17,7 +17,7 @@ import {
 } from './read-components'
 import { getPackageByName } from './workspace-packages'
 
-export async function genComponents() {
+export async function genComponents(): Promise<void> {
   debug('gen-components start')
 
   const webPackage = await getPackageByName('@prosekit/web')
@@ -57,7 +57,7 @@ export async function genComponents() {
   debug('gen-components done')
 }
 
-function writeWebComponents(pkg: Package, info: Components) {
+function writeWebComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -78,7 +78,7 @@ function writeWebComponents(pkg: Package, info: Components) {
   }
 }
 
-function writeReactComponents(pkg: Package, info: Components) {
+function writeReactComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -99,7 +99,7 @@ function writeReactComponents(pkg: Package, info: Components) {
   }
 }
 
-function writeVueComponents(pkg: Package, info: Components) {
+function writeVueComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -120,7 +120,7 @@ function writeVueComponents(pkg: Package, info: Components) {
   }
 }
 
-function writeSvelteComponents(pkg: Package, info: Components) {
+function writeSvelteComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -146,7 +146,7 @@ function writeSvelteComponents(pkg: Package, info: Components) {
   }
 }
 
-function writeSolidComponents(pkg: Package, info: Components) {
+function writeSolidComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -167,7 +167,7 @@ function writeSolidComponents(pkg: Package, info: Components) {
   }
 }
 
-function writePreactComponents(pkg: Package, info: Components) {
+function writePreactComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -188,7 +188,7 @@ function writePreactComponents(pkg: Package, info: Components) {
   }
 }
 
-function writeLitComponents(pkg: Package, info: Components) {
+function writeLitComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
@@ -203,7 +203,7 @@ function writeLitComponents(pkg: Package, info: Components) {
   }
 }
 
-function formatPrimitiveIndexCode(components: string[]) {
+function formatPrimitiveIndexCode(components: string[]): string {
   const lines = components.flatMap((kebab) => {
     const pascal = pascalCase(kebab)
     const camel = camelCase(kebab)
@@ -223,7 +223,7 @@ function formatPrimitiveIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
-function formatPrimitiveElementCode(kebab: string) {
+function formatPrimitiveElementCode(kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (
@@ -251,7 +251,7 @@ export { ${pascal}Element }
   )
 }
 
-function formatReactIndexCode(components: string[]) {
+function formatReactIndexCode(components: string[]): string {
   const lines = components.flatMap((name) => {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
@@ -263,7 +263,7 @@ function formatReactIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
-function formatVueIndexCode(components: string[]) {
+function formatVueIndexCode(components: string[]): string {
   const lines = components.flatMap((name) => {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
@@ -275,19 +275,19 @@ function formatVueIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
-function formatSvelteIndexCode(components: string[]) {
+function formatSvelteIndexCode(components: string[]): string {
   return formatReactIndexCode(components)
 }
 
-function formatSolidIndexCode(components: string[]) {
+function formatSolidIndexCode(components: string[]): string {
   return formatReactIndexCode(components)
 }
 
-function formatPreactIndexCode(components: string[]) {
+function formatPreactIndexCode(components: string[]): string {
   return formatReactIndexCode(components)
 }
 
-function formatLitIndexCode(group: string, components: string[]) {
+function formatLitIndexCode(group: string, components: string[]): string {
   const lines = components.flatMap((kebab) => {
     const pascal = pascalCase(kebab)
     return [
@@ -299,7 +299,7 @@ function formatLitIndexCode(group: string, components: string[]) {
   return lines.join('\n')
 }
 
-function formatReactComponentCode(group: string, kebab: string) {
+function formatReactComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
 
@@ -343,7 +343,7 @@ export const ${pascal}: ForwardRefExoticComponent<
   )
 }
 
-function formatVueComponentCode(group: string, kebab: string) {
+function formatVueComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (
@@ -386,7 +386,7 @@ export const ${pascal}: DefineSetupFnComponent<
   )
 }
 
-function formatSvelteComponentCode(group: string, kebab: string) {
+function formatSvelteComponentCode(group: string, kebab: string): string {
   const camel = camelCase(kebab)
 
   return (
@@ -418,7 +418,7 @@ $: {
   )
 }
 
-function formatSvelteTsCode(group: string, kebab: string) {
+function formatSvelteTsCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   return (
     `
@@ -441,7 +441,7 @@ export const ${pascal} = Component as typeof SvelteComponent<${pascal}Props & HT
   )
 }
 
-function formatSolidComponentCode(group: string, kebab: string) {
+function formatSolidComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (
@@ -480,7 +480,7 @@ export const ${pascal}: Component<PropsWithElement<
   )
 }
 
-function formatPreactComponentCode(group: string, kebab: string) {
+function formatPreactComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (

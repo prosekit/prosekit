@@ -5,12 +5,12 @@ import type { Package } from '@manypkg/get-packages'
 import { vfs } from './vfs'
 
 /** Returns file paths inside a package directory. */
-export async function getFilePathsByPackage(pkg: Package) {
+export async function getFilePathsByPackage(pkg: Package): Promise<string[]> {
   return await vfs.getFilePathsByDir(pkg.relativeDir)
 }
 
 /** Removes generated files inside a package directory. */
-export async function cleanGeneratedFilesInPackage(pkg: Package) {
+export async function cleanGeneratedFilesInPackage(pkg: Package): Promise<void> {
   await vfs.cleanFilesInDir(pkg.relativeDir, true)
 }
 
@@ -19,7 +19,7 @@ export function updateTextInPackage(
   pkg: Package,
   filePath: string,
   content: string,
-) {
+): void {
   vfs.updateText(path.join(pkg.relativeDir, filePath), content)
 }
 
@@ -27,7 +27,7 @@ export function updateTextInPackage(
 export async function findExistingFileInPackage(
   pkg: Package,
   relativeFilePaths: string[],
-) {
+): Promise<string | null> {
   for (const relativeFilePath of relativeFilePaths) {
     const filePath = path.join(pkg.relativeDir, relativeFilePath)
     if (await vfs.pathExists(filePath)) {
@@ -41,7 +41,7 @@ export async function findExistingFileInPackage(
 export async function getExistingFileInPackage(
   pkg: Package,
   relativeFilePaths: string[],
-) {
+): Promise<string> {
   const relativeFilePath = await findExistingFileInPackage(pkg, relativeFilePaths)
   if (!relativeFilePath) {
     throw new Error(

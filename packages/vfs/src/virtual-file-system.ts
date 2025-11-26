@@ -38,25 +38,25 @@ export class VirtualFileSystem {
   }
 
   /** Updates a file with raw text. */
-  updateText(filePath: string, content: string) {
+  updateText(filePath: string, content: string): void {
     const file = this.ensureFile(filePath)
     file.update(content)
   }
 
   /** Updates a JSON file by serializing the given object. */
-  updateJSON(filePath: string, json: unknown) {
+  updateJSON(filePath: string, json: unknown): void {
     const file = this.ensureFile(filePath)
     file.updateJSON(json)
   }
 
   /** Updates a YAML file. */
-  updateYAML(filePath: string, yaml: unknown, options?: DumpOptions) {
+  updateYAML(filePath: string, yaml: unknown, options?: DumpOptions): void {
     const file = this.ensureFile(filePath)
     file.updateYAML(yaml, options)
   }
 
   /** Checks if a path exists inside the virtual file map. */
-  async pathExists(filePath: string) {
+  async pathExists(filePath: string): Promise<boolean> {
     const normalizedPath = normalize(filePath)
     const cached = this.files.get(normalizedPath)
     if (cached) {
@@ -95,7 +95,7 @@ export class VirtualFileSystem {
   }
 
   /** Removes files inside a directory; optionally limited to generated files. */
-  async cleanFilesInDir(dir: string, onlyGenerated = false) {
+  async cleanFilesInDir(dir: string, onlyGenerated = false): Promise<void> {
     const normalizedDir = normalize(dir)
     const targets = await this.getFilePathsByDir(normalizedDir)
     for (const filePath of targets) {
@@ -114,7 +114,7 @@ export class VirtualFileSystem {
   }
 
   /** Ensures a file entry exists before mutating it. */
-  private ensureFile(filePath: string) {
+  private ensureFile(filePath: string): VirtualFile {
     const normalizedPath = normalize(filePath)
     let file = this.files.get(normalizedPath)
     if (!file) {

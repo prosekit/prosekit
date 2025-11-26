@@ -7,7 +7,7 @@ import {
   getWorkspacePackages,
 } from './workspace-packages'
 
-export async function genChangesetConfigJson() {
+export async function genChangesetConfigJson(): Promise<void> {
   const privatePackages = await getPrivatePackages()
   const visiblePackages = await getVisiblePackages()
 

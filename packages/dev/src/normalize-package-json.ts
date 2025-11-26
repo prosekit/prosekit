@@ -17,7 +17,7 @@ import {
 } from './package-files'
 import { sortObject } from './sort-object'
 
-export async function normalizePackageJson(pkg: Package) {
+export async function normalizePackageJson(pkg: Package): Promise<Record<string, string>> {
   if (isPrivatePackage(pkg)) {
     return {}
   }
@@ -142,7 +142,7 @@ function isValidEntry(entry: string): boolean {
   return entry.startsWith('./')
 }
 
-function normalizePackageJsonDocumentFields(pkg: Package) {
+function normalizePackageJsonDocumentFields(pkg: Package): void {
   Object.assign(pkg.packageJson, {
     license: 'MIT',
     funding: 'https://github.com/sponsors/ocavue',
@@ -158,7 +158,7 @@ function normalizePackageJsonDocumentFields(pkg: Package) {
   })
 }
 
-function normalizeTypesVersions(pkg: Package) {
+function normalizeTypesVersions(pkg: Package): void {
   const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)
   packageJson.publishConfig['typesVersions'] = undefined

@@ -12,20 +12,17 @@ import { debug } from './debug'
 const gitFileListCache = new Map<string, Promise<string[]>>()
 
 async function runGit(dir: string): Promise<string> {
+  const args = [
+    'ls-files',
+    '--cached', // include tracked files
+    '--others', // include untracked files
+    '--exclude-standard', // respect .gitignore
+  ]
   try {
-    const { stdout } = await execa(
-      'git',
-      [
-        'ls-files',
-        '--cached', // include tracked files
-        '--others', // include untracked files
-        '--exclude-standard', // respect .gitignore
-      ],
-      { cwd: dir },
-    )
+    const { stdout } = await execa('git', args, { cwd: dir })
     return stdout
   } catch (error) {
-    console.warn('listGitFiles: falling back to plain git ls-files', error)
+    console.warn(`Failed to run "git ${args.join(' ')}" in ${dir}:`, error)
     const { stdout } = await execa('git', ['ls-files'], { cwd: dir })
     return stdout
   }

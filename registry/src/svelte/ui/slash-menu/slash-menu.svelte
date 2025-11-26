@@ -13,7 +13,7 @@ import SlashMenuItem from './slash-menu-item.svelte'
 const editor = useEditor<BasicExtension>()
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
+const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 </script>
 
 <AutocompletePopover {regex} class="CSS_AUTOCOMPLETE_MENU">

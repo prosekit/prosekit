@@ -9,6 +9,8 @@ import {
   AutocompletePopover,
 } from 'prosekit/preact/autocomplete'
 
+const regex = /#[\da-z]*$/i
+
 export default function TagMenu(props: { tags: { id: number; label: string }[] }) {
   const editor = useEditor<Union<[MentionExtension, BasicExtension]>>()
 
@@ -23,7 +25,7 @@ export default function TagMenu(props: { tags: { id: number; label: string }[] }
 
   return (
     <AutocompletePopover
-      regex={/#[\da-z]*$/i}
+      regex={regex}
       className="CSS_AUTOCOMPLETE_MENU"
     >
       <AutocompleteList>

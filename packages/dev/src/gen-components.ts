@@ -5,6 +5,7 @@ import {
   pascalCase,
 } from 'change-case'
 
+import { debug } from './debug'
 import { getPackageJsonExports } from './get-package-json-exports'
 import {
   cleanGeneratedFilesInPackage,
@@ -17,6 +18,8 @@ import {
 import { getPackageByName } from './workspace-packages'
 
 export async function genComponents() {
+  debug('gen-components start')
+
   const webPackage = await getPackageByName('@prosekit/web')
   const reactPackage = await getPackageByName('@prosekit/react')
   const vuePackage = await getPackageByName('@prosekit/vue')
@@ -24,6 +27,8 @@ export async function genComponents() {
   const solidPackage = await getPackageByName('@prosekit/solid')
   const preactPackage = await getPackageByName('@prosekit/preact')
   const litPackage = await getPackageByName('@prosekit/lit')
+
+  debug('gen-components getPackageByName done')
 
   const componentTargets = [
     reactPackage,
@@ -38,6 +43,8 @@ export async function genComponents() {
     await cleanGeneratedFilesInPackage(pkg)
   }
 
+  debug('gen-components cleanGeneratedFilesInPackage done')
+
   const components = await readComponents()
   writeWebComponents(webPackage, components)
   writeReactComponents(reactPackage, components)
@@ -46,6 +53,8 @@ export async function genComponents() {
   writeSolidComponents(solidPackage, components)
   writePreactComponents(preactPackage, components)
   writeLitComponents(litPackage, components)
+
+  debug('gen-components done')
 }
 
 function writeWebComponents(pkg: Package, info: Components) {

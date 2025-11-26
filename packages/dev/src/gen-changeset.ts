@@ -1,14 +1,13 @@
 import path from 'node:path'
 
-import { findRootDir } from './find-root-dir'
+import { ROOT_DIR } from './root-dir'
 import { unwrapDefaultExport } from './unwrap-default-export'
 import { vfs } from './virtual-file-system'
 
 export async function genChangeset() {
-  const root = await findRootDir()
   const read = unwrapDefaultExport(await import('@changesets/read'))
 
-  const changesets = await read(root)
+  const changesets = await read(ROOT_DIR)
 
   for (const changeset of changesets) {
     if (!changeset.releases.some((release) => release.name === 'prosekit')) {

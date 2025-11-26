@@ -3,7 +3,7 @@ import path from 'node:path'
 import { execa } from 'execa'
 import { pathExists } from 'path-exists'
 
-import { findRootDir } from './find-root-dir'
+import { ROOT_DIR } from './root-dir'
 
 function splitLines(stdout: string): string[] {
   return stdout
@@ -50,11 +50,10 @@ export async function listGitFiles(dir: string): Promise<string[]> {
   const filePaths = await findFiles(dir)
 
   const existingFilePaths: string[] = []
-  const rootDir = await findRootDir()
 
   await Promise.all(
     filePaths.map(async (filePath) => {
-      if (await pathExists(path.join(rootDir, filePath))) {
+      if (await pathExists(path.join(ROOT_DIR, filePath))) {
         existingFilePaths.push(filePath)
       }
     }),

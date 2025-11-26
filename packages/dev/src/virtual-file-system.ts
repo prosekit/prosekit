@@ -10,7 +10,6 @@ import {
 import Yaml from 'js-yaml'
 import JSON5 from 'json5'
 
-import { findRootDir } from './find-root-dir'
 import {
   isPrivatePackage,
   isPublicPackage,
@@ -19,6 +18,7 @@ import { isSubDirectory } from './is-sub-directory'
 import { listGitFiles } from './list-git-files'
 import { normalizePackageJson } from './normalize-package-json'
 import { removePath } from './remove-path'
+import { ROOT_DIR } from './root-dir'
 import { writeJson } from './write-json'
 import { writeText } from './write-text'
 
@@ -92,7 +92,7 @@ class VirtualFile {
   }
 
   async getAbsPath() {
-    return path.join(await findRootDir(), this.path)
+    return path.join(ROOT_DIR, this.path)
   }
 
   async getLastUpdateTime() {
@@ -119,14 +119,14 @@ class VirtualFileSystem {
 
   async getRootDir() {
     if (!this.store.rootDir) {
-      this.store.rootDir = await findRootDir()
+      this.store.rootDir = ROOT_DIR
     }
     return this.store.rootDir
   }
 
   async getPackages() {
     if (!this.store.packages) {
-      const { packages } = await getPackages(await this.getRootDir())
+      const { packages } = await getPackages(ROOT_DIR)
       this.store.packages = packages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
     }
     return this.store.packages

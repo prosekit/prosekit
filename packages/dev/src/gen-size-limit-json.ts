@@ -4,10 +4,10 @@ import path from 'node:path'
 import type { Package } from '@manypkg/get-packages'
 
 import { asyncFrom } from './async-from'
+import { debug } from './debug'
 import { getPackageJsonPublishExports } from './get-package-json-exports'
 import { vfs } from './vfs'
 import { getPackageByName } from './workspace-packages'
-import { debug } from './debug'
 
 export async function genSizeLimitJson() {
   debug('genSizeLimitJson start')

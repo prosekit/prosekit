@@ -12,6 +12,7 @@ import {
   type ImportsExports,
 } from 'parse-imports-exports'
 
+import { ROOT_DIR } from './root-dir'
 import type {
   Framework,
   ItemAccumulator,
@@ -66,6 +67,14 @@ const MODULE_RESOLUTION_EXTENSIONS = [
   '.json',
   '.css',
 ]
+
+// Handle TypeScript convention: .js imports can resolve to .ts source files
+const TS_MAPPING: Record<string, string> = {
+  '.js': '.ts',
+  '.jsx': '.tsx',
+  '.mjs': '.mts',
+  '.cjs': '.cts',
+}
 
 interface ClassificationResult {
   readonly framework: Framework
@@ -180,6 +189,12 @@ function* generateCandidatePaths({
 
   if (ext) {
     yield base
+
+    for (const [jsExt, tsExt] of Object.entries(TS_MAPPING)) {
+      if (base.endsWith(jsExt)) {
+        yield base.slice(0, -jsExt.length) + tsExt
+      }
+    }
   } else {
     for (const candidateExt of MODULE_RESOLUTION_EXTENSIONS) {
       yield `${base}${candidateExt}`
@@ -295,8 +310,7 @@ async function extractImportSpecifiersFromFilePath(
 }
 
 async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
-  const rootDir = await vfs.getRootDir()
-  const gitFiles = await listGitFiles(rootDir)
+  const gitFiles = await listGitFiles(ROOT_DIR)
   const gitFileSet = new Set(gitFiles)
   const registryFiles = gitFiles.filter((filePath) => {
     return FRAMEWORKS.some((framework) => {

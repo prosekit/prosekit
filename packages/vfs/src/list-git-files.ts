@@ -1,32 +1,63 @@
-import { normalize } from 'node:path'
+import {
+  join,
+  normalize,
+  resolve,
+} from 'node:path'
 
-import { globby } from 'globby'
+import { execa } from 'execa'
+import { pathExists } from 'path-exists'
 
 import { debug } from './debug'
 
-export interface ListGitFilesOptions {
-  readonly patterns?: string | string[]
+const gitFileListCache = new Map<string, Promise<string[]>>()
+
+async function runGit(dir: string): Promise<string> {
+  try {
+    const { stdout } = await execa(
+      'git',
+      [
+        'ls-files',
+        '--cached', // include tracked files
+        '--others', // include untracked files
+        '--exclude-standard', // respect .gitignore
+      ],
+      { cwd: dir },
+    )
+    return stdout
+  } catch (error) {
+    console.warn('listGitFiles: falling back to plain git ls-files', error)
+    const { stdout } = await execa('git', ['ls-files'], { cwd: dir })
+    return stdout
+  }
 }
 
-/** Returns sorted file paths relative to the repo root respecting .gitignore. */
-export async function listGitFiles(cwd: string, options: ListGitFilesOptions = {}) {
-  debug('listGitFiles start cwd=%o patterns=%o', cwd, options.patterns)
-  const patterns = Array.isArray(options.patterns)
-    ? options.patterns
-    : options.patterns
-    ? [options.patterns]
-    : ['**/*']
+async function loadGitFiles(rootDir: string): Promise<string[]> {
+  debug('loadGitFiles start rootDir=%o', rootDir)
+  const stdout = await runGit(rootDir)
+  const lines = stdout
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
 
-  const files = await globby(patterns, {
-    cwd,
-    dot: true,
-    absolute: false,
-    gitignore: true,
-    onlyFiles: true,
-    followSymbolicLinks: false,
-  })
+  const existing = await Promise.all(
+    lines.map(async (filePath) => {
+      if (await pathExists(join(rootDir, filePath))) {
+        return normalize(filePath)
+      }
+      return null
+    }),
+  )
+  const files = existing.filter((filePath): filePath is string => Boolean(filePath)).sort()
+  debug('loadGitFiles done files=%d', files.length)
+  return files
+}
 
-  const sortedFiles = files.map((file) => normalize(file)).sort()
-  debug('listGitFiles done files=%d', sortedFiles.length)
-  return sortedFiles
+export function listGitFiles(cwd: string): Promise<string[]> {
+  const rootDir = resolve(cwd)
+  let promise = gitFileListCache.get(rootDir)
+  if (!promise) {
+    promise = loadGitFiles(rootDir)
+    gitFileListCache.set(rootDir, promise)
+  }
+  return promise
 }

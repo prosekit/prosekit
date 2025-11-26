@@ -16,12 +16,7 @@ import { VirtualFile } from './virtual-file'
 export class VirtualFileSystem {
   private readonly files = new Map<string, VirtualFile>()
 
-  constructor(private readonly rootDir: string) {}
-
-  /** Returns the absolute root directory managed by the virtual file system. */
-  getRootDir() {
-    return this.rootDir
-  }
+  constructor(readonly rootDir: string) {}
 
   /** Reads a text file and caches the content. */
   async read(filePath: string): Promise<string> {
@@ -75,10 +70,19 @@ export class VirtualFileSystem {
     }
   }
 
+  /**
+   * Returns all file paths under the directory. Filtered by .gitignore.
+   */
+  async getFiles(): Promise<string[]> {
+    return await listGitFiles(this.rootDir)
+  }
+
   /** Returns all tracked files under a directory. */
-  async getFilePathsByDir(dir: string) {
+  async getFilePathsByDir(dir: string): Promise<string[]> {
     const normalizedDir = normalize(dir)
-    const diskFiles = await listGitFiles(this.rootDir, { patterns: normalizedDir })
+    const diskFiles = (await this.getFiles()).filter((file) => {
+      return file === normalizedDir || file.startsWith(`${normalizedDir}/`)
+    })
     const virtualFiles = []
     for (const file of this.files.values()) {
       if (file.deleted) continue

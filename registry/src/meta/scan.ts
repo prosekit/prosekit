@@ -1,17 +1,13 @@
 import path, { basename } from 'node:path/posix'
 
 import { once } from '@ocavue/utils'
-import {
-  listGitFiles,
-  vfs,
-} from '@prosekit/dev'
+import { vfs } from '@prosekit/dev'
 import {
   parseImportsExports,
   type ImportsExports,
 } from 'parse-imports-exports'
 
 import { debug } from './debug'
-import { ROOT_DIR } from './root-dir'
 import type {
   Framework,
   ItemAccumulator,
@@ -29,10 +25,6 @@ const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   svelte: path.join(REGISTRY_SRC_DIR, 'svelte'),
   solid: path.join(REGISTRY_SRC_DIR, 'solid'),
 }
-
-const REGISTRY_GLOB_PATTERNS = FRAMEWORKS.map(
-  (framework) => `${REGISTRY_FRAMEWORK_DIR[framework]}/**/*`,
-)
 
 const REGISTRY_FILE_EXTENSIONS = new Set([
   '.css',
@@ -315,11 +307,13 @@ async function extractImportSpecifiersFromFilePath(
 async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
   debug('scan start')
 
-  const gitFiles = await listGitFiles(ROOT_DIR, { patterns: REGISTRY_GLOB_PATTERNS })
-  debug('scan tracked-files=%d', gitFiles.length)
+  const files = (await vfs.getFiles()).filter((filePath) => {
+    return FRAMEWORKS.some((framework) => filePath.startsWith(`${REGISTRY_FRAMEWORK_DIR[framework]}/`))
+  })
+  debug('scan tracked-files=%d', files.length)
 
-  const gitFileSet = new Set(gitFiles)
-  const registryFiles = gitFiles.filter((filePath) => {
+  const fileSet = new Set(files)
+  const registryFiles = files.filter((filePath) => {
     return FRAMEWORKS.some((framework) => {
       return filePath.startsWith(`${REGISTRY_FRAMEWORK_DIR[framework]}/`)
     })
@@ -369,7 +363,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
         const resolved = resolveRelativeImport({
           importer: filePath,
           specifier,
-          fileSet: gitFileSet,
+          fileSet,
         })
 
         if (!resolved) {

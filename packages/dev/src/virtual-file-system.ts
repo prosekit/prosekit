@@ -36,7 +36,7 @@ class VirtualFile {
 
   async read() {
     if (this.content === null) {
-      this.distConetnt = await fs.readFile(await this.getAbsPath(), 'utf8')
+      this.distConetnt = await fs.readFile(this.getAbsPath(), 'utf8')
       this.content = this.distConetnt
     }
     return this.content
@@ -73,7 +73,7 @@ class VirtualFile {
   }
 
   async commit(): Promise<boolean> {
-    const absPath = await this.getAbsPath()
+    const absPath = this.getAbsPath()
 
     if (this.deleted) {
       return await removePath(absPath)
@@ -91,12 +91,12 @@ class VirtualFile {
     }
   }
 
-  async getAbsPath() {
+  getAbsPath() {
     return path.join(ROOT_DIR, this.path)
   }
 
   async getLastUpdateTime() {
-    const absPath = await this.getAbsPath()
+    const absPath = this.getAbsPath()
     try {
       const stats = await fs.stat(absPath)
       return stats.mtime.getTime()
@@ -117,7 +117,7 @@ class VirtualFileSystem {
     files?: Map<string, VirtualFile>
   } = {}
 
-  async getRootDir() {
+  getRootDir() {
     if (!this.store.rootDir) {
       this.store.rootDir = ROOT_DIR
     }
@@ -158,7 +158,7 @@ class VirtualFileSystem {
 
   private async getFiles() {
     if (!this.store.files) {
-      const rootDir = await this.getRootDir()
+      const rootDir = this.getRootDir()
       const filePaths = await listGitFiles(rootDir)
       this.store.files = new Map(
         filePaths
@@ -285,7 +285,7 @@ class VirtualFileSystem {
 
   async commit(): Promise<boolean> {
     let updated = false
-    process.chdir(await this.getRootDir())
+    process.chdir(this.getRootDir())
 
     for (const pkg of await this.getPackages()) {
       await this.updatePackage(pkg)

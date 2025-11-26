@@ -187,7 +187,6 @@ function* generateCandidatePaths({
       '.jsx': '.tsx',
       '.mjs': '.mts',
       '.cjs': '.cts',
-      '.svelte.js': '.svelte.ts',
     }
     for (const [jsExt, tsExt] of Object.entries(tsMapping)) {
       if (base.endsWith(jsExt)) {

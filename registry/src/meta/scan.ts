@@ -5,12 +5,12 @@ import {
   listGitFiles,
   vfs,
 } from '@prosekit/dev'
-import { createDebug } from 'obug'
 import {
   parseImportsExports,
   type ImportsExports,
 } from 'parse-imports-exports'
 
+import { debug } from './debug'
 import { ROOT_DIR } from './root-dir'
 import type {
   Framework,
@@ -33,7 +33,6 @@ const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
 const REGISTRY_GLOB_PATTERNS = FRAMEWORKS.map(
   (framework) => `${REGISTRY_FRAMEWORK_DIR[framework]}/**/*`,
 )
-const registryDebug = createDebug('prosekit:registry')
 
 const REGISTRY_FILE_EXTENSIONS = new Set([
   '.css',
@@ -315,6 +314,7 @@ async function extractImportSpecifiersFromFilePath(
 
 async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
   const gitFiles = await listGitFiles(ROOT_DIR, { patterns: REGISTRY_GLOB_PATTERNS })
+  debug('scan:tracked-files %d', gitFiles.length)
   const gitFileSet = new Set(gitFiles)
   const registryFiles = gitFiles.filter((filePath) => {
     return FRAMEWORKS.some((framework) => {
@@ -444,16 +444,14 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       )
     })
 
+  debug('scan:items %d', sortedItems.length)
   return sortedItems
 }
 
 export const scanRegistry = once(async () => {
-  const startTime = performance.now()
-  registryDebug('Scanning registry...')
+  debug('scan:start')
   const result = await scanRegistryImpl()
-  const endTime = performance.now()
-  const duration = Math.round(endTime - startTime)
-  registryDebug('Scanning registry completed in %dms', duration)
+  debug('scan:done')
   return result
 })
 

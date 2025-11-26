@@ -3,6 +3,7 @@ import {
   vfs,
 } from '@prosekit/dev'
 
+import { debug } from './meta/debug'
 import { linkSamples } from './meta/link-samples'
 import { scanRegistry } from './meta/scan'
 import { updateClasses } from './meta/update-classes'
@@ -13,17 +14,30 @@ import { updateStoryMeta } from './meta/update-story-meta'
 import { updateWebsitePages } from './meta/update-website-pages'
 
 async function gen() {
-  if (skipGen()) return
+  if (skipGen()) {
+    debug('registry:skip')
+    return
+  }
 
   const items = await scanRegistry()
+  debug('registry:items=%d', items.length)
+
   await linkSamples(items)
+
   await updatePackageJSON(items)
-  await updateWebsitePages(items)
-  await updateLoader(items)
-  await updateClasses()
-  await updateRegistry(items, 'registry/src/registry.gen.json')
+
+  updateWebsitePages(items)
+
+  updateLoader(items)
+
+  updateClasses()
+
+  updateRegistry(items, 'registry/src/registry.gen.json')
+
   await updateStoryMeta(items)
-  await vfs.commit()
+
+  const updated = await vfs.commit()
+  debug('registry:done updated=%s', updated)
 }
 
 await gen()

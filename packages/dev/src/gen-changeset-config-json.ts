@@ -16,7 +16,7 @@ export async function genChangesetConfigJson() {
     .filter((name) => !visiblePackages.has(name))
     .sort()
 
-  const json = await vfs.readJSON('.changeset/config.json') as { ignore: string[] }
+  const json = await vfs.readJSON('.changeset/config.json')
   json.ignore = ignoreNames
   await vfs.updateJSON('.changeset/config.json', json)
 }

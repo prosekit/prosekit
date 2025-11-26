@@ -46,6 +46,7 @@ async function hardLinkFiles(sourceFile: string, targetFile: string) {
 async function linkFileGroup(files: string[]) {
   if (files.length < 2) {
     console.warn(`[registry] Not enough files to link: ${files.join(', ')}`)
+    return
   }
 
   const [sourceFile, ...targetFiles] = files

@@ -202,15 +202,12 @@ importers:
       '@manypkg/get-packages':
         specifier: ^3.1.0
         version: 3.1.0
+      '@prosekit/vfs':
+        specifier: workspace:*
+        version: link:../vfs
       '@sindresorhus/slugify':
         specifier: ^3.0.0
         version: 3.0.0
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-      path-exists:
-        specifier: ^5.0.0
-        version: 5.0.0
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.5
@@ -218,27 +215,12 @@ importers:
       '@ocavue/utils':
         specifier: ^1.0.0
         version: 1.0.0
-      '@types/js-yaml':
-        specifier: ^4.0.9
-        version: 4.0.9
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
-      execa:
-        specifier: ^9.6.0
-        version: 9.6.0
-      js-yaml:
-        specifier: ^4.1.1
-        version: 4.1.1
-      json5:
-        specifier: ^2.2.3
-        version: 2.2.3
       tsx:
         specifier: ^4.20.6
         version: 4.20.6
@@ -686,6 +668,25 @@ importers:
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
+
+  packages/vfs:
+    dependencies:
+      globby:
+        specifier: ^16.0.0
+        version: 16.0.0
+      js-yaml:
+        specifier: ^4.1.1
+        version: 4.1.1
+      json5:
+        specifier: ^2.2.3
+        version: 2.2.3
+      path-exists:
+        specifier: ^5.0.0
+        version: 5.0.0
+    devDependencies:
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
 
   packages/vue:
     dependencies:
@@ -5100,6 +5101,10 @@ packages:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
 
+  globby@16.0.0:
+    resolution: {integrity: sha512-ejy4TJFga99yW6Q0uhM3pFawKWZmtZzZD/v/GwI5+9bCV5Ew+D2pSND6W7fUes5UykqSsJkUfxFVdRh7Q1+P3Q==}
+    engines: {node: '>=20'}
+
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
@@ -5476,6 +5481,10 @@ packages:
 
   is-obj@3.0.0:
     resolution: {integrity: sha512-IlsXEHOjtKhpN8r/tRFj2nDyTmHvcfNeu/nrRIcXE17ROeatXchkojffa1SpdqW4cr/Fj6QkEf/Gn4zf6KKvEQ==}
+    engines: {node: '>=12'}
+
+  is-path-inside@4.0.0:
+    resolution: {integrity: sha512-lJJV/5dYS+RcL8uQdBDW9c9uWFLLBNRyFhnAKXw5tVqLlKZ4RMGZKv+YQ/IA3OhD+RpbJa1LLFM1FQPGyIXvOA==}
     engines: {node: '>=12'}
 
   is-plain-obj@4.1.0:
@@ -7775,6 +7784,10 @@ packages:
   unicorn-magic@0.3.0:
     resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
     engines: {node: '>=18'}
+
+  unicorn-magic@0.4.0:
+    resolution: {integrity: sha512-wH590V9VNgYH9g3lH9wWjTrUoKsjLF6sGLjhR4sH1LWpLmCOH0Zf7PukhDA8BiS7KHe4oPNkcTHqYkj7SOGUOw==}
+    engines: {node: '>=20'}
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
@@ -13134,6 +13147,15 @@ snapshots:
       merge2: 1.4.1
       slash: 3.0.0
 
+  globby@16.0.0:
+    dependencies:
+      '@sindresorhus/merge-streams': 4.0.0
+      fast-glob: 3.3.3
+      ignore: 7.0.5
+      is-path-inside: 4.0.0
+      slash: 5.1.0
+      unicorn-magic: 0.4.0
+
   gopd@1.2.0: {}
 
   graceful-fs@4.2.10: {}
@@ -13631,6 +13653,8 @@ snapshots:
   is-number@7.0.0: {}
 
   is-obj@3.0.0: {}
+
+  is-path-inside@4.0.0: {}
 
   is-plain-obj@4.1.0: {}
 
@@ -16510,6 +16534,8 @@ snapshots:
       tiny-inflate: 1.0.3
 
   unicorn-magic@0.3.0: {}
+
+  unicorn-magic@0.4.0: {}
 
   unified@11.0.5:
     dependencies:

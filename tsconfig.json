@@ -26,6 +26,9 @@
       "path": "./packages/extensions/tsconfig.json",
     },
     {
+      "path": "./packages/vfs/tsconfig.json",
+    },
+    {
       "path": "./packages/lit/tsconfig.json",
     },
     {

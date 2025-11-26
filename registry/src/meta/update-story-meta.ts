@@ -31,12 +31,12 @@ type StoryItem = {
 
 async function readStoryMeta(): Promise<StoryItem[]> {
   try {
-    return await vfs.readYaml(STORY_META_PATH) as StoryItem[]
+    return await vfs.readYAML(STORY_META_PATH)
   } catch {
     return []
   }
 }
 
 async function writeStoryMeta(items: StoryItem[]): Promise<void> {
-  await vfs.updateYaml(STORY_META_PATH, items, { flowLevel: 2 })
+  await vfs.updateYAML(STORY_META_PATH, items, { flowLevel: 2 })
 }

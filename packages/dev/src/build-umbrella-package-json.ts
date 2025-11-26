@@ -3,11 +3,16 @@ import path from 'node:path'
 import type { PackageJson } from 'type-fest'
 
 import { getPackageJsonExports } from './get-package-json-exports'
-import { vfs } from './virtual-file-system'
+import { cleanGeneratedFilesInPackage } from './package-files'
+import { vfs } from './vfs'
+import {
+  getPackageByName,
+  getScopedPublicPackages,
+} from './workspace-packages'
 
 export async function buildUmbrellaPackageJson() {
-  const umbrellaPackage = await vfs.getPackageByName('prosekit')
-  await vfs.cleanGeneratedFilesInPackage(umbrellaPackage)
+  const umbrellaPackage = await getPackageByName('prosekit')
+  await cleanGeneratedFilesInPackage(umbrellaPackage)
 
   const pkgExports: Record<string, string> = { '.': './src/index.ts' }
   const pkgDependencies: Record<string, string> = {}
@@ -21,7 +26,7 @@ export async function buildUmbrellaPackageJson() {
   // @ts-expect-error: peerDependenciesMeta is not in the type
   umbrellaPackage.packageJson.peerDependenciesMeta = pkgPeerDependenciesMeta
 
-  const scopedPackages = await vfs.getScopedPublicPackages()
+  const scopedPackages = await getScopedPublicPackages()
 
   for (const pkg of scopedPackages) {
     const packageJson = pkg.packageJson as PackageJson

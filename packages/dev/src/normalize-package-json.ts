@@ -11,8 +11,11 @@ import {
 } from './get-package-json-exports'
 import { isPrivatePackage } from './is-public-package'
 import { maybeUndefined } from './maybe-undefined'
+import {
+  findExistingFileInPackage,
+  getExistingFileInPackage,
+} from './package-files'
 import { sortObject } from './sort-object'
-import { vfs } from './virtual-file-system'
 
 export async function normalizePackageJson(pkg: Package) {
   if (isPrivatePackage(pkg)) {
@@ -41,7 +44,7 @@ export async function normalizePackageJson(pkg: Package) {
     }
 
     if (path === '.') {
-      sourcePath = await vfs.getExistingFileInPackage(pkg, [
+      sourcePath = await getExistingFileInPackage(pkg, [
         `./src/index.ts`,
         `./src/index.tsx`,
         `./src/index.gen.ts`,
@@ -74,7 +77,7 @@ export async function normalizePackageJson(pkg: Package) {
       }
     } else {
       const subPath = path.slice(2)
-      const foundFilePath = await vfs.findExistingFileInPackage(pkg, [
+      const foundFilePath = await findExistingFileInPackage(pkg, [
         `./src/${subPath}.ts`,
         `./src/${subPath}.tsx`,
         `./src/${subPath}.gen.ts`,

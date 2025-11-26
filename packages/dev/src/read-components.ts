@@ -1,12 +1,13 @@
-import { vfs } from './virtual-file-system'
+import { getFilePathsByPackage } from './package-files'
+import { getPackageByName } from './workspace-packages'
 
 /**
  * Returns a list of components names in kebab case
  * e.g. { 'resizable': [ 'resizable-handle', 'resizable-root' ] }
  */
 export async function readComponents(): Promise<GroupedComponents> {
-  const pkg = await vfs.getPackageByName('@prosekit/web')
-  const filePaths = await vfs.getFilePathsByPackage(pkg)
+  const pkg = await getPackageByName('@prosekit/web')
+  const filePaths = await getFilePathsByPackage(pkg)
 
   const result: GroupedComponents = {}
 

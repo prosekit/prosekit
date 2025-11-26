@@ -7,28 +7,31 @@ import {
 
 import { getPackageJsonExports } from './get-package-json-exports'
 import {
+  cleanGeneratedFilesInPackage,
+  updateTextInPackage as updatePackageFile,
+} from './package-files'
+import {
   readComponents,
   type GroupedComponents as Components,
 } from './read-components'
-import { vfs } from './virtual-file-system'
+import { getPackageByName } from './workspace-packages'
 
 export async function genComponents() {
-  const webPackages = await vfs.getPackageByName('@prosekit/web')
+  const webPackages = await getPackageByName('@prosekit/web')
 
-  const reactPackage = await vfs.getPackageByName('@prosekit/react')
-  const vuePackage = await vfs.getPackageByName('@prosekit/vue')
-  const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
-  const solidPackage = await vfs.getPackageByName('@prosekit/solid')
-  const preactPackage = await vfs.getPackageByName('@prosekit/preact')
-  const litPackage = await vfs.getPackageByName('@prosekit/lit')
+  const reactPackage = await getPackageByName('@prosekit/react')
+  const vuePackage = await getPackageByName('@prosekit/vue')
+  const sveltePackage = await getPackageByName('@prosekit/svelte')
+  const solidPackage = await getPackageByName('@prosekit/solid')
+  const preactPackage = await getPackageByName('@prosekit/preact')
+  const litPackage = await getPackageByName('@prosekit/lit')
 
-  await vfs.cleanGeneratedFilesInPackage(reactPackage)
-  await vfs.cleanGeneratedFilesInPackage(reactPackage)
-  await vfs.cleanGeneratedFilesInPackage(vuePackage)
-  await vfs.cleanGeneratedFilesInPackage(sveltePackage)
-  await vfs.cleanGeneratedFilesInPackage(solidPackage)
-  await vfs.cleanGeneratedFilesInPackage(preactPackage)
-  await vfs.cleanGeneratedFilesInPackage(litPackage)
+  await cleanGeneratedFilesInPackage(reactPackage)
+  await cleanGeneratedFilesInPackage(vuePackage)
+  await cleanGeneratedFilesInPackage(sveltePackage)
+  await cleanGeneratedFilesInPackage(solidPackage)
+  await cleanGeneratedFilesInPackage(preactPackage)
+  await cleanGeneratedFilesInPackage(litPackage)
 
   const components = await readComponents()
   await writeWebComponents(webPackages, components)
@@ -47,7 +50,7 @@ async function writeWebComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatPrimitiveIndexCode(components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -56,7 +59,7 @@ async function writeWebComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatPrimitiveElementCode(component)
       const path = `src/components/${group}/${component}/element.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
   }
 }
@@ -68,7 +71,7 @@ async function writeReactComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatReactIndexCode(components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -77,7 +80,7 @@ async function writeReactComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatReactComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
   }
 }
@@ -89,7 +92,7 @@ async function writeVueComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatVueIndexCode(components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -98,7 +101,7 @@ async function writeVueComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatVueComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
   }
 }
@@ -110,7 +113,7 @@ async function writeSvelteComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatSvelteIndexCode(components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -119,12 +122,12 @@ async function writeSvelteComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatSvelteComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.svelte`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
     for (const component of components) {
       const code = formatSvelteTsCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
   }
 }
@@ -136,7 +139,7 @@ async function writeSolidComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatSolidIndexCode(components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -145,7 +148,7 @@ async function writeSolidComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatSolidComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
   }
 }
@@ -157,7 +160,7 @@ async function writePreactComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatPreactIndexCode(components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -166,7 +169,7 @@ async function writePreactComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatPreactComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      await updatePackageFile(pkg, path, code)
     }
   }
 }
@@ -178,7 +181,7 @@ async function writeLitComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatLitIndexCode(group, components)
-    await vfs.updateTextInPackage(
+    await updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,

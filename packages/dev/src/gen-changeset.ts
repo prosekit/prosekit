@@ -2,7 +2,7 @@ import path from 'node:path'
 
 import { ROOT_DIR } from './root-dir'
 import { unwrapDefaultExport } from './unwrap-default-export'
-import { vfs } from './virtual-file-system'
+import { vfs } from './vfs'
 
 export async function genChangeset() {
   const read = unwrapDefaultExport(await import('@changesets/read'))

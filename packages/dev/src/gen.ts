@@ -5,7 +5,8 @@ import { genPackageJson } from './gen-package-json'
 import { genSizeLimitJson } from './gen-size-limit-json'
 import { skipGen } from './skip-gen'
 import { sleep } from './sleep'
-import { vfs } from './virtual-file-system'
+import { vfs } from './vfs'
+import { syncWorkspacePackages } from './workspace-sync'
 
 async function genAll(): Promise<boolean> {
   if (skipGen()) {
@@ -18,6 +19,7 @@ async function genAll(): Promise<boolean> {
   await genSizeLimitJson()
   await genChangeset()
 
+  await syncWorkspacePackages()
   return await vfs.commit()
 }
 

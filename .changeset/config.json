@@ -8,6 +8,7 @@
   "baseBranch": "master",
   "ignore": [
     "@prosekit/dev",
+    "@prosekit/vfs",
     "prosekit-registry",
     "prosekit-website"
   ],

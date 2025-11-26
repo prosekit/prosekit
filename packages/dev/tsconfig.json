@@ -1,5 +1,9 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "isolatedDeclarations": true,
+    "allowJs": false,
+  },
   "references": [
     {
       "path": "../vfs/tsconfig.json",

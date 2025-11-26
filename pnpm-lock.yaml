@@ -208,6 +208,9 @@ importers:
       '@sindresorhus/slugify':
         specifier: ^3.0.0
         version: 3.0.0
+      obug:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.5
@@ -803,6 +806,9 @@ importers:
       loro-prosemirror:
         specifier: ^0.4.1
         version: 0.4.1(loro-crdt@1.10.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
+      obug:
+        specifier: ^2.1.1
+        version: 2.1.1
       preact:
         specifier: ^10.27.2
         version: 10.27.2

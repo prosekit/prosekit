@@ -9,6 +9,6 @@ export async function syncWorkspacePackages() {
   const packages = await getWorkspacePackages()
   for (const pkg of packages) {
     await normalizePackageJson(pkg)
-    await vfs.updateJSON(path.join(pkg.relativeDir, 'package.json'), pkg.packageJson)
+    vfs.updateJSON(path.join(pkg.relativeDir, 'package.json'), pkg.packageJson)
   }
 }

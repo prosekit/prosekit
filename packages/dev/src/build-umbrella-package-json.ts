@@ -93,16 +93,11 @@ async function ensureEntry({
   exports[reExportEntry] = reExportFilePath
 
   const importName = path.normalize(packageName + '/' + entry)
+  const targetPath = path.join(cwd, reExportFilePath)
   if (reExportFilePath.endsWith('.css')) {
-    await vfs.updateText(
-      path.join(cwd, reExportFilePath),
-      formatCssReExportFile(importName),
-    )
+    vfs.updateText(targetPath, formatCssReExportFile(importName))
   } else {
-    await vfs.updateText(
-      path.join(cwd, reExportFilePath),
-      formatTsReExportFile(importName),
-    )
+    vfs.updateText(targetPath, formatTsReExportFile(importName))
   }
 }
 

@@ -25,6 +25,6 @@ export async function updateRegistryItems(
     registryItemSchema.parse(itemJson)
 
     const outputPath = path.join(outputDir, `${item.name}.json`)
-    await vfs.updateJSON(outputPath, itemJson)
+    vfs.updateJSON(outputPath, itemJson)
   }
 }

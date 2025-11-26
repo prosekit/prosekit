@@ -20,7 +20,7 @@ export async function updateStoryMeta(items: ItemAccumulator[]): Promise<void> {
     meta.push({ name: storyName, description, frameworks })
   }
 
-  await writeStoryMeta(meta)
+  writeStoryMeta(meta)
 }
 
 type StoryItem = {
@@ -37,6 +37,6 @@ async function readStoryMeta(): Promise<StoryItem[]> {
   }
 }
 
-async function writeStoryMeta(items: StoryItem[]): Promise<void> {
-  await vfs.updateYAML(STORY_META_PATH, items, { flowLevel: 2 })
+function writeStoryMeta(items: StoryItem[]): void {
+  vfs.updateYAML(STORY_META_PATH, items, { flowLevel: 2 })
 }

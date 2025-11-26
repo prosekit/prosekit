@@ -84,14 +84,14 @@ export class VirtualFile {
   /**
    * Serializes and stores JSON data.
    */
-  updateJSON(json: any) {
+  updateJSON(json: unknown) {
     this.update(JSON.stringify(json, null, 2) + '\n')
   }
 
   /**
    * Serializes and stores YAML data.
    */
-  updateYAML(yaml: any, options?: YAML.DumpOptions) {
+  updateYAML(yaml: unknown, options?: YAML.DumpOptions) {
     this.update(YAML.dump(yaml, options))
   }
 

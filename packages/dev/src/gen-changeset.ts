@@ -19,7 +19,7 @@ export async function genChangeset() {
       const filePath = path.join('.changeset', `${changeset.id}.md`)
       const fileText = await vfs.read(filePath)
       const newFileText = fileText.replace(`---`, `---\n'prosekit': patch`)
-      await vfs.updateText(filePath, newFileText)
+      vfs.updateText(filePath, newFileText)
     }
   }
 }

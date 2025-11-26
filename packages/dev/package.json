@@ -15,7 +15,8 @@
     "@manypkg/find-root": "^3.1.0",
     "@manypkg/get-packages": "^3.1.0",
     "@prosekit/vfs": "workspace:*",
-    "@sindresorhus/slugify": "^3.0.0"
+    "@sindresorhus/slugify": "^3.0.0",
+    "obug": "^2.1.1"
   },
   "devDependencies": {
     "@changesets/read": "^0.6.5",

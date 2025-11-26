@@ -42,8 +42,5 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
   }
   // @ts-expect-error - exports is not in the type
   pkg.packageJson['exports'] = sortObject(exports)
-  await vfs.updateJSON(
-    path.join(pkg.relativeDir, 'package.json'),
-    pkg.packageJson,
-  )
+  vfs.updateJSON(path.join(pkg.relativeDir, 'package.json'), pkg.packageJson)
 }

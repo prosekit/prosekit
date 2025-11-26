@@ -11,7 +11,7 @@ import { getPackageByName } from './workspace-packages'
 export async function genSizeLimitJson() {
   const pkg = await getPackageByName('prosekit')
   const sizeLimitConfig = await asyncFrom(iterateExports(pkg))
-  await vfs.updateJSON('.size-limit.json', sizeLimitConfig)
+  vfs.updateJSON('.size-limit.json', sizeLimitConfig)
 }
 
 async function* iterateExports(pkg: Package) {

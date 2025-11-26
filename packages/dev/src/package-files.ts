@@ -15,12 +15,12 @@ export async function cleanGeneratedFilesInPackage(pkg: Package) {
 }
 
 /** Updates a file inside a package. */
-export async function updateTextInPackage(
+export function updateTextInPackage(
   pkg: Package,
   filePath: string,
   content: string,
 ) {
-  await vfs.updateText(path.join(pkg.relativeDir, filePath), content)
+  vfs.updateText(path.join(pkg.relativeDir, filePath), content)
 }
 
 /** Returns the first existing file inside a package from a list of candidates. */

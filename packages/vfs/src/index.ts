@@ -1,2 +1,5 @@
-export { listGitFiles } from './list-git-files'
+export {
+  listGitFiles,
+  type ListGitFilesOptions,
+} from './list-git-files'
 export { VirtualFileSystem } from './virtual-file-system'

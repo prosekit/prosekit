@@ -16,7 +16,7 @@ jobs:
       NODE_OPTIONS: "--max-old-space-size=8192"
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: ./.github/actions/setup
 

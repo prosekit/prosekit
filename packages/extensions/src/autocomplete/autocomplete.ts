@@ -9,6 +9,14 @@ import {
 import { createAutocompletePlugin } from './autocomplete-plugin'
 import type { AutocompleteRule } from './autocomplete-rule'
 
+/**
+ * Defines an autocomplete extension that executes logic when the text before
+ * the cursor matches the given regular expression.
+ *
+ * When a match is found, an inline decoration is applied to the matched text
+ * with the class `prosekit-autocomplete-match` and a `data-autocomplete-match-text`
+ * attribute containing the full matched string.
+ */
 export function defineAutocomplete(rule: AutocompleteRule): Extension {
   return defineFacetPayload(autocompleteFacet, [rule])
 }

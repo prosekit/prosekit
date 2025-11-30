@@ -1,5 +1,5 @@
 import { vfs } from '@prosekit/dev'
-import { registrySchema } from 'shadcn/schema'
+import { registrySchema } from 'shadcn-schema'
 
 import { serializeItem } from './serialize-item'
 import type { ItemAccumulator } from './types'

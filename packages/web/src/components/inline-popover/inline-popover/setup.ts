@@ -29,7 +29,7 @@ export function useInlinePopover(
   host: ConnectableElement,
   { state, emit }: SetupOptions<InlinePopoverProps, InlinePopoverEvents>,
 ): void {
-  const { editor, defaultOpen, open, ...overlayState } = state
+  const { editor, defaultOpen, open, hideOnBlur, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
   const hasReference = createComputed(() => !!reference.get())

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { UserMenu } from '../../ui/user-menu'
 
-import { useUserQuery } from './use-user-query.svelte.ts'
+import { useUserQuery } from './use-user-query.svelte.js'
 
 let query = $state('')
 let open = $state(false)

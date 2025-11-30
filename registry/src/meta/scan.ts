@@ -1,17 +1,13 @@
-/* eslint-disable no-console */
-
 import path, { basename } from 'node:path/posix'
 
 import { once } from '@ocavue/utils'
-import {
-  listGitFiles,
-  vfs,
-} from '@prosekit/dev'
+import { vfs } from '@prosekit/dev'
 import {
   parseImportsExports,
   type ImportsExports,
 } from 'parse-imports-exports'
 
+import { debug } from './debug'
 import type {
   Framework,
   ItemAccumulator,
@@ -66,6 +62,14 @@ const MODULE_RESOLUTION_EXTENSIONS = [
   '.json',
   '.css',
 ]
+
+// Handle TypeScript convention: .js imports can resolve to .ts source files
+const TS_MAPPING: Record<string, string> = {
+  '.js': '.ts',
+  '.jsx': '.tsx',
+  '.mjs': '.mts',
+  '.cjs': '.cts',
+}
 
 interface ClassificationResult {
   readonly framework: Framework
@@ -180,6 +184,12 @@ function* generateCandidatePaths({
 
   if (ext) {
     yield base
+
+    for (const [jsExt, tsExt] of Object.entries(TS_MAPPING)) {
+      if (base.endsWith(jsExt)) {
+        yield base.slice(0, -jsExt.length) + tsExt
+      }
+    }
   } else {
     for (const candidateExt of MODULE_RESOLUTION_EXTENSIONS) {
       yield `${base}${candidateExt}`
@@ -295,10 +305,15 @@ async function extractImportSpecifiersFromFilePath(
 }
 
 async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
-  const rootDir = await vfs.getRootDir()
-  const gitFiles = await listGitFiles(rootDir)
-  const gitFileSet = new Set(gitFiles)
-  const registryFiles = gitFiles.filter((filePath) => {
+  debug('scan start')
+
+  const files = (await vfs.getFiles()).filter((filePath) => {
+    return FRAMEWORKS.some((framework) => filePath.startsWith(`${REGISTRY_FRAMEWORK_DIR[framework]}/`))
+  })
+  debug('scan tracked-files=%d', files.length)
+
+  const fileSet = new Set(files)
+  const registryFiles = files.filter((filePath) => {
     return FRAMEWORKS.some((framework) => {
       return filePath.startsWith(`${REGISTRY_FRAMEWORK_DIR[framework]}/`)
     })
@@ -348,7 +363,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
         const resolved = resolveRelativeImport({
           importer: filePath,
           specifier,
-          fileSet: gitFileSet,
+          fileSet,
         })
 
         if (!resolved) {
@@ -371,6 +386,8 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       }
     }
   }
+
+  debug('scan unresolvedImports=%d', unresolvedImports.length)
 
   if (unresolvedImports.length > 0) {
     console.warn(
@@ -426,17 +443,10 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       )
     })
 
+  debug('scan done items=%d', sortedItems.length)
   return sortedItems
 }
 
-export const scanRegistry = once(async () => {
-  const startTime = performance.now()
-  console.debug(`[registry] Scanning registry...`)
-  const result = await scanRegistryImpl()
-  const endTime = performance.now()
-  const duration = Math.round(endTime - startTime)
-  console.debug(`[registry] Scanning registry completed in ${duration}ms`)
-  return result
-})
+export const scanRegistry = once(scanRegistryImpl)
 
 const filename = basename(import.meta.filename)

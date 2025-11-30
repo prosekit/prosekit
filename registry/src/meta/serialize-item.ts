@@ -1,7 +1,7 @@
 import assert from 'node:assert'
 import path from 'node:path'
 
-import type { RegistryItem } from 'shadcn/schema'
+import type { RegistryItem } from 'shadcn-schema'
 
 import {
   FRAMEWORKS,

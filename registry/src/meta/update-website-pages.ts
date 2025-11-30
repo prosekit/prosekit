@@ -8,13 +8,10 @@ import {
   type ItemAccumulator,
 } from './types'
 
-export async function updateWebsitePages(items: ItemAccumulator[]) {
+export function updateWebsitePages(items: ItemAccumulator[]) {
   for (const framework of FRAMEWORKS) {
     if (items.some((item) => item.framework === framework)) {
-      await vfs.updateText(
-        `website/src/stories/${framework}.stories.ts`,
-        genStories(framework, items),
-      )
+      vfs.updateText(`website/src/stories/${framework}.stories.ts`, genStories(framework, items))
     } else {
       console.warn(`[${currentFilename}] No items found for framework ${framework}`)
     }

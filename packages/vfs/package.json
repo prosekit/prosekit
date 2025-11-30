@@ -1,0 +1,21 @@
+{
+  "name": "@prosekit/vfs",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Virtual file system helpers for ProseKit tooling",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "execa": "^9.6.1",
+    "js-yaml": "^4.1.1",
+    "json5": "^2.2.3",
+    "obug": "^2.1.1",
+    "path-exists": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9"
+  }
+}

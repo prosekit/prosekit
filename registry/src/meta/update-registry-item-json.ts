@@ -1,7 +1,7 @@
 import path from 'node:path'
 
 import { vfs } from '@prosekit/dev'
-import { registryItemSchema } from 'shadcn/schema'
+import { registryItemSchema } from 'shadcn-schema'
 
 import { serializeItem } from './serialize-item'
 import type { ItemAccumulator } from './types'
@@ -25,6 +25,6 @@ export async function updateRegistryItems(
     registryItemSchema.parse(itemJson)
 
     const outputPath = path.join(outputDir, `${item.name}.json`)
-    await vfs.updateJSON(outputPath, itemJson)
+    vfs.updateJSON(outputPath, itemJson)
   }
 }

@@ -1,14 +1,13 @@
 import path from 'node:path'
 
-import { findRootDir } from './find-root-dir'
+import { ROOT_DIR } from './root-dir'
 import { unwrapDefaultExport } from './unwrap-default-export'
-import { vfs } from './virtual-file-system'
+import { vfs } from './vfs'
 
-export async function genChangeset() {
-  const root = await findRootDir()
+export async function genChangeset(): Promise<void> {
   const read = unwrapDefaultExport(await import('@changesets/read'))
 
-  const changesets = await read(root)
+  const changesets = await read(ROOT_DIR)
 
   for (const changeset of changesets) {
     if (!changeset.releases.some((release) => release.name === 'prosekit')) {
@@ -20,7 +19,7 @@ export async function genChangeset() {
       const filePath = path.join('.changeset', `${changeset.id}.md`)
       const fileText = await vfs.read(filePath)
       const newFileText = fileText.replace(`---`, `---\n'prosekit': patch`)
-      await vfs.updateText(filePath, newFileText)
+      vfs.updateText(filePath, newFileText)
     }
   }
 }

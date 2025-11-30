@@ -4,40 +4,25 @@ import { vfs } from '@prosekit/dev'
 
 import type { ItemAccumulator } from './types'
 
-export async function updateLoader(items: ItemAccumulator[]) {
+export function updateLoader(items: ItemAccumulator[]) {
   if (items.some((item) => item.framework === 'preact')) {
-    await vfs.updateText(
-      'registry/src/preact/loaders.gen.ts',
-      genPreactLoaders(items),
-    )
+    vfs.updateText('registry/src/preact/loaders.gen.ts', genPreactLoaders(items))
   }
 
   if (items.some((item) => item.framework === 'react')) {
-    await vfs.updateText(
-      'registry/src/react/loaders.gen.ts',
-      genReactLoaders(items),
-    )
+    vfs.updateText('registry/src/react/loaders.gen.ts', genReactLoaders(items))
   }
 
   if (items.some((item) => item.framework === 'vue')) {
-    await vfs.updateText(
-      'registry/src/vue/loaders.gen.ts',
-      genVueLoaders(items),
-    )
+    vfs.updateText('registry/src/vue/loaders.gen.ts', genVueLoaders(items))
   }
 
   if (items.some((item) => item.framework === 'solid')) {
-    await vfs.updateText(
-      'registry/src/solid/loaders.gen.ts',
-      genSolidLoaders(items),
-    )
+    vfs.updateText('registry/src/solid/loaders.gen.ts', genSolidLoaders(items))
   }
 
   if (items.some((item) => item.framework === 'svelte')) {
-    await vfs.updateText(
-      'registry/src/svelte/loaders.gen.ts',
-      genSvelteLoaders(items),
-    )
+    vfs.updateText('registry/src/svelte/loaders.gen.ts', genSvelteLoaders(items))
   }
 }
 

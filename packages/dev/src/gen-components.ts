@@ -5,49 +5,66 @@ import {
   pascalCase,
 } from 'change-case'
 
+import { debug } from './debug'
 import { getPackageJsonExports } from './get-package-json-exports'
+import {
+  cleanGeneratedFilesInPackage,
+  updateTextInPackage as updatePackageFile,
+} from './package-files'
 import {
   readComponents,
   type GroupedComponents as Components,
 } from './read-components'
-import { vfs } from './virtual-file-system'
+import { getPackageByName } from './workspace-packages'
 
-export async function genComponents() {
-  const webPackages = await vfs.getPackageByName('@prosekit/web')
+export async function genComponents(): Promise<void> {
+  debug('gen-components start')
 
-  const reactPackage = await vfs.getPackageByName('@prosekit/react')
-  const vuePackage = await vfs.getPackageByName('@prosekit/vue')
-  const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
-  const solidPackage = await vfs.getPackageByName('@prosekit/solid')
-  const preactPackage = await vfs.getPackageByName('@prosekit/preact')
-  const litPackage = await vfs.getPackageByName('@prosekit/lit')
+  const webPackage = await getPackageByName('@prosekit/web')
+  const reactPackage = await getPackageByName('@prosekit/react')
+  const vuePackage = await getPackageByName('@prosekit/vue')
+  const sveltePackage = await getPackageByName('@prosekit/svelte')
+  const solidPackage = await getPackageByName('@prosekit/solid')
+  const preactPackage = await getPackageByName('@prosekit/preact')
+  const litPackage = await getPackageByName('@prosekit/lit')
 
-  await vfs.cleanGeneratedFilesInPackage(reactPackage)
-  await vfs.cleanGeneratedFilesInPackage(reactPackage)
-  await vfs.cleanGeneratedFilesInPackage(vuePackage)
-  await vfs.cleanGeneratedFilesInPackage(sveltePackage)
-  await vfs.cleanGeneratedFilesInPackage(solidPackage)
-  await vfs.cleanGeneratedFilesInPackage(preactPackage)
-  await vfs.cleanGeneratedFilesInPackage(litPackage)
+  debug('gen-components getPackageByName done')
+
+  const componentTargets = [
+    reactPackage,
+    vuePackage,
+    sveltePackage,
+    solidPackage,
+    preactPackage,
+    litPackage,
+  ]
+
+  for (const pkg of componentTargets) {
+    await cleanGeneratedFilesInPackage(pkg)
+  }
+
+  debug('gen-components cleanGeneratedFilesInPackage done')
 
   const components = await readComponents()
-  await writeWebComponents(webPackages, components)
-  await writeReactComponents(reactPackage, components)
-  await writeVueComponents(vuePackage, components)
-  await writeSvelteComponents(sveltePackage, components)
-  await writeSolidComponents(solidPackage, components)
-  await writePreactComponents(preactPackage, components)
-  await writeLitComponents(litPackage, components)
+  writeWebComponents(webPackage, components)
+  writeReactComponents(reactPackage, components)
+  writeVueComponents(vuePackage, components)
+  writeSvelteComponents(sveltePackage, components)
+  writeSolidComponents(solidPackage, components)
+  writePreactComponents(preactPackage, components)
+  writeLitComponents(litPackage, components)
+
+  debug('gen-components done')
 }
 
-async function writeWebComponents(pkg: Package, info: Components) {
+function writeWebComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatPrimitiveIndexCode(components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -56,19 +73,19 @@ async function writeWebComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatPrimitiveElementCode(component)
       const path = `src/components/${group}/${component}/element.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
   }
 }
 
-async function writeReactComponents(pkg: Package, info: Components) {
+function writeReactComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatReactIndexCode(components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -77,19 +94,19 @@ async function writeReactComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatReactComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
   }
 }
 
-async function writeVueComponents(pkg: Package, info: Components) {
+function writeVueComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatVueIndexCode(components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -98,19 +115,19 @@ async function writeVueComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatVueComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
   }
 }
 
-async function writeSvelteComponents(pkg: Package, info: Components) {
+function writeSvelteComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatSvelteIndexCode(components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -119,24 +136,24 @@ async function writeSvelteComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatSvelteComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.svelte`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
     for (const component of components) {
       const code = formatSvelteTsCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
   }
 }
 
-async function writeSolidComponents(pkg: Package, info: Components) {
+function writeSolidComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatSolidIndexCode(components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -145,19 +162,19 @@ async function writeSolidComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatSolidComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
   }
 }
 
-async function writePreactComponents(pkg: Package, info: Components) {
+function writePreactComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatPreactIndexCode(components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -166,19 +183,19 @@ async function writePreactComponents(pkg: Package, info: Components) {
     for (const component of components) {
       const code = formatPreactComponentCode(group, component)
       const path = `src/components/${group}/${component}.gen.ts`
-      await vfs.updateTextInPackage(pkg, path, code)
+      updatePackageFile(pkg, path, code)
     }
   }
 }
 
-async function writeLitComponents(pkg: Package, info: Components) {
+function writeLitComponents(pkg: Package, info: Components): void {
   const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
     const code = formatLitIndexCode(group, components)
-    await vfs.updateTextInPackage(
+    updatePackageFile(
       pkg,
       `src/components/${group}/index.gen.ts`,
       code,
@@ -186,7 +203,7 @@ async function writeLitComponents(pkg: Package, info: Components) {
   }
 }
 
-function formatPrimitiveIndexCode(components: string[]) {
+function formatPrimitiveIndexCode(components: string[]): string {
   const lines = components.flatMap((kebab) => {
     const pascal = pascalCase(kebab)
     const camel = camelCase(kebab)
@@ -206,7 +223,7 @@ function formatPrimitiveIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
-function formatPrimitiveElementCode(kebab: string) {
+function formatPrimitiveElementCode(kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (
@@ -234,7 +251,7 @@ export { ${pascal}Element }
   )
 }
 
-function formatReactIndexCode(components: string[]) {
+function formatReactIndexCode(components: string[]): string {
   const lines = components.flatMap((name) => {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
@@ -246,7 +263,7 @@ function formatReactIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
-function formatVueIndexCode(components: string[]) {
+function formatVueIndexCode(components: string[]): string {
   const lines = components.flatMap((name) => {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
@@ -258,19 +275,19 @@ function formatVueIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
-function formatSvelteIndexCode(components: string[]) {
+function formatSvelteIndexCode(components: string[]): string {
   return formatReactIndexCode(components)
 }
 
-function formatSolidIndexCode(components: string[]) {
+function formatSolidIndexCode(components: string[]): string {
   return formatReactIndexCode(components)
 }
 
-function formatPreactIndexCode(components: string[]) {
+function formatPreactIndexCode(components: string[]): string {
   return formatReactIndexCode(components)
 }
 
-function formatLitIndexCode(group: string, components: string[]) {
+function formatLitIndexCode(group: string, components: string[]): string {
   const lines = components.flatMap((kebab) => {
     const pascal = pascalCase(kebab)
     return [
@@ -282,7 +299,7 @@ function formatLitIndexCode(group: string, components: string[]) {
   return lines.join('\n')
 }
 
-function formatReactComponentCode(group: string, kebab: string) {
+function formatReactComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
 
@@ -326,7 +343,7 @@ export const ${pascal}: ForwardRefExoticComponent<
   )
 }
 
-function formatVueComponentCode(group: string, kebab: string) {
+function formatVueComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (
@@ -369,7 +386,7 @@ export const ${pascal}: DefineSetupFnComponent<
   )
 }
 
-function formatSvelteComponentCode(group: string, kebab: string) {
+function formatSvelteComponentCode(group: string, kebab: string): string {
   const camel = camelCase(kebab)
 
   return (
@@ -401,7 +418,7 @@ $: {
   )
 }
 
-function formatSvelteTsCode(group: string, kebab: string) {
+function formatSvelteTsCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   return (
     `
@@ -424,7 +441,7 @@ export const ${pascal} = Component as typeof SvelteComponent<${pascal}Props & HT
   )
 }
 
-function formatSolidComponentCode(group: string, kebab: string) {
+function formatSolidComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (
@@ -463,7 +480,7 @@ export const ${pascal}: Component<PropsWithElement<
   )
 }
 
-function formatPreactComponentCode(group: string, kebab: string) {
+function formatPreactComponentCode(group: string, kebab: string): string {
   const pascal = pascalCase(kebab)
   const camel = camelCase(kebab)
   return (

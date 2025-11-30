@@ -1,4 +1,12 @@
 {
-  "extends": "@ocavue/tsconfig/es/root.json",
-  "references": [{ "path": "./tsconfig.build.json" }],
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "isolatedDeclarations": true,
+    "allowJs": false,
+  },
+  "references": [
+    {
+      "path": "../vfs/tsconfig.json",
+    },
+  ],
 }

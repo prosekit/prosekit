@@ -1,10 +1,14 @@
 import { DefaultMap } from '@ocavue/utils'
 
 import { isPublicPackage } from './is-public-package'
-import { vfs } from './virtual-file-system'
+import { vfs } from './vfs'
+import {
+  getPrivatePackages,
+  getWorkspacePackages,
+} from './workspace-packages'
 
-export async function genChangesetConfigJson() {
-  const privatePackages = await vfs.getPrivatePackages()
+export async function genChangesetConfigJson(): Promise<void> {
+  const privatePackages = await getPrivatePackages()
   const visiblePackages = await getVisiblePackages()
 
   const ignoreNames: string[] = privatePackages
@@ -12,10 +16,9 @@ export async function genChangesetConfigJson() {
     .filter((name) => !visiblePackages.has(name))
     .sort()
 
-  const file = await vfs.getFile('.changeset/config.json')
-  const json = await file.readJSON() as { ignore: string[] }
+  const json = await vfs.readJSON<{ ignore?: string[] }>('.changeset/config.json')
   json.ignore = ignoreNames
-  file.updateJSON(json)
+  vfs.updateJSON('.changeset/config.json', json)
 }
 
 /**
@@ -23,7 +26,7 @@ export async function genChangesetConfigJson() {
  * dependencies, etc.
  */
 async function getVisiblePackages(): Promise<Set<string>> {
-  const packages = await vfs.getPackages()
+  const packages = await getWorkspacePackages()
   const packageToDependencies = new DefaultMap<string, string[]>(() => [])
   for (const pkg of packages) {
     const dependencies = Object.keys(pkg.packageJson.dependencies || {})

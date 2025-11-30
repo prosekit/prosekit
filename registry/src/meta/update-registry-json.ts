@@ -1,5 +1,5 @@
 import { vfs } from '@prosekit/dev'
-import { registrySchema } from 'shadcn/schema'
+import { registrySchema } from 'shadcn-schema'
 
 import { serializeItem } from './serialize-item'
 import type { ItemAccumulator } from './types'
@@ -7,7 +7,7 @@ import type { ItemAccumulator } from './types'
 /**
  * Update the root registry manifest (`registry.json`)
  */
-export async function updateRegistry(items: ItemAccumulator[], outputPath: string): Promise<void> {
+export function updateRegistry(items: ItemAccumulator[], outputPath: string): void {
   const registerJson = {
     $schema: 'https://ui.shadcn.com/schema/registry.json',
     name: 'prosekit',
@@ -17,5 +17,5 @@ export async function updateRegistry(items: ItemAccumulator[], outputPath: strin
 
   registrySchema.parse(registerJson)
 
-  await vfs.updateJSON(outputPath, registerJson)
+  vfs.updateJSON(outputPath, registerJson)
 }

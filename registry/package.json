@@ -216,7 +216,7 @@
     "lint:vue": "vue-tsc --build src/vue/tsconfig.lint.json"
   },
   "dependencies": {
-    "loro-crdt": "^1.10.0",
+    "loro-crdt": "^1.10.2",
     "loro-prosemirror": "^0.4.1",
     "obug": "^2.1.1",
     "preact": "^10.27.2",
@@ -227,7 +227,7 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.9.10",
-    "svelte": "^5.44.1",
+    "svelte": "^5.45.2",
     "unified": "^11.0.5",
     "vue": "^3.5.25",
     "y-protocols": "^1.0.6",
@@ -260,7 +260,7 @@
     "prosekit": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "shadcn": "^3.5.0",
+    "shadcn": "^3.5.1",
     "svelte-check": "^4.3.4",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",

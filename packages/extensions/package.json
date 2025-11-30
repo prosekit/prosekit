@@ -93,7 +93,7 @@
     "prosemirror-highlight": "^0.13.0",
     "prosemirror-search": "^1.1.0",
     "prosemirror-tables": "^1.8.1",
-    "shiki": "^3.15.0"
+    "shiki": "^3.17.0"
   },
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
@@ -121,7 +121,7 @@
     "@types/diffable-html": "^5.0.2",
     "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
-    "loro-crdt": "^1.10.0",
+    "loro-crdt": "^1.10.2",
     "loro-prosemirror": "^0.4.1",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
@@ -129,7 +129,7 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "tsdown": "^0.16.7",
+    "tsdown": "^0.16.8",
     "type-fest": "^5.2.0",
     "typescript": "~5.9.3",
     "unified": "^11.0.5",

@@ -99,8 +99,8 @@ importers:
         specifier: ^27.2.0
         version: 27.2.0
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -120,8 +120,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -182,8 +182,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -313,8 +313,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       type-fest:
         specifier: ^5.2.0
         version: 5.2.0
@@ -350,8 +350,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -390,8 +390,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -424,8 +424,8 @@ importers:
         specifier: ^10.27.2
         version: 10.27.2
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -503,8 +503,8 @@ importers:
         specifier: ^5.45.2
         version: 5.45.2
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typedoc:
         specifier: ^0.28.15
         version: 0.28.15(typescript@5.9.3)
@@ -573,8 +573,8 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -607,8 +607,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -666,8 +666,8 @@ importers:
         specifier: ^24.10.1
         version: 24.10.1
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -725,8 +725,8 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -789,8 +789,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.16.8
-        version: 0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
+        specifier: ^0.17.0-beta.3
+        version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       type-fest:
         specifier: ^5.2.0
         version: 5.2.0
@@ -4292,10 +4292,6 @@ packages:
     resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
     engines: {node: '>=0.3.1'}
 
-  diff@8.0.2:
-    resolution: {integrity: sha512-sSuxWU5j5SR9QQji/o2qMvqRNYRDOcBTgsJ/DeCf4iSN4gW+gNMXM7wFIP+fdXZxoNiAnHUTGjCr+TSWXdRDKg==}
-    engines: {node: '>=0.3.1'}
-
   diffable-html@6.0.1:
     resolution: {integrity: sha512-z/AuT6urMKzCl1oz+HalSjjPxPMNKfbnWwzLzx/qWfzTQ3kBL8EnLKSCr2IpOofIpV+BA1Zd+e2eSzxGEQojUw==}
 
@@ -7181,8 +7177,8 @@ packages:
       typescript:
         optional: true
 
-  tsdown@0.16.8:
-    resolution: {integrity: sha512-6ANw9mgU9kk7SvTBKvpDu/DVJeAFECiLUSeL5M7f5Nm5H97E7ybxmXT4PQ23FySYn32y6OzjoAH/lsWCbGzfLA==}
+  tsdown@0.17.0-beta.3:
+    resolution: {integrity: sha512-CpxDMqTTenC78YzTzABqBB17uXRQdy0njWjmYPABW2SnAnp/QKujz0NxMAaNZUGRdJSLFvXdlrHE4jSrBIbnWw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -11686,8 +11682,6 @@ snapshots:
 
   diff@5.2.0: {}
 
-  diff@8.0.2: {}
-
   diffable-html@6.0.1:
     dependencies:
       htmlparser2: 5.0.1
@@ -15460,12 +15454,10 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  tsdown@0.16.8(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3)):
+  tsdown@0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3)):
     dependencies:
       ansis: 4.2.0
       cac: 6.7.14
-      chokidar: 5.0.0
-      diff: 8.0.2
       empathic: 2.0.0
       hookable: 5.5.3
       obug: 2.1.1

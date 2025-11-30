@@ -30,10 +30,10 @@ importers:
         version: 0.6.1
       '@size-limit/esbuild-why':
         specifier: ^11.2.0
-        version: 11.2.0(size-limit@11.2.0)
+        version: 11.2.0(size-limit@12.0.0(jiti@2.6.1))
       '@size-limit/preset-small-lib':
         specifier: ^11.2.0
-        version: 11.2.0(size-limit@11.2.0)
+        version: 11.2.0(size-limit@12.0.0(jiti@2.6.1))
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -59,8 +59,8 @@ importers:
         specifier: ^1.57.0
         version: 1.57.0
       size-limit:
-        specifier: ^11.2.0
-        version: 11.2.0
+        specifier: ^12.0.0
+        version: 12.0.0(jiti@2.6.1)
       turbo:
         specifier: ^2.6.1
         version: 2.6.1
@@ -7209,10 +7209,15 @@ packages:
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     hasBin: true
 
-  size-limit@11.2.0:
-    resolution: {integrity: sha512-2kpQq2DD/pRpx3Tal/qRW1SYwcIeQ0iq8li5CJHQgOC+FtPn2BVmuDtzUCgNnpCrbgtfEHqh+iWzxK+Tq6C+RQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
+  size-limit@12.0.0:
+    resolution: {integrity: sha512-JBG8dioIs0m2kHOhs9jD6E/tZKD08vmbf2bfqj/rJyNWqJxk/ZcakixjhYtsqdbi+AKVbfPkt3g2RRZiKaizYA==}
+    engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
+    peerDependencies:
+      jiti: ^2.0.0
+    peerDependenciesMeta:
+      jiti:
+        optional: true
 
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -10617,27 +10622,27 @@ snapshots:
 
   '@sindresorhus/transliterate@2.2.0': {}
 
-  '@size-limit/esbuild-why@11.2.0(size-limit@11.2.0)':
+  '@size-limit/esbuild-why@11.2.0(size-limit@12.0.0(jiti@2.6.1))':
     dependencies:
       esbuild-visualizer: 0.7.0
       open: 10.2.0
-      size-limit: 11.2.0
+      size-limit: 12.0.0(jiti@2.6.1)
 
-  '@size-limit/esbuild@11.2.0(size-limit@11.2.0)':
+  '@size-limit/esbuild@11.2.0(size-limit@12.0.0(jiti@2.6.1))':
     dependencies:
       esbuild: 0.25.12
       nanoid: 5.1.6
-      size-limit: 11.2.0
+      size-limit: 12.0.0(jiti@2.6.1)
 
-  '@size-limit/file@11.2.0(size-limit@11.2.0)':
+  '@size-limit/file@11.2.0(size-limit@12.0.0(jiti@2.6.1))':
     dependencies:
-      size-limit: 11.2.0
+      size-limit: 12.0.0(jiti@2.6.1)
 
-  '@size-limit/preset-small-lib@11.2.0(size-limit@11.2.0)':
+  '@size-limit/preset-small-lib@11.2.0(size-limit@12.0.0(jiti@2.6.1))':
     dependencies:
-      '@size-limit/esbuild': 11.2.0(size-limit@11.2.0)
-      '@size-limit/file': 11.2.0(size-limit@11.2.0)
-      size-limit: 11.2.0
+      '@size-limit/esbuild': 11.2.0(size-limit@12.0.0(jiti@2.6.1))
+      '@size-limit/file': 11.2.0(size-limit@12.0.0(jiti@2.6.1))
+      size-limit: 12.0.0(jiti@2.6.1)
 
   '@standard-schema/spec@1.0.0': {}
 
@@ -15920,15 +15925,15 @@ snapshots:
       arg: 5.0.2
       sax: 1.4.3
 
-  size-limit@11.2.0:
+  size-limit@12.0.0(jiti@2.6.1):
     dependencies:
       bytes-iec: 3.1.1
-      chokidar: 4.0.3
-      jiti: 2.6.1
       lilconfig: 3.1.3
       nanospinner: 1.2.2
       picocolors: 1.1.1
       tinyglobby: 0.2.15
+    optionalDependencies:
+      jiti: 2.6.1
 
   slash@3.0.0: {}
 

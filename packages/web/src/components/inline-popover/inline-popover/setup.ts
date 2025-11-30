@@ -11,6 +11,7 @@ import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 import type { ReferenceElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
+import type { Selection } from '@prosekit/pm/state'
 
 import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event'
 import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
@@ -83,10 +84,26 @@ function useInlinePopoverReference(
     editorFocused = focus
   })
 
+  let prevSelection: Selection | undefined
+
   useEditorUpdateEvent(host, editor, (view) => {
     const isPopoverFocused = !editorFocused && host.contains(host.ownerDocument.activeElement)
 
     if (isPopoverFocused) {
+      return
+    }
+
+    const { selection } = view.state
+    const selectionUnchanged = prevSelection?.eq(selection)
+    prevSelection = selection
+
+    // Skip reference update if only the document content has changed, not the
+    // selection itself.
+    //
+    // Example: If the user selects text and then applies mark bold using the
+    // popover, the selection may widen, but we don't want to reposition the
+    // popover.
+    if (selectionUnchanged) {
       return
     }
 

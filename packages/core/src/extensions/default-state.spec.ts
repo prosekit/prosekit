@@ -27,10 +27,6 @@ describe('defineDefaultState', () => {
       return editor.state.doc.toString()
     }
 
-    expect(run({ defaultDoc: docJSON })).toContain('docJSON')
-    expect(run({ defaultHTML: docHTMLString })).toContain('docHTMLString')
-    expect(run({ defaultHTML: docHTMLElement })).toContain('docHTMLElement')
-
     expect(run({ defaultContent: docJSON })).toContain('docJSON')
     expect(run({ defaultContent: docHTMLString })).toContain('docHTMLString')
     expect(run({ defaultContent: docHTMLElement })).toContain('docHTMLElement')

@@ -20,9 +20,9 @@ describe('state', () => {
     const doc2: NodeJSON = { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'highest priority' }] }] }
     const doc3: NodeJSON = { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'lowest priority' }] }] }
 
-    const extension1 = defineDefaultState({ defaultDoc: doc1 }) // default priority
-    const extension2 = withPriority(defineDefaultState({ defaultDoc: doc2 }), Priority.highest)
-    const extension3 = withPriority(defineDefaultState({ defaultDoc: doc3 }), Priority.lowest)
+    const extension1 = defineDefaultState({ defaultContent: doc1 }) // default priority
+    const extension2 = withPriority(defineDefaultState({ defaultContent: doc2 }), Priority.highest)
+    const extension3 = withPriority(defineDefaultState({ defaultContent: doc3 }), Priority.lowest)
 
     const combinedExtension = union(defineTestExtension(), extension1, extension2, extension3)
     const { editor } = setupTestFromExtension(combinedExtension)
@@ -38,9 +38,9 @@ describe('state', () => {
     const doc2 = { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'second' }] }] }
     const doc3 = { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'third' }] }] }
 
-    const extension1 = defineDefaultState({ defaultDoc: doc1 })
-    const extension2 = defineDefaultState({ defaultDoc: doc2 })
-    const extension3 = defineDefaultState({ defaultDoc: doc3 })
+    const extension1 = defineDefaultState({ defaultContent: doc1 })
+    const extension2 = defineDefaultState({ defaultContent: doc2 })
+    const extension3 = defineDefaultState({ defaultContent: doc3 })
 
     const combinedExtension = union(defineTestExtension(), extension1, extension2, extension3)
     const { editor } = setupTestFromExtension(combinedExtension)

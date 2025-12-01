@@ -75,22 +75,6 @@ export interface EditorOptions<E extends Extension> {
   defaultContent?: NodeJSON | string | HTMLElement
 
   /**
-   * A JSON object representing the starting document to use when creating the
-   * editor.
-   *
-   * @deprecated Use `defaultContent` instead.
-   */
-  defaultDoc?: NodeJSON
-
-  /**
-   * A HTML element or a HTML string representing the starting document to use
-   * when creating the editor.
-   *
-   * @deprecated Use `defaultContent` instead.
-   */
-  defaultHTML?: string | HTMLElement
-
-  /**
    * A JSON object representing the starting selection to use when creating the
    * editor. It's only used when `defaultContent` is also provided.
    */
@@ -108,7 +92,7 @@ export interface getDocHTMLOptions extends DOMDocumentOptions {}
 export function setupEditorExtension<E extends Extension>(
   options: EditorOptions<E>,
 ): E {
-  if (options.defaultContent || options.defaultDoc || options.defaultHTML) {
+  if (options.defaultContent) {
     return union(
       options.extension,
       defineDefaultState(options),
@@ -374,7 +358,6 @@ export class EditorInstance {
       return this.canExec(command)
     }
 
-    action.canApply = canExec
     action.canExec = canExec
 
     this.commands[name] = action as CommandAction

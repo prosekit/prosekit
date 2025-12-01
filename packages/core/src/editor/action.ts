@@ -80,16 +80,6 @@ export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
 }
 
 /**
- * @deprecated Use type {@link NodeAction} instead.
- */
-export type NodeBuilder = NodeAction
-
-/**
- * @deprecated Use type {@link MarkAction} instead.
- */
-export type MarkBuilder = MarkAction
-
-/**
  * @internal
  */
 export function createNodeActions(

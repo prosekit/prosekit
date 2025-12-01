@@ -23,22 +23,6 @@ export interface DefaultStateOptions {
   defaultContent?: NodeJSON | string | HTMLElement
 
   /**
-   * A JSON object representing the starting document to use when creating the
-   * editor.
-   *
-   * @deprecated Use `defaultContent` instead.
-   */
-  defaultDoc?: NodeJSON
-
-  /**
-   * A HTML element or a HTML string representing the starting document to use
-   * when creating the editor.
-   *
-   * @deprecated Use `defaultContent` instead.
-   */
-  defaultHTML?: string | HTMLElement
-
-  /**
    * A JSON object representing the starting selection to use when creating the
    * editor. It's only used when `defaultContent` is also provided.
    */
@@ -55,16 +39,12 @@ export interface DefaultStateOptions {
 export function defineDefaultState({
   defaultSelection,
   defaultContent,
-  defaultDoc,
-  defaultHTML,
 }: DefaultStateOptions): PlainExtension {
-  const defaultDocContent = defaultContent || defaultDoc || defaultHTML
-
   return defineFacetPayload(stateFacet, [
     ({ schema }) => {
       const config: EditorStateConfig = {}
-      if (defaultDocContent) {
-        const json = getEditorContentJSON(schema, defaultDocContent)
+      if (defaultContent) {
+        const json = getEditorContentJSON(schema, defaultContent)
         config.doc = schema.nodeFromJSON(json)
         if (defaultSelection) {
           config.selection = Selection.fromJSON(config.doc, defaultSelection)

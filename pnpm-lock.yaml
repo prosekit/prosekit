@@ -50,8 +50,8 @@ importers:
         specifier: ^5.70.2
         version: 5.70.2(@types/node@24.10.1)(typescript@5.9.3)
       monorepo-typescript-references:
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: https://pkg.pr.new/ocavue/monorepo-typescript-references@29
+        version: https://pkg.pr.new/ocavue/monorepo-typescript-references@29
       pkg-pr-new:
         specifier: ^0.0.61
         version: 0.0.61
@@ -5903,8 +5903,9 @@ packages:
   mlly@1.8.0:
     resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
 
-  monorepo-typescript-references@1.1.0:
-    resolution: {integrity: sha512-W6SsNNW9FtQl9zRZfdhqEbNXV2fq953VriEoxYME3GRQTBVDCi5Gc5vtCdiAnpI7H1byk/djS6Rq56VUU/3G0Q==}
+  monorepo-typescript-references@https://pkg.pr.new/ocavue/monorepo-typescript-references@29:
+    resolution: {tarball: https://pkg.pr.new/ocavue/monorepo-typescript-references@29}
+    version: 1.1.1
     hasBin: true
 
   mri@1.2.0:
@@ -13923,7 +13924,7 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.1
 
-  monorepo-typescript-references@1.1.0:
+  monorepo-typescript-references@https://pkg.pr.new/ocavue/monorepo-typescript-references@29:
     dependencies:
       '@manypkg/find-root': 3.1.0
       '@manypkg/get-packages': 3.1.0

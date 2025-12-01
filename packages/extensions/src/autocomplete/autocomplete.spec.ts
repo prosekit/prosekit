@@ -217,6 +217,35 @@ describe('defineAutocomplete', () => {
     expect(isMatching()).toBe(true)
   })
 
+  it('can start a new match after dismissing the previous match', async () => {
+    const { isMatching, showSelection, getMatching, getMatchingText } = setupSlashMenu()
+
+    expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('a /b')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /b<cursor>"`)
+    expect(isMatching()).toBe(true)
+
+    getMatching().ignoreMatch()
+    expect(showSelection()).toMatchInlineSnapshot(`"a /b<cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await pressKey('Space')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /b <cursor>"`)
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /b /<cursor>"`)
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/')
+
+    await inputText('c')
+    expect(showSelection()).toMatchInlineSnapshot(`"a /b /c<cursor>"`)
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/c')
+  })
+
   it('can dismiss the match by creating a new paragraph', async () => {
     const { isMatching, showSelection } = setupSlashMenu()
 

@@ -53,7 +53,7 @@ export function createAutocompletePlugin({
 
     state: {
       init: (): PredictionPluginState => {
-        return { ignores: new Set(), matching: null }
+        return { ignores: [], matching: null }
       },
       apply: (tr, prevValue, oldState, newState): PredictionPluginState => {
         return handleTransaction(tr, prevValue, oldState, newState, getRules)
@@ -94,15 +94,18 @@ function handleTextInput(
 
   const textBackward = getTextBackward(view.state.doc.resolve(from))
   const textFull = textBackward + textAdded
+  const textTo = to + textAdded.length
+  const textFrom = textTo - textFull.length
 
   const pluginState = getPluginState(view.state)
-  const ignores = pluginState?.ignores ?? new Set<number>()
+  const ignores = pluginState?.ignores ?? []
 
   const currMatching = matchRule(
     view.state,
     getRules(),
     textFull,
-    to + textAdded.length,
+    textFrom,
+    textTo,
     ignores,
   )
 
@@ -130,13 +133,14 @@ function handleTransaction(
   }
 
   // Handle position mapping changes
-  const ignores = new Set<number>()
+  const ignoreSet = new Set<number>()
   for (const ignore of prevValue.ignores) {
     const result = tr.mapping.mapResult(ignore)
     if (!result.deletedBefore && !result.deletedAfter) {
-      ignores.add(result.pos)
+      ignoreSet.add(result.pos)
     }
   }
+  const ignores = Array.from(ignoreSet)
 
   const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
 
@@ -150,7 +154,7 @@ function handleTransaction(
     // If the text selection is before the matching or after the matching,
     // we leave the matching
     if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
-      ignores.add(prevMatching.from)
+      ignores.push(prevMatching.from)
       return { matching: null, ignores }
     }
 
@@ -161,6 +165,7 @@ function handleTransaction(
       newState,
       getRules(),
       text,
+      prevMatching.from,
       prevMatching.to,
       ignores,
     )
@@ -171,7 +176,7 @@ function handleTransaction(
   if (meta.type === 'enter') {
     // Ignore the previous matching if it is not the same as the new matching
     if (prevMatching && prevMatching.from !== meta.matching.from) {
-      ignores.add(prevMatching.from)
+      ignores.push(prevMatching.from)
     }
 
     // Return the new matching
@@ -181,7 +186,7 @@ function handleTransaction(
   // If a matching is being exited
   if (meta.type === 'leave') {
     if (prevMatching) {
-      ignores.add(prevMatching.from)
+      ignores.push(prevMatching.from)
     }
     return { matching: null, ignores }
   }
@@ -193,26 +198,27 @@ function handleUpdate(view: EditorView, prevState: EditorState): void {
   const prevValue = getPluginState(prevState)
   const currValue = getPluginState(view.state)
 
-  if (
-    prevValue?.matching
-    && prevValue.matching.rule !== currValue?.matching?.rule
-  ) {
-    // Deactivate the previous rule
-    prevValue.matching.rule.onLeave?.()
+  if (!prevValue || !currValue) {
+    // Should not happen
+    return
   }
 
-  if (
-    currValue?.matching
-    && !currValue.ignores.has(currValue.matching.from)
-  ) {
-    // Activate the current rule
+  const prevMatching = prevValue.matching
+  const currMatching = currValue.matching
 
-    const { from, to, match, rule } = currValue.matching
+  // Deactivate the previous rule
+  if (prevMatching && prevMatching.rule !== currMatching?.rule) {
+    prevMatching.rule.onLeave?.()
+  }
 
-    const textContent = getTextBetween(view.state.doc, from, to)
+  // Activate the current rule
+  if (currMatching) {
+    const { from, to, match, rule } = currMatching
+
+    const textSnapshot = getTextBetween(view.state.doc, from, to)
 
     const deleteMatch = () => {
-      if (getTextBetween(view.state.doc, from, to) === textContent) {
+      if (getTextBetween(view.state.doc, from, to) === textSnapshot) {
         view.dispatch(view.state.tr.delete(from, to))
       }
     }
@@ -272,9 +278,30 @@ function matchRule(
   state: EditorState,
   rules: AutocompleteRule[],
   text: string,
-  to: number,
-  ignores: Set<number>,
+  textFrom: number,
+  textTo: number,
+  ignores: Array<number>,
 ): PredictionPluginMatching | undefined {
+  // Find the rightmost ignore point within the text range
+  let maxIgnore = -1
+  for (const ignore of ignores) {
+    if (ignore >= textFrom && ignore < textTo && ignore > maxIgnore) {
+      maxIgnore = ignore
+    }
+  }
+
+  // If an ignore point is within the text range, we ignore the text to the left
+  // of the ignore point (including the character right after the ignore point).
+  if (maxIgnore >= 0) {
+    const cut = maxIgnore + 1 - textFrom
+    text = text.slice(cut)
+    textFrom += cut
+  }
+
+  if (textFrom >= textTo || !text) {
+    return
+  }
+
   for (const rule of rules) {
     if (!rule.canMatch({ state })) {
       continue
@@ -286,14 +313,10 @@ function matchRule(
       continue
     }
 
-    const from = to - text.length + match.index
+    const matchTo = textTo
+    const matchFrom = textFrom + match.index
 
-    // Check if the matching should be ignored
-    if (ignores.has(from)) {
-      continue
-    }
-
-    return { rule, match, from, to }
+    return { rule, match, from: matchFrom, to: matchTo }
   }
 }
 

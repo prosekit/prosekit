@@ -47,7 +47,7 @@ export interface PredictionPluginState {
   /**
    * The matching positions that should be ignored.
    */
-  ignores: Set<number>
+  ignores: Array<number>
 
   /**
    * The current active matching.

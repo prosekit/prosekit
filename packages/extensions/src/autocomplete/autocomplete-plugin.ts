@@ -237,9 +237,10 @@ function handleUpdate(view: EditorView, prevState: EditorState): void {
 function getDecorations(state: EditorState): DecorationSet | null {
   const pluginState = getPluginState(state)
   if (pluginState?.matching) {
-    const { from, to } = pluginState.matching
+    const { from, to, match } = pluginState.matching
     const deco = Decoration.inline(from, to, {
-      class: 'prosemirror-prediction-match',
+      'class': 'prosekit-autocomplete-match',
+      'data-autocomplete-match-text': match[0],
     })
     return DecorationSet.create(state.doc, [deco])
   }

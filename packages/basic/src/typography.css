@@ -1,5 +1,6 @@
 :root {
   --prosekit-node-selection-color: rgba(57, 136, 255, 0.2);
+  --prosekit-autocomplete-color: rgba(209, 213, 219, 0.15); /* tailwind bg-gray-300/15 */
 }
 
 .ProseMirror {
@@ -215,6 +216,12 @@
     outline-style: solid;
     outline-width: 0.3rem;
     background-color: var(--prosekit-node-selection-color);
+  }
+
+  & .prosekit-autocomplete-match {
+    border-radius: 0.1em;
+    background-color: var(--prosekit-autocomplete-color);
+    box-shadow: 0 0 0 0.3em var(--prosekit-autocomplete-color);
   }
 
   &.prosekit-dragging {

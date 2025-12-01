@@ -4,6 +4,7 @@
  * CSS variables:
  *
  * - `--prosekit-node-selection-color`: The color of the node selection background.
+ * - `--prosekit-autocomplete-color`: The color of the autocomplete match background.
  *
  * [view source code](https://unpkg.com/prosekit/basic/typography.css)
  *

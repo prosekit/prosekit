@@ -281,14 +281,20 @@ function matchRule(
   textTo: number,
   ignores: Array<number>,
 ): PredictionPluginMatching | undefined {
-  // If an ignore point is inside the input text, we slice the text to the right
-  // of the ignore point (excluding the ignore point itself).
+  // Find the rightmost ignore point within the text range
+  let maxIgnore = -1
   for (const ignore of ignores) {
-    if (ignore >= textFrom && ignore < textTo) {
-      const cut = ignore + 1 - textFrom
-      text = text.slice(cut)
-      textFrom += cut
+    if (ignore >= textFrom && ignore < textTo && ignore > maxIgnore) {
+      maxIgnore = ignore
     }
+  }
+
+  // If an ignore point is within the text range, we ignore the text to the left
+  // of the ignore point (including the character right after the ignore point).
+  if (maxIgnore >= 0) {
+    const cut = maxIgnore + 1 - textFrom
+    text = text.slice(cut)
+    textFrom += cut
   }
 
   if (textFrom >= textTo || !text) {

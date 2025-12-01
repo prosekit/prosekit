@@ -58,9 +58,7 @@ export {
 } from './commands/wrap'
 export type {
   MarkAction,
-  MarkBuilder,
   NodeAction,
-  NodeBuilder,
   NodeChild,
 } from './editor/action'
 export {
@@ -87,10 +85,6 @@ export {
   defineDefaultState,
   type DefaultStateOptions,
 } from './extensions/default-state'
-export {
-  defineDoc,
-  type DocExtension,
-} from './extensions/doc'
 export {
   defineDocChangeHandler,
   type DocChangeHandler,
@@ -188,18 +182,10 @@ export {
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect'
 export {
-  defineParagraph,
-  type ParagraphExtension,
-} from './extensions/paragraph'
-export {
   definePlugin,
   pluginFacet,
   type PluginPayload,
 } from './extensions/plugin'
-export {
-  defineText,
-  type TextExtension,
-} from './extensions/text'
 export {
   defineFacet,
   type Facet,
@@ -210,12 +196,10 @@ export type {
   AnyAttrs,
   AttrSpec,
 } from './types/attrs'
-export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export type {
   Extension,
   ExtensionTyping,
   ExtractCommandActions,
-  ExtractCommandAppliers,
   ExtractCommandCreators,
   ExtractCommands,
   ExtractMarkActions,
@@ -225,7 +209,6 @@ export type {
   ExtractTyping,
   PlainExtension,
   Union,
-  UnionExtension,
 } from './types/extension'
 export type {
   CommandAction,
@@ -252,11 +235,6 @@ export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'
 export { clsx } from './utils/clsx'
-export { collectChildren } from './utils/collect-children'
-export {
-  collectNodes,
-  type NodeContent,
-} from './utils/collect-nodes'
 export { containsInlineNode } from './utils/contains-inline-node'
 export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'
@@ -265,7 +243,6 @@ export {
   type FindParentNodeResult,
 } from './utils/find-parent-node'
 export { findParentNodeOfType } from './utils/find-parent-node-of-type'
-export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export { isAtBlockStart } from './utils/is-at-block-start'

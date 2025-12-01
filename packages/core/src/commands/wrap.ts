@@ -17,11 +17,6 @@ export interface WrapOptions {
   type: NodeType | string
 
   /**
-   * @deprecated Use `nodeSpec` instead.
-   */
-  nodeType?: NodeType
-
-  /**
    * Optional attributes to apply to the node.
    */
   attrs?: Attrs | null
@@ -40,7 +35,7 @@ export function wrap(options: WrapOptions): Command {
     const range = $from.blockRange($to)
     if (!range) return false
 
-    const nodeType = getNodeType(state.schema, options.nodeType || options.type)
+    const nodeType = getNodeType(state.schema, options.type)
     const wrapping = findWrapping(range, nodeType, options.attrs)
     if (!wrapping) return false
 

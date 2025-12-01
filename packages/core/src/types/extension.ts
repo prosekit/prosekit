@@ -143,11 +143,6 @@ export type ExtractMarkActions<E extends Extension> = ToMarkAction<
 >
 
 /**
- * @deprecated Use `ExtractCommandActions` instead.
- */
-export type ExtractCommandAppliers<E extends Extension> = ExtractCommandActions<E>
-
-/**
  * @internal
  */
 export type Union<E extends readonly Extension[]> = Extension<{
@@ -155,14 +150,3 @@ export type Union<E extends readonly Extension[]> = Extension<{
   Marks: ExtractMarks<E[number]>
   Commands: ExtractCommands<E[number]>
 }>
-
-/**
- * @deprecated Use `Union` instead.
- * @internal
- */
-export type UnionExtension<E extends Extension | readonly Extension[]> = E extends readonly Extension[] ? Extension<{
-    Nodes: ExtractNodes<E[number]>
-    Marks: ExtractMarks<E[number]>
-    Commands: ExtractCommands<E[number]>
-  }>
-  : E

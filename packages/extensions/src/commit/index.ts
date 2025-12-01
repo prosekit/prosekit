@@ -250,7 +250,7 @@ function defineCommitDecoration(commit: Commit): PlainExtension {
  */
 function defineCommitViewer(commit: Commit): PlainExtension {
   return union(
-    defineDefaultState({ defaultDoc: commit.doc }),
+    defineDefaultState({ defaultContent: commit.doc }),
     defineCommitDecoration(commit),
   )
 }

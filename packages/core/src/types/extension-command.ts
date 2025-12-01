@@ -19,13 +19,6 @@ export interface CommandAction<Args extends any[] = any[]> {
    * can be executed, otherwise `false`.
    */
   canExec(...args: Args): boolean
-
-  /**
-   * An alias for `canExec`.
-   *
-   * @deprecated Use `canExec` instead.
-   */
-  canApply(...args: Args): boolean
 }
 
 export type CommandCreator<Args extends any[] = any[]> = (

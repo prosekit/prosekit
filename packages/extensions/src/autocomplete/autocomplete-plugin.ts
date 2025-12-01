@@ -197,21 +197,23 @@ function handleUpdate(view: EditorView, prevState: EditorState): void {
   const prevValue = getPluginState(prevState)
   const currValue = getPluginState(view.state)
 
-  if (
-    prevValue?.matching
-    && prevValue.matching.rule !== currValue?.matching?.rule
-  ) {
-    // Deactivate the previous rule
-    prevValue.matching.rule.onLeave?.()
+  if (!prevValue || !currValue) {
+    // Should not happen
+    return
   }
 
-  if (
-    currValue?.matching
-    && !currValue.ignores.has(currValue.matching.from)
-  ) {
+  const prevMatching = prevValue.matching
+  const currMatching = currValue.matching
+
+  if (prevMatching && prevMatching.rule !== currMatching?.rule) {
+    // Deactivate the previous rule
+    prevMatching.rule.onLeave?.()
+  }
+
+  if (currMatching && !currValue.ignores.has(currMatching.from)) {
     // Activate the current rule
 
-    const { from, to, match, rule } = currValue.matching
+    const { from, to, match, rule } = currMatching
 
     const textContent = getTextBetween(view.state.doc, from, to)
 

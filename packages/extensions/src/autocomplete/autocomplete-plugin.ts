@@ -283,8 +283,9 @@ function matchRule(
   // of the ignore point (excluding the ignore point itself).
   for (const ignore of ignores) {
     if (ignore >= textFrom && ignore < textTo) {
-      text = text.slice(ignore + 1 - textFrom)
-      textFrom = ignore + 1
+      const cut = ignore + 1 - textFrom
+      text = text.slice(cut)
+      textFrom += cut
     }
   }
 

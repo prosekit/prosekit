@@ -102,16 +102,20 @@ jobs:
       - name: Publish snapshot packages
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          for attempt in 1 2 3 4 5; do
+          max_attempts=8
+          base_sleep=10
+          for attempt in $(seq 1 "${max_attempts}"); do
             echo "Attempt ${attempt} to publish snapshot packages..."
             if pnpm run ci:publish:snapshot; then
               echo "Publish snapshot packages succeeded"
               break
-            elif [ ${attempt} -eq 5 ]; then
+            elif [ "${attempt}" -eq "${max_attempts}" ]; then
               echo "Publish snapshot packages failed"
               exit 1
             fi
-            sleep 5
+            sleep_duration=$((base_sleep * attempt))
+            echo "Sleeping ${sleep_duration}s before retry..."
+            sleep "${sleep_duration}"
           done
 
   linkcheck:

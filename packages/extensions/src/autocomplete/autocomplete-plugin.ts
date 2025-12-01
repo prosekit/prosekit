@@ -94,6 +94,8 @@ function handleTextInput(
 
   const textBackward = getTextBackward(view.state.doc.resolve(from))
   const textFull = textBackward + textAdded
+  const textTo = to + textAdded.length
+  const textFrom = textTo - textFull.length
 
   const pluginState = getPluginState(view.state)
   const ignores = pluginState?.ignores ?? new Set<number>()
@@ -102,7 +104,8 @@ function handleTextInput(
     view.state,
     getRules(),
     textFull,
-    to + textAdded.length,
+    textFrom,
+    textTo,
     ignores,
   )
 
@@ -161,6 +164,7 @@ function handleTransaction(
       newState,
       getRules(),
       text,
+      prevMatching.from,
       prevMatching.to,
       ignores,
     )
@@ -271,9 +275,23 @@ function matchRule(
   state: EditorState,
   rules: AutocompleteRule[],
   text: string,
-  to: number,
+  textFrom: number,
+  textTo: number,
   ignores: Set<number>,
 ): PredictionPluginMatching | undefined {
+  // If an ignore point is inside the input text, we slice the text to the right
+  // of the ignore point (excluding the ignore point itself).
+  for (const ignore of ignores) {
+    if (ignore >= textFrom && ignore < textTo) {
+      text = text.slice(ignore + 1 - textFrom)
+      textFrom = ignore + 1
+    }
+  }
+
+  if (textFrom >= textTo || !text) {
+    return
+  }
+
   for (const rule of rules) {
     if (!rule.canMatch({ state })) {
       continue
@@ -285,14 +303,10 @@ function matchRule(
       continue
     }
 
-    const from = to - text.length + match.index
+    const matchTo = textTo
+    const matchFrom = textFrom + match.index
 
-    // Check if the matching should be ignored
-    if (ignores.has(from)) {
-      continue
-    }
-
-    return { rule, match, from, to }
+    return { rule, match, from: matchFrom, to: matchTo }
   }
 }
 

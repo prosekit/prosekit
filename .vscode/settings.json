@@ -36,6 +36,9 @@
   "[vue]": {
     "editor.defaultFormatter": "dprint.dprint",
   },
-  "tailwindCSS.experimental.configFile": "./website/src/styles/global.css",
+  "tailwindCSS.experimental.configFile": {
+    "./registry/src/tailwind.css": "./registry/src/**",
+    "./website/src/styles/tailwind.css": "./website/src/**",
+  },
   "tailwindCSS.classFunctions": ["clsx", "cn"],
 }

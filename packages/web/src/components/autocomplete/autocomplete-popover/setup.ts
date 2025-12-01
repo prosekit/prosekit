@@ -135,7 +135,7 @@ function createAutocompleteRule(
 ) {
   const handleEnter: MatchHandler = (options) => {
     const view = getSafeEditorView(editor)
-    const span = view?.dom.querySelector('.prosemirror-prediction-match')
+    const span = view?.dom.querySelector('.prosekit-autocomplete-match')
 
     if (span) {
       reference.set(span)

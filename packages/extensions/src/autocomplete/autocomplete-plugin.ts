@@ -205,20 +205,19 @@ function handleUpdate(view: EditorView, prevState: EditorState): void {
   const prevMatching = prevValue.matching
   const currMatching = currValue.matching
 
+  // Deactivate the previous rule
   if (prevMatching && prevMatching.rule !== currMatching?.rule) {
-    // Deactivate the previous rule
     prevMatching.rule.onLeave?.()
   }
 
-  if (currMatching && !currValue.ignores.has(currMatching.from)) {
-    // Activate the current rule
-
+  // Activate the current rule
+  if (currMatching) {
     const { from, to, match, rule } = currMatching
 
-    const textContent = getTextBetween(view.state.doc, from, to)
+    const textSnapshot = getTextBetween(view.state.doc, from, to)
 
     const deleteMatch = () => {
-      if (getTextBetween(view.state.doc, from, to) === textContent) {
+      if (getTextBetween(view.state.doc, from, to) === textSnapshot) {
         view.dispatch(view.state.tr.delete(from, to))
       }
     }

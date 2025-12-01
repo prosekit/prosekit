@@ -53,7 +53,7 @@ export function createAutocompletePlugin({
 
     state: {
       init: (): PredictionPluginState => {
-        return { ignores: new Set(), matching: null }
+        return { ignores: [], matching: null }
       },
       apply: (tr, prevValue, oldState, newState): PredictionPluginState => {
         return handleTransaction(tr, prevValue, oldState, newState, getRules)
@@ -98,7 +98,7 @@ function handleTextInput(
   const textFrom = textTo - textFull.length
 
   const pluginState = getPluginState(view.state)
-  const ignores = pluginState?.ignores ?? new Set<number>()
+  const ignores = pluginState?.ignores ?? []
 
   const currMatching = matchRule(
     view.state,
@@ -133,13 +133,14 @@ function handleTransaction(
   }
 
   // Handle position mapping changes
-  const ignores = new Set<number>()
+  const ignoreSet = new Set<number>()
   for (const ignore of prevValue.ignores) {
     const result = tr.mapping.mapResult(ignore)
     if (!result.deletedBefore && !result.deletedAfter) {
-      ignores.add(result.pos)
+      ignoreSet.add(result.pos)
     }
   }
+  const ignores = Array.from(ignoreSet)
 
   const prevMatching = prevValue.matching && mapMatching(prevValue.matching, tr.mapping)
 
@@ -153,7 +154,7 @@ function handleTransaction(
     // If the text selection is before the matching or after the matching,
     // we leave the matching
     if (selection.to < prevMatching.from || selection.from > prevMatching.to) {
-      ignores.add(prevMatching.from)
+      ignores.push(prevMatching.from)
       return { matching: null, ignores }
     }
 
@@ -175,7 +176,7 @@ function handleTransaction(
   if (meta.type === 'enter') {
     // Ignore the previous matching if it is not the same as the new matching
     if (prevMatching && prevMatching.from !== meta.matching.from) {
-      ignores.add(prevMatching.from)
+      ignores.push(prevMatching.from)
     }
 
     // Return the new matching
@@ -185,7 +186,7 @@ function handleTransaction(
   // If a matching is being exited
   if (meta.type === 'leave') {
     if (prevMatching) {
-      ignores.add(prevMatching.from)
+      ignores.push(prevMatching.from)
     }
     return { matching: null, ignores }
   }
@@ -278,7 +279,7 @@ function matchRule(
   text: string,
   textFrom: number,
   textTo: number,
-  ignores: Set<number>,
+  ignores: Array<number>,
 ): PredictionPluginMatching | undefined {
   // If an ignore point is inside the input text, we slice the text to the right
   // of the ignore point (excluding the ignore point itself).

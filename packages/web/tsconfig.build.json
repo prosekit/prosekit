@@ -3,31 +3,31 @@
   "compilerOptions": {
     "isolatedDeclarations": true,
     "allowJs": false
-},
-"references": [
+  },
+  "references": [
     {
-        "path": "../config-tsdown/tsconfig.json"
+      "path": "../config-tsdown/tsconfig.json"
     },
     {
-        "path": "../config-vitest/tsconfig.json"
+      "path": "../config-vitest/tsconfig.json"
     },
     {
-        "path": "../core/tsconfig.build.json"
+      "path": "../core/tsconfig.build.json"
     },
     {
-        "path": "../core/tsconfig.json"
+      "path": "../core/tsconfig.json"
     },
     {
-        "path": "../extensions/tsconfig.build.json"
+      "path": "../extensions/tsconfig.build.json"
     },
     {
-        "path": "../extensions/tsconfig.json"
+      "path": "../extensions/tsconfig.json"
     },
     {
-        "path": "../pm/tsconfig.build.json"
+      "path": "../pm/tsconfig.build.json"
     },
     {
-        "path": "../pm/tsconfig.json"
+      "path": "../pm/tsconfig.json"
     }
-]
+  ]
 }

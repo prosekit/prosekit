@@ -21,13 +21,13 @@
   },
   "references": [
     {
-        "path": "../packages/prosekit/tsconfig.build.json"
+      "path": "../packages/prosekit/tsconfig.build.json",
     },
     {
-        "path": "../packages/prosekit/tsconfig.json"
+      "path": "../packages/prosekit/tsconfig.json",
     },
     {
-        "path": "../registry/tsconfig.json"
-    }
-],
+      "path": "../registry/tsconfig.json",
+    },
+  ],
 }

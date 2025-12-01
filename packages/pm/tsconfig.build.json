@@ -3,13 +3,13 @@
   "compilerOptions": {
     "isolatedDeclarations": true,
     "allowJs": false
-},
-"references": [
+  },
+  "references": [
     {
-        "path": "../config-tsdown/tsconfig.json"
+      "path": "../config-tsdown/tsconfig.json"
     },
     {
-        "path": "../config-vitest/tsconfig.json"
+      "path": "../config-vitest/tsconfig.json"
     }
-]
+  ]
 }

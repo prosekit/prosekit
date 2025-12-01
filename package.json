@@ -20,7 +20,7 @@
     "fix:manypkg": "manypkg fix",
     "fix:dprint": "dprint fmt",
     "fix:eslint": "eslint . --fix --cache",
-    "fix:tsconfig": "monorepo-typescript-references fix",
+    "fix:tsconfig": "monorepo-typescript-references fix --configName tsconfig.build.json --configName tsconfig.json",
     "dev": "pnpm --filter='./website' run dev",
     "gen": "pnpm -r --sequential run gen",
     "lint": "pnpm run lint:eslint && pnpm run lint:packages && pnpm run lint:knip",

@@ -3,16 +3,25 @@
   "include": ["./*.js", "./*.ts", "./scripts"],
   "references": [
     {
-      "path": "../core/tsconfig.json",
+        "path": "../core/tsconfig.build.json"
     },
     {
-      "path": "../pm/tsconfig.json",
+        "path": "../core/tsconfig.json"
     },
     {
-      "path": "../web/tsconfig.json",
+        "path": "../pm/tsconfig.build.json"
     },
     {
-      "path": "./tsconfig.build.json",
+        "path": "../pm/tsconfig.json"
     },
-  ],
+    {
+        "path": "../web/tsconfig.build.json"
+    },
+    {
+        "path": "../web/tsconfig.json"
+    },
+    {
+        "path": "./tsconfig.build.json"
+    }
+],
 }

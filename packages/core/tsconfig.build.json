@@ -4,5 +4,19 @@
   "compilerOptions": {
     "isolatedDeclarations": true,
     "allowJs": false
-  }
+},
+"references": [
+    {
+        "path": "../config-tsdown/tsconfig.json"
+    },
+    {
+        "path": "../config-vitest/tsconfig.json"
+    },
+    {
+        "path": "../pm/tsconfig.build.json"
+    },
+    {
+        "path": "../pm/tsconfig.json"
+    }
+]
 }

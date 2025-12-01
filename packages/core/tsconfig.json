@@ -3,16 +3,19 @@
   "include": ["./*", "src/**/*.spec.*", "src/**/testing/**/*"],
   "references": [
     {
-      "path": "../config-tsdown/tsconfig.json",
+        "path": "../config-tsdown/tsconfig.json"
     },
     {
-      "path": "../config-vitest/tsconfig.json",
+        "path": "../config-vitest/tsconfig.json"
     },
     {
-      "path": "../pm/tsconfig.json",
+        "path": "../pm/tsconfig.build.json"
     },
     {
-      "path": "./tsconfig.build.json",
+        "path": "../pm/tsconfig.json"
     },
-  ],
+    {
+        "path": "./tsconfig.build.json"
+    }
+],
 }

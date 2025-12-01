@@ -265,7 +265,6 @@ export {
   type FindParentNodeResult,
 } from './utils/find-parent-node'
 export { findParentNodeOfType } from './utils/find-parent-node-of-type'
-export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export { isAtBlockStart } from './utils/is-at-block-start'

@@ -140,14 +140,13 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       const oldSpec = specs.get(type)
       assert(oldSpec, `Mark type ${type} must be defined`)
 
-      const newSpec: MarkSpec = { ...oldSpec }
-      const newAttrs: Record<string, AttributeSpec> = newSpec.attrs ||= {}
+      const newSpec = { ...oldSpec, attrs: { ...oldSpec.attrs } } satisfies MarkSpec
 
       for (const attr of attrs) {
-        newAttrs[attr.attr] = {
+        newSpec.attrs[attr.attr] = {
           default: attr.default as unknown,
           validate: attr.validate,
-        }
+        } satisfies AttributeSpec
       }
 
       if (oldSpec.toDOM) {

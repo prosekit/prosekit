@@ -166,15 +166,14 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       const oldSpec = specs.get(type)
       assert(oldSpec, `Node type ${type} must be defined`)
 
-      const newSpec: NodeSpec = { ...oldSpec }
-      const newAttrs: Record<string, AttributeSpec> = newSpec.attrs ||= {}
+      const newSpec = { ...oldSpec, attrs: { ...oldSpec.attrs } } satisfies NodeSpec
 
       for (const attr of attrs) {
-        newAttrs[attr.attr] = {
+        newSpec.attrs[attr.attr] = {
           default: attr.default as unknown,
           validate: attr.validate,
           splittable: attr.splittable,
-        }
+        } satisfies AttributeSpec
       }
 
       if (newSpec.toDOM) {

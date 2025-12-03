@@ -1,4 +1,4 @@
-import type { ObjectEntries } from '../types/object-entries'
+import type { ObjectEntries } from '@ocavue/utils'
 
 export function groupEntries<T extends Record<string, any>>(
   entries: ObjectEntries<T>[],

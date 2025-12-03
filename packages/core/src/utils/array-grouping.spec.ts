@@ -3,10 +3,7 @@ import {
   test,
 } from 'vitest'
 
-import {
-  groupBy,
-  groupEntries,
-} from './array-grouping'
+import { groupEntries } from './array-grouping'
 
 test('groupEntries', () => {
   expect(
@@ -18,12 +15,5 @@ test('groupEntries', () => {
   ).toEqual({
     a: [1, 3],
     b: [2],
-  })
-})
-
-test('groupBy', () => {
-  expect(groupBy([1, 2, 3, 4, 5], (n) => n % 2)).toEqual({
-    0: [2, 4],
-    1: [1, 3, 5],
   })
 })

@@ -1,3 +1,4 @@
+import { mapGroupBy } from '@ocavue/utils'
 import type {
   AttributeSpec,
   MarkSpec,
@@ -13,7 +14,6 @@ import type {
   AttrSpec,
 } from '../types/attrs'
 import type { Extension } from '../types/extension'
-import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
 import { mergeSpecs } from '../utils/merge-specs'
 import {
@@ -132,9 +132,9 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       }
     }
 
-    const groupedAttrs = groupBy(attrPayloads, (payload) => payload.type)
+    const groupedAttrs = mapGroupBy(attrPayloads, (payload) => payload.type)
 
-    for (const [type, attrs] of Object.entries(groupedAttrs)) {
+    for (const [type, attrs] of groupedAttrs.entries()) {
       if (!attrs) continue
 
       const oldSpec = specs.get(type)

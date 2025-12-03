@@ -8,6 +8,9 @@ overrides:
   typescript: 6.0.0-dev.20251203
 
 patchedDependencies:
+  typedoc:
+    hash: 2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4
+    path: patches/typedoc.patch
   y-prosemirror:
     hash: 532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031
     path: patches/y-prosemirror.patch
@@ -510,22 +513,22 @@ importers:
         version: 0.17.0-beta.5(oxc-resolver@11.14.2)(synckit@0.11.11)(typescript@6.0.0-dev.20251203)(vue-tsc@3.1.5(typescript@6.0.0-dev.20251203))
       typedoc:
         specifier: ^0.28.15
-        version: 0.28.15(typescript@6.0.0-dev.20251203)
+        version: 0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)
       typedoc-plugin-external-package-links:
         specifier: ^0.2.0
         version: 0.2.0
       typedoc-plugin-frontmatter:
         specifier: ^1.3.1
-        version: 1.3.1(typedoc-plugin-markdown@4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203)))
+        version: 1.3.1(typedoc-plugin-markdown@4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)))
       typedoc-plugin-markdown:
         specifier: ^4.9.0
-        version: 4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203))
+        version: 4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))
       typedoc-plugin-md:
         specifier: ^0.7.1
-        version: 0.7.1(typedoc@0.28.15(typescript@6.0.0-dev.20251203))
+        version: 0.7.1(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))
       typedoc-plugin-mdn-links:
         specifier: ^5.0.10
-        version: 5.0.10(typedoc@0.28.15(typescript@6.0.0-dev.20251203))
+        version: 5.0.10(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))
       typescript:
         specifier: 6.0.0-dev.20251203
         version: 6.0.0-dev.20251203
@@ -660,10 +663,10 @@ importers:
     dependencies:
       typedoc:
         specifier: ^0.28.15
-        version: 0.28.15(typescript@6.0.0-dev.20251203)
+        version: 0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)
       typedoc-plugin-markdown:
         specifier: ^4.9.0
-        version: 4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203))
+        version: 4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))
     devDependencies:
       '@types/node':
         specifier: ^24.10.1
@@ -15362,26 +15365,26 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.2.0: {}
 
-  typedoc-plugin-frontmatter@1.3.1(typedoc-plugin-markdown@4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203))):
+  typedoc-plugin-frontmatter@1.3.1(typedoc-plugin-markdown@4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))):
     dependencies:
-      typedoc-plugin-markdown: 4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203))
+      typedoc-plugin-markdown: 4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))
       yaml: 2.8.2
 
-  typedoc-plugin-markdown@4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203)):
+  typedoc-plugin-markdown@4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)):
     dependencies:
-      typedoc: 0.28.15(typescript@6.0.0-dev.20251203)
+      typedoc: 0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)
 
-  typedoc-plugin-md@0.7.1(typedoc@0.28.15(typescript@6.0.0-dev.20251203)):
+  typedoc-plugin-md@0.7.1(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)):
     dependencies:
-      typedoc-plugin-markdown: 4.9.0(typedoc@0.28.15(typescript@6.0.0-dev.20251203))
+      typedoc-plugin-markdown: 4.9.0(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203))
     optionalDependencies:
-      typedoc: 0.28.15(typescript@6.0.0-dev.20251203)
+      typedoc: 0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)
 
-  typedoc-plugin-mdn-links@5.0.10(typedoc@0.28.15(typescript@6.0.0-dev.20251203)):
+  typedoc-plugin-mdn-links@5.0.10(typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)):
     dependencies:
-      typedoc: 0.28.15(typescript@6.0.0-dev.20251203)
+      typedoc: 0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203)
 
-  typedoc@0.28.15(typescript@6.0.0-dev.20251203):
+  typedoc@0.28.15(patch_hash=2838d310869dee2e034c5d98a5b39e0ab7483f56f94f8e0bc8347235206cb9d4)(typescript@6.0.0-dev.20251203):
     dependencies:
       '@gerrit0/mini-shiki': 3.18.0
       lunr: 2.3.9

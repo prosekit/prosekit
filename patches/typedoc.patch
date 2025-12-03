@@ -1,0 +1,13 @@
+diff --git a/package.json b/package.json
+index 2fc15950bdcf335b2e84028ebda6943396a2f605..33a0f84c984ee43301204231b64102e5fb6017e9 100644
+--- a/package.json
++++ b/package.json
+@@ -38,7 +38,7 @@
+     "yaml": "^2.8.1"
+   },
+   "peerDependencies": {
+-    "typescript": "5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x"
++    "typescript": "5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x || 6.0.x"
+   },
+   "devDependencies": {
+     "@eslint/js": "^9.39.1",

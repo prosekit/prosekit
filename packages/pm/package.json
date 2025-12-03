@@ -53,12 +53,12 @@
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
     "prosemirror-transform": "^1.10.5",
-    "prosemirror-view": "^1.41.3"
+    "prosemirror-view": "^1.41.4"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.17.0-beta.3",
+    "tsdown": "^0.17.0-beta.5",
     "typescript": "~5.9.3"
   },
   "publishConfig": {

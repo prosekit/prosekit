@@ -12,7 +12,7 @@
     }
   },
   "dependencies": {
-    "@vitest/browser-playwright": "^4.0.14"
+    "@vitest/browser-playwright": "^4.0.15"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",

@@ -11,6 +11,7 @@ export default defineESLintConfig(
         '**/preact/**/*.ts',
         '**/preact/**/*.tsx',
       ],
+      version: '19.2',
     },
     vue: true,
     markdown: true,

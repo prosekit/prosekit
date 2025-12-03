@@ -2,6 +2,7 @@ import { isElementLike } from '@ocavue/utils'
 import type {
   DOMOutputSpec,
   Mark,
+  ParseRule,
   ProseMirrorNode,
   TagParseRule,
 } from '@prosekit/pm/model'
@@ -57,6 +58,16 @@ export function wrapTagParseRuleAttrs(
       return { ...baseAttrs, ...insertedAttrs }
     },
   }
+}
+
+export function wrapParseRuleAttrs(
+  rule: ParseRule,
+  attrs: AttrOptions[],
+): ParseRule {
+  if (rule.tag) {
+    return wrapTagParseRuleAttrs(rule, attrs)
+  }
+  return rule
 }
 
 export function insertOutputSpecAttrs(

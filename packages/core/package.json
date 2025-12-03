@@ -41,7 +41,6 @@
     "@ocavue/utils": "^1.0.0",
     "@prosekit/pm": "workspace:^",
     "clsx": "^2.1.1",
-    "just-clone": "^6.2.0",
     "just-map-values": "^3.2.0",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",

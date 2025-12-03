@@ -1,9 +1,8 @@
 import type {
+  AttributeSpec,
   MarkSpec,
-  ParseRule,
   SchemaSpec,
 } from '@prosekit/pm/model'
-import clone from 'just-clone'
 import OrderedMap from 'orderedmap'
 
 import { defineFacet } from '../facets/facet'
@@ -19,7 +18,7 @@ import { assert } from '../utils/assert'
 import { mergeSpecs } from '../utils/merge-specs'
 import {
   wrapOutputSpecAttrs,
-  wrapTagParseRuleAttrs,
+  wrapParseRuleAttrs,
 } from '../utils/output-spec'
 import { isNotNullish } from '../utils/type-assertion'
 
@@ -138,30 +137,27 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
     for (const [type, attrs] of Object.entries(groupedAttrs)) {
       if (!attrs) continue
 
-      const maybeSpec = specs.get(type)
-      assert(maybeSpec, `Mark type ${type} must be defined`)
-      const spec = clone(maybeSpec)
+      const oldSpec = specs.get(type)
+      assert(oldSpec, `Mark type ${type} must be defined`)
 
-      if (!spec.attrs) {
-        spec.attrs = {}
-      }
+      const newSpec = { ...oldSpec, attrs: { ...oldSpec.attrs } } satisfies MarkSpec
 
       for (const attr of attrs) {
-        spec.attrs[attr.attr] = {
+        newSpec.attrs[attr.attr] = {
           default: attr.default as unknown,
           validate: attr.validate,
-        }
+        } satisfies AttributeSpec
       }
 
-      if (spec.toDOM) {
-        spec.toDOM = wrapOutputSpecAttrs(spec.toDOM, attrs)
+      if (oldSpec.toDOM) {
+        newSpec.toDOM = wrapOutputSpecAttrs(oldSpec.toDOM, attrs)
       }
 
-      if (spec.parseDOM) {
-        spec.parseDOM = spec.parseDOM.map((rule) => wrapParseRuleAttrs(rule, attrs))
+      if (oldSpec.parseDOM) {
+        newSpec.parseDOM = oldSpec.parseDOM.map((rule) => wrapParseRuleAttrs(rule, attrs))
       }
 
-      specs = specs.update(type, spec)
+      specs = specs.update(type, newSpec)
     }
 
     return { marks: specs, nodes: {} }
@@ -169,13 +165,3 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
-
-function wrapParseRuleAttrs(
-  rule: ParseRule,
-  attrs: MarkAttrOptions[],
-): ParseRule {
-  if (rule.tag) {
-    return wrapTagParseRuleAttrs(rule, attrs)
-  }
-  return rule
-}

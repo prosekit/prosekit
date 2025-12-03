@@ -59,9 +59,7 @@
     "vitest": "^4.0.15"
   },
   "pnpm": {
-    "overrides": {
-      "vite": "6.4.1"
-    },
+    "overrides": {},
     "patchedDependencies": {
       "y-prosemirror": "patches/y-prosemirror.patch"
     },

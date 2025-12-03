@@ -13,7 +13,7 @@
     "@types/lodash-es": "^4.17.12",
     "lodash-es": "^4.17.21",
     "read-package-up": "^12.0.0",
-    "tsdown": "^0.17.0-beta.3",
+    "tsdown": "^0.17.0-beta.5",
     "typescript": "~5.9.3"
   }
 }

@@ -9,7 +9,6 @@ import type {
   Selection,
 } from '@prosekit/pm/state'
 
-import { toReversed } from '../utils/array'
 import { assert } from '../utils/assert'
 
 import {
@@ -37,7 +36,7 @@ export const stateFacet: Facet<StatePayload, RootPayload> = defineFacet({
 
       // An array of state payloads from higher to lower priority. This matches the
       // order of plugins required by ProseMirror.
-      const reversedCallbacks = toReversed(callbacks)
+      const reversedCallbacks = [...callbacks].reverse()
 
       for (const callback of reversedCallbacks) {
         const config = callback(ctx)

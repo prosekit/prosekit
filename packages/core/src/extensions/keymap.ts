@@ -14,7 +14,6 @@ import {
 } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { PlainExtension } from '../types/extension'
-import { toReversed } from '../utils/array'
 import { isApple } from '../utils/env'
 
 import {
@@ -73,7 +72,7 @@ export const keymapFacet: Facet<KeymapPayload, PluginPayload> = defineFacet<
       handler = keydownHandler(
         mergeKeymaps(
           // The keymap at the end have a higher priority.
-          toReversed(keymaps),
+          [...keymaps].reverse(),
         ),
       )
       return plugin

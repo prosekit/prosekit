@@ -59,7 +59,9 @@
     "vitest": "^4.0.15"
   },
   "pnpm": {
-    "overrides": {},
+    "overrides": {
+      "typescript": "6.0.0-dev.20251203"
+    },
     "patchedDependencies": {
       "y-prosemirror": "patches/y-prosemirror.patch"
     },

@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@changesets/read": "^0.6.6",
-    "@ocavue/utils": "^1.0.0",
+    "@ocavue/utils": "^1.2.0",
     "@types/node": "^24.10.1",
     "change-case": "^5.4.4",
     "tsx": "^4.21.0",

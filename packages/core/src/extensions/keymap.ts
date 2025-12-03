@@ -1,3 +1,4 @@
+import { mapValues } from '@ocavue/utils'
 import { chainCommands } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import {
@@ -6,7 +7,6 @@ import {
   type Command,
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-import mapValues from 'just-map-values'
 
 import {
   defineFacet,

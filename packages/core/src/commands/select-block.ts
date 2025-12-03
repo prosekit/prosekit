@@ -30,13 +30,6 @@ export const selectBlockCommand: Command = (state, dispatch) => {
     return false
   }
 
-  // If there is only one block in the document, we don't need to select it.
-  // Just return false and fall back to the default behavior, which creates an
-  // `AllSelection` instance.
-  if (state.doc.childCount <= 1) {
-    return false
-  }
-
   const expectedFrom = getTextblockEndpoint(selection, -1)
   const expectedTo = getTextblockEndpoint(selection, 1)
   if (expectedFrom == null || expectedTo == null) {

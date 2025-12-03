@@ -166,7 +166,7 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-transform@1.10.5)
       type-fest:
-        specifier: ^5.2.0
+        specifier: ^5.3.0
         version: 5.3.0
     devDependencies:
       '@prosekit/config-tsdown':
@@ -228,7 +228,7 @@ importers:
         specifier: ^4.20.6
         version: 4.20.6
       type-fest:
-        specifier: ^5.2.0
+        specifier: ^5.3.0
         version: 5.3.0
       typescript:
         specifier: ~5.9.3
@@ -316,7 +316,7 @@ importers:
         specifier: ^0.17.0-beta.3
         version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       type-fest:
-        specifier: ^5.2.0
+        specifier: ^5.3.0
         version: 5.3.0
       typescript:
         specifier: ~5.9.3
@@ -792,7 +792,7 @@ importers:
         specifier: ^0.17.0-beta.3
         version: 0.17.0-beta.3(oxc-resolver@11.14.0)(synckit@0.11.11)(typescript@5.9.3)(vue-tsc@3.1.5(typescript@5.9.3))
       type-fest:
-        specifier: ^5.2.0
+        specifier: ^5.3.0
         version: 5.3.0
       typescript:
         specifier: ~5.9.3

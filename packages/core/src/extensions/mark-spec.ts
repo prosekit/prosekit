@@ -1,9 +1,9 @@
 import type {
+  AttributeSpec,
   MarkSpec,
   ParseRule,
   SchemaSpec,
 } from '@prosekit/pm/model'
-import clone from 'just-clone'
 import OrderedMap from 'orderedmap'
 
 import { defineFacet } from '../facets/facet'
@@ -138,30 +138,27 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
     for (const [type, attrs] of Object.entries(groupedAttrs)) {
       if (!attrs) continue
 
-      const maybeSpec = specs.get(type)
-      assert(maybeSpec, `Mark type ${type} must be defined`)
-      const spec = clone(maybeSpec)
-
-      if (!spec.attrs) {
-        spec.attrs = {}
-      }
+      const oldSpec = specs.get(type)
+      assert(oldSpec, `Mark type ${type} must be defined`)
+      const newSpec: MarkSpec = { ...oldSpec }
+      const newAttrs: Record<string, AttributeSpec> = newSpec.attrs ||= {}
 
       for (const attr of attrs) {
-        spec.attrs[attr.attr] = {
+        newAttrs[attr.attr] = {
           default: attr.default as unknown,
           validate: attr.validate,
         }
       }
 
-      if (spec.toDOM) {
-        spec.toDOM = wrapOutputSpecAttrs(spec.toDOM, attrs)
+      if (oldSpec.toDOM) {
+        newSpec.toDOM = wrapOutputSpecAttrs(oldSpec.toDOM, attrs)
       }
 
-      if (spec.parseDOM) {
-        spec.parseDOM = spec.parseDOM.map((rule) => wrapParseRuleAttrs(rule, attrs))
+      if (oldSpec.parseDOM) {
+        newSpec.parseDOM = oldSpec.parseDOM.map((rule) => wrapParseRuleAttrs(rule, attrs))
       }
 
-      specs = specs.update(type, spec)
+      specs = specs.update(type, newSpec)
     }
 
     return { marks: specs, nodes: {} }

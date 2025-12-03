@@ -1,7 +1,6 @@
 import type {
   AttributeSpec,
   MarkSpec,
-  ParseRule,
   SchemaSpec,
 } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
@@ -19,7 +18,7 @@ import { assert } from '../utils/assert'
 import { mergeSpecs } from '../utils/merge-specs'
 import {
   wrapOutputSpecAttrs,
-  wrapTagParseRuleAttrs,
+  wrapParseRuleAttrs,
 } from '../utils/output-spec'
 import { isNotNullish } from '../utils/type-assertion'
 
@@ -140,6 +139,7 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
 
       const oldSpec = specs.get(type)
       assert(oldSpec, `Mark type ${type} must be defined`)
+
       const newSpec: MarkSpec = { ...oldSpec }
       const newAttrs: Record<string, AttributeSpec> = newSpec.attrs ||= {}
 
@@ -166,13 +166,3 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
-
-function wrapParseRuleAttrs(
-  rule: ParseRule,
-  attrs: MarkAttrOptions[],
-): ParseRule {
-  if (rule.tag) {
-    return wrapTagParseRuleAttrs(rule, attrs)
-  }
-  return rule
-}

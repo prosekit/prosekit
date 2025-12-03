@@ -176,12 +176,12 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
         } satisfies AttributeSpec
       }
 
-      if (newSpec.toDOM) {
-        newSpec.toDOM = wrapOutputSpecAttrs(newSpec.toDOM, attrs)
+      if (oldSpec.toDOM) {
+        newSpec.toDOM = wrapOutputSpecAttrs(oldSpec.toDOM, attrs)
       }
 
-      if (newSpec.parseDOM) {
-        newSpec.parseDOM = newSpec.parseDOM.map((rule) => wrapTagParseRuleAttrs(rule, attrs))
+      if (oldSpec.parseDOM) {
+        newSpec.parseDOM = oldSpec.parseDOM.map((rule) => wrapTagParseRuleAttrs(rule, attrs))
       }
 
       specs = specs.update(type, newSpec)

@@ -47,6 +47,20 @@ describe('Mod-a', () => {
     expect(inspectSelection(editor)).toMatchInlineSnapshot(`"all: <paragraph("Foo"), paragraph("Bar")>"`)
   })
 
+  it('can select the entire document if the current textblock is empty', async () => {
+    const { editor, n } = setupTestFromExtension(union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+      defineBaseKeymap(),
+    ))
+
+    editor.set(n.doc(n.paragraph('Foo'), n.paragraph('<a>'), n.paragraph('Bar')))
+    expect(inspectSelection(editor)).toMatchInlineSnapshot(`"text: <>"`)
+    await keyboard.press('ControlOrMeta+a')
+    expect(inspectSelection(editor)).toMatchInlineSnapshot(`"all: <paragraph("Foo"), paragraph, paragraph("Bar")>"`)
+  })
+
   it('can select the entire document directly if `preferBlockSelection` is false', async () => {
     const { editor, n } = setupTestFromExtension(union(
       defineDoc(),

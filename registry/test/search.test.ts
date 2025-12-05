@@ -2,14 +2,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -30,7 +28,8 @@ testStory('search', () => {
     await expectLocatorToHaveCount(searchMatch, 0)
     await expectLocatorToHaveCount(activeSearchMatch, 0)
 
-    await userEvent.type(searchInput, 'One')
+    await searchInput.click()
+    await inputText('One')
 
     await expectLocatorToHaveCount(searchMatch, 3)
     await expectLocatorToHaveCount(activeSearchMatch, 0)
@@ -45,7 +44,8 @@ testStory('search', () => {
     await expectLocatorToHaveCount(replaceInput, 1)
     await expect.element(replaceInput).toBeVisible()
 
-    await userEvent.type(replaceInput, 'Zero')
+    await replaceInput.click()
+    await inputText('Zero')
     await keyboard.press('Enter')
 
     await expectLocatorToHaveCount(searchMatch, 1)

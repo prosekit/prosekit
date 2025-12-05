@@ -1,3 +1,4 @@
+import { mapValues } from '@ocavue/utils'
 import type {
   Attrs,
   Mark,
@@ -7,7 +8,6 @@ import type {
   Schema,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
-import mapValues from 'just-map-values'
 
 import { ProseKitError } from '../error'
 import type { AnyAttrs } from '../types/attrs'

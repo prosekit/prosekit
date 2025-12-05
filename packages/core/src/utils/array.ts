@@ -15,7 +15,3 @@ export function uniqPush<T>(prev: readonly T[], next: readonly T[]): T[] {
 export function arraySubtract<T>(a: T[], b: T[]): T[] {
   return a.filter((x) => !b.includes(x))
 }
-
-export function toReversed<T>(arr: T[]): T[] {
-  return arr.toReversed?.() ?? [...arr].reverse()
-}

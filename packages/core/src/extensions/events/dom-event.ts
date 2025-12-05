@@ -85,10 +85,7 @@ const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
             hasNewEvent = true
             const [setHandlers, combinedHandler] = combineEventHandlers<DOMEventHandler>()
             setHandlersMap[event] = setHandlers
-            const e: DOMEventHandler = (view, eventObject) => {
-              return combinedHandler(view, eventObject)
-            }
-            combinedHandlerMap[event] = e
+            combinedHandlerMap[event] = combinedHandler
           }
         }
 

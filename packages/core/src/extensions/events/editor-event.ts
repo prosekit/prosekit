@@ -1,3 +1,4 @@
+import type { ObjectEntries } from '@ocavue/utils'
 import type {
   Node,
   Slice,
@@ -14,7 +15,6 @@ import {
 } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { PlainExtension } from '../../types/extension'
-import type { ObjectEntries } from '../../types/object-entries'
 import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
 import {

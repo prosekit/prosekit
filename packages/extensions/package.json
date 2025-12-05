@@ -82,7 +82,7 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.0.0",
+    "@ocavue/utils": "^1.2.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "prosemirror-changeset": "^2.3.1",

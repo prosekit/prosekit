@@ -75,7 +75,24 @@ export interface MarkAttrOptions<
 }
 
 /**
+ * Defines a mark type into the editor schema.
+ *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const extension = defineMarkSpec({
+ *   name: 'bold',
+ *   parseDOM: [
+ *     { tag: 'strong' },
+ *     { tag: 'b' },
+ *   ],
+ *   toDOM() {
+ *     return ['strong', 0]
+ *   },
+ * })
+ * ```
  */
 export function defineMarkSpec<
   Mark extends string,

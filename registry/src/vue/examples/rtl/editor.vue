@@ -39,14 +39,14 @@ watchPostEffect((onCleanup) => {
 
 <template>
   <ProseKit :editor="editor">
-    <div class="CSS_EDITOR_VIEWPORT" dir="rtl">
+    <div dir="rtl" class="CSS_EDITOR_VIEWPORT">
       <Toolbar :uploader="sampleUploader" />
       <div class="CSS_EDITOR_SCROLLING">
         <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
         <InlineMenu />
         <SlashMenu />
-        <BlockHandle placement="right" />
-        <TableHandle />
+        <BlockHandle dir="rtl" />
+        <TableHandle dir="rtl" />
         <DropIndicator />
       </div>
     </div>

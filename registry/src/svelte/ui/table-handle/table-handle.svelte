@@ -51,6 +51,12 @@ function getTableHandleState(editor: Editor<TableExtension>) {
   }
 }
 
+interface Props {
+  dir?: 'ltr' | 'rtl'
+}
+
+const props: Props = $props()
+
 const state = useEditorDerivedValue(getTableHandleState)
 </script>
 
@@ -106,7 +112,10 @@ const state = useEditorDerivedValue(getTableHandleState)
       {/if}
     </TableHandlePopoverContent>
   </TableHandleColumnRoot>
-  <TableHandleRowRoot class="CSS_TABLE_ROW_HANDLE">
+  <TableHandleRowRoot
+    placement={props.dir === 'rtl' ? 'right' : 'left'}
+    class="CSS_TABLE_ROW_HANDLE"
+  >
     <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
       <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
     </TableHandleRowTrigger>

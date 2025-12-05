@@ -28,14 +28,14 @@ const editor = createEditor({ extension, defaultContent })
 </script>
 
 <ProseKit {editor}>
-  <div class="CSS_EDITOR_VIEWPORT" dir="rtl">
+  <div dir="rtl" class="CSS_EDITOR_VIEWPORT">
     <Toolbar uploader={sampleUploader} />
     <div class="CSS_EDITOR_SCROLLING">
       <div use:editor.mount class="CSS_EDITOR_CONTENT"></div>
       <InlineMenu />
       <SlashMenu />
-      <BlockHandle placement="right" />
-      <TableHandle />
+      <BlockHandle dir="rtl" />
+      <TableHandle dir="rtl" />
       <DropIndicator />
     </div>
   </div>

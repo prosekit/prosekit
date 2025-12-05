@@ -6,14 +6,17 @@ import {
 } from 'prosekit/vue/block-handle'
 
 interface Props {
-  placement?: 'left' | 'right'
+  dir?: 'ltr' | 'rtl'
 }
 
 const props = defineProps<Props>()
 </script>
 
 <template>
-  <BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER" :placement="props.placement">
+  <BlockHandlePopover
+    :placement="props.dir === 'rtl' ? 'right' : 'left'"
+    class="CSS_BLOCK_HANDLE_POPOVER"
+  >
     <BlockHandleAdd class="CSS_BLOCK_HANDLE_ADD">
       <div class="CSS_ICON_PLUS" />
     </BlockHandleAdd>

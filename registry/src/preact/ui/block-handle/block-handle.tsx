@@ -5,12 +5,15 @@ import {
 } from 'prosekit/preact/block-handle'
 
 interface Props {
-  placement?: 'left' | 'right'
+  dir?: 'ltr' | 'rtl'
 }
 
 export default function BlockHandle(props: Props) {
   return (
-    <BlockHandlePopover className="CSS_BLOCK_HANDLE_POPOVER" placement={props.placement}>
+    <BlockHandlePopover
+      placement={props.dir === 'rtl' ? 'right' : 'left'}
+      className="CSS_BLOCK_HANDLE_POPOVER"
+    >
       <BlockHandleAdd className="CSS_BLOCK_HANDLE_ADD">
         <div className="CSS_ICON_PLUS" />
       </BlockHandleAdd>

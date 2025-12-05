@@ -5,9 +5,13 @@ import {
 } from 'prosekit/solid/block-handle'
 import type { JSX } from 'solid-js'
 
-export default function BlockHandle(): JSX.Element {
+interface Props {
+  placement?: 'left' | 'right'
+}
+
+export default function BlockHandle(props: Props): JSX.Element {
   return (
-    <BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER">
+    <BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER" placement={props.placement}>
       <BlockHandleAdd class="CSS_BLOCK_HANDLE_ADD">
         <div class="CSS_ICON_PLUS" />
       </BlockHandleAdd>

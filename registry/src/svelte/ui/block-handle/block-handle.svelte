@@ -4,9 +4,15 @@ import {
   BlockHandleDraggable,
   BlockHandlePopover,
 } from 'prosekit/svelte/block-handle'
+
+interface Props {
+  placement?: 'left' | 'right'
+}
+
+const props: Props = $props()
 </script>
 
-<BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER">
+<BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER" placement={props.placement}>
   <BlockHandleAdd class="CSS_BLOCK_HANDLE_ADD">
     <div class="CSS_ICON_PLUS"></div>
   </BlockHandleAdd>

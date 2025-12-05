@@ -4,10 +4,16 @@ import {
   BlockHandleDraggable,
   BlockHandlePopover,
 } from 'prosekit/vue/block-handle'
+
+interface Props {
+  placement?: 'left' | 'right'
+}
+
+const props = defineProps<Props>()
 </script>
 
 <template>
-  <BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER">
+  <BlockHandlePopover class="CSS_BLOCK_HANDLE_POPOVER" :placement="props.placement">
     <BlockHandleAdd class="CSS_BLOCK_HANDLE_ADD">
       <div class="CSS_ICON_PLUS" />
     </BlockHandleAdd>

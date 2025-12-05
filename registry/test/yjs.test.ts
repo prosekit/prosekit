@@ -2,7 +2,7 @@ import {
   expect,
   it,
 } from 'vitest'
-import { userEvent } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
@@ -23,13 +23,19 @@ testStory('yjs', () => {
     const editorB = editors.nth(1)
 
     await emptyEditor({ editor: editorA })
-    await userEvent.type(editorA, 'Hello')
+    editorA.element().focus()
+    await expect.element(editorA).toHaveFocus()
+    await keyboard.type('Hello')
 
+    await expect.element(editorA).toHaveTextContent('Hello')
     await expect.element(editorB).toHaveTextContent('Hello')
 
     await emptyEditor({ editor: editorB })
-    await userEvent.type(editorB, 'World')
+    editorB.element().focus()
+    await expect.element(editorB).toHaveFocus()
+    await keyboard.type('World')
 
     await expect.element(editorA).toHaveTextContent('World')
+    await expect.element(editorB).toHaveTextContent('World')
   })
 })

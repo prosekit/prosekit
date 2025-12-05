@@ -272,8 +272,10 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"/page<cursor>"`)
     expect(isMatching()).toBe(true)
 
+    await keyboard.down('Shift')
     await keyboard.press('ArrowLeft')
     await keyboard.press('ArrowLeft')
+    await keyboard.up('Shift')
     expect(showSelection()).toMatchInlineSnapshot(`"/pa<selection>ge<selection>"`)
     expect(isMatching()).toBe(true)
   })

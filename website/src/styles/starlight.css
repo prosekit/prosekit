@@ -61,3 +61,11 @@
     --sl-font-mono: var(--font-mono);
   }
 }
+
+.sl-markdown-content kbd {
+  @apply rounded-md inline-flex justify-center items-center py-1 px-1.5 min-w-7 font-mono text-xs m-0;
+  @apply border border-gray-300 dark:border-zinc-700;
+  @apply text-gray-800 dark:text-zinc-200;
+  @apply bg-white dark:bg-zinc-800;
+  @apply shadow-[0px_2px_0px_0px_rgba(0,0,0,0.13)] dark:shadow-[0px_2px_0px_0px_rgba(255,255,255,0.15)];
+}

@@ -8,6 +8,7 @@ import {
   it,
   vi,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   defineTestExtension,
@@ -15,7 +16,6 @@ import {
 } from '../testing'
 import {
   inputText,
-  pressKey,
 } from '../testing/keyboard'
 
 import { defineAutocomplete } from './autocomplete'
@@ -110,7 +110,7 @@ describe('defineAutocomplete', () => {
     expect(onLeave).toHaveBeenCalledTimes(0)
 
     // Slash menu should not be triggered when typing "/ "
-    await pressKey('Space')
+    await keyboard.press('Space')
     expect(onEnter).toHaveBeenCalledTimes(1)
     expect(onLeave).toHaveBeenCalledTimes(1)
   })
@@ -168,7 +168,7 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
     expect(isMatching()).toBe(true)
 
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
     expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
     expect(isMatching()).toBe(false)
   })
@@ -183,7 +183,7 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
     expect(isMatching()).toBe(true)
 
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
     expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
     expect(isMatching()).toBe(false)
 
@@ -208,7 +208,7 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
     expect(isMatching()).toBe(false)
 
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
     expect(showSelection()).toMatchInlineSnapshot(`"<cursor>"`)
     expect(isMatching()).toBe(false)
 
@@ -231,7 +231,7 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"a /b<cursor>"`)
     expect(isMatching()).toBe(false)
 
-    await pressKey('Space')
+    await keyboard.press('Space')
     expect(showSelection()).toMatchInlineSnapshot(`"a /b <cursor>"`)
     expect(isMatching()).toBe(false)
 
@@ -256,7 +256,7 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"/<cursor>"`)
     expect(isMatching()).toBe(true)
 
-    await pressKey('Enter')
+    await keyboard.press('Enter')
     expect(showSelection()).toMatchInlineSnapshot(`
       "/
       <cursor>"
@@ -274,7 +274,7 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"/page<cursor>"`)
     expect(isMatching()).toBe(true)
 
-    await pressKey('Shift-ArrowLeft-ArrowLeft')
+    await keyboard.press('Shift+ArrowLeft+ArrowLeft')
     expect(showSelection()).toMatchInlineSnapshot(`"/pa<selection>ge<selection>"`)
     expect(isMatching()).toBe(true)
   })
@@ -301,30 +301,30 @@ describe('defineAutocomplete', () => {
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/b')
 
-    await pressKey('ArrowLeft')
+    await keyboard.press('ArrowLeft')
     expect(showSelection()).toMatchInlineSnapshot(`"a /<cursor>b"`)
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/b')
 
-    await pressKey('ArrowLeft')
+    await keyboard.press('ArrowLeft')
     expect(showSelection()).toMatchInlineSnapshot(`"a <cursor>/b"`)
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/b')
 
-    await pressKey('ArrowLeft')
+    await keyboard.press('ArrowLeft')
     expect(showSelection()).toMatchInlineSnapshot(`"a<cursor> /b"`)
     expect(isMatching()).toBe(false)
 
-    await pressKey('ArrowRight')
+    await keyboard.press('ArrowRight')
     expect(showSelection()).toMatchInlineSnapshot(`"a <cursor>/b"`)
     expect(isMatching()).toBe(false)
 
-    await pressKey('ArrowRight')
+    await keyboard.press('ArrowRight')
     expect(showSelection()).toMatchInlineSnapshot(`"a /<cursor>b"`)
     expect(isMatching()).toBe(false)
 
-    await pressKey('Backspace')
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
+    await keyboard.press('Backspace')
     expect(showSelection()).toMatchInlineSnapshot(`"a<cursor>b"`)
     expect(isMatching()).toBe(false)
 
@@ -343,7 +343,7 @@ describe('defineAutocomplete', () => {
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/cd')
 
-    await pressKey('ArrowRight')
+    await keyboard.press('ArrowRight')
     expect(showSelection()).toMatchInlineSnapshot(`"a /cdb<cursor>"`)
     expect(isMatching()).toBe(false)
   })

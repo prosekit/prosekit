@@ -6,7 +6,6 @@ import {
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'
-import { pressKey } from '../testing/keyboard'
 
 describe('blockquote keymap', () => {
   it('should wrap paragraph into blockquote with shortcut', async () => {
@@ -38,7 +37,7 @@ describe('blockquote keymap', () => {
 
     editor.set(doc1)
 
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
 
     const doc2 = n.doc(n.p('hello'))
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())

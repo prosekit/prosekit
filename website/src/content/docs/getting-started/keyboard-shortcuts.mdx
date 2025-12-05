@@ -7,11 +7,11 @@ sidebar:
 import Demo from '@/components/ui/demo/demo.astro';
 import Keyboard from '@/components/ui/keyboard.astro';
 
-You can add keyboard shortcuts to your editor using the `defineKeymap` function or using the `useKeymap` function for your specific UI framework.
+Add keyboard shortcuts to your editor using the `defineKeymap` function or the `useKeymap` hook for framework-specific implementations.
 
 ## Using `defineKeymap`
 
-The `defineKeymap` function allows you to define custom keyboard shortcuts for your editor:
+Define custom keyboard shortcuts using the `defineKeymap` function:
 
 ```ts twoslash
 import { defineKeymap } from 'prosekit/core'
@@ -28,37 +28,41 @@ const extension = defineKeymap({
 })
 ```
 
-`defineKeymap` accepts an object with keys as the keyboard shortcut and values as the [Command] to execute.
+`defineKeymap` accepts an object where keys are keyboard shortcuts and values are [Command] functions to execute.
 
-Key names may be strings like `Shift-Ctrl-Enter`. It should contain zero or more **modifier** strings, and an **[`KeyboardEvent.key`]** string.
+Key names are strings like `Shift-Ctrl-Enter`, consisting of zero or more **modifiers** followed by a **[`KeyboardEvent.key`]** string.
 
-The following modifiers are supported:
+### Modifiers
+
+Supported modifiers:
 
 - `"Ctrl"`: <Keyboard key="Ctrl" /> key
-- `"Alt"`: <Keyboard key="Alt" /> key, equivalent to <Keyboard key="Option" /> key on macOS
+- `"Alt"`: <Keyboard key="Alt" /> key (equivalent to <Keyboard key="Option" /> on macOS)
 - `"Shift"`: <Keyboard key="Shift" /> key
-- `"Mod"`: <Keyboard key="Command" /> key on macOS, <Keyboard key="Ctrl" /> key on other platforms
-- `"Meta"`: <Keyboard key="Command" /> key on macOS, <Keyboard key="Win" /> key on Windows
+- `"Mod"`: <Keyboard key="Command" /> on macOS, <Keyboard key="Ctrl" /> on other platforms
+- `"Meta"`: <Keyboard key="Command" /> on macOS, <Keyboard key="Win" /> on Windows
 
-A **[`KeyboardEvent.key`]** string is a string that represents the key pressed.
+### Key Names
 
-Use lowercase letters to refer to letter keys, or uppercase letters if you want shift to be held. When using uppercase letters, the `"Shift"` modifier is implied and should not be included in the key name. `"Space"` is an alias for the `" "` key.
+Use lowercase letters for letter keys, or uppercase letters when shift should be held. When using uppercase letters, the `"Shift"` modifier is implicit and must not be included separately. `"Space"` is an alias for `" "`.
 
-Here are some examples:
+### Examples
 
-- `"Enter"`: ✅ A keyboard shortcut that triggers when <Keyboard key="Enter" /> is pressed. No modifier keys are required.
-- `"Shift-Enter"`: ✅ A keyboard shortcut that triggers when <Keyboard key="Shift+Enter" /> is pressed.
-- `"Shift-enter"`: ❌ Invalid because `"enter"` is not a valid value for [`KeyboardEvent.key`].
-- `"Ctrl-a"`: ✅ Trigger when <Keyboard key="Ctrl+A" /> is pressed
-- `"Ctrl-A"`: ✅ Trigger when <Keyboard key="Ctrl+Shift+A" /> is pressed.
-- `"Ctrl-Shift-A"`: ❌ Don't add the `"Shift"` modifier, it's implied
-- `"Ctrl-Shift-a"`: ❌ When <Keyboard key="Shift" /> is held, pressing <Keyboard key="A" /> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
-- `"Shift- "`: ✅ this is valid
-- `"Shift-Space"`: ✅ this is valid too
+- `"Enter"`: ✅ Triggers when <Keyboard key="Enter" /> is pressed
+- `"Shift-Enter"`: ✅ Triggers when <Keyboard key="Shift+Enter" /> is pressed
+- `"Shift-enter"`: ❌ Invalid — `"enter"` is not a valid [`KeyboardEvent.key`] value
+- `"Ctrl-a"`: ✅ Triggers when <Keyboard key="Ctrl+A" /> is pressed
+- `"Ctrl-A"`: ✅ Triggers when <Keyboard key="Ctrl+Shift+A" /> is pressed
+- `"Ctrl-Shift-A"`: ❌ Invalid — `"Shift"` modifier is implicit with uppercase letters
+- `"Ctrl-Shift-a"`: ❌ Invalid — when <Keyboard key="Shift" /> is held, [`KeyboardEvent.key`] is `"A"`, not `"a"`
+- `"Shift- "`: ✅ Valid
+- `"Shift-Space"`: ✅ Valid (equivalent to the above)
 
-You can call `defineKeymap` multiple times to add multiple keyboard shortcuts. The later keyboard shortcuts will override the earlier ones.
+### Priority
 
-You can use the `withPriority` function to give a higher priority to one of the extensions. For example:
+Call `defineKeymap` multiple times to define additional shortcuts. Later definitions override earlier ones.
+
+Use `withPriority` to set extension priority:
 
 ```ts twoslash
 import { Extension } from 'prosekit/core'
@@ -72,11 +76,9 @@ import {
 const extensionAPrioritized = withPriority(extensionA, Priority.high)
 ```
 
-## Using the `useKeymap`
+## Using `useKeymap`
 
-If you're using a framework like React, Vue, or Svelte, you can use the `useKeymap` hook to define keyboard shortcuts dynamically.
-
-Here is an example of how to use the `useKeymap` hook to define keyboard shortcuts dynamically.
+For framework-specific implementations (React, Vue, Svelte), use the `useKeymap` hook to define shortcuts dynamically:
 
 <Demo story="keymap" />
 

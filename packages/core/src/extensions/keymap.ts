@@ -14,8 +14,6 @@ import {
 } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { PlainExtension } from '../types/extension'
-import { toReversed } from '../utils/array'
-import { isApple } from '../utils/env'
 
 import {
   pluginFacet,

@@ -30,6 +30,39 @@ const extension = defineKeymap({
 })
 ```
 
+`defineKeymap` accepts an object with keys as the keyboard shortcut and values as the [Command] to execute. 
+
+Key names may be strings like `Shift-Ctrl-Enter`. It should contain zero or more **modifier** strings, and an **[`KeyboardEvent.key`]** string.
+
+The following modifiers are supported. Order matters:
+
+- `"Mod"`: Maps to <kbd>Command</kbd> on macOS and <kbd>Ctrl</kbd> on other platforms
+- `"Ctrl"`: <kbd>Ctrl</kbd> key
+- `"Alt"`: <kbd>Alt</kbd> key (<kbd>Option</kbd> on macOS)
+- `"Shift"`: <kbd>Shift</kbd> key
+- `"Meta"`: <kbd>Command</kbd> key on macOS, <kbd>Windows</kbd> key on other platforms
+
+Use lowercase letters to refer to letter keys, or uppercase letters if you want shift to be held. When using uppercase letters, the `"Shift"` modifier is implied and should not be included in the key name.
+
+A **[`KeyboardEvent.key`]** string is a string that represents the key pressed. 
+
+Here are some examples:
+
+- `"Enter"`: ✅ A keyboard shortcut that triggers when <kbd>Enter</kbd> is pressed. No modifier keys are required.
+- `"Shift-Enter"`: ✅ A keyboard shortcut that triggers when <kbd>Shift</kbd> + <kbd>Enter</kbd> are pressed.
+- `"Shift-enter"`: ❌ Invalid because `"enter"` is not a valid value for [`KeyboardEvent.key`].
+- `"Ctrl-a"`: ✅ Trigger when <kbd>Ctrl</kbd> + <kbd>A</kbd> are pressed
+- `"Ctrl-A"`: ✅ Trigger when <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> are pressed.
+- `"Ctrl-Shift-A"`: ❌ Don't add the `"Shift"` modifier, it's implied
+- `"Ctrl-Shift-a"`: ❌ When Shift is held, pressing <kbd>A</kbd> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
+
+As a special case, `"Space"` is an alias for the `" "` key.
+
+- `"Shift- "`: ✅ this is valid
+- `"Shift-Space"`: ✅ this is valid too 
+
+
+
 ## Key modifiers
 
 ProseKit supports the following modifiers:
@@ -57,3 +90,8 @@ This example demonstrates:
 - [defineKeymap](/references/core#definekeymap) - Define custom keyboard shortcuts
 - [defineBaseKeymap](/references/core#definebasekeymap) - Basic editing keyboard shortcuts
 - [useKeymap](/references/react#usekeymap) - React hook for dynamic keyboard shortcuts
+- [Command] - Command interface
+
+
+[Command]: /references/pm/state/#command
+[`KeyboardEvent.key`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values

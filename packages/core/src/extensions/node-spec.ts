@@ -92,9 +92,23 @@ export interface NodeAttrOptions<
 }
 
 /**
- * Defines a node type.
+ * Defines a node type into the editor schema.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const extension = defineNodeSpec({
+ *   name: 'fancyParagraph',
+ *   content: 'inline*',
+ *   group: 'block',
+ *   parseDOM: [{ tag: 'p.fancy' }],
+ *   toDOM() {
+ *     return ['p', { 'class': 'fancy' }, 0]
+ *   },
+ * })
+ * ```
  */
 export function defineNodeSpec<
   Node extends string,

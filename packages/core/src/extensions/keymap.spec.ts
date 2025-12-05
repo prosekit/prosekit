@@ -159,9 +159,13 @@ describe('keymap', () => {
       // Do not match
       'ctrl-c',
     ]
-    const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
 
-    editor.use(defineKeymap(keymap))
+    for (const key of keybindings) {
+      let command: Command = record(key)
+      let keymap: Keymap = { [key]: command }
+      let extension = defineKeymap(keymap)
+      editor.use(extension)
+    }
 
     called.length = 0
     await keyboard.down('Control')
@@ -170,8 +174,8 @@ describe('keymap', () => {
     await keyboard.up('Control')
     expect(called).toMatchInlineSnapshot(`
       [
-        "ctrl-b",
         "CTRL-b",
+        "ctrl-b",
       ]
     `)
 
@@ -184,10 +188,10 @@ describe('keymap', () => {
     await keyboard.up('Control')
     expect(called).toMatchInlineSnapshot(`
       [
-        "c-s-B",
-        "c-B",
         "Ctrl-B",
+        "c-s-B",
         "ctrl-shift-b",
+        "c-B",
       ]
     `)
   })

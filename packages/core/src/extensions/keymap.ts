@@ -1,5 +1,3 @@
-import { mapValues } from '@ocavue/utils'
-import { chainCommands } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import {
   Plugin,
@@ -14,7 +12,6 @@ import {
 } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { PlainExtension } from '../types/extension'
-import { isApple } from '../utils/env'
 
 import {
   pluginFacet,
@@ -54,73 +51,34 @@ export const keymapFacet: Facet<KeymapPayload, PluginPayload> = defineFacet<
   PluginPayload
 >({
   reduce: () => {
-    type Handler = (view: EditorView, event: KeyboardEvent) => boolean
+    type KeydownHandler = (view: EditorView, event: KeyboardEvent) => boolean
 
-    let handler: Handler | undefined
+    // An array of keymap handlers, ordered from the highest priority to the lowest.
+    let subHandlers: KeydownHandler[] = []
 
-    const handlerWrapper: Handler = (view, event) => {
-      if (handler) return handler(view, event)
+    // A root handler that combines all the sub handlers.
+    const rootHandler: KeydownHandler = (view, event) => {
+      for (const handler of subHandlers) {
+        if (handler(view, event)) return true
+      }
       return false
     }
 
     const plugin = new Plugin({
       key: keymapPluginKey,
-      props: { handleKeyDown: handlerWrapper },
+      props: { handleKeyDown: rootHandler },
     })
 
     return (keymaps: Keymap[]) => {
-      handler = keydownHandler(
-        mergeKeymaps(
-          // The keymap at the end have a higher priority.
-          [...keymaps].reverse(),
-        ),
-      )
+      // The keymap at the end has a higher priority, so we need to reverse the
+      // order here.
+      subHandlers = keymaps.map(keydownHandler).reverse()
+
       return plugin
     }
   },
   parent: pluginFacet,
   singleton: true,
 })
-
-function mergeKeymaps(keymaps: Keymap[]): Keymap {
-  const bindings: Record<string, Command[]> = {}
-
-  for (const keymap of keymaps) {
-    for (const [key, command] of Object.entries(keymap)) {
-      const normalizedKey = normalizeKeyName(key)
-      const commands = bindings[normalizedKey] ||= []
-      commands.push(command)
-    }
-  }
-
-  return mapValues(bindings, mergeCommands)
-}
-
-function mergeCommands(commands: Command[]): Command {
-  return chainCommands(...commands)
-}
-
-// Copied from https://github.com/ProseMirror/prosemirror-keymap/blob/1.2.3/src/keymap.ts#L8
-function normalizeKeyName(name: string) {
-  let parts = name.split(/-(?!$)/), result = parts[parts.length - 1]
-  if (result == 'Space') result = ' '
-  let alt, ctrl, shift, meta
-  for (let i = 0; i < parts.length - 1; i++) {
-    let mod = parts[i]
-    if (/^(cmd|meta|m)$/i.test(mod)) meta = true
-    else if (/^a(lt)?$/i.test(mod)) alt = true
-    else if (/^(c|ctrl|control)$/i.test(mod)) ctrl = true
-    else if (/^s(hift)?$/i.test(mod)) shift = true
-    else if (/^mod$/i.test(mod)) {
-      if (isApple) meta = true
-      else ctrl = true
-    } else throw new Error('Unrecognized modifier name: ' + mod)
-  }
-  if (alt) result = 'Alt-' + result
-  if (ctrl) result = 'Ctrl-' + result
-  if (meta) result = 'Meta-' + result
-  if (shift) result = 'Shift-' + result
-  return result
-}
 
 const keymapPluginKey = new PluginKey('prosekit-keymap')

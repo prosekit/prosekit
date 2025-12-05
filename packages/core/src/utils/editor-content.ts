@@ -22,7 +22,7 @@ import {
 
 export function getEditorContentJSON(
   schema: Schema,
-  content: NodeJSON | string | HTMLElement,
+  content: NodeJSON | string | Element,
 ): NodeJSON {
   if (typeof content === 'string') {
     return jsonFromHTML(content, { schema })
@@ -35,7 +35,7 @@ export function getEditorContentJSON(
 
 function getEditorContentNode(
   schema: Schema,
-  content: NodeJSON | string | HTMLElement | ProseMirrorNode,
+  content: NodeJSON | string | Element | ProseMirrorNode,
 ): ProseMirrorNode {
   if (isProseMirrorNode(content)) {
     return content
@@ -45,7 +45,7 @@ function getEditorContentNode(
 
 export function getEditorContentDoc(
   schema: Schema,
-  content: NodeJSON | string | HTMLElement | ProseMirrorNode,
+  content: NodeJSON | string | Element | ProseMirrorNode,
 ): ProseMirrorNode {
   const doc = getEditorContentNode(schema, content)
   assert(

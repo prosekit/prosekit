@@ -47,6 +47,7 @@ export function getEditorHTML(): string {
 export async function focusEditor(options?: { editor?: Locator }) {
   const editor = options?.editor ?? (await waitForEditor())
   editor.element().focus()
+  await expect.element(editor).toHaveFocus()
 }
 
 export async function pasteHtmlToEditor(

@@ -14,9 +14,7 @@ You can add keyboard shortcuts to your editor using the `defineKeymap` function 
 The `defineKeymap` function allows you to define custom keyboard shortcuts for your editor:
 
 ```ts twoslash
-import {
-  defineKeymap,
-} from 'prosekit/core'
+import { defineKeymap } from 'prosekit/core'
 
 const extension = defineKeymap({
   'Mod-b': (state, dispatch) => {
@@ -30,7 +28,7 @@ const extension = defineKeymap({
 })
 ```
 
-`defineKeymap` accepts an object with keys as the keyboard shortcut and values as the [Command] to execute. 
+`defineKeymap` accepts an object with keys as the keyboard shortcut and values as the [Command] to execute.
 
 Key names may be strings like `Shift-Ctrl-Enter`. It should contain zero or more **modifier** strings, and an **[`KeyboardEvent.key`]** string.
 
@@ -44,7 +42,7 @@ The following modifiers are supported. Order matters:
 
 Use lowercase letters to refer to letter keys, or uppercase letters if you want shift to be held. When using uppercase letters, the `"Shift"` modifier is implied and should not be included in the key name.
 
-A **[`KeyboardEvent.key`]** string is a string that represents the key pressed. 
+A **[`KeyboardEvent.key`]** string is a string that represents the key pressed.
 
 Here are some examples:
 
@@ -59,26 +57,26 @@ Here are some examples:
 As a special case, `"Space"` is an alias for the `" "` key.
 
 - `"Shift- "`: ✅ this is valid
-- `"Shift-Space"`: ✅ this is valid too 
-
+- `"Shift-Space"`: ✅ this is valid too
 
 You can call `defineKeymap` multiple times to add multiple keyboard shortcuts. The later keyboard shortcuts will override the earlier ones. For example:
 
 ```ts twoslash
 import {
-  defineKeymap,union
+  defineKeymap,
+  union,
 } from 'prosekit/core'
 
 const extensionA = defineKeymap({
   'Mod-b': (state, dispatch) => {
     console.log('A is called')
-    return true 
+    return true
   },
 })
 const extensionB = defineKeymap({
   'Mod-b': (state, dispatch) => {
     console.log('B is called')
-    return true 
+    return true
   },
 })
 
@@ -90,12 +88,12 @@ When pressing <kbd>Mod</kbd> + <kbd>B</kbd>, only the handler in the `extensionB
 You can use the withPriority function to give a higher priority to one of the extensions. For example:
 
 ```ts twoslash
-import {Extension} from 'prosekit/core'
+import { Extension } from 'prosekit/core'
 declare const extensionA: Extension
 // ---cut---
 import {
-  withPriority,
   Priority,
+  withPriority,
 } from 'prosekit/core'
 
 const extensionAPrioritized = withPriority(extensionA, Priority.higher)
@@ -115,7 +113,6 @@ If you're using a framework like React, Vue, or Svelte, you can use the `useKeym
 - [defineBaseKeymap](/references/core#definebasekeymap) - Basic editing keyboard shortcuts
 - [useKeymap](/references/react#usekeymap) - React hook for dynamic keyboard shortcuts
 - [Command] - Command interface
-
 
 [Command]: /references/pm/state/#command
 [`KeyboardEvent.key`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values

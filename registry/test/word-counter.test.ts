@@ -2,10 +2,8 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
@@ -22,13 +20,13 @@ testStory('word-counter', () => {
     await emptyEditor()
 
     await editor.click()
-    await userEvent.type(editor, 'one two three')
+    await keyboard.type('one two three')
 
     await expect.element(page.getByText('Word Count: 3')).toBeVisible()
     await expect.element(page.getByText('Character Count: 13')).toBeVisible()
 
     // Type more words and verify both counters update accordingly
-    await userEvent.type(editor, ' four five')
+    await keyboard.type(' four five')
     await expect.element(page.getByText('Word Count: 5')).toBeVisible()
     await expect.element(page.getByText('Character Count: 23')).toBeVisible()
   })

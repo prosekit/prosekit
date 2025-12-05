@@ -252,9 +252,6 @@ function removeDisplayContents(element: Element) {
   }
 }
 
-// Remove display: contents divs in the clone, since solid.js v1 needs to
-// insert a div for portals. See
-// https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
 function normalizeDisplayNone(element: Element) {
   const founds = Array.from(element.querySelectorAll('[style*="display: none"]'))
   for (const found of founds) {

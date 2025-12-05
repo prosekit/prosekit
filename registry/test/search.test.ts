@@ -7,7 +7,6 @@ import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
-  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,

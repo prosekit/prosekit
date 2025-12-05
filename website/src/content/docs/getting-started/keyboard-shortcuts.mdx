@@ -15,7 +15,6 @@ The `defineKeymap` function allows you to define custom keyboard shortcuts for y
 
 ```ts twoslash
 import {
-  createEditor,
   defineKeymap,
 } from 'prosekit/core'
 
@@ -29,8 +28,6 @@ const extension = defineKeymap({
     return true
   },
 })
-
-const editor = createEditor({ extension })
 ```
 
 ## Key modifiers

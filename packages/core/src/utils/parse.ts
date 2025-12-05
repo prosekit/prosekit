@@ -123,7 +123,7 @@ export function nodeFromJSON(
 /////////////// Node <=> Element ///////////////
 
 /**
- * Parse a HTML element to a ProseMirror node.
+ * Parse a DOM node to a ProseMirror node.
  *
  * @public
  *
@@ -145,7 +145,7 @@ export function nodeFromElement(
 }
 
 /**
- * Serialize a ProseMirror node to a HTML element.
+ * Serialize a ProseMirror node to an HTML element.
  *
  * @public
  *
@@ -179,7 +179,7 @@ export function elementFromNode(
 /////////////// Element <=> HTML ///////////////
 
 /**
- * Parse a HTML string to a HTML element.
+ * Parse an HTML string to an HTML element.
  *
  * @internal
  */
@@ -203,7 +203,7 @@ function htmlFromElement(element: HTMLElement): string {
 /////////////// Node <=> HTML ///////////////
 
 /**
- * Parse a HTML string to a ProseMirror node.
+ * Parse an HTML string to a ProseMirror node.
  *
  * @public
  *
@@ -222,7 +222,7 @@ export function nodeFromHTML(
 }
 
 /**
- * Serialize a ProseMirror node to a HTML string
+ * Serialize a ProseMirror node to an HTML string
  *
  * @public
  *
@@ -243,7 +243,7 @@ export function htmlFromNode(
 /////////////// JSON <=> Element ///////////////
 
 /**
- * Serialize a HTML element to a ProseMirror document JSON object.
+ * Serialize an HTML element to a ProseMirror document JSON object.
  *
  * @public
  *
@@ -262,7 +262,7 @@ export function jsonFromElement(
 }
 
 /**
- * Parse a ProseMirror document JSON object to a HTML element.
+ * Parse a ProseMirror document JSON object to an HTML element.
  *
  * @public
  *
@@ -283,7 +283,7 @@ export function elementFromJSON(
 /////////////// JSON <=> HTML ///////////////
 
 /**
- * Parse a HTML string to a ProseMirror document JSON object.
+ * Parse an HTML string to a ProseMirror document JSON object.
  *
  * @public
  *
@@ -302,7 +302,7 @@ export function jsonFromHTML(
 }
 
 /**
- * Parse a ProseMirror document JSON object to a HTML string.
+ * Parse a ProseMirror document JSON object to an HTML string.
  *
  * @public
  *

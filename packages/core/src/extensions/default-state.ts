@@ -18,7 +18,7 @@ import { getEditorContentJSON } from '../utils/editor-content'
 export interface DefaultStateOptions {
   /**
    * The starting document to use when creating the editor. It can be a
-   * ProseMirror node JSON object, a HTML string, or a DOM element instance.
+   * ProseMirror node JSON object, an HTML string, or a DOM element instance.
    */
   defaultContent?: NodeJSON | string | Element
 

@@ -53,7 +53,7 @@ Here are some examples:
 - `"Ctrl-a"`: ✅ Trigger when <Keyboard key="Ctrl+A" /> is pressed
 - `"Ctrl-A"`: ✅ Trigger when <Keyboard key="Ctrl+Shift+A" /> is pressed.
 - `"Ctrl-Shift-A"`: ❌ Don't add the `"Shift"` modifier, it's implied
-- `"Ctrl-Shift-a"`: ❌ When Shift is held, pressing <kbd>A</kbd> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
+- `"Ctrl-Shift-a"`: ❌ When Shift is held, pressing <Keyboard key="A" /> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
 
 As a special case, `"Space"` is an alias for the `" "` key.
 

@@ -28,6 +28,7 @@ export const loaders = {
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
   'placeholder': () => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor })),
   'readonly': () => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor })),
+  'rtl': () => import('./examples/rtl').then((m) => ({ default: m.ExampleEditor })),
   'save-html': () => import('./examples/save-html').then((m) => ({ default: m.ExampleEditor })),
   'save-json': () => import('./examples/save-json').then((m) => ({ default: m.ExampleEditor })),
   'save-markdown': () => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor })),

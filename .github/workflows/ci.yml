@@ -57,8 +57,6 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
-
       - name: Build website
         run: pnpm run build:website
 

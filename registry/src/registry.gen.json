@@ -1415,6 +1415,77 @@
       }
     },
     {
+      "name": "react-example-rtl",
+      "title": "react-example-rtl",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-rtl.json",
+        "https://prosekit.dev/r/react-sample-sample-uploader.json",
+        "https://prosekit.dev/r/react-ui-block-handle.json",
+        "https://prosekit.dev/r/react-ui-drop-indicator.json",
+        "https://prosekit.dev/r/react-ui-inline-menu.json",
+        "https://prosekit.dev/r/react-ui-slash-menu.json",
+        "https://prosekit.dev/r/react-ui-table-handle.json",
+        "https://prosekit.dev/r/react-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/rtl/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/rtl/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "rtl",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/rtl/editor.tsx",
+          "registry/src/react/examples/rtl/index.ts",
+          "registry/src/react/sample/sample-doc-rtl.ts",
+          "registry/src/react/sample/sample-uploader.ts",
+          "registry/src/react/ui/block-handle/block-handle.tsx",
+          "registry/src/react/ui/block-handle/index.ts",
+          "registry/src/react/ui/button/button.tsx",
+          "registry/src/react/ui/button/index.ts",
+          "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/react/ui/drop-indicator/index.ts",
+          "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/react/ui/image-upload-popover/index.ts",
+          "registry/src/react/ui/inline-menu/index.ts",
+          "registry/src/react/ui/inline-menu/inline-menu.tsx",
+          "registry/src/react/ui/slash-menu/index.ts",
+          "registry/src/react/ui/slash-menu/slash-menu-empty.tsx",
+          "registry/src/react/ui/slash-menu/slash-menu-item.tsx",
+          "registry/src/react/ui/slash-menu/slash-menu.tsx",
+          "registry/src/react/ui/table-handle/index.ts",
+          "registry/src/react/ui/table-handle/table-handle.tsx",
+          "registry/src/react/ui/toolbar/index.ts",
+          "registry/src/react/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-rtl",
+          "react-sample-sample-uploader",
+          "react-ui-block-handle",
+          "react-ui-drop-indicator",
+          "react-ui-inline-menu",
+          "react-ui-slash-menu",
+          "react-ui-table-handle",
+          "react-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "react-example-save-html",
       "title": "react-example-save-html",
       "type": "registry:block",
@@ -2715,6 +2786,32 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-rtl",
+      "title": "react-sample-sample-doc-rtl",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-rtl.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-rtl.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-rtl.ts"
         ],
         "internalDependencies": []
       }
@@ -4936,6 +5033,77 @@
       }
     },
     {
+      "name": "vue-example-rtl",
+      "title": "vue-example-rtl",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-rtl.json",
+        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
+        "https://prosekit.dev/r/vue-ui-block-handle.json",
+        "https://prosekit.dev/r/vue-ui-drop-indicator.json",
+        "https://prosekit.dev/r/vue-ui-inline-menu.json",
+        "https://prosekit.dev/r/vue-ui-slash-menu.json",
+        "https://prosekit.dev/r/vue-ui-table-handle.json",
+        "https://prosekit.dev/r/vue-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/rtl/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/rtl/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "rtl",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/rtl/editor.vue",
+          "registry/src/vue/examples/rtl/index.ts",
+          "registry/src/vue/sample/sample-doc-rtl.ts",
+          "registry/src/vue/sample/sample-uploader.ts",
+          "registry/src/vue/ui/block-handle/block-handle.vue",
+          "registry/src/vue/ui/block-handle/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+          "registry/src/vue/ui/drop-indicator/index.ts",
+          "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+          "registry/src/vue/ui/image-upload-popover/index.ts",
+          "registry/src/vue/ui/inline-menu/index.ts",
+          "registry/src/vue/ui/inline-menu/inline-menu.vue",
+          "registry/src/vue/ui/slash-menu/index.ts",
+          "registry/src/vue/ui/slash-menu/slash-menu-empty.vue",
+          "registry/src/vue/ui/slash-menu/slash-menu-item.vue",
+          "registry/src/vue/ui/slash-menu/slash-menu.vue",
+          "registry/src/vue/ui/table-handle/index.ts",
+          "registry/src/vue/ui/table-handle/table-handle.vue",
+          "registry/src/vue/ui/toolbar/index.ts",
+          "registry/src/vue/ui/toolbar/toolbar.vue"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-rtl",
+          "vue-sample-sample-uploader",
+          "vue-ui-block-handle",
+          "vue-ui-drop-indicator",
+          "vue-ui-inline-menu",
+          "vue-ui-slash-menu",
+          "vue-ui-table-handle",
+          "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "vue-example-save-html",
       "title": "vue-example-save-html",
       "type": "registry:block",
@@ -6236,6 +6404,32 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-rtl",
+      "title": "vue-sample-sample-doc-rtl",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-rtl.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-rtl.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-rtl.ts"
         ],
         "internalDependencies": []
       }
@@ -8456,6 +8650,77 @@
       }
     },
     {
+      "name": "preact-example-rtl",
+      "title": "preact-example-rtl",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-rtl.json",
+        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
+        "https://prosekit.dev/r/preact-ui-block-handle.json",
+        "https://prosekit.dev/r/preact-ui-drop-indicator.json",
+        "https://prosekit.dev/r/preact-ui-inline-menu.json",
+        "https://prosekit.dev/r/preact-ui-slash-menu.json",
+        "https://prosekit.dev/r/preact-ui-table-handle.json",
+        "https://prosekit.dev/r/preact-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/rtl/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/rtl/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "rtl",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/rtl/editor.tsx",
+          "registry/src/preact/examples/rtl/index.ts",
+          "registry/src/preact/sample/sample-doc-rtl.ts",
+          "registry/src/preact/sample/sample-uploader.ts",
+          "registry/src/preact/ui/block-handle/block-handle.tsx",
+          "registry/src/preact/ui/block-handle/index.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/preact/ui/drop-indicator/index.ts",
+          "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/preact/ui/image-upload-popover/index.ts",
+          "registry/src/preact/ui/inline-menu/index.ts",
+          "registry/src/preact/ui/inline-menu/inline-menu.tsx",
+          "registry/src/preact/ui/slash-menu/index.ts",
+          "registry/src/preact/ui/slash-menu/slash-menu-empty.tsx",
+          "registry/src/preact/ui/slash-menu/slash-menu-item.tsx",
+          "registry/src/preact/ui/slash-menu/slash-menu.tsx",
+          "registry/src/preact/ui/table-handle/index.ts",
+          "registry/src/preact/ui/table-handle/table-handle.tsx",
+          "registry/src/preact/ui/toolbar/index.ts",
+          "registry/src/preact/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-rtl",
+          "preact-sample-sample-uploader",
+          "preact-ui-block-handle",
+          "preact-ui-drop-indicator",
+          "preact-ui-inline-menu",
+          "preact-ui-slash-menu",
+          "preact-ui-table-handle",
+          "preact-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "preact-example-save-html",
       "title": "preact-example-save-html",
       "type": "registry:block",
@@ -9756,6 +10021,32 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-rtl",
+      "title": "preact-sample-sample-doc-rtl",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-rtl.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-rtl.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-rtl.ts"
         ],
         "internalDependencies": []
       }
@@ -11944,6 +12235,76 @@
       }
     },
     {
+      "name": "svelte-example-rtl",
+      "title": "svelte-example-rtl",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-rtl.json",
+        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
+        "https://prosekit.dev/r/svelte-ui-block-handle.json",
+        "https://prosekit.dev/r/svelte-ui-drop-indicator.json",
+        "https://prosekit.dev/r/svelte-ui-inline-menu.json",
+        "https://prosekit.dev/r/svelte-ui-slash-menu.json",
+        "https://prosekit.dev/r/svelte-ui-table-handle.json",
+        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/rtl/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/rtl/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "rtl",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/rtl/editor.svelte",
+          "registry/src/svelte/examples/rtl/index.ts",
+          "registry/src/svelte/sample/sample-doc-rtl.ts",
+          "registry/src/svelte/sample/sample-uploader.ts",
+          "registry/src/svelte/ui/block-handle/block-handle.svelte",
+          "registry/src/svelte/ui/block-handle/index.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+          "registry/src/svelte/ui/drop-indicator/index.ts",
+          "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+          "registry/src/svelte/ui/image-upload-popover/index.ts",
+          "registry/src/svelte/ui/inline-menu/index.ts",
+          "registry/src/svelte/ui/inline-menu/inline-menu.svelte",
+          "registry/src/svelte/ui/slash-menu/index.ts",
+          "registry/src/svelte/ui/slash-menu/slash-menu-empty.svelte",
+          "registry/src/svelte/ui/slash-menu/slash-menu-item.svelte",
+          "registry/src/svelte/ui/slash-menu/slash-menu.svelte",
+          "registry/src/svelte/ui/table-handle/index.ts",
+          "registry/src/svelte/ui/table-handle/table-handle.svelte",
+          "registry/src/svelte/ui/toolbar/index.ts",
+          "registry/src/svelte/ui/toolbar/toolbar.svelte"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-rtl",
+          "svelte-sample-sample-uploader",
+          "svelte-ui-block-handle",
+          "svelte-ui-drop-indicator",
+          "svelte-ui-inline-menu",
+          "svelte-ui-slash-menu",
+          "svelte-ui-table-handle",
+          "svelte-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-save-html",
       "title": "svelte-example-save-html",
       "type": "registry:block",
@@ -13230,6 +13591,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-rtl",
+      "title": "svelte-sample-sample-doc-rtl",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-rtl.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-rtl.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-rtl.ts"
         ],
         "internalDependencies": []
       }
@@ -14840,6 +15227,77 @@
       }
     },
     {
+      "name": "solid-example-rtl",
+      "title": "solid-example-rtl",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-rtl.json",
+        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
+        "https://prosekit.dev/r/solid-ui-block-handle.json",
+        "https://prosekit.dev/r/solid-ui-drop-indicator.json",
+        "https://prosekit.dev/r/solid-ui-inline-menu.json",
+        "https://prosekit.dev/r/solid-ui-slash-menu.json",
+        "https://prosekit.dev/r/solid-ui-table-handle.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/rtl/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/rtl/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/rtl/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "rtl",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/rtl/editor.tsx",
+          "registry/src/solid/examples/rtl/index.ts",
+          "registry/src/solid/sample/sample-doc-rtl.ts",
+          "registry/src/solid/sample/sample-uploader.ts",
+          "registry/src/solid/ui/block-handle/block-handle.tsx",
+          "registry/src/solid/ui/block-handle/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/solid/ui/drop-indicator/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/inline-menu/index.ts",
+          "registry/src/solid/ui/inline-menu/inline-menu.tsx",
+          "registry/src/solid/ui/slash-menu/index.ts",
+          "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
+          "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
+          "registry/src/solid/ui/slash-menu/slash-menu.tsx",
+          "registry/src/solid/ui/table-handle/index.ts",
+          "registry/src/solid/ui/table-handle/table-handle.tsx",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-rtl",
+          "solid-sample-sample-uploader",
+          "solid-ui-block-handle",
+          "solid-ui-drop-indicator",
+          "solid-ui-inline-menu",
+          "solid-ui-slash-menu",
+          "solid-ui-table-handle",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",
@@ -15201,6 +15659,32 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-readonly.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-rtl",
+      "title": "solid-sample-sample-doc-rtl",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-rtl.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-rtl.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-rtl.ts"
         ],
         "internalDependencies": []
       }

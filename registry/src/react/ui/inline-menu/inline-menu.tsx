@@ -167,7 +167,7 @@ export default function InlineMenu() {
 
       {items.link && (
         <InlinePopover
-          placement={'bottom'}
+          placement="bottom"
           defaultOpen={false}
           open={linkMenuOpen}
           onOpenChange={setLinkMenuOpen}

@@ -1,5 +1,11 @@
+import { sleep } from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
-import { createElement } from 'react'
+import {
+  act,
+  createElement,
+} from 'react'
+import { expect } from 'vitest'
+import { page } from 'vitest/browser'
 import {
   cleanup,
   render,
@@ -16,8 +22,17 @@ registerCleanupFunction(cleanup)
 
 export async function renderReactExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
-  return await render(createElement(ReactRenderer, {
+  const screen = await render(createElement(ReactRenderer, {
     story,
     exampleProps: initialContent ? { initialContent } : {},
   }))
+
+  await act(() => sleep(1))
+
+  const fallback = page.getByTestId('react-renderer-fallback')
+  await expect.element(fallback).not.toBeInTheDocument()
+
+  await act(() => sleep(1))
+
+  return screen
 }

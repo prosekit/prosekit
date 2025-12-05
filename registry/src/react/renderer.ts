@@ -21,7 +21,7 @@ export function ReactRenderer(props: Props): JSX.Element {
   if (!Example) {
     console.warn(`[ReactRenderer] No example found for story ${props.story}`)
   }
-  const fallback = createElement('div', null)
+  const fallback = createElement('div', { 'data-testid': 'react-renderer-fallback' }, null)
   const children = Example ? createElement(Example, props.exampleProps ?? null) : null
   return createElement(Suspense, { fallback }, children)
 }

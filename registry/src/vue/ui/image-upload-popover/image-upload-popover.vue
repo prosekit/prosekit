@@ -79,7 +79,7 @@ function handleOpenChange(isOpen: boolean) {
 <template>
   <PopoverRoot :open="open" @open-change="handleOpenChange">
     <PopoverTrigger>
-      <Button :pressed="open" :disabled="disabled" :tooltip="tooltip">
+      <Button :pressed="open" :disabled="props.disabled" :tooltip="props.tooltip">
         <slot />
       </Button>
     </PopoverTrigger>

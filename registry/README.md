@@ -74,6 +74,44 @@ Use `@event-name` syntax instead of `:on-event-name` for event handlers in Vue t
 <Component :on-query-change="handleQueryChange" />
 ```
 
+### Props Declaration
+
+Use `const props = defineProps<Props>()` to declare component props. This provides better clarity and consistency with other frameworks' patterns.
+
+**Good:**
+
+```vue
+<script setup lang="ts">
+interface Props {
+  name: string
+  age?: number
+}
+
+const props = defineProps<Props>()
+</script>
+
+<template>
+  <div>{{ props.name }}</div>
+</template>
+```
+
+**Bad:**
+
+```vue
+<script setup lang="ts">
+interface Props {
+  name: string
+  age?: number
+}
+
+defineProps<Props>()
+</script>
+
+<template>
+  <div>{{ name }}</div>
+</template>
+```
+
 ### Side Effects with Cleanup
 
 Prefer `watchEffect` over `watch` to track reactive dependencies automatically.

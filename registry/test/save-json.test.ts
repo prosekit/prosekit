@@ -10,7 +10,6 @@ import {
   expectLocatorToNotExist,
   focusEditor,
   inputText,
-  MOD_KEY,
   moveSelection,
   testStory,
   testStoryConsistency,
@@ -50,7 +49,7 @@ testStory('save-json', () => {
 
     // Type something
     await focusEditor()
-    await keyboard.press(`${MOD_KEY}+B`)
+    await keyboard.press('ControlOrMeta+b')
     await inputText('Foo')
     await expectSaveButtonEnabled()
     expect(editorText()).toBe('Foo')

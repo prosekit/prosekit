@@ -7,9 +7,6 @@ import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { formatHTML } from './format-html'
 
-const IS_APPLE = window.navigator.userAgent.includes('Mac')
-export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
-
 export function locateEditor(): Locator {
   return page.locate('div.ProseMirror')
 }

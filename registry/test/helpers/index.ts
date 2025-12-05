@@ -7,7 +7,6 @@ export {
   focusEditor,
   getEditorHTML,
   locateEditor,
-  MOD_KEY,
   pasteHtmlToEditor,
   waitForEditor,
 } from './editor'

@@ -14,9 +14,7 @@ import {
   defineTestExtension,
   setupTestFromExtension,
 } from '../testing'
-import {
-  inputText,
-} from '../testing/keyboard'
+import { inputText } from '../testing/keyboard'
 
 import { defineAutocomplete } from './autocomplete'
 import {

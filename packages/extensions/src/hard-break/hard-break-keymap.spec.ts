@@ -6,9 +6,7 @@ import {
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'
-import {
-  inputText,
-} from '../testing/keyboard'
+import { inputText } from '../testing/keyboard'
 
 describe('defineHardBreakKeymap', () => {
   it('should insert hard break', async () => {

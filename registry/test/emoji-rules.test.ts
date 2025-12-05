@@ -2,10 +2,7 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
@@ -23,12 +20,12 @@ testStory('emoji-rules', () => {
     await emptyEditor()
 
     await editor.click()
-    await userEvent.type(editor, ':apple:')
+    await keyboard.type(':apple:')
     await keyboard.press('Enter')
     await expect.element(page.getByText('🍎')).toBeVisible()
 
     await keyboard.press('Enter')
-    await userEvent.type(editor, ':banana:')
+    await keyboard.type(':banana:')
     await keyboard.press('Enter')
     await expect.element(page.getByText('🍌')).toBeVisible()
   })

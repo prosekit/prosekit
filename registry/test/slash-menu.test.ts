@@ -2,10 +2,7 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
@@ -14,6 +11,7 @@ import {
   expectLocatorToBeHidden,
   expectLocatorToHaveCount,
   getEditorHTML,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -27,7 +25,7 @@ testStory(['slash-menu', 'full'], () => {
 
     await editor.click()
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
 
     await expectLocatorToHaveCount(editor.locate('h1'), 0)
@@ -41,12 +39,12 @@ testStory(['slash-menu', 'full'], () => {
 
     await editor.click()
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
     await expect.element(itemH1).toBeVisible()
     await expect.element(itemH2).toBeVisible()
 
-    await userEvent.type(editor, 'heading2')
+    await inputText('heading2')
     await expect.element(itemH1).not.toBeVisible()
     await expect.element(itemH2).toBeVisible()
   })
@@ -56,7 +54,7 @@ testStory(['slash-menu', 'full'], () => {
 
     await editor.click()
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
     await keyboard.press('Space')
     await expect.element(menu).not.toBeVisible()
@@ -67,11 +65,11 @@ testStory(['slash-menu', 'full'], () => {
 
     await editor.click()
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
     await keyboard.press('Escape')
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, 'heading')
+    await inputText('heading')
     await expect.element(menu).not.toBeVisible()
   })
 
@@ -81,11 +79,11 @@ testStory(['slash-menu', 'full'], () => {
 
     // Enter /head in the first paragraph, and dismiss the menu
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
     await keyboard.press('Escape')
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, 'head')
+    await inputText('head')
     await expect.element(menu).not.toBeVisible()
 
     // Create a new paragraph
@@ -93,11 +91,11 @@ testStory(['slash-menu', 'full'], () => {
 
     // Enter /head in the second paragraph, and dismiss the menu
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
     await keyboard.press('Escape')
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, 'head')
+    await inputText('head')
     await expect.element(menu).not.toBeVisible()
 
     // Verify the content in the editor
@@ -108,7 +106,7 @@ testStory(['slash-menu', 'full'], () => {
 
     // Enter text and the menu should still be hidden
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, 'ing')
+    await inputText('ing')
     await expect.element(menu).not.toBeVisible()
 
     // Move the cursor back to the second paragraph
@@ -116,7 +114,7 @@ testStory(['slash-menu', 'full'], () => {
 
     // Enter text and the menu should still be hidden
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, 'ing')
+    await inputText('ing')
     await expect.element(menu).not.toBeVisible()
 
     // Verify the content in the editor
@@ -127,8 +125,8 @@ testStory(['slash-menu', 'full'], () => {
 
     // Ensure the menu is working again
     await expect.element(menu).not.toBeVisible()
-    await userEvent.type(editor, '/')
-    await userEvent.type(editor, 'head')
+    await inputText('/')
+    await inputText('head')
     await expect.element(menu).toBeVisible()
   })
 
@@ -139,8 +137,8 @@ testStory(['slash-menu', 'full'], () => {
     // Show the menu
     await expectLocatorToBeHidden(focusedItem)
     await editor.click()
-    await userEvent.type(editor, '/')
-    await userEvent.type(editor, 'quote')
+    await inputText('/')
+    await inputText('quote')
     await expect.element(focusedItem).toBeVisible()
     await expect.element(focusedItem).toHaveTextContent('Quote')
 
@@ -161,8 +159,8 @@ testStory(['slash-menu', 'full'], () => {
     // Show the menu
     await expectLocatorToBeHidden(focusedItem)
     await editor.click()
-    await userEvent.type(editor, '/')
-    await userEvent.type(editor, 'quote')
+    await inputText('/')
+    await inputText('quote')
     await expect.element(focusedItem).toBeVisible()
     await expect.element(focusedItem).toHaveTextContent('Quote')
 
@@ -185,7 +183,7 @@ testStory(['slash-menu', 'full'], () => {
     await expectLocatorToHaveCount(taskList, 0)
     await expectLocatorToHaveCount(orderedList, 0)
 
-    await userEvent.type(editor, '/task')
+    await inputText('/task')
     await expect.element(focusedItem).toHaveTextContent('Task list')
 
     await keyboard.press('Enter')
@@ -195,8 +193,8 @@ testStory(['slash-menu', 'full'], () => {
     await keyboard.press('Backspace')
     await keyboard.press('Backspace')
     await keyboard.press('Backspace')
-    await userEvent.type(editor, 'Some text ')
-    await userEvent.type(editor, '/order')
+    await inputText('Some text ')
+    await inputText('/order')
     await expect.element(focusedItem).toHaveTextContent('Ordered list')
 
     await keyboard.press('Enter')
@@ -210,7 +208,7 @@ testStory(['slash-menu', 'full'], () => {
 
     await expectLocatorToHaveCount(blockquote, 0)
 
-    await userEvent.type(editor, '/quote')
+    await inputText('/quote')
     await expect.element(focusedItem).toHaveTextContent('Quote')
 
     await keyboard.press('Enter')
@@ -221,7 +219,7 @@ testStory(['slash-menu', 'full'], () => {
     const { editor, itemText, itemH1, itemH2, focusedItem } = await setup()
 
     await editor.click()
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(itemText).toBeVisible()
     await expect.element(itemH1).toBeVisible()
     await expect.element(itemH2).toBeVisible()
@@ -254,13 +252,13 @@ testStory(['slash-menu', 'full'], () => {
     await keyboard.press('Enter')
     await expect.element(menu).not.toBeVisible()
     for (const char of 'https://example.com/foo.bar/') {
-      await userEvent.type(editor, char)
+      await inputText(char)
       await expect.element(menu).not.toBeVisible()
     }
 
     // Make sure the menu is still functional
     await keyboard.press('Space')
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.element(menu).toBeVisible()
   })
 })

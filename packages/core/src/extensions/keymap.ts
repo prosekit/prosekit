@@ -1,5 +1,3 @@
-import { mapValues } from '@ocavue/utils'
-import { chainCommands } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import {
   Plugin,
@@ -53,49 +51,34 @@ export const keymapFacet: Facet<KeymapPayload, PluginPayload> = defineFacet<
   PluginPayload
 >({
   reduce: () => {
-    type Handler = (view: EditorView, event: KeyboardEvent) => boolean
+    type KeydownHandler = (view: EditorView, event: KeyboardEvent) => boolean
 
-    let handler: Handler | undefined
+    // An array of keymap handlers, ordered from the highest priority to the lowest.
+    let subHandlers: KeydownHandler[] = []
 
-    const handlerWrapper: Handler = (view, event) => {
-      if (handler) return handler(view, event)
+    // A root handler that combines all the sub handlers.
+    const rootHandler: KeydownHandler = (view, event) => {
+      for (const handler of subHandlers) {
+        if (handler(view, event)) return true
+      }
       return false
     }
 
     const plugin = new Plugin({
       key: keymapPluginKey,
-      props: { handleKeyDown: handlerWrapper },
+      props: { handleKeyDown: rootHandler },
     })
 
     return (keymaps: Keymap[]) => {
-      handler = keydownHandler(
-        mergeKeymaps(
-          // The keymap at the end have a higher priority.
-          [...keymaps].reverse(),
-        ),
-      )
+      // The keymap at the end have a higher priority, so we need to reverse the
+      // order here.
+      subHandlers = keymaps.map(keydownHandler).reverse()
+
       return plugin
     }
   },
   parent: pluginFacet,
   singleton: true,
 })
-
-function mergeKeymaps(keymaps: Keymap[]): Keymap {
-  const bindings: Record<string, Command[]> = {}
-
-  for (const keymap of keymaps) {
-    for (const [key, command] of Object.entries(keymap)) {
-      const commands = bindings[key] ||= []
-      commands.push(command)
-    }
-  }
-
-  return mapValues(bindings, mergeCommands)
-}
-
-function mergeCommands(commands: Command[]): Command {
-  return chainCommands(...commands)
-}
 
 const keymapPluginKey = new PluginKey('prosekit-keymap')

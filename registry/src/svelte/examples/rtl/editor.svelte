@@ -34,7 +34,7 @@ const editor = createEditor({ extension, defaultContent })
       <div use:editor.mount class="CSS_EDITOR_CONTENT"></div>
       <InlineMenu />
       <SlashMenu />
-      <BlockHandle />
+      <BlockHandle placement="right" />
       <TableHandle />
       <DropIndicator />
     </div>

@@ -45,7 +45,7 @@ watchPostEffect((onCleanup) => {
         <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
         <InlineMenu />
         <SlashMenu />
-        <BlockHandle />
+        <BlockHandle placement="right" />
         <TableHandle />
         <DropIndicator />
       </div>

@@ -37,7 +37,7 @@ export default function Editor(props: EditorProps) {
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
           <InlineMenu />
           <SlashMenu />
-          <BlockHandle />
+          <BlockHandle placement="right" />
           <TableHandle />
           <DropIndicator />
         </div>

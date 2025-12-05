@@ -70,7 +70,7 @@ export const keymapFacet: Facet<KeymapPayload, PluginPayload> = defineFacet<
     })
 
     return (keymaps: Keymap[]) => {
-      // The keymap at the end have a higher priority, so we need to reverse the
+      // The keymap at the end has a higher priority, so we need to reverse the
       // order here.
       subHandlers = keymaps.map(keydownHandler).reverse()
 

@@ -1,0 +1,63 @@
+---
+title: Keyboard Shortcuts
+sidebar:
+  order: 55
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+Keyboard shortcuts are essential for creating a smooth editing experience. ProseKit makes it easy to add custom keyboard shortcuts to your editor using the `defineKeymap` function.
+
+## Using defineKeymap
+
+The `defineKeymap` function allows you to define custom keyboard shortcuts for your editor:
+
+```ts twoslash
+import { createEditor, defineKeymap } from 'prosekit/core'
+
+const extension = defineKeymap({
+  'Mod-b': (state, dispatch) => {
+    console.log('Bold shortcut pressed')
+    return true
+  },
+  'Shift-Enter': (state, dispatch) => {
+    console.log('Shift-Enter pressed')
+    return true
+  },
+})
+
+const editor = createEditor({ extension })
+```
+
+## Key modifiers
+
+ProseKit supports the following modifiers:
+
+- `Mod`: Maps to `Command` on macOS and `Ctrl` on other platforms
+- `Ctrl`: Control key
+- `Alt`: Alt key (Option on macOS)
+- `Shift`: Shift key
+- `Meta`: Command key on macOS, Windows key on other platforms
+
+<Aside type="tip">
+Use `Mod` instead of `Ctrl` or `Meta` to create cross-platform shortcuts that work correctly on both macOS and other operating systems.
+</Aside>
+
+## Using the useKeymap hook
+
+If you're using a framework like React, Vue, or Svelte, you can use the `useKeymap` hook to define keyboard shortcuts dynamically:
+
+<Demo story="keymap" />
+
+This example demonstrates:
+
+1. How to use the `useKeymap` hook to add keyboard shortcuts
+2. How to toggle between different key bindings at runtime
+3. How keyboard shortcuts can trigger custom actions
+
+## API Reference
+
+- [defineKeymap](/references/core#definekeymap) - Define custom keyboard shortcuts
+- [defineBaseKeymap](/references/core#definebasekeymap) - Basic editing keyboard shortcuts
+- [useKeymap](/references/react#usekeymap) - React hook for dynamic keyboard shortcuts

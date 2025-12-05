@@ -30,7 +30,7 @@ const extension = defineKeymap({
 
 `defineKeymap` accepts an object where keys are keyboard shortcuts and values are [Command] functions to execute.
 
-Key names are strings like `Shift-Ctrl-Enter`, consisting of zero or more **modifiers** followed by a **[`KeyboardEvent.key`]** string.
+Key names are strings like `Shift-Ctrl-Enter`, consisting of zero or more **modifiers** followed by a **[`KeyboardEvent.key`]** key name.
 
 ### Modifiers
 
@@ -44,7 +44,7 @@ Supported modifiers:
 
 ### Key Names
 
-Use lowercase letters for letter keys, or uppercase letters when shift should be held. When using uppercase letters, the `"Shift"` modifier is implicit and must not be included separately. `"Space"` is an alias for `" "`.
+A **[`KeyboardEvent.key`]** string. Use lowercase letters for letter keys, or uppercase letters when shift should be held. When using uppercase letters, the `"Shift"` modifier is implicit and must not be included separately. `"Space"` is an alias for `" "`.
 
 ### Examples
 

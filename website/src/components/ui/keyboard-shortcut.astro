@@ -1,0 +1,13 @@
+---
+interface Props {
+  key: string
+  keySeparator?: string
+}
+
+const { key, keySeparator = '+' } = Astro.props
+const keys = key.split(keySeparator)
+---
+
+<span class="inline-flex items-center gap-0.5">
+  {keys.map((key, index) => <><kbd>{key}</kbd></>)}
+</span>

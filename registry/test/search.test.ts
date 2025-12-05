@@ -28,8 +28,8 @@ testStory('search', () => {
     await expectLocatorToHaveCount(searchMatch, 0)
     await expectLocatorToHaveCount(activeSearchMatch, 0)
 
-    await searchInput.click()
-    await inputText('One')
+    searchInput.element().focus()
+    await searchInput.fill('One')
 
     await expectLocatorToHaveCount(searchMatch, 3)
     await expectLocatorToHaveCount(activeSearchMatch, 0)
@@ -44,8 +44,8 @@ testStory('search', () => {
     await expectLocatorToHaveCount(replaceInput, 1)
     await expect.element(replaceInput).toBeVisible()
 
-    await replaceInput.click()
-    await inputText('Zero')
+    replaceInput.element().focus()
+    await replaceInput.fill('Zero')
     await keyboard.press('Enter')
 
     await expectLocatorToHaveCount(searchMatch, 1)

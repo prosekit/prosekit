@@ -64,8 +64,8 @@ export function defineStrikeCommands(): StrikeCommandsExtension {
  */
 export function defineStrikeKeymap(): PlainExtension {
   return defineKeymap({
-    'Mod-shift-s': toggleMark({ type: 'strike' }),
-    'Mod-shift-x': toggleMark({ type: 'strike' }),
+    'Mod-S': toggleMark({ type: 'strike' }),
+    'Mod-X': toggleMark({ type: 'strike' }),
   })
 }
 

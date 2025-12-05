@@ -17,7 +17,7 @@ import { definePlugin } from './plugin'
 
 const keymap: Keymap = {
   'Mod-z': undo,
-  'Shift-Mod-z': redo,
+  'Mod-Z': redo,
 }
 
 if (!isApple) {

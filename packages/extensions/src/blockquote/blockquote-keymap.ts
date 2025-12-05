@@ -25,7 +25,7 @@ function backspaceUnsetBlockquote(): Command {
  */
 export function defineBlockquoteKeymap(): PlainExtension {
   return defineKeymap({
-    'mod-shift-b': toggleBlockquoteKeybinding(),
+    'Mod-B': toggleBlockquoteKeybinding(),
     'Backspace': backspaceUnsetBlockquote(),
   })
 }

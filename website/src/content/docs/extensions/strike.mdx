@@ -3,6 +3,7 @@ title: Strike
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
 
 The `strike` mark is used to represent text with a strikethrough. It will be rendered as `<s>` element in HTML.
 
@@ -24,9 +25,10 @@ editor.commands.toggleStrike()
 
 ## Keyboard Shortcuts
 
-| Non-Apple                      | Apple                                | Description                            |
-| ------------------------------ | ------------------------------------ | -------------------------------------- |
-| `Ctrl-Shift-X`, `Ctrl-Shift-S` | `Command-Shift-X`, `Command-Shift-S` | Toggle the current selection to strike |
+| Non-Apple                       | Apple                              | Description                            |
+| ------------------------------- | ---------------------------------- | -------------------------------------- |
+| <Keyboard key="Ctrl+Shift+X" /> | <Keyboard key="Command+Shift+X" /> | Toggle the current selection to strike |
+| <Keyboard key="Ctrl+Shift+S" /> | <Keyboard key="Command+Shift+S" /> | Toggle the current selection to strike |
 
 ## API Reference
 

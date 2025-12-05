@@ -2,14 +2,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 
 import {
   emptyEditor,
   expectLocatorToHaveCount,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -24,7 +22,7 @@ testStory('horizontal-rule', () => {
 
     await emptyEditor()
     await editor.click()
-    await userEvent.type(editor, 'Hello')
+    await inputText('Hello')
 
     await expect.element(dividerButton).toBeVisible()
     await dividerButton.click()
@@ -34,7 +32,7 @@ testStory('horizontal-rule', () => {
     await expectLocatorToHaveCount(editor.locate('hr'), 1)
 
     // Typing should continue after the divider in a new paragraph
-    await userEvent.type(editor, 'World')
+    await inputText('World')
     await expect.element(editor.locate('p', { hasText: 'Hello' })).toBeVisible()
     await expect.element(editor.locate('p', { hasText: 'World' })).toBeVisible()
   })

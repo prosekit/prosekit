@@ -2,14 +2,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 
 import {
   expectLocatorToNotExist,
   extendSelection,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -25,7 +23,7 @@ testStory({ story: 'code', emptyContent: true }, () => {
     await expectLocatorToNotExist(editor.locate('code'))
 
     await editor.click()
-    await userEvent.type(editor, 'hello')
+    await inputText('hello')
     await extendSelection('backward', 5)
 
     const codeBtn = page.getByRole('button', { name: 'Code' })

@@ -2,16 +2,14 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
   focusEditor,
   getEditorHTML,
-  MOD_KEY,
+  inputText,
   moveSelectionToStart,
   testStory,
   testStoryConsistency,
@@ -87,12 +85,11 @@ testStory('text-align', () => {
     await emptyEditor()
 
     const btnC = page.getByRole('button', { name: 'Center' })
-    const editor = await waitForEditor()
 
-    await userEvent.type(editor, '# H1')
+    await inputText('# H1')
     await btnC.click()
-    await userEvent.keyboard('{Enter}')
-    await userEvent.type(editor, 'Paragraph')
+    await keyboard.press('Enter')
+    await inputText('Paragraph')
 
     // Both the heading and paragraph nodes should align to center
     expect(getEditorHTML()).toMatchInlineSnapshot(`
@@ -109,9 +106,8 @@ testStory('text-align', () => {
 
   it('keymap', async () => {
     await emptyEditor()
-    const editor = await waitForEditor()
 
-    await userEvent.type(editor, 'paragraph')
+    await inputText('paragraph')
 
     const check = (expected: 'left' | 'right' | 'center' | 'justify') => {
       for (const value of ['left', 'right', 'center', 'justify'] as const) {
@@ -124,16 +120,16 @@ testStory('text-align', () => {
       }
     }
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}r{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+R')
     check('right')
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}l{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+L')
     check('left')
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}e{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+E')
     check('center')
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}j{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+J')
     check('justify')
   })
 })

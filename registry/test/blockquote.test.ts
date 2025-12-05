@@ -9,6 +9,7 @@ import {
 
 import {
   emptyEditor,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -23,7 +24,7 @@ testStory('blockquote', () => {
     const bq = editor.locate('blockquote')
 
     await emptyEditor()
-    await userEvent.type(editor, 'Paragraph')
+    await inputText('Paragraph')
 
     // Initially no blockquote
     expect(bq).not.toBeInTheDocument()

@@ -2,6 +2,8 @@
 title: Paragraph
 ---
 
+import Keyboard from '@/components/ui/keyboard.astro';
+
 A plain paragraph textblock. Represented in the DOM as a `<p>` element.
 
 ## Commands
@@ -21,9 +23,9 @@ editor.commands.setParagraph()
 
 ## Keyboard Shortcuts
 
-| Non-Apple    | Apple              | Description                              |
-| ------------ | ------------------ | ---------------------------------------- |
-| `Ctrl-Alt-0` | `Command-Option-0` | Set the current textblock to a paragraph |
+| Non-Apple                     | Apple                               | Description                              |
+| ----------------------------- | ----------------------------------- | ---------------------------------------- |
+| <Keyboard key="Ctrl+Alt+0" /> | <Keyboard key="Command+Option+0" /> | Set the current textblock to a paragraph |
 
 ## API Reference
 

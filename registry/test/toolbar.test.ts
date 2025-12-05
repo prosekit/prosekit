@@ -2,14 +2,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 
 import {
   emptyEditor,
   extendSelection,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -23,7 +21,7 @@ testStory('toolbar', () => {
 
     await emptyEditor({ editor })
     await editor.click()
-    await userEvent.type(editor, 'Hello')
+    await inputText('Hello')
     await extendSelection('backward', 5)
 
     const boldButton = page.getByRole('button', { name: 'Bold' })
@@ -33,7 +31,7 @@ testStory('toolbar', () => {
 
     await emptyEditor({ editor })
     await editor.click()
-    await userEvent.type(editor, 'Hello')
+    await inputText('Hello')
 
     const headingButton = page.getByRole('button', { name: 'Heading 1' })
     await expect.element(headingButton).toBeVisible()

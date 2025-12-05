@@ -7,7 +7,6 @@ export {
   focusEditor,
   getEditorHTML,
   locateEditor,
-  MOD_KEY,
   pasteHtmlToEditor,
   waitForEditor,
 } from './editor'
@@ -16,6 +15,7 @@ export {
   expectLocatorToHaveCount,
   expectLocatorToNotExist,
 } from './expect'
+export { inputText } from './keyboard'
 export {
   dragAndDrop,
   hover,

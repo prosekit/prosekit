@@ -184,7 +184,7 @@ export default function InlineMenu(): JSX.Element {
       <Show when={items().link}>
         {(item) => (
           <InlinePopover
-            placement={'bottom'}
+            placement="bottom"
             defaultOpen={false}
             open={linkMenuOpen()}
             onOpenChange={setLinkMenuOpen}

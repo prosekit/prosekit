@@ -33,17 +33,17 @@ const extension = defineKeymap({
 
 Key names may be strings like `Shift-Ctrl-Enter`. It should contain zero or more **modifier** strings, and an **[`KeyboardEvent.key`]** string.
 
-The following modifiers are supported. Order matters:
+The following modifiers are supported:
 
-- `"Mod"`: Maps to <Keyboard key="Command" /> on macOS and <Keyboard key="Ctrl" /> on other platforms
 - `"Ctrl"`: <Keyboard key="Ctrl" /> key
-- `"Alt"`: <Keyboard key="Alt" /> key (<Keyboard key="Option" /> on macOS)
+- `"Alt"`: <Keyboard key="Alt" /> key, equivalent to <Keyboard key="Option" /> key on macOS
 - `"Shift"`: <Keyboard key="Shift" /> key
-- `"Meta"`: <Keyboard key="Command" /> key on macOS, <Keyboard key="Windows" /> key on other platforms
-
-Use lowercase letters to refer to letter keys, or uppercase letters if you want shift to be held. When using uppercase letters, the `"Shift"` modifier is implied and should not be included in the key name.
+- `"Mod"`: <Keyboard key="Command" /> key on macOS, <Keyboard key="Ctrl" /> key on other platforms
+- `"Meta"`: <Keyboard key="Command" /> key on macOS, <Keyboard key="Win" /> key on Windows
 
 A **[`KeyboardEvent.key`]** string is a string that represents the key pressed.
+
+Use lowercase letters to refer to letter keys, or uppercase letters if you want shift to be held. When using uppercase letters, the `"Shift"` modifier is implied and should not be included in the key name. `"Space"` is an alias for the `" "` key.
 
 Here are some examples:
 
@@ -53,38 +53,11 @@ Here are some examples:
 - `"Ctrl-a"`: ✅ Trigger when <Keyboard key="Ctrl+A" /> is pressed
 - `"Ctrl-A"`: ✅ Trigger when <Keyboard key="Ctrl+Shift+A" /> is pressed.
 - `"Ctrl-Shift-A"`: ❌ Don't add the `"Shift"` modifier, it's implied
-- `"Ctrl-Shift-a"`: ❌ When Shift is held, pressing <Keyboard key="A" /> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
-
-As a special case, `"Space"` is an alias for the `" "` key.
-
+- `"Ctrl-Shift-a"`: ❌ When <Keyboard key="Shift" /> is held, pressing <Keyboard key="A" /> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
 - `"Shift- "`: ✅ this is valid
 - `"Shift-Space"`: ✅ this is valid too
 
-You can call `defineKeymap` multiple times to add multiple keyboard shortcuts. The later keyboard shortcuts will override the earlier ones. For example:
-
-```ts twoslash
-import {
-  defineKeymap,
-  union,
-} from 'prosekit/core'
-
-const extensionA = defineKeymap({
-  'Mod-b': (state, dispatch) => {
-    console.log('A is called')
-    return true
-  },
-})
-const extensionB = defineKeymap({
-  'Mod-b': (state, dispatch) => {
-    console.log('B is called')
-    return true
-  },
-})
-
-const extension = union(extensionA, extensionB)
-```
-
-When pressing <Keyboard key="Mod+B" />, only the handler in the `extensionB` will be called.
+You can call `defineKeymap` multiple times to add multiple keyboard shortcuts. The later keyboard shortcuts will override the earlier ones.
 
 You can use the `withPriority` function to give a higher priority to one of the extensions. For example:
 

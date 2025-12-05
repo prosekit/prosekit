@@ -132,6 +132,11 @@
     font-weight: inherit;
   }
 
+  & pre:has(code) {
+    /* Force the code block to be left-to-right */
+    direction: ltr;
+  }
+
   & hr {
     margin: 2em 0;
     border-width: 1px;

@@ -2,13 +2,11 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 
 import {
   emptyEditor,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -26,14 +24,14 @@ testStory('bold', () => {
     // Turn on bold, type text -> should be wrapped in <strong>
     await expect.element(boldBtn).toBeVisible()
     await boldBtn.click()
-    await userEvent.type(editor, 'hello')
+    await inputText('hello')
     const strongHello = editor.locate('strong', { hasText: /hello/ })
     await expect.element(strongHello).toBeVisible()
 
     // Turn off bold, type more -> should not be bold
     await expect.element(boldBtn).toBeVisible()
     await boldBtn.click()
-    await userEvent.type(editor, ' world')
+    await inputText(' world')
     await expect.element(strongHello).toBeVisible()
     await expect.element(editor).toHaveTextContent('hello world')
     expect(editor.locate('strong', { hasText: /world/ })).not.toBeInTheDocument()

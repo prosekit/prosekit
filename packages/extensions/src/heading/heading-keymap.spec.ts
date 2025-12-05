@@ -3,9 +3,9 @@ import {
   expect,
   it,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'
-import { pressKey } from '../testing/keyboard'
 
 describe('defineHeadingKeymap', () => {
   it('should toggle heading', async () => {
@@ -17,13 +17,13 @@ describe('defineHeadingKeymap', () => {
 
     editor.set(doc)
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
-    await pressKey('mod-alt-1')
+    await keyboard.press('ControlOrMeta+Alt+1')
     expect(editor.state.doc.toJSON()).toEqual(docH1.toJSON())
-    await pressKey('mod-alt-1')
+    await keyboard.press('ControlOrMeta+Alt+1')
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
-    await pressKey('mod-alt-3')
+    await keyboard.press('ControlOrMeta+Alt+3')
     expect(editor.state.doc.toJSON()).toEqual(docH3.toJSON())
-    await pressKey('mod-alt-1')
+    await keyboard.press('ControlOrMeta+Alt+1')
     expect(editor.state.doc.toJSON()).toEqual(docH1.toJSON())
   })
 
@@ -35,7 +35,7 @@ describe('defineHeadingKeymap', () => {
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 
@@ -47,7 +47,7 @@ describe('defineHeadingKeymap', () => {
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
-    await pressKey('Backspace')
+    await keyboard.press('Backspace')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 })

@@ -2,9 +2,9 @@ import {
   expect,
   it,
 } from 'vitest'
-import { userEvent } from 'vitest/browser'
 
 import {
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -18,8 +18,8 @@ testStory('minimal', () => {
 
     await expect.element(editor).not.toHaveTextContent('Hello')
 
-    await userEvent.click(editor)
-    await userEvent.type(editor, 'Hello ')
+    await editor.click()
+    await inputText('Hello ')
 
     await expect.element(editor).toHaveTextContent('Hello')
   })

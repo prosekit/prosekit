@@ -2,11 +2,11 @@ import {
   expect,
   it,
 } from 'vitest'
-import { userEvent } from 'vitest/browser'
 
 import {
   emptyEditor,
   expectLocatorToHaveCount,
+  inputText,
   locateEditor,
   testStory,
   testStoryConsistency,
@@ -23,13 +23,19 @@ testStory('yjs', () => {
     const editorB = editors.nth(1)
 
     await emptyEditor({ editor: editorA })
-    await userEvent.type(editorA, 'Hello')
+    editorA.element().focus()
+    await expect.element(editorA).toHaveFocus()
+    await inputText('Hello')
 
+    await expect.element(editorA).toHaveTextContent('Hello')
     await expect.element(editorB).toHaveTextContent('Hello')
 
     await emptyEditor({ editor: editorB })
-    await userEvent.type(editorB, 'World')
+    editorB.element().focus()
+    await expect.element(editorB).toHaveFocus()
+    await inputText('World')
 
     await expect.element(editorA).toHaveTextContent('World')
+    await expect.element(editorB).toHaveTextContent('World')
   })
 })

@@ -3,9 +3,9 @@ import {
   expect,
   it,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'
-import { pressKey } from '../testing/keyboard'
 
 describe('keymap', () => {
   const { editor, n } = setupTest()
@@ -26,14 +26,14 @@ describe('keymap', () => {
     )
     editor.set(doc1)
 
-    await pressKey('mod-]')
+    await keyboard.press('ControlOrMeta+]')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
-    await pressKey('mod-[')
+    await keyboard.press('ControlOrMeta+[')
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
 
-    await pressKey('Tab')
+    await keyboard.press('Tab')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
-    await pressKey('Shift-Tab')
+    await keyboard.press('Shift+Tab')
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
   })
 })

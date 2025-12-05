@@ -3,12 +3,10 @@ import {
   expect,
   it,
 } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'
-import {
-  inputText,
-  pressKey,
-} from '../testing/keyboard'
+import { inputText } from '../testing/keyboard'
 
 describe('defineHardBreakKeymap', () => {
   it('should insert hard break', async () => {
@@ -19,12 +17,12 @@ describe('defineHardBreakKeymap', () => {
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
-    await pressKey('Shift-Enter')
+    await keyboard.press('Shift+Enter')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
-    await pressKey('Mod-Enter')
+    await keyboard.press('ControlOrMeta+Enter')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 
@@ -37,7 +35,7 @@ describe('defineHardBreakKeymap', () => {
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
-    await pressKey('Shift-Enter')
+    await keyboard.press('Shift+Enter')
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
     await inputText('baz')
     expect(editor.state.doc.toJSON()).toEqual(doc3.toJSON())

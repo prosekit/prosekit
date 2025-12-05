@@ -2,14 +2,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 
 import {
   emptyEditor,
   expectLocatorToHaveCount,
+  inputText,
   testStory,
   testStoryConsistency,
 } from './helpers'
@@ -24,7 +22,7 @@ testStory('change-tracking', () => {
     // Start from empty and type Version A
     await emptyEditor({ editor })
     await expect.element(editor).toHaveTextContent('')
-    await userEvent.type(editor, 'Version A')
+    await inputText('Version A')
     await expect.element(editor).toHaveTextContent('Version A')
 
     const save = page.getByRole('button', { name: 'Save' })
@@ -39,7 +37,7 @@ testStory('change-tracking', () => {
     // Change content to Version B and save again
     await emptyEditor({ editor })
     await expect.element(editor).toHaveTextContent('')
-    await userEvent.type(editor, 'Version B')
+    await inputText('Version B')
     await expect.element(editor).toHaveTextContent('Version B')
     await expect.element(save).toBeVisible()
     await save.click()

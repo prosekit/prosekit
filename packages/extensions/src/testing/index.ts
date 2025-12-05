@@ -14,6 +14,7 @@ import {
   createTestEditor,
   type TestEditor,
 } from '@prosekit/core/test'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
@@ -41,7 +42,6 @@ import {
   readHtmlTextFromClipboard,
   readPlainTextFromClipboard,
 } from './clipboard'
-import { pressKey } from './keyboard'
 
 /**
  * @internal
@@ -124,7 +124,7 @@ export function setupTest() {
 
   const copy = async () => {
     editor.view.dom.focus()
-    await pressKey('mod-C')
+    await keyboard.press('ControlOrMeta+C')
     const html = await readHtmlTextFromClipboard()
     const plain = await readPlainTextFromClipboard()
     return { html, plain }

@@ -3,6 +3,7 @@ title: Heading
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
 
 The `heading` node is used to represent blocks of heading in the document.
 
@@ -56,15 +57,15 @@ editor.commands.insertHeading({ level: 1 })
 
 ## Keyboard Shortcuts
 
-| Non-Apple    | Apple              | Description                                                                 |
-| ------------ | ------------------ | --------------------------------------------------------------------------- |
-| `Ctrl-Alt-1` | `Command-Option-1` | Set the current block to an H1 node                                         |
-| `Ctrl-Alt-2` | `Command-Option-2` | Set the current block to an H2 node                                         |
-| `Ctrl-Alt-3` | `Command-Option-3` | Set the current block to an H3 node                                         |
-| `Ctrl-Alt-4` | `Command-Option-4` | Set the current block to an H4 node                                         |
-| `Ctrl-Alt-5` | `Command-Option-5` | Set the current block to an H5 node                                         |
-| `Ctrl-Alt-6` | `Command-Option-6` | Set the current block to an H6 node                                         |
-| `Backspace`  | `Backspace`        | When the text cursor is at the start of a heading node, set it to paragraph |
+| Non-Apple                     | Apple                               | Description                                                                 |
+| ----------------------------- | ----------------------------------- | --------------------------------------------------------------------------- |
+| <Keyboard key="Ctrl+Alt+1" /> | <Keyboard key="Command+Option+1" /> | Set the current block to an H1 node                                         |
+| <Keyboard key="Ctrl+Alt+2" /> | <Keyboard key="Command+Option+2" /> | Set the current block to an H2 node                                         |
+| <Keyboard key="Ctrl+Alt+3" /> | <Keyboard key="Command+Option+3" /> | Set the current block to an H3 node                                         |
+| <Keyboard key="Ctrl+Alt+4" /> | <Keyboard key="Command+Option+4" /> | Set the current block to an H4 node                                         |
+| <Keyboard key="Ctrl+Alt+5" /> | <Keyboard key="Command+Option+5" /> | Set the current block to an H5 node                                         |
+| <Keyboard key="Ctrl+Alt+6" /> | <Keyboard key="Command+Option+6" /> | Set the current block to an H6 node                                         |
+| <Keyboard key="Backspace" />  | <Keyboard key="Backspace" />        | When the text cursor is at the start of a heading node, set it to paragraph |
 
 ## Keyboard Interaction
 

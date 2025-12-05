@@ -1,0 +1,99 @@
+---
+title: Keyboard Shortcuts
+sidebar:
+  order: 55
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
+
+Add keyboard shortcuts to your editor using the `defineKeymap` function or the `useKeymap` hook for framework-specific implementations.
+
+## Using `defineKeymap`
+
+Define custom keyboard shortcuts using the `defineKeymap` function:
+
+```ts twoslash
+import { defineKeymap } from 'prosekit/core'
+
+const extension = defineKeymap({
+  'Mod-b': (state, dispatch) => {
+    console.log('Bold shortcut pressed')
+    return true
+  },
+  'Shift-Enter': (state, dispatch) => {
+    console.log('Shift-Enter pressed')
+    return true
+  },
+})
+```
+
+`defineKeymap` accepts an object where keys are keyboard shortcuts and values are [Command] functions to execute.
+
+Key names are strings like `Shift-Ctrl-Enter`, consisting of zero or more **modifiers** followed by a **[`KeyboardEvent.key`]** key name.
+
+### Modifiers
+
+Supported modifiers:
+
+- `"Ctrl"`: <Keyboard key="Ctrl" /> key
+- `"Alt"`: <Keyboard key="Alt" /> key (equivalent to <Keyboard key="Option" /> on macOS)
+- `"Shift"`: <Keyboard key="Shift" /> key
+- `"Mod"`: <Keyboard key="Command" /> on macOS, <Keyboard key="Ctrl" /> on other platforms
+- `"Meta"`: <Keyboard key="Command" /> on macOS, <Keyboard key="Win" /> on Windows
+
+### Key Names
+
+A **[`KeyboardEvent.key`]** string. Use lowercase letters for letter keys, or uppercase letters when shift should be held. When using uppercase letters, the `"Shift"` modifier is implicit and must not be included separately. `"Space"` is an alias for `" "`.
+
+### Examples
+
+- `"Enter"`: ✅ Triggers when <Keyboard key="Enter" /> is pressed
+- `"Shift-Enter"`: ✅ Triggers when <Keyboard key="Shift+Enter" /> is pressed
+- `"Shift-enter"`: ❌ Invalid — `"enter"` is not a valid [`KeyboardEvent.key`] value
+- `"Ctrl-a"`: ✅ Triggers when <Keyboard key="Ctrl+A" /> is pressed
+- `"Ctrl-A"`: ✅ Triggers when <Keyboard key="Ctrl+Shift+A" /> is pressed
+- `"Ctrl-Shift-A"`: ❌ Invalid — `"Shift"` modifier is implicit with uppercase letters
+- `"Ctrl-Shift-a"`: ❌ Invalid — when <Keyboard key="Shift" /> is held, [`KeyboardEvent.key`] is `"A"`, not `"a"`
+- `"Shift- "`: ✅ Triggers when <Keyboard key="Shift+Space" /> is pressed
+- `"Shift-Space"`: ✅ Valid (equivalent to the above)
+
+### Priority
+
+Call `defineKeymap` multiple times to define additional shortcuts. Later definitions override earlier ones.
+
+Use `withPriority` to set extension priority:
+
+```ts twoslash
+import { Extension } from 'prosekit/core'
+declare const extensionA: Extension
+// ---cut---
+import {
+  Priority,
+  withPriority,
+} from 'prosekit/core'
+
+const extensionAPrioritized = withPriority(extensionA, Priority.high)
+```
+
+## Using `useKeymap`
+
+`useKeymap` is available for UI framework integrations. This is useful when you want to define shortcuts dynamically.
+
+An example of how to use `useKeymap` to define shortcuts:
+
+<Demo story="keymap" />
+
+## Base Keymap
+
+[`defineBaseKeymap`] includes the base keyboard shortcuts for the editor. You would likely want to include this in your extension. `defineBaseKeymap` is already included in the [`defineBasicExtension`] function.
+
+## API Reference
+
+- [defineKeymap](/references/core#definekeymap) - Define custom keyboard shortcuts
+- [useKeymap](/references/react#usekeymap) - React hook for dynamic keyboard shortcuts
+
+[Command]: /references/pm/state/#command
+[`KeyboardEvent.key`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
+[`defineBaseKeymap`]: /references/core#definebasekeymap
+[`defineBasicExtension`]: /references/basic#definebasicextension

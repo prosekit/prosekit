@@ -3,6 +3,7 @@ title: Hard Break
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
 
 The `hardBreak` node is used to represent a line break `<br>` in the document.
 
@@ -32,10 +33,10 @@ editor.commands.insertHardBreak()
 
 ## Keyboard Shortcuts
 
-| Non-Apple     | Apple           | Description                                                  |
-| ------------- | --------------- | ------------------------------------------------------------ |
-| `Ctrl-Enter`  | `Command-Enter` | Insert a hard break node at the current text cursor position |
-| `Shift-Enter` | `Shift-Enter`   | Insert a hard break node at the current text cursor position |
+| Non-Apple                      | Apple                            | Description                                                  |
+| ------------------------------ | -------------------------------- | ------------------------------------------------------------ |
+| <Keyboard key="Ctrl+Enter" />  | <Keyboard key="Command+Enter" /> | Insert a hard break node at the current text cursor position |
+| <Keyboard key="Shift+Enter" /> | <Keyboard key="Shift+Enter" />   | Insert a hard break node at the current text cursor position |
 
 ## API Reference
 

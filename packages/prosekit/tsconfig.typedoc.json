@@ -1,0 +1,7 @@
+{
+  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
+  "compilerOptions": {
+    "outDir": "./.temp/tsconfig.typedoc.out",
+    "tsBuildInfoFile": "./.temp/tsconfig.typedoc.tsbuildinfo"
+  }
+}

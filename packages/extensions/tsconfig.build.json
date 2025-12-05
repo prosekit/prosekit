@@ -4,5 +4,9 @@
   "compilerOptions": {
     "isolatedDeclarations": true,
     "allowJs": false
-  }
+  },
+  "references": [
+    { "path": "../core/tsconfig.json" },
+    { "path": "../pm/tsconfig.json" }
+  ]
 }

@@ -1,5 +1,5 @@
-import { userEvent } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 export async function inputText(input: string): Promise<void> {
-  return await userEvent.keyboard(input)
+  return await keyboard.type(input, { delay: 10 })
 }

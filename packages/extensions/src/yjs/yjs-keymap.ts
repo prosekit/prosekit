@@ -11,7 +11,7 @@ import {
 
 const keymap: Keymap = {
   'Mod-z': undoCommand,
-  'Shift-Mod-z': redoCommand,
+  'Mod-Z': redoCommand,
 }
 
 if (!isApple) {

@@ -20,6 +20,7 @@ import { Priority } from '../types/priority'
 
 import {
   defineKeymap,
+  temp_toggleTest,
   type Keymap,
 } from './keymap'
 
@@ -161,7 +162,9 @@ describe('keymap', () => {
     ]
     const keymap: Keymap = Object.fromEntries(keybindings.map(binding => [binding, record(binding)]))
 
+    temp_toggleTest(false)
     editor.use(defineKeymap(keymap))
+    temp_toggleTest(true)
 
     called.length = 0
     await keyboard.down('Control')

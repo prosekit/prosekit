@@ -10,6 +10,6 @@ import { setParagraph } from './paragraph-commands'
  */
 export function defineParagraphKeymap(): PlainExtension {
   return defineKeymap({
-    'mod-alt-0': setParagraph(),
+    'Mod-Alt-0': setParagraph(),
   })
 }

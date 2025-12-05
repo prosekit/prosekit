@@ -31,6 +31,46 @@ export interface Keymap {
   [key: string]: Command
 }
 
+// Temporary function to check if a key name is valid.
+function temp_checkKeyName(key: string) {
+  const keys = key.split('-')
+  if (keys.length === 0) {
+    throw new Error('Key name cannot be empty: ' + key)
+  }
+  const lastKey = keys.pop()!
+  const modifiers = keys
+
+  let hasShift = false
+  for (const modifier of modifiers) {
+    const validModifiers = ['Shift', 'Ctrl', 'Alt', 'Meta', 'Mod']
+    if (!validModifiers.includes(modifier)) {
+      throw new Error('Invalid modifier name: ' + JSON.stringify(key))
+    }
+    if (modifier === 'Shift') {
+      hasShift = true
+    }
+  }
+
+  if (hasShift && lastKey.length === 1 && lastKey.toUpperCase() !== lastKey) {
+    throw new Error('When Shift modifier is used, the last key must be an uppercase letter but got: ' + JSON.stringify(key))
+  }
+
+  if (lastKey.length === 1 && lastKey.toUpperCase() === lastKey && 'A' <= lastKey && lastKey <= 'Z') {
+    if (hasShift) {
+      throw new Error('Shift modifier is implied when the last key is an uppercase letter so it should not be included in the key name: ' + JSON.stringify(key))
+    }
+  }
+}
+
+let enabledKeymapTest = true
+
+/**
+ * @internal
+ */
+export function temp_toggleTest(enabled: boolean): void {
+  enabledKeymapTest = enabled
+}
+
 /**
  * Adds a set of keybindings to the editor. Please read the
  * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
@@ -38,6 +78,12 @@ export interface Keymap {
  * @public
  */
 export function defineKeymap(keymap: Keymap): PlainExtension {
+  if (enabledKeymapTest) {
+    for (const key of Object.keys(keymap)) {
+      temp_checkKeyName(key)
+    }
+  }
+
   return defineFacetPayload(keymapFacet, [keymap]) as PlainExtension
 }
 

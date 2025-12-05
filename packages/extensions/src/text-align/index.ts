@@ -102,10 +102,10 @@ export function defineTextAlignCommands(
  */
 export function defineTextAlignKeymap(types: string[]): PlainExtension {
   return defineKeymap({
-    'mod-shift-l': setTextAlign({ types, value: 'left' }),
-    'mod-shift-e': setTextAlign({ types, value: 'center' }),
-    'mod-shift-r': setTextAlign({ types, value: 'right' }),
-    'mod-shift-j': setTextAlign({ types, value: 'justify' }),
+    'Mod-L': setTextAlign({ types, value: 'left' }),
+    'Mod-E': setTextAlign({ types, value: 'center' }),
+    'Mod-R': setTextAlign({ types, value: 'right' }),
+    'Mod-J': setTextAlign({ types, value: 'justify' }),
   })
 }
 

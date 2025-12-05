@@ -905,7 +905,7 @@
 
 - [`df5bd07`](https://github.com/ocavue/prosekit/commit/df5bd073c13073cca6daa4e8920d66db67c845f1) ![](https://prosekit.dev/b/core)
 
-  `createEditor` now accepts a new `defaultContent` option to set the initial content of the editor, which can be a JSON object, a HTML string, or a HTML element instance. It replaces the `defaultDoc` and `defaultHTML` options.
+  `createEditor` now accepts a new `defaultContent` option to set the initial content of the editor, which can be a JSON object, an HTML string, or an HTML element instance. It replaces the `defaultDoc` and `defaultHTML` options.
 
 - [`bcda993`](https://github.com/ocavue/prosekit/commit/bcda99300ed0dc424c05c8271b58ffcc12eb7617) ![](https://prosekit.dev/b/core)
 

@@ -2,13 +2,11 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 
 import {
   focusEditor,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -32,21 +30,21 @@ testStory('readonly', () => {
 
     await editableButton.click()
     await focusEditor()
-    await userEvent.type(editor, 'foo')
+    await inputText('foo')
     await expect.element(editor).toHaveTextContent('foo')
     await expect.element(editor).not.toHaveTextContent('bar')
     await expect.element(editor).not.toHaveTextContent('baz')
 
     await readonlyButton.click()
     await focusEditor()
-    await userEvent.type(editor, 'bar')
+    await inputText('bar')
     await expect.element(editor).toHaveTextContent('foo')
     await expect.element(editor).not.toHaveTextContent('bar')
     await expect.element(editor).not.toHaveTextContent('baz')
 
     await editableButton.click()
     await focusEditor()
-    await userEvent.type(editor, 'baz')
+    await inputText('baz')
     await expect.element(editor).toHaveTextContent('foo')
     await expect.element(editor).not.toHaveTextContent('bar')
     await expect.element(editor).toHaveTextContent('baz')

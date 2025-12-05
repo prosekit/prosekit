@@ -1,6 +1,9 @@
 import '../../src/tailwind.css'
 
-import { DefaultMap } from '@ocavue/utils'
+import {
+  DefaultMap,
+  isHTMLElement,
+} from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
 import {
   beforeEach,
@@ -131,13 +134,10 @@ export function testStoryConsistency(story: string, {
 } = {}) {
   const examples = getExamples(story)
 
-  if (examples.length <= 1) {
-    return
-  }
+  const htmlToExamples = new DefaultMap<string, string[]>(() => [])
 
-  it(`should render the same "${story}" story across ${examples.length} frameworks`, async () => {
-    const htmlToExamples = new DefaultMap<string, string[]>(() => [])
-    for (const example of examples) {
+  for (const example of examples) {
+    it(`should render stable HTML for "${example.framework}/${example.story}"`, async () => {
       const html = await getStableHTML({
         framework: example.framework,
         story: example.story,
@@ -146,8 +146,14 @@ export function testStoryConsistency(story: string, {
         shouldWaitForImageToLoad,
       })
       htmlToExamples.get(html).push(example.example)
-    }
+    })
+  }
 
+  if (examples.length <= 1) {
+    return
+  }
+
+  it(`should render the same "${story}" story across ${examples.length} frameworks`, () => {
     if (htmlToExamples.size <= 1) {
       return
     }
@@ -216,6 +222,7 @@ async function getStableHTML(
 
   removeDisplayContents(clone)
   removeSelectValueAttributes(clone)
+  normalizeDisplayNone(clone)
 
   let html = formatHTML(clone.innerHTML)
   // Replace "id" attributes
@@ -224,8 +231,6 @@ async function getStableHTML(
   html = html.replaceAll(/ for="[\w-]+"/g, ' for="SOME_ID"')
   // Replace "value" attributes
   html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
-  // Remove unused styles for hidden elements
-  html = html.replaceAll(/style="[^"]*display: none[^"]*"/g, 'style="display: none"')
   // Remove React suppressHydrationWarning attribute
   html = html.replaceAll(/ suppresshydrationwarning="true"/gi, '')
 
@@ -236,13 +241,35 @@ async function getStableHTML(
 // insert a div for portals. See
 // https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
 function removeDisplayContents(element: Element) {
-  let found: Element | null
-  while ((found = element.querySelector('div[style*="display: contents"]'))) {
+  const founds = Array.from(element.querySelectorAll('div[style*="display: contents"]'))
+  for (const found of founds) {
     const parent = found.parentNode
-    while (found.firstChild) {
-      parent?.insertBefore(found.firstChild, found)
+    const children = Array.from(found.children)
+    for (const child of children) {
+      parent?.insertBefore(child, found)
     }
     found.remove()
+  }
+}
+
+// Remove display: contents divs in the clone, since solid.js v1 needs to
+// insert a div for portals. See
+// https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
+function normalizeDisplayNone(element: Element) {
+  const founds = Array.from(element.querySelectorAll('[style*="display: none"]'))
+  for (const found of founds) {
+    if (!isHTMLElement(found)) {
+      continue
+    }
+
+    // Remove all other styles and keep only display: none
+    found.style.cssText = 'display: none'
+
+    // Remove all dataset attributes
+    const dataKeys = Object.keys(found.dataset)
+    for (const dataKey of dataKeys) {
+      delete found.dataset[dataKey]
+    }
   }
 }
 

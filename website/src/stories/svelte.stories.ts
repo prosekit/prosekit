@@ -30,6 +30,7 @@ export const MarkRule = { args: { story: 'mark-rule' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }
+export const Rtl = { args: { story: 'rtl' } }
 export const SaveHtml = { args: { story: 'save-html' } }
 export const SaveJson = { args: { story: 'save-json' } }
 export const SaveMarkdown = { args: { story: 'save-markdown' } }

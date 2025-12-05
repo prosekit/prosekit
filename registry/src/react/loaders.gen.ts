@@ -29,6 +29,7 @@ export const loaders = {
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor }))),
   'readonly': lazy(() => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor }))),
+  'rtl': lazy(() => import('./examples/rtl').then((m) => ({ default: m.ExampleEditor }))),
   'save-html': lazy(() => import('./examples/save-html').then((m) => ({ default: m.ExampleEditor }))),
   'save-json': lazy(() => import('./examples/save-json').then((m) => ({ default: m.ExampleEditor }))),
   'save-markdown': lazy(() => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor }))),

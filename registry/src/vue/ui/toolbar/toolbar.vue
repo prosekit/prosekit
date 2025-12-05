@@ -7,7 +7,7 @@ import { useEditorDerivedValue } from 'prosekit/vue'
 import { Button } from '../button'
 import { ImageUploadPopover } from '../image-upload-popover'
 
-defineProps<{ uploader?: Uploader<string> }>()
+const props = defineProps<{ uploader?: Uploader<string> }>()
 
 function getToolbarItems(editor: Editor<BasicExtension>) {
   return {
@@ -331,8 +331,8 @@ const items = useEditorDerivedValue(getToolbarItems)
       <div class="CSS_ICON_LIST_DEDENT" />
     </Button>
     <ImageUploadPopover
-      v-if="uploader && items.insertImage"
-      :uploader="uploader"
+      v-if="props.uploader && items.insertImage"
+      :uploader="props.uploader"
       :disabled="!items.insertImage.canExec"
       tooltip="Insert Image"
     >

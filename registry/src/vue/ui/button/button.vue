@@ -5,7 +5,7 @@ import {
   TooltipTrigger,
 } from 'prosekit/vue/tooltip'
 
-defineProps<{
+const props = defineProps<{
   pressed?: boolean
   disabled?: boolean
   onClick?: () => void
@@ -17,18 +17,18 @@ defineProps<{
   <TooltipRoot>
     <TooltipTrigger class="CSS_TOOLTIP_TRIGGER">
       <button
-        :data-state="pressed ? 'on' : 'off'"
-        :disabled="disabled"
+        :data-state="props.pressed ? 'on' : 'off'"
+        :disabled="props.disabled"
         class="CSS_TOGGLE_BUTTON"
-        @click="onClick"
+        @click="props.onClick"
         @mousedown.prevent
       >
         <slot />
-        <span v-if="tooltip" class="sr-only">{{ tooltip }}</span>
+        <span v-if="props.tooltip" class="sr-only">{{ props.tooltip }}</span>
       </button>
     </TooltipTrigger>
-    <TooltipContent v-if="tooltip" class="CSS_TOOLTIP_CONTENT">
-      {{ tooltip }}
+    <TooltipContent v-if="props.tooltip" class="CSS_TOOLTIP_CONTENT">
+      {{ props.tooltip }}
     </TooltipContent>
   </TooltipRoot>
 </template>

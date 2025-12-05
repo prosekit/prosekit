@@ -29,6 +29,7 @@ export const loaders = {
   'minimal': defineAsyncComponent(() => import('./examples/minimal').then((m) => m.ExampleEditor)),
   'placeholder': defineAsyncComponent(() => import('./examples/placeholder').then((m) => m.ExampleEditor)),
   'readonly': defineAsyncComponent(() => import('./examples/readonly').then((m) => m.ExampleEditor)),
+  'rtl': defineAsyncComponent(() => import('./examples/rtl').then((m) => m.ExampleEditor)),
   'save-html': defineAsyncComponent(() => import('./examples/save-html').then((m) => m.ExampleEditor)),
   'save-json': defineAsyncComponent(() => import('./examples/save-json').then((m) => m.ExampleEditor)),
   'save-markdown': defineAsyncComponent(() => import('./examples/save-markdown').then((m) => m.ExampleEditor)),

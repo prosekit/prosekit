@@ -85,7 +85,6 @@ testStory('text-align', () => {
     await emptyEditor()
 
     const btnC = page.getByRole('button', { name: 'Center' })
-    const editor = await waitForEditor()
 
     await inputText('# H1')
     await btnC.click()
@@ -107,7 +106,6 @@ testStory('text-align', () => {
 
   it('keymap', async () => {
     await emptyEditor()
-    const editor = await waitForEditor()
 
     await inputText('paragraph')
 

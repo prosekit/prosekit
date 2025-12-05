@@ -4,6 +4,7 @@ import {
 } from 'vitest'
 import {
   page,
+  userEvent,
   type Locator,
 } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
@@ -12,7 +13,6 @@ import {
   expectLocatorToHaveCount,
   getBoundingBox,
   hover,
-  inputText,
   testStory,
   testStoryConsistency,
   unhover,
@@ -25,6 +25,7 @@ testStoryConsistency('block-handle')
 testStory({ story: 'block-handle', emptyContent: true }, () => {
   it('show block handle on hover', async () => {
     const editor = await waitForEditor()
+    await editor.click()
     await unhover()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
@@ -41,20 +42,18 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
       return box
     }
 
-    await editor.click()
-
     // Insert paragraphs
-    await inputText('Paragraph 1')
+    await userEvent.type(editor, 'Paragraph 1')
     await keyboard.press('Enter')
-    await inputText('Paragraph 2')
+    await userEvent.type(editor, 'Paragraph 2')
     await keyboard.press('Enter')
-    await inputText('Paragraph 3')
+    await userEvent.type(editor, 'Paragraph 3')
     await keyboard.press('Enter')
 
     // Insert a code block
-    await inputText('```javascript')
+    await userEvent.type(editor, '```javascript')
     await keyboard.press('Enter')
-    await inputText('code block')
+    await userEvent.type(editor, 'code block')
     await keyboard.press('Enter')
     await keyboard.press('Enter')
     await keyboard.press('Enter')
@@ -93,6 +92,7 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
   it(`position the block handle correctly when changing the hover node type`, async () => {
     const editor = await waitForEditor()
+    await editor.click()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const h1 = editor.locate('h1')
@@ -107,7 +107,7 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     await editor.click()
 
     // Insert a heading
-    await inputText('# Foo')
+    await userEvent.type(editor, '# Foo')
     await check({ h1: true, p: false, text: 'Foo' })
 
     await hover(h1)
@@ -138,17 +138,17 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
   it(`position the block handle when hovering over a list node with multiple paragraphs`, async () => {
     const editor = await waitForEditor()
+    await editor.click()
+
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 
-    await editor.click()
-
     // Insert a list node with two paragraphs
-    await inputText('- First paragraph')
+    await userEvent.type(editor, '- First paragraph')
     await keyboard.press('Enter')
     await keyboard.press('Tab')
     await keyboard.press('Backspace')
-    await inputText('Second paragraph')
+    await userEvent.type(editor, 'Second paragraph')
 
     const listNode = editor.locate('.prosemirror-flat-list')
     await expectLocatorToHaveCount(listNode, 1)

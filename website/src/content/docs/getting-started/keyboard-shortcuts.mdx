@@ -6,7 +6,7 @@ sidebar:
 
 import Demo from '@/components/ui/demo/demo.astro';
 import { Aside } from '@astrojs/starlight/components';
-import KeyboardShortcut from '@/components/ui/keyboard-shortcut.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
 
 You can add keyboard shortcuts to your editor using the `defineKeymap` function or using the `useKeymap` function for your specific UI framework.
 
@@ -35,11 +35,11 @@ Key names may be strings like `Shift-Ctrl-Enter`. It should contain zero or more
 
 The following modifiers are supported. Order matters:
 
-- `"Mod"`: Maps to <KeyboardShortcut key="Command" /> on macOS and <KeyboardShortcut key="Ctrl" /> on other platforms
-- `"Ctrl"`: <KeyboardShortcut key="Ctrl" /> key
-- `"Alt"`: <KeyboardShortcut key="Alt" /> key (<KeyboardShortcut key="Option" /> on macOS)
-- `"Shift"`: <KeyboardShortcut key="Shift" /> key
-- `"Meta"`: <KeyboardShortcut key="Command" /> key on macOS, <KeyboardShortcut key="Windows" /> key on other platforms
+- `"Mod"`: Maps to <Keyboard key="Command" /> on macOS and <Keyboard key="Ctrl" /> on other platforms
+- `"Ctrl"`: <Keyboard key="Ctrl" /> key
+- `"Alt"`: <Keyboard key="Alt" /> key (<Keyboard key="Option" /> on macOS)
+- `"Shift"`: <Keyboard key="Shift" /> key
+- `"Meta"`: <Keyboard key="Command" /> key on macOS, <Keyboard key="Windows" /> key on other platforms
 
 Use lowercase letters to refer to letter keys, or uppercase letters if you want shift to be held. When using uppercase letters, the `"Shift"` modifier is implied and should not be included in the key name.
 
@@ -47,11 +47,11 @@ A **[`KeyboardEvent.key`]** string is a string that represents the key pressed.
 
 Here are some examples:
 
-- `"Enter"`: ✅ A keyboard shortcut that triggers when <KeyboardShortcut key="Enter" /> is pressed. No modifier keys are required.
-- `"Shift-Enter"`: ✅ A keyboard shortcut that triggers when <KeyboardShortcut key="Shift+Enter" /> is pressed.
+- `"Enter"`: ✅ A keyboard shortcut that triggers when <Keyboard key="Enter" /> is pressed. No modifier keys are required.
+- `"Shift-Enter"`: ✅ A keyboard shortcut that triggers when <Keyboard key="Shift+Enter" /> is pressed.
 - `"Shift-enter"`: ❌ Invalid because `"enter"` is not a valid value for [`KeyboardEvent.key`].
-- `"Ctrl-a"`: ✅ Trigger when <KeyboardShortcut key="Ctrl+A" /> is pressed
-- `"Ctrl-A"`: ✅ Trigger when <KeyboardShortcut key="Ctrl+Shift+A" /> is pressed.
+- `"Ctrl-a"`: ✅ Trigger when <Keyboard key="Ctrl+A" /> is pressed
+- `"Ctrl-A"`: ✅ Trigger when <Keyboard key="Ctrl+Shift+A" /> is pressed.
 - `"Ctrl-Shift-A"`: ❌ Don't add the `"Shift"` modifier, it's implied
 - `"Ctrl-Shift-a"`: ❌ When Shift is held, pressing <kbd>A</kbd> will trigger an event with [`KeyboardEvent.key`] property set to `"A"`, not `"a"`.
 

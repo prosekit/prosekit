@@ -16,6 +16,7 @@ export {
   expectLocatorToHaveCount,
   expectLocatorToNotExist,
 } from './expect'
+export { inputText } from './keyboard'
 export {
   dragAndDrop,
   hover,

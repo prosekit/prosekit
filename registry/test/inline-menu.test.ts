@@ -6,6 +6,7 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   collapseSelection,
@@ -49,7 +50,7 @@ testStory(['inline-menu', 'full'], () => {
     await expect.element(linkMenu).not.toBeVisible()
 
     // Press Escape to dismiss the menu
-    await userEvent.keyboard('{Escape}')
+    await keyboard.press('Escape')
     await expect.element(mainMenu).not.toBeVisible()
     await expect.element(linkMenu).not.toBeVisible()
   })
@@ -69,7 +70,7 @@ testStory(['inline-menu', 'full'], () => {
     // Press Enter to create paragraphs
     await userEvent.click(editor)
     for (let i = 0; i < 6; i++) {
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
     }
     expect(countSelectedParagraphs()).toEqual(0)
 
@@ -134,7 +135,7 @@ testStory(['inline-menu', 'full'], () => {
       'placeholder',
       'Paste the link...',
     )
-    await userEvent.keyboard('{Escape}')
+    await keyboard.press('Escape')
     await expect.element(linkMenu).not.toBeVisible()
 
     // Apply the link
@@ -142,7 +143,8 @@ testStory(['inline-menu', 'full'], () => {
     await userEvent.click(linkButton.element())
     await expect.element(linkMenu).toBeVisible()
     await expect.element(linkInput).toBeVisible()
-    await userEvent.type(linkInput, 'https://www.example.com{Enter}')
+    await userEvent.type(linkInput, 'https://www.example.com')
+    await keyboard.press('Enter')
     await expect.element(mainMenu).toBeVisible()
     await expect.element(linkMenu).not.toBeVisible()
     expect(linkInput).not.toBeInTheDocument()

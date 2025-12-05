@@ -3,9 +3,10 @@ import {
   expect,
   it,
 } from 'vitest'
-import { userEvent } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'
+import { inputText } from '../testing/keyboard'
 
 describe('defineLinkCommands', () => {
   const { editor, n, m } = setupTest()
@@ -46,11 +47,11 @@ describe('defineLinkCommands', () => {
 describe('defineLinkInputRule', () => {
   it('should insert a link after pressing Space', async () => {
     const { editor } = setupTest()
-    await userEvent.keyboard('https://example.com')
+    await inputText('https://example.com')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com"))"`,
     )
-    await userEvent.keyboard(' ')
+    await inputText(' ')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph(link("https://example.com"), " "))"`,
     )
@@ -58,15 +59,15 @@ describe('defineLinkInputRule', () => {
 
   it('should handle a link before a period', async () => {
     const { editor } = setupTest()
-    await userEvent.keyboard('https://example.com')
+    await inputText('https://example.com')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com"))"`,
     )
-    await userEvent.keyboard('.')
+    await inputText('.')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com."))"`,
     )
-    await userEvent.keyboard(' ')
+    await inputText(' ')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph(link("https://example.com"), ". "))"`,
     )
@@ -76,11 +77,11 @@ describe('defineLinkInputRule', () => {
 describe('defineLinkEnterRule', () => {
   it('should insert a link after pressing Enter', async () => {
     const { editor } = setupTest()
-    await userEvent.keyboard('https://example.com')
+    await inputText('https://example.com')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com"))"`,
     )
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph(link("https://example.com")), paragraph)"`,
     )

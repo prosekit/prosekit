@@ -1,8 +1,6 @@
 import { it } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
@@ -31,20 +29,20 @@ testStory('keymap', () => {
 
     await editor.click()
 
-    await userEvent.keyboard('{Shift>}{Enter}{/Shift}')
+    await keyboard.press('Shift+Enter')
     await expectLocatorToHaveCount(listItems, 1)
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expectLocatorToHaveCount(listItems, 1)
 
     await enterButton.click()
 
     await editor.click()
 
-    await userEvent.keyboard('{Shift>}{Enter}{/Shift}')
+    await keyboard.press('Shift+Enter')
     await expectLocatorToHaveCount(listItems, 1)
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expectLocatorToHaveCount(listItems, 2)
   })
 })

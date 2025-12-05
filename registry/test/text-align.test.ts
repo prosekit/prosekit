@@ -91,7 +91,7 @@ testStory('text-align', () => {
 
     await userEvent.type(editor, '# H1')
     await btnC.click()
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await userEvent.type(editor, 'Paragraph')
 
     // Both the heading and paragraph nodes should align to center

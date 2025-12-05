@@ -6,6 +6,7 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
@@ -52,7 +53,7 @@ testStory('save-markdown', () => {
 
     // Type something
     await focusEditor()
-    await userEvent.keyboard(`{${MOD_KEY}>}b{/${MOD_KEY}}`)
+    await keyboard.press(`${MOD_KEY}+B`)
     await userEvent.type(editor, 'Foo')
     await expectSaveButtonEnabled()
     expect(editorText()).toBe('Foo')

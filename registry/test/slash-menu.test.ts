@@ -6,6 +6,7 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
@@ -57,7 +58,7 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, '/')
     await expect.element(menu).toBeVisible()
-    await userEvent.keyboard('{Space}')
+    await keyboard.press('Space')
     await expect.element(menu).not.toBeVisible()
   })
 
@@ -68,7 +69,7 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, '/')
     await expect.element(menu).toBeVisible()
-    await userEvent.keyboard('{Escape}')
+    await keyboard.press('Escape')
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, 'heading')
     await expect.element(menu).not.toBeVisible()
@@ -82,19 +83,19 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, '/')
     await expect.element(menu).toBeVisible()
-    await userEvent.keyboard('{Escape}')
+    await keyboard.press('Escape')
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, 'head')
     await expect.element(menu).not.toBeVisible()
 
     // Create a new paragraph
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
 
     // Enter /head in the second paragraph, and dismiss the menu
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, '/')
     await expect.element(menu).toBeVisible()
-    await userEvent.keyboard('{Escape}')
+    await keyboard.press('Escape')
     await expect.element(menu).not.toBeVisible()
     await userEvent.type(editor, 'head')
     await expect.element(menu).not.toBeVisible()
@@ -103,7 +104,7 @@ testStory(['slash-menu', 'full'], () => {
     expect(getEditorHTML().replaceAll(/\s/g, '')).toEqual('<p>/head</p><p>/head</p>')
 
     // Move the cursor back to the first paragraph
-    await userEvent.keyboard('{ArrowUp}')
+    await keyboard.press('ArrowUp')
 
     // Enter text and the menu should still be hidden
     await expect.element(menu).not.toBeVisible()
@@ -111,7 +112,7 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(menu).not.toBeVisible()
 
     // Move the cursor back to the second paragraph
-    await userEvent.keyboard('{ArrowDown}')
+    await keyboard.press('ArrowDown')
 
     // Enter text and the menu should still be hidden
     await expect.element(menu).not.toBeVisible()
@@ -122,7 +123,7 @@ testStory(['slash-menu', 'full'], () => {
     expect(getEditorHTML().replaceAll(/\s/g, '')).toEqual('<p>/heading</p><p>/heading</p>')
 
     // Create the third paragraph
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
 
     // Ensure the menu is working again
     await expect.element(menu).not.toBeVisible()
@@ -167,7 +168,7 @@ testStory(['slash-menu', 'full'], () => {
 
     // Press Enter to insert a blockquote
     await expectLocatorToHaveCount(blockquote, 0)
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expectLocatorToBeHidden(focusedItem)
     await expectLocatorToHaveCount(blockquote, 1)
 
@@ -187,15 +188,18 @@ testStory(['slash-menu', 'full'], () => {
     await userEvent.type(editor, '/task')
     await expect.element(focusedItem).toHaveTextContent('Task list')
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expect.element(taskList).toBeVisible()
 
-    await userEvent.keyboard('{Backspace}{Backspace}{Backspace}{Backspace}')
+    await keyboard.press('Backspace')
+    await keyboard.press('Backspace')
+    await keyboard.press('Backspace')
+    await keyboard.press('Backspace')
     await userEvent.type(editor, 'Some text ')
     await userEvent.type(editor, '/order')
     await expect.element(focusedItem).toHaveTextContent('Ordered list')
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expect.element(orderedList).toBeVisible()
   })
 
@@ -209,7 +213,7 @@ testStory(['slash-menu', 'full'], () => {
     await userEvent.type(editor, '/quote')
     await expect.element(focusedItem).toHaveTextContent('Quote')
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expectLocatorToHaveCount(blockquote, 1)
   })
 
@@ -223,23 +227,23 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(itemH2).toBeVisible()
     await expect.element(itemText).toHaveTextContent('Text')
 
-    await userEvent.keyboard('{ArrowDown}')
+    await keyboard.press('ArrowDown')
     await expect.element(focusedItem).toHaveTextContent('Heading 1')
 
-    await userEvent.keyboard('{ArrowDown}')
+    await keyboard.press('ArrowDown')
     await expect.element(focusedItem).toHaveTextContent('Heading 2')
 
-    await userEvent.keyboard('{ArrowDown}')
+    await keyboard.press('ArrowDown')
     await expect.element(focusedItem).toHaveTextContent('Heading 3')
 
-    await userEvent.keyboard('{ArrowDown}')
+    await keyboard.press('ArrowDown')
     await expect.element(focusedItem).not.toHaveTextContent(/Heading/)
 
-    await userEvent.keyboard('{ArrowUp}')
+    await keyboard.press('ArrowUp')
     await expect.element(focusedItem).toHaveTextContent('Heading 3')
 
     await expectLocatorToHaveCount(editor.locate('h3'), 0)
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expect.element(editor.locate('h3')).toBeVisible()
   })
 
@@ -247,7 +251,7 @@ testStory(['slash-menu', 'full'], () => {
     const { editor, menu } = await setup()
 
     await editor.click()
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expect.element(menu).not.toBeVisible()
     for (const char of 'https://example.com/foo.bar/') {
       await userEvent.type(editor, char)
@@ -255,7 +259,7 @@ testStory(['slash-menu', 'full'], () => {
     }
 
     // Make sure the menu is still functional
-    await userEvent.keyboard('{Space}')
+    await keyboard.press('Space')
     await userEvent.type(editor, '/')
     await expect.element(menu).toBeVisible()
   })

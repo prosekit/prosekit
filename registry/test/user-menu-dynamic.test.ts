@@ -6,6 +6,7 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToBeHidden,
@@ -93,11 +94,11 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Press Backspace and show all users again
     {
-      await userEvent.keyboard('{Backspace}')
+      await keyboard.press('Backspace')
       await expect.element(itemFocused).toBeVisible()
-      await userEvent.keyboard('{Backspace}')
+      await keyboard.press('Backspace')
       await expect.element(itemFocused).toBeVisible()
-      await userEvent.keyboard('{Backspace}')
+      await keyboard.press('Backspace')
       await expect.element(itemFocused).toBeVisible()
 
       await expect.element(itemAlice).toBeVisible()
@@ -129,7 +130,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Press Escape to dismiss the menu
     {
-      await userEvent.keyboard('{Escape}')
+      await keyboard.press('Escape')
 
       await expectLocatorToBeHidden(menu)
     }
@@ -138,7 +139,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     {
       while ((editor.element().textContent ?? '').includes('@')) {
         const textBefore = editor.element().textContent ?? ''
-        await userEvent.keyboard('{Backspace}')
+        await keyboard.press('Backspace')
         const textAfter = editor.element().textContent ?? ''
         expect(textBefore.length - 1).toBe(textAfter.length)
 
@@ -174,7 +175,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       expect(editor.element().textContent).toEqual('@ali')
       expect(editor.element().innerHTML).not.toContain('data-mention')
 
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
 
       expect(editor.element().textContent).toEqual('@Alice ')
       expect(editor.element().innerHTML).toContain('data-mention')

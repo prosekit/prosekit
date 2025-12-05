@@ -3,6 +3,7 @@ import {
   it,
 } from 'vitest'
 import { userEvent } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   testStory,
@@ -49,10 +50,10 @@ testStory('mark-rule', () => {
     await userEvent.type(editor, '.')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#34'])
 
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Backspace')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#34'])
 
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Backspace')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#3'])
 
     await userEvent.type(editor, '5')

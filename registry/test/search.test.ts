@@ -6,6 +6,7 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
@@ -34,7 +35,7 @@ testStory('search', () => {
     await expectLocatorToHaveCount(searchMatch, 3)
     await expectLocatorToHaveCount(activeSearchMatch, 0)
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
 
     await expectLocatorToHaveCount(searchMatch, 2)
     await expectLocatorToHaveCount(activeSearchMatch, 1)
@@ -45,7 +46,7 @@ testStory('search', () => {
     await expect.element(replaceInput).toBeVisible()
 
     await userEvent.type(replaceInput, 'Zero')
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
 
     await expectLocatorToHaveCount(searchMatch, 1)
     await expectLocatorToHaveCount(activeSearchMatch, 1)

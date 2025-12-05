@@ -3,6 +3,7 @@ import {
   it,
 } from 'vitest'
 import { userEvent } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
@@ -26,7 +27,7 @@ testStory('code-block', () => {
     await userEvent.type(editor, '```')
     await expect.element(editor).toHaveTextContent('```')
     await expectNotPre()
-    await userEvent.keyboard('{Space}')
+    await keyboard.press('Space')
     await expectAnyPre()
     await expect.element(editor).not.toHaveTextContent('```')
 
@@ -35,7 +36,7 @@ testStory('code-block', () => {
     await userEvent.type(editor, '```javascript')
     await expect.element(editor).toHaveTextContent('```javascript')
     await expectNotPre()
-    await userEvent.keyboard('{Space}')
+    await keyboard.press('Space')
     await expectJavaScriptPre()
     await expect.element(editor).not.toHaveTextContent('```')
   })
@@ -48,7 +49,7 @@ testStory('code-block', () => {
     await userEvent.type(editor, '```')
     await expect.element(editor).toHaveTextContent('```')
     await expectNotPre()
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expectAnyPre()
     await expect.element(editor).not.toHaveTextContent('```')
 
@@ -57,7 +58,7 @@ testStory('code-block', () => {
     await userEvent.type(editor, '```javascript')
     await expect.element(editor).toHaveTextContent('```javascript')
     await expectNotPre()
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await expectJavaScriptPre()
     await expect.element(editor).not.toHaveTextContent('```')
   })

@@ -7,6 +7,7 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToNotExist,
@@ -77,7 +78,7 @@ testStory({ story: 'full', emptyContent: true }, () => {
       await expect.element(editor).toHaveTextContent('Hello https://www.example.com?query=query#fragment')
       await expectLocatorToNotExist(link)
 
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await expect.element(editor).toHaveTextContent('Hello https://www.example.com?query=query#fragment')
       await expect.element(link).toBeVisible()
       await expect.element(link).toHaveAttribute('href', url)
@@ -95,7 +96,7 @@ testStory({ story: 'full', emptyContent: true }, () => {
       await expect.element(editor).toHaveTextContent('Hello https://example.com.')
       await expectLocatorToNotExist(link)
 
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await expect.element(editor).toHaveTextContent('Hello https://example.com.')
       await expect.element(link).toBeVisible()
       await expect.element(link).toHaveAttribute('href', url)
@@ -108,11 +109,11 @@ testStory({ story: 'full', emptyContent: true }, () => {
       const editor = await waitForEditor()
 
       await userEvent.type(editor, '**bold** **no bold **')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, '*****')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, 'no**bold**')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, '**no*bold**')
 
       const html = editor.element().innerHTML
@@ -130,9 +131,9 @@ testStory({ story: 'full', emptyContent: true }, () => {
       const editor = await waitForEditor()
 
       await userEvent.type(editor, '*italic* *no italic *')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, '***')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, 'no*italic*')
 
       const html = editor.element().innerHTML
@@ -149,9 +150,9 @@ testStory({ story: 'full', emptyContent: true }, () => {
       const editor = await waitForEditor()
 
       await userEvent.type(editor, '`code` `no code `')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, '`` ``')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, 'no`code`')
 
       const html = editor.element().innerHTML
@@ -168,11 +169,11 @@ testStory({ story: 'full', emptyContent: true }, () => {
       const editor = await waitForEditor()
 
       await userEvent.type(editor, '~~strike~~ ~~no strike ~~')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, '~~~~~')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, 'no~~strike~~')
-      await userEvent.keyboard('{Enter}')
+      await keyboard.press('Enter')
       await userEvent.type(editor, '~~no~strike~~')
 
       const html = editor.element().innerHTML

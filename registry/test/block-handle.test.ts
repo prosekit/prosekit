@@ -7,6 +7,7 @@ import {
   userEvent,
   type Locator,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
@@ -42,19 +43,19 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
     // Insert paragraphs
     await userEvent.type(editor, 'Paragraph 1')
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await userEvent.type(editor, 'Paragraph 2')
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await userEvent.type(editor, 'Paragraph 3')
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
 
     // Insert a code block
     await userEvent.type(editor, '```javascript')
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await userEvent.type(editor, 'code block')
-    await userEvent.keyboard('{Enter}')
-    await userEvent.keyboard('{Enter}')
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
+    await keyboard.press('Enter')
+    await keyboard.press('Enter')
 
     // Measure the position of the block handle
     const p1 = editor.locate('p', { hasText: 'Paragraph 1' })
@@ -112,13 +113,13 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
     // Turn the heading into a paragraph
     await check({ h1: true, p: false, text: 'Foo' })
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Backspace')
     await check({ h1: true, p: false, text: 'Fo' })
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Backspace')
     await check({ h1: true, p: false, text: 'F' })
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Backspace')
     await check({ h1: true, p: false, text: '' })
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Backspace')
     await check({ h1: false, p: true, text: '' })
 
     const box2 = getBoundingBox(blockHandle)
@@ -138,9 +139,9 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
     // Insert a list node with two paragraphs
     await userEvent.type(editor, '- First paragraph')
-    await userEvent.keyboard('{Enter}')
-    await userEvent.keyboard('{Tab}')
-    await userEvent.keyboard('{Backspace}')
+    await keyboard.press('Enter')
+    await keyboard.press('Tab')
+    await keyboard.press('Backspace')
     await userEvent.type(editor, 'Second paragraph')
 
     const listNode = editor.locate('.prosemirror-flat-list')

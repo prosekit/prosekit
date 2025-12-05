@@ -3,6 +3,7 @@ import {
   it,
 } from 'vitest'
 import { userEvent } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToNotExist,
@@ -21,14 +22,14 @@ testStory({ story: 'heading', emptyContent: true }, () => {
     await expectLocatorToNotExist(editor.locate('h1'))
     await expectLocatorToNotExist(editor.locate('h2'))
 
-    await userEvent.keyboard('#')
-    await userEvent.keyboard(' ')
+    await keyboard.press('#')
+    await keyboard.press(' ')
     await userEvent.type(editor, 'Heading Level 1')
 
     await expect.element(editor.locate('h1')).toBeVisible()
     await expect.element(editor.locate('h1')).toHaveTextContent('Heading Level 1')
 
-    await userEvent.keyboard('{Enter}')
+    await keyboard.press('Enter')
     await userEvent.type(editor, '## Heading Level 2')
 
     await expect.element(editor.locate('h2')).toBeVisible()

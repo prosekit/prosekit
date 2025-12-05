@@ -2,10 +2,8 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectEditorToBeFocused,
@@ -44,7 +42,7 @@ testStory('gap-cursor', () => {
 
     // Move the selection into the gap between the images
     await expectLocatorToHaveCount(gap, 0)
-    await userEvent.keyboard('{ArrowDown}')
+    await keyboard.press('ArrowDown')
 
     // Expect the gap cursor decoration to exist
     await expectLocatorToHaveCount(gap, 1)

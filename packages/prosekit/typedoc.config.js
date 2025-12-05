@@ -23,7 +23,7 @@ const entryPoints = Object.values(packageJson.exports)
  */
 const typedocConfig = {
   entryPoints,
-  tsconfig: './tsconfig.build.json',
+  tsconfig: './tsconfig.typedoc.json',
   out: '.temp/typedoc',
   router: 'module',
   plugin: [

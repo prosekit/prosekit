@@ -2,10 +2,10 @@ import {
   expect,
   it,
 } from 'vitest'
-import { userEvent } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -23,31 +23,31 @@ testStory('mark-rule', () => {
       editor.locate('a').elements().map((element) => element.textContent ?? '')
     )
 
-    await userEvent.type(editor, 'Fix ')
+    await inputText('Fix ')
     await expect.poll(() => getLinkContent()).toEqual([])
 
-    await userEvent.type(editor, '#')
+    await inputText('#')
     await expect.poll(() => getLinkContent()).toEqual([])
 
-    await userEvent.type(editor, '1')
+    await inputText('1')
     await expect.poll(() => getLinkContent()).toEqual(['#1'])
 
-    await userEvent.type(editor, '2')
+    await inputText('2')
     await expect.poll(() => getLinkContent()).toEqual(['#12'])
 
-    await userEvent.type(editor, ' and ')
+    await inputText(' and ')
     await expect.poll(() => getLinkContent()).toEqual(['#12'])
 
-    await userEvent.type(editor, '#')
+    await inputText('#')
     await expect.poll(() => getLinkContent()).toEqual(['#12'])
 
-    await userEvent.type(editor, '3')
+    await inputText('3')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#3'])
 
-    await userEvent.type(editor, '4')
+    await inputText('4')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#34'])
 
-    await userEvent.type(editor, '.')
+    await inputText('.')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#34'])
 
     await keyboard.press('Backspace')
@@ -56,7 +56,7 @@ testStory('mark-rule', () => {
     await keyboard.press('Backspace')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#3'])
 
-    await userEvent.type(editor, '5')
+    await inputText('5')
     await expect.poll(() => getLinkContent()).toEqual(['#12', '#35'])
 
     await expect.poll(() => editor.element().textContent ?? '').toBe('Fix #12 and #35')
@@ -71,55 +71,55 @@ testStory('mark-rule', () => {
       editor.locate('a').elements().map((element) => element.textContent ?? '')
     )
 
-    await userEvent.type(editor, 'Hello ')
+    await inputText('Hello ')
     await expect.poll(() => getLinkContent()).toEqual([])
 
-    await userEvent.type(editor, 'www.go')
+    await inputText('www.go')
     await expect.poll(() => getLinkContent()).toEqual([])
 
-    await userEvent.type(editor, 'o')
+    await inputText('o')
     await expect.poll(() => getLinkContent()).toEqual(['www.goo'])
 
-    await userEvent.type(editor, 'g')
+    await inputText('g')
     await expect.poll(() => getLinkContent()).toEqual(['www.goog'])
 
-    await userEvent.type(editor, 'l')
+    await inputText('l')
     await expect.poll(() => getLinkContent()).toEqual([])
 
-    await userEvent.type(editor, 'e')
+    await inputText('e')
     await expect.poll(() => getLinkContent()).toEqual(['www.google'])
 
-    await userEvent.type(editor, '.com')
+    await inputText('.com')
     await expect.poll(() => getLinkContent()).toEqual(['www.google.com'])
 
-    await userEvent.type(editor, '/')
+    await inputText('/')
     await expect.poll(() => getLinkContent()).toEqual(['www.google.com/'])
 
-    await userEvent.type(editor, '?')
+    await inputText('?')
     await expect.poll(() => getLinkContent()).toEqual(['www.google.com/'])
 
-    await userEvent.type(editor, 'a')
+    await inputText('a')
     await expect.poll(() => getLinkContent()).toEqual(['www.google.com/?a'])
 
-    await userEvent.type(editor, '.')
+    await inputText('.')
     await expect.poll(() => getLinkContent()).toEqual(['www.google.com/?a'])
 
-    await userEvent.type(editor, ' ')
+    await inputText(' ')
     await expect.poll(() => getLinkContent()).toEqual(['www.google.com/?a'])
 
-    await userEvent.type(editor, 'https://example.com/subpath?query#fragment')
+    await inputText('https://example.com/subpath?query#fragment')
     await expect.poll(() => getLinkContent()).toEqual([
       'www.google.com/?a',
       'https://example.com/subpath?query#fragment',
     ])
 
-    await userEvent.type(editor, '.')
+    await inputText('.')
     await expect.poll(() => getLinkContent()).toEqual([
       'www.google.com/?a',
       'https://example.com/subpath?query#fragment',
     ])
 
-    await userEvent.type(editor, ' ')
+    await inputText(' ')
     await expect.poll(() => getLinkContent()).toEqual([
       'www.google.com/?a',
       'https://example.com/subpath?query#fragment',

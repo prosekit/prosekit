@@ -3,6 +3,7 @@ title: Code
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
 
 The `code` mark is used to represent a short fragment of computer code. It will be rendered as `<code>` element in HTML.
 
@@ -26,7 +27,7 @@ editor.commands.toggleCode()
 
 | Non-Apple | Apple       | Description                          |
 | --------- | ----------- | ------------------------------------ |
-| `Ctrl-E`  | `Command-E` | Toggle the current selection to code |
+| <Keyboard key="Ctrl+E" /> | <Keyboard key="Command+E" /> | Toggle the current selection to code |
 
 ## API Reference
 

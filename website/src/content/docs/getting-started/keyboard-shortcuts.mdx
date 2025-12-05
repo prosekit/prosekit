@@ -55,7 +55,7 @@ Use lowercase letters for letter keys, or uppercase letters when shift should be
 - `"Ctrl-A"`: ✅ Triggers when <Keyboard key="Ctrl+Shift+A" /> is pressed
 - `"Ctrl-Shift-A"`: ❌ Invalid — `"Shift"` modifier is implicit with uppercase letters
 - `"Ctrl-Shift-a"`: ❌ Invalid — when <Keyboard key="Shift" /> is held, [`KeyboardEvent.key`] is `"A"`, not `"a"`
-- `"Shift- "`: ✅ Valid
+- `"Shift- "`: ✅ Triggers when <Keyboard key="Shift+Space" /> is pressed
 - `"Shift-Space"`: ✅ Valid (equivalent to the above)
 
 ### Priority
@@ -78,16 +78,22 @@ const extensionAPrioritized = withPriority(extensionA, Priority.high)
 
 ## Using `useKeymap`
 
-For framework-specific implementations (React, Vue, Svelte), use the `useKeymap` hook to define shortcuts dynamically:
+`useKeymap` is available for UI framework integrations. This is useful when you want to define shortcuts dynamically.
+
+An example of how to use `useKeymap` to define shortcuts:
 
 <Demo story="keymap" />
+
+## Base Keymap
+
+[`defineBaseKeymap`] includes the base keyboard shortcuts for the editor. You would likely want to include this in your extension. `defineBaseKeymap` is already included in the [`defineBasicExtension`] function.
 
 ## API Reference
 
 - [defineKeymap](/references/core#definekeymap) - Define custom keyboard shortcuts
-- [defineBaseKeymap](/references/core#definebasekeymap) - Basic editing keyboard shortcuts
 - [useKeymap](/references/react#usekeymap) - React hook for dynamic keyboard shortcuts
-- [Command] - Command interface
 
 [Command]: /references/pm/state/#command
 [`KeyboardEvent.key`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
+[`defineBaseKeymap`]: /references/core#definebasekeymap
+[`defineBasicExtension`]: /references/basic#definebasicextension

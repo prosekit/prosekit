@@ -2,15 +2,13 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToBeHidden,
   getBoundingBox,
+  inputText,
   testStory,
   testStoryConsistency,
   unhover,
@@ -22,6 +20,7 @@ testStoryConsistency('user-menu-dynamic')
 testStory({ story: 'user-menu-dynamic' }, () => {
   it('user-menu-dynamic', async () => {
     const editor = await waitForEditor()
+    await editor.click()
 
     const menu = page.locate('prosekit-autocomplete-popover')
     const menuItems = page.locate('prosekit-autocomplete-item, prosekit-autocomplete-empty')
@@ -54,7 +53,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Show loading
     {
-      await userEvent.type(editor, '@')
+      await inputText('@')
 
       await expectLocatorToBeHidden(itemAlice)
       await expectLocatorToBeHidden(itemBob)
@@ -81,7 +80,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Search alice
     {
-      await userEvent.type(editor, 'ali')
+      await inputText('ali')
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expectLocatorToBeHidden(itemBob)
@@ -110,7 +109,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Search bob
     {
-      await userEvent.type(editor, 'bo')
+      await inputText('bo')
 
       await expectLocatorToBeHidden(itemAlice)
       await expect.element(itemBob).toBeVisible()
@@ -118,7 +117,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Search a non-existing user
     {
-      await userEvent.type(editor, '12345678')
+      await inputText('12345678')
 
       await expectLocatorToBeHidden(itemAlice)
       await expectLocatorToBeHidden(itemBob)
@@ -149,7 +148,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Type @ and show the menu again
     {
-      await userEvent.type(editor, '@')
+      await inputText('@')
 
       await expect.element(menu).toBeVisible()
       await expect.element(itemAlice).toBeVisible()
@@ -161,7 +160,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
     // Press Enter and insert the user
     {
-      await userEvent.type(editor, 'ali')
+      await inputText('ali')
 
       await expect.element(menu).toBeVisible()
       await expect.element(itemAlice).toBeVisible()

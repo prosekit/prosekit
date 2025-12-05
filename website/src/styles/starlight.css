@@ -62,7 +62,7 @@
   }
 }
 
-.sl-markdown-content kbd {
+.sl-markdown-content kbd:not(:where(.not-content *)) {
   @apply rounded-md inline-flex justify-center items-center py-1 px-1.5 min-w-7 font-mono text-xs m-0;
   @apply border border-gray-300 dark:border-zinc-700;
   @apply text-gray-800 dark:text-zinc-200;

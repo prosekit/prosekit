@@ -7,9 +7,9 @@ sidebar:
 import Demo from '@/components/ui/demo/demo.astro';
 import { Aside } from '@astrojs/starlight/components';
 
-Keyboard shortcuts are essential for creating a smooth editing experience. ProseKit makes it easy to add custom keyboard shortcuts to your editor using the `defineKeymap` function.
+You can add keyboard shortcuts to your editor using the `defineKeymap` function or using the `useKeymap` function for your specific UI framework.
 
-## Using defineKeymap
+## Using `defineKeymap`
 
 The `defineKeymap` function allows you to define custom keyboard shortcuts for your editor:
 
@@ -62,18 +62,52 @@ As a special case, `"Space"` is an alias for the `" "` key.
 - `"Shift-Space"`: ✅ this is valid too 
 
 
+You can call `defineKeymap` multiple times to add multiple keyboard shortcuts. The later keyboard shortcuts will override the earlier ones. For example:
 
-## Using the useKeymap hook
+```ts twoslash
+import {
+  defineKeymap,union
+} from 'prosekit/core'
+
+const extensionA = defineKeymap({
+  'Mod-b': (state, dispatch) => {
+    console.log('A is called')
+    return true 
+  },
+})
+const extensionB = defineKeymap({
+  'Mod-b': (state, dispatch) => {
+    console.log('B is called')
+    return true 
+  },
+})
+
+const extension = union(extensionA, extensionB)
+```
+
+When pressing <kbd>Mod</kbd> + <kbd>B</kbd>, only the handler in the `extensionB` will be called.
+
+You can use the withPriority function to give a higher priority to one of the extensions. For example:
+
+```ts twoslash
+import {Extension} from 'prosekit/core'
+declare const extensionA: Extension
+// ---cut---
+import {
+  withPriority,
+  Priority,
+} from 'prosekit/core'
+
+const extensionAPrioritized = withPriority(extensionA, Priority.higher)
+```
+
+## Using the `useKeymap`
 
 If you're using a framework like React, Vue, or Svelte, you can use the `useKeymap` hook to define keyboard shortcuts dynamically:
 
 <Demo story="keymap" />
 
-This example demonstrates:
-
-1. How to use the `useKeymap` hook to add keyboard shortcuts
-2. How to toggle between different key bindings at runtime
-3. How keyboard shortcuts can trigger custom actions
+## Keymap
 
 ## API Reference
 

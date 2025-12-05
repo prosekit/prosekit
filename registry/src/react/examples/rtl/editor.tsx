@@ -31,14 +31,14 @@ export default function Editor(props: EditorProps) {
 
   return (
     <ProseKit editor={editor}>
-      <div className="CSS_EDITOR_VIEWPORT" dir="rtl">
+      <div dir="rtl" className="CSS_EDITOR_VIEWPORT">
         <Toolbar uploader={sampleUploader} />
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
           <InlineMenu />
           <SlashMenu />
-          <BlockHandle />
-          <TableHandle />
+          <BlockHandle dir="rtl" />
+          <TableHandle dir="rtl" />
           <DropIndicator />
         </div>
       </div>

@@ -50,7 +50,11 @@ function getTableHandleState(editor: Editor<TableExtension>) {
   }
 }
 
-export default function TableHandle() {
+interface Props {
+  dir?: 'ltr' | 'rtl'
+}
+
+export default function TableHandle(props: Props) {
   const state = useEditorDerivedValue(getTableHandleState)
 
   return (
@@ -106,7 +110,10 @@ export default function TableHandle() {
           )}
         </TableHandlePopoverContent>
       </TableHandleColumnRoot>
-      <TableHandleRowRoot className="CSS_TABLE_ROW_HANDLE">
+      <TableHandleRowRoot
+        placement={props.dir === 'rtl' ? 'right' : 'left'}
+        className="CSS_TABLE_ROW_HANDLE"
+      >
         <TableHandleRowTrigger className="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div className="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </TableHandleRowTrigger>

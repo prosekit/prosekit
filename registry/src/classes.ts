@@ -226,7 +226,7 @@ export const CSS_TABLE_COLUMN_HANDLE = cn(
 )
 
 export const CSS_TABLE_ROW_HANDLE = cn(
-  'h-[1.5em] w-[1.2em] translate-x-[80%]',
+  'h-[1.5em] w-[1.2em] ltr:translate-x-[80%] rtl:translate-x-[-80%]',
   CSS_TABLE_HANDLE_BASE,
 )
 

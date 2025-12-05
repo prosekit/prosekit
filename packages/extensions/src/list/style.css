@@ -14,17 +14,17 @@
 
   & > .list-marker {
     position: absolute;
-    left: 0;
     width: 1.5em;
     width: 1lh;
     height: 1.5em;
     height: 1lh;
+    inset-inline-start: 0;
     text-align: center;
   }
 
   & > .list-content {
-    margin-left: 1.5em;
-    margin-left: 1lh;
+    margin-inline-start: 1.5em;
+    margin-inline-start: 1lh;
   }
 
   &[data-list-kind="bullet"] > .list-marker,
@@ -64,8 +64,8 @@
 
     &::before {
       position: absolute;
-      right: calc(100% - 1.5em);
-      right: calc(100% - 1lh);
+      inset-inline-end: calc(100% - 1.5em);
+      inset-inline-end: calc(100% - 1lh);
       content: counter(prosemirror-flat-list-counter, decimal) ". ";
       font-variant-numeric: tabular-nums;
     }

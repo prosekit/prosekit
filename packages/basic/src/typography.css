@@ -63,8 +63,8 @@
   }
 
   & blockquote {
-    padding-left: 1em;
-    border-left: 0.25em solid hsl(0 0% 60% / 0.4);
+    padding-inline-start: 1em;
+    border-inline-start: 0.25em solid hsl(0 0% 60% / 0.4);
   }
 
   & h1 {
@@ -130,6 +130,11 @@
 
   & pre code {
     font-weight: inherit;
+  }
+
+  & pre:has(code) {
+    /* Force the code block to be left-to-right */
+    direction: ltr;
   }
 
   & hr {

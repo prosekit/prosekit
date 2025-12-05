@@ -2,16 +2,14 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
   expectLocatorToNotExist,
   focusEditor,
+  inputText,
   MOD_KEY,
   moveSelection,
   testStory,
@@ -54,7 +52,7 @@ testStory('save-html', () => {
     // Type something
     await focusEditor()
     await keyboard.press(`${MOD_KEY}+B`)
-    await userEvent.type(editor, 'Foo')
+    await inputText('Foo')
     await expectSaveButtonEnabled()
     expect(editorText()).toBe('Foo')
 
@@ -66,7 +64,7 @@ testStory('save-html', () => {
 
     // Type something
     await focusEditor()
-    await userEvent.type(editor, 'Bar')
+    await inputText('Bar')
     await expectSaveButtonEnabled()
     expect(editorText()).toBe('FooBar')
 
@@ -89,7 +87,7 @@ testStory('save-html', () => {
     // Type something
     await focusEditor()
     await moveSelection('backward', 1, 'line')
-    await userEvent.type(editor, 'Baz')
+    await inputText('Baz')
     await expectSaveButtonEnabled()
     expect(editorText()).toBe('BazFoo')
   })

@@ -14,7 +14,10 @@ Keyboard shortcuts are essential for creating a smooth editing experience. Prose
 The `defineKeymap` function allows you to define custom keyboard shortcuts for your editor:
 
 ```ts twoslash
-import { createEditor, defineKeymap } from 'prosekit/core'
+import {
+  createEditor,
+  defineKeymap,
+} from 'prosekit/core'
 
 const extension = defineKeymap({
   'Mod-b': (state, dispatch) => {

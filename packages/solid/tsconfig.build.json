@@ -3,5 +3,8 @@
   "compilerOptions": {
     "isolatedDeclarations": true,
     "allowJs": false
-  }
+  },
+  "references": [
+    { "path": "../web/tsconfig.json" }
+  ]
 }

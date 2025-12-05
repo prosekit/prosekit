@@ -2,14 +2,12 @@ import {
   expect,
   it,
 } from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   expectLocatorToHaveCount,
+  inputText,
   testStory,
   testStoryConsistency,
   waitForEditor,
@@ -33,9 +31,9 @@ testStory('hard-break', () => {
 
     // Insert via keyboard: Shift+Enter
     await editor.click()
-    await userEvent.type(editor, 'A')
+    await inputText('A')
     await keyboard.press('Shift+Enter')
-    await userEvent.type(editor, 'B')
+    await inputText('B')
     await expectLocatorToHaveCount(brLocator, brsBefore + 2)
     await expect.element(editor).toHaveTextContent(/A/)
     await expect.element(editor).toHaveTextContent(/B/)

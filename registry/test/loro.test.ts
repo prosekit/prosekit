@@ -2,11 +2,11 @@ import {
   expect,
   it,
 } from 'vitest'
-import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
   expectLocatorToHaveCount,
+  inputText,
   locateEditor,
   testStory,
   testStoryConsistency,
@@ -25,7 +25,7 @@ testStory('loro', () => {
     await emptyEditor({ editor: editorA })
     editorA.element().focus()
     await expect.element(editorA).toHaveFocus()
-    await keyboard.type('Hello')
+    await inputText('Hello')
 
     await expect.element(editorA).toHaveTextContent('Hello')
     await expect.element(editorB).toHaveTextContent('Hello')
@@ -33,7 +33,7 @@ testStory('loro', () => {
     await emptyEditor({ editor: editorB })
     editorB.element().focus()
     await expect.element(editorB).toHaveFocus()
-    await keyboard.type('World')
+    await inputText('World')
 
     await expect.element(editorA).toHaveTextContent('World')
     await expect.element(editorB).toHaveTextContent('World')

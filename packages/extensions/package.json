@@ -134,6 +134,7 @@
     "typescript": "~5.9.3",
     "unified": "^11.0.5",
     "vitest": "^4.0.15",
+    "vitest-browser-commands": "^0.2.0",
     "y-prosemirror": "^1.3.7",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.27"

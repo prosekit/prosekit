@@ -1,3 +1,8 @@
 import { config } from '@prosekit/config-vitest'
+import { playwrightCommands } from 'vitest-browser-commands'
 
-export default config()
+export default config({
+  plugins: [
+    playwrightCommands(),
+  ],
+})

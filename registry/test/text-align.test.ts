@@ -6,12 +6,12 @@ import {
   page,
   userEvent,
 } from 'vitest/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import {
   emptyEditor,
   focusEditor,
   getEditorHTML,
-  MOD_KEY,
   moveSelectionToStart,
   testStory,
   testStoryConsistency,
@@ -124,16 +124,16 @@ testStory('text-align', () => {
       }
     }
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}r{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+R')
     check('right')
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}l{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+L')
     check('left')
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}e{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+E')
     check('center')
 
-    await userEvent.keyboard(`{${MOD_KEY}>}{Shift>}j{/Shift}{/${MOD_KEY}}`)
+    await keyboard.press('ControlOrMeta+Shift+J')
     check('justify')
   })
 })

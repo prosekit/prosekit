@@ -4,7 +4,6 @@ import {
 } from 'vitest'
 import {
   page,
-  userEvent,
   type Locator,
 } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
@@ -13,6 +12,7 @@ import {
   expectLocatorToHaveCount,
   getBoundingBox,
   hover,
+  inputText,
   testStory,
   testStoryConsistency,
   unhover,
@@ -41,18 +41,20 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
       return box
     }
 
+    await editor.click()
+
     // Insert paragraphs
-    await userEvent.type(editor, 'Paragraph 1')
+    await inputText('Paragraph 1')
     await keyboard.press('Enter')
-    await userEvent.type(editor, 'Paragraph 2')
+    await inputText('Paragraph 2')
     await keyboard.press('Enter')
-    await userEvent.type(editor, 'Paragraph 3')
+    await inputText('Paragraph 3')
     await keyboard.press('Enter')
 
     // Insert a code block
-    await userEvent.type(editor, '```javascript')
+    await inputText('```javascript')
     await keyboard.press('Enter')
-    await userEvent.type(editor, 'code block')
+    await inputText('code block')
     await keyboard.press('Enter')
     await keyboard.press('Enter')
     await keyboard.press('Enter')
@@ -102,8 +104,10 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
       await expectLocatorToHaveCount(p, options.p ? 1 : 0)
     }
 
+    await editor.click()
+
     // Insert a heading
-    await userEvent.type(editor, '# Foo')
+    await inputText('# Foo')
     await check({ h1: true, p: false, text: 'Foo' })
 
     await hover(h1)
@@ -137,12 +141,14 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 
+    await editor.click()
+
     // Insert a list node with two paragraphs
-    await userEvent.type(editor, '- First paragraph')
+    await inputText('- First paragraph')
     await keyboard.press('Enter')
     await keyboard.press('Tab')
     await keyboard.press('Backspace')
-    await userEvent.type(editor, 'Second paragraph')
+    await inputText('Second paragraph')
 
     const listNode = editor.locate('.prosemirror-flat-list')
     await expectLocatorToHaveCount(listNode, 1)

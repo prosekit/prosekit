@@ -5088,7 +5088,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "vue"
       ],
       "files": [
         {
@@ -5120,7 +5121,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "vue"
       ],
       "files": [
         {
@@ -5159,7 +5161,8 @@
         "remark-html",
         "remark-parse",
         "remark-stringify",
-        "unified"
+        "unified",
+        "vue"
       ],
       "files": [
         {

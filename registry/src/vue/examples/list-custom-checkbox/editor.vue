@@ -8,10 +8,6 @@ import {
   type NodeJSON,
 } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
 
 import { sampleContent } from '../../sample/sample-doc-list-custom-checkbox'
 import { Toolbar } from '../../ui/toolbar'
@@ -28,12 +24,6 @@ const editor = createEditor({
   extension,
   defaultContent,
 })
-
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
@@ -41,7 +31,7 @@ watchPostEffect((onCleanup) => {
     <div class="CSS_EDITOR_VIEWPORT" data-custom-list-css-enabled="true">
       <Toolbar />
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />
       </div>
     </div>
   </ProseKit>

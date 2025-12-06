@@ -13,10 +13,6 @@ import {
   type CommitRecorder,
 } from 'prosekit/extensions/commit'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
 
 const props = defineProps<{
   commitRecorder: CommitRecorder
@@ -30,19 +26,13 @@ const editor = createEditor({
   ),
   defaultContent: props.initialContent,
 })
-
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT"></div>
       </div>
     </div>
   </ProseKit>

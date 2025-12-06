@@ -4,29 +4,19 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
 
 import { defineExtension } from './extension'
 import UserMenuDynamic from './user-menu-dynamic.vue'
 
 const extension = defineExtension()
 const editor = createEditor({ extension })
-
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT"></div>
         <UserMenuDynamic />
       </div>
     </div>

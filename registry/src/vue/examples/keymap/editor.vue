@@ -4,10 +4,7 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
+import { ref } from 'vue'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
@@ -15,7 +12,6 @@ import Toolbar from './toolbar.vue'
 const extension = defineExtension()
 const editor = createEditor({ extension })
 
-const editorRef = ref<HTMLDivElement | null>(null)
 const submissions = ref<string[]>([])
 
 function pushSubmission(hotkey: string) {
@@ -23,11 +19,6 @@ function pushSubmission(hotkey: string) {
   const submission = `${new Date().toISOString()}\t${hotkey}\n${docString}`
   submissions.value = [...submissions.value, submission]
 }
-
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
@@ -35,7 +26,7 @@ watchPostEffect((onCleanup) => {
     <div class="CSS_EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmission" />
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />
       </div>
     </div>
     <fieldset class="CSS_KEYMAP_FIELDSET">

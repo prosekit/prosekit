@@ -11,10 +11,7 @@ import {
   ProseKit,
   useDocChange,
 } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
+import { ref } from 'vue'
 
 // A list of saved documents, stored as HTML strings
 const records = ref<string[]>([])
@@ -42,12 +39,6 @@ function handleLoad(record: string) {
   hasUnsavedChange.value = false
   key.value += 1
 }
-
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
@@ -78,7 +69,7 @@ watchPostEffect((onCleanup) => {
     </ul>
     <ProseKit :key="key" :editor="editor">
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT"></div>
       </div>
     </ProseKit>
   </div>

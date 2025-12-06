@@ -290,6 +290,9 @@ export class EditorInstance {
 
   public mount(place: HTMLElement): void {
     if (this.view) {
+      // If the editor is already mounted to the same DOM element, do nothing
+      if (this.view.dom === place) return
+      // If the editor is already mounted to a different element, throw an error
       throw new ProseKitError('Editor is already mounted')
     }
     this.view = new EditorView({ mount: place }, this.directEditorProps)

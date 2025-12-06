@@ -4102,8 +4102,7 @@
         "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {

@@ -423,12 +423,14 @@ export class Editor<E extends Extension = any> {
   }
 
   /**
-   * Mount the editor to the given HTML element.
-   * Pass `null` or `undefined` to unmount the editor.
+   * Mount the editor to the given HTML element. Pass `null` or `undefined` to
+   * unmount the editor. When an element is passed, this method returns a
+   * function to unmount the editor.
    */
-  mount = (place: HTMLElement | null | undefined): void => {
+  mount = (place: HTMLElement | null | undefined): void | VoidFunction => {
     if (place) {
       this.instance.mount(place)
+      return this.unmount
     } else {
       this.instance.unmount()
     }

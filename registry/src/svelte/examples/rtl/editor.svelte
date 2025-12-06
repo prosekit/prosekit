@@ -31,7 +31,7 @@ const editor = createEditor({ extension, defaultContent })
   <div dir="rtl" class="CSS_EDITOR_VIEWPORT">
     <Toolbar uploader={sampleUploader} />
     <div class="CSS_EDITOR_SCROLLING">
-      <div use:editor.mount class="CSS_EDITOR_CONTENT"></div>
+      <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
       <InlineMenu />
       <SlashMenu />
       <BlockHandle dir="rtl" />

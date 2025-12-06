@@ -11,9 +11,7 @@ import {
   ProseKit,
   useDocChange,
 } from 'prosekit/vue'
-import {
-  ref,
-} from 'vue'
+import { ref } from 'vue'
 
 // A list of saved documents, stored as JSON strings
 const records = ref<string[]>([])

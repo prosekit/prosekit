@@ -4,9 +4,7 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-} from 'vue'
+import { ref } from 'vue'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'

@@ -18,18 +18,13 @@ function pushSubmission(hotkey: string) {
   const submission = `${new Date().toISOString()}\t${hotkey}\n${docString}`
   submissions = [...submissions, submission]
 }
-
-const mount = (element: HTMLElement) => {
-  editor.mount(element)
-  return { destroy: () => editor.unmount() }
-}
 </script>
 
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
     <Toolbar onSubmit={pushSubmission} />
     <div class="CSS_EDITOR_SCROLLING">
-      <div use:mount class="CSS_EDITOR_CONTENT"></div>
+      <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
     </div>
   </div>
   <fieldset class="CSS_KEYMAP_FIELDSET">

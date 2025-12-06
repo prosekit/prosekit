@@ -23,18 +23,13 @@ const props: Props = $props()
 
 const extension = defineExtension(props.loro, props.awareness)
 const editor = createEditor({ extension })
-
-const mount = (element: HTMLElement) => {
-  editor.mount(element)
-  return { destroy: () => editor.unmount() }
-}
 </script>
 
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
     <Toolbar />
     <div class="CSS_EDITOR_SCROLLING">
-      <div use:mount class="CSS_EDITOR_CONTENT"></div>
+      <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
     </div>
   </div>
 </ProseKit>

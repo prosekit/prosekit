@@ -25,17 +25,12 @@ const editor = createEditor({ extension, defaultContent: props.initialContent })
 
 const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
 useDocChange(handleDocChange, { editor })
-
-const mount = (element: HTMLElement) => {
-  editor.mount(element)
-  return { destroy: () => editor.unmount() }
-}
 </script>
 
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
     <div class="CSS_EDITOR_SCROLLING">
-      <div use:mount class="CSS_EDITOR_CONTENT"></div>
+      <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
     </div>
   </div>
 </ProseKit>

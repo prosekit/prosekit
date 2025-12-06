@@ -38,11 +38,6 @@ function handleLoad(record: string) {
   hasUnsavedChange = false
   key += 1
 }
-
-const mount = (element: HTMLElement) => {
-  editor.mount(element)
-  return { destroy: () => editor.unmount() }
-}
 </script>
 
 <div class="CSS_EDITOR_VIEWPORT">
@@ -71,7 +66,7 @@ const mount = (element: HTMLElement) => {
   {#key key}
     <ProseKit {editor}>
       <div class="CSS_EDITOR_SCROLLING">
-        <div use:mount class="CSS_EDITOR_CONTENT"></div>
+        <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
       </div>
     </ProseKit>
   {/key}

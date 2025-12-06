@@ -7,10 +7,6 @@ import {
   type NodeJSON,
 } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
 
 import { sampleContent } from '../../sample/sample-doc-full'
 import { sampleUploader } from '../../sample/sample-uploader'

@@ -25,7 +25,7 @@ const editor = createEditor({ extension, defaultContent })
 <ProseKit editor={editor}>
   <div class="CSS_EDITOR_VIEWPORT">
     <div class="CSS_EDITOR_SCROLLING">
-      <div use:editor.mount class="CSS_EDITOR_CONTENT"></div>
+      <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
       <TableHandle />
     </div>
   </div>

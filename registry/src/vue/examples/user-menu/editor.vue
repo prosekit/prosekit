@@ -4,10 +4,6 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
 
 import { tags } from '../../sample/tag-data'
 import { users } from '../../sample/user-data'
@@ -18,19 +14,13 @@ import { defineExtension } from './extension'
 
 const extension = defineExtension()
 const editor = createEditor({ extension })
-
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />
         <UserMenu :users="users" />
         <TagMenu :tags="tags" />
       </div>

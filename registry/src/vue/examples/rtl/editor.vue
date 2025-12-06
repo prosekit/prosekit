@@ -8,10 +8,6 @@ import {
   type NodeJSON,
 } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
 
 import { sampleContent } from '../../sample/sample-doc-rtl'
 import { sampleUploader } from '../../sample/sample-uploader'
@@ -29,12 +25,6 @@ const props = defineProps<{
 const extension = defineBasicExtension()
 const defaultContent = props.initialContent ?? sampleContent
 const editor = createEditor({ extension, defaultContent })
-
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect((onCleanup) => {
-  editor.mount(editorRef.value)
-  onCleanup(() => editor.unmount())
-})
 </script>
 
 <template>
@@ -42,7 +32,7 @@ watchPostEffect((onCleanup) => {
     <div dir="rtl" class="CSS_EDITOR_VIEWPORT">
       <Toolbar :uploader="sampleUploader" />
       <div class="CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" class="CSS_EDITOR_CONTENT"></div>
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT"></div>
         <InlineMenu />
         <SlashMenu />
         <BlockHandle dir="rtl" />

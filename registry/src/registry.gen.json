@@ -1963,6 +1963,70 @@
       }
     },
     {
+      "name": "react-example-tweet",
+      "title": "react-example-tweet",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-tweet.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "react",
+        "react-parallax-tilt",
+        "react-tweet"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/tweet/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/method-select.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/method-select.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/tilt.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/tilt.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/tweet-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/tweet-view.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "tweet",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/tweet/editor.tsx",
+          "registry/src/react/examples/tweet/extension.ts",
+          "registry/src/react/examples/tweet/index.ts",
+          "registry/src/react/examples/tweet/method-select.tsx",
+          "registry/src/react/examples/tweet/tilt.tsx",
+          "registry/src/react/examples/tweet/tweet-view.tsx",
+          "registry/src/react/sample/sample-doc-tweet.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-tweet"
+        ]
+      }
+    },
+    {
       "name": "react-example-typography",
       "title": "react-example-typography",
       "type": "registry:block",
@@ -2942,6 +3006,32 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-tweet",
+      "title": "react-sample-sample-doc-tweet",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-tweet.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tweet.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-tweet.ts"
         ],
         "internalDependencies": []
       }

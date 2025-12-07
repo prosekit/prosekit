@@ -13,52 +13,36 @@ import {
 testStoryConsistency('tweet')
 
 testStory('tweet', () => {
-  const setup = async () => {
+  it('can switch between iframe and react mode', async () => {
     const editor = await waitForEditor()
     const iframe = editor.locate('iframe[src^="https://platform.twitter.com/embed/Tweet.html"]')
     const nodeViewRoot = editor.locate('[data-node-view-root="true"]')
     const reactRadio = page.getByRole('radio', { name: 'react-tweet' })
     const iframeRadio = page.getByRole('radio', { name: 'iframe' })
 
-    return {
-      iframe,
-      nodeViewRoot,
-      reactRadio,
-      iframeRadio,
+    const expectIframe = async () => {
+      await expect.element(iframe).toBeVisible()
+      await expect.element(nodeViewRoot).not.toBeInTheDocument()
     }
-  }
 
-  it('renders tweet in iframe mode by default', async () => {
-    const { iframe, nodeViewRoot } = await setup()
+    const expectNodeViewRoot = async () => {
+      await expect.element(nodeViewRoot).toBeVisible()
+      await expect.element(iframe).not.toBeInTheDocument()
+    }
 
-    await expect.element(iframe).toBeVisible()
-    await expect.element(nodeViewRoot).not.toBeInTheDocument()
-  })
-
-  it('switches to react mode', async () => {
-    const { iframe, nodeViewRoot, reactRadio } = await setup()
-
-    await expect.element(iframe).toBeVisible()
-    await expect.element(nodeViewRoot).not.toBeInTheDocument()
+    // Render the tweet in iframe mode by default
+    await expectIframe()
 
     // Switch to react mode
     await reactRadio.click()
 
-    await expect.element(nodeViewRoot).toBeVisible()
-    await expect.element(iframe).not.toBeInTheDocument()
-  })
-
-  it('switches back to iframe mode', async () => {
-    const { iframe, nodeViewRoot, reactRadio, iframeRadio } = await setup()
-
-    // Switch to react mode first
-    await reactRadio.click()
+    // Verify the tweet is rendered in react mode
+    await expectNodeViewRoot()
 
     // Switch back to iframe mode
     await iframeRadio.click()
 
-    // Verify iframe is rendered again
-    await expect.element(iframe).toBeVisible()
-    await expect.element(nodeViewRoot).not.toBeInTheDocument()
+    // Verify the tweet is rendered in iframe mode
+    await expectIframe()
   })
 })

@@ -1,6 +1,4 @@
-import { sleep } from '@ocavue/utils'
 import { createElement } from 'preact'
-import { act } from 'preact/test-utils'
 import type { NodeJSON } from 'prosekit/core'
 import { expect } from 'vitest'
 import { page } from 'vitest/browser'

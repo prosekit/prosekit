@@ -1,9 +1,5 @@
-import { sleep } from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
-import {
-  act,
-  createElement,
-} from 'react'
+import { createElement } from 'react'
 import { expect } from 'vitest'
 import { page } from 'vitest/browser'
 import {

@@ -1,9 +1,5 @@
-import { sleep } from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
-import {
-  act,
-  createElement,
-} from 'react'
+import { createElement } from 'react'
 import { expect } from 'vitest'
 import { page } from 'vitest/browser'
 import {
@@ -27,12 +23,8 @@ export async function renderReactExample(story: string, initialContent?: NodeJSO
     exampleProps: initialContent ? { initialContent } : {},
   }))
 
-  await act(() => sleep(1))
-
   const fallback = page.getByTestId('react-renderer-fallback')
   await expect.element(fallback).not.toBeInTheDocument()
-
-  await act(() => sleep(1))
 
   return screen
 }

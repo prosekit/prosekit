@@ -1,6 +1,4 @@
-import { sleep } from '@ocavue/utils'
 import { createElement } from 'preact'
-import { act } from 'preact/test-utils'
 import type { NodeJSON } from 'prosekit/core'
 import { expect } from 'vitest'
 import { page } from 'vitest/browser'
@@ -25,12 +23,8 @@ export async function renderPreactExample(story: string, initialContent?: NodeJS
     exampleProps: initialContent ? { initialContent } : {},
   }))
 
-  await act(() => sleep(1))
-
   const fallback = page.getByTestId('preact-renderer-fallback')
   await expect.element(fallback).not.toBeInTheDocument()
-
-  await act(() => sleep(1))
 
   return screen
 }

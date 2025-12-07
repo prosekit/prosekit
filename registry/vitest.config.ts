@@ -12,6 +12,9 @@ import { playwrightCommands } from 'vitest-browser-commands'
 import { classReplace } from './src/meta/vite-plugin-class-replace'
 
 export default config({
+  optimizeDeps: {
+    include: ['preact/test-utils'],
+  },
   plugins: [
     wasm(),
     classReplace(),

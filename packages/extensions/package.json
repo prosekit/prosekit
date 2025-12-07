@@ -92,7 +92,7 @@
     "prosemirror-gapcursor": "^1.4.0",
     "prosemirror-highlight": "^0.13.0",
     "prosemirror-search": "^1.1.0",
-    "prosemirror-tables": "^1.8.1",
+    "prosemirror-tables": "^1.8.3",
     "shiki": "^3.19.0"
   },
   "peerDependencies": {
@@ -129,8 +129,8 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "tsdown": "^0.17.0-beta.5",
-    "type-fest": "^5.3.0",
+    "tsdown": "^0.17.0",
+    "type-fest": "^5.3.1",
     "typescript": "~5.9.3",
     "unified": "^11.0.5",
     "vitest": "^4.0.15",

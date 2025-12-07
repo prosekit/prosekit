@@ -87,7 +87,7 @@
     "@sveltejs/package": "^2.5.7",
     "@types/node": "^24.10.1",
     "read-pkg": "^10.0.0",
-    "svelte": "^5.45.4",
+    "svelte": "^5.45.6",
     "svelte-check": "^4.3.4",
     "tsx": "^4.21.0",
     "typescript": "~5.9.3"

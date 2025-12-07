@@ -7,6 +7,7 @@ import {
 function defineTweetSpec() {
   return defineNodeSpec({
     name: 'tweet',
+    content: '',
     attrs: {
       tweetId: { default: null },
     },
@@ -25,6 +26,7 @@ function defineTweetSpec() {
         'iframe',
         {
           src: `https://platform.twitter.com/embed/Tweet.html?id=${node.attrs.tweetId}`,
+          style: 'height: 300px',
         },
       ]
     },

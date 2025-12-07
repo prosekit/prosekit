@@ -8,7 +8,7 @@ export const sampleContent: NodeJSON = {
       content: [
         {
           type: 'text',
-          text: 'Click the gap between two images or press arrow keys to see the gap cursor between two images',
+          text: 'Render a tweet in your document',
         },
       ],
     },
@@ -16,6 +16,12 @@ export const sampleContent: NodeJSON = {
       type: 'tweet',
       attrs: {
         tweetId: '1598038815599661056',
+      },
+    },
+    {
+      type: 'tweet',
+      attrs: {
+        tweetId: '1997521536438133131',
       },
     },
   ],

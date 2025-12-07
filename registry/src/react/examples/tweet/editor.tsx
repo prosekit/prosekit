@@ -32,23 +32,23 @@ export default function Editor(props: EditorProps) {
     return createEditor({ extension: defineExtension(), defaultContent })
   }, [defaultContent])
 
-  const [renderMethod, setRenderMethod] = useState<'iframe' | 'react'>('iframe')
+  const [method, setMethod] = useState<'iframe' | 'react'>('react')
 
   const reactTweetView: Extension | null = useMemo(() => {
-    if (renderMethod === 'iframe') {
+    if (method === 'iframe') {
       return null
     }
     return defineReactNodeView({
       name: 'tweet',
       component: TweetView,
     })
-  }, [renderMethod])
+  }, [method])
 
   useExtension(reactTweetView, { editor })
 
   return (
     <ProseKit editor={editor}>
-      <MethodSelect value={renderMethod} onChange={setRenderMethod} />
+      <MethodSelect value={method} onChange={setMethod} />
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>

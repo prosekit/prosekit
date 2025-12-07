@@ -18,14 +18,5 @@ export const sampleContent: NodeJSON = {
         tweetId: '1598038815599661056',
       },
     },
-    {
-      type: 'paragraph',
-      content: [
-        {
-          type: 'text',
-          text: 'Render a tweet in your document',
-        },
-      ],
-    },
   ],
 }

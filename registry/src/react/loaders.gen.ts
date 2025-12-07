@@ -40,6 +40,7 @@ export const loaders = {
   'text-align': lazy(() => import('./examples/text-align').then((m) => ({ default: m.ExampleEditor }))),
   'text-color': lazy(() => import('./examples/text-color').then((m) => ({ default: m.ExampleEditor }))),
   'toolbar': lazy(() => import('./examples/toolbar').then((m) => ({ default: m.ExampleEditor }))),
+  'twitter': lazy(() => import('./examples/twitter').then((m) => ({ default: m.ExampleEditor }))),
   'typography': lazy(() => import('./examples/typography').then((m) => ({ default: m.ExampleEditor }))),
   'underline': lazy(() => import('./examples/underline').then((m) => ({ default: m.ExampleEditor }))),
   'unmount': lazy(() => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor }))),

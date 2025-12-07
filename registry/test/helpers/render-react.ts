@@ -27,12 +27,8 @@ export async function renderReactExample(story: string, initialContent?: NodeJSO
     exampleProps: initialContent ? { initialContent } : {},
   }))
 
-  await act(() => sleep(1))
-
   const fallback = page.getByTestId('react-renderer-fallback')
   await expect.element(fallback).not.toBeInTheDocument()
-
-  await act(() => sleep(1))
 
   return screen
 }

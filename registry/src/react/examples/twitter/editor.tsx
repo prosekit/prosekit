@@ -3,14 +3,24 @@ import 'prosekit/basic/typography.css'
 
 import {
   createEditor,
+  type Extension,
   type NodeJSON,
 } from 'prosekit/core'
-import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
+import {
+  defineReactNodeView,
+  ProseKit,
+  useExtension,
+} from 'prosekit/react'
+import {
+  useMemo,
+  useState,
+} from 'react'
 
 import { sampleContent } from '../../sample/sample-doc-tweet'
 
 import { defineExtension } from './extension'
+import { MethodSelect } from './method-select'
+import { TweetView } from './tweet-view'
 
 interface EditorProps {
   initialContent?: NodeJSON
@@ -22,8 +32,23 @@ export default function Editor(props: EditorProps) {
     return createEditor({ extension: defineExtension(), defaultContent })
   }, [defaultContent])
 
+  const [renderMethod, setRenderMethod] = useState<'iframe' | 'react'>('iframe')
+
+  const reactTweetView: Extension | null = useMemo(() => {
+    if (renderMethod === 'iframe') {
+      return null
+    }
+    return defineReactNodeView({
+      name: 'tweet',
+      component: TweetView,
+    })
+  }, [renderMethod])
+
+  useExtension(reactTweetView, { editor })
+
   return (
     <ProseKit editor={editor}>
+      <MethodSelect value={renderMethod} onChange={setRenderMethod} />
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>

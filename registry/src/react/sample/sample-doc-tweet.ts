@@ -19,10 +19,13 @@ export const sampleContent: NodeJSON = {
       },
     },
     {
-      type: 'tweet',
-      attrs: {
-        tweetId: '1997521536438133131',
-      },
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Render a tweet in your document',
+        },
+      ],
     },
   ],
 }

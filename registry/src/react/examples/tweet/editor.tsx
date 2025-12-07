@@ -32,7 +32,7 @@ export default function Editor(props: EditorProps) {
     return createEditor({ extension: defineExtension(), defaultContent })
   }, [defaultContent])
 
-  const [method, setMethod] = useState<'iframe' | 'react'>('react')
+  const [method, setMethod] = useState<'iframe' | 'react'>('iframe')
 
   const reactTweetView: Extension | null = useMemo(() => {
     if (method === 'iframe') {

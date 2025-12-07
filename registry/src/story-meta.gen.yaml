@@ -74,7 +74,7 @@
   frameworks: [react, vue, preact, svelte]
 - name: toolbar
   frameworks: [react, vue, preact, svelte]
-- name: twitter
+- name: tweet
   frameworks: [react]
 - name: typography
   frameworks: [react, vue, preact, svelte]

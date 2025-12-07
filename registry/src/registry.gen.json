@@ -1963,8 +1963,8 @@
       }
     },
     {
-      "name": "react-example-twitter",
-      "title": "react-example-twitter",
+      "name": "react-example-tweet",
+      "title": "react-example-tweet",
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
@@ -1972,33 +1972,53 @@
       ],
       "dependencies": [
         "prosekit",
-        "react"
+        "react",
+        "react-parallax-tilt",
+        "react-tweet"
       ],
       "files": [
         {
-          "path": "registry/src/react/examples/twitter/editor.tsx",
+          "path": "registry/src/react/examples/tweet/editor.tsx",
           "type": "registry:component",
-          "target": "components/editor/examples/twitter/editor.tsx"
+          "target": "components/editor/examples/tweet/editor.tsx"
         },
         {
-          "path": "registry/src/react/examples/twitter/extension.ts",
+          "path": "registry/src/react/examples/tweet/extension.ts",
           "type": "registry:component",
-          "target": "components/editor/examples/twitter/extension.ts"
+          "target": "components/editor/examples/tweet/extension.ts"
         },
         {
-          "path": "registry/src/react/examples/twitter/index.ts",
+          "path": "registry/src/react/examples/tweet/index.ts",
           "type": "registry:component",
-          "target": "components/editor/examples/twitter/index.ts"
+          "target": "components/editor/examples/tweet/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/method-select.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/method-select.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/tilt.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/tilt.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/tweet/tweet-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/tweet-view.tsx"
         }
       ],
       "meta": {
         "hasIcons": false,
-        "story": "twitter",
+        "story": "tweet",
         "framework": "react",
         "accumulatedFiles": [
-          "registry/src/react/examples/twitter/editor.tsx",
-          "registry/src/react/examples/twitter/extension.ts",
-          "registry/src/react/examples/twitter/index.ts",
+          "registry/src/react/examples/tweet/editor.tsx",
+          "registry/src/react/examples/tweet/extension.ts",
+          "registry/src/react/examples/tweet/index.ts",
+          "registry/src/react/examples/tweet/method-select.tsx",
+          "registry/src/react/examples/tweet/tilt.tsx",
+          "registry/src/react/examples/tweet/tweet-view.tsx",
           "registry/src/react/sample/sample-doc-tweet.ts"
         ],
         "internalDependencies": [

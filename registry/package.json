@@ -89,7 +89,7 @@
     "./react/examples/text-align": "./src/react/examples/text-align/index.ts",
     "./react/examples/text-color": "./src/react/examples/text-color/index.ts",
     "./react/examples/toolbar": "./src/react/examples/toolbar/index.ts",
-    "./react/examples/twitter": "./src/react/examples/twitter/index.ts",
+    "./react/examples/tweet": "./src/react/examples/tweet/index.ts",
     "./react/examples/typography": "./src/react/examples/typography/index.ts",
     "./react/examples/underline": "./src/react/examples/underline/index.ts",
     "./react/examples/unmount": "./src/react/examples/unmount/index.ts",

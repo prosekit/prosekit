@@ -1,5 +1,72 @@
 # prosekit
 
+## 0.17.0
+
+### Minor Changes
+
+- [`98084a9`](https://github.com/ocavue/prosekit/commit/98084a99d6a0cdee483f435e185a8f34c44f7370) ![](https://prosekit.dev/b/core)
+
+  Add a new `selectBlock()` command and update the keybinding behavior of `Mod-a` (`Ctrl-A` on Windows/Linux, `Command-A` on Mac).
+
+  The `defineBaseCommands()` extension now includes a `selectBlock()` command that expands the text selection to cover the current block node. If the selection spans multiple blocks, it selects all blocks in the selection.
+
+  The `defineBaseKeymap()` extension now changes the behavior of `Mod-a`: the first press selects the current block that the cursor is in, and a second press selects the entire document. This is similar to the behavior of Notion.
+
+  To recover the previous behavior where `Mod-a` immediately selects the entire document, pass `preferBlockSelection: false` when calling `defineBaseKeymap`:
+
+  ```ts
+  defineBaseKeymap({ preferBlockSelection: false });
+  ```
+
+- [`29a6eda`](https://github.com/ocavue/prosekit/commit/29a6edabffb302f5f75047a1ab69d24cd3f88bff) ![](https://prosekit.dev/b/extensions)
+
+  Add a new option `presence` to `defineLoro()`, which is a `CursorEphemeralStore` instance. `CursorEphemeralStore` is a better alternative to the legacy `Awareness`. If you're using `loro-prosemirror`, the minimal required version of `loro-prosemirror` is now `0.4.1`.
+
+- [`6f20104`](https://github.com/ocavue/prosekit/commit/6f201048e9facd3c4e6d78447e1a93d736f98751) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/basic)
+
+  The `prosekit/extensions/autocomplete` package now automatically adds the `prosekit-autocomplete-match` class and `data-autocomplete-match-text` attribute to matched autocomplete text segments. The attribute contains the full matched text.
+
+  The `prosekit/basic/typography.css` stylesheet provides default styling for `.prosekit-autocomplete-match`, highlighting matched text with a light gray background. You can customize this highlight color by setting the `--prosekit-autocomplete-color` CSS variable.
+
+- [`d3d8819`](https://github.com/ocavue/prosekit/commit/d3d8819c6e45cfbf29be39b1952b1fdc511337ab) ![](https://prosekit.dev/b/extensions)
+
+  When an autocomplete match is active and the text cursor moves outside of the matching range, the match will be deactivated and that position will be added to an ignore list. Moving the cursor back into the previously matched range will not re-activate the match.
+
+- [`fc66313`](https://github.com/ocavue/prosekit/commit/fc663133957a55cfb1a4be4444388fba7b344ecc) ![](https://prosekit.dev/b/core)
+
+  `editor.mount()` now returns an unmount callback when an element is passed.
+
+- [`46a655c`](https://github.com/ocavue/prosekit/commit/46a655c1ad240a6c768d7daf85f4d4c540e8b866) ![](https://prosekit.dev/b/core)
+
+  Remove some deprecated APIs from `prosekit/core`.
+
+  **Removed functions:**
+  - `defineDoc()` - Use `import { defineDoc } from 'prosekit/extensions/doc'` instead
+  - `defineText()` - Use `import { defineText } from 'prosekit/extensions/text'` instead
+  - `defineParagraph()` - Use `import { defineParagraph } from 'prosekit/extensions/paragraph'` instead
+  - `collectChildren()` - Use `node.children` or `fragment.content` instead
+  - `collectNodes()` - Use `node.children` or `fragment.content` instead
+
+  **Removed options:**
+  - `EditorOptions.defaultDoc` - Use `defaultContent` instead
+  - `EditorOptions.defaultHTML` - Use `defaultContent` instead
+  - `WrapOptions.nodeType` - Use `type` instead
+  - `CommandAction.canApply()` - Use `canExec()` instead
+
+### Patch Changes
+
+- [`332df77`](https://github.com/ocavue/prosekit/commit/332df7717dd07804978d4039fd0426ba4eb8275f) ![](https://prosekit.dev/b/core)
+
+  Loosen the type restriction on `defaultContent` in `EditorOptions`, allowing it to accept an `Element` instance instead of only `HTMLElement`.
+
+- [`e41cac1`](https://github.com/ocavue/prosekit/commit/e41cac16d521d91e4b5dbb2a14008ded281d7369) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+- [`f4ac31f`](https://github.com/ocavue/prosekit/commit/f4ac31fd52537e1e4ae3d73a98bb16a29395fa2d) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/basic)
+
+  Improve support for right-to-left languages.
+
 ## 0.16.3
 
 ### Patch Changes
@@ -122,7 +189,6 @@
 - [`79eb0e7`](https://github.com/ocavue/prosekit/commit/79eb0e7c51bb3c72104c789e250dc9738e882f29) ![](https://prosekit.dev/b/preact)
 
   Add complete Preact support with node/mark views and useEditorDerivedValue hook. Preact now has feature parity with React, including:
-
   - `definePreactNodeView` for custom node views
   - `definePreactMarkView` for custom mark views
   - `useEditorDerivedValue` hook for reactive state derivation
@@ -248,7 +314,6 @@
   List nodes with `bullet` and `toggle` kinds now use SVG icons instead of text-based markers. This provides better visual consistency and customization options.
 
   Available CSS variables for icon customization:
-
   - `--prosekit-list-bullet-icon`: The icon for bullet lists
   - `--prosekit-list-toggle-open-icon`: The icon for toggle lists when expanded
   - `--prosekit-list-toggle-closed-icon`: The icon for toggle lists when collapsed
@@ -332,19 +397,17 @@
   ### Using the `derive` Function
 
   `useEditorDerivedValue` accepts a `derive` function as its first argument. This function:
-
   1.  Receives the `editor` instance.
   2.  Computes and returns a value based on the editor's current state.
   3.  Is called when the editor mounts and whenever the editor's document or selection state changes.
 
   Crucially, the **`derive` function must be memoized**. If it's re-created on every render, `useEditorDerivedValue` might not work as expected and could lead to performance issues.
-
   - **If defined inside a component, wrap `derive` with `useCallback`:**
 
     ```tsx
     // ✅ Good: derive function is memoized
     const isBoldActive = useEditorDerivedValue(
-      useCallback((editor) => editor.marks.bold.isActive(), [])
+      useCallback((editor) => editor.marks.bold.isActive(), []),
     );
     ```
 
@@ -367,7 +430,7 @@
     ```tsx
     // ❌ Bad: derive function is not memoized
     const isBoldActive = useEditorDerivedValue((editor) =>
-      editor.marks.bold.isActive()
+      editor.marks.bold.isActive(),
     );
     ```
 
@@ -697,7 +760,6 @@
 - [`b5c0225`](https://github.com/ocavue/prosekit/commit/b5c022531ea9463e50df90e8a471c8e77a9355e6) ![](https://prosekit.dev/b/extensions)
 
   Add a new `prosekit/extensions/file` module to handle files in the editor:
-
   - `defineFilePasteHandler`: Handle files pasted into the editor
   - `defineFileDropHandler`: Handle files dropped into the editor
   - `UploadTask`: Manage file uploads
@@ -713,12 +775,10 @@
 - [`1b080e7`](https://github.com/ocavue/prosekit/commit/1b080e7dc86d4c8d54aee6aaeb568594dd7a7908) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
 
   This version introduces significant changes to the event handling mechanism for components:
-
   - Implementation Changes: Events are no longer handled by passing them to callback functions. Instead, the underlying custom elements now use `dispatchEvent()` to propagate events upwards, similar to native HTML elements. This approach allows for more native-like event handling, reducing code complexity.
   - Impact on UI Framework Integrations (React, Vue, Preact, Svelte, Solid): Except for the following change, the API remains largely unchanged.
 
   Event handlers for component `ResizableRoot` has changed:
-
   - Removed: `onSizeChangeStart`, `onSizeChange`, `onSizeChangeEnd`
   - Replaced with: `onResizeStart`, `onResizeEnd`.
 
@@ -803,7 +863,6 @@
 - [`f3ff15a`](https://github.com/ocavue/prosekit/commit/f3ff15a4837c676a45759f1b467d42b8628a3129) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
 
   Add new components:
-
   - `BlockHandlePopover`: A popover that appears on the left side of a block when you hover over it.
   - `BlockHandleAdd`: A button that lets you insert a new block below the one you're hovering over.
   - `BlockHandleDraggable`: A draggable component that allows to reorder a block.
@@ -821,7 +880,6 @@
 - [`80572dd`](https://github.com/ocavue/prosekit/commit/80572dd788a6019d128200487dafdf50264d573e) ![](https://prosekit.dev/b/extensions)
 
   Add the following command functions to the table extension:
-
   - `selectTable`
   - `selectTableCell`
   - `selectTableColumn`
@@ -878,7 +936,6 @@
 - [`76fb642`](https://github.com/ocavue/prosekit/commit/76fb64238637f76a9c26b2f2dcca5a79c3a45e3b) ![](https://prosekit.dev/b/core)
 
   Add some common util functions for working with ProseMirror.
-
   - `findParentNode`
   - `findParentNodeOfTypes`
   - `collectChildren`
@@ -1397,7 +1454,6 @@
 - [`c0f4e51`](https://github.com/ocavue/prosekit/commit/c0f4e51af135a594e0949ed2dfd8c543be290668) ![](https://prosekit.dev/b/core)
 
   Added new utility functions for converting between ProseMirror data and HTML:
-
   - `elementFromJSON`
   - `elementFromNode`
   - `htmlFromJSON`
@@ -1410,7 +1466,6 @@
 - [`c23c231`](https://github.com/ocavue/prosekit/commit/c23c2312915616269eea7808729796d51f10a92a) ![](https://prosekit.dev/b/core)
 
   Add following functions for defining event handlers.
-
   - `defineDOMEventHandler`
   - `defineKeyDownHandler`
   - `defineKeyPressHandler`
@@ -1636,7 +1691,6 @@
 - [`1393d74`](https://github.com/ocavue/prosekit/commit/1393d740e35118c27b84ae535156cf3030914a6f) ![](https://prosekit.dev/b/core)
 
   Add the following functions to register event handlers into the editor.
-
   - `defineMountHandler`
   - `defineUnmountHandler`
   - `defineUpdateHandler`

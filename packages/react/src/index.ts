@@ -25,5 +25,6 @@ export {
   type UseExtensionOptions,
 } from './hooks/use-extension'
 export { useKeymap } from './hooks/use-keymap'
+export { useSingleton } from './hooks/use-singleton'
 export { useStateUpdate } from './hooks/use-state-update'
 export { type PropsWithClassName } from './types'

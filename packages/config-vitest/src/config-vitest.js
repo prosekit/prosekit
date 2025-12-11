@@ -9,8 +9,7 @@ const debug = !!process.env.debug && !process.env.CI
  * @returns {import('vitest/config').UserWorkspaceConfig}
  */
 function getDefaultConfig() {
-  /** @type {import('vitest/config').UserWorkspaceConfig} */
-  const defaultConfig = {
+  return {
     test: {
       maxWorkers: process.env.CI ? 1 : 2,
       browser: {
@@ -39,7 +38,6 @@ function getDefaultConfig() {
       },
     },
   }
-  return defaultConfig
 }
 
 /**

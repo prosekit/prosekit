@@ -5,6 +5,6 @@ packages:
   - examples/*
   - packages/*
 minimumReleaseAge: 1440 # 24 hours
-minimumReleaseAgeExclude: 
-  - '@ocavue/*'
-  - 'prosemirror-*'
+minimumReleaseAgeExclude:
+  - "@ocavue/*"
+  - "prosemirror-*"

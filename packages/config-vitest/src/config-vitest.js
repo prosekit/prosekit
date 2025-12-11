@@ -37,12 +37,12 @@ const defaultConfig = {
 }
 
 /**
- * @param {import('vitest/config').UserWorkspaceConfig | undefined} options
+ * @param {import('vitest/config').UserWorkspaceConfig | undefined} userConfig
  * @returns {import('vitest/config').UserWorkspaceConfig}
  */
-export function config(options = undefined) {
+export function config(userConfig = undefined) {
   /**
    * @type {import('vitest/config').UserWorkspaceConfig}
    */
-  return defu(options, defaultConfig)
+  return defu(userConfig, defaultConfig)
 }

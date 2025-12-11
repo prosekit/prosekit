@@ -1,7 +1,7 @@
 // @ts-check
 
 import { playwright } from '@vitest/browser-playwright'
-import { merge } from 'lodash-es'
+import { defu } from 'defu'
 
 const debug = !!process.env.debug && !process.env.CI
 
@@ -44,5 +44,5 @@ export function config(options = undefined) {
   /**
    * @type {import('vitest/config').UserWorkspaceConfig}
    */
-  return merge({}, defaultConfig, options || {})
+  return defu(options, defaultConfig)
 }

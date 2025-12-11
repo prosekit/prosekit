@@ -1,9 +1,9 @@
-import { merge } from 'lodash-es'
+import { defu } from 'defu'
 import { readPackageUpSync } from 'read-package-up'
 import type { UserConfig } from 'tsdown'
 
-export function config(input?: UserConfig): UserConfig {
-  const pkg = readPackageUpSync({ cwd: input?.cwd })
+export function config(userConfig?: UserConfig): UserConfig {
+  const pkg = readPackageUpSync({ cwd: userConfig?.cwd })
   if (!pkg) {
     throw new Error('No package.json found')
   }
@@ -20,7 +20,7 @@ export function config(input?: UserConfig): UserConfig {
     throw new Error(`Unable to find the field "dev.entry" in ${pkg.path}`)
   }
 
-  const output: UserConfig = {
+  const defaultConfig: UserConfig = {
     entry,
     sourcemap: true,
     clean: false,
@@ -35,9 +35,5 @@ export function config(input?: UserConfig): UserConfig {
     ],
   }
 
-  return deepMergeOptions(output, input)
-}
-
-function deepMergeOptions(a: UserConfig, b?: UserConfig): UserConfig {
-  return merge({}, a, b)
+  return defu(userConfig, defaultConfig)
 }

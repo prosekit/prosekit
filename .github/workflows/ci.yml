@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4, 5]
+        shard: [1]
 
     steps:
       - uses: actions/checkout@v6
@@ -47,7 +47,7 @@ jobs:
         run: pnpm run test:install
 
       - name: Run tests
-        run: pnpm run test --shard=${{ matrix.shard }}/5
+        run: pnpm run test
 
   test-e2e:
     runs-on: ubuntu-latest

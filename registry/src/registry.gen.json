@@ -15462,6 +15462,51 @@
       }
     },
     {
+      "name": "solid-example-unmount",
+      "title": "solid-example-unmount",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/unmount/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/unmount/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/unmount/extension-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/extension-component.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/unmount/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/unmount/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "unmount",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/unmount/editor-component.tsx",
+          "registry/src/solid/examples/unmount/editor.tsx",
+          "registry/src/solid/examples/unmount/extension-component.tsx",
+          "registry/src/solid/examples/unmount/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-block-handle",
       "title": "solid-sample-sample-doc-block-handle",
       "type": "registry:component",

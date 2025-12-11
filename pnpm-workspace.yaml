@@ -4,3 +4,7 @@ packages:
   - registry
   - examples/*
   - packages/*
+minimumReleaseAge: 1440 # 24 hours
+minimumReleaseAgeExclude:
+  - "@ocavue/*"
+  - "prosemirror-*"

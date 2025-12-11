@@ -127,10 +127,12 @@ export function testStoryConsistency(story: string, {
   shouldWaitForEditor = true,
   shouldWaitForShiki = false,
   shouldWaitForImageToLoad = false,
+  setup,
 }: {
   shouldWaitForEditor?: boolean
   shouldWaitForShiki?: boolean
   shouldWaitForImageToLoad?: boolean
+  setup?: () => Promise<void>
 } = {}) {
   const examples = getExamples(story)
 
@@ -144,6 +146,7 @@ export function testStoryConsistency(story: string, {
         shouldWaitForShiki,
         shouldWaitForEditor,
         shouldWaitForImageToLoad,
+        setup,
       })
       htmlToExamples.get(html).push(example.example)
     })
@@ -195,15 +198,21 @@ async function getStableHTML(
     shouldWaitForEditor,
     shouldWaitForShiki,
     shouldWaitForImageToLoad,
+    setup,
   }: {
     framework: string
     story: string
     shouldWaitForEditor: boolean
     shouldWaitForShiki: boolean
     shouldWaitForImageToLoad: boolean
+    setup?: () => Promise<void>
   },
 ): Promise<string> {
   const screen = await renderExample(framework, story, false)
+
+  if (setup) {
+    await setup()
+  }
 
   if (shouldWaitForEditor) {
     await expect.element(locateEditor().first()).toBeVisible()

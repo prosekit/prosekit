@@ -15,8 +15,7 @@
     "@vitest/browser-playwright": "^4.0.15"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.12",
-    "lodash-es": "^4.17.21",
+    "defu": "^6.1.4",
     "typescript": "~5.9.3"
   }
 }

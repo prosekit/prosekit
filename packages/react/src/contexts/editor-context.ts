@@ -8,16 +8,16 @@ import {
   type Provider,
 } from 'react'
 
-const editorContext = createContext<Editor | null>(null)
+const EditorContext = createContext<Editor | null>(null)
 
 /**
  * @internal
  */
 export function useEditorContext<E extends Extension>(): Editor<E> | null {
-  return useContext(editorContext)
+  return useContext(EditorContext)
 }
 
 /**
  * @internal
  */
-export const EditorContextProvider: Provider<Editor | null> = editorContext.Provider
+export const EditorContextProvider: Provider<Editor | null> = EditorContext.Provider

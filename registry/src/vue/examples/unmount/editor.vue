@@ -15,11 +15,6 @@ function addEditor() {
 function removeEditor(key: number) {
   editorKeys.value = editorKeys.value.filter((k) => k !== key)
 }
-
-// Add the first editor on mount
-if (nextKey.value === 1) {
-  addEditor()
-}
 </script>
 
 <template>
@@ -37,8 +32,8 @@ if (nextKey.value === 1) {
         Unmount No.{{ key }}
       </button>
     </div>
-    <div v-for="key in editorKeys" :key="key" class="h-32">
-      <EditorComponent :placeholder="`Editor No.${key} of ${editorKeys.length}`" />
+    <div v-for="key in editorKeys" :key="key">
+      <EditorComponent :placeholder="`Editor No.${key}`" />
     </div>
   </div>
 </template>

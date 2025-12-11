@@ -21,3 +21,4 @@ export const Readonly = { args: { story: 'readonly' } }
 export const Rtl = { args: { story: 'rtl' } }
 export const Strike = { args: { story: 'strike' } }
 export const Underline = { args: { story: 'underline' } }
+export const Unmount = { args: { story: 'unmount' } }

@@ -399,11 +399,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
       '@prosemirror-adapter/preact':
-        specifier: ^0.4.6
-        version: 0.4.6(preact@10.28.0)
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@11ae438(preact@10.28.0)
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -539,11 +539,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
       '@prosemirror-adapter/react':
-        specifier: ^0.4.6
-        version: 0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@11ae438(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -582,11 +582,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
       '@prosemirror-adapter/solid':
-        specifier: ^0.4.6
-        version: 0.4.6(solid-js@1.9.10)
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@11ae438(solid-js@1.9.10)
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -616,11 +616,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
       '@prosemirror-adapter/svelte':
-        specifier: ^0.4.6
-        version: 0.4.6(svelte@5.45.6)
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@11ae438(svelte@5.45.6)
     devDependencies:
       '@sveltejs/package':
         specifier: ^2.5.7
@@ -697,11 +697,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438
       '@prosemirror-adapter/vue':
-        specifier: ^0.4.6
-        version: 0.4.6(vue@3.5.25(typescript@5.9.3))
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@11ae438
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@11ae438(vue@3.5.25(typescript@5.9.3))
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -2688,19 +2688,26 @@ packages:
       preact: ^10.4.0 || ^11.0.0-0
       vite: '>=2.0.0'
 
-  '@prosemirror-adapter/core@0.4.6':
-    resolution: {integrity: sha512-qbqd4u9IyDXXolFFmX1tzE000IpF9JbCiiwuSvqIh7lT9ZqjeMcyDVR/vxyM4oVY1sVyQQQj+WxHMAIhj7egVg==}
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438}
+    version: 0.4.6
 
-  '@prosemirror-adapter/preact@0.4.6':
-    resolution: {integrity: sha512-LR+9yvFsZhdIsFwy72t/x66AC6A16jjGJg8+Byv2IULoFSNdhD5noo9+ht3nsGK5D12qk0V359sjTxH/+GUu3A==}
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497}
+    version: 0.4.6
+
+  '@prosemirror-adapter/preact@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@11ae438':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@11ae438}
+    version: 0.4.6
     peerDependencies:
       preact: ^10.0.0
     peerDependenciesMeta:
       preact:
         optional: true
 
-  '@prosemirror-adapter/react@0.4.6':
-    resolution: {integrity: sha512-OvAjtFf+HCBFK5wMTY1eGYOLSZaGEoERK60bZxiYyS+yldQ9jEmQQ7xAKkzD0kQxIGrQHzzzYkmmC8P/E0yZfQ==}
+  '@prosemirror-adapter/react@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@11ae438':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@11ae438}
+    version: 0.4.6
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -2710,24 +2717,27 @@ packages:
       react-dom:
         optional: true
 
-  '@prosemirror-adapter/solid@0.4.6':
-    resolution: {integrity: sha512-DLN35Vbl8rzNU6CFITGRZXhHlRDgwiJzvFYk7BVxiClh4gjJqFMj1SMmOwZrgaAFRLhO5lP83v2FC5egZBX/Tg==}
+  '@prosemirror-adapter/solid@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@11ae438':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@11ae438}
+    version: 0.4.6
     peerDependencies:
       solid-js: ^1.8.22
     peerDependenciesMeta:
       solid-js:
         optional: true
 
-  '@prosemirror-adapter/svelte@0.4.6':
-    resolution: {integrity: sha512-zKBSlFFY8pRdu72JPyoflVbR2KH5fJ0Ja4iSviKld6IFw14B6lfPu7N5FLtexH0pM6SJItSHnlgIaPuPKq4BUQ==}
+  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@11ae438':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@11ae438}
+    version: 0.4.6
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
       svelte:
         optional: true
 
-  '@prosemirror-adapter/vue@0.4.6':
-    resolution: {integrity: sha512-1zDxyi4JqH4Iw8SPAvkNSAfUPEHQDRi0Oshi2qOmRf3xFHk1hBiV8CL0kEmOUE2C40ipk9AWkX2uu3UgO/8IYw==}
+  '@prosemirror-adapter/vue@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@11ae438':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@11ae438}
+    version: 0.4.6
     peerDependencies:
       vue: ^3.0.0
     peerDependenciesMeta:
@@ -9529,15 +9539,21 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@prosemirror-adapter/core@0.4.6':
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae438':
     dependencies:
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.4
 
-  '@prosemirror-adapter/preact@0.4.6(preact@10.28.0)':
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497':
     dependencies:
-      '@prosemirror-adapter/core': 0.4.6
+      prosemirror-model: 1.25.4
+      prosemirror-state: 1.4.4
+      prosemirror-view: 1.41.4
+
+  '@prosemirror-adapter/preact@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@11ae438(preact@10.28.0)':
+    dependencies:
+      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497
       nanoid: 5.1.6
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
@@ -9545,9 +9561,9 @@ snapshots:
     optionalDependencies:
       preact: 10.28.0
 
-  '@prosemirror-adapter/react@0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@prosemirror-adapter/react@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@11ae438(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
-      '@prosemirror-adapter/core': 0.4.6
+      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497
       nanoid: 5.1.6
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
@@ -9556,9 +9572,9 @@ snapshots:
       react: 19.2.1
       react-dom: 19.2.1(react@19.2.1)
 
-  '@prosemirror-adapter/solid@0.4.6(solid-js@1.9.10)':
+  '@prosemirror-adapter/solid@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@11ae438(solid-js@1.9.10)':
     dependencies:
-      '@prosemirror-adapter/core': 0.4.6
+      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497
       nanoid: 5.1.6
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
@@ -9566,9 +9582,9 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.10
 
-  '@prosemirror-adapter/svelte@0.4.6(svelte@5.45.6)':
+  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@11ae438(svelte@5.45.6)':
     dependencies:
-      '@prosemirror-adapter/core': 0.4.6
+      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497
       nanoid: 5.1.6
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
@@ -9576,9 +9592,9 @@ snapshots:
     optionalDependencies:
       svelte: 5.45.6
 
-  '@prosemirror-adapter/vue@0.4.6(vue@3.5.25(typescript@5.9.3))':
+  '@prosemirror-adapter/vue@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@11ae438(vue@3.5.25(typescript@5.9.3))':
     dependencies:
-      '@prosemirror-adapter/core': 0.4.6
+      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@11ae43885c24c4c9bab915fd83a66b14cadc5497
       nanoid: 5.1.6
       prosemirror-keymap: 1.2.3
       prosemirror-model: 1.25.4

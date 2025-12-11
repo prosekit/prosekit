@@ -187,8 +187,7 @@ export default function InlineMenu() {
                 placeholder="Paste the link..."
                 defaultValue={items.link.currentLink}
                 className="CSS_INLINE_MENU_LINK_INPUT"
-              >
-              </input>
+              />
             </form>
           )}
           {items.link.isActive && (

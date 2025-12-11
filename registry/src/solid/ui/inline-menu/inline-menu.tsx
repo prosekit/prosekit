@@ -204,8 +204,7 @@ export default function InlineMenu(): JSX.Element {
                   placeholder="Paste the link..."
                   value={item().currentLink || ''}
                   class="CSS_INLINE_MENU_LINK_INPUT"
-                >
-                </input>
+                />
               </form>
             </Show>
             <Show when={item().isActive}>

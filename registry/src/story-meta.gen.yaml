@@ -81,7 +81,7 @@
 - name: underline
   frameworks: [react, vue, preact, svelte, solid]
 - name: unmount
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: user-menu
   frameworks: [react, vue, preact, svelte]
 - name: user-menu-dynamic

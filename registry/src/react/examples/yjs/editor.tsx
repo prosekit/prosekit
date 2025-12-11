@@ -9,8 +9,8 @@ export default function Page() {
 
   return (
     <div className="h-full flex flex-col gap-2">
-      <EditorComponent room={room} />
-      <EditorComponent room={room} />
+      <EditorComponent key={room} room={room} />
+      <EditorComponent key={room} room={room} />
     </div>
   )
 }

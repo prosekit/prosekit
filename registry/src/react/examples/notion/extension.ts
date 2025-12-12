@@ -8,6 +8,7 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
 import { sampleUploader } from '../../sample/sample-uploader'
 import { defineCodeBlockView } from '../../ui/code-block-view'
+
 import { defineImageView } from './image-view'
 
 export function defineExtension() {

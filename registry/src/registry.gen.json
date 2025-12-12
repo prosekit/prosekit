@@ -1327,12 +1327,9 @@
         "https://prosekit.dev/r/react-sample-user-data.json",
         "https://prosekit.dev/r/react-ui-code-block-view.json",
         "https://prosekit.dev/r/react-ui-drop-indicator.json",
-        "https://prosekit.dev/r/react-ui-image-view.json",
         "https://prosekit.dev/r/react-ui-inline-menu.json",
-        "https://prosekit.dev/r/react-ui-slash-menu.json",
         "https://prosekit.dev/r/react-ui-table-handle.json",
         "https://prosekit.dev/r/react-ui-tag-menu.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json",
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
@@ -1364,9 +1361,44 @@
           "target": "components/editor/examples/notion/extension.ts"
         },
         {
+          "path": "registry/src/react/examples/notion/image-view/image-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/image-view/image-view.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/image-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/image-view/index.ts"
+        },
+        {
           "path": "registry/src/react/examples/notion/index.ts",
           "type": "registry:component",
           "target": "components/editor/examples/notion/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/slash-menu-empty.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/slash-menu-empty.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/slash-menu-item.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/slash-menu-item.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/slash-menu.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/slash-menu.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/style.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/style.css"
         }
       ],
       "meta": {
@@ -1378,7 +1410,14 @@
           "registry/src/react/examples/notion/block-handle.tsx",
           "registry/src/react/examples/notion/editor.tsx",
           "registry/src/react/examples/notion/extension.ts",
+          "registry/src/react/examples/notion/image-view/image-view.tsx",
+          "registry/src/react/examples/notion/image-view/index.ts",
           "registry/src/react/examples/notion/index.ts",
+          "registry/src/react/examples/notion/slash-menu/index.ts",
+          "registry/src/react/examples/notion/slash-menu/slash-menu-empty.tsx",
+          "registry/src/react/examples/notion/slash-menu/slash-menu-item.tsx",
+          "registry/src/react/examples/notion/slash-menu/slash-menu.tsx",
+          "registry/src/react/examples/notion/style.css",
           "registry/src/react/sample/sample-doc-full.ts",
           "registry/src/react/sample/sample-uploader.ts",
           "registry/src/react/sample/tag-data.ts",
@@ -1389,22 +1428,12 @@
           "registry/src/react/ui/code-block-view/index.ts",
           "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
           "registry/src/react/ui/drop-indicator/index.ts",
-          "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
-          "registry/src/react/ui/image-upload-popover/index.ts",
-          "registry/src/react/ui/image-view/image-view.tsx",
-          "registry/src/react/ui/image-view/index.ts",
           "registry/src/react/ui/inline-menu/index.ts",
           "registry/src/react/ui/inline-menu/inline-menu.tsx",
-          "registry/src/react/ui/slash-menu/index.ts",
-          "registry/src/react/ui/slash-menu/slash-menu-empty.tsx",
-          "registry/src/react/ui/slash-menu/slash-menu-item.tsx",
-          "registry/src/react/ui/slash-menu/slash-menu.tsx",
           "registry/src/react/ui/table-handle/index.ts",
           "registry/src/react/ui/table-handle/table-handle.tsx",
           "registry/src/react/ui/tag-menu/index.ts",
           "registry/src/react/ui/tag-menu/tag-menu.tsx",
-          "registry/src/react/ui/toolbar/index.ts",
-          "registry/src/react/ui/toolbar/toolbar.tsx",
           "registry/src/react/ui/user-menu/index.ts",
           "registry/src/react/ui/user-menu/user-menu.tsx"
         ],
@@ -1415,12 +1444,9 @@
           "react-sample-user-data",
           "react-ui-code-block-view",
           "react-ui-drop-indicator",
-          "react-ui-image-view",
           "react-ui-inline-menu",
-          "react-ui-slash-menu",
           "react-ui-table-handle",
           "react-ui-tag-menu",
-          "react-ui-toolbar",
           "react-ui-user-menu"
         ]
       },

@@ -13,7 +13,6 @@ import {
 } from 'react'
 
 import { sampleContent } from '../../sample/sample-doc-full'
-import { sampleUploader } from '../../sample/sample-uploader'
 import { tags } from '../../sample/tag-data'
 import { users } from '../../sample/user-data'
 import { DropIndicator } from '../../ui/drop-indicator'
@@ -21,10 +20,10 @@ import { InlineMenu } from '../../ui/inline-menu'
 import { TableHandle } from '../../ui/table-handle'
 import { TagMenu } from '../../ui/tag-menu'
 import { UserMenu } from '../../ui/user-menu'
-import { SlashMenu } from './slash-menu'
 
 import BlockHandle from './block-handle'
 import { defineExtension } from './extension'
+import { SlashMenu } from './slash-menu'
 
 interface EditorProps {
   initialContent?: NodeJSON

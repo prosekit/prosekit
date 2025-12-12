@@ -76,6 +76,7 @@
     "./react/examples/loro": "./src/react/examples/loro/index.ts",
     "./react/examples/mark-rule": "./src/react/examples/mark-rule/index.ts",
     "./react/examples/minimal": "./src/react/examples/minimal/index.ts",
+    "./react/examples/notion": "./src/react/examples/notion/index.ts",
     "./react/examples/placeholder": "./src/react/examples/placeholder/index.ts",
     "./react/examples/readonly": "./src/react/examples/readonly/index.ts",
     "./react/examples/rtl": "./src/react/examples/rtl/index.ts",

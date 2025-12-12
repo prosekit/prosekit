@@ -1,8 +1,9 @@
 // @ts-check
 
+import path from 'node:path'
+
 import { playwright } from '@vitest/browser-playwright'
 import { defu } from 'defu'
-import path from 'node:path'
 
 const debug = !!process.env.debug && !process.env.CI
 

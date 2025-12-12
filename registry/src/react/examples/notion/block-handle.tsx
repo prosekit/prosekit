@@ -4,6 +4,7 @@ import {
   BlockHandleDraggable,
   BlockHandlePopover,
 } from 'prosekit/react/block-handle'
+import BlockHandleMenu from './block-handle-menu'
 
 interface Props {
   dir?: 'ltr' | 'rtl'
@@ -52,9 +53,11 @@ export default function BlockHandle(props: Props) {
         </Tooltip.Root>
         <Tooltip.Root>
           <Tooltip.Trigger className="m-0 p-0">
-            <BlockHandleDraggable className="CSS_BLOCK_HANDLE_DRAG">
-              <div className="CSS_ICON_DRAG_HANDLE" />
-            </BlockHandleDraggable>
+            <BlockHandleMenu>
+              <BlockHandleDraggable className="CSS_BLOCK_HANDLE_DRAG">
+                <div className="CSS_ICON_DRAG_HANDLE" />
+              </BlockHandleDraggable>
+            </BlockHandleMenu>
           </Tooltip.Trigger>
           <Tooltip.Portal>
             <Tooltip.Positioner sideOffset={10} side="bottom">

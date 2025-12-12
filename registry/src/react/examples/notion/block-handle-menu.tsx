@@ -1,12 +1,11 @@
 import { Menu } from '@base-ui/react'
-import {
-  clsx,
-  Editor,
-} from 'prosekit/core'
+import type { Editor } from 'prosekit/core'
+import { clsx } from 'prosekit/core'
+import type { ListAttrs } from 'prosekit/extensions/list'
 import { useEditorDerivedValue } from 'prosekit/react'
 import { useState } from 'react'
+
 import type { EditorExtension } from './extension'
-import type { ListAttrs } from 'prosekit/extensions/list'
 
 interface Props {
   children: React.ReactElement

@@ -4,6 +4,7 @@ import {
   BlockHandleDraggable,
   BlockHandlePopover,
 } from 'prosekit/react/block-handle'
+
 import BlockHandleMenu from './block-handle-menu'
 
 interface Props {

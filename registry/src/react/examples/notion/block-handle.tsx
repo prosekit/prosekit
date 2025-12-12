@@ -8,10 +8,15 @@ import {
 import BlockHandleMenu from './block-handle-menu'
 
 interface Props {
+  enabled: boolean
   dir?: 'ltr' | 'rtl'
 }
 
 export default function BlockHandle(props: Props) {
+  if (!props.enabled) {
+    return null
+  }
+
   return (
     <Tooltip.Provider>
       <BlockHandlePopover

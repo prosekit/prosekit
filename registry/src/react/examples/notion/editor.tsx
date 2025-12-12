@@ -7,7 +7,10 @@ import {
   type NodeJSON,
 } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
+import {
+  useMemo,
+  useState,
+} from 'react'
 
 import { sampleContent } from '../../sample/sample-doc-full'
 import { sampleUploader } from '../../sample/sample-uploader'
@@ -34,16 +37,18 @@ export default function Editor(props: EditorProps) {
     return createEditor({ extension, defaultContent })
   }, [defaultContent])
 
+  const [slashMenuOpen, setSlashMenuOpen] = useState(false)
+
   return (
     <ProseKit editor={editor}>
       <div className="CSS_EDITOR_VIEWPORT" data-prosekit-example="notion">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
           <InlineMenu />
-          <SlashMenu />
+          <SlashMenu onOpenChange={setSlashMenuOpen} />
           <UserMenu users={users} />
           <TagMenu tags={tags} />
-          <BlockHandle />
+          <BlockHandle enabled={!slashMenuOpen} />
           <TableHandle />
           <DropIndicator />
         </div>

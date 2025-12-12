@@ -88,6 +88,11 @@ export default function SlashMenu() {
           onSelect={() => editor.commands.setCodeBlock()}
         />
 
+        <SlashMenuItem
+          label="Image"
+          onSelect={() => editor.commands.insertImage({ src: '' })}
+        />
+
         <SlashMenuEmpty />
       </AutocompleteList>
     </AutocompletePopover>

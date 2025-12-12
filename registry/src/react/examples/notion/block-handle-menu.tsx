@@ -3,11 +3,9 @@ import {
   clsx,
   Editor,
 } from 'prosekit/core'
-import {
-  useEditor,
-  useEditorDerivedValue,
-} from 'prosekit/react'
+import { useEditorDerivedValue } from 'prosekit/react'
 import { useState } from 'react'
+import type { EditorExtension } from './extension'
 
 interface Props {
   children: React.ReactElement
@@ -23,6 +21,7 @@ interface SubmenuInfo {
 interface MenuItemInfo {
   key: string
   label: string
+  isActive?: boolean
   iconClassName?: string
   shortcut?: string
   onClick: () => void
@@ -31,7 +30,41 @@ interface MenuItemInfo {
 
 type ItemInfo = SubmenuInfo | MenuItemInfo
 
-function getMenuItems(editor: Editor): ItemInfo[] {
+function getActiveBlockType(editor: Editor<EditorExtension>) {
+  if (editor.nodes.heading.isActive({ level: 1 })) {
+    return 'h1'
+  }
+
+  if (editor.nodes.heading.isActive({ level: 2 })) {
+    return 'h2'
+  }
+
+  if (editor.nodes.heading.isActive({ level: 3 })) {
+    return 'h3'
+  }
+
+  if (editor.nodes.list.isActive({ kind: 'bullet' })) {
+    return 'bullet-list'
+  }
+
+  if (editor.nodes.list.isActive({ kind: 'ordered' })) {
+    return 'ordered-list'
+  }
+
+  if (editor.nodes.list.isActive({ kind: 'task' })) {
+    return 'task-list'
+  }
+
+  if (editor.nodes.list.isActive({ kind: 'toggle' })) {
+    return 'toggle-list'
+  }
+
+  return 'text'
+}
+
+function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
+  const activeBlockType = getActiveBlockType(editor)
+
   return [
     {
       key: 'turn-into',
@@ -42,61 +75,49 @@ function getMenuItems(editor: Editor): ItemInfo[] {
           key: 'text',
           label: 'Text',
           onClick: () => {},
+          isActive: activeBlockType === 'text',
         },
         {
           key: 'h1',
           label: 'Heading 1',
-          onClick: () => {},
+          onClick: () => editor.commands.setHeading({ level: 1 }),
+          isActive: activeBlockType === 'h1',
         },
         {
           key: 'h2',
           label: 'Heading 2',
-          onClick: () => {},
+          onClick: () => editor.commands.setHeading({ level: 2 }),
+          isActive: activeBlockType === 'h2',
         },
         {
           key: 'h3',
           label: 'Heading 3',
-          onClick: () => {},
+          onClick: () => editor.commands.setHeading({ level: 3 }),
+          isActive: activeBlockType === 'h3',
         },
         {
           key: 'bullet-list',
           label: 'Bullet list',
-          onClick: () => {},
+          onClick: () => editor.commands.wrapInList({ kind: 'bullet' }),
+          isActive: activeBlockType === 'bullet-list',
         },
         {
           key: 'ordered-list',
           label: 'Ordered list',
-          onClick: () => {},
+          onClick: () => editor.commands.wrapInList({ kind: 'ordered' }),
+          isActive: activeBlockType === 'ordered-list',
         },
         {
           key: 'task-list',
           label: 'Task list',
-          onClick: () => {},
+          onClick: () => editor.commands.wrapInList({ kind: 'task' }),
+          isActive: activeBlockType === 'task-list',
         },
         {
           key: 'toggle-list',
           label: 'Toggle list',
-          onClick: () => {},
-        },
-        {
-          key: 'divider',
-          label: 'Divider',
-          onClick: () => {},
-        },
-        {
-          key: 'equation',
-          label: 'Equation',
-          onClick: () => {},
-        },
-        {
-          key: 'table',
-          label: 'Table',
-          onClick: () => {},
-        },
-        {
-          key: 'embed',
-          label: 'Embed',
-          onClick: () => {},
+          onClick: () => editor.commands.wrapInList({ kind: 'toggle' }),
+          isActive: activeBlockType === 'toggle-list',
         },
       ],
     },
@@ -165,7 +186,8 @@ function BlockHandleItem(props: { item: ItemInfo }) {
       >
         {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
         <span className="flex-1">{props.item.label}</span>
-        {props.item.shortcut && <span className="opacity-50">{props.item.shortcut}</span>}
+        {props.item.isActive && <span className="inline-block size-4 i-lucide-check"></span>}
+        {!props.item.isActive && props.item.shortcut && <span className="opacity-50">{props.item.shortcut}</span>}
       </Menu.Item>
     )
   }

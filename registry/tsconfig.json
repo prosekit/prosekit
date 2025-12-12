@@ -31,6 +31,7 @@
   ],
   "include": [
     "./*.ts",
+    "./*.js",
     "./*.json",
     "src/meta/**/*",
     "src/*.ts",

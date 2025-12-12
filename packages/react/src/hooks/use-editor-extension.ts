@@ -3,6 +3,7 @@ import {
   type Editor,
   type Extension,
 } from '@prosekit/core'
+import { queueExtension } from '@prosekit/web'
 import { useEffect } from 'react'
 
 /**
@@ -18,7 +19,7 @@ export function useEditorExtension(
 
   useEffect(() => {
     if (extension) {
-      return editor.use(extension)
+      return queueExtension(editor, extension)
     }
   }, [editor, extension])
 }

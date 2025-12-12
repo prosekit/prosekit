@@ -3,6 +3,7 @@ import {
   type Editor,
   type Extension,
 } from '@prosekit/core'
+import { queueExtension } from '@prosekit/web'
 import { onMount } from 'svelte'
 import type { Readable } from 'svelte/store'
 
@@ -31,7 +32,7 @@ export function useEditorExtension(
         throw new EditorNotFoundError()
       }
       if (extension) {
-        cleanup = editor.use(extension)
+        cleanup = queueExtension(editor, extension)
       }
     })
 

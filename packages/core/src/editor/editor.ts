@@ -297,6 +297,7 @@ export class EditorInstance {
     }
     this.view = new EditorView({ mount: place }, this.directEditorProps)
     this.afterMounted.forEach((callback) => callback())
+    this.afterMounted.length = 0
   }
 
   public unmount(): void {

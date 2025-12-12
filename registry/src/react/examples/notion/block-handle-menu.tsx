@@ -1,12 +1,11 @@
 import { Menu } from '@base-ui/react'
-import {
-  clsx,
-  Editor,
-} from 'prosekit/core'
+import type { Editor } from 'prosekit/core'
+import { clsx } from 'prosekit/core'
+import type { ListAttrs } from 'prosekit/extensions/list'
 import { useEditorDerivedValue } from 'prosekit/react'
 import { useState } from 'react'
+
 import type { EditorExtension } from './extension'
-import type { ListAttrs } from 'prosekit/extensions/list'
 
 const POPUP_CLASSNAME =
   'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300 w-50'

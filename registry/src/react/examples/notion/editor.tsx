@@ -12,7 +12,6 @@ import { sampleContent } from '../../sample/sample-doc-full'
 import { sampleUploader } from '../../sample/sample-uploader'
 import { tags } from '../../sample/tag-data'
 import { users } from '../../sample/user-data'
-import BlockHandle from './block-handle'
 import { DropIndicator } from '../../ui/drop-indicator'
 import { InlineMenu } from '../../ui/inline-menu'
 import { SlashMenu } from '../../ui/slash-menu'
@@ -21,6 +20,7 @@ import { TagMenu } from '../../ui/tag-menu'
 import { Toolbar } from '../../ui/toolbar'
 import { UserMenu } from '../../ui/user-menu'
 
+import BlockHandle from './block-handle'
 import { defineExtension } from './extension'
 
 interface EditorProps {

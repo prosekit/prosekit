@@ -19,9 +19,9 @@ import type {
   cause `prosemirror-adapter` to set UI state synchronously (e.g. `setState`
   returned by `useState` in React).
 
-  ProseMirror is a sync based framework. When updating node view, ProseMirror
+  ProseMirror is a sync-based framework. When updating node view, ProseMirror
   will first stop DOMObserver, then update the DOM, then resume DOMObserver.
-  `prosemirror-adapter` need to call `React.flushSync()` to update the DOM
+  `prosemirror-adapter` needs to call `React.flushSync()` to update the DOM
   synchronously right after React state is updated, before ProseMirror resumes
   DOMObserver.
 
@@ -36,7 +36,7 @@ import type {
   }, [])
   ```
 
-  This breaks the async nature of React, and causing the following React
+  This breaks the async nature of React, and causes the following React
   warning:
 
   ```
@@ -69,7 +69,7 @@ import type {
   ```
 
   I chose to use `setTimeout` instead of `queueMicrotask` because
-  `queueMicrotask` causing another React act warning `An update to %s inside a
+  `queueMicrotask` causes another React act warning `An update to %s inside a
   test was not wrapped in act(...)` during testing.
 
   Although the example above is based on React, this is a general pattern for

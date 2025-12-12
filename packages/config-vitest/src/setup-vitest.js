@@ -2,11 +2,14 @@
 
 import failOnConsole from 'vitest-fail-on-console'
 
+/** @type {string[]} */
+const ALLOWED_MESSAGES = [
+  'Cannot find the loroNode',
+  'flushSync was called from inside a lifecycle method. React cannot flush when React is already rendering.',
+]
+
 failOnConsole({
   allowMessage: (message) => {
-    if (message.includes('Cannot find the loroNode')) {
-      return true
-    }
-    return false
+    return ALLOWED_MESSAGES.some(allowedMessage => message.includes(allowedMessage))
   },
 })

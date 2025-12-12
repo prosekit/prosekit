@@ -8,6 +8,14 @@ import { useState } from 'react'
 import type { EditorExtension } from './extension'
 import type { ListAttrs } from 'prosekit/extensions/list'
 
+const POPUP_CLASSNAME =
+  'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300 w-50'
+
+const ITEM_CLASSNAME =
+  'flex items-center justify-between gap-2 cursor-default py-2 px-3 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-900'
+
+const TEXT_COLOR_CLASSNAME = clsx(`border rounded-sm relative after:absolute after:inset-0 after:flex after:items-center after:justify-center after:content-['A']`)
+
 interface Props {
   children: React.ReactElement
 }
@@ -80,48 +88,56 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
         {
           key: 'text',
           label: 'Text',
+          iconClassName: 'i-lucide-type',
           onClick: () => {},
           isActive: activeBlockType === 'text',
         },
         {
           key: 'h1',
           label: 'Heading 1',
+          iconClassName: 'i-lucide-heading-1',
           onClick: () => editor.commands.setHeading({ level: 1 }),
           isActive: activeBlockType === 'h1',
         },
         {
           key: 'h2',
           label: 'Heading 2',
+          iconClassName: 'i-lucide-heading-2',
           onClick: () => editor.commands.setHeading({ level: 2 }),
           isActive: activeBlockType === 'h2',
         },
         {
           key: 'h3',
           label: 'Heading 3',
+          iconClassName: 'i-lucide-heading-3',
           onClick: () => editor.commands.setHeading({ level: 3 }),
           isActive: activeBlockType === 'h3',
         },
         {
           key: 'bullet-list',
           label: 'Bullet list',
+          iconClassName: 'i-lucide-list',
           onClick: () => turnIntoList(editor, { kind: 'bullet' }),
           isActive: activeBlockType === 'bullet-list',
         },
         {
           key: 'ordered-list',
           label: 'Ordered list',
+          iconClassName: 'i-lucide-list-ordered',
           onClick: () => turnIntoList(editor, { kind: 'ordered' }),
           isActive: activeBlockType === 'ordered-list',
         },
         {
           key: 'task-list',
           label: 'Task list',
+          iconClassName: 'i-lucide-list-checks',
           onClick: () => turnIntoList(editor, { kind: 'task' }),
           isActive: activeBlockType === 'task-list',
         },
         {
           key: 'toggle-list',
           label: 'Toggle list',
+          iconClassName: 'i-lucide-list-collapse',
           onClick: () => turnIntoList(editor, { kind: 'toggle' }),
           isActive: activeBlockType === 'toggle-list',
         },
@@ -133,18 +149,57 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
       iconClassName: 'i-lucide-paint-roller',
       children: [
         {
-          key: 'red',
-          label: 'Red',
+          key: 'default',
+          label: 'Default Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-current text-current'),
+          onClick: () => {},
+        },
+        {
+          key: 'gray',
+          label: 'Gray Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-gray-300 text-gray-500'),
+          onClick: () => {},
+        },
+        {
+          key: 'orange',
+          label: 'Orange Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-orange-300 text-orange-500'),
+          onClick: () => {},
+        },
+        {
+          key: 'yellow',
+          label: 'Yellow Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-yellow-300 text-yellow-500'),
           onClick: () => {},
         },
         {
           key: 'green',
-          label: 'Green',
+          label: 'Green Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-green-300 text-green-500'),
           onClick: () => {},
         },
         {
           key: 'blue',
-          label: 'Blue',
+          label: 'Blue Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-blue-300 text-blue-500'),
+          onClick: () => {},
+        },
+        {
+          key: 'purple',
+          label: 'Purple Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-purple-300 text-purple-500'),
+          onClick: () => {},
+        },
+        {
+          key: 'pink',
+          label: 'Pink Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-pink-300 text-pink-500'),
+          onClick: () => {},
+        },
+        {
+          key: 'red',
+          label: 'Red Text',
+          iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-red-300 text-red-500'),
           onClick: () => {},
         },
       ],
@@ -158,12 +213,6 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
     },
   ]
 }
-
-const POPUP_CLASSNAME =
-  'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300 w-50'
-
-const ITEM_CLASSNAME =
-  'flex items-center justify-between gap-2 cursor-default py-2 px-3 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-900'
 
 function BlockHandleItem(props: { item: ItemInfo }) {
   if (props.item.children) {
@@ -190,7 +239,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
         className={ITEM_CLASSNAME}
         onClick={props.item.onClick}
       >
-        {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
+        {props.item.iconClassName && <span className={clsx('inline-block size-5', props.item.iconClassName)} />}
         <span className="flex-1">{props.item.label}</span>
         {props.item.isActive && <span className="inline-block size-4 i-lucide-check"></span>}
         {!props.item.isActive && props.item.shortcut && <span className="opacity-50">{props.item.shortcut}</span>}

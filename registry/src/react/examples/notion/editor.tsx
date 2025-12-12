@@ -17,7 +17,6 @@ import { DropIndicator } from '../../ui/drop-indicator'
 import { InlineMenu } from '../../ui/inline-menu'
 import { TableHandle } from '../../ui/table-handle'
 import { TagMenu } from '../../ui/tag-menu'
-import { Toolbar } from '../../ui/toolbar'
 import { UserMenu } from '../../ui/user-menu'
 import { SlashMenu } from './slash-menu'
 
@@ -38,7 +37,6 @@ export default function Editor(props: EditorProps) {
   return (
     <ProseKit editor={editor}>
       <div className="CSS_EDITOR_VIEWPORT" data-prosekit-example="notion">
-        <Toolbar uploader={sampleUploader} />
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
           <InlineMenu />

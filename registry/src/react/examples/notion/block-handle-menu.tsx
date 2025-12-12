@@ -1,5 +1,8 @@
 import { Menu } from '@base-ui/react'
-import type { Editor } from 'prosekit/core'
+import {
+  clsx,
+  Editor,
+} from 'prosekit/core'
 import {
   useEditor,
   useEditorDerivedValue,
@@ -13,12 +16,15 @@ interface Props {
 interface SubmenuInfo {
   key: string
   label: string
+  iconClassName?: string
   children: ItemInfo[]
 }
 
 interface MenuItemInfo {
   key: string
   label: string
+  iconClassName?: string
+  shortcut?: string
   onClick: () => void
   children?: never
 }
@@ -30,6 +36,7 @@ function getMenuItems(editor: Editor): ItemInfo[] {
     {
       key: 'turn-into',
       label: 'Turn into',
+      iconClassName: 'i-lucide-refresh-cw',
       children: [
         {
           key: 'text',
@@ -96,6 +103,7 @@ function getMenuItems(editor: Editor): ItemInfo[] {
     {
       key: 'color',
       label: 'Color',
+      iconClassName: 'i-lucide-paint-roller',
       children: [
         {
           key: 'red',
@@ -117,20 +125,28 @@ function getMenuItems(editor: Editor): ItemInfo[] {
     {
       key: 'delete',
       label: 'Delete',
+      iconClassName: 'i-lucide-trash-2',
+      shortcut: 'Del',
       onClick: () => {},
     },
   ]
 }
 
 const POPUP_CLASSNAME =
-  'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300'
+  'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300 w-50'
+
+const ITEM_CLASSNAME =
+  'flex items-center justify-between gap-2 cursor-default py-2 px-3 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-900'
 
 function BlockHandleItem(props: { item: ItemInfo }) {
   if (props.item.children) {
     return (
       <Menu.SubmenuRoot>
-        <Menu.SubmenuTrigger className="flex cursor-default py-2 pr-8 pl-4 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-900">
-          {props.item.label}
+        <Menu.SubmenuTrigger className={ITEM_CLASSNAME}>
+          {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
+          <span className="flex-1">{props.item.label}</span>
+          <span className="inline-block size-4 i-lucide-chevron-right opacity-50">
+          </span>
         </Menu.SubmenuTrigger>
         <Menu.Portal>
           <Menu.Positioner align="center">
@@ -144,10 +160,12 @@ function BlockHandleItem(props: { item: ItemInfo }) {
   } else {
     return (
       <Menu.Item
-        className="flex cursor-default py-2 pr-8 pl-4 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-900"
+        className={ITEM_CLASSNAME}
         onClick={props.item.onClick}
       >
-        {props.item.label}
+        {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
+        <span className="flex-1">{props.item.label}</span>
+        {props.item.shortcut && <span className="opacity-50">{props.item.shortcut}</span>}
       </Menu.Item>
     )
   }
@@ -182,7 +200,7 @@ export default function BlockHandleMenu(props: Props) {
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Backdrop className="w-100vh h-100vh flex fixed inset-0 opacity-0" />
-        <Menu.Positioner className="outline-none" sideOffset={8}>
+        <Menu.Positioner className="outline-none" side="right" align="center">
           <Menu.Popup className={POPUP_CLASSNAME}>
             {items.map(item => <BlockHandleItem key={item.key} item={item} />)}
           </Menu.Popup>

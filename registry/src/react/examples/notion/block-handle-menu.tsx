@@ -6,6 +6,7 @@ import {
 import { useEditorDerivedValue } from 'prosekit/react'
 import { useState } from 'react'
 import type { EditorExtension } from './extension'
+import type { ListAttrs } from 'prosekit/extensions/list'
 
 interface Props {
   children: React.ReactElement
@@ -62,6 +63,11 @@ function getActiveBlockType(editor: Editor<EditorExtension>) {
   return 'text'
 }
 
+function turnIntoList(editor: Editor<EditorExtension>, attrs: ListAttrs) {
+  editor.commands.setParagraph()
+  editor.commands.wrapInList(attrs)
+}
+
 function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
   const activeBlockType = getActiveBlockType(editor)
 
@@ -98,25 +104,25 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
         {
           key: 'bullet-list',
           label: 'Bullet list',
-          onClick: () => editor.commands.wrapInList({ kind: 'bullet' }),
+          onClick: () => turnIntoList(editor, { kind: 'bullet' }),
           isActive: activeBlockType === 'bullet-list',
         },
         {
           key: 'ordered-list',
           label: 'Ordered list',
-          onClick: () => editor.commands.wrapInList({ kind: 'ordered' }),
+          onClick: () => turnIntoList(editor, { kind: 'ordered' }),
           isActive: activeBlockType === 'ordered-list',
         },
         {
           key: 'task-list',
           label: 'Task list',
-          onClick: () => editor.commands.wrapInList({ kind: 'task' }),
+          onClick: () => turnIntoList(editor, { kind: 'task' }),
           isActive: activeBlockType === 'task-list',
         },
         {
           key: 'toggle-list',
           label: 'Toggle list',
-          onClick: () => editor.commands.wrapInList({ kind: 'toggle' }),
+          onClick: () => turnIntoList(editor, { kind: 'toggle' }),
           isActive: activeBlockType === 'toggle-list',
         },
       ],

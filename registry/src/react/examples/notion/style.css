@@ -1,0 +1,6 @@
+[data-prosekit-example="notion"] {
+  & .prosekit-autocomplete-match[data-autocomplete-match-text="/"]:after {
+    content: "Filter...";
+    opacity: 0.5;
+  }
+}

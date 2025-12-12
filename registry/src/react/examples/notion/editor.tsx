@@ -1,5 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
+import './style.css'
 
 import {
   createEditor,
@@ -36,7 +37,7 @@ export default function Editor(props: EditorProps) {
 
   return (
     <ProseKit editor={editor}>
-      <div className="CSS_EDITOR_VIEWPORT">
+      <div className="CSS_EDITOR_VIEWPORT" data-prosekit-example="notion">
         <Toolbar uploader={sampleUploader} />
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>

@@ -1,5 +1,7 @@
 // @ts-check
 
+import path from 'node:path'
+
 import { playwright } from '@vitest/browser-playwright'
 import { defu } from 'defu'
 
@@ -12,6 +14,7 @@ function getDefaultConfig() {
   return {
     test: {
       maxWorkers: process.env.CI ? 1 : 2,
+      setupFiles: [path.join(import.meta.dirname, 'setup-vitest.js')],
       browser: {
         enabled: true,
         viewport: {

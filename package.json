@@ -59,7 +59,19 @@
     "vitest": "^4.0.15"
   },
   "pnpm": {
-    "overrides": {},
+    "overrides": {
+      "vite": "^7.2.7",
+      "@astrojs/preact": "^5.0.0-alpha.0",
+      "@astrojs/react": "^5.0.0-alpha.0",
+      "@astrojs/solid-js": "^6.0.0-alpha.0",
+      "@astrojs/starlight": "^0.37.1",
+      "@astrojs/svelte": "^8.0.0-alpha.0",
+      "@astrojs/vue": "^6.0.0-alpha.0",
+      "@astrojs/sitemap": "^3.6.1-alpha.0",
+      "@astrojs/markdown-remark": "^7.0.0-alpha.0",
+      "@astrojs/mdx": "^5.0.0-alpha.0",
+      "astro": "^6.0.0-alpha.1"
+    },
     "patchedDependencies": {
       "y-prosemirror": "patches/y-prosemirror.patch"
     },

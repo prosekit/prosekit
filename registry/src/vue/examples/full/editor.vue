@@ -9,9 +9,9 @@ import {
 import { ProseKit } from 'prosekit/vue'
 
 import { sampleContent } from '../../sample/sample-doc-full'
+import { tags } from '../../sample/sample-tag-data'
 import { sampleUploader } from '../../sample/sample-uploader'
-import { tags } from '../../sample/tag-data'
-import { users } from '../../sample/user-data'
+import { users } from '../../sample/sample-user-data'
 import { BlockHandle } from '../../ui/block-handle'
 import { DropIndicator } from '../../ui/drop-indicator'
 import { InlineMenu } from '../../ui/inline-menu'

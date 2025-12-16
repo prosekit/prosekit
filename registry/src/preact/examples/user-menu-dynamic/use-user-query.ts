@@ -3,8 +3,8 @@ import {
   useState,
 } from 'preact/hooks'
 
-import type { User } from '../../sample/query-users'
-import { queryUsers } from '../../sample/query-users'
+import type { User } from '../../sample/sample-query-users'
+import { queryUsers } from '../../sample/sample-query-users'
 
 /**
  * Simulate a user searching with some delay.

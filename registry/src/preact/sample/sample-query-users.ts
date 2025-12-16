@@ -1,4 +1,4 @@
-import { users } from './user-data'
+import { users } from './sample-user-data'
 
 export interface User {
   id: number

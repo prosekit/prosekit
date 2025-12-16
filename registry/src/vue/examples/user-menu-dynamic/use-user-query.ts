@@ -7,7 +7,7 @@ import {
 import {
   queryUsers,
   type User,
-} from '../../sample/query-users'
+} from '../../sample/sample-query-users'
 
 /**
  * Simulate a user searching with some delay.

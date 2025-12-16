@@ -469,9 +469,9 @@
       "description": "",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/react-sample-sample-tag-data.json",
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
-        "https://prosekit.dev/r/react-sample-tag-data.json",
-        "https://prosekit.dev/r/react-sample-user-data.json",
+        "https://prosekit.dev/r/react-sample-sample-user-data.json",
         "https://prosekit.dev/r/react-ui-block-handle.json",
         "https://prosekit.dev/r/react-ui-code-block-view.json",
         "https://prosekit.dev/r/react-ui-drop-indicator.json",
@@ -513,9 +513,9 @@
           "registry/src/react/examples/full/extension.ts",
           "registry/src/react/examples/full/index.ts",
           "registry/src/react/sample/sample-doc-full.ts",
+          "registry/src/react/sample/sample-tag-data.ts",
           "registry/src/react/sample/sample-uploader.ts",
-          "registry/src/react/sample/tag-data.ts",
-          "registry/src/react/sample/user-data.ts",
+          "registry/src/react/sample/sample-user-data.ts",
           "registry/src/react/ui/block-handle/block-handle.tsx",
           "registry/src/react/ui/block-handle/index.ts",
           "registry/src/react/ui/button/button.tsx",
@@ -545,9 +545,9 @@
         ],
         "internalDependencies": [
           "react-sample-sample-doc-full",
+          "react-sample-sample-tag-data",
           "react-sample-sample-uploader",
-          "react-sample-tag-data",
-          "react-sample-user-data",
+          "react-sample-sample-user-data",
           "react-ui-block-handle",
           "react-ui-code-block-view",
           "react-ui-drop-indicator",
@@ -2167,8 +2167,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-tag-data.json",
-        "https://prosekit.dev/r/react-sample-user-data.json",
+        "https://prosekit.dev/r/react-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/react-sample-sample-user-data.json",
         "https://prosekit.dev/r/react-ui-tag-menu.json",
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
@@ -2201,16 +2201,16 @@
           "registry/src/react/examples/user-menu/editor.tsx",
           "registry/src/react/examples/user-menu/extension.ts",
           "registry/src/react/examples/user-menu/index.ts",
-          "registry/src/react/sample/tag-data.ts",
-          "registry/src/react/sample/user-data.ts",
+          "registry/src/react/sample/sample-tag-data.ts",
+          "registry/src/react/sample/sample-user-data.ts",
           "registry/src/react/ui/tag-menu/index.ts",
           "registry/src/react/ui/tag-menu/tag-menu.tsx",
           "registry/src/react/ui/user-menu/index.ts",
           "registry/src/react/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
-          "react-sample-tag-data",
-          "react-sample-user-data",
+          "react-sample-sample-tag-data",
+          "react-sample-sample-user-data",
           "react-ui-tag-menu",
           "react-ui-user-menu"
         ]
@@ -2222,7 +2222,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-query-users.json",
+        "https://prosekit.dev/r/react-sample-sample-query-users.json",
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
@@ -2266,13 +2266,13 @@
           "registry/src/react/examples/user-menu-dynamic/index.ts",
           "registry/src/react/examples/user-menu-dynamic/use-user-query.ts",
           "registry/src/react/examples/user-menu-dynamic/user-menu-dynamic.tsx",
-          "registry/src/react/sample/query-users.ts",
-          "registry/src/react/sample/user-data.ts",
+          "registry/src/react/sample/sample-query-users.ts",
+          "registry/src/react/sample/sample-user-data.ts",
           "registry/src/react/ui/user-menu/index.ts",
           "registry/src/react/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
-          "react-sample-query-users",
+          "react-sample-sample-query-users",
           "react-ui-user-menu"
         ]
       }
@@ -2380,35 +2380,6 @@
         ],
         "internalDependencies": [
           "react-ui-toolbar"
-        ]
-      }
-    },
-    {
-      "name": "react-sample-query-users",
-      "title": "react-sample-query-users",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-user-data.json"
-      ],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/react/sample/query-users.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/query-users.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "react",
-        "accumulatedFiles": [
-          "registry/src/react/sample/query-users.ts",
-          "registry/src/react/sample/user-data.ts"
-        ],
-        "internalDependencies": [
-          "react-sample-user-data"
         ]
       }
     },
@@ -3115,6 +3086,59 @@
       }
     },
     {
+      "name": "react-sample-sample-query-users",
+      "title": "react-sample-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-query-users.ts",
+          "registry/src/react/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-user-data"
+        ]
+      }
+    },
+    {
+      "name": "react-sample-sample-tag-data",
+      "title": "react-sample-sample-tag-data",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-tag-data.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-tag-data.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-tag-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "react-sample-sample-uploader",
       "title": "react-sample-sample-uploader",
       "type": "registry:component",
@@ -3141,17 +3165,17 @@
       }
     },
     {
-      "name": "react-sample-tag-data",
-      "title": "react-sample-tag-data",
+      "name": "react-sample-sample-user-data",
+      "title": "react-sample-sample-user-data",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
-          "path": "registry/src/react/sample/tag-data.ts",
+          "path": "registry/src/react/sample/sample-user-data.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/tag-data.ts"
+          "target": "components/editor/sample/sample-user-data.ts"
         }
       ],
       "meta": {
@@ -3159,31 +3183,7 @@
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
-          "registry/src/react/sample/tag-data.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "react-sample-user-data",
-      "title": "react-sample-user-data",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/react/sample/user-data.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/user-data.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "react",
-        "accumulatedFiles": [
-          "registry/src/react/sample/user-data.ts"
+          "registry/src/react/sample/sample-user-data.ts"
         ],
         "internalDependencies": []
       }
@@ -4170,9 +4170,9 @@
       "description": "",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
-        "https://prosekit.dev/r/vue-sample-tag-data.json",
-        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-sample-sample-user-data.json",
         "https://prosekit.dev/r/vue-ui-block-handle.json",
         "https://prosekit.dev/r/vue-ui-code-block-view.json",
         "https://prosekit.dev/r/vue-ui-drop-indicator.json",
@@ -4213,9 +4213,9 @@
           "registry/src/vue/examples/full/extension.ts",
           "registry/src/vue/examples/full/index.ts",
           "registry/src/vue/sample/sample-doc-full.ts",
+          "registry/src/vue/sample/sample-tag-data.ts",
           "registry/src/vue/sample/sample-uploader.ts",
-          "registry/src/vue/sample/tag-data.ts",
-          "registry/src/vue/sample/user-data.ts",
+          "registry/src/vue/sample/sample-user-data.ts",
           "registry/src/vue/ui/block-handle/block-handle.vue",
           "registry/src/vue/ui/block-handle/index.ts",
           "registry/src/vue/ui/button/button.vue",
@@ -4245,9 +4245,9 @@
         ],
         "internalDependencies": [
           "vue-sample-sample-doc-full",
+          "vue-sample-sample-tag-data",
           "vue-sample-sample-uploader",
-          "vue-sample-tag-data",
-          "vue-sample-user-data",
+          "vue-sample-sample-user-data",
           "vue-ui-block-handle",
           "vue-ui-code-block-view",
           "vue-ui-drop-indicator",
@@ -5781,8 +5781,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-tag-data.json",
-        "https://prosekit.dev/r/vue-sample-user-data.json",
+        "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/vue-sample-sample-user-data.json",
         "https://prosekit.dev/r/vue-ui-tag-menu.json",
         "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
@@ -5814,16 +5814,16 @@
           "registry/src/vue/examples/user-menu/editor.vue",
           "registry/src/vue/examples/user-menu/extension.ts",
           "registry/src/vue/examples/user-menu/index.ts",
-          "registry/src/vue/sample/tag-data.ts",
-          "registry/src/vue/sample/user-data.ts",
+          "registry/src/vue/sample/sample-tag-data.ts",
+          "registry/src/vue/sample/sample-user-data.ts",
           "registry/src/vue/ui/tag-menu/index.ts",
           "registry/src/vue/ui/tag-menu/tag-menu.vue",
           "registry/src/vue/ui/user-menu/index.ts",
           "registry/src/vue/ui/user-menu/user-menu.vue"
         ],
         "internalDependencies": [
-          "vue-sample-tag-data",
-          "vue-sample-user-data",
+          "vue-sample-sample-tag-data",
+          "vue-sample-sample-user-data",
           "vue-ui-tag-menu",
           "vue-ui-user-menu"
         ]
@@ -5835,7 +5835,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-query-users.json",
+        "https://prosekit.dev/r/vue-sample-sample-query-users.json",
         "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
@@ -5879,13 +5879,13 @@
           "registry/src/vue/examples/user-menu-dynamic/index.ts",
           "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
           "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
-          "registry/src/vue/sample/query-users.ts",
-          "registry/src/vue/sample/user-data.ts",
+          "registry/src/vue/sample/sample-query-users.ts",
+          "registry/src/vue/sample/sample-user-data.ts",
           "registry/src/vue/ui/user-menu/index.ts",
           "registry/src/vue/ui/user-menu/user-menu.vue"
         ],
         "internalDependencies": [
-          "vue-sample-query-users",
+          "vue-sample-sample-query-users",
           "vue-ui-user-menu"
         ]
       }
@@ -5992,35 +5992,6 @@
         ],
         "internalDependencies": [
           "vue-ui-toolbar"
-        ]
-      }
-    },
-    {
-      "name": "vue-sample-query-users",
-      "title": "vue-sample-query-users",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-user-data.json"
-      ],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/vue/sample/query-users.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/query-users.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "vue",
-        "accumulatedFiles": [
-          "registry/src/vue/sample/query-users.ts",
-          "registry/src/vue/sample/user-data.ts"
-        ],
-        "internalDependencies": [
-          "vue-sample-user-data"
         ]
       }
     },
@@ -6701,6 +6672,59 @@
       }
     },
     {
+      "name": "vue-sample-sample-query-users",
+      "title": "vue-sample-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-query-users.ts",
+          "registry/src/vue/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-user-data"
+        ]
+      }
+    },
+    {
+      "name": "vue-sample-sample-tag-data",
+      "title": "vue-sample-sample-tag-data",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-tag-data.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-tag-data.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-tag-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-sample-sample-uploader",
       "title": "vue-sample-sample-uploader",
       "type": "registry:component",
@@ -6727,17 +6751,17 @@
       }
     },
     {
-      "name": "vue-sample-tag-data",
-      "title": "vue-sample-tag-data",
+      "name": "vue-sample-sample-user-data",
+      "title": "vue-sample-sample-user-data",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
-          "path": "registry/src/vue/sample/tag-data.ts",
+          "path": "registry/src/vue/sample/sample-user-data.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/tag-data.ts"
+          "target": "components/editor/sample/sample-user-data.ts"
         }
       ],
       "meta": {
@@ -6745,31 +6769,7 @@
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
-          "registry/src/vue/sample/tag-data.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "vue-sample-user-data",
-      "title": "vue-sample-user-data",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/vue/sample/user-data.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/user-data.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "vue",
-        "accumulatedFiles": [
-          "registry/src/vue/sample/user-data.ts"
+          "registry/src/vue/sample/sample-user-data.ts"
         ],
         "internalDependencies": []
       }
@@ -7762,9 +7762,9 @@
       "description": "",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
-        "https://prosekit.dev/r/preact-sample-tag-data.json",
-        "https://prosekit.dev/r/preact-sample-user-data.json",
+        "https://prosekit.dev/r/preact-sample-sample-user-data.json",
         "https://prosekit.dev/r/preact-ui-block-handle.json",
         "https://prosekit.dev/r/preact-ui-code-block-view.json",
         "https://prosekit.dev/r/preact-ui-drop-indicator.json",
@@ -7806,9 +7806,9 @@
           "registry/src/preact/examples/full/extension.ts",
           "registry/src/preact/examples/full/index.ts",
           "registry/src/preact/sample/sample-doc-full.ts",
+          "registry/src/preact/sample/sample-tag-data.ts",
           "registry/src/preact/sample/sample-uploader.ts",
-          "registry/src/preact/sample/tag-data.ts",
-          "registry/src/preact/sample/user-data.ts",
+          "registry/src/preact/sample/sample-user-data.ts",
           "registry/src/preact/ui/block-handle/block-handle.tsx",
           "registry/src/preact/ui/block-handle/index.ts",
           "registry/src/preact/ui/button/button.tsx",
@@ -7838,9 +7838,9 @@
         ],
         "internalDependencies": [
           "preact-sample-sample-doc-full",
+          "preact-sample-sample-tag-data",
           "preact-sample-sample-uploader",
-          "preact-sample-tag-data",
-          "preact-sample-user-data",
+          "preact-sample-sample-user-data",
           "preact-ui-block-handle",
           "preact-ui-code-block-view",
           "preact-ui-drop-indicator",
@@ -9396,8 +9396,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-tag-data.json",
-        "https://prosekit.dev/r/preact-sample-user-data.json",
+        "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/preact-sample-sample-user-data.json",
         "https://prosekit.dev/r/preact-ui-tag-menu.json",
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
@@ -9430,16 +9430,16 @@
           "registry/src/preact/examples/user-menu/editor.tsx",
           "registry/src/preact/examples/user-menu/extension.ts",
           "registry/src/preact/examples/user-menu/index.ts",
-          "registry/src/preact/sample/tag-data.ts",
-          "registry/src/preact/sample/user-data.ts",
+          "registry/src/preact/sample/sample-tag-data.ts",
+          "registry/src/preact/sample/sample-user-data.ts",
           "registry/src/preact/ui/tag-menu/index.ts",
           "registry/src/preact/ui/tag-menu/tag-menu.tsx",
           "registry/src/preact/ui/user-menu/index.ts",
           "registry/src/preact/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
-          "preact-sample-tag-data",
-          "preact-sample-user-data",
+          "preact-sample-sample-tag-data",
+          "preact-sample-sample-user-data",
           "preact-ui-tag-menu",
           "preact-ui-user-menu"
         ]
@@ -9451,7 +9451,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-query-users.json",
+        "https://prosekit.dev/r/preact-sample-sample-query-users.json",
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
@@ -9495,13 +9495,13 @@
           "registry/src/preact/examples/user-menu-dynamic/index.ts",
           "registry/src/preact/examples/user-menu-dynamic/use-user-query.ts",
           "registry/src/preact/examples/user-menu-dynamic/user-menu-dynamic.tsx",
-          "registry/src/preact/sample/query-users.ts",
-          "registry/src/preact/sample/user-data.ts",
+          "registry/src/preact/sample/sample-query-users.ts",
+          "registry/src/preact/sample/sample-user-data.ts",
           "registry/src/preact/ui/user-menu/index.ts",
           "registry/src/preact/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
-          "preact-sample-query-users",
+          "preact-sample-sample-query-users",
           "preact-ui-user-menu"
         ]
       }
@@ -9609,35 +9609,6 @@
         ],
         "internalDependencies": [
           "preact-ui-toolbar"
-        ]
-      }
-    },
-    {
-      "name": "preact-sample-query-users",
-      "title": "preact-sample-query-users",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-user-data.json"
-      ],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/preact/sample/query-users.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/query-users.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "preact",
-        "accumulatedFiles": [
-          "registry/src/preact/sample/query-users.ts",
-          "registry/src/preact/sample/user-data.ts"
-        ],
-        "internalDependencies": [
-          "preact-sample-user-data"
         ]
       }
     },
@@ -10318,6 +10289,59 @@
       }
     },
     {
+      "name": "preact-sample-sample-query-users",
+      "title": "preact-sample-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-query-users.ts",
+          "registry/src/preact/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-user-data"
+        ]
+      }
+    },
+    {
+      "name": "preact-sample-sample-tag-data",
+      "title": "preact-sample-sample-tag-data",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-tag-data.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-tag-data.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-tag-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "preact-sample-sample-uploader",
       "title": "preact-sample-sample-uploader",
       "type": "registry:component",
@@ -10344,17 +10368,17 @@
       }
     },
     {
-      "name": "preact-sample-tag-data",
-      "title": "preact-sample-tag-data",
+      "name": "preact-sample-sample-user-data",
+      "title": "preact-sample-sample-user-data",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
-          "path": "registry/src/preact/sample/tag-data.ts",
+          "path": "registry/src/preact/sample/sample-user-data.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/tag-data.ts"
+          "target": "components/editor/sample/sample-user-data.ts"
         }
       ],
       "meta": {
@@ -10362,31 +10386,7 @@
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
-          "registry/src/preact/sample/tag-data.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "preact-sample-user-data",
-      "title": "preact-sample-user-data",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/preact/sample/user-data.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/user-data.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "preact",
-        "accumulatedFiles": [
-          "registry/src/preact/sample/user-data.ts"
+          "registry/src/preact/sample/sample-user-data.ts"
         ],
         "internalDependencies": []
       }
@@ -11373,9 +11373,9 @@
       "description": "",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
-        "https://prosekit.dev/r/svelte-sample-tag-data.json",
-        "https://prosekit.dev/r/svelte-sample-user-data.json",
+        "https://prosekit.dev/r/svelte-sample-sample-user-data.json",
         "https://prosekit.dev/r/svelte-ui-block-handle.json",
         "https://prosekit.dev/r/svelte-ui-code-block-view.json",
         "https://prosekit.dev/r/svelte-ui-drop-indicator.json",
@@ -11416,9 +11416,9 @@
           "registry/src/svelte/examples/full/extension.ts",
           "registry/src/svelte/examples/full/index.ts",
           "registry/src/svelte/sample/sample-doc-full.ts",
+          "registry/src/svelte/sample/sample-tag-data.ts",
           "registry/src/svelte/sample/sample-uploader.ts",
-          "registry/src/svelte/sample/tag-data.ts",
-          "registry/src/svelte/sample/user-data.ts",
+          "registry/src/svelte/sample/sample-user-data.ts",
           "registry/src/svelte/ui/block-handle/block-handle.svelte",
           "registry/src/svelte/ui/block-handle/index.ts",
           "registry/src/svelte/ui/button/button.svelte",
@@ -11448,9 +11448,9 @@
         ],
         "internalDependencies": [
           "svelte-sample-sample-doc-full",
+          "svelte-sample-sample-tag-data",
           "svelte-sample-sample-uploader",
-          "svelte-sample-tag-data",
-          "svelte-sample-user-data",
+          "svelte-sample-sample-user-data",
           "svelte-ui-block-handle",
           "svelte-ui-code-block-view",
           "svelte-ui-drop-indicator",
@@ -12969,8 +12969,8 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-tag-data.json",
-        "https://prosekit.dev/r/svelte-sample-user-data.json",
+        "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/svelte-sample-sample-user-data.json",
         "https://prosekit.dev/r/svelte-ui-tag-menu.json",
         "https://prosekit.dev/r/svelte-ui-user-menu.json"
       ],
@@ -13002,16 +13002,16 @@
           "registry/src/svelte/examples/user-menu/editor.svelte",
           "registry/src/svelte/examples/user-menu/extension.ts",
           "registry/src/svelte/examples/user-menu/index.ts",
-          "registry/src/svelte/sample/tag-data.ts",
-          "registry/src/svelte/sample/user-data.ts",
+          "registry/src/svelte/sample/sample-tag-data.ts",
+          "registry/src/svelte/sample/sample-user-data.ts",
           "registry/src/svelte/ui/tag-menu/index.ts",
           "registry/src/svelte/ui/tag-menu/tag-menu.svelte",
           "registry/src/svelte/ui/user-menu/index.ts",
           "registry/src/svelte/ui/user-menu/user-menu.svelte"
         ],
         "internalDependencies": [
-          "svelte-sample-tag-data",
-          "svelte-sample-user-data",
+          "svelte-sample-sample-tag-data",
+          "svelte-sample-sample-user-data",
           "svelte-ui-tag-menu",
           "svelte-ui-user-menu"
         ]
@@ -13023,7 +13023,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-query-users.json",
+        "https://prosekit.dev/r/svelte-sample-sample-query-users.json",
         "https://prosekit.dev/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
@@ -13066,13 +13066,13 @@
           "registry/src/svelte/examples/user-menu-dynamic/index.ts",
           "registry/src/svelte/examples/user-menu-dynamic/use-user-query.svelte.ts",
           "registry/src/svelte/examples/user-menu-dynamic/user-menu-dynamic.svelte",
-          "registry/src/svelte/sample/query-users.ts",
-          "registry/src/svelte/sample/user-data.ts",
+          "registry/src/svelte/sample/sample-query-users.ts",
+          "registry/src/svelte/sample/sample-user-data.ts",
           "registry/src/svelte/ui/user-menu/index.ts",
           "registry/src/svelte/ui/user-menu/user-menu.svelte"
         ],
         "internalDependencies": [
-          "svelte-sample-query-users",
+          "svelte-sample-sample-query-users",
           "svelte-ui-user-menu"
         ]
       }
@@ -13179,35 +13179,6 @@
         ],
         "internalDependencies": [
           "svelte-ui-toolbar"
-        ]
-      }
-    },
-    {
-      "name": "svelte-sample-query-users",
-      "title": "svelte-sample-query-users",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-user-data.json"
-      ],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/svelte/sample/query-users.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/query-users.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "svelte",
-        "accumulatedFiles": [
-          "registry/src/svelte/sample/query-users.ts",
-          "registry/src/svelte/sample/user-data.ts"
-        ],
-        "internalDependencies": [
-          "svelte-sample-user-data"
         ]
       }
     },
@@ -13888,6 +13859,59 @@
       }
     },
     {
+      "name": "svelte-sample-sample-query-users",
+      "title": "svelte-sample-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-query-users.ts",
+          "registry/src/svelte/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-user-data"
+        ]
+      }
+    },
+    {
+      "name": "svelte-sample-sample-tag-data",
+      "title": "svelte-sample-sample-tag-data",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-tag-data.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-tag-data.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-tag-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-uploader",
       "title": "svelte-sample-sample-uploader",
       "type": "registry:component",
@@ -13914,17 +13938,17 @@
       }
     },
     {
-      "name": "svelte-sample-tag-data",
-      "title": "svelte-sample-tag-data",
+      "name": "svelte-sample-sample-user-data",
+      "title": "svelte-sample-sample-user-data",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
-          "path": "registry/src/svelte/sample/tag-data.ts",
+          "path": "registry/src/svelte/sample/sample-user-data.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/tag-data.ts"
+          "target": "components/editor/sample/sample-user-data.ts"
         }
       ],
       "meta": {
@@ -13932,31 +13956,7 @@
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
-          "registry/src/svelte/sample/tag-data.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "svelte-sample-user-data",
-      "title": "svelte-sample-user-data",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/svelte/sample/user-data.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/user-data.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "svelte",
-        "accumulatedFiles": [
-          "registry/src/svelte/sample/user-data.ts"
+          "registry/src/svelte/sample/sample-user-data.ts"
         ],
         "internalDependencies": []
       }
@@ -14902,9 +14902,9 @@
       "description": "",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
+        "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
         "https://prosekit.dev/r/solid-sample-sample-uploader.json",
-        "https://prosekit.dev/r/solid-sample-tag-data.json",
-        "https://prosekit.dev/r/solid-sample-user-data.json",
+        "https://prosekit.dev/r/solid-sample-sample-user-data.json",
         "https://prosekit.dev/r/solid-ui-block-handle.json",
         "https://prosekit.dev/r/solid-ui-code-block-view.json",
         "https://prosekit.dev/r/solid-ui-drop-indicator.json",
@@ -14946,9 +14946,9 @@
           "registry/src/solid/examples/full/extension.ts",
           "registry/src/solid/examples/full/index.ts",
           "registry/src/solid/sample/sample-doc-full.ts",
+          "registry/src/solid/sample/sample-tag-data.ts",
           "registry/src/solid/sample/sample-uploader.ts",
-          "registry/src/solid/sample/tag-data.ts",
-          "registry/src/solid/sample/user-data.ts",
+          "registry/src/solid/sample/sample-user-data.ts",
           "registry/src/solid/ui/block-handle/block-handle.tsx",
           "registry/src/solid/ui/block-handle/index.ts",
           "registry/src/solid/ui/button/button.tsx",
@@ -14978,9 +14978,9 @@
         ],
         "internalDependencies": [
           "solid-sample-sample-doc-full",
+          "solid-sample-sample-tag-data",
           "solid-sample-sample-uploader",
-          "solid-sample-tag-data",
-          "solid-sample-user-data",
+          "solid-sample-sample-user-data",
           "solid-ui-block-handle",
           "solid-ui-code-block-view",
           "solid-ui-drop-indicator",
@@ -15845,6 +15845,30 @@
       }
     },
     {
+      "name": "solid-sample-sample-tag-data",
+      "title": "solid-sample-sample-tag-data",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-tag-data.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-tag-data.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-tag-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-uploader",
       "title": "solid-sample-sample-uploader",
       "type": "registry:component",
@@ -15871,17 +15895,17 @@
       }
     },
     {
-      "name": "solid-sample-tag-data",
-      "title": "solid-sample-tag-data",
+      "name": "solid-sample-sample-user-data",
+      "title": "solid-sample-sample-user-data",
       "type": "registry:component",
       "description": "",
       "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
-          "path": "registry/src/solid/sample/tag-data.ts",
+          "path": "registry/src/solid/sample/sample-user-data.ts",
           "type": "registry:component",
-          "target": "components/editor/sample/tag-data.ts"
+          "target": "components/editor/sample/sample-user-data.ts"
         }
       ],
       "meta": {
@@ -15889,31 +15913,7 @@
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
-          "registry/src/solid/sample/tag-data.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "solid-sample-user-data",
-      "title": "solid-sample-user-data",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/src/solid/sample/user-data.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/user-data.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "story": "",
-        "framework": "solid",
-        "accumulatedFiles": [
-          "registry/src/solid/sample/user-data.ts"
+          "registry/src/solid/sample/sample-user-data.ts"
         ],
         "internalDependencies": []
       }

@@ -190,19 +190,19 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
 async function updateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
   {
-    const { simulateNetworkStatus } = await import('../src/react/sample/query-users')
+    const { simulateNetworkStatus } = await import('../src/react/sample/sample-query-users')
     simulateNetworkStatus(status)
   }
   {
-    const { simulateNetworkStatus } = await import('../src/preact/sample/query-users')
+    const { simulateNetworkStatus } = await import('../src/preact/sample/sample-query-users')
     simulateNetworkStatus(status)
   }
   {
-    const { simulateNetworkStatus } = await import('../src/svelte/sample/query-users')
+    const { simulateNetworkStatus } = await import('../src/svelte/sample/sample-query-users')
     simulateNetworkStatus(status)
   }
   {
-    const { simulateNetworkStatus } = await import('../src/vue/sample/query-users')
+    const { simulateNetworkStatus } = await import('../src/vue/sample/sample-query-users')
     simulateNetworkStatus(status)
   }
 }

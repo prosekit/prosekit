@@ -70,7 +70,7 @@
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "tsdown": "^0.18.2",
+    "tsdown": "^0.17.0",
     "typescript": "~5.9.3"
   },
   "publishConfig": {

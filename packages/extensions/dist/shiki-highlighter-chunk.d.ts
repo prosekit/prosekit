@@ -1,2 +1,0 @@
-import { i as createOrGetHighlighter, n as HighlighterResult, r as ShikiHighlighterOptions, t as HighlighterOptions } from "./shiki-highlighter-chunk-rkzofy4z.js";
-export { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter };

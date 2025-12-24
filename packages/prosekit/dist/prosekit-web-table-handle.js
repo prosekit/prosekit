@@ -1,3 +1,0 @@
-export * from "@prosekit/web/table-handle"
-
-export {  };

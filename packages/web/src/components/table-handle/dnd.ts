@@ -116,11 +116,11 @@ function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | und
 function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLTableCellElement | undefined {
   if (direction === 'row') {
     const row = table.querySelectorAll('tr')[index]
-    const cell = row?.querySelector('td')
+    const cell = row?.querySelector<HTMLTableCellElement>('td, th')
     return cell ?? undefined
   } else {
     const row = table.querySelector('tr')
-    const cell = row?.querySelectorAll('td')[index]
+    const cell = row?.querySelectorAll<HTMLTableCellElement>('td, th')[index]
     return cell ?? undefined
   }
 }

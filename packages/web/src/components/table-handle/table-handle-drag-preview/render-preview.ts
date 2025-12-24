@@ -56,7 +56,7 @@ export function createPreviewDOM(
       const [previewRow, previewRowStyle] = cloneElement(row)
       injectStyle(previewRoot, previewRowStyle)
       unsetSize(previewRow)
-      const cells = row.querySelectorAll('td')
+      const cells = row.querySelectorAll('td, th')
       const cell = cells[index]
       if (cell) {
         const [previewCell, previewCellStyle] = deepCloneElement(cell)

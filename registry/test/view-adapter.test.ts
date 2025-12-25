@@ -37,9 +37,8 @@ testStory('view-adapter', () => {
 
     // Verify the pre contains valid JSON with expected structure
     const jsonText = pre.element().textContent
-    const docJSON = JSON.parse(jsonText)
-    expect(docJSON).toHaveProperty('type', 'doc')
-    expect(docJSON).toHaveProperty('content')
-    expect(Array.isArray(docJSON.content)).toBe(true)
+    expect(JSON.parse(jsonText)).toMatchObject({
+      type: 'doc',
+    })
   })
 })

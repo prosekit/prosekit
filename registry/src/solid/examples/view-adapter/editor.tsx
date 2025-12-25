@@ -15,7 +15,7 @@ import { sampleContent } from '../../sample/sample-doc-view-adapter'
 
 import { defineExtension } from './extension'
 
-export interface EditorProps {
+interface EditorProps {
   initialContent?: NodeJSON
 }
 

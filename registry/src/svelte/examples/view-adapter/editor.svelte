@@ -12,7 +12,7 @@ import { sampleContent } from '../../sample/sample-doc-view-adapter'
 
 import { defineExtension } from './extension'
 
-interface Props {
+export interface Props {
   initialContent?: NodeJSON
 }
 

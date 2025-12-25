@@ -22,3 +22,4 @@ export const Rtl = { args: { story: 'rtl' } }
 export const Strike = { args: { story: 'strike' } }
 export const Underline = { args: { story: 'underline' } }
 export const Unmount = { args: { story: 'unmount' } }
+export const ViewAdapter = { args: { story: 'view-adapter' } }

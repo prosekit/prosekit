@@ -5996,6 +5996,59 @@
       }
     },
     {
+      "name": "vue-example-view-adapter",
+      "title": "vue-example-view-adapter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-define-atom-block.json",
+        "https://prosekit.dev/r/vue-sample-sample-doc-view-adapter.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/view-adapter/atom-block-view.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/atom-block-view.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/view-adapter/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/view-adapter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/view-adapter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "view-adapter",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/view-adapter/atom-block-view.vue",
+          "registry/src/vue/examples/view-adapter/editor.vue",
+          "registry/src/vue/examples/view-adapter/extension.ts",
+          "registry/src/vue/examples/view-adapter/index.ts",
+          "registry/src/vue/sample/define-atom-block.ts",
+          "registry/src/vue/sample/sample-doc-view-adapter.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-define-atom-block",
+          "vue-sample-sample-doc-view-adapter"
+        ]
+      }
+    },
+    {
       "name": "vue-example-word-counter",
       "title": "vue-example-word-counter",
       "type": "registry:block",
@@ -6098,6 +6151,32 @@
         "internalDependencies": [
           "vue-ui-toolbar"
         ]
+      }
+    },
+    {
+      "name": "vue-sample-define-atom-block",
+      "title": "vue-sample-define-atom-block",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/define-atom-block.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/define-atom-block.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -6746,6 +6825,32 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-view-adapter",
+      "title": "vue-sample-sample-doc-view-adapter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-view-adapter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-view-adapter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": []
       }
@@ -13288,6 +13393,58 @@
       }
     },
     {
+      "name": "svelte-example-view-adapter",
+      "title": "svelte-example-view-adapter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-define-atom-block.json",
+        "https://prosekit.dev/r/svelte-sample-sample-doc-view-adapter.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/view-adapter/atom-block-view.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/atom-block-view.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/view-adapter/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/view-adapter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/view-adapter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "view-adapter",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/view-adapter/atom-block-view.svelte",
+          "registry/src/svelte/examples/view-adapter/editor.svelte",
+          "registry/src/svelte/examples/view-adapter/extension.ts",
+          "registry/src/svelte/examples/view-adapter/index.ts",
+          "registry/src/svelte/sample/define-atom-block.ts",
+          "registry/src/svelte/sample/sample-doc-view-adapter.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-define-atom-block",
+          "svelte-sample-sample-doc-view-adapter"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-word-counter",
       "title": "svelte-example-word-counter",
       "type": "registry:block",
@@ -13390,6 +13547,32 @@
         "internalDependencies": [
           "svelte-ui-toolbar"
         ]
+      }
+    },
+    {
+      "name": "svelte-sample-define-atom-block",
+      "title": "svelte-sample-define-atom-block",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/define-atom-block.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/define-atom-block.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -14038,6 +14221,32 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-view-adapter",
+      "title": "svelte-sample-sample-doc-view-adapter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-view-adapter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-view-adapter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": []
       }
@@ -15717,6 +15926,85 @@
       }
     },
     {
+      "name": "solid-example-view-adapter",
+      "title": "solid-example-view-adapter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-define-atom-block.json",
+        "https://prosekit.dev/r/solid-sample-sample-doc-view-adapter.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/view-adapter/atom-block-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/atom-block-view.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/view-adapter/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/view-adapter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/view-adapter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "view-adapter",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/view-adapter/atom-block-view.tsx",
+          "registry/src/solid/examples/view-adapter/editor.tsx",
+          "registry/src/solid/examples/view-adapter/extension.ts",
+          "registry/src/solid/examples/view-adapter/index.ts",
+          "registry/src/solid/sample/define-atom-block.ts",
+          "registry/src/solid/sample/sample-doc-view-adapter.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-define-atom-block",
+          "solid-sample-sample-doc-view-adapter"
+        ]
+      }
+    },
+    {
+      "name": "solid-sample-define-atom-block",
+      "title": "solid-sample-define-atom-block",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/define-atom-block.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/define-atom-block.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-block-handle",
       "title": "solid-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -16050,6 +16338,32 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-view-adapter",
+      "title": "solid-sample-sample-doc-view-adapter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-view-adapter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-view-adapter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": []
       }

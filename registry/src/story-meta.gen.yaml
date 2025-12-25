@@ -87,7 +87,7 @@
 - name: user-menu-dynamic
   frameworks: [react, vue, preact, svelte]
 - name: view-adapter
-  frameworks: [react, preact]
+  frameworks: [react, vue, preact, svelte, solid]
 - name: word-counter
   frameworks: [react, vue, preact, svelte]
 - name: yjs

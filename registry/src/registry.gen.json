@@ -6005,8 +6005,7 @@
         "https://prosekit.dev/r/vue-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {

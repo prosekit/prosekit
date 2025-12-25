@@ -15,6 +15,6 @@ const docJSON = useEditorDerivedValue((editor) => {
   <div data-testid="atom-block-view-label">Atom Block View</div>
   <div data-testid="atom-block-view-pos">{props.getPos()}</div>
   <div data-testid="atom-block-view-context">
-    <pre>{docJSON}</pre>
+    <pre>{$docJSON}</pre>
   </div>
 </div>

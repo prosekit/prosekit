@@ -26,7 +26,7 @@ const editor = createEditor({ extension, defaultContent })
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
     <div class="CSS_EDITOR_SCROLLING">
-      <div bind:this={editor.mount} class="CSS_EDITOR_CONTENT" />
+      <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
     </div>
   </div>
 </ProseKit>

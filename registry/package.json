@@ -48,6 +48,7 @@
     "./preact/examples/unmount": "./src/preact/examples/unmount/index.ts",
     "./preact/examples/user-menu": "./src/preact/examples/user-menu/index.ts",
     "./preact/examples/user-menu-dynamic": "./src/preact/examples/user-menu-dynamic/index.ts",
+    "./preact/examples/view-adapter": "./src/preact/examples/view-adapter/index.ts",
     "./preact/examples/word-counter": "./src/preact/examples/word-counter/index.ts",
     "./preact/examples/yjs": "./src/preact/examples/yjs/index.ts",
     "./preact/renderer": "./src/preact/renderer.ts",

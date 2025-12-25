@@ -2283,6 +2283,7 @@
       "type": "registry:block",
       "description": "",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-define-atom-block.json",
         "https://prosekit.dev/r/react-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
@@ -2291,9 +2292,9 @@
       ],
       "files": [
         {
-          "path": "registry/src/react/examples/view-adapter/badge-view.tsx",
+          "path": "registry/src/react/examples/view-adapter/atom-block-view.tsx",
           "type": "registry:component",
-          "target": "components/editor/examples/view-adapter/badge-view.tsx"
+          "target": "components/editor/examples/view-adapter/atom-block-view.tsx"
         },
         {
           "path": "registry/src/react/examples/view-adapter/editor.tsx",
@@ -2316,13 +2317,15 @@
         "story": "view-adapter",
         "framework": "react",
         "accumulatedFiles": [
-          "registry/src/react/examples/view-adapter/badge-view.tsx",
+          "registry/src/react/examples/view-adapter/atom-block-view.tsx",
           "registry/src/react/examples/view-adapter/editor.tsx",
           "registry/src/react/examples/view-adapter/extension.ts",
           "registry/src/react/examples/view-adapter/index.ts",
+          "registry/src/react/sample/define-atom-block.ts",
           "registry/src/react/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": [
+          "react-sample-define-atom-block",
           "react-sample-sample-doc-view-adapter"
         ]
       }
@@ -2431,6 +2434,32 @@
         "internalDependencies": [
           "react-ui-toolbar"
         ]
+      }
+    },
+    {
+      "name": "react-sample-define-atom-block",
+      "title": "react-sample-define-atom-block",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/define-atom-block.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/define-atom-block.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -9583,6 +9612,59 @@
       }
     },
     {
+      "name": "preact-example-view-adapter",
+      "title": "preact-example-view-adapter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-define-atom-block.json",
+        "https://prosekit.dev/r/preact-sample-sample-doc-view-adapter.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/view-adapter/atom-block-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/atom-block-view.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/view-adapter/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/view-adapter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/view-adapter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "view-adapter",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/view-adapter/atom-block-view.tsx",
+          "registry/src/preact/examples/view-adapter/editor.tsx",
+          "registry/src/preact/examples/view-adapter/extension.ts",
+          "registry/src/preact/examples/view-adapter/index.ts",
+          "registry/src/preact/sample/define-atom-block.ts",
+          "registry/src/preact/sample/sample-doc-view-adapter.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-define-atom-block",
+          "preact-sample-sample-doc-view-adapter"
+        ]
+      }
+    },
+    {
       "name": "preact-example-word-counter",
       "title": "preact-example-word-counter",
       "type": "registry:block",
@@ -9686,6 +9768,32 @@
         "internalDependencies": [
           "preact-ui-toolbar"
         ]
+      }
+    },
+    {
+      "name": "preact-sample-define-atom-block",
+      "title": "preact-sample-define-atom-block",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/define-atom-block.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/define-atom-block.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -10334,6 +10442,32 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-view-adapter",
+      "title": "preact-sample-sample-doc-view-adapter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-view-adapter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-view-adapter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": []
       }

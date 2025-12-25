@@ -1,6 +1,6 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import { defineReactNodeView } from 'prosekit/react'
+import { definePreactNodeView } from 'prosekit/preact'
 
 import { defineAtomBlock } from '../../sample/define-atom-block'
 
@@ -10,7 +10,7 @@ export function defineExtension() {
   return union(
     defineBasicExtension(),
     defineAtomBlock(),
-    defineReactNodeView({
+    definePreactNodeView({
       name: 'atomBlock',
       component: AtomBlockView,
     }),

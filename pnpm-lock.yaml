@@ -619,11 +619,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7
+        specifier: ^0.4.6
+        version: 0.4.6
       '@prosemirror-adapter/svelte':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7(svelte@5.45.6)
+        specifier: ^0.5.0
+        version: 0.5.0(svelte@5.45.6)
     devDependencies:
       '@sveltejs/package':
         specifier: ^2.5.7
@@ -2690,10 +2690,6 @@ packages:
   '@prosemirror-adapter/core@0.4.6':
     resolution: {integrity: sha512-qbqd4u9IyDXXolFFmX1tzE000IpF9JbCiiwuSvqIh7lT9ZqjeMcyDVR/vxyM4oVY1sVyQQQj+WxHMAIhj7egVg==}
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7}
-    version: 0.4.6
-
   '@prosemirror-adapter/preact@0.4.6':
     resolution: {integrity: sha512-LR+9yvFsZhdIsFwy72t/x66AC6A16jjGJg8+Byv2IULoFSNdhD5noo9+ht3nsGK5D12qk0V359sjTxH/+GUu3A==}
     peerDependencies:
@@ -2721,9 +2717,8 @@ packages:
       solid-js:
         optional: true
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7}
-    version: 0.4.6
+  '@prosemirror-adapter/svelte@0.5.0':
+    resolution: {integrity: sha512-z1EYxu9cxtj0SE0xREJl7n375XUE8MqCMuFr7VI/8uLJI1ZzODUeosMn78RUM7mxSOWqP6mUHfr94EEk4hx34w==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
@@ -9556,12 +9551,6 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.4
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7':
-    dependencies:
-      prosemirror-model: 1.25.4
-      prosemirror-state: 1.4.4
-      prosemirror-view: 1.41.4
-
   '@prosemirror-adapter/preact@0.4.6(preact@10.28.0)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.6
@@ -9593,9 +9582,9 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.10
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7(svelte@5.45.6)':
+  '@prosemirror-adapter/svelte@0.5.0(svelte@5.45.6)':
     dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7
+      '@prosemirror-adapter/core': 0.4.6
       nanoid: 5.1.6
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4

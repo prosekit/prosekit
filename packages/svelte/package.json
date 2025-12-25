@@ -72,8 +72,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7",
-    "@prosemirror-adapter/svelte": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@63a8d80ae01e04e90dd0d6899b3fa8a206bd36c7"
+    "@prosemirror-adapter/core": "^0.4.6",
+    "@prosemirror-adapter/svelte": "^0.5.0"
   },
   "peerDependencies": {
     "svelte": ">= 5.0.0"

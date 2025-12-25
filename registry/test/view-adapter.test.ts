@@ -32,6 +32,14 @@ testStory('view-adapter', () => {
     // Check context (should contain JSON)
     const context = atomBlock.getByTestId('atom-block-view-context')
     await expect.element(context).toBeVisible()
-    await expect.element(context.locate('pre')).toBeVisible()
+    const pre = context.locate('pre')
+    await expect.element(pre).toBeVisible()
+
+    // Verify the pre contains valid JSON with expected structure
+    const jsonText = pre.element().textContent
+    const docJSON = JSON.parse(jsonText)
+    expect(docJSON).toHaveProperty('type', 'doc')
+    expect(docJSON).toHaveProperty('content')
+    expect(Array.isArray(docJSON.content)).toBe(true)
   })
 })

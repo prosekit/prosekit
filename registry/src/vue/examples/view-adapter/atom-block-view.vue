@@ -3,13 +3,12 @@ import {
   useEditorDerivedValue,
   type VueNodeViewProps,
 } from 'prosekit/vue'
-import { computed } from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
 
-const docJSON = useEditorDerivedValue(computed(() => (editor) => {
+const docJSON = useEditorDerivedValue((editor) => {
   return JSON.stringify(editor.getDocJSON(), null, 2)
-}))
+})
 </script>
 
 <template>

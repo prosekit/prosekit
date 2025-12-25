@@ -6,7 +6,7 @@ import {
 
 const props: SvelteNodeViewProps = $props()
 
-const docJSON = useEditorDerivedValue(() => (editor) => {
+const docJSON = useEditorDerivedValue((editor) => {
   return JSON.stringify(editor.getDocJSON(), null, 2)
 })
 </script>

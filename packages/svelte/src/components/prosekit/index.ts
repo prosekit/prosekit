@@ -1,15 +1,13 @@
-import type { Editor } from '@prosekit/core'
-import type { SvelteComponent } from 'svelte'
+import type { Component } from 'svelte'
 
-import Comp from './prosekit.svelte'
+import type { ProseKitProps } from './props'
+import ProseKitComponent from './prosekit.svelte'
 
-export interface ProseKitProps {
-  editor: Editor
-}
+export type { ProseKitProps }
 
 /**
  * The root component for a ProseKit editor.
  *
  * @public
  */
-export const ProseKit = Comp as typeof SvelteComponent<any> as typeof SvelteComponent<ProseKitProps>
+export const ProseKit: Component<ProseKitProps> = ProseKitComponent

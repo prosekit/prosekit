@@ -1,16 +1,16 @@
 <script lang="ts">
-import type { Editor } from '@prosekit/core'
 import { useProsemirrorAdapterProvider } from '@prosemirror-adapter/svelte'
 import { setEditorContext } from '../../contexts/editor-context'
+import type { ProseKitProps } from './props'
 import { MarkViewConsumer } from '../mark-view-consumer'
 import { NodeViewConsumer } from '../node-view-consumer'
 
-export let editor: Editor
+let props: ProseKitProps = $props()
 
-setEditorContext(editor)
+setEditorContext(props.editor)
 useProsemirrorAdapterProvider()
 </script>
 
-<slot />
 <NodeViewConsumer />
 <MarkViewConsumer />
+{@render props.children?.()}

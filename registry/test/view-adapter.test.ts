@@ -18,6 +18,20 @@ testStory('view-adapter', () => {
     const atomBlock = editor.locate('[data-atom-block-view="true"]')
 
     await expectLocatorToHaveCount(atomBlock, 1)
-    await expect.element(atomBlock.getByTestId('atom-block-view-label')).toHaveTextContent('Atom Block View')
+
+    // Check label
+    const label = atomBlock.getByTestId('atom-block-view-label')
+    await expect.element(label).toHaveTextContent('Atom Block View')
+
+    // Check position (should be a number)
+    const pos = atomBlock.getByTestId('atom-block-view-pos')
+    await expect.element(pos).toBeVisible()
+    const posText = pos.element().textContent
+    expect(Number(posText)).toBeGreaterThan(0)
+
+    // Check context (should contain JSON)
+    const context = atomBlock.getByTestId('atom-block-view-context')
+    await expect.element(context).toBeVisible()
+    await expect.element(context.locate('pre')).toBeVisible()
   })
 })

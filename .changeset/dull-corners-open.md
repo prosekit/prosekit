@@ -1,4 +1,5 @@
 ---
+'prosekit': patch
 "@prosekit/preact": patch
 "@prosekit/svelte": patch
 "@prosekit/react": patch

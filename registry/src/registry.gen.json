@@ -2278,6 +2278,56 @@
       }
     },
     {
+      "name": "react-example-view-adapter",
+      "title": "react-example-view-adapter",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-view-adapter.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/view-adapter/badge-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/badge-view.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/view-adapter/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/view-adapter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/view-adapter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/view-adapter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "view-adapter",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/view-adapter/badge-view.tsx",
+          "registry/src/react/examples/view-adapter/editor.tsx",
+          "registry/src/react/examples/view-adapter/extension.ts",
+          "registry/src/react/examples/view-adapter/index.ts",
+          "registry/src/react/sample/sample-doc-view-adapter.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-view-adapter"
+        ]
+      }
+    },
+    {
       "name": "react-example-word-counter",
       "title": "react-example-word-counter",
       "type": "registry:block",
@@ -3055,6 +3105,32 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-underline.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-view-adapter",
+      "title": "react-sample-sample-doc-view-adapter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-view-adapter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-view-adapter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": []
       }

@@ -95,6 +95,7 @@
     "./react/examples/unmount": "./src/react/examples/unmount/index.ts",
     "./react/examples/user-menu": "./src/react/examples/user-menu/index.ts",
     "./react/examples/user-menu-dynamic": "./src/react/examples/user-menu-dynamic/index.ts",
+    "./react/examples/view-adapter": "./src/react/examples/view-adapter/index.ts",
     "./react/examples/word-counter": "./src/react/examples/word-counter/index.ts",
     "./react/examples/yjs": "./src/react/examples/yjs/index.ts",
     "./react/renderer": "./src/react/renderer.ts",

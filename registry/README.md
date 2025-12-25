@@ -56,6 +56,10 @@ export const sampleContent: NodeJSON = {
 };
 ```
 
+### 'use client' Directive
+
+Only use the `'use client'` directive in React framework index files. Do not use it in Vue, Svelte, Solid, Preact, or other frameworks as it is specific to React Server Components.
+
 ## Vue-Specific Guidelines
 
 ### Event Handlers

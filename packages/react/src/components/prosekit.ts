@@ -24,11 +24,11 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   const { editor, children } = props
 
   return createElement(
-    ProsemirrorAdapterProvider,
-    null,
+    EditorContextProvider,
+    { value: editor },
     createElement(
-      EditorContextProvider,
-      { value: editor },
+      ProsemirrorAdapterProvider,
+      null,
       createElement(ReactNodeViewConsumer),
       createElement(ReactMarkViewConsumer),
       children,

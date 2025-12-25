@@ -28,7 +28,9 @@ testStory('list-custom-checkbox', () => {
     const isRedDominant = () => {
       const backgroundColor = window.getComputedStyle(inputElement).backgroundColor
       const parsed = new Color(backgroundColor)
-      const { r, g, b } = parsed.srgb
+      const r = parsed.srgb.r || 0
+      const g = parsed.srgb.g || 0
+      const b = parsed.srgb.b || 0
       return r > g && r > b
     }
 

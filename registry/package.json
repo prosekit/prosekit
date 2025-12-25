@@ -264,7 +264,7 @@
     "@vitest/ui": "^4.0.15",
     "change-case": "^5.4.4",
     "clsx": "^2.1.1",
-    "colorjs.io": "^0.5.2",
+    "colorjs.io": "^0.6.0",
     "diffable-html": "^6.0.1",
     "fast-fuzzy": "^1.12.0",
     "magic-string": "^0.30.21",

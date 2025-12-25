@@ -12,6 +12,7 @@ export function AtomBlockView(props: ReactNodeViewProps) {
   return (
     <div data-atom-block="true" data-atom-block-view="true" className="bg-green-500/50">
       <div data-testid="atom-block-view-label">Atom Block View</div>
+      <div data-testid="atom-block-view-pos">{props.getPos()}</div>
       <div data-testid="atom-block-view-context">
         <pre>{docJSON}</pre>
       </div>

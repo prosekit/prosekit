@@ -4,7 +4,7 @@ import {
   union,
 } from 'prosekit/core'
 import { defineReactNodeView } from 'prosekit/react'
-import { AtomBlockView } from './badge-view'
+import { AtomBlockView } from './atom-block-view'
 
 /**
  * Defines an atom block node for testing purposes.

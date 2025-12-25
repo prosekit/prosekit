@@ -1,16 +1,11 @@
 import {
-  useEditorExtension,
+  useEditorDerivedValue,
   type SolidNodeViewProps,
 } from 'prosekit/solid'
-import {
-  createMemo,
-  type JSX,
-} from 'solid-js'
+import type { JSX } from 'solid-js'
 
 export function AtomBlockView(props: SolidNodeViewProps): JSX.Element {
-  const editor = useEditorExtension()
-
-  const docJSON = createMemo(() => {
+  const docJSON = useEditorDerivedValue((editor) => {
     return JSON.stringify(editor.getDocJSON(), null, 2)
   })
 

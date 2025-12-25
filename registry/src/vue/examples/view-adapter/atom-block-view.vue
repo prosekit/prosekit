@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import {
-  useEditorExtension,
+  useEditorDerivedValue,
   type VueNodeViewProps,
 } from 'prosekit/vue'
 import { computed } from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
 
-const editor = useEditorExtension()
-
-const docJSON = computed(() => {
+const docJSON = useEditorDerivedValue(computed(() => (editor) => {
   return JSON.stringify(editor.getDocJSON(), null, 2)
-})
+}))
 </script>
 
 <template>

@@ -1,14 +1,14 @@
 <script lang="ts">
 import {
-  useEditorExtension,
+  useEditorDerivedValue,
   type SvelteNodeViewProps,
 } from 'prosekit/svelte'
 
 const props: SvelteNodeViewProps = $props()
 
-const editor = useEditorExtension()
-
-let docJSON = $derived(JSON.stringify(editor.getDocJSON(), null, 2))
+const docJSON = useEditorDerivedValue(() => (editor) => {
+  return JSON.stringify(editor.getDocJSON(), null, 2)
+})
 </script>
 
 <div data-atom-block="true" data-atom-block-view="true" class="bg-green-500/30">

@@ -1,6 +1,9 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import { defineVueNodeView } from 'prosekit/vue'
+import {
+  defineVueNodeView,
+  type VueNodeViewComponent,
+} from 'prosekit/vue'
 
 import { defineAtomBlock } from '../../sample/define-atom-block'
 
@@ -12,7 +15,7 @@ export function defineExtension() {
     defineAtomBlock(),
     defineVueNodeView({
       name: 'atomBlock',
-      component: AtomBlockView,
+      component: AtomBlockView as VueNodeViewComponent,
     }),
   )
 }

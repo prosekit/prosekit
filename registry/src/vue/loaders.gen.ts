@@ -45,6 +45,7 @@ export const loaders = {
   'unmount': defineAsyncComponent(() => import('./examples/unmount').then((m) => m.ExampleEditor)),
   'user-menu': defineAsyncComponent(() => import('./examples/user-menu').then((m) => m.ExampleEditor)),
   'user-menu-dynamic': defineAsyncComponent(() => import('./examples/user-menu-dynamic').then((m) => m.ExampleEditor)),
+  'view-adapter': defineAsyncComponent(() => import('./examples/view-adapter').then((m) => m.ExampleEditor)),
   'word-counter': defineAsyncComponent(() => import('./examples/word-counter').then((m) => m.ExampleEditor)),
   'yjs': defineAsyncComponent(() => import('./examples/yjs').then((m) => m.ExampleEditor)),
 }

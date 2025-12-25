@@ -21,4 +21,5 @@ export const loaders = {
   'strike': lazy(() => import('./examples/strike').then((m) => ({ default: m.ExampleEditor }))),
   'underline': lazy(() => import('./examples/underline').then((m) => ({ default: m.ExampleEditor }))),
   'unmount': lazy(() => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor }))),
+  'view-adapter': lazy(() => import('./examples/view-adapter').then((m) => ({ default: m.ExampleEditor }))),
 }

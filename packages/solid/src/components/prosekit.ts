@@ -20,12 +20,12 @@ export type ProseKitProps = ParentProps<{
  * @public
  */
 export const ProseKit: Component<ProseKitProps> = (props) => {
-  return createComponent(ProsemirrorAdapterProvider, {
+  return createComponent(EditorContextProvider, {
+    get value() {
+      return props.editor
+    },
     get children() {
-      return createComponent(EditorContextProvider, {
-        get value() {
-          return props.editor
-        },
+      return createComponent(ProsemirrorAdapterProvider, {
         get children() {
           consumeSolidNodeViews()
           consumeSolidMarkViews()

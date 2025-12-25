@@ -619,11 +619,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813
       '@prosemirror-adapter/svelte':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@3af05de
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@3af05de(svelte@5.45.6)
+        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@9490813
+        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@9490813(svelte@5.45.6)
     devDependencies:
       '@sveltejs/package':
         specifier: ^2.5.7
@@ -2690,8 +2690,12 @@ packages:
   '@prosemirror-adapter/core@0.4.6':
     resolution: {integrity: sha512-qbqd4u9IyDXXolFFmX1tzE000IpF9JbCiiwuSvqIh7lT9ZqjeMcyDVR/vxyM4oVY1sVyQQQj+WxHMAIhj7egVg==}
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@3af05de537e0c07dc796dd6be66113d139094fe2':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@3af05de537e0c07dc796dd6be66113d139094fe2}
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813}
+    version: 0.4.6
+
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813e865d12fe9a485dcdbf8d5d7cf5b3f93f':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813e865d12fe9a485dcdbf8d5d7cf5b3f93f}
     version: 0.4.6
 
   '@prosemirror-adapter/preact@0.4.6':
@@ -2721,8 +2725,8 @@ packages:
       solid-js:
         optional: true
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@3af05de':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@3af05de}
+  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@9490813':
+    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@9490813}
     version: 0.4.6
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
@@ -9556,7 +9560,13 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.4
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@3af05de537e0c07dc796dd6be66113d139094fe2':
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813':
+    dependencies:
+      prosemirror-model: 1.25.4
+      prosemirror-state: 1.4.4
+      prosemirror-view: 1.41.4
+
+  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813e865d12fe9a485dcdbf8d5d7cf5b3f93f':
     dependencies:
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
@@ -9593,9 +9603,9 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.10
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@3af05de(svelte@5.45.6)':
+  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@9490813(svelte@5.45.6)':
     dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@3af05de537e0c07dc796dd6be66113d139094fe2
+      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@9490813e865d12fe9a485dcdbf8d5d7cf5b3f93f
       nanoid: 5.1.6
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4

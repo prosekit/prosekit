@@ -32,6 +32,13 @@ export interface UploadImageOptions {
    */
   pos?: number
   /**
+   * If the image should replace the existing image at the given position. This
+   * is only used if `pos` is provided.
+   *
+   * @default false
+   */
+  replace?: boolean
+  /**
    * A handler to be called when an error occurs during the upload.
    */
   onError?: ImageUploadErrorHandler
@@ -72,11 +79,10 @@ export type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) 
  *
  * @public
  */
-export function uploadImage({ uploader, file, pos, onError }: UploadImageOptions): Command {
+export function uploadImage({ uploader, file, pos, replace = false, onError }: UploadImageOptions): Command {
   return (state, dispatch, view) => {
     const uploadTask = new UploadTask({ file, uploader })
     const objectURL = uploadTask.objectURL
-    const attrs: ImageAttrs = { src: objectURL }
 
     uploadTask.finished
       .then((resultURL) => {
@@ -101,6 +107,19 @@ export function uploadImage({ uploader, file, pos, onError }: UploadImageOptions
         onError?.({ file, error, uploadTask })
       })
 
+    if (pos != null && replace) {
+      const node = state.doc.nodeAt(pos)
+      if (node && node.type.name === 'image') {
+        if (dispatch && objectURL !== node.attrs.src) {
+          const tr = state.tr
+          tr.setNodeAttribute(pos, 'src', objectURL)
+          dispatch(tr)
+        }
+        return true
+      }
+    }
+
+    const attrs: ImageAttrs = { src: objectURL }
     return insertNode({ type: 'image', attrs, pos })(state, dispatch, view)
   }
 }

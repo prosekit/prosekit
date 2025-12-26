@@ -622,13 +622,8 @@ importers:
         specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@069d400
         version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@069d400
       '@prosemirror-adapter/svelte':
-<<<<<<< HEAD
         specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@069d400
         version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@069d400(svelte@5.45.6)
-=======
-        specifier: ^0.5.0
-        version: 0.5.0(svelte@5.45.6)
->>>>>>> master
     devDependencies:
       '@sveltejs/package':
         specifier: ^2.5.7
@@ -2730,14 +2725,9 @@ packages:
       solid-js:
         optional: true
 
-<<<<<<< HEAD
   '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@069d400':
     resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@069d400}
     version: 0.4.6
-=======
-  '@prosemirror-adapter/svelte@0.5.0':
-    resolution: {integrity: sha512-z1EYxu9cxtj0SE0xREJl7n375XUE8MqCMuFr7VI/8uLJI1ZzODUeosMn78RUM7mxSOWqP6mUHfr94EEk4hx34w==}
->>>>>>> master
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
@@ -9608,11 +9598,7 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.10
 
-<<<<<<< HEAD
   '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@069d400(svelte@5.45.6)':
-=======
-  '@prosemirror-adapter/svelte@0.5.0(svelte@5.45.6)':
->>>>>>> master
     dependencies:
       '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@069d400c66e0555219f983837284e8349fb6556f
       nanoid: 5.1.6

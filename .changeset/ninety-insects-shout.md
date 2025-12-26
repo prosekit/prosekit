@@ -3,4 +3,4 @@
 "@prosekit/web": patch
 ---
 
-Add an internal API to improve the extension lifecycle within asynchronous UI frameworks.
+Improve the extension lifecycle in asynchronous UI frameworks.

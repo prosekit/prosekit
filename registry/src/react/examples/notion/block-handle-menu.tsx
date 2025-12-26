@@ -92,72 +92,64 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           label: 'Text',
           iconClassName: 'i-lucide-type',
           isActive: activeBlockType === 'text',
-          onClick: () => {
-            editor.commands.setParagraph()
-          },
+          isAvailable: editor.commands.setParagraph.canExec(),
+          onClick: () => editor.commands.setParagraph(),
         },
         {
           key: 'h1',
           label: 'Heading 1',
           iconClassName: 'i-lucide-heading-1',
           isActive: activeBlockType === 'h1',
-          onClick: () => {
-            editor.commands.setHeading({ level: 1 })
-          },
+          isAvailable: editor.commands.setHeading.canExec({ level: 1 }),
+          onClick: () => editor.commands.setHeading({ level: 1 }),
         },
         {
           key: 'h2',
           label: 'Heading 2',
           iconClassName: 'i-lucide-heading-2',
           isActive: activeBlockType === 'h2',
-          onClick: () => {
-            editor.commands.setHeading({ level: 2 })
-          },
+          isAvailable: editor.commands.setHeading.canExec({ level: 2 }),
+          onClick: () => editor.commands.setHeading({ level: 2 }),
         },
         {
           key: 'h3',
           label: 'Heading 3',
           iconClassName: 'i-lucide-heading-3',
           isActive: activeBlockType === 'h3',
-          onClick: () => {
-            editor.commands.setHeading({ level: 3 })
-          },
+          isAvailable: editor.commands.setHeading.canExec({ level: 3 }),
+          onClick: () => editor.commands.setHeading({ level: 3 }),
         },
         {
           key: 'bullet-list',
           label: 'Bullet list',
           iconClassName: 'i-lucide-list',
           isActive: activeBlockType === 'bullet-list',
-          onClick: () => {
-            turnIntoList(editor, { kind: 'bullet' })
-          },
+          isAvailable: editor.commands.wrapInList.canExec({ kind: 'bullet' }),
+          onClick: () => turnIntoList(editor, { kind: 'bullet' }),
         },
         {
           key: 'ordered-list',
           label: 'Ordered list',
           iconClassName: 'i-lucide-list-ordered',
           isActive: activeBlockType === 'ordered-list',
-          onClick: () => {
-            turnIntoList(editor, { kind: 'ordered' })
-          },
+          isAvailable: editor.commands.wrapInList.canExec({ kind: 'ordered' }),
+          onClick: () => turnIntoList(editor, { kind: 'ordered' }),
         },
         {
           key: 'task-list',
           label: 'Task list',
           iconClassName: 'i-lucide-list-checks',
           isActive: activeBlockType === 'task-list',
-          onClick: () => {
-            turnIntoList(editor, { kind: 'task' })
-          },
+          isAvailable: editor.commands.wrapInList.canExec({ kind: 'task' }),
+          onClick: () => turnIntoList(editor, { kind: 'task' }),
         },
         {
           key: 'toggle-list',
           label: 'Toggle list',
           iconClassName: 'i-lucide-list-collapse',
           isActive: activeBlockType === 'toggle-list',
-          onClick: () => {
-            turnIntoList(editor, { kind: 'toggle' })
-          },
+          isAvailable: editor.commands.wrapInList.canExec({ kind: 'toggle' }),
+          onClick: () => turnIntoList(editor, { kind: 'toggle' }),
         },
       ],
     },
@@ -171,81 +163,72 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           label: 'Default Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-current text-current'),
           isActive: !editor.marks.color.isActive(),
-          onClick: () => {
-            editor.commands.removeColor()
-          },
+          isAvailable: editor.commands.removeColor.canExec(),
+          onClick: () => editor.commands.removeColor(),
         },
         {
           key: 'gray',
           label: 'Gray Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-gray-300 text-gray-500'),
           isActive: editor.marks.color.isActive({ textColor: 'gray' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'gray' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'gray' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'gray' }),
         },
         {
           key: 'orange',
           label: 'Orange Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-orange-300 text-orange-500'),
           isActive: editor.marks.color.isActive({ textColor: 'orange' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'orange' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'orange' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'orange' }),
         },
         {
           key: 'yellow',
           label: 'Yellow Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-yellow-300 text-yellow-500'),
           isActive: editor.marks.color.isActive({ textColor: 'yellow' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'yellow' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'yellow' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'yellow' }),
         },
         {
           key: 'green',
           label: 'Green Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-green-300 text-green-500'),
           isActive: editor.marks.color.isActive({ textColor: 'green' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'green' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'green' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'green' }),
         },
         {
           key: 'blue',
           label: 'Blue Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-blue-300 text-blue-500'),
           isActive: editor.marks.color.isActive({ textColor: 'blue' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'blue' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'blue' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'blue' }),
         },
         {
           key: 'purple',
           label: 'Purple Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-purple-300 text-purple-500'),
           isActive: editor.marks.color.isActive({ textColor: 'purple' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'purple' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'purple' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'purple' }),
         },
         {
           key: 'pink',
           label: 'Pink Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-pink-300 text-pink-500'),
           isActive: editor.marks.color.isActive({ textColor: 'pink' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'pink' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'pink' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'pink' }),
         },
         {
           key: 'red',
           label: 'Red Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-red-300 text-red-500'),
           isActive: editor.marks.color.isActive({ textColor: 'red' }),
-          onClick: () => {
-            editor.commands.toggleColor({ textColor: 'red' })
-          },
+          isAvailable: editor.commands.toggleColor.canExec({ textColor: 'red' }),
+          onClick: () => editor.commands.toggleColor({ textColor: 'red' }),
         },
       ],
     },
@@ -255,10 +238,9 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
       iconClassName: 'i-lucide-trash-2',
       shortcut: 'Del',
       danger: true,
-      onClick: () => {
-        editor.view.dispatch(editor.view.state.tr.deleteSelection())
-      },
       isActive: false,
+      isAvailable: true,
+      onClick: () => editor.view.dispatch(editor.view.state.tr.deleteSelection()),
     },
   ]
 }

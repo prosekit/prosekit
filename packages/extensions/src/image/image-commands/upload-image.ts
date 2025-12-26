@@ -2,7 +2,11 @@ import {
   insertNode,
   ProseKitError,
 } from '@prosekit/core'
-import type { Command } from '@prosekit/pm/state'
+import type {
+  Command,
+  EditorState,
+  Transaction,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import {
@@ -113,14 +117,8 @@ export function uploadImage({
         onError?.({ file, error, uploadTask })
       })
 
-    if (pos != null && replace) {
-      const node = state.doc.nodeAt(pos)
-      if (node && node.type.name === 'image') {
-        if (dispatch && objectURL !== node.attrs.src) {
-          const tr = state.tr
-          tr.setNodeAttribute(pos, 'src', objectURL)
-          dispatch(tr)
-        }
+    if (replace && pos != null) {
+      if (replaceExistingImageURL(state, pos, objectURL, dispatch)) {
         return true
       }
     }
@@ -128,6 +126,28 @@ export function uploadImage({
     const attrs: ImageAttrs = { src: objectURL }
     return insertNode({ type: 'image', attrs, pos })(state, dispatch, view)
   }
+}
+
+function replaceExistingImageURL(
+  state: EditorState,
+  pos: number,
+  imageURL: string,
+  dispatch?: (tr: Transaction) => void,
+): boolean {
+  const node = state.doc.nodeAt(pos)
+  if (!node || node.type.name !== 'image') {
+    return false
+  }
+  const attrs = node.attrs as ImageAttrs
+  if (attrs.src === imageURL) {
+    return true
+  }
+  if (dispatch) {
+    const tr = state.tr
+    tr.setNodeAttribute(pos, 'src', imageURL)
+    dispatch(tr)
+  }
+  return true
 }
 
 /**

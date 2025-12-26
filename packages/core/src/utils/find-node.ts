@@ -23,6 +23,24 @@ export function findNode(
 }
 
 /**
+ * Finds all nodes that satisfy the predicate from the given document.
+ *
+ * @internal
+ */
+export function findNodes(
+  doc: ProseMirrorNode,
+  predicate: (node: ProseMirrorNode) => boolean,
+): FindNodeResult[] {
+  const results: FindNodeResult[] = []
+  doc.descendants((node, pos, parent, index) => {
+    if (predicate(node)) {
+      results.push({ node, pos, parent, index })
+    }
+  })
+  return results
+}
+
+/**
  * The result of the {@link findNode} function.
  *
  * @internal

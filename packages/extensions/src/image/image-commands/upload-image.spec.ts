@@ -1,4 +1,8 @@
-import { union } from '@prosekit/core'
+import {
+  findNode,
+  findNodes,
+  union,
+} from '@prosekit/core'
 import {
   beforeEach,
   describe,
@@ -11,9 +15,11 @@ import type { ImageAttrs } from '..'
 import type { Uploader } from '../../file'
 import {
   defineTestExtension,
+  setupTest,
   setupTestFromExtension,
 } from '../../testing'
 
+import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   replaceImageURL,
   uploadImage,
@@ -295,3 +301,29 @@ describe('replaceImageURL', () => {
     expect(editor.state).toBe(initialState)
   })
 })
+
+function isImage(node: ProseMirrorNode) {
+  return node.type.name === 'image'
+}
+
+function setup() {
+  const { editor, m, n } = setupTest()
+  const mockUploader = vi.fn().mockResolvedValue('https://example.com/uploaded.png')
+  const file = new File(['test'], 'test.png', { type: 'image/png' })
+
+  const findImage = (): { pos: number; attrs: ImageAttrs; node: ProseMirrorNode } => {
+    const found = findNode(editor.state.doc, isImage)
+    if (!found) {
+      throw new Error('Image not found')
+    }
+    const { pos, node } = found
+    const attrs = node.attrs as ImageAttrs
+    return { pos, attrs, node }
+  }
+
+  const findImageAttrs = (): ImageAttrs[] => {
+    return findNodes(editor.state.doc, isImage).map(({ node }) => node.attrs as ImageAttrs)
+  }
+
+  return { editor, m, n, mockUploader, file, findImage, findImageAttrs }
+}

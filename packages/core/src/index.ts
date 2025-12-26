@@ -244,6 +244,7 @@ export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'
 export {
   findNode,
+  findNodes,
   type FindNodeResult,
 } from './utils/find-node'
 export {

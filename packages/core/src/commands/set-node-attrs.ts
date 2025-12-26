@@ -38,7 +38,7 @@ export interface SetNodeAttrsOptions {
  */
 export function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command {
   return (state, dispatch) => {
-    let updatePos = -1
+    let updatePos: number
 
     if (pos == null) {
       const found = findParentNodeOfType(type, state.selection.$anchor)
@@ -56,10 +56,6 @@ export function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command
         return false
       }
       updatePos = pos
-    }
-
-    if (updatePos === -1) {
-      return false
     }
 
     if (dispatch) {

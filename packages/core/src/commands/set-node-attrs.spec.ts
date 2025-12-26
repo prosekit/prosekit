@@ -91,6 +91,43 @@ describe('setNodeAttrs', () => {
     expect(editor.state.doc.child(1).attrs.language).toBe('python')
   })
 
+  it('should set attrs on node at exact position', () => {
+    const { editor, n } = setupTest()
+
+    // Create a document with multiple blocks
+    editor.set(
+      n.doc(
+        n.paragraph('First paragraph'),
+        n.codeBlock('code here'),
+        n.paragraph('Last paragraph'),
+      ),
+    )
+
+    // Find the position of the codeBlock (second child)
+    let codeBlockPos = -1
+    editor.state.doc.forEach((node, offset) => {
+      if (node.type.name === 'codeBlock') {
+        codeBlockPos = offset
+      }
+    })
+    expect(codeBlockPos).toBeGreaterThan(0)
+
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'javascript' },
+      pos: codeBlockPos,
+    })
+
+    expect(editor.exec(command)).toBe(true)
+
+    // Verify only the codeBlock at the specific position was modified
+    expect(editor.state.doc.child(1).attrs.language).toBe('javascript')
+
+    // Verify other nodes weren't affected
+    expect(editor.state.doc.child(0).type.name).toBe('paragraph')
+    expect(editor.state.doc.child(2).type.name).toBe('paragraph')
+  })
+
   it('should work with selection spanning multiple nodes', () => {
     const { editor, n } = setupTest()
 

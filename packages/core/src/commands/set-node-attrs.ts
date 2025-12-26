@@ -41,6 +41,13 @@ export function setNodeAttrs(options: SetNodeAttrsOptions): Command {
     const to = options.pos ?? state.selection.to
     const positions: number[] = []
 
+    if (options.pos != null) {
+      const node = state.doc.nodeAt(options.pos)
+      if (node && nodeTypes.includes(node.type)) {
+        positions.push(options.pos)
+      }
+    }
+
     state.doc.nodesBetween(from, to, (node, pos) => {
       if (nodeTypes.includes(node.type)) {
         positions.push(pos)

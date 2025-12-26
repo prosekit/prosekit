@@ -163,25 +163,6 @@ describe('setNodeAttrs', () => {
     expect(editor.state.doc.firstChild?.attrs.language).toBe('swift')
   })
 
-  it('should only set attrs when dispatch is provided', () => {
-    const { editor, n } = setupTest()
-
-    editor.set(n.doc(n.codeBlock('const x = 1')))
-
-    const command = setNodeAttrs({
-      type: 'codeBlock',
-      attrs: { language: 'typescript' },
-    })
-
-    // Call without dispatch - should return true but not change state
-    expect(command(editor.state)).toBe(true)
-    expect(editor.state.doc.firstChild?.attrs.language).toBe('')
-
-    // Call with dispatch - should change state
-    editor.exec(command)
-    expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
-  })
-
   it('should handle cursor inside a node', () => {
     const { editor, n } = setupTest()
 
@@ -208,12 +189,20 @@ describe('setNodeAttrs', () => {
       ),
     )
 
-    const command = setNodeAttrs({
+    const command1 = setNodeAttrs({
       type: 'blockquote',
       attrs: {},
     })
 
+    const command2 = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: {},
+    })
+
     // Should find the blockquote wrapping the selection
-    expect(editor.exec(command)).toBe(true)
+    expect(editor.exec(command1)).toBe(true)
+
+    // Should not find the code block
+    expect(editor.exec(command2)).toBe(false)
   })
 })

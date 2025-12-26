@@ -182,7 +182,7 @@ function defineHeading(): HeadingExtension {
 
 type CodeBlockExtension = Extension<{
   Nodes: {
-    codeBlock: { language: string; lineNumbers: boolean }
+    codeBlock: { language: string; lineNumbers?: boolean }
   }
 }>
 

@@ -26,18 +26,8 @@ import {
 } from './upload-image'
 
 describe('uploadImage', () => {
-  const extension = union(defineTestExtension())
-  const { editor, n } = setupTestFromExtension(extension)
-
-  let mockUploader: Uploader<string>
-  let file: File
-
-  beforeEach(() => {
-    mockUploader = vi.fn().mockResolvedValue('https://example.com/uploaded.png')
-    file = new File(['test'], 'test.png', { type: 'image/png' })
-  })
-
   it('should insert image at current selection by default', () => {
+    const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(n.paragraph('hello'))
     editor.set(doc)
     editor.view.dispatch(editor.state.tr.setSelection(editor.state.selection))
@@ -45,19 +35,12 @@ describe('uploadImage', () => {
     const command = uploadImage({ uploader: mockUploader, file })
     expect(editor.exec(command)).toBe(true)
 
-    let imageCount = 0
-    let imageSrc = ''
-    editor.state.doc.descendants((node) => {
-      if (node.type.name === 'image') {
-        imageCount++
-        imageSrc = (node.attrs as ImageAttrs).src ?? ''
-      }
-    })
-    expect(imageCount).toBe(1)
-    expect(imageSrc).toMatch(/^blob:/)
+    const { attrs } = findImage()
+    expect(attrs.src).toMatch(/^blob:/)
   })
 
   it('should insert image at specified position', () => {
+    const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(
       /*0*/
       n.paragraph(/*1*/ 'hello' /*6*/),
@@ -70,19 +53,12 @@ describe('uploadImage', () => {
     const command = uploadImage({ uploader: mockUploader, file, pos: 7 })
     expect(editor.exec(command)).toBe(true)
 
-    let imageCount = 0
-    let imagePos = -1
-    editor.state.doc.descendants((node, pos) => {
-      if (node.type.name === 'image') {
-        imageCount++
-        imagePos = pos
-      }
-    })
-    expect(imageCount).toBe(1)
-    expect(imagePos).toBe(7)
+    const { pos } = findImage()
+    expect(pos).toBe(7)
   })
 
   it('should replace existing image when replace=true', () => {
+    const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(
       /*0*/
       n.paragraph(/*1*/ 'hello' /*6*/),
@@ -103,20 +79,13 @@ describe('uploadImage', () => {
     })
     expect(editor.exec(command)).toBe(true)
 
-    let imageCount = 0
-    let imageSrc = ''
-    editor.state.doc.descendants((node) => {
-      if (node.type.name === 'image') {
-        imageCount++
-        imageSrc = (node.attrs as ImageAttrs).src ?? ''
-      }
-    })
-    expect(imageCount).toBe(1)
-    expect(imageSrc).toMatch(/^blob:/)
-    expect(imageSrc).not.toBe('https://example.com/old.png')
+    const { attrs } = findImage()
+    expect(attrs.src).toMatch(/^blob:/)
+    expect(attrs.src).not.toBe('https://example.com/old.png')
   })
 
   it('should not replace when same src is already set', () => {
+    const { editor, n, mockUploader, file, findImage } = setup()
     const blobURL = 'blob:test-url'
     const doc = n.doc(
       n.paragraph('hello'),
@@ -125,13 +94,7 @@ describe('uploadImage', () => {
     )
     editor.set(doc)
 
-    let imagePos = -1
-    editor.state.doc.descendants((node, pos) => {
-      if (node.type.name === 'image') {
-        imagePos = pos
-        return false
-      }
-    })
+    const { pos: imagePos } = findImage()
 
     const createObjectURLSpy = vi.spyOn(URL, 'createObjectURL')
     createObjectURLSpy.mockReturnValue(blobURL)
@@ -154,16 +117,11 @@ describe('uploadImage', () => {
   })
 
   it('should insert image when replace=true but position has non-image node', () => {
+    const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(n.paragraph('hello'), n.paragraph('world'))
     editor.set(doc)
 
-    let paragraphPos = -1
-    editor.state.doc.descendants((node, pos) => {
-      if (node.type.name === 'paragraph' && paragraphPos === -1) {
-        paragraphPos = pos
-        return false
-      }
-    })
+    const paragraphPos = findNode(editor.state.doc, (node) => node.type.name === 'paragraph')?.pos ?? -1
 
     const command = uploadImage({
       uploader: mockUploader,
@@ -173,16 +131,11 @@ describe('uploadImage', () => {
     })
     expect(editor.exec(command)).toBe(true)
 
-    let imageCount = 0
-    editor.state.doc.descendants((node) => {
-      if (node.type.name === 'image') {
-        imageCount++
-      }
-    })
-    expect(imageCount).toBe(1)
+    expect(() => findImage()).not.toThrow()
   })
 
   it('should call onError when upload fails', async () => {
+    const { editor, n, file } = setup()
     const error = new Error('Upload failed')
     const failingUploader: Uploader<string> = vi.fn().mockRejectedValue(error)
     const onError = vi.fn()
@@ -212,10 +165,8 @@ describe('uploadImage', () => {
 })
 
 describe('replaceImageURL', () => {
-  const extension = union(defineTestExtension())
-  const { editor, n } = setupTestFromExtension(extension)
-
   it('should replace single image URL', () => {
+    const { editor, n, findImage } = setup()
     const doc = n.doc(
       n.paragraph('hello'),
       n.image({ src: 'blob:old-url' }),
@@ -225,19 +176,12 @@ describe('replaceImageURL', () => {
 
     replaceImageURL(editor.view, 'blob:old-url', 'https://example.com/new.png')
 
-    let imageCount = 0
-    let imageSrc = ''
-    editor.state.doc.descendants((node) => {
-      if (node.type.name === 'image') {
-        imageCount++
-        imageSrc = (node.attrs as ImageAttrs).src ?? ''
-      }
-    })
-    expect(imageCount).toBe(1)
-    expect(imageSrc).toBe('https://example.com/new.png')
+    const { attrs } = findImage()
+    expect(attrs.src).toBe('https://example.com/new.png')
   })
 
   it('should replace multiple image URLs', () => {
+    const { editor, n, findImageAttrs } = setup()
     const doc = n.doc(
       n.paragraph('hello'),
       n.image({ src: 'blob:old-url' }),
@@ -249,20 +193,14 @@ describe('replaceImageURL', () => {
 
     replaceImageURL(editor.view, 'blob:old-url', 'https://example.com/new.png')
 
-    let imageCount = 0
-    const imageSrcs: string[] = []
-    editor.state.doc.descendants((node) => {
-      if (node.type.name === 'image') {
-        imageCount++
-        imageSrcs.push((node.attrs as ImageAttrs).src ?? '')
-      }
-    })
-    expect(imageCount).toBe(2)
-    expect(imageSrcs[0]).toBe('https://example.com/new.png')
-    expect(imageSrcs[1]).toBe('https://example.com/new.png')
+    const imageAttrs = findImageAttrs()
+    expect(imageAttrs).toHaveLength(2)
+    expect(imageAttrs[0].src).toBe('https://example.com/new.png')
+    expect(imageAttrs[1].src).toBe('https://example.com/new.png')
   })
 
   it('should not replace images with different URLs', () => {
+    const { editor, n, findImageAttrs } = setup()
     const doc = n.doc(
       n.paragraph('hello'),
       n.image({ src: 'blob:old-url' }),
@@ -273,20 +211,14 @@ describe('replaceImageURL', () => {
 
     replaceImageURL(editor.view, 'blob:old-url', 'https://example.com/new.png')
 
-    let imageCount = 0
-    const imageSrcs: string[] = []
-    editor.state.doc.descendants((node) => {
-      if (node.type.name === 'image') {
-        imageCount++
-        imageSrcs.push((node.attrs as ImageAttrs).src ?? '')
-      }
-    })
-    expect(imageCount).toBe(2)
-    expect(imageSrcs[0]).toBe('https://example.com/new.png')
-    expect(imageSrcs[1]).toBe('blob:different-url')
+    const imageAttrs = findImageAttrs()
+    expect(imageAttrs).toHaveLength(2)
+    expect(imageAttrs[0].src).toBe('https://example.com/new.png')
+    expect(imageAttrs[1].src).toBe('blob:different-url')
   })
 
   it('should do nothing when no images match', () => {
+    const { editor, n } = setup()
     const doc = n.doc(
       n.paragraph('hello'),
       n.image({ src: 'blob:different-url' }),
@@ -307,7 +239,7 @@ function isImage(node: ProseMirrorNode) {
 }
 
 function setup() {
-  const { editor, m, n } = setupTest()
+  const { editor, n } = setupTest()
   const mockUploader = vi.fn().mockResolvedValue('https://example.com/uploaded.png')
   const file = new File(['test'], 'test.png', { type: 'image/png' })
 
@@ -325,5 +257,5 @@ function setup() {
     return findNodes(editor.state.doc, isImage).map(({ node }) => node.attrs as ImageAttrs)
   }
 
-  return { editor, m, n, mockUploader, file, findImage, findImageAttrs }
+  return { editor, n, mockUploader, file, findImage, findImageAttrs }
 }

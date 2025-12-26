@@ -509,7 +509,7 @@ describe('setNodeAttrs', () => {
                   },
                   {
                     "attrs": {
-                      "variant": "fancy",
+                      "variant": "variant-c",
                     },
                     "content": [
                       {
@@ -767,7 +767,7 @@ describe('setNodeAttrs', () => {
               },
               {
                 "attrs": {
-                  "variant": "fancy",
+                  "variant": "variant-e",
                 },
                 "content": [
                   {
@@ -781,7 +781,7 @@ describe('setNodeAttrs', () => {
                   },
                   {
                     "attrs": {
-                      "variant": "fancy",
+                      "variant": "variant-f",
                     },
                     "content": [
                       {

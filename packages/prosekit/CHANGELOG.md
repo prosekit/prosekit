@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.17.1
+
+### Patch Changes
+
+- [`e7c66be`](https://github.com/ocavue/prosekit/commit/e7c66bed6b0464c5d0300801daf440ff851a8194) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the table handle drag preview is not displayed when dragging a row that starts with a `<th>` element.
+
 ## 0.17.0
 
 ### Minor Changes

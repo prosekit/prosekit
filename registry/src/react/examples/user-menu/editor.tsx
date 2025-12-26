@@ -5,8 +5,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { tags } from '../../sample/tag-data'
-import { users } from '../../sample/user-data'
+import { tags } from '../../sample/sample-tag-data'
+import { users } from '../../sample/sample-user-data'
 import { TagMenu } from '../../ui/tag-menu'
 import { UserMenu } from '../../ui/user-menu'
 

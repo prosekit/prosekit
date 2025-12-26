@@ -45,6 +45,7 @@ export const loaders = {
   'unmount': lazy(() => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor }))),
   'user-menu': lazy(() => import('./examples/user-menu').then((m) => ({ default: m.ExampleEditor }))),
   'user-menu-dynamic': lazy(() => import('./examples/user-menu-dynamic').then((m) => ({ default: m.ExampleEditor }))),
+  'view-adapter': lazy(() => import('./examples/view-adapter').then((m) => ({ default: m.ExampleEditor }))),
   'word-counter': lazy(() => import('./examples/word-counter').then((m) => ({ default: m.ExampleEditor }))),
   'yjs': lazy(() => import('./examples/yjs').then((m) => ({ default: m.ExampleEditor }))),
 }

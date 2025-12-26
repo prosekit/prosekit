@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/web",
   "type": "module",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "private": false,
   "description": "A collection of web components for ProseKit",
   "author": {
@@ -63,7 +63,7 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.17.0",
+    "tsdown": "^0.18.2",
     "type-fest": "^5.3.1",
     "typescript": "~5.9.3",
     "vitest": "^4.0.15"

@@ -313,7 +313,7 @@ export default function BlockHandleMenu(props: Props) {
       >
       </Menu.Trigger>
       <Menu.Portal>
-        <Menu.Backdrop className="w-100vh h-100vh flex fixed inset-0 opacity-0" />
+        <Menu.Backdrop className="size-dvw flex fixed inset-0 opacity-0" />
         <Menu.Positioner className="outline-none" side="right" align="center">
           <Menu.Popup className={POPUP_CLASSNAME}>
             {items.map(item => <BlockHandleItem key={item.key} item={item} />)}

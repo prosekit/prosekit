@@ -191,16 +191,17 @@ describe('setNodeAttrs', () => {
 
     const command1 = setNodeAttrs({
       type: 'blockquote',
-      attrs: {},
+      attrs: { variant: 'fancy' },
     })
 
     const command2 = setNodeAttrs({
       type: 'codeBlock',
-      attrs: {},
+      attrs: { language: 'typescript' },
     })
 
     // Should find the blockquote wrapping the selection
     expect(editor.exec(command1)).toBe(true)
+    expect(editor.state.doc.firstChild?.attrs.variant).toBe('fancy')
 
     // Should not find the code block
     expect(editor.exec(command2)).toBe(false)

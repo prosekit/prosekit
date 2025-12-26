@@ -207,9 +207,13 @@ function defineCodeBlock(): CodeBlockExtension {
   })
 }
 
+interface BlockquoteAttrs {
+  variant: string
+}
+
 type BlockquoteExtension = Extension<{
   Nodes: {
-    blockquote: Attrs
+    blockquote: BlockquoteAttrs
   }
 }>
 
@@ -222,9 +226,13 @@ function defineBlockquote(): BlockquoteExtension {
     content: 'block+',
     group: 'block',
     defining: true,
+    attrs: {
+      variant: { default: '', validate: 'string' },
+    },
     parseDOM: [{ tag: 'blockquote' }],
-    toDOM() {
-      return ['blockquote', 0]
+    toDOM(node) {
+      const { variant } = node.attrs as BlockquoteAttrs
+      return ['blockquote', { 'data-variant': variant }, 0]
     },
   })
 }

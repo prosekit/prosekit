@@ -1,6 +1,7 @@
 import {
   defineCommands,
   defineMarkSpec,
+  removeMark,
   toggleMark,
   union,
 } from 'prosekit/core'
@@ -40,7 +41,7 @@ function isValidColor(color: string): color is ValidColor {
  * @public
  */
 export interface ColorAttrs {
-  textColor: ValidColor | null
+  textColor: ValidColor
 }
 
 function getAttrs(node: HTMLElement): ColorAttrs | false {
@@ -56,8 +57,7 @@ function defineColorSpec() {
     name: 'color',
     attrs: {
       textColor: {
-        default: null,
-        validate: 'string|null',
+        validate: 'string',
       },
     },
     parseDOM: [
@@ -76,6 +76,7 @@ function defineColorSpec() {
 function defineColorCommands() {
   return defineCommands({
     toggleColor: (attrs: ColorAttrs) => toggleMark({ type: 'color', attrs }),
+    removeColor: () => removeMark({ type: 'color' }),
   })
 }
 

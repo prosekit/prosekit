@@ -6,6 +6,7 @@ import { useEditorDerivedValue } from 'prosekit/react'
 import { useState } from 'react'
 
 import type { EditorExtension } from './extension'
+import type { ValidColor } from './color-extension'
 
 const POPUP_CLASSNAME =
   'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300 w-50'
@@ -29,7 +30,8 @@ interface SubmenuInfo {
 interface MenuItemInfo {
   key: string
   label: string
-  isActive?: boolean
+  isActive: boolean
+  isAvailable?: boolean
   iconClassName?: string
   shortcut?: string
   danger?: boolean
@@ -168,14 +170,16 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'default',
           label: 'Default Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-current text-current'),
+          isActive: !editor.marks.color.isActive(),
           onClick: () => {
-            editor.commands.toggleColor({ textColor: null })
+            editor.commands.removeColor()
           },
         },
         {
           key: 'gray',
           label: 'Gray Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-gray-300 text-gray-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'gray' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'gray' })
           },
@@ -184,6 +188,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'orange',
           label: 'Orange Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-orange-300 text-orange-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'orange' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'orange' })
           },
@@ -192,6 +197,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'yellow',
           label: 'Yellow Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-yellow-300 text-yellow-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'yellow' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'yellow' })
           },
@@ -200,6 +206,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'green',
           label: 'Green Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-green-300 text-green-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'green' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'green' })
           },
@@ -208,6 +215,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'blue',
           label: 'Blue Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-blue-300 text-blue-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'blue' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'blue' })
           },
@@ -216,6 +224,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'purple',
           label: 'Purple Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-purple-300 text-purple-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'purple' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'purple' })
           },
@@ -224,6 +233,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'pink',
           label: 'Pink Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-pink-300 text-pink-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'pink' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'pink' })
           },
@@ -232,6 +242,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'red',
           label: 'Red Text',
           iconClassName: clsx(TEXT_COLOR_CLASSNAME, 'border-red-300 text-red-500'),
+          isActive: editor.marks.color.isActive({ textColor: 'red' }),
           onClick: () => {
             editor.commands.toggleColor({ textColor: 'red' })
           },
@@ -247,6 +258,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
       onClick: () => {
         editor.view.dispatch(editor.view.state.tr.deleteSelection())
       },
+      isActive: false,
     },
   ]
 }

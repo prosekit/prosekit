@@ -29,6 +29,7 @@ export function serializeItem(item: ItemAccumulator): RegistryItem {
       })),
     meta: {
       hasIcons: item.meta.hasIcons,
+      hidden: item.meta.hidden,
       story: item.story,
       framework: item.framework,
       accumulatedFiles: Array.from(item.meta.accumulatedFiles).sort(),

@@ -6,11 +6,11 @@ import {
 import { debug } from './meta/debug'
 import { linkSamples } from './meta/link-samples'
 import { scanRegistry } from './meta/scan'
+import { updateStoryMeta } from './meta/story-meta'
 import { updateClasses } from './meta/update-classes'
 import { updateLoader } from './meta/update-loader'
 import { updatePackageJSON } from './meta/update-package-json'
 import { updateRegistry } from './meta/update-registry-json'
-import { updateStoryMeta } from './meta/update-story-meta'
 import { updateWebsitePages } from './meta/update-website-pages'
 
 async function gen() {

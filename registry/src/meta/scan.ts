@@ -17,6 +17,10 @@ import {
   FRAMEWORKS,
   REGISTRY_SRC_DIR,
 } from './types'
+import {
+  loadStoryMeta,
+  type StoryMeta,
+} from './story-meta'
 
 const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   react: path.join(REGISTRY_SRC_DIR, 'react'),
@@ -112,21 +116,26 @@ function createItemAccumulator(
   framework: Framework,
   category: ItemCategory,
   slug: string,
+  storyMeta: StoryMeta,
 ): ItemAccumulator {
   const name = toItemName(framework, category, slug)
+  const story = category === 'example' ? slug : ''
+  const { hidden = false, description = '' } = storyMeta.get(story) || {}
+
   return {
     framework,
     category,
     name,
     title: name,
     type: category === 'example' ? 'registry:block' : 'registry:component',
-    story: category === 'example' ? slug : '',
-    description: '',
+    story: story,
+    description: description,
     files: new Set<string>(),
     registryDependencies: new Set<string>(),
     dependencies: new Set<string>(),
     meta: {
       hasIcons: false,
+      hidden: hidden,
       accumulatedFiles: new Set<string>(),
       internalDependencies: new Set<string>(),
     },
@@ -321,6 +330,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
   const itemsByName = new Map<string, ItemAccumulator>()
   const fileToItemName = new Map<string, string>()
+  const storyMeta = await loadStoryMeta()
 
   for (const filePath of registryFiles) {
     const classification = classifyRegistryFile(filePath)
@@ -334,7 +344,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
     let item = itemsByName.get(name)
     if (!item) {
-      item = createItemAccumulator(framework, category, slug)
+      item = createItemAccumulator(framework, category, slug, storyMeta)
       itemsByName.set(name, item)
     }
 

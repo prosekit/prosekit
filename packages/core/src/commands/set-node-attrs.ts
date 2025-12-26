@@ -13,8 +13,6 @@ import { getNodeTypes } from '../utils/get-node-types'
 export interface SetNodeAttrsOptions {
   /**
    * The type of node to set the attributes of.
-   *
-   * If current node is not of this type, the command will do nothing.
    */
   type: string | NodeType | string[] | NodeType[]
 

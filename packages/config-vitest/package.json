@@ -12,7 +12,7 @@
     }
   },
   "dependencies": {
-    "@vitest/browser-playwright": "^4.0.15"
+    "@vitest/browser-playwright": "^4.0.16"
   },
   "devDependencies": {
     "defu": "^6.1.4",

@@ -48,8 +48,7 @@ describe('setNodeAttrsBetween', () => {
       ),
     )
 
-    // Update only the second block using explicit positions
-    // First block is at position 0, second block starts after first block + separator
+    // Update the second and the third blocks
     const command = setNodeAttrsBetween({
       type: 'codeBlock',
       attrs: { language: 'go' },

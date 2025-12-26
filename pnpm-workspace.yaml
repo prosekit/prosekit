@@ -6,6 +6,6 @@ packages:
   - packages/*
 minimumReleaseAge: 1440 # 24 hours
 minimumReleaseAgeExclude:
-  - "@prosemirror-adapter/*"
   - "@ocavue/*"
+  - "@prosemirror-adapter/*"
   - "prosemirror-*"

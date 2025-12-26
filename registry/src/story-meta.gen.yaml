@@ -48,6 +48,9 @@
   frameworks: [react, vue, preact, svelte]
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]
+- name: notion
+  frameworks: [react]
+  hidden: true
 - name: placeholder
   frameworks: [react, vue, preact, svelte, solid]
 - name: readonly

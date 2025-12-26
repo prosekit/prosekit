@@ -27,6 +27,7 @@ export const loaders = {
   'loro': lazy(() => import('./examples/loro').then((m) => ({ default: m.ExampleEditor }))),
   'mark-rule': lazy(() => import('./examples/mark-rule').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
+  'notion': lazy(() => import('./examples/notion').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor }))),
   'readonly': lazy(() => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor }))),
   'rtl': lazy(() => import('./examples/rtl').then((m) => ({ default: m.ExampleEditor }))),

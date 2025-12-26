@@ -77,6 +77,7 @@
     "./react/examples/loro": "./src/react/examples/loro/index.ts",
     "./react/examples/mark-rule": "./src/react/examples/mark-rule/index.ts",
     "./react/examples/minimal": "./src/react/examples/minimal/index.ts",
+    "./react/examples/notion": "./src/react/examples/notion/index.ts",
     "./react/examples/placeholder": "./src/react/examples/placeholder/index.ts",
     "./react/examples/readonly": "./src/react/examples/readonly/index.ts",
     "./react/examples/rtl": "./src/react/examples/rtl/index.ts",
@@ -228,6 +229,7 @@
     "lint:vue": "vue-tsc --build src/vue/tsconfig.lint.json"
   },
   "dependencies": {
+    "@base-ui/react": "1.0.0",
     "loro-crdt": "^1.10.2",
     "loro-prosemirror": "^0.4.1",
     "obug": "^2.1.1",

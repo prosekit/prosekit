@@ -1,7 +1,9 @@
+import { sleep } from '@ocavue/utils'
 import {
   findNode,
   findNodes,
 } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   describe,
   expect,
@@ -16,12 +18,10 @@ import type {
 import type { Uploader } from '../../file'
 import { setupTest } from '../../testing'
 
-import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   replaceImageURL,
   uploadImage,
 } from './upload-image'
-import { sleep } from '@ocavue/utils'
 
 describe('uploadImage', () => {
   it('should insert image at current selection by default', async () => {

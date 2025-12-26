@@ -59,7 +59,7 @@ describe('uploadImage', () => {
   })
 
   it('should replace existing image when replace=true', async () => {
-    const { editor, n, mockUploader, file, findImage } = setup()
+    const { editor, n, mockUploader, file, findImageURLs } = setup()
     const doc = n.doc(
       /*0*/
       n.paragraph(/*1*/ 'hello' /*6*/),
@@ -70,7 +70,7 @@ describe('uploadImage', () => {
       /*15*/
     )
     editor.set(doc)
-    expect(findImage().attrs.src).toBe('https://example.com/old.png')
+    expect(findImageURLs()).toEqual(['https://example.com/old.png'])
 
     const imagePos = 7
     const command = uploadImage({
@@ -81,13 +81,38 @@ describe('uploadImage', () => {
     })
     expect(editor.exec(command)).toBe(true)
 
-    expect(findImage().attrs.src).toMatch(/^blob:/)
     await sleep(0)
-    expect(findImage().attrs.src).toBe('https://example.com/uploaded.png')
+    expect(findImageURLs()).toEqual(['https://example.com/uploaded.png'])
   })
 
-  it('should insert image when replace=true but position has non-image node', () => {
-    const { editor, n, mockUploader, file } = setup()
+  it('should not replace existing image when replace=false', async () => {
+    const { editor, n, mockUploader, file, findImageURLs } = setup()
+    const doc = n.doc(
+      /*0*/
+      n.paragraph(/*1*/ 'hello' /*6*/),
+      /*7*/
+      n.image({ src: 'https://example.com/old.png' }),
+      /*8*/
+      n.paragraph(/*9*/ 'world' /*14*/),
+      /*15*/
+    )
+    editor.set(doc)
+    expect(findImageURLs()).toEqual(['https://example.com/old.png'])
+
+    const imagePos = 7
+    const command = uploadImage({
+      uploader: mockUploader,
+      file,
+      pos: imagePos,
+      replace: false,
+    })
+    expect(editor.exec(command)).toBe(true)
+    await sleep(0)
+    expect(findImageURLs()).toEqual(['https://example.com/uploaded.png', 'https://example.com/old.png'])
+  })
+
+  it('should insert image when replace=true but position has non-image node', async () => {
+    const { editor, n, mockUploader, file, findImageURLs } = setup()
     const doc = n.doc(
       /*0*/
       n.paragraph(/*1*/ 'hello' /*6*/),
@@ -107,6 +132,8 @@ describe('uploadImage', () => {
     expect(editor.state.doc.child(0).type.name).toBe('paragraph')
     expect(editor.state.doc.child(1).type.name).toBe('paragraph')
     expect(editor.state.doc.child(2).type.name).toBe('image')
+    await sleep(0)
+    expect(findImageURLs()).toEqual(['https://example.com/uploaded.png'])
   })
 
   it('should call onError when upload fails', async () => {
@@ -126,7 +153,6 @@ describe('uploadImage', () => {
     editor.exec(command)
 
     await sleep(0)
-
     expect(onError).toHaveBeenCalledOnce()
     const callArg = onError.mock.calls[0][0]
     expect(callArg.file).toBe(file)

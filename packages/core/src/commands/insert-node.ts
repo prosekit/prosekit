@@ -1,10 +1,12 @@
-import type {
-  Attrs,
-  NodeType,
-  ProseMirrorNode,
+import {
+  Fragment,
+  Slice,
+  type Attrs,
+  type NodeType,
+  type ProseMirrorNode,
 } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
-import { insertPoint } from '@prosekit/pm/transform'
+import { dropPoint } from '@prosekit/pm/transform'
 
 import { assert } from '../utils/assert'
 import { getNodeType } from '../utils/get-node-type'
@@ -52,10 +54,10 @@ function insertNode(options: InsertNodeOptions): Command {
 
     assert(node, 'You must provide either a node or a type')
 
-    const insertPos = insertPoint(
+    const insertPos = dropPoint(
       state.doc,
       options.pos ?? state.selection.anchor,
-      node.type,
+      new Slice(Fragment.from([node]), 0, 0),
     )
     if (insertPos == null) return false
 

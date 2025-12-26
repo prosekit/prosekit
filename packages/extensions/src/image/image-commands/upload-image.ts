@@ -2,7 +2,11 @@ import {
   insertNode,
   ProseKitError,
 } from '@prosekit/core'
-import type { Command } from '@prosekit/pm/state'
+import type {
+  Command,
+  EditorState,
+  Transaction,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import {
@@ -31,6 +35,13 @@ export interface UploadImageOptions {
    * image is inserted at the current selection.
    */
   pos?: number
+  /**
+   * If the image should replace the existing image at the given position. This
+   * is only used if `pos` is provided.
+   *
+   * @default false
+   */
+  replace?: boolean
   /**
    * A handler to be called when an error occurs during the upload.
    */
@@ -72,11 +83,16 @@ export type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) 
  *
  * @public
  */
-export function uploadImage({ uploader, file, pos, onError }: UploadImageOptions): Command {
+export function uploadImage({
+  uploader,
+  file,
+  pos,
+  replace = false,
+  onError,
+}: UploadImageOptions): Command {
   return (state, dispatch, view) => {
     const uploadTask = new UploadTask({ file, uploader })
     const objectURL = uploadTask.objectURL
-    const attrs: ImageAttrs = { src: objectURL }
 
     uploadTask.finished
       .then((resultURL) => {
@@ -101,8 +117,37 @@ export function uploadImage({ uploader, file, pos, onError }: UploadImageOptions
         onError?.({ file, error, uploadTask })
       })
 
+    if (replace && pos != null) {
+      if (replaceExistingImageURL(state, pos, objectURL, dispatch)) {
+        return true
+      }
+    }
+
+    const attrs: ImageAttrs = { src: objectURL }
     return insertNode({ type: 'image', attrs, pos })(state, dispatch, view)
   }
+}
+
+function replaceExistingImageURL(
+  state: EditorState,
+  pos: number,
+  imageURL: string,
+  dispatch?: (tr: Transaction) => void,
+): boolean {
+  const node = state.doc.nodeAt(pos)
+  if (!node || node.type.name !== 'image') {
+    return false
+  }
+  const attrs = node.attrs as ImageAttrs
+  if (attrs.src === imageURL) {
+    return true
+  }
+  if (dispatch) {
+    const tr = state.tr
+    tr.setNodeAttribute(pos, 'src', imageURL)
+    dispatch(tr)
+  }
+  return true
 }
 
 /**

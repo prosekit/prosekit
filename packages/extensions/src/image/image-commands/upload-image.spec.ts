@@ -11,16 +11,14 @@ import {
   vi,
 } from 'vitest'
 
-import type {
-  ImageAttrs,
-  ImageUploadErrorHandler,
-} from '..'
 import type { Uploader } from '../../file'
 import { setupTest } from '../../testing'
+import type { ImageAttrs } from '../image-spec'
 
 import {
   replaceImageURL,
   uploadImage,
+  type ImageUploadErrorHandler,
 } from './upload-image'
 
 describe('uploadImage', () => {

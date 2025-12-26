@@ -9,7 +9,7 @@ import { inputText } from '../testing/keyboard'
 
 describe('defineHorizontalRuleInputRule', () => {
   const { editor, n } = setupTest()
-  it('should insert a horizontal rule when typing "---" in an empty paragraph', async () => {
+  it('should insert when typing "---" in an empty paragraph', async () => {
     const doc = n.doc(n.p('<a>'))
     editor.set(doc)
 
@@ -24,7 +24,7 @@ describe('defineHorizontalRuleInputRule', () => {
     )
   })
 
-  it('should insert a horizontal rule when typing "---"  before some text', async () => {
+  it('should insert when typing "---"  before some text', async () => {
     const doc = n.doc(n.p('<a>123'))
     editor.set(doc)
 
@@ -39,7 +39,7 @@ describe('defineHorizontalRuleInputRule', () => {
     )
   })
 
-  it('should not insert a horizontal rule when typing "---"  after some text', async () => {
+  it('should not insert when typing "---"  after some text', async () => {
     const doc = n.doc(n.p('123<a>'))
     editor.set(doc)
 
@@ -49,7 +49,7 @@ describe('defineHorizontalRuleInputRule', () => {
     )
   })
 
-  it('should not insert a horizontal rule inside a code block', async () => {
+  it('should not insert inside a code block', async () => {
     const doc = n.doc(n.codeBlock('<a>'))
     editor.set(doc)
 

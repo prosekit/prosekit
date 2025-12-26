@@ -41,8 +41,8 @@ export interface SetNodeAttrsBetweenOptions {
  */
 export function setNodeAttrsBetween(options: SetNodeAttrsBetweenOptions): Command {
   return (state, dispatch) => {
-    const from = options.from ?? state.selection.$from.pos
-    const to = options.to ?? state.selection.$to.pos
+    const from = options.from ?? state.selection.from
+    const to = options.to ?? state.selection.to
     if (from > to) {
       return false
     }

@@ -1,10 +1,8 @@
 import {
   findNode,
   findNodes,
-  union,
 } from '@prosekit/core'
 import {
-  beforeEach,
   describe,
   expect,
   it,
@@ -13,11 +11,7 @@ import {
 
 import type { ImageAttrs } from '..'
 import type { Uploader } from '../../file'
-import {
-  defineTestExtension,
-  setupTest,
-  setupTestFromExtension,
-} from '../../testing'
+import { setupTest } from '../../testing'
 
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
@@ -35,8 +29,7 @@ describe('uploadImage', () => {
     const command = uploadImage({ uploader: mockUploader, file })
     expect(editor.exec(command)).toBe(true)
 
-    const { attrs } = findImage()
-    expect(attrs.src).toMatch(/^blob:/)
+    expect(findImage().attrs.src).toMatch(/^blob:/)
   })
 
   it('should insert image at specified position', () => {
@@ -50,11 +43,11 @@ describe('uploadImage', () => {
     )
     editor.set(doc)
 
-    const command = uploadImage({ uploader: mockUploader, file, pos: 7 })
+    const imagePos = 7
+    const command = uploadImage({ uploader: mockUploader, file, pos: imagePos })
     expect(editor.exec(command)).toBe(true)
 
-    const { pos } = findImage()
-    expect(pos).toBe(7)
+    expect(findImage().pos).toBe(imagePos)
   })
 
   it('should replace existing image when replace=true', () => {
@@ -79,9 +72,8 @@ describe('uploadImage', () => {
     })
     expect(editor.exec(command)).toBe(true)
 
-    const { attrs } = findImage()
-    expect(attrs.src).toMatch(/^blob:/)
-    expect(attrs.src).not.toBe('https://example.com/old.png')
+    expect(findImage().attrs.src).toMatch(/^blob:/)
+    expect(findImage().attrs.src).not.toBe('https://example.com/old.png')
   })
 
   it('should not replace when same src is already set', () => {
@@ -94,8 +86,6 @@ describe('uploadImage', () => {
     )
     editor.set(doc)
 
-    const { pos: imagePos } = findImage()
-
     const createObjectURLSpy = vi.spyOn(URL, 'createObjectURL')
     createObjectURLSpy.mockReturnValue(blobURL)
 
@@ -105,7 +95,7 @@ describe('uploadImage', () => {
     const command = uploadImage({
       uploader: mockUploader,
       file,
-      pos: imagePos,
+      pos: findImage().pos,
       replace: true,
     })
     const result = command(initialState, dispatch, editor.view)
@@ -176,8 +166,7 @@ describe('replaceImageURL', () => {
 
     replaceImageURL(editor.view, 'blob:old-url', 'https://example.com/new.png')
 
-    const { attrs } = findImage()
-    expect(attrs.src).toBe('https://example.com/new.png')
+    expect(findImage().attrs.src).toBe('https://example.com/new.png')
   })
 
   it('should replace multiple image URLs', () => {
@@ -243,7 +232,11 @@ function setup() {
   const mockUploader = vi.fn().mockResolvedValue('https://example.com/uploaded.png')
   const file = new File(['test'], 'test.png', { type: 'image/png' })
 
-  const findImage = (): { pos: number; attrs: ImageAttrs; node: ProseMirrorNode } => {
+  const findImage = (): {
+    pos: number
+    attrs: ImageAttrs
+    node: ProseMirrorNode
+  } => {
     const found = findNode(editor.state.doc, isImage)
     if (!found) {
       throw new Error('Image not found')
@@ -253,9 +246,17 @@ function setup() {
     return { pos, attrs, node }
   }
 
-  const findImageAttrs = (): ImageAttrs[] => {
-    return findNodes(editor.state.doc, isImage).map(({ node }) => node.attrs as ImageAttrs)
+  const findImages = () => {
+    return findNodes(editor.state.doc, isImage)
   }
 
-  return { editor, n, mockUploader, file, findImage, findImageAttrs }
+  const findImageURLs = (): string[] => {
+    return findImages().map(({ node }) => (node.attrs as ImageAttrs).src || '')
+  }
+
+  const countImages = (): number => {
+    return findImages().length
+  }
+
+  return { editor, n, mockUploader, file, findImage, findImageURLs, countImages }
 }

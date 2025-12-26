@@ -931,8 +931,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       shadcn-schema:
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.2.0
+        version: 0.2.0
       svelte-check:
         specifier: ^4.3.4
         version: 4.3.4(picomatch@4.0.3)(svelte@5.45.6)(typescript@5.9.3)
@@ -6482,8 +6482,8 @@ packages:
   server-dom-shim@1.0.2:
     resolution: {integrity: sha512-6MTS2ouF/fXZMUdPzAzPOXgeuIwj3wNianF4BYEmFC5XdCLIAkNkUSxHk0kW58nObQnyHc6wp4wL7xdt3m7X+Q==}
 
-  shadcn-schema@0.1.2:
-    resolution: {integrity: sha512-wrB9x3Vyxqz8gbUPq8QBH/uBRXYfYpgNGOSk7rBeSOuAq+sQ+MT0Qt3qk2V5znuBcUHbneU+jng8iHtbz7SlmA==}
+  shadcn-schema@0.2.0:
+    resolution: {integrity: sha512-YVWweyqpKp8ktZHX4DjewVa1iURgXg0kwlClcaCyhMO9e4GHenMh8sLkaR0m7hcohMV48mxLOL1HmjsD3yQktQ==}
 
   sharp@0.34.5:
     resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==}
@@ -14122,7 +14122,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.4.0
 
-  shadcn-schema@0.1.2:
+  shadcn-schema@0.2.0:
     dependencies:
       zod: 4.1.13
 

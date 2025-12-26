@@ -22,7 +22,7 @@ describe('NodeAction', () => {
   it('can apply node with attrs', () => {
     expect(n.codeBlock({ language: 'javascript' }, 'foo').toJSON()).toEqual({
       type: 'codeBlock',
-      attrs: { language: 'javascript' },
+      attrs: { language: 'javascript', lineNumbers: false },
       content: [{ text: 'foo', type: 'text' }],
     })
   })

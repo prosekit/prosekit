@@ -182,7 +182,7 @@ function defineHeading(): HeadingExtension {
 
 type CodeBlockExtension = Extension<{
   Nodes: {
-    codeBlock: { language: string }
+    codeBlock: { language: string; lineNumbers?: boolean }
   }
 }>
 
@@ -197,16 +197,23 @@ function defineCodeBlock(): CodeBlockExtension {
     code: true,
     defining: true,
     marks: '',
-    attrs: { language: { default: '', validate: 'string' } },
+    attrs: {
+      language: { default: '', validate: 'string' },
+      lineNumbers: { default: false, validate: 'boolean' },
+    },
     toDOM() {
       return ['pre', ['code', 0]]
     },
   })
 }
 
+interface BlockquoteAttrs {
+  variant: string
+}
+
 type BlockquoteExtension = Extension<{
   Nodes: {
-    blockquote: Attrs
+    blockquote: BlockquoteAttrs
   }
 }>
 
@@ -219,9 +226,13 @@ function defineBlockquote(): BlockquoteExtension {
     content: 'block+',
     group: 'block',
     defining: true,
+    attrs: {
+      variant: { default: '', validate: 'string' },
+    },
     parseDOM: [{ tag: 'blockquote' }],
-    toDOM() {
-      return ['blockquote', 0]
+    toDOM(node) {
+      const { variant } = node.attrs as BlockquoteAttrs
+      return ['blockquote', { 'data-variant': variant }, 0]
     },
   })
 }

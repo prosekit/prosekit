@@ -33,6 +33,10 @@ import {
   type SetNodeAttrsOptions,
 } from '../commands/set-node-attrs'
 import {
+  setNodeAttrsBetween,
+  type SetNodeAttrsBetweenOptions,
+} from '../commands/set-node-attrs-between'
+import {
   toggleWrap,
   type ToggleWrapOptions,
 } from '../commands/toggle-wrap'
@@ -77,6 +81,7 @@ export type BaseCommandsExtension = Extension<{
     toggleWrap: [options: ToggleWrapOptions]
     setBlockType: [options: SetBlockTypeOptions]
     setNodeAttrs: [options: SetNodeAttrsOptions]
+    setNodeAttrsBetween: [options: SetNodeAttrsBetweenOptions]
     insertDefaultBlock: [options?: InsertDefaultBlockOptions]
     selectAll: []
     selectBlock: []
@@ -107,6 +112,8 @@ export function defineBaseCommands(): BaseCommandsExtension {
     setBlockType,
 
     setNodeAttrs,
+
+    setNodeAttrsBetween,
 
     insertDefaultBlock,
 

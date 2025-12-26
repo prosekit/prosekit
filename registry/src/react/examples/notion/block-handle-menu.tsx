@@ -6,7 +6,6 @@ import { useEditorDerivedValue } from 'prosekit/react'
 import { useState } from 'react'
 
 import type { EditorExtension } from './extension'
-import type { ValidColor } from './color-extension'
 
 const POPUP_CLASSNAME =
   'origin-[var(--transform-origin)] rounded-md bg-[canvas] py-1 text-gray-900 shadow-lg shadow-gray-200 outline outline-1 outline-gray-200 transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300 w-50'
@@ -31,7 +30,7 @@ interface MenuItemInfo {
   key: string
   label: string
   isActive: boolean
-  isAvailable?: boolean
+  isAvailable: boolean
   iconClassName?: string
   shortcut?: string
   danger?: boolean
@@ -264,7 +263,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
         </Menu.Portal>
       </Menu.SubmenuRoot>
     )
-  } else {
+  } else if (props.item.isAvailable) {
     return (
       <Menu.Item
         className={clsx(ITEM_CLASSNAME, 'group')}
@@ -276,6 +275,8 @@ function BlockHandleItem(props: { item: ItemInfo }) {
         {!props.item.isActive && props.item.shortcut && <span className="opacity-50">{props.item.shortcut}</span>}
       </Menu.Item>
     )
+  } else {
+    return null
   }
 }
 

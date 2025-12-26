@@ -30,7 +30,7 @@ export interface SetNodeAttrsOptions {
 }
 
 /**
- * Returns a command that set the attributes of the current node.
+ * Returns a command that sets the attributes of the current node.
  *
  * @param options
  *
@@ -38,18 +38,21 @@ export interface SetNodeAttrsOptions {
  */
 export function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command {
   return (state, dispatch) => {
-    const nodeTypes = getNodeTypes(state.schema, type)
     let updatePos = -1
 
     if (pos == null) {
-      const found = findParentNodeOfType(nodeTypes, state.selection.$anchor)
+      const found = findParentNodeOfType(type, state.selection.$anchor)
       if (!found) {
         return false
       }
       updatePos = found.pos
     } else {
       const found = state.doc.nodeAt(pos)
-      if (!found || !nodeTypes.includes(found.type)) {
+      if (!found) {
+        return false
+      }
+      const nodeTypes = getNodeTypes(state.schema, type)
+      if (!nodeTypes.includes(found.type)) {
         return false
       }
       updatePos = pos

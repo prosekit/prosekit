@@ -170,7 +170,7 @@ describe('replaceImageURL', () => {
   })
 
   it('should replace multiple image URLs', () => {
-    const { editor, n, findImageAttrs } = setup()
+    const { editor, n, findImageURLs } = setup()
     const doc = n.doc(
       n.paragraph('hello'),
       n.image({ src: 'blob:old-url' }),
@@ -182,14 +182,11 @@ describe('replaceImageURL', () => {
 
     replaceImageURL(editor.view, 'blob:old-url', 'https://example.com/new.png')
 
-    const imageAttrs = findImageAttrs()
-    expect(imageAttrs).toHaveLength(2)
-    expect(imageAttrs[0].src).toBe('https://example.com/new.png')
-    expect(imageAttrs[1].src).toBe('https://example.com/new.png')
+    expect(findImageURLs()).toEqual(['https://example.com/new.png', 'https://example.com/new.png'])
   })
 
   it('should not replace images with different URLs', () => {
-    const { editor, n, findImageAttrs } = setup()
+    const { editor, n, findImageURLs } = setup()
     const doc = n.doc(
       n.paragraph('hello'),
       n.image({ src: 'blob:old-url' }),
@@ -200,10 +197,7 @@ describe('replaceImageURL', () => {
 
     replaceImageURL(editor.view, 'blob:old-url', 'https://example.com/new.png')
 
-    const imageAttrs = findImageAttrs()
-    expect(imageAttrs).toHaveLength(2)
-    expect(imageAttrs[0].src).toBe('https://example.com/new.png')
-    expect(imageAttrs[1].src).toBe('blob:different-url')
+    expect(findImageURLs()).toEqual(['https://example.com/new.png', 'blob:different-url'])
   })
 
   it('should do nothing when no images match', () => {

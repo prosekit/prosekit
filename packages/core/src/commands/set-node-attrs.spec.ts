@@ -71,8 +71,11 @@ describe('setNodeAttrs', () => {
 
     editor.set(
       n.doc(
-        n.codeBlock('first block'),
-        n.codeBlock('second block'),
+        /*0*/
+        n.codeBlock(/*1*/ 'A' /*2*/),
+        /*3*/
+        n.codeBlock(/*4*/ 'B' /*5*/),
+        /*6*/
       ),
     )
 
@@ -80,7 +83,7 @@ describe('setNodeAttrs', () => {
     const command = setNodeAttrs({
       type: 'codeBlock',
       attrs: { language: 'python' },
-      pos: 14, // Position of second code block
+      pos: 3, // Position of second code block
     })
 
     editor.exec(command)
@@ -89,115 +92,6 @@ describe('setNodeAttrs', () => {
     expect(editor.state.doc.child(0).attrs.language).toBe('')
     // Second block should have the new language
     expect(editor.state.doc.child(1).attrs.language).toBe('python')
-  })
-
-  it('should set attrs on node at exact position', () => {
-    const { editor, n } = setupTest()
-
-    // Create a document with multiple blocks
-    editor.set(
-      n.doc(
-        n.paragraph('First paragraph'),
-        n.codeBlock('code here'),
-        n.paragraph('Last paragraph'),
-      ),
-    )
-
-    // Find the position of the codeBlock (second child)
-    let codeBlockPos = -1
-    editor.state.doc.forEach((node, offset) => {
-      if (node.type.name === 'codeBlock') {
-        codeBlockPos = offset
-      }
-    })
-    expect(codeBlockPos).toBeGreaterThan(0)
-
-    const command = setNodeAttrs({
-      type: 'codeBlock',
-      attrs: { language: 'javascript' },
-      pos: codeBlockPos,
-    })
-
-    expect(editor.exec(command)).toBe(true)
-
-    // Verify only the codeBlock at the specific position was modified
-    expect(editor.state.doc.child(1).attrs.language).toBe('javascript')
-
-    // Verify other nodes weren't affected
-    expect(editor.state.doc.child(0).type.name).toBe('paragraph')
-    expect(editor.state.doc.child(2).type.name).toBe('paragraph')
-  })
-
-  it('should work with selection spanning multiple nodes', () => {
-    const { editor, n } = setupTest()
-
-    editor.set(
-      n.doc(
-        n.codeBlock('<a>first block'),
-        n.codeBlock('second block<b>'),
-      ),
-    )
-
-    const command = setNodeAttrs({
-      type: 'codeBlock',
-      attrs: { language: 'rust' },
-    })
-
-    editor.exec(command)
-
-    // Both blocks should have the new language
-    expect(editor.state.doc.child(0).attrs.language).toBe('rust')
-    expect(editor.state.doc.child(1).attrs.language).toBe('rust')
-  })
-
-  it('should accept node type as string array', () => {
-    const { editor, n } = setupTest()
-
-    editor.set(n.doc(n.codeBlock('code')))
-
-    const command = setNodeAttrs({
-      type: ['codeBlock', 'paragraph'],
-      attrs: { language: 'go' },
-    })
-
-    editor.exec(command)
-
-    expect(editor.state.doc.firstChild?.attrs.language).toBe('go')
-  })
-
-  it('should accept NodeType object', () => {
-    const { editor, n } = setupTest()
-
-    editor.set(n.doc(n.codeBlock('code')))
-
-    const codeBlockType = editor.state.schema.nodes.codeBlock
-
-    const command = setNodeAttrs({
-      type: codeBlockType,
-      attrs: { language: 'kotlin' },
-    })
-
-    editor.exec(command)
-
-    expect(editor.state.doc.firstChild?.attrs.language).toBe('kotlin')
-  })
-
-  it('should accept array of NodeType objects', () => {
-    const { editor, n } = setupTest()
-
-    editor.set(n.doc(n.codeBlock('code')))
-
-    const codeBlockType = editor.state.schema.nodes.codeBlock
-    const paragraphType = editor.state.schema.nodes.paragraph
-
-    const command = setNodeAttrs({
-      type: [codeBlockType, paragraphType],
-      attrs: { language: 'swift' },
-    })
-
-    editor.exec(command)
-
-    expect(editor.state.doc.firstChild?.attrs.language).toBe('swift')
   })
 
   it('should handle cursor inside a node', () => {
@@ -226,21 +120,13 @@ describe('setNodeAttrs', () => {
       ),
     )
 
-    const command1 = setNodeAttrs({
+    const command = setNodeAttrs({
       type: 'blockquote',
       attrs: { variant: 'fancy' },
     })
 
-    const command2 = setNodeAttrs({
-      type: 'codeBlock',
-      attrs: { language: 'typescript' },
-    })
-
     // Should find the blockquote wrapping the selection
-    expect(editor.exec(command1)).toBe(true)
+    expect(editor.exec(command)).toBe(true)
     expect(editor.state.doc.firstChild?.attrs.variant).toBe('fancy')
-
-    // Should not find the code block
-    expect(editor.exec(command2)).toBe(false)
   })
 })

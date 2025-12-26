@@ -243,4 +243,594 @@ describe('setNodeAttrs', () => {
     // Should not find the code block
     expect(editor.exec(command2)).toBe(false)
   })
+
+  it.only('DEBUG 1', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(
+      n.doc(
+        n.blockquote(
+          { variant: 'variant-a' },
+          n.paragraph('Paragraph A'),
+          n.blockquote(
+            { variant: 'variant-b' },
+            n.paragraph('Paragraph B'),
+            n.blockquote(
+              { variant: 'variant-c' },
+              n.paragraph('Paragraph <a>C'),
+            ),
+          ),
+        ),
+      ),
+    )
+
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "attrs": {
+              "variant": "variant-a",
+            },
+            "content": [
+              {
+                "content": [
+                  {
+                    "text": "Paragraph A",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              {
+                "attrs": {
+                  "variant": "variant-b",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph B",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-c",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph C",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "blockquote",
+          },
+        ],
+        "type": "doc",
+      }
+    `)
+
+    const command = setNodeAttrs({
+      type: 'blockquote',
+      attrs: { variant: 'fancy' },
+    })
+
+    expect(editor.exec(command)).toBe(true)
+
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "attrs": {
+              "variant": "variant-a",
+            },
+            "content": [
+              {
+                "content": [
+                  {
+                    "text": "Paragraph A",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              {
+                "attrs": {
+                  "variant": "variant-b",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph B",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "fancy",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph C",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "blockquote",
+          },
+        ],
+        "type": "doc",
+      }
+    `)
+  })
+
+  it.only('DEBUG 2', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(
+      n.doc(
+        n.blockquote(
+          { variant: 'variant-a' },
+          n.paragraph('Paragraph A'),
+          n.blockquote(
+            { variant: 'variant-b' },
+            n.paragraph('Paragraph <a>B'),
+            n.blockquote(
+              { variant: 'variant-c' },
+              n.paragraph('Paragraph <b>C'),
+            ),
+          ),
+        ),
+      ),
+    )
+
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "attrs": {
+              "variant": "variant-a",
+            },
+            "content": [
+              {
+                "content": [
+                  {
+                    "text": "Paragraph A",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              {
+                "attrs": {
+                  "variant": "variant-b",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph B",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-c",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph C",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "blockquote",
+          },
+        ],
+        "type": "doc",
+      }
+    `)
+
+    const command = setNodeAttrs({
+      type: 'blockquote',
+      attrs: { variant: 'fancy' },
+    })
+
+    expect(editor.exec(command)).toBe(true)
+
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "attrs": {
+              "variant": "variant-a",
+            },
+            "content": [
+              {
+                "content": [
+                  {
+                    "text": "Paragraph A",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              {
+                "attrs": {
+                  "variant": "fancy",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph B",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "fancy",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph C",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "blockquote",
+          },
+        ],
+        "type": "doc",
+      }
+    `)
+  })
+
+  it.only('DEBUG 4', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(
+      n.doc(
+        n.blockquote(
+          { variant: 'variant-a' },
+          n.paragraph('Paragraph A'),
+          n.blockquote(
+            { variant: 'variant-b' },
+            n.paragraph('Paragraph B'),
+            n.blockquote(
+              { variant: 'variant-c' },
+              n.paragraph('Paragraph C'),
+            ),
+            n.paragraph('Paragraph <a>D'),
+          ),
+          n.blockquote(
+            { variant: 'variant-e' },
+            n.paragraph('Paragraph E'),
+            n.blockquote(
+              { variant: 'variant-f' },
+              n.paragraph('Paragraph F'),
+            ),
+            n.paragraph('Paragraph <b>G'),
+            n.blockquote(
+              { variant: 'variant-h' },
+              n.paragraph('Paragraph h'),
+            ),
+          ),
+        ),
+      ),
+    )
+
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "attrs": {
+              "variant": "variant-a",
+            },
+            "content": [
+              {
+                "content": [
+                  {
+                    "text": "Paragraph A",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              {
+                "attrs": {
+                  "variant": "variant-b",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph B",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-c",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph C",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph D",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                ],
+                "type": "blockquote",
+              },
+              {
+                "attrs": {
+                  "variant": "variant-e",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph E",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-f",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph F",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph G",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-h",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph h",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "blockquote",
+          },
+        ],
+        "type": "doc",
+      }
+    `)
+
+    const command = setNodeAttrs({
+      type: 'blockquote',
+      attrs: { variant: 'fancy' },
+    })
+
+    expect(editor.exec(command)).toBe(true)
+
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "attrs": {
+              "variant": "variant-a",
+            },
+            "content": [
+              {
+                "content": [
+                  {
+                    "text": "Paragraph A",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              {
+                "attrs": {
+                  "variant": "fancy",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph B",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-c",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph C",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph D",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                ],
+                "type": "blockquote",
+              },
+              {
+                "attrs": {
+                  "variant": "fancy",
+                },
+                "content": [
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph E",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "fancy",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph F",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                  {
+                    "content": [
+                      {
+                        "text": "Paragraph G",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  {
+                    "attrs": {
+                      "variant": "variant-h",
+                    },
+                    "content": [
+                      {
+                        "content": [
+                          {
+                            "text": "Paragraph h",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "blockquote",
+          },
+        ],
+        "type": "doc",
+      }
+    `)
+  })
 })

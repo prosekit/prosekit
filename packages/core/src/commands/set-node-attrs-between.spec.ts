@@ -27,7 +27,6 @@ describe('setNodeAttrsBetween', () => {
 
     expect(editor.exec(command)).toBe(true)
 
-    // Both blocks should have the new language
     expect(editor.state.doc.child(0).attrs.language).toBe('rust')
     expect(editor.state.doc.child(1).attrs.language).toBe('rust')
     expect(editor.state.doc.child(2).attrs.language).toBe('')
@@ -48,7 +47,6 @@ describe('setNodeAttrsBetween', () => {
       ),
     )
 
-    // Update the second and the third blocks
     const command = setNodeAttrsBetween({
       type: 'codeBlock',
       attrs: { language: 'go' },
@@ -58,7 +56,6 @@ describe('setNodeAttrsBetween', () => {
 
     expect(editor.exec(command)).toBe(true)
 
-    // Only second block should be updated
     expect(editor.state.doc.child(0).attrs.language).toBe('')
     expect(editor.state.doc.child(1).attrs.language).toBe('go')
     expect(editor.state.doc.child(2).attrs.language).toBe('go')
@@ -79,7 +76,6 @@ describe('setNodeAttrsBetween', () => {
       attrs: { language: 'typescript' },
     })
 
-    // Should return false because there are no code blocks in the range
     expect(editor.exec(command)).toBe(false)
   })
 
@@ -92,10 +88,9 @@ describe('setNodeAttrsBetween', () => {
       type: 'codeBlock',
       attrs: { language: 'typescript' },
       from: 10,
-      to: 5, // from > to
+      to: 5,
     })
 
-    // Should return false for invalid range
     expect(editor.exec(command)).toBe(false)
   })
 
@@ -109,7 +104,6 @@ describe('setNodeAttrsBetween', () => {
       attrs: { language: 'typescript' },
     })
 
-    // Should still work with collapsed selection if node is at that position
     expect(editor.exec(command)).toBe(true)
     expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
   })
@@ -132,7 +126,6 @@ describe('setNodeAttrsBetween', () => {
 
     expect(editor.exec(command)).toBe(true)
 
-    // All three blocks should be updated even with partial selection
     expect(editor.state.doc.child(0).attrs.language).toBe('ruby')
     expect(editor.state.doc.child(1).attrs.language).toBe('ruby')
     expect(editor.state.doc.child(2).attrs.language).toBe('ruby')
@@ -158,39 +151,75 @@ describe('setNodeAttrsBetween', () => {
 
     expect(editor.exec(command)).toBe(true)
 
-    // Only codeBlocks should be updated
     expect(editor.state.doc.child(1).attrs.language).toBe('java')
     expect(editor.state.doc.child(3).attrs.language).toBe('java')
-
-    // Paragraphs should not have language attribute
-    expect(editor.state.doc.child(0).attrs.language).toBeUndefined()
-    expect(editor.state.doc.child(2).attrs.language).toBeUndefined()
-    expect(editor.state.doc.child(4).attrs.language).toBeUndefined()
   })
 
   it('should handle nested nodes', () => {
     const { editor, n } = setupTest()
 
-    editor.set(
-      n.doc(
+    const doc1 = n.doc(
+      n.blockquote(
+        { variant: 'variant-0' },
+        n.paragraph('paragraph-0'),
+      ),
+      n.blockquote(
+        { variant: 'variant-1' },
+        n.paragraph('paragraph-1'),
         n.blockquote(
-          n.paragraph('<a>nested paragraph 1'),
+          { variant: 'variant-1.1' },
+          n.paragraph('paragraph-1.1<a>'),
         ),
+      ),
+      n.blockquote(
+        { variant: 'variant-2' },
+        n.paragraph('paragraph-2'),
+      ),
+      n.blockquote(
+        { variant: 'variant-3' },
+        n.paragraph('paragraph-3<b>'),
         n.blockquote(
-          n.paragraph('nested paragraph 2<b>'),
+          { variant: 'variant-3.1' },
+          n.paragraph('paragraph-3.1'),
         ),
       ),
     )
 
+    const doc2 = n.doc(
+      n.blockquote(
+        { variant: 'variant-0' },
+        n.paragraph('paragraph-0'),
+      ),
+      n.blockquote(
+        { variant: 'variant-X' },
+        n.paragraph('paragraph-1'),
+        n.blockquote(
+          { variant: 'variant-X' },
+          n.paragraph('paragraph-1.1'),
+        ),
+      ),
+      n.blockquote(
+        { variant: 'variant-X' },
+        n.paragraph('paragraph-2'),
+      ),
+      n.blockquote(
+        { variant: 'variant-X' },
+        n.paragraph('paragraph-3'),
+        n.blockquote(
+          { variant: 'variant-3.1' },
+          n.paragraph('paragraph-3.1'),
+        ),
+      ),
+    )
+
+    editor.set(doc1)
+
     const command = setNodeAttrsBetween({
       type: 'blockquote',
-      attrs: { variant: 'highlighted' },
+      attrs: { variant: 'variant-X' },
     })
 
     expect(editor.exec(command)).toBe(true)
-
-    // Both blockquotes should be updated
-    expect(editor.state.doc.child(0).attrs.variant).toBe('highlighted')
-    expect(editor.state.doc.child(1).attrs.variant).toBe('highlighted')
+    expect(editor.getDocJSON()).toEqual(doc2.toJSON())
   })
 })

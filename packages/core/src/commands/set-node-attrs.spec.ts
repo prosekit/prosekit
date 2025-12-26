@@ -5,6 +5,7 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../testing'
+
 import { setNodeAttrs } from './set-node-attrs'
 
 describe('setNodeAttrs', () => {

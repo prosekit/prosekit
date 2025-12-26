@@ -5,6 +5,7 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../testing'
+
 import { setNodeAttrsBetween } from './set-node-attrs-between'
 
 describe('setNodeAttrsBetween', () => {

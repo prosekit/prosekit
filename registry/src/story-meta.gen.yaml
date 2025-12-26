@@ -88,6 +88,7 @@
   frameworks: [react, vue, preact, svelte]
 - name: view-adapter
   frameworks: [react, vue, preact, svelte, solid]
+  hidden: true
 - name: word-counter
   frameworks: [react, vue, preact, svelte]
 - name: yjs

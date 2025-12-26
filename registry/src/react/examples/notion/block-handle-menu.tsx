@@ -85,8 +85,6 @@ function turnIntoList(editor: Editor<EditorExtension>, attrs: ListAttrs) {
 function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
   const activeBlockType = getActiveBlockType(editor)
 
-  console.log('activeBlockType', activeBlockType)
-
   return [
     {
       key: 'turn-into',

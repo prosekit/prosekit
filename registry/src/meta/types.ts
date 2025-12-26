@@ -36,6 +36,7 @@ export interface ItemAccumulator {
   readonly dependencies: Set<string>
   readonly meta: {
     hasIcons: boolean
+    hidden: boolean
     readonly accumulatedFiles: Set<string>
     readonly internalDependencies: Set<string>
   }

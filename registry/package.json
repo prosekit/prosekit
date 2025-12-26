@@ -274,7 +274,7 @@
     "react-dom": "^19.2.1",
     "react-parallax-tilt": "^1.7.315",
     "react-tweet": "^3.2.2",
-    "shadcn-schema": "^0.1.2",
+    "shadcn-schema": "^0.2.0",
     "svelte-check": "^4.3.4",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",

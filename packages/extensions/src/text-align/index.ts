@@ -2,7 +2,7 @@ import {
   defineCommands,
   defineKeymap,
   defineNodeAttr,
-  setNodeAttrs,
+  setNodeAttrsBetween,
   union,
   type Extension,
   type PlainExtension,
@@ -74,7 +74,7 @@ export function setTextAlign({
   types: string[]
   value: string | null
 }): Command {
-  return setNodeAttrs({ type: types, attrs: { textAlign: value } })
+  return setNodeAttrsBetween({ type: types, attrs: { textAlign: value } })
 }
 
 /**

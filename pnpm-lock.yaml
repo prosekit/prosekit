@@ -405,8 +405,8 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6
       '@prosemirror-adapter/preact':
-        specifier: ^0.4.6
-        version: 0.4.6(preact@10.28.0)
+        specifier: ^0.5.1
+        version: 0.5.1(preact@10.28.0)
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -545,8 +545,8 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6
       '@prosemirror-adapter/react':
-        specifier: ^0.4.6
-        version: 0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: ^0.5.1
+        version: 0.5.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
     devDependencies:
       '@prosekit/config-tsdown':
         specifier: workspace:*
@@ -2690,16 +2690,16 @@ packages:
   '@prosemirror-adapter/core@0.4.6':
     resolution: {integrity: sha512-qbqd4u9IyDXXolFFmX1tzE000IpF9JbCiiwuSvqIh7lT9ZqjeMcyDVR/vxyM4oVY1sVyQQQj+WxHMAIhj7egVg==}
 
-  '@prosemirror-adapter/preact@0.4.6':
-    resolution: {integrity: sha512-LR+9yvFsZhdIsFwy72t/x66AC6A16jjGJg8+Byv2IULoFSNdhD5noo9+ht3nsGK5D12qk0V359sjTxH/+GUu3A==}
+  '@prosemirror-adapter/preact@0.5.1':
+    resolution: {integrity: sha512-nKANA/+kOVt+snqdGo2B8TgQZsPxljtLccyb1Z0hXykbu8PmUwmsMf67ILsYZqtj0HdvH3L9JrUCyqDhzAZCqA==}
     peerDependencies:
       preact: ^10.0.0
     peerDependenciesMeta:
       preact:
         optional: true
 
-  '@prosemirror-adapter/react@0.4.6':
-    resolution: {integrity: sha512-OvAjtFf+HCBFK5wMTY1eGYOLSZaGEoERK60bZxiYyS+yldQ9jEmQQ7xAKkzD0kQxIGrQHzzzYkmmC8P/E0yZfQ==}
+  '@prosemirror-adapter/react@0.5.1':
+    resolution: {integrity: sha512-kbFoBxQt8T1MW024uu/pLbUX7FK3oxFRQBxQDSwz58Hy5JfQuyEAjOxjtNlsrhE5Fl3OajYUW69YboiSdP4tjw==}
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -9551,7 +9551,7 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.4
 
-  '@prosemirror-adapter/preact@0.4.6(preact@10.28.0)':
+  '@prosemirror-adapter/preact@0.5.1(preact@10.28.0)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.6
       nanoid: 5.1.6
@@ -9561,7 +9561,7 @@ snapshots:
     optionalDependencies:
       preact: 10.28.0
 
-  '@prosemirror-adapter/react@0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@prosemirror-adapter/react@0.5.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.6
       nanoid: 5.1.6

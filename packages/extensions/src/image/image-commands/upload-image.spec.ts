@@ -16,12 +16,12 @@ import type {
 import type { Uploader } from '../../file'
 import { setupTest } from '../../testing'
 
+import { sleep } from '@ocavue/utils'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   replaceImageURL,
   uploadImage,
 } from './upload-image'
-import { sleep } from '@ocavue/utils'
 
 describe('uploadImage', () => {
   it('should insert image at current selection by default', async () => {
@@ -255,9 +255,5 @@ function setup() {
     return findImages().map(({ node }) => (node.attrs as ImageAttrs).src || '')
   }
 
-  const countImages = (): number => {
-    return findImages().length
-  }
-
-  return { editor, n, mockUploader, file, findImage, findImageURLs, countImages }
+  return { editor, n, mockUploader, file, findImage, findImageURLs }
 }

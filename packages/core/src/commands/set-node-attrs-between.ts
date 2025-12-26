@@ -32,7 +32,7 @@ export interface SetNodeAttrsBetweenOptions {
 }
 
 /**
- * Returns a command that set the attributes of all matching nodes between the
+ * Returns a command that sets the attributes of all matching nodes between the
  * `from` and `to` positions.
  *
  * @param options

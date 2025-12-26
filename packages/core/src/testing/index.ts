@@ -182,7 +182,7 @@ function defineHeading(): HeadingExtension {
 
 type CodeBlockExtension = Extension<{
   Nodes: {
-    codeBlock: { language: string }
+    codeBlock: { language: string; lineNumbers: boolean }
   }
 }>
 
@@ -197,7 +197,10 @@ function defineCodeBlock(): CodeBlockExtension {
     code: true,
     defining: true,
     marks: '',
-    attrs: { language: { default: '', validate: 'string' } },
+    attrs: {
+      language: { default: '', validate: 'string' },
+      lineNumbers: { default: false, validate: 'boolean' },
+    },
     toDOM() {
       return ['pre', ['code', 0]]
     },

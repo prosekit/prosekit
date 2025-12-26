@@ -31,14 +31,25 @@ describe('setNodeAttrs', () => {
 
     editor.set(n.doc(n.codeBlock('const x = 1')))
 
+    // Verify initial state
+    expect(editor.state.doc.firstChild?.attrs).toMatchObject({
+      language: '',
+      lineNumbers: false,
+    })
+
+    // Set multiple attributes at once
     const command = setNodeAttrs({
       type: 'codeBlock',
-      attrs: { language: 'javascript' },
+      attrs: { language: 'javascript', lineNumbers: true },
     })
 
     editor.exec(command)
 
-    expect(editor.state.doc.firstChild?.attrs.language).toBe('javascript')
+    // Verify both attributes were set
+    expect(editor.state.doc.firstChild?.attrs).toMatchObject({
+      language: 'javascript',
+      lineNumbers: true,
+    })
   })
 
   it('should return false when node type does not match', () => {

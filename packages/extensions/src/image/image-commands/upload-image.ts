@@ -79,7 +79,13 @@ export type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) 
  *
  * @public
  */
-export function uploadImage({ uploader, file, pos, replace = false, onError }: UploadImageOptions): Command {
+export function uploadImage({
+  uploader,
+  file,
+  pos,
+  replace = false,
+  onError,
+}: UploadImageOptions): Command {
   return (state, dispatch, view) => {
     const uploadTask = new UploadTask({ file, uploader })
     const objectURL = uploadTask.objectURL

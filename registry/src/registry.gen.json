@@ -1443,6 +1443,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": true,
         "story": "notion",
         "framework": "react",
         "accumulatedFiles": [
@@ -3117,6 +3118,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [

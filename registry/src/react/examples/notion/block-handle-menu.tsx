@@ -91,73 +91,73 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
           key: 'text',
           label: 'Text',
           iconClassName: 'i-lucide-type',
+          isActive: activeBlockType === 'text',
           onClick: () => {
             editor.commands.setParagraph()
           },
-          isActive: activeBlockType === 'text',
         },
         {
           key: 'h1',
           label: 'Heading 1',
           iconClassName: 'i-lucide-heading-1',
+          isActive: activeBlockType === 'h1',
           onClick: () => {
             editor.commands.setHeading({ level: 1 })
           },
-          isActive: activeBlockType === 'h1',
         },
         {
           key: 'h2',
           label: 'Heading 2',
           iconClassName: 'i-lucide-heading-2',
+          isActive: activeBlockType === 'h2',
           onClick: () => {
             editor.commands.setHeading({ level: 2 })
           },
-          isActive: activeBlockType === 'h2',
         },
         {
           key: 'h3',
           label: 'Heading 3',
           iconClassName: 'i-lucide-heading-3',
+          isActive: activeBlockType === 'h3',
           onClick: () => {
             editor.commands.setHeading({ level: 3 })
           },
-          isActive: activeBlockType === 'h3',
         },
         {
           key: 'bullet-list',
           label: 'Bullet list',
           iconClassName: 'i-lucide-list',
+          isActive: activeBlockType === 'bullet-list',
           onClick: () => {
             turnIntoList(editor, { kind: 'bullet' })
           },
-          isActive: activeBlockType === 'bullet-list',
         },
         {
           key: 'ordered-list',
           label: 'Ordered list',
           iconClassName: 'i-lucide-list-ordered',
+          isActive: activeBlockType === 'ordered-list',
           onClick: () => {
             turnIntoList(editor, { kind: 'ordered' })
           },
-          isActive: activeBlockType === 'ordered-list',
         },
         {
           key: 'task-list',
           label: 'Task list',
           iconClassName: 'i-lucide-list-checks',
+          isActive: activeBlockType === 'task-list',
           onClick: () => {
             turnIntoList(editor, { kind: 'task' })
           },
-          isActive: activeBlockType === 'task-list',
         },
         {
           key: 'toggle-list',
           label: 'Toggle list',
           iconClassName: 'i-lucide-list-collapse',
+          isActive: activeBlockType === 'toggle-list',
           onClick: () => {
             turnIntoList(editor, { kind: 'toggle' })
           },
-          isActive: activeBlockType === 'toggle-list',
         },
       ],
     },

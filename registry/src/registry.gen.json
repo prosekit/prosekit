@@ -37,6 +37,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "block-handle",
         "framework": "react",
         "accumulatedFiles": [
@@ -90,6 +91,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "blockquote",
         "framework": "react",
         "accumulatedFiles": [
@@ -140,6 +142,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "bold",
         "framework": "react",
         "accumulatedFiles": [
@@ -194,6 +197,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "change-tracking",
         "framework": "react",
         "accumulatedFiles": [
@@ -237,6 +241,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code",
         "framework": "react",
         "accumulatedFiles": [
@@ -290,6 +295,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block",
         "framework": "react",
         "accumulatedFiles": [
@@ -355,6 +361,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block-themes",
         "framework": "react",
         "accumulatedFiles": [
@@ -404,6 +411,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "drop-cursor",
         "framework": "react",
         "accumulatedFiles": [
@@ -451,6 +459,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "emoji-rules",
         "framework": "react",
         "accumulatedFiles": [
@@ -506,6 +515,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "full",
         "framework": "react",
         "accumulatedFiles": [
@@ -592,6 +602,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "gap-cursor",
         "framework": "react",
         "accumulatedFiles": [
@@ -642,6 +653,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "hard-break",
         "framework": "react",
         "accumulatedFiles": [
@@ -691,6 +703,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "heading",
         "framework": "react",
         "accumulatedFiles": [
@@ -742,6 +755,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "horizontal-rule",
         "framework": "react",
         "accumulatedFiles": [
@@ -793,6 +807,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "image-view",
         "framework": "react",
         "accumulatedFiles": [
@@ -843,6 +858,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "inline-menu",
         "framework": "react",
         "accumulatedFiles": [
@@ -893,6 +909,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "italic",
         "framework": "react",
         "accumulatedFiles": [
@@ -954,6 +971,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "keymap",
         "framework": "react",
         "accumulatedFiles": [
@@ -1002,6 +1020,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link",
         "framework": "react",
         "accumulatedFiles": [
@@ -1056,6 +1075,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link-mark-view",
         "framework": "react",
         "accumulatedFiles": [
@@ -1102,6 +1122,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list",
         "framework": "react",
         "accumulatedFiles": [
@@ -1159,6 +1180,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list-custom-checkbox",
         "framework": "react",
         "accumulatedFiles": [
@@ -1218,6 +1240,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "loro",
         "framework": "react",
         "accumulatedFiles": [
@@ -1271,6 +1294,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "mark-rule",
         "framework": "react",
         "accumulatedFiles": [
@@ -1306,6 +1330,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "minimal",
         "framework": "react",
         "accumulatedFiles": [
@@ -1344,6 +1369,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "placeholder",
         "framework": "react",
         "accumulatedFiles": [
@@ -1396,6 +1422,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "readonly",
         "framework": "react",
         "accumulatedFiles": [
@@ -1447,6 +1474,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "rtl",
         "framework": "react",
         "accumulatedFiles": [
@@ -1509,6 +1537,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-html",
         "framework": "react",
         "accumulatedFiles": [
@@ -1542,6 +1571,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-json",
         "framework": "react",
         "accumulatedFiles": [
@@ -1587,6 +1617,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-markdown",
         "framework": "react",
         "accumulatedFiles": [
@@ -1629,6 +1660,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "search",
         "framework": "react",
         "accumulatedFiles": [
@@ -1678,6 +1710,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "slash-menu",
         "framework": "react",
         "accumulatedFiles": [
@@ -1731,6 +1764,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "strike",
         "framework": "react",
         "accumulatedFiles": [
@@ -1780,6 +1814,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "table",
         "framework": "react",
         "accumulatedFiles": [
@@ -1833,6 +1868,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-align",
         "framework": "react",
         "accumulatedFiles": [
@@ -1892,6 +1928,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-color",
         "framework": "react",
         "accumulatedFiles": [
@@ -1942,6 +1979,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "toolbar",
         "framework": "react",
         "accumulatedFiles": [
@@ -2010,6 +2048,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "tweet",
         "framework": "react",
         "accumulatedFiles": [
@@ -2052,6 +2091,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "typography",
         "framework": "react",
         "accumulatedFiles": [
@@ -2096,6 +2136,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "underline",
         "framework": "react",
         "accumulatedFiles": [
@@ -2150,6 +2191,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "unmount",
         "framework": "react",
         "accumulatedFiles": [
@@ -2195,6 +2237,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu",
         "framework": "react",
         "accumulatedFiles": [
@@ -2258,6 +2301,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu-dynamic",
         "framework": "react",
         "accumulatedFiles": [
@@ -2314,6 +2358,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": true,
         "story": "view-adapter",
         "framework": "react",
         "accumulatedFiles": [
@@ -2362,6 +2407,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "word-counter",
         "framework": "react",
         "accumulatedFiles": [
@@ -2417,6 +2463,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "yjs",
         "framework": "react",
         "accumulatedFiles": [
@@ -2454,6 +2501,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2480,6 +2528,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2506,6 +2555,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2532,6 +2582,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2558,6 +2609,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2584,6 +2636,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2610,6 +2663,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2636,6 +2690,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2662,6 +2717,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2688,6 +2744,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2714,6 +2771,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2740,6 +2798,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2766,6 +2825,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2792,6 +2852,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2818,6 +2879,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2844,6 +2906,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2870,6 +2933,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2896,6 +2960,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2922,6 +2987,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2948,6 +3014,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -2974,6 +3041,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3000,6 +3068,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3026,6 +3095,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3052,6 +3122,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3078,6 +3149,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3104,6 +3176,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3130,6 +3203,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3156,6 +3230,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3182,6 +3257,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3208,6 +3284,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3235,6 +3312,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3261,6 +3339,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3285,6 +3364,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3318,6 +3398,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3354,6 +3435,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3386,6 +3468,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3418,6 +3501,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3453,6 +3537,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3492,6 +3577,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3532,6 +3618,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3576,6 +3663,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3625,6 +3713,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3661,6 +3750,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3696,6 +3786,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3733,6 +3824,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3775,6 +3867,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3807,6 +3900,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "react",
         "accumulatedFiles": [
@@ -3849,6 +3943,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "block-handle",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3901,6 +3996,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "blockquote",
         "framework": "vue",
         "accumulatedFiles": [
@@ -3950,6 +4046,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "bold",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4004,6 +4101,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "change-tracking",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4046,6 +4144,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4098,6 +4197,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4163,6 +4263,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block-themes",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4211,6 +4312,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "drop-cursor",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4257,6 +4359,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "emoji-rules",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4311,6 +4414,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "full",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4396,6 +4500,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "gap-cursor",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4445,6 +4550,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "hard-break",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4493,6 +4599,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "heading",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4543,6 +4650,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "horizontal-rule",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4593,6 +4701,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "image-view",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4642,6 +4751,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "inline-menu",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4691,6 +4801,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "italic",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4752,6 +4863,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "keymap",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4799,6 +4911,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4853,6 +4966,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link-mark-view",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4898,6 +5012,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list",
         "framework": "vue",
         "accumulatedFiles": [
@@ -4954,6 +5069,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list-custom-checkbox",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5013,6 +5129,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "loro",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5065,6 +5182,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "mark-rule",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5099,6 +5217,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "minimal",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5136,6 +5255,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "placeholder",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5188,6 +5308,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "readonly",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5238,6 +5359,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "rtl",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5300,6 +5422,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-html",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5333,6 +5456,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-json",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5378,6 +5502,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-markdown",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5419,6 +5544,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "search",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5467,6 +5593,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "slash-menu",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5519,6 +5646,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "strike",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5567,6 +5695,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "table",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5619,6 +5748,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-align",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5678,6 +5808,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-color",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5727,6 +5858,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "toolbar",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5772,6 +5904,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "typography",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5815,6 +5948,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "underline",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5869,6 +6003,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "unmount",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5913,6 +6048,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu",
         "framework": "vue",
         "accumulatedFiles": [
@@ -5976,6 +6112,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu-dynamic",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6031,6 +6168,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": true,
         "story": "view-adapter",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6078,6 +6216,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "word-counter",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6133,6 +6272,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "yjs",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6170,6 +6310,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6196,6 +6337,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6222,6 +6364,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6248,6 +6391,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6274,6 +6418,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6300,6 +6445,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6326,6 +6472,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6352,6 +6499,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6378,6 +6526,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6404,6 +6553,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6430,6 +6580,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6456,6 +6607,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6482,6 +6634,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6508,6 +6661,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6534,6 +6688,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6560,6 +6715,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6586,6 +6742,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6612,6 +6769,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6638,6 +6796,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6664,6 +6823,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6690,6 +6850,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6716,6 +6877,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6742,6 +6904,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6768,6 +6931,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6794,6 +6958,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6820,6 +6985,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6846,6 +7012,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6872,6 +7039,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6898,6 +7066,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6925,6 +7094,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6951,6 +7121,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6975,6 +7146,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7008,6 +7180,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7043,6 +7216,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7075,6 +7249,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7107,6 +7282,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7142,6 +7318,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7181,6 +7358,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7221,6 +7399,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7265,6 +7444,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7314,6 +7494,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7350,6 +7531,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7385,6 +7567,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7422,6 +7605,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7464,6 +7648,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7496,6 +7681,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "vue",
         "accumulatedFiles": [
@@ -7539,6 +7725,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "block-handle",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7592,6 +7779,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "blockquote",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7642,6 +7830,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "bold",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7696,6 +7885,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "change-tracking",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7739,6 +7929,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7792,6 +7983,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7857,6 +8049,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block-themes",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7906,6 +8099,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "drop-cursor",
         "framework": "preact",
         "accumulatedFiles": [
@@ -7953,6 +8147,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "emoji-rules",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8008,6 +8203,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "full",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8094,6 +8290,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "gap-cursor",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8144,6 +8341,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "hard-break",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8193,6 +8391,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "heading",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8244,6 +8443,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "horizontal-rule",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8295,6 +8495,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "image-view",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8345,6 +8546,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "inline-menu",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8395,6 +8597,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "italic",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8456,6 +8659,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "keymap",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8504,6 +8708,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8558,6 +8763,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link-mark-view",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8604,6 +8810,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8661,6 +8868,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list-custom-checkbox",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8720,6 +8928,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "loro",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8773,6 +8982,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "mark-rule",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8808,6 +9018,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "minimal",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8846,6 +9057,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "placeholder",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8898,6 +9110,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "readonly",
         "framework": "preact",
         "accumulatedFiles": [
@@ -8949,6 +9162,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "rtl",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9011,6 +9225,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-html",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9044,6 +9259,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-json",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9089,6 +9305,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-markdown",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9131,6 +9348,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "search",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9180,6 +9398,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "slash-menu",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9233,6 +9452,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "strike",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9282,6 +9502,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "table",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9335,6 +9556,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-align",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9394,6 +9616,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-color",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9444,6 +9667,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "toolbar",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9490,6 +9714,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "typography",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9534,6 +9759,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "underline",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9588,6 +9814,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "unmount",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9633,6 +9860,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9696,6 +9924,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu-dynamic",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9752,6 +9981,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": true,
         "story": "view-adapter",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9800,6 +10030,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "word-counter",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9855,6 +10086,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "yjs",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9892,6 +10124,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9918,6 +10151,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9944,6 +10178,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9970,6 +10205,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9996,6 +10232,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10022,6 +10259,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10048,6 +10286,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10074,6 +10313,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10100,6 +10340,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10126,6 +10367,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10152,6 +10394,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10178,6 +10421,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10204,6 +10448,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10230,6 +10475,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10256,6 +10502,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10282,6 +10529,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10308,6 +10556,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10334,6 +10583,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10360,6 +10610,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10386,6 +10637,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10412,6 +10664,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10438,6 +10691,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10464,6 +10718,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10490,6 +10745,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10516,6 +10772,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10542,6 +10799,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10568,6 +10826,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10594,6 +10853,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10620,6 +10880,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10647,6 +10908,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10673,6 +10935,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10697,6 +10960,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10730,6 +10994,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10766,6 +11031,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10799,6 +11065,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10831,6 +11098,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10866,6 +11134,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10905,6 +11174,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10945,6 +11215,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -10989,6 +11260,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11038,6 +11310,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11074,6 +11347,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11109,6 +11383,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11146,6 +11421,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11188,6 +11464,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11220,6 +11497,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "preact",
         "accumulatedFiles": [
@@ -11262,6 +11540,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "block-handle",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11314,6 +11593,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "blockquote",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11363,6 +11643,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "bold",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11416,6 +11697,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "change-tracking",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11458,6 +11740,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11510,6 +11793,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11575,6 +11859,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block-themes",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11623,6 +11908,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "drop-cursor",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11669,6 +11955,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "emoji-rules",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11723,6 +12010,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "full",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11808,6 +12096,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "gap-cursor",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11857,6 +12146,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "hard-break",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11905,6 +12195,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "heading",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -11955,6 +12246,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "horizontal-rule",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12005,6 +12297,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "image-view",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12054,6 +12347,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "inline-menu",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12103,6 +12397,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "italic",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12159,6 +12454,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "keymap",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12205,6 +12501,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12259,6 +12556,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "link-mark-view",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12304,6 +12602,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12360,6 +12659,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "list-custom-checkbox",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12419,6 +12719,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "loro",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12471,6 +12772,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "mark-rule",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12505,6 +12807,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "minimal",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12542,6 +12845,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "placeholder",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12589,6 +12893,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "readonly",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12638,6 +12943,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "rtl",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12699,6 +13005,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-html",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12731,6 +13038,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-json",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12775,6 +13083,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "save-markdown",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12816,6 +13125,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "search",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12864,6 +13174,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "slash-menu",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12916,6 +13227,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "strike",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -12964,6 +13276,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "table",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13016,6 +13329,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-align",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13075,6 +13389,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "text-color",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13124,6 +13439,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "toolbar",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13169,6 +13485,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "typography",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13212,6 +13529,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "underline",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13266,6 +13584,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "unmount",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13310,6 +13629,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13372,6 +13692,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "user-menu-dynamic",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13427,6 +13748,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": true,
         "story": "view-adapter",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13474,6 +13796,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "word-counter",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13529,6 +13852,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "yjs",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13566,6 +13890,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13592,6 +13917,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13618,6 +13944,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13644,6 +13971,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13670,6 +13998,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13696,6 +14025,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13722,6 +14052,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13748,6 +14079,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13774,6 +14106,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13800,6 +14133,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13826,6 +14160,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13852,6 +14187,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13878,6 +14214,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13904,6 +14241,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13930,6 +14268,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13956,6 +14295,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13982,6 +14322,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14008,6 +14349,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14034,6 +14376,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14060,6 +14403,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14086,6 +14430,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14112,6 +14457,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14138,6 +14484,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14164,6 +14511,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14190,6 +14538,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14216,6 +14565,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14242,6 +14592,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14268,6 +14619,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14294,6 +14646,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14321,6 +14674,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14347,6 +14701,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14371,6 +14726,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14404,6 +14760,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14439,6 +14796,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14471,6 +14829,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14503,6 +14862,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14537,6 +14897,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14576,6 +14937,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14615,6 +14977,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14659,6 +15022,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14708,6 +15072,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14744,6 +15109,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14779,6 +15145,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14816,6 +15183,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14858,6 +15226,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14890,6 +15259,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14933,6 +15303,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "block-handle",
         "framework": "solid",
         "accumulatedFiles": [
@@ -14986,6 +15357,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "blockquote",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15036,6 +15408,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "bold",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15088,6 +15461,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15141,6 +15515,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15206,6 +15581,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "code-block-themes",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15255,6 +15631,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "drop-cursor",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15302,6 +15679,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "emoji-rules",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15357,6 +15735,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "full",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15449,6 +15828,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "hard-break",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15498,6 +15878,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "heading",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15550,6 +15931,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "italic",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15594,6 +15976,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "minimal",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15632,6 +16015,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "placeholder",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15684,6 +16068,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "readonly",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15735,6 +16120,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "rtl",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15810,6 +16196,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "strike",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15859,6 +16246,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "underline",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15913,6 +16301,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "unmount",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15961,6 +16350,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": true,
         "story": "view-adapter",
         "framework": "solid",
         "accumulatedFiles": [
@@ -15995,6 +16385,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16021,6 +16412,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16047,6 +16439,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16073,6 +16466,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16099,6 +16493,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16125,6 +16520,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16151,6 +16547,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16177,6 +16574,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16203,6 +16601,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16229,6 +16628,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16255,6 +16655,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16281,6 +16682,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16307,6 +16709,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16333,6 +16736,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16359,6 +16763,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16383,6 +16788,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16409,6 +16815,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16433,6 +16840,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16467,6 +16875,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16503,6 +16912,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16536,6 +16946,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16569,6 +16980,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16604,6 +17016,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16643,6 +17056,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16683,6 +17097,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16733,6 +17148,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16770,6 +17186,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16806,6 +17223,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16844,6 +17262,7 @@
       ],
       "meta": {
         "hasIcons": true,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [
@@ -16887,6 +17306,7 @@
       ],
       "meta": {
         "hasIcons": false,
+        "hidden": false,
         "story": "",
         "framework": "solid",
         "accumulatedFiles": [

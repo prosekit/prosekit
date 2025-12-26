@@ -79,8 +79,9 @@ import type {
 export function queueExtension(editor: Editor, extension: Extension): VoidFunction {
   let canceled = false
   let dispose: VoidFunction | undefined
-  let timeout = setTimeout(() => {
+  const timeout = setTimeout(() => {
     if (canceled) return
+    dispose?.()
     dispose = editor.use(extension)
   })
 
@@ -88,10 +89,8 @@ export function queueExtension(editor: Editor, extension: Extension): VoidFuncti
     canceled = true
     clearTimeout(timeout)
     setTimeout(() => {
-      if (dispose) {
-        dispose()
-        dispose = undefined
-      }
+      dispose?.()
+      dispose = undefined
     })
   }
 }

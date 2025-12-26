@@ -46,6 +46,7 @@ export function setNodeAttrs(options: SetNodeAttrsOptions): Command {
         positions.push(pos)
       }
       if (!dispatch && positions.length > 0) {
+        // Skip the rest of the nodes
         return false
       }
     })

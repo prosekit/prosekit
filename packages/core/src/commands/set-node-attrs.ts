@@ -4,6 +4,7 @@ import type {
 } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
+import { findParentNodeOfType } from '../utils/find-parent-node-of-type'
 import { getNodeTypes } from '../utils/get-node-types'
 
 /**
@@ -12,8 +13,6 @@ import { getNodeTypes } from '../utils/get-node-types'
 export interface SetNodeAttrsOptions {
   /**
    * The type of node to set the attributes of.
-   *
-   * If current node is not of this type, the command will do nothing.
    */
   type: string | NodeType | string[] | NodeType[]
 
@@ -23,43 +22,46 @@ export interface SetNodeAttrsOptions {
   attrs: Attrs
 
   /**
-   * The position of the node. Defaults to the position of the wrapping node
-   * containing the current selection.
+   * The document position of the node to update. If not provided, the command
+   * will find the closest ancestor node that matches the type based on the
+   * anchor position of the selection.
    */
   pos?: number
 }
 
 /**
- * Returns a command that set the attributes of the current node.
+ * Returns a command that sets the attributes of the current node.
+ *
+ * @param options
  *
  * @public
  */
-export function setNodeAttrs(options: SetNodeAttrsOptions): Command {
+export function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command {
   return (state, dispatch) => {
-    const nodeTypes = getNodeTypes(state.schema, options.type)
-    const from = options.pos ?? state.selection.from
-    const to = options.pos ?? state.selection.to
-    const positions: number[] = []
+    let updatePos: number
 
-    state.doc.nodesBetween(from, to, (node, pos) => {
-      if (nodeTypes.includes(node.type)) {
-        positions.push(pos)
-      }
-      if (!dispatch && positions.length > 0) {
+    if (pos == null) {
+      const found = findParentNodeOfType(type, state.selection.$anchor)
+      if (!found) {
         return false
       }
-    })
-
-    if (positions.length === 0) {
-      return false
+      updatePos = found.pos
+    } else {
+      const found = state.doc.nodeAt(pos)
+      if (!found) {
+        return false
+      }
+      const nodeTypes = getNodeTypes(state.schema, type)
+      if (!nodeTypes.includes(found.type)) {
+        return false
+      }
+      updatePos = pos
     }
 
     if (dispatch) {
       const { tr } = state
-      for (const pos of positions) {
-        for (const [key, value] of Object.entries(options.attrs)) {
-          tr.setNodeAttribute(pos, key, value)
-        }
+      for (const [key, value] of Object.entries(attrs)) {
+        tr.setNodeAttribute(updatePos, key, value)
       }
       dispatch(tr)
     }

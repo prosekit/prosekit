@@ -33,6 +33,10 @@ export {
   type SetNodeAttrsOptions,
 } from './commands/set-node-attrs'
 export {
+  setNodeAttrsBetween,
+  type SetNodeAttrsBetweenOptions,
+} from './commands/set-node-attrs-between'
+export {
   toggleMark,
   type ToggleMarkOptions,
 } from './commands/toggle-mark'

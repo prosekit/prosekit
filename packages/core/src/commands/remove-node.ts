@@ -14,8 +14,8 @@ export interface RemoveNodeOptions {
   type: string | NodeType
 
   /**
-   * The document position to start searching node. By default it will be the
-   * anchor position of current selection.
+   * The document position to start searching for the node. By default, it will
+   * use the anchor position of current selection.
    */
   pos?: number
 }

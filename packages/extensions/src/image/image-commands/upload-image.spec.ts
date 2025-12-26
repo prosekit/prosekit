@@ -1,7 +1,9 @@
+import { sleep } from '@ocavue/utils'
 import {
   findNode,
   findNodes,
 } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   describe,
   expect,
@@ -16,8 +18,6 @@ import type {
 import type { Uploader } from '../../file'
 import { setupTest } from '../../testing'
 
-import { sleep } from '@ocavue/utils'
-import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   replaceImageURL,
   uploadImage,

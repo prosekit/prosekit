@@ -1,0 +1,208 @@
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
+import { setupTest } from '../testing'
+import { setNodeAttrs } from './set-node-attrs'
+
+describe('setNodeAttrs', () => {
+  it('should set attributes on a code block node', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('const x = 1')))
+
+    // Get the initial language attribute (should be empty string by default)
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('')
+
+    // Set the language attribute
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'typescript' },
+    })
+
+    expect(command(editor.state, editor.view.dispatch)).toBe(true)
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
+  })
+
+  it('should set multiple attributes at once', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('const x = 1')))
+
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'javascript' },
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('javascript')
+  })
+
+  it('should return false when node type does not match', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.paragraph('Hello world')))
+
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'typescript' },
+    })
+
+    // Should return false because paragraph is not a codeBlock
+    expect(command(editor.state, editor.view.dispatch)).toBe(false)
+  })
+
+  it('should set attributes at a specific position', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(
+      n.doc(
+        n.codeBlock('first block'),
+        n.codeBlock('second block'),
+      ),
+    )
+
+    // Set attribute on the second code block (position after first block)
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'python' },
+      pos: 14, // Position of second code block
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    // First block should still have default language
+    expect(editor.state.doc.child(0).attrs.language).toBe('')
+    // Second block should have the new language
+    expect(editor.state.doc.child(1).attrs.language).toBe('python')
+  })
+
+  it('should work with selection spanning multiple nodes', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(
+      n.doc(
+        n.codeBlock('<a>first block'),
+        n.codeBlock('second block<b>'),
+      ),
+    )
+
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'rust' },
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    // Both blocks should have the new language
+    expect(editor.state.doc.child(0).attrs.language).toBe('rust')
+    expect(editor.state.doc.child(1).attrs.language).toBe('rust')
+  })
+
+  it('should accept node type as string array', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('code')))
+
+    const command = setNodeAttrs({
+      type: ['codeBlock', 'paragraph'],
+      attrs: { language: 'go' },
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('go')
+  })
+
+  it('should accept NodeType object', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('code')))
+
+    const codeBlockType = editor.state.schema.nodes.codeBlock
+
+    const command = setNodeAttrs({
+      type: codeBlockType,
+      attrs: { language: 'kotlin' },
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('kotlin')
+  })
+
+  it('should accept array of NodeType objects', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('code')))
+
+    const codeBlockType = editor.state.schema.nodes.codeBlock
+    const paragraphType = editor.state.schema.nodes.paragraph
+
+    const command = setNodeAttrs({
+      type: [codeBlockType, paragraphType],
+      attrs: { language: 'swift' },
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('swift')
+  })
+
+  it('should only set attrs when dispatch is provided', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('const x = 1')))
+
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'typescript' },
+    })
+
+    // Call without dispatch - should return true but not change state
+    expect(command(editor.state)).toBe(true)
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('')
+
+    // Call with dispatch - should change state
+    command(editor.state, editor.view.dispatch)
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
+  })
+
+  it('should handle cursor inside a node', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(n.doc(n.codeBlock('const<a> x = 1')))
+
+    const command = setNodeAttrs({
+      type: 'codeBlock',
+      attrs: { language: 'typescript' },
+    })
+
+    command(editor.state, editor.view.dispatch)
+
+    expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
+  })
+
+  it('should set attrs on wrapping node containing selection', () => {
+    const { editor, n } = setupTest()
+
+    editor.set(
+      n.doc(
+        n.blockquote(
+          n.paragraph('Hello<a> world<b>'),
+        ),
+      ),
+    )
+
+    const command = setNodeAttrs({
+      type: 'blockquote',
+      attrs: {},
+    })
+
+    // Should find the blockquote wrapping the selection
+    expect(command(editor.state, editor.view.dispatch)).toBe(true)
+  })
+})

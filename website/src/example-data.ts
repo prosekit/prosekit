@@ -3,7 +3,10 @@ import registry from 'prosekit-registry/registry.gen.json'
 
 export const stories = Array.from(
   new Set(
-    registry.items.map((item) => item.meta.story).filter(story => !!story),
+    registry.items
+      .filter(item => !item.meta.hidden)
+      .map(item => item.meta.story)
+      .filter(story => !!story),
   ),
 ).sort()
 

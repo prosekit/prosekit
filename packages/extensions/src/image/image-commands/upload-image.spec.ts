@@ -37,9 +37,7 @@ describe('uploadImage', () => {
     editor.view.dispatch(editor.state.tr.setSelection(editor.state.selection))
 
     const command = uploadImage({ uploader: mockUploader, file })
-    const result = command(editor.state, editor.view.dispatch, editor.view)
-
-    expect(result).toBe(true)
+    expect(editor.exec(command)).toBe(true)
 
     let imageCount = 0
     let imageSrc = ''
@@ -64,9 +62,7 @@ describe('uploadImage', () => {
     editor.set(doc)
 
     const command = uploadImage({ uploader: mockUploader, file, pos: 7 })
-    const result = command(editor.state, editor.view.dispatch, editor.view)
-
-    expect(result).toBe(true)
+    expect(editor.exec(command)).toBe(true)
 
     let imageCount = 0
     let imagePos = -1
@@ -92,16 +88,7 @@ describe('uploadImage', () => {
     )
     editor.set(doc)
 
-    let imagePos = -1
-    editor.state.doc.descendants((node, pos) => {
-      if (node.type.name === 'image') {
-        imagePos = pos
-        return false
-      }
-    })
-
-    expect(imagePos).toBe(7)
-
+    const imagePos = 7
     const command = uploadImage({
       uploader: mockUploader,
       file,
@@ -178,9 +165,7 @@ describe('uploadImage', () => {
       pos: paragraphPos,
       replace: true,
     })
-    const result = command(editor.state, editor.view.dispatch, editor.view)
-
-    expect(result).toBe(true)
+    expect(editor.exec(command)).toBe(true)
 
     let imageCount = 0
     editor.state.doc.descendants((node) => {
@@ -204,7 +189,7 @@ describe('uploadImage', () => {
       file,
       onError,
     })
-    command(editor.state, editor.view.dispatch, editor.view)
+    editor.exec(command)
 
     await new Promise((resolve) => setTimeout(resolve, 10))
 

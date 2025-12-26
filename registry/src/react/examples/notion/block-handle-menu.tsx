@@ -23,6 +23,7 @@ interface SubmenuInfo {
   key: string
   label: string
   iconClassName?: string
+  isAvailable: boolean
   children: ItemInfo[]
 }
 
@@ -69,6 +70,10 @@ function getActiveBlockType(editor: Editor<EditorExtension>) {
     return 'toggle-list'
   }
 
+  if (editor.nodes.image.isActive()) {
+    return 'image'
+  }
+
   return 'text'
 }
 
@@ -80,11 +85,14 @@ function turnIntoList(editor: Editor<EditorExtension>, attrs: ListAttrs) {
 function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
   const activeBlockType = getActiveBlockType(editor)
 
+  console.log('activeBlockType', activeBlockType)
+
   return [
     {
       key: 'turn-into',
       label: 'Turn into',
       iconClassName: 'i-lucide-refresh-cw',
+      isAvailable: activeBlockType !== 'image',
       children: [
         {
           key: 'text',
@@ -156,6 +164,7 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
       key: 'color',
       label: 'Color',
       iconClassName: 'i-lucide-paint-roller',
+      isAvailable: activeBlockType !== 'image',
       children: [
         {
           key: 'default',
@@ -245,7 +254,9 @@ function getMenuItems(editor: Editor<EditorExtension>): ItemInfo[] {
 }
 
 function BlockHandleItem(props: { item: ItemInfo }) {
-  if (props.item.children) {
+  if (!props.item.isAvailable) {
+    return null
+  } else if (props.item.children) {
     return (
       <Menu.SubmenuRoot>
         <Menu.SubmenuTrigger className={ITEM_CLASSNAME}>
@@ -263,7 +274,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
         </Menu.Portal>
       </Menu.SubmenuRoot>
     )
-  } else if (props.item.isAvailable) {
+  } else {
     return (
       <Menu.Item
         className={clsx(ITEM_CLASSNAME, 'group')}
@@ -275,8 +286,6 @@ function BlockHandleItem(props: { item: ItemInfo }) {
         {!props.item.isActive && props.item.shortcut && <span className="opacity-50">{props.item.shortcut}</span>}
       </Menu.Item>
     )
-  } else {
-    return null
   }
 }
 

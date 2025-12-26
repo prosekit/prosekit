@@ -22,7 +22,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'typescript' },
     })
 
-    expect(command(editor.state, editor.view.dispatch)).toBe(true)
+    expect(editor.exec(command)).toBe(true)
     expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
   })
 
@@ -36,7 +36,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'javascript' },
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     expect(editor.state.doc.firstChild?.attrs.language).toBe('javascript')
   })
@@ -52,7 +52,7 @@ describe('setNodeAttrs', () => {
     })
 
     // Should return false because paragraph is not a codeBlock
-    expect(command(editor.state, editor.view.dispatch)).toBe(false)
+    expect(editor.exec(command)).toBe(false)
   })
 
   it('should set attributes at a specific position', () => {
@@ -72,7 +72,7 @@ describe('setNodeAttrs', () => {
       pos: 14, // Position of second code block
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     // First block should still have default language
     expect(editor.state.doc.child(0).attrs.language).toBe('')
@@ -95,7 +95,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'rust' },
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     // Both blocks should have the new language
     expect(editor.state.doc.child(0).attrs.language).toBe('rust')
@@ -112,7 +112,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'go' },
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     expect(editor.state.doc.firstChild?.attrs.language).toBe('go')
   })
@@ -129,7 +129,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'kotlin' },
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     expect(editor.state.doc.firstChild?.attrs.language).toBe('kotlin')
   })
@@ -147,7 +147,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'swift' },
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     expect(editor.state.doc.firstChild?.attrs.language).toBe('swift')
   })
@@ -167,7 +167,7 @@ describe('setNodeAttrs', () => {
     expect(editor.state.doc.firstChild?.attrs.language).toBe('')
 
     // Call with dispatch - should change state
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
     expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
   })
 
@@ -181,7 +181,7 @@ describe('setNodeAttrs', () => {
       attrs: { language: 'typescript' },
     })
 
-    command(editor.state, editor.view.dispatch)
+    editor.exec(command)
 
     expect(editor.state.doc.firstChild?.attrs.language).toBe('typescript')
   })
@@ -203,6 +203,6 @@ describe('setNodeAttrs', () => {
     })
 
     // Should find the blockquote wrapping the selection
-    expect(command(editor.state, editor.view.dispatch)).toBe(true)
+    expect(editor.exec(command)).toBe(true)
   })
 })

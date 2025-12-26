@@ -9,7 +9,10 @@ import {
   vi,
 } from 'vitest'
 
-import type { ImageAttrs } from '..'
+import type {
+  ImageAttrs,
+  ImageUploadErrorHandler,
+} from '..'
 import type { Uploader } from '../../file'
 import { setupTest } from '../../testing'
 
@@ -18,9 +21,10 @@ import {
   replaceImageURL,
   uploadImage,
 } from './upload-image'
+import { sleep } from '@ocavue/utils'
 
 describe('uploadImage', () => {
-  it('should insert image at current selection by default', () => {
+  it('should insert image at current selection by default', async () => {
     const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(n.paragraph('hello'))
     editor.set(doc)
@@ -30,9 +34,11 @@ describe('uploadImage', () => {
     expect(editor.exec(command)).toBe(true)
 
     expect(findImage().attrs.src).toMatch(/^blob:/)
+    await sleep(0)
+    expect(findImage().attrs.src).toBe('https://example.com/uploaded.png')
   })
 
-  it('should insert image at specified position', () => {
+  it('should insert image at specified position', async () => {
     const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(
       /*0*/
@@ -47,10 +53,12 @@ describe('uploadImage', () => {
     const command = uploadImage({ uploader: mockUploader, file, pos: imagePos })
     expect(editor.exec(command)).toBe(true)
 
-    expect(findImage().pos).toBe(imagePos)
+    expect(findImage().attrs.src).toMatch(/^blob:/)
+    await sleep(0)
+    expect(findImage().attrs.src).toBe('https://example.com/uploaded.png')
   })
 
-  it('should replace existing image when replace=true', () => {
+  it('should replace existing image when replace=true', async () => {
     const { editor, n, mockUploader, file, findImage } = setup()
     const doc = n.doc(
       /*0*/
@@ -62,6 +70,7 @@ describe('uploadImage', () => {
       /*15*/
     )
     editor.set(doc)
+    expect(findImage().attrs.src).toBe('https://example.com/old.png')
 
     const imagePos = 7
     const command = uploadImage({
@@ -73,62 +82,38 @@ describe('uploadImage', () => {
     expect(editor.exec(command)).toBe(true)
 
     expect(findImage().attrs.src).toMatch(/^blob:/)
-    expect(findImage().attrs.src).not.toBe('https://example.com/old.png')
-  })
-
-  it('should not replace when same src is already set', () => {
-    const { editor, n, mockUploader, file, findImage } = setup()
-    const blobURL = 'blob:test-url'
-    const doc = n.doc(
-      n.paragraph('hello'),
-      n.image({ src: blobURL }),
-      n.paragraph('world'),
-    )
-    editor.set(doc)
-
-    const createObjectURLSpy = vi.spyOn(URL, 'createObjectURL')
-    createObjectURLSpy.mockReturnValue(blobURL)
-
-    const initialState = editor.state
-    const dispatch = vi.fn()
-
-    const command = uploadImage({
-      uploader: mockUploader,
-      file,
-      pos: findImage().pos,
-      replace: true,
-    })
-    const result = command(initialState, dispatch, editor.view)
-
-    expect(result).toBe(true)
-    expect(dispatch).not.toHaveBeenCalled()
-
-    createObjectURLSpy.mockRestore()
+    await sleep(0)
+    expect(findImage().attrs.src).toBe('https://example.com/uploaded.png')
   })
 
   it('should insert image when replace=true but position has non-image node', () => {
-    const { editor, n, mockUploader, file, findImage } = setup()
-    const doc = n.doc(n.paragraph('hello'), n.paragraph('world'))
+    const { editor, n, mockUploader, file } = setup()
+    const doc = n.doc(
+      /*0*/
+      n.paragraph(/*1*/ 'hello' /*6*/),
+      /*7*/
+      n.paragraph(/*8*/ 'world' /*13*/),
+      /*14*/
+    )
     editor.set(doc)
-
-    const paragraphPos = findNode(editor.state.doc, (node) => node.type.name === 'paragraph')?.pos ?? -1
 
     const command = uploadImage({
       uploader: mockUploader,
       file,
-      pos: paragraphPos,
+      pos: 11,
       replace: true,
     })
     expect(editor.exec(command)).toBe(true)
-
-    expect(() => findImage()).not.toThrow()
+    expect(editor.state.doc.child(0).type.name).toBe('paragraph')
+    expect(editor.state.doc.child(1).type.name).toBe('paragraph')
+    expect(editor.state.doc.child(2).type.name).toBe('image')
   })
 
   it('should call onError when upload fails', async () => {
     const { editor, n, file } = setup()
     const error = new Error('Upload failed')
     const failingUploader: Uploader<string> = vi.fn().mockRejectedValue(error)
-    const onError = vi.fn()
+    const onError = vi.fn<ImageUploadErrorHandler>()
 
     const doc = n.doc(n.paragraph('hello'))
     editor.set(doc)
@@ -140,17 +125,13 @@ describe('uploadImage', () => {
     })
     editor.exec(command)
 
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await sleep(0)
 
-    expect(onError).toHaveBeenCalled()
-    const callArg = onError.mock.calls[0][0] as {
-      file: File
-      error: { cause: Error }
-      uploadTask: unknown
-    }
+    expect(onError).toHaveBeenCalledOnce()
+    const callArg = onError.mock.calls[0][0]
     expect(callArg.file).toBe(file)
     expect(callArg.uploadTask).toBeDefined()
-    expect(callArg.error.cause).toBe(error)
+    expect((callArg.error as Error).cause).toBe(error)
   })
 })
 

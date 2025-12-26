@@ -1341,6 +1341,163 @@
       }
     },
     {
+      "name": "react-example-notion",
+      "title": "react-example-notion",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-notion.json",
+        "https://prosekit.dev/r/react-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/react-sample-sample-uploader.json",
+        "https://prosekit.dev/r/react-sample-sample-user-data.json",
+        "https://prosekit.dev/r/react-ui-code-block-view.json",
+        "https://prosekit.dev/r/react-ui-drop-indicator.json",
+        "https://prosekit.dev/r/react-ui-inline-menu.json",
+        "https://prosekit.dev/r/react-ui-table-handle.json",
+        "https://prosekit.dev/r/react-ui-tag-menu.json",
+        "https://prosekit.dev/r/react-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/notion/block-handle-menu.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/block-handle-menu.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/block-handle.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/block-handle.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/color-extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/color-extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/image-view/image-view-content.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/image-view/image-view-content.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/image-view/image-view-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/image-view/image-view-placeholder.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/image-view/image-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/image-view/image-view.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/image-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/image-view/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/slash-menu-empty.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/slash-menu-empty.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/slash-menu-item.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/slash-menu-item.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/slash-menu/slash-menu.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/slash-menu/slash-menu.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/notion/style.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/notion/style.css"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "story": "notion",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/notion/block-handle-menu.tsx",
+          "registry/src/react/examples/notion/block-handle.tsx",
+          "registry/src/react/examples/notion/color-extension.ts",
+          "registry/src/react/examples/notion/editor.tsx",
+          "registry/src/react/examples/notion/extension.ts",
+          "registry/src/react/examples/notion/image-view/image-view-content.tsx",
+          "registry/src/react/examples/notion/image-view/image-view-placeholder.tsx",
+          "registry/src/react/examples/notion/image-view/image-view.tsx",
+          "registry/src/react/examples/notion/image-view/index.ts",
+          "registry/src/react/examples/notion/index.ts",
+          "registry/src/react/examples/notion/slash-menu/index.ts",
+          "registry/src/react/examples/notion/slash-menu/slash-menu-empty.tsx",
+          "registry/src/react/examples/notion/slash-menu/slash-menu-item.tsx",
+          "registry/src/react/examples/notion/slash-menu/slash-menu.tsx",
+          "registry/src/react/examples/notion/style.css",
+          "registry/src/react/sample/sample-doc-notion.ts",
+          "registry/src/react/sample/sample-tag-data.ts",
+          "registry/src/react/sample/sample-uploader.ts",
+          "registry/src/react/sample/sample-user-data.ts",
+          "registry/src/react/ui/button/button.tsx",
+          "registry/src/react/ui/button/index.ts",
+          "registry/src/react/ui/code-block-view/code-block-view.tsx",
+          "registry/src/react/ui/code-block-view/index.ts",
+          "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/react/ui/drop-indicator/index.ts",
+          "registry/src/react/ui/inline-menu/index.ts",
+          "registry/src/react/ui/inline-menu/inline-menu.tsx",
+          "registry/src/react/ui/table-handle/index.ts",
+          "registry/src/react/ui/table-handle/table-handle.tsx",
+          "registry/src/react/ui/tag-menu/index.ts",
+          "registry/src/react/ui/tag-menu/tag-menu.tsx",
+          "registry/src/react/ui/user-menu/index.ts",
+          "registry/src/react/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-notion",
+          "react-sample-sample-tag-data",
+          "react-sample-sample-uploader",
+          "react-sample-sample-user-data",
+          "react-ui-code-block-view",
+          "react-ui-drop-indicator",
+          "react-ui-inline-menu",
+          "react-ui-table-handle",
+          "react-ui-tag-menu",
+          "react-ui-user-menu"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
+      }
+    },
+    {
       "name": "react-example-placeholder",
       "title": "react-example-placeholder",
       "type": "registry:block",
@@ -2938,6 +3095,32 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-notion",
+      "title": "react-sample-sample-doc-notion",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-notion.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-notion.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-notion.ts"
         ],
         "internalDependencies": []
       }

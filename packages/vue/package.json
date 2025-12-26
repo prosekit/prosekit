@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@069d400",
-    "@prosemirror-adapter/vue": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@069d400"
+    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@4f8e438",
+    "@prosemirror-adapter/vue": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@4f8e438"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"

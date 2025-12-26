@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@069d400",
-    "@prosemirror-adapter/preact": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@069d400"
+    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@4f8e438",
+    "@prosemirror-adapter/preact": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/preact@4f8e438"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0"

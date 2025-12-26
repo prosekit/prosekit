@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@069d400",
-    "@prosemirror-adapter/solid": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@069d400"
+    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@4f8e438",
+    "@prosemirror-adapter/solid": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@4f8e438"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"

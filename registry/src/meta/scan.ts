@@ -8,6 +8,10 @@ import {
 } from 'parse-imports-exports'
 
 import { debug } from './debug'
+import {
+  loadStoryMeta,
+  type StoryMeta,
+} from './story-meta'
 import type {
   Framework,
   ItemAccumulator,
@@ -17,10 +21,6 @@ import {
   FRAMEWORKS,
   REGISTRY_SRC_DIR,
 } from './types'
-import {
-  loadStoryMeta,
-  type StoryMeta,
-} from './story-meta'
 
 const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   react: path.join(REGISTRY_SRC_DIR, 'react'),

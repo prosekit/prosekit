@@ -21,12 +21,12 @@ export interface SetNodeAttrsBetweenOptions {
   attrs: Attrs
 
   /**
-   * The position to start searching node. By default the selection from position will be used.
+   * The position to start searching for nodes. By default, the selection from position will be used.
    */
   from?: number
 
   /**
-   * The position to end searching node. By default the selection to position will be used.
+   * The position to end searching for nodes. By default, the selection to position will be used.
    */
   to?: number
 }

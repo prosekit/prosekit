@@ -123,7 +123,7 @@
   frameworks: [react, vue, preact, svelte]
   description: Typography enhancements like smart quotes and dashes.
 - name: underline
-  frameworks: [react, vue, preact, svelte, solid]
+  frameworks: [react, vue, preact, svelte]
   description: Example for underline mark.
 - name: unmount
   frameworks: [react, vue, preact, svelte, solid]

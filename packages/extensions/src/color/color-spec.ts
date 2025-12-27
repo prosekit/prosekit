@@ -42,7 +42,7 @@ export function defineColorSpec(): ColorSpecExtension {
     ],
     toDOM(mark) {
       const color = (mark.attrs as ColorAttrs).color
-      return ['span', { style: `color: ${color}; background-color: red;` }, 0]
+      return ['span', { style: `color: ${color};` }, 0]
     },
   })
 }

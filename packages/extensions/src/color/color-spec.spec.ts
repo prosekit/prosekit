@@ -3,6 +3,7 @@ import {
   expect,
   it,
 } from 'vitest'
+import formatHTML from 'diffable-html'
 
 import { setupTest } from '../testing'
 
@@ -12,11 +13,42 @@ describe('defineColorSpec', () => {
 
     const doc = n.doc(
       n.p(
-        'Default text ',
-        m.color({ color: 'blue' }, 'Blue text'),
+        'Default',
+        m.color({ color: '#0000ff' }, 'hex'),
+        m.color({ color: 'blue' }, 'named'),
+        m.color({ color: 'rgb(0, 0, 255)' }, 'rgb'),
+        m.color({ color: 'rgba(0 0 255 / 0.5)' }, 'rgba'),
+        m.color({ color: 'hsl(240 100% 50% / 0.5)' }, 'hsl'),
+        m.color({ color: 'var(--color-variable)' }, 'variable'),
       ),
     )
     editor.set(doc)
-    expect(editor.view.dom.innerHTML).toMatchInlineSnapshot(`"<p>Default text <span style="color: blue; background-color: red;">Blue text</span></p>"`)
+    expect(formatHTML(editor.view.dom.innerHTML)).toMatchInlineSnapshot(
+      `
+      "
+      <p>
+        Default
+        <span style="color: rgb(0, 0, 255);">
+          hex
+        </span>
+        <span style="color: blue;">
+          named
+        </span>
+        <span style="color: rgb(0, 0, 255);">
+          rgb
+        </span>
+        <span style="color: rgba(0, 0, 255, 0.5);">
+          rgba
+        </span>
+        <span style="color: rgba(0, 0, 255, 0.5);">
+          hsl
+        </span>
+        <span style="color: var(--color-variable);">
+          variable
+        </span>
+      </p>
+      "
+    `,
+    )
   })
 })

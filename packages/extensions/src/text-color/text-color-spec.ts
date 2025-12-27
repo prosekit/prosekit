@@ -8,25 +8,25 @@ import {
  *
  * @public
  */
-export interface ColorAttrs {
+export interface TextColorAttrs {
   color: string
 }
 
 /**
  * @internal
  */
-export type ColorSpecExtension = Extension<{
+export type TextColorSpecExtension = Extension<{
   Marks: {
-    color: ColorAttrs
+    textColor: TextColorAttrs
   }
 }>
 
 /**
  * @internal
  */
-export function defineColorSpec(): ColorSpecExtension {
-  return defineMarkSpec<'color', ColorAttrs>({
-    name: 'color',
+export function defineTextColorSpec(): TextColorSpecExtension {
+  return defineMarkSpec<'textColor', TextColorAttrs>({
+    name: 'textColor',
     attrs: {
       color: {
         validate: 'string',
@@ -35,13 +35,13 @@ export function defineColorSpec(): ColorSpecExtension {
     parseDOM: [
       {
         style: 'color',
-        getAttrs: (value): ColorAttrs | false => {
-          return value ? { color: value } : false
+        getAttrs: (value): TextColorAttrs | false => {
+          return (value && value !== 'inherit') ? { color: value } : false
         },
       },
     ],
     toDOM(mark) {
-      const color = (mark.attrs as ColorAttrs).color
+      const color = (mark.attrs as TextColorAttrs).color
       return ['span', { style: `color: ${color};` }, 0]
     },
   })

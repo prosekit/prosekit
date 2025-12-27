@@ -6,7 +6,7 @@ import {
 
 import { setupTest } from '../testing'
 
-describe('addColor', () => {
+describe('addTextColor', () => {
   it('can add color to text', () => {
     const { editor, n, m } = setupTest()
 

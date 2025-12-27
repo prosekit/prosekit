@@ -4,27 +4,27 @@ import {
 } from '@prosekit/core'
 
 import {
-  defineColorCommands,
-  type ColorCommandsExtension,
-} from './color-commands'
+  defineTextColorCommands,
+  type TextColorCommandsExtension,
+} from './text-color-commands'
 import {
-  defineColorSpec,
-  type ColorSpecExtension,
-} from './color-spec'
+  defineTextColorSpec,
+  type TextColorSpecExtension,
+} from './text-color-spec'
 
 /**
  * @internal
  */
-export type ColorExtension = Union<[ColorSpecExtension, ColorCommandsExtension]>
+export type TextColorExtension = Union<[TextColorSpecExtension, TextColorCommandsExtension]>
 
 /**
  * Defines the `color` mark and some commands for it.
  *
  * @public
  */
-export function defineColor(): ColorExtension {
+export function defineTextColor(): TextColorExtension {
   return union(
-    defineColorSpec(),
-    defineColorCommands(),
+    defineTextColorSpec(),
+    defineTextColorCommands(),
   )
 }

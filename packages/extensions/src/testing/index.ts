@@ -20,7 +20,7 @@ import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'
 import { defineCodeBlock } from '../code-block'
-import { defineColor } from '../color'
+import { defineTextColor } from '../text-color'
 import { defineDoc } from '../doc'
 import { defineHardBreak } from '../hard-break'
 import { defineHeading } from '../heading'
@@ -62,7 +62,7 @@ export function defineTestExtension() {
     defineUnderline(),
     defineStrike(),
     defineCode(),
-    defineColor(),
+    defineTextColor(),
     defineLink(),
     defineImage(),
     defineParagraph(),

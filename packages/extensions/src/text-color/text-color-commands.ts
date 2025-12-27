@@ -6,35 +6,35 @@ import {
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
-import type { ColorAttrs } from './color-spec'
+import type { TextColorAttrs } from './text-color-spec'
 
 /**
  * @internal
  */
-export function addColor(attrs: ColorAttrs): Command {
-  return addMark({ type: 'color', attrs })
+export function addTextColor(attrs: TextColorAttrs): Command {
+  return addMark({ type: 'textColor', attrs })
 }
 
 /**
  * @internal
  */
-export function removeColor(): Command {
-  return removeMark({ type: 'color' })
+export function removeTextColor(): Command {
+  return removeMark({ type: 'textColor' })
 }
 
 /**
  * @internal
  */
-export type ColorCommandsExtension = Extension<{
+export type TextColorCommandsExtension = Extension<{
   Commands: {
-    addColor: [attrs: ColorAttrs]
-    removeColor: []
+    addTextColor: [attrs: TextColorAttrs]
+    removeTextColor: []
   }
 }>
 
 /**
  * @internal
  */
-export function defineColorCommands(): ColorCommandsExtension {
-  return defineCommands({ addColor, removeColor })
+export function defineTextColorCommands(): TextColorCommandsExtension {
+  return defineCommands({ addTextColor, removeTextColor })
 }

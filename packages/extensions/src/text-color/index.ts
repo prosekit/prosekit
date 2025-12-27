@@ -1,15 +1,15 @@
 export {
-  defineColor,
-  type ColorExtension,
-} from './color'
+  defineTextColor,
+  type TextColorExtension,
+} from './text-color'
 export {
-  addColor,
-  defineColorCommands,
-  removeColor,
-  type ColorCommandsExtension,
-} from './color-commands'
+  addTextColor,
+  defineTextColorCommands,
+  removeTextColor,
+  type TextColorCommandsExtension,
+} from './text-color-commands'
 export {
-  defineColorSpec,
-  type ColorAttrs,
-  type ColorSpecExtension,
-} from './color-spec'
+  defineTextColorSpec,
+  type TextColorAttrs,
+  type TextColorSpecExtension,
+} from './text-color-spec'

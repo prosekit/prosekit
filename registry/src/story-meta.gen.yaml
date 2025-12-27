@@ -1,6 +1,6 @@
 - name: block-handle
   frameworks: [react, vue, preact, svelte, solid]
-  description: A little box that appears when you hover over a block that allow you to re-order the block.
+  description: A handle that appears on hover, allowing you to drag and re-order blocks.
 - name: blockquote
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for blockquote node.

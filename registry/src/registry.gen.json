@@ -7,7 +7,7 @@
       "name": "react-example-block-handle",
       "title": "react-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/react-ui-block-handle.json",
@@ -4099,7 +4099,7 @@
       "name": "vue-example-block-handle",
       "title": "vue-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/vue-ui-block-handle.json",
@@ -7880,7 +7880,7 @@
       "name": "preact-example-block-handle",
       "title": "preact-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/preact-ui-block-handle.json",
@@ -11696,7 +11696,7 @@
       "name": "svelte-example-block-handle",
       "title": "svelte-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/svelte-ui-block-handle.json",
@@ -15458,7 +15458,7 @@
       "name": "solid-example-block-handle",
       "title": "solid-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/solid-ui-block-handle.json",

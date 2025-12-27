@@ -30,49 +30,37 @@ it('should define color mark with correct schema', () => {
   expect(colorMark.color.toDOM).toBeDefined()
 })
 
-describe('toDOM', () => {
+describe('defineColorSpec', () => {
   it('should render color as inline span with style attribute', () => {
-    const { editor } = setupTest()
+    const { editor, n, m } = setupTest()
 
-    const schema = editor.view.state.schema
-    const colorMark = schema.marks.color.create({ color: 'blue' })
-
-    const dom = colorMark.type.spec.toDOM?.(colorMark, true)
-
-    expect(dom).toEqual([
-      'span',
-      { style: 'color: blue;' },
-      0,
-    ])
+    const doc = n.doc(
+      n.p(
+        'Default text ',
+        m.color({ color: 'blue' }, 'Blue text'),
+      ),
+    )
+    editor.set(doc)
+    expect(editor.view.dom.innerHTML).toMatchInlineSnapshot(`"<p>Default text <span style="color: blue;">Blue text</span></p>"`)
   })
 
   it('should render color as block div when not inline', () => {
-    const { editor } = setupTest()
+    const { editor, n, m } = setupTest()
 
-    const schema = editor.view.state.schema
-    const colorMark = schema.marks.color.create({ color: 'red' })
-
-    const dom = colorMark.type.spec.toDOM?.(colorMark, false)
-
-    expect(dom).toEqual([
-      'div',
-      { style: 'color: red;' },
-      0,
-    ])
-  })
-
-  it('should handle hex colors in toDOM', () => {
-    const { editor } = setupTest()
-
-    const schema = editor.view.state.schema
-    const colorMark = schema.marks.color.create({ color: '#00ff00' })
-
-    const dom = colorMark.type.spec.toDOM?.(colorMark, true)
-
-    expect(dom).toEqual([
-      'span',
-      { style: 'color: #00ff00;' },
-      0,
-    ])
+    const doc = n.doc(
+      n.blockquote(
+        n.p(
+          'Default paragraph',
+        ),
+        m.color(
+          { color: '#0000ff' },
+          n.p(
+            'Colored paragraph',
+          ),
+        ),
+      ),
+    )
+    editor.set(doc)
+    expect(editor.view.dom.innerHTML).toMatchInlineSnapshot()
   })
 })

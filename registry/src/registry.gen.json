@@ -167,7 +167,7 @@
       "name": "react-example-change-tracking",
       "title": "react-example-change-tracking",
       "type": "registry:block",
-      "description": "",
+      "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -213,7 +213,7 @@
       "name": "react-example-code",
       "title": "react-example-code",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for inline code mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-code.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -266,7 +266,7 @@
       "name": "react-example-code-block",
       "title": "react-example-code-block",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/react-ui-code-block-view.json",
@@ -323,7 +323,7 @@
       "name": "react-example-code-block-themes",
       "title": "react-example-code-block-themes",
       "type": "registry:block",
-      "description": "",
+      "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/react-ui-code-block-view.json"
@@ -384,7 +384,7 @@
       "name": "react-example-drop-cursor",
       "title": "react-example-drop-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-drop-cursor.json"
       ],
@@ -429,7 +429,7 @@
       "name": "react-example-emoji-rules",
       "title": "react-example-emoji-rules",
       "type": "registry:block",
-      "description": "",
+      "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -475,7 +475,7 @@
       "name": "react-example-full",
       "title": "react-example-full",
       "type": "registry:block",
-      "description": "",
+      "description": "Full-featured editor with all available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-full.json",
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",
@@ -575,7 +575,7 @@
       "name": "react-example-gap-cursor",
       "title": "react-example-gap-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-gap-cursor.json"
       ],
@@ -620,7 +620,7 @@
       "name": "react-example-hard-break",
       "title": "react-example-hard-break",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for hard line break node.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -675,7 +675,7 @@
       "name": "react-example-heading",
       "title": "react-example-heading",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -728,7 +728,7 @@
       "name": "react-example-horizontal-rule",
       "title": "react-example-horizontal-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for horizontal rule node.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
@@ -778,7 +778,7 @@
       "name": "react-example-image-view",
       "title": "react-example-image-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom image node views with resize and upload support.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-image.json",
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
@@ -830,7 +830,7 @@
       "name": "react-example-inline-menu",
       "title": "react-example-inline-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/react-ui-inline-menu.json"
@@ -881,7 +881,7 @@
       "name": "react-example-italic",
       "title": "react-example-italic",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for italic mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -934,7 +934,7 @@
       "name": "react-example-keymap",
       "title": "react-example-keymap",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-ui-button.json"
       ],
@@ -992,7 +992,7 @@
       "name": "react-example-link",
       "title": "react-example-link",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for link mark with URL input.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-link.json",
         "https://prosekit.dev/r/react-ui-inline-menu.json"
@@ -1043,7 +1043,7 @@
       "name": "react-example-link-mark-view",
       "title": "react-example-link-mark-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom link mark views with preview and edit functionality.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-link-mark-view.json"
       ],
@@ -1094,7 +1094,7 @@
       "name": "react-example-list",
       "title": "react-example-list",
       "type": "registry:block",
-      "description": "",
+      "description": "Ordered, unordered, and task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-list.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -1147,7 +1147,7 @@
       "name": "react-example-list-custom-checkbox",
       "title": "react-example-list-custom-checkbox",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-list-custom-checkbox.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -1206,7 +1206,7 @@
       "name": "react-example-loro",
       "title": "react-example-loro",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
@@ -1264,7 +1264,7 @@
       "name": "react-example-mark-rule",
       "title": "react-example-mark-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1310,7 +1310,7 @@
       "name": "react-example-minimal",
       "title": "react-example-minimal",
       "type": "registry:block",
-      "description": "",
+      "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1344,7 +1344,7 @@
       "name": "react-example-notion",
       "title": "react-example-notion",
       "type": "registry:block",
-      "description": "",
+      "description": "Notion-style editor with block-based editing.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-notion.json",
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",
@@ -1502,7 +1502,7 @@
       "name": "react-example-placeholder",
       "title": "react-example-placeholder",
       "type": "registry:block",
-      "description": "",
+      "description": "Placeholder text displayed when editor is empty.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1542,7 +1542,7 @@
       "name": "react-example-readonly",
       "title": "react-example-readonly",
       "type": "registry:block",
-      "description": "",
+      "description": "Read-only editor mode that prevents editing.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -1603,7 +1603,7 @@
       "name": "react-example-rtl",
       "title": "react-example-rtl",
       "type": "registry:block",
-      "description": "",
+      "description": "Right-to-left text direction support.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-rtl.json",
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
@@ -1675,7 +1675,7 @@
       "name": "react-example-save-html",
       "title": "react-example-save-html",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1709,7 +1709,7 @@
       "name": "react-example-save-json",
       "title": "react-example-save-json",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1743,7 +1743,7 @@
       "name": "react-example-save-markdown",
       "title": "react-example-save-markdown",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1790,7 +1790,7 @@
       "name": "react-example-search",
       "title": "react-example-search",
       "type": "registry:block",
-      "description": "",
+      "description": "Search and highlight text with navigation.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-search.json",
         "https://prosekit.dev/r/react-ui-search.json"
@@ -1841,7 +1841,7 @@
       "name": "react-example-slash-menu",
       "title": "react-example-slash-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
         "https://prosekit.dev/r/react-ui-slash-menu.json"
       ],
@@ -1889,7 +1889,7 @@
       "name": "react-example-strike",
       "title": "react-example-strike",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for strikethrough mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -1944,7 +1944,7 @@
       "name": "react-example-table",
       "title": "react-example-table",
       "type": "registry:block",
-      "description": "",
+      "description": "Table node with row and column operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-table.json",
         "https://prosekit.dev/r/react-ui-table-handle.json"
@@ -1993,7 +1993,7 @@
       "name": "react-example-text-align",
       "title": "react-example-text-align",
       "type": "registry:block",
-      "description": "",
+      "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-text-align.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -2048,7 +2048,7 @@
       "name": "react-example-text-color",
       "title": "react-example-text-color",
       "type": "registry:block",
-      "description": "",
+      "description": "Text color and background color formatting.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -2109,7 +2109,7 @@
       "name": "react-example-toolbar",
       "title": "react-example-toolbar",
       "type": "registry:block",
-      "description": "",
+      "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -2162,7 +2162,7 @@
       "name": "react-example-tweet",
       "title": "react-example-tweet",
       "type": "registry:block",
-      "description": "",
+      "description": "Embed and display Twitter tweets.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-tweet.json"
       ],
@@ -2227,7 +2227,7 @@
       "name": "react-example-typography",
       "title": "react-example-typography",
       "type": "registry:block",
-      "description": "",
+      "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-typography.json"
       ],
@@ -2266,7 +2266,7 @@
       "name": "react-example-underline",
       "title": "react-example-underline",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for underline mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -2319,7 +2319,7 @@
       "name": "react-example-unmount",
       "title": "react-example-unmount",
       "type": "registry:block",
-      "description": "",
+      "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -2365,7 +2365,7 @@
       "name": "react-example-user-menu",
       "title": "react-example-user-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Autocomplete menu for @mentions and",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",
         "https://prosekit.dev/r/react-sample-sample-user-data.json",
@@ -2421,7 +2421,7 @@
       "name": "react-example-user-menu-dynamic",
       "title": "react-example-user-menu-dynamic",
       "type": "registry:block",
-      "description": "",
+      "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-query-users.json",
         "https://prosekit.dev/r/react-ui-user-menu.json"
@@ -2483,7 +2483,7 @@
       "name": "react-example-view-adapter",
       "title": "react-example-view-adapter",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-define-atom-block.json",
         "https://prosekit.dev/r/react-sample-sample-doc-view-adapter.json"
@@ -2537,7 +2537,7 @@
       "name": "react-example-word-counter",
       "title": "react-example-word-counter",
       "type": "registry:block",
-      "description": "",
+      "description": "Display word and character count statistics.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-word-counter.json",
         "https://prosekit.dev/r/react-ui-word-counter.json"
@@ -2586,7 +2586,7 @@
       "name": "react-example-yjs",
       "title": "react-example-yjs",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
@@ -4256,7 +4256,7 @@
       "name": "vue-example-change-tracking",
       "title": "vue-example-change-tracking",
       "type": "registry:block",
-      "description": "",
+      "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -4302,7 +4302,7 @@
       "name": "vue-example-code",
       "title": "vue-example-code",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for inline code mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-code.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -4354,7 +4354,7 @@
       "name": "vue-example-code-block",
       "title": "vue-example-code-block",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/vue-ui-code-block-view.json",
@@ -4410,7 +4410,7 @@
       "name": "vue-example-code-block-themes",
       "title": "vue-example-code-block-themes",
       "type": "registry:block",
-      "description": "",
+      "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/vue-ui-code-block-view.json"
@@ -4471,7 +4471,7 @@
       "name": "vue-example-drop-cursor",
       "title": "vue-example-drop-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-drop-cursor.json"
       ],
@@ -4515,7 +4515,7 @@
       "name": "vue-example-emoji-rules",
       "title": "vue-example-emoji-rules",
       "type": "registry:block",
-      "description": "",
+      "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -4560,7 +4560,7 @@
       "name": "vue-example-full",
       "title": "vue-example-full",
       "type": "registry:block",
-      "description": "",
+      "description": "Full-featured editor with all available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
         "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
@@ -4659,7 +4659,7 @@
       "name": "vue-example-gap-cursor",
       "title": "vue-example-gap-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-gap-cursor.json"
       ],
@@ -4703,7 +4703,7 @@
       "name": "vue-example-hard-break",
       "title": "vue-example-hard-break",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for hard line break node.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -4757,7 +4757,7 @@
       "name": "vue-example-heading",
       "title": "vue-example-heading",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -4809,7 +4809,7 @@
       "name": "vue-example-horizontal-rule",
       "title": "vue-example-horizontal-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for horizontal rule node.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
@@ -4858,7 +4858,7 @@
       "name": "vue-example-image-view",
       "title": "vue-example-image-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom image node views with resize and upload support.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-image.json",
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
@@ -4909,7 +4909,7 @@
       "name": "vue-example-inline-menu",
       "title": "vue-example-inline-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/vue-ui-inline-menu.json"
@@ -4959,7 +4959,7 @@
       "name": "vue-example-italic",
       "title": "vue-example-italic",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for italic mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -5011,7 +5011,7 @@
       "name": "vue-example-keymap",
       "title": "vue-example-keymap",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
@@ -5069,7 +5069,7 @@
       "name": "vue-example-link",
       "title": "vue-example-link",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for link mark with URL input.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-link.json",
         "https://prosekit.dev/r/vue-ui-inline-menu.json"
@@ -5119,7 +5119,7 @@
       "name": "vue-example-link-mark-view",
       "title": "vue-example-link-mark-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom link mark views with preview and edit functionality.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-link-mark-view.json"
       ],
@@ -5170,7 +5170,7 @@
       "name": "vue-example-list",
       "title": "vue-example-list",
       "type": "registry:block",
-      "description": "",
+      "description": "Ordered, unordered, and task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-list.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -5222,7 +5222,7 @@
       "name": "vue-example-list-custom-checkbox",
       "title": "vue-example-list-custom-checkbox",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-list-custom-checkbox.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -5280,7 +5280,7 @@
       "name": "vue-example-loro",
       "title": "vue-example-loro",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
@@ -5338,7 +5338,7 @@
       "name": "vue-example-mark-rule",
       "title": "vue-example-mark-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -5383,7 +5383,7 @@
       "name": "vue-example-minimal",
       "title": "vue-example-minimal",
       "type": "registry:block",
-      "description": "",
+      "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -5416,7 +5416,7 @@
       "name": "vue-example-placeholder",
       "title": "vue-example-placeholder",
       "type": "registry:block",
-      "description": "",
+      "description": "Placeholder text displayed when editor is empty.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -5455,7 +5455,7 @@
       "name": "vue-example-readonly",
       "title": "vue-example-readonly",
       "type": "registry:block",
-      "description": "",
+      "description": "Read-only editor mode that prevents editing.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -5516,7 +5516,7 @@
       "name": "vue-example-rtl",
       "title": "vue-example-rtl",
       "type": "registry:block",
-      "description": "",
+      "description": "Right-to-left text direction support.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-rtl.json",
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
@@ -5587,7 +5587,7 @@
       "name": "vue-example-save-html",
       "title": "vue-example-save-html",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -5621,7 +5621,7 @@
       "name": "vue-example-save-json",
       "title": "vue-example-save-json",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -5655,7 +5655,7 @@
       "name": "vue-example-save-markdown",
       "title": "vue-example-save-markdown",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -5702,7 +5702,7 @@
       "name": "vue-example-search",
       "title": "vue-example-search",
       "type": "registry:block",
-      "description": "",
+      "description": "Search and highlight text with navigation.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-search.json",
         "https://prosekit.dev/r/vue-ui-search.json"
@@ -5752,7 +5752,7 @@
       "name": "vue-example-slash-menu",
       "title": "vue-example-slash-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-ui-slash-menu.json"
       ],
@@ -5799,7 +5799,7 @@
       "name": "vue-example-strike",
       "title": "vue-example-strike",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for strikethrough mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -5853,7 +5853,7 @@
       "name": "vue-example-table",
       "title": "vue-example-table",
       "type": "registry:block",
-      "description": "",
+      "description": "Table node with row and column operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-table.json",
         "https://prosekit.dev/r/vue-ui-table-handle.json"
@@ -5901,7 +5901,7 @@
       "name": "vue-example-text-align",
       "title": "vue-example-text-align",
       "type": "registry:block",
-      "description": "",
+      "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-text-align.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -5955,7 +5955,7 @@
       "name": "vue-example-text-color",
       "title": "vue-example-text-color",
       "type": "registry:block",
-      "description": "",
+      "description": "Text color and background color formatting.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -6016,7 +6016,7 @@
       "name": "vue-example-toolbar",
       "title": "vue-example-toolbar",
       "type": "registry:block",
-      "description": "",
+      "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -6068,7 +6068,7 @@
       "name": "vue-example-typography",
       "title": "vue-example-typography",
       "type": "registry:block",
-      "description": "",
+      "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-typography.json"
       ],
@@ -6106,7 +6106,7 @@
       "name": "vue-example-underline",
       "title": "vue-example-underline",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for underline mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -6158,7 +6158,7 @@
       "name": "vue-example-unmount",
       "title": "vue-example-unmount",
       "type": "registry:block",
-      "description": "",
+      "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -6204,7 +6204,7 @@
       "name": "vue-example-user-menu",
       "title": "vue-example-user-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Autocomplete menu for @mentions and",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
         "https://prosekit.dev/r/vue-sample-sample-user-data.json",
@@ -6259,7 +6259,7 @@
       "name": "vue-example-user-menu-dynamic",
       "title": "vue-example-user-menu-dynamic",
       "type": "registry:block",
-      "description": "",
+      "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-query-users.json",
         "https://prosekit.dev/r/vue-ui-user-menu.json"
@@ -6321,7 +6321,7 @@
       "name": "vue-example-view-adapter",
       "title": "vue-example-view-adapter",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-define-atom-block.json",
         "https://prosekit.dev/r/vue-sample-sample-doc-view-adapter.json"
@@ -6374,7 +6374,7 @@
       "name": "vue-example-word-counter",
       "title": "vue-example-word-counter",
       "type": "registry:block",
-      "description": "",
+      "description": "Display word and character count statistics.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-word-counter.json",
         "https://prosekit.dev/r/vue-ui-word-counter.json"
@@ -6422,7 +6422,7 @@
       "name": "vue-example-yjs",
       "title": "vue-example-yjs",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
@@ -8040,7 +8040,7 @@
       "name": "preact-example-change-tracking",
       "title": "preact-example-change-tracking",
       "type": "registry:block",
-      "description": "",
+      "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -8086,7 +8086,7 @@
       "name": "preact-example-code",
       "title": "preact-example-code",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for inline code mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-code.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -8139,7 +8139,7 @@
       "name": "preact-example-code-block",
       "title": "preact-example-code-block",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/preact-ui-code-block-view.json",
@@ -8196,7 +8196,7 @@
       "name": "preact-example-code-block-themes",
       "title": "preact-example-code-block-themes",
       "type": "registry:block",
-      "description": "",
+      "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/preact-ui-code-block-view.json"
@@ -8257,7 +8257,7 @@
       "name": "preact-example-drop-cursor",
       "title": "preact-example-drop-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-drop-cursor.json"
       ],
@@ -8302,7 +8302,7 @@
       "name": "preact-example-emoji-rules",
       "title": "preact-example-emoji-rules",
       "type": "registry:block",
-      "description": "",
+      "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -8348,7 +8348,7 @@
       "name": "preact-example-full",
       "title": "preact-example-full",
       "type": "registry:block",
-      "description": "",
+      "description": "Full-featured editor with all available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
         "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
@@ -8448,7 +8448,7 @@
       "name": "preact-example-gap-cursor",
       "title": "preact-example-gap-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-gap-cursor.json"
       ],
@@ -8493,7 +8493,7 @@
       "name": "preact-example-hard-break",
       "title": "preact-example-hard-break",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for hard line break node.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -8548,7 +8548,7 @@
       "name": "preact-example-heading",
       "title": "preact-example-heading",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -8601,7 +8601,7 @@
       "name": "preact-example-horizontal-rule",
       "title": "preact-example-horizontal-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for horizontal rule node.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
@@ -8651,7 +8651,7 @@
       "name": "preact-example-image-view",
       "title": "preact-example-image-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom image node views with resize and upload support.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-image.json",
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
@@ -8703,7 +8703,7 @@
       "name": "preact-example-inline-menu",
       "title": "preact-example-inline-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
@@ -8754,7 +8754,7 @@
       "name": "preact-example-italic",
       "title": "preact-example-italic",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for italic mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -8807,7 +8807,7 @@
       "name": "preact-example-keymap",
       "title": "preact-example-keymap",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
@@ -8865,7 +8865,7 @@
       "name": "preact-example-link",
       "title": "preact-example-link",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for link mark with URL input.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-link.json",
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
@@ -8916,7 +8916,7 @@
       "name": "preact-example-link-mark-view",
       "title": "preact-example-link-mark-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom link mark views with preview and edit functionality.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-link-mark-view.json"
       ],
@@ -8967,7 +8967,7 @@
       "name": "preact-example-list",
       "title": "preact-example-list",
       "type": "registry:block",
-      "description": "",
+      "description": "Ordered, unordered, and task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-list.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -9020,7 +9020,7 @@
       "name": "preact-example-list-custom-checkbox",
       "title": "preact-example-list-custom-checkbox",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-list-custom-checkbox.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -9079,7 +9079,7 @@
       "name": "preact-example-loro",
       "title": "preact-example-loro",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
@@ -9137,7 +9137,7 @@
       "name": "preact-example-mark-rule",
       "title": "preact-example-mark-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9183,7 +9183,7 @@
       "name": "preact-example-minimal",
       "title": "preact-example-minimal",
       "type": "registry:block",
-      "description": "",
+      "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9217,7 +9217,7 @@
       "name": "preact-example-placeholder",
       "title": "preact-example-placeholder",
       "type": "registry:block",
-      "description": "",
+      "description": "Placeholder text displayed when editor is empty.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9257,7 +9257,7 @@
       "name": "preact-example-readonly",
       "title": "preact-example-readonly",
       "type": "registry:block",
-      "description": "",
+      "description": "Read-only editor mode that prevents editing.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -9318,7 +9318,7 @@
       "name": "preact-example-rtl",
       "title": "preact-example-rtl",
       "type": "registry:block",
-      "description": "",
+      "description": "Right-to-left text direction support.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-rtl.json",
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
@@ -9390,7 +9390,7 @@
       "name": "preact-example-save-html",
       "title": "preact-example-save-html",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9424,7 +9424,7 @@
       "name": "preact-example-save-json",
       "title": "preact-example-save-json",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9458,7 +9458,7 @@
       "name": "preact-example-save-markdown",
       "title": "preact-example-save-markdown",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9505,7 +9505,7 @@
       "name": "preact-example-search",
       "title": "preact-example-search",
       "type": "registry:block",
-      "description": "",
+      "description": "Search and highlight text with navigation.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-search.json",
         "https://prosekit.dev/r/preact-ui-search.json"
@@ -9556,7 +9556,7 @@
       "name": "preact-example-slash-menu",
       "title": "preact-example-slash-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-ui-slash-menu.json"
       ],
@@ -9604,7 +9604,7 @@
       "name": "preact-example-strike",
       "title": "preact-example-strike",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for strikethrough mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -9659,7 +9659,7 @@
       "name": "preact-example-table",
       "title": "preact-example-table",
       "type": "registry:block",
-      "description": "",
+      "description": "Table node with row and column operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-table.json",
         "https://prosekit.dev/r/preact-ui-table-handle.json"
@@ -9708,7 +9708,7 @@
       "name": "preact-example-text-align",
       "title": "preact-example-text-align",
       "type": "registry:block",
-      "description": "",
+      "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-text-align.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -9763,7 +9763,7 @@
       "name": "preact-example-text-color",
       "title": "preact-example-text-color",
       "type": "registry:block",
-      "description": "",
+      "description": "Text color and background color formatting.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -9824,7 +9824,7 @@
       "name": "preact-example-toolbar",
       "title": "preact-example-toolbar",
       "type": "registry:block",
-      "description": "",
+      "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -9877,7 +9877,7 @@
       "name": "preact-example-typography",
       "title": "preact-example-typography",
       "type": "registry:block",
-      "description": "",
+      "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-typography.json"
       ],
@@ -9916,7 +9916,7 @@
       "name": "preact-example-underline",
       "title": "preact-example-underline",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for underline mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -9969,7 +9969,7 @@
       "name": "preact-example-unmount",
       "title": "preact-example-unmount",
       "type": "registry:block",
-      "description": "",
+      "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -10015,7 +10015,7 @@
       "name": "preact-example-user-menu",
       "title": "preact-example-user-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Autocomplete menu for @mentions and",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
         "https://prosekit.dev/r/preact-sample-sample-user-data.json",
@@ -10071,7 +10071,7 @@
       "name": "preact-example-user-menu-dynamic",
       "title": "preact-example-user-menu-dynamic",
       "type": "registry:block",
-      "description": "",
+      "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-query-users.json",
         "https://prosekit.dev/r/preact-ui-user-menu.json"
@@ -10133,7 +10133,7 @@
       "name": "preact-example-view-adapter",
       "title": "preact-example-view-adapter",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-define-atom-block.json",
         "https://prosekit.dev/r/preact-sample-sample-doc-view-adapter.json"
@@ -10187,7 +10187,7 @@
       "name": "preact-example-word-counter",
       "title": "preact-example-word-counter",
       "type": "registry:block",
-      "description": "",
+      "description": "Display word and character count statistics.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-word-counter.json",
         "https://prosekit.dev/r/preact-ui-word-counter.json"
@@ -10236,7 +10236,7 @@
       "name": "preact-example-yjs",
       "title": "preact-example-yjs",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
@@ -11853,7 +11853,7 @@
       "name": "svelte-example-change-tracking",
       "title": "svelte-example-change-tracking",
       "type": "registry:block",
-      "description": "",
+      "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -11898,7 +11898,7 @@
       "name": "svelte-example-code",
       "title": "svelte-example-code",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for inline code mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-code.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -11950,7 +11950,7 @@
       "name": "svelte-example-code-block",
       "title": "svelte-example-code-block",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/svelte-ui-code-block-view.json",
@@ -12006,7 +12006,7 @@
       "name": "svelte-example-code-block-themes",
       "title": "svelte-example-code-block-themes",
       "type": "registry:block",
-      "description": "",
+      "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/svelte-ui-code-block-view.json"
@@ -12067,7 +12067,7 @@
       "name": "svelte-example-drop-cursor",
       "title": "svelte-example-drop-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-drop-cursor.json"
       ],
@@ -12111,7 +12111,7 @@
       "name": "svelte-example-emoji-rules",
       "title": "svelte-example-emoji-rules",
       "type": "registry:block",
-      "description": "",
+      "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -12156,7 +12156,7 @@
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",
-      "description": "",
+      "description": "Full-featured editor with all available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
         "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
@@ -12255,7 +12255,7 @@
       "name": "svelte-example-gap-cursor",
       "title": "svelte-example-gap-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-gap-cursor.json"
       ],
@@ -12299,7 +12299,7 @@
       "name": "svelte-example-hard-break",
       "title": "svelte-example-hard-break",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for hard line break node.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -12353,7 +12353,7 @@
       "name": "svelte-example-heading",
       "title": "svelte-example-heading",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -12405,7 +12405,7 @@
       "name": "svelte-example-horizontal-rule",
       "title": "svelte-example-horizontal-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for horizontal rule node.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
@@ -12454,7 +12454,7 @@
       "name": "svelte-example-image-view",
       "title": "svelte-example-image-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom image node views with resize and upload support.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-image.json",
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
@@ -12505,7 +12505,7 @@
       "name": "svelte-example-inline-menu",
       "title": "svelte-example-inline-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-inline-menu.json",
         "https://prosekit.dev/r/svelte-ui-inline-menu.json"
@@ -12555,7 +12555,7 @@
       "name": "svelte-example-italic",
       "title": "svelte-example-italic",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for italic mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -12607,7 +12607,7 @@
       "name": "svelte-example-keymap",
       "title": "svelte-example-keymap",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
@@ -12659,7 +12659,7 @@
       "name": "svelte-example-link",
       "title": "svelte-example-link",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for link mark with URL input.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-link.json",
         "https://prosekit.dev/r/svelte-ui-inline-menu.json"
@@ -12709,7 +12709,7 @@
       "name": "svelte-example-link-mark-view",
       "title": "svelte-example-link-mark-view",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom link mark views with preview and edit functionality.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
@@ -12760,7 +12760,7 @@
       "name": "svelte-example-list",
       "title": "svelte-example-list",
       "type": "registry:block",
-      "description": "",
+      "description": "Ordered, unordered, and task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-list.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -12812,7 +12812,7 @@
       "name": "svelte-example-list-custom-checkbox",
       "title": "svelte-example-list-custom-checkbox",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-list-custom-checkbox.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -12870,7 +12870,7 @@
       "name": "svelte-example-loro",
       "title": "svelte-example-loro",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
@@ -12928,7 +12928,7 @@
       "name": "svelte-example-mark-rule",
       "title": "svelte-example-mark-rule",
       "type": "registry:block",
-      "description": "",
+      "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -12973,7 +12973,7 @@
       "name": "svelte-example-minimal",
       "title": "svelte-example-minimal",
       "type": "registry:block",
-      "description": "",
+      "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -13006,7 +13006,7 @@
       "name": "svelte-example-placeholder",
       "title": "svelte-example-placeholder",
       "type": "registry:block",
-      "description": "",
+      "description": "Placeholder text displayed when editor is empty.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -13045,7 +13045,7 @@
       "name": "svelte-example-readonly",
       "title": "svelte-example-readonly",
       "type": "registry:block",
-      "description": "",
+      "description": "Read-only editor mode that prevents editing.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -13100,7 +13100,7 @@
       "name": "svelte-example-rtl",
       "title": "svelte-example-rtl",
       "type": "registry:block",
-      "description": "",
+      "description": "Right-to-left text direction support.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-rtl.json",
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
@@ -13171,7 +13171,7 @@
       "name": "svelte-example-save-html",
       "title": "svelte-example-save-html",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -13204,7 +13204,7 @@
       "name": "svelte-example-save-json",
       "title": "svelte-example-save-json",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -13237,7 +13237,7 @@
       "name": "svelte-example-save-markdown",
       "title": "svelte-example-save-markdown",
       "type": "registry:block",
-      "description": "",
+      "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -13283,7 +13283,7 @@
       "name": "svelte-example-search",
       "title": "svelte-example-search",
       "type": "registry:block",
-      "description": "",
+      "description": "Search and highlight text with navigation.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-search.json",
         "https://prosekit.dev/r/svelte-ui-search.json"
@@ -13333,7 +13333,7 @@
       "name": "svelte-example-slash-menu",
       "title": "svelte-example-slash-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-ui-slash-menu.json"
       ],
@@ -13380,7 +13380,7 @@
       "name": "svelte-example-strike",
       "title": "svelte-example-strike",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for strikethrough mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -13434,7 +13434,7 @@
       "name": "svelte-example-table",
       "title": "svelte-example-table",
       "type": "registry:block",
-      "description": "",
+      "description": "Table node with row and column operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-table.json",
         "https://prosekit.dev/r/svelte-ui-table-handle.json"
@@ -13482,7 +13482,7 @@
       "name": "svelte-example-text-align",
       "title": "svelte-example-text-align",
       "type": "registry:block",
-      "description": "",
+      "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-text-align.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -13536,7 +13536,7 @@
       "name": "svelte-example-text-color",
       "title": "svelte-example-text-color",
       "type": "registry:block",
-      "description": "",
+      "description": "Text color and background color formatting.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -13597,7 +13597,7 @@
       "name": "svelte-example-toolbar",
       "title": "svelte-example-toolbar",
       "type": "registry:block",
-      "description": "",
+      "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -13649,7 +13649,7 @@
       "name": "svelte-example-typography",
       "title": "svelte-example-typography",
       "type": "registry:block",
-      "description": "",
+      "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json"
       ],
@@ -13687,7 +13687,7 @@
       "name": "svelte-example-underline",
       "title": "svelte-example-underline",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for underline mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -13739,7 +13739,7 @@
       "name": "svelte-example-unmount",
       "title": "svelte-example-unmount",
       "type": "registry:block",
-      "description": "",
+      "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -13785,7 +13785,7 @@
       "name": "svelte-example-user-menu",
       "title": "svelte-example-user-menu",
       "type": "registry:block",
-      "description": "",
+      "description": "Autocomplete menu for @mentions and",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
         "https://prosekit.dev/r/svelte-sample-sample-user-data.json",
@@ -13840,7 +13840,7 @@
       "name": "svelte-example-user-menu-dynamic",
       "title": "svelte-example-user-menu-dynamic",
       "type": "registry:block",
-      "description": "",
+      "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-query-users.json",
         "https://prosekit.dev/r/svelte-ui-user-menu.json"
@@ -13901,7 +13901,7 @@
       "name": "svelte-example-view-adapter",
       "title": "svelte-example-view-adapter",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-define-atom-block.json",
         "https://prosekit.dev/r/svelte-sample-sample-doc-view-adapter.json"
@@ -13954,7 +13954,7 @@
       "name": "svelte-example-word-counter",
       "title": "svelte-example-word-counter",
       "type": "registry:block",
-      "description": "",
+      "description": "Display word and character count statistics.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-word-counter.json",
         "https://prosekit.dev/r/svelte-ui-word-counter.json"
@@ -14002,7 +14002,7 @@
       "name": "svelte-example-yjs",
       "title": "svelte-example-yjs",
       "type": "registry:block",
-      "description": "",
+      "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
@@ -15618,7 +15618,7 @@
       "name": "solid-example-code",
       "title": "solid-example-code",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for inline code mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-code.json",
         "https://prosekit.dev/r/solid-ui-toolbar.json"
@@ -15671,7 +15671,7 @@
       "name": "solid-example-code-block",
       "title": "solid-example-code-block",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/solid-ui-code-block-view.json",
@@ -15728,7 +15728,7 @@
       "name": "solid-example-code-block-themes",
       "title": "solid-example-code-block-themes",
       "type": "registry:block",
-      "description": "",
+      "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-code-block.json",
         "https://prosekit.dev/r/solid-ui-code-block-view.json"
@@ -15789,7 +15789,7 @@
       "name": "solid-example-drop-cursor",
       "title": "solid-example-drop-cursor",
       "type": "registry:block",
-      "description": "",
+      "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-drop-cursor.json"
       ],
@@ -15834,7 +15834,7 @@
       "name": "solid-example-emoji-rules",
       "title": "solid-example-emoji-rules",
       "type": "registry:block",
-      "description": "",
+      "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -15880,7 +15880,7 @@
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",
-      "description": "",
+      "description": "Full-featured editor with all available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
         "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
@@ -15980,7 +15980,7 @@
       "name": "solid-example-hard-break",
       "title": "solid-example-hard-break",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for hard line break node.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-hard-break.json",
         "https://prosekit.dev/r/solid-ui-button.json"
@@ -16035,7 +16035,7 @@
       "name": "solid-example-heading",
       "title": "solid-example-heading",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-heading.json",
         "https://prosekit.dev/r/solid-ui-toolbar.json"
@@ -16088,7 +16088,7 @@
       "name": "solid-example-italic",
       "title": "solid-example-italic",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for italic mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-italic.json",
         "https://prosekit.dev/r/solid-ui-toolbar.json"
@@ -16141,7 +16141,7 @@
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",
-      "description": "",
+      "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -16175,7 +16175,7 @@
       "name": "solid-example-placeholder",
       "title": "solid-example-placeholder",
       "type": "registry:block",
-      "description": "",
+      "description": "Placeholder text displayed when editor is empty.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -16215,7 +16215,7 @@
       "name": "solid-example-readonly",
       "title": "solid-example-readonly",
       "type": "registry:block",
-      "description": "",
+      "description": "Read-only editor mode that prevents editing.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/solid-ui-button.json"
@@ -16276,7 +16276,7 @@
       "name": "solid-example-rtl",
       "title": "solid-example-rtl",
       "type": "registry:block",
-      "description": "",
+      "description": "Right-to-left text direction support.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-rtl.json",
         "https://prosekit.dev/r/solid-sample-sample-uploader.json",
@@ -16348,7 +16348,7 @@
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for strikethrough mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-strike.json",
         "https://prosekit.dev/r/solid-ui-button.json"
@@ -16403,7 +16403,7 @@
       "name": "solid-example-underline",
       "title": "solid-example-underline",
       "type": "registry:block",
-      "description": "",
+      "description": "Example for underline mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-underline.json",
         "https://prosekit.dev/r/solid-ui-toolbar.json"
@@ -16456,7 +16456,7 @@
       "name": "solid-example-unmount",
       "title": "solid-example-unmount",
       "type": "registry:block",
-      "description": "",
+      "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -16502,7 +16502,7 @@
       "name": "solid-example-view-adapter",
       "title": "solid-example-view-adapter",
       "type": "registry:block",
-      "description": "",
+      "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-define-atom-block.json",
         "https://prosekit.dev/r/solid-sample-sample-doc-view-adapter.json"

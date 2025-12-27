@@ -130,7 +130,7 @@
   description: Properly unmount and remount editor instances.
 - name: user-menu
   frameworks: [react, vue, preact, svelte]
-  description: Autocomplete menu for @mentions and #tags.
+  description: Autocomplete menu for @mentions and
 - name: user-menu-dynamic
   frameworks: [react, vue, preact, svelte]
   description: Dynamic autocomplete menu with async data loading.

@@ -38,6 +38,7 @@
     "./extensions/bold": "./src/extensions/bold.gen.ts",
     "./extensions/code": "./src/extensions/code.gen.ts",
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
+    "./extensions/color": "./src/extensions/color.gen.ts",
     "./extensions/commit": "./src/extensions/commit.gen.ts",
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
@@ -177,14 +178,14 @@
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
     "loro-prosemirror": ">= 0.4.1",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
@@ -290,6 +291,10 @@
       "./extensions/code-block": {
         "types": "./dist/prosekit-extensions-code-block.d.ts",
         "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./extensions/color": {
+        "types": "./dist/prosekit-extensions-color.d.ts",
+        "default": "./dist/prosekit-extensions-color.js"
       },
       "./extensions/commit": {
         "types": "./dist/prosekit-extensions-commit.d.ts",
@@ -770,6 +775,9 @@
         "extensions/code-block": [
           "./dist/prosekit-extensions-code-block.d.ts"
         ],
+        "extensions/color": [
+          "./dist/prosekit-extensions-color.d.ts"
+        ],
         "extensions/commit": [
           "./dist/prosekit-extensions-commit.d.ts"
         ],
@@ -1085,16 +1093,6 @@
   "dev": {
     "entry": {
       "prosekit": "./src/index.ts",
-      "prosekit-pm": "./src/pm.ts",
-      "prosekit-pm-commands": "./src/pm/commands.ts",
-      "prosekit-pm-history": "./src/pm/history.ts",
-      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
-      "prosekit-pm-keymap": "./src/pm/keymap.ts",
-      "prosekit-pm-model": "./src/pm/model.ts",
-      "prosekit-pm-state": "./src/pm/state.ts",
-      "prosekit-pm-transform": "./src/pm/transform.ts",
-      "prosekit-pm-view": "./src/pm/view.ts",
-      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-basic": "./src/basic.gen.ts",
       "basic/style": "./src/basic/style.css",
       "basic/typography": "./src/basic/typography.css",
@@ -1104,6 +1102,7 @@
       "prosekit-extensions-autocomplete": "./src/extensions/autocomplete.gen.ts",
       "prosekit-extensions-blockquote": "./src/extensions/blockquote.gen.ts",
       "prosekit-extensions-bold": "./src/extensions/bold.gen.ts",
+      "prosekit-extensions-color": "./src/extensions/color.gen.ts",
       "prosekit-extensions-code": "./src/extensions/code.gen.ts",
       "prosekit-extensions-code-block": "./src/extensions/code-block.gen.ts",
       "prosekit-extensions-commit": "./src/extensions/commit.gen.ts",
@@ -1155,6 +1154,16 @@
       "prosekit-lit-resizable": "./src/lit/resizable.gen.ts",
       "prosekit-lit-table-handle": "./src/lit/table-handle.gen.ts",
       "prosekit-lit-tooltip": "./src/lit/tooltip.gen.ts",
+      "prosekit-pm": "./src/pm.ts",
+      "prosekit-pm-commands": "./src/pm/commands.ts",
+      "prosekit-pm-history": "./src/pm/history.ts",
+      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
+      "prosekit-pm-keymap": "./src/pm/keymap.ts",
+      "prosekit-pm-model": "./src/pm/model.ts",
+      "prosekit-pm-state": "./src/pm/state.ts",
+      "prosekit-pm-transform": "./src/pm/transform.ts",
+      "prosekit-pm-view": "./src/pm/view.ts",
+      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-preact": "./src/preact.gen.ts",
       "prosekit-preact-autocomplete": "./src/preact/autocomplete.gen.ts",
       "prosekit-preact-block-handle": "./src/preact/block-handle.gen.ts",

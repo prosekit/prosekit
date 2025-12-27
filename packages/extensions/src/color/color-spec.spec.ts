@@ -1,9 +1,9 @@
+import formatHTML from 'diffable-html'
 import {
   describe,
   expect,
   it,
 } from 'vitest'
-import formatHTML from 'diffable-html'
 
 import { setupTest } from '../testing'
 

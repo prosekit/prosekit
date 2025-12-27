@@ -4560,7 +4560,7 @@
       "name": "vue-example-full",
       "title": "vue-example-full",
       "type": "registry:block",
-      "description": "Full-featured editor with all available features enabled.",
+      "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
         "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
@@ -8348,7 +8348,7 @@
       "name": "preact-example-full",
       "title": "preact-example-full",
       "type": "registry:block",
-      "description": "Full-featured editor with all available features enabled.",
+      "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
         "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
@@ -12156,7 +12156,7 @@
       "name": "svelte-example-full",
       "title": "svelte-example-full",
       "type": "registry:block",
-      "description": "Full-featured editor with all available features enabled.",
+      "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
         "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
@@ -15880,7 +15880,7 @@
       "name": "solid-example-full",
       "title": "solid-example-full",
       "type": "registry:block",
-      "description": "Full-featured editor with all available features enabled.",
+      "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
         "https://prosekit.dev/r/solid-sample-sample-tag-data.json",

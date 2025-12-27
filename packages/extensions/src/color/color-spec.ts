@@ -40,9 +40,9 @@ export function defineColorSpec(): ColorSpecExtension {
         },
       },
     ],
-    toDOM(mark, inline) {
+    toDOM(mark) {
       const color = (mark.attrs as ColorAttrs).color
-      return [inline ? 'span' : 'div', { style: `color: ${color};` }, 0]
+      return ['span', { style: `color: ${color}; background-color: red;` }, 0]
     },
   })
 }

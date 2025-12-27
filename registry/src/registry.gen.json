@@ -7,7 +7,7 @@
       "name": "react-example-block-handle",
       "title": "react-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block",
+      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/react-ui-block-handle.json",
@@ -64,7 +64,7 @@
       "name": "react-example-blockquote",
       "title": "react-example-blockquote",
       "type": "registry:block",
-      "description": "Example for blockquote node",
+      "description": "Example for blockquote node.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
@@ -114,7 +114,7 @@
       "name": "react-example-bold",
       "title": "react-example-bold",
       "type": "registry:block",
-      "description": "Example for bold mark",
+      "description": "Example for bold mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -4099,7 +4099,7 @@
       "name": "vue-example-block-handle",
       "title": "vue-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block",
+      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/vue-ui-block-handle.json",
@@ -4155,7 +4155,7 @@
       "name": "vue-example-blockquote",
       "title": "vue-example-blockquote",
       "type": "registry:block",
-      "description": "Example for blockquote node",
+      "description": "Example for blockquote node.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-ui-toolbar.json"
       ],
@@ -4204,7 +4204,7 @@
       "name": "vue-example-bold",
       "title": "vue-example-bold",
       "type": "registry:block",
-      "description": "Example for bold mark",
+      "description": "Example for bold mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -7880,7 +7880,7 @@
       "name": "preact-example-block-handle",
       "title": "preact-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block",
+      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/preact-ui-block-handle.json",
@@ -7937,7 +7937,7 @@
       "name": "preact-example-blockquote",
       "title": "preact-example-blockquote",
       "type": "registry:block",
-      "description": "Example for blockquote node",
+      "description": "Example for blockquote node.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
@@ -7987,7 +7987,7 @@
       "name": "preact-example-bold",
       "title": "preact-example-bold",
       "type": "registry:block",
-      "description": "Example for bold mark",
+      "description": "Example for bold mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -11696,7 +11696,7 @@
       "name": "svelte-example-block-handle",
       "title": "svelte-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block",
+      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/svelte-ui-block-handle.json",
@@ -11752,7 +11752,7 @@
       "name": "svelte-example-blockquote",
       "title": "svelte-example-blockquote",
       "type": "registry:block",
-      "description": "Example for blockquote node",
+      "description": "Example for blockquote node.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
@@ -11801,7 +11801,7 @@
       "name": "svelte-example-bold",
       "title": "svelte-example-bold",
       "type": "registry:block",
-      "description": "Example for bold mark",
+      "description": "Example for bold mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -15458,7 +15458,7 @@
       "name": "solid-example-block-handle",
       "title": "solid-example-block-handle",
       "type": "registry:block",
-      "description": "A little box that appears when you hover over a block that allow you to re-order the block",
+      "description": "A little box that appears when you hover over a block that allow you to re-order the block.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-block-handle.json",
         "https://prosekit.dev/r/solid-ui-block-handle.json",
@@ -15515,7 +15515,7 @@
       "name": "solid-example-blockquote",
       "title": "solid-example-blockquote",
       "type": "registry:block",
-      "description": "Example for blockquote node",
+      "description": "Example for blockquote node.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
@@ -15565,7 +15565,7 @@
       "name": "solid-example-bold",
       "title": "solid-example-bold",
       "type": "registry:block",
-      "description": "Example for bold mark",
+      "description": "Example for bold mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-bold.json",
         "https://prosekit.dev/r/solid-ui-toolbar.json"

@@ -42,7 +42,7 @@
   description: Example for horizontal rule node.
 - name: image-view
   frameworks: [react, vue, preact, svelte]
-  description: Custom image node views with resize and upload support.
+  description: Custom image node views with resize support.
 - name: inline-menu
   frameworks: [react, vue, preact, svelte]
   description: Inline formatting menu that appears on text selection.
@@ -57,10 +57,10 @@
   description: Example for link mark with URL input.
 - name: link-mark-view
   frameworks: [react, vue, preact, svelte]
-  description: Custom link mark views with preview and edit functionality.
+  description: An example showing how to render a mark as a custom component.
 - name: list
   frameworks: [react, vue, preact, svelte]
-  description: Ordered, unordered, and task lists.
+  description: Example for list node.
 - name: list-custom-checkbox
   frameworks: [react, vue, preact, svelte]
   description: Custom checkbox styling for task lists.
@@ -79,10 +79,10 @@
   description: Notion-style editor with block-based editing.
 - name: placeholder
   frameworks: [react, vue, preact, svelte, solid]
-  description: Placeholder text displayed when editor is empty.
+  description: Placeholder text displayed.
 - name: readonly
   frameworks: [react, vue, preact, svelte, solid]
-  description: Read-only editor mode that prevents editing.
+  description: Toggle between read-only and editable mode.
 - name: rtl
   frameworks: [react, vue, preact, svelte, solid]
   description: Right-to-left text direction support.

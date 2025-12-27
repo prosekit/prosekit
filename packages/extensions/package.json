@@ -30,6 +30,7 @@
     "./autocomplete": "./src/autocomplete/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
+    "./color": "./src/color/index.ts",
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
     "./commit": "./src/commit/index.ts",

@@ -271,7 +271,6 @@
         "default": "./dist/prosekit-extensions-placeholder.js"
       },
       "./placeholder/style.css": {
-        "default": "./dist/placeholder/style.css"
       },
       "./readonly": {
         "types": "./dist/prosekit-extensions-readonly.d.ts",

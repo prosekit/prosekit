@@ -2365,7 +2365,7 @@
       "name": "react-example-user-menu",
       "title": "react-example-user-menu",
       "type": "registry:block",
-      "description": "Autocomplete menu for @mentions and",
+      "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",
         "https://prosekit.dev/r/react-sample-sample-user-data.json",
@@ -6204,7 +6204,7 @@
       "name": "vue-example-user-menu",
       "title": "vue-example-user-menu",
       "type": "registry:block",
-      "description": "Autocomplete menu for @mentions and",
+      "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
         "https://prosekit.dev/r/vue-sample-sample-user-data.json",
@@ -10015,7 +10015,7 @@
       "name": "preact-example-user-menu",
       "title": "preact-example-user-menu",
       "type": "registry:block",
-      "description": "Autocomplete menu for @mentions and",
+      "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
         "https://prosekit.dev/r/preact-sample-sample-user-data.json",
@@ -13785,7 +13785,7 @@
       "name": "svelte-example-user-menu",
       "title": "svelte-example-user-menu",
       "type": "registry:block",
-      "description": "Autocomplete menu for @mentions and",
+      "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
         "https://prosekit.dev/r/svelte-sample-sample-user-data.json",

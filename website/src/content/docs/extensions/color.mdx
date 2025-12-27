@@ -1,0 +1,48 @@
+---
+title: Color
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `color` mark is used to represent text with a specific color. It will be rendered as `<span>` element with inline `color` style in HTML.
+
+<Demo story="color" />
+
+## Commands
+
+### `addColor`
+
+Add a color to the current selection. This command will override any existing color on the selected text.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColor } from 'prosekit/extensions/color'
+
+const extension = defineColor()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.addColor({ color: 'red' })
+editor.commands.addColor({ color: '#0000ff' })
+editor.commands.addColor({ color: 'rgb(255, 0, 0)' })
+editor.commands.addColor({ color: 'var(--color-primary)' })
+```
+
+### `removeColor`
+
+Remove the color from the current selection.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColor } from 'prosekit/extensions/color'
+
+const extension = defineColor()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.removeColor()
+```
+
+## API Reference
+
+- [prosekit/extensions/color](/references/extensions/color)

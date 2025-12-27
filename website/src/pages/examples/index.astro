@@ -4,12 +4,12 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
 import LinkCard from 'starlight-theme-nova/components/LinkCard.astro'
 import {
   exampleSidebar,
-  exampleSidebarItems,
+  stories,
 } from '../../example-data'
 ---
 
 <StarlightPage frontmatter={{ title: 'Examples', tableOfContents: false, pagefind: false }} sidebar={exampleSidebar}>
   <CardGrid>
-    {exampleSidebarItems.map((item) => <LinkCard title={item.label} href={item.link} />)}
+    {stories.map((item) => <LinkCard title={item.name} href={item.link} description={item.description} />)}
   </CardGrid>
 </StarlightPage>

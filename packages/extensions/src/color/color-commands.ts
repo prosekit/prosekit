@@ -5,6 +5,7 @@ import {
   type Extension,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
+
 import type { ColorAttrs } from './color-spec'
 
 /**

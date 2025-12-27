@@ -778,7 +778,7 @@
       "name": "react-example-image-view",
       "title": "react-example-image-view",
       "type": "registry:block",
-      "description": "Custom image node views with resize and upload support.",
+      "description": "Custom image node views with resize support.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-image.json",
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
@@ -1043,7 +1043,7 @@
       "name": "react-example-link-mark-view",
       "title": "react-example-link-mark-view",
       "type": "registry:block",
-      "description": "Custom link mark views with preview and edit functionality.",
+      "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-link-mark-view.json"
       ],
@@ -1094,7 +1094,7 @@
       "name": "react-example-list",
       "title": "react-example-list",
       "type": "registry:block",
-      "description": "Ordered, unordered, and task lists.",
+      "description": "Example for list node.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-list.json",
         "https://prosekit.dev/r/react-ui-toolbar.json"
@@ -1502,7 +1502,7 @@
       "name": "react-example-placeholder",
       "title": "react-example-placeholder",
       "type": "registry:block",
-      "description": "Placeholder text displayed when editor is empty.",
+      "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -1542,7 +1542,7 @@
       "name": "react-example-readonly",
       "title": "react-example-readonly",
       "type": "registry:block",
-      "description": "Read-only editor mode that prevents editing.",
+      "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -4858,7 +4858,7 @@
       "name": "vue-example-image-view",
       "title": "vue-example-image-view",
       "type": "registry:block",
-      "description": "Custom image node views with resize and upload support.",
+      "description": "Custom image node views with resize support.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-image.json",
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
@@ -5119,7 +5119,7 @@
       "name": "vue-example-link-mark-view",
       "title": "vue-example-link-mark-view",
       "type": "registry:block",
-      "description": "Custom link mark views with preview and edit functionality.",
+      "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-link-mark-view.json"
       ],
@@ -5170,7 +5170,7 @@
       "name": "vue-example-list",
       "title": "vue-example-list",
       "type": "registry:block",
-      "description": "Ordered, unordered, and task lists.",
+      "description": "Example for list node.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-list.json",
         "https://prosekit.dev/r/vue-ui-toolbar.json"
@@ -5416,7 +5416,7 @@
       "name": "vue-example-placeholder",
       "title": "vue-example-placeholder",
       "type": "registry:block",
-      "description": "Placeholder text displayed when editor is empty.",
+      "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -5455,7 +5455,7 @@
       "name": "vue-example-readonly",
       "title": "vue-example-readonly",
       "type": "registry:block",
-      "description": "Read-only editor mode that prevents editing.",
+      "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -8651,7 +8651,7 @@
       "name": "preact-example-image-view",
       "title": "preact-example-image-view",
       "type": "registry:block",
-      "description": "Custom image node views with resize and upload support.",
+      "description": "Custom image node views with resize support.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-image.json",
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
@@ -8916,7 +8916,7 @@
       "name": "preact-example-link-mark-view",
       "title": "preact-example-link-mark-view",
       "type": "registry:block",
-      "description": "Custom link mark views with preview and edit functionality.",
+      "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-link-mark-view.json"
       ],
@@ -8967,7 +8967,7 @@
       "name": "preact-example-list",
       "title": "preact-example-list",
       "type": "registry:block",
-      "description": "Ordered, unordered, and task lists.",
+      "description": "Example for list node.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-list.json",
         "https://prosekit.dev/r/preact-ui-toolbar.json"
@@ -9217,7 +9217,7 @@
       "name": "preact-example-placeholder",
       "title": "preact-example-placeholder",
       "type": "registry:block",
-      "description": "Placeholder text displayed when editor is empty.",
+      "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
         "preact",
@@ -9257,7 +9257,7 @@
       "name": "preact-example-readonly",
       "title": "preact-example-readonly",
       "type": "registry:block",
-      "description": "Read-only editor mode that prevents editing.",
+      "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -12454,7 +12454,7 @@
       "name": "svelte-example-image-view",
       "title": "svelte-example-image-view",
       "type": "registry:block",
-      "description": "Custom image node views with resize and upload support.",
+      "description": "Custom image node views with resize support.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-image.json",
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
@@ -12709,7 +12709,7 @@
       "name": "svelte-example-link-mark-view",
       "title": "svelte-example-link-mark-view",
       "type": "registry:block",
-      "description": "Custom link mark views with preview and edit functionality.",
+      "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
@@ -12760,7 +12760,7 @@
       "name": "svelte-example-list",
       "title": "svelte-example-list",
       "type": "registry:block",
-      "description": "Ordered, unordered, and task lists.",
+      "description": "Example for list node.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-list.json",
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
@@ -13006,7 +13006,7 @@
       "name": "svelte-example-placeholder",
       "title": "svelte-example-placeholder",
       "type": "registry:block",
-      "description": "Placeholder text displayed when editor is empty.",
+      "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit"
@@ -13045,7 +13045,7 @@
       "name": "svelte-example-readonly",
       "title": "svelte-example-readonly",
       "type": "registry:block",
-      "description": "Read-only editor mode that prevents editing.",
+      "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -16175,7 +16175,7 @@
       "name": "solid-example-placeholder",
       "title": "solid-example-placeholder",
       "type": "registry:block",
-      "description": "Placeholder text displayed when editor is empty.",
+      "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
@@ -16215,7 +16215,7 @@
       "name": "solid-example-readonly",
       "title": "solid-example-readonly",
       "type": "registry:block",
-      "description": "Read-only editor mode that prevents editing.",
+      "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-readonly.json",
         "https://prosekit.dev/r/solid-ui-button.json"

@@ -47,20 +47,39 @@ describe('defineColorSpec', () => {
   it('should render color as block div when not inline', () => {
     const { editor, n, m } = setupTest()
 
-    const doc = n.doc(
-      n.blockquote(
-        n.p(
-          'Default paragraph',
-        ),
-        m.color(
-          { color: '#0000ff' },
-          n.p(
-            'Colored paragraph',
-          ),
-        ),
-      ),
+    let p1 = n.p(
+      'Default paragraph',
     )
+
+    p1.check()
+
+    let p2 = n.p(
+      'Colored paragraph',
+    )
+
+    p2.check()
+
+    let p3 = m.color(
+      { color: '#0000ff' },
+      p2,
+    )
+
+    p3[0].check()
+
+    let blockquote = n.blockquote(
+      p3,
+    )
+
+    blockquote.check()
+
+    const doc = n.doc(
+      p1,
+      blockquote,
+    )
+
+    doc.check()
+
     editor.set(doc)
-    expect(editor.view.dom.innerHTML).toMatchInlineSnapshot()
+    expect(editor.view.dom.innerHTML).toMatchInlineSnapshot(`"<p>Default paragraph</p><p>Colored paragraph</p>"`)
   })
 })

@@ -38,7 +38,6 @@
     "./extensions/bold": "./src/extensions/bold.gen.ts",
     "./extensions/code": "./src/extensions/code.gen.ts",
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
-    "./extensions/color": "./src/extensions/color.gen.ts",
     "./extensions/commit": "./src/extensions/commit.gen.ts",
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
@@ -291,10 +290,6 @@
       "./extensions/code-block": {
         "types": "./dist/prosekit-extensions-code-block.d.ts",
         "default": "./dist/prosekit-extensions-code-block.js"
-      },
-      "./extensions/color": {
-        "types": "./dist/prosekit-extensions-color.d.ts",
-        "default": "./dist/prosekit-extensions-color.js"
       },
       "./extensions/commit": {
         "types": "./dist/prosekit-extensions-commit.d.ts",
@@ -775,9 +770,6 @@
         "extensions/code-block": [
           "./dist/prosekit-extensions-code-block.d.ts"
         ],
-        "extensions/color": [
-          "./dist/prosekit-extensions-color.d.ts"
-        ],
         "extensions/commit": [
           "./dist/prosekit-extensions-commit.d.ts"
         ],
@@ -1102,7 +1094,6 @@
       "prosekit-extensions-autocomplete": "./src/extensions/autocomplete.gen.ts",
       "prosekit-extensions-blockquote": "./src/extensions/blockquote.gen.ts",
       "prosekit-extensions-bold": "./src/extensions/bold.gen.ts",
-      "prosekit-extensions-color": "./src/extensions/color.gen.ts",
       "prosekit-extensions-code": "./src/extensions/code.gen.ts",
       "prosekit-extensions-code-block": "./src/extensions/code-block.gen.ts",
       "prosekit-extensions-commit": "./src/extensions/commit.gen.ts",

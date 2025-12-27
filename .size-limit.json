@@ -80,6 +80,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/color",
+    "path": "packages/prosekit/dist/prosekit-extensions-color.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/commit",
     "path": "packages/prosekit/dist/prosekit-extensions-commit.js",
     "ignore": [

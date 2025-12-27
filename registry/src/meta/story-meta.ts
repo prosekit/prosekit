@@ -3,7 +3,6 @@ import { vfs } from '@prosekit/dev'
 import type { ItemAccumulator } from './types'
 
 const STORY_META_PATH = 'registry/src/story-meta.gen.yaml'
-const STORY_META_PATH2 = 'registry/src/story-meta.gen.json'
 
 // Sync data from passed ItemAccumulators to story-meta.gen.yaml
 export async function updateStoryMeta(items: ItemAccumulator[]): Promise<void> {
@@ -48,5 +47,5 @@ async function readStoryItems(): Promise<StoryItem[]> {
 }
 
 function writeStoryMeta(items: StoryItem[]): void {
-  vfs.updateJSON(STORY_META_PATH2, items)
+  vfs.updateYAML(STORY_META_PATH, items, { flowLevel: 2 })
 }

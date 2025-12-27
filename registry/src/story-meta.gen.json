@@ -142,7 +142,7 @@
   },
   {
     "name": "rtl",
-    "frameworks": ["react", "vue", "preact", "svelte", "solid"],
+    "frameworks": ["react", "vue", "preact", "svelte"],
     "description": "Right-to-left text direction support."
   },
   {

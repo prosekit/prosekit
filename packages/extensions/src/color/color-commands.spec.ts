@@ -21,6 +21,31 @@ describe('addColor', () => {
     editor.commands.addColor({ color: 'red' })
     expect(editor.getDocJSON()).toEqual(doc2.toJSON())
   })
+
+  it('can override existing color', () => {
+    const { editor, n, m } = setupTest()
+
+    const doc1 = n.doc(
+      n.p(
+        'A',
+        m.color({ color: 'red' }, 'B<a>C'),
+        m.color({ color: 'red' }, 'DE'),
+        'F<b>G',
+      ),
+    )
+    const doc2 = n.doc(
+      n.p(
+        'A',
+        m.color({ color: 'red' }, 'B'),
+        m.color({ color: 'blue' }, 'CDEF'),
+        'G',
+      ),
+    )
+
+    editor.set(doc1)
+    editor.commands.addColor({ color: 'blue' })
+    expect(editor.getDocJSON()).toEqual(doc2.toJSON())
+  })
 })
 
 describe('removeColor', () => {

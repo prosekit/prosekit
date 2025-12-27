@@ -27,7 +27,7 @@
   description: Auto-convert text shortcuts to emojis using input rules.
 - name: full
   frameworks: [react, vue, preact, svelte, solid]
-  description: Full-featured editor with all available features enabled.
+  description: Full-featured editor with most available features enabled.
 - name: gap-cursor
   frameworks: [react, vue, preact, svelte]
   description: Cursor navigation between non-text block elements.

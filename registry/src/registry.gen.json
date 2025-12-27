@@ -475,7 +475,7 @@
       "name": "react-example-full",
       "title": "react-example-full",
       "type": "registry:block",
-      "description": "Full-featured editor with all available features enabled.",
+      "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-full.json",
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",

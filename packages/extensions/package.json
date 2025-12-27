@@ -27,12 +27,12 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./color": "./src/color/index.ts",
     "./autocomplete": "./src/autocomplete/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
+    "./color": "./src/color/index.ts",
     "./commit": "./src/commit/index.ts",
     "./commit/style.css": "./src/commit/style.css",
     "./doc": "./src/doc/index.ts",
@@ -271,6 +271,7 @@
         "default": "./dist/prosekit-extensions-placeholder.js"
       },
       "./placeholder/style.css": {
+        "default": "./dist/placeholder/style.css"
       },
       "./readonly": {
         "types": "./dist/prosekit-extensions-readonly.d.ts",
@@ -447,10 +448,10 @@
   "dev": {
     "entry": {
       "prosekit-extensions": "./src/index.ts",
+      "prosekit-extensions-color": "./src/color/index.ts",
       "prosekit-extensions-autocomplete": "./src/autocomplete/index.ts",
       "prosekit-extensions-blockquote": "./src/blockquote/index.ts",
       "prosekit-extensions-bold": "./src/bold/index.ts",
-      "prosekit-extensions-color": "./src/color/index.ts",
       "prosekit-extensions-code": "./src/code/index.ts",
       "prosekit-extensions-code-block": "./src/code-block/index.ts",
       "prosekit-extensions-commit": "./src/commit/index.ts",

@@ -349,11 +349,15 @@
         "color": [
           "./dist/prosekit-extensions-color.d.ts"
         ],
-        "commit": [],
+        "commit": [
+          "./dist/prosekit-extensions-commit.d.ts"
+        ],
         "doc": [
           "./dist/prosekit-extensions-doc.d.ts"
         ],
-        "drop-cursor": [],
+        "drop-cursor": [
+          "./dist/prosekit-extensions-drop-cursor.d.ts"
+        ],
         "drop-indicator": [
           "./dist/prosekit-extensions-drop-indicator.d.ts"
         ],
@@ -444,12 +448,12 @@
   "dev": {
     "entry": {
       "prosekit-extensions": "./src/index.ts",
-      "prosekit-extensions-color": "./src/color/index.ts",
       "prosekit-extensions-autocomplete": "./src/autocomplete/index.ts",
       "prosekit-extensions-blockquote": "./src/blockquote/index.ts",
       "prosekit-extensions-bold": "./src/bold/index.ts",
       "prosekit-extensions-code": "./src/code/index.ts",
       "prosekit-extensions-code-block": "./src/code-block/index.ts",
+      "prosekit-extensions-color": "./src/color/index.ts",
       "prosekit-extensions-commit": "./src/commit/index.ts",
       "commit/style": "./src/commit/style.css",
       "prosekit-extensions-doc": "./src/doc/index.ts",

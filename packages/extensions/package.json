@@ -349,15 +349,11 @@
         "color": [
           "./dist/prosekit-extensions-color.d.ts"
         ],
-        "commit": [
-          "./dist/prosekit-extensions-commit.d.ts"
-        ],
+        "commit": [],
         "doc": [
           "./dist/prosekit-extensions-doc.d.ts"
         ],
-        "drop-cursor": [
-          "./dist/prosekit-extensions-drop-cursor.d.ts"
-        ],
+        "drop-cursor": [],
         "drop-indicator": [
           "./dist/prosekit-extensions-drop-indicator.d.ts"
         ],

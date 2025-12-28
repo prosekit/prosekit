@@ -14,10 +14,8 @@ import {
 
 testStoryConsistency('text-color')
 
-testStory({
-  story: 'text-color',
-}, () => {
-  it('change and clear text color via inline menu', async ({}) => {
+testStory({ story: 'text-color' }, () => {
+  it('change and clear text color via inline menu', async () => {
     const editor = await waitForEditor()
 
     // Select the word "some"
@@ -43,7 +41,7 @@ testStory({
     await expectLocatorToNotExist(someSpan)
   })
 
-  it('change and clear background color via inline menu', async ({}) => {
+  it('change and clear background color via inline menu', async () => {
     const editor = await waitForEditor()
 
     // Select the word "some"
@@ -55,7 +53,7 @@ testStory({
     await greenBtn.click()
 
     // Assert the selected text now renders with green background
-    const someSpan = editor.locate('span[data-background-color]', { hasText: 'some' })
+    const someSpan = editor.locate('span[data-background-color="#d1fae5"]', { hasText: 'some' })
     await expect.element(someSpan).toBeVisible()
     await expect.element(someSpan).toHaveStyle({ backgroundColor: 'rgb(209, 250, 229)' })
 

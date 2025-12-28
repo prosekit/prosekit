@@ -54,7 +54,7 @@ describe('defineBackgroundColorSpec', () => {
         </span>
         <span
           data-background-color="hsl(240 100% 50% / 0.5)"
-          style="background-color: hsla(240, 100%, 50%, 0.5);"
+          style="background-color: rgba(0, 0, 255, 0.5);"
         >
           hsl
         </span>
@@ -70,89 +70,89 @@ describe('defineBackgroundColorSpec', () => {
     )
   })
 
-  it('should parse background color from inline span with data-background-color', () => {
-    const { editor, n, m } = setupTest()
+  it('should parse background color from style attribute', () => {
+    const { editor } = setupTest()
 
-    const doc = n.doc(
-      n.p(
-        m.backgroundColor({ color: '#ff0000' }, 'red'),
-        m.backgroundColor({ color: '#00ff00' }, 'green'),
-        m.backgroundColor({ color: '#0000ff' }, 'blue'),
-      ),
-    )
-    editor.set(doc)
-    expect(editor.getDocJSON()).toEqual(doc.toJSON())
-
-    const expectedHTML =
-      '<p>' +
-      '<span style="background-color: #ff0000;" data-background-color="#ff0000">red</span>' +
-      '<span style="background-color: #00ff00;" data-background-color="#00ff00">green</span>' +
-      '<span style="background-color: #0000ff;" data-background-color="#0000ff">blue</span>' +
-      '</p>'
-
-    editor.view.dom.innerHTML = expectedHTML
-    editor.view.updateState(editor.view.state)
-    expect(editor.getDocJSON()).toEqual(doc.toJSON())
+    const html = `<p><span style="background-color: #0000ff;">text</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "rgb(0, 0, 255)",
+            },
+            "type": "backgroundColor",
+          },
+        ],
+        "text": "text",
+        "type": "text",
+      }
+    `)
   })
 
-  it('should parse background color from inline span with style attribute', () => {
-    const { editor, n, m } = setupTest()
+  it('should parse background color from data-background-color attribute', () => {
+    const { editor } = setupTest()
 
-    const doc = n.doc(
-      n.p(
-        m.backgroundColor({ color: 'red' }, 'red'),
-        m.backgroundColor({ color: 'green' }, 'green'),
-        m.backgroundColor({ color: 'blue' }, 'blue'),
-      ),
-    )
-
-    const expectedHTML =
-      '<p>' +
-      '<span style="background-color: red">red</span>' +
-      '<span style="background-color: green">green</span>' +
-      '<span style="background-color: blue">blue</span>' +
-      '</p>'
-
-    editor.view.dom.innerHTML = expectedHTML
-    editor.view.updateState(editor.view.state)
-    expect(editor.getDocJSON()).toEqual(doc.toJSON())
+    const html = `<p><span data-background-color="rgb(0 0 255 / 0.5)">text</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "rgb(0 0 255 / 0.5)",
+            },
+            "type": "backgroundColor",
+          },
+        ],
+        "text": "text",
+        "type": "text",
+      }
+    `)
   })
 
-  it('should prioritize data-background-color over style attribute during parsing', () => {
-    const { editor, n, m } = setupTest()
+  it('should prioritize data-background-color attribute over style attribute', () => {
+    const { editor } = setupTest()
 
-    const expectedDoc = n.doc(
-      n.p(
-        m.backgroundColor({ color: 'rgb(255, 0, 0)' }, 'red'),
-        m.backgroundColor({ color: 'rgb(0, 255, 0)' }, 'green'),
-        m.backgroundColor({ color: 'rgb(0, 0, 255)' }, 'blue'),
-      ),
-    )
-
-    const expectedHTML =
-      '<p>' +
-      '<span style="background-color: red" data-background-color="rgb(255, 0, 0)">red</span>' +
-      '<span style="background-color: green" data-background-color="rgb(0, 255, 0)">green</span>' +
-      '<span style="background-color: blue" data-background-color="rgb(0, 0, 255)">blue</span>' +
-      '</p>'
-
-    editor.view.dom.innerHTML = expectedHTML
-    editor.view.updateState(editor.view.state)
-    expect(editor.getDocJSON()).toEqual(expectedDoc.toJSON())
+    const html = `<p><span style="background-color: blue;" data-background-color="red">This should be red</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "red",
+            },
+            "type": "backgroundColor",
+          },
+        ],
+        "text": "This should be red",
+        "type": "text",
+      }
+    `)
   })
 
   it('should not parse span with background-color: inherit', () => {
-    const { editor, n } = setupTest()
+    const { editor } = setupTest()
 
-    const expectedDoc = n.doc(n.p('text'))
+    const html = '<p><span style="background-color: inherit">text</span></p>'
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "text": "text",
+        "type": "text",
+      }
+    `)
 
-    editor.view.dom.innerHTML = '<p><span style="background-color: inherit">text</span></p>'
-    editor.view.updateState(editor.view.state)
-    expect(editor.getDocJSON()).toEqual(expectedDoc.toJSON())
-
-    editor.view.dom.innerHTML = '<p><span data-background-color="inherit">text</span></p>'
-    editor.view.updateState(editor.view.state)
-    expect(editor.getDocJSON()).toEqual(expectedDoc.toJSON())
+    const html2 = '<p><span data-background-color="inherit">text</span></p>'
+    editor.setContent(html2)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "text": "text",
+        "type": "text",
+      }
+    `)
   })
 
   it('should preserve both background-color and text-color marks', () => {
@@ -189,27 +189,35 @@ describe('defineBackgroundColorSpec', () => {
   })
 
   it('should preserve background-color mark when parsing HTML with both marks', () => {
-    const { editor, n, m } = setupTest()
+    const { editor } = setupTest()
 
-    const doc = n.doc(
-      n.p(
-        m.backgroundColor(
-          { color: 'yellow' },
-          m.textColor({ color: 'red' }, 'colored text'),
-        ),
-      ),
-    )
+    const html = '<p>'
+      + '<span style="background-color: yellow;">'
+      + '<span style="color: red;">colored text</span>'
+      + '</span>'
+      + '</p>'
 
-    const html =
-      '<p>' +
-      '<span style="background-color: yellow;">' +
-      '<span style="color: red;">colored text</span>' +
-      '</span>' +
-      '</p>'
-
-    editor.view.dom.innerHTML = html
-    editor.view.updateState(editor.view.state)
-    expect(editor.getDocJSON()).toEqual(doc.toJSON())
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "yellow",
+            },
+            "type": "backgroundColor",
+          },
+          {
+            "attrs": {
+              "color": "red",
+            },
+            "type": "textColor",
+          },
+        ],
+        "text": "colored text",
+        "type": "text",
+      }
+    `)
   })
 
   it('should handle background color on partial text selection', () => {
@@ -234,7 +242,7 @@ describe('defineBackgroundColorSpec', () => {
         >
           highlighted
         </span>
-         end
+        end
       </p>
       "
       `,

@@ -1,0 +1,44 @@
+---
+title: Background Color
+---
+
+The `backgroundColor` mark is used to represent text with a specific background color. It will be rendered as `<span>` element with inline `background-color` style in HTML.
+
+## Commands
+
+### `addBackgroundColor`
+
+Add a background color to the current selection. This command will override any existing background color on the selected text.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineBackgroundColor } from 'prosekit/extensions/background-color'
+
+const extension = defineBackgroundColor()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.addBackgroundColor({ color: 'yellow' })
+editor.commands.addBackgroundColor({ color: '#ffff00' })
+editor.commands.addBackgroundColor({ color: 'rgb(255, 255, 0)' })
+editor.commands.addBackgroundColor({ color: 'var(--color-highlight)' })
+```
+
+### `removeBackgroundColor`
+
+Remove the background color from the current selection.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineBackgroundColor } from 'prosekit/extensions/background-color'
+
+const extension = defineBackgroundColor()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.removeBackgroundColor()
+```
+
+## API Reference
+
+- [prosekit/extensions/background-color](/references/extensions/background-color)

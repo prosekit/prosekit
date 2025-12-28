@@ -129,7 +129,8 @@ useKeymap(keymap)
             <div
               class="w-6 h-6 rounded border border-gray-200 dark:border-gray-700"
               style:background-color={color.value}
-            />
+            >
+            </div>
           </Button>
         {/each}
       </div>

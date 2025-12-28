@@ -115,19 +115,19 @@ describe('defineTextColorSpec', () => {
   it('should prioritize data-text-color attribute over style attribute', () => {
     const { editor } = setupTest()
 
-    const html = `<p><span data-text-color="green" style="color: blue;">text</span></p>`
+    const html = `<p><span style="color: blue;" data-text-color="red">This should be red</span></p>`
     editor.setContent(html)
     expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
       {
         "marks": [
           {
             "attrs": {
-              "color": "green",
+              "color": "red",
             },
             "type": "textColor",
           },
         ],
-        "text": "text",
+        "text": "This should be red",
         "type": "text",
       }
     `)
@@ -136,12 +136,30 @@ describe('defineTextColorSpec', () => {
   it('can handle non-span inline elements', () => {
     const { editor } = setupTest()
 
-    const html = `<p><i data-text-color="green">italic</i><b style="color: blue;">bold</b></p>`
+    const html = `<p>`
+      + `<i><span style="color: red;">This should be red and italic</span></i>`
+      + `<span style="color: green;"><i>This should be green and italic</i></span>`
+      + `<b style="color: blue;">This should be blue and bold</b>`
+      + `</p>`
     editor.setContent(html)
-    // TODO: italic mark is not applied
     expect(editor.state.doc.firstChild?.toJSON()).toMatchInlineSnapshot(`
       {
         "content": [
+          {
+            "marks": [
+              {
+                "attrs": {
+                  "color": "red",
+                },
+                "type": "textColor",
+              },
+              {
+                "type": "italic",
+              },
+            ],
+            "text": "This should be red and italic",
+            "type": "text",
+          },
           {
             "marks": [
               {
@@ -150,8 +168,11 @@ describe('defineTextColorSpec', () => {
                 },
                 "type": "textColor",
               },
+              {
+                "type": "italic",
+              },
             ],
-            "text": "italic",
+            "text": "This should be green and italic",
             "type": "text",
           },
           {
@@ -166,7 +187,7 @@ describe('defineTextColorSpec', () => {
                 "type": "bold",
               },
             ],
-            "text": "bold",
+            "text": "This should be blue and bold",
             "type": "text",
           },
         ],
@@ -178,11 +199,11 @@ describe('defineTextColorSpec', () => {
   it('should ignore empty attributes', () => {
     const { editor } = setupTest()
 
-    const html = `<p><span data-text-color="" style="color: ;">text</span></p>`
+    const html = `<p><span data-text-color="" style="color: ;">This should be plain text</span></p>`
     editor.setContent(html)
     expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
       {
-        "text": "text",
+        "text": "This should be plain text",
         "type": "text",
       }
     `)
@@ -191,11 +212,11 @@ describe('defineTextColorSpec', () => {
   it('should ignore inherit attributes', () => {
     const { editor } = setupTest()
 
-    const html = `<p><span data-text-color="inherit" style="color: inherit;">text</span></p>`
+    const html = `<p><span data-text-color="inherit" style="color: inherit;">This should be plain text</span></p>`
     editor.setContent(html)
     expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
       {
-        "text": "text",
+        "text": "This should be plain text",
         "type": "text",
       }
     `)

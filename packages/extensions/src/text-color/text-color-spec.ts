@@ -34,15 +34,35 @@ export function defineTextColorSpec(): TextColorSpecExtension {
     },
     parseDOM: [
       {
-        style: 'color',
-        getAttrs: (value): TextColorAttrs | false => {
-          return (value && value !== 'inherit') ? { color: value } : false
+        tag: 'span[data-text-color]',
+        getAttrs: (node): TextColorAttrs | false => {
+          const value = node.getAttribute('data-text-color')
+          if (value && value !== 'inherit') {
+            return { color: value }
+          }
+          return false
         },
+        consuming: false,
+      },
+      {
+        tag: '[style*="color"]',
+        getAttrs: (node): TextColorAttrs | false => {
+          const value = node.getAttribute('data-text-color')
+          if (value && value !== 'inherit') {
+            return { color: value }
+          }
+          const color = node.style.color
+          if (color && color !== 'inherit') {
+            return { color }
+          }
+          return false
+        },
+        consuming: false,
       },
     ],
     toDOM(mark) {
       const color = (mark.attrs as TextColorAttrs).color
-      return ['span', { style: `color: ${color};` }, 0]
+      return ['span', { 'style': `color: ${color};`, 'data-text-color': color }, 0]
     },
   })
 }

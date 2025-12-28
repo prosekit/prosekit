@@ -7,7 +7,7 @@ import {
 
 import { setupTest } from '../testing'
 
-describe('defineColorSpec', () => {
+describe('defineTextColorSpec', () => {
   it('should render color as inline span with style attribute', () => {
     const { editor, n, m } = setupTest()
 

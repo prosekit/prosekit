@@ -16,6 +16,7 @@ import {
 } from '@prosekit/core/test'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
+import { defineBackgroundColor } from '../background-color'
 import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'
@@ -63,6 +64,7 @@ export function defineTestExtension() {
     defineStrike(),
     defineCode(),
     defineTextColor(),
+    defineBackgroundColor(),
     defineLink(),
     defineImage(),
     defineParagraph(),

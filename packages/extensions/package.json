@@ -43,6 +43,7 @@
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
     "./hard-break": "./src/hard-break/index.ts",
     "./heading": "./src/heading/index.ts",
+    "./text-color": "./src/text-color/index.ts",
     "./horizontal-rule": "./src/horizontal-rule/index.ts",
     "./image": "./src/image/index.ts",
     "./input-rule": "./src/input-rule/index.ts",

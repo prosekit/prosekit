@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/web",
   "type": "module",
-  "version": "0.7.9",
+  "version": "0.7.10",
   "private": false,
   "description": "A collection of web components for ProseKit",
   "author": {

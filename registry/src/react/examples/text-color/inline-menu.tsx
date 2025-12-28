@@ -3,7 +3,6 @@ import type {
   Keymap,
 } from 'prosekit/core'
 import {
-  useEditor,
   useEditorDerivedValue,
   useKeymap,
 } from 'prosekit/react'
@@ -27,30 +26,23 @@ const colors = [
   { label: 'violet', value: '#a855f7' },
 ]
 
-function hasTextColor(editor: Editor<EditorExtension>, color: string) {
-  return editor.marks.textColor.isActive({ color })
-}
-
 function getColorState(editor: Editor<EditorExtension>) {
-  return colors.map((color) => ({
-    name: color.name,
+  return [{
+    label: 'default',
+    value: 'unset',
+    isActive: !editor.marks.textColor.isActive(),
+    onClick: () => editor.commands.removeTextColor(),
+  }].concat(colors.map((color) => ({
+    label: color.label,
     value: color.value,
-    isActive: hasTextColor(editor, color.value),
-  }))
+    isActive: editor.marks.textColor.isActive({ color: color.value }),
+    onClick: () => editor.commands.addTextColor({ color: color.value }),
+  })))
 }
 
 export default function InlineMenu() {
-  const editor = useEditor<EditorExtension>()
   const colorState = useEditorDerivedValue(getColorState)
   const [open, setOpen] = useState(false)
-
-  const toggleTextColor = (color: string) => {
-    if (!color || hasTextColor(editor, color)) {
-      editor.commands.removeTextColor()
-    } else {
-      editor.commands.addTextColor({ color })
-    }
-  }
 
   const keymap: Keymap = useMemo(() => ({
     Escape: () => {
@@ -72,10 +64,10 @@ export default function InlineMenu() {
     >
       {colorState.map((color) => (
         <Button
-          key={color.name}
+          key={color.label}
           pressed={color.isActive}
-          tooltip={color.name}
-          onClick={() => toggleTextColor(color.value)}
+          tooltip={color.label}
+          onClick={color.onClick}
         >
           <span style={{ color: color.value }}>A</span>
         </Button>

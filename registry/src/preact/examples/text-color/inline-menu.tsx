@@ -29,7 +29,6 @@ const textColors = [
 ]
 
 const backgroundColors = [
-  { label: 'Default', value: '#ffffff' },
   { label: 'Gray', value: '#f3f4f6' },
   { label: 'Brown', value: '#fef3c7' },
   { label: 'Orange', value: '#ffedd5' },
@@ -44,7 +43,7 @@ const backgroundColors = [
 function getTextColorState(editor: Editor<EditorExtension>) {
   return [{
     label: 'Default',
-    value: 'inherit',
+    value: 'currentColor',
     isActive: !editor.marks.textColor.isActive(),
     onClick: () => editor.commands.removeTextColor(),
   }].concat(textColors.map((color) => ({
@@ -58,15 +57,17 @@ function getTextColorState(editor: Editor<EditorExtension>) {
 function getBackgroundColorState(editor: Editor<EditorExtension>) {
   return [{
     label: 'Default',
-    value: '#ffffff',
+    value: 'canvas',
     isActive: !editor.marks.backgroundColor.isActive(),
     onClick: () => editor.commands.removeBackgroundColor(),
-  }].concat(backgroundColors.slice(1).map((color) => ({
-    label: color.label,
-    value: color.value,
-    isActive: editor.marks.backgroundColor.isActive({ color: color.value }),
-    onClick: () => editor.commands.addBackgroundColor({ color: color.value }),
-  })))
+  }].concat(
+    backgroundColors.map((color) => ({
+      label: color.label,
+      value: color.value,
+      isActive: editor.marks.backgroundColor.isActive({ color: color.value }),
+      onClick: () => editor.commands.addBackgroundColor({ color: color.value }),
+    })),
+  )
 }
 
 export default function InlineMenu() {
@@ -92,9 +93,9 @@ export default function InlineMenu() {
       open={open}
       onOpenChange={setOpen}
     >
-      <div className="flex flex-col gap-4 p-4" style={{ width: '280px' }}>
-        <div>
-          <div className="text-sm font-medium text-gray-600 mb-2">Text color</div>
+      <div className="flex flex-col gap-4 p-4">
+        <div className="flex flex-col gap-2">
+          <div className="text-sm">Text color</div>
           <div className="grid grid-cols-5 gap-1">
             {textColorState.map((color) => (
               <Button
@@ -103,13 +104,18 @@ export default function InlineMenu() {
                 tooltip={`Text: ${color.label}`}
                 onClick={color.onClick}
               >
-                <span style={{ color: color.value, fontSize: '16px', fontWeight: '600' }}>A</span>
+                <span
+                  className="text-base font-medium"
+                  style={{ color: color.value }}
+                >
+                  A
+                </span>
               </Button>
             ))}
           </div>
         </div>
-        <div>
-          <div className="text-sm font-medium text-gray-600 mb-2">Background color</div>
+        <div className="flex flex-col gap-2">
+          <div className="text-sm">Background color</div>
           <div className="grid grid-cols-5 gap-1">
             {backgroundColorState.map((color) => (
               <Button
@@ -119,8 +125,8 @@ export default function InlineMenu() {
                 onClick={color.onClick}
               >
                 <div
-                  className="w-6 h-6 rounded"
-                  style={{ backgroundColor: color.value, border: '1px solid #e5e7eb' }}
+                  className="w-6 h-6 rounded border border-gray-200 dark:border-gray-700"
+                  style={{ backgroundColor: color.value }}
                 />
               </Button>
             ))}

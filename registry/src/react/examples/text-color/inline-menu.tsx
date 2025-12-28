@@ -49,7 +49,7 @@ export default function InlineMenu() {
     if (!color || hasTextColor(editor, color)) {
       editor.commands.removeTextColor()
     } else {
-      editor.commands.setTextColor({ color })
+      editor.commands.addTextColor({ color })
     }
   }
 

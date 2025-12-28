@@ -8,11 +8,11 @@ import {
   expectLocatorToNotExist,
   selectText,
   testStory,
+  testStoryConsistency,
   waitForEditor,
 } from './helpers'
 
-// TODO: enable testStoryConsistency once we have update examples from all frameworks.
-// testStoryConsistency('text-color')
+testStoryConsistency('text-color')
 
 testStory({
   story: 'text-color',

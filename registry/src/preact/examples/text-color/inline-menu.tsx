@@ -26,7 +26,7 @@ const colors = [
   { label: 'violet', value: '#a855f7' },
 ]
 
-function getColorState(editor: Editor<EditorExtension>) {
+function getTextColorState(editor: Editor<EditorExtension>) {
   return [{
     label: 'default',
     value: 'unset',
@@ -40,8 +40,23 @@ function getColorState(editor: Editor<EditorExtension>) {
   })))
 }
 
+function getBackgroundColorState(editor: Editor<EditorExtension>) {
+  return [{
+    label: 'default',
+    value: 'unset',
+    isActive: !editor.marks.backgroundColor.isActive(),
+    onClick: () => editor.commands.removeBackgroundColor(),
+  }].concat(colors.map((color) => ({
+    label: color.label,
+    value: color.value,
+    isActive: editor.marks.backgroundColor.isActive({ color: color.value }),
+    onClick: () => editor.commands.addBackgroundColor({ color: color.value }),
+  })))
+}
+
 export default function InlineMenu() {
-  const colorState = useEditorDerivedValue(getColorState)
+  const textColorState = useEditorDerivedValue(getTextColorState)
+  const backgroundColorState = useEditorDerivedValue(getBackgroundColorState)
   const [open, setOpen] = useState(false)
 
   const keymap: Keymap = useMemo(() => ({
@@ -62,16 +77,32 @@ export default function InlineMenu() {
       open={open}
       onOpenChange={setOpen}
     >
-      {colorState.map((color) => (
-        <Button
-          key={color.label}
-          pressed={color.isActive}
-          tooltip={color.label}
-          onClick={color.onClick}
-        >
-          <span style={{ color: color.value }}>A</span>
-        </Button>
-      ))}
+      <div className="flex flex-col gap-2 p-2">
+        <div className="flex gap-1">
+          {textColorState.map((color) => (
+            <Button
+              key={color.label}
+              pressed={color.isActive}
+              tooltip={`Text: ${color.label}`}
+              onClick={color.onClick}
+            >
+              <span style={{ color: color.value }}>A</span>
+            </Button>
+          ))}
+        </div>
+        <div className="flex gap-1">
+          {backgroundColorState.map((color) => (
+            <Button
+              key={color.label}
+              pressed={color.isActive}
+              tooltip={`Background: ${color.label}`}
+              onClick={color.onClick}
+            >
+              <span style={{ backgroundColor: color.value, padding: '0 4px' }}>A</span>
+            </Button>
+          ))}
+        </div>
+      </div>
     </InlinePopover>
   )
 }

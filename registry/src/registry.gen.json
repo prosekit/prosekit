@@ -2042,7 +2042,7 @@
       "name": "react-example-text-color",
       "title": "react-example-text-color",
       "type": "registry:block",
-      "description": "Example for textColor mark.",
+      "description": "Change text and background color.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -5943,7 +5943,7 @@
       "name": "vue-example-text-color",
       "title": "vue-example-text-color",
       "type": "registry:block",
-      "description": "Example for textColor mark.",
+      "description": "Change text and background color.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -9745,7 +9745,7 @@
       "name": "preact-example-text-color",
       "title": "preact-example-text-color",
       "type": "registry:block",
-      "description": "Example for textColor mark.",
+      "description": "Change text and background color.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -13512,7 +13512,7 @@
       "name": "svelte-example-text-color",
       "title": "svelte-example-text-color",
       "type": "registry:block",
-      "description": "Example for textColor mark.",
+      "description": "Change text and background color.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/svelte-ui-button.json"

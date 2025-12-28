@@ -28,6 +28,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./autocomplete": "./src/autocomplete/index.ts",
+    "./background-color": "./src/background-color/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
@@ -149,6 +150,10 @@
       "./autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
         "default": "./dist/prosekit-extensions-autocomplete.js"
+      },
+      "./background-color": {
+        "types": "./dist/prosekit-extensions-background-color.d.ts",
+        "default": "./dist/prosekit-extensions-background-color.js"
       },
       "./blockquote": {
         "types": "./dist/prosekit-extensions-blockquote.d.ts",
@@ -334,6 +339,9 @@
         "autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"
         ],
+        "background-color": [
+          "./dist/prosekit-extensions-background-color.d.ts"
+        ],
         "blockquote": [
           "./dist/prosekit-extensions-blockquote.d.ts"
         ],
@@ -449,6 +457,7 @@
     "entry": {
       "prosekit-extensions": "./src/index.ts",
       "prosekit-extensions-autocomplete": "./src/autocomplete/index.ts",
+      "prosekit-extensions-background-color": "./src/background-color/index.ts",
       "prosekit-extensions-blockquote": "./src/blockquote/index.ts",
       "prosekit-extensions-bold": "./src/bold/index.ts",
       "prosekit-extensions-code": "./src/code/index.ts",
@@ -464,7 +473,6 @@
       "gap-cursor/style": "./src/gap-cursor/style.css",
       "prosekit-extensions-hard-break": "./src/hard-break/index.ts",
       "prosekit-extensions-heading": "./src/heading/index.ts",
-      "prosekit-extensions-text-color": "./src/text-color/index.ts",
       "prosekit-extensions-horizontal-rule": "./src/horizontal-rule/index.ts",
       "prosekit-extensions-image": "./src/image/index.ts",
       "prosekit-extensions-input-rule": "./src/input-rule/index.ts",
@@ -489,6 +497,7 @@
       "table/style": "./src/table/style.css",
       "prosekit-extensions-text": "./src/text/index.ts",
       "prosekit-extensions-text-align": "./src/text-align/index.ts",
+      "prosekit-extensions-text-color": "./src/text-color/index.ts",
       "prosekit-extensions-underline": "./src/underline/index.ts",
       "prosekit-extensions-virtual-selection": "./src/virtual-selection/index.ts",
       "virtual-selection/style": "./src/virtual-selection/style.css",

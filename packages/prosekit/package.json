@@ -34,6 +34,7 @@
     "./core/test": "./src/core/test.gen.ts",
     "./extensions": "./src/extensions.ts",
     "./extensions/autocomplete": "./src/extensions/autocomplete.gen.ts",
+    "./extensions/background-color": "./src/extensions/background-color.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
     "./extensions/bold": "./src/extensions/bold.gen.ts",
     "./extensions/code": "./src/extensions/code.gen.ts",
@@ -275,6 +276,10 @@
       "./extensions/autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
         "default": "./dist/prosekit-extensions-autocomplete.js"
+      },
+      "./extensions/background-color": {
+        "types": "./dist/prosekit-extensions-background-color.d.ts",
+        "default": "./dist/prosekit-extensions-background-color.js"
       },
       "./extensions/blockquote": {
         "types": "./dist/prosekit-extensions-blockquote.d.ts",
@@ -763,6 +768,9 @@
         "extensions/autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"
         ],
+        "extensions/background-color": [
+          "./dist/prosekit-extensions-background-color.d.ts"
+        ],
         "extensions/blockquote": [
           "./dist/prosekit-extensions-blockquote.d.ts"
         ],
@@ -1100,6 +1108,7 @@
       "prosekit-core-test": "./src/core/test.gen.ts",
       "prosekit-extensions": "./src/extensions.ts",
       "prosekit-extensions-autocomplete": "./src/extensions/autocomplete.gen.ts",
+      "prosekit-extensions-background-color": "./src/extensions/background-color.gen.ts",
       "prosekit-extensions-blockquote": "./src/extensions/blockquote.gen.ts",
       "prosekit-extensions-bold": "./src/extensions/bold.gen.ts",
       "prosekit-extensions-code": "./src/extensions/code.gen.ts",
@@ -1115,7 +1124,6 @@
       "extensions/gap-cursor/style": "./src/extensions/gap-cursor/style.css",
       "prosekit-extensions-hard-break": "./src/extensions/hard-break.gen.ts",
       "prosekit-extensions-heading": "./src/extensions/heading.gen.ts",
-      "prosekit-extensions-text-color": "./src/extensions/text-color.gen.ts",
       "prosekit-extensions-horizontal-rule": "./src/extensions/horizontal-rule.gen.ts",
       "prosekit-extensions-image": "./src/extensions/image.gen.ts",
       "prosekit-extensions-input-rule": "./src/extensions/input-rule.gen.ts",
@@ -1140,6 +1148,7 @@
       "extensions/table/style": "./src/extensions/table/style.css",
       "prosekit-extensions-text": "./src/extensions/text.gen.ts",
       "prosekit-extensions-text-align": "./src/extensions/text-align.gen.ts",
+      "prosekit-extensions-text-color": "./src/extensions/text-color.gen.ts",
       "prosekit-extensions-underline": "./src/extensions/underline.gen.ts",
       "prosekit-extensions-virtual-selection": "./src/extensions/virtual-selection.gen.ts",
       "extensions/virtual-selection/style": "./src/extensions/virtual-selection/style.css",

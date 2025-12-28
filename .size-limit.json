@@ -40,6 +40,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/background-color",
+    "path": "packages/prosekit/dist/prosekit-extensions-background-color.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/blockquote",
     "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
     "ignore": [

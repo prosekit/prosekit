@@ -113,7 +113,7 @@
 - name: text-color
   frameworks: [react, vue, preact, svelte]
   hidden: true
-  description: Example for textColor mark.
+  description: Change text and background color.
 - name: toolbar
   frameworks: [react, vue, preact, svelte]
   description: Formatting toolbar with common editing actions.

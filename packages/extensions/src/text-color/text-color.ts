@@ -18,7 +18,7 @@ import {
 export type TextColorExtension = Union<[TextColorSpecExtension, TextColorCommandsExtension]>
 
 /**
- * Defines the `color` mark and some commands for it.
+ * Defines the `textColor` mark and some commands for it.
  *
  * @public
  */

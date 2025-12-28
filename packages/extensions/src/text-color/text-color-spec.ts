@@ -4,7 +4,7 @@ import {
 } from '@prosekit/core'
 
 /**
- * Attributes for the `color` mark.
+ * Attributes for the `textColor` mark.
  *
  * @public
  */
@@ -37,7 +37,7 @@ export function defineTextColorSpec(): TextColorSpecExtension {
         tag: ':where([style*="color:"], [data-text-color])',
         getAttrs: (node): TextColorAttrs | false => {
           // When both `data-text-color` and `style="color"` are present, we
-          // prioritize the `data-text-color` attribute. This avoid the
+          // prioritize the `data-text-color` attribute. This avoids the
           // browser's default behavior of changing hex colors to rgba in style
           // attribute.
           const value = node.getAttribute('data-text-color')

@@ -34,18 +34,7 @@ export function defineTextColorSpec(): TextColorSpecExtension {
     },
     parseDOM: [
       {
-        tag: 'span[data-text-color]',
-        getAttrs: (node): TextColorAttrs | false => {
-          const value = node.getAttribute('data-text-color')
-          if (value && value !== 'inherit') {
-            return { color: value }
-          }
-          return false
-        },
-        consuming: false,
-      },
-      {
-        tag: '[style*="color"]',
+        tag: ':where([style*="color:"], [data-text-color])',
         getAttrs: (node): TextColorAttrs | false => {
           // When both `data-text-color` and `style="color"` are present, we
           // prioritize the `data-text-color` attribute. This avoid the

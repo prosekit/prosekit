@@ -16,8 +16,6 @@ import {
 
 testStory({
   story: 'text-color',
-  // TODO: remove the frameworks option once we have update examples from all frameworks.
-  frameworks: ['preact'],
 }, () => {
   it('change and clear text color via inline menu', async ({}) => {
     const editor = await waitForEditor()

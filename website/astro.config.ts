@@ -44,7 +44,7 @@ function generateReferenceSidebarItems() {
 function generateExtensionsSidebarItems() {
   const classification = {
     node: ['blockquote', 'code-block', 'heading', 'horizontal-rule', 'image', 'list', 'mention', 'table', 'doc', 'paragraph', 'text', 'hard-break'],
-    mark: ['bold', 'code', 'color', 'italic', 'link', 'strike', 'underline'],
+    mark: ['bold', 'code', 'italic', 'link', 'strike', 'underline', 'text-color'],
     other: ['commit', 'drop-cursor', 'enter-rule', 'file', 'gap-cursor', 'input-rule', 'loro', 'placeholder', 'readonly', 'search', 'text-align', 'yjs'],
   }
 
@@ -65,7 +65,7 @@ function generateExtensionsSidebarItems() {
     } else if (classification.other.includes(name)) {
       otherItems.push(item)
     } else {
-      throw new Error(`Unable to classify extension ${name}. Please update astro.config.ts to fix it`)
+      throw new Error(`Unable to classify extension ${name}. Please update ${import.meta.filename} to fix it`)
     }
   }
 

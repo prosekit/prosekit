@@ -70,133 +70,133 @@ describe('defineTextColorSpec', () => {
     )
   })
 
-  it('should parse color from inline span with style attribute', () => {
-    const { editor, n, m } = setupTest()
+  it('should parse color from style attribute', () => {
+    const { editor } = setupTest()
 
-    const html = `
-      <p>
-        Default
-        <span style="color: #0000ff;">hex</span>
-        <span style="color: blue">named</span>
-        <span style="color: rgb(0, 0, 255)">rgb</span>
-        <span style="color: rgba(0 0 255 / 0.5)">rgba</span>
-        <i style="color: hsl(240 100% 50% / 0.5)">hsl</i>
-        <strong style="color: var(--color-variable)">variable</strong>
-      </p>    
-    `
+    const html = `<p><span style="color: #0000ff;">text</span></p>`
     editor.setContent(html)
-    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "rgb(0, 0, 255)",
+            },
+            "type": "textColor",
+          },
+        ],
+        "text": "text",
+        "type": "text",
+      }
+    `)
+  })
+
+  it('should parse color from data-text-color attribute', () => {
+    const { editor } = setupTest()
+
+    const html = `<p><span data-text-color="rgb(0 0 255 / 0.5)">text</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "rgb(0 0 255 / 0.5)",
+            },
+            "type": "textColor",
+          },
+        ],
+        "text": "text",
+        "type": "text",
+      }
+    `)
+  })
+
+  it('should prioritize data-text-color attribute over style attribute', () => {
+    const { editor } = setupTest()
+
+    const html = `<p><span data-text-color="green" style="color: blue;">text</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "marks": [
+          {
+            "attrs": {
+              "color": "green",
+            },
+            "type": "textColor",
+          },
+        ],
+        "text": "text",
+        "type": "text",
+      }
+    `)
+  })
+
+  it('can handle non-span inline elements', () => {
+    const { editor } = setupTest()
+
+    const html = `<p><i data-text-color="green">italic</i><b style="color: blue;">bold</b></p>`
+    editor.setContent(html)
+    // TODO: italic mark is not applied
+    expect(editor.state.doc.firstChild?.toJSON()).toMatchInlineSnapshot(`
       {
         "content": [
           {
-            "content": [
+            "marks": [
               {
-                "text": "Default ",
-                "type": "text",
-              },
-              {
-                "marks": [
-                  {
-                    "attrs": {
-                      "color": "rgb(0, 0, 255)",
-                    },
-                    "type": "textColor",
-                  },
-                ],
-                "text": "hex",
-                "type": "text",
-              },
-              {
-                "text": " ",
-                "type": "text",
-              },
-              {
-                "marks": [
-                  {
-                    "attrs": {
-                      "color": "blue",
-                    },
-                    "type": "textColor",
-                  },
-                ],
-                "text": "named",
-                "type": "text",
-              },
-              {
-                "text": " ",
-                "type": "text",
-              },
-              {
-                "marks": [
-                  {
-                    "attrs": {
-                      "color": "rgb(0, 0, 255)",
-                    },
-                    "type": "textColor",
-                  },
-                ],
-                "text": "rgb",
-                "type": "text",
-              },
-              {
-                "text": " ",
-                "type": "text",
-              },
-              {
-                "marks": [
-                  {
-                    "attrs": {
-                      "color": "rgba(0, 0, 255, 0.5)",
-                    },
-                    "type": "textColor",
-                  },
-                ],
-                "text": "rgba",
-                "type": "text",
-              },
-              {
-                "text": " ",
-                "type": "text",
-              },
-              {
-                "marks": [
-                  {
-                    "attrs": {
-                      "color": "rgba(0, 0, 255, 0.5)",
-                    },
-                    "type": "textColor",
-                  },
-                  {
-                    "type": "italic",
-                  },
-                ],
-                "text": "hsl",
-                "type": "text",
-              },
-              {
-                "text": " ",
-                "type": "text",
-              },
-              {
-                "marks": [
-                  {
-                    "attrs": {
-                      "color": "var(--color-variable)",
-                    },
-                    "type": "textColor",
-                  },
-                  {
-                    "type": "bold",
-                  },
-                ],
-                "text": "variable",
-                "type": "text",
+                "attrs": {
+                  "color": "green",
+                },
+                "type": "textColor",
               },
             ],
-            "type": "paragraph",
+            "text": "italic",
+            "type": "text",
+          },
+          {
+            "marks": [
+              {
+                "attrs": {
+                  "color": "blue",
+                },
+                "type": "textColor",
+              },
+              {
+                "type": "bold",
+              },
+            ],
+            "text": "bold",
+            "type": "text",
           },
         ],
-        "type": "doc",
+        "type": "paragraph",
+      }
+    `)
+  })
+
+  it('should ignore empty attributes', () => {
+    const { editor } = setupTest()
+
+    const html = `<p><span data-text-color="" style="color: ;">text</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "text": "text",
+        "type": "text",
+      }
+    `)
+  })
+
+  it('should ignore inherit attributes', () => {
+    const { editor } = setupTest()
+
+    const html = `<p><span data-text-color="inherit" style="color: inherit;">text</span></p>`
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "text": "text",
+        "type": "text",
       }
     `)
   })

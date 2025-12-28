@@ -7,7 +7,6 @@ import type {
   Keymap,
 } from 'prosekit/core'
 import {
-  useEditor,
   useEditorDerivedValue,
   useKeymap,
 } from 'prosekit/preact'

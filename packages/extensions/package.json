@@ -43,7 +43,6 @@
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
     "./hard-break": "./src/hard-break/index.ts",
     "./heading": "./src/heading/index.ts",
-    "./text-color": "./src/text-color/index.ts",
     "./horizontal-rule": "./src/horizontal-rule/index.ts",
     "./image": "./src/image/index.ts",
     "./input-rule": "./src/input-rule/index.ts",
@@ -68,6 +67,7 @@
     "./table/style.css": "./src/table/style.css",
     "./text": "./src/text/index.ts",
     "./text-align": "./src/text-align/index.ts",
+    "./text-color": "./src/text-color/index.ts",
     "./underline": "./src/underline/index.ts",
     "./virtual-selection": "./src/virtual-selection/index.ts",
     "./virtual-selection/style.css": "./src/virtual-selection/style.css",
@@ -299,6 +299,10 @@
         "types": "./dist/prosekit-extensions-text-align.d.ts",
         "default": "./dist/prosekit-extensions-text-align.js"
       },
+      "./text-color": {
+        "types": "./dist/prosekit-extensions-text-color.d.ts",
+        "default": "./dist/prosekit-extensions-text-color.js"
+      },
       "./underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
         "default": "./dist/prosekit-extensions-underline.js"
@@ -426,6 +430,9 @@
         "text-align": [
           "./dist/prosekit-extensions-text-align.d.ts"
         ],
+        "text-color": [
+          "./dist/prosekit-extensions-text-color.d.ts"
+        ],
         "underline": [
           "./dist/prosekit-extensions-underline.d.ts"
         ],
@@ -457,6 +464,7 @@
       "gap-cursor/style": "./src/gap-cursor/style.css",
       "prosekit-extensions-hard-break": "./src/hard-break/index.ts",
       "prosekit-extensions-heading": "./src/heading/index.ts",
+      "prosekit-extensions-text-color": "./src/text-color/index.ts",
       "prosekit-extensions-horizontal-rule": "./src/horizontal-rule/index.ts",
       "prosekit-extensions-image": "./src/image/index.ts",
       "prosekit-extensions-input-rule": "./src/input-rule/index.ts",

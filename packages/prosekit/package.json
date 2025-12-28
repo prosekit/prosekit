@@ -73,6 +73,7 @@
     "./extensions/table/style.css": "./src/extensions/table/style.css",
     "./extensions/text": "./src/extensions/text.gen.ts",
     "./extensions/text-align": "./src/extensions/text-align.gen.ts",
+    "./extensions/text-color": "./src/extensions/text-color.gen.ts",
     "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
     "./extensions/virtual-selection/style.css": "./src/extensions/virtual-selection/style.css",
@@ -177,14 +178,14 @@
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
     "loro-prosemirror": ">= 0.4.1",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
@@ -423,6 +424,10 @@
       "./extensions/text-align": {
         "types": "./dist/prosekit-extensions-text-align.d.ts",
         "default": "./dist/prosekit-extensions-text-align.js"
+      },
+      "./extensions/text-color": {
+        "types": "./dist/prosekit-extensions-text-color.d.ts",
+        "default": "./dist/prosekit-extensions-text-color.js"
       },
       "./extensions/underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
@@ -854,6 +859,9 @@
         "extensions/text-align": [
           "./dist/prosekit-extensions-text-align.d.ts"
         ],
+        "extensions/text-color": [
+          "./dist/prosekit-extensions-text-color.d.ts"
+        ],
         "extensions/underline": [
           "./dist/prosekit-extensions-underline.d.ts"
         ],
@@ -1107,6 +1115,7 @@
       "extensions/gap-cursor/style": "./src/extensions/gap-cursor/style.css",
       "prosekit-extensions-hard-break": "./src/extensions/hard-break.gen.ts",
       "prosekit-extensions-heading": "./src/extensions/heading.gen.ts",
+      "prosekit-extensions-text-color": "./src/extensions/text-color.gen.ts",
       "prosekit-extensions-horizontal-rule": "./src/extensions/horizontal-rule.gen.ts",
       "prosekit-extensions-image": "./src/extensions/image.gen.ts",
       "prosekit-extensions-input-rule": "./src/extensions/input-rule.gen.ts",

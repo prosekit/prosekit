@@ -16,23 +16,38 @@ import { Button } from '../../ui/button'
 
 import type { EditorExtension } from './extension'
 
-const colors = [
-  { label: 'red', value: '#ef4444' },
-  { label: 'orange', value: '#f97316' },
-  { label: 'yellow', value: '#eab308' },
-  { label: 'green', value: '#22c55e' },
-  { label: 'blue', value: '#3b82f6' },
-  { label: 'indigo', value: '#6366f1' },
-  { label: 'violet', value: '#a855f7' },
+const textColors = [
+  { label: 'Gray', value: '#9ca3af' },
+  { label: 'Brown', value: '#92400e' },
+  { label: 'Orange', value: '#ea580c' },
+  { label: 'Yellow', value: '#ca8a04' },
+  { label: 'Green', value: '#16a34a' },
+  { label: 'Blue', value: '#2563eb' },
+  { label: 'Purple', value: '#9333ea' },
+  { label: 'Magenta', value: '#c026d3' },
+  { label: 'Red', value: '#dc2626' },
+]
+
+const backgroundColors = [
+  { label: 'Default', value: '#ffffff' },
+  { label: 'Gray', value: '#f3f4f6' },
+  { label: 'Brown', value: '#fef3c7' },
+  { label: 'Orange', value: '#ffedd5' },
+  { label: 'Yellow', value: '#fef9c3' },
+  { label: 'Green', value: '#d1fae5' },
+  { label: 'Blue', value: '#dbeafe' },
+  { label: 'Purple', value: '#e9d5ff' },
+  { label: 'Pink', value: '#fce7f3' },
+  { label: 'Red', value: '#fecaca' },
 ]
 
 function getTextColorState(editor: Editor<EditorExtension>) {
   return [{
-    label: 'default',
-    value: 'unset',
+    label: 'Default',
+    value: 'inherit',
     isActive: !editor.marks.textColor.isActive(),
     onClick: () => editor.commands.removeTextColor(),
-  }].concat(colors.map((color) => ({
+  }].concat(textColors.map((color) => ({
     label: color.label,
     value: color.value,
     isActive: editor.marks.textColor.isActive({ color: color.value }),
@@ -42,11 +57,11 @@ function getTextColorState(editor: Editor<EditorExtension>) {
 
 function getBackgroundColorState(editor: Editor<EditorExtension>) {
   return [{
-    label: 'default',
-    value: 'unset',
+    label: 'Default',
+    value: '#ffffff',
     isActive: !editor.marks.backgroundColor.isActive(),
     onClick: () => editor.commands.removeBackgroundColor(),
-  }].concat(colors.map((color) => ({
+  }].concat(backgroundColors.slice(1).map((color) => ({
     label: color.label,
     value: color.value,
     isActive: editor.marks.backgroundColor.isActive({ color: color.value }),
@@ -77,30 +92,39 @@ export default function InlineMenu() {
       open={open}
       onOpenChange={setOpen}
     >
-      <div className="flex flex-col gap-2 p-2">
-        <div className="flex gap-1">
-          {textColorState.map((color) => (
-            <Button
-              key={color.label}
-              pressed={color.isActive}
-              tooltip={`Text: ${color.label}`}
-              onClick={color.onClick}
-            >
-              <span style={{ color: color.value }}>A</span>
-            </Button>
-          ))}
+      <div className="flex flex-col gap-4 p-4" style={{ width: '280px' }}>
+        <div>
+          <div className="text-sm font-medium text-gray-600 mb-2">Text color</div>
+          <div className="grid grid-cols-5 gap-1">
+            {textColorState.map((color) => (
+              <Button
+                key={color.label}
+                pressed={color.isActive}
+                tooltip={color.label}
+                onClick={color.onClick}
+              >
+                <span style={{ color: color.value, fontSize: '16px', fontWeight: '600' }}>A</span>
+              </Button>
+            ))}
+          </div>
         </div>
-        <div className="flex gap-1">
-          {backgroundColorState.map((color) => (
-            <Button
-              key={color.label}
-              pressed={color.isActive}
-              tooltip={`Background: ${color.label}`}
-              onClick={color.onClick}
-            >
-              <span style={{ backgroundColor: color.value, padding: '0 4px' }}>A</span>
-            </Button>
-          ))}
+        <div>
+          <div className="text-sm font-medium text-gray-600 mb-2">Background color</div>
+          <div className="grid grid-cols-5 gap-1">
+            {backgroundColorState.map((color) => (
+              <Button
+                key={color.label}
+                pressed={color.isActive}
+                tooltip={color.label}
+                onClick={color.onClick}
+              >
+                <div
+                  className="w-6 h-6 rounded"
+                  style={{ backgroundColor: color.value, border: '1px solid #e5e7eb' }}
+                />
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
     </InlinePopover>

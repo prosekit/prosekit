@@ -221,4 +221,81 @@ describe('defineTextColorSpec', () => {
       }
     `)
   })
+
+  it('can handle block elements', () => {
+    const { editor } = setupTest()
+
+    const html = `<blockquote style="color: red;">`
+      + `<p>This should be red</p>`
+      + `<blockquote style="color: blue;">`
+      + `<p>This should be blue</p>`
+      + `</blockquote>`
+      + `<p>This should be red again</p>`
+      + `</blockquote>`
+
+    editor.setContent(html)
+    expect(editor.state.doc.firstChild?.toJSON()).toMatchInlineSnapshot(`
+      {
+        "content": [
+          {
+            "content": [
+              {
+                "marks": [
+                  {
+                    "attrs": {
+                      "color": "red",
+                    },
+                    "type": "textColor",
+                  },
+                ],
+                "text": "This should be red",
+                "type": "text",
+              },
+            ],
+            "type": "paragraph",
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "marks": [
+                      {
+                        "attrs": {
+                          "color": "blue",
+                        },
+                        "type": "textColor",
+                      },
+                    ],
+                    "text": "This should be blue",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+            ],
+            "type": "blockquote",
+          },
+          {
+            "content": [
+              {
+                "marks": [
+                  {
+                    "attrs": {
+                      "color": "red",
+                    },
+                    "type": "textColor",
+                  },
+                ],
+                "text": "This should be red again",
+                "type": "text",
+              },
+            ],
+            "type": "paragraph",
+          },
+        ],
+        "type": "blockquote",
+      }
+    `)
+  })
 })

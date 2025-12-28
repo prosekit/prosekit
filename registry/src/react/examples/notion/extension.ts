@@ -9,8 +9,8 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { sampleUploader } from '../../sample/sample-uploader'
 import { defineCodeBlockView } from '../../ui/code-block-view'
 
-import { defineColor } from './color-extension'
 import { defineImageView } from './image-view'
+import { defineTextColor } from 'prosekit/extensions/text-color'
 
 export function defineExtension() {
   return union(
@@ -24,7 +24,7 @@ export function defineExtension() {
     defineImageUploadHandler({
       uploader: sampleUploader,
     }),
-    defineColor(),
+    defineTextColor(),
   )
 }
 

@@ -5978,11 +5978,6 @@
           "path": "registry/src/vue/examples/text-color/inline-menu.vue",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.vue"
-        },
-        {
-          "path": "registry/src/vue/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
@@ -5995,7 +5990,6 @@
           "registry/src/vue/examples/text-color/extension.ts",
           "registry/src/vue/examples/text-color/index.ts",
           "registry/src/vue/examples/text-color/inline-menu.vue",
-          "registry/src/vue/examples/text-color/text-color.ts",
           "registry/src/vue/sample/sample-doc-text-color.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts"
@@ -9786,11 +9780,6 @@
           "path": "registry/src/preact/examples/text-color/inline-menu.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.tsx"
-        },
-        {
-          "path": "registry/src/preact/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
@@ -9803,7 +9792,6 @@
           "registry/src/preact/examples/text-color/extension.ts",
           "registry/src/preact/examples/text-color/index.ts",
           "registry/src/preact/examples/text-color/inline-menu.tsx",
-          "registry/src/preact/examples/text-color/text-color.ts",
           "registry/src/preact/sample/sample-doc-text-color.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts"
@@ -13559,11 +13547,6 @@
           "path": "registry/src/svelte/examples/text-color/inline-menu.svelte",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.svelte"
-        },
-        {
-          "path": "registry/src/svelte/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
@@ -13576,7 +13559,6 @@
           "registry/src/svelte/examples/text-color/extension.ts",
           "registry/src/svelte/examples/text-color/index.ts",
           "registry/src/svelte/examples/text-color/inline-menu.svelte",
-          "registry/src/svelte/examples/text-color/text-color.ts",
           "registry/src/svelte/sample/sample-doc-text-color.ts",
           "registry/src/svelte/ui/button/button.svelte",
           "registry/src/svelte/ui/button/index.ts"

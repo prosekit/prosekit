@@ -2,7 +2,6 @@ import {
   addMark,
   defineCommands,
   removeMark,
-  toggleMark,
   type Extension,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'

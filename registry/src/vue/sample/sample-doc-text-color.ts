@@ -12,7 +12,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(239, 68, 68)',
+                color: '#ef4444',
               },
             },
           ],
@@ -28,7 +28,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(249, 115, 22)',
+                color: '#f97316',
               },
             },
           ],
@@ -44,7 +44,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(234, 179, 8)',
+                color: '#eab308',
               },
             },
           ],
@@ -60,7 +60,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(34, 197, 94)',
+                color: '#22c55e',
               },
             },
           ],
@@ -76,7 +76,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(59, 130, 246)',
+                color: '#3b82f6',
               },
             },
           ],
@@ -92,7 +92,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(99, 102, 241)',
+                color: '#6366f1',
               },
             },
           ],
@@ -108,7 +108,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'textColor',
               attrs: {
-                color: 'rgb(168, 85, 247)',
+                color: '#a855f7',
               },
             },
           ],

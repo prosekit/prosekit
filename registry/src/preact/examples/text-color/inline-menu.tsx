@@ -100,7 +100,7 @@ export default function InlineMenu() {
               <Button
                 key={color.label}
                 pressed={color.isActive}
-                tooltip={color.label}
+                tooltip={`Text: ${color.label}`}
                 onClick={color.onClick}
               >
                 <span style={{ color: color.value, fontSize: '16px', fontWeight: '600' }}>A</span>
@@ -115,7 +115,7 @@ export default function InlineMenu() {
               <Button
                 key={color.label}
                 pressed={color.isActive}
-                tooltip={color.label}
+                tooltip={`Background: ${color.label}`}
                 onClick={color.onClick}
               >
                 <div

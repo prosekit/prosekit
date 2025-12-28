@@ -43,7 +43,7 @@ function toggleTextColor(color: string) {
   if (!color || hasTextColor(editor.value, color)) {
     editor.value.commands.removeTextColor()
   } else {
-    editor.value.commands.setTextColor({ color })
+    editor.value.commands.addTextColor({ color })
   }
 }
 

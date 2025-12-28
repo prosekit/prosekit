@@ -14,12 +14,12 @@ describe('defineColorSpec', () => {
     const doc = n.doc(
       n.p(
         'Default',
-        m.color({ color: '#0000ff' }, 'hex'),
-        m.color({ color: 'blue' }, 'named'),
-        m.color({ color: 'rgb(0, 0, 255)' }, 'rgb'),
-        m.color({ color: 'rgba(0 0 255 / 0.5)' }, 'rgba'),
-        m.color({ color: 'hsl(240 100% 50% / 0.5)' }, 'hsl'),
-        m.color({ color: 'var(--color-variable)' }, 'variable'),
+        m.textColor({ color: '#0000ff' }, 'hex'),
+        m.textColor({ color: 'blue' }, 'named'),
+        m.textColor({ color: 'rgb(0, 0, 255)' }, 'rgb'),
+        m.textColor({ color: 'rgba(0 0 255 / 0.5)' }, 'rgba'),
+        m.textColor({ color: 'hsl(240 100% 50% / 0.5)' }, 'hsl'),
+        m.textColor({ color: 'var(--color-variable)' }, 'variable'),
       ),
     )
     editor.set(doc)

@@ -36,6 +36,7 @@ import { defineStrike } from '../strike'
 import { defineTable } from '../table'
 import type { CellAttrs } from '../table/table-spec'
 import { defineText } from '../text'
+import { defineTextColor } from '../text-color'
 import { defineUnderline } from '../underline'
 
 import {
@@ -61,6 +62,7 @@ export function defineTestExtension() {
     defineUnderline(),
     defineStrike(),
     defineCode(),
+    defineTextColor(),
     defineLink(),
     defineImage(),
     defineParagraph(),

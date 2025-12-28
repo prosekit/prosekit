@@ -1376,11 +1376,6 @@
           "target": "components/editor/examples/notion/block-handle.tsx"
         },
         {
-          "path": "registry/src/react/examples/notion/color-extension.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/notion/color-extension.ts"
-        },
-        {
           "path": "registry/src/react/examples/notion/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/notion/editor.tsx"
@@ -1449,7 +1444,6 @@
         "accumulatedFiles": [
           "registry/src/react/examples/notion/block-handle-menu.tsx",
           "registry/src/react/examples/notion/block-handle.tsx",
-          "registry/src/react/examples/notion/color-extension.ts",
           "registry/src/react/examples/notion/editor.tsx",
           "registry/src/react/examples/notion/extension.ts",
           "registry/src/react/examples/notion/image-view/image-view-content.tsx",
@@ -2048,7 +2042,7 @@
       "name": "react-example-text-color",
       "title": "react-example-text-color",
       "type": "registry:block",
-      "description": "Text color and background color formatting.",
+      "description": "Example for textColor mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/react-ui-button.json"
@@ -2077,16 +2071,11 @@
           "path": "registry/src/react/examples/text-color/inline-menu.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.tsx"
-        },
-        {
-          "path": "registry/src/react/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": false,
+        "hidden": true,
         "story": "text-color",
         "framework": "react",
         "accumulatedFiles": [
@@ -2094,7 +2083,6 @@
           "registry/src/react/examples/text-color/extension.ts",
           "registry/src/react/examples/text-color/index.ts",
           "registry/src/react/examples/text-color/inline-menu.tsx",
-          "registry/src/react/examples/text-color/text-color.ts",
           "registry/src/react/sample/sample-doc-text-color.ts",
           "registry/src/react/ui/button/button.tsx",
           "registry/src/react/ui/button/index.ts"
@@ -5955,7 +5943,7 @@
       "name": "vue-example-text-color",
       "title": "vue-example-text-color",
       "type": "registry:block",
-      "description": "Text color and background color formatting.",
+      "description": "Example for textColor mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/vue-ui-button.json"
@@ -5984,16 +5972,11 @@
           "path": "registry/src/vue/examples/text-color/inline-menu.vue",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.vue"
-        },
-        {
-          "path": "registry/src/vue/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": false,
+        "hidden": true,
         "story": "text-color",
         "framework": "vue",
         "accumulatedFiles": [
@@ -6001,7 +5984,6 @@
           "registry/src/vue/examples/text-color/extension.ts",
           "registry/src/vue/examples/text-color/index.ts",
           "registry/src/vue/examples/text-color/inline-menu.vue",
-          "registry/src/vue/examples/text-color/text-color.ts",
           "registry/src/vue/sample/sample-doc-text-color.ts",
           "registry/src/vue/ui/button/button.vue",
           "registry/src/vue/ui/button/index.ts"
@@ -9763,7 +9745,7 @@
       "name": "preact-example-text-color",
       "title": "preact-example-text-color",
       "type": "registry:block",
-      "description": "Text color and background color formatting.",
+      "description": "Example for textColor mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/preact-ui-button.json"
@@ -9792,16 +9774,11 @@
           "path": "registry/src/preact/examples/text-color/inline-menu.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.tsx"
-        },
-        {
-          "path": "registry/src/preact/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": false,
+        "hidden": true,
         "story": "text-color",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9809,7 +9786,6 @@
           "registry/src/preact/examples/text-color/extension.ts",
           "registry/src/preact/examples/text-color/index.ts",
           "registry/src/preact/examples/text-color/inline-menu.tsx",
-          "registry/src/preact/examples/text-color/text-color.ts",
           "registry/src/preact/sample/sample-doc-text-color.ts",
           "registry/src/preact/ui/button/button.tsx",
           "registry/src/preact/ui/button/index.ts"
@@ -13536,7 +13512,7 @@
       "name": "svelte-example-text-color",
       "title": "svelte-example-text-color",
       "type": "registry:block",
-      "description": "Text color and background color formatting.",
+      "description": "Example for textColor mark.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-text-color.json",
         "https://prosekit.dev/r/svelte-ui-button.json"
@@ -13565,16 +13541,11 @@
           "path": "registry/src/svelte/examples/text-color/inline-menu.svelte",
           "type": "registry:component",
           "target": "components/editor/examples/text-color/inline-menu.svelte"
-        },
-        {
-          "path": "registry/src/svelte/examples/text-color/text-color.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/text-color/text-color.ts"
         }
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": false,
+        "hidden": true,
         "story": "text-color",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13582,7 +13553,6 @@
           "registry/src/svelte/examples/text-color/extension.ts",
           "registry/src/svelte/examples/text-color/index.ts",
           "registry/src/svelte/examples/text-color/inline-menu.svelte",
-          "registry/src/svelte/examples/text-color/text-color.ts",
           "registry/src/svelte/sample/sample-doc-text-color.ts",
           "registry/src/svelte/ui/button/button.svelte",
           "registry/src/svelte/ui/button/index.ts"

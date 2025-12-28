@@ -430,6 +430,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/text-color",
+    "path": "packages/prosekit/dist/prosekit-extensions-text-color.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/underline",
     "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
     "ignore": [

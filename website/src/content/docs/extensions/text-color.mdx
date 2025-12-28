@@ -1,0 +1,48 @@
+---
+title: Text Color
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `textColor` mark is used to represent text with a specific color. It will be rendered as `<span>` element with inline `color` style in HTML.
+
+<Demo story="text-color" />
+
+## Commands
+
+### `addTextColor`
+
+Add a color to the current selection. This command will override any existing color on the selected text.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTextColor } from 'prosekit/extensions/text-color'
+
+const extension = defineTextColor()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.addTextColor({ color: 'red' })
+editor.commands.addTextColor({ color: '#0000ff' })
+editor.commands.addTextColor({ color: 'rgb(255, 0, 0)' })
+editor.commands.addTextColor({ color: 'var(--color-primary)' })
+```
+
+### `removeTextColor`
+
+Remove the color from the current selection.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTextColor } from 'prosekit/extensions/text-color'
+
+const extension = defineTextColor()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.removeTextColor()
+```
+
+## API Reference
+
+- [prosekit/extensions/text-color](/references/extensions/text-color)

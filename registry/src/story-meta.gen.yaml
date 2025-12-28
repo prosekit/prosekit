@@ -112,7 +112,8 @@
   description: Text alignment options (left, center, right, justify).
 - name: text-color
   frameworks: [react, vue, preact, svelte]
-  description: Text color and background color formatting.
+  hidden: true
+  description: Example for textColor mark.
 - name: toolbar
   frameworks: [react, vue, preact, svelte]
   description: Formatting toolbar with common editing actions.

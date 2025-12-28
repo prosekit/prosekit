@@ -73,6 +73,7 @@
     "./extensions/table/style.css": "./src/extensions/table/style.css",
     "./extensions/text": "./src/extensions/text.gen.ts",
     "./extensions/text-align": "./src/extensions/text-align.gen.ts",
+    "./extensions/text-color": "./src/extensions/text-color.gen.ts",
     "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
     "./extensions/virtual-selection/style.css": "./src/extensions/virtual-selection/style.css",
@@ -423,6 +424,10 @@
       "./extensions/text-align": {
         "types": "./dist/prosekit-extensions-text-align.d.ts",
         "default": "./dist/prosekit-extensions-text-align.js"
+      },
+      "./extensions/text-color": {
+        "types": "./dist/prosekit-extensions-text-color.d.ts",
+        "default": "./dist/prosekit-extensions-text-color.js"
       },
       "./extensions/underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
@@ -854,6 +859,9 @@
         "extensions/text-align": [
           "./dist/prosekit-extensions-text-align.d.ts"
         ],
+        "extensions/text-color": [
+          "./dist/prosekit-extensions-text-color.d.ts"
+        ],
         "extensions/underline": [
           "./dist/prosekit-extensions-underline.d.ts"
         ],
@@ -1085,16 +1093,6 @@
   "dev": {
     "entry": {
       "prosekit": "./src/index.ts",
-      "prosekit-pm": "./src/pm.ts",
-      "prosekit-pm-commands": "./src/pm/commands.ts",
-      "prosekit-pm-history": "./src/pm/history.ts",
-      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
-      "prosekit-pm-keymap": "./src/pm/keymap.ts",
-      "prosekit-pm-model": "./src/pm/model.ts",
-      "prosekit-pm-state": "./src/pm/state.ts",
-      "prosekit-pm-transform": "./src/pm/transform.ts",
-      "prosekit-pm-view": "./src/pm/view.ts",
-      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-basic": "./src/basic.gen.ts",
       "basic/style": "./src/basic/style.css",
       "basic/typography": "./src/basic/typography.css",
@@ -1117,6 +1115,7 @@
       "extensions/gap-cursor/style": "./src/extensions/gap-cursor/style.css",
       "prosekit-extensions-hard-break": "./src/extensions/hard-break.gen.ts",
       "prosekit-extensions-heading": "./src/extensions/heading.gen.ts",
+      "prosekit-extensions-text-color": "./src/extensions/text-color.gen.ts",
       "prosekit-extensions-horizontal-rule": "./src/extensions/horizontal-rule.gen.ts",
       "prosekit-extensions-image": "./src/extensions/image.gen.ts",
       "prosekit-extensions-input-rule": "./src/extensions/input-rule.gen.ts",
@@ -1155,6 +1154,16 @@
       "prosekit-lit-resizable": "./src/lit/resizable.gen.ts",
       "prosekit-lit-table-handle": "./src/lit/table-handle.gen.ts",
       "prosekit-lit-tooltip": "./src/lit/tooltip.gen.ts",
+      "prosekit-pm": "./src/pm.ts",
+      "prosekit-pm-commands": "./src/pm/commands.ts",
+      "prosekit-pm-history": "./src/pm/history.ts",
+      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
+      "prosekit-pm-keymap": "./src/pm/keymap.ts",
+      "prosekit-pm-model": "./src/pm/model.ts",
+      "prosekit-pm-state": "./src/pm/state.ts",
+      "prosekit-pm-transform": "./src/pm/transform.ts",
+      "prosekit-pm-view": "./src/pm/view.ts",
+      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-preact": "./src/preact.gen.ts",
       "prosekit-preact-autocomplete": "./src/preact/autocomplete.gen.ts",
       "prosekit-preact-block-handle": "./src/preact/block-handle.gen.ts",

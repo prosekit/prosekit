@@ -26,17 +26,10 @@ export function removeTextColor(): Command {
 /**
  * @internal
  */
-export function toggleTextColor(attrs: TextColorAttrs): Command {
-  return toggleMark({ type: 'textColor', attrs })
-}
-/**
- * @internal
- */
 export type TextColorCommandsExtension = Extension<{
   Commands: {
     addTextColor: [attrs: TextColorAttrs]
     removeTextColor: []
-    toggleTextColor: [attrs: TextColorAttrs]
   }
 }>
 
@@ -44,5 +37,5 @@ export type TextColorCommandsExtension = Extension<{
  * @internal
  */
 export function defineTextColorCommands(): TextColorCommandsExtension {
-  return defineCommands({ addTextColor, removeTextColor, toggleTextColor })
+  return defineCommands({ addTextColor, removeTextColor })
 }

@@ -6,7 +6,6 @@ export {
   addTextColor,
   defineTextColorCommands,
   removeTextColor,
-  toggleTextColor,
   type TextColorCommandsExtension,
 } from './text-color-commands'
 export {

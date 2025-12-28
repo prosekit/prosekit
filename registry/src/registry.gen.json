@@ -1376,11 +1376,6 @@
           "target": "components/editor/examples/notion/block-handle.tsx"
         },
         {
-          "path": "registry/src/react/examples/notion/color-extension.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/notion/color-extension.ts"
-        },
-        {
           "path": "registry/src/react/examples/notion/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/notion/editor.tsx"
@@ -1449,7 +1444,6 @@
         "accumulatedFiles": [
           "registry/src/react/examples/notion/block-handle-menu.tsx",
           "registry/src/react/examples/notion/block-handle.tsx",
-          "registry/src/react/examples/notion/color-extension.ts",
           "registry/src/react/examples/notion/editor.tsx",
           "registry/src/react/examples/notion/extension.ts",
           "registry/src/react/examples/notion/image-view/image-view-content.tsx",

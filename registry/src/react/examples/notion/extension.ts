@@ -5,12 +5,12 @@ import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 import { defineImageUploadHandler } from 'prosekit/extensions/image'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
+import { defineTextColor } from 'prosekit/extensions/text-color'
 
 import { sampleUploader } from '../../sample/sample-uploader'
 import { defineCodeBlockView } from '../../ui/code-block-view'
 
 import { defineImageView } from './image-view'
-import { defineTextColor } from 'prosekit/extensions/text-color'
 
 export function defineExtension() {
   return union(

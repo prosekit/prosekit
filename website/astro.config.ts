@@ -1,5 +1,4 @@
-import { globSync } from 'node:fs'
-import fs from 'node:fs/promises'
+import fs from 'node:fs'
 import path from 'node:path'
 import { styleText } from 'node:util'
 
@@ -27,8 +26,9 @@ type Sidebar = StarlightUserConfig['sidebar']
 
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
-  const filePaths = globSync('**/*', { cwd: 'src/content/docs/references' }).sort()
-  return filePaths.map(filePath => {
+  const filePaths = fs.globSync('**/*.mdx?', { cwd: 'src/content/docs/references' }).sort()
+
+  return filePaths.filter(filePath => fs.statSync(filePath).isFile()).map(filePath => {
     // Remove the file extension
     let name = filePath.replace(/\.mdx?/, '')
 
@@ -53,7 +53,8 @@ function generateExtensionsSidebarItems() {
   const otherItems: string[] = []
 
   // filePaths is an array like ['bold.mdx', 'code.mdx']
-  const filePaths = globSync('**/*', { cwd: 'src/content/docs/extensions' }).sort()
+  const filePaths = fs.globSync('**/*.mdx?', { cwd: 'src/content/docs/extensions' }).sort()
+
   const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
 
   for (const name of names) {
@@ -108,7 +109,7 @@ async function copiedRegistry(logger: AstroIntegrationLogger) {
   let maxAttempts = 2
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      await fs.access(sourceDir)
+      fs.accessSync(sourceDir)
     } catch {
       if (attempt === maxAttempts) {
         throw new Error(`sourceDir does not exist: ${styleText('blue', sourceDir)}`)
@@ -119,7 +120,7 @@ async function copiedRegistry(logger: AstroIntegrationLogger) {
       break
     }
   }
-  await fs.cp(sourceDir, targetDir, { recursive: true })
+  fs.cpSync(sourceDir, targetDir, { recursive: true })
   const endTime = Date.now()
   const duration = endTime - startTime
   logger.info(

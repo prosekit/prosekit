@@ -1065,9 +1065,6 @@ importers:
       bits-ui:
         specifier: ^2.14.4
         version: 2.14.4(@internationalized/date@3.10.0)(svelte@5.46.1)
-      fdir:
-        specifier: ^6.5.0
-        version: 6.5.0(picomatch@4.0.3)
       just-memoize:
         specifier: ^2.2.0
         version: 2.2.0

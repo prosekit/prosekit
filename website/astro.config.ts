@@ -27,8 +27,7 @@ type Sidebar = StarlightUserConfig['sidebar']
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = fs.globSync('**/*.mdx?', { cwd: 'src/content/docs/references' }).sort()
-
-  return filePaths.filter(filePath => fs.statSync(filePath).isFile()).map(filePath => {
+  return filePaths.map(filePath => {
     // Remove the file extension
     let name = filePath.replace(/\.mdx?/, '')
 
@@ -54,7 +53,6 @@ function generateExtensionsSidebarItems() {
 
   // filePaths is an array like ['bold.mdx', 'code.mdx']
   const filePaths = fs.globSync('**/*.mdx?', { cwd: 'src/content/docs/extensions' }).sort()
-
   const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
 
   for (const name of names) {

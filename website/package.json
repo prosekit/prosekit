@@ -42,7 +42,6 @@
     "astrobook": "^0.11.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "bits-ui": "^2.14.4",
-    "fdir": "^6.5.0",
     "just-memoize": "^2.2.0",
     "loro-crdt": "^1.10.3",
     "loro-prosemirror": "^0.4.1",

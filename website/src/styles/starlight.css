@@ -69,3 +69,21 @@
   @apply bg-white dark:bg-zinc-800;
   @apply shadow-[0px_2px_0px_0px_rgba(0,0,0,0.13)] dark:shadow-[0px_2px_0px_0px_rgba(255,255,255,0.15)];
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.code-tabs .tablist-wrapper {
+  scrollbar-width: thin;
+}

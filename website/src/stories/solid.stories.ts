@@ -37,3 +37,4 @@ export const Typography = { args: { story: 'typography' } }
 export const Underline = { args: { story: 'underline' } }
 export const Unmount = { args: { story: 'unmount' } }
 export const ViewAdapter = { args: { story: 'view-adapter' } }
+export const Yjs = { args: { story: 'yjs' } }

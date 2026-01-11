@@ -137,6 +137,7 @@
     "./solid/examples/underline": "./src/solid/examples/underline/index.ts",
     "./solid/examples/unmount": "./src/solid/examples/unmount/index.ts",
     "./solid/examples/view-adapter": "./src/solid/examples/view-adapter/index.ts",
+    "./solid/examples/yjs": "./src/solid/examples/yjs/index.ts",
     "./solid/renderer": "./src/solid/renderer.ts",
     "./svelte/examples/block-handle": "./src/svelte/examples/block-handle/index.ts",
     "./svelte/examples/blockquote": "./src/svelte/examples/blockquote/index.ts",

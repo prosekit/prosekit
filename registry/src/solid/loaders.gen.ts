@@ -36,4 +36,5 @@ export const loaders = {
   'underline': lazy(() => import('./examples/underline').then((m) => ({ default: m.ExampleEditor }))),
   'unmount': lazy(() => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor }))),
   'view-adapter': lazy(() => import('./examples/view-adapter').then((m) => ({ default: m.ExampleEditor }))),
+  'yjs': lazy(() => import('./examples/yjs').then((m) => ({ default: m.ExampleEditor }))),
 }

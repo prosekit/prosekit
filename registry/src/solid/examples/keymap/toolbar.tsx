@@ -1,4 +1,7 @@
-import { createSignal, type JSX } from 'solid-js'
+import {
+  createSignal,
+  type JSX,
+} from 'solid-js'
 
 import { Button } from '../../ui/button'
 

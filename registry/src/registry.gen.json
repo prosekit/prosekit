@@ -17242,6 +17242,65 @@
       }
     },
     {
+      "name": "solid-example-yjs",
+      "title": "solid-example-yjs",
+      "type": "registry:block",
+      "description": "Real-time collaboration using Yjs CRDT library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js",
+        "y-protocols",
+        "y-websocket",
+        "yjs"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/yjs/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/yjs/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/yjs/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/yjs/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "yjs",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/yjs/editor-component.tsx",
+          "registry/src/solid/examples/yjs/editor.tsx",
+          "registry/src/solid/examples/yjs/extension.ts",
+          "registry/src/solid/examples/yjs/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-sample-define-atom-block",
       "title": "solid-sample-define-atom-block",
       "type": "registry:component",

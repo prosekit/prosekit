@@ -4,9 +4,9 @@ import 'prosekit/basic/typography.css'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import {
+  createSignal,
   For,
   Show,
-  createSignal,
   type JSX,
 } from 'solid-js'
 

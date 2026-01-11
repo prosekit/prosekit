@@ -59,7 +59,7 @@
   frameworks: [react, vue, preact, svelte]
   description: An example showing how to render a mark as a custom component.
 - name: list
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Example for list node.
 - name: list-custom-checkbox
   frameworks: [react, vue, preact, svelte]

@@ -20,6 +20,7 @@ export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Italic = { args: { story: 'italic' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const Link = { args: { story: 'link' } }
+export const List = { args: { story: 'list' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }

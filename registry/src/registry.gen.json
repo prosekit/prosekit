@@ -16363,6 +16363,59 @@
       }
     },
     {
+      "name": "solid-example-list",
+      "title": "solid-example-list",
+      "type": "registry:block",
+      "description": "Example for list node.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-list.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/list/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/list/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/list/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "list",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/list/editor.tsx",
+          "registry/src/solid/examples/list/extension.ts",
+          "registry/src/solid/examples/list/index.ts",
+          "registry/src/solid/sample/sample-doc-list.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-list",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",
@@ -17124,6 +17177,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-list",
+      "title": "solid-sample-sample-doc-list",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-list.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-list.ts"
         ],
         "internalDependencies": []
       }

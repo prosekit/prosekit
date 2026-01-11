@@ -68,7 +68,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Real-time collaboration using Loro CRDT library.
 - name: mark-rule
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Input rules for automatic mark formatting.
 - name: minimal
   frameworks: [react, vue, preact, svelte, solid]

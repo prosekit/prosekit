@@ -24,6 +24,7 @@ export const loaders = {
   'list': lazy(() => import('./examples/list').then((m) => ({ default: m.ExampleEditor }))),
   'list-custom-checkbox': lazy(() => import('./examples/list-custom-checkbox').then((m) => ({ default: m.ExampleEditor }))),
   'loro': lazy(() => import('./examples/loro').then((m) => ({ default: m.ExampleEditor }))),
+  'mark-rule': lazy(() => import('./examples/mark-rule').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor }))),
   'readonly': lazy(() => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor }))),

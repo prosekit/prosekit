@@ -25,6 +25,7 @@ export const Link = { args: { story: 'link' } }
 export const List = { args: { story: 'list' } }
 export const ListCustomCheckbox = { args: { story: 'list-custom-checkbox' } }
 export const Loro = { args: { story: 'loro' } }
+export const MarkRule = { args: { story: 'mark-rule' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }

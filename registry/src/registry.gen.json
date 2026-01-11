@@ -16631,6 +16631,52 @@
       }
     },
     {
+      "name": "solid-example-mark-rule",
+      "title": "solid-example-mark-rule",
+      "type": "registry:block",
+      "description": "Input rules for automatic mark formatting.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/mark-rule/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/mark-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/mark-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/mark-rule/issue-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/issue-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "mark-rule",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/mark-rule/editor.tsx",
+          "registry/src/solid/examples/mark-rule/extension.ts",
+          "registry/src/solid/examples/mark-rule/index.ts",
+          "registry/src/solid/examples/mark-rule/issue-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",

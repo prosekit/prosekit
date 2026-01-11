@@ -125,6 +125,7 @@
     "./solid/examples/list": "./src/solid/examples/list/index.ts",
     "./solid/examples/list-custom-checkbox": "./src/solid/examples/list-custom-checkbox/index.ts",
     "./solid/examples/loro": "./src/solid/examples/loro/index.ts",
+    "./solid/examples/mark-rule": "./src/solid/examples/mark-rule/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",
     "./solid/examples/placeholder": "./src/solid/examples/placeholder/index.ts",
     "./solid/examples/readonly": "./src/solid/examples/readonly/index.ts",

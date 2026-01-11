@@ -131,6 +131,7 @@
     "./solid/examples/rtl": "./src/solid/examples/rtl/index.ts",
     "./solid/examples/save-html": "./src/solid/examples/save-html/index.ts",
     "./solid/examples/save-json": "./src/solid/examples/save-json/index.ts",
+    "./solid/examples/save-markdown": "./src/solid/examples/save-markdown/index.ts",
     "./solid/examples/strike": "./src/solid/examples/strike/index.ts",
     "./solid/examples/table": "./src/solid/examples/table/index.ts",
     "./solid/examples/text-align": "./src/solid/examples/text-align/index.ts",

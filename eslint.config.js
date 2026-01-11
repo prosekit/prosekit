@@ -38,11 +38,4 @@ export default defineESLintConfig(
       'unicorn/prefer-single-call': 'off',
     },
   },
-  {
-    rules: {
-      // Disable this rule because of https://github.com/facebook/react/issues/34775
-      // TODO: Enable this when the issue is fixed.
-      'react-hooks/refs': 'off',
-    },
-  },
 )

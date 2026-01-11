@@ -41,7 +41,7 @@
     "@changesets/cli": "^2.29.8",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.25.1",
-    "@ocavue/eslint-config": "^3.8.1",
+    "@ocavue/eslint-config": "^3.9.1",
     "@ocavue/tsconfig": "^0.6.2",
     "@size-limit/esbuild-why": "^12.0.0",
     "@size-limit/preset-small-lib": "^12.0.0",

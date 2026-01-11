@@ -195,12 +195,6 @@
     "loro-prosemirror": {
       "optional": true
     },
-    "y-prosemirror": {
-      "optional": true
-    },
-    "yjs": {
-      "optional": true
-    },
     "preact": {
       "optional": true
     },
@@ -217,6 +211,12 @@
       "optional": true
     },
     "vue": {
+      "optional": true
+    },
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
       "optional": true
     }
   },

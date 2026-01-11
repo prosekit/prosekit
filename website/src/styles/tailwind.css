@@ -1,12 +1,9 @@
-@layer base, starlight, nova, theme, components, utilities;
-
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss";
+@import "starlight-theme-nova/tailwind.css";
 @import "tw-animate-css";
 @import "./starlight.css";
 
 @source "../../../registry/src/";
-@custom-variant dark (&:where(.dark, .dark *));
 @plugin "@egoist/tailwindcss-icons";
 
 @theme inline {

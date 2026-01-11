@@ -9,3 +9,4 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - "prosemirror-*"
+  - "starlight-theme-nova"

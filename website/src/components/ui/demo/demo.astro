@@ -24,6 +24,7 @@ if (examples.length === 0) {
 const frameworks = examples.map((example) => example.meta.framework)
 ---
 
+{/* @ts-expect-error: something is wrong with Astro's type */}
 <MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:load>
   {frameworks.includes('preact') && <Fragment slot="slot-story-preact"><PreactStory story={story} /></Fragment>}
   {frameworks.includes('react') && <Fragment slot="slot-story-react"><ReactStory story={story} /></Fragment>}

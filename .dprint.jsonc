@@ -41,10 +41,10 @@
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.13.wasm",
-    "https://plugins.dprint.dev/json-0.21.0.wasm",
+    "https://plugins.dprint.dev/json-0.21.1.wasm",
     "https://plugins.dprint.dev/markdown-0.20.0.wasm",
     "https://plugins.dprint.dev/g-plane/markup_fmt-v0.25.3.wasm",
-    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.6.0.wasm",
     "https://plugins.dprint.dev/g-plane/malva-v0.15.1.wasm",
   ],
 }

@@ -50,7 +50,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@types/diffable-html": "^5.0.2",
     "diffable-html": "^6.0.1",
-    "tsdown": "^0.18.3",
+    "tsdown": "^0.19.0",
     "typescript": "~5.9.3",
     "vitest": "^4.0.16",
     "vitest-browser-commands": "^0.2.0"

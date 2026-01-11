@@ -111,7 +111,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Text alignment options (left, center, right, justify).
 - name: text-color
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   hidden: true
   description: Change text and background color.
 - name: toolbar

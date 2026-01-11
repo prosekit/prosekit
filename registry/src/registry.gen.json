@@ -17211,6 +17211,61 @@
       }
     },
     {
+      "name": "solid-example-text-color",
+      "title": "solid-example-text-color",
+      "type": "registry:block",
+      "description": "Change text and background color.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-text-color.json",
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/text-color/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/text-color/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-color/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-color/inline-menu.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/inline-menu.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "text-color",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/text-color/editor.tsx",
+          "registry/src/solid/examples/text-color/extension.ts",
+          "registry/src/solid/examples/text-color/index.ts",
+          "registry/src/solid/examples/text-color/inline-menu.tsx",
+          "registry/src/solid/sample/sample-doc-text-color.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-text-color",
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
       "name": "solid-example-toolbar",
       "title": "solid-example-toolbar",
       "type": "registry:block",
@@ -18209,6 +18264,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-text-align.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-text-color",
+      "title": "solid-sample-sample-doc-text-color",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-text-color.ts"
         ],
         "internalDependencies": []
       }

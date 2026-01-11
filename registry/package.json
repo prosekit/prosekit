@@ -127,6 +127,7 @@
     "./solid/examples/readonly": "./src/solid/examples/readonly/index.ts",
     "./solid/examples/rtl": "./src/solid/examples/rtl/index.ts",
     "./solid/examples/strike": "./src/solid/examples/strike/index.ts",
+    "./solid/examples/table": "./src/solid/examples/table/index.ts",
     "./solid/examples/underline": "./src/solid/examples/underline/index.ts",
     "./solid/examples/unmount": "./src/solid/examples/unmount/index.ts",
     "./solid/examples/view-adapter": "./src/solid/examples/view-adapter/index.ts",

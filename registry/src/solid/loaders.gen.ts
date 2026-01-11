@@ -26,6 +26,7 @@ export const loaders = {
   'readonly': lazy(() => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor }))),
   'rtl': lazy(() => import('./examples/rtl').then((m) => ({ default: m.ExampleEditor }))),
   'strike': lazy(() => import('./examples/strike').then((m) => ({ default: m.ExampleEditor }))),
+  'table': lazy(() => import('./examples/table').then((m) => ({ default: m.ExampleEditor }))),
   'underline': lazy(() => import('./examples/underline').then((m) => ({ default: m.ExampleEditor }))),
   'unmount': lazy(() => import('./examples/unmount').then((m) => ({ default: m.ExampleEditor }))),
   'view-adapter': lazy(() => import('./examples/view-adapter').then((m) => ({ default: m.ExampleEditor }))),

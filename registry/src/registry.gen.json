@@ -16737,6 +16737,55 @@
       }
     },
     {
+      "name": "solid-example-table",
+      "title": "solid-example-table",
+      "type": "registry:block",
+      "description": "Table node with row and column operations.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/solid-ui-table-handle.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/table/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/table/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/table/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "table",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/table/editor.tsx",
+          "registry/src/solid/examples/table/extension.ts",
+          "registry/src/solid/examples/table/index.ts",
+          "registry/src/solid/sample/sample-doc-table.ts",
+          "registry/src/solid/ui/table-handle/index.ts",
+          "registry/src/solid/ui/table-handle/table-handle.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-table",
+          "solid-ui-table-handle"
+        ]
+      }
+    },
+    {
       "name": "solid-example-underline",
       "title": "solid-example-underline",
       "type": "registry:block",
@@ -17371,6 +17420,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-strike.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-table",
+      "title": "solid-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-table.ts"
         ],
         "internalDependencies": []
       }

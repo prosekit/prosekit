@@ -27,6 +27,7 @@ export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const Rtl = { args: { story: 'rtl' } }
 export const Strike = { args: { story: 'strike' } }
+export const Table = { args: { story: 'table' } }
 export const Underline = { args: { story: 'underline' } }
 export const Unmount = { args: { story: 'unmount' } }
 export const ViewAdapter = { args: { story: 'view-adapter' } }

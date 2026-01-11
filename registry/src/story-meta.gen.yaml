@@ -108,7 +108,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Table node with row and column operations.
 - name: text-align
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Text alignment options (left, center, right, justify).
 - name: text-color
   frameworks: [react, vue, preact, svelte]

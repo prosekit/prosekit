@@ -16786,6 +16786,61 @@
       }
     },
     {
+      "name": "solid-example-text-align",
+      "title": "solid-example-text-align",
+      "type": "registry:block",
+      "description": "Text alignment options (left, center, right, justify).",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-text-align.json",
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/text-align/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/text-align/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-align/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-align/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "text-align",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/text-align/editor.tsx",
+          "registry/src/solid/examples/text-align/extension.ts",
+          "registry/src/solid/examples/text-align/index.ts",
+          "registry/src/solid/examples/text-align/toolbar.tsx",
+          "registry/src/solid/sample/sample-doc-text-align.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-text-align",
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
       "name": "solid-example-toolbar",
       "title": "solid-example-toolbar",
       "type": "registry:block",
@@ -17500,6 +17555,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-text-align",
+      "title": "solid-sample-sample-doc-text-align",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-text-align.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-align.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-text-align.ts"
         ],
         "internalDependencies": []
       }

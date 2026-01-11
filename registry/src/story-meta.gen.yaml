@@ -130,7 +130,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Properly unmount and remount editor instances.
 - name: user-menu
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: 'Autocomplete menu for @mentions and #hashtag'
 - name: user-menu-dynamic
   frameworks: [react, vue, preact, svelte]

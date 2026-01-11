@@ -17402,6 +17402,62 @@
       }
     },
     {
+      "name": "solid-example-user-menu",
+      "title": "solid-example-user-menu",
+      "type": "registry:block",
+      "description": "Autocomplete menu for @mentions and #hashtag",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/solid-sample-sample-user-data.json",
+        "https://prosekit.dev/r/solid-ui-tag-menu.json",
+        "https://prosekit.dev/r/solid-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/user-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "user-menu",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/user-menu/editor.tsx",
+          "registry/src/solid/examples/user-menu/extension.ts",
+          "registry/src/solid/examples/user-menu/index.ts",
+          "registry/src/solid/sample/sample-tag-data.ts",
+          "registry/src/solid/sample/sample-user-data.ts",
+          "registry/src/solid/ui/tag-menu/index.ts",
+          "registry/src/solid/ui/tag-menu/tag-menu.tsx",
+          "registry/src/solid/ui/user-menu/index.ts",
+          "registry/src/solid/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-tag-data",
+          "solid-sample-sample-user-data",
+          "solid-ui-tag-menu",
+          "solid-ui-user-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-view-adapter",
       "title": "solid-example-view-adapter",
       "type": "registry:block",

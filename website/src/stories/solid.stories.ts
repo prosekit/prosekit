@@ -41,5 +41,6 @@ export const Toolbar = { args: { story: 'toolbar' } }
 export const Typography = { args: { story: 'typography' } }
 export const Underline = { args: { story: 'underline' } }
 export const Unmount = { args: { story: 'unmount' } }
+export const UserMenu = { args: { story: 'user-menu' } }
 export const ViewAdapter = { args: { story: 'view-adapter' } }
 export const Yjs = { args: { story: 'yjs' } }

@@ -62,7 +62,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for list node.
 - name: list-custom-checkbox
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Custom checkbox styling for task lists.
 - name: loro
   frameworks: [react, vue, preact, svelte]

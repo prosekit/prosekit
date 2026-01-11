@@ -21,6 +21,7 @@ export const Italic = { args: { story: 'italic' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const Link = { args: { story: 'link' } }
 export const List = { args: { story: 'list' } }
+export const ListCustomCheckbox = { args: { story: 'list-custom-checkbox' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }

@@ -20,6 +20,7 @@ export const loaders = {
   'keymap': lazy(() => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor }))),
   'link': lazy(() => import('./examples/link').then((m) => ({ default: m.ExampleEditor }))),
   'list': lazy(() => import('./examples/list').then((m) => ({ default: m.ExampleEditor }))),
+  'list-custom-checkbox': lazy(() => import('./examples/list-custom-checkbox').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor }))),
   'readonly': lazy(() => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor }))),

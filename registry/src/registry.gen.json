@@ -16416,6 +16416,65 @@
       }
     },
     {
+      "name": "solid-example-list-custom-checkbox",
+      "title": "solid-example-list-custom-checkbox",
+      "type": "registry:block",
+      "description": "Custom checkbox styling for task lists.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-list-custom-checkbox.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/custom-list.css"
+        },
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "list-custom-checkbox",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+          "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+          "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+          "registry/src/solid/examples/list-custom-checkbox/index.ts",
+          "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-list-custom-checkbox",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",
@@ -17204,6 +17263,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-list.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-list-custom-checkbox",
+      "title": "solid-sample-sample-doc-list-custom-checkbox",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list-custom-checkbox.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts"
         ],
         "internalDependencies": []
       }

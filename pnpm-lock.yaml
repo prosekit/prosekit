@@ -1099,8 +1099,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       starlight-theme-nova:
-        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@b70fda6
-        version: https://pkg.pr.new/ocavue/starlight-theme-nova@b70fda6(@astrojs/starlight@0.37.2(astro@5.16.8(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
+        specifier: ^0.11.3
+        version: 0.11.3(@astrojs/starlight@0.37.2(astro@5.16.8(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
       svelte:
         specifier: ^5.46.1
         version: 5.46.1
@@ -6634,9 +6634,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@b70fda6:
-    resolution: {integrity: sha512-WDvRVfG5CdU8yMaYIwU/n21hcAD/gprlP+ZzQrgJkJGVSQ8DJQp8eslxUG5eEoZ67Nin8f73KF2W96mH2GFtCg==, tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@b70fda6}
-    version: 0.11.2
+  starlight-theme-nova@0.11.3:
+    resolution: {integrity: sha512-P5TVPujfYR9O1jW5zMGP41ulygCQ+fI+vW9D/hV3FhMBNSQx2l3uQFc7QqHgDSqz+reqAsnBjxLZ4auLe0C75g==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -14345,7 +14344,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@b70fda6(@astrojs/starlight@0.37.2(astro@5.16.8(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
+  starlight-theme-nova@0.11.3(@astrojs/starlight@0.37.2(astro@5.16.8(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
     dependencies:
       '@aria-ui/core': 0.0.22
       '@pagefind/default-ui': 1.4.0

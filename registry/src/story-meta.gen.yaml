@@ -115,7 +115,7 @@
   hidden: true
   description: Change text and background color.
 - name: toolbar
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Formatting toolbar with common editing actions.
 - name: tweet
   frameworks: [react]

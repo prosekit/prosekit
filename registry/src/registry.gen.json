@@ -16786,6 +16786,59 @@
       }
     },
     {
+      "name": "solid-example-toolbar",
+      "title": "solid-example-toolbar",
+      "type": "registry:block",
+      "description": "Formatting toolbar with common editing actions.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/toolbar/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/toolbar/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "toolbar",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/toolbar/editor.tsx",
+          "registry/src/solid/examples/toolbar/extension.ts",
+          "registry/src/solid/examples/toolbar/index.ts",
+          "registry/src/solid/sample/sample-uploader.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-uploader",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-underline",
       "title": "solid-example-underline",
       "type": "registry:block",

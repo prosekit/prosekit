@@ -16203,6 +16203,64 @@
       }
     },
     {
+      "name": "solid-example-keymap",
+      "title": "solid-example-keymap",
+      "type": "registry:block",
+      "description": "Custom keyboard shortcuts and key bindings.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/keymap/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/toolbar.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/use-submit-keymap.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/use-submit-keymap.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "keymap",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/keymap/editor.tsx",
+          "registry/src/solid/examples/keymap/extension.ts",
+          "registry/src/solid/examples/keymap/index.ts",
+          "registry/src/solid/examples/keymap/toolbar.tsx",
+          "registry/src/solid/examples/keymap/use-submit-keymap.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",

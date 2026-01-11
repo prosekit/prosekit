@@ -50,7 +50,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for italic mark.
 - name: keymap
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Custom keyboard shortcuts and key bindings.
 - name: link
   frameworks: [react, vue, preact, svelte]

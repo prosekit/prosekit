@@ -17,6 +17,7 @@ export const HardBreak = { args: { story: 'hard-break' } }
 export const Heading = { args: { story: 'heading' } }
 export const HorizontalRule = { args: { story: 'horizontal-rule' } }
 export const Italic = { args: { story: 'italic' } }
+export const Keymap = { args: { story: 'keymap' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }

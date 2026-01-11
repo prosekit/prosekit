@@ -116,6 +116,7 @@
     "./solid/examples/hard-break": "./src/solid/examples/hard-break/index.ts",
     "./solid/examples/heading": "./src/solid/examples/heading/index.ts",
     "./solid/examples/horizontal-rule": "./src/solid/examples/horizontal-rule/index.ts",
+    "./solid/examples/inline-menu": "./src/solid/examples/inline-menu/index.ts",
     "./solid/examples/italic": "./src/solid/examples/italic/index.ts",
     "./solid/examples/keymap": "./src/solid/examples/keymap/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",

@@ -16150,6 +16150,57 @@
       }
     },
     {
+      "name": "solid-example-inline-menu",
+      "title": "solid-example-inline-menu",
+      "type": "registry:block",
+      "description": "Inline formatting menu that appears on text selection.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-inline-menu.json",
+        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/inline-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/inline-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/inline-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "inline-menu",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/inline-menu/editor.tsx",
+          "registry/src/solid/examples/inline-menu/extension.ts",
+          "registry/src/solid/examples/inline-menu/index.ts",
+          "registry/src/solid/sample/sample-doc-inline-menu.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/inline-menu/index.ts",
+          "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-inline-menu",
+          "solid-ui-inline-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-italic",
       "title": "solid-example-italic",
       "type": "registry:block",
@@ -16941,6 +16992,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-heading.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-inline-menu",
+      "title": "solid-sample-sample-doc-inline-menu",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-inline-menu.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-inline-menu.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-inline-menu.ts"
         ],
         "internalDependencies": []
       }

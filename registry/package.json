@@ -133,6 +133,7 @@
     "./solid/examples/save-json": "./src/solid/examples/save-json/index.ts",
     "./solid/examples/save-markdown": "./src/solid/examples/save-markdown/index.ts",
     "./solid/examples/search": "./src/solid/examples/search/index.ts",
+    "./solid/examples/slash-menu": "./src/solid/examples/slash-menu/index.ts",
     "./solid/examples/strike": "./src/solid/examples/strike/index.ts",
     "./solid/examples/table": "./src/solid/examples/table/index.ts",
     "./solid/examples/text-align": "./src/solid/examples/text-align/index.ts",

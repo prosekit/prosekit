@@ -17004,6 +17004,54 @@
       }
     },
     {
+      "name": "solid-example-slash-menu",
+      "title": "solid-example-slash-menu",
+      "type": "registry:block",
+      "description": "Command menu triggered by typing slash (/).",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-slash-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/slash-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/slash-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "slash-menu",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/slash-menu/editor.tsx",
+          "registry/src/solid/examples/slash-menu/extension.ts",
+          "registry/src/solid/examples/slash-menu/index.ts",
+          "registry/src/solid/ui/slash-menu/index.ts",
+          "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
+          "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
+          "registry/src/solid/ui/slash-menu/slash-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-slash-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",

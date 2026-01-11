@@ -8,7 +8,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for bold mark.
 - name: change-tracking
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Track and commit document changes with version history.
 - name: code
   frameworks: [react, vue, preact, svelte, solid]

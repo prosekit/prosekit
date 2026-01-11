@@ -13,6 +13,7 @@ export const loaders = {
   'full': lazy(() => import('./examples/full').then((m) => ({ default: m.ExampleEditor }))),
   'hard-break': lazy(() => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor }))),
   'heading': lazy(() => import('./examples/heading').then((m) => ({ default: m.ExampleEditor }))),
+  'horizontal-rule': lazy(() => import('./examples/horizontal-rule').then((m) => ({ default: m.ExampleEditor }))),
   'italic': lazy(() => import('./examples/italic').then((m) => ({ default: m.ExampleEditor }))),
   'minimal': lazy(() => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor }))),

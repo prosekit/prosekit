@@ -38,7 +38,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for heading node with multiple levels.
 - name: horizontal-rule
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Example for horizontal rule node.
 - name: image-view
   frameworks: [react, vue, preact, svelte]

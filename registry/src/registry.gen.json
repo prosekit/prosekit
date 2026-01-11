@@ -16573,6 +16573,64 @@
       }
     },
     {
+      "name": "solid-example-loro",
+      "title": "solid-example-loro",
+      "type": "registry:block",
+      "description": "Real-time collaboration using Loro CRDT library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "loro-crdt",
+        "loro-prosemirror",
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/loro/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/loro/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/loro/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/loro/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "loro",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/loro/editor-component.tsx",
+          "registry/src/solid/examples/loro/editor.tsx",
+          "registry/src/solid/examples/loro/extension.ts",
+          "registry/src/solid/examples/loro/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",

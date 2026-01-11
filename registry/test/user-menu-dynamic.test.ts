@@ -205,4 +205,8 @@ async function updateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
     const { simulateNetworkStatus } = await import('../src/vue/sample/sample-query-users')
     simulateNetworkStatus(status)
   }
+  {
+    const { simulateNetworkStatus } = await import('../src/solid/sample/sample-query-users')
+    simulateNetworkStatus(status)
+  }
 }

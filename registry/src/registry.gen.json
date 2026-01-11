@@ -15585,6 +15585,52 @@
       }
     },
     {
+      "name": "solid-example-change-tracking",
+      "title": "solid-example-change-tracking",
+      "type": "registry:block",
+      "description": "Track and commit document changes with version history.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/change-tracking/editor-diff.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-diff.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/change-tracking/editor-main.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor-main.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/change-tracking/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/change-tracking/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/change-tracking/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "change-tracking",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/change-tracking/editor-diff.tsx",
+          "registry/src/solid/examples/change-tracking/editor-main.tsx",
+          "registry/src/solid/examples/change-tracking/editor.tsx",
+          "registry/src/solid/examples/change-tracking/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-code",
       "title": "solid-example-code",
       "type": "registry:block",
@@ -15947,6 +15993,51 @@
       }
     },
     {
+      "name": "solid-example-gap-cursor",
+      "title": "solid-example-gap-cursor",
+      "type": "registry:block",
+      "description": "Cursor navigation between non-text block elements.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-gap-cursor.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/gap-cursor/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/gap-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/gap-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "gap-cursor",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/gap-cursor/editor.tsx",
+          "registry/src/solid/examples/gap-cursor/extension.ts",
+          "registry/src/solid/examples/gap-cursor/index.ts",
+          "registry/src/solid/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-gap-cursor"
+        ]
+      }
+    },
+    {
       "name": "solid-example-hard-break",
       "title": "solid-example-hard-break",
       "type": "registry:block",
@@ -16055,6 +16146,159 @@
       }
     },
     {
+      "name": "solid-example-horizontal-rule",
+      "title": "solid-example-horizontal-rule",
+      "type": "registry:block",
+      "description": "Example for horizontal rule node.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/horizontal-rule/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/horizontal-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/horizontal-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/horizontal-rule/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "horizontal-rule",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/horizontal-rule/editor.tsx",
+          "registry/src/solid/examples/horizontal-rule/extension.ts",
+          "registry/src/solid/examples/horizontal-rule/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-image-view",
+      "title": "solid-example-image-view",
+      "type": "registry:block",
+      "description": "Custom image node views with resize support.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-image.json",
+        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
+        "https://prosekit.dev/r/solid-ui-image-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/image-view/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/image-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/image-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "image-view",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/image-view/editor.tsx",
+          "registry/src/solid/examples/image-view/extension.ts",
+          "registry/src/solid/examples/image-view/index.ts",
+          "registry/src/solid/sample/sample-doc-image.ts",
+          "registry/src/solid/sample/sample-uploader.ts",
+          "registry/src/solid/ui/image-view/image-view.tsx",
+          "registry/src/solid/ui/image-view/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-image",
+          "solid-sample-sample-uploader",
+          "solid-ui-image-view"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-inline-menu",
+      "title": "solid-example-inline-menu",
+      "type": "registry:block",
+      "description": "Inline formatting menu that appears on text selection.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-inline-menu.json",
+        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/inline-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/inline-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/inline-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/inline-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "inline-menu",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/inline-menu/editor.tsx",
+          "registry/src/solid/examples/inline-menu/extension.ts",
+          "registry/src/solid/examples/inline-menu/index.ts",
+          "registry/src/solid/sample/sample-doc-inline-menu.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/inline-menu/index.ts",
+          "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-inline-menu",
+          "solid-ui-inline-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-italic",
       "title": "solid-example-italic",
       "type": "registry:block",
@@ -16105,6 +16349,382 @@
           "solid-sample-sample-doc-italic",
           "solid-ui-toolbar"
         ]
+      }
+    },
+    {
+      "name": "solid-example-keymap",
+      "title": "solid-example-keymap",
+      "type": "registry:block",
+      "description": "Custom keyboard shortcuts and key bindings.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/keymap/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/toolbar.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/keymap/use-submit-keymap.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/keymap/use-submit-keymap.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "keymap",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/keymap/editor.tsx",
+          "registry/src/solid/examples/keymap/extension.ts",
+          "registry/src/solid/examples/keymap/index.ts",
+          "registry/src/solid/examples/keymap/toolbar.tsx",
+          "registry/src/solid/examples/keymap/use-submit-keymap.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-link",
+      "title": "solid-example-link",
+      "type": "registry:block",
+      "description": "Example for link mark with URL input.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-link.json",
+        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/link/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/link/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/link/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "link",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/link/editor.tsx",
+          "registry/src/solid/examples/link/extension.ts",
+          "registry/src/solid/examples/link/index.ts",
+          "registry/src/solid/sample/sample-doc-link.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/inline-menu/index.ts",
+          "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-link",
+          "solid-ui-inline-menu"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-link-mark-view",
+      "title": "solid-example-link-mark-view",
+      "type": "registry:block",
+      "description": "An example showing how to render a mark as a custom component.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-link-mark-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/link-mark-view/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/link-mark-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/link-mark-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/link-mark-view/link-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/link-view.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "link-mark-view",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/link-mark-view/editor.tsx",
+          "registry/src/solid/examples/link-mark-view/extension.ts",
+          "registry/src/solid/examples/link-mark-view/index.ts",
+          "registry/src/solid/examples/link-mark-view/link-view.tsx",
+          "registry/src/solid/sample/sample-doc-link-mark-view.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-link-mark-view"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-list",
+      "title": "solid-example-list",
+      "type": "registry:block",
+      "description": "Example for list node.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-list.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/list/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/list/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/list/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "list",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/list/editor.tsx",
+          "registry/src/solid/examples/list/extension.ts",
+          "registry/src/solid/examples/list/index.ts",
+          "registry/src/solid/sample/sample-doc-list.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-list",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-list-custom-checkbox",
+      "title": "solid-example-list-custom-checkbox",
+      "type": "registry:block",
+      "description": "Custom checkbox styling for task lists.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-list-custom-checkbox.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/custom-list.css"
+        },
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/list-custom-checkbox/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/list-custom-checkbox/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "list-custom-checkbox",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+          "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+          "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+          "registry/src/solid/examples/list-custom-checkbox/index.ts",
+          "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-list-custom-checkbox",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-loro",
+      "title": "solid-example-loro",
+      "type": "registry:block",
+      "description": "Real-time collaboration using Loro CRDT library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "loro-crdt",
+        "loro-prosemirror",
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/loro/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/loro/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/loro/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/loro/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/loro/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "loro",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/loro/editor-component.tsx",
+          "registry/src/solid/examples/loro/editor.tsx",
+          "registry/src/solid/examples/loro/extension.ts",
+          "registry/src/solid/examples/loro/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-mark-rule",
+      "title": "solid-example-mark-rule",
+      "type": "registry:block",
+      "description": "Input rules for automatic mark formatting.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/mark-rule/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/mark-rule/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/mark-rule/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/mark-rule/issue-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/mark-rule/issue-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "mark-rule",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/mark-rule/editor.tsx",
+          "registry/src/solid/examples/mark-rule/extension.ts",
+          "registry/src/solid/examples/mark-rule/index.ts",
+          "registry/src/solid/examples/mark-rule/issue-link.ts"
+        ],
+        "internalDependencies": []
       }
     },
     {
@@ -16315,6 +16935,220 @@
       }
     },
     {
+      "name": "solid-example-save-html",
+      "title": "solid-example-save-html",
+      "type": "registry:block",
+      "description": "Save and load documents as HTML format.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/save-html/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/save-html/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "save-html",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/save-html/editor.tsx",
+          "registry/src/solid/examples/save-html/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-example-save-json",
+      "title": "solid-example-save-json",
+      "type": "registry:block",
+      "description": "Save and load documents as JSON format.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/save-json/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/save-json/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "save-json",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/save-json/editor.tsx",
+          "registry/src/solid/examples/save-json/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-example-save-markdown",
+      "title": "solid-example-save-markdown",
+      "type": "registry:block",
+      "description": "Save and load documents as Markdown format.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "rehype-parse",
+        "rehype-remark",
+        "remark-gfm",
+        "remark-html",
+        "remark-parse",
+        "remark-stringify",
+        "solid-js",
+        "unified"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/save-markdown/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/save-markdown/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/save-markdown/markdown.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-markdown/markdown.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "save-markdown",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/save-markdown/editor.tsx",
+          "registry/src/solid/examples/save-markdown/index.ts",
+          "registry/src/solid/examples/save-markdown/markdown.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-example-search",
+      "title": "solid-example-search",
+      "type": "registry:block",
+      "description": "Search and highlight text with navigation.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-search.json",
+        "https://prosekit.dev/r/solid-ui-search.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/search/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/search/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "search",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/search/editor.tsx",
+          "registry/src/solid/examples/search/extension.ts",
+          "registry/src/solid/examples/search/index.ts",
+          "registry/src/solid/sample/sample-doc-search.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/search/index.ts",
+          "registry/src/solid/ui/search/search.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-search",
+          "solid-ui-search"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-slash-menu",
+      "title": "solid-example-slash-menu",
+      "type": "registry:block",
+      "description": "Command menu triggered by typing slash (/).",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-slash-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/slash-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/slash-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/slash-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "slash-menu",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/slash-menu/editor.tsx",
+          "registry/src/solid/examples/slash-menu/extension.ts",
+          "registry/src/solid/examples/slash-menu/index.ts",
+          "registry/src/solid/ui/slash-menu/index.ts",
+          "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
+          "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
+          "registry/src/solid/ui/slash-menu/slash-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-slash-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",
@@ -16366,6 +17200,257 @@
         "internalDependencies": [
           "solid-sample-sample-doc-strike",
           "solid-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-table",
+      "title": "solid-example-table",
+      "type": "registry:block",
+      "description": "Table node with row and column operations.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/solid-ui-table-handle.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/table/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/table/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/table/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "table",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/table/editor.tsx",
+          "registry/src/solid/examples/table/extension.ts",
+          "registry/src/solid/examples/table/index.ts",
+          "registry/src/solid/sample/sample-doc-table.ts",
+          "registry/src/solid/ui/table-handle/index.ts",
+          "registry/src/solid/ui/table-handle/table-handle.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-table",
+          "solid-ui-table-handle"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-text-align",
+      "title": "solid-example-text-align",
+      "type": "registry:block",
+      "description": "Text alignment options (left, center, right, justify).",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-text-align.json",
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/text-align/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/text-align/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-align/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-align/toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-align/toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "text-align",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/text-align/editor.tsx",
+          "registry/src/solid/examples/text-align/extension.ts",
+          "registry/src/solid/examples/text-align/index.ts",
+          "registry/src/solid/examples/text-align/toolbar.tsx",
+          "registry/src/solid/sample/sample-doc-text-align.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-text-align",
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-text-color",
+      "title": "solid-example-text-color",
+      "type": "registry:block",
+      "description": "Change text and background color.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-text-color.json",
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/text-color/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/text-color/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-color/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/text-color/inline-menu.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/text-color/inline-menu.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "text-color",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/text-color/editor.tsx",
+          "registry/src/solid/examples/text-color/extension.ts",
+          "registry/src/solid/examples/text-color/index.ts",
+          "registry/src/solid/examples/text-color/inline-menu.tsx",
+          "registry/src/solid/sample/sample-doc-text-color.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-text-color",
+          "solid-ui-button"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-toolbar",
+      "title": "solid-example-toolbar",
+      "type": "registry:block",
+      "description": "Formatting toolbar with common editing actions.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/toolbar/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/toolbar/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "toolbar",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/toolbar/editor.tsx",
+          "registry/src/solid/examples/toolbar/extension.ts",
+          "registry/src/solid/examples/toolbar/index.ts",
+          "registry/src/solid/sample/sample-uploader.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-uploader",
+          "solid-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-typography",
+      "title": "solid-example-typography",
+      "type": "registry:block",
+      "description": "Typography enhancements like smart quotes and dashes.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/typography/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/typography/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "typography",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/typography/editor.tsx",
+          "registry/src/solid/examples/typography/index.ts",
+          "registry/src/solid/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-typography"
         ]
       }
     },
@@ -16469,6 +17554,124 @@
       }
     },
     {
+      "name": "solid-example-user-menu",
+      "title": "solid-example-user-menu",
+      "type": "registry:block",
+      "description": "Autocomplete menu for @mentions and #hashtag",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
+        "https://prosekit.dev/r/solid-sample-sample-user-data.json",
+        "https://prosekit.dev/r/solid-ui-tag-menu.json",
+        "https://prosekit.dev/r/solid-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/user-menu/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "user-menu",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/user-menu/editor.tsx",
+          "registry/src/solid/examples/user-menu/extension.ts",
+          "registry/src/solid/examples/user-menu/index.ts",
+          "registry/src/solid/sample/sample-tag-data.ts",
+          "registry/src/solid/sample/sample-user-data.ts",
+          "registry/src/solid/ui/tag-menu/index.ts",
+          "registry/src/solid/ui/tag-menu/tag-menu.tsx",
+          "registry/src/solid/ui/user-menu/index.ts",
+          "registry/src/solid/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-tag-data",
+          "solid-sample-sample-user-data",
+          "solid-ui-tag-menu",
+          "solid-ui-user-menu"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-user-menu-dynamic",
+      "title": "solid-example-user-menu-dynamic",
+      "type": "registry:block",
+      "description": "Dynamic autocomplete menu with async data loading.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-query-users.json",
+        "https://prosekit.dev/r/solid-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/use-user-query.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "user-menu-dynamic",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/user-menu-dynamic/editor.tsx",
+          "registry/src/solid/examples/user-menu-dynamic/extension.ts",
+          "registry/src/solid/examples/user-menu-dynamic/index.ts",
+          "registry/src/solid/examples/user-menu-dynamic/use-user-query.ts",
+          "registry/src/solid/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "registry/src/solid/sample/sample-query-users.ts",
+          "registry/src/solid/sample/sample-user-data.ts",
+          "registry/src/solid/ui/user-menu/index.ts",
+          "registry/src/solid/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-query-users",
+          "solid-ui-user-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-view-adapter",
       "title": "solid-example-view-adapter",
       "type": "registry:block",
@@ -16519,6 +17722,114 @@
         "internalDependencies": [
           "solid-sample-define-atom-block",
           "solid-sample-sample-doc-view-adapter"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-word-counter",
+      "title": "solid-example-word-counter",
+      "type": "registry:block",
+      "description": "Display word and character count statistics.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-word-counter.json",
+        "https://prosekit.dev/r/solid-ui-word-counter.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/word-counter/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/word-counter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "word-counter",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/word-counter/editor.tsx",
+          "registry/src/solid/examples/word-counter/extension.ts",
+          "registry/src/solid/examples/word-counter/index.ts",
+          "registry/src/solid/sample/sample-doc-word-counter.ts",
+          "registry/src/solid/ui/word-counter/index.ts",
+          "registry/src/solid/ui/word-counter/word-counter.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-word-counter",
+          "solid-ui-word-counter"
+        ]
+      }
+    },
+    {
+      "name": "solid-example-yjs",
+      "title": "solid-example-yjs",
+      "type": "registry:block",
+      "description": "Real-time collaboration using Yjs CRDT library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js",
+        "y-protocols",
+        "y-websocket",
+        "yjs"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/yjs/editor-component.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor-component.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/yjs/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/yjs/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/yjs/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/yjs/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "yjs",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/yjs/editor-component.tsx",
+          "registry/src/solid/examples/yjs/editor.tsx",
+          "registry/src/solid/examples/yjs/extension.ts",
+          "registry/src/solid/examples/yjs/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+          "registry/src/solid/ui/image-upload-popover/index.ts",
+          "registry/src/solid/ui/toolbar/index.ts",
+          "registry/src/solid/ui/toolbar/toolbar.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-toolbar"
         ]
       }
     },
@@ -16712,6 +18023,33 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-gap-cursor",
+      "title": "solid-sample-sample-doc-gap-cursor",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-gap-cursor.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-gap-cursor.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-hard-break",
       "title": "solid-sample-sample-doc-hard-break",
       "type": "registry:component",
@@ -16766,6 +18104,60 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-image",
+      "title": "solid-sample-sample-doc-image",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-image.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-image.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-image.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-inline-menu",
+      "title": "solid-sample-sample-doc-inline-menu",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-inline-menu.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-inline-menu.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-inline-menu.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-italic",
       "title": "solid-sample-sample-doc-italic",
       "type": "registry:component",
@@ -16788,6 +18180,114 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-link",
+      "title": "solid-sample-sample-doc-link",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-link-mark-view",
+      "title": "solid-sample-sample-doc-link-mark-view",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-link-mark-view.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link-mark-view.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-link-mark-view.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-list",
+      "title": "solid-sample-sample-doc-list",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-list.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-list.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-list-custom-checkbox",
+      "title": "solid-sample-sample-doc-list-custom-checkbox",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-list-custom-checkbox.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts"
         ],
         "internalDependencies": []
       }
@@ -16847,6 +18347,33 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-search",
+      "title": "solid-sample-sample-doc-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-search.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-search.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-strike",
       "title": "solid-sample-sample-doc-strike",
       "type": "registry:component",
@@ -16869,6 +18396,114 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-strike.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-table",
+      "title": "solid-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-text-align",
+      "title": "solid-sample-sample-doc-text-align",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-text-align.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-align.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-text-align.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-text-color",
+      "title": "solid-sample-sample-doc-text-color",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-text-color.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-text-color.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-typography",
+      "title": "solid-sample-sample-doc-typography",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-typography.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-typography.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-typography.ts"
         ],
         "internalDependencies": []
       }
@@ -16925,6 +18560,63 @@
           "registry/src/solid/sample/sample-doc-view-adapter.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-word-counter",
+      "title": "solid-sample-sample-doc-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-word-counter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-word-counter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-word-counter.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-query-users",
+      "title": "solid-sample-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-query-users.ts",
+          "registry/src/solid/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-user-data"
+        ]
       }
     },
     {
@@ -17270,6 +18962,51 @@
       }
     },
     {
+      "name": "solid-ui-search",
+      "title": "solid-ui-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/ui/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/index.ts"
+        },
+        {
+          "path": "registry/src/solid/ui/search/search.tsx",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/search.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/search/index.ts",
+          "registry/src/solid/ui/search/search.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-button"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
+      }
+    },
+    {
       "name": "solid-ui-slash-menu",
       "title": "solid-ui-slash-menu",
       "type": "registry:component",
@@ -17467,6 +19204,40 @@
         "accumulatedFiles": [
           "registry/src/solid/ui/user-menu/index.ts",
           "registry/src/solid/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-ui-word-counter",
+      "title": "solid-ui-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/ui/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/index.ts"
+        },
+        {
+          "path": "registry/src/solid/ui/word-counter/word-counter.tsx",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/word-counter.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/ui/word-counter/index.ts",
+          "registry/src/solid/ui/word-counter/word-counter.tsx"
         ],
         "internalDependencies": []
       }

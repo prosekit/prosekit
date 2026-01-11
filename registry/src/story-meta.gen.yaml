@@ -133,7 +133,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: 'Autocomplete menu for @mentions and #hashtag'
 - name: user-menu-dynamic
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Dynamic autocomplete menu with async data loading.
 - name: view-adapter
   frameworks: [react, vue, preact, svelte, solid]

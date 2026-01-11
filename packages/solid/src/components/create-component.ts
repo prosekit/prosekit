@@ -52,7 +52,7 @@ export function createComponent<
       properties['prop:editor'] = () => props['editor'] || editor
     }
 
-    return h(tagName, { ...properties, ...eventHandlers })
+    return () => h(tagName, { ...properties, ...eventHandlers })
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return

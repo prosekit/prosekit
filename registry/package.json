@@ -145,6 +145,7 @@
     "./solid/examples/underline": "./src/solid/examples/underline/index.ts",
     "./solid/examples/unmount": "./src/solid/examples/unmount/index.ts",
     "./solid/examples/user-menu": "./src/solid/examples/user-menu/index.ts",
+    "./solid/examples/user-menu-dynamic": "./src/solid/examples/user-menu-dynamic/index.ts",
     "./solid/examples/view-adapter": "./src/solid/examples/view-adapter/index.ts",
     "./solid/examples/word-counter": "./src/solid/examples/word-counter/index.ts",
     "./solid/examples/yjs": "./src/solid/examples/yjs/index.ts",

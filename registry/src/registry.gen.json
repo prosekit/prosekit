@@ -17610,6 +17610,68 @@
       }
     },
     {
+      "name": "solid-example-user-menu-dynamic",
+      "title": "solid-example-user-menu-dynamic",
+      "type": "registry:block",
+      "description": "Dynamic autocomplete menu with async data loading.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-query-users.json",
+        "https://prosekit.dev/r/solid-ui-user-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/use-user-query.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "user-menu-dynamic",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/user-menu-dynamic/editor.tsx",
+          "registry/src/solid/examples/user-menu-dynamic/extension.ts",
+          "registry/src/solid/examples/user-menu-dynamic/index.ts",
+          "registry/src/solid/examples/user-menu-dynamic/use-user-query.ts",
+          "registry/src/solid/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+          "registry/src/solid/sample/sample-query-users.ts",
+          "registry/src/solid/sample/sample-user-data.ts",
+          "registry/src/solid/ui/user-menu/index.ts",
+          "registry/src/solid/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-query-users",
+          "solid-ui-user-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-view-adapter",
       "title": "solid-example-view-adapter",
       "type": "registry:block",
@@ -18525,6 +18587,36 @@
           "registry/src/solid/sample/sample-doc-word-counter.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-query-users",
+      "title": "solid-sample-sample-query-users",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-user-data.json"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-query-users.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-query-users.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-query-users.ts",
+          "registry/src/solid/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-user-data"
+        ]
       }
     },
     {

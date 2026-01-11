@@ -90,7 +90,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Save and load documents as HTML format.
 - name: save-json
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Save and load documents as JSON format.
 - name: save-markdown
   frameworks: [react, vue, preact, svelte]

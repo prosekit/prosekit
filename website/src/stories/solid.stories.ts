@@ -30,6 +30,7 @@ export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const Rtl = { args: { story: 'rtl' } }
 export const SaveHtml = { args: { story: 'save-html' } }
+export const SaveJson = { args: { story: 'save-json' } }
 export const Strike = { args: { story: 'strike' } }
 export const Table = { args: { story: 'table' } }
 export const TextAlign = { args: { story: 'text-align' } }

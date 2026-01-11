@@ -16872,6 +16872,40 @@
       }
     },
     {
+      "name": "solid-example-save-json",
+      "title": "solid-example-save-json",
+      "type": "registry:block",
+      "description": "Save and load documents as JSON format.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/save-json/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/save-json/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-json/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "save-json",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/save-json/editor.tsx",
+          "registry/src/solid/examples/save-json/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",

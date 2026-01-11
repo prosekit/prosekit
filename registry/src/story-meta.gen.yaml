@@ -121,7 +121,7 @@
   frameworks: [react]
   description: Embed and display Twitter tweets.
 - name: typography
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Typography enhancements like smart quotes and dashes.
 - name: underline
   frameworks: [react, vue, preact, svelte, solid]

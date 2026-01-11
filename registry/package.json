@@ -130,6 +130,7 @@
     "./solid/examples/table": "./src/solid/examples/table/index.ts",
     "./solid/examples/text-align": "./src/solid/examples/text-align/index.ts",
     "./solid/examples/toolbar": "./src/solid/examples/toolbar/index.ts",
+    "./solid/examples/typography": "./src/solid/examples/typography/index.ts",
     "./solid/examples/underline": "./src/solid/examples/underline/index.ts",
     "./solid/examples/unmount": "./src/solid/examples/unmount/index.ts",
     "./solid/examples/view-adapter": "./src/solid/examples/view-adapter/index.ts",

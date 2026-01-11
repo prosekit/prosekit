@@ -16894,6 +16894,45 @@
       }
     },
     {
+      "name": "solid-example-typography",
+      "title": "solid-example-typography",
+      "type": "registry:block",
+      "description": "Typography enhancements like smart quotes and dashes.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/typography/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/typography/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "typography",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/typography/editor.tsx",
+          "registry/src/solid/examples/typography/index.ts",
+          "registry/src/solid/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-typography"
+        ]
+      }
+    },
+    {
       "name": "solid-example-underline",
       "title": "solid-example-underline",
       "type": "registry:block",
@@ -17582,6 +17621,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-text-align.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-typography",
+      "title": "solid-sample-sample-doc-typography",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-typography.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-typography.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-typography.ts"
         ],
         "internalDependencies": []
       }

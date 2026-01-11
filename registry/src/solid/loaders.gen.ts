@@ -31,6 +31,7 @@ export const loaders = {
   'save-html': lazy(() => import('./examples/save-html').then((m) => ({ default: m.ExampleEditor }))),
   'save-json': lazy(() => import('./examples/save-json').then((m) => ({ default: m.ExampleEditor }))),
   'save-markdown': lazy(() => import('./examples/save-markdown').then((m) => ({ default: m.ExampleEditor }))),
+  'search': lazy(() => import('./examples/search').then((m) => ({ default: m.ExampleEditor }))),
   'strike': lazy(() => import('./examples/strike').then((m) => ({ default: m.ExampleEditor }))),
   'table': lazy(() => import('./examples/table').then((m) => ({ default: m.ExampleEditor }))),
   'text-align': lazy(() => import('./examples/text-align').then((m) => ({ default: m.ExampleEditor }))),

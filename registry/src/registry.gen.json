@@ -16953,6 +16953,57 @@
       }
     },
     {
+      "name": "solid-example-search",
+      "title": "solid-example-search",
+      "type": "registry:block",
+      "description": "Search and highlight text with navigation.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-search.json",
+        "https://prosekit.dev/r/solid-ui-search.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/search/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/search/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/search/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "search",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/search/editor.tsx",
+          "registry/src/solid/examples/search/extension.ts",
+          "registry/src/solid/examples/search/index.ts",
+          "registry/src/solid/sample/sample-doc-search.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/search/index.ts",
+          "registry/src/solid/ui/search/search.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-search",
+          "solid-ui-search"
+        ]
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",
@@ -17902,6 +17953,33 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-search",
+      "title": "solid-sample-sample-doc-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-search.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-search.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-search.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-strike",
       "title": "solid-sample-sample-doc-strike",
       "type": "registry:component",
@@ -18396,6 +18474,51 @@
           "registry/src/solid/ui/button/index.ts",
           "registry/src/solid/ui/inline-menu/index.ts",
           "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-ui-button"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
+      }
+    },
+    {
+      "name": "solid-ui-search",
+      "title": "solid-ui-search",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-button.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/ui/search/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/index.ts"
+        },
+        {
+          "path": "registry/src/solid/ui/search/search.tsx",
+          "type": "registry:component",
+          "target": "components/editor/ui/search/search.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/search/index.ts",
+          "registry/src/solid/ui/search/search.tsx"
         ],
         "internalDependencies": [
           "solid-ui-button"

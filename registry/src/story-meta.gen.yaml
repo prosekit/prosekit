@@ -96,7 +96,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Save and load documents as Markdown format.
 - name: search
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Search and highlight text with navigation.
 - name: slash-menu
   frameworks: [react, vue, preact, svelte]

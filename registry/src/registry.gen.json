@@ -16838,6 +16838,40 @@
       }
     },
     {
+      "name": "solid-example-save-html",
+      "title": "solid-example-save-html",
+      "type": "registry:block",
+      "description": "Save and load documents as HTML format.",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/save-html/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/save-html/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/save-html/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "save-html",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/save-html/editor.tsx",
+          "registry/src/solid/examples/save-html/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-example-strike",
       "title": "solid-example-strike",
       "type": "registry:block",

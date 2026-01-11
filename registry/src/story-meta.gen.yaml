@@ -87,7 +87,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Right-to-left text direction support.
 - name: save-html
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Save and load documents as HTML format.
 - name: save-json
   frameworks: [react, vue, preact, svelte]

@@ -256,10 +256,10 @@
   },
   "dependencies": {
     "@base-ui/react": "1.0.0",
-    "loro-crdt": "^1.10.3",
-    "loro-prosemirror": "^0.4.1",
+    "loro-crdt": "^1.10.4",
+    "loro-prosemirror": "^0.4.2",
     "obug": "^2.1.1",
-    "preact": "^10.28.1",
+    "preact": "^10.28.2",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-gfm": "^4.0.1",
@@ -272,7 +272,7 @@
     "vue": "^3.5.26",
     "y-protocols": "^1.0.7",
     "y-websocket": "^3.0.0",
-    "yjs": "^13.6.28"
+    "yjs": "^13.6.29"
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.9.0",
@@ -284,7 +284,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.1.1",
     "@tailwindcss/vite": "^4.1.18",
     "@types/diffable-html": "^5.0.2",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
     "@vitejs/plugin-vue": "^6.0.3",
@@ -319,6 +319,6 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.0.1",
     "vitest-browser-vue": "^2.0.1",
-    "vue-tsc": "^3.2.1"
+    "vue-tsc": "^3.2.2"
   }
 }

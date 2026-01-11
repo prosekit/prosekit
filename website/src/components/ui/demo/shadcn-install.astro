@@ -19,6 +19,7 @@ const frameworks = examples.map((example) => example.meta.framework)
 ---
 
 <div class="not-content mb-6">
+  {/* @ts-expect-error: something is wrong with Astro's type */}
   <ShadcnInstallCode frameworks={frameworks} client:idle>
     {frameworks.includes('preact') && (
       <Fragment slot="slot-preact">

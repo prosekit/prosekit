@@ -122,6 +122,7 @@
     "./solid/examples/italic": "./src/solid/examples/italic/index.ts",
     "./solid/examples/keymap": "./src/solid/examples/keymap/index.ts",
     "./solid/examples/link": "./src/solid/examples/link/index.ts",
+    "./solid/examples/link-mark-view": "./src/solid/examples/link-mark-view/index.ts",
     "./solid/examples/list": "./src/solid/examples/list/index.ts",
     "./solid/examples/list-custom-checkbox": "./src/solid/examples/list-custom-checkbox/index.ts",
     "./solid/examples/loro": "./src/solid/examples/loro/index.ts",

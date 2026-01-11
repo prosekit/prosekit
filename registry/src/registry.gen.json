@@ -16461,6 +16461,57 @@
       }
     },
     {
+      "name": "solid-example-link-mark-view",
+      "title": "solid-example-link-mark-view",
+      "type": "registry:block",
+      "description": "An example showing how to render a mark as a custom component.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-link-mark-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/link-mark-view/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/link-mark-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/link-mark-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/index.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/link-mark-view/link-view.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/link-mark-view/link-view.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "link-mark-view",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/link-mark-view/editor.tsx",
+          "registry/src/solid/examples/link-mark-view/extension.ts",
+          "registry/src/solid/examples/link-mark-view/index.ts",
+          "registry/src/solid/examples/link-mark-view/link-view.tsx",
+          "registry/src/solid/sample/sample-doc-link-mark-view.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-link-mark-view"
+        ]
+      }
+    },
+    {
       "name": "solid-example-list",
       "title": "solid-example-list",
       "type": "registry:block",
@@ -18094,6 +18145,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-link.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-link-mark-view",
+      "title": "solid-sample-sample-doc-link-mark-view",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-link-mark-view.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link-mark-view.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-link-mark-view.ts"
         ],
         "internalDependencies": []
       }

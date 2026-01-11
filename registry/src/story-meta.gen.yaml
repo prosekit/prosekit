@@ -56,7 +56,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for link mark with URL input.
 - name: link-mark-view
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: An example showing how to render a mark as a custom component.
 - name: list
   frameworks: [react, vue, preact, svelte, solid]

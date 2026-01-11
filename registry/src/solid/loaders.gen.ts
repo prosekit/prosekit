@@ -21,6 +21,7 @@ export const loaders = {
   'italic': lazy(() => import('./examples/italic').then((m) => ({ default: m.ExampleEditor }))),
   'keymap': lazy(() => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor }))),
   'link': lazy(() => import('./examples/link').then((m) => ({ default: m.ExampleEditor }))),
+  'link-mark-view': lazy(() => import('./examples/link-mark-view').then((m) => ({ default: m.ExampleEditor }))),
   'list': lazy(() => import('./examples/list').then((m) => ({ default: m.ExampleEditor }))),
   'list-custom-checkbox': lazy(() => import('./examples/list-custom-checkbox').then((m) => ({ default: m.ExampleEditor }))),
   'loro': lazy(() => import('./examples/loro').then((m) => ({ default: m.ExampleEditor }))),

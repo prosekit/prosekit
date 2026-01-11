@@ -29,7 +29,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Full-featured editor with most available features enabled.
 - name: gap-cursor
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Cursor navigation between non-text block elements.
 - name: hard-break
   frameworks: [react, vue, preact, svelte, solid]

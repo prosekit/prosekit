@@ -11,6 +11,7 @@ export const loaders = {
   'drop-cursor': lazy(() => import('./examples/drop-cursor').then((m) => ({ default: m.ExampleEditor }))),
   'emoji-rules': lazy(() => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor }))),
   'full': lazy(() => import('./examples/full').then((m) => ({ default: m.ExampleEditor }))),
+  'gap-cursor': lazy(() => import('./examples/gap-cursor').then((m) => ({ default: m.ExampleEditor }))),
   'hard-break': lazy(() => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor }))),
   'heading': lazy(() => import('./examples/heading').then((m) => ({ default: m.ExampleEditor }))),
   'horizontal-rule': lazy(() => import('./examples/horizontal-rule').then((m) => ({ default: m.ExampleEditor }))),

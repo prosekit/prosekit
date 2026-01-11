@@ -15947,6 +15947,51 @@
       }
     },
     {
+      "name": "solid-example-gap-cursor",
+      "title": "solid-example-gap-cursor",
+      "type": "registry:block",
+      "description": "Cursor navigation between non-text block elements.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-gap-cursor.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/gap-cursor/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/gap-cursor/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/gap-cursor/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/gap-cursor/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "gap-cursor",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/gap-cursor/editor.tsx",
+          "registry/src/solid/examples/gap-cursor/extension.ts",
+          "registry/src/solid/examples/gap-cursor/index.ts",
+          "registry/src/solid/sample/sample-doc-gap-cursor.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-gap-cursor"
+        ]
+      }
+    },
+    {
       "name": "solid-example-hard-break",
       "title": "solid-example-hard-break",
       "type": "registry:block",
@@ -16757,6 +16802,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-full.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-gap-cursor",
+      "title": "solid-sample-sample-doc-gap-cursor",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-gap-cursor.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-gap-cursor.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-gap-cursor.ts"
         ],
         "internalDependencies": []
       }

@@ -17512,6 +17512,55 @@
       }
     },
     {
+      "name": "solid-example-word-counter",
+      "title": "solid-example-word-counter",
+      "type": "registry:block",
+      "description": "Display word and character count statistics.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-word-counter.json",
+        "https://prosekit.dev/r/solid-ui-word-counter.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/word-counter/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/word-counter/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/word-counter/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "word-counter",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/word-counter/editor.tsx",
+          "registry/src/solid/examples/word-counter/extension.ts",
+          "registry/src/solid/examples/word-counter/index.ts",
+          "registry/src/solid/sample/sample-doc-word-counter.ts",
+          "registry/src/solid/ui/word-counter/index.ts",
+          "registry/src/solid/ui/word-counter/word-counter.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-word-counter",
+          "solid-ui-word-counter"
+        ]
+      }
+    },
+    {
       "name": "solid-example-yjs",
       "title": "solid-example-yjs",
       "type": "registry:block",
@@ -18246,6 +18295,33 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-word-counter",
+      "title": "solid-sample-sample-doc-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-word-counter.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-word-counter.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-word-counter.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-tag-data",
       "title": "solid-sample-sample-tag-data",
       "type": "registry:component",
@@ -18830,6 +18906,40 @@
         "accumulatedFiles": [
           "registry/src/solid/ui/user-menu/index.ts",
           "registry/src/solid/ui/user-menu/user-menu.tsx"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-ui-word-counter",
+      "title": "solid-ui-word-counter",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/ui/word-counter/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/index.ts"
+        },
+        {
+          "path": "registry/src/solid/ui/word-counter/word-counter.tsx",
+          "type": "registry:component",
+          "target": "components/editor/ui/word-counter/word-counter.tsx"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/ui/word-counter/index.ts",
+          "registry/src/solid/ui/word-counter/word-counter.tsx"
         ],
         "internalDependencies": []
       }

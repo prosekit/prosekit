@@ -140,7 +140,7 @@
   hidden: true
   description: Custom node and mark views using view adapters.
 - name: word-counter
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Display word and character count statistics.
 - name: yjs
   frameworks: [react, vue, preact, svelte, solid]

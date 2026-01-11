@@ -43,4 +43,5 @@ export const Underline = { args: { story: 'underline' } }
 export const Unmount = { args: { story: 'unmount' } }
 export const UserMenu = { args: { story: 'user-menu' } }
 export const ViewAdapter = { args: { story: 'view-adapter' } }
+export const WordCounter = { args: { story: 'word-counter' } }
 export const Yjs = { args: { story: 'yjs' } }

@@ -53,7 +53,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Custom keyboard shortcuts and key bindings.
 - name: link
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Example for link mark with URL input.
 - name: link-mark-view
   frameworks: [react, vue, preact, svelte]

@@ -119,6 +119,7 @@
     "./solid/examples/inline-menu": "./src/solid/examples/inline-menu/index.ts",
     "./solid/examples/italic": "./src/solid/examples/italic/index.ts",
     "./solid/examples/keymap": "./src/solid/examples/keymap/index.ts",
+    "./solid/examples/link": "./src/solid/examples/link/index.ts",
     "./solid/examples/minimal": "./src/solid/examples/minimal/index.ts",
     "./solid/examples/placeholder": "./src/solid/examples/placeholder/index.ts",
     "./solid/examples/readonly": "./src/solid/examples/readonly/index.ts",

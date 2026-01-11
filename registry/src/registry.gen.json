@@ -16312,6 +16312,57 @@
       }
     },
     {
+      "name": "solid-example-link",
+      "title": "solid-example-link",
+      "type": "registry:block",
+      "description": "Example for link mark with URL input.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-link.json",
+        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/link/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/link/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/link/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/link/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "link",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/link/editor.tsx",
+          "registry/src/solid/examples/link/extension.ts",
+          "registry/src/solid/examples/link/index.ts",
+          "registry/src/solid/sample/sample-doc-link.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/inline-menu/index.ts",
+          "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-link",
+          "solid-ui-inline-menu"
+        ]
+      }
+    },
+    {
       "name": "solid-example-minimal",
       "title": "solid-example-minimal",
       "type": "registry:block",
@@ -17046,6 +17097,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-italic.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-link",
+      "title": "solid-sample-sample-doc-link",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-link.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-link.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-link.ts"
         ],
         "internalDependencies": []
       }

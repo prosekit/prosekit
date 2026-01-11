@@ -16,6 +16,7 @@ export const GapCursor = { args: { story: 'gap-cursor' } }
 export const HardBreak = { args: { story: 'hard-break' } }
 export const Heading = { args: { story: 'heading' } }
 export const HorizontalRule = { args: { story: 'horizontal-rule' } }
+export const ImageView = { args: { story: 'image-view' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Italic = { args: { story: 'italic' } }
 export const Keymap = { args: { story: 'keymap' } }

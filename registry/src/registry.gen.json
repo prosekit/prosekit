@@ -16150,6 +16150,58 @@
       }
     },
     {
+      "name": "solid-example-image-view",
+      "title": "solid-example-image-view",
+      "type": "registry:block",
+      "description": "Custom image node views with resize support.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-image.json",
+        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
+        "https://prosekit.dev/r/solid-ui-image-view.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/image-view/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/image-view/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/image-view/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/image-view/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "image-view",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/image-view/editor.tsx",
+          "registry/src/solid/examples/image-view/extension.ts",
+          "registry/src/solid/examples/image-view/index.ts",
+          "registry/src/solid/sample/sample-doc-image.ts",
+          "registry/src/solid/sample/sample-uploader.ts",
+          "registry/src/solid/ui/image-view/image-view.tsx",
+          "registry/src/solid/ui/image-view/index.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-image",
+          "solid-sample-sample-uploader",
+          "solid-ui-image-view"
+        ]
+      }
+    },
+    {
       "name": "solid-example-inline-menu",
       "title": "solid-example-inline-menu",
       "type": "registry:block",
@@ -17351,6 +17403,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-doc-heading.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-sample-doc-image",
+      "title": "solid-sample-sample-doc-image",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-image.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-image.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-image.ts"
         ],
         "internalDependencies": []
       }

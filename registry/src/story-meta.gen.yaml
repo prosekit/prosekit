@@ -41,7 +41,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Example for horizontal rule node.
 - name: image-view
-  frameworks: [react, vue, preact, svelte]
+  frameworks: [react, vue, preact, svelte, solid]
   description: Custom image node views with resize support.
 - name: inline-menu
   frameworks: [react, vue, preact, svelte, solid]

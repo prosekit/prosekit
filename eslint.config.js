@@ -18,24 +18,9 @@ export default defineESLintConfig(
     command: true,
   },
   {
-    files: [
-      'packages/**/*.gen.ts',
-      'packages/**/*.gen.tsx',
-      'packages/**/types.ts',
-    ],
-    rules: {
-      '@typescript-eslint/no-empty-object-type': 'off',
-    },
-  },
-  {
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },
     ignores: ['**/*.md', '**/*.md/**/*'],
-  },
-  {
-    rules: {
-      'unicorn/prefer-single-call': 'off',
-    },
   },
 )

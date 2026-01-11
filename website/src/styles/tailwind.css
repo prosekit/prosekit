@@ -6,7 +6,6 @@
 @import "./starlight.css";
 
 @source "../../../registry/src/";
-@custom-variant dark (&:where(.dark, .dark *));
 @plugin "@egoist/tailwindcss-icons";
 
 @theme inline {

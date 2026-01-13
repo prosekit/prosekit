@@ -1,0 +1,12 @@
+---
+import LinkCard from 'starlight-theme-nova/components/LinkCard.astro'
+
+interface Props {
+  href: string
+}
+const props: Props = Astro.props
+const description = await Astro.slots.render('description')
+const title = await Astro.slots.render('title')
+---
+
+<LinkCard title={title} href={props.href} description={description}></LinkCard>

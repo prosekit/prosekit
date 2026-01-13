@@ -12,7 +12,7 @@ import path from 'node:path'
  * svelte:          2,147,140
  * solid-js:          295,213
  */
-export const FRAMEWORKS = Object.freeze(['react', 'vue', 'preact', 'svelte', 'solid'] as const)
+export const FRAMEWORKS = Object.freeze(['react', 'vue', 'preact', 'lit', 'svelte', 'solid'] as const)
 
 export type Framework = (typeof FRAMEWORKS)[number]
 

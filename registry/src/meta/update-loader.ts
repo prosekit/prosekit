@@ -24,6 +24,10 @@ export function updateLoader(items: ItemAccumulator[]) {
   if (items.some((item) => item.framework === 'svelte')) {
     vfs.updateText('registry/src/svelte/loaders.gen.ts', genSvelteLoaders(items))
   }
+
+  if (items.some((item) => item.framework === 'lit')) {
+    vfs.updateText('registry/src/lit/loaders.gen.ts', genLitLoaders(items))
+  }
 }
 
 function genPreactLoaders(items: ItemAccumulator[]): string {
@@ -95,6 +99,20 @@ function genSvelteLoaders(items: ItemAccumulator[]): string {
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'svelte')
       .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor })),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genLitLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'lit')
+      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => m.registerLitEditor()),`),
     '}',
   ]
   return lines.join('\n') + '\n'

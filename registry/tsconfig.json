@@ -28,6 +28,9 @@
     {
       "path": "./src/vue/tsconfig.json",
     },
+    {
+      "path": "./src/lit/tsconfig.json",
+    },
   ],
   "include": [
     "./*.ts",

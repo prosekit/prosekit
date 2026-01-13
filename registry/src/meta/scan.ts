@@ -28,6 +28,7 @@ const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   vue: path.join(REGISTRY_SRC_DIR, 'vue'),
   svelte: path.join(REGISTRY_SRC_DIR, 'svelte'),
   solid: path.join(REGISTRY_SRC_DIR, 'solid'),
+  lit: path.join(REGISTRY_SRC_DIR, 'lit'),
 }
 
 const REGISTRY_FILE_EXTENSIONS = new Set([

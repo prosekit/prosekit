@@ -9,7 +9,7 @@ import { loaders } from './loaders.gen'
 export class LitRenderer extends LitElement {
   story: string
 
- override createRenderRoot() {
+  override createRenderRoot() {
     return this
   }
 

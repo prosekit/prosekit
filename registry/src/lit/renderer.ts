@@ -26,14 +26,14 @@ export class LitRenderer extends LitElement {
     const story = this.story
 
     if (!story) {
-      return html`<p>Loading...</p>`
+      return html`<p data-testid="lit-renderer-fallback">Loading...</p>`
     }
 
     const loader = loaders[story as keyof typeof loaders]
     if (!loader) {
       const message = `[LitRenderer] No loader found for story ${story}`
       console.warn(message)
-      return html`<p>${message}</p>`
+      return html`<p data-testid="lit-renderer-fallback">${message}</p>`
     }
 
     void loader()
@@ -43,6 +43,7 @@ export class LitRenderer extends LitElement {
 }
 
 export function registerLitRenderer() {
+  if (customElements.get('lit-renderer')) return
   customElements.define('lit-renderer', LitRenderer)
 }
 

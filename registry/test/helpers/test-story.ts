@@ -86,6 +86,11 @@ async function renderExample(framework: string, story: string, empty: boolean) {
     return await renderPreactExample(story, initialContent)
   }
 
+  if (framework === 'lit') {
+    const { renderLitExample } = await import('./render-lit')
+    return await renderLitExample(story)
+  }
+
   throw new Error(`The ${framework} framework is not supported`)
 }
 

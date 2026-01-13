@@ -247,6 +247,9 @@ async function getStableHTML(
   html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
   // Remove React suppressHydrationWarning attribute
   html = html.replaceAll(/ suppresshydrationwarning="true"/gi, '')
+  // Replace Lit custom element names
+  html = html.replaceAll(/<\/?lit-renderer>/g, '')
+  html = html.replaceAll(/<\/?lit-editor-[\w-]+>/g, '')
 
   return formatHTML(html)
 }

@@ -47,6 +47,7 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
+  if (customElements.get('lit-editor-minimal')) return
   customElements.define('lit-editor-minimal', LitEditor)
 }
 

@@ -19,8 +19,13 @@ import { frameworkIcons } from '@/components/ui/framework-icons'
         </Fragment>
         <Fragment slot="description">
           <span class="text-sm text-gray-500 mb-8 inline-flex">{item.description}</span>
-          <span class="inline-flex flex-row gap-1 right-6 bottom-4 absolute cursor-pointer">
-            {item.frameworks.map((framework) => <span class:list={['size-4', frameworkIcons[framework]]}></span>)}
+          <span class="inline-flex flex-row gap-2 right-6 bottom-4 absolute cursor-pointer">
+            {item.frameworks.map((framework) => (
+              <span
+                class:list={['size-4 transition duration-150 scale-100 hover:scale-160', frameworkIcons[framework]]}
+                data-framework={framework}
+              ></span>
+            ))}
           </span>
         </Fragment>
       </LinkCardWrapper>

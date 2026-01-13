@@ -4,7 +4,10 @@ import {
   unsafeStatic,
 } from 'lit/static-html.js'
 
+import { suppressLitWarnings } from './disable-lit-warnings'
 import { loaders } from './loaders.gen'
+
+suppressLitWarnings()
 
 export class LitRenderer extends LitElement {
   story: string
@@ -43,6 +46,7 @@ export class LitRenderer extends LitElement {
 }
 
 export function registerLitRenderer() {
+  suppressLitWarnings()
   if (customElements.get('lit-renderer')) return
   customElements.define('lit-renderer', LitRenderer)
 }

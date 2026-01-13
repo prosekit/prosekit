@@ -71,7 +71,7 @@
   frameworks: [react, vue, preact, svelte, solid]
   description: Input rules for automatic mark formatting.
 - name: minimal
-  frameworks: [react, vue, preact, svelte, solid]
+  frameworks: [react, vue, preact, lit, svelte, solid]
   description: Minimal editor setup with basic functionality.
 - name: notion
   frameworks: [react]

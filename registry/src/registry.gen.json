@@ -11669,6 +11669,40 @@
       }
     },
     {
+      "name": "lit-example-minimal",
+      "title": "lit-example-minimal",
+      "type": "registry:block",
+      "description": "Minimal editor setup with basic functionality.",
+      "registryDependencies": [],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/examples/minimal/editor.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/minimal/editor.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/minimal/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/minimal/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "minimal",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/examples/minimal/editor.ts",
+          "registry/src/lit/examples/minimal/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-example-block-handle",
       "title": "svelte-example-block-handle",
       "type": "registry:block",

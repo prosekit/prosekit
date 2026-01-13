@@ -1,4 +1,4 @@
 export {
-  Editor as ExampleEditor,
-  registerEditor,
+  LitEditor as ExampleEditor,
+  registerLitEditor,
 } from './editor'

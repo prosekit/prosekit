@@ -8,11 +8,13 @@ import {
 
 export class Editor extends LitElement {
   override render() {
-    return html`<p>Hello from my template.</p>`
+    return html`<p>Hello from lit-editor-minimal.</p>`
   }
 }
 
-customElements.define('lit-editor-minimal', Editor)
+export function registerEditor() {
+  customElements.define('lit-editor-minimal', Editor)
+}
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,7 +1,10 @@
+import { LitElement } from 'lit'
 import {
   html,
-  LitElement,
-} from 'lit'
+  unsafeStatic,
+} from 'lit/static-html.js'
+
+import { loaders } from './loaders.gen'
 
 export class LitRenderer extends LitElement {
   story: string
@@ -16,7 +19,22 @@ export class LitRenderer extends LitElement {
   }
 
   override render() {
-    return html`<p>Hello from my LitRenderer.</p>`
+    const story = this.story
+
+    if (!story) {
+      return html`<p>Loading...</p>`
+    }
+
+    const loader = loaders[story as keyof typeof loaders]
+    if (!loader) {
+      const message = `[LitRenderer] No loader found for story ${story}`
+      console.warn(message)
+      return html`<p>${message}</p>`
+    }
+
+    void loader()
+    const tag = unsafeStatic('lit-editor-' + story)
+    return html`<${tag}></${tag}>`
   }
 }
 

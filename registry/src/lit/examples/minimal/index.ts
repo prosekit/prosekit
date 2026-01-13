@@ -1,1 +1,4 @@
-export { Editor as ExampleEditor } from './editor'
+export {
+  Editor as ExampleEditor,
+  registerEditor,
+} from './editor'

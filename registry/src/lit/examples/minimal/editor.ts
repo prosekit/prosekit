@@ -42,7 +42,7 @@ export class LitEditor extends LitElement {
   }
 
   override render() {
-    return html`<div class="CSS_MINIMAL_EDITOR" ${ref(this.ref)}>Hello from lit-editor-minimal.</div>`
+    return html`<div class="CSS_MINIMAL_EDITOR" ${ref(this.ref)}></div>`
   }
 }
 

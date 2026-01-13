@@ -6,11 +6,9 @@ interface Props {
 }
 ---
 
-<script>
-import { registerLitRenderer } from 'prosekit-registry/lit/renderer'
-registerLitRenderer()
-</script>
-
 <Container>
   <lit-renderer story={Astro.props.story}></lit-renderer>
 </Container>
+
+<script src="./lit-register.ts">
+</script>

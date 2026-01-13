@@ -36,6 +36,7 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
     './vue/renderer': './src/vue/renderer.ts',
     './solid/renderer': './src/solid/renderer.ts',
     './svelte/renderer': './src/svelte/renderer.ts',
+    './lit/renderer': './src/lit/renderer.ts',
   }
   for (const item of items) {
     fillExports(item, exports)

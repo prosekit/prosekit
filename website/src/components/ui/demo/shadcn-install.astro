@@ -46,5 +46,10 @@ const frameworks = examples.map((example) => example.meta.framework)
         <Code lang="bash" code={`npx shadcn@latest add @prosekit/vue-example-${story}`} />
       </Fragment>
     )}
+    {frameworks.includes('lit') && (
+      <Fragment slot="slot-lit">
+        <Code lang="bash" code={`npx shadcn@latest add @prosekit/lit-example-${story}`} />
+      </Fragment>
+    )}
   </ShadcnInstallCode>
 </div>

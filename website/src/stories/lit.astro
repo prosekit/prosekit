@@ -1,0 +1,15 @@
+---
+import Container from './container.astro'
+
+interface Props {
+  story: string
+}
+---
+
+<Container>
+  <lit-renderer story={Astro.props.story}></lit-renderer>
+</Container>
+
+<script>
+import './lit-register.ts'
+</script>

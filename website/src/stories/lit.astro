@@ -1,0 +1,12 @@
+---
+interface Props {
+  story: string
+}
+---
+
+<script>
+import { registerLitRenderer } from 'prosekit-registry/lit/renderer'
+registerLitRenderer()
+</script>
+
+<lit-renderer story={Astro.props.story}></lit-renderer>

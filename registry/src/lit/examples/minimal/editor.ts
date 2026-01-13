@@ -7,8 +7,12 @@ import {
 } from 'lit'
 
 export class Editor extends LitElement {
+  override createRenderRoot() {
+    return this
+  }
+
   override render() {
-    return html`<p>Hello from lit-editor-minimal.</p>`
+    return html`<div class="CSS_MINIMAL_EDITOR">Hello from lit-editor-minimal.</div>`
   }
 }
 

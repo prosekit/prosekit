@@ -1,4 +1,6 @@
 ---
+import Container from './container.astro'
+
 interface Props {
   story: string
 }
@@ -9,4 +11,6 @@ import { registerLitRenderer } from 'prosekit-registry/lit/renderer'
 registerLitRenderer()
 </script>
 
-<lit-renderer story={Astro.props.story}></lit-renderer>
+<Container>
+  <lit-renderer story={Astro.props.story}></lit-renderer>
+</Container>

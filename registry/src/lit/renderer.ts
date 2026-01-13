@@ -9,6 +9,10 @@ import { loaders } from './loaders.gen'
 export class LitRenderer extends LitElement {
   story: string
 
+ override createRenderRoot() {
+    return this
+  }
+
   static override properties = {
     story: { type: String },
   }

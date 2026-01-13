@@ -4,8 +4,8 @@ import {
   unsafeStatic,
 } from 'lit/static-html.js'
 
-import { suppressLitWarnings } from './suppress-lit-warnings'
 import { loaders } from './loaders.gen'
+import { suppressLitWarnings } from './suppress-lit-warnings'
 
 suppressLitWarnings()
 

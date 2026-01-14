@@ -1,8 +1,16 @@
 import '../../src/tailwind.css'
 
-import { DefaultMap, isHTMLElement } from '@ocavue/utils'
+import {
+  DefaultMap,
+  isHTMLElement,
+} from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
-import { beforeEach, describe, expect, it } from 'vitest'
+import {
+  beforeEach,
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import registry from 'prosekit-registry/registry.gen.json'
 
@@ -244,28 +252,35 @@ const cloneElementTransforms: ElementTransform[] = [
     matches: (element) => hasInlineDisplay(element, 'none') || hasClass(element, 'hidden'),
     apply: (element) => normalizeDisplayNoneElement(element),
   },
+
+  // Vue set <select :value="..."> as a attribute thus it will be rendered in the
+  // HTML string. We want to remove the value attribute.
   {
     matches: (element) => element.matches('select, input'),
-    apply: (element) => removeSelectValueAttribute(element),
+    apply: (element) => element.removeAttribute('value'),
   },
+
   // Replace "id" attributes
   {
-    matches: (element) => element.hasAttribute('id'),
+    matches: (element) => !!element.getAttribute('id'),
     apply: (element) => element.setAttribute('id', 'SOME_ID'),
   },
+
   // Replace "for" attributes in <label> elements
   {
-    matches: (element) => element.tagName === 'LABEL' && element.hasAttribute('for'),
+    matches: (element) => element.tagName === 'LABEL' && !!element.getAttribute('for'),
     apply: (element) => element.setAttribute('for', 'SOME_ID'),
   },
+
   // Replace "value" attributes
   {
     matches: (element) => {
       const value = element.getAttribute('value')
       return !!value && /^[\w-]{21}$/.test(value)
     },
-    apply: (element) => element.setAttribute('value', 'SOME_NANOID_21'),
+    apply: (element) => element.setAttribute('value', 'SOME_NANOID_WITH_LENGTH_21'),
   },
+
   // Remove React suppressHydrationWarning attribute
   {
     matches: (element) => element.hasAttribute('suppresshydrationwarning'),
@@ -327,14 +342,6 @@ function normalizeDisplayNoneElement(element: Element) {
   for (const dataKey of dataKeys) {
     delete element.dataset[dataKey]
   }
-}
-
-/**
- * Vue set <select :value="..."> as a attribute thus it will be rendered in the
- * HTML string. We want to remove the value attribute.
- */
-function removeSelectValueAttribute(element: Element) {
-  element.removeAttribute('value')
 }
 
 /**

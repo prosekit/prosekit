@@ -26,7 +26,7 @@ class SlashMenuItemElement extends LitElement {
   }
 
   handleSelect = (event: AutocompleteItemEvents['select']) => {
-    this.dispatchEvent(event)
+    this.dispatchEvent(new CustomEvent('select', { detail: event.detail }))
   }
 
   override render() {

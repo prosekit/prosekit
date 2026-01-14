@@ -34,7 +34,7 @@ class SlashMenuElement extends LitElement {
     }
 
     return html`<prosekit-autocomplete-popover .editor=${editor} .regex=${regex} class="CSS_AUTOCOMPLETE_MENU">
-      <prosekit-autocomplete-list .editor=${editor} class="block max-w-[400px]" >
+      <prosekit-autocomplete-list .editor=${editor}  >
         <lit-editor-slash-menu-item class="contents" label="Text" @select=${() => editor.commands.setParagraph()} ></lit-editor-slash-menu-item>
         <lit-editor-slash-menu-item class="contents" label="Heading 1" kbd="#" @select=${() => editor.commands.setHeading({ level: 1 })} ></lit-editor-slash-menu-item>
         <lit-editor-slash-menu-item class="contents" label="Heading 2" kbd="##" @select=${() => editor.commands.setHeading({ level: 2 })} ></lit-editor-slash-menu-item>

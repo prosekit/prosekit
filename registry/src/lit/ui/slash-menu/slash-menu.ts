@@ -19,10 +19,6 @@ class SlashMenuElement extends LitElement {
 
   editor?: Editor<BasicExtension>
 
-  constructor() {
-    super()
-  }
-
   override createRenderRoot() {
     return this
   }

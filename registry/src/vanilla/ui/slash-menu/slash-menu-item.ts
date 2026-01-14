@@ -11,7 +11,7 @@ export function renderSlashMenuItem(options: {
   onSelect: (event: AutocompleteItemEvents['select']) => void
 }) {
   const item = document.createElement('prosekit-autocomplete-item') as AutocompleteItemElement
-  item.classList.add('CSS_AUTOCOMPLETE_MENU_ITEM')
+  item.className = 'CSS_AUTOCOMPLETE_MENU_ITEM'
   item.addEventListener('select', (event) => options.onSelect(event as AutocompleteItemEvents['select']))
 
   const span = document.createElement('span')
@@ -20,7 +20,7 @@ export function renderSlashMenuItem(options: {
 
   if (options.kbd) {
     const kbd = document.createElement('kbd')
-    kbd.classList.add('CSS_AUTOCOMPLETE_MENU_KEYBOARD')
+    kbd.className = 'CSS_AUTOCOMPLETE_MENU_KEYBOARD'
     kbd.textContent = options.kbd
     item.append(kbd)
   }

@@ -18,7 +18,7 @@ export function renderSlashMenu(
   editor: Editor<BasicExtension>,
 ) {
   const popover = document.createElement('prosekit-autocomplete-popover') as AutocompletePopoverElement
-  popover.classList.add('CSS_AUTOCOMPLETE_MENU')
+  popover.className = 'CSS_AUTOCOMPLETE_MENU'
   popover.editor = editor
   popover.regex = regex
 

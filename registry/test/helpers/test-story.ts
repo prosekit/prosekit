@@ -244,13 +244,49 @@ type ElementTransform = {
 }
 
 const cloneElementTransforms: ElementTransform[] = [
+  // Remove display: contents divs in the clone, since solid.js v1 needs to
+  // insert a div for portals. See
+  // https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
+  //
+  // Also remove all Lit web components that don't actually contribute to the
+  // styles.
   {
-    matches: (element) => hasInlineDisplay(element, 'contents') || hasClass(element, 'contents'),
-    apply: (element) => unwrapDisplayContentsElement(element),
+    matches: (element) => {
+      if (!isHTMLElement(element)) return false
+      return element.style.display === 'contents' || element.classList.contains('contents')
+    },
+    apply: (element) => {
+      const parent = element.parentNode
+      if (!parent) return
+
+      const children = Array.from(element.childNodes)
+      for (const child of children) {
+        parent.insertBefore(child, element)
+      }
+      element.remove()
+    },
   },
+
+  // Normalize elements with `display: none`
   {
-    matches: (element) => hasInlineDisplay(element, 'none') || hasClass(element, 'hidden'),
-    apply: (element) => normalizeDisplayNoneElement(element),
+    matches: (element) => {
+      if (!isHTMLElement(element)) return false
+      return element.style.display === 'none' || element.classList.contains('hidden')
+    },
+    apply: (element) => {
+      if (!isHTMLElement(element)) {
+        return
+      }
+
+      // Remove all other styles and keep only display: none
+      element.style.cssText = 'display: none'
+
+      // Remove all dataset attributes
+      const dataKeys = Object.keys(element.dataset)
+      for (const dataKey of dataKeys) {
+        delete element.dataset[dataKey]
+      }
+    },
   },
 
   // Vue set <select :value="..."> as a attribute thus it will be rendered in the
@@ -302,45 +338,6 @@ function visitElementTree(root: Element, visitor: (element: Element) => void) {
   const elements = Array.from(root.querySelectorAll('*'))
   for (const element of elements) {
     visitor(element)
-  }
-}
-
-function hasClass(element: Element, className: string) {
-  return element.classList.contains(className)
-}
-
-function hasInlineDisplay(element: Element, displayValue: string) {
-  return element instanceof HTMLElement && element.style.display === displayValue
-}
-
-// Remove display: contents divs in the clone, since solid.js v1 needs to
-// insert a div for portals. See
-// https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
-function unwrapDisplayContentsElement(element: Element) {
-  const parent = element.parentNode
-  if (!parent) {
-    return
-  }
-
-  const children = Array.from(element.children)
-  for (const child of children) {
-    parent.insertBefore(child, element)
-  }
-  element.remove()
-}
-
-function normalizeDisplayNoneElement(element: Element) {
-  if (!isHTMLElement(element)) {
-    return
-  }
-
-  // Remove all other styles and keep only display: none
-  element.style.cssText = 'display: none'
-
-  // Remove all dataset attributes
-  const dataKeys = Object.keys(element.dataset)
-  for (const dataKey of dataKeys) {
-    delete element.dataset[dataKey]
   }
 }
 

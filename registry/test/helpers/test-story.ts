@@ -248,18 +248,25 @@ const cloneElementTransforms: ElementTransform[] = [
     matches: (element) => element.matches('select, input'),
     apply: (element) => removeSelectValueAttribute(element),
   },
+  // Replace "id" attributes
   {
     matches: (element) => element.hasAttribute('id'),
     apply: (element) => element.setAttribute('id', 'SOME_ID'),
   },
+  // Replace "for" attributes in <label> elements
   {
     matches: (element) => element.tagName === 'LABEL' && element.hasAttribute('for'),
     apply: (element) => element.setAttribute('for', 'SOME_ID'),
   },
+  // Replace "value" attributes
   {
-    matches: (element) => hasNanoIdValue(element),
+    matches: (element) => {
+      const value = element.getAttribute('value')
+      return !!value && /^[\w-]{21}$/.test(value)
+    },
     apply: (element) => element.setAttribute('value', 'SOME_NANOID_21'),
   },
+  // Remove React suppressHydrationWarning attribute
   {
     matches: (element) => element.hasAttribute('suppresshydrationwarning'),
     apply: (element) => element.removeAttribute('suppresshydrationwarning'),
@@ -289,11 +296,6 @@ function hasClass(element: Element, className: string) {
 
 function hasInlineDisplay(element: Element, displayValue: string) {
   return element instanceof HTMLElement && element.style.display === displayValue
-}
-
-function hasNanoIdValue(element: Element) {
-  const value = element.getAttribute('value')
-  return !!value && /^[\w-]{21}$/.test(value)
 }
 
 // Remove display: contents divs in the clone, since solid.js v1 needs to

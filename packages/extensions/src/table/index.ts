@@ -42,6 +42,7 @@ export {
   defineTableHeaderCellSpec,
   defineTableRowSpec,
   defineTableSpec,
+  type CellAttrs,
   type TableCellSpecExtension,
   type TableHeaderCellSpecExtension,
   type TableRowSpecExtension,
@@ -51,3 +52,8 @@ export {
   findTable,
   isCellSelection,
 } from './table-utils'
+export type {
+  TableAttrs,
+  TableCellAttrs,
+  TableRowAttrs,
+} from './table-types'

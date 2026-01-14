@@ -16,6 +16,8 @@ import { defineBasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
+import '../../ui/slash-menu/index'
+
 export class LitEditor extends LitElement {
   static override properties = {
     editor: { state: true, attribute: false } satisfies PropertyDeclaration<Editor>,
@@ -52,12 +54,12 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
-  if (customElements.get('lit-editor-minimal')) return
-  customElements.define('lit-editor-minimal', LitEditor)
+  if (customElements.get('lit-editor-example-slash-menu')) return
+  customElements.define('lit-editor-example-slash-menu', LitEditor)
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'lit-editor-slash-menu': LitEditor
+    'lit-editor-example-slash-menu': LitEditor
   }
 }

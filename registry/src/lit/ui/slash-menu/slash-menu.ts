@@ -1,3 +1,5 @@
+import 'prosekit/lit/autocomplete'
+
 import {
   html,
   LitElement,
@@ -21,14 +23,18 @@ class SlashMenuElement extends LitElement {
     super()
   }
 
+  override createRenderRoot() {
+    return this
+  }
+
   override render() {
     const editor = this.editor
     if (!editor) {
-      return html``
+      return html`<p>No editor provided</p>`
     }
 
-    return html`<prosekit-autocomplete-popover .regex=${regex} class="CSS_AUTOCOMPLETE_MENU">
-      <prosekit-autocomplete-list>
+    return html`<prosekit-autocomplete-popover .editor=${editor} .regex=${regex} class="CSS_AUTOCOMPLETE_MENU">
+      <prosekit-autocomplete-list .editor=${editor}  >
         <lit-editor-slash-menu-item label="Text" @select=${() => editor.commands.setParagraph()} ></lit-editor-slash-menu-item>
         <lit-editor-slash-menu-item label="Heading 1" kbd="#" @select=${() => editor.commands.setHeading({ level: 1 })} ></lit-editor-slash-menu-item>
         <lit-editor-slash-menu-item label="Heading 2" kbd="##" @select=${() => editor.commands.setHeading({ level: 2 })} ></lit-editor-slash-menu-item>

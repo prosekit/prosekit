@@ -6,6 +6,10 @@ import {
 } from 'lit'
 
 class SlashMenuEmptyElement extends LitElement {
+  override createRenderRoot() {
+    return this
+  }
+
   override render() {
     return (
       html`<prosekit-autocomplete-empty class="CSS_AUTOCOMPLETE_MENU_ITEM">

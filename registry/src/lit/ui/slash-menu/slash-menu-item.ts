@@ -21,6 +21,10 @@ class SlashMenuItemElement extends LitElement {
     this.kbd = ''
   }
 
+  override createRenderRoot() {
+    return this
+  }
+  
   handleSelect = (event: AutocompleteItemEvents['select']) => {
     this.dispatchEvent(event)
   }

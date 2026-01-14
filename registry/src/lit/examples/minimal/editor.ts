@@ -47,12 +47,12 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
-  if (customElements.get('lit-editor-minimal')) return
-  customElements.define('lit-editor-minimal', LitEditor)
+  if (customElements.get('lit-editor-example-minimal')) return
+  customElements.define('lit-editor-example-minimal', LitEditor)
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'lit-editor-minimal': LitEditor
+    'lit-editor-example-minimal': LitEditor
   }
 }

@@ -24,13 +24,13 @@ class SlashMenuItemElement extends LitElement {
   override createRenderRoot() {
     return this
   }
-  
+
   handleSelect = (event: AutocompleteItemEvents['select']) => {
     this.dispatchEvent(event)
   }
 
   override render() {
-    return html`<prosekit-autocomplete-item @select=${this.handleSelect} className="CSS_AUTOCOMPLETE_MENU_ITEM">
+    return html`<prosekit-autocomplete-item @select=${this.handleSelect} class="CSS_AUTOCOMPLETE_MENU_ITEM">
       <span>${this.label}</span>
       ${this.kbd ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>` : ''}
     </prosekit-autocomplete-item>`

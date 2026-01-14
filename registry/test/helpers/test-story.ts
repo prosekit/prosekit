@@ -249,7 +249,7 @@ async function getStableHTML(
   html = html.replaceAll(/ suppresshydrationwarning="true"/gi, '')
   // Replace Lit custom element names
   html = html.replaceAll(/<\/?lit-renderer>/g, '')
-  html = html.replaceAll(/<\/?lit-editor-[\w-]+>/g, '')
+  html = html.replaceAll(/<\/?lit-editor-[^>]+>/g, '')
 
   return formatHTML(html)
 }

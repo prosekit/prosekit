@@ -247,9 +247,6 @@ async function getStableHTML(
   html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
   // Remove React suppressHydrationWarning attribute
   html = html.replaceAll(/ suppresshydrationwarning="true"/gi, '')
-  // Replace Lit custom element names
-  html = html.replaceAll(/<\/?lit-renderer>/g, '')
-  html = html.replaceAll(/<\/?lit-editor-[^>]+>/g, '')
 
   return formatHTML(html)
 }
@@ -258,7 +255,7 @@ async function getStableHTML(
 // insert a div for portals. See
 // https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
 function removeDisplayContents(element: Element) {
-  const founds = Array.from(element.querySelectorAll('div[style*="display: contents"]'))
+  const founds = Array.from(element.querySelectorAll('*[style*="display: contents"]'))
   for (const found of founds) {
     const parent = found.parentNode
     const children = Array.from(found.children)

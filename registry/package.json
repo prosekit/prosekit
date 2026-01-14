@@ -200,6 +200,8 @@
     "./svelte/examples/word-counter": "./src/svelte/examples/word-counter/index.ts",
     "./svelte/examples/yjs": "./src/svelte/examples/yjs/index.ts",
     "./svelte/renderer": "./src/svelte/renderer.ts",
+    "./vanilla/examples/minimal": "./src/vanilla/examples/minimal/index.ts",
+    "./vanilla/renderer": "./src/vanilla/renderer.ts",
     "./vite-plugin-class-replace": "./src/meta/vite-plugin-class-replace.ts",
     "./vue/examples/block-handle": "./src/vue/examples/block-handle/index.ts",
     "./vue/examples/blockquote": "./src/vue/examples/blockquote/index.ts",

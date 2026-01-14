@@ -6,7 +6,10 @@ import {
   vfs,
 } from '@prosekit/dev'
 
-import type { ItemAccumulator } from './types'
+import {
+  FRAMEWORKS,
+  type ItemAccumulator,
+} from './types'
 
 /**
  * Fill the package.json exports object with the appropriate entry for an example item.
@@ -31,12 +34,9 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
     './vite-plugin-class-replace': './src/meta/vite-plugin-class-replace.ts',
     './replace-class-names': './src/meta/replace-classes.ts',
     './registry.gen.json': './src/registry.gen.json',
-    './react/renderer': './src/react/renderer.ts',
-    './preact/renderer': './src/preact/renderer.ts',
-    './vue/renderer': './src/vue/renderer.ts',
-    './solid/renderer': './src/solid/renderer.ts',
-    './svelte/renderer': './src/svelte/renderer.ts',
-    './lit/renderer': './src/lit/renderer.ts',
+  }
+  for (const framework of FRAMEWORKS) {
+    exports[`./${framework}/renderer`] = `./src/${framework}/renderer.ts`
   }
   for (const item of items) {
     fillExports(item, exports)

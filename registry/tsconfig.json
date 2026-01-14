@@ -20,6 +20,9 @@
       "path": "./src/react/tsconfig.json",
     },
     {
+      "path": "./src/vanilla/tsconfig.json",
+    },
+    {
       "path": "./src/solid/tsconfig.json",
     },
     {

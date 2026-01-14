@@ -32,7 +32,7 @@ const { frameworks, framework, onFrameworkChange }: Props = $props()
       <Select.Viewport class="p-0">
         {#each frameworks as framework, i (i + framework)}
           <Select.Item
-            class="flex h-8 select-none items-center rounded py-3 px-2 text-sm outline-none ring-transparent data-[highlighted]:bg-muted"
+            class="flex h-8 select-none items-center rounded py-3 px-2 text-sm outline-none ring-transparent data-highlighted:bg-muted"
             value={framework}
             label={framework}
           >

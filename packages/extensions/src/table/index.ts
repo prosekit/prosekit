@@ -48,12 +48,12 @@ export {
   type TableRowSpecExtension,
   type TableSpecExtension,
 } from './table-spec'
-export {
-  findTable,
-  isCellSelection,
-} from './table-utils'
 export type {
   TableAttrs,
   TableCellAttrs,
   TableRowAttrs,
 } from './table-types'
+export {
+  findTable,
+  isCellSelection,
+} from './table-utils'

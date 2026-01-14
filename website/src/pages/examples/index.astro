@@ -11,7 +11,7 @@ import { frameworkIcons } from '@/components/ui/framework-icons'
 ---
 
 <StarlightPage frontmatter={{ title: 'Examples', tableOfContents: false, pagefind: false }} sidebar={exampleSidebar}>
-  <CardGrid  >
+  <CardGrid>
     {stories.map((item) => (
       <LinkCardWrapper href={item.link}>
         <Fragment slot="title">
@@ -35,7 +35,7 @@ import { frameworkIcons } from '@/components/ui/framework-icons'
 
 <style>
   [data-framework-icon] {
-   transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
+    transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
   }
 
   :root:has([data-framework-icon]:hover) {
@@ -46,37 +46,38 @@ import { frameworkIcons } from '@/components/ui/framework-icons'
   }
 
   :root:has([data-framework-icon="react"]:hover) [data-framework-icon="react"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
   :root:has([data-framework-icon="vue"]:hover) [data-framework-icon="vue"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
   :root:has([data-framework-icon="preact"]:hover) [data-framework-icon="preact"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
   :root:has([data-framework-icon="svelte"]:hover) [data-framework-icon="svelte"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
   :root:has([data-framework-icon="solid"]:hover) [data-framework-icon="solid"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
   :root:has([data-framework-icon="lit"]:hover) [data-framework-icon="lit"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
   :root:has([data-framework-icon="vanilla"]:hover) [data-framework-icon="vanilla"] {
+    transform: scale(1.6);
     filter: saturate(100%);
     opacity: 1;
-    transform: scale(1.6);
   }
+</style>

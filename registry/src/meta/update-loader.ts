@@ -28,6 +28,10 @@ export function updateLoader(items: ItemAccumulator[]) {
   if (items.some((item) => item.framework === 'lit')) {
     vfs.updateText('registry/src/lit/loaders.gen.ts', genLitLoaders(items))
   }
+
+  if (items.some((item) => item.framework === 'vanilla')) {
+    vfs.updateText('registry/src/vanilla/loaders.gen.ts', genVanillaLoaders(items))
+  }
 }
 
 function genPreactLoaders(items: ItemAccumulator[]): string {
@@ -113,6 +117,20 @@ function genLitLoaders(items: ItemAccumulator[]): string {
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'lit')
       .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => m.registerLitEditor()),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genVanillaLoaders(items: ItemAccumulator[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    ``,
+    `export const loaders = {`,
+    ...items
+      .filter((item) => item.category === 'example')
+      .filter((example) => example.framework === 'vanilla')
+      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => m.setupVanillaEditor()),`),
     '}',
   ]
   return lines.join('\n') + '\n'

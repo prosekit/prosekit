@@ -29,6 +29,7 @@ const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   svelte: path.join(REGISTRY_SRC_DIR, 'svelte'),
   solid: path.join(REGISTRY_SRC_DIR, 'solid'),
   lit: path.join(REGISTRY_SRC_DIR, 'lit'),
+  vanilla: path.join(REGISTRY_SRC_DIR, 'vanilla'),
 }
 
 const REGISTRY_FILE_EXTENSIONS = new Set([

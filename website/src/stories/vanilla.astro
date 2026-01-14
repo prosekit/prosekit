@@ -1,0 +1,15 @@
+---
+import Container from './container.astro'
+
+interface Props {
+  story: string
+}
+---
+
+<Container>
+  <vanilla-renderer data-story={Astro.props.story}></vanilla-renderer>
+</Container>
+
+<script>
+import './vanilla-register.ts'
+</script>

@@ -1,0 +1,1 @@
+export { setupVanillaEditor } from './editor'

@@ -109,7 +109,7 @@ class SlashMenuElement extends LitElement {
           kbd="\`\`\`"
           @select=${() => editor.commands.setCodeBlock()}
         ></lit-editor-slash-menu-item>
-        <lit-editor-slash-menu-empty></lit-editor-slash-menu-empty>
+        <lit-editor-slash-menu-empty class="contents"></lit-editor-slash-menu-empty>
       </prosekit-autocomplete-list>
     </prosekit-autocomplete-popover>`
   }

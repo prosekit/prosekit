@@ -1,15 +1,83 @@
 ---
 import { CardGrid } from '@astrojs/starlight/components'
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
-import LinkCard from 'starlight-theme-nova/components/LinkCard.astro'
+
 import {
   exampleSidebar,
   stories,
 } from '../../example-data'
+import LinkCardWrapper from '@/components/ui/link-card-wrapper.astro'
+import { frameworkIcons } from '@/components/ui/framework-icons'
 ---
 
 <StarlightPage frontmatter={{ title: 'Examples', tableOfContents: false, pagefind: false }} sidebar={exampleSidebar}>
   <CardGrid>
-    {stories.map((item) => <LinkCard title={item.name} href={item.link} description={item.description} />)}
+    {stories.map((item) => (
+      <LinkCardWrapper href={item.link}>
+        <Fragment slot="title">
+          {item.name}
+        </Fragment>
+        <Fragment slot="description">
+          <span class="text-sm text-gray-500 mb-8 inline-flex">{item.description}</span>
+          <span class="inline-flex flex-row gap-2 right-6 bottom-4 absolute cursor-pointer">
+            {item.frameworks.map((framework) => (
+              <span
+                class:list={['size-4', frameworkIcons[framework]]}
+                data-framework-icon={framework}
+              ></span>
+            ))}
+          </span>
+        </Fragment>
+      </LinkCardWrapper>
+    ))}
   </CardGrid>
 </StarlightPage>
+
+<style>
+  [data-framework-icon] {
+    transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
+  }
+
+  :root:has([data-framework-icon]:hover) {
+    & [data-framework-icon] {
+      filter: saturate(0%);
+      opacity: 0.5;
+    }
+  }
+
+  :root:has([data-framework-icon="react"]:hover) [data-framework-icon="react"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  :root:has([data-framework-icon="vue"]:hover) [data-framework-icon="vue"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  :root:has([data-framework-icon="preact"]:hover) [data-framework-icon="preact"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  :root:has([data-framework-icon="svelte"]:hover) [data-framework-icon="svelte"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  :root:has([data-framework-icon="solid"]:hover) [data-framework-icon="solid"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  :root:has([data-framework-icon="lit"]:hover) [data-framework-icon="lit"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  :root:has([data-framework-icon="vanilla"]:hover) [data-framework-icon="vanilla"] {
+    transform: scale(1.6);
+    filter: saturate(100%);
+    opacity: 1;
+  }
+</style>

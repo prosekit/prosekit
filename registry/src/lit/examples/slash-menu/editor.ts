@@ -44,7 +44,7 @@ export class LitEditor extends LitElement {
   override render() {
     return html`<div class="CSS_EDITOR_VIEWPORT">
     <div class="CSS_EDITOR_SCROLLING">
-        <div ref=${this.editor.mount} class="CSS_EDITOR_CONTENT"></div>
+        <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
         <lit-editor-slash-menu .editor=${this.editor}></lit-editor-slash-menu>
     </div>
     </div>`

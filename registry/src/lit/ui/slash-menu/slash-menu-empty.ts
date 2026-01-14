@@ -18,5 +18,3 @@ class SlashMenuEmptyElement extends LitElement {
 }
 
 customElements.define('lit-editor-slash-menu-empty', SlashMenuEmptyElement)
-
-export default SlashMenuEmptyElement

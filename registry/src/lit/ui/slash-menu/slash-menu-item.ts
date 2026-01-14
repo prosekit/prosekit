@@ -41,5 +41,3 @@ class SlashMenuItemElement extends LitElement {
 }
 
 customElements.define('lit-editor-slash-menu-item', SlashMenuItemElement)
-
-export default SlashMenuItemElement

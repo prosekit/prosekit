@@ -6,6 +6,7 @@
   "description": "ProseKit registry",
   "exports": {
     "./lit/examples/minimal": "./src/lit/examples/minimal/index.ts",
+    "./lit/examples/slash-menu": "./src/lit/examples/slash-menu/index.ts",
     "./lit/renderer": "./src/lit/renderer.ts",
     "./preact/examples/block-handle": "./src/preact/examples/block-handle/index.ts",
     "./preact/examples/blockquote": "./src/preact/examples/blockquote/index.ts",

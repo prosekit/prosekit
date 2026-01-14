@@ -11707,7 +11707,9 @@
       "title": "lit-example-slash-menu",
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-slash-menu.json"
+      ],
       "dependencies": [
         "lit",
         "prosekit"
@@ -11717,6 +11719,11 @@
           "path": "registry/src/lit/examples/slash-menu/editor.ts",
           "type": "registry:component",
           "target": "components/editor/examples/slash-menu/editor.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/slash-menu/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/slash-menu/extension.ts"
         },
         {
           "path": "registry/src/lit/examples/slash-menu/index.ts",
@@ -11731,9 +11738,16 @@
         "framework": "lit",
         "accumulatedFiles": [
           "registry/src/lit/examples/slash-menu/editor.ts",
-          "registry/src/lit/examples/slash-menu/index.ts"
+          "registry/src/lit/examples/slash-menu/extension.ts",
+          "registry/src/lit/examples/slash-menu/index.ts",
+          "registry/src/lit/ui/slash-menu/index.ts",
+          "registry/src/lit/ui/slash-menu/slash-menu-empty.ts",
+          "registry/src/lit/ui/slash-menu/slash-menu-item.ts",
+          "registry/src/lit/ui/slash-menu/slash-menu.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "lit-ui-slash-menu"
+        ]
       }
     },
     {

@@ -14,6 +14,7 @@ import {
 } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
+
 import { defineExtension } from './extension'
 
 import '../../ui/slash-menu/index'

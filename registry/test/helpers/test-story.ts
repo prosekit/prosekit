@@ -19,13 +19,13 @@ import { formatHTML } from './format-html'
 import { waitForStableElement } from './query'
 
 function getExamples(story: string) {
-  const examples = registry.items.filter(item => item.meta.story === story)
+  const examples = registry.items.filter((item) => item.meta.story === story)
 
   if (examples.length === 0) {
     throw new Error(`No examples found for story "${story}"`)
   }
 
-  return examples.map(item => {
+  return examples.map((item) => {
     const { framework, story } = item.meta
     return {
       framework,
@@ -55,9 +55,7 @@ function testSingleStory(
 async function renderExample(framework: string, story: string, empty: boolean) {
   const emptyContent: NodeJSON = {
     type: 'doc',
-    content: [
-      { type: 'paragraph', content: [] },
-    ],
+    content: [{ type: 'paragraph', content: [] }],
   }
   const initialContent = empty ? emptyContent : undefined
 
@@ -120,7 +118,7 @@ export function testStory(
     story,
     emptyContent = false,
     frameworks,
-  } = (typeof options === 'string' || Array.isArray(options)) ? { story: options } : options
+  } = typeof options === 'string' || Array.isArray(options) ? { story: options } : options
   const stories = Array.isArray(story) ? story : [story]
 
   for (const story of stories) {
@@ -128,17 +126,20 @@ export function testStory(
   }
 }
 
-export function testStoryConsistency(story: string, {
-  shouldWaitForEditor = true,
-  shouldWaitForShiki = false,
-  shouldWaitForImageToLoad = false,
-  setup,
-}: {
-  shouldWaitForEditor?: boolean
-  shouldWaitForShiki?: boolean
-  shouldWaitForImageToLoad?: boolean
-  setup?: () => Promise<void>
-} = {}) {
+export function testStoryConsistency(
+  story: string,
+  {
+    shouldWaitForEditor = true,
+    shouldWaitForShiki = false,
+    shouldWaitForImageToLoad = false,
+    setup,
+  }: {
+    shouldWaitForEditor?: boolean
+    shouldWaitForShiki?: boolean
+    shouldWaitForImageToLoad?: boolean
+    setup?: () => Promise<void>
+  } = {},
+) {
   const examples = getExamples(story)
 
   const htmlToExamples = new DefaultMap<string, string[]>(() => [])
@@ -196,23 +197,21 @@ export function testStoryConsistency(story: string, {
   })
 }
 
-async function getStableHTML(
-  {
-    framework,
-    story,
-    shouldWaitForEditor,
-    shouldWaitForShiki,
-    shouldWaitForImageToLoad,
-    setup,
-  }: {
-    framework: string
-    story: string
-    shouldWaitForEditor: boolean
-    shouldWaitForShiki: boolean
-    shouldWaitForImageToLoad: boolean
-    setup?: () => Promise<void>
-  },
-): Promise<string> {
+async function getStableHTML({
+  framework,
+  story,
+  shouldWaitForEditor,
+  shouldWaitForShiki,
+  shouldWaitForImageToLoad,
+  setup,
+}: {
+  framework: string
+  story: string
+  shouldWaitForEditor: boolean
+  shouldWaitForShiki: boolean
+  shouldWaitForImageToLoad: boolean
+  setup?: () => Promise<void>
+}): Promise<string> {
   const screen = await renderExample(framework, story, false)
 
   if (setup) {
@@ -234,9 +233,7 @@ async function getStableHTML(
   // Clone the container so we don't modify the actual DOM
   const clone = screen.container.cloneNode(true) as Element
 
-  removeDisplayContents(clone)
-  removeSelectValueAttributes(clone)
-  normalizeDisplayNone(clone)
+  normalizeCloneElementTree(clone)
 
   let html = formatHTML(clone.innerHTML)
   // Replace "id" attributes
@@ -251,36 +248,100 @@ async function getStableHTML(
   return formatHTML(html)
 }
 
-// Remove display: contents divs in the clone, since solid.js v1 needs to
-// insert a div for portals. See
-// https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
-function removeDisplayContents(element: Element) {
-  const founds = Array.from(element.querySelectorAll('*[style*="display: contents"]'))
-  for (const found of founds) {
-    const parent = found.parentNode
-    const children = Array.from(found.children)
-    for (const child of children) {
-      parent?.insertBefore(child, found)
-    }
-    found.remove()
+type ElementTransform = {
+  matches: (element: Element, computedStyle: CSSStyleDeclaration) => boolean
+  apply: (element: Element, root: Element) => void
+}
+
+const cloneElementTransforms: ElementTransform[] = [
+  {
+    matches: (_element, computedStyle) => computedStyle.display === 'contents',
+    apply: (element, root) => unwrapDisplayContentsElement(element, root),
+  },
+  {
+    matches: (_element, computedStyle) => computedStyle.display === 'none',
+    apply: (element) => normalizeDisplayNoneElement(element),
+  },
+  {
+    matches: (element) => element.matches('select, input'),
+    apply: (element) => removeSelectValueAttribute(element),
+  },
+]
+
+function normalizeCloneElementTree(root: Element) {
+  withElementInDocument(root, () => {
+    visitElementTree(root, (element, computedStyle) => {
+      for (const transform of cloneElementTransforms) {
+        if (transform.matches(element, computedStyle)) {
+          transform.apply(element, root)
+        }
+      }
+    })
+  })
+}
+
+function visitElementTree(
+  root: Element,
+  visitor: (element: Element, computedStyle: CSSStyleDeclaration) => void,
+) {
+  const elements = [root, ...Array.from(root.querySelectorAll('*'))]
+  for (const element of elements) {
+    visitor(element, getComputedStyle(element))
   }
 }
 
-function normalizeDisplayNone(element: Element) {
-  const founds = Array.from(element.querySelectorAll('[style*="display: none"]'))
-  for (const found of founds) {
-    if (!isHTMLElement(found)) {
-      continue
-    }
+function withElementInDocument<T>(element: Element, callback: () => T): T {
+  const container = document.createElement('div')
+  container.style.cssText = [
+    'position: absolute',
+    'left: -9999px',
+    'top: 0',
+    'width: 0',
+    'height: 0',
+    'overflow: hidden',
+    'pointer-events: none',
+  ].join('; ')
+  container.appendChild(element)
+  document.body.appendChild(container)
+  try {
+    return callback()
+  } finally {
+    container.remove()
+  }
+}
 
-    // Remove all other styles and keep only display: none
-    found.style.cssText = 'display: none'
+// Remove display: contents divs in the clone, since solid.js v1 needs to
+// insert a div for portals. See
+// https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
+function unwrapDisplayContentsElement(element: Element, root: Element) {
+  if (element === root) {
+    return
+  }
 
-    // Remove all dataset attributes
-    const dataKeys = Object.keys(found.dataset)
-    for (const dataKey of dataKeys) {
-      delete found.dataset[dataKey]
-    }
+  const parent = element.parentNode
+  if (!parent) {
+    return
+  }
+
+  const children = Array.from(element.children)
+  for (const child of children) {
+    parent.insertBefore(child, element)
+  }
+  element.remove()
+}
+
+function normalizeDisplayNoneElement(element: Element) {
+  if (!isHTMLElement(element)) {
+    return
+  }
+
+  // Remove all other styles and keep only display: none
+  element.style.cssText = 'display: none'
+
+  // Remove all dataset attributes
+  const dataKeys = Object.keys(element.dataset)
+  for (const dataKey of dataKeys) {
+    delete element.dataset[dataKey]
   }
 }
 
@@ -288,11 +349,8 @@ function normalizeDisplayNone(element: Element) {
  * Vue set <select :value="..."> as a attribute thus it will be rendered in the
  * HTML string. We want to remove the value attribute.
  */
-function removeSelectValueAttributes(element: Element) {
-  const formElements = Array.from(element.querySelectorAll('select,input'))
-  for (const formElement of formElements) {
-    formElement.removeAttribute('value')
-  }
+function removeSelectValueAttribute(element: Element) {
+  element.removeAttribute('value')
 }
 
 /**
@@ -311,7 +369,7 @@ async function waitForShiki(element: Element) {
 async function waitForImageToLoad(element: Element) {
   const areImagesLoaded = (): boolean => {
     const images = Array.from(element.querySelectorAll('img'))
-    return images.every(img => img.complete && img.naturalWidth > 0)
+    return images.every((img) => img.complete && img.naturalWidth > 0)
   }
 
   await expect.poll(areImagesLoaded, { timeout: 8000 }).toBe(true)

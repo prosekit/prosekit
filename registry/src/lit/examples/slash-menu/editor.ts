@@ -12,13 +12,19 @@ import {
   ref,
   type Ref,
 } from 'lit/directives/ref.js'
-import { defineBasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
+import { defineExtension } from './extension'
+
+import '../../ui/slash-menu/index'
+
 export class LitEditor extends LitElement {
   static override properties = {
-    editor: { state: true, attribute: false } satisfies PropertyDeclaration<Editor>,
+    editor: {
+      state: true,
+      attribute: false,
+    } satisfies PropertyDeclaration<Editor>,
   }
 
   private editor: Editor
@@ -27,7 +33,7 @@ export class LitEditor extends LitElement {
   constructor() {
     super()
 
-    const extension = defineBasicExtension()
+    const extension = defineExtension()
     this.editor = createEditor({ extension })
     this.ref = createRef<HTMLDivElement>()
   }
@@ -42,17 +48,25 @@ export class LitEditor extends LitElement {
   }
 
   override render() {
-    return html`<div class="CSS_MINIMAL_EDITOR" ${ref(this.ref)}></div>`
+    return html`<div class="CSS_EDITOR_VIEWPORT">
+      <div class="CSS_EDITOR_SCROLLING">
+        <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
+        <lit-editor-slash-menu
+          .editor=${this.editor}
+          style="display: contents;"
+        ></lit-editor-slash-menu>
+      </div>
+    </div>`
   }
 }
 
 export function registerLitEditor() {
-  if (customElements.get('lit-editor-example-minimal')) return
-  customElements.define('lit-editor-example-minimal', LitEditor)
+  if (customElements.get('lit-editor-example-slash-menu')) return
+  customElements.define('lit-editor-example-slash-menu', LitEditor)
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'lit-editor-example-minimal': LitEditor
+    'lit-editor-example-slash-menu': LitEditor
   }
 }

@@ -4,8 +4,6 @@ export function suppressLitWarnings() {
   if (typeof globalThis !== 'undefined') {
     const global = globalThis as { litIssuedWarnings?: Set<string> }
     global.litIssuedWarnings ??= new Set()
-    global.litIssuedWarnings.add(
-      'dev-mode',
-    )
+    global.litIssuedWarnings.add('dev-mode')
   }
 }

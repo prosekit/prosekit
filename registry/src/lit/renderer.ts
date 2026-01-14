@@ -40,8 +40,8 @@ export class LitRenderer extends LitElement {
     }
 
     void loader()
-    const tag = unsafeStatic('lit-editor-' + story)
-    return html`<${tag}></${tag}>`
+    const tag = unsafeStatic('lit-editor-example-' + story)
+    return html`<${tag} style="display: contents;"></${tag}>`
   }
 }
 

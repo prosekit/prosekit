@@ -1,16 +1,8 @@
 import '../../src/tailwind.css'
 
-import {
-  DefaultMap,
-  isHTMLElement,
-} from '@ocavue/utils'
+import { DefaultMap, isHTMLElement } from '@ocavue/utils'
 import type { NodeJSON } from 'prosekit/core'
-import {
-  beforeEach,
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 
 import registry from 'prosekit-registry/registry.gen.json'
 
@@ -235,17 +227,7 @@ async function getStableHTML({
 
   normalizeCloneElementTree(clone)
 
-  let html = formatHTML(clone.innerHTML)
-  // Replace "id" attributes
-  html = html.replaceAll(/ id="[\w-]+"/g, ' id="SOME_ID"')
-  // Replace "for" attributes in <label> elements
-  html = html.replaceAll(/ for="[\w-]+"/g, ' for="SOME_ID"')
-  // Replace "value" attributes
-  html = html.replaceAll(/ value="[\w-]{21}"/g, ' value="SOME_NANOID_21"')
-  // Remove React suppressHydrationWarning attribute
-  html = html.replaceAll(/ suppresshydrationwarning="true"/gi, '')
-
-  return formatHTML(html)
+  return formatHTML(clone.innerHTML)
 }
 
 type ElementTransform = {
@@ -265,6 +247,22 @@ const cloneElementTransforms: ElementTransform[] = [
   {
     matches: (element) => element.matches('select, input'),
     apply: (element) => removeSelectValueAttribute(element),
+  },
+  {
+    matches: (element) => element.hasAttribute('id'),
+    apply: (element) => element.setAttribute('id', 'SOME_ID'),
+  },
+  {
+    matches: (element) => element.tagName === 'LABEL' && element.hasAttribute('for'),
+    apply: (element) => element.setAttribute('for', 'SOME_ID'),
+  },
+  {
+    matches: (element) => hasNanoIdValue(element),
+    apply: (element) => element.setAttribute('value', 'SOME_NANOID_21'),
+  },
+  {
+    matches: (element) => element.hasAttribute('suppresshydrationwarning'),
+    apply: (element) => element.removeAttribute('suppresshydrationwarning'),
   },
 ]
 
@@ -291,6 +289,11 @@ function hasClass(element: Element, className: string) {
 
 function hasInlineDisplay(element: Element, displayValue: string) {
   return element instanceof HTMLElement && element.style.display === displayValue
+}
+
+function hasNanoIdValue(element: Element) {
+  const value = element.getAttribute('value')
+  return !!value && /^[\w-]{21}$/.test(value)
 }
 
 // Remove display: contents divs in the clone, since solid.js v1 needs to

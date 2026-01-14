@@ -41,7 +41,7 @@ export class LitRenderer extends LitElement {
 
     void loader()
     const tag = unsafeStatic('lit-editor-example-' + story)
-    return html`<${tag} class="contents"></${tag}>`
+    return html`<${tag} style="display: contents;"></${tag}>`
   }
 }
 

@@ -249,7 +249,7 @@ const cloneElementTransforms: ElementTransform[] = [
   // https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
   //
   // Also remove all Lit web components that don't actually contribute to the
-  // styles.
+  // layout.
   {
     matches: (element) => {
       if (!isHTMLElement(element)) return false
@@ -289,7 +289,7 @@ const cloneElementTransforms: ElementTransform[] = [
     },
   },
 
-  // Vue set <select :value="..."> as a attribute thus it will be rendered in the
+  // Vue sets <select :value="..."> as an attribute so it will be rendered in the
   // HTML string. We want to remove the value attribute.
   {
     matches: (element) => element.matches('select, input'),
@@ -308,7 +308,7 @@ const cloneElementTransforms: ElementTransform[] = [
     apply: (element) => element.setAttribute('for', 'SOME_ID'),
   },
 
-  // Replace "value" attributes
+  // Replace nanoid value attributes
   {
     matches: (element) => {
       const value = element.getAttribute('value')

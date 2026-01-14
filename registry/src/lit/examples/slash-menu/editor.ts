@@ -21,7 +21,10 @@ import '../../ui/slash-menu/index'
 
 export class LitEditor extends LitElement {
   static override properties = {
-    editor: { state: true, attribute: false } satisfies PropertyDeclaration<Editor>,
+    editor: {
+      state: true,
+      attribute: false,
+    } satisfies PropertyDeclaration<Editor>,
   }
 
   private editor: Editor
@@ -46,10 +49,10 @@ export class LitEditor extends LitElement {
 
   override render() {
     return html`<div class="CSS_EDITOR_VIEWPORT">
-    <div class="CSS_EDITOR_SCROLLING">
+      <div class="CSS_EDITOR_SCROLLING">
         <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
         <lit-editor-slash-menu .editor=${this.editor}></lit-editor-slash-menu>
-    </div>
+      </div>
     </div>`
   }
 }

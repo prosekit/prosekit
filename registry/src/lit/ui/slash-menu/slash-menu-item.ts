@@ -30,8 +30,8 @@ class SlashMenuItemElement extends LitElement {
   }
 
   override render() {
-    return html`   <prosekit-autocomplete-item
-         @select=${this.handleSelect}
+    return html`<prosekit-autocomplete-item
+      @select=${this.handleSelect}
       class="CSS_AUTOCOMPLETE_MENU_ITEM"
     >
       <span>${this.label}</span>

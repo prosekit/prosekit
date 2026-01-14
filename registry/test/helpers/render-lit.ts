@@ -27,6 +27,7 @@ export async function renderLitExample(story: string) {
   registerLitRenderer()
 
   const renderer = document.createElement('lit-renderer')
+  renderer.classList.add('contents')
   renderer.story = story
   container.appendChild(renderer)
 

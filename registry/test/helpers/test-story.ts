@@ -250,13 +250,13 @@ async function getStableHTML({
 
 type ElementTransform = {
   matches: (element: Element) => boolean
-  apply: (element: Element, root: Element) => void
+  apply: (element: Element) => void
 }
 
 const cloneElementTransforms: ElementTransform[] = [
   {
     matches: (element) => hasInlineDisplay(element, 'contents') || hasClass(element, 'contents'),
-    apply: (element, root) => unwrapDisplayContentsElement(element, root),
+    apply: (element) => unwrapDisplayContentsElement(element),
   },
   {
     matches: (element) => hasInlineDisplay(element, 'none') || hasClass(element, 'hidden'),
@@ -272,14 +272,14 @@ function normalizeCloneElementTree(root: Element) {
   visitElementTree(root, (element) => {
     for (const transform of cloneElementTransforms) {
       if (transform.matches(element)) {
-        transform.apply(element, root)
+        transform.apply(element)
       }
     }
   })
 }
 
 function visitElementTree(root: Element, visitor: (element: Element) => void) {
-  const elements = [root, ...Array.from(root.querySelectorAll('*'))]
+  const elements = Array.from(root.querySelectorAll('*'))
   for (const element of elements) {
     visitor(element)
   }
@@ -296,11 +296,7 @@ function hasInlineDisplay(element: Element, displayValue: string) {
 // Remove display: contents divs in the clone, since solid.js v1 needs to
 // insert a div for portals. See
 // https://github.com/prosekit/prosemirror-adapter/blob/2065ef0986b17971b66f901b86aaeb6ad100df63/packages/solid/src/markView/SolidMarkView.tsx#L47
-function unwrapDisplayContentsElement(element: Element, root: Element) {
-  if (element === root) {
-    return
-  }
-
+function unwrapDisplayContentsElement(element: Element) {
   const parent = element.parentNode
   if (!parent) {
     return

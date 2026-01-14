@@ -7,6 +7,7 @@ import SolidStory from '../../../stories/solid.astro'
 import SvelteStory from '../../../stories/svelte.astro'
 import VueStory from '../../../stories/vue.astro'
 import LitStory from '../../../stories/lit.astro'
+import VanillaStory from '../../../stories/vanilla.astro'
 import DemoCodeGroup from './demo-code-group.astro'
 
 interface Props {
@@ -25,10 +26,8 @@ if (examples.length === 0) {
 const frameworks = examples.map((example) => example.meta.framework)
 ---
 
-{frameworks.includes('lit') ? (
-  <script src="../../../stories/lit-register.ts">
-  </script>
-) : null}
+{frameworks.includes('lit') ? <script src="../../../stories/lit-register.ts"></script> : null}
+{frameworks.includes('vanilla') ? <script src="../../../stories/vanilla-register.ts"></script> : null}
 
 {/* @ts-expect-error: something is wrong with Astro's type */}
 <MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:load>
@@ -38,6 +37,7 @@ const frameworks = examples.map((example) => example.meta.framework)
   {frameworks.includes('svelte') && <Fragment slot="slot-story-svelte"><SvelteStory story={story} /></Fragment>}
   {frameworks.includes('vue') && <Fragment slot="slot-story-vue"><VueStory story={story} /></Fragment>}
   {frameworks.includes('lit') && <Fragment slot="slot-story-lit"><LitStory story={story} /></Fragment>}
+  {frameworks.includes('vanilla') && <Fragment slot="slot-story-vanilla"><VanillaStory story={story} /></Fragment>}
 
   {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
   {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
@@ -45,4 +45,5 @@ const frameworks = examples.map((example) => example.meta.framework)
   {frameworks.includes('svelte') && <Fragment slot="slot-code-svelte"><DemoCodeGroup story={story} framework={'svelte'} /></Fragment>}
   {frameworks.includes('vue') && <Fragment slot="slot-code-vue"><DemoCodeGroup story={story} framework={'vue'} /></Fragment>}
   {frameworks.includes('lit') && <Fragment slot="slot-code-lit"><DemoCodeGroup story={story} framework={'lit'} /></Fragment>}
+  {frameworks.includes('vanilla') && <Fragment slot="slot-code-vanilla"><DemoCodeGroup story={story} framework={'vanilla'} /></Fragment>}
 </MultipleFrameworksDemo>

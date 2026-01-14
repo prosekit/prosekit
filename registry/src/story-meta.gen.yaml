@@ -99,7 +99,7 @@
   frameworks: [react, preact, vue, svelte, solid]
   description: Search and highlight text with navigation.
 - name: slash-menu
-  frameworks: [react, preact, vue, lit, svelte, solid]
+  frameworks: [react, preact, vue, lit, svelte, solid, vanilla]
   description: Command menu triggered by typing slash (/).
 - name: strike
   frameworks: [react, preact, vue, svelte, solid]

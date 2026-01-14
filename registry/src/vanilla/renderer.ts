@@ -43,7 +43,7 @@ class VanillaRendererElement extends HTMLElement {
       this.render()
       this.setAttribute('data-loaded', 'true')
     }).catch((error) => {
-      throw new Error(`Error loading story ${story}`, { cause: error })
+      throw new Error(`[VanillaRendererElement] Error loading story ${story}: ${error}`, { cause: error })
     })
   }
 

@@ -1,5 +1,37 @@
 # prosekit
 
+## 0.18.0
+
+### Minor Changes
+
+- [`04ccc36`](https://github.com/ocavue/prosekit/commit/04ccc3695b244cd82e01b58f119a6315e3a6c9de) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineTextColor` to define the `textColor` mark.
+
+- [`f24e9c4`](https://github.com/ocavue/prosekit/commit/f24e9c4bd21318403e6ca0fcb773f9cb1ff3b052) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineBackgroundColor` to define the `backgroundColor` mark.
+
+- [`96a7d5d`](https://github.com/ocavue/prosekit/commit/96a7d5d0d9f04496733dbb3dec0259eea073abbd) ![](https://prosekit.dev/b/core)
+
+  Add `setNodeAttrsBetween` command and update `setNodeAttrs` behavior.
+  - **New**: Added `setNodeAttrsBetween` command to set attributes on all matching nodes within a range (from/to positions or selection range)
+  - **Changed**: `setNodeAttrs` now updates only a single node instead of all nodes in a range. When no position is specified, it finds the closest ancestor node matching the type. When a position is provided, it updates the node at that specific position.
+
+### Patch Changes
+
+- [`b56ff7b`](https://github.com/ocavue/prosekit/commit/b56ff7b171951142e5b7a9faf49745413404245b) ![](https://prosekit.dev/b/extensions)
+
+  Add `replace` option to `uploadImage` command to replace existing images at a position instead of inserting new ones.
+
+- [`d550edf`](https://github.com/ocavue/prosekit/commit/d550edf3fb80afcb0cf1936661db5de6774fb57e) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid)
+
+  Fix an issue where `useEditor()` is not working in node view components.
+
+- [`a3f5099`](https://github.com/ocavue/prosekit/commit/a3f5099db6bb3484e2720e0e0e2e2037364cbb9c) ![](https://prosekit.dev/b/web)
+
+  Improve the extension lifecycle in asynchronous UI frameworks.
+
 ## 0.17.1
 
 ### Patch Changes
@@ -23,7 +55,7 @@
   To recover the previous behavior where `Mod-a` immediately selects the entire document, pass `preferBlockSelection: false` when calling `defineBaseKeymap`:
 
   ```ts
-  defineBaseKeymap({ preferBlockSelection: false });
+  defineBaseKeymap({ preferBlockSelection: false })
   ```
 
 - [`29a6eda`](https://github.com/ocavue/prosekit/commit/29a6edabffb302f5f75047a1ab69d24cd3f88bff) ![](https://prosekit.dev/b/extensions)
@@ -116,21 +148,21 @@
 
   ```ts
   editor.setContent({
-    type: "doc",
+    type: 'doc',
     content: [
       {
-        type: "list",
-        attrs: { kind: "task", checked: true },
+        type: 'list',
+        attrs: { kind: 'task', checked: true },
         content: [
           {
-            type: "paragraph",
-            content: [{ type: "text", text: "Foo" }],
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'Foo' }],
           },
         ],
       },
     ],
-  });
-  console.log(editor.getDocHTML());
+  })
+  console.log(editor.getDocHTML())
   ```
 
   The previous output was:
@@ -138,11 +170,7 @@
   ```html
   <div>
     <ul>
-      <li
-        class="prosemirror-flat-list"
-        data-list-kind="task"
-        data-list-checked=""
-      >
+      <li class="prosemirror-flat-list" data-list-kind="task" data-list-checked="">
         <p>Foo</p>
       </li>
     </ul>
@@ -154,11 +182,7 @@
   ```html
   <div>
     <ul>
-      <li
-        class="prosemirror-flat-list"
-        data-list-kind="task"
-        data-list-checked=""
-      >
+      <li class="prosemirror-flat-list" data-list-kind="task" data-list-checked="">
         <p>
           <input type="checkbox" checked="" />
           Foo
@@ -416,7 +440,7 @@
     // ✅ Good: derive function is memoized
     const isBoldActive = useEditorDerivedValue(
       useCallback((editor) => editor.marks.bold.isActive(), []),
-    );
+    )
     ```
 
   - **If defined outside a component, it's naturally stable:**
@@ -424,11 +448,11 @@
     ```tsx
     // ✅ Good: derive function is stable (defined outside)
     function getBoldState(editor) {
-      return editor.marks.bold.isActive();
+      return editor.marks.bold.isActive()
     }
 
     function MyComponent() {
-      const isBoldActive = useEditorDerivedValue(getBoldState);
+      const isBoldActive = useEditorDerivedValue(getBoldState)
       // ...
     }
     ```
@@ -437,9 +461,7 @@
 
     ```tsx
     // ❌ Bad: derive function is not memoized
-    const isBoldActive = useEditorDerivedValue((editor) =>
-      editor.marks.bold.isActive(),
-    );
+    const isBoldActive = useEditorDerivedValue((editor) => editor.marks.bold.isActive())
     ```
 
   ### Migration Example
@@ -448,13 +470,13 @@
 
   ```tsx
   // Before
-  import { useEditor } from "prosekit/react";
+  import { useEditor } from 'prosekit/react'
 
-  import Button from "./button";
-  import type { EditorExtension } from "./extension";
+  import Button from './button'
+  import type { EditorExtension } from './extension'
 
   export default function Toolbar() {
-    const editor = useEditor<EditorExtension>({ update: true });
+    const editor = useEditor<EditorExtension>({ update: true })
 
     return (
       <div className="CSS_TOOLBAR">
@@ -475,17 +497,17 @@
           H2
         </Button>
       </div>
-    );
+    )
   }
   ```
 
   ```tsx
   // After
-  import type { Editor } from "prosekit/core";
-  import { useEditorDerivedValue } from "prosekit/react";
+  import type { Editor } from 'prosekit/core'
+  import { useEditorDerivedValue } from 'prosekit/react'
 
-  import Button from "./button";
-  import type { EditorExtension } from "./extension";
+  import Button from './button'
+  import type { EditorExtension } from './extension'
 
   function getToolbarItems(editor: Editor<EditorExtension>) {
     return {
@@ -499,11 +521,11 @@
         canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
         command: () => editor.commands.toggleHeading({ level: 2 }),
       },
-    };
+    }
   }
 
   export default function Toolbar() {
-    const items = useEditorDerivedValue(getToolbarItems);
+    const items = useEditorDerivedValue(getToolbarItems)
 
     return (
       <div className="CSS_TOOLBAR">
@@ -525,7 +547,7 @@
           H2
         </Button>
       </div>
-    );
+    )
   }
   ```
 
@@ -616,15 +638,15 @@
   _Before_:
 
   ```ts
-  import { defineDoc, defineText, defineParagraph } from "prosekit/core";
+  import { defineDoc, defineText, defineParagraph } from 'prosekit/core'
   ```
 
   _After_:
 
   ```ts
-  import { defineDoc } from "prosekit/extensions/doc";
-  import { defineText } from "prosekit/extensions/text";
-  import { defineParagraph } from "prosekit/extensions/paragraph";
+  import { defineDoc } from 'prosekit/extensions/doc'
+  import { defineText } from 'prosekit/extensions/text'
+  import { defineParagraph } from 'prosekit/extensions/paragraph'
   ```
 
 - [`581ed6f`](https://github.com/ocavue/prosekit/commit/581ed6f8e36b29d805e4b81e1b452e71454350f1) ![](https://prosekit.dev/b/extensions)
@@ -794,7 +816,7 @@
   // Previous code example
   <ResizableRoot
     onSizeChangeEnd={(size) => {
-      handle(size.width, size.height);
+      handle(size.width, size.height)
     }}
   />
   ```
@@ -803,7 +825,7 @@
   // Updated code example
   <ResizableRoot
     onResizeEnd={(event) => {
-      handle(event.size.width, event.size.height);
+      handle(event.size.width, event.size.height)
     }}
   />
   ```
@@ -1757,8 +1779,8 @@
   Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
 
   ```js
-  import "prosekit/basic/style.css";
-  import "prosekit/basic/typography.css";
+  import 'prosekit/basic/style.css'
+  import 'prosekit/basic/typography.css'
   ```
 
 ### Patch Changes
@@ -1879,9 +1901,9 @@
   Add new readonly extension.
 
   ```ts
-  import { defineReadonly } from "prosekit/extensions/readonly";
+  import { defineReadonly } from 'prosekit/extensions/readonly'
 
-  const extension = defineReadonly();
+  const extension = defineReadonly()
   ```
 
 - [`0c60503`](https://github.com/ocavue/prosekit/commit/0c60503) ![](https://prosekit.dev/b/preact) !![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)

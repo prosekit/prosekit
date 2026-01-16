@@ -10,3 +10,5 @@ minimumReleaseAgeExclude:
   - "@prosemirror-adapter/*"
   - "prosemirror-*"
   - "starlight-theme-nova"
+  - "@astrojs/*"
+  - "astro"

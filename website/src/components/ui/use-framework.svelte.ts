@@ -4,7 +4,7 @@ function consumeFrameworkFromQuery(): string | undefined | null {
   if (typeof window === 'undefined') return undefined
   try {
     const url = new URL(window.location.href)
-    if (!url.searchParams.has('framework')) return
+    if (!url.searchParams.has('framework')) return undefined
     const value = url.searchParams.get('framework')
     url.searchParams.delete('framework')
     window.history.replaceState(window.history.state, '', url.toString())

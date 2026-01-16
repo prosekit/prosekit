@@ -19,12 +19,20 @@ import { frameworkIcons } from '@/components/ui/framework-icons'
         </Fragment>
         <Fragment slot="description">
           <span class="text-sm text-gray-500 mb-8 inline-flex">{item.description}</span>
-          <span class="inline-flex flex-row gap-2 right-6 bottom-4 absolute cursor-pointer">
+          <span class="inline-flex flex-row right-5 bottom-3 absolute cursor-pointer group/framework-icons">
             {item.frameworks.map((framework) => (
-              <span
-                class:list={['size-4', frameworkIcons[framework]]}
-                data-framework-icon={framework}
-              ></span>
+              <a
+                class:list={[
+                  'size-6 p-1 transition-all inline-flex items-center justify-center',
+                  'saturate-100 group-hover/framework-icons:saturate-0 hover:saturate-100',
+                  'scale-100 hover:scale-150',
+                  'opacity-100 group-hover/framework-icons:opacity-70 hover:opacity-100',
+                ]}
+                href={item.link + '?framework=' + framework}
+              >
+                <span class:list={['w-full h-full inline-block', frameworkIcons[framework]]}></span>
+                <span class="sr-only">{framework}</span>
+              </a>
             ))}
           </span>
         </Fragment>
@@ -32,52 +40,3 @@ import { frameworkIcons } from '@/components/ui/framework-icons'
     ))}
   </CardGrid>
 </StarlightPage>
-
-<style>
-  [data-framework-icon] {
-    transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
-  }
-
-  :root:has([data-framework-icon]:hover) {
-    & [data-framework-icon] {
-      filter: saturate(0%);
-      opacity: 0.5;
-    }
-  }
-
-  :root:has([data-framework-icon="react"]:hover) [data-framework-icon="react"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-  :root:has([data-framework-icon="vue"]:hover) [data-framework-icon="vue"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-  :root:has([data-framework-icon="preact"]:hover) [data-framework-icon="preact"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-  :root:has([data-framework-icon="svelte"]:hover) [data-framework-icon="svelte"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-  :root:has([data-framework-icon="solid"]:hover) [data-framework-icon="solid"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-  :root:has([data-framework-icon="lit"]:hover) [data-framework-icon="lit"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-  :root:has([data-framework-icon="vanilla"]:hover) [data-framework-icon="vanilla"] {
-    transform: scale(1.6);
-    filter: saturate(100%);
-    opacity: 1;
-  }
-</style>

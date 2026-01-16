@@ -1105,8 +1105,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       starlight-theme-nova:
-        specifier: ^0.11.4
-        version: 0.11.4(@astrojs/starlight@0.37.3(astro@5.16.9(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
+        specifier: ^0.11.5
+        version: 0.11.5(@astrojs/starlight@0.37.3(astro@5.16.9(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
       svelte:
         specifier: ^5.46.3
         version: 5.46.3
@@ -6666,8 +6666,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.11.4:
-    resolution: {integrity: sha512-1mMwodm4iFhPS27W7wR4I077L823vSHorAWcIHHErWDQjiwbR/Htx8eew5rw2+H5gfqhONycuGk1IODw47LMCA==}
+  starlight-theme-nova@0.11.5:
+    resolution: {integrity: sha512-lrrOIfYbZLqqvk8G9MaQFvfIu4jXGgdtSkQzAm4Zzrho662itelYoIJG9DOD3j/t2/7AIRiJDuXlq19Nv0dNLA==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -14404,7 +14404,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.11.4(@astrojs/starlight@0.37.3(astro@5.16.9(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
+  starlight-theme-nova@0.11.5(@astrojs/starlight@0.37.3(astro@5.16.9(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
     dependencies:
       '@aria-ui/core': 0.0.22
       '@pagefind/default-ui': 1.4.0

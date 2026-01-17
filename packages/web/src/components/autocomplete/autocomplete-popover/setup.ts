@@ -24,6 +24,7 @@ import {
 } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
+import { useEditorFocused } from '../../../hooks/use-editor-focused'
 import { useFirstRendering } from '../../../hooks/use-first-rendering'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
@@ -54,7 +55,19 @@ export function useAutocompletePopover(
   const query = createSignal<string>('')
   const onDismiss = createSignal<VoidFunction | null>(null)
   const onSubmit = createSignal<VoidFunction | null>(null)
-  const presence = createComputed(() => !!reference.get())
+  const editorFocused = useEditorFocused(host, editor)
+  const presence = createComputed(() => {
+    // When `hideOnBlur` is true, if the editor is not focused and the popover
+    // doesn't contain the focus, hide the popover.
+    if (
+      state.hideOnBlur.get()
+      && !editorFocused.get()
+      && !host.contains(host.ownerDocument.activeElement)
+    ) {
+      return false
+    }
+    return !!reference.get()
+  })
 
   queryContext.provide(host, query)
   onSubmitContext.provide(host, onSubmit)

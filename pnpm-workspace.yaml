@@ -4,6 +4,15 @@ packages:
   - registry
   - examples/*
   - packages/*
+overrides: {}
+patchedDependencies:
+  y-prosemirror: patches/y-prosemirror.patch
+ignoredBuiltDependencies:
+  - dprint
+  - esbuild
+  - msw
+  - sharp
+  - unrs-resolver
 minimumReleaseAge: 1440 # 24 hours
 minimumReleaseAgeExclude:
   - "@ocavue/*"

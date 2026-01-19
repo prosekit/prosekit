@@ -59,18 +59,5 @@
     "turbo": "^2.7.4",
     "typescript": "~5.9.3",
     "vitest": "^4.0.17"
-  },
-  "pnpm": {
-    "overrides": {},
-    "patchedDependencies": {
-      "y-prosemirror": "patches/y-prosemirror.patch"
-    },
-    "ignoredBuiltDependencies": [
-      "dprint",
-      "esbuild",
-      "msw",
-      "sharp",
-      "unrs-resolver"
-    ]
   }
 }

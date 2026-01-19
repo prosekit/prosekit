@@ -38,6 +38,7 @@ const config = {
         './my-prosemirror-highlight-parser',
       ],
       ignoreDependencies: [
+        'wrangler',
         /@iconify-json\/.*/,
         'babel-plugin-react-compiler',
         'sharp',

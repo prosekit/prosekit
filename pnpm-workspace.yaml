@@ -9,6 +9,8 @@ ignoreWorkspaceRootCheck: true
 ignoredBuiltDependencies:
   - dprint
   - esbuild
+  - sharp
+  - unrs-resolver
 
 minimumReleaseAge: 1440
 

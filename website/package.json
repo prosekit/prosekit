@@ -36,7 +36,7 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.16.9",
+    "astro": "^5.16.11",
     "astro-minify-html-swc": "^0.1.10",
     "astro-rehype-relative-markdown-links": "^0.18.1",
     "astrobook": "^0.11.2",

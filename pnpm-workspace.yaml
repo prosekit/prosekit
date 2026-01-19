@@ -1,12 +1,28 @@
-ignoreWorkspaceRootCheck: true
 packages:
   - website
   - registry
   - examples/*
   - packages/*
-minimumReleaseAge: 1440 # 24 hours
+
+ignoreWorkspaceRootCheck: true
+
+ignoredBuiltDependencies:
+  - dprint
+  - esbuild
+  - sharp
+  - unrs-resolver
+
+minimumReleaseAge: 1440
+
 minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
-  - "prosemirror-*"
-  - "starlight-theme-nova"
+  - prosemirror-*
+  - starlight-theme-nova
+
+overrides: {}
+
+patchedDependencies:
+  y-prosemirror: patches/y-prosemirror.patch
+
+strictDepBuilds: true

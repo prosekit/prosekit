@@ -261,7 +261,7 @@
     "lint:vue": "vue-tsc --build src/vue/tsconfig.lint.json"
   },
   "dependencies": {
-    "@base-ui/react": "1.0.0",
+    "@base-ui/react": "1.1.0",
     "loro-crdt": "^1.10.4",
     "loro-prosemirror": "^0.4.2",
     "obug": "^2.1.1",

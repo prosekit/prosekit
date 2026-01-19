@@ -11,6 +11,7 @@ ignoredBuiltDependencies:
   - esbuild
   - sharp
   - unrs-resolver
+  - workerd
 
 minimumReleaseAge: 1440
 

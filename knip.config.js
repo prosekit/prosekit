@@ -16,6 +16,7 @@ function css(text) {
  */
 const config = {
   exclude: ['optionalPeerDependencies', 'binaries'],
+  ignoreDependencies: ['wrangler'],
   workspaces: {
     './packages/prosekit': {
       entry: [

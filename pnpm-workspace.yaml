@@ -7,9 +7,8 @@ packages:
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
-  - msw
-  - sharp
-  - unrs-resolver
+  - dprint
+  - esbuild
 
 minimumReleaseAge: 1440
 

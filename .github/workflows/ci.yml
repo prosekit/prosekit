@@ -177,5 +177,5 @@ jobs:
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           workingDirectory: website/dist
-          command: pages deploy . --project-name=prosekit-dev
+          command: pages deploy . --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
         timeout-minutes: 10

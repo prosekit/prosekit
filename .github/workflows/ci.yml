@@ -169,14 +169,18 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Copy website dist
+        run: cp -r website/dist /tmp/website-dist
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         if: >
           github.event_name == 'push' ||
           github.event.pull_request.head.repo.full_name == github.repository
         with:
+          workingDirectory: /tmp/website-dist
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy website/dist --project-name=prosekit-dev
+          command: pages deploy . --project-name=prosekit-dev
         timeout-minutes: 5

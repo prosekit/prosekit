@@ -16,6 +16,7 @@ function css(text) {
  */
 const config = {
   exclude: ['optionalPeerDependencies', 'binaries'],
+  ignoreDependencies: ['wrangler'],
   workspaces: {
     './packages/prosekit': {
       entry: [
@@ -38,7 +39,6 @@ const config = {
         './my-prosemirror-highlight-parser',
       ],
       ignoreDependencies: [
-        'wrangler',
         /@iconify-json\/.*/,
         'babel-plugin-react-compiler',
         'sharp',

@@ -179,3 +179,5 @@ jobs:
           workingDirectory: website/dist
           command: pages deploy . --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
         timeout-minutes: 10
+        env:
+          WRANGLER_LOG: debug

@@ -168,6 +168,11 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: debug
+        run: |
+          pwd
+          ls -la website/dist
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         if: ${{ env.CLOUDFLARE_ACCOUNT_ID != ''  }}
@@ -175,7 +180,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          workingDirectory: website/dist
-          packageManager: pnpm
-          command: pages deploy . --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
+          command: pages deploy website/dist --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
         timeout-minutes: 10

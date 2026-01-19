@@ -9,8 +9,6 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 strictDepBuilds: true
 ignoredBuiltDependencies:
-  - dprint
-  - esbuild
   - msw
   - sharp
   - unrs-resolver

@@ -156,7 +156,6 @@ jobs:
     needs: [build]
 
     env:
-      CLOUDFLARE_PAGES_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
     steps:
@@ -173,10 +172,10 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         if: ${{ env.CLOUDFLARE_ACCOUNT_ID != ''  }}
         with:
-          apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
-          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy website/dist --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
+          workingDirectory: website/dist
+          packageManager: pnpm
+          command: pages deploy . --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
         timeout-minutes: 10
-        env:
-          WRANGLER_LOG: debug

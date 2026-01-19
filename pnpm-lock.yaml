@@ -73,6 +73,9 @@ importers:
       vitest:
         specifier: ^4.0.17
         version: 4.0.17(@types/node@24.10.1)(@vitest/browser-playwright@4.0.17)(@vitest/ui@4.0.17)(happy-dom@20.3.0)(jiti@2.6.1)(jsdom@27.4.0)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2)
+      wrangler:
+        specifier: ^4.59.2
+        version: 4.59.2
 
   packages/basic:
     dependencies:
@@ -1128,9 +1131,6 @@ importers:
       vue:
         specifier: ^3.5.26
         version: 3.5.26(typescript@5.9.3)
-      wrangler:
-        specifier: ^4.59.2
-        version: 4.59.2
       y-websocket:
         specifier: ^3.0.0
         version: 3.0.0(yjs@13.6.29)

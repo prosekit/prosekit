@@ -61,7 +61,6 @@
     "typescript": "~5.9.3",
     "vite-plugin-wasm": "^3.5.0",
     "vue": "^3.5.26",
-    "wrangler": "^4.59.2",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.29"
   }

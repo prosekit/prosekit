@@ -176,8 +176,7 @@ jobs:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          workingDirectory: website/dist
-          command: pages deploy . --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
+          command: pages deploy website/dist --project-name=prosekit-dev --branch="${{ github.head_ref || github.ref_name }}"
         timeout-minutes: 10
         env:
           WRANGLER_LOG: debug

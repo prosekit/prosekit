@@ -168,11 +168,6 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: debug
-        run: |
-          pwd
-          ls -la website/dist
-
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         if: ${{ env.CLOUDFLARE_ACCOUNT_ID != ''  }}

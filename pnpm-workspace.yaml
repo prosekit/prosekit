@@ -19,10 +19,6 @@ minimumReleaseAgeExclude:
   - prosemirror-*
   - starlight-theme-nova
 
-onlyBuiltDependencies:
-  - dprint
-  - esbuild
-
 overrides: {}
 
 patchedDependencies:

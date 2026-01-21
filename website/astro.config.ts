@@ -130,6 +130,7 @@ async function copiedRegistry(logger: AstroIntegrationLogger) {
 
 // https://astro.build/config
 const config: AstroUserConfig = {
+  site: 'https://prosekit.dev',
   integrations: [
     starlight({
       title: 'ProseKit',

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /playground/
+Allow: /
+
+Sitemap: https://prosekit.dev/sitemap-index.xml

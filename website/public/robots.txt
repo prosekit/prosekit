@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /examples/
+
+Sitemap: https://prosekit.dev/sitemap-index.xml

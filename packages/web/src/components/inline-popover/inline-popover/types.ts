@@ -55,6 +55,13 @@ export interface InlinePopoverProps extends
   dismissOnEscape: boolean
 
   /**
+   * Whether to hide the popover when the editor loses focus.
+   *
+   * @default true
+   */
+  hideOnBlur: boolean
+
+  /**
    * @default "top"
    */
   placement: OverlayPositionerProps['placement']
@@ -92,6 +99,7 @@ export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> = Object.f
   defaultOpen: { default: true },
   open: { default: false },
   dismissOnEscape: { default: true },
+  hideOnBlur: { default: true },
 
   placement: { default: 'top' },
   offset: { default: 12 },

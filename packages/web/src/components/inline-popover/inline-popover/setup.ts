@@ -13,7 +13,7 @@ import type { ReferenceElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 import type { Selection } from '@prosekit/pm/state'
 
-import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event'
+import { useEditorFocused } from '../../../hooks/use-editor-focused'
 import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
 import { useKeymap } from '../../../hooks/use-keymap'
 
@@ -30,7 +30,7 @@ export function useInlinePopover(
   host: ConnectableElement,
   { state, emit }: SetupOptions<InlinePopoverProps, InlinePopoverEvents>,
 ): void {
-  const { editor, defaultOpen, open, ...overlayState } = state
+  const { editor, defaultOpen, open, hideOnBlur, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
   const hasReference = createComputed(() => !!reference.get())
@@ -78,16 +78,12 @@ function useInlinePopoverReference(
   editor: ReadonlySignal<Editor | null>,
 ) {
   const reference = createSignal<ReferenceElement | null>(null)
-  let editorFocused = false
-
-  useEditorFocusChangeEvent(host, editor, (focus) => {
-    editorFocused = focus
-  })
+  const editorFocused = useEditorFocused(host, editor)
 
   let prevSelection: Selection | undefined
 
   useEditorUpdateEvent(host, editor, (view) => {
-    const isPopoverFocused = !editorFocused && host.contains(host.ownerDocument.activeElement)
+    const isPopoverFocused = !editorFocused.get() && host.contains(host.ownerDocument.activeElement)
 
     if (isPopoverFocused) {
       return

@@ -1,10 +1,9 @@
-import { i as PropsWithElement } from "./types-VT1O6Xnr.js";
-import { t as CreateProps } from "./create-props-IUcX0Ggy.js";
+import { i as PropsWithElement } from "./types-Bx9mKDTJ.js";
+import { t as CreateProps } from "./create-props-CFK4CtjG.js";
 import { Component } from "solid-js";
 import { InlinePopoverElement, InlinePopoverEvents, InlinePopoverProps as InlinePopoverProps$1 } from "@prosekit/web/inline-popover";
 
 //#region src/components/inline-popover/inline-popover.gen.d.ts
-
 /**
  * Props for the {@link InlinePopover} component.
  */

@@ -2,7 +2,6 @@ import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { DedentListOptions, DedentListOptions as DedentListOptions$1, IndentListOptions, IndentListOptions as IndentListOptions$1, ListAttributes, ListDOMSerializer, ToggleCollapsedOptions, ToggleCollapsedOptions as ToggleCollapsedOptions$1, UnwrapListOptions, UnwrapListOptions as UnwrapListOptions$1, WrapInListGetAttrs } from "prosemirror-flat-list";
 
 //#region src/list/list-commands.d.ts
-
 /**
  * @internal
  */

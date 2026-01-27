@@ -2,7 +2,6 @@ import { PlainExtension } from "@prosekit/core";
 import { DragEventHandler, DragEventHandlerOptions, DropIndicatorPluginOptions, Line, Point, ShowHandler, ShowHandlerOptions, ViewDragging } from "prosemirror-drop-indicator";
 
 //#region src/drop-indicator/drop-indicator.d.ts
-
 /**
  * @internal
  */

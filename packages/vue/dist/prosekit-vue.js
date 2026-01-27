@@ -1,4 +1,4 @@
-import { n as useEditorContext, t as provideEditor } from "./editor-context-VOfdNrFa.js";
+import { n as useEditorContext, t as provideEditor } from "./editor-context-BfHHplRP.js";
 import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory } from "@prosemirror-adapter/vue";
 import { computed, defineComponent, h, onMounted, onUnmounted, shallowRef, toValue, triggerRef, watchPostEffect } from "vue";
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";

@@ -1,4 +1,4 @@
-import { t as useEditorExtension } from "./use-editor-extension-B_5BbYvf.js";
+import { t as useEditorExtension } from "./use-editor-extension-B2WuUfnd.js";
 import { createComputed, createSignal, defineCustomElement, registerCustomElement, useAttribute, useEffect } from "@aria-ui/core";
 import { containsInlineNode, defineFocusChangeHandler, defineKeymap, defineUpdateHandler, isInCodeBlock, isTextSelection } from "@prosekit/core";
 import { useOverlayPositionerState } from "@aria-ui/overlay/elements";

@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-BXe2FADc.js";
+import { t as createComponent } from "./create-component-_3OMD_6h.js";
 import { blockHandleAddEvents, blockHandleAddProps, blockHandleDraggableEvents, blockHandleDraggableProps, blockHandlePopoverEvents, blockHandlePopoverProps } from "@prosekit/web/block-handle";
 
 //#region src/components/block-handle/block-handle-add.gen.ts

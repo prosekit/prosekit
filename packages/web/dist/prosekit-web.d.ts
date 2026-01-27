@@ -1,7 +1,6 @@
 import { Editor, Extension } from "@prosekit/core";
 
 //#region src/queue-extension.d.ts
-
 /**
 
   @internal

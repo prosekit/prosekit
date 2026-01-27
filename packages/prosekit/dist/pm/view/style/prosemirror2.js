@@ -1,3 +1,0 @@
-import "./prosemirror.js";
-
-export {  };

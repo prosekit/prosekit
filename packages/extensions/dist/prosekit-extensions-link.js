@@ -1,7 +1,7 @@
-import { n as defineInputRule } from "./input-rule-7c-pr-os.js";
-import { t as defineEnterRule } from "./enter-rule-WLWYfm_c.js";
-import { t as defineMarkRule } from "./mark-rule-DzFK2056.js";
-import { t as defineMarkPasteRule } from "./paste-rule-CUdMLNU8.js";
+import { n as defineInputRule } from "./input-rule-COGr_GBb.js";
+import { t as defineEnterRule } from "./enter-rule-D-p4ykfv.js";
+import { t as defineMarkRule } from "./mark-rule-CYe8zk4q.js";
+import { t as defineMarkPasteRule } from "./paste-rule-CCVzbREP.js";
 import { addMark, defineCommands, defineMarkSpec, expandMark, removeMark, toggleMark, union } from "@prosekit/core";
 import { InputRule } from "@prosekit/pm/inputrules";
 

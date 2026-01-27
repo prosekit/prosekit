@@ -1,7 +1,6 @@
 import { Extension, PlainExtension, Union } from "@prosekit/core";
 
 //#region src/link/link-paste-rule.d.ts
-
 /**
  * @internal
  */

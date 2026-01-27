@@ -1,2 +1,2 @@
-import { i as createOrGetHighlighter, n as HighlighterResult, r as ShikiHighlighterOptions, t as HighlighterOptions } from "./shiki-highlighter-chunk-Rjg__sPh.js";
+import { i as createOrGetHighlighter, n as HighlighterResult, r as ShikiHighlighterOptions, t as HighlighterOptions } from "./shiki-highlighter-chunk-DNNm2Vow.js";
 export { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter };

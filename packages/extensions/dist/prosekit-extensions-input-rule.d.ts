@@ -3,7 +3,6 @@ import { InputRule } from "@prosekit/pm/inputrules";
 import { Attrs, MarkType, NodeType, ProseMirrorNode } from "@prosekit/pm/model";
 
 //#region src/input-rule/index.d.ts
-
 /**
  * Defines an input rule extension.
  *

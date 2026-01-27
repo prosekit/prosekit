@@ -1,8 +1,8 @@
-import { t as getStateWithDefaults } from "./get-default-state-Bqluw34o.js";
-import { t as useEditorExtension } from "./use-editor-extension-B_5BbYvf.js";
-import { t as getSafeEditorView } from "./get-safe-editor-view-DJlcheeV.js";
-import { n as assignStyles, t as useScrolling } from "./use-scrolling-BjI3cuLt.js";
-import { n as cloneElement, r as deepCloneElement, t as injectStyle } from "./inject-style-DYQXx-cE.js";
+import { t as getStateWithDefaults } from "./get-default-state-BzBimBWi.js";
+import { t as useEditorExtension } from "./use-editor-extension-B2WuUfnd.js";
+import { t as getSafeEditorView } from "./get-safe-editor-view-Dt9Amrcn.js";
+import { n as assignStyles, t as useScrolling } from "./use-scrolling-BOvyjDvH.js";
+import { n as cloneElement, r as deepCloneElement, t as injectStyle } from "./inject-style-BaFaVQvj.js";
 import { createComputed, createContext, createSignal, defineCustomElement, defineEmit, registerCustomElement, useAttribute, useEffect, useEventListener } from "@aria-ui/core";
 import { defineDOMEventHandler, union } from "@prosekit/core";
 import { useOverlayPositionerState } from "@aria-ui/overlay/elements";
@@ -368,14 +368,14 @@ function useUpdatePreviewPosition(host, editor) {
 		if (!relatedDOMs) return;
 		const { cell } = relatedDOMs;
 		let cancelled = false;
-		computePosition(getVirtualElement(cell, x, y), host, { placement: direction === "row" ? "right" : "bottom" }).then(({ x: x$1, y: y$1 }) => {
+		computePosition(getVirtualElement(cell, x, y), host, { placement: direction === "row" ? "right" : "bottom" }).then(({ x, y }) => {
 			if (cancelled) return;
 			if (direction === "row") {
-				assignStyles(host, { top: `${y$1}px` });
+				assignStyles(host, { top: `${y}px` });
 				return;
 			}
 			if (direction === "col") {
-				assignStyles(host, { left: `${x$1}px` });
+				assignStyles(host, { left: `${x}px` });
 				return;
 			}
 		});
@@ -459,13 +459,13 @@ function findDragOverElement(elements, pointer, axis) {
 	const startProp = axis === "x" ? "left" : "top";
 	const endProp = axis === "x" ? "right" : "bottom";
 	const lastIndex = elements.length - 1;
-	const index = elements.findIndex((el, index$1) => {
+	const index = elements.findIndex((el, index) => {
 		const rect = el.getBoundingClientRect();
 		const boundaryStart = rect[startProp];
 		const boundaryEnd = rect[endProp];
 		if (boundaryStart <= pointer && pointer <= boundaryEnd) return true;
-		if (index$1 === lastIndex && pointer > boundaryEnd) return true;
-		if (index$1 === 0 && pointer < boundaryStart) return true;
+		if (index === lastIndex && pointer > boundaryEnd) return true;
+		if (index === 0 && pointer < boundaryStart) return true;
 		return false;
 	});
 	return index >= 0 ? [elements[index], index] : void 0;
@@ -514,7 +514,7 @@ function useUpdateIndicatorPosition(host, editor, handleWidth) {
 			cancelled = true;
 		};
 		if (direction === "col") {
-			const direction$1 = startXSignal.get() > x ? "left" : "right";
+			const direction = startXSignal.get() > x ? "left" : "right";
 			const dragOverColumn = getDragOverColumn(table, x);
 			if (dragOverColumn) {
 				const [col, index] = dragOverColumn;
@@ -523,17 +523,17 @@ function useUpdateIndicatorPosition(host, editor, handleWidth) {
 					droppingIndex: index
 				});
 				computePosition(col, host, {
-					placement: direction$1 === "left" ? "left" : "right",
-					middleware: [offset(direction$1 === "left" ? -1 * handleWidth : 0)]
-				}).then(({ x: x$1 }) => {
+					placement: direction === "left" ? "left" : "right",
+					middleware: [offset(direction === "left" ? -1 * handleWidth : 0)]
+				}).then(({ x }) => {
 					if (cancelled) return;
-					assignStyles(host, { left: `${x$1}px` });
+					assignStyles(host, { left: `${x}px` });
 				});
 			}
 			return cleanup;
 		}
 		if (direction === "row") {
-			const direction$1 = startYSignal.get() > y ? "up" : "down";
+			const direction = startYSignal.get() > y ? "up" : "down";
 			const dragOverRow = getDragOverRow(table, y);
 			if (dragOverRow) {
 				const [row, index] = dragOverRow;
@@ -542,11 +542,11 @@ function useUpdateIndicatorPosition(host, editor, handleWidth) {
 					droppingIndex: index
 				});
 				computePosition(row, host, {
-					placement: direction$1 === "up" ? "top" : "bottom",
-					middleware: [offset(direction$1 === "up" ? -1 * handleWidth : 0)]
-				}).then(({ y: y$1 }) => {
+					placement: direction === "up" ? "top" : "bottom",
+					middleware: [offset(direction === "up" ? -1 * handleWidth : 0)]
+				}).then(({ y }) => {
 					if (cancelled) return;
-					assignStyles(host, { top: `${y$1}px` });
+					assignStyles(host, { top: `${y}px` });
 				});
 			}
 			return cleanup;

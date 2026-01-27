@@ -1,4 +1,4 @@
-import { A as ExtractMarks, B as NodeTyping, C as StepJSON, D as ExtractCommandCreators, E as ExtractCommandActions, F as Union, G as CommandCreator, H as MarkTyping, I as SimplifyUnion, J as NodeAction, K as CommandTyping, L as SimplifyDeeper, M as ExtractNodes, N as ExtractTyping, O as ExtractCommands, P as PlainExtension, R as Priority, S as StateJSON, T as ExtensionTyping, U as ToMarkAction, V as ToNodeAction, W as CommandAction, X as AnyAttrs, Y as NodeChild, Z as AttrSpec, _ as nodeFromHTML, a as DOMDocumentOptions, b as NodeJSON, c as JSONParserOptions, d as htmlFromJSON, f as htmlFromNode, g as nodeFromElement, h as jsonFromState, i as createEditor, j as ExtractNodeActions, k as ExtractMarkActions, l as elementFromJSON, m as jsonFromNode, o as DOMParserOptions, p as jsonFromHTML, q as MarkAction, r as EditorOptions, s as DOMSerializerOptions, t as Editor, u as elementFromNode, v as nodeFromJSON, w as Extension, x as SelectionJSON, y as stateFromJSON, z as PickSubType } from "./editor-4lgGc3CY.js";
+import { A as ExtractMarks, B as NodeTyping, C as StepJSON, D as ExtractCommandCreators, E as ExtractCommandActions, F as Union, G as CommandCreator, H as MarkTyping, I as SimplifyUnion, J as NodeAction, K as CommandTyping, L as SimplifyDeeper, M as ExtractNodes, N as ExtractTyping, O as ExtractCommands, P as PlainExtension, R as Priority, S as StateJSON, T as ExtensionTyping, U as ToMarkAction, V as ToNodeAction, W as CommandAction, X as AnyAttrs, Y as NodeChild, Z as AttrSpec, _ as nodeFromHTML, a as DOMDocumentOptions, b as NodeJSON, c as JSONParserOptions, d as htmlFromJSON, f as htmlFromNode, g as nodeFromElement, h as jsonFromState, i as createEditor, j as ExtractNodeActions, k as ExtractMarkActions, l as elementFromJSON, m as jsonFromNode, o as DOMParserOptions, p as jsonFromHTML, q as MarkAction, r as EditorOptions, s as DOMSerializerOptions, t as Editor, u as elementFromNode, v as nodeFromJSON, w as Extension, x as SelectionJSON, y as stateFromJSON, z as PickSubType } from "./editor-BULC1zqX.js";
 import { AllSelection, Command, EditorState, EditorStateConfig, NodeSelection, Plugin, Selection, TextSelection, Transaction } from "@prosekit/pm/state";
 import { Attrs, ContentMatch, DOMSerializer, Fragment, Mark, MarkSpec, MarkType, Node, NodeSpec, NodeType, ProseMirrorNode, ResolvedPos, Schema, Slice } from "@prosekit/pm/model";
 import { ObjectEntries } from "@ocavue/utils";
@@ -973,7 +973,7 @@ declare function defineBaseKeymap({
 /**
  * @public
  */
-interface MarkSpecOptions<MarkName extends string = string, Attrs$1 extends AnyAttrs = AnyAttrs> extends MarkSpec {
+interface MarkSpecOptions<MarkName extends string = string, Attrs extends AnyAttrs = AnyAttrs> extends MarkSpec {
   /**
    * The name of the mark type.
    */
@@ -981,7 +981,7 @@ interface MarkSpecOptions<MarkName extends string = string, Attrs$1 extends AnyA
   /**
    * The attributes that marks of this type get.
    */
-  attrs?: { [K in keyof Attrs$1]: AttrSpec<Attrs$1[K]> };
+  attrs?: { [K in keyof Attrs]: AttrSpec<Attrs[K]> };
 }
 /**
  * @public
@@ -1029,14 +1029,14 @@ interface MarkAttrOptions<MarkName extends string = string, AttrName extends str
  * })
  * ```
  */
-declare function defineMarkSpec<Mark$1 extends string, Attrs$1 extends AnyAttrs = AnyAttrs>(options: MarkSpecOptions<Mark$1, Attrs$1>): Extension<{
-  Marks: { [K in Mark$1]: Attrs$1 };
+declare function defineMarkSpec<Mark extends string, Attrs extends AnyAttrs = AnyAttrs>(options: MarkSpecOptions<Mark, Attrs>): Extension<{
+  Marks: { [K in Mark]: Attrs };
 }>;
 /**
  * @public
  */
-declare function defineMarkAttr<MarkType$1 extends string = string, AttrName extends string = string, AttrType = any>(options: MarkAttrOptions<MarkType$1, AttrName, AttrType>): Extension<{
-  Marks: { [K in MarkType$1]: AttrType };
+declare function defineMarkAttr<MarkType extends string = string, AttrName extends string = string, AttrType = any>(options: MarkAttrOptions<MarkType, AttrName, AttrType>): Extension<{
+  Marks: { [K in MarkType]: AttrType };
 }>;
 //#endregion
 //#region src/extensions/mark-view.d.ts
@@ -1075,7 +1075,7 @@ declare function defineMarkViewComponent<T>(options: MarkViewComponentOptions<T>
 /**
  * @public
  */
-interface NodeSpecOptions<NodeName extends string = string, Attrs$1 extends AnyAttrs = AnyAttrs> extends NodeSpec {
+interface NodeSpecOptions<NodeName extends string = string, Attrs extends AnyAttrs = AnyAttrs> extends NodeSpec {
   /**
    * The name of the node type.
    */
@@ -1088,7 +1088,7 @@ interface NodeSpecOptions<NodeName extends string = string, Attrs$1 extends AnyA
   /**
    * The attributes that nodes of this type get.
    */
-  attrs?: { [key in keyof Attrs$1]: AttrSpec<Attrs$1[key]> };
+  attrs?: { [key in keyof Attrs]: AttrSpec<Attrs[key]> };
 }
 /**
  * @public
@@ -1143,16 +1143,16 @@ interface NodeAttrOptions<NodeName extends string = string, AttrName extends str
  * })
  * ```
  */
-declare function defineNodeSpec<Node$1 extends string, Attrs$1 extends AnyAttrs = AnyAttrs>(options: NodeSpecOptions<Node$1, Attrs$1>): Extension<{
-  Nodes: { [K in Node$1]: Attrs$1 };
+declare function defineNodeSpec<Node extends string, Attrs extends AnyAttrs = AnyAttrs>(options: NodeSpecOptions<Node, Attrs>): Extension<{
+  Nodes: { [K in Node]: Attrs };
 }>;
 /**
  * Defines an attribute for a node type.
  *
  * @public
  */
-declare function defineNodeAttr<NodeType$1 extends string = string, AttrName extends string = string, AttrType = any>(options: NodeAttrOptions<NodeType$1, AttrName, AttrType>): Extension<{
-  Nodes: { [K in NodeType$1]: { [K in AttrName]: AttrType } };
+declare function defineNodeAttr<NodeType extends string = string, AttrName extends string = string, AttrType = any>(options: NodeAttrOptions<NodeType, AttrName, AttrType>): Extension<{
+  Nodes: { [K in NodeType]: { [K in AttrName]: AttrType } };
 }>;
 //#endregion
 //#region src/extensions/node-view.d.ts
@@ -1303,10 +1303,12 @@ declare function findParentNode(
 /**
  * The predicate to test the parent node.
  */
+
 predicate: (node: ProseMirrorNode) => boolean,
 /**
  * The position to start searching from.
  */
+
 $pos: ResolvedPos): FindParentNodeResult | undefined;
 //#endregion
 //#region src/utils/find-parent-node-of-type.d.ts
@@ -1319,10 +1321,12 @@ declare function findParentNodeOfType(
 /**
  * The type of the node to find.
  */
+
 type: string | NodeType | string[] | NodeType[],
 /**
  * The position to start searching from.
  */
+
 $pos: ResolvedPos): FindParentNodeResult | undefined;
 //#endregion
 //#region src/utils/get-mark-type.d.ts

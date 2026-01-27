@@ -1,10 +1,9 @@
-import { i as PropsWithElement } from "./types-VT1O6Xnr.js";
-import { t as CreateProps } from "./create-props-IUcX0Ggy.js";
+import { i as PropsWithElement } from "./types-Bx9mKDTJ.js";
+import { t as CreateProps } from "./create-props-CFK4CtjG.js";
 import { Component } from "solid-js";
 import { TooltipContentElement, TooltipContentEvents, TooltipContentProps as TooltipContentProps$1, TooltipRootElement, TooltipRootEvents, TooltipRootProps as TooltipRootProps$1, TooltipTriggerElement, TooltipTriggerEvents, TooltipTriggerProps as TooltipTriggerProps$1 } from "@prosekit/web/tooltip";
 
 //#region src/components/tooltip/tooltip-content.gen.d.ts
-
 /**
  * Props for the {@link TooltipContent} component.
  */

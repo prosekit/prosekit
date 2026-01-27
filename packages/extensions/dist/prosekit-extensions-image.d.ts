@@ -1,10 +1,9 @@
-import { l as FileDropHandlerOptions, n as UploadTask, o as FilePasteHandlerOptions, r as Uploader } from "./index-B2rmvf-N.js";
+import { l as FileDropHandlerOptions, n as UploadTask, o as FilePasteHandlerOptions, r as Uploader } from "./index-cp1u4e0e.js";
 import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { Command } from "@prosekit/pm/state";
 import { EditorView } from "@prosekit/pm/view";
 
 //#region src/image/image-commands/upload-image.d.ts
-
 /**
  * Options for {@link uploadImage}.
  *

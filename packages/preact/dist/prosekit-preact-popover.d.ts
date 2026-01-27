@@ -1,9 +1,8 @@
-import { t as CreateProps } from "./create-props-DTgCRwCm.js";
+import { t as CreateProps } from "./create-props-PUVFMh9y.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { PopoverContentElement, PopoverContentEvents, PopoverContentProps as PopoverContentProps$1, PopoverRootElement, PopoverRootEvents, PopoverRootProps as PopoverRootProps$1, PopoverTriggerElement, PopoverTriggerEvents, PopoverTriggerProps as PopoverTriggerProps$1 } from "@prosekit/web/popover";
 
 //#region src/components/popover/popover-content.gen.d.ts
-
 /**
  * Props for the {@link PopoverContent} component.
  */

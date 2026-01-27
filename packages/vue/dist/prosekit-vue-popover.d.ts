@@ -1,9 +1,8 @@
-import { t as CreateEmits } from "./create-emits-DKn_hT7W.js";
+import { t as CreateEmits } from "./create-emits-B8725q2G.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { PopoverContentEvents, PopoverContentProps as PopoverContentProps$1, PopoverRootEvents, PopoverRootProps as PopoverRootProps$1, PopoverTriggerEvents, PopoverTriggerProps as PopoverTriggerProps$1 } from "@prosekit/web/popover";
 
 //#region src/components/popover/popover-content.gen.d.ts
-
 /**
  * Props for the {@link PopoverContent} component.
  */

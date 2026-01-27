@@ -91,6 +91,7 @@ declare function useExtension(
  * The extension to add to the editor. If it changes, the previous
  * extension will be removed and the new one (if not null) will be added.
  */
+
 extension: Extension | null, options?: UseExtensionOptions): void;
 //#endregion
 //#region src/hooks/use-doc-change.d.ts
@@ -145,6 +146,7 @@ declare function useEditorDerivedValue<E extends Extension, Derived>(
  *
  * This function should be memoized.
  */
+
 derive: (editor: Editor<E>) => Derived, options?: UseEditorDerivedOptions<E>): Derived;
 //#endregion
 //#region src/hooks/use-keymap.d.ts

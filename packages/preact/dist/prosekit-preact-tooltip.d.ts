@@ -1,9 +1,8 @@
-import { t as CreateProps } from "./create-props-DTgCRwCm.js";
+import { t as CreateProps } from "./create-props-PUVFMh9y.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { TooltipContentElement, TooltipContentEvents, TooltipContentProps as TooltipContentProps$1, TooltipRootElement, TooltipRootEvents, TooltipRootProps as TooltipRootProps$1, TooltipTriggerElement, TooltipTriggerEvents, TooltipTriggerProps as TooltipTriggerProps$1 } from "@prosekit/web/tooltip";
 
 //#region src/components/tooltip/tooltip-content.gen.d.ts
-
 /**
  * Props for the {@link TooltipContent} component.
  */

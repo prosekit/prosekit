@@ -2,7 +2,6 @@ import { Extension, Union } from "@prosekit/core";
 import { Command } from "@prosekit/pm/state";
 
 //#region src/text-color/text-color-spec.d.ts
-
 /**
  * Attributes for the `textColor` mark.
  *

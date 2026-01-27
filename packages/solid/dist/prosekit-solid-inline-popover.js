@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-vaTWjW5Y.js";
+import { t as createComponent } from "./create-component-B7NzEJxP.js";
 import { inlinePopoverEvents, inlinePopoverProps } from "@prosekit/web/inline-popover";
 
 //#region src/components/inline-popover/inline-popover.gen.ts

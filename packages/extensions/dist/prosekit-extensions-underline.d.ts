@@ -2,7 +2,6 @@ import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { Attrs } from "@prosekit/pm/model";
 
 //#region src/underline/index.d.ts
-
 /**
  * @internal
  */

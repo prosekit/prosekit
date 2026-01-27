@@ -1,4 +1,4 @@
-import { n as defineInputRule } from "./input-rule-7c-pr-os.js";
+import { n as defineInputRule } from "./input-rule-COGr_GBb.js";
 import { defineCommands, defineNodeSpec, getNodeType, union } from "@prosekit/core";
 import { InputRule } from "@prosekit/pm/inputrules";
 import { Fragment, Slice } from "@prosekit/pm/model";

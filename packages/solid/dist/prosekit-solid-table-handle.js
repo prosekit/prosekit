@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-vaTWjW5Y.js";
+import { t as createComponent } from "./create-component-B7NzEJxP.js";
 import { tableHandleColumnRootEvents, tableHandleColumnRootProps, tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, tableHandleDragPreviewEvents, tableHandleDragPreviewProps, tableHandleDropIndicatorEvents, tableHandleDropIndicatorProps, tableHandlePopoverContentEvents, tableHandlePopoverContentProps, tableHandlePopoverItemEvents, tableHandlePopoverItemProps, tableHandleRootEvents, tableHandleRootProps, tableHandleRowRootEvents, tableHandleRowRootProps, tableHandleRowTriggerEvents, tableHandleRowTriggerProps } from "@prosekit/web/table-handle";
 
 //#region src/components/table-handle/table-handle-column-root.gen.ts

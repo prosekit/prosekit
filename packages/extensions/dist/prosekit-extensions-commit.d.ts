@@ -3,7 +3,6 @@ import { Transaction } from "@prosekit/pm/state";
 import { ProseMirrorNode } from "@prosekit/pm/model";
 
 //#region src/commit/index.d.ts
-
 /**
  * A JSON representation of a commit.
  */

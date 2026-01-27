@@ -2,7 +2,6 @@ import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { Command } from "@prosekit/pm/state";
 
 //#region src/text-align/index.d.ts
-
 /**
  * @public
  */

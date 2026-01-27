@@ -52,7 +52,7 @@ function defineLoroUndoPlugin(options) {
 * @public
 */
 function defineLoro(options) {
-	const { doc, awareness, presence, sync, undo: undo$1, cursor } = options;
+	const { doc, awareness, presence, sync, undo, cursor } = options;
 	return withPriority(union([
 		defineLoroKeymap(),
 		defineLoroCommands(),
@@ -62,7 +62,7 @@ function defineLoro(options) {
 			presence
 		}),
 		defineLoroUndoPlugin({
-			...undo$1,
+			...undo,
 			doc
 		}),
 		defineLoroSyncPlugin({

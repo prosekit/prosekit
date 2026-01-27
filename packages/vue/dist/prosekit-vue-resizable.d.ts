@@ -1,9 +1,8 @@
-import { t as CreateEmits } from "./create-emits-DKn_hT7W.js";
+import { t as CreateEmits } from "./create-emits-B8725q2G.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { ResizableHandleEvents, ResizableHandleProps as ResizableHandleProps$1, ResizableRootEvents, ResizableRootProps as ResizableRootProps$1 } from "@prosekit/web/resizable";
 
 //#region src/components/resizable/resizable-handle.gen.d.ts
-
 /**
  * Props for the {@link ResizableHandle} component.
  */

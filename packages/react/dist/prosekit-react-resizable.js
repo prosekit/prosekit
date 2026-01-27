@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-2Ndxkk5s.js";
+import { t as createComponent } from "./create-component-D8vvwyIA.js";
 import { resizableHandleEvents, resizableHandleProps, resizableRootEvents, resizableRootProps } from "@prosekit/web/resizable";
 
 //#region src/components/resizable/resizable-handle.gen.ts

@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-BXe2FADc.js";
+import { t as createComponent } from "./create-component-_3OMD_6h.js";
 import { dropIndicatorEvents, dropIndicatorProps } from "@prosekit/web/drop-indicator";
 
 //#region src/components/drop-indicator/drop-indicator.gen.ts

@@ -1,7 +1,6 @@
 import { PlainExtension } from "@prosekit/core";
 
 //#region src/virtual-selection/index.d.ts
-
 /**
  * @internal
  */

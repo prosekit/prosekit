@@ -1,1 +1,1 @@
-{"version":3,"file":"prosekit-extensions-drop-indicator.d.ts","names":[],"sources":["../src/drop-indicator/drop-indicator.ts"],"sourcesContent":[],"mappings":";;;;;;;AAQA;AAegB,KAfJ,sBAAA,GAAyB,cAgBzB;AAUZ;;;;;;;;;;;;;iBAXgB,mBAAA,WACJ,uBACT;;;;;;UASc,oBAAA,SAA6B"}
+{"version":3,"file":"prosekit-extensions-drop-indicator.d.ts","names":[],"sources":["../src/drop-indicator/drop-indicator.ts"],"mappings":";;;;;;AAQA;KAAY,sBAAA,GAAyB,cAAA;;;;AAerC;;;;;;;;;AAWA;iBAXgB,mBAAA,CACd,OAAA,GAAU,oBAAA,GACT,sBAAA;;;;;;UASc,oBAAA,SAA6B,0BAAA"}

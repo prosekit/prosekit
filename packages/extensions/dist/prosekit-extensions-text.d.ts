@@ -2,7 +2,6 @@ import { Extension } from "@prosekit/core";
 import { Attrs } from "@prosekit/pm/model";
 
 //#region src/text/index.d.ts
-
 /**
  * @internal
  */

@@ -1,4 +1,4 @@
-import { r as defineMarkInputRule } from "./input-rule-7c-pr-os.js";
+import { r as defineMarkInputRule } from "./input-rule-COGr_GBb.js";
 import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, toggleMark, union } from "@prosekit/core";
 
 //#region src/italic/italic-commands.ts

@@ -1,1 +1,1 @@
-{"version":3,"file":"prosekit-extensions-readonly.d.ts","names":[],"sources":["../src/readonly/index.ts"],"sourcesContent":[],"mappings":";;;;;;AAYA;iBAAgB,cAAA,CAAA,GAAkB"}
+{"version":3,"file":"prosekit-extensions-readonly.d.ts","names":[],"sources":["../src/readonly/index.ts"],"mappings":";;;;;AAYA;iBAAgB,cAAA,CAAA,GAAkB,cAAA"}

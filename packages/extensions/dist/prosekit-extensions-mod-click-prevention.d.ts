@@ -1,7 +1,6 @@
 import { PlainExtension } from "@prosekit/core";
 
 //#region src/mod-click-prevention/index.d.ts
-
 /**
  * @internal
  */

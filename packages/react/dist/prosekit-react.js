@@ -1,4 +1,4 @@
-import { n as useEditorContext, t as EditorContextProvider } from "./editor-context-BWfqo5wj.js";
+import { n as useEditorContext, t as EditorContextProvider } from "./editor-context-DHjS00Fa.js";
 import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory } from "@prosemirror-adapter/react";
 import { createElement, useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useSyncExternalStore } from "react";
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";

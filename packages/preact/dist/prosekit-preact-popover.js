@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-BXe2FADc.js";
+import { t as createComponent } from "./create-component-_3OMD_6h.js";
 import { popoverContentEvents, popoverContentProps, popoverRootEvents, popoverRootProps, popoverTriggerEvents, popoverTriggerProps } from "@prosekit/web/popover";
 
 //#region src/components/popover/popover-content.gen.ts

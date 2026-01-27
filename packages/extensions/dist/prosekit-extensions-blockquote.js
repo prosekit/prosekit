@@ -1,4 +1,4 @@
-import { a as defineWrappingInputRule } from "./input-rule-7c-pr-os.js";
+import { a as defineWrappingInputRule } from "./input-rule-COGr_GBb.js";
 import { defineCommands, defineKeymap, defineNodeSpec, insertNode, isAtBlockStart, toggleWrap, union, wrap } from "@prosekit/core";
 import { joinBackward } from "@prosekit/pm/commands";
 

@@ -1,7 +1,6 @@
 import { PlainExtension } from "@prosekit/core";
 
 //#region src/gap-cursor/gap-cursor.d.ts
-
 /**
  * @internal
  */

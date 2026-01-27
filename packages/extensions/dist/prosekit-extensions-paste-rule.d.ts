@@ -3,7 +3,6 @@ import { EditorView } from "@prosekit/pm/view";
 import { Attrs, MarkType, ProseMirrorNode, Slice } from "@prosekit/pm/model";
 
 //#region src/paste-rule/mark-paste-rule.d.ts
-
 /**
  * The options for {@link defineMarkPasteRule}.
  *

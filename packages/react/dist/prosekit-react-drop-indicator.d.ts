@@ -1,9 +1,8 @@
-import { t as CreateProps } from "./create-props-DTgCRwCm.js";
+import { t as CreateProps } from "./create-props-PUVFMh9y.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 import { DropIndicatorElement, DropIndicatorEvents, DropIndicatorProps as DropIndicatorProps$1 } from "@prosekit/web/drop-indicator";
 
 //#region src/components/drop-indicator/drop-indicator.gen.d.ts
-
 /**
  * Props for the {@link DropIndicator} component.
  */

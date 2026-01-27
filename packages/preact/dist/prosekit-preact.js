@@ -1,4 +1,4 @@
-import { n as useEditorContext, t as EditorContextProvider } from "./editor-context-Ns6wbE1p.js";
+import { n as useEditorContext, t as EditorContextProvider } from "./editor-context-DJZHNwgB.js";
 import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory } from "@prosemirror-adapter/preact";
 import { h } from "preact";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef } from "preact/hooks";

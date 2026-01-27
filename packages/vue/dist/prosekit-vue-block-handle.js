@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-c9woOlZn.js";
+import { t as createComponent } from "./create-component-BREKWlWW.js";
 import { blockHandleAddEvents, blockHandleAddProps, blockHandleDraggableEvents, blockHandleDraggableProps, blockHandlePopoverEvents, blockHandlePopoverProps } from "@prosekit/web/block-handle";
 
 //#region src/components/block-handle/block-handle-add.gen.ts

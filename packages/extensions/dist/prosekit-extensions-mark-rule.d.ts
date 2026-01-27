@@ -2,7 +2,6 @@ import { PlainExtension } from "@prosekit/core";
 import { Attrs, MarkType } from "@prosekit/pm/model";
 
 //#region src/mark-rule/types.d.ts
-
 /**
  * The options for {@link defineMarkRule}.
  *

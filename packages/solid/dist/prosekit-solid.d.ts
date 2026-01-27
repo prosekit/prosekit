@@ -1,4 +1,4 @@
-import { i as PropsWithElement, n as PropsWithChildren, r as PropsWithClass, t as MaybeAccessor } from "./types-VT1O6Xnr.js";
+import { i as PropsWithElement, n as PropsWithChildren, r as PropsWithClass, t as MaybeAccessor } from "./types-Bx9mKDTJ.js";
 import { MarkViewContextProps, NodeViewContextProps } from "@prosemirror-adapter/solid";
 import { Accessor, Component, ParentProps } from "solid-js";
 import { Editor, Extension, Keymap, Priority } from "@prosekit/core";
@@ -91,6 +91,7 @@ declare function useExtension(
  * The accessor to an extension to add to the editor. If it changes, the previous
  * extension will be removed and the new one (if not null) will be added.
  */
+
 extension: Accessor<Extension | null>, options?: UseExtensionOptions): void;
 //#endregion
 //#region src/hooks/use-doc-change.d.ts
@@ -144,6 +145,7 @@ declare function useEditorDerivedValue<E extends Extension, Derived>(
  * It will be called whenever the editor's document state changes, or when it
  * mounts.
  */
+
 derive: (editor: Editor<E>) => Derived, options?: UseEditorDerivedOptions<E>): Accessor<Derived>;
 //#endregion
 //#region src/hooks/use-keymap.d.ts

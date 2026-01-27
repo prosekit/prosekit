@@ -3,7 +3,6 @@ import { EditorState, Transaction } from "@prosekit/pm/state";
 import { Attrs, NodeType } from "@prosekit/pm/model";
 
 //#region src/enter-rule/index.d.ts
-
 /**
  * @public
  *

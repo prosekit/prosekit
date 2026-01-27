@@ -21,7 +21,6 @@ import { UnderlineExtension } from "@prosekit/extensions/underline";
 import { VirtualSelectionExtension } from "@prosekit/extensions/virtual-selection";
 
 //#region src/index.d.ts
-
 /**
  * @internal
  */

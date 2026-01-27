@@ -1,4 +1,4 @@
-import { A as isFragment, B as getMarkType, C as defineFacetPayload, D as Priority, E as defineFacet, F as isSelection, H as ProseKitError, I as isSlice, L as isTextSelection, M as isNodeSelection, N as isNotNullish, O as isNodeActive, P as isProseMirrorNode, R as getNodeType, S as stateFacet, T as rootFacet, V as EditorNotFoundError, _ as jsonFromState, a as union, b as nodeFromJSON, c as isMarkActive, d as elementFromJSON, f as elementFromNode, g as jsonFromNode, h as jsonFromHTML, j as isMark, k as isAllSelection, l as isMarkAbsent, m as htmlFromNode, p as htmlFromJSON, r as createEditor, t as Editor, u as defineDefaultState, v as nodeFromElement, w as schemaFacet, x as stateFromJSON, y as nodeFromHTML, z as assert } from "./editor-CenJv9UJ.js";
+import { A as isFragment, B as getMarkType, C as defineFacetPayload, D as Priority, E as defineFacet, F as isSelection, H as ProseKitError, I as isSlice, L as isTextSelection, M as isNodeSelection, N as isNotNullish, O as isNodeActive, P as isProseMirrorNode, R as getNodeType, S as stateFacet, T as rootFacet, V as EditorNotFoundError, _ as jsonFromState, a as union, b as nodeFromJSON, c as isMarkActive, d as elementFromJSON, f as elementFromNode, g as jsonFromNode, h as jsonFromHTML, j as isMark, k as isAllSelection, l as isMarkAbsent, m as htmlFromNode, p as htmlFromJSON, r as createEditor, t as Editor, u as defineDefaultState, v as nodeFromElement, w as schemaFacet, x as stateFromJSON, y as nodeFromHTML, z as assert } from "./editor-Dw2IP-zb.js";
 import { Plugin, PluginKey, ProseMirrorPlugin, TextSelection } from "@prosekit/pm/state";
 import { DOMSerializer, Fragment, Slice } from "@prosekit/pm/model";
 import { ReplaceAroundStep, dropPoint, findWrapping } from "@prosekit/pm/transform";
@@ -576,7 +576,7 @@ const pluginFacet = defineFacet({
 //#endregion
 //#region src/extensions/clipboard-serializer.ts
 function mergeWrappers(wrappers) {
-	return (fn) => wrappers.filter(isNotNullish).reduce((fn$1, wrapper) => wrapper(fn$1), fn);
+	return (fn) => wrappers.filter(isNotNullish).reduce((fn, wrapper) => wrapper(fn), fn);
 }
 function wrapFunction(fn, wrapper) {
 	return wrapper ? wrapper(fn) : fn;
@@ -588,11 +588,11 @@ var CustomDOMSerializer = class extends DOMSerializer {
 		this.serializeNodeWrapper = serializeNodeWrapper;
 	}
 	serializeFragment(...args) {
-		const fn = (...args$1) => super.serializeFragment(...args$1);
+		const fn = (...args) => super.serializeFragment(...args);
 		return wrapFunction(fn, this.serializeFragmentWrapper)(...args);
 	}
 	serializeNode(...args) {
-		const fn = (...args$1) => super.serializeNode(...args$1);
+		const fn = (...args) => super.serializeNode(...args);
 		return wrapFunction(fn, this.serializeNodeWrapper)(...args);
 	}
 };
@@ -657,8 +657,8 @@ const commandFacet = defineFacet({
 
 //#endregion
 //#region src/extensions/command.ts
-function defineCommands(commands$1) {
-	return defineFacetPayload(commandFacet, [commands$1]);
+function defineCommands(commands) {
+	return defineFacetPayload(commandFacet, [commands]);
 }
 /**
 * Add some base commands
@@ -724,8 +724,8 @@ const pluginViewFacet = defineFacet({
 			view: (view) => {
 				mountHandlers.forEach((fn) => fn(view));
 				return {
-					update: (view$1, prevState) => {
-						updateHandlers.forEach((fn) => fn(view$1, prevState));
+					update: (view, prevState) => {
+						updateHandlers.forEach((fn) => fn(view, prevState));
 					},
 					destroy: () => {
 						unmountHandlers.forEach((fn) => fn());
@@ -1034,8 +1034,8 @@ const isApple = typeof navigator !== "undefined" ? /Mac|iP(hone|[ao]d)/.test(nav
 *
 * @public
 */
-function defineKeymap(keymap$1) {
-	return defineFacetPayload(keymapFacet, [keymap$1]);
+function defineKeymap(keymap) {
+	return defineFacetPayload(keymapFacet, [keymap]);
 }
 /**
 * @internal
@@ -1337,7 +1337,7 @@ const markViewFactoryFacet = defineFacet({
 		const factories = inputs.map((x) => x[0]).filter(isNotNullish);
 		const options = inputs.map((x) => x[1]).filter(isNotNullish);
 		for (const { group, name, args } of options) {
-			const factory = factories.find((factory$1) => factory$1.group === group);
+			const factory = factories.find((factory) => factory.group === group);
 			if (!factory) continue;
 			markViews[name] = factory.factory(args);
 		}
@@ -1459,7 +1459,7 @@ const nodeViewFactoryFacet = defineFacet({
 		const factories = inputs.map((x) => x[0]).filter(isNotNullish);
 		const options = inputs.map((x) => x[1]).filter(isNotNullish);
 		for (const { group, name, args } of options) {
-			const factory = factories.find((factory$1) => factory$1.group === group);
+			const factory = factories.find((factory) => factory.group === group);
 			if (!factory) continue;
 			nodeViews[name] = factory.factory(args);
 		}
@@ -1478,7 +1478,7 @@ const nodeViewFactoryFacet = defineFacet({
 */
 const canUseRegexLookbehind = once(() => {
 	try {
-		return "ab".replace(new RegExp("(?<=a)b", "g"), "c") === "ac";
+		return "ab".replace(/* @__PURE__ */ new RegExp("(?<=a)b", "g"), "c") === "ac";
 	} catch {
 		return false;
 	}

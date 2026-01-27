@@ -1,9 +1,8 @@
-import { t as CreateEmits } from "./create-emits-DKn_hT7W.js";
+import { t as CreateEmits } from "./create-emits-B8725q2G.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { DropIndicatorEvents, DropIndicatorProps as DropIndicatorProps$1 } from "@prosekit/web/drop-indicator";
 
 //#region src/components/drop-indicator/drop-indicator.gen.d.ts
-
 /**
  * Props for the {@link DropIndicator} component.
  */

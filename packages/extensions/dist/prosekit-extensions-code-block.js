@@ -1,5 +1,5 @@
-import { i as defineTextBlockInputRule } from "./input-rule-7c-pr-os.js";
-import { n as defineTextBlockEnterRule } from "./enter-rule-WLWYfm_c.js";
+import { i as defineTextBlockInputRule } from "./input-rule-COGr_GBb.js";
+import { n as defineTextBlockEnterRule } from "./enter-rule-D-p4ykfv.js";
 import { defaultBlockAt, defineCommands, defineKeymap, defineNodeSpec, definePlugin, insertNode, setBlockType, setNodeAttrs, toggleNode, union } from "@prosekit/core";
 import { TextSelection } from "@prosekit/pm/state";
 import { createHighlightPlugin } from "prosemirror-highlight";
@@ -194,8 +194,8 @@ function defineCodeBlockHighlight({ parser }) {
 //#region src/code-block/shiki-highlighter.ts
 let loaded;
 async function load() {
-	const { createOrGetHighlighter: createOrGetHighlighter$1 } = await import("./shiki-highlighter-chunk.js");
-	loaded = createOrGetHighlighter$1;
+	const { createOrGetHighlighter } = await import("./shiki-highlighter-chunk.js");
+	loaded = createOrGetHighlighter;
 }
 function createOrGetHighlighter(options) {
 	if (!loaded) return { promise: load() };

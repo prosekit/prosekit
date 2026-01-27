@@ -1,9 +1,8 @@
-import { t as CreateEmits } from "./create-emits-DKn_hT7W.js";
+import { t as CreateEmits } from "./create-emits-B8725q2G.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { AutocompleteEmptyEvents, AutocompleteEmptyProps as AutocompleteEmptyProps$1, AutocompleteItemEvents, AutocompleteItemProps as AutocompleteItemProps$1, AutocompleteListEvents, AutocompleteListProps as AutocompleteListProps$1, AutocompletePopoverEvents, AutocompletePopoverProps as AutocompletePopoverProps$1 } from "@prosekit/web/autocomplete";
 
 //#region src/components/autocomplete/autocomplete-empty.gen.d.ts
-
 /**
  * Props for the {@link AutocompleteEmpty} component.
  */

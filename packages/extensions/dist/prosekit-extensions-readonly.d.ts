@@ -1,7 +1,6 @@
 import { PlainExtension } from "@prosekit/core";
 
 //#region src/readonly/index.d.ts
-
 /**
  * Make the editor read-only.
  */

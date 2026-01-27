@@ -1,5 +1,5 @@
-import { t as useEditorExtension } from "./use-editor-extension-B_5BbYvf.js";
-import { n as assignStyles, t as useScrolling } from "./use-scrolling-BjI3cuLt.js";
+import { t as useEditorExtension } from "./use-editor-extension-B2WuUfnd.js";
+import { n as assignStyles, t as useScrolling } from "./use-scrolling-BOvyjDvH.js";
 import { createComputed, createSignal, defineCustomElement, registerCustomElement, useEffect } from "@aria-ui/core";
 import { usePresence } from "@aria-ui/presence";
 import { defineDropIndicator } from "@prosekit/extensions/drop-indicator";

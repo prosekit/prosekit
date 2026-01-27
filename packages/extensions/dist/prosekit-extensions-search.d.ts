@@ -1,7 +1,6 @@
 import { Extension, PlainExtension } from "@prosekit/core";
 
 //#region src/search/index.d.ts
-
 /**
  * Options for {@link defineSearchQuery}
  *

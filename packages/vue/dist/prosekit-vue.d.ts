@@ -92,6 +92,7 @@ declare function useExtension(
  * The ref to an extension to add to the editor. If it changes, the previous
  * extension will be removed and the new one (if not null) will be added.
  */
+
 extension: MaybeRefOrGetter<Extension | null>, options?: UseExtensionOptions): void;
 //#endregion
 //#region src/hooks/use-doc-change.d.ts
@@ -145,6 +146,7 @@ declare function useEditorDerivedValue<E extends Extension, Derived>(
  * It will be called whenever the editor's document state changes, or when it
  * mounts.
  */
+
 derive: (editor: Editor<E>) => Derived, options?: UseEditorDerivedOptions<E>): ShallowRef<Derived>;
 //#endregion
 //#region src/hooks/use-keymap.d.ts

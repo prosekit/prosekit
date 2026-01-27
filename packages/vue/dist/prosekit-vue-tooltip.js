@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-c9woOlZn.js";
+import { t as createComponent } from "./create-component-BREKWlWW.js";
 import { tooltipContentEvents, tooltipContentProps, tooltipRootEvents, tooltipRootProps, tooltipTriggerEvents, tooltipTriggerProps } from "@prosekit/web/tooltip";
 
 //#region src/components/tooltip/tooltip-content.gen.ts

@@ -1,9 +1,8 @@
-import { t as CreateProps } from "./create-props-DTgCRwCm.js";
+import { t as CreateProps } from "./create-props-PUVFMh9y.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 import { BlockHandleAddElement, BlockHandleAddEvents, BlockHandleAddProps as BlockHandleAddProps$1, BlockHandleDraggableElement, BlockHandleDraggableEvents, BlockHandleDraggableProps as BlockHandleDraggableProps$1, BlockHandlePopoverElement, BlockHandlePopoverEvents, BlockHandlePopoverProps as BlockHandlePopoverProps$1 } from "@prosekit/web/block-handle";
 
 //#region src/components/block-handle/block-handle-add.gen.d.ts
-
 /**
  * Props for the {@link BlockHandleAdd} component.
  */

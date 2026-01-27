@@ -1,4 +1,4 @@
-import { i as defineTextBlockInputRule } from "./input-rule-7c-pr-os.js";
+import { i as defineTextBlockInputRule } from "./input-rule-COGr_GBb.js";
 import { defineCommands, defineKeymap, defineNodeSpec, insertNode, isAtBlockStart, setBlockType, toggleNode, union, unsetBlockType, withSkipCodeBlock } from "@prosekit/core";
 
 //#region src/heading/heading-commands.ts

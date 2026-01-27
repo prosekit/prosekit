@@ -3,7 +3,7 @@ import { readPackageUpSync } from 'read-package-up'
 import type { UserConfig } from 'tsdown'
 
 // TODO: remove this
-const DEBUG_REMOVE_ME_ALLOW_INLINE_STRICT = !!process.env.DEBUG_REMOVE_ME_ALLOW_INLINE_STRICT
+const DEBUG_REMOVE_ME_ALLOW_INLINE_STRICT = true
 
 export function config(userConfig?: UserConfig): UserConfig {
   const pkg = readPackageUpSync({ cwd: userConfig?.cwd })

@@ -1,1 +1,0 @@
-{"version":3,"file":"style.css","names":[],"sources":["../../src/placeholder/style.css"],"sourcesContent":[".prosekit-placeholder::before {\n  position: absolute;\n  height: 0;\n  content: attr(data-placeholder);\n  opacity: 30%;\n  pointer-events: none;\n}\n"],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA"}

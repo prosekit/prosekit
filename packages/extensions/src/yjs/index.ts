@@ -1,5 +1,6 @@
 export {
   defineYjs,
+  type Awareness,
   type YjsExtension,
   type YjsOptions,
 } from './yjs'

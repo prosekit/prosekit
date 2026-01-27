@@ -26,6 +26,8 @@ import {
   type YjsUndoPluginOptions,
 } from './yjs-undo-plugin'
 
+export type { Awareness }
+
 export interface YjsOptions {
   /**
    * The Yjs instance handles the state of shared data.

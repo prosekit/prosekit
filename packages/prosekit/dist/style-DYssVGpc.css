@@ -1,0 +1,10 @@
+.prosekit-placeholder::before {
+  position: absolute;
+  height: 0;
+  content: attr(data-placeholder);
+  opacity: 30%;
+  pointer-events: none;
+}
+
+
+/*# sourceMappingURL=style-DYssVGpc.css.map*/

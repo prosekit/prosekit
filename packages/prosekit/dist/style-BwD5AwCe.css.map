@@ -1,0 +1,1 @@
+{"version":3,"file":"style-BwD5AwCe.css","names":[],"sources":["../../extensions/src/commit/style.css"],"sourcesContent":[".prosekit-commit-deletion {\n  background-color: #e5534b80;\n  text-decoration: line-through;\n}\n.prosekit-commit-addition {\n  background-color: #53e54b80;\n}\n"],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA"}

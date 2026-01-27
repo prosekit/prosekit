@@ -50,7 +50,7 @@
     "@vitest/coverage-v8": "^4.0.17",
     "dprint": "^0.51.1",
     "eslint": "^9.39.2",
-    "knip": "^5.81.0",
+    "knip": "^5.82.1",
     "monorepo-typescript-references": "^1.1.1",
     "pkg-pr-new": "^0.0.62",
     "playwright": "^1.57.0",

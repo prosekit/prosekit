@@ -15,6 +15,7 @@ export {
   type YjsSyncOptions,
   type YjsSyncPluginOptions,
 } from './yjs-sync-plugin'
+export type { Awareness } from './yjs-types'
 export {
   defineYjsUndoPlugin,
   type YjsUndoOptions,

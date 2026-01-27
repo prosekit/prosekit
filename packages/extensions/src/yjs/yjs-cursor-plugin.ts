@@ -4,7 +4,8 @@ import {
 } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import { yCursorPlugin } from 'y-prosemirror'
-import type { Awareness } from 'y-protocols/awareness'
+
+import type { Awareness } from './yjs-types'
 
 /**
  * Options for `y-prosemirror`'s `yCursorPlugin`.

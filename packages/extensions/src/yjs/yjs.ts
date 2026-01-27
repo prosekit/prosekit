@@ -5,7 +5,6 @@ import {
   type PlainExtension,
   type Union,
 } from '@prosekit/core'
-import type { Awareness } from 'y-protocols/awareness'
 import type * as Y from 'yjs'
 
 import {
@@ -21,6 +20,7 @@ import {
   defineYjsSyncPlugin,
   type YjsSyncPluginOptions,
 } from './yjs-sync-plugin'
+import type { Awareness } from './yjs-types'
 import {
   defineYjsUndoPlugin,
   type YjsUndoPluginOptions,

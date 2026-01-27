@@ -24,8 +24,7 @@ export function config(userConfig?: UserConfig): UserConfig {
     entry,
     sourcemap: true,
     clean: false,
-    // By default, we don't allow inline any external dependencies.
-    inlineOnly: [],
+    failOnWarn: true,
     dts: { build: true, incremental: true, sourcemap: true },
     // Bundling CSS files to remove the `@import` statements. This increases the
     // compability of the output.

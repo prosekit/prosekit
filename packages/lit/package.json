@@ -1,9 +1,9 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "private": false,
-  "description": "Lit components and utilities for ProseKit",
+  "description": "Lit components and utilities for ProseKit.",
   "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"

@@ -35,15 +35,17 @@ const config = {
         'src/stories/*.stories.ts',
         'src/styles/*.css',
       ],
-      ignoreUnresolved: [
-        './my-prosemirror-highlight-parser',
-      ],
       ignoreDependencies: [
         /@iconify-json\/.*/,
         'babel-plugin-react-compiler',
         'sharp',
 
         // Required by code blocks in documentation
+        'loro-crdt',
+        'loro-prosemirror',
+        'prosekit',
+        'prosemirror-highlight',
+        'yjs',
         'y-websocket',
       ],
     },

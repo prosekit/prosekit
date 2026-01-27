@@ -62,7 +62,7 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "solid-js": "^1.9.10",
+    "solid-js": "^1.9.11",
     "tsdown": "^0.20.1",
     "typescript": "~5.9.3"
   },

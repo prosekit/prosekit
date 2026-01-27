@@ -47,11 +47,11 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^27.0.0",
-    "happy-dom": "^20.3.0",
+    "happy-dom": "^20.3.9",
     "jsdom": "^27.4.0",
     "tsdown": "^0.20.1",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "publishConfig": {
     "exports": {

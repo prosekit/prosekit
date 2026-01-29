@@ -1,4 +1,4 @@
-import diffableHtml from 'diffable-html'
+import { diffableHtml } from 'diffable-html-snapshot'
 
 export function formatHTML(html: string): string {
   return diffableHtml(html, {

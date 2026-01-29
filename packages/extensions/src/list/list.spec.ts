@@ -4,6 +4,7 @@ import {
   union,
 } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
+import { formatHTML } from 'diffable-html-snapshot'
 import {
   describe,
   expect,
@@ -13,7 +14,6 @@ import {
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
 import { setupTest } from '../testing'
-import { formatHTML } from '../testing/format-html'
 import {
   htmlFromMarkdown,
   markdownFromHTML,

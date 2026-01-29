@@ -4,6 +4,7 @@ import {
   DefaultMap,
   isHTMLElement,
 } from '@ocavue/utils'
+import { formatHTML } from 'diffable-html-snapshot'
 import type { NodeJSON } from 'prosekit/core'
 import {
   beforeEach,
@@ -15,7 +16,6 @@ import {
 import registry from 'prosekit-registry/registry.gen.json'
 
 import { locateEditor } from './editor'
-import { formatHTML } from './format-html'
 import { waitForStableElement } from './query'
 
 function getExamples(story: string) {

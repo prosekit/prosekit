@@ -15,8 +15,7 @@ export const EditorFallback: FC = () => {
     <div className="CSS_EDITOR_VIEWPORT">
       <ToolbarFallback />
       <div className="CSS_EDITOR_SCROLLING">
-        <div className="CSS_EDITOR_CONTENT" dangerouslySetInnerHTML={{ __html: sampleHtml }}>
-        </div>
+        <div className="CSS_EDITOR_CONTENT" dangerouslySetInnerHTML={{ __html: sampleHtml }} />
       </div>
     </div>
   )

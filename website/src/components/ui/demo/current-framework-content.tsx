@@ -12,7 +12,7 @@ interface FrameworkContentProps extends ReactFrameworkContents {
   className?: string
 }
 
-export const  CurrentFrameworkContent : FC<FrameworkContentProps> = ({
+export const CurrentFrameworkContent: FC<FrameworkContentProps> = ({
   frameworks,
   className,
   ...props

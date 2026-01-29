@@ -1,13 +1,7 @@
 ---
-import ExampleEditorFallback from './example-editor-fallback.astro'
 import { ExampleEditorClient } from './example-editor-client.tsx'
 ---
 
-<div class="py-4 md:py-8 h-[600px] w-full max-w-6xl mx-auto relative">
-  <div id="editor-fallback" class="absolute inset-0 transition-opacity duration-300">
-    <ExampleEditorFallback />
-  </div>
-  <div id="editor-client" class="absolute inset-0 opacity-0 transition-opacity duration-300">
-    <ExampleEditorClient client:only="react" />
-  </div>
+<div class="py-4 md:py-8 h-[600px] w-full max-w-6xl mx-auto">
+  <ExampleEditorClient client:load />
 </div>

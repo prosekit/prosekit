@@ -42,6 +42,7 @@
     "astro-rehype-relative-markdown-links": "^0.18.1",
     "astrobook": "^0.11.2",
     "babel-plugin-react-compiler": "^1.0.0",
+    "clsx": "^2.1.1",
     "just-memoize": "^2.2.0",
     "loro-crdt": "^1.10.5",
     "loro-prosemirror": "^0.4.2",

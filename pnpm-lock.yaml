@@ -34,9 +34,6 @@ importers:
       '@size-limit/preset-small-lib':
         specifier: ^12.0.0
         version: 12.0.0(size-limit@12.0.0(jiti@2.6.1))
-      '@types/jsdom':
-        specifier: ^27.0.0
-        version: 27.0.0
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -49,9 +46,6 @@ importers:
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
-      jsdom:
-        specifier: ^27.4.0
-        version: 27.4.0
       knip:
         specifier: ^5.82.1
         version: 5.82.1(@types/node@24.10.1)(typescript@5.9.3)
@@ -879,6 +873,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2))
+      '@types/jsdom':
+        specifier: ^27.0.0
+        version: 27.0.0
       '@types/react':
         specifier: ^19.2.9
         version: 19.2.9
@@ -912,6 +909,9 @@ importers:
       fast-fuzzy:
         specifier: ^1.12.0
         version: 1.12.0
+      jsdom:
+        specifier: ^27.4.0
+        version: 27.4.0
       lit:
         specifier: ^3.3.2
         version: 3.3.2

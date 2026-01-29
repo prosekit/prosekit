@@ -12,7 +12,6 @@ export const ExampleEditorClient: FC = () => {
     const client = document.getElementById('editor-client')
     if (!fallback || !client) return
 
-    fallback.style.opacity = '0'
     client.classList.remove('opacity-0')
 
     fallback.addEventListener('transitionend', () => fallback.remove(), {

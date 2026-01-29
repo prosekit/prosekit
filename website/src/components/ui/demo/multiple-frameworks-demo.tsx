@@ -37,7 +37,7 @@ interface MultipleFrameworksDemoProps {
 
 export function MultipleFrameworksDemo(props: MultipleFrameworksDemoProps) {
   const [framework, setFramework] = useFramework(props.frameworks)
-  const [showCode, setShowCode] = useState(props.initialShowCode ?? false)
+  const [showCode, setShowCode] = useState(props.initialShowCode ?? true)
 
   const toggleShowCode = useCallback(() => {
     setShowCode(value => !value)
@@ -57,6 +57,7 @@ export function MultipleFrameworksDemo(props: MultipleFrameworksDemoProps) {
           <DropdownMenu framework={framework} story={props.story} />
         </div>
 
+    <div className="min-h-50 h-100 max-h-dvh overflow-y-hidden">
         <FrameworkContent
           framework={framework}
           lit={props.litStoryContent}
@@ -67,6 +68,7 @@ export function MultipleFrameworksDemo(props: MultipleFrameworksDemoProps) {
           vanilla={props.vanillaStoryContent}
           vue={props.vueStoryContent}
         />
+        </div>
       </div>
 
       <div className={showCode ? 'block' : 'hidden'}>

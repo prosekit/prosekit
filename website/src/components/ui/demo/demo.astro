@@ -1,5 +1,5 @@
 ---
-import MultipleFrameworksDemo from './multiple-frameworks-demo.svelte'
+import { MultipleFrameworksDemo } from './multiple-frameworks-demo.tsx'
 import registry from 'prosekit-registry/registry.gen.json'
 import PreactStory from '../../../stories/preact.astro'
 import ReactStory from '../../../stories/react.astro'
@@ -26,24 +26,23 @@ if (examples.length === 0) {
 const frameworks = examples.map((example) => example.meta.framework)
 ---
 
-{frameworks.includes('lit') ? <script src="../../../stories/lit-register.ts"></script> : null}
-{frameworks.includes('vanilla') ? <script src="../../../stories/vanilla-register.ts"></script> : null}
+{frameworks.includes('lit') && <script src="../../../stories/lit-register.ts"></script>}
+{frameworks.includes('vanilla') && <script src="../../../stories/vanilla-register.ts"></script>}
 
-{/* @ts-expect-error: something is wrong with Astro's type */}
-<MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:load>
-  {frameworks.includes('preact') && <Fragment slot="slot-story-preact"><PreactStory story={story} /></Fragment>}
-  {frameworks.includes('react') && <Fragment slot="slot-story-react"><ReactStory story={story} /></Fragment>}
-  {frameworks.includes('solid') && <Fragment slot="slot-story-solid"><SolidStory story={story} /></Fragment>}
-  {frameworks.includes('svelte') && <Fragment slot="slot-story-svelte"><SvelteStory story={story} /></Fragment>}
-  {frameworks.includes('vue') && <Fragment slot="slot-story-vue"><VueStory story={story} /></Fragment>}
-  {frameworks.includes('lit') && <Fragment slot="slot-story-lit"><LitStory story={story} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-story-vanilla"><VanillaStory story={story} /></Fragment>}
+<MultipleFrameworksDemo frameworks={frameworks} story={story} initialShowCode={showCode} client:idle>
+  <Fragment slot="litStoryContent">{frameworks.includes('lit') ? <LitStory story={story} /> : null}</Fragment>
+  <Fragment slot="preactStoryContent">{frameworks.includes('preact') ? <PreactStory story={story} /> : null}</Fragment>
+  <Fragment slot="reactStoryContent">{frameworks.includes('react') ? <ReactStory story={story} /> : null}</Fragment>
+  <Fragment slot="solidStoryContent">{frameworks.includes('solid') ? <SolidStory story={story} /> : null}</Fragment>
+  <Fragment slot="svelteStoryContent">{frameworks.includes('svelte') ? <SvelteStory story={story} /> : null}</Fragment>
+  <Fragment slot="vanillaStoryContent">{frameworks.includes('vanilla') ? <VanillaStory story={story} /> : null}</Fragment>
+  <Fragment slot="vueStoryContent">{frameworks.includes('vue') ? <VueStory story={story} /> : null}</Fragment>
 
-  {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
-  {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
-  {frameworks.includes('solid') && <Fragment slot="slot-code-solid"><DemoCodeGroup story={story} framework={'solid'} /></Fragment>}
-  {frameworks.includes('svelte') && <Fragment slot="slot-code-svelte"><DemoCodeGroup story={story} framework={'svelte'} /></Fragment>}
-  {frameworks.includes('vue') && <Fragment slot="slot-code-vue"><DemoCodeGroup story={story} framework={'vue'} /></Fragment>}
-  {frameworks.includes('lit') && <Fragment slot="slot-code-lit"><DemoCodeGroup story={story} framework={'lit'} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-code-vanilla"><DemoCodeGroup story={story} framework={'vanilla'} /></Fragment>}
+  <Fragment slot="litCodeContent">{frameworks.includes('lit') ? <DemoCodeGroup story={story} framework="lit" /> : null}</Fragment>
+  <Fragment slot="preactCodeContent">{frameworks.includes('preact') ? <DemoCodeGroup story={story} framework="preact" /> : null}</Fragment>
+  <Fragment slot="reactCodeContent">{frameworks.includes('react') ? <DemoCodeGroup story={story} framework="react" /> : null}</Fragment>
+  <Fragment slot="solidCodeContent">{frameworks.includes('solid') ? <DemoCodeGroup story={story} framework="solid" /> : null}</Fragment>
+  <Fragment slot="svelteCodeContent">{frameworks.includes('svelte') ? <DemoCodeGroup story={story} framework="svelte" /> : null}</Fragment>
+  <Fragment slot="vanillaCodeContent">{frameworks.includes('vanilla') ? <DemoCodeGroup story={story} framework="vanilla" /> : null}</Fragment>
+  <Fragment slot="vueCodeContent">{frameworks.includes('vue') ? <DemoCodeGroup story={story} framework="vue" /> : null}</Fragment>
 </MultipleFrameworksDemo>

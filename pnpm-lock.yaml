@@ -795,7 +795,7 @@ importers:
   registry:
     dependencies:
       '@base-ui/react':
-        specifier: 1.1.0
+        specifier: ^1.1.0
         version: 1.1.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       loro-crdt:
         specifier: ^1.10.5
@@ -873,6 +873,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2))
+      '@types/jsdom':
+        specifier: ^27.0.0
+        version: 27.0.0
       '@types/react':
         specifier: ^19.2.9
         version: 19.2.9
@@ -906,6 +909,9 @@ importers:
       fast-fuzzy:
         specifier: ^1.12.0
         version: 1.12.0
+      jsdom:
+        specifier: ^27.4.0
+        version: 27.4.0
       lit:
         specifier: ^3.3.2
         version: 3.3.2
@@ -1008,6 +1014,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.1.4
         version: 5.1.4(@types/node@24.10.1)(astro@5.16.15(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(vue@3.5.27(typescript@5.9.3))(yaml@2.8.2)
+      '@base-ui/react':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@egoist/tailwindcss-icons':
         specifier: ^1.9.0
         version: 1.9.0(tailwindcss@4.1.18)
@@ -1059,9 +1068,9 @@ importers:
       babel-plugin-react-compiler:
         specifier: ^1.0.0
         version: 1.0.0
-      bits-ui:
-        specifier: ^2.15.4
-        version: 2.15.4(@internationalized/date@3.10.0)(svelte@5.48.2)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       just-memoize:
         specifier: ^2.2.0
         version: 2.2.0
@@ -2602,9 +2611,6 @@ packages:
     peerDependenciesMeta:
       '@types/node':
         optional: true
-
-  '@internationalized/date@3.10.0':
-    resolution: {integrity: sha512-oxDR/NTEJ1k+UFVQElaNIk65E/Z83HK1z1WI3lQyhTtnNg4R5oVXaPzK3jcpKG8UHKDVuDQHzn+wsxSz8RP3aw==}
 
   '@isaacs/balanced-match@4.0.1':
     resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
@@ -4208,13 +4214,6 @@ packages:
   birpc@4.0.0:
     resolution: {integrity: sha512-LShSxJP0KTmd101b6DRyGBj57LZxSDYWKitQNW/mi8GRMvZb078Uf9+pveax1DrVL89vm7mWe+TovdI/UDOuPw==}
 
-  bits-ui@2.15.4:
-    resolution: {integrity: sha512-7H9YUfp03KOk1LVDh8wPYSRPxlZgG/GRWLNSA8QC73/8Z8ytun+DWJhIuibyFyz7A0cP/RANVcB4iDrbY8q+Og==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@internationalized/date': ^3.8.1
-      svelte: ^5.33.0
-
   blake3-wasm@2.1.5:
     resolution: {integrity: sha512-F1+K8EbfOZE49dtoPtmxUQrpXaBIl3ICvasLh+nJta0xkz+9kF/7uet9fLnwKqhDrmj6g+6K3Tw9yQPUg2ka5g==}
 
@@ -5727,10 +5726,6 @@ packages:
   lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
 
-  lz-string@1.5.0:
-    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
-    hasBin: true
-
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
@@ -6709,15 +6704,6 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  runed@0.35.1:
-    resolution: {integrity: sha512-2F4Q/FZzbeJTFdIS/PuOoPRSm92sA2LhzTnv6FXhCoENb3huf5+fDuNOg1LNvGOouy3u/225qxmuJvcV3IZK5Q==}
-    peerDependencies:
-      '@sveltejs/kit': ^2.21.0
-      svelte: ^5.7.0
-    peerDependenciesMeta:
-      '@sveltejs/kit':
-        optional: true
-
   sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
@@ -6993,12 +6979,6 @@ packages:
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
-
-  svelte-toolbelt@0.10.6:
-    resolution: {integrity: sha512-YWuX+RE+CnWYx09yseAe4ZVMM7e7GRFZM6OYWpBKOb++s+SQ8RBIMMe+Bs/CznBMc0QPLjr+vDBxTAkozXsFXQ==}
-    engines: {node: '>=18', pnpm: '>=8.7.0'}
-    peerDependencies:
-      svelte: ^5.30.2
 
   svelte2tsx@0.7.46:
     resolution: {integrity: sha512-S++Vw3w47a8rBuhbz4JK0fcGea8tOoX1boT53Aib8+oUO2EKeOG+geXprJVTDfBlvR+IJdf3jIpR2RGwT6paQA==}
@@ -9645,10 +9625,6 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.10.1
 
-  '@internationalized/date@3.10.0':
-    dependencies:
-      '@swc/helpers': 0.5.18
-
   '@isaacs/balanced-match@4.0.1': {}
 
   '@isaacs/brace-expansion@5.0.0':
@@ -11441,19 +11417,6 @@ snapshots:
 
   birpc@4.0.0: {}
 
-  bits-ui@2.15.4(@internationalized/date@3.10.0)(svelte@5.48.2):
-    dependencies:
-      '@floating-ui/core': 1.7.3
-      '@floating-ui/dom': 1.7.4
-      '@internationalized/date': 3.10.0
-      esm-env: 1.2.2
-      runed: 0.35.1(svelte@5.48.2)
-      svelte: 5.48.2
-      svelte-toolbelt: 0.10.6(svelte@5.48.2)
-      tabbable: 6.4.0
-    transitivePeerDependencies:
-      - '@sveltejs/kit'
-
   blake3-wasm@2.1.5: {}
 
   boolbase@1.0.0: {}
@@ -13191,8 +13154,6 @@ snapshots:
 
   lunr@2.3.9: {}
 
-  lz-string@1.5.0: {}
-
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -14632,13 +14593,6 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  runed@0.35.1(svelte@5.48.2):
-    dependencies:
-      dequal: 2.0.3
-      esm-env: 1.2.2
-      lz-string: 1.5.0
-      svelte: 5.48.2
-
   sade@1.8.1:
     dependencies:
       mri: 1.2.0
@@ -14945,15 +14899,6 @@ snapshots:
       typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
-
-  svelte-toolbelt@0.10.6(svelte@5.48.2):
-    dependencies:
-      clsx: 2.1.1
-      runed: 0.35.1(svelte@5.48.2)
-      style-to-object: 1.0.14
-      svelte: 5.48.2
-    transitivePeerDependencies:
-      - '@sveltejs/kit'
 
   svelte2tsx@0.7.46(svelte@5.48.2)(typescript@5.9.3):
     dependencies:

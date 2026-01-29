@@ -120,8 +120,7 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@types/diffable-html": "^5.0.2",
-    "diffable-html": "^6.0.1",
+    "diffable-html-snapshot": "^0.2.0",
     "just-pick": "^4.2.0",
     "loro-crdt": "^1.10.5",
     "loro-prosemirror": "^0.4.2",

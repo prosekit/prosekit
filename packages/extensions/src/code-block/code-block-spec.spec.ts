@@ -1,4 +1,5 @@
 import { jsonFromHTML } from '@prosekit/core'
+import { formatHTML } from 'diffable-html-snapshot'
 import {
   describe,
   expect,
@@ -6,7 +7,6 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../testing'
-import { formatHTML } from '../testing/format-html'
 import {
   htmlFromMarkdown,
   markdownFromHTML,

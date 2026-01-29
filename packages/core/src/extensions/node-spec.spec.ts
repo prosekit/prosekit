@@ -3,7 +3,7 @@ import type {
   Schema,
   TagParseRule,
 } from '@prosekit/pm/model'
-import formatHTML from 'diffable-html'
+import { formatHTML } from 'diffable-html-snapshot'
 import {
   describe,
   expect,

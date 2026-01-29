@@ -1,11 +1,10 @@
+import { formatHTML } from 'diffable-html-snapshot'
 import { expect } from 'vitest'
 import {
   page,
   type Locator,
 } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
-
-import { formatHTML } from './format-html'
 
 export function locateEditor(): Locator {
   return page.locate('div.ProseMirror')

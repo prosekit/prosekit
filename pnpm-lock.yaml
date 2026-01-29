@@ -795,7 +795,7 @@ importers:
   registry:
     dependencies:
       '@base-ui/react':
-        specifier: 1.1.0
+        specifier: ^1.1.0
         version: 1.1.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       loro-crdt:
         specifier: ^1.10.5
@@ -1008,6 +1008,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.1.4
         version: 5.1.4(@types/node@24.10.1)(astro@5.16.15(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(tsx@4.21.0)(vue@3.5.27(typescript@5.9.3))(yaml@2.8.2)
+      '@base-ui/react':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@egoist/tailwindcss-icons':
         specifier: ^1.9.0
         version: 1.9.0(tailwindcss@4.1.18)

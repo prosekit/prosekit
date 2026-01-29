@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 
-import type { ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 
 export interface ReactFrameworkContents {
   lit?: ReactNode
@@ -16,7 +16,7 @@ interface FrameworkContentProps extends ReactFrameworkContents {
   framework: string
 }
 
-export function FrameworkContent(props: FrameworkContentProps) {
+export const FrameworkContent: FC<FrameworkContentProps> = (props) => {
   switch (props.framework) {
     case 'lit':
       return props.lit

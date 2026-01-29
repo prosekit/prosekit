@@ -1,5 +1,7 @@
 /** @jsxImportSource react */
 
+import type { FC } from 'react'
+
 import { useFramework } from '../use-framework'
 
 import type { ReactFrameworkContents } from './framework-content'
@@ -10,11 +12,11 @@ interface FrameworkContentProps extends ReactFrameworkContents {
   className?: string
 }
 
-export function CurrentFrameworkContent({
+export const  CurrentFrameworkContent : FC<FrameworkContentProps> = ({
   frameworks,
   className,
   ...props
-}: FrameworkContentProps) {
+}) => {
   const [currentFramework] = useFramework(frameworks)
 
   return (

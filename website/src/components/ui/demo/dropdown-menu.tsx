@@ -34,8 +34,6 @@ export function DropdownMenu({ story, framework }: DropdownMenuProps) {
     window.open(url.toString(), '_blank')
   }
 
-  console.debug('[DEBUG] DropdownMenu finished')
-
   return (
     <Menu.Root>
       <Menu.Trigger

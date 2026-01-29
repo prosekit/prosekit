@@ -1,0 +1,12 @@
+---
+import ExampleEditorFallback from './example-editor-fallback.astro'
+import { ExampleEditorClient } from './example-editor-client.tsx'
+---
+
+<div class="py-4 md:py-8 h-[600px] w-full max-w-6xl mx-auto">
+  <ExampleEditorClient client:only="react">
+    <Fragment slot="fallback">
+      <ExampleEditorFallback />
+    </Fragment>
+  </ExampleEditorClient>
+</div>

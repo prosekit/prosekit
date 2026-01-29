@@ -1,0 +1,20 @@
+---
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+
+import Toolbar from './toolbar-fallback.astro'
+
+import SampleContent from './sample-content.gen.html'
+---
+
+{/* Keep the same structure as the registry/src/react/examples/full/editor.tsx */}
+<div class="CSS_EDITOR_VIEWPORT">
+  <Toolbar />
+  <div class="CSS_EDITOR_SCROLLING">
+    <div class="CSS_EDITOR_CONTENT">
+      <div class="contents [&>div]:opacity-50">
+        <SampleContent />
+      </div>
+    </div>
+  </div>
+</div>

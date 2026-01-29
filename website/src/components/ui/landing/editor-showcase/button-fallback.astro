@@ -1,8 +1,9 @@
 ---
+// Keep the same structure as registry/src/react/ui/button/button.tsx
+
 const { pressed = false, disabled = true } = Astro.props
 ---
 
-{/* Keep the same structure as registry/src/react/ui/button/button.tsx */}
 <button
   data-state={pressed ? 'on' : 'off'}
   disabled={disabled}

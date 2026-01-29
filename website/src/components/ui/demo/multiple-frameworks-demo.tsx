@@ -57,17 +57,17 @@ export function MultipleFrameworksDemo(props: MultipleFrameworksDemoProps) {
           <DropdownMenu framework={framework} story={props.story} />
         </div>
 
-    <div className="min-h-50 h-100 max-h-dvh overflow-y-hidden">
-        <FrameworkContent
-          framework={framework}
-          lit={props.litStoryContent}
-          preact={props.preactStoryContent}
-          react={props.reactStoryContent}
-          solid={props.solidStoryContent}
-          svelte={props.svelteStoryContent}
-          vanilla={props.vanillaStoryContent}
-          vue={props.vueStoryContent}
-        />
+        <div className="min-h-50 h-100 max-h-dvh overflow-y-hidden">
+          <FrameworkContent
+            framework={framework}
+            lit={props.litStoryContent}
+            preact={props.preactStoryContent}
+            react={props.reactStoryContent}
+            solid={props.solidStoryContent}
+            svelte={props.svelteStoryContent}
+            vanilla={props.vanillaStoryContent}
+            vue={props.vueStoryContent}
+          />
         </div>
       </div>
 

@@ -169,7 +169,7 @@ const config: AstroUserConfig = {
         }),
       ].filter(x => !!x),
     }),
-    preact({ include: ['src/*/preact/**/*.tsx'] }),
+    preact({ include: ['src/*/preact/**/*.tsx'], devtools: false, compat: false }),
     react({
       include: ['src/*/react/**/*.tsx', 'src/components/**/*.tsx'],
       babel: {

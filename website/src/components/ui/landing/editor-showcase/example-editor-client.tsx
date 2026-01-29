@@ -41,14 +41,20 @@ export const ExampleEditorClient: FC = () => {
     <div className="relative h-full">
       {phase !== 'complete' && (
         <div
-          className={clsx('absolute inset-0 transition-opacity duration-300', phase === 'ready' && 'opacity-0')}
+          className={clsx(
+            'absolute inset-0 transition-opacity duration-200 ease-linear',
+            phase === 'loading' ? 'opacity-50' : 'opacity-0',
+          )}
           onTransitionEnd={handleComplete}
         >
           <EditorFallback />
         </div>
       )}
       <div
-        className={clsx('absolute inset-0 transition-opacity duration-300', phase === 'loading' && 'opacity-0')}
+        className={clsx(
+          'absolute inset-0 transition-opacity duration-200 ease-linear',
+          phase === 'loading' ? 'opacity-0' : 'opacity-100',
+        )}
       >
         {mounted && (
           <Suspense>

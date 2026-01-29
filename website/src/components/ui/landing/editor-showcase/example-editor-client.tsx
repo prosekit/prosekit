@@ -32,6 +32,10 @@ export const ExampleEditorClient: FC = () => {
   const [phase, setPhase] = useState<Phase>('loading')
   const handleReady = useCallback(() => setPhase('ready'), [])
   const handleComplete = useCallback(() => setPhase('complete'), [])
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <div className="relative h-full">
@@ -46,9 +50,11 @@ export const ExampleEditorClient: FC = () => {
       <div
         className={clsx('absolute inset-0 transition-opacity duration-300', phase === 'loading' && 'opacity-0')}
       >
-        <Suspense>
-          <EditorLoaded onReady={handleReady} />
-        </Suspense>
+        {mounted && (
+          <Suspense>
+            <EditorLoaded onReady={handleReady} />
+          </Suspense>
+        )}
       </div>
     </div>
   )

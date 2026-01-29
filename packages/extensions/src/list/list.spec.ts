@@ -118,13 +118,13 @@ describe('defineList', () => {
       <ul data-pm-slice="0 0 []">
         <li
           class="prosemirror-flat-list"
-          data-list-kind="task"
           data-list-checked
+          data-list-kind="task"
         >
           <p>
             <input
-              type="checkbox"
               checked
+              type="checkbox"
             >
             Checked 1
           </p>
@@ -182,13 +182,13 @@ describe('defineList', () => {
         <ul>
           <li
             class="prosemirror-flat-list"
-            data-list-kind="task"
             data-list-checked
+            data-list-kind="task"
           >
             <p>
               <input
-                type="checkbox"
                 checked
+                type="checkbox"
               >
               Checked
             </p>
@@ -237,9 +237,9 @@ describe('defineList', () => {
         <li class="task-list-item">
           <p>
             <input
-              type="checkbox"
               checked
               disabled
+              type="checkbox"
             >
             Checked
           </p>
@@ -247,8 +247,8 @@ describe('defineList', () => {
         <li class="task-list-item">
           <p>
             <input
-              type="checkbox"
               disabled
+              type="checkbox"
             >
             Unchecked
           </p>

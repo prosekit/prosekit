@@ -179,7 +179,7 @@ const config: AstroUserConfig = {
         ],
       },
     }),
-    preact({ include: ['src/*/preact/**/*.tsx'], devtools: false, compat: false }),
+    preact({ include: ['src/*/preact/**/*.tsx'] }),
     svelte(),
     vue(),
     solid({ include: ['**/solid/**/*.tsx'] }),

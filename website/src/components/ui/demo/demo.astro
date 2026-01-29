@@ -1,5 +1,6 @@
 ---
-import MultipleFrameworksDemo from './multiple-frameworks-demo.svelte'
+import { MultipleFrameworksDemo } from './multiple-frameworks-demo.tsx'
+import { FrameworkContent } from './framework-content.tsx'
 import registry from 'prosekit-registry/registry.gen.json'
 import PreactStory from '../../../stories/preact.astro'
 import ReactStory from '../../../stories/react.astro'
@@ -26,24 +27,37 @@ if (examples.length === 0) {
 const frameworks = examples.map((example) => example.meta.framework)
 ---
 
-{frameworks.includes('lit') ? <script src="../../../stories/lit-register.ts"></script> : null}
-{frameworks.includes('vanilla') ? <script src="../../../stories/vanilla-register.ts"></script> : null}
+{frameworks.includes('lit') && <script src="../../../stories/lit-register.ts"></script>}
+{frameworks.includes('vanilla') && <script src="../../../stories/vanilla-register.ts"></script>}
 
-{/* @ts-expect-error: something is wrong with Astro's type */}
-<MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:load>
-  {frameworks.includes('preact') && <Fragment slot="slot-story-preact"><PreactStory story={story} /></Fragment>}
-  {frameworks.includes('react') && <Fragment slot="slot-story-react"><ReactStory story={story} /></Fragment>}
-  {frameworks.includes('solid') && <Fragment slot="slot-story-solid"><SolidStory story={story} /></Fragment>}
-  {frameworks.includes('svelte') && <Fragment slot="slot-story-svelte"><SvelteStory story={story} /></Fragment>}
-  {frameworks.includes('vue') && <Fragment slot="slot-story-vue"><VueStory story={story} /></Fragment>}
-  {frameworks.includes('lit') && <Fragment slot="slot-story-lit"><LitStory story={story} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-story-vanilla"><VanillaStory story={story} /></Fragment>}
+<MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:only="react">
+  <FrameworkContent
+    slot="storyContent"
+    frameworks={frameworks}
+    className="min-h-50 h-100 max-h-dvh overflow-y-hidden"
+    client:only="react"
+  >
+    {frameworks.includes('lit') && <Fragment slot="litContent"><LitStory story={story} /></Fragment>}
+    {frameworks.includes('preact') && <Fragment slot="preactContent"><PreactStory story={story} /></Fragment>}
+    {frameworks.includes('react') && <Fragment slot="reactContent"><ReactStory story={story} /></Fragment>}
+    {frameworks.includes('solid') && <Fragment slot="solidContent"><SolidStory story={story} /></Fragment>}
+    {frameworks.includes('svelte') && <Fragment slot="svelteContent"><SvelteStory story={story} /></Fragment>}
+    {frameworks.includes('vanilla') && <Fragment slot="vanillaContent"><VanillaStory story={story} /></Fragment>}
+    {frameworks.includes('vue') && <Fragment slot="vueContent"><VueStory story={story} /></Fragment>}
+  </FrameworkContent>
 
-  {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
-  {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
-  {frameworks.includes('solid') && <Fragment slot="slot-code-solid"><DemoCodeGroup story={story} framework={'solid'} /></Fragment>}
-  {frameworks.includes('svelte') && <Fragment slot="slot-code-svelte"><DemoCodeGroup story={story} framework={'svelte'} /></Fragment>}
-  {frameworks.includes('vue') && <Fragment slot="slot-code-vue"><DemoCodeGroup story={story} framework={'vue'} /></Fragment>}
-  {frameworks.includes('lit') && <Fragment slot="slot-code-lit"><DemoCodeGroup story={story} framework={'lit'} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-code-vanilla"><DemoCodeGroup story={story} framework={'vanilla'} /></Fragment>}
+  <FrameworkContent
+    slot="codeContent"
+    frameworks={frameworks}
+    className="border-t border-border"
+    client:only="react"
+  >
+    {frameworks.includes('lit') && <Fragment slot="litContent"><DemoCodeGroup story={story} framework={'lit'} /></Fragment>}
+    {frameworks.includes('preact') && <Fragment slot="preactContent"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
+    {frameworks.includes('react') && <Fragment slot="reactContent"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
+    {frameworks.includes('solid') && <Fragment slot="solidContent"><DemoCodeGroup story={story} framework={'solid'} /></Fragment>}
+    {frameworks.includes('svelte') && <Fragment slot="svelteContent"><DemoCodeGroup story={story} framework={'svelte'} /></Fragment>}
+    {frameworks.includes('vanilla') && <Fragment slot="vanillaContent"><DemoCodeGroup story={story} framework={'vanilla'} /></Fragment>}
+    {frameworks.includes('vue') && <Fragment slot="vueContent"><DemoCodeGroup story={story} framework={'vue'} /></Fragment>}
+  </FrameworkContent>
 </MultipleFrameworksDemo>

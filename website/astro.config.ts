@@ -171,7 +171,7 @@ const config: AstroUserConfig = {
     }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
-      include: ['src/*/react/**/*.tsx'],
+      include: ['src/*/react/**/*.tsx', 'src/components/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],

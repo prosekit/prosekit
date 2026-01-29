@@ -1,3 +1,5 @@
+/** @jsxImportSource react */
+
 import { ExampleEditor } from 'prosekit-registry/react/examples/full'
 import React from 'react'
 

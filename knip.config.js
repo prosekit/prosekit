@@ -41,11 +41,7 @@ const config = {
         'sharp',
 
         // Required by code blocks in documentation
-        'loro-crdt',
-        'loro-prosemirror',
-        'prosekit',
         'prosemirror-highlight',
-        'yjs',
         'y-websocket',
       ],
     },

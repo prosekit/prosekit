@@ -169,15 +169,17 @@ const config: AstroUserConfig = {
         }),
       ].filter(x => !!x),
     }),
-    preact({ include: ['src/*/preact/**/*.tsx'] }),
+    // It seems that I have to put `react` before `preact` as a workaround for the following issue:
+    // https://github.com/withastro/astro/issues/15341
     react({
-      include: ['src/*/react/**/*.tsx'],
+      include: ['src/*/react/**/*.tsx', 'src/components/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],
         ],
       },
     }),
+    preact({ include: ['src/*/preact/**/*.tsx'] }),
     svelte(),
     vue(),
     solid({ include: ['**/solid/**/*.tsx'] }),

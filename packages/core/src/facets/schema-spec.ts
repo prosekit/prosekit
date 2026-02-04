@@ -1,14 +1,7 @@
-import type {
-  MarkSpec,
-  NodeSpec,
-  SchemaSpec,
-} from '@prosekit/pm/model'
+import type { MarkSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
 
-import {
-  defineFacet,
-  type Facet,
-} from './facet'
+import { defineFacet, type Facet } from './facet'
 import { schemaFacet } from './schema'
 
 export const schemaSpecFacet: Facet<SchemaSpec, SchemaSpec> = defineFacet({

@@ -1,17 +1,8 @@
-import {
-  union,
-  type Union,
-} from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import {
-  defineHardBreakCommands,
-  type HardBreakCommandsExtension,
-} from './hard-break-commands'
+import { defineHardBreakCommands, type HardBreakCommandsExtension } from './hard-break-commands'
 import { defineHardBreakKeymap } from './hard-break-keymap'
-import {
-  defineHardBreakSpec,
-  type HardBreakSpecExtension,
-} from './hard-break-spec'
+import { defineHardBreakSpec, type HardBreakSpecExtension } from './hard-break-spec'
 
 /**
  * @internal

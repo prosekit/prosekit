@@ -3,10 +3,7 @@ import { getPackages } from '@manypkg/get-packages'
 import { once } from '@ocavue/utils'
 
 import { debug } from './debug'
-import {
-  isPrivatePackage,
-  isPublicPackage,
-} from './is-public-package'
+import { isPrivatePackage, isPublicPackage } from './is-public-package'
 import { ROOT_DIR } from './root-dir'
 
 /** Returns all workspace packages sorted by name. */

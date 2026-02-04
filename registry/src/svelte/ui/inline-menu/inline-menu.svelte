@@ -3,10 +3,7 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
-import {
-  useEditor,
-  useEditorDerivedValue,
-} from 'prosekit/svelte'
+import { useEditor, useEditorDerivedValue } from 'prosekit/svelte'
 import { InlinePopover } from 'prosekit/svelte/inline-popover'
 
 import { Button } from '../button'

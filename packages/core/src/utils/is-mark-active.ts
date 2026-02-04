@@ -1,7 +1,4 @@
-import type {
-  Attrs,
-  MarkType,
-} from '@prosekit/pm/model'
+import type { Attrs, MarkType } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
 import { getMarkType } from './get-mark-type'

@@ -1,7 +1,4 @@
-import {
-  defineMarkSpec,
-  union,
-} from 'prosekit/core'
+import { defineMarkSpec, union } from 'prosekit/core'
 import { defineMarkRule } from 'prosekit/extensions/mark-rule'
 
 export function defineIssueLink() {

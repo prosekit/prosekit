@@ -1,8 +1,4 @@
-import {
-  BlockHandleAdd,
-  BlockHandleDraggable,
-  BlockHandlePopover,
-} from 'prosekit/react/block-handle'
+import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopover } from 'prosekit/react/block-handle'
 
 interface Props {
   dir?: 'ltr' | 'rtl'

@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  BlockHandleAdd,
-  BlockHandleDraggable,
-  BlockHandlePopover,
-} from 'prosekit/vue/block-handle'
+import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopover } from 'prosekit/vue/block-handle'
 
 interface Props {
   dir?: 'ltr' | 'rtl'

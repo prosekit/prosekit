@@ -1,12 +1,6 @@
-import {
-  createContext,
-  type Context,
-} from '@aria-ui/core'
+import { createContext, type Context } from '@aria-ui/core'
 
-import type {
-  DndInfo,
-  HoveringCellInfo,
-} from './utils'
+import type { DndInfo, HoveringCellInfo } from './utils'
 
 /**
  * @internal

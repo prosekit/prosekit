@@ -1,18 +1,11 @@
+import { ReactRenderer } from 'prosekit-registry/react/renderer'
 import type { NodeJSON } from 'prosekit/core'
 import { createElement } from 'react'
 import { expect } from 'vitest'
+import { cleanup, render } from 'vitest-browser-react/pure'
 import { page } from 'vitest/browser'
-import {
-  cleanup,
-  render,
-} from 'vitest-browser-react/pure'
 
-import { ReactRenderer } from 'prosekit-registry/react/renderer'
-
-import {
-  registerCleanupFunction,
-  runCleanupFunctions,
-} from './render-cleanup'
+import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 registerCleanupFunction(cleanup)
 

@@ -1,14 +1,5 @@
-import {
-  DOMSerializer,
-  type DOMOutputSpec,
-  type Mark,
-  type ProseMirrorNode,
-  type Schema,
-} from '@prosekit/pm/model'
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-} from '@prosekit/pm/state'
+import { DOMSerializer, type DOMOutputSpec, type Mark, type ProseMirrorNode, type Schema } from '@prosekit/pm/model'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
@@ -16,10 +7,7 @@ import type { AnyFunction } from '../types/any-function'
 import type { PlainExtension } from '../types/extension'
 import { isNotNullish } from '../utils/type-assertion'
 
-import {
-  pluginFacet,
-  type PluginPayload,
-} from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin'
 
 type SerializeFragmentFunction = typeof DOMSerializer.prototype.serializeFragment
 type SerializeNodeFunction = typeof DOMSerializer.prototype.serializeNode

@@ -1,25 +1,13 @@
 import { sleep } from '@ocavue/utils'
-import {
-  findNode,
-  findNodes,
-} from '@prosekit/core'
+import { findNode, findNodes } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import {
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import type { Uploader } from '../../file'
 import { setupTest } from '../../testing'
 import type { ImageAttrs } from '../image-spec'
 
-import {
-  replaceImageURL,
-  uploadImage,
-  type ImageUploadErrorHandler,
-} from './upload-image'
+import { replaceImageURL, uploadImage, type ImageUploadErrorHandler } from './upload-image'
 
 describe('uploadImage', () => {
   it('should insert image at current selection by default', async () => {

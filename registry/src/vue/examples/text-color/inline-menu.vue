@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import type { Editor } from 'prosekit/core'
-import {
-  useEditorDerivedValue,
-  useKeymap,
-} from 'prosekit/vue'
+import { useEditorDerivedValue, useKeymap } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
 

@@ -1,17 +1,6 @@
-import {
-  createEditor,
-  defineBaseCommands,
-  defineMarkSpec,
-  elementFromNode,
-  union,
-  type Editor,
-} from '@prosekit/core'
+import { createEditor, defineBaseCommands, defineMarkSpec, elementFromNode, union, type Editor } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'

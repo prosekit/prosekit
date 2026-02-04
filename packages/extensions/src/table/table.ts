@@ -1,12 +1,6 @@
-import {
-  union,
-  type Union,
-} from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import {
-  defineTableCommands,
-  type TableCommandsExtension,
-} from './table-commands'
+import { defineTableCommands, type TableCommandsExtension } from './table-commands'
 import { defineTableDropIndicator } from './table-drop-indicator'
 import { defineTablePlugins } from './table-plugins'
 import {

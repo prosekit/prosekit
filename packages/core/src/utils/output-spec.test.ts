@@ -1,9 +1,5 @@
 import type { DOMOutputSpec } from '@prosekit/pm/model'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { insertOutputSpecAttrs } from './output-spec'
 

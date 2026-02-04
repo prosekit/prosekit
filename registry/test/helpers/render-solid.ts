@@ -1,16 +1,9 @@
+import { SolidRenderer } from 'prosekit-registry/solid/renderer'
 import type { NodeJSON } from 'prosekit/core'
 import h from 'solid-js/h'
-import {
-  cleanup,
-  render,
-} from 'vitest-browser-solid/pure'
+import { cleanup, render } from 'vitest-browser-solid/pure'
 
-import { SolidRenderer } from 'prosekit-registry/solid/renderer'
-
-import {
-  registerCleanupFunction,
-  runCleanupFunctions,
-} from './render-cleanup'
+import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 registerCleanupFunction(cleanup)
 

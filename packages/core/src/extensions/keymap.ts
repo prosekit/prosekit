@@ -1,22 +1,12 @@
 import { keydownHandler } from '@prosekit/pm/keymap'
-import {
-  Plugin,
-  PluginKey,
-  type Command,
-} from '@prosekit/pm/state'
+import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import {
-  defineFacet,
-  type Facet,
-} from '../facets/facet'
+import { defineFacet, type Facet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { PlainExtension } from '../types/extension'
 
-import {
-  pluginFacet,
-  type PluginPayload,
-} from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin'
 
 /**
  * A set of keybindings. Please read the

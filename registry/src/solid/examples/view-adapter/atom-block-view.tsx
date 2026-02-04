@@ -1,7 +1,4 @@
-import {
-  useEditorDerivedValue,
-  type SolidNodeViewProps,
-} from 'prosekit/solid'
+import { useEditorDerivedValue, type SolidNodeViewProps } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
 export function AtomBlockView(props: SolidNodeViewProps): JSX.Element {

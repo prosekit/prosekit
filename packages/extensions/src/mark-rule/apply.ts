@@ -1,16 +1,6 @@
-import {
-  getMarkType,
-  maybeRun,
-  OBJECT_REPLACEMENT_CHARACTER,
-} from '@prosekit/core'
-import type {
-  Mark,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
-import type {
-  EditorState,
-  Transaction,
-} from '@prosekit/pm/state'
+import { getMarkType, maybeRun, OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
+import type { Mark, ProseMirrorNode } from '@prosekit/pm/model'
+import type { EditorState, Transaction } from '@prosekit/pm/state'
 
 import { getCheckRanges } from './range'
 import type { MarkRuleOptions } from './types'

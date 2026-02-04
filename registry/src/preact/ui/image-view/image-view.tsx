@@ -1,15 +1,9 @@
 import type { JSX } from 'preact'
-import {
-  useEffect,
-  useState,
-} from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { PreactNodeViewProps } from 'prosekit/preact'
-import {
-  ResizableHandle,
-  ResizableRoot,
-} from 'prosekit/preact/resizable'
+import { ResizableHandle, ResizableRoot } from 'prosekit/preact/resizable'
 
 export default function ImageView(props: PreactNodeViewProps) {
   const attrs = props.node.attrs as ImageAttrs

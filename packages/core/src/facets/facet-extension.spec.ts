@@ -1,22 +1,11 @@
-import {
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { Priority } from '../types/priority'
 import { isNotNullish } from '../utils/type-assertion'
 
-import {
-  defineFacet,
-  Facet,
-} from './facet'
+import { defineFacet, Facet } from './facet'
 import { FacetExtensionImpl } from './facet-extension'
-import {
-  subtractFacetNode,
-  unionFacetNode,
-} from './facet-node'
+import { subtractFacetNode, unionFacetNode } from './facet-node'
 import type { FacetReducer } from './facet-types'
 import { UnionExtensionImpl } from './union-extension'
 

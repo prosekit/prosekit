@@ -1,8 +1,4 @@
-import {
-  useEventListener,
-  type ConnectableElement,
-  type SignalState,
-} from '@aria-ui/core'
+import { useEventListener, type ConnectableElement, type SignalState } from '@aria-ui/core'
 import { insertDefaultBlock } from '@prosekit/core'
 
 import { blockPopoverContext } from '../context'

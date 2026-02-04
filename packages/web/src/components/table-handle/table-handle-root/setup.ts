@@ -7,10 +7,7 @@ import {
   type Signal,
   type SignalState,
 } from '@aria-ui/core'
-import {
-  defineDOMEventHandler,
-  type Editor,
-} from '@prosekit/core'
+import { defineDOMEventHandler, type Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
@@ -25,11 +22,7 @@ import {
   type TableHandleRootContext,
 } from '../context'
 import { useDrop } from '../hooks/use-drop'
-import {
-  getHoveringCell,
-  isHoveringCellInfoEqual,
-  type HoveringCellInfo,
-} from '../utils'
+import { getHoveringCell, isHoveringCellInfoEqual, type HoveringCellInfo } from '../utils'
 
 import type { TableHandleRootProps } from './types'
 

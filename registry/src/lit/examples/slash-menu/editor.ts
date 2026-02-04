@@ -1,23 +1,14 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  html,
-  LitElement,
-  type PropertyDeclaration,
-  type PropertyValues,
-} from 'lit'
-import {
-  createRef,
-  ref,
-  type Ref,
-} from 'lit/directives/ref.js'
+import '../../ui/slash-menu/index'
+
+import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
+import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
 import { defineExtension } from './extension'
-
-import '../../ui/slash-menu/index'
 
 export class LitEditor extends LitElement {
   static override properties = {

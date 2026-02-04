@@ -1,22 +1,9 @@
-import {
-  Plugin,
-  PluginKey,
-} from '@prosekit/pm/state'
-import {
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { Plugin, PluginKey } from '@prosekit/pm/state'
+import { describe, expect, it, vi } from 'vitest'
 
 import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
-import {
-  defineDoc,
-  defineParagraph,
-  defineText,
-  setupTestFromExtension,
-} from '../testing'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
 import { Priority } from '../types/priority'
 
 import { definePlugin } from './plugin'

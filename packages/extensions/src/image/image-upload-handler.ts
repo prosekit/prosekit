@@ -1,7 +1,4 @@
-import {
-  union,
-  type PlainExtension,
-} from '@prosekit/core'
+import { union, type PlainExtension } from '@prosekit/core'
 
 import {
   defineFileDropHandler,
@@ -13,10 +10,7 @@ import {
   type Uploader,
 } from '../file'
 
-import {
-  uploadImage,
-  type ImageUploadErrorHandler,
-} from './image-commands/upload-image'
+import { uploadImage, type ImageUploadErrorHandler } from './image-commands/upload-image'
 
 /**
  * A predicate to determine if the pasted file should be uploaded and inserted as an image.

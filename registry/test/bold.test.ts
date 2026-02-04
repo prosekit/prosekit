@@ -1,16 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 
-import {
-  emptyEditor,
-  inputText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { emptyEditor, inputText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('bold')
 

@@ -1,18 +1,11 @@
-import {
-  history,
-  redo,
-  undo,
-} from '@prosekit/pm/history'
+import { history, redo, undo } from '@prosekit/pm/history'
 
 import { union } from '../editor/union'
 import type { Extension } from '../types/extension'
 import { isApple } from '../utils/env'
 
 import { defineCommands } from './command'
-import {
-  defineKeymap,
-  type Keymap,
-} from './keymap'
+import { defineKeymap, type Keymap } from './keymap'
 import { definePlugin } from './plugin'
 
 const keymap: Keymap = {

@@ -2,19 +2,9 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/solid'
-import {
-  createSignal,
-  For,
-  type JSX,
-} from 'solid-js'
+import { createEditor, type NodeJSON } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/solid'
+import { createSignal, For, type JSX } from 'solid-js'
 
 export default function Editor(): JSX.Element {
   const [records, setRecords] = createSignal<string[]>([])

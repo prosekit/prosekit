@@ -1,13 +1,5 @@
-import {
-  createEditor,
-  defineBaseCommands,
-  union,
-} from '@prosekit/core'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { createEditor, defineBaseCommands, union } from '@prosekit/core'
+import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'

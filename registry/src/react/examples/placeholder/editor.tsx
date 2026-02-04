@@ -1,20 +1,10 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  createEditor,
-  jsonFromNode,
-  type NodeJSON,
-} from 'prosekit/core'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/react'
-import {
-  useCallback,
-  useMemo,
-} from 'react'
+import { ProseKit, useDocChange } from 'prosekit/react'
+import { useCallback, useMemo } from 'react'
 
 import { defineExtension } from './extension'
 

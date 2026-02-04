@@ -1,8 +1,4 @@
-import {
-  expect,
-  test,
-  vi,
-} from 'vitest'
+import { expect, test, vi } from 'vitest'
 
 import { maybeRun } from './maybe-run'
 

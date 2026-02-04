@@ -1,9 +1,6 @@
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { useExtension } from 'prosekit/vue'
-import {
-  computed,
-  ref,
-} from 'vue'
+import { computed, ref } from 'vue'
 
 export function useReadonly() {
   const readonly = ref(true)

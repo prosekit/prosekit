@@ -1,8 +1,4 @@
-import {
-  useCallback,
-  useLayoutEffect,
-  useRef,
-} from 'preact/hooks'
+import { useCallback, useLayoutEffect, useRef } from 'preact/hooks'
 
 /**
  * @internal

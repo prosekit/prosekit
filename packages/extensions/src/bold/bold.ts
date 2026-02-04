@@ -1,18 +1,9 @@
-import {
-  union,
-  type Union,
-} from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import {
-  defineBoldCommands,
-  type BoldCommandsExtension,
-} from './bold-commands'
+import { defineBoldCommands, type BoldCommandsExtension } from './bold-commands'
 import { defineBoldInputRule } from './bold-input-rule'
 import { defineBoldKeymap } from './bold-keymap'
-import {
-  defineBoldSpec,
-  type BoldSpecExtension,
-} from './bold-spec'
+import { defineBoldSpec, type BoldSpecExtension } from './bold-spec'
 
 /**
  * @internal

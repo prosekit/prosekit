@@ -40,12 +40,7 @@ A key concept in ProseKit is that all extensions are composed of other extension
 For example, `defineBasicExtension` is simply a composition of many smaller extensions:
 
 ```ts twoslash
-import {
-  defineBaseCommands,
-  defineBaseKeymap,
-  defineHistory,
-  union,
-} from 'prosekit/core'
+import { defineBaseCommands, defineBaseKeymap, defineHistory, union } from 'prosekit/core'
 import { defineBlockquote } from 'prosekit/extensions/blockquote'
 import { defineBold } from 'prosekit/extensions/bold'
 import { defineCode } from 'prosekit/extensions/code'
@@ -101,10 +96,7 @@ This compositional pattern allows you to build on existing extensions and add ex
 
 ```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  union,
-} from 'prosekit/core'
+import { createEditor, union } from 'prosekit/core'
 import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 
 function defineMyExtension() {

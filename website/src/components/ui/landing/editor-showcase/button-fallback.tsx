@@ -2,10 +2,7 @@
 
 // Keep the same structure as registry/src/react/ui/button/button.tsx
 
-import type {
-  FC,
-  ReactNode,
-} from 'react'
+import type { FC, ReactNode } from 'react'
 
 export const ButtonFallback: FC<{
   pressed?: boolean

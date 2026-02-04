@@ -1,9 +1,5 @@
 <script lang="ts">
-import {
-  BlockHandleAdd,
-  BlockHandleDraggable,
-  BlockHandlePopover,
-} from 'prosekit/svelte/block-handle'
+import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopover } from 'prosekit/svelte/block-handle'
 
 interface Props {
   dir?: 'ltr' | 'rtl'

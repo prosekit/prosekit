@@ -1,8 +1,4 @@
-import {
-  defineMarkViewComponent,
-  defineMarkViewFactory,
-  type Extension,
-} from '@prosekit/core'
+import { defineMarkViewComponent, defineMarkViewFactory, type Extension } from '@prosekit/core'
 import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import {
@@ -12,12 +8,7 @@ import {
   type MarkViewFactory,
   type VueMarkViewUserOptions,
 } from '@prosemirror-adapter/vue'
-import {
-  computed,
-  defineComponent,
-  h,
-  type DefineComponent,
-} from 'vue'
+import { computed, defineComponent, h, type DefineComponent } from 'vue'
 
 import { useExtension } from '../hooks/use-extension'
 

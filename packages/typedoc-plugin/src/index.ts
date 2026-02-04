@@ -1,7 +1,4 @@
-import {
-  MarkdownPageEvent,
-  type MarkdownApplication,
-} from 'typedoc-plugin-markdown'
+import { MarkdownPageEvent, type MarkdownApplication } from 'typedoc-plugin-markdown'
 
 export function load(app: MarkdownApplication) {
   app.renderer.on(

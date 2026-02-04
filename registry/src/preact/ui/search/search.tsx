@@ -1,15 +1,6 @@
-import {
-  useMemo,
-  useState,
-} from 'preact/hooks'
-import {
-  defineSearchQuery,
-  type SearchCommandsExtension,
-} from 'prosekit/extensions/search'
-import {
-  useEditor,
-  useExtension,
-} from 'prosekit/preact'
+import { useMemo, useState } from 'preact/hooks'
+import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { useEditor, useExtension } from 'prosekit/preact'
 
 import { Button } from '../button'
 

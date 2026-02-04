@@ -1,17 +1,8 @@
-import {
-  expect,
-  it,
-} from 'vitest'
-import { page } from 'vitest/browser'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
+import { page } from 'vitest/browser'
 
-import {
-  expectLocatorToHaveCount,
-  inputText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToHaveCount, inputText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('hard-break')
 

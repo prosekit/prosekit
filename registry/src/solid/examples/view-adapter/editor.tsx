@@ -1,15 +1,9 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
+import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
-import {
-  createMemo,
-  type JSX,
-} from 'solid-js'
+import { createMemo, type JSX } from 'solid-js'
 
 import { sampleContent } from '../../sample/sample-doc-view-adapter'
 

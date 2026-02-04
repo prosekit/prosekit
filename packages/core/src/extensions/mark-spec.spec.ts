@@ -1,26 +1,11 @@
-import type {
-  DOMOutputSpec,
-  TagParseRule,
-} from '@prosekit/pm/model'
+import type { DOMOutputSpec, TagParseRule } from '@prosekit/pm/model'
 import { formatHTML } from 'diffable-html-snapshot'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
-import {
-  defineDoc,
-  defineParagraph,
-  defineText,
-  setupTestFromExtension,
-} from '../testing'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
 
-import {
-  defineMarkAttr,
-  defineMarkSpec,
-} from './mark-spec'
+import { defineMarkAttr, defineMarkSpec } from './mark-spec'
 
 describe('defineMarkSpec', () => {
   it('can merge mark specs', () => {

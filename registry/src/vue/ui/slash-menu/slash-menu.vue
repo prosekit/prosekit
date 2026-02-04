@@ -2,10 +2,7 @@
 import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/vue'
-import {
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/vue/autocomplete'
+import { AutocompleteList, AutocompletePopover } from 'prosekit/vue/autocomplete'
 
 import SlashMenuEmpty from './slash-menu-empty.vue'
 import SlashMenuItem from './slash-menu-item.vue'

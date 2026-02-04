@@ -1,11 +1,5 @@
-import {
-  definePlugin,
-  type Extension,
-} from '@prosekit/core'
-import {
-  createHighlightPlugin,
-  type Parser,
-} from 'prosemirror-highlight'
+import { definePlugin, type Extension } from '@prosekit/core'
+import { createHighlightPlugin, type Parser } from 'prosemirror-highlight'
 
 /**
  * @public

@@ -1,15 +1,7 @@
-import {
-  defineMarkViewComponent,
-  defineMarkViewFactory,
-  definePlugin,
-  type Extension,
-} from '@prosekit/core'
+import { defineMarkViewComponent, defineMarkViewFactory, definePlugin, type Extension } from '@prosekit/core'
 import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
-import type {
-  MarkViewContext,
-  SvelteMarkViewUserOptions,
-} from '@prosemirror-adapter/svelte'
+import type { MarkViewContext, SvelteMarkViewUserOptions } from '@prosemirror-adapter/svelte'
 import type { Component } from 'svelte'
 
 import { MarkViewWrapper } from '../components/mark-view-wrapper'

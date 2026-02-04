@@ -1,9 +1,6 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import {
-  defineVueMarkView,
-  type VueMarkViewComponent,
-} from 'prosekit/vue'
+import { defineVueMarkView, type VueMarkViewComponent } from 'prosekit/vue'
 
 import LinkView from './link-view.vue'
 

@@ -1,14 +1,7 @@
 /** @jsxImportSource react */
 
 import { clsx } from 'clsx/lite'
-import {
-  lazy,
-  Suspense,
-  useCallback,
-  useEffect,
-  useState,
-  type FC,
-} from 'react'
+import { lazy, Suspense, useCallback, useEffect, useState, type FC } from 'react'
 
 import { EditorFallback } from './editor-fallback'
 

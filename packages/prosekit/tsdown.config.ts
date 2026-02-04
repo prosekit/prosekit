@@ -1,8 +1,5 @@
 import { config } from '@prosekit/config-tsdown'
-import {
-  defineConfig,
-  type UserConfig,
-} from 'tsdown'
+import { defineConfig, type UserConfig } from 'tsdown'
 
 const configObject = config({ cwd: import.meta.dirname })
 

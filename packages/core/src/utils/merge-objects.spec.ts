@@ -1,7 +1,4 @@
-import {
-  expect,
-  test,
-} from 'vitest'
+import { expect, test } from 'vitest'
 
 import { mergeObjects } from './merge-objects'
 

@@ -1,8 +1,4 @@
-import {
-  defineNodeViewComponent,
-  defineNodeViewFactory,
-  type Extension,
-} from '@prosekit/core'
+import { defineNodeViewComponent, defineNodeViewFactory, type Extension } from '@prosekit/core'
 import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import {
@@ -12,12 +8,7 @@ import {
   type NodeViewFactory,
   type VueNodeViewUserOptions,
 } from '@prosemirror-adapter/vue'
-import {
-  computed,
-  defineComponent,
-  h,
-  type DefineComponent,
-} from 'vue'
+import { computed, defineComponent, h, type DefineComponent } from 'vue'
 
 import { useExtension } from '../hooks/use-extension'
 

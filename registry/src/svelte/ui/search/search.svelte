@@ -1,16 +1,7 @@
 <script lang="ts">
-import {
-  defineSearchQuery,
-  type SearchCommandsExtension,
-} from 'prosekit/extensions/search'
-import {
-  useEditor,
-  useExtension,
-} from 'prosekit/svelte'
-import {
-  derived,
-  writable,
-} from 'svelte/store'
+import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { useEditor, useExtension } from 'prosekit/svelte'
+import { derived, writable } from 'svelte/store'
 
 import { Button } from '../button'
 

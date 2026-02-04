@@ -1,18 +1,11 @@
 import { createElement } from 'preact'
+import { PreactRenderer } from 'prosekit-registry/preact/renderer'
 import type { NodeJSON } from 'prosekit/core'
 import { expect } from 'vitest'
+import { cleanup, render } from 'vitest-browser-preact/pure'
 import { page } from 'vitest/browser'
-import {
-  cleanup,
-  render,
-} from 'vitest-browser-preact/pure'
 
-import { PreactRenderer } from 'prosekit-registry/preact/renderer'
-
-import {
-  registerCleanupFunction,
-  runCleanupFunctions,
-} from './render-cleanup'
+import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 registerCleanupFunction(cleanup)
 

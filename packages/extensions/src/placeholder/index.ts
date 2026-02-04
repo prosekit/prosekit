@@ -1,20 +1,7 @@
-import {
-  definePlugin,
-  isInCodeBlock,
-  isTextSelection,
-  maybeRun,
-  type PlainExtension,
-} from '@prosekit/core'
+import { definePlugin, isInCodeBlock, isTextSelection, maybeRun, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import {
-  Plugin,
-  PluginKey,
-  type EditorState,
-} from '@prosekit/pm/state'
-import {
-  Decoration,
-  DecorationSet,
-} from '@prosekit/pm/view'
+import { Plugin, PluginKey, type EditorState } from '@prosekit/pm/state'
+import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 import { findTable } from '../table'
 

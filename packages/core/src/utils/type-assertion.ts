@@ -1,15 +1,5 @@
-import {
-  Fragment,
-  Mark,
-  ProseMirrorNode,
-  Slice,
-} from '@prosekit/pm/model'
-import {
-  AllSelection,
-  NodeSelection,
-  Selection,
-  TextSelection,
-} from '@prosekit/pm/state'
+import { Fragment, Mark, ProseMirrorNode, Slice } from '@prosekit/pm/model'
+import { AllSelection, NodeSelection, Selection, TextSelection } from '@prosekit/pm/state'
 
 /**
  * Checks if the given object is a {@link ProseMirrorNode} instance.

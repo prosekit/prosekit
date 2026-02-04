@@ -1,13 +1,6 @@
 import { isElementLike } from '@ocavue/utils'
-import {
-  defineClipboardSerializer,
-  type PlainExtension,
-} from '@prosekit/core'
-import {
-  findCheckboxInListItem,
-  joinListElements,
-  listToDOM,
-} from 'prosemirror-flat-list'
+import { defineClipboardSerializer, type PlainExtension } from '@prosekit/core'
+import { findCheckboxInListItem, joinListElements, listToDOM } from 'prosemirror-flat-list'
 
 /**
  * @internal

@@ -1,8 +1,5 @@
 import type { Extension } from 'prosekit/core'
-import {
-  defineSolidNodeView,
-  type SolidNodeViewComponent,
-} from 'prosekit/solid'
+import { defineSolidNodeView, type SolidNodeViewComponent } from 'prosekit/solid'
 
 import ImageView from './image-view'
 

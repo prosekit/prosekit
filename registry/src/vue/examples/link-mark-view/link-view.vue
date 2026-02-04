@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import type { VueMarkViewProps } from 'prosekit/vue'
-import {
-  onBeforeUnmount,
-  ref,
-} from 'vue'
+import { onBeforeUnmount, ref } from 'vue'
 
 const props = defineProps<VueMarkViewProps>()
 

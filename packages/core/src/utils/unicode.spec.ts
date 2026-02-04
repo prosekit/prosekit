@@ -1,7 +1,4 @@
-import {
-  expect,
-  test,
-} from 'vitest'
+import { expect, test } from 'vitest'
 
 import { OBJECT_REPLACEMENT_CHARACTER } from './unicode'
 

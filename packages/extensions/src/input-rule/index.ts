@@ -9,19 +9,8 @@ import {
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
-import {
-  InputRule,
-  inputRules,
-  textblockTypeInputRule,
-  wrappingInputRule,
-} from '@prosekit/pm/inputrules'
-import type {
-  Attrs,
-  MarkType,
-  NodeType,
-  ProseMirrorNode,
-  Schema,
-} from '@prosekit/pm/model'
+import { InputRule, inputRules, textblockTypeInputRule, wrappingInputRule } from '@prosekit/pm/inputrules'
+import type { Attrs, MarkType, NodeType, ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import type { Plugin } from '@prosekit/pm/state'
 
 /**

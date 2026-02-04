@@ -1,15 +1,8 @@
-import type { NodeJSON } from 'prosekit/core'
-import {
-  cleanup,
-  render,
-} from 'vitest-browser-vue/pure'
-
 import { VueRenderer } from 'prosekit-registry/vue/renderer'
+import type { NodeJSON } from 'prosekit/core'
+import { cleanup, render } from 'vitest-browser-vue/pure'
 
-import {
-  registerCleanupFunction,
-  runCleanupFunctions,
-} from './render-cleanup'
+import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 registerCleanupFunction(cleanup)
 

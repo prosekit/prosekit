@@ -1,19 +1,10 @@
 import '../../src/tailwind.css'
 
-import {
-  DefaultMap,
-  isHTMLElement,
-} from '@ocavue/utils'
+import { DefaultMap, isHTMLElement } from '@ocavue/utils'
 import { formatHTML } from 'diffable-html-snapshot'
-import type { NodeJSON } from 'prosekit/core'
-import {
-  beforeEach,
-  describe,
-  expect,
-  it,
-} from 'vitest'
-
 import registry from 'prosekit-registry/registry.gen.json'
+import type { NodeJSON } from 'prosekit/core'
+import { beforeEach, describe, expect, it } from 'vitest'
 
 import { locateEditor } from './editor'
 import { waitForStableElement } from './query'

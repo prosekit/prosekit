@@ -1,8 +1,4 @@
-import {
-  defineMarkViewComponent,
-  defineMarkViewFactory,
-  type Extension,
-} from '@prosekit/core'
+import { defineMarkViewComponent, defineMarkViewFactory, type Extension } from '@prosekit/core'
 import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import {
@@ -11,12 +7,7 @@ import {
   type MarkViewContextProps,
   type SolidMarkViewUserOptions,
 } from '@prosemirror-adapter/solid'
-import {
-  createComponent,
-  createMemo,
-  type Accessor,
-  type Component,
-} from 'solid-js'
+import { createComponent, createMemo, type Accessor, type Component } from 'solid-js'
 
 import { useExtension } from '../hooks/use-extension'
 

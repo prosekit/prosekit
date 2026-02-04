@@ -1,22 +1,8 @@
-import {
-  defineMarkViewComponent,
-  defineMarkViewFactory,
-  type Extension,
-} from '@prosekit/core'
+import { defineMarkViewComponent, defineMarkViewFactory, type Extension } from '@prosekit/core'
 import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
-import {
-  useMarkViewContext,
-  useMarkViewFactory,
-  type MarkViewContext,
-  type ReactMarkViewUserOptions,
-} from '@prosemirror-adapter/react'
-import {
-  createElement,
-  useMemo,
-  type ComponentType,
-  type FC,
-} from 'react'
+import { useMarkViewContext, useMarkViewFactory, type MarkViewContext, type ReactMarkViewUserOptions } from '@prosemirror-adapter/react'
+import { createElement, useMemo, type ComponentType, type FC } from 'react'
 
 import { useExtension } from '../hooks/use-extension'
 

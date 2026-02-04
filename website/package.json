@@ -25,7 +25,7 @@
     "@astrojs/svelte": "^7.2.5",
     "@astrojs/vue": "^5.1.4",
     "@base-ui/react": "^1.1.0",
-    "@egoist/tailwindcss-icons": "^1.9.0",
+    "@egoist/tailwindcss-icons": "^1.9.2",
     "@iconify-json/bxl": "^1.2.2",
     "@iconify-json/logos": "^1.2.10",
     "@iconify-json/lucide": "^1.2.86",

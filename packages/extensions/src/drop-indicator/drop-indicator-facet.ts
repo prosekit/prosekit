@@ -1,15 +1,5 @@
-import {
-  defineFacet,
-  defineFacetPayload,
-  pluginFacet,
-  type PlainExtension,
-  type PluginPayload,
-} from '@prosekit/core'
-import type {
-  DragEventHandler,
-  DropIndicatorPluginOptions,
-  ShowHandler,
-} from 'prosemirror-drop-indicator'
+import { defineFacet, defineFacetPayload, pluginFacet, type PlainExtension, type PluginPayload } from '@prosekit/core'
+import type { DragEventHandler, DropIndicatorPluginOptions, ShowHandler } from 'prosemirror-drop-indicator'
 import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
 
 /**
@@ -25,24 +15,24 @@ const dropIndicatorFacet = defineFacet<DropIndicatorPluginOptions, PluginPayload
   parent: pluginFacet,
   singleton: true,
   reducer: (payloads: DropIndicatorPluginOptions[]): PluginPayload => {
-    let showHandlers = payloads.map(p => p.onShow).filter(x => !!x)
-    let hideHandlers = payloads.map(p => p.onHide).filter(x => !!x)
-    let dragHandlers = payloads.map(p => p.onDrag).filter(x => !!x)
+    const showHandlers = payloads.map(p => p.onShow).filter(x => !!x)
+    const hideHandlers = payloads.map(p => p.onHide).filter(x => !!x)
+    const dragHandlers = payloads.map(p => p.onDrag).filter(x => !!x)
 
-    let showHandler: ShowHandler = (options) => {
-      for (let fn of showHandlers) {
+    const showHandler: ShowHandler = (options) => {
+      for (const fn of showHandlers) {
         fn(options)
       }
     }
 
-    let hideHandler: VoidFunction = () => {
-      for (let fn of hideHandlers) {
+    const hideHandler: VoidFunction = () => {
+      for (const fn of hideHandlers) {
         fn()
       }
     }
 
-    let dragHandler: DragEventHandler = (options): boolean => {
-      for (let fn of dragHandlers) {
+    const dragHandler: DragEventHandler = (options): boolean => {
+      for (const fn of dragHandlers) {
         if (fn(options) === false) return false
       }
       return true

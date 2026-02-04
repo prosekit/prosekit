@@ -1,9 +1,5 @@
 import { NodeSelection } from '@prosekit/pm/state'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../testing'
 

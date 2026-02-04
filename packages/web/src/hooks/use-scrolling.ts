@@ -1,9 +1,4 @@
-import {
-  createSignal,
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-} from '@aria-ui/core'
+import { createSignal, useEffect, type ConnectableElement, type ReadonlySignal } from '@aria-ui/core'
 import { getNearestOverflowAncestor } from '@zag-js/dom-query'
 
 export function useScrolling(host: ConnectableElement): ReadonlySignal<boolean> {

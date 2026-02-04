@@ -1,16 +1,10 @@
 import { Priority } from '../types/priority'
-import {
-  arraySubtract,
-  uniqPush,
-} from '../utils/array'
+import { arraySubtract, uniqPush } from '../utils/array'
 import { assert } from '../utils/assert'
 import { isNotNullish } from '../utils/type-assertion'
 
 import type { Facet } from './facet'
-import type {
-  FacetReducer,
-  Tuple5,
-} from './facet-types'
+import type { FacetReducer, Tuple5 } from './facet-types'
 import type { RootOutput } from './root'
 
 function zip5<T>(

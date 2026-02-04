@@ -1,19 +1,10 @@
 import type { Schema } from '@prosekit/pm/model'
-import {
-  Plugin,
-  type ProseMirrorPlugin,
-} from '@prosekit/pm/state'
+import { Plugin, type ProseMirrorPlugin } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
-import {
-  defineFacet,
-  type Facet,
-} from '../facets/facet'
+import { defineFacet, type Facet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
-import {
-  stateFacet,
-  type StatePayload,
-} from '../facets/state'
+import { stateFacet, type StatePayload } from '../facets/state'
 import type { PlainExtension } from '../types/extension'
 
 /**

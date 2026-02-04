@@ -1,15 +1,7 @@
-import {
-  defineNodeViewComponent,
-  defineNodeViewFactory,
-  definePlugin,
-  type Extension,
-} from '@prosekit/core'
+import { defineNodeViewComponent, defineNodeViewFactory, definePlugin, type Extension } from '@prosekit/core'
 import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
-import type {
-  NodeViewContext,
-  SvelteNodeViewUserOptions,
-} from '@prosemirror-adapter/svelte'
+import type { NodeViewContext, SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
 import type { Component } from 'svelte'
 
 import { NodeViewWrapper } from '../components/node-view-wrapper'

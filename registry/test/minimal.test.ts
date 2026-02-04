@@ -1,14 +1,6 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 
-import {
-  inputText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { inputText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('minimal')
 

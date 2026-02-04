@@ -148,8 +148,8 @@ importers:
   packages/core:
     dependencies:
       '@ocavue/utils':
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.4.0
+        version: 1.4.0
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
@@ -210,8 +210,8 @@ importers:
         specifier: ^0.6.6
         version: 0.6.6
       '@ocavue/utils':
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.4.0
+        version: 1.4.0
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -231,8 +231,8 @@ importers:
   packages/extensions:
     dependencies:
       '@ocavue/utils':
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.4.0
+        version: 1.4.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -755,8 +755,8 @@ importers:
         specifier: ^1.7.4
         version: 1.7.4
       '@ocavue/utils':
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.4.0
+        version: 1.4.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -856,8 +856,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.4.0
+        version: 1.4.0
       '@preact/preset-vite':
         specifier: ^2.10.3
         version: 2.10.3(@babel/core@7.28.5)(preact@10.28.2)(rollup@4.53.3)(vite@6.4.1(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2))
@@ -1036,8 +1036,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.4.0
+        version: 1.4.0
       '@playwright/test':
         specifier: ^1.58.0
         version: 1.58.0
@@ -2696,8 +2696,8 @@ packages:
   '@ocavue/tsconfig@0.6.2':
     resolution: {integrity: sha512-JqFajBNWVNxMsgeEpMf3kpP8jVZxihvwjZRbqXYDVwMAxP0BAXc7LQvCQRtlomDtm7V2HxrHzydMWIXGZ3VCYg==}
 
-  '@ocavue/utils@1.3.1':
-    resolution: {integrity: sha512-jd8D6fUdkspMUYr2EE8mTj1GgPivXeHMyPeI2S9v7DEJcNN1DN2Wo/7xZ5H7vUycgfpr8ucv63aKh3NKURHc1Q==}
+  '@ocavue/utils@1.4.0':
+    resolution: {integrity: sha512-hB6uTz58shfG/ZyrBkMjub2YyJ1ue0vE14zRLZWJl/zEcgMBFTX6nBBV6ncyRHK4qOIBwFNpXzZrjTFj1ofxRA==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -9789,7 +9789,7 @@ snapshots:
 
   '@ocavue/tsconfig@0.6.2': {}
 
-  '@ocavue/utils@1.3.1': {}
+  '@ocavue/utils@1.4.0': {}
 
   '@octokit/action@6.1.0':
     dependencies:
@@ -11204,7 +11204,7 @@ snapshots:
 
   astro-minify-html-swc@0.1.10:
     dependencies:
-      '@ocavue/utils': 1.3.1
+      '@ocavue/utils': 1.4.0
       '@swc/html': 1.15.3
       fast-glob: 3.3.3
 
@@ -14092,7 +14092,7 @@ snapshots:
 
   prosemirror-drop-indicator@0.1.3:
     dependencies:
-      '@ocavue/utils': 1.3.1
+      '@ocavue/utils': 1.4.0
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.5

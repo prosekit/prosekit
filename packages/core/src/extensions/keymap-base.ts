@@ -16,10 +16,7 @@ import { withPriority } from '../editor/with-priority'
 import type { PlainExtension } from '../types/extension'
 import { Priority } from '../types/priority'
 
-import {
-  defineKeymap,
-  type Keymap,
-} from './keymap'
+import { defineKeymap, type Keymap } from './keymap'
 
 // Replace `splitBlock` with `splitSplittableBlock`
 const customEnter = chainCommands(

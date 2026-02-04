@@ -1,29 +1,13 @@
-import type {
-  DOMOutputSpec,
-  Schema,
-  TagParseRule,
-} from '@prosekit/pm/model'
+import type { DOMOutputSpec, Schema, TagParseRule } from '@prosekit/pm/model'
 import { formatHTML } from 'diffable-html-snapshot'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
-import {
-  defineDoc,
-  defineParagraph,
-  defineText,
-  setupTestFromExtension,
-} from '../testing'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
 
 import { defineHistory } from './history'
 import { defineBaseKeymap } from './keymap-base'
-import {
-  defineNodeAttr,
-  defineNodeSpec,
-} from './node-spec'
+import { defineNodeAttr, defineNodeSpec } from './node-spec'
 
 describe('defineNodeSpec', () => {
   it('can merge node specs', () => {

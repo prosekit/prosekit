@@ -10,10 +10,7 @@ import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import tailwindcss from '@tailwindcss/vite'
-import type {
-  AstroIntegrationLogger,
-  AstroUserConfig,
-} from 'astro'
+import type { AstroIntegrationLogger, AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
@@ -42,9 +39,35 @@ function generateReferenceSidebarItems() {
 
 function generateExtensionsSidebarItems() {
   const classification = {
-    node: ['blockquote', 'code-block', 'heading', 'horizontal-rule', 'image', 'list', 'mention', 'table', 'doc', 'paragraph', 'text', 'hard-break'],
+    node: [
+      'blockquote',
+      'code-block',
+      'heading',
+      'horizontal-rule',
+      'image',
+      'list',
+      'mention',
+      'table',
+      'doc',
+      'paragraph',
+      'text',
+      'hard-break',
+    ],
     mark: ['bold', 'code', 'italic', 'link', 'strike', 'underline', 'text-color', 'background-color'],
-    other: ['commit', 'drop-cursor', 'enter-rule', 'file', 'gap-cursor', 'input-rule', 'loro', 'placeholder', 'readonly', 'search', 'text-align', 'yjs'],
+    other: [
+      'commit',
+      'drop-cursor',
+      'enter-rule',
+      'file',
+      'gap-cursor',
+      'input-rule',
+      'loro',
+      'placeholder',
+      'readonly',
+      'search',
+      'text-align',
+      'yjs',
+    ],
   }
 
   const nodeItems: string[] = []
@@ -104,7 +127,7 @@ async function copiedRegistry(logger: AstroIntegrationLogger) {
   const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
   const targetDir = path.join(rootDir, 'website', 'public', 'r')
 
-  let maxAttempts = 2
+  const maxAttempts = 2
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       fs.accessSync(sourceDir)

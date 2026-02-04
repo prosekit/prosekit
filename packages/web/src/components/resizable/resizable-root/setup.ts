@@ -1,25 +1,9 @@
-import {
-  createSignal,
-  useAttribute,
-  useEffect,
-  type ConnectableElement,
-  type SetupOptions,
-} from '@aria-ui/core'
+import { createSignal, useAttribute, useEffect, type ConnectableElement, type SetupOptions } from '@aria-ui/core'
 
 import { isFinitePositiveNumber } from '../../../utils/is-finite-positive-number'
-import {
-  onResizeContext,
-  onResizeEndContext,
-  onResizeStartContext,
-  type OnResize,
-  type OnResizeEnd,
-  type OnResizeStart,
-} from '../context'
+import { onResizeContext, onResizeEndContext, onResizeStartContext, type OnResize, type OnResizeEnd, type OnResizeStart } from '../context'
 
-import type {
-  ResizableRootEvents,
-  ResizableRootProps,
-} from './types'
+import type { ResizableRootEvents, ResizableRootProps } from './types'
 
 /**
  * @internal

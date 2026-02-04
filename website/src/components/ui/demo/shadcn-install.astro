@@ -27,12 +27,26 @@ const frameworks = examples.map((example) => example.meta.framework)
   </div>
 
   <CurrentFrameworkContent frameworks={frameworks} className="overflow-y-hidden not-content" client:idle>
-    <Fragment slot="lit">{frameworks.includes('lit') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/lit-example-${story}`} /> : null}</Fragment>
-    <Fragment slot="preact">{frameworks.includes('preact') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/preact-example-${story}`} /> : null}</Fragment>
-    <Fragment slot="react">{frameworks.includes('react') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/react-example-${story}`} /> : null}</Fragment>
-    <Fragment slot="solid">{frameworks.includes('solid') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/solid-example-${story}`} /> : null}</Fragment>
-    <Fragment slot="svelte">{frameworks.includes('svelte') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/svelte-example-${story}`} /> : null}</Fragment>
-    <Fragment slot="vanilla">{frameworks.includes('vanilla') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/vanilla-example-${story}`} /> : null}</Fragment>
-    <Fragment slot="vue">{frameworks.includes('vue') ? <Code lang="bash" code={`npx shadcn@latest add @prosekit/vue-example-${story}`} /> : null}</Fragment>
+    <Fragment slot="lit">{frameworks.includes('lit') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/lit-example-${story}`} />
+    ) : null}</Fragment>
+    <Fragment slot="preact">{frameworks.includes('preact') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/preact-example-${story}`} />
+    ) : null}</Fragment>
+    <Fragment slot="react">{frameworks.includes('react') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/react-example-${story}`} />
+    ) : null}</Fragment>
+    <Fragment slot="solid">{frameworks.includes('solid') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/solid-example-${story}`} />
+    ) : null}</Fragment>
+    <Fragment slot="svelte">{frameworks.includes('svelte') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/svelte-example-${story}`} />
+    ) : null}</Fragment>
+    <Fragment slot="vanilla">{frameworks.includes('vanilla') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/vanilla-example-${story}`} />
+    ) : null}</Fragment>
+    <Fragment slot="vue">{frameworks.includes('vue') ? (
+      <Code lang="bash" code={`npx shadcn@latest add @prosekit/vue-example-${story}`} />
+    ) : null}</Fragment>
   </CurrentFrameworkContent>
 </div>

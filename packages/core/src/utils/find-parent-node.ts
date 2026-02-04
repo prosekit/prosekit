@@ -1,7 +1,4 @@
-import type {
-  ProseMirrorNode,
-  ResolvedPos,
-} from '@prosekit/pm/model'
+import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 
 /**
  * @public

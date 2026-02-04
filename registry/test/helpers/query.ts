@@ -23,7 +23,7 @@ export async function waitForStableElement(
   let attempts = 0
   let lastHTML: string | undefined
   let lastRect: { x: number; y: number; width: number; height: number } | undefined
-  let startTime = Date.now()
+  const startTime = Date.now()
 
   while (
     stableCounter < stableCount
@@ -32,10 +32,10 @@ export async function waitForStableElement(
   ) {
     attempts += 1
 
-    let element = getElement()
-    let html = element.innerHTML
-    let { x, y, width, height } = element.getBoundingClientRect()
-    let rect = { x, y, width, height }
+    const element = getElement()
+    const html = element.innerHTML
+    const { x, y, width, height } = element.getBoundingClientRect()
+    const rect = { x, y, width, height }
 
     const isStable = html === lastHTML
       && lastRect

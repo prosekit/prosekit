@@ -1,16 +1,7 @@
-import type {
-  Editor,
-  Keymap,
-} from 'prosekit/core'
-import {
-  useEditorDerivedValue,
-  useKeymap,
-} from 'prosekit/react'
+import type { Editor, Keymap } from 'prosekit/core'
+import { useEditorDerivedValue, useKeymap } from 'prosekit/react'
 import { InlinePopover } from 'prosekit/react/inline-popover'
-import {
-  useMemo,
-  useState,
-} from 'react'
+import { useMemo, useState } from 'react'
 
 import { Button } from '../../ui/button'
 

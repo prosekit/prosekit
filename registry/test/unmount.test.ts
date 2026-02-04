@@ -1,14 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 
-import {
-  expectLocatorToHaveCount,
-  testStory,
-  testStoryConsistency,
-} from './helpers'
+import { expectLocatorToHaveCount, testStory, testStoryConsistency } from './helpers'
 
 testStoryConsistency('unmount', {
   setup: async () => {

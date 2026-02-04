@@ -1,18 +1,12 @@
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-} from '@prosekit/pm/state'
+import { isNotNullish } from '@ocavue/utils'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { MarkViewConstructor } from '@prosekit/pm/view'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { Extension } from '../types/extension'
-import { isNotNullish } from '../utils/type-assertion'
 
-import {
-  pluginFacet,
-  type PluginPayload,
-} from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin'
 
 /**
  * @internal

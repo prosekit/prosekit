@@ -1,8 +1,5 @@
 import type { NodeJSON } from 'prosekit/core'
-import {
-  defineComponent,
-  h,
-} from 'vue'
+import { defineComponent, h } from 'vue'
 
 import { loaders } from './loaders.gen'
 

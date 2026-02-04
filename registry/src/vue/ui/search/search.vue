@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import {
-  defineSearchQuery,
-  type SearchCommandsExtension,
-} from 'prosekit/extensions/search'
-import {
-  useEditor,
-  useExtension,
-} from 'prosekit/vue'
-import {
-  computed,
-  ref,
-} from 'vue'
+import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { useEditor, useExtension } from 'prosekit/vue'
+import { computed, ref } from 'vue'
 
 import { Button } from '../button'
 

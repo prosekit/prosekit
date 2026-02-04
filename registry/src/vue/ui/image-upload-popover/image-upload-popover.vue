@@ -2,15 +2,8 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/vue'
-import {
-  PopoverContent,
-  PopoverRoot,
-  PopoverTrigger,
-} from 'prosekit/vue/popover'
-import {
-  ref,
-  useId,
-} from 'vue'
+import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/vue/popover'
+import { ref, useId } from 'vue'
 
 import { Button } from '../button'
 

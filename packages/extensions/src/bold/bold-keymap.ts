@@ -1,8 +1,4 @@
-import {
-  defineKeymap,
-  toggleMark,
-  type PlainExtension,
-} from '@prosekit/core'
+import { defineKeymap, toggleMark, type PlainExtension } from '@prosekit/core'
 
 /**
  * @internal

@@ -2,16 +2,9 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
-import {
-  useEditor,
-  useEditorDerivedValue,
-} from 'prosekit/solid'
+import { useEditor, useEditorDerivedValue } from 'prosekit/solid'
 import { InlinePopover } from 'prosekit/solid/inline-popover'
-import {
-  createSignal,
-  Show,
-  type JSX,
-} from 'solid-js'
+import { createSignal, Show, type JSX } from 'solid-js'
 
 import { Button } from '../button'
 

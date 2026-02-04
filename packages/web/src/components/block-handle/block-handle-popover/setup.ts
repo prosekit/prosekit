@@ -1,11 +1,4 @@
-import {
-  createComputed,
-  createSignal,
-  useAttribute,
-  type ConnectableElement,
-  type ReadonlySignal,
-  type SetupOptions,
-} from '@aria-ui/core'
+import { createComputed, createSignal, useAttribute, type ConnectableElement, type ReadonlySignal, type SetupOptions } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 import type { VirtualElement } from '@floating-ui/dom'
@@ -13,21 +6,10 @@ import type { Editor } from '@prosekit/core'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useScrolling } from '../../../hooks/use-scrolling'
-import {
-  blockPopoverContext,
-  draggingContext,
-  type BlockPopoverContext,
-  type HoverState,
-} from '../context'
+import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context'
 
-import {
-  defineElementHoverHandler,
-  type ElementHoverHandler,
-} from './pointer-move'
-import type {
-  BlockHandlePopoverEvents,
-  BlockHandlePopoverProps,
-} from './types'
+import { defineElementHoverHandler, type ElementHoverHandler } from './pointer-move'
+import type { BlockHandlePopoverEvents, BlockHandlePopoverProps } from './types'
 
 /**
  * @internal

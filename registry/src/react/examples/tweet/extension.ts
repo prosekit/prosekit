@@ -1,8 +1,5 @@
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  defineNodeSpec,
-  union,
-} from 'prosekit/core'
+import { defineNodeSpec, union } from 'prosekit/core'
 
 function defineTweetSpec() {
   return defineNodeSpec({

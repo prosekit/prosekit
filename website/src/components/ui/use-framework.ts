@@ -1,9 +1,4 @@
-import {
-  useCallback,
-  useLayoutEffect,
-  useRef,
-  useSyncExternalStore,
-} from 'react'
+import { useCallback, useLayoutEffect, useRef, useSyncExternalStore } from 'react'
 
 export function useFramework(
   frameworks: string[],

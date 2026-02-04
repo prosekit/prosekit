@@ -1,8 +1,4 @@
-import {
-  useCallback,
-  useRef,
-  useState,
-} from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 import EditorComponent from './editor-component'
 

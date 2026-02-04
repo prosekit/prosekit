@@ -1,17 +1,8 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  html,
-  LitElement,
-  type PropertyDeclaration,
-  type PropertyValues,
-} from 'lit'
-import {
-  createRef,
-  ref,
-  type Ref,
-} from 'lit/directives/ref.js'
+import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
+import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import { defineBasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'

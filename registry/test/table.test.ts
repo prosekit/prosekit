@@ -1,12 +1,5 @@
-import {
-  beforeEach,
-  expect,
-  it,
-} from 'vitest'
-import {
-  page,
-  type Locator,
-} from 'vitest/browser'
+import { beforeEach, expect, it } from 'vitest'
+import { page, type Locator } from 'vitest/browser'
 
 import {
   dragAndDrop,

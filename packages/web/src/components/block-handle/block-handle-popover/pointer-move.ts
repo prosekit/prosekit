@@ -1,14 +1,6 @@
 import type { VirtualElement } from '@floating-ui/dom'
-import {
-  isElement,
-  isHTMLElement,
-  isTextNode,
-} from '@ocavue/utils'
-import {
-  defineDOMEventHandler,
-  union,
-  type PlainExtension,
-} from '@prosekit/core'
+import { isElement, isHTMLElement, isTextNode } from '@ocavue/utils'
+import { defineDOMEventHandler, union, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 

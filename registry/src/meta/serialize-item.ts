@@ -3,11 +3,7 @@ import path from 'node:path'
 
 import type { RegistryItem } from 'shadcn-schema'
 
-import {
-  FRAMEWORKS,
-  type Framework,
-  type ItemAccumulator,
-} from './types'
+import { FRAMEWORKS, type Framework, type ItemAccumulator } from './types'
 
 /**
  * Convert an accumulator into a JSON-friendly shape expected by the registry file.

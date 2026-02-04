@@ -1,8 +1,4 @@
-import {
-  join,
-  normalize,
-  resolve,
-} from 'node:path'
+import { join, normalize, resolve } from 'node:path'
 
 import { execa } from 'execa'
 import { pathExists } from 'path-exists'

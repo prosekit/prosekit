@@ -1,20 +1,10 @@
 import type { Package } from '@manypkg/get-packages'
-import {
-  camelCase,
-  kebabCase,
-  pascalCase,
-} from 'change-case'
+import { camelCase, kebabCase, pascalCase } from 'change-case'
 
 import { debug } from './debug'
 import { getPackageJsonExports } from './get-package-json-exports'
-import {
-  cleanGeneratedFilesInPackage,
-  updateTextInPackage as updatePackageFile,
-} from './package-files'
-import {
-  readComponents,
-  type GroupedComponents as Components,
-} from './read-components'
+import { cleanGeneratedFilesInPackage, updateTextInPackage as updatePackageFile } from './package-files'
+import { readComponents, type GroupedComponents as Components } from './read-components'
 import { getPackageByName } from './workspace-packages'
 
 export async function genComponents(): Promise<void> {

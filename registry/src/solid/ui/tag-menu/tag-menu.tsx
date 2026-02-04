@@ -2,16 +2,8 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/solid'
-import {
-  AutocompleteEmpty,
-  AutocompleteItem,
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/solid/autocomplete'
-import {
-  For,
-  type JSX,
-} from 'solid-js'
+import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/solid/autocomplete'
+import { For, type JSX } from 'solid-js'
 
 const regex = /#[\da-z]*$/i
 

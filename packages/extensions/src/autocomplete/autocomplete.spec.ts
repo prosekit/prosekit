@@ -1,27 +1,12 @@
-import {
-  canUseRegexLookbehind,
-  union,
-} from '@prosekit/core'
-import {
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { canUseRegexLookbehind, union } from '@prosekit/core'
+import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import {
-  defineTestExtension,
-  setupTestFromExtension,
-} from '../testing'
+import { defineTestExtension, setupTestFromExtension } from '../testing'
 import { inputText } from '../testing/keyboard'
 
 import { defineAutocomplete } from './autocomplete'
-import {
-  AutocompleteRule,
-  type MatchHandler,
-  type MatchHandlerOptions,
-} from './autocomplete-rule'
+import { AutocompleteRule, type MatchHandler, type MatchHandlerOptions } from './autocomplete-rule'
 
 function setupSlashMenu() {
   const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u

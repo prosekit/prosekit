@@ -1,5 +1,5 @@
 {
-  "lineWidth": 200,
+  "lineWidth": 140,
   "typescript": {
     "quoteStyle": "preferSingle",
     "jsx.quoteStyle": "preferDouble",
@@ -8,8 +8,6 @@
     "singleBodyPosition": "sameLine",
     "constructorType.spaceAfterNewKeyword": true,
     "constructSignature.spaceAfterNewKeyword": true,
-    "exportDeclaration.forceMultiLine": "whenMultiple",
-    "importDeclaration.forceMultiLine": "whenMultiple",
     "exportDeclaration.sortTypeOnlyExports": "last",
     "importDeclaration.sortTypeOnlyImports": "last",
     "module.sortImportDeclarations": "maintain",

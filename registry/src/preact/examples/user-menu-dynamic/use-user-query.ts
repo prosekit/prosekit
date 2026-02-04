@@ -1,7 +1,4 @@
-import {
-  useEffect,
-  useState,
-} from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 
 import type { User } from '../../sample/sample-query-users'
 import { queryUsers } from '../../sample/sample-query-users'

@@ -1,10 +1,7 @@
 import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/preact'
-import {
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/preact/autocomplete'
+import { AutocompleteList, AutocompletePopover } from 'prosekit/preact/autocomplete'
 
 import SlashMenuEmpty from './slash-menu-empty'
 import SlashMenuItem from './slash-menu-item'

@@ -1,11 +1,5 @@
-import type {
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
-import {
-  listboxItemEvents,
-  type ListboxItemEvents,
-} from '@aria-ui/listbox'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import { listboxItemEvents, type ListboxItemEvents } from '@aria-ui/listbox'
 
 export interface AutocompleteItemProps {
   /**

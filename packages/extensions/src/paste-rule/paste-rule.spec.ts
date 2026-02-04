@@ -1,24 +1,9 @@
-import {
-  Priority,
-  union,
-  withPriority,
-  type PlainExtension,
-} from '@prosekit/core'
+import { Priority, union, withPriority, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import {
-  Fragment,
-  Slice,
-} from '@prosekit/pm/model'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { Fragment, Slice } from '@prosekit/pm/model'
+import { describe, expect, it } from 'vitest'
 
-import {
-  defineTestExtension,
-  setupTestFromExtension,
-} from '../testing'
+import { defineTestExtension, setupTestFromExtension } from '../testing'
 
 import { definePasteRule } from './paste-rule'
 

@@ -12,10 +12,7 @@ import {
   TableHandleRowRoot,
   TableHandleRowTrigger,
 } from 'prosekit/solid/table-handle'
-import {
-  Show,
-  type JSX,
-} from 'solid-js'
+import { Show, type JSX } from 'solid-js'
 
 function getTableHandleState(editor: Editor<TableExtension>) {
   return {

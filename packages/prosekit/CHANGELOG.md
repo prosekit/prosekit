@@ -623,8 +623,8 @@
 
   ```ts
   import { defineDoc } from "prosekit/extensions/doc";
-  import { defineText } from "prosekit/extensions/text";
   import { defineParagraph } from "prosekit/extensions/paragraph";
+  import { defineText } from "prosekit/extensions/text";
   ```
 
 - [`581ed6f`](https://github.com/ocavue/prosekit/commit/581ed6f8e36b29d805e4b81e1b452e71454350f1) ![](https://prosekit.dev/b/extensions)

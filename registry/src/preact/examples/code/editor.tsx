@@ -2,10 +2,7 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { useMemo } from 'preact/hooks'
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
+import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import { sampleContent } from '../../sample/sample-doc-code'

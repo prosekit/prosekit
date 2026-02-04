@@ -8,19 +8,12 @@ import {
   type SignalState,
   type TypedEventTarget,
 } from '@aria-ui/core'
-import {
-  menuContentProps,
-  useMenuContent,
-  type MenuContentProps,
-} from '@aria-ui/menu/elements'
+import { menuContentProps, useMenuContent, type MenuContentProps } from '@aria-ui/menu/elements'
 
 import { getStateWithDefaults } from '../../../utils/get-default-state'
 import { tableHandleRootContext } from '../context'
 
-import type {
-  TableHandlePopoverContentEvents,
-  TableHandlePopoverContentProps,
-} from './types'
+import type { TableHandlePopoverContentEvents, TableHandlePopoverContentProps } from './types'
 
 /**
  * @internal

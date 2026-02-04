@@ -3,19 +3,10 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  jsonFromHTML,
-} from 'prosekit/core'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/svelte'
+import { createEditor, jsonFromHTML } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/svelte'
 
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown'
 
 // A list of saved documents, stored as Markdown strings
 let records = $state<string[]>([])

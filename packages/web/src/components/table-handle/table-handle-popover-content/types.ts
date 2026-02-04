@@ -1,13 +1,5 @@
-import type {
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
-import {
-  menuContentEvents,
-  menuContentProps,
-  type MenuContentEvents,
-  type MenuContentProps,
-} from '@aria-ui/menu/elements'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import { menuContentEvents, menuContentProps, type MenuContentEvents, type MenuContentProps } from '@aria-ui/menu/elements'
 import type { Editor } from '@prosekit/core'
 
 export interface TableHandlePopoverContentProps extends Omit<MenuContentProps, 'placement' | 'offset'> {

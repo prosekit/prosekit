@@ -1,8 +1,5 @@
 import { useCallback } from 'preact/hooks'
-import {
-  useEditorDerivedValue,
-  type PreactNodeViewProps,
-} from 'prosekit/preact'
+import { useEditorDerivedValue, type PreactNodeViewProps } from 'prosekit/preact'
 
 export function AtomBlockView(props: PreactNodeViewProps) {
   const docJSON = useEditorDerivedValue(useCallback((editor) => {

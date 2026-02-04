@@ -1,16 +1,9 @@
 import { jsonFromHTML } from '@prosekit/core'
 import { formatHTML } from 'diffable-html-snapshot'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../testing'
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from '../testing/markdown'
+import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown'
 
 describe('defineCodeBlockSpec', () => {
   it('can parse and serialize code blocks', () => {
@@ -152,7 +145,7 @@ describe('defineCodeBlockSpec', () => {
     editor.set(n.doc(n.codeBlock({ language: 'javascript' }, '123')))
     const html = editor.getDocHTML()
     expect(html).toMatchInlineSnapshot(`"<div><pre data-language="javascript"><code class="language-javascript">123</code></pre></div>"`)
-    let markdown = markdownFromHTML(html)
+    const markdown = markdownFromHTML(html)
     expect(markdown).toMatchInlineSnapshot(`
       "\`\`\`javascript
       123

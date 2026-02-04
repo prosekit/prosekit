@@ -1,9 +1,6 @@
 import type { NodeJSON } from 'prosekit/core'
 import type { JSX } from 'react'
-import {
-  createElement,
-  Suspense,
-} from 'react'
+import { createElement, Suspense } from 'react'
 
 import { loaders } from './loaders.gen'
 

@@ -1,16 +1,7 @@
-import {
-  defineKeymap,
-  type Keymap,
-} from '@prosekit/core'
-import {
-  derived,
-  type Readable,
-} from 'svelte/store'
+import { defineKeymap, type Keymap } from '@prosekit/core'
+import { derived, type Readable } from 'svelte/store'
 
-import {
-  useExtension,
-  type UseExtensionOptions,
-} from './use-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension'
 
 export function useKeymap(
   keymapStore: Readable<Keymap>,

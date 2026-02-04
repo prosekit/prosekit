@@ -1,8 +1,4 @@
-import {
-  defineCommands,
-  setBlockType,
-  type Extension,
-} from '@prosekit/core'
+import { defineCommands, setBlockType, type Extension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
 /**

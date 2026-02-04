@@ -1,13 +1,7 @@
-import {
-  definePlugin,
-  type PlainExtension,
-} from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-import {
-  yUndoPlugin as originalYUndoPlugin,
-  yUndoPluginKey,
-} from 'y-prosemirror'
+import { yUndoPlugin as originalYUndoPlugin, yUndoPluginKey } from 'y-prosemirror'
 import type { UndoManager as YjsUndoManager } from 'yjs'
 
 type UndoManager = YjsUndoManager & { restore: () => void }

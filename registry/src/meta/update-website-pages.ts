@@ -3,10 +3,7 @@ import { basename } from 'node:path'
 import { vfs } from '@prosekit/dev'
 import { pascalCase } from 'change-case'
 
-import {
-  FRAMEWORKS,
-  type ItemAccumulator,
-} from './types'
+import { FRAMEWORKS, type ItemAccumulator } from './types'
 
 export function updateWebsitePages(items: ItemAccumulator[]) {
   for (const framework of FRAMEWORKS) {

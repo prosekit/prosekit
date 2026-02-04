@@ -1,4 +1,1 @@
-export {
-  moveTableColumn,
-  type MoveTableColumnOptions,
-} from 'prosemirror-tables'
+export { moveTableColumn, type MoveTableColumnOptions } from 'prosemirror-tables'

@@ -1,16 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import {
-  expectLocatorToNotExist,
-  inputText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToNotExist, inputText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('heading')
 

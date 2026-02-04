@@ -1,13 +1,5 @@
-import type {
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
-import {
-  listboxEvents,
-  listboxProps,
-  type ListboxEvents,
-  type ListboxProps,
-} from '@aria-ui/listbox'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import { listboxEvents, listboxProps, type ListboxEvents, type ListboxProps } from '@aria-ui/listbox'
 import type { Editor } from '@prosekit/core'
 
 export interface AutocompleteListProps extends Pick<ListboxProps, 'filter'> {

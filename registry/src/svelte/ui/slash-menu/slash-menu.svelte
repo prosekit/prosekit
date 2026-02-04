@@ -2,10 +2,7 @@
 import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/svelte'
-import {
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/svelte/autocomplete'
+import { AutocompleteList, AutocompletePopover } from 'prosekit/svelte/autocomplete'
 
 import SlashMenuEmpty from './slash-menu-empty.svelte'
 import SlashMenuItem from './slash-menu-item.svelte'

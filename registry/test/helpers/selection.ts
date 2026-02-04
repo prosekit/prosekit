@@ -1,7 +1,4 @@
-import {
-  isElement,
-  sleep,
-} from '@ocavue/utils'
+import { isElement, sleep } from '@ocavue/utils'
 import { expect } from 'vitest'
 import type { Locator } from 'vitest/browser'
 
@@ -29,7 +26,11 @@ export async function collapseSelection(direction: 'start' | 'end'): Promise<voi
   await waitForSelectionUpdate()
 }
 
-export async function moveSelection(direction: 'forward' | 'backward', count: number, granularity: 'character' | 'line' = 'character'): Promise<void> {
+export async function moveSelection(
+  direction: 'forward' | 'backward',
+  count: number,
+  granularity: 'character' | 'line' = 'character',
+): Promise<void> {
   const selection = getSelection()
   for (let i = 0; i < count; i++) {
     selection.modify('move', direction, granularity)

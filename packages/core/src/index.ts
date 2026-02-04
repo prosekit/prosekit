@@ -1,102 +1,30 @@
-export {
-  addMark,
-  type AddMarkOptions,
-} from './commands/add-mark'
-export {
-  expandMark,
-  type ExpandMarkOptions,
-} from './commands/expand-mark'
-export {
-  insertDefaultBlock,
-  type InsertDefaultBlockOptions,
-} from './commands/insert-default-block'
-export {
-  insertNode,
-  type InsertNodeOptions,
-} from './commands/insert-node'
-export {
-  removeMark,
-  type RemoveMarkOptions,
-} from './commands/remove-mark'
-export {
-  removeNode,
-  type RemoveNodeOptions,
-} from './commands/remove-node'
+export { addMark, type AddMarkOptions } from './commands/add-mark'
+export { expandMark, type ExpandMarkOptions } from './commands/expand-mark'
+export { insertDefaultBlock, type InsertDefaultBlockOptions } from './commands/insert-default-block'
+export { insertNode, type InsertNodeOptions } from './commands/insert-node'
+export { removeMark, type RemoveMarkOptions } from './commands/remove-mark'
+export { removeNode, type RemoveNodeOptions } from './commands/remove-node'
 export { selectAll } from './commands/select-all'
 export { selectBlock } from './commands/select-block'
-export {
-  setBlockType,
-  type SetBlockTypeOptions,
-} from './commands/set-block-type'
-export {
-  setNodeAttrs,
-  type SetNodeAttrsOptions,
-} from './commands/set-node-attrs'
-export {
-  setNodeAttrsBetween,
-  type SetNodeAttrsBetweenOptions,
-} from './commands/set-node-attrs-between'
-export {
-  toggleMark,
-  type ToggleMarkOptions,
-} from './commands/toggle-mark'
-export {
-  toggleNode,
-  type ToggleNodeOptions,
-} from './commands/toggle-node'
-export {
-  toggleWrap,
-  type ToggleWrapOptions,
-} from './commands/toggle-wrap'
-export {
-  unsetBlockType,
-  type UnsetBlockTypeOptions,
-} from './commands/unset-block-type'
-export {
-  unsetMark,
-  type UnsetMarkOptions,
-} from './commands/unset-mark'
-export {
-  wrap,
-  type WrapOptions,
-} from './commands/wrap'
-export type {
-  MarkAction,
-  NodeAction,
-  NodeChild,
-} from './editor/action'
-export {
-  createEditor,
-  Editor,
-  type EditorOptions,
-} from './editor/editor'
+export { setBlockType, type SetBlockTypeOptions } from './commands/set-block-type'
+export { setNodeAttrs, type SetNodeAttrsOptions } from './commands/set-node-attrs'
+export { setNodeAttrsBetween, type SetNodeAttrsBetweenOptions } from './commands/set-node-attrs-between'
+export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
+export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
+export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap'
+export { unsetBlockType, type UnsetBlockTypeOptions } from './commands/unset-block-type'
+export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
+export { wrap, type WrapOptions } from './commands/wrap'
+export type { MarkAction, NodeAction, NodeChild } from './editor/action'
+export { createEditor, Editor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
-export {
-  EditorNotFoundError,
-  ProseKitError,
-} from './error'
-export {
-  defineClipboardSerializer,
-  type ClipboardSerializerOptions,
-} from './extensions/clipboard-serializer'
-export {
-  defineBaseCommands,
-  defineCommands,
-  type BaseCommandsExtension,
-} from './extensions/command'
-export {
-  defineDefaultState,
-  type DefaultStateOptions,
-} from './extensions/default-state'
-export {
-  defineDocChangeHandler,
-  type DocChangeHandler,
-} from './extensions/events/doc-change'
-export {
-  defineDOMEventHandler,
-  type DOMEventHandler,
-} from './extensions/events/dom-event'
+export { EditorNotFoundError, ProseKitError } from './error'
+export { defineClipboardSerializer, type ClipboardSerializerOptions } from './extensions/clipboard-serializer'
+export { defineBaseCommands, defineCommands, type BaseCommandsExtension } from './extensions/command'
+export { defineDefaultState, type DefaultStateOptions } from './extensions/default-state'
+export { defineDocChangeHandler, type DocChangeHandler } from './extensions/events/doc-change'
+export { defineDOMEventHandler, type DOMEventHandler } from './extensions/events/dom-event'
 export {
   defineClickHandler,
   defineClickOnHandler,
@@ -125,10 +53,7 @@ export {
   type TripleClickHandler,
   type TripleClickOnHandler,
 } from './extensions/events/editor-event'
-export {
-  defineFocusChangeHandler,
-  type FocusChangeHandler,
-} from './extensions/events/focus'
+export { defineFocusChangeHandler, type FocusChangeHandler } from './extensions/events/focus'
 export {
   defineMountHandler,
   defineUnmountHandler,
@@ -137,69 +62,30 @@ export {
   type UnmountHandler,
   type UpdateHandler,
 } from './extensions/events/plugin-view'
-export {
-  defineHistory,
-  type HistoryExtension,
-  type HistoryOptions,
-} from './extensions/history'
-export {
-  defineKeymap,
-  keymapFacet,
-  type Keymap,
-  type KeymapPayload,
-} from './extensions/keymap'
-export {
-  defineBaseKeymap,
-  type BaseKeymapExtension,
-  type BaseKeymapOptions,
-} from './extensions/keymap-base'
-export {
-  defineMarkAttr,
-  defineMarkSpec,
-  type MarkAttrOptions,
-  type MarkSpecOptions,
-} from './extensions/mark-spec'
-export {
-  defineMarkView,
-  type MarkViewOptions,
-} from './extensions/mark-view'
+export { defineHistory, type HistoryExtension, type HistoryOptions } from './extensions/history'
+export { defineKeymap, keymapFacet, type Keymap, type KeymapPayload } from './extensions/keymap'
+export { defineBaseKeymap, type BaseKeymapExtension, type BaseKeymapOptions } from './extensions/keymap-base'
+export { defineMarkAttr, defineMarkSpec, type MarkAttrOptions, type MarkSpecOptions } from './extensions/mark-spec'
+export { defineMarkView, type MarkViewOptions } from './extensions/mark-view'
 export {
   defineMarkViewComponent,
   defineMarkViewFactory,
   type MarkViewComponentOptions,
   type MarkViewFactoryOptions,
 } from './extensions/mark-view-effect'
-export {
-  defineNodeAttr,
-  defineNodeSpec,
-  type NodeAttrOptions,
-  type NodeSpecOptions,
-} from './extensions/node-spec'
-export {
-  defineNodeView,
-  type NodeViewOptions,
-} from './extensions/node-view'
+export { defineNodeAttr, defineNodeSpec, type NodeAttrOptions, type NodeSpecOptions } from './extensions/node-spec'
+export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
 export {
   defineNodeViewComponent,
   defineNodeViewFactory,
   type NodeViewComponentOptions,
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect'
-export {
-  definePlugin,
-  pluginFacet,
-  type PluginPayload,
-} from './extensions/plugin'
-export {
-  defineFacet,
-  type Facet,
-} from './facets/facet'
+export { definePlugin, pluginFacet, type PluginPayload } from './extensions/plugin'
+export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { AnyFunction } from './types/any-function'
-export type {
-  AnyAttrs,
-  AttrSpec,
-} from './types/attrs'
+export type { AnyAttrs, AttrSpec } from './types/attrs'
 export type {
   Extension,
   ExtensionTyping,
@@ -214,24 +100,10 @@ export type {
   PlainExtension,
   Union,
 } from './types/extension'
-export type {
-  CommandAction,
-  CommandTyping,
-} from './types/extension-command'
-export type {
-  MarkTyping,
-  ToMarkAction,
-} from './types/extension-mark'
-export type {
-  NodeTyping,
-  ToNodeAction,
-} from './types/extension-node'
-export type {
-  NodeJSON,
-  SelectionJSON,
-  StateJSON,
-  StepJSON,
-} from './types/model'
+export type { CommandAction, CommandTyping } from './types/extension-command'
+export type { MarkTyping, ToMarkAction } from './types/extension-mark'
+export type { NodeTyping, ToNodeAction } from './types/extension-node'
+export type { NodeJSON, SelectionJSON, StateJSON, StepJSON } from './types/model'
 export type { PickSubType } from './types/pick-sub-type'
 export { Priority } from './types/priority'
 export type { SimplifyDeeper } from './types/simplify-deeper'
@@ -242,15 +114,8 @@ export { clsx } from './utils/clsx'
 export { containsInlineNode } from './utils/contains-inline-node'
 export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'
-export {
-  findNode,
-  findNodes,
-  type FindNodeResult,
-} from './utils/find-node'
-export {
-  findParentNode,
-  type FindParentNodeResult,
-} from './utils/find-parent-node'
+export { findNode, findNodes, type FindNodeResult } from './utils/find-node'
+export { findParentNode, type FindParentNodeResult } from './utils/find-parent-node'
 export { findParentNodeOfType } from './utils/find-parent-node-of-type'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'

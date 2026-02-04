@@ -1,17 +1,6 @@
-import {
-  defineMountHandler,
-  defineUpdateHandler,
-  ProseKitError,
-  union,
-  type Editor,
-  type Extension,
-} from '@prosekit/core'
+import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
 import { onMount } from 'svelte'
-import {
-  readonly,
-  writable,
-  type Readable,
-} from 'svelte/store'
+import { readonly, writable, type Readable } from 'svelte/store'
 
 import { useEditorContext } from '../contexts/editor-context'
 

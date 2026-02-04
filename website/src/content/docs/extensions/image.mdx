@@ -33,11 +33,7 @@ editor.commands.insertImage({ src: 'https://static.photos/200x200' })
 
 ```ts twoslash
 import { createEditor } from 'prosekit/core'
-import {
-  defineImage,
-  uploadImage,
-  type UploadImageOptions,
-} from 'prosekit/extensions/image'
+import { defineImage, uploadImage, type UploadImageOptions } from 'prosekit/extensions/image'
 
 const extension = defineImage()
 const editor = createEditor({ extension })

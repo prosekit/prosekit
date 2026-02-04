@@ -1,7 +1,4 @@
-import {
-  defineKeymap,
-  type PlainExtension,
-} from '@prosekit/core'
+import { defineKeymap, type PlainExtension } from '@prosekit/core'
 
 import { insertHardBreak } from './hard-break-commands'
 

@@ -1,21 +1,12 @@
-import {
-  union,
-  type Union,
-} from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import {
-  defineListCommands,
-  type ListCommandsExtension,
-} from './list-commands'
+import { defineListCommands, type ListCommandsExtension } from './list-commands'
 import { defineListDropIndicator } from './list-drop-indicator'
 import { defineListInputRules } from './list-input-rules'
 import { defineListKeymap } from './list-keymap'
 import { defineListPlugins } from './list-plugins'
 import { defineListSerializer } from './list-serializer'
-import {
-  defineListSpec,
-  type ListSpecExtension,
-} from './list-spec'
+import { defineListSpec, type ListSpecExtension } from './list-spec'
 
 /**
  * @internal

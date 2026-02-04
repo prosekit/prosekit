@@ -1,9 +1,4 @@
-import {
-  addMark,
-  defineCommands,
-  removeMark,
-  type Extension,
-} from '@prosekit/core'
+import { addMark, defineCommands, removeMark, type Extension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
 import type { TextColorAttrs } from './text-color-spec'

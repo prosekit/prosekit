@@ -1,10 +1,4 @@
-import type {
-  BundledHighlighterOptions,
-  BundledLanguage,
-  BundledTheme,
-  Highlighter,
-  SpecialLanguage,
-} from 'shiki'
+import type { BundledHighlighterOptions, BundledLanguage, BundledTheme, Highlighter, SpecialLanguage } from 'shiki'
 import { createHighlighter } from 'shiki/bundle/full'
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript'
 

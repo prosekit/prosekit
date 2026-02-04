@@ -1,4 +1,4 @@
-import { mapGroupBy } from '@ocavue/utils'
+import { isNotNullish, mapGroupBy } from '@ocavue/utils'
 import type { AttributeSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
 
@@ -10,7 +10,6 @@ import type { Extension } from '../types/extension'
 import { assert } from '../utils/assert'
 import { mergeSpecs } from '../utils/merge-specs'
 import { wrapOutputSpecAttrs, wrapTagParseRuleAttrs } from '../utils/output-spec'
-import { isNotNullish } from '../utils/type-assertion'
 
 /**
  * @public

@@ -1,7 +1,7 @@
-import { mapGroupBy } from '@ocavue/utils'
+import { isNotNullish, mapGroupBy } from '@ocavue/utils'
 import type { AttributeSpec, MarkSpec, SchemaSpec } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
-import { isNotNullish } from '@ocavue/utils'
+
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'

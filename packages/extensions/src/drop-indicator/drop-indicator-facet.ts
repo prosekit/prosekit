@@ -1,3 +1,4 @@
+import { isNotNullish } from '@ocavue/utils'
 import { defineFacet, defineFacetPayload, pluginFacet, type PlainExtension, type PluginPayload } from '@prosekit/core'
 import type { DragEventHandler, DropIndicatorPluginOptions, ShowHandler } from 'prosemirror-drop-indicator'
 import { createDropIndicatorPlugin } from 'prosemirror-drop-indicator'
@@ -15,9 +16,9 @@ const dropIndicatorFacet = defineFacet<DropIndicatorPluginOptions, PluginPayload
   parent: pluginFacet,
   singleton: true,
   reducer: (payloads: DropIndicatorPluginOptions[]): PluginPayload => {
-    const showHandlers = payloads.map(p => p.onShow).filter(x => !!x)
-    const hideHandlers = payloads.map(p => p.onHide).filter(x => !!x)
-    const dragHandlers = payloads.map(p => p.onDrag).filter(x => !!x)
+    const showHandlers = payloads.map(p => p.onShow).filter(isNotNullish)
+    const hideHandlers = payloads.map(p => p.onHide).filter(isNotNullish)
+    const dragHandlers = payloads.map(p => p.onDrag).filter(isNotNullish)
 
     const showHandler: ShowHandler = (options) => {
       for (const fn of showHandlers) {

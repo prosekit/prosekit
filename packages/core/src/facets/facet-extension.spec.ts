@@ -1,7 +1,7 @@
+import { isNotNullish } from '@ocavue/utils'
 import { describe, expect, it, vi } from 'vitest'
 
 import { Priority } from '../types/priority'
-import { isNotNullish } from '../utils/type-assertion'
 
 import { defineFacet, Facet } from './facet'
 import { FacetExtensionImpl } from './facet-extension'

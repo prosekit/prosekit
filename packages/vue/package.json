@@ -62,7 +62,7 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@vitejs/plugin-vue": "^6.0.3",
+    "@vitejs/plugin-vue": "^6.0.4",
     "@vue/test-utils": "^2.4.6",
     "tsdown": "^0.20.1",
     "typescript": "~5.9.3",

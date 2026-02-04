@@ -70,12 +70,3 @@ export function isNodeSelection(value: Selection): value is NodeSelection {
 export function isAllSelection(value: Selection): value is AllSelection {
   return value instanceof AllSelection
 }
-
-/**
- * @internal
- */
-export function isNotNullish<T>(
-  value: T | null | undefined,
-): value is T {
-  return value != null
-}

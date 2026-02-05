@@ -176,6 +176,7 @@ class LitToolbar extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback()
+    this.classList.add('contents')
     this.attachEditorListener()
   }
 
@@ -200,7 +201,6 @@ class LitToolbar extends LitElement {
     this.removeUpdateExtension = this.editor.use(
       defineUpdateHandler(() => this.requestUpdate()),
     )
-    this.requestUpdate()
   }
 
   private detachEditorListener() {

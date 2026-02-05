@@ -24,6 +24,11 @@ class LitButton extends LitElement {
     return this
   }
 
+  override connectedCallback() {
+    super.connectedCallback()
+    this.classList.add('contents')
+  }
+
   private handleMouseDown = (event: MouseEvent) => {
     // Prevent the editor from being blurred when the button is clicked
     event.preventDefault()

@@ -38,6 +38,11 @@ class LitImageUploadPopover extends LitElement {
     return this
   }
 
+  override connectedCallback() {
+    super.connectedCallback()
+    this.classList.add('contents')
+  }
+
   private handleOpenChange = (event: CustomEvent<boolean>) => {
     const isOpen = event.detail
 

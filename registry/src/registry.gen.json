@@ -11751,6 +11751,160 @@
       }
     },
     {
+      "name": "lit-example-toolbar",
+      "title": "lit-example-toolbar",
+      "type": "registry:block",
+      "description": "Formatting toolbar with common editing actions.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-sample-sample-uploader.json",
+        "https://prosekit.dev/r/lit-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/examples/toolbar/editor.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/editor.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/toolbar/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/extension.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "toolbar",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/examples/toolbar/editor.ts",
+          "registry/src/lit/examples/toolbar/extension.ts",
+          "registry/src/lit/examples/toolbar/index.ts",
+          "registry/src/lit/sample/sample-uploader.ts",
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "registry/src/lit/ui/image-upload-popover/index.ts",
+          "registry/src/lit/ui/toolbar/index.ts",
+          "registry/src/lit/ui/toolbar/toolbar.ts"
+        ],
+        "internalDependencies": [
+          "lit-sample-sample-uploader",
+          "lit-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "lit-sample-sample-uploader",
+      "title": "lit-sample-sample-uploader",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/sample/sample-uploader.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-uploader.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/sample/sample-uploader.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-button",
+      "title": "lit-ui-button",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/button/button.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/button/button.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/button/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/button/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-image-upload-popover",
+      "title": "lit-ui-image-upload-popover",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-button.json"
+      ],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/image-upload-popover/image-upload-popover.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/image-upload-popover/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/image-upload-popover/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "registry/src/lit/ui/image-upload-popover/index.ts"
+        ],
+        "internalDependencies": [
+          "lit-ui-button"
+        ]
+      }
+    },
+    {
       "name": "lit-ui-slash-menu",
       "title": "lit-ui-slash-menu",
       "type": "registry:component",
@@ -11794,6 +11948,55 @@
           "registry/src/lit/ui/slash-menu/slash-menu.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-toolbar",
+      "title": "lit-ui-toolbar",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-button.json",
+        "https://prosekit.dev/r/lit-ui-image-upload-popover.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/toolbar/index.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/toolbar/toolbar.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/toolbar/toolbar.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "registry/src/lit/ui/image-upload-popover/index.ts",
+          "registry/src/lit/ui/toolbar/index.ts",
+          "registry/src/lit/ui/toolbar/toolbar.ts"
+        ],
+        "internalDependencies": [
+          "lit-ui-button",
+          "lit-ui-image-upload-popover"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {

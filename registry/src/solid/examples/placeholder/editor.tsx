@@ -1,16 +1,9 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  createEditor,
-  jsonFromNode,
-  type NodeJSON,
-} from 'prosekit/core'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/solid'
+import { ProseKit, useDocChange } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
 import { defineExtension } from './extension'

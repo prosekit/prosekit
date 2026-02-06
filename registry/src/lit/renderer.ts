@@ -1,8 +1,5 @@
 import { LitElement } from 'lit'
-import {
-  html,
-  unsafeStatic,
-} from 'lit/static-html.js'
+import { html, unsafeStatic } from 'lit/static-html.js'
 
 import { loaders } from './loaders.gen'
 import { suppressLitWarnings } from './suppress-lit-warnings'

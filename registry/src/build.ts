@@ -1,7 +1,4 @@
-import {
-  skipGen,
-  vfs,
-} from '@prosekit/dev'
+import { skipGen, vfs } from '@prosekit/dev'
 
 import { debug } from './meta/debug'
 import { replaceClassNames } from './meta/replace-classes'

@@ -1,11 +1,5 @@
-import {
-  defineCommands,
-  type Extension,
-} from '@prosekit/core'
-import {
-  redo,
-  undo,
-} from 'loro-prosemirror'
+import { defineCommands, type Extension } from '@prosekit/core'
+import { redo, undo } from 'loro-prosemirror'
 
 const commands = {
   undo: () => undo,

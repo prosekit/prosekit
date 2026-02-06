@@ -1,23 +1,12 @@
-import {
-  createEditor,
-  nodeFromHTML,
-  union,
-} from '@prosekit/core'
+import { createEditor, nodeFromHTML, union } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { formatHTML } from 'diffable-html-snapshot'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
 import { setupTest } from '../testing'
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from '../testing/markdown'
+import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown'
 import { defineText } from '../text'
 
 import { defineList } from './index'

@@ -1,7 +1,4 @@
-import {
-  defineMarkSpec,
-  type Extension,
-} from '@prosekit/core'
+import { defineMarkSpec, type Extension } from '@prosekit/core'
 
 /**
  * Attributes for the `backgroundColor` mark.

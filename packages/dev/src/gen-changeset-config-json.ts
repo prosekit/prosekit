@@ -2,10 +2,7 @@ import { DefaultMap } from '@ocavue/utils'
 
 import { isPublicPackage } from './is-public-package'
 import { vfs } from './vfs'
-import {
-  getPrivatePackages,
-  getWorkspacePackages,
-} from './workspace-packages'
+import { getPrivatePackages, getWorkspacePackages } from './workspace-packages'
 
 export async function genChangesetConfigJson(): Promise<void> {
   const privatePackages = await getPrivatePackages()

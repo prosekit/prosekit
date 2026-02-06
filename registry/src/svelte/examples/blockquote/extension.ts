@@ -1,7 +1,4 @@
-import {
-  defineBaseKeymap,
-  union,
-} from 'prosekit/core'
+import { defineBaseKeymap, union } from 'prosekit/core'
 import { defineBlockquote } from 'prosekit/extensions/blockquote'
 import { defineDoc } from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'

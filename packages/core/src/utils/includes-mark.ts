@@ -1,8 +1,4 @@
-import type {
-  Attrs,
-  Mark,
-  MarkType,
-} from '@prosekit/pm/model'
+import type { Attrs, Mark, MarkType } from '@prosekit/pm/model'
 
 import { isSubset } from './is-subset'
 

@@ -9,15 +9,8 @@ import { defineHistory } from '../extensions/history'
 import { defineBaseKeymap } from '../extensions/keymap-base'
 import { defineMarkSpec } from '../extensions/mark-spec'
 import { defineNodeSpec } from '../extensions/node-spec'
-import {
-  createTestEditor,
-  type TestEditor,
-} from '../test'
-import type {
-  Extension,
-  ExtractMarkActions,
-  ExtractNodeActions,
-} from '../types/extension'
+import { createTestEditor, type TestEditor } from '../test'
+import type { Extension, ExtractMarkActions, ExtractNodeActions } from '../types/extension'
 import { Priority } from '../types/priority'
 
 type DocExtension = Extension<{ Nodes: { doc: Attrs } }>

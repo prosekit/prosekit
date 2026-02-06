@@ -1,10 +1,6 @@
 import type { Attrs } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
-import {
-  describe,
-  expectTypeOf,
-  it,
-} from 'vitest'
+import { describe, expectTypeOf, it } from 'vitest'
 
 import { defineCommands } from '../extensions/command'
 import { defineMarkSpec } from '../extensions/mark-spec'

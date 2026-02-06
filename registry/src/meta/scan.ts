@@ -2,25 +2,12 @@ import path, { basename } from 'node:path/posix'
 
 import { once } from '@ocavue/utils'
 import { vfs } from '@prosekit/dev'
-import {
-  parseImportsExports,
-  type ImportsExports,
-} from 'parse-imports-exports'
+import { parseImportsExports, type ImportsExports } from 'parse-imports-exports'
 
 import { debug } from './debug'
-import {
-  loadStoryMeta,
-  type StoryMeta,
-} from './story-meta'
-import type {
-  Framework,
-  ItemAccumulator,
-  ItemCategory,
-} from './types'
-import {
-  FRAMEWORKS,
-  REGISTRY_SRC_DIR,
-} from './types'
+import { loadStoryMeta, type StoryMeta } from './story-meta'
+import type { Framework, ItemAccumulator, ItemCategory } from './types'
+import { FRAMEWORKS, REGISTRY_SRC_DIR } from './types'
 
 const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   react: path.join(REGISTRY_SRC_DIR, 'react'),

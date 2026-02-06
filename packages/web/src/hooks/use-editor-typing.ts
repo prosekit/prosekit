@@ -1,13 +1,5 @@
-import {
-  createSignal,
-  type ConnectableElement,
-  type ReadonlySignal,
-} from '@aria-ui/core'
-import {
-  defineDOMEventHandler,
-  union,
-  type Editor,
-} from '@prosekit/core'
+import { createSignal, type ConnectableElement, type ReadonlySignal } from '@aria-ui/core'
+import { defineDOMEventHandler, union, type Editor } from '@prosekit/core'
 
 import { useEditorExtension } from './use-editor-extension'
 

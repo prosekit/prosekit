@@ -1,12 +1,5 @@
-import type {
-  ComponentChild,
-  MouseEventHandler,
-} from 'preact'
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from 'prosekit/preact/tooltip'
+import type { ComponentChild, MouseEventHandler } from 'preact'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/preact/tooltip'
 
 export default function Button(props: {
   pressed?: boolean

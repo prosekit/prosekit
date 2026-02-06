@@ -1,25 +1,13 @@
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-} from '@prosekit/pm/state'
-import type {
-  DOMEventMap,
-  EditorView,
-} from '@prosekit/pm/view'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
+import type { DOMEventMap, EditorView } from '@prosekit/pm/view'
 
-import {
-  defineFacet,
-  type Facet,
-} from '../../facets/facet'
+import { defineFacet, type Facet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { PlainExtension } from '../../types/extension'
 import type { Setter } from '../../types/setter'
 import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import {
-  pluginFacet,
-  type PluginPayload,
-} from '../plugin'
+import { pluginFacet, type PluginPayload } from '../plugin'
 
 /**
  * A function to handle the events fired on the editable DOM element. Returns

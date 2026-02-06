@@ -1,7 +1,4 @@
-import type {
-  NodeType,
-  Schema,
-} from '@prosekit/pm/model'
+import type { NodeType, Schema } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 

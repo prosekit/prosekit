@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from 'prosekit/vue/tooltip'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/vue/tooltip'
 
 const props = defineProps<{
   pressed?: boolean

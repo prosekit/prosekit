@@ -1,7 +1,4 @@
-import {
-  definePlugin,
-  type PlainExtension,
-} from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import { ySyncPlugin } from 'y-prosemirror'
 import type * as Y from 'yjs'

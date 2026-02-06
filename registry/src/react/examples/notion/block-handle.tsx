@@ -1,9 +1,5 @@
 import { Tooltip } from '@base-ui/react/tooltip'
-import {
-  BlockHandleAdd,
-  BlockHandleDraggable,
-  BlockHandlePopover,
-} from 'prosekit/react/block-handle'
+import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopover } from 'prosekit/react/block-handle'
 
 import BlockHandleMenu from './block-handle-menu'
 

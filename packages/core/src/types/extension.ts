@@ -1,18 +1,8 @@
 import type { Schema } from '@prosekit/pm/model'
 
-import type {
-  CommandTyping,
-  ToCommandAction,
-  ToCommandCreators,
-} from './extension-command'
-import type {
-  MarkTyping,
-  ToMarkAction,
-} from './extension-mark'
-import type {
-  NodeTyping,
-  ToNodeAction,
-} from './extension-node'
+import type { CommandTyping, ToCommandAction, ToCommandCreators } from './extension-command'
+import type { MarkTyping, ToMarkAction } from './extension-mark'
+import type { NodeTyping, ToNodeAction } from './extension-node'
 import type { PickStringLiteral } from './pick-string-literal'
 import type { PickSubType } from './pick-sub-type'
 import type { Priority } from './priority'

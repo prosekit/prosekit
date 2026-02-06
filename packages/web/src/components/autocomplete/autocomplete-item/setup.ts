@@ -1,17 +1,9 @@
-import {
-  useEffect,
-  useEventListener,
-  type ConnectableElement,
-  type SetupOptions,
-} from '@aria-ui/core'
+import { useEffect, useEventListener, type ConnectableElement, type SetupOptions } from '@aria-ui/core'
 import { useListboxItem } from '@aria-ui/listbox/elements'
 
 import { openContext } from '../context'
 
-import type {
-  AutocompleteItemEvents,
-  AutocompleteItemProps,
-} from './types'
+import type { AutocompleteItemEvents, AutocompleteItemProps } from './types'
 
 /**
  * @internal

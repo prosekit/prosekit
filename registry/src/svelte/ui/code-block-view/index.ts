@@ -1,8 +1,5 @@
 import type { Extension } from 'prosekit/core'
-import {
-  defineSvelteNodeView,
-  type SvelteNodeViewComponent,
-} from 'prosekit/svelte'
+import { defineSvelteNodeView, type SvelteNodeViewComponent } from 'prosekit/svelte'
 
 import CodeBlockView from './code-block-view.svelte'
 

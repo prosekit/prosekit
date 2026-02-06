@@ -1,8 +1,4 @@
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from 'prosekit/solid/tooltip'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/solid/tooltip'
 import type { JSX } from 'solid-js'
 
 export default function Button(props: {

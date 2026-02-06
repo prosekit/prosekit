@@ -1,13 +1,7 @@
 <script lang="ts">
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  union,
-} from 'prosekit/core'
-import {
-  defineCommitViewer,
-  type Commit,
-} from 'prosekit/extensions/commit'
+import { createEditor, union } from 'prosekit/core'
+import { defineCommitViewer, type Commit } from 'prosekit/extensions/commit'
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { ProseKit } from 'prosekit/svelte'
 

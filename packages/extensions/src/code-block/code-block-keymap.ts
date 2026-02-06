@@ -1,12 +1,5 @@
-import {
-  defaultBlockAt,
-  defineKeymap,
-  type PlainExtension,
-} from '@prosekit/core'
-import {
-  TextSelection,
-  type Command,
-} from '@prosekit/pm/state'
+import { defaultBlockAt, defineKeymap, type PlainExtension } from '@prosekit/core'
+import { TextSelection, type Command } from '@prosekit/pm/state'
 
 /**
  * Defines the keymap for code blocks.

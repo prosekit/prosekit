@@ -2,24 +2,11 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  jsonFromHTML,
-} from 'prosekit/core'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/solid'
-import {
-  createSignal,
-  For,
-  type JSX,
-} from 'solid-js'
+import { createEditor, jsonFromHTML } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/solid'
+import { createSignal, For, type JSX } from 'solid-js'
 
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown'
 
 export default function Editor(): JSX.Element {
   const [records, setRecords] = createSignal<string[]>([])

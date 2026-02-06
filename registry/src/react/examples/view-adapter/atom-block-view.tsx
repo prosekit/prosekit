@@ -1,7 +1,4 @@
-import {
-  useEditorDerivedValue,
-  type ReactNodeViewProps,
-} from 'prosekit/react'
+import { useEditorDerivedValue, type ReactNodeViewProps } from 'prosekit/react'
 import { useCallback } from 'react'
 
 export function AtomBlockView(props: ReactNodeViewProps) {

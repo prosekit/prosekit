@@ -1,18 +1,8 @@
-import {
-  insertNode,
-  ProseKitError,
-} from '@prosekit/core'
-import type {
-  Command,
-  EditorState,
-  Transaction,
-} from '@prosekit/pm/state'
+import { insertNode, ProseKitError } from '@prosekit/core'
+import type { Command, EditorState, Transaction } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import {
-  UploadTask,
-  type Uploader,
-} from '../../file'
+import { UploadTask, type Uploader } from '../../file'
 import type { ImageAttrs } from '../image-spec'
 
 /**

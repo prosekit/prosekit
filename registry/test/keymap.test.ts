@@ -1,13 +1,8 @@
 import { it } from 'vitest'
-import { page } from 'vitest/browser'
 import { keyboard } from 'vitest-browser-commands/playwright'
+import { page } from 'vitest/browser'
 
-import {
-  expectLocatorToHaveCount,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToHaveCount, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('keymap')
 

@@ -1,12 +1,5 @@
-import type {
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
-import {
-  overlayPositionerProps,
-  type OverlayPositionerEvents,
-  type OverlayPositionerProps,
-} from '@aria-ui/overlay'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import { overlayPositionerProps, type OverlayPositionerEvents, type OverlayPositionerProps } from '@aria-ui/overlay'
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 

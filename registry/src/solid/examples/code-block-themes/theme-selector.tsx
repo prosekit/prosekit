@@ -1,15 +1,6 @@
-import {
-  defineCodeBlockShiki,
-  shikiBundledThemesInfo,
-  type ShikiBundledTheme,
-} from 'prosekit/extensions/code-block'
+import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/solid'
-import {
-  createMemo,
-  createSignal,
-  For,
-  type JSX,
-} from 'solid-js'
+import { createMemo, createSignal, For, type JSX } from 'solid-js'
 
 export function ThemeSelector(): JSX.Element {
   const [theme, setTheme] = createSignal('github-dark')

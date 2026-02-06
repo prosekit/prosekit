@@ -1,16 +1,6 @@
-import {
-  defineSearchQuery,
-  type SearchCommandsExtension,
-} from 'prosekit/extensions/search'
-import {
-  useEditor,
-  useExtension,
-} from 'prosekit/solid'
-import {
-  createMemo,
-  createSignal,
-  type JSX,
-} from 'solid-js'
+import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { useEditor, useExtension } from 'prosekit/solid'
+import { createMemo, createSignal, type JSX } from 'solid-js'
 
 import { Button } from '../button'
 

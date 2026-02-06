@@ -1,8 +1,4 @@
-import {
-  expect,
-  test,
-  vi,
-} from 'vitest'
+import { expect, test, vi } from 'vitest'
 
 import { combineEventHandlers } from './combine-event-handlers'
 

@@ -43,6 +43,8 @@ const frameworks = examples.map((example) => example.meta.framework)
   <Fragment slot="reactCodeContent">{frameworks.includes('react') ? <DemoCodeGroup story={story} framework="react" /> : null}</Fragment>
   <Fragment slot="solidCodeContent">{frameworks.includes('solid') ? <DemoCodeGroup story={story} framework="solid" /> : null}</Fragment>
   <Fragment slot="svelteCodeContent">{frameworks.includes('svelte') ? <DemoCodeGroup story={story} framework="svelte" /> : null}</Fragment>
-  <Fragment slot="vanillaCodeContent">{frameworks.includes('vanilla') ? <DemoCodeGroup story={story} framework="vanilla" /> : null}</Fragment>
+  <Fragment slot="vanillaCodeContent">{frameworks.includes('vanilla') ? (
+    <DemoCodeGroup story={story} framework="vanilla" />
+  ) : null}</Fragment>
   <Fragment slot="vueCodeContent">{frameworks.includes('vue') ? <DemoCodeGroup story={story} framework="vue" /> : null}</Fragment>
 </MultipleFrameworksDemo>

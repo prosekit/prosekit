@@ -1,7 +1,4 @@
-import {
-  defineKeymap,
-  type PlainExtension,
-} from '@prosekit/core'
+import { defineKeymap, type PlainExtension } from '@prosekit/core'
 
 import { setParagraph } from './paragraph-commands'
 

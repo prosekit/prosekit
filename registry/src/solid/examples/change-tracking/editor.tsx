@@ -2,15 +2,8 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import type { NodeJSON } from 'prosekit/core'
-import {
-  CommitRecorder,
-  type Commit,
-} from 'prosekit/extensions/commit'
-import {
-  createSignal,
-  For,
-  type JSX,
-} from 'solid-js'
+import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
+import { createSignal, For, type JSX } from 'solid-js'
 
 import EditorDiff from './editor-diff'
 import EditorMain from './editor-main'

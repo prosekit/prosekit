@@ -1,9 +1,6 @@
 <script lang="ts">
 import { useKeymap } from 'prosekit/svelte'
-import {
-  derived,
-  writable,
-} from 'svelte/store'
+import { derived, writable } from 'svelte/store'
 
 import { Button } from '../../ui/button'
 

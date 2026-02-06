@@ -2,19 +2,9 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/react'
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from 'react'
+import { createEditor, type NodeJSON } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/react'
+import { useCallback, useMemo, useState } from 'react'
 
 export default function Editor() {
   // A list of saved documents, stored as JSON strings

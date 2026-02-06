@@ -1,12 +1,6 @@
-import {
-  expect,
-  it,
-} from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
+import { page, userEvent } from 'vitest/browser'
 
 import {
   collapseSelection,

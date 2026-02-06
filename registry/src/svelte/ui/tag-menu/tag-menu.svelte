@@ -3,12 +3,7 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/svelte'
-import {
-  AutocompleteEmpty,
-  AutocompleteItem,
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/svelte/autocomplete'
+import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/svelte/autocomplete'
 
 interface Props {
   tags: { id: number; label: string }[]

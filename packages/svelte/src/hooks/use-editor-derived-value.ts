@@ -1,12 +1,5 @@
-import type {
-  Editor,
-  Extension,
-} from '@prosekit/core'
-import {
-  derived,
-  readable,
-  type Readable,
-} from 'svelte/store'
+import type { Editor, Extension } from '@prosekit/core'
+import { derived, readable, type Readable } from 'svelte/store'
 
 import { useEditor } from './use-editor'
 

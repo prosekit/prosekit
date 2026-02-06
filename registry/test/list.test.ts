@@ -1,18 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { expect, it } from 'vitest'
+import { page, userEvent } from 'vitest/browser'
 
-import {
-  emptyEditor,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { emptyEditor, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 async function setup() {
   const editor = await waitForEditor()

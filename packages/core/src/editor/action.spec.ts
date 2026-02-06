@@ -1,8 +1,4 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../testing'
 import { jsonFromNode } from '../utils/parse'

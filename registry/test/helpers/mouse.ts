@@ -1,9 +1,6 @@
 import { expect } from 'vitest'
-import {
-  page,
-  type Locator,
-} from 'vitest/browser'
 import { mouse } from 'vitest-browser-commands/playwright'
+import { page, type Locator } from 'vitest/browser'
 
 /**
  * Hover over an element.

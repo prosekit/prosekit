@@ -1,7 +1,4 @@
-import {
-  defineCommands,
-  type Extension,
-} from '@prosekit/core'
+import { defineCommands, type Extension } from '@prosekit/core'
 import {
   addColumnAfter,
   addColumnBefore,
@@ -16,34 +13,13 @@ import {
 
 import { deleteCellSelection } from './table-commands/delete-cell-selection'
 import { exitTable } from './table-commands/exit-table'
-import {
-  insertTable,
-  type InsertTableOptions,
-} from './table-commands/insert-table'
-import {
-  moveTableColumn,
-  type MoveTableColumnOptions,
-} from './table-commands/move-table-column'
-import {
-  moveTableRow,
-  type MoveTableRowOptions,
-} from './table-commands/move-table-row'
-import {
-  selectTable,
-  type SelectTableOptions,
-} from './table-commands/select-table'
-import {
-  selectTableCell,
-  type SelectTableCellOptions,
-} from './table-commands/select-table-cell'
-import {
-  selectTableColumn,
-  type SelectTableColumnOptions,
-} from './table-commands/select-table-column'
-import {
-  selectTableRow,
-  type SelectTableRowOptions,
-} from './table-commands/select-table-row'
+import { insertTable, type InsertTableOptions } from './table-commands/insert-table'
+import { moveTableColumn, type MoveTableColumnOptions } from './table-commands/move-table-column'
+import { moveTableRow, type MoveTableRowOptions } from './table-commands/move-table-row'
+import { selectTable, type SelectTableOptions } from './table-commands/select-table'
+import { selectTableCell, type SelectTableCellOptions } from './table-commands/select-table-cell'
+import { selectTableColumn, type SelectTableColumnOptions } from './table-commands/select-table-column'
+import { selectTableRow, type SelectTableRowOptions } from './table-commands/select-table-row'
 
 /**
  * @internal

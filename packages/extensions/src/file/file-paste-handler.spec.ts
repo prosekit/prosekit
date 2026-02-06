@@ -1,20 +1,7 @@
-import {
-  Priority,
-  union,
-  withPriority,
-} from '@prosekit/core'
-import {
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { Priority, union, withPriority } from '@prosekit/core'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import {
-  defineTestExtension,
-  setupTestFromExtension,
-} from '../testing'
+import { defineTestExtension, setupTestFromExtension } from '../testing'
 import { pasteFiles } from '../testing/clipboard'
 
 import { defineFilePasteHandler } from './file-paste-handler'

@@ -2,24 +2,11 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  jsonFromHTML,
-} from 'prosekit/core'
-import {
-  ProseKit,
-  useDocChange,
-} from 'prosekit/react'
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from 'react'
+import { createEditor, jsonFromHTML } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/react'
+import { useCallback, useMemo, useState } from 'react'
 
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown'
 
 export default function Editor() {
   // A list of saved documents, stored as Markdown strings

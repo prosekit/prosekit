@@ -1,7 +1,4 @@
-import {
-  useMemo,
-  useState,
-} from 'preact/hooks'
+import { useMemo, useState } from 'preact/hooks'
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { useExtension } from 'prosekit/preact'
 

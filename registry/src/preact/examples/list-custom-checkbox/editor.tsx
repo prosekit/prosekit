@@ -3,10 +3,7 @@ import 'prosekit/basic/typography.css'
 import './custom-list.css'
 
 import { useMemo } from 'preact/hooks'
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
+import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import { sampleContent } from '../../sample/sample-doc-list-custom-checkbox'

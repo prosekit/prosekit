@@ -5,10 +5,7 @@ import type { PackageJson } from 'type-fest'
 import { getPackageJsonExports } from './get-package-json-exports'
 import { cleanGeneratedFilesInPackage } from './package-files'
 import { vfs } from './vfs'
-import {
-  getPackageByName,
-  getScopedPublicPackages,
-} from './workspace-packages'
+import { getPackageByName, getScopedPublicPackages } from './workspace-packages'
 
 export async function buildUmbrellaPackageJson(): Promise<void> {
   const umbrellaPackage = await getPackageByName('prosekit')

@@ -1,7 +1,4 @@
-import {
-  getNodeType,
-  insertNode,
-} from '@prosekit/core'
+import { getNodeType, insertNode } from '@prosekit/core'
 import type { Schema } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 

@@ -1,15 +1,9 @@
-import {
-  Selection,
-  type EditorStateConfig,
-} from '@prosekit/pm/state'
+import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 
 import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet } from '../facets/state'
 import type { PlainExtension } from '../types/extension'
-import type {
-  NodeJSON,
-  SelectionJSON,
-} from '../types/model'
+import type { NodeJSON, SelectionJSON } from '../types/model'
 import { getEditorContentJSON } from '../utils/editor-content'
 
 /**

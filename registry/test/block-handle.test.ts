@@ -93,6 +93,7 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
   it(`position the block handle correctly when changing the hover node type`, async () => {
     const editor = await waitForEditor()
     await editor.click()
+    await unhover()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const h1 = editor.locate('h1')
@@ -103,8 +104,6 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
       await expectLocatorToHaveCount(h1, options.h1 ? 1 : 0)
       await expectLocatorToHaveCount(p, options.p ? 1 : 0)
     }
-
-    await editor.click()
 
     // Insert a heading
     await userEvent.type(editor, '# Foo')
@@ -139,6 +138,7 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
   it(`position the block handle when hovering over a list node with multiple paragraphs`, async () => {
     const editor = await waitForEditor()
     await editor.click()
+    await unhover()
 
     const blockHandle = page.locate('prosekit-block-handle-popover')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')

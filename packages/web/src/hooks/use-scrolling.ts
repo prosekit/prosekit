@@ -22,10 +22,12 @@ export function useScrolling(host: ConnectableElement): ReadonlySignal<boolean> 
 
     scrollableParent.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    window.addEventListener('pointermove', handleMouseMove, { passive: true })
 
     return () => {
       scrollableParent.removeEventListener('scroll', handleScroll)
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('pointermove', handleMouseMove)
     }
   })
 

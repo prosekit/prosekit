@@ -1,3 +1,7 @@
+// We need prettier/oxfmt to format html string templates in ts files.
+// See also:
+// https://github.com/dprint/dprint-plugin-typescript/issues/769
+// https://github.com/dprint/dprint-plugin-typescript/issues/776
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "printWidth": 100,

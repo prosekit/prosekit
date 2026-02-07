@@ -27,6 +27,11 @@ export class LitEditor extends LitElement {
     return this
   }
 
+  override disconnectedCallback() {
+    this.editor.unmount()
+    super.disconnectedCallback()
+  }
+
   override updated(changedProperties: PropertyValues) {
     super.updated(changedProperties)
     this.editor.mount(this.ref.value)

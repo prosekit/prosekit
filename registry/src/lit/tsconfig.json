@@ -3,7 +3,5 @@
   "compilerOptions": {
     "jsx": "preserve",
   },
-  "references": [
-    { "path": "../../../packages/prosekit" },
-  ],
+  "references": [{ "path": "../../../packages/prosekit" }],
 }

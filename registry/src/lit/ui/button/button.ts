@@ -42,22 +42,18 @@ class LitButton extends LitElement {
             @mousedown=${this.handleMouseDown}
           >
             ${this.icon ? html`<div class="${this.icon}"></div>` : nothing}
-            ${
-      tooltip
-        ? html`<span class="sr-only">${tooltip}</span>`
-        : nothing
-    }
+            ${tooltip ? html`<span class="sr-only">${tooltip}</span>` : nothing}
           </button>
         </prosekit-tooltip-trigger>
         ${
-      tooltip
-        ? html`
+          tooltip
+            ? html`
               <prosekit-tooltip-content class="CSS_TOOLTIP_CONTENT">
                 ${tooltip}
               </prosekit-tooltip-content>
             `
-        : nothing
-    }
+            : nothing
+        }
       </prosekit-tooltip-root>
     `
   }

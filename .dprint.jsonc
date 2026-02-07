@@ -30,12 +30,19 @@
   },
   "yaml": {},
   "excludes": [
+    // Dprint doesn't support html string literals well.
+    // See the following issues:
+    // https://github.com/dprint/dprint-plugin-typescript/issues/769
+    // https://github.com/dprint/dprint-plugin-typescript/issues/776
+    "registry/src/lit",
+
     "**/node_modules",
     "**/*-lock.json",
     "**/*-lock.yaml",
     "**/*.svg",
     "**/*.gen.*",
     "**/.astro/**/*",
+    ".temp",
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.15.wasm",

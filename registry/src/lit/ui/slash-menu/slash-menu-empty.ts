@@ -8,9 +8,11 @@ class SlashMenuEmptyElement extends LitElement {
   }
 
   override render() {
-    return html`<prosekit-autocomplete-empty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-      <span>No results</span>
-    </prosekit-autocomplete-empty>`
+    return html`
+      <prosekit-autocomplete-empty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+        <span>No results</span>
+      </prosekit-autocomplete-empty>
+    `
   }
 }
 

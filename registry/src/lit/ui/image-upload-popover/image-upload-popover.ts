@@ -116,8 +116,8 @@ class LitImageUploadPopover extends LitElement {
 
         <prosekit-popover-content class="CSS_IMAGE_UPLOAD_CARD">
           ${
-      !this.file
-        ? html`
+            !this.file
+              ? html`
                 <label for="id-link-${this.ariaId}">Embed Link</label>
                 <input
                   id="id-link-${this.ariaId}"
@@ -128,12 +128,12 @@ class LitImageUploadPopover extends LitElement {
                   @input=${this.handleUrlChange}
                 />
               `
-        : nothing
-    }
+              : nothing
+          }
 
           ${
-      !this.url
-        ? html`
+            !this.url
+              ? html`
                 <label for="id-upload-${this.ariaId}">Upload</label>
                 <input
                   id="id-upload-${this.ariaId}"
@@ -143,28 +143,28 @@ class LitImageUploadPopover extends LitElement {
                   @change=${this.handleFileChange}
                 />
               `
-        : nothing
-    }
+              : nothing
+          }
 
           ${
-      this.url
-        ? html`
+            this.url
+              ? html`
                 <button class="CSS_IMAGE_UPLOAD_BUTTON" @click=${this.handleSubmit}>
                   Insert Image
                 </button>
               `
-        : nothing
-    }
+              : nothing
+          }
 
           ${
-      this.file
-        ? html`
+            this.file
+              ? html`
                 <button class="CSS_IMAGE_UPLOAD_BUTTON" @click=${this.handleSubmit}>
                   Upload Image
                 </button>
               `
-        : nothing
-    }
+              : nothing
+          }
         </prosekit-popover-content>
       </prosekit-popover-root>
     `

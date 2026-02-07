@@ -4,7 +4,7 @@ import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import type { MarkViewContext, SvelteMarkViewUserOptions } from '@prosemirror-adapter/svelte'
 import type { Component } from 'svelte'
 
-import { MarkViewWrapper } from '../components/mark-view-wrapper/index.ts'
+import { MarkViewWrapper } from '../components/mark-view-wrapper'
 
 /**
  * @public

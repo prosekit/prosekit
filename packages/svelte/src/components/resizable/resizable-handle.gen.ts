@@ -2,7 +2,7 @@ import type { ResizableHandleElement, ResizableHandleProps as Props, ResizableHa
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props.ts'
+import type { CreateProps } from '../create-props'
 
 import Component from './resizable-handle.gen.svelte'
 

@@ -1,8 +1,8 @@
 import type { Editor, Extension, Priority } from '@prosekit/core'
 import type { Readable } from 'svelte/store'
 
-import { useEditorExtension } from './use-editor-extension.ts'
-import { usePriorityExtension } from './use-priority-extension.ts'
+import { useEditorExtension } from './use-editor-extension'
+import { usePriorityExtension } from './use-priority-extension'
 
 export interface UseExtensionOptions {
   /**

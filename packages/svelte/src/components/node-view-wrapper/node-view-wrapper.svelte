@@ -1,7 +1,7 @@
 <script lang="ts">
 import { useNodeViewContext } from '@prosemirror-adapter/svelte'
-import type { SvelteNodeViewProps } from '../../extensions/svelte-node-view.ts'
-import type { NodeViewWrapperProps } from './props.ts'
+import type { SvelteNodeViewProps } from '../../extensions/svelte-node-view'
+import type { NodeViewWrapperProps } from './props'
 
 const { component: NodeViewComponent }: NodeViewWrapperProps = $props()
 

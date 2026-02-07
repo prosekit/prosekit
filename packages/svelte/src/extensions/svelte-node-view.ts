@@ -4,7 +4,7 @@ import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import type { NodeViewContext, SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
 import type { Component } from 'svelte'
 
-import { NodeViewWrapper } from '../components/node-view-wrapper/index.ts'
+import { NodeViewWrapper } from '../components/node-view-wrapper'
 
 /**
  * @public

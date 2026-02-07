@@ -2,7 +2,7 @@ import type { TooltipContentElement, TooltipContentProps as Props, TooltipConten
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props.ts'
+import type { CreateProps } from '../create-props'
 
 import Component from './tooltip-content.gen.svelte'
 

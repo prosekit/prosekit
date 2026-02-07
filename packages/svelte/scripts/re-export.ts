@@ -1,23 +1,38 @@
-import assert from 'node:assert/strict'
-import fs from 'node:fs'
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import packageJson from '../package.json' with { type: 'json' }
+import fs from 'node:fs/promises'
 
-function main() {
-  for (const [entryName, sourceFilePath] of Object.entries(packageJson.dev.entry)) {
-    assert(entryName && typeof entryName === 'string')
-    assert(sourceFilePath && typeof sourceFilePath === 'string')
+import { readPackage } from 'read-pkg'
 
-    const prefix = './src/'
-    const suffix = '.ts'
-    assert(sourceFilePath.startsWith(prefix))
-    assert(sourceFilePath.endsWith(suffix))
-    const buildFilePath = `./build/${sourceFilePath.slice(prefix.length, -suffix.length)}.js`
-    assert(fs.existsSync(`./dist/${buildFilePath}`), `File not found: ./dist/${buildFilePath}`)
-    
-    fs.writeFileSync(`./dist/${entryName}.js`, `export * from '${buildFilePath}'`)
-    fs.writeFileSync(`./dist/${entryName}.d.ts`, `export * from '${buildFilePath}'`)
+function assertString(value: unknown): asserts value is string {
+  if (typeof value !== 'string') {
+    throw new TypeError(`Expect string but get ${typeof value}`)
   }
 }
 
-main()
+async function main() {
+  const packageJson: any = (await readPackage()) as any
+
+  for (const entry of Object.keys(packageJson.exports)) {
+    let sourceFilePath = packageJson.exports[entry]
+    if (typeof sourceFilePath !== 'string') {
+      sourceFilePath = sourceFilePath['default']
+    }
+    assertString(sourceFilePath)
+
+    const inputPath = sourceFilePath
+      .replace('src/', 'build/')
+      .replace(/\.ts$/, '')
+    const outputJsFilePath = packageJson.publishConfig.exports[entry]['default']
+    const outputDtsFilePath = packageJson.publishConfig.exports[entry]['types']
+    assertString(outputJsFilePath)
+    assertString(outputDtsFilePath)
+
+    await fs.writeFile(outputJsFilePath, `export * from '${inputPath}'`)
+    await fs.writeFile(outputDtsFilePath, `export * from '${inputPath}'`)
+  }
+}
+
+void main()

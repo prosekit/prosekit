@@ -1,3 +1,3 @@
-export { ResizableHandle, type ResizableHandleProps } from './resizable-handle.gen.ts'
+export { ResizableHandle, type ResizableHandleProps } from './resizable-handle.gen'
 
-export { ResizableRoot, type ResizableRootProps } from './resizable-root.gen.ts'
+export { ResizableRoot, type ResizableRootProps } from './resizable-root.gen'

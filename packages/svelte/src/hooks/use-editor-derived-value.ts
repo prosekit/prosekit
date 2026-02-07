@@ -1,7 +1,7 @@
 import type { Editor, Extension } from '@prosekit/core'
 import { derived, readable, type Readable } from 'svelte/store'
 
-import { useEditor } from './use-editor.ts'
+import { useEditor } from './use-editor'
 
 export interface UseEditorDerivedOptions<E extends Extension = any> {
   /**

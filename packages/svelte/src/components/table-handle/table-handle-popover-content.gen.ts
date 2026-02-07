@@ -2,7 +2,7 @@ import type { TableHandlePopoverContentElement, TableHandlePopoverContentProps a
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props.ts'
+import type { CreateProps } from '../create-props'
 
 import Component from './table-handle-popover-content.gen.svelte'
 

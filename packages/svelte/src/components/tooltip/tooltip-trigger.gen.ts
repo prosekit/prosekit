@@ -2,7 +2,7 @@ import type { TooltipTriggerElement, TooltipTriggerProps as Props, TooltipTrigge
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props.ts'
+import type { CreateProps } from '../create-props'
 
 import Component from './tooltip-trigger.gen.svelte'
 

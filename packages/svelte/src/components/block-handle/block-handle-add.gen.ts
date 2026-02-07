@@ -2,7 +2,7 @@ import type { BlockHandleAddElement, BlockHandleAddProps as Props, BlockHandleAd
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props.ts'
+import type { CreateProps } from '../create-props'
 
 import Component from './block-handle-add.gen.svelte'
 

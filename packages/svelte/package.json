@@ -86,7 +86,6 @@
   "devDependencies": {
     "@sveltejs/package": "^2.5.7",
     "@types/node": "^24.10.1",
-    "read-pkg": "^10.0.0",
     "svelte": "^5.49.1",
     "svelte-check": "^4.3.6",
     "tsx": "^4.21.0",

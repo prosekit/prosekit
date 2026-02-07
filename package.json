@@ -18,7 +18,7 @@
     "ci:publish:snapshot": "pkg-pr-new publish --pnpm './packages/*'",
     "fix": "pnpm run fix:manypkg && pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:eslint && pnpm run fix:oxfmt && pnpm run fix:dprint",
     "fix:manypkg": "manypkg fix",
-    "fix:oxfmt": "oxfmt --write ./registry/src/lit/**/*.ts",
+    "fix:oxfmt": "oxfmt --write ./registry/src/lit/",
     "fix:dprint": "dprint fmt",
     "fix:eslint": "eslint . --fix --cache",
     "fix:tsconfig": "monorepo-typescript-references fix",

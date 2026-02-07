@@ -65,7 +65,10 @@
     "src"
   ],
   "scripts": {
-    "build": "svelte-package -i src -o dist/build --tsconfig tsconfig.build.json && tsx scripts/re-export.ts",
+    "build": "pnpm run build:tsc && pnpm run build:svelte && pnpm run build:export",
+    "build:tsc": "tsc --build tsconfig.build.json",
+    "build:svelte": "svelte-package -i src -o dist/build --tsconfig tsconfig.build.json",
+    "build:export": "tsx scripts/re-export.ts",
     "lint": "svelte-check --tsconfig tsconfig.build.json"
   },
   "dependencies": {

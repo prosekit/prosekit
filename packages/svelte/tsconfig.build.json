@@ -1,6 +1,8 @@
 {
   "extends": "@ocavue/tsconfig/dom/build-tsc.json",
   "compilerOptions": {
+    "outDir": "./.temp/tsconfig.build.out/",
+    "tsBuildInfoFile": "./.temp/tsconfig.build.tsbuildinfo",
     "isolatedDeclarations": false,
     "allowJs": false,
     "rewriteRelativeImportExtensions": true

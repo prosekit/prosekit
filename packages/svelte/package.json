@@ -65,8 +65,11 @@
     "src"
   ],
   "scripts": {
-    "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts",
-    "lint": "svelte-check"
+    "build": "pnpm run build:tsc && pnpm run build:svelte && pnpm run build:export",
+    "build:tsc": "tsc --build tsconfig.build.json",
+    "build:svelte": "svelte-package -i src -o dist/build --tsconfig tsconfig.build.json",
+    "build:export": "tsx scripts/re-export.ts",
+    "lint": "svelte-check --tsconfig tsconfig.build.json"
   },
   "dependencies": {
     "@prosekit/core": "workspace:^",
@@ -86,7 +89,6 @@
   "devDependencies": {
     "@sveltejs/package": "^2.5.7",
     "@types/node": "^24.10.1",
-    "read-pkg": "^10.0.0",
     "svelte": "^5.49.1",
     "svelte-check": "^4.3.6",
     "tsx": "^4.21.0",

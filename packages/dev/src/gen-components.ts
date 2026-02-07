@@ -266,7 +266,15 @@ function formatVueIndexCode(components: string[]): string {
 }
 
 function formatSvelteIndexCode(components: string[]): string {
-  return formatReactIndexCode(components)
+  const lines = components.flatMap((name) => {
+    const kebab = kebabCase(name)
+    const pascal = pascalCase(name)
+    return [
+      `export { ${pascal}, type ${pascal}Props } from './${kebab}.gen.ts'`,
+      '',
+    ]
+  })
+  return lines.join('\n')
 }
 
 function formatSolidIndexCode(components: string[]): string {
@@ -385,9 +393,9 @@ function formatSvelteComponentCode(group: string, kebab: string): string {
 import '@prosekit/web/${group}'
 
 import { ${camel}Props, ${camel}Events } from '@prosekit/web/${group}'
-import { ClientUpdate } from '../client-update'
-import { useComponent } from '../use-component'
-import { useEventHandlers } from '../use-event-handlers'
+import { ClientUpdate } from '../client-update/index.ts'
+import { useComponent } from '../use-component.ts'
+import { useEventHandlers } from '../use-event-handlers.ts'
 
 let attributes: Record<string, unknown> = {}
 let eventHandlers: Record<string, (...args: any[]) => any> = {}
@@ -416,7 +424,7 @@ import type { ${pascal}Element, ${pascal}Props as Props, ${pascal}Events as Even
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props'
+import type { CreateProps } from '../create-props.ts'
 
 import Component from './${kebab}.gen.svelte'
 

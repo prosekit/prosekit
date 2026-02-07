@@ -628,9 +628,6 @@ importers:
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
-      read-pkg:
-        specifier: ^10.0.0
-        version: 10.0.0
       svelte:
         specifier: ^5.49.1
         version: 5.49.1

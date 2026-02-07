@@ -1,7 +1,7 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "preserve"
   },
-  "references": [{ "path": "../../../packages/prosekit" }],
+  "references": [{ "path": "../../../packages/prosekit" }]
 }

@@ -10,142 +10,142 @@ function getToolbarItems(editor: Editor<BasicExtension>) {
   return {
     undo: editor.commands.undo
       ? {
-        isActive: false,
-        canExec: editor.commands.undo.canExec(),
-        command: () => editor.commands.undo(),
-      }
+          isActive: false,
+          canExec: editor.commands.undo.canExec(),
+          command: () => editor.commands.undo(),
+        }
       : undefined,
     redo: editor.commands.redo
       ? {
-        isActive: false,
-        canExec: editor.commands.redo.canExec(),
-        command: () => editor.commands.redo(),
-      }
+          isActive: false,
+          canExec: editor.commands.redo.canExec(),
+          command: () => editor.commands.redo(),
+        }
       : undefined,
     bold: editor.commands.toggleBold
       ? {
-        isActive: editor.marks.bold.isActive(),
-        canExec: editor.commands.toggleBold.canExec(),
-        command: () => editor.commands.toggleBold(),
-      }
+          isActive: editor.marks.bold.isActive(),
+          canExec: editor.commands.toggleBold.canExec(),
+          command: () => editor.commands.toggleBold(),
+        }
       : undefined,
     italic: editor.commands.toggleItalic
       ? {
-        isActive: editor.marks.italic.isActive(),
-        canExec: editor.commands.toggleItalic.canExec(),
-        command: () => editor.commands.toggleItalic(),
-      }
+          isActive: editor.marks.italic.isActive(),
+          canExec: editor.commands.toggleItalic.canExec(),
+          command: () => editor.commands.toggleItalic(),
+        }
       : undefined,
     underline: editor.commands.toggleUnderline
       ? {
-        isActive: editor.marks.underline.isActive(),
-        canExec: editor.commands.toggleUnderline.canExec(),
-        command: () => editor.commands.toggleUnderline(),
-      }
+          isActive: editor.marks.underline.isActive(),
+          canExec: editor.commands.toggleUnderline.canExec(),
+          command: () => editor.commands.toggleUnderline(),
+        }
       : undefined,
     strike: editor.commands.toggleStrike
       ? {
-        isActive: editor.marks.strike.isActive(),
-        canExec: editor.commands.toggleStrike.canExec(),
-        command: () => editor.commands.toggleStrike(),
-      }
+          isActive: editor.marks.strike.isActive(),
+          canExec: editor.commands.toggleStrike.canExec(),
+          command: () => editor.commands.toggleStrike(),
+        }
       : undefined,
     code: editor.commands.toggleCode
       ? {
-        isActive: editor.marks.code.isActive(),
-        canExec: editor.commands.toggleCode.canExec(),
-        command: () => editor.commands.toggleCode(),
-      }
+          isActive: editor.marks.code.isActive(),
+          canExec: editor.commands.toggleCode.canExec(),
+          command: () => editor.commands.toggleCode(),
+        }
       : undefined,
     codeBlock: editor.commands.insertCodeBlock
       ? {
-        isActive: editor.nodes.codeBlock.isActive(),
-        canExec: editor.commands.insertCodeBlock.canExec({ language: 'javascript' }),
-        command: () => editor.commands.insertCodeBlock({ language: 'javascript' }),
-      }
+          isActive: editor.nodes.codeBlock.isActive(),
+          canExec: editor.commands.insertCodeBlock.canExec({ language: 'javascript' }),
+          command: () => editor.commands.insertCodeBlock({ language: 'javascript' }),
+        }
       : undefined,
     heading1: editor.commands.toggleHeading
       ? {
-        isActive: editor.nodes.heading.isActive({ level: 1 }),
-        canExec: editor.commands.toggleHeading.canExec({ level: 1 }),
-        command: () => editor.commands.toggleHeading({ level: 1 }),
-      }
+          isActive: editor.nodes.heading.isActive({ level: 1 }),
+          canExec: editor.commands.toggleHeading.canExec({ level: 1 }),
+          command: () => editor.commands.toggleHeading({ level: 1 }),
+        }
       : undefined,
     heading2: editor.commands.toggleHeading
       ? {
-        isActive: editor.nodes.heading.isActive({ level: 2 }),
-        canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
-        command: () => editor.commands.toggleHeading({ level: 2 }),
-      }
+          isActive: editor.nodes.heading.isActive({ level: 2 }),
+          canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
+          command: () => editor.commands.toggleHeading({ level: 2 }),
+        }
       : undefined,
     heading3: editor.commands.toggleHeading
       ? {
-        isActive: editor.nodes.heading.isActive({ level: 3 }),
-        canExec: editor.commands.toggleHeading.canExec({ level: 3 }),
-        command: () => editor.commands.toggleHeading({ level: 3 }),
-      }
+          isActive: editor.nodes.heading.isActive({ level: 3 }),
+          canExec: editor.commands.toggleHeading.canExec({ level: 3 }),
+          command: () => editor.commands.toggleHeading({ level: 3 }),
+        }
       : undefined,
     horizontalRule: editor.commands.insertHorizontalRule
       ? {
-        isActive: editor.nodes.horizontalRule.isActive(),
-        canExec: editor.commands.insertHorizontalRule.canExec(),
-        command: () => editor.commands.insertHorizontalRule(),
-      }
+          isActive: editor.nodes.horizontalRule.isActive(),
+          canExec: editor.commands.insertHorizontalRule.canExec(),
+          command: () => editor.commands.insertHorizontalRule(),
+        }
       : undefined,
     blockquote: editor.commands.toggleBlockquote
       ? {
-        isActive: editor.nodes.blockquote.isActive(),
-        canExec: editor.commands.toggleBlockquote.canExec(),
-        command: () => editor.commands.toggleBlockquote(),
-      }
+          isActive: editor.nodes.blockquote.isActive(),
+          canExec: editor.commands.toggleBlockquote.canExec(),
+          command: () => editor.commands.toggleBlockquote(),
+        }
       : undefined,
     bulletList: editor.commands.toggleList
       ? {
-        isActive: editor.nodes.list.isActive({ kind: 'bullet' }),
-        canExec: editor.commands.toggleList.canExec({ kind: 'bullet' }),
-        command: () => editor.commands.toggleList({ kind: 'bullet' }),
-      }
+          isActive: editor.nodes.list.isActive({ kind: 'bullet' }),
+          canExec: editor.commands.toggleList.canExec({ kind: 'bullet' }),
+          command: () => editor.commands.toggleList({ kind: 'bullet' }),
+        }
       : undefined,
     orderedList: editor.commands.toggleList
       ? {
-        isActive: editor.nodes.list.isActive({ kind: 'ordered' }),
-        canExec: editor.commands.toggleList.canExec({ kind: 'ordered' }),
-        command: () => editor.commands.toggleList({ kind: 'ordered' }),
-      }
+          isActive: editor.nodes.list.isActive({ kind: 'ordered' }),
+          canExec: editor.commands.toggleList.canExec({ kind: 'ordered' }),
+          command: () => editor.commands.toggleList({ kind: 'ordered' }),
+        }
       : undefined,
     taskList: editor.commands.toggleList
       ? {
-        isActive: editor.nodes.list.isActive({ kind: 'task' }),
-        canExec: editor.commands.toggleList.canExec({ kind: 'task' }),
-        command: () => editor.commands.toggleList({ kind: 'task' }),
-      }
+          isActive: editor.nodes.list.isActive({ kind: 'task' }),
+          canExec: editor.commands.toggleList.canExec({ kind: 'task' }),
+          command: () => editor.commands.toggleList({ kind: 'task' }),
+        }
       : undefined,
     toggleList: editor.commands.toggleList
       ? {
-        isActive: editor.nodes.list.isActive({ kind: 'toggle' }),
-        canExec: editor.commands.toggleList.canExec({ kind: 'toggle' }),
-        command: () => editor.commands.toggleList({ kind: 'toggle' }),
-      }
+          isActive: editor.nodes.list.isActive({ kind: 'toggle' }),
+          canExec: editor.commands.toggleList.canExec({ kind: 'toggle' }),
+          command: () => editor.commands.toggleList({ kind: 'toggle' }),
+        }
       : undefined,
     indentList: editor.commands.indentList
       ? {
-        isActive: false,
-        canExec: editor.commands.indentList.canExec(),
-        command: () => editor.commands.indentList(),
-      }
+          isActive: false,
+          canExec: editor.commands.indentList.canExec(),
+          command: () => editor.commands.indentList(),
+        }
       : undefined,
     dedentList: editor.commands.dedentList
       ? {
-        isActive: false,
-        canExec: editor.commands.dedentList.canExec(),
-        command: () => editor.commands.dedentList(),
-      }
+          isActive: false,
+          canExec: editor.commands.dedentList.canExec(),
+          command: () => editor.commands.dedentList(),
+        }
       : undefined,
     insertImage: editor.commands.insertImage
       ? {
-        isActive: false,
-        canExec: editor.commands.insertImage.canExec(),
-      }
+          isActive: false,
+          canExec: editor.commands.insertImage.canExec(),
+        }
       : undefined,
   }
 }
@@ -189,9 +189,7 @@ class LitToolbar extends LitElement {
 
     if (!this.editor) return
 
-    this.removeUpdateExtension = this.editor.use(
-      defineUpdateHandler(() => this.requestUpdate()),
-    )
+    this.removeUpdateExtension = this.editor.use(defineUpdateHandler(() => this.requestUpdate()))
   }
 
   private detachEditorListener() {
@@ -210,8 +208,8 @@ class LitToolbar extends LitElement {
     return html`
       <div class="CSS_TOOLBAR">
         ${
-      items.undo
-        ? html`
+          items.undo
+            ? html`
               <lit-editor-button
                 .pressed=${items.undo.isActive}
                 .disabled=${!items.undo.canExec}
@@ -220,11 +218,11 @@ class LitToolbar extends LitElement {
                 @click=${items.undo.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.redo
-        ? html`
+          items.redo
+            ? html`
               <lit-editor-button
                 .pressed=${items.redo.isActive}
                 .disabled=${!items.redo.canExec}
@@ -233,12 +231,12 @@ class LitToolbar extends LitElement {
                 @click=${items.redo.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
 
         ${
-      items.bold
-        ? html`
+          items.bold
+            ? html`
               <lit-editor-button
                 .pressed=${items.bold.isActive}
                 .disabled=${!items.bold.canExec}
@@ -247,11 +245,11 @@ class LitToolbar extends LitElement {
                 @click=${items.bold.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.italic
-        ? html`
+          items.italic
+            ? html`
               <lit-editor-button
                 .pressed=${items.italic.isActive}
                 .disabled=${!items.italic.canExec}
@@ -260,11 +258,11 @@ class LitToolbar extends LitElement {
                 @click=${items.italic.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.underline
-        ? html`
+          items.underline
+            ? html`
               <lit-editor-button
                 .pressed=${items.underline.isActive}
                 .disabled=${!items.underline.canExec}
@@ -273,11 +271,11 @@ class LitToolbar extends LitElement {
                 @click=${items.underline.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.strike
-        ? html`
+          items.strike
+            ? html`
               <lit-editor-button
                 .pressed=${items.strike.isActive}
                 .disabled=${!items.strike.canExec}
@@ -286,11 +284,11 @@ class LitToolbar extends LitElement {
                 @click=${items.strike.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.code
-        ? html`
+          items.code
+            ? html`
               <lit-editor-button
                 .pressed=${items.code.isActive}
                 .disabled=${!items.code.canExec}
@@ -299,11 +297,11 @@ class LitToolbar extends LitElement {
                 @click=${items.code.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.codeBlock
-        ? html`
+          items.codeBlock
+            ? html`
               <lit-editor-button
                 .pressed=${items.codeBlock.isActive}
                 .disabled=${!items.codeBlock.canExec}
@@ -312,11 +310,11 @@ class LitToolbar extends LitElement {
                 @click=${items.codeBlock.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.heading1
-        ? html`
+          items.heading1
+            ? html`
               <lit-editor-button
                 .pressed=${items.heading1.isActive}
                 .disabled=${!items.heading1.canExec}
@@ -325,11 +323,11 @@ class LitToolbar extends LitElement {
                 @click=${items.heading1.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.heading2
-        ? html`
+          items.heading2
+            ? html`
               <lit-editor-button
                 .pressed=${items.heading2.isActive}
                 .disabled=${!items.heading2.canExec}
@@ -338,11 +336,11 @@ class LitToolbar extends LitElement {
                 @click=${items.heading2.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.heading3
-        ? html`
+          items.heading3
+            ? html`
               <lit-editor-button
                 .pressed=${items.heading3.isActive}
                 .disabled=${!items.heading3.canExec}
@@ -351,11 +349,11 @@ class LitToolbar extends LitElement {
                 @click=${items.heading3.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.horizontalRule
-        ? html`
+          items.horizontalRule
+            ? html`
               <lit-editor-button
                 .pressed=${items.horizontalRule.isActive}
                 .disabled=${!items.horizontalRule.canExec}
@@ -364,11 +362,11 @@ class LitToolbar extends LitElement {
                 @click=${items.horizontalRule.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.blockquote
-        ? html`
+          items.blockquote
+            ? html`
               <lit-editor-button
                 .pressed=${items.blockquote.isActive}
                 .disabled=${!items.blockquote.canExec}
@@ -377,11 +375,11 @@ class LitToolbar extends LitElement {
                 @click=${items.blockquote.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.bulletList
-        ? html`
+          items.bulletList
+            ? html`
               <lit-editor-button
                 .pressed=${items.bulletList.isActive}
                 .disabled=${!items.bulletList.canExec}
@@ -390,11 +388,11 @@ class LitToolbar extends LitElement {
                 @click=${items.bulletList.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.orderedList
-        ? html`
+          items.orderedList
+            ? html`
               <lit-editor-button
                 .pressed=${items.orderedList.isActive}
                 .disabled=${!items.orderedList.canExec}
@@ -403,11 +401,11 @@ class LitToolbar extends LitElement {
                 @click=${items.orderedList.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.taskList
-        ? html`
+          items.taskList
+            ? html`
               <lit-editor-button
                 .pressed=${items.taskList.isActive}
                 .disabled=${!items.taskList.canExec}
@@ -416,11 +414,11 @@ class LitToolbar extends LitElement {
                 @click=${items.taskList.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.toggleList
-        ? html`
+          items.toggleList
+            ? html`
               <lit-editor-button
                 .pressed=${items.toggleList.isActive}
                 .disabled=${!items.toggleList.canExec}
@@ -429,11 +427,11 @@ class LitToolbar extends LitElement {
                 @click=${items.toggleList.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.indentList
-        ? html`
+          items.indentList
+            ? html`
               <lit-editor-button
                 .pressed=${items.indentList.isActive}
                 .disabled=${!items.indentList.canExec}
@@ -442,11 +440,11 @@ class LitToolbar extends LitElement {
                 @click=${items.indentList.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      items.dedentList
-        ? html`
+          items.dedentList
+            ? html`
               <lit-editor-button
                 .pressed=${items.dedentList.isActive}
                 .disabled=${!items.dedentList.canExec}
@@ -455,11 +453,11 @@ class LitToolbar extends LitElement {
                 @click=${items.dedentList.command}
               ></lit-editor-button>
             `
-        : nothing
-    }
+            : nothing
+        }
         ${
-      this.uploader && items.insertImage
-        ? html`
+          this.uploader && items.insertImage
+            ? html`
               <lit-editor-image-upload-popover
                 .editor=${editor}
                 .uploader=${this.uploader}
@@ -468,8 +466,8 @@ class LitToolbar extends LitElement {
                 icon="CSS_ICON_IMAGE"
               ></lit-editor-image-upload-popover>
             `
-        : nothing
-    }
+            : nothing
+        }
       </div>
     `
   }

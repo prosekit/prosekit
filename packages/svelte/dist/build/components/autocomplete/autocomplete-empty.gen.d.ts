@@ -1,7 +1,7 @@
 import type { AutocompleteEmptyElement, AutocompleteEmptyProps as Props, AutocompleteEmptyEvents as Events } from '@prosekit/web/autocomplete';
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { CreateProps } from '../create-props';
+import type { CreateProps } from '../create-props.ts';
 /**
  * Props for the {@link AutocompleteEmpty} component.
  */

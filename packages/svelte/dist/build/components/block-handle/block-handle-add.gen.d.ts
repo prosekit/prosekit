@@ -1,7 +1,7 @@
 import type { BlockHandleAddElement, BlockHandleAddProps as Props, BlockHandleAddEvents as Events } from '@prosekit/web/block-handle';
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { CreateProps } from '../create-props';
+import type { CreateProps } from '../create-props.ts';
 /**
  * Props for the {@link BlockHandleAdd} component.
  */

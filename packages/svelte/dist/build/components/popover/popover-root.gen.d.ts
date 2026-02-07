@@ -1,7 +1,7 @@
 import type { PopoverRootElement, PopoverRootProps as Props, PopoverRootEvents as Events } from '@prosekit/web/popover';
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { CreateProps } from '../create-props';
+import type { CreateProps } from '../create-props.ts';
 /**
  * Props for the {@link PopoverRoot} component.
  */

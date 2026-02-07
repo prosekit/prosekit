@@ -1,7 +1,7 @@
 import type { ResizableHandleElement, ResizableHandleProps as Props, ResizableHandleEvents as Events } from '@prosekit/web/resizable';
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { CreateProps } from '../create-props';
+import type { CreateProps } from '../create-props.ts';
 /**
  * Props for the {@link ResizableHandle} component.
  */

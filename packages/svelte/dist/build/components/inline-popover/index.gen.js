@@ -1,1 +1,1 @@
-export { InlinePopover } from './inline-popover.gen';
+export { InlinePopover } from "./inline-popover.gen.js";

@@ -1,7 +1,7 @@
 import type { DropIndicatorElement, DropIndicatorProps as Props, DropIndicatorEvents as Events } from '@prosekit/web/drop-indicator';
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { CreateProps } from '../create-props';
+import type { CreateProps } from '../create-props.ts';
 /**
  * Props for the {@link DropIndicator} component.
  */

@@ -2,9 +2,9 @@
 import '@prosekit/web/block-handle'
 
 import { blockHandleAddProps, blockHandleAddEvents } from '@prosekit/web/block-handle'
-import { ClientUpdate } from '../client-update'
-import { useComponent } from '../use-component'
-import { useEventHandlers } from '../use-event-handlers'
+import { ClientUpdate } from '../client-update/index.js'
+import { useComponent } from '../use-component.js'
+import { useEventHandlers } from '../use-event-handlers.js'
 
 let attributes: Record<string, unknown> = {}
 let eventHandlers: Record<string, (...args: any[]) => any> = {}

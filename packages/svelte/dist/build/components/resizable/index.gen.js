@@ -1,2 +1,2 @@
-export { ResizableHandle } from './resizable-handle.gen';
-export { ResizableRoot } from './resizable-root.gen';
+export { ResizableHandle } from "./resizable-handle.gen.js";
+export { ResizableRoot } from "./resizable-root.gen.js";

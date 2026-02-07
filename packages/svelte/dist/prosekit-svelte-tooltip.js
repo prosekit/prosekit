@@ -1,1 +1,1 @@
-export * from './build/components/tooltip/index.gen'
+export * from './build/components/tooltip/index.gen.js'

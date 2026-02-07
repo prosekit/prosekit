@@ -1,4 +1,4 @@
-export { TooltipContent, type TooltipContentProps } from './tooltip-content.gen';
-export { TooltipRoot, type TooltipRootProps } from './tooltip-root.gen';
-export { TooltipTrigger, type TooltipTriggerProps } from './tooltip-trigger.gen';
+export { TooltipContent, type TooltipContentProps } from './tooltip-content.gen.ts';
+export { TooltipRoot, type TooltipRootProps } from './tooltip-root.gen.ts';
+export { TooltipTrigger, type TooltipTriggerProps } from './tooltip-trigger.gen.ts';
 //# sourceMappingURL=index.gen.d.ts.map

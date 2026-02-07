@@ -1,1 +1,1 @@
-export * from './build/components/table-handle/index.gen'
+export * from './build/components/table-handle/index.gen.js'

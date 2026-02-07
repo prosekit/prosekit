@@ -1,5 +1,5 @@
 import { derived, readable } from 'svelte/store';
-import { useEditor } from './use-editor';
+import { useEditor } from "./use-editor.js";
 /**
  * Runs a function to derive a value from the editor instance after editor state
  * changes.

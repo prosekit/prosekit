@@ -1,1 +1,1 @@
-export * from './build/components/resizable/index.gen'
+export * from './build/components/resizable/index.gen.js'

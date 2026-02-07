@@ -1,1 +1,1 @@
-export * from './build/components/autocomplete/index.gen'
+export * from './build/components/autocomplete/index.gen.js'

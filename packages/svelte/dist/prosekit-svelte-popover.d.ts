@@ -1,1 +1,1 @@
-export * from './build/components/popover/index.gen'
+export * from './build/components/popover/index.gen.js'

@@ -1,7 +1,7 @@
 import type { TooltipRootElement, TooltipRootProps as Props, TooltipRootEvents as Events } from '@prosekit/web/tooltip';
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { CreateProps } from '../create-props';
+import type { CreateProps } from '../create-props.ts';
 /**
  * Props for the {@link TooltipRoot} component.
  */

@@ -1,3 +1,3 @@
-export { PopoverContent } from './popover-content.gen';
-export { PopoverRoot } from './popover-root.gen';
-export { PopoverTrigger } from './popover-trigger.gen';
+export { PopoverContent } from "./popover-content.gen.js";
+export { PopoverRoot } from "./popover-root.gen.js";
+export { PopoverTrigger } from "./popover-trigger.gen.js";

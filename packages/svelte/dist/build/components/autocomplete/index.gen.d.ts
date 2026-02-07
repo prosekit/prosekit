@@ -1,5 +1,5 @@
-export { AutocompleteEmpty, type AutocompleteEmptyProps } from './autocomplete-empty.gen';
-export { AutocompleteItem, type AutocompleteItemProps } from './autocomplete-item.gen';
-export { AutocompleteList, type AutocompleteListProps } from './autocomplete-list.gen';
-export { AutocompletePopover, type AutocompletePopoverProps } from './autocomplete-popover.gen';
+export { AutocompleteEmpty, type AutocompleteEmptyProps } from './autocomplete-empty.gen.ts';
+export { AutocompleteItem, type AutocompleteItemProps } from './autocomplete-item.gen.ts';
+export { AutocompleteList, type AutocompleteListProps } from './autocomplete-list.gen.ts';
+export { AutocompletePopover, type AutocompletePopoverProps } from './autocomplete-popover.gen.ts';
 //# sourceMappingURL=index.gen.d.ts.map

@@ -1,4 +1,4 @@
-import { useEditorContext } from '../contexts/editor-context';
+import { useEditorContext } from "../contexts/editor-context.js";
 // For unknown reason, Svelte v4 cannot set properties on a web component
 // when I directly use `{...$$props}`. It seems that Svelte v4 recognizes
 // the properties as attributes. Here is a workaround to set the properties

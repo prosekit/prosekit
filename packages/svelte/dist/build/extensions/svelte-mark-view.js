@@ -1,5 +1,5 @@
 import { defineMarkViewComponent, defineMarkViewFactory, definePlugin } from '@prosekit/core';
-import { MarkViewWrapper } from '../components/mark-view-wrapper';
+import { MarkViewWrapper } from "../components/mark-view-wrapper/index.js";
 const isServer = typeof window === 'undefined';
 /**
  * Defines a mark view using a Svelte component.

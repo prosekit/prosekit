@@ -1,1 +1,1 @@
-export * from './build/components/block-handle/index.gen'
+export * from './build/components/block-handle/index.gen.js'

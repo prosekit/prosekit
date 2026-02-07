@@ -3,6 +3,13 @@
   "printWidth": 100,
   "semi": false,
   "singleQuote": true,
-  "ignorePatterns": [],
-  "experimentalSortPackageJson": false
+  "experimentalSortPackageJson": false,
+  "ignorePatterns": [
+    "**/node_modules",
+    "**/*-lock.json",
+    "**/*-lock.yaml",
+    "**/*.svg",
+    "**/*.gen.*",
+    "**/.astro/**/*"
+  ]
 }

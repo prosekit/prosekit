@@ -1,12 +1,14 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import '../../ui/slash-menu/index'
+import '../../ui/toolbar/index'
 
 import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
+
+import { sampleUploader } from '../../sample/sample-uploader'
 
 import { defineExtension } from './extension'
 
@@ -45,24 +47,24 @@ export class LitEditor extends LitElement {
 
   override render() {
     return html`<div class="CSS_EDITOR_VIEWPORT">
+      <lit-editor-toolbar
+        .editor=${this.editor}
+        .uploader=${sampleUploader}
+      ></lit-editor-toolbar>
       <div class="CSS_EDITOR_SCROLLING">
         <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
-        <lit-editor-slash-menu
-          .editor=${this.editor}
-          style="display: contents;"
-        ></lit-editor-slash-menu>
       </div>
     </div>`
   }
 }
 
 export function registerLitEditor() {
-  if (customElements.get('lit-editor-example-slash-menu')) return
-  customElements.define('lit-editor-example-slash-menu', LitEditor)
+  if (customElements.get('lit-editor-example-toolbar')) return
+  customElements.define('lit-editor-example-toolbar', LitEditor)
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'lit-editor-example-slash-menu': LitEditor
+    'lit-editor-example-toolbar': LitEditor
   }
 }

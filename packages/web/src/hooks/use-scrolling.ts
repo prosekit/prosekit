@@ -17,7 +17,7 @@ export function useScrolling(host: ConnectableElement): ReadonlySignal<boolean> 
     const handleMouseMove = () => {
       const isLikelyScrolling = Date.now() - lastScrollTime < 20
       if (!isLikelyScrolling) return
-      
+
       scrolling.set(false)
     }
 

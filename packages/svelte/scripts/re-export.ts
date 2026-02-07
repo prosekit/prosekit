@@ -14,7 +14,7 @@ function main() {
     assert(sourceFilePath.endsWith(suffix))
     const buildFilePath = `./build/${sourceFilePath.slice(prefix.length, -suffix.length)}.js`
     assert(fs.existsSync(`./dist/${buildFilePath}`), `File not found: ./dist/${buildFilePath}`)
-    
+
     fs.writeFileSync(`./dist/${entryName}.js`, `export * from '${buildFilePath}'`)
     fs.writeFileSync(`./dist/${entryName}.d.ts`, `export * from '${buildFilePath}'`)
   }

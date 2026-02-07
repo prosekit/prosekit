@@ -2,9 +2,9 @@
 import '@prosekit/web/tooltip'
 
 import { tooltipContentProps, tooltipContentEvents } from '@prosekit/web/tooltip'
-import { ClientUpdate } from '../client-update'
-import { useComponent } from '../use-component'
-import { useEventHandlers } from '../use-event-handlers'
+import { ClientUpdate } from '../client-update/index.ts'
+import { useComponent } from '../use-component.ts'
+import { useEventHandlers } from '../use-event-handlers.ts'
 
 let attributes: Record<string, unknown> = {}
 let eventHandlers: Record<string, (...args: any[]) => any> = {}

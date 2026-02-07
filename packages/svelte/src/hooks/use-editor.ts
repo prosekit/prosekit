@@ -2,7 +2,7 @@ import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Edi
 import { onMount } from 'svelte'
 import { readonly, writable, type Readable } from 'svelte/store'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.

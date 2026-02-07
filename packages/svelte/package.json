@@ -65,8 +65,8 @@
     "src"
   ],
   "scripts": {
-    "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts",
-    "lint": "svelte-check"
+    "build": "svelte-package -i src -o dist/build --tsconfig tsconfig.build.json && tsx scripts/re-export.ts",
+    "lint": "svelte-check --tsconfig tsconfig.build.json"
   },
   "dependencies": {
     "@prosekit/core": "workspace:^",

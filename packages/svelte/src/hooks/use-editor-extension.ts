@@ -3,7 +3,7 @@ import { queueExtension } from '@prosekit/web'
 import { onMount } from 'svelte'
 import type { Readable } from 'svelte/store'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 /**
  * @internal

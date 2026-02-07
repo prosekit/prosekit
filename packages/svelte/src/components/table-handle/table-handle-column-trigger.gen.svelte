@@ -2,9 +2,9 @@
 import '@prosekit/web/table-handle'
 
 import { tableHandleColumnTriggerProps, tableHandleColumnTriggerEvents } from '@prosekit/web/table-handle'
-import { ClientUpdate } from '../client-update'
-import { useComponent } from '../use-component'
-import { useEventHandlers } from '../use-event-handlers'
+import { ClientUpdate } from '../client-update/index.ts'
+import { useComponent } from '../use-component.ts'
+import { useEventHandlers } from '../use-event-handlers.ts'
 
 let attributes: Record<string, unknown> = {}
 let eventHandlers: Record<string, (...args: any[]) => any> = {}

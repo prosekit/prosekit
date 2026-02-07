@@ -2,7 +2,7 @@ import type { TableHandleDragPreviewElement, TableHandleDragPreviewProps as Prop
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props'
+import type { CreateProps } from '../create-props.ts'
 
 import Component from './table-handle-drag-preview.gen.svelte'
 

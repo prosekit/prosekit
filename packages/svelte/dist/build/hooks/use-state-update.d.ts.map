@@ -1,1 +1,0 @@
-{"version":3,"file":"use-state-update.d.ts","sourceRoot":"","sources":["../../../src/hooks/use-state-update.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,oBAAoB,CAAA;AAGrD,OAAO,EAAgB,KAAK,mBAAmB,EAAE,MAAM,oBAAoB,CAAA;AAE3E;;;;GAIG;AACH,wBAAgB,cAAc,CAC5B,OAAO,EAAE,CAAC,KAAK,EAAE,WAAW,KAAK,IAAI,EACrC,OAAO,CAAC,EAAE,mBAAmB,GAC5B,IAAI,CAGN"}

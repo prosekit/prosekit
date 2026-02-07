@@ -17,6 +17,6 @@
     "**/*.gen.*",
     "**/.astro/**/*",
     "CHANGELOG.md",
-    ".temp"
-  ]
+    ".temp",
+  ],
 }

@@ -52,6 +52,7 @@
     "eslint": "^9.39.2",
     "knip": "^5.83.0",
     "monorepo-typescript-references": "^1.1.1",
+    "oxfmt": "^0.28.0",
     "pkg-pr-new": "^0.0.63",
     "playwright": "^1.58.1",
     "prettier": "^3.8.1",

@@ -17,7 +17,7 @@ import { defineText } from 'prosekit/extensions/text'
 import { defineUnderline } from 'prosekit/extensions/underline'
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 import { defineYjs } from 'prosekit/extensions/yjs'
-import type { Awareness } from 'y-protocols/awareness'
+import type { Awareness } from 'prosekit/extensions/yjs'
 import type * as Y from 'yjs'
 
 export function defineExtension(doc: Y.Doc, awareness: Awareness) {

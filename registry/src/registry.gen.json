@@ -2075,7 +2075,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "react",
         "accumulatedFiles": [
@@ -2581,7 +2581,6 @@
       "dependencies": [
         "prosekit",
         "react",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -6003,7 +6002,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "preact",
         "accumulatedFiles": [
@@ -6444,7 +6443,6 @@
       "dependencies": [
         "preact",
         "prosekit",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -9786,7 +9784,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "vue",
         "accumulatedFiles": [
@@ -10221,7 +10219,6 @@
       "dependencies": [
         "prosekit",
         "vue",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -13876,7 +13873,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -14310,7 +14307,6 @@
       "dependencies": [
         "prosekit",
         "svelte",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -17675,7 +17671,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "solid",
         "accumulatedFiles": [
@@ -18116,7 +18112,6 @@
       "dependencies": [
         "prosekit",
         "solid-js",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],

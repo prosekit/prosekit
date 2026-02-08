@@ -145,6 +145,7 @@ jobs:
             --retry-wait-time 5
             --max-retries 5
             --exclude 'https://floating-ui.com'
+            --remap "^https://prosekit\.dev\/examples file://$(pwd)/examples"
             './**/*.html'
           debug: false
           fail: true

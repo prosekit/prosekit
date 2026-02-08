@@ -2075,7 +2075,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "react",
         "accumulatedFiles": [
@@ -6003,7 +6003,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "preact",
         "accumulatedFiles": [
@@ -9786,7 +9786,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "vue",
         "accumulatedFiles": [
@@ -13876,7 +13876,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -17675,7 +17675,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "solid",
         "accumulatedFiles": [

@@ -2581,7 +2581,6 @@
       "dependencies": [
         "prosekit",
         "react",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -6444,7 +6443,6 @@
       "dependencies": [
         "preact",
         "prosekit",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -10221,7 +10219,6 @@
       "dependencies": [
         "prosekit",
         "vue",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -14310,7 +14307,6 @@
       "dependencies": [
         "prosekit",
         "svelte",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -18116,7 +18112,6 @@
       "dependencies": [
         "prosekit",
         "solid-js",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],

@@ -5,7 +5,7 @@ import 'prosekit/extensions/yjs/style.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import type { Awareness } from 'y-protocols/awareness'
+import type { Awareness } from 'prosekit/extensions/yjs'
 import type * as Y from 'yjs'
 
 import { Toolbar } from '../../ui/toolbar'

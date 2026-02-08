@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/basic",
   "type": "module",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "private": false,
   "description": "A quick starter for ProseKit",
   "author": {
@@ -48,7 +48,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^27.0.0",
     "happy-dom": "^20.5.0",
-    "jsdom": "^27.4.0",
+    "jsdom": "^28.0.0",
     "tsdown": "^0.20.1",
     "typescript": "~5.9.3",
     "vitest": "^4.0.18"

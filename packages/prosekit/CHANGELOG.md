@@ -1,5 +1,37 @@
 # prosekit
 
+## 0.18.0
+
+### Minor Changes
+
+- [`04ccc36`](https://github.com/ocavue/prosekit/commit/04ccc3695b244cd82e01b58f119a6315e3a6c9de) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineTextColor` to define the `textColor` mark.
+
+- [`f24e9c4`](https://github.com/ocavue/prosekit/commit/f24e9c4bd21318403e6ca0fcb773f9cb1ff3b052) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineBackgroundColor` to define the `backgroundColor` mark.
+
+- [`96a7d5d`](https://github.com/ocavue/prosekit/commit/96a7d5d0d9f04496733dbb3dec0259eea073abbd) ![](https://prosekit.dev/b/core)
+
+  Add `setNodeAttrsBetween` command and update `setNodeAttrs` behavior.
+  - **New**: Added `setNodeAttrsBetween` command to set attributes on all matching nodes within a range (from/to positions or selection range)
+  - **Changed**: `setNodeAttrs` now updates only a single node instead of all nodes in a range. When no position is specified, it finds the closest ancestor node matching the type. When a position is provided, it updates the node at that specific position.
+
+### Patch Changes
+
+- [`b56ff7b`](https://github.com/ocavue/prosekit/commit/b56ff7b171951142e5b7a9faf49745413404245b) ![](https://prosekit.dev/b/extensions)
+
+  Add `replace` option to `uploadImage` command to replace existing images at a position instead of inserting new ones.
+
+- [`d550edf`](https://github.com/ocavue/prosekit/commit/d550edf3fb80afcb0cf1936661db5de6774fb57e) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid)
+
+  Fix an issue where `useEditor()` is not working in node view components.
+
+- [`a3f5099`](https://github.com/ocavue/prosekit/commit/a3f5099db6bb3484e2720e0e0e2e2037364cbb9c) ![](https://prosekit.dev/b/web)
+
+  Improve the extension lifecycle in asynchronous UI frameworks.
+
 ## 0.17.1
 
 ### Patch Changes

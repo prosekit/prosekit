@@ -93,9 +93,7 @@ testStory('unmount', () => {
     // Type text and select it
     await userEvent.click(editorEl)
     await userEvent.type(editorEl, 'Hello world')
-    for (let i = 0; i < 5; i++) {
-      await extendSelection('backward', 1)
-    }
+    await extendSelection('backward', 5)
 
     // The inline menu should be visible
     const mainMenu = page.locate('[data-testid="inline-menu-main"]')

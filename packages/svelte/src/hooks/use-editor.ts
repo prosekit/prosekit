@@ -31,9 +31,11 @@ export function useEditor<E extends Extension = any>(options?: {
 
   if (update) {
     onMount(() => {
-      const forceUpdate = () => {
+      // We need `queueMicrotask` here to avoid `state_unsafe_mutation` errors.
+      // See https://github.com/prosekit/prosekit/issues/1439
+      const forceUpdate = () => queueMicrotask(() => {
         editorStore.set(editor)
-      }
+      })
       const extension = union(
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),

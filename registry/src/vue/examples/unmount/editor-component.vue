@@ -6,6 +6,8 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
+import { InlineMenu } from '../../ui/inline-menu'
+
 import ExtensionComponent from './extension-component.vue'
 
 const props = defineProps<{
@@ -21,6 +23,7 @@ const editor = createEditor({ extension })
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
         <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />
+        <InlineMenu />
       </div>
     </div>
     <ExtensionComponent :placeholder="props.placeholder" />

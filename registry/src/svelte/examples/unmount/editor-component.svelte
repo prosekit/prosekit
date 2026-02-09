@@ -6,6 +6,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
+import { InlineMenu } from '../../ui/inline-menu'
 import ExtensionComponent from './extension-component.svelte'
 
 const props = $props<{
@@ -20,6 +21,7 @@ const editor = createEditor({ extension })
   <div class="CSS_EDITOR_VIEWPORT">
     <div class="CSS_EDITOR_SCROLLING">
       <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
+      <InlineMenu />
     </div>
   </div>
   <ExtensionComponent placeholder={props.placeholder} />

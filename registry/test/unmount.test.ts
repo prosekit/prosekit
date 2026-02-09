@@ -1,7 +1,15 @@
 import { expect, it } from 'vitest'
-import { page } from 'vitest/browser'
+import { page, userEvent } from 'vitest/browser'
 
-import { expectLocatorToHaveCount, testStory, testStoryConsistency } from './helpers'
+import {
+  collapseSelection,
+  emptyEditor,
+  expectLocatorToHaveCount,
+  extendSelection,
+  testStory,
+  testStoryConsistency,
+  waitForEditor,
+} from './helpers'
 
 testStoryConsistency('unmount', {
   setup: async () => {
@@ -66,5 +74,39 @@ testStory('unmount', () => {
     await expect.element(placeholder(3)).not.toBeInTheDocument()
     await expect.element(placeholder(4)).toBeInTheDocument()
     await expect.element(placeholder(5)).toBeInTheDocument()
+  })
+
+  it('inline menu', async () => {
+    const editor = page.locate('.ProseMirror')
+    const button = page.locate('button')
+    const buttonAdd = button.filter({ hasText: 'Add editor' })
+    const buttonRemove = button.filter({ hasText: 'Unmount' })
+
+    await expectLocatorToHaveCount(editor, 0)
+
+    await buttonAdd.click()
+    await expectLocatorToHaveCount(editor, 1)
+
+    const editorEl = await waitForEditor()
+    await emptyEditor({ editor: editorEl })
+
+    // Type text and select it
+    await userEvent.click(editorEl)
+    await userEvent.type(editorEl, 'Hello world')
+    for (let i = 0; i < 5; i++) {
+      await extendSelection('backward', 1)
+    }
+
+    // The inline menu should be visible
+    const mainMenu = page.locate('[data-testid="inline-menu-main"]')
+    await expect.element(mainMenu).toBeVisible()
+
+    // Collapse selection to dismiss the menu
+    await collapseSelection('end')
+    await expect.element(mainMenu).not.toBeVisible()
+
+    // Unmount the editor and verify no editors remain
+    await buttonRemove.click()
+    await expectLocatorToHaveCount(editor, 0)
   })
 })

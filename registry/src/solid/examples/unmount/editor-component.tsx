@@ -6,6 +6,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
+import { InlineMenu } from '../../ui/inline-menu'
+
 import ExtensionComponent from './extension-component.tsx'
 
 export default function EditorComponent(props: {
@@ -19,6 +21,7 @@ export default function EditorComponent(props: {
       <div class="CSS_EDITOR_VIEWPORT">
         <div class="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} class="CSS_EDITOR_CONTENT"></div>
+          <InlineMenu />
         </div>
       </div>
       <ExtensionComponent placeholder={props.placeholder} />

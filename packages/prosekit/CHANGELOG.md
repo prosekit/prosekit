@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.18.1
+
+### Patch Changes
+
+- [`b5ed964`](https://github.com/ocavue/prosekit/commit/b5ed964ceeea5308cd4ac445c6491748cff1c384) ![](https://prosekit.dev/b/svelte)
+
+  Fix an issue where Svelte runtime error `state_unsafe_mutation` is thrown when rendering and unmounting an editor conditionally.
+
 ## 0.18.0
 
 ### Minor Changes

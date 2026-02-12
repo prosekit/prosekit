@@ -4,6 +4,10 @@ packages:
   - examples/*
   - packages/*
 
+catalog: 
+  typescript: "~5.9.3"
+  tsdown: "^0.20.1"
+
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
@@ -16,8 +20,8 @@ ignoredBuiltDependencies:
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-  - "@ocavue/*"
-  - "@prosemirror-adapter/*"
+  - '@ocavue/*'
+  - '@prosemirror-adapter/*'
   - diffable-html-snapshot
   - prosemirror-*
   - starlight-theme-nova
@@ -28,7 +32,3 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true
-
-catalog: 
-  typescript: "~5.9.3"
-  tsdown: "^0.20.1"

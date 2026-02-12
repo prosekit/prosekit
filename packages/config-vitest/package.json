@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "defu": "^6.1.4",
-    "typescript": "~5.9.3",
+    "typescript": "catalog:",
     "vitest-fail-on-console": "^0.10.1"
   }
 }

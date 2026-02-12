@@ -4,6 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    tsdown:
+      specifier: ^0.20.1
+      version: 0.20.1
+    typescript:
+      specifier: ~5.9.3
+      version: 5.9.3
+
 patchedDependencies:
   y-prosemirror:
     hash: 532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031
@@ -68,7 +77,7 @@ importers:
         specifier: ^2.8.2
         version: 2.8.2
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vitest:
         specifier: ^4.0.18
@@ -105,10 +114,10 @@ importers:
         specifier: ^28.0.0
         version: 28.0.0
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vitest:
         specifier: ^4.0.18
@@ -123,10 +132,10 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/config-vitest:
@@ -139,7 +148,7 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vitest-fail-on-console:
         specifier: ^0.10.1
@@ -176,10 +185,10 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vitest:
         specifier: ^4.0.18
@@ -225,7 +234,7 @@ importers:
         specifier: ^5.4.3
         version: 5.4.3
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/extensions:
@@ -304,13 +313,13 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       type-fest:
         specifier: ^5.4.3
         version: 5.4.3
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       unified:
         specifier: ^11.0.5
@@ -341,10 +350,10 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/pm:
@@ -381,10 +390,10 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/preact:
@@ -415,10 +424,10 @@ importers:
         specifier: ^10.28.3
         version: 10.28.3
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/prosekit:
@@ -494,7 +503,7 @@ importers:
         specifier: ^5.49.1
         version: 5.49.1
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typedoc:
         specifier: ^0.28.16
@@ -515,7 +524,7 @@ importers:
         specifier: ^5.1.1
         version: 5.1.1(typedoc@0.28.16(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vue:
         specifier: ^3.5.27
@@ -564,10 +573,10 @@ importers:
         specifier: ^19.2.4
         version: 19.2.4(react@19.2.4)
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/solid:
@@ -598,10 +607,10 @@ importers:
         specifier: ^1.9.11
         version: 1.9.11
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/svelte:
@@ -638,7 +647,7 @@ importers:
         specifier: ^4.21.0
         version: 4.21.0
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/typedoc-plugin:
@@ -654,10 +663,10 @@ importers:
         specifier: ^24.10.1
         version: 24.10.1
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
 
   packages/vfs:
@@ -713,10 +722,10 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vitest:
         specifier: ^4.0.18
@@ -777,13 +786,13 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.20.1
+        specifier: 'catalog:'
         version: 0.20.1(oxc-resolver@11.16.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))
       type-fest:
         specifier: ^5.4.3
         version: 5.4.3
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vitest:
         specifier: ^4.0.18
@@ -1114,7 +1123,7 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       vite-plugin-wasm:
         specifier: ^3.5.0

@@ -5,8 +5,8 @@ packages:
   - packages/*
 
 catalog:
-  typescript: "~5.9.3"
-  tsdown: "^0.20.1"
+  typescript: "~5.9.0"
+  tsdown: "^0.20.0"
   vitest: "^4.0.18"
   "@vitest/coverage-v8": "^4.0.18"
   "@vitest/ui": "^4.0.18"

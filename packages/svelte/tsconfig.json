@@ -1,5 +1,8 @@
 {
   "extends": "@ocavue/tsconfig/es/root.json",
+  "compilerOptions": {
+    "types": ["node"],
+  },
   "include": ["./*.js", "./*.ts", "./*.json", "./scripts"],
   "references": [
     {

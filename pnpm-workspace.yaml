@@ -28,3 +28,7 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true
+
+catalog: 
+  typescript: "~5.9.3"
+  tsdown: "^0.20.1"

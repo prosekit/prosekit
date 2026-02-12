@@ -5,7 +5,7 @@ packages:
   - packages/*
 
 catalog:
-  typescript: "~5.9.0"
+  typescript: "6.0.0-beta"
   tsdown: "^0.20.0"
   vitest: "^4.0.18"
   "@vitest/coverage-v8": "^4.0.18"
@@ -24,6 +24,7 @@ ignoredBuiltDependencies:
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
+  - typescript
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - prosemirror-*

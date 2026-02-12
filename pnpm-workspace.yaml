@@ -26,9 +26,7 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - '@ocavue/*'
   - '@prosemirror-adapter/*'
-  - diffable-html-snapshot
   - prosemirror-*
-  - starlight-theme-nova
 
 overrides: {}
 

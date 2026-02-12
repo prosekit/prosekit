@@ -24,8 +24,8 @@ ignoredBuiltDependencies:
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-  - '@ocavue/*'
-  - '@prosemirror-adapter/*'
+  - "@ocavue/*"
+  - "@prosemirror-adapter/*"
   - prosemirror-*
 
 overrides: {}

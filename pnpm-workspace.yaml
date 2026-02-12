@@ -8,6 +8,9 @@ catalog:
   typescript: "~5.9.3"
   tsdown: "^0.20.1"
   vitest: "^4.0.18"
+  "@vitest/coverage-v8": "^4.0.18"
+  "@vitest/ui": "^4.0.18"
+  "@vitest/browser-playwright": "^4.0.18"
 
 ignoreWorkspaceRootCheck: true
 

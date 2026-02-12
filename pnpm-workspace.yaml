@@ -4,6 +4,14 @@ packages:
   - examples/*
   - packages/*
 
+catalog:
+  typescript: "~5.9.0"
+  tsdown: "^0.20.0"
+  vitest: "^4.0.18"
+  "@vitest/coverage-v8": "^4.0.18"
+  "@vitest/ui": "^4.0.18"
+  "@vitest/browser-playwright": "^4.0.18"
+
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
@@ -18,9 +26,7 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
-  - diffable-html-snapshot
   - prosemirror-*
-  - starlight-theme-nova
 
 overrides: {}
 

@@ -47,7 +47,7 @@
     "@size-limit/esbuild-why": "^12.0.0",
     "@size-limit/preset-small-lib": "^12.0.0",
     "@types/node": "^24.10.1",
-    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.51.1",
     "eslint": "^9.39.2",
     "knip": "^5.83.0",
@@ -57,8 +57,8 @@
     "playwright": "^1.58.1",
     "size-limit": "^12.0.0",
     "turbo": "^2.8.2",
-    "typescript": "~5.9.3",
-    "vitest": "^4.0.18",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
     "wrangler": "^4.62.0"
   }
 }

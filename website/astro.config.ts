@@ -244,9 +244,6 @@ const config: AstroUserConfig = {
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
   },
-  experimental: {
-    headingIdCompat: true,
-  },
 }
 
 export default config

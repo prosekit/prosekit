@@ -16,6 +16,10 @@ jobs:
 
       - uses: ./.github/actions/setup
 
+      - name: Update pnpm duplicates
+        if: contains(github.event.pull_request.title, 'chore(deps)')
+        run: pnpm run fix:pnpm
+
       - name: Fix
         run: pnpm run fix
 

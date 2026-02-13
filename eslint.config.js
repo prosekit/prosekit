@@ -18,6 +18,10 @@ export default defineESLintConfig(
     command: true,
   },
   {
+    // TODO: remove this ignores
+    ignores: ['**/check-version-overrides.mjs'],
+  },
+  {
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },

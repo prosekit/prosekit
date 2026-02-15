@@ -6,9 +6,9 @@ packages:
 
 catalog:
   "@types/node": "^24.10.13"
-  '@vitest/browser-playwright': ^4.1.0-beta.2
-  '@vitest/coverage-v8': ^4.1.0-beta.2
-  '@vitest/ui': ^4.1.0-beta.2
+  "@vitest/browser-playwright": ^4.1.0-beta.2
+  "@vitest/coverage-v8": ^4.1.0-beta.2
+  "@vitest/ui": ^4.1.0-beta.2
   vitest: ^4.1.0-beta.2
   tsdown: ^0.20.3
   typescript: ~5.9.3
@@ -25,11 +25,11 @@ ignoredBuiltDependencies:
 minimumReleaseAge: 1440 # 24 hours
 
 minimumReleaseAgeExclude:
-  - '@ocavue/*'
-  - '@prosemirror-adapter/*'
+  - "@ocavue/*"
+  - "@prosemirror-adapter/*"
   - prosemirror-*
-  - '@eslint-react/*'
-  - 'eslint-plugin-react-*'
+  - "@eslint-react/*"
+  - "eslint-plugin-react-*"
 
 overrides: {}
 

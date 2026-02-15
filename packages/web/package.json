@@ -64,7 +64,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "tsdown": "catalog:",
-    "type-fest": "^5.4.3",
+    "type-fest": "^5.4.4",
     "typescript": "catalog:",
     "vitest": "catalog:"
   },

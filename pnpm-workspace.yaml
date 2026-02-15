@@ -5,12 +5,13 @@ packages:
   - packages/*
 
 catalog:
-  typescript: "~5.9.3"
-  tsdown: "^0.20.3"
-  vitest: "^4.0.18"
-  "@vitest/coverage-v8": "^4.0.18"
-  "@vitest/ui": "^4.0.18"
-  "@vitest/browser-playwright": "^4.0.18"
+  "@types/node": "^24.10.13"
+  "@vitest/browser-playwright": ^4.1.0-beta.2
+  "@vitest/coverage-v8": ^4.1.0-beta.2
+  "@vitest/ui": ^4.1.0-beta.2
+  vitest: ^4.1.0-beta.2
+  tsdown: ^0.20.3
+  typescript: ~5.9.3
 
 ignoreWorkspaceRootCheck: true
 
@@ -21,12 +22,14 @@ ignoredBuiltDependencies:
   - unrs-resolver
   - workerd
 
-minimumReleaseAge: 1440
+minimumReleaseAge: 1440 # 24 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - prosemirror-*
+  - "@eslint-react/*"
+  - "eslint-plugin-react-*"
 
 overrides: {}
 
@@ -34,3 +37,9 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true
+
+strictPeerDependencies: true
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 10080 # 7 days

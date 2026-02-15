@@ -1,7 +1,6 @@
 packages:
   - website
   - registry
-  - examples/*
   - packages/*
 
 catalog:

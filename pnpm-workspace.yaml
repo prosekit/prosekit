@@ -5,12 +5,13 @@ packages:
   - packages/*
 
 catalog:
-  typescript: "~5.9.3"
-  tsdown: "^0.20.3"
-  vitest: "^4.0.18"
-  "@vitest/coverage-v8": "^4.0.18"
-  "@vitest/ui": "^4.0.18"
-  "@vitest/browser-playwright": "^4.0.18"
+  "@types/node": "^24.10.13"
+  "@vitest/browser-playwright": ^4.0.18
+  "@vitest/coverage-v8": ^4.0.18
+  "@vitest/ui": ^4.0.18
+  vitest: ^4.0.18
+  tsdown: ^0.20.3
+  typescript: ~5.9.3
 
 ignoreWorkspaceRootCheck: true
 
@@ -18,15 +19,26 @@ ignoredBuiltDependencies:
   - dprint
   - esbuild
   - sharp
-  - unrs-resolver
   - workerd
 
-minimumReleaseAge: 1440
+minimumReleaseAge: 1440 # 24 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - prosemirror-*
+  - "@eslint-react/eslint-plugin@2.13.0"
+  - "@eslint-react/eff@2.13.0"
+  - "@eslint-react/shared@2.13.0"
+  - "@eslint-react/ast@2.13.0"
+  - "@eslint-react/var@2.13.0"
+  - "@eslint-react/core@2.13.0"
+  - "eslint-plugin-react-x@2.13.0"
+  - "eslint-plugin-react-dom@2.13.0"
+  - "eslint-plugin-react-rsc@2.13.0"
+  - "eslint-plugin-react-web-api@2.13.0"
+  - "eslint-plugin-react-hooks-extra@2.13.0"
+  - "eslint-plugin-react-naming-convention@2.13.0"
 
 overrides: {}
 
@@ -34,3 +46,9 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true
+
+strictPeerDependencies: true
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 10080 # 7 days

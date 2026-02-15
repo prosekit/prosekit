@@ -34,7 +34,7 @@
     "@ocavue/utils": "^1.4.0",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/node": "^24.10.1",
+    "@types/node": "catalog:",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.17.2",

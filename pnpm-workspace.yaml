@@ -1,16 +1,16 @@
 packages:
   - website
   - registry
-  - examples/*
   - packages/*
 
 catalog:
-  typescript: "~5.9.3"
-  tsdown: "^0.20.3"
-  vitest: "^4.0.18"
-  "@vitest/coverage-v8": "^4.0.18"
-  "@vitest/ui": "^4.0.18"
-  "@vitest/browser-playwright": "^4.0.18"
+  "@types/node": "^24.10.13"
+  "@vitest/browser-playwright": ^4.0.18
+  "@vitest/coverage-v8": ^4.0.18
+  "@vitest/ui": ^4.0.18
+  vitest: ^4.0.18
+  tsdown: ^0.20.3
+  typescript: ~5.9.3
 
 ignoreWorkspaceRootCheck: true
 
@@ -18,10 +18,9 @@ ignoredBuiltDependencies:
   - dprint
   - esbuild
   - sharp
-  - unrs-resolver
   - workerd
 
-minimumReleaseAge: 1440
+minimumReleaseAge: 1440 # 24 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
@@ -34,3 +33,9 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true
+
+strictPeerDependencies: true
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 10080 # 7 days

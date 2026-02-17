@@ -38,7 +38,7 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.4.0",
+    "@ocavue/utils": "^1.5.0",
     "@prosekit/pm": "workspace:^",
     "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",

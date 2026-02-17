@@ -26,18 +26,6 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - prosemirror-*
-  - "@eslint-react/eslint-plugin@2.13.0"
-  - "@eslint-react/eff@2.13.0"
-  - "@eslint-react/shared@2.13.0"
-  - "@eslint-react/ast@2.13.0"
-  - "@eslint-react/var@2.13.0"
-  - "@eslint-react/core@2.13.0"
-  - "eslint-plugin-react-x@2.13.0"
-  - "eslint-plugin-react-dom@2.13.0"
-  - "eslint-plugin-react-rsc@2.13.0"
-  - "eslint-plugin-react-web-api@2.13.0"
-  - "eslint-plugin-react-hooks-extra@2.13.0"
-  - "eslint-plugin-react-naming-convention@2.13.0"
 
 overrides: {}
 

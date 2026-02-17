@@ -35,6 +35,9 @@
       "path": "./packages/pm/tsconfig.json",
     },
     {
+      "path": "./packages/prosemirror-enter-rules/tsconfig.json",
+    },
+    {
       "path": "./packages/preact/tsconfig.json",
     },
     {

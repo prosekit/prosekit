@@ -1,0 +1,75 @@
+{
+  "name": "prosemirror-enter-rules",
+  "type": "module",
+  "version": "0.1.1",
+  "private": false,
+  "description": "Enter rules for ProseMirror",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
+    "directory": "packages/prosemirror-enter-rules"
+  },
+  "bugs": {
+    "url": "https://github.com/prosekit/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.6"
+  },
+  "devDependencies": {
+    "jsdom": "^28.0.0",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosemirror-enter-rules.d.ts",
+        "default": "./dist/prosemirror-enter-rules.js"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosemirror-enter-rules.js",
+    "module": "./dist/prosemirror-enter-rules.js",
+    "types": "./dist/prosemirror-enter-rules.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosemirror-enter-rules.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosemirror-enter-rules": "./src/index.ts"
+    }
+  }
+}

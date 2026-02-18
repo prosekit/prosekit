@@ -109,7 +109,7 @@
   description: Table node with row and column operations.
 - name: temml
   frameworks: [react, preact, solid]
-  hidden: true
+  description: Math equation rendering using the Temml library.
 - name: text-align
   frameworks: [react, preact, vue, svelte, solid]
   description: Text alignment options (left, center, right, justify).
@@ -149,4 +149,4 @@
   description: Real-time collaboration using Yjs CRDT library.
 - name: katex
   frameworks: [vue, svelte]
-  hidden: true
+  description: Math equation rendering using the KaTeX library.

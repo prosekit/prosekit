@@ -477,6 +477,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-katex.json",
         "https://prosekit.dev/r/react-sample-sample-doc-full.json",
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
@@ -522,6 +523,7 @@
           "registry/src/react/examples/full/editor.tsx",
           "registry/src/react/examples/full/extension.ts",
           "registry/src/react/examples/full/index.ts",
+          "registry/src/react/sample/katex.ts",
           "registry/src/react/sample/sample-doc-full.ts",
           "registry/src/react/sample/sample-tag-data.ts",
           "registry/src/react/sample/sample-uploader.ts",
@@ -554,6 +556,7 @@
           "registry/src/react/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
+          "react-sample-katex",
           "react-sample-sample-doc-full",
           "react-sample-sample-tag-data",
           "react-sample-sample-uploader",
@@ -1987,7 +1990,7 @@
       "name": "react-example-temml",
       "title": "react-example-temml",
       "type": "registry:block",
-      "description": "",
+      "description": "Math equation rendering using the Temml library.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-tex.json",
         "https://prosekit.dev/r/react-sample-temml.json"
@@ -2015,7 +2018,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "temml",
         "framework": "react",
         "accumulatedFiles": [
@@ -2707,6 +2710,33 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-katex",
+      "title": "react-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -4666,6 +4696,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-katex.json",
         "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
         "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
@@ -4711,6 +4742,7 @@
           "registry/src/preact/examples/full/editor.tsx",
           "registry/src/preact/examples/full/extension.ts",
           "registry/src/preact/examples/full/index.ts",
+          "registry/src/preact/sample/katex.ts",
           "registry/src/preact/sample/sample-doc-full.ts",
           "registry/src/preact/sample/sample-tag-data.ts",
           "registry/src/preact/sample/sample-uploader.ts",
@@ -4743,6 +4775,7 @@
           "registry/src/preact/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-katex",
           "preact-sample-sample-doc-full",
           "preact-sample-sample-tag-data",
           "preact-sample-sample-uploader",
@@ -6024,7 +6057,7 @@
       "name": "preact-example-temml",
       "title": "preact-example-temml",
       "type": "registry:block",
-      "description": "",
+      "description": "Math equation rendering using the Temml library.",
       "registryDependencies": [
         "https://prosekit.dev/r/preact-sample-sample-doc-tex.json",
         "https://prosekit.dev/r/preact-sample-temml.json"
@@ -6052,7 +6085,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "temml",
         "framework": "preact",
         "accumulatedFiles": [
@@ -6679,6 +6712,33 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-katex",
+      "title": "preact-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -8578,6 +8638,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-katex.json",
         "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
         "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
@@ -8622,6 +8683,7 @@
           "registry/src/vue/examples/full/editor.vue",
           "registry/src/vue/examples/full/extension.ts",
           "registry/src/vue/examples/full/index.ts",
+          "registry/src/vue/sample/katex.ts",
           "registry/src/vue/sample/sample-doc-full.ts",
           "registry/src/vue/sample/sample-tag-data.ts",
           "registry/src/vue/sample/sample-uploader.ts",
@@ -8654,6 +8716,7 @@
           "registry/src/vue/ui/user-menu/user-menu.vue"
         ],
         "internalDependencies": [
+          "vue-sample-katex",
           "vue-sample-sample-doc-full",
           "vue-sample-sample-tag-data",
           "vue-sample-sample-uploader",
@@ -9027,7 +9090,7 @@
       "name": "vue-example-katex",
       "title": "vue-example-katex",
       "type": "registry:block",
-      "description": "",
+      "description": "Math equation rendering using the KaTeX library.",
       "registryDependencies": [
         "https://prosekit.dev/r/vue-sample-katex.json",
         "https://prosekit.dev/r/vue-sample-sample-doc-tex.json"
@@ -9054,7 +9117,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "katex",
         "framework": "vue",
         "accumulatedFiles": [
@@ -12791,6 +12854,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-katex.json",
         "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
         "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
@@ -12835,6 +12899,7 @@
           "registry/src/svelte/examples/full/editor.svelte",
           "registry/src/svelte/examples/full/extension.ts",
           "registry/src/svelte/examples/full/index.ts",
+          "registry/src/svelte/sample/katex.ts",
           "registry/src/svelte/sample/sample-doc-full.ts",
           "registry/src/svelte/sample/sample-tag-data.ts",
           "registry/src/svelte/sample/sample-uploader.ts",
@@ -12867,6 +12932,7 @@
           "registry/src/svelte/ui/user-menu/user-menu.svelte"
         ],
         "internalDependencies": [
+          "svelte-sample-katex",
           "svelte-sample-sample-doc-full",
           "svelte-sample-sample-tag-data",
           "svelte-sample-sample-uploader",
@@ -13240,7 +13306,7 @@
       "name": "svelte-example-katex",
       "title": "svelte-example-katex",
       "type": "registry:block",
-      "description": "",
+      "description": "Math equation rendering using the KaTeX library.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-katex.json",
         "https://prosekit.dev/r/svelte-sample-sample-doc-tex.json"
@@ -13267,7 +13333,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "katex",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -16663,6 +16729,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-katex.json",
         "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
         "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
         "https://prosekit.dev/r/solid-sample-sample-uploader.json",
@@ -16708,6 +16775,7 @@
           "registry/src/solid/examples/full/editor.tsx",
           "registry/src/solid/examples/full/extension.ts",
           "registry/src/solid/examples/full/index.ts",
+          "registry/src/solid/sample/katex.ts",
           "registry/src/solid/sample/sample-doc-full.ts",
           "registry/src/solid/sample/sample-tag-data.ts",
           "registry/src/solid/sample/sample-uploader.ts",
@@ -16740,6 +16808,7 @@
           "registry/src/solid/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
+          "solid-sample-katex",
           "solid-sample-sample-doc-full",
           "solid-sample-sample-tag-data",
           "solid-sample-sample-uploader",
@@ -18021,7 +18090,7 @@
       "name": "solid-example-temml",
       "title": "solid-example-temml",
       "type": "registry:block",
-      "description": "",
+      "description": "Math equation rendering using the Temml library.",
       "registryDependencies": [
         "https://prosekit.dev/r/solid-sample-sample-doc-tex.json",
         "https://prosekit.dev/r/solid-sample-temml.json"
@@ -18049,7 +18118,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "temml",
         "framework": "solid",
         "accumulatedFiles": [
@@ -18676,6 +18745,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-katex",
+      "title": "solid-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/katex.ts"
         ],
         "internalDependencies": []
       }

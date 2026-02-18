@@ -89,7 +89,7 @@
   "devDependencies": {
     "@sveltejs/package": "^2.5.7",
     "@types/node": "catalog:",
-    "svelte": "^5.51.0",
+    "svelte": "^5.51.2",
     "svelte-check": "^4.4.0",
     "tsx": "^4.21.0",
     "typescript": "catalog:"

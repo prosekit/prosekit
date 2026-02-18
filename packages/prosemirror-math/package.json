@@ -1,7 +1,7 @@
 {
   "name": "prosemirror-math",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "description": "Math extensions for ProseMirror",
   "author": {
@@ -39,7 +39,7 @@
   "dependencies": {
     "@ocavue/utils": "^1.5.0",
     "prosemirror-enter-rules": "workspace:^",
-    "prosemirror-inputrules": "^1.4.0",
+    "prosemirror-inputrules": "^1.5.1",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
     "prosemirror-view": "^1.41.6"
@@ -48,7 +48,6 @@
     "@mathjax/src": "^4.1.0",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/core": "workspace:^",
-    "@prosekit/pm": "workspace:^",
     "diffable-html-snapshot": "^0.2.0",
     "katex": "^0.16.28",
     "temml": "^0.13.1",

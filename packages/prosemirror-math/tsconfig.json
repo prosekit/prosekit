@@ -8,9 +8,6 @@
       "path": "../core/tsconfig.json",
     },
     {
-      "path": "../pm/tsconfig.json",
-    },
-    {
       "path": "../prosemirror-enter-rules/tsconfig.json",
     },
   ],

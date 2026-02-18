@@ -146,6 +146,8 @@ jobs:
             --max-retries 5
             --exclude 'https://floating-ui.com'
             --remap "^https://prosekit\.dev\/examples file://$(pwd)/examples"
+            --remap "^https://prosekit\.dev\/references file://$(pwd)/references"
+            --remap "^https://prosekit\.dev\/extensions file://$(pwd)/extensions"
             './**/*.html'
           debug: false
           fail: true

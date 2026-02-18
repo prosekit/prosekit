@@ -26,22 +26,22 @@
       "path": "./packages/extensions/tsconfig.json",
     },
     {
-      "path": "./packages/vfs/tsconfig.json",
-    },
-    {
       "path": "./packages/lit/tsconfig.json",
     },
     {
       "path": "./packages/pm/tsconfig.json",
     },
     {
-      "path": "./packages/prosemirror-enter-rules/tsconfig.json",
-    },
-    {
       "path": "./packages/preact/tsconfig.json",
     },
     {
       "path": "./packages/prosekit/tsconfig.json",
+    },
+    {
+      "path": "./packages/prosemirror-enter-rules/tsconfig.json",
+    },
+    {
+      "path": "./packages/prosemirror-math/tsconfig.json",
     },
     {
       "path": "./packages/react/tsconfig.json",
@@ -54,6 +54,9 @@
     },
     {
       "path": "./packages/typedoc-plugin/tsconfig.json",
+    },
+    {
+      "path": "./packages/vfs/tsconfig.json",
     },
     {
       "path": "./packages/vue/tsconfig.json",

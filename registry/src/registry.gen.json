@@ -1984,6 +1984,54 @@
       }
     },
     {
+      "name": "react-example-temml",
+      "title": "react-example-temml",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-tex.json",
+        "https://prosekit.dev/r/react-sample-temml.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/temml/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/temml/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/temml/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "temml",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/temml/editor.tsx",
+          "registry/src/react/examples/temml/extension.ts",
+          "registry/src/react/examples/temml/index.ts",
+          "registry/src/react/sample/sample-doc-tex.ts",
+          "registry/src/react/sample/temml.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-tex",
+          "react-sample-temml"
+        ]
+      }
+    },
+    {
       "name": "react-example-text-align",
       "title": "react-example-text-align",
       "type": "registry:block",
@@ -3258,6 +3306,33 @@
       }
     },
     {
+      "name": "react-sample-sample-doc-tex",
+      "title": "react-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "react-sample-sample-doc-text-align",
       "title": "react-sample-sample-doc-text-align",
       "type": "registry:component",
@@ -3549,6 +3624,33 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-temml",
+      "title": "react-sample-temml",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "temml"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/temml.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/temml.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/temml.ts"
         ],
         "internalDependencies": []
       }
@@ -5919,6 +6021,54 @@
       }
     },
     {
+      "name": "preact-example-temml",
+      "title": "preact-example-temml",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-tex.json",
+        "https://prosekit.dev/r/preact-sample-temml.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/temml/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/temml/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/temml/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "temml",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/temml/editor.tsx",
+          "registry/src/preact/examples/temml/extension.ts",
+          "registry/src/preact/examples/temml/index.ts",
+          "registry/src/preact/sample/sample-doc-tex.ts",
+          "registry/src/preact/sample/temml.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-tex",
+          "preact-sample-temml"
+        ]
+      }
+    },
+    {
       "name": "preact-example-text-align",
       "title": "preact-example-text-align",
       "type": "registry:block",
@@ -7101,6 +7251,33 @@
       }
     },
     {
+      "name": "preact-sample-sample-doc-tex",
+      "title": "preact-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "preact-sample-sample-doc-text-align",
       "title": "preact-sample-sample-doc-text-align",
       "type": "registry:component",
@@ -7365,6 +7542,33 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-temml",
+      "title": "preact-sample-temml",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "temml"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/temml.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/temml.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/temml.ts"
         ],
         "internalDependencies": []
       }
@@ -8816,6 +9020,53 @@
         "internalDependencies": [
           "vue-sample-sample-doc-italic",
           "vue-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "vue-example-katex",
+      "title": "vue-example-katex",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-katex.json",
+        "https://prosekit.dev/r/vue-sample-sample-doc-tex.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/katex/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/katex/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/katex/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "katex",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/katex/editor.vue",
+          "registry/src/vue/examples/katex/extension.ts",
+          "registry/src/vue/examples/katex/index.ts",
+          "registry/src/vue/sample/katex.ts",
+          "registry/src/vue/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-katex",
+          "vue-sample-sample-doc-tex"
         ]
       }
     },
@@ -10318,6 +10569,33 @@
       }
     },
     {
+      "name": "vue-sample-katex",
+      "title": "vue-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/katex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-sample-sample-doc-block-handle",
       "title": "vue-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -10880,6 +11158,33 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-tex",
+      "title": "vue-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-tex.ts"
         ],
         "internalDependencies": []
       }
@@ -12932,6 +13237,53 @@
       }
     },
     {
+      "name": "svelte-example-katex",
+      "title": "svelte-example-katex",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-katex.json",
+        "https://prosekit.dev/r/svelte-sample-sample-doc-tex.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/katex/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/katex/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/katex/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "katex",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/katex/editor.svelte",
+          "registry/src/svelte/examples/katex/extension.ts",
+          "registry/src/svelte/examples/katex/index.ts",
+          "registry/src/svelte/sample/katex.ts",
+          "registry/src/svelte/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-katex",
+          "svelte-sample-sample-doc-tex"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-keymap",
       "title": "svelte-example-keymap",
       "type": "registry:block",
@@ -14414,6 +14766,33 @@
       }
     },
     {
+      "name": "svelte-sample-katex",
+      "title": "svelte-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/katex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-block-handle",
       "title": "svelte-sample-sample-doc-block-handle",
       "type": "registry:component",
@@ -14976,6 +15355,33 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-tex",
+      "title": "svelte-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-tex.ts"
         ],
         "internalDependencies": []
       }
@@ -17612,6 +18018,54 @@
       }
     },
     {
+      "name": "solid-example-temml",
+      "title": "solid-example-temml",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-tex.json",
+        "https://prosekit.dev/r/solid-sample-temml.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "solid-js"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/temml/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/temml/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/temml/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "temml",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/temml/editor.tsx",
+          "registry/src/solid/examples/temml/extension.ts",
+          "registry/src/solid/examples/temml/index.ts",
+          "registry/src/solid/sample/sample-doc-tex.ts",
+          "registry/src/solid/sample/temml.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-tex",
+          "solid-sample-temml"
+        ]
+      }
+    },
+    {
       "name": "solid-example-text-align",
       "title": "solid-example-text-align",
       "type": "registry:block",
@@ -18794,6 +19248,33 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-tex",
+      "title": "solid-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-text-align",
       "title": "solid-sample-sample-doc-text-align",
       "type": "registry:component",
@@ -19058,6 +19539,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/sample-user-data.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-temml",
+      "title": "solid-sample-temml",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "temml"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/temml.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/temml.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/temml.ts"
         ],
         "internalDependencies": []
       }

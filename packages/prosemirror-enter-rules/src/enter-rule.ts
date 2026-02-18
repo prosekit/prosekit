@@ -139,25 +139,29 @@ function resolveNodeType(schema: Schema, type: string | NodeType): NodeType {
   return type
 }
 
-const key = new PluginKey('prosemirror-enter-rules')
+/**
+ * Creates a ProseMirror command that handles enter rules. This command
+ * should be bound to the `Enter` key by a keymap plugin.
+ *
+ * @public
+ */
+export function createEnterRuleCommand({ rules }: { rules: readonly EnterRule[] }): Command {
+  return function enterRuleCommand(state, dispatch, view) {
+    if (!view) return false
+    return execEnterRules(view, rules, dispatch)
+  }
+}
 
 /**
  * Creates a ProseMirror plugin that handles enter rules.
  *
  * @public
  */
-export function createEnterRulePlugin({
-  rules,
-}: {
-  rules: EnterRule[]
-}): Plugin {
-  const command: Command = (state, dispatch, view) => {
-    if (!view) return false
-    return execEnterRules(view, rules, dispatch)
-  }
+export function createEnterRulePlugin(options: { rules: readonly EnterRule[] }): Plugin {
+  const command = createEnterRuleCommand(options)
   const handler = keydownHandler({ Enter: command })
   return new Plugin({
-    key,
+    key: new PluginKey('prosemirror-enter-rules'),
     props: { handleKeyDown: handler },
   })
 }

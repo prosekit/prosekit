@@ -26,6 +26,7 @@ import { defineImage } from '../image'
 import { defineItalic } from '../italic'
 import { defineLink } from '../link'
 import { defineList, type ListAttrs } from '../list'
+import { defineMath } from '../math'
 import { defineParagraph } from '../paragraph'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
@@ -35,6 +36,7 @@ import { defineTextColor } from '../text-color'
 import { defineUnderline } from '../underline'
 
 import { readHtmlTextFromClipboard, readPlainTextFromClipboard } from './clipboard'
+import { renderMathBlock, renderMathInline } from './katex'
 
 /**
  * @internal
@@ -63,6 +65,7 @@ export function defineTestExtension() {
     defineHorizontalRule(),
     defineHardBreak(),
     defineCodeBlock(),
+    defineMath({ renderMathBlock, renderMathInline }),
   )
 }
 

@@ -107,6 +107,9 @@
 - name: table
   frameworks: [react, preact, vue, svelte, solid]
   description: Table node with row and column operations.
+- name: temml
+  frameworks: [react, preact, solid]
+  hidden: true
 - name: text-align
   frameworks: [react, preact, vue, svelte, solid]
   description: Text alignment options (left, center, right, justify).
@@ -144,3 +147,6 @@
 - name: yjs
   frameworks: [react, preact, vue, svelte, solid]
   description: Real-time collaboration using Yjs CRDT library.
+- name: katex
+  frameworks: [vue, svelte]
+  hidden: true

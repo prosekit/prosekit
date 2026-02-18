@@ -1,0 +1,17 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "references": [
+    {
+      "path": "../config-vitest/tsconfig.json",
+    },
+    {
+      "path": "../core/tsconfig.json",
+    },
+    {
+      "path": "../pm/tsconfig.json",
+    },
+    {
+      "path": "../prosemirror-enter-rules/tsconfig.json",
+    },
+  ],
+}

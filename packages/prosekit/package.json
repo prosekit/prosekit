@@ -60,6 +60,7 @@
     "./extensions/loro": "./src/extensions/loro.gen.ts",
     "./extensions/loro/style.css": "./src/extensions/loro/style.css",
     "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
+    "./extensions/math": "./src/extensions/math.gen.ts",
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
     "./extensions/paragraph": "./src/extensions/paragraph.gen.ts",
@@ -376,6 +377,10 @@
       "./extensions/mark-rule": {
         "types": "./dist/prosekit-extensions-mark-rule.d.ts",
         "default": "./dist/prosekit-extensions-mark-rule.js"
+      },
+      "./extensions/math": {
+        "types": "./dist/prosekit-extensions-math.d.ts",
+        "default": "./dist/prosekit-extensions-math.js"
       },
       "./extensions/mention": {
         "types": "./dist/prosekit-extensions-mention.d.ts",
@@ -834,6 +839,9 @@
         "extensions/mark-rule": [
           "./dist/prosekit-extensions-mark-rule.d.ts"
         ],
+        "extensions/math": [
+          "./dist/prosekit-extensions-math.d.ts"
+        ],
         "extensions/mention": [
           "./dist/prosekit-extensions-mention.d.ts"
         ],
@@ -1134,6 +1142,7 @@
       "prosekit-extensions-loro": "./src/extensions/loro.gen.ts",
       "extensions/loro/style": "./src/extensions/loro/style.css",
       "prosekit-extensions-mark-rule": "./src/extensions/mark-rule.gen.ts",
+      "prosekit-extensions-math": "./src/extensions/math.gen.ts",
       "prosekit-extensions-mention": "./src/extensions/mention.gen.ts",
       "prosekit-extensions-mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
       "prosekit-extensions-paragraph": "./src/extensions/paragraph.gen.ts",

@@ -20,6 +20,7 @@ export const HorizontalRule = { args: { story: 'horizontal-rule' } }
 export const ImageView = { args: { story: 'image-view' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Italic = { args: { story: 'italic' } }
+export const Katex = { args: { story: 'katex' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const Link = { args: { story: 'link' } }
 export const LinkMarkView = { args: { story: 'link-mark-view' } }

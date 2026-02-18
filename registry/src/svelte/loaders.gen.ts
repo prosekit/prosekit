@@ -18,6 +18,7 @@ export const loaders = {
   'image-view': () => import('./examples/image-view').then((m) => ({ default: m.ExampleEditor })),
   'inline-menu': () => import('./examples/inline-menu').then((m) => ({ default: m.ExampleEditor })),
   'italic': () => import('./examples/italic').then((m) => ({ default: m.ExampleEditor })),
+  'katex': () => import('./examples/katex').then((m) => ({ default: m.ExampleEditor })),
   'keymap': () => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor })),
   'link': () => import('./examples/link').then((m) => ({ default: m.ExampleEditor })),
   'link-mark-view': () => import('./examples/link-mark-view').then((m) => ({ default: m.ExampleEditor })),

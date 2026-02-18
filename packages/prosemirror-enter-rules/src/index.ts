@@ -1,4 +1,5 @@
 export {
+  createEnterRuleCommand,
   createEnterRulePlugin,
   createTextBlockEnterRule,
   type EnterRule,

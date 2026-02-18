@@ -46,6 +46,7 @@ function generateExtensionsSidebarItems() {
       'horizontal-rule',
       'image',
       'list',
+      'math',
       'mention',
       'table',
       'doc',

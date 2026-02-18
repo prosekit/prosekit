@@ -300,6 +300,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/math",
+    "path": "packages/prosekit/dist/prosekit-extensions-math.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/mention",
     "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
     "ignore": [

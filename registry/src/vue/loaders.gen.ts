@@ -19,6 +19,7 @@ export const loaders = {
   'image-view': defineAsyncComponent(() => import('./examples/image-view').then((m) => m.ExampleEditor)),
   'inline-menu': defineAsyncComponent(() => import('./examples/inline-menu').then((m) => m.ExampleEditor)),
   'italic': defineAsyncComponent(() => import('./examples/italic').then((m) => m.ExampleEditor)),
+  'katex': defineAsyncComponent(() => import('./examples/katex').then((m) => m.ExampleEditor)),
   'keymap': defineAsyncComponent(() => import('./examples/keymap').then((m) => m.ExampleEditor)),
   'link': defineAsyncComponent(() => import('./examples/link').then((m) => m.ExampleEditor)),
   'link-mark-view': defineAsyncComponent(() => import('./examples/link-mark-view').then((m) => m.ExampleEditor)),

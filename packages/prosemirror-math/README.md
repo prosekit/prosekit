@@ -51,13 +51,6 @@ const view = new EditorView(document.body, {
     }, node, decorations),
   },
 })
-// ---cut-after---
-declare module 'temml' {
-  interface Temml {
-    render(text: string, element: HTMLElement, options: { displayMode: boolean }): void
-  }
-  export default Temml
-}
 ```
 
 ### Input rules

@@ -7,16 +7,9 @@ import { defineEnterRule } from '../enter-rule'
 /**
  * @internal
  */
-interface MathBlockAttrs {
-  language?: string
-}
-
-/**
- * @internal
- */
 export type MathBlockSpecExtension = Extension<{
   Nodes: {
-    mathBlock: MathBlockAttrs
+    mathBlock: Attrs
   }
 }>
 

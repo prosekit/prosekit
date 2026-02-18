@@ -19,6 +19,7 @@ export const mathInlineSpec: NodeSpec = {
   parseDOM: [
     {
       tag: 'span.prosekit-math-inline',
+      contentElement: 'code',
     },
   ],
 }

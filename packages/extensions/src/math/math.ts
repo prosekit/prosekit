@@ -6,14 +6,14 @@ import { defineMathInline, type MathInlineExtension } from './math-inline'
 import { defineMathPlugin } from './math-plugin'
 
 /**
- * @internal
+ * @public
  */
 export type MathExtension = Union<[MathInlineExtension, MathBlockExtension]>
 
 /**
  * Options for {@link defineMath}.
  *
- * @internal
+ * @public
  */
 export interface MathOptions {
   /**

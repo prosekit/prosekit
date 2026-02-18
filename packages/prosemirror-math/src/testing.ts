@@ -1,4 +1,4 @@
-import '@prosekit/pm/view/style/prosemirror.css'
+import 'prosemirror-view/style/prosemirror.css'
 
 import {
   defineBaseCommands,
@@ -15,9 +15,9 @@ import {
   type PlainExtension,
 } from '@prosekit/core'
 import { createTestEditor, type TestEditor } from '@prosekit/core/test'
-import { inputRules } from '@prosekit/pm/inputrules'
-import type { Attrs } from '@prosekit/pm/model'
 import { createEnterRuleCommand, type EnterRule } from 'prosemirror-enter-rules'
+import { inputRules } from 'prosemirror-inputrules'
+import type { Attrs } from 'prosemirror-model'
 
 import { createCursorInsidePlugin } from './cursor-inside-plugin'
 import { renderKaTeXMathBlock, renderKaTeXMathInline } from './katex'

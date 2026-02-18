@@ -1,4 +1,4 @@
-import { TextSelection } from '@prosekit/pm/state'
+import { TextSelection } from 'prosemirror-state'
 import { describe, expect, it } from 'vitest'
 
 import { setupTest } from './testing'

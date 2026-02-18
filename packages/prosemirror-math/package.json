@@ -48,7 +48,6 @@
     "@mathjax/src": "^4.1.0",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/core": "workspace:^",
-    "@prosekit/pm": "workspace:^",
     "diffable-html-snapshot": "^0.2.0",
     "katex": "^0.16.28",
     "temml": "^0.13.1",

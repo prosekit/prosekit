@@ -13,21 +13,24 @@ npm i https://pkg.pr.new/prosekit/prosekit@1449
 
 :::
 
-The `math` extension adds support for mathematical equations in your document, including both inline math and block-level math expressions. It is renderer agnostic, allowing you to use any math rendering library such as [KaTeX] or [Temml].
+The `math` extension adds support for mathematical equations in your document, including `mathInline` node for inline expressions and `mathBlock` node for block expressions. It is renderer agnostic, allowing you to use any math rendering library such as [KaTeX] or [Temml].
 
 <Demo story="katex" />
 
 ## Usage
 
 ```ts twoslash
+import Temml from 'temml'
 import { defineMath } from 'prosekit/extensions/math'
 
 const extension = defineMath({
   renderMathInline: (code: string, element: HTMLElement) => {
     // Render inline math into the given <span> element
+    Temml.render(code, element, { displayMode: false })
   },
   renderMathBlock: (code: string, element: HTMLElement) => {
     // Render block math into the given <div> element
+    Temml.render(code, element, { displayMode: true })
   },
 })
 ```

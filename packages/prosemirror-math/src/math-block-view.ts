@@ -7,7 +7,7 @@ import { createMathViewRender } from './math-view-render'
 /**
  * The function to render a math block.
  *
- * @param code - The text of the math block. For example, a TeX expression.
+ * @param text - The text of the math block. For example, a TeX expression.
  * @param element - A `<div>` element to render the math block.
  */
 export type RenderMathBlock = (text: string, element: HTMLElement) => void

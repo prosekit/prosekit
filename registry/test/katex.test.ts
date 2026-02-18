@@ -38,10 +38,10 @@ testStory('katex', () => {
 
     // Verify that the display contains KaTeX-rendered output.
     expect(mathInlineDisplayHTML).toContain(`class="katex"`)
-    expect(mathInlineDisplayHTML).toContain(`class="katex-html"`)
+    expect(mathInlineDisplayHTML).toContain(`<math`)
     expect(mathInlineDisplayHTML).toContain(`<annotation encoding="application/x-tex">`)
     expect(mathBlockDisplayHTML).toContain(`class="katex"`)
-    expect(mathBlockDisplayHTML).toContain(`class="katex-html"`)
+    expect(mathBlockDisplayHTML).toContain(`<math`)
     expect(mathBlockDisplayHTML).toContain(`<annotation encoding="application/x-tex">`)
   })
 

@@ -25,8 +25,8 @@ const schema = new Schema({
     doc: { content: 'block+' },
     paragraph: { content: 'inline*', group: 'block', parseDOM: [{ tag: 'p' }], toDOM: () => ['p', 0] },
     text: { group: 'inline' },
-    mathBlock: { ...mathBlockSpec,   },
-    mathInline: { ...mathInlineSpec,  },
+    mathBlock: { ...mathBlockSpec },
+    mathInline: { ...mathInlineSpec },
   },
 })
 ```
@@ -43,12 +43,12 @@ import Temml from 'temml'
 const view = new EditorView(document.body, {
   state,
   nodeViews: {
-    mathBlock: (node) => createMathBlockView(node, (text, element) => {
+    mathBlock: (node, view, getPos, decorations) => createMathBlockView((text, element) => {
       Temml.render(text, element, { displayMode: true })
-    }),
-    mathInline: (node) => createMathInlineView(node, (text, element) => {
+    }, node, decorations),
+    mathInline: (node, view, getPos, decorations) => createMathInlineView((text, element) => {
       Temml.render(text, element, { displayMode: false })
-    }),
+    }, node, decorations),
   },
 })
 ```
@@ -98,8 +98,8 @@ const plugin = createCursorInsidePlugin()
 
 ### Node views
 
-- **`createMathBlockView(node, renderMath)`** — Creates a block math NodeView
-- **`createMathInlineView(node, renderMath)`** — Creates an inline math NodeView
+- **`createMathBlockView(renderMath, node, decorations)`** — Creates a block math NodeView
+- **`createMathInlineView(renderMath, node, decorations)`** — Creates an inline math NodeView
 
 The `renderMath` callback receives `(text: string, element: HTMLElement)` and should render the math into the element.
 

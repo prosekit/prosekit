@@ -14,7 +14,7 @@ export type MathInlineSpecExtension = Extension<{
 }>
 
 /**
- * @public
+ * @internal
  */
 export function defineMathInlineSpec(): MathInlineSpecExtension {
   return defineNodeSpec<'mathInline', Attrs>({
@@ -51,7 +51,7 @@ export function defineMathInlineView({ render }: MathInlineViewOptions): Extensi
 }
 
 /**
- * @public
+ * @internal
  */
 export function defineMathInlineInputRule(): PlainExtension {
   return defineInputRule(createMathInlineInputRule('mathInline'))

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.18.2
+
+### Patch Changes
+
+- [`fcd903b`](https://github.com/ocavue/prosekit/commit/fcd903b0eb3a96c7144119e06708f45e42ca45d6) ![](https://prosekit.dev/b/extensions)
+
+  Add `prosekit/extensions/math` with support for inline and block math equations. It can work with any renderer like [KaTeX](https://katex.org/) or [Temml](https://temml.org/).
+
 ## 0.18.1
 
 ### Patch Changes

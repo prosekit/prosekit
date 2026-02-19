@@ -12,6 +12,18 @@ import { createMathViewRender } from './math-view-render.ts'
  */
 export type RenderMathInline = (text: string, element: HTMLElement) => void
 
+/**
+ * Creates a {@link NodeView} for an inline math node. The view will show a
+ * source editor or a rendered display area based on the text cursor position.
+ *
+ * @param renderMathInline - A function that renders math text (e.g. TeX) into
+ * the display element. You can use libraries like [Temml](https://temml.org/)
+ * or [KaTeX](https://katex.org/).
+ * @param node - The ProseMirror node to render.
+ * @param decorations - The decorations applied to the node.
+ *
+ * @public
+ */
 export function createMathInlineView(
   renderMathInline: RenderMathInline,
   node: ProseMirrorNode,

@@ -1,12 +1,12 @@
 import type { Schema } from '@prosekit/pm/model'
 
-import type { Extension, ExtensionTyping } from '../types/extension'
-import { Priority } from '../types/priority'
+import type { Extension, ExtensionTyping } from '../types/extension.ts'
+import { Priority } from '../types/priority.ts'
 
-import type { Facet } from './facet'
-import type { FacetNode } from './facet-node'
-import type { Tuple5 } from './facet-types'
-import { schemaFacet } from './schema'
+import type { FacetNode } from './facet-node.ts'
+import type { Tuple5 } from './facet-types.ts'
+import type { Facet } from './facet.ts'
+import { schemaFacet } from './schema.ts'
 
 /**
  * @internal

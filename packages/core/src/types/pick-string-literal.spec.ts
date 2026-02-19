@@ -1,7 +1,7 @@
 import { test } from 'vitest'
 
-import { assertTypeEqual } from './assert-type-equal'
-import type { PickStringLiteral } from './pick-string-literal'
+import { assertTypeEqual } from './assert-type-equal.ts'
+import type { PickStringLiteral } from './pick-string-literal.ts'
 
 test('PickStringLiteral', () => {
   assertTypeEqual<PickStringLiteral<'foo'>, 'foo'>(true)

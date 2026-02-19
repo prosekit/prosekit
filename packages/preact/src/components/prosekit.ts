@@ -2,9 +2,9 @@ import type { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/preact'
 import { h, type ComponentChildren, type ComponentType } from 'preact'
 
-import { EditorContextProvider } from '../contexts/editor-context'
-import { PreactMarkViewConsumer } from '../extensions/preact-mark-view'
-import { PreactNodeViewConsumer } from '../extensions/preact-node-view'
+import { EditorContextProvider } from '../contexts/editor-context.ts'
+import { PreactMarkViewConsumer } from '../extensions/preact-mark-view.ts'
+import { PreactNodeViewConsumer } from '../extensions/preact-node-view.ts'
 
 export interface ProseKitProps {
   editor: Editor

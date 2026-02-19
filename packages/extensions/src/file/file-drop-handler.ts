@@ -8,7 +8,7 @@ import {
 } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { handleEvent } from './helpers'
+import { handleEvent } from './helpers.ts'
 
 export interface FileDropHandlerOptions {
   /**

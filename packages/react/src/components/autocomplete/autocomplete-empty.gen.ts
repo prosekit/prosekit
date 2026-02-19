@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link AutocompleteEmpty} component.
  */
 export interface AutocompleteEmptyProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const AutocompleteEmpty: ForwardRefExoticComponent<
   AutocompleteEmptyProps &
   RefAttributes<AutocompleteEmptyElement> &
   HTMLAttributes<AutocompleteEmptyElement>
 > = createComponent<
-  AutocompleteEmptyProps, 
+  AutocompleteEmptyProps,
   AutocompleteEmptyElement
 >(
   'prosekit-autocomplete-empty',

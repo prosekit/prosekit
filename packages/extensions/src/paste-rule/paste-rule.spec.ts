@@ -3,9 +3,9 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
-import { defineTestExtension, setupTestFromExtension } from '../testing'
+import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
 
-import { definePasteRule } from './paste-rule'
+import { definePasteRule } from './paste-rule.ts'
 
 function replaceTextInSlice(slice: Slice, from: string, to: string): Slice {
   return new Slice(

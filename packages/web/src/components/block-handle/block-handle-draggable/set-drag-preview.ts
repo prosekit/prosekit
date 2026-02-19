@@ -1,8 +1,8 @@
-import { assignStyles } from '../../../utils/assign-styles'
-import { deepCloneElement } from '../../../utils/clone-element'
-import { getClientRect } from '../../../utils/get-client-rect'
-import { injectStyle } from '../../../utils/inject-style'
-import { maxZIndex } from '../../../utils/max-z-index'
+import { assignStyles } from '../../../utils/assign-styles.ts'
+import { deepCloneElement } from '../../../utils/clone-element.ts'
+import { getClientRect } from '../../../utils/get-client-rect.ts'
+import { injectStyle } from '../../../utils/inject-style.ts'
+import { maxZIndex } from '../../../utils/max-z-index.ts'
 
 /**
  * Sets a drag preview image for the given element and ensures the preview position

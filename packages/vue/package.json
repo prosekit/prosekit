@@ -60,6 +60,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@vitejs/plugin-vue": "^6.0.4",

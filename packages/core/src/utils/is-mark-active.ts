@@ -1,9 +1,9 @@
 import type { Attrs, MarkType } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
-import { getMarkType } from './get-mark-type'
-import { includesMark } from './includes-mark'
-import { isMarkAbsent } from './is-mark-absent'
+import { getMarkType } from './get-mark-type.ts'
+import { includesMark } from './includes-mark.ts'
+import { isMarkAbsent } from './is-mark-absent.ts'
 
 /**
  * @internal

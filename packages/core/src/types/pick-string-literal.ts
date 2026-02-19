@@ -1,4 +1,4 @@
-import type { PickSubType } from './pick-sub-type'
+import type { PickSubType } from './pick-sub-type.ts'
 
 /**
  * @internal

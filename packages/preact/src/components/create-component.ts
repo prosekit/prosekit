@@ -3,9 +3,9 @@ import { createElement } from 'preact'
 import { forwardRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'preact/compat'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
-import { mergeRefs } from './merge-refs'
+import { mergeRefs } from './merge-refs.ts'
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
 describe('addTextColor', () => {
   it('can add color to text', () => {

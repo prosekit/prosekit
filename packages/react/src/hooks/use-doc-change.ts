@@ -2,8 +2,8 @@ import { defineDocChangeHandler } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { useMemo } from 'react'
 
-import { useEventCallback } from './use-event-callback'
-import { useExtension, type UseExtensionOptions } from './use-extension'
+import { useEventCallback } from './use-event-callback.ts'
+import { useExtension, type UseExtensionOptions } from './use-extension.ts'
 
 /**
  * Calls the given handler whenever the editor document changes.

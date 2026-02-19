@@ -1,6 +1,6 @@
 import type { Command } from '@prosekit/pm/state'
 
-import { isInCodeBlock } from './is-in-code-block'
+import { isInCodeBlock } from './is-in-code-block.ts'
 
 /**
  * @internal

@@ -1,6 +1,6 @@
-import { assert } from '../utils/assert'
+import { assert } from '../utils/assert.ts'
 
-import type { FacetReducer } from './facet-types'
+import type { FacetReducer } from './facet-types.ts'
 
 let facetCount = 0
 

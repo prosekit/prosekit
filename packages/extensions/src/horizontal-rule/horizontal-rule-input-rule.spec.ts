@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
-import { inputText } from '../testing/keyboard'
+import { setupTest } from '../testing/index.ts'
+import { inputText } from '../testing/keyboard.ts'
 
 describe('defineHorizontalRuleInputRule', () => {
   const { editor, n } = setupTest()

@@ -2,7 +2,7 @@ import { defineNodeSpec, defineNodeView, union, type Extension, type PlainExtens
 import type { Attrs } from '@prosekit/pm/model'
 import { createMathInlineInputRule, createMathInlineView, mathInlineSpec, type RenderMathInline } from 'prosemirror-math'
 
-import { defineInputRule } from '../input-rule'
+import { defineInputRule } from '../input-rule/index.ts'
 
 /**
  * @internal

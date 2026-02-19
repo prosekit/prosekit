@@ -1,7 +1,7 @@
-import type { Extension } from '../types/extension'
-import type { Priority } from '../types/priority'
+import type { Extension } from '../types/extension.ts'
+import type { Priority } from '../types/priority.ts'
 
-import { union } from './union'
+import { union } from './union.ts'
 
 /**
  * Return an new extension with the given priority.

@@ -8,11 +8,11 @@ import type {
   LoroUndoPluginProps,
 } from 'loro-prosemirror'
 
-import { defineLoroCommands, type LoroCommandsExtension } from './loro-commands'
-import { defineLoroCursorPlugin } from './loro-cursor-plugin'
-import { defineLoroKeymap } from './loro-keymap'
-import { defineLoroSyncPlugin } from './loro-sync-plugin'
-import { defineLoroUndoPlugin } from './loro-undo-plugin'
+import { defineLoroCommands, type LoroCommandsExtension } from './loro-commands.ts'
+import { defineLoroCursorPlugin } from './loro-cursor-plugin.ts'
+import { defineLoroKeymap } from './loro-keymap.ts'
+import { defineLoroSyncPlugin } from './loro-sync-plugin.ts'
+import { defineLoroUndoPlugin } from './loro-undo-plugin.ts'
 
 export interface LoroOptions {
   /**

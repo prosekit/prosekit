@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
 
-import { MATH_BLOCK_ENTER_REGEXP } from './math-block-enter-rule'
-import { setupTest } from './testing'
+import { MATH_BLOCK_ENTER_REGEXP } from './math-block-enter-rule.ts'
+import { setupTest } from './testing.ts'
 
 describe('MATH_BLOCK_ENTER_REGEXP', () => {
   const cases: Array<[input: string, matched: boolean]> = [

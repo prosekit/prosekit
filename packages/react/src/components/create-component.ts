@@ -12,9 +12,9 @@ import {
   type RefAttributes,
 } from 'react'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
-import { mergeRefs } from './merge-refs'
+import { mergeRefs } from './merge-refs.ts'
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 

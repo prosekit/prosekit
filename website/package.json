@@ -11,7 +11,7 @@
     "build:astro": "astro build",
     "build:if-not-exists": "if [ ! -d dist ]; then pnpm run build; fi",
     "preview": "pnpm run build:if-not-exists && astro preview",
-    "dev": "astro dev",
+    "dev": "NODE_OPTIONS='--experimental-transform-types' astro dev",
     "lint": "pnpm run lint:astro",
     "lint:astro": "astro check",
     "test": "playwright test"

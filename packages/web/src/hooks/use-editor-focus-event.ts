@@ -1,7 +1,7 @@
 import type { ConnectableElement, ReadonlySignal } from '@aria-ui/core'
 import { defineFocusChangeHandler, type Editor, type FocusChangeHandler } from '@prosekit/core'
 
-import { useEditorExtension } from './use-editor-extension'
+import { useEditorExtension } from './use-editor-extension.ts'
 
 /**
  * @internal

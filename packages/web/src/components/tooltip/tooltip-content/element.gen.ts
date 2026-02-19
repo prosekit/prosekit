@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTooltipContent } from "./setup"
-import { tooltipContentEvents, tooltipContentProps, type TooltipContentEvents, type TooltipContentProps } from "./types"
+import { useTooltipContent } from "./setup.ts"
+import { tooltipContentEvents, tooltipContentProps, type TooltipContentEvents, type TooltipContentProps } from "./types.ts"
 
 const TooltipContentElementBase: BaseElementConstructor<TooltipContentProps> = defineCustomElement<
   TooltipContentProps,

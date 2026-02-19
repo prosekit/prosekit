@@ -19,9 +19,9 @@ function createLoroCursorPlugin(options: LoroCursorOptions): Plugin {
   if (awareness && presence) {
     throw new Error('Only one of awareness and presence can be provided')
   } else if (awareness) {
-    return LoroCursorPlugin(awareness, rest)
+    return LoroCursorPlugin(awareness, rest) as unknown as Plugin
   } else if (presence) {
-    return LoroEphemeralCursorPlugin(presence, rest)
+    return LoroEphemeralCursorPlugin(presence, rest) as unknown as Plugin
   } else {
     throw new Error('Either awareness or presence must be provided')
   }

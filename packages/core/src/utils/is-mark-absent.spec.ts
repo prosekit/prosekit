@@ -1,8 +1,8 @@
 import { expect, test } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { isMarkAbsent } from './is-mark-absent'
+import { isMarkAbsent } from './is-mark-absent.ts'
 
 test('isMarkAbsent', () => {
   const { editor, m, n } = setupTest()

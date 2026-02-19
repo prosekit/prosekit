@@ -1,7 +1,7 @@
-import type { CommandCreators } from '../types/extension-command'
+import type { CommandCreators } from '../types/extension-command.ts'
 
-import { defineFacet, type Facet } from './facet'
-import { rootFacet, type RootPayload } from './root'
+import { defineFacet, type Facet } from './facet.ts'
+import { rootFacet, type RootPayload } from './root.ts'
 
 type CommandPayload = CommandCreators
 

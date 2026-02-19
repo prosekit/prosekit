@@ -9,7 +9,7 @@ import {
 } from '@prosemirror-adapter/solid'
 import { createComponent, createMemo, type Accessor, type Component } from 'solid-js'
 
-import { useExtension } from '../hooks/use-extension'
+import { useExtension } from '../hooks/use-extension.ts'
 
 /**
  * @public

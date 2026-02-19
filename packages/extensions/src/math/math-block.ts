@@ -2,7 +2,7 @@ import { defineNodeSpec, defineNodeView, union, type Extension, type PlainExtens
 import type { Attrs } from '@prosekit/pm/model'
 import { createMathBlockView, mathBlockEnterRule, mathBlockSpec, type RenderMathBlock } from 'prosemirror-math'
 
-import { defineEnterRule } from '../enter-rule'
+import { defineEnterRule } from '../enter-rule/index.ts'
 
 /**
  * @internal

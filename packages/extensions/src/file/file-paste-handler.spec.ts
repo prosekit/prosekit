@@ -1,10 +1,10 @@
 import { Priority, union, withPriority } from '@prosekit/core'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { defineTestExtension, setupTestFromExtension } from '../testing'
-import { pasteFiles } from '../testing/clipboard'
+import { pasteFiles } from '../testing/clipboard.ts'
+import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
 
-import { defineFilePasteHandler } from './file-paste-handler'
+import { defineFilePasteHandler } from './file-paste-handler.ts'
 
 function definePngPasteHandler(handler: VoidFunction) {
   const extension = defineFilePasteHandler((options) => {

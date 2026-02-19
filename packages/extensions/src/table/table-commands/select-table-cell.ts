@@ -1,7 +1,7 @@
 import type { Command } from '@prosekit/pm/state'
 import { CellSelection } from 'prosemirror-tables'
 
-import { findCellPos } from '../table-utils'
+import { findCellPos } from '../table-utils.ts'
 
 /**
  * @public

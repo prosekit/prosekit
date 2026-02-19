@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'preact/compat'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link TableHandlePopoverContent} component.
  */
 export interface TableHandlePopoverContentProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const TableHandlePopoverContent: ForwardRefExoticComponent<
   Partial<TableHandlePopoverContentProps> &
   RefAttributes<TableHandlePopoverContentElement> &
   HTMLAttributes<TableHandlePopoverContentElement>
 > = createComponent<
-  TableHandlePopoverContentProps, 
+  TableHandlePopoverContentProps,
   TableHandlePopoverContentElement
 >(
   'prosekit-table-handle-popover-content',

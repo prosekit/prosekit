@@ -1,7 +1,7 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 
-import type { ApplyMarkFunction, CreateNodeFunction } from '../editor/action'
-import { assert } from '../utils/assert'
+import type { ApplyMarkFunction, CreateNodeFunction } from '../editor/action.ts'
+import { assert } from '../utils/assert.ts'
 
 type Tags = Record<string, number>
 export type TaggedProseMirrorNode = ProseMirrorNode & { tags?: Tags }

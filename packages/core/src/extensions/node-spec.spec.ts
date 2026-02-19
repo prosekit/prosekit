@@ -2,12 +2,12 @@ import type { DOMOutputSpec, Schema, TagParseRule } from '@prosekit/pm/model'
 import { formatHTML } from 'diffable-html-snapshot'
 import { describe, expect, it } from 'vitest'
 
-import { union } from '../editor/union'
-import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
+import { union } from '../editor/union.ts'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
 
-import { defineHistory } from './history'
-import { defineBaseKeymap } from './keymap-base'
-import { defineNodeAttr, defineNodeSpec } from './node-spec'
+import { defineHistory } from './history.ts'
+import { defineBaseKeymap } from './keymap-base.ts'
+import { defineNodeAttr, defineNodeSpec } from './node-spec.ts'
 
 describe('defineNodeSpec', () => {
   it('can merge node specs', () => {

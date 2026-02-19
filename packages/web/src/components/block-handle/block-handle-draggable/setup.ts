@@ -6,12 +6,12 @@ import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { getBoxElement } from '../../../utils/get-box-element'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context'
+import { getBoxElement } from '../../../utils/get-box-element.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context.ts'
 
-import { setDragPreview } from './set-drag-preview'
-import type { BlockHandleDraggableProps } from './types'
+import { setDragPreview } from './set-drag-preview.ts'
+import type { BlockHandleDraggableProps } from './types.ts'
 
 /**
  * @internal

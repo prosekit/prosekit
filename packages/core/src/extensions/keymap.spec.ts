@@ -2,12 +2,12 @@ import type { Command } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import { union } from '../editor/union'
-import { withPriority } from '../editor/with-priority'
-import { defineDoc, defineParagraph, defineText, setupTest, setupTestFromExtension } from '../testing'
-import { Priority } from '../types/priority'
+import { union } from '../editor/union.ts'
+import { withPriority } from '../editor/with-priority.ts'
+import { defineDoc, defineParagraph, defineText, setupTest, setupTestFromExtension } from '../testing/index.ts'
+import { Priority } from '../types/priority.ts'
 
-import { defineKeymap, type Keymap } from './keymap'
+import { defineKeymap, type Keymap } from './keymap.ts'
 
 describe('keymap', () => {
   it('can register and unregister keymap', () => {

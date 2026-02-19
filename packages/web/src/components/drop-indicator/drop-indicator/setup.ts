@@ -2,11 +2,11 @@ import { createComputed, createSignal, useEffect, type ConnectableElement, type 
 import { usePresence } from '@aria-ui/presence'
 import { defineDropIndicator, type ShowHandlerOptions } from '@prosekit/extensions/drop-indicator'
 
-import { useEditorExtension } from '../../../hooks/use-editor-extension'
-import { useScrolling } from '../../../hooks/use-scrolling'
-import { assignStyles } from '../../../utils/assign-styles'
+import { useEditorExtension } from '../../../hooks/use-editor-extension.ts'
+import { useScrolling } from '../../../hooks/use-scrolling.ts'
+import { assignStyles } from '../../../utils/assign-styles.ts'
 
-import type { DropIndicatorEvents, DropIndicatorProps } from './types'
+import type { DropIndicatorEvents, DropIndicatorProps } from './types.ts'
 
 /**
  * @internal

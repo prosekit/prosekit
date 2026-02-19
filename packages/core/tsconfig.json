@@ -1,5 +1,5 @@
 {
-  "extends": "@ocavue/tsconfig/dom/root.json",
+  "extends": "@prosekit/config-ts/root.json",
   "include": ["./*", "src/**/*.spec.*", "src/**/testing/**/*"],
   "references": [
     {

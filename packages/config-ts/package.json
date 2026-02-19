@@ -1,0 +1,16 @@
+{
+  "name": "@prosekit/config-ts",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal package for ProseKit",
+  "sideEffects": false,
+  "exports": {
+    "./build.json": "./build.json",
+    "./root.json": "./root.json"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@ocavue/tsconfig": "^0.6.3"
+  }
+}

@@ -1,6 +1,6 @@
 import { TextSelection, type Command } from '@prosekit/pm/state'
 
-import { defaultBlockAt } from '../utils/default-block-at'
+import { defaultBlockAt } from '../utils/default-block-at.ts'
 
 /**
  * @public

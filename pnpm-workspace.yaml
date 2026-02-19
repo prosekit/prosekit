@@ -12,6 +12,9 @@ catalog:
   tsdown: "^0.20.3"
   typescript: "~5.9.3"
 
+allowedDeprecatedVersions:
+  glob: "10"
+
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:

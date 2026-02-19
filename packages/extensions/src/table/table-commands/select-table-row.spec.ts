@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../../testing'
-import { inspectSelectedCells } from '../test-utils'
+import { setupTest } from '../../testing/index.ts'
+import { inspectSelectedCells } from '../test-utils.ts'
 
 describe('selectTableRow', () => {
   it('can select the whole table row', () => {

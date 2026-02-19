@@ -1,7 +1,7 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineTextColorCommands, type TextColorCommandsExtension } from './text-color-commands'
-import { defineTextColorSpec, type TextColorSpecExtension } from './text-color-spec'
+import { defineTextColorCommands, type TextColorCommandsExtension } from './text-color-commands.ts'
+import { defineTextColorSpec, type TextColorSpecExtension } from './text-color-spec.ts'
 
 /**
  * @internal

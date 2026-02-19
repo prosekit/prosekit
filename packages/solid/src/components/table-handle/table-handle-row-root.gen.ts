@@ -7,9 +7,9 @@ import {
 } from '@prosekit/web/table-handle'
 import type { Component } from 'solid-js'
 
-import type { PropsWithElement } from '../../types'
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import type { PropsWithElement } from '../../types.ts'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link TableHandleRowRoot} component.

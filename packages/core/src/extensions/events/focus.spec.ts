@@ -1,10 +1,10 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { createEditor } from '../../editor/editor'
-import { union } from '../../editor/union'
-import { defineTestExtension } from '../../testing'
+import { createEditor } from '../../editor/editor.ts'
+import { union } from '../../editor/union.ts'
+import { defineTestExtension } from '../../testing/index.ts'
 
-import { defineFocusChangeHandler } from './focus'
+import { defineFocusChangeHandler } from './focus.ts'
 
 describe('defineFocusChangeHandler', () => {
   it('should call the handler when the editor is focused or blurred', () => {

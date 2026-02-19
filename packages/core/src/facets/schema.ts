@@ -1,9 +1,9 @@
 import { Schema, type SchemaSpec } from '@prosekit/pm/model'
 
-import { assert } from '../utils/assert'
+import { assert } from '../utils/assert.ts'
 
-import { defineFacet, type Facet } from './facet'
-import { rootFacet, type RootPayload } from './root'
+import { defineFacet, type Facet } from './facet.ts'
+import { rootFacet, type RootPayload } from './root.ts'
 
 export const schemaFacet: Facet<SchemaSpec, RootPayload> = defineFacet({
   reducer: (specs) => {

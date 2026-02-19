@@ -1,8 +1,8 @@
 {
-  "extends": "@ocavue/tsconfig/es/root.json",
-  "references": [
-    {
-      "path": "./tsconfig.build.json",
-    },
-  ],
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "composite": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+  },
 }

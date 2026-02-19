@@ -2,10 +2,10 @@ import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal
 import { computePosition, type ReferenceElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-import { assignStyles } from '../../../utils/assign-styles'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { tableHandleDndContext, tableHandleRootContext } from '../context'
-import { getDndRelatedDOMs } from '../dnd'
+import { assignStyles } from '../../../utils/assign-styles.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { tableHandleDndContext, tableHandleRootContext } from '../context.ts'
+import { getDndRelatedDOMs } from '../dnd.ts'
 
 export function useUpdatePreviewPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
   const dndContext = tableHandleDndContext.consume(host)

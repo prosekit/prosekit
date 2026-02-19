@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
-import { pasteHTML, pasteText } from '../testing/clipboard'
+import { pasteHTML, pasteText } from '../testing/clipboard.ts'
+import { setupTest } from '../testing/index.ts'
 
 describe('defineLinkPasteRule', () => {
   const { editor, n, m } = setupTest()

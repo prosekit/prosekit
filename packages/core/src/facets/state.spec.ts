@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { union } from '../editor/union'
-import { withPriority } from '../editor/with-priority'
-import { defineDefaultState } from '../extensions/default-state'
-import { defineTestExtension, setupTestFromExtension } from '../testing'
-import type { NodeJSON } from '../types/model'
-import { Priority } from '../types/priority'
+import { union } from '../editor/union.ts'
+import { withPriority } from '../editor/with-priority.ts'
+import { defineDefaultState } from '../extensions/default-state.ts'
+import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
+import type { NodeJSON } from '../types/model.ts'
+import { Priority } from '../types/priority.ts'
 
 describe('state', () => {
   it('uses doc from extension with highest priority', () => {

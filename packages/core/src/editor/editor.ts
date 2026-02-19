@@ -3,10 +3,11 @@ import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { EditorState, type Command, type Plugin, type Selection, type Transaction } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps, type EditorProps } from '@prosekit/pm/view'
 
-import { ProseKitError } from '../error'
-import { defineDefaultState } from '../extensions/default-state'
-import type { BaseExtension } from '../facets/base-extension'
-import { subtractFacetNode, unionFacetNode, type FacetNode } from '../facets/facet-node'
+import { ProseKitError } from '../error.ts'
+import { defineDefaultState } from '../extensions/default-state.ts'
+import type { BaseExtension } from '../facets/base-extension.ts'
+import { subtractFacetNode, unionFacetNode, type FacetNode } from '../facets/facet-node.ts'
+import type { CommandAction, CommandCreator } from '../types/extension-command.ts'
 import type {
   Extension,
   ExtractCommandActions,
@@ -14,15 +15,14 @@ import type {
   ExtractMarkNames,
   ExtractNodeActions,
   ExtractNodeNames,
-} from '../types/extension'
-import type { CommandAction, CommandCreator } from '../types/extension-command'
-import type { NodeJSON, SelectionJSON } from '../types/model'
-import { assert } from '../utils/assert'
-import { getEditorContentDoc, getEditorSelection } from '../utils/editor-content'
-import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '../utils/parse'
+} from '../types/extension.ts'
+import type { NodeJSON, SelectionJSON } from '../types/model.ts'
+import { assert } from '../utils/assert.ts'
+import { getEditorContentDoc, getEditorSelection } from '../utils/editor-content.ts'
+import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '../utils/parse.ts'
 
-import { createMarkActions, createNodeActions, type MarkAction, type NodeAction } from './action'
-import { union } from './union'
+import { createMarkActions, createNodeActions, type MarkAction, type NodeAction } from './action.ts'
+import { union } from './union.ts'
 
 /**
  * @public

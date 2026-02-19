@@ -2,14 +2,14 @@ import type { Attrs } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 import { describe, expectTypeOf, it } from 'vitest'
 
-import { defineCommands } from '../extensions/command'
-import { defineMarkSpec } from '../extensions/mark-spec'
-import { defineNodeSpec } from '../extensions/node-spec'
-import { assertTypeEqual } from '../types/assert-type-equal'
-import type { Extension } from '../types/extension'
-import type { CommandCreator } from '../types/extension-command'
+import { defineCommands } from '../extensions/command.ts'
+import { defineMarkSpec } from '../extensions/mark-spec.ts'
+import { defineNodeSpec } from '../extensions/node-spec.ts'
+import { assertTypeEqual } from '../types/assert-type-equal.ts'
+import type { CommandCreator } from '../types/extension-command.ts'
+import type { Extension } from '../types/extension.ts'
 
-import { union } from './union'
+import { union } from './union.ts'
 
 describe('union', () => {
   it('can merge one extension types', () => {

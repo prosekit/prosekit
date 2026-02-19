@@ -1,7 +1,7 @@
 import type { Node } from 'prosemirror-model'
 import type { Decoration } from 'prosemirror-view'
 
-import { hasCursorInsideDecoration } from './cursor-inside-plugin'
+import { hasCursorInsideDecoration } from './cursor-inside-plugin.ts'
 
 type RenderMath = (text: string, element: HTMLElement) => void
 

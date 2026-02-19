@@ -1,7 +1,7 @@
 import type { Editor, Extension } from '@prosekit/core'
 import { computed, toValue, type MaybeRefOrGetter, type Ref, type ShallowRef } from 'vue'
 
-import { useEditor } from './use-editor'
+import { useEditor } from './use-editor.ts'
 
 export interface UseEditorDerivedOptions<E extends Extension = any> {
   /**

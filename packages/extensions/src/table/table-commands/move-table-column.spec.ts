@@ -2,9 +2,9 @@ import type { Command } from '@prosekit/pm/state'
 import { CellSelection } from 'prosemirror-tables'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../../testing'
+import { setupTest } from '../../testing/index.ts'
 
-import { moveTableColumn } from './move-table-column'
+import { moveTableColumn } from './move-table-column.ts'
 
 function setup() {
   const { editor, n } = setupTest()

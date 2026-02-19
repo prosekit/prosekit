@@ -61,6 +61,7 @@
     "prosemirror-tables": "^1.8.5"
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "tsdown": "catalog:",

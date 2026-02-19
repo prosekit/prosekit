@@ -1,8 +1,8 @@
 import type { Simplify } from 'type-fest'
 import { test } from 'vitest'
 
-import { assertTypeEqual } from './assert-type-equal'
-import type { SimplifyDeeper } from './simplify-deeper'
+import { assertTypeEqual } from './assert-type-equal.ts'
+import type { SimplifyDeeper } from './simplify-deeper.ts'
 
 test('SimplifyDeeper', () => {
   type T1 = {

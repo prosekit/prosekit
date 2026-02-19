@@ -1,6 +1,6 @@
 import { defineNodeSpec, type Extension } from '@prosekit/core'
 
-import type { CodeBlockAttrs } from './code-block-types'
+import type { CodeBlockAttrs } from './code-block-types.ts'
 
 /**
  * @internal

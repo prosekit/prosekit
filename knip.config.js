@@ -41,7 +41,6 @@ const config = {
         'sharp',
 
         // Required by code blocks in documentation
-        'prosemirror-highlight',
         'y-websocket',
       ],
     },

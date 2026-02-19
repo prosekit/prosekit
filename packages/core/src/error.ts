@@ -3,7 +3,14 @@
  *
  * @internal
  */
-export class ProseKitError extends Error {}
+export class ProseKitError extends Error {
+  constructor(message?: string, options?: ErrorOptions) {
+    if (typeof message === 'string' && !message.startsWith('[')) {
+      message = `[prosekit] ${message}`
+    }
+    super(message, options)
+  }
+}
 
 /**
  * @internal

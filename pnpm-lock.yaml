@@ -1154,6 +1154,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2))
+      '@types/jsdom':
+        specifier: ^27.0.0
+        version: 27.0.0
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.13
@@ -1181,6 +1184,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      jsdom:
+        specifier: ^28.1.0
+        version: 28.1.0
       just-memoize:
         specifier: ^2.2.0
         version: 2.2.0
@@ -1199,9 +1205,6 @@ importers:
       prosekit-registry:
         specifier: workspace:*
         version: link:../registry
-      prosemirror-highlight:
-        specifier: ^0.15.0
-        version: 0.15.0(@shikijs/types@3.22.0)(@types/hast@3.0.4)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-transform@1.11.0)(prosemirror-view@1.41.6)
       react:
         specifier: ^19.2.4
         version: 19.2.4

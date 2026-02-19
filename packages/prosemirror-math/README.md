@@ -93,8 +93,8 @@ const plugin = createCursorInsidePlugin()
 
 ### Node specs
 
-- **`mathBlockSpec`** — NodeSpec for block math (`div.prosekit-math-block > pre > code`)
-- **`mathInlineSpec`** — NodeSpec for inline math (`span.prosekit-math-inline > code`)
+- **`mathBlockSpec`** — NodeSpec for block math (`div.prosemirror-math-block > pre > code`)
+- **`mathInlineSpec`** — NodeSpec for inline math (`span.prosemirror-math-inline > code`)
 
 ### Node views
 

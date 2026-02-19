@@ -11,14 +11,14 @@ export const mathInlineSpec: NodeSpec = {
     return [
       'span',
       {
-        class: 'prosekit-math-inline',
+        class: 'prosemirror-math-inline',
       },
       ['code', 0],
     ]
   },
   parseDOM: [
     {
-      tag: 'span.prosekit-math-inline',
+      tag: 'span.prosemirror-math-inline',
       contentElement: 'code',
     },
   ],

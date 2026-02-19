@@ -11,17 +11,17 @@ describe.each(Object.keys(renderers))('createMathBlockView (%s)', (name) => {
     editor.set(n.doc(n.mathBlock('x^2')))
 
     const dom = editor.view.dom
-    const mathBlock = dom.querySelector('.prosekit-math-block')
+    const mathBlock = dom.querySelector('.prosemirror-math-block')
     expect(mathBlock).toBeTruthy()
-    expect(mathBlock?.querySelector('.prosekit-math-source')).toBeTruthy()
-    expect(mathBlock?.querySelector('.prosekit-math-display')).toBeTruthy()
+    expect(mathBlock?.querySelector('.prosemirror-math-source')).toBeTruthy()
+    expect(mathBlock?.querySelector('.prosemirror-math-display')).toBeTruthy()
   })
 
   it('updates display when content changes', () => {
     const { editor, n } = setupTest(renderer)
     editor.set(n.doc(n.mathBlock('x^2')))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const initialHTML = display?.innerHTML
 
     // Dispatch a transaction to change content
@@ -39,7 +39,7 @@ describe('createMathBlockView (temml snapshot)', () => {
     const { editor, n } = setupTest(temmlRenderer)
     editor.set(n.doc(n.mathBlock('x^2')))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const html = formatHTML(display?.innerHTML || '')
     expect(html).toMatchInlineSnapshot(`
       "
@@ -72,7 +72,7 @@ describe('createMathBlockView (katex snapshot)', () => {
     const { editor, n } = setupTest(katexRenderer)
     editor.set(n.doc(n.mathBlock('x^2')))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const html = formatHTML(display?.innerHTML || '')
     expect(html).toMatchInlineSnapshot(`
       "
@@ -155,7 +155,7 @@ describe('createMathBlockView (mathjax snapshot)', () => {
     const { editor, n } = setupTest(mathjaxRenderer)
     editor.set(n.doc(n.mathBlock('x^2')))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const html = formatHTML(display?.innerHTML || '')
     expect(html).toMatchInlineSnapshot(`
       "

@@ -12,7 +12,7 @@ describe('mathBlockSpec', () => {
       `
       "
       <div>
-        <div class="prosekit-math-block">
+        <div class="prosemirror-math-block">
           <pre>
             <code>
               E = mc^2

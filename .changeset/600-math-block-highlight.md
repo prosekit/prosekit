@@ -3,4 +3,4 @@
 "@prosekit/extensions": "patch"
 ---
 
-`mathBlock` nodes now get syntax highlighting by default if you're also using the `defineCodeBlockShiki()` extension.
+`mathBlock` nodes now also receive syntax highlighting when you use the `defineCodeBlockShiki()` extension with its default configuration (where \`nodeTypes\` includes both \`codeBlock\` and \`mathBlock\`). If you want to keep highlighting only code blocks, pass \`['codeBlock']\` explicitly as \`nodeTypes\`.

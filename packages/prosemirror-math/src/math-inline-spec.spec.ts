@@ -13,7 +13,7 @@ describe('mathInlineSpec', () => {
       "
       <div>
         <p>
-          <span class="prosekit-math-inline">
+          <span class="prosemirror-math-inline">
             <code>
               x^2
             </code>

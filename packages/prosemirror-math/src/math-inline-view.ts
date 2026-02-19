@@ -17,9 +17,10 @@ export function createMathInlineView(
   node: ProseMirrorNode,
   decorations: readonly Decoration[],
 ): NodeView {
-  const source = createElement('code', 'prosekit-math-source')
-  const display = createElement('span', 'prosekit-math-display')
-  const dom = createElement('span', 'prosekit-math-inline', source, display)
+  const code = createElement('code')
+  const source = createElement('span', 'prosemirror-math-source', code)
+  const display = createElement('span', 'prosemirror-math-display')
+  const dom = createElement('span', 'prosemirror-math-inline', source, display)
 
   const render = createMathViewRender(renderMathInline, source, display)
 
@@ -27,7 +28,7 @@ export function createMathInlineView(
 
   return {
     dom,
-    contentDOM: source,
+    contentDOM: code,
     update: (node, decorations) => {
       render(node, decorations)
       return true

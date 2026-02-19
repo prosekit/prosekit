@@ -11,17 +11,17 @@ describe.each(Object.keys(renderers))('createMathInlineView (%s)', (name) => {
     editor.set(n.doc(n.paragraph(n.mathInline('x^2'))))
 
     const dom = editor.view.dom
-    const mathInline = dom.querySelector('.prosekit-math-inline')
+    const mathInline = dom.querySelector('.prosemirror-math-inline')
     expect(mathInline).toBeTruthy()
-    expect(mathInline?.querySelector('.prosekit-math-source')).toBeTruthy()
-    expect(mathInline?.querySelector('.prosekit-math-display')).toBeTruthy()
+    expect(mathInline?.querySelector('.prosemirror-math-source')).toBeTruthy()
+    expect(mathInline?.querySelector('.prosemirror-math-display')).toBeTruthy()
   })
 
   it('uses span elements for inline math', () => {
     const { editor, n } = setupTest(renderer)
     editor.set(n.doc(n.paragraph(n.mathInline('x'))))
 
-    const mathInline = editor.view.dom.querySelector('.prosekit-math-inline')
+    const mathInline = editor.view.dom.querySelector('.prosemirror-math-inline')
     expect(mathInline?.tagName).toBe('SPAN')
   })
 })
@@ -31,7 +31,7 @@ describe('createMathInlineView (temml snapshot)', () => {
     const { editor, n } = setupTest(temmlRenderer)
     editor.set(n.doc(n.paragraph(n.mathInline('x^2'))))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const html = formatHTML(display?.innerHTML || '')
     expect(html).toMatchInlineSnapshot(`
       "
@@ -60,7 +60,7 @@ describe('createMathInlineView (katex snapshot)', () => {
     const { editor, n } = setupTest(katexRenderer)
     editor.set(n.doc(n.paragraph(n.mathInline('x^2'))))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const html = formatHTML(display?.innerHTML || '')
     expect(html).toMatchInlineSnapshot(`
       "
@@ -138,7 +138,7 @@ describe('createMathInlineView (mathjax snapshot)', () => {
     const { editor, n } = setupTest(mathjaxRenderer)
     editor.set(n.doc(n.paragraph(n.mathInline('x^2'))))
 
-    const display = editor.view.dom.querySelector('.prosekit-math-display')
+    const display = editor.view.dom.querySelector('.prosemirror-math-display')
     const html = formatHTML(display?.innerHTML || '')
     expect(html).toMatchInlineSnapshot(`
       "

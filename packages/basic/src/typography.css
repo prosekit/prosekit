@@ -232,4 +232,15 @@
   &.prosekit-dragging {
     --prosekit-node-selection-color: transparent;
   }
+
+  .prosemirror-math-inline.prosemirror-math-head-inside .prosemirror-math-source {
+    &::before {
+      content: "$";
+      opacity: 0.5;
+    }
+    &::after {
+      content: "$";
+      opacity: 0.5;
+    }
+  }
 }

@@ -14,9 +14,9 @@ export type RenderMathBlock = (text: string, element: HTMLElement) => void
 
 export function createMathBlockView(renderMathBlock: RenderMathBlock, node: ProseMirrorNode, decorations: readonly Decoration[]): NodeView {
   const code = createElement('code')
-  const source = createElement('pre', 'prosekit-math-source', code)
-  const display = createElement('div', 'prosekit-math-display')
-  const dom = createElement('div', 'prosekit-math-block', source, display)
+  const source = createElement('pre', 'prosemirror-math-source', code)
+  const display = createElement('div', 'prosemirror-math-display')
+  const dom = createElement('div', 'prosemirror-math-block', source, display)
 
   const render = createMathViewRender(renderMathBlock, source, display)
 

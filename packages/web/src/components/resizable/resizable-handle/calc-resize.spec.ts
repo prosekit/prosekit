@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { calcResize } from './calc-resize'
+import { calcResize } from './calc-resize.ts'
 
 test('calcBottomRightResize', () => {
   const testIncrease = (dx: number, dy: number) => {

@@ -4,7 +4,7 @@ import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import { useNodeViewContext, useNodeViewFactory, type NodeViewContext, type ReactNodeViewUserOptions } from '@prosemirror-adapter/react'
 import { createElement, useMemo, type ComponentType, type FC } from 'react'
 
-import { useExtension } from '../hooks/use-extension'
+import { useExtension } from '../hooks/use-extension.ts'
 
 /**
  * @public

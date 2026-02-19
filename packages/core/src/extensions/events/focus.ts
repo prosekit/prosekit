@@ -1,6 +1,6 @@
-import type { PlainExtension } from '../../types/extension'
+import type { PlainExtension } from '../../types/extension.ts'
 
-import { defineDomEventFacetPayload } from './dom-event'
+import { defineDomEventFacetPayload } from './dom-event.ts'
 
 /**
  * A function that is called when the editor gains or loses focus.

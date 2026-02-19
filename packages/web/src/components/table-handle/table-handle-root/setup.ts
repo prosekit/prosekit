@@ -10,21 +10,21 @@ import {
 import { defineDOMEventHandler, type Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { useEditorExtension } from '../../../hooks/use-editor-extension'
-import { useEditorTyping } from '../../../hooks/use-editor-typing'
-import { useScrolling } from '../../../hooks/use-scrolling'
-import { useSelecting } from '../../../hooks/use-selecting'
+import { useEditorExtension } from '../../../hooks/use-editor-extension.ts'
+import { useEditorTyping } from '../../../hooks/use-editor-typing.ts'
+import { useScrolling } from '../../../hooks/use-scrolling.ts'
+import { useSelecting } from '../../../hooks/use-selecting.ts'
 import {
   defaultTableHandleDndContext,
   tableHandleDndContext,
   tableHandleRootContext,
   type TableHandleDndContext,
   type TableHandleRootContext,
-} from '../context'
-import { useDrop } from '../hooks/use-drop'
-import { getHoveringCell, isHoveringCellInfoEqual, type HoveringCellInfo } from '../utils'
+} from '../context.ts'
+import { useDrop } from '../hooks/use-drop.ts'
+import { getHoveringCell, isHoveringCellInfoEqual, type HoveringCellInfo } from '../utils.ts'
 
-import type { TableHandleRootProps } from './types'
+import type { TableHandleRootProps } from './types.ts'
 
 /**
  * @internal

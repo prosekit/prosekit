@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useAutocompletePopover } from "./setup"
-import { autocompletePopoverEvents, autocompletePopoverProps, type AutocompletePopoverEvents, type AutocompletePopoverProps } from "./types"
+import { useAutocompletePopover } from "./setup.ts"
+import { autocompletePopoverEvents, autocompletePopoverProps, type AutocompletePopoverEvents, type AutocompletePopoverProps } from "./types.ts"
 
 const AutocompletePopoverElementBase: BaseElementConstructor<AutocompletePopoverProps> = defineCustomElement<
   AutocompletePopoverProps,

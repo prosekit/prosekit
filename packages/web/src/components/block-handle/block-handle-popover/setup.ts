@@ -4,12 +4,12 @@ import { usePresence } from '@aria-ui/presence'
 import type { VirtualElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-import { useEditorExtension } from '../../../hooks/use-editor-extension'
-import { useScrolling } from '../../../hooks/use-scrolling'
-import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context'
+import { useEditorExtension } from '../../../hooks/use-editor-extension.ts'
+import { useScrolling } from '../../../hooks/use-scrolling.ts'
+import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context.ts'
 
-import { defineElementHoverHandler, type ElementHoverHandler } from './pointer-move'
-import type { BlockHandlePopoverEvents, BlockHandlePopoverProps } from './types'
+import { defineElementHoverHandler, type ElementHoverHandler } from './pointer-move.ts'
+import type { BlockHandlePopoverEvents, BlockHandlePopoverProps } from './types.ts'
 
 /**
  * @internal

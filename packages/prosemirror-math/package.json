@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@mathjax/src": "^4.1.0",
+    "@ocavue/tsconfig": "^0.6.3",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/core": "workspace:^",
     "diffable-html-snapshot": "^0.2.0",

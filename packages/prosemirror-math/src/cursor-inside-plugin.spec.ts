@@ -1,7 +1,7 @@
 import { TextSelection } from 'prosemirror-state'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from './testing'
+import { setupTest } from './testing.ts'
 
 describe('cursorInsidePlugin', () => {
   it('applies decoration when cursor is inside mathBlock', () => {

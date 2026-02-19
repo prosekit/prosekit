@@ -3,12 +3,12 @@ import type { Node, Slice } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { defineFacet, type Facet } from '../../facets/facet'
-import { defineFacetPayload } from '../../facets/facet-extension'
-import type { PlainExtension } from '../../types/extension'
-import { groupEntries } from '../../utils/array-grouping'
-import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import { pluginFacet, type PluginPayload } from '../plugin'
+import { defineFacetPayload } from '../../facets/facet-extension.ts'
+import { defineFacet, type Facet } from '../../facets/facet.ts'
+import type { PlainExtension } from '../../types/extension.ts'
+import { groupEntries } from '../../utils/array-grouping.ts'
+import { combineEventHandlers } from '../../utils/combine-event-handlers.ts'
+import { pluginFacet, type PluginPayload } from '../plugin.ts'
 
 export type KeyDownHandler = (
   view: EditorView,

@@ -1,7 +1,7 @@
 import { formatHTML } from 'diffable-html-snapshot'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
 describe('defineTextColorSpec', () => {
   it('should render color as inline span with style attribute', () => {

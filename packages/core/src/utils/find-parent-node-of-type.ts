@@ -1,7 +1,7 @@
 import type { NodeType, ResolvedPos } from '@prosekit/pm/model'
 
-import { findParentNode, type FindParentNodeResult } from './find-parent-node'
-import { getNodeTypes } from './get-node-types'
+import { findParentNode, type FindParentNodeResult } from './find-parent-node.ts'
+import { getNodeTypes } from './get-node-types.ts'
 
 /**
  * Finds the closest parent node that matches the given node type.

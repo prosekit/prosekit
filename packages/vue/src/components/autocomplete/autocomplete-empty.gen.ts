@@ -6,8 +6,8 @@ import {
 } from '@prosekit/web/autocomplete'
 import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
-import { createComponent } from '../create-component'
-import type { CreateEmits } from '../create-emits'
+import { createComponent } from '../create-component.ts'
+import type { CreateEmits } from '../create-emits.ts'
 
 /**
  * Props for the {@link AutocompleteEmpty} component.

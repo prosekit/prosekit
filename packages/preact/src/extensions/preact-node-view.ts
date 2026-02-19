@@ -5,7 +5,7 @@ import { useNodeViewContext, useNodeViewFactory, type NodeViewContext, type Prea
 import { h, type ComponentType, type FunctionComponent } from 'preact'
 import { useMemo } from 'preact/hooks'
 
-import { useExtension } from '../hooks/use-extension'
+import { useExtension } from '../hooks/use-extension.ts'
 
 /**
  * @public

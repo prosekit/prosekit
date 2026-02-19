@@ -2,12 +2,12 @@ import { mapValues } from '@ocavue/utils'
 import type { Attrs, Mark, MarkType, NodeType, ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
-import { ProseKitError } from '../error'
-import type { AnyAttrs } from '../types/attrs'
-import { assert } from '../utils/assert'
-import { isMarkActive } from '../utils/is-mark-active'
-import { isNodeActive } from '../utils/is-node-active'
-import { isProseMirrorNode } from '../utils/type-assertion'
+import { ProseKitError } from '../error.ts'
+import type { AnyAttrs } from '../types/attrs.ts'
+import { assert } from '../utils/assert.ts'
+import { isMarkActive } from '../utils/is-mark-active.ts'
+import { isNodeActive } from '../utils/is-node-active.ts'
+import { isProseMirrorNode } from '../utils/type-assertion.ts'
 
 /**
  * Available children parameters for {@link NodeAction} and {@link MarkAction}.

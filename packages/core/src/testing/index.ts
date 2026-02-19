@@ -2,16 +2,16 @@ import '@prosekit/pm/view/style/prosemirror.css'
 
 import type { Attrs } from '@prosekit/pm/model'
 
-import { union } from '../editor/union'
-import { withPriority } from '../editor/with-priority'
-import { defineBaseCommands } from '../extensions/command'
-import { defineHistory } from '../extensions/history'
-import { defineBaseKeymap } from '../extensions/keymap-base'
-import { defineMarkSpec } from '../extensions/mark-spec'
-import { defineNodeSpec } from '../extensions/node-spec'
-import { createTestEditor, type TestEditor } from '../test'
-import type { Extension, ExtractMarkActions, ExtractNodeActions } from '../types/extension'
-import { Priority } from '../types/priority'
+import { union } from '../editor/union.ts'
+import { withPriority } from '../editor/with-priority.ts'
+import { defineBaseCommands } from '../extensions/command.ts'
+import { defineHistory } from '../extensions/history.ts'
+import { defineBaseKeymap } from '../extensions/keymap-base.ts'
+import { defineMarkSpec } from '../extensions/mark-spec.ts'
+import { defineNodeSpec } from '../extensions/node-spec.ts'
+import { createTestEditor, type TestEditor } from '../test/index.ts'
+import type { Extension, ExtractMarkActions, ExtractNodeActions } from '../types/extension.ts'
+import { Priority } from '../types/priority.ts'
 
 type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
 

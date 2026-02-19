@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { selectBlock } from './select-block'
+import { selectBlock } from './select-block.ts'
 
 describe('selectBlock', () => {
   it('should expand the text selection to cover the start of the paragraph', () => {

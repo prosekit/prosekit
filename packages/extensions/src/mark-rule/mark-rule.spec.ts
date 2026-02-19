@@ -2,11 +2,11 @@ import { createEditor, defineBaseCommands, defineMarkSpec, elementFromNode, unio
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
-import { defineDoc } from '../doc'
-import { defineParagraph } from '../paragraph'
-import { defineText } from '../text'
+import { defineDoc } from '../doc/index.ts'
+import { defineParagraph } from '../paragraph/index.ts'
+import { defineText } from '../text/index.ts'
 
-import { defineMarkRule } from './index'
+import { defineMarkRule } from './index.ts'
 
 describe('defineMarkRule', () => {
   const editor = createEditor({

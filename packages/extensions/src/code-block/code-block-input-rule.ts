@@ -1,9 +1,9 @@
 import type { PlainExtension } from '@prosekit/core'
 
-import { defineTextBlockEnterRule } from '../enter-rule'
-import { defineTextBlockInputRule } from '../input-rule'
+import { defineTextBlockEnterRule } from '../enter-rule/index.ts'
+import { defineTextBlockInputRule } from '../input-rule/index.ts'
 
-import type { CodeBlockAttrs } from './code-block-types'
+import type { CodeBlockAttrs } from './code-block-types.ts'
 
 /**
  * Adds input rules for `codeBlock` nodes.

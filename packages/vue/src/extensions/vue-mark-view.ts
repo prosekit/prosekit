@@ -10,7 +10,7 @@ import {
 } from '@prosemirror-adapter/vue'
 import { computed, defineComponent, h, type DefineComponent } from 'vue'
 
-import { useExtension } from '../hooks/use-extension'
+import { useExtension } from '../hooks/use-extension.ts'
 
 /**
  * @public

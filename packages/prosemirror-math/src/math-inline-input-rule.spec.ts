@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
 
-import { MATH_INPUT_REGEXP } from './math-inline-input-rule'
-import { setupTest } from './testing'
+import { MATH_INPUT_REGEXP } from './math-inline-input-rule.ts'
+import { setupTest } from './testing.ts'
 
 describe('MATH_INPUT_REGEXP', () => {
   const regexp = new RegExp(MATH_INPUT_REGEXP)

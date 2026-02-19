@@ -1,8 +1,3 @@
 {
   "extends": "@ocavue/tsconfig/es/app.json",
-  "compilerOptions": {
-    "types": ["node"],
-    "isolatedDeclarations": true,
-    "allowJs": false,
-  },
 }

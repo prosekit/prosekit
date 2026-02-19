@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { findParentNode } from './find-parent-node'
+import { findParentNode } from './find-parent-node.ts'
 
 describe('findParentNode', () => {
   it('finds parent node with cursor directly inside', () => {

@@ -1,11 +1,11 @@
 import type { Schema } from '@prosekit/pm/model'
 import { Plugin, type ProseMirrorPlugin } from '@prosekit/pm/state'
 
-import { ProseKitError } from '../error'
-import { defineFacet, type Facet } from '../facets/facet'
-import { defineFacetPayload } from '../facets/facet-extension'
-import { stateFacet, type StatePayload } from '../facets/state'
-import type { PlainExtension } from '../types/extension'
+import { ProseKitError } from '../error.ts'
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { defineFacet, type Facet } from '../facets/facet.ts'
+import { stateFacet, type StatePayload } from '../facets/state.ts'
+import type { PlainExtension } from '../types/extension.ts'
 
 /**
  * Adds a ProseMirror plugin to the editor.

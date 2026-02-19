@@ -1,13 +1,13 @@
 import { isNotNullish } from '@ocavue/utils'
 import { describe, expect, it, vi } from 'vitest'
 
-import { Priority } from '../types/priority'
+import { Priority } from '../types/priority.ts'
 
-import { defineFacet, Facet } from './facet'
-import { FacetExtensionImpl } from './facet-extension'
-import { subtractFacetNode, unionFacetNode } from './facet-node'
-import type { FacetReducer } from './facet-types'
-import { UnionExtensionImpl } from './union-extension'
+import { FacetExtensionImpl } from './facet-extension.ts'
+import { subtractFacetNode, unionFacetNode } from './facet-node.ts'
+import type { FacetReducer } from './facet-types.ts'
+import { defineFacet, Facet } from './facet.ts'
+import { UnionExtensionImpl } from './union-extension.ts'
 
 describe('facet extension', () => {
   type FooHandler = (foo: string) => void

@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTableHandleDropIndicator } from "./setup"
-import { tableHandleDropIndicatorEvents, tableHandleDropIndicatorProps, type TableHandleDropIndicatorEvents, type TableHandleDropIndicatorProps } from "./types"
+import { useTableHandleDropIndicator } from "./setup.ts"
+import { tableHandleDropIndicatorEvents, tableHandleDropIndicatorProps, type TableHandleDropIndicatorEvents, type TableHandleDropIndicatorProps } from "./types.ts"
 
 const TableHandleDropIndicatorElementBase: BaseElementConstructor<TableHandleDropIndicatorProps> = defineCustomElement<
   TableHandleDropIndicatorProps,

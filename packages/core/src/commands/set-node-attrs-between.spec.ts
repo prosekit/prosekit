@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { setNodeAttrsBetween } from './set-node-attrs-between'
+import { setNodeAttrsBetween } from './set-node-attrs-between.ts'
 
 describe('setNodeAttrsBetween', () => {
   it('should set attributes on multiple nodes in selection range', () => {

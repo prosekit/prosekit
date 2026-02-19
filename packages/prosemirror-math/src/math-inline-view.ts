@@ -1,8 +1,8 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model'
 import type { Decoration, NodeView } from 'prosemirror-view'
 
-import { createElement } from './create-element'
-import { createMathViewRender } from './math-view-render'
+import { createElement } from './create-element.ts'
+import { createMathViewRender } from './math-view-render.ts'
 
 /**
  * The function to render a math inline.

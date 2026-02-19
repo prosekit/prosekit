@@ -1,0 +1,16 @@
+{
+  "extends": "@ocavue/tsconfig/dom/root.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"]
+  },
+  "include": [
+    "${configDir}/*",
+    "${configDir}/*.json",
+    "${configDir}/src/**/*.spec.*",
+    "${configDir}/src/**/*.test.*",
+    "${configDir}/src/**/testing/**/*",
+    "${configDir}/test/",
+    "${configDir}/scripts/"
+  ]
+}

@@ -1,10 +1,10 @@
 import { useEffect, type ConnectableElement, type SignalState } from '@aria-ui/core'
 
-import { assignStyles } from '../../../utils/assign-styles'
-import { useInitDndPosition, type OnInitParams } from '../dnd'
+import { assignStyles } from '../../../utils/assign-styles.ts'
+import { useInitDndPosition, type OnInitParams } from '../dnd.ts'
 
-import type { TableHandleDropIndicatorProps } from './types'
-import { useUpdateIndicatorPosition } from './updater'
+import type { TableHandleDropIndicatorProps } from './types.ts'
+import { useUpdateIndicatorPosition } from './updater.ts'
 
 const HANDLE_WIDTH = 2
 

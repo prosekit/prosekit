@@ -1,7 +1,7 @@
 import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
 import { onMounted, onUnmounted, shallowRef, triggerRef, type ShallowRef } from 'vue'
 
-import { useEditorContext } from '../injection/editor-context'
+import { useEditorContext } from '../injection/editor-context.ts'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.

@@ -1,9 +1,9 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineCodeCommands, type CodeCommandsExtension } from './code-commands'
-import { defineCodeInputRule } from './code-input-rule'
-import { defineCodeKeymap } from './code-keymap'
-import { defineCodeSpec, type CodeSpecExtension } from './code-spec'
+import { defineCodeCommands, type CodeCommandsExtension } from './code-commands.ts'
+import { defineCodeInputRule } from './code-input-rule.ts'
+import { defineCodeKeymap } from './code-keymap.ts'
+import { defineCodeSpec, type CodeSpecExtension } from './code-spec.ts'
 
 /**
  * @internal

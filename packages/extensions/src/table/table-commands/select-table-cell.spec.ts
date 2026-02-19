@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../../testing'
-import { isCellSelection } from '../table-utils'
-import { inspectSelectedCells } from '../test-utils'
+import { setupTest } from '../../testing/index.ts'
+import { isCellSelection } from '../table-utils.ts'
+import { inspectSelectedCells } from '../test-utils.ts'
 
 describe('selectTableCell', () => {
   it('can select a table cell', () => {

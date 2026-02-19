@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useBlockHandleAdd } from "./setup"
-import { blockHandleAddEvents, blockHandleAddProps, type BlockHandleAddEvents, type BlockHandleAddProps } from "./types"
+import { useBlockHandleAdd } from "./setup.ts"
+import { blockHandleAddEvents, blockHandleAddProps, type BlockHandleAddEvents, type BlockHandleAddProps } from "./types.ts"
 
 const BlockHandleAddElementBase: BaseElementConstructor<BlockHandleAddProps> = defineCustomElement<
   BlockHandleAddProps,

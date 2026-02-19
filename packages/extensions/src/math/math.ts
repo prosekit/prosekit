@@ -1,9 +1,9 @@
 import { union, type Union } from '@prosekit/core'
 import type { RenderMathBlock, RenderMathInline } from 'prosemirror-math'
 
-import { defineMathBlock, type MathBlockExtension } from './math-block'
-import { defineMathInline, type MathInlineExtension } from './math-inline'
-import { defineMathPlugin } from './math-plugin'
+import { defineMathBlock, type MathBlockExtension } from './math-block.ts'
+import { defineMathInline, type MathInlineExtension } from './math-inline.ts'
+import { defineMathPlugin } from './math-plugin.ts'
 
 /**
  * @public

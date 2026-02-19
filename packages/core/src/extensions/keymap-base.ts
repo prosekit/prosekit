@@ -11,12 +11,12 @@ import {
 } from '@prosekit/pm/commands'
 import { splitSplittableBlock } from 'prosemirror-splittable'
 
-import { selectBlockCommand } from '../commands/select-block'
-import { withPriority } from '../editor/with-priority'
-import type { PlainExtension } from '../types/extension'
-import { Priority } from '../types/priority'
+import { selectBlockCommand } from '../commands/select-block.ts'
+import { withPriority } from '../editor/with-priority.ts'
+import type { PlainExtension } from '../types/extension.ts'
+import { Priority } from '../types/priority.ts'
 
-import { defineKeymap, type Keymap } from './keymap'
+import { defineKeymap, type Keymap } from './keymap.ts'
 
 // Replace `splitBlock` with `splitSplittableBlock`
 const customEnter = chainCommands(

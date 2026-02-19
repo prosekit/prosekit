@@ -2,11 +2,11 @@ import { isElementLike } from '@ocavue/utils'
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { Selection } from '@prosekit/pm/state'
 
-import type { NodeJSON, SelectionJSON } from '../types/model'
+import type { NodeJSON, SelectionJSON } from '../types/model.ts'
 
-import { assert } from './assert'
-import { jsonFromElement, jsonFromHTML } from './parse'
-import { isProseMirrorNode, isSelection } from './type-assertion'
+import { assert } from './assert.ts'
+import { jsonFromElement, jsonFromHTML } from './parse.ts'
+import { isProseMirrorNode, isSelection } from './type-assertion.ts'
 
 export function getEditorContentJSON(
   schema: Schema,

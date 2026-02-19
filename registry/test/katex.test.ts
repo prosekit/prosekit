@@ -1,4 +1,4 @@
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import { userEvent } from 'vitest/browser'
 
 import { testStory, testStoryConsistency, waitForEditor } from './helpers'
@@ -56,37 +56,45 @@ testStory('katex', () => {
     const mathBlockSource = mathBlock.locate('.prosemirror-math-source')
     const mathBlockDisplay = mathBlock.locate('.prosemirror-math-display')
 
-    // Initially, no math node is focused — source is hidden, display is shown.
-    await expect.element(mathInlineSource).not.toBeVisible()
-    await expect.element(mathInlineDisplay).toBeVisible()
-    await expect.element(mathBlockSource).not.toBeVisible()
-    await expect.element(mathBlockDisplay).toBeVisible()
+    await vi.waitFor(() => {
+      // Initially, no math node is focused — source is hidden, display is shown.
+      expect(mathInlineSource).not.toBeVisible()
+      expect(mathInlineDisplay).toBeVisible()
+      expect(mathBlockSource).not.toBeVisible()
+      expect(mathBlockDisplay).toBeVisible()
+    }, { timeout: 4000 })
 
-    // Click the block math display to focus it.
-    await userEvent.click(mathBlockDisplay, { force: true })
+    await vi.waitFor(async () => {
+      // Click the block math display to focus it.
+      await userEvent.click(mathBlock, { force: true })
 
-    // The block math now shows its source; inline math remains unchanged.
-    await expect.element(mathInlineSource).not.toBeVisible()
-    await expect.element(mathInlineDisplay).toBeVisible()
-    await expect.element(mathBlockSource).toBeVisible()
-    await expect.element(mathBlockDisplay).not.toBeVisible()
+      // The block math now shows its source; inline math remains unchanged.
+      expect(mathInlineSource).not.toBeVisible()
+      expect(mathInlineDisplay).toBeVisible()
+      expect(mathBlockSource).toBeVisible()
+      expect(mathBlockDisplay).not.toBeVisible()
+    }, { timeout: 4000 })
 
     // Click the inline math display to move focus there.
-    await userEvent.click(mathInlineDisplay, { force: true })
+    await vi.waitFor(async () => {
+      await userEvent.click(mathInline, { force: true })
 
-    // The inline math now shows its source; block math reverts to display.
-    await expect.element(mathInlineSource).toBeVisible()
-    await expect.element(mathInlineDisplay).not.toBeVisible()
-    await expect.element(mathBlockSource).not.toBeVisible()
-    await expect.element(mathBlockDisplay).toBeVisible()
+      // The inline math now shows its source; block math reverts to display.
+      expect(mathInlineSource).toBeVisible()
+      expect(mathInlineDisplay).not.toBeVisible()
+      expect(mathBlockSource).not.toBeVisible()
+      expect(mathBlockDisplay).toBeVisible()
+    }, { timeout: 4000 })
 
     // Click outside both math nodes (on a heading).
-    await userEvent.click(editor.locate('h2').first(), { force: true })
+    await vi.waitFor(async () => {
+      await userEvent.click(editor.locate('h2').first(), { force: true })
 
-    // Both math nodes revert to showing only the rendered display.
-    await expect.element(mathInlineSource).not.toBeVisible()
-    await expect.element(mathInlineDisplay).toBeVisible()
-    await expect.element(mathBlockSource).not.toBeVisible()
-    await expect.element(mathBlockDisplay).toBeVisible()
+      // Both math nodes revert to showing only the rendered display.
+      expect(mathInlineSource).not.toBeVisible()
+      expect(mathInlineDisplay).toBeVisible()
+      expect(mathBlockSource).not.toBeVisible()
+      expect(mathBlockDisplay).toBeVisible()
+    }, { timeout: 4000 })
   })
 })

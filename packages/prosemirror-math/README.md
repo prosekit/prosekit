@@ -91,7 +91,7 @@ const plugin = createCursorInsidePlugin()
 
 ## API
 
-https://npmx.dev/package-docs/prosemirror-math
+[API Reference](https://npmx.dev/package-docs/prosemirror-math)
 
 ## License
 

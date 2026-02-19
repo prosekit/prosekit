@@ -1,6 +1,5 @@
 {
   "extends": "@prosekit/config-ts/build.json",
-  "exclude": ["node_modules", "dist", "**/*.spec.*", "**/testing/**/*"],
   "references": [
     { "path": "../pm/tsconfig.json" }
   ]

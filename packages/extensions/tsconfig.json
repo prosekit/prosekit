@@ -1,6 +1,5 @@
 {
   "extends": "@prosekit/config-ts/root.json",
-  "include": ["./*", "src/**/*.spec.*", "src/**/testing/**/*"],
   "references": [
     {
       "path": "../config-tsdown/tsconfig.json",

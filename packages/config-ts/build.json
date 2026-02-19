@@ -13,6 +13,8 @@
     "${configDir}/src/"
   ],
   "exclude": [
+    "node_modules",
+    "dist",
     "${configDir}/src/**/*.spec.*",
     "${configDir}/src/**/*.test.*",
     "${configDir}/src/**/testing/**/*"

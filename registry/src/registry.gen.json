@@ -509,6 +509,11 @@
           "target": "components/editor/examples/full/extension.ts"
         },
         {
+          "path": "registry/src/react/examples/full/html.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/full/html.ts"
+        },
+        {
           "path": "registry/src/react/examples/full/index.ts",
           "type": "registry:component",
           "target": "components/editor/examples/full/index.ts"
@@ -522,6 +527,7 @@
         "accumulatedFiles": [
           "registry/src/react/examples/full/editor.tsx",
           "registry/src/react/examples/full/extension.ts",
+          "registry/src/react/examples/full/html.ts",
           "registry/src/react/examples/full/index.ts",
           "registry/src/react/sample/katex.ts",
           "registry/src/react/sample/sample-doc-full.ts",

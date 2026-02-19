@@ -7,15 +7,14 @@ import 'prosekit/basic/typography.css'
 
 import type { FC } from 'react'
 
-import sampleHtml from './sample-content.gen.html?raw'
 import { ToolbarFallback } from './toolbar-fallback'
 
-export const EditorFallback: FC = () => {
+export const EditorFallback: FC<{ fallbackHTML: string }> = ({ fallbackHTML }) => {
   return (
     <div className="CSS_EDITOR_VIEWPORT">
       <ToolbarFallback />
       <div className="CSS_EDITOR_SCROLLING">
-        <div className="CSS_EDITOR_CONTENT" dangerouslySetInnerHTML={{ __html: sampleHtml }} />
+        <div className="CSS_EDITOR_CONTENT" dangerouslySetInnerHTML={{ __html: fallbackHTML }} />
       </div>
     </div>
   )

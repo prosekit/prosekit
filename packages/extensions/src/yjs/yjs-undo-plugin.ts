@@ -12,7 +12,7 @@ type UndoManager = YjsUndoManager & { restore: () => void }
 function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
   const originalUndoPluginView = yUndoPluginInstance.spec.view
   yUndoPluginInstance.spec.view = (view: EditorView) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- The type definition in y-prosemirror is not correct. A explicit file extension should be added to this line: https://npmx.dev/package-code/y-prosemirror/v/1.3.7/dist%2Fsrc%2Fplugins%2Fkeys.d.ts#L13
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- The type definition in y-prosemirror is not correct. An explicit file extension should be added to this line: https://npmx.dev/package-code/y-prosemirror/v/1.3.7/dist%2Fsrc%2Fplugins%2Fkeys.d.ts#L13
     const pluginState: UndoPluginState | undefined = yUndoPluginKey.getState(view.state)
     if (!pluginState) {
       return {}

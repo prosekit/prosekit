@@ -9,6 +9,7 @@ export function createMathViewRender(
   renderMath: RenderMath,
   source: HTMLElement,
   display: HTMLElement,
+  inline: boolean,
 ) {
   let prevNode: Node | undefined
   let prevText: string | undefined
@@ -32,8 +33,18 @@ export function createMathViewRender(
 
     // When the math node is selected, show the source code.
     // Otherwise, show the rendered result.
-    source.style.display = selected ? '' : 'none'
     display.style.display = selected ? 'none' : ''
+    if (!inline) {
+      source.style.display = selected ? '' : 'none'
+    } else {
+      // For inline source code, we don't use `display: none` because we need
+      // the source text rendered in the DOM to ensure the text cursor can be
+      // placed correctly.
+      Object.assign(
+        source.style,
+        selected ? visibleInlineSourceStyle : hiddenInlineSourceStyle,
+      )
+    }
   }
 
   return function updateMathView(
@@ -43,4 +54,22 @@ export function createMathViewRender(
     updateDisplay(node)
     updateStyle(decorations)
   }
+}
+
+const hiddenInlineSourceStyle: Partial<CSSStyleDeclaration> = {
+  display: 'inline-flex',
+  opacity: '0',
+  pointerEvents: 'none',
+  maxWidth: '0',
+  maxHeight: '0',
+  overflow: 'hidden',
+}
+
+const visibleInlineSourceStyle: Partial<CSSStyleDeclaration> = {
+  display: 'inline-flex',
+  opacity: '1',
+  pointerEvents: '',
+  maxWidth: '',
+  maxHeight: '',
+  overflow: '',
 }

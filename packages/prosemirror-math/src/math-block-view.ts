@@ -18,7 +18,7 @@ export function createMathBlockView(renderMathBlock: RenderMathBlock, node: Pros
   const display = createElement('div', 'prosekit-math-display')
   const dom = createElement('div', 'prosekit-math-block', source, display)
 
-  const render = createMathViewRender(renderMathBlock, source, display)
+  const render = createMathViewRender(renderMathBlock, source, display, false)
 
   render(node, decorations)
 

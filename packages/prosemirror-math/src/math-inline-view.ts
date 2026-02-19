@@ -21,7 +21,7 @@ export function createMathInlineView(
   const display = createElement('span', 'prosekit-math-display')
   const dom = createElement('span', 'prosekit-math-inline', source, display)
 
-  const render = createMathViewRender(renderMathInline, source, display)
+  const render = createMathViewRender(renderMathInline, source, display, true)
 
   render(node, decorations)
 

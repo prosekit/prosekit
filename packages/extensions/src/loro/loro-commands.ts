@@ -1,11 +1,10 @@
 import { defineCommands, type Extension } from '@prosekit/core'
-import type { Command } from '@prosekit/pm/state'
 import { redo, undo } from 'loro-prosemirror'
 
 const commands = {
-  undo: (): Command => undo,
-  redo: (): Command => redo,
-}
+  undo: () => undo,
+  redo: () => redo,
+} as const
 
 /**
  * @internal

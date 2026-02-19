@@ -1,0 +1,21 @@
+import { t as createComponent } from "./create-component-B7NzEJxP.js";
+import { autocompleteEmptyEvents, autocompleteEmptyProps, autocompleteItemEvents, autocompleteItemProps, autocompleteListEvents, autocompleteListProps, autocompletePopoverEvents, autocompletePopoverProps } from "@prosekit/web/autocomplete";
+
+//#region src/components/autocomplete/autocomplete-empty.gen.ts
+const AutocompleteEmpty = createComponent("prosekit-autocomplete-empty", Object.keys(autocompleteEmptyProps), Object.keys(autocompleteEmptyEvents));
+
+//#endregion
+//#region src/components/autocomplete/autocomplete-item.gen.ts
+const AutocompleteItem = createComponent("prosekit-autocomplete-item", Object.keys(autocompleteItemProps), Object.keys(autocompleteItemEvents));
+
+//#endregion
+//#region src/components/autocomplete/autocomplete-list.gen.ts
+const AutocompleteList = createComponent("prosekit-autocomplete-list", Object.keys(autocompleteListProps), Object.keys(autocompleteListEvents));
+
+//#endregion
+//#region src/components/autocomplete/autocomplete-popover.gen.ts
+const AutocompletePopover = createComponent("prosekit-autocomplete-popover", Object.keys(autocompletePopoverProps), Object.keys(autocompletePopoverEvents));
+
+//#endregion
+export { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover };
+//# sourceMappingURL=prosekit-solid-autocomplete.js.map

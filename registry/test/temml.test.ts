@@ -9,18 +9,18 @@ testStory('temml', () => {
   it('should render content correctly', async () => {
     const editor = await waitForEditor()
 
-    const mathInline = editor.locate('.prosekit-math-inline').first()
-    const mathBlock = editor.locate('.prosekit-math-block').first()
+    const mathInline = editor.locate('.prosemirror-math-inline').first()
+    const mathBlock = editor.locate('.prosemirror-math-block').first()
 
     await expect.element(mathInline).toBeVisible()
     await expect.element(mathBlock).toBeVisible()
 
     // Each math node has a source element (the LaTeX code editor) and a
     // display element (the rendered output).
-    const mathInlineSource = mathInline.locate('.prosekit-math-source')
-    const mathInlineDisplay = mathInline.locate('.prosekit-math-display')
-    const mathBlockSource = mathBlock.locate('.prosekit-math-source')
-    const mathBlockDisplay = mathBlock.locate('.prosekit-math-display')
+    const mathInlineSource = mathInline.locate('.prosemirror-math-source')
+    const mathInlineDisplay = mathInline.locate('.prosemirror-math-display')
+    const mathBlockSource = mathBlock.locate('.prosemirror-math-source')
+    const mathBlockDisplay = mathBlock.locate('.prosemirror-math-display')
 
     await expect.element(mathInlineSource).toBeInTheDocument()
     await expect.element(mathInlineDisplay).toBeInTheDocument()
@@ -46,13 +46,13 @@ testStory('temml', () => {
   it('should show and hide source and display based on cursor position', async () => {
     const editor = await waitForEditor()
 
-    const mathInline = editor.locate('.prosekit-math-inline').first()
-    const mathBlock = editor.locate('.prosekit-math-block').first()
+    const mathInline = editor.locate('.prosemirror-math-inline').first()
+    const mathBlock = editor.locate('.prosemirror-math-block').first()
 
-    const mathInlineSource = mathInline.locate('.prosekit-math-source')
-    const mathInlineDisplay = mathInline.locate('.prosekit-math-display')
-    const mathBlockSource = mathBlock.locate('.prosekit-math-source')
-    const mathBlockDisplay = mathBlock.locate('.prosekit-math-display')
+    const mathInlineSource = mathInline.locate('.prosemirror-math-source')
+    const mathInlineDisplay = mathInline.locate('.prosemirror-math-display')
+    const mathBlockSource = mathBlock.locate('.prosemirror-math-source')
+    const mathBlockDisplay = mathBlock.locate('.prosemirror-math-display')
 
     // Initially, no math node is focused — source is hidden, display is shown.
     await expect.element(mathInlineSource).not.toBeVisible()

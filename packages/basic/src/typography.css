@@ -233,7 +233,7 @@
     --prosekit-node-selection-color: transparent;
   }
 
-  .prosekit-math-inline.prosemirror-math-head-inside .prosekit-math-source {
+  .prosemirror-math-inline.prosemirror-math-head-inside .prosemirror-math-source {
     &::before {
       content: "$";
       opacity: 0.5;

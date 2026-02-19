@@ -15,7 +15,7 @@ describe('cursorInsidePlugin', () => {
     )
     editor.view.dispatch(tr)
 
-    const mathBlock = editor.view.dom.querySelector('.prosekit-math-block')
+    const mathBlock = editor.view.dom.querySelector('.prosemirror-math-block')
     expect(mathBlock?.classList.contains('prosemirror-math-head-inside')).toBe(true)
   })
 
@@ -30,7 +30,7 @@ describe('cursorInsidePlugin', () => {
     )
     editor.view.dispatch(tr)
 
-    const mathInline = editor.view.dom.querySelector('.prosekit-math-inline')
+    const mathInline = editor.view.dom.querySelector('.prosemirror-math-inline')
     expect(mathInline?.classList.contains('prosemirror-math-head-inside')).toBe(true)
   })
 
@@ -45,7 +45,7 @@ describe('cursorInsidePlugin', () => {
     )
     editor.view.dispatch(tr)
 
-    const mathBlock = editor.view.dom.querySelector('.prosekit-math-block')
+    const mathBlock = editor.view.dom.querySelector('.prosemirror-math-block')
     expect(mathBlock?.classList.contains('prosemirror-math-head-inside')).toBe(false)
   })
 })

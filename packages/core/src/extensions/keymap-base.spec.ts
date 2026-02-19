@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import { union } from '../editor/union'
-import type { TestEditor } from '../test'
-import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
-import type { SelectionJSON } from '../types/model'
+import { union } from '../editor/union.ts'
+import type { TestEditor } from '../test/index.ts'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
+import type { SelectionJSON } from '../types/model.ts'
 
-import { defineBaseKeymap } from './keymap-base'
+import { defineBaseKeymap } from './keymap-base.ts'
 
 describe('Mod-a', () => {
   it('can select the block for the first Mod-a press', async () => {

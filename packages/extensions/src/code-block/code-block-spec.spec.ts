@@ -2,8 +2,8 @@ import { jsonFromHTML } from '@prosekit/core'
 import { formatHTML } from 'diffable-html-snapshot'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
-import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown'
+import { setupTest } from '../testing/index.ts'
+import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown.ts'
 
 describe('defineCodeBlockSpec', () => {
   it('can parse and serialize code blocks', () => {

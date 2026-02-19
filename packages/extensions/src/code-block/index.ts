@@ -1,11 +1,11 @@
-export { defineCodeBlock, type CodeBlockExtension } from './code-block'
-export { defineCodeBlockCommands, type CodeBlockCommandsExtension } from './code-block-commands'
-export { defineCodeBlockHighlight, type CodeBlockHighlightOptions, type HighlightParser } from './code-block-highlight'
-export { defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule'
-export { defineCodeBlockKeymap } from './code-block-keymap'
-export { defineCodeBlockShiki } from './code-block-shiki'
-export { defineCodeBlockSpec, type CodeBlockSpecExtension } from './code-block-spec'
-export type { CodeBlockAttrs } from './code-block-types'
+export { defineCodeBlockCommands, type CodeBlockCommandsExtension } from './code-block-commands.ts'
+export { defineCodeBlockHighlight, type CodeBlockHighlightOptions, type HighlightParser } from './code-block-highlight.ts'
+export { defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule.ts'
+export { defineCodeBlockKeymap } from './code-block-keymap.ts'
+export { defineCodeBlockShiki } from './code-block-shiki.ts'
+export { defineCodeBlockSpec, type CodeBlockSpecExtension } from './code-block-spec.ts'
+export type { CodeBlockAttrs } from './code-block-types.ts'
+export { defineCodeBlock, type CodeBlockExtension } from './code-block.ts'
 export {
   shikiBundledLanguagesInfo,
   shikiBundledThemesInfo,
@@ -13,4 +13,4 @@ export {
   type ShikiBundledLanguageInfo,
   type ShikiBundledTheme,
   type ShikiBundledThemeInfo,
-} from './shiki-bundle'
+} from './shiki-bundle.ts'

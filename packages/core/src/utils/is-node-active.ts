@@ -1,9 +1,9 @@
 import type { Attrs, NodeType, ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
-import { attrsMatch } from './attrs-match'
-import { getNodeType } from './get-node-type'
-import { isNodeSelection } from './type-assertion'
+import { attrsMatch } from './attrs-match.ts'
+import { getNodeType } from './get-node-type.ts'
+import { isNodeSelection } from './type-assertion.ts'
 
 /**
  * @internal

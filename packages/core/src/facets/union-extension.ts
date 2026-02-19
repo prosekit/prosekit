@@ -1,9 +1,9 @@
-import type { Extension, ExtensionTyping } from '../types/extension'
-import type { Priority } from '../types/priority'
-import { assert } from '../utils/assert'
+import type { Extension, ExtensionTyping } from '../types/extension.ts'
+import type { Priority } from '../types/priority.ts'
+import { assert } from '../utils/assert.ts'
 
-import { BaseExtension } from './base-extension'
-import { unionFacetNode, type FacetNode } from './facet-node'
+import { BaseExtension } from './base-extension.ts'
+import { unionFacetNode, type FacetNode } from './facet-node.ts'
 
 export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping> extends BaseExtension<T> implements Extension<T> {
   /**

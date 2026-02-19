@@ -1,4 +1,4 @@
-import { ProseKitError } from '../error'
+import { ProseKitError } from '../error.ts'
 
 /**
  * @internal

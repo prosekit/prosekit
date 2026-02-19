@@ -44,6 +44,7 @@
     "@prosekit/pm": "workspace:^"
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^27.0.0",

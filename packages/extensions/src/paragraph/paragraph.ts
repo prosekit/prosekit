@@ -1,8 +1,8 @@
 import { Priority, union, withPriority, type Union } from '@prosekit/core'
 
-import { defineParagraphCommands, type ParagraphCommandsExtension } from './paragraph-commands'
-import { defineParagraphKeymap } from './paragraph-keymap'
-import { defineParagraphSpec, type ParagraphSpecExtension } from './paragraph-spec'
+import { defineParagraphCommands, type ParagraphCommandsExtension } from './paragraph-commands.ts'
+import { defineParagraphKeymap } from './paragraph-keymap.ts'
+import { defineParagraphSpec, type ParagraphSpecExtension } from './paragraph-spec.ts'
 
 /**
  * @internal

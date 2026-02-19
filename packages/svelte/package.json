@@ -87,6 +87,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@sveltejs/package": "^2.5.7",
     "@types/node": "catalog:",
     "svelte": "^5.51.2",

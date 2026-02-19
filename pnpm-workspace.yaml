@@ -12,6 +12,9 @@ catalog:
   tsdown: "^0.20.3"
   typescript: "~5.9.3"
 
+allowedDeprecatedVersions:
+  glob: "10"
+
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
@@ -30,6 +33,7 @@ minimumReleaseAgeExclude:
 overrides: {}
 
 patchedDependencies:
+  loro-prosemirror: patches/loro-prosemirror.patch
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true

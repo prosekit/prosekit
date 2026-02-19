@@ -1,0 +1,23 @@
+{
+  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "${configDir}/node_modules/.cache/prosekit-ts-out/",
+    "tsBuildInfoFile": "${configDir}/node_modules/.cache/prosekit-ts-info/tsbuildinfo.json",
+    "allowJs": false,
+    "isolatedDeclarations": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true
+  },
+  "include": [
+    "${configDir}/src/"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "${configDir}/src/**/*.spec.*",
+    "${configDir}/src/**/*.test.*",
+    "${configDir}/src/**/testing/**/*"
+  ]
+}

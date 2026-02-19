@@ -9,10 +9,10 @@ import {
 import { listboxProps, useListbox, type ListboxProps } from '@aria-ui/listbox/elements'
 import { defineDOMEventHandler, Priority, withPriority, type Editor } from '@prosekit/core'
 
-import { getStateWithDefaults } from '../../../utils/get-default-state'
-import { onSubmitContext, openContext, queryContext } from '../context'
+import { getStateWithDefaults } from '../../../utils/get-default-state.ts'
+import { onSubmitContext, openContext, queryContext } from '../context.ts'
 
-import type { AutocompleteListEvents, AutocompleteListProps } from './types'
+import type { AutocompleteListEvents, AutocompleteListProps } from './types.ts'
 
 /**
  * @internal

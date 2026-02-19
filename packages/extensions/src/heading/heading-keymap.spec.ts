@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
 describe('defineHeadingKeymap', () => {
   it('should toggle heading', async () => {

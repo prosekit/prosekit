@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link TableHandleDragPreview} component.
  */
 export interface TableHandleDragPreviewProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const TableHandleDragPreview: ForwardRefExoticComponent<
   TableHandleDragPreviewProps &
   RefAttributes<TableHandleDragPreviewElement> &
   HTMLAttributes<TableHandleDragPreviewElement>
 > = createComponent<
-  TableHandleDragPreviewProps, 
+  TableHandleDragPreviewProps,
   TableHandleDragPreviewElement
 >(
   'prosekit-table-handle-drag-preview',

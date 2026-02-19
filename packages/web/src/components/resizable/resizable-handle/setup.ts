@@ -1,10 +1,17 @@
 import { createSignal, useEffect, type ConnectableElement, type ReadonlySignal, type SignalState } from '@aria-ui/core'
 import { getWindow } from '@ocavue/utils'
 
-import { onResizeContext, onResizeEndContext, onResizeStartContext, type OnResize, type OnResizeEnd, type OnResizeStart } from '../context'
+import {
+  onResizeContext,
+  onResizeEndContext,
+  onResizeStartContext,
+  type OnResize,
+  type OnResizeEnd,
+  type OnResizeStart,
+} from '../context.ts'
 
-import { calcResize } from './calc-resize'
-import type { ResizableHandleProps } from './types'
+import { calcResize } from './calc-resize.ts'
+import type { ResizableHandleProps } from './types.ts'
 
 /**
  * @internal

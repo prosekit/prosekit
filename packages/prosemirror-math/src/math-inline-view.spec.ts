@@ -1,7 +1,7 @@
 import { formatHTML } from 'diffable-html-snapshot'
 import { describe, expect, it } from 'vitest'
 
-import { katexRenderer, mathjaxRenderer, renderers, setupTest, temmlRenderer } from './testing'
+import { katexRenderer, mathjaxRenderer, renderers, setupTest, temmlRenderer } from './testing.ts'
 
 describe.each(Object.keys(renderers))('createMathInlineView (%s)', (name) => {
   const renderer = renderers[name as keyof typeof renderers]

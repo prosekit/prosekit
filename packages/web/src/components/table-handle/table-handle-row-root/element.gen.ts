@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTableHandleRowRoot } from "./setup"
-import { tableHandleRowRootEvents, tableHandleRowRootProps, type TableHandleRowRootEvents, type TableHandleRowRootProps } from "./types"
+import { useTableHandleRowRoot } from "./setup.ts"
+import { tableHandleRowRootEvents, tableHandleRowRootProps, type TableHandleRowRootEvents, type TableHandleRowRootProps } from "./types.ts"
 
 const TableHandleRowRootElementBase: BaseElementConstructor<TableHandleRowRootProps> = defineCustomElement<
   TableHandleRowRootProps,

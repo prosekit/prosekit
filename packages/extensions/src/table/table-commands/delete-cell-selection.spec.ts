@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../../testing'
-import { isCellSelection } from '../table-utils'
-import { setCellSelection } from '../test-utils'
+import { setupTest } from '../../testing/index.ts'
+import { isCellSelection } from '../table-utils.ts'
+import { setCellSelection } from '../test-utils.ts'
 
 describe('deleteCellSelection', () => {
   it('can clear the content in the selected table cells', () => {

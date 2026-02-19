@@ -10,10 +10,10 @@ import {
 } from '@aria-ui/core'
 import { menuContentProps, useMenuContent, type MenuContentProps } from '@aria-ui/menu/elements'
 
-import { getStateWithDefaults } from '../../../utils/get-default-state'
-import { tableHandleRootContext } from '../context'
+import { getStateWithDefaults } from '../../../utils/get-default-state.ts'
+import { tableHandleRootContext } from '../context.ts'
 
-import type { TableHandlePopoverContentEvents, TableHandlePopoverContentProps } from './types'
+import type { TableHandlePopoverContentEvents, TableHandlePopoverContentProps } from './types.ts'
 
 /**
  * @internal

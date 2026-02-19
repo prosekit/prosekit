@@ -2,8 +2,8 @@ import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal
 import type { Editor } from '@prosekit/core'
 import { moveTableColumn, moveTableRow } from '@prosekit/extensions/table'
 
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import type { TableHandleDndContext } from '../context'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import type { TableHandleDndContext } from '../context.ts'
 
 export function useDrop(
   host: ConnectableElement,

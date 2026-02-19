@@ -43,6 +43,7 @@
     "prosemirror-view": "^1.41.6"
   },
   "devDependencies": {
+    "@ocavue/tsconfig": "^0.6.3",
     "jsdom": "^28.1.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",

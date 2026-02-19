@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { createElement } from './create-element'
+import { createElement } from './create-element.ts'
 
 describe('createElement', () => {
   it('creates an element with the given tag', () => {

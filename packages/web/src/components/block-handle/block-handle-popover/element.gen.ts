@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useBlockHandlePopover } from "./setup"
-import { blockHandlePopoverEvents, blockHandlePopoverProps, type BlockHandlePopoverEvents, type BlockHandlePopoverProps } from "./types"
+import { useBlockHandlePopover } from "./setup.ts"
+import { blockHandlePopoverEvents, blockHandlePopoverProps, type BlockHandlePopoverEvents, type BlockHandlePopoverProps } from "./types.ts"
 
 const BlockHandlePopoverElementBase: BaseElementConstructor<BlockHandlePopoverProps> = defineCustomElement<
   BlockHandlePopoverProps,

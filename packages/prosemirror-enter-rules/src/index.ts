@@ -6,4 +6,4 @@ export {
   type EnterRuleHandler,
   type EnterRuleHandlerOptions,
   type TextBlockEnterRuleOptions,
-} from './enter-rule'
+} from './enter-rule.ts'

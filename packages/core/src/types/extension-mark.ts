@@ -1,4 +1,4 @@
-import type { MarkAction } from '../editor/action'
+import type { MarkAction } from '../editor/action.ts'
 
 /**
  * @internal

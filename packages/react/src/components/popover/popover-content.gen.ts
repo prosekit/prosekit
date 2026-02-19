@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link PopoverContent} component.
  */
 export interface PopoverContentProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const PopoverContent: ForwardRefExoticComponent<
   PopoverContentProps &
   RefAttributes<PopoverContentElement> &
   HTMLAttributes<PopoverContentElement>
 > = createComponent<
-  PopoverContentProps, 
+  PopoverContentProps,
   PopoverContentElement
 >(
   'prosekit-popover-content',

@@ -1,6 +1,6 @@
 import type { Attrs, Mark, MarkType } from '@prosekit/pm/model'
 
-import { isSubset } from './is-subset'
+import { isSubset } from './is-subset.ts'
 
 export function includesMark(
   marks: readonly Mark[],

@@ -1,4 +1,3 @@
-export { defineMath, type MathExtension, type MathOptions } from './math'
 export {
   defineMathBlock,
   defineMathBlockEnterRule,
@@ -8,7 +7,7 @@ export {
   type MathBlockOptions,
   type MathBlockSpecExtension,
   type MathBlockViewOptions,
-} from './math-block'
+} from './math-block.ts'
 export {
   defineMathInline,
   defineMathInlineInputRule,
@@ -18,5 +17,6 @@ export {
   type MathInlineOptions,
   type MathInlineSpecExtension,
   type MathInlineViewOptions,
-} from './math-inline'
-export { defineMathPlugin } from './math-plugin'
+} from './math-inline.ts'
+export { defineMathPlugin } from './math-plugin.ts'
+export { defineMath, type MathExtension, type MathOptions } from './math.ts'

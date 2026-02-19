@@ -1,5 +1,5 @@
-export { PopoverContent, type PopoverContentProps } from './popover-content.gen'
+export { PopoverContent, type PopoverContentProps } from './popover-content.gen.ts'
 
-export { PopoverRoot, type PopoverRootProps } from './popover-root.gen'
+export { PopoverRoot, type PopoverRootProps } from './popover-root.gen.ts'
 
-export { PopoverTrigger, type PopoverTriggerProps } from './popover-trigger.gen'
+export { PopoverTrigger, type PopoverTriggerProps } from './popover-trigger.gen.ts'

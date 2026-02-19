@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { setNodeAttrs } from './set-node-attrs'
+import { setNodeAttrs } from './set-node-attrs.ts'
 
 describe('setNodeAttrs', () => {
   it('should set attributes on a code block node', () => {

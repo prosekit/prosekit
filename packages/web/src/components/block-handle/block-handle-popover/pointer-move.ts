@@ -4,9 +4,9 @@ import { defineDOMEventHandler, union, type PlainExtension } from '@prosekit/cor
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { getClientRect } from '../../../utils/get-client-rect'
-import { throttle } from '../../../utils/throttle'
-import type { HoverState } from '../context'
+import { getClientRect } from '../../../utils/get-client-rect.ts'
+import { throttle } from '../../../utils/throttle.ts'
+import type { HoverState } from '../context.ts'
 
 export type ElementHoverHandler = (
   reference: VirtualElement | null,

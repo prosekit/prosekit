@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'preact/compat'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link TableHandleRowRoot} component.
  */
 export interface TableHandleRowRootProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const TableHandleRowRoot: ForwardRefExoticComponent<
   Partial<TableHandleRowRootProps> &
   RefAttributes<TableHandleRowRootElement> &
   HTMLAttributes<TableHandleRowRootElement>
 > = createComponent<
-  TableHandleRowRootProps, 
+  TableHandleRowRootProps,
   TableHandleRowRootElement
 >(
   'prosekit-table-handle-row-root',

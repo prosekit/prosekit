@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'preact/compat'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link BlockHandleAdd} component.
  */
 export interface BlockHandleAddProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const BlockHandleAdd: ForwardRefExoticComponent<
   Partial<BlockHandleAddProps> &
   RefAttributes<BlockHandleAddElement> &
   HTMLAttributes<BlockHandleAddElement>
 > = createComponent<
-  BlockHandleAddProps, 
+  BlockHandleAddProps,
   BlockHandleAddElement
 >(
   'prosekit-block-handle-add',

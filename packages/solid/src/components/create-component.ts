@@ -2,8 +2,8 @@ import type { AnyFunction } from '@prosekit/core'
 import type { Component } from 'solid-js'
 import h from 'solid-js/h'
 
-import { useEditorContext } from '../contexts/editor-context'
-import type { PropsWithElement } from '../types'
+import { useEditorContext } from '../contexts/editor-context.ts'
+import type { PropsWithElement } from '../types.ts'
 
 export function createComponent<
   Props extends object,

@@ -1,8 +1,8 @@
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import { findParentNodeOfType } from '../utils/find-parent-node-of-type'
-import { getNodeTypes } from '../utils/get-node-types'
+import { findParentNodeOfType } from '../utils/find-parent-node-of-type.ts'
+import { getNodeTypes } from '../utils/get-node-types.ts'
 
 /**
  * @public

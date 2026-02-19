@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { insertText } from '../commands/insert-text'
-import { wrap } from '../commands/wrap'
-import { defineTestExtension, setupTest } from '../testing'
-import type { NodeJSON } from '../types/model'
+import { insertText } from '../commands/insert-text.ts'
+import { wrap } from '../commands/wrap.ts'
+import { defineTestExtension, setupTest } from '../testing/index.ts'
+import type { NodeJSON } from '../types/model.ts'
 
-import { createEditor } from './editor'
+import { createEditor } from './editor.ts'
 
 describe('createEditor', () => {
   it('can mount the editor', () => {

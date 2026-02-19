@@ -1,12 +1,12 @@
 import { isNotNullish } from '@ocavue/utils'
 
-import { Priority } from '../types/priority'
-import { arraySubtract, uniqPush } from '../utils/array'
-import { assert } from '../utils/assert'
+import { Priority } from '../types/priority.ts'
+import { arraySubtract, uniqPush } from '../utils/array.ts'
+import { assert } from '../utils/assert.ts'
 
-import type { Facet } from './facet'
-import type { FacetReducer, Tuple5 } from './facet-types'
-import type { RootOutput } from './root'
+import type { FacetReducer, Tuple5 } from './facet-types.ts'
+import type { Facet } from './facet.ts'
+import type { RootOutput } from './root.ts'
 
 function zip5<T>(
   a: Tuple5<T>,

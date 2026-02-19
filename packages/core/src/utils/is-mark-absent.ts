@@ -1,6 +1,6 @@
 import type { Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
 
-import { includesMark } from './includes-mark'
+import { includesMark } from './includes-mark.ts'
 
 /**
  * Returns true if the given mark is missing in some part of the range.

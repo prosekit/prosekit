@@ -1,9 +1,9 @@
 import { describe, expect, test } from 'vitest'
 
-import { createEditor } from '../editor/editor'
-import { defineTestExtension } from '../testing'
+import { createEditor } from '../editor/editor.ts'
+import { defineTestExtension } from '../testing/index.ts'
 
-import { elementFromHTML, htmlFromNode, nodeFromElement, nodeFromHTML } from './parse'
+import { elementFromHTML, htmlFromNode, nodeFromElement, nodeFromHTML } from './parse.ts'
 
 describe('parse', () => {
   const extension = defineTestExtension()

@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { groupEntries } from './array-grouping'
+import { groupEntries } from './array-grouping.ts'
 
 test('groupEntries', () => {
   expect(

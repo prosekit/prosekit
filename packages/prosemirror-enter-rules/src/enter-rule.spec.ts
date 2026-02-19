@@ -3,7 +3,7 @@ import { EditorState, TextSelection } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { describe, expect, it, vi } from 'vitest'
 
-import { createEnterRulePlugin, createTextBlockEnterRule, type EnterRule, type EnterRuleHandler } from './enter-rule'
+import { createEnterRulePlugin, createTextBlockEnterRule, type EnterRule, type EnterRuleHandler } from './enter-rule.ts'
 
 const schema = new Schema({
   nodes: {

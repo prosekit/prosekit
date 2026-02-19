@@ -2,9 +2,9 @@ import type { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
 import { createElement, type ComponentType, type ReactNode } from 'react'
 
-import { EditorContextProvider } from '../contexts/editor-context'
-import { ReactMarkViewConsumer } from '../extensions/react-mark-view'
-import { ReactNodeViewConsumer } from '../extensions/react-node-view'
+import { EditorContextProvider } from '../contexts/editor-context.ts'
+import { ReactMarkViewConsumer } from '../extensions/react-mark-view.ts'
+import { ReactNodeViewConsumer } from '../extensions/react-node-view.ts'
 
 export interface ProseKitProps {
   editor: Editor

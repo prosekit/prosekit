@@ -4,7 +4,7 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { defineComponent } from 'vue'
 
-import { useExtension } from './use-extension'
+import { useExtension } from './use-extension.ts'
 
 function defineText() {
   return defineNodeSpec({ name: 'text', topNode: true })

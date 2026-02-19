@@ -29,6 +29,9 @@ catalogs:
       version: 4.0.18
 
 patchedDependencies:
+  loro-prosemirror:
+    hash: ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d
+    path: patches/loro-prosemirror.patch
   y-prosemirror:
     hash: 532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031
     path: patches/y-prosemirror.patch
@@ -110,6 +113,9 @@ importers:
         specifier: workspace:^
         version: link:../pm
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -134,6 +140,12 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 4.0.18(@types/node@24.10.13)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(happy-dom@20.6.1)(jiti@2.6.1)(jsdom@28.1.0)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2)
+
+  packages/config-ts:
+    devDependencies:
+      '@ocavue/tsconfig':
+        specifier: ^0.6.3
+        version: 0.6.3
 
   packages/config-tsdown:
     devDependencies:
@@ -187,6 +199,9 @@ importers:
         specifier: ^5.4.4
         version: 5.4.4
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -294,6 +309,9 @@ importers:
         specifier: ^3.22.0
         version: 3.22.0
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -314,7 +332,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -364,6 +382,9 @@ importers:
         specifier: workspace:^
         version: link:../web
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -404,6 +425,9 @@ importers:
         specifier: ^1.41.6
         version: 1.41.6
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -435,6 +459,9 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1(preact@10.28.3)
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -507,7 +534,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       preact:
         specifier: ^10.28.3
         version: 10.28.3
@@ -572,6 +599,9 @@ importers:
         specifier: ^1.41.6
         version: 1.41.6
     devDependencies:
+      '@ocavue/tsconfig':
+        specifier: ^0.6.3
+        version: 0.6.3
       jsdom:
         specifier: ^28.1.0
         version: 28.1.0
@@ -609,6 +639,9 @@ importers:
       '@mathjax/src':
         specifier: ^4.1.0
         version: 4.1.0
+      '@ocavue/tsconfig':
+        specifier: ^0.6.3
+        version: 0.6.3
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
@@ -655,6 +688,9 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -698,6 +734,9 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(solid-js@1.9.11)
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -732,6 +771,9 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0(svelte@5.51.2)
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@sveltejs/package':
         specifier: ^2.5.7
         version: 2.5.7(svelte@5.51.2)(typescript@5.9.3)
@@ -810,6 +852,9 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(vue@3.5.28(typescript@5.9.3))
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -880,6 +925,9 @@ importers:
         specifier: ^1.8.5
         version: 1.8.5
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
@@ -909,7 +957,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       obug:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1189,7 +1237,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       preact:
         specifier: ^10.28.3
         version: 10.28.3
@@ -12930,7 +12978,7 @@ snapshots:
 
   loro-crdt@1.10.6: {}
 
-  loro-prosemirror@0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6):
+  loro-prosemirror@0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6):
     dependencies:
       lib0: 0.2.117
       loro-crdt: 1.10.6

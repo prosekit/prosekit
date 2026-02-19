@@ -1,7 +1,7 @@
 import { union, type Extension } from '@prosekit/core'
 import { listInputRules } from 'prosemirror-flat-list'
 
-import { defineInputRule } from '../input-rule'
+import { defineInputRule } from '../input-rule/index.ts'
 
 /**
  * @internal

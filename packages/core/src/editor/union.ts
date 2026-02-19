@@ -1,7 +1,7 @@
-import type { BaseExtension } from '../facets/base-extension'
-import { UnionExtensionImpl } from '../facets/union-extension'
-import type { Extension, Union } from '../types/extension'
-import { assert } from '../utils/assert'
+import type { BaseExtension } from '../facets/base-extension.ts'
+import { UnionExtensionImpl } from '../facets/union-extension.ts'
+import type { Extension, Union } from '../types/extension.ts'
+import { assert } from '../utils/assert.ts'
 
 /**
  * Merges multiple extensions into one. You can pass multiple extensions as

@@ -2,12 +2,12 @@ import { isNotNullish } from '@ocavue/utils'
 import { DOMSerializer, type DOMOutputSpec, type Mark, type ProseMirrorNode, type Schema } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
-import { defineFacet } from '../facets/facet'
-import { defineFacetPayload } from '../facets/facet-extension'
-import type { AnyFunction } from '../types/any-function'
-import type { PlainExtension } from '../types/extension'
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { defineFacet } from '../facets/facet.ts'
+import type { AnyFunction } from '../types/any-function.ts'
+import type { PlainExtension } from '../types/extension.ts'
 
-import { pluginFacet, type PluginPayload } from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin.ts'
 
 type SerializeFragmentFunction = typeof DOMSerializer.prototype.serializeFragment
 type SerializeNodeFunction = typeof DOMSerializer.prototype.serializeNode

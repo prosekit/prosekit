@@ -12,13 +12,13 @@ import {
 } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
 
-import { defineEnterRule } from '../enter-rule'
-import { defineInputRule } from '../input-rule'
-import { defineMarkRule } from '../mark-rule'
+import { defineEnterRule } from '../enter-rule/index.ts'
+import { defineInputRule } from '../input-rule/index.ts'
+import { defineMarkRule } from '../mark-rule/index.ts'
 
-import { defineLinkPasteRule } from './link-paste-rule'
-import { LINK_ENTER_RE, LINK_INPUT_RE, LINK_MARK_RE } from './link-regex'
-import type { LinkAttrs } from './link-types'
+import { defineLinkPasteRule } from './link-paste-rule.ts'
+import { LINK_ENTER_RE, LINK_INPUT_RE, LINK_MARK_RE } from './link-regex.ts'
+import type { LinkAttrs } from './link-types.ts'
 
 export { defineLinkPasteRule }
 export type { LinkAttrs }

@@ -10,6 +10,7 @@
     "${configDir}/src/**/*.spec.*",
     "${configDir}/src/**/*.test.*",
     "${configDir}/src/**/testing/**/*",
-    "${configDir}/test/"
+    "${configDir}/test/",
+    "${configDir}/scripts/"
   ]
 }

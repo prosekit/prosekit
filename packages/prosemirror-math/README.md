@@ -91,29 +91,7 @@ const plugin = createCursorInsidePlugin()
 
 ## API
 
-### Node specs
-
-- **`mathBlockSpec`** — NodeSpec for block math (`div.prosemirror-math-block > pre > code`)
-- **`mathInlineSpec`** — NodeSpec for inline math (`span.prosemirror-math-inline > code`)
-
-### Node views
-
-- **`createMathBlockView(renderMath, node, decorations)`** — Creates a block math NodeView
-- **`createMathInlineView(renderMath, node, decorations)`** — Creates an inline math NodeView
-
-The `renderMath` callback receives `(text: string, element: HTMLElement)` and should render the math into the element.
-
-### Input rules
-
-- **`createMathInlineInputRule(nodeType)`** — Creates an InputRule for inline math
-
-### Enter rules
-
-- **`mathBlockEnterRule`** — EnterRule for converting `$$` into a math block
-
-### Plugins
-
-- **`createCursorInsidePlugin()`** — Plugin that decorates math nodes containing the cursor
+[API Reference](https://npmx.dev/package-docs/prosemirror-math)
 
 ## License
 

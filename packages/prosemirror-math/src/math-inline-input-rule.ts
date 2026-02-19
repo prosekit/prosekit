@@ -19,6 +19,14 @@ export const MATH_INPUT_REGEXP: string = (
   + '$'
 )
 
+/**
+ * Creates a ProseMirror {@link InputRule} that converts text wrapped in `$` or
+ * `$$` (e.g. `$x^2$`) into an inline math node.
+ *
+ * @param nodeType - The name of the inline math node type in your schema.
+ *
+ * @public
+ */
 export function createMathInlineInputRule(
   nodeType: string,
 ): InputRule {

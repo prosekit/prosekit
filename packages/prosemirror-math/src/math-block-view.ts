@@ -12,13 +12,25 @@ import { createMathViewRender } from './math-view-render.ts'
  */
 export type RenderMathBlock = (text: string, element: HTMLElement) => void
 
+/**
+ * Creates a {@link NodeView} for a block-level math node. The view will show a
+ * source editor or a rendered display area based on the text cursor position.
+ *
+ * @param renderMathBlock - A function that renders math text (e.g. TeX) into
+ * the display element. You can use libraries like
+ * [Temml](https://temml.org/) or [KaTeX](https://katex.org/).
+ * @param node - The ProseMirror node to render.
+ * @param decorations - The decorations applied to the node.
+ *
+ * @public
+ */
 export function createMathBlockView(renderMathBlock: RenderMathBlock, node: ProseMirrorNode, decorations: readonly Decoration[]): NodeView {
   const code = createElement('code')
   const source = createElement('pre', 'prosemirror-math-source', code)
   const display = createElement('div', 'prosemirror-math-display')
   const dom = createElement('div', 'prosemirror-math-block', source, display)
 
-  const render = createMathViewRender(renderMathBlock, source, display)
+  const render = createMathViewRender(renderMathBlock, source, display, false)
 
   render(node, decorations)
 

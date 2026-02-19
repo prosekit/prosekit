@@ -29,6 +29,9 @@ catalogs:
       version: 4.0.18
 
 patchedDependencies:
+  loro-prosemirror:
+    hash: ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d
+    path: patches/loro-prosemirror.patch
   y-prosemirror:
     hash: 532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031
     path: patches/y-prosemirror.patch
@@ -329,7 +332,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -531,7 +534,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       preact:
         specifier: ^10.28.3
         version: 10.28.3
@@ -954,7 +957,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       obug:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1234,7 +1237,7 @@ importers:
         version: 1.10.6
       loro-prosemirror:
         specifier: ^0.4.2
-        version: 0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
+        version: 0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)
       preact:
         specifier: ^10.28.3
         version: 10.28.3
@@ -12975,7 +12978,7 @@ snapshots:
 
   loro-crdt@1.10.6: {}
 
-  loro-prosemirror@0.4.2(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6):
+  loro-prosemirror@0.4.2(patch_hash=ddffeea2226be81e44b0616585fa158879852300bada4dec956e835a0c88064d)(loro-crdt@1.10.6)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6):
     dependencies:
       lib0: 0.2.117
       loro-crdt: 1.10.6

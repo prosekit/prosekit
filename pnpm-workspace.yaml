@@ -33,6 +33,7 @@ minimumReleaseAgeExclude:
 overrides: {}
 
 patchedDependencies:
+  loro-prosemirror: patches/loro-prosemirror.patch
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true

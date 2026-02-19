@@ -54,13 +54,11 @@ testStory('temml', () => {
     const mathBlockSource = mathBlock.locate('.prosemirror-math-source')
     const mathBlockDisplay = mathBlock.locate('.prosemirror-math-display')
 
-    await vi.waitFor(() => {
-      // Initially, no math node is focused — source is hidden, display is shown.
-      expect(mathInlineSource).not.toBeVisible()
-      expect(mathInlineDisplay).toBeVisible()
-      expect(mathBlockSource).not.toBeVisible()
-      expect(mathBlockDisplay).toBeVisible()
-    }, { timeout: 4000 })
+    // Initially, no math node is focused — source is hidden, display is shown.
+    await expect.element(mathInlineSource).not.toBeVisible()
+    await expect.element(mathInlineDisplay).toBeVisible()
+    await expect.element(mathBlockSource).not.toBeVisible()
+    await expect.element(mathBlockDisplay).toBeVisible()
 
     await vi.waitFor(async () => {
       // Click the block math display to focus it.

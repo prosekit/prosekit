@@ -1,5 +1,10 @@
 import type { NodeSpec } from 'prosemirror-model'
 
+/**
+ * A {@link NodeSpec} for a block-level math node.
+ *
+ * @public
+ */
 export const mathBlockSpec: NodeSpec = {
   atom: false,
   group: 'block math',

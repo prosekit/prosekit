@@ -13,6 +13,13 @@ import { createLazyParser } from './shiki-parser'
  */
 export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'themes' | 'langs' | 'engine'> {
   /**
+   * ProseMirror node types to highlight.
+   *
+   * @default ['codeBlock', 'mathBlock']
+   */
+  nodeTypes?: string[]
+
+  /**
    * A list of Shiki themes to pre-load. The first theme in the list will be
    * used to render the code block.
    *
@@ -46,10 +53,11 @@ export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'th
  * @public
  */
 export function defineCodeBlockShiki({
+  nodeTypes,
   themes = ['one-dark-pro'],
   langs = ['text'],
   ...rest
 }: CodeBlockShikiOptions = {}): Extension {
   const parser = createLazyParser({ themes, langs, ...rest })
-  return defineCodeBlockHighlight({ parser })
+  return defineCodeBlockHighlight({ parser, nodeTypes })
 }

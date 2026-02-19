@@ -2,12 +2,12 @@ import { defineKeymap, isApple, type Keymap, type PlainExtension } from '@prosek
 import { redo, undo } from 'loro-prosemirror'
 
 const keymap: Keymap = {
-  'Mod-z': undo as unknown as Keymap[string],
-  'Mod-Z': redo as unknown as Keymap[string],
+  'Mod-z': undo,
+  'Mod-Z': redo,
 }
 
 if (!isApple) {
-  keymap['Mod-y'] = redo as unknown as Keymap[string]
+  keymap['Mod-y'] = redo
 }
 
 export function defineLoroKeymap(): PlainExtension {

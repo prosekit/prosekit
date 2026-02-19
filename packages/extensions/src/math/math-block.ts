@@ -20,10 +20,10 @@ export function defineMathBlockSpec(): MathBlockSpecExtension {
   return defineNodeSpec<'mathBlock', Attrs>({
     ...mathBlockSpec,
     attrs: {
-      // The language in the `mathBlock` node, usually for syntax highlighting.
-      // This library doesn't focus using TeX language in a `mathBlock` node but
-      // this is the most common language used for math blocks in rich text
-      // editors so 'tex' is set as the default value.
+      // The language in the `mathBlock` node, useful for syntax highlighting.
+      // This library doesn't focus on using the TeX language in a `mathBlock` node,
+      // but this is the most common language used for math blocks in rich text
+      // editors, so 'tex' is set as the default value.
       language: { default: 'tex', validate: 'string' },
     },
     name: 'mathBlock',

@@ -57,8 +57,8 @@ class CustomDOMSerializer extends DOMSerializer {
   }
 }
 
-const nodesFromSchema: NodesFromSchemaFunction = (...args) => DOMSerializer.nodesFromSchema(...args)
-const marksFromSchema: MarksFromSchemaFunction = (...args) => DOMSerializer.marksFromSchema(...args)
+const nodesFromSchema = /* @__PURE__ */ DOMSerializer.nodesFromSchema.bind(DOMSerializer)
+const marksFromSchema = /* @__PURE__ */ DOMSerializer.marksFromSchema.bind(DOMSerializer)
 
 function createCustomDOMSerializer(schema: Schema, options: ClipboardSerializerOptions) {
   const nodes = wrapFunction(nodesFromSchema, options.nodesFromSchemaWrapper)(schema)

@@ -47,7 +47,7 @@
     "jsdom": "^28.1.0",
     "just-memoize": "^2.2.0",
     "loro-crdt": "^1.10.6",
-    "loro-prosemirror": "^0.4.2",
+    "loro-prosemirror": "^0.4.3",
     "preact": "^10.28.3",
     "prosekit": "workspace:*",
     "prosekit-registry": "workspace:*",

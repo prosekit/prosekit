@@ -23,7 +23,7 @@ ignoredBuiltDependencies:
   - sharp
   - workerd
 
-minimumReleaseAge: 1440 # 24 hours
+minimumReleaseAge: 600 # 10 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
@@ -33,7 +33,6 @@ minimumReleaseAgeExclude:
 overrides: {}
 
 patchedDependencies:
-  loro-prosemirror: patches/loro-prosemirror.patch
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true

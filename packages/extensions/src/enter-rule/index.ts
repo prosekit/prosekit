@@ -5,7 +5,7 @@ import {
   type EnterRule,
   type EnterRuleHandler,
   type EnterRuleHandlerOptions,
-  type TextBlockEnterRuleOptions as _TextBlockEnterRuleOptions,
+  type TextBlockEnterRuleOptions as TextBlockEnterRuleOptionsBase,
 } from 'prosemirror-enter-rules'
 
 export type { EnterRuleHandler, EnterRuleHandlerOptions }
@@ -15,14 +15,14 @@ export type { EnterRuleHandler, EnterRuleHandlerOptions }
  *
  * @public
  */
-export type EnterRuleOptions = EnterRule
+export interface EnterRuleOptions extends EnterRule {}
 
 /**
  * Options for {@link defineTextBlockEnterRule}.
  *
  * @public
  */
-export type TextBlockEnterRuleOptions = _TextBlockEnterRuleOptions
+export interface TextBlockEnterRuleOptions extends TextBlockEnterRuleOptionsBase {}
 
 /**
  * Defines an enter rule. An enter rule applies when the text directly in front of

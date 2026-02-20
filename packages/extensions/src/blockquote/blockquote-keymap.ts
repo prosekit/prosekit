@@ -6,14 +6,16 @@ function toggleBlockquoteKeybinding(): Command {
   return toggleWrap({ type: 'blockquote' })
 }
 
-function backspaceUnsetBlockquote(): Command {
-  return (state, dispatch, view) => {
-    const $pos = isAtBlockStart(state, view)
-    if ($pos?.node(-1).type.name === 'blockquote') {
-      return joinBackward(state, dispatch, view)
-    }
-    return false
+const backspaceUnsetBlockquoteCommand: Command = (state, dispatch, view): boolean => {
+  const $pos = isAtBlockStart(state, view)
+  if ($pos?.node(-1).type.name === 'blockquote') {
+    return joinBackward(state, dispatch, view)
   }
+  return false
+}
+
+function backspaceUnsetBlockquote(): Command {
+  return backspaceUnsetBlockquoteCommand
 }
 /**
  * @internal

@@ -45,19 +45,22 @@ class CustomDOMSerializer extends DOMSerializer {
   }
 
   override serializeFragment(...args: Parameters<SerializeFragmentFunction>): ReturnType<SerializeFragmentFunction> {
+    // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
     const fn: SerializeFragmentFunction = (...args) => super.serializeFragment(...args)
     return wrapFunction(fn, this.serializeFragmentWrapper)(...args)
   }
 
   override serializeNode(...args: Parameters<SerializeNodeFunction>): ReturnType<SerializeNodeFunction> {
+    // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
     const fn: SerializeNodeFunction = (...args) => super.serializeNode(...args)
     return wrapFunction(fn, this.serializeNodeWrapper)(...args)
   }
 }
 
+const nodesFromSchema = /* @__PURE__ */ DOMSerializer.nodesFromSchema.bind(DOMSerializer)
+const marksFromSchema = /* @__PURE__ */ DOMSerializer.marksFromSchema.bind(DOMSerializer)
+
 function createCustomDOMSerializer(schema: Schema, options: ClipboardSerializerOptions) {
-  const nodesFromSchema: NodesFromSchemaFunction = (...args) => DOMSerializer.nodesFromSchema(...args)
-  const marksFromSchema: MarksFromSchemaFunction = (...args) => DOMSerializer.marksFromSchema(...args)
   const nodes = wrapFunction(nodesFromSchema, options.nodesFromSchemaWrapper)(schema)
   const marks = wrapFunction(marksFromSchema, options.marksFromSchemaWrapper)(schema)
   return new CustomDOMSerializer(nodes, marks, options.serializeFragmentWrapper, options.serializeNodeWrapper)

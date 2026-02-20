@@ -12,6 +12,8 @@ import { computed, defineComponent, h, type DefineComponent } from 'vue'
 
 import { useExtension } from '../hooks/use-extension.ts'
 
+import { renderNothing } from './helpers.ts'
+
 /**
  * @public
  */
@@ -55,7 +57,7 @@ export const VueNodeViewsConsumer: DefineComponent = /* @__PURE__ */ defineCompo
       return defineVueNodeViewFactory(nodeViewFactory)
     })
     useExtension(extension)
-    return (): null => null
+    return renderNothing
   },
 })
 

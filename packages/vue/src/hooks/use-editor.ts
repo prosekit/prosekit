@@ -29,8 +29,8 @@ export function useEditor<E extends Extension = any>(options?: {
   const editorRef = shallowRef<Editor<E>>(editor)
 
   if (update) {
+    const forceUpdate = () => triggerRef(editorRef)
     onMounted(() => {
-      const forceUpdate = () => triggerRef(editorRef)
       const extension = union(
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),

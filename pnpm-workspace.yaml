@@ -5,10 +5,10 @@ packages:
 
 catalog:
   "@types/node": "^24.10.13"
-  "@vitest/browser-playwright": "^4.0.18"
-  "@vitest/coverage-v8": "^4.0.18"
-  "@vitest/ui": "^4.0.18"
-  vitest: "^4.0.18"
+  "@vitest/browser-playwright": "^4.1.0-beta.4"
+  "@vitest/coverage-v8": "^4.1.0-beta.4"
+  "@vitest/ui": "^4.1.0-beta.4"
+  vitest: "^4.1.0-beta.4"
   tsdown: "^0.20.3"
   typescript: "~5.9.3"
 
@@ -23,7 +23,7 @@ ignoredBuiltDependencies:
   - sharp
   - workerd
 
-minimumReleaseAge: 1440 # 24 hours
+minimumReleaseAge: 600 # 10 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
@@ -33,7 +33,6 @@ minimumReleaseAgeExclude:
 overrides: {}
 
 patchedDependencies:
-  loro-prosemirror: patches/loro-prosemirror.patch
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true

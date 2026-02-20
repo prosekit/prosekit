@@ -128,7 +128,7 @@
     "just-pick": "^4.2.0",
     "katex": "^0.16.28",
     "loro-crdt": "^1.10.6",
-    "loro-prosemirror": "^0.4.2",
+    "loro-prosemirror": "^0.4.3",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-gfm": "^4.0.1",

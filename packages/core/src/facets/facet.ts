@@ -1,4 +1,4 @@
-import { assert } from '../utils/assert.ts'
+import { ProseKitError } from '../error.ts'
 
 import type { FacetReducer } from './facet-types.ts'
 
@@ -27,17 +27,24 @@ export class Facet<Input, Output> {
    */
   readonly path: number[]
 
+  private reduce: () => FacetReducer<Input, Output>
+
   /**
    * @internal
    */
   constructor(
     parent: Facet<Output, any> | null,
     singleton: boolean,
-    private _reducer?: FacetReducer<Input, Output> | undefined,
-    private _reduce?: () => FacetReducer<Input, Output>,
+    reducer?: FacetReducer<Input, Output>,
+    reduce?: () => FacetReducer<Input, Output>,
   ) {
-    // Only one of _reducer or _reduce can be defined
-    assert((_reduce || _reducer) && !(_reduce && _reducer))
+    if (reduce && !reducer) {
+      this.reduce = reduce
+    } else if (reducer && !reduce) {
+      this.reduce = () => reducer
+    } else {
+      throw new ProseKitError('Incorrect reducer')
+    }
 
     this.parent = parent
     this.singleton = singleton
@@ -45,7 +52,7 @@ export class Facet<Input, Output> {
   }
 
   get reducer(): FacetReducer<Input, Output> {
-    return (this._reducer ?? this._reduce?.())!
+    return this.reduce()
   }
 }
 

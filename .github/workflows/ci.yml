@@ -9,6 +9,7 @@ on:
 
 jobs:
   lint:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +21,7 @@ jobs:
         run: pnpm run lint
 
   typecheck:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +33,7 @@ jobs:
         run: pnpm run typecheck
 
   test:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     strategy:
@@ -50,6 +53,7 @@ jobs:
         run: pnpm run test --shard=${{ matrix.shard }}/8
 
   test-e2e:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -67,6 +71,7 @@ jobs:
         run: pnpm run test:e2e
 
   build:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -83,6 +88,7 @@ jobs:
         run: pnpm run build
 
   publish-snapshot:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     needs: [build]
@@ -117,6 +123,7 @@ jobs:
           done
 
   linkcheck:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     needs: [build]
@@ -154,6 +161,7 @@ jobs:
           failIfEmpty: true
 
   deploy:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     needs: [build]

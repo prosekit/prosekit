@@ -162,6 +162,90 @@ export const sampleContent: NodeJSON = {
       content: [
         {
           type: 'text',
+          text: 'Headings',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 1,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Heading 1',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 2,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Heading 2',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 3,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Heading 3',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 4,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Heading 4',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 5,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Heading 5',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 6,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Heading 6',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 2,
+      },
+      content: [
+        {
+          type: 'text',
           text: 'Lists',
         },
       ],

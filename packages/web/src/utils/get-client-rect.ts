@@ -50,6 +50,7 @@ function addMargins(element: Element, rect: Rect, options: IncludeMarginsOptions
     return rect
   }
 
+  // TODO [2026-02-22]: Dragging H1 elements have incorrect margins.
   const style = view.getComputedStyle(element)
   const marginTop = options.top ? Number.parseFloat(style.marginTop) || 0 : 0
   const marginBottom = options.bottom ? Number.parseFloat(style.marginBottom) || 0 : 0

@@ -271,7 +271,7 @@
     "loro-crdt": "^1.10.6",
     "loro-prosemirror": "^0.4.3",
     "obug": "^2.1.1",
-    "preact": "^10.28.3",
+    "preact": "^10.28.4",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-gfm": "^4.0.1",
@@ -279,7 +279,7 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.9.11",
-    "svelte": "^5.51.2",
+    "svelte": "^5.53.0",
     "unified": "^11.0.5",
     "vue": "^3.5.28",
     "y-websocket": "^3.0.0",
@@ -293,7 +293,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^5.1.1",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
@@ -315,9 +315,9 @@
     "react-parallax-tilt": "^1.7.319",
     "react-tweet": "^3.3.0",
     "shadcn-schema": "^0.2.0",
-    "svelte-check": "^4.4.0",
-    "tailwind-merge": "^3.4.1",
-    "tailwindcss": "^4.1.18",
+    "svelte-check": "^4.4.3",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.0",
     "temml": "^0.13.1",
     "tinyexec": "^1.0.2",
     "tsx": "^4.21.0",
@@ -332,6 +332,6 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.0.2",
     "vitest-browser-vue": "^2.0.2",
-    "vue-tsc": "^3.2.4"
+    "vue-tsc": "^3.2.5"
   }
 }

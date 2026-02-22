@@ -90,8 +90,8 @@
     "@prosekit/config-ts": "workspace:*",
     "@sveltejs/package": "^2.5.7",
     "@types/node": "catalog:",
-    "svelte": "^5.51.2",
-    "svelte-check": "^4.4.0",
+    "svelte": "^5.53.0",
+    "svelte-check": "^4.4.3",
     "tsx": "^4.21.0",
     "typescript": "catalog:"
   },

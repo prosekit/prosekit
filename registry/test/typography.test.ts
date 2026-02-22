@@ -27,8 +27,7 @@ testStory('typography', () => {
     await expect.element(editor.locate('blockquote')).toBeVisible()
 
     // Code block
-    await expect.element(editor.locate('pre')).toBeVisible()
-    await expect.element(page.getByText('function example()')).toBeVisible()
+    await expect.element(editor.locate('pre', { hasText: 'function example()' })).toBeVisible()
 
     // Horizontal rule
     await expect.element(editor.locate('hr')).toBeVisible()

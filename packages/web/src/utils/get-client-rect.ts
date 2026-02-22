@@ -13,7 +13,8 @@ interface IncludeMarginsOptions {
 }
 
 /**
- * Similar to `element.getBoundingClientRect`, but handles `display: contents` elements.
+ * Similar to `element.getBoundingClientRect`, but handles `display: contents` CSS
+ * property and optionally includes margins.
  */
 export function getClientRect(element: Element, includeMargins?: IncludeMarginsOptions): Rect {
   const rect = element.getBoundingClientRect()

@@ -186,14 +186,7 @@ function findOuterRect(node: Node): Rect | undefined {
     return
   }
 
-  const rect = getClientRect(node)
-  const style = node.ownerDocument.defaultView?.getComputedStyle(node)
-  const marginLeft = style && Number.parseInt(style.marginLeft, 10) || 0
-  const marginRight = style && Number.parseInt(style.marginRight, 10) || 0
-  const left = rect.left - marginLeft
-  const right = rect.right + marginRight
-
-  return { top: rect.top, bottom: rect.bottom, left, right }
+  return getClientRect(node, { left: true, right: true, top: false, bottom: false })
 }
 
 function findFirstLineRectInNode(node: Node): Rect | undefined {

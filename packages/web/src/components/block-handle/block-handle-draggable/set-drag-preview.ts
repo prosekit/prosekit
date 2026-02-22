@@ -1,7 +1,6 @@
+import { DRAGGING_CLASS_NAME } from '../../../constants.ts'
 import { assignStyles } from '../../../utils/assign-styles.ts'
-import { deepCloneElement } from '../../../utils/clone-element.ts'
 import { getClientRect } from '../../../utils/get-client-rect.ts'
-import { injectStyle } from '../../../utils/inject-style.ts'
 import { maxZIndex } from '../../../utils/max-z-index.ts'
 
 /**
@@ -16,7 +15,7 @@ import { maxZIndex } from '../../../utils/max-z-index.ts'
  * - Removes the container from the document body after the next frame.
  */
 export function setDragPreview(event: DragEvent, element: HTMLElement): void {
-  const { top, bottom, left, right } = getClientRect(element)
+  const { top, bottom, left, right } = getClientRect(element, { left: true, right: true, top: true, bottom: true })
   const width = right - left
   const height = bottom - top
   const elementX = left
@@ -27,6 +26,10 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   const document = element.ownerDocument
 
   const container = document.createElement('div')
+
+  // Add some class names so that all styles applied to
+  // given class names can also be applied to the drag preview.
+  container.classList.add('ProseMirror', DRAGGING_CLASS_NAME)
 
   // If outsideX is positive, the point is at the left side of the element.
   const outsideX = Math.round(elementX - clientX)
@@ -66,7 +69,7 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     height: `${height + borderY}px`,
   })
 
-  const [clonedElement, styleText] = deepCloneElement(element, true)
+  const clonedElement = element.cloneNode(true) as HTMLElement
 
   // A hardcoded opacity.
   clonedElement.style.setProperty('opacity', '0.5', 'important')
@@ -76,9 +79,8 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   // Hide the outline of the cloned element.
   clonedElement.style.setProperty('outline-color', 'transparent', 'important')
 
-  document.body.appendChild(container)
   container.appendChild(clonedElement)
-  injectStyle(container, styleText)
+  document.body.appendChild(container)
 
   event.dataTransfer?.setDragImage(container, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
 

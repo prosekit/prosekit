@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.18.3
+
+### Patch Changes
+
+- [`29196a1`](https://github.com/ocavue/prosekit/commit/29196a149cf2a67cbd6e5d90c14527959c368e11) ![](https://prosekit.dev/b/extensions)
+
+  `mathBlock` nodes now also receive syntax highlighting when you use the `defineCodeBlockShiki()` extension with its default configuration (where `nodeTypes` includes both `codeBlock` and `mathBlock`). If you want to keep highlighting only code blocks, pass `['codeBlock']` explicitly as `nodeTypes` to `defineCodeBlockShiki()`.
+
+- [`73e05c2`](https://github.com/ocavue/prosekit/commit/73e05c22becc79c5723fdce5b16218858e670883) ![](https://prosekit.dev/b/basic)
+
+  `prosekit/basic/typography.css` now has styles for `mathInline` nodes. When the text cursor is inside a `mathInline` node, the source code is shown with a `$` prefix and suffix.
+
+- [`7eec87b`](https://github.com/ocavue/prosekit/commit/7eec87bb2f8f8f3a93a20aeafaaf1616337fc28a) ![](https://prosekit.dev/b/extensions)
+
+  Fix a text cursor placement issue when navigating into a `mathInline` node using keyboard arrow keys.
+
 ## 0.18.2
 
 ### Patch Changes

@@ -14,9 +14,6 @@
       "path": "../pm/tsconfig.json",
     },
     {
-      "path": "../prosemirror-math/tsconfig.json",
-    },
-    {
       "path": "./tsconfig.build.json",
     },
   ],

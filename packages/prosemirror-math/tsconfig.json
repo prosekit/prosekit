@@ -12,8 +12,5 @@
     {
       "path": "../core/tsconfig.json",
     },
-    {
-      "path": "../prosemirror-enter-rules/tsconfig.json",
-    },
   ],
 }

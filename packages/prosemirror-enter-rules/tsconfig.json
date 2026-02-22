@@ -1,8 +1,0 @@
-{
-  "extends": "@ocavue/tsconfig/dom/app.json",
-  "compilerOptions": {
-    "composite": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-  },
-}

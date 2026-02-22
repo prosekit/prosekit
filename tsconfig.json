@@ -38,9 +38,6 @@
       "path": "./packages/prosekit/tsconfig.json",
     },
     {
-      "path": "./packages/prosemirror-enter-rules/tsconfig.json",
-    },
-    {
       "path": "./packages/prosemirror-math/tsconfig.json",
     },
     {

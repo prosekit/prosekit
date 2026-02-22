@@ -91,7 +91,7 @@
     "prosemirror-changeset": "^2.4.0",
     "prosemirror-drop-indicator": "^0.1.3",
     "prosemirror-dropcursor": "^1.8.2",
-    "prosemirror-enter-rules": "workspace:^",
+    "prosemirror-enter-rules": "^0.1.3",
     "prosemirror-flat-list": "^0.5.8",
     "prosemirror-gapcursor": "^1.4.0",
     "prosemirror-highlight": "^0.15.0",

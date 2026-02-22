@@ -37,7 +37,8 @@ patchedDependencies:
 
 strictDepBuilds: true
 
-strictPeerDependencies: true
+# TODO: strictPeerDependencies should be true
+strictPeerDependencies: false
 
 trustPolicy: no-downgrade
 

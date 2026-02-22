@@ -7,6 +7,8 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
 import { sampleContent } from '../../sample/sample-doc-typography'
+import { BlockHandle } from '../../ui/block-handle'
+import { DropIndicator } from '../../ui/drop-indicator'
 
 const props: {
   initialContent?: NodeJSON
@@ -21,6 +23,8 @@ const editor = createEditor({ extension, defaultContent })
   <div class="CSS_EDITOR_VIEWPORT">
     <div class="CSS_EDITOR_SCROLLING">
       <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
+      <BlockHandle />
+      <DropIndicator />
     </div>
   </div>
 </ProseKit>

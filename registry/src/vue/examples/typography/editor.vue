@@ -7,6 +7,8 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
 import { sampleContent } from '../../sample/sample-doc-typography'
+import { BlockHandle } from '../../ui/block-handle'
+import { DropIndicator } from '../../ui/drop-indicator'
 
 const props = defineProps<{
   initialContent?: NodeJSON
@@ -22,6 +24,8 @@ const editor = createEditor({ extension, defaultContent })
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
         <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />
+        <BlockHandle />
+        <DropIndicator />
       </div>
     </div>
   </ProseKit>

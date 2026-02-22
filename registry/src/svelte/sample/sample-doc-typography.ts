@@ -125,7 +125,7 @@ export const sampleContent: NodeJSON = {
         },
         {
           type: 'text',
-          text: ' and ',
+          text: ', ',
         },
         {
           type: 'text',
@@ -143,7 +143,14 @@ export const sampleContent: NodeJSON = {
         },
         {
           type: 'text',
-          text: '.',
+          text: ',',
+        },
+        {
+          type: 'hardBreak',
+        },
+        {
+          type: 'text',
+          text: 'and hard breaks (Shift+Enter).',
         },
       ],
     },

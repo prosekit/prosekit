@@ -1,14 +1,14 @@
 interface Rect {
   top: number
-  right: number
   bottom: number
+  right: number
   left: number
 }
 
 interface IncludeMarginsOptions {
   top?: boolean
-  right?: boolean
   bottom?: boolean
+  right?: boolean
   left?: boolean
 }
 
@@ -44,22 +44,22 @@ export function getClientRect(element: Element, includeMargins?: IncludeMarginsO
   return includeMargins ? addMargins(element, rect, includeMargins) : rect
 }
 
-function addMargins(element: Element, rect: Rect, includeMargins: IncludeMarginsOptions): Rect {
+function addMargins(element: Element, rect: Rect, options: IncludeMarginsOptions): Rect {
   const view = element.ownerDocument?.defaultView
   if (!view) {
     return rect
   }
 
   const style = view.getComputedStyle(element)
-  const marginTop = includeMargins.top ? Number.parseFloat(style.marginTop) || 0 : 0
-  const marginRight = includeMargins.right ? Number.parseFloat(style.marginRight) || 0 : 0
-  const marginBottom = includeMargins.bottom ? Number.parseFloat(style.marginBottom) || 0 : 0
-  const marginLeft = includeMargins.left ? Number.parseFloat(style.marginLeft) || 0 : 0
+  const marginTop = options.top ? Number.parseFloat(style.marginTop) || 0 : 0
+  const marginBottom = options.bottom ? Number.parseFloat(style.marginBottom) || 0 : 0
+  const marginRight = options.right ? Number.parseFloat(style.marginRight) || 0 : 0
+  const marginLeft = options.left ? Number.parseFloat(style.marginLeft) || 0 : 0
 
   return {
     top: rect.top - marginTop,
-    right: rect.right + marginRight,
     bottom: rect.bottom + marginBottom,
+    right: rect.right + marginRight,
     left: rect.left - marginLeft,
   }
 }

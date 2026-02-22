@@ -186,7 +186,7 @@ function findOuterRect(node: Node): Rect | undefined {
     return
   }
 
-  return getClientRect(node, { left: true, right: true, top: false, bottom: false })
+  return getClientRect(node, { left: true, right: true })
 }
 
 function findFirstLineRectInNode(node: Node): Rect | undefined {

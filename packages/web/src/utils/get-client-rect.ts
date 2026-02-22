@@ -6,17 +6,17 @@ interface Rect {
 }
 
 interface IncludeMarginsOptions {
-  top: boolean
-  right: boolean
-  bottom: boolean
-  left: boolean
+  top?: boolean
+  right?: boolean
+  bottom?: boolean
+  left?: boolean
 }
 
 /**
  * Similar to `element.getBoundingClientRect`, but handles `display: contents` CSS
  * property and optionally includes margins.
  */
-export function getClientRect(element: Element, includeMargins?: IncludeMarginsOptions): Rect {
+export function getClientRect(element: Element, includeMargins?: IncludeMarginsOptions | false): Rect {
   const rect = element.getBoundingClientRect()
   if (rect.width === 0 && rect.height === 0 && rect.x === 0 && rect.y === 0) {
     // Suspiciously rect, probably an element with `display: contents`, in
@@ -51,10 +51,10 @@ function addMargins(element: Element, rect: Rect, includeMargins: IncludeMargins
   }
 
   const style = view.getComputedStyle(element)
-  const marginTop = includeMargins?.top ? Number.parseFloat(style.marginTop) || 0 : 0
-  const marginRight = includeMargins?.right ? Number.parseFloat(style.marginRight) || 0 : 0
-  const marginBottom = includeMargins?.bottom ? Number.parseFloat(style.marginBottom) || 0 : 0
-  const marginLeft = includeMargins?.left ? Number.parseFloat(style.marginLeft) || 0 : 0
+  const marginTop = includeMargins.top ? Number.parseFloat(style.marginTop) || 0 : 0
+  const marginRight = includeMargins.right ? Number.parseFloat(style.marginRight) || 0 : 0
+  const marginBottom = includeMargins.bottom ? Number.parseFloat(style.marginBottom) || 0 : 0
+  const marginLeft = includeMargins.left ? Number.parseFloat(style.marginLeft) || 0 : 0
 
   return {
     top: rect.top - marginTop,

@@ -16,10 +16,10 @@ runs:
         echo "DO_NOT_TRACK=1" >> "${GITHUB_ENV}"
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v4
+      uses: pnpm/action-setup@v4.1.0
 
     - name: Setup node
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v6.1.0
       with:
         node-version: ${{ inputs.node-version }}
         cache: "pnpm"

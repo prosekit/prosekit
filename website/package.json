@@ -43,6 +43,7 @@
     "astro-rehype-relative-markdown-links": "^0.18.1",
     "astrobook": "^0.11.2",
     "babel-plugin-react-compiler": "^1.0.0",
+    "vite": "^6.0.0",
     "clsx": "^2.1.1",
     "jsdom": "^28.1.0",
     "just-memoize": "^2.2.0",

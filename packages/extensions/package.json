@@ -126,7 +126,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "diffable-html-snapshot": "^0.2.0",
     "just-pick": "^4.2.0",
-    "katex": "^0.16.28",
+    "katex": "^0.16.33",
     "loro-crdt": "^1.10.6",
     "loro-prosemirror": "^0.4.3",
     "rehype-parse": "^9.0.1",

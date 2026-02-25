@@ -12,13 +12,13 @@ jobs:
     name: Prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: ./.github/actions/setup
 
       - name: Create Release Pull Request
         id: changesets
-        uses: changesets/action@v1.6.0
+        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
         with:
           version: pnpm ci:version
           commit: "chore: version packages"
@@ -34,7 +34,7 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: ./.github/actions/setup
 
@@ -51,7 +51,7 @@ jobs:
           echo "PROSEKIT_RELEASE_TAG=v${PROSEKIT_VERSION}" >> "$GITHUB_ENV"
 
       - name: Create GitHub release
-        uses: ncipollo/release-action@v1.19.2
+        uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
         with:
           commit: master
           tag: "${{ env.PROSEKIT_RELEASE_TAG }}"

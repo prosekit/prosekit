@@ -3,17 +3,17 @@ packages:
   - registry
   - packages/*
 
-catalog:
-  "@types/node": "^24.10.13"
-  "@vitest/browser-playwright": "^4.1.0-beta.4"
-  "@vitest/coverage-v8": "^4.1.0-beta.4"
-  "@vitest/ui": "^4.1.0-beta.4"
-  vitest: "^4.1.0-beta.4"
-  tsdown: "^0.20.3"
-  typescript: "~5.9.3"
-
 allowedDeprecatedVersions:
   glob: "10"
+
+catalog:
+  "@types/node": "^24.10.13"
+  "@vitest/browser-playwright": "^4.0.18"
+  "@vitest/coverage-v8": "^4.0.18"
+  "@vitest/ui": "^4.0.18"
+  vitest: "^4.0.18"
+  tsdown: "^0.20.3"
+  typescript: "~5.9.3"
 
 ignoreWorkspaceRootCheck: true
 

@@ -2274,7 +2274,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/react-sample-katex.json",
+        "https://prosekit.dev/r/react-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/react-ui-block-handle.json",
+        "https://prosekit.dev/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2285,6 +2288,11 @@
           "path": "registry/src/react/examples/typography/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/react/examples/typography/index.ts",
@@ -2299,11 +2307,20 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/examples/typography/editor.tsx",
+          "registry/src/react/examples/typography/extension.ts",
           "registry/src/react/examples/typography/index.ts",
-          "registry/src/react/sample/sample-doc-typography.ts"
+          "registry/src/react/sample/katex.ts",
+          "registry/src/react/sample/sample-doc-typography.ts",
+          "registry/src/react/ui/block-handle/block-handle.tsx",
+          "registry/src/react/ui/block-handle/index.ts",
+          "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/react/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "react-sample-sample-doc-typography"
+          "react-sample-katex",
+          "react-sample-sample-doc-typography",
+          "react-ui-block-handle",
+          "react-ui-drop-indicator"
         ]
       }
     },
@@ -6276,7 +6293,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/preact-sample-katex.json",
+        "https://prosekit.dev/r/preact-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/preact-ui-block-handle.json",
+        "https://prosekit.dev/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
         "preact",
@@ -6287,6 +6307,11 @@
           "path": "registry/src/preact/examples/typography/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/preact/examples/typography/index.ts",
@@ -6301,11 +6326,20 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/examples/typography/editor.tsx",
+          "registry/src/preact/examples/typography/extension.ts",
           "registry/src/preact/examples/typography/index.ts",
-          "registry/src/preact/sample/sample-doc-typography.ts"
+          "registry/src/preact/sample/katex.ts",
+          "registry/src/preact/sample/sample-doc-typography.ts",
+          "registry/src/preact/ui/block-handle/block-handle.tsx",
+          "registry/src/preact/ui/block-handle/index.ts",
+          "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/preact/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "preact-sample-sample-doc-typography"
+          "preact-sample-katex",
+          "preact-sample-sample-doc-typography",
+          "preact-ui-block-handle",
+          "preact-ui-drop-indicator"
         ]
       }
     },
@@ -10196,7 +10230,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/vue-sample-katex.json",
+        "https://prosekit.dev/r/vue-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/vue-ui-block-handle.json",
+        "https://prosekit.dev/r/vue-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10206,6 +10243,11 @@
           "path": "registry/src/vue/examples/typography/editor.vue",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/vue/examples/typography/index.ts",
@@ -10220,11 +10262,20 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/examples/typography/editor.vue",
+          "registry/src/vue/examples/typography/extension.ts",
           "registry/src/vue/examples/typography/index.ts",
-          "registry/src/vue/sample/sample-doc-typography.ts"
+          "registry/src/vue/sample/katex.ts",
+          "registry/src/vue/sample/sample-doc-typography.ts",
+          "registry/src/vue/ui/block-handle/block-handle.vue",
+          "registry/src/vue/ui/block-handle/index.ts",
+          "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+          "registry/src/vue/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "vue-sample-sample-doc-typography"
+          "vue-sample-katex",
+          "vue-sample-sample-doc-typography",
+          "vue-ui-block-handle",
+          "vue-ui-drop-indicator"
         ]
       }
     },
@@ -14397,7 +14448,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/svelte-sample-katex.json",
+        "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/svelte-ui-block-handle.json",
+        "https://prosekit.dev/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14407,6 +14461,11 @@
           "path": "registry/src/svelte/examples/typography/editor.svelte",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/svelte/examples/typography/index.ts",
@@ -14421,11 +14480,20 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/examples/typography/editor.svelte",
+          "registry/src/svelte/examples/typography/extension.ts",
           "registry/src/svelte/examples/typography/index.ts",
-          "registry/src/svelte/sample/sample-doc-typography.ts"
+          "registry/src/svelte/sample/katex.ts",
+          "registry/src/svelte/sample/sample-doc-typography.ts",
+          "registry/src/svelte/ui/block-handle/block-handle.svelte",
+          "registry/src/svelte/ui/block-handle/index.ts",
+          "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+          "registry/src/svelte/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "svelte-sample-sample-doc-typography"
+          "svelte-sample-katex",
+          "svelte-sample-sample-doc-typography",
+          "svelte-ui-block-handle",
+          "svelte-ui-drop-indicator"
         ]
       }
     },
@@ -18309,7 +18377,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/solid-sample-katex.json",
+        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/solid-ui-block-handle.json",
+        "https://prosekit.dev/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit",
@@ -18320,6 +18391,11 @@
           "path": "registry/src/solid/examples/typography/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/solid/examples/typography/index.ts",
@@ -18334,11 +18410,20 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/examples/typography/editor.tsx",
+          "registry/src/solid/examples/typography/extension.ts",
           "registry/src/solid/examples/typography/index.ts",
-          "registry/src/solid/sample/sample-doc-typography.ts"
+          "registry/src/solid/sample/katex.ts",
+          "registry/src/solid/sample/sample-doc-typography.ts",
+          "registry/src/solid/ui/block-handle/block-handle.tsx",
+          "registry/src/solid/ui/block-handle/index.ts",
+          "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/solid/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "solid-sample-sample-doc-typography"
+          "solid-sample-katex",
+          "solid-sample-sample-doc-typography",
+          "solid-ui-block-handle",
+          "solid-ui-drop-indicator"
         ]
       }
     },

@@ -1,19 +1,29 @@
-/**
- * Similar to `element.getBoundingClientRect`, but handles `display: contents` elements.
- */
-export function getClientRect(element: Element): {
+interface Rect {
   top: number
-  right: number
   bottom: number
+  right: number
   left: number
-} {
+}
+
+interface IncludeMarginsOptions {
+  top?: boolean
+  bottom?: boolean
+  right?: boolean
+  left?: boolean
+}
+
+/**
+ * Similar to `element.getBoundingClientRect`, but handles `display: contents` CSS
+ * property and optionally includes margins.
+ */
+export function getClientRect(element: Element, includeMargins?: IncludeMarginsOptions | false): Rect {
   const rect = element.getBoundingClientRect()
   if (rect.width === 0 && rect.height === 0 && rect.x === 0 && rect.y === 0) {
     // Suspiciously rect, probably an element with `display: contents`, in
     // which case `element.getClientRects()` will return an empty array.
     if (element.getClientRects().length === 0) {
-      const children = Array.from(element.children)
-      const rects = children.map(child => getClientRect(child))
+      const children = [...element.children]
+      const rects = children.map(child => getClientRect(child, includeMargins))
       if (rects.length === 0) {
         return rect
       }
@@ -31,5 +41,26 @@ export function getClientRect(element: Element): {
       return { top, bottom, left, right }
     }
   }
-  return rect
+  return includeMargins ? addMargins(element, rect, includeMargins) : rect
+}
+
+function addMargins(element: Element, rect: Rect, options: IncludeMarginsOptions): Rect {
+  const view = element.ownerDocument?.defaultView
+  if (!view) {
+    return rect
+  }
+
+  // TODO [2026-02-22]: Dragging H1 elements have incorrect margins.
+  const style = view.getComputedStyle(element)
+  const marginTop = options.top ? Number.parseFloat(style.marginTop) || 0 : 0
+  const marginBottom = options.bottom ? Number.parseFloat(style.marginBottom) || 0 : 0
+  const marginRight = options.right ? Number.parseFloat(style.marginRight) || 0 : 0
+  const marginLeft = options.left ? Number.parseFloat(style.marginLeft) || 0 : 0
+
+  return {
+    top: rect.top - marginTop,
+    bottom: rect.bottom + marginBottom,
+    right: rect.right + marginRight,
+    left: rect.left - marginLeft,
+  }
 }

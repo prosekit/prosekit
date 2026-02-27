@@ -1,0 +1,50 @@
+import { useEditorContext } from '../contexts/editor-context.ts';
+// For unknown reason, Svelte v4 cannot set properties on a web component
+// when I directly use `{...$$props}`. It seems that Svelte v4 recognizes
+// the properties as attributes. Here is a workaround to set the properties
+// on the element manually and only let Svelte set the attributes.
+export function useComponent(propNames, eventNames) {
+    const hasEditor = propNames.includes('editor');
+    const lowerCaseEventNameMap = new Map(eventNames.map((name) => [name.toLowerCase(), name]));
+    const editorContext = useEditorContext();
+    function handleChange(element, $$props) {
+        const properties = {};
+        const attributes = {};
+        const eventHandlers = {};
+        for (const [name, value] of Object.entries($$props)) {
+            if (value === undefined || name.startsWith('$')) {
+                continue;
+            }
+            if (propNames.includes(name)) {
+                properties[name] = value;
+                continue;
+            }
+            if (name.startsWith('on')) {
+                const lowerCaseEventName = name.slice(2).toLowerCase();
+                const eventName = lowerCaseEventNameMap.get(lowerCaseEventName);
+                if (eventName) {
+                    const extractDetail = eventName.endsWith('Change');
+                    eventHandlers[eventName] = (event) => {
+                        const handler = value;
+                        if (typeof handler === 'function') {
+                            handler(extractDetail ? event.detail : event);
+                        }
+                    };
+                    continue;
+                }
+            }
+            attributes[name] = value;
+        }
+        if (hasEditor && !properties.editor && editorContext) {
+            properties.editor = editorContext;
+        }
+        if (element) {
+            for (const [key, value] of Object.entries(properties)) {
+                ;
+                element[key] = value;
+            }
+        }
+        return [attributes, eventHandlers];
+    }
+    return handleChange;
+}

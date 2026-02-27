@@ -1,0 +1,9 @@
+export { TableHandleColumnRoot } from './table-handle-column-root.gen.ts';
+export { TableHandleColumnTrigger } from './table-handle-column-trigger.gen.ts';
+export { TableHandleDragPreview } from './table-handle-drag-preview.gen.ts';
+export { TableHandleDropIndicator } from './table-handle-drop-indicator.gen.ts';
+export { TableHandlePopoverContent } from './table-handle-popover-content.gen.ts';
+export { TableHandlePopoverItem } from './table-handle-popover-item.gen.ts';
+export { TableHandleRoot } from './table-handle-root.gen.ts';
+export { TableHandleRowRoot } from './table-handle-row-root.gen.ts';
+export { TableHandleRowTrigger } from './table-handle-row-trigger.gen.ts';

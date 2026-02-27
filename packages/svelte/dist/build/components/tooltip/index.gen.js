@@ -1,3 +1,3 @@
-export { TooltipContent } from './tooltip-content.gen.ts';
-export { TooltipRoot } from './tooltip-root.gen.ts';
-export { TooltipTrigger } from './tooltip-trigger.gen.ts';
+export { TooltipContent } from "./tooltip-content.gen.js";
+export { TooltipRoot } from "./tooltip-root.gen.js";
+export { TooltipTrigger } from "./tooltip-trigger.gen.js";

@@ -1,5 +1,4 @@
-import { l as FileDropHandlerOptions, n as UploadTask, o as FilePasteHandlerOptions, r as Uploader } from "./file-upload-dr3IXUty.js";
-import "./prosekit-extensions-file.js";
+import { l as FileDropHandlerOptions, n as UploadTask, o as FilePasteHandlerOptions, r as Uploader } from "./index-DGb484yw.js";
 import { Command } from "@prosekit/pm/state";
 import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { EditorView } from "@prosekit/pm/view";

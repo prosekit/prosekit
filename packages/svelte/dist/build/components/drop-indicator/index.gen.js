@@ -1,1 +1,1 @@
-export { DropIndicator } from './drop-indicator.gen.ts';
+export { DropIndicator } from "./drop-indicator.gen.js";

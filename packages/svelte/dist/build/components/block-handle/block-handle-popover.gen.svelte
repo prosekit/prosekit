@@ -2,9 +2,9 @@
 import '@prosekit/web/block-handle'
 
 import { blockHandlePopoverProps, blockHandlePopoverEvents } from '@prosekit/web/block-handle'
-import { ClientUpdate } from '../client-update/index.ts'
-import { useComponent } from '../use-component.ts'
-import { useEventHandlers } from '../use-event-handlers.ts'
+import { ClientUpdate } from '../client-update/index.js'
+import { useComponent } from '../use-component.js'
+import { useEventHandlers } from '../use-event-handlers.js'
 
 let attributes: Record<string, unknown> = {}
 let eventHandlers: Record<string, (...args: any[]) => any> = {}

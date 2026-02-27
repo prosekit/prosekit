@@ -1,7 +1,7 @@
 import { EditorNotFoundError } from '@prosekit/core';
 import { queueExtension } from '@prosekit/web';
 import { onMount } from 'svelte';
-import { useEditorContext } from '../contexts/editor-context.ts';
+import { useEditorContext } from "../contexts/editor-context.js";
 /**
  * @internal
  */

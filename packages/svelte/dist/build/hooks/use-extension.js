@@ -1,5 +1,5 @@
-import { useEditorExtension } from './use-editor-extension.ts';
-import { usePriorityExtension } from './use-priority-extension.ts';
+import { useEditorExtension } from "./use-editor-extension.js";
+import { usePriorityExtension } from "./use-priority-extension.js";
 /**
  * Add an extension to the editor.
  */

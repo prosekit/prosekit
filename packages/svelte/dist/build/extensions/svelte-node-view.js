@@ -1,5 +1,5 @@
 import { defineNodeViewComponent, defineNodeViewFactory, definePlugin } from '@prosekit/core';
-import { NodeViewWrapper } from '../components/node-view-wrapper/index.ts';
+import { NodeViewWrapper } from "../components/node-view-wrapper/index.js";
 const isServer = typeof window === 'undefined';
 /**
  * Defines a node view using a Svelte component.

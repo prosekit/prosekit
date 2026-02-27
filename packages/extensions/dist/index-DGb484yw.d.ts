@@ -131,4 +131,4 @@ declare class UploadTask<Result> {
 }
 //#endregion
 export { FilePasteHandler as a, FileDropHandler as c, UploaderOptions as i, FileDropHandlerOptions as l, UploadTask as n, FilePasteHandlerOptions as o, Uploader as r, defineFilePasteHandler as s, UploadProgress as t, defineFileDropHandler as u };
-//# sourceMappingURL=file-upload-dr3IXUty.d.ts.map
+//# sourceMappingURL=index-DGb484yw.d.ts.map

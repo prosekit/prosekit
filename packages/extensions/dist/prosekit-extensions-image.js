@@ -1,4 +1,4 @@
-import { n as defineFilePasteHandler, r as defineFileDropHandler, t as UploadTask } from "./file-upload-I9m1EJAM.js";
+import { n as defineFilePasteHandler, r as defineFileDropHandler, t as UploadTask } from "./file-CSHGzwOS.js";
 import { ProseKitError, defineCommands, defineNodeSpec, insertNode, union } from "@prosekit/core";
 
 //#region src/image/image-commands/insert-image.ts

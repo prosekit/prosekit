@@ -3,5 +3,4 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig(config({
   cwd: import.meta.dirname,
-  inlineOnly: ['prosemirror-view'],
 }))

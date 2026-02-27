@@ -6293,7 +6293,6 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-katex.json",
         "https://prosekit.dev/r/preact-sample-sample-doc-typography.json",
         "https://prosekit.dev/r/preact-ui-block-handle.json",
         "https://prosekit.dev/r/preact-ui-drop-indicator.json"
@@ -6328,16 +6327,11 @@
           "registry/src/preact/examples/typography/editor.tsx",
           "registry/src/preact/examples/typography/extension.ts",
           "registry/src/preact/examples/typography/index.ts",
-          "registry/src/preact/sample/katex.ts",
-          "registry/src/preact/sample/sample-doc-typography.ts",
-          "registry/src/preact/ui/block-handle/block-handle.tsx",
           "registry/src/preact/ui/block-handle/index.ts",
           "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
           "registry/src/preact/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "preact-sample-katex",
-          "preact-sample-sample-doc-typography",
           "preact-ui-block-handle",
           "preact-ui-drop-indicator"
         ]

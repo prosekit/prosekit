@@ -35,6 +35,8 @@
     "src"
   ],
   "scripts": {
+    "dev": "sass --watch --no-source-map ./src/typography.scss ./src/typography.gen.css",
+    "build:sass": "sass --no-source-map ./src/typography.scss ./src/typography.gen.css",
     "build:tsc": "tsc -b tsconfig.json",
     "build:tsdown": "tsdown"
   },
@@ -50,6 +52,7 @@
     "@types/jsdom": "^28.0.0",
     "happy-dom": "^20.7.0",
     "jsdom": "^28.1.0",
+    "sass": "^1.97.3",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

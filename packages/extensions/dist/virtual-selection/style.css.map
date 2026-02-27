@@ -1,1 +1,0 @@
-{"version":3,"file":"style.css","names":[],"sources":["../../src/virtual-selection/style.css"],"sourcesContent":[".prosekit-virtual-selection {\n  border-radius: 2px;\n  background-color: #8888884d;\n  box-shadow: 0 0 0 2px #8888884d;\n}\n"],"mappings":"AAAA;AACA;AACA;AACA;AACA"}

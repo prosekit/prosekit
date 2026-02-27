@@ -1,1 +1,0 @@
-export * from './build/components/resizable/index.gen.js'

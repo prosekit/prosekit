@@ -40,4 +40,4 @@ function createOrGetHighlighter(options) {
 
 //#endregion
 export { createOrGetHighlighter };
-//# sourceMappingURL=shiki-highlighter-chunk.js.map
+//# sourceMappingURL=shiki-highlighter-chunk-DZtAQyWR.js.map

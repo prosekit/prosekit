@@ -1,7 +1,6 @@
-import { r as ShikiHighlighterOptions } from "./shiki-highlighter-chunk-DMFPCovq.js";
 import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { Parser } from "prosemirror-highlight";
-import { BundledLanguage as ShikiBundledLanguage, BundledLanguageInfo as ShikiBundledLanguageInfo, BundledTheme as ShikiBundledTheme, BundledThemeInfo as ShikiBundledThemeInfo, SpecialLanguage, bundledLanguagesInfo as shikiBundledLanguagesInfo, bundledThemesInfo as shikiBundledThemesInfo } from "shiki";
+import { BundledHighlighterOptions, BundledLanguage, BundledLanguage as ShikiBundledLanguage, BundledLanguageInfo as ShikiBundledLanguageInfo, BundledTheme, BundledTheme as ShikiBundledTheme, BundledThemeInfo as ShikiBundledThemeInfo, SpecialLanguage, bundledLanguagesInfo as shikiBundledLanguagesInfo, bundledThemesInfo as shikiBundledThemesInfo } from "shiki";
 
 //#region src/code-block/code-block-types.d.ts
 /**
@@ -88,6 +87,9 @@ declare function defineCodeBlockEnterRule(): PlainExtension;
  * Defines the keymap for code blocks.
  */
 declare function defineCodeBlockKeymap(): PlainExtension;
+//#endregion
+//#region src/code-block/shiki-highlighter-chunk.d.ts
+interface ShikiHighlighterOptions extends BundledHighlighterOptions<BundledLanguage, BundledTheme> {}
 //#endregion
 //#region src/code-block/code-block-shiki.d.ts
 /**

@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.18.3",
+  "version": "0.18.4",
   "private": false,
   "description": "ProseKit: A toolkit for building rich text editors.",
   "author": {

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.18.4
+
+### Patch Changes
+
+- [`c91074e`](https://github.com/ocavue/prosekit/commit/c91074e27b3608b3e3da0cfe36b65f32a99e472f) ![](https://prosekit.dev/b/svelte)
+
+  Fix relative imports in Svelte components.
+
 ## 0.18.3
 
 ### Patch Changes

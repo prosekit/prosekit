@@ -1,0 +1,3 @@
+import { _ as insertTable, a as defineTableSpec, c as defineTableCommands, d as selectTableColumn, f as selectTableCell, g as moveTableColumn, h as moveTableRow, i as defineTableRowSpec, l as selectTable, m as isCellSelection, n as defineTableCellSpec, o as defineTablePlugins, p as findTable, r as defineTableHeaderCellSpec, s as defineTableDropIndicator, t as defineTable, u as selectTableRow, v as exitTable } from "./table-B81i9oH9.js";
+
+export { defineTable, defineTableCellSpec, defineTableCommands, defineTableDropIndicator, defineTableHeaderCellSpec, defineTablePlugins, defineTableRowSpec, defineTableSpec, exitTable, findTable, insertTable, isCellSelection, moveTableColumn, moveTableRow, selectTable, selectTableCell, selectTableColumn, selectTableRow };

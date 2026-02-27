@@ -26,9 +26,11 @@ export function config(userConfig?: UserConfig): UserConfig {
     clean: false,
     failOnWarn: true,
     dts: { build: true, incremental: true, sourcemap: true },
-    // Bundling CSS files to remove the `@import` statements. This increases the
-    // compability of the output.
-    noExternal: [/\.css$/i],
+    deps: {
+      // Bundling CSS files to remove the `@import` statements. This increases the
+      // compability of the output.
+      alwaysBundle: [/\.css$/i],
+    },
     fixedExtension: false,
     target: [
       'es2023',

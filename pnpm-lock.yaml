@@ -129,7 +129,7 @@ importers:
         specifier: ^28.1.0
         version: 28.1.0
       sass:
-        specifier: ^1.97.3
+        specifier: ^1.97.2
         version: 1.97.3
       tsdown:
         specifier: 'catalog:'

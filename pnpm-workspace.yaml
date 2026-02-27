@@ -18,6 +18,7 @@ catalog:
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
+  - "@parcel/watcher"
   - dprint
   - esbuild
   - sharp

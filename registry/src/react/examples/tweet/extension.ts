@@ -9,7 +9,7 @@ function defineTweetSpec() {
       tweetId: { default: null },
     },
     parseDOM: [{
-      tag: 'iframe[src^="https://platform.twitter.com/embed/Tweet.html]',
+      tag: 'iframe[src^="https://platform.twitter.com/embed/Tweet.html"]',
       getAttrs: (node) => {
         const src = node.getAttribute('src')
         const match = src?.match(/id=([^&]+)/)

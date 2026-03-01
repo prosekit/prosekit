@@ -4,7 +4,7 @@ import { Tweet } from 'react-tweet'
 export function TweetView({ node }: ReactNodeViewProps) {
   const tweetId = node.attrs.tweetId as string
   return (
-    <div>
+    <div className="[&_img]:m-0!">
       <div>
         <strong>
           Rendered in React using library{' '}

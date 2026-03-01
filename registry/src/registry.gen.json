@@ -2214,7 +2214,6 @@
       "dependencies": [
         "prosekit",
         "react",
-        "react-parallax-tilt",
         "react-tweet"
       ],
       "files": [
@@ -2239,11 +2238,6 @@
           "target": "components/editor/examples/tweet/method-select.tsx"
         },
         {
-          "path": "registry/src/react/examples/tweet/tilt.tsx",
-          "type": "registry:component",
-          "target": "components/editor/examples/tweet/tilt.tsx"
-        },
-        {
           "path": "registry/src/react/examples/tweet/tweet-view.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/tweet/tweet-view.tsx"
@@ -2259,7 +2253,6 @@
           "registry/src/react/examples/tweet/extension.ts",
           "registry/src/react/examples/tweet/index.ts",
           "registry/src/react/examples/tweet/method-select.tsx",
-          "registry/src/react/examples/tweet/tilt.tsx",
           "registry/src/react/examples/tweet/tweet-view.tsx",
           "registry/src/react/sample/sample-doc-tweet.ts"
         ],
@@ -10225,6 +10218,64 @@
       }
     },
     {
+      "name": "vue-example-tweet",
+      "title": "vue-example-tweet",
+      "type": "registry:block",
+      "description": "Embed and display Twitter tweets.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-tweet.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue",
+        "vue-tweet"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/tweet/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/method-select.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/method-select.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/tweet-view.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/tweet-view.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "tweet",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/tweet/editor.vue",
+          "registry/src/vue/examples/tweet/extension.ts",
+          "registry/src/vue/examples/tweet/index.ts",
+          "registry/src/vue/examples/tweet/method-select.vue",
+          "registry/src/vue/examples/tweet/tweet-view.vue",
+          "registry/src/vue/sample/sample-doc-tweet.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-tweet"
+        ]
+      }
+    },
+    {
       "name": "vue-example-typography",
       "title": "vue-example-typography",
       "type": "registry:block",
@@ -11359,6 +11410,33 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-tweet",
+      "title": "vue-sample-sample-doc-tweet",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-tweet.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tweet.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-tweet.ts"
         ],
         "internalDependencies": []
       }

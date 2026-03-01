@@ -1,12 +1,12 @@
 import { useId } from 'react'
 
 export function MethodSelect(props: {
-  value: 'iframe' | 'react'
-  onChange: (value: 'iframe' | 'react') => void
+  value: 'basic' | 'advanced'
+  onChange: (value: 'basic' | 'advanced') => void
 }) {
-  const id = useId()
-  const iframeId = `${id}-iframe`
-  const reactId = `${id}-react`
+  const id = 'id-' + useId()
+  const basicId = `${id}-basic`
+  const advancedId = `${id}-advanced`
 
   return (
     <fieldset className="not-content">
@@ -15,25 +15,25 @@ export function MethodSelect(props: {
       <div>
         <input
           type="radio"
-          id={iframeId}
+          id={basicId}
           name={id}
-          value="iframe"
-          checked={props.value === 'iframe'}
-          onChange={() => props.onChange('iframe')}
+          value="basic"
+          checked={props.value === 'basic'}
+          onChange={() => props.onChange('basic')}
         />
-        <label htmlFor={iframeId}>iframe</label>
+        <label htmlFor={basicId}>basic</label>
       </div>
 
       <div>
         <input
           type="radio"
-          id={reactId}
+          id={advancedId}
           name={id}
-          value="react"
-          checked={props.value === 'react'}
-          onChange={() => props.onChange('react')}
+          value="advanced"
+          checked={props.value === 'advanced'}
+          onChange={() => props.onChange('advanced')}
         />
-        <label htmlFor={reactId}>react-tweet</label>
+        <label htmlFor={advancedId}>advanced</label>
       </div>
     </fieldset>
   )

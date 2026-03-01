@@ -6,12 +6,12 @@ import { testStory, testStoryConsistency, waitForEditor } from './helpers'
 testStoryConsistency('tweet')
 
 testStory('tweet', () => {
-  it('can switch between iframe and react mode', async () => {
+  it('can switch between basic and advanced mode', async () => {
     const editor = await waitForEditor()
     const iframe = editor.locate('iframe[src^="https://platform.twitter.com/embed/Tweet.html"]')
     const nodeViewRoot = editor.locate('[data-node-view-root="true"]')
-    const reactRadio = page.getByRole('radio', { name: 'react-tweet' })
-    const iframeRadio = page.getByRole('radio', { name: 'iframe' })
+    const advancedRadio = page.getByRole('radio', { name: 'advanced' })
+    const basicRadio = page.getByRole('radio', { name: 'basic' })
 
     const expectIframe = async () => {
       await expect.element(iframe).toBeVisible()
@@ -26,14 +26,14 @@ testStory('tweet', () => {
     // Render the tweet in iframe mode by default
     await expectIframe()
 
-    // Switch to react mode
-    await reactRadio.click()
+    // Switch to node view mode
+    await advancedRadio.click()
 
-    // Verify the tweet is rendered in react mode
+    // Verify the tweet is rendered in node view
     await expectNodeViewRoot()
 
     // Switch back to iframe mode
-    await iframeRadio.click()
+    await basicRadio.click()
 
     // Verify the tweet is rendered in iframe mode
     await expectIframe()

@@ -41,6 +41,7 @@ export const loaders = {
   'text-align': defineAsyncComponent(() => import('./examples/text-align').then((m) => m.ExampleEditor)),
   'text-color': defineAsyncComponent(() => import('./examples/text-color').then((m) => m.ExampleEditor)),
   'toolbar': defineAsyncComponent(() => import('./examples/toolbar').then((m) => m.ExampleEditor)),
+  'tweet': defineAsyncComponent(() => import('./examples/tweet').then((m) => m.ExampleEditor)),
   'typography': defineAsyncComponent(() => import('./examples/typography').then((m) => m.ExampleEditor)),
   'underline': defineAsyncComponent(() => import('./examples/underline').then((m) => m.ExampleEditor)),
   'unmount': defineAsyncComponent(() => import('./examples/unmount').then((m) => m.ExampleEditor)),

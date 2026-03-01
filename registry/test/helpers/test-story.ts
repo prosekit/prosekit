@@ -298,6 +298,12 @@ const cloneElementTransforms: ElementTransform[] = [
     apply: (element) => element.setAttribute('id', 'SOME_ID'),
   },
 
+  // Replace "name" attributes
+  {
+    matches: (element) => !!element.getAttribute('name'),
+    apply: (element) => element.setAttribute('name', 'SOME_NAME'),
+  },
+
   // Replace "for" attributes in <label> elements
   {
     matches: (element) => element.tagName === 'LABEL' && !!element.getAttribute('for'),

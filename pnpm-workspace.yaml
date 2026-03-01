@@ -39,7 +39,7 @@ overrides: {
   "@astrojs/preact": "^5.0.0-beta.4",
   "@astrojs/react": "^5.0.0-beta.3",
   "@astrojs/solid-js": "^6.0.0-beta.2",
-  "@astrojs/starlight": "github:withastro/starlight#d252f627506a44bab0c9f1296a27bbfac1f2c048&path:packages/starlight",
+  "@astrojs/starlight": "github:withastro/starlight#d338e16&path:packages/starlight",
   "@astrojs/svelte": "^8.0.0-beta.3",
   "@astrojs/vue": "^6.0.0-beta.1",
   "astro": "^6.0.0-beta.17",

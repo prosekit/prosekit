@@ -2,7 +2,6 @@
 # See https://www.npmjs.com/package/@open-pioneer/check-pnpm-duplicates for more details.
 allowed:
   - "@astrojs/compiler" # (versions 2.13.1, 3.0.0-beta.1)
-  - "@astrojs/markdown-remark" # (versions 7.0.0-beta.6, 7.0.0-beta.7)
   - "@babel/generator" # (versions 7.29.1, 8.0.0-rc.1)
   - "@babel/helper-module-imports" # (versions 7.18.6, 7.28.6)
   - "@babel/helper-string-parser" # (versions 7.27.1, 8.0.0-rc.1)
@@ -18,7 +17,7 @@ allowed:
   - "@manypkg/get-packages" # (versions 1.1.3, 3.1.0)
   - "@octokit/openapi-types" # (versions 20.0.0, 24.2.0)
   - "@octokit/types" # (versions 12.6.0, 13.10.0)
-  - "@rolldown/pluginutils" # (versions 1.0.0-rc.2, 1.0.0-rc.3, 1.0.0-rc.4)
+  - "@rolldown/pluginutils" # (versions 1.0.0-rc.2, 1.0.0-rc.3, 1.0.0-rc.5)
   - "@rollup/pluginutils" # (versions 4.2.1, 5.3.0)
   - "@types/node" # (versions 12.20.55, 17.0.45, 24.10.13)
   - "@types/unist" # (versions 2.0.11, 3.0.3)

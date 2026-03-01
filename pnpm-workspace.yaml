@@ -29,8 +29,21 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - "prosemirror-*"
+  - "@astrojs/*"
+  - "astro"
 
-overrides: {}
+overrides: {
+  "@sveltejs/vite-plugin-svelte": "^6.2.4",
+  "vite": "^7.3.1",
+  "@astrojs/check": "^0.9.7-beta.1",
+  "@astrojs/preact": "^5.0.0-beta.4",
+  "@astrojs/react": "^5.0.0-beta.3",
+  "@astrojs/solid-js": "^6.0.0-beta.2",
+  "@astrojs/starlight": "github:withastro/starlight#d252f627506a44bab0c9f1296a27bbfac1f2c048&path:packages/starlight",
+  "@astrojs/svelte": "^8.0.0-beta.3",
+  "@astrojs/vue": "^6.0.0-beta.1",
+  "astro": "^6.0.0-beta.17",
+}
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

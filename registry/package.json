@@ -248,6 +248,7 @@
     "./vue/examples/text-align": "./src/vue/examples/text-align/index.ts",
     "./vue/examples/text-color": "./src/vue/examples/text-color/index.ts",
     "./vue/examples/toolbar": "./src/vue/examples/toolbar/index.ts",
+    "./vue/examples/tweet": "./src/vue/examples/tweet/index.ts",
     "./vue/examples/typography": "./src/vue/examples/typography/index.ts",
     "./vue/examples/underline": "./src/vue/examples/underline/index.ts",
     "./vue/examples/unmount": "./src/vue/examples/unmount/index.ts",
@@ -331,6 +332,7 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.0.2",
     "vitest-browser-vue": "^2.0.2",
-    "vue-tsc": "^3.2.5"
+    "vue-tsc": "^3.2.5",
+    "vue-tweet": "^2.0.2"
   }
 }

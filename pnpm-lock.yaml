@@ -1050,6 +1050,9 @@ importers:
       vue-tsc:
         specifier: ^3.2.5
         version: 3.2.5(typescript@5.9.3)
+      vue-tweet:
+        specifier: ^2.0.2
+        version: 2.3.3(vue@3.5.28(typescript@5.9.3))
 
   website:
     devDependencies:
@@ -7585,6 +7588,11 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
+
+  vue-tweet@2.3.3:
+    resolution: {integrity: sha512-jU9EAEkFJbeJ0XGQH0QdbwgvrBl3LsrOppfCwijzBhyLrs7ibyf2JNLQhjGTLPa+w3a2uLqxhMGoh+/68tmNFg==}
+    peerDependencies:
+      vue: ^3.5.17
 
   vue@3.5.28:
     resolution: {integrity: sha512-BRdrNfeoccSoIZeIhyPBfvWSLFP4q8J3u8Ju8Ug5vu3LdD+yTM13Sg4sKtljxozbnuMu1NB1X5HBHRYUzFocKg==}
@@ -15199,6 +15207,10 @@ snapshots:
       '@volar/typescript': 2.4.28
       '@vue/language-core': 3.2.5
       typescript: 5.9.3
+
+  vue-tweet@2.3.3(vue@3.5.28(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.28(typescript@5.9.3)
 
   vue@3.5.28(typescript@5.9.3):
     dependencies:

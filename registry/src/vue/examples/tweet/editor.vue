@@ -36,7 +36,7 @@ useExtension(vueTweetView, { editor })
 
 <template>
   <ProseKit :editor="editor">
-    <MethodSelect :value="method" @change="method = $event" />
+    <MethodSelect :value="method" :onChange="(newMethod) => (method = newMethod)" />
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
         <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />

@@ -6,7 +6,7 @@ const props = defineProps<{
   onChange: (value: 'basic' | 'advanced') => void
 }>()
 
-const id = useId()
+const id = 'id-' + useId()
 const basicId = `${id}-basic`
 const advancedId = `${id}-advanced`
 </script>

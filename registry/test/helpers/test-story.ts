@@ -300,7 +300,10 @@ const cloneElementTransforms: ElementTransform[] = [
 
   // Replace "name" attributes
   {
-    matches: (element) => !!element.getAttribute('name'),
+    matches: (element) => {
+      const value = element.getAttribute('name')
+      return !!value && value.startsWith('id-')
+    },
     apply: (element) => element.setAttribute('name', 'SOME_NAME'),
   },
 

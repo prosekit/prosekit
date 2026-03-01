@@ -4,7 +4,7 @@ export function MethodSelect(props: {
   value: 'basic' | 'advanced'
   onChange: (value: 'basic' | 'advanced') => void
 }) {
-  const id = useId()
+  const id = 'id-' + useId()
   const basicId = `${id}-basic`
   const advancedId = `${id}-advanced`
 

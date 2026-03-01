@@ -10,7 +10,7 @@ testStory('tweet', () => {
     const editor = await waitForEditor()
     const iframe = editor.locate('iframe[src^="https://platform.twitter.com/embed/Tweet.html"]')
     const nodeViewRoot = editor.locate('[data-node-view-root="true"]')
-    const reactRadio = page.getByRole('radio', { name: 'react-tweet' })
+    const reactRadio = page.getByRole('radio', { name: /react-tweet/ })
     const iframeRadio = page.getByRole('radio', { name: 'iframe' })
 
     const expectIframe = async () => {

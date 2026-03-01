@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useId } from 'vue'
+
 const props = defineProps<{
   value: 'iframe' | 'vue'
 }>()
@@ -7,7 +9,7 @@ const emit = defineEmits<{
   change: [value: 'iframe' | 'vue']
 }>()
 
-const id = `method-select-${Math.random().toString(36).slice(2)}`
+const id = useId()
 const iframeId = `${id}-iframe`
 const vueId = `${id}-vue`
 </script>

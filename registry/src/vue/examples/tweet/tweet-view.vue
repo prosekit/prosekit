@@ -10,13 +10,11 @@ const tweetId = props.node.value.attrs.tweetId as string
 <template>
   <div>
     <div>
-      <strong>
-        Rendered in Vue using library
-        {{ ' ' }}
-        <span>
-          <a href="https://github.com/DannyFeliz/vue-tweet" target="_blank" rel="noopener noreferrer">vue-tweet</a>
-        </span>
-      </strong>
+      <strong>Rendered in Vue using library <span><a
+            href="https://github.com/DannyFeliz/vue-tweet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >vue-tweet</a></span></strong>
     </div>
     <Tweet :tweet-id="tweetId" />
   </div>

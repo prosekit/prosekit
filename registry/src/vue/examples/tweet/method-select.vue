@@ -2,16 +2,13 @@
 import { useId } from 'vue'
 
 const props = defineProps<{
-  value: 'iframe' | 'vue'
-}>()
-
-const emit = defineEmits<{
-  change: [value: 'iframe' | 'vue']
+  value: 'basic' | 'advanced'
+  onChange: (value: 'basic' | 'advanced') => void
 }>()
 
 const id = useId()
-const iframeId = `${id}-iframe`
-const vueId = `${id}-vue`
+const basicId = `${id}-basic`
+const advancedId = `${id}-advanced`
 </script>
 
 <template>
@@ -20,26 +17,26 @@ const vueId = `${id}-vue`
 
     <div>
       <input
-        :id="iframeId"
+        :id="basicId"
         type="radio"
         :name="id"
-        value="iframe"
-        :checked="props.value === 'iframe'"
-        @change="emit('change', 'iframe')"
+        value="basic"
+        :checked="props.value === 'basic'"
+        @change="props.onChange('basic')"
       />
-      <label :for="iframeId">iframe</label>
+      <label :for="basicId">basic</label>
     </div>
 
     <div>
       <input
-        :id="vueId"
+        :id="advancedId"
         type="radio"
         :name="id"
-        value="vue"
-        :checked="props.value === 'vue'"
-        @change="emit('change', 'vue')"
+        value="advanced"
+        :checked="props.value === 'advanced'"
+        @change="props.onChange('advanced')"
       />
-      <label :for="vueId">vue-tweet</label>
+      <label :for="advancedId">advanced</label>
     </div>
   </fieldset>
 </template>

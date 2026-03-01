@@ -19,10 +19,10 @@ const props = defineProps<{
 const defaultContent = props.initialContent ?? sampleContent
 const editor = createEditor({ extension: defineExtension(), defaultContent })
 
-const method = ref<'iframe' | 'vue'>('iframe')
+const method = ref<'basic' | 'advanced'>('basic')
 
 const vueTweetView = computed(() => {
-  if (method.value === 'iframe') {
+  if (method.value === 'basic') {
     return null
   }
   return defineVueNodeView({

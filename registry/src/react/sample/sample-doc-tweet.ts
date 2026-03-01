@@ -15,7 +15,7 @@ export const sampleContent: NodeJSON = {
     {
       type: 'tweet',
       attrs: {
-        tweetId: '1598038815599661056',
+        tweetId: '20',
       },
     },
   ],

@@ -280,9 +280,9 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.9.11",
-    "svelte": "^5.53.3",
+    "svelte": "^5.53.6",
     "unified": "^11.0.5",
-    "vue": "^3.5.28",
+    "vue": "^3.5.29",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.29"
   },
@@ -314,8 +314,8 @@
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-tweet": "^3.3.0",
-    "shadcn-schema": "^0.2.0",
-    "svelte-check": "^4.4.3",
+    "shadcn-schema": "^0.3.0",
+    "svelte-check": "^4.4.4",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1",
     "temml": "^0.13.1",
@@ -333,6 +333,6 @@
     "vitest-browser-svelte": "^2.0.2",
     "vitest-browser-vue": "^2.0.2",
     "vue-tsc": "^3.2.5",
-    "vue-tweet": "^2.0.2"
+    "vue-tweet": "^2.3.3"
   }
 }

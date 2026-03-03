@@ -145,6 +145,85 @@ rg -n "\\bprivate\\b" packages/basic/src packages/lit/src packages/pm/src packag
 Expected final scan result:
 - No remaining TypeScript `private` class members in public packages under `packages/*`.
 
+## Detailed TODO Checklist
+
+### Phase 0: Setup and Guardrails
+- [ ] Confirm the migration scope is limited to public packages under `packages/*`.
+- [ ] Confirm excluded paths are `website/**`, `registry/**`, `**/*.spec.*`, and `**/testing/**/*`.
+- [ ] Confirm only `packages/core` and `packages/extensions` currently contain in-scope `private` members.
+- [ ] Capture current working tree status with `git status --short`.
+- [ ] Ensure there are no unexpected staged changes before starting migration.
+
+### Phase 1: Baseline Collection
+- [ ] Run `pnpm run build:package` and confirm baseline build passes.
+- [ ] Run `pnpm exec size-limit` and record baseline results for comparison.
+- [ ] Run `pnpm run typecheck` and record baseline status.
+- [ ] Run `pnpm run test:run` and record baseline status.
+- [ ] Run baseline scan for `private` in public package sources and record output.
+- [ ] Save baseline outputs in notes for before/after reporting.
+
+### Phase 2: Core Package Migration (`packages/core`)
+- [ ] Edit `packages/core/src/editor/editor.ts`.
+- [ ] Convert field `private tree` to `#tree`.
+- [ ] Convert field `private directEditorProps` to `#directEditorProps`.
+- [ ] Convert field `private afterMounted` to `#afterMounted`.
+- [ ] Convert field `private dispatch` to `#dispatch`.
+- [ ] Convert method `private getDoc(...)` to `#getDoc(...)`.
+- [ ] Convert method `private getProp(...)` to `#getProp(...)`.
+- [ ] Convert method `private updateExtension(...)` to `#updateExtension(...)`.
+- [ ] Convert field `private instance` in `Editor` to `#instance`.
+- [ ] Update all `this.member` usages in this file to `this.#member` for migrated members.
+- [ ] Edit `packages/core/src/extensions/clipboard-serializer.ts`.
+- [ ] Convert field `private serializeFragmentWrapper` to `#serializeFragmentWrapper`.
+- [ ] Convert field `private serializeNodeWrapper` to `#serializeNodeWrapper`.
+- [ ] Update all in-class usages to `this.#serializeFragmentWrapper` and `this.#serializeNodeWrapper`.
+- [ ] Edit `packages/core/src/facets/base-extension.ts`.
+- [ ] Convert field `private trees` to `#trees`.
+- [ ] Update all in-class usages to `this.#trees`.
+- [ ] Edit `packages/core/src/facets/facet-node.ts`.
+- [ ] Convert method `private calcOutput(...)` to `#calcOutput(...)`.
+- [ ] Update all in-class calls to `this.#calcOutput(...)`.
+- [ ] Edit `packages/core/src/facets/facet.ts`.
+- [ ] Convert field `private reduce` to `#reduce`.
+- [ ] Update getter and constructor usages to `this.#reduce`.
+
+### Phase 3: Extensions Package Migration (`packages/extensions`)
+- [ ] Edit `packages/extensions/src/commit/index.ts`.
+- [ ] Convert field `private parent` to `#parent`.
+- [ ] Convert field `private doc` to `#doc`.
+- [ ] Convert field `private steps` to `#steps`.
+- [ ] Update all in-class usages to `this.#parent`, `this.#doc`, and `this.#steps`.
+- [ ] Edit `packages/extensions/src/file/file-upload.ts`.
+- [ ] Convert field `private subscribers` to `#subscribers`.
+- [ ] Update all in-class usages to `this.#subscribers`.
+
+### Phase 4: Migration Integrity Checks
+- [ ] Run `rg -n "\\bprivate\\b" packages/core/src packages/extensions/src`.
+- [ ] Manually verify remaining matches are comments/docs/types and not class `private` members.
+- [ ] Run `rg -n "#[A-Za-z_$][A-Za-z0-9_$]*" packages/core/src packages/extensions/src` to verify new private identifiers exist where expected.
+- [ ] Run `git diff --name-only` and confirm only intended implementation files changed.
+- [ ] Run `git diff --name-only | rg "\\.spec\\.|/testing/"` and confirm no matches.
+- [ ] Run `git diff --name-only | rg "^website/|^registry/"` and confirm no matches.
+
+### Phase 5: Formatting and Quality Gates
+- [ ] Run formatting/lint fix command used by the repository workflow.
+- [ ] Re-check changed files after formatting to ensure scope is unchanged.
+- [ ] Run `pnpm run typecheck` and confirm pass.
+- [ ] Run `pnpm run test:run` and confirm pass.
+- [ ] Run `pnpm run build:package` and confirm pass.
+
+### Phase 6: Size Validation
+- [ ] Run `pnpm exec size-limit` after migration.
+- [ ] Compare with baseline size-limit output.
+- [ ] Verify no size regressions in monitored entries.
+- [ ] Record observed reductions for relevant entries (especially `core` and `extensions` bundles).
+
+### Phase 7: Final Review and Handoff
+- [ ] Produce final list of modified files.
+- [ ] Confirm acceptance criteria items 1-5 are all satisfied.
+- [ ] Document any deviations from plan (if any).
+- [ ] Prepare concise change summary for review (what changed, why, validation results).
+
 ## Risks and Mitigations
 1. Risk: behavior change for consumers accessing internals via `(obj as any).x`.
 - Mitigation: document as intentional hardening of private internals; this is expected with native `#private`.

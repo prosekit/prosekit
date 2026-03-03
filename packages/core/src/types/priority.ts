@@ -1,5 +1,5 @@
 /**
- * ProseKit extension priority enum.
+ * ProseKit extension priority.
  *
  * There are five priority levels available:
  *
@@ -29,7 +29,7 @@ const Priority = {
 } as const
 
 /**
- * ProseKit extension priority enum.
+ * ProseKit extension priority.
  *
  * There are five priority levels available:
  *

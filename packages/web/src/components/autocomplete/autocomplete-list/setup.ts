@@ -7,7 +7,8 @@ import {
   type TypedEventTarget,
 } from '@aria-ui/core'
 import { listboxProps, useListbox, type ListboxProps } from '@aria-ui/listbox/elements'
-import { defineDOMEventHandler, Priority, withPriority, type Editor } from '@prosekit/core'
+import type { Priority } from '@prosekit/core'
+import { defineDOMEventHandler, withPriority, type Editor } from '@prosekit/core'
 
 import { getStateWithDefaults } from '../../../utils/get-default-state.ts'
 import { onSubmitContext, openContext, queryContext } from '../context.ts'
@@ -103,7 +104,7 @@ function useKeyDownTarget(
       },
     )
 
-    return editorValue.use(withPriority(extension, Priority.highest))
+    return editorValue.use(withPriority(extension, 4 satisfies typeof Priority.highest))
   })
 
   return {

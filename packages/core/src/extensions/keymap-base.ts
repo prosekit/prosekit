@@ -14,7 +14,7 @@ import { splitSplittableBlock } from 'prosemirror-splittable'
 import { selectBlockCommand } from '../commands/select-block.ts'
 import { withPriority } from '../editor/with-priority.ts'
 import type { PlainExtension } from '../types/extension.ts'
-import { Priority } from '../types/priority.ts'
+import type { Priority } from '../types/priority.ts'
 
 import { defineKeymap, type Keymap } from './keymap.ts'
 
@@ -68,7 +68,7 @@ export interface BaseKeymapOptions {
  * @public
  */
 export function defineBaseKeymap({
-  priority = Priority.low,
+  priority = (1 satisfies typeof Priority.low),
   preferBlockSelection = true,
 }: BaseKeymapOptions = {}): BaseKeymapExtension {
   const keymap: Keymap = {

@@ -13,6 +13,7 @@
     "defu": "^6.1.4",
     "read-package-up": "^12.0.0",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "unplugin-replace": "^0.7.0"
   }
 }

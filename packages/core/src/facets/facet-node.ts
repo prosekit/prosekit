@@ -1,6 +1,6 @@
 import { isNotNullish } from '@ocavue/utils'
 
-import { Priority } from '../types/priority.ts'
+import type { Priority } from '../types/priority.ts'
 import { arraySubtract, uniqPush } from '../utils/array.ts'
 import { assert } from '../utils/assert.ts'
 
@@ -149,9 +149,9 @@ export class FacetNode<I = any, O = any> {
     }
 
     if (this.facet.singleton) {
-      const reducer = (this.reducers[Priority.default] ||= this.facet.reducer)
+      const reducer = (this.reducers[(2 satisfies typeof Priority.default)] ||= this.facet.reducer)
       const input: I[] = inputs.filter(isNotNullish).flat()
-      output[Priority.default] = reducer(input)
+      output[(2 satisfies typeof Priority.default)] = reducer(input)
     } else {
       for (let pri = 0; pri < 5; pri++) {
         const input = inputs[pri]
@@ -174,7 +174,7 @@ export class FacetNode<I = any, O = any> {
 
   getSingletonOutput(): O | null {
     assert(this.facet.singleton)
-    return this.getOutput()[Priority.default]
+    return this.getOutput()[(2 satisfies typeof Priority.default)]
   }
 
   getRootOutput(): RootOutput {

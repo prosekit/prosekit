@@ -11,7 +11,7 @@ import {
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
-import { defineKeymap, Priority, withPriority, type Editor } from '@prosekit/core'
+import { defineKeymap, withPriority, type Editor, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension.ts'
@@ -164,6 +164,6 @@ function useEscapeKeydown(
   handler: () => boolean,
 ): void {
   const keymap = { Escape: handler }
-  const extension = withPriority(defineKeymap(keymap), Priority.highest)
+  const extension = withPriority(defineKeymap(keymap), (4 satisfies typeof Priority.highest))
   useEditorExtension(host, editor, extension)
 }

@@ -1,7 +1,7 @@
 import type { Schema } from '@prosekit/pm/model'
 
 import type { Extension, ExtensionTyping } from '../types/extension.ts'
-import { Priority } from '../types/priority.ts'
+import type { Priority } from '../types/priority.ts'
 
 import type { FacetNode } from './facet-node.ts'
 import type { Tuple5 } from './facet-types.ts'
@@ -27,7 +27,7 @@ export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping>
    * @internal
    */
   getTree(priority?: Priority): FacetNode {
-    const pri = priority ?? this.priority ?? Priority.default
+    const pri = priority ?? this.priority ?? (2 satisfies typeof Priority.default)
     return (this.trees[pri] ||= this.createTree(pri))
   }
 

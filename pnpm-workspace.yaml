@@ -29,6 +29,7 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - "prosemirror-*"
+  - "@changesets/*"
 
 overrides: {}
 

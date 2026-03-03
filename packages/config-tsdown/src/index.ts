@@ -1,7 +1,7 @@
 import { defu } from 'defu'
 import { readPackageUpSync } from 'read-package-up'
 import type { UserConfig } from 'tsdown'
-import Replace from 'unplugin-replace/rolldown'
+// import Replace from 'unplugin-replace/rolldown'
 
 export function config(userConfig?: UserConfig): UserConfig {
   const pkg = readPackageUpSync({ cwd: userConfig?.cwd })
@@ -37,15 +37,15 @@ export function config(userConfig?: UserConfig): UserConfig {
       'es2023',
       'firefox116', // firefox116 is the latest version that doesn't support CSS nesting.
     ],
-    plugins: [Replace({
-      values: {
-        'Priority.lowest': '0',
-        'Priority.low': '1',
-        'Priority.default': '2',
-        'Priority.high': '3',
-        'Priority.highest': '4',
-      },
-    })],
+    // plugins: [Replace({
+    //   values: {
+    //     'Priority.lowest': '0',
+    //     'Priority.low': '1',
+    //     'Priority.default': '2',
+    //     'Priority.high': '3',
+    //     'Priority.highest': '4',
+    //   },
+    // })],
   }
 
   return defu(userConfig, defaultConfig)

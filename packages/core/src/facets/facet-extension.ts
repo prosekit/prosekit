@@ -11,15 +11,19 @@ import type { Facet } from './facet.ts'
  */
 export class FacetExtensionImpl<Input, Output> extends BaseExtension {
   declare extension: Extension
+  readonly facet: Facet<Input, Output>
+  readonly payloads: Input[]
 
   /**
    * @internal
    */
   constructor(
-    readonly facet: Facet<Input, Output>,
-    readonly payloads: Input[],
+    facet: Facet<Input, Output>,
+    payloads: Input[],
   ) {
     super()
+    this.facet = facet
+    this.payloads = payloads
   }
 
   /**

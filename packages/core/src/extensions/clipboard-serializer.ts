@@ -35,13 +35,18 @@ function wrapFunction<T extends AnyFunction>(fn: T, wrapper?: FunctionWrapper<T>
 }
 
 class CustomDOMSerializer extends DOMSerializer {
+  private serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>
+  private serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>
+
   constructor(
     nodes: Record<string, (node: ProseMirrorNode) => DOMOutputSpec>,
     marks: Record<string, (mark: Mark, inline: boolean) => DOMOutputSpec>,
-    private serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>,
-    private serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>,
+    serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>,
+    serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>,
   ) {
     super(nodes, marks)
+    this.serializeFragmentWrapper = serializeFragmentWrapper
+    this.serializeNodeWrapper = serializeNodeWrapper
   }
 
   override serializeFragment(...args: Parameters<SerializeFragmentFunction>): ReturnType<SerializeFragmentFunction> {

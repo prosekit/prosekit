@@ -6,11 +6,14 @@ import { BaseExtension } from './base-extension.ts'
 import { unionFacetNode, type FacetNode } from './facet-node.ts'
 
 export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping> extends BaseExtension<T> implements Extension<T> {
+  readonly extension: BaseExtension[]
+
   /**
    * @internal
    */
-  constructor(public extension: BaseExtension[] = []) {
+  constructor(extension: BaseExtension[] = []) {
     super()
+    this.extension = extension
   }
 
   /**

@@ -89,14 +89,14 @@ export class EditorInstance {
   marks: Record<string, MarkAction>
   commands: Record<string, CommandAction> = {}
 
-  private tree: FacetNode
-  private directEditorProps: DirectEditorProps
-  private afterMounted: Array<VoidFunction> = []
+  #tree: FacetNode
+  #directEditorProps: DirectEditorProps
+  #afterMounted: Array<VoidFunction> = []
 
   constructor(extension: Extension) {
-    this.tree = (extension as BaseExtension).getTree()
+    this.#tree = (extension as BaseExtension).getTree()
 
-    const payload = this.tree.getRootOutput()
+    const payload = this.#tree.getRootOutput()
     const schema = payload.schema
     const stateConfig = payload.state
 
@@ -114,34 +114,34 @@ export class EditorInstance {
     this.marks = createMarkActions(state.schema, this.getState)
 
     this.schema = state.schema
-    this.directEditorProps = { state, ...payload.view }
+    this.#directEditorProps = { state, ...payload.view }
   }
 
   public getState = (): EditorState => {
-    return this.view?.state || this.directEditorProps.state
+    return this.view?.state || this.#directEditorProps.state
   }
 
-  private getDoc(): ProseMirrorNode {
+  #getDoc(): ProseMirrorNode {
     return this.getState().doc
   }
 
-  private getProp<PropName extends keyof EditorProps>(propName: PropName): Partial<EditorProps>[PropName] {
-    return this.view?.someProp(propName) ?? this.directEditorProps[propName]
+  #getProp<PropName extends keyof EditorProps>(propName: PropName): Partial<EditorProps>[PropName] {
+    return this.view?.someProp(propName) ?? this.#directEditorProps[propName]
   }
 
   public updateState(state: EditorState): void {
     if (this.view) {
       this.view.updateState(state)
     } else {
-      this.directEditorProps.state = state
+      this.#directEditorProps.state = state
     }
   }
 
-  private dispatch = (tr: Transaction): void => {
+  #dispatch = (tr: Transaction): void => {
     if (this.view) {
       this.view.dispatch(tr)
     } else {
-      this.directEditorProps.state = this.directEditorProps.state.apply(tr)
+      this.#directEditorProps.state = this.#directEditorProps.state.apply(tr)
     }
   }
 
@@ -178,13 +178,13 @@ export class EditorInstance {
    * Return an HTML string representing the editor's current document.
    */
   public getDocHTML = (options?: getDocHTMLOptions): string => {
-    const serializer = this.getProp('clipboardSerializer')
+    const serializer = this.#getProp('clipboardSerializer')
     const DOMSerializer = serializer ? { fromSchema: () => serializer } : undefined
-    const doc = this.getDoc()
+    const doc = this.#getDoc()
     return htmlFromNode(doc, { ...options, DOMSerializer })
   }
 
-  private updateExtension(extension: Extension, add: boolean): void {
+  #updateExtension(extension: Extension, add: boolean): void {
     const view = this.view
 
     // Don't update the extension if the editor is already unmounted
@@ -203,14 +203,14 @@ export class EditorInstance {
       throw new ProseKitError('View cannot be changed')
     }
 
-    const oldPayload = this.tree.getRootOutput()
+    const oldPayload = this.#tree.getRootOutput()
     const oldPlugins = [...(view.state?.plugins ?? [])]
 
-    this.tree = add
-      ? unionFacetNode(this.tree, tree)
-      : subtractFacetNode(this.tree, tree)
+    this.#tree = add
+      ? unionFacetNode(this.#tree, tree)
+      : subtractFacetNode(this.#tree, tree)
 
-    const newPayload = this.tree.getRootOutput()
+    const newPayload = this.#tree.getRootOutput()
     const newPlugins = [...(newPayload?.state?.plugins ?? [])]
 
     if (!isDeepEqual(oldPlugins, newPlugins)) {
@@ -241,7 +241,7 @@ export class EditorInstance {
         }
       }
 
-      this.afterMounted.push(lazyCreate)
+      this.#afterMounted.push(lazyCreate)
 
       return () => {
         canceled = true
@@ -249,8 +249,8 @@ export class EditorInstance {
       }
     }
 
-    this.updateExtension(extension, true)
-    return () => this.updateExtension(extension, false)
+    this.#updateExtension(extension, true)
+    return () => this.#updateExtension(extension, false)
   }
 
   public mount(place: HTMLElement): void {
@@ -260,16 +260,16 @@ export class EditorInstance {
       // If the editor is already mounted to a different element, throw an error
       throw new ProseKitError('Editor is already mounted')
     }
-    this.view = new EditorView({ mount: place }, this.directEditorProps)
-    this.afterMounted.forEach((callback) => callback())
-    this.afterMounted.length = 0
+    this.view = new EditorView({ mount: place }, this.#directEditorProps)
+    this.#afterMounted.forEach((callback) => callback())
+    this.#afterMounted.length = 0
   }
 
   public unmount(): void {
     // If the editor is not mounted, do nothing
     if (!this.view) return
 
-    this.directEditorProps.state = this.view.state
+    this.#directEditorProps.state = this.view.state
     this.view.destroy()
     this.view = null
   }
@@ -305,7 +305,7 @@ export class EditorInstance {
 
   exec(command: Command): boolean {
     const state = this.getState()
-    return command(state, this.dispatch, this.view ?? undefined)
+    return command(state, this.#dispatch, this.view ?? undefined)
   }
 
   canExec(command: Command): boolean {
@@ -341,7 +341,7 @@ export class EditorInstance {
  * @public
  */
 export class Editor<E extends Extension = any> {
-  private instance: EditorInstance
+  #instance: EditorInstance
 
   /**
    * @internal
@@ -350,42 +350,42 @@ export class Editor<E extends Extension = any> {
     if (!(instance instanceof EditorInstance)) {
       throw new TypeError('Invalid EditorInstance')
     }
-    this.instance = instance
+    this.#instance = instance
   }
 
   /**
    * Whether the editor is mounted.
    */
   get mounted(): boolean {
-    return this.instance.mounted
+    return this.#instance.mounted
   }
 
   /**
    * The editor view.
    */
   get view(): EditorView {
-    return this.instance.assertView
+    return this.#instance.assertView
   }
 
   /**
    * The editor schema.
    */
   get schema(): Schema<ExtractNodeNames<E>, ExtractMarkNames<E>> {
-    return this.instance.schema
+    return this.#instance.schema
   }
 
   /**
    * The editor's current state.
    */
   get state(): EditorState {
-    return this.instance.getState()
+    return this.#instance.getState()
   }
 
   /**
    * Whether the editor is focused.
    */
   get focused(): boolean {
-    return this.instance.view?.hasFocus() ?? false
+    return this.#instance.view?.hasFocus() ?? false
   }
 
   /**
@@ -395,10 +395,10 @@ export class Editor<E extends Extension = any> {
    */
   mount = (place: HTMLElement | null | undefined): void | VoidFunction => {
     if (place) {
-      this.instance.mount(place)
+      this.#instance.mount(place)
       return this.unmount
     } else {
-      this.instance.unmount()
+      this.#instance.unmount()
     }
   }
 
@@ -406,21 +406,21 @@ export class Editor<E extends Extension = any> {
    * Unmount the editor. This is equivalent to `mount(null)`.
    */
   unmount = (): void => {
-    this.instance.unmount()
+    this.#instance.unmount()
   }
 
   /**
    * Focus the editor.
    */
   focus = (): void => {
-    this.instance.view?.focus()
+    this.#instance.view?.focus()
   }
 
   /**
    * Blur the editor.
    */
   blur = (): void => {
-    this.instance.view?.dom.blur()
+    this.#instance.view?.dom.blur()
   }
 
   /**
@@ -428,7 +428,7 @@ export class Editor<E extends Extension = any> {
    * extension.
    */
   use = (extension: Extension): VoidFunction => {
-    return this.instance.use(extension)
+    return this.#instance.use(extension)
   }
 
   /**
@@ -440,7 +440,7 @@ export class Editor<E extends Extension = any> {
    * directly manipulate the editor's state.
    */
   updateState = (state: EditorState): void => {
-    this.instance.updateState(state)
+    this.#instance.updateState(state)
   }
 
   /**
@@ -461,21 +461,21 @@ export class Editor<E extends Extension = any> {
     content: ProseMirrorNode | NodeJSON | string | Element,
     selection?: SelectionJSON | Selection | 'start' | 'end',
   ): void => {
-    return this.instance.setContent(content, selection)
+    return this.#instance.setContent(content, selection)
   }
 
   /**
    * Return a JSON object representing the editor's current document.
    */
   public getDocJSON = (): NodeJSON => {
-    return this.instance.getDocJSON()
+    return this.#instance.getDocJSON()
   }
 
   /**
    * Return an HTML string representing the editor's current document.
    */
   public getDocHTML = (options?: getDocHTMLOptions): string => {
-    return this.instance.getDocHTML(options)
+    return this.#instance.getDocHTML(options)
   }
 
   /**
@@ -483,7 +483,7 @@ export class Editor<E extends Extension = any> {
    * executed, otherwise `false`.
    */
   exec = (command: Command): boolean => {
-    return this.instance.exec(command)
+    return this.#instance.exec(command)
   }
 
   /**
@@ -491,27 +491,27 @@ export class Editor<E extends Extension = any> {
    * can be executed, otherwise `false`.
    */
   canExec = (command: Command): boolean => {
-    return this.instance.canExec(command)
+    return this.#instance.canExec(command)
   }
 
   /**
    * All {@link CommandAction}s defined by the editor.
    */
   get commands(): ExtractCommandActions<E> {
-    return this.instance.commands as ExtractCommandActions<E>
+    return this.#instance.commands as ExtractCommandActions<E>
   }
 
   /**
    * All {@link NodeAction}s defined by the editor.
    */
   get nodes(): ExtractNodeActions<E> {
-    return this.instance.nodes as ExtractNodeActions<E>
+    return this.#instance.nodes as ExtractNodeActions<E>
   }
 
   /**
    * All {@link MarkAction}s defined by the editor.
    */
   get marks(): ExtractMarkActions<E> {
-    return this.instance.marks as ExtractMarkActions<E>
+    return this.#instance.marks as ExtractMarkActions<E>
   }
 }

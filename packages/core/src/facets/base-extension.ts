@@ -16,7 +16,7 @@ export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping>
   priority?: Priority
   _type?: T
 
-  private trees: Tuple5<FacetNode | null> = [null, null, null, null, null]
+  #trees: Tuple5<FacetNode | null> = [null, null, null, null, null]
 
   /**
    * @internal
@@ -28,7 +28,7 @@ export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping>
    */
   getTree(priority?: Priority): FacetNode {
     const pri = priority ?? this.priority ?? (2 satisfies typeof Priority.default)
-    return (this.trees[pri] ||= this.createTree(pri))
+    return (this.#trees[pri] ||= this.createTree(pri))
   }
 
   /**

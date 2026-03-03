@@ -303,7 +303,7 @@ importers:
         specifier: ^1.8.5
         version: 1.8.5
       shiki:
-        specifier: ^3.23.0
+        specifier: ^3.23.0 || ^4.0.1
         version: 3.23.0
     devDependencies:
       '@prosekit/config-ts':

@@ -1,4 +1,4 @@
-import { Priority, defineCommands, defineKeymap, definePlugin, isApple, union, withPriority } from "@prosekit/core";
+import { defineCommands, defineKeymap, definePlugin, isApple, union, withPriority } from "@prosekit/core";
 import { LoroCursorPlugin, LoroEphemeralCursorPlugin, LoroSyncPlugin, LoroUndoPlugin, redo, undo } from "loro-prosemirror";
 
 //#region src/loro/loro-commands.ts
@@ -69,7 +69,7 @@ function defineLoro(options) {
 			...sync,
 			doc
 		})
-	]), Priority.high);
+	]), 3);
 }
 
 //#endregion

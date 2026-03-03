@@ -1,4 +1,4 @@
-import { Priority, defineCommands, defineKeymap, definePlugin, isApple, union, withPriority } from "@prosekit/core";
+import { defineCommands, defineKeymap, definePlugin, isApple, union, withPriority } from "@prosekit/core";
 import { redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin, yUndoPluginKey } from "y-prosemirror";
 
 //#region src/yjs/yjs-commands.ts
@@ -98,7 +98,7 @@ function defineYjs(options) {
 			...sync,
 			fragment
 		})
-	]), Priority.high);
+	]), 3);
 }
 
 //#endregion

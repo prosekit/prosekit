@@ -4,7 +4,7 @@ import { t as getSafeEditorView } from "./get-safe-editor-view-Dt9Amrcn.js";
 import { createComputed, createContext, createSignal, defineCustomElement, registerCustomElement, useAnimationFrame, useAttribute, useEffect, useEventListener } from "@aria-ui/core";
 import { listboxProps, useListbox, useListboxEmpty, useListboxItem } from "@aria-ui/listbox/elements";
 import { listboxEvents, listboxItemEvents, listboxProps as listboxProps$1 } from "@aria-ui/listbox";
-import { Priority, defineDOMEventHandler, defineKeymap, withPriority } from "@prosekit/core";
+import { defineDOMEventHandler, defineKeymap, withPriority } from "@prosekit/core";
 import { overlayPositionerEvents, overlayPositionerProps, useOverlayPositionerState } from "@aria-ui/overlay/elements";
 import { usePresence } from "@aria-ui/presence";
 import { AutocompleteRule, defineAutocomplete } from "@prosekit/extensions/autocomplete";
@@ -133,7 +133,7 @@ function useKeyDownTarget(element, open, editor) {
 			keydownHandlers.forEach((handler) => handler(event));
 			return event.defaultPrevented;
 		});
-		return editorValue.use(withPriority(extension, Priority.highest));
+		return editorValue.use(withPriority(extension, 4));
 	});
 	return {
 		addEventListener: (type, listener) => {
@@ -253,7 +253,7 @@ function createKeymapHandler(handler, enabled) {
 	};
 }
 function useEscapeKeydown(host, editor, handler) {
-	useEditorExtension(host, editor, withPriority(defineKeymap({ Escape: handler }), Priority.highest));
+	useEditorExtension(host, editor, withPriority(defineKeymap({ Escape: handler }), 4));
 }
 
 //#endregion

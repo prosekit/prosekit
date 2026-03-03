@@ -275,7 +275,7 @@ var BaseExtension = class {
 	* @internal
 	*/
 	getTree(priority) {
-		const pri = priority ?? this.priority ?? Priority.default;
+		const pri = priority ?? this.priority ?? 2;
 		return this.trees[pri] ||= this.createTree(pri);
 	}
 	/**
@@ -408,11 +408,8 @@ var FacetNode = class {
 			const childOutput = child.getOutput();
 			for (let pri = 0; pri < 5; pri++) if (childOutput[pri]) (inputs[pri] ||= []).push(childOutput[pri]);
 		}
-		if (this.facet.singleton) {
-			const reducer = this.reducers[Priority.default] ||= this.facet.reducer;
-			const input = inputs.filter(isNotNullish).flat();
-			output[Priority.default] = reducer(input);
-		} else for (let pri = 0; pri < 5; pri++) {
+		if (this.facet.singleton) output[2] = (this.reducers[2] ||= this.facet.reducer)(inputs.filter(isNotNullish).flat());
+		else for (let pri = 0; pri < 5; pri++) {
 			const input = inputs[pri];
 			if (input) output[pri] = (this.reducers[pri] ||= this.facet.reducer)(input);
 		}
@@ -424,7 +421,7 @@ var FacetNode = class {
 	}
 	getSingletonOutput() {
 		assert(this.facet.singleton);
-		return this.getOutput()[Priority.default];
+		return this.getOutput()[2];
 	}
 	getRootOutput() {
 		assert(this.isRoot());
@@ -1228,4 +1225,4 @@ var Editor = class {
 
 //#endregion
 export { isFragment as A, EditorNotFoundError as B, defineFacetPayload as C, Priority as D, defineFacet as E, isSlice as F, isTextSelection as I, getNodeType as L, isNodeSelection as M, isProseMirrorNode as N, isNodeActive as O, isSelection as P, assert as R, stateFacet as S, rootFacet as T, ProseKitError as V, jsonFromState as _, union as a, nodeFromJSON as b, isMarkActive as c, elementFromJSON as d, elementFromNode as f, jsonFromNode as g, jsonFromHTML as h, setupEditorExtension as i, isMark as j, isAllSelection as k, isMarkAbsent as l, htmlFromNode as m, EditorInstance as n, createMarkActions as o, htmlFromJSON as p, createEditor as r, createNodeActions as s, Editor as t, defineDefaultState as u, nodeFromElement as v, schemaFacet as w, stateFromJSON as x, nodeFromHTML as y, getMarkType as z };
-//# sourceMappingURL=editor-DgGNATcP.js.map
+//# sourceMappingURL=editor-BKCC_iC9.js.map

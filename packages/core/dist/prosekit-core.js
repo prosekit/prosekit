@@ -1,4 +1,4 @@
-import { A as isFragment, B as EditorNotFoundError, C as defineFacetPayload, D as Priority, E as defineFacet, F as isSlice, I as isTextSelection, L as getNodeType, M as isNodeSelection, N as isProseMirrorNode, O as isNodeActive, P as isSelection, R as assert, S as stateFacet, T as rootFacet, V as ProseKitError, _ as jsonFromState, a as union, b as nodeFromJSON, c as isMarkActive, d as elementFromJSON, f as elementFromNode, g as jsonFromNode, h as jsonFromHTML, j as isMark, k as isAllSelection, l as isMarkAbsent, m as htmlFromNode, p as htmlFromJSON, r as createEditor, t as Editor, u as defineDefaultState, v as nodeFromElement, w as schemaFacet, x as stateFromJSON, y as nodeFromHTML, z as getMarkType } from "./editor-DgGNATcP.js";
+import { A as isFragment, B as EditorNotFoundError, C as defineFacetPayload, D as Priority, E as defineFacet, F as isSlice, I as isTextSelection, L as getNodeType, M as isNodeSelection, N as isProseMirrorNode, O as isNodeActive, P as isSelection, R as assert, S as stateFacet, T as rootFacet, V as ProseKitError, _ as jsonFromState, a as union, b as nodeFromJSON, c as isMarkActive, d as elementFromJSON, f as elementFromNode, g as jsonFromNode, h as jsonFromHTML, j as isMark, k as isAllSelection, l as isMarkAbsent, m as htmlFromNode, p as htmlFromJSON, r as createEditor, t as Editor, u as defineDefaultState, v as nodeFromElement, w as schemaFacet, x as stateFromJSON, y as nodeFromHTML, z as getMarkType } from "./editor-BKCC_iC9.js";
 import { Plugin, PluginKey, ProseMirrorPlugin, TextSelection } from "@prosekit/pm/state";
 import { DOMSerializer, Fragment, Slice } from "@prosekit/pm/model";
 import { ReplaceAroundStep, dropPoint, findWrapping } from "@prosekit/pm/transform";
@@ -1097,7 +1097,7 @@ const customBackspace = chainCommands(deleteSelection, joinTextblockBackward, se
 *
 * @public
 */
-function defineBaseKeymap({ priority = Priority.low, preferBlockSelection = true } = {}) {
+function defineBaseKeymap({ priority = 1, preferBlockSelection = true } = {}) {
 	return withPriority(defineKeymap({
 		...baseKeymap,
 		"Mod-a": preferBlockSelection ? chainCommands(selectBlockCommand, selectAll$1) : selectAll$1,

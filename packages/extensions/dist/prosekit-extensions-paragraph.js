@@ -1,4 +1,4 @@
-import { Priority, defineCommands, defineKeymap, defineNodeSpec, setBlockType, union, withPriority } from "@prosekit/core";
+import { defineCommands, defineKeymap, defineNodeSpec, setBlockType, union, withPriority } from "@prosekit/core";
 
 //#region src/paragraph/paragraph-commands.ts
 /**
@@ -53,7 +53,7 @@ function defineParagraphSpec() {
 * default block node for most cases.
 */
 function defineParagraph() {
-	return union(withPriority(defineParagraphSpec(), Priority.highest), defineParagraphCommands(), defineParagraphKeymap());
+	return union(withPriority(defineParagraphSpec(), 4), defineParagraphCommands(), defineParagraphKeymap());
 }
 
 //#endregion

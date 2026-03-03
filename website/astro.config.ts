@@ -245,9 +245,12 @@ const config: AstroUserConfig = {
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
   },
-  experimental: {
-    headingIdCompat: true,
-  },
+  // experimental: {
+  //   queuedRendering: {
+  //     enabled: true,
+  //     contentCache: true
+  //   }
+  // }
 }
 
 export default config

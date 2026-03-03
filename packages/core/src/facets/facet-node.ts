@@ -149,9 +149,9 @@ export class FacetNode<I = any, O = any> {
     }
 
     if (this.facet.singleton) {
-      const reducer = (this.reducers[(2 satisfies typeof Priority.default)] ||= this.facet.reducer)
+      const reducer = (this.reducers[2 satisfies typeof Priority.default] ||= this.facet.reducer)
       const input: I[] = inputs.filter(isNotNullish).flat()
-      output[(2 satisfies typeof Priority.default)] = reducer(input)
+      output[2 satisfies typeof Priority.default] = reducer(input)
     } else {
       for (let pri = 0; pri < 5; pri++) {
         const input = inputs[pri]
@@ -174,7 +174,7 @@ export class FacetNode<I = any, O = any> {
 
   getSingletonOutput(): O | null {
     assert(this.facet.singleton)
-    return this.getOutput()[(2 satisfies typeof Priority.default)]
+    return this.getOutput()[2 satisfies typeof Priority.default]
   }
 
   getRootOutput(): RootOutput {

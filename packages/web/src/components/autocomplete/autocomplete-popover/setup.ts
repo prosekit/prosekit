@@ -164,6 +164,6 @@ function useEscapeKeydown(
   handler: () => boolean,
 ): void {
   const keymap = { Escape: handler }
-  const extension = withPriority(defineKeymap(keymap), (4 satisfies typeof Priority.highest))
+  const extension = withPriority(defineKeymap(keymap), 4 satisfies typeof Priority.highest)
   useEditorExtension(host, editor, extension)
 }

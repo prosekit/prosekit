@@ -1,4 +1,4 @@
-import type { Priority} from '@prosekit/core';
+import type { Priority } from '@prosekit/core'
 import { union, withPriority, type PlainExtension, type Union } from '@prosekit/core'
 import type {
   CursorAwareness,
@@ -66,6 +66,6 @@ export function defineLoro(options: LoroOptions): LoroExtension {
       defineLoroUndoPlugin({ ...undo, doc }),
       defineLoroSyncPlugin({ ...sync, doc }),
     ]),
-    (3 satisfies typeof Priority.high),
+    3 satisfies typeof Priority.high,
   )
 }

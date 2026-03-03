@@ -104,18 +104,28 @@ export function subtractFacetNode<I, O>(
 export class FacetNode<I = any, O = any> {
   output: Tuple5<O | null> | null = null
 
+  readonly facet: Facet<I, O>
+  readonly inputs: Tuple5<I[] | null>
+  readonly children: Map<number, FacetNode>
+  readonly reducers: Tuple5<FacetReducer<I, O> | null>
+
   constructor(
-    readonly facet: Facet<I, O>,
-    readonly inputs: Tuple5<I[] | null> = [null, null, null, null, null],
-    readonly children: Map<number, FacetNode> = new Map(),
-    readonly reducers: Tuple5<FacetReducer<I, O> | null> = [
+    facet: Facet<I, O>,
+    inputs: Tuple5<I[] | null> = [null, null, null, null, null],
+    children: Map<number, FacetNode> = new Map<number, FacetNode>(),
+    reducers: Tuple5<FacetReducer<I, O> | null> = [
       null,
       null,
       null,
       null,
       null,
     ],
-  ) {}
+  ) {
+    this.facet = facet
+    this.inputs = inputs
+    this.children = children
+    this.reducers = reducers
+  }
 
   private calcOutput(): Tuple5<O | null> {
     const inputs: Tuple5<I[] | null> = [null, null, null, null, null]

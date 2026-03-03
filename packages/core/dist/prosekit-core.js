@@ -1,4 +1,4 @@
-import { A as isFragment, B as EditorNotFoundError, C as defineFacetPayload, D as Priority, E as defineFacet, F as isSlice, I as isTextSelection, L as getNodeType, M as isNodeSelection, N as isProseMirrorNode, O as isNodeActive, P as isSelection, R as assert, S as stateFacet, T as rootFacet, V as ProseKitError, _ as jsonFromState, a as union, b as nodeFromJSON, c as isMarkActive, d as elementFromJSON, f as elementFromNode, g as jsonFromNode, h as jsonFromHTML, j as isMark, k as isAllSelection, l as isMarkAbsent, m as htmlFromNode, p as htmlFromJSON, r as createEditor, t as Editor, u as defineDefaultState, v as nodeFromElement, w as schemaFacet, x as stateFromJSON, y as nodeFromHTML, z as getMarkType } from "./editor-BKCC_iC9.js";
+import { A as isMark, B as ProseKitError, C as defineFacetPayload, D as isNodeActive, E as defineFacet, F as isTextSelection, I as getNodeType, L as assert, M as isProseMirrorNode, N as isSelection, O as isAllSelection, P as isSlice, R as getMarkType, S as stateFacet, T as rootFacet, _ as jsonFromState, a as union, b as nodeFromJSON, c as isMarkActive, d as elementFromJSON, f as elementFromNode, g as jsonFromNode, h as jsonFromHTML, j as isNodeSelection, k as isFragment, l as isMarkAbsent, m as htmlFromNode, p as htmlFromJSON, r as createEditor, t as Editor, u as defineDefaultState, v as nodeFromElement, w as schemaFacet, x as stateFromJSON, y as nodeFromHTML, z as EditorNotFoundError } from "./editor-D8sYFwSs.js";
 import { Plugin, PluginKey, ProseMirrorPlugin, TextSelection } from "@prosekit/pm/state";
 import { DOMSerializer, Fragment, Slice } from "@prosekit/pm/model";
 import { ReplaceAroundStep, dropPoint, findWrapping } from "@prosekit/pm/transform";
@@ -1470,6 +1470,38 @@ const nodeViewFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
+
+//#endregion
+//#region src/types/priority.ts
+/**
+* ProseKit extension priority.
+*
+* There are five priority levels available:
+*
+* - `Priority.lowest`
+* - `Priority.low`
+* - `Priority.default`
+* - `Priority.high`
+* - `Priority.highest`
+*
+* @example
+*
+* ```ts
+* import { withPriority, Priority } from 'prosekit/core'
+* import { myExtension } from './my-extension.js'
+*
+* const myExtensionWithHighPriority = withPriority(myExtension, Priority.high)
+* ```
+*
+* @public
+*/
+const Priority = {
+	lowest: 0,
+	low: 1,
+	default: 2,
+	high: 3,
+	highest: 4
+};
 
 //#endregion
 //#region src/utils/can-use-regex-lookbehind.ts

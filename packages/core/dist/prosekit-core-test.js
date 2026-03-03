@@ -1,4 +1,4 @@
-import { N as isProseMirrorNode, R as assert, i as setupEditorExtension, n as EditorInstance, o as createMarkActions, s as createNodeActions, t as Editor } from "./editor-BKCC_iC9.js";
+import { L as assert, M as isProseMirrorNode, i as setupEditorExtension, n as EditorInstance, o as createMarkActions, s as createNodeActions, t as Editor } from "./editor-D8sYFwSs.js";
 import { NodeSelection, TextSelection } from "@prosekit/pm/state";
 
 //#region src/test/test-builder.ts

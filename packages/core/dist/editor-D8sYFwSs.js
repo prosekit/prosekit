@@ -160,38 +160,6 @@ function checkNode(node, nodeType, attrs) {
 }
 
 //#endregion
-//#region src/types/priority.ts
-/**
-* ProseKit extension priority.
-*
-* There are five priority levels available:
-*
-* - `Priority.lowest`
-* - `Priority.low`
-* - `Priority.default`
-* - `Priority.high`
-* - `Priority.highest`
-*
-* @example
-*
-* ```ts
-* import { withPriority, Priority } from 'prosekit/core'
-* import { myExtension } from './my-extension.js'
-*
-* const myExtensionWithHighPriority = withPriority(myExtension, Priority.high)
-* ```
-*
-* @public
-*/
-const Priority = {
-	lowest: 0,
-	low: 1,
-	default: 2,
-	high: 3,
-	highest: 4
-};
-
-//#endregion
 //#region src/facets/facet.ts
 let facetCount = 0;
 /**
@@ -1224,5 +1192,5 @@ var Editor = class {
 };
 
 //#endregion
-export { isFragment as A, EditorNotFoundError as B, defineFacetPayload as C, Priority as D, defineFacet as E, isSlice as F, isTextSelection as I, getNodeType as L, isNodeSelection as M, isProseMirrorNode as N, isNodeActive as O, isSelection as P, assert as R, stateFacet as S, rootFacet as T, ProseKitError as V, jsonFromState as _, union as a, nodeFromJSON as b, isMarkActive as c, elementFromJSON as d, elementFromNode as f, jsonFromNode as g, jsonFromHTML as h, setupEditorExtension as i, isMark as j, isAllSelection as k, isMarkAbsent as l, htmlFromNode as m, EditorInstance as n, createMarkActions as o, htmlFromJSON as p, createEditor as r, createNodeActions as s, Editor as t, defineDefaultState as u, nodeFromElement as v, schemaFacet as w, stateFromJSON as x, nodeFromHTML as y, getMarkType as z };
-//# sourceMappingURL=editor-BKCC_iC9.js.map
+export { isMark as A, ProseKitError as B, defineFacetPayload as C, isNodeActive as D, defineFacet as E, isTextSelection as F, getNodeType as I, assert as L, isProseMirrorNode as M, isSelection as N, isAllSelection as O, isSlice as P, getMarkType as R, stateFacet as S, rootFacet as T, jsonFromState as _, union as a, nodeFromJSON as b, isMarkActive as c, elementFromJSON as d, elementFromNode as f, jsonFromNode as g, jsonFromHTML as h, setupEditorExtension as i, isNodeSelection as j, isFragment as k, isMarkAbsent as l, htmlFromNode as m, EditorInstance as n, createMarkActions as o, htmlFromJSON as p, createEditor as r, createNodeActions as s, Editor as t, defineDefaultState as u, nodeFromElement as v, schemaFacet as w, stateFromJSON as x, nodeFromHTML as y, EditorNotFoundError as z };
+//# sourceMappingURL=editor-D8sYFwSs.js.map

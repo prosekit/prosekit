@@ -55,7 +55,7 @@
     "react-dom": "^19.2.4",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.11",
-    "starlight-theme-nova": "^0.11.5",
+    "starlight-theme-nova": "^0.11.6",
     "svelte": "^5.53.3",
     "tailwindcss": "^4.2.1",
     "tinyexec": "^1.0.2",

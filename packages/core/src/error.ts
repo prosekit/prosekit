@@ -18,7 +18,7 @@ export class ProseKitError extends Error {
 export class EditorNotFoundError extends ProseKitError {
   constructor() {
     super(
-      'Unable to find editor. Please pass it as an argument or call this function inside a ProseKit component.',
+      'Unable to find editor. Pass it as an argument or call this function inside a ProseKit component.',
     )
   }
 }

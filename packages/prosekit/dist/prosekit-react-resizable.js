@@ -1,3 +1,2 @@
-export * from "@prosekit/react/resizable"
-
-export {  };
+export * from "@prosekit/react/resizable";
+export {};

@@ -1,5 +1,4 @@
 import { defineCommands, defineNodeSpec, insertNode, union } from "@prosekit/core";
-
 //#region src/mention/index.ts
 /**
 * @public
@@ -53,7 +52,7 @@ function defineMentionCommands() {
 function defineMention() {
 	return union(defineMentionSpec(), defineMentionCommands());
 }
-
 //#endregion
 export { defineMention, defineMentionCommands, defineMentionSpec };
+
 //# sourceMappingURL=prosekit-extensions-mention.js.map

@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/image"
-
-export {  };
+export * from "@prosekit/extensions/image";
+export {};

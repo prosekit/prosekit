@@ -1,6 +1,5 @@
 import { defineFacet, defineFacetPayload, pluginFacet } from "@prosekit/core";
 import { createEnterRulePlugin, createTextBlockEnterRule } from "prosemirror-enter-rules";
-
 //#region src/enter-rule/index.ts
 /**
 * Defines an enter rule. An enter rule applies when the text directly in front of
@@ -32,7 +31,7 @@ const enterRuleFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 export { defineEnterRule, defineTextBlockEnterRule };
+
 //# sourceMappingURL=prosekit-extensions-enter-rule.js.map

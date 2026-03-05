@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/input-rule"
-
-export {  };
+export * from "@prosekit/extensions/input-rule";
+export {};

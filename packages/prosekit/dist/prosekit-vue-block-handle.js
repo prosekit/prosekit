@@ -1,3 +1,2 @@
-export * from "@prosekit/vue/block-handle"
-
-export {  };
+export * from "@prosekit/vue/block-handle";
+export {};

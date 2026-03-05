@@ -5,7 +5,6 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef } 
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";
 import { queueExtension } from "@prosekit/web";
 import { useSyncExternalStore } from "preact/compat";
-
 //#region src/hooks/use-editor-extension.ts
 /**
 * @internal
@@ -16,7 +15,6 @@ function useEditorExtension(editor, extension) {
 		if (extension) return queueExtension(editor, extension);
 	}, [editor, extension]);
 }
-
 //#endregion
 //#region src/hooks/use-priority-extension.ts
 /**
@@ -27,7 +25,6 @@ function usePriorityExtension(extension, priority) {
 		return extension && priority ? withPriority(extension, priority) : extension;
 	}, [extension, priority]);
 }
-
 //#endregion
 //#region src/hooks/use-extension.ts
 /**
@@ -37,7 +34,6 @@ function useExtension(extension, options) {
 	const editorContext = useEditorContext();
 	useEditorExtension(options?.editor || editorContext, usePriorityExtension(extension, options?.priority));
 }
-
 //#endregion
 //#region src/extensions/preact-mark-view.ts
 function withMarkViewProps(component) {
@@ -75,7 +71,6 @@ function definePreactMarkViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/extensions/preact-node-view.ts
 function withNodeViewProps(component) {
@@ -113,7 +108,6 @@ function definePreactNodeViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/components/prosekit.ts
 /**
@@ -125,7 +119,6 @@ const ProseKit = (props) => {
 	const { editor, children } = props;
 	return h(EditorContextProvider, { value: editor }, h(ProsemirrorAdapterProvider, null, h(PreactNodeViewConsumer, null), h(PreactMarkViewConsumer, null), children));
 };
-
 //#endregion
 //#region src/hooks/use-event-callback.ts
 /**
@@ -138,7 +131,6 @@ function useEventCallback(callback) {
 	}, [callback]);
 	return useCallback((...args) => callbackRef.current(...args), []);
 }
-
 //#endregion
 //#region src/hooks/use-doc-change.ts
 /**
@@ -150,7 +142,6 @@ function useDocChange(handler, options) {
 	const memoizedHandler = useEventCallback(handler);
 	useExtension(useMemo(() => defineDocChangeHandler((view) => memoizedHandler(view.state.doc)), [memoizedHandler]), options);
 }
-
 //#endregion
 //#region src/hooks/use-editor-derived-value.ts
 /**
@@ -193,7 +184,6 @@ function createEditorStore(editor, derive) {
 	};
 	return [subscribe, getSnapshot];
 }
-
 //#endregion
 //#region src/hooks/use-editor.ts
 /**
@@ -222,13 +212,11 @@ function useForceUpdate() {
 	const [, dispatch] = useReducer((x) => x + 1, 0);
 	return dispatch;
 }
-
 //#endregion
 //#region src/hooks/use-keymap.ts
 function useKeymap(keymap, options) {
 	useExtension(useMemo(() => defineKeymap(keymap), [keymap]), options);
 }
-
 //#endregion
 //#region src/hooks/use-state-update.ts
 /**
@@ -240,7 +228,7 @@ function useStateUpdate(handler, options) {
 	const memoizedHandler = useEventCallback(handler);
 	useExtension(useMemo(() => defineUpdateHandler((view) => memoizedHandler(view.state)), [memoizedHandler]), options);
 }
-
 //#endregion
 export { ProseKit, definePreactMarkView, definePreactNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+
 //# sourceMappingURL=prosekit-preact.js.map

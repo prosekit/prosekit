@@ -2,7 +2,6 @@ import { p as findTable } from "./table.js";
 import { Plugin, PluginKey } from "@prosekit/pm/state";
 import { definePlugin, isInCodeBlock, isTextSelection, maybeRun } from "@prosekit/core";
 import { Decoration, DecorationSet } from "@prosekit/pm/view";
-
 //#region src/placeholder/index.ts
 /**
 * Add a placeholder text to the editor when the current block or document is
@@ -44,7 +43,7 @@ function createPlaceholderDecoration(state, placeholderText) {
 		"data-placeholder": placeholderText
 	});
 }
-
 //#endregion
 export { definePlaceholder };
+
 //# sourceMappingURL=prosekit-extensions-placeholder.js.map

@@ -5,7 +5,6 @@ import { defineClipboardSerializer, defineCommands, defineKeymap, defineNodeSpec
 import { chainCommands, deleteSelection } from "@prosekit/pm/commands";
 import { isElementLike } from "@ocavue/utils";
 import { ListDOMSerializer, createDedentListCommand, createIndentListCommand, createListEventPlugin, createListRenderingPlugin, createListSpec, createMoveListCommand, createSafariInputMethodWorkaroundPlugin, createSplitListCommand, createToggleCollapsedCommand, createToggleListCommand, createUnwrapListCommand, createWrapInListCommand, deleteCommand, enterCommand, findCheckboxInListItem, joinCollapsedListBackward, joinListElements, joinListUp, listInputRules, listToDOM, protectCollapsed, unwrapListSlice } from "prosemirror-flat-list";
-
 //#region src/list/list-commands.ts
 function insertList(attrs) {
 	return insertNode({
@@ -31,7 +30,6 @@ function defineListCommands() {
 		insertList
 	});
 }
-
 //#endregion
 //#region src/list/list-input-rules.ts
 /**
@@ -40,7 +38,6 @@ function defineListCommands() {
 function defineListInputRules() {
 	return union(listInputRules.map(defineInputRule));
 }
-
 //#endregion
 //#region src/list/list-keymap.ts
 const backspaceCommand = chainCommands(protectCollapsed, deleteSelection, joinListUp, joinCollapsedListBackward);
@@ -63,7 +60,6 @@ const listKeymap = {
 function defineListKeymap() {
 	return defineKeymap(listKeymap);
 }
-
 //#endregion
 //#region src/list/list-plugins.ts
 function createListClipboardPlugin() {
@@ -83,7 +79,6 @@ function createListPlugins() {
 function defineListPlugins() {
 	return definePlugin(createListPlugins);
 }
-
 //#endregion
 //#region src/list/list-serializer.ts
 /**
@@ -145,7 +140,6 @@ function normalizeTaskList(node) {
 	node.replaceChildren(...content.children);
 	textBlock.prepend(checkbox);
 }
-
 //#endregion
 //#region src/list/list-spec.ts
 function getMarkers(node) {
@@ -173,7 +167,6 @@ function defineListSpec() {
 		name: "list"
 	});
 }
-
 //#endregion
 //#region src/list/list-drop-indicator.ts
 /**
@@ -197,7 +190,6 @@ const onDrag = ({ view, pos }) => {
 	}
 	return true;
 };
-
 //#endregion
 //#region src/list/list.ts
 /**
@@ -206,7 +198,7 @@ const onDrag = ({ view, pos }) => {
 function defineList() {
 	return union(defineListSpec(), defineListPlugins(), defineListKeymap(), defineListInputRules(), defineListCommands(), defineListSerializer(), defineListDropIndicator());
 }
-
 //#endregion
 export { ListDOMSerializer, defineList, defineListCommands, defineListInputRules, defineListKeymap, defineListPlugins, defineListSerializer, defineListSpec };
+
 //# sourceMappingURL=prosekit-extensions-list.js.map

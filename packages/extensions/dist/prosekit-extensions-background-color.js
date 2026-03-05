@@ -1,5 +1,4 @@
 import { addMark, defineCommands, defineMarkSpec, removeMark, union } from "@prosekit/core";
-
 //#region src/background-color/background-color-commands.ts
 /**
 * @internal
@@ -25,7 +24,6 @@ function defineBackgroundColorCommands() {
 		removeBackgroundColor
 	});
 }
-
 //#endregion
 //#region src/background-color/background-color-spec.ts
 /**
@@ -59,7 +57,6 @@ function defineBackgroundColorSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/background-color/background-color.ts
 /**
@@ -70,7 +67,7 @@ function defineBackgroundColorSpec() {
 function defineBackgroundColor() {
 	return union(defineBackgroundColorSpec(), defineBackgroundColorCommands());
 }
-
 //#endregion
 export { addBackgroundColor, defineBackgroundColor, defineBackgroundColorCommands, defineBackgroundColorSpec, removeBackgroundColor };
+
 //# sourceMappingURL=prosekit-extensions-background-color.js.map

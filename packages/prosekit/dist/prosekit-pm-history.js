@@ -1,3 +1,2 @@
-export * from "@prosekit/pm/history"
-
-export {  };
+export * from "@prosekit/pm/history";
+export {};

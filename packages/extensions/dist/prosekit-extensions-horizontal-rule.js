@@ -2,7 +2,6 @@ import { defineInputRule } from "./prosekit-extensions-input-rule.js";
 import { defineCommands, defineNodeSpec, getNodeType, union } from "@prosekit/core";
 import { InputRule } from "@prosekit/pm/inputrules";
 import { Fragment, Slice } from "@prosekit/pm/model";
-
 //#region src/horizontal-rule/horizontal-rule-commands.ts
 const insertHorizontalRuleCommand = (state, dispatch) => {
 	if (!dispatch) return true;
@@ -22,7 +21,6 @@ function insertHorizontalRule() {
 function defineHorizontalRuleCommands() {
 	return defineCommands({ insertHorizontalRule });
 }
-
 //#endregion
 //#region src/horizontal-rule/horizontal-rule-input-rule.ts
 /**
@@ -37,7 +35,6 @@ function defineHorizontalRuleInputRule() {
 		return tr.scrollIntoView();
 	})));
 }
-
 //#endregion
 //#region src/horizontal-rule/horizontal-rule-spec.ts
 function defineHorizontalRuleSpec() {
@@ -52,7 +49,6 @@ function defineHorizontalRuleSpec() {
 		]
 	});
 }
-
 //#endregion
 //#region src/horizontal-rule/horizontal-rule.ts
 /**
@@ -61,7 +57,7 @@ function defineHorizontalRuleSpec() {
 function defineHorizontalRule() {
 	return union(defineHorizontalRuleSpec(), defineHorizontalRuleInputRule(), defineHorizontalRuleCommands());
 }
-
 //#endregion
 export { defineHorizontalRule, defineHorizontalRuleCommands, defineHorizontalRuleInputRule, defineHorizontalRuleSpec, insertHorizontalRule };
+
 //# sourceMappingURL=prosekit-extensions-horizontal-rule.js.map

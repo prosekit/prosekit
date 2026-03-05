@@ -1,5 +1,4 @@
 import { defineNodeSpec } from "@prosekit/core";
-
 //#region src/text/index.ts
 /**
 * @public
@@ -10,7 +9,7 @@ function defineText() {
 		group: "inline"
 	});
 }
-
 //#endregion
 export { defineText };
+
 //# sourceMappingURL=prosekit-extensions-text.js.map

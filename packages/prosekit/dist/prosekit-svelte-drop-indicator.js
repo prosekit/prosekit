@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/drop-indicator"
-
-export {  };
+export * from "@prosekit/svelte/drop-indicator";
+export {};

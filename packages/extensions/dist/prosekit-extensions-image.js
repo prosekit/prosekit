@@ -1,6 +1,5 @@
 import { n as defineFilePasteHandler, r as defineFileDropHandler, t as UploadTask } from "./file.js";
 import { ProseKitError, defineCommands, defineNodeSpec, insertNode, union } from "@prosekit/core";
-
 //#region src/image/image-commands/insert-image.ts
 /**
 * Returns a command that inserts an image node with the given attributes at the
@@ -14,7 +13,6 @@ function insertImage(attrs) {
 		attrs
 	});
 }
-
 //#endregion
 //#region src/image/image-commands/upload-image.ts
 /**
@@ -97,7 +95,6 @@ function replaceImageURL(view, oldURL, newURL) {
 	for (const pos of positions) tr.setNodeAttribute(pos, "src", newURL);
 	view.dispatch(tr);
 }
-
 //#endregion
 //#region src/image/image-commands.ts
 /**
@@ -109,7 +106,6 @@ function defineImageCommands() {
 		uploadImage
 	});
 }
-
 //#endregion
 //#region src/image/image-spec.ts
 /**
@@ -162,7 +158,6 @@ function defineImageSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/image/image-upload-handler.ts
 function defaultCanUpload({ file }) {
@@ -199,7 +194,6 @@ function defineImageUploadHandler({ uploader, canPaste = defaultCanUpload, canDr
 	};
 	return union(defineFilePasteHandler(handlePaste), defineFileDropHandler(handleDrop));
 }
-
 //#endregion
 //#region src/image/image.ts
 /**
@@ -208,7 +202,7 @@ function defineImageUploadHandler({ uploader, canPaste = defaultCanUpload, canDr
 function defineImage() {
 	return union(defineImageSpec(), defineImageCommands());
 }
-
 //#endregion
 export { defineImage, defineImageCommands, defineImageSpec, defineImageUploadHandler, insertImage, replaceImageURL, uploadImage };
+
 //# sourceMappingURL=prosekit-extensions-image.js.map

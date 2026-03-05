@@ -1,3 +1,2 @@
-export * from "@prosekit/vue/tooltip"
-
-export {  };
+export * from "@prosekit/vue/tooltip";
+export {};

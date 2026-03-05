@@ -1,3 +1,2 @@
-export * from "@prosekit/solid/popover"
-
-export {  };
+export * from "@prosekit/solid/popover";
+export {};

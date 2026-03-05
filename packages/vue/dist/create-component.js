@@ -1,6 +1,5 @@
 import { n as useEditorContext } from "./editor-context.js";
 import { defineComponent, h, onMounted, ref, watchEffect } from "vue";
-
 //#region src/components/create-component.ts
 function createComponent(tagName, displayName, propNames, eventNames) {
 	const hasEditor = propNames.includes("editor");
@@ -40,7 +39,7 @@ function createComponent(tagName, displayName, propNames, eventNames) {
 		emits: eventNames
 	});
 }
-
 //#endregion
 export { createComponent as t };
+
 //# sourceMappingURL=create-component.js.map

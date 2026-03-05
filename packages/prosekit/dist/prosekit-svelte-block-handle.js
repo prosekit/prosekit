@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/block-handle"
-
-export {  };
+export * from "@prosekit/svelte/block-handle";
+export {};

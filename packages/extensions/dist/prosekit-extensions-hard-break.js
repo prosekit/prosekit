@@ -1,5 +1,4 @@
 import { defineCommands, defineKeymap, defineNodeSpec, insertNode, union } from "@prosekit/core";
-
 //#region src/hard-break/hard-break-commands.ts
 /**
 * @internal
@@ -13,7 +12,6 @@ function insertHardBreak() {
 function defineHardBreakCommands() {
 	return defineCommands({ insertHardBreak });
 }
-
 //#endregion
 //#region src/hard-break/hard-break-keymap.ts
 /**
@@ -25,7 +23,6 @@ function defineHardBreakKeymap() {
 		"Shift-Enter": insertHardBreak()
 	});
 }
-
 //#endregion
 //#region src/hard-break/hard-break-spec.ts
 /**
@@ -44,7 +41,6 @@ function defineHardBreakSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/hard-break/hard-break.ts
 /**
@@ -53,7 +49,7 @@ function defineHardBreakSpec() {
 function defineHardBreak() {
 	return union(defineHardBreakSpec(), defineHardBreakKeymap(), defineHardBreakCommands());
 }
-
 //#endregion
 export { defineHardBreak, defineHardBreakCommands, defineHardBreakKeymap, defineHardBreakSpec };
+
 //# sourceMappingURL=prosekit-extensions-hard-break.js.map

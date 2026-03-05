@@ -1,5 +1,4 @@
 import { defineCommands, defineKeymap, defineNodeSpec, setBlockType, union, withPriority } from "@prosekit/core";
-
 //#region src/paragraph/paragraph-commands.ts
 /**
 * @internal
@@ -13,7 +12,6 @@ function setParagraph() {
 function defineParagraphCommands() {
 	return defineCommands({ setParagraph });
 }
-
 //#endregion
 //#region src/paragraph/paragraph-keymap.ts
 /**
@@ -22,7 +20,6 @@ function defineParagraphCommands() {
 function defineParagraphKeymap() {
 	return defineKeymap({ "Mod-Alt-0": setParagraph() });
 }
-
 //#endregion
 //#region src/paragraph/paragraph-spec.ts
 /**
@@ -41,7 +38,6 @@ function defineParagraphSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/paragraph/paragraph.ts
 /**
@@ -55,7 +51,7 @@ function defineParagraphSpec() {
 function defineParagraph() {
 	return union(withPriority(defineParagraphSpec(), 4), defineParagraphCommands(), defineParagraphKeymap());
 }
-
 //#endregion
 export { defineParagraph, defineParagraphCommands, defineParagraphKeymap, defineParagraphSpec };
+
 //# sourceMappingURL=prosekit-extensions-paragraph.js.map

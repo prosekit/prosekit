@@ -1,5 +1,4 @@
 import { defineCommands, defineKeymap, defineNodeAttr, setNodeAttrsBetween, union } from "@prosekit/core";
-
 //#region src/text-align/index.ts
 function defineTextAlignAttr(type, defaultValue) {
 	return defineNodeAttr({
@@ -69,7 +68,7 @@ function defineTextAlignKeymap(types) {
 function defineTextAlign(options) {
 	return union(defineTextAlignAttrs(options.types, options.default || "left"), defineTextAlignKeymap(options.types), defineTextAlignCommands(options.types));
 }
-
 //#endregion
 export { defineTextAlign, defineTextAlignCommands, defineTextAlignKeymap, setTextAlign };
+
 //# sourceMappingURL=prosekit-extensions-text-align.js.map

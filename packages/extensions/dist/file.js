@@ -1,5 +1,4 @@
 import { ProseKitError, defineFacet, defineFacetPayload, editorEventFacet } from "@prosekit/core";
-
 //#region src/file/helpers.ts
 function handleFile(view, event, file, handlers) {
 	for (let i = handlers.length - 1; i >= 0; i--) {
@@ -18,7 +17,6 @@ function handleEvent(view, event, handlers, getFiles) {
 	for (const file of files) if (handleFile(view, event, file, handlers)) handled = true;
 	return handled;
 }
-
 //#endregion
 //#region src/file/file-drop-handler.ts
 function defineFileDropHandler(handler) {
@@ -46,7 +44,6 @@ const facet$1 = defineFacet({
 		return ["drop", dropHandler];
 	}
 });
-
 //#endregion
 //#region src/file/file-paste-handler.ts
 function defineFilePasteHandler(handler) {
@@ -65,7 +62,6 @@ const facet = defineFacet({
 		return ["paste", pasteHandler];
 	}
 });
-
 //#endregion
 //#region src/file/file-upload.ts
 /**
@@ -126,7 +122,7 @@ var UploadTask = class {
 	}
 };
 const store = /* @__PURE__ */ new Map();
-
 //#endregion
 export { defineFilePasteHandler as n, defineFileDropHandler as r, UploadTask as t };
+
 //# sourceMappingURL=file.js.map

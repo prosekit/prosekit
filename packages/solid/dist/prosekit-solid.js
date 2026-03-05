@@ -2,7 +2,6 @@ import { n as useEditorContext, t as EditorContextProvider } from "./editor-cont
 import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory } from "@prosemirror-adapter/solid";
 import { createComponent, createEffect, createMemo, createSignal, onCleanup } from "solid-js";
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";
-
 //#region src/utils/to-value.ts
 /**
 * Accesses the value of a MaybeAccessor
@@ -16,7 +15,6 @@ import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeyma
 function toValue(v) {
 	return typeof v === "function" ? v() : v;
 }
-
 //#endregion
 //#region src/hooks/use-editor-extension.ts
 /**
@@ -31,7 +29,6 @@ function useEditorExtension(editorAccessor, extensionAccessor) {
 		if (extension) onCleanup(editor.use(extension));
 	});
 }
-
 //#endregion
 //#region src/hooks/use-priority-extension.ts
 /**
@@ -43,7 +40,6 @@ function usePriorityExtension(extension, priority) {
 		return ext && priority ? withPriority(ext, priority) : ext;
 	};
 }
-
 //#endregion
 //#region src/hooks/use-extension.ts
 /**
@@ -52,7 +48,6 @@ function usePriorityExtension(extension, priority) {
 function useExtension(extension, options) {
 	useEditorExtension(options?.editor, usePriorityExtension(extension, options?.priority));
 }
-
 //#endregion
 //#region src/extensions/solid-mark-view.ts
 function withMarkViewProps(component) {
@@ -100,7 +95,6 @@ function defineSolidMarkViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/extensions/solid-node-view.ts
 function withNodeViewProps(component) {
@@ -163,7 +157,6 @@ function defineSolidNodeViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/components/prosekit.ts
 /**
@@ -185,7 +178,6 @@ const ProseKit = (props) => {
 		}
 	});
 };
-
 //#endregion
 //#region src/hooks/use-doc-change.ts
 /**
@@ -197,7 +189,6 @@ function useDocChange(handler, options) {
 	const extension = defineDocChangeHandler((view) => handler(view.state.doc));
 	useExtension(() => extension, options);
 }
-
 //#endregion
 //#region src/hooks/use-editor.ts
 /**
@@ -228,7 +219,6 @@ function useEditor(options) {
 function useForceUpdate() {
 	return createSignal(void 0, { equals: false });
 }
-
 //#endregion
 //#region src/hooks/use-editor-derived-value.ts
 /**
@@ -248,14 +238,12 @@ function useEditorDerivedValue(derive, options) {
 	const editorAccessor = initialEditor ? () => toValue(initialEditor) : useEditor({ update: true });
 	return createMemo(() => derive(editorAccessor()));
 }
-
 //#endregion
 //#region src/hooks/use-keymap.ts
 function useKeymap(keymap, options) {
 	const extension = () => defineKeymap(keymap());
 	useExtension(extension, options);
 }
-
 //#endregion
 //#region src/hooks/use-state-update.ts
 /**
@@ -267,7 +255,7 @@ function useStateUpdate(handler, options) {
 	const extension = defineUpdateHandler((view) => handler(view.state));
 	useExtension(() => extension, options);
 }
-
 //#endregion
 export { ProseKit, defineSolidMarkView, defineSolidNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+
 //# sourceMappingURL=prosekit-solid.js.map

@@ -1,3 +1,2 @@
-export * from "@prosekit/react/popover"
-
-export {  };
+export * from "@prosekit/react/popover";
+export {};

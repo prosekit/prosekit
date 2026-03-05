@@ -19,7 +19,6 @@ import { defineTable } from "@prosekit/extensions/table";
 import { defineText } from "@prosekit/extensions/text";
 import { defineUnderline } from "@prosekit/extensions/underline";
 import { defineVirtualSelection } from "@prosekit/extensions/virtual-selection";
-
 //#region src/index.ts
 /**
 * Define a basic extension that includes some common functionality. You can
@@ -56,7 +55,7 @@ import { defineVirtualSelection } from "@prosekit/extensions/virtual-selection";
 function defineBasicExtension() {
 	return union(defineDoc(), defineText(), defineParagraph(), defineHeading(), defineList(), defineBlockquote(), defineImage(), defineHorizontalRule(), defineHardBreak(), defineTable(), defineCodeBlock(), defineItalic(), defineBold(), defineUnderline(), defineStrike(), defineCode(), defineLink(), defineBaseKeymap(), defineBaseCommands(), defineHistory(), defineGapCursor(), defineVirtualSelection(), defineModClickPrevention());
 }
-
 //#endregion
 export { defineBasicExtension };
+
 //# sourceMappingURL=prosekit-basic.js.map

@@ -1,3 +1,2 @@
-export * from "@prosekit/lit/popover"
-
-export {  };
+export * from "@prosekit/lit/popover";
+export {};

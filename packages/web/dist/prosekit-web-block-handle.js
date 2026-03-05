@@ -9,7 +9,6 @@ import { usePresence } from "@aria-ui/presence";
 import { isElement, isHTMLElement, isTextNode } from "@ocavue/utils";
 import { Fragment, Slice } from "@prosekit/pm/model";
 import { NodeSelection } from "@prosekit/pm/state";
-
 //#region src/components/block-handle/context.ts
 /**
 * @internal
@@ -19,7 +18,6 @@ const blockPopoverContext = createContext("prosekit-block-popover-context", null
 * @internal
 */
 const draggingContext = createContext("prosekit-block-handle-dragging-context", false);
-
 //#endregion
 //#region src/components/block-handle/block-handle-add/setup.ts
 /**
@@ -38,14 +36,12 @@ function useBlockHandleAdd(host, { state }) {
 		context.set(null);
 	});
 }
-
 //#endregion
 //#region src/components/block-handle/block-handle-add/types.ts
 /** @internal */
 const blockHandleAddProps = { editor: { default: null } };
 /** @internal */
 const blockHandleAddEvents = {};
-
 //#endregion
 //#region src/components/block-handle/block-handle-add/element.gen.ts
 const BlockHandleAddElementBase = defineCustomElement({
@@ -55,7 +51,6 @@ const BlockHandleAddElementBase = defineCustomElement({
 });
 var BlockHandleAddElement = class extends BlockHandleAddElementBase {};
 registerCustomElement("prosekit-block-handle-add", BlockHandleAddElement);
-
 //#endregion
 //#region src/utils/get-box-element.ts
 /**
@@ -69,7 +64,6 @@ function getBoxElement(element) {
 	else if (display === "none") return;
 	return element;
 }
-
 //#endregion
 //#region src/utils/get-client-rect.ts
 /**
@@ -100,11 +94,9 @@ function getClientRect(element) {
 	}
 	return rect;
 }
-
 //#endregion
 //#region src/utils/max-z-index.ts
 const maxZIndex = "2147483647";
-
 //#endregion
 //#region src/components/block-handle/block-handle-draggable/set-drag-preview.ts
 /**
@@ -155,7 +147,6 @@ function setDragPreview(event, element) {
 		container.remove();
 	});
 }
-
 //#endregion
 //#region src/components/block-handle/block-handle-draggable/setup.ts
 /**
@@ -216,14 +207,12 @@ function setViewDragging(view, hoverState) {
 		node: NodeSelection.create(view.state.doc, pos)
 	};
 }
-
 //#endregion
 //#region src/components/block-handle/block-handle-draggable/types.ts
 /** @internal */
 const blockHandleDraggableProps = { editor: { default: null } };
 /** @internal */
 const blockHandleDraggableEvents = {};
-
 //#endregion
 //#region src/components/block-handle/block-handle-draggable/element.gen.ts
 const BlockHandleDraggableElementBase = defineCustomElement({
@@ -233,7 +222,6 @@ const BlockHandleDraggableElementBase = defineCustomElement({
 });
 var BlockHandleDraggableElement = class extends BlockHandleDraggableElementBase {};
 registerCustomElement("prosekit-block-handle-draggable", BlockHandleDraggableElement);
-
 //#endregion
 //#region src/utils/throttle.ts
 /**
@@ -249,7 +237,6 @@ function throttle(callback, wait) {
 		}
 	};
 }
-
 //#endregion
 //#region src/components/block-handle/block-handle-popover/pointer-move.ts
 function defineElementHoverHandler(handler) {
@@ -426,7 +413,6 @@ const fallbackRect = Object.freeze({
 	x: -9999,
 	y: -9999
 });
-
 //#endregion
 //#region src/components/block-handle/block-handle-popover/setup.ts
 /**
@@ -468,7 +454,6 @@ function isHoverStateEqual(a, b) {
 	if (!a || !b) return false;
 	return a.pos === b.pos && a.node.eq(b.node);
 }
-
 //#endregion
 //#region src/components/block-handle/block-handle-popover/types.ts
 /** @internal */
@@ -486,7 +471,6 @@ const blockHandlePopoverEvents = {
 	...overlayPositionerEvents,
 	stateChange: {}
 };
-
 //#endregion
 //#region src/components/block-handle/block-handle-popover/element.gen.ts
 const BlockHandlePopoverElementBase = defineCustomElement({
@@ -496,7 +480,7 @@ const BlockHandlePopoverElementBase = defineCustomElement({
 });
 var BlockHandlePopoverElement = class extends BlockHandlePopoverElementBase {};
 registerCustomElement("prosekit-block-handle-popover", BlockHandlePopoverElement);
-
 //#endregion
 export { BlockHandleAddElement, BlockHandleDraggableElement, BlockHandlePopoverElement, blockHandleAddEvents, blockHandleAddProps, blockHandleDraggableEvents, blockHandleDraggableProps, blockHandlePopoverEvents, blockHandlePopoverProps, useBlockHandleAdd, useBlockHandleDraggable, useBlockHandlePopover };
+
 //# sourceMappingURL=prosekit-web-block-handle.js.map

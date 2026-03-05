@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/enter-rule"
-
-export {  };
+export * from "@prosekit/extensions/enter-rule";
+export {};

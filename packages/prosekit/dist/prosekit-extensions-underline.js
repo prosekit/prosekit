@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/underline"
-
-export {  };
+export * from "@prosekit/extensions/underline";
+export {};

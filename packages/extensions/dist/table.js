@@ -2,7 +2,6 @@ import { t as defineDropIndicator } from "./drop-indicator.js";
 import { TextSelection } from "@prosekit/pm/state";
 import { defaultBlockAt, defineCommands, defineNodeSpec, definePlugin, getNodeType, insertNode, union } from "@prosekit/core";
 import { CellSelection, TableMap, addColumnAfter, addColumnBefore, addRowAfter, addRowBefore, columnResizing, deleteCellSelection, deleteColumn, deleteRow, deleteTable, findCellPos, findCellRange, findTable, mergeCells, moveTableColumn, moveTableRow, splitCell, tableEditing, tableNodes } from "prosemirror-tables";
-
 //#region src/table/table-commands/exit-table.ts
 /**
 * When the selection is in a table node, create a default block after the table
@@ -33,7 +32,6 @@ const exitTable = (state, dispatch) => {
 	}
 	return true;
 };
-
 //#endregion
 //#region src/table/table-commands/insert-table.ts
 function createEmptyTable(schema, row, col, header) {
@@ -70,7 +68,6 @@ function insertTable(options) {
 		return insertNode({ node: createEmptyTable(state.schema, row, col, header) })(state, dispatch, view);
 	};
 }
-
 //#endregion
 //#region src/table/table-utils.ts
 /**
@@ -81,7 +78,6 @@ function insertTable(options) {
 function isCellSelection(value) {
 	return value instanceof CellSelection;
 }
-
 //#endregion
 //#region src/table/table-commands/select-table-cell.ts
 /**
@@ -98,7 +94,6 @@ function selectTableCell(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/table/table-commands/select-table-column.ts
 /**
@@ -116,7 +111,6 @@ function selectTableColumn(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/table/table-commands/select-table-row.ts
 /**
@@ -134,7 +128,6 @@ function selectTableRow(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/table/table-commands/select-table.ts
 /**
@@ -159,7 +152,6 @@ function selectTable(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/table/table-commands.ts
 /**
@@ -189,7 +181,6 @@ function defineTableCommands() {
 		moveTableColumn
 	});
 }
-
 //#endregion
 //#region src/table/table-drop-indicator.ts
 /**
@@ -213,7 +204,6 @@ const onDrag = ({ event }) => {
 	}
 	return !match;
 };
-
 //#endregion
 //#region src/table/table-plugins.ts
 /**
@@ -222,7 +212,6 @@ const onDrag = ({ event }) => {
 function defineTablePlugins() {
 	return definePlugin([tableEditing(), columnResizing()]);
 }
-
 //#endregion
 //#region src/table/table-spec.ts
 const cellContent = "block+";
@@ -273,7 +262,6 @@ function defineTableHeaderCellSpec() {
 		attrs: cellAttrs
 	});
 }
-
 //#endregion
 //#region src/table/table.ts
 /**
@@ -282,7 +270,7 @@ function defineTableHeaderCellSpec() {
 function defineTable() {
 	return union(defineTableSpec(), defineTableRowSpec(), defineTableCellSpec(), defineTableHeaderCellSpec(), defineTablePlugins(), defineTableCommands(), defineTableDropIndicator());
 }
-
 //#endregion
 export { insertTable as _, defineTableSpec as a, defineTableCommands as c, selectTableColumn as d, selectTableCell as f, moveTableColumn as g, moveTableRow as h, defineTableRowSpec as i, selectTable as l, isCellSelection as m, defineTableCellSpec as n, defineTablePlugins as o, findTable as p, defineTableHeaderCellSpec as r, defineTableDropIndicator as s, defineTable as t, selectTableRow as u, exitTable as v };
+
 //# sourceMappingURL=table.js.map

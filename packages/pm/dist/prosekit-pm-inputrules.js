@@ -1,3 +1,2 @@
-export * from "prosemirror-inputrules"
-
-export {  };
+export * from "prosemirror-inputrules";
+export {};

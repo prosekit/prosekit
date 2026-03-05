@@ -4,7 +4,6 @@ import { Decoration, DecorationSet } from "@prosekit/pm/view";
 import { DOMSerializer, Fragment, Slice } from "@prosekit/pm/model";
 import { Step } from "@prosekit/pm/transform";
 import { ChangeSet } from "prosemirror-changeset";
-
 //#region src/commit/index.ts
 function getChanges(doc, parent, steps) {
 	return ChangeSet.create(parent).addSteps(doc, steps.map((step) => step.getMap()), null).changes;
@@ -153,7 +152,7 @@ function defineCommitRecorder(commitRecorder) {
 		}
 	}));
 }
-
 //#endregion
 export { CommitRecorder, defineCommitRecorder, defineCommitViewer };
+
 //# sourceMappingURL=prosekit-extensions-commit.js.map

@@ -8,20 +8,17 @@ import { defineDOMEventHandler, defineKeymap, withPriority } from "@prosekit/cor
 import { overlayPositionerEvents, overlayPositionerProps, useOverlayPositionerState } from "@aria-ui/overlay/elements";
 import { usePresence } from "@aria-ui/presence";
 import { AutocompleteRule, defineAutocomplete } from "@prosekit/extensions/autocomplete";
-
 //#region src/components/autocomplete/autocomplete-empty/setup.ts
 /**
 * @internal
 */
 const useAutocompleteEmpty = useListboxEmpty;
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-empty/types.ts
 /** @internal */
 const autocompleteEmptyProps = {};
 /** @internal */
 const autocompleteEmptyEvents = {};
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-empty/element.gen.ts
 const AutocompleteEmptyElementBase = defineCustomElement({
@@ -31,13 +28,11 @@ const AutocompleteEmptyElementBase = defineCustomElement({
 });
 var AutocompleteEmptyElement = class extends AutocompleteEmptyElementBase {};
 registerCustomElement("prosekit-autocomplete-empty", AutocompleteEmptyElement);
-
 //#endregion
 //#region src/components/autocomplete/context.ts
 const queryContext = createContext("prosekit/autocomplete-popover/query", "");
 const onSubmitContext = createContext("prosekit/autocomplete-popover/onSubmit", null);
 const openContext = createContext("prosekit/autocomplete-popover/open", false);
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-item/setup.ts
 /**
@@ -56,14 +51,12 @@ function useAutocompleteItem(element, { state, emit }) {
 		event.preventDefault();
 	});
 }
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-item/types.ts
 /** @internal */
 const autocompleteItemProps = { value: { default: "" } };
 /** @internal */
 const autocompleteItemEvents = listboxItemEvents;
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-item/element.gen.ts
 const AutocompleteItemElementBase = defineCustomElement({
@@ -73,7 +66,6 @@ const AutocompleteItemElementBase = defineCustomElement({
 });
 var AutocompleteItemElement = class extends AutocompleteItemElementBase {};
 registerCustomElement("prosekit-autocomplete-item", AutocompleteItemElement);
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-list/setup.ts
 /**
@@ -147,7 +139,6 @@ function useKeyDownTarget(element, open, editor) {
 		}
 	};
 }
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-list/types.ts
 const autocompleteListProps = {
@@ -155,7 +146,6 @@ const autocompleteListProps = {
 	editor: { default: null }
 };
 const autocompleteListEvents = { ...listboxEvents };
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-list/element.gen.ts
 const AutocompleteListElementBase = defineCustomElement({
@@ -165,7 +155,6 @@ const AutocompleteListElementBase = defineCustomElement({
 });
 var AutocompleteListElement = class extends AutocompleteListElementBase {};
 registerCustomElement("prosekit-autocomplete-list", AutocompleteListElement);
-
 //#endregion
 //#region src/hooks/use-first-rendering.ts
 function useFirstRendering(host) {
@@ -177,13 +166,11 @@ function useFirstRendering(host) {
 	});
 	return firstRendering;
 }
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-popover/helpers.ts
 function defaultQueryBuilder(match) {
 	return match[0].toLowerCase().replaceAll(/[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/g, "").replaceAll(/\s\s+/g, " ").trim();
 }
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-popover/setup.ts
 /**
@@ -255,7 +242,6 @@ function createKeymapHandler(handler, enabled) {
 function useEscapeKeydown(host, editor, handler) {
 	useEditorExtension(host, editor, withPriority(defineKeymap({ Escape: handler }), 4));
 }
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-popover/types.ts
 const defaultBoundary = typeof document !== "undefined" && document.querySelector("body") || "clippingAncestors";
@@ -278,7 +264,6 @@ const autocompletePopoverEvents = {
 	openChange: {},
 	queryChange: {}
 };
-
 //#endregion
 //#region src/components/autocomplete/autocomplete-popover/element.gen.ts
 const AutocompletePopoverElementBase = defineCustomElement({
@@ -288,7 +273,7 @@ const AutocompletePopoverElementBase = defineCustomElement({
 });
 var AutocompletePopoverElement = class extends AutocompletePopoverElementBase {};
 registerCustomElement("prosekit-autocomplete-popover", AutocompletePopoverElement);
-
 //#endregion
 export { AutocompleteEmptyElement, AutocompleteItemElement, AutocompleteListElement, AutocompletePopoverElement, autocompleteEmptyEvents, autocompleteEmptyProps, autocompleteItemEvents, autocompleteItemProps, autocompleteListEvents, autocompleteListProps, autocompletePopoverEvents, autocompletePopoverProps, useAutocompleteEmpty, useAutocompleteItem, useAutocompleteList, useAutocompletePopover };
+
 //# sourceMappingURL=prosekit-web-autocomplete.js.map

@@ -1,3 +1,2 @@
-export * from "@prosekit/preact"
-
-export {  };
+export * from "@prosekit/preact";
+export {};

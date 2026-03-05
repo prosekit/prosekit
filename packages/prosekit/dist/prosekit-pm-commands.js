@@ -1,3 +1,2 @@
-export * from "@prosekit/pm/commands"
-
-export {  };
+export * from "@prosekit/pm/commands";
+export {};

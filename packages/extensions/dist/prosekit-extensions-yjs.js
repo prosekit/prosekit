@@ -1,6 +1,5 @@
 import { defineCommands, defineKeymap, definePlugin, isApple, union, withPriority } from "@prosekit/core";
 import { redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin, yUndoPluginKey } from "y-prosemirror";
-
 //#region src/yjs/yjs-commands.ts
 const commands = {
 	undo: () => undoCommand,
@@ -9,14 +8,12 @@ const commands = {
 function defineYjsCommands() {
 	return defineCommands(commands);
 }
-
 //#endregion
 //#region src/yjs/yjs-cursor-plugin.ts
 function defineYjsCursorPlugin(options) {
 	const { awareness, ...rest } = options;
 	return definePlugin(yCursorPlugin(awareness, rest));
 }
-
 //#endregion
 //#region src/yjs/yjs-keymap.ts
 const keymap = {
@@ -27,14 +24,12 @@ if (!isApple) keymap["Mod-y"] = redoCommand;
 function defineYjsKeymap() {
 	return defineKeymap(keymap);
 }
-
 //#endregion
 //#region src/yjs/yjs-sync-plugin.ts
 function defineYjsSyncPlugin(options) {
 	const { fragment, ...rest } = options;
 	return definePlugin(ySyncPlugin(fragment, rest));
 }
-
 //#endregion
 //#region src/yjs/yjs-undo-plugin.ts
 /**
@@ -77,7 +72,6 @@ function yUndoPlugin$1(options) {
 function defineYjsUndoPlugin(options) {
 	return definePlugin(yUndoPlugin$1(options));
 }
-
 //#endregion
 //#region src/yjs/yjs.ts
 /**
@@ -100,7 +94,7 @@ function defineYjs(options) {
 		})
 	]), 3);
 }
-
 //#endregion
 export { defineYjs, defineYjsCommands, defineYjsCursorPlugin, defineYjsKeymap, defineYjsSyncPlugin, defineYjsUndoPlugin };
+
 //# sourceMappingURL=prosekit-extensions-yjs.js.map

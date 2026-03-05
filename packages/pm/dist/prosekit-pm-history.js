@@ -1,3 +1,2 @@
-export * from "prosemirror-history"
-
-export {  };
+export * from "prosemirror-history";
+export {};

@@ -1,3 +1,2 @@
-export * from "@prosekit/lit/block-handle"
-
-export {  };
+export * from "@prosekit/lit/block-handle";
+export {};

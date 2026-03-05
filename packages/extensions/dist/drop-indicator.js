@@ -1,7 +1,6 @@
 import { defineFacet, defineFacetPayload, pluginFacet } from "@prosekit/core";
 import { isNotNullish } from "@ocavue/utils";
 import { createDropIndicatorPlugin } from "prosemirror-drop-indicator";
-
 //#region src/drop-indicator/drop-indicator-facet.ts
 /**
 * @internal
@@ -34,7 +33,6 @@ const dropIndicatorFacet = defineFacet({
 		});
 	}
 });
-
 //#endregion
 //#region src/drop-indicator/drop-indicator.ts
 /**
@@ -53,7 +51,7 @@ const dropIndicatorFacet = defineFacet({
 function defineDropIndicator(options) {
 	return defineDropIndicatorPayload(options ?? {});
 }
-
 //#endregion
 export { defineDropIndicator as t };
+
 //# sourceMappingURL=drop-indicator.js.map

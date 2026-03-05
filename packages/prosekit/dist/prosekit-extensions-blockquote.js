@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/blockquote"
-
-export {  };
+export * from "@prosekit/extensions/blockquote";
+export {};

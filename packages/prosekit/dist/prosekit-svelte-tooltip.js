@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/tooltip"
-
-export {  };
+export * from "@prosekit/svelte/tooltip";
+export {};

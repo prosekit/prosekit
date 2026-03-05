@@ -14,7 +14,6 @@ import { moveTableColumn, moveTableRow, selectTableColumn, selectTableRow } from
 import { computePosition, offset } from "@floating-ui/dom";
 import { menuItemEvents, menuItemProps } from "@aria-ui/menu";
 import { TableMap, cellAround } from "prosemirror-tables";
-
 //#region src/components/table-handle/context.ts
 /**
 * @internal
@@ -37,7 +36,6 @@ const defaultTableHandleDndContext = {
 * @internal
 */
 const tableHandleDndContext = createContext("prosekit-table-handle-dnd-context", defaultTableHandleDndContext);
-
 //#endregion
 //#region src/components/table-handle/table-handle-column-root/setup.ts
 /**
@@ -69,7 +67,6 @@ function useTableHandleColumnRoot(host, { state }) {
 		emit: () => void 0
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-column-root/types.ts
 /** @internal */
@@ -84,7 +81,6 @@ const tableHandleColumnRootProps = Object.freeze({
 });
 /** @internal */
 const tableHandleColumnRootEvents = overlayPositionerEvents$1;
-
 //#endregion
 //#region src/components/table-handle/table-handle-column-root/element.gen.ts
 const TableHandleColumnRootElementBase = defineCustomElement({
@@ -94,7 +90,6 @@ const TableHandleColumnRootElementBase = defineCustomElement({
 });
 var TableHandleColumnRootElement = class extends TableHandleColumnRootElementBase {};
 registerCustomElement("prosekit-table-handle-column-root", TableHandleColumnRootElement);
-
 //#endregion
 //#region src/components/table-handle/hooks/use-empty-image.ts
 /**
@@ -119,7 +114,6 @@ function useEmptyImage(host) {
 	});
 	return () => image;
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-column-trigger/setup.ts
 /**
@@ -164,14 +158,12 @@ function useTableHandleColumnTrigger(host, { state }) {
 		});
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-column-trigger/types.ts
 /** @internal */
 const tableHandleColumnTriggerProps = { editor: { default: null } };
 /** @internal */
 const tableHandleColumnTriggerEvents = {};
-
 //#endregion
 //#region src/components/table-handle/table-handle-column-trigger/element.gen.ts
 const TableHandleColumnTriggerElementBase = defineCustomElement({
@@ -181,7 +173,6 @@ const TableHandleColumnTriggerElementBase = defineCustomElement({
 });
 var TableHandleColumnTriggerElement = class extends TableHandleColumnTriggerElementBase {};
 registerCustomElement("prosekit-table-handle-column-trigger", TableHandleColumnTriggerElement);
-
 //#endregion
 //#region src/components/table-handle/dnd.ts
 function useInitDndPosition(host, editor, onInit) {
@@ -255,7 +246,6 @@ function getDndRelatedDOMs(view, cellPos, draggingIndex, direction) {
 		cell
 	};
 }
-
 //#endregion
 //#region src/utils/css-feature-detection.ts
 const isColorMixSupported = once(() => {
@@ -265,7 +255,6 @@ const isColorMixSupported = once(() => {
 		return false;
 	}
 });
-
 //#endregion
 //#region src/utils/fade-color.ts
 /**
@@ -280,7 +269,6 @@ function fadeColor(color, opacity) {
 		return `color-mix(in srgb, ${color} ${opacity * 100}%, transparent ${transparentWeight}%)`;
 	}
 }
-
 //#endregion
 //#region src/utils/get-effective-background-color.ts
 function getEffectiveBackgroundColor(element) {
@@ -291,7 +279,6 @@ function getEffectiveBackgroundColor(element) {
 		current = current.parentElement;
 	}
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drag-preview/render-preview.ts
 function clearPreviewDOM(previewRoot) {
@@ -342,7 +329,6 @@ function unsetSize(element) {
 		maxHeight: "unset"
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drag-preview/updater.ts
 function useUpdatePreviewPosition(host, editor) {
@@ -402,7 +388,6 @@ function getVirtualElement(cell, x, y) {
 		}
 	};
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drag-preview/setup.ts
 /**
@@ -437,12 +422,10 @@ function onInitPreviewPosition({ host, direction, dragging, table, cell, draggin
 		height: `${cellRect.height}px`
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drag-preview/types.ts
 const tableHandleDragPreviewProps = { editor: { default: null } };
 const tableHandleDragPreviewEvents = {};
-
 //#endregion
 //#region src/components/table-handle/table-handle-drag-preview/element.gen.ts
 const TableHandleDragPreviewElementBase = defineCustomElement({
@@ -452,7 +435,6 @@ const TableHandleDragPreviewElementBase = defineCustomElement({
 });
 var TableHandleDragPreviewElement = class extends TableHandleDragPreviewElementBase {};
 registerCustomElement("prosekit-table-handle-drag-preview", TableHandleDragPreviewElement);
-
 //#endregion
 //#region src/components/table-handle/table-handle-drop-indicator/calc-drag-over.ts
 function findDragOverElement(elements, pointer, axis) {
@@ -478,7 +460,6 @@ function getDragOverColumn(table, pointerX) {
 function getDragOverRow(table, pointerY) {
 	return findDragOverElement(Array.from(table.querySelectorAll("tr")), pointerY, "y");
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drop-indicator/updater.ts
 function useUpdateIndicatorPosition(host, editor, handleWidth) {
@@ -553,7 +534,6 @@ function useUpdateIndicatorPosition(host, editor, handleWidth) {
 		}
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drop-indicator/setup.ts
 const HANDLE_WIDTH = 2;
@@ -583,12 +563,10 @@ function onInitIndicatorPosition({ host, direction, dragging, table }) {
 		height: `${HANDLE_WIDTH}px`
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-drop-indicator/types.ts
 const tableHandleDropIndicatorProps = { editor: { default: null } };
 const tableHandleDropIndicatorEvents = {};
-
 //#endregion
 //#region src/components/table-handle/table-handle-drop-indicator/element.gen.ts
 const TableHandleDropIndicatorElementBase = defineCustomElement({
@@ -598,7 +576,6 @@ const TableHandleDropIndicatorElementBase = defineCustomElement({
 });
 var TableHandleDropIndicatorElement = class extends TableHandleDropIndicatorElementBase {};
 registerCustomElement("prosekit-table-handle-drop-indicator", TableHandleDropIndicatorElement);
-
 //#endregion
 //#region src/components/table-handle/table-handle-popover-content/setup.ts
 /**
@@ -640,7 +617,6 @@ function useKeyDownTarget(element, open) {
 		}
 	};
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-popover-content/types.ts
 /** @internal */
@@ -655,7 +631,6 @@ const tableHandlePopoverContentProps = Object.freeze({
 });
 /** @internal */
 const tableHandlePopoverContentEvents = Object.freeze({ ...menuContentEvents });
-
 //#endregion
 //#region src/components/table-handle/table-handle-popover-content/element.gen.ts
 const TableHandlePopoverContentElementBase = defineCustomElement({
@@ -665,7 +640,6 @@ const TableHandlePopoverContentElementBase = defineCustomElement({
 });
 var TableHandlePopoverContentElement = class extends TableHandlePopoverContentElementBase {};
 registerCustomElement("prosekit-table-handle-popover-content", TableHandlePopoverContentElement);
-
 //#endregion
 //#region src/components/table-handle/table-handle-popover-item/setup.ts
 /**
@@ -677,14 +651,12 @@ function useTableHandlePopoverItem(element, { state, emit }) {
 		emit
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-popover-item/types.ts
 /** @internal */
 const tableHandlePopoverItemProps = { ...menuItemProps };
 /** @internal */
 const tableHandlePopoverItemEvents = { ...menuItemEvents };
-
 //#endregion
 //#region src/components/table-handle/table-handle-popover-item/element.gen.ts
 const TableHandlePopoverItemElementBase = defineCustomElement({
@@ -694,7 +666,6 @@ const TableHandlePopoverItemElementBase = defineCustomElement({
 });
 var TableHandlePopoverItemElement = class extends TableHandlePopoverItemElementBase {};
 registerCustomElement("prosekit-table-handle-popover-item", TableHandlePopoverItemElement);
-
 //#endregion
 //#region src/hooks/use-editor-typing.ts
 function useEditorTyping(host, editor) {
@@ -708,7 +679,6 @@ function useEditorTyping(host, editor) {
 	useEditorExtension(host, editor, union(defineDOMEventHandler("keypress", handleKeypress), defineDOMEventHandler("pointermove", handlePointerMove)));
 	return typing;
 }
-
 //#endregion
 //#region src/hooks/use-selecting.ts
 /**
@@ -745,7 +715,6 @@ function useSelecting(host, editor, enabled) {
 	});
 	return selecting;
 }
-
 //#endregion
 //#region src/components/table-handle/hooks/use-drop.ts
 function useDrop(host, editor, dndContext) {
@@ -811,7 +780,6 @@ function useDrop(host, editor, dndContext) {
 		};
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/utils.ts
 function isHoveringCellInfoEqual(a, b) {
@@ -859,7 +827,6 @@ function getCellPos(map, tableStart, rowIndex, colIndex) {
 function getCellIndex(map, rowIndex, colIndex) {
 	return map.width * rowIndex + colIndex;
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-root/setup.ts
 /**
@@ -896,14 +863,12 @@ function defineCellHoverHandler(handler) {
 	};
 	return defineDOMEventHandler("pointerover", pointerHandler);
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-root/types.ts
 /** @internal */
 const tableHandleRootProps = { editor: { default: null } };
 /** @internal */
 const tableHandleRootEvents = {};
-
 //#endregion
 //#region src/components/table-handle/table-handle-root/element.gen.ts
 const TableHandleRootElementBase = defineCustomElement({
@@ -913,7 +878,6 @@ const TableHandleRootElementBase = defineCustomElement({
 });
 var TableHandleRootElement = class extends TableHandleRootElementBase {};
 registerCustomElement("prosekit-table-handle-root", TableHandleRootElement);
-
 //#endregion
 //#region src/components/table-handle/table-handle-row-root/setup.ts
 /**
@@ -945,7 +909,6 @@ function useTableHandleRowRoot(host, { state }) {
 		emit: defineEmit(host, menuRootEvents)
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-row-root/types.ts
 /** @internal */
@@ -960,7 +923,6 @@ const tableHandleRowRootProps = {
 };
 /** @internal */
 const tableHandleRowRootEvents = {};
-
 //#endregion
 //#region src/components/table-handle/table-handle-row-root/element.gen.ts
 const TableHandleRowRootElementBase = defineCustomElement({
@@ -970,7 +932,6 @@ const TableHandleRowRootElementBase = defineCustomElement({
 });
 var TableHandleRowRootElement = class extends TableHandleRowRootElementBase {};
 registerCustomElement("prosekit-table-handle-row-root", TableHandleRowRootElement);
-
 //#endregion
 //#region src/components/table-handle/table-handle-row-trigger/setup.ts
 /**
@@ -1014,14 +975,12 @@ function useTableHandleRowTrigger(host, { state }) {
 		});
 	});
 }
-
 //#endregion
 //#region src/components/table-handle/table-handle-row-trigger/types.ts
 /** @internal */
 const tableHandleRowTriggerProps = { editor: { default: null } };
 /** @internal */
 const tableHandleRowTriggerEvents = { select: {} };
-
 //#endregion
 //#region src/components/table-handle/table-handle-row-trigger/element.gen.ts
 const TableHandleRowTriggerElementBase = defineCustomElement({
@@ -1031,7 +990,7 @@ const TableHandleRowTriggerElementBase = defineCustomElement({
 });
 var TableHandleRowTriggerElement = class extends TableHandleRowTriggerElementBase {};
 registerCustomElement("prosekit-table-handle-row-trigger", TableHandleRowTriggerElement);
-
 //#endregion
 export { TableHandleColumnRootElement, TableHandleColumnTriggerElement, TableHandleDragPreviewElement, TableHandleDropIndicatorElement, TableHandlePopoverContentElement, TableHandlePopoverItemElement, TableHandleRootElement, TableHandleRowRootElement, TableHandleRowTriggerElement, tableHandleColumnRootEvents, tableHandleColumnRootProps, tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, tableHandleDragPreviewEvents, tableHandleDragPreviewProps, tableHandleDropIndicatorEvents, tableHandleDropIndicatorProps, tableHandlePopoverContentEvents, tableHandlePopoverContentProps, tableHandlePopoverItemEvents, tableHandlePopoverItemProps, tableHandleRootEvents, tableHandleRootProps, tableHandleRowRootEvents, tableHandleRowRootProps, tableHandleRowTriggerEvents, tableHandleRowTriggerProps, useTableHandleColumnRoot, useTableHandleColumnTrigger, useTableHandleDragPreview, useTableHandleDropIndicator, useTableHandlePopoverContent, useTableHandlePopoverItem, useTableHandleRoot, useTableHandleRowRoot, useTableHandleRowTrigger };
+
 //# sourceMappingURL=prosekit-web-table-handle.js.map

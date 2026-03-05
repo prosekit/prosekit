@@ -1,3 +1,2 @@
-export * from "@prosekit/web/table-handle"
-
-export {  };
+export * from "@prosekit/web/table-handle";
+export {};

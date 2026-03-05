@@ -1,6 +1,5 @@
 import { createContext, createSignal, defineCustomElement, registerCustomElement, useAttribute, useEffect } from "@aria-ui/core";
 import { getWindow } from "@ocavue/utils";
-
 //#region src/components/resizable/context.ts
 /**
 * @internal
@@ -14,13 +13,11 @@ const onResizeStartContext = createContext("prosekit/resizable/onResizeStart", n
 * @internal
 */
 const onResizeEndContext = createContext("prosekit/resizable/onResizeEnd", null);
-
 //#endregion
 //#region src/utils/is-finite-positive-number.ts
 function isFinitePositiveNumber(value) {
 	return typeof value === "number" && Number.isFinite(value) && value > 0;
 }
-
 //#endregion
 //#region src/components/resizable/resizable-handle/calc-resize.ts
 function calcResize(position, w, h, dx, dy, aspectRatio) {
@@ -93,7 +90,6 @@ const calcLeftResize = (w, h, dx, dy, r) => {
 function clamp([w, h]) {
 	return [Math.max(w, 1), Math.max(h, 1)];
 }
-
 //#endregion
 //#region src/components/resizable/resizable-handle/setup.ts
 /**
@@ -150,14 +146,12 @@ function useResizableHandleState(host, state, context) {
 		};
 	});
 }
-
 //#endregion
 //#region src/components/resizable/resizable-handle/types.ts
 /** @internal */
 const resizableHandleProps = { position: { default: "bottom-right" } };
 /** @internal */
 const resizableHandleEvents = {};
-
 //#endregion
 //#region src/components/resizable/resizable-handle/element.gen.ts
 const ResizableHandleElementBase = defineCustomElement({
@@ -167,7 +161,6 @@ const ResizableHandleElementBase = defineCustomElement({
 });
 var ResizableHandleElement = class extends ResizableHandleElementBase {};
 registerCustomElement("prosekit-resizable-handle", ResizableHandleElement);
-
 //#endregion
 //#region src/components/resizable/resizable-root/setup.ts
 /**
@@ -219,7 +212,6 @@ function updateResizableRootStyles(host, width, height, aspectRatio) {
 		else if (height && height > 0 && aspectRatio <= 1) host.style.width = "min-content";
 	}
 }
-
 //#endregion
 //#region src/components/resizable/resizable-root/types.ts
 /** @internal */
@@ -233,7 +225,6 @@ const resizableRootEvents = {
 	resizeStart: {},
 	resizeEnd: {}
 };
-
 //#endregion
 //#region src/components/resizable/resizable-root/element.gen.ts
 const ResizableRootElementBase = defineCustomElement({
@@ -243,7 +234,7 @@ const ResizableRootElementBase = defineCustomElement({
 });
 var ResizableRootElement = class extends ResizableRootElementBase {};
 registerCustomElement("prosekit-resizable-root", ResizableRootElement);
-
 //#endregion
 export { ResizableHandleElement, ResizableRootElement, resizableHandleEvents, resizableHandleProps, resizableRootEvents, resizableRootProps, useResizableHandle, useResizableRoot };
+
 //# sourceMappingURL=prosekit-web-resizable.js.map

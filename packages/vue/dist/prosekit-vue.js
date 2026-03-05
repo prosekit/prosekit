@@ -2,7 +2,6 @@ import { n as useEditorContext, t as provideEditor } from "./editor-context.js";
 import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory } from "@prosemirror-adapter/vue";
 import { computed, defineComponent, h, onMounted, onUnmounted, shallowRef, toValue, triggerRef, watchPostEffect } from "vue";
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";
-
 //#region src/hooks/use-editor-extension.ts
 /**
 * @internal
@@ -16,7 +15,6 @@ function useEditorExtension(editorRef, extensionRef) {
 		if (extension) onCleanup(editor.use(extension));
 	});
 }
-
 //#endregion
 //#region src/hooks/use-priority-extension.ts
 /**
@@ -28,7 +26,6 @@ function usePriorityExtension(extension, priority) {
 		return ext && priority ? withPriority(ext, priority) : ext;
 	});
 }
-
 //#endregion
 //#region src/hooks/use-extension.ts
 /**
@@ -39,13 +36,11 @@ function usePriorityExtension(extension, priority) {
 function useExtension(extension, options) {
 	useEditorExtension(options?.editor, usePriorityExtension(extension, options?.priority));
 }
-
 //#endregion
 //#region src/extensions/helpers.ts
 function renderNothing() {
 	return null;
 }
-
 //#endregion
 //#region src/extensions/vue-mark-view.ts
 function withMarkViewProps(component) {
@@ -92,7 +87,6 @@ function defineVueMarkViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/extensions/vue-node-view.ts
 function withNodeViewProps(component) {
@@ -139,7 +133,6 @@ function defineVueNodeViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/components/prosekit.ts
 /**
@@ -164,7 +157,6 @@ const ProseKit = defineComponent({
 		};
 	}
 });
-
 //#endregion
 //#region src/hooks/use-doc-change.ts
 /**
@@ -175,7 +167,6 @@ const ProseKit = defineComponent({
 function useDocChange(handler, options) {
 	useExtension(defineDocChangeHandler((view) => handler(view.state.doc)), options);
 }
-
 //#endregion
 //#region src/hooks/use-editor.ts
 /**
@@ -197,7 +188,6 @@ function useEditor(options) {
 	}
 	return editorRef;
 }
-
 //#endregion
 //#region src/hooks/use-editor-derived-value.ts
 /**
@@ -217,13 +207,11 @@ function useEditorDerivedValue(derive, options) {
 	const editorAccessor = initialEditor ? computed(() => toValue(initialEditor)) : useEditor({ update: true });
 	return computed(() => derive(toValue(editorAccessor)));
 }
-
 //#endregion
 //#region src/hooks/use-keymap.ts
 function useKeymap(keymap, options) {
 	useExtension(computed(() => defineKeymap(toValue(keymap))), options);
 }
-
 //#endregion
 //#region src/hooks/use-state-update.ts
 /**
@@ -234,7 +222,7 @@ function useKeymap(keymap, options) {
 function useStateUpdate(handler, options) {
 	useExtension(defineUpdateHandler((view) => handler(view.state)), options);
 }
-
 //#endregion
 export { ProseKit, defineVueMarkView, defineVueNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+
 //# sourceMappingURL=prosekit-vue.js.map

@@ -1,6 +1,5 @@
 import { defineMarkInputRule } from "./prosekit-extensions-input-rule.js";
 import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, toggleMark, union } from "@prosekit/core";
-
 //#region src/italic/italic-commands.ts
 /**
 * @internal
@@ -8,7 +7,6 @@ import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, to
 function defineItalicCommands() {
 	return defineCommands({ toggleItalic: () => toggleMark({ type: "italic" }) });
 }
-
 //#endregion
 //#region src/italic/italic-input-rule.ts
 /**
@@ -20,7 +18,6 @@ function defineItalicInputRule() {
 		type: "italic"
 	});
 }
-
 //#endregion
 //#region src/italic/italic-keymap.ts
 /**
@@ -29,7 +26,6 @@ function defineItalicInputRule() {
 function defineItalicKeymap() {
 	return defineKeymap({ "Mod-i": toggleMark({ type: "italic" }) });
 }
-
 //#endregion
 //#region src/italic/italic-spec.ts
 /**
@@ -52,7 +48,6 @@ function defineItalicSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/italic/italic.ts
 /**
@@ -61,7 +56,7 @@ function defineItalicSpec() {
 function defineItalic() {
 	return union(defineItalicSpec(), defineItalicCommands(), defineItalicKeymap(), defineItalicInputRule());
 }
-
 //#endregion
 export { defineItalic, defineItalicCommands, defineItalicInputRule, defineItalicKeymap, defineItalicSpec };
+
 //# sourceMappingURL=prosekit-extensions-italic.js.map

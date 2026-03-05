@@ -9,7 +9,6 @@ import { keydownHandler } from "@prosekit/pm/keymap";
 import { splitSplittableBlock } from "prosemirror-splittable";
 import OrderedMap from "orderedmap";
 import clsxLite from "clsx/lite";
-
 //#region src/commands/add-mark.ts
 /**
 * Returns a command that adds the given mark with the given attributes.
@@ -26,7 +25,6 @@ function addMark(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/expand-mark.ts
 /**
@@ -64,7 +62,6 @@ function expandMarkAfter($pos, predicate) {
 	else break;
 	return $pos.posAtIndex(boundaryIndex) + parent.child(boundaryIndex).nodeSize;
 }
-
 //#endregion
 //#region src/utils/default-block-at.ts
 /**
@@ -77,7 +74,6 @@ function defaultBlockAt(match) {
 	}
 	return null;
 }
-
 //#endregion
 //#region src/commands/insert-default-block.ts
 /**
@@ -107,7 +103,6 @@ function insertDefaultBlock(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/utils/set-selection-around.ts
 function setSelectionAround(tr, pos) {
@@ -116,7 +111,6 @@ function setSelectionAround(tr, pos) {
 	const selection = TextSelection.between($pos, $pos);
 	tr.setSelection(selection);
 }
-
 //#endregion
 //#region src/commands/insert-node.ts
 /**
@@ -139,7 +133,6 @@ function insertNode(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/remove-mark.ts
 /**
@@ -158,7 +151,6 @@ function removeMark(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/utils/find-parent-node.ts
 /**
@@ -177,7 +169,6 @@ function findParentNode(predicate, $pos) {
 		};
 	}
 }
-
 //#endregion
 //#region src/utils/get-node-types.ts
 /**
@@ -187,7 +178,6 @@ function getNodeTypes(schema, types) {
 	if (Array.isArray(types)) return types.map((type) => getNodeType(schema, type));
 	return [getNodeType(schema, types)];
 }
-
 //#endregion
 //#region src/utils/find-parent-node-of-type.ts
 /**
@@ -199,7 +189,6 @@ function findParentNodeOfType(type, $pos) {
 	const nodeTypes = getNodeTypes($pos.doc.type.schema, type);
 	return findParentNode((node) => nodeTypes.includes(node.type), $pos);
 }
-
 //#endregion
 //#region src/commands/remove-node.ts
 /**
@@ -217,7 +206,6 @@ function removeNode(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/select-all.ts
 /**
@@ -228,7 +216,6 @@ function removeNode(options) {
 function selectAll() {
 	return selectAll$1;
 }
-
 //#endregion
 //#region src/commands/select-block.ts
 function getTextblockEndpoint(selection, side) {
@@ -267,7 +254,6 @@ const selectBlockCommand = (state, dispatch) => {
 function selectBlock() {
 	return selectBlockCommand;
 }
-
 //#endregion
 //#region src/utils/get-custom-selection.ts
 function getCustomSelection(state, from, to) {
@@ -279,7 +265,6 @@ function getCustomSelection(state, from, to) {
 	}
 	return state.selection;
 }
-
 //#endregion
 //#region src/commands/set-block-type.ts
 /**
@@ -318,7 +303,6 @@ function setBlockType(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/set-node-attrs-between.ts
 /**
@@ -353,7 +337,6 @@ function setNodeAttrsBetween(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/set-node-attrs.ts
 /**
@@ -384,7 +367,6 @@ function setNodeAttrs({ type, attrs, pos }) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/toggle-mark.ts
 /**
@@ -402,7 +384,6 @@ function toggleMark({ type, attrs, removeWhenPresent = false, enterInlineAtoms =
 		})(state, dispatch, view);
 	};
 }
-
 //#endregion
 //#region src/commands/toggle-node.ts
 /**
@@ -422,7 +403,6 @@ function toggleNode({ type, attrs }) {
 		} else return setBlockType$1(getNodeType(state.schema, type), attrs)(state, dispatch, view);
 	};
 }
-
 //#endregion
 //#region src/commands/wrap.ts
 /**
@@ -443,7 +423,6 @@ function wrap(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/commands/toggle-wrap.ts
 /**
@@ -464,7 +443,6 @@ function toggleWrap(options) {
 		})(state, dispatch);
 	};
 }
-
 //#endregion
 //#region src/commands/unset-block-type.ts
 /**
@@ -502,7 +480,6 @@ function unsetTextBlockType(tr, from, to) {
 	});
 	return tr.steps.length > mapFrom;
 }
-
 //#endregion
 //#region src/commands/unset-mark.ts
 /**
@@ -519,7 +496,6 @@ function unsetMark(options) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/editor/with-priority.ts
 /**
@@ -539,7 +515,6 @@ function withPriority(extension, priority) {
 	result.priority = priority;
 	return result;
 }
-
 //#endregion
 //#region src/extensions/plugin.ts
 /**
@@ -572,7 +547,6 @@ const pluginFacet = defineFacet({
 	},
 	parent: stateFacet
 });
-
 //#endregion
 //#region src/extensions/clipboard-serializer.ts
 function mergeWrappers(wrappers) {
@@ -626,7 +600,6 @@ const clipboardSerializerFacet = defineFacet({
 function defineClipboardSerializer(options) {
 	return defineFacetPayload(clipboardSerializerFacet, [options]);
 }
-
 //#endregion
 //#region src/commands/insert-text.ts
 /**
@@ -640,7 +613,6 @@ function insertText({ text, from, to }) {
 		return true;
 	};
 }
-
 //#endregion
 //#region src/facets/command.ts
 const commandFacet = defineFacet({
@@ -654,7 +626,6 @@ const commandFacet = defineFacet({
 	parent: rootFacet,
 	singleton: true
 });
-
 //#endregion
 //#region src/extensions/command.ts
 function defineCommands(commands) {
@@ -684,7 +655,6 @@ function defineBaseCommands() {
 		unsetMark
 	});
 }
-
 //#endregion
 //#region src/extensions/events/plugin-view.ts
 /**
@@ -758,7 +728,6 @@ const pluginViewFacet = defineFacet({
 	singleton: true
 });
 const pluginKey = new PluginKey("prosekit-plugin-view-handler");
-
 //#endregion
 //#region src/extensions/events/doc-change.ts
 /**
@@ -771,7 +740,6 @@ function defineDocChangeHandler(handler) {
 		if (!view.state.doc.eq(prevState.doc)) handler(view, prevState);
 	});
 }
-
 //#endregion
 //#region src/utils/array-grouping.ts
 function groupEntries(entries) {
@@ -779,7 +747,6 @@ function groupEntries(entries) {
 	for (const [key, value] of entries) (result[key] ||= []).push(value);
 	return result;
 }
-
 //#endregion
 //#region src/utils/combine-event-handlers.ts
 function combineEventHandlers() {
@@ -793,7 +760,6 @@ function combineEventHandlers() {
 	}
 	return [setHandlers, combinedEventHandler];
 }
-
 //#endregion
 //#region src/extensions/events/dom-event.ts
 /**
@@ -841,7 +807,6 @@ const domEventFacet = defineFacet({
 	parent: pluginFacet,
 	singleton: true
 });
-
 //#endregion
 //#region src/extensions/events/editor-event.ts
 function defineEventFacetPayload(payload) {
@@ -1003,7 +968,6 @@ function setupEditorEventPlugin() {
 		}
 	})];
 }
-
 //#endregion
 //#region src/extensions/events/focus.ts
 /**
@@ -1016,7 +980,6 @@ function defineFocusChangeHandler(handler) {
 	const handleBlur = () => handler(false);
 	return defineDomEventFacetPayload(["focus", handleFocus], ["blur", handleBlur]);
 }
-
 //#endregion
 //#region src/utils/env.ts
 /**
@@ -1025,7 +988,6 @@ function defineFocusChangeHandler(handler) {
 * @internal
 */
 const isApple = typeof navigator !== "undefined" ? /Mac|iP(hone|[ao]d)/.test(navigator.platform) : false;
-
 //#endregion
 //#region src/extensions/keymap.ts
 /**
@@ -1060,7 +1022,6 @@ const keymapFacet = defineFacet({
 	singleton: true
 });
 const keymapPluginKey = new PluginKey("prosekit-keymap");
-
 //#endregion
 //#region src/extensions/history.ts
 const keymap = {
@@ -1085,7 +1046,6 @@ function defineHistory({ depth = 200, newGroupDelay = 250 } = {}) {
 		newGroupDelay
 	})), defineKeymap(keymap), defineCommands(commands));
 }
-
 //#endregion
 //#region src/extensions/keymap-base.ts
 const customEnter = chainCommands(newlineInCode, createParagraphNear, liftEmptyBlock, splitSplittableBlock);
@@ -1105,7 +1065,6 @@ function defineBaseKeymap({ priority = 1, preferBlockSelection = true } = {}) {
 		"Backspace": customBackspace
 	}), priority);
 }
-
 //#endregion
 //#region src/facets/schema-spec.ts
 const schemaSpecFacet = defineFacet({
@@ -1127,7 +1086,6 @@ const schemaSpecFacet = defineFacet({
 	parent: schemaFacet,
 	singleton: true
 });
-
 //#endregion
 //#region src/utils/remove-undefined-values.ts
 function removeUndefinedValues(obj) {
@@ -1135,14 +1093,12 @@ function removeUndefinedValues(obj) {
 	for (const [key, value] of Object.entries(obj)) if (value !== void 0) result[key] = value;
 	return result;
 }
-
 //#endregion
 //#region src/utils/merge-objects.ts
 function mergeObjects(...objects) {
 	const filteredObjects = objects.filter(isNotNullish).map(removeUndefinedValues);
 	return Object.assign({}, ...filteredObjects);
 }
-
 //#endregion
 //#region src/utils/merge-specs.ts
 function mergeSpecs(a, b) {
@@ -1159,7 +1115,6 @@ function mergeSpecs(a, b) {
 		parseDOM: [...a.parseDOM ?? [], ...b.parseDOM ?? []]
 	});
 }
-
 //#endregion
 //#region src/utils/output-spec.ts
 function wrapOutputSpecAttrs(toDOM, options) {
@@ -1230,7 +1185,6 @@ function setElementAttributes(element, attrs) {
 function joinStyles(...styles) {
 	return styles.map((style) => style.trim().replace(/;$/, "")).filter(Boolean).join("; ");
 }
-
 //#endregion
 //#region src/extensions/mark-spec.ts
 /**
@@ -1297,7 +1251,6 @@ const markSpecFacet = defineFacet({
 	parent: schemaSpecFacet,
 	singleton: true
 });
-
 //#endregion
 //#region src/extensions/mark-view-effect.ts
 /**
@@ -1331,7 +1284,6 @@ const markViewFactoryFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 //#region src/extensions/mark-view.ts
 function defineMarkView(options) {
@@ -1348,7 +1300,6 @@ const markViewFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 //#region src/extensions/node-spec.ts
 /**
@@ -1419,7 +1370,6 @@ const nodeSpecFacet = defineFacet({
 	parent: schemaSpecFacet,
 	singleton: true
 });
-
 //#endregion
 //#region src/extensions/node-view-effect.ts
 /**
@@ -1453,7 +1403,6 @@ const nodeViewFactoryFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 //#region src/extensions/node-view.ts
 function defineNodeView(options) {
@@ -1470,7 +1419,6 @@ const nodeViewFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 //#region src/types/priority.ts
 /**
@@ -1502,14 +1450,12 @@ const Priority = {
 	high: 3,
 	highest: 4
 };
-
 //#endregion
 //#region src/utils/can-use-regex-lookbehind.ts
 /**
 * Checks if the browser supports [regex lookbehind assertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion).
 */
 const canUseRegexLookbehind = supportsRegexLookbehind;
-
 //#endregion
 //#region src/utils/clsx.ts
 /**
@@ -1520,7 +1466,6 @@ const canUseRegexLookbehind = supportsRegexLookbehind;
 * @public
 */
 const clsx = clsxLite;
-
 //#endregion
 //#region src/utils/contains-inline-node.ts
 /**
@@ -1534,7 +1479,6 @@ function containsInlineNode(doc, from, to) {
 	});
 	return found;
 }
-
 //#endregion
 //#region src/utils/find-node.ts
 /**
@@ -1575,7 +1519,6 @@ function findNodes(doc, predicate) {
 	});
 	return results;
 }
-
 //#endregion
 //#region src/utils/is-at-block-start.ts
 /**
@@ -1588,7 +1531,6 @@ function isAtBlockStart(state, view) {
 	if (!$cursor || (view ? !view.endOfTextblock("backward", state) : $cursor.parentOffset > 0)) return null;
 	return $cursor;
 }
-
 //#endregion
 //#region src/utils/is-in-code-block.ts
 function isCodeBlockType(type) {
@@ -1602,7 +1544,6 @@ function isCodeBlockType(type) {
 function isInCodeBlock(selection) {
 	return isCodeBlockType(selection.$from.parent.type) || isCodeBlockType(selection.$to.parent.type);
 }
-
 //#endregion
 //#region src/utils/maybe-run.ts
 /**
@@ -1611,14 +1552,12 @@ function isInCodeBlock(selection) {
 function maybeRun(value, ...args) {
 	return typeof value === "function" ? value(...args) : value;
 }
-
 //#endregion
 //#region src/utils/unicode.ts
 /**
 * @internal
 */
 const OBJECT_REPLACEMENT_CHARACTER = "￼";
-
 //#endregion
 //#region src/utils/with-skip-code-block.ts
 /**
@@ -1630,7 +1569,7 @@ function withSkipCodeBlock(command) {
 		return command(state, dispatch, view);
 	};
 }
-
 //#endregion
 export { Editor, EditorNotFoundError, OBJECT_REPLACEMENT_CHARACTER, Priority, ProseKitError, addMark, assert, canUseRegexLookbehind, clsx, containsInlineNode, createEditor, defaultBlockAt, defineBaseCommands, defineBaseKeymap, defineClickHandler, defineClickOnHandler, defineClipboardSerializer, defineCommands, defineDOMEventHandler, defineDefaultState, defineDocChangeHandler, defineDoubleClickHandler, defineDoubleClickOnHandler, defineDropHandler, defineFacet, defineFacetPayload, defineFocusChangeHandler, defineHistory, defineKeyDownHandler, defineKeyPressHandler, defineKeymap, defineMarkAttr, defineMarkSpec, defineMarkView, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeAttr, defineNodeSpec, defineNodeView, defineNodeViewComponent, defineNodeViewFactory, definePasteHandler, definePlugin, defineScrollToSelectionHandler, defineTextInputHandler, defineTripleClickHandler, defineTripleClickOnHandler, defineUnmountHandler, defineUpdateHandler, editorEventFacet, elementFromJSON, elementFromNode, expandMark, findNode, findNodes, findParentNode, findParentNodeOfType, getMarkType, getNodeType, htmlFromJSON, htmlFromNode, insertDefaultBlock, insertNode, isAllSelection, isApple, isAtBlockStart, isFragment, isInCodeBlock, isMark, isMarkAbsent, isMarkActive, isNodeSelection, isProseMirrorNode, isSelection, isSlice, isTextSelection, jsonFromHTML, jsonFromNode, jsonFromState, keymapFacet, maybeRun, nodeFromElement, nodeFromHTML, nodeFromJSON, pluginFacet, removeMark, removeNode, selectAll, selectBlock, setBlockType, setNodeAttrs, setNodeAttrsBetween, setSelectionAround, stateFromJSON, toggleMark, toggleNode, toggleWrap, union, unsetBlockType, unsetMark, withPriority, withSkipCodeBlock, wrap };
+
 //# sourceMappingURL=prosekit-core.js.map

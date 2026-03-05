@@ -1,6 +1,5 @@
 import { PluginKey, ProseMirrorPlugin } from "@prosekit/pm/state";
 import { OBJECT_REPLACEMENT_CHARACTER, defineFacet, defineFacetPayload, getMarkType, maybeRun, pluginFacet } from "@prosekit/core";
-
 //#region src/mark-rule/range.ts
 function getSpanTextRanges($from, $to) {
 	const nodeRange = $from.blockRange($to);
@@ -57,7 +56,6 @@ function getCheckRanges(transactions, oldState, newState) {
 	const [from, to] = getMapRange(transactions, oldState, newState);
 	return getTextRanges(newState.doc, from, to);
 }
-
 //#endregion
 //#region src/mark-rule/apply.ts
 function getExpectedMarkings(rules, doc, from, to) {
@@ -128,7 +126,6 @@ function applyMarkRules(rules, transactions, oldState, newState) {
 	for (const [from, to, mark] of toCreate) tr.addMark(from, to, mark);
 	return tr;
 }
-
 //#endregion
 //#region src/mark-rule/mark-rule.ts
 /**
@@ -154,7 +151,7 @@ const markRuleFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 export { defineMarkRule as t };
+
 //# sourceMappingURL=mark-rule.js.map

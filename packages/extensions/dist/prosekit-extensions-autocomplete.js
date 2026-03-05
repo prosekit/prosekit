@@ -1,7 +1,6 @@
 import { Plugin, PluginKey } from "@prosekit/pm/state";
 import { OBJECT_REPLACEMENT_CHARACTER, defineFacet, defineFacetPayload, pluginFacet } from "@prosekit/core";
 import { Decoration, DecorationSet } from "@prosekit/pm/view";
-
 //#region src/autocomplete/autocomplete-helpers.ts
 function defaultCanMatch({ state }) {
 	const $pos = state.selection.$from;
@@ -25,7 +24,6 @@ function setTrMeta(tr, meta) {
 	return tr.setMeta(pluginKey, meta);
 }
 const pluginKey = new PluginKey("prosekit-autocomplete");
-
 //#endregion
 //#region src/autocomplete/autocomplete-rule.ts
 /**
@@ -41,7 +39,6 @@ var AutocompleteRule = class {
 		this.canMatch = options.canMatch ?? defaultCanMatch;
 	}
 };
-
 //#endregion
 //#region src/autocomplete/autocomplete-plugin.ts
 /**
@@ -226,7 +223,6 @@ function mapMatching(matching, mapping) {
 		to: mapping.map(matching.to, -1)
 	};
 }
-
 //#endregion
 //#region src/autocomplete/autocomplete.ts
 /**
@@ -253,7 +249,7 @@ const autocompleteFacet = defineFacet({
 	parent: pluginFacet,
 	singleton: true
 });
-
 //#endregion
 export { AutocompleteRule, defineAutocomplete };
+
 //# sourceMappingURL=prosekit-extensions-autocomplete.js.map

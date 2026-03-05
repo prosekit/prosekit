@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/hard-break"
-
-export {  };
+export * from "@prosekit/extensions/hard-break";
+export {};

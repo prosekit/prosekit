@@ -1,3 +1,2 @@
-export * from "@prosekit/web"
-
-export {  };
+export * from "@prosekit/web";
+export {};

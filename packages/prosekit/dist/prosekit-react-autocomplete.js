@@ -1,3 +1,2 @@
-export * from "@prosekit/react/autocomplete"
-
-export {  };
+export * from "@prosekit/react/autocomplete";
+export {};

@@ -1,3 +1,2 @@
-export * from "@prosekit/vue/table-handle"
-
-export {  };
+export * from "@prosekit/vue/table-handle";
+export {};

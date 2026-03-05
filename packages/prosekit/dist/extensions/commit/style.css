@@ -1,0 +1,10 @@
+/* ../extensions/src/commit/style.css */
+.prosekit-commit-deletion {
+  background-color: #e5534b80;
+  text-decoration: line-through;
+}
+.prosekit-commit-addition {
+  background-color: #53e54b80;
+}
+
+/* src/extensions/commit/style.css */

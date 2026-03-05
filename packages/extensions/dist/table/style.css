@@ -1,0 +1,45 @@
+.ProseMirror .tableWrapper {
+  overflow-x: auto;
+}
+.ProseMirror table {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.ProseMirror td,
+.ProseMirror th {
+  box-sizing: border-box;
+  position: relative;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  border-width: 1px;
+  vertical-align: top;
+}
+
+prosekit-table-handle-drop-indicator {
+  background-color: HighlightText;
+}
+
+.ProseMirror .column-resize-handle {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: 0;
+  width: 4px;
+  background-color: HighlightText;
+  pointer-events: none;
+}
+.ProseMirror.resize-cursor {
+  cursor: ew-resize;
+  cursor: col-resize;
+}
+.ProseMirror .selectedCell {
+  --color: 210, 100%, 56%;
+  border: 1px double hsl(var(--color));
+  background-color: hsla(var(--color), 20%);
+}
+
+
+/*# sourceMappingURL=style.css.map*/

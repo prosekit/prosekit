@@ -9,9 +9,9 @@ DEV_DIR=$(pwd)
 # Disable turborepo cache to ensure fresh builds
 export TURBO_FORCE=true
 
-# Create a worktree for master (detached so we don't move the master ref)
+# Create a worktree for master
 MASTER_DIR=$(mktemp -u)
-git worktree add --detach "$MASTER_DIR" master
+git worktree add -b temp-worktree-branch "$MASTER_DIR" origin/master
 
 build_and_commit() {
   local dir="$1"

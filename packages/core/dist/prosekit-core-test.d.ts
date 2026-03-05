@@ -1,4 +1,4 @@
-import { n as EditorInstance, r as EditorOptions, t as Editor, w as Extension } from "./editor-BJFNE6Hg.js";
+import { n as EditorInstance, r as EditorOptions, t as Editor, w as Extension } from "./editor.js";
 import { ProseMirrorNode } from "@prosekit/pm/model";
 
 //#region src/test/test-editor.d.ts

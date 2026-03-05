@@ -1,4 +1,4 @@
-import { t as CreateProps } from "./create-props-PUVFMh9y.js";
+import { t as CreateProps } from "./create-props.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { DropIndicatorElement, DropIndicatorEvents, DropIndicatorProps as DropIndicatorProps$1 } from "@prosekit/web/drop-indicator";
 

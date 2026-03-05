@@ -1,4 +1,4 @@
-import { t as CreateProps } from "./create-props-PUVFMh9y.js";
+import { t as CreateProps } from "./create-props.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 import { TooltipContentElement, TooltipContentEvents, TooltipContentProps as TooltipContentProps$1, TooltipRootElement, TooltipRootEvents, TooltipRootProps as TooltipRootProps$1, TooltipTriggerElement, TooltipTriggerEvents, TooltipTriggerProps as TooltipTriggerProps$1 } from "@prosekit/web/tooltip";
 

@@ -1,4 +1,4 @@
-import { t as CreateEmits } from "./create-emits-B8725q2G.js";
+import { t as CreateEmits } from "./create-emits.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { ResizableHandleEvents, ResizableHandleProps as ResizableHandleProps$1, ResizableRootEvents, ResizableRootProps as ResizableRootProps$1 } from "@prosekit/web/resizable";
 

@@ -1,4 +1,4 @@
-import { t as CreateEmits } from "./create-emits-B8725q2G.js";
+import { t as CreateEmits } from "./create-emits.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { TooltipContentEvents, TooltipContentProps as TooltipContentProps$1, TooltipRootEvents, TooltipRootProps as TooltipRootProps$1, TooltipTriggerEvents, TooltipTriggerProps as TooltipTriggerProps$1 } from "@prosekit/web/tooltip";
 

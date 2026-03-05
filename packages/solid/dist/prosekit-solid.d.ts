@@ -1,4 +1,4 @@
-import { i as PropsWithElement, n as PropsWithChildren, r as PropsWithClass, t as MaybeAccessor } from "./types-Bx9mKDTJ.js";
+import { i as PropsWithElement, n as PropsWithChildren, r as PropsWithClass, t as MaybeAccessor } from "./types.js";
 import { MarkViewContextProps, NodeViewContextProps } from "@prosemirror-adapter/solid";
 import { Accessor, Component, ParentProps } from "solid-js";
 import { Editor, Extension, Keymap, Priority } from "@prosekit/core";

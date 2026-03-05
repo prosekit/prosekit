@@ -1,5 +1,5 @@
-import { i as PropsWithElement } from "./types-Bx9mKDTJ.js";
-import { t as CreateProps } from "./create-props-CFK4CtjG.js";
+import { i as PropsWithElement } from "./types.js";
+import { t as CreateProps } from "./create-props.js";
 import { Component } from "solid-js";
 import { PopoverContentElement, PopoverContentEvents, PopoverContentProps as PopoverContentProps$1, PopoverRootElement, PopoverRootEvents, PopoverRootProps as PopoverRootProps$1, PopoverTriggerElement, PopoverTriggerEvents, PopoverTriggerProps as PopoverTriggerProps$1 } from "@prosekit/web/popover";
 

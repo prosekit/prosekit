@@ -1,4 +1,4 @@
-import { t as CreateProps } from "./create-props-PUVFMh9y.js";
+import { t as CreateProps } from "./create-props.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { ResizableHandleElement, ResizableHandleEvents, ResizableHandleProps as ResizableHandleProps$1, ResizableRootElement, ResizableRootEvents, ResizableRootProps as ResizableRootProps$1 } from "@prosekit/web/resizable";
 

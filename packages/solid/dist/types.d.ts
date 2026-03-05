@@ -23,4 +23,4 @@ type PropsWithElement<Props extends object, CustomElement extends HTMLElement> =
 type MaybeAccessor<T> = T | Accessor<T>;
 //#endregion
 export { PropsWithElement as i, PropsWithChildren as n, PropsWithClass as r, MaybeAccessor as t };
-//# sourceMappingURL=types-Bx9mKDTJ.d.ts.map
+//# sourceMappingURL=types.d.ts.map

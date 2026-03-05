@@ -1,4 +1,4 @@
-import { t as CreateProps } from "./create-props-PUVFMh9y.js";
+import { t as CreateProps } from "./create-props.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 import { AutocompleteEmptyElement, AutocompleteEmptyEvents, AutocompleteEmptyProps as AutocompleteEmptyProps$1, AutocompleteItemElement, AutocompleteItemEvents, AutocompleteItemProps as AutocompleteItemProps$1, AutocompleteListElement, AutocompleteListEvents, AutocompleteListProps as AutocompleteListProps$1, AutocompletePopoverElement, AutocompletePopoverEvents, AutocompletePopoverProps as AutocompletePopoverProps$1 } from "@prosekit/web/autocomplete";
 

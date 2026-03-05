@@ -1,5 +1,5 @@
-import { i as PropsWithElement } from "./types-Bx9mKDTJ.js";
-import { t as CreateProps } from "./create-props-CFK4CtjG.js";
+import { i as PropsWithElement } from "./types.js";
+import { t as CreateProps } from "./create-props.js";
 import { Component } from "solid-js";
 import { AutocompleteEmptyElement, AutocompleteEmptyEvents, AutocompleteEmptyProps as AutocompleteEmptyProps$1, AutocompleteItemElement, AutocompleteItemEvents, AutocompleteItemProps as AutocompleteItemProps$1, AutocompleteListElement, AutocompleteListEvents, AutocompleteListProps as AutocompleteListProps$1, AutocompletePopoverElement, AutocompletePopoverEvents, AutocompletePopoverProps as AutocompletePopoverProps$1 } from "@prosekit/web/autocomplete";
 

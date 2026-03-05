@@ -1,4 +1,4 @@
-import { t as CreateEmits } from "./create-emits-B8725q2G.js";
+import { t as CreateEmits } from "./create-emits.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { AutocompleteEmptyEvents, AutocompleteEmptyProps as AutocompleteEmptyProps$1, AutocompleteItemEvents, AutocompleteItemProps as AutocompleteItemProps$1, AutocompleteListEvents, AutocompleteListProps as AutocompleteListProps$1, AutocompletePopoverEvents, AutocompletePopoverProps as AutocompletePopoverProps$1 } from "@prosekit/web/autocomplete";
 

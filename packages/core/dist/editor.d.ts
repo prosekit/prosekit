@@ -719,4 +719,4 @@ declare class Editor<E extends Extension = any> {
 }
 //#endregion
 export { ExtractMarks as A, NodeTyping as B, StepJSON as C, ExtractCommandCreators as D, ExtractCommandActions as E, Union as F, CommandCreator as G, MarkTyping as H, SimplifyUnion as I, NodeAction as J, CommandTyping as K, SimplifyDeeper as L, ExtractNodes as M, ExtractTyping as N, ExtractCommands as O, PlainExtension as P, Priority as R, StateJSON as S, ExtensionTyping as T, ToMarkAction as U, ToNodeAction as V, CommandAction as W, AnyAttrs as X, NodeChild as Y, AttrSpec as Z, nodeFromHTML as _, DOMDocumentOptions as a, NodeJSON as b, JSONParserOptions as c, htmlFromJSON as d, htmlFromNode as f, nodeFromElement as g, jsonFromState as h, createEditor as i, ExtractNodeActions as j, ExtractMarkActions as k, elementFromJSON as l, jsonFromNode as m, EditorInstance as n, DOMParserOptions as o, jsonFromHTML as p, MarkAction as q, EditorOptions as r, DOMSerializerOptions as s, Editor as t, elementFromNode as u, nodeFromJSON as v, Extension as w, SelectionJSON as x, stateFromJSON as y, PickSubType as z };
-//# sourceMappingURL=editor-BJFNE6Hg.d.ts.map
+//# sourceMappingURL=editor.d.ts.map

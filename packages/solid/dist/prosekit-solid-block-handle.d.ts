@@ -1,5 +1,5 @@
-import { i as PropsWithElement } from "./types-Bx9mKDTJ.js";
-import { t as CreateProps } from "./create-props-CFK4CtjG.js";
+import { i as PropsWithElement } from "./types.js";
+import { t as CreateProps } from "./create-props.js";
 import { Component } from "solid-js";
 import { BlockHandleAddElement, BlockHandleAddEvents, BlockHandleAddProps as BlockHandleAddProps$1, BlockHandleDraggableElement, BlockHandleDraggableEvents, BlockHandleDraggableProps as BlockHandleDraggableProps$1, BlockHandlePopoverElement, BlockHandlePopoverEvents, BlockHandlePopoverProps as BlockHandlePopoverProps$1 } from "@prosekit/web/block-handle";
 

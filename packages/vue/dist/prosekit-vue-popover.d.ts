@@ -1,4 +1,4 @@
-import { t as CreateEmits } from "./create-emits-B8725q2G.js";
+import { t as CreateEmits } from "./create-emits.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { PopoverContentEvents, PopoverContentProps as PopoverContentProps$1, PopoverRootEvents, PopoverRootProps as PopoverRootProps$1, PopoverTriggerEvents, PopoverTriggerProps as PopoverTriggerProps$1 } from "@prosekit/web/popover";
 

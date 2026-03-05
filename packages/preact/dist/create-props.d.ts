@@ -3,4 +3,4 @@ type CreateProps<Props extends { [PropName in keyof Props]: unknown }, Events ex
 type CreateEventProps<Events extends { [EventName in keyof Events]: CustomEvent }> = { [EventName in keyof Events as `on${Capitalize<string & EventName>}`]: (event: EventName extends `${string}Change` ? Events[EventName]['detail'] : Events[EventName]) => void };
 //#endregion
 export { CreateProps as t };
-//# sourceMappingURL=create-props-PUVFMh9y.d.ts.map
+//# sourceMappingURL=create-props.d.ts.map

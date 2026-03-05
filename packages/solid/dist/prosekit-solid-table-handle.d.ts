@@ -1,5 +1,5 @@
-import { i as PropsWithElement } from "./types-Bx9mKDTJ.js";
-import { t as CreateProps } from "./create-props-CFK4CtjG.js";
+import { i as PropsWithElement } from "./types.js";
+import { t as CreateProps } from "./create-props.js";
 import { Component } from "solid-js";
 import { TableHandleColumnRootElement, TableHandleColumnRootEvents, TableHandleColumnRootProps as TableHandleColumnRootProps$1, TableHandleColumnTriggerElement, TableHandleColumnTriggerEvents, TableHandleColumnTriggerProps as TableHandleColumnTriggerProps$1, TableHandleDragPreviewElement, TableHandleDragPreviewEvents, TableHandleDragPreviewProps as TableHandleDragPreviewProps$1, TableHandleDropIndicatorElement, TableHandleDropIndicatorEvents, TableHandleDropIndicatorProps as TableHandleDropIndicatorProps$1, TableHandlePopoverContentElement, TableHandlePopoverContentEvents, TableHandlePopoverContentProps as TableHandlePopoverContentProps$1, TableHandlePopoverItemElement, TableHandlePopoverItemEvents, TableHandlePopoverItemProps as TableHandlePopoverItemProps$1, TableHandleRootElement, TableHandleRootEvents, TableHandleRootProps as TableHandleRootProps$1, TableHandleRowRootElement, TableHandleRowRootEvents, TableHandleRowRootProps as TableHandleRowRootProps$1, TableHandleRowTriggerElement, TableHandleRowTriggerEvents, TableHandleRowTriggerProps as TableHandleRowTriggerProps$1 } from "@prosekit/web/table-handle";
 

@@ -28,12 +28,15 @@ build_and_commit() {
 
   # Commit each file type separately for clearer diffs
   git add --force 'packages/*/dist/**/*.d.ts' || true
+  git add --force 'packages/*/dist/*.d.ts' || true
   git commit --allow-empty -m "chore: ${label} .d.ts"
 
   git add --force 'packages/*/dist/**/*.js' || true
+  git add --force 'packages/*/dist/*.js' || true
   git commit --allow-empty -m "chore: ${label} .js"
 
   git add --force 'packages/*/dist/**/*.css' || true
+  git add --force 'packages/*/dist/*.css' || true
   git commit --allow-empty -m "chore: ${label} .css"
 
   git add --force 'packages/*/dist/' || true

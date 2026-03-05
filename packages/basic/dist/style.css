@@ -1,14 +1,11 @@
 .ProseMirror {
-  position: relative;
-}
-
-.ProseMirror {
   word-wrap: break-word;
   white-space: pre-wrap;
   white-space: break-spaces;
   -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
-  font-feature-settings: "liga" 0; /* the above doesn't seem to work in Edge */
+  font-feature-settings: "liga" 0;
+  position: relative;
 }
 
 .ProseMirror pre {
@@ -19,18 +16,25 @@
   position: relative;
 }
 
-.ProseMirror-hideselection *::selection { background: transparent; }
-.ProseMirror-hideselection *::-moz-selection { background: transparent; }
-.ProseMirror-hideselection { caret-color: transparent; }
+.ProseMirror-hideselection ::selection {
+  background: none;
+}
 
-/* See https://github.com/ProseMirror/prosemirror/issues/1421#issuecomment-1759320191 */
-.ProseMirror [draggable][contenteditable=false] { user-select: text }
+.ProseMirror-hideselection ::selection {
+  background: none;
+}
+
+.ProseMirror-hideselection {
+  caret-color: #0000;
+}
+
+.ProseMirror [draggable][contenteditable="false"] {
+  user-select: text;
+}
 
 .ProseMirror-selectednode {
   outline: 2px solid #8cf;
 }
-
-/* Make sure li selections wrap around markers */
 
 li.ProseMirror-selectednode {
   outline: none;
@@ -38,21 +42,17 @@ li.ProseMirror-selectednode {
 
 li.ProseMirror-selectednode:after {
   content: "";
-  position: absolute;
-  left: -32px;
-  right: -2px; top: -2px; bottom: -2px;
-  border: 2px solid #8cf;
   pointer-events: none;
+  border: 2px solid #8cf;
+  position: absolute;
+  inset: -2px -2px -2px -32px;
 }
-
-/* Protect against generic img rules */
 
 img.ProseMirror-separator {
-  display: inline !important;
   border: none !important;
   margin: 0 !important;
+  display: inline !important;
 }
-
 
 :root {
   --prosekit-list-bullet-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='2.5' fill='currentColor'/%3E%3C/svg%3E");
@@ -61,182 +61,157 @@ img.ProseMirror-separator {
 }
 
 .prosemirror-flat-list {
-  & {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.prosemirror-flat-list > .list-marker {
+  width: 1.5em;
+  width: 1lh;
+  height: 1.5em;
+  text-align: center;
+  height: 1lh;
+  position: absolute;
+  inset-inline-start: 0;
+}
+
+.prosemirror-flat-list > .list-content {
+  margin-inline-start: 1.5em;
+  margin-inline-start: 1lh;
+}
+
+.prosemirror-flat-list[data-list-kind="bullet"] > .list-marker, .prosemirror-flat-list[data-list-kind="toggle"] > .list-marker {
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.prosemirror-flat-list[data-list-kind="bullet"] > .list-marker {
+  mask-image: var(--prosekit-list-bullet-icon);
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"] > .list-marker {
+  mask-image: var(--prosekit-list-toggle-open-icon);
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable][data-list-collapsed] > .list-marker {
+  mask-image: var(--prosekit-list-toggle-closed-icon);
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"] > * {
+  contain: style;
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"]:before {
+  inset-inline-end: calc(100% - 1.5em);
+  content: counter(prosemirror-flat-list-counter, decimal) ". ";
+  font-variant-numeric: tabular-nums;
+  position: absolute;
+  inset-inline-end: calc(100% - 1lh);
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"] {
+  counter-increment: prosemirror-flat-list-counter;
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"] {
+  counter-reset: prosemirror-flat-list-counter;
+}
+
+@supports (counter-set: prosemirror-flat-list-counter 1) {
+  :is(.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"])[data-list-order] {
+    counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
   }
+}
 
-  & > .list-marker {
-    position: absolute;
-    width: 1.5em;
-    width: 1lh;
-    height: 1.5em;
-    height: 1lh;
-    inset-inline-start: 0;
-    text-align: center;
+@supports not (counter-set: prosemirror-flat-list-counter 1) {
+  :is(.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"])[data-list-order] {
+    counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
   }
+}
 
-  & > .list-content {
-    margin-inline-start: 1.5em;
-    margin-inline-start: 1lh;
-  }
+.prosemirror-flat-list[data-list-kind="task"] > .list-marker, .prosemirror-flat-list[data-list-kind="task"] > .list-marker * {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-  &[data-list-kind="bullet"] > .list-marker,
-  &[data-list-kind="toggle"] > .list-marker {
-    background-color: currentColor;
-    mask-position: center;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-  }
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable] > .list-marker {
+  cursor: pointer;
+}
 
-  &[data-list-kind="bullet"] {
-    & > .list-marker {
-      mask-image: var(--prosekit-list-bullet-icon);
-    }
-  }
+.prosemirror-flat-list[data-list-kind="toggle"]:not([data-list-collapsable]) > .list-marker {
+  opacity: .4;
+  pointer-events: none;
+}
 
-  &[data-list-kind="toggle"] {
-    & > .list-marker {
-      mask-image: var(--prosekit-list-toggle-open-icon);
-    }
-
-    &[data-list-collapsable][data-list-collapsed] > .list-marker {
-      mask-image: var(--prosekit-list-toggle-closed-icon);
-    }
-  }
-
-  &[data-list-kind="ordered"] {
-    /*
-      Ensure that the counters in children don't escape, so that the sub lists
-      won't affect the counter of the parent list.
-  
-      See also https://github.com/ocavue/prosemirror-flat-list/issues/23
-      */
-    & > * {
-      contain: style;
-    }
-
-    &::before {
-      position: absolute;
-      inset-inline-end: calc(100% - 1.5em);
-      inset-inline-end: calc(100% - 1lh);
-      content: counter(prosemirror-flat-list-counter, decimal) ". ";
-      font-variant-numeric: tabular-nums;
-    }
-    counter-increment: prosemirror-flat-list-counter;
-
-    /* 
-      Reset the counter for the first list node in the sequence.
-      */
-    &:first-child,
-    :not(&) + & {
-      counter-reset: prosemirror-flat-list-counter;
-
-      /* 
-        If the first list node has a custom order number, set the counter to that value.
-        */
-      &[data-list-order] {
-        @supports (counter-set: prosemirror-flat-list-counter 1) {
-          counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
-        }
-
-        /* 
-          Safari older than version 17.2 doesn't support `counter-set` 
-          */
-        @supports not (counter-set: prosemirror-flat-list-counter 1) {
-          counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
-        }
-      }
-    }
-  }
-
-  &[data-list-kind="task"] {
-    & > .list-marker {
-      &,
-      & * {
-        /* Make sure that the checkbox is at the center */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-      }
-    }
-  }
-
-  &[data-list-kind="toggle"] {
-    &[data-list-collapsable] > .list-marker {
-      cursor: pointer;
-    }
-    &:not([data-list-collapsable]) > .list-marker {
-      opacity: 40%;
-      pointer-events: none;
-    }
-
-    /* If collapsed, hide the second and futher children */
-    &[data-list-collapsable][data-list-collapsed] > .list-content > *:nth-child(n+2) {
-      display: none;
-    }
-  }
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable][data-list-collapsed] > .list-content > :nth-child(n+2) {
+  display: none;
 }
 
 .ProseMirror .tableWrapper {
   overflow-x: auto;
 }
+
 .ProseMirror table {
-  width: 100%;
-  overflow: hidden;
   border-collapse: collapse;
   table-layout: fixed;
+  width: 100%;
+  overflow: hidden;
 }
-.ProseMirror td,
-.ProseMirror th {
+
+.ProseMirror td, .ProseMirror th {
   box-sizing: border-box;
-  position: relative;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-  border-width: 1px;
   vertical-align: top;
+  border-width: 1px;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  position: relative;
 }
 
 prosekit-table-handle-drop-indicator {
-  background-color: HighlightText;
+  background-color: highlighttext;
 }
 
 .ProseMirror .column-resize-handle {
   z-index: 20;
+  pointer-events: none;
+  background-color: highlighttext;
+  width: 4px;
   position: absolute;
   top: 0;
-  right: -2px;
   bottom: 0;
-  width: 4px;
-  background-color: HighlightText;
-  pointer-events: none;
+  right: -2px;
 }
+
 .ProseMirror.resize-cursor {
   cursor: ew-resize;
   cursor: col-resize;
 }
+
 .ProseMirror .selectedCell {
   --color: 210, 100%, 56%;
   border: 1px double hsl(var(--color));
   background-color: hsla(var(--color), 20%);
 }
 
-.prosekit-placeholder::before {
-  position: absolute;
-  height: 0;
+.prosekit-placeholder:before {
   content: attr(data-placeholder);
-  opacity: 30%;
+  opacity: .3;
   pointer-events: none;
+  height: 0;
+  position: absolute;
 }
 
 .prosekit-virtual-selection {
-  border-radius: 2px;
   background-color: #8888884d;
+  border-radius: 2px;
   box-shadow: 0 0 0 2px #8888884d;
 }
 
@@ -244,24 +219,25 @@ prosekit-table-handle-drop-indicator {
   background-color: #e5534b80;
   text-decoration: line-through;
 }
+
 .prosekit-commit-addition {
   background-color: #53e54b80;
 }
 
 .ProseMirror-gapcursor {
+  pointer-events: none;
   display: none;
   position: relative;
-  pointer-events: none;
 }
 
 .ProseMirror-gapcursor:after {
+  content: "";
+  border-top: 1px solid;
+  width: 20px;
+  animation: 1.1s steps(2, start) infinite ProseMirror-cursor-blink;
   display: block;
   position: absolute;
   top: -2px;
-  width: 20px;
-  border-top: 1px solid currentColor;
-  content: "";
-  animation: ProseMirror-cursor-blink 1.1s steps(2, start) infinite;
 }
 
 @keyframes ProseMirror-cursor-blink {
@@ -273,7 +249,3 @@ prosekit-table-handle-drop-indicator {
 .ProseMirror-focused .ProseMirror-gapcursor {
   display: block;
 }
-
-
-
-/*# sourceMappingURL=style.css.map*/

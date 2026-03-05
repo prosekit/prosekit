@@ -1,34 +1,28 @@
 .ProseMirror .ProseMirror-yjs-cursor {
-  position: absolute;
-  height: 1em;
-  border-left: black;
-  border-left-width: 2px;
-  border-left-style: solid;
-  border-color: orange;
   word-break: normal;
   pointer-events: none;
+  border-color: orange;
+  border-left-style: solid;
+  border-left-width: 2px;
+  height: 1em;
+  position: absolute;
 }
 
 .ProseMirror .ProseMirror-yjs-cursor > div {
-  position: relative;
-  top: -1.05em;
-  padding-right: 2px;
+  color: #fff;
+  user-select: none;
+  background-color: #fa8100;
   padding-left: 2px;
-  background-color: rgb(250, 129, 0);
-  color: white;
+  padding-right: 2px;
+  font-family: serif;
+  font-size: 13px;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
   line-height: normal;
-  font-family: serif;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  position: relative;
+  top: -1.05em;
 }
+
 .ProseMirror > .ProseMirror-yjs-cursor:first-child {
   margin-top: 16px;
 }
-
-
-/*# sourceMappingURL=style.css.map*/

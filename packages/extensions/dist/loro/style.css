@@ -2,35 +2,32 @@
   margin-top: 16px;
 }
 
-/* This gives the remote user caret. The colors are automatically overwritten */
 .ProseMirror-loro-cursor {
-  position: relative;
-  margin-right: -1px;
-  margin-left: -1px;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  border-color: orange;
   word-break: normal;
   pointer-events: none;
+  border-color: orange;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  margin-left: -1px;
+  margin-right: -1px;
+  position: relative;
 }
 
-/* This renders the username above the caret */
 .ProseMirror-loro-cursor > div {
+  color: #fff;
+  white-space: nowrap;
+  user-select: none;
+  background-color: #fa8100;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-family: serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
   position: absolute;
   top: -1.05em;
   left: -1px;
-  padding-right: 2px;
-  padding-left: 2px;
-  background-color: rgb(250, 129, 0);
-  color: white;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: normal;
-  font-family: serif;
-  white-space: nowrap;
-  user-select: none;
 }
-
-
-/*# sourceMappingURL=style.css.map*/

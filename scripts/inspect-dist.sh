@@ -23,6 +23,9 @@ build_and_commit() {
   # Remove source maps
   find packages/*/dist -name "*.map" -delete 2>/dev/null || true
 
+  # Clear index so deletions are captured
+  git rm -r --cached 'packages/*/dist/' 2>/dev/null || true
+
   # Commit each file type separately for clearer diffs
   git add --force 'packages/*/dist/**/*.d.ts' || true
   git commit --allow-empty -m "chore: ${label} .d.ts"
@@ -44,7 +47,7 @@ AFTER_BUILD=$(git -C "$MASTER_DIR" rev-parse HEAD)
 
 # Cherry-pick master dist commits into dev branch
 cd "$DEV_DIR"
-git cherry-pick "${BEFORE_BUILD}..${AFTER_BUILD}"
+git cherry-pick --allow-empty "${BEFORE_BUILD}..${AFTER_BUILD}"
 
 # Remove worktree
 git worktree remove "$MASTER_DIR" --force

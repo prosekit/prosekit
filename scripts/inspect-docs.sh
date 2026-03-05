@@ -22,6 +22,8 @@ build_and_commit() {
   pnpm install
   pnpm -C website run build:typedoc
 
+  # Clear index so deletions are captured
+  git rm -r --cached "$REF_DIR" 2>/dev/null || true
   git add --force "$REF_DIR"
   git commit --allow-empty -m "$message"
 }
@@ -33,7 +35,7 @@ AFTER_BUILD=$(git -C "$MASTER_DIR" rev-parse HEAD)
 
 # Cherry-pick master docs commit into dev branch
 cd "$DEV_DIR"
-git cherry-pick "${BEFORE_BUILD}..${AFTER_BUILD}"
+git cherry-pick --allow-empty "${BEFORE_BUILD}..${AFTER_BUILD}"
 
 # Remove worktree
 git worktree remove "$MASTER_DIR" --force

@@ -31,6 +31,7 @@ export function config(userConfig?: UserConfig): UserConfig {
       // compability of the output.
       alwaysBundle: [/\.css$/i],
     },
+    hash: false,
     fixedExtension: false,
     target: [
       'es2023',

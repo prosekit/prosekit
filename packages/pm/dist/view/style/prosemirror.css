@@ -1,14 +1,11 @@
 .ProseMirror {
-  position: relative;
-}
-
-.ProseMirror {
   word-wrap: break-word;
   white-space: pre-wrap;
   white-space: break-spaces;
   -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
-  font-feature-settings: "liga" 0; /* the above doesn't seem to work in Edge */
+  font-feature-settings: "liga" 0;
+  position: relative;
 }
 
 .ProseMirror pre {
@@ -19,18 +16,25 @@
   position: relative;
 }
 
-.ProseMirror-hideselection *::selection { background: transparent; }
-.ProseMirror-hideselection *::-moz-selection { background: transparent; }
-.ProseMirror-hideselection { caret-color: transparent; }
+.ProseMirror-hideselection ::selection {
+  background: none;
+}
 
-/* See https://github.com/ProseMirror/prosemirror/issues/1421#issuecomment-1759320191 */
-.ProseMirror [draggable][contenteditable=false] { user-select: text }
+.ProseMirror-hideselection ::selection {
+  background: none;
+}
+
+.ProseMirror-hideselection {
+  caret-color: #0000;
+}
+
+.ProseMirror [draggable][contenteditable="false"] {
+  user-select: text;
+}
 
 .ProseMirror-selectednode {
   outline: 2px solid #8cf;
 }
-
-/* Make sure li selections wrap around markers */
 
 li.ProseMirror-selectednode {
   outline: none;
@@ -38,21 +42,14 @@ li.ProseMirror-selectednode {
 
 li.ProseMirror-selectednode:after {
   content: "";
-  position: absolute;
-  left: -32px;
-  right: -2px; top: -2px; bottom: -2px;
-  border: 2px solid #8cf;
   pointer-events: none;
+  border: 2px solid #8cf;
+  position: absolute;
+  inset: -2px -2px -2px -32px;
 }
-
-/* Protect against generic img rules */
 
 img.ProseMirror-separator {
-  display: inline !important;
   border: none !important;
   margin: 0 !important;
+  display: inline !important;
 }
-
-
-
-/*# sourceMappingURL=prosemirror.css.map*/

@@ -5,127 +5,96 @@
 }
 
 .prosemirror-flat-list {
-  & {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
 
-  & > .list-marker {
-    position: absolute;
-    width: 1.5em;
-    width: 1lh;
-    height: 1.5em;
-    height: 1lh;
-    inset-inline-start: 0;
-    text-align: center;
-  }
+.prosemirror-flat-list > .list-marker {
+  width: 1.5em;
+  width: 1lh;
+  height: 1.5em;
+  text-align: center;
+  height: 1lh;
+  position: absolute;
+  inset-inline-start: 0;
+}
 
-  & > .list-content {
-    margin-inline-start: 1.5em;
-    margin-inline-start: 1lh;
-  }
+.prosemirror-flat-list > .list-content {
+  margin-inline-start: 1.5em;
+  margin-inline-start: 1lh;
+}
 
-  &[data-list-kind="bullet"] > .list-marker,
-  &[data-list-kind="toggle"] > .list-marker {
-    background-color: currentColor;
-    mask-position: center;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-  }
+.prosemirror-flat-list[data-list-kind="bullet"] > .list-marker, .prosemirror-flat-list[data-list-kind="toggle"] > .list-marker {
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
 
-  &[data-list-kind="bullet"] {
-    & > .list-marker {
-      mask-image: var(--prosekit-list-bullet-icon);
-    }
-  }
+.prosemirror-flat-list[data-list-kind="bullet"] > .list-marker {
+  mask-image: var(--prosekit-list-bullet-icon);
+}
 
-  &[data-list-kind="toggle"] {
-    & > .list-marker {
-      mask-image: var(--prosekit-list-toggle-open-icon);
-    }
+.prosemirror-flat-list[data-list-kind="toggle"] > .list-marker {
+  mask-image: var(--prosekit-list-toggle-open-icon);
+}
 
-    &[data-list-collapsable][data-list-collapsed] > .list-marker {
-      mask-image: var(--prosekit-list-toggle-closed-icon);
-    }
-  }
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable][data-list-collapsed] > .list-marker {
+  mask-image: var(--prosekit-list-toggle-closed-icon);
+}
 
-  &[data-list-kind="ordered"] {
-    /*
-      Ensure that the counters in children don't escape, so that the sub lists
-      won't affect the counter of the parent list.
-  
-      See also https://github.com/ocavue/prosemirror-flat-list/issues/23
-      */
-    & > * {
-      contain: style;
-    }
+.prosemirror-flat-list[data-list-kind="ordered"] > * {
+  contain: style;
+}
 
-    &::before {
-      position: absolute;
-      inset-inline-end: calc(100% - 1.5em);
-      inset-inline-end: calc(100% - 1lh);
-      content: counter(prosemirror-flat-list-counter, decimal) ". ";
-      font-variant-numeric: tabular-nums;
-    }
-    counter-increment: prosemirror-flat-list-counter;
+.prosemirror-flat-list[data-list-kind="ordered"]:before {
+  inset-inline-end: calc(100% - 1.5em);
+  content: counter(prosemirror-flat-list-counter, decimal) ". ";
+  font-variant-numeric: tabular-nums;
+  position: absolute;
+  inset-inline-end: calc(100% - 1lh);
+}
 
-    /* 
-      Reset the counter for the first list node in the sequence.
-      */
-    &:first-child,
-    :not(&) + & {
-      counter-reset: prosemirror-flat-list-counter;
+.prosemirror-flat-list[data-list-kind="ordered"] {
+  counter-increment: prosemirror-flat-list-counter;
+}
 
-      /* 
-        If the first list node has a custom order number, set the counter to that value.
-        */
-      &[data-list-order] {
-        @supports (counter-set: prosemirror-flat-list-counter 1) {
-          counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
-        }
+.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"] {
+  counter-reset: prosemirror-flat-list-counter;
+}
 
-        /* 
-          Safari older than version 17.2 doesn't support `counter-set` 
-          */
-        @supports not (counter-set: prosemirror-flat-list-counter 1) {
-          counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
-        }
-      }
-    }
-  }
-
-  &[data-list-kind="task"] {
-    & > .list-marker {
-      &,
-      & * {
-        /* Make sure that the checkbox is at the center */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-      }
-    }
-  }
-
-  &[data-list-kind="toggle"] {
-    &[data-list-collapsable] > .list-marker {
-      cursor: pointer;
-    }
-    &:not([data-list-collapsable]) > .list-marker {
-      opacity: 40%;
-      pointer-events: none;
-    }
-
-    /* If collapsed, hide the second and futher children */
-    &[data-list-collapsable][data-list-collapsed] > .list-content > *:nth-child(n+2) {
-      display: none;
-    }
+@supports (counter-set: prosemirror-flat-list-counter 1) {
+  :is(.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"])[data-list-order] {
+    counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
   }
 }
 
+@supports not (counter-set: prosemirror-flat-list-counter 1) {
+  :is(.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"])[data-list-order] {
+    counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
+  }
+}
 
-/*# sourceMappingURL=style.css.map*/
+.prosemirror-flat-list[data-list-kind="task"] > .list-marker, .prosemirror-flat-list[data-list-kind="task"] > .list-marker * {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable] > .list-marker {
+  cursor: pointer;
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"]:not([data-list-collapsable]) > .list-marker {
+  opacity: .4;
+  pointer-events: none;
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable][data-list-collapsed] > .list-content > :nth-child(n+2) {
+  display: none;
+}

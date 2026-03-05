@@ -1,5 +1,16 @@
 # prosekit
 
+## 0.19.0
+
+### Minor Changes
+
+- [`4e3f888`](https://github.com/ocavue/prosekit/commit/4e3f88861f9a458dc245ac81cf23ea6dc0bd7c21) ![](https://prosekit.dev/b/core)
+
+  `Priority` is now a plain object instead of a TypeScript enum.
+
+  Most code can keep using `Priority.lowest` to `Priority.highest` as before.
+  If you relied on enum reverse mapping like `Priority[2]`, replace it with your own map/array.
+
 ## 0.18.4
 
 ### Patch Changes

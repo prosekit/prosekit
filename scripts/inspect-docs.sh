@@ -10,8 +10,9 @@ DEV_DIR=$(pwd)
 export TURBO_FORCE=true
 
 # Create a worktree for master
-MASTER_DIR=$(mktemp -u)
-git worktree add -b temp-worktree-branch "$MASTER_DIR" origin/master
+TEMP_BRANCH="temp-$(uuidgen)"
+MASTER_DIR=/tmp/$TEMP_BRANCH
+git worktree add -b "$TEMP_BRANCH" "$MASTER_DIR" origin/master
 
 build_and_commit() {
   local dir="$1"

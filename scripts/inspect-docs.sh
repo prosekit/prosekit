@@ -6,52 +6,47 @@ REF_DIR="website/src/content/docs/references"
 cd "$(dirname "$0")/.."
 DEV_DIR=$(pwd)
 
-# Install pnpm
-npm install -g corepack@latest
-pnpm --version
+# Disable turborepo cache to ensure fresh builds
+export TURBO_FORCE=true
 
-# Check out the master branch
-cd /tmp
-mkdir -p prosekit-docs-temp
-cd prosekit-docs-temp
-git clone https://github.com/prosekit/prosekit.git
-cd prosekit
-pnpm install
-MASTER_DIR=$(pwd)
+# Create a worktree for master (detached so we don't move the master ref)
+MASTER_DIR=$(mktemp -u)
+git worktree add --detach "$MASTER_DIR" master
 
-# Build the docs from the master branch
-cd "$MASTER_DIR/website"
-pnpm run build:typedoc
+build_and_commit() {
+  local dir="$1"
+  local message="$2"
 
-# Copy the master docs
+  cd "$dir"
+  rm -rf "$REF_DIR" || true
+  pnpm install
+  pnpm -C website run build:typedoc
+
+  # Clear index so deletions are captured
+  git rm -r --cached "$REF_DIR" 2>/dev/null || true
+  git add --force "$REF_DIR"
+  git commit --allow-empty -m "$message"
+}
+
+# Build and commit master docs in worktree
+BEFORE_BUILD=$(git -C "$MASTER_DIR" rev-parse HEAD)
+build_and_commit "$MASTER_DIR" "chore: [1/3] build master docs"
+AFTER_BUILD=$(git -C "$MASTER_DIR" rev-parse HEAD)
+
+# Cherry-pick master docs commit into dev branch
 cd "$DEV_DIR"
-mkdir -p "$REF_DIR"
-rm -rf "$REF_DIR"
-cp -r "$MASTER_DIR/$REF_DIR" "$REF_DIR"
+git cherry-pick --allow-empty "${BEFORE_BUILD}..${AFTER_BUILD}"
 
-# Commit the master docs
-cd "$DEV_DIR"
-git add --force "$REF_DIR"
-git commit --allow-empty -m "chore: [1/3] build master docs"
+# Remove worktree
+git worktree remove "$MASTER_DIR" --force
 
-# Build the docs from the dev branch
-cd "$DEV_DIR/website"
-pnpm install
-pnpm run build:typedoc
+# Build and commit dev docs
+build_and_commit "$DEV_DIR" "chore: [2/3] build dev docs"
 
-# Commit the dev docs
-cd "$DEV_DIR"
-git add --force "$REF_DIR"
-git commit --allow-empty -m "chore: [2/3] build dev docs"
-
-# Remove the docs
-cd "$DEV_DIR"
-mkdir -p "$REF_DIR"
-rm -rf "$REF_DIR"
-
-# Commit the changes
+# Clean up docs
+rm -rf "$REF_DIR" || true
 git add --all
 git commit --allow-empty -m "chore: [3/3] clean up docs"
 
-# Push the changes
+# Push
 git push

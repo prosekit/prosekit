@@ -1,3 +1,4 @@
+#!/bin/bash
 set -ex
 
 SLASH_COMMAND=$1
@@ -7,5 +8,9 @@ cd "$(dirname "$0")"
 cd ..
 
 if [ "$SLASH_COMMAND" == "/docs" ]; then
-  bash scripts/inspect-docs.sh
+  ./scripts/inspect-docs.sh
+elif [ "$SLASH_COMMAND" == "/dist" ]; then
+  ./scripts/inspect-dist.sh
+else
+  echo "Unknown command: $SLASH_COMMAND"
 fi

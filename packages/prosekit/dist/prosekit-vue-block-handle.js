@@ -1,3 +1,0 @@
-export * from "@prosekit/vue/block-handle"
-
-export {  };

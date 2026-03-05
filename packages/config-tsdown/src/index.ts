@@ -32,6 +32,9 @@ export function config(userConfig?: UserConfig): UserConfig {
       alwaysBundle: [/\.css$/i],
     },
     hash: false,
+    css: {
+      splitting: true,
+    },
     fixedExtension: false,
     target: [
       'es2023',

@@ -1,0 +1,263 @@
+.prosekit-commit-deletion {
+  background-color: #e5534b80;
+  text-decoration: line-through;
+}
+
+.prosekit-commit-addition {
+  background-color: #53e54b80;
+}
+.ProseMirror-gapcursor {
+  pointer-events: none;
+  display: none;
+  position: relative;
+}
+
+.ProseMirror-gapcursor:after {
+  content: "";
+  border-top: 1px solid;
+  width: 20px;
+  animation: 1.1s steps(2, start) infinite ProseMirror-cursor-blink;
+  display: block;
+  position: absolute;
+  top: -2px;
+}
+
+@keyframes ProseMirror-cursor-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.ProseMirror-focused .ProseMirror-gapcursor {
+  display: block;
+}
+:root {
+  --prosekit-list-bullet-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='2.5' fill='currentColor'/%3E%3C/svg%3E");
+  --prosekit-list-toggle-open-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpolygon points='8,10 12,14 16,10' fill='currentColor'/%3E%3C/svg%3E");
+  --prosekit-list-toggle-closed-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpolygon points='10,8 14,12 10,16' fill='currentColor'/%3E%3C/svg%3E");
+}
+
+.prosemirror-flat-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.prosemirror-flat-list > .list-marker {
+  width: 1.5em;
+  width: 1lh;
+  height: 1.5em;
+  text-align: center;
+  height: 1lh;
+  position: absolute;
+  inset-inline-start: 0;
+}
+
+.prosemirror-flat-list > .list-content {
+  margin-inline-start: 1.5em;
+  margin-inline-start: 1lh;
+}
+
+.prosemirror-flat-list[data-list-kind="bullet"] > .list-marker, .prosemirror-flat-list[data-list-kind="toggle"] > .list-marker {
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.prosemirror-flat-list[data-list-kind="bullet"] > .list-marker {
+  mask-image: var(--prosekit-list-bullet-icon);
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"] > .list-marker {
+  mask-image: var(--prosekit-list-toggle-open-icon);
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable][data-list-collapsed] > .list-marker {
+  mask-image: var(--prosekit-list-toggle-closed-icon);
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"] > * {
+  contain: style;
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"]:before {
+  inset-inline-end: calc(100% - 1.5em);
+  content: counter(prosemirror-flat-list-counter, decimal) ". ";
+  font-variant-numeric: tabular-nums;
+  position: absolute;
+  inset-inline-end: calc(100% - 1lh);
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"] {
+  counter-increment: prosemirror-flat-list-counter;
+}
+
+.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"] {
+  counter-reset: prosemirror-flat-list-counter;
+}
+
+@supports (counter-set: prosemirror-flat-list-counter 1) {
+  :is(.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"])[data-list-order] {
+    counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
+  }
+}
+
+@supports not (counter-set: prosemirror-flat-list-counter 1) {
+  :is(.prosemirror-flat-list[data-list-kind="ordered"]:first-child, :not(.prosemirror-flat-list[data-list-kind="ordered"]) + .prosemirror-flat-list[data-list-kind="ordered"])[data-list-order] {
+    counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
+  }
+}
+
+.prosemirror-flat-list[data-list-kind="task"] > .list-marker, .prosemirror-flat-list[data-list-kind="task"] > .list-marker * {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable] > .list-marker {
+  cursor: pointer;
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"]:not([data-list-collapsable]) > .list-marker {
+  opacity: .4;
+  pointer-events: none;
+}
+
+.prosemirror-flat-list[data-list-kind="toggle"][data-list-collapsable][data-list-collapsed] > .list-content > :nth-child(n+2) {
+  display: none;
+}
+.ProseMirror-loro-cursor:first-child {
+  margin-top: 16px;
+}
+
+.ProseMirror-loro-cursor {
+  word-break: normal;
+  pointer-events: none;
+  border-color: orange;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  margin-left: -1px;
+  margin-right: -1px;
+  position: relative;
+}
+
+.ProseMirror-loro-cursor > div {
+  color: #fff;
+  white-space: nowrap;
+  user-select: none;
+  background-color: #fa8100;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-family: serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  position: absolute;
+  top: -1.05em;
+  left: -1px;
+}
+.prosekit-placeholder:before {
+  content: attr(data-placeholder);
+  opacity: .3;
+  pointer-events: none;
+  height: 0;
+  position: absolute;
+}
+.ProseMirror-search-match {
+  background-color: #ffff0054;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #ffff0054;
+}
+
+.ProseMirror.ProseMirror-focused .ProseMirror-active-search-match::selection, .ProseMirror:not(.ProseMirror-focused) .ProseMirror-active-search-match {
+  background-color: #ff6a0054;
+  border-radius: 2px;
+  scroll-margin: 8px;
+  box-shadow: 0 0 0 2px #ff6a0054;
+}
+.ProseMirror .tableWrapper {
+  overflow-x: auto;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ProseMirror td, .ProseMirror th {
+  box-sizing: border-box;
+  vertical-align: top;
+  border-width: 1px;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  position: relative;
+}
+
+prosekit-table-handle-drop-indicator {
+  background-color: highlighttext;
+}
+
+.ProseMirror .column-resize-handle {
+  z-index: 20;
+  pointer-events: none;
+  background-color: highlighttext;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -2px;
+}
+
+.ProseMirror.resize-cursor {
+  cursor: ew-resize;
+  cursor: col-resize;
+}
+
+.ProseMirror .selectedCell {
+  --color: 210, 100%, 56%;
+  border: 1px double hsl(var(--color));
+  background-color: hsla(var(--color), 20%);
+}
+.prosekit-virtual-selection {
+  background-color: #8888884d;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #8888884d;
+}
+.ProseMirror .ProseMirror-yjs-cursor {
+  word-break: normal;
+  pointer-events: none;
+  border-color: orange;
+  border-left-style: solid;
+  border-left-width: 2px;
+  height: 1em;
+  position: absolute;
+}
+
+.ProseMirror .ProseMirror-yjs-cursor > div {
+  color: #fff;
+  user-select: none;
+  background-color: #fa8100;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-family: serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  position: relative;
+  top: -1.05em;
+}
+
+.ProseMirror > .ProseMirror-yjs-cursor:first-child {
+  margin-top: 16px;
+}

@@ -11,4 +11,6 @@ if [ "$SLASH_COMMAND" == "/docs" ]; then
   ./scripts/inspect-docs.sh
 elif [ "$SLASH_COMMAND" == "/dist" ]; then
   ./scripts/inspect-dist.sh
+else
+  echo "Unknown command: $SLASH_COMMAND"
 fi

@@ -226,7 +226,6 @@
     "@prosekit/typedoc-plugin": "workspace:*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "esbuild": "^0.27.3",
     "loro-crdt": "^1.10.6",
     "loro-prosemirror": "^0.4.3",
     "preact": "^10.28.4",

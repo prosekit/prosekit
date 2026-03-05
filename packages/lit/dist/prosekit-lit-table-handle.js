@@ -1,0 +1,3 @@
+import { TableHandleColumnRootElement as TableHandleColumnRoot, TableHandleColumnTriggerElement as TableHandleColumnTrigger, TableHandleDragPreviewElement as TableHandleDragPreview, TableHandleDropIndicatorElement as TableHandleDropIndicator, TableHandlePopoverContentElement as TableHandlePopoverContent, TableHandlePopoverItemElement as TableHandlePopoverItem, TableHandleRootElement as TableHandleRoot, TableHandleRowRootElement as TableHandleRowRoot, TableHandleRowTriggerElement as TableHandleRowTrigger } from "@prosekit/web/table-handle";
+
+export { TableHandleColumnRoot, TableHandleColumnTrigger, TableHandleDragPreview, TableHandleDropIndicator, TableHandlePopoverContent, TableHandlePopoverItem, TableHandleRoot, TableHandleRowRoot, TableHandleRowTrigger };

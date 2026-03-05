@@ -38,7 +38,7 @@
     "typecheck": "tsc --build tsconfig.json"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.8",
+    "@changesets/cli": "^2.30.0",
     "@changesets/types": "^6.1.0",
     "@ocavue/eslint-config": "^4.2.0",
     "@ocavue/tsconfig": "^0.6.3",

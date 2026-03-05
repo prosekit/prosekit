@@ -20,7 +20,7 @@ var ProseKitError = class extends Error {
 */
 var EditorNotFoundError = class extends ProseKitError {
 	constructor() {
-		super("Unable to find editor. Pass it as an argument or call this function inside a ProseKit component.");
+		super("Unable to find editor. Please pass it as an argument or call this function inside a ProseKit component.");
 	}
 };
 /**
@@ -1193,4 +1193,4 @@ var Editor = class {
 
 //#endregion
 export { isMark as A, ProseKitError as B, defineFacetPayload as C, isNodeActive as D, defineFacet as E, isTextSelection as F, getNodeType as I, assert as L, isProseMirrorNode as M, isSelection as N, isAllSelection as O, isSlice as P, getMarkType as R, stateFacet as S, rootFacet as T, jsonFromState as _, union as a, nodeFromJSON as b, isMarkActive as c, elementFromJSON as d, elementFromNode as f, jsonFromNode as g, jsonFromHTML as h, setupEditorExtension as i, isNodeSelection as j, isFragment as k, isMarkAbsent as l, htmlFromNode as m, EditorInstance as n, createMarkActions as o, htmlFromJSON as p, createEditor as r, createNodeActions as s, Editor as t, defineDefaultState as u, nodeFromElement as v, schemaFacet as w, stateFromJSON as x, nodeFromHTML as y, EditorNotFoundError as z };
-//# sourceMappingURL=editor-D8sYFwSs.js.map
+//# sourceMappingURL=editor-C3s9kx2c.js.map

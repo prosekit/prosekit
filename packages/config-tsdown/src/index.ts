@@ -26,11 +26,6 @@ export function config(userConfig?: UserConfig): UserConfig {
     clean: false,
     failOnWarn: true,
     dts: { build: true, incremental: true, sourcemap: true },
-    deps: {
-      // Bundling CSS files to remove the `@import` statements. This increases the
-      // compability of the output.
-      alwaysBundle: [/\.css$/i],
-    },
     hash: false,
     css: {
       splitting: true,

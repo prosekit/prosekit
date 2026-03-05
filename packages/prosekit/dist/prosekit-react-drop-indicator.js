@@ -1,3 +1,0 @@
-export * from "@prosekit/react/drop-indicator"
-
-export {  };

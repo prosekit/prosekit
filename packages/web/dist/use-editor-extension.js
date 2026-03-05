@@ -9,4 +9,4 @@ function useEditorExtension(host, editor, extension) {
 
 //#endregion
 export { useEditorExtension as t };
-//# sourceMappingURL=use-editor-extension-B2WuUfnd.js.map
+//# sourceMappingURL=use-editor-extension.js.map

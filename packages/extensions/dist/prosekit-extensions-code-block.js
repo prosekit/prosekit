@@ -131,7 +131,7 @@ const existCodeBlock = (state, dispatch) => {
 //#region src/code-block/shiki-highlighter.ts
 let loaded;
 async function load() {
-	const { createOrGetHighlighter } = await import("./shiki-highlighter-chunk-DZtAQyWR.js");
+	const { createOrGetHighlighter } = await import("./shiki-highlighter-chunk.js");
 	loaded = createOrGetHighlighter;
 }
 function createOrGetHighlighter(options) {

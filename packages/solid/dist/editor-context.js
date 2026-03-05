@@ -15,4 +15,4 @@ const EditorContextProvider = editorContext.Provider;
 
 //#endregion
 export { useEditorContext as n, EditorContextProvider as t };
-//# sourceMappingURL=editor-context-CAdqwRwB.js.map
+//# sourceMappingURL=editor-context.js.map

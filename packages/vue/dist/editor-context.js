@@ -17,4 +17,4 @@ function useEditorContext() {
 
 //#endregion
 export { useEditorContext as n, provideEditor as t };
-//# sourceMappingURL=editor-context-BfHHplRP.js.map
+//# sourceMappingURL=editor-context.js.map

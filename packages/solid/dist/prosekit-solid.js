@@ -1,4 +1,4 @@
-import { n as useEditorContext, t as EditorContextProvider } from "./editor-context-CAdqwRwB.js";
+import { n as useEditorContext, t as EditorContextProvider } from "./editor-context.js";
 import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory } from "@prosemirror-adapter/solid";
 import { createComponent, createEffect, createMemo, createSignal, onCleanup } from "solid-js";
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";

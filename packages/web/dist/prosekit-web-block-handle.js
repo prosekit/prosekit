@@ -1,7 +1,7 @@
-import { t as useEditorExtension } from "./use-editor-extension-B2WuUfnd.js";
-import { t as getSafeEditorView } from "./get-safe-editor-view-Dt9Amrcn.js";
-import { n as assignStyles, t as useScrolling } from "./use-scrolling-BjVzAkiZ.js";
-import { r as deepCloneElement, t as injectStyle } from "./inject-style-BaFaVQvj.js";
+import { t as useEditorExtension } from "./use-editor-extension.js";
+import { t as getSafeEditorView } from "./get-safe-editor-view.js";
+import { n as assignStyles, t as useScrolling } from "./use-scrolling.js";
+import { r as deepCloneElement, t as injectStyle } from "./inject-style.js";
 import { createComputed, createContext, createSignal, defineCustomElement, registerCustomElement, useAttribute, useEffect, useEventListener } from "@aria-ui/core";
 import { defineDOMEventHandler, insertDefaultBlock, union } from "@prosekit/core";
 import { overlayPositionerEvents, overlayPositionerProps, useOverlayPositionerState } from "@aria-ui/overlay/elements";

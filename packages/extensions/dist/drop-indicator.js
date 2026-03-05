@@ -56,4 +56,4 @@ function defineDropIndicator(options) {
 
 //#endregion
 export { defineDropIndicator as t };
-//# sourceMappingURL=drop-indicator-DJq8pF92.js.map
+//# sourceMappingURL=drop-indicator.js.map

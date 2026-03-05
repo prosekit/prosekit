@@ -1,7 +1,7 @@
 import { defineInputRule } from "./prosekit-extensions-input-rule.js";
 import { defineEnterRule } from "./prosekit-extensions-enter-rule.js";
-import { t as defineMarkRule } from "./mark-rule-Bqdm49Eq.js";
-import { t as defineMarkPasteRule } from "./paste-rule-D1tygkvZ.js";
+import { t as defineMarkRule } from "./mark-rule.js";
+import { t as defineMarkPasteRule } from "./paste-rule.js";
 import { addMark, defineCommands, defineMarkSpec, expandMark, removeMark, toggleMark, union } from "@prosekit/core";
 import { InputRule } from "@prosekit/pm/inputrules";
 

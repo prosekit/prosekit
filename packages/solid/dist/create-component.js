@@ -1,4 +1,4 @@
-import { n as useEditorContext } from "./editor-context-CAdqwRwB.js";
+import { n as useEditorContext } from "./editor-context.js";
 import h from "solid-js/h";
 
 //#region src/components/create-component.ts
@@ -39,4 +39,4 @@ function createComponent(tagName, propNames, eventNames) {
 
 //#endregion
 export { createComponent as t };
-//# sourceMappingURL=create-component-B7NzEJxP.js.map
+//# sourceMappingURL=create-component.js.map

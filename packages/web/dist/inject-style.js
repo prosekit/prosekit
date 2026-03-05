@@ -73,4 +73,4 @@ function injectStyle(container, styleText) {
 
 //#endregion
 export { cloneElement as n, deepCloneElement as r, injectStyle as t };
-//# sourceMappingURL=inject-style-BaFaVQvj.js.map
+//# sourceMappingURL=inject-style.js.map

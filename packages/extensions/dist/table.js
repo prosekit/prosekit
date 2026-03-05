@@ -1,4 +1,4 @@
-import { t as defineDropIndicator } from "./drop-indicator-DJq8pF92.js";
+import { t as defineDropIndicator } from "./drop-indicator.js";
 import { TextSelection } from "@prosekit/pm/state";
 import { defaultBlockAt, defineCommands, defineNodeSpec, definePlugin, getNodeType, insertNode, union } from "@prosekit/core";
 import { CellSelection, TableMap, addColumnAfter, addColumnBefore, addRowAfter, addRowBefore, columnResizing, deleteCellSelection, deleteColumn, deleteRow, deleteTable, findCellPos, findCellRange, findTable, mergeCells, moveTableColumn, moveTableRow, splitCell, tableEditing, tableNodes } from "prosemirror-tables";
@@ -285,4 +285,4 @@ function defineTable() {
 
 //#endregion
 export { insertTable as _, defineTableSpec as a, defineTableCommands as c, selectTableColumn as d, selectTableCell as f, moveTableColumn as g, moveTableRow as h, defineTableRowSpec as i, selectTable as l, isCellSelection as m, defineTableCellSpec as n, defineTablePlugins as o, findTable as p, defineTableHeaderCellSpec as r, defineTableDropIndicator as s, defineTable as t, selectTableRow as u, exitTable as v };
-//# sourceMappingURL=table-B81i9oH9.js.map
+//# sourceMappingURL=table.js.map

@@ -159,4 +159,4 @@ function replaceMarkInInlineNode(options, node) {
 
 //#endregion
 export { definePasteRule as n, defineMarkPasteRule as t };
-//# sourceMappingURL=paste-rule-D1tygkvZ.js.map
+//# sourceMappingURL=paste-rule.js.map

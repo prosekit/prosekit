@@ -1,4 +1,4 @@
-import { n as useEditorContext } from "./editor-context-BfHHplRP.js";
+import { n as useEditorContext } from "./editor-context.js";
 import { defineComponent, h, onMounted, ref, watchEffect } from "vue";
 
 //#region src/components/create-component.ts
@@ -43,4 +43,4 @@ function createComponent(tagName, displayName, propNames, eventNames) {
 
 //#endregion
 export { createComponent as t };
-//# sourceMappingURL=create-component-BREKWlWW.js.map
+//# sourceMappingURL=create-component.js.map

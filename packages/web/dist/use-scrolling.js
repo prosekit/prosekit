@@ -35,4 +35,4 @@ function useScrolling(host) {
 
 //#endregion
 export { assignStyles as n, useScrolling as t };
-//# sourceMappingURL=use-scrolling-BjVzAkiZ.js.map
+//# sourceMappingURL=use-scrolling.js.map

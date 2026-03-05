@@ -1,5 +1,5 @@
 import { defineInputRule } from "./prosekit-extensions-input-rule.js";
-import { t as defineDropIndicator } from "./drop-indicator-DJq8pF92.js";
+import { t as defineDropIndicator } from "./drop-indicator.js";
 import { Plugin } from "@prosekit/pm/state";
 import { defineClipboardSerializer, defineCommands, defineKeymap, defineNodeSpec, definePlugin, insertNode, union } from "@prosekit/core";
 import { chainCommands, deleteSelection } from "@prosekit/pm/commands";

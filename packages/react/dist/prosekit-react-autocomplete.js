@@ -1,4 +1,4 @@
-import { t as createComponent } from "./create-component-D8vvwyIA.js";
+import { t as createComponent } from "./create-component.js";
 import { autocompleteEmptyEvents, autocompleteEmptyProps, autocompleteItemEvents, autocompleteItemProps, autocompleteListEvents, autocompleteListProps, autocompletePopoverEvents, autocompletePopoverProps } from "@prosekit/web/autocomplete";
 
 //#region src/components/autocomplete/autocomplete-empty.gen.ts

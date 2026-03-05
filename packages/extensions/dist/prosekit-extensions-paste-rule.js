@@ -1,3 +1,3 @@
-import { n as definePasteRule, t as defineMarkPasteRule } from "./paste-rule-D1tygkvZ.js";
+import { n as definePasteRule, t as defineMarkPasteRule } from "./paste-rule.js";
 
 export { defineMarkPasteRule, definePasteRule };

@@ -1,3 +1,3 @@
-import { t as defineMarkRule } from "./mark-rule-Bqdm49Eq.js";
+import { t as defineMarkRule } from "./mark-rule.js";
 
 export { defineMarkRule };

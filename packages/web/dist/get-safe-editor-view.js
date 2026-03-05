@@ -9,4 +9,4 @@ function getSafeEditorView(editor) {
 
 //#endregion
 export { getSafeEditorView as t };
-//# sourceMappingURL=get-safe-editor-view-Dt9Amrcn.js.map
+//# sourceMappingURL=get-safe-editor-view.js.map

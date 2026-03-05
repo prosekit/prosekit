@@ -1,4 +1,4 @@
-import { p as findTable } from "./table-B81i9oH9.js";
+import { p as findTable } from "./table.js";
 import { Plugin, PluginKey } from "@prosekit/pm/state";
 import { definePlugin, isInCodeBlock, isTextSelection, maybeRun } from "@prosekit/core";
 import { Decoration, DecorationSet } from "@prosekit/pm/view";

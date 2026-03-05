@@ -129,4 +129,4 @@ const store = /* @__PURE__ */ new Map();
 
 //#endregion
 export { defineFilePasteHandler as n, defineFileDropHandler as r, UploadTask as t };
-//# sourceMappingURL=file-CSHGzwOS.js.map
+//# sourceMappingURL=file.js.map

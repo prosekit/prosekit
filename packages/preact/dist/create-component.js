@@ -1,5 +1,7 @@
-import { n as useEditorContext } from "./editor-context-DHjS00Fa.js";
-import { createElement, forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { n as useEditorContext } from "./editor-context.js";
+import { createElement } from "preact";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "preact/hooks";
+import { forwardRef } from "preact/compat";
 
 //#region src/components/merge-refs.ts
 /**
@@ -83,7 +85,6 @@ function createComponent(tagName, displayName, propNames, eventNames) {
 		const mergedRef = useMemo(() => mergeRefs([ref, setEl]), [ref]);
 		return createElement(tagName, {
 			...attributes,
-			suppressHydrationWarning: true,
 			ref: mergedRef
 		});
 	});
@@ -93,4 +94,4 @@ function createComponent(tagName, displayName, propNames, eventNames) {
 
 //#endregion
 export { createComponent as t };
-//# sourceMappingURL=create-component-D8vvwyIA.js.map
+//# sourceMappingURL=create-component.js.map

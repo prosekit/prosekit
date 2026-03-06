@@ -1,4 +1,5 @@
-import { Priority, union, withPriority, type PlainExtension, type Union } from '@prosekit/core'
+import type { Priority } from '@prosekit/core'
+import { union, withPriority, type PlainExtension, type Union } from '@prosekit/core'
 import type * as Y from 'yjs'
 
 import { defineYjsCommands, type YjsCommandsExtension } from './yjs-commands.ts'
@@ -61,6 +62,6 @@ export function defineYjs(options: YjsOptions): YjsExtension {
       defineYjsUndoPlugin({ ...undo }),
       defineYjsSyncPlugin({ ...sync, fragment }),
     ]),
-    Priority.high,
+    3 satisfies typeof Priority.high,
   )
 }

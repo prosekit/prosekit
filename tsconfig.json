@@ -3,7 +3,7 @@
   "include": [
     "./*.js",
     "./*.ts",
-    ".changeset/*.cjs",
+    ".changeset/*.mjs",
   ],
   "files": [],
   "references": [

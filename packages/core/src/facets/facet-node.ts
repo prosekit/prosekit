@@ -1,6 +1,6 @@
 import { isNotNullish } from '@ocavue/utils'
 
-import { Priority } from '../types/priority.ts'
+import type { Priority } from '../types/priority.ts'
 import { arraySubtract, uniqPush } from '../utils/array.ts'
 import { assert } from '../utils/assert.ts'
 
@@ -104,18 +104,28 @@ export function subtractFacetNode<I, O>(
 export class FacetNode<I = any, O = any> {
   output: Tuple5<O | null> | null = null
 
+  readonly facet: Facet<I, O>
+  readonly inputs: Tuple5<I[] | null>
+  readonly children: Map<number, FacetNode>
+  readonly reducers: Tuple5<FacetReducer<I, O> | null>
+
   constructor(
-    readonly facet: Facet<I, O>,
-    readonly inputs: Tuple5<I[] | null> = [null, null, null, null, null],
-    readonly children: Map<number, FacetNode> = new Map(),
-    readonly reducers: Tuple5<FacetReducer<I, O> | null> = [
+    facet: Facet<I, O>,
+    inputs: Tuple5<I[] | null> = [null, null, null, null, null],
+    children: Map<number, FacetNode> = new Map<number, FacetNode>(),
+    reducers: Tuple5<FacetReducer<I, O> | null> = [
       null,
       null,
       null,
       null,
       null,
     ],
-  ) {}
+  ) {
+    this.facet = facet
+    this.inputs = inputs
+    this.children = children
+    this.reducers = reducers
+  }
 
   private calcOutput(): Tuple5<O | null> {
     const inputs: Tuple5<I[] | null> = [null, null, null, null, null]
@@ -139,9 +149,9 @@ export class FacetNode<I = any, O = any> {
     }
 
     if (this.facet.singleton) {
-      const reducer = (this.reducers[Priority.default] ||= this.facet.reducer)
+      const reducer = (this.reducers[2 satisfies typeof Priority.default] ||= this.facet.reducer)
       const input: I[] = inputs.filter(isNotNullish).flat()
-      output[Priority.default] = reducer(input)
+      output[2 satisfies typeof Priority.default] = reducer(input)
     } else {
       for (let pri = 0; pri < 5; pri++) {
         const input = inputs[pri]
@@ -164,7 +174,7 @@ export class FacetNode<I = any, O = any> {
 
   getSingletonOutput(): O | null {
     assert(this.facet.singleton)
-    return this.getOutput()[Priority.default]
+    return this.getOutput()[2 satisfies typeof Priority.default]
   }
 
   getRootOutput(): RootOutput {

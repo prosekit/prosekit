@@ -120,7 +120,7 @@
   frameworks: [react, preact, vue, lit, svelte, solid]
   description: Formatting toolbar with common editing actions.
 - name: tweet
-  frameworks: [react]
+  frameworks: [react, vue]
   description: Embed and display Twitter tweets.
 - name: typography
   frameworks: [react, preact, vue, svelte, solid]

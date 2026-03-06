@@ -6,12 +6,17 @@ on:
 
 jobs:
   run-command:
-    if: github.event.issue.pull_request && github.event.comment.body ==  '/docs'
+    if: github.event.issue.pull_request && (github.event.comment.body == '/docs' || github.event.comment.body == '/dist')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup node
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: "24.x"
 
       - name: Get PR branch and checkout
         env:
@@ -29,8 +34,13 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
 
+      - name: Set up pnpm
+        run: |
+          npm install -g corepack
+          pnpm --version
+
       - name: Run the script
         run: |
-          bash scripts/pr-command.sh "$SLASH_COMMAND"
+          ./scripts/pr-command.sh "$SLASH_COMMAND"
         env:
           SLASH_COMMAND: ${{ github.event.comment.body }}

@@ -50,4 +50,4 @@ const functions = {
   getDependencyReleaseLine,
 }
 
-module.exports = functions
+export default functions

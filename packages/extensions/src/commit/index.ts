@@ -232,9 +232,9 @@ function defineCommitViewer(commit: Commit): PlainExtension {
 }
 
 class CommitRecorder {
-  private parent: ProseMirrorNode | null = null
-  private doc: ProseMirrorNode | null = null
-  private steps: Step[] = []
+  #parent: ProseMirrorNode | null = null
+  #doc: ProseMirrorNode | null = null
+  #steps: Step[] = []
 
   /**
    * Return a commit object including all changes since the last commit. `null`
@@ -242,20 +242,20 @@ class CommitRecorder {
    */
   commit(): Commit | null {
     if (
-      !this.parent
-      || !this.doc
-      || this.steps.length === 0
-      || this.parent.eq(this.doc)
+      !this.#parent
+      || !this.#doc
+      || this.#steps.length === 0
+      || this.#parent.eq(this.#doc)
     ) {
       return null
     }
 
     const commit: Commit = {
-      doc: jsonFromNode(this.doc),
-      parent: jsonFromNode(this.parent),
-      steps: this.steps.map((step) => step.toJSON() as StepJSON),
+      doc: jsonFromNode(this.#doc),
+      parent: jsonFromNode(this.#parent),
+      steps: this.#steps.map((step) => step.toJSON() as StepJSON),
     }
-    this.init(this.doc)
+    this.init(this.#doc)
     return commit
   }
 
@@ -263,17 +263,17 @@ class CommitRecorder {
    * @internal
    */
   init(doc: ProseMirrorNode): void {
-    this.doc = doc
-    this.parent = doc
-    this.steps = []
+    this.#doc = doc
+    this.#parent = doc
+    this.#steps = []
   }
 
   /**
    * @internal
    */
   apply(tr: Transaction): void {
-    this.steps.push(...tr.steps)
-    this.doc = tr.doc
+    this.#steps.push(...tr.steps)
+    this.#doc = tr.doc
   }
 }
 

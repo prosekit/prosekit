@@ -61,7 +61,7 @@ export class UploadTask<Result> {
    */
   readonly finished: Promise<Result>
 
-  private subscribers: ((progress: UploadProgress) => void)[] = []
+  #subscribers: ((progress: UploadProgress) => void)[] = []
 
   /**
    * Creates a new upload task. You can find the upload task by its object URL
@@ -75,7 +75,7 @@ export class UploadTask<Result> {
       const maybePromise = uploader({
         file,
         onProgress: (progress) => {
-          for (const subscriber of this.subscribers) {
+          for (const subscriber of this.#subscribers) {
             subscriber(progress)
           }
         },
@@ -104,9 +104,9 @@ export class UploadTask<Result> {
   public subscribeProgress(
     callback: (progress: UploadProgress) => void,
   ): VoidFunction {
-    this.subscribers.push(callback)
+    this.#subscribers.push(callback)
     return () => {
-      this.subscribers = this.subscribers.filter(
+      this.#subscribers = this.#subscribers.filter(
         (subscriber) => subscriber !== callback,
       )
     }

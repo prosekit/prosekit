@@ -127,7 +127,7 @@ export class FacetNode<I = any, O = any> {
     this.reducers = reducers
   }
 
-  private calcOutput(): Tuple5<O | null> {
+  #calcOutput(): Tuple5<O | null> {
     const inputs: Tuple5<I[] | null> = [null, null, null, null, null]
     const output: Tuple5<O | null> = [null, null, null, null, null]
 
@@ -167,7 +167,7 @@ export class FacetNode<I = any, O = any> {
 
   getOutput(): Tuple5<O | null> {
     if (!this.output) {
-      this.output = this.calcOutput()
+      this.output = this.#calcOutput()
     }
     return this.output
   }

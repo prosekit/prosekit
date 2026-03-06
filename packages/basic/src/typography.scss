@@ -1,0 +1,372 @@
+$line-height: 24px;
+
+$h1-font-size: 40px;
+$h1-line-height: 44px;
+$h1-padding-x: 2px;
+$h1-padding-y: 3px;
+$h1-margin-t: 36px;
+$h1-margin-b: 4px;
+$h1-margin-x: 0;
+
+$h2-line-height: 39px;
+$h2-padding-x: 2px;
+$h2-padding-y: 3px;
+$h2-margin-t: 32px;
+$h2-margin-b: 4px;
+$h2-margin-x: 0;
+
+$list-marker-height: $line-height;
+
+$h3-line-height: 31.2px;
+$h3-padding-x: 2px;
+$h3-padding-y: 3px;
+$h3-margin-t: 22px;
+$h3-margin-b: 1px;
+$h3-margin-x: 0;
+
+$h4-line-height: 26px;
+$h4-padding-x: 2px;
+$h4-padding-y: 3px;
+$h4-margin-t: 16px;
+$h4-margin-b: 1px;
+$h4-margin-x: 0;
+
+$h5-line-height: 22.4px;
+$h5-padding-x: 2px;
+$h5-padding-y: 3px;
+$h5-margin-t: 14px;
+$h5-margin-b: 1px;
+$h5-margin-x: 0;
+
+$h6-line-height: 20.8px;
+$h6-padding-x: 2px;
+$h6-padding-y: 3px;
+$h6-margin-t: 12px;
+$h6-margin-b: 1px;
+$h6-margin-x: 0;
+
+$p-font-size: 16px;
+$p-line-height: 24px;
+$p-padding-x: 2px;
+$p-padding-y: 3px;
+$p-margin-t: 1px;
+$p-margin-b: 0;
+$p-margin-x: 0;
+
+$pre-border-radius: 0.375rem;
+
+.ProseMirror {
+  // #region Variables
+  --prosekit-hue: 250; // blue
+  --prosekit-outline-color: hsl(var(--prosekit-hue) 100% 60%);
+  --prosekit-node-selection-color: hsl(var(--prosekit-hue) 100% 60% / 0.22);
+  --prosekit-border-color: hsl(0 0% 60% / 0.2);
+  --prosekit-blockquote-color: hsl(0 0% 60% / 0.4);
+
+  // Prefer oklch
+  @supports (color: oklch(0.7 0.2 240)) {
+    --prosekit-outline-color: oklch(0.66 0.20 var(--prosekit-hue));
+    --prosekit-node-selection-color: oklch(0.66 0.20 var(--prosekit-hue) / 0.1);
+  }
+  // Prefer color-mix
+  @supports (color: color-mix(in srgb, CanvasText 15%, Canvas)) {
+    --prosekit-border-color: color-mix(in srgb, CanvasText 15%, Canvas);
+    --prosekit-blockquote-color: color-mix(in srgb, CanvasText 40%, Canvas);
+  }
+  // #endregion Variables
+
+  // #region Basic
+  & {
+    // Disable margin collapsing
+    display: flex;
+    flex-direction: column;
+  }
+
+  & {
+    line-height: $line-height;
+  }
+  // #endregion Basic
+
+  // #region Heading
+  h1 {
+    margin: $h1-margin-t $h1-margin-x $h1-margin-b;
+    padding: $h1-padding-y $h1-padding-x;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: $h1-line-height;
+  }
+
+  h2 {
+    margin: $h2-margin-t $h2-margin-x $h2-margin-b;
+    padding: $h2-padding-y $h2-padding-x;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: $h2-line-height;
+  }
+
+  h3 {
+    margin: $h3-margin-t $h3-margin-x $h3-margin-b;
+    padding: $h3-padding-y $h3-padding-x;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: $h3-line-height;
+  }
+
+  h4 {
+    margin: $h4-margin-t $h4-margin-x $h4-margin-b;
+    padding: $h4-padding-y $h4-padding-x;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: $h4-line-height;
+  }
+
+  h5 {
+    margin: $h5-margin-t $h5-margin-x $h5-margin-b;
+    padding: $h5-padding-y $h5-padding-x;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: $h5-line-height;
+  }
+
+  h6 {
+    margin: $h6-margin-t $h6-margin-x $h6-margin-b;
+    padding: $h6-padding-y $h6-padding-x;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: $h6-line-height;
+  }
+  // #endregion Heading
+
+  // #region Paragraph
+  p {
+    margin: $p-margin-t $p-margin-x $p-margin-b;
+    padding: $p-padding-y $p-padding-x;
+    font-size: $p-font-size;
+    line-height: $p-line-height;
+  }
+  // #endregion Paragraph
+
+  // #region Code
+  & code {
+    font-weight: 500;
+    font-size: 0.875em;
+  }
+
+  & pre {
+    margin: 0.5rem 0;
+    padding: 2rem 2rem;
+    overflow-x: auto;
+    border: 1px solid var(--prosekit-border-color);
+    border-radius: $pre-border-radius;
+    /* CSS variables --prosemirror-highlight and --prosemirror-highlight-bg are set by package `prosemirror-highlight` */
+    background-color: var(--prosemirror-highlight-bg, inherit);
+    color: var(--prosemirror-highlight, inherit);
+  }
+
+  & pre,
+  & code {
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    hyphens: none;
+    tab-size: 4;
+  }
+
+  & pre code {
+    font-weight: inherit;
+  }
+
+  & pre:has(code) {
+    /* Force the code block to be left-to-right */
+    direction: ltr;
+  }
+  // #endregion Code
+
+  // #region Image and Video
+  & img,
+  & video {
+    width: min-content;
+    max-width: 100%;
+    margin: 0.5em 0;
+  }
+  // #endregion Image and Video
+
+  // #region Blockquote
+  & blockquote {
+    position: relative;
+    margin: 4px 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-inline-start: 1em;
+    padding-inline-end: 2px;
+
+    :before {
+      display: block;
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      inset-inline-start: 2px;
+      border-inline-start: 0.25em solid var(--prosekit-blockquote-color);
+      content: "";
+    }
+  }
+  // #endregion Blockquote
+
+  // #region Horizontal Rule
+  & hr {
+    margin: 13px 0 13px;
+    border-width: 1px 0 0 0;
+    color: var(--prosekit-border-color);
+  }
+
+  & .prosekit-horizontal-rule {
+    margin: 1px 0;
+    padding: 12px 2px 12px;
+    border-width: 0;
+    // Set a small line-height so that the block handle can align to the middle
+    // of the horizontal rule
+    line-height: 1px;
+    & hr {
+      margin: 0;
+    }
+  }
+  // #endregion Horizontal Rule
+
+  // #region Table
+  & .tableWrapper {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+
+    table, tr, th, td {
+      border: 1px solid var(--prosekit-border-color);
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .selectedCell {
+      --color: 210, 100%, 56%;
+      border: 1px solid var(--prosekit-outline-color);
+      background-color: var(--prosekit-node-selection-color);
+    }
+
+    .column-resize-handle {
+      outline-color: var(--prosekit-outline-color);
+      // Use outline to hide the gap between multiple resize handles
+      outline-style: solid;
+      outline-width: 1px;
+      background-color: var(--prosekit-outline-color);
+    }
+  }
+  // #endregion Table
+
+  // #region Inline Marks
+  a {
+    text-decoration: underline;
+  }
+  // #endregion Inline Marks
+
+  // #region List
+  & .prosemirror-flat-list {
+    // #region List Heading
+    &:has(> div.list-content > h1) {
+      &::before,
+      & > .list-marker {
+        top: $h1-margin-t + $h1-padding-y + ($h1-line-height - $list-marker-height) * 0.5;
+      }
+    }
+
+    &:has(> div.list-content > h2) {
+      &::before,
+      & > .list-marker {
+        top: $h2-margin-t + $h2-padding-y + ($h2-line-height - $list-marker-height) * 0.5;
+      }
+    }
+
+    &:has(> div.list-content > h3) {
+      &::before,
+      & > .list-marker {
+        top: $h3-margin-t + $h3-padding-y + ($h3-line-height - $list-marker-height) * 0.5;
+      }
+    }
+
+    &:has(> div.list-content > h4) {
+      &::before,
+      & > .list-marker {
+        top: $h4-margin-t + $h4-padding-y + ($h4-line-height - $list-marker-height) * 0.5;
+      }
+    }
+
+    &:has(> div.list-content > h5) {
+      &::before,
+      & > .list-marker {
+        top: $h5-margin-t + $h5-padding-y + ($h5-line-height - $list-marker-height) * 0.5;
+      }
+    }
+
+    &:has(> div.list-content > h6) {
+      &::before,
+      & > .list-marker {
+        top: $h6-margin-t + $h6-padding-y + ($h6-line-height - $list-marker-height) * 0.5;
+      }
+    }
+    // #endregion List Heading
+
+    // #region List Paragraph
+    &:has(> div.list-content > p) {
+      &::before,
+      & > .list-marker {
+        top: $p-margin-t + $p-padding-y + ($p-line-height - $list-marker-height) * 0.5;
+      }
+    }
+    // #endregion List Paragraph
+  }
+  // #endregion List
+
+  // #region Node View
+  div[data-node-view-root="true"] {
+    // Don't generate box for node view wrapper. This make it easier to style the node views.
+    display: contents;
+  }
+  // #endregion Node View
+
+  // #region Node Selection
+  & .ProseMirror-selectednode {
+    border-radius: 2px;
+    outline-color: var(--prosekit-outline-color);
+    outline-style: solid;
+    outline-width: 1px;
+    background-color: var(--prosekit-node-selection-color);
+  }
+  & pre.ProseMirror-selectednode {
+    border-radius: $pre-border-radius;
+  }
+  // #endregion Node Selection
+
+  // #region Autocomplete
+  & .prosekit-autocomplete-match {
+    border-radius: 0.1em;
+    background-color: var(--prosekit-autocomplete-color);
+    box-shadow: 0 0 0 0.3em var(--prosekit-autocomplete-color);
+  }
+  // #endregion Autocomplete
+
+  // #region Dragging
+  &.prosekit-dragging {
+    --prosekit-node-selection-color: transparent;
+  }
+  // #endregion Dragging
+
+  // #region Math
+  .prosemirror-math-inline.prosemirror-math-head-inside .prosemirror-math-source {
+    &::before {
+      content: "$";
+      opacity: 0.5;
+    }
+    &::after {
+      content: "$";
+      opacity: 0.5;
+    }
+  }
+  // #endregion Math
+}

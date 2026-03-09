@@ -28,11 +28,12 @@ minimumReleaseAge: 600 # 10 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
-  - "@prosemirror-adapter/*"
-  - "@tsdown/css"
-  - "tsdown"
   - "prosemirror-*"
-  - "@changesets/*"
+  - "astro"
+  - "@astro/*"
+  - "astrobook"
+  - "@astrobook/*"
+  - "astro-minify-html-swc"
 
 overrides: {}
 

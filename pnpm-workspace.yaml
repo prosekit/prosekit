@@ -33,6 +33,9 @@ minimumReleaseAgeExclude:
   - "tsdown"
   - "prosemirror-*"
   - "@changesets/*"
+  - "astrobook"
+  - "@astrobook/*"
+  - "astro-minify-html-swc"
 
 overrides: {}
 

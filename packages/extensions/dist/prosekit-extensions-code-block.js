@@ -5,7 +5,6 @@ import { defaultBlockAt, defineCommands, defineKeymap, defineNodeSpec, definePlu
 import { createHighlightPlugin } from "prosemirror-highlight";
 import { createParser } from "prosemirror-highlight/shiki";
 import { bundledLanguagesInfo as shikiBundledLanguagesInfo, bundledThemesInfo as shikiBundledThemesInfo } from "shiki";
-
 //#region src/code-block/code-block-commands.ts
 /**
 * Adds commands for working with `codeBlock` nodes.
@@ -40,7 +39,6 @@ function defineCodeBlockCommands() {
 		}
 	});
 }
-
 //#endregion
 //#region src/code-block/code-block-highlight.ts
 /**
@@ -59,7 +57,6 @@ function defineCodeBlockHighlight({ parser, nodeTypes = ["codeBlock", "mathBlock
 		nodeTypes
 	}));
 }
-
 //#endregion
 //#region src/code-block/code-block-input-rule.ts
 /**
@@ -89,7 +86,6 @@ function defineCodeBlockEnterRule() {
 function getAttrs(match) {
 	return { language: match[1] || "" };
 }
-
 //#endregion
 //#region src/code-block/code-block-keymap.ts
 /**
@@ -126,7 +122,6 @@ const existCodeBlock = (state, dispatch) => {
 	}
 	return false;
 };
-
 //#endregion
 //#region src/code-block/shiki-highlighter.ts
 let loaded;
@@ -138,7 +133,6 @@ function createOrGetHighlighter(options) {
 	if (!loaded) return { promise: load() };
 	return loaded(options);
 }
-
 //#endregion
 //#region src/code-block/shiki-parser.ts
 /**
@@ -157,7 +151,6 @@ function createLazyParser(highlighterOptions) {
 		return parser(options);
 	};
 }
-
 //#endregion
 //#region src/code-block/code-block-shiki.ts
 /**
@@ -182,7 +175,6 @@ function defineCodeBlockShiki({ nodeTypes, themes = ["one-dark-pro"], langs = ["
 		nodeTypes
 	});
 }
-
 //#endregion
 //#region src/code-block/code-block-spec.ts
 /**
@@ -231,7 +223,6 @@ function extractLanguageFromElement(element) {
 	if (match) return match[1];
 	return "";
 }
-
 //#endregion
 //#region src/code-block/code-block.ts
 /**
@@ -248,7 +239,7 @@ function extractLanguageFromElement(element) {
 function defineCodeBlock() {
 	return union(defineCodeBlockSpec(), defineCodeBlockInputRule(), defineCodeBlockEnterRule(), defineCodeBlockKeymap(), defineCodeBlockCommands());
 }
-
 //#endregion
 export { defineCodeBlock, defineCodeBlockCommands, defineCodeBlockEnterRule, defineCodeBlockHighlight, defineCodeBlockInputRule, defineCodeBlockKeymap, defineCodeBlockShiki, defineCodeBlockSpec, shikiBundledLanguagesInfo, shikiBundledThemesInfo };
+
 //# sourceMappingURL=prosekit-extensions-code-block.js.map

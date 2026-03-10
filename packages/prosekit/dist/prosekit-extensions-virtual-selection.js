@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/virtual-selection"
-
-export {  };
+export * from "@prosekit/extensions/virtual-selection";
+export {};

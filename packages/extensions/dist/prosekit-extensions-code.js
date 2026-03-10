@@ -1,6 +1,5 @@
 import { defineMarkInputRule } from "./prosekit-extensions-input-rule.js";
 import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, toggleMark, union } from "@prosekit/core";
-
 //#region src/code/code-commands.ts
 /**
 * @internal
@@ -8,7 +7,6 @@ import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, to
 function defineCodeCommands() {
 	return defineCommands({ toggleCode: () => toggleMark({ type: "code" }) });
 }
-
 //#endregion
 //#region src/code/code-input-rule.ts
 /**
@@ -20,7 +18,6 @@ function defineCodeInputRule() {
 		type: "code"
 	});
 }
-
 //#endregion
 //#region src/code/code-keymap.ts
 /**
@@ -29,7 +26,6 @@ function defineCodeInputRule() {
 function defineCodeKeymap() {
 	return defineKeymap({ "Mod-e": toggleMark({ type: "code" }) });
 }
-
 //#endregion
 //#region src/code/code-spec.ts
 /**
@@ -45,7 +41,6 @@ function defineCodeSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/code/code.ts
 /**
@@ -54,7 +49,7 @@ function defineCodeSpec() {
 function defineCode() {
 	return union(defineCodeSpec(), defineCodeCommands(), defineCodeKeymap(), defineCodeInputRule());
 }
-
 //#endregion
 export { defineCode, defineCodeCommands, defineCodeInputRule, defineCodeKeymap, defineCodeSpec };
+
 //# sourceMappingURL=prosekit-extensions-code.js.map

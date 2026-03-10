@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/readonly"
-
-export {  };
+export * from "@prosekit/extensions/readonly";
+export {};

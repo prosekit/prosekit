@@ -1,6 +1,5 @@
 import { defineMarkInputRule } from "./prosekit-extensions-input-rule.js";
 import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, toggleMark, union } from "@prosekit/core";
-
 //#region src/strike/index.ts
 /**
 * @internal
@@ -50,7 +49,7 @@ function defineStrikeInputRule() {
 function defineStrike() {
 	return union(defineStrikeSpec(), defineStrikeCommands(), defineStrikeKeymap(), defineStrikeInputRule());
 }
-
 //#endregion
 export { defineStrike, defineStrikeCommands, defineStrikeInputRule, defineStrikeKeymap, defineStrikeSpec };
+
 //# sourceMappingURL=prosekit-extensions-strike.js.map

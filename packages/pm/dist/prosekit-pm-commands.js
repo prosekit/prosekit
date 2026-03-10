@@ -1,3 +1,2 @@
-export * from "prosemirror-commands"
-
-export {  };
+export * from "prosemirror-commands";
+export {};

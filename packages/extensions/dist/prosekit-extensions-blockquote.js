@@ -1,7 +1,6 @@
 import { defineWrappingInputRule } from "./prosekit-extensions-input-rule.js";
 import { defineCommands, defineKeymap, defineNodeSpec, insertNode, isAtBlockStart, toggleWrap, union, wrap } from "@prosekit/core";
 import { joinBackward } from "@prosekit/pm/commands";
-
 //#region src/blockquote/blockquote-commands.ts
 /**
 * @internal
@@ -19,7 +18,6 @@ function defineBlockquoteCommands() {
 		}
 	});
 }
-
 //#endregion
 //#region src/blockquote/blockquote-input-rule.ts
 /**
@@ -32,7 +30,6 @@ function defineBlockquoteInputRule() {
 		type: "blockquote"
 	});
 }
-
 //#endregion
 //#region src/blockquote/blockquote-keymap.ts
 function toggleBlockquoteKeybinding() {
@@ -54,7 +51,6 @@ function defineBlockquoteKeymap() {
 		"Backspace": backspaceUnsetBlockquote()
 	});
 }
-
 //#endregion
 //#region src/blockquote/blockquote-spec.ts
 function defineBlockquoteSpec() {
@@ -69,7 +65,6 @@ function defineBlockquoteSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/blockquote/blockquote.ts
 /**
@@ -78,7 +73,7 @@ function defineBlockquoteSpec() {
 function defineBlockquote() {
 	return union(defineBlockquoteSpec(), defineBlockquoteInputRule(), defineBlockquoteCommands(), defineBlockquoteKeymap());
 }
-
 //#endregion
 export { defineBlockquote, defineBlockquoteCommands, defineBlockquoteInputRule, defineBlockquoteKeymap, defineBlockquoteSpec };
+
 //# sourceMappingURL=prosekit-extensions-blockquote.js.map

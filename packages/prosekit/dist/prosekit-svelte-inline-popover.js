@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/inline-popover"
-
-export {  };
+export * from "@prosekit/svelte/inline-popover";
+export {};

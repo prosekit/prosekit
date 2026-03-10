@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/drop-cursor"
-
-export {  };
+export * from "@prosekit/extensions/drop-cursor";
+export {};

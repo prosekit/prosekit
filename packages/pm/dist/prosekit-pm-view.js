@@ -1,3 +1,2 @@
-export * from "prosemirror-view"
-
-export {  };
+export * from "prosemirror-view";
+export {};

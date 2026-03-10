@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/commit"
-
-export {  };
+export * from "@prosekit/extensions/commit";
+export {};

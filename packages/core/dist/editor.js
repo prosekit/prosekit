@@ -2,7 +2,6 @@ import { AllSelection, EditorState, NodeSelection, Selection, TextSelection } fr
 import { DOMParser, DOMSerializer, Fragment, Mark, ProseMirrorNode, Schema, Slice } from "@prosekit/pm/model";
 import { isDeepEqual, isElementLike, isNotNullish, mapValues } from "@ocavue/utils";
 import { EditorView } from "@prosekit/pm/view";
-
 //#region src/error.ts
 /**
 * Base class for all ProseKit errors.
@@ -31,7 +30,6 @@ var DOMDocumentNotFoundError = class extends ProseKitError {
 		super("Unable to find browser Document. When not in the browser environment, you need to pass a DOM Document.");
 	}
 };
-
 //#endregion
 //#region src/utils/get-mark-type.ts
 /**
@@ -45,7 +43,6 @@ function getMarkType(schema, type) {
 	}
 	return type;
 }
-
 //#endregion
 //#region src/utils/assert.ts
 /**
@@ -54,7 +51,6 @@ function getMarkType(schema, type) {
 function assert(condition, message = "Assertion failed") {
 	if (!condition) throw new ProseKitError(message);
 }
-
 //#endregion
 //#region src/utils/get-node-type.ts
 /**
@@ -68,7 +64,6 @@ function getNodeType(schema, type) {
 	}
 	return type;
 }
-
 //#endregion
 //#region src/utils/type-assertion.ts
 /**
@@ -133,7 +128,6 @@ function isNodeSelection(value) {
 function isAllSelection(value) {
 	return value instanceof AllSelection;
 }
-
 //#endregion
 //#region src/utils/attrs-match.ts
 function attrsMatch(nodeOrMark, attrs) {
@@ -141,7 +135,6 @@ function attrsMatch(nodeOrMark, attrs) {
 	for (const [key, value] of Object.entries(attrs)) if (currentAttrs[key] !== value) return false;
 	return true;
 }
-
 //#endregion
 //#region src/utils/is-node-active.ts
 /**
@@ -158,7 +151,6 @@ function isNodeActive(state, type, attrs) {
 function checkNode(node, nodeType, attrs) {
 	return node.type === nodeType && (!attrs || attrsMatch(node, attrs));
 }
-
 //#endregion
 //#region src/facets/facet.ts
 let facetCount = 0;
@@ -188,7 +180,6 @@ var Facet = class {
 function defineFacet(options) {
 	return new Facet(options.parent, options.singleton ?? false, options.reducer, options.reduce);
 }
-
 //#endregion
 //#region src/facets/root.ts
 function rootReducer(inputs) {
@@ -211,7 +202,6 @@ function rootReducer(inputs) {
 	};
 }
 const rootFacet = new Facet(null, true, rootReducer);
-
 //#endregion
 //#region src/facets/schema.ts
 const schemaFacet = defineFacet({
@@ -223,7 +213,6 @@ const schemaFacet = defineFacet({
 	parent: rootFacet,
 	singleton: true
 });
-
 //#endregion
 //#region src/facets/base-extension.ts
 /**
@@ -258,7 +247,6 @@ var BaseExtension = class {
 		return this.findFacetOutput(schemaFacet)?.find(Boolean)?.schema ?? null;
 	}
 };
-
 //#endregion
 //#region src/utils/array.ts
 function uniqPush(prev, next) {
@@ -272,7 +260,6 @@ function uniqPush(prev, next) {
 function arraySubtract(a, b) {
 	return a.filter((x) => !b.includes(x));
 }
-
 //#endregion
 //#region src/facets/facet-node.ts
 function zip5(a, b, mapper) {
@@ -401,7 +388,6 @@ var FacetNode = class {
 		return !this.facet.parent;
 	}
 };
-
 //#endregion
 //#region src/facets/facet-extension.ts
 /**
@@ -443,7 +429,6 @@ var FacetExtensionImpl = class extends BaseExtension {
 function defineFacetPayload(facet, payloads) {
 	return new FacetExtensionImpl(facet, payloads);
 }
-
 //#endregion
 //#region src/facets/state.ts
 const stateFacet = defineFacet({
@@ -482,7 +467,6 @@ const stateFacet = defineFacet({
 	singleton: true,
 	parent: rootFacet
 });
-
 //#endregion
 //#region src/utils/get-dom-api.ts
 function findGlobalBrowserDocument() {
@@ -509,7 +493,6 @@ function getBrowserWindow(options) {
 	if (win) return win;
 	throw new DOMDocumentNotFoundError();
 }
-
 //#endregion
 //#region src/utils/parse.ts
 /**
@@ -712,7 +695,6 @@ function jsonFromHTML(html, options) {
 function htmlFromJSON(json, options) {
 	return htmlFromElement(elementFromJSON(json, options));
 }
-
 //#endregion
 //#region src/utils/editor-content.ts
 function getEditorContentJSON(schema, content) {
@@ -739,7 +721,6 @@ function getEditorSelection(doc, selection) {
 	if (selection === "end") return Selection.atEnd(doc);
 	return Selection.fromJSON(doc, selection);
 }
-
 //#endregion
 //#region src/extensions/default-state.ts
 /**
@@ -760,7 +741,6 @@ function defineDefaultState({ defaultSelection, defaultContent }) {
 		return config;
 	}]);
 }
-
 //#endregion
 //#region src/utils/is-subset.ts
 /**
@@ -771,7 +751,6 @@ function defineDefaultState({ defaultSelection, defaultContent }) {
 function isSubset(subset, superset) {
 	return Object.keys(subset).every((key) => subset[key] === superset[key]);
 }
-
 //#endregion
 //#region src/utils/includes-mark.ts
 function includesMark(marks, markType, attrs) {
@@ -780,7 +759,6 @@ function includesMark(marks, markType, attrs) {
 		return mark.type === markType && isSubset(attrs, mark.attrs);
 	});
 }
-
 //#endregion
 //#region src/utils/is-mark-absent.ts
 /**
@@ -802,7 +780,6 @@ function isMarkAbsent(node, from, to, markType, attrs) {
 	});
 	return available ? missing : true;
 }
-
 //#endregion
 //#region src/utils/is-mark-active.ts
 /**
@@ -814,7 +791,6 @@ function isMarkActive(state, type, attrs) {
 	if (empty) return includesMark(state.storedMarks || $from.marks(), markType, attrs);
 	else return !isMarkAbsent(state.doc, from, to, markType, attrs);
 }
-
 //#endregion
 //#region src/editor/action.ts
 /**
@@ -882,7 +858,6 @@ function isNodeChild(value) {
 	if (!value) return false;
 	return typeof value === "string" || Array.isArray(value) || isProseMirrorNode(value);
 }
-
 //#endregion
 //#region src/facets/union-extension.ts
 var UnionExtensionImpl = class extends BaseExtension {
@@ -907,7 +882,6 @@ var UnionExtensionImpl = class extends BaseExtension {
 		return node;
 	}
 };
-
 //#endregion
 //#region src/editor/union.ts
 function union(...exts) {
@@ -915,7 +889,6 @@ function union(...exts) {
 	assert(extensions.length > 0, "At least one extension is required");
 	return new UnionExtensionImpl(extensions);
 }
-
 //#endregion
 //#region src/editor/editor.ts
 /**
@@ -1190,7 +1163,7 @@ var Editor = class {
 		return this.instance.marks;
 	}
 };
-
 //#endregion
 export { isMark as A, ProseKitError as B, defineFacetPayload as C, isNodeActive as D, defineFacet as E, isTextSelection as F, getNodeType as I, assert as L, isProseMirrorNode as M, isSelection as N, isAllSelection as O, isSlice as P, getMarkType as R, stateFacet as S, rootFacet as T, jsonFromState as _, union as a, nodeFromJSON as b, isMarkActive as c, elementFromJSON as d, elementFromNode as f, jsonFromNode as g, jsonFromHTML as h, setupEditorExtension as i, isNodeSelection as j, isFragment as k, isMarkAbsent as l, htmlFromNode as m, EditorInstance as n, createMarkActions as o, htmlFromJSON as p, createEditor as r, createNodeActions as s, Editor as t, defineDefaultState as u, nodeFromElement as v, schemaFacet as w, stateFromJSON as x, nodeFromHTML as y, EditorNotFoundError as z };
+
 //# sourceMappingURL=editor.js.map

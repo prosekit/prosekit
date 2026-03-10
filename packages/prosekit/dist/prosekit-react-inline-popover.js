@@ -1,3 +1,2 @@
-export * from "@prosekit/react/inline-popover"
-
-export {  };
+export * from "@prosekit/react/inline-popover";
+export {};

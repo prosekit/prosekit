@@ -1,3 +1,2 @@
-export * from "@prosekit/pm/keymap"
-
-export {  };
+export * from "@prosekit/pm/keymap";
+export {};

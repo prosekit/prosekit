@@ -1,3 +1,2 @@
-export * from "@prosekit/core"
-
-export {  };
+export * from "@prosekit/core";
+export {};

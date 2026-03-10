@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/autocomplete"
-
-export {  };
+export * from "@prosekit/svelte/autocomplete";
+export {};

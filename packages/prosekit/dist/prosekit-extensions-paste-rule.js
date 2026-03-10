@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/paste-rule"
-
-export {  };
+export * from "@prosekit/extensions/paste-rule";
+export {};

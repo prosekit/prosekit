@@ -1,6 +1,5 @@
 import { L as assert, M as isProseMirrorNode, i as setupEditorExtension, n as EditorInstance, o as createMarkActions, s as createNodeActions, t as Editor } from "./editor.js";
 import { NodeSelection, TextSelection } from "@prosekit/pm/state";
-
 //#region src/test/test-builder.ts
 const createNodeForTest = (type, attrs, children) => {
 	const tags = {};
@@ -41,7 +40,6 @@ const applyMarkForTest = (mark, children) => {
 		return newNode;
 	});
 };
-
 //#endregion
 //#region src/test/test-editor.ts
 function maybeResolve(doc, pos) {
@@ -99,7 +97,7 @@ var TestEditor = class extends Editor {
 function createTestEditor(options) {
 	return new TestEditor(new TestEditorInstance(setupEditorExtension(options)));
 }
-
 //#endregion
 export { createTestEditor };
+
 //# sourceMappingURL=prosekit-core-test.js.map

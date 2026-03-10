@@ -1,6 +1,5 @@
 import { createHighlighter } from "shiki/bundle/full";
 import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
-
 //#region src/code-block/shiki-highlighter-chunk.ts
 let highlighterPromise;
 let highlighter;
@@ -37,7 +36,7 @@ function createOrGetHighlighter(options) {
 	if (themes.length > 0) return { promise: loadThemes(themes) };
 	return { highlighter };
 }
-
 //#endregion
 export { createOrGetHighlighter };
+
 //# sourceMappingURL=shiki-highlighter-chunk.js.map

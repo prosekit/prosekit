@@ -1,6 +1,5 @@
 import { n as useEditorContext } from "./editor-context.js";
 import h from "solid-js/h";
-
 //#region src/components/create-component.ts
 function createComponent(tagName, propNames, eventNames) {
 	const hasEditor = propNames.includes("editor");
@@ -36,7 +35,7 @@ function createComponent(tagName, propNames, eventNames) {
 	};
 	return Component;
 }
-
 //#endregion
 export { createComponent as t };
+
 //# sourceMappingURL=create-component.js.map

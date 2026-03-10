@@ -3,7 +3,6 @@ import { n as assignStyles, t as useScrolling } from "./use-scrolling.js";
 import { createComputed, createSignal, defineCustomElement, registerCustomElement, useEffect } from "@aria-ui/core";
 import { usePresence } from "@aria-ui/presence";
 import { defineDropIndicator } from "@prosekit/extensions/drop-indicator";
-
 //#region src/components/drop-indicator/drop-indicator/setup.ts
 /**
 * @internal
@@ -52,7 +51,6 @@ function useDropIndicator(host, { state }) {
 		});
 	});
 }
-
 //#endregion
 //#region src/components/drop-indicator/drop-indicator/types.ts
 /** @internal */
@@ -62,7 +60,6 @@ const dropIndicatorProps = Object.freeze({
 });
 /** @internal */
 const dropIndicatorEvents = {};
-
 //#endregion
 //#region src/components/drop-indicator/drop-indicator/element.gen.ts
 const DropIndicatorElementBase = defineCustomElement({
@@ -72,7 +69,7 @@ const DropIndicatorElementBase = defineCustomElement({
 });
 var DropIndicatorElement = class extends DropIndicatorElementBase {};
 registerCustomElement("prosekit-drop-indicator", DropIndicatorElement);
-
 //#endregion
 export { DropIndicatorElement, dropIndicatorEvents, dropIndicatorProps, useDropIndicator };
+
 //# sourceMappingURL=prosekit-web-drop-indicator.js.map

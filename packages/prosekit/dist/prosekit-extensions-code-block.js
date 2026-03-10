@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/code-block"
-
-export {  };
+export * from "@prosekit/extensions/code-block";
+export {};

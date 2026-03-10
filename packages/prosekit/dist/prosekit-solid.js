@@ -1,3 +1,2 @@
-export * from "@prosekit/solid"
-
-export {  };
+export * from "@prosekit/solid";
+export {};

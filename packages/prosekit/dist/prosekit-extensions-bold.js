@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/bold"
-
-export {  };
+export * from "@prosekit/extensions/bold";
+export {};

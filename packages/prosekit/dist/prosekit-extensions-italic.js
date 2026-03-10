@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/italic"
-
-export {  };
+export * from "@prosekit/extensions/italic";
+export {};

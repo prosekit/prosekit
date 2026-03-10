@@ -1,6 +1,5 @@
 import { defineFacet, defineFacetPayload, getMarkType, getNodeType, isMarkAbsent, maybeRun, pluginFacet } from "@prosekit/core";
 import { InputRule, inputRules, textblockTypeInputRule, wrappingInputRule } from "@prosekit/pm/inputrules";
-
 //#region src/input-rule/index.ts
 /**
 * Defines an input rule extension.
@@ -84,7 +83,7 @@ const inputRuleFacet = defineFacet({
 	},
 	parent: pluginFacet
 });
-
 //#endregion
 export { createMarkInputRule, defineInputRule, defineMarkInputRule, defineTextBlockInputRule, defineWrappingInputRule };
+
 //# sourceMappingURL=prosekit-extensions-input-rule.js.map

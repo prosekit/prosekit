@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/placeholder"
-
-export {  };
+export * from "@prosekit/extensions/placeholder";
+export {};

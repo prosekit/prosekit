@@ -1,3 +1,2 @@
-export * from "@prosekit/web/tooltip"
-
-export {  };
+export * from "@prosekit/web/tooltip";
+export {};

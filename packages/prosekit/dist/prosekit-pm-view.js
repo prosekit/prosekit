@@ -1,3 +1,2 @@
-export * from "@prosekit/pm/view"
-
-export {  };
+export * from "@prosekit/pm/view";
+export {};

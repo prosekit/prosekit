@@ -1,6 +1,5 @@
 import { createContext } from "preact";
 import { useContext } from "preact/hooks";
-
 //#region src/contexts/editor-context.ts
 const EditorContext = createContext(null);
 /**
@@ -13,7 +12,7 @@ function useEditorContext() {
 * @internal
 */
 const EditorContextProvider = EditorContext.Provider;
-
 //#endregion
 export { useEditorContext as n, EditorContextProvider as t };
+
 //# sourceMappingURL=editor-context.js.map

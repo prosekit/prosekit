@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/text-align"
-
-export {  };
+export * from "@prosekit/extensions/text-align";
+export {};

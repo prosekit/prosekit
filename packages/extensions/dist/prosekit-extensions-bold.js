@@ -1,6 +1,5 @@
 import { defineMarkInputRule } from "./prosekit-extensions-input-rule.js";
 import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, toggleMark, union } from "@prosekit/core";
-
 //#region src/bold/bold-commands.ts
 /**
 * @internal
@@ -8,7 +7,6 @@ import { canUseRegexLookbehind, defineCommands, defineKeymap, defineMarkSpec, to
 function defineBoldCommands() {
 	return defineCommands({ toggleBold: () => toggleMark({ type: "bold" }) });
 }
-
 //#endregion
 //#region src/bold/bold-input-rule.ts
 /**
@@ -20,7 +18,6 @@ function defineBoldInputRule() {
 		type: "bold"
 	});
 }
-
 //#endregion
 //#region src/bold/bold-keymap.ts
 /**
@@ -29,7 +26,6 @@ function defineBoldInputRule() {
 function defineBoldKeymap() {
 	return defineKeymap({ "Mod-b": toggleMark({ type: "bold" }) });
 }
-
 //#endregion
 //#region src/bold/bold-spec.ts
 /**
@@ -62,7 +58,6 @@ function defineBoldSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/bold/bold.ts
 /**
@@ -71,7 +66,7 @@ function defineBoldSpec() {
 function defineBold() {
 	return union(defineBoldSpec(), defineBoldCommands(), defineBoldKeymap(), defineBoldInputRule());
 }
-
 //#endregion
 export { defineBold, defineBoldCommands, defineBoldInputRule, defineBoldKeymap, defineBoldSpec };
+
 //# sourceMappingURL=prosekit-extensions-bold.js.map

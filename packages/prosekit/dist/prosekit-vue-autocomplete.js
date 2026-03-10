@@ -1,3 +1,2 @@
-export * from "@prosekit/vue/autocomplete"
-
-export {  };
+export * from "@prosekit/vue/autocomplete";
+export {};

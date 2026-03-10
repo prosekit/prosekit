@@ -1,7 +1,6 @@
 import { PluginKey, ProseMirrorPlugin } from "@prosekit/pm/state";
 import { definePlugin } from "@prosekit/core";
 import { Decoration, DecorationSet } from "@prosekit/pm/view";
-
 //#region src/virtual-selection/index.ts
 /**
 * Shows a virtual selection when the editor is not focused. When the editor is
@@ -52,7 +51,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin({
 		}
 	}
 });
-
 //#endregion
 export { defineVirtualSelection };
+
 //# sourceMappingURL=prosekit-extensions-virtual-selection.js.map

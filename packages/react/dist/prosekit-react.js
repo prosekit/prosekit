@@ -3,7 +3,6 @@ import { ProsemirrorAdapterProvider, useMarkViewContext, useMarkViewFactory, use
 import { createElement, useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useSyncExternalStore } from "react";
 import { EditorNotFoundError, ProseKitError, defineDocChangeHandler, defineKeymap, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeViewComponent, defineNodeViewFactory, defineUpdateHandler, union, withPriority } from "@prosekit/core";
 import { queueExtension } from "@prosekit/web";
-
 //#region src/hooks/use-editor-extension.ts
 /**
 * @internal
@@ -14,7 +13,6 @@ function useEditorExtension(editor, extension) {
 		if (extension) return queueExtension(editor, extension);
 	}, [editor, extension]);
 }
-
 //#endregion
 //#region src/hooks/use-priority-extension.ts
 /**
@@ -25,7 +23,6 @@ function usePriorityExtension(extension, priority) {
 		return extension && priority ? withPriority(extension, priority) : extension;
 	}, [extension, priority]);
 }
-
 //#endregion
 //#region src/hooks/use-extension.ts
 /**
@@ -35,7 +32,6 @@ function useExtension(extension, options) {
 	const editorContext = useEditorContext();
 	useEditorExtension(options?.editor || editorContext, usePriorityExtension(extension, options?.priority));
 }
-
 //#endregion
 //#region src/extensions/react-mark-view.ts
 function withMarkViewProps(component) {
@@ -73,7 +69,6 @@ function defineReactMarkViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/extensions/react-node-view.ts
 function withNodeViewProps(component) {
@@ -111,7 +106,6 @@ function defineReactNodeViewFactory(factory) {
 		factory
 	});
 }
-
 //#endregion
 //#region src/components/prosekit.ts
 /**
@@ -123,7 +117,6 @@ const ProseKit = (props) => {
 	const { editor, children } = props;
 	return createElement(EditorContextProvider, { value: editor }, createElement(ProsemirrorAdapterProvider, null, createElement(ReactNodeViewConsumer), createElement(ReactMarkViewConsumer), children));
 };
-
 //#endregion
 //#region src/hooks/use-event-callback.ts
 /**
@@ -136,7 +129,6 @@ function useEventCallback(callback) {
 	}, [callback]);
 	return useCallback((...args) => callbackRef.current(...args), []);
 }
-
 //#endregion
 //#region src/hooks/use-doc-change.ts
 /**
@@ -148,7 +140,6 @@ function useDocChange(handler, options) {
 	const memoizedHandler = useEventCallback(handler);
 	useExtension(useMemo(() => defineDocChangeHandler((view) => memoizedHandler(view.state.doc)), [memoizedHandler]), options);
 }
-
 //#endregion
 //#region src/hooks/use-editor-derived-value.ts
 /**
@@ -191,7 +182,6 @@ function createEditorStore(editor, derive) {
 	};
 	return [subscribe, getSnapshot];
 }
-
 //#endregion
 //#region src/hooks/use-editor.ts
 /**
@@ -220,13 +210,11 @@ function useForceUpdate() {
 	const [, dispatch] = useReducer((x) => x + 1, 0);
 	return dispatch;
 }
-
 //#endregion
 //#region src/hooks/use-keymap.ts
 function useKeymap(keymap, options) {
 	useExtension(useMemo(() => defineKeymap(keymap), [keymap]), options);
 }
-
 //#endregion
 //#region src/hooks/use-state-update.ts
 /**
@@ -238,7 +226,7 @@ function useStateUpdate(handler, options) {
 	const memoizedHandler = useEventCallback(handler);
 	useExtension(useMemo(() => defineUpdateHandler((view) => memoizedHandler(view.state)), [memoizedHandler]), options);
 }
-
 //#endregion
 export { ProseKit, defineReactMarkView, defineReactNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+
 //# sourceMappingURL=prosekit-react.js.map

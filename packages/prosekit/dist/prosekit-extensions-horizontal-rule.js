@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/horizontal-rule"
-
-export {  };
+export * from "@prosekit/extensions/horizontal-rule";
+export {};

@@ -1,5 +1,4 @@
 import { createContext, useContext } from "react";
-
 //#region src/contexts/editor-context.ts
 const EditorContext = createContext(null);
 /**
@@ -12,7 +11,7 @@ function useEditorContext() {
 * @internal
 */
 const EditorContextProvider = EditorContext.Provider;
-
 //#endregion
 export { useEditorContext as n, EditorContextProvider as t };
+
 //# sourceMappingURL=editor-context.js.map

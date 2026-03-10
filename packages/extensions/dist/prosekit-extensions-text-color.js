@@ -1,5 +1,4 @@
 import { addMark, defineCommands, defineMarkSpec, removeMark, union } from "@prosekit/core";
-
 //#region src/text-color/text-color-commands.ts
 /**
 * @internal
@@ -25,7 +24,6 @@ function defineTextColorCommands() {
 		removeTextColor
 	});
 }
-
 //#endregion
 //#region src/text-color/text-color-spec.ts
 /**
@@ -59,7 +57,6 @@ function defineTextColorSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/text-color/text-color.ts
 /**
@@ -70,7 +67,7 @@ function defineTextColorSpec() {
 function defineTextColor() {
 	return union(defineTextColorSpec(), defineTextColorCommands());
 }
-
 //#endregion
 export { addTextColor, defineTextColor, defineTextColorCommands, defineTextColorSpec, removeTextColor };
+
 //# sourceMappingURL=prosekit-extensions-text-color.js.map

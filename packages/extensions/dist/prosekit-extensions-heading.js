@@ -1,6 +1,5 @@
 import { defineTextBlockInputRule } from "./prosekit-extensions-input-rule.js";
 import { defineCommands, defineKeymap, defineNodeSpec, insertNode, isAtBlockStart, setBlockType, toggleNode, union, unsetBlockType, withSkipCodeBlock } from "@prosekit/core";
-
 //#region src/heading/heading-commands.ts
 /**
 * @internal
@@ -27,7 +26,6 @@ function defineHeadingCommands() {
 		}
 	});
 }
-
 //#endregion
 //#region src/heading/heading-input-rule.ts
 /**
@@ -45,7 +43,6 @@ function defineHeadingInputRule() {
 		}
 	});
 }
-
 //#endregion
 //#region src/heading/heading-keymap.ts
 function toggleHeadingKeybinding(level) {
@@ -76,7 +73,6 @@ function defineHeadingKeymap() {
 		"Backspace": backspaceUnsetHeading
 	});
 }
-
 //#endregion
 //#region src/heading/heading-spec.ts
 /**
@@ -123,7 +119,6 @@ function defineHeadingSpec() {
 		}
 	});
 }
-
 //#endregion
 //#region src/heading/heading.ts
 /**
@@ -132,7 +127,7 @@ function defineHeadingSpec() {
 function defineHeading() {
 	return union(defineHeadingSpec(), defineHeadingInputRule(), defineHeadingKeymap(), defineHeadingCommands());
 }
-
 //#endregion
 export { defineHeading, defineHeadingCommands, defineHeadingInputRule, defineHeadingKeymap, defineHeadingSpec };
+
 //# sourceMappingURL=prosekit-extensions-heading.js.map

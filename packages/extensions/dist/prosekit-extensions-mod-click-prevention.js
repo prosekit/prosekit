@@ -1,6 +1,5 @@
 import { Plugin, PluginKey } from "@prosekit/pm/state";
 import { definePlugin, isApple } from "@prosekit/core";
-
 //#region src/mod-click-prevention/index.ts
 /**
 * By default, clicking a node while holding the mod key will select the node. This
@@ -19,7 +18,7 @@ function handleClick(_view, _pos, event) {
 	return !!event[selectNodeModifier];
 }
 const selectNodeModifier = isApple ? "metaKey" : "ctrlKey";
-
 //#endregion
 export { defineModClickPrevention };
+
 //# sourceMappingURL=prosekit-extensions-mod-click-prevention.js.map

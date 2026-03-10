@@ -1,3 +1,2 @@
-export * from "@prosekit/preact/autocomplete"
-
-export {  };
+export * from "@prosekit/preact/autocomplete";
+export {};

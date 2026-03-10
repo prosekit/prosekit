@@ -1,7 +1,6 @@
 import { PluginKey, ProseMirrorPlugin } from "@prosekit/pm/state";
 import { defineFacet, defineFacetPayload, getMarkType, pluginFacet } from "@prosekit/core";
 import { Fragment, Slice } from "@prosekit/pm/model";
-
 //#region src/paste-rule/paste-rule-plugin.ts
 /**
 * @internal
@@ -35,7 +34,6 @@ const pasteRuleFacet = defineFacet({
 function definePasteRulePlugin(payload) {
 	return defineFacetPayload(pasteRuleFacet, [payload]);
 }
-
 //#endregion
 //#region src/paste-rule/paste-rule.ts
 /**
@@ -49,7 +47,6 @@ function definePasteRulePlugin(payload) {
 function definePasteRule({ handler }) {
 	return definePasteRulePlugin(handler);
 }
-
 //#endregion
 //#region src/paste-rule/split-text-by-regex.ts
 /**
@@ -76,7 +73,6 @@ function splitTextByRegex(text, regex) {
 	regex.lastIndex = 0;
 	return matched ? chunks : void 0;
 }
-
 //#endregion
 //#region src/paste-rule/mark-paste-rule.ts
 /**
@@ -156,7 +152,7 @@ function replaceMarkInInlineNode(options, node) {
 	}
 	return nodes;
 }
-
 //#endregion
 export { definePasteRule as n, defineMarkPasteRule as t };
+
 //# sourceMappingURL=paste-rule.js.map

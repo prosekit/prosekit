@@ -1,3 +1,2 @@
-export * from "@prosekit/preact/block-handle"
-
-export {  };
+export * from "@prosekit/preact/block-handle";
+export {};

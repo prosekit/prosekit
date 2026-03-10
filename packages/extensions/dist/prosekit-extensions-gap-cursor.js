@@ -1,6 +1,5 @@
 import { definePlugin } from "@prosekit/core";
 import { gapCursor } from "prosemirror-gapcursor";
-
 //#region src/gap-cursor/gap-cursor.ts
 /**
 * Capture clicks near and arrow-key-motion past places that don't have a
@@ -19,7 +18,7 @@ import { gapCursor } from "prosemirror-gapcursor";
 function defineGapCursor() {
 	return definePlugin(() => gapCursor());
 }
-
 //#endregion
 export { defineGapCursor };
+
 //# sourceMappingURL=prosekit-extensions-gap-cursor.js.map

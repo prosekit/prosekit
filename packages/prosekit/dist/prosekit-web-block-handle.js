@@ -1,3 +1,2 @@
-export * from "@prosekit/web/block-handle"
-
-export {  };
+export * from "@prosekit/web/block-handle";
+export {};

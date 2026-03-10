@@ -1,3 +1,2 @@
-export * from "@prosekit/pm/inputrules"
-
-export {  };
+export * from "@prosekit/pm/inputrules";
+export {};

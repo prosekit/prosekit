@@ -1,6 +1,5 @@
 import { n as useEditorContext } from "./editor-context.js";
 import { createElement, forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-
 //#region src/components/merge-refs.ts
 /**
 * Assigns a value to a ref.
@@ -26,7 +25,6 @@ function mergeRefs(refs) {
 		};
 	};
 }
-
 //#endregion
 //#region src/components/create-component.ts
 const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -90,7 +88,7 @@ function createComponent(tagName, displayName, propNames, eventNames) {
 	Component.displayName = displayName;
 	return Component;
 }
-
 //#endregion
 export { createComponent as t };
+
 //# sourceMappingURL=create-component.js.map

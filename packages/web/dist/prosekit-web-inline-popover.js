@@ -4,7 +4,6 @@ import { containsInlineNode, defineFocusChangeHandler, defineKeymap, defineUpdat
 import { useOverlayPositionerState } from "@aria-ui/overlay/elements";
 import { usePresence } from "@aria-ui/presence";
 import { overlayPositionerEvents as overlayPositionerEvents$1, overlayPositionerProps as overlayPositionerProps$1 } from "@aria-ui/overlay";
-
 //#region src/hooks/use-editor-focus-event.ts
 /**
 * @internal
@@ -12,7 +11,6 @@ import { overlayPositionerEvents as overlayPositionerEvents$1, overlayPositioner
 function useEditorFocusChangeEvent(host, editor, handler) {
 	useEditorExtension(host, editor, defineFocusChangeHandler(handler));
 }
-
 //#endregion
 //#region src/hooks/use-editor-update-event.ts
 /**
@@ -21,13 +19,11 @@ function useEditorFocusChangeEvent(host, editor, handler) {
 function useEditorUpdateEvent(host, editor, handler) {
 	useEditorExtension(host, editor, defineUpdateHandler(handler));
 }
-
 //#endregion
 //#region src/hooks/use-keymap.ts
 function useKeymap(host, editor, keymap) {
 	useEditorExtension(host, editor, defineKeymap(keymap));
 }
-
 //#endregion
 //#region src/components/inline-popover/inline-popover/virtual-selection-element.ts
 function getVirtualSelectionElement(view) {
@@ -61,7 +57,6 @@ function getInlineDecoration(view) {
 		getClientRects: () => items.map((item) => item.getBoundingClientRect())
 	};
 }
-
 //#endregion
 //#region src/components/inline-popover/inline-popover/setup.ts
 /**
@@ -110,7 +105,6 @@ function useInlinePopoverReference(host, editor) {
 	});
 	return reference;
 }
-
 //#endregion
 //#region src/components/inline-popover/inline-popover/types.ts
 /** @internal */
@@ -132,7 +126,6 @@ const inlinePopoverEvents = {
 	...overlayPositionerEvents$1,
 	openChange: {}
 };
-
 //#endregion
 //#region src/components/inline-popover/inline-popover/element.gen.ts
 const InlinePopoverElementBase = defineCustomElement({
@@ -142,7 +135,7 @@ const InlinePopoverElementBase = defineCustomElement({
 });
 var InlinePopoverElement = class extends InlinePopoverElementBase {};
 registerCustomElement("prosekit-inline-popover", InlinePopoverElement);
-
 //#endregion
 export { InlinePopoverElement, inlinePopoverEvents, inlinePopoverProps, useInlinePopover };
+
 //# sourceMappingURL=prosekit-web-inline-popover.js.map

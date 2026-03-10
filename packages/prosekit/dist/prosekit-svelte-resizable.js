@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/resizable"
-
-export {  };
+export * from "@prosekit/svelte/resizable";
+export {};

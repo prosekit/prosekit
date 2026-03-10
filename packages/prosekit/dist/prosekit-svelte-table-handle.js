@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte/table-handle"
-
-export {  };
+export * from "@prosekit/svelte/table-handle";
+export {};

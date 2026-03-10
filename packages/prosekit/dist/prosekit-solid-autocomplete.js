@@ -1,3 +1,2 @@
-export * from "@prosekit/solid/autocomplete"
-
-export {  };
+export * from "@prosekit/solid/autocomplete";
+export {};

@@ -1,6 +1,5 @@
 import { defineCommands, definePlugin } from "@prosekit/core";
 import { SearchQuery, findNext, findNextNoWrap, findPrev, findPrevNoWrap, replaceAll, replaceCurrent, replaceNext, replaceNextNoWrap, search } from "prosemirror-search";
-
 //#region src/search/index.ts
 /**
 * Defines an extension that stores a current search query and replace string.
@@ -49,7 +48,7 @@ function defineSearchCommands() {
 		replaceAll: () => withScrollActiveIntoView(replaceAll)
 	});
 }
-
 //#endregion
 export { defineSearchCommands, defineSearchQuery };
+
 //# sourceMappingURL=prosekit-extensions-search.js.map

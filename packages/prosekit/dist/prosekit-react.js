@@ -1,3 +1,2 @@
-export * from "@prosekit/react"
-
-export {  };
+export * from "@prosekit/react";
+export {};

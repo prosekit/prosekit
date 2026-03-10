@@ -1,3 +1,2 @@
-export * from "@prosekit/react/table-handle"
-
-export {  };
+export * from "@prosekit/react/table-handle";
+export {};

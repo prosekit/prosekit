@@ -1,3 +1,2 @@
-export * from "prosemirror-transform"
-
-export {  };
+export * from "prosemirror-transform";
+export {};

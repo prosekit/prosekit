@@ -89,7 +89,7 @@ function queueExtension(editor, extension) {
 		});
 	};
 }
-
 //#endregion
 export { queueExtension };
+
 //# sourceMappingURL=prosekit-web.js.map

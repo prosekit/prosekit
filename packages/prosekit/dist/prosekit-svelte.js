@@ -1,3 +1,2 @@
-export * from "@prosekit/svelte"
-
-export {  };
+export * from "@prosekit/svelte";
+export {};

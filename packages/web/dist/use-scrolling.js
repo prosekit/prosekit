@@ -1,6 +1,5 @@
 import { createSignal, useEffect } from "@aria-ui/core";
 import { getNearestOverflowAncestor } from "@zag-js/dom-query";
-
 //#region src/utils/assign-styles.ts
 /**
 * A type-safe version of `Object.assign` for `element.style`.
@@ -8,7 +7,6 @@ import { getNearestOverflowAncestor } from "@zag-js/dom-query";
 function assignStyles(element, styles) {
 	Object.assign(element.style, styles);
 }
-
 //#endregion
 //#region src/hooks/use-scrolling.ts
 function useScrolling(host) {
@@ -32,7 +30,7 @@ function useScrolling(host) {
 	});
 	return scrolling;
 }
-
 //#endregion
 export { assignStyles as n, useScrolling as t };
+
 //# sourceMappingURL=use-scrolling.js.map

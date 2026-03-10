@@ -1,5 +1,4 @@
 import { defineCommands, defineKeymap, defineMarkSpec, toggleMark, union } from "@prosekit/core";
-
 //#region src/underline/index.ts
 /**
 * @internal
@@ -36,7 +35,7 @@ function defineUnderlineKeymap() {
 function defineUnderline() {
 	return union(defineUnderlineSpec(), defineUnderlineCommands(), defineUnderlineKeymap());
 }
-
 //#endregion
 export { defineUnderline, defineUnderlineCommands, defineUnderlineKeymap, defineUnderlineSpec };
+
 //# sourceMappingURL=prosekit-extensions-underline.js.map

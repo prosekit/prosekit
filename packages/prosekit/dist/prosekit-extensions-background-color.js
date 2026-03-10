@@ -1,3 +1,2 @@
-export * from "@prosekit/extensions/background-color"
-
-export {  };
+export * from "@prosekit/extensions/background-color";
+export {};

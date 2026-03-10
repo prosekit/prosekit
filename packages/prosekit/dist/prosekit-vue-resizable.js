@@ -1,3 +1,2 @@
-export * from "@prosekit/vue/resizable"
-
-export {  };
+export * from "@prosekit/vue/resizable";
+export {};

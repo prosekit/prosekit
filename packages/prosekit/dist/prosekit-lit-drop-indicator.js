@@ -1,3 +1,2 @@
-export * from "@prosekit/lit/drop-indicator"
-
-export {  };
+export * from "@prosekit/lit/drop-indicator";
+export {};

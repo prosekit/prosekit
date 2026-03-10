@@ -1,5 +1,4 @@
 import { getDocument, getId } from "@ocavue/utils";
-
 //#region src/utils/clone-element.ts
 /**
 * Creates a deep clone of an Element, including all computed styles so that
@@ -61,7 +60,6 @@ function copyStyles(source, target, important) {
 	}
 	return styles.join("\n");
 }
-
 //#endregion
 //#region src/utils/inject-style.ts
 function injectStyle(container, styleText) {
@@ -70,7 +68,7 @@ function injectStyle(container, styleText) {
 	style.textContent = styleText;
 	container.appendChild(style);
 }
-
 //#endregion
 export { cloneElement as n, deepCloneElement as r, injectStyle as t };
+
 //# sourceMappingURL=inject-style.js.map

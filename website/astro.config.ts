@@ -12,12 +12,13 @@ import vue from '@astrojs/vue'
 import tailwindcss from '@tailwindcss/vite'
 import type { AstroIntegrationLogger, AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
-import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
+import { rehypeResolveMarkdownLinks } from 'rehype-resolve-markdown-links'
 import starlightThemeNova from 'starlight-theme-nova'
 import { exec } from 'tinyexec'
 import wasm from 'vite-plugin-wasm'
+
 
 type Sidebar = StarlightUserConfig['sidebar']
 
@@ -242,7 +243,7 @@ const config: AstroUserConfig = {
     smartypants: false,
 
     rehypePlugins: [
-      [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
+      [rehypeResolveMarkdownLinks, { rootDir: './src/content/docs' }],
     ],
   },
   experimental: {

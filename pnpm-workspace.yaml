@@ -30,10 +30,8 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "prosemirror-*"
   - "astro"
-  - "@astro/*"
-  - "astrobook"
-  - "@astrobook/*"
-  - "astro-minify-html-swc"
+  - "@astrojs/*"
+  - "rehype-resolve-markdown-links"
 
 overrides: {}
 

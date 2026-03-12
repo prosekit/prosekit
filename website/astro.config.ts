@@ -196,7 +196,7 @@ const config: AstroUserConfig = {
     // It seems that I have to put `react` before `preact` as a workaround for the following issue:
     // https://github.com/withastro/astro/issues/15341
     react({
-      include: ['src/*/react/**/*.tsx', 'src/components/**/*.tsx'],
+      include: ['src/*/react/**/*.tsx', '**/src/components/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],
@@ -244,9 +244,6 @@ const config: AstroUserConfig = {
     rehypePlugins: [
       [rehypeResolveMarkdownLinks, { rootDir: './src/content/docs' }],
     ],
-  },
-  experimental: {
-    headingIdCompat: true,
   },
 }
 

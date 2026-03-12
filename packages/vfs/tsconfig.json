@@ -1,3 +1,4 @@
 {
   "extends": "@ocavue/tsconfig/es/app.json",
+  "compilerOptions": { "types": ["node"] },
 }

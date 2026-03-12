@@ -34,12 +34,12 @@ minimumReleaseAgeExclude:
   - "rehype-resolve-markdown-links"
 
 overrides: 
-  "@prosemirror-adapter/core": "https://pkg.pr.new/@prosemirror-adapter/core@12a4d1c"
-  "@prosemirror-adapter/react": "https://pkg.pr.new/@prosemirror-adapter/react@12a4d1c"
-  "@prosemirror-adapter/vue": "https://pkg.pr.new/@prosemirror-adapter/vue@12a4d1c"
-  "@prosemirror-adapter/solid": "https://pkg.pr.new/@prosemirror-adapter/solid@12a4d1c"
-  "@prosemirror-adapter/svelte": "https://pkg.pr.new/@prosemirror-adapter/svelte@12a4d1c"
-  "@prosemirror-adapter/preact": "https://pkg.pr.new/@prosemirror-adapter/preact@12a4d1c"
+  "@prosemirror-adapter/core": "https://pkg.pr.new/@prosemirror-adapter/core@589c593"
+  "@prosemirror-adapter/react": "https://pkg.pr.new/@prosemirror-adapter/react@589c593"
+  "@prosemirror-adapter/vue": "https://pkg.pr.new/@prosemirror-adapter/vue@589c593"
+  "@prosemirror-adapter/solid": "https://pkg.pr.new/@prosemirror-adapter/solid@589c593"
+  "@prosemirror-adapter/svelte": "https://pkg.pr.new/@prosemirror-adapter/svelte@589c593"
+  "@prosemirror-adapter/preact": "https://pkg.pr.new/@prosemirror-adapter/preact@589c593"
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

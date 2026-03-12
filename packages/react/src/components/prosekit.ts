@@ -1,10 +1,11 @@
-import type { Editor } from '@prosekit/core'
-import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
-import { createElement, type ComponentType, type ReactNode } from 'react'
+import { union, type Editor } from '@prosekit/core'
+import { useReactRenderer } from '@prosemirror-adapter/react'
+import { createElement, Fragment, useMemo, type ComponentType, type ReactNode } from 'react'
 
 import { EditorContextProvider } from '../contexts/editor-context.ts'
-import { ReactMarkViewConsumer } from '../extensions/react-mark-view.ts'
-import { ReactNodeViewConsumer } from '../extensions/react-node-view.ts'
+import { defineReactMarkViewFactory } from '../extensions/react-mark-view.ts'
+import { defineReactNodeViewFactory } from '../extensions/react-node-view.ts'
+import { useEditorExtension } from '../hooks/use-editor-extension.ts'
 
 export interface ProseKitProps {
   editor: Editor
@@ -23,11 +24,26 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
     EditorContextProvider,
     { value: editor },
     createElement(
-      ProsemirrorAdapterProvider,
-      null,
-      createElement(ReactNodeViewConsumer),
-      createElement(ReactMarkViewConsumer),
-      children,
+      ProsemirrorAdapterComponent,
+      { editor, children },
     ),
+  )
+}
+
+function ProsemirrorAdapterComponent({ editor, children }: { editor: Editor; children: ReactNode }): ReactNode {
+  const { renderReactRenderer, removeReactRenderer, render } = useReactRenderer()
+
+  const extension = useMemo(() => {
+    return union([
+      defineReactMarkViewFactory(renderReactRenderer, removeReactRenderer),
+      defineReactNodeViewFactory(renderReactRenderer, removeReactRenderer),
+    ])
+  }, [renderReactRenderer, removeReactRenderer])
+
+  useEditorExtension(editor, extension)
+
+  return createElement(Fragment, null, 
+    createElement(Fragment, null, children),
+    createElement(Fragment, null, render()),
   )
 }

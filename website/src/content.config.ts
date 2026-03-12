@@ -8,7 +8,7 @@ type ExtendedSchema = ReturnType<ReturnType<typeof docsSchema>>
 
 type Docs = CollectionConfig<ExtendedSchema, Loader>
 
-const docs: Docs = defineCollection<ExtendedSchema,Loader> ({
+const docs: Docs = defineCollection<ExtendedSchema, Loader>({
   loader: docsLoader(),
   schema: docsSchema(),
 })

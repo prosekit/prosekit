@@ -35,8 +35,8 @@ function wrapFunction<T extends AnyFunction>(fn: T, wrapper?: FunctionWrapper<T>
 }
 
 class CustomDOMSerializer extends DOMSerializer {
-  private serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>
-  private serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>
+  #serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>
+  #serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>
 
   constructor(
     nodes: Record<string, (node: ProseMirrorNode) => DOMOutputSpec>,
@@ -45,20 +45,20 @@ class CustomDOMSerializer extends DOMSerializer {
     serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>,
   ) {
     super(nodes, marks)
-    this.serializeFragmentWrapper = serializeFragmentWrapper
-    this.serializeNodeWrapper = serializeNodeWrapper
+    this.#serializeFragmentWrapper = serializeFragmentWrapper
+    this.#serializeNodeWrapper = serializeNodeWrapper
   }
 
   override serializeFragment(...args: Parameters<SerializeFragmentFunction>): ReturnType<SerializeFragmentFunction> {
     // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
     const fn: SerializeFragmentFunction = (...args) => super.serializeFragment(...args)
-    return wrapFunction(fn, this.serializeFragmentWrapper)(...args)
+    return wrapFunction(fn, this.#serializeFragmentWrapper)(...args)
   }
 
   override serializeNode(...args: Parameters<SerializeNodeFunction>): ReturnType<SerializeNodeFunction> {
     // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
     const fn: SerializeNodeFunction = (...args) => super.serializeNode(...args)
-    return wrapFunction(fn, this.serializeNodeWrapper)(...args)
+    return wrapFunction(fn, this.#serializeNodeWrapper)(...args)
   }
 }
 

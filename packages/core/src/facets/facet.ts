@@ -27,7 +27,7 @@ export class Facet<Input, Output> {
    */
   readonly path: number[]
 
-  private reduce: () => FacetReducer<Input, Output>
+  #reduce: () => FacetReducer<Input, Output>
 
   /**
    * @internal
@@ -39,9 +39,9 @@ export class Facet<Input, Output> {
     reduce?: () => FacetReducer<Input, Output>,
   ) {
     if (reduce && !reducer) {
-      this.reduce = reduce
+      this.#reduce = reduce
     } else if (reducer && !reduce) {
-      this.reduce = () => reducer
+      this.#reduce = () => reducer
     } else {
       throw new ProseKitError('Incorrect reducer')
     }
@@ -52,7 +52,7 @@ export class Facet<Input, Output> {
   }
 
   get reducer(): FacetReducer<Input, Output> {
-    return this.reduce()
+    return this.#reduce()
   }
 }
 

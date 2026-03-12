@@ -1,10 +1,10 @@
 import { defineNodeViewComponent, defineNodeViewFactory, type Extension } from '@prosekit/core'
 import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
-import { useNodeViewContext, useNodeViewFactory, type NodeViewContext, type ReactNodeViewUserOptions } from '@prosemirror-adapter/react'
-import { createElement, useMemo, type ComponentType, type FC } from 'react'
-
-import { useExtension } from '../hooks/use-extension.ts'
+import type { NodeViewContext, ReactRenderer, ReactRendererResult } from '@prosemirror-adapter/react'
+import { ReactHeadlessNodeView } from '@prosemirror-adapter/react'
+import { createElement, type ComponentType, type ReactPortal } from 'react'
+import { createPortal } from 'react-dom'
 
 /**
  * @public
@@ -28,52 +28,80 @@ export interface ReactNodeViewOptions extends CoreNodeViewUserOptions<ReactNodeV
   name: string
 }
 
-function withNodeViewProps(component: ReactNodeViewComponent) {
-  return function NodeViewPropsWrapper() {
-    const props: ReactNodeViewProps = useNodeViewContext()
-    return createElement(component, props)
-  }
-}
-
-/**
- * @internal
- */
-export const ReactNodeViewConsumer: FC = () => {
-  const nodeViewFactory = useNodeViewFactory()
-  const extension = useMemo(
-    () => defineReactNodeViewFactory(nodeViewFactory),
-    [nodeViewFactory],
-  )
-  useExtension(extension)
-
-  return null
-}
-
 /**
  * Defines a node view using a React component.
  *
  * @public
  */
 export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
-  const { name, component, ...userOptions } = options
-
-  const args: ReactNodeViewUserOptions = {
-    ...userOptions,
-    component: withNodeViewProps(component),
-  }
-
-  return defineNodeViewComponent<ReactNodeViewUserOptions>({
+  return defineNodeViewComponent<ReactNodeViewOptions>({
     group: 'react',
-    name,
-    args,
+    name: options.name,
+    args: options,
   })
 }
 
-function defineReactNodeViewFactory(
-  factory: (options: ReactNodeViewUserOptions) => NodeViewConstructor,
-) {
-  return defineNodeViewFactory<ReactNodeViewUserOptions>({
-    group: 'react',
-    factory,
-  })
+class ReactNodeView extends ReactHeadlessNodeView<ReactNodeViewComponent> implements ReactRenderer<NodeViewContext> {
+  render = (): ReactPortal => {
+    const UserComponent = this.component
+
+    return createPortal(
+      createElement(UserComponent, this.context),
+      this.dom,
+      this.key,
+    )
+  }
+}
+
+type ReactNodeViewFactory = (options: ReactNodeViewOptions) => NodeViewConstructor
+
+function createReactNodeViewFactory(
+  renderReactRenderer: ReactRendererResult['renderReactRenderer'],
+  removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+): ReactNodeViewFactory {
+  return (
+    (options: ReactNodeViewOptions): NodeViewConstructor => (node, view, getPos, decorations, innerDecorations) => {
+      const nodeView = new ReactNodeView({
+        node,
+        view,
+        getPos,
+        decorations,
+        innerDecorations,
+        options: {
+          ...options,
+          onUpdate() {
+            options.onUpdate?.()
+            renderReactRenderer(nodeView)
+          },
+          selectNode() {
+            options.selectNode?.()
+            renderReactRenderer(nodeView)
+          },
+          deselectNode() {
+            options.deselectNode?.()
+            renderReactRenderer(nodeView)
+          },
+          destroy() {
+            options.destroy?.()
+            removeReactRenderer(nodeView)
+          },
+        },
+      })
+
+      renderReactRenderer(nodeView, false)
+
+      return nodeView
+    }
+  )
+}
+
+/**
+ * @internal
+ */
+export function defineReactNodeViewFactory(
+  renderReactRenderer: ReactRendererResult['renderReactRenderer'],
+  removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+): Extension {
+  const factory = createReactNodeViewFactory(renderReactRenderer, removeReactRenderer)
+  return defineNodeViewFactory<ReactNodeViewOptions>({ group: 'react', factory })
 }

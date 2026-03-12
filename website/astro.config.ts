@@ -19,7 +19,6 @@ import starlightThemeNova from 'starlight-theme-nova'
 import { exec } from 'tinyexec'
 import wasm from 'vite-plugin-wasm'
 
-
 type Sidebar = StarlightUserConfig['sidebar']
 
 function generateReferenceSidebarItems() {

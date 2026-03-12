@@ -1,7 +1,7 @@
 import { defineMarkViewComponent, defineMarkViewFactory, definePlugin, type Extension } from '@prosekit/core'
 import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
-import type { MarkViewContext, SvelteMarkViewUserOptions } from '@prosemirror-adapter/svelte'
+import type { MarkViewContext, SvelteMarkViewUserOptions , SvelteMarkViewComponent as SvelteMarkViewComponentBase} from '@prosemirror-adapter/svelte'
 import type { Component } from 'svelte'
 
 import { MarkViewWrapper } from '../components/mark-view-wrapper/index.ts'
@@ -59,10 +59,10 @@ export function defineSvelteMarkView(
 
 function wrapComponent(
   component: SvelteMarkViewComponent,
-): Component<any, any> {
+): SvelteMarkViewComponentBase {
   // `MarkViewWrapper` is an object during SSR
   if (!MarkViewWrapper || typeof MarkViewWrapper !== 'function') {
-    return component
+    return component as SvelteMarkViewComponentBase
   }
 
   const MarkViewPropsWrapper: Component = (internals, props) => {

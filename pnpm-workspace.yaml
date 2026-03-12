@@ -33,7 +33,13 @@ minimumReleaseAgeExclude:
   - "@astrojs/*"
   - "rehype-resolve-markdown-links"
 
-overrides: {}
+overrides: 
+  "@prosemirror-adapter/core": "https://pkg.pr.new/@prosemirror-adapter/core@12a4d1c"
+  "@prosemirror-adapter/react": "https://pkg.pr.new/@prosemirror-adapter/react@12a4d1c"
+  "@prosemirror-adapter/vue": "https://pkg.pr.new/@prosemirror-adapter/vue@12a4d1c"
+  "@prosemirror-adapter/solid": "https://pkg.pr.new/@prosemirror-adapter/solid@12a4d1c"
+  "@prosemirror-adapter/svelte": "https://pkg.pr.new/@prosemirror-adapter/svelte@12a4d1c"
+  "@prosemirror-adapter/preact": "https://pkg.pr.new/@prosemirror-adapter/preact@12a4d1c"
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

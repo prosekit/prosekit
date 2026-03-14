@@ -205,6 +205,7 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
+  // `1.5em` is the same as the `line-height` for paragraphs in typography.css
   'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
 )
 

@@ -1,0 +1,212 @@
+.ProseMirror {
+  --prosekit-hue: 250;
+  --prosekit-outline-color: hsl(var(--prosekit-hue) 100% 60%);
+  --prosekit-node-selection-color: hsl(var(--prosekit-hue) 100% 60% / 0.22);
+  --prosekit-border-color: hsl(0 0% 60% / 0.2);
+  --prosekit-blockquote-color: hsl(0 0% 60% / 0.4);
+}
+@supports (color: oklch(70% 0.2 240deg)) {
+  .ProseMirror {
+    --prosekit-outline-color: oklch(0.66 0.20 var(--prosekit-hue));
+    --prosekit-node-selection-color: oklch(0.66 0.20 var(--prosekit-hue) / 0.1);
+  }
+}
+@supports (color: color-mix(in srgb, CanvasText 15%, Canvas)) {
+  .ProseMirror {
+    --prosekit-border-color: color-mix(in srgb, CanvasText 15%, Canvas);
+    --prosekit-blockquote-color: color-mix(in srgb, CanvasText 40%, Canvas);
+  }
+}
+.ProseMirror {
+  display: flex;
+  flex-direction: column;
+}
+.ProseMirror {
+  line-height: 24px;
+}
+.ProseMirror h1 {
+  margin: 36px 0 4px;
+  padding: 3px 2px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+}
+.ProseMirror h2 {
+  margin: 32px 0 4px;
+  padding: 3px 2px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+}
+.ProseMirror h3 {
+  margin: 22px 0 1px;
+  padding: 3px 2px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31.2px;
+}
+.ProseMirror h4 {
+  margin: 16px 0 1px;
+  padding: 3px 2px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+}
+.ProseMirror h5 {
+  margin: 14px 0 1px;
+  padding: 3px 2px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22.4px;
+}
+.ProseMirror h6 {
+  margin: 12px 0 1px;
+  padding: 3px 2px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20.8px;
+}
+.ProseMirror p {
+  margin: 1px 0 0;
+  padding: 3px 2px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.ProseMirror code {
+  font-weight: 500;
+  font-size: 0.875em;
+}
+.ProseMirror pre {
+  margin: 0.5rem 0;
+  padding: 2rem 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--prosekit-border-color);
+  border-radius: 0.375rem;
+  /* CSS variables --prosemirror-highlight and --prosemirror-highlight-bg are set by package `prosemirror-highlight` */
+  background-color: var(--prosemirror-highlight-bg, inherit);
+  color: var(--prosemirror-highlight, inherit);
+}
+.ProseMirror pre, .ProseMirror code {
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  hyphens: none;
+  tab-size: 4;
+}
+.ProseMirror pre code {
+  font-weight: inherit;
+}
+.ProseMirror pre:has(code) {
+  /* Force the code block to be left-to-right */
+  direction: ltr;
+}
+.ProseMirror img, .ProseMirror video {
+  width: min-content;
+  max-width: 100%;
+  margin: 0.5em 0;
+}
+.ProseMirror blockquote {
+  position: relative;
+  margin: 4px 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-inline-start: 1em;
+  padding-inline-end: 2px;
+}
+.ProseMirror blockquote :before {
+  display: block;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  inset-inline-start: 2px;
+  border-inline-start: 0.25em solid var(--prosekit-blockquote-color);
+  content: "";
+}
+.ProseMirror hr {
+  margin: 13px 0 13px;
+  border-width: 1px 0 0 0;
+  color: var(--prosekit-border-color);
+}
+.ProseMirror .prosekit-horizontal-rule {
+  margin: 1px 0;
+  padding: 12px 2px 12px;
+  border-width: 0;
+  line-height: 1px;
+}
+.ProseMirror .prosekit-horizontal-rule hr {
+  margin: 0;
+}
+.ProseMirror .tableWrapper {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+.ProseMirror .tableWrapper table, .ProseMirror .tableWrapper tr, .ProseMirror .tableWrapper th, .ProseMirror .tableWrapper td {
+  border: 1px solid var(--prosekit-border-color);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.ProseMirror .tableWrapper .selectedCell {
+  --color: 210, 100%, 56%;
+  border: 1px solid var(--prosekit-outline-color);
+  background-color: var(--prosekit-node-selection-color);
+}
+.ProseMirror .tableWrapper .column-resize-handle {
+  outline-color: var(--prosekit-outline-color);
+  outline-style: solid;
+  outline-width: 1px;
+  background-color: var(--prosekit-outline-color);
+}
+.ProseMirror a {
+  text-decoration: underline;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > h1)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > h1) > .list-marker {
+  top: 49px;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > h2)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > h2) > .list-marker {
+  top: 42.5px;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > h3)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > h3) > .list-marker {
+  top: 28.6px;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > h4)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > h4) > .list-marker {
+  top: 20px;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > h5)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > h5) > .list-marker {
+  top: 16.2px;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > h6)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > h6) > .list-marker {
+  top: 13.4px;
+}
+.ProseMirror .prosemirror-flat-list:has(> div.list-content > p)::before, .ProseMirror .prosemirror-flat-list:has(> div.list-content > p) > .list-marker {
+  top: 4px;
+}
+.ProseMirror div[data-node-view-root=true] {
+  display: contents;
+}
+.ProseMirror .ProseMirror-selectednode {
+  border-radius: 2px;
+  outline-color: var(--prosekit-outline-color);
+  outline-style: solid;
+  outline-width: 1px;
+  background-color: var(--prosekit-node-selection-color);
+}
+.ProseMirror pre.ProseMirror-selectednode {
+  border-radius: 0.375rem;
+}
+.ProseMirror .prosekit-autocomplete-match {
+  border-radius: 0.1em;
+  background-color: var(--prosekit-autocomplete-color);
+  box-shadow: 0 0 0 0.3em var(--prosekit-autocomplete-color);
+}
+.ProseMirror.prosekit-dragging {
+  --prosekit-node-selection-color: transparent;
+}
+.ProseMirror .prosemirror-math-inline.prosemirror-math-head-inside .prosemirror-math-source::before {
+  content: "$";
+  opacity: 0.5;
+}
+.ProseMirror .prosemirror-math-inline.prosemirror-math-head-inside .prosemirror-math-source::after {
+  content: "$";
+  opacity: 0.5;
+}

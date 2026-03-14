@@ -249,6 +249,9 @@ $pre-border-radius: 0.375rem;
     .selectedCell {
       --color: 210, 100%, 56%;
       border: 1px solid var(--prosekit-outline-color);
+      // A little trick to make the active border is over the inactive border.
+      // https://stackoverflow.com/a/13195727
+      border-style: double;
       background-color: var(--prosekit-node-selection-color);
     }
 

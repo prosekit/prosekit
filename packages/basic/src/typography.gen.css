@@ -151,6 +151,7 @@
 .ProseMirror .tableWrapper .selectedCell {
   --color: 210, 100%, 56%;
   border: 1px solid var(--prosekit-outline-color);
+  border-style: double;
   background-color: var(--prosekit-node-selection-color);
 }
 .ProseMirror .tableWrapper .column-resize-handle {

@@ -3893,26 +3893,20 @@ packages:
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
 
-  '@zag-js/dismissable@1.35.3':
-    resolution: {integrity: sha512-XPk+lqmsZp2Z1yMb5K1yj/e7Sobv4D7zK66B1GS97lk9Xzz8vuSgsimcLy0p7RXQl3KL6H5L69inSuQa2exybQ==}
-
-  '@zag-js/dom-query@1.35.3':
-    resolution: {integrity: sha512-1RbFZoT4CjlHN9TUNse1++ZVOyKo45ktucTIT349o6HMsoWWKmTJDPvFkMBbmu/qY6XXn4dT+LJEp4bL3DR+Qw==}
+  '@zag-js/dismissable@1.36.0':
+    resolution: {integrity: sha512-4jewheDFj/Iq+XfEEz/P6lZRV017LuS8/M/WvKsZh/nNlE5Mhc1CynoKSmEBPlIqS+6n5broUbfInM8ahc3jLw==}
 
   '@zag-js/dom-query@1.36.0':
     resolution: {integrity: sha512-GlodCpZSQ+LKsyZ6DmgXN5dAF5CNat+4EwJ91pX4Fd7YHayXHCRca/ztpcdt+jeIWguW59BF4TiJgAilnhwf0Q==}
 
-  '@zag-js/interact-outside@1.35.3':
-    resolution: {integrity: sha512-tOcuo/IztzpU7UKXtjVrLZtXzzcbhP4n2WynKwDRkTkq3mRCp61xXJp1csIBycI3JHm/CMeAEcPdRIioxIT/Zw==}
-
-  '@zag-js/types@1.35.3':
-    resolution: {integrity: sha512-Fnm3AMs1lfb55hlkip/eJeWHOjFB3gSi1JkZlkkdltG2l7y/zsHkumPSe6jIKy+DRRIFKRCyXVTatbPN27bO3w==}
+  '@zag-js/interact-outside@1.36.0':
+    resolution: {integrity: sha512-8DUbjaXvdyY/V8fXbqsgC3zSRAF4I7qeARRA2IrVaVLyFrjp1V5R6FfxqOzzHzVjgcWOe6i6g6bTH11rqfqBag==}
 
   '@zag-js/types@1.36.0':
     resolution: {integrity: sha512-7qLMvaIfRwVLzxCi3MZ2rImkNZGJ1avtrhhQ8G9AIk19P765O9IqvfDlCXTqHGUZPUL/+fJOWcgQDkWaFM8RBw==}
 
-  '@zag-js/utils@1.35.3':
-    resolution: {integrity: sha512-LHcC+9y6TFhDsIz9I3koYxONl2JFfx5yQDzc6ZEQO2cqzXedRcN0R9IPqNGCX7JuhGt14ctDkVCm1JWGP2J6Wg==}
+  '@zag-js/utils@1.36.0':
+    resolution: {integrity: sha512-YVOFUEoz6jAto+/pvWi52gAn27i2Kcdf1oMA0sI+wI0gTyjK8LybrKYMM6C2W72PRina6/z4BuRvypY3R6TzFw==}
 
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -7864,7 +7858,7 @@ snapshots:
       '@aria-ui/core': 0.0.22
       '@aria-ui/overlay': 0.0.25
       '@aria-ui/presence': 0.0.20
-      '@zag-js/dismissable': 1.35.3
+      '@zag-js/dismissable': 1.36.0
       '@zag-js/dom-query': 1.36.0
 
   '@aria-ui/presence@0.0.20':
@@ -10316,8 +10310,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.57.0(typescript@5.9.3)
-      '@typescript-eslint/types': 8.57.0
+      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@5.9.3)
+      '@typescript-eslint/types': 8.56.1
       debug: 4.4.3
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -10806,34 +10800,26 @@ snapshots:
       js-beautify: 1.15.4
       vue-component-type-helpers: 2.2.12
 
-  '@zag-js/dismissable@1.35.3':
+  '@zag-js/dismissable@1.36.0':
     dependencies:
-      '@zag-js/dom-query': 1.35.3
-      '@zag-js/interact-outside': 1.35.3
-      '@zag-js/utils': 1.35.3
-
-  '@zag-js/dom-query@1.35.3':
-    dependencies:
-      '@zag-js/types': 1.35.3
+      '@zag-js/dom-query': 1.36.0
+      '@zag-js/interact-outside': 1.36.0
+      '@zag-js/utils': 1.36.0
 
   '@zag-js/dom-query@1.36.0':
     dependencies:
       '@zag-js/types': 1.36.0
 
-  '@zag-js/interact-outside@1.35.3':
+  '@zag-js/interact-outside@1.36.0':
     dependencies:
-      '@zag-js/dom-query': 1.35.3
-      '@zag-js/utils': 1.35.3
-
-  '@zag-js/types@1.35.3':
-    dependencies:
-      csstype: 3.2.3
+      '@zag-js/dom-query': 1.36.0
+      '@zag-js/utils': 1.36.0
 
   '@zag-js/types@1.36.0':
     dependencies:
       csstype: 3.2.3
 
-  '@zag-js/utils@1.35.3': {}
+  '@zag-js/utils@1.36.0': {}
 
   abbrev@2.0.0: {}
 

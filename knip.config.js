@@ -23,11 +23,6 @@ const config = {
         'src/**/*-css.ts',
       ],
     },
-    './packages/basic': {
-      entry: [
-        'src/**/*.scss',
-      ],
-    },
     './registry': {
       entry: [
         'src/*/examples/*/index.ts',

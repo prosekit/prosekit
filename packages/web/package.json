@@ -57,7 +57,7 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^1.35.3",
+    "@zag-js/dom-query": "^1.36.0",
     "prosemirror-tables": "^1.8.5"
   },
   "devDependencies": {

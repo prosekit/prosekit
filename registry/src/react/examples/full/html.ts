@@ -22,5 +22,11 @@ export function renderHTML(document: Document, content: NodeJSON = sampleContent
   const extension = defineExtension()
   const editor = createEditor({ extension })
   editor.setContent(content)
-  return editor.getDocHTML({ document })
+  const html: string = editor.getDocHTML({ document })
+  if (html.startsWith('<div>') && html.endsWith('</div>')) {
+    return html.slice(5, -6) // Remove the wrapping <div> tags
+  } else {
+    console.error('Unexpected HTML format: expected a single <div> wrapper')
+    return html
+  }
 }

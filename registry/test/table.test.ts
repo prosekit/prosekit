@@ -313,10 +313,10 @@ async function setup() {
     await expectLocatorToHaveCount(rowHandle, 1)
     await expectLocatorToHaveCount(colHandle, 1)
 
-    const positionIsAligned = () => {
-      const cellBox = getBoundingBox(cellLocator)
-      const rowHandleBox = getBoundingBox(rowHandle)
-      const colHandleBox = getBoundingBox(colHandle)
+    const positionIsAligned = async () => {
+      const cellBox = await getBoundingBox(cellLocator)
+      const rowHandleBox = await getBoundingBox(rowHandle)
+      const colHandleBox = await getBoundingBox(colHandle)
 
       const rowHandleCenterY = rowHandleBox.y + rowHandleBox.height / 2
       const colHandleCenterX = colHandleBox.x + colHandleBox.width / 2

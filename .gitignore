@@ -2,18 +2,20 @@
 CLAUDE.md
 CHANGELOG.md
 !packages/prosekit/CHANGELOG.md
-**/vite.*.timestamp-*.mjs
-**/.astro/**/*
+vite.*.timestamp-*.mjs
+.astro
 **/public/astrobook
 .yalc
 yalc.lock
 dist
 .eslintcache
-**/test-results/
-**/playwright-report/
-**/blob-report/
+test-results
+playwright-report
+blob-report
 **/playwright/.cache/
 **/playwright/.auth/
+.vitest-attachments
+__screenshots__
 
 .cache
 .DS_Store

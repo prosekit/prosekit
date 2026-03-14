@@ -19,6 +19,7 @@ catalog:
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
+  - "@parcel/watcher"
   - dprint
   - esbuild
   - sharp
@@ -29,6 +30,8 @@ minimumReleaseAge: 600 # 10 hours
 minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "prosemirror-*"
+  - "astrobook"
+  - "@astrobook/*"
   - "vite-plugin-solid"
 
 overrides: {}

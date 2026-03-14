@@ -64,7 +64,5 @@ function useHoverExtension(
 }
 
 function isHoverStateEqual(a: HoverState | null, b: HoverState | null) {
-  if (!a && !b) return true
-  if (!a || !b) return false
-  return a.pos === b.pos && a.node.eq(b.node)
+  return (!a && !b) || (a && b && a.pos === b.pos && a.node.eq(b.node))
 }

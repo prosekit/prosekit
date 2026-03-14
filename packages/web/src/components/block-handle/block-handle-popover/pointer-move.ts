@@ -1,11 +1,10 @@
 import type { VirtualElement } from '@floating-ui/dom'
-import { isElement, isHTMLElement, isTextNode } from '@ocavue/utils'
+import { isElement, isHTMLElement, isTextNode, throttle } from '@ocavue/utils'
 import { defineDOMEventHandler, union, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { getClientRect } from '../../../utils/get-client-rect.ts'
-import { throttle } from '../../../utils/throttle.ts'
 import type { HoverState } from '../context.ts'
 
 export type ElementHoverHandler = (

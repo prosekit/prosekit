@@ -29,9 +29,7 @@ minimumReleaseAge: 600 # 10 hours
 minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "prosemirror-*"
-  - "astro"
-  - "@astrojs/*"
-  - "rehype-resolve-markdown-links"
+  - "vite-plugin-solid"
 
 overrides: {}
 

@@ -23,9 +23,9 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     await unhover()
 
     // Ensure that the menu is positioned correctly inside the editor
-    const checkMenuPosition = () => {
-      const editorBox = getBoundingBox(editor)
-      const menuBox = getBoundingBox(menu)
+    const checkMenuPosition = async () => {
+      const editorBox = await getBoundingBox(editor)
+      const menuBox = await getBoundingBox(menu)
 
       expect(editorBox.width).toBeGreaterThan(1)
       expect(editorBox.height).toBeGreaterThan(1)
@@ -51,7 +51,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expectLocatorToBeHidden(itemNoResults)
 
       await expect.element(menu).toBeVisible()
-      checkMenuPosition()
+      await checkMenuPosition()
     }
 
     // Show all users
@@ -64,7 +64,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemFocused, { timeout: 5000 }).toHaveTextContent('A')
 
       await expect.element(menu).toBeVisible()
-      checkMenuPosition()
+      await checkMenuPosition()
     }
 
     // Search alice
@@ -77,7 +77,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemFocused, { timeout: 5000 }).toHaveTextContent('Alice')
 
       await expect.element(menu).toBeVisible()
-      checkMenuPosition()
+      await checkMenuPosition()
     }
 
     // Press Backspace and show all users again
@@ -93,7 +93,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemBob).toBeVisible()
 
       await expect.element(menu).toBeVisible()
-      checkMenuPosition()
+      await checkMenuPosition()
     }
 
     // Search bob
@@ -113,7 +113,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemNoResults).toBeVisible()
 
       await expect.element(menu).toBeVisible()
-      checkMenuPosition()
+      await checkMenuPosition()
     }
 
     // Press Escape to dismiss the menu
@@ -144,7 +144,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemBob).toBeVisible()
       await expectLocatorToBeHidden(itemNoResults)
 
-      checkMenuPosition()
+      await checkMenuPosition()
     }
 
     // Press Enter and insert the user
@@ -158,7 +158,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expectLocatorToBeHidden(itemLoading)
       await expect.element(itemFocused).toHaveTextContent('Alice')
 
-      checkMenuPosition()
+      await checkMenuPosition()
 
       expect(editor.element().textContent).toEqual('@ali')
       expect(editor.element().innerHTML).not.toContain('data-mention')

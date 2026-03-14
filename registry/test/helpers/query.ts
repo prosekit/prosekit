@@ -7,7 +7,8 @@ interface BoundingBox {
   height: number
 }
 
-export function getBoundingBox(locator: Locator): BoundingBox {
+export async function getBoundingBox(locator: Locator): Promise<BoundingBox> {
+  await waitForStableElement(() => locator.element())
   const element = locator.element()
   const { x, y, width, height } = element.getBoundingClientRect()
   return { x, y, width, height }

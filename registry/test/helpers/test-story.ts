@@ -1,4 +1,5 @@
 import '../../src/tailwind.css'
+import './test-style.css'
 
 import { DefaultMap, isHTMLElement } from '@ocavue/utils'
 import { formatHTML } from 'diffable-html-snapshot'
@@ -36,7 +37,9 @@ function testSingleStory(
     const shouldSkip = frameworks ? !frameworks.includes(example.framework) : false
     describe.skipIf(shouldSkip)(example.framework + '/' + example.story, () => {
       beforeEach(async () => {
-        await renderExample(example.framework, example.story, emptyContent)
+        const screen = await renderExample(example.framework, example.story, emptyContent)
+        const container: HTMLElement = screen.container
+        container.classList.add('prosekit-registry-test-container')
       })
       callback(example)
     })

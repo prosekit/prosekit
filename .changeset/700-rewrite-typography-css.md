@@ -1,6 +1,6 @@
 ---
 "prosekit": "minor"
-"@prosekit/basic": minor
+"@prosekit/basic": "minor"
 ---
 
 Rewrite `prosekit/basic/typography.css`.

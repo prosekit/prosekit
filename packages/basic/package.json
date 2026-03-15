@@ -51,7 +51,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^28.0.0",
     "happy-dom": "^20.8.4",
-    "jsdom": "^28.1.0",
+    "jsdom": "^29.0.0",
     "sass": "^1.97.2",
     "tsdown": "catalog:",
     "typescript": "catalog:",

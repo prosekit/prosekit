@@ -65,9 +65,9 @@ function addExtra(element: Element, rect: Rect, options: IncludeExtraOptions): R
   const outlineLeft = options.left ? outline : 0
 
   return {
-    top: rect.top - marginTop - outlineTop,
-    bottom: rect.bottom + marginBottom + outlineBottom,
-    right: rect.right + marginRight + outlineRight,
-    left: rect.left - marginLeft - outlineLeft,
+    top: rect.top - Math.max(marginTop, outlineTop),
+    bottom: rect.bottom + Math.max(marginBottom, outlineBottom),
+    right: rect.right + Math.max(marginRight, outlineRight),
+    left: rect.left - Math.max(marginLeft, outlineLeft),
   }
 }

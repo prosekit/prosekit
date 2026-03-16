@@ -10,7 +10,7 @@ export function useEffect(
   return onMount(host, () => {
     let callbackCleanup: VoidFunction | void
 
-    let effectCleanup = effect(() => {
+    const effectCleanup = effect(() => {
       callbackCleanup?.()
       callbackCleanup = undefined
       callbackCleanup = callback()

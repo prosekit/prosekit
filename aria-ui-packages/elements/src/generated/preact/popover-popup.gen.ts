@@ -1,6 +1,7 @@
 import { createComponent } from '@aria-ui/integrations/preact'
 import type { HTMLAttributes } from 'preact'
 import type { ForwardRefExoticComponent, RefAttributes } from 'preact/compat'
+
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,

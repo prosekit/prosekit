@@ -1,3 +1,7 @@
+import { mergeProps, splitProps } from 'solid-js'
+import type { Component, JSX } from 'solid-js'
+import h from 'solid-js/h'
+
 import type {
   PopoverRootEvents as PopoverRootElementEvents,
   PopoverRootProps as PopoverRootElementProps,
@@ -6,9 +10,6 @@ import {
   registerPopoverRootElement,
   type PopoverRootElement,
 } from '../elements/popover-root.gen'
-import { mergeProps, splitProps } from 'solid-js'
-import type { Component, JSX } from 'solid-js'
-import h from 'solid-js/h'
 
 /** Props for the {@link PopoverRoot} Solid component. */
 export interface PopoverRootProps

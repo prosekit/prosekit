@@ -4,6 +4,7 @@ import {
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from 'vue'
+
 import type { PopoverPositionerProps as PopoverPositionerElementProps } from '../../popover/popover-positioner'
 import { registerPopoverPositionerElement } from '../elements/popover-positioner.gen'
 

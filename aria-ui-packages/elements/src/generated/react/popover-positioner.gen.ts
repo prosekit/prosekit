@@ -4,6 +4,7 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from 'react'
+
 import type { PopoverPositionerProps as PopoverPositionerElementProps } from '../../popover/popover-positioner'
 import {
   registerPopoverPositionerElement,

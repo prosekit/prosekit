@@ -4,6 +4,7 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from 'react'
+
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,

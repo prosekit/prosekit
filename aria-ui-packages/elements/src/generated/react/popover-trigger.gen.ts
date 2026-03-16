@@ -4,6 +4,7 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from 'react'
+
 import type {
   PopoverTriggerProps as PopoverTriggerElementProps,
   PopoverTriggerEvents as PopoverTriggerElementEvents,

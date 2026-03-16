@@ -1,11 +1,12 @@
+import { mergeProps, splitProps } from 'solid-js'
+import type { Component, JSX } from 'solid-js'
+import h from 'solid-js/h'
+
 import type { PopoverPositionerProps as PopoverPositionerElementProps } from '../../popover/popover-positioner'
 import {
   registerPopoverPositionerElement,
   type PopoverPositionerElement,
 } from '../elements/popover-positioner.gen'
-import { mergeProps, splitProps } from 'solid-js'
-import type { Component, JSX } from 'solid-js'
-import h from 'solid-js/h'
 
 /** Props for the {@link PopoverPositioner} Solid component. */
 export interface PopoverPositionerProps

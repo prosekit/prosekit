@@ -1,9 +1,11 @@
-import PopoverRootComponent from './popover-root.gen.svelte'
+import type { Component, Snippet } from 'svelte'
+
 import type {
   PopoverRootEvents as PopoverRootElementEvents,
   PopoverRootProps as PopoverRootElementProps,
 } from '../../popover/popover-root'
-import type { Component, Snippet } from 'svelte'
+
+import PopoverRootComponent from './popover-root.gen.svelte'
 
 /** Props for the {@link PopoverRoot} Svelte component. */
 export interface PopoverRootProps {

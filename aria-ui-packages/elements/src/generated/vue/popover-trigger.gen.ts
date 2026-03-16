@@ -4,6 +4,7 @@ import {
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from 'vue'
+
 import type {
   PopoverTriggerEvents as PopoverTriggerElementEvents,
   PopoverTriggerProps as PopoverTriggerElementProps,

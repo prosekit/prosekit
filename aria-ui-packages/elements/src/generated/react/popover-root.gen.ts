@@ -4,6 +4,7 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from 'react'
+
 import type {
   PopoverRootProps as PopoverRootElementProps,
   PopoverRootEvents as PopoverRootElementEvents,

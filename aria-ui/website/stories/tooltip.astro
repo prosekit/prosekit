@@ -1,0 +1,37 @@
+---
+import Basic from './tooltip/basic.html'
+import Group from './tooltip/group.html'
+import Placement from './tooltip/placement.html'
+
+interface Props {
+  story: 'basic' | 'placement' | 'group'
+}
+
+const { story } = Astro.props
+---
+
+<script>
+import { registerElements } from '@aria-ui-v2/elements'
+
+registerElements()
+</script>
+
+<style is:global>
+  aria-ui-tooltip-positioner:not(:defined) {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  aria-ui-tooltip-popup:not(:defined) {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<div class="p-4">
+  {story === 'basic' && <Basic />}
+  {story === 'placement' && <Placement />}
+  {story === 'group' && <Group />}
+</div>

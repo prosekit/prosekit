@@ -5,7 +5,7 @@
 Add two new CLI arguments to the `aria-ui` CLI tool:
 
 1. **`--prefix`**: Specifies the prefix for custom element tag names (default: `aria-ui`)
-2. **`--import-source`**: Specifies how generated files should import from source component files (can be a relative path or a package name)
+2. **`--import-source`** (required): Specifies the module specifier used in generated import statements (can be a relative path like `../../popover/index.ts` or a package name like `@my-org/elements`)
 
 ## Current State
 
@@ -140,10 +140,10 @@ function generateReactComponentFile(sourceFile, component, project, prefix)
 
 #### 2.1 Add option to `bin.ts`
 
-Add a new optional `--import-source` option:
+Add a new required `--import-source` option:
 
 ```typescript
-const importSourceOption = Options.text('import-source').pipe(Options.optional)
+const importSourceOption = Options.text('import-source')
 ```
 
 Update the command:
@@ -157,7 +157,7 @@ const command = Command.make(
       // ...
       yield* generateFiles(parsed, outputDir, {
         prefix: options.prefix,
-        importSource: Option.getOrUndefined(options.importSource),
+        importSource: options.importSource,
       })
     }),
 )
@@ -168,74 +168,83 @@ const command = Command.make(
 ```typescript
 export interface GenerateOptions {
   prefix: string
-  importSource?: string
+  importSource: string
 }
 ```
 
 #### 2.3 Update import path resolution
 
-Currently `getRelativePathToSource()` always computes a relative path from the generated file to the source file using ts-morph. We need to change the behavior based on `importSource`:
+Currently `getRelativePathToSource()` uses ts-morph to compute a relative path from the generated file to the source file. This logic is removed entirely. Instead, `importSource` is always used directly as the module specifier in import declarations.
 
-**When `importSource` is not set**: Behavior unchanged — use `getRelativePathToSource()` as today.
+The value can be either:
 
-**When `importSource` is set**: The `importSource` value replaces the auto-computed relative path, but we need to handle two cases:
+- **A package name** (e.g., `@my-org/elements`): All components import from this single module specifier.
+- **A relative path** (e.g., `../../popover/index.ts`): A path relative to each generated file. Since all generated files for a given framework are in the same directory (e.g., `generated/react/`), a single relative path works for all of them.
 
-- **Package name** (e.g., `@my-org/elements`): All components import from this single module specifier regardless of which component file they are in. The import path is just `@my-org/elements`.
-- **Relative path** (e.g., `../../popover/index.ts`): This is a path relative to each generated file. Since all generated files for a given framework are in the same directory (e.g., `generated/react/`), a single relative path works for all of them.
+Both cases are handled the same way — the `importSource` value is used directly as the module specifier.
 
-**Detection**: If `importSource` starts with `.` or `/`, treat it as a relative path. Otherwise, treat it as a package name. However, both cases are actually handled the same way — the `importSource` value is used directly as the module specifier in the import declaration.
+**Deletions**: Remove the `getRelativePathToSource` function entirely. The `project` parameter is no longer needed by generation functions (it was only used for relative path computation). However, `project` is still needed by `generateFiles` itself for creating source files via `project.createSourceFile`, so it remains there.
 
-**Implementation**: Replace the `getRelativePathToSource` call with a conditional:
+**Impact on function signatures**: Since `getRelativePathToSource` required a `SourceFile`, `ComponentInfo`, and `Project`, and now we just use `options.importSource` directly, the generation functions no longer need the `project` parameter:
 
 ```typescript
-function getImportPath(
-  sourceFile: SourceFile,
-  component: ComponentInfo,
-  project: Project,
-  importSource?: string,
-): string {
-  if (importSource) {
-    return importSource
-  }
-  return getRelativePathToSource(sourceFile, component, project)
-}
+// Before
+function generateReactComponentFile(sourceFile, component, project)
+// After
+function generateReactComponentFile(sourceFile, component, options)
 ```
 
-This function is called in these locations:
-1. `generateReactComponentFile` — line 143-147
-2. `generatePreactComponentFile` — line 221-225
-3. `generateSolidComponentFile` — line 301-305
-4. `generateVueComponentFile` — line 416-420
-5. `generateSvelteComponentFile` — line 512-516
-6. `generateSvelteComponentSvelteFile` — line 560
-
-Each of these needs to pass `importSource` through.
+The `generateSvelteComponentSvelteFile` function also no longer needs `project` — it previously used it to create a temporary source file solely for `getRelativePathToSource`. Now it just uses `options.importSource` directly.
 
 #### 2.4 Update function signatures
 
-Each generation function needs access to `importSource`. Pass it through the options:
+Each generation function receives `options: GenerateOptions` instead of `project: Project`:
 
 ```typescript
 function generateReactComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
-  project: Project,
   options: GenerateOptions,
 ): void {
-  const { prefix, importSource } = options
-  const meta = getComponentMeta(component, prefix)
-  const relativePathToSource = getImportPath(sourceFile, component, project, importSource)
+  const { tagName, ... } = getComponentMeta(component, options.prefix)
+  // Use options.importSource directly as the module specifier
   // ... rest unchanged
 }
 ```
 
 Similarly for all other `generate*` functions.
 
+`addSourceFileImports` changes its `relativePathToSource` parameter to just use the value from `options.importSource`:
+
+```typescript
+const { propsTypeName, eventsTypeName } = addSourceFileImports({
+  sourceFile,
+  component,
+  importSource: options.importSource,  // was: relativePathToSource
+  order: 'props-first',
+  includeRegister: true,
+  includeElementType: true,
+})
+```
+
+The `SourceImportOptions` type updates accordingly:
+
+```typescript
+type SourceImportOptions = {
+  sourceFile: SourceFile
+  component: ComponentInfo
+  importSource: string  // was: relativePathToSource
+  order: ElementTypeImportOrder
+  includeRegister: boolean
+  includeElementType: boolean
+}
+```
+
 ### Phase 3: Integration
 
 #### 3.1 Update the generation loop in `generateFiles`
 
-Pass the `options` to each generation function:
+Pass `options` instead of `project` to each generation function:
 
 ```typescript
 for (const component of components) {
@@ -243,39 +252,51 @@ for (const component of components) {
 
   const reactPath = path.join(outputDirs.react, fileName)
   yield* writeSourceFile(reactPath, (sourceFile) =>
-    generateReactComponentFile(sourceFile, component, project, options))
+    generateReactComponentFile(sourceFile, component, options))
 
   // ... same for preact, solid, vue, svelte
 }
 ```
 
-#### 3.2 Update `generateSvelteComponentSvelteFile`
+Note: `project` is still created in `generateFiles` for `project.createSourceFile()` calls within `writeSourceFile`, but it is no longer passed to the individual generation functions.
 
-This function also needs access to `importSource`:
+#### 3.2 Simplify `generateSvelteComponentSvelteFile`
+
+This function no longer needs `project` — it previously created a temporary source file solely for `getRelativePathToSource`. Now it uses `options.importSource` directly:
 
 ```typescript
 function generateSvelteComponentSvelteFile(
   component: ComponentInfo,
-  project: Project,
-  outputFilePath: string,
   options: GenerateOptions,
 ): string {
   const { tagName, eventHandlers, componentName } = getComponentMeta(component, options.prefix)
 
-  const svelteSourceFile = project.createSourceFile(outputFilePath, '', { overwrite: true })
-  const importPath = getImportPath(svelteSourceFile, component, project, options.importSource)
-
   // ... use tagName instead of `aria-ui-${kebabName}`
-  // ... use importPath instead of relativePathToSource
+  // ... use options.importSource directly as import path
 }
 ```
+
+#### 3.3 Delete `getRelativePathToSource`
+
+Remove the `getRelativePathToSource` function entirely (lines 585-599 of current `generate.ts`). It is no longer needed since `importSource` is always provided.
+
+#### 3.4 Update `build:gen` script
+
+Update `packages/elements/package.json` to pass the new required `--import-source` option:
+
+```json
+"build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source ../../popover/index.ts"
+```
+
+The `--prefix` option is not needed here since the default `aria-ui` is correct for this project.
 
 ## Summary of Files Changed
 
 | File | Change |
 |---|---|
 | `packages/cli/src/bin.ts` | Add `--prefix` and `--import-source` options, pass to `generateFiles` |
-| `packages/cli/src/generate.ts` | Add `GenerateOptions` interface; add `tagName` to `ComponentMeta`; add `getImportPath` helper; update all 6 generation functions to accept options and use `tagName`/`getImportPath`; update `getComponentMeta` to accept `prefix` |
+| `packages/cli/src/generate.ts` | Add `GenerateOptions` interface; add `tagName` to `ComponentMeta`; delete `getRelativePathToSource`; remove `project` param from all generation functions; use `options.importSource` directly; update `getComponentMeta` to accept `prefix`; rename `relativePathToSource` to `importSource` in `SourceImportOptions` |
+| `packages/elements/package.json` | Add `--import-source ../../popover/index.ts` to `build:gen` script |
 
 No changes needed to `parse.ts` — the parser extracts component info independently of tag names and import paths.
 
@@ -283,6 +304,6 @@ No changes needed to `parse.ts` — the parser extracts component info independe
 
 After implementation:
 
-1. Run `pnpm --filter @aria-ui-v2/elements run build:gen` — should produce identical output (since defaults match current behavior)
+1. Run `pnpm --filter @aria-ui-v2/elements run build:gen` — should produce identical output (the `--import-source ../../popover/index.ts` resolves to the same path as the old auto-computed relative path)
 2. Run typecheck: `pnpm --filter @aria-ui-v2/cli typecheck`
 3. Verify generated files still have correct imports and tag names

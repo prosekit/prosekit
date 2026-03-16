@@ -1,5 +1,5 @@
 {
-  "name": "@aria-ui/elements",
+  "name": "@aria-ui-v2/elements",
   "type": "module",
   "version": "0.0.0",
   "description": "A set of web components for building accessible user interfaces",
@@ -35,15 +35,15 @@
     "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated"
   },
   "dependencies": {
-    "@aria-ui/integrations": "workspace:*",
+    "@aria-ui-v2/integrations": "workspace:*",
     "@floating-ui/dom": "^1.7.4",
     "@remix-run/interaction": "^0.3.0",
     "server-dom-shim": "^1.1.0"
   },
   "devDependencies": {
-    "@aria-ui/cli": "workspace:*",
-    "@aria-ui/core": "workspace:*",
-    "@aria-ui/utils": "workspace:*",
+    "@aria-ui-v2/cli": "workspace:*",
+    "@aria-ui-v2/core": "workspace:*",
+    "@aria-ui-v2/utils": "workspace:*",
     "@ocavue/tsconfig": "^0.6.2",
     "@ocavue/utils": "^1.3.1",
     "@types/node": "^20.19.10",

@@ -1,3 +1,3 @@
-# @aria-ui/core
+# @aria-ui-v2/core
 
-`@aria-ui/core` is a framework for building light-DOM-based web components.
+`@aria-ui-v2/core` is a framework for building light-DOM-based web components.

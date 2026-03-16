@@ -1,6 +1,6 @@
-import type { HostElement } from '@aria-ui/core'
-import { computed, defineProps, useEffect, type Store } from '@aria-ui/core'
-import { FeatureDetection, useElementId } from '@aria-ui/utils'
+import type { HostElement } from '@aria-ui-v2/core'
+import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
+import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
 import type {
   AutoUpdateOptions,

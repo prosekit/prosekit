@@ -1,5 +1,5 @@
 {
-  "name": "@aria-ui/core",
+  "name": "@aria-ui-v2/core",
   "type": "module",
   "version": "0.0.0",
   "description": "A framework for building light-DOM-based web components",

@@ -1,4 +1,4 @@
-import { FeatureDetection } from '@aria-ui/utils'
+import { FeatureDetection } from '@aria-ui-v2/utils'
 import {
   autoUpdate,
   computePosition,

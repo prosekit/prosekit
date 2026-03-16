@@ -1,4 +1,4 @@
-import { createContext, createSignal } from '@aria-ui/core'
+import { createContext, createSignal } from '@aria-ui-v2/core'
 
 /**
  * @internal

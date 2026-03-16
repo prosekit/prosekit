@@ -1,4 +1,4 @@
-import { FeatureDetectionInternals } from '@aria-ui/utils'
+import { FeatureDetectionInternals } from '@aria-ui-v2/utils'
 import { html, render } from 'lit-html'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
 import { page } from 'vitest/browser'

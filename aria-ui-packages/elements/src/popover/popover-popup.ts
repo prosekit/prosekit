@@ -1,6 +1,6 @@
-import type { HostElement, Store } from '@aria-ui/core'
-import { defineProps, useEffect } from '@aria-ui/core'
-import { useElementId } from '@aria-ui/utils'
+import type { HostElement, Store } from '@aria-ui-v2/core'
+import { defineProps, useEffect } from '@aria-ui-v2/core'
+import { useElementId } from '@aria-ui-v2/utils'
 
 import { PopoverStoreContext } from './popover-store.ts'
 

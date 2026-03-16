@@ -1,5 +1,5 @@
 {
-  "name": "@aria-ui/integrations",
+  "name": "@aria-ui-v2/integrations",
   "type": "module",
   "version": "0.0.0",
   "description": "UI framework integrations for aria-ui",

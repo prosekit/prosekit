@@ -1,5 +1,5 @@
-import type { HostElement } from '@aria-ui/core'
-import { useEffect } from '@aria-ui/core'
+import type { HostElement } from '@aria-ui-v2/core'
+import { useEffect } from '@aria-ui-v2/core'
 
 export function useAriaDisabled(
   host: HostElement,

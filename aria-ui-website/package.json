@@ -1,5 +1,5 @@
 {
-  "name": "@aria-ui/website",
+  "name": "@aria-ui-v2/website",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -17,7 +17,7 @@
     "server-dom-shim": "^1.1.0"
   },
   "devDependencies": {
-    "@aria-ui/elements": "workspace:*",
+    "@aria-ui-v2/elements": "workspace:*",
     "@ocavue/tsconfig": "^0.6.2",
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^20.19.10",

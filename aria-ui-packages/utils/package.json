@@ -1,5 +1,5 @@
 {
-  "name": "@aria-ui/utils",
+  "name": "@aria-ui-v2/utils",
   "type": "module",
   "version": "0.0.0",
   "description": "Utility functions for aria-ui",
@@ -33,7 +33,7 @@
     "build": "tsc -b"
   },
   "dependencies": {
-    "@aria-ui/core": "workspace:*",
+    "@aria-ui-v2/core": "workspace:*",
     "@remix-run/interaction": "^0.3.0"
   },
   "devDependencies": {

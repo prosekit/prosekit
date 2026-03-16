@@ -172,7 +172,7 @@ function generateWebComponentFile(
   coreImports.sort((a, b) => a.name.localeCompare(b.name))
 
   sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui/core',
+    moduleSpecifier: '@aria-ui-v2/core',
     namedImports: coreImports,
   })
 
@@ -310,7 +310,7 @@ function generateReactComponentFile(
   )
 
   sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui/integrations/react',
+    moduleSpecifier: '@aria-ui-v2/integrations/react',
     namedImports: ['createComponent'],
   })
 
@@ -396,7 +396,7 @@ function generatePreactComponentFile(
   )
 
   sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui/integrations/preact',
+    moduleSpecifier: '@aria-ui-v2/integrations/preact',
     namedImports: ['createComponent'],
   })
 
@@ -974,5 +974,5 @@ function toEventAttributeName(eventName: string): string {
  * Convert PascalCase to kebab-case
  */
 function toKebabCase(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+  return str.replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 }

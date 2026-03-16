@@ -1,17 +1,17 @@
-import type { HostElement } from '@aria-ui/core'
+import type { HostElement } from '@aria-ui-v2/core'
 import {
   computed,
   defineProps,
   useEffect,
   useInteraction,
   type Store,
-} from '@aria-ui/core'
+} from '@aria-ui-v2/core'
 import {
   useAriaControls,
   useAriaDisabled,
   useAriaExpanded,
   useHover,
-} from '@aria-ui/utils'
+} from '@aria-ui-v2/utils'
 import { press } from '@remix-run/interaction/press'
 
 import type { OpenChangeEvent } from './popover-root.ts'

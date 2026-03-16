@@ -294,6 +294,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@tailwindcss/cli": "^4.2.1",
     "@tailwindcss/vite": "^4.2.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

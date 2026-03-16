@@ -1,9 +1,4 @@
-import {
-  type InterfaceDeclaration,
-  Project,
-  type SourceFile,
-  SyntaxKind,
-} from 'ts-morph'
+import { Project, SyntaxKind, type InterfaceDeclaration, type SourceFile } from 'ts-morph'
 
 /**
  * Information about a component prop or event

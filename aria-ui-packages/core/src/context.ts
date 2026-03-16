@@ -61,9 +61,9 @@ class ContextImpl<T> implements Context<T> {
 
       if (
         // Don't consume the event if it's dispatched from the same element.
-        element === consumer ||
-        consumers.has(event.callback) ||
-        !consumer
+        element === consumer
+        || consumers.has(event.callback)
+        || !consumer
       ) {
         return
       }

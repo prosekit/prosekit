@@ -1,5 +1,3 @@
-import { detect as detectAnchorPositioningSupport } from './anchor-positioning.ts'
-
 let result: boolean | undefined
 
 /**
@@ -28,7 +26,7 @@ export function detect(): boolean {
     return CSS.supports('position-try', 'span-self-x-start')
   } catch {
     return false
-}
+  }
 }
 
 /**

@@ -41,29 +41,28 @@ export interface PopoverRootProps {
 /**
  * @internal
  */
-export const PopoverRootPropsDeclaration: PropsDeclaration<PopoverRootProps> =
-  defineProps<PopoverRootProps>({
-    defaultOpen: {
-      default: false,
-      attribute: 'default-open',
-      type: 'boolean',
-    },
-    open: {
-      default: null,
-      attribute: 'open',
-      type: 'json',
-    },
-    modal: {
-      default: false,
-      attribute: 'modal',
-      type: 'boolean',
-    },
-    disabled: {
-      default: false,
-      attribute: 'disabled',
-      type: 'boolean',
-    },
-  })
+export const PopoverRootPropsDeclaration: PropsDeclaration<PopoverRootProps> = defineProps<PopoverRootProps>({
+  defaultOpen: {
+    default: false,
+    attribute: 'default-open',
+    type: 'boolean',
+  },
+  open: {
+    default: null,
+    attribute: 'open',
+    type: 'json',
+  },
+  modal: {
+    default: false,
+    attribute: 'modal',
+    type: 'boolean',
+  },
+  disabled: {
+    default: false,
+    attribute: 'disabled',
+    type: 'boolean',
+  },
+})
 
 /**
  * @public

@@ -1,8 +1,4 @@
-import type {
-  AnyProps,
-  PropDeclaration,
-  PropsDeclaration,
-} from './define-props.ts'
+import type { AnyProps, PropDeclaration, PropsDeclaration } from './define-props.ts'
 import type { HostElement } from './host-element.ts'
 import type { Signal } from './signal.ts'
 import type { Store } from './store.ts'
@@ -27,8 +23,8 @@ export function usePropertiesToAttributes(
     useEffect(element, () => {
       const propertyValue: unknown = signal.get()
       if (
-        propertyValue === defaultValue &&
-        !element.hasAttribute(attributeName)
+        propertyValue === defaultValue
+        && !element.hasAttribute(attributeName)
       ) {
         return
       }

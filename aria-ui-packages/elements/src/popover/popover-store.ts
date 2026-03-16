@@ -6,7 +6,6 @@ import { createContext, createSignal } from '@aria-ui-v2/core'
 export class PopoverStore {
   readonly anchorElement = createSignal<HTMLElement | undefined>(undefined)
 
-
   private positionerId = createSignal<string>('')
 
   private popupId = createSignal<string>('')

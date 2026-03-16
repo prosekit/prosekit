@@ -16,10 +16,10 @@ export default defineProject({
       instances: coverageEnabled
         ? [{ browser: 'chromium' }]
         : [
-            { browser: 'chromium' },
-            { browser: 'firefox' },
-            { browser: 'webkit' },
-          ],
+          { browser: 'chromium' },
+          { browser: 'firefox' },
+          { browser: 'webkit' },
+        ],
     },
   },
 })

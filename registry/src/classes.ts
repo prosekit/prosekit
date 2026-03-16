@@ -17,7 +17,7 @@ const CSS_FLOATING_MENU = cn(
 
 const CSS_PRESENCE_ANIMATE = cn(
   CSS_DEFAULT_HIDDEN,
-  // TODO: add transition 
+  // TODO: add transition
   'transition-discrete',
   'motion-reduce:transition-none',
   'will-change-transform',

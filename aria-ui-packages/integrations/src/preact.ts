@@ -2,7 +2,7 @@ import { createElement } from 'preact'
 import type { Ref } from 'preact'
 import type { ForwardRefExoticComponent, RefAttributes } from 'preact/compat'
 import { forwardRef } from 'preact/compat'
-import { useMemo, useRef, useLayoutEffect } from 'preact/hooks'
+import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 
 /**
  * @internal

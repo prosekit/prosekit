@@ -12,8 +12,7 @@ export interface PopoverPopupProps {}
 /**
  * @internal
  */
-export const PopoverPopupPropsDeclaration =
-  /* @__PURE__ */ defineProps<PopoverPopupProps>({})
+export const PopoverPopupPropsDeclaration = /* @__PURE__ */ defineProps<PopoverPopupProps>({})
 
 /**
  * @internal

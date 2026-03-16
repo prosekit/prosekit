@@ -1,20 +1,8 @@
 export { computed } from 'alien-signals'
-export {
-  handleAttributeChanged,
-  usePropertiesToAttributes,
-  createAttributePropertyNameMap,
-} from './attribute.ts'
+export { createAttributePropertyNameMap, handleAttributeChanged, usePropertiesToAttributes } from './attribute.ts'
 export { createContext, type Context } from './context.ts'
-export {
-  defineCustomElement,
-  type HostElementConstructor,
-} from './define-custom-element.ts'
-export {
-  defineProps,
-  type AnyProps,
-  type PropDeclaration,
-  type PropsDeclaration,
-} from './define-props.ts'
+export { defineCustomElement, type HostElementConstructor } from './define-custom-element.ts'
+export { defineProps, type AnyProps, type PropDeclaration, type PropsDeclaration } from './define-props.ts'
 export { HostElement } from './host-element.ts'
 export { onMount } from './on-mount.ts'
 export { registerCustomElement } from './register-custom-element.ts'

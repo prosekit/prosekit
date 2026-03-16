@@ -2,13 +2,13 @@
   "extends": "@ocavue/tsconfig/es/root.json",
   "references": [
     {
-        "path": "../core/tsconfig.json"
+      "path": "../core/tsconfig.json",
     },
     {
-        "path": "./tsconfig.build.json"
+      "path": "./tsconfig.build.json",
     },
     {
-        "path": "./tsconfig.test.json"
-    }
-]
+      "path": "./tsconfig.test.json",
+    },
+  ],
 }

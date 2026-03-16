@@ -1,12 +1,7 @@
 import type { HostElement } from '@aria-ui-v2/core'
 import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
 import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
-import type {
-  AutoUpdateOptions,
-  Boundary,
-  ElementContext,
-  OffsetOptions, Placement, RootBoundary
-} from '@floating-ui/dom'
+import type { AutoUpdateOptions, Boundary, ElementContext, OffsetOptions, Placement, RootBoundary } from '@floating-ui/dom'
 
 import { PopoverStoreContext } from './popover-store.ts'
 import { updatePlacement } from './positioning.ts'
@@ -170,40 +165,39 @@ export interface PopoverPositionerProps {
 /**
  * @internal
  */
-export const PopoverPositionerPropsDeclaration =
-  /* @__PURE__ */ defineProps<PopoverPositionerProps>({
-    strategy: { default: 'absolute', attribute: 'strategy', type: 'string' },
-    placement: { default: 'top', attribute: 'placement', type: 'string' },
-    autoUpdate: { default: true, attribute: false, type: 'json' },
-    hoist: { default: true, attribute: 'hoist', type: 'boolean' },
-    offset: { default: 6, attribute: false, type: 'json' },
-    flip: { default: true, attribute: false, type: 'json' },
-    shift: { default: true, attribute: 'shift', type: 'boolean' },
-    overlap: { default: false, attribute: 'overlap', type: 'boolean' },
-    fitViewport: { default: false, attribute: 'fit-viewport', type: 'boolean' },
-    sameWidth: { default: false, attribute: 'same-width', type: 'boolean' },
-    sameHeight: { default: false, attribute: 'same-height', type: 'boolean' },
-    inline: { default: false, attribute: 'inline', type: 'boolean' },
-    hide: { default: false, attribute: 'hide', type: 'boolean' },
+export const PopoverPositionerPropsDeclaration = /* @__PURE__ */ defineProps<PopoverPositionerProps>({
+  strategy: { default: 'absolute', attribute: 'strategy', type: 'string' },
+  placement: { default: 'top', attribute: 'placement', type: 'string' },
+  autoUpdate: { default: true, attribute: false, type: 'json' },
+  hoist: { default: true, attribute: 'hoist', type: 'boolean' },
+  offset: { default: 6, attribute: false, type: 'json' },
+  flip: { default: true, attribute: false, type: 'json' },
+  shift: { default: true, attribute: 'shift', type: 'boolean' },
+  overlap: { default: false, attribute: 'overlap', type: 'boolean' },
+  fitViewport: { default: false, attribute: 'fit-viewport', type: 'boolean' },
+  sameWidth: { default: false, attribute: 'same-width', type: 'boolean' },
+  sameHeight: { default: false, attribute: 'same-height', type: 'boolean' },
+  inline: { default: false, attribute: 'inline', type: 'boolean' },
+  hide: { default: false, attribute: 'hide', type: 'boolean' },
 
-    boundary: { default: 'clippingAncestors', attribute: false, type: 'json' },
-    rootBoundary: {
-      default: 'viewport',
-      attribute: 'root-boundary',
-      type: 'string',
-    },
-    overflowPadding: {
-      default: 4,
-      attribute: 'overflow-padding',
-      type: 'number',
-    },
-    elementContext: {
-      default: 'floating',
-      attribute: 'element-context',
-      type: 'string',
-    },
-    altBoundary: { default: false, attribute: 'alt-boundary', type: 'boolean' },
-  })
+  boundary: { default: 'clippingAncestors', attribute: false, type: 'json' },
+  rootBoundary: {
+    default: 'viewport',
+    attribute: 'root-boundary',
+    type: 'string',
+  },
+  overflowPadding: {
+    default: 4,
+    attribute: 'overflow-padding',
+    type: 'number',
+  },
+  elementContext: {
+    default: 'floating',
+    attribute: 'element-context',
+    type: 'string',
+  },
+  altBoundary: { default: false, attribute: 'alt-boundary', type: 'boolean' },
+})
 
 export interface PopoverTriggerState {
   open: boolean
@@ -248,15 +242,15 @@ export function setupPopoverPositioner(
         host.togglePopover(
           anchorElement
             ? {
-                force: expectedOpen,
-                // By passing the anchor element, the browser places the popover
-                // in a logical position in the keyboard focus navigation order
-                // when shown. This makes the popover more accessible to
-                // keyboard users.
-                //
-                // See https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/togglePopover#source
-                source: anchorElement,
-              }
+              force: expectedOpen,
+              // By passing the anchor element, the browser places the popover
+              // in a logical position in the keyboard focus navigation order
+              // when shown. This makes the popover more accessible to
+              // keyboard users.
+              //
+              // See https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/togglePopover#source
+              source: anchorElement,
+            }
             : { force: expectedOpen },
         )
       } else {
@@ -267,8 +261,7 @@ export function setupPopoverPositioner(
         }
       }
     })
-  }
-  // Fallback to CSS display property
+  } // Fallback to CSS display property
   else {
     useEffect(host, () => {
       const open = getOpen()

@@ -13,12 +13,13 @@ export default defineConfig({
       exclude: ['packages/dev/**/*', 'packages/config-*/**/*'],
     },
     fileParallelism: false,
-    projects: ['./packages/*', './registry', 
-      
+    projects: [
+      './packages/*',
+      './registry',
+
       // TODO: remove me
       './aria-ui-website',
       './aria-ui-packages/*',
-    
     ],
   },
 })

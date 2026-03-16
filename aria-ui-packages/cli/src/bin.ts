@@ -20,7 +20,7 @@ const command = Command.make(
   'aria-ui',
   { tsconfig: tsconfigOption, entry: entryOption, output: outputOption },
   (options) =>
-    Effect.gen(function* () {
+    Effect.gen(function*() {
       const path = yield* Path.Path
 
       const tsconfigFilePath = path.resolve(options.tsconfig)

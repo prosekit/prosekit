@@ -18,7 +18,6 @@ function collectEnvironments() {
     },
   ]
 
- 
   if (FeatureDetectionInternals.Popover.detect()) {
     environments = [
       ...environments.map((env) => ({ ...env, popover: true })),
@@ -50,19 +49,19 @@ function teardownEnvironment() {
 
 function forEachEnvironment(environments: Environment[], callback: () => void) {
   for (const environment of environments) {
-      describe(`Environment popover ${environment.popover}`, () => {
-        describe(`Environment togglePopoverSource ${environment.togglePopoverSource}`, () => {
-          beforeEach(() => {
-            setupEnvironment(environment)
-          })
-
-          afterEach(() => {
-            teardownEnvironment()
-          })
-
-          callback()
+    describe(`Environment popover ${environment.popover}`, () => {
+      describe(`Environment togglePopoverSource ${environment.togglePopoverSource}`, () => {
+        beforeEach(() => {
+          setupEnvironment(environment)
         })
+
+        afterEach(() => {
+          teardownEnvironment()
+        })
+
+        callback()
       })
+    })
   }
 }
 

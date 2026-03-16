@@ -13,14 +13,6 @@ export {
   type PopoverTriggerPropsDeclaration,
 } from './popover-trigger.ts'
 
-export {
-  setupPopoverPopup,
-  type PopoverPopupProps,
-  type PopoverPopupPropsDeclaration,
-} from './popover-popup.ts'
+export { setupPopoverPopup, type PopoverPopupProps, type PopoverPopupPropsDeclaration } from './popover-popup.ts'
 
-export {
-  setupPopoverPositioner,
-  type PopoverPositionerProps,
-  type PopoverPositionerPropsDeclaration,
-} from './popover-positioner.ts'
+export { setupPopoverPositioner, type PopoverPositionerProps, type PopoverPositionerPropsDeclaration } from './popover-positioner.ts'

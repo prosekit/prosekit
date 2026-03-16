@@ -2,13 +2,7 @@ import { FileSystem, Path } from '@effect/platform'
 import type { PlatformError } from '@effect/platform/Error'
 import { Effect } from 'effect'
 import prettier from 'prettier'
-import {
-  IndentationText,
-  Project,
-  Scope,
-  VariableDeclarationKind,
-  type SourceFile,
-} from 'ts-morph'
+import { IndentationText, Project, Scope, VariableDeclarationKind, type SourceFile } from 'ts-morph'
 
 import type { ComponentInfo } from './parse'
 
@@ -38,6 +32,16 @@ type PropsInterfaceOptions = {
 
 type ElementTypeImportOrder = 'props-first' | 'events-first'
 
+function formatWithPrettier(filePath: string, contents: string) {
+  return Effect.promise(async () => {
+    const options = (await prettier.resolveConfig(filePath)) ?? {}
+    return await prettier.format(contents, {
+      ...options,
+      filepath: filePath,
+    })
+  })
+}
+
 /**
  * Generate .gen.ts files for all components
  */
@@ -45,7 +49,7 @@ export function generateFiles(
   components: ComponentInfo[],
   outputDir: string,
 ): Effect.Effect<void, PlatformError, Path.Path | FileSystem.FileSystem> {
-  return Effect.gen(function* () {
+  return Effect.gen(function*() {
     const path = yield* Path.Path
     const fs = yield* FileSystem.FileSystem
 
@@ -69,17 +73,8 @@ export function generateFiles(
       },
     })
 
-    const formatWithPrettier = (filePath: string, contents: string) =>
-      Effect.promise(async () => {
-        const options = (await prettier.resolveConfig(filePath)) ?? {}
-        return await prettier.format(contents, {
-          ...options,
-          filepath: filePath,
-        })
-      })
-
     const writeFormattedFile = (filePath: string, contents: string) =>
-      Effect.gen(function* () {
+      Effect.gen(function*() {
         const finalContents = filePath.endsWith('.ts')
           ? yield* formatWithPrettier(filePath, contents)
           : contents
@@ -91,7 +86,7 @@ export function generateFiles(
       filePath: string,
       generate: (sourceFile: SourceFile) => void,
     ) =>
-      Effect.gen(function* () {
+      Effect.gen(function*() {
         const sourceFile = project.createSourceFile(filePath, '', {
           overwrite: true,
         })
@@ -99,41 +94,28 @@ export function generateFiles(
         yield* writeFormattedFile(filePath, sourceFile.getFullText())
       })
 
-    const writeTextFile = (filePath: string, contents: string) =>
-      writeFormattedFile(filePath, contents)
+    const writeTextFile = (filePath: string, contents: string) => writeFormattedFile(filePath, contents)
 
     for (const component of components) {
       const fileName = getComponentFileName(component)
 
       const elementsPath = path.join(outputDirs.elements, fileName)
-      yield* writeSourceFile(elementsPath, (sourceFile) =>
-        generateWebComponentFile(sourceFile, component, project),
-      )
+      yield* writeSourceFile(elementsPath, (sourceFile) => generateWebComponentFile(sourceFile, component, project))
 
       const reactPath = path.join(outputDirs.react, fileName)
-      yield* writeSourceFile(reactPath, (sourceFile) =>
-        generateReactComponentFile(sourceFile, component, project),
-      )
+      yield* writeSourceFile(reactPath, (sourceFile) => generateReactComponentFile(sourceFile, component, project))
 
       const preactPath = path.join(outputDirs.preact, fileName)
-      yield* writeSourceFile(preactPath, (sourceFile) =>
-        generatePreactComponentFile(sourceFile, component, project),
-      )
+      yield* writeSourceFile(preactPath, (sourceFile) => generatePreactComponentFile(sourceFile, component, project))
 
       const solidPath = path.join(outputDirs.solid, fileName)
-      yield* writeSourceFile(solidPath, (sourceFile) =>
-        generateSolidComponentFile(sourceFile, component, project),
-      )
+      yield* writeSourceFile(solidPath, (sourceFile) => generateSolidComponentFile(sourceFile, component, project))
 
       const vuePath = path.join(outputDirs.vue, fileName)
-      yield* writeSourceFile(vuePath, (sourceFile) =>
-        generateVueComponentFile(sourceFile, component, project),
-      )
+      yield* writeSourceFile(vuePath, (sourceFile) => generateVueComponentFile(sourceFile, component, project))
 
       const sveltePath = path.join(outputDirs.svelte, fileName)
-      yield* writeSourceFile(sveltePath, (sourceFile) =>
-        generateSvelteComponentFile(sourceFile, component, project),
-      )
+      yield* writeSourceFile(sveltePath, (sourceFile) => generateSvelteComponentFile(sourceFile, component, project))
 
       const svelteFileName = getSvelteComponentFileName(component)
       const svelteComponentPath = path.join(outputDirs.svelte, svelteFileName)
@@ -367,7 +349,8 @@ function generateReactComponentFile(
       {
         name: componentName,
         type: `ForwardRefExoticComponent<${componentName}Props & RefAttributes<${componentName}Element>>`,
-        initializer: `/* @__PURE__ */ createComponent('aria-ui-${kebabName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
+        initializer:
+          `/* @__PURE__ */ createComponent('aria-ui-${kebabName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
       },
     ],
   })
@@ -455,7 +438,8 @@ function generatePreactComponentFile(
       {
         name: componentName,
         type: `ForwardRefExoticComponent<${componentName}Props & RefAttributes<${componentName}Element>>`,
-        initializer: `/* @__PURE__ */ createComponent('aria-ui-${kebabName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
+        initializer:
+          `/* @__PURE__ */ createComponent('aria-ui-${kebabName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
       },
     ],
   })
@@ -543,10 +527,9 @@ function generateSolidComponentFile(
     ...(eventHandlerNames.length > 0 ? ['eventHandlers'] : []),
     'restProps',
   ]
-  const splitPropsStatement =
-    splitPropsArgs.length > 0
-      ? `const [ ${splitPropsTargets.join(', ')} ] = splitProps(props, ${splitPropsArgs.join(', ')})`
-      : 'const restProps = props'
+  const splitPropsStatement = splitPropsArgs.length > 0
+    ? `const [ ${splitPropsTargets.join(', ')} ] = splitProps(props, ${splitPropsArgs.join(', ')})`
+    : 'const restProps = props'
   const propEntries = props.map(
     (prop) => `"prop:${prop.name}": () => elementProps.${prop.name}`,
   )
@@ -558,10 +541,9 @@ function generateSolidComponentFile(
     ...propEntries,
     ...eventEntries,
   ])
-  const mergedProps =
-    propEntries.length > 0 || eventEntries.length > 0
-      ? `mergeProps(restProps, ${elementPropsObject})`
-      : 'restProps'
+  const mergedProps = propEntries.length > 0 || eventEntries.length > 0
+    ? `mergeProps(restProps, ${elementPropsObject})`
+    : 'restProps'
 
   const componentInitializer = `(props): any => {
 register${componentName}Element()
@@ -698,8 +680,7 @@ function generateSvelteComponentFile(
   component: ComponentInfo,
   project: Project,
 ): void {
-  const { componentName, kebabName, hasEvents, hasProps } =
-    getComponentMeta(component)
+  const { componentName, kebabName, hasEvents, hasProps } = getComponentMeta(component)
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: `./${kebabName}.gen.svelte`,
@@ -752,16 +733,15 @@ function generateSvelteComponentFile(
  * Generate the content of a Svelte component .gen.svelte file
  */
 function generateSvelteComponentSvelteFile(component: ComponentInfo): string {
-  const { componentName, kebabName, eventHandlers } =
-    getComponentMeta(component)
-  const destructureProps =
-    eventHandlers.length > 0
-      ? `  let { ${eventHandlers.map((handler) => `${handler.handlerName} = undefined`).join(', ')}, children = undefined, ..._restProps } = $props()`
-      : '  let { children = undefined, ..._restProps } = $props()'
+  const { componentName, kebabName, eventHandlers } = getComponentMeta(component)
+  const destructureProps = eventHandlers.length > 0
+    ? `  let { ${
+      eventHandlers.map((handler) => `${handler.handlerName} = undefined`).join(', ')
+    }, children = undefined, ..._restProps } = $props()`
+    : '  let { children = undefined, ..._restProps } = $props()'
   const eventAttributes = eventHandlers
     .map(
-      (handler) =>
-        `${toEventAttributeName(handler.eventName)}={${handler.handlerName}}`,
+      (handler) => `${toEventAttributeName(handler.eventName)}={${handler.handlerName}}`,
     )
     .join(' ')
   const openingTag = `<aria-ui-${kebabName} {..._restProps}${eventAttributes ? ` ${eventAttributes}` : ''}`
@@ -821,20 +801,18 @@ function addElementTypeImports(
   const componentName = component.name
   const propsTypeName = `${componentName}ElementProps`
   const eventsTypeName = `${componentName}ElementEvents`
-  const propsImport =
-    component.props.length > 0
-      ? {
-        name: `${componentName}Props`,
-        alias: propsTypeName,
-      }
-      : null
-  const eventsImport =
-    component.events.length > 0
-      ? {
-        name: `${componentName}Events`,
-        alias: eventsTypeName,
-      }
-      : null
+  const propsImport = component.props.length > 0
+    ? {
+      name: `${componentName}Props`,
+      alias: propsTypeName,
+    }
+    : null
+  const eventsImport = component.events.length > 0
+    ? {
+      name: `${componentName}Events`,
+      alias: eventsTypeName,
+    }
+    : null
   const elementTypeImports = []
 
   if (order === 'props-first') {

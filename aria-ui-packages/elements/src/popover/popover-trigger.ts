@@ -1,17 +1,6 @@
 import type { HostElement } from '@aria-ui-v2/core'
-import {
-  computed,
-  defineProps,
-  useEffect,
-  useInteraction,
-  type Store,
-} from '@aria-ui-v2/core'
-import {
-  useAriaControls,
-  useAriaDisabled,
-  useAriaExpanded,
-  useHover,
-} from '@aria-ui-v2/utils'
+import { computed, defineProps, useEffect, useInteraction, type Store } from '@aria-ui-v2/core'
+import { useAriaControls, useAriaDisabled, useAriaExpanded, useHover } from '@aria-ui-v2/utils'
 import { press } from '@remix-run/interaction/press'
 
 import type { OpenChangeEvent } from './popover-root.ts'
@@ -51,29 +40,28 @@ export interface PopoverTriggerProps {
 /**
  * @internal
  */
-export const PopoverTriggerPropsDeclaration =
-  /* @__PURE__ */ defineProps<PopoverTriggerProps>({
-    disabled: {
-      default: false,
-      attribute: 'disabled',
-      type: 'boolean',
-    },
-    openOnHover: {
-      default: false,
-      attribute: 'open-on-hover',
-      type: 'boolean',
-    },
-    delay: {
-      default: 300,
-      attribute: 'delay',
-      type: 'number',
-    },
-    closeDelay: {
-      default: 0,
-      attribute: 'close-delay',
-      type: 'number',
-    },
-  })
+export const PopoverTriggerPropsDeclaration = /* @__PURE__ */ defineProps<PopoverTriggerProps>({
+  disabled: {
+    default: false,
+    attribute: 'disabled',
+    type: 'boolean',
+  },
+  openOnHover: {
+    default: false,
+    attribute: 'open-on-hover',
+    type: 'boolean',
+  },
+  delay: {
+    default: 300,
+    attribute: 'delay',
+    type: 'number',
+  },
+  closeDelay: {
+    default: 0,
+    attribute: 'close-delay',
+    type: 'number',
+  },
+})
 
 /**
  * @public

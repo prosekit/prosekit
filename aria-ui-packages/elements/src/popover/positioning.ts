@@ -17,13 +17,7 @@ import {
   type Side,
   type VirtualElement,
 } from '@floating-ui/dom'
-import type {
-  AutoUpdateOptions,
-  Boundary,
-  ElementContext,
-  OffsetOptions,
-  RootBoundary,
-} from '@floating-ui/dom'
+import type { AutoUpdateOptions, Boundary, ElementContext, OffsetOptions, RootBoundary } from '@floating-ui/dom'
 import { getWindow, isElementLike } from '@ocavue/utils'
 
 /**
@@ -109,9 +103,9 @@ export function updatePlacement(
     if (options.hide) {
       const hidden =
         // Whether the floating element is fully clipped
-        pos.middlewareData.hide?.escaped ||
+        pos.middlewareData.hide?.escaped
         // Whether the reference element is fully clipped
-        pos.middlewareData.hide?.referenceHidden
+        || pos.middlewareData.hide?.referenceHidden
 
       floating.style.visibility = hidden ? 'hidden' : 'visible'
     }
@@ -142,8 +136,7 @@ export function updatePlacement(
    * Auto update
    * -----------------------------------------------------------------------------*/
 
-  const autoUpdateOptions =
-    typeof options.autoUpdate === 'boolean' ? undefined : options.autoUpdate
+  const autoUpdateOptions = typeof options.autoUpdate === 'boolean' ? undefined : options.autoUpdate
 
   const cancelAutoUpdate = options.autoUpdate
     ? autoUpdate(reference, floating, update, autoUpdateOptions)

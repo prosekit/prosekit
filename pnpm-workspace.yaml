@@ -2,9 +2,9 @@ packages:
   - website
   - registry
   - packages/*
-  # TODO: remove me 
+  # TODO: remove me
   - aria-ui-packages/*
-  - aria-ui-wensite
+  - aria-ui-website
 
 allowedDeprecatedVersions:
   glob: "10"
@@ -40,16 +40,16 @@ onlyBuiltDependencies:
   - msgpackr-extract
 
 overrides:
-  '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540
-  '@aria-ui/combobox': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/combobox@b9d0540
-  '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-  '@aria-ui/listbox': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540
-  '@aria-ui/menu': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540
-  '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
-  '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540
-  '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
-  '@aria-ui/select': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@b9d0540
-  '@aria-ui/tooltip': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
+  "@aria-ui/collection": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540
+  "@aria-ui/combobox": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/combobox@b9d0540
+  "@aria-ui/core": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
+  "@aria-ui/listbox": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540
+  "@aria-ui/menu": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540
+  "@aria-ui/overlay": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
+  "@aria-ui/popover": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540
+  "@aria-ui/presence": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
+  "@aria-ui/select": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@b9d0540
+  "@aria-ui/tooltip": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

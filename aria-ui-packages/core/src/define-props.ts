@@ -30,9 +30,11 @@ export interface PropDeclaration<T> {
  *
  * @public
  */
-export type PropsDeclaration<Props extends AnyProps> = Readonly<{
-  [K in keyof Props]: PropDeclaration<Props[K]>
-}>
+export type PropsDeclaration<Props extends AnyProps> = Readonly<
+  {
+    [K in keyof Props]: PropDeclaration<Props[K]>
+  }
+>
 
 /**
  * Define a set of properties.

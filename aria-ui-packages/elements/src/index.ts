@@ -1,19 +1,7 @@
-import {
-  PopoverPopupElement,
-  registerPopoverPopupElement,
-} from './generated/elements/popover-popup.gen.ts'
-import {
-  PopoverPositionerElement,
-  registerPopoverPositionerElement,
-} from './generated/elements/popover-positioner.gen.ts'
-import {
-  PopoverRootElement,
-  registerPopoverRootElement,
-} from './generated/elements/popover-root.gen.ts'
-import {
-  PopoverTriggerElement,
-  registerPopoverTriggerElement,
-} from './generated/elements/popover-trigger.gen.ts'
+import { PopoverPopupElement, registerPopoverPopupElement } from './generated/elements/popover-popup.gen.ts'
+import { PopoverPositionerElement, registerPopoverPositionerElement } from './generated/elements/popover-positioner.gen.ts'
+import { PopoverRootElement, registerPopoverRootElement } from './generated/elements/popover-root.gen.ts'
+import { PopoverTriggerElement, registerPopoverTriggerElement } from './generated/elements/popover-trigger.gen.ts'
 
 export {
   PopoverPopupElement,

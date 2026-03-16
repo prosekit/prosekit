@@ -4,18 +4,16 @@ import DefaultOpen from './popover/default-open.html'
 import OpenOnHover from './popover/open-on-hover.html'
 
 interface Props {
-  story: "basic" | "default-open" | "open-on-hover"
+  story: 'basic' | 'default-open' | 'open-on-hover'
 }
 
 const { story } = Astro.props
 ---
 
-
 <script>
-  import { registerElements } from '@aria-ui-v2/elements'
+import { registerElements } from '@aria-ui-v2/elements'
 
-  registerElements()
-
+registerElements()
 </script>
 
 <style is:global>
@@ -31,9 +29,9 @@ const { story } = Astro.props
     opacity: 0;
   }
 </style>
- 
+
 <div class="p-4">
-{story === "basic" && <Basic />}
-{story === "default-open" && <DefaultOpen />}
-{story === "open-on-hover" && <OpenOnHover />}
+  {story === 'basic' && <Basic />}
+  {story === 'default-open' && <DefaultOpen />}
+  {story === 'open-on-hover' && <OpenOnHover />}
 </div>

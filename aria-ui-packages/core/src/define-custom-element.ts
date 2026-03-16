@@ -6,8 +6,7 @@ import { createStore, type Store } from './store.ts'
 /**
  * @internal
  */
-export type HostElementConstructor<Props extends AnyProps> =
-  new () => HostElement & Props
+export type HostElementConstructor<Props extends AnyProps> = new () => HostElement & Props
 
 type SetupFunction<Props extends AnyProps> = (
   host: HostElement,

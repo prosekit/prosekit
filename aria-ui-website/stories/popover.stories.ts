@@ -5,13 +5,13 @@ export default {
 }
 
 export const Basic = {
-  args: { story: "basic" },
+  args: { story: 'basic' },
 }
 
 export const DefaultOpen = {
-  args: { story: "default-open" },
+  args: { story: 'default-open' },
 }
 
 export const OpenOnHover = {
-  args: { story: "open-on-hover" },
+  args: { story: 'open-on-hover' },
 }

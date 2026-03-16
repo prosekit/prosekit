@@ -1,9 +1,6 @@
 import { HTMLElement } from 'server-dom-shim'
 
-import type {
-  ReactiveControllerHost,
-  ReactiveController,
-} from './reactive-controller.ts'
+import type { ReactiveController, ReactiveControllerHost } from './reactive-controller.ts'
 
 export class HostElement extends HTMLElement implements ReactiveControllerHost {
   private _controllers: Set<ReactiveController> | undefined

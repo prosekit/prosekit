@@ -36,6 +36,6 @@ export default defineESLintConfig(
   },
   {
     // TODO: remove me
-    ignores: ['**/*.gen.*'],
+    ignores: ['**/*.gen.*', '**/aria-ui.mjs'],
   },
 )

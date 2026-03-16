@@ -16,8 +16,7 @@ export function useAriaExpanded(
 ): VoidFunction {
   return useEffect(host, () => {
     const ariaExpanded = getAriaExpanded()
-    host.ariaExpanded =
-      ariaExpanded === true ? 'true' : ariaExpanded === false ? 'false' : null
+    host.ariaExpanded = ariaExpanded === true ? 'true' : ariaExpanded === false ? 'false' : null
   })
 }
 

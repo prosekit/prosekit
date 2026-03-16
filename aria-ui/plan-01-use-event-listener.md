@@ -308,6 +308,7 @@ The key behavioral difference is that `keydown` fires on key-down rather than ke
   - [ ] Guard `keydown` handler with `event.isComposing` check for IME
   - [ ] Return combined dispose function
 - [ ] Export `usePress` from `packages/utils/src/index.ts`
+- [ ] Create `packages/utils/src/use-press.test.ts` with tests (see "Testing `usePress`" section below)
 
 ### Phase 3: Migrate consumers
 
@@ -331,5 +332,173 @@ The key behavioral difference is that `keydown` fires on key-down rather than ke
 
 - [ ] Run `pnpm install` to regenerate lockfile
 - [ ] Run `pnpm typecheck` — confirm no type errors
-- [ ] Run `pnpm --filter @aria-ui-v2/elements test` — confirm tests pass
+- [ ] Run `pnpm --filter @aria-ui-v2/utils test` — confirm `usePress` and `useHover` tests pass
+- [ ] Run `pnpm --filter @aria-ui-v2/elements test` — confirm popover tests pass
 - [ ] Verify `@remix-run/interaction` has zero references in the codebase (excluding research/plan docs)
+
+---
+
+## Testing `usePress`
+
+**Create `packages/utils/src/use-press.test.ts`.**
+
+`usePress` depends on `useEventListener`, which depends on `onMount`, which requires a `HostElement` (custom element with reactive controller support). Tests must define real custom elements and append them to the DOM, following the same pattern as `packages/core/src/use-effect.test.ts`.
+
+### Test setup
+
+```ts
+import { getId } from '@ocavue/utils'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
+
+import { defineCustomElement, defineProps, type HostElement } from '@aria-ui-v2/core'
+
+import { usePress } from './use-press.ts'
+
+describe('usePress', () => {
+  beforeEach(() => {
+    document.body.innerHTML = ''
+  })
+
+  function createTestElement(setupFn: (host: HostElement) => void) {
+    const TestElement = defineCustomElement(setupFn, defineProps({}))
+    const tagName = `test-press-${getId()}`
+    customElements.define(tagName, TestElement)
+    const element = document.createElement(tagName) as HostElement
+    document.body.appendChild(element)
+    return element
+  }
+
+  // ... tests below
+})
+```
+
+### Test cases
+
+```ts
+  test('calls handler on click', () => {
+    const handler = vi.fn()
+    createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    const element = document.querySelector('[class]') ?? document.body.lastElementChild!
+    element.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+
+    expect(handler).toHaveBeenCalledTimes(1)
+  })
+
+  test('calls handler on Enter keydown', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+
+    expect(handler).toHaveBeenCalledTimes(1)
+  })
+
+  test('calls handler on Space keydown', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }))
+
+    expect(handler).toHaveBeenCalledTimes(1)
+  })
+
+  test('prevents default on Enter keydown', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true })
+    element.dispatchEvent(event)
+
+    expect(event.defaultPrevented).toBe(true)
+  })
+
+  test('prevents default on Space keydown', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    const event = new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true })
+    element.dispatchEvent(event)
+
+    expect(event.defaultPrevented).toBe(true)
+  })
+
+  test('ignores other keys', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }))
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true }))
+
+    expect(handler).not.toHaveBeenCalled()
+  })
+
+  test('ignores keydown during IME composition', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    element.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true }),
+    )
+
+    expect(handler).not.toHaveBeenCalled()
+  })
+
+  test('does not fire after element is disconnected', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    element.remove()
+
+    element.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+
+    expect(handler).not.toHaveBeenCalled()
+  })
+
+  test('re-attaches listeners on reconnection', () => {
+    const handler = vi.fn()
+    const element = createTestElement((host) => {
+      usePress(host, handler)
+    })
+
+    element.remove()
+    document.body.appendChild(element)
+
+    element.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+
+    expect(handler).toHaveBeenCalledTimes(1)
+  })
+
+  test('dispose stops all listeners', () => {
+    const handler = vi.fn()
+    let dispose: VoidFunction
+
+    const element = createTestElement((host) => {
+      dispose = usePress(host, handler)
+    })
+
+    dispose!()
+
+    element.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    element.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+
+    expect(handler).not.toHaveBeenCalled()
+  })

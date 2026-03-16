@@ -3,7 +3,7 @@ import {
   HostElement,
   registerCustomElement,
   type Store,
-} from '@aria-ui/core'
+} from '@aria-ui-v2/core'
 
 import {
   PopoverPopupPropsDeclaration,

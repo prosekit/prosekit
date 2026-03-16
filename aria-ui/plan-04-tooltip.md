@@ -14,22 +14,22 @@ Reference: [base-ui Tooltip](https://base-ui.com/react/components/tooltip) (adap
 
 ## Code Sharing Strategy
 
-Tooltip and Popover share significant structure. Instead of duplicating, extract shared logic into `packages/elements/src/shared/`:
+Tooltip and Popover share significant structure. Extract shared logic into `packages/elements/src/overlay/`:
 
 | Shared module | What it provides | Used by |
 |---|---|---|
-| `shared/overlay-store.ts` | `OverlayStore` class (anchorElement, popupId, positionerId, getOpen, emitOpenChange) | Popover store, Tooltip store |
-| `shared/open-change-event.ts` | `OpenChangeEvent` class | Popover root, Tooltip root |
-| `shared/positioning.ts` | `updatePlacement()` (moved from `popover/positioning.ts`) | Popover positioner, Tooltip positioner |
-| `shared/overlay-positioner.ts` | `OverlayPositionerProps` interface, `OverlayPositionerPropsDeclaration`, `setupOverlayPositioner()` | Popover positioner, Tooltip positioner |
-| `shared/overlay-popup.ts` | `setupOverlayPopup()` with role parameter | Popover popup, Tooltip popup |
+| `overlay/overlay-store.ts` | `OverlayStore` class | Popover store, Tooltip store |
+| `overlay/open-change-event.ts` | `OpenChangeEvent` class | Popover root, Tooltip root |
+| `overlay/positioning.ts` | `updatePlacement()` (moved from `popover/`) | Popover positioner, Tooltip positioner |
+| `overlay/overlay-root.ts` | `OverlayRootProps`, `OverlayRootPropsDeclaration`, `setupOverlayRoot()` | Popover root, Tooltip root |
+| `overlay/overlay-positioner.ts` | `OverlayPositionerProps`, `OverlayPositionerPropsDeclaration`, `setupOverlayPositioner()` | Popover positioner, Tooltip positioner |
+| `overlay/overlay-popup.ts` | `setupOverlayPopup()` with role parameter | Popover popup, Tooltip popup |
+
+Additionally, `createDelayedToggle` is added to `@aria-ui-v2/utils` to share timer logic between `useHover` and the tooltip trigger.
 
 The parser uses `type.getProperties()` which resolves inherited properties, so `interface TooltipPositionerProps extends OverlayPositionerProps {}` works correctly with code generation.
 
-update: 不要放到 shared/ 下面，放到 overlay/ 下面
-
 **Not shared** (meaningfully different):
-- **Root**: Tooltip adds `tooltipGroup.notifyClosed()`, no `modal` prop
 - **Trigger**: Popover = click-based + opt-in hover; Tooltip = always hover/focus + group-aware delay + Escape key
 
 ## Component Architecture
@@ -47,9 +47,116 @@ update: 不要放到 shared/ 下面，放到 overlay/ 下面
 </aria-ui-tooltip-root>
 ```
 
-## Phase 1: Extract shared modules [ ]
+## Phase 1: Add `createDelayedToggle` to utils [ ]
 
-### 1.1 Create `packages/elements/src/shared/overlay-store.ts`
+### 1.1 Create `packages/utils/src/delayed-toggle.ts`
+
+Extract the timer scheduling logic shared by `useHover` and the tooltip trigger into a reusable utility.
+
+```typescript
+/**
+ * @public
+ */
+export interface DelayedToggle {
+  open(delay: number): void
+  close(delay: number): void
+  dispose(): void
+}
+
+/**
+ * @public
+ */
+export function createDelayedToggle(
+  onOpen: () => void,
+  onClose: () => void,
+): DelayedToggle {
+  let openTimeout: number | undefined
+  let closeTimeout: number | undefined
+
+  function cancelOpen() {
+    if (openTimeout !== undefined) {
+      clearTimeout(openTimeout)
+      openTimeout = undefined
+    }
+  }
+
+  function cancelClose() {
+    if (closeTimeout !== undefined) {
+      clearTimeout(closeTimeout)
+      closeTimeout = undefined
+    }
+  }
+
+  return {
+    open(delay: number) {
+      cancelClose()
+      if (delay > 0) {
+        openTimeout = window.setTimeout(() => {
+          openTimeout = undefined
+          onOpen()
+        }, delay)
+      } else {
+        onOpen()
+      }
+    },
+    close(delay: number) {
+      cancelOpen()
+      if (delay > 0) {
+        closeTimeout = window.setTimeout(() => {
+          closeTimeout = undefined
+          onClose()
+        }, delay)
+      } else {
+        onClose()
+      }
+    },
+    dispose() {
+      cancelOpen()
+      cancelClose()
+    },
+  }
+}
+```
+
+### 1.2 Refactor `packages/utils/src/use-hover.ts` to use `createDelayedToggle`
+
+```typescript
+import { createDelayedToggle, type UseHoverOptions } from './delayed-toggle.ts'
+
+export function useHover(
+  target: HTMLElement,
+  options: UseHoverOptions,
+): VoidFunction {
+  const { openDelay = 0, closeDelay = 0, onOpen, onClose } = options
+
+  const toggle = createDelayedToggle(
+    onOpen ?? (() => {}),
+    onClose ?? (() => {}),
+  )
+
+  const handleMouseEnter = () => toggle.open(openDelay)
+  const handleMouseLeave = () => toggle.close(closeDelay)
+
+  target.addEventListener('mouseenter', handleMouseEnter)
+  target.addEventListener('mouseleave', handleMouseLeave)
+
+  return () => {
+    target.removeEventListener('mouseenter', handleMouseEnter)
+    target.removeEventListener('mouseleave', handleMouseLeave)
+    toggle.dispose()
+  }
+}
+```
+
+### 1.3 Export from `packages/utils/src/index.ts`
+
+```typescript
+export { createDelayedToggle, type DelayedToggle } from './delayed-toggle.ts'
+```
+
+## Phase 2: Extract overlay shared modules [ ]
+
+### 2.1 Create `packages/elements/src/overlay/overlay-store.ts`
 
 Extract `PopoverStore` → `OverlayStore`. The class is identical for both popover and tooltip; only the context key differs.
 
@@ -89,9 +196,7 @@ export class OverlayStore {
 }
 ```
 
-### 1.2 Create `packages/elements/src/shared/open-change-event.ts`
-
-Extract `OpenChangeEvent` from `popover-root.ts` to shared.
+### 2.2 Create `packages/elements/src/overlay/open-change-event.ts`
 
 ```typescript
 /**
@@ -111,11 +216,106 @@ export class OpenChangeEvent extends Event {
 }
 ```
 
-### 1.3 Move `packages/elements/src/popover/positioning.ts` → `packages/elements/src/shared/positioning.ts`
+### 2.3 Move `packages/elements/src/popover/positioning.ts` → `packages/elements/src/overlay/positioning.ts`
 
 No content changes. Just move the file.
 
-### 1.4 Create `packages/elements/src/shared/overlay-positioner.ts`
+### 2.4 Create `packages/elements/src/overlay/overlay-root.ts`
+
+Extract the shared root setup logic. Both popover and tooltip roots use the same pattern: compute open state, emit open change events, create store, provide context. Parameterized by context and an optional `onBeforeOpenChange` hook (used by tooltip for group notification).
+
+```typescript
+import type { Context, HostElement, PropsDeclaration } from '@aria-ui-v2/core'
+import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
+import { useAriaDisabled } from '@aria-ui-v2/utils'
+
+import { OpenChangeEvent } from './open-change-event.ts'
+import { OverlayStore } from './overlay-store.ts'
+
+/**
+ * @public
+ */
+export interface OverlayRootProps {
+  /**
+   * Whether the overlay is initially open.
+   * @default false
+   */
+  defaultOpen: boolean
+
+  /**
+   * Whether the overlay is currently open.
+   * @default null
+   */
+  open: boolean | null
+
+  /**
+   * Whether the component should ignore user interaction.
+   * @default false
+   */
+  disabled: boolean
+}
+
+/**
+ * @internal
+ */
+export const OverlayRootPropsDeclaration: PropsDeclaration<OverlayRootProps> = defineProps<OverlayRootProps>({
+  defaultOpen: {
+    default: false,
+    attribute: 'default-open',
+    type: 'boolean',
+  },
+  open: {
+    default: null,
+    attribute: 'open',
+    type: 'json',
+  },
+  disabled: {
+    default: false,
+    attribute: 'disabled',
+    type: 'boolean',
+  },
+})
+
+/**
+ * @internal
+ */
+export interface SetupOverlayRootOptions {
+  onBeforeOpenChange?: (open: boolean) => void
+}
+
+/**
+ * @internal
+ */
+export function setupOverlayRoot(
+  host: HostElement,
+  props: Store<OverlayRootProps>,
+  storeContext: Context<OverlayStore>,
+  options?: SetupOverlayRootOptions,
+): void {
+  const getOpen = computed(() => {
+    const open = props.open.get()
+    const defaultOpen = props.defaultOpen.get()
+    return open ?? defaultOpen
+  })
+
+  const getDisabled = computed(() => props.disabled.get())
+
+  const emitOpenChange = (open: boolean) => {
+    if (getDisabled()) return
+    options?.onBeforeOpenChange?.(open)
+    const event = new OpenChangeEvent(open)
+    host.dispatchEvent(event)
+    if (event.defaultPrevented) return
+    props.open.set(open)
+  }
+
+  const store = new OverlayStore(getOpen, emitOpenChange)
+  useAriaDisabled(host, getDisabled)
+  storeContext.provide(host, store)
+}
+```
+
+### 2.5 Create `packages/elements/src/overlay/overlay-positioner.ts`
 
 Extract the positioner props interface, declaration, and setup logic. The setup function takes a `Context<OverlayStore>` parameter so it works for both popover and tooltip.
 
@@ -391,7 +591,7 @@ export function setupOverlayPositioner(
 }
 ```
 
-### 1.5 Create `packages/elements/src/shared/overlay-popup.ts`
+### 2.6 Create `packages/elements/src/overlay/overlay-popup.ts`
 
 Extract shared popup setup logic. Takes context and role as parameters.
 
@@ -436,17 +636,17 @@ export function setupOverlayPopup(
 }
 ```
 
-## Phase 2: Refactor popover to use shared modules [ ]
+## Phase 3: Refactor popover to use overlay modules [ ]
 
 Update existing popover files to use the shared code. No behavioral changes — this is a pure refactor.
 
-### 2.1 Update `packages/elements/src/popover/popover-store.ts`
+### 3.1 Update `packages/elements/src/popover/popover-store.ts`
 
 Replace `PopoverStore` class with re-exported `OverlayStore`:
 
 ```typescript
 import { createContext } from '@aria-ui-v2/core'
-import { OverlayStore } from '../shared/overlay-store.ts'
+import { OverlayStore } from '../overlay/overlay-store.ts'
 
 export { OverlayStore as PopoverStore }
 
@@ -458,46 +658,86 @@ export const PopoverStoreContext = createContext<OverlayStore>(
 )
 ```
 
-### 2.2 Update `packages/elements/src/popover/popover-root.ts`
+### 3.2 Update `packages/elements/src/popover/popover-root.ts`
 
-Import `OpenChangeEvent` from shared instead of defining locally. Import `OverlayStore` instead of `PopoverStore`:
+Thin wrapper calling `setupOverlayRoot`. `PopoverRootProps` extends `OverlayRootProps` with `modal`.
 
 ```typescript
-import type { HostElement, PropsDeclaration } from '@aria-ui-v2/core'
-import { computed, defineCustomElement, defineProps, registerCustomElement, type Store } from '@aria-ui-v2/core'
-import { useAriaDisabled } from '@aria-ui-v2/utils'
+import type { HostElement } from '@aria-ui-v2/core'
+import { defineCustomElement, defineProps, registerCustomElement, type Store } from '@aria-ui-v2/core'
 
-import { OpenChangeEvent } from '../shared/open-change-event.ts'
-import { OverlayStore } from '../shared/overlay-store.ts'
+import { OpenChangeEvent } from '../overlay/open-change-event.ts'
+import { OverlayRootPropsDeclaration, setupOverlayRoot, type OverlayRootProps } from '../overlay/overlay-root.ts'
 import { PopoverStoreContext } from './popover-store.ts'
 
-// Re-export for public API
 export { OpenChangeEvent }
 
-// ... PopoverRootProps interface unchanged ...
-// ... PopoverRootPropsDeclaration unchanged ...
-// ... PopoverRootEvents unchanged ...
+/**
+ * @public
+ */
+export interface PopoverRootProps extends OverlayRootProps {
+  /**
+   * Whether the popover should be modal.
+   * When true, the popover will trap focus and prevent interaction with the rest of the page.
+   *
+   * @default false
+   */
+  modal: boolean
+}
 
+/**
+ * @internal
+ */
+export const PopoverRootPropsDeclaration = defineProps<PopoverRootProps>({
+  ...OverlayRootPropsDeclaration,
+  modal: {
+    default: false,
+    attribute: 'modal',
+    type: 'boolean',
+  },
+})
+
+/**
+ * @public
+ */
+export interface PopoverRootEvents {
+  openChange: OpenChangeEvent
+}
+
+/**
+ * @internal
+ */
 export function setupPopoverRoot(
   host: HostElement,
   props: Store<PopoverRootProps>,
 ) {
-  // ... same logic, just use OverlayStore instead of PopoverStore ...
-  const store = new OverlayStore(getOpen, emitOpenChange)
-  // ... rest unchanged ...
+  setupOverlayRoot(host, props, PopoverStoreContext)
 }
 
-// ... Element class and register function unchanged ...
+/**
+ * @public
+ */
+export class PopoverRootElement extends defineCustomElement(
+  setupPopoverRoot,
+  PopoverRootPropsDeclaration,
+) {}
+
+/**
+ * @internal
+ */
+export function registerPopoverRootElement(): void {
+  registerCustomElement('aria-ui-popover-root', PopoverRootElement)
+}
 ```
 
-### 2.3 Update `packages/elements/src/popover/popover-popup.ts`
+### 3.3 Update `packages/elements/src/popover/popover-popup.ts`
 
 Replace inline setup with shared `setupOverlayPopup`:
 
 ```typescript
 import type { HostElement, Store } from '@aria-ui-v2/core'
 import { defineCustomElement, registerCustomElement } from '@aria-ui-v2/core'
-import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '../shared/overlay-popup.ts'
+import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '../overlay/overlay-popup.ts'
 import { PopoverStoreContext } from './popover-store.ts'
 
 export type PopoverPopupProps = OverlayPopupProps
@@ -529,14 +769,14 @@ export function registerPopoverPopupElement(): void {
 }
 ```
 
-### 2.4 Update `packages/elements/src/popover/popover-positioner.ts`
+### 3.4 Update `packages/elements/src/popover/popover-positioner.ts`
 
-Replace ~300 lines of props/setup with thin wrapper around shared:
+Thin wrapper around shared positioner:
 
 ```typescript
 import type { HostElement } from '@aria-ui-v2/core'
 import { defineCustomElement, registerCustomElement, type Store } from '@aria-ui-v2/core'
-import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '../shared/overlay-positioner.ts'
+import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '../overlay/overlay-positioner.ts'
 import { PopoverStoreContext } from './popover-store.ts'
 
 /**
@@ -575,63 +815,56 @@ export function registerPopoverPositionerElement(): void {
 }
 ```
 
-### 2.5 Update `packages/elements/src/popover/popover-trigger.ts`
+### 3.5 Update `packages/elements/src/popover/popover-trigger.ts`
 
-Update `PopoverStore` import to use re-exported name:
+Simplify `getDisabled`: use `props.disabled.get` directly instead of wrapping in `computed()`.
 
 ```typescript
 // Before
-import { PopoverStoreContext } from './popover-store.ts'
-// After (same — the re-export in popover-store.ts handles the type)
-import { PopoverStoreContext } from './popover-store.ts'
+const getDisabled = computed<boolean>(() => props.disabled.get())
+
+// After
+const getDisabled = props.disabled.get
 ```
 
-No changes needed since the `PopoverStore` type is only used via `PopoverStoreContext.consume()` which returns `() => OverlayStore | undefined`.
+### 3.6 Delete `packages/elements/src/popover/positioning.ts`
 
-### 2.6 Delete `packages/elements/src/popover/positioning.ts`
+File has been moved to `overlay/positioning.ts` in Phase 2.3.
 
-File has been moved to `shared/positioning.ts` in Phase 1.3.
-
-### 2.7 Verify popover still works
+### 3.7 Verify popover still works
 
 ```bash
 pnpm --filter @aria-ui-v2/elements typecheck
 pnpm --filter @aria-ui-v2/elements test
 ```
 
-## Phase 3: Tooltip-specific code [ ]
+## Phase 4: Tooltip-specific code [ ]
 
-### 3.1 Create `packages/elements/src/tooltip/tooltip-group.ts`
+### 4.1 Create `packages/elements/src/tooltip/tooltip-group.ts`
 
-Module-level singleton that tracks when tooltips were last closed, enabling instant open for adjacent tooltips.
+Module-level variables (no class needed — only one instance exists). Tracks when tooltips were last closed for group delay sharing.
 
 ```typescript
 const TOOLTIP_GROUP_TIMEOUT = 400
 
-class TooltipGroupState {
-  private lastCloseTimestamp = 0
+let lastCloseTimestamp = 0
 
-  notifyClosed(): void {
-    this.lastCloseTimestamp = Date.now()
-  }
-
-  shouldSkipDelay(): boolean {
-    return Date.now() - this.lastCloseTimestamp < TOOLTIP_GROUP_TIMEOUT
-  }
+export function notifyTooltipClosed(): void {
+  lastCloseTimestamp = Date.now()
 }
 
-// update：你这个东西就一个 instance，没有必要做成一个 class，直接使用 local variable 就好了。
-
-export const tooltipGroup = new TooltipGroupState()
+export function shouldSkipOpenDelay(): boolean {
+  return Date.now() - lastCloseTimestamp < TOOLTIP_GROUP_TIMEOUT
+}
 ```
 
-### 3.2 Create `packages/elements/src/tooltip/tooltip-store.ts`
+### 4.2 Create `packages/elements/src/tooltip/tooltip-store.ts`
 
 Just a context definition — the store class is shared.
 
 ```typescript
 import { createContext } from '@aria-ui-v2/core'
-import type { OverlayStore } from '../shared/overlay-store.ts'
+import type { OverlayStore } from '../overlay/overlay-store.ts'
 
 /**
  * @internal
@@ -641,18 +874,17 @@ export const TooltipStoreContext = createContext<OverlayStore>(
 )
 ```
 
-### 3.3 Create `packages/elements/src/tooltip/tooltip-root.ts`
+### 4.3 Create `packages/elements/src/tooltip/tooltip-root.ts`
 
-Similar to popover root but without `modal` and with tooltip group notification on close.
+Thin wrapper calling `setupOverlayRoot` with `onBeforeOpenChange` hook for group notification.
 
 ```typescript
-import type { HostElement, PropsDeclaration } from '@aria-ui-v2/core'
-import { computed, defineCustomElement, defineProps, registerCustomElement, type Store } from '@aria-ui-v2/core'
-import { useAriaDisabled } from '@aria-ui-v2/utils'
+import type { HostElement } from '@aria-ui-v2/core'
+import { defineCustomElement, registerCustomElement, type Store } from '@aria-ui-v2/core'
 
-import { OpenChangeEvent } from '../shared/open-change-event.ts'
-import { OverlayStore } from '../shared/overlay-store.ts'
-import { tooltipGroup } from './tooltip-group.ts'
+import { OpenChangeEvent } from '../overlay/open-change-event.ts'
+import { OverlayRootPropsDeclaration, setupOverlayRoot, type OverlayRootProps } from '../overlay/overlay-root.ts'
+import { notifyTooltipClosed } from './tooltip-group.ts'
 import { TooltipStoreContext } from './tooltip-store.ts'
 
 export { OpenChangeEvent }
@@ -660,46 +892,12 @@ export { OpenChangeEvent }
 /**
  * @public
  */
-export interface TooltipRootProps {
-  /**
-   * Whether the tooltip is initially open.
-   * @default false
-   */
-  defaultOpen: boolean
-
-  /**
-   * Whether the tooltip is currently open.
-   * @default null
-   */
-  open: boolean | null
-
-  /**
-   * Whether the component should ignore user interaction.
-   * @default false
-   */
-  disabled: boolean
-}
+export interface TooltipRootProps extends OverlayRootProps {}
 
 /**
  * @internal
  */
-export const TooltipRootPropsDeclaration: PropsDeclaration<TooltipRootProps> = defineProps<TooltipRootProps>({
-  defaultOpen: {
-    default: false,
-    attribute: 'default-open',
-    type: 'boolean',
-  },
-  open: {
-    default: null,
-    attribute: 'open',
-    type: 'json',
-  },
-  disabled: {
-    default: false,
-    attribute: 'disabled',
-    type: 'boolean',
-  },
-})
+export const TooltipRootPropsDeclaration = OverlayRootPropsDeclaration
 
 /**
  * @public
@@ -708,7 +906,6 @@ export interface TooltipRootEvents {
   openChange: OpenChangeEvent
 }
 
-// update: 这个逻辑不是和 setupPopoverRoot 几乎一毛一样么？能不能复用/抽象/封装
 /**
  * @internal
  */
@@ -716,26 +913,11 @@ export function setupTooltipRoot(
   host: HostElement,
   props: Store<TooltipRootProps>,
 ) {
-  const getOpen = computed(() => {
-    const open = props.open.get()
-    const defaultOpen = props.defaultOpen.get()
-    return open ?? defaultOpen
+  setupOverlayRoot(host, props, TooltipStoreContext, {
+    onBeforeOpenChange: (open) => {
+      if (!open) notifyTooltipClosed()
+    },
   })
-
-  const getDisabled = computed(() => props.disabled.get())
-
-  const emitOpenChange = (open: boolean) => {
-    if (getDisabled()) return
-    if (!open) tooltipGroup.notifyClosed()
-    const event = new OpenChangeEvent(open)
-    host.dispatchEvent(event)
-    if (event.defaultPrevented) return
-    props.open.set(open)
-  }
-
-  const store = new OverlayStore(getOpen, emitOpenChange)
-  useAriaDisabled(host, getDisabled)
-  TooltipStoreContext.provide(host, store)
 }
 
 /**
@@ -754,16 +936,16 @@ export function registerTooltipRootElement(): void {
 }
 ```
 
-### 3.4 Create `packages/elements/src/tooltip/tooltip-trigger.ts`
+### 4.4 Create `packages/elements/src/tooltip/tooltip-trigger.ts`
 
-Unique to tooltip — hover/focus-based with group-aware delay and Escape key support.
+Unique to tooltip — hover/focus-based with group-aware delay and Escape key support. Uses `createDelayedToggle` from utils for timer management.
 
 ```typescript
 import type { HostElement } from '@aria-ui-v2/core'
 import { computed, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
-import { useAriaDisabled } from '@aria-ui-v2/utils'
+import { createDelayedToggle, useAriaDisabled } from '@aria-ui-v2/utils'
 
-import { tooltipGroup } from './tooltip-group.ts'
+import { shouldSkipOpenDelay } from './tooltip-group.ts'
 import { TooltipStoreContext } from './tooltip-store.ts'
 
 /**
@@ -817,21 +999,17 @@ export function setupTooltipTrigger(
   host: HostElement,
   props: Store<TooltipTriggerProps>,
 ) {
-  // update: getDisabled = props.disabled.get
-  // 更简单，也同步更新 setupPopoverTrigger
-  const getDisabled = computed<boolean>(() => props.disabled.get())
+  const getDisabled = props.disabled.get
   const getStore = TooltipStoreContext.consume(host)
   const getOpen = computed(() => getStore()?.getOpen())
   const getPopupId = computed(() => getStore()?.getPopupId())
 
-  // Register trigger as anchor element
   useEffect(host, () => {
     const store = getStore()
     if (!store) return
     store.anchorElement.set(host)
   })
 
-  // Set aria-describedby when open (tooltip pattern, not aria-expanded)
   useEffect(host, () => {
     const open = getOpen()
     const popupId = getPopupId()
@@ -844,8 +1022,6 @@ export function setupTooltipTrigger(
 
   useAriaDisabled(host, getDisabled)
 
-  // Hover, focus, and keyboard interactions
-  // 能不能复用已有的 useHover？做更好的抽象和封装，也许需要在 utils 包加点东西
   useEffect(host, () => {
     if (getDisabled()) return
     const store = getStore()
@@ -856,76 +1032,35 @@ export function setupTooltipTrigger(
 
     let isHovered = false
     let isFocused = false
-    let openTimeout: number | undefined
-    let closeTimeout: number | undefined
 
-    function cancelOpen() {
-      if (openTimeout !== undefined) {
-        clearTimeout(openTimeout)
-        openTimeout = undefined
-      }
-    }
-
-    function cancelClose() {
-      if (closeTimeout !== undefined) {
-        clearTimeout(closeTimeout)
-        closeTimeout = undefined
-      }
-    }
-
-    function scheduleOpen() {
-      cancelClose()
-      if (store.getOpen()) return
-
-      const delay = tooltipGroup.shouldSkipDelay() ? 0 : openDelay
-      if (delay > 0) {
-        openTimeout = window.setTimeout(() => {
-          openTimeout = undefined
-          store.emitOpenChange(true)
-        }, delay)
-      } else {
-        store.emitOpenChange(true)
-      }
-    }
-
-    function scheduleClose() {
-      cancelOpen()
-      if (!store.getOpen()) return
-
-      if (closeDelay > 0) {
-        closeTimeout = window.setTimeout(() => {
-          closeTimeout = undefined
-          store.emitOpenChange(false)
-        }, closeDelay)
-      } else {
-        store.emitOpenChange(false)
-      }
-    }
+    const toggle = createDelayedToggle(
+      () => store.emitOpenChange(true),
+      () => store.emitOpenChange(false),
+    )
 
     const onMouseEnter = () => {
       isHovered = true
-      scheduleOpen()
+      toggle.open(shouldSkipOpenDelay() ? 0 : openDelay)
     }
 
     const onMouseLeave = () => {
       isHovered = false
-      if (!isFocused) scheduleClose()
+      if (!isFocused) toggle.close(closeDelay)
     }
 
     const onFocusIn = () => {
       isFocused = true
-      scheduleOpen()
+      toggle.open(shouldSkipOpenDelay() ? 0 : openDelay)
     }
 
     const onFocusOut = () => {
       isFocused = false
-      if (!isHovered) scheduleClose()
+      if (!isHovered) toggle.close(closeDelay)
     }
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && store.getOpen()) {
-        cancelOpen()
-        cancelClose()
+        toggle.dispose()
         store.emitOpenChange(false)
       }
     }
@@ -942,8 +1077,7 @@ export function setupTooltipTrigger(
       host.removeEventListener('focusin', onFocusIn)
       host.removeEventListener('focusout', onFocusOut)
       host.removeEventListener('keydown', onKeyDown)
-      cancelOpen()
-      cancelClose()
+      toggle.dispose()
     }
   })
 }
@@ -964,14 +1098,14 @@ export function registerTooltipTriggerElement(): void {
 }
 ```
 
-### 3.5 Create `packages/elements/src/tooltip/tooltip-popup.ts`
+### 4.5 Create `packages/elements/src/tooltip/tooltip-popup.ts`
 
 Thin wrapper — calls shared `setupOverlayPopup` with `'tooltip'` role.
 
 ```typescript
 import type { HostElement, Store } from '@aria-ui-v2/core'
 import { defineCustomElement, registerCustomElement } from '@aria-ui-v2/core'
-import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '../shared/overlay-popup.ts'
+import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '../overlay/overlay-popup.ts'
 import { TooltipStoreContext } from './tooltip-store.ts'
 
 export type TooltipPopupProps = OverlayPopupProps
@@ -1003,14 +1137,14 @@ export function registerTooltipPopupElement(): void {
 }
 ```
 
-### 3.6 Create `packages/elements/src/tooltip/tooltip-positioner.ts`
+### 4.6 Create `packages/elements/src/tooltip/tooltip-positioner.ts`
 
 Thin wrapper — inherits props from `OverlayPositionerProps`, calls shared `setupOverlayPositioner`.
 
 ```typescript
 import type { HostElement } from '@aria-ui-v2/core'
 import { defineCustomElement, registerCustomElement, type Store } from '@aria-ui-v2/core'
-import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '../shared/overlay-positioner.ts'
+import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '../overlay/overlay-positioner.ts'
 import { TooltipStoreContext } from './tooltip-store.ts'
 
 /**
@@ -1049,9 +1183,9 @@ export function registerTooltipPositionerElement(): void {
 }
 ```
 
-## Phase 4: Barrel Exports & Registration [ ]
+## Phase 5: Barrel Exports & Registration [ ]
 
-### 4.1 Create `packages/elements/src/tooltip/index.ts`
+### 5.1 Create `packages/elements/src/tooltip/index.ts`
 
 ```typescript
 export {
@@ -1089,13 +1223,13 @@ export {
 } from './tooltip-positioner.ts'
 ```
 
-### 4.2 Update `packages/elements/src/index.ts`
+### 5.2 Update `packages/elements/src/index.ts`
 
 Add tooltip imports, exports, registration, and `HTMLElementTagNameMap` entries alongside popover.
 
-## Phase 5: Code Generation & Build [ ]
+## Phase 6: Code Generation & Build [ ]
 
-### 5.1 Update `packages/elements/package.json`
+### 6.1 Update `packages/elements/package.json`
 
 Add `./tooltip` export and update `build:gen` to run for both popover and tooltip:
 
@@ -1114,85 +1248,24 @@ Add `./tooltip` export and update `build:gen` to run for both popover and toolti
 }
 ```
 
-### 5.2 Run code generation
+### 6.2 Run code generation
 
 ```bash
 pnpm --filter @aria-ui-v2/elements run build:gen
 ```
 
-## Phase 6: Tests [ ]
+## Phase 7: Tests [ ]
 
-### 6.1 Create `packages/elements/src/tooltip/tooltip.test.ts`
+### 7.1 Create `packages/elements/src/tooltip/tooltip.test.ts`
 
-Uses same environment/feature-detection pattern as popover tests.
+No environment variations — the popover-level environment tests already cover different Popover API/TogglePopoverSource combinations. Tooltip tests run in the default environment only.
 
 ```typescript
-import { FeatureDetectionInternals } from '@aria-ui-v2/utils'
 import { html, render } from 'lit-html'
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
+import { beforeEach, describe, expect, test } from 'vitest'
 import { page } from 'vitest/browser'
 
 import { registerElements } from '../index.ts'
-
-// update： 不同 environment 的情况已经在 popover 里测试过了，tooltip 不需要测试 不同 environment 的情况
-// ... same environment setup as popover.test.ts ...
-
-function runTests() {
-  describe('Basic Functionality', () => {
-    test('renders tooltip elements', () => { /* ... */ })
-    test('popup is hidden by default', () => { /* ... */ })
-    test('popup shows with defaultOpen=true', () => { /* ... */ })
-  })
-
-  describe('Hover Interactions', () => {
-    test('hover opens tooltip (with zero delay)', async () => { /* ... */ })
-    test('hover opens tooltip with delay', async () => {
-      // Uses vi.useFakeTimers() to test delay behavior
-    })
-    test('mouse leave closes tooltip', async () => { /* ... */ })
-    test('disabled trigger does not open tooltip', async () => { /* ... */ })
-  })
-
-  describe('Focus Interactions', () => {
-    test('focus opens tooltip', async () => { /* ... */ })
-    test('blur closes tooltip', async () => { /* ... */ })
-    test('tooltip stays open when hover ends but focus remains', async () => {
-      // Hover + focus both active → mouse leaves → still open (focus holds)
-      // Focus also leaves → closes
-    })
-  })
-
-  describe('Keyboard Interactions', () => {
-    test('Escape key closes tooltip', async () => { /* ... */ })
-  })
-
-  describe('Tooltip Group (Shared Delay)', () => {
-    test('second tooltip opens instantly after first closes within group timeout', async () => {
-      // Open tooltip A via controlled prop → close it → hover trigger B
-      // → tooltip B opens instantly (no 600ms delay)
-    })
-  })
-
-  describe('Controlled Mode', () => {
-    test('controlled open prop overrides internal state', () => { /* ... */ })
-  })
-
-  describe('Events', () => {
-    test('emits openChange event when opened', async () => { /* ... */ })
-  })
-
-  describe('Accessibility', () => {
-    test('popup has role tooltip', () => { /* ... */ })
-    test('trigger has aria-describedby when tooltip is open', async () => { /* ... */ })
-    test('trigger does not have aria-describedby when tooltip is closed', () => { /* ... */ })
-    test('disabled elements have aria-disabled', () => { /* ... */ })
-  })
-
-  describe('Positioning', () => {
-    test('positioner is positioned absolutely by default', async () => { /* ... */ })
-    test('positioner respects strategy prop', async () => { /* ... */ })
-  })
-}
 
 describe('Tooltip', () => {
   beforeEach(() => {
@@ -1200,8 +1273,455 @@ describe('Tooltip', () => {
     registerElements()
   })
 
-  const environments = collectEnvironments()
-  forEachEnvironment(environments, runTests)
+  describe('Basic Functionality', () => {
+    test('renders tooltip elements', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      expect(page.getByText('Trigger')).toBeInTheDocument()
+      expect(page.getByText('Tooltip content')).toBeInTheDocument()
+    })
+
+    test('popup is hidden by default', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      expect(page.getByText('Tooltip content')).not.toBeVisible()
+    })
+
+    test('popup shows with defaultOpen=true', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .defaultOpen=${true}>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+      expect(popup.style.display).toBe('')
+    })
+  })
+
+  describe('Hover Interactions', () => {
+    test('hover opens tooltip (with zero delay)', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const trigger = page.getByText('Trigger')
+      const popup = page.getByText('Tooltip content')
+
+      expect(popup).not.toBeVisible()
+      await trigger.hover()
+      expect(popup).toBeVisible()
+    })
+
+    test('mouse leave closes tooltip', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .defaultOpen=${true}>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const triggerEl = container.querySelector('aria-ui-tooltip-trigger')!
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+
+      expect(popup.style.display).toBe('')
+      triggerEl.dispatchEvent(new MouseEvent('mouseleave'))
+      expect(popup).not.toBeVisible()
+    })
+
+    test('disabled trigger does not open tooltip', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .disabled=${true} .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      await page.getByText('Trigger').hover()
+      expect(page.getByText('Tooltip content')).not.toBeVisible()
+    })
+  })
+
+  describe('Focus Interactions', () => {
+    test('focus opens tooltip', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const triggerEl = container.querySelector('aria-ui-tooltip-trigger')!
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+
+      triggerEl.dispatchEvent(new FocusEvent('focusin'))
+      expect(popup).toBeVisible()
+    })
+
+    test('blur closes tooltip', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .defaultOpen=${true}>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const triggerEl = container.querySelector('aria-ui-tooltip-trigger')!
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+
+      expect(popup.style.display).toBe('')
+      triggerEl.dispatchEvent(new FocusEvent('focusout'))
+      expect(popup).not.toBeVisible()
+    })
+
+    test('tooltip stays open when hover ends but focus remains', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const triggerEl = container.querySelector('aria-ui-tooltip-trigger')!
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+
+      triggerEl.dispatchEvent(new MouseEvent('mouseenter'))
+      triggerEl.dispatchEvent(new FocusEvent('focusin'))
+      expect(popup).toBeVisible()
+
+      triggerEl.dispatchEvent(new MouseEvent('mouseleave'))
+      expect(popup).toBeVisible()
+
+      triggerEl.dispatchEvent(new FocusEvent('focusout'))
+      expect(popup).not.toBeVisible()
+    })
+  })
+
+  describe('Keyboard Interactions', () => {
+    test('Escape key closes tooltip', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .defaultOpen=${true}>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const triggerEl = container.querySelector('aria-ui-tooltip-trigger')!
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+
+      expect(popup.style.display).toBe('')
+      triggerEl.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }))
+      expect(popup).not.toBeVisible()
+    })
+  })
+
+  describe('Tooltip Group (Shared Delay)', () => {
+    test('second tooltip opens instantly after first closes within group timeout', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .openDelay=${600} data-testid="trigger-a">Trigger A</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip A</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .openDelay=${600} data-testid="trigger-b">Trigger B</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup data-testid="popup-b">Tooltip B</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const triggerB = container.querySelector('[data-testid="trigger-b"]')!
+      const popupB = container.querySelector('[data-testid="popup-b"]')!
+
+      // Open tooltip A via controlled prop, then close it (triggers group notification)
+      const rootA = container.querySelector('aria-ui-tooltip-root')!
+      rootA.open = true
+      rootA.open = false
+
+      // Hover trigger B — should open instantly (group delay skip)
+      triggerB.dispatchEvent(new MouseEvent('mouseenter'))
+      expect(popupB).toBeVisible()
+    })
+  })
+
+  describe('Controlled Mode', () => {
+    test('controlled open prop overrides internal state', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .open=${true}>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup data-testid="popup">Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const popup = page.getByTestId('popup')
+      expect(popup).toBeVisible()
+
+      const rootElement = container.querySelector('aria-ui-tooltip-root')!
+      rootElement.open = false
+      expect(popup).not.toBeVisible()
+    })
+  })
+
+  describe('Events', () => {
+    test('emits openChange event when opened', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger .openDelay=${0}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const root = container.querySelector('aria-ui-tooltip-root')!
+      let eventFired = false
+      root.addEventListener('openChange', () => { eventFired = true })
+
+      await page.getByText('Trigger').hover()
+      expect(eventFired).toBe(true)
+    })
+  })
+
+  describe('Accessibility', () => {
+    test('popup has role tooltip', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup data-testid="popup">Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      expect(page.getByTestId('popup')).toHaveAttribute('role', 'tooltip')
+    })
+
+    test('trigger has aria-describedby when tooltip is open', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .open=${true}>
+            <aria-ui-tooltip-trigger data-testid="trigger">Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup data-testid="popup">Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const trigger = page.getByTestId('trigger')
+      const popup = container.querySelector('aria-ui-tooltip-popup')!
+
+      await expect.poll(() => trigger.element().getAttribute('aria-describedby')).toBe(popup.id)
+    })
+
+    test('trigger does not have aria-describedby when tooltip is closed', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root>
+            <aria-ui-tooltip-trigger data-testid="trigger">Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      expect(page.getByTestId('trigger')).not.toHaveAttribute('aria-describedby')
+    })
+
+    test('disabled elements have aria-disabled', () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .disabled=${true}>
+            <aria-ui-tooltip-trigger .disabled=${true}>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      expect(container.querySelector('aria-ui-tooltip-root')!.getAttribute('aria-disabled')).toBe('true')
+      expect(container.querySelector('aria-ui-tooltip-trigger')!.getAttribute('aria-disabled')).toBe('true')
+    })
+  })
+
+  describe('Positioning', () => {
+    test('positioner is positioned absolutely by default', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .open=${true}>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const positioner = container.querySelector('aria-ui-tooltip-positioner')!
+      await expect.poll(() => positioner.style.position).toBe('absolute')
+    })
+
+    test('positioner respects strategy prop', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <aria-ui-tooltip-root .open=${true}>
+            <aria-ui-tooltip-trigger>Trigger</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner .strategy=${'fixed'}>
+              <aria-ui-tooltip-popup>Tooltip content</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        `,
+        container,
+      )
+
+      const positioner = container.querySelector('aria-ui-tooltip-positioner')!
+      await expect.poll(() => positioner.style.position).toBe('fixed')
+    })
+  })
 })
 ```
 
@@ -1209,53 +1729,45 @@ describe('Tooltip', () => {
 
 | File | Change |
 |---|---|
-| **Shared (new)** | |
-| `src/shared/overlay-store.ts` | **New** — `OverlayStore` class extracted from `PopoverStore` |
-| `src/shared/open-change-event.ts` | **New** — `OpenChangeEvent` class extracted from `popover-root.ts` |
-| `src/shared/positioning.ts` | **Moved** from `popover/positioning.ts` |
-| `src/shared/overlay-positioner.ts` | **New** — `OverlayPositionerProps`, declaration, and `setupOverlayPositioner()` |
-| `src/shared/overlay-popup.ts` | **New** — `OverlayPopupProps`, declaration, and `setupOverlayPopup()` |
+| **Utils** | |
+| `packages/utils/src/delayed-toggle.ts` | **New** — `createDelayedToggle()` shared timer logic |
+| `packages/utils/src/use-hover.ts` | Refactored to use `createDelayedToggle` |
+| `packages/utils/src/index.ts` | Export `createDelayedToggle` |
+| **Overlay (new shared)** | |
+| `src/overlay/overlay-store.ts` | **New** — `OverlayStore` class extracted from `PopoverStore` |
+| `src/overlay/open-change-event.ts` | **New** — `OpenChangeEvent` class extracted from `popover-root.ts` |
+| `src/overlay/positioning.ts` | **Moved** from `popover/positioning.ts` |
+| `src/overlay/overlay-root.ts` | **New** — `OverlayRootProps`, declaration, and `setupOverlayRoot()` |
+| `src/overlay/overlay-positioner.ts` | **New** — `OverlayPositionerProps`, declaration, and `setupOverlayPositioner()` |
+| `src/overlay/overlay-popup.ts` | **New** — `OverlayPopupProps`, declaration, and `setupOverlayPopup()` |
 | **Popover (refactored)** | |
 | `src/popover/popover-store.ts` | Re-export `OverlayStore` as `PopoverStore`, keep context |
-| `src/popover/popover-root.ts` | Import from shared (`OpenChangeEvent`, `OverlayStore`) |
+| `src/popover/popover-root.ts` | Thin wrapper: `PopoverRootProps extends OverlayRootProps`, calls `setupOverlayRoot()` |
 | `src/popover/popover-popup.ts` | Thin wrapper calling `setupOverlayPopup(…, 'dialog')` |
 | `src/popover/popover-positioner.ts` | Thin wrapper: `PopoverPositionerProps extends OverlayPositionerProps`, calls `setupOverlayPositioner()` |
-| `src/popover/popover-trigger.ts` | No changes (import path unchanged) |
-| `src/popover/positioning.ts` | **Deleted** (moved to shared) |
+| `src/popover/popover-trigger.ts` | Simplify `getDisabled` to `props.disabled.get` |
+| `src/popover/positioning.ts` | **Deleted** (moved to overlay) |
 | **Tooltip (new)** | |
-| `src/tooltip/tooltip-group.ts` | **New** — module-level singleton for shared delay |
+| `src/tooltip/tooltip-group.ts` | **New** — module-level variables for shared delay |
 | `src/tooltip/tooltip-store.ts` | **New** — just `TooltipStoreContext` definition |
-| `src/tooltip/tooltip-root.ts` | **New** — like popover root but no `modal`, adds group notification |
-| `src/tooltip/tooltip-trigger.ts` | **New** — hover/focus/keyboard with group-aware delay |
+| `src/tooltip/tooltip-root.ts` | **New** — thin wrapper: calls `setupOverlayRoot()` with group hook |
+| `src/tooltip/tooltip-trigger.ts` | **New** — hover/focus/keyboard with `createDelayedToggle` and group-aware delay |
 | `src/tooltip/tooltip-popup.ts` | **New** — thin wrapper calling `setupOverlayPopup(…, 'tooltip')` |
 | `src/tooltip/tooltip-positioner.ts` | **New** — thin wrapper: `TooltipPositionerProps extends OverlayPositionerProps` |
 | `src/tooltip/index.ts` | **New** — barrel export |
-| `src/tooltip/tooltip.test.ts` | **New** — 17 test cases |
+| `src/tooltip/tooltip.test.ts` | **New** — 17 test cases (no environment variations) |
 | **Other** | |
 | `src/index.ts` | Add tooltip registration and exports |
 | `package.json` | Add `./tooltip` export, update `build:gen` |
-
-## Key Design Decisions
-
-1. **Shared `OverlayStore`** — PopoverStore and TooltipStore were identical. One class, different context keys.
-
-2. **Shared `setupOverlayPositioner(host, props, context)`** — Parameterized by context. Both positioners have identical props (inherited via `extends OverlayPositionerProps`) and identical setup logic.
-
-3. **Shared `setupOverlayPopup(host, props, context, role)`** — Parameterized by context and role (`'dialog'` vs `'tooltip'`).
-
-4. **Not shared: Root** — Tooltip root adds `tooltipGroup.notifyClosed()` and lacks `modal`. Small enough that sharing would add complexity without benefit.
-
-5. **Not shared: Trigger** — Fundamentally different interaction model. Popover = click toggle + opt-in hover. Tooltip = always hover/focus + group-aware delay + Escape.
-
-6. **Parser compatibility** — `extractPropertiesFromInterface()` uses `type.getProperties()` which resolves inherited properties and their JSDoc, so `interface TooltipPositionerProps extends OverlayPositionerProps {}` works correctly with code generation.
 
 ## Verification
 
 After implementation:
 
-1. `pnpm --filter @aria-ui-v2/cli typecheck`
-2. `pnpm --filter @aria-ui-v2/elements typecheck`
-3. `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass (Phase 2 verification)
-4. `pnpm --filter @aria-ui-v2/elements run build:gen` — generates framework wrappers for both popover and tooltip
-5. `pnpm --filter @aria-ui-v2/elements test` — all tooltip tests pass
-6. `nr fix` — formatting
+1. `pnpm --filter @aria-ui-v2/utils typecheck`
+2. `pnpm --filter @aria-ui-v2/cli typecheck`
+3. `pnpm --filter @aria-ui-v2/elements typecheck`
+4. `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass (Phase 3 verification)
+5. `pnpm --filter @aria-ui-v2/elements run build:gen` — generates framework wrappers for both popover and tooltip
+6. `pnpm --filter @aria-ui-v2/elements test` — all tooltip tests pass
+7. `nr fix` — formatting

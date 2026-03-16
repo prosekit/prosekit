@@ -109,12 +109,16 @@ All of these are currently handled by the *generated* code. Moving them into `de
 
 ### 1.2 Change the argument order
 
+update： do not Change the argument order
+
 Current: `defineCustomElement(setup, props)`
 New: `defineCustomElement(props, setup)`
 
 The `props` argument comes first because it's the "shape" of the component, while `setup` is the behavior. This also reads better when the `extends` keyword precedes it: `class X extends defineCustomElement(PropsDecl, setupFn)`.
 
 ### 1.3 New `HostElementConstructor` type
+
+update: 你不需要修改 HostElementConstructor 的类型，没必要
 
 The return type needs to express that the returned class produces instances of `HostElement & Props`. It also needs to include the static `observedAttributes` and `attributeChangedCallback`. However, for the `extends` pattern, TypeScript just needs the constructor signature:
 
@@ -175,6 +179,9 @@ export function defineCustomElement<
       _oldValue: string | null,
       newValue: string | null,
     ): void {
+// update: add a check:
+// if (oldValue===newValue) return 
+
       handleAttributeChanged(
         this._store,
         props,
@@ -258,6 +265,10 @@ Files to update:
 ## Phase 2: Modify CLI (`packages/cli/src/generate.ts`)
 
 ### 2.1 Simplify `generateWebComponentFile`
+
+update: 删除 generateWebComponentFile 。不再需要生成 packages/elements/src/generated/elements/*.ts 文件了。直接把相关的东写入原始文件 ，比如 packages/elements/src/popover/popover-positioner.ts
+
+uppdate: 在 agents,md 中写清楚文件的规则
 
 The entire function becomes much simpler. No more conditional logic for props/events, no attribute handling, no getter/setter generation.
 

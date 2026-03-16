@@ -1490,6 +1490,10 @@
     --tw-duration: 150ms;
     transition-duration: 150ms;
   }
+  .duration-1500 {
+    --tw-duration: 1500ms;
+    transition-duration: 1500ms;
+  }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
@@ -1896,6 +1900,26 @@
       opacity: 0%;
     }
   }
+  .data-\[side\=bottom\]\:origin-top {
+    &[data-side="bottom"] {
+      transform-origin: top;
+    }
+  }
+  .data-\[side\=left\]\:origin-right {
+    &[data-side="left"] {
+      transform-origin: 100%;
+    }
+  }
+  .data-\[side\=right\]\:origin-left {
+    &[data-side="right"] {
+      transform-origin: 0;
+    }
+  }
+  .data-\[side\=top\]\:origin-bottom {
+    &[data-side="top"] {
+      transform-origin: bottom;
+    }
+  }
   .data-\[starting-style\]\:scale-90 {
     &[data-starting-style] {
       --tw-scale-x: 90%;
@@ -1930,71 +1954,15 @@
       opacity: 0%;
     }
   }
-  .data-\[state\=closed\]\:duration-200 {
+  .data-\[state\=closed\]\:duration-2000 {
     &[data-state="closed"] {
-      --tw-duration: 200ms;
-      transition-duration: 200ms;
+      --tw-duration: 2000ms;
+      transition-duration: 2000ms;
     }
   }
   .data-\[state\=on\]\:bg-gray-200 {
     &[data-state="on"] {
       background-color: var(--color-gray-200);
-    }
-  }
-  .motion-safe\:data-\[side\=bottom\]\:slide-in-from-top-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="bottom"] {
-        --tw-enter-translate-y: calc(2*var(--spacing)*-1);
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=bottom\]\:slide-out-to-top-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="bottom"] {
-        --tw-exit-translate-y: calc(2*var(--spacing)*-1);
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=left\]\:slide-in-from-right-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="left"] {
-        --tw-enter-translate-x: calc(2*var(--spacing));
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=left\]\:slide-out-to-right-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="left"] {
-        --tw-exit-translate-x: calc(2*var(--spacing));
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=right\]\:slide-in-from-left-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="right"] {
-        --tw-enter-translate-x: calc(2*var(--spacing)*-1);
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=right\]\:slide-out-to-left-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="right"] {
-        --tw-exit-translate-x: calc(2*var(--spacing)*-1);
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=top\]\:slide-in-from-bottom-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="top"] {
-        --tw-enter-translate-y: calc(2*var(--spacing));
-      }
-    }
-  }
-  .motion-safe\:data-\[side\=top\]\:slide-out-to-bottom-2 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-side="top"] {
-        --tw-exit-translate-y: calc(2*var(--spacing));
-      }
     }
   }
   .motion-reduce\:transition-none {

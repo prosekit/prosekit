@@ -23,19 +23,15 @@ const CSS_PRESENCE_ANIMATE = cn(
   'will-change-transform',
   'starting:opacity-0 opacity-100 data-[state=closed]:opacity-0',
   'starting:scale-90 scale-100 data-[state=closed]:scale-90',
-  'duration-150 data-[state=closed]:duration-200',
+  'duration-1500 data-[state=closed]:duration-2000',
 )
 
 const CSS_POPOVER_ANIMATE = cn(
   CSS_PRESENCE_ANIMATE,
-  'motion-safe:data-[side=bottom]:slide-in-from-top-2',
-  'motion-safe:data-[side=bottom]:slide-out-to-top-2',
-  'motion-safe:data-[side=left]:slide-in-from-right-2',
-  'motion-safe:data-[side=left]:slide-out-to-right-2',
-  'motion-safe:data-[side=right]:slide-in-from-left-2',
-  'motion-safe:data-[side=right]:slide-out-to-left-2',
-  'motion-safe:data-[side=top]:slide-in-from-bottom-2',
-  'motion-safe:data-[side=top]:slide-out-to-bottom-2',
+  'data-[side=top]:origin-bottom',
+  'data-[side=right]:origin-left',
+  'data-[side=bottom]:origin-top',
+  'data-[side=left]:origin-right',
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(

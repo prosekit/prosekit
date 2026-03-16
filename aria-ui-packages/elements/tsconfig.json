@@ -2,16 +2,19 @@
   "extends": "@ocavue/tsconfig/dom/app.json",
   "references": [
     {
-      "path": "../cli/tsconfig.json",
+        "path": "../../packages/config-vitest/tsconfig.json"
     },
     {
-      "path": "../core/tsconfig.json",
+        "path": "../cli/tsconfig.json"
     },
     {
-      "path": "../integrations/tsconfig.json",
+        "path": "../core/tsconfig.json"
     },
     {
-      "path": "../utils/tsconfig.json",
+        "path": "../integrations/tsconfig.json"
     },
-  ],
+    {
+        "path": "../utils/tsconfig.json"
+    }
+],
 }

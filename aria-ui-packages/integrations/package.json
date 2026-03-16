@@ -56,12 +56,12 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@typescript/lib-dom": "npm:@types/web@^0.0.311",
-    "@vitest/browser-playwright": "^4.1.0",
     "lit-html": "^3.3.2",
     "preact": "^10.29.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.0"
+    "@prosekit/config-vitest": "workspace:*",
+    "vitest": "catalog:"
   }
 }

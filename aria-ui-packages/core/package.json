@@ -40,11 +40,11 @@
     "server-dom-shim": "^1.1.0"
   },
   "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
     "@ocavue/tsconfig": "^0.7.0",
     "@types/node": "^20.19.10",
     "@typescript/lib-dom": "npm:@types/web@^0.0.311",
-    "@vitest/browser-playwright": "^4.0.17",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
+    "vitest": "catalog:"
   }
 }

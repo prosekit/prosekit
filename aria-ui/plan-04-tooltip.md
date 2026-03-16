@@ -26,6 +26,7 @@ Tooltip and Popover share significant structure. Instead of duplicating, extract
 
 The parser uses `type.getProperties()` which resolves inherited properties, so `interface TooltipPositionerProps extends OverlayPositionerProps {}` works correctly with code generation.
 
+update: 不要放到 shared/ 下面，放到 overlay/ 下面
 
 **Not shared** (meaningfully different):
 - **Root**: Tooltip adds `tooltipGroup.notifyClosed()`, no `modal` prop

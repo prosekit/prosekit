@@ -30,4 +30,7 @@ export default defineESLintConfig(
     },
     ignores: ['**/*.test.*', '**/*.spec.*'],
   },
+  {
+    ignores: ['aria-ui-packages/*/package.json'],
+  },
 )

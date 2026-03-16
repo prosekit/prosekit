@@ -27,7 +27,7 @@ export function createComponent<
   let isRegistered = false
 
   const Component = forwardRef<CustomElement, any>(
-    (props: Record<string, unknown>, forwardRef: Ref<CustomElement>) => {
+    (props: Record<string, unknown>, forwardedRef: Ref<CustomElement>) => {
       if (!isRegistered) {
         register()
         isRegistered = true
@@ -99,8 +99,8 @@ export function createComponent<
       reactProps['suppressHydrationWarning'] = true
 
       const mergedRef = useMemo(
-        () => mergeRefs([elementRef, forwardRef]),
-        [forwardRef],
+        () => mergeRefs([elementRef, forwardedRef]),
+        [forwardedRef],
       )
       reactProps['ref'] = mergedRef
 

@@ -22,7 +22,11 @@ export function createComponent<
   displayName: string,
   /** The property names that are passed to the custom element. */
   propNames: Array<string>,
-  /** A map of event handler names to event names. */
+  /**
+   * A map of event handler names to event names.
+   *
+   * For example, `{ 'onClick': 'click' }`
+   */
   eventNameMap: Record<string, string>,
   /** A function to register the custom element. */
   register: VoidFunction,
@@ -80,23 +84,17 @@ export function createComponent<
         if (!element) return
 
         const eventNames: string[] = Object.values(eventNameMap)
-        const eventHandlers: Array<[string, EventHandler]> = []
+        const controller = new AbortController()
+        const signal = controller.signal
 
         for (const eventName of eventNames) {
-          const handler = (event: Event) => {
+          element.addEventListener(eventName, (event) => {
             eventHandlersRef.current[eventName]?.(event)
-          }
-          eventHandlers.push([eventName, handler])
-        }
-
-        for (const [eventName, handler] of eventHandlers) {
-          element.addEventListener(eventName, handler)
+          }, { signal })
         }
 
         return () => {
-          for (const [eventName, handler] of eventHandlers) {
-            element.removeEventListener(eventName, handler)
-          }
+          controller.abort()
         }
       }, [])
 

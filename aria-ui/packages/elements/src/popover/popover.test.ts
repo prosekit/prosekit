@@ -417,4 +417,3 @@ describe('Popover', () => {
   const environments = collectEnvironments()
   forEachEnvironment(environments, runTests)
 })
-

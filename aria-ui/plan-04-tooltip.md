@@ -55,7 +55,7 @@ Extract the timer scheduling logic shared by `useHover` and the tooltip trigger 
 
 ```typescript
 /**
- * @public // update： 改成 internal
+ * @internal
  */
 export interface DelayedToggle {
   open(delay: number): void
@@ -64,14 +64,14 @@ export interface DelayedToggle {
 }
 
 /**
- * @public// update： 改成 internal
+ * @internal
  */
 export function createDelayedToggle(
-  onOpen: () => void,
-  onClose: () => void,
+  onOpen?: () => void,
+  onClose?: () => void,
 ): DelayedToggle {
-  let openTimeout: number | undefined
-  let closeTimeout: number | undefined
+  let openTimeout: ReturnType<typeof setTimeout> | undefined
+  let closeTimeout: ReturnType<typeof setTimeout> | undefined
 
   function cancelOpen() {
     if (openTimeout !== undefined) {
@@ -91,25 +91,23 @@ export function createDelayedToggle(
     open(delay: number) {
       cancelClose()
       if (delay > 0) {
-        // update: "window.setTimeout" -> "setTimeout"
-        openTimeout = window.setTimeout(() => {
+        openTimeout = setTimeout(() => {
           openTimeout = undefined
-          onOpen()
+          onOpen?.()
         }, delay)
       } else {
-        onOpen()
+        onOpen?.()
       }
     },
     close(delay: number) {
       cancelOpen()
       if (delay > 0) {
-        // update: "window.setTimeout" -> "setTimeout"
-        closeTimeout = window.setTimeout(() => {
+        closeTimeout = setTimeout(() => {
           closeTimeout = undefined
-          onClose()
+          onClose?.()
         }, delay)
       } else {
-        onClose()
+        onClose?.()
       }
     },
     dispose() {
@@ -120,31 +118,57 @@ export function createDelayedToggle(
 }
 ```
 
-### 1.2 Refactor `packages/utils/src/use-hover.ts` to use `createDelayedToggle`
+### 1.2 Move `useHover` from utils to popover
+
+`useHover` is only used by `popover-trigger.ts`. Move it out of utils into the popover directory and refactor it to use `createDelayedToggle`.
+
+- Move `packages/utils/src/use-hover.ts` → `packages/elements/src/popover/use-hover.ts`
+- Move `packages/utils/src/use-hover.test.ts` → `packages/elements/src/popover/use-hover.test.ts`
+- Remove `useHover` and `UseHoverOptions` exports from `packages/utils/src/index.ts`
+
+Refactored `packages/elements/src/popover/use-hover.ts`:
 
 ```typescript
-import { createDelayedToggle, type UseHoverOptions } from './delayed-toggle.ts'
+import { createDelayedToggle } from '@aria-ui-v2/utils'
 
-// update: 既然你觉得不应该复用 useHover ，那么就不要再把 useHover 放在 utils 里面了。哪里需要它就放在哪里 （popver里面）
+export interface UseHoverOptions {
+  openDelay?: number
+  closeDelay?: number
+  onOpen?: () => void
+  onClose?: () => void
+}
+
 export function useHover(
   target: HTMLElement,
   options: UseHoverOptions,
 ): VoidFunction {
   const { openDelay = 0, closeDelay = 0, onOpen, onClose } = options
 
-  const toggle = createDelayedToggle(
-    // update: onOpen and onClose should accept undeffined so that you don't need to write (() => {}) here. 
-    onOpen ?? (() => {}),
-    onClose ?? (() => {}),
-  )
+  const toggle = createDelayedToggle(onOpen, onClose)
 
-  // ...
+  const handleMouseEnter = () => toggle.open(openDelay)
+  const handleMouseLeave = () => toggle.close(closeDelay)
+
+  target.addEventListener('mouseenter', handleMouseEnter)
+  target.addEventListener('mouseleave', handleMouseLeave)
+
+  return () => {
+    target.removeEventListener('mouseenter', handleMouseEnter)
+    target.removeEventListener('mouseleave', handleMouseLeave)
+    toggle.dispose()
+  }
 }
 ```
 
-### 1.3 Export from `packages/utils/src/index.ts`
+### 1.3 Update `packages/utils/src/index.ts`
+
+Remove `useHover` exports, add `createDelayedToggle`:
 
 ```typescript
+// Remove:
+// export { useHover, type UseHoverOptions } from './use-hover.ts'
+
+// Add:
 export { createDelayedToggle, type DelayedToggle } from './delayed-toggle.ts'
 ```
 
@@ -811,13 +835,18 @@ export function registerPopoverPositionerElement(): void {
 
 ### 3.5 Update `packages/elements/src/popover/popover-trigger.ts`
 
-Simplify `getDisabled`: use `props.disabled.get` directly instead of wrapping in `computed()`.
+Two changes:
+1. Simplify `getDisabled`: use `props.disabled.get` directly instead of wrapping in `computed()`.
+2. Update `useHover` import from `@aria-ui-v2/utils` to local `./use-hover.ts`.
 
 ```typescript
 // Before
+import { useAriaControls, useAriaDisabled, useAriaExpanded, useHover, usePress } from '@aria-ui-v2/utils'
 const getDisabled = computed<boolean>(() => props.disabled.get())
 
 // After
+import { useAriaControls, useAriaDisabled, useAriaExpanded, usePress } from '@aria-ui-v2/utils'
+import { useHover } from './use-hover.ts'
 const getDisabled = props.disabled.get
 ```
 
@@ -1059,20 +1088,17 @@ export function setupTooltipTrigger(
       }
     }
 
-// update: 用 abort signal 而不是在 return function 里 removeEventListener
+    const controller = new AbortController()
+    const { signal } = controller
 
-    host.addEventListener('mouseenter', onMouseEnter)
-    host.addEventListener('mouseleave', onMouseLeave)
-    host.addEventListener('focusin', onFocusIn)
-    host.addEventListener('focusout', onFocusOut)
-    host.addEventListener('keydown', onKeyDown)
+    host.addEventListener('mouseenter', onMouseEnter, { signal })
+    host.addEventListener('mouseleave', onMouseLeave, { signal })
+    host.addEventListener('focusin', onFocusIn, { signal })
+    host.addEventListener('focusout', onFocusOut, { signal })
+    host.addEventListener('keydown', onKeyDown, { signal })
 
     return () => {
-      host.removeEventListener('mouseenter', onMouseEnter)
-      host.removeEventListener('mouseleave', onMouseLeave)
-      host.removeEventListener('focusin', onFocusIn)
-      host.removeEventListener('focusout', onFocusOut)
-      host.removeEventListener('keydown', onKeyDown)
+      controller.abort()
       toggle.dispose()
     }
   })
@@ -1726,9 +1752,10 @@ describe('Tooltip', () => {
 | File | Change |
 |---|---|
 | **Utils** | |
-| `packages/utils/src/delayed-toggle.ts` | **New** — `createDelayedToggle()` shared timer logic |
-| `packages/utils/src/use-hover.ts` | Refactored to use `createDelayedToggle` |
-| `packages/utils/src/index.ts` | Export `createDelayedToggle` |
+| `packages/utils/src/delayed-toggle.ts` | **New** — `createDelayedToggle()` shared timer logic (`@internal`) |
+| `packages/utils/src/use-hover.ts` | **Deleted** (moved to popover) |
+| `packages/utils/src/use-hover.test.ts` | **Deleted** (moved to popover) |
+| `packages/utils/src/index.ts` | Remove `useHover` exports, add `createDelayedToggle` |
 | **Overlay (new shared)** | |
 | `src/overlay/overlay-store.ts` | **New** — `OverlayStore` class extracted from `PopoverStore` |
 | `src/overlay/open-change-event.ts` | **New** — `OpenChangeEvent` class extracted from `popover-root.ts` |
@@ -1741,13 +1768,15 @@ describe('Tooltip', () => {
 | `src/popover/popover-root.ts` | Thin wrapper: `PopoverRootProps extends OverlayRootProps`, calls `setupOverlayRoot()` |
 | `src/popover/popover-popup.ts` | Thin wrapper calling `setupOverlayPopup(…, 'dialog')` |
 | `src/popover/popover-positioner.ts` | Thin wrapper: `PopoverPositionerProps extends OverlayPositionerProps`, calls `setupOverlayPositioner()` |
-| `src/popover/popover-trigger.ts` | Simplify `getDisabled` to `props.disabled.get` |
+| `src/popover/popover-trigger.ts` | Simplify `getDisabled`, update `useHover` import to local |
+| `src/popover/use-hover.ts` | **Moved** from `packages/utils/`, refactored with `createDelayedToggle` |
+| `src/popover/use-hover.test.ts` | **Moved** from `packages/utils/` |
 | `src/popover/positioning.ts` | **Deleted** (moved to overlay) |
 | **Tooltip (new)** | |
 | `src/tooltip/tooltip-group.ts` | **New** — module-level variables for shared delay |
 | `src/tooltip/tooltip-store.ts` | **New** — just `TooltipStoreContext` definition |
 | `src/tooltip/tooltip-root.ts` | **New** — thin wrapper: calls `setupOverlayRoot()` with group hook |
-| `src/tooltip/tooltip-trigger.ts` | **New** — hover/focus/keyboard with `createDelayedToggle` and group-aware delay |
+| `src/tooltip/tooltip-trigger.ts` | **New** — hover/focus/keyboard with `createDelayedToggle`, group-aware delay, AbortSignal cleanup |
 | `src/tooltip/tooltip-popup.ts` | **New** — thin wrapper calling `setupOverlayPopup(…, 'tooltip')` |
 | `src/tooltip/tooltip-positioner.ts` | **New** — thin wrapper: `TooltipPositionerProps extends OverlayPositionerProps` |
 | `src/tooltip/index.ts` | **New** — barrel export |

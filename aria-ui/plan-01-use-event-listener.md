@@ -287,3 +287,49 @@ pnpm --filter @aria-ui-v2/elements test
 | Async reentry protection | Signal aborted on re-invocation | Not supported (not needed — handlers are sync) |
 
 The key behavioral difference is that `keydown` fires on key-down rather than key-up. For a popover toggle this is acceptable and arguably more responsive. If key-up semantics are ever needed, the `keydown` handler can be changed to `keyup`.
+
+---
+
+## Todo list
+
+### Phase 1: Create new primitives
+
+- [ ] Create `packages/core/src/use-event-listener.ts` with `useEventListener` function and `/* */` comment
+- [ ] Update `packages/core/src/index.ts` — add `useEventListener` export, remove `useInteraction` export
+- [ ] Delete `packages/core/src/use-interaction.ts`
+- [ ] Remove `@remix-run/interaction` from `packages/core/package.json` dependencies
+
+### Phase 2: Create `usePress` utility
+
+- [ ] Create `packages/utils/src/use-press.ts` with `usePress` function
+  - [ ] Add `/* */` comment with WAI-ARIA APG button pattern link
+  - [ ] Handle `click` events via `useEventListener`
+  - [ ] Handle `keydown` for Enter/Space via `useEventListener`
+  - [ ] Guard `keydown` handler with `event.isComposing` check for IME
+  - [ ] Return combined dispose function
+- [ ] Export `usePress` from `packages/utils/src/index.ts`
+
+### Phase 3: Migrate consumers
+
+- [ ] Rewrite `packages/utils/src/use-hover.ts`
+  - [ ] Remove `import { on } from '@remix-run/interaction'`
+  - [ ] Replace `on(target, { mouseenter, mouseleave })` with native `addEventListener`/`removeEventListener`
+- [ ] Remove `@remix-run/interaction` from `packages/utils/package.json` dependencies
+- [ ] Rewrite `packages/elements/src/popover/popover-trigger.ts`
+  - [ ] Remove `import { press } from '@remix-run/interaction/press'`
+  - [ ] Remove `import { useInteraction } from '@aria-ui-v2/core'` (keep other imports)
+  - [ ] Add `import { usePress } from '@aria-ui-v2/utils'`
+  - [ ] Replace `useInteraction(host, { [press]() { ... } })` with `usePress(host, () => { ... })`
+- [ ] Remove `@remix-run/interaction` from `packages/elements/package.json` dependencies
+
+### Phase 4: Clean up remaining references
+
+- [ ] Remove `@remix-run/interaction` from `website/package.json` dependencies
+- [ ] Update `AGENTS.md` — replace `useInteraction` reference with `useEventListener`
+
+### Phase 5: Verify
+
+- [ ] Run `pnpm install` to regenerate lockfile
+- [ ] Run `pnpm typecheck` — confirm no type errors
+- [ ] Run `pnpm --filter @aria-ui-v2/elements test` — confirm tests pass
+- [ ] Verify `@remix-run/interaction` has zero references in the codebase (excluding research/plan docs)

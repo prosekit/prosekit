@@ -20,6 +20,7 @@ This project uses **pnpm**. Always use `pnpm` commands, never `npm` or `yarn`.
 
 ```bash
 pnpm --filter @aria-ui-v2/elements test
+pnpm --filter @aria-ui-v2/utils test
 ```
 
 ## Architecture

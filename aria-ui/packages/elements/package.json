@@ -30,7 +30,7 @@
     "src"
   ],
   "scripts": {
-    "test": "vitest run",
+    "test": "vitest run ./src",
     "build": "pnpm run build:tsdown && pnpm run build:gen",
     "build:tsdown": "tsdown",
     "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated"

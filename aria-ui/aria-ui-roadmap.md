@@ -1,0 +1,7 @@
+- [ ] Remove remix
+- [ ] Implement aria-ui-v2/elements/tooltip and its test
+- [ ] rewrite the CLI so that generate components can be placed in different packages. 
+- [ ] Implement all components 
+- [ ] Write a good test system 
+- [ ] Write a good docs
+- [ ] Use it in ProseKit 

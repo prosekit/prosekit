@@ -101,7 +101,7 @@ importers:
         specifier: ^4.72.0
         version: 4.73.0
 
-  aria-ui-packages/cli:
+  aria-ui/packages/cli:
     dependencies:
       prettier:
         specifier: ^3.8.1
@@ -127,7 +127,7 @@ importers:
         version: 0.7.0
       '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../../packages/config-vitest
+        version: link:../../../packages/config-vitest
       '@types/node':
         specifier: ^20.19.10
         version: 20.19.37
@@ -144,7 +144,7 @@ importers:
         specifier: 1.0.0-alpha.11
         version: 1.0.0-alpha.11(typescript@5.9.3)
 
-  aria-ui-packages/core:
+  aria-ui/packages/core:
     dependencies:
       '@ocavue/utils':
         specifier: ^1.6.0
@@ -167,7 +167,7 @@ importers:
         version: 0.7.0
       '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../../packages/config-vitest
+        version: link:../../../packages/config-vitest
       '@types/node':
         specifier: ^20.19.10
         version: 20.19.37
@@ -181,7 +181,7 @@ importers:
         specifier: 'catalog:'
         version: 4.1.0(@types/node@20.19.37)(@vitest/browser-playwright@4.1.0)(@vitest/ui@4.1.0)(happy-dom@20.8.4)(jsdom@29.0.0)(vite@7.3.1(@types/node@20.19.37)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
 
-  aria-ui-packages/elements:
+  aria-ui/packages/elements:
     dependencies:
       '@aria-ui-v2/integrations':
         specifier: workspace:*
@@ -213,7 +213,7 @@ importers:
         version: 1.6.0
       '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../../packages/config-vitest
+        version: link:../../../packages/config-vitest
       '@types/node':
         specifier: ^20.19.10
         version: 20.19.37
@@ -257,14 +257,14 @@ importers:
         specifier: ^3.5.30
         version: 3.5.30(typescript@5.9.3)
 
-  aria-ui-packages/integrations:
+  aria-ui/packages/integrations:
     devDependencies:
       '@ocavue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0
       '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../../packages/config-vitest
+        version: link:../../../packages/config-vitest
       '@types/node':
         specifier: ^20.19.10
         version: 20.19.37
@@ -296,7 +296,7 @@ importers:
         specifier: 'catalog:'
         version: 4.1.0(@types/node@20.19.37)(@vitest/browser-playwright@4.1.0)(@vitest/ui@4.1.0)(happy-dom@20.8.4)(jsdom@29.0.0)(vite@7.3.1(@types/node@20.19.37)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
 
-  aria-ui-packages/utils:
+  aria-ui/packages/utils:
     dependencies:
       '@aria-ui-v2/core':
         specifier: workspace:*
@@ -310,7 +310,7 @@ importers:
         version: 0.7.0
       '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../../packages/config-vitest
+        version: link:../../../packages/config-vitest
       '@types/node':
         specifier: ^20.19.10
         version: 20.19.37
@@ -327,7 +327,7 @@ importers:
         specifier: 'catalog:'
         version: 4.1.0(@types/node@20.19.37)(@vitest/browser-playwright@4.1.0)(@vitest/ui@4.1.0)(happy-dom@20.8.4)(jsdom@29.0.0)(vite@7.3.1(@types/node@20.19.37)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
 
-  aria-ui-website:
+  aria-ui/website:
     dependencies:
       '@ocavue/utils':
         specifier: ^1.6.0
@@ -347,7 +347,7 @@ importers:
     devDependencies:
       '@aria-ui-v2/elements':
         specifier: workspace:*
-        version: link:../aria-ui-packages/elements
+        version: link:../packages/elements
       '@ocavue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0
@@ -11235,7 +11235,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 24.12.0
+      '@types/node': 20.19.37
 
   '@types/tough-cookie@4.0.5': {}
 

@@ -5,7 +5,7 @@
   },
   "references": [
     {
-      "path": "../aria-ui-packages/elements/tsconfig.json",
+      "path": "../packages/elements/tsconfig.json",
     },
   ],
 }

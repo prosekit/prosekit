@@ -18,8 +18,8 @@ export default defineConfig({
       './registry',
 
       // TODO: remove me
-      './aria-ui-website',
-      './aria-ui-packages/*',
+      './aria-ui/website',
+      './aria-ui/packages/*',
     ],
   },
 })

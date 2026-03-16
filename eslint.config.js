@@ -32,7 +32,7 @@ export default defineESLintConfig(
   },
   {
     // TODO: remove me
-    ignores: ['aria-ui-packages/*/package.json'],
+    ignores: ['aria-ui/packages/*/package.json'],
   },
   {
     // TODO: remove me

@@ -8,22 +8,22 @@
   "files": [],
   "references": [
     {
-      "path": "./aria-ui-packages/cli/tsconfig.json",
+      "path": "./aria-ui/packages/cli/tsconfig.json",
     },
     {
-      "path": "./aria-ui-packages/core/tsconfig.json",
+      "path": "./aria-ui/packages/core/tsconfig.json",
     },
     {
-      "path": "./aria-ui-packages/elements/tsconfig.json",
+      "path": "./aria-ui/packages/elements/tsconfig.json",
     },
     {
-      "path": "./aria-ui-packages/integrations/tsconfig.json",
+      "path": "./aria-ui/packages/integrations/tsconfig.json",
     },
     {
-      "path": "./aria-ui-packages/utils/tsconfig.json",
+      "path": "./aria-ui/packages/utils/tsconfig.json",
     },
     {
-      "path": "./aria-ui-website/tsconfig.json",
+      "path": "./aria-ui/website/tsconfig.json",
     },
     {
       "path": "./packages/basic/tsconfig.json",

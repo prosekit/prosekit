@@ -1733,52 +1733,52 @@ describe('Tooltip', () => {
 ## Todo List
 
 ### Phase 1: Add `createDelayedToggle` to utils
-- [ ] 1.1 Create `packages/utils/src/delayed-toggle.ts` — `DelayedToggle` interface and `createDelayedToggle()` function
-- [ ] 1.2 Add `createDelayedToggle` export to `packages/utils/src/index.ts`
-- [ ] Run `pnpm -w typecheck`
+- [x]1.1 Create `packages/utils/src/delayed-toggle.ts` — `DelayedToggle` interface and `createDelayedToggle()` function
+- [x]1.2 Add `createDelayedToggle` export to `packages/utils/src/index.ts`
+- [x]Run `pnpm -w typecheck`
 
 ### Phase 2: Extract overlay shared modules
-- [ ] 2.1 Create `packages/elements/src/overlay/overlay-store.ts` — `OverlayStore` class
-- [ ] 2.2 Create `packages/elements/src/overlay/open-change-event.ts` — `OpenChangeEvent` class
-- [ ] 2.3 Move `packages/elements/src/popover/positioning.ts` → `packages/elements/src/overlay/positioning.ts`
-- [ ] 2.4 Create `packages/elements/src/overlay/overlay-root.ts` — `OverlayRootProps`, `OverlayRootPropsDeclaration`, `setupOverlayRoot()`
-- [ ] 2.5 Create `packages/elements/src/overlay/overlay-positioner.ts` — `OverlayPositionerProps`, `OverlayPositionerPropsDeclaration`, `setupOverlayPositioner()`
-- [ ] 2.6 Create `packages/elements/src/overlay/overlay-popup.ts` — `OverlayPopupProps`, `OverlayPopupPropsDeclaration`, `setupOverlayPopup()`
-- [ ] Run `pnpm -w typecheck`
+- [x]2.1 Create `packages/elements/src/overlay/overlay-store.ts` — `OverlayStore` class
+- [x]2.2 Create `packages/elements/src/overlay/open-change-event.ts` — `OpenChangeEvent` class
+- [x]2.3 Move `packages/elements/src/popover/positioning.ts` → `packages/elements/src/overlay/positioning.ts`
+- [x]2.4 Create `packages/elements/src/overlay/overlay-root.ts` — `OverlayRootProps`, `OverlayRootPropsDeclaration`, `setupOverlayRoot()`
+- [x]2.5 Create `packages/elements/src/overlay/overlay-positioner.ts` — `OverlayPositionerProps`, `OverlayPositionerPropsDeclaration`, `setupOverlayPositioner()`
+- [x]2.6 Create `packages/elements/src/overlay/overlay-popup.ts` — `OverlayPopupProps`, `OverlayPopupPropsDeclaration`, `setupOverlayPopup()`
+- [x]Run `pnpm -w typecheck`
 
 ### Phase 3: Refactor popover to use overlay modules
-- [ ] 3.1 Update `popover-store.ts` — re-export `OverlayStore` as `PopoverStore`, keep `PopoverStoreContext`
-- [ ] 3.2 Update `popover-root.ts` — `PopoverRootProps extends OverlayRootProps`, call `setupOverlayRoot()`, import `OpenChangeEvent` from overlay
-- [ ] 3.3 Update `popover-popup.ts` — call `setupOverlayPopup(…, 'dialog')`, re-export `OverlayPopupProps`
-- [ ] 3.4 Update `popover-positioner.ts` — `PopoverPositionerProps extends OverlayPositionerProps`, call `setupOverlayPositioner()`
-- [ ] 3.5 Update `popover-trigger.ts` — simplify `getDisabled` to `props.disabled.get`
-- [ ] 3.6 Delete `popover/positioning.ts` (moved to overlay in 2.3)
-- [ ] Run `pnpm -w typecheck`
-- [ ] Run `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass
+- [x]3.1 Update `popover-store.ts` — re-export `OverlayStore` as `PopoverStore`, keep `PopoverStoreContext`
+- [x]3.2 Update `popover-root.ts` — `PopoverRootProps extends OverlayRootProps`, call `setupOverlayRoot()`, import `OpenChangeEvent` from overlay
+- [x]3.3 Update `popover-popup.ts` — call `setupOverlayPopup(…, 'dialog')`, re-export `OverlayPopupProps`
+- [x]3.4 Update `popover-positioner.ts` — `PopoverPositionerProps extends OverlayPositionerProps`, call `setupOverlayPositioner()`
+- [x]3.5 Update `popover-trigger.ts` — simplify `getDisabled` to `props.disabled.get`
+- [x]3.6 Delete `popover/positioning.ts` (moved to overlay in 2.3)
+- [x]Run `pnpm -w typecheck`
+- [x]Run `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass
 
 ### Phase 4: Tooltip-specific code
-- [ ] 4.1 Create `packages/elements/src/tooltip/tooltip-group.ts` — `notifyTooltipClosed()`, `shouldSkipOpenDelay()`
-- [ ] 4.2 Create `packages/elements/src/tooltip/tooltip-store.ts` — `TooltipStoreContext`
-- [ ] 4.3 Create `packages/elements/src/tooltip/tooltip-root.ts` — `TooltipRootProps extends OverlayRootProps`, call `setupOverlayRoot()` with group hook
-- [ ] 4.4 Create `packages/elements/src/tooltip/tooltip-trigger.ts` — hover/focus/keyboard with `createDelayedToggle`, group-aware delay, AbortSignal
-- [ ] 4.5 Create `packages/elements/src/tooltip/tooltip-popup.ts` — call `setupOverlayPopup(…, 'tooltip')`
-- [ ] 4.6 Create `packages/elements/src/tooltip/tooltip-positioner.ts` — `TooltipPositionerProps extends OverlayPositionerProps`, call `setupOverlayPositioner()`
-- [ ] Run `pnpm -w typecheck`
+- [x]4.1 Create `packages/elements/src/tooltip/tooltip-group.ts` — `notifyTooltipClosed()`, `shouldSkipOpenDelay()`
+- [x]4.2 Create `packages/elements/src/tooltip/tooltip-store.ts` — `TooltipStoreContext`
+- [x]4.3 Create `packages/elements/src/tooltip/tooltip-root.ts` — `TooltipRootProps extends OverlayRootProps`, call `setupOverlayRoot()` with group hook
+- [x]4.4 Create `packages/elements/src/tooltip/tooltip-trigger.ts` — hover/focus/keyboard with `createDelayedToggle`, group-aware delay, AbortSignal
+- [x]4.5 Create `packages/elements/src/tooltip/tooltip-popup.ts` — call `setupOverlayPopup(…, 'tooltip')`
+- [x]4.6 Create `packages/elements/src/tooltip/tooltip-positioner.ts` — `TooltipPositionerProps extends OverlayPositionerProps`, call `setupOverlayPositioner()`
+- [x]Run `pnpm -w typecheck`
 
 ### Phase 5: Barrel exports & registration
-- [ ] 5.1 Create `packages/elements/src/tooltip/index.ts` — barrel exports
-- [ ] 5.2 Update `packages/elements/src/index.ts` — add tooltip imports, exports, registration, `HTMLElementTagNameMap`
-- [ ] Run `pnpm -w typecheck`
+- [x]5.1 Create `packages/elements/src/tooltip/index.ts` — barrel exports
+- [x]5.2 Update `packages/elements/src/index.ts` — add tooltip imports, exports, registration, `HTMLElementTagNameMap`
+- [x]Run `pnpm -w typecheck`
 
 ### Phase 6: Code generation & build
-- [ ] 6.1 Update `packages/elements/package.json` — add `./tooltip` export, update `build:gen` script
-- [ ] 6.2 Run `pnpm --filter @aria-ui-v2/elements run build:gen` — verify framework wrappers generated
-- [ ] Run `pnpm -w typecheck`
+- [x]6.1 Update `packages/elements/package.json` — add `./tooltip` export, update `build:gen` script
+- [x]6.2 Run `pnpm --filter @aria-ui-v2/elements run build:gen` — verify framework wrappers generated
+- [x]Run `pnpm -w typecheck`
 
 ### Phase 7: Tests
-- [ ] 7.1 Create `packages/elements/src/tooltip/tooltip.test.ts` — 17 test cases, no environment variations
-- [ ] Run `pnpm --filter @aria-ui-v2/elements test` — all tests pass
-- [ ] Run `nr fix`
+- [x]7.1 Create `packages/elements/src/tooltip/tooltip.test.ts` — 17 test cases, no environment variations
+- [x]Run `pnpm --filter @aria-ui-v2/elements test` — all tests pass
+- [x]Run `nr fix`
 
 ## Verification
 

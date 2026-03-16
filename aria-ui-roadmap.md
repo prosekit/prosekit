@@ -1,4 +1,5 @@
 - [ ] Remove remix
+- [ ] rewrite the CLI so that generate components can be placed in different packages. 
 - [ ] Implement all components 
 - [ ] Write a good test system 
 - [ ] Write a good docs

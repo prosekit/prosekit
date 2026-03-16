@@ -30,6 +30,7 @@
     "src"
   ],
   "scripts": {
+    "test": "vitest run src",
     "build": "tsc -b"
   },
   "dependencies": {

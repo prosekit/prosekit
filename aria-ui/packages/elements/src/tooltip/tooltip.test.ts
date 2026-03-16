@@ -502,6 +502,150 @@ describe('Tooltip', () => {
     })
   })
 
+  describe('Late registration (elements exist before registerElements)', () => {
+    // BUG: When elements are pre-rendered in the DOM (e.g., via SSR/innerHTML)
+    // before custom elements are defined, the context system fails for sibling
+    // component instances after the first one. The first tooltip works but
+    // subsequent ones don't receive the context from their root.
+    // This is a core framework bug in @aria-ui-v2/core context propagation.
+    // By the way, the comment above might not be entirely accurate. Do not bindly trust it without verifying the actual root cause.
+    test.only('tooltips work when elements are in DOM before registration', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      container.innerHTML = `
+        <div style="display: flex; gap: 16px; padding: 50px;">
+          <aria-ui-tooltip-root class="inline-block">
+            <aria-ui-tooltip-trigger tabindex="0" open-delay="0" data-testid="late-t1">Top</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner placement="top">
+              <aria-ui-tooltip-popup data-testid="late-p1">Tooltip on top</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+          <aria-ui-tooltip-root class="inline-block">
+            <aria-ui-tooltip-trigger tabindex="0" open-delay="0" data-testid="late-t2">Bottom</aria-ui-tooltip-trigger>
+            <aria-ui-tooltip-positioner placement="bottom">
+              <aria-ui-tooltip-popup data-testid="late-p2">Tooltip on bottom</aria-ui-tooltip-popup>
+            </aria-ui-tooltip-positioner>
+          </aria-ui-tooltip-root>
+        </div>
+      `
+
+            const trigger1 = page.getByTestId('late-t1')
+      const popup1 = page.getByTestId('late-p1')
+
+      const trigger2 = page.getByTestId('late-t2')
+      const popup2 = page.getByTestId('late-p2')
+
+      await expect.element(popup1).not.toBeVisible() 
+      await expect.element(popup2).not.toBeVisible() 
+
+      await trigger1.hover()
+      await expect.element(popup1).toBeVisible() 
+      await expect.element(popup2).not.toBeVisible() 
+
+      await trigger2.hover()
+      await expect.element(popup1).not.toBeVisible() 
+      await expect.element(popup2).toBeVisible() 
+    })
+  })
+
+  describe('Each tooltip opens independently', () => {
+    test('second tooltip opens on hover without hovering first tooltip', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <div style="display: flex; gap: 16px; padding: 50px;">
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t1">Top</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="top">
+                <aria-ui-tooltip-popup data-testid="p1">Tooltip on top</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t2">Bottom</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="bottom">
+                <aria-ui-tooltip-popup data-testid="p2">Tooltip on bottom</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t3">Left</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="left">
+                <aria-ui-tooltip-popup data-testid="p3">Tooltip on left</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t4">Right</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="right">
+                <aria-ui-tooltip-popup data-testid="p4">Tooltip on right</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+          </div>
+        `,
+        container,
+      )
+
+      // Directly hover the second trigger without touching the first
+      await page.getByTestId('t2').hover()
+      expect(page.getByTestId('p2')).toBeVisible()
+    })
+
+    test('third and fourth tooltips open on hover', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <div style="display: flex; gap: 16px; padding: 50px;">
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t1">Top</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="top">
+                <aria-ui-tooltip-popup data-testid="p1">Tooltip on top</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t2">Bottom</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="bottom">
+                <aria-ui-tooltip-popup data-testid="p2">Tooltip on bottom</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t3">Left</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="left">
+                <aria-ui-tooltip-popup data-testid="p3">Tooltip on left</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" tabindex="0" data-testid="t4">Right</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="right">
+                <aria-ui-tooltip-popup data-testid="p4">Tooltip on right</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+          </div>
+        `,
+        container,
+      )
+
+      // Hover third trigger directly
+      await page.getByTestId('t3').hover()
+      expect(page.getByTestId('p3')).toBeVisible()
+
+      // Move away then hover fourth
+      const t3El = container.querySelector('[data-testid="t3"]')!
+      t3El.dispatchEvent(new MouseEvent('mouseleave'))
+
+      await page.getByTestId('t4').hover()
+      expect(page.getByTestId('p4')).toBeVisible()
+    })
+  })
+
   describe('Positioning', () => {
     test('positioner is positioned absolutely by default', async () => {
       const container = document.createElement('div')

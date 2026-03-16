@@ -550,43 +550,43 @@ Remove/update any mentions of `packages/elements/src/generated/elements/` since 
 ## Todo List
 
 ### Phase 1: Modify `defineCustomElement`
-- [ ] Update `defineCustomElement` in `packages/core/src/define-custom-element.ts`:
-  - [ ] Add `createAttributePropertyNameMap` call at class-definition time
-  - [ ] Add `static observedAttributes` to the returned class
-  - [ ] Add `attributeChangedCallback` with `oldValue === newValue` early return
-  - [ ] Add `usePropertiesToAttributes` call in constructor (conditional on having attributes)
-- [ ] Run typecheck to verify core package compiles
+- [x] Update `defineCustomElement` in `packages/core/src/define-custom-element.ts`:
+  - [x] Add `createAttributePropertyNameMap` call at class-definition time
+  - [x] Add `static observedAttributes` to the returned class
+  - [x] Add `attributeChangedCallback` with `oldValue === newValue` early return
+  - [x] Add `usePropertiesToAttributes` call in constructor (conditional on having attributes)
+- [x] Run typecheck to verify core package compiles
 
 ### Phase 2: Add element classes to source files
-- [ ] Add `PopoverRootElement` + `registerPopoverRootElement` to `popover-root.ts`
-- [ ] Add `PopoverTriggerElement` + `registerPopoverTriggerElement` to `popover-trigger.ts`
-- [ ] Add `PopoverPopupElement` + `registerPopoverPopupElement` to `popover-popup.ts`
-- [ ] Add `PopoverPositionerElement` + `registerPopoverPositionerElement` to `popover-positioner.ts`
-- [ ] Update `popover/index.ts` to re-export new element classes and register functions
+- [x] Add `PopoverRootElement` + `registerPopoverRootElement` to `popover-root.ts`
+- [x] Add `PopoverTriggerElement` + `registerPopoverTriggerElement` to `popover-trigger.ts`
+- [x] Add `PopoverPopupElement` + `registerPopoverPopupElement` to `popover-popup.ts`
+- [x] Add `PopoverPositionerElement` + `registerPopoverPositionerElement` to `popover-positioner.ts`
+- [x] Update `popover/index.ts` to re-export new element classes and register functions
 
 ### Phase 3: Modify CLI generator
-- [ ] Delete `generateWebComponentFile` function from `generate.ts`
-- [ ] Remove `elements` from output directories
-- [ ] Remove element file generation from the component loop
-- [ ] Update React generator — import `registerXXXElement` + `type XXXElement` from source path
-- [ ] Update Preact generator — import from source path
-- [ ] Update Solid generator — import from source path
-- [ ] Update Vue generator — import from source path
-- [ ] Update Svelte `.gen.ts` generator — no change (doesn't import from element files)
-- [ ] Update Svelte `.gen.svelte` generator — import from source path
-- [ ] Build CLI package
-- [ ] Run `pnpm run build:gen` in elements package to regenerate framework wrapper files
-- [ ] Delete `packages/elements/src/generated/elements/` directory
+- [x] Delete `generateWebComponentFile` function from `generate.ts`
+- [x] Remove `elements` from output directories
+- [x] Remove element file generation from the component loop
+- [x] Update React generator — import `registerXXXElement` + `type XXXElement` from source path
+- [x] Update Preact generator — import from source path
+- [x] Update Solid generator — import from source path
+- [x] Update Vue generator — import from source path
+- [x] Update Svelte `.gen.ts` generator — no change (doesn't import from element files)
+- [x] Update Svelte `.gen.svelte` generator — import from source path
+- [x] Build CLI package
+- [x] Run `pnpm run build:gen` in elements package to regenerate framework wrapper files
+- [x] Delete `packages/elements/src/generated/elements/` directory
 
 ### Phase 4: Update `AGENTS.md`
-- [ ] Update File Structure section
-- [ ] Update ComponentPart File Structure template
-- [ ] Update Export Visibility Rules
-- [ ] Update Registration section
-- [ ] Remove references to `generated/elements/`
+- [x] Update File Structure section
+- [x] Update ComponentPart File Structure template
+- [x] Update Export Visibility Rules
+- [x] Update Registration section
+- [x] Remove references to `generated/elements/`
 
 ### Phase 5: Verify everything works
-- [ ] Run typecheck across the entire repo
-- [ ] Run elements tests
-- [ ] Run utils tests
-- [ ] Verify no remaining references to `generated/elements/`
+- [x] Run typecheck across the entire repo
+- [x] Run elements tests
+- [x] Run utils tests
+- [x] Verify no remaining references to `generated/elements/`

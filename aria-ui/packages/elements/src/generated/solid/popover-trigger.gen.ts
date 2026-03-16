@@ -1,11 +1,9 @@
-import type {
-  PopoverTriggerEvents as PopoverTriggerElementEvents,
-  PopoverTriggerProps as PopoverTriggerElementProps,
-} from "../../popover/popover-trigger";
 import {
   registerPopoverTriggerElement,
   type PopoverTriggerElement,
-} from "../elements/popover-trigger.gen";
+  type PopoverTriggerEvents as PopoverTriggerElementEvents,
+  type PopoverTriggerProps as PopoverTriggerElementProps,
+} from "../../popover/popover-trigger";
 import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";

@@ -1,7 +1,7 @@
 import PopoverRootComponent from "./popover-root.gen.svelte";
-import type {
-  PopoverRootEvents as PopoverRootElementEvents,
-  PopoverRootProps as PopoverRootElementProps,
+import {
+  type PopoverRootEvents as PopoverRootElementEvents,
+  type PopoverRootProps as PopoverRootElementProps,
 } from "../../popover/popover-root";
 import type { Component, Snippet } from "svelte";
 
@@ -17,7 +17,7 @@ export interface PopoverRootProps {
   /**
    * Whether the popover is currently open.
    *
-   * @default undefined
+   * @default null
    */
   open?: PopoverRootElementProps["open"];
   /**

@@ -7,7 +7,7 @@ import type {
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,
-} from "../elements/popover-popup.gen";
+} from "../../popover/popover-popup";
 
 /** Props for the {@link PopoverPopup} React component. */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}

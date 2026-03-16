@@ -1,5 +1,5 @@
 import type { HostElement } from '@aria-ui-v2/core'
-import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
+import { computed, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
 import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
 import type { AutoUpdateOptions, Boundary, ElementContext, OffsetOptions, Placement, RootBoundary } from '@floating-ui/dom'
 
@@ -301,4 +301,19 @@ export function setupPopoverPositioner(
       altBoundary: props.altBoundary.get(),
     })
   })
+}
+
+/**
+ * @public
+ */
+export class PopoverPositionerElement extends defineCustomElement(
+  setupPopoverPositioner,
+  PopoverPositionerPropsDeclaration,
+) {}
+
+/**
+ * @internal
+ */
+export function registerPopoverPositionerElement(): void {
+  registerCustomElement('aria-ui-popover-positioner', PopoverPositionerElement)
 }

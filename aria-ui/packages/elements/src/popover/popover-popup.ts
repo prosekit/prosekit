@@ -1,5 +1,5 @@
 import type { HostElement, Store } from '@aria-ui-v2/core'
-import { defineProps, useEffect } from '@aria-ui-v2/core'
+import { defineCustomElement, defineProps, registerCustomElement, useEffect } from '@aria-ui-v2/core'
 import { useElementId } from '@aria-ui-v2/utils'
 
 import { PopoverStoreContext } from './popover-store.ts'
@@ -36,4 +36,19 @@ export function setupPopoverPopup(
   useEffect(host, () => {
     host.role = 'dialog'
   })
+}
+
+/**
+ * @public
+ */
+export class PopoverPopupElement extends defineCustomElement(
+  setupPopoverPopup,
+  PopoverPopupPropsDeclaration,
+) {}
+
+/**
+ * @internal
+ */
+export function registerPopoverPopupElement(): void {
+  registerCustomElement('aria-ui-popover-popup', PopoverPopupElement)
 }

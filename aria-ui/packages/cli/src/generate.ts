@@ -2,7 +2,7 @@ import { FileSystem, Path } from '@effect/platform'
 import type { PlatformError } from '@effect/platform/Error'
 import { Effect } from 'effect'
 import prettier from 'prettier'
-import { IndentationText, Project, Scope, VariableDeclarationKind, type SourceFile } from 'ts-morph'
+import { IndentationText, Project, VariableDeclarationKind, type SourceFile } from 'ts-morph'
 
 import type { ComponentInfo } from './parse'
 
@@ -32,6 +32,15 @@ type PropsInterfaceOptions = {
 
 type ElementTypeImportOrder = 'props-first' | 'events-first'
 
+type SourceImportOptions = {
+  sourceFile: SourceFile
+  component: ComponentInfo
+  relativePathToSource: string
+  order: ElementTypeImportOrder
+  includeRegister: boolean
+  includeElementType: boolean
+}
+
 function formatWithPrettier(filePath: string, contents: string) {
   return Effect.promise(async () => {
     const options = (await prettier.resolveConfig(filePath)) ?? {}
@@ -42,9 +51,6 @@ function formatWithPrettier(filePath: string, contents: string) {
   })
 }
 
-/**
- * Generate .gen.ts files for all components
- */
 export function generateFiles(
   components: ComponentInfo[],
   outputDir: string,
@@ -54,7 +60,6 @@ export function generateFiles(
     const fs = yield* FileSystem.FileSystem
 
     const outputDirs = {
-      elements: path.join(outputDir, 'elements'),
       react: path.join(outputDir, 'react'),
       preact: path.join(outputDir, 'preact'),
       solid: path.join(outputDir, 'solid'),
@@ -99,9 +104,6 @@ export function generateFiles(
     for (const component of components) {
       const fileName = getComponentFileName(component)
 
-      const elementsPath = path.join(outputDirs.elements, fileName)
-      yield* writeSourceFile(elementsPath, (sourceFile) => generateWebComponentFile(sourceFile, component, project))
-
       const reactPath = path.join(outputDirs.react, fileName)
       yield* writeSourceFile(reactPath, (sourceFile) => generateReactComponentFile(sourceFile, component, project))
 
@@ -119,159 +121,12 @@ export function generateFiles(
 
       const svelteFileName = getSvelteComponentFileName(component)
       const svelteComponentPath = path.join(outputDirs.svelte, svelteFileName)
-      const svelteContents = generateSvelteComponentSvelteFile(component)
+      const svelteContents = generateSvelteComponentSvelteFile(component, project, svelteComponentPath)
       yield* writeTextFile(svelteComponentPath, svelteContents)
     }
   })
 }
 
-/**
- * Generate the content of a web component .gen.ts file
- */
-function generateWebComponentFile(
-  sourceFile: SourceFile,
-  component: ComponentInfo,
-  project: Project,
-): void {
-  const { componentName, kebabName, props } = getComponentMeta(component)
-  const relativePath = getRelativePathToSource(sourceFile, component, project)
-
-  const hasProps = props.length > 0
-
-  const coreImports: Array<{ name: string; isTypeOnly: boolean }> = [
-    { name: 'createStore', isTypeOnly: false },
-    { name: 'HostElement', isTypeOnly: false },
-    { name: 'registerCustomElement', isTypeOnly: false },
-    { name: 'Store', isTypeOnly: true },
-  ]
-  if (hasProps) {
-    coreImports.push(
-      { name: 'createAttributePropertyNameMap', isTypeOnly: false },
-      { name: 'handleAttributeChanged', isTypeOnly: false },
-      { name: 'usePropertiesToAttributes', isTypeOnly: false },
-    )
-  }
-  coreImports.sort((a, b) => a.name.localeCompare(b.name))
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui-v2/core',
-    namedImports: coreImports,
-  })
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: relativePath,
-    namedImports: [
-      { name: `${componentName}PropsDeclaration` },
-      { name: `setup${componentName}` },
-      { name: `${componentName}Props`, isTypeOnly: true },
-    ],
-  })
-
-  if (hasProps) {
-    sourceFile.addVariableStatement({
-      declarationKind: VariableDeclarationKind.Const,
-      declarations: [
-        {
-          name: 'attributeNameToPropertyName',
-          initializer: `/* @__PURE__ */ createAttributePropertyNameMap(${componentName}PropsDeclaration)`,
-        },
-      ],
-    })
-
-    sourceFile.addVariableStatement({
-      declarationKind: VariableDeclarationKind.Const,
-      declarations: [
-        {
-          name: 'observedAttributes',
-          type: 'string[]',
-          initializer: `/* @__PURE__ */ Array.from(attributeNameToPropertyName.keys())`,
-        },
-      ],
-    })
-  }
-
-  const classDecl = sourceFile.addClass({
-    name: `${componentName}Element`,
-    isExported: true,
-    extends: 'HostElement',
-  })
-
-  classDecl.addProperty({
-    name: '_store',
-    type: `Store<${componentName}Props>`,
-    scope: Scope.Private,
-  })
-
-  if (hasProps) {
-    classDecl.addProperty({
-      name: 'observedAttributes',
-      isStatic: true,
-      initializer: 'observedAttributes',
-    })
-  }
-
-  const constructorStatements = [
-    'super()',
-    `this._store = createStore(this, ${componentName}PropsDeclaration)`,
-    `setup${componentName}(this, this._store)`,
-  ]
-  if (hasProps) {
-    constructorStatements.push(
-      `usePropertiesToAttributes(this, this._store, ${componentName}PropsDeclaration)`,
-    )
-  }
-
-  classDecl.addConstructor({
-    statements: constructorStatements,
-  })
-
-  if (hasProps) {
-    classDecl.addMethod({
-      name: 'attributeChangedCallback',
-      parameters: [
-        { name: 'name', type: 'string' },
-        { name: '_oldValue', type: 'string | null' },
-        { name: 'newValue', type: 'string | null' },
-      ],
-      returnType: 'void',
-      statements: [
-        `handleAttributeChanged(this._store, ${componentName}PropsDeclaration, attributeNameToPropertyName, name, newValue)`,
-      ],
-    })
-  }
-
-  for (const prop of props) {
-    const propName = prop.name
-
-    classDecl.addGetAccessor({
-      name: propName,
-      returnType: `${componentName}Props['${propName}']`,
-      statements: [`return this._store.${propName}.get()`],
-      docs: [prop.comment],
-    })
-
-    classDecl.addSetAccessor({
-      name: propName,
-      parameters: [
-        { name: 'value', type: `${componentName}Props['${propName}']` },
-      ],
-      statements: [`this._store.${propName}.set(value)`],
-    })
-  }
-
-  sourceFile.addFunction({
-    name: `register${componentName}Element`,
-    isExported: true,
-    returnType: 'void',
-    statements: [
-      `registerCustomElement('aria-ui-${kebabName}', ${componentName}Element)`,
-    ],
-  })
-}
-
-/**
- * Generate the content of a React component .gen.ts file
- */
 function generateReactComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
@@ -306,19 +161,13 @@ function generateReactComponentFile(
     ],
   })
 
-  const { propsTypeName, eventsTypeName } = addElementTypeImports(
+  const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
     relativePathToSource,
-    'props-first',
-  )
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: `../elements/${kebabName}.gen`,
-    namedImports: [
-      `register${componentName}Element`,
-      { name: `${componentName}Element`, isTypeOnly: true },
-    ],
+    order: 'props-first',
+    includeRegister: true,
+    includeElementType: true,
   })
 
   addPropsInterface({
@@ -356,9 +205,6 @@ function generateReactComponentFile(
   })
 }
 
-/**
- * Generate the content of a Preact component .gen.ts file
- */
 function generatePreactComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
@@ -395,19 +241,13 @@ function generatePreactComponentFile(
     namedImports: ['ForwardRefExoticComponent', 'RefAttributes'],
   })
 
-  const { propsTypeName, eventsTypeName } = addElementTypeImports(
+  const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
     relativePathToSource,
-    'props-first',
-  )
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: `../elements/${kebabName}.gen`,
-    namedImports: [
-      `register${componentName}Element`,
-      { name: `${componentName}Element`, isTypeOnly: true },
-    ],
+    order: 'props-first',
+    includeRegister: true,
+    includeElementType: true,
   })
 
   addPropsInterface({
@@ -445,9 +285,6 @@ function generatePreactComponentFile(
   })
 }
 
-/**
- * Generate the content of a Solid component .gen.ts file
- */
 function generateSolidComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
@@ -467,19 +304,13 @@ function generateSolidComponentFile(
     project,
   )
 
-  const { propsTypeName, eventsTypeName } = addElementTypeImports(
+  const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
     relativePathToSource,
-    'events-first',
-  )
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: `../elements/${kebabName}.gen`,
-    namedImports: [
-      `register${componentName}Element`,
-      { name: `${componentName}Element`, isTypeOnly: true },
-    ],
+    order: 'events-first',
+    includeRegister: true,
+    includeElementType: true,
   })
 
   const needsSplitProps = hasProps || hasEvents
@@ -569,9 +400,6 @@ return h(
   })
 }
 
-/**
- * Generate the content of a Vue component .gen.ts file
- */
 function generateVueComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
@@ -601,16 +429,13 @@ function generateVueComponentFile(
     ],
   })
 
-  const { propsTypeName, eventsTypeName } = addElementTypeImports(
+  const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
     relativePathToSource,
-    'events-first',
-  )
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: `../elements/${kebabName}.gen`,
-    namedImports: [`register${componentName}Element`],
+    order: 'events-first',
+    includeRegister: true,
+    includeElementType: false,
   })
 
   addPropsInterface({
@@ -672,9 +497,6 @@ function generateVueComponentFile(
   })
 }
 
-/**
- * Generate the content of a Svelte component .gen.ts file
- */
 function generateSvelteComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
@@ -693,12 +515,14 @@ function generateSvelteComponentFile(
     project,
   )
 
-  const { propsTypeName, eventsTypeName } = addElementTypeImports(
+  const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
     relativePathToSource,
-    'events-first',
-  )
+    order: 'events-first',
+    includeRegister: false,
+    includeElementType: false,
+  })
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'svelte',
@@ -729,11 +553,12 @@ function generateSvelteComponentFile(
   })
 }
 
-/**
- * Generate the content of a Svelte component .gen.svelte file
- */
-function generateSvelteComponentSvelteFile(component: ComponentInfo): string {
+function generateSvelteComponentSvelteFile(component: ComponentInfo, project: Project, outputFilePath: string): string {
   const { componentName, kebabName, eventHandlers } = getComponentMeta(component)
+
+  const svelteSourceFile = project.createSourceFile(outputFilePath, '', { overwrite: true })
+  const relativePathToSource = getRelativePathToSource(svelteSourceFile, component, project)
+
   const destructureProps = eventHandlers.length > 0
     ? `  let { ${
       eventHandlers.map((handler) => `${handler.handlerName} = undefined`).join(', ')
@@ -747,7 +572,7 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo): string {
   const openingTag = `<aria-ui-${kebabName} {..._restProps}${eventAttributes ? ` ${eventAttributes}` : ''}`
 
   return `<script lang="js">
-  import { register${componentName}Element } from '../elements/${kebabName}.gen'
+  import { register${componentName}Element } from '${relativePathToSource}'
   register${componentName}Element()
 
 ${destructureProps}
@@ -792,50 +617,50 @@ function getComponentMeta(component: ComponentInfo): ComponentMeta {
   }
 }
 
-function addElementTypeImports(
-  sourceFile: SourceFile,
-  component: ComponentInfo,
-  relativePathToSource: string,
-  order: ElementTypeImportOrder,
+function addSourceFileImports(
+  options: SourceImportOptions,
 ): { propsTypeName: string; eventsTypeName: string } {
+  const {
+    sourceFile,
+    component,
+    relativePathToSource,
+    order,
+    includeRegister,
+    includeElementType,
+  } = options
   const componentName = component.name
   const propsTypeName = `${componentName}ElementProps`
   const eventsTypeName = `${componentName}ElementEvents`
-  const propsImport = component.props.length > 0
-    ? {
-      name: `${componentName}Props`,
-      alias: propsTypeName,
-    }
-    : null
-  const eventsImport = component.events.length > 0
-    ? {
-      name: `${componentName}Events`,
-      alias: eventsTypeName,
-    }
-    : null
-  const elementTypeImports = []
 
-  if (order === 'props-first') {
-    if (propsImport) {
-      elementTypeImports.push(propsImport)
-    }
-    if (eventsImport) {
-      elementTypeImports.push(eventsImport)
-    }
-  } else {
-    if (eventsImport) {
-      elementTypeImports.push(eventsImport)
-    }
-    if (propsImport) {
-      elementTypeImports.push(propsImport)
-    }
+  const namedImports: Array<{ name: string; alias?: string; isTypeOnly?: boolean }> = []
+
+  if (includeRegister) {
+    namedImports.push({ name: `register${componentName}Element` })
   }
 
-  if (elementTypeImports.length > 0) {
+  if (includeElementType) {
+    namedImports.push({ name: `${componentName}Element`, isTypeOnly: true })
+  }
+
+  const propsImport = component.props.length > 0
+    ? { name: `${componentName}Props`, alias: propsTypeName, isTypeOnly: true }
+    : null
+  const eventsImport = component.events.length > 0
+    ? { name: `${componentName}Events`, alias: eventsTypeName, isTypeOnly: true }
+    : null
+
+  if (order === 'props-first') {
+    if (propsImport) namedImports.push(propsImport)
+    if (eventsImport) namedImports.push(eventsImport)
+  } else {
+    if (eventsImport) namedImports.push(eventsImport)
+    if (propsImport) namedImports.push(propsImport)
+  }
+
+  if (namedImports.length > 0) {
     sourceFile.addImportDeclaration({
       moduleSpecifier: relativePathToSource,
-      isTypeOnly: true,
-      namedImports: elementTypeImports,
+      namedImports,
     })
   }
 
@@ -948,9 +773,6 @@ function toEventAttributeName(eventName: string): string {
   return `on${eventName}`
 }
 
-/**
- * Convert PascalCase to kebab-case
- */
 function toKebabCase(str: string): string {
   return str.replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 }

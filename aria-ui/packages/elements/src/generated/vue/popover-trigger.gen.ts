@@ -4,11 +4,11 @@ import {
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from "vue";
-import type {
-  PopoverTriggerEvents as PopoverTriggerElementEvents,
-  PopoverTriggerProps as PopoverTriggerElementProps,
+import {
+  registerPopoverTriggerElement,
+  type PopoverTriggerEvents as PopoverTriggerElementEvents,
+  type PopoverTriggerProps as PopoverTriggerElementProps,
 } from "../../popover/popover-trigger";
-import { registerPopoverTriggerElement } from "../elements/popover-trigger.gen";
 
 /** Props for the {@link PopoverTrigger} Vue component. */
 export interface PopoverTriggerProps {

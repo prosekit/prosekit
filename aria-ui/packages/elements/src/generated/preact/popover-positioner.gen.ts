@@ -1,11 +1,11 @@
 import { createComponent } from "@aria-ui-v2/integrations/preact";
 import type { HTMLAttributes } from "preact";
 import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
-import type { PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/popover-positioner";
 import {
   registerPopoverPositionerElement,
   type PopoverPositionerElement,
-} from "../elements/popover-positioner.gen";
+  type PopoverPositionerProps as PopoverPositionerElementProps,
+} from "../../popover/popover-positioner";
 
 /** Props for the {@link PopoverPositioner} Preact component. */
 export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositionerElement> {

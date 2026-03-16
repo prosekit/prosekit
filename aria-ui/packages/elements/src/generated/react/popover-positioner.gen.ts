@@ -4,11 +4,11 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from "react";
-import type { PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/popover-positioner";
 import {
   registerPopoverPositionerElement,
   type PopoverPositionerElement,
-} from "../elements/popover-positioner.gen";
+  type PopoverPositionerProps as PopoverPositionerElementProps,
+} from "../../popover/popover-positioner";
 
 /** Props for the {@link PopoverPositioner} React component. */
 export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositionerElement> {

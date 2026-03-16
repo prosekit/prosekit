@@ -4,11 +4,11 @@ import {
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from "vue";
-import type {
-  PopoverRootEvents as PopoverRootElementEvents,
-  PopoverRootProps as PopoverRootElementProps,
+import {
+  registerPopoverRootElement,
+  type PopoverRootEvents as PopoverRootElementEvents,
+  type PopoverRootProps as PopoverRootElementProps,
 } from "../../popover/popover-root";
-import { registerPopoverRootElement } from "../elements/popover-root.gen";
 
 /** Props for the {@link PopoverRoot} Vue component. */
 export interface PopoverRootProps {
@@ -22,7 +22,7 @@ export interface PopoverRootProps {
   /**
    * Whether the popover is currently open.
    *
-   * @default undefined
+   * @default null
    */
   open?: PopoverRootElementProps["open"];
   /**

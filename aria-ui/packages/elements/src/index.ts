@@ -1,7 +1,7 @@
-import { PopoverPopupElement, registerPopoverPopupElement } from './generated/elements/popover-popup.gen.ts'
-import { PopoverPositionerElement, registerPopoverPositionerElement } from './generated/elements/popover-positioner.gen.ts'
-import { PopoverRootElement, registerPopoverRootElement } from './generated/elements/popover-root.gen.ts'
-import { PopoverTriggerElement, registerPopoverTriggerElement } from './generated/elements/popover-trigger.gen.ts'
+import { PopoverPopupElement, registerPopoverPopupElement } from './popover/popover-popup.ts'
+import { PopoverPositionerElement, registerPopoverPositionerElement } from './popover/popover-positioner.ts'
+import { PopoverRootElement, registerPopoverRootElement } from './popover/popover-root.ts'
+import { PopoverTriggerElement, registerPopoverTriggerElement } from './popover/popover-trigger.ts'
 
 export {
   PopoverPopupElement,

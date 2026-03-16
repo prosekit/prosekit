@@ -1,5 +1,5 @@
 <script lang="js">
-  import { registerPopoverPositionerElement } from '../elements/popover-positioner.gen'
+  import { registerPopoverPositionerElement } from '../../popover/popover-positioner'
   registerPopoverPositionerElement()
 
   let { children = undefined, ..._restProps } = $props()

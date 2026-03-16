@@ -1,3 +1,8 @@
+import {
+  createAttributePropertyNameMap,
+  handleAttributeChanged,
+  usePropertiesToAttributes,
+} from './attribute.ts'
 import type { AnyProps, PropsDeclaration } from './define-props.ts'
 import { HostElement } from './host-element.ts'
 import type { Signal } from './signal.ts'
@@ -13,30 +18,50 @@ type SetupFunction<Props extends AnyProps> = (
   props: Store<Props>,
 ) => void
 
-/**
- * Defines a custom element constructor.
- *
- * @param options
- */
 export function defineCustomElement<
   Props extends AnyProps = { __noProps__: never },
 >(
   setup: SetupFunction<Props>,
   props: PropsDeclaration<Props>,
 ): HostElementConstructor<Props> {
+  const attributeNameToPropertyName = createAttributePropertyNameMap(props)
+  const observedAttributes = Array.from(attributeNameToPropertyName.keys())
+  const hasAttributes = observedAttributes.length > 0
+
   class CustomElement extends HostElement {
+    static observedAttributes = observedAttributes
+
     readonly _store: Store<Props>
 
     constructor() {
       super()
       this._store = createStore(this, props)
       setup(this, this._store)
+      if (hasAttributes) {
+        usePropertiesToAttributes(this, this._store, props)
+      }
+    }
+
+    attributeChangedCallback(
+      name: string,
+      oldValue: string | null,
+      newValue: string | null,
+    ): void {
+      if (oldValue === newValue) return
+
+      handleAttributeChanged(
+        this._store,
+        props,
+        attributeNameToPropertyName,
+        name,
+        newValue,
+      )
     }
   }
 
   defineGetterSetter(CustomElement, props)
 
-  return CustomElement as HostElementConstructor<any> as HostElementConstructor<Props>
+  return CustomElement as HostElementConstructor<AnyProps> as HostElementConstructor<Props>
 }
 
 function defineGetterSetter<Props extends object>(

@@ -1,5 +1,5 @@
 <script lang="js">
-  import { registerPopoverTriggerElement } from '../elements/popover-trigger.gen'
+  import { registerPopoverTriggerElement } from '../../popover/popover-trigger'
   registerPopoverTriggerElement()
 
   let { onOpenChange = undefined, children = undefined, ..._restProps } = $props()

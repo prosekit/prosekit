@@ -4,8 +4,10 @@ import {
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from "vue";
-import type { PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/popover-positioner";
-import { registerPopoverPositionerElement } from "../elements/popover-positioner.gen";
+import {
+  registerPopoverPositionerElement,
+  type PopoverPositionerProps as PopoverPositionerElementProps,
+} from "../../popover/popover-positioner";
 
 /** Props for the {@link PopoverPositioner} Vue component. */
 export interface PopoverPositionerProps {

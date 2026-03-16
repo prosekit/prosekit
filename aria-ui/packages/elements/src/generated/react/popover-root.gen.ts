@@ -4,14 +4,12 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from "react";
-import type {
-  PopoverRootProps as PopoverRootElementProps,
-  PopoverRootEvents as PopoverRootElementEvents,
-} from "../../popover/popover-root";
 import {
   registerPopoverRootElement,
   type PopoverRootElement,
-} from "../elements/popover-root.gen";
+  type PopoverRootProps as PopoverRootElementProps,
+  type PopoverRootEvents as PopoverRootElementEvents,
+} from "../../popover/popover-root";
 
 /** Props for the {@link PopoverRoot} React component. */
 export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
@@ -25,7 +23,7 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   /**
    * Whether the popover is currently open.
    *
-   * @default undefined
+   * @default null
    */
   open?: PopoverRootElementProps["open"];
   /**

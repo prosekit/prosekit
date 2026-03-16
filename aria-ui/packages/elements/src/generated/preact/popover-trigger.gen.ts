@@ -1,14 +1,12 @@
 import { createComponent } from "@aria-ui-v2/integrations/preact";
 import type { HTMLAttributes } from "preact";
 import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
-import type {
-  PopoverTriggerProps as PopoverTriggerElementProps,
-  PopoverTriggerEvents as PopoverTriggerElementEvents,
-} from "../../popover/popover-trigger";
 import {
   registerPopoverTriggerElement,
   type PopoverTriggerElement,
-} from "../elements/popover-trigger.gen";
+  type PopoverTriggerProps as PopoverTriggerElementProps,
+  type PopoverTriggerEvents as PopoverTriggerElementEvents,
+} from "../../popover/popover-trigger";
 
 /** Props for the {@link PopoverTrigger} Preact component. */
 export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElement> {

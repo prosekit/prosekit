@@ -1,5 +1,5 @@
 import type { HostElement } from '@aria-ui-v2/core'
-import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
+import { computed, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
 import { useAriaControls, useAriaDisabled, useAriaExpanded, useHover, usePress } from '@aria-ui-v2/utils'
 
 import type { OpenChangeEvent } from './popover-root.ts'
@@ -121,4 +121,19 @@ export function setupPopoverTrigger(
 
   const getAriaControls = computed(() => (getOpen() ? getPopupId() : undefined))
   useAriaControls(host, getAriaControls)
+}
+
+/**
+ * @public
+ */
+export class PopoverTriggerElement extends defineCustomElement(
+  setupPopoverTrigger,
+  PopoverTriggerPropsDeclaration,
+) {}
+
+/**
+ * @internal
+ */
+export function registerPopoverTriggerElement(): void {
+  registerCustomElement('aria-ui-popover-trigger', PopoverTriggerElement)
 }

@@ -1,5 +1,5 @@
 import PopoverPositionerComponent from "./popover-positioner.gen.svelte";
-import type { PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/popover-positioner";
+import { type PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/popover-positioner";
 import type { Component, Snippet } from "svelte";
 
 /** Props for the {@link PopoverPositioner} Svelte component. */

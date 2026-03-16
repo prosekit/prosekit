@@ -4,14 +4,12 @@ import type {
   HTMLAttributes,
   RefAttributes,
 } from "react";
-import type {
-  PopoverTriggerProps as PopoverTriggerElementProps,
-  PopoverTriggerEvents as PopoverTriggerElementEvents,
-} from "../../popover/popover-trigger";
 import {
   registerPopoverTriggerElement,
   type PopoverTriggerElement,
-} from "../elements/popover-trigger.gen";
+  type PopoverTriggerProps as PopoverTriggerElementProps,
+  type PopoverTriggerEvents as PopoverTriggerElementEvents,
+} from "../../popover/popover-trigger";
 
 /** Props for the {@link PopoverTrigger} React component. */
 export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElement> {

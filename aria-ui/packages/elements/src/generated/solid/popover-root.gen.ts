@@ -1,11 +1,9 @@
-import type {
-  PopoverRootEvents as PopoverRootElementEvents,
-  PopoverRootProps as PopoverRootElementProps,
-} from "../../popover/popover-root";
 import {
   registerPopoverRootElement,
   type PopoverRootElement,
-} from "../elements/popover-root.gen";
+  type PopoverRootEvents as PopoverRootElementEvents,
+  type PopoverRootProps as PopoverRootElementProps,
+} from "../../popover/popover-root";
 import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
@@ -22,7 +20,7 @@ export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement>
   /**
    * Whether the popover is currently open.
    *
-   * @default undefined
+   * @default null
    */
   open?: PopoverRootElementProps["open"];
   /**

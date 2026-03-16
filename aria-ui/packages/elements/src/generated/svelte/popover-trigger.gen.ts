@@ -1,7 +1,7 @@
 import PopoverTriggerComponent from "./popover-trigger.gen.svelte";
-import type {
-  PopoverTriggerEvents as PopoverTriggerElementEvents,
-  PopoverTriggerProps as PopoverTriggerElementProps,
+import {
+  type PopoverTriggerEvents as PopoverTriggerElementEvents,
+  type PopoverTriggerProps as PopoverTriggerElementProps,
 } from "../../popover/popover-trigger";
 import type { Component, Snippet } from "svelte";
 

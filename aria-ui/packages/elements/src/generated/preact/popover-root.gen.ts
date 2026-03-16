@@ -1,14 +1,12 @@
 import { createComponent } from "@aria-ui-v2/integrations/preact";
 import type { HTMLAttributes } from "preact";
 import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
-import type {
-  PopoverRootProps as PopoverRootElementProps,
-  PopoverRootEvents as PopoverRootElementEvents,
-} from "../../popover/popover-root";
 import {
   registerPopoverRootElement,
   type PopoverRootElement,
-} from "../elements/popover-root.gen";
+  type PopoverRootProps as PopoverRootElementProps,
+  type PopoverRootEvents as PopoverRootElementEvents,
+} from "../../popover/popover-root";
 
 /** Props for the {@link PopoverRoot} Preact component. */
 export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
@@ -22,7 +20,7 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   /**
    * Whether the popover is currently open.
    *
-   * @default null 
+   * @default null
    */
   open?: PopoverRootElementProps["open"];
   /**

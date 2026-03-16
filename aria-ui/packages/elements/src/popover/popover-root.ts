@@ -1,5 +1,5 @@
 import type { HostElement, PropsDeclaration } from '@aria-ui-v2/core'
-import { computed, defineProps, type Store } from '@aria-ui-v2/core'
+import { computed, defineCustomElement, defineProps, registerCustomElement, type Store } from '@aria-ui-v2/core'
 import { useAriaDisabled } from '@aria-ui-v2/utils'
 
 import { PopoverStore, PopoverStoreContext } from './popover-store.ts'
@@ -120,4 +120,19 @@ export class OpenChangeEvent extends Event {
     super('openChange')
     this.open = open
   }
+}
+
+/**
+ * @public
+ */
+export class PopoverRootElement extends defineCustomElement(
+  setupPopoverRoot,
+  PopoverRootPropsDeclaration,
+) {}
+
+/**
+ * @internal
+ */
+export function registerPopoverRootElement(): void {
+  registerCustomElement('aria-ui-popover-root', PopoverRootElement)
 }

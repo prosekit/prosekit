@@ -1,5 +1,5 @@
 <script lang="js">
-  import { registerPopoverPopupElement } from '../elements/popover-popup.gen'
+  import { registerPopoverPopupElement } from '../../popover/popover-popup'
   registerPopoverPopupElement()
 
   let { children = undefined, ..._restProps } = $props()

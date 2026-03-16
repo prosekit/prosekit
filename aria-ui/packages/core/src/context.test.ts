@@ -51,8 +51,8 @@ describe('Context', () => {
     expect(consumer.value).toBe('hello')
   })
 
-  it('should work with multiple element types pre-rendered via innerHTML', async  () => {
-    const ctx = createContext<{getValue: () => string}>(`test-${getId()}`)
+  it('should work with multiple element types pre-rendered via innerHTML', async () => {
+    const ctx = createContext<{ getValue: () => string }>(`test-${getId()}`)
     const rootTag = `test-root-${getId()}`
     const childTag = `test-child-${getId()}`
     const leafTag = `test-leaf-${getId()}`
@@ -120,9 +120,9 @@ describe('Context', () => {
     const leaf1 = container.querySelector('#leaf1') as HTMLElement
     const leaf2 = container.querySelector('#leaf2') as HTMLElement
 
-await     expect.poll( () => child1.dataset.received).toBe('a')
-await     expect.poll( () => leaf1.dataset.received).toBe('a')
-await     expect.poll( () => child2.dataset.received).toBe('b')
-await     expect.poll( () => leaf2.dataset.received).toBe('b')
+    await expect.poll(() => child1.dataset.received).toBe('a')
+    await expect.poll(() => leaf1.dataset.received).toBe('a')
+    await expect.poll(() => child2.dataset.received).toBe('b')
+    await expect.poll(() => leaf2.dataset.received).toBe('b')
   })
 })

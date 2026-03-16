@@ -31,18 +31,6 @@ catalogs:
       specifier: ^4.1.0
       version: 4.1.0
 
-overrides:
-  '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540
-  '@aria-ui/combobox': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/combobox@b9d0540
-  '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-  '@aria-ui/listbox': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540
-  '@aria-ui/menu': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540
-  '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
-  '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540
-  '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
-  '@aria-ui/select': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@b9d0540
-  '@aria-ui/tooltip': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
-
 patchedDependencies:
   y-prosemirror:
     hash: 532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031
@@ -833,7 +821,7 @@ importers:
         version: 1.9.11
       svelte:
         specifier: ^5.53.11
-        version: 5.53.11
+        version: 5.53.12
       tsdown:
         specifier: 'catalog:'
         version: 0.21.2(@tsdown/css@0.21.2)(oxc-resolver@11.19.1)(synckit@0.11.12)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))
@@ -967,23 +955,23 @@ importers:
         version: 0.4.6
       '@prosemirror-adapter/svelte':
         specifier: ^0.5.0
-        version: 0.5.0(svelte@5.53.11)
+        version: 0.5.0(svelte@5.53.12)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
       '@sveltejs/package':
         specifier: ^2.5.7
-        version: 2.5.7(svelte@5.53.11)(typescript@5.9.3)
+        version: 2.5.7(svelte@5.53.12)(typescript@5.9.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.13
       svelte:
         specifier: ^5.53.11
-        version: 5.53.11
+        version: 5.53.12
       svelte-check:
         specifier: ^4.4.5
-        version: 4.4.5(picomatch@4.0.3)(svelte@5.53.11)(typescript@5.9.3)
+        version: 4.4.5(picomatch@4.0.3)(svelte@5.53.12)(typescript@5.9.3)
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
@@ -1081,26 +1069,26 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
+        specifier: ^0.0.22
+        version: 0.0.22
       '@aria-ui/listbox':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540
+        specifier: ^0.0.25
+        version: 0.0.25
       '@aria-ui/menu':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540
+        specifier: ^0.0.21
+        version: 0.0.21
       '@aria-ui/overlay':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
+        specifier: ^0.0.25
+        version: 0.0.25
       '@aria-ui/popover':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540
+        specifier: ^0.0.28
+        version: 0.0.28
       '@aria-ui/presence':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
+        specifier: ^0.0.20
+        version: 0.0.20
       '@aria-ui/tooltip':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
+        specifier: ^0.0.30
+        version: 0.0.30
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
@@ -1185,7 +1173,7 @@ importers:
         version: 1.9.11
       svelte:
         specifier: ^5.53.11
-        version: 5.53.11
+        version: 5.53.12
       unified:
         specifier: ^11.0.5
         version: 11.0.5
@@ -1219,7 +1207,7 @@ importers:
         version: link:../packages/dev
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.4
-        version: 6.2.4(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+        version: 6.2.4(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
       '@tailwindcss/cli':
         specifier: ^4.2.1
         version: 4.2.1
@@ -1288,7 +1276,7 @@ importers:
         version: 0.4.0
       svelte-check:
         specifier: ^4.4.5
-        version: 4.4.5(picomatch@4.0.3)(svelte@5.53.11)(typescript@5.9.3)
+        version: 4.4.5(picomatch@4.0.3)(svelte@5.53.12)(typescript@5.9.3)
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -1333,7 +1321,7 @@ importers:
         version: 1.0.1(solid-js@1.9.11)(vitest@4.1.0)
       vitest-browser-svelte:
         specifier: ^2.1.0
-        version: 2.1.0(svelte@5.53.11)(vitest@4.1.0)
+        version: 2.1.0(svelte@5.53.12)(vitest@4.1.0)
       vitest-browser-vue:
         specifier: ^2.1.0
         version: 2.1.0(vitest@4.1.0)(vue@3.5.30(typescript@5.9.3))
@@ -1363,7 +1351,7 @@ importers:
         version: 0.38.1(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/svelte':
         specifier: ^8.0.0
-        version: 8.0.0(@types/node@24.10.13)(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(svelte@5.53.11)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
+        version: 8.0.0(@types/node@24.10.13)(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(svelte@5.53.12)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
       '@astrojs/vue':
         specifier: ^6.0.0
         version: 6.0.0(@types/node@24.10.13)(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(vue@3.5.30(typescript@5.9.3))(yaml@2.8.2)
@@ -1465,7 +1453,7 @@ importers:
         version: 0.11.7(@astrojs/starlight@0.38.1(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
       svelte:
         specifier: ^5.53.11
-        version: 5.53.11
+        version: 5.53.12
       tailwindcss:
         specifier: ^4.2.1
         version: 4.2.1
@@ -1511,37 +1499,29 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540}
-    version: 0.0.6
+  '@aria-ui/collection@0.0.6':
+    resolution: {integrity: sha512-mx1lh6rcWqPKl84DJsngI52kFrGZp0fidI24zFPHfAf02shbRyLKgYFF4yupgSinhcQPEK8A6M2ebqfcS5M1Cw==}
 
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540':
-    resolution: {integrity: sha512-5wHJbxVo0pPZd0uywBvD9lq7REiBv8AxY5M9E/ghq9Vhfws5FBX90xEnK+3WOVLZCGdbvROSYU3aJFNL10QmmQ==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540}
-    version: 0.0.22
+  '@aria-ui/core@0.0.22':
+    resolution: {integrity: sha512-N/UC2JJ8fA46WAc5TBNM9NZMcmQ3ghqDt1DNa7XdXHqHhDYkZ7Mn0Yn6KEciiIvlP+yuxLrPO/Q1oB4CNV21kg==}
 
-  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540':
-    resolution: {integrity: sha512-K7gqSvWAGFeqkAmyHDR42VgfjqKSERXWCBgH8dGzY243i/1RIPHz9y9a4oM9qB/xy/cNqPsOUYv/JvIiV6Wlag==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540}
-    version: 0.0.25
+  '@aria-ui/listbox@0.0.25':
+    resolution: {integrity: sha512-+YSuG+NLhT4ghV7n4G3bkY4e6iOdMXB6jmSTpdg+oxMNPSUHR+ERhpg0dIllMKHiQTR3D+DgNnpVsXinEYDJyw==}
 
-  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540':
-    resolution: {integrity: sha512-wcOkkUAVOk+BRhkCq1go066b8zwsVsYaGD4cY3HV62jH8qPpiuLe/S3RkoUllwApb9fEktPhGzhWBVnSmfviMg==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540}
-    version: 0.0.21
+  '@aria-ui/menu@0.0.21':
+    resolution: {integrity: sha512-/AhxBAOtiVbuRYXKnZXgXZ0cEEgidx8j4O0ns3ykypWsOwsRm4xVFf1CV7Ngrq/2MbYUvklzuTf/i06jMLYXOw==}
 
-  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540':
-    resolution: {integrity: sha512-bGMLlUZUZR/O1K8qOSRozqKfFDkHBZQxB6GKrxHNkKotiXXNAy160NF7Gd6aL8s6DxzkK+1C6g9XhohgjlcGHA==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540}
-    version: 0.0.25
+  '@aria-ui/overlay@0.0.25':
+    resolution: {integrity: sha512-YpOFpB1KNQaGLgRsnN5BcY64A+akHOqlLhH/ft7YU/l7E/9Sm0yscriiBvEi+vVwqYUOveNuh5vDVVmWeRjLpQ==}
 
-  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540':
-    resolution: {integrity: sha512-eNTCcU7KTpVociMyjSI1pJq11scIfB83vTTNWYNXXyYWs/uYCBpFUZkCqEWVpjRf83mcQo/Q+oQ/sU37+4784g==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540}
-    version: 0.0.28
+  '@aria-ui/popover@0.0.28':
+    resolution: {integrity: sha512-tYAbRy7LZRWyCxCmC4zzI+nDpggu7jeV72AiNnUyG/mn6/gj9v2OUroK+Bj9jS0nNGm1up+lLyezrdMW15nSIQ==}
 
-  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540':
-    resolution: {integrity: sha512-pJVNyZ9Lo21XaRsMc6QDtaHjSSinZ7ekvLJGxYAcSGCAL573pgAT8T5JGlRoYMhWs2LvAskjn3ooff2QIramZw==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540}
-    version: 0.0.20
+  '@aria-ui/presence@0.0.20':
+    resolution: {integrity: sha512-K/n60HLCGG0XX+sAEJ7aOScevXrfDet7+gxt+QXlELxxjrlpP0sZq/iS6KCdr6n7piaW6zfY7EtKxOriWUv8tw==}
 
-  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540':
-    resolution: {integrity: sha512-/1F73z0WptheHy2JttQrPjC/DPu6QAlQ6ogcfKzTIoo/9yIfEqnXPkq+fbtbuPvc717n18wLdnETpqYqymjVmQ==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540}
-    version: 0.0.30
+  '@aria-ui/tooltip@0.0.30':
+    resolution: {integrity: sha512-XYctHrJOSRNW2iQc1IHkozlK2H6edX+uD/p1Oo5yHNMA28mFrxKUOJEiA297jAvlLwASKTaAT+40cOTZ2bTyTQ==}
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.2':
     resolution: {integrity: sha512-JbbKaKkYMN/zc//irXYb6QFIMm+A4tpwgs6x4BrNtqU/Jeq2vk4i3LhnHBB1SaMfihGtcH8/Sj++o4jaIBXyCw==}
@@ -5081,9 +5061,6 @@ packages:
     resolution: {integrity: sha512-qE3Veg1YXzGHQhlA6jzebZN2qVf6NX+A7m7qlhCGG30dJixrAQhYOsJjsnBjJkCSmuOPpCk30145fr8FV0bzog==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  devalue@5.6.3:
-    resolution: {integrity: sha512-nc7XjUU/2Lb+SvEFVGcWLiKkzfw8+qHI7zn8WYXKkLMgfGSHbgCEaR6bJpev8Cm6Rmrb19Gfd/tZvGqx9is3wg==}
-
   devalue@5.6.4:
     resolution: {integrity: sha512-Gp6rDldRsFh/7XuouDbxMH3Mx8GMCcgzIb1pDTvNyn8pZGQ22u+Wa+lGV9dQCltFQ7uVw0MhRyb8XDskNFOReA==}
 
@@ -5766,6 +5743,9 @@ packages:
   ignore@7.0.5:
     resolution: {integrity: sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==}
     engines: {node: '>= 4'}
+
+  immer@10.2.0:
+    resolution: {integrity: sha512-d/+XTN3zfODyjr89gM3mPq1WNX2B8pYsu7eORitdwyA2sBubnTl3laYlBk4sXY5FUa5qTZGBDPJICVbvqzjlbw==}
 
   immutable@5.1.5:
     resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
@@ -7528,10 +7508,6 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.53.11:
-    resolution: {integrity: sha512-GYmqRjRhJYLQBonfdfGAt28gkfWEShrtXKGXcFGneXi502aBE+I1dJcs/YQriByvP6xqXRz/OdBGC6tfvUQHyQ==}
-    engines: {node: '>=18'}
-
   svelte@5.53.12:
     resolution: {integrity: sha512-4x/uk4rQe/d7RhfvS8wemTfNjQ0bJbKvamIzRBfTe2eHHjzBZ7PZicUQrC2ryj83xxEacfA1zHKd1ephD1tAxA==}
     engines: {node: '>=18'}
@@ -8664,9 +8640,9 @@ snapshots:
       package-manager-detector: 1.6.0
       tinyexec: 1.0.2
 
-  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540': {}
+  '@aria-ui/collection@0.0.6': {}
 
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540':
+  '@aria-ui/core@0.0.22':
     dependencies:
       '@ariatype/aria-attributes': 1.0.2
       '@ariatype/aria-roles': 1.0.2
@@ -8676,44 +8652,47 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.1.0
 
-  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@b9d0540':
+  '@aria-ui/listbox@0.0.25':
     dependencies:
-      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
+      '@aria-ui/collection': 0.0.6
+      '@aria-ui/core': 0.0.22
+      '@aria-ui/presence': 0.0.20
+      immer: 10.2.0
 
-  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@b9d0540':
+  '@aria-ui/menu@0.0.21':
     dependencies:
-      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-      '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
+      '@aria-ui/collection': 0.0.6
+      '@aria-ui/core': 0.0.22
+      '@aria-ui/overlay': 0.0.25
+      '@aria-ui/popover': 0.0.28
+      '@aria-ui/presence': 0.0.20
       nanoid: 5.1.6
 
-  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540':
+  '@aria-ui/overlay@0.0.25':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
+      '@aria-ui/core': 0.0.22
       '@floating-ui/dom': 1.7.6
       '@floating-ui/utils': 0.2.11
       '@zag-js/dom-query': 1.36.0
 
-  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@b9d0540':
+  '@aria-ui/popover@0.0.28':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
+      '@aria-ui/core': 0.0.22
+      '@aria-ui/overlay': 0.0.25
+      '@aria-ui/presence': 0.0.20
       '@zag-js/dismissable': 1.36.0
       '@zag-js/dom-query': 1.36.0
 
-  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540':
+  '@aria-ui/presence@0.0.20':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
+      '@aria-ui/core': 0.0.22
+      '@zag-js/dom-query': 1.36.0
 
-  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540':
+  '@aria-ui/tooltip@0.0.30':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@b9d0540
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
+      '@aria-ui/core': 0.0.22
+      '@aria-ui/overlay': 0.0.25
+      '@aria-ui/presence': 0.0.20
       nanoid: 5.1.6
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.2': {}
@@ -8941,7 +8920,7 @@ snapshots:
       '@astrojs/internal-helpers': 0.8.0
       '@preact/preset-vite': 2.10.3(@babel/core@7.29.0)(preact@10.29.0)(rollup@4.57.1)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
       '@preact/signals': 2.8.2(preact@10.29.0)
-      devalue: 5.6.3
+      devalue: 5.6.4
       preact: 10.29.0
       preact-render-to-string: 6.6.6(preact@10.29.0)
       vite: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)
@@ -8971,7 +8950,7 @@ snapshots:
       '@types/react': 19.2.14
       '@types/react-dom': 19.2.3(@types/react@19.2.14)
       '@vitejs/plugin-react': 5.2.0(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
-      devalue: 5.6.3
+      devalue: 5.6.4
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
       ultrahtml: 1.6.0
@@ -9050,12 +9029,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/svelte@8.0.0(@types/node@24.10.13)(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(svelte@5.53.11)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)':
+  '@astrojs/svelte@8.0.0(@types/node@24.10.13)(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(svelte@5.53.12)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
       astro: 6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
-      svelte: 5.53.11
-      svelte2tsx: 0.7.52(svelte@5.53.11)(typescript@5.9.3)
+      svelte: 5.53.12
+      svelte2tsx: 0.7.52(svelte@5.53.12)(typescript@5.9.3)
       typescript: 5.9.3
       vite: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)
     transitivePeerDependencies:
@@ -10753,7 +10732,7 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.11
 
-  '@prosemirror-adapter/svelte@0.5.0(svelte@5.53.11)':
+  '@prosemirror-adapter/svelte@0.5.0(svelte@5.53.12)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.6
       nanoid: 5.1.6
@@ -10761,7 +10740,7 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.6
     optionalDependencies:
-      svelte: 5.53.11
+      svelte: 5.53.12
 
   '@prosemirror-adapter/vue@0.4.6(vue@3.5.30(typescript@5.9.3))':
     dependencies:
@@ -11137,31 +11116,31 @@ snapshots:
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/package@2.5.7(svelte@5.53.11)(typescript@5.9.3)':
+  '@sveltejs/package@2.5.7(svelte@5.53.12)(typescript@5.9.3)':
     dependencies:
       chokidar: 5.0.0
       kleur: 4.1.5
       sade: 1.8.1
       semver: 7.7.4
-      svelte: 5.53.11
-      svelte2tsx: 0.7.52(svelte@5.53.11)(typescript@5.9.3)
+      svelte: 5.53.12
+      svelte2tsx: 0.7.52(svelte@5.53.12)(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)))(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)))(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
       obug: 2.1.1
-      svelte: 5.53.11
+      svelte: 5.53.12
       vite: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)
 
-  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))':
+  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)))(svelte@5.53.11)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)))(svelte@5.53.12)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
-      svelte: 5.53.11
+      svelte: 5.53.12
       vite: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)
       vitefu: 1.1.2(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
 
@@ -11301,9 +11280,9 @@ snapshots:
       tailwindcss: 4.2.1
       vite: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2)
 
-  '@testing-library/svelte-core@1.0.0(svelte@5.53.11)':
+  '@testing-library/svelte-core@1.0.0(svelte@5.53.12)':
     dependencies:
-      svelte: 5.53.11
+      svelte: 5.53.12
 
   '@ts-morph/common@0.28.1':
     dependencies:
@@ -12614,8 +12593,6 @@ snapshots:
 
   detect-newline@4.0.1: {}
 
-  devalue@5.6.3: {}
-
   devalue@5.6.4: {}
 
   devlop@1.1.0:
@@ -13591,6 +13568,8 @@ snapshots:
   ignore@5.3.2: {}
 
   ignore@7.0.5: {}
+
+  immer@10.2.0: {}
 
   immutable@5.1.5: {}
 
@@ -15626,8 +15605,8 @@ snapshots:
 
   shiki-twoslash-renderer@0.2.1(typescript@5.9.3):
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-      '@aria-ui/tooltip': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
+      '@aria-ui/core': 0.0.22
+      '@aria-ui/tooltip': 0.0.30
       '@shikijs/twoslash': 4.0.1(typescript@5.9.3)
       '@shikijs/types': 4.0.1
       '@types/hast': 3.0.4
@@ -15758,7 +15737,7 @@ snapshots:
 
   starlight-theme-nova@0.11.7(@astrojs/starlight@0.38.1(astro@6.0.4(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.98.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
+      '@aria-ui/core': 0.0.22
       '@pagefind/default-ui': 1.4.0
       '@shikijs/transformers': 4.0.1
       '@shikijs/twoslash': 4.0.1(typescript@5.9.3)
@@ -15830,43 +15809,24 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.4.5(picomatch@4.0.3)(svelte@5.53.11)(typescript@5.9.3):
+  svelte-check@4.4.5(picomatch@4.0.3)(svelte@5.53.12)(typescript@5.9.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       chokidar: 4.0.3
       fdir: 6.5.0(picomatch@4.0.3)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.53.11
+      svelte: 5.53.12
       typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.52(svelte@5.53.11)(typescript@5.9.3):
+  svelte2tsx@0.7.52(svelte@5.53.12)(typescript@5.9.3):
     dependencies:
       dedent-js: 1.0.1
       scule: 1.3.0
-      svelte: 5.53.11
+      svelte: 5.53.12
       typescript: 5.9.3
-
-  svelte@5.53.11:
-    dependencies:
-      '@jridgewell/remapping': 2.3.5
-      '@jridgewell/sourcemap-codec': 1.5.5
-      '@sveltejs/acorn-typescript': 1.0.9(acorn@8.16.0)
-      '@types/estree': 1.0.8
-      '@types/trusted-types': 2.0.7
-      acorn: 8.16.0
-      aria-query: 5.3.1
-      axobject-query: 4.1.0
-      clsx: 2.1.1
-      devalue: 5.6.3
-      esm-env: 1.2.2
-      esrap: 2.2.3
-      is-reference: 3.0.3
-      locate-character: 3.0.0
-      magic-string: 0.30.21
-      zimmerframe: 1.1.4
 
   svelte@5.53.12:
     dependencies:
@@ -16519,11 +16479,11 @@ snapshots:
       solid-js: 1.9.11
       vitest: 4.1.0(@types/node@24.10.13)(@vitest/browser-playwright@4.1.0)(@vitest/ui@4.1.0)(happy-dom@20.8.4)(jsdom@29.0.0)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
 
-  vitest-browser-svelte@2.1.0(svelte@5.53.11)(vitest@4.1.0):
+  vitest-browser-svelte@2.1.0(svelte@5.53.12)(vitest@4.1.0):
     dependencies:
       '@playwright/test': 1.58.2
-      '@testing-library/svelte-core': 1.0.0(svelte@5.53.11)
-      svelte: 5.53.11
+      '@testing-library/svelte-core': 1.0.0(svelte@5.53.12)
+      svelte: 5.53.12
       vitest: 4.1.0(@types/node@24.10.13)(@vitest/browser-playwright@4.1.0)(@vitest/ui@4.1.0)(happy-dom@20.8.4)(jsdom@29.0.0)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
 
   vitest-browser-vue@2.1.0(vitest@4.1.0)(vue@3.5.30(typescript@5.9.3)):

@@ -2,19 +2,24 @@
 
 ## Goal
 
-Replace the verbose generated `elements/*.gen.ts` files with a simple one-liner pattern:
+Eliminate the generated `elements/*.gen.ts` files entirely. Move the element class and register function directly into each ComponentPart source file using a simple pattern:
 
 ```typescript
-export class PopoverRootElement extends defineCustomElement(PopoverRootPropsDeclaration, setupPopoverRoot) {}
+export class PopoverRootElement extends defineCustomElement(setupPopoverRoot, PopoverRootPropsDeclaration) {}
+
+export function registerPopoverRootElement(): void {
+  registerCustomElement('aria-ui-popover-root', PopoverRootElement)
+}
 ```
 
-Currently, the generated element files contain 100+ lines of boilerplate (attribute maps, `observedAttributes`, `attributeChangedCallback`, getter/setter pairs, `usePropertiesToAttributes`). All of this logic can be absorbed into `defineCustomElement` itself, making the generated files trivial.
+Currently, the CLI generates verbose element files (100+ lines of boilerplate). By absorbing all attribute/property logic into `defineCustomElement`, we can hand-write the element class in a single line, and the `generated/elements/` directory goes away completely.
 
 ## Current vs. Proposed
 
-### Before (generated `popover-root.gen.ts` — 103 lines)
+### Before (generated `popover-root.gen.ts` — 103 lines, separate from source)
 
 ```typescript
+// packages/elements/src/generated/elements/popover-root.gen.ts
 import {
   createAttributePropertyNameMap, createStore, handleAttributeChanged,
   HostElement, registerCustomElement, type Store, usePropertiesToAttributes,
@@ -41,12 +46,7 @@ export class PopoverRootElement extends HostElement {
 
   get defaultOpen(): PopoverRootProps["defaultOpen"] { return this._store.defaultOpen.get(); }
   set defaultOpen(value: PopoverRootProps["defaultOpen"]) { this._store.defaultOpen.set(value); }
-  get open(): PopoverRootProps["open"] { return this._store.open.get(); }
-  set open(value: PopoverRootProps["open"]) { this._store.open.set(value); }
-  get modal(): PopoverRootProps["modal"] { return this._store.modal.get(); }
-  set modal(value: PopoverRootProps["modal"]) { this._store.modal.set(value); }
-  get disabled(): PopoverRootProps["disabled"] { return this._store.disabled.get(); }
-  set disabled(value: PopoverRootProps["disabled"]) { this._store.disabled.set(value); }
+  // ... more getter/setters
 }
 
 export function registerPopoverRootElement(): void {
@@ -54,39 +54,39 @@ export function registerPopoverRootElement(): void {
 }
 ```
 
-### After (generated `popover-root.gen.ts` — ~10 lines)
+### After (added to `popover-root.ts` — 2 exports, ~6 lines)
 
 ```typescript
-import { defineCustomElement, registerCustomElement } from "@aria-ui-v2/core";
-import { PopoverRootPropsDeclaration, setupPopoverRoot } from "../../popover/popover-root";
+// packages/elements/src/popover/popover-root.ts (at the bottom of the existing file)
 
 export class PopoverRootElement extends defineCustomElement(
-  PopoverRootPropsDeclaration,
   setupPopoverRoot,
+  PopoverRootPropsDeclaration,
 ) {}
 
 export function registerPopoverRootElement(): void {
-  registerCustomElement("aria-ui-popover-root", PopoverRootElement);
+  registerCustomElement('aria-ui-popover-root', PopoverRootElement)
 }
 ```
+
+The `generated/elements/` directory is deleted. The element class lives alongside its Props, Events, and setup function in the same source file.
 
 ### After — Component Without Props (popover-popup)
 
 ```typescript
-import { defineCustomElement, registerCustomElement } from "@aria-ui-v2/core";
-import { PopoverPopupPropsDeclaration, setupPopoverPopup } from "../../popover/popover-popup";
+// packages/elements/src/popover/popover-popup.ts (at the bottom of the existing file)
 
 export class PopoverPopupElement extends defineCustomElement(
-  PopoverPopupPropsDeclaration,
   setupPopoverPopup,
+  PopoverPopupPropsDeclaration,
 ) {}
 
 export function registerPopoverPopupElement(): void {
-  registerCustomElement("aria-ui-popover-popup", PopoverPopupElement);
+  registerCustomElement('aria-ui-popover-popup', PopoverPopupElement)
 }
 ```
 
-The generated code has a uniform shape regardless of whether the component has props or not. The conditional attribute handling logic is fully internal to `defineCustomElement`.
+Uniform shape regardless of whether the component has props.
 
 ---
 
@@ -102,33 +102,16 @@ The current `defineCustomElement` does:
 
 The new `defineCustomElement` must also handle:
 - `static observedAttributes` — computed from `PropsDeclaration`
-- `attributeChangedCallback` — attribute→property sync
+- `attributeChangedCallback` — attribute→property sync (with `oldValue === newValue` early return)
 - `usePropertiesToAttributes()` — property→attribute sync in constructor
 
-All of these are currently handled by the *generated* code. Moving them into `defineCustomElement` means the generated code becomes trivial.
+All of these are currently handled by the *generated* code. Moving them into `defineCustomElement` means the generated code is no longer needed.
 
-### 1.2 Change the argument order
+### 1.2 Argument order
 
-update： do not Change the argument order
+Keep the current argument order `(setup, props)`. No change.
 
-Current: `defineCustomElement(setup, props)`
-New: `defineCustomElement(props, setup)`
-
-The `props` argument comes first because it's the "shape" of the component, while `setup` is the behavior. This also reads better when the `extends` keyword precedes it: `class X extends defineCustomElement(PropsDecl, setupFn)`.
-
-### 1.3 New `HostElementConstructor` type
-
-update: 你不需要修改 HostElementConstructor 的类型，没必要
-
-The return type needs to express that the returned class produces instances of `HostElement & Props`. It also needs to include the static `observedAttributes` and `attributeChangedCallback`. However, for the `extends` pattern, TypeScript just needs the constructor signature:
-
-```typescript
-export type HostElementConstructor<Props extends AnyProps> = (new () => HostElement & Props) & {
-  observedAttributes: string[]
-}
-```
-
-### 1.4 New implementation
+### 1.3 New implementation
 
 ```typescript
 import type { AnyProps, PropsDeclaration } from './define-props.ts'
@@ -141,20 +124,18 @@ import {
 import type { Signal } from './signal.ts'
 import { createStore, type Store } from './store.ts'
 
+export type HostElementConstructor<Props extends AnyProps> = new () => HostElement & Props
+
 type SetupFunction<Props extends AnyProps> = (
   host: HostElement,
   props: Store<Props>,
 ) => void
 
-export type HostElementConstructor<Props extends AnyProps> = (new () => HostElement & Props) & {
-  observedAttributes: string[]
-}
-
 export function defineCustomElement<
   Props extends AnyProps = { __noProps__: never },
 >(
-  props: PropsDeclaration<Props>,
   setup: SetupFunction<Props>,
+  props: PropsDeclaration<Props>,
 ): HostElementConstructor<Props> {
   const attributeNameToPropertyName = createAttributePropertyNameMap(props)
   const observedAttributes = Array.from(attributeNameToPropertyName.keys())
@@ -176,11 +157,10 @@ export function defineCustomElement<
 
     attributeChangedCallback(
       name: string,
-      _oldValue: string | null,
+      oldValue: string | null,
       newValue: string | null,
     ): void {
-// update: add a check:
-// if (oldValue===newValue) return 
+      if (oldValue === newValue) return
 
       handleAttributeChanged(
         this._store,
@@ -216,18 +196,18 @@ function defineGetterSetter<Props extends object>(
 }
 ```
 
-### 1.5 Behavioral differences from current
+### 1.4 Behavioral differences from current
 
 | Aspect | Current `defineCustomElement` | New `defineCustomElement` |
 |--------|------------------------------|---------------------------|
-| Argument order | `(setup, props)` | `(props, setup)` |
+| Argument order | `(setup, props)` | `(setup, props)` (unchanged) |
 | `observedAttributes` | Not handled | Static property on returned class |
-| `attributeChangedCallback` | Not handled | Defined on class prototype |
-| `usePropertiesToAttributes` | Not handled | Called in constructor |
+| `attributeChangedCallback` | Not handled | Defined on class prototype, with `oldValue === newValue` early return |
+| `usePropertiesToAttributes` | Not handled | Called in constructor (conditional on having attributes) |
 | `createAttributePropertyNameMap` | Not handled | Called once at class definition time |
 | Getter/setter pairs | ✓ | ✓ (unchanged) |
 
-### 1.6 Empty-props component behavior
+### 1.5 Empty-props component behavior
 
 When `PropsDeclaration` is `{}` (like `PopoverPopup`):
 - `attributeNameToPropertyName` is an empty `Map`
@@ -236,180 +216,332 @@ When `PropsDeclaration` is `{}` (like `PopoverPopup`):
 - `attributeChangedCallback` is a no-op (never called by the browser since `observedAttributes` is empty)
 - No getter/setter pairs are defined
 
-This means the code behaves identically for empty-props components — no performance overhead.
+No performance overhead for empty-props components.
 
-### 1.7 Update `packages/core/src/index.ts`
+### 1.6 Update `packages/core/src/index.ts`
 
-No change needed. `defineCustomElement` and `HostElementConstructor` are already exported. The attribute-related functions (`createAttributePropertyNameMap`, `handleAttributeChanged`, `usePropertiesToAttributes`) remain exported (they are `@internal` but still available for advanced use).
+No change needed. `defineCustomElement` and `HostElementConstructor` are already exported.
 
-### 1.8 Update existing test call sites
+### 1.7 No test changes needed
 
-The argument order change affects all existing callers. In tests, the current pattern is:
-
-update: 不要调换 setup 和 props 的顺序，保持 setup 在前 props 在后面
+The argument order is unchanged, so existing test call sites continue to work as-is:
 
 ```typescript
-// Before
 const TestElement = defineCustomElement(setupFn, defineProps({}))
-
-// After
-const TestElement = defineCustomElement(defineProps({}), setupFn)
 ```
 
-Files to update:
-- `packages/core/src/use-effect.test.ts` — ~12 call sites
-- `packages/utils/src/use-press.test.ts` — 1 call site (in `createTestElement`)
+No changes in `packages/core/src/use-effect.test.ts` or `packages/utils/src/use-press.test.ts`.
 
 ---
 
-## Phase 2: Modify CLI (`packages/cli/src/generate.ts`)
+## Phase 2: Add Element Classes to Source Files
 
-### 2.1 Simplify `generateWebComponentFile`
+### 2.1 What to add to each ComponentPart file
 
-update: 删除 generateWebComponentFile 。不再需要生成 packages/elements/src/generated/elements/*.ts 文件了。直接把相关的东写入原始文件 ，比如 packages/elements/src/popover/popover-positioner.ts
-
-uppdate: 在 agents,md 中写清楚文件的规则
-
-The entire function becomes much simpler. No more conditional logic for props/events, no attribute handling, no getter/setter generation.
-
-New implementation:
+Each ComponentPart file (e.g., `popover-root.ts`) gets two new exports at the bottom:
 
 ```typescript
-function generateWebComponentFile(
-  sourceFile: SourceFile,
-  component: ComponentInfo,
-  project: Project,
-): void {
-  const { componentName, kebabName } = getComponentMeta(component)
-  const relativePath = getRelativePathToSource(sourceFile, component, project)
+/**
+ * @public
+ */
+export class PopoverRootElement extends defineCustomElement(
+  setupPopoverRoot,
+  PopoverRootPropsDeclaration,
+) {}
 
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui-v2/core',
-    namedImports: [
-      { name: 'defineCustomElement' },
-      { name: 'registerCustomElement' },
-    ],
-  })
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: relativePath,
-    namedImports: [
-      { name: `${componentName}PropsDeclaration` },
-      { name: `setup${componentName}` },
-    ],
-  })
-
-  // export class PopoverRootElement extends defineCustomElement(
-  //   PopoverRootPropsDeclaration,
-  //   setupPopoverRoot,
-  // ) {}
-  sourceFile.addClass({
-    name: `${componentName}Element`,
-    isExported: true,
-    extends: `defineCustomElement(${componentName}PropsDeclaration, setup${componentName})`,
-  })
-
-  sourceFile.addFunction({
-    name: `register${componentName}Element`,
-    isExported: true,
-    returnType: 'void',
-    statements: [
-      `registerCustomElement('aria-ui-${kebabName}', ${componentName}Element)`,
-    ],
-  })
+/**
+ * @internal
+ */
+export function registerPopoverRootElement(): void {
+  registerCustomElement('aria-ui-popover-root', PopoverRootElement)
 }
 ```
 
-### 2.2 What's removed from the generated output
+Need to add `defineCustomElement` and `registerCustomElement` to the imports from `@aria-ui-v2/core`.
 
-- No more `createStore` import
-- No more `HostElement` import
-- No more `Store` type import
-- No more `createAttributePropertyNameMap` import
-- No more `handleAttributeChanged` import
-- No more `usePropertiesToAttributes` import
-- No more `type XXXProps` import (not needed since getter/setters are runtime-defined)
-- No more module-level `attributeNameToPropertyName` and `observedAttributes` variables
-- No more `private _store` property declaration
-- No more `static observedAttributes`
-- No more constructor body
-- No more `attributeChangedCallback` method
-- No more getter/setter pairs with JSDoc
+### 2.2 Files to modify
 
-### 2.3 Impact on other generated files (React, Preact, Solid, Vue, Svelte)
+- `packages/elements/src/popover/popover-root.ts` — add `PopoverRootElement` + `registerPopoverRootElement`
+- `packages/elements/src/popover/popover-trigger.ts` — add `PopoverTriggerElement` + `registerPopoverTriggerElement`
+- `packages/elements/src/popover/popover-popup.ts` — add `PopoverPopupElement` + `registerPopoverPopupElement`
+- `packages/elements/src/popover/popover-positioner.ts` — add `PopoverPositionerElement` + `registerPopoverPositionerElement`
 
-The other framework wrappers import from `elements/*.gen.ts`:
+### 2.3 Tag name convention
 
-- `registerXXXElement` — still exported, no change
-- `type XXXElement` — still exported as a class, no change
+The tag name follows the same convention as before: `aria-ui-{kebab-case-component-name}`.
 
-The React, Preact, and Solid wrappers use `type XXXElement` for `HTMLAttributes<XXXElement>` and `RefAttributes<XXXElement>`. Since `PopoverRootElement` is still a class that extends `HostElement` (via `defineCustomElement`), the type is preserved. No changes needed to the React/Preact/Solid/Vue/Svelte generators.
+```
+PopoverRoot       → aria-ui-popover-root
+PopoverTrigger    → aria-ui-popover-trigger
+PopoverPopup      → aria-ui-popover-popup
+PopoverPositioner → aria-ui-popover-positioner
+```
 
-### 2.4 Type inference for `XXXElement`
+### 2.4 Update `popover/index.ts` entry file
 
-With the `class extends` pattern, TypeScript correctly infers that `PopoverRootElement` is a class whose instances have all the props as properties, because `defineCustomElement` returns `HostElementConstructor<Props>` which is `new () => HostElement & Props`.
+Add re-exports for the new element classes and register functions:
 
-So `PopoverRootElement` instances have type `HostElement & PopoverRootProps`, giving access to `.defaultOpen`, `.open`, `.modal`, `.disabled` etc. This satisfies `HTMLAttributes<PopoverRootElement>` usage in React/Preact wrappers.
+```typescript
+export {
+  OpenChangeEvent,
+  setupPopoverRoot,
+  PopoverRootElement,
+  registerPopoverRootElement,
+  type PopoverRootEvents,
+  type PopoverRootProps,
+  type PopoverRootPropsDeclaration,
+} from './popover-root.ts'
+
+export {
+  setupPopoverTrigger,
+  PopoverTriggerElement,
+  registerPopoverTriggerElement,
+  type PopoverTriggerEvents,
+  type PopoverTriggerProps,
+  type PopoverTriggerPropsDeclaration,
+} from './popover-trigger.ts'
+
+export {
+  setupPopoverPopup,
+  PopoverPopupElement,
+  registerPopoverPopupElement,
+  type PopoverPopupProps,
+  type PopoverPopupPropsDeclaration,
+} from './popover-popup.ts'
+
+export {
+  setupPopoverPositioner,
+  PopoverPositionerElement,
+  registerPopoverPositionerElement,
+  type PopoverPositionerProps,
+  type PopoverPositionerPropsDeclaration,
+} from './popover-positioner.ts'
+```
 
 ---
 
-## Phase 3: Verify No Other Files Need Changes
+## Phase 3: Modify CLI (`packages/cli/src/generate.ts`)
 
-### 3.1 `AGENTS.md`
+### 3.1 Delete `generateWebComponentFile`
 
-The AGENTS.md has this section:
+Remove the `generateWebComponentFile` function entirely. The CLI no longer generates `elements/*.gen.ts` files.
 
-> **Note:** The `{ComponentPartName}Element` class is automatically generated by `packages/cli/src/generate.ts` to `packages/elements/src/generated/elements/{component-name}.gen.ts`. Do NOT create manual `exports.ts` or `index.ts` files for ComponentGroups.
+### 3.2 Remove `elements` output directory
 
-This is still accurate — the element class is still generated, just with simpler code. No change needed.
+In `generateFiles`, remove the `elements` directory from `outputDirs`:
 
-### 3.2 `packages/core/src/index.ts`
+```typescript
+const outputDirs = {
+  // elements: removed
+  react: path.join(outputDir, 'react'),
+  preact: path.join(outputDir, 'preact'),
+  solid: path.join(outputDir, 'solid'),
+  vue: path.join(outputDir, 'vue'),
+  svelte: path.join(outputDir, 'svelte'),
+}
+```
 
-No change needed. `defineCustomElement` and `HostElementConstructor` are already exported. `createStore` is still exported (used internally by `defineCustomElement`, and could be used elsewhere).
+Remove the element file generation from the loop:
 
-### 3.3 `packages/elements/src/popover/index.ts`
+```typescript
+for (const component of components) {
+  // No more: writeSourceFile(elementsPath, generateWebComponentFile)
 
-No change needed. The entry file still re-exports `setupXXX`, `type XXXProps`, `type XXXEvents` from each component part file. The parser still reads this file to discover components.
+  const reactPath = path.join(outputDirs.react, fileName)
+  yield* writeSourceFile(reactPath, (sourceFile) => generateReactComponentFile(...))
+  // ... preact, solid, vue, svelte
+}
+```
 
-### 3.4 Component source files (`popover-root.ts`, etc.)
+### 3.3 Update framework wrapper generators — import path changes
 
-No change needed. The source files are unchanged — they still export `XXXPropsDeclaration`, `setupXXX`, etc.
+All framework wrapper generators currently import `registerXXXElement` and `type XXXElement` from `../elements/xxx.gen`. These imports must change to point at the source file directly.
 
-### 3.5 Integration helpers (`integrations/react.ts`, `integrations/preact.ts`)
+The generators already compute `relativePathToSource` for importing `XXXProps`/`XXXEvents`. The same path now also provides `XXXElement` and `registerXXXElement`.
 
-No change needed. They receive `tagName`, `propNames`, `eventHandlersMap`, and `register` function — all of which are still generated the same way by the CLI.
+**React generator — before:**
+
+```typescript
+// Two separate imports: types from source, element from generated
+import type { PopoverRootProps as PopoverRootElementProps, PopoverRootEvents as PopoverRootElementEvents } from "../../popover/popover-root";
+import { registerPopoverRootElement, type PopoverRootElement } from "../elements/popover-root.gen";
+```
+
+**React generator — after:**
+
+```typescript
+// Everything from the source file
+import type { PopoverRootProps as PopoverRootElementProps, PopoverRootEvents as PopoverRootElementEvents } from "../../popover/popover-root";
+import { registerPopoverRootElement, type PopoverRootElement } from "../../popover/popover-root";
+```
+
+update: 合并成同一条 import
+
+The import path for `registerXXXElement` and `type XXXElement` changes from `../elements/{kebab-name}.gen` to the same `relativePathToSource` already used for Props/Events. This applies to all 5 framework generators:
+
+- **React**: import `registerXXXElement` + `type XXXElement` from source
+- **Preact**: import `registerXXXElement` + `type XXXElement` from source
+- **Solid**: import `registerXXXElement` + `type XXXElement` from source
+- **Vue**: import `registerXXXElement` from source (no `type XXXElement` needed)
+- **Svelte `.gen.svelte`**: import `registerXXXElement` from source
+
+### 3.4 Example: Updated React generated file
+
+```typescript
+import { createComponent } from "@aria-ui-v2/integrations/react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
+import type {
+  PopoverRootProps as PopoverRootElementProps,
+  PopoverRootEvents as PopoverRootElementEvents,
+} from "../../popover/popover-root";
+import {
+  registerPopoverRootElement,
+  type PopoverRootElement,
+} from "../../popover/popover-root";
+
+export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
+  defaultOpen?: PopoverRootElementProps["defaultOpen"];
+  open?: PopoverRootElementProps["open"];
+  modal?: PopoverRootElementProps["modal"];
+  disabled?: PopoverRootElementProps["disabled"];
+  onOpenChange?: (event: PopoverRootElementEvents["openChange"]) => void;
+}
+
+const propNames: string[] = ["defaultOpen", "open", "modal", "disabled"];
+const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
+export const PopoverRoot: ForwardRefExoticComponent<
+  PopoverRootProps & RefAttributes<PopoverRootElement>
+> = /* @__PURE__ */ createComponent(
+  "aria-ui-popover-root",
+  "PopoverRoot",
+  propNames,
+  eventHandlersMap,
+  registerPopoverRootElement,
+);
+```
+
+### 3.5 Example: Updated Svelte `.gen.svelte` file
+
+```svelte
+<script lang="js">
+  import { registerPopoverRootElement } from '../../popover/popover-root'
+  registerPopoverRootElement()
+
+  let { onOpenChange = undefined, children = undefined, ..._restProps } = $props()
+</script>
+
+<aria-ui-popover-root {..._restProps} onopenChange={onOpenChange}>{@render children?.()}</aria-ui-popover-root>
+```
+
+### 3.6 Delete existing `generated/elements/` files
+
+After the CLI is updated and regenerated, the `packages/elements/src/generated/elements/` directory and all its `.gen.ts` files should be deleted.
 
 ---
 
-## Phase 4: Update Tests
+## Phase 4: Update `AGENTS.md`
 
-### 4.1 `packages/core/src/use-effect.test.ts`
+### 4.1 File Structure section
 
-Update all ~12 call sites to swap argument order:
+Update to mention that the element class and register function live in the ComponentPart file:
 
-```typescript
-// Before
-const TestElement = defineCustomElement((host) => {
-  useEffect(host, effectFn)
-}, defineProps({}))
+> For each **ComponentPart** (e.g., `FooRoot`), create:
+>
+> - `packages/elements/src/foo/foo-root.ts` - ComponentPart implementation (contains Props, PropsDeclaration, Events, setup function, Element class, and register function)
 
-// After
-const TestElement = defineCustomElement(defineProps({}), (host) => {
-  useEffect(host, effectFn)
-})
-```
+Remove the old note about generated element files.
 
-### 4.2 `packages/utils/src/use-press.test.ts`
+### 4.2 ComponentPart File Structure section
 
-Update the `createTestElement` helper:
+Add the element class and register function to the template:
 
 ```typescript
-// Before
-const TestElement = defineCustomElement(setupFn, defineProps({}))
+/**
+ * @public
+ */
+export interface FooRootProps { ... }
 
-// After
-const TestElement = defineCustomElement(defineProps({}), setupFn)
+/**
+ * @internal
+ */
+export const FooRootPropsDeclaration = /* @__PURE__ */ defineProps<FooRootProps>({ ... })
+
+/**
+ * @public
+ * Optional: Only include if the component emits events
+ */
+export interface FooRootEvents { ... }
+
+/**
+ * @internal
+ */
+export function setupFooRoot(host: HostElement, props: Store<FooRootProps>) {
+  // Setup logic
+}
+
+/**
+ * @public
+ */
+export class FooRootElement extends defineCustomElement(
+  setupFooRoot,
+  FooRootPropsDeclaration,
+) {}
+
+/**
+ * @internal
+ */
+export function registerFooRootElement(): void {
+  registerCustomElement('aria-ui-foo-root', FooRootElement)
+}
 ```
+
+### 4.3 Export Visibility Rules section
+
+Add the new exports:
+
+**Always `@public`:**
+
+- `{ComponentPartName}Props` interface (if exists)
+- `{ComponentPartName}Events` interface (if exists)
+- `{ComponentPartName}Element` class
+
+**Always `@internal`:**
+
+- `{ComponentPartName}PropsDeclaration` constant (if exists)
+- `setup{ComponentPartName}` function
+- `register{ComponentPartName}Element` function
+
+### 4.4 Registration section
+
+Update to import from ComponentPart files instead of generated files:
+
+```typescript
+import { registerFooItemElement } from './foo/foo-item.ts'
+import { registerFooRootElement } from './foo/foo-root.ts'
+
+export function registerElements(): void {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  registerFooRootElement()
+  registerFooItemElement()
+}
+```
+
+### 4.5 Remove generated element file references
+
+Remove/update any mentions of `packages/elements/src/generated/elements/` since that directory no longer exists. The framework wrapper files (React, Preact, Solid, Vue, Svelte) are still generated to `packages/elements/src/generated/{framework}/`.
+
+---
+
+## Phase 5: Verify Everything Works
+
+- [ ] Run typecheck across the entire repo
+- [ ] Run elements tests
+- [ ] Run utils tests
+- [ ] Verify no remaining references to `generated/elements/` in any source or generated file
+- [ ] Verify framework wrapper generated files import from source files, not from `../elements/xxx.gen`
 
 ---
 
@@ -417,27 +549,42 @@ const TestElement = defineCustomElement(defineProps({}), setupFn)
 
 ### Phase 1: Modify `defineCustomElement`
 - [ ] Update `defineCustomElement` in `packages/core/src/define-custom-element.ts`:
-  - [ ] Swap argument order from `(setup, props)` to `(props, setup)`
   - [ ] Add `createAttributePropertyNameMap` call at class-definition time
   - [ ] Add `static observedAttributes` to the returned class
-  - [ ] Add `attributeChangedCallback` to the returned class
+  - [ ] Add `attributeChangedCallback` with `oldValue === newValue` early return
   - [ ] Add `usePropertiesToAttributes` call in constructor (conditional on having attributes)
-  - [ ] Update `HostElementConstructor` type to include `observedAttributes`
 - [ ] Run typecheck to verify core package compiles
 
-### Phase 2: Update test call sites
-- [ ] Update `packages/core/src/use-effect.test.ts` — swap argument order (~12 sites)
-- [ ] Update `packages/utils/src/use-press.test.ts` — swap argument order (1 site)
-- [ ] Run tests to verify they still pass
+### Phase 2: Add element classes to source files
+- [ ] Add `PopoverRootElement` + `registerPopoverRootElement` to `popover-root.ts`
+- [ ] Add `PopoverTriggerElement` + `registerPopoverTriggerElement` to `popover-trigger.ts`
+- [ ] Add `PopoverPopupElement` + `registerPopoverPopupElement` to `popover-popup.ts`
+- [ ] Add `PopoverPositionerElement` + `registerPopoverPositionerElement` to `popover-positioner.ts`
+- [ ] Update `popover/index.ts` to re-export new element classes and register functions
 
-### Phase 3: Simplify CLI generator
-- [ ] Rewrite `generateWebComponentFile` in `packages/cli/src/generate.ts`
+### Phase 3: Modify CLI generator
+- [ ] Delete `generateWebComponentFile` function from `generate.ts`
+- [ ] Remove `elements` from output directories
+- [ ] Remove element file generation from the component loop
+- [ ] Update React generator — import `registerXXXElement` + `type XXXElement` from source path
+- [ ] Update Preact generator — import from source path
+- [ ] Update Solid generator — import from source path
+- [ ] Update Vue generator — import from source path
+- [ ] Update Svelte `.gen.ts` generator — no change (doesn't import from element files)
+- [ ] Update Svelte `.gen.svelte` generator — import from source path
 - [ ] Build CLI package
-- [ ] Run `pnpm run build:gen` in elements package to regenerate files
-- [ ] Verify the regenerated files look correct
+- [ ] Run `pnpm run build:gen` in elements package to regenerate framework wrapper files
+- [ ] Delete `packages/elements/src/generated/elements/` directory
 
-### Phase 4: Verify everything works
+### Phase 4: Update `AGENTS.md`
+- [ ] Update File Structure section
+- [ ] Update ComponentPart File Structure template
+- [ ] Update Export Visibility Rules
+- [ ] Update Registration section
+- [ ] Remove references to `generated/elements/`
+
+### Phase 5: Verify everything works
 - [ ] Run typecheck across the entire repo
 - [ ] Run elements tests
 - [ ] Run utils tests
-- [ ] Verify no leftover references to old imports (`createAttributePropertyNameMap`, `handleAttributeChanged`, `usePropertiesToAttributes`) in generated element files
+- [ ] Verify no remaining references to `generated/elements/`

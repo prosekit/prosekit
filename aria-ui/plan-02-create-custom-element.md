@@ -539,11 +539,11 @@ Remove/update any mentions of `packages/elements/src/generated/elements/` since 
 
 ## Phase 5: Verify Everything Works
 
-- [ ] Run typecheck across the entire repo
-- [ ] Run elements tests
-- [ ] Run utils tests
-- [ ] Verify no remaining references to `generated/elements/` in any source or generated file
-- [ ] Verify framework wrapper generated files import from source files, not from `../elements/xxx.gen`
+- [x] Run typecheck across the entire repo
+- [x] Run elements tests
+- [x] Run utils tests
+- [x] Verify no remaining references to `generated/elements/` in any source or generated file
+- [x] Verify framework wrapper generated files import from source files, not from `../elements/xxx.gen`
 
 ---
 

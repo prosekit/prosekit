@@ -1,8 +1,4 @@
-import {
-  createAttributePropertyNameMap,
-  handleAttributeChanged,
-  usePropertiesToAttributes,
-} from './attribute.ts'
+import { createAttributePropertyNameMap, handleAttributeChanged, usePropertiesToAttributes } from './attribute.ts'
 import type { AnyProps, PropsDeclaration } from './define-props.ts'
 import { HostElement } from './host-element.ts'
 import type { Signal } from './signal.ts'

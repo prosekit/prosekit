@@ -6,35 +6,34 @@ import {
   registerCustomElement,
   type Store,
   usePropertiesToAttributes,
-} from '@aria-ui/core'
-
+} from "@aria-ui-v2/core";
 import {
   PopoverPositionerPropsDeclaration,
   setupPopoverPositioner,
   type PopoverPositionerProps,
-} from '../../popover/popover-positioner'
+} from "../../popover/popover-positioner";
 
 const attributeNameToPropertyName =
   /* @__PURE__ */ createAttributePropertyNameMap(
     PopoverPositionerPropsDeclaration,
-  )
+  );
 const observedAttributes: string[] = /* @__PURE__ */ Array.from(
   attributeNameToPropertyName.keys(),
-)
+);
 
 export class PopoverPositionerElement extends HostElement {
-  private _store: Store<PopoverPositionerProps>
-  static observedAttributes = observedAttributes
+  private _store: Store<PopoverPositionerProps>;
+  static observedAttributes = observedAttributes;
 
   constructor() {
-    super()
-    this._store = createStore(this, PopoverPositionerPropsDeclaration)
-    setupPopoverPositioner(this, this._store)
+    super();
+    this._store = createStore(this, PopoverPositionerPropsDeclaration);
+    setupPopoverPositioner(this, this._store);
     usePropertiesToAttributes(
       this,
       this._store,
       PopoverPositionerPropsDeclaration,
-    )
+    );
   }
 
   attributeChangedCallback(
@@ -48,7 +47,7 @@ export class PopoverPositionerElement extends HostElement {
       attributeNameToPropertyName,
       name,
       newValue,
-    )
+    );
   }
 
   /**
@@ -56,12 +55,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default "absolute"
    */
-  get strategy(): PopoverPositionerProps['strategy'] {
-    return this._store.strategy.get()
+  get strategy(): PopoverPositionerProps["strategy"] {
+    return this._store.strategy.get();
   }
 
-  set strategy(value: PopoverPositionerProps['strategy']) {
-    this._store.strategy.set(value)
+  set strategy(value: PopoverPositionerProps["strategy"]) {
+    this._store.strategy.set(value);
   }
 
   /**
@@ -69,12 +68,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default "top"
    */
-  get placement(): PopoverPositionerProps['placement'] {
-    return this._store.placement.get()
+  get placement(): PopoverPositionerProps["placement"] {
+    return this._store.placement.get();
   }
 
-  set placement(value: PopoverPositionerProps['placement']) {
-    this._store.placement.set(value)
+  set placement(value: PopoverPositionerProps["placement"]) {
+    this._store.placement.set(value);
   }
 
   /**
@@ -84,12 +83,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default true
    */
-  get autoUpdate(): PopoverPositionerProps['autoUpdate'] {
-    return this._store.autoUpdate.get()
+  get autoUpdate(): PopoverPositionerProps["autoUpdate"] {
+    return this._store.autoUpdate.get();
   }
 
-  set autoUpdate(value: PopoverPositionerProps['autoUpdate']) {
-    this._store.autoUpdate.set(value)
+  set autoUpdate(value: PopoverPositionerProps["autoUpdate"]) {
+    this._store.autoUpdate.set(value);
   }
 
   /**
@@ -100,12 +99,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default true
    */
-  get hoist(): PopoverPositionerProps['hoist'] {
-    return this._store.hoist.get()
+  get hoist(): PopoverPositionerProps["hoist"] {
+    return this._store.hoist.get();
   }
 
-  set hoist(value: PopoverPositionerProps['hoist']) {
-    this._store.hoist.set(value)
+  set hoist(value: PopoverPositionerProps["hoist"]) {
+    this._store.hoist.set(value);
   }
 
   /**
@@ -113,12 +112,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default 6
    */
-  get offset(): PopoverPositionerProps['offset'] {
-    return this._store.offset.get()
+  get offset(): PopoverPositionerProps["offset"] {
+    return this._store.offset.get();
   }
 
-  set offset(value: PopoverPositionerProps['offset']) {
-    this._store.offset.set(value)
+  set offset(value: PopoverPositionerProps["offset"]) {
+    this._store.offset.set(value);
   }
 
   /**
@@ -129,12 +128,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default true
    */
-  get flip(): PopoverPositionerProps['flip'] {
-    return this._store.flip.get()
+  get flip(): PopoverPositionerProps["flip"] {
+    return this._store.flip.get();
   }
 
-  set flip(value: PopoverPositionerProps['flip']) {
-    this._store.flip.set(value)
+  set flip(value: PopoverPositionerProps["flip"]) {
+    this._store.flip.set(value);
   }
 
   /**
@@ -142,12 +141,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default true
    */
-  get shift(): PopoverPositionerProps['shift'] {
-    return this._store.shift.get()
+  get shift(): PopoverPositionerProps["shift"] {
+    return this._store.shift.get();
   }
 
-  set shift(value: PopoverPositionerProps['shift']) {
-    this._store.shift.set(value)
+  set shift(value: PopoverPositionerProps["shift"]) {
+    this._store.shift.set(value);
   }
 
   /**
@@ -156,12 +155,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get overlap(): PopoverPositionerProps['overlap'] {
-    return this._store.overlap.get()
+  get overlap(): PopoverPositionerProps["overlap"] {
+    return this._store.overlap.get();
   }
 
-  set overlap(value: PopoverPositionerProps['overlap']) {
-    this._store.overlap.set(value)
+  set overlap(value: PopoverPositionerProps["overlap"]) {
+    this._store.overlap.set(value);
   }
 
   /**
@@ -170,12 +169,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get fitViewport(): PopoverPositionerProps['fitViewport'] {
-    return this._store.fitViewport.get()
+  get fitViewport(): PopoverPositionerProps["fitViewport"] {
+    return this._store.fitViewport.get();
   }
 
-  set fitViewport(value: PopoverPositionerProps['fitViewport']) {
-    this._store.fitViewport.set(value)
+  set fitViewport(value: PopoverPositionerProps["fitViewport"]) {
+    this._store.fitViewport.set(value);
   }
 
   /**
@@ -184,12 +183,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get sameWidth(): PopoverPositionerProps['sameWidth'] {
-    return this._store.sameWidth.get()
+  get sameWidth(): PopoverPositionerProps["sameWidth"] {
+    return this._store.sameWidth.get();
   }
 
-  set sameWidth(value: PopoverPositionerProps['sameWidth']) {
-    this._store.sameWidth.set(value)
+  set sameWidth(value: PopoverPositionerProps["sameWidth"]) {
+    this._store.sameWidth.set(value);
   }
 
   /**
@@ -198,12 +197,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get sameHeight(): PopoverPositionerProps['sameHeight'] {
-    return this._store.sameHeight.get()
+  get sameHeight(): PopoverPositionerProps["sameHeight"] {
+    return this._store.sameHeight.get();
   }
 
-  set sameHeight(value: PopoverPositionerProps['sameHeight']) {
-    this._store.sameHeight.set(value)
+  set sameHeight(value: PopoverPositionerProps["sameHeight"]) {
+    this._store.sameHeight.set(value);
   }
 
   /**
@@ -212,12 +211,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get inline(): PopoverPositionerProps['inline'] {
-    return this._store.inline.get()
+  get inline(): PopoverPositionerProps["inline"] {
+    return this._store.inline.get();
   }
 
-  set inline(value: PopoverPositionerProps['inline']) {
-    this._store.inline.set(value)
+  set inline(value: PopoverPositionerProps["inline"]) {
+    this._store.inline.set(value);
   }
 
   /**
@@ -226,12 +225,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get hide(): PopoverPositionerProps['hide'] {
-    return this._store.hide.get()
+  get hide(): PopoverPositionerProps["hide"] {
+    return this._store.hide.get();
   }
 
-  set hide(value: PopoverPositionerProps['hide']) {
-    this._store.hide.set(value)
+  set hide(value: PopoverPositionerProps["hide"]) {
+    this._store.hide.set(value);
   }
 
   /**
@@ -240,12 +239,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default 'clippingAncestors'
    */
-  get boundary(): PopoverPositionerProps['boundary'] {
-    return this._store.boundary.get()
+  get boundary(): PopoverPositionerProps["boundary"] {
+    return this._store.boundary.get();
   }
 
-  set boundary(value: PopoverPositionerProps['boundary']) {
-    this._store.boundary.set(value)
+  set boundary(value: PopoverPositionerProps["boundary"]) {
+    this._store.boundary.set(value);
   }
 
   /**
@@ -254,12 +253,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default 'viewport'
    */
-  get rootBoundary(): PopoverPositionerProps['rootBoundary'] {
-    return this._store.rootBoundary.get()
+  get rootBoundary(): PopoverPositionerProps["rootBoundary"] {
+    return this._store.rootBoundary.get();
   }
 
-  set rootBoundary(value: PopoverPositionerProps['rootBoundary']) {
-    this._store.rootBoundary.set(value)
+  set rootBoundary(value: PopoverPositionerProps["rootBoundary"]) {
+    this._store.rootBoundary.set(value);
   }
 
   /**
@@ -268,12 +267,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default 4
    */
-  get overflowPadding(): PopoverPositionerProps['overflowPadding'] {
-    return this._store.overflowPadding.get()
+  get overflowPadding(): PopoverPositionerProps["overflowPadding"] {
+    return this._store.overflowPadding.get();
   }
 
-  set overflowPadding(value: PopoverPositionerProps['overflowPadding']) {
-    this._store.overflowPadding.set(value)
+  set overflowPadding(value: PopoverPositionerProps["overflowPadding"]) {
+    this._store.overflowPadding.set(value);
   }
 
   /**
@@ -283,12 +282,12 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default 'floating'
    */
-  get elementContext(): PopoverPositionerProps['elementContext'] {
-    return this._store.elementContext.get()
+  get elementContext(): PopoverPositionerProps["elementContext"] {
+    return this._store.elementContext.get();
   }
 
-  set elementContext(value: PopoverPositionerProps['elementContext']) {
-    this._store.elementContext.set(value)
+  set elementContext(value: PopoverPositionerProps["elementContext"]) {
+    this._store.elementContext.set(value);
   }
 
   /**
@@ -298,15 +297,15 @@ export class PopoverPositionerElement extends HostElement {
    *
    * @default false
    */
-  get altBoundary(): PopoverPositionerProps['altBoundary'] {
-    return this._store.altBoundary.get()
+  get altBoundary(): PopoverPositionerProps["altBoundary"] {
+    return this._store.altBoundary.get();
   }
 
-  set altBoundary(value: PopoverPositionerProps['altBoundary']) {
-    this._store.altBoundary.set(value)
+  set altBoundary(value: PopoverPositionerProps["altBoundary"]) {
+    this._store.altBoundary.set(value);
   }
 }
 
 export function registerPopoverPositionerElement(): void {
-  registerCustomElement('aria-ui-popover-positioner', PopoverPositionerElement)
+  registerCustomElement("aria-ui-popover-positioner", PopoverPositionerElement);
 }

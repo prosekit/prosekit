@@ -6,29 +6,34 @@ import {
   registerCustomElement,
   type Store,
   usePropertiesToAttributes,
-} from '@aria-ui/core'
-
+} from "@aria-ui-v2/core";
 import {
   PopoverTriggerPropsDeclaration,
   setupPopoverTrigger,
   type PopoverTriggerProps,
-} from '../../popover/popover-trigger'
+} from "../../popover/popover-trigger";
 
 const attributeNameToPropertyName =
-  /* @__PURE__ */ createAttributePropertyNameMap(PopoverTriggerPropsDeclaration)
+  /* @__PURE__ */ createAttributePropertyNameMap(
+    PopoverTriggerPropsDeclaration,
+  );
 const observedAttributes: string[] = /* @__PURE__ */ Array.from(
   attributeNameToPropertyName.keys(),
-)
+);
 
 export class PopoverTriggerElement extends HostElement {
-  private _store: Store<PopoverTriggerProps>
-  static observedAttributes = observedAttributes
+  private _store: Store<PopoverTriggerProps>;
+  static observedAttributes = observedAttributes;
 
   constructor() {
-    super()
-    this._store = createStore(this, PopoverTriggerPropsDeclaration)
-    setupPopoverTrigger(this, this._store)
-    usePropertiesToAttributes(this, this._store, PopoverTriggerPropsDeclaration)
+    super();
+    this._store = createStore(this, PopoverTriggerPropsDeclaration);
+    setupPopoverTrigger(this, this._store);
+    usePropertiesToAttributes(
+      this,
+      this._store,
+      PopoverTriggerPropsDeclaration,
+    );
   }
 
   attributeChangedCallback(
@@ -42,31 +47,31 @@ export class PopoverTriggerElement extends HostElement {
       attributeNameToPropertyName,
       name,
       newValue,
-    )
+    );
   }
 
   /**
    * Whether the component should ignore user interaction.
    * @default false
    */
-  get disabled(): PopoverTriggerProps['disabled'] {
-    return this._store.disabled.get()
+  get disabled(): PopoverTriggerProps["disabled"] {
+    return this._store.disabled.get();
   }
 
-  set disabled(value: PopoverTriggerProps['disabled']) {
-    this._store.disabled.set(value)
+  set disabled(value: PopoverTriggerProps["disabled"]) {
+    this._store.disabled.set(value);
   }
 
   /**
    * Whether the popover should also open when the trigger is hovered.
    * @default false
    */
-  get openOnHover(): PopoverTriggerProps['openOnHover'] {
-    return this._store.openOnHover.get()
+  get openOnHover(): PopoverTriggerProps["openOnHover"] {
+    return this._store.openOnHover.get();
   }
 
-  set openOnHover(value: PopoverTriggerProps['openOnHover']) {
-    this._store.openOnHover.set(value)
+  set openOnHover(value: PopoverTriggerProps["openOnHover"]) {
+    this._store.openOnHover.set(value);
   }
 
   /**
@@ -74,12 +79,12 @@ export class PopoverTriggerElement extends HostElement {
    * Only applies when `openOnHover` is true.
    * @default 300
    */
-  get delay(): PopoverTriggerProps['delay'] {
-    return this._store.delay.get()
+  get delay(): PopoverTriggerProps["delay"] {
+    return this._store.delay.get();
   }
 
-  set delay(value: PopoverTriggerProps['delay']) {
-    this._store.delay.set(value)
+  set delay(value: PopoverTriggerProps["delay"]) {
+    this._store.delay.set(value);
   }
 
   /**
@@ -87,15 +92,15 @@ export class PopoverTriggerElement extends HostElement {
    * Only applies when `openOnHover` is true.
    * @default 0
    */
-  get closeDelay(): PopoverTriggerProps['closeDelay'] {
-    return this._store.closeDelay.get()
+  get closeDelay(): PopoverTriggerProps["closeDelay"] {
+    return this._store.closeDelay.get();
   }
 
-  set closeDelay(value: PopoverTriggerProps['closeDelay']) {
-    this._store.closeDelay.set(value)
+  set closeDelay(value: PopoverTriggerProps["closeDelay"]) {
+    this._store.closeDelay.set(value);
   }
 }
 
 export function registerPopoverTriggerElement(): void {
-  registerCustomElement('aria-ui-popover-trigger', PopoverTriggerElement)
+  registerCustomElement("aria-ui-popover-trigger", PopoverTriggerElement);
 }

@@ -1,8 +1,6 @@
-import type { Component, Snippet } from 'svelte'
-
-import type { PopoverPositionerProps as PopoverPositionerElementProps } from '../../popover/popover-positioner'
-
-import PopoverPositionerComponent from './popover-positioner.gen.svelte'
+import PopoverPositionerComponent from "./popover-positioner.gen.svelte";
+import type { PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/popover-positioner";
+import type { Component, Snippet } from "svelte";
 
 /** Props for the {@link PopoverPositioner} Svelte component. */
 export interface PopoverPositionerProps {
@@ -11,13 +9,13 @@ export interface PopoverPositionerProps {
    *
    * @default "absolute"
    */
-  strategy?: PopoverPositionerElementProps['strategy']
+  strategy?: PopoverPositionerElementProps["strategy"];
   /**
    * The initial placement of the floating element
    *
    * @default "top"
    */
-  placement?: PopoverPositionerElementProps['placement']
+  placement?: PopoverPositionerElementProps["placement"];
   /**
    * Options to activate auto-update listeners
    *
@@ -25,7 +23,7 @@ export interface PopoverPositionerProps {
    *
    * @default true
    */
-  autoUpdate?: PopoverPositionerElementProps['autoUpdate']
+  autoUpdate?: PopoverPositionerElementProps["autoUpdate"];
   /**
    * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
    * to place the floating element on top of other page content. When enabled,
@@ -34,13 +32,13 @@ export interface PopoverPositionerProps {
    *
    * @default true
    */
-  hoist?: PopoverPositionerElementProps['hoist']
+  hoist?: PopoverPositionerElementProps["hoist"];
   /**
    * The distance between the reference and floating element.
    *
    * @default 6
    */
-  offset?: PopoverPositionerElementProps['offset']
+  offset?: PopoverPositionerElementProps["offset"];
   /**
    * Whether to flip the `placement` in order to keep it in view when the
    * preferred placement(s) will overflow the clipping boundary. You can also
@@ -49,76 +47,76 @@ export interface PopoverPositionerProps {
    *
    * @default true
    */
-  flip?: PopoverPositionerElementProps['flip']
+  flip?: PopoverPositionerElementProps["flip"];
   /**
    * Whether the floating element should shift to keep it in view.
    *
    * @default true
    */
-  shift?: PopoverPositionerElementProps['shift']
+  shift?: PopoverPositionerElementProps["shift"];
   /**
    * Whether the floating element can overlap the reference element to keep it
    * in view.
    *
    * @default false
    */
-  overlap?: PopoverPositionerElementProps['overlap']
+  overlap?: PopoverPositionerElementProps["overlap"];
   /**
    * Whether to constrain the floating element's width and height to not exceed
    * the viewport.
    *
    * @default false
    */
-  fitViewport?: PopoverPositionerElementProps['fitViewport']
+  fitViewport?: PopoverPositionerElementProps["fitViewport"];
   /**
    * Whether to constrain the floating element's width so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameWidth?: PopoverPositionerElementProps['sameWidth']
+  sameWidth?: PopoverPositionerElementProps["sameWidth"];
   /**
    * Whether to constrain the floating element's height so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameHeight?: PopoverPositionerElementProps['sameHeight']
+  sameHeight?: PopoverPositionerElementProps["sameHeight"];
   /**
    * Whether to improve positioning for inline reference elements that span over
    * multiple lines.
    *
    * @default false
    */
-  inline?: PopoverPositionerElementProps['inline']
+  inline?: PopoverPositionerElementProps["inline"];
   /**
    * Whether to hide the floating element when the reference element or the
    * floating element is fully clipped.
    *
    * @default false
    */
-  hide?: PopoverPositionerElementProps['hide']
+  hide?: PopoverPositionerElementProps["hide"];
   /**
    * Describes the clipping element(s) or area that overflow will be checked relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
    *
    * @default 'clippingAncestors'
    */
-  boundary?: PopoverPositionerElementProps['boundary']
+  boundary?: PopoverPositionerElementProps["boundary"];
   /**
    * Describes the root boundary that the element will be checked for overflow relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
    *
    * @default 'viewport'
    */
-  rootBoundary?: PopoverPositionerElementProps['rootBoundary']
+  rootBoundary?: PopoverPositionerElementProps["rootBoundary"];
   /**
    * Describes the virtual padding around the boundary to check for overflow.
    * Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
    *
    * @default 4
    */
-  overflowPadding?: PopoverPositionerElementProps['overflowPadding']
+  overflowPadding?: PopoverPositionerElementProps["overflowPadding"];
   /**
    * The element that will be used to check for overflow. Please see
    * https://floating-ui.com/docs/detectoverflow#elementcontext for more
@@ -126,7 +124,7 @@ export interface PopoverPositionerProps {
    *
    * @default 'floating'
    */
-  elementContext?: PopoverPositionerElementProps['elementContext']
+  elementContext?: PopoverPositionerElementProps["elementContext"];
   /**
    * Whether to check the alternate elementContext’s boundary. Please see
    * https://floating-ui.com/docs/detectoverflow#altboundary for more
@@ -134,9 +132,9 @@ export interface PopoverPositionerProps {
    *
    * @default false
    */
-  altBoundary?: PopoverPositionerElementProps['altBoundary']
-  children?: Snippet
+  altBoundary?: PopoverPositionerElementProps["altBoundary"];
+  children?: Snippet;
 }
 
 export const PopoverPositioner: Component<PopoverPositionerProps> =
-  PopoverPositionerComponent
+  PopoverPositionerComponent;

@@ -6,29 +6,28 @@ import {
   registerCustomElement,
   type Store,
   usePropertiesToAttributes,
-} from '@aria-ui/core'
-
+} from "@aria-ui-v2/core";
 import {
   PopoverRootPropsDeclaration,
   setupPopoverRoot,
   type PopoverRootProps,
-} from '../../popover/popover-root'
+} from "../../popover/popover-root";
 
 const attributeNameToPropertyName =
-  /* @__PURE__ */ createAttributePropertyNameMap(PopoverRootPropsDeclaration)
+  /* @__PURE__ */ createAttributePropertyNameMap(PopoverRootPropsDeclaration);
 const observedAttributes: string[] = /* @__PURE__ */ Array.from(
   attributeNameToPropertyName.keys(),
-)
+);
 
 export class PopoverRootElement extends HostElement {
-  private _store: Store<PopoverRootProps>
-  static observedAttributes = observedAttributes
+  private _store: Store<PopoverRootProps>;
+  static observedAttributes = observedAttributes;
 
   constructor() {
-    super()
-    this._store = createStore(this, PopoverRootPropsDeclaration)
-    setupPopoverRoot(this, this._store)
-    usePropertiesToAttributes(this, this._store, PopoverRootPropsDeclaration)
+    super();
+    this._store = createStore(this, PopoverRootPropsDeclaration);
+    setupPopoverRoot(this, this._store);
+    usePropertiesToAttributes(this, this._store, PopoverRootPropsDeclaration);
   }
 
   attributeChangedCallback(
@@ -42,7 +41,7 @@ export class PopoverRootElement extends HostElement {
       attributeNameToPropertyName,
       name,
       newValue,
-    )
+    );
   }
 
   /**
@@ -51,12 +50,12 @@ export class PopoverRootElement extends HostElement {
    * To render a controlled popover, use the `open` property instead.
    * @default false
    */
-  get defaultOpen(): PopoverRootProps['defaultOpen'] {
-    return this._store.defaultOpen.get()
+  get defaultOpen(): PopoverRootProps["defaultOpen"] {
+    return this._store.defaultOpen.get();
   }
 
-  set defaultOpen(value: PopoverRootProps['defaultOpen']) {
-    this._store.defaultOpen.set(value)
+  set defaultOpen(value: PopoverRootProps["defaultOpen"]) {
+    this._store.defaultOpen.set(value);
   }
 
   /**
@@ -64,12 +63,12 @@ export class PopoverRootElement extends HostElement {
    *
    * @default undefined
    */
-  get open(): PopoverRootProps['open'] {
-    return this._store.open.get()
+  get open(): PopoverRootProps["open"] {
+    return this._store.open.get();
   }
 
-  set open(value: PopoverRootProps['open']) {
-    this._store.open.set(value)
+  set open(value: PopoverRootProps["open"]) {
+    this._store.open.set(value);
   }
 
   /**
@@ -78,27 +77,27 @@ export class PopoverRootElement extends HostElement {
    *
    * @default false
    */
-  get modal(): PopoverRootProps['modal'] {
-    return this._store.modal.get()
+  get modal(): PopoverRootProps["modal"] {
+    return this._store.modal.get();
   }
 
-  set modal(value: PopoverRootProps['modal']) {
-    this._store.modal.set(value)
+  set modal(value: PopoverRootProps["modal"]) {
+    this._store.modal.set(value);
   }
 
   /**
    * Whether the component should ignore user interaction.
    * @default false
    */
-  get disabled(): PopoverRootProps['disabled'] {
-    return this._store.disabled.get()
+  get disabled(): PopoverRootProps["disabled"] {
+    return this._store.disabled.get();
   }
 
-  set disabled(value: PopoverRootProps['disabled']) {
-    this._store.disabled.set(value)
+  set disabled(value: PopoverRootProps["disabled"]) {
+    this._store.disabled.set(value);
   }
 }
 
 export function registerPopoverRootElement(): void {
-  registerCustomElement('aria-ui-popover-root', PopoverRootElement)
+  registerCustomElement("aria-ui-popover-root", PopoverRootElement);
 }

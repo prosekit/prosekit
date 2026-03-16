@@ -1,0 +1,30 @@
+{
+  "name": "@aria-ui/website",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Website for aria-ui project",
+  "author": "ocavue <ocavue@gmail.com>",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "@ocavue/utils": "^1.3.1",
+    "@remix-run/interaction": "^0.3.0",
+    "@zag-js/dom-query": "^1.31.1",
+    "alien-signals": "^3.1.2",
+    "server-dom-shim": "^1.1.0"
+  },
+  "devDependencies": {
+    "@aria-ui/elements": "workspace:*",
+    "@ocavue/tsconfig": "^0.6.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^20.19.10",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.311",
+    "astro": "^5.16.6",
+    "astrobook": "^0.11.2",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}

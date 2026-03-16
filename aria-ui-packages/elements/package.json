@@ -1,0 +1,65 @@
+{
+  "name": "@aria-ui/elements",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "A set of web components for building accessible user interfaces",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "aria-ui-dev": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "pnpm run build:tsdown && pnpm run build:gen",
+    "build:tsdown": "tsdown",
+    "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated"
+  },
+  "dependencies": {
+    "@aria-ui/integrations": "workspace:*",
+    "@floating-ui/dom": "^1.7.4",
+    "@remix-run/interaction": "^0.3.0",
+    "server-dom-shim": "^1.1.0"
+  },
+  "devDependencies": {
+    "@aria-ui/cli": "workspace:*",
+    "@aria-ui/core": "workspace:*",
+    "@aria-ui/utils": "workspace:*",
+    "@ocavue/tsconfig": "^0.6.2",
+    "@ocavue/utils": "^1.3.1",
+    "@types/node": "^20.19.10",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.311",
+    "@vitest/browser-playwright": "^4.0.17",
+    "lit-html": "^3.3.2",
+    "preact": "^10.28.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "solid-js": "^1.9.10",
+    "svelte": "^5.46.1",
+    "tsdown": "0.19.0-beta.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17",
+    "vue": "^3.5.26"
+  }
+}

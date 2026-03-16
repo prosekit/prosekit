@@ -1,0 +1,67 @@
+{
+  "name": "@aria-ui/integrations",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "UI framework integrations for aria-ui",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    "./preact": {
+      "aria-ui-dev": "./src/preact.ts",
+      "types": "./dist/preact.d.ts",
+      "import": "./dist/preact.js"
+    },
+    "./react": {
+      "aria-ui-dev": "./src/react.ts",
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "peerDependencies": {
+    "preact": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@ocavue/tsconfig": "^0.6.2",
+    "@types/node": "^20.19.10",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.311",
+    "@vitest/browser-playwright": "^4.0.17",
+    "lit-html": "^3.3.2",
+    "preact": "^10.28.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@aria-ui/cli",
+  "type": "module",
+  "version": "0.0.2",
+  "description": "CLI tool for aria-ui",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "sideEffects": false,
+  "bin": {
+    "aria-ui": "./bin/aria-ui.mjs"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "prettier": "^3.5.3",
+    "ts-morph": "^27.0.2",
+    "typedoc": "^0.28.15"
+  },
+  "peerDependencies": {
+    "typescript": ">= 5.8.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@effect/cli": "^0.73.0",
+    "@effect/platform": "^0.94.1",
+    "@effect/platform-node": "^0.104.0",
+    "@ocavue/tsconfig": "^0.6.2",
+    "@types/node": "^20.19.10",
+    "effect": "^3.19.14",
+    "tsdown": "^0.18.0",
+    "typescript": "^5.9.3",
+    "typescript-api-extractor": "1.0.0-alpha.11"
+  }
+}

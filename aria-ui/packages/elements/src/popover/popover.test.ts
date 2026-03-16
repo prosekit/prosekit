@@ -418,8 +418,3 @@ describe('Popover', () => {
   forEachEnvironment(environments, runTests)
 })
 
-describe('DEBUG test', () => {
-  test('sanity check', () => {
-    expect(true).toBe(true)
-  })
-})

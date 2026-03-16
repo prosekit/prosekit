@@ -620,6 +620,8 @@ class TooltipGroupState {
   }
 }
 
+// update：你这个东西就一个 instance，没有必要做成一个 class，直接使用 local variable 就好了。
+
 export const tooltipGroup = new TooltipGroupState()
 ```
 
@@ -706,6 +708,7 @@ export interface TooltipRootEvents {
   openChange: OpenChangeEvent
 }
 
+// update: 这个逻辑不是和 setupPopoverRoot 几乎一毛一样么？能不能复用/抽象/封装
 /**
  * @internal
  */
@@ -814,6 +817,8 @@ export function setupTooltipTrigger(
   host: HostElement,
   props: Store<TooltipTriggerProps>,
 ) {
+  // update: getDisabled = props.disabled.get
+  // 更简单，也同步更新 setupPopoverTrigger
   const getDisabled = computed<boolean>(() => props.disabled.get())
   const getStore = TooltipStoreContext.consume(host)
   const getOpen = computed(() => getStore()?.getOpen())
@@ -840,6 +845,7 @@ export function setupTooltipTrigger(
   useAriaDisabled(host, getDisabled)
 
   // Hover, focus, and keyboard interactions
+  // 能不能复用已有的 useHover？做更好的抽象和封装，也许需要在 utils 包加点东西
   useEffect(host, () => {
     if (getDisabled()) return
     const store = getStore()
@@ -1128,6 +1134,7 @@ import { page } from 'vitest/browser'
 
 import { registerElements } from '../index.ts'
 
+// update： 不同 environment 的情况已经在 popover 里测试过了，tooltip 不需要测试 不同 environment 的情况
 // ... same environment setup as popover.test.ts ...
 
 function runTests() {

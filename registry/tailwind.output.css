@@ -1997,6 +1997,11 @@
       }
     }
   }
+  .motion-reduce\:transition-none {
+    @media (prefers-reduced-motion: reduce) {
+      transition-property: none;
+    }
+  }
   .\@xs\:block {
     @container (width >= 20rem) {
       display: block;

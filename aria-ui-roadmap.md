@@ -1,2 +1,5 @@
 - [ ] Remove remix
-- [ ] 
+- [ ] Implement all components 
+- [ ] Write a good test system 
+- [ ] Write a good docs
+- [ ] Use it in ProseKit 

@@ -36,7 +36,7 @@ The core package provides a reactive component framework built on:
 - **Context**: Event-based context system for providing/consuming values across the DOM tree
 - **useEffect**: Hook for managing side effects with cleanup
 - **useId**: Hook for generating unique IDs
-- **useInteraction**: Hook for interaction handling (event listeners)
+- **useEventListener**: Hook for attaching DOM event listeners with lifecycle management
 
 ### Component Architecture
 

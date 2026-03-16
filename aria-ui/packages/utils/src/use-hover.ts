@@ -1,5 +1,3 @@
-import { on } from '@remix-run/interaction'
-
 /**
  * Options for the useHover hook
  * @public
@@ -97,13 +95,12 @@ export function useHover(
     }
   }
 
-  const dispose = on(target, {
-    mouseenter: handleMouseEnter,
-    mouseleave: handleMouseLeave,
-  })
+  target.addEventListener('mouseenter', handleMouseEnter)
+  target.addEventListener('mouseleave', handleMouseLeave)
 
   return () => {
-    dispose()
+    target.removeEventListener('mouseenter', handleMouseEnter)
+    target.removeEventListener('mouseleave', handleMouseLeave)
     if (openTimeout !== undefined) clearTimeout(openTimeout)
     if (closeTimeout !== undefined) clearTimeout(closeTimeout)
   }

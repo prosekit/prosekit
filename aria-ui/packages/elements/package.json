@@ -38,7 +38,6 @@
   "dependencies": {
     "@aria-ui-v2/integrations": "workspace:*",
     "@floating-ui/dom": "^1.7.6",
-    "@remix-run/interaction": "^0.3.0",
     "server-dom-shim": "^1.1.0"
   },
   "devDependencies": {

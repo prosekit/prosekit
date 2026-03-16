@@ -149,9 +149,6 @@ importers:
       '@ocavue/utils':
         specifier: ^1.6.0
         version: 1.6.0
-      '@remix-run/interaction':
-        specifier: ^0.3.0
-        version: 0.3.0
       '@zag-js/dom-query':
         specifier: ^1.36.0
         version: 1.36.0
@@ -189,9 +186,6 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
-      '@remix-run/interaction':
-        specifier: ^0.3.0
-        version: 0.3.0
       server-dom-shim:
         specifier: ^1.1.0
         version: 1.1.0
@@ -301,13 +295,13 @@ importers:
       '@aria-ui-v2/core':
         specifier: workspace:*
         version: link:../core
-      '@remix-run/interaction':
-        specifier: ^0.3.0
-        version: 0.3.0
     devDependencies:
       '@ocavue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0
+      '@ocavue/utils':
+        specifier: ^1.6.0
+        version: 1.6.0
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../../../packages/config-vitest
@@ -332,9 +326,6 @@ importers:
       '@ocavue/utils':
         specifier: ^1.6.0
         version: 1.6.0
-      '@remix-run/interaction':
-        specifier: ^0.3.0
-        version: 0.3.0
       '@zag-js/dom-query':
         specifier: ^1.36.0
         version: 1.36.0
@@ -3538,9 +3529,6 @@ packages:
 
   '@quansync/fs@1.0.0':
     resolution: {integrity: sha512-4TJ3DFtlf1L5LDMaM6CanJ/0lckGNtJcMjQ1NAV6zDmA0tEHKZtxNKin8EgPaVX1YzljbxckyT2tJrpQKAtngQ==}
-
-  '@remix-run/interaction@0.3.0':
-    resolution: {integrity: sha512-lJ/wOkXJOa6913j7x9LSfx7q+5b3FQCd+uzh36G3oUjL0/4AcI1Ch3LiJmHTNmrlHgKHlb3D9idHjpOrpbljyA==}
 
   '@rolldown/binding-android-arm64@1.0.0-rc.9':
     resolution: {integrity: sha512-lcJL0bN5hpgJfSIz/8PIf02irmyL43P+j1pTCfbD1DbLkmGRuFIA4DD3B3ZOvGqG0XiVvRznbKtN0COQVaKUTg==}
@@ -10677,8 +10665,6 @@ snapshots:
   '@quansync/fs@1.0.0':
     dependencies:
       quansync: 1.0.0
-
-  '@remix-run/interaction@0.3.0': {}
 
   '@rolldown/binding-android-arm64@1.0.0-rc.9':
     optional: true

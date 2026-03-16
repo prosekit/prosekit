@@ -294,47 +294,47 @@ The key behavioral difference is that `keydown` fires on key-down rather than ke
 
 ### Phase 1: Create new primitives
 
-- [ ] Create `packages/core/src/use-event-listener.ts` with `useEventListener` function and `/* */` comment
-- [ ] Update `packages/core/src/index.ts` — add `useEventListener` export, remove `useInteraction` export
-- [ ] Delete `packages/core/src/use-interaction.ts`
-- [ ] Remove `@remix-run/interaction` from `packages/core/package.json` dependencies
+- [x] Create `packages/core/src/use-event-listener.ts` with `useEventListener` function and `/* */` comment
+- [x] Update `packages/core/src/index.ts` — add `useEventListener` export, remove `useInteraction` export
+- [x] Delete `packages/core/src/use-interaction.ts`
+- [x] Remove `@remix-run/interaction` from `packages/core/package.json` dependencies
 
 ### Phase 2: Create `usePress` utility
 
-- [ ] Create `packages/utils/src/use-press.ts` with `usePress` function
-  - [ ] Add `/* */` comment with WAI-ARIA APG button pattern link
-  - [ ] Handle `click` events via `useEventListener`
-  - [ ] Handle `keydown` for Enter/Space via `useEventListener`
-  - [ ] Guard `keydown` handler with `event.isComposing` check for IME
-  - [ ] Return combined dispose function
-- [ ] Export `usePress` from `packages/utils/src/index.ts`
-- [ ] Create `packages/utils/src/use-press.test.ts` with tests (see "Testing `usePress`" section below)
+- [x] Create `packages/utils/src/use-press.ts` with `usePress` function
+  - [x] Add `/* */` comment with WAI-ARIA APG button pattern link
+  - [x] Handle `click` events via `useEventListener`
+  - [x] Handle `keydown` for Enter/Space via `useEventListener`
+  - [x] Guard `keydown` handler with `event.isComposing` check for IME
+  - [x] Return combined dispose function
+- [x] Export `usePress` from `packages/utils/src/index.ts`
+- [x] Create `packages/utils/src/use-press.test.ts` with tests (see "Testing `usePress`" section below)
 
 ### Phase 3: Migrate consumers
 
-- [ ] Rewrite `packages/utils/src/use-hover.ts`
-  - [ ] Remove `import { on } from '@remix-run/interaction'`
-  - [ ] Replace `on(target, { mouseenter, mouseleave })` with native `addEventListener`/`removeEventListener`
-- [ ] Remove `@remix-run/interaction` from `packages/utils/package.json` dependencies
-- [ ] Rewrite `packages/elements/src/popover/popover-trigger.ts`
-  - [ ] Remove `import { press } from '@remix-run/interaction/press'`
-  - [ ] Remove `import { useInteraction } from '@aria-ui-v2/core'` (keep other imports)
-  - [ ] Add `import { usePress } from '@aria-ui-v2/utils'`
-  - [ ] Replace `useInteraction(host, { [press]() { ... } })` with `usePress(host, () => { ... })`
-- [ ] Remove `@remix-run/interaction` from `packages/elements/package.json` dependencies
+- [x] Rewrite `packages/utils/src/use-hover.ts`
+  - [x] Remove `import { on } from '@remix-run/interaction'`
+  - [x] Replace `on(target, { mouseenter, mouseleave })` with native `addEventListener`/`removeEventListener`
+- [x] Remove `@remix-run/interaction` from `packages/utils/package.json` dependencies
+- [x] Rewrite `packages/elements/src/popover/popover-trigger.ts`
+  - [x] Remove `import { press } from '@remix-run/interaction/press'`
+  - [x] Remove `import { useInteraction } from '@aria-ui-v2/core'` (keep other imports)
+  - [x] Add `import { usePress } from '@aria-ui-v2/utils'`
+  - [x] Replace `useInteraction(host, { [press]() { ... } })` with `usePress(host, () => { ... })`
+- [x] Remove `@remix-run/interaction` from `packages/elements/package.json` dependencies
 
 ### Phase 4: Clean up remaining references
 
-- [ ] Remove `@remix-run/interaction` from `website/package.json` dependencies
-- [ ] Update `AGENTS.md` — replace `useInteraction` reference with `useEventListener`
+- [x] Remove `@remix-run/interaction` from `website/package.json` dependencies
+- [x] Update `AGENTS.md` — replace `useInteraction` reference with `useEventListener`
 
 ### Phase 5: Verify
 
-- [ ] Run `pnpm install` to regenerate lockfile
-- [ ] Run `pnpm typecheck` — confirm no type errors
-- [ ] Run `pnpm --filter @aria-ui-v2/utils test` — confirm `usePress` and `useHover` tests pass
-- [ ] Run `pnpm --filter @aria-ui-v2/elements test` — confirm popover tests pass
-- [ ] Verify `@remix-run/interaction` has zero references in the codebase (excluding research/plan docs)
+- [x] Run `pnpm install` to regenerate lockfile
+- [x] Run `pnpm typecheck` — confirm no type errors (no new errors introduced)
+- [x] Run `pnpm --filter @aria-ui-v2/utils test` — 24 tests passed (10 new usePress + 14 existing)
+- [x] Run `pnpm --filter @aria-ui-v2/elements test` — 52 tests passed
+- [x] Verify `@remix-run/interaction` has zero references in the codebase (excluding research/plan docs)
 
 ---
 

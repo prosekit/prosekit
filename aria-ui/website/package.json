@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@ocavue/utils": "^1.6.0",
-    "@remix-run/interaction": "^0.3.0",
     "@zag-js/dom-query": "^1.36.0",
     "alien-signals": "^3.1.2",
     "server-dom-shim": "^1.1.0"

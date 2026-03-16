@@ -34,10 +34,10 @@
     "build": "tsc -b"
   },
   "dependencies": {
-    "@aria-ui-v2/core": "workspace:*",
-    "@remix-run/interaction": "^0.3.0"
+    "@aria-ui-v2/core": "workspace:*"
   },
   "devDependencies": {
+    "@ocavue/utils": "^1.6.0",
     "@ocavue/tsconfig": "^0.7.0",
     "@types/node": "^20.19.10",
     "@typescript/lib-dom": "npm:@types/web@^0.0.311",

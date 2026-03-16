@@ -1,7 +1,6 @@
 import type { HostElement } from '@aria-ui-v2/core'
-import { computed, defineProps, useEffect, useInteraction, type Store } from '@aria-ui-v2/core'
-import { useAriaControls, useAriaDisabled, useAriaExpanded, useHover } from '@aria-ui-v2/utils'
-import { press } from '@remix-run/interaction/press'
+import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
+import { useAriaControls, useAriaDisabled, useAriaExpanded, useHover, usePress } from '@aria-ui-v2/utils'
 
 import type { OpenChangeEvent } from './popover-root.ts'
 import { PopoverStoreContext } from './popover-store.ts'
@@ -85,12 +84,10 @@ export function setupPopoverTrigger(
   const getOpen = computed(() => getStore()?.getOpen())
   const getPopupId = computed(() => getStore()?.getPopupId())
 
-  useInteraction(host, {
-    [press]() {
-      const store = getStore()
-      if (!store) return
-      if (!getDisabled()) store.emitOpenChange(!store.getOpen())
-    },
+  usePress(host, () => {
+    const store = getStore()
+    if (!store) return
+    if (!getDisabled()) store.emitOpenChange(!store.getOpen())
   })
 
   // Handle hover interactions

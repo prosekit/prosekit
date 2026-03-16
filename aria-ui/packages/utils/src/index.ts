@@ -3,3 +3,4 @@ export * as FeatureDetectionInternals from './feature-detection/feature-detectio
 export * as FeatureDetection from './feature-detection/feature-detection.ts'
 export { useElementId } from './use-element-id.ts'
 export { useHover, type UseHoverOptions } from './use-hover.ts'
+export { usePress } from './use-press.ts'

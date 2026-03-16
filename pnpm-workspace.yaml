@@ -10,14 +10,14 @@ allowedDeprecatedVersions:
   glob: "10"
 
 catalog:
+  "@tsdown/css": "^0.21.2"
   "@types/node": "^24.10.13"
   "@vitest/browser-playwright": "^4.1.0"
   "@vitest/coverage-v8": "^4.1.0"
   "@vitest/ui": "^4.1.0"
-  vitest: "^4.1.0"
   tsdown: "^0.21.2"
-  "@tsdown/css": "^0.21.2"
   typescript: "~5.9.3"
+  vitest: "^4.1.0"
 
 ignoreWorkspaceRootCheck: true
 
@@ -36,6 +36,8 @@ minimumReleaseAgeExclude:
   - "astrobook"
   - "@astrobook/*"
   - "vite-plugin-solid"
+onlyBuiltDependencies:
+  - msgpackr-extract
 
 overrides:
   '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@b9d0540
@@ -48,7 +50,6 @@ overrides:
   '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@b9d0540
   '@aria-ui/select': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@b9d0540
   '@aria-ui/tooltip': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@b9d0540
-
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

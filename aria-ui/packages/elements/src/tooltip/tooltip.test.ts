@@ -420,6 +420,88 @@ describe('Tooltip', () => {
     })
   })
 
+  describe('Placement (multiple tooltips)', () => {
+    test('multiple tooltips with open-delay attribute work independently', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <div style="display: flex; gap: 16px;">
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" data-testid="trigger-top">Top</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="top">
+                <aria-ui-tooltip-popup data-testid="popup-top">Tooltip on top</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" data-testid="trigger-bottom">Bottom</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="bottom">
+                <aria-ui-tooltip-popup data-testid="popup-bottom">Tooltip on bottom</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+          </div>
+        `,
+        container,
+      )
+
+      const triggerTop = page.getByTestId('trigger-top')
+      const popupTop = page.getByTestId('popup-top')
+      const popupBottom = page.getByTestId('popup-bottom')
+
+      // Both hidden initially
+      expect(popupTop).not.toBeVisible()
+      expect(popupBottom).not.toBeVisible()
+
+      // Hover first trigger — should open
+      await triggerTop.hover()
+      expect(popupTop).toBeVisible()
+      expect(popupBottom).not.toBeVisible()
+    })
+
+    test('hovering between multiple tooltips works correctly', async () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+
+      render(
+        html`
+          <div style="display: flex; gap: 16px;">
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" data-testid="trigger-a">A</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="top">
+                <aria-ui-tooltip-popup data-testid="popup-a">Tooltip A</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+
+            <aria-ui-tooltip-root>
+              <aria-ui-tooltip-trigger open-delay="0" data-testid="trigger-b">B</aria-ui-tooltip-trigger>
+              <aria-ui-tooltip-positioner placement="bottom">
+                <aria-ui-tooltip-popup data-testid="popup-b">Tooltip B</aria-ui-tooltip-popup>
+              </aria-ui-tooltip-positioner>
+            </aria-ui-tooltip-root>
+          </div>
+        `,
+        container,
+      )
+
+      const triggerA = page.getByTestId('trigger-a')
+      const triggerB = page.getByTestId('trigger-b')
+      const popupA = page.getByTestId('popup-a')
+      const popupB = page.getByTestId('popup-b')
+
+      // Hover A -> open A
+      await triggerA.hover()
+      expect(popupA).toBeVisible()
+      expect(popupB).not.toBeVisible()
+
+      // Move to B -> close A, open B
+      await triggerB.hover()
+      await expect.poll(() => popupB.element().checkVisibility()).toBe(true)
+      await expect.poll(() => popupA.element().checkVisibility()).toBe(false)
+    })
+  })
+
   describe('Positioning', () => {
     test('positioner is positioned absolutely by default', async () => {
       const container = document.createElement('div')

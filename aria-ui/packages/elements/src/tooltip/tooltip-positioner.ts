@@ -2,6 +2,7 @@ import type { HostElement } from '@aria-ui-v2/core'
 import { defineCustomElement, registerCustomElement, type Store } from '@aria-ui-v2/core'
 
 import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '../overlay/overlay-positioner.ts'
+
 import { TooltipStoreContext } from './tooltip-store.ts'
 
 /**

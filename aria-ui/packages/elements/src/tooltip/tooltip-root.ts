@@ -3,6 +3,7 @@ import { defineCustomElement, registerCustomElement, type Store } from '@aria-ui
 
 import { OpenChangeEvent } from '../overlay/open-change-event.ts'
 import { OverlayRootPropsDeclaration, setupOverlayRoot, type OverlayRootProps } from '../overlay/overlay-root.ts'
+
 import { notifyTooltipClosed } from './tooltip-group.ts'
 import { TooltipStoreContext } from './tooltip-store.ts'
 

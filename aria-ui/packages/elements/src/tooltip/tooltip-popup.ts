@@ -2,6 +2,7 @@ import type { HostElement, Store } from '@aria-ui-v2/core'
 import { defineCustomElement, registerCustomElement } from '@aria-ui-v2/core'
 
 import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '../overlay/overlay-popup.ts'
+
 import { TooltipStoreContext } from './tooltip-store.ts'
 
 /**

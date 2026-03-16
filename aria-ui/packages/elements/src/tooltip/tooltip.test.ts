@@ -96,7 +96,7 @@ describe('Tooltip', () => {
       expect(popup).toBeVisible()
     })
 
-    test('mouse leave closes tooltip', async () => {
+    test('mouse leave closes tooltip', () => {
       const container = document.createElement('div')
       document.body.appendChild(container)
 

@@ -3,6 +3,7 @@ import { defineCustomElement, defineProps, registerCustomElement, type Store } f
 
 import { OpenChangeEvent } from '../overlay/open-change-event.ts'
 import { OverlayRootPropsDeclaration, setupOverlayRoot, type OverlayRootProps } from '../overlay/overlay-root.ts'
+
 import { PopoverStoreContext } from './popover-store.ts'
 
 export { OpenChangeEvent }

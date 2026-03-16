@@ -85,8 +85,6 @@ export function setupPopoverRoot(
   const getOpen = computed(() => {
     const open = props.open.get()
     const defaultOpen = props.defaultOpen.get()
-    console.log("open", open, "defaultOpen", defaultOpen  )
-
     return open ?? defaultOpen
   })
 

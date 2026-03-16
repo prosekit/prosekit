@@ -19,7 +19,16 @@ export function get(): boolean {
 export function detect(): boolean {
   // All browsers that support CSS Anchor Positioning support `togglePopover({ source })`
   // https://caniuse.com/mdn-api_htmlelement_togglepopover_options_source_parameter
-  return detectAnchorPositioningSupport()
+  try {
+    if (typeof window === 'undefined' || typeof CSS === 'undefined') {
+      return false
+    }
+
+    // https://caniuse.com/mdn-css_properties_position-try_span-self-x-start
+    return CSS.supports('position-try', 'span-self-x-start')
+  } catch {
+    return false
+}
 }
 
 /**

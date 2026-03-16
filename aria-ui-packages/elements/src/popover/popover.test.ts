@@ -6,7 +6,6 @@ import { page } from 'vitest/browser'
 import { registerElements } from '../index.ts'
 
 interface Environment {
-  anchorPositioning: boolean
   popover: boolean
   togglePopoverSource: boolean
 }
@@ -14,19 +13,12 @@ interface Environment {
 function collectEnvironments() {
   let environments: Environment[] = [
     {
-      anchorPositioning: false,
       popover: false,
       togglePopoverSource: false,
     },
   ]
 
-  if (FeatureDetectionInternals.AnchorPositioning.detect()) {
-    environments = [
-      ...environments.map((env) => ({ ...env, anchorPositioning: true })),
-      ...environments.map((env) => ({ ...env, anchorPositioning: false })),
-    ]
-  }
-
+ 
   if (FeatureDetectionInternals.Popover.detect()) {
     environments = [
       ...environments.map((env) => ({ ...env, popover: true })),
@@ -45,9 +37,6 @@ function collectEnvironments() {
 }
 
 function setupEnvironment(environment: Environment) {
-  FeatureDetectionInternals.AnchorPositioning.override(
-    environment.anchorPositioning,
-  )
   FeatureDetectionInternals.Popover.override(environment.popover)
   FeatureDetectionInternals.TogglePopoverSource.override(
     environment.togglePopoverSource,
@@ -55,14 +44,12 @@ function setupEnvironment(environment: Environment) {
 }
 
 function teardownEnvironment() {
-  FeatureDetectionInternals.AnchorPositioning.reset()
   FeatureDetectionInternals.Popover.reset()
   FeatureDetectionInternals.TogglePopoverSource.reset()
 }
 
 function forEachEnvironment(environments: Environment[], callback: () => void) {
   for (const environment of environments) {
-    describe(`Environment anchorPositioning ${environment.anchorPositioning}`, () => {
       describe(`Environment popover ${environment.popover}`, () => {
         describe(`Environment togglePopoverSource ${environment.togglePopoverSource}`, () => {
           beforeEach(() => {
@@ -76,7 +63,6 @@ function forEachEnvironment(environments: Environment[], callback: () => void) {
           callback()
         })
       })
-    })
   }
 }
 

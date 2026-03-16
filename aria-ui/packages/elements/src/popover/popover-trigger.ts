@@ -79,7 +79,7 @@ export function setupPopoverTrigger(
   host: HostElement,
   props: Store<PopoverTriggerProps>,
 ) {
-  const getDisabled = computed<boolean>(() => props.disabled.get())
+  const getDisabled = props.disabled.get
   const getStore = PopoverStoreContext.consume(host)
   const getOpen = computed(() => getStore()?.getOpen())
   const getPopupId = computed(() => getStore()?.getPopupId())

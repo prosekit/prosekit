@@ -11,25 +11,22 @@ import {
 /** Props for the {@link PopoverRoot} Preact component. */
 export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   /**
-   * Whether the popover is initially open.
-   *
-   * To render a controlled popover, use the `open` property instead.
-   * @default false
-   */
-  defaultOpen?: PopoverRootElementProps["defaultOpen"];
-  /**
-   * Whether the popover is currently open.
-   *
-   * @default null
-   */
-  open?: PopoverRootElementProps["open"];
-  /**
    * Whether the popover should be modal.
    * When true, the popover will trap focus and prevent interaction with the rest of the page.
    *
    * @default false
    */
   modal?: PopoverRootElementProps["modal"];
+  /**
+   * Whether the overlay is initially open.
+   * @default false
+   */
+  defaultOpen?: PopoverRootElementProps["defaultOpen"];
+  /**
+   * Whether the overlay is currently open.
+   * @default null
+   */
+  open?: PopoverRootElementProps["open"];
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -39,7 +36,7 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   onOpenChange?: (event: PopoverRootElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["defaultOpen", "open", "modal", "disabled"];
+const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
 const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
 export const PopoverRoot: ForwardRefExoticComponent<
   PopoverRootProps & RefAttributes<PopoverRootElement>

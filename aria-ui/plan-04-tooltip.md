@@ -608,7 +608,7 @@ export function setupOverlayPopup(
 }
 ```
 
-## Phase 3: Refactor popover to use overlay modules [ ]
+## Phase 3: Refactor popover to use overlay modules [x]
 
 Update existing popover files to use the shared code. No behavioral changes — this is a pure refactor.
 

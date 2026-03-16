@@ -32,6 +32,7 @@ export function setupOverlayPopup(
     store.setPopupId(id)
   })
 
+  // TODO: move it out of this function. Just set role in different element setup functions direclty.
   useEffect(host, () => {
     host.role = role
   })

@@ -30,10 +30,8 @@ export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositioner
    */
   autoUpdate?: PopoverPositionerElementProps["autoUpdate"];
   /**
-   * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
-   * to place the floating element on top of other page content. When enabled,
-   * the floating element won't be clipped by an ancestor. This provides a
-   * similar result to React's `<Portals>` or Vue's `<Teleport>`.
+   * Whether to use the browser Popover API to place the floating element on
+   * top of other page content.
    *
    * @default true
    */
@@ -131,7 +129,7 @@ export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositioner
    */
   elementContext?: PopoverPositionerElementProps["elementContext"];
   /**
-   * Whether to check the alternate elementContext’s boundary. Please see
+   * Whether to check the alternate elementContext's boundary. Please see
    * https://floating-ui.com/docs/detectoverflow#altboundary for more
    * information.
    *

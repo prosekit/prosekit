@@ -1,13 +1,11 @@
 import type { HostElement } from '@aria-ui-v2/core'
 import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
 import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
-import type { Placement } from '@floating-ui/dom'
 import type {
   AutoUpdateOptions,
   Boundary,
   ElementContext,
-  OffsetOptions,
-  RootBoundary,
+  OffsetOptions, Placement, RootBoundary
 } from '@floating-ui/dom'
 
 import { PopoverStoreContext } from './popover-store.ts'

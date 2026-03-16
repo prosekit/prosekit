@@ -22,7 +22,7 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   /**
    * Whether the popover is currently open.
    *
-   * @default undefined
+   * @default null 
    */
   open?: PopoverRootElementProps["open"];
   /**

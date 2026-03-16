@@ -31,6 +31,7 @@ export default defineESLintConfig(
     ignores: ['**/*.test.*', '**/*.spec.*'],
   },
   {
+    // TODO: remove me
     ignores: ['aria-ui-packages/*/package.json'],
   },
 )

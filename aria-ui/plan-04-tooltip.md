@@ -118,57 +118,11 @@ export function createDelayedToggle(
 }
 ```
 
-### 1.2 Move `useHover` from utils to popover
+### 1.2 Update `packages/utils/src/index.ts`
 
-`useHover` is only used by `popover-trigger.ts`. Move it out of utils into the popover directory and refactor it to use `createDelayedToggle`.
-
-- Move `packages/utils/src/use-hover.ts` → `packages/elements/src/popover/use-hover.ts`
-- Move `packages/utils/src/use-hover.test.ts` → `packages/elements/src/popover/use-hover.test.ts`
-- Remove `useHover` and `UseHoverOptions` exports from `packages/utils/src/index.ts`
-
-Refactored `packages/elements/src/popover/use-hover.ts`:
+Add `createDelayedToggle` export. Keep `useHover` exports unchanged.
 
 ```typescript
-import { createDelayedToggle } from '@aria-ui-v2/utils'
-
-export interface UseHoverOptions {
-  openDelay?: number
-  closeDelay?: number
-  onOpen?: () => void
-  onClose?: () => void
-}
-
-export function useHover(
-  target: HTMLElement,
-  options: UseHoverOptions,
-): VoidFunction {
-  const { openDelay = 0, closeDelay = 0, onOpen, onClose } = options
-
-  const toggle = createDelayedToggle(onOpen, onClose)
-
-  const handleMouseEnter = () => toggle.open(openDelay)
-  const handleMouseLeave = () => toggle.close(closeDelay)
-
-  target.addEventListener('mouseenter', handleMouseEnter)
-  target.addEventListener('mouseleave', handleMouseLeave)
-
-  return () => {
-    target.removeEventListener('mouseenter', handleMouseEnter)
-    target.removeEventListener('mouseleave', handleMouseLeave)
-    toggle.dispose()
-  }
-}
-```
-
-### 1.3 Update `packages/utils/src/index.ts`
-
-Remove `useHover` exports, add `createDelayedToggle`:
-
-```typescript
-// Remove:
-// export { useHover, type UseHoverOptions } from './use-hover.ts'
-
-// Add:
 export { createDelayedToggle, type DelayedToggle } from './delayed-toggle.ts'
 ```
 
@@ -835,18 +789,13 @@ export function registerPopoverPositionerElement(): void {
 
 ### 3.5 Update `packages/elements/src/popover/popover-trigger.ts`
 
-Two changes:
-1. Simplify `getDisabled`: use `props.disabled.get` directly instead of wrapping in `computed()`.
-2. Update `useHover` import from `@aria-ui-v2/utils` to local `./use-hover.ts`.
+Simplify `getDisabled`: use `props.disabled.get` directly instead of wrapping in `computed()`.
 
 ```typescript
 // Before
-import { useAriaControls, useAriaDisabled, useAriaExpanded, useHover, usePress } from '@aria-ui-v2/utils'
 const getDisabled = computed<boolean>(() => props.disabled.get())
 
 // After
-import { useAriaControls, useAriaDisabled, useAriaExpanded, usePress } from '@aria-ui-v2/utils'
-import { useHover } from './use-hover.ts'
 const getDisabled = props.disabled.get
 ```
 
@@ -1753,10 +1702,8 @@ describe('Tooltip', () => {
 |---|---|
 | **Utils** | |
 | `packages/utils/src/delayed-toggle.ts` | **New** — `createDelayedToggle()` shared timer logic (`@internal`) |
-| `packages/utils/src/use-hover.ts` | **Deleted** (moved to popover) |
-| `packages/utils/src/use-hover.test.ts` | **Deleted** (moved to popover) |
-| `packages/utils/src/index.ts` | Remove `useHover` exports, add `createDelayedToggle` |
-| **Overlay (new shared)** | | // update: do not move `useHover` exports, let's keep it as current state. 
+| `packages/utils/src/index.ts` | Add `createDelayedToggle` export |
+| **Overlay (new shared)** | |
 | `src/overlay/overlay-store.ts` | **New** — `OverlayStore` class extracted from `PopoverStore` |
 | `src/overlay/open-change-event.ts` | **New** — `OpenChangeEvent` class extracted from `popover-root.ts` |
 | `src/overlay/positioning.ts` | **Moved** from `popover/positioning.ts` |
@@ -1768,9 +1715,7 @@ describe('Tooltip', () => {
 | `src/popover/popover-root.ts` | Thin wrapper: `PopoverRootProps extends OverlayRootProps`, calls `setupOverlayRoot()` |
 | `src/popover/popover-popup.ts` | Thin wrapper calling `setupOverlayPopup(…, 'dialog')` |
 | `src/popover/popover-positioner.ts` | Thin wrapper: `PopoverPositionerProps extends OverlayPositionerProps`, calls `setupOverlayPositioner()` |
-| `src/popover/popover-trigger.ts` | Simplify `getDisabled`, update `useHover` import to local | // update: do not move `useHover` exports, let's keep it as current state. 
-| `src/popover/use-hover.ts` | **Moved** from `packages/utils/`, refactored with `createDelayedToggle` |
-| `src/popover/use-hover.test.ts` | **Moved** from `packages/utils/` |
+| `src/popover/popover-trigger.ts` | Simplify `getDisabled` to `props.disabled.get` |
 | `src/popover/positioning.ts` | **Deleted** (moved to overlay) |
 | **Tooltip (new)** | |
 | `src/tooltip/tooltip-group.ts` | **New** — module-level variables for shared delay |
@@ -1788,13 +1733,9 @@ describe('Tooltip', () => {
 ## Verification
 
 After implementation:
-<del>
-1. `pnpm --filter @aria-ui-v2/utils typecheck`
-2. `pnpm --filter @aria-ui-v2/cli typecheck`
-</del>
-update: use `pnpm -w typecheck`
-3. `pnpm --filter @aria-ui-v2/elements typecheck`
-4. `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass (Phase 3 verification)
-5. `pnpm --filter @aria-ui-v2/elements run build:gen` — generates framework wrappers for both popover and tooltip
-6. `pnpm --filter @aria-ui-v2/elements test` — all tooltip tests pass
-7. `nr fix` — formatting
+
+1. `pnpm -w typecheck` — all packages pass
+2. `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass (Phase 3 verification)
+3. `pnpm --filter @aria-ui-v2/elements run build:gen` — generates framework wrappers for both popover and tooltip
+4. `pnpm --filter @aria-ui-v2/elements test` — all tooltip tests pass
+5. `nr fix` — formatting

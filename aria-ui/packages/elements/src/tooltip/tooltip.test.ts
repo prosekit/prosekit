@@ -329,7 +329,9 @@ describe('Tooltip', () => {
 
       const root = container.querySelector('aria-ui-tooltip-root')!
       let eventFired = false
-      root.addEventListener('openChange', () => { eventFired = true })
+      root.addEventListener('openChange', () => {
+        eventFired = true
+      })
 
       await page.getByText('Trigger').hover()
       expect(eventFired).toBe(true)

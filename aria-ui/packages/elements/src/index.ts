@@ -2,10 +2,10 @@ import { PopoverPopupElement, registerPopoverPopupElement } from './popover/popo
 import { PopoverPositionerElement, registerPopoverPositionerElement } from './popover/popover-positioner.ts'
 import { PopoverRootElement, registerPopoverRootElement } from './popover/popover-root.ts'
 import { PopoverTriggerElement, registerPopoverTriggerElement } from './popover/popover-trigger.ts'
-import { TooltipPopupElement, registerTooltipPopupElement } from './tooltip/tooltip-popup.ts'
-import { TooltipPositionerElement, registerTooltipPositionerElement } from './tooltip/tooltip-positioner.ts'
-import { TooltipRootElement, registerTooltipRootElement } from './tooltip/tooltip-root.ts'
-import { TooltipTriggerElement, registerTooltipTriggerElement } from './tooltip/tooltip-trigger.ts'
+import { registerTooltipPopupElement, TooltipPopupElement } from './tooltip/tooltip-popup.ts'
+import { registerTooltipPositionerElement, TooltipPositionerElement } from './tooltip/tooltip-positioner.ts'
+import { registerTooltipRootElement, TooltipRootElement } from './tooltip/tooltip-root.ts'
+import { registerTooltipTriggerElement, TooltipTriggerElement } from './tooltip/tooltip-trigger.ts'
 
 export {
   PopoverPopupElement,
@@ -16,14 +16,14 @@ export {
   registerPopoverPositionerElement,
   registerPopoverRootElement,
   registerPopoverTriggerElement,
-  TooltipPopupElement,
-  TooltipPositionerElement,
-  TooltipRootElement,
-  TooltipTriggerElement,
   registerTooltipPopupElement,
   registerTooltipPositionerElement,
   registerTooltipRootElement,
   registerTooltipTriggerElement,
+  TooltipPopupElement,
+  TooltipPositionerElement,
+  TooltipRootElement,
+  TooltipTriggerElement,
 }
 
 /**

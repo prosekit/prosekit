@@ -1225,7 +1225,7 @@ Add `./tooltip` export and update `build:gen` to run for both popover and toolti
 pnpm --filter @aria-ui-v2/elements run build:gen
 ```
 
-## Phase 7: Tests [ ]
+## Phase 7: Tests [x]
 
 ### 7.1 Create `packages/elements/src/tooltip/tooltip.test.ts`
 

@@ -201,8 +201,8 @@ Every export must be marked with `@public` or `@internal`:
 All elements are registered in `packages/elements/src/register.ts` using the generated register functions:
 
 ```typescript
-import { registerFooRootElement } from './generated/elements/foo-root.gen.ts'
 import { registerFooItemElement } from './generated/elements/foo-item.gen.ts'
+import { registerFooRootElement } from './generated/elements/foo-root.gen.ts'
 
 export function registerElements(): void {
   // Skip registration on non-browser environments

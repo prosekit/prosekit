@@ -1,7 +1,7 @@
 import { config } from '@prosekit/config-vitest'
 
 export default config({
-      resolve: {
+  resolve: {
     conditions: ['aria-ui-dev'],
   },
 })

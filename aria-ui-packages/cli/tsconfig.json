@@ -1,13 +1,13 @@
 {
   "extends": "@ocavue/tsconfig/es/app.json",
-"include": [
+  "include": [
     "src/**/*.ts",
     "./*.ts",
-    "./package.json"
-],
-"references": [
+    "./package.json",
+  ],
+  "references": [
     {
-        "path": "../../packages/config-vitest/tsconfig.json"
-    }
-],
+      "path": "../../packages/config-vitest/tsconfig.json",
+    },
+  ],
 }

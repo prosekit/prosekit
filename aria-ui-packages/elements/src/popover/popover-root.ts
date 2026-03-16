@@ -19,9 +19,9 @@ export interface PopoverRootProps {
   /**
    * Whether the popover is currently open.
    *
-   * @default undefined
+   * @default null
    */
-  open: boolean | undefined
+  open: boolean | null
 
   /**
    * Whether the popover should be modal.
@@ -49,7 +49,7 @@ export const PopoverRootPropsDeclaration: PropsDeclaration<PopoverRootProps> =
       type: 'boolean',
     },
     open: {
-      default: undefined,
+      default: null,
       attribute: 'open',
       type: 'json',
     },

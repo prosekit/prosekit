@@ -192,7 +192,7 @@ importers:
 
   aria-ui-packages/elements:
     dependencies:
-      '@aria-ui/integrations':
+      '@aria-ui-v2/integrations':
         specifier: workspace:*
         version: link:../integrations
       '@floating-ui/dom':
@@ -205,13 +205,13 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
     devDependencies:
-      '@aria-ui/cli':
+      '@aria-ui-v2/cli':
         specifier: workspace:*
         version: link:../cli
-      '@aria-ui/core':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-      '@aria-ui/utils':
+      '@aria-ui-v2/core':
+        specifier: workspace:*
+        version: link:../core
+      '@aria-ui-v2/utils':
         specifier: workspace:*
         version: link:../utils
       '@ocavue/tsconfig':
@@ -307,9 +307,9 @@ importers:
 
   aria-ui-packages/utils:
     dependencies:
-      '@aria-ui/core':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@b9d0540
+      '@aria-ui-v2/core':
+        specifier: workspace:*
+        version: link:../core
       '@remix-run/interaction':
         specifier: ^0.3.0
         version: 0.3.0

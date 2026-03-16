@@ -126,7 +126,7 @@ Add `createDelayedToggle` export. Keep `useHover` exports unchanged.
 export { createDelayedToggle, type DelayedToggle } from './delayed-toggle.ts'
 ```
 
-## Phase 2: Extract overlay shared modules [ ]
+## Phase 2: Extract overlay shared modules [x]
 
 ### 2.1 Create `packages/elements/src/overlay/overlay-store.ts`
 

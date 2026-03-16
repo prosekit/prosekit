@@ -37,19 +37,16 @@ This is always a relative path computed from file locations. There is no option 
 ### New CLI Usage
 
 ```bash
-# Default behavior (same as today)
-aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated
-
-# With custom prefix
-aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --prefix my-lib
-
-# With custom import source (relative path)
+# With relative path import source (current project usage)
 aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source ../../popover/index.ts
 
-# With custom import source (package name)
+# With package name import source
 aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source @my-org/elements
 
-# Both
+# With custom prefix
+aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source ../../popover/index.ts --prefix my-lib
+
+# Both custom prefix and package name
 aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --prefix my-lib --import-source @my-org/elements
 ```
 

@@ -10,21 +10,21 @@
     "build": "astro build"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.3.1",
+    "@ocavue/utils": "^1.6.0",
     "@remix-run/interaction": "^0.3.0",
-    "@zag-js/dom-query": "^1.31.1",
+    "@zag-js/dom-query": "^1.36.0",
     "alien-signals": "^3.1.2",
     "server-dom-shim": "^1.1.0"
   },
   "devDependencies": {
     "@aria-ui-v2/elements": "workspace:*",
-    "@ocavue/tsconfig": "^0.6.2",
-    "@tailwindcss/vite": "^4.1.18",
+    "@ocavue/tsconfig": "^0.7.0",
+    "@tailwindcss/vite": "^4.2.1",
     "@types/node": "^20.19.10",
     "@typescript/lib-dom": "npm:@types/web@^0.0.311",
-    "astro": "^5.16.6",
+    "astro": "^5.18.1",
     "astrobook": "^0.11.2",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
   }
 }

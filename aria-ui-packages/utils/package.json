@@ -37,12 +37,12 @@
     "@remix-run/interaction": "^0.3.0"
   },
   "devDependencies": {
-    "@ocavue/tsconfig": "^0.6.2",
+    "@ocavue/tsconfig": "^0.7.0",
     "@types/node": "^20.19.10",
     "@typescript/lib-dom": "npm:@types/web@^0.0.311",
-    "@vitest/browser-playwright": "^4.0.17",
+    "@vitest/browser-playwright": "^4.1.0",
     "lit-html": "^3.3.2",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
+    "vitest": "^4.1.0"
   }
 }

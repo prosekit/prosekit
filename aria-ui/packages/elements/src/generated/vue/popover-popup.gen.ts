@@ -4,7 +4,7 @@ import {
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from "vue";
-import { registerPopoverPopupElement } from "../../popover/popover-popup";
+import { registerPopoverPopupElement } from "../../popover/index.ts";
 
 /** Props for the {@link PopoverPopup} Vue component. */
 export interface PopoverPopupProps {}

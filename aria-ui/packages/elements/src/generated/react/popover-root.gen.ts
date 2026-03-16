@@ -9,7 +9,7 @@ import {
   type PopoverRootElement,
   type PopoverRootProps as PopoverRootElementProps,
   type PopoverRootEvents as PopoverRootElementEvents,
-} from "../../popover/popover-root";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverRoot} React component. */
 export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {

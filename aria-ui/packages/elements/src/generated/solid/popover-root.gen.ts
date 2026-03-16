@@ -3,7 +3,7 @@ import {
   type PopoverRootElement,
   type PopoverRootEvents as PopoverRootElementEvents,
   type PopoverRootProps as PopoverRootElementProps,
-} from "../../popover/popover-root";
+} from "../../popover/index.ts";
 import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";

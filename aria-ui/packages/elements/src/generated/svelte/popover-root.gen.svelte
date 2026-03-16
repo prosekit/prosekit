@@ -1,5 +1,5 @@
 <script lang="js">
-  import { registerPopoverRootElement } from '../../popover/popover-root'
+  import { registerPopoverRootElement } from '../../popover/index.ts'
   registerPopoverRootElement()
 
   let { onOpenChange = undefined, children = undefined, ..._restProps } = $props()

@@ -7,7 +7,7 @@ import {
 import {
   registerPopoverPositionerElement,
   type PopoverPositionerProps as PopoverPositionerElementProps,
-} from "../../popover/popover-positioner";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverPositioner} Vue component. */
 export interface PopoverPositionerProps {

@@ -8,7 +8,7 @@ import {
   registerPopoverPositionerElement,
   type PopoverPositionerElement,
   type PopoverPositionerProps as PopoverPositionerElementProps,
-} from "../../popover/popover-positioner";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverPositioner} React component. */
 export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositionerElement> {

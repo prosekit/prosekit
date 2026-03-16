@@ -6,9 +6,15 @@ import { IndentationText, Project, VariableDeclarationKind, type SourceFile } fr
 
 import type { ComponentInfo } from './parse'
 
+export interface GenerateOptions {
+  prefix: string
+  importSource: string
+}
+
 type ComponentMeta = {
   componentName: string
   kebabName: string
+  tagName: string
   props: ComponentInfo['props']
   events: ComponentInfo['events']
   hasProps: boolean
@@ -35,7 +41,7 @@ type ElementTypeImportOrder = 'props-first' | 'events-first'
 type SourceImportOptions = {
   sourceFile: SourceFile
   component: ComponentInfo
-  relativePathToSource: string
+  importSource: string
   order: ElementTypeImportOrder
   includeRegister: boolean
   includeElementType: boolean
@@ -54,6 +60,7 @@ function formatWithPrettier(filePath: string, contents: string) {
 export function generateFiles(
   components: ComponentInfo[],
   outputDir: string,
+  options: GenerateOptions,
 ): Effect.Effect<void, PlatformError, Path.Path | FileSystem.FileSystem> {
   return Effect.gen(function*() {
     const path = yield* Path.Path
@@ -105,23 +112,23 @@ export function generateFiles(
       const fileName = getComponentFileName(component)
 
       const reactPath = path.join(outputDirs.react, fileName)
-      yield* writeSourceFile(reactPath, (sourceFile) => generateReactComponentFile(sourceFile, component, project))
+      yield* writeSourceFile(reactPath, (sourceFile) => generateReactComponentFile(sourceFile, component, options))
 
       const preactPath = path.join(outputDirs.preact, fileName)
-      yield* writeSourceFile(preactPath, (sourceFile) => generatePreactComponentFile(sourceFile, component, project))
+      yield* writeSourceFile(preactPath, (sourceFile) => generatePreactComponentFile(sourceFile, component, options))
 
       const solidPath = path.join(outputDirs.solid, fileName)
-      yield* writeSourceFile(solidPath, (sourceFile) => generateSolidComponentFile(sourceFile, component, project))
+      yield* writeSourceFile(solidPath, (sourceFile) => generateSolidComponentFile(sourceFile, component, options))
 
       const vuePath = path.join(outputDirs.vue, fileName)
-      yield* writeSourceFile(vuePath, (sourceFile) => generateVueComponentFile(sourceFile, component, project))
+      yield* writeSourceFile(vuePath, (sourceFile) => generateVueComponentFile(sourceFile, component, options))
 
       const sveltePath = path.join(outputDirs.svelte, fileName)
-      yield* writeSourceFile(sveltePath, (sourceFile) => generateSvelteComponentFile(sourceFile, component, project))
+      yield* writeSourceFile(sveltePath, (sourceFile) => generateSvelteComponentFile(sourceFile, component, options))
 
       const svelteFileName = getSvelteComponentFileName(component)
       const svelteComponentPath = path.join(outputDirs.svelte, svelteFileName)
-      const svelteContents = generateSvelteComponentSvelteFile(component, project, svelteComponentPath)
+      const svelteContents = generateSvelteComponentSvelteFile(component, options)
       yield* writeTextFile(svelteComponentPath, svelteContents)
     }
   })
@@ -130,21 +137,16 @@ export function generateFiles(
 function generateReactComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
-  project: Project,
+  options: GenerateOptions,
 ): void {
   const {
     componentName,
-    kebabName,
+    tagName,
     hasEvents,
     hasProps,
     props,
     eventHandlers,
-  } = getComponentMeta(component)
-  const relativePathToSource = getRelativePathToSource(
-    sourceFile,
-    component,
-    project,
-  )
+  } = getComponentMeta(component, options.prefix)
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: '@aria-ui-v2/integrations/react',
@@ -164,7 +166,7 @@ function generateReactComponentFile(
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
-    relativePathToSource,
+    importSource: options.importSource,
     order: 'props-first',
     includeRegister: true,
     includeElementType: true,
@@ -199,7 +201,7 @@ function generateReactComponentFile(
         name: componentName,
         type: `ForwardRefExoticComponent<${componentName}Props & RefAttributes<${componentName}Element>>`,
         initializer:
-          `/* @__PURE__ */ createComponent('aria-ui-${kebabName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
+          `/* @__PURE__ */ createComponent('${tagName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
       },
     ],
   })
@@ -208,21 +210,16 @@ function generateReactComponentFile(
 function generatePreactComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
-  project: Project,
+  options: GenerateOptions,
 ): void {
   const {
     componentName,
-    kebabName,
+    tagName,
     hasEvents,
     hasProps,
     props,
     eventHandlers,
-  } = getComponentMeta(component)
-  const relativePathToSource = getRelativePathToSource(
-    sourceFile,
-    component,
-    project,
-  )
+  } = getComponentMeta(component, options.prefix)
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: '@aria-ui-v2/integrations/preact',
@@ -244,7 +241,7 @@ function generatePreactComponentFile(
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
-    relativePathToSource,
+    importSource: options.importSource,
     order: 'props-first',
     includeRegister: true,
     includeElementType: true,
@@ -279,7 +276,7 @@ function generatePreactComponentFile(
         name: componentName,
         type: `ForwardRefExoticComponent<${componentName}Props & RefAttributes<${componentName}Element>>`,
         initializer:
-          `/* @__PURE__ */ createComponent('aria-ui-${kebabName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
+          `/* @__PURE__ */ createComponent('${tagName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
       },
     ],
   })
@@ -288,26 +285,21 @@ function generatePreactComponentFile(
 function generateSolidComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
-  project: Project,
+  options: GenerateOptions,
 ): void {
   const {
     componentName,
-    kebabName,
+    tagName,
     hasEvents,
     hasProps,
     props,
     eventHandlers,
-  } = getComponentMeta(component)
-  const relativePathToSource = getRelativePathToSource(
-    sourceFile,
-    component,
-    project,
-  )
+  } = getComponentMeta(component, options.prefix)
 
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
-    relativePathToSource,
+    importSource: options.importSource,
     order: 'events-first',
     includeRegister: true,
     includeElementType: true,
@@ -382,7 +374,7 @@ register${componentName}Element()
 ${splitPropsStatement}
 
 return h(
-  'aria-ui-${kebabName}',
+  '${tagName}',
   ${mergedProps},
 )
 }`
@@ -403,21 +395,16 @@ return h(
 function generateVueComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
-  project: Project,
+  options: GenerateOptions,
 ): void {
   const {
     componentName,
-    kebabName,
+    tagName,
     hasEvents,
     hasProps,
     props,
     eventHandlers,
-  } = getComponentMeta(component)
-  const relativePathToSource = getRelativePathToSource(
-    sourceFile,
-    component,
-    project,
-  )
+  } = getComponentMeta(component, options.prefix)
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'vue',
@@ -432,7 +419,7 @@ function generateVueComponentFile(
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
-    relativePathToSource,
+    importSource: options.importSource,
     order: 'events-first',
     includeRegister: true,
     includeElementType: false,
@@ -473,7 +460,7 @@ function generateVueComponentFile(
   return () => {
     ${destructureBlock}
     return h(
-      'aria-ui-${kebabName}',
+      '${tagName}',
       { ${propsObjectBody} },
       _slots.default?.(),
     )
@@ -500,25 +487,19 @@ function generateVueComponentFile(
 function generateSvelteComponentFile(
   sourceFile: SourceFile,
   component: ComponentInfo,
-  project: Project,
+  options: GenerateOptions,
 ): void {
-  const { componentName, kebabName, hasEvents, hasProps } = getComponentMeta(component)
+  const { componentName, kebabName, hasEvents, hasProps } = getComponentMeta(component, options.prefix)
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: `./${kebabName}.gen.svelte`,
     defaultImport: `${componentName}Component`,
   })
 
-  const relativePathToSource = getRelativePathToSource(
-    sourceFile,
-    component,
-    project,
-  )
-
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
     component,
-    relativePathToSource,
+    importSource: options.importSource,
     order: 'events-first',
     includeRegister: false,
     includeElementType: false,
@@ -553,11 +534,8 @@ function generateSvelteComponentFile(
   })
 }
 
-function generateSvelteComponentSvelteFile(component: ComponentInfo, project: Project, outputFilePath: string): string {
-  const { componentName, kebabName, eventHandlers } = getComponentMeta(component)
-
-  const svelteSourceFile = project.createSourceFile(outputFilePath, '', { overwrite: true })
-  const relativePathToSource = getRelativePathToSource(svelteSourceFile, component, project)
+function generateSvelteComponentSvelteFile(component: ComponentInfo, options: GenerateOptions): string {
+  const { componentName, tagName, eventHandlers } = getComponentMeta(component, options.prefix)
 
   const destructureProps = eventHandlers.length > 0
     ? `  let { ${
@@ -569,40 +547,26 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, project: Pr
       (handler) => `${toEventAttributeName(handler.eventName)}={${handler.handlerName}}`,
     )
     .join(' ')
-  const openingTag = `<aria-ui-${kebabName} {..._restProps}${eventAttributes ? ` ${eventAttributes}` : ''}`
+  const openingTag = `<${tagName} {..._restProps}${eventAttributes ? ` ${eventAttributes}` : ''}`
 
   return `<script lang="js">
-  import { register${componentName}Element } from '${relativePathToSource}'
+  import { register${componentName}Element } from '${options.importSource}'
   register${componentName}Element()
 
 ${destructureProps}
 </script>
 
-${openingTag}>{@render children?.()}</aria-ui-${kebabName}>
+${openingTag}>{@render children?.()}</${tagName}>
 `
 }
 
-function getRelativePathToSource(
-  sourceFile: SourceFile,
-  component: ComponentInfo,
-  project: Project,
-): string {
-  const referencedSourceFile = project.addSourceFileAtPathIfExists(
-    component.sourceFilePath,
-  )
-
-  if (!referencedSourceFile) {
-    throw new Error(`Source file not found: ${component.sourceFilePath}`)
-  }
-
-  return sourceFile.getRelativePathAsModuleSpecifierTo(referencedSourceFile)
-}
-
-function getComponentMeta(component: ComponentInfo): ComponentMeta {
+function getComponentMeta(component: ComponentInfo, prefix: string): ComponentMeta {
   const componentName = component.name
+  const kebabName = toKebabCase(componentName)
   return {
     componentName,
-    kebabName: toKebabCase(componentName),
+    kebabName,
+    tagName: `${prefix}-${kebabName}`,
     props: component.props,
     events: component.events,
     hasProps: component.props.length > 0,
@@ -623,7 +587,7 @@ function addSourceFileImports(
   const {
     sourceFile,
     component,
-    relativePathToSource,
+    importSource,
     order,
     includeRegister,
     includeElementType,
@@ -659,7 +623,7 @@ function addSourceFileImports(
 
   if (namedImports.length > 0) {
     sourceFile.addImportDeclaration({
-      moduleSpecifier: relativePathToSource,
+      moduleSpecifier: importSource,
       namedImports,
     })
   }

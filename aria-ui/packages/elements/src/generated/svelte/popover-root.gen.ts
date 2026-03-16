@@ -2,7 +2,7 @@ import PopoverRootComponent from "./popover-root.gen.svelte";
 import {
   type PopoverRootEvents as PopoverRootElementEvents,
   type PopoverRootProps as PopoverRootElementProps,
-} from "../../popover/popover-root";
+} from "../../popover/index.ts";
 import type { Component, Snippet } from "svelte";
 
 /** Props for the {@link PopoverRoot} Svelte component. */

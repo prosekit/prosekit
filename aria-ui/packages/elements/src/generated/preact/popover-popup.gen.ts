@@ -4,7 +4,7 @@ import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,
-} from "../../popover/popover-popup";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverPopup} Preact component. */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}

@@ -1,7 +1,7 @@
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,
-} from "../../popover/popover-popup";
+} from "../../popover/index.ts";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 

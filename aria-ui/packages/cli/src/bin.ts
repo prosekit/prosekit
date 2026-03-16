@@ -8,17 +8,19 @@ import { version } from '../package.json' with { type: 'json' }
 import { generateFiles } from './generate'
 import { parse } from './parse'
 
-// Define the --tsconfig option
 const tsconfigOption = Options.file('tsconfig', { exists: 'yes' })
 
 const entryOption = Options.file('entry', { exists: 'yes' })
 
 const outputOption = Options.directory('output')
 
-// Define the main CLI command with subcommands
+const prefixOption = Options.text('prefix').pipe(Options.withDefault('aria-ui'))
+
+const importSourceOption = Options.text('import-source')
+
 const command = Command.make(
   'aria-ui',
-  { tsconfig: tsconfigOption, entry: entryOption, output: outputOption },
+  { tsconfig: tsconfigOption, entry: entryOption, output: outputOption, prefix: prefixOption, importSource: importSourceOption },
   (options) =>
     Effect.gen(function*() {
       const path = yield* Path.Path
@@ -36,16 +38,17 @@ const command = Command.make(
       yield* Effect.log(JSON.stringify(parsed, null, 2))
 
       yield* Effect.log(`Generating files to ${outputDir}`)
-      yield* generateFiles(parsed, outputDir)
+      yield* generateFiles(parsed, outputDir, {
+        prefix: options.prefix,
+        importSource: options.importSource,
+      })
       yield* Effect.log(`Done generating`)
     }),
 )
 
-// Set up the CLI application
 const cli = Command.run(command, {
   name: 'aria-ui',
   version: version,
 })
 
-// Run the CLI application
 cli(process.argv).pipe(Effect.provide(NodeContext.layer), NodeRuntime.runMain)

@@ -9,7 +9,7 @@ import {
   type PopoverTriggerElement,
   type PopoverTriggerProps as PopoverTriggerElementProps,
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
-} from "../../popover/popover-trigger";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverTrigger} React component. */
 export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElement> {

@@ -3,7 +3,7 @@ import {
   type PopoverTriggerElement,
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
   type PopoverTriggerProps as PopoverTriggerElementProps,
-} from "../../popover/popover-trigger";
+} from "../../popover/index.ts";
 import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";

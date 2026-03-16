@@ -8,7 +8,7 @@ import {
   registerPopoverTriggerElement,
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
   type PopoverTriggerProps as PopoverTriggerElementProps,
-} from "../../popover/popover-trigger";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverTrigger} Vue component. */
 export interface PopoverTriggerProps {

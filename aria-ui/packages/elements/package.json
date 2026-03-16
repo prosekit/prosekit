@@ -33,7 +33,7 @@
     "test": "vitest run ./src",
     "build": "pnpm run build:tsdown && pnpm run build:gen",
     "build:tsdown": "tsdown",
-    "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated"
+    "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source ../../popover/index.ts"
   },
   "dependencies": {
     "@aria-ui-v2/integrations": "workspace:*",

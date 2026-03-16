@@ -8,7 +8,7 @@ import {
   registerPopoverRootElement,
   type PopoverRootEvents as PopoverRootElementEvents,
   type PopoverRootProps as PopoverRootElementProps,
-} from "../../popover/popover-root";
+} from "../../popover/index.ts";
 
 /** Props for the {@link PopoverRoot} Vue component. */
 export interface PopoverRootProps {

@@ -55,7 +55,7 @@ Extract the timer scheduling logic shared by `useHover` and the tooltip trigger 
 
 ```typescript
 /**
- * @public
+ * @public // update： 改成 internal
  */
 export interface DelayedToggle {
   open(delay: number): void
@@ -64,7 +64,7 @@ export interface DelayedToggle {
 }
 
 /**
- * @public
+ * @public// update： 改成 internal
  */
 export function createDelayedToggle(
   onOpen: () => void,
@@ -91,6 +91,7 @@ export function createDelayedToggle(
     open(delay: number) {
       cancelClose()
       if (delay > 0) {
+        // update: "window.setTimeout" -> "setTimeout"
         openTimeout = window.setTimeout(() => {
           openTimeout = undefined
           onOpen()
@@ -102,6 +103,7 @@ export function createDelayedToggle(
     close(delay: number) {
       cancelOpen()
       if (delay > 0) {
+        // update: "window.setTimeout" -> "setTimeout"
         closeTimeout = window.setTimeout(() => {
           closeTimeout = undefined
           onClose()
@@ -123,6 +125,7 @@ export function createDelayedToggle(
 ```typescript
 import { createDelayedToggle, type UseHoverOptions } from './delayed-toggle.ts'
 
+// update: 既然你觉得不应该复用 useHover ，那么就不要再把 useHover 放在 utils 里面了。哪里需要它就放在哪里 （popver里面）
 export function useHover(
   target: HTMLElement,
   options: UseHoverOptions,
@@ -130,21 +133,12 @@ export function useHover(
   const { openDelay = 0, closeDelay = 0, onOpen, onClose } = options
 
   const toggle = createDelayedToggle(
+    // update: onOpen and onClose should accept undeffined so that you don't need to write (() => {}) here. 
     onOpen ?? (() => {}),
     onClose ?? (() => {}),
   )
 
-  const handleMouseEnter = () => toggle.open(openDelay)
-  const handleMouseLeave = () => toggle.close(closeDelay)
-
-  target.addEventListener('mouseenter', handleMouseEnter)
-  target.addEventListener('mouseleave', handleMouseLeave)
-
-  return () => {
-    target.removeEventListener('mouseenter', handleMouseEnter)
-    target.removeEventListener('mouseleave', handleMouseLeave)
-    toggle.dispose()
-  }
+  // ...
 }
 ```
 
@@ -1064,6 +1058,8 @@ export function setupTooltipTrigger(
         store.emitOpenChange(false)
       }
     }
+
+// update: 用 abort signal 而不是在 return function 里 removeEventListener
 
     host.addEventListener('mouseenter', onMouseEnter)
     host.addEventListener('mouseleave', onMouseLeave)

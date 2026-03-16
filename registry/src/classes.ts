@@ -17,15 +17,13 @@ const CSS_FLOATING_MENU = cn(
 
 const CSS_PRESENCE_ANIMATE = cn(
   CSS_DEFAULT_HIDDEN,
+  // TODO: add transition 
+  'transition-discrete',
+  'motion-reduce:transition-none',
   'will-change-transform',
-  'motion-safe:data-[state=open]:animate-in',
-  'motion-safe:data-[state=closed]:animate-out',
-  'motion-safe:data-[state=open]:fade-in-0',
-  'motion-safe:data-[state=closed]:fade-out-0',
-  'motion-safe:data-[state=open]:zoom-in-95',
-  'motion-safe:data-[state=closed]:zoom-out-95',
-  'motion-safe:data-[state=open]:animate-duration-150',
-  'motion-safe:data-[state=closed]:animate-duration-200',
+  'starting:opacity-0 opacity-100 data-[state=closed]:opacity-0',
+  'starting:scale-90 scale-100 data-[state=closed]:scale-90',
+  'duration-150 data-[state=closed]:duration-200',
 )
 
 const CSS_POPOVER_ANIMATE = cn(

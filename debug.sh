@@ -6,3 +6,4 @@ export PATH=$PATH:$PWD/node_modules/.bin
 which tailwindcss
 
 tailwindcss -i ./src/tailwind.css -o ./tailwind.output.css 
+pnpm -w gen

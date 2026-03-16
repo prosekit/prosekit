@@ -1909,6 +1909,14 @@
       opacity: 0%;
     }
   }
+  .data-\[state\=closed\]\:scale-90 {
+    &[data-state="closed"] {
+      --tw-scale-x: 90%;
+      --tw-scale-y: 90%;
+      --tw-scale-z: 90%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
   .data-\[state\=closed\]\:scale-95 {
     &[data-state="closed"] {
       --tw-scale-x: 95%;
@@ -1920,6 +1928,12 @@
   .data-\[state\=closed\]\:opacity-0 {
     &[data-state="closed"] {
       opacity: 0%;
+    }
+  }
+  .data-\[state\=closed\]\:duration-200 {
+    &[data-state="closed"] {
+      --tw-duration: 200ms;
+      transition-duration: 200ms;
     }
   }
   .data-\[state\=on\]\:bg-gray-200 {
@@ -1980,52 +1994,6 @@
     @media (prefers-reduced-motion: no-preference) {
       &[data-side="top"] {
         --tw-exit-translate-y: calc(2*var(--spacing));
-      }
-    }
-  }
-  .motion-safe\:data-\[state\=closed\]\:animate-out {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-state="closed"] {
-        animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
-      }
-    }
-  }
-  .motion-safe\:data-\[state\=closed\]\:fade-out-0 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-state="closed"] {
-        --tw-exit-opacity: calc(0/100);
-        --tw-exit-opacity: 0;
-      }
-    }
-  }
-  .motion-safe\:data-\[state\=closed\]\:zoom-out-95 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-state="closed"] {
-        --tw-exit-scale: calc(95*1%);
-        --tw-exit-scale: .95;
-      }
-    }
-  }
-  .motion-safe\:data-\[state\=open\]\:animate-in {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-state="open"] {
-        animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
-      }
-    }
-  }
-  .motion-safe\:data-\[state\=open\]\:fade-in-0 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-state="open"] {
-        --tw-enter-opacity: calc(0/100);
-        --tw-enter-opacity: 0;
-      }
-    }
-  }
-  .motion-safe\:data-\[state\=open\]\:zoom-in-95 {
-    @media (prefers-reduced-motion: no-preference) {
-      &[data-state="open"] {
-        --tw-enter-scale: calc(95*1%);
-        --tw-enter-scale: .95;
       }
     }
   }
@@ -2189,6 +2157,14 @@
       &[data-state="on"] {
         background-color: var(--color-gray-700);
       }
+    }
+  }
+  .starting\:scale-90 {
+    @starting-style {
+      --tw-scale-x: 90%;
+      --tw-scale-y: 90%;
+      --tw-scale-z: 90%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
     }
   }
   .starting\:scale-95 {
@@ -2992,20 +2968,6 @@ prosekit-table-handle-drop-indicator {
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-@keyframes enter {
-  from {
-    opacity: var(--tw-enter-opacity,1);
-    transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0));
-    filter: blur(var(--tw-enter-blur,0));
-  }
-}
-@keyframes exit {
-  to {
-    opacity: var(--tw-exit-opacity,1);
-    transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0));
-    filter: blur(var(--tw-exit-blur,0));
   }
 }
 @layer properties {

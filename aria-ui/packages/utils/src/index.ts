@@ -1,4 +1,5 @@
 export { useAriaControls, useAriaDisabled, useAriaExpanded } from './aria.ts'
+export { createDelayedToggle, type DelayedToggle } from './delayed-toggle.ts'
 export * as FeatureDetectionInternals from './feature-detection/feature-detection-internals.ts'
 export * as FeatureDetection from './feature-detection/feature-detection.ts'
 export { useElementId } from './use-element-id.ts'

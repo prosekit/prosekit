@@ -47,7 +47,7 @@ The parser uses `type.getProperties()` which resolves inherited properties, so `
 </aria-ui-tooltip-root>
 ```
 
-## Phase 1: Add `createDelayedToggle` to utils [ ]
+## Phase 1: Add `createDelayedToggle` to utils [x]
 
 ### 1.1 Create `packages/utils/src/delayed-toggle.ts`
 

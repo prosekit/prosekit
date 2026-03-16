@@ -1756,7 +1756,7 @@ describe('Tooltip', () => {
 | `packages/utils/src/use-hover.ts` | **Deleted** (moved to popover) |
 | `packages/utils/src/use-hover.test.ts` | **Deleted** (moved to popover) |
 | `packages/utils/src/index.ts` | Remove `useHover` exports, add `createDelayedToggle` |
-| **Overlay (new shared)** | |
+| **Overlay (new shared)** | | // update: do not move `useHover` exports, let's keep it as current state. 
 | `src/overlay/overlay-store.ts` | **New** — `OverlayStore` class extracted from `PopoverStore` |
 | `src/overlay/open-change-event.ts` | **New** — `OpenChangeEvent` class extracted from `popover-root.ts` |
 | `src/overlay/positioning.ts` | **Moved** from `popover/positioning.ts` |
@@ -1768,7 +1768,7 @@ describe('Tooltip', () => {
 | `src/popover/popover-root.ts` | Thin wrapper: `PopoverRootProps extends OverlayRootProps`, calls `setupOverlayRoot()` |
 | `src/popover/popover-popup.ts` | Thin wrapper calling `setupOverlayPopup(…, 'dialog')` |
 | `src/popover/popover-positioner.ts` | Thin wrapper: `PopoverPositionerProps extends OverlayPositionerProps`, calls `setupOverlayPositioner()` |
-| `src/popover/popover-trigger.ts` | Simplify `getDisabled`, update `useHover` import to local |
+| `src/popover/popover-trigger.ts` | Simplify `getDisabled`, update `useHover` import to local | // update: do not move `useHover` exports, let's keep it as current state. 
 | `src/popover/use-hover.ts` | **Moved** from `packages/utils/`, refactored with `createDelayedToggle` |
 | `src/popover/use-hover.test.ts` | **Moved** from `packages/utils/` |
 | `src/popover/positioning.ts` | **Deleted** (moved to overlay) |
@@ -1788,9 +1788,11 @@ describe('Tooltip', () => {
 ## Verification
 
 After implementation:
-
+<del>
 1. `pnpm --filter @aria-ui-v2/utils typecheck`
 2. `pnpm --filter @aria-ui-v2/cli typecheck`
+</del>
+update: use `pnpm -w typecheck`
 3. `pnpm --filter @aria-ui-v2/elements typecheck`
 4. `pnpm --filter @aria-ui-v2/elements test` — all popover tests still pass (Phase 3 verification)
 5. `pnpm --filter @aria-ui-v2/elements run build:gen` — generates framework wrappers for both popover and tooltip

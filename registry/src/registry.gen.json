@@ -1502,6 +1502,54 @@
       }
     },
     {
+      "name": "react-example-page",
+      "title": "react-example-page",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-katex.json",
+        "https://prosekit.dev/r/react-sample-sample-doc-typography.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/page/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/page/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/page/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "page",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/page/editor.tsx",
+          "registry/src/react/examples/page/extension.ts",
+          "registry/src/react/examples/page/index.ts",
+          "registry/src/react/sample/katex.ts",
+          "registry/src/react/sample/sample-doc-typography.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-katex",
+          "react-sample-sample-doc-typography"
+        ]
+      }
+    },
+    {
       "name": "react-example-placeholder",
       "title": "react-example-placeholder",
       "type": "registry:block",

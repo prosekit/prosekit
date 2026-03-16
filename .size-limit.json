@@ -330,6 +330,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/page",
+    "path": "packages/prosekit/dist/prosekit-extensions-page.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/paragraph",
     "path": "packages/prosekit/dist/prosekit-extensions-paragraph.js",
     "ignore": [

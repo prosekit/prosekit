@@ -57,6 +57,7 @@
     "./math": "./src/math/index.ts",
     "./mention": "./src/mention/index.ts",
     "./mod-click-prevention": "./src/mod-click-prevention/index.ts",
+    "./page": "./src/page/index.ts",
     "./paragraph": "./src/paragraph/index.ts",
     "./paste-rule": "./src/paste-rule/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
@@ -266,6 +267,10 @@
         "types": "./dist/prosekit-extensions-mod-click-prevention.d.ts",
         "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
+      "./page": {
+        "types": "./dist/prosekit-extensions-page.d.ts",
+        "default": "./dist/prosekit-extensions-page.js"
+      },
       "./paragraph": {
         "types": "./dist/prosekit-extensions-paragraph.d.ts",
         "default": "./dist/prosekit-extensions-paragraph.js"
@@ -421,6 +426,9 @@
         "mod-click-prevention": [
           "./dist/prosekit-extensions-mod-click-prevention.d.ts"
         ],
+        "page": [
+          "./dist/prosekit-extensions-page.d.ts"
+        ],
         "paragraph": [
           "./dist/prosekit-extensions-paragraph.d.ts"
         ],
@@ -496,6 +504,7 @@
       "prosekit-extensions-math": "./src/math/index.ts",
       "prosekit-extensions-mention": "./src/mention/index.ts",
       "prosekit-extensions-mod-click-prevention": "./src/mod-click-prevention/index.ts",
+      "prosekit-extensions-page": "./src/page/index.ts",
       "prosekit-extensions-paragraph": "./src/paragraph/index.ts",
       "prosekit-extensions-paste-rule": "./src/paste-rule/index.ts",
       "prosekit-extensions-placeholder": "./src/placeholder/index.ts",

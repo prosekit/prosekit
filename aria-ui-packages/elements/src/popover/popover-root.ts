@@ -117,7 +117,10 @@ export function setupPopoverRoot(
  * @public
  */
 export class OpenChangeEvent extends Event {
-  constructor(public readonly open: boolean) {
+  readonly open: boolean
+
+  constructor(open: boolean) {
     super('openChange')
+    this.open = open
   }
 }

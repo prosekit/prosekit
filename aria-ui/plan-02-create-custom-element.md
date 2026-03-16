@@ -370,14 +370,16 @@ import { registerPopoverRootElement, type PopoverRootElement } from "../elements
 **React generator — after:**
 
 ```typescript
-// Everything from the source file
-import type { PopoverRootProps as PopoverRootElementProps, PopoverRootEvents as PopoverRootElementEvents } from "../../popover/popover-root";
-import { registerPopoverRootElement, type PopoverRootElement } from "../../popover/popover-root";
+// Single import from the source file
+import {
+  registerPopoverRootElement,
+  type PopoverRootElement,
+  type PopoverRootProps as PopoverRootElementProps,
+  type PopoverRootEvents as PopoverRootElementEvents,
+} from "../../popover/popover-root";
 ```
 
-update: 合并成同一条 import
-
-The import path for `registerXXXElement` and `type XXXElement` changes from `../elements/{kebab-name}.gen` to the same `relativePathToSource` already used for Props/Events. This applies to all 5 framework generators:
+The two separate imports (types from source + element from generated) merge into a single import from the source file. This applies to all 5 framework generators:
 
 - **React**: import `registerXXXElement` + `type XXXElement` from source
 - **Preact**: import `registerXXXElement` + `type XXXElement` from source
@@ -390,13 +392,11 @@ The import path for `registerXXXElement` and `type XXXElement` changes from `../
 ```typescript
 import { createComponent } from "@aria-ui-v2/integrations/react";
 import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
-import type {
-  PopoverRootProps as PopoverRootElementProps,
-  PopoverRootEvents as PopoverRootElementEvents,
-} from "../../popover/popover-root";
 import {
   registerPopoverRootElement,
   type PopoverRootElement,
+  type PopoverRootProps as PopoverRootElementProps,
+  type PopoverRootEvents as PopoverRootElementEvents,
 } from "../../popover/popover-root";
 
 export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
@@ -421,6 +421,8 @@ export const PopoverRoot: ForwardRefExoticComponent<
 ```
 
 ### 3.5 Example: Updated Svelte `.gen.svelte` file
+
+The import path changes from `'../elements/popover-root.gen'` to the source file path:
 
 ```svelte
 <script lang="js">

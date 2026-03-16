@@ -67,16 +67,12 @@ export function setupTooltipTrigger(
     store.anchorElement.set(host)
   })
 
-  // update: add a new utils in packages/utils/src/aria.ts
-  useEffect(host, () => {
+  const getAriaDescribedBy = computed(() => {
     const open = getOpen()
     const popupId = getPopupId()
-    if (open && popupId) {
-      host.setAttribute('aria-describedby', popupId)
-    } else {
-      host.removeAttribute('aria-describedby')
-    }
+    return open && popupId ? popupId : undefined
   })
+  useAriaDescribedBy(host, getAriaDescribedBy)
 
   useAriaDisabled(host, getDisabled)
 

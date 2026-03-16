@@ -11,25 +11,22 @@ import h from "solid-js/h";
 /** Props for the {@link PopoverRoot} Solid component. */
 export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement> {
   /**
-   * Whether the popover is initially open.
-   *
-   * To render a controlled popover, use the `open` property instead.
-   * @default false
-   */
-  defaultOpen?: PopoverRootElementProps["defaultOpen"];
-  /**
-   * Whether the popover is currently open.
-   *
-   * @default null
-   */
-  open?: PopoverRootElementProps["open"];
-  /**
    * Whether the popover should be modal.
    * When true, the popover will trap focus and prevent interaction with the rest of the page.
    *
    * @default false
    */
   modal?: PopoverRootElementProps["modal"];
+  /**
+   * Whether the overlay is initially open.
+   * @default false
+   */
+  defaultOpen?: PopoverRootElementProps["defaultOpen"];
+  /**
+   * Whether the overlay is currently open.
+   * @default null
+   */
+  open?: PopoverRootElementProps["open"];
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -44,16 +41,16 @@ export const PopoverRoot: Component<PopoverRootProps> = (props): any => {
 
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
-    ["defaultOpen", "open", "modal", "disabled"],
+    ["modal", "defaultOpen", "open", "disabled"],
     ["onOpenChange"],
   );
 
   return h(
     "aria-ui-popover-root",
     mergeProps(restProps, {
+      "prop:modal": () => elementProps.modal,
       "prop:defaultOpen": () => elementProps.defaultOpen,
       "prop:open": () => elementProps.open,
-      "prop:modal": () => elementProps.modal,
       "prop:disabled": () => elementProps.disabled,
       "on:openChange": (event: PopoverRootElementEvents["openChange"]) =>
         eventHandlers.onOpenChange?.(event),

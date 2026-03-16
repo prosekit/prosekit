@@ -20,6 +20,11 @@
       "aria-ui-dev": "./src/popover/index.ts",
       "types": "./dist/popover/index.d.ts",
       "import": "./dist/popover/index.js"
+    },
+    "./tooltip": {
+      "aria-ui-dev": "./src/tooltip/index.ts",
+      "types": "./dist/tooltip/index.d.ts",
+      "import": "./dist/tooltip/index.js"
     }
   },
   "typesVersions": {
@@ -38,7 +43,7 @@
     "test": "vitest run ./src",
     "build": "pnpm run build:tsdown && pnpm run build:gen",
     "build:tsdown": "tsdown",
-    "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source ../../popover/index.ts"
+    "build:gen": "aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --import-source ../../popover/index.ts && aria-ui --tsconfig ./tsconfig.json --entry ./src/tooltip/index.ts --output ./src/generated --import-source ../../tooltip/index.ts"
   },
   "dependencies": {
     "@aria-ui-v2/integrations": "workspace:*",

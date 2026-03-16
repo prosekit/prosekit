@@ -13,25 +13,22 @@ import {
 /** Props for the {@link PopoverRoot} Vue component. */
 export interface PopoverRootProps {
   /**
-   * Whether the popover is initially open.
-   *
-   * To render a controlled popover, use the `open` property instead.
-   * @default false
-   */
-  defaultOpen?: PopoverRootElementProps["defaultOpen"];
-  /**
-   * Whether the popover is currently open.
-   *
-   * @default null
-   */
-  open?: PopoverRootElementProps["open"];
-  /**
    * Whether the popover should be modal.
    * When true, the popover will trap focus and prevent interaction with the rest of the page.
    *
    * @default false
    */
   modal?: PopoverRootElementProps["modal"];
+  /**
+   * Whether the overlay is initially open.
+   * @default false
+   */
+  defaultOpen?: PopoverRootElementProps["defaultOpen"];
+  /**
+   * Whether the overlay is currently open.
+   * @default null
+   */
+  open?: PopoverRootElementProps["open"];
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -49,9 +46,9 @@ export const PopoverRoot: DefineSetupFnComponent<
 
     return () => {
       const {
+        modal,
         defaultOpen,
         open,
-        modal,
         disabled,
         onOpenChange,
         ..._restProps
@@ -60,9 +57,9 @@ export const PopoverRoot: DefineSetupFnComponent<
         "aria-ui-popover-root",
         {
           ..._restProps,
+          "modal.prop": modal,
           "defaultOpen.prop": defaultOpen,
           "open.prop": open,
-          "modal.prop": modal,
           "disabled.prop": disabled,
           "v-on:openChange": onOpenChange,
         },
@@ -71,6 +68,6 @@ export const PopoverRoot: DefineSetupFnComponent<
     };
   },
   {
-    props: ["defaultOpen", "open", "modal", "disabled", "onOpenChange"],
+    props: ["modal", "defaultOpen", "open", "disabled", "onOpenChange"],
   },
 );

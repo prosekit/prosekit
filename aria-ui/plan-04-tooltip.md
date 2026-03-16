@@ -810,7 +810,7 @@ pnpm --filter @aria-ui-v2/elements typecheck
 pnpm --filter @aria-ui-v2/elements test
 ```
 
-## Phase 4: Tooltip-specific code [ ]
+## Phase 4: Tooltip-specific code [x]
 
 ### 4.1 Create `packages/elements/src/tooltip/tooltip-group.ts`
 
@@ -1154,7 +1154,7 @@ export function registerTooltipPositionerElement(): void {
 }
 ```
 
-## Phase 5: Barrel Exports & Registration [ ]
+## Phase 5: Barrel Exports & Registration [x]
 
 ### 5.1 Create `packages/elements/src/tooltip/index.ts`
 
@@ -1198,7 +1198,7 @@ export {
 
 Add tooltip imports, exports, registration, and `HTMLElementTagNameMap` entries alongside popover.
 
-## Phase 6: Code Generation & Build [ ]
+## Phase 6: Code Generation & Build [x]
 
 ### 6.1 Update `packages/elements/package.json`
 

@@ -1,26 +1,26 @@
 import {
-  registerPopoverPositionerElement,
-  type PopoverPositionerElement,
-  type PopoverPositionerProps as PopoverPositionerElementProps,
-} from "../../popover/index.ts";
+  registerTooltipPositionerElement,
+  type TooltipPositionerElement,
+  type TooltipPositionerProps as TooltipPositionerElementProps,
+} from "../../tooltip/index.ts";
 import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link PopoverPositioner} Solid component. */
-export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositionerElement> {
+/** Props for the {@link TooltipPositioner} Solid component. */
+export interface TooltipPositionerProps extends JSX.HTMLAttributes<TooltipPositionerElement> {
   /**
    * The strategy to use for positioning
    *
    * @default "absolute"
    */
-  strategy?: PopoverPositionerElementProps["strategy"];
+  strategy?: TooltipPositionerElementProps["strategy"];
   /**
    * The initial placement of the floating element
    *
    * @default "top"
    */
-  placement?: PopoverPositionerElementProps["placement"];
+  placement?: TooltipPositionerElementProps["placement"];
   /**
    * Options to activate auto-update listeners
    *
@@ -28,20 +28,20 @@ export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositi
    *
    * @default true
    */
-  autoUpdate?: PopoverPositionerElementProps["autoUpdate"];
+  autoUpdate?: TooltipPositionerElementProps["autoUpdate"];
   /**
    * Whether to use the browser Popover API to place the floating element on
    * top of other page content.
    *
    * @default true
    */
-  hoist?: PopoverPositionerElementProps["hoist"];
+  hoist?: TooltipPositionerElementProps["hoist"];
   /**
    * The distance between the reference and floating element.
    *
    * @default 6
    */
-  offset?: PopoverPositionerElementProps["offset"];
+  offset?: TooltipPositionerElementProps["offset"];
   /**
    * Whether to flip the `placement` in order to keep it in view when the
    * preferred placement(s) will overflow the clipping boundary. You can also
@@ -50,76 +50,76 @@ export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositi
    *
    * @default true
    */
-  flip?: PopoverPositionerElementProps["flip"];
+  flip?: TooltipPositionerElementProps["flip"];
   /**
    * Whether the floating element should shift to keep it in view.
    *
    * @default true
    */
-  shift?: PopoverPositionerElementProps["shift"];
+  shift?: TooltipPositionerElementProps["shift"];
   /**
    * Whether the floating element can overlap the reference element to keep it
    * in view.
    *
    * @default false
    */
-  overlap?: PopoverPositionerElementProps["overlap"];
+  overlap?: TooltipPositionerElementProps["overlap"];
   /**
    * Whether to constrain the floating element's width and height to not exceed
    * the viewport.
    *
    * @default false
    */
-  fitViewport?: PopoverPositionerElementProps["fitViewport"];
+  fitViewport?: TooltipPositionerElementProps["fitViewport"];
   /**
    * Whether to constrain the floating element's width so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameWidth?: PopoverPositionerElementProps["sameWidth"];
+  sameWidth?: TooltipPositionerElementProps["sameWidth"];
   /**
    * Whether to constrain the floating element's height so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameHeight?: PopoverPositionerElementProps["sameHeight"];
+  sameHeight?: TooltipPositionerElementProps["sameHeight"];
   /**
    * Whether to improve positioning for inline reference elements that span over
    * multiple lines.
    *
    * @default false
    */
-  inline?: PopoverPositionerElementProps["inline"];
+  inline?: TooltipPositionerElementProps["inline"];
   /**
    * Whether to hide the floating element when the reference element or the
    * floating element is fully clipped.
    *
    * @default false
    */
-  hide?: PopoverPositionerElementProps["hide"];
+  hide?: TooltipPositionerElementProps["hide"];
   /**
    * Describes the clipping element(s) or area that overflow will be checked relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
    *
    * @default 'clippingAncestors'
    */
-  boundary?: PopoverPositionerElementProps["boundary"];
+  boundary?: TooltipPositionerElementProps["boundary"];
   /**
    * Describes the root boundary that the element will be checked for overflow relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
    *
    * @default 'viewport'
    */
-  rootBoundary?: PopoverPositionerElementProps["rootBoundary"];
+  rootBoundary?: TooltipPositionerElementProps["rootBoundary"];
   /**
    * Describes the virtual padding around the boundary to check for overflow.
    * Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
    *
    * @default 4
    */
-  overflowPadding?: PopoverPositionerElementProps["overflowPadding"];
+  overflowPadding?: TooltipPositionerElementProps["overflowPadding"];
   /**
    * The element that will be used to check for overflow. Please see
    * https://floating-ui.com/docs/detectoverflow#elementcontext for more
@@ -127,7 +127,7 @@ export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositi
    *
    * @default 'floating'
    */
-  elementContext?: PopoverPositionerElementProps["elementContext"];
+  elementContext?: TooltipPositionerElementProps["elementContext"];
   /**
    * Whether to check the alternate elementContext's boundary. Please see
    * https://floating-ui.com/docs/detectoverflow#altboundary for more
@@ -135,13 +135,13 @@ export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositi
    *
    * @default false
    */
-  altBoundary?: PopoverPositionerElementProps["altBoundary"];
+  altBoundary?: TooltipPositionerElementProps["altBoundary"];
 }
 
-export const PopoverPositioner: Component<PopoverPositionerProps> = (
+export const TooltipPositioner: Component<TooltipPositionerProps> = (
   props,
 ): any => {
-  registerPopoverPositionerElement();
+  registerTooltipPositionerElement();
 
   const [elementProps, restProps] = splitProps(props, [
     "strategy",
@@ -165,7 +165,7 @@ export const PopoverPositioner: Component<PopoverPositionerProps> = (
   ]);
 
   return h(
-    "aria-ui-popover-positioner",
+    "aria-ui-tooltip-positioner",
     mergeProps(restProps, {
       "prop:strategy": () => elementProps.strategy,
       "prop:placement": () => elementProps.placement,

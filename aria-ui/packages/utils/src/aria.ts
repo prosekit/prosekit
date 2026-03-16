@@ -33,3 +33,17 @@ export function useAriaControls(
     }
   })
 }
+
+export function useAriaDescribedBy(
+  host: HostElement,
+  getAriaDescribedBy: () => string | undefined,
+): VoidFunction {
+  return useEffect(host, () => {
+    const ariaDescribedBy = getAriaDescribedBy()
+    if (ariaDescribedBy) {
+      host.setAttribute('aria-describedby', ariaDescribedBy)
+    } else {
+      host.removeAttribute('aria-describedby')
+    }
+  })
+}

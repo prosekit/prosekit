@@ -15,6 +15,11 @@
       "aria-ui-dev": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./popover": {
+      "aria-ui-dev": "./src/popover/index.ts",
+      "types": "./dist/popover/index.d.ts",
+      "import": "./dist/popover/index.js"
     }
   },
   "typesVersions": {

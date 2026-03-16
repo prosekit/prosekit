@@ -50,7 +50,7 @@ aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src
 aria-ui --tsconfig ./tsconfig.json --entry ./src/popover/index.ts --output ./src/generated --prefix my-lib --import-source @my-org/elements
 ```
 
-### Phase 1: Add `--prefix` argument
+### Phase 1: Add `--prefix` argument [x]
 
 #### 1.1 Add option to `bin.ts`
 
@@ -133,7 +133,7 @@ function generateReactComponentFile(sourceFile, component, project)
 function generateReactComponentFile(sourceFile, component, project, prefix)
 ```
 
-### Phase 2: Add `--import-source` argument
+### Phase 2: Add `--import-source` argument [x]
 
 #### 2.1 Add option to `bin.ts`
 
@@ -237,7 +237,7 @@ type SourceImportOptions = {
 }
 ```
 
-### Phase 3: Integration
+### Phase 3: Integration [x]
 
 #### 3.1 Update the generation loop in `generateFiles`
 

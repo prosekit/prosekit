@@ -150,16 +150,19 @@ function generateReactComponentFile(
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: '@aria-ui-v2/integrations/react',
-    namedImports: ['createComponent'],
+    namedImports: ['ReactWrapper'],
   })
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'react',
-    isTypeOnly: true,
     namedImports: [
-      'ForwardRefExoticComponent',
-      'HTMLAttributes',
-      'RefAttributes',
+      'createElement',
+      'forwardRef',
+      { name: 'ForwardedRef', isTypeOnly: true },
+      { name: 'ForwardRefExoticComponent', isTypeOnly: true },
+      { name: 'HTMLAttributes', isTypeOnly: true },
+      { name: 'ReactElement', isTypeOnly: true },
+      { name: 'RefAttributes', isTypeOnly: true },
     ],
   })
 
@@ -176,32 +179,45 @@ function generateReactComponentFile(
     sourceFile,
     component,
     name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} React component.`],
+    docs: [`Props for the {@link ${componentName}} React component.\n\n@public`],
     extendsTypes: [`HTMLAttributes<${componentName}Element>`],
     propsTypeName: hasProps ? propsTypeName : undefined,
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
 
   const propNames = props.map((prop) => `'${prop.name}'`)
-  const eventHandlersMap = eventHandlers.map(
+  const eventNameMap = eventHandlers.map(
     (handler) => `${handler.handlerName}: '${handler.eventName}'`,
   )
 
   addPropNamesVariable(sourceFile, formatArrayInitializer(propNames))
-  addEventHandlersMapVariable(
+  addEventNameMapVariable(
     sourceFile,
-    formatObjectInitializer(eventHandlersMap),
+    formatObjectInitializer(eventNameMap),
   )
+
+  sourceFile.addFunction({
+    name: `${componentName}Component`,
+    parameters: [
+      { name: 'props', type: `${componentName}Props` },
+      { name: 'forwardedRef', type: `ForwardedRef<${componentName}Element>` },
+    ],
+    returnType: 'ReactElement',
+    statements: [
+      `register${componentName}Element();`,
+      `return createElement(ReactWrapper, { as: '${tagName}', propNames, eventNameMap, props, forwardedRef });`,
+    ],
+  })
 
   sourceFile.addVariableStatement({
     isExported: true,
     declarationKind: VariableDeclarationKind.Const,
+    docs: [`A React component that renders an \`${tagName}\` custom element.\n\n@public`],
     declarations: [
       {
         name: componentName,
         type: `ForwardRefExoticComponent<${componentName}Props & RefAttributes<${componentName}Element>>`,
-        initializer:
-          `/* @__PURE__ */ createComponent('${tagName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
+        initializer: `/* @__PURE__ */ forwardRef(${componentName}Component)`,
       },
     ],
   })
@@ -706,6 +722,22 @@ function addEventHandlersMapVariable(
     declarations: [
       {
         name: 'eventHandlersMap',
+        type: 'Record<string, string>',
+        initializer,
+      },
+    ],
+  })
+}
+
+function addEventNameMapVariable(
+  sourceFile: SourceFile,
+  initializer: string,
+): void {
+  sourceFile.addVariableStatement({
+    declarationKind: VariableDeclarationKind.Const,
+    declarations: [
+      {
+        name: 'eventNameMap',
         type: 'Record<string, string>',
         initializer,
       },

@@ -43,4 +43,3 @@ export function registerPopoverPopupElement(): void {
   isRegistered = true
   registerCustomElement('aria-ui-popover-popup', PopoverPopupElement)
 }
-

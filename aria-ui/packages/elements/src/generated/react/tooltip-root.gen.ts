@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerTooltipRootElement,
@@ -11,7 +15,11 @@ import {
   type TooltipRootEvents as TooltipRootElementEvents,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipRoot} React component. */
+/**
+ * Props for the {@link TooltipRoot} React component.
+ *
+ * @public
+ */
 export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
   /**
    * Whether the overlay is initially open.
@@ -33,13 +41,27 @@ export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
 }
 
 const propNames: string[] = ["defaultOpen", "open", "disabled"];
-const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
+
+function TooltipRootComponent(
+  props: TooltipRootProps,
+  forwardedRef: ForwardedRef<TooltipRootElement>,
+): ReactElement {
+  registerTooltipRootElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-tooltip-root",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A React component that renders an `aria-ui-tooltip-root` custom element.
+ *
+ * @public
+ */
 export const TooltipRoot: ForwardRefExoticComponent<
   TooltipRootProps & RefAttributes<TooltipRootElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-tooltip-root",
-  "TooltipRoot",
-  propNames,
-  eventHandlersMap,
-  registerTooltipRootElement,
-);
+> = /* @__PURE__ */ forwardRef(TooltipRootComponent);

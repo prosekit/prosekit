@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerPopoverRootElement,
@@ -11,7 +15,11 @@ import {
   type PopoverRootEvents as PopoverRootElementEvents,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverRoot} React component. */
+/**
+ * Props for the {@link PopoverRoot} React component.
+ *
+ * @public
+ */
 export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   /**
    * Whether the popover should be modal.
@@ -40,13 +48,27 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
 }
 
 const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
-const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
+
+function PopoverRootComponent(
+  props: PopoverRootProps,
+  forwardedRef: ForwardedRef<PopoverRootElement>,
+): ReactElement {
+  registerPopoverRootElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-popover-root",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A React component that renders an `aria-ui-popover-root` custom element.
+ *
+ * @public
+ */
 export const PopoverRoot: ForwardRefExoticComponent<
   PopoverRootProps & RefAttributes<PopoverRootElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-popover-root",
-  "PopoverRoot",
-  propNames,
-  eventHandlersMap,
-  registerPopoverRootElement,
-);
+> = /* @__PURE__ */ forwardRef(PopoverRootComponent);

@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerTooltipTriggerElement,
@@ -10,7 +14,11 @@ import {
   type TooltipTriggerProps as TooltipTriggerElementProps,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipTrigger} React component. */
+/**
+ * Props for the {@link TooltipTrigger} React component.
+ *
+ * @public
+ */
 export interface TooltipTriggerProps extends HTMLAttributes<TooltipTriggerElement> {
   /**
    * Whether the component should ignore user interaction.
@@ -30,13 +38,27 @@ export interface TooltipTriggerProps extends HTMLAttributes<TooltipTriggerElemen
 }
 
 const propNames: string[] = ["disabled", "openDelay", "closeDelay"];
-const eventHandlersMap: Record<string, string> = {};
+const eventNameMap: Record<string, string> = {};
+
+function TooltipTriggerComponent(
+  props: TooltipTriggerProps,
+  forwardedRef: ForwardedRef<TooltipTriggerElement>,
+): ReactElement {
+  registerTooltipTriggerElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-tooltip-trigger",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A React component that renders an `aria-ui-tooltip-trigger` custom element.
+ *
+ * @public
+ */
 export const TooltipTrigger: ForwardRefExoticComponent<
   TooltipTriggerProps & RefAttributes<TooltipTriggerElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-tooltip-trigger",
-  "TooltipTrigger",
-  propNames,
-  eventHandlersMap,
-  registerTooltipTriggerElement,
-);
+> = /* @__PURE__ */ forwardRef(TooltipTriggerComponent);

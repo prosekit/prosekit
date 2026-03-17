@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerTooltipPositionerElement,
@@ -10,7 +14,11 @@ import {
   type TooltipPositionerProps as TooltipPositionerElementProps,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipPositioner} React component. */
+/**
+ * Props for the {@link TooltipPositioner} React component.
+ *
+ * @public
+ */
 export interface TooltipPositionerProps extends HTMLAttributes<TooltipPositionerElement> {
   /**
    * The strategy to use for positioning
@@ -161,13 +169,27 @@ const propNames: string[] = [
   "elementContext",
   "altBoundary",
 ];
-const eventHandlersMap: Record<string, string> = {};
+const eventNameMap: Record<string, string> = {};
+
+function TooltipPositionerComponent(
+  props: TooltipPositionerProps,
+  forwardedRef: ForwardedRef<TooltipPositionerElement>,
+): ReactElement {
+  registerTooltipPositionerElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-tooltip-positioner",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A React component that renders an `aria-ui-tooltip-positioner` custom element.
+ *
+ * @public
+ */
 export const TooltipPositioner: ForwardRefExoticComponent<
   TooltipPositionerProps & RefAttributes<TooltipPositionerElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-tooltip-positioner",
-  "TooltipPositioner",
-  propNames,
-  eventHandlersMap,
-  registerTooltipPositionerElement,
-);
+> = /* @__PURE__ */ forwardRef(TooltipPositionerComponent);

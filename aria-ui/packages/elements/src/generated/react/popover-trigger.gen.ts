@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerPopoverTriggerElement,
@@ -11,7 +15,11 @@ import {
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverTrigger} React component. */
+/**
+ * Props for the {@link PopoverTrigger} React component.
+ *
+ * @public
+ */
 export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElement> {
   /**
    * Whether the component should ignore user interaction.
@@ -40,13 +48,27 @@ export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElemen
 }
 
 const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
-const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
+
+function PopoverTriggerComponent(
+  props: PopoverTriggerProps,
+  forwardedRef: ForwardedRef<PopoverTriggerElement>,
+): ReactElement {
+  registerPopoverTriggerElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-popover-trigger",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A React component that renders an `aria-ui-popover-trigger` custom element.
+ *
+ * @public
+ */
 export const PopoverTrigger: ForwardRefExoticComponent<
   PopoverTriggerProps & RefAttributes<PopoverTriggerElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-popover-trigger",
-  "PopoverTrigger",
-  propNames,
-  eventHandlersMap,
-  registerPopoverTriggerElement,
-);
+> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);

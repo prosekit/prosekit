@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerPopoverPositionerElement,
@@ -10,7 +14,11 @@ import {
   type PopoverPositionerProps as PopoverPositionerElementProps,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverPositioner} React component. */
+/**
+ * Props for the {@link PopoverPositioner} React component.
+ *
+ * @public
+ */
 export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositionerElement> {
   /**
    * The strategy to use for positioning
@@ -161,13 +169,27 @@ const propNames: string[] = [
   "elementContext",
   "altBoundary",
 ];
-const eventHandlersMap: Record<string, string> = {};
+const eventNameMap: Record<string, string> = {};
+
+function PopoverPositionerComponent(
+  props: PopoverPositionerProps,
+  forwardedRef: ForwardedRef<PopoverPositionerElement>,
+): ReactElement {
+  registerPopoverPositionerElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-popover-positioner",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A React component that renders an `aria-ui-popover-positioner` custom element.
+ *
+ * @public
+ */
 export const PopoverPositioner: ForwardRefExoticComponent<
   PopoverPositionerProps & RefAttributes<PopoverPositionerElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-popover-positioner",
-  "PopoverPositioner",
-  propNames,
-  eventHandlersMap,
-  registerPopoverPositionerElement,
-);
+> = /* @__PURE__ */ forwardRef(PopoverPositionerComponent);

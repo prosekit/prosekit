@@ -1,5 +1,6 @@
 import { FileSystem, Path } from '@effect/platform'
 import type { PlatformError } from '@effect/platform/Error'
+import { uneval } from 'devalue'
 import { Effect } from 'effect'
 import prettier from 'prettier'
 import { IndentationText, Project, VariableDeclarationKind, type SourceFile } from 'ts-morph'
@@ -174,15 +175,10 @@ function generateReactComponentFile(
     includeElementType: true,
   })
 
-  const propNames = props.map((prop) => `'${prop.name}'`)
-  const eventNameMap = eventHandlers.map(
-    (handler) => `${handler.handlerName}: '${handler.eventName}'`,
-  )
-
-  addPropNamesVariable(sourceFile, formatArrayInitializer(propNames))
+  addPropNamesVariable(sourceFile, uneval(props.map((prop) => prop.name)))
   addEventNameMapVariable(
     sourceFile,
-    formatObjectInitializer(eventNameMap),
+    uneval(Object.fromEntries(eventHandlers.map((h) => [h.handlerName, h.eventName]))),
   )
 
   addPropsInterface({
@@ -267,15 +263,10 @@ function generatePreactComponentFile(
     includeElementType: true,
   })
 
-  const propNames = props.map((prop) => `'${prop.name}'`)
-  const eventNameMap = eventHandlers.map(
-    (handler) => `${handler.handlerName}: '${handler.eventName}'`,
-  )
-
-  addPropNamesVariable(sourceFile, formatArrayInitializer(propNames))
+  addPropNamesVariable(sourceFile, uneval(props.map((prop) => prop.name)))
   addEventNameMapVariable(
     sourceFile,
-    formatObjectInitializer(eventNameMap),
+    uneval(Object.fromEntries(eventHandlers.map((h) => [h.handlerName, h.eventName]))),
   )
 
   addPropsInterface({
@@ -367,15 +358,11 @@ function generateSolidComponentFile(
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
 
-  const propNames = props.map((prop) => `'${prop.name}'`)
-  const eventHandlerNames = eventHandlers.map(
-    (handler) => `'${handler.handlerName}'`,
-  )
+  const propNames = props.map((prop) => prop.name)
+  const eventHandlerNames = eventHandlers.map((handler) => handler.handlerName)
   const splitPropsArgs = [
-    ...(propNames.length > 0 ? [formatArrayInitializer(propNames)] : []),
-    ...(eventHandlerNames.length > 0
-      ? [formatArrayInitializer(eventHandlerNames)]
-      : []),
+    ...(propNames.length > 0 ? [uneval(propNames)] : []),
+    ...(eventHandlerNames.length > 0 ? [uneval(eventHandlerNames)] : []),
   ]
   const splitPropsTargets = [
     ...(propNames.length > 0 ? ['elementProps'] : []),
@@ -470,12 +457,8 @@ function generateVueComponentFile(
   const propNames = props.map((prop) => prop.name)
   const eventHandlerNames = eventHandlers.map((handler) => handler.handlerName)
   const allNames = [...propNames, ...eventHandlerNames]
-  const componentProps = [
-    ...propNames.map((propName) => `'${propName}'`),
-    ...eventHandlerNames.map((handlerName) => `'${handlerName}'`),
-  ]
 
-  const componentPropsInitializer = formatArrayInitializer(componentProps)
+  const componentPropsInitializer = uneval([...propNames, ...eventHandlerNames])
   const destructureEntries = allNames.map((name, i) => `${name}: p${i}`)
   const destructureBlock = `const { ${[...destructureEntries, '...restProps'].join(', ')} } = props;`
   const propsObjectEntries = [
@@ -747,10 +730,6 @@ function addEventNameMapVariable(
       },
     ],
   })
-}
-
-function formatArrayInitializer(values: string[]): string {
-  return values.length > 0 ? `[${values.join(', ')}]` : '[]'
 }
 
 function formatObjectInitializer(values: string[]): string {

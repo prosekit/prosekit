@@ -18,6 +18,7 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "devalue": "^5.6.4",
     "prettier": "^3.8.1",
     "ts-morph": "^27.0.2",
     "typedoc": "^0.28.17"
@@ -31,11 +32,11 @@
     }
   },
   "devDependencies": {
-    "@prosekit/config-vitest": "workspace:*",
     "@effect/cli": "^0.73.2",
     "@effect/platform": "^0.94.5",
     "@effect/platform-node": "^0.104.1",
     "@ocavue/tsconfig": "^0.7.0",
+    "@prosekit/config-vitest": "workspace:*",
     "@types/node": "^20.19.10",
     "effect": "^3.19.19",
     "tsdown": "catalog:",

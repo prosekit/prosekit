@@ -14,7 +14,7 @@ import {
   type PopoverRootEvents as PopoverRootElementEvents,
 } from "../../popover/index.ts";
 
-const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
+const propNames: string[] = ["defaultOpen", "disabled", "modal", "open"];
 const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**

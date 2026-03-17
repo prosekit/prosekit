@@ -43,7 +43,7 @@ export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
 
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
-    ["defaultOpen", "open", "disabled"],
+    ["defaultOpen", "disabled", "open"],
     ["onOpenChange"],
   );
 
@@ -51,8 +51,8 @@ export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
     "aria-ui-tooltip-root",
     mergeProps(restProps, {
       "prop:defaultOpen": () => elementProps.defaultOpen,
-      "prop:open": () => elementProps.open,
       "prop:disabled": () => elementProps.disabled,
+      "prop:open": () => elementProps.open,
       "on:openChange": (event: TooltipRootElementEvents["openChange"]) =>
         eventHandlers.onOpenChange?.(event),
     }),

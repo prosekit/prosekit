@@ -14,7 +14,7 @@ import {
   type TooltipRootEvents as TooltipRootElementEvents,
 } from "../../tooltip/index.ts";
 
-const propNames: string[] = ["defaultOpen", "open", "disabled"];
+const propNames: string[] = ["defaultOpen", "disabled", "open"];
 const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**

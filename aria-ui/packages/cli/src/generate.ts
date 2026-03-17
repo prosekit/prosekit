@@ -379,10 +379,7 @@ function generateSolidComponentFile(
     (handler) =>
       `"on:${handler.eventName}": (event: ${eventsTypeName}['${handler.eventName}']) => eventHandlers.${handler.handlerName}?.(event)`,
   )
-  const elementPropsObject = formatObjectInitializer([
-    ...propEntries,
-    ...eventEntries,
-  ])
+  const elementPropsObject = `{${[...propEntries, ...eventEntries].join(', ')}}`
   const mergedProps = propEntries.length > 0 || eventEntries.length > 0
     ? `mergeProps(restProps, ${elementPropsObject})`
     : 'restProps'
@@ -582,15 +579,17 @@ ${openingTag}>{@render children?.()}</${tagName}>
 function getComponentMeta(component: ComponentInfo, prefix: string): ComponentMeta {
   const componentName = component.name
   const kebabName = toKebabCase(componentName)
+  const props = [...component.props].sort((a, b) => a.name.localeCompare(b.name))
+  const events = [...component.events].sort((a, b) => a.name.localeCompare(b.name))
   return {
     componentName,
     kebabName,
     tagName: `${prefix}-${kebabName}`,
-    props: component.props,
-    events: component.events,
-    hasProps: component.props.length > 0,
-    hasEvents: component.events.length > 0,
-    eventHandlers: component.events.map((event) => {
+    props,
+    events,
+    hasProps: props.length > 0,
+    hasEvents: events.length > 0,
+    eventHandlers: events.map((event) => {
       const handlerName = toEventHandlerName(event.name)
       return {
         eventName: event.name,
@@ -730,10 +729,6 @@ function addEventNameMapVariable(
       },
     ],
   })
-}
-
-function formatObjectInitializer(values: string[]): string {
-  return values.length > 0 ? `{${values.join(', ')}}` : '{}'
 }
 
 function getComponentFileName(component: ComponentInfo): string {

@@ -50,17 +50,17 @@ export const PopoverRoot: Component<PopoverRootProps> = (props): any => {
 
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
-    ["modal", "defaultOpen", "open", "disabled"],
+    ["defaultOpen", "disabled", "modal", "open"],
     ["onOpenChange"],
   );
 
   return h(
     "aria-ui-popover-root",
     mergeProps(restProps, {
-      "prop:modal": () => elementProps.modal,
       "prop:defaultOpen": () => elementProps.defaultOpen,
-      "prop:open": () => elementProps.open,
       "prop:disabled": () => elementProps.disabled,
+      "prop:modal": () => elementProps.modal,
+      "prop:open": () => elementProps.open,
       "on:openChange": (event: PopoverRootElementEvents["openChange"]) =>
         eventHandlers.onOpenChange?.(event),
     }),

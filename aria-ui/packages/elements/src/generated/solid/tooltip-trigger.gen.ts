@@ -39,17 +39,17 @@ export const TooltipTrigger: Component<TooltipTriggerProps> = (props): any => {
   registerTooltipTriggerElement();
 
   const [elementProps, restProps] = splitProps(props, [
+    "closeDelay",
     "disabled",
     "openDelay",
-    "closeDelay",
   ]);
 
   return h(
     "aria-ui-tooltip-trigger",
     mergeProps(restProps, {
+      "prop:closeDelay": () => elementProps.closeDelay,
       "prop:disabled": () => elementProps.disabled,
       "prop:openDelay": () => elementProps.openDelay,
-      "prop:closeDelay": () => elementProps.closeDelay,
     }),
   );
 };

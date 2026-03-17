@@ -45,24 +45,24 @@ export const TooltipTrigger: DefineSetupFnComponent<
 
     return () => {
       const {
-        disabled: p0,
-        openDelay: p1,
-        closeDelay: p2,
+        closeDelay: p0,
+        disabled: p1,
+        openDelay: p2,
         ...restProps
       } = props;
       return h(
         "aria-ui-tooltip-trigger",
         {
           ...restProps,
-          "disabled.prop": p0,
-          "openDelay.prop": p1,
-          "closeDelay.prop": p2,
+          "closeDelay.prop": p0,
+          "disabled.prop": p1,
+          "openDelay.prop": p2,
         },
         slots.default?.(),
       );
     };
   },
   {
-    props: ["disabled", "openDelay", "closeDelay"],
+    props: ["closeDelay", "disabled", "openDelay"],
   },
 );

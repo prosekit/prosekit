@@ -55,10 +55,10 @@ export const PopoverRoot: DefineSetupFnComponent<
 
     return () => {
       const {
-        modal: p0,
-        defaultOpen: p1,
-        open: p2,
-        disabled: p3,
+        defaultOpen: p0,
+        disabled: p1,
+        modal: p2,
+        open: p3,
         onOpenChange: p4,
         ...restProps
       } = props;
@@ -66,10 +66,10 @@ export const PopoverRoot: DefineSetupFnComponent<
         "aria-ui-popover-root",
         {
           ...restProps,
-          "modal.prop": p0,
-          "defaultOpen.prop": p1,
-          "open.prop": p2,
-          "disabled.prop": p3,
+          "defaultOpen.prop": p0,
+          "disabled.prop": p1,
+          "modal.prop": p2,
+          "open.prop": p3,
           "v-on:openChange": p4,
         },
         slots.default?.(),
@@ -77,6 +77,6 @@ export const PopoverRoot: DefineSetupFnComponent<
     };
   },
   {
-    props: ["modal", "defaultOpen", "open", "disabled", "onOpenChange"],
+    props: ["defaultOpen", "disabled", "modal", "open", "onOpenChange"],
   },
 );

@@ -13,7 +13,7 @@ import {
   type TooltipTriggerProps as TooltipTriggerElementProps,
 } from "../../tooltip/index.ts";
 
-const propNames: string[] = ["disabled", "openDelay", "closeDelay"];
+const propNames: string[] = ["closeDelay", "disabled", "openDelay"];
 const eventNameMap: Record<string, string> = {};
 
 /**

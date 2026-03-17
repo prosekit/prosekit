@@ -14,7 +14,7 @@ import {
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
 } from "../../popover/index.ts";
 
-const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
+const propNames: string[] = ["closeDelay", "delay", "disabled", "openOnHover"];
 const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**

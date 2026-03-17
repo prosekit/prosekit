@@ -55,10 +55,10 @@ export const PopoverTrigger: DefineSetupFnComponent<
 
     return () => {
       const {
-        disabled: p0,
-        openOnHover: p1,
-        delay: p2,
-        closeDelay: p3,
+        closeDelay: p0,
+        delay: p1,
+        disabled: p2,
+        openOnHover: p3,
         onOpenChange: p4,
         ...restProps
       } = props;
@@ -66,10 +66,10 @@ export const PopoverTrigger: DefineSetupFnComponent<
         "aria-ui-popover-trigger",
         {
           ...restProps,
-          "disabled.prop": p0,
-          "openOnHover.prop": p1,
-          "delay.prop": p2,
-          "closeDelay.prop": p3,
+          "closeDelay.prop": p0,
+          "delay.prop": p1,
+          "disabled.prop": p2,
+          "openOnHover.prop": p3,
           "v-on:openChange": p4,
         },
         slots.default?.(),
@@ -77,6 +77,6 @@ export const PopoverTrigger: DefineSetupFnComponent<
     };
   },
   {
-    props: ["disabled", "openOnHover", "delay", "closeDelay", "onOpenChange"],
+    props: ["closeDelay", "delay", "disabled", "openOnHover", "onOpenChange"],
   },
 );

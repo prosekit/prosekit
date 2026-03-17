@@ -49,8 +49,8 @@ export const TooltipRoot: DefineSetupFnComponent<
     return () => {
       const {
         defaultOpen: p0,
-        open: p1,
-        disabled: p2,
+        disabled: p1,
+        open: p2,
         onOpenChange: p3,
         ...restProps
       } = props;
@@ -59,8 +59,8 @@ export const TooltipRoot: DefineSetupFnComponent<
         {
           ...restProps,
           "defaultOpen.prop": p0,
-          "open.prop": p1,
-          "disabled.prop": p2,
+          "disabled.prop": p1,
+          "open.prop": p2,
           "v-on:openChange": p3,
         },
         slots.default?.(),
@@ -68,6 +68,6 @@ export const TooltipRoot: DefineSetupFnComponent<
     };
   },
   {
-    props: ["defaultOpen", "open", "disabled", "onOpenChange"],
+    props: ["defaultOpen", "disabled", "open", "onOpenChange"],
   },
 );

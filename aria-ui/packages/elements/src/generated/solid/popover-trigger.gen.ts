@@ -50,17 +50,17 @@ export const PopoverTrigger: Component<PopoverTriggerProps> = (props): any => {
 
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
-    ["disabled", "openOnHover", "delay", "closeDelay"],
+    ["closeDelay", "delay", "disabled", "openOnHover"],
     ["onOpenChange"],
   );
 
   return h(
     "aria-ui-popover-trigger",
     mergeProps(restProps, {
+      "prop:closeDelay": () => elementProps.closeDelay,
+      "prop:delay": () => elementProps.delay,
       "prop:disabled": () => elementProps.disabled,
       "prop:openOnHover": () => elementProps.openOnHover,
-      "prop:delay": () => elementProps.delay,
-      "prop:closeDelay": () => elementProps.closeDelay,
       "on:openChange": (event: PopoverTriggerElementEvents["openChange"]) =>
         eventHandlers.onOpenChange?.(event),
     }),

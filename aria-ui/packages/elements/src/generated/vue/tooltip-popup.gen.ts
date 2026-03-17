@@ -12,12 +12,12 @@ export interface TooltipPopupProps {}
 export const TooltipPopup: DefineSetupFnComponent<
   TooltipPopupProps & HTMLAttributes
 > = defineComponent<TooltipPopupProps & HTMLAttributes>(
-  (_props, { slots: _slots }) => {
+  (props, { slots }) => {
     registerTooltipPopupElement();
 
     return () => {
-      const { ..._restProps } = _props;
-      return h("aria-ui-tooltip-popup", { ..._restProps }, _slots.default?.());
+      const { ...restProps } = props;
+      return h("aria-ui-tooltip-popup", { ...restProps }, slots.default?.());
     };
   },
   {

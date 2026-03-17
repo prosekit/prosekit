@@ -31,20 +31,25 @@ export interface TooltipTriggerProps {
 export const TooltipTrigger: DefineSetupFnComponent<
   TooltipTriggerProps & HTMLAttributes
 > = defineComponent<TooltipTriggerProps & HTMLAttributes>(
-  (_props, { slots: _slots }) => {
+  (props, { slots }) => {
     registerTooltipTriggerElement();
 
     return () => {
-      const { disabled, openDelay, closeDelay, ..._restProps } = _props;
+      const {
+        disabled: p0,
+        openDelay: p1,
+        closeDelay: p2,
+        ...restProps
+      } = props;
       return h(
         "aria-ui-tooltip-trigger",
         {
-          ..._restProps,
-          "disabled.prop": disabled,
-          "openDelay.prop": openDelay,
-          "closeDelay.prop": closeDelay,
+          ...restProps,
+          "disabled.prop": p0,
+          "openDelay.prop": p1,
+          "closeDelay.prop": p2,
         },
-        _slots.default?.(),
+        slots.default?.(),
       );
     };
   },

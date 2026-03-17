@@ -468,25 +468,26 @@ function generateVueComponentFile(
 
   const propNames = props.map((prop) => prop.name)
   const eventHandlerNames = eventHandlers.map((handler) => handler.handlerName)
-  const destructureNames = [...propNames, ...eventHandlerNames]
+  const allNames = [...propNames, ...eventHandlerNames]
   const componentProps = [
     ...propNames.map((propName) => `'${propName}'`),
     ...eventHandlerNames.map((handlerName) => `'${handlerName}'`),
   ]
 
   const componentPropsInitializer = formatArrayInitializer(componentProps)
-  const destructureBlock = `const { ${[...destructureNames, '..._restProps'].join(', ')} } = _props;`
+  const destructureEntries = allNames.map((name, i) => `${name}: p${i}`)
+  const destructureBlock = `const { ${[...destructureEntries, '...restProps'].join(', ')} } = props;`
   const propsObjectEntries = [
-    '..._restProps',
-    ...propNames.map((propName) => `"${propName}.prop": ${propName}`),
+    '...restProps',
+    ...propNames.map((propName, i) => `"${propName}.prop": p${i}`),
     ...eventHandlers.map(
-      (handler) => `"v-on:${handler.eventName}": ${handler.handlerName}`,
+      (handler, i) => `"v-on:${handler.eventName}": p${propNames.length + i}`,
     ),
   ]
   const propsObjectBody = propsObjectEntries.join(', ')
 
   const componentInitializer = `defineComponent<${componentName}Props & HTMLAttributes>(
-(_props, { slots: _slots }) => {
+(props, { slots }) => {
   register${componentName}Element()
 
   return () => {
@@ -494,7 +495,7 @@ function generateVueComponentFile(
     return h(
       '${tagName}',
       { ${propsObjectBody} },
-      _slots.default?.(),
+      slots.default?.(),
     )
   }
 },

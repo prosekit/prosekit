@@ -12,12 +12,12 @@ export interface PopoverPopupProps {}
 export const PopoverPopup: DefineSetupFnComponent<
   PopoverPopupProps & HTMLAttributes
 > = defineComponent<PopoverPopupProps & HTMLAttributes>(
-  (_props, { slots: _slots }) => {
+  (props, { slots }) => {
     registerPopoverPopupElement();
 
     return () => {
-      const { ..._restProps } = _props;
-      return h("aria-ui-popover-popup", { ..._restProps }, _slots.default?.());
+      const { ...restProps } = props;
+      return h("aria-ui-popover-popup", { ...restProps }, slots.default?.());
     };
   },
   {

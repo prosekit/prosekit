@@ -41,29 +41,29 @@ export interface PopoverTriggerProps {
 export const PopoverTrigger: DefineSetupFnComponent<
   PopoverTriggerProps & HTMLAttributes
 > = defineComponent<PopoverTriggerProps & HTMLAttributes>(
-  (_props, { slots: _slots }) => {
+  (props, { slots }) => {
     registerPopoverTriggerElement();
 
     return () => {
       const {
-        disabled,
-        openOnHover,
-        delay,
-        closeDelay,
-        onOpenChange,
-        ..._restProps
-      } = _props;
+        disabled: p0,
+        openOnHover: p1,
+        delay: p2,
+        closeDelay: p3,
+        onOpenChange: p4,
+        ...restProps
+      } = props;
       return h(
         "aria-ui-popover-trigger",
         {
-          ..._restProps,
-          "disabled.prop": disabled,
-          "openOnHover.prop": openOnHover,
-          "delay.prop": delay,
-          "closeDelay.prop": closeDelay,
-          "v-on:openChange": onOpenChange,
+          ...restProps,
+          "disabled.prop": p0,
+          "openOnHover.prop": p1,
+          "delay.prop": p2,
+          "closeDelay.prop": p3,
+          "v-on:openChange": p4,
         },
-        _slots.default?.(),
+        slots.default?.(),
       );
     };
   },

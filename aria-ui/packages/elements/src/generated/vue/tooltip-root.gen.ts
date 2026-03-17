@@ -34,22 +34,27 @@ export interface TooltipRootProps {
 export const TooltipRoot: DefineSetupFnComponent<
   TooltipRootProps & HTMLAttributes
 > = defineComponent<TooltipRootProps & HTMLAttributes>(
-  (_props, { slots: _slots }) => {
+  (props, { slots }) => {
     registerTooltipRootElement();
 
     return () => {
-      const { defaultOpen, open, disabled, onOpenChange, ..._restProps } =
-        _props;
+      const {
+        defaultOpen: p0,
+        open: p1,
+        disabled: p2,
+        onOpenChange: p3,
+        ...restProps
+      } = props;
       return h(
         "aria-ui-tooltip-root",
         {
-          ..._restProps,
-          "defaultOpen.prop": defaultOpen,
-          "open.prop": open,
-          "disabled.prop": disabled,
-          "v-on:openChange": onOpenChange,
+          ...restProps,
+          "defaultOpen.prop": p0,
+          "open.prop": p1,
+          "disabled.prop": p2,
+          "v-on:openChange": p3,
         },
-        _slots.default?.(),
+        slots.default?.(),
       );
     };
   },

@@ -361,7 +361,7 @@ function generateSolidComponentFile(
     sourceFile,
     component,
     name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} Solid component.`],
+    docs: [`Props for the {@link ${componentName}} Solid component.\n\n@public`],
     extendsTypes: [`JSX.HTMLAttributes<${componentName}Element>`],
     propsTypeName: hasProps ? propsTypeName : undefined,
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
@@ -414,6 +414,7 @@ return h(
   sourceFile.addVariableStatement({
     isExported: true,
     declarationKind: VariableDeclarationKind.Const,
+    docs: [`A Solid component that renders an \`${tagName}\` custom element.\n\n@public`],
     declarations: [
       {
         name: componentName,
@@ -461,7 +462,7 @@ function generateVueComponentFile(
     sourceFile,
     component,
     name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} Vue component.`],
+    docs: [`Props for the {@link ${componentName}} Vue component.\n\n@public`],
     propsTypeName: hasProps ? propsTypeName : undefined,
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
@@ -507,6 +508,7 @@ function generateVueComponentFile(
   sourceFile.addVariableStatement({
     isExported: true,
     declarationKind: VariableDeclarationKind.Const,
+    docs: [`A Vue component that renders an \`${tagName}\` custom element.\n\n@public`],
     declarations: [
       {
         name: componentName,
@@ -522,7 +524,7 @@ function generateSvelteComponentFile(
   component: ComponentInfo,
   options: GenerateOptions,
 ): void {
-  const { componentName, kebabName, hasEvents, hasProps } = getComponentMeta(component, options.prefix)
+  const { componentName, kebabName, tagName, hasEvents, hasProps } = getComponentMeta(component, options.prefix)
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: `./${kebabName}.gen.svelte`,
@@ -548,7 +550,7 @@ function generateSvelteComponentFile(
     sourceFile,
     component,
     name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} Svelte component.`],
+    docs: [`Props for the {@link ${componentName}} Svelte component.\n\n@public`],
     propsTypeName: hasProps ? propsTypeName : undefined,
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
     includeChildren: true,
@@ -557,6 +559,7 @@ function generateSvelteComponentFile(
   sourceFile.addVariableStatement({
     isExported: true,
     declarationKind: VariableDeclarationKind.Const,
+    docs: [`A Svelte component that renders an \`${tagName}\` custom element.\n\n@public`],
     declarations: [
       {
         name: componentName,

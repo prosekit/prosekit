@@ -2,7 +2,11 @@ import PopoverPositionerComponent from "./popover-positioner.gen.svelte";
 import { type PopoverPositionerProps as PopoverPositionerElementProps } from "../../popover/index.ts";
 import type { Component, Snippet } from "svelte";
 
-/** Props for the {@link PopoverPositioner} Svelte component. */
+/**
+ * Props for the {@link PopoverPositioner} Svelte component.
+ *
+ * @public
+ */
 export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
@@ -134,5 +138,10 @@ export interface PopoverPositionerProps {
   children?: Snippet;
 }
 
+/**
+ * A Svelte component that renders an `aria-ui-popover-positioner` custom element.
+ *
+ * @public
+ */
 export const PopoverPositioner: Component<PopoverPositionerProps> =
   PopoverPositionerComponent;

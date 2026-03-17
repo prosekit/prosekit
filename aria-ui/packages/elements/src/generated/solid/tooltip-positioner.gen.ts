@@ -7,7 +7,11 @@ import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link TooltipPositioner} Solid component. */
+/**
+ * Props for the {@link TooltipPositioner} Solid component.
+ *
+ * @public
+ */
 export interface TooltipPositionerProps extends JSX.HTMLAttributes<TooltipPositionerElement> {
   /**
    * The strategy to use for positioning
@@ -138,6 +142,11 @@ export interface TooltipPositionerProps extends JSX.HTMLAttributes<TooltipPositi
   altBoundary?: TooltipPositionerElementProps["altBoundary"];
 }
 
+/**
+ * A Solid component that renders an `aria-ui-tooltip-positioner` custom element.
+ *
+ * @public
+ */
 export const TooltipPositioner: Component<TooltipPositionerProps> = (
   props,
 ): any => {

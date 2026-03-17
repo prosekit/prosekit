@@ -2,7 +2,11 @@ import TooltipTriggerComponent from "./tooltip-trigger.gen.svelte";
 import { type TooltipTriggerProps as TooltipTriggerElementProps } from "../../tooltip/index.ts";
 import type { Component, Snippet } from "svelte";
 
-/** Props for the {@link TooltipTrigger} Svelte component. */
+/**
+ * Props for the {@link TooltipTrigger} Svelte component.
+ *
+ * @public
+ */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -22,5 +26,10 @@ export interface TooltipTriggerProps {
   children?: Snippet;
 }
 
+/**
+ * A Svelte component that renders an `aria-ui-tooltip-trigger` custom element.
+ *
+ * @public
+ */
 export const TooltipTrigger: Component<TooltipTriggerProps> =
   TooltipTriggerComponent;

@@ -2,7 +2,11 @@ import TooltipPositionerComponent from "./tooltip-positioner.gen.svelte";
 import { type TooltipPositionerProps as TooltipPositionerElementProps } from "../../tooltip/index.ts";
 import type { Component, Snippet } from "svelte";
 
-/** Props for the {@link TooltipPositioner} Svelte component. */
+/**
+ * Props for the {@link TooltipPositioner} Svelte component.
+ *
+ * @public
+ */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -134,5 +138,10 @@ export interface TooltipPositionerProps {
   children?: Snippet;
 }
 
+/**
+ * A Svelte component that renders an `aria-ui-tooltip-positioner` custom element.
+ *
+ * @public
+ */
 export const TooltipPositioner: Component<TooltipPositionerProps> =
   TooltipPositionerComponent;

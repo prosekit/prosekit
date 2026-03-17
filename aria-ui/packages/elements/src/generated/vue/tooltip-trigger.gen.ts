@@ -9,7 +9,11 @@ import {
   type TooltipTriggerProps as TooltipTriggerElementProps,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipTrigger} Vue component. */
+/**
+ * Props for the {@link TooltipTrigger} Vue component.
+ *
+ * @public
+ */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -28,6 +32,11 @@ export interface TooltipTriggerProps {
   closeDelay?: TooltipTriggerElementProps["closeDelay"];
 }
 
+/**
+ * A Vue component that renders an `aria-ui-tooltip-trigger` custom element.
+ *
+ * @public
+ */
 export const TooltipTrigger: DefineSetupFnComponent<
   TooltipTriggerProps & HTMLAttributes
 > = defineComponent<TooltipTriggerProps & HTMLAttributes>(

@@ -5,7 +5,11 @@ import {
 } from "../../popover/index.ts";
 import type { Component, Snippet } from "svelte";
 
-/** Props for the {@link PopoverRoot} Svelte component. */
+/**
+ * Props for the {@link PopoverRoot} Svelte component.
+ *
+ * @public
+ */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -34,4 +38,9 @@ export interface PopoverRootProps {
   children?: Snippet;
 }
 
+/**
+ * A Svelte component that renders an `aria-ui-popover-root` custom element.
+ *
+ * @public
+ */
 export const PopoverRoot: Component<PopoverRootProps> = PopoverRootComponent;

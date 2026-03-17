@@ -10,7 +10,11 @@ import {
   type PopoverRootProps as PopoverRootElementProps,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverRoot} Vue component. */
+/**
+ * Props for the {@link PopoverRoot} Vue component.
+ *
+ * @public
+ */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -38,6 +42,11 @@ export interface PopoverRootProps {
   onOpenChange?: (event: PopoverRootElementEvents["openChange"]) => void;
 }
 
+/**
+ * A Vue component that renders an `aria-ui-popover-root` custom element.
+ *
+ * @public
+ */
 export const PopoverRoot: DefineSetupFnComponent<
   PopoverRootProps & HTMLAttributes
 > = defineComponent<PopoverRootProps & HTMLAttributes>(

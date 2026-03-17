@@ -8,7 +8,11 @@ import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link TooltipRoot} Solid component. */
+/**
+ * Props for the {@link TooltipRoot} Solid component.
+ *
+ * @public
+ */
 export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement> {
   /**
    * Whether the overlay is initially open.
@@ -29,6 +33,11 @@ export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement>
   onOpenChange?: (event: TooltipRootElementEvents["openChange"]) => void;
 }
 
+/**
+ * A Solid component that renders an `aria-ui-tooltip-root` custom element.
+ *
+ * @public
+ */
 export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
   registerTooltipRootElement();
 

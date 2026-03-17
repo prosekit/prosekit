@@ -8,7 +8,11 @@ import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link PopoverTrigger} Solid component. */
+/**
+ * Props for the {@link PopoverTrigger} Solid component.
+ *
+ * @public
+ */
 export interface PopoverTriggerProps extends JSX.HTMLAttributes<PopoverTriggerElement> {
   /**
    * Whether the component should ignore user interaction.
@@ -36,6 +40,11 @@ export interface PopoverTriggerProps extends JSX.HTMLAttributes<PopoverTriggerEl
   onOpenChange?: (event: PopoverTriggerElementEvents["openChange"]) => void;
 }
 
+/**
+ * A Solid component that renders an `aria-ui-popover-trigger` custom element.
+ *
+ * @public
+ */
 export const PopoverTrigger: Component<PopoverTriggerProps> = (props): any => {
   registerPopoverTriggerElement();
 

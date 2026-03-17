@@ -9,7 +9,11 @@ import {
   type PopoverPositionerProps as PopoverPositionerElementProps,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverPositioner} Vue component. */
+/**
+ * Props for the {@link PopoverPositioner} Vue component.
+ *
+ * @public
+ */
 export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
@@ -140,6 +144,11 @@ export interface PopoverPositionerProps {
   altBoundary?: PopoverPositionerElementProps["altBoundary"];
 }
 
+/**
+ * A Vue component that renders an `aria-ui-popover-positioner` custom element.
+ *
+ * @public
+ */
 export const PopoverPositioner: DefineSetupFnComponent<
   PopoverPositionerProps & HTMLAttributes
 > = defineComponent<PopoverPositionerProps & HTMLAttributes>(

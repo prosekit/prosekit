@@ -5,9 +5,18 @@ import {
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link TooltipPopup} Solid component. */
+/**
+ * Props for the {@link TooltipPopup} Solid component.
+ *
+ * @public
+ */
 export interface TooltipPopupProps extends JSX.HTMLAttributes<TooltipPopupElement> {}
 
+/**
+ * A Solid component that renders an `aria-ui-tooltip-popup` custom element.
+ *
+ * @public
+ */
 export const TooltipPopup: Component<TooltipPopupProps> = (props): any => {
   registerTooltipPopupElement();
 

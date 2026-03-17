@@ -5,7 +5,11 @@ import {
 } from "../../popover/index.ts";
 import type { Component, Snippet } from "svelte";
 
-/** Props for the {@link PopoverTrigger} Svelte component. */
+/**
+ * Props for the {@link PopoverTrigger} Svelte component.
+ *
+ * @public
+ */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -34,5 +38,10 @@ export interface PopoverTriggerProps {
   children?: Snippet;
 }
 
+/**
+ * A Svelte component that renders an `aria-ui-popover-trigger` custom element.
+ *
+ * @public
+ */
 export const PopoverTrigger: Component<PopoverTriggerProps> =
   PopoverTriggerComponent;

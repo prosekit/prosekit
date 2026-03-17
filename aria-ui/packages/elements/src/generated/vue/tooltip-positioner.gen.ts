@@ -9,7 +9,11 @@ import {
   type TooltipPositionerProps as TooltipPositionerElementProps,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipPositioner} Vue component. */
+/**
+ * Props for the {@link TooltipPositioner} Vue component.
+ *
+ * @public
+ */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -140,6 +144,11 @@ export interface TooltipPositionerProps {
   altBoundary?: TooltipPositionerElementProps["altBoundary"];
 }
 
+/**
+ * A Vue component that renders an `aria-ui-tooltip-positioner` custom element.
+ *
+ * @public
+ */
 export const TooltipPositioner: DefineSetupFnComponent<
   TooltipPositionerProps & HTMLAttributes
 > = defineComponent<TooltipPositionerProps & HTMLAttributes>(

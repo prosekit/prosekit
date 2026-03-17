@@ -7,7 +7,11 @@ import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link TooltipTrigger} Solid component. */
+/**
+ * Props for the {@link TooltipTrigger} Solid component.
+ *
+ * @public
+ */
 export interface TooltipTriggerProps extends JSX.HTMLAttributes<TooltipTriggerElement> {
   /**
    * Whether the component should ignore user interaction.
@@ -26,6 +30,11 @@ export interface TooltipTriggerProps extends JSX.HTMLAttributes<TooltipTriggerEl
   closeDelay?: TooltipTriggerElementProps["closeDelay"];
 }
 
+/**
+ * A Solid component that renders an `aria-ui-tooltip-trigger` custom element.
+ *
+ * @public
+ */
 export const TooltipTrigger: Component<TooltipTriggerProps> = (props): any => {
   registerTooltipTriggerElement();
 

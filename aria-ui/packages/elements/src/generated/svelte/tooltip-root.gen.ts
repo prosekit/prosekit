@@ -5,7 +5,11 @@ import {
 } from "../../tooltip/index.ts";
 import type { Component, Snippet } from "svelte";
 
-/** Props for the {@link TooltipRoot} Svelte component. */
+/**
+ * Props for the {@link TooltipRoot} Svelte component.
+ *
+ * @public
+ */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -27,4 +31,9 @@ export interface TooltipRootProps {
   children?: Snippet;
 }
 
+/**
+ * A Svelte component that renders an `aria-ui-tooltip-root` custom element.
+ *
+ * @public
+ */
 export const TooltipRoot: Component<TooltipRootProps> = TooltipRootComponent;

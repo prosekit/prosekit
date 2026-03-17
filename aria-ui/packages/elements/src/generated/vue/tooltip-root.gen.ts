@@ -10,7 +10,11 @@ import {
   type TooltipRootProps as TooltipRootElementProps,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipRoot} Vue component. */
+/**
+ * Props for the {@link TooltipRoot} Vue component.
+ *
+ * @public
+ */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -31,6 +35,11 @@ export interface TooltipRootProps {
   onOpenChange?: (event: TooltipRootElementEvents["openChange"]) => void;
 }
 
+/**
+ * A Vue component that renders an `aria-ui-tooltip-root` custom element.
+ *
+ * @public
+ */
 export const TooltipRoot: DefineSetupFnComponent<
   TooltipRootProps & HTMLAttributes
 > = defineComponent<TooltipRootProps & HTMLAttributes>(

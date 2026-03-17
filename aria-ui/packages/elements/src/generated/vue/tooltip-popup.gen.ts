@@ -6,9 +6,18 @@ import {
 } from "vue";
 import { registerTooltipPopupElement } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipPopup} Vue component. */
+/**
+ * Props for the {@link TooltipPopup} Vue component.
+ *
+ * @public
+ */
 export interface TooltipPopupProps {}
 
+/**
+ * A Vue component that renders an `aria-ui-tooltip-popup` custom element.
+ *
+ * @public
+ */
 export const TooltipPopup: DefineSetupFnComponent<
   TooltipPopupProps & HTMLAttributes
 > = defineComponent<TooltipPopupProps & HTMLAttributes>(

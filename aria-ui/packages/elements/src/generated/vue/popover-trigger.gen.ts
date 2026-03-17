@@ -10,7 +10,11 @@ import {
   type PopoverTriggerProps as PopoverTriggerElementProps,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverTrigger} Vue component. */
+/**
+ * Props for the {@link PopoverTrigger} Vue component.
+ *
+ * @public
+ */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -38,6 +42,11 @@ export interface PopoverTriggerProps {
   onOpenChange?: (event: PopoverTriggerElementEvents["openChange"]) => void;
 }
 
+/**
+ * A Vue component that renders an `aria-ui-popover-trigger` custom element.
+ *
+ * @public
+ */
 export const PopoverTrigger: DefineSetupFnComponent<
   PopoverTriggerProps & HTMLAttributes
 > = defineComponent<PopoverTriggerProps & HTMLAttributes>(

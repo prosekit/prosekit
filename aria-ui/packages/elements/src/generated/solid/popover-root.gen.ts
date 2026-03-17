@@ -8,7 +8,11 @@ import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link PopoverRoot} Solid component. */
+/**
+ * Props for the {@link PopoverRoot} Solid component.
+ *
+ * @public
+ */
 export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement> {
   /**
    * Whether the popover should be modal.
@@ -36,6 +40,11 @@ export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement>
   onOpenChange?: (event: PopoverRootElementEvents["openChange"]) => void;
 }
 
+/**
+ * A Solid component that renders an `aria-ui-popover-root` custom element.
+ *
+ * @public
+ */
 export const PopoverRoot: Component<PopoverRootProps> = (props): any => {
   registerPopoverRootElement();
 

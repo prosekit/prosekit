@@ -7,7 +7,11 @@ import { mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
-/** Props for the {@link PopoverPositioner} Solid component. */
+/**
+ * Props for the {@link PopoverPositioner} Solid component.
+ *
+ * @public
+ */
 export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositionerElement> {
   /**
    * The strategy to use for positioning
@@ -138,6 +142,11 @@ export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositi
   altBoundary?: PopoverPositionerElementProps["altBoundary"];
 }
 
+/**
+ * A Solid component that renders an `aria-ui-popover-positioner` custom element.
+ *
+ * @public
+ */
 export const PopoverPositioner: Component<PopoverPositionerProps> = (
   props,
 ): any => {

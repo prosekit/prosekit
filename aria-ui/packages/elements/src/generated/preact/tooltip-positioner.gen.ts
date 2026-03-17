@@ -1,13 +1,26 @@
-import { createComponent } from "@aria-ui-v2/integrations/preact";
-import type { HTMLAttributes } from "preact";
-import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
+import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
+import {
+  createElement,
+  type HTMLAttributes,
+  type Ref,
+  type VNode,
+} from "preact";
+import {
+  forwardRef,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+} from "preact/compat";
 import {
   registerTooltipPositionerElement,
   type TooltipPositionerElement,
   type TooltipPositionerProps as TooltipPositionerElementProps,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipPositioner} Preact component. */
+/**
+ * Props for the {@link TooltipPositioner} Preact component.
+ *
+ * @public
+ */
 export interface TooltipPositionerProps extends HTMLAttributes<TooltipPositionerElement> {
   /**
    * The strategy to use for positioning
@@ -158,13 +171,27 @@ const propNames: string[] = [
   "elementContext",
   "altBoundary",
 ];
-const eventHandlersMap: Record<string, string> = {};
+const eventNameMap: Record<string, string> = {};
+
+function TooltipPositionerComponent(
+  props: TooltipPositionerProps,
+  forwardedRef: Ref<TooltipPositionerElement>,
+): VNode<any> {
+  registerTooltipPositionerElement();
+  return createElement(PreactWrapper, {
+    as: "aria-ui-tooltip-positioner",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A Preact component that renders an `aria-ui-tooltip-positioner` custom element.
+ *
+ * @public
+ */
 export const TooltipPositioner: ForwardRefExoticComponent<
   TooltipPositionerProps & RefAttributes<TooltipPositionerElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-tooltip-positioner",
-  "TooltipPositioner",
-  propNames,
-  eventHandlersMap,
-  registerTooltipPositionerElement,
-);
+> = /* @__PURE__ */ forwardRef(TooltipPositionerComponent);

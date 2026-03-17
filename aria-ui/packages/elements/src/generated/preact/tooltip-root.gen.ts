@@ -1,6 +1,15 @@
-import { createComponent } from "@aria-ui-v2/integrations/preact";
-import type { HTMLAttributes } from "preact";
-import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
+import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
+import {
+  createElement,
+  type HTMLAttributes,
+  type Ref,
+  type VNode,
+} from "preact";
+import {
+  forwardRef,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+} from "preact/compat";
 import {
   registerTooltipRootElement,
   type TooltipRootElement,
@@ -8,7 +17,11 @@ import {
   type TooltipRootEvents as TooltipRootElementEvents,
 } from "../../tooltip/index.ts";
 
-/** Props for the {@link TooltipRoot} Preact component. */
+/**
+ * Props for the {@link TooltipRoot} Preact component.
+ *
+ * @public
+ */
 export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
   /**
    * Whether the overlay is initially open.
@@ -30,13 +43,27 @@ export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
 }
 
 const propNames: string[] = ["defaultOpen", "open", "disabled"];
-const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
+
+function TooltipRootComponent(
+  props: TooltipRootProps,
+  forwardedRef: Ref<TooltipRootElement>,
+): VNode<any> {
+  registerTooltipRootElement();
+  return createElement(PreactWrapper, {
+    as: "aria-ui-tooltip-root",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A Preact component that renders an `aria-ui-tooltip-root` custom element.
+ *
+ * @public
+ */
 export const TooltipRoot: ForwardRefExoticComponent<
   TooltipRootProps & RefAttributes<TooltipRootElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-tooltip-root",
-  "TooltipRoot",
-  propNames,
-  eventHandlersMap,
-  registerTooltipRootElement,
-);
+> = /* @__PURE__ */ forwardRef(TooltipRootComponent);

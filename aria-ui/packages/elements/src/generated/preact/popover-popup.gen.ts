@@ -1,22 +1,48 @@
-import { createComponent } from "@aria-ui-v2/integrations/preact";
-import type { HTMLAttributes } from "preact";
-import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
+import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
+import {
+  createElement,
+  type HTMLAttributes,
+  type Ref,
+} from "preact";
+import {
+  forwardRef,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+} from "preact/compat";
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverPopup} Preact component. */
+/**
+ * Props for the {@link PopoverPopup} Preact component.
+ *
+ * @public
+ */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
 
 const propNames: string[] = [];
-const eventHandlersMap: Record<string, string> = {};
+const eventNameMap: Record<string, string> = {};
+
+function PopoverPopupComponent(
+  props: PopoverPopupProps,
+  forwardedRef: Ref<PopoverPopupElement>,
+)  {
+  registerPopoverPopupElement();
+  return createElement(PreactWrapper, {
+    as: "aria-ui-popover-popup",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A Preact component that renders an `aria-ui-popover-popup` custom element.
+ *
+ * @public
+ */
 export const PopoverPopup: ForwardRefExoticComponent<
   PopoverPopupProps & RefAttributes<PopoverPopupElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-popover-popup",
-  "PopoverPopup",
-  propNames,
-  eventHandlersMap,
-  registerPopoverPopupElement,
-);
+> = /* @__PURE__ */ forwardRef(PopoverPopupComponent);

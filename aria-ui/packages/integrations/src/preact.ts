@@ -1,114 +1,109 @@
-import { createElement } from 'preact'
+import { createElement, type VNode } from 'preact'
 import type { Ref } from 'preact'
-import type { ForwardRefExoticComponent, RefAttributes } from 'preact/compat'
-import { forwardRef } from 'preact/compat'
 import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 
 /**
  * @internal
  */
-export function createComponent<
-  Props extends object,
-  CustomElement extends HTMLElement,
->(
-  /** The custom element tag name. */
-  tagName: string,
-  /** The React display name of the component. */
-  displayName: string,
+
+export function PreactWrapper({
+  as,
+  propNames,
+  eventNameMap,
+  props,
+  forwardedRef,
+}: {
+  /** The custom element tag name. For example, 'my-element'. */
+  as: string
+
   /** The property names that are passed to the custom element. */
-  propNames: Array<string>,
+  propNames: Array<string>
+
   /**
    * A map of event handler names to event names.
    *
    * For example, `{ 'onClick': 'click' }`
    */
-  eventNameMap: Record<string, string>,
-  /** A function to register the custom element. */
-  register: VoidFunction,
-): ForwardRefExoticComponent<Props & RefAttributes<CustomElement>> {
+  eventNameMap: Record<string, string>
+
+  /**
+   * The user props.
+   */
+  props: object
+
+  /**
+   * The forwarded ref to the custom element.
+   */
+  forwardedRef: Ref<any>
+}): VNode  {
   type EventHandler = (event: Event) => void
 
-  let isRegistered = false
+  const elementRef = useRef<HTMLElement>(null)
 
-  const Component = forwardRef<CustomElement, any>(
-    (props: Record<string, unknown>, forwardedRef: Ref<CustomElement>) => {
-      if (!isRegistered) {
-        register()
-        isRegistered = true
-      }
+  const reactProps: Record<string, unknown> = {}
+  const elementProps: Record<string, unknown> = {}
+  const eventHandlers: Record<string, EventHandler> = {}
+  const eventHandlersRef = useRef<Record<string, EventHandler>>({})
 
-      const elementRef = useRef<CustomElement>(null)
+  for (const [name, value] of Object.entries(props)) {
+    if (propNames.includes(name)) {
+      elementProps[name] = value
+      continue
+    }
 
-      const reactProps: Record<string, unknown> = {}
-      const elementProps: Record<string, unknown> = {}
-      const eventHandlers: Record<string, EventHandler> = {}
-      const eventHandlersRef = useRef<Record<string, EventHandler>>({})
+    const eventName = eventNameMap[name]
+    if (eventName) {
+      eventHandlers[eventName] = value as EventHandler
+    }
 
-      for (const [name, value] of Object.entries(props)) {
-        if (propNames.includes(name)) {
-          elementProps[name] = value
-          continue
-        }
+    reactProps[name] = value
+  }
 
-        const eventName = eventNameMap[name]
-        if (eventName) {
-          eventHandlers[eventName] = value as EventHandler
-        }
+  // Set all properties.
+  useLayoutEffect(() => {
+    const element = elementRef.current
+    if (!element) return
 
-        reactProps[name] = value
-      }
+    for (const [name, value] of Object.entries(elementProps)) {
+      ;(element as unknown as Record<string, unknown>)[name] = value
+    }
+  })
 
-      // Set all properties.
-      useLayoutEffect(() => {
-        const element = elementRef.current
-        if (!element) return
+  // Set all event listeners.
+  useLayoutEffect(() => {
+    eventHandlersRef.current = eventHandlers
+  })
 
-        for (const [name, value] of Object.entries(elementProps)) {
-          ;(element as Record<string, unknown>)[name] = value
-        }
-      })
+  // Register all event listeners
+  useLayoutEffect(() => {
+    const element = elementRef.current
+    if (!element) return
 
-      // Set all event listeners.
-      useLayoutEffect(() => {
-        eventHandlersRef.current = eventHandlers
-      })
+    const eventNames: string[] = Object.values(eventNameMap)
+    const controller = new AbortController()
+    const signal = controller.signal
 
-      // Register all event listeners
-      useLayoutEffect(() => {
-        const element = elementRef.current
-        if (!element) return
+    for (const eventName of eventNames) {
+      element.addEventListener(eventName, (event) => {
+        eventHandlersRef.current[eventName]?.(event)
+      }, { signal })
+    }
 
-        const eventNames: string[] = Object.values(eventNameMap)
-        const controller = new AbortController()
-        const signal = controller.signal
+    return () => {
+      controller.abort()
+    }
+  }, [])
 
-        for (const eventName of eventNames) {
-          element.addEventListener(eventName, (event) => {
-            eventHandlersRef.current[eventName]?.(event)
-          }, { signal })
-        }
+  // Suppress hydration warnings for web components as the attributes are set after the component is mounted.
+  reactProps['suppressHydrationWarning'] = true
 
-        return () => {
-          controller.abort()
-        }
-      }, [])
-
-      // Suppress hydration warnings for web components as the attributes are set after the component is mounted.
-      reactProps['suppressHydrationWarning'] = true
-
-      const mergedRef = useMemo(
-        () => mergeRefs([elementRef, forwardedRef]),
-        [forwardedRef],
-      )
-      reactProps['ref'] = mergedRef
-
-      return createElement(tagName, reactProps)
-    },
+  const mergedRef = useMemo(
+    () => mergeRefs([elementRef, forwardedRef]),
+    [forwardedRef],
   )
+  reactProps['ref'] = mergedRef
 
-  Component.displayName = displayName
-
-  return Component
+  return createElement(as, reactProps)
 }
 
 /**

@@ -239,19 +239,26 @@ function generatePreactComponentFile(
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: '@aria-ui-v2/integrations/preact',
-    namedImports: ['createComponent'],
+    namedImports: ['PreactWrapper'],
   })
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'preact',
-    isTypeOnly: true,
-    namedImports: ['HTMLAttributes'],
+    namedImports: [
+      'createElement',
+      { name: 'HTMLAttributes', isTypeOnly: true },
+      { name: 'Ref', isTypeOnly: true },
+      { name: 'VNode', isTypeOnly: true },
+    ],
   })
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'preact/compat',
-    isTypeOnly: true,
-    namedImports: ['ForwardRefExoticComponent', 'RefAttributes'],
+    namedImports: [
+      'forwardRef',
+      { name: 'ForwardRefExoticComponent', isTypeOnly: true },
+      { name: 'RefAttributes', isTypeOnly: true },
+    ],
   })
 
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
@@ -267,32 +274,45 @@ function generatePreactComponentFile(
     sourceFile,
     component,
     name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} Preact component.`],
+    docs: [`Props for the {@link ${componentName}} Preact component.\n\n@public`],
     extendsTypes: [`HTMLAttributes<${componentName}Element>`],
     propsTypeName: hasProps ? propsTypeName : undefined,
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
 
   const propNames = props.map((prop) => `'${prop.name}'`)
-  const eventHandlersMap = eventHandlers.map(
+  const eventNameMap = eventHandlers.map(
     (handler) => `${handler.handlerName}: '${handler.eventName}'`,
   )
 
   addPropNamesVariable(sourceFile, formatArrayInitializer(propNames))
-  addEventHandlersMapVariable(
+  addEventNameMapVariable(
     sourceFile,
-    formatObjectInitializer(eventHandlersMap),
+    formatObjectInitializer(eventNameMap),
   )
+
+  sourceFile.addFunction({
+    name: `${componentName}Component`,
+    parameters: [
+      { name: 'props', type: `${componentName}Props` },
+      { name: 'forwardedRef', type: `Ref<${componentName}Element>` },
+    ],
+    returnType: 'VNode<any>',
+    statements: [
+      `register${componentName}Element();`,
+      `return createElement(PreactWrapper, { as: '${tagName}', propNames, eventNameMap, props, forwardedRef });`,
+    ],
+  })
 
   sourceFile.addVariableStatement({
     isExported: true,
     declarationKind: VariableDeclarationKind.Const,
+    docs: [`A Preact component that renders an \`${tagName}\` custom element.\n\n@public`],
     declarations: [
       {
         name: componentName,
         type: `ForwardRefExoticComponent<${componentName}Props & RefAttributes<${componentName}Element>>`,
-        initializer:
-          `/* @__PURE__ */ createComponent('${tagName}', '${componentName}', propNames, eventHandlersMap, register${componentName}Element)`,
+        initializer: `/* @__PURE__ */ forwardRef(${componentName}Component)`,
       },
     ],
   })
@@ -707,22 +727,6 @@ function addPropNamesVariable(
       {
         name: 'propNames',
         type: 'string[]',
-        initializer,
-      },
-    ],
-  })
-}
-
-function addEventHandlersMapVariable(
-  sourceFile: SourceFile,
-  initializer: string,
-): void {
-  sourceFile.addVariableStatement({
-    declarationKind: VariableDeclarationKind.Const,
-    declarations: [
-      {
-        name: 'eventHandlersMap',
-        type: 'Record<string, string>',
         initializer,
       },
     ],

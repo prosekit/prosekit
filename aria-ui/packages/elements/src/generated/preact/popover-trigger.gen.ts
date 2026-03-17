@@ -1,6 +1,15 @@
-import { createComponent } from "@aria-ui-v2/integrations/preact";
-import type { HTMLAttributes } from "preact";
-import type { ForwardRefExoticComponent, RefAttributes } from "preact/compat";
+import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
+import {
+  createElement,
+  type HTMLAttributes,
+  type Ref,
+  type VNode,
+} from "preact";
+import {
+  forwardRef,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+} from "preact/compat";
 import {
   registerPopoverTriggerElement,
   type PopoverTriggerElement,
@@ -8,7 +17,11 @@ import {
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverTrigger} Preact component. */
+/**
+ * Props for the {@link PopoverTrigger} Preact component.
+ *
+ * @public
+ */
 export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElement> {
   /**
    * Whether the component should ignore user interaction.
@@ -37,13 +50,27 @@ export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElemen
 }
 
 const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
-const eventHandlersMap: Record<string, string> = { onOpenChange: "openChange" };
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
+
+function PopoverTriggerComponent(
+  props: PopoverTriggerProps,
+  forwardedRef: Ref<PopoverTriggerElement>,
+): VNode<any> {
+  registerPopoverTriggerElement();
+  return createElement(PreactWrapper, {
+    as: "aria-ui-popover-trigger",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
+/**
+ * A Preact component that renders an `aria-ui-popover-trigger` custom element.
+ *
+ * @public
+ */
 export const PopoverTrigger: ForwardRefExoticComponent<
   PopoverTriggerProps & RefAttributes<PopoverTriggerElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-popover-trigger",
-  "PopoverTrigger",
-  propNames,
-  eventHandlersMap,
-  registerPopoverTriggerElement,
-);
+> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);

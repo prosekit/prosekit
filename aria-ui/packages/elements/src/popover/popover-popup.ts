@@ -33,9 +33,14 @@ export class PopoverPopupElement extends defineCustomElement(
   PopoverPopupPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerPopoverPopupElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-popover-popup', PopoverPopupElement)
 }
+

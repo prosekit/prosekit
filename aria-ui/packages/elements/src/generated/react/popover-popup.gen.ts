@@ -1,8 +1,12 @@
-import { createComponent } from "@aria-ui-v2/integrations/react";
-import type {
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  RefAttributes,
+import { ReactWrapper } from "@aria-ui-v2/integrations/react";
+import {
+  createElement,
+  forwardRef,
+  type ForwardedRef,
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type ReactElement,
+  type RefAttributes,
 } from "react";
 import {
   registerPopoverPopupElement,
@@ -13,13 +17,22 @@ import {
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
 
 const propNames: string[] = [];
-const eventHandlersMap: Record<string, string> = {};
+const eventNameMap: Record<string, string> = {};
+
+function PopoverPopupComponent(
+  props: PopoverPopupProps,
+  forwardedRef: ForwardedRef<PopoverPopupElement>,
+): ReactElement {
+  registerPopoverPopupElement();
+  return createElement(ReactWrapper, {
+    as: "aria-ui-popover-popup",
+    propNames,
+    eventNameMap,
+    props,
+    forwardedRef,
+  });
+}
+
 export const PopoverPopup: ForwardRefExoticComponent<
   PopoverPopupProps & RefAttributes<PopoverPopupElement>
-> = /* @__PURE__ */ createComponent(
-  "aria-ui-popover-popup",
-  "PopoverPopup",
-  propNames,
-  eventHandlersMap,
-  registerPopoverPopupElement,
-);
+> = /* @__PURE__ */ forwardRef(PopoverPopupComponent);

@@ -5,13 +5,17 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
   registerPopoverPopupElement,
   type PopoverPopupElement,
 } from "../../popover/index.ts";
+
+const propNames: string[] = [];
+const eventNameMap: Record<string, string> = {};
+
+
 
 /**
  * Props for the {@link PopoverPopup} React component.
@@ -20,13 +24,11 @@ import {
  */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
 
-const propNames: string[] = [];
-const eventNameMap: Record<string, string> = {};
 
 function PopoverPopupComponent(
   props: PopoverPopupProps,
   forwardedRef: ForwardedRef<PopoverPopupElement>,
-): ReactElement {
+) {
   registerPopoverPopupElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-popover-popup",
@@ -36,6 +38,7 @@ function PopoverPopupComponent(
     forwardedRef,
   });
 }
+
 
 /**
  * A React component that renders an `aria-ui-popover-popup` custom element.

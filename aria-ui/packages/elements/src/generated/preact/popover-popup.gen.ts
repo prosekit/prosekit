@@ -14,6 +14,9 @@ import {
   type PopoverPopupElement,
 } from "../../popover/index.ts";
 
+const propNames: string[] = [];
+const eventNameMap: Record<string, string> = {};
+
 /**
  * Props for the {@link PopoverPopup} Preact component.
  *
@@ -21,8 +24,6 @@ import {
  */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
 
-const propNames: string[] = [];
-const eventNameMap: Record<string, string> = {};
 
 function PopoverPopupComponent(
   props: PopoverPopupProps,
@@ -37,6 +38,7 @@ function PopoverPopupComponent(
     forwardedRef,
   });
 }
+
 
 /**
  * A Preact component that renders an `aria-ui-popover-popup` custom element.

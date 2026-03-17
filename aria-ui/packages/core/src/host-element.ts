@@ -2,10 +2,9 @@ import { HTMLElement } from 'server-dom-shim'
 
 import type { ReactiveController, ReactiveControllerHost } from './reactive-controller.ts'
 
-
 export class HostElement extends HTMLElement implements ReactiveControllerHost {
   private _controllers: Set<ReactiveController> | undefined
-  private _connected  = false
+  private _connected = false
 
   addController(controller: ReactiveController): void {
     const controllers = (this._controllers ??= new Set())
@@ -14,7 +13,7 @@ export class HostElement extends HTMLElement implements ReactiveControllerHost {
     }
     controllers.add(controller)
 
-    if (this._connected  ) {
+    if (this._connected) {
       controller.hostConnected?.()
     }
   }

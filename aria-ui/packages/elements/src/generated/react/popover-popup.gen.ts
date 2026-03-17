@@ -13,7 +13,11 @@ import {
   type PopoverPopupElement,
 } from "../../popover/index.ts";
 
-/** Props for the {@link PopoverPopup} React component. */
+/** 
+ * Props for the {@link PopoverPopup} React component. 
+ * 
+ * @public
+*/
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
 
 const propNames: string[] = [];
@@ -33,6 +37,11 @@ function PopoverPopupComponent(
   });
 }
 
+/**
+ * A React component that renders an `aria-ui-popover-popup` custom element.
+ *
+ * @public
+ */
 export const PopoverPopup: ForwardRefExoticComponent<
   PopoverPopupProps & RefAttributes<PopoverPopupElement>
 > = /* @__PURE__ */ forwardRef(PopoverPopupComponent);

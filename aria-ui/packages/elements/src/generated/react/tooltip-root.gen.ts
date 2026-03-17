@@ -5,7 +5,6 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
@@ -14,6 +13,9 @@ import {
   type TooltipRootProps as TooltipRootElementProps,
   type TooltipRootEvents as TooltipRootElementEvents,
 } from "../../tooltip/index.ts";
+
+const propNames: string[] = ["defaultOpen", "open", "disabled"];
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**
  * Props for the {@link TooltipRoot} React component.
@@ -40,13 +42,10 @@ export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
   onOpenChange?: (event: TooltipRootElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["defaultOpen", "open", "disabled"];
-const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
-
 function TooltipRootComponent(
   props: TooltipRootProps,
   forwardedRef: ForwardedRef<TooltipRootElement>,
-): ReactElement {
+) {
   registerTooltipRootElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-tooltip-root",

@@ -5,13 +5,15 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
   registerTooltipPopupElement,
   type TooltipPopupElement,
 } from "../../tooltip/index.ts";
+
+const propNames: string[] = [];
+const eventNameMap: Record<string, string> = {};
 
 /**
  * Props for the {@link TooltipPopup} React component.
@@ -20,13 +22,10 @@ import {
  */
 export interface TooltipPopupProps extends HTMLAttributes<TooltipPopupElement> {}
 
-const propNames: string[] = [];
-const eventNameMap: Record<string, string> = {};
-
 function TooltipPopupComponent(
   props: TooltipPopupProps,
   forwardedRef: ForwardedRef<TooltipPopupElement>,
-): ReactElement {
+) {
   registerTooltipPopupElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-tooltip-popup",

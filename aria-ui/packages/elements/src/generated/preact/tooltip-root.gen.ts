@@ -1,10 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-  type VNode,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -16,6 +11,9 @@ import {
   type TooltipRootProps as TooltipRootElementProps,
   type TooltipRootEvents as TooltipRootElementEvents,
 } from "../../tooltip/index.ts";
+
+const propNames: string[] = ["defaultOpen", "open", "disabled"];
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**
  * Props for the {@link TooltipRoot} Preact component.
@@ -42,13 +40,10 @@ export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
   onOpenChange?: (event: TooltipRootElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["defaultOpen", "open", "disabled"];
-const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
-
 function TooltipRootComponent(
   props: TooltipRootProps,
   forwardedRef: Ref<TooltipRootElement>,
-): VNode<any> {
+) {
   registerTooltipRootElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-tooltip-root",

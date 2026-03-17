@@ -5,7 +5,6 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
@@ -14,6 +13,9 @@ import {
   type PopoverTriggerProps as PopoverTriggerElementProps,
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
 } from "../../popover/index.ts";
+
+const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**
  * Props for the {@link PopoverTrigger} React component.
@@ -47,13 +49,10 @@ export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElemen
   onOpenChange?: (event: PopoverTriggerElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
-const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
-
 function PopoverTriggerComponent(
   props: PopoverTriggerProps,
   forwardedRef: ForwardedRef<PopoverTriggerElement>,
-): ReactElement {
+) {
   registerPopoverTriggerElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-popover-trigger",

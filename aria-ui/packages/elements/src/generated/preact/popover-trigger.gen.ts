@@ -1,10 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-  type VNode,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -16,6 +11,9 @@ import {
   type PopoverTriggerProps as PopoverTriggerElementProps,
   type PopoverTriggerEvents as PopoverTriggerElementEvents,
 } from "../../popover/index.ts";
+
+const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**
  * Props for the {@link PopoverTrigger} Preact component.
@@ -49,13 +47,10 @@ export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElemen
   onOpenChange?: (event: PopoverTriggerElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["disabled", "openOnHover", "delay", "closeDelay"];
-const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
-
 function PopoverTriggerComponent(
   props: PopoverTriggerProps,
   forwardedRef: Ref<PopoverTriggerElement>,
-): VNode<any> {
+) {
   registerPopoverTriggerElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-popover-trigger",

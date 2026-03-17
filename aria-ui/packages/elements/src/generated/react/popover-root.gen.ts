@@ -5,7 +5,6 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
@@ -14,6 +13,9 @@ import {
   type PopoverRootProps as PopoverRootElementProps,
   type PopoverRootEvents as PopoverRootElementEvents,
 } from "../../popover/index.ts";
+
+const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**
  * Props for the {@link PopoverRoot} React component.
@@ -47,13 +49,10 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   onOpenChange?: (event: PopoverRootElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
-const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
-
 function PopoverRootComponent(
   props: PopoverRootProps,
   forwardedRef: ForwardedRef<PopoverRootElement>,
-): ReactElement {
+) {
   registerPopoverRootElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-popover-root",

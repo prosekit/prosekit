@@ -1,9 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -24,11 +20,10 @@ const eventNameMap: Record<string, string> = {};
  */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
 
-
 function PopoverPopupComponent(
   props: PopoverPopupProps,
   forwardedRef: Ref<PopoverPopupElement>,
-)  {
+) {
   registerPopoverPopupElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-popover-popup",
@@ -38,7 +33,6 @@ function PopoverPopupComponent(
     forwardedRef,
   });
 }
-
 
 /**
  * A Preact component that renders an `aria-ui-popover-popup` custom element.

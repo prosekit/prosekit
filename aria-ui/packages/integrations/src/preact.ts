@@ -35,7 +35,7 @@ export function PreactWrapper({
    * The forwarded ref to the custom element.
    */
   forwardedRef: Ref<any>
-}): VNode  {
+}): VNode {
   type EventHandler = (event: Event) => void
 
   const elementRef = useRef<HTMLElement>(null)

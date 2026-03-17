@@ -1,10 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-  type VNode,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -15,6 +10,9 @@ import {
   type TooltipPopupElement,
 } from "../../tooltip/index.ts";
 
+const propNames: string[] = [];
+const eventNameMap: Record<string, string> = {};
+
 /**
  * Props for the {@link TooltipPopup} Preact component.
  *
@@ -22,13 +20,10 @@ import {
  */
 export interface TooltipPopupProps extends HTMLAttributes<TooltipPopupElement> {}
 
-const propNames: string[] = [];
-const eventNameMap: Record<string, string> = {};
-
 function TooltipPopupComponent(
   props: TooltipPopupProps,
   forwardedRef: Ref<TooltipPopupElement>,
-): VNode<any> {
+) {
   registerTooltipPopupElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-tooltip-popup",

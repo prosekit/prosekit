@@ -1,10 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-  type VNode,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -15,6 +10,9 @@ import {
   type TooltipTriggerElement,
   type TooltipTriggerProps as TooltipTriggerElementProps,
 } from "../../tooltip/index.ts";
+
+const propNames: string[] = ["disabled", "openDelay", "closeDelay"];
+const eventNameMap: Record<string, string> = {};
 
 /**
  * Props for the {@link TooltipTrigger} Preact component.
@@ -39,13 +37,10 @@ export interface TooltipTriggerProps extends HTMLAttributes<TooltipTriggerElemen
   closeDelay?: TooltipTriggerElementProps["closeDelay"];
 }
 
-const propNames: string[] = ["disabled", "openDelay", "closeDelay"];
-const eventNameMap: Record<string, string> = {};
-
 function TooltipTriggerComponent(
   props: TooltipTriggerProps,
   forwardedRef: Ref<TooltipTriggerElement>,
-): VNode<any> {
+) {
   registerTooltipTriggerElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-tooltip-trigger",

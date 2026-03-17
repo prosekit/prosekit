@@ -1,10 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-  type VNode,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -16,6 +11,9 @@ import {
   type PopoverRootProps as PopoverRootElementProps,
   type PopoverRootEvents as PopoverRootElementEvents,
 } from "../../popover/index.ts";
+
+const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
+const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
 
 /**
  * Props for the {@link PopoverRoot} Preact component.
@@ -49,13 +47,10 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   onOpenChange?: (event: PopoverRootElementEvents["openChange"]) => void;
 }
 
-const propNames: string[] = ["modal", "defaultOpen", "open", "disabled"];
-const eventNameMap: Record<string, string> = { onOpenChange: "openChange" };
-
 function PopoverRootComponent(
   props: PopoverRootProps,
   forwardedRef: Ref<PopoverRootElement>,
-): VNode<any> {
+) {
   registerPopoverRootElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-popover-root",

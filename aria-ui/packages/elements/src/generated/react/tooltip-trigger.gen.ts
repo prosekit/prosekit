@@ -5,7 +5,6 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
@@ -13,6 +12,9 @@ import {
   type TooltipTriggerElement,
   type TooltipTriggerProps as TooltipTriggerElementProps,
 } from "../../tooltip/index.ts";
+
+const propNames: string[] = ["disabled", "openDelay", "closeDelay"];
+const eventNameMap: Record<string, string> = {};
 
 /**
  * Props for the {@link TooltipTrigger} React component.
@@ -37,13 +39,10 @@ export interface TooltipTriggerProps extends HTMLAttributes<TooltipTriggerElemen
   closeDelay?: TooltipTriggerElementProps["closeDelay"];
 }
 
-const propNames: string[] = ["disabled", "openDelay", "closeDelay"];
-const eventNameMap: Record<string, string> = {};
-
 function TooltipTriggerComponent(
   props: TooltipTriggerProps,
   forwardedRef: ForwardedRef<TooltipTriggerElement>,
-): ReactElement {
+) {
   registerTooltipTriggerElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-tooltip-trigger",

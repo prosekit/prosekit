@@ -1,10 +1,5 @@
 import { PreactWrapper } from "@aria-ui-v2/integrations/preact";
-import {
-  createElement,
-  type HTMLAttributes,
-  type Ref,
-  type VNode,
-} from "preact";
+import { createElement, type HTMLAttributes, type Ref } from "preact";
 import {
   forwardRef,
   type ForwardRefExoticComponent,
@@ -15,6 +10,28 @@ import {
   type PopoverPositionerElement,
   type PopoverPositionerProps as PopoverPositionerElementProps,
 } from "../../popover/index.ts";
+
+const propNames: string[] = [
+  "strategy",
+  "placement",
+  "autoUpdate",
+  "hoist",
+  "offset",
+  "flip",
+  "shift",
+  "overlap",
+  "fitViewport",
+  "sameWidth",
+  "sameHeight",
+  "inline",
+  "hide",
+  "boundary",
+  "rootBoundary",
+  "overflowPadding",
+  "elementContext",
+  "altBoundary",
+];
+const eventNameMap: Record<string, string> = {};
 
 /**
  * Props for the {@link PopoverPositioner} Preact component.
@@ -151,32 +168,10 @@ export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositioner
   altBoundary?: PopoverPositionerElementProps["altBoundary"];
 }
 
-const propNames: string[] = [
-  "strategy",
-  "placement",
-  "autoUpdate",
-  "hoist",
-  "offset",
-  "flip",
-  "shift",
-  "overlap",
-  "fitViewport",
-  "sameWidth",
-  "sameHeight",
-  "inline",
-  "hide",
-  "boundary",
-  "rootBoundary",
-  "overflowPadding",
-  "elementContext",
-  "altBoundary",
-];
-const eventNameMap: Record<string, string> = {};
-
 function PopoverPositionerComponent(
   props: PopoverPositionerProps,
   forwardedRef: Ref<PopoverPositionerElement>,
-): VNode<any> {
+) {
   registerPopoverPositionerElement();
   return createElement(PreactWrapper, {
     as: "aria-ui-popover-positioner",

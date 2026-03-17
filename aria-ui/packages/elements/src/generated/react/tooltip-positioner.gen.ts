@@ -5,7 +5,6 @@ import {
   type ForwardedRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type ReactElement,
   type RefAttributes,
 } from "react";
 import {
@@ -13,6 +12,28 @@ import {
   type TooltipPositionerElement,
   type TooltipPositionerProps as TooltipPositionerElementProps,
 } from "../../tooltip/index.ts";
+
+const propNames: string[] = [
+  "strategy",
+  "placement",
+  "autoUpdate",
+  "hoist",
+  "offset",
+  "flip",
+  "shift",
+  "overlap",
+  "fitViewport",
+  "sameWidth",
+  "sameHeight",
+  "inline",
+  "hide",
+  "boundary",
+  "rootBoundary",
+  "overflowPadding",
+  "elementContext",
+  "altBoundary",
+];
+const eventNameMap: Record<string, string> = {};
 
 /**
  * Props for the {@link TooltipPositioner} React component.
@@ -149,32 +170,10 @@ export interface TooltipPositionerProps extends HTMLAttributes<TooltipPositioner
   altBoundary?: TooltipPositionerElementProps["altBoundary"];
 }
 
-const propNames: string[] = [
-  "strategy",
-  "placement",
-  "autoUpdate",
-  "hoist",
-  "offset",
-  "flip",
-  "shift",
-  "overlap",
-  "fitViewport",
-  "sameWidth",
-  "sameHeight",
-  "inline",
-  "hide",
-  "boundary",
-  "rootBoundary",
-  "overflowPadding",
-  "elementContext",
-  "altBoundary",
-];
-const eventNameMap: Record<string, string> = {};
-
 function TooltipPositionerComponent(
   props: TooltipPositionerProps,
   forwardedRef: ForwardedRef<TooltipPositionerElement>,
-): ReactElement {
+) {
   registerTooltipPositionerElement();
   return createElement(ReactWrapper, {
     as: "aria-ui-tooltip-positioner",

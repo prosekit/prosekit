@@ -15,15 +15,12 @@ import {
 const propNames: string[] = [];
 const eventNameMap: Record<string, string> = {};
 
-
-
 /**
  * Props for the {@link PopoverPopup} React component.
  *
  * @public
  */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
-
 
 function PopoverPopupComponent(
   props: PopoverPopupProps,
@@ -38,7 +35,6 @@ function PopoverPopupComponent(
     forwardedRef,
   });
 }
-
 
 /**
  * A React component that renders an `aria-ui-popover-popup` custom element.

@@ -161,7 +161,6 @@ function generateReactComponentFile(
       { name: 'ForwardedRef', isTypeOnly: true },
       { name: 'ForwardRefExoticComponent', isTypeOnly: true },
       { name: 'HTMLAttributes', isTypeOnly: true },
-      { name: 'ReactElement', isTypeOnly: true },
       { name: 'RefAttributes', isTypeOnly: true },
     ],
   })
@@ -175,16 +174,6 @@ function generateReactComponentFile(
     includeElementType: true,
   })
 
-  addPropsInterface({
-    sourceFile,
-    component,
-    name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} React component.\n\n@public`],
-    extendsTypes: [`HTMLAttributes<${componentName}Element>`],
-    propsTypeName: hasProps ? propsTypeName : undefined,
-    eventsTypeName: hasEvents ? eventsTypeName : undefined,
-  })
-
   const propNames = props.map((prop) => `'${prop.name}'`)
   const eventNameMap = eventHandlers.map(
     (handler) => `${handler.handlerName}: '${handler.eventName}'`,
@@ -196,13 +185,22 @@ function generateReactComponentFile(
     formatObjectInitializer(eventNameMap),
   )
 
+  addPropsInterface({
+    sourceFile,
+    component,
+    name: `${componentName}Props`,
+    docs: [`Props for the {@link ${componentName}} React component.\n\n@public`],
+    extendsTypes: [`HTMLAttributes<${componentName}Element>`],
+    propsTypeName: hasProps ? propsTypeName : undefined,
+    eventsTypeName: hasEvents ? eventsTypeName : undefined,
+  })
+
   sourceFile.addFunction({
     name: `${componentName}Component`,
     parameters: [
       { name: 'props', type: `${componentName}Props` },
       { name: 'forwardedRef', type: `ForwardedRef<${componentName}Element>` },
     ],
-    returnType: 'ReactElement',
     statements: [
       `register${componentName}Element();`,
       `return createElement(ReactWrapper, { as: '${tagName}', propNames, eventNameMap, props, forwardedRef });`,
@@ -248,7 +246,6 @@ function generatePreactComponentFile(
       'createElement',
       { name: 'HTMLAttributes', isTypeOnly: true },
       { name: 'Ref', isTypeOnly: true },
-      { name: 'VNode', isTypeOnly: true },
     ],
   })
 
@@ -270,16 +267,6 @@ function generatePreactComponentFile(
     includeElementType: true,
   })
 
-  addPropsInterface({
-    sourceFile,
-    component,
-    name: `${componentName}Props`,
-    docs: [`Props for the {@link ${componentName}} Preact component.\n\n@public`],
-    extendsTypes: [`HTMLAttributes<${componentName}Element>`],
-    propsTypeName: hasProps ? propsTypeName : undefined,
-    eventsTypeName: hasEvents ? eventsTypeName : undefined,
-  })
-
   const propNames = props.map((prop) => `'${prop.name}'`)
   const eventNameMap = eventHandlers.map(
     (handler) => `${handler.handlerName}: '${handler.eventName}'`,
@@ -291,13 +278,22 @@ function generatePreactComponentFile(
     formatObjectInitializer(eventNameMap),
   )
 
+  addPropsInterface({
+    sourceFile,
+    component,
+    name: `${componentName}Props`,
+    docs: [`Props for the {@link ${componentName}} Preact component.\n\n@public`],
+    extendsTypes: [`HTMLAttributes<${componentName}Element>`],
+    propsTypeName: hasProps ? propsTypeName : undefined,
+    eventsTypeName: hasEvents ? eventsTypeName : undefined,
+  })
+
   sourceFile.addFunction({
     name: `${componentName}Component`,
     parameters: [
       { name: 'props', type: `${componentName}Props` },
       { name: 'forwardedRef', type: `Ref<${componentName}Element>` },
     ],
-    returnType: 'VNode<any>',
     statements: [
       `register${componentName}Element();`,
       `return createElement(PreactWrapper, { as: '${tagName}', propNames, eventNameMap, props, forwardedRef });`,

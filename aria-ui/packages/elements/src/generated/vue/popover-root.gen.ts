@@ -41,29 +41,29 @@ export interface PopoverRootProps {
 export const PopoverRoot: DefineSetupFnComponent<
   PopoverRootProps & HTMLAttributes
 > = defineComponent<PopoverRootProps & HTMLAttributes>(
-  (_props, { slots: _slots }) => {
+  (props, { slots }) => {
     registerPopoverRootElement();
 
     return () => {
       const {
-        modal,
-        defaultOpen,
-        open,
-        disabled,
-        onOpenChange,
-        ..._restProps
-      } = _props;
+        modal: p0,
+        defaultOpen: p1,
+        open: p2,
+        disabled: p3,
+        onOpenChange: p4,
+        ...restProps
+      } = props;
       return h(
         "aria-ui-popover-root",
         {
-          ..._restProps,
-          "modal.prop": modal,
-          "defaultOpen.prop": defaultOpen,
-          "open.prop": open,
-          "disabled.prop": disabled,
-          "v-on:openChange": onOpenChange,
+          ...restProps,
+          "modal.prop": p0,
+          "defaultOpen.prop": p1,
+          "open.prop": p2,
+          "disabled.prop": p3,
+          "v-on:openChange": p4,
         },
-        _slots.default?.(),
+        slots.default?.(),
       );
     };
   },

@@ -33,9 +33,13 @@ export class TooltipPositionerElement extends defineCustomElement(
   TooltipPositionerPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerTooltipPositionerElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-tooltip-positioner', TooltipPositionerElement)
 }

@@ -51,9 +51,13 @@ export class TooltipRootElement extends defineCustomElement(
   TooltipRootPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerTooltipRootElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-tooltip-root', TooltipRootElement)
 }

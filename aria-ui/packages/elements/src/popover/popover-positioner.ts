@@ -33,9 +33,13 @@ export class PopoverPositionerElement extends defineCustomElement(
   PopoverPositionerPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerPopoverPositionerElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-popover-positioner', PopoverPositionerElement)
 }

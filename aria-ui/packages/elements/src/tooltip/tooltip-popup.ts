@@ -33,9 +33,13 @@ export class TooltipPopupElement extends defineCustomElement(
   TooltipPopupPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerTooltipPopupElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-tooltip-popup', TooltipPopupElement)
 }

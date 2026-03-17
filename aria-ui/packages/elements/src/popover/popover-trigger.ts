@@ -131,9 +131,13 @@ export class PopoverTriggerElement extends defineCustomElement(
   PopoverTriggerPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerPopoverTriggerElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-popover-trigger', PopoverTriggerElement)
 }

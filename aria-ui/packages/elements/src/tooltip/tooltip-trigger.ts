@@ -143,9 +143,13 @@ export class TooltipTriggerElement extends defineCustomElement(
   TooltipTriggerPropsDeclaration,
 ) {}
 
+let isRegistered = false
+
 /**
  * @internal
  */
 export function registerTooltipTriggerElement(): void {
+  if (isRegistered) return
+  isRegistered = true
   registerCustomElement('aria-ui-tooltip-trigger', TooltipTriggerElement)
 }

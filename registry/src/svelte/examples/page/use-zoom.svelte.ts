@@ -2,11 +2,11 @@ const ZOOM_STEPS = [25, 50, 75, 100, 125, 150, 200]
 const DEFAULT_ZOOM = 50
 
 function getZoomIn(zoom: number) {
-  return ZOOM_STEPS.filter(z => z > zoom).sort().at(0)
+  return ZOOM_STEPS.find(z => z > zoom)
 }
 
 function getZoomOut(zoom: number) {
-  return ZOOM_STEPS.filter(z => z < zoom).sort().at(-1)
+  return ZOOM_STEPS.findLast(z => z < zoom)
 }
 
 export function useZoom() {

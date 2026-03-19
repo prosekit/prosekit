@@ -10,7 +10,7 @@ testStory('page', () => {
     await waitForEditor()
 
     const headChunk = page.locate('pm-page-chunk[data-page-head]')
-    const getPageCount = () => headChunk.all().length
+    const getPageCount = () => headChunk.elements().length
     await expect.poll(getPageCount, { timeout: 5000 }).toBe(4)
   })
 })

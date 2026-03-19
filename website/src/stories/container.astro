@@ -37,19 +37,19 @@
     margin-left: auto;
   }
 
-  @media screen and (width >= 900px) {
+  @container prosekit-story-container (width >= 900px) {
     [data-prosekit-story-container-inner] {
       padding: 4rem;
     }
   }
 
-  @media screen and (width >= 600px) and (width < 900px) {
+  @container prosekit-story-container (width >= 600px) and (width < 900px) {
     [data-prosekit-story-container-inner] {
       padding: 2rem;
     }
   }
 
-  @media screen and (width < 600px) {
+  @container prosekit-story-container (width < 600px) {
     [data-prosekit-story-container-inner] {
       padding: 0.5rem;
     }

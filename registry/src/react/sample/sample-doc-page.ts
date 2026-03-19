@@ -74,7 +74,7 @@ export const sampleContent: NodeJSON = {
         {
           type: 'text',
           text:
-            'Page breaks only occur between block elements. A single block taller than the rest available page will overflow to the next page rather than split. In another word, you cannot split a node like paragraph or a table across pages. The paragraph below demonstrates this.',
+            'Page breaks only occur between block elements. A single block taller than the remaining space on the page will overflow to the next page rather than split. In other words, you cannot split a node like paragraph or a table across pages. The paragraph below demonstrates this.',
         },
       ],
     },

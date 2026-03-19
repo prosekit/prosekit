@@ -4,8 +4,12 @@ import { customElements, HTMLElement } from 'server-dom-shim'
 const TAG_NAME = 'pm-page-chunk'
 
 export const registerPageMeasureElement: VoidFunction = /* @__PURE__ */ once(() => {
-  if (typeof window === 'undefined') return
-  customElements.define('pm-page-chunk', PageChunkElement)
+  if (
+    typeof window === 'undefined'
+    || typeof customElements === 'undefined'
+    || customElements.get(TAG_NAME)
+  ) return
+  customElements.define(TAG_NAME, PageChunkElement)
 })
 
 class PageChunkElement extends HTMLElement {
@@ -249,11 +253,9 @@ class PageChunkElement extends HTMLElement {
 
 function handleResize(entries: ResizeObserverEntry[]) {
   for (const entry of entries) {
-    const contentBoxHeight = entry.contentBoxSize?.[0]?.blockSize
-    if (contentBoxHeight != null) {
-      const element = entry.target as PageChunkElement
-      element.updateContentBoxHeight(contentBoxHeight)
-    }
+    const contentBoxHeight = entry.contentBoxSize?.[0]?.blockSize ?? entry.contentRect.height
+    const element = entry.target as PageChunkElement
+    element.updateContentBoxHeight(contentBoxHeight)
   }
 }
 

@@ -294,7 +294,7 @@ export const CSS_KEYMAP_FIELDSET = cn(
 export const CSS_TOGGLE_ROTATE = 'transition-transform data-rotate:rotate-90'
 
 export const CSS_ZOOM_SLIDER = cn(
-  'fixed top-5 right-5 flex items-center justify-center gap-1 border-gray-300 dark:border-gray-600 border p-2 text-sm text-gray-500 select-none print:hidden z-100 bg-gray-50 rounded',
+  'absolute top-4 left-4 flex items-center justify-center gap-1 border-gray-300 dark:border-gray-600 border p-2 text-sm text-gray-500 select-none print:hidden z-100 bg-gray-50 rounded',
 )
 
 export const CSS_ZOOM_BUTTON = cn(

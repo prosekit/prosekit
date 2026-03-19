@@ -1528,6 +1528,11 @@
           "path": "registry/src/react/examples/page/index.ts",
           "type": "registry:component",
           "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/page/use-zoom.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/use-zoom.ts"
         }
       ],
       "meta": {
@@ -1539,6 +1544,7 @@
           "registry/src/react/examples/page/editor.tsx",
           "registry/src/react/examples/page/extension.ts",
           "registry/src/react/examples/page/index.ts",
+          "registry/src/react/examples/page/use-zoom.ts",
           "registry/src/react/sample/sample-doc-page.ts"
         ],
         "internalDependencies": [
@@ -5677,6 +5683,11 @@
           "path": "registry/src/preact/examples/page/index.ts",
           "type": "registry:component",
           "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/page/use-zoom.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/use-zoom.ts"
         }
       ],
       "meta": {
@@ -5688,6 +5699,7 @@
           "registry/src/preact/examples/page/editor.tsx",
           "registry/src/preact/examples/page/extension.ts",
           "registry/src/preact/examples/page/index.ts",
+          "registry/src/preact/examples/page/use-zoom.ts",
           "registry/src/preact/sample/sample-doc-page.ts"
         ],
         "internalDependencies": [

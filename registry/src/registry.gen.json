@@ -1532,7 +1532,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": false,
+        "hidden": true,
         "story": "page",
         "framework": "react",
         "accumulatedFiles": [
@@ -5681,7 +5681,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": false,
+        "hidden": true,
         "story": "page",
         "framework": "preact",
         "accumulatedFiles": [

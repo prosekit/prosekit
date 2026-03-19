@@ -19,22 +19,22 @@ const defaultContent = props.initialContent ?? sampleContent
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultContent })
 
-const { zoom, zoomIn, zoomOut, canZoomIn, canZoomOut } = useZoom()
+const zoom = useZoom()
 </script>
 
 <ProseKit {editor}>
   <div class="CSS_ZOOM_SLIDER">
-    <button class="CSS_ZOOM_BUTTON" onclick={zoomOut} disabled={!canZoomOut}>-</button>
-    <span class="CSS_ZOOM_LABEL">{zoom}%</span>
-    <button class="CSS_ZOOM_BUTTON" onclick={zoomIn} disabled={!canZoomIn}>+</button>
+    <button class="CSS_ZOOM_BUTTON" onclick={zoom.zoomOut} disabled={!zoom.canZoomOut}>-</button>
+    <span class="CSS_ZOOM_LABEL">{zoom.zoom}%</span>
+    <button class="CSS_ZOOM_BUTTON" onclick={zoom.zoomIn} disabled={!zoom.canZoomIn}>+</button>
   </div>
   <div class="CSS_EDITOR_SCROLLING">
     <div
       {@attach editor.mount}
       class={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
-      style:transform="scale({zoom / 100})"
+      style:transform="scale({zoom.zoom / 100})"
       style:transform-origin="top"
-      style:min-height="{100 / (zoom / 100)}%"
+      style:min-height="{100 / (zoom.zoom / 100)}%"
     >
     </div>
   </div>

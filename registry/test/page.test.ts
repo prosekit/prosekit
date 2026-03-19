@@ -130,8 +130,8 @@ function getPageLayout(): string {
   for (const chunk of chunks) {
     let index = chunk.getAttribute('data-index') || '??'
     index = index.padStart(3, ' ')
-    let type = ''
 
+    let type = ''
     if (chunk.hasAttribute('data-page-head')) {
       type += 'head '
     } else {
@@ -144,7 +144,6 @@ function getPageLayout(): string {
     }
 
     let childSnapshot = ''
-
     for (const child of chunk.children) {
       const nodeName = child.nodeName.toLowerCase()
       const classNames = Array.from(child.classList || [])

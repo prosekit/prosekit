@@ -78,7 +78,8 @@
   hidden: true
   description: Notion-style editor with block-based editing.
 - name: page
-  frameworks: [react]
+  frameworks: [react, preact]
+  hidden: true
 - name: placeholder
   frameworks: [react, preact, vue, svelte, solid]
   description: Placeholder text displayed.

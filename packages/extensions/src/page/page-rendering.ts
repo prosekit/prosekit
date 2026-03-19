@@ -1,9 +1,10 @@
 import { getId } from '@ocavue/utils'
 import { definePlugin, type Extension } from '@prosekit/core'
-import type { EditorState } from '@prosekit/pm/state'
+import type { Node } from '@prosekit/pm/model'
 import { Plugin, PluginKey } from '@prosekit/pm/state'
-import type { EditorView } from '@prosekit/pm/view'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
+
+import { registerPageMeasureElement } from './page-element.ts'
 
 /**
  * @internal
@@ -14,42 +15,42 @@ interface PageRenderingOptions {
   /**
    * The width of the page in px.
    *
-   * @default 1754 (Lanscape A4 size in 150 DPI)
+   * @default 794 (Portrait A4 paper size in 96 DPI)
    */
   pageWidth?: number
 
   /**
    * The height of the page in px.
    *
-   * @default 1240 (Lanscape A4 size in 150 DPI)
+   * @default 1123 (Portrait A4 paper size in 96 DPI)
    */
   pageHeight?: number
 
   /**
    * The top margin of the page in px.
    *
-   * @default 100
+   * @default 70
    */
   marginTop?: number
 
   /**
    * The right margin of the page in px.
    *
-   * @default 100
+   * @default 70
    */
   marginRight?: number
 
   /**
    * The bottom margin of the page in px.
    *
-   * @default 100
+   * @default 70
    */
   marginBottom?: number
 
   /**
    * The left margin of the page in px.
    *
-   * @default 100
+   * @default 70
    */
   marginLeft?: number
 }
@@ -59,271 +60,81 @@ interface PageRenderingOptions {
  */
 export function definePageRendering(options: PageRenderingOptions = {}): PageRenderingExtension {
   return definePlugin(
-    createPlugin(options),
+    createPageRenderingPlugin(options),
   )
 }
 
-function definePageMeasureElement() {
-  if (typeof window === 'undefined') return
-  if (typeof customElements === 'undefined') return
-  if (customElements.get('prosemirror-page-measure')) return
-
-  class ProseMirrorPageMeasure extends HTMLElement {
-    static observedAttributes = [
-      'data-group',
-      'data-index',
-      'data-page-width',
-      'data-page-height',
-      'data-margin-top',
-      'data-margin-right',
-      'data-margin-bottom',
-      'data-margin-left',
-    ]
-
-    #group: string
-    #index: number
-    #pageWidth: number
-    #pageHeight: number
-    #marginTop: number
-    #marginRight: number
-    #marginBottom: number
-    #marginLeft: number
-
-    constructor() {
-      super()
-      this.#group = ''
-      this.#index = -1
-      this.#pageWidth = 0
-      this.#pageHeight = 0
-      this.#marginTop = 0
-      this.#marginRight = 0
-      this.#marginBottom = 0
-      this.#marginLeft = 0
-    }
-
-    connectedCallback() {
-      this.style.display = 'block'
-      this.style.boxSizing = 'border-box'
-      this.style.margin = '0'
-      this.style.padding = '0'
-      this.updateSelf()
-    }
-
-    attributeChangedCallback() {
-      this.updateSelf()
-    }
-
-    updateSelf() {
-      this.#group = this.getAttribute('data-group') || ''
-      this.#index = Number.parseInt(this.getAttribute('data-index') || '-1', 10)
-      this.#pageWidth = Number.parseInt(this.getAttribute('data-page-width') || '0', 10)
-      this.#pageHeight = Number.parseInt(this.getAttribute('data-page-height') || '0', 10)
-      this.#marginTop = Number.parseInt(this.getAttribute('data-margin-top') || '0', 10)
-      this.#marginRight = Number.parseInt(this.getAttribute('data-margin-right') || '0', 10)
-      this.#marginBottom = Number.parseInt(this.getAttribute('data-margin-bottom') || '0', 10)
-      this.#marginLeft = Number.parseInt(this.getAttribute('data-margin-left') || '0', 10)
-
-      this.style.marginLeft = `${this.#marginLeft}px`
-      this.style.marginRight = `${this.#marginRight}px`
-      this.style.width = `${this.#pageWidth - this.#marginLeft - this.#marginRight}px`
-    }
-
-    private findAllElements() {
-      const root = this.closest('.ProseMirror')
-      if (!root) {
-        return []
-      }
-      const allElements = root.querySelectorAll(`prosemirror-page-measure[data-group="${this.#group}"]`)
-      return Array.from(allElements) as ProseMirrorPageMeasure[]
-    }
-
-    public updateAll() {
-      if (this.#index !== 0) {
-        console.warn('Only the first page measure element will trigger the page rendering update.')
-        return
-      }
-
-      const allElements = this.findAllElements()
-      const maxPageHeight = this.#pageHeight - this.#marginTop - this.#marginBottom
-      let pageHeight = 0
-      let prevElement: ProseMirrorPageMeasure | null = null
-      let isFirst = true
-      for (const element of allElements) {
-        element.updateSelf()
-        let isPageFirst = false
-
-        if (isFirst) {
-          element.style.marginTop = `${this.#marginTop}px`
-          isFirst = false
-          isPageFirst = true
-        } else {
-          element.style.marginTop = `0px`
-        }
-
-        const nodeHeight = element.offsetHeight
-
-        if (nodeHeight > maxPageHeight) {
-          if (prevElement) {
-            console.warn('A page is too long to fit the page height, please adjust the page height or margin settings.')
-          } else {
-            console.warn('The first page is too long to fit the page height, please adjust the page height or margin settings.')
-          }
-        }
-
-        if (pageHeight + nodeHeight >= maxPageHeight) {
-          if (prevElement) {
-            prevElement.style.marginBottom = `${this.#pageHeight - this.#marginBottom - pageHeight}px`
-            prevElement.style.breakAfter = 'page'
-          }
-          element.style.marginTop = `${this.#marginTop}px`
-          isFirst = false
-          isPageFirst = true
-          pageHeight = nodeHeight
-        } else {
-          pageHeight += nodeHeight
-        }
-
-        if (isPageFirst) {
-          element.setAttribute('data-page-first', '')
-          element.style.setProperty('--page-width', `${this.#pageWidth}px`)
-          element.style.setProperty('--page-height', `${this.#pageHeight}px`)
-          element.style.setProperty('--page-margin-top', `${this.#marginTop}px`)
-          element.style.setProperty('--page-margin-left', `${this.#marginLeft}px`)
-        } else {
-          element.removeAttribute('data-page-first')
-          element.style.removeProperty('--page-width')
-          element.style.removeProperty('--page-height')
-          element.style.removeProperty('--page-margin-top')
-          element.style.removeProperty('--page-margin-left')
-        }
-
-        element.style.marginBottom = '0px'
-        element.style.breakAfter = 'auto'
-        prevElement = element
-      }
-      if (prevElement) {
-        const nodeHeight = prevElement.offsetHeight
-        if (nodeHeight < maxPageHeight) {
-          prevElement.style.marginBottom = `${this.#pageHeight - this.#marginBottom - pageHeight}px`
-        }
-      }
-    }
-  }
-
-  customElements.define('prosemirror-page-measure', ProseMirrorPageMeasure)
-
-  const style = document.createElement('style')
-  style.textContent = `
-    prosemirror-page-measure[data-page-first] {
-      position: relative;
-    }
-    prosemirror-page-measure[data-page-first]::before {
-      content: '';
-      position: absolute;
-      top: calc(-1 * var(--page-margin-top));
-      left: calc(-1 * var(--page-margin-left));
-      width: var(--page-width);
-      height: var(--page-height);
-      border: 1px solid #d0d0d0;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      pointer-events: none;
-      z-index: -1;
-      box-sizing: border-box;
-    }
-  `
-  document.head.appendChild(style)
-
-  return ProseMirrorPageMeasure
-}
-
-function createPlugin(options: PageRenderingOptions) {
+function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
   const {
-    pageWidth = 1754,
-    pageHeight = 1240,
-    marginTop = 100,
-    marginRight = 100,
-    marginBottom = 100,
-    marginLeft = 100,
+    pageWidth = 794,
+    pageHeight = 1123,
+    marginTop = 70,
+    marginRight = 70,
+    marginBottom = 70,
+    marginLeft = 70,
   } = options
 
-  interface PluginState {
-    group: string
-  }
+  type PluginState = [group: string, decoration: DecorationSet]
 
   const key = new PluginKey<PluginState>('prosekit-page-render')
 
-  function createDecoration(state: EditorState) {
-    const pluginState = key.getState(state)
-    if (!pluginState) return null
-
-    const { group } = pluginState
-
+  function createDecorationSet(doc: Node, group: string): DecorationSet {
     const decorations: Decoration[] = []
 
-    state.doc.forEach((node, pos, index) => {
+    doc.forEach((node, pos, index) => {
+      const isPageBreak: boolean | undefined = node.type.spec.pageBreak
+
       decorations.push(Decoration.node(pos, pos + node.nodeSize, {
-        'nodeName': 'prosemirror-page-measure',
+        'nodeName': 'pm-page-chunk',
         'data-group': group,
         'data-index': String(index),
-        'data-page-width': String(pageWidth),
-        'data-page-height': String(pageHeight),
-        'data-margin-top': String(marginTop),
-        'data-margin-right': String(marginRight),
-        'data-margin-bottom': String(marginBottom),
-        'data-margin-left': String(marginLeft),
+        'data-w': String(pageWidth),
+        'data-h': String(pageHeight),
+        'data-mt': String(marginTop),
+        'data-mr': String(marginRight),
+        'data-mb': String(marginBottom),
+        'data-ml': String(marginLeft),
+        'data-break': isPageBreak ? 'true' : undefined,
       }))
     })
 
-    return DecorationSet.create(state.doc, decorations)
+    return DecorationSet.create(doc, decorations)
   }
 
-  function refresh(view: EditorView) {
-    const pluginState = key.getState(view.state)
-    if (!pluginState) return
-    const { group } = pluginState
+  registerPageMeasureElement()
 
-    const maybeElement = view.dom.querySelector(`prosemirror-page-measure[data-group="${group}"][data-index="0"]`)
-    if (!maybeElement) return
-
-    type ProseMirrorPageMeasure = InstanceType<Exclude<ReturnType<typeof definePageMeasureElement>, undefined>>
-    const firstElement = maybeElement as ProseMirrorPageMeasure
-    firstElement.updateAll()
-  }
-
-  function delayRefresh(view: EditorView) {
-    setTimeout(() => {
-      refresh(view)
-    }, 0)
-  }
-
-  const plugin = new Plugin<PluginState>({
+  return new Plugin<PluginState>({
     key,
     state: {
-      init: () => {
-        return {
-          group: `prosemirror-page-${getId()}`,
+      init: (_config, state): PluginState => {
+        const group = `page-group-${getId()}`
+        const decoration = createDecorationSet(state.doc, group)
+        return [group, decoration]
+      },
+      apply: (tr, value, oldState, newState): PluginState => {
+        if (!tr.docChanged) return value
+
+        const [group, decoration] = value
+        let needRecreate = oldState.doc.childCount !== newState.doc.childCount
+
+        if (!needRecreate) {
+          const mapped = decoration.map(tr.mapping, tr.doc, {
+            onRemove: () => {
+              needRecreate = true
+            },
+          })
+          if (!needRecreate) {
+            return [group, mapped]
+          }
         }
+
+        return [group, createDecorationSet(newState.doc, group)]
       },
-      apply: (tr, value) => {
-        return value
-      },
-    },
-    view: (view) => {
-      delayRefresh(view)
-      return {
-        update: (view) => {
-          delayRefresh(view)
-        },
-      }
     },
     props: {
       decorations: (state) => {
-        definePageMeasureElement()
-        return createDecoration(state)
+        return key.getState(state)?.[1]
       },
     },
   })
-
-  return plugin
 }

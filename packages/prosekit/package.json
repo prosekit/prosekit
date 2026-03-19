@@ -64,6 +64,7 @@
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
     "./extensions/page": "./src/extensions/page.gen.ts",
+    "./extensions/page/style.css": "./src/extensions/page/style.css",
     "./extensions/paragraph": "./src/extensions/paragraph.gen.ts",
     "./extensions/paste-rule": "./src/extensions/paste-rule.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
@@ -393,6 +394,9 @@
       "./extensions/page": {
         "types": "./dist/prosekit-extensions-page.d.ts",
         "default": "./dist/prosekit-extensions-page.js"
+      },
+      "./extensions/page/style.css": {
+        "default": "./dist/extensions/page/style.css"
       },
       "./extensions/paragraph": {
         "types": "./dist/prosekit-extensions-paragraph.d.ts",
@@ -1153,6 +1157,7 @@
       "prosekit-extensions-mention": "./src/extensions/mention.gen.ts",
       "prosekit-extensions-mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
       "prosekit-extensions-page": "./src/extensions/page.gen.ts",
+      "extensions/page/style": "./src/extensions/page/style.css",
       "prosekit-extensions-paragraph": "./src/extensions/paragraph.gen.ts",
       "prosekit-extensions-paste-rule": "./src/extensions/paste-rule.gen.ts",
       "prosekit-extensions-placeholder": "./src/extensions/placeholder.gen.ts",

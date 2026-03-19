@@ -48,6 +48,7 @@ function generateExtensionsSidebarItems() {
       'list',
       'math',
       'mention',
+      'page',
       'table',
       'doc',
       'paragraph',

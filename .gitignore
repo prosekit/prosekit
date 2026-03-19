@@ -16,6 +16,7 @@ blob-report
 **/playwright/.auth/
 .vitest-attachments
 __screenshots__
+.playwright-cli
 
 .cache
 .DS_Store

@@ -2,9 +2,9 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/page/style.css'
 
+import { useCallback, useMemo, useState } from 'preact/hooks'
 import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
-import { ProseKit } from 'prosekit/react'
-import { useCallback, useMemo, useState } from 'react'
+import { ProseKit } from 'prosekit/preact'
 
 import { sampleContent } from '../../sample/sample-doc-page'
 

@@ -34,6 +34,7 @@
     "./preact/examples/loro": "./src/preact/examples/loro/index.ts",
     "./preact/examples/mark-rule": "./src/preact/examples/mark-rule/index.ts",
     "./preact/examples/minimal": "./src/preact/examples/minimal/index.ts",
+    "./preact/examples/page": "./src/preact/examples/page/index.ts",
     "./preact/examples/placeholder": "./src/preact/examples/placeholder/index.ts",
     "./preact/examples/readonly": "./src/preact/examples/readonly/index.ts",
     "./preact/examples/rtl": "./src/preact/examples/rtl/index.ts",

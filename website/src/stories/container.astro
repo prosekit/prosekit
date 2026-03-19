@@ -1,8 +1,5 @@
-<div data-prosekit-story-container class="w-full h-full min-w-0 min-h-0 max-h-full print:max-h-max print:h-max">
-  <div
-    data-prosekit-story-container-inner
-    class="w-full h-full min-w-0 min-h-0 max-h-full flex flex-col max-w-[900px] ml-auto mr-auto box-border print:max-h-max print:h-max"
-  >
+<div data-prosekit-story-container>
+  <div data-prosekit-story-container-inner>
     <slot />
   </div>
 </div>
@@ -11,21 +8,53 @@
   [data-prosekit-story-container] {
     container-name: prosekit-story-container;
     container-type: inline-size;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+
+    &:has(pm-page-chunk) {
+      height: max-content;
+      max-height: max-content;
+    }
   }
 
   [data-prosekit-story-container-inner] {
-    padding: 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    max-width: 900px;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  @container prosekit-story-container (width >= 30rem) and (width < 50rem) {
-    [data-prosekit-story-container-inner] {
-      padding: 1rem;
-    }
-  }
-
-  @container prosekit-story-container (width >= 900px) {
+  @media screen and (width >= 900px) {
     [data-prosekit-story-container-inner] {
       padding: 4rem;
     }
+  }
+
+  @media screen and (width >= 600px) and (width < 900px) {
+    [data-prosekit-story-container-inner] {
+      padding: 2rem;
+    }
+  }
+
+  @media screen and (width < 600px) {
+    [data-prosekit-story-container-inner] {
+      padding: 0.5rem;
+    }
+  }
+
+  [data-prosekit-story-container-inner]:has(pm-page-chunk) {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
   }
 </style>

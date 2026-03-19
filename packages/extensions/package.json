@@ -58,6 +58,7 @@
     "./mention": "./src/mention/index.ts",
     "./mod-click-prevention": "./src/mod-click-prevention/index.ts",
     "./page": "./src/page/index.ts",
+    "./page/style.css": "./src/page/style.css",
     "./paragraph": "./src/paragraph/index.ts",
     "./paste-rule": "./src/paste-rule/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
@@ -99,6 +100,7 @@
     "prosemirror-math": "^0.2.2",
     "prosemirror-search": "^1.1.0",
     "prosemirror-tables": "^1.8.5",
+    "server-dom-shim": "^1.1.0",
     "shiki": "^3.22.0 || ^4.0.0"
   },
   "peerDependencies": {
@@ -270,6 +272,9 @@
       "./page": {
         "types": "./dist/prosekit-extensions-page.d.ts",
         "default": "./dist/prosekit-extensions-page.js"
+      },
+      "./page/style.css": {
+        "default": "./dist/page/style.css"
       },
       "./paragraph": {
         "types": "./dist/prosekit-extensions-paragraph.d.ts",
@@ -505,6 +510,7 @@
       "prosekit-extensions-mention": "./src/mention/index.ts",
       "prosekit-extensions-mod-click-prevention": "./src/mod-click-prevention/index.ts",
       "prosekit-extensions-page": "./src/page/index.ts",
+      "page/style": "./src/page/style.css",
       "prosekit-extensions-paragraph": "./src/paragraph/index.ts",
       "prosekit-extensions-paste-rule": "./src/paste-rule/index.ts",
       "prosekit-extensions-placeholder": "./src/placeholder/index.ts",

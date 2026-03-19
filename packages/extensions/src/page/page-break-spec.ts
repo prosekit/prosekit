@@ -18,9 +18,16 @@ export function definePageBreakSpec(): PageBreakSpecExtension {
     name: 'pageBreak',
     group: 'block',
     selectable: true,
-    parseDOM: [{ tag: 'div.prosemirror-page-break' }],
+    parseDOM: [{ tag: 'div.prosekit-page-break' }],
     toDOM() {
-      return ['div', { class: 'prosemirror-page-break' }]
+      return ['div', { class: 'prosekit-horizontal-rule prosekit-page-break' }, ['hr']]
     },
+    pageBreak: true,
   })
+}
+
+declare module '@prosekit/pm/model' {
+  interface NodeSpec {
+    pageBreak?: boolean | undefined
+  }
 }

@@ -1,0 +1,40 @@
+.ProseMirror pm-page-chunk {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.ProseMirror pm-page-chunk ~ pm-page-chunk[data-page-head] {
+  margin-top: 50px;
+}
+
+@media print {
+  .ProseMirror pm-page-chunk ~ pm-page-chunk[data-page-head] {
+    margin-top: 0;
+  }
+}
+
+.ProseMirror pm-page-chunk[data-page-head]::before {
+  box-sizing: border-box;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--page-h);
+  outline: 1px solid CanvasText;
+  content: "";
+  pointer-events: none;
+}
+
+@media print {
+  .ProseMirror pm-page-chunk[data-page-head]::before {
+    outline-color: transparent;
+  }
+}
+
+.ProseMirror pm-page-chunk[data-page-tail] {
+  break-after: page;
+}

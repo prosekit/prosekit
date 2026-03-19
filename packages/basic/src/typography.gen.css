@@ -22,7 +22,7 @@
 .ProseMirror {
   display: flex;
   flex-direction: column;
-  line-height: 24px;
+  line-height: 1.5;
 }
 .ProseMirror h1 {
   margin: 36px 0 4px;

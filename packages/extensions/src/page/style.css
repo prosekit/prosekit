@@ -1,6 +1,6 @@
 .ProseMirror pm-page-chunk {
   box-sizing: border-box;
-  display: block;
+  display: flow-root;
   position: relative;
   margin: 0;
   padding: 0;

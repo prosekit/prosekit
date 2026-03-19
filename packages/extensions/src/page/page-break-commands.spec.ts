@@ -1,11 +1,11 @@
 import { union } from '@prosekit/core'
-import { createTestEditor } from '@prosekit/core/test'
 import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc/index.ts'
 import { defineHardBreak } from '../hard-break/index.ts'
 import { defineHorizontalRule } from '../horizontal-rule/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
+import { setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
 
 import { definePageBreak } from './page-break.ts'
@@ -19,10 +19,7 @@ function setup() {
     defineHardBreak(),
     definePageBreak(),
   )
-  const editor = createTestEditor({ extension })
-  const div = document.body.appendChild(document.createElement('div'))
-  editor.mount(div)
-  return { editor, n: editor.nodes }
+  return setupTestFromExtension(extension)
 }
 
 describe('insertPageBreak', () => {

@@ -115,7 +115,20 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
         if (!tr.docChanged) return value
 
         const [group, decoration] = value
+
         let needRecreate = oldState.doc.childCount !== newState.doc.childCount
+
+        if (!needRecreate) {
+          const count = oldState.doc.childCount
+          for (let i = 0; i < count; i++) {
+            const oldNode = oldState.doc.child(i)
+            const newNode = newState.doc.child(i)
+            if (oldNode.type !== newNode.type) {
+              needRecreate = true
+              break
+            }
+          }
+        }
 
         if (!needRecreate) {
           const mapped = decoration.map(tr.mapping, tr.doc, {

@@ -83,5 +83,5 @@
   "CSS_TOOLTIP_TRIGGER": "block",
   "CSS_ZOOM_BUTTON": "size-6 flex justify-center items-center rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30",
   "CSS_ZOOM_LABEL": "w-12 text-center tabular-nums",
-  "CSS_ZOOM_SLIDER": "absolute top-4 left-4 flex items-center justify-center gap-1 border-gray-300 dark:border-gray-600 border p-2 text-sm text-gray-500 select-none print:hidden z-100 bg-gray-50 rounded"
+  "CSS_ZOOM_SLIDER": "absolute top-4 left-4 flex items-center justify-center gap-1 border-gray-300 dark:border-gray-600 border p-2 text-sm text-gray-500 select-none print:hidden z-50 bg-gray-50 rounded"
 }

@@ -20,7 +20,7 @@ class PageChunkElement extends HTMLElement {
     'data-mb',
     'data-ml',
 
-    // Only trigger updates, not need to store this attribute as a property
+    // Only trigger updates; no need to store this attribute as a property
     'data-total',
   ]
 

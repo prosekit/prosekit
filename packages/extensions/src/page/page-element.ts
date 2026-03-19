@@ -19,6 +19,9 @@ class PageChunkElement extends HTMLElement {
     'data-mr',
     'data-mb',
     'data-ml',
+
+    // Only trigger updates, not need to store this attribute as a property
+    'data-total',
   ]
 
   // Data attributes set by external code
@@ -83,10 +86,10 @@ class PageChunkElement extends HTMLElement {
 
   disconnectedCallback() {
     unobserveElement(this)
-    this.requestUpdate()
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(_name: string, oldValue: unknown, newValue: unknown) {
+    if (oldValue === newValue) return
     this.#parseDataAttributes()
     this.requestUpdate()
   }

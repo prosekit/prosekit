@@ -83,6 +83,7 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
 
   function createDecorationSet(doc: Node, group: string): DecorationSet {
     const decorations: Decoration[] = []
+    const totalCount = doc.childCount
 
     doc.forEach((node, pos, index) => {
       const isPageBreak: boolean | undefined = node.type.spec.pageBreak
@@ -98,6 +99,9 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
         'data-mr': String(marginRight),
         'data-mb': String(marginBottom),
         'data-ml': String(marginLeft),
+
+        // Trigger the first chunk to update when a chunk is removed.
+        'data-total': index === 0 ? String(totalCount) : undefined,
       }))
     })
 

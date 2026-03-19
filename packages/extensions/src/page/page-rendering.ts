@@ -7,11 +7,9 @@ import { Decoration, DecorationSet } from '@prosekit/pm/view'
 import { registerPageMeasureElement } from './page-element.ts'
 
 /**
- * @internal
+ * @public
  */
-export type PageRenderingExtension = Extension
-
-interface PageRenderingOptions {
+export interface PageRenderingOptions {
   /**
    * The width of the page in px.
    *
@@ -63,6 +61,11 @@ export function definePageRendering(options: PageRenderingOptions = {}): PageRen
     createPageRenderingPlugin(options),
   )
 }
+
+/**
+ * @internal
+ */
+export type PageRenderingExtension = Extension
 
 function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
   const {

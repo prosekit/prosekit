@@ -45,7 +45,7 @@ class PageChunkElement extends HTMLElement {
     super()
     this.#group = ''
     this.#index = -1
-    this.#forceNextBreak = false 
+    this.#forceNextBreak = false
     this.#pageWidth = 0
     this.#pageHeight = 0
     this.#pageMarginTop = 0
@@ -225,7 +225,7 @@ class PageChunkElement extends HTMLElement {
       const h = element.#contentBoxHeight
       const isHead = i === 0 || currentPageHeight + h > maxContentHeight || forceNextBreak
 
-      forceNextBreak = element.#forceNextBreak 
+      forceNextBreak = element.#forceNextBreak
 
       if (isHead && i > 0) {
         const prev = elements[i - 1]

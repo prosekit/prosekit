@@ -78,7 +78,7 @@
   hidden: true
   description: Notion-style editor with block-based editing.
 - name: page
-  frameworks: [react, preact]
+  frameworks: [react, preact, svelte]
   hidden: true
 - name: placeholder
   frameworks: [react, preact, vue, svelte, solid]

@@ -2,7 +2,7 @@ import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 import { page, userEvent } from 'vitest/browser'
 
-import { moveSelection, testStory, testStoryConsistency, waitForEditor } from './helpers'
+import { moveSelectionToEnd, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('page', { shouldWaitForImageToLoad: true })
 
@@ -30,7 +30,7 @@ testStory('page', () => {
     `)
   })
 
-  it('should have three pages after deleting a page break', async () => {
+  it('should update layout after deleting a page break', async () => {
     await waitForEditor()
     await expectPageCountToBe(4)
     await expectChunkCountToBe(13)
@@ -47,8 +47,6 @@ testStory('page', () => {
     await expectPageCountToBe(3)
     await expectChunkCountToBe(12)
 
-    // TODO: BUG: Should be 3 pages, but collapses to 1 page
-    // await expectPageCountToBe(3)
     expect(getPageLayout()).toMatchInlineSnapshot(`
       "
         0 | head      | h1: Page Layout Demo
@@ -72,15 +70,13 @@ testStory('page', () => {
     await expectPageCountToBe(4)
     await expectChunkCountToBe(13)
 
-    // Move cursor to the end of the last paragraph
+    // Move cursor to the end of the document
     const lastParagraph = page.getByText(/This is a very long paragraph/)
     await expect.element(lastParagraph).toBeVisible()
     await userEvent.click(lastParagraph.element())
-    for (let i = 0; i < 20; i++) {
-      await moveSelection('forward', 1, 'line')
-    }
+    await moveSelectionToEnd()
 
-    // Press Enter multiple times to overflow the last page
+    // Press Enter to create a new paragraph
     await keyboard.press('Enter')
 
     await expectPageCountToBe(4)

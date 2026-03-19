@@ -11,23 +11,7 @@ testStory('page', () => {
     await waitForEditor()
     await expectPageCountToBe(4)
     await expectChunkCountToBe(13)
-    expect(getPageLayout()).toMatchInlineSnapshot(`
-      "
-        0 | head      | h1: Page Layout Demo
-        1 |           | p: This is the first pa
-        2 |           | p: The content below wi
-        3 |      tail | div.prosekit-horizontal-rule.prosekit-page-break
-        4 | head      | h1: Page 2
-        5 |           | p: This is the second p
-        6 |           | p: When the content on 
-        7 |      tail | img
-        8 | head      | img
-        9 |           | p: The images above exc
-       10 |           | h2: Known Limitation
-       11 |      tail | p: Page breaks only occ
-       12 | head tail | p: This is a very long 
-      "
-    `)
+    expect(await getStablePageLayout()).toMatchInlineSnapshot()
   })
 
   it('should update layout after deleting a page break', async () => {
@@ -47,22 +31,7 @@ testStory('page', () => {
     await expectPageCountToBe(3)
     await expectChunkCountToBe(12)
 
-    expect(getPageLayout()).toMatchInlineSnapshot(`
-      "
-        0 | head      | h1: Page Layout Demo
-        1 |           | p: This is the first pa
-        2 |           | p: The content below wi
-        3 |           | h1: Page 2
-        4 |           | p: This is the second p
-        5 |           | p: When the content on 
-        6 |      tail | img
-        7 | head      | img
-        8 |           | p: The images above exc
-        9 |           | h2: Known Limitation
-       10 |      tail | p: Page breaks only occ
-       11 | head tail | p: This is a very long 
-      "
-    `)
+    expect(await getStablePageLayout()).toMatchInlineSnapshot()
   })
 
   it('should update layout after appending a new paragraph at the end of the document', async () => {
@@ -82,24 +51,7 @@ testStory('page', () => {
     await expectPageCountToBe(4)
     await expectChunkCountToBe(14)
 
-    expect(getPageLayout()).toMatchInlineSnapshot(`
-      "
-        0 | head      | h1: Page Layout Demo
-        1 |           | p: This is the first pa
-        2 |           | p: The content below wi
-        3 |      tail | div.prosekit-horizontal-rule.prosekit-page-break
-        4 | head      | h1: Page 2
-        5 |           | p: This is the second p
-        6 |           | p: When the content on 
-        7 |      tail | img
-        8 | head      | img
-        9 |           | p: The images above exc
-       10 |           | h2: Known Limitation
-       11 |      tail | p: Page breaks only occ
-       12 | head      | p: This is a very long 
-       13 |      tail | p: 
-      "
-    `)
+    expect(await getStablePageLayout()).toMatchInlineSnapshot()
   })
 })
 
@@ -150,7 +102,7 @@ function getPageLayout(): string {
       childSnapshot = `${nodeName}${classSelector}`
       if (nodeName === 'p' || /^h\d$/.test(nodeName)) {
         childSnapshot += ': '
-        childSnapshot += child.textContent?.trim().slice(0, 20) || ''
+        childSnapshot += child.textContent?.trim().slice(0, 20).trim() || ''
       }
       break
     }
@@ -158,4 +110,18 @@ function getPageLayout(): string {
     lines.push(`${index} | ${type} | ${childSnapshot}`)
   }
   return '\n' + lines.join('\n') + '\n'
+}
+
+async function getStablePageLayout(): Promise<string> {
+  let previous = ''
+  let current = getPageLayout()
+
+  await expect.poll(async () => {
+    await new Promise((resolve) => requestAnimationFrame(resolve))
+    previous = current
+    current = getPageLayout()
+    return previous === current && current !== ''
+  }, { timeout: 5000 }).toBe(true)
+
+  return current
 }

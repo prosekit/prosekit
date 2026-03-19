@@ -1,4 +1,3 @@
-import { sleep } from '@ocavue/utils'
 import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 import { page, userEvent } from 'vitest/browser'
@@ -11,6 +10,7 @@ testStory('page', () => {
   it('should render four pages by default ', async () => {
     await waitForEditor()
     await expectPageCountToBe(4)
+    await expectChunkCountToBe(13)
     expect(getPageLayout()).toMatchInlineSnapshot(`
       "
         0 | head      | h1: Page Layout Demo
@@ -33,6 +33,7 @@ testStory('page', () => {
   it('should have three pages after deleting a page break', async () => {
     await waitForEditor()
     await expectPageCountToBe(4)
+    await expectChunkCountToBe(13)
 
     // Click on the page break node to select it
     const pageBreak = page.locate('.prosekit-page-break')
@@ -43,11 +44,8 @@ testStory('page', () => {
     await keyboard.press('Backspace')
     await expect.element(pageBreak).not.toBeInTheDocument()
 
-    // Only for debug
-    // TODO: remove me
-    for (let i = 0; i < 20; i++) {
-      await sleep(50)
-    }
+    await expectPageCountToBe(3)
+    await expectChunkCountToBe(12)
 
     // TODO: BUG: Should be 3 pages, but collapses to 1 page
     // await expectPageCountToBe(3)
@@ -59,12 +57,12 @@ testStory('page', () => {
         3 |           | h1: Page 2
         4 |           | p: This is the second p
         5 |           | p: When the content on 
-        6 |           | img
-        7 |           | img
+        6 |      tail | img
+        7 | head      | img
         8 |           | p: The images above exc
         9 |           | h2: Known Limitation
-       10 |           | p: Page breaks only occ
-       11 |           | p: This is a very long 
+       10 |      tail | p: Page breaks only occ
+       11 | head tail | p: This is a very long 
       "
     `)
   })
@@ -72,6 +70,7 @@ testStory('page', () => {
   it('should update layout after appending a new paragraph at the end of the document', async () => {
     await waitForEditor()
     await expectPageCountToBe(4)
+    await expectChunkCountToBe(13)
 
     // Move cursor to the end of the last paragraph
     const lastParagraph = page.getByText(/This is a very long paragraph/)
@@ -84,14 +83,9 @@ testStory('page', () => {
     // Press Enter multiple times to overflow the last page
     await keyboard.press('Enter')
 
-    // Only for debug
-    // TODO: remove me
-    for (let i = 0; i < 20; i++) {
-      await sleep(50)
-    }
+    await expectPageCountToBe(4)
+    await expectChunkCountToBe(14)
 
-    // TODO: BUG: Should be 3 pages, but collapses to 1 page
-    // await expectPageCountToBe(3)
     expect(getPageLayout()).toMatchInlineSnapshot(`
       "
         0 | head      | h1: Page Layout Demo
@@ -106,20 +100,29 @@ testStory('page', () => {
         9 |           | p: The images above exc
        10 |           | h2: Known Limitation
        11 |      tail | p: Page breaks only occ
-       12 | head tail | p: This is a very long 
-       13 |           | p: 
+       12 | head      | p: This is a very long 
+       13 |      tail | p: 
       "
     `)
   })
 })
 
+function getPageCount(): number {
+  const headChunk = document.querySelectorAll('pm-page-chunk[data-page-head]')
+  return headChunk.length
+}
+
 function expectPageCountToBe(count: number): Promise<void> {
   return expect.poll(getPageCount, { timeout: 5000 }).toBe(count)
 }
 
-function getPageCount(): number {
-  const headChunk = document.querySelectorAll('pm-page-chunk[data-page-head]')
-  return headChunk.length
+function getChunkCount(): number {
+  const chunks = document.querySelectorAll('pm-page-chunk')
+  return chunks.length
+}
+
+function expectChunkCountToBe(count: number): Promise<void> {
+  return expect.poll(getChunkCount, { timeout: 5000 }).toBe(count)
 }
 
 function getPageLayout(): string {

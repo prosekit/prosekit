@@ -13,11 +13,13 @@ export type PageBreakCommandsExtension = Extension<{
 
 const insertPageBreakCommand: Command = (state, dispatch): boolean => {
   if (!dispatch) return true
+
   const { schema, tr } = state
   const type = getNodeType(schema, 'pageBreak')
   const node = type.createChecked()
   const pos = tr.selection.anchor
-  tr.replaceRange(pos, pos, new Slice(Fragment.from(node), 0, 0))
+  const slice = new Slice(Fragment.from(node), 0, 0)
+  tr.replaceRange(pos, pos, slice).scrollIntoView()
   dispatch(tr)
   return true
 }

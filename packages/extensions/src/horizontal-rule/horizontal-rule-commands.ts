@@ -15,7 +15,8 @@ const insertHorizontalRuleCommand: Command = (state, dispatch): boolean => {
   const type = getNodeType(schema, 'horizontalRule')
   const node = type.createChecked()
   const pos = tr.selection.anchor
-  tr.replaceRange(pos, pos, new Slice(Fragment.from(node), 0, 0))
+  const slice = new Slice(Fragment.from(node), 0, 0)
+  tr.replaceRange(pos, pos, slice).scrollIntoView()
   dispatch(tr)
   return true
 }

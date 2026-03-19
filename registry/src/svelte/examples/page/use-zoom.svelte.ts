@@ -20,8 +20,8 @@ export function useZoom() {
     zoom = getZoomOut(zoom) ?? zoom
   }
 
-  const canZoomIn = $derived(getZoomIn(zoom) != undefined)
-  const canZoomOut = $derived(getZoomOut(zoom) != undefined)
+  const canZoomIn = $derived(!!getZoomIn(zoom))
+  const canZoomOut = $derived(!!getZoomOut(zoom))
 
   return {
     get zoom() {

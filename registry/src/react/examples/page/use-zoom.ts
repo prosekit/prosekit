@@ -22,8 +22,8 @@ export function useZoom() {
     setZoom((z) => getZoomOut(z) ?? z)
   }, [])
 
-  const canZoomIn = getZoomIn(zoom) != undefined
-  const canZoomOut = getZoomOut(zoom) != undefined
+  const canZoomIn = !!getZoomIn(zoom)
+  const canZoomOut = !!getZoomOut(zoom)
 
   return { zoom, zoomIn, zoomOut, canZoomIn, canZoomOut }
 }

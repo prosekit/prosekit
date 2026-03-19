@@ -88,7 +88,7 @@ class PageChunkElement extends HTMLElement {
     unobserveElement(this)
   }
 
-  attributeChangedCallback(_name: string, oldValue: unknown, newValue: unknown) {
+  attributeChangedCallback(_name: string, oldValue: string | null, newValue: string | null) {
     if (oldValue === newValue) return
     this.#parseDataAttributes()
     this.requestUpdate()

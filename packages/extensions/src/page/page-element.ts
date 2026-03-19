@@ -83,7 +83,7 @@ class PageChunkElement extends HTMLElement {
 
   disconnectedCallback() {
     unobserveElement(this)
-      this.requestUpdate()
+    this.requestUpdate()
   }
 
   attributeChangedCallback() {

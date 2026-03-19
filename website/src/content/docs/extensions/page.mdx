@@ -1,0 +1,100 @@
+---
+title: Page
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution">
+This is an **experimental feature** and the API may change in future releases. To try it out, install the preview package:
+
+```sh
+npm i https://pkg.pr.new/prosekit@1499
+```
+
+</Aside>
+
+The page extension renders the editor content in a paginated layout, similar to traditional word processors like Microsoft Word or Google Docs. Each page has a fixed width, height, and margins. When the content exceeds the available height on a page, it automatically flows to the next page.
+
+<Demo story="page" />
+
+## Usage
+
+### Page Rendering
+
+Use `definePageRendering` to enable the paginated layout. You also need to import the page stylesheet.
+
+```ts twoslash
+import 'prosekit/extensions/page/style.css'
+import { definePageRendering } from 'prosekit/extensions/page'
+
+const extension = definePageRendering()
+```
+
+### Page Options
+
+You can customize the page dimensions and margins:
+
+```ts twoslash
+import { definePageRendering } from 'prosekit/extensions/page'
+
+const extension = definePageRendering({
+  pageWidth: 794, // A4 width at 96 DPI (default)
+  pageHeight: 1123, // A4 height at 96 DPI (default)
+  marginTop: 70,
+  marginRight: 70,
+  marginBottom: 70,
+  marginLeft: 70,
+})
+```
+
+### Page Break
+
+Use `definePageBreak` to add support for manual page breaks. This adds a `pageBreak` node type to the schema and registers a keyboard shortcut.
+
+```ts twoslash
+import { definePageBreak, definePageRendering } from 'prosekit/extensions/page'
+import { union } from 'prosekit/core'
+
+const extension = union(
+  definePageRendering(),
+  definePageBreak(),
+)
+```
+
+## Commands
+
+### insertPageBreak
+
+Insert a manual page break at the current cursor position. The page break forces content after it onto a new page regardless of remaining space.
+
+```ts twoslash
+import { createEditor, union } from 'prosekit/core'
+import { definePageBreak, definePageRendering } from 'prosekit/extensions/page'
+
+const extension = union(definePageRendering(), definePageBreak())
+const editor = createEditor({ extension })
+// ---cut---
+editor.commands.insertPageBreak()
+```
+
+## Keyboard Shortcuts
+
+| Non-Apple                     | Apple                            | Description         |
+| ----------------------------- | -------------------------------- | ------------------- |
+| <Keyboard key="Ctrl+Enter" /> | <Keyboard key="Command+Enter" /> | Insert a page break |
+
+## Printing
+
+The page extension supports printing via the browser's print dialog. The print output matches the on-screen page layout — each page in the editor becomes a page in the printed document.
+
+> Try it out by opening [this link](/playground/-/react/page/) and pressing <Keyboard key="Ctrl+P" /> (Windows/Linux) or <Keyboard key="Command+P" /> (Mac).
+
+## Known Limitations
+
+- **Block-level pagination only.** Page breaks can only occur between top-level block elements (paragraphs, headings, images, etc.). A single block element that is taller than the available page height will overflow rather than split across pages. For example, a very long paragraph or a large table cannot be split at a line break.
+
+## API Reference
+
+- [prosekit/extensions/page](/references/extensions/page)

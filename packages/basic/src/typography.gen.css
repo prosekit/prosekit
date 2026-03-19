@@ -137,6 +137,35 @@
 .ProseMirror .prosekit-horizontal-rule hr {
   margin: 0;
 }
+.ProseMirror .prosekit-horizontal-rule.prosekit-page-break {
+  position: relative;
+}
+.ProseMirror .prosekit-horizontal-rule.prosekit-page-break hr {
+  border-style: dashed;
+  font-size: 12px;
+  mask-image: linear-gradient(to right, black, black calc(50% - 6ch), transparent calc(50% - 6ch), transparent calc(50% + 6ch), black calc(50% + 6ch), black);
+}
+.ProseMirror .prosekit-horizontal-rule.prosekit-page-break::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "Page break";
+  color: var(--prosekit-border-color);
+  font-size: 12px;
+  pointer-events: none;
+}
+.ProseMirror .prosekit-horizontal-rule.prosekit-page-break.ProseMirror-selectednode hr {
+  border-color: var(--prosekit-outline-color);
+}
+.ProseMirror .prosekit-horizontal-rule.prosekit-page-break.ProseMirror-selectednode::after {
+  color: var(--prosekit-outline-color);
+}
+@media print {
+  .ProseMirror .prosekit-horizontal-rule.prosekit-page-break {
+    opacity: 0;
+  }
+}
 .ProseMirror .tableWrapper {
   margin-top: 0.5em;
   margin-bottom: 1em;

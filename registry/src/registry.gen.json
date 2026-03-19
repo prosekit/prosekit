@@ -1502,6 +1502,57 @@
       }
     },
     {
+      "name": "react-example-page",
+      "title": "react-example-page",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-page.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/page/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/page/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/page/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/page/use-zoom.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/use-zoom.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "page",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/page/editor.tsx",
+          "registry/src/react/examples/page/extension.ts",
+          "registry/src/react/examples/page/index.ts",
+          "registry/src/react/examples/page/use-zoom.ts",
+          "registry/src/react/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-page"
+        ]
+      }
+    },
+    {
       "name": "react-example-placeholder",
       "title": "react-example-placeholder",
       "type": "registry:block",
@@ -3212,6 +3263,33 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-notion.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-page",
+      "title": "react-sample-sample-doc-page",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-page.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-page.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-page.ts"
         ],
         "internalDependencies": []
       }
@@ -5579,6 +5657,57 @@
       }
     },
     {
+      "name": "preact-example-page",
+      "title": "preact-example-page",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-page.json"
+      ],
+      "dependencies": [
+        "preact",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/page/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/page/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/page/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/page/use-zoom.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/use-zoom.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "page",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/page/editor.tsx",
+          "registry/src/preact/examples/page/extension.ts",
+          "registry/src/preact/examples/page/index.ts",
+          "registry/src/preact/examples/page/use-zoom.ts",
+          "registry/src/preact/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-page"
+        ]
+      }
+    },
+    {
       "name": "preact-example-placeholder",
       "title": "preact-example-placeholder",
       "type": "registry:block",
@@ -7204,6 +7333,33 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-sample-doc-page",
+      "title": "preact-sample-sample-doc-page",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-page.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-page.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-page.ts"
         ],
         "internalDependencies": []
       }

@@ -1,25 +1,27 @@
 const ZOOM_STEPS = [25, 50, 75, 100, 125, 150, 200]
 const DEFAULT_ZOOM = 50
 
+function getZoomIn(zoom: number) {
+  return ZOOM_STEPS.filter(z => z > zoom).sort().at(0) 
+}
+
+function getZoomOut(zoom: number) {
+  return ZOOM_STEPS.filter(z => z < zoom).sort().at(-1) 
+}
+
 export function useZoom() {
   let zoom = $state(DEFAULT_ZOOM)
 
   function zoomIn() {
-    const next = ZOOM_STEPS.find((s) => s > zoom)
-    if (next != null) {
-      zoom = next
-    }
+    zoom = getZoomIn(zoom) ?? zoom
   }
 
   function zoomOut() {
-    const prev = [...ZOOM_STEPS].reverse().find((s) => s < zoom)
-    if (prev != null) {
-      zoom = prev
-    }
+   zoom = getZoomOut(zoom) ?? zoom
   }
 
-  const canZoomIn = $derived(zoom < ZOOM_STEPS[ZOOM_STEPS.length - 1])
-  const canZoomOut = $derived(zoom > ZOOM_STEPS[0])
+  const canZoomIn = $derived(getZoomIn(zoom) != undefined)
+  const canZoomOut = $derived(getZoomOut(zoom) != undefined)
 
   return {
     get zoom() { return zoom },

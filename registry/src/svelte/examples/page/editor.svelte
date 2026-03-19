@@ -9,7 +9,7 @@ import { ProseKit } from 'prosekit/svelte'
 import { sampleContent } from '../../sample/sample-doc-page'
 
 import { defineExtension } from './extension'
-import { useZoom } from './use-zoom.svelte'
+import { useZoom } from './use-zoom.svelte.js'
 
 const props: {
   initialContent?: NodeJSON
@@ -32,7 +32,9 @@ const { zoom, zoomIn, zoomOut, canZoomIn, canZoomOut } = useZoom()
     <div
       {@attach editor.mount}
       class={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
-      style="transform: scale({zoom / 100}); transform-origin: top; min-height: {100 / (zoom / 100)}%;"
+      style:transform="scale({zoom / 100})"
+      style:transform-origin="top"
+      style:min-height="{100 / (zoom / 100)}%"
     >
     </div>
   </div>

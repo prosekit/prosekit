@@ -27,6 +27,7 @@ export const loaders = {
   'loro': () => import('./examples/loro').then((m) => ({ default: m.ExampleEditor })),
   'mark-rule': () => import('./examples/mark-rule').then((m) => ({ default: m.ExampleEditor })),
   'minimal': () => import('./examples/minimal').then((m) => ({ default: m.ExampleEditor })),
+  'page': () => import('./examples/page').then((m) => ({ default: m.ExampleEditor })),
   'placeholder': () => import('./examples/placeholder').then((m) => ({ default: m.ExampleEditor })),
   'readonly': () => import('./examples/readonly').then((m) => ({ default: m.ExampleEditor })),
   'rtl': () => import('./examples/rtl').then((m) => ({ default: m.ExampleEditor })),

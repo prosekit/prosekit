@@ -325,12 +325,11 @@ const cloneElementTransforms: ElementTransform[] = [
     apply: (element) => element.setAttribute('value', 'SOME_NANOID_WITH_LENGTH_21'),
   },
 
-
-  // Replace data-group attributes 
+  // Replace data-group attributes
   {
     matches: (element) => {
-      const value = element.tagName.toLowerCase() === "pm-page-chunk" &&  element.getAttribute('data-group')
-      return !!value 
+      const value = element.tagName.toLowerCase() === 'pm-page-chunk' && element.getAttribute('data-group')
+      return !!value
     },
     apply: (element) => element.setAttribute('data-group', 'SOME_GROUP'),
   },

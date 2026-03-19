@@ -12,6 +12,7 @@ class PageChunkElement extends HTMLElement {
   static observedAttributes = [
     'data-group',
     'data-index',
+    'data-break',
     'data-w',
     'data-h',
     'data-mt',
@@ -23,6 +24,7 @@ class PageChunkElement extends HTMLElement {
   // Data attributes set by external code
   #group: string
   #index: number
+  #forceNextBreak: boolean
   #pageWidth: number
   #pageHeight: number
   #pageMarginTop: number
@@ -43,6 +45,7 @@ class PageChunkElement extends HTMLElement {
     super()
     this.#group = ''
     this.#index = -1
+    this.#forceNextBreak = false 
     this.#pageWidth = 0
     this.#pageHeight = 0
     this.#pageMarginTop = 0
@@ -92,6 +95,7 @@ class PageChunkElement extends HTMLElement {
   #parseDataAttributes() {
     this.#group = this.getAttribute('data-group') || ''
     this.#index = Number.parseInt(this.getAttribute('data-index') || '-1', 10)
+    this.#forceNextBreak = this.hasAttribute('data-break')
 
     this.#pageWidth = this.#parseFloatAttribute('data-w')
     this.#pageHeight = this.#parseFloatAttribute('data-h')
@@ -221,7 +225,7 @@ class PageChunkElement extends HTMLElement {
       const h = element.#contentBoxHeight
       const isHead = i === 0 || currentPageHeight + h > maxContentHeight || forceNextBreak
 
-      forceNextBreak = element.hasAttribute('data-break')
+      forceNextBreak = element.#forceNextBreak 
 
       if (isHead && i > 0) {
         const prev = elements[i - 1]

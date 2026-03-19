@@ -88,13 +88,13 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
         'nodeName': 'pm-page-chunk',
         'data-group': group,
         'data-index': String(index),
+        'data-break': isPageBreak ? 'true' : undefined,
         'data-w': String(pageWidth),
         'data-h': String(pageHeight),
         'data-mt': String(marginTop),
         'data-mr': String(marginRight),
         'data-mb': String(marginBottom),
         'data-ml': String(marginLeft),
-        'data-break': isPageBreak ? 'true' : undefined,
       }))
     })
 

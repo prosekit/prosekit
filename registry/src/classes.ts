@@ -205,12 +205,12 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  // `1.5em` is the same as the `line-height` for paragraphs in typography.css
-  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
+  // h-6 is the same as the line height of the default paragraph (1.5 * 16px = 24px = var(--spacing) * 6 = 1.5rem = 24px)
+  'flex items-center box-border justify-center h-6 w-6 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
 )
 
 export const CSS_BLOCK_HANDLE_DRAG = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
+  'flex items-center box-border justify-center h-6 w-5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(

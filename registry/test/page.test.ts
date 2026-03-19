@@ -7,7 +7,7 @@ import { moveSelectionToEnd, testStory, testStoryConsistency, waitForEditor } fr
 testStoryConsistency('page', { shouldWaitForImageToLoad: true })
 
 testStory('page', () => {
-  it('should render four pages by default ', async () => {
+  it('should render four pages by default', async () => {
     await waitForEditor()
     await expectPageCountToBe(4)
     await expectChunkCountToBe(13)

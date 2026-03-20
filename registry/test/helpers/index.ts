@@ -12,6 +12,7 @@ export {
   getSelectedHtml,
   getSelectedText,
   moveSelection,
+  moveSelectionToEnd,
   moveSelectionToStart,
   selectText,
 } from './selection'

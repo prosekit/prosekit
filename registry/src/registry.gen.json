@@ -5657,57 +5657,6 @@
       }
     },
     {
-      "name": "preact-example-page",
-      "title": "preact-example-page",
-      "type": "registry:block",
-      "description": "",
-      "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-page.json"
-      ],
-      "dependencies": [
-        "preact",
-        "prosekit"
-      ],
-      "files": [
-        {
-          "path": "registry/src/preact/examples/page/editor.tsx",
-          "type": "registry:component",
-          "target": "components/editor/examples/page/editor.tsx"
-        },
-        {
-          "path": "registry/src/preact/examples/page/extension.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/page/extension.ts"
-        },
-        {
-          "path": "registry/src/preact/examples/page/index.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/page/index.ts"
-        },
-        {
-          "path": "registry/src/preact/examples/page/use-zoom.ts",
-          "type": "registry:component",
-          "target": "components/editor/examples/page/use-zoom.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "hidden": true,
-        "story": "page",
-        "framework": "preact",
-        "accumulatedFiles": [
-          "registry/src/preact/examples/page/editor.tsx",
-          "registry/src/preact/examples/page/extension.ts",
-          "registry/src/preact/examples/page/index.ts",
-          "registry/src/preact/examples/page/use-zoom.ts",
-          "registry/src/preact/sample/sample-doc-page.ts"
-        ],
-        "internalDependencies": [
-          "preact-sample-sample-doc-page"
-        ]
-      }
-    },
-    {
       "name": "preact-example-placeholder",
       "title": "preact-example-placeholder",
       "type": "registry:block",
@@ -7333,33 +7282,6 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts"
-        ],
-        "internalDependencies": []
-      }
-    },
-    {
-      "name": "preact-sample-sample-doc-page",
-      "title": "preact-sample-sample-doc-page",
-      "type": "registry:component",
-      "description": "",
-      "registryDependencies": [],
-      "dependencies": [
-        "prosekit"
-      ],
-      "files": [
-        {
-          "path": "registry/src/preact/sample/sample-doc-page.ts",
-          "type": "registry:component",
-          "target": "components/editor/sample/sample-doc-page.ts"
-        }
-      ],
-      "meta": {
-        "hasIcons": false,
-        "hidden": false,
-        "story": "",
-        "framework": "preact",
-        "accumulatedFiles": [
-          "registry/src/preact/sample/sample-doc-page.ts"
         ],
         "internalDependencies": []
       }
@@ -14040,6 +13962,56 @@
       }
     },
     {
+      "name": "svelte-example-page",
+      "title": "svelte-example-page",
+      "type": "registry:block",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-page.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/page/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/use-zoom.svelte.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/use-zoom.svelte.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": true,
+        "story": "page",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/page/editor.svelte",
+          "registry/src/svelte/examples/page/extension.ts",
+          "registry/src/svelte/examples/page/index.ts",
+          "registry/src/svelte/examples/page/use-zoom.svelte.ts",
+          "registry/src/svelte/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-page"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-placeholder",
       "title": "svelte-example-placeholder",
       "type": "registry:block",
@@ -15594,6 +15566,33 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-list-custom-checkbox.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-page",
+      "title": "svelte-sample-sample-doc-page",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-page.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-page.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-page.ts"
         ],
         "internalDependencies": []
       }

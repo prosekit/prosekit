@@ -19,6 +19,9 @@ class PageChunkElement extends HTMLElement {
     'data-mr',
     'data-mb',
     'data-ml',
+
+    // Only trigger updates; no need to store this attribute as a property
+    'data-total',
   ]
 
   // Data attributes set by external code
@@ -78,16 +81,15 @@ class PageChunkElement extends HTMLElement {
 
     observeElement(this)
 
-    if (this.#index === 0) {
-      this.requestUpdate()
-    }
+    this.requestUpdate()
   }
 
   disconnectedCallback() {
     unobserveElement(this)
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(_name: string, oldValue: string | null, newValue: string | null) {
+    if (oldValue === newValue) return
     this.#parseDataAttributes()
     this.requestUpdate()
   }
@@ -162,17 +164,45 @@ class PageChunkElement extends HTMLElement {
     this.requestUpdate()
   }
 
+  /**
+   * Schedules a batched page layout recalculation.
+   *
+   * Any chunk can call this method, but the actual layout work (#updateAll)
+   * always runs on the head chunk (index 0), because it needs to iterate
+   * over every chunk in order to compute page breaks.
+   *
+   * Two nested microtasks are used to batch updates:
+   *
+   *   Microtask 1 – Delegation: non-head chunks forward the request to the
+   *   head chunk, so multiple chunks changing in the same tick only trigger
+   *   one layout pass.
+   *
+   *   Microtask 2 – Execution: the head chunk defers #updateAll to a second
+   *   microtask so that any other attribute / resize changes that were
+   *   queued in the same tick (and forwarded during microtask 1) are
+   *   already reflected before the layout is recalculated.
+   *
+   * The #updateRequested flag acts as a deduplication guard so that
+   * rapid successive calls (e.g. multiple attributes changing at once)
+   * result in at most one scheduled pass per chunk.
+   */
   requestUpdate() {
-    if (this.#index !== 0) {
-      findFirstChunk(this, this.#group)?.requestUpdate()
-      return
-    }
     if (this.#updateRequested) {
       return
     }
+
     this.#updateRequested = true
     queueMicrotask(() => {
-      this.#updateAll()
+      if (this.#index !== 0) {
+        this.#updateRequested = false
+        const head = findFirstChunk(this, this.#group)
+        head?.requestUpdate()
+        return
+      }
+      queueMicrotask(() => {
+        this.#updateRequested = false
+        this.#updateAll()
+      })
     })
   }
 
@@ -205,9 +235,9 @@ class PageChunkElement extends HTMLElement {
   }
 
   #updateAll() {
-    this.#updateRequested = false
-
-    if (!this.isConnected) return
+    if (!this.isConnected) {
+      return
+    }
 
     const elements = findAllChunks(this, this.#group)
     const count = elements.length

@@ -49,10 +49,10 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@types/jsdom": "^28.0.0",
+    "@types/jsdom": "^28.0.1",
     "happy-dom": "^20.8.4",
     "jsdom": "^29.0.0",
-    "sass": "^1.97.2",
+    "sass": "^1.98.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

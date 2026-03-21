@@ -22,7 +22,6 @@
 
 .ProseMirror pm-page-chunk[data-page-head]::before {
   box-sizing: border-box;
-  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;

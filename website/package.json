@@ -43,7 +43,7 @@
     "astrobook": "^0.12.4",
     "babel-plugin-react-compiler": "^1.0.0",
     "clsx": "^2.1.1",
-    "jsdom": "^29.0.0",
+    "jsdom": "^29.0.1",
     "just-memoize": "^2.2.0",
     "loro-crdt": "^1.10.7",
     "loro-prosemirror": "^0.4.3",

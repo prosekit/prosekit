@@ -30,7 +30,7 @@ let zoom = $state(50)
       data-editor-zoom="true"
       style:--zoom={zoom / 100}
       {@attach editor.mount}
-      class={clsx('ProseMirror box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
+      class={clsx('ProseMirror', 'box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
     >
     </div>
   </div>

@@ -3,10 +3,13 @@ import { useExtension } from 'prosekit/react'
 import { useEffect, useId, useMemo, useState } from 'react'
 
 // Paper sizes in pixels at 96 DPI
-const A4_SHORT = 794
-const A4_LONG = 1123
-const A5_SHORT = 559
-const A5_LONG = 794
+const PAPER_SIZES = {
+  A4: { short: 794, long: 1123 },
+  A5: { short: 559, long: 794 },
+} as const
+
+type PaperSize = keyof typeof PAPER_SIZES
+type Orientation = 'portrait' | 'landscape'
 
 export default function PaperController({
   zoom,
@@ -16,29 +19,15 @@ export default function PaperController({
   setZoom: (zoom: number) => void
 }) {
   const id = useId()
-  const [paper, setPaper] = useState('a4-portrait')
+  const [paperSize, setPaperSize] = useState<PaperSize>('A4')
+  const [orientation, setOrientation] = useState<Orientation>('portrait')
   const [margin, setMargin] = useState(70)
   const [enablePageLayout, setEnablePageLayout] = useState(true)
 
-  const paperSize: PageRenderingOptions = useMemo(() => {
-    let pageWidth: number
-    let pageHeight: number
-
-    if (paper === 'a4-portrait') {
-      pageWidth = A4_SHORT
-      pageHeight = A4_LONG
-    } else if (paper === 'a4-landscape') {
-      pageWidth = A4_LONG
-      pageHeight = A4_SHORT
-    } else if (paper === 'a5-portrait') {
-      pageWidth = A5_SHORT
-      pageHeight = A5_LONG
-    } else if (paper === 'a5-landscape') {
-      pageWidth = A5_LONG
-      pageHeight = A5_SHORT
-    } else {
-      throw new Error('Invalid paper type')
-    }
+  const pageRenderingOptions: PageRenderingOptions = useMemo(() => {
+    const { short, long } = PAPER_SIZES[paperSize]
+    const pageWidth = orientation === 'portrait' ? short : long
+    const pageHeight = orientation === 'portrait' ? long : short
 
     return {
       pageWidth,
@@ -48,7 +37,7 @@ export default function PaperController({
       marginBottom: margin,
       marginLeft: margin,
     }
-  }, [paper, margin])
+  }, [paperSize, orientation, margin])
 
   useEffect(() => {
     const styleId = 'print-page-style'
@@ -58,31 +47,21 @@ export default function PaperController({
       style.id = styleId
       document.head.appendChild(style)
     }
-    if (paper === 'a4-portrait') {
-      style.textContent = `@page { size: A4 portrait; margin: 0; }`
-    } else if (paper === 'a4-landscape') {
-      style.textContent = `@page { size: A4 landscape; margin: 0; }`
-    } else if (paper === 'a5-portrait') {
-      style.textContent = `@page { size: A5 portrait; margin: 0; }`
-    } else if (paper === 'a5-landscape') {
-      style.textContent = `@page { size: A5 landscape; margin: 0; }`
-    } else {
-      throw new Error('Invalid paper type')
-    }
+    style.textContent = `@page { size: ${paperSize} ${orientation}; margin: 0; }`
 
     return () => {
       style.textContent = ''
     }
-  }, [paper])
+  }, [paperSize, orientation])
 
   const extension = useMemo(() => {
-    return enablePageLayout ? definePageRendering(paperSize) : null
-  }, [paperSize, enablePageLayout])
+    return enablePageLayout ? definePageRendering(pageRenderingOptions) : null
+  }, [pageRenderingOptions, enablePageLayout])
 
   useExtension(extension)
 
   return (
-    <div data-paper-controller={paper} className="CSS_PAPER_CONTROLLER">
+    <div data-paper-controller={paperSize} className="CSS_PAPER_CONTROLLER">
       <label htmlFor={`${id}-page`}>Page</label>
       <select
         id={`${id}-page`}
@@ -95,14 +74,22 @@ export default function PaperController({
       <label htmlFor={`${id}-paper`}>Paper</label>
       <select
         id={`${id}-paper`}
-        value={paper}
-        onChange={(e) => setPaper(e.target.value)}
+        value={paperSize}
+        onChange={(e) => setPaperSize(e.target.value as PaperSize)}
         disabled={!enablePageLayout}
       >
-        <option value="a4-portrait">A4 Portrait</option>
-        <option value="a4-landscape">A4 Landscape</option>
-        <option value="a5-portrait">A5 Portrait</option>
-        <option value="a5-landscape">A5 Landscape</option>
+        <option value="A4">A4</option>
+        <option value="A5">A5</option>
+      </select>
+      <label htmlFor={`${id}-orientation`}>Orientation</label>
+      <select
+        id={`${id}-orientation`}
+        value={orientation}
+        onChange={(e) => setOrientation(e.target.value as Orientation)}
+        disabled={!enablePageLayout}
+      >
+        <option value="portrait">Portrait</option>
+        <option value="landscape">Landscape</option>
       </select>
       <label htmlFor={`${id}-margin`}>Margin</label>
       <select

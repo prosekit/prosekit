@@ -24,13 +24,13 @@ let zoom = $state(50)
 </script>
 
 <ProseKit {editor}>
-  <div class="relative w-max flex-1 box-border">
+  <div class="relative w-max min-w-full flex flex-col flex-1 box-border overflow-auto">
     <PaperController bind:zoom />
     <div
       data-editor-zoom="true"
       style:--zoom={zoom / 100}
       {@attach editor.mount}
-      class={clsx('ProseMirror', 'box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
+      class={clsx('ProseMirror', 'self-center box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
     >
     </div>
   </div>

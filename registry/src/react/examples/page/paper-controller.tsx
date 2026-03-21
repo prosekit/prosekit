@@ -87,11 +87,7 @@ export default function PaperController({
         <option value="A5">A5</option>
         <option value="B4">B4</option>
         <option value="B5">B5</option>
-        <option value="JIS-B4">JIS-B4</option>
-        <option value="JIS-B5">JIS-B5</option>
         <option value="letter">Letter</option>
-        <option value="legal">Legal</option>
-        <option value="ledger">Ledger</option>
       </select>
       <label htmlFor={`${id}-orientation`}>Orientation</label>
       <select

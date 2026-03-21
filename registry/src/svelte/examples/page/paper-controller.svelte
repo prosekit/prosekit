@@ -4,10 +4,17 @@ import { useExtension } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
 // Paper sizes in pixels at 96 DPI
-const A4_SHORT = 794
-const A4_LONG = 1123
-const A5_SHORT = 559
-const A5_LONG = 794
+const PAPER_SIZES = {
+  'A3': { short: 1123, long: 1587 },
+  'A4': { short: 794, long: 1123 },
+  'A5': { short: 559, long: 794 },
+  'B4': { short: 945, long: 1334 },
+  'B5': { short: 665, long: 945 },
+  'letter': { short: 816, long: 1056 },
+} as const
+
+type PaperSize = keyof typeof PAPER_SIZES
+type Orientation = 'portrait' | 'landscape'
 
 let {
   zoom = $bindable(50),
@@ -16,29 +23,15 @@ let {
 } = $props()
 
 let id = $props.id()
-let paper = $state('a4-portrait')
+let paperSize = $state<PaperSize>('A4')
+let orientation = $state<Orientation>('portrait')
 let margin = $state(70)
 let enablePageLayout = $state(true)
 
-const paperSize: PageRenderingOptions = $derived.by(() => {
-  let pageWidth: number
-  let pageHeight: number
-
-  if (paper === 'a4-portrait') {
-    pageWidth = A4_SHORT
-    pageHeight = A4_LONG
-  } else if (paper === 'a4-landscape') {
-    pageWidth = A4_LONG
-    pageHeight = A4_SHORT
-  } else if (paper === 'a5-portrait') {
-    pageWidth = A5_SHORT
-    pageHeight = A5_LONG
-  } else if (paper === 'a5-landscape') {
-    pageWidth = A5_LONG
-    pageHeight = A5_SHORT
-  } else {
-    throw new Error('Invalid paper type')
-  }
+const pageRenderingOptions: PageRenderingOptions = $derived.by(() => {
+  const { short, long } = PAPER_SIZES[paperSize]
+  const pageWidth = orientation === 'portrait' ? short : long
+  const pageHeight = orientation === 'portrait' ? long : short
 
   return {
     pageWidth,
@@ -58,29 +51,19 @@ $effect(() => {
     style.id = styleId
     document.head.appendChild(style)
   }
-  if (paper === 'a4-portrait') {
-    style.textContent = `@page { size: A4 portrait; margin: 0; }`
-  } else if (paper === 'a4-landscape') {
-    style.textContent = `@page { size: A4 landscape; margin: 0; }`
-  } else if (paper === 'a5-portrait') {
-    style.textContent = `@page { size: A5 portrait; margin: 0; }`
-  } else if (paper === 'a5-landscape') {
-    style.textContent = `@page { size: A5 landscape; margin: 0; }`
-  } else {
-    throw new Error('Invalid paper type')
-  }
+  style.textContent = `@page { size: ${paperSize} ${orientation}; margin: 0; }`
 
   return () => {
     style.textContent = ''
   }
 })
 
-const extension = $derived(enablePageLayout ? definePageRendering(paperSize) : null)
+const extension = $derived(enablePageLayout ? definePageRendering(pageRenderingOptions) : null)
 const extensionStore = toStore(() => extension)
 useExtension(extensionStore)
 </script>
 
-<div data-paper-controller={paper} class="CSS_PAPER_CONTROLLER">
+<div data-paper-controller={paperSize} class="CSS_PAPER_CONTROLLER">
   <label for="{id}-page">Page</label>
   <select
     id="{id}-page"
@@ -95,16 +78,30 @@ useExtension(extensionStore)
   <label for="{id}-paper">Paper</label>
   <select
     id="{id}-paper"
-    value={paper}
+    value={paperSize}
     onchange={(e) => {
-      paper = e.currentTarget.value
+      paperSize = e.currentTarget.value as PaperSize
     }}
     disabled={!enablePageLayout}
   >
-    <option value="a4-portrait">A4 Portrait</option>
-    <option value="a4-landscape">A4 Landscape</option>
-    <option value="a5-portrait">A5 Portrait</option>
-    <option value="a5-landscape">A5 Landscape</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+    <option value="A5">A5</option>
+    <option value="B4">B4</option>
+    <option value="B5">B5</option>
+    <option value="letter">Letter</option>
+  </select>
+  <label for="{id}-orientation">Orientation</label>
+  <select
+    id="{id}-orientation"
+    value={orientation}
+    onchange={(e) => {
+      orientation = e.currentTarget.value as Orientation
+    }}
+    disabled={!enablePageLayout}
+  >
+    <option value="portrait">Portrait</option>
+    <option value="landscape">Landscape</option>
   </select>
   <label for="{id}-margin">Margin</label>
   <select

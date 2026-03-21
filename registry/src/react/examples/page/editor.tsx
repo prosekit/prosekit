@@ -1,6 +1,7 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/page/style.css'
+import './zoom.css'
 
 import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
@@ -10,6 +11,7 @@ import { sampleContent } from '../../sample/sample-doc-page'
 
 import { defineExtension } from './extension'
 import PaperController from './paper-controller'
+
 
 interface EditorProps {
   initialContent?: NodeJSON
@@ -29,12 +31,16 @@ export default function Editor(props: EditorProps) {
 
   return (
     <ProseKit editor={editor}>
-      <div className="relative w-max flex-1 box-border">
-          <PaperController zoom={zoom} setZoom={setZoom} />
+      <div className="relative w-max flex-1 box-border"          
+      >
+        
+        <PaperController zoom={zoom} setZoom={setZoom} />
         <div
+ data-editor-zoom
+         style={{ '--zoom': `${zoom}%` } as React.CSSProperties}
           ref={editor.mount}
-          className={clsx('box-border min-h-full p-10 outline-hidden', 'print:zoom-100! print:min-h-full! print:p-0! print:m-0!')}
-          style={{ zoom: `${zoom}%` }}
+          className={clsx('box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
+       
         />
       </div>
     </ProseKit>

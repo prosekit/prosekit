@@ -1,0 +1,9 @@
+div[data-editor-zoom] {
+    zoom: var(--zoom);
+}
+
+@print {
+    div[data-editor-zoom] {
+        zoom: 100%;
+    }
+}

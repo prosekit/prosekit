@@ -1,0 +1,9 @@
+div[data-editor-zoom] {
+  zoom: var(--zoom);
+}
+
+@media print {
+  div[data-editor-zoom] {
+    zoom: 1;
+  }
+}

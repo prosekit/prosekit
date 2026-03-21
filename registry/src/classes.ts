@@ -293,16 +293,6 @@ export const CSS_KEYMAP_FIELDSET = cn(
 
 export const CSS_TOGGLE_ROTATE = 'transition-transform data-rotate:rotate-90'
 
-export const CSS_ZOOM_SLIDER = cn(
-  'absolute top-4 left-4 flex items-center justify-center gap-1 border-gray-300 dark:border-gray-600 border p-1 text-sm text-gray-600 dark:text-gray-300 select-none print:hidden z-50 dark:bg-gray-800 bg-gray-100 rounded',
-)
-
-export const CSS_ZOOM_BUTTON = cn(
-  'size-7 flex justify-center items-center rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30',
-)
-
-export const CSS_ZOOM_LABEL = cn('w-12 text-center tabular-nums')
-
 export const CSS_ICON_ITALIC = cn('i-lucide-italic size-5 block')
 export const CSS_ICON_BOLD = cn('i-lucide-bold size-5 block')
 export const CSS_ICON_UNDERLINE = cn('i-lucide-underline size-5 block')

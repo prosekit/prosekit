@@ -15,7 +15,7 @@
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "ci:publish:snapshot": "npx pkg-pr-new publish --pnpm './packages/*'",
+    "ci:publish:snapshot": "pnpx pkg-pr-new publish --pnpm './packages/*'",
     "fix": "pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:eslint && pnpm run fix:oxfmt && pnpm run fix:dprint",
     "fix:oxfmt": "oxfmt --write ./registry/src/lit/",
     "fix:dprint": "dprint fmt",

@@ -2,7 +2,7 @@ div[data-editor-zoom] {
   zoom: var(--zoom);
 }
 
-@print {
+@media print {
   div[data-editor-zoom] {
     zoom: 100%;
   }

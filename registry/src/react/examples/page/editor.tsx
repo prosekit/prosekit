@@ -33,8 +33,7 @@ export default function Editor(props: EditorProps) {
       <div className="relative w-max flex-1 box-border">
         <PaperController zoom={zoom} setZoom={setZoom} />
         <div
-          data-editor-zoom
-          style={{ '--zoom': `${zoom}%` } as React.CSSProperties}
+          data-editor-zoom={zoom/100}
           ref={editor.mount}
           className={clsx('box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
         />

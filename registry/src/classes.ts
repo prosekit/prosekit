@@ -293,10 +293,6 @@ export const CSS_KEYMAP_FIELDSET = cn(
 
 export const CSS_TOGGLE_ROTATE = 'transition-transform data-rotate:rotate-90'
 
-export const CSS_PAPER_CONTROLLER = cn(
-  'grid grid-cols-[auto_1fr] gap-2 border p-2 bg-[Canvas] absolute top-2 right-2 [&_select:disabled]:opacity-50 [&_select]:border text-sm',
-)
-
 export const CSS_ICON_ITALIC = cn('i-lucide-italic size-5 block')
 export const CSS_ICON_BOLD = cn('i-lucide-bold size-5 block')
 export const CSS_ICON_UNDERLINE = cn('i-lucide-underline size-5 block')

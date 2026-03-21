@@ -29,18 +29,12 @@ export default function Editor(props: EditorProps) {
 
   return (
     <ProseKit editor={editor}>
-      <div className="CSS_EDITOR_SCROLLING">
-        <div className="sticky top-0 z-10 print:hidden">
+      <div className="relative w-max flex-1 box-border">
           <PaperController zoom={zoom} setZoom={setZoom} />
-        </div>
         <div
           ref={editor.mount}
-          className={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
-          style={{
-            transform: `scale(${zoom / 100})`,
-            transformOrigin: 'top',
-            minHeight: `${100 / (zoom / 100)}%`,
-          }}
+          className={clsx('box-border min-h-full p-10 outline-hidden', 'print:zoom-100! print:min-h-full! print:p-0! print:m-0!')}
+          style={{ zoom: `${zoom}%` }}
         />
       </div>
     </ProseKit>

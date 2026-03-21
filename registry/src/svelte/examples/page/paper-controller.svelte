@@ -5,12 +5,12 @@ import { toStore } from 'svelte/store'
 
 // Paper sizes in pixels at 96 DPI
 const PAPER_SIZES = {
-  'A3': { short: 1123, long: 1587 },
-  'A4': { short: 794, long: 1123 },
-  'A5': { short: 559, long: 794 },
-  'B4': { short: 945, long: 1334 },
-  'B5': { short: 665, long: 945 },
-  'letter': { short: 816, long: 1056 },
+  A3: { short: 1123, long: 1587 },
+  A4: { short: 794, long: 1123 },
+  A5: { short: 559, long: 794 },
+  B4: { short: 945, long: 1334 },
+  B5: { short: 665, long: 945 },
+  letter: { short: 816, long: 1056 },
 } as const
 
 type PaperSize = keyof typeof PAPER_SIZES

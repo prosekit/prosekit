@@ -4,8 +4,12 @@ import { useEffect, useId, useMemo, useState } from 'react'
 
 // Paper sizes in pixels at 96 DPI
 const PAPER_SIZES = {
-  A4: { short: 794, long: 1123 },
-  A5: { short: 559, long: 794 },
+  'A3': { short: 1123, long: 1587 },
+  'A4': { short: 794, long: 1123 },
+  'A5': { short: 559, long: 794 },
+  'B4': { short: 945, long: 1334 },
+  'B5': { short: 665, long: 945 },
+  'letter': { short: 816, long: 1056 },
 } as const
 
 type PaperSize = keyof typeof PAPER_SIZES
@@ -78,8 +82,16 @@ export default function PaperController({
         onChange={(e) => setPaperSize(e.target.value as PaperSize)}
         disabled={!enablePageLayout}
       >
+        <option value="A3">A3</option>
         <option value="A4">A4</option>
         <option value="A5">A5</option>
+        <option value="B4">B4</option>
+        <option value="B5">B5</option>
+        <option value="JIS-B4">JIS-B4</option>
+        <option value="JIS-B5">JIS-B5</option>
+        <option value="letter">Letter</option>
+        <option value="legal">Legal</option>
+        <option value="ledger">Ledger</option>
       </select>
       <label htmlFor={`${id}-orientation`}>Orientation</label>
       <select

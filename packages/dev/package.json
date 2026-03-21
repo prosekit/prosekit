@@ -24,7 +24,7 @@
     "@types/node": "catalog:",
     "change-case": "^5.4.4",
     "tsx": "^4.21.0",
-    "type-fest": "^5.4.4",
+    "type-fest": "^5.5.0",
     "typescript": "catalog:"
   }
 }

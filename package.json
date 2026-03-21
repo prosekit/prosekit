@@ -15,7 +15,7 @@
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "ci:publish:snapshot": "pkg-pr-new publish --pnpm './packages/*'",
+    "ci:publish:snapshot": "pnpx pkg-pr-new publish --pnpm './packages/*'",
     "fix": "pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:eslint && pnpm run fix:oxfmt && pnpm run fix:dprint",
     "fix:oxfmt": "oxfmt --write ./registry/src/lit/",
     "fix:dprint": "dprint fmt",
@@ -40,23 +40,22 @@
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
     "@changesets/types": "^6.1.0",
-    "@ocavue/eslint-config": "^4.3.2",
+    "@ocavue/eslint-config": "^4.3.5",
     "@ocavue/tsconfig": "^0.7.0",
     "@size-limit/esbuild-why": "^12.0.1",
     "@size-limit/preset-small-lib": "^12.0.1",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.52.0",
+    "dprint": "^0.53.0",
     "eslint": "^10.0.3",
-    "knip": "^5.86.0",
+    "knip": "^6.0.1",
     "monorepo-typescript-references": "^1.1.1",
-    "oxfmt": "^0.40.0",
-    "pkg-pr-new": "^0.0.65",
+    "oxfmt": "^0.41.0",
     "playwright": "^1.58.2",
     "size-limit": "^12.0.1",
-    "turbo": "^2.8.16",
+    "turbo": "^2.8.20",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.72.0"
+    "wrangler": "^4.75.0"
   }
 }

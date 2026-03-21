@@ -299,7 +299,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.2.0",
+    "@vitejs/plugin-react": "^6.0.1",
     "@vitejs/plugin-vue": "^6.0.5",
     "@vitest/browser-playwright": "catalog:",
     "@vitest/ui": "catalog:",

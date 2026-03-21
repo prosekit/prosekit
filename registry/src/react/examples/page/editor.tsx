@@ -37,7 +37,7 @@ export default function Editor(props: EditorProps) {
           ref={editor.mount}
           className={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
           style={{
-            transform: `scale(${zoom}%)`,
+            transform: `scale(${zoom / 100})`,
             transformOrigin: 'top',
             minHeight: `${100 / (zoom / 100)}%`,
           }}

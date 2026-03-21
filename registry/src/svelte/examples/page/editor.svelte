@@ -30,7 +30,7 @@ let zoom = $state(50)
     <div
       {@attach editor.mount}
       class={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
-      style:transform="scale({zoom}%)"
+      style:transform="scale({zoom / 100})"
       style:transform-origin="top"
       style:min-height="{100 / (zoom / 100)}%"
     >

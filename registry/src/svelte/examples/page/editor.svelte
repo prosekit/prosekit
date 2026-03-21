@@ -27,8 +27,8 @@ let zoom = $state(50)
   <div class="relative w-max flex-1 box-border">
     <PaperController bind:zoom />
     <div
-      data-editor-zoom
-      style:--zoom="{zoom}%"
+      data-editor-zoom='true'
+            style:--zoom={zoom/100}
       {@attach editor.mount}
       class={clsx('box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
     >

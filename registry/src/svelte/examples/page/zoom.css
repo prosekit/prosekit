@@ -4,6 +4,6 @@ div[data-editor-zoom] {
 
 @media print {
   div[data-editor-zoom] {
-    zoom: 100%;
+    zoom: 1;
   }
 }

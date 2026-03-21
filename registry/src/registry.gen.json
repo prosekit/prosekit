@@ -1530,9 +1530,9 @@
           "target": "components/editor/examples/page/index.ts"
         },
         {
-          "path": "registry/src/react/examples/page/use-zoom.ts",
+          "path": "registry/src/react/examples/page/paper-controller.tsx",
           "type": "registry:component",
-          "target": "components/editor/examples/page/use-zoom.ts"
+          "target": "components/editor/examples/page/paper-controller.tsx"
         }
       ],
       "meta": {
@@ -1544,7 +1544,7 @@
           "registry/src/react/examples/page/editor.tsx",
           "registry/src/react/examples/page/extension.ts",
           "registry/src/react/examples/page/index.ts",
-          "registry/src/react/examples/page/use-zoom.ts",
+          "registry/src/react/examples/page/paper-controller.tsx",
           "registry/src/react/sample/sample-doc-page.ts"
         ],
         "internalDependencies": [
@@ -13970,7 +13970,8 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-page.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13989,9 +13990,9 @@
           "target": "components/editor/examples/page/index.ts"
         },
         {
-          "path": "registry/src/svelte/examples/page/use-zoom.svelte.ts",
+          "path": "registry/src/svelte/examples/page/paper-controller.svelte",
           "type": "registry:component",
-          "target": "components/editor/examples/page/use-zoom.svelte.ts"
+          "target": "components/editor/examples/page/paper-controller.svelte"
         }
       ],
       "meta": {
@@ -14003,7 +14004,7 @@
           "registry/src/svelte/examples/page/editor.svelte",
           "registry/src/svelte/examples/page/extension.ts",
           "registry/src/svelte/examples/page/index.ts",
-          "registry/src/svelte/examples/page/use-zoom.svelte.ts",
+          "registry/src/svelte/examples/page/paper-controller.svelte",
           "registry/src/svelte/sample/sample-doc-page.ts"
         ],
         "internalDependencies": [

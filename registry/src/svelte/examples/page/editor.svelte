@@ -9,7 +9,7 @@ import { ProseKit } from 'prosekit/svelte'
 import { sampleContent } from '../../sample/sample-doc-page'
 
 import { defineExtension } from './extension'
-import { useZoom } from './use-zoom.svelte.js'
+import PaperController from './paper-controller.svelte'
 
 const props: {
   initialContent?: NodeJSON
@@ -19,22 +19,20 @@ const defaultContent = props.initialContent ?? sampleContent
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultContent })
 
-const zoom = useZoom()
+let zoom = $state(50)
 </script>
 
 <ProseKit {editor}>
-  <div class="CSS_ZOOM_SLIDER">
-    <button class="CSS_ZOOM_BUTTON" onclick={zoom.zoomOut} disabled={!zoom.canZoomOut}>-</button>
-    <span class="CSS_ZOOM_LABEL">{zoom.zoom}%</span>
-    <button class="CSS_ZOOM_BUTTON" onclick={zoom.zoomIn} disabled={!zoom.canZoomIn}>+</button>
-  </div>
   <div class="CSS_EDITOR_SCROLLING">
+    <div class="sticky top-0 z-10 print:hidden">
+      <PaperController bind:zoom />
+    </div>
     <div
       {@attach editor.mount}
       class={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
-      style:transform="scale({zoom.zoom / 100})"
+      style:transform="scale({zoom}%)"
       style:transform-origin="top"
-      style:min-height="{100 / (zoom.zoom / 100)}%"
+      style:min-height="{100 / (zoom / 100)}%"
     >
     </div>
   </div>

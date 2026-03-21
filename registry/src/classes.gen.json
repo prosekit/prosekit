@@ -64,6 +64,7 @@
   "CSS_LANGUAGE_SELECT": "outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight) opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80",
   "CSS_LANGUAGE_WRAPPER": "relative mx-2 top-3 h-0 select-none overflow-visible text-xs",
   "CSS_MINIMAL_EDITOR": "outline-solid p-4",
+  "CSS_PAPER_CONTROLLER": "grid grid-cols-[auto_1fr] gap-2 border p-2 bg-[Canvas] absolute top-2 right-2 [&_select:disabled]:opacity-50 [&_select]:border text-sm",
   "CSS_SEARCH": "z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b grid grid-cols-[min-content_1fr_min-content] gap-2 p-2",
   "CSS_SEARCH_CONTROLLER": "flex items-center justify-between gap-1",
   "CSS_SEARCH_ICON_BUTTON": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 h-10 w-10",
@@ -80,8 +81,5 @@
   "CSS_TOGGLE_ROTATE": "transition-transform data-rotate:rotate-90",
   "CSS_TOOLBAR": "z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center",
   "CSS_TOOLTIP_CONTENT": "z-50 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs [&:not([data-state])]:hidden will-change-transform motion-safe:data-[state=open]:animate-in motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=open]:fade-in-0 motion-safe:data-[state=closed]:fade-out-0 motion-safe:data-[state=open]:zoom-in-95 motion-safe:data-[state=closed]:zoom-out-95 motion-safe:data-[state=open]:animate-duration-150 motion-safe:data-[state=closed]:animate-duration-200 motion-safe:data-[side=bottom]:slide-in-from-top-2 motion-safe:data-[side=bottom]:slide-out-to-top-2 motion-safe:data-[side=left]:slide-in-from-right-2 motion-safe:data-[side=left]:slide-out-to-right-2 motion-safe:data-[side=right]:slide-in-from-left-2 motion-safe:data-[side=right]:slide-out-to-left-2 motion-safe:data-[side=top]:slide-in-from-bottom-2 motion-safe:data-[side=top]:slide-out-to-bottom-2",
-  "CSS_TOOLTIP_TRIGGER": "block",
-  "CSS_ZOOM_BUTTON": "size-7 flex justify-center items-center rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30",
-  "CSS_ZOOM_LABEL": "w-12 text-center tabular-nums",
-  "CSS_ZOOM_SLIDER": "absolute top-4 left-4 flex items-center justify-center gap-1 border-gray-300 dark:border-gray-600 border p-1 text-sm text-gray-600 dark:text-gray-300 select-none print:hidden z-50 dark:bg-gray-800 bg-gray-100 rounded"
+  "CSS_TOOLTIP_TRIGGER": "block"
 }

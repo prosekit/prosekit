@@ -4,12 +4,12 @@ import 'prosekit/extensions/page/style.css'
 
 import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import { sampleContent } from '../../sample/sample-doc-page'
 
 import { defineExtension } from './extension'
-import { useZoom } from './use-zoom'
+import PaperController from './paper-controller'
 
 interface EditorProps {
   initialContent?: NodeJSON
@@ -25,26 +25,23 @@ export default function Editor(props: EditorProps) {
     })
   }, [defaultContent])
 
-  const { zoom, zoomIn, zoomOut, canZoomIn, canZoomOut } = useZoom()
+  const [zoom, setZoom] = useState(50)
 
   return (
     <ProseKit editor={editor}>
-      <div className="CSS_ZOOM_SLIDER">
-        <button className="CSS_ZOOM_BUTTON" onClick={zoomOut} disabled={!canZoomOut}>-</button>
-        <span className="CSS_ZOOM_LABEL">{zoom}%</span>
-        <button className="CSS_ZOOM_BUTTON" onClick={zoomIn} disabled={!canZoomIn}>+</button>
-      </div>
       <div className="CSS_EDITOR_SCROLLING">
+        <div className="sticky top-0 z-10 print:hidden">
+          <PaperController zoom={zoom} setZoom={setZoom} />
+        </div>
         <div
           ref={editor.mount}
           className={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
           style={{
-            transform: `scale(${zoom / 100})`,
+            transform: `scale(${zoom}%)`,
             transformOrigin: 'top',
             minHeight: `${100 / (zoom / 100)}%`,
           }}
-        >
-        </div>
+        />
       </div>
     </ProseKit>
   )

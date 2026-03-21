@@ -4,7 +4,7 @@ import type { Node } from '@prosekit/pm/model'
 import { Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-import { registerPageMeasureElement } from './page-element.ts'
+import { PAGE_CHUNK_TAG_NAME, registerPageChunkElement } from './page-element.ts'
 
 /**
  * @public
@@ -89,29 +89,25 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
       const isPageBreak: boolean | undefined = node.type.spec.pageBreak
 
       decorations.push(Decoration.node(pos, pos + node.nodeSize, {
-        'nodeName': 'pm-page-chunk',
+        'nodeName': PAGE_CHUNK_TAG_NAME,
         'data-group': group,
-        'data-index': String(index),
         'data-break': isPageBreak ? 'true' : undefined,
-        'data-w': String(pageWidth),
         'data-h': String(pageHeight),
         'data-mt': String(marginTop),
-        'data-mr': String(marginRight),
         'data-mb': String(marginBottom),
-        'data-ml': String(marginLeft),
-
-        // Trigger the first chunk to update when a chunk is removed.
-        'data-total': index === 0 ? String(totalCount) : undefined,
+        'data-size': index === 0 ? String(totalCount) : undefined,
       }))
     })
 
     return DecorationSet.create(doc, decorations)
   }
 
-  registerPageMeasureElement()
-
   return new Plugin<PluginState>({
     key,
+    view: () => {
+      registerPageChunkElement()
+      return {}
+    },
     state: {
       init: (_config, state): PluginState => {
         const group = `page-group-${getId()}`
@@ -154,6 +150,14 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
     props: {
       decorations: (state) => {
         return key.getState(state)?.[1]
+      },
+      attributes: {
+        style: [
+          `--page-margin-right:${marginRight}px;`,
+          `--page-margin-left:${marginLeft}px;`,
+          `--page-width:${pageWidth}px;`,
+          `--page-height:${pageHeight}px;`,
+        ].join(''),
       },
     },
   })

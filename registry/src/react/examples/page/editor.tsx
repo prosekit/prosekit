@@ -30,13 +30,13 @@ export default function Editor(props: EditorProps) {
 
   return (
     <ProseKit editor={editor}>
-      <div className="relative w-max flex-1 box-border">
+      <div className="relative w-max min-w-full flex flex-col flex-1 box-border overflow-auto">
         <PaperController zoom={zoom} setZoom={setZoom} />
         <div
           data-editor-zoom="true"
           style={{ '--zoom': zoom / 100 } as React.CSSProperties}
           ref={editor.mount}
-          className={clsx('ProseMirror', 'box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
+          className={clsx('ProseMirror', 'self-center box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
         />
       </div>
     </ProseKit>

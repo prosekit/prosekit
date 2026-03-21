@@ -63,7 +63,10 @@ const extensionStore = toStore(() => extension)
 useExtension(extensionStore)
 </script>
 
-<div data-paper-controller={paperSize} class="CSS_PAPER_CONTROLLER">
+<div
+  data-paper-controller={paperSize}
+  class="grid grid-cols-[auto_1fr] gap-2 w-min border p-2 bg-[Canvas] sticky top-2 left-2 z-10 print:hidden"
+>
   <label for="{id}-page">Page</label>
   <select
     id="{id}-page"
@@ -71,6 +74,7 @@ useExtension(extensionStore)
     onchange={(e) => {
       enablePageLayout = e.currentTarget.value === 'Enabled'
     }}
+    class="rounded border disabled:opacity-50"
   >
     <option value="Enabled">Enabled</option>
     <option value="Disabled">Disabled</option>
@@ -83,6 +87,7 @@ useExtension(extensionStore)
       paperSize = e.currentTarget.value as PaperSize
     }}
     disabled={!enablePageLayout}
+    class="rounded border disabled:opacity-50"
   >
     <option value="A3">A3</option>
     <option value="A4">A4</option>
@@ -99,6 +104,7 @@ useExtension(extensionStore)
       orientation = e.currentTarget.value as Orientation
     }}
     disabled={!enablePageLayout}
+    class="rounded border disabled:opacity-50"
   >
     <option value="portrait">Portrait</option>
     <option value="landscape">Landscape</option>
@@ -111,6 +117,7 @@ useExtension(extensionStore)
       margin = Number.parseInt(e.currentTarget.value, 10)
     }}
     disabled={!enablePageLayout}
+    class="rounded border disabled:opacity-50"
   >
     <option value="30">Narrow</option>
     <option value="70">Normal</option>
@@ -123,6 +130,7 @@ useExtension(extensionStore)
     onchange={(e) => {
       zoom = Number.parseInt(e.currentTarget.value, 10)
     }}
+    class="rounded border disabled:opacity-50"
   >
     <option value="25">25%</option>
     <option value="50">50%</option>

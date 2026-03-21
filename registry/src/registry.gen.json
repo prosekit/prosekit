@@ -1533,6 +1533,11 @@
           "path": "registry/src/react/examples/page/paper-controller.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/page/paper-controller.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/page/zoom.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/zoom.css"
         }
       ],
       "meta": {
@@ -1545,6 +1550,7 @@
           "registry/src/react/examples/page/extension.ts",
           "registry/src/react/examples/page/index.ts",
           "registry/src/react/examples/page/paper-controller.tsx",
+          "registry/src/react/examples/page/zoom.css",
           "registry/src/react/sample/sample-doc-page.ts"
         ],
         "internalDependencies": [
@@ -13993,6 +13999,11 @@
           "path": "registry/src/svelte/examples/page/paper-controller.svelte",
           "type": "registry:component",
           "target": "components/editor/examples/page/paper-controller.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/zoom.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/zoom.css"
         }
       ],
       "meta": {
@@ -14005,6 +14016,7 @@
           "registry/src/svelte/examples/page/extension.ts",
           "registry/src/svelte/examples/page/index.ts",
           "registry/src/svelte/examples/page/paper-controller.svelte",
+          "registry/src/svelte/examples/page/zoom.css",
           "registry/src/svelte/sample/sample-doc-page.ts"
         ],
         "internalDependencies": [

@@ -2,6 +2,7 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/page/style.css'
+import './zoom.css'
 
 import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
@@ -23,16 +24,13 @@ let zoom = $state(50)
 </script>
 
 <ProseKit {editor}>
-  <div class="CSS_EDITOR_SCROLLING">
-    <div class="sticky top-0 z-10 print:hidden">
-      <PaperController bind:zoom />
-    </div>
+  <div class="relative w-max flex-1 box-border">
+    <PaperController bind:zoom />
     <div
+      data-editor-zoom
+      style:--zoom="{zoom}%"
       {@attach editor.mount}
-      class={clsx('CSS_EDITOR_CONTENT', 'print:transform-none! print:min-h-full! print:p-0! print:m-0!')}
-      style:transform="scale({zoom / 100})"
-      style:transform-origin="top"
-      style:min-height="{100 / (zoom / 100)}%"
+      class={clsx('box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}
     >
     </div>
   </div>

@@ -127,7 +127,7 @@ function getPageLayout(): string {
   const lines: string[] = []
 
   for (const chunk of chunks) {
-    const size = chunk.getAttribute('data-size') || ""
+    const size = chunk.getAttribute('data-size') || ''
     const sizeInfo = size.padStart(3)
 
     let type = ''

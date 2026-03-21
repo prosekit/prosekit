@@ -205,7 +205,7 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  // h-6 is the same as the line height of the default paragraph (1.5 * 16px = 24px = var(--spacing) * 6 = 1.5rem = 24px)
+  // h-6 currently matches a 24px paragraph line-height (with a 16px base font size and line-height 1.5); if the base font size changes, this equivalence may no longer hold.
   'flex items-center box-border justify-center h-6 w-6 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
 )
 

@@ -8,6 +8,7 @@ import { ProseKit } from 'prosekit/svelte'
 import { sampleContent } from '../../sample/sample-doc-view-adapter'
 
 import { defineExtension } from './extension'
+import { untrack } from 'svelte'
 
 export interface Props {
   initialContent?: NodeJSON
@@ -16,8 +17,8 @@ export interface Props {
 const props: Props = $props()
 
 const extension = defineExtension()
-const defaultContent = $derived(props.initialContent ?? sampleContent)
-const editor = $derived(createEditor({ extension, defaultContent }))
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
+const editor = createEditor({ extension, defaultContent })
 </script>
 
 <ProseKit {editor}>

@@ -10,15 +10,16 @@ import { ProseKit } from 'prosekit/svelte'
 import { sampleContent } from '../../sample/sample-doc-page'
 
 import { defineExtension } from './extension'
+import { untrack } from 'svelte'
 import PaperController from './paper-controller.svelte'
 
 const props: {
   initialContent?: NodeJSON
 } = $props()
 
-const defaultContent = $derived(props.initialContent ?? sampleContent)
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
 const extension = defineExtension()
-const editor = $derived(createEditor({ extension, defaultContent }))
+const editor = createEditor({ extension, defaultContent })
 
 let zoom = $state(50)
 </script>

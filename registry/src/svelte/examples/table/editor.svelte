@@ -9,14 +9,15 @@ import { sampleContent } from '../../sample/sample-doc-table'
 import { TableHandle } from '../../ui/table-handle'
 
 import { defineExtension } from './extension'
+import { untrack } from 'svelte'
 
 const props: {
   initialContent?: NodeJSON
 } = $props()
 
 const extension = defineExtension()
-const defaultContent = $derived(props.initialContent ?? sampleContent)
-const editor = $derived(createEditor({ extension, defaultContent }))
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
+const editor = createEditor({ extension, defaultContent })
 </script>
 
 <ProseKit editor={editor}>

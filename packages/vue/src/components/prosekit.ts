@@ -23,7 +23,7 @@ export const ProseKit: DefineSetupFnComponent<ProseKitProps> = defineComponent<P
       h(
         ViewRenderer,
         { editor: props.editor },
-        slots.default?.(),
+        () => slots.default?.(),
       )
   },
 })

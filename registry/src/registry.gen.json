@@ -16116,7 +16116,8 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {

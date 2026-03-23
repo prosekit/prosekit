@@ -87,8 +87,6 @@ interface ImportResolutionContext {
   readonly fileSet: Set<string>
 }
 
-
-
 /**
  * Remove the trailing extension (if any) from a path segment.
  */

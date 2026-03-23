@@ -1,6 +1,4 @@
-export function hidePortalDiv(el: HTMLElement): void  {
+export function hidePortalDiv(el: HTMLElement): void {
   el.style.display = 'contents'
   el.dataset.solidPortal = 'true'
 }
-
-

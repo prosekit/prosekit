@@ -20,8 +20,8 @@ const props: {
 } = $props()
 
 const extension = defineBasicExtension()
-const defaultContent = props.initialContent ?? sampleContent
-const editor = createEditor({ extension, defaultContent })
+const defaultContent = $derived(props.initialContent ?? sampleContent)
+const editor = $derived(createEditor({ extension, defaultContent }))
 </script>
 
 <ProseKit {editor}>

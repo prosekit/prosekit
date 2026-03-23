@@ -4,13 +4,13 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-typography'
 import { BlockHandle } from '../../ui/block-handle'
 import { DropIndicator } from '../../ui/drop-indicator'
 
 import { defineExtension } from './extension'
-import { untrack } from 'svelte'
 
 const props: {
   initialContent?: NodeJSON

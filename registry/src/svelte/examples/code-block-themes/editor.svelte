@@ -4,11 +4,11 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-code-block'
 
 import { defineExtension } from './extension'
-import { untrack } from 'svelte'
 import Toolbar from './toolbar.svelte'
 
 const props: {

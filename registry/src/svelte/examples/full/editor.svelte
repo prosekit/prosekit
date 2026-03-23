@@ -4,6 +4,7 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-full'
 import { sampleUploader } from '../../sample/sample-uploader'
@@ -19,7 +20,6 @@ import { Toolbar } from '../../ui/toolbar'
 import { UserMenu } from '../../ui/user-menu'
 
 import { defineExtension } from './extension'
-import { untrack } from 'svelte'
 
 const props: {
   initialContent?: NodeJSON

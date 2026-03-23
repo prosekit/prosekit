@@ -5,12 +5,12 @@ import 'prosekit/extensions/search/style.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-search'
 import { Search } from '../../ui/search'
 
 import { defineExtension } from './extension'
-import { untrack } from 'svelte'
 
 const props: {
   initialContent?: NodeJSON

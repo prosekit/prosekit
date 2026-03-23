@@ -5,16 +5,18 @@ import 'prosekit/basic/typography.css'
 import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { defineExtension } from './extension'
 
-const props = $props<{
+const props: {
   initialContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
-}>()
+} = $props()
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent: props.initialContent })
+const defaultContent = untrack(() => props.initialContent)
+const editor = createEditor({ extension, defaultContent })
 
 const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
 useDocChange(handleDocChange, { editor })

@@ -11,12 +11,12 @@ interface Props {
 
 const props: Props = $props()
 
-let extension = $derived(union(
+const extension = $derived(union(
   defineBasicExtension(),
   defineReadonly(),
   defineCommitViewer(props.commit),
 ))
-let editor = $derived(createEditor({ extension }))
+const editor = $derived(createEditor({ extension }))
 </script>
 
 <ProseKit {editor}>

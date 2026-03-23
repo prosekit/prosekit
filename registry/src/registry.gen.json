@@ -15,8 +15,7 @@
         "https://prosekit.dev/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -69,8 +68,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -120,8 +118,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -170,8 +167,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -219,8 +215,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -273,8 +268,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -329,8 +323,7 @@
         "https://prosekit.dev/r/react-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -389,8 +382,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -432,8 +424,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -494,8 +485,7 @@
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -589,8 +579,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -635,8 +624,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -690,8 +678,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -742,8 +729,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -794,8 +780,7 @@
         "https://prosekit.dev/r/react-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -845,8 +830,7 @@
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -896,8 +880,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -948,8 +931,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1007,8 +989,7 @@
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1057,8 +1038,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1109,8 +1089,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1162,8 +1141,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1222,8 +1200,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1276,8 +1253,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1322,8 +1298,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1370,8 +1345,7 @@
         "@base-ui/react",
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1510,8 +1484,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-page.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1565,8 +1538,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1608,8 +1580,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1675,8 +1646,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1738,8 +1708,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1772,8 +1741,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1807,7 +1775,6 @@
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
-        "react",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -1856,8 +1823,7 @@
         "https://prosekit.dev/r/react-ui-search.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1906,8 +1872,7 @@
         "https://prosekit.dev/r/react-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1955,8 +1920,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2010,8 +1974,7 @@
         "https://prosekit.dev/r/react-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2059,8 +2022,7 @@
         "https://prosekit.dev/r/react-sample-temml.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2107,8 +2069,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2162,8 +2123,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2217,8 +2177,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2270,7 +2229,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "react",
         "react-tweet"
       ],
       "files": [
@@ -2330,8 +2288,7 @@
         "https://prosekit.dev/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2384,8 +2341,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2436,8 +2392,7 @@
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2493,8 +2448,7 @@
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2547,8 +2501,7 @@
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2609,8 +2562,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2663,8 +2615,7 @@
         "https://prosekit.dev/r/react-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2712,7 +2663,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "react",
         "y-websocket",
         "yjs"
       ],
@@ -3830,8 +3780,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -3932,8 +3881,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -3972,8 +3920,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -4013,8 +3960,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -4058,8 +4004,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -4334,7 +4279,6 @@
         "https://prosekit.dev/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4388,7 +4332,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4439,7 +4382,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4489,7 +4431,6 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4538,7 +4479,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4592,7 +4532,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4648,7 +4587,6 @@
         "https://prosekit.dev/r/preact-ui-code-block-view.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4708,7 +4646,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4751,7 +4688,6 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4813,7 +4749,6 @@
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4902,7 +4837,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4948,7 +4882,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5003,7 +4936,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5055,7 +4987,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5107,7 +5038,6 @@
         "https://prosekit.dev/r/preact-ui-image-view.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5158,7 +5088,6 @@
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5209,7 +5138,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5261,7 +5189,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5320,7 +5247,6 @@
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5370,7 +5296,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5422,7 +5347,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5475,7 +5399,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5535,7 +5458,6 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5589,7 +5511,6 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5635,7 +5556,6 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5669,7 +5589,6 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5712,7 +5631,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5779,7 +5697,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5842,7 +5759,6 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5876,7 +5792,6 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5910,7 +5825,6 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit",
         "rehype-parse",
         "rehype-remark",
@@ -5960,7 +5874,6 @@
         "https://prosekit.dev/r/preact-ui-search.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6010,7 +5923,6 @@
         "https://prosekit.dev/r/preact-ui-slash-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6059,7 +5971,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6114,7 +6025,6 @@
         "https://prosekit.dev/r/preact-ui-table-handle.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6163,7 +6073,6 @@
         "https://prosekit.dev/r/preact-sample-temml.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6211,7 +6120,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6266,7 +6174,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6321,7 +6228,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6376,7 +6282,6 @@
         "https://prosekit.dev/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6430,7 +6335,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6482,7 +6386,6 @@
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6539,7 +6442,6 @@
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6593,7 +6495,6 @@
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6655,7 +6556,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6709,7 +6609,6 @@
         "https://prosekit.dev/r/preact-ui-word-counter.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6757,7 +6656,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit",
         "y-websocket",
         "yjs"
@@ -7795,7 +7693,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7829,7 +7726,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7898,7 +7794,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7938,7 +7833,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7979,7 +7873,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -8024,7 +7917,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -8452,8 +8344,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -8609,8 +8500,7 @@
         "https://prosekit.dev/r/vue-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9259,8 +9149,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9367,8 +9256,7 @@
         "https://prosekit.dev/r/vue-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9530,8 +9418,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9704,8 +9591,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9833,8 +9719,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9867,8 +9752,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9908,8 +9792,7 @@
         "remark-html",
         "remark-parse",
         "remark-stringify",
-        "unified",
-        "vue"
+        "unified"
       ],
       "files": [
         {
@@ -10204,8 +10087,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -10311,7 +10193,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "vue",
         "vue-tweet"
       ],
       "files": [
@@ -10475,8 +10356,7 @@
         "https://prosekit.dev/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -10585,8 +10465,7 @@
         "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -10748,7 +10627,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "vue",
         "y-websocket",
         "yjs"
       ],
@@ -11886,8 +11764,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -11926,8 +11803,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -11967,8 +11843,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -12012,8 +11887,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -12283,7 +12157,6 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12319,7 +12192,6 @@
         "https://prosekit.dev/r/lit-ui-slash-menu.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12368,7 +12240,6 @@
         "https://prosekit.dev/r/lit-ui-toolbar.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12445,7 +12316,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12481,7 +12351,6 @@
         "https://prosekit.dev/r/lit-ui-button.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12519,7 +12388,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12570,7 +12438,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12927,8 +12794,7 @@
         "https://prosekit.dev/r/svelte-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13577,8 +13443,7 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13679,8 +13544,7 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13842,8 +13706,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13976,8 +13839,7 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-page.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -14073,8 +13935,7 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -14564,8 +14425,7 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -14777,8 +14637,7 @@
         "https://prosekit.dev/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -15049,7 +14908,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "svelte",
         "y-websocket",
         "yjs"
       ],
@@ -16226,8 +16084,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -16311,8 +16168,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -16587,8 +16443,7 @@
         "https://prosekit.dev/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16641,8 +16496,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16692,8 +16546,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16742,8 +16595,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16791,8 +16643,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16845,8 +16696,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16901,8 +16751,7 @@
         "https://prosekit.dev/r/solid-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16961,8 +16810,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17004,8 +16852,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17066,8 +16913,7 @@
         "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17155,8 +17001,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17201,8 +17046,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17256,8 +17100,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17308,8 +17151,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17360,8 +17202,7 @@
         "https://prosekit.dev/r/solid-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17411,8 +17252,7 @@
         "https://prosekit.dev/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17462,8 +17302,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17514,8 +17353,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17573,8 +17411,7 @@
         "https://prosekit.dev/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17623,8 +17460,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17675,8 +17511,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17728,8 +17563,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17788,8 +17622,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17842,8 +17675,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17888,8 +17720,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17922,8 +17753,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17965,8 +17795,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18032,8 +17861,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18095,8 +17923,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18129,8 +17956,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18170,7 +17996,6 @@
         "remark-html",
         "remark-parse",
         "remark-stringify",
-        "solid-js",
         "unified"
       ],
       "files": [
@@ -18213,8 +18038,7 @@
         "https://prosekit.dev/r/solid-ui-search.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18263,8 +18087,7 @@
         "https://prosekit.dev/r/solid-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18312,8 +18135,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18367,8 +18189,7 @@
         "https://prosekit.dev/r/solid-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18416,8 +18237,7 @@
         "https://prosekit.dev/r/solid-sample-temml.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18464,8 +18284,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18519,8 +18338,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18574,8 +18392,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18629,8 +18446,7 @@
         "https://prosekit.dev/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18683,8 +18499,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18735,8 +18550,7 @@
         "https://prosekit.dev/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18792,8 +18606,7 @@
         "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18846,8 +18659,7 @@
         "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18908,8 +18720,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18962,8 +18773,7 @@
         "https://prosekit.dev/r/solid-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19011,7 +18821,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "solid-js",
         "y-websocket",
         "yjs"
       ],
@@ -20012,8 +19821,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20049,8 +19857,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20083,8 +19890,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20117,8 +19923,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20153,8 +19958,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20193,8 +19997,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20234,8 +20037,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20279,8 +20081,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20320,8 +20121,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20368,8 +20168,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20405,8 +20204,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20444,8 +20242,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20488,8 +20285,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -20522,8 +20318,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {

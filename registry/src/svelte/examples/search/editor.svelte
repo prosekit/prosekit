@@ -5,6 +5,7 @@ import 'prosekit/extensions/search/style.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-search'
 import { Search } from '../../ui/search'
@@ -16,11 +17,8 @@ const props: {
 } = $props()
 
 const extension = defineExtension()
-const defaultContent = props.initialContent ?? sampleContent
-const editor = createEditor({
-  extension,
-  defaultContent,
-})
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
+const editor = createEditor({ extension, defaultContent })
 </script>
 
 <ProseKit {editor}>

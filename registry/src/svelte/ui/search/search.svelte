@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/svelte'
-import { derived, writable } from 'svelte/store'
+import { toStore } from 'svelte/store'
 
 import { Button } from '../button'
 
@@ -17,34 +17,13 @@ let replaceText = $state('')
 
 const editor = useEditor<SearchCommandsExtension>()
 
-// Create stores from the reactive values
-const searchTextStore = writable('')
-const replaceTextStore = writable('')
-
-// Update stores when reactive values change
-$effect(() => {
-  searchTextStore.set(searchText)
-})
-
-$effect(() => {
-  replaceTextStore.set(replaceText)
-})
-
-// Create extension derived from the stores
-const extension = derived(
-  [searchTextStore, replaceTextStore],
-  ([$searchText, $replaceText]) => {
-    if (!$searchText) {
-      return null
-    }
-    return defineSearchQuery({
-      search: $searchText,
-      replace: $replaceText,
-    })
-  },
+const extension = $derived(
+  searchText
+    ? defineSearchQuery({ search: searchText, replace: replaceText })
+    : null,
 )
 
-useExtension(extension)
+useExtension(toStore(() => extension))
 
 function toggleReplace() {
   showReplace = !showReplace

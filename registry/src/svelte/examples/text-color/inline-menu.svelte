@@ -2,7 +2,7 @@
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue, useKeymap } from 'prosekit/svelte'
 import { InlinePopover } from 'prosekit/svelte/inline-popover'
-import { derived, writable } from 'svelte/store'
+import { toStore } from 'svelte/store'
 
 import { Button } from '../../ui/button'
 
@@ -67,26 +67,17 @@ const backgroundColorState = useEditorDerivedValue(getBackgroundColorState)
 
 let open = $state(false)
 
-// Create a store from the reactive open value
-const openStore = writable(false)
-
-// Update store when open changes
-$effect(() => {
-  openStore.set(open)
-})
-
-// Create keymap derived from the open store
-const keymap = derived(openStore, ($open) => ({
+const keymap = $derived({
   Escape: () => {
-    if ($open) {
+    if (open) {
       open = false
       return true
     }
     return false
   },
-}))
+})
 
-useKeymap(keymap)
+useKeymap(toStore(() => keymap))
 </script>
 
 <InlinePopover

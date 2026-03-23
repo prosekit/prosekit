@@ -5,6 +5,7 @@ import 'prosekit/basic/typography.css'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-rtl'
 import { sampleUploader } from '../../sample/sample-uploader'
@@ -20,7 +21,7 @@ const props: {
 } = $props()
 
 const extension = defineBasicExtension()
-const defaultContent = props.initialContent ?? sampleContent
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
 const editor = createEditor({ extension, defaultContent })
 </script>
 

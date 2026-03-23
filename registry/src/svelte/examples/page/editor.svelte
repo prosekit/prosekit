@@ -6,6 +6,7 @@ import './zoom.css'
 
 import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-page'
 
@@ -16,8 +17,8 @@ const props: {
   initialContent?: NodeJSON
 } = $props()
 
-const defaultContent = props.initialContent ?? sampleContent
 const extension = defineExtension()
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
 const editor = createEditor({ extension, defaultContent })
 
 let zoom = $state(50)

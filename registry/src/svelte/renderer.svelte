@@ -8,7 +8,7 @@ const props: {
   exampleProps?: Record<string, unknown>
 } = $props()
 
-let loader = loaders[props.story as keyof typeof loaders]
+let loader = $derived(loaders[props.story as keyof typeof loaders])
 let mounted = $state(false)
 
 onMount(() => {

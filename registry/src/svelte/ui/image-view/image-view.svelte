@@ -1,16 +1,18 @@
 <script lang="ts">
+import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
 import { ResizableHandle, ResizableRoot } from 'prosekit/svelte/resizable'
+import { fromStore } from 'svelte/store'
 
 interface Props extends SvelteNodeViewProps {}
 
 const props: Props = $props()
-const node = $derived( props.node)
-const selected = $derived( props.selected)
+const node: ProseMirrorNode = $derived(fromStore(props.node).current)
+const selected: boolean = $derived(fromStore(props.selected).current)
 
-const attrs = $derived($node.attrs as ImageAttrs)
+const attrs = $derived(node.attrs as ImageAttrs)
 const url = $derived(attrs.src || '')
 const uploading = $derived(url.startsWith('blob:'))
 
@@ -60,7 +62,7 @@ function handleImageLoad(event: Event) {
   width={attrs.width ?? undefined}
   height={attrs.height ?? undefined}
   {aspectRatio}
-  data-selected={$selected ? '' : undefined}
+  data-selected={selected ? '' : undefined}
   class="CSS_IMAGE_RESIZABLE"
   onResizeEnd={(event) => props.setAttrs(event.detail)}
 >

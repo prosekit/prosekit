@@ -16223,7 +16223,8 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {

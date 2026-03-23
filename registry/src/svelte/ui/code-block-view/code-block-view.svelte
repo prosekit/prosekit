@@ -1,14 +1,16 @@
 <script lang="ts">
+import type { ProseMirrorNode } from 'prosekit/pm/model'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
+import { fromStore } from 'svelte/store'
 
 interface Props extends SvelteNodeViewProps {}
 
 const props: Props = $props()
-const node = props.node
+const node: ProseMirrorNode = $derived(fromStore(props.node).current)
 
-const attrs = $derived($node.attrs as CodeBlockAttrs)
+const attrs = $derived(node.attrs as CodeBlockAttrs)
 
 function setLanguage(lang: string) {
   const newAttrs: CodeBlockAttrs = { language: lang }

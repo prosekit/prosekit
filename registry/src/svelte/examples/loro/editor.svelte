@@ -17,29 +17,28 @@ loroA.import(loroB.export({ mode: 'update' }))
 loroB.import(loroA.export({ mode: 'update' }))
 
 $effect(() => {
-const unsubscribeA = loroA.subscribeLocalUpdates((updates) => {
-  loroB.import(updates)
-})
+  const unsubscribeA = loroA.subscribeLocalUpdates((updates) => {
+    loroB.import(updates)
+  })
 
-const unsubscribeB = loroB.subscribeLocalUpdates((updates) => {
-  loroA.import(updates)
-})
+  const unsubscribeB = loroB.subscribeLocalUpdates((updates) => {
+    loroA.import(updates)
+  })
 
-const awarenessAListener: AwarenessListener = (_, origin) => {
-  if (origin === 'local') {
-    awarenessB.apply(awarenessA.encode([idA]))
+  const awarenessAListener: AwarenessListener = (_, origin) => {
+    if (origin === 'local') {
+      awarenessB.apply(awarenessA.encode([idA]))
+    }
   }
-}
 
-const awarenessBListener: AwarenessListener = (_, origin) => {
-  if (origin === 'local') {
-    awarenessA.apply(awarenessB.encode([idB]))
+  const awarenessBListener: AwarenessListener = (_, origin) => {
+    if (origin === 'local') {
+      awarenessA.apply(awarenessB.encode([idB]))
+    }
   }
-}
 
-awarenessA.addListener(awarenessAListener)
-awarenessB.addListener(awarenessBListener)
-
+  awarenessA.addListener(awarenessAListener)
+  awarenessB.addListener(awarenessBListener)
 
   return () => {
     awarenessA.removeListener(awarenessAListener)

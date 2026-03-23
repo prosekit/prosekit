@@ -14,6 +14,7 @@ import { InlineMenu } from '../../ui/inline-menu'
 import { SlashMenu } from '../../ui/slash-menu'
 import { TableHandle } from '../../ui/table-handle'
 import { Toolbar } from '../../ui/toolbar'
+import { untrack } from 'svelte'
 
 const props: {
   initialContent?: NodeJSON

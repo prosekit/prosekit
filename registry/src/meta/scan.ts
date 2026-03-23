@@ -64,6 +64,17 @@ const TS_MAPPING: Record<string, string> = {
   '.cjs': '.cts',
 }
 
+// These are provided by the framework and should not be treated as direct dependencies
+const IGNORED_DEPENDENCIES = new Set([
+  'react',
+  'react-dom',
+  'preact',
+  'vue',
+  'svelte',
+  'solid-js',
+  'lit',
+])
+
 interface ClassificationResult {
   readonly framework: Framework
   readonly category: ItemCategory
@@ -75,6 +86,8 @@ interface ImportResolutionContext {
   readonly specifier: string
   readonly fileSet: Set<string>
 }
+
+
 
 /**
  * Remove the trailing extension (if any) from a path segment.
@@ -233,6 +246,11 @@ function normalizeExternalDependency(specifier: string): string | null {
   }
 
   const [packageName] = cleaned.split('/')
+
+  if (IGNORED_DEPENDENCIES.has(packageName)) {
+    return null
+  }
+
   return packageName
 }
 

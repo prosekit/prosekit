@@ -1,10 +1,12 @@
 import { defineMarkViewComponent, defineMarkViewFactory, definePlugin, type Extension } from '@prosekit/core'
-import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
-import type { MarkViewContext, SvelteMarkViewUserOptions } from '@prosemirror-adapter/svelte'
-import type { Component } from 'svelte'
-
-import { MarkViewWrapper } from '../components/mark-view-wrapper/index.ts'
+import {
+  AbstractSvelteMarkView,
+  buildSvelteMarkViewCreator,
+  type MarkViewContext,
+  type SvelteRendererResult,
+} from '@prosemirror-adapter/svelte'
+import { flushSync, mount, unmount, type Component } from 'svelte'
 
 /**
  * @public
@@ -30,6 +32,35 @@ export interface SvelteMarkViewOptions extends CoreMarkViewUserOptions<SvelteMar
 
 const isServer = typeof window === 'undefined'
 
+class ProseKitSvelteMarkView extends AbstractSvelteMarkView<SvelteMarkViewComponent> {
+  render = (options: { context: Map<unknown, unknown> }) => {
+    const UserComponent = this.component
+    const props: SvelteMarkViewProps = this.context
+    const component = mount(UserComponent, {
+      target: this.dom,
+      context: options.context,
+      props,
+    })
+    flushSync()
+    return () => unmount(component)
+  }
+}
+
+/**
+ * @internal
+ */
+export function defineSvelteMarkViewFactory(
+  renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
+  removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
+  context: Map<any, any>,
+): Extension {
+  const factory = buildSvelteMarkViewCreator(renderSvelteRenderer, removeSvelteRenderer, ProseKitSvelteMarkView, context)
+  return defineMarkViewFactory<SvelteMarkViewOptions>({
+    group: 'svelte',
+    factory,
+  })
+}
+
 /**
  * Defines a mark view using a Svelte component.
  *
@@ -43,40 +74,9 @@ export function defineSvelteMarkView(
     return definePlugin([])
   }
 
-  const { name, component, ...userOptions } = options
-
-  const args: SvelteMarkViewUserOptions = {
-    ...userOptions,
-    component: wrapComponent(component),
-  }
-
-  return defineMarkViewComponent<SvelteMarkViewUserOptions>({
+  return defineMarkViewComponent<SvelteMarkViewOptions>({
     group: 'svelte',
-    name,
-    args,
-  })
-}
-
-function wrapComponent(
-  component: SvelteMarkViewComponent,
-): Component<any, any> {
-  // `MarkViewWrapper` is an object during SSR
-  if (!MarkViewWrapper || typeof MarkViewWrapper !== 'function') {
-    return component
-  }
-
-  const MarkViewPropsWrapper: Component = (internals, props) => {
-    return MarkViewWrapper(internals, { ...props, component })
-  }
-
-  return MarkViewPropsWrapper
-}
-
-export function defineSvelteMarkViewFactory(
-  factory: (options: SvelteMarkViewUserOptions) => MarkViewConstructor,
-): Extension {
-  return defineMarkViewFactory<SvelteMarkViewUserOptions>({
-    group: 'svelte',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

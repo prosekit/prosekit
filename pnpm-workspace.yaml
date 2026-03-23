@@ -34,13 +34,7 @@ minimumReleaseAgeExclude:
   - "@astrobook/*"
   - "knip"
 
-overrides:
-  "@prosemirror-adapter/core": "https://pkg.pr.new/@prosemirror-adapter/core@228"
-  "@prosemirror-adapter/react": "https://pkg.pr.new/@prosemirror-adapter/react@228"
-  "@prosemirror-adapter/vue": "https://pkg.pr.new/@prosemirror-adapter/vue@228"
-  "@prosemirror-adapter/solid": "https://pkg.pr.new/@prosemirror-adapter/solid@228"
-  "@prosemirror-adapter/svelte": "https://pkg.pr.new/@prosemirror-adapter/svelte@228"
-  "@prosemirror-adapter/preact": "https://pkg.pr.new/@prosemirror-adapter/preact@228"
+overrides: {}
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

@@ -16,8 +16,8 @@ export interface Props {
 const props: Props = $props()
 
 const extension = defineExtension()
-const defaultContent = props.initialContent ?? sampleContent
-const editor = createEditor({ extension, defaultContent })
+const defaultContent = $derived(props.initialContent ?? sampleContent)
+const editor = $derived(createEditor({ extension, defaultContent }))
 </script>
 
 <ProseKit {editor}>

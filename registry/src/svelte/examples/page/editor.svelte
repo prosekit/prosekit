@@ -16,9 +16,9 @@ const props: {
   initialContent?: NodeJSON
 } = $props()
 
-const defaultContent = props.initialContent ?? sampleContent
+const defaultContent = $derived(props.initialContent ?? sampleContent)
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent })
+const editor = $derived(createEditor({ extension, defaultContent }))
 
 let zoom = $state(50)
 </script>

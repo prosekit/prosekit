@@ -2,8 +2,8 @@ import { union, type Editor } from '@prosekit/core'
 import { useVueRenderer } from '@prosemirror-adapter/vue'
 import { defineComponent, type DefineSetupFnComponent, type PropType } from 'vue'
 
-import { defineVueNodeViewFactory } from '../extensions/vue-node-view.ts'
 import { defineVueMarkViewFactory } from '../extensions/vue-mark-view.ts'
+import { defineVueNodeViewFactory } from '../extensions/vue-node-view.ts'
 import { useEditorExtension } from '../hooks/use-editor-extension.ts'
 
 /**

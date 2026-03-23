@@ -1,10 +1,13 @@
 import { defineMarkViewComponent, defineMarkViewFactory, type Extension } from '@prosekit/core'
-import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
-import { useMarkViewContext, useMarkViewFactory, type MarkViewContext, type ReactMarkViewUserOptions } from '@prosemirror-adapter/react'
-import { createElement, useMemo, type ComponentType, type FC } from 'react'
-
-import { useExtension } from '../hooks/use-extension.ts'
+import {
+  AbstractReactMarkView,
+  buildReactMarkViewCreator,
+  type MarkViewContext,
+  type ReactRendererResult,
+} from '@prosemirror-adapter/react'
+import { createElement, type ComponentType, type ReactPortal } from 'react'
+import { createPortal } from 'react-dom'
 
 /**
  * @public
@@ -28,25 +31,30 @@ export interface ReactMarkViewOptions extends CoreMarkViewUserOptions<ReactMarkV
   name: string
 }
 
-function withMarkViewProps(component: ReactMarkViewComponent) {
-  return function MarkViewPropsWrapper() {
-    const props: ReactMarkViewProps = useMarkViewContext()
-    return createElement(component, props)
+class ProseKitReactMarkView extends AbstractReactMarkView<ReactMarkViewComponent> {
+  render = (): ReactPortal => {
+    const UserComponent = this.component
+    const props = { ...this.context }
+    return createPortal(
+      createElement(UserComponent, props),
+      this.dom,
+      this.key,
+    )
   }
 }
 
 /**
  * @internal
  */
-export const ReactMarkViewConsumer: FC = () => {
-  const markViewFactory = useMarkViewFactory()
-  const extension = useMemo(
-    () => defineReactMarkViewFactory(markViewFactory),
-    [markViewFactory],
-  )
-  useExtension(extension)
-
-  return null
+export function defineReactMarkViewFactory(
+  renderReactRenderer: ReactRendererResult['renderReactRenderer'],
+  removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+): Extension {
+  const factory = buildReactMarkViewCreator(renderReactRenderer, removeReactRenderer, ProseKitReactMarkView)
+  return defineMarkViewFactory<ReactMarkViewOptions>({
+    group: 'react',
+    factory,
+  })
 }
 
 /**
@@ -55,25 +63,9 @@ export const ReactMarkViewConsumer: FC = () => {
  * @public
  */
 export function defineReactMarkView(options: ReactMarkViewOptions): Extension {
-  const { name, component, ...userOptions } = options
-
-  const args: ReactMarkViewUserOptions = {
-    ...userOptions,
-    component: withMarkViewProps(component),
-  }
-
-  return defineMarkViewComponent<ReactMarkViewUserOptions>({
+  return defineMarkViewComponent<ReactMarkViewOptions>({
     group: 'react',
-    name,
-    args,
-  })
-}
-
-function defineReactMarkViewFactory(
-  factory: (options: ReactMarkViewUserOptions) => MarkViewConstructor,
-) {
-  return defineMarkViewFactory<ReactMarkViewUserOptions>({
-    group: 'react',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

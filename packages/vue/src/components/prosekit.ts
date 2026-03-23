@@ -1,10 +1,9 @@
 import type { Editor } from '@prosekit/core'
-import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/vue'
 import { defineComponent, h, type DefineSetupFnComponent, type PropType } from 'vue'
 
-import { VueMarkViewsConsumer } from '../extensions/vue-mark-view.ts'
-import { VueNodeViewsConsumer } from '../extensions/vue-node-view.ts'
 import { provideEditor } from '../injection/editor-context.ts'
+
+import { ViewRenderer } from './view-renderer.ts'
 
 export interface ProseKitProps {
   editor: Editor
@@ -20,12 +19,11 @@ export const ProseKit: DefineSetupFnComponent<ProseKitProps> = defineComponent<P
   props: { editor: { type: Object as PropType<Editor>, required: true } },
   setup: (props, { slots }) => {
     provideEditor(props.editor)
-    return () => {
-      return h(ProsemirrorAdapterProvider, null, () => [
-        h(VueNodeViewsConsumer),
-        h(VueMarkViewsConsumer),
-        slots.default?.(),
-      ])
-    }
+    return () =>
+      h(
+        ViewRenderer,
+        { editor: props.editor },
+        () => slots.default?.(),
+      )
   },
 })

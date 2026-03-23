@@ -1,11 +1,13 @@
 import { defineNodeViewComponent, defineNodeViewFactory, type Extension } from '@prosekit/core'
-import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
-import { useNodeViewContext, useNodeViewFactory, type NodeViewContext, type PreactNodeViewUserOptions } from '@prosemirror-adapter/preact'
-import { h, type ComponentType, type FunctionComponent } from 'preact'
-import { useMemo } from 'preact/hooks'
-
-import { useExtension } from '../hooks/use-extension.ts'
+import {
+  AbstractPreactNodeView,
+  buildPreactNodeViewCreator,
+  type NodeViewContext,
+  type PreactRendererResult,
+} from '@prosemirror-adapter/preact'
+import { createElement, type ComponentType } from 'preact'
+import { createPortal } from 'preact/compat'
 
 /**
  * @public
@@ -29,25 +31,29 @@ export interface PreactNodeViewOptions extends CoreNodeViewUserOptions<PreactNod
   name: string
 }
 
-function withNodeViewProps(component: PreactNodeViewComponent) {
-  return function NodeViewPropsWrapper() {
-    const props: PreactNodeViewProps = useNodeViewContext()
-    return h(component, props)
+class ProseKitPreactNodeView extends AbstractPreactNodeView<PreactNodeViewComponent> {
+  render = () => {
+    const UserComponent = this.component
+    const props = { ...this.context }
+    return createPortal(
+      createElement(UserComponent, props),
+      this.dom,
+    )
   }
 }
 
 /**
  * @internal
  */
-export const PreactNodeViewConsumer: FunctionComponent = () => {
-  const nodeViewFactory = useNodeViewFactory()
-  const extension = useMemo(
-    () => definePreactNodeViewFactory(nodeViewFactory),
-    [nodeViewFactory],
-  )
-  useExtension(extension)
-
-  return null
+export function definePreactNodeViewFactory(
+  renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
+  removePreactRenderer: PreactRendererResult['removePreactRenderer'],
+): Extension {
+  const factory = buildPreactNodeViewCreator(renderPreactRenderer, removePreactRenderer, ProseKitPreactNodeView)
+  return defineNodeViewFactory<PreactNodeViewOptions>({
+    group: 'preact',
+    factory,
+  })
 }
 
 /**
@@ -56,25 +62,9 @@ export const PreactNodeViewConsumer: FunctionComponent = () => {
  * @public
  */
 export function definePreactNodeView(options: PreactNodeViewOptions): Extension {
-  const { name, component, ...userOptions } = options
-
-  const args: PreactNodeViewUserOptions = {
-    ...userOptions,
-    component: withNodeViewProps(component),
-  }
-
-  return defineNodeViewComponent<PreactNodeViewUserOptions>({
+  return defineNodeViewComponent<PreactNodeViewOptions>({
     group: 'preact',
-    name,
-    args,
-  })
-}
-
-function definePreactNodeViewFactory(
-  factory: (options: PreactNodeViewUserOptions) => NodeViewConstructor,
-) {
-  return defineNodeViewFactory<PreactNodeViewUserOptions>({
-    group: 'preact',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

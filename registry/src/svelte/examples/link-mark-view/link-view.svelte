@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { SvelteMarkViewProps } from 'prosekit/svelte'
-  import { fromStore } from 'svelte/store';
+import { fromStore } from 'svelte/store'
 
 const props: SvelteMarkViewProps = $props()
 

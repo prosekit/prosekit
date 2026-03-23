@@ -14150,7 +14150,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {

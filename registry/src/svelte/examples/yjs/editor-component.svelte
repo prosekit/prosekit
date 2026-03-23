@@ -19,8 +19,8 @@ interface Props {
 
 const props: Props = $props()
 
-const extension = defineExtension(props.doc, props.awareness)
-const editor = createEditor({ extension })
+const extension = $derived(defineExtension(props.doc, props.awareness))
+const editor = $derived(createEditor({ extension }))
 </script>
 
 <ProseKit {editor}>

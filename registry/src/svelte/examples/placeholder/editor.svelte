@@ -14,10 +14,10 @@ const props = $props<{
 }>()
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultContent: props.initialContent })
+const editor = $derived(createEditor({ extension, defaultContent: props.initialContent }))
 
 const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
-useDocChange(handleDocChange, { editor })
+$effect(() => useDocChange(handleDocChange, { editor }))
 </script>
 
 <ProseKit {editor}>

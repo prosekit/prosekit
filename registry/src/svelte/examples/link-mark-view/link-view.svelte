@@ -1,5 +1,6 @@
 <script lang="ts">
 import type { SvelteMarkViewProps } from 'prosekit/svelte'
+  import { fromStore } from 'svelte/store';
 
 const props: SvelteMarkViewProps = $props()
 
@@ -27,8 +28,8 @@ function pickRandomColor() {
 }
 
 let color = $state(colors[0])
-const mark = props.mark
-const href = $derived($mark.attrs.href as string)
+let mark = $derived(fromStore(props.mark).current)
+let href = $derived(mark.attrs.href as string)
 
 $effect(() => {
   const interval = setInterval(() => {

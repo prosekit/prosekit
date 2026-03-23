@@ -7,14 +7,16 @@ import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/svelte'
 
 import { defineExtension } from './extension'
+import { untrack } from 'svelte';
 
-const props = $props<{
+const props: {
   initialContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
-}>()
+} = $props()
 
 const extension = defineExtension()
-const editor = $derived(createEditor({ extension, defaultContent: props.initialContent }))
+const defaultContent = untrack(() => props.initialContent)
+const editor = createEditor({ extension, defaultContent })
 
 const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
 useDocChange(handleDocChange, { editor })

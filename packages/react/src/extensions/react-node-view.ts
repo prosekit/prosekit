@@ -1,10 +1,13 @@
 import { defineNodeViewComponent, defineNodeViewFactory, type Extension } from '@prosekit/core'
-import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
-import { useNodeViewContext, useNodeViewFactory, type NodeViewContext, type ReactNodeViewUserOptions } from '@prosemirror-adapter/react'
-import { createElement, useMemo, type ComponentType, type FC } from 'react'
-
-import { useExtension } from '../hooks/use-extension.ts'
+import {
+  AbstractReactNodeView,
+  buildReactNodeViewCreator,
+  type NodeViewContext,
+  type ReactRendererResult,
+} from '@prosemirror-adapter/react'
+import { createElement, type ComponentType, type ReactPortal } from 'react'
+import { createPortal } from 'react-dom'
 
 /**
  * @public
@@ -28,25 +31,30 @@ export interface ReactNodeViewOptions extends CoreNodeViewUserOptions<ReactNodeV
   name: string
 }
 
-function withNodeViewProps(component: ReactNodeViewComponent) {
-  return function NodeViewPropsWrapper() {
-    const props: ReactNodeViewProps = useNodeViewContext()
-    return createElement(component, props)
+class ProseKitReactNodeView extends AbstractReactNodeView<ReactNodeViewComponent> {
+  render = (): ReactPortal => {
+    const UserComponent = this.component
+    const props = { ...this.context }
+    return createPortal(
+      createElement(UserComponent, props),
+      this.dom,
+      this.key,
+    )
   }
 }
 
 /**
  * @internal
  */
-export const ReactNodeViewConsumer: FC = () => {
-  const nodeViewFactory = useNodeViewFactory()
-  const extension = useMemo(
-    () => defineReactNodeViewFactory(nodeViewFactory),
-    [nodeViewFactory],
-  )
-  useExtension(extension)
-
-  return null
+export function defineReactNodeViewFactory(
+  renderReactRenderer: ReactRendererResult['renderReactRenderer'],
+  removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+): Extension {
+  const factory = buildReactNodeViewCreator(renderReactRenderer, removeReactRenderer, ProseKitReactNodeView)
+  return defineNodeViewFactory<ReactNodeViewOptions>({
+    group: 'react',
+    factory,
+  })
 }
 
 /**
@@ -55,25 +63,9 @@ export const ReactNodeViewConsumer: FC = () => {
  * @public
  */
 export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
-  const { name, component, ...userOptions } = options
-
-  const args: ReactNodeViewUserOptions = {
-    ...userOptions,
-    component: withNodeViewProps(component),
-  }
-
-  return defineNodeViewComponent<ReactNodeViewUserOptions>({
+  return defineNodeViewComponent<ReactNodeViewOptions>({
     group: 'react',
-    name,
-    args,
-  })
-}
-
-function defineReactNodeViewFactory(
-  factory: (options: ReactNodeViewUserOptions) => NodeViewConstructor,
-) {
-  return defineNodeViewFactory<ReactNodeViewUserOptions>({
-    group: 'react',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

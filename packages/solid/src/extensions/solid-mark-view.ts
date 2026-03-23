@@ -1,15 +1,15 @@
 import { defineMarkViewComponent, defineMarkViewFactory, type Extension } from '@prosekit/core'
-import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import {
-  useMarkViewContext,
-  useMarkViewFactory,
+  AbstractSolidMarkView,
+  buildSolidMarkViewCreator,
   type MarkViewContextProps,
-  type SolidMarkViewUserOptions,
+  type SolidRendererResult,
 } from '@prosemirror-adapter/solid'
-import { createComponent, createMemo, type Accessor, type Component } from 'solid-js'
+import { createComponent, type Component, type JSX } from 'solid-js'
+import { Portal } from 'solid-js/web'
 
-import { useExtension } from '../hooks/use-extension.ts'
+import { hidePortalDiv } from './helpers.ts'
 
 /**
  * @public
@@ -33,37 +33,33 @@ export interface SolidMarkViewOptions extends CoreMarkViewUserOptions<SolidMarkV
   name: string
 }
 
-function withMarkViewProps(
-  component: SolidMarkViewComponent,
-): Component<SolidMarkViewProps> {
-  return function MarkViewPropsWrapper() {
-    const context: Accessor<SolidMarkViewProps> = useMarkViewContext()
-    const props: SolidMarkViewProps = {
-      get contentRef() {
-        return context().contentRef
+class ProseKitSolidMarkView extends AbstractSolidMarkView<SolidMarkViewComponent> {
+  render = (): JSX.Element => {
+    const UserComponent = this.component
+    const getProps = this.context
+    return createComponent(Portal, {
+      mount: this.dom,
+      get children() {
+        const props: MarkViewContextProps = getProps()
+        return createComponent(UserComponent, props)
       },
-      get view() {
-        return context().view
-      },
-      get mark() {
-        return context().mark
-      },
-    }
-    return createComponent(component, props)
+      ref: hidePortalDiv,
+    })
   }
 }
 
 /**
  * @internal
  */
-export function consumeSolidMarkViews(): void {
-  const markViewFactory = useMarkViewFactory()
-  const extension = createMemo(
-    () => defineSolidMarkViewFactory(markViewFactory),
-    [markViewFactory],
-  )
-
-  useExtension(extension)
+export function defineSolidMarkViewFactory(
+  renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
+  removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
+): Extension {
+  const factory = buildSolidMarkViewCreator(renderSolidRenderer, removeSolidRenderer, ProseKitSolidMarkView)
+  return defineMarkViewFactory<SolidMarkViewOptions>({
+    group: 'solid',
+    factory,
+  })
 }
 
 /**
@@ -72,25 +68,9 @@ export function consumeSolidMarkViews(): void {
  * @public
  */
 export function defineSolidMarkView(options: SolidMarkViewOptions): Extension {
-  const { name, component, ...userOptions } = options
-
-  const args: SolidMarkViewUserOptions = {
-    ...userOptions,
-    component: withMarkViewProps(component),
-  }
-
-  return defineMarkViewComponent<SolidMarkViewUserOptions>({
+  return defineMarkViewComponent<SolidMarkViewOptions>({
     group: 'solid',
-    name,
-    args,
-  })
-}
-
-function defineSolidMarkViewFactory(
-  factory: (options: SolidMarkViewOptions) => MarkViewConstructor,
-) {
-  return defineMarkViewFactory<SolidMarkViewOptions>({
-    group: 'solid',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

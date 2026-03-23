@@ -1,10 +1,12 @@
 import { defineNodeViewComponent, defineNodeViewFactory, definePlugin, type Extension } from '@prosekit/core'
-import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
-import type { NodeViewContext, SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
-import type { Component } from 'svelte'
-
-import { NodeViewWrapper } from '../components/node-view-wrapper/index.ts'
+import {
+  AbstractSvelteNodeView,
+  buildSvelteNodeViewCreator,
+  type NodeViewContext,
+  type SvelteRendererResult,
+} from '@prosemirror-adapter/svelte'
+import { flushSync, mount, unmount, type Component } from 'svelte'
 
 /**
  * @public
@@ -30,6 +32,35 @@ export interface SvelteNodeViewOptions extends CoreNodeViewUserOptions<SvelteNod
 
 const isServer = typeof window === 'undefined'
 
+class ProseKitSvelteNodeView extends AbstractSvelteNodeView<SvelteNodeViewComponent> {
+  render = (options: { context: Map<unknown, unknown> }) => {
+    const UserComponent = this.component
+    const props: SvelteNodeViewProps = this.context
+    const component = mount(UserComponent, {
+      target: this.dom,
+      context: options.context,
+      props,
+    })
+    flushSync()
+    return () => unmount(component)
+  }
+}
+
+/**
+ * @internal
+ */
+export function defineSvelteNodeViewFactory(
+  renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
+  removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
+  context: Map<any, any>,
+): Extension {
+  const factory = buildSvelteNodeViewCreator(renderSvelteRenderer, removeSvelteRenderer, ProseKitSvelteNodeView, context)
+  return defineNodeViewFactory<SvelteNodeViewOptions>({
+    group: 'svelte',
+    factory,
+  })
+}
+
 /**
  * Defines a node view using a Svelte component.
  *
@@ -43,40 +74,9 @@ export function defineSvelteNodeView(
     return definePlugin([])
   }
 
-  const { name, component, ...userOptions } = options
-
-  const args: SvelteNodeViewUserOptions = {
-    ...userOptions,
-    component: wrapComponent(component),
-  }
-
-  return defineNodeViewComponent<SvelteNodeViewUserOptions>({
+  return defineNodeViewComponent<SvelteNodeViewOptions>({
     group: 'svelte',
-    name,
-    args,
-  })
-}
-
-function wrapComponent(
-  component: SvelteNodeViewComponent,
-): Component<any, any> {
-  // `NodeViewWrapper` is an object during SSR
-  if (!NodeViewWrapper || typeof NodeViewWrapper !== 'function') {
-    return component
-  }
-
-  const NodeViewPropsWrapper: Component = (internals, props) => {
-    return NodeViewWrapper(internals, { ...props, component })
-  }
-
-  return NodeViewPropsWrapper
-}
-
-export function defineSvelteNodeViewFactory(
-  factory: (options: SvelteNodeViewUserOptions) => NodeViewConstructor,
-): Extension {
-  return defineNodeViewFactory<SvelteNodeViewUserOptions>({
-    group: 'svelte',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

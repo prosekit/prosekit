@@ -17,10 +17,7 @@ const props: {
 
 const extension = defineExtension()
 const defaultContent = props.initialContent ?? sampleContent
-const editor = createEditor({
-  extension,
-  defaultContent,
-})
+const editor = createEditor({  extension,  defaultContent})
 </script>
 
 <ProseKit {editor}>

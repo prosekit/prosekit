@@ -9,7 +9,7 @@ import { useEditorExtension } from '../hooks/use-editor-extension.ts'
 /**
  * @internal
  */
-export interface ViewRendererProps {
+interface ViewRendererProps {
   editor: Editor
 }
 

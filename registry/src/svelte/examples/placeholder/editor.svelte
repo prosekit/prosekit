@@ -17,7 +17,7 @@ const extension = defineExtension()
 const editor = $derived(createEditor({ extension, defaultContent: props.initialContent }))
 
 const handleDocChange = (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc))
-$effect(() => useDocChange(handleDocChange, { editor }))
+useDocChange(handleDocChange, { editor })
 </script>
 
 <ProseKit {editor}>

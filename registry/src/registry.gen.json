@@ -12619,7 +12619,8 @@
         "https://prosekit.dev/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -12722,7 +12723,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -12771,7 +12773,8 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -12819,7 +12822,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -12872,7 +12876,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -12987,7 +12992,8 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13178,7 +13184,8 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13223,7 +13230,8 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13277,7 +13285,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13379,7 +13388,8 @@
         "https://prosekit.dev/r/svelte-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13429,7 +13439,8 @@
         "https://prosekit.dev/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13479,7 +13490,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13531,7 +13543,8 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-tex.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13630,7 +13643,8 @@
         "https://prosekit.dev/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13731,7 +13745,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13783,7 +13798,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13842,7 +13858,8 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14030,7 +14047,8 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14310,7 +14328,8 @@
         "https://prosekit.dev/r/svelte-ui-search.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14407,7 +14426,8 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14461,7 +14481,8 @@
         "https://prosekit.dev/r/svelte-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14509,7 +14530,8 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14672,7 +14694,8 @@
         "https://prosekit.dev/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14725,7 +14748,8 @@
         "https://prosekit.dev/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -14947,7 +14971,8 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -15000,7 +15025,8 @@
         "https://prosekit.dev/r/svelte-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -15048,6 +15074,7 @@
       ],
       "dependencies": [
         "prosekit",
+        "svelte",
         "y-websocket",
         "yjs"
       ],

@@ -19,7 +19,7 @@ import { Toolbar } from '../../ui/toolbar'
 import { UserMenu } from '../../ui/user-menu'
 
 import { defineExtension } from './extension'
-  import { untrack } from 'svelte';
+import { untrack } from 'svelte'
 
 const props: {
   initialContent?: NodeJSON

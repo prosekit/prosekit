@@ -3,9 +3,9 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { useExtension } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
-const props = $props<{
+const props: {
   placeholder: string
-}>()
+} = $props()
 
 const extension = $derived(definePlaceholder({ placeholder: props.placeholder }))
 

@@ -15,11 +15,12 @@ interface Props {
 
 const props: Props = $props()
 
-let extension = $derived(union(
+const extension = $derived(union(
   defineBasicExtension(),
   defineCommitRecorder(props.commitRecorder),
 ))
-let editor = $derived(createEditor({ extension, defaultContent: props.initialContent }))
+const defaultContent = $derived(  props.initialContent  ) 
+const editor = $derived(createEditor({ extension, defaultContent }))
 </script>
 
 {#key props.key}

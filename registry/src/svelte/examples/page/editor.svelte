@@ -17,8 +17,8 @@ const props: {
   initialContent?: NodeJSON
 } = $props()
 
-const defaultContent = untrack(() => props.initialContent ?? sampleContent)
 const extension = defineExtension()
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
 const editor = createEditor({ extension, defaultContent })
 
 let zoom = $state(50)

@@ -1,10 +1,9 @@
 import type { Editor } from '@prosekit/core'
-import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 import { createComponent, type Component, type ParentProps } from 'solid-js'
 
 import { EditorContextProvider } from '../contexts/editor-context.ts'
-import { consumeSolidMarkViews } from '../extensions/solid-mark-view.ts'
-import { consumeSolidNodeViews } from '../extensions/solid-node-view.ts'
+
+import { ViewRenderer } from './view-renderer.ts'
 
 export type ProseKitProps = ParentProps<{
   editor: Editor
@@ -21,10 +20,11 @@ export const ProseKit: Component<ProseKitProps> = (props) => {
       return props.editor
     },
     get children() {
-      return createComponent(ProsemirrorAdapterProvider, {
+      return createComponent(ViewRenderer, {
+        get editor() {
+          return props.editor
+        },
         get children() {
-          consumeSolidNodeViews()
-          consumeSolidMarkViews()
           return props.children
         },
       })

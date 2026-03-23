@@ -13679,7 +13679,8 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {

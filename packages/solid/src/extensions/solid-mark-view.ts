@@ -9,6 +9,8 @@ import {
 import { createComponent, type Component, type JSX } from 'solid-js'
 import { Portal } from 'solid-js/web'
 
+import { hidePortalDiv } from './helpers.ts'
+
 /**
  * @public
  */
@@ -41,6 +43,7 @@ class ProseKitSolidMarkView extends AbstractSolidMarkView<SolidMarkViewComponent
         const props: MarkViewContextProps = getProps()
         return createComponent(UserComponent, props)
       },
+      ref: hidePortalDiv,
     })
   }
 }

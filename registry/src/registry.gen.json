@@ -12773,8 +12773,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13096,7 +13095,8 @@
         "https://prosekit.dev/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit",
+        "svelte"
       ],
       "files": [
         {
@@ -13858,8 +13858,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -15074,7 +15073,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "svelte",
         "y-websocket",
         "yjs"
       ],

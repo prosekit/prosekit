@@ -1,9 +1,9 @@
 <script lang="ts">
-import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block';
-import { useExtension } from 'prosekit/svelte';
-import { toStore } from 'svelte/store';
+import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'
+import { useExtension } from 'prosekit/svelte'
+import { toStore } from 'svelte/store'
 
-let theme : ShikiBundledTheme = $state('github-dark')
+let theme: ShikiBundledTheme = $state('github-dark')
 let extension = $derived(defineCodeBlockShiki({ themes: [theme] }))
 
 useExtension(toStore(() => extension))

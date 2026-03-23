@@ -3,13 +3,12 @@ import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
 import { ResizableHandle, ResizableRoot } from 'prosekit/svelte/resizable'
-import { onDestroy } from 'svelte'
 
 interface Props extends SvelteNodeViewProps {}
 
 const props: Props = $props()
-const node = props.node
-const selected = props.selected
+const node = $derived( props.node)
+const selected = $derived( props.selected)
 
 const attrs = $derived($node.attrs as ImageAttrs)
 const url = $derived(attrs.src || '')
@@ -19,11 +18,8 @@ let aspectRatio = $state<number | undefined>(undefined)
 let error = $state<string | undefined>(undefined)
 let progress = $state(0)
 
-let unsubscribeProgress: (() => void) | undefined
-
 $effect(() => {
   if (!uploading) {
-    unsubscribeProgress?.()
     return
   }
 
@@ -36,15 +32,15 @@ $effect(() => {
     if (canceled) return
     error = String(err)
   })
-  unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
+  const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
     if (canceled) return
     progress = total ? loaded / total : 0
   })
 
-  onDestroy(() => {
+  return () => {
     canceled = true
-    unsubscribeProgress?.()
-  })
+    unsubscribeProgress()
+  }
 })
 
 function handleImageLoad(event: Event) {

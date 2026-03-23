@@ -1,7 +1,6 @@
 <script lang="ts">
 import { LoroDoc, type AwarenessListener } from 'loro-crdt'
 import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
-import { onDestroy } from 'svelte'
 
 import EditorComponent from './editor-component.svelte'
 
@@ -17,6 +16,7 @@ const awarenessB = new CursorAwareness(idB)
 loroA.import(loroB.export({ mode: 'update' }))
 loroB.import(loroA.export({ mode: 'update' }))
 
+$effect(() => {
 const unsubscribeA = loroA.subscribeLocalUpdates((updates) => {
   loroB.import(updates)
 })
@@ -40,11 +40,13 @@ const awarenessBListener: AwarenessListener = (_, origin) => {
 awarenessA.addListener(awarenessAListener)
 awarenessB.addListener(awarenessBListener)
 
-onDestroy(() => {
-  awarenessA.removeListener(awarenessAListener)
-  awarenessB.removeListener(awarenessBListener)
-  unsubscribeA()
-  unsubscribeB()
+
+  return () => {
+    awarenessA.removeListener(awarenessAListener)
+    awarenessB.removeListener(awarenessBListener)
+    unsubscribeA()
+    unsubscribeB()
+  }
 })
 </script>
 

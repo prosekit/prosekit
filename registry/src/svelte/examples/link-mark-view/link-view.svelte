@@ -1,6 +1,5 @@
 <script lang="ts">
 import type { SvelteMarkViewProps } from 'prosekit/svelte'
-import { onDestroy } from 'svelte'
 
 const props: SvelteMarkViewProps = $props()
 
@@ -31,12 +30,14 @@ let color = $state(colors[0])
 const mark = props.mark
 const href = $derived($mark.attrs.href as string)
 
-const interval = setInterval(() => {
-  color = pickRandomColor()
-}, 1000)
+$effect(() => {
+  const interval = setInterval(() => {
+    color = pickRandomColor()
+  }, 1000)
 
-onDestroy(() => {
-  clearInterval(interval)
+  return () => {
+    clearInterval(interval)
+  }
 })
 
 function bindContentRef(element: HTMLAnchorElement) {

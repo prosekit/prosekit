@@ -13679,8 +13679,7 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13842,8 +13841,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -15049,7 +15047,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "svelte",
         "y-websocket",
         "yjs"
       ],
@@ -16226,8 +16223,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {

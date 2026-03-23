@@ -32,7 +32,7 @@ minimumReleaseAgeExclude:
   - "prosemirror-*"
   - "astrobook"
   - "@astrobook/*"
-  - "knip"
+  - "@prosemirror-adapter/*"
 
 overrides: {}
 

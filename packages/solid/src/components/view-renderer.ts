@@ -6,7 +6,7 @@ import { defineSolidMarkViewFactory } from '../extensions/solid-mark-view.ts'
 import { defineSolidNodeViewFactory } from '../extensions/solid-node-view.ts'
 import { useEditorExtension } from '../hooks/use-editor-extension.ts'
 
-export type ViewRendererProps = ParentProps<{
+  type ViewRendererProps = ParentProps<{
   editor: Editor
 }>
 

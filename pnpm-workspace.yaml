@@ -35,12 +35,12 @@ minimumReleaseAgeExclude:
   - "knip"
 
 overrides:
-  "@prosemirror-adapter/core": "https://pkg.pr.new/@prosemirror-adapter/core@1a5465f"
-  "@prosemirror-adapter/react": "https://pkg.pr.new/@prosemirror-adapter/react@1a5465f"
-  "@prosemirror-adapter/vue": "https://pkg.pr.new/@prosemirror-adapter/vue@1a5465f"
-  "@prosemirror-adapter/solid": "https://pkg.pr.new/@prosemirror-adapter/solid@1a5465f"
-  "@prosemirror-adapter/svelte": "https://pkg.pr.new/@prosemirror-adapter/svelte@1a5465f"
-  "@prosemirror-adapter/preact": "https://pkg.pr.new/@prosemirror-adapter/preact@1a5465f"
+  "@prosemirror-adapter/core": "https://pkg.pr.new/@prosemirror-adapter/core@b2a3347"
+  "@prosemirror-adapter/react": "https://pkg.pr.new/@prosemirror-adapter/react@b2a3347"
+  "@prosemirror-adapter/vue": "https://pkg.pr.new/@prosemirror-adapter/vue@b2a3347"
+  "@prosemirror-adapter/solid": "https://pkg.pr.new/@prosemirror-adapter/solid@b2a3347"
+  "@prosemirror-adapter/svelte": "https://pkg.pr.new/@prosemirror-adapter/svelte@b2a3347"
+  "@prosemirror-adapter/preact": "https://pkg.pr.new/@prosemirror-adapter/preact@b2a3347"
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

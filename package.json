@@ -47,8 +47,8 @@
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.53.0",
-    "eslint": "^10.0.3",
-    "knip": "^6.0.1",
+    "eslint": "^10.1.0",
+    "knip": "^6.0.4",
     "monorepo-typescript-references": "^1.1.1",
     "oxfmt": "^0.41.0",
     "playwright": "^1.58.2",
@@ -56,6 +56,6 @@
     "turbo": "^2.8.20",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.75.0"
+    "wrangler": "^4.76.0"
   }
 }

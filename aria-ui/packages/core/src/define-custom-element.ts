@@ -75,9 +75,8 @@ function defineGetterSetter (
       },
       set(v: unknown) {
         {
-          // Skip setting the property to `undefined`, unless the declaration has a default value explicitly set to `undefined`.
           if (v === undefined) {
-            v = (declaration).default
+            v = declaration.default
           }
         }
         {

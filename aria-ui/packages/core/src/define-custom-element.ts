@@ -61,9 +61,9 @@ export function defineCustomElement<
   return CustomElement as HostElementConstructor<AnyProps> as HostElementConstructor<Props>
 }
 
-function defineGetterSetter<Props extends object>(
-  ElementConstructor: new () => { _store: Store<Props> },
-  props: PropsDeclaration<Props>,
+function defineGetterSetter (
+  ElementConstructor: new () => { _store: Store<any> },
+  props: Record<string, PropDeclaration<unknown>>,
 ) {
   for (const [prop, declaration] of Object.entries(props)) {
     Object.defineProperty(ElementConstructor.prototype, prop, {
@@ -76,8 +76,8 @@ function defineGetterSetter<Props extends object>(
       set(v: unknown) {
         {
           // Skip setting the property to `undefined`, unless the declaration has a default value explicitly set to `undefined`.
-          if (v === undefined && (declaration as PropDeclaration<unknown>).default !== undefined) {
-            return
+          if (v === undefined) {
+            v = (declaration).default
           }
         }
         {

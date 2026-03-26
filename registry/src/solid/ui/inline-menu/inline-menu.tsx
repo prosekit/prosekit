@@ -92,8 +92,8 @@ export default function InlineMenu(): JSX.Element {
       <InlinePopover
         attr:data-testid="inline-menu-main"
         class="CSS_INLINE_MENU_MAIN"
-        onOpenChange={(open) => {
-          if (!open) {
+        onOpenChange={(event) => {
+          if (!event.open) {
             setLinkMenuOpen(false)
           }
         }}
@@ -180,7 +180,7 @@ export default function InlineMenu(): JSX.Element {
             placement="bottom"
             defaultOpen={false}
             open={linkMenuOpen()}
-            onOpenChange={setLinkMenuOpen}
+            onOpenChange={(event) => setLinkMenuOpen(event.open)}
             attr:data-testid="inline-menu-link"
             class="CSS_INLINE_MENU_LINK"
           >

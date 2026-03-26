@@ -81,7 +81,7 @@ useKeymap({
   <InlinePopover
     class="CSS_INLINE_MENU_MAIN"
     :open="open"
-    @open-change="(value) => open = value"
+    @open-change="(event) => open = event.open"
   >
     <div class="flex flex-col gap-4 p-4">
       <div class="flex flex-col gap-2">

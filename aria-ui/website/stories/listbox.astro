@@ -1,0 +1,23 @@
+---
+import Basic from './listbox/basic.html'
+import Multiple from './listbox/multiple.html'
+import Filter from './listbox/filter.html'
+
+interface Props {
+  story: 'basic' | 'multiple' | 'filter'
+}
+
+const { story } = Astro.props
+---
+
+<script>
+import { registerElements } from '@aria-ui-v2/elements'
+
+registerElements()
+</script>
+
+<div class="p-4">
+  {story === 'basic' && <Basic />}
+  {story === 'multiple' && <Multiple />}
+  {story === 'filter' && <Filter />}
+</div>

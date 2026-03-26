@@ -1,6 +1,7 @@
 // This file is generated from update-website-pages.ts
-import component from './lit.astro'
+import comp from './lit.astro'
 
+const component: unknown = comp
 export default { component }
 
 export const Minimal = { args: { story: 'minimal' } }

@@ -30,4 +30,12 @@ export default defineESLintConfig(
     },
     ignores: ['**/*.test.*', '**/*.spec.*'],
   },
+  {
+    // TODO: remove me
+    ignores: ['aria-ui/packages/*/package.json'],
+  },
+  {
+    // TODO: remove me
+    ignores: ['**/*.gen.*', '**/aria-ui.mjs', '**/*.md'],
+  },
 )

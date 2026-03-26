@@ -18,8 +18,10 @@ export function updateWebsitePages(items: ItemAccumulator[]) {
 function genStories(framework: string, items: ItemAccumulator[]): string {
   const lines = [
     `// This file is generated from ${currentFilename}`,
-    `import component from './${framework}.astro'`,
+    `import comp from './${framework}.astro'`,
     ``,
+    // TODO: Fix the type of component so that we don't need to use `unknown` here
+    `const component: unknown = comp`,
     `export default { component }`,
     ``,
     ...items

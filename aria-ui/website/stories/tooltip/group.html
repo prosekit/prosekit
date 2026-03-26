@@ -1,0 +1,69 @@
+<div class="mb-4 text-sm text-gray-600 leading-relaxed max-w-lg">
+  <p class="mb-1">Hover over any icon to see its tooltip. The first tooltip appears after a 1000ms delay.</p>
+  <p>
+    Once a tooltip is shown, moving to an adjacent icon will display its tooltip instantly — no delay. This grouping behavior lasts for
+    400ms after the previous tooltip closes.
+  </p>
+</div>
+
+<div class="flex gap-4 items-center">
+  <aria-ui-tooltip-root class="inline-block">
+    <aria-ui-tooltip-trigger
+      tabindex="0"
+      open-delay="1000"
+      class="inline-flex items-center justify-center w-10 h-10 bg-gray-100 border border-gray-300 rounded-md cursor-pointer text-lg hover:bg-gray-200"
+    >
+      🏠
+    </aria-ui-tooltip-trigger>
+    <aria-ui-tooltip-positioner class="overflow-visible">
+      <aria-ui-tooltip-popup class="block bg-gray-900 text-white rounded-md shadow-lg px-3 py-1.5 text-sm">
+        Home
+      </aria-ui-tooltip-popup>
+    </aria-ui-tooltip-positioner>
+  </aria-ui-tooltip-root>
+
+  <aria-ui-tooltip-root class="inline-block">
+    <aria-ui-tooltip-trigger
+      tabindex="0"
+      open-delay="1000"
+      class="inline-flex items-center justify-center w-10 h-10 bg-gray-100 border border-gray-300 rounded-md cursor-pointer text-lg hover:bg-gray-200"
+    >
+      ⚙️
+    </aria-ui-tooltip-trigger>
+    <aria-ui-tooltip-positioner class="overflow-visible">
+      <aria-ui-tooltip-popup class="block bg-gray-900 text-white rounded-md shadow-lg px-3 py-1.5 text-sm">
+        Settings
+      </aria-ui-tooltip-popup>
+    </aria-ui-tooltip-positioner>
+  </aria-ui-tooltip-root>
+
+  <aria-ui-tooltip-root class="inline-block">
+    <aria-ui-tooltip-trigger
+      tabindex="0"
+      open-delay="1000"
+      class="inline-flex items-center justify-center w-10 h-10 bg-gray-100 border border-gray-300 rounded-md cursor-pointer text-lg hover:bg-gray-200"
+    >
+      👤
+    </aria-ui-tooltip-trigger>
+    <aria-ui-tooltip-positioner class="overflow-visible">
+      <aria-ui-tooltip-popup class="block bg-gray-900 text-white rounded-md shadow-lg px-3 py-1.5 text-sm">
+        Profile
+      </aria-ui-tooltip-popup>
+    </aria-ui-tooltip-positioner>
+  </aria-ui-tooltip-root>
+
+  <aria-ui-tooltip-root class="inline-block">
+    <aria-ui-tooltip-trigger
+      tabindex="0"
+      open-delay="1000"
+      class="inline-flex items-center justify-center w-10 h-10 bg-gray-100 border border-gray-300 rounded-md cursor-pointer text-lg hover:bg-gray-200"
+    >
+      🔔
+    </aria-ui-tooltip-trigger>
+    <aria-ui-tooltip-positioner class="overflow-visible">
+      <aria-ui-tooltip-popup class="block bg-gray-900 text-white rounded-md shadow-lg px-3 py-1.5 text-sm">
+        Notifications
+      </aria-ui-tooltip-popup>
+    </aria-ui-tooltip-positioner>
+  </aria-ui-tooltip-root>
+</div>

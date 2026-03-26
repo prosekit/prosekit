@@ -2,6 +2,9 @@ packages:
   - website
   - registry
   - packages/*
+  # TODO: remove me
+  - aria-ui/packages/*
+  - aria-ui/website
 
 allowedDeprecatedVersions:
   glob: "10"

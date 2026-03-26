@@ -1,6 +1,7 @@
 // This file is generated from update-website-pages.ts
-import component from './svelte.astro'
+import comp from './svelte.astro'
 
+const component: unknown = comp
 export default { component }
 
 export const BlockHandle = { args: { story: 'block-handle' } }

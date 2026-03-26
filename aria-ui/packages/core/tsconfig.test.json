@@ -1,0 +1,8 @@
+{
+  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
+  "compilerOptions": {
+    "customConditions": ["aria-ui-dev"]
+  },
+  "include": ["src/**/*.test.*"],
+  "references": [{ "path": "./tsconfig.build.json" }]
+}

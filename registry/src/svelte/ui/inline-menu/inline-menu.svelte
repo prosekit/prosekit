@@ -92,8 +92,8 @@ function handleLinkUpdate(href?: string) {
 <InlinePopover
   data-testid="inline-menu-main"
   class="CSS_INLINE_MENU_MAIN"
-  onOpenChange={(open) => {
-    if (!open) linkMenuOpen = false
+  onOpenChange={(event) => {
+    if (!event.open) linkMenuOpen = false
   }}
 >
   {#if $items.bold}
@@ -166,8 +166,8 @@ function handleLinkUpdate(href?: string) {
   open={linkMenuOpen}
   data-testid="inline-menu-link"
   class="CSS_INLINE_MENU_LINK"
-  onOpenChange={(open) => {
-    linkMenuOpen = open
+  onOpenChange={(event) => {
+    linkMenuOpen = event.open
   }}
 >
   {#if linkMenuOpen && $items.link}

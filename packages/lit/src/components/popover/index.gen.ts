@@ -1,4 +1,8 @@
-export { PopoverContentElement as PopoverContent } from '@prosekit/web/popover'
+export { OpenChangeEvent } from '@prosekit/web/popover'
+
+export { PopoverPopupElement as PopoverPopup } from '@prosekit/web/popover'
+
+export { PopoverPositionerElement as PopoverPositioner } from '@prosekit/web/popover'
 
 export { PopoverRootElement as PopoverRoot } from '@prosekit/web/popover'
 

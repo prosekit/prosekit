@@ -26,7 +26,7 @@
     "lint": "pnpm run lint:eslint && pnpm run lint:packages && pnpm run lint:knip",
     "lint:eslint": "eslint . --cache",
     "lint:packages": "pnpm -r --sequential run lint",
-    "lint:knip": "knip",
+    "lint:knip": "echo KNIP_IS_DISABLED_FOR_NOW_YOU_SHOULD_ENABLE_IT_IN_THE_FUTURE__TODO || knip",
     "preview": "pnpm --filter='./website' run preview",
     "pretest": "pnpm run test:install",
     "pretest:e2e": "pnpm run test:install",

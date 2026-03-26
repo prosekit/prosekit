@@ -1,0 +1,10 @@
+{
+  "extends": "@ocavue/tsconfig/dom/build-tsc.json",
+  "compilerOptions": {
+    "isolatedDeclarations": false,
+    "allowJs": false,
+    "customConditions": ["aria-ui-dev"]
+  },
+  "include": ["src/**/*", "src/**/*.json"],
+  "exclude": ["node_modules", "src/**/*.test.*", "src/generated"]
+}

@@ -34,7 +34,7 @@
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
     "./table-handle": "./src/components/table-handle/index.gen.ts",
-    "./tooltip": "./src/components/tooltip/index.gen.ts"
+    "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
     "dist",
@@ -139,7 +139,7 @@
       "prosekit-lit-popover": "./src/components/popover/index.gen.ts",
       "prosekit-lit-resizable": "./src/components/resizable/index.gen.ts",
       "prosekit-lit-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-lit-tooltip": "./src/components/tooltip/index.gen.ts"
+      "prosekit-lit-tooltip": "./src/components/tooltip/index.ts"
     }
   }
 }

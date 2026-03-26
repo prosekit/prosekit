@@ -45,6 +45,7 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
+    "@aria-ui-v2/integrations": "workspace:^",
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",

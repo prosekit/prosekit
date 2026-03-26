@@ -1,6 +1,7 @@
 // This file is generated from update-website-pages.ts
-import component from './preact.astro'
+import comp from './preact.astro'
 
+const component: unknown = comp
 export default { component }
 
 export const BlockHandle = { args: { story: 'block-handle' } }

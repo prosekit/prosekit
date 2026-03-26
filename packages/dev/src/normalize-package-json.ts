@@ -19,6 +19,10 @@ export async function normalizePackageJson(pkg: Package): Promise<Record<string,
   const packageJson = pkg.packageJson as PackageJson
   const slugPackageName = slugify(pkg.packageJson.name)
 
+  if (slugPackageName.includes('aria-ui')) {
+    return {}
+  }
+
   const publishExports: Record<string, any> = {}
   const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
   packageJson.publishConfig = publishConfig
@@ -153,6 +157,11 @@ function normalizePackageJsonDocumentFields(pkg: Package): void {
 }
 
 function normalizeTypesVersions(pkg: Package): void {
+  // TODO: remove me
+  if (pkg.packageJson.name.includes('aria-ui')) {
+    return
+  }
+
   const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)
   packageJson.publishConfig['typesVersions'] = undefined

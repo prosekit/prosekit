@@ -88,7 +88,7 @@ export default function InlineMenu(): JSX.Element {
     <InlinePopover
       class="CSS_INLINE_MENU_MAIN"
       open={open()}
-      onOpenChange={setOpen}
+      onOpenChange={(event) => setOpen(event.open)}
     >
       <div class="flex flex-col gap-4 p-4">
         <div class="flex flex-col gap-2">

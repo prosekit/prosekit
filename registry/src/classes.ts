@@ -26,6 +26,12 @@ const CSS_PRESENCE_ANIMATE = cn(
   'motion-safe:data-[state=closed]:zoom-out-95',
   'motion-safe:data-[state=open]:animate-duration-150',
   'motion-safe:data-[state=closed]:animate-duration-200',
+  //   'transition-discrete',
+  // 'motion-reduce:transition-none',
+  // 'will-change-transform',
+  // 'starting:opacity-0 opacity-100 data-[state=closed]:opacity-0',
+  // 'starting:scale-90 scale-100 data-[state=closed]:scale-90',
+  // 'duration-1500 data-[state=closed]:duration-2000',
 )
 
 const CSS_POPOVER_ANIMATE = cn(
@@ -38,6 +44,10 @@ const CSS_POPOVER_ANIMATE = cn(
   'motion-safe:data-[side=right]:slide-out-to-left-2',
   'motion-safe:data-[side=top]:slide-in-from-bottom-2',
   'motion-safe:data-[side=top]:slide-out-to-bottom-2',
+  //   'data-[side=top]:origin-bottom',
+  // 'data-[side=right]:origin-left',
+  // 'data-[side=bottom]:origin-top',
+  // 'data-[side=left]:origin-right',
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(
@@ -257,7 +267,7 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
 export const CSS_TOOLTIP_CONTENT = cn(
-  'z-50 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
+  'z-50 block overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
   CSS_POPOVER_ANIMATE,
 )
 

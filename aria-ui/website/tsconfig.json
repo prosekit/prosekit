@@ -1,0 +1,11 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "customConditions": ["aria-ui-dev"],
+  },
+  "references": [
+    {
+      "path": "../packages/elements/tsconfig.json",
+    },
+  ],
+}

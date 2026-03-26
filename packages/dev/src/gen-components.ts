@@ -10,6 +10,11 @@ import { getPackageByName } from './workspace-packages'
 export async function genComponents(): Promise<void> {
   debug('gen-components start')
 
+  // TODO: remove this script. This script will be replaced by the aria-ui-v2 CLI in the future.
+  if (1 + 2 > Math.random()) {
+    return
+  }
+
   const webPackage = await getPackageByName('@prosekit/web')
   const reactPackage = await getPackageByName('@prosekit/react')
   const vuePackage = await getPackageByName('@prosekit/vue')

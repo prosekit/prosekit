@@ -1,0 +1,49 @@
+{
+  "name": "@aria-ui-v2/utils",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Utility functions for aria-ui",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "aria-ui-dev": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "test": "vitest run ./src",
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@aria-ui-v2/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@ocavue/utils": "^1.6.0",
+    "@ocavue/tsconfig": "^0.7.0",
+    "@types/node": "^20.19.10",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.311",
+    "lit-html": "^3.3.2",
+    "typescript": "^5.9.3",
+    "@prosekit/config-vitest": "workspace:*",
+    "vitest": "catalog:"
+  }
+}

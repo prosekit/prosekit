@@ -92,8 +92,8 @@ export default function InlineMenu() {
       <InlinePopover
         data-testid="inline-menu-main"
         className="CSS_INLINE_MENU_MAIN"
-        onOpenChange={(open) => {
-          if (!open) {
+        onOpenChange={(event) => {
+          if (!event.open) {
             setLinkMenuOpen(false)
           }
         }}
@@ -167,7 +167,7 @@ export default function InlineMenu() {
           placement="bottom"
           defaultOpen={false}
           open={linkMenuOpen}
-          onOpenChange={setLinkMenuOpen}
+          onOpenChange={(event) => setLinkMenuOpen(event.open)}
           data-testid="inline-menu-link"
           className="CSS_INLINE_MENU_LINK"
         >

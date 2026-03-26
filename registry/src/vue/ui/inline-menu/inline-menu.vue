@@ -94,8 +94,8 @@ function handleLinkUpdate(href?: string) {
   <InlinePopover
     data-testid="inline-menu-main"
     class="CSS_INLINE_MENU_MAIN"
-    @open-change="(open) => {
-      if (!open) linkMenuOpen = false
+    @open-change="(event) => {
+      if (!event.open) linkMenuOpen = false
     }"
   >
     <Button
@@ -163,8 +163,8 @@ function handleLinkUpdate(href?: string) {
     :open="linkMenuOpen"
     data-testid="inline-menu-link"
     class="CSS_INLINE_MENU_LINK"
-    @open-change="(open) => {
-      linkMenuOpen = open
+    @open-change="(event) => {
+      linkMenuOpen = event.open
     }"
   >
     <form

@@ -1,6 +1,7 @@
 // This file is generated from update-website-pages.ts
-import component from './react.astro'
+import comp from './react.astro'
 
+const component: unknown = comp
 export default { component }
 
 export const BlockHandle = { args: { story: 'block-handle' } }

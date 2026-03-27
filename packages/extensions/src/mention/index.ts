@@ -1,11 +1,4 @@
-import {
-  defineCommands,
-  defineNodeSpec,
-  insertNode,
-  union,
-  type Extension,
-  type Union,
-} from '@prosekit/core'
+import { defineCommands, defineNodeSpec, insertNode, union, type Extension, type Union } from '@prosekit/core'
 
 export interface MentionAttrs {
   id: string

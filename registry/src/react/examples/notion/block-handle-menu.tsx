@@ -13,7 +13,9 @@ const POPUP_CLASSNAME =
 const ITEM_CLASSNAME =
   'flex items-center justify-between gap-2 cursor-default py-2 px-3 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-900'
 
-const TEXT_COLOR_CLASSNAME = clsx(`border rounded-sm relative after:absolute after:inset-0 after:flex after:items-center after:justify-center after:content-['A']`)
+const TEXT_COLOR_CLASSNAME = clsx(
+  `border rounded-sm relative after:absolute after:inset-0 after:flex after:items-center after:justify-center after:content-['A']`,
+)
 
 interface Props {
   children: React.ReactElement

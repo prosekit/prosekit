@@ -1,8 +1,5 @@
 import type { ReactMarkViewProps } from 'prosekit/react'
-import {
-  useEffect,
-  useState,
-} from 'react'
+import { useEffect, useState } from 'react'
 
 const colors = [
   '#f06292',

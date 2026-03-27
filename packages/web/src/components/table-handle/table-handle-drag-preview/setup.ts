@@ -1,19 +1,9 @@
-import {
-  useEffect,
-  type ConnectableElement,
-  type SignalState,
-} from '@aria-ui/core'
+import { useEffect, type ConnectableElement, type SignalState } from '@aria-ui/core'
 
 import { assignStyles } from '../../../utils/assign-styles'
-import {
-  useInitDndPosition,
-  type OnInitParams,
-} from '../dnd'
+import { useInitDndPosition, type OnInitParams } from '../dnd'
 
-import {
-  clearPreviewDOM,
-  createPreviewDOM,
-} from './render-preview'
+import { clearPreviewDOM, createPreviewDOM } from './render-preview'
 import type { TableHandleDragPreviewProps } from './types'
 import { useUpdatePreviewPosition } from './updater'
 

@@ -1,17 +1,9 @@
-import type { ComponentChild } from 'preact'
-import type { JSX } from 'preact'
-import {
-  useId,
-  useState,
-} from 'preact/hooks'
+import type { ComponentChild, JSX } from 'preact'
+import { useId, useState } from 'preact/hooks'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/preact'
-import {
-  PopoverContent,
-  PopoverRoot,
-  PopoverTrigger,
-} from 'prosekit/preact/popover'
+import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/preact/popover'
 
 import { Button } from '../button'
 

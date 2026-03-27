@@ -1,16 +1,9 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from 'preact/hooks'
+import { useCallback, useMemo, useState } from 'preact/hooks'
 import type { NodeJSON } from 'prosekit/core'
-import {
-  CommitRecorder,
-  type Commit,
-} from 'prosekit/extensions/commit'
+import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
 
 import EditorDiff from './editor-diff'
 import EditorMain from './editor-main'

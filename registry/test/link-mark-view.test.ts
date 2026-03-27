@@ -1,14 +1,7 @@
 import { sleep } from '@ocavue/utils'
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 
-import {
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('link-mark-view')
 

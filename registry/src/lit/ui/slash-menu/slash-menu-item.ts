@@ -1,9 +1,6 @@
 import 'prosekit/lit/autocomplete'
 
-import {
-  html,
-  LitElement,
-} from 'lit'
+import { html, LitElement } from 'lit'
 import type { AutocompleteItemEvents } from 'prosekit/web/autocomplete'
 
 class SlashMenuItemElement extends LitElement {

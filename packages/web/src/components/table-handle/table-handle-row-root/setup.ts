@@ -7,11 +7,7 @@ import {
   type ConnectableElement,
   type SetupOptions,
 } from '@aria-ui/core'
-import {
-  menuRootEvents,
-  menuRootProps,
-  useMenuRoot,
-} from '@aria-ui/menu/elements'
+import { menuRootEvents, menuRootProps, useMenuRoot } from '@aria-ui/menu/elements'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 
@@ -19,10 +15,7 @@ import { getStateWithDefaults } from '../../../utils/get-default-state'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import { tableHandleRootContext } from '../context'
 
-import type {
-  TableHandleRowRootEvents,
-  TableHandleRowRootProps,
-} from './types'
+import type { TableHandleRowRootEvents, TableHandleRowRootProps } from './types'
 
 /**
  * @internal

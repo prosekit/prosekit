@@ -1,11 +1,4 @@
-import {
-  defineKeymap,
-  isAtBlockStart,
-  toggleNode,
-  unsetBlockType,
-  withSkipCodeBlock,
-  type PlainExtension,
-} from '@prosekit/core'
+import { defineKeymap, isAtBlockStart, toggleNode, unsetBlockType, withSkipCodeBlock, type PlainExtension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
 function toggleHeadingKeybinding(level: number): Command {

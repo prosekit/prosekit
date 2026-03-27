@@ -1,8 +1,4 @@
-import type {
-  Attrs,
-  MarkType,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
+import type { Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
 
 import { includesMark } from './includes-mark'
 

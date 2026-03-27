@@ -1,8 +1,4 @@
-import {
-  createSignal,
-  For,
-  type JSX,
-} from 'solid-js'
+import { createSignal, For, type JSX } from 'solid-js'
 
 import EditorComponent from './editor-component'
 

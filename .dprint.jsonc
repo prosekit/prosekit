@@ -1,5 +1,5 @@
 {
-  "lineWidth": 200,
+  "lineWidth": 140,
   "typescript": {
     "quoteStyle": "preferSingle",
     "jsx.quoteStyle": "preferDouble",
@@ -8,8 +8,6 @@
     "singleBodyPosition": "sameLine",
     "constructorType.spaceAfterNewKeyword": true,
     "constructSignature.spaceAfterNewKeyword": true,
-    "exportDeclaration.forceMultiLine": "whenMultiple",
-    "importDeclaration.forceMultiLine": "whenMultiple",
     "exportDeclaration.sortTypeOnlyExports": "last",
     "importDeclaration.sortTypeOnlyImports": "last",
     "module.sortImportDeclarations": "maintain",
@@ -32,15 +30,22 @@
   },
   "yaml": {},
   "excludes": [
+    // Dprint doesn't support html string literals well.
+    // See the following issues:
+    // https://github.com/dprint/dprint-plugin-typescript/issues/769
+    // https://github.com/dprint/dprint-plugin-typescript/issues/776
+    "registry/src/lit",
+
     "**/node_modules",
     "**/*-lock.json",
     "**/*-lock.yaml",
     "**/*.svg",
     "**/*.gen.*",
     "**/.astro/**/*",
+    ".temp",
   ],
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.95.13.wasm",
+    "https://plugins.dprint.dev/typescript-0.95.15.wasm",
     "https://plugins.dprint.dev/json-0.21.1.wasm",
     "https://plugins.dprint.dev/markdown-0.20.0.wasm",
     "https://plugins.dprint.dev/g-plane/markup_fmt-v0.25.3.wasm",

@@ -1,47 +1,61 @@
 import 'prosekit/lit/tooltip'
 
-import {
-  html,
-  LitElement,
-  type PropertyDeclaration,
-} from 'lit'
+import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 
-export class LitButton extends LitElement {
+class LitButton extends LitElement {
   static override properties = {
-    pressed: { type: Boolean } satisfies PropertyDeclaration<boolean>,
-    disabled: { type: Boolean } satisfies PropertyDeclaration<boolean>,
-    tooltip: { type: String } satisfies PropertyDeclaration<string | undefined>,
-  }
+    pressed: { type: Boolean },
+    disabled: { type: Boolean },
+    tooltip: { type: String },
+    icon: { type: String },
+  } satisfies Record<string, PropertyDeclaration>
 
   pressed = false
   disabled = false
-  tooltip?: string
+  tooltip = ''
+  icon = ''
 
   override createRenderRoot() {
     return this
   }
 
+  override connectedCallback() {
+    super.connectedCallback()
+    this.classList.add('contents')
+  }
+
+  private handleMouseDown = (event: MouseEvent) => {
+    // Prevent the editor from being blurred when the button is clicked
+    event.preventDefault()
+  }
+
   override render() {
-    return html`<prosekit-tooltip-root>
-      <prosekit-tooltip-trigger class="CSS_TOOLTIP_TRIGGER">
-        <button
-          data-state=${this.pressed ? 'on' : 'off'}
-          ?disabled=${this.disabled}
-          class="CSS_TOGGLE_BUTTON"
-          @mousedown=${(event: MouseEvent) => event.preventDefault()}
-        >
-          <slot></slot>
-          ${this.tooltip
-            ? html`<span class="sr-only">${this.tooltip}</span>`
-            : null}
-        </button>
-      </prosekit-tooltip-trigger>
-      ${this.tooltip
-        ? html`<prosekit-tooltip-content class="CSS_TOOLTIP_CONTENT">
-          ${this.tooltip}
-        </prosekit-tooltip-content>`
-        : null}
-    </prosekit-tooltip-root>`
+    const tooltip = this.tooltip
+
+    return html`
+      <prosekit-tooltip-root>
+        <prosekit-tooltip-trigger class="CSS_TOOLTIP_TRIGGER">
+          <button
+            data-state=${this.pressed ? 'on' : 'off'}
+            class="CSS_TOGGLE_BUTTON"
+            ?disabled=${this.disabled}
+            @mousedown=${this.handleMouseDown}
+          >
+            ${this.icon ? html`<div class="${this.icon}"></div>` : nothing}
+            ${tooltip ? html`<span class="sr-only">${tooltip}</span>` : nothing}
+          </button>
+        </prosekit-tooltip-trigger>
+        ${
+          tooltip
+            ? html`
+              <prosekit-tooltip-content class="CSS_TOOLTIP_CONTENT">
+                ${tooltip}
+              </prosekit-tooltip-content>
+            `
+            : nothing
+        }
+      </prosekit-tooltip-root>
+    `
   }
 }
 

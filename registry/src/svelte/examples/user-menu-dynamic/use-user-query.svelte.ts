@@ -1,7 +1,4 @@
-import {
-  queryUsers,
-  type User,
-} from '../../sample/sample-query-users'
+import { queryUsers, type User } from '../../sample/sample-query-users'
 
 export function useUserQuery(
   getQuery: () => string,

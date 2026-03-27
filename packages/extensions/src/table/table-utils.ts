@@ -1,10 +1,6 @@
-import { CellSelection } from 'prosemirror-tables'
+import { CellSelection, findCellPos, findCellRange, findTable } from 'prosemirror-tables'
 
-export {
-  findCellPos,
-  findCellRange,
-  findTable,
-} from 'prosemirror-tables'
+export { findCellPos, findCellRange, findTable }
 
 /**
  * Checks if the given object is a `CellSelection` instance.

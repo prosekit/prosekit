@@ -1,15 +1,6 @@
-import {
-  createComputed,
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-  type Signal,
-} from '@aria-ui/core'
+import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal, type Signal } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
-import {
-  moveTableColumn,
-  moveTableRow,
-} from '@prosekit/extensions/table'
+import { moveTableColumn, moveTableRow } from '@prosekit/extensions/table'
 
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import type { TableHandleDndContext } from '../context'

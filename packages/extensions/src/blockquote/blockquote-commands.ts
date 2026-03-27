@@ -1,10 +1,4 @@
-import {
-  defineCommands,
-  insertNode,
-  toggleWrap,
-  wrap,
-  type Extension,
-} from '@prosekit/core'
+import { defineCommands, insertNode, toggleWrap, wrap, type Extension } from '@prosekit/core'
 
 export type BlockquoteCommandsExtension = Extension<{
   Commands: {

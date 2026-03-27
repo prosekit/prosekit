@@ -1,7 +1,7 @@
 import type { AnyFunction } from '@prosekit/core'
 import type { EventHandler } from 'svelte/elements'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 // For unknown reason, Svelte v4 cannot set properties on a web component
 // when I directly use `{...$$props}`. It seems that Svelte v4 recognizes

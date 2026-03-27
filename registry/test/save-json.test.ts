@@ -1,9 +1,6 @@
-import {
-  expect,
-  it,
-} from 'vitest'
-import { page } from 'vitest/browser'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
+import { page } from 'vitest/browser'
 
 import {
   expectLocatorToHaveCount,

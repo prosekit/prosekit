@@ -1,33 +1,9 @@
-import {
-  defineDefaultState,
-  definePlugin,
-  jsonFromNode,
-  union,
-  type NodeJSON,
-  type PlainExtension,
-  type StepJSON,
-} from '@prosekit/core'
-import {
-  DOMSerializer,
-  Fragment,
-  Slice,
-  type ProseMirrorNode,
-} from '@prosekit/pm/model'
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-  type Transaction,
-} from '@prosekit/pm/state'
+import { defineDefaultState, definePlugin, jsonFromNode, union, type NodeJSON, type PlainExtension, type StepJSON } from '@prosekit/core'
+import { DOMSerializer, Fragment, Slice, type ProseMirrorNode } from '@prosekit/pm/model'
+import { PluginKey, ProseMirrorPlugin, type Transaction } from '@prosekit/pm/state'
 import { Step } from '@prosekit/pm/transform'
-import {
-  Decoration,
-  DecorationSet,
-  type EditorView,
-} from '@prosekit/pm/view'
-import {
-  ChangeSet,
-  type Change,
-} from 'prosemirror-changeset'
+import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
+import { ChangeSet, type Change } from 'prosemirror-changeset'
 
 /**
  * A JSON representation of a commit.
@@ -322,9 +298,4 @@ function defineCommitRecorder(commitRecorder: CommitRecorder): PlainExtension {
   )
 }
 
-export {
-  CommitRecorder,
-  defineCommitRecorder,
-  defineCommitViewer,
-  type Commit,
-}
+export { CommitRecorder, defineCommitRecorder, defineCommitViewer, type Commit }

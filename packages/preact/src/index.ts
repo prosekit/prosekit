@@ -1,7 +1,4 @@
-export {
-  ProseKit,
-  type ProseKitProps,
-} from './components/prosekit'
+export { ProseKit, type ProseKitProps } from './components/prosekit'
 export {
   definePreactMarkView,
   type PreactMarkViewComponent,
@@ -16,17 +13,8 @@ export {
 } from './extensions/preact-node-view'
 export { useDocChange } from './hooks/use-doc-change'
 export { useEditor } from './hooks/use-editor'
-export {
-  useEditorDerivedValue,
-  type UseEditorDerivedOptions,
-} from './hooks/use-editor-derived-value'
-export {
-  useExtension,
-  type UseExtensionOptions,
-} from './hooks/use-extension'
+export { useEditorDerivedValue, type UseEditorDerivedOptions } from './hooks/use-editor-derived-value'
+export { useExtension, type UseExtensionOptions } from './hooks/use-extension'
 export { useKeymap } from './hooks/use-keymap'
 export { useStateUpdate } from './hooks/use-state-update'
-export type {
-  PropsWithChildren,
-  PropsWithClass,
-} from './types'
+export type { PropsWithChildren, PropsWithClass } from './types'

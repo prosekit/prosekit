@@ -3,11 +3,7 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'

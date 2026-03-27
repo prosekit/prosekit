@@ -1,12 +1,5 @@
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from 'prosekit/react/tooltip'
-import type {
-  MouseEventHandler,
-  ReactNode,
-} from 'react'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/react/tooltip'
+import type { MouseEventHandler, ReactNode } from 'react'
 
 export default function Button(props: {
   pressed?: boolean

@@ -1,13 +1,4 @@
-import {
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  watchEffect,
-  type DefineSetupFnComponent,
-  type EmitsOptions,
-  type HTMLAttributes,
-} from 'vue'
+import { defineComponent, h, onMounted, ref, watchEffect, type DefineSetupFnComponent, type EmitsOptions, type HTMLAttributes } from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'
 

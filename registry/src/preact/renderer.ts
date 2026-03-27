@@ -1,7 +1,4 @@
-import {
-  createElement,
-  type JSX,
-} from 'preact'
+import { createElement, type JSX } from 'preact'
 import { Suspense } from 'preact/compat'
 import type { NodeJSON } from 'prosekit/core'
 

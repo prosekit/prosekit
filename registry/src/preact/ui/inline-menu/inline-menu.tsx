@@ -4,10 +4,7 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
-import {
-  useEditor,
-  useEditorDerivedValue,
-} from 'prosekit/preact'
+import { useEditor, useEditorDerivedValue } from 'prosekit/preact'
 import { InlinePopover } from 'prosekit/preact/inline-popover'
 
 import { Button } from '../button'

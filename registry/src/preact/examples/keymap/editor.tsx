@@ -1,11 +1,7 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from 'preact/hooks'
+import { useCallback, useMemo, useState } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 

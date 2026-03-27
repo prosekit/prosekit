@@ -1,7 +1,4 @@
-import {
-  createEffect,
-  createSignal,
-} from 'solid-js'
+import { createEffect, createSignal } from 'solid-js'
 
 import type { User } from '../../sample/sample-query-users'
 import { queryUsers } from '../../sample/sample-query-users'

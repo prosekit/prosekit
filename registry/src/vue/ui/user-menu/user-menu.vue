@@ -1,17 +1,9 @@
 <script setup lang="ts">
 import type { BasicExtension } from 'prosekit/basic'
-import {
-  canUseRegexLookbehind,
-  type Union,
-} from 'prosekit/core'
+import { canUseRegexLookbehind, type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/vue'
-import {
-  AutocompleteEmpty,
-  AutocompleteItem,
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/vue/autocomplete'
+import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/vue/autocomplete'
 
 const props = defineProps<{
   users: { id: number; name: string }[]

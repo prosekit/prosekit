@@ -1,8 +1,5 @@
 import { LitElement } from 'lit'
-import {
-  html,
-  unsafeStatic,
-} from 'lit/static-html.js'
+import { html, unsafeStatic } from 'lit/static-html.js'
 
 import { loaders } from './loaders.gen'
 import { suppressLitWarnings } from './suppress-lit-warnings'
@@ -29,7 +26,9 @@ export class LitRenderer extends LitElement {
     const story = this.story
 
     if (!story) {
-      return html`<p data-testid="lit-renderer-fallback">Loading...</p>`
+      return html`
+        <p data-testid="lit-renderer-fallback">Loading...</p>
+      `
     }
 
     const loader = loaders[story as keyof typeof loaders]

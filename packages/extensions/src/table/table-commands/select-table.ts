@@ -1,8 +1,5 @@
 import type { Command } from '@prosekit/pm/state'
-import {
-  CellSelection,
-  TableMap,
-} from 'prosemirror-tables'
+import { CellSelection, TableMap } from 'prosemirror-tables'
 
 import { findTable } from '../table-utils'
 

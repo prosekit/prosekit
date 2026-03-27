@@ -1,8 +1,4 @@
-import {
-  createSignal,
-  type PropDeclarations,
-  type SignalState,
-} from '@aria-ui/core'
+import { createSignal, type PropDeclarations, type SignalState } from '@aria-ui/core'
 
 export function getStateWithDefaults<
   Props extends Record<string, any> = Record<string, any>,

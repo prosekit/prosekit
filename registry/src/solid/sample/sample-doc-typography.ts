@@ -342,7 +342,8 @@ export const sampleContent: NodeJSON = {
           content: [
             {
               type: 'text',
-              text: 'This is a blockquote demonstrating how quoted content appears in the editor. It can span multiple lines and maintains proper formatting.',
+              text:
+                'This is a blockquote demonstrating how quoted content appears in the editor. It can span multiple lines and maintains proper formatting.',
             },
           ],
         },

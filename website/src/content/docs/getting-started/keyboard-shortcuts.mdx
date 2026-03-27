@@ -68,10 +68,7 @@ Use `withPriority` to set extension priority:
 import { Extension } from 'prosekit/core'
 declare const extensionA: Extension
 // ---cut---
-import {
-  Priority,
-  withPriority,
-} from 'prosekit/core'
+import { Priority, withPriority } from 'prosekit/core'
 
 const extensionAPrioritized = withPriority(extensionA, Priority.high)
 ```

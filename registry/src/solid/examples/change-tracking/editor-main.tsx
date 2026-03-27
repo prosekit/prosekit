@@ -2,15 +2,8 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  union,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  defineCommitRecorder,
-  type CommitRecorder,
-} from 'prosekit/extensions/commit'
+import { createEditor, union, type NodeJSON } from 'prosekit/core'
+import { defineCommitRecorder, type CommitRecorder } from 'prosekit/extensions/commit'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 

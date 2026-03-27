@@ -1,16 +1,6 @@
-import {
-  getMarkType,
-  type PlainExtension,
-} from '@prosekit/core'
-import type {
-  Attrs,
-  MarkType,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
-import {
-  Fragment,
-  Slice,
-} from '@prosekit/pm/model'
+import { getMarkType, type PlainExtension } from '@prosekit/core'
+import type { Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
+import { Fragment, Slice } from '@prosekit/pm/model'
 
 import { definePasteRule } from './paste-rule'
 import { splitTextByRegex } from './split-text-by-regex'
@@ -88,7 +78,7 @@ function replaceMarkInSlice(options: MarkPasteRuleHandlerOptions, slice: Slice):
 
 function replaceMarkInFragment(options: MarkPasteRuleHandlerOptions, fragment: Fragment): Fragment | undefined {
   let changed = false
-  let children: ProseMirrorNode[] = []
+  const children: ProseMirrorNode[] = []
 
   for (const child of fragment.content) {
     const newChild = replaceMarkInNode(options, child)

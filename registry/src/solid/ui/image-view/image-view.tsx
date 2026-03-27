@@ -1,17 +1,8 @@
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { SolidNodeViewProps } from 'prosekit/solid'
-import {
-  ResizableHandle,
-  ResizableRoot,
-} from 'prosekit/solid/resizable'
-import {
-  createEffect,
-  createSignal,
-  onCleanup,
-  Show,
-  type JSX,
-} from 'solid-js'
+import { ResizableHandle, ResizableRoot } from 'prosekit/solid/resizable'
+import { createEffect, createSignal, onCleanup, Show, type JSX } from 'solid-js'
 
 export default function ImageView(props: SolidNodeViewProps): JSX.Element {
   const attrs = () => props.node.attrs as ImageAttrs

@@ -4,10 +4,7 @@ import 'prosekit/extensions/yjs/style.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
-import {
-  createMemo,
-  type JSX,
-} from 'solid-js'
+import { createMemo, type JSX } from 'solid-js'
 import { WebsocketProvider } from 'y-websocket'
 import * as Y from 'yjs'
 

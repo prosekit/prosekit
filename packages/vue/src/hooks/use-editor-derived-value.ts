@@ -1,14 +1,5 @@
-import type {
-  Editor,
-  Extension,
-} from '@prosekit/core'
-import {
-  computed,
-  toValue,
-  type MaybeRefOrGetter,
-  type Ref,
-  type ShallowRef,
-} from 'vue'
+import type { Editor, Extension } from '@prosekit/core'
+import { computed, toValue, type MaybeRefOrGetter, type Ref, type ShallowRef } from 'vue'
 
 import { useEditor } from './use-editor'
 

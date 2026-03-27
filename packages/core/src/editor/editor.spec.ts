@@ -1,15 +1,8 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { insertText } from '../commands/insert-text'
 import { wrap } from '../commands/wrap'
-import {
-  defineTestExtension,
-  setupTest,
-} from '../testing'
+import { defineTestExtension, setupTest } from '../testing'
 import type { NodeJSON } from '../types/model'
 
 import { createEditor } from './editor'

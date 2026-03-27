@@ -5,16 +5,10 @@ import type { Package } from '@manypkg/get-packages'
 import slugify from '@sindresorhus/slugify'
 import type { PackageJson } from 'type-fest'
 
-import {
-  getPackageJsonExports,
-  getPackageJsonPublishExports,
-} from './get-package-json-exports'
+import { getPackageJsonExports, getPackageJsonPublishExports } from './get-package-json-exports'
 import { isPrivatePackage } from './is-public-package'
 import { maybeUndefined } from './maybe-undefined'
-import {
-  findExistingFileInPackage,
-  getExistingFileInPackage,
-} from './package-files'
+import { findExistingFileInPackage, getExistingFileInPackage } from './package-files'
 import { sortObject } from './sort-object'
 
 export async function normalizePackageJson(pkg: Package): Promise<Record<string, string>> {

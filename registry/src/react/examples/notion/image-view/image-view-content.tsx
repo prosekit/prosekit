@@ -1,15 +1,8 @@
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { ReactNodeViewProps } from 'prosekit/react'
-import {
-  ResizableHandle,
-  ResizableRoot,
-} from 'prosekit/react/resizable'
-import {
-  useEffect,
-  useState,
-  type SyntheticEvent,
-} from 'react'
+import { ResizableHandle, ResizableRoot } from 'prosekit/react/resizable'
+import { useEffect, useState, type SyntheticEvent } from 'react'
 
 export default function ImageViewContent(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as ImageAttrs

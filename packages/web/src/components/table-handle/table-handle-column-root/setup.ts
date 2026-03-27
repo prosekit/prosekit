@@ -1,16 +1,5 @@
-import {
-  createComputed,
-  createSignal,
-  useAttribute,
-  useEffect,
-  type ConnectableElement,
-  type SignalState,
-} from '@aria-ui/core'
-import {
-  menuRootProps,
-  useMenuRoot,
-  type MenuRootProps,
-} from '@aria-ui/menu/elements'
+import { createComputed, createSignal, useAttribute, useEffect, type ConnectableElement, type SignalState } from '@aria-ui/core'
+import { menuRootProps, useMenuRoot, type MenuRootProps } from '@aria-ui/menu/elements'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 

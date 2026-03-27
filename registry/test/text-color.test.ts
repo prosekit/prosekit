@@ -1,16 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 
-import {
-  expectLocatorToNotExist,
-  selectText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToNotExist, selectText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('text-color')
 

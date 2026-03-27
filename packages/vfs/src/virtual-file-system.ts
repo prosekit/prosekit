@@ -1,8 +1,5 @@
 import { access } from 'node:fs/promises'
-import {
-  join,
-  normalize,
-} from 'node:path'
+import { join, normalize } from 'node:path'
 
 import type { DumpOptions } from 'js-yaml'
 

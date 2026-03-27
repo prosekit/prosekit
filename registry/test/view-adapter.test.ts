@@ -1,14 +1,6 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 
-import {
-  expectLocatorToHaveCount,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToHaveCount, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('view-adapter')
 

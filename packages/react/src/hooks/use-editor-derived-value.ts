@@ -1,15 +1,5 @@
-import {
-  defineMountHandler,
-  defineUpdateHandler,
-  EditorNotFoundError,
-  union,
-  type Editor,
-  type Extension,
-} from '@prosekit/core'
-import {
-  useMemo,
-  useSyncExternalStore,
-} from 'react'
+import { defineMountHandler, defineUpdateHandler, EditorNotFoundError, union, type Editor, type Extension } from '@prosekit/core'
+import { useMemo, useSyncExternalStore } from 'react'
 
 import { useEditorContext } from '../contexts/editor-context'
 

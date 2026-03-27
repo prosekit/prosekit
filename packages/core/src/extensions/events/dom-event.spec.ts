@@ -1,9 +1,4 @@
-import {
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { createEditor } from '../../editor/editor'
 import { defineTestExtension } from '../../testing'

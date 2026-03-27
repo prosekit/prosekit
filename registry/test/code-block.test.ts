@@ -1,18 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import {
-  emptyEditor,
-  expectLocatorToNotExist,
-  inputText,
-  locateEditor,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { emptyEditor, expectLocatorToNotExist, inputText, locateEditor, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('code-block', {
   shouldWaitForShiki: true,

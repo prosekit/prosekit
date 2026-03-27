@@ -6,6 +6,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { InlineMenu } from '../../ui/inline-menu'
+
 import ExtensionComponent from './extension-component'
 
 export default function EditorComponent(props: {
@@ -20,6 +22,7 @@ export default function EditorComponent(props: {
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+          <InlineMenu />
         </div>
       </div>
       <ExtensionComponent placeholder={props.placeholder} />

@@ -1,7 +1,4 @@
-import type {
-  Editor,
-  Extension,
-} from '@prosekit/core'
+import type { Editor, Extension } from '@prosekit/core'
 
 /**
 

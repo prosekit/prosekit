@@ -1,11 +1,5 @@
-import {
-  defineNodeSpec,
-  type Extension,
-} from '@prosekit/core'
-import type {
-  AttributeSpec,
-  Attrs,
-} from '@prosekit/pm/model'
+import { defineNodeSpec, type Extension } from '@prosekit/core'
+import type { AttributeSpec, Attrs } from '@prosekit/pm/model'
 import { tableNodes } from 'prosemirror-tables'
 
 const cellContent = 'block+'

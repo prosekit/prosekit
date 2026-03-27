@@ -1,8 +1,5 @@
 import type { EditorView } from '@prosekit/pm/view'
-import {
-  cellAround,
-  TableMap,
-} from 'prosemirror-tables'
+import { cellAround, TableMap } from 'prosemirror-tables'
 
 export interface HoveringCellInfo {
   rowIndex: number

@@ -4,11 +4,7 @@ import path from 'node:path'
 import YAML from 'js-yaml'
 import JSON5 from 'json5'
 
-import {
-  removePath,
-  writeJson,
-  writeText,
-} from './file-utils'
+import { removePath, writeJson, writeText } from './file-utils'
 
 /**
  * Virtual file with lazy read and staged mutations.

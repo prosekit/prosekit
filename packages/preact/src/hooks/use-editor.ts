@@ -1,15 +1,5 @@
-import {
-  defineMountHandler,
-  defineUpdateHandler,
-  ProseKitError,
-  union,
-  type Editor,
-  type Extension,
-} from '@prosekit/core'
-import {
-  useEffect,
-  useReducer,
-} from 'preact/hooks'
+import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
+import { useEffect, useReducer } from 'preact/hooks'
 
 import { useEditorContext } from '../contexts/editor-context'
 

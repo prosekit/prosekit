@@ -1,7 +1,4 @@
-import type {
-  Command,
-  Selection,
-} from '@prosekit/pm/state'
+import type { Command, Selection } from '@prosekit/pm/state'
 import { CellSelection } from 'prosemirror-tables'
 
 import { isCellSelection } from './table-utils'

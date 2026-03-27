@@ -3,10 +3,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { useMemo } from 'react'
 
 import { useEventCallback } from './use-event-callback'
-import {
-  useExtension,
-  type UseExtensionOptions,
-} from './use-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension'
 
 /**
  * Calls the given handler whenever the editor document changes.

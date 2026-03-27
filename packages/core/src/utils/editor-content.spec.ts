@@ -1,8 +1,5 @@
 import { AllSelection } from '@prosekit/pm/state'
-import {
-  expect,
-  test,
-} from 'vitest'
+import { expect, test } from 'vitest'
 
 import { setupTest } from '../testing'
 

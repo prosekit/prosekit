@@ -3,12 +3,7 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
-import {
-  createSignal,
-  For,
-  Show,
-  type JSX,
-} from 'solid-js'
+import { createSignal, For, Show, type JSX } from 'solid-js'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'

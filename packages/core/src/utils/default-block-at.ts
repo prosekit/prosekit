@@ -1,7 +1,4 @@
-import type {
-  ContentMatch,
-  NodeType,
-} from '@prosekit/pm/model'
+import type { ContentMatch, NodeType } from '@prosekit/pm/model'
 
 /**
  * @internal

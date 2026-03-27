@@ -1,8 +1,4 @@
-import {
-  BlockHandleAdd,
-  BlockHandleDraggable,
-  BlockHandlePopover,
-} from 'prosekit/solid/block-handle'
+import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopover } from 'prosekit/solid/block-handle'
 import type { JSX } from 'solid-js'
 
 interface Props {

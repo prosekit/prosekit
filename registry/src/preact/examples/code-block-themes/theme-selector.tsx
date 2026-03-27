@@ -1,13 +1,6 @@
 import type { JSX } from 'preact'
-import {
-  useMemo,
-  useState,
-} from 'preact/hooks'
-import {
-  defineCodeBlockShiki,
-  shikiBundledThemesInfo,
-  type ShikiBundledTheme,
-} from 'prosekit/extensions/code-block'
+import { useMemo, useState } from 'preact/hooks'
+import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/preact'
 
 export function ThemeSelector() {

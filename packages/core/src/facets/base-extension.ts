@@ -1,9 +1,6 @@
 import type { Schema } from '@prosekit/pm/model'
 
-import type {
-  Extension,
-  ExtensionTyping,
-} from '../types/extension'
+import type { Extension, ExtensionTyping } from '../types/extension'
 import { Priority } from '../types/priority'
 
 import type { Facet } from './facet'

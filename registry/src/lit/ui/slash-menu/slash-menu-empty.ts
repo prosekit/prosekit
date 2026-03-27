@@ -1,9 +1,6 @@
 import 'prosekit/lit/autocomplete'
 
-import {
-  html,
-  LitElement,
-} from 'lit'
+import { html, LitElement } from 'lit'
 
 class SlashMenuEmptyElement extends LitElement {
   override createRenderRoot() {
@@ -11,9 +8,11 @@ class SlashMenuEmptyElement extends LitElement {
   }
 
   override render() {
-    return html`<prosekit-autocomplete-empty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-      <span>No results</span>
-    </prosekit-autocomplete-empty>`
+    return html`
+      <prosekit-autocomplete-empty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+        <span>No results</span>
+      </prosekit-autocomplete-empty>
+    `
   }
 }
 

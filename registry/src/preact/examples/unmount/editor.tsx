@@ -1,8 +1,4 @@
-import {
-  useCallback,
-  useRef,
-  useState,
-} from 'preact/hooks'
+import { useCallback, useRef, useState } from 'preact/hooks'
 
 import EditorComponent from './editor-component'
 

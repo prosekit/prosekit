@@ -1,9 +1,5 @@
 import type { ReadonlySignal } from '@aria-ui/core'
-import {
-  createSignal,
-  useEffect,
-  type ConnectableElement,
-} from '@aria-ui/core'
+import { createSignal, useEffect, type ConnectableElement } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 
 import { getSafeEditorView } from '../utils/get-safe-editor-view'

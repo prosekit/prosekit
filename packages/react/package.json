@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "private": false,
   "description": "React components and utilities for ProseKit",
   "author": {
@@ -66,12 +66,12 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@types/react": "^19.2.9",
+    "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "tsdown": "^0.20.1",
-    "typescript": "~5.9.3"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
   },
   "publishConfig": {
     "exports": {

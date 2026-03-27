@@ -1,12 +1,5 @@
-import {
-  defineCommands,
-  getNodeType,
-  type Extension,
-} from '@prosekit/core'
-import {
-  Fragment,
-  Slice,
-} from '@prosekit/pm/model'
+import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
+import { Fragment, Slice } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
 export type HorizontalRuleCommandsExtension = Extension<{

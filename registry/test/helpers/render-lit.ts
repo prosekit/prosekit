@@ -3,10 +3,7 @@ import { page } from 'vitest/browser'
 
 import { registerLitRenderer } from '../../src/lit/renderer'
 
-import {
-  registerCleanupFunction,
-  runCleanupFunctions,
-} from './render-cleanup'
+import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 const containers = new Set<HTMLElement>()
 

@@ -1,18 +1,9 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { union } from '../editor/union'
 import type { TestEditor } from '../test'
-import {
-  defineDoc,
-  defineParagraph,
-  defineText,
-  setupTestFromExtension,
-} from '../testing'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
 import type { SelectionJSON } from '../types/model'
 
 import { defineBaseKeymap } from './keymap-base'

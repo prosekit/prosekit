@@ -42,10 +42,7 @@ To load content from JSON when creating an editor:
 
 ```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
+import { createEditor, type NodeJSON } from 'prosekit/core'
 const extension = defineBasicExtension()
 const json: NodeJSON = { type: 'doc', content: [] }
 // ---cut---

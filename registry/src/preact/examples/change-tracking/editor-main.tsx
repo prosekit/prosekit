@@ -3,15 +3,8 @@ import 'prosekit/basic/typography.css'
 
 import { useMemo } from 'preact/hooks'
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  union,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  defineCommitRecorder,
-  type CommitRecorder,
-} from 'prosekit/extensions/commit'
+import { createEditor, union, type NodeJSON } from 'prosekit/core'
+import { defineCommitRecorder, type CommitRecorder } from 'prosekit/extensions/commit'
 import { ProseKit } from 'prosekit/preact'
 
 export default function EditorMain(props: {

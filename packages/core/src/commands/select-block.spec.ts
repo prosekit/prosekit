@@ -1,8 +1,4 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../testing'
 
@@ -67,7 +63,9 @@ describe('selectBlock', () => {
     ))
     expect(getSelectionString()).toMatchInlineSnapshot(`"<paragraph, blockquote(paragraph("Item 1"), blockquote(paragraph("Sub")))>"`)
     editor.exec(selectBlock())
-    expect(getSelectionString()).toMatchInlineSnapshot(`"<paragraph("Hello"), blockquote(paragraph("Item 1"), blockquote(paragraph("Sub item 1.1")))>"`)
+    expect(getSelectionString()).toMatchInlineSnapshot(
+      `"<paragraph("Hello"), blockquote(paragraph("Item 1"), blockquote(paragraph("Sub item 1.1")))>"`,
+    )
   })
 })
 

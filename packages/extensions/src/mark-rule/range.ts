@@ -1,11 +1,5 @@
-import type {
-  ProseMirrorNode,
-  ResolvedPos,
-} from '@prosekit/pm/model'
-import type {
-  EditorState,
-  Transaction,
-} from '@prosekit/pm/state'
+import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
+import type { EditorState, Transaction } from '@prosekit/pm/state'
 import type { ProsemirrorNode } from 'prosemirror-flat-list'
 
 function getSpanTextRanges($from: ResolvedPos, $to: ResolvedPos) {

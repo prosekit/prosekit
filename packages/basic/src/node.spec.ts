@@ -1,9 +1,5 @@
 import { createEditor } from '@prosekit/core'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { defineBasicExtension } from './index'
 

@@ -1,7 +1,4 @@
-import {
-  TextSelection,
-  type Command,
-} from '@prosekit/pm/state'
+import { TextSelection, type Command } from '@prosekit/pm/state'
 
 import { isTextSelection } from '../utils/type-assertion'
 

@@ -1,21 +1,12 @@
 import '../../src/tailwind.css'
 
-import {
-  DefaultMap,
-  isHTMLElement,
-} from '@ocavue/utils'
-import type { NodeJSON } from 'prosekit/core'
-import {
-  beforeEach,
-  describe,
-  expect,
-  it,
-} from 'vitest'
-
+import { DefaultMap, isHTMLElement } from '@ocavue/utils'
+import { formatHTML } from 'diffable-html-snapshot'
 import registry from 'prosekit-registry/registry.gen.json'
+import type { NodeJSON } from 'prosekit/core'
+import { beforeEach, describe, expect, it } from 'vitest'
 
 import { locateEditor } from './editor'
-import { formatHTML } from './format-html'
 import { waitForStableElement } from './query'
 
 function getExamples(story: string) {

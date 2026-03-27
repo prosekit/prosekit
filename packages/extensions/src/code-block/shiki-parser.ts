@@ -2,10 +2,7 @@ import type { Parser } from 'prosemirror-highlight'
 import { createParser } from 'prosemirror-highlight/shiki'
 
 import type { ShikiBundledLanguage } from './shiki-bundle'
-import {
-  createOrGetHighlighter,
-  type HighlighterOptions,
-} from './shiki-highlighter'
+import { createOrGetHighlighter, type HighlighterOptions } from './shiki-highlighter'
 
 /**
  * @internal

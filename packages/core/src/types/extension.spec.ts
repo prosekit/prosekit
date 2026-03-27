@@ -1,10 +1,7 @@
 import { test } from 'vitest'
 
 import { assertTypeEqual } from './assert-type-equal'
-import type {
-  Extension,
-  Union,
-} from './extension'
+import type { Extension, Union } from './extension'
 
 test('ExtractTyping', () => {
   type E1 = Extension<{

@@ -1,17 +1,7 @@
-import type {
-  Editor,
-  Keymap,
-} from 'prosekit/core'
-import {
-  useEditorDerivedValue,
-  useKeymap,
-} from 'prosekit/solid'
+import type { Editor, Keymap } from 'prosekit/core'
+import { useEditorDerivedValue, useKeymap } from 'prosekit/solid'
 import { InlinePopover } from 'prosekit/solid/inline-popover'
-import {
-  createSignal,
-  For,
-  type JSX,
-} from 'solid-js'
+import { createSignal, For, type JSX } from 'solid-js'
 
 import { Button } from '../../ui/button'
 

@@ -1,7 +1,4 @@
-import type {
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
 import {
   overlayPositionerEvents,
   overlayPositionerProps,

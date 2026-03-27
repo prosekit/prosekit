@@ -1,5 +1,4 @@
-import { defineBaseKeymap } from 'prosekit/core'
-import { union } from 'prosekit/core'
+import { defineBaseKeymap, union } from 'prosekit/core'
 import { defineDoc } from 'prosekit/extensions/doc'
 import { defineGapCursor } from 'prosekit/extensions/gap-cursor'
 import { defineImage } from 'prosekit/extensions/image'

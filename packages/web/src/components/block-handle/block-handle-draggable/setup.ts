@@ -1,29 +1,14 @@
-import {
-  useAttribute,
-  useEffect,
-  useEventListener,
-  type ConnectableElement,
-  type ReadonlySignal,
-  type SignalState,
-} from '@aria-ui/core'
+import { useAttribute, useEffect, useEventListener, type ConnectableElement, type ReadonlySignal, type SignalState } from '@aria-ui/core'
 import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { ViewDragging } from '@prosekit/extensions/drop-indicator'
-import {
-  Fragment,
-  Slice,
-} from '@prosekit/pm/model'
+import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { getBoxElement } from '../../../utils/get-box-element'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import {
-  blockPopoverContext,
-  draggingContext,
-  type BlockPopoverContext,
-  type HoverState,
-} from '../context'
+import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context'
 
 import { setDragPreview } from './set-drag-preview'
 import type { BlockHandleDraggableProps } from './types'

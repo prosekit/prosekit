@@ -1,13 +1,5 @@
-import {
-  createComputed,
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-} from '@aria-ui/core'
-import {
-  computePosition,
-  offset,
-} from '@floating-ui/dom'
+import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal } from '@aria-ui/core'
+import { computePosition, offset } from '@floating-ui/dom'
 import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
@@ -15,10 +7,7 @@ import type { EditorView } from '@prosekit/pm/view'
 import { assignStyles } from '../../utils/assign-styles'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view'
 
-import {
-  tableHandleDndContext,
-  tableHandleRootContext,
-} from './context'
+import { tableHandleDndContext, tableHandleRootContext } from './context'
 
 export type OnInitParams = {
   host: ConnectableElement
@@ -125,7 +114,12 @@ function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction
   }
 }
 
-export function getDndRelatedDOMs(view: EditorView, cellPos: number | undefined, draggingIndex: number, direction: 'row' | 'col'): { table: HTMLTableElement; cell: HTMLTableCellElement } | undefined {
+export function getDndRelatedDOMs(
+  view: EditorView,
+  cellPos: number | undefined,
+  draggingIndex: number,
+  direction: 'row' | 'col',
+): { table: HTMLTableElement; cell: HTMLTableCellElement } | undefined {
   if (cellPos == null) return
   const table = getTableDOMByPos(view, cellPos)
   if (!table) return

@@ -1,10 +1,6 @@
 import type { Command } from '@prosekit/pm/state'
 import { CellSelection } from 'prosemirror-tables'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../../testing'
 

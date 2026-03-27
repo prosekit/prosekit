@@ -1,8 +1,4 @@
-import type {
-  Attrs,
-  Mark,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
+import type { Attrs, Mark, ProseMirrorNode } from '@prosekit/pm/model'
 
 export function attrsMatch(
   nodeOrMark: ProseMirrorNode | Mark,

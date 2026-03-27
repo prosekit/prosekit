@@ -1,14 +1,5 @@
-import {
-  withPriority,
-  type Extension,
-  type Priority,
-} from '@prosekit/core'
-import {
-  computed,
-  toValue,
-  type ComputedRef,
-  type MaybeRefOrGetter,
-} from 'vue'
+import { withPriority, type Extension, type Priority } from '@prosekit/core'
+import { computed, toValue, type ComputedRef, type MaybeRefOrGetter } from 'vue'
 
 /**
  * @internal

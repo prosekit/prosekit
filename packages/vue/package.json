@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "private": false,
   "description": "Vue components and utilities for ProseKit",
   "author": {
@@ -62,11 +62,11 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@vitejs/plugin-vue": "^6.0.3",
+    "@vitejs/plugin-vue": "^6.0.4",
     "@vue/test-utils": "^2.4.6",
-    "tsdown": "^0.20.1",
-    "typescript": "~5.9.3",
-    "vitest": "^4.0.18",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
     "vue": "^3.5.27"
   },
   "publishConfig": {

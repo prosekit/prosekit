@@ -1,14 +1,7 @@
 <script lang="ts">
-import {
-  defineCodeBlockShiki,
-  shikiBundledThemesInfo,
-  type ShikiBundledTheme,
-} from 'prosekit/extensions/code-block'
+import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/svelte'
-import {
-  derived,
-  writable,
-} from 'svelte/store'
+import { derived, writable } from 'svelte/store'
 
 const theme = writable<ShikiBundledTheme>('github-dark')
 const extension = derived(theme, ($theme) => {

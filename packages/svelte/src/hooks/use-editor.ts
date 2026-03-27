@@ -1,19 +1,8 @@
-import {
-  defineMountHandler,
-  defineUpdateHandler,
-  ProseKitError,
-  union,
-  type Editor,
-  type Extension,
-} from '@prosekit/core'
+import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
 import { onMount } from 'svelte'
-import {
-  readonly,
-  writable,
-  type Readable,
-} from 'svelte/store'
+import { readonly, writable, type Readable } from 'svelte/store'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
@@ -42,8 +31,12 @@ export function useEditor<E extends Extension = any>(options?: {
 
   if (update) {
     onMount(() => {
+      // We need `queueMicrotask` here to avoid `state_unsafe_mutation` errors.
+      // See https://github.com/prosekit/prosekit/issues/1439
       const forceUpdate = () => {
-        editorStore.set(editor)
+        queueMicrotask(() => {
+          editorStore.set(editor)
+        })
       }
       const extension = union(
         defineMountHandler(forceUpdate),

@@ -1,16 +1,6 @@
-import {
-  defineNodeSpec,
-  type Extension,
-} from '@prosekit/core'
-import type {
-  DOMOutputSpec,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
-import {
-  createListSpec,
-  listToDOM,
-  type ListAttributes,
-} from 'prosemirror-flat-list'
+import { defineNodeSpec, type Extension } from '@prosekit/core'
+import type { DOMOutputSpec, ProseMirrorNode } from '@prosekit/pm/model'
+import { createListSpec, listToDOM, type ListAttributes } from 'prosemirror-flat-list'
 
 import type { ListAttrs } from './list-types'
 

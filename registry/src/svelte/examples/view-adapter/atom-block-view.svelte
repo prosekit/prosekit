@@ -1,8 +1,5 @@
 <script lang="ts">
-import {
-  useEditorDerivedValue,
-  type SvelteNodeViewProps,
-} from 'prosekit/svelte'
+import { useEditorDerivedValue, type SvelteNodeViewProps } from 'prosekit/svelte'
 
 const props: SvelteNodeViewProps = $props()
 

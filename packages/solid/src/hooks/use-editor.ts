@@ -1,15 +1,5 @@
-import {
-  defineMountHandler,
-  defineUpdateHandler,
-  ProseKitError,
-  union,
-  type Editor,
-  type Extension,
-} from '@prosekit/core'
-import {
-  createEffect,
-  createSignal,
-} from 'solid-js'
+import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
+import { createEffect, createSignal } from 'solid-js'
 
 import { useEditorContext } from '../contexts/editor-context'
 

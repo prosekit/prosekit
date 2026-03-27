@@ -3,10 +3,7 @@ import 'prosekit/web/autocomplete'
 import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { canUseRegexLookbehind } from 'prosekit/core'
-import type {
-  AutocompleteListElement,
-  AutocompletePopoverElement,
-} from 'prosekit/web/autocomplete'
+import type { AutocompleteListElement, AutocompletePopoverElement } from 'prosekit/web/autocomplete'
 
 import { renderSlashMenuEmpty } from './slash-menu-empty'
 import { renderSlashMenuItem } from './slash-menu-item'

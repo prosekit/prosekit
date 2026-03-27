@@ -1,11 +1,5 @@
-import type {
-  Editor,
-  Extension,
-} from '@prosekit/core'
-import {
-  createMemo,
-  type Accessor,
-} from 'solid-js'
+import type { Editor, Extension } from '@prosekit/core'
+import { createMemo, type Accessor } from 'solid-js'
 
 import type { MaybeAccessor } from '../types'
 import { toValue } from '../utils/to-value'

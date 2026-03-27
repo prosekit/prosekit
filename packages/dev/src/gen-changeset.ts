@@ -1,12 +1,11 @@
 import path from 'node:path'
 
+import read from '@changesets/read'
+
 import { ROOT_DIR } from './root-dir'
-import { unwrapDefaultExport } from './unwrap-default-export'
 import { vfs } from './vfs'
 
 export async function genChangeset(): Promise<void> {
-  const read = unwrapDefaultExport(await import('@changesets/read'))
-
   const changesets = await read(ROOT_DIR)
 
   for (const changeset of changesets) {

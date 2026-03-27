@@ -1,16 +1,7 @@
-import {
-  union,
-  type Union,
-} from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import {
-  defineImageCommands,
-  type ImageCommandsExtension,
-} from './image-commands'
-import {
-  defineImageSpec,
-  type ImageSpecExtension,
-} from './image-spec'
+import { defineImageCommands, type ImageCommandsExtension } from './image-commands'
+import { defineImageSpec, type ImageSpecExtension } from './image-spec'
 
 /**
  * @internal

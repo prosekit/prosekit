@@ -1,27 +1,13 @@
 import type { Command } from '@prosekit/pm/state'
-import {
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
-import {
-  defineDoc,
-  defineParagraph,
-  defineText,
-  setupTest,
-  setupTestFromExtension,
-} from '../testing'
+import { defineDoc, defineParagraph, defineText, setupTest, setupTestFromExtension } from '../testing'
 import { Priority } from '../types/priority'
 
-import {
-  defineKeymap,
-  type Keymap,
-} from './keymap'
+import { defineKeymap, type Keymap } from './keymap'
 
 describe('keymap', () => {
   it('can register and unregister keymap', () => {
@@ -161,9 +147,9 @@ describe('keymap', () => {
     ]
 
     for (const key of keybindings) {
-      let command: Command = record(key)
-      let keymap: Keymap = { [key]: command }
-      let extension = defineKeymap(keymap)
+      const command: Command = record(key)
+      const keymap: Keymap = { [key]: command }
+      const extension = defineKeymap(keymap)
       editor.use(extension)
     }
 

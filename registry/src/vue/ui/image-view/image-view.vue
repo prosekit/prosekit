@@ -2,15 +2,8 @@
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { VueNodeViewProps } from 'prosekit/vue'
-import {
-  ResizableHandle,
-  ResizableRoot,
-} from 'prosekit/vue/resizable'
-import {
-  computed,
-  ref,
-  watchEffect,
-} from 'vue'
+import { ResizableHandle, ResizableRoot } from 'prosekit/vue/resizable'
+import { computed, ref, watchEffect } from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
 

@@ -1,8 +1,5 @@
 import type { Extension } from 'prosekit/core'
-import {
-  definePreactNodeView,
-  type PreactNodeViewComponent,
-} from 'prosekit/preact'
+import { definePreactNodeView, type PreactNodeViewComponent } from 'prosekit/preact'
 
 import ImageView from './image-view'
 

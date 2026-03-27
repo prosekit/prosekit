@@ -2,10 +2,7 @@ import { expect } from 'vitest'
 
 import { registerVanillaRenderer } from '../../src/vanilla/renderer'
 
-import {
-  registerCleanupFunction,
-  runCleanupFunctions,
-} from './render-cleanup'
+import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 const containers = new Set<HTMLElement>()
 

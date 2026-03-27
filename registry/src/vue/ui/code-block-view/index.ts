@@ -1,8 +1,5 @@
 import type { Extension } from 'prosekit/core'
-import {
-  defineVueNodeView,
-  type VueNodeViewComponent,
-} from 'prosekit/vue'
+import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
 
 import CodeBlockView from './code-block-view.vue'
 

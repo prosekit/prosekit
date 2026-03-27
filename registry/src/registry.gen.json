@@ -2075,7 +2075,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "react",
         "accumulatedFiles": [
@@ -2308,7 +2308,9 @@
       "title": "react-example-unmount",
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-ui-inline-menu.json"
+      ],
       "dependencies": [
         "prosekit",
         "react"
@@ -2344,9 +2346,15 @@
           "registry/src/react/examples/unmount/editor-component.tsx",
           "registry/src/react/examples/unmount/editor.tsx",
           "registry/src/react/examples/unmount/extension-component.tsx",
-          "registry/src/react/examples/unmount/index.ts"
+          "registry/src/react/examples/unmount/index.ts",
+          "registry/src/react/ui/button/button.tsx",
+          "registry/src/react/ui/button/index.ts",
+          "registry/src/react/ui/inline-menu/index.ts",
+          "registry/src/react/ui/inline-menu/inline-menu.tsx"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "react-ui-inline-menu"
+        ]
       }
     },
     {
@@ -2581,7 +2589,6 @@
       "dependencies": [
         "prosekit",
         "react",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -6003,7 +6010,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "preact",
         "accumulatedFiles": [
@@ -6171,7 +6178,9 @@
       "title": "preact-example-unmount",
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-ui-inline-menu.json"
+      ],
       "dependencies": [
         "preact",
         "prosekit"
@@ -6207,9 +6216,15 @@
           "registry/src/preact/examples/unmount/editor-component.tsx",
           "registry/src/preact/examples/unmount/editor.tsx",
           "registry/src/preact/examples/unmount/extension-component.tsx",
-          "registry/src/preact/examples/unmount/index.ts"
+          "registry/src/preact/examples/unmount/index.ts",
+          "registry/src/preact/ui/button/button.tsx",
+          "registry/src/preact/ui/button/index.ts",
+          "registry/src/preact/ui/inline-menu/index.ts",
+          "registry/src/preact/ui/inline-menu/inline-menu.tsx"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "preact-ui-inline-menu"
+        ]
       }
     },
     {
@@ -6444,7 +6459,6 @@
       "dependencies": [
         "preact",
         "prosekit",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -9786,7 +9800,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "vue",
         "accumulatedFiles": [
@@ -9951,7 +9965,9 @@
       "title": "vue-example-unmount",
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-ui-inline-menu.json"
+      ],
       "dependencies": [
         "prosekit",
         "vue"
@@ -9987,9 +10003,15 @@
           "registry/src/vue/examples/unmount/editor-component.vue",
           "registry/src/vue/examples/unmount/editor.vue",
           "registry/src/vue/examples/unmount/extension-component.vue",
-          "registry/src/vue/examples/unmount/index.ts"
+          "registry/src/vue/examples/unmount/index.ts",
+          "registry/src/vue/ui/button/button.vue",
+          "registry/src/vue/ui/button/index.ts",
+          "registry/src/vue/ui/inline-menu/index.ts",
+          "registry/src/vue/ui/inline-menu/inline-menu.vue"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "vue-ui-inline-menu"
+        ]
       }
     },
     {
@@ -10221,7 +10243,6 @@
       "dependencies": [
         "prosekit",
         "vue",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -11801,6 +11822,160 @@
       }
     },
     {
+      "name": "lit-example-toolbar",
+      "title": "lit-example-toolbar",
+      "type": "registry:block",
+      "description": "Formatting toolbar with common editing actions.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-sample-sample-uploader.json",
+        "https://prosekit.dev/r/lit-ui-toolbar.json"
+      ],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/examples/toolbar/editor.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/editor.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/toolbar/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/extension.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/toolbar/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "toolbar",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/examples/toolbar/editor.ts",
+          "registry/src/lit/examples/toolbar/extension.ts",
+          "registry/src/lit/examples/toolbar/index.ts",
+          "registry/src/lit/sample/sample-uploader.ts",
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "registry/src/lit/ui/image-upload-popover/index.ts",
+          "registry/src/lit/ui/toolbar/index.ts",
+          "registry/src/lit/ui/toolbar/toolbar.ts"
+        ],
+        "internalDependencies": [
+          "lit-sample-sample-uploader",
+          "lit-ui-toolbar"
+        ]
+      }
+    },
+    {
+      "name": "lit-sample-sample-uploader",
+      "title": "lit-sample-sample-uploader",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/sample/sample-uploader.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-uploader.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/sample/sample-uploader.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-button",
+      "title": "lit-ui-button",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/button/button.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/button/button.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/button/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/button/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-image-upload-popover",
+      "title": "lit-ui-image-upload-popover",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-button.json"
+      ],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/image-upload-popover/image-upload-popover.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/image-upload-popover/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/image-upload-popover/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "registry/src/lit/ui/image-upload-popover/index.ts"
+        ],
+        "internalDependencies": [
+          "lit-ui-button"
+        ]
+      }
+    },
+    {
       "name": "lit-ui-slash-menu",
       "title": "lit-ui-slash-menu",
       "type": "registry:component",
@@ -11844,6 +12019,55 @@
           "registry/src/lit/ui/slash-menu/slash-menu.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-toolbar",
+      "title": "lit-ui-toolbar",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-button.json",
+        "https://prosekit.dev/r/lit-ui-image-upload-popover.json"
+      ],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/toolbar/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/toolbar/index.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/toolbar/toolbar.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/toolbar/toolbar.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/button/button.ts",
+          "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+          "registry/src/lit/ui/image-upload-popover/index.ts",
+          "registry/src/lit/ui/toolbar/index.ts",
+          "registry/src/lit/ui/toolbar/toolbar.ts"
+        ],
+        "internalDependencies": [
+          "lit-ui-button",
+          "lit-ui-image-upload-popover"
+        ]
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -13723,7 +13947,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "svelte",
         "accumulatedFiles": [
@@ -13888,7 +14112,9 @@
       "title": "svelte-example-unmount",
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-ui-inline-menu.json"
+      ],
       "dependencies": [
         "prosekit",
         "svelte"
@@ -13924,9 +14150,15 @@
           "registry/src/svelte/examples/unmount/editor-component.svelte",
           "registry/src/svelte/examples/unmount/editor.svelte",
           "registry/src/svelte/examples/unmount/extension-component.svelte",
-          "registry/src/svelte/examples/unmount/index.ts"
+          "registry/src/svelte/examples/unmount/index.ts",
+          "registry/src/svelte/ui/button/button.svelte",
+          "registry/src/svelte/ui/button/index.ts",
+          "registry/src/svelte/ui/inline-menu/index.ts",
+          "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "svelte-ui-inline-menu"
+        ]
       }
     },
     {
@@ -14157,7 +14389,6 @@
       "dependencies": [
         "prosekit",
         "svelte",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],
@@ -17522,7 +17753,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "text-color",
         "framework": "solid",
         "accumulatedFiles": [
@@ -17690,7 +17921,9 @@
       "title": "solid-example-unmount",
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+      ],
       "dependencies": [
         "prosekit",
         "solid-js"
@@ -17726,9 +17959,15 @@
           "registry/src/solid/examples/unmount/editor-component.tsx",
           "registry/src/solid/examples/unmount/editor.tsx",
           "registry/src/solid/examples/unmount/extension-component.tsx",
-          "registry/src/solid/examples/unmount/index.ts"
+          "registry/src/solid/examples/unmount/index.ts",
+          "registry/src/solid/ui/button/button.tsx",
+          "registry/src/solid/ui/button/index.ts",
+          "registry/src/solid/ui/inline-menu/index.ts",
+          "registry/src/solid/ui/inline-menu/inline-menu.tsx"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "solid-ui-inline-menu"
+        ]
       }
     },
     {
@@ -17963,7 +18202,6 @@
       "dependencies": [
         "prosekit",
         "solid-js",
-        "y-protocols",
         "y-websocket",
         "yjs"
       ],

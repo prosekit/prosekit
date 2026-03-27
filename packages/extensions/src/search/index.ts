@@ -1,9 +1,4 @@
-import {
-  defineCommands,
-  definePlugin,
-  type Extension,
-  type PlainExtension,
-} from '@prosekit/core'
+import { defineCommands, definePlugin, type Extension, type PlainExtension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 import {

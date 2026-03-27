@@ -1,8 +1,11 @@
 {
-  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
+  "extends": "@ocavue/tsconfig/dom/build-tsc.json",
   "compilerOptions": {
-    "isolatedDeclarations": true,
-    "allowJs": false
+    "outDir": "./.temp/tsconfig.build.out/",
+    "tsBuildInfoFile": "./.temp/tsconfig.build.tsbuildinfo",
+    "isolatedDeclarations": false,
+    "allowJs": false,
+    "rewriteRelativeImportExtensions": true
   },
   "references": [
     { "path": "../web/tsconfig.json" }

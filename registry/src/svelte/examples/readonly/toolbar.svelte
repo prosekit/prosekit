@@ -1,10 +1,7 @@
 <script lang="ts">
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { useExtension } from 'prosekit/svelte'
-import {
-  derived,
-  writable,
-} from 'svelte/store'
+import { derived, writable } from 'svelte/store'
 
 import { Button } from '../../ui/button'
 

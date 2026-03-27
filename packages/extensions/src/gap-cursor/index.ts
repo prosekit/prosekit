@@ -1,4 +1,1 @@
-export {
-  defineGapCursor,
-  type GapCursorExtension,
-} from './gap-cursor'
+export { defineGapCursor, type GapCursorExtension } from './gap-cursor'

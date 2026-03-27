@@ -2,7 +2,7 @@ import type { PopoverContentElement, PopoverContentProps as Props, PopoverConten
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props'
+import type { CreateProps } from '../create-props.ts'
 
 import Component from './popover-content.gen.svelte'
 

@@ -1,17 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
-import {
-  page,
-  userEvent,
-} from 'vitest/browser'
+import { expect, it } from 'vitest'
+import { page, userEvent } from 'vitest/browser'
 
-import {
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('code-block-themes', {
   shouldWaitForShiki: true,

@@ -1,11 +1,6 @@
 import type { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/vue'
-import {
-  defineComponent,
-  h,
-  type DefineSetupFnComponent,
-  type PropType,
-} from 'vue'
+import { defineComponent, h, type DefineSetupFnComponent, type PropType } from 'vue'
 
 import { VueMarkViewsConsumer } from '../extensions/vue-mark-view'
 import { VueNodeViewsConsumer } from '../extensions/vue-node-view'

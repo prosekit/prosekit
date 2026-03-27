@@ -1,12 +1,6 @@
 <script lang="ts">
-import {
-  LoroDoc,
-  type AwarenessListener,
-} from 'loro-crdt'
-import {
-  CursorAwareness,
-  type LoroDocType,
-} from 'loro-prosemirror'
+import { LoroDoc, type AwarenessListener } from 'loro-crdt'
+import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
 import { onDestroy } from 'svelte'
 
 import EditorComponent from './editor-component.svelte'

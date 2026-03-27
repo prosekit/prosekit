@@ -1,8 +1,4 @@
-import {
-  defineNodeViewComponent,
-  defineNodeViewFactory,
-  type Extension,
-} from '@prosekit/core'
+import { defineNodeViewComponent, defineNodeViewFactory, type Extension } from '@prosekit/core'
 import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import {
@@ -11,12 +7,7 @@ import {
   type NodeViewContextProps,
   type SolidNodeViewUserOptions,
 } from '@prosemirror-adapter/solid'
-import {
-  createComponent,
-  createMemo,
-  type Accessor,
-  type Component,
-} from 'solid-js'
+import { createComponent, createMemo, type Accessor, type Component } from 'solid-js'
 
 import { useExtension } from '../hooks/use-extension'
 

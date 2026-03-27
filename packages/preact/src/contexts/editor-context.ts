@@ -1,11 +1,5 @@
-import type {
-  Editor,
-  Extension,
-} from '@prosekit/core'
-import {
-  createContext,
-  type Provider,
-} from 'preact'
+import type { Editor, Extension } from '@prosekit/core'
+import { createContext, type Provider } from 'preact'
 import { useContext } from 'preact/hooks'
 
 const EditorContext = createContext<Editor | null>(null)

@@ -1,15 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 
-import {
-  expectLocatorToHaveCount,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToHaveCount, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('image-view', {
   shouldWaitForImageToLoad: true,

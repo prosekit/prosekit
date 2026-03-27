@@ -1,8 +1,4 @@
-import {
-  defineCommands,
-  insertNode,
-  type Extension,
-} from '@prosekit/core'
+import { defineCommands, insertNode, type Extension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 import {
   createDedentListCommand as dedentList,

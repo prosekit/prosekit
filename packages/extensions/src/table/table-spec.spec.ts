@@ -1,21 +1,12 @@
 import { union } from '@prosekit/core'
 import pick from 'just-pick'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
 import { defineText } from '../text'
 
-import {
-  defineTableCellSpec,
-  defineTableHeaderCellSpec,
-  defineTableRowSpec,
-  defineTableSpec,
-} from './table-spec'
+import { defineTableCellSpec, defineTableHeaderCellSpec, defineTableRowSpec, defineTableSpec } from './table-spec'
 
 describe('table spec', () => {
   it('should be defined', () => {

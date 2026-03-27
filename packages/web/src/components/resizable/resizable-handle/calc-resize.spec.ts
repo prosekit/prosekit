@@ -1,7 +1,4 @@
-import {
-  expect,
-  test,
-} from 'vitest'
+import { expect, test } from 'vitest'
 
 import { calcResize } from './calc-resize'
 

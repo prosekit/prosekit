@@ -1,9 +1,4 @@
-import {
-  defineKeymap,
-  isAtBlockStart,
-  toggleWrap,
-  type PlainExtension,
-} from '@prosekit/core'
+import { defineKeymap, isAtBlockStart, toggleWrap, type PlainExtension } from '@prosekit/core'
 import { joinBackward } from '@prosekit/pm/commands'
 import type { Command } from '@prosekit/pm/state'
 

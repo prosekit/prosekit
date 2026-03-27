@@ -1,13 +1,5 @@
-import {
-  createSignal,
-  type PropDeclarations,
-  type SignalState,
-} from '@aria-ui/core'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { createSignal, type PropDeclarations, type SignalState } from '@aria-ui/core'
+import { describe, expect, it } from 'vitest'
 
 import { getStateWithDefaults } from './get-default-state'
 

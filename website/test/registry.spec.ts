@@ -1,7 +1,4 @@
-import {
-  expect,
-  test,
-} from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test.describe('registry', () => {
   test('should fetch the root registry', async ({ request }) => {

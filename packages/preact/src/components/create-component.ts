@@ -1,18 +1,7 @@
 import type { AnyFunction } from '@prosekit/core'
 import { createElement } from 'preact'
-import {
-  forwardRef,
-  type ForwardRefExoticComponent,
-  type HTMLAttributes,
-  type RefAttributes,
-} from 'preact/compat'
-import {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'preact/hooks'
+import { forwardRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'preact/compat'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
 
 import { useEditorContext } from '../contexts/editor-context'
 

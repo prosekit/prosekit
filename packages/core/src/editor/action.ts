@@ -1,12 +1,5 @@
 import { mapValues } from '@ocavue/utils'
-import type {
-  Attrs,
-  Mark,
-  MarkType,
-  NodeType,
-  ProseMirrorNode,
-  Schema,
-} from '@prosekit/pm/model'
+import type { Attrs, Mark, MarkType, NodeType, ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'

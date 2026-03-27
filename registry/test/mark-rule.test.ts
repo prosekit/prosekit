@@ -1,15 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import {
-  inputText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { inputText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('mark-rule')
 

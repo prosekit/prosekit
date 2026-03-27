@@ -1,19 +1,8 @@
-import {
-  Priority,
-  union,
-  withPriority,
-  type Union,
-} from '@prosekit/core'
+import { Priority, union, withPriority, type Union } from '@prosekit/core'
 
-import {
-  defineParagraphCommands,
-  type ParagraphCommandsExtension,
-} from './paragraph-commands'
+import { defineParagraphCommands, type ParagraphCommandsExtension } from './paragraph-commands'
 import { defineParagraphKeymap } from './paragraph-keymap'
-import {
-  defineParagraphSpec,
-  type ParagraphSpecExtension,
-} from './paragraph-spec'
+import { defineParagraphSpec, type ParagraphSpecExtension } from './paragraph-spec'
 
 /**
  * @internal

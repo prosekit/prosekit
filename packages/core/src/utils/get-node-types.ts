@@ -1,7 +1,4 @@
-import type {
-  NodeType,
-  Schema,
-} from '@prosekit/pm/model'
+import type { NodeType, Schema } from '@prosekit/pm/model'
 
 import { getNodeType } from './get-node-type'
 

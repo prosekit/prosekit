@@ -2,15 +2,8 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import type { NodeJSON } from 'prosekit/core'
-import {
-  CommitRecorder,
-  type Commit,
-} from 'prosekit/extensions/commit'
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from 'react'
+import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
+import { useCallback, useMemo, useState } from 'react'
 
 import EditorDiff from './editor-diff'
 import EditorMain from './editor-main'

@@ -1,11 +1,5 @@
-import {
-  defineBaseKeymap,
-  union,
-} from 'prosekit/core'
-import {
-  defineCodeBlock,
-  defineCodeBlockShiki,
-} from 'prosekit/extensions/code-block'
+import { defineBaseKeymap, union } from 'prosekit/core'
+import { defineCodeBlock, defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 import { defineDoc } from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'

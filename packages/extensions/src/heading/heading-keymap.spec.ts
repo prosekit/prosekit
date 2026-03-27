@@ -1,8 +1,4 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { setupTest } from '../testing'

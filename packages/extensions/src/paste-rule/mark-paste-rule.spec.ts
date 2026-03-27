@@ -1,21 +1,11 @@
-import {
-  defineMarkSpec,
-  union,
-} from '@prosekit/core'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { defineMarkSpec, union } from '@prosekit/core'
+import { describe, expect, it } from 'vitest'
 
 import { defineBold } from '../bold'
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
 import { setupTestFromExtension } from '../testing'
-import {
-  pasteHTML,
-  pasteText,
-} from '../testing/clipboard'
+import { pasteHTML, pasteText } from '../testing/clipboard'
 import { defineText } from '../text'
 
 import type { MarkPasteRuleOptions } from './mark-paste-rule'

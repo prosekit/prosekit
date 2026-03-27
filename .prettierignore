@@ -1,8 +1,0 @@
-pnpm-lock.yaml
-CHANGELOG.md
-*.gen.ts
-*.gen.tsx
-*.gen.css
-*.gen.svelte
-.temp
-.size-limit.json

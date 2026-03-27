@@ -1,29 +1,12 @@
 import { isDeepEqual } from '@ocavue/utils'
-import type {
-  ProseMirrorNode,
-  Schema,
-} from '@prosekit/pm/model'
-import {
-  EditorState,
-  type Command,
-  type Plugin,
-  type Selection,
-  type Transaction,
-} from '@prosekit/pm/state'
-import {
-  EditorView,
-  type DirectEditorProps,
-  type EditorProps,
-} from '@prosekit/pm/view'
+import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import { EditorState, type Command, type Plugin, type Selection, type Transaction } from '@prosekit/pm/state'
+import { EditorView, type DirectEditorProps, type EditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
 import type { BaseExtension } from '../facets/base-extension'
-import {
-  subtractFacetNode,
-  unionFacetNode,
-  type FacetNode,
-} from '../facets/facet-node'
+import { subtractFacetNode, unionFacetNode, type FacetNode } from '../facets/facet-node'
 import type {
   Extension,
   ExtractCommandActions,
@@ -32,31 +15,13 @@ import type {
   ExtractNodeActions,
   ExtractNodeNames,
 } from '../types/extension'
-import type {
-  CommandAction,
-  CommandCreator,
-} from '../types/extension-command'
-import type {
-  NodeJSON,
-  SelectionJSON,
-} from '../types/model'
+import type { CommandAction, CommandCreator } from '../types/extension-command'
+import type { NodeJSON, SelectionJSON } from '../types/model'
 import { assert } from '../utils/assert'
-import {
-  getEditorContentDoc,
-  getEditorSelection,
-} from '../utils/editor-content'
-import {
-  htmlFromNode,
-  jsonFromNode,
-  type DOMDocumentOptions,
-} from '../utils/parse'
+import { getEditorContentDoc, getEditorSelection } from '../utils/editor-content'
+import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '../utils/parse'
 
-import {
-  createMarkActions,
-  createNodeActions,
-  type MarkAction,
-  type NodeAction,
-} from './action'
+import { createMarkActions, createNodeActions, type MarkAction, type NodeAction } from './action'
 import { union } from './union'
 
 /**

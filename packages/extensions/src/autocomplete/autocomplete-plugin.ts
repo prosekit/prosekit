@@ -1,19 +1,9 @@
 import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
-import type {
-  ProseMirrorNode,
-  ResolvedPos,
-} from '@prosekit/pm/model'
-import {
-  Plugin,
-  type EditorState,
-  type Transaction,
-} from '@prosekit/pm/state'
+import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
+import { Plugin, type EditorState, type Transaction } from '@prosekit/pm/state'
 import type { Mapping } from '@prosekit/pm/transform'
 import type { EditorView } from '@prosekit/pm/view'
-import {
-  Decoration,
-  DecorationSet,
-} from '@prosekit/pm/view'
+import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 import {
   getPluginState,

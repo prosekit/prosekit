@@ -1,13 +1,5 @@
-import type {
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
-import {
-  menuItemEvents,
-  menuItemProps,
-  type MenuItemEvents,
-  type MenuItemProps,
-} from '@aria-ui/menu'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import { menuItemEvents, menuItemProps, type MenuItemEvents, type MenuItemProps } from '@aria-ui/menu'
 
 export interface TableHandlePopoverItemProps extends MenuItemProps {}
 

@@ -1,13 +1,5 @@
-import { isElementLike } from '@ocavue/utils'
-import type {
-  DOMOutputSpec,
-  Mark,
-  ParseRule,
-  ProseMirrorNode,
-  TagParseRule,
-} from '@prosekit/pm/model'
-
-import { isNotNullish } from './type-assertion'
+import { isElementLike, isNotNullish } from '@ocavue/utils'
+import type { DOMOutputSpec, Mark, ParseRule, ProseMirrorNode, TagParseRule } from '@prosekit/pm/model'
 
 interface AttrOptions {
   attr: string

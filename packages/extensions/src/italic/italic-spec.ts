@@ -1,7 +1,4 @@
-import {
-  defineMarkSpec,
-  type Extension,
-} from '@prosekit/core'
+import { defineMarkSpec, type Extension } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 
 /**

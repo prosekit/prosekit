@@ -1,15 +1,6 @@
-import {
-  LoroDoc,
-  type AwarenessListener,
-} from 'loro-crdt'
-import {
-  CursorAwareness,
-  type LoroDocType,
-} from 'loro-prosemirror'
-import {
-  onCleanup,
-  type JSX,
-} from 'solid-js'
+import { LoroDoc, type AwarenessListener } from 'loro-crdt'
+import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
+import { onCleanup, type JSX } from 'solid-js'
 
 import EditorComponent from './editor-component'
 

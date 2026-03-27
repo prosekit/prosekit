@@ -1,10 +1,6 @@
 import 'prosekit/lit/autocomplete'
 
-import {
-  html,
-  LitElement,
-  type PropertyDeclaration,
-} from 'lit'
+import { html, LitElement, type PropertyDeclaration } from 'lit'
 import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { canUseRegexLookbehind } from 'prosekit/core'

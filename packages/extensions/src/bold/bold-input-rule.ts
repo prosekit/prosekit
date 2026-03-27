@@ -1,7 +1,4 @@
-import {
-  canUseRegexLookbehind,
-  type PlainExtension,
-} from '@prosekit/core'
+import { canUseRegexLookbehind, type PlainExtension } from '@prosekit/core'
 
 import { defineMarkInputRule } from '../input-rule'
 

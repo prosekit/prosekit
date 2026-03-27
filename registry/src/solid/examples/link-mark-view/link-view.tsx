@@ -1,10 +1,5 @@
 import type { SolidMarkViewProps } from 'prosekit/solid'
-import {
-  createSignal,
-  onCleanup,
-  onMount,
-  type JSX,
-} from 'solid-js'
+import { createSignal, onCleanup, onMount, type JSX } from 'solid-js'
 
 const colors = [
   '#f06292',

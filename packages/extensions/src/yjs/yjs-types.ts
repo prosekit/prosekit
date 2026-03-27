@@ -1,7 +1,5 @@
 import type { yCursorPlugin } from 'y-prosemirror'
 
-// TODO: Remove `import type { Awareness } from 'y-protocols/awareness'` from examples.
-
 /**
  * @internal
  *

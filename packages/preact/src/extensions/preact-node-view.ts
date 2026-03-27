@@ -1,21 +1,8 @@
-import {
-  defineNodeViewComponent,
-  defineNodeViewFactory,
-  type Extension,
-} from '@prosekit/core'
+import { defineNodeViewComponent, defineNodeViewFactory, type Extension } from '@prosekit/core'
 import type { NodeViewConstructor } from '@prosekit/pm/view'
 import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
-import {
-  useNodeViewContext,
-  useNodeViewFactory,
-  type NodeViewContext,
-  type PreactNodeViewUserOptions,
-} from '@prosemirror-adapter/preact'
-import {
-  h,
-  type ComponentType,
-  type FunctionComponent,
-} from 'preact'
+import { useNodeViewContext, useNodeViewFactory, type NodeViewContext, type PreactNodeViewUserOptions } from '@prosemirror-adapter/preact'
+import { h, type ComponentType, type FunctionComponent } from 'preact'
 import { useMemo } from 'preact/hooks'
 
 import { useExtension } from '../hooks/use-extension'

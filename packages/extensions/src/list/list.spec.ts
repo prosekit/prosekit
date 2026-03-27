@@ -1,23 +1,12 @@
-import {
-  createEditor,
-  nodeFromHTML,
-  union,
-} from '@prosekit/core'
+import { createEditor, nodeFromHTML, union } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { formatHTML } from 'diffable-html-snapshot'
+import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
 import { setupTest } from '../testing'
-import { formatHTML } from '../testing/format-html'
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from '../testing/markdown'
+import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown'
 import { defineText } from '../text'
 
 import { defineList } from './index'
@@ -118,13 +107,13 @@ describe('defineList', () => {
       <ul data-pm-slice="0 0 []">
         <li
           class="prosemirror-flat-list"
-          data-list-kind="task"
           data-list-checked
+          data-list-kind="task"
         >
           <p>
             <input
-              type="checkbox"
               checked
+              type="checkbox"
             >
             Checked 1
           </p>
@@ -182,13 +171,13 @@ describe('defineList', () => {
         <ul>
           <li
             class="prosemirror-flat-list"
-            data-list-kind="task"
             data-list-checked
+            data-list-kind="task"
           >
             <p>
               <input
-                type="checkbox"
                 checked
+                type="checkbox"
               >
               Checked
             </p>
@@ -237,9 +226,9 @@ describe('defineList', () => {
         <li class="task-list-item">
           <p>
             <input
-              type="checkbox"
               checked
               disabled
+              type="checkbox"
             >
             Checked
           </p>
@@ -247,8 +236,8 @@ describe('defineList', () => {
         <li class="task-list-item">
           <p>
             <input
-              type="checkbox"
               disabled
+              type="checkbox"
             >
             Unchecked
           </p>

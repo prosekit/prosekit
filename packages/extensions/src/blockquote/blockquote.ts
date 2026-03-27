@@ -1,18 +1,9 @@
-import {
-  union,
-  type Union,
-} from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import {
-  defineBlockquoteCommands,
-  type BlockquoteCommandsExtension,
-} from './blockquote-commands'
+import { defineBlockquoteCommands, type BlockquoteCommandsExtension } from './blockquote-commands'
 import { defineBlockquoteInputRule } from './blockquote-input-rule'
 import { defineBlockquoteKeymap } from './blockquote-keymap'
-import {
-  defineBlockquoteSpec,
-  type BlockquoteSpecExtension,
-} from './blockquote-spec'
+import { defineBlockquoteSpec, type BlockquoteSpecExtension } from './blockquote-spec'
 
 /**
  * @internal

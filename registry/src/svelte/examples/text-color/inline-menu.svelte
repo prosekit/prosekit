@@ -1,14 +1,8 @@
 <script lang="ts">
 import type { Editor } from 'prosekit/core'
-import {
-  useEditorDerivedValue,
-  useKeymap,
-} from 'prosekit/svelte'
+import { useEditorDerivedValue, useKeymap } from 'prosekit/svelte'
 import { InlinePopover } from 'prosekit/svelte/inline-popover'
-import {
-  derived,
-  writable,
-} from 'svelte/store'
+import { derived, writable } from 'svelte/store'
 
 import { Button } from '../../ui/button'
 

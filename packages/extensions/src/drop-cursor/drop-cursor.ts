@@ -1,7 +1,4 @@
-import {
-  definePlugin,
-  type PlainExtension,
-} from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { dropCursor } from 'prosemirror-dropcursor'
 
 export interface DropCursorOptions {

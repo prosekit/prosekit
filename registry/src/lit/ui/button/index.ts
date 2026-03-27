@@ -1,1 +1,1 @@
-export { LitButton } from './button'
+import './button'

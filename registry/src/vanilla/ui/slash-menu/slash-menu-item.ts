@@ -1,9 +1,6 @@
 import 'prosekit/web/autocomplete'
 
-import type {
-  AutocompleteItemElement,
-  AutocompleteItemEvents,
-} from 'prosekit/web/autocomplete'
+import type { AutocompleteItemElement, AutocompleteItemEvents } from 'prosekit/web/autocomplete'
 
 export function renderSlashMenuItem(options: {
   label: string

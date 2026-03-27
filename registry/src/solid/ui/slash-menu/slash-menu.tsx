@@ -1,10 +1,7 @@
 import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/solid'
-import {
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/solid/autocomplete'
+import { AutocompleteList, AutocompletePopover } from 'prosekit/solid/autocomplete'
 import type { JSX } from 'solid-js'
 
 import SlashMenuEmpty from './slash-menu-empty'

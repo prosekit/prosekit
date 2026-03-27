@@ -1,27 +1,13 @@
-import {
-  createComputed,
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-} from '@aria-ui/core'
-import {
-  computePosition,
-  offset,
-} from '@floating-ui/dom'
+import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal } from '@aria-ui/core'
+import { computePosition, offset } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 import { assignStyles } from '../../../utils/assign-styles'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import {
-  tableHandleDndContext,
-  tableHandleRootContext,
-} from '../context'
+import { tableHandleDndContext, tableHandleRootContext } from '../context'
 import { getDndRelatedDOMs } from '../dnd'
 
-import {
-  getDragOverColumn,
-  getDragOverRow,
-} from './calc-drag-over'
+import { getDragOverColumn, getDragOverRow } from './calc-drag-over'
 
 export function useUpdateIndicatorPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>, handleWidth: number): void {
   const dndContext = tableHandleDndContext.consume(host)
@@ -65,7 +51,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
     const { table } = relatedDOMs
 
     let cancelled = false
-    let cleanup = () => {
+    const cleanup = () => {
       cancelled = true
     }
 

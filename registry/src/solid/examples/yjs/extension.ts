@@ -1,8 +1,4 @@
-import {
-  defineBaseCommands,
-  defineBaseKeymap,
-  union,
-} from 'prosekit/core'
+import { defineBaseCommands, defineBaseKeymap, union } from 'prosekit/core'
 import { defineBlockquote } from 'prosekit/extensions/blockquote'
 import { defineBold } from 'prosekit/extensions/bold'
 import { defineCode } from 'prosekit/extensions/code'
@@ -21,7 +17,7 @@ import { defineText } from 'prosekit/extensions/text'
 import { defineUnderline } from 'prosekit/extensions/underline'
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 import { defineYjs } from 'prosekit/extensions/yjs'
-import type { Awareness } from 'y-protocols/awareness'
+import type { Awareness } from 'prosekit/extensions/yjs'
 import type * as Y from 'yjs'
 
 export function defineExtension(doc: Y.Doc, awareness: Awareness) {

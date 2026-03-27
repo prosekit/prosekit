@@ -1,11 +1,5 @@
-import type {
-  Locator,
-  LocatorOptions,
-} from 'vitest/browser'
-import {
-  locators,
-  page,
-} from 'vitest/browser'
+import type { Locator, LocatorOptions } from 'vitest/browser'
+import { locators, page } from 'vitest/browser'
 
 declare module 'vitest/browser' {
   interface LocatorSelectors {

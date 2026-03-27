@@ -1,20 +1,9 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import {
-  createEditor,
-  type Extension,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  defineReactNodeView,
-  ProseKit,
-  useExtension,
-} from 'prosekit/react'
-import {
-  useMemo,
-  useState,
-} from 'react'
+import { createEditor, type Extension, type NodeJSON } from 'prosekit/core'
+import { defineReactNodeView, ProseKit, useExtension } from 'prosekit/react'
+import { useMemo, useState } from 'react'
 
 import { sampleContent } from '../../sample/sample-doc-tweet'
 

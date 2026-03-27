@@ -1,11 +1,5 @@
-import {
-  defineKeymap,
-  type PlainExtension,
-} from '@prosekit/core'
-import {
-  chainCommands,
-  deleteSelection,
-} from '@prosekit/pm/commands'
+import { defineKeymap, type PlainExtension } from '@prosekit/core'
+import { chainCommands, deleteSelection } from '@prosekit/pm/commands'
 import {
   createDedentListCommand,
   createIndentListCommand,

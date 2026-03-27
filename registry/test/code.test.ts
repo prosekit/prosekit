@@ -1,17 +1,7 @@
-import {
-  expect,
-  it,
-} from 'vitest'
+import { expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 
-import {
-  expectLocatorToNotExist,
-  extendSelection,
-  inputText,
-  testStory,
-  testStoryConsistency,
-  waitForEditor,
-} from './helpers'
+import { expectLocatorToNotExist, extendSelection, inputText, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('code')
 

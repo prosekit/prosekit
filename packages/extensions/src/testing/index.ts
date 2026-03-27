@@ -10,10 +10,7 @@ import {
   type ExtractNodeActions,
   type NodeChild,
 } from '@prosekit/core'
-import {
-  createTestEditor,
-  type TestEditor,
-} from '@prosekit/core/test'
+import { createTestEditor, type TestEditor } from '@prosekit/core/test'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { defineBackgroundColor } from '../background-color'
@@ -28,10 +25,7 @@ import { defineHorizontalRule } from '../horizontal-rule'
 import { defineImage } from '../image'
 import { defineItalic } from '../italic'
 import { defineLink } from '../link'
-import {
-  defineList,
-  type ListAttrs,
-} from '../list'
+import { defineList, type ListAttrs } from '../list'
 import { defineParagraph } from '../paragraph'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
@@ -40,10 +34,7 @@ import { defineText } from '../text'
 import { defineTextColor } from '../text-color'
 import { defineUnderline } from '../underline'
 
-import {
-  readHtmlTextFromClipboard,
-  readPlainTextFromClipboard,
-} from './clipboard'
+import { readHtmlTextFromClipboard, readPlainTextFromClipboard } from './clipboard'
 
 /**
  * @internal

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "private": false,
   "description": "Lit components and utilities for ProseKit",
   "author": {
@@ -50,8 +50,8 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.20.1",
-    "typescript": "~5.9.3"
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
   },
   "publishConfig": {
     "exports": {

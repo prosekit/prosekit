@@ -1,11 +1,5 @@
-import {
-  defineCommands,
-  type Extension,
-} from '@prosekit/core'
-import {
-  redoCommand,
-  undoCommand,
-} from 'y-prosemirror'
+import { defineCommands, type Extension } from '@prosekit/core'
+import { redoCommand, undoCommand } from 'y-prosemirror'
 
 const commands = {
   undo: () => undoCommand,

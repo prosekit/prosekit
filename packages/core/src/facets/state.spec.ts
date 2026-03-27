@@ -1,16 +1,9 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
 import { defineDefaultState } from '../extensions/default-state'
-import {
-  defineTestExtension,
-  setupTestFromExtension,
-} from '../testing'
+import { defineTestExtension, setupTestFromExtension } from '../testing'
 import type { NodeJSON } from '../types/model'
 import { Priority } from '../types/priority'
 

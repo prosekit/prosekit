@@ -273,7 +273,7 @@ export default function Toolbar(props: { uploader?: Uploader<string> }) {
           onClick={items.horizontalRule.command}
           tooltip="Divider"
         >
-          <div className="CSS_ICON_MINUS"></div>
+          <div className="CSS_ICON_MINUS" />
         </Button>
       )}
       {items.blockquote && (

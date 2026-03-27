@@ -2,12 +2,7 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/react'
-import {
-  AutocompleteEmpty,
-  AutocompleteItem,
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/react/autocomplete'
+import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/react/autocomplete'
 
 const regex = /#[\da-z]*$/i
 

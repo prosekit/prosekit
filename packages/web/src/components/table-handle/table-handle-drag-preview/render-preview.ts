@@ -1,8 +1,5 @@
 import { assignStyles } from '../../../utils/assign-styles'
-import {
-  cloneElement,
-  deepCloneElement,
-} from '../../../utils/clone-element'
+import { cloneElement, deepCloneElement } from '../../../utils/clone-element'
 import { fadeColor } from '../../../utils/fade-color'
 import { getEffectiveBackgroundColor } from '../../../utils/get-effective-background-color'
 import { injectStyle } from '../../../utils/inject-style'

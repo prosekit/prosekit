@@ -4,8 +4,8 @@ import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/yjs/style.css'
 
 import { createEditor } from 'prosekit/core'
+import type { Awareness } from 'prosekit/extensions/yjs'
 import { ProseKit } from 'prosekit/vue'
-import type { Awareness } from 'y-protocols/awareness'
 import type * as Y from 'yjs'
 
 import { Toolbar } from '../../ui/toolbar'

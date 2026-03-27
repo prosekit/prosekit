@@ -1,16 +1,8 @@
 import type { BasicExtension } from 'prosekit/basic'
-import {
-  canUseRegexLookbehind,
-  type Union,
-} from 'prosekit/core'
+import { canUseRegexLookbehind, type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/preact'
-import {
-  AutocompleteEmpty,
-  AutocompleteItem,
-  AutocompleteList,
-  AutocompletePopover,
-} from 'prosekit/preact/autocomplete'
+import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/preact/autocomplete'
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u

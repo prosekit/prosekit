@@ -1,8 +1,5 @@
 import { AutocompleteItem } from 'prosekit/solid/autocomplete'
-import {
-  Show,
-  type JSX,
-} from 'solid-js'
+import { Show, type JSX } from 'solid-js'
 
 export default function SlashMenuItem(props: {
   label: string

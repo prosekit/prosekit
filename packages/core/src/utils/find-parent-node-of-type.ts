@@ -1,12 +1,6 @@
-import type {
-  NodeType,
-  ResolvedPos,
-} from '@prosekit/pm/model'
+import type { NodeType, ResolvedPos } from '@prosekit/pm/model'
 
-import {
-  findParentNode,
-  type FindParentNodeResult,
-} from './find-parent-node'
+import { findParentNode, type FindParentNodeResult } from './find-parent-node'
 import { getNodeTypes } from './get-node-types'
 
 /**

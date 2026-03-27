@@ -1,8 +1,5 @@
 import type { ResolvedPos } from '@prosekit/pm/model'
-import type {
-  EditorState,
-  TextSelection,
-} from '@prosekit/pm/state'
+import type { EditorState, TextSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 /**

@@ -1,17 +1,7 @@
-import {
-  definePlugin,
-  type PlainExtension,
-} from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
-import type {
-  CursorAwareness,
-  CursorEphemeralStore,
-  CursorPluginOptions,
-} from 'loro-prosemirror'
-import {
-  LoroCursorPlugin,
-  LoroEphemeralCursorPlugin,
-} from 'loro-prosemirror'
+import type { CursorAwareness, CursorEphemeralStore, CursorPluginOptions } from 'loro-prosemirror'
+import { LoroCursorPlugin, LoroEphemeralCursorPlugin } from 'loro-prosemirror'
 
 export interface LoroCursorOptions extends CursorPluginOptions {
   awareness?: CursorAwareness

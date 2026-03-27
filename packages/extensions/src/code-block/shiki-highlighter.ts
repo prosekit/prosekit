@@ -1,7 +1,4 @@
-import type {
-  HighlighterOptions,
-  HighlighterResult,
-} from './shiki-highlighter-chunk'
+import type { HighlighterOptions, HighlighterResult } from './shiki-highlighter-chunk'
 
 let loaded: ((options: HighlighterOptions) => HighlighterResult) | undefined
 

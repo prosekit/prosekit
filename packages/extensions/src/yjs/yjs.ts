@@ -1,30 +1,12 @@
-import {
-  Priority,
-  union,
-  withPriority,
-  type PlainExtension,
-  type Union,
-} from '@prosekit/core'
+import { Priority, union, withPriority, type PlainExtension, type Union } from '@prosekit/core'
 import type * as Y from 'yjs'
 
-import {
-  defineYjsCommands,
-  type YjsCommandsExtension,
-} from './yjs-commands'
-import {
-  defineYjsCursorPlugin,
-  type YjsCursorPluginOptions,
-} from './yjs-cursor-plugin'
+import { defineYjsCommands, type YjsCommandsExtension } from './yjs-commands'
+import { defineYjsCursorPlugin, type YjsCursorPluginOptions } from './yjs-cursor-plugin'
 import { defineYjsKeymap } from './yjs-keymap'
-import {
-  defineYjsSyncPlugin,
-  type YjsSyncPluginOptions,
-} from './yjs-sync-plugin'
+import { defineYjsSyncPlugin, type YjsSyncPluginOptions } from './yjs-sync-plugin'
 import type { Awareness } from './yjs-types'
-import {
-  defineYjsUndoPlugin,
-  type YjsUndoPluginOptions,
-} from './yjs-undo-plugin'
+import { defineYjsUndoPlugin, type YjsUndoPluginOptions } from './yjs-undo-plugin'
 
 export interface YjsOptions {
   /**

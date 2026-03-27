@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  useEditorDerivedValue,
-  type VueNodeViewProps,
-} from 'prosekit/vue'
+import { useEditorDerivedValue, type VueNodeViewProps } from 'prosekit/vue'
 
 const props = defineProps<VueNodeViewProps>()
 

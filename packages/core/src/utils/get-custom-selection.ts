@@ -1,8 +1,4 @@
-import {
-  TextSelection,
-  type EditorState,
-  type Selection,
-} from '@prosekit/pm/state'
+import { TextSelection, type EditorState, type Selection } from '@prosekit/pm/state'
 
 export function getCustomSelection(
   state: EditorState,

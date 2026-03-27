@@ -1,11 +1,5 @@
-import {
-  definePlugin,
-  type PlainExtension,
-} from '@prosekit/core'
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-} from '@prosekit/pm/state'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
 /**
  * Make the editor read-only.

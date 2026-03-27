@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import {
-  LoroDoc,
-  type AwarenessListener,
-} from 'loro-crdt'
-import {
-  CursorAwareness,
-  type LoroDocType,
-} from 'loro-prosemirror'
+import { LoroDoc, type AwarenessListener } from 'loro-crdt'
+import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
 import { onBeforeUnmount } from 'vue'
 
 import EditorComponent from './editor-component.vue'

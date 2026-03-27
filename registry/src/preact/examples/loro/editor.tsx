@@ -1,15 +1,6 @@
-import {
-  LoroDoc,
-  type AwarenessListener,
-} from 'loro-crdt'
-import {
-  CursorAwareness,
-  type LoroDocType,
-} from 'loro-prosemirror'
-import {
-  useEffect,
-  useState,
-} from 'preact/hooks'
+import { LoroDoc, type AwarenessListener } from 'loro-crdt'
+import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
+import { useEffect, useState } from 'preact/hooks'
 
 import EditorComponent from './editor-component'
 

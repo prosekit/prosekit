@@ -1,14 +1,7 @@
-import {
-  useEffect,
-  type ConnectableElement,
-  type SignalState,
-} from '@aria-ui/core'
+import { useEffect, type ConnectableElement, type SignalState } from '@aria-ui/core'
 
 import { assignStyles } from '../../../utils/assign-styles'
-import {
-  useInitDndPosition,
-  type OnInitParams,
-} from '../dnd'
+import { useInitDndPosition, type OnInitParams } from '../dnd'
 
 import type { TableHandleDropIndicatorProps } from './types'
 import { useUpdateIndicatorPosition } from './updater'
@@ -18,7 +11,10 @@ const HANDLE_WIDTH = 2
 /**
  * @internal
  */
-export function useTableHandleDropIndicator(host: ConnectableElement, { state }: { state: SignalState<TableHandleDropIndicatorProps> }): void {
+export function useTableHandleDropIndicator(
+  host: ConnectableElement,
+  { state }: { state: SignalState<TableHandleDropIndicatorProps> },
+): void {
   const { editor } = state
 
   useEffect(host, () => {

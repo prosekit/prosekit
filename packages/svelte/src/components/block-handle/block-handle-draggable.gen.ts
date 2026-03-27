@@ -2,7 +2,7 @@ import type { BlockHandleDraggableElement, BlockHandleDraggableProps as Props, B
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
-import type { CreateProps } from '../create-props'
+import type { CreateProps } from '../create-props.ts'
 
 import Component from './block-handle-draggable.gen.svelte'
 

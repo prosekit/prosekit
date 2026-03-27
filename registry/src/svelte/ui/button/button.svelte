@@ -1,9 +1,5 @@
 <script lang="ts">
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from 'prosekit/svelte/tooltip'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/svelte/tooltip'
 
 interface Props {
   pressed?: boolean

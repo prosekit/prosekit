@@ -6,29 +6,13 @@ import {
   type SetupOptions,
   type TypedEventTarget,
 } from '@aria-ui/core'
-import {
-  listboxProps,
-  useListbox,
-  type ListboxProps,
-} from '@aria-ui/listbox/elements'
-import {
-  defineDOMEventHandler,
-  Priority,
-  withPriority,
-  type Editor,
-} from '@prosekit/core'
+import { listboxProps, useListbox, type ListboxProps } from '@aria-ui/listbox/elements'
+import { defineDOMEventHandler, Priority, withPriority, type Editor } from '@prosekit/core'
 
 import { getStateWithDefaults } from '../../../utils/get-default-state'
-import {
-  onSubmitContext,
-  openContext,
-  queryContext,
-} from '../context'
+import { onSubmitContext, openContext, queryContext } from '../context'
 
-import type {
-  AutocompleteListEvents,
-  AutocompleteListProps,
-} from './types'
+import type { AutocompleteListEvents, AutocompleteListProps } from './types'
 
 /**
  * @internal

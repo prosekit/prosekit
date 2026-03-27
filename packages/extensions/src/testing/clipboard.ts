@@ -1,6 +1,5 @@
 import type { EditorView } from '@prosekit/pm/view'
-
-import { formatHTML } from './format-html'
+import { formatHTML } from 'diffable-html-snapshot'
 
 async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined> {
   const clipboardItems = await navigator.clipboard.read()

@@ -1,10 +1,7 @@
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { SolidNodeViewProps } from 'prosekit/solid'
-import {
-  For,
-  type JSX,
-} from 'solid-js'
+import { For, type JSX } from 'solid-js'
 
 export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
   const attrs = () => props.node.attrs as CodeBlockAttrs

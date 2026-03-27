@@ -11,32 +11,16 @@ import {
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
-import {
-  defineKeymap,
-  Priority,
-  withPriority,
-  type Editor,
-} from '@prosekit/core'
-import {
-  AutocompleteRule,
-  defineAutocomplete,
-  type MatchHandler,
-} from '@prosekit/extensions/autocomplete'
+import { defineKeymap, Priority, withPriority, type Editor } from '@prosekit/core'
+import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useFirstRendering } from '../../../hooks/use-first-rendering'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import {
-  onSubmitContext,
-  openContext,
-  queryContext,
-} from '../context'
+import { onSubmitContext, openContext, queryContext } from '../context'
 
 import { defaultQueryBuilder } from './helpers'
-import type {
-  AutocompletePopoverEvents,
-  AutocompletePopoverProps,
-} from './types'
+import type { AutocompletePopoverEvents, AutocompletePopoverProps } from './types'
 
 /**
  * @internal

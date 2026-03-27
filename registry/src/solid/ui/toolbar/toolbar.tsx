@@ -2,10 +2,7 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import { useEditorDerivedValue } from 'prosekit/solid'
-import {
-  Show,
-  type JSX,
-} from 'solid-js'
+import { Show, type JSX } from 'solid-js'
 
 import { Button } from '../button'
 import { ImageUploadPopover } from '../image-upload-popover'

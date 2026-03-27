@@ -1,15 +1,6 @@
-import {
-  defineFacet,
-  defineFacetPayload,
-  pluginFacet,
-  type PlainExtension,
-  type PluginPayload,
-} from '@prosekit/core'
+import { defineFacet, defineFacetPayload, pluginFacet, type PlainExtension, type PluginPayload } from '@prosekit/core'
 import type { Slice } from '@prosekit/pm/model'
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-} from '@prosekit/pm/state'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 type PasteRulePayload = (options: { slice: Slice; view: EditorView; plain: boolean }) => Slice

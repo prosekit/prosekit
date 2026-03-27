@@ -1,8 +1,4 @@
-import type {
-  Accessor,
-  JSX,
-  JSXElement,
-} from 'solid-js'
+import type { Accessor, JSX, JSXElement } from 'solid-js'
 
 /**
  * @internal

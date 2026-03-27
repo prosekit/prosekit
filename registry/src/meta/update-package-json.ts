@@ -1,15 +1,8 @@
 import path from 'node:path'
 
-import {
-  getPackageByName,
-  sortObject,
-  vfs,
-} from '@prosekit/dev'
+import { getPackageByName, sortObject, vfs } from '@prosekit/dev'
 
-import {
-  FRAMEWORKS,
-  type ItemAccumulator,
-} from './types'
+import { FRAMEWORKS, type ItemAccumulator } from './types'
 
 /**
  * Fill the package.json exports object with the appropriate entry for an example item.

@@ -1,26 +1,10 @@
 import './locator'
 
 export { waitForAnimationEnd } from './animation'
-export {
-  emptyEditor,
-  expectEditorToBeFocused,
-  focusEditor,
-  getEditorHTML,
-  locateEditor,
-  pasteHtmlToEditor,
-  waitForEditor,
-} from './editor'
-export {
-  expectLocatorToBeHidden,
-  expectLocatorToHaveCount,
-  expectLocatorToNotExist,
-} from './expect'
+export { emptyEditor, expectEditorToBeFocused, focusEditor, getEditorHTML, locateEditor, pasteHtmlToEditor, waitForEditor } from './editor'
+export { expectLocatorToBeHidden, expectLocatorToHaveCount, expectLocatorToNotExist } from './expect'
 export { inputText } from './keyboard'
-export {
-  dragAndDrop,
-  hover,
-  unhover,
-} from './mouse'
+export { dragAndDrop, hover, unhover } from './mouse'
 export { getBoundingBox } from './query'
 export {
   collapseSelection,
@@ -31,7 +15,4 @@ export {
   moveSelectionToStart,
   selectText,
 } from './selection'
-export {
-  testStory,
-  testStoryConsistency,
-} from './test-story'
+export { testStory, testStoryConsistency } from './test-story'

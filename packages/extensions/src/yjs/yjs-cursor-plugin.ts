@@ -1,7 +1,4 @@
-import {
-  definePlugin,
-  type PlainExtension,
-} from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import { yCursorPlugin } from 'y-prosemirror'
 

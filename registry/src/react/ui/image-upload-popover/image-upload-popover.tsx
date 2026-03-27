@@ -1,16 +1,8 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/react'
-import {
-  PopoverContent,
-  PopoverRoot,
-  PopoverTrigger,
-} from 'prosekit/react/popover'
-import {
-  useId,
-  useState,
-  type ReactNode,
-} from 'react'
+import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/react/popover'
+import { useId, useState, type ReactNode } from 'react'
 
 import { Button } from '../button'
 

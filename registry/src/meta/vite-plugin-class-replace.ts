@@ -6,10 +6,7 @@ import MagicString from 'magic-string'
 import type { Plugin as VitePlugin } from 'vite'
 
 import { refreshClasses } from './load-classes'
-import {
-  CLASS_NAME_REGEXP,
-  classNameReplacer,
-} from './replace-classes'
+import { CLASS_NAME_REGEXP, classNameReplacer } from './replace-classes'
 
 const PLUGIN_NAME = '@prosekit/vite-plugin-class-replace'
 const CLASS_TS_PATH = path.join(import.meta.dirname, '..', 'classes.ts')

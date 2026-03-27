@@ -7,10 +7,7 @@ import type { Uploader } from 'prosekit/extensions/file'
  * This function is only for demonstration purposes. All uploaded files will be
  * deleted by the server after 1 hour.
  */
-export const sampleUploader: Uploader<string> = ({
-  file,
-  onProgress,
-}): Promise<string> => {
+export const sampleUploader: Uploader<string> = ({ file, onProgress }): Promise<string> => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     const formData = new FormData()
@@ -29,10 +26,7 @@ export const sampleUploader: Uploader<string> = ({
       if (xhr.status === 200) {
         try {
           const json = JSON.parse(xhr.responseText) as { data: { url: string } }
-          const url: string = json.data.url.replace(
-            'tmpfiles.org/',
-            'tmpfiles.org/dl/',
-          )
+          const url: string = json.data.url.replace('tmpfiles.org/', 'tmpfiles.org/dl/')
 
           // Simulate a larger delay
           setTimeout(() => resolve(url), 1000)

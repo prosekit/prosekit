@@ -1,15 +1,6 @@
-import {
-  useMemo,
-  useState,
-} from 'preact/hooks'
-import type {
-  Editor,
-  Keymap,
-} from 'prosekit/core'
-import {
-  useEditorDerivedValue,
-  useKeymap,
-} from 'prosekit/preact'
+import { useMemo, useState } from 'preact/hooks'
+import type { Editor, Keymap } from 'prosekit/core'
+import { useEditorDerivedValue, useKeymap } from 'prosekit/preact'
 import { InlinePopover } from 'prosekit/preact/inline-popover'
 
 import { Button } from '../../ui/button'

@@ -11669,6 +11669,56 @@
       }
     },
     {
+      "name": "lit-example-block-handle",
+      "title": "lit-example-block-handle",
+      "type": "registry:block",
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-block-handle.json",
+        "https://prosekit.dev/r/lit-ui-drop-indicator.json"
+      ],
+      "dependencies": [
+        "lit",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/examples/block-handle/editor.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/editor.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/block-handle/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/extension.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/block-handle/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/block-handle/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "block-handle",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/examples/block-handle/editor.ts",
+          "registry/src/lit/examples/block-handle/extension.ts",
+          "registry/src/lit/examples/block-handle/index.ts",
+          "registry/src/lit/ui/block-handle/block-handle.ts",
+          "registry/src/lit/ui/block-handle/index.ts",
+          "registry/src/lit/ui/drop-indicator/drop-indicator.ts",
+          "registry/src/lit/ui/drop-indicator/index.ts"
+        ],
+        "internalDependencies": [
+          "lit-ui-block-handle",
+          "lit-ui-drop-indicator"
+        ]
+      }
+    },
+    {
       "name": "lit-example-minimal",
       "title": "lit-example-minimal",
       "type": "registry:block",

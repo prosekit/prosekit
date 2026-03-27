@@ -1,0 +1,395 @@
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+import {
+  html,
+  LitElement,
+  type PropertyDeclaration,
+  type PropertyValues,
+} from 'lit'
+import {
+  createRef,
+  ref,
+  type Ref,
+} from 'lit/directives/ref.js'
+import type {
+  Editor,
+  NodeJSON,
+} from 'prosekit/core'
+import { createEditor } from 'prosekit/core'
+
+import { defineExtension } from './extension'
+
+import '../../ui/block-handle'
+import '../../ui/drop-indicator'
+const sampleContent: NodeJSON = {
+  type: 'doc',
+  content: [
+    {
+      type: 'heading',
+      attrs: {
+        level: 1,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Drag and Drop Demo',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Try dragging any paragraph or heading by clicking on the handle that appears on the left when you hover over it.',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 2,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Getting Started',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Hover over any block to see the drag handle appear. Click and drag to reorder content.',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'This paragraph can be moved above or below other blocks.',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 2,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Different Block Types',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'You can drag paragraphs, headings, lists, code blocks, and more.',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 3,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Lists Work Too',
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: {
+        kind: 'bullet',
+        order: null,
+        checked: false,
+        collapsed: false,
+      },
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'This entire list can be dragged',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: {
+        kind: 'bullet',
+        order: null,
+        checked: false,
+        collapsed: false,
+      },
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'Individual list items stay together',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: {
+        kind: 'bullet',
+        order: null,
+        checked: false,
+        collapsed: false,
+      },
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'Try moving this list around',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: {
+        kind: 'ordered',
+        order: null,
+        checked: false,
+        collapsed: false,
+      },
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'Ordered lists also support dragging',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: {
+        kind: 'ordered',
+        order: null,
+        checked: false,
+        collapsed: false,
+      },
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'The numbering updates automatically',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'list',
+      attrs: {
+        kind: 'ordered',
+        order: null,
+        checked: false,
+        collapsed: false,
+      },
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'Drag this list to see it in action',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 3,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Code Blocks',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Even code blocks can be moved:',
+        },
+      ],
+    },
+    {
+      type: 'codeBlock',
+      attrs: {
+        language: 'javascript',
+      },
+      content: [
+        {
+          type: 'text',
+          text: '// This code block can be dragged\nfunction dragAndDrop() {\n  return "Easy to rearrange!"\n}',
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 2,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Nested Content',
+        },
+      ],
+    },
+    {
+      type: 'blockquote',
+      content: [
+        {
+          type: 'paragraph',
+          content: [
+            {
+              type: 'text',
+              text: 'This blockquote can be moved as a single unit.',
+            },
+          ],
+        },
+        {
+          type: 'blockquote',
+          content: [
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  type: 'text',
+                  text: 'Nested blockquotes move together with their parent.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 2,
+      },
+      content: [
+        {
+          type: 'text',
+          text: 'Try It Yourself',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Practice by moving this paragraph to the top of the document.',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Or drag this one to between the headings above.',
+        },
+      ],
+    },
+    {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'The drag handles make it easy to reorganize your content exactly how you want it.',
+        },
+      ],
+    },
+  ],
+}
+
+export class LitEditor extends LitElement {
+  static override properties = {
+    editor: { state: true, attribute: false } satisfies PropertyDeclaration<Editor>,
+  }
+
+  private editor: Editor
+  private ref: Ref<HTMLDivElement>
+
+  constructor() {
+    super()
+
+    const extension = defineExtension()
+    this.editor = createEditor({ extension, defaultContent: sampleContent })
+    this.ref = createRef<HTMLDivElement>()
+  }
+
+  override createRenderRoot() {
+    return this
+  }
+
+  override updated(changedProperties: PropertyValues) {
+    super.updated(changedProperties)
+    this.editor.mount(this.ref.value)
+  }
+
+  override render() {
+    return html`<div class="CSS_EDITOR_VIEWPORT">
+      <div class="CSS_EDITOR_SCROLLING">
+        <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
+        <lit-editor-block-handle
+          .editor=${this.editor}
+        ></lit-editor-block-handle>
+        <lit-editor-drop-indicator
+          .editor=${this.editor}
+        ></lit-editor-drop-indicator>
+      </div>
+    </div>`
+  }
+}
+
+export function registerLitEditor() {
+  if (customElements.get('lit-editor-example-block-handle')) return
+  customElements.define('lit-editor-example-block-handle', LitEditor)
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'lit-editor-example-block-handle': LitEditor
+  }
+}

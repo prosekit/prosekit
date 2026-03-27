@@ -5,6 +5,7 @@
   "private": true,
   "description": "ProseKit registry",
   "exports": {
+    "./lit/examples/block-handle": "./src/lit/examples/block-handle/index.ts",
     "./lit/examples/minimal": "./src/lit/examples/minimal/index.ts",
     "./lit/examples/slash-menu": "./src/lit/examples/slash-menu/index.ts",
     "./lit/renderer": "./src/lit/renderer.ts",

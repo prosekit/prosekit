@@ -232,8 +232,7 @@ describe('Menu', () => {
       container.querySelector('[data-testid="cut"]')!.addEventListener('select', (e) => { e.preventDefault() })
       const popup = container.querySelector('[data-testid="popup"]')!
       popup.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
-      await new Promise((r) => setTimeout(r, 50))
-      expect(popup.getAttribute('data-state')).toBe('open')
+      await expect.poll(() => popup.getAttribute('data-state')).toBe('open')
     })
 
     test('disabled item cannot be activated via click', async () => {
@@ -252,8 +251,7 @@ describe('Menu', () => {
       const item = container.querySelector('[data-testid="a"]')!
       item.addEventListener('select', () => { selectFired = true })
       item.dispatchEvent(new MouseEvent('click', { bubbles: true }))
-      await new Promise((r) => setTimeout(r, 50))
-      expect(selectFired).toBe(false)
+      await expect.poll(() => selectFired).toBe(false)
     })
   })
 
@@ -519,10 +517,8 @@ describe('Menu', () => {
       await expect.poll(() => page.getByTestId('cut').element().getAttribute('data-active')).toBe('')
       const popup = container.querySelector('[data-testid="popup"]')!
       popup.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }))
-      // TODO: Update: do not use await new Promise((r) => setTimeout(r, 50)).  Use await page.poll(() => ...)
-      await new Promise((r) => setTimeout(r, 50))
-      expect(page.getByTestId('cut').element().getAttribute('data-active')).toBe('')
-      expect(container.querySelector('[data-testid="sub-popup"]')?.getAttribute('data-state')).not.toBe('open')
+      await expect.poll(() => page.getByTestId('cut').element().getAttribute('data-active')).toBe('')
+      await expect.poll(() => container.querySelector('[data-testid="sub-popup"]')?.getAttribute('data-state')).not.toBe('open')
     })
 
     test('ArrowLeft in root menu does nothing', async () => {
@@ -530,8 +526,7 @@ describe('Menu', () => {
       await openMenu(container)
       const popup = container.querySelector('[data-testid="popup"]')!
       popup.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft', bubbles: true }))
-      await new Promise((r) => setTimeout(r, 50))
-      expect(popup.getAttribute('data-state')).toBe('open')
+      await expect.poll(() => popup.getAttribute('data-state')).toBe('open')
     })
   })
 })

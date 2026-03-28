@@ -79,7 +79,7 @@
   description: Notion-style editor with block-based editing.
 - name: page
   frameworks: [react, svelte]
-  hidden: true
+  description: Page layout with configurable paper settings.
 - name: placeholder
   frameworks: [react, preact, vue, svelte, solid]
   description: Placeholder text displayed.

@@ -4,7 +4,7 @@ export {
   TableHandleColumnRootElement,
   TableHandleColumnRootPropsDeclaration,
   type TableHandleColumnRootProps,
-} from './table-handle-column-root.gen.ts'
+} from './table-handle-column-root.ts'
 
 export {
   registerTableHandleColumnTriggerElement,
@@ -12,7 +12,7 @@ export {
   TableHandleColumnTriggerElement,
   TableHandleColumnTriggerPropsDeclaration,
   type TableHandleColumnTriggerProps,
-} from './table-handle-column-trigger.gen.ts'
+} from './table-handle-column-trigger.ts'
 
 export {
   registerTableHandleDragPreviewElement,
@@ -20,7 +20,7 @@ export {
   TableHandleDragPreviewElement,
   TableHandleDragPreviewPropsDeclaration,
   type TableHandleDragPreviewProps,
-} from './table-handle-drag-preview.gen.ts'
+} from './table-handle-drag-preview.ts'
 
 export {
   registerTableHandleDropIndicatorElement,
@@ -28,7 +28,7 @@ export {
   TableHandleDropIndicatorElement,
   TableHandleDropIndicatorPropsDeclaration,
   type TableHandleDropIndicatorProps,
-} from './table-handle-drop-indicator.gen.ts'
+} from './table-handle-drop-indicator.ts'
 
 export {
   registerTableHandlePopoverItemElement,
@@ -38,7 +38,7 @@ export {
   TableHandlePopoverItemSelectEvent,
   type TableHandlePopoverItemEvents,
   type TableHandlePopoverItemProps,
-} from './table-handle-popover-item.gen.ts'
+} from './table-handle-popover-item.ts'
 
 export {
   registerTableHandlePopoverPopupElement,
@@ -46,7 +46,7 @@ export {
   TableHandlePopoverPopupElement,
   TableHandlePopoverPopupPropsDeclaration,
   type TableHandlePopoverPopupProps,
-} from './table-handle-popover-popup.gen.ts'
+} from './table-handle-popover-popup.ts'
 
 export {
   registerTableHandlePopoverPositionerElement,
@@ -54,7 +54,7 @@ export {
   TableHandlePopoverPositionerElement,
   TableHandlePopoverPositionerPropsDeclaration,
   type TableHandlePopoverPositionerProps,
-} from './table-handle-popover-positioner.gen.ts'
+} from './table-handle-popover-positioner.ts'
 
 export {
   registerTableHandleRootElement,
@@ -62,7 +62,7 @@ export {
   TableHandleRootElement,
   TableHandleRootPropsDeclaration,
   type TableHandleRootProps,
-} from './table-handle-root.gen.ts'
+} from './table-handle-root.ts'
 
 export {
   registerTableHandleRowRootElement,
@@ -70,7 +70,7 @@ export {
   TableHandleRowRootElement,
   TableHandleRowRootPropsDeclaration,
   type TableHandleRowRootProps,
-} from './table-handle-row-root.gen.ts'
+} from './table-handle-row-root.ts'
 
 export {
   registerTableHandleRowTriggerElement,
@@ -78,4 +78,4 @@ export {
   TableHandleRowTriggerElement,
   TableHandleRowTriggerPropsDeclaration,
   type TableHandleRowTriggerProps,
-} from './table-handle-row-trigger.gen.ts'
+} from './table-handle-row-trigger.ts'

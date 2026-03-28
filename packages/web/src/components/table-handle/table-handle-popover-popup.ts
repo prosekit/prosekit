@@ -16,7 +16,7 @@ import { useElementId } from '@aria-ui-v2/utils'
 import { once } from '@ocavue/utils'
 
 import { tableHandleStoreContext } from './store.ts'
-import { TableHandlePopoverItemSelectEvent } from './table-handle-popover-item.gen.ts'
+import { TableHandlePopoverItemSelectEvent } from './table-handle-popover-item.ts'
 
 export interface TableHandlePopoverPopupProps {
   /**

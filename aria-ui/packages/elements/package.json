@@ -35,6 +35,11 @@
       "aria-ui-dev": "./src/tooltip/index.ts",
       "types": "./dist/tooltip/index.d.ts",
       "import": "./dist/tooltip/index.js"
+    },
+    "./menu": {
+      "aria-ui-dev": "./src/menu/index.ts",
+      "types": "./dist/menu/index.d.ts",
+      "import": "./dist/menu/index.js"
     }
   },
   "typesVersions": {

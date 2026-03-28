@@ -601,14 +601,14 @@ fallback.
 
 ### Phase 1: Create Missing v2 Hooks
 
-- [ ] **1.1** Create `packages/web/src/hooks/use-editor-typing-v2.ts`
+- [x] **1.1** Create `packages/web/src/hooks/use-editor-typing-v2.ts`
   - [ ] `HostElement` instead of `ConnectableElement`
   - [ ] `getEditor: () => Editor | null` instead of signal
   - [ ] Returns `() => boolean` instead of `ReadonlySignal<boolean>`
   - [ ] Uses `useEditorExtension` from v2 hook
   - [ ] Add `// TODO: Rename to use-editor-typing.ts after all components are migrated to v2`
 
-- [ ] **1.2** Create `packages/web/src/hooks/use-selecting-v2.ts`
+- [x] **1.2** Create `packages/web/src/hooks/use-selecting-v2.ts`
   - [ ] Same parameter pattern as v2 hooks
   - [ ] Returns `() => boolean`
   - [ ] Add TODO comment

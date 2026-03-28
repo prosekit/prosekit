@@ -3,6 +3,7 @@ import {
   createSignal,
   defineCustomElement,
   defineProps,
+  onMount,
   registerCustomElement,
   useEffect,
   type HostElement,
@@ -152,7 +153,9 @@ export function setupTableHandleColumnRoot(
   const menuStore = new MenuStore(getOpen, emitOpenChange)
   MenuStoreContext.provide(host, menuStore)
 
-  host.style.zIndex = '10'
+  onMount(host, () => {
+    host.style.zIndex = '10'
+  })
 }
 
 const TableHandleColumnRootElementBase: HostElementConstructor<TableHandleColumnRootProps> = defineCustomElement(

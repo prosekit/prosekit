@@ -137,9 +137,6 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
-      typescript-api-extractor:
-        specifier: 1.0.0-alpha.11
-        version: 1.0.0-alpha.11(typescript@5.9.3)
 
   aria-ui/packages/core:
     dependencies:
@@ -5180,9 +5177,6 @@ packages:
   es-module-lexer@2.0.0:
     resolution: {integrity: sha512-5POEcUuZybH7IdmGsD8wlf0AI55wMecM9rVBTI/qEAy2c1kTOm3DjFYjrBdI2K3BaJjJYfYFeRtM0t9ssnRuxw==}
 
-  es-toolkit@1.45.1:
-    resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
-
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
 
@@ -7565,12 +7559,6 @@ packages:
 
   typesafe-path@0.2.2:
     resolution: {integrity: sha512-OJabfkAg1WLZSqJAJ0Z6Sdt3utnbzr/jh+NAHoyWHJe8CMSy79Gm085094M9nvTPy22KzTVn5Zq5mbapCI/hPA==}
-
-  typescript-api-extractor@1.0.0-alpha.11:
-    resolution: {integrity: sha512-JPtRiBgMkOMLBwHV1i+FRhv6eL4iPERIz6wSoD2V/LvUVgkMEFrWsz3LVvzc6+NJyqzL87iIMIuFxeooUyw8EA==}
-    engines: {node: '>=22'}
-    peerDependencies:
-      typescript: ^5.8
 
   typescript-auto-import-cache@0.3.6:
     resolution: {integrity: sha512-RpuHXrknHdVdK7wv/8ug3Fr0WNsNi5l5aB8MYYuXhq2UH5lnEB1htJ1smhtD5VeCsGr2p8mUDtd83LCQDFVgjQ==}
@@ -12319,8 +12307,6 @@ snapshots:
 
   es-module-lexer@2.0.0: {}
 
-  es-toolkit@1.45.1: {}
-
   esast-util-from-estree@2.0.0:
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -15517,11 +15503,6 @@ snapshots:
       yaml: 2.8.2
 
   typesafe-path@0.2.2: {}
-
-  typescript-api-extractor@1.0.0-alpha.11(typescript@5.9.3):
-    dependencies:
-      es-toolkit: 1.45.1
-      typescript: 5.9.3
 
   typescript-auto-import-cache@0.3.6:
     dependencies:

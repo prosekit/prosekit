@@ -1,6 +1,13 @@
 import { ListboxEmptyElement, registerListboxEmptyElement } from './listbox/listbox-empty.ts'
 import { ListboxItemElement, registerListboxItemElement } from './listbox/listbox-item.ts'
 import { ListboxRootElement, registerListboxRootElement } from './listbox/listbox-root.ts'
+import { MenuItemElement, registerMenuItemElement } from './menu/menu-item.ts'
+import { MenuPopupElement, registerMenuPopupElement } from './menu/menu-popup.ts'
+import { MenuPositionerElement, registerMenuPositionerElement } from './menu/menu-positioner.ts'
+import { MenuRootElement, registerMenuRootElement } from './menu/menu-root.ts'
+import { MenuSubmenuRootElement, registerMenuSubmenuRootElement } from './menu/menu-submenu-root.ts'
+import { MenuSubmenuTriggerElement, registerMenuSubmenuTriggerElement } from './menu/menu-submenu-trigger.ts'
+import { MenuTriggerElement, registerMenuTriggerElement } from './menu/menu-trigger.ts'
 import { PopoverPopupElement, registerPopoverPopupElement } from './popover/popover-popup.ts'
 import { PopoverPositionerElement, registerPopoverPositionerElement } from './popover/popover-positioner.ts'
 import { PopoverRootElement, registerPopoverRootElement } from './popover/popover-root.ts'
@@ -14,6 +21,13 @@ export {
   ListboxEmptyElement,
   ListboxItemElement,
   ListboxRootElement,
+  MenuItemElement,
+  MenuPopupElement,
+  MenuPositionerElement,
+  MenuRootElement,
+  MenuSubmenuRootElement,
+  MenuSubmenuTriggerElement,
+  MenuTriggerElement,
   PopoverPopupElement,
   PopoverPositionerElement,
   PopoverRootElement,
@@ -21,6 +35,13 @@ export {
   registerListboxEmptyElement,
   registerListboxItemElement,
   registerListboxRootElement,
+  registerMenuItemElement,
+  registerMenuPopupElement,
+  registerMenuPositionerElement,
+  registerMenuRootElement,
+  registerMenuSubmenuRootElement,
+  registerMenuSubmenuTriggerElement,
+  registerMenuTriggerElement,
   registerPopoverPopupElement,
   registerPopoverPositionerElement,
   registerPopoverRootElement,
@@ -60,6 +81,14 @@ export function registerElements(): void {
   registerListboxItemElement()
   registerListboxEmptyElement()
 
+  registerMenuRootElement()
+  registerMenuTriggerElement()
+  registerMenuPopupElement()
+  registerMenuPositionerElement()
+  registerMenuItemElement()
+  registerMenuSubmenuRootElement()
+  registerMenuSubmenuTriggerElement()
+
   registerPopoverRootElement()
   registerPopoverTriggerElement()
   registerPopoverPopupElement()
@@ -76,6 +105,13 @@ declare global {
     'aria-ui-listbox-root': ListboxRootElement
     'aria-ui-listbox-item': ListboxItemElement
     'aria-ui-listbox-empty': ListboxEmptyElement
+    'aria-ui-menu-root': MenuRootElement
+    'aria-ui-menu-trigger': MenuTriggerElement
+    'aria-ui-menu-popup': MenuPopupElement
+    'aria-ui-menu-positioner': MenuPositionerElement
+    'aria-ui-menu-item': MenuItemElement
+    'aria-ui-menu-submenu-root': MenuSubmenuRootElement
+    'aria-ui-menu-submenu-trigger': MenuSubmenuTriggerElement
     'aria-ui-popover-root': PopoverRootElement
     'aria-ui-popover-trigger': PopoverTriggerElement
     'aria-ui-popover-popup': PopoverPopupElement

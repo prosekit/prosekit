@@ -74,6 +74,8 @@ MenuContent       — the popup container with role="menu", keyboard navigation
 MenuItem          — individual menu item with role="menuitem"
 ```
 
+<!-- update: rename MenuContent to MenuPopup. MenuPopup matches the naming in base-ui -->
+
 Why separate `MenuContent` from `MenuPositioner`? This matches the existing Popover pattern
 (PopoverPopup vs PopoverPositioner). The positioner handles CSS positioning; the content
 handles ARIA roles, keyboard navigation, and focus management. This separation is important

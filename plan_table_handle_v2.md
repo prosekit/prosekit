@@ -144,6 +144,8 @@ All old subdirectories and their contents:
 - `hooks/` (use-drop.ts, use-empty-image.ts)
 - `index.gen.ts`
 
+<!-- update： we used to have table-handle-popover-content but now we should have table-handle-popover-positioner and table-handle-popover-popup -->
+
 ---
 
 ## 4. Shared Hooks to Create

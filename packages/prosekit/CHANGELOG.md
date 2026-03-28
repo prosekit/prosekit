@@ -1,5 +1,32 @@
 # prosekit
 
+## 0.19.0
+
+### Minor Changes
+
+- [`4e3f888`](https://github.com/ocavue/prosekit/commit/4e3f88861f9a458dc245ac81cf23ea6dc0bd7c21) ![](https://prosekit.dev/b/core)
+
+  `Priority` is now a plain object instead of a TypeScript enum.
+
+  Most code can keep using `Priority.lowest` to `Priority.highest` as before.
+  If you relied on enum reverse mapping like `Priority[2]`, replace it with your own map/array.
+
+- [`4771dfd`](https://github.com/ocavue/prosekit/commit/4771dfdbcffb827b21b6c8aa86fa64ebbd443801) ![](https://prosekit.dev/b/extensions)
+
+  Add page extension with two new functions:
+  - `definePageRendering()` — renders content in fixed-size pages with configurable width, height, and margins.
+  - `definePageBreak()` — adds a `pageBreak` node with an `insertPageBreak` command and keyboard shortcut.
+
+- [`a5c10f7`](https://github.com/ocavue/prosekit/commit/a5c10f7f153dd98dfc2561b8c7832b23a8804c13) ![](https://prosekit.dev/b/basic)
+
+  Rewrite `prosekit/basic/typography.css`. Heading margins, paragraph spacing, and list marker positions have changed significantly. If your layout depends on the previous spacing, you can download the old stylesheet from [prosekit@0.18.4/basic/typography.css](https://unpkg.com/prosekit@0.18.4/basic/typography.css).
+
+### Patch Changes
+
+- [`3963c60`](https://github.com/ocavue/prosekit/commit/3963c606f83b089bb010627ace8d546f61ed8390) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview had poor performance when dragging elements with many children (e.g., syntax-highlighted code blocks).
+
 ## 0.18.4
 
 ### Patch Changes

@@ -1,0 +1,97 @@
+<aria-ui-menu-root class="inline-block">
+  <aria-ui-menu-trigger
+    tabindex="0"
+    class="inline-block px-5 py-2.5 bg-blue-500 text-white border-0 rounded-md cursor-pointer text-sm font-medium transition-colors duration-200 hover:bg-blue-600"
+  >
+    File
+  </aria-ui-menu-trigger>
+  <aria-ui-menu-positioner class="overflow-visible">
+    <aria-ui-menu-popup
+      class="block bg-white border border-gray-200 rounded-lg shadow-lg py-1 min-w-[180px] outline-none"
+    >
+      <aria-ui-menu-item
+        value="new"
+        class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+      >
+        New File
+      </aria-ui-menu-item>
+      <aria-ui-menu-item
+        value="open"
+        class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+      >
+        Open
+      </aria-ui-menu-item>
+      <div class="my-1 border-t border-gray-200"></div>
+
+      <aria-ui-menu-submenu-root>
+        <aria-ui-menu-submenu-trigger
+          value="share"
+          class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+        >
+          <span>Share</span>
+          <span class="text-gray-400 text-xs ml-4">&#x25B8;</span>
+        </aria-ui-menu-submenu-trigger>
+        <aria-ui-menu-positioner placement="right-start" class="overflow-visible">
+          <aria-ui-menu-popup
+            class="block bg-white border border-gray-200 rounded-lg shadow-lg py-1 min-w-[160px] outline-none"
+          >
+            <aria-ui-menu-item
+              value="email"
+              class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+            >
+              Email
+            </aria-ui-menu-item>
+            <aria-ui-menu-item
+              value="slack"
+              class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+            >
+              Slack
+            </aria-ui-menu-item>
+            <aria-ui-menu-item
+              value="link"
+              class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+            >
+              Copy Link
+            </aria-ui-menu-item>
+          </aria-ui-menu-popup>
+        </aria-ui-menu-positioner>
+      </aria-ui-menu-submenu-root>
+
+      <aria-ui-menu-submenu-root>
+        <aria-ui-menu-submenu-trigger
+          value="export"
+          class="flex items-center justify-between px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+        >
+          <span>Export As</span>
+          <span class="text-gray-400 text-xs ml-4">&#x25B8;</span>
+        </aria-ui-menu-submenu-trigger>
+        <aria-ui-menu-positioner placement="right-start" class="overflow-visible">
+          <aria-ui-menu-popup
+            class="block bg-white border border-gray-200 rounded-lg shadow-lg py-1 min-w-[160px] outline-none"
+          >
+            <aria-ui-menu-item
+              value="pdf"
+              class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+            >
+              PDF
+            </aria-ui-menu-item>
+            <aria-ui-menu-item
+              value="csv"
+              class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+            >
+              CSV
+            </aria-ui-menu-item>
+          </aria-ui-menu-popup>
+        </aria-ui-menu-positioner>
+      </aria-ui-menu-submenu-root>
+
+      <div class="my-1 border-t border-gray-200"></div>
+      <aria-ui-menu-item
+        value="close"
+        class="block px-3 py-2 text-sm text-gray-700 cursor-pointer [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+      >
+        Close
+      </aria-ui-menu-item>
+    </aria-ui-menu-popup>
+  </aria-ui-menu-positioner>
+</aria-ui-menu-root>

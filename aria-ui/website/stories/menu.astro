@@ -1,0 +1,25 @@
+---
+import Basic from './menu/basic.html'
+import DisabledItems from './menu/disabled-items.html'
+import Submenu from './menu/submenu.html'
+import NestedSubmenu from './menu/nested-submenu.html'
+
+interface Props {
+  story: 'basic' | 'disabled-items' | 'submenu' | 'nested-submenu'
+}
+
+const { story } = Astro.props
+---
+
+<script>
+import { registerElements } from '@aria-ui-v2/elements'
+
+registerElements()
+</script>
+
+<div class="p-4">
+  {story === 'basic' && <Basic />}
+  {story === 'disabled-items' && <DisabledItems />}
+  {story === 'submenu' && <Submenu />}
+  {story === 'nested-submenu' && <NestedSubmenu />}
+</div>

@@ -1,0 +1,39 @@
+<aria-ui-menu-root class="inline-block">
+  <aria-ui-menu-trigger
+    tabindex="0"
+    class="inline-block px-5 py-2.5 bg-blue-500 text-white border-0 rounded-md cursor-pointer text-sm font-medium transition-colors duration-200 hover:bg-blue-600 aria-disabled:opacity-50 aria-disabled:cursor-not-allowed"
+  >
+    Actions
+  </aria-ui-menu-trigger>
+  <aria-ui-menu-positioner class="overflow-visible">
+    <aria-ui-menu-popup
+      class="block bg-white border border-gray-200 rounded-lg shadow-lg py-1 min-w-[160px] outline-none"
+    >
+      <aria-ui-menu-item
+        value="cut"
+        class="block px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+      >
+        Cut
+      </aria-ui-menu-item>
+      <aria-ui-menu-item
+        value="copy"
+        class="block px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+      >
+        Copy
+      </aria-ui-menu-item>
+      <aria-ui-menu-item
+        value="paste"
+        class="block px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 [&[data-active]]:bg-blue-50 [&[data-active]]:text-blue-700"
+      >
+        Paste
+      </aria-ui-menu-item>
+      <div class="my-1 border-t border-gray-200"></div>
+      <aria-ui-menu-item
+        value="delete"
+        class="block px-3 py-2 text-sm text-red-600 cursor-pointer hover:bg-red-50 [&[data-active]]:bg-red-50 [&[data-active]]:text-red-700"
+      >
+        Delete
+      </aria-ui-menu-item>
+    </aria-ui-menu-popup>
+  </aria-ui-menu-positioner>
+</aria-ui-menu-root>

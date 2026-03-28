@@ -74,6 +74,7 @@ export function setupMenuPopup(
     const open = store.getOpen()
 
     if (open) {
+      resetTypeahead()
       requestAnimationFrame(() => {
         host.focus()
         const collection = store.collection.get()
@@ -100,27 +101,32 @@ export function setupMenuPopup(
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault()
+        event.stopPropagation()
         nextValue = collection.next(currentValue)
         break
 
       case 'ArrowUp':
         event.preventDefault()
+        event.stopPropagation()
         nextValue = collection.prev(currentValue)
         break
 
       case 'Home':
         event.preventDefault()
+        event.stopPropagation()
         nextValue = collection.first()
         break
 
       case 'End':
         event.preventDefault()
+        event.stopPropagation()
         nextValue = collection.last()
         break
 
       case 'Enter':
       case ' ':
         event.preventDefault()
+        event.stopPropagation()
         if (currentValue != null) {
           const activeEl = collection.getElement(currentValue)
           if (activeEl?.tagName.toLowerCase() === 'aria-ui-menu-submenu-trigger') {
@@ -136,6 +142,7 @@ export function setupMenuPopup(
           const activeEl = collection.getElement(currentValue)
           if (activeEl?.tagName.toLowerCase() === 'aria-ui-menu-submenu-trigger') {
             event.preventDefault()
+            event.stopPropagation()
             activeEl.dispatchEvent(new Event('aria-ui:open-submenu', { bubbles: false }))
           }
         }
@@ -145,6 +152,7 @@ export function setupMenuPopup(
       case 'ArrowLeft': {
         if (store.parentStore) {
           event.preventDefault()
+          event.stopPropagation()
           store.emitOpenChange(false)
         }
         return
@@ -152,11 +160,13 @@ export function setupMenuPopup(
 
       case 'Escape':
         event.preventDefault()
+        event.stopPropagation()
         store.emitOpenChange(false)
         return
 
       default:
         if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+          event.stopPropagation()
           handleTypeahead(event.key, store)
         }
         return
@@ -193,6 +203,14 @@ export function setupMenuPopup(
 let typeaheadBuffer = ''
 let typeaheadTimer: ReturnType<typeof setTimeout> | null = null
 const TYPEAHEAD_TIMEOUT = 500
+
+function resetTypeahead() {
+  typeaheadBuffer = ''
+  if (typeaheadTimer) {
+    clearTimeout(typeaheadTimer)
+    typeaheadTimer = null
+  }
+}
 
 function handleTypeahead(char: string, store: MenuStore) {
   if (typeaheadTimer) clearTimeout(typeaheadTimer)

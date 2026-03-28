@@ -1479,7 +1479,7 @@
       "name": "react-example-page",
       "title": "react-example-page",
       "type": "registry:block",
-      "description": "",
+      "description": "Page layout with configurable paper settings.",
       "registryDependencies": [
         "https://prosekit.dev/r/react-sample-sample-doc-page.json"
       ],
@@ -1515,7 +1515,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "page",
         "framework": "react",
         "accumulatedFiles": [
@@ -13834,7 +13834,7 @@
       "name": "svelte-example-page",
       "title": "svelte-example-page",
       "type": "registry:block",
-      "description": "",
+      "description": "Page layout with configurable paper settings.",
       "registryDependencies": [
         "https://prosekit.dev/r/svelte-sample-sample-doc-page.json"
       ],
@@ -13870,7 +13870,7 @@
       ],
       "meta": {
         "hasIcons": false,
-        "hidden": true,
+        "hidden": false,
         "story": "page",
         "framework": "svelte",
         "accumulatedFiles": [

@@ -6,8 +6,9 @@ import {
   TableHandleColumnTrigger,
   TableHandleDragPreview,
   TableHandleDropIndicator,
-  TableHandlePopoverContent,
   TableHandlePopoverItem,
+  TableHandlePopoverPopup,
+  TableHandlePopoverPositioner,
   TableHandleRoot,
   TableHandleRowRoot,
   TableHandleRowTrigger,
@@ -66,50 +67,52 @@ export default function TableHandle(props: Props): JSX.Element {
         <TableHandleColumnTrigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
         </TableHandleColumnTrigger>
-        <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">
-          <Show when={state().addTableColumnBefore.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().addTableColumnBefore.command()}
-            >
-              <span>Insert Left</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().addTableColumnAfter.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().addTableColumnAfter.command()}
-            >
-              <span>Insert Right</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().deleteCellSelection.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().deleteCellSelection.command()}
-            >
-              <span>Clear Contents</span>
-              <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().deleteTableColumn.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().deleteTableColumn.command()}
-            >
-              <span>Delete Column</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().deleteTable.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              attr:data-danger=""
-              onSelect={() => state().deleteTable.command()}
-            >
-              <span>Delete Table</span>
-            </TableHandlePopoverItem>
-          </Show>
-        </TableHandlePopoverContent>
+        <TableHandlePopoverPositioner>
+          <TableHandlePopoverPopup class="CSS_TABLE_HANDLE_MENU">
+            <Show when={state().addTableColumnBefore.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().addTableColumnBefore.command()}
+              >
+                <span>Insert Left</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().addTableColumnAfter.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().addTableColumnAfter.command()}
+              >
+                <span>Insert Right</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().deleteCellSelection.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().deleteCellSelection.command()}
+              >
+                <span>Clear Contents</span>
+                <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().deleteTableColumn.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().deleteTableColumn.command()}
+              >
+                <span>Delete Column</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().deleteTable.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                attr:data-danger=""
+                onItemSelect={() => state().deleteTable.command()}
+              >
+                <span>Delete Table</span>
+              </TableHandlePopoverItem>
+            </Show>
+          </TableHandlePopoverPopup>
+        </TableHandlePopoverPositioner>
       </TableHandleColumnRoot>
       <TableHandleRowRoot
         placement={props.dir === 'rtl' ? 'right' : 'left'}
@@ -118,50 +121,52 @@ export default function TableHandle(props: Props): JSX.Element {
         <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </TableHandleRowTrigger>
-        <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">
-          <Show when={state().addTableRowAbove.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().addTableRowAbove.command()}
-            >
-              <span>Insert Above</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().addTableRowBelow.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().addTableRowBelow.command()}
-            >
-              <span>Insert Below</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().deleteCellSelection.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().deleteCellSelection.command()}
-            >
-              <span>Clear Contents</span>
-              <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().deleteTableRow.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={() => state().deleteTableRow.command()}
-            >
-              <span>Delete Row</span>
-            </TableHandlePopoverItem>
-          </Show>
-          <Show when={state().deleteTable.canExec}>
-            <TableHandlePopoverItem
-              class="CSS_TABLE_CELL_MENU_ITEM"
-              attr:data-danger=""
-              onSelect={() => state().deleteTable.command()}
-            >
-              <span>Delete Table</span>
-            </TableHandlePopoverItem>
-          </Show>
-        </TableHandlePopoverContent>
+        <TableHandlePopoverPositioner>
+          <TableHandlePopoverPopup class="CSS_TABLE_HANDLE_MENU">
+            <Show when={state().addTableRowAbove.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().addTableRowAbove.command()}
+              >
+                <span>Insert Above</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().addTableRowBelow.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().addTableRowBelow.command()}
+              >
+                <span>Insert Below</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().deleteCellSelection.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().deleteCellSelection.command()}
+              >
+                <span>Clear Contents</span>
+                <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().deleteTableRow.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={() => state().deleteTableRow.command()}
+              >
+                <span>Delete Row</span>
+              </TableHandlePopoverItem>
+            </Show>
+            <Show when={state().deleteTable.canExec}>
+              <TableHandlePopoverItem
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                attr:data-danger=""
+                onItemSelect={() => state().deleteTable.command()}
+              >
+                <span>Delete Table</span>
+              </TableHandlePopoverItem>
+            </Show>
+          </TableHandlePopoverPopup>
+        </TableHandlePopoverPositioner>
       </TableHandleRowRoot>
     </TableHandleRoot>
   )

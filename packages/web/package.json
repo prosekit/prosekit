@@ -33,7 +33,7 @@
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
-    "./table-handle": "./src/components/table-handle/index.gen.ts",
+    "./table-handle": "./src/components/table-handle/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
@@ -157,7 +157,7 @@
       "prosekit-web-inline-popover": "./src/components/inline-popover/index.ts",
       "prosekit-web-popover": "./src/components/popover/index.ts",
       "prosekit-web-resizable": "./src/components/resizable/index.ts",
-      "prosekit-web-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-web-table-handle": "./src/components/table-handle/index.ts",
       "prosekit-web-tooltip": "./src/components/tooltip/index.ts"
     }
   }

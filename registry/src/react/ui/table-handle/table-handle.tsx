@@ -6,8 +6,9 @@ import {
   TableHandleColumnTrigger,
   TableHandleDragPreview,
   TableHandleDropIndicator,
-  TableHandlePopoverContent,
   TableHandlePopoverItem,
+  TableHandlePopoverPopup,
+  TableHandlePopoverPositioner,
   TableHandleRoot,
   TableHandleRowRoot,
   TableHandleRowTrigger,
@@ -65,50 +66,52 @@ export default function TableHandle(props: Props) {
         <TableHandleColumnTrigger className="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
           <div className="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
         </TableHandleColumnTrigger>
-        <TableHandlePopoverContent className="CSS_TABLE_HANDLE_MENU">
-          {state.addTableColumnBefore.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.addTableColumnBefore.command}
-            >
-              <span>Insert Left</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.addTableColumnAfter.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.addTableColumnAfter.command}
-            >
-              <span>Insert Right</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.deleteCellSelection.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.deleteCellSelection.command}
-            >
-              <span>Clear Contents</span>
-              <span className="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.deleteTableColumn.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.deleteTableColumn.command}
-            >
-              <span>Delete Column</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.deleteTable.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              data-danger=""
-              onSelect={state.deleteTable.command}
-            >
-              <span>Delete Table</span>
-            </TableHandlePopoverItem>
-          )}
-        </TableHandlePopoverContent>
+        <TableHandlePopoverPositioner>
+          <TableHandlePopoverPopup className="CSS_TABLE_HANDLE_MENU">
+            {state.addTableColumnBefore.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.addTableColumnBefore.command}
+              >
+                <span>Insert Left</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.addTableColumnAfter.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.addTableColumnAfter.command}
+              >
+                <span>Insert Right</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.deleteCellSelection.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.deleteCellSelection.command}
+              >
+                <span>Clear Contents</span>
+                <span className="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.deleteTableColumn.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.deleteTableColumn.command}
+              >
+                <span>Delete Column</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.deleteTable.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                data-danger=""
+                onItemSelect={state.deleteTable.command}
+              >
+                <span>Delete Table</span>
+              </TableHandlePopoverItem>
+            )}
+          </TableHandlePopoverPopup>
+        </TableHandlePopoverPositioner>
       </TableHandleColumnRoot>
       <TableHandleRowRoot
         placement={props.dir === 'rtl' ? 'right' : 'left'}
@@ -117,50 +120,52 @@ export default function TableHandle(props: Props) {
         <TableHandleRowTrigger className="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div className="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </TableHandleRowTrigger>
-        <TableHandlePopoverContent className="CSS_TABLE_HANDLE_MENU">
-          {state.addTableRowAbove.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.addTableRowAbove.command}
-            >
-              <span>Insert Above</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.addTableRowBelow.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.addTableRowBelow.command}
-            >
-              <span>Insert Below</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.deleteCellSelection.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.deleteCellSelection.command}
-            >
-              <span>Clear Contents</span>
-              <span className="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.deleteTableRow.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              onSelect={state.deleteTableRow.command}
-            >
-              <span>Delete Row</span>
-            </TableHandlePopoverItem>
-          )}
-          {state.deleteTable.canExec && (
-            <TableHandlePopoverItem
-              className="CSS_TABLE_CELL_MENU_ITEM"
-              data-danger=""
-              onSelect={state.deleteTable.command}
-            >
-              <span>Delete Table</span>
-            </TableHandlePopoverItem>
-          )}
-        </TableHandlePopoverContent>
+        <TableHandlePopoverPositioner>
+          <TableHandlePopoverPopup className="CSS_TABLE_HANDLE_MENU">
+            {state.addTableRowAbove.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.addTableRowAbove.command}
+              >
+                <span>Insert Above</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.addTableRowBelow.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.addTableRowBelow.command}
+              >
+                <span>Insert Below</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.deleteCellSelection.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.deleteCellSelection.command}
+              >
+                <span>Clear Contents</span>
+                <span className="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.deleteTableRow.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                onItemSelect={state.deleteTableRow.command}
+              >
+                <span>Delete Row</span>
+              </TableHandlePopoverItem>
+            )}
+            {state.deleteTable.canExec && (
+              <TableHandlePopoverItem
+                className="CSS_TABLE_CELL_MENU_ITEM"
+                data-danger=""
+                onItemSelect={state.deleteTable.command}
+              >
+                <span>Delete Table</span>
+              </TableHandlePopoverItem>
+            )}
+          </TableHandlePopoverPopup>
+        </TableHandlePopoverPositioner>
       </TableHandleRowRoot>
     </TableHandleRoot>
   )

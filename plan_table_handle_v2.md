@@ -323,12 +323,13 @@ function setupTableHandleRoot(host: HostElement, props: Store<TableHandleRootPro
   const rootSignal = createSignal<HoveringCellInfo | null>(null)
   const dndSignal = createSignal<DndInfo>(defaultDndInfo)
 
-  const hoveringCell = useHoveringCell(host, getEditor)
+  const hoveringCell = useHoveringCell(host, getEditor) // update: the signal returned  by useHoveringCell, will it need to be modified from outside. If not, just return a getter function, like const getHoveringCell = useHoveringCell(...)
   const getTyping = useEditorTyping(host, getEditor)      // v2 hook
-  const getIsInTable = () => !!hoveringCell.get()
+  const getIsInTable = () => !!hoveringCell.get() // update: use computed. getIsInTable = computed(() => !!getHoveringCell())
   const getSelecting = useSelecting(host, getEditor, getIsInTable)  // v2 hook
   const getScrolling = useScrolling(host)                  // v2 hook
 
+// update: use computted, getCanShow = computed(() => !getTyping() && !getSelecting() && !getScrolling())
   useEffect(host, () => {
     const canShow = !getTyping() && !getSelecting() && !getScrolling()
     rootSignal.set(canShow ? hoveringCell.get() : null)
@@ -336,6 +337,13 @@ function setupTableHandleRoot(host: HostElement, props: Store<TableHandleRootPro
 
   tableHandleRootContext.provide(host, rootSignal)
   tableHandleDndContext.provide(host, dndSignal)
+
+  // update: 我不喜欢 tableHandleRootContext.provide(host, rootSignal) 和 tableHandleDndContext.provide(host, dndSignal) 这种写法。
+  // 我比较喜欢 xxxContext.provide(host, xxxStore) 的写法
+  // xxxStore 应当严格定义
+  // 
+  // 注意你可以在一个函数里设置多个 store
+
 
   useDrop(host, getEditor, dndSignal)
 }
@@ -357,6 +365,7 @@ In v2, we use:
 function setupTableHandleRowRoot(host: HostElement, props: Store<TableHandleRowRootProps>) {
   const getEditor = props.editor.get
   const getRootSignal = tableHandleRootContext.consume(host)
+
 
   const getRowFirstCellPos = () => getRootSignal()?.get()?.rowFirstCellPos
 
@@ -724,6 +733,8 @@ Props interface, PropsDeclaration, setup function, Element class, register funct
 - [ ] **6.4** Run `pnpm -w lint`
 - [ ] **6.5** Verify no remaining `@aria-ui/` v1 imports in `table-handle/` files
 - [ ] **6.6** Verify framework wrappers generated for table-handle (check react/preact/solid/vue/svelte)
+
+<!-- update: run `pnpm run test run registry/test/table.test.ts`  -->
 
 ### Phase 7: Review
 

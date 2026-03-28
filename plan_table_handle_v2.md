@@ -263,17 +263,13 @@ via `.get()`. In v2, context provides a value directly; consumers get `() => T |
 or use a wrapper. Looking at the v2 pattern (e.g., `MenuStore`), stores are classes with
 signal fields. The context provides the store instance; consumers access its signals.
 
-For table-handle, create two simple store-like objects:
+For table-handle, define a single `TableHandleStore` class (following the `MenuStore` pattern)
+and provide it via one context. Both hovering cell info and DnD state live in the same store
+since they're provided by the same element and many consumers need both.
 
 ```typescript
 import { createContext, createSignal, type Signal } from '@aria-ui-v2/core'
 import type { DndInfo, HoveringCellInfo } from './utils.ts'
-
-export type TableHandleRootContext = Signal<HoveringCellInfo | null>
-
-export const tableHandleRootContext = createContext<TableHandleRootContext>('prosekit-table-handle-root-context')
-
-export type TableHandleDndContext = Signal<DndInfo>
 
 export const defaultDndInfo: DndInfo = {
   dragging: false,
@@ -286,25 +282,32 @@ export const defaultDndInfo: DndInfo = {
   startY: -1,
 }
 
-export const tableHandleDndContext = createContext<TableHandleDndContext>('prosekit-table-handle-dnd-context')
+export class TableHandleStore {
+  readonly dnd = createSignal<DndInfo>(defaultDndInfo)
+
+  constructor(
+    /** Getter for the currently visible hovering cell (null when hidden). */
+    public readonly getHoveringCell: () => HoveringCellInfo | null,
+  ) {}
+}
+
+export const tableHandleStoreContext = createContext<TableHandleStore>('prosekit-table-handle-store')
 ```
 
-The root creates `createSignal(null)` and `createSignal(defaultDndInfo)`, then provides
-them via context. Consumers call `getContext()` to get the signal, then `.get()` / `.set()`.
-
-Wait — in v2, `context.consume(host)` returns `() => T | undefined`. The consumer gets a
-getter. If `T` is `Signal<X>`, then consumer does:
+The root creates the store and provides it via context. Consumers do:
 ```typescript
-const getRootSignal = tableHandleRootContext.consume(host)
+const getStore = tableHandleStoreContext.consume(host)
 // later in effect:
-const signal = getRootSignal()
-if (signal) {
-  const info = signal.get()
+const store = getStore()
+if (store) {
+  const cell = store.getHoveringCell()
+  const dnd = store.dnd.get()
+  store.dnd.set({ ...dnd, dragging: true })
 }
 ```
 
-This is the same pattern used by menu/listbox (context provides a store, consumers get the
-store and access its fields). It works fine.
+This follows the same pattern as `MenuStore` — context provides a store instance,
+consumers access its strictly defined fields.
 
 ### 5.2 `table-handle-root.ts`
 
@@ -320,32 +323,19 @@ interface TableHandleRootProps {
 function setupTableHandleRoot(host: HostElement, props: Store<TableHandleRootProps>) {
   const getEditor = props.editor.get
 
-  const rootSignal = createSignal<HoveringCellInfo | null>(null)
-  const dndSignal = createSignal<DndInfo>(defaultDndInfo)
+  const getHoveringCell = useHoveringCell(host, getEditor)  // returns () => HoveringCellInfo | null
+  const getTyping = useEditorTyping(host, getEditor)
+  const getIsInTable = computed(() => !!getHoveringCell())
+  const getSelecting = useSelecting(host, getEditor, getIsInTable)
+  const getScrolling = useScrolling(host)
 
-  const hoveringCell = useHoveringCell(host, getEditor) // update: the signal returned  by useHoveringCell, will it need to be modified from outside. If not, just return a getter function, like const getHoveringCell = useHoveringCell(...)
-  const getTyping = useEditorTyping(host, getEditor)      // v2 hook
-  const getIsInTable = () => !!hoveringCell.get() // update: use computed. getIsInTable = computed(() => !!getHoveringCell())
-  const getSelecting = useSelecting(host, getEditor, getIsInTable)  // v2 hook
-  const getScrolling = useScrolling(host)                  // v2 hook
+  const getCanShow = computed(() => !getTyping() && !getSelecting() && !getScrolling())
+  const getVisibleCell = computed(() => getCanShow() ? getHoveringCell() : null)
 
-// update: use computted, getCanShow = computed(() => !getTyping() && !getSelecting() && !getScrolling())
-  useEffect(host, () => {
-    const canShow = !getTyping() && !getSelecting() && !getScrolling()
-    rootSignal.set(canShow ? hoveringCell.get() : null)
-  })
+  const store = new TableHandleStore(getVisibleCell)
+  tableHandleStoreContext.provide(host, store)
 
-  tableHandleRootContext.provide(host, rootSignal)
-  tableHandleDndContext.provide(host, dndSignal)
-
-  // update: 我不喜欢 tableHandleRootContext.provide(host, rootSignal) 和 tableHandleDndContext.provide(host, dndSignal) 这种写法。
-  // 我比较喜欢 xxxContext.provide(host, xxxStore) 的写法
-  // xxxStore 应当严格定义
-  // 
-  // 注意你可以在一个函数里设置多个 store
-
-
-  useDrop(host, getEditor, dndSignal)
+  useDrop(host, getEditor, store)
 }
 ```
 
@@ -364,10 +354,9 @@ In v2, we use:
 ```typescript
 function setupTableHandleRowRoot(host: HostElement, props: Store<TableHandleRowRootProps>) {
   const getEditor = props.editor.get
-  const getRootSignal = tableHandleRootContext.consume(host)
+  const getStore = tableHandleStoreContext.consume(host)
 
-
-  const getRowFirstCellPos = () => getRootSignal()?.get()?.rowFirstCellPos
+  const getRowFirstCellPos = () => getStore()?.getHoveringCell()?.rowFirstCellPos
 
   const getReferenceCell = () => {
     const pos = getRowFirstCellPos()
@@ -445,8 +434,7 @@ In v2, we do it explicitly:
 ```typescript
 function setupTableHandleRowTrigger(host: HostElement, props: Store<TableHandleRowTriggerProps>) {
   const getEditor = props.editor.get
-  const getRootSignal = tableHandleRootContext.consume(host)
-  const getDndSignal = tableHandleDndContext.consume(host)
+  const getStore = tableHandleStoreContext.consume(host)
   const getMenuStore = MenuStoreContext.consume(host)
 
   // Set anchor for menu positioning
@@ -465,7 +453,7 @@ function setupTableHandleRowTrigger(host: HostElement, props: Store<TableHandleR
   // Select row on pointerdown
   useEventListener(host, 'pointerdown', () => {
     const editor = getEditor()
-    const cellPos = getRootSignal()?.get()?.cellPos
+    const cellPos = getStore()?.getHoveringCell()?.cellPos
     if (!editor || !cellPos) return
     editor.exec(selectTableRow({ head: cellPos }))
   })
@@ -522,8 +510,8 @@ function setupTableHandlePopoverPopup(
   host: HostElement,
   props: Store<TableHandlePopoverPopupProps>,
 ) {
-  const getRootSignal = tableHandleRootContext.consume(host)
-  const getOpen = () => !!getRootSignal()?.get()
+  const getStore = tableHandleStoreContext.consume(host)
+  const getOpen = () => !!getStore()?.getHoveringCell()
   const keyDownTarget = useKeyDownTarget(host, getOpen)
 
   props.eventTarget.set(keyDownTarget)
@@ -566,21 +554,20 @@ Migrate to v2 signal/effect patterns.
 
 ```
 TableHandleRoot
-  ├─ provides: tableHandleRootContext (Signal<HoveringCellInfo | null>)
-  ├─ provides: tableHandleDndContext (Signal<DndInfo>)
+  ├─ provides: tableHandleStoreContext (TableHandleStore)
   │
   ├─ TableHandleRowRoot
-  │    ├─ consumes: tableHandleRootContext
+  │    ├─ consumes: tableHandleStoreContext
   │    ├─ provides: MenuStoreContext (MenuStore)
   │    │
   │    ├─ TableHandleRowTrigger
-  │    │    ├─ consumes: tableHandleRootContext, tableHandleDndContext, MenuStoreContext
+  │    │    ├─ consumes: tableHandleStoreContext, MenuStoreContext
   │    │    └─ toggles menu, initiates row drag
   │    │
   │    └─ TableHandlePopoverPositioner
   │         ├─ consumes: MenuStoreContext (via setupOverlayPositioner)
   │         └─ TableHandlePopoverPopup
-  │              ├─ consumes: MenuStoreContext (via setupMenuPopup), tableHandleRootContext
+  │              ├─ consumes: MenuStoreContext (via setupMenuPopup), tableHandleStoreContext
   │              └─ TableHandlePopoverItem (multiple)
   │                   └─ consumes: MenuStoreContext (via setupMenuItem)
   │
@@ -589,10 +576,10 @@ TableHandleRoot
   │    └─ ... (trigger, positioner, popup, items)
   │
   ├─ TableHandleDragPreview
-  │    └─ consumes: tableHandleDndContext, tableHandleRootContext
+  │    └─ consumes: tableHandleStoreContext
   │
   └─ TableHandleDropIndicator
-       └─ consumes: tableHandleDndContext, tableHandleRootContext
+       └─ consumes: tableHandleStoreContext
 ```
 
 ---
@@ -630,14 +617,15 @@ fallback.
 
 - [ ] **2.1** Migrate `context.ts`
   - [ ] `createContext` from `@aria-ui-v2/core` (no default value)
-  - [ ] Types: `Signal<HoveringCellInfo | null>` and `Signal<DndInfo>` as context values
+  - [ ] Define single `TableHandleStore` class with `getHoveringCell` getter and `dnd` signal field
+  - [ ] Single `tableHandleStoreContext` (merges old root + dnd contexts)
   - [ ] Export `defaultDndInfo` constant
 
 - [ ] **2.2** Migrate `dnd.ts`
   - [ ] `HostElement` replaces `ConnectableElement`
   - [ ] `getEditor: () => Editor | null` replaces `ReadonlySignal`
   - [ ] v2 signal/computed/effect imports
-  - [ ] v2 context consumption pattern
+  - [ ] Consume `tableHandleStoreContext` (single context instead of separate root + dnd)
 
 - [ ] **2.3** Migrate `hooks/use-drop.ts` → `use-drop.ts` (move to component root)
   - [ ] v2 types and imports
@@ -655,7 +643,7 @@ Props interface, PropsDeclaration, setup function, Element class, register funct
 - [ ] **3.1** `table-handle-root.ts`
   - [ ] Props: `editor: Editor | null`
   - [ ] PropsDeclaration via `defineProps`
-  - [ ] Setup: v2 hooks (typing, selecting, scrolling), v2 context provide
+  - [ ] Setup: `useHoveringCell` returns getter; use `computed` for `getIsInTable`, `getCanShow`, `getVisibleCell`; create `TableHandleRootStore` + `TableHandleDndStore` and provide via context
   - [ ] Element via `defineCustomElement`
   - [ ] Register as `prosekit-table-handle-root`
 
@@ -733,8 +721,7 @@ Props interface, PropsDeclaration, setup function, Element class, register funct
 - [ ] **6.4** Run `pnpm -w lint`
 - [ ] **6.5** Verify no remaining `@aria-ui/` v1 imports in `table-handle/` files
 - [ ] **6.6** Verify framework wrappers generated for table-handle (check react/preact/solid/vue/svelte)
-
-<!-- update: run `pnpm run test run registry/test/table.test.ts`  -->
+- [ ] **6.7** Run `pnpm -w test run registry/test/table.test.ts` and fix failures
 
 ### Phase 7: Review
 

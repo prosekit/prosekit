@@ -118,7 +118,8 @@ table-handle/
   table-handle-column-root.ts   ← NEW (merge types + setup + element)
   table-handle-row-trigger.ts   ← NEW (merge types + setup + element)
   table-handle-column-trigger.ts ← NEW (merge types + setup + element)
-  table-handle-popover-content.ts ← NEW (merge types + setup + element)
+  table-handle-popover-positioner.ts ← NEW (positioning via floating-ui)
+  table-handle-popover-popup.ts ← NEW (menu popup behavior: keyboard nav, ARIA)
   table-handle-popover-item.ts  ← NEW (merge types + setup + element)
   table-handle-drag-preview.ts  ← NEW (merge types + setup + element)
   table-handle-drop-indicator.ts ← NEW (merge types + setup + element)
@@ -137,14 +138,13 @@ All old subdirectories and their contents:
 - `table-handle-column-root/` (types.ts, setup.ts, element.gen.ts)
 - `table-handle-row-trigger/` (types.ts, setup.ts, element.gen.ts)
 - `table-handle-column-trigger/` (types.ts, setup.ts, element.gen.ts)
-- `table-handle-popover-content/` (types.ts, setup.ts, element.gen.ts)
+- `table-handle-popover-content/` (types.ts, setup.ts, element.gen.ts) → replaced by positioner + popup
 - `table-handle-popover-item/` (types.ts, setup.ts, element.gen.ts)
 - `table-handle-drag-preview/` (types.ts, setup.ts, element.gen.ts, render-preview.ts, updater.ts)
 - `table-handle-drop-indicator/` (types.ts, setup.ts, element.gen.ts, calc-drag-over.ts, updater.ts)
 - `hooks/` (use-drop.ts, use-empty-image.ts)
 - `index.gen.ts`
 
-<!-- update： we used to have table-handle-popover-content but now we should have table-handle-popover-positioner and table-handle-popover-popup -->
 
 ---
 
@@ -471,43 +471,59 @@ function setupTableHandleRowTrigger(host: HostElement, props: Store<TableHandleR
 }
 ```
 
-### 5.5 `table-handle-popover-content.ts`
+### 5.5 `table-handle-popover-positioner.ts`
 
-Replace `useMenuContent(host, ...)` with `setupMenuPopup(host, props)`.
+The v1 `popover-content` combined positioning AND menu behavior. In v2, following the
+`MenuPositioner` / `MenuPopup` split, we separate these into two components.
 
-The v1 popover-content wraps `useMenuContent` with a custom `eventTarget` (document-level
-keydown listener). In v2, `MenuPopupProps.eventTarget` supports this directly.
+The positioner handles floating-ui positioning. It extends `OverlayPositionerProps` with
+custom defaults matching the v1 behavior:
 
 ```typescript
-function setupTableHandlePopoverContent(host: HostElement, props: Store<TableHandlePopoverContentProps>) {
+interface TableHandlePopoverPositionerProps extends Omit<OverlayPositionerProps, 'placement' | 'offset'> {
+  placement: Placement   // @default 'right-start'
+  offset: OffsetOptions  // @default { mainAxis: -4, crossAxis: 4 }
+}
+
+function setupTableHandlePopoverPositioner(
+  host: HostElement,
+  props: Store<TableHandlePopoverPositionerProps>,
+) {
+  // Delegate to overlay positioner with MenuStoreContext (same as MenuPositioner does)
+  setupOverlayPositioner(host, props, MenuStoreContext)
+}
+```
+
+The positioner consumes `MenuStoreContext` (provided by row-root/column-root) to know
+when the menu is open, and positions itself relative to the anchor element (the trigger).
+
+### 5.5b `table-handle-popover-popup.ts`
+
+The popup handles menu interaction behavior: keyboard navigation, ARIA attributes,
+focus management, typeahead. It extends `MenuPopupProps`.
+
+The v1 popover-content created a custom `keyDownTarget` (document-level keydown listener)
+because the popup element itself doesn't have focus in the normal sense — keyboard events
+come from the document. In v2, `MenuPopupProps.eventTarget` supports this directly.
+
+```typescript
+interface TableHandlePopoverPopupProps extends MenuPopupProps {}
+
+function setupTableHandlePopoverPopup(
+  host: HostElement,
+  props: Store<TableHandlePopoverPopupProps>,
+) {
   const getRootSignal = tableHandleRootContext.consume(host)
   const getOpen = () => !!getRootSignal()?.get()
   const keyDownTarget = useKeyDownTarget(host, getOpen)
 
-  // Delegate to v2 menu popup setup with custom event target
-  // We need to set the eventTarget prop before calling setupMenuPopup
   props.eventTarget.set(keyDownTarget)
   setupMenuPopup(host, props)
 }
 ```
 
-Wait, `setupMenuPopup` takes `Store<MenuPopupProps>`. Our props extend that. We need to
-make `TableHandlePopoverContentProps` compatible. Looking at the v2 `MenuPopupProps`:
-
-```typescript
-interface MenuPopupProps {
-  eventTarget: HTMLElement | TypedEventTarget<'keydown'> | null
-}
-```
-
-Our table-handle-popover-content props would include `eventTarget` inherited from
-`MenuPopupProps`. The setup creates the custom keyDownTarget and sets it.
-
-Actually, looking more carefully, the v2 setup functions take `(host, props)` where
-`props` is a `Store<Props>`. We can call `setupMenuPopup(host, props)` directly if
-`TableHandlePopoverContentProps` extends `MenuPopupProps`. But the v2 `setupMenuPopup`
-also consumes `MenuStoreContext` — which is provided by the row-root. This should work
-since popover-content is a descendant of row-root in the DOM tree.
+`setupMenuPopup` consumes `MenuStoreContext` (provided by row-root) for menu state.
+The DOM hierarchy is: `row-root > popover-positioner > popover-popup > popover-item`.
 
 ### 5.6 `table-handle-popover-item.ts`
 
@@ -552,14 +568,16 @@ TableHandleRoot
   │    │    ├─ consumes: tableHandleRootContext, tableHandleDndContext, MenuStoreContext
   │    │    └─ toggles menu, initiates row drag
   │    │
-  │    └─ TableHandlePopoverContent
-  │         ├─ consumes: MenuStoreContext (via setupMenuPopup)
-  │         └─ TableHandlePopoverItem (multiple)
-  │              └─ consumes: MenuStoreContext (via setupMenuItem)
+  │    └─ TableHandlePopoverPositioner
+  │         ├─ consumes: MenuStoreContext (via setupOverlayPositioner)
+  │         └─ TableHandlePopoverPopup
+  │              ├─ consumes: MenuStoreContext (via setupMenuPopup), tableHandleRootContext
+  │              └─ TableHandlePopoverItem (multiple)
+  │                   └─ consumes: MenuStoreContext (via setupMenuItem)
   │
   ├─ TableHandleColumnRoot (symmetric to RowRoot)
   │    ├─ provides: MenuStoreContext (separate instance)
-  │    └─ ... (trigger, content, items)
+  │    └─ ... (trigger, positioner, popup, items)
   │
   ├─ TableHandleDragPreview
   │    └─ consumes: tableHandleDndContext, tableHandleRootContext
@@ -650,29 +668,34 @@ Props interface, PropsDeclaration, setup function, Element class, register funct
   - [ ] Same as row-trigger but `selectTableColumn`, direction `'col'`
   - [ ] Register as `prosekit-table-handle-column-trigger`
 
-- [ ] **3.6** `table-handle-popover-content.ts`
-  - [ ] Props: extends `MenuPopupProps` (adds default placement/offset override)
-  - [ ] Setup: create custom keyDownTarget, delegate to `setupMenuPopup`
-  - [ ] Register as `prosekit-table-handle-popover-content`
+- [ ] **3.6** `table-handle-popover-positioner.ts`
+  - [ ] Props: extends `OverlayPositionerProps` with overrides: `placement: 'right-start'`, `offset: { mainAxis: -4, crossAxis: 4 }`
+  - [ ] Setup: delegate to `setupOverlayPositioner(host, props, MenuStoreContext)`
+  - [ ] Register as `prosekit-table-handle-popover-positioner`
 
-- [ ] **3.7** `table-handle-popover-item.ts`
+- [ ] **3.7** `table-handle-popover-popup.ts`
+  - [ ] Props: extends `MenuPopupProps` (just `eventTarget`)
+  - [ ] Setup: consume `tableHandleRootContext` for open state, create custom `keyDownTarget`, set `eventTarget`, delegate to `setupMenuPopup`
+  - [ ] Register as `prosekit-table-handle-popover-popup`
+
+- [ ] **3.8** `table-handle-popover-item.ts`
   - [ ] Props: extends `MenuItemProps`
   - [ ] Setup: delegate to `setupMenuItem`
   - [ ] Register as `prosekit-table-handle-popover-item`
 
-- [ ] **3.8** `table-handle-drag-preview.ts`
+- [ ] **3.9** `table-handle-drag-preview.ts`
   - [ ] Props: `editor: Editor | null`
   - [ ] Setup: absolute positioning, init preview DOM, update position during drag
   - [ ] Inline the updater logic
   - [ ] Register as `prosekit-table-handle-drag-preview`
 
-- [ ] **3.9** `table-handle-drop-indicator.ts`
+- [ ] **3.10** `table-handle-drop-indicator.ts`
   - [ ] Props: `editor: Editor<TableCommandsExtension> | null`
   - [ ] Setup: absolute positioning, init indicator, update position during drag
   - [ ] Inline the updater logic
   - [ ] Register as `prosekit-table-handle-drop-indicator`
 
-- [ ] **3.10** Move pure utility files
+- [ ] **3.11** Move pure utility files
   - [ ] `render-preview.ts` → move from `table-handle-drag-preview/` to component root
   - [ ] `calc-drag-over.ts` → move from `table-handle-drop-indicator/` to component root
 
@@ -681,6 +704,7 @@ Props interface, PropsDeclaration, setup function, Element class, register funct
 - [ ] **4.1** Create new `index.ts` (replaces `index.gen.ts`)
   - [ ] Export all Props interfaces, PropsDeclaration constants, setup functions, Element classes, register functions
   - [ ] Export `OpenChangeEvent` from menu and `MenuItemSelectEvent` from menu item
+  - [ ] Export both positioner and popup (replacing old popover-content)
   - [ ] Follow alphabetical ordering
 
 - [ ] **4.2** Delete old files
@@ -775,5 +799,5 @@ After migration, verify:
 - [ ] No `BaseElementConstructor` from v1 (should use `defineCustomElement` from v2)
 - [ ] No `defineEmit` from v1
 - [ ] No `getStateWithDefaults` utility usage
-- [ ] Framework wrappers generated correctly for all 9 sub-components
+- [ ] Framework wrappers generated correctly for all 10 sub-components (root, row-root, column-root, row-trigger, column-trigger, popover-positioner, popover-popup, popover-item, drag-preview, drop-indicator)
 - [ ] Table-handle renders and functions in the prosekit playground

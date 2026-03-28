@@ -3,4 +3,4 @@
 "@prosekit/web": "patch"
 ---
 
-Fix slow drag preview for elements with many children (e.g. syntax-highlighted code blocks).
+Fix an issue where the drag preview had poor performance when dragging elements with many children (e.g., syntax-highlighted code blocks).

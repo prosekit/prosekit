@@ -66,9 +66,7 @@ export function setupMenuTrigger(
   useAriaExpanded(host, getOpen)
   useAriaDisabled(host, getDisabled)
 
-  const getAriaControls = computed(() =>
-    getOpen() ? getPopupId() : undefined,
-  )
+  const getAriaControls = computed(() => getOpen() ? getPopupId() : undefined)
   useAriaControls(host, getAriaControls)
 
   onMount(host, () => {

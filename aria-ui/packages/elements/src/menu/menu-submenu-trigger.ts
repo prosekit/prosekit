@@ -111,8 +111,14 @@ export function setupMenuSubmenuTrigger(
   let closeTimer: ReturnType<typeof setTimeout> | null = null
 
   const clearTimers = () => {
-    if (openTimer) { clearTimeout(openTimer); openTimer = null }
-    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null }
+    if (openTimer) {
+      clearTimeout(openTimer)
+      openTimer = null
+    }
+    if (closeTimer) {
+      clearTimeout(closeTimer)
+      closeTimer = null
+    }
   }
 
   useEventListener(host, 'mouseenter', () => {

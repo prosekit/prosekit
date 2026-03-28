@@ -61,7 +61,7 @@ export function defineCustomElement<
   return CustomElement as HostElementConstructor<AnyProps> as HostElementConstructor<Props>
 }
 
-function defineGetterSetter (
+function defineGetterSetter(
   ElementConstructor: new () => { _store: Store<any> },
   props: Record<string, PropDeclaration<unknown>>,
 ) {

@@ -25,8 +25,7 @@ export class MenuStore extends OverlayStore {
 /**
  * @internal
  */
-export const MenuStoreContext: Context<MenuStore> =
-  createContext<MenuStore>('MenuStoreContext')
+export const MenuStoreContext: Context<MenuStore> = createContext<MenuStore>('MenuStoreContext')
 
 /**
  * @internal

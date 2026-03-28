@@ -2,7 +2,7 @@ import { html, render } from 'lit-html'
 import { beforeEach, describe, expect, test } from 'vitest'
 import { page } from 'vitest/browser'
 
-import type { MenuPopupElement} from '../index.ts';
+import type { MenuPopupElement } from '../index.ts'
 import { registerElements } from '../index.ts'
 
 const MENU_TEMPLATE = html`
@@ -198,7 +198,9 @@ describe('Menu', () => {
       const container = renderMenu()
       await openMenu(container)
       let selectFired = false
-      container.querySelector('[data-testid="cut"]')!.addEventListener('select', () => { selectFired = true })
+      container.querySelector('[data-testid="cut"]')!.addEventListener('select', () => {
+        selectFired = true
+      })
       const popup = container.querySelector('[data-testid="popup"]')!
       popup.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
       await expect.poll(() => selectFired).toBe(true)
@@ -209,7 +211,9 @@ describe('Menu', () => {
       const container = renderMenu()
       await openMenu(container)
       let selectFired = false
-      container.querySelector('[data-testid="cut"]')!.addEventListener('select', () => { selectFired = true })
+      container.querySelector('[data-testid="cut"]')!.addEventListener('select', () => {
+        selectFired = true
+      })
       const popup = container.querySelector('[data-testid="popup"]')!
       popup.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }))
       await expect.poll(() => selectFired).toBe(true)
@@ -220,7 +224,9 @@ describe('Menu', () => {
       const container = renderMenu()
       await openMenu(container)
       let selectFired = false
-      container.querySelector('[data-testid="copy"]')!.addEventListener('select', () => { selectFired = true })
+      container.querySelector('[data-testid="copy"]')!.addEventListener('select', () => {
+        selectFired = true
+      })
       await page.getByTestId('copy').click()
       await expect.poll(() => selectFired).toBe(true)
       await expect.poll(() => container.querySelector('[data-testid="popup"]')!.getAttribute('data-state')).toBe('closed')
@@ -229,7 +235,9 @@ describe('Menu', () => {
     test('select event can be prevented to keep menu open', async () => {
       const container = renderMenu()
       await openMenu(container)
-      container.querySelector('[data-testid="cut"]')!.addEventListener('select', (e) => { e.preventDefault() })
+      container.querySelector('[data-testid="cut"]')!.addEventListener('select', (e) => {
+        e.preventDefault()
+      })
       const popup = container.querySelector('[data-testid="popup"]')!
       popup.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
       await expect.poll(() => popup.getAttribute('data-state')).toBe('open')
@@ -249,7 +257,9 @@ describe('Menu', () => {
       await openMenu(container)
       let selectFired = false
       const item = container.querySelector('[data-testid="a"]')!
-      item.addEventListener('select', () => { selectFired = true })
+      item.addEventListener('select', () => {
+        selectFired = true
+      })
       item.dispatchEvent(new MouseEvent('click', { bubbles: true }))
       await expect.poll(() => selectFired).toBe(false)
     })
@@ -313,7 +323,9 @@ describe('Menu', () => {
       const container = renderMenu()
       const root = container.querySelector('aria-ui-menu-root')!
       let eventFired = false
-      root.addEventListener('openChange', () => { eventFired = true })
+      root.addEventListener('openChange', () => {
+        eventFired = true
+      })
       await page.getByTestId('trigger').click()
       expect(eventFired).toBe(true)
     })
@@ -323,7 +335,9 @@ describe('Menu', () => {
       await openMenu(container)
       const root = container.querySelector('aria-ui-menu-root')!
       let eventFired = false
-      root.addEventListener('openChange', () => { eventFired = true })
+      root.addEventListener('openChange', () => {
+        eventFired = true
+      })
       await page.getByTestId('trigger').click()
       expect(eventFired).toBe(true)
     })

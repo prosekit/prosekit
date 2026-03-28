@@ -178,8 +178,7 @@ export function setupMenuPopup(
   }
 
   useEffect(host, () => {
-    const target: HTMLElement | TypedEventTarget<'keydown'> =
-      props.eventTarget.get() || host
+    const target: HTMLElement | TypedEventTarget<'keydown'> = props.eventTarget.get() || host
 
     target.addEventListener('keydown', handleKeydown as EventListener)
     return () => {

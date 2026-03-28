@@ -1,6 +1,6 @@
 import { createDebug, enable } from 'obug'
 
-// TODO: remove me 
+// TODO: remove me
 enable('aria-ui:*')
 
 export const logger = {

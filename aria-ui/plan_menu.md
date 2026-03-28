@@ -34,6 +34,9 @@ They can be added later without breaking changes:
 - **Viewport** (for content transitions) - not needed
 - **`payload` / render function children** - React-only pattern
 
+<!--  update: implement MenuSubmenuRoot and MenuSubmenuTrigger this time -->
+
+
 ### Design Decisions
 
 **Decision 1: Build on top of Popover + Listbox patterns, not composition**
@@ -84,6 +87,7 @@ because:
 - The positioner needs `popover="manual"` for the Popover API
 - The content needs `role="menu"` and handles keyboard events
 - They have completely different props
+
 
 **Decision 4: `MenuContent` owns keyboard navigation (not `MenuRoot`)**
 
@@ -449,6 +453,8 @@ Default placement should be `'bottom-start'` for menus (not `'top'` like generic
 But we handle this via the default HTML attribute in stories, not by changing the
 positioner's default. This keeps the positioner generic.
 
+<!-- update: you should set default as 'bottom-start' in xxxxPropsDeclaration. Also update xxxxProps so that the JS docs is correct  -->
+
 ### 3.5 `menu-content.ts`
 
 This is the most complex component. It handles:
@@ -469,10 +475,12 @@ export interface MenuContentProps {
    * By default, the MenuContent element will listen for keydown events.
    * You can pass a different element to listen for keydown events.
    *
-   * @default undefined
+   * @default null
    */
-  eventTarget: HTMLElement | TypedEventTarget<'keydown'> | undefined
+  eventTarget: HTMLElement | TypedEventTarget<'keydown'> | null
 }
+
+// update: always use null instead of undefined for prop values
 
 /**
  * @internal

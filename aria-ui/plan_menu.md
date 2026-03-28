@@ -1985,3 +1985,207 @@ The v1 → v2 migration for table-handle should be straightforward:
 
 The table-handle's custom `TypedEventTarget<'keydown'>` pattern (delegating document
 keydowns) will work with the new `eventTarget` prop on `MenuPopup`.
+
+---
+
+## 12. Detailed TODO List
+
+### Phase 1: Store & Core Infrastructure
+
+- [ ] **1.1** Create `aria-ui/packages/elements/src/menu/` directory
+- [ ] **1.2** Implement `menu-store.ts`
+  - [ ] `MenuStore` class extending `OverlayStore`
+    - `activeValue: Signal<string | null>`
+    - `collection: Signal<Collection>`
+    - `parentStore: MenuStore | null`
+  - [ ] `MenuStoreContext` via `createContext<MenuStore>`
+  - [ ] `closeMenuTree()` helper (walk `parentStore` chain to root, close root)
+
+### Phase 2: Flat Menu Elements (no submenus yet)
+
+- [ ] **2.1** Implement `menu-root.ts`
+  - [ ] `MenuRootProps` extending `OverlayRootProps`
+  - [ ] `MenuRootPropsDeclaration` (spread `OverlayRootPropsDeclaration`)
+  - [ ] `MenuRootEvents` with `openChange: OpenChangeEvent`
+  - [ ] `setupMenuRoot` — inline `setupOverlayRoot` logic but create `MenuStore` instead of `OverlayStore`
+    - [ ] `computed` for `getOpen` (from `open` ?? `defaultOpen`)
+    - [ ] `computed` for `getDisabled`
+    - [ ] `emitOpenChange` with `OpenChangeEvent` + `preventDefault` guard
+    - [ ] Create `MenuStore`, provide via `MenuStoreContext`
+    - [ ] `useAriaDisabled`
+  - [ ] `MenuRootElement` class via `defineCustomElement`
+  - [ ] `registerMenuRootElement` (tag: `aria-ui-menu-root`)
+
+- [ ] **2.2** Implement `menu-trigger.ts`
+  - [ ] `MenuTriggerProps` with `disabled: boolean`
+  - [ ] `MenuTriggerPropsDeclaration`
+  - [ ] `MenuTriggerEvents` with `openChange: OpenChangeEvent`
+  - [ ] `setupMenuTrigger`
+    - [ ] Consume `MenuStoreContext`
+    - [ ] `usePress` to toggle open/close
+    - [ ] Set `anchorElement` on store
+    - [ ] `useAriaExpanded`, `useAriaDisabled`, `useAriaControls`
+    - [ ] Set `aria-haspopup="menu"` on mount
+  - [ ] `MenuTriggerElement` class
+  - [ ] `registerMenuTriggerElement` (tag: `aria-ui-menu-trigger`)
+
+- [ ] **2.3** Implement `menu-positioner.ts`
+  - [ ] `MenuPositionerProps` extending `OverlayPositionerProps` with `placement` default override
+  - [ ] `MenuPositionerPropsDeclaration` — spread `OverlayPositionerPropsDeclaration`, override `placement` to `'bottom-start'`
+  - [ ] `setupMenuPositioner` — delegate to `setupOverlayPositioner(host, props, MenuStoreContext)`
+  - [ ] `MenuPositionerElement` class
+  - [ ] `registerMenuPositionerElement` (tag: `aria-ui-menu-positioner`)
+
+- [ ] **2.4** Implement `menu-item.ts`
+  - [ ] `MenuItemSelectEvent` class (extends `Event`, type `'select'`, bubbles, cancelable)
+  - [ ] `MenuItemProps` with `value: string`, `disabled: boolean`
+  - [ ] `MenuItemPropsDeclaration`
+  - [ ] `MenuItemEvents` with `select: MenuItemSelectEvent`
+  - [ ] `setupMenuItem`
+    - [ ] Set `role="menuitem"` on mount
+    - [ ] `useElementId` for `aria-activedescendant` support
+    - [ ] Consume `MenuStoreContext`
+    - [ ] Sync `data-value` attribute
+    - [ ] `useAriaDisabled`
+    - [ ] Track `data-active` from `store.activeValue`
+    - [ ] `rebuildCollection` — query `aria-ui-menu-item, aria-ui-menu-submenu-trigger` scoped to nearest `aria-ui-menu-popup` (filter by `el.closest('aria-ui-menu-popup') === popup`)
+    - [ ] Call `rebuildCollection` on mount/unmount and when `value`/`disabled` change
+    - [ ] `mouseenter` → set `activeValue`
+    - [ ] `click` → dispatch `MenuItemSelectEvent`, call `closeMenuTree` if not prevented
+  - [ ] `MenuItemElement` class
+  - [ ] `registerMenuItemElement` (tag: `aria-ui-menu-item`)
+
+- [ ] **2.5** Implement `menu-popup.ts`
+  - [ ] `MenuPopupProps` with `eventTarget: HTMLElement | TypedEventTarget<'keydown'> | null` (default `null`)
+  - [ ] `MenuPopupPropsDeclaration`
+  - [ ] `setupMenuPopup`
+    - [ ] Consume `MenuStoreContext`
+    - [ ] Register popup ID in store via `useElementId`
+    - [ ] Set `role="menu"` and `tabIndex=0` on mount
+    - [ ] Sync `data-state` (open/closed)
+    - [ ] `aria-activedescendant` — reactive, points to active item's `id`
+    - [ ] Focus management effect: on open → `requestAnimationFrame` → `host.focus()` + `activeValue.set(collection.first())`; on close → reset `activeValue` to `null`
+    - [ ] Keydown handler:
+      - [ ] `ArrowDown` → `collection.next`
+      - [ ] `ArrowUp` → `collection.prev`
+      - [ ] `Home` → `collection.first`
+      - [ ] `End` → `collection.last`
+      - [ ] `Enter`/`Space` on regular item → `activateItem` (dispatch `MenuItemSelectEvent`, `closeMenuTree`)
+      - [ ] `Enter`/`Space` on submenu trigger → dispatch `aria-ui:open-submenu` on the element
+      - [ ] `ArrowRight` on submenu trigger → dispatch `aria-ui:open-submenu` on the element
+      - [ ] `ArrowLeft` (if `store.parentStore` exists) → `store.emitOpenChange(false)` (close submenu)
+      - [ ] `Escape` → `store.emitOpenChange(false)`
+      - [ ] Printable character → typeahead
+    - [ ] Bind keydown handler to `eventTarget` prop or `host` (reactive effect with cleanup)
+    - [ ] Typeahead logic: module-scoped buffer + 500ms debounce timer, match `collection.getValues()` by prefix
+    - [ ] `activateItem` helper: find element, dispatch `MenuItemSelectEvent`, `closeMenuTree` if not prevented
+    - [ ] `focusout` handler → if `relatedTarget` is outside `aria-ui-menu-root`, call `closeMenuTree`
+  - [ ] `MenuPopupElement` class
+  - [ ] `registerMenuPopupElement` (tag: `aria-ui-menu-popup`)
+
+### Phase 3: Submenu Elements
+
+- [ ] **3.1** Implement `menu-submenu-root.ts`
+  - [ ] `MenuSubmenuRootProps` (empty)
+  - [ ] `MenuSubmenuRootPropsDeclaration`
+  - [ ] `MenuSubmenuRootEvents` with `openChange: OpenChangeEvent`
+  - [ ] `setupMenuSubmenuRoot`
+    - [ ] Consume `MenuStoreContext` (gets parent store via same-element skip)
+    - [ ] Create internal `open` signal
+    - [ ] Create `emitOpenChange` (dispatch `OpenChangeEvent`, set `open` if not prevented)
+    - [ ] Create child `MenuStore` with `getOpen` / `emitOpenChange`
+    - [ ] Provide child store via `MenuStoreContext` (shadows parent)
+    - [ ] Effect: link `childStore.parentStore = getParentStore()` (reactive)
+    - [ ] Cascade close effect: when `parentStore.getOpen()` is false → set `open` to false
+    - [ ] Re-focus effect: when `open` becomes false → find nearest `aria-ui-menu-popup` ancestor → `requestAnimationFrame(() => parentPopup.focus())`
+  - [ ] `MenuSubmenuRootElement` class
+  - [ ] `registerMenuSubmenuRootElement` (tag: `aria-ui-menu-submenu-root`)
+
+- [ ] **3.2** Implement `menu-submenu-trigger.ts`
+  - [ ] `MenuSubmenuTriggerProps` with `value: string`, `disabled: boolean`
+  - [ ] `MenuSubmenuTriggerPropsDeclaration`
+  - [ ] `setupMenuSubmenuTrigger`
+    - [ ] Set `role="menuitem"` and `aria-haspopup="menu"` on mount
+    - [ ] `useElementId` for `aria-activedescendant` support
+    - [ ] Consume `MenuStoreContext` → child store
+    - [ ] Derive `getParentStore` from `getStore()?.parentStore`
+    - [ ] Set `anchorElement` on child store
+    - [ ] Sync `aria-expanded` from child store's open state
+    - [ ] `useAriaDisabled`
+    - [ ] Sync `data-value` attribute
+    - [ ] Track `data-active` from **parent** store's `activeValue`
+    - [ ] `rebuildCollection` — same logic as `MenuItem` but registers in **parent** store's collection
+    - [ ] Call `rebuildCollection` on mount/unmount and when `value`/`disabled` change
+    - [ ] Hover interaction:
+      - [ ] `mouseenter` → set parent `activeValue`, start open timer (200ms)
+      - [ ] `mouseleave` → start close timer (150ms), cancel if `relatedTarget` is inside `MenuSubmenuRoot`
+      - [ ] Clear timers on unmount
+    - [ ] Effect: close submenu when parent `activeValue` moves away (with `CLOSE_DELAY`)
+    - [ ] Listen for `aria-ui:open-submenu` event → `store.emitOpenChange(true)`
+    - [ ] `click` → toggle child store open/close
+  - [ ] `MenuSubmenuTriggerElement` class
+  - [ ] `registerMenuSubmenuTriggerElement` (tag: `aria-ui-menu-submenu-trigger`)
+
+### Phase 4: Registration & Exports
+
+- [ ] **4.1** Update `packages/elements/src/index.ts`
+  - [ ] Import all 7 element classes and their register functions
+  - [ ] Add all 7 to the `export {}` block
+  - [ ] Add all 7 `register*Element()` calls inside `registerElements()`
+  - [ ] Add all 7 tag names to `HTMLElementTagNameMap`
+
+### Phase 5: Tests
+
+- [ ] **5.1** Create `menu.test.ts` — flat menu tests
+  - [ ] Basic functionality (renders, hidden by default, defaultOpen)
+  - [ ] Trigger interactions (click open/close, Enter/Space, ARIA attributes, disabled)
+  - [ ] Keyboard navigation (ArrowDown/Up, Home/End, loop wrapping, skip disabled)
+  - [ ] Item activation (Enter/Space/click, close on activate, select event, preventDefault, disabled)
+  - [ ] Close behaviors (Escape, Tab/focusout)
+  - [ ] Typeahead (single char, multi char, case insensitive, no match)
+  - [ ] Accessibility (role, aria-activedescendant, aria-disabled, data-active)
+  - [ ] Events (openChange emitted, openChange preventable)
+  - [ ] Custom eventTarget (navigation, activation)
+  - [ ] Positioning (default bottom-start, custom placement)
+  - [ ] Mouse interaction (hover highlights, disabled hover, mouse vs keyboard)
+
+- [ ] **5.2** Add submenu tests to `menu.test.ts`
+  - [ ] Submenu basic (role, aria-haspopup, aria-expanded, hidden by default, parent navigation, data-active)
+  - [ ] Submenu opening (hover delay, ArrowRight, Enter, Space, click, first item highlighted, aria-expanded update, disabled)
+  - [ ] Submenu closing (ArrowLeft, Escape scoped, item click closes tree, parent close cascades, mouse move away)
+  - [ ] Submenu navigation (scoped ArrowDown/Up, scoped Home/End, scoped typeahead, ArrowRight on non-trigger, ArrowLeft in root)
+  - [ ] Nested 3 levels (ArrowRight chain, ArrowLeft chain, Escape scoped, item click closes all, root close closes all)
+  - [ ] Multiple submenus (one at a time, opening B closes A, ArrowDown from A to B)
+  - [ ] Mouse safe zone (trigger→popup, popup→parent, popup→outside)
+  - [ ] Focus (return to top trigger on tree close, Tab closes tree)
+
+### Phase 6: Stories
+
+- [ ] **6.1** Create `website/stories/menu/basic.html` — flat menu with Cut/Copy/Paste/Delete
+- [ ] **6.2** Create `website/stories/menu/disabled-items.html` — menu with some disabled items
+- [ ] **6.3** Create `website/stories/menu/submenu.html` — menu with two submenus (Share, Export As)
+- [ ] **6.4** Create `website/stories/menu/nested-submenu.html` — three-level deep menu
+- [ ] **6.5** Create `website/stories/menu.astro` — Astro wrapper with story routing
+- [ ] **6.6** Create `website/stories/menu.stories.ts` — Storybook metadata (Basic, DisabledItems, Submenu, NestedSubmenu)
+
+### Phase 7: Build & Verify
+
+- [ ] **7.1** Run `pnpm -w run build:package` — generates framework wrappers (React, Preact, Solid, Vue, Svelte)
+- [ ] **7.2** Run `pnpm -w fix` — auto-fix lint/format issues
+- [ ] **7.3** Run `pnpm -w typecheck` — verify no type errors
+- [ ] **7.4** Run `pnpm -w lint` — verify no lint issues
+- [ ] **7.5** Run `pnpm --filter @aria-ui-v2/elements test` — verify all tests pass
+- [ ] **7.6** Start website dev server, verify all 4 stories render and function correctly
+
+### Phase 8: Review & Polish
+
+- [ ] **8.1** Verify all exports follow `@public` / `@internal` rules from AGENTS.md
+- [ ] **8.2** Verify all props have `@default` JSDoc tags matching declaration defaults
+- [ ] **8.3** Verify no optional `?` modifiers on prop interfaces
+- [ ] **8.4** Verify no unnecessary JSDoc/comments added
+- [ ] **8.5** Verify `null` used instead of `undefined` for prop defaults
+- [ ] **8.6** Manual test: keyboard navigation through flat menu
+- [ ] **8.7** Manual test: keyboard navigation into/out of submenu
+- [ ] **8.8** Manual test: mouse hover submenu open/close timing
+- [ ] **8.9** Manual test: 3-level nested submenu ArrowRight/ArrowLeft chain
+- [ ] **8.10** Manual test: focus return to trigger after menu tree closes

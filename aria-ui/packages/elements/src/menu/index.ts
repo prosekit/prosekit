@@ -6,4 +6,4 @@ export { MenuSubmenuRootElement, registerMenuSubmenuRootElement } from './menu-s
 export { MenuSubmenuTriggerElement, registerMenuSubmenuTriggerElement } from './menu-submenu-trigger.ts'
 export { MenuTriggerElement, registerMenuTriggerElement } from './menu-trigger.ts'
 
-export { type MenuStore, createMenuStore, MenuStoreContext } from './menu-store.ts'
+export { type MenuStore, createMenuStore, closeMenuTree, MenuStoreContext } from './menu-store.ts'

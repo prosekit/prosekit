@@ -48,14 +48,12 @@ export function setupTableHandleColumnTrigger(
 
   // Set anchor for menu positioning
   useEffect(host, () => {
-  getMenuStore()?.setAnchorElement(host)
+    getMenuStore()?.overlayStore.setAnchorElement(host)
   })
 
   // Toggle menu on click
   useEventListener(host, 'click', () => {
-    const store = getMenuStore()
-    if (!store) return
-    store.requestOpenToggle()
+    getMenuStore()?.overlayStore.requestOpenToggle()
   })
 
   // Select column on pointerdown

@@ -46,14 +46,12 @@ export function setupTableHandleRowTrigger(
 
   // Set anchor for menu positioning
   useEffect(host, () => {
-  getMenuStore()?.setAnchorElement(host)
+    getMenuStore()?.overlayStore.setAnchorElement(host)
   })
 
   // Toggle menu on click
   useEventListener(host, 'click', () => {
-    const store = getMenuStore()
-    if (!store) return
-    store.emitOpenChange(!store.getOpen())
+    getMenuStore()?.overlayStore.requestOpenToggle()
   })
 
   // Select row on pointerdown

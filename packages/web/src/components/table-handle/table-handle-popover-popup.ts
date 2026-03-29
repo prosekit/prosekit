@@ -53,7 +53,7 @@ export function setupTableHandlePopoverPopup(
   useEffect(host, () => {
     const store = getStore()
     if (!store) return
-    store.setPopupId(id)
+    store.overlayStore.setPopupId(id)
   })
 
   onMount(host, () => {
@@ -64,18 +64,18 @@ export function setupTableHandlePopoverPopup(
   useEffect(host, () => {
     const store = getStore()
     if (!store) return
-    host.dataset.state = store.getOpen() ? 'open' : 'closed'
+    host.dataset.state = store.overlayStore.getIsOpen() ? 'open' : 'closed'
   })
 
   useEffect(host, () => {
     const store = getStore()
     if (!store) return
-    const activeValue = store.activeValue.get()
+    const activeValue = store.getActiveValue()
     if (activeValue == null) {
       host.removeAttribute('aria-activedescendant')
       return
     }
-    const element = store.collection.get().getElement(activeValue)
+    const element = store.getCollection().getElement(activeValue)
     if (element?.id) {
       host.setAttribute('aria-activedescendant', element.id)
     } else {
@@ -86,17 +86,17 @@ export function setupTableHandlePopoverPopup(
   useEffect(host, () => {
     const store = getStore()
     if (!store) return
-    const open = store.getOpen()
+    const open = store.overlayStore.getIsOpen()
 
     if (open) {
       resetTypeahead()
       requestAnimationFrame(() => {
         host.focus()
-        const collection = store.collection.get()
-        store.activeValue.set(collection.first())
+        const collection = store.getCollection()
+        store.setActiveValue(collection.first())
       })
     } else {
-      store.activeValue.set(null)
+      store.setActiveValue(null)
     }
   })
 
@@ -105,12 +105,12 @@ export function setupTableHandlePopoverPopup(
 
     const store = getStore()
     if (!store) return
-    if (!store.getOpen()) return
+    if (!store.overlayStore.getIsOpen()) return
 
-    const collection = store.collection.get()
+    const collection = store.getCollection()
     if (collection.size() === 0) return
 
-    const currentValue = store.activeValue.get()
+    const currentValue = store.getActiveValue()
     let nextValue: string | null = null
 
     switch (event.key) {

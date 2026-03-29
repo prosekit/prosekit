@@ -11,9 +11,8 @@ import {
   type PropsDeclaration,
   type Store,
 } from '@aria-ui-v2/core'
-import { MenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import { OpenChangeEvent } from '@aria-ui-v2/elements/overlay'
-import { OverlayPositionerPropsDeclaration, updatePlacement, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
+import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
+import { createOverlayStore, OverlayPositionerPropsDeclaration, updatePlacement, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
 import { once } from '@ocavue/utils'
@@ -139,17 +138,18 @@ export function setupTableHandleRowRoot(
   usePresence(host, getPresence)
 
   // Menu store
-  const getOpen = () => contentOpen.get()
-  const emitOpenChange = (open: boolean) => {
-    const event = new OpenChangeEvent(open)
-    host.dispatchEvent(event)
-    if (event.defaultPrevented) return
-    contentOpen.set(open)
-  }
-  const menuStore = new MenuStore(getOpen, emitOpenChange)
+  const overlayStore = createOverlayStore(
+    contentOpen.get,
+    contentOpen.set,
+    () => false,
+    () => false,
+    (event) => host.dispatchEvent(event),
+  )
+  const menuStore = createMenuStore(overlayStore)
   MenuStoreContext.provide(host, menuStore)
 
   onMount(host, () => {
+    // TODO: understand why we need zIndex here and if there's a better way to handle it
     host.style.zIndex = '10'
   })
 }

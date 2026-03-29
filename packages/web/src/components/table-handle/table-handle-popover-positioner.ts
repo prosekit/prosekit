@@ -40,7 +40,8 @@ export function setupTableHandlePopoverPositioner(
   host: HostElement,
   props: Store<TableHandlePopoverPositionerProps>,
 ): void {
-  setupOverlayPositioner(host, props, MenuStoreContext)
+  const getMenuStore = MenuStoreContext.consume(host)
+  setupOverlayPositioner(host, props, () => getMenuStore()?.overlayStore)
 }
 
 const TableHandlePopoverPositionerElementBase: HostElementConstructor<TableHandlePopoverPositionerProps> = defineCustomElement(

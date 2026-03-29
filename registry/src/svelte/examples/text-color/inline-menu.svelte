@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue, useKeymap } from 'prosekit/svelte'
-import { InlinePopover } from 'prosekit/svelte/inline-popover'
+import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/svelte/inline-popover'
 import { toStore } from 'svelte/store'
 
 import { Button } from '../../ui/button'
@@ -80,45 +80,50 @@ const keymap = $derived({
 useKeymap(toStore(() => keymap))
 </script>
 
-<InlinePopover
-  class="CSS_INLINE_MENU_MAIN"
+<InlinePopoverRoot
   {open}
   onOpenChange={(event) => open = event.open}
 >
-  <div class="flex flex-col gap-4 p-4">
-    <div class="flex flex-col gap-2">
-      <div class="text-sm">Text color</div>
-      <div class="grid grid-cols-5 gap-1">
-        {#each $textColorState as color (color.label)}
-          <Button
-            pressed={color.isActive}
-            tooltip={`Text: ${color.label}`}
-            onClick={color.onClick}
-          >
-            <span class="text-base font-medium" style:color={color.value}>
-              A
-            </span>
-          </Button>
-        {/each}
+  <InlinePopoverPositioner>
+    <InlinePopoverPopup
+      class="CSS_INLINE_MENU_MAIN"
+    >
+      <div class="flex flex-col gap-4 p-4">
+        <div class="flex flex-col gap-2">
+          <div class="text-sm">Text color</div>
+          <div class="grid grid-cols-5 gap-1">
+            {#each $textColorState as color (color.label)}
+              <Button
+                pressed={color.isActive}
+                tooltip={`Text: ${color.label}`}
+                onClick={color.onClick}
+              >
+                <span class="text-base font-medium" style:color={color.value}>
+                  A
+                </span>
+              </Button>
+            {/each}
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm">Background color</div>
+          <div class="grid grid-cols-5 gap-1">
+            {#each $backgroundColorState as color (color.label)}
+              <Button
+                pressed={color.isActive}
+                tooltip={`Background: ${color.label}`}
+                onClick={color.onClick}
+              >
+                <div
+                  class="w-6 h-6 rounded border border-gray-200 dark:border-gray-700"
+                  style:background-color={color.value}
+                >
+                </div>
+              </Button>
+            {/each}
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-col gap-2">
-      <div class="text-sm">Background color</div>
-      <div class="grid grid-cols-5 gap-1">
-        {#each $backgroundColorState as color (color.label)}
-          <Button
-            pressed={color.isActive}
-            tooltip={`Background: ${color.label}`}
-            onClick={color.onClick}
-          >
-            <div
-              class="w-6 h-6 rounded border border-gray-200 dark:border-gray-700"
-              style:background-color={color.value}
-            >
-            </div>
-          </Button>
-        {/each}
-      </div>
-    </div>
-  </div>
-</InlinePopover>
+    </InlinePopoverPopup>
+  </InlinePopoverPositioner>
+</InlinePopoverRoot>

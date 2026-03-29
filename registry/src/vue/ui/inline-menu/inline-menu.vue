@@ -91,103 +91,112 @@ function handleLinkUpdate(href?: string) {
 </script>
 
 <template>
-  <InlinePopover
-    data-testid="inline-menu-main"
-    class="CSS_INLINE_MENU_MAIN"
+  <InlinePopoverRoot
     @open-change="(event) => {
       if (!event.open) linkMenuOpen = false
     }"
   >
-    <Button
-      v-if="items.bold"
-      :pressed="items.bold.isActive"
-      :disabled="!items.bold.canExec"
-      tooltip="Bold"
-      @click="items.bold.command"
-    >
-      <div class="CSS_ICON_BOLD"></div>
-    </Button>
-    <Button
-      v-if="items.italic"
-      :pressed="items.italic.isActive"
-      :disabled="!items.italic.canExec"
-      tooltip="Italic"
-      @click="items.italic.command"
-    >
-      <div class="CSS_ICON_ITALIC"></div>
-    </Button>
-    <Button
-      v-if="items.underline"
-      :pressed="items.underline.isActive"
-      :disabled="!items.underline.canExec"
-      tooltip="Underline"
-      @click="items.underline.command"
-    >
-      <div class="CSS_ICON_UNDERLINE"></div>
-    </Button>
-    <Button
-      v-if="items.strike"
-      :pressed="items.strike.isActive"
-      :disabled="!items.strike.canExec"
-      tooltip="Strikethrough"
-      @click="items.strike.command"
-    >
-      <div class="CSS_ICON_STRIKETHROUGH"></div>
-    </Button>
-    <Button
-      v-if="items.code"
-      :pressed="items.code.isActive"
-      :disabled="!items.code.canExec"
-      tooltip="Code"
-      @click="items.code.command"
-    >
-      <div class="CSS_ICON_CODE"></div>
-    </Button>
-    <Button
-      v-if="items.link?.canExec && items.link"
-      :pressed="items.link.isActive"
-      tooltip="Link"
-      @click="() => {
-        items.link!.command()
-        toggleLinkMenuOpen()
-      }"
-    >
-      <div class="CSS_ICON_LINK"></div>
-    </Button>
-  </InlinePopover>
+    <InlinePopoverPositioner>
+      <InlinePopoverPopup
+        data-testid="inline-menu-main"
+        class="CSS_INLINE_MENU_MAIN"
+      >
+        <Button
+          v-if="items.bold"
+          :pressed="items.bold.isActive"
+          :disabled="!items.bold.canExec"
+          tooltip="Bold"
+          @click="items.bold.command"
+        >
+          <div class="CSS_ICON_BOLD"></div>
+        </Button>
+        <Button
+          v-if="items.italic"
+          :pressed="items.italic.isActive"
+          :disabled="!items.italic.canExec"
+          tooltip="Italic"
+          @click="items.italic.command"
+        >
+          <div class="CSS_ICON_ITALIC"></div>
+        </Button>
+        <Button
+          v-if="items.underline"
+          :pressed="items.underline.isActive"
+          :disabled="!items.underline.canExec"
+          tooltip="Underline"
+          @click="items.underline.command"
+        >
+          <div class="CSS_ICON_UNDERLINE"></div>
+        </Button>
+        <Button
+          v-if="items.strike"
+          :pressed="items.strike.isActive"
+          :disabled="!items.strike.canExec"
+          tooltip="Strikethrough"
+          @click="items.strike.command"
+        >
+          <div class="CSS_ICON_STRIKETHROUGH"></div>
+        </Button>
+        <Button
+          v-if="items.code"
+          :pressed="items.code.isActive"
+          :disabled="!items.code.canExec"
+          tooltip="Code"
+          @click="items.code.command"
+        >
+          <div class="CSS_ICON_CODE"></div>
+        </Button>
+        <Button
+          v-if="items.link?.canExec && items.link"
+          :pressed="items.link.isActive"
+          tooltip="Link"
+          @click="() => {
+            items.link!.command()
+            toggleLinkMenuOpen()
+          }"
+        >
+          <div class="CSS_ICON_LINK"></div>
+        </Button>
+      </InlinePopoverPopup>
+    </InlinePopoverPositioner>
+  </InlinePopoverRoot>
 
-  <InlinePopover
+  <InlinePopoverRoot
     v-if="items.link"
-    placement="bottom"
     :default-open="false"
     :open="linkMenuOpen"
-    data-testid="inline-menu-link"
-    class="CSS_INLINE_MENU_LINK"
     @open-change="(event) => {
       linkMenuOpen = event.open
     }"
   >
-    <form
-      v-if="linkMenuOpen"
-      @submit.prevent="(event) => {
-        const target = event.target as HTMLFormElement | null
-        const href = target?.querySelector('input')?.value?.trim()
-        handleLinkUpdate(href)
-      }"
-    >
-      <input
-        placeholder="Paste the link..."
-        :value="items.link.currentLink || ''"
-        class="CSS_INLINE_MENU_LINK_INPUT"
+    <InlinePopoverPositioner placement="bottom">
+      <InlinePopoverPopup
+        data-testid="inline-menu-link"
+        class="CSS_INLINE_MENU_LINK"
       >
-    </form>
-    <button
-      v-if="items.link.isActive"
-      class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
-      @click="() => handleLinkUpdate()"
-      @mousedown.prevent
-    >
-      Remove link
-    </button>
-  </InlinePopover>
+        <form
+          v-if="linkMenuOpen"
+          @submit.prevent="(event) => {
+            const target = event.target as HTMLFormElement | null
+            const href = target?.querySelector('input')?.value?.trim()
+            handleLinkUpdate(href)
+          }"
+        >
+          <input
+            placeholder="Paste the link..."
+            :value="items.link.currentLink || ''"
+            class="CSS_INLINE_MENU_LINK_INPUT"
+          >
+        </form>
+        <button
+          v-if="items.link.isActive"
+          class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
+          @click="() => handleLinkUpdate()"
+          @mousedown.prevent
+        >
+          Remove link
+        </button>
+      </InlinePopoverPopup>
+    </InlinePopoverPositioner>
+  </InlinePopoverRoot>
 </template>

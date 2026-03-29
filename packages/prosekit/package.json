@@ -152,6 +152,7 @@
     "./web/block-handle": "./src/web/block-handle.gen.ts",
     "./web/drop-indicator": "./src/web/drop-indicator.gen.ts",
     "./web/inline-popover": "./src/web/inline-popover.gen.ts",
+    "./web/menu": "./src/web/menu.gen.ts",
     "./web/popover": "./src/web/popover.gen.ts",
     "./web/resizable": "./src/web/resizable.gen.ts",
     "./web/table-handle": "./src/web/table-handle.gen.ts",
@@ -740,6 +741,10 @@
         "types": "./dist/prosekit-web-inline-popover.d.ts",
         "default": "./dist/prosekit-web-inline-popover.js"
       },
+      "./web/menu": {
+        "types": "./dist/prosekit-web-menu.d.ts",
+        "default": "./dist/prosekit-web-menu.js"
+      },
       "./web/popover": {
         "types": "./dist/prosekit-web-popover.d.ts",
         "default": "./dist/prosekit-web-popover.js"
@@ -1102,6 +1107,9 @@
         "web/inline-popover": [
           "./dist/prosekit-web-inline-popover.d.ts"
         ],
+        "web/menu": [
+          "./dist/prosekit-web-menu.d.ts"
+        ],
         "web/popover": [
           "./dist/prosekit-web-popover.d.ts"
         ],
@@ -1245,6 +1253,7 @@
       "prosekit-web-block-handle": "./src/web/block-handle.gen.ts",
       "prosekit-web-drop-indicator": "./src/web/drop-indicator.gen.ts",
       "prosekit-web-inline-popover": "./src/web/inline-popover.gen.ts",
+      "prosekit-web-menu": "./src/web/menu.gen.ts",
       "prosekit-web-popover": "./src/web/popover.gen.ts",
       "prosekit-web-resizable": "./src/web/resizable.gen.ts",
       "prosekit-web-table-handle": "./src/web/table-handle.gen.ts",

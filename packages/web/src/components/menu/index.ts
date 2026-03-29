@@ -11,7 +11,6 @@ import { once } from '@ocavue/utils'
 export {
   MenuItemElement,
   MenuItemPropsDeclaration,
-  MenuItemSelectEvent,
   MenuPopupElement,
   MenuPopupPropsDeclaration,
   MenuPositionerElement,
@@ -26,7 +25,6 @@ export {
   setupMenuPositioner,
   setupMenuRoot,
   setupMenuTrigger,
-  type MenuItemEvents,
   type MenuItemProps,
   type MenuPopupProps,
   type MenuPositionerProps,
@@ -39,7 +37,7 @@ export {
 export const registerMenuRootElement: VoidFunction = /* @__PURE__ */ once(() => {
   registerCustomElement('prosekit-menu-root', MenuRootElement)
 })
-export const registerMenuTriggerElement: VoidFunction = /* @__PURE__  */ once(() => {
+export const registerMenuTriggerElement: VoidFunction = /* @__PURE__ */ once(() => {
   registerCustomElement('prosekit-menu-trigger', MenuTriggerElement)
 })
 export const registerMenuPositionerElement: VoidFunction = /* @__PURE__ */ once(() => {

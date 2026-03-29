@@ -3,10 +3,7 @@
  */
 
 import MenuItemComponent from "./menu-item.gen.svelte";
-import {
-  type MenuItemEvents,
-  type MenuItemProps as MenuItemElementProps,
-} from "@prosekit/web/menu";
+import type { MenuItemProps as MenuItemElementProps } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 
 /**
@@ -27,8 +24,6 @@ export interface MenuItemProps {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
-  /** Fired when the item is selected. */
-  onSelect?: (event: MenuItemEvents["select"]) => void;
   children?: Snippet;
   [key: string]: unknown;
 }
@@ -40,6 +35,3 @@ export interface MenuItemProps {
  */
 export const MenuItem: Component<MenuItemProps> =
   MenuItemComponent as unknown as Component<MenuItemProps>;
-
-export type { MenuItemEvents };
-export { MenuItemSelectEvent } from "@prosekit/web/menu";

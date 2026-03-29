@@ -3,7 +3,7 @@
  */
 
 import PopoverPositionerComponent from "./popover-positioner.gen.svelte";
-import { type PopoverPositionerProps as PopoverPositionerElementProps } from "@prosekit/web/popover";
+import type { PopoverPositionerProps as PopoverPositionerElementProps } from "@prosekit/web/popover";
 import type { Component, Snippet } from "svelte";
 
 /**

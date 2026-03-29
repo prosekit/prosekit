@@ -3,7 +3,7 @@
  */
 
 import BlockHandleAddComponent from "./block-handle-add.gen.svelte";
-import { type BlockHandleAddProps as BlockHandleAddElementProps } from "@prosekit/web/block-handle";
+import type { BlockHandleAddProps as BlockHandleAddElementProps } from "@prosekit/web/block-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

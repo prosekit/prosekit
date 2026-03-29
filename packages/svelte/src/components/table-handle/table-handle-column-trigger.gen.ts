@@ -3,7 +3,7 @@
  */
 
 import TableHandleColumnTriggerComponent from "./table-handle-column-trigger.gen.svelte";
-import { type TableHandleColumnTriggerProps as TableHandleColumnTriggerElementProps } from "@prosekit/web/table-handle";
+import type { TableHandleColumnTriggerProps as TableHandleColumnTriggerElementProps } from "@prosekit/web/table-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

@@ -3,7 +3,7 @@
  */
 
 import BlockHandleDraggableComponent from "./block-handle-draggable.gen.svelte";
-import { type BlockHandleDraggableProps as BlockHandleDraggableElementProps } from "@prosekit/web/block-handle";
+import type { BlockHandleDraggableProps as BlockHandleDraggableElementProps } from "@prosekit/web/block-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

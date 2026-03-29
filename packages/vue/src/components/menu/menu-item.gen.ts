@@ -13,7 +13,6 @@ import {
 } from "vue";
 import {
   registerMenuItemElement,
-  type MenuItemEvents,
   type MenuItemProps as MenuItemElementProps,
 } from "@prosekit/web/menu";
 
@@ -35,8 +34,6 @@ export interface MenuItemProps {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
-  /** Fired when the item is selected. */
-  onSelect?: (event: MenuItemEvents["select"]) => void;
 }
 
 /**
@@ -52,39 +49,17 @@ export const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes> =
       const elementRef = shallowRef<HTMLElement | null>(null);
 
       const splittedProps = computed(() => {
-        const { disabled: p0, value: p1, onSelect: e0, ...restProps } = props;
-        return [[p0, p1, e0], restProps] as const;
+        const { disabled: p0, value: p1, ...restProps } = props;
+        return [[p0, p1], restProps] as const;
       });
-
-      const handlers: Array<((event: any) => void) | undefined> = [];
 
       watchEffect(() => {
         const element = elementRef.value;
         if (!element) return;
 
-        const [p0, p1, e0] = splittedProps.value[0];
+        const [p0, p1] = splittedProps.value[0];
 
         Object.assign(element, { disabled: p0, value: p1 });
-
-        handlers.length = 0;
-        handlers.push(e0);
-      });
-
-      watchEffect(() => {
-        const element = elementRef.value;
-        if (!element) return;
-
-        const ac = new AbortController();
-        for (const [index, eventName] of ["select"].entries()) {
-          element.addEventListener(
-            eventName,
-            (event: Event) => {
-              handlers[index]?.(event);
-            },
-            { signal: ac.signal },
-          );
-        }
-        return () => ac.abort();
       });
 
       return () => {
@@ -96,8 +71,5 @@ export const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes> =
         );
       };
     },
-    { props: ["disabled", "value", "onSelect"] },
+    { props: ["disabled", "value"] },
   );
-
-export type { MenuItemEvents };
-export { MenuItemSelectEvent } from "@prosekit/web/menu";

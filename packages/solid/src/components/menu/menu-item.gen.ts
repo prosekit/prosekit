@@ -5,7 +5,6 @@
 import {
   registerMenuItemElement,
   type MenuItemElement,
-  type MenuItemEvents,
   type MenuItemProps as MenuItemElementProps,
 } from "@prosekit/web/menu";
 import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
@@ -30,8 +29,6 @@ export interface MenuItemProps extends JSX.HTMLAttributes<MenuItemElement> {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
-  /** Fired when the item is selected. */
-  onSelect?: (event: MenuItemEvents["select"]) => void;
 }
 
 /**
@@ -43,13 +40,8 @@ export const MenuItem: Component<MenuItemProps> = (props): any => {
   registerMenuItemElement();
 
   const [getElement, setElement] = createSignal<MenuItemElement | null>(null);
-  const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(
-    props,
-    ["disabled", "value"],
-    ["onSelect"],
-  );
+  const [elementProps, restProps] = splitProps(props, ["disabled", "value"]);
 
   createEffect(() => {
     const element = getElement();
@@ -59,26 +51,6 @@ export const MenuItem: Component<MenuItemProps> = (props): any => {
       disabled: elementProps.disabled,
       value: elementProps.value,
     });
-
-    handlers.length = 0;
-    handlers.push(eventHandlers.onSelect);
-  });
-
-  createEffect(() => {
-    const element = getElement();
-    if (!element) return;
-
-    const ac = new AbortController();
-    for (const [index, eventName] of ["select"].entries()) {
-      element.addEventListener(
-        eventName,
-        (event) => {
-          handlers[index]?.(event);
-        },
-        { signal: ac.signal },
-      );
-    }
-    return () => ac.abort();
   });
 
   return h(
@@ -90,6 +62,3 @@ export const MenuItem: Component<MenuItemProps> = (props): any => {
     }),
   );
 };
-
-export type { MenuItemEvents };
-export { MenuItemSelectEvent } from "@prosekit/web/menu";

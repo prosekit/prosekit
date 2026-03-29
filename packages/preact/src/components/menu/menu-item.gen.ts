@@ -13,7 +13,6 @@ import {
   registerMenuItemElement,
   type MenuItemElement,
   type MenuItemProps as MenuItemElementProps,
-  type MenuItemEvents,
 } from "@prosekit/web/menu";
 
 /**
@@ -34,8 +33,6 @@ export interface MenuItemProps extends HTMLAttributes<MenuItemElement> {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
-  /** Fired when the item is selected. */
-  onSelect?: (event: MenuItemEvents["select"]) => void;
 }
 
 function MenuItemComponent(
@@ -45,32 +42,14 @@ function MenuItemComponent(
   registerMenuItemElement();
 
   const elementRef = useRef<MenuItemElement>(null);
-  const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
-  const { disabled: p0, value: p1, onSelect: e0, ...restProps } = props;
+  const { disabled: p0, value: p1, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
     Object.assign(element, { disabled: p0, value: p1 });
-    handlersRef.current = [e0] as Array<((event: Event) => void) | undefined>;
   });
-
-  useLayoutEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-    const ac = new AbortController();
-    for (const [index, eventName] of ["select"].entries()) {
-      element.addEventListener(
-        eventName,
-        (event: Event) => {
-          handlersRef.current[index]?.(event);
-        },
-        { signal: ac.signal },
-      );
-    }
-    return () => ac.abort();
-  }, []);
 
   const mergedRef = useCallback((element: MenuItemElement | null) => {
     elementRef.current = element;
@@ -96,6 +75,3 @@ function MenuItemComponent(
 export const MenuItem: ForwardRefExoticComponent<
   MenuItemProps & RefAttributes<MenuItemElement>
 > = /* @__PURE__ */ forwardRef(MenuItemComponent);
-
-export type { MenuItemEvents };
-export { MenuItemSelectEvent } from "@prosekit/web/menu";

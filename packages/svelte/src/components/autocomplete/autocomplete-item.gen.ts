@@ -3,7 +3,7 @@
  */
 
 import AutocompleteItemComponent from "./autocomplete-item.gen.svelte";
-import { type AutocompleteItemProps as AutocompleteItemElementProps } from "@prosekit/web/autocomplete";
+import type { AutocompleteItemProps as AutocompleteItemElementProps } from "@prosekit/web/autocomplete";
 import type { Component, Snippet } from "svelte";
 
 /**

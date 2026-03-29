@@ -887,6 +887,10 @@
     "path": "packages/prosekit/dist/prosekit-web-inline-popover.js"
   },
   {
+    "name": "prosekit/web/menu",
+    "path": "packages/prosekit/dist/prosekit-web-menu.js"
+  },
+  {
     "name": "prosekit/web/popover",
     "path": "packages/prosekit/dist/prosekit-web-popover.js"
   },

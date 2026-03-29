@@ -3,9 +3,9 @@
  */
 
 import BlockHandlePopoverComponent from "./block-handle-popover.gen.svelte";
-import {
-  type BlockHandlePopoverEvents,
-  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
+import type {
+  BlockHandlePopoverEvents,
+  BlockHandlePopoverProps as BlockHandlePopoverElementProps,
 } from "@prosekit/web/block-handle";
 import type { Component, Snippet } from "svelte";
 

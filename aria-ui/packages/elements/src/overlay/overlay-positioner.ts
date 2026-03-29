@@ -2,6 +2,7 @@ import type { Context, HostElement } from '@aria-ui-v2/core'
 import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
 import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
 import type { AutoUpdateOptions, Boundary, ElementContext, OffsetOptions, Placement, RootBoundary } from '@floating-ui/dom'
+import {  isHTMLElement, isNodeLike } from '@ocavue/utils'
 
 import type { OverlayStore } from './overlay-store.ts'
 import { updatePlacement } from './positioning.ts'
@@ -216,7 +217,7 @@ export function setupOverlayPositioner(
       if (FeatureDetection.supportsTogglePopoverSource()) {
         const anchorElement = getAnchorElement()
         host.togglePopover(
-          anchorElement
+          (isNodeLike(anchorElement)  && isHTMLElement(anchorElement))
             ? { force: expectedOpen, source: anchorElement }
             : { force: expectedOpen },
         )

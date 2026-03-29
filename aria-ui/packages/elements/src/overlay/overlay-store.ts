@@ -1,10 +1,11 @@
 import { createSignal } from '@aria-ui-v2/core'
+import type { ReferenceElement } from '@floating-ui/dom'
 
 /**
  * @internal
  */
 export class OverlayStore {
-  readonly anchorElement = createSignal<HTMLElement | undefined>(undefined)
+  readonly anchorElement = createSignal<ReferenceElement | undefined>(undefined)
 
   private positionerId = createSignal<string>('')
 

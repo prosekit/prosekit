@@ -172,14 +172,18 @@ export const InlinePopover: DefineSetupFnComponent<
     const editorContext = useEditorContext();
 
     const _eventHandlers: Record<string, Function> = {};
+    let _abortController: AbortController | undefined;
 
     const _ref = (element: HTMLElement | null | undefined) => {
+      _abortController?.abort();
+      _abortController = undefined;
+
       if (!element) {
         return;
       }
 
-      const abortController = new AbortController();
-      const abortSignal = abortController.signal;
+      _abortController = new AbortController();
+      const abortSignal = _abortController.signal;
 
       element.addEventListener(
         "openChange",
@@ -188,10 +192,6 @@ export const InlinePopover: DefineSetupFnComponent<
         },
         { signal: abortSignal },
       );
-
-      return () => {
-        abortController.abort();
-      };
     };
 
     return () => {

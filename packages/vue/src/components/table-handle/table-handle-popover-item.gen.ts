@@ -42,14 +42,18 @@ export const TableHandlePopoverItem: DefineSetupFnComponent<
   (props, { slots }) => {
     registerTableHandlePopoverItemElement();
     const _eventHandlers: Record<string, Function> = {};
+    let _abortController: AbortController | undefined;
 
     const _ref = (element: HTMLElement | null | undefined) => {
+      _abortController?.abort();
+      _abortController = undefined;
+
       if (!element) {
         return;
       }
 
-      const abortController = new AbortController();
-      const abortSignal = abortController.signal;
+      _abortController = new AbortController();
+      const abortSignal = _abortController.signal;
 
       element.addEventListener(
         "itemSelect",
@@ -58,10 +62,6 @@ export const TableHandlePopoverItem: DefineSetupFnComponent<
         },
         { signal: abortSignal },
       );
-
-      return () => {
-        abortController.abort();
-      };
     };
 
     return () => {

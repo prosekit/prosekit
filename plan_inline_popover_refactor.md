@@ -328,6 +328,8 @@ function setupInlinePopoverRoot(...) {
 
 **最终决策**: 不调用 `setupOverlayRoot`，而是复制其逻辑（只有 ~20 行），这样可以直接持有 store 引用。这和 table-handle-row-root 的做法一致。
 
+<!-- update: do not call setupOverlayRoot; do not copy logic; Use the new exported useOverlayStore function in aria-ui/packages/elements/src/overlay/overlay-root.ts -->
+
 ---
 
 ## 7. TODO

@@ -1,6 +1,7 @@
 import {
   computed,
   defineCustomElement,
+  onMount,
   registerCustomElement,
   type HostElement,
   type HostElementConstructor,
@@ -24,13 +25,16 @@ export const InlinePopoverPopupPropsDeclaration: PropsDeclaration<InlinePopoverP
 /** @internal */
 export function setupInlinePopoverPopup(
   host: HostElement,
-  props: Store<InlinePopoverPopupProps>,
+  _props: Store<InlinePopoverPopupProps>,
 ): void {
-  setupOverlayPopup(host, props, InlinePopoverStoreContext, 'dialog')
-
   const getStore = InlinePopoverStoreContext.consume(host)
+  setupOverlayPopup(host,   getStore,  )
   const getOpen = computed(() => getStore()?.getIsOpen() ?? false)
   usePresence(host, getOpen)
+
+  onMount(host, () => {
+    host.role = "dialog"
+  })
 }
 
 const InlinePopoverPopupElementBase: HostElementConstructor<InlinePopoverPopupProps> = defineCustomElement(

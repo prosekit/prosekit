@@ -7,12 +7,8 @@ import {
   type PropsDeclaration,
   type Store,
 } from '@aria-ui-v2/core'
-import {
-  OpenChangeEvent,
-  OverlayRootPropsDeclaration,
-  useOverlayStore,
-  type OverlayRootProps,
-} from '@aria-ui-v2/elements/overlay'
+import type { OpenChangeEvent } from '@aria-ui-v2/elements/overlay'
+import { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from '@aria-ui-v2/elements/overlay'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { Selection } from '@prosekit/pm/state'
@@ -54,7 +50,9 @@ export interface InlinePopoverRootProps extends OverlayRootProps {
 }
 
 /** @internal */
-export const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRootProps> = /* @__PURE__ */ defineProps<InlinePopoverRootProps>({
+export const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRootProps> = /* @__PURE__ */ defineProps<
+  InlinePopoverRootProps
+>({
   ...OverlayRootPropsDeclaration,
   editor: { default: null, attribute: false, type: 'json' },
   defaultOpen: { default: true, attribute: 'default-open', type: 'boolean' },

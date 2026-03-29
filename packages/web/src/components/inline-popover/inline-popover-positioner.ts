@@ -7,11 +7,7 @@ import {
   type PropsDeclaration,
   type Store,
 } from '@aria-ui-v2/core'
-import {
-  OverlayPositionerPropsDeclaration,
-  setupOverlayPositioner,
-  type OverlayPositionerProps,
-} from '@aria-ui-v2/elements/overlay'
+import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import { once } from '@ocavue/utils'
 
 import { InlinePopoverStoreContext } from './store.ts'
@@ -67,7 +63,9 @@ export interface InlinePopoverPositionerProps extends OverlayPositionerProps {
 }
 
 /** @internal */
-export const InlinePopoverPositionerPropsDeclaration: PropsDeclaration<InlinePopoverPositionerProps> = /* @__PURE__ */ defineProps<InlinePopoverPositionerProps>({
+export const InlinePopoverPositionerPropsDeclaration: PropsDeclaration<InlinePopoverPositionerProps> = /* @__PURE__ */ defineProps<
+  InlinePopoverPositionerProps
+>({
   ...OverlayPositionerPropsDeclaration,
   placement: { default: 'top', attribute: 'placement', type: 'string' },
   offset: { default: 12, attribute: false, type: 'json' },

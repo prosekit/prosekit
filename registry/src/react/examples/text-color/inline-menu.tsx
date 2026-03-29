@@ -84,9 +84,7 @@ export default function InlineMenu() {
       onOpenChange={(event) => setOpen(event.open)}
     >
       <InlinePopoverPositioner>
-        <InlinePopoverPopup
-          className="CSS_INLINE_MENU_MAIN"
-        >
+        <InlinePopoverPopup className="CSS_INLINE_MENU_MAIN">
           <div className="flex flex-col gap-4 p-4">
             <div className="flex flex-col gap-2">
               <div className="text-sm">Text color</div>

@@ -60,9 +60,9 @@ export interface SetupOverlayRootOptions {
  * @internal
  */
 export function useOverlayStore(
-    host: HostElement,
-    props: Store<OverlayRootProps>,
-    options?: SetupOverlayRootOptions,
+  host: HostElement,
+  props: Store<OverlayRootProps>,
+  options?: SetupOverlayRootOptions,
 ): OverlayStore {
   const getOpen = computed(() => {
     const open = props.open.get()
@@ -86,7 +86,6 @@ export function useOverlayStore(
 
   return store
 }
-
 
 // TODO: remove setupOverlayRoot function because it's too lightwight to justify its existence. Instead, we can just call useOverlayStore directly in the component.
 

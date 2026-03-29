@@ -4,5 +4,3 @@ export { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type Overlay
 export { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from './overlay-root.ts'
 export { OverlayStore } from './overlay-store.ts'
 export { updatePlacement } from './positioning.ts'
-
-

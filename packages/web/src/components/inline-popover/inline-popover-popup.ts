@@ -7,11 +7,7 @@ import {
   type PropsDeclaration,
   type Store,
 } from '@aria-ui-v2/core'
-import {
-  OverlayPopupPropsDeclaration,
-  setupOverlayPopup,
-  type OverlayPopupProps,
-} from '@aria-ui-v2/elements/overlay'
+import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '@aria-ui-v2/elements/overlay'
 import { usePresence } from '@aria-ui-v2/utils'
 import { once } from '@ocavue/utils'
 

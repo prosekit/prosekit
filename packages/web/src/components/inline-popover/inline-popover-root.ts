@@ -13,9 +13,9 @@ import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { Selection } from '@prosekit/pm/state'
 
-import { useEditorFocusChangeEvent } from '../../hooks/use-editor-focus-event-v2.ts'
-import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event-v2.ts'
-import { useKeymap } from '../../hooks/use-keymap-v2.ts'
+import { useEditorFocusChangeEvent } from '../../hooks/use-editor-focus-event.ts'
+import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event.ts'
+import { useKeymap } from '../../hooks/use-keymap.ts'
 
 import { InlinePopoverStoreContext } from './store.ts'
 import { getVirtualSelectionElement } from './virtual-selection-element.ts'

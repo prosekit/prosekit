@@ -12,11 +12,7 @@ import {
   type Store,
 } from '@aria-ui-v2/core'
 import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import {
-  createOverlayStore,
-  OverlayPositionerPropsDeclaration,
-  type OverlayPositionerProps,
-} from '@aria-ui-v2/elements/overlay'
+import { createOverlayStore, OverlayPositionerPropsDeclaration, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
 import { isHTMLElement, once } from '@ocavue/utils'
@@ -94,18 +90,15 @@ export function setupTableHandleRowRoot(
 
   const getRowFirstCellPos = computed(() => getStore()?.getHoveringCell()?.rowFirstCellPos)
 
-  const getReferenceCell = computed(():HTMLElement | undefined => {
+  const getReferenceCell = computed((): HTMLElement | undefined => {
     const pos = getRowFirstCellPos()
     const view = getSafeEditorView(getEditor())
-    if (!pos || !view) return  
-    const element = view.nodeDOM(pos)     
-    if (element && isHTMLElement(element)) return element 
+    if (!pos || !view) return
+    const element = view.nodeDOM(pos)
+    if (element && isHTMLElement(element)) return element
   })
 
   const contentOpen = createSignal(false)
-
-
-
 
   // Presence
   const getPresence = computed(() => !!getReferenceCell())
@@ -131,12 +124,9 @@ export function setupTableHandleRowRoot(
     const referenceCell = getReferenceCell()
     overlayStore.setAnchorElement(referenceCell)
     if (referenceCell) {
-      contentOpen.set(true )
+      contentOpen.set(true)
     }
   })
-
-    
-
 
   onMount(host, () => {
     // TODO: understand why we need zIndex here and if there's a better way to handle it

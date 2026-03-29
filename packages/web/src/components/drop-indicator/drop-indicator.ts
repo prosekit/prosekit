@@ -15,8 +15,8 @@ import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import { defineDropIndicator, type ShowHandlerOptions } from '@prosekit/extensions/drop-indicator'
 
-import { useEditorExtension } from '../../hooks/use-editor-extension-v2.ts'
-import { useScrolling } from '../../hooks/use-scrolling-v2.ts'
+import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
+import { useScrolling } from '../../hooks/use-scrolling.ts'
 import { assignStyles } from '../../utils/assign-styles.ts'
 
 export interface DropIndicatorProps {

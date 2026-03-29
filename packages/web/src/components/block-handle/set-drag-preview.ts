@@ -1,7 +1,7 @@
-import { DRAGGING_CLASS_NAME } from '../../../constants.ts'
-import { assignStyles } from '../../../utils/assign-styles.ts'
-import { getClientRect } from '../../../utils/get-client-rect.ts'
-import { maxZIndex } from '../../../utils/max-z-index.ts'
+import { DRAGGING_CLASS_NAME } from '../../constants.ts'
+import { assignStyles } from '../../utils/assign-styles.ts'
+import { getClientRect } from '../../utils/get-client-rect.ts'
+import { maxZIndex } from '../../utils/max-z-index.ts'
 
 /**
  * Sets a drag preview image for the given element and ensures the preview position

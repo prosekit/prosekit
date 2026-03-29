@@ -1,4 +1,4 @@
-import { createContext, type Context } from '@aria-ui/core'
+import { createContext, createSignal, type Context, type Signal } from '@aria-ui-v2/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 
 /**
@@ -12,20 +12,12 @@ export interface HoverState {
 /**
  * @internal
  */
-export type BlockPopoverContext = HoverState | null
+export class BlockHandleStore {
+  readonly hoverState: Signal<HoverState | null> = createSignal<HoverState | null>(null)
+  readonly dragging: Signal<boolean> = createSignal(false)
+}
 
 /**
  * @internal
  */
-export const blockPopoverContext: Context<BlockPopoverContext> = createContext(
-  'prosekit-block-popover-context',
-  null,
-)
-
-/**
- * @internal
- */
-export const draggingContext: Context<boolean> = createContext(
-  'prosekit-block-handle-dragging-context',
-  false,
-)
+export const blockHandleStoreContext: Context<BlockHandleStore> = createContext<BlockHandleStore>('prosekit-block-handle-store')

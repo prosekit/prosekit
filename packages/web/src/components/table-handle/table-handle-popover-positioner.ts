@@ -43,19 +43,18 @@ export function setupTableHandlePopoverPositioner(
 ): void {
   const getMenuStore = MenuStoreContext.consume(host)
   const getOverlayStore = () => {
-    const result = getMenuStore()?.overlayStore; 
+    const result = getMenuStore()?.overlayStore
     console.log('DEBUG getOverlayStore called, returning:', result)
-    return result }
+    return result
+  }
 
-
-    useEffect(host, () => {
-       const overlayStore = getOverlayStore()
-       if (!overlayStore) {
-        return 
-       }
-       console.log("DEBUG getAnchorElement", overlayStore.getAnchorElement())
-       console.log("DEBUG isOpen", overlayStore.getIsOpen())
-
+  useEffect(host, () => {
+    const overlayStore = getOverlayStore()
+    if (!overlayStore) {
+      return
+    }
+    console.log('DEBUG getAnchorElement', overlayStore.getAnchorElement())
+    console.log('DEBUG isOpen', overlayStore.getIsOpen())
   })
 
   setupOverlayPositioner(host, props, getOverlayStore)

@@ -12,14 +12,10 @@ import {
   type Store,
 } from '@aria-ui-v2/core'
 import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import {
-  createOverlayStore,
-  OverlayPositionerPropsDeclaration,
-  type OverlayPositionerProps,
-} from '@aria-ui-v2/elements/overlay'
+import { createOverlayStore, OverlayPositionerPropsDeclaration, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
-import { isElement, isHTMLElement, once } from '@ocavue/utils'
+import { isHTMLElement, once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
@@ -94,12 +90,12 @@ export function setupTableHandleColumnRoot(
 
   const getColFirstCellPos = computed(() => getStore()?.getHoveringCell()?.colFirstCellPos)
 
-  const getReferenceCell = computed ((): HTMLElement | undefined => {
+  const getReferenceCell = computed((): HTMLElement | undefined => {
     const pos = getColFirstCellPos()
     const view = getSafeEditorView(getEditor())
-    if (!pos || !view) return  
-    const element = view.nodeDOM(pos)     
-    if (element && isHTMLElement(element)) return element 
+    if (!pos || !view) return
+    const element = view.nodeDOM(pos)
+    if (element && isHTMLElement(element)) return element
   })
 
   const contentOpen = createSignal(false)
@@ -110,31 +106,28 @@ export function setupTableHandleColumnRoot(
     contentOpen.set(false)
   })
 
-
   // Presence
   const getPresence = computed(() => !!getReferenceCell())
   useAttribute(host, 'data-state', () => (getPresence() ? 'open' : 'closed'))
   usePresence(host, getPresence)
 
-
   // Menu store
   const overlayStore = createOverlayStore(
     contentOpen.get,
     contentOpen.set,
-    () => true ,
+    () => true,
     () => false,
     (event) => host.dispatchEvent(event),
   )
   const menuStore = createMenuStore(overlayStore)
   MenuStoreContext.provide(host, menuStore)
 
-    useEffect(host, () => {
+  useEffect(host, () => {
     console.log('DEBUG COL reference cell changed:', getReferenceCell())
   })
 
-
   useEffect(host, () => {
-    overlayStore.setAnchorElement(getReferenceCell() )
+    overlayStore.setAnchorElement(getReferenceCell())
   })
 
   onMount(host, () => {

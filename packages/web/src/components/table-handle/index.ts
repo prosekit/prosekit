@@ -80,7 +80,6 @@ export {
   type TableHandleRowTriggerProps,
 } from './table-handle-row-trigger.ts'
 
-
 /**
 
 TODO: use the following sturcutre:
@@ -107,7 +106,7 @@ TODO: use the following sturcutre:
       </TableHandleMenuRoot>
     </TableHandleColumnPopup>
   </TableHandleColumnPositioner >
-   
+
   <!-- row -->
   <TableHandleRowPositioner >
     <TableHandleRowPopup>

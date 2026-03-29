@@ -171,61 +171,45 @@ The dispatcher is just:
 ```typescript
 // @aria-ui-v2/integrations/setup
 
-/**
- * Sets JS properties on a custom element and registers stable event dispatchers.
- *
- * Call once on mount. Returns:
- * - `update(props)`: call on every re-render to update properties and handler references (no DOM calls)
- * - `dispose()`: call on unmount to removeEventListener
- */
-export function setupElementProps(
+
+// 这个函数在一个组件的生命周期当中可能会触发非常多次，每一次 props 变动都会触发它。 
+export function updateElementProps<Props extends object>(
   element: HTMLElement,
-  props: Record<string, unknown>,
-  propNames: readonly string[],
-  eventNameMap: Readonly<Record<string, string>>,
-): { update: (props: Record<string, unknown>) => void; dispose: VoidFunction } {
-  // Mutable handler references — dispatchers read from here
-  const handlers: Record<string, unknown> = {}
+  propsDeclaration: PropsDeclaration<Props>
+  props: ...
 
-  const ac = new AbortController()
+) void  {
+  const eventHandlers = getEventHandlers()
 
-  // Set initial properties
-  for (const name of propNames) {
-    if (name in props) {
-      ;(element as Record<string, unknown>)[name] = props[name]
-    }
+  for (const propName, propDecl of propsDeclaration) {
+    const propValue = props[propName]  
+    element[propName] = propValue === undefined ? propDecl.default : propValue
   }
+}
 
-  // Register stable dispatchers for ALL known events (once)
-  for (const [handlerName, eventName] of Object.entries(eventNameMap)) {
-    handlers[handlerName] = props[handlerName]
-    element.addEventListener(
-      eventName,
-      (event: Event) => {
-        const fn = handlers[handlerName]
-        if (typeof fn === 'function') fn(event)
-      },
-      { signal: ac.signal },
-    )
-  }
+// 这个函数在一个组件的生命周期当中只会触发一次。 
+export function setupElementEventHandlers<Props extends object>(
+  element: HTMLElement,
+  // for example: ['foo', 'bar']
+  events: ...
+  // for example: () => { foo: aFunction }
+  getEventHandlers: ()=> ...
 
-  return {
-    update(props: Record<string, unknown>) {
-      // Update properties (idempotent JS assignments)
-      for (const name of propNames) {
-        if (name in props) {
-          ;(element as Record<string, unknown>)[name] = props[name]
-        }
-      }
-      // Update handler references (no DOM calls — dispatchers read these on next event)
-      for (const handlerName of Object.keys(eventNameMap)) {
-        handlers[handlerName] = props[handlerName]
-      }
-    },
-    dispose() {
-      ac.abort()
-    },
-  }
+) : VOIDFUNCTION {
+
+  const aboutController = ...
+  const abortSignal = ... 
+   
+   for (eventName) of enentMap {
+     element.addEventListner(eventName, (event) => {
+       const fn = getEventHandlers()[eventName]
+       if (fn) fn(event)
+     }, {signal : abortSignal })
+   }
+
+   return () => {
+    aboutController.abort()
+   }
 }
 ```
 
@@ -267,20 +251,49 @@ useLayoutEffect(() => {  // 3. Register all event listeners
 
 After — 2 hooks, much simpler:
 ```typescript
-const bindingRef = useRef<ReturnType<typeof setupElementProps>>()
 
-// Mount: register dispatchers. Unmount: dispose.
-useLayoutEffect(() => {
-  const element = elementRef.current
-  if (!element) return
-  bindingRef.current = setupElementProps(element, props, propNames, eventNameMap)
-  return () => bindingRef.current?.dispose()
-}, [])
+import {MyReactComponentPropsDecl} from '../....'
 
-// Every render: update properties + handler references (zero DOM calls)
-useLayoutEffect(() => {
-  bindingRef.current?.update(props)
-})
+function MyReactComponent(props) {
+
+  const elementRef = useRef(...) 
+
+  const handlersRef = useRef({  })
+
+  const {myValue: p0, onMyValueChange: p1, ...restProps } = props
+
+ 
+
+  useLayoutEffect(() => {
+    const element = elementRef.current()
+    if (!element) return 
+
+    
+    updateElementProps(element, MyReactComponentPropsDecl, { myValue: p0 })
+
+    handlersRef.current = {
+      myValueChange: p1 
+    }
+  })
+
+  useLayoutEffect(() => {
+    const element = elementRef.current()
+    if (!element) return 
+
+    return setupElementEventHandlers(element, ["myValueChange"], () => handlersRef)
+  }, [])
+
+  
+
+  return <my-element ref={elementRef} />
+
+}
+
+
+
+
+
+
 ```
 
 The first hook runs once — `addEventListener` on mount, `removeEventListener` on unmount. The second hook runs every render — just JS property assignments.

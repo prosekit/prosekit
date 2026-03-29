@@ -1041,10 +1041,9 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, options: Ge
   const hasEvents = eventBindings.length > 0
   const needsElement = hasProps || hasEvents
 
-  // Build first $effect.pre block (props assignment + handlers update)
   const propsEffectLines: string[] = []
   if (needsElement) {
-    propsEffectLines.push('  $effect.pre(() => {')
+    propsEffectLines.push('  $effect(() => {')
     propsEffectLines.push('    if (!element) return')
 
     if (hasProps) {
@@ -1067,11 +1066,10 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, options: Ge
     propsEffectLines.push('  })')
   }
 
-  // Build second $effect.pre block (event listeners)
   const eventEffectLines: string[] = []
   if (hasEvents) {
     const eventNames = eventBindings.map((b) => JSON.stringify(b.eventName))
-    eventEffectLines.push('  $effect.pre(() => {')
+    eventEffectLines.push('  $effect(() => {')
     eventEffectLines.push('    if (!element) return')
     eventEffectLines.push('')
     eventEffectLines.push('    const ac = new AbortController()')

@@ -7,7 +7,7 @@
   let { position: p0, children = undefined, ...restProps } = $props()
   let element
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { position: p0 })

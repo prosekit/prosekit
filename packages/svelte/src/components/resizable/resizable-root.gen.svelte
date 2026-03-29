@@ -8,7 +8,7 @@
   let element
   const handlers = []
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { aspectRatio: p0, height: p1, width: p2 })
@@ -18,7 +18,7 @@
     handlers.push(e1)
   })
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     const ac = new AbortController()

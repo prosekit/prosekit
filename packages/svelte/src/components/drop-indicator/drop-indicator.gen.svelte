@@ -10,7 +10,7 @@
 
   const p0Fallback = useEditorContext()
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { editor: p0 ?? p0Fallback, width: p1 })

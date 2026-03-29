@@ -7,7 +7,7 @@
   let { closeDelay: p0, disabled: p1, openDelay: p2, children = undefined, ...restProps } = $props()
   let element
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { closeDelay: p0, disabled: p1, openDelay: p2 })

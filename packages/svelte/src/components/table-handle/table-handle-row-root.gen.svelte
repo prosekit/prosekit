@@ -10,7 +10,7 @@
 
   const p3Fallback = useEditorContext()
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { altBoundary: p0, autoUpdate: p1, boundary: p2, editor: p3 ?? p3Fallback, elementContext: p4, fitViewport: p5, flip: p6, hide: p7, hoist: p8, inline: p9, offset: p10, overflowPadding: p11, overlap: p12, placement: p13, rootBoundary: p14, sameHeight: p15, sameWidth: p16, shift: p17, strategy: p18 })

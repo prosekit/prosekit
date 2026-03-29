@@ -7,7 +7,7 @@
   let { eventTarget: p0, children = undefined, ...restProps } = $props()
   let element
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { eventTarget: p0 })

@@ -8,7 +8,7 @@
   let element
   const handlers = []
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { closeDelay: p0, delay: p1, disabled: p2, openOnHover: p3 })
@@ -17,7 +17,7 @@
     handlers.push(e0)
   })
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     const ac = new AbortController()

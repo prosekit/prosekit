@@ -11,7 +11,7 @@
 
   const p5Fallback = useEditorContext()
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     Object.assign(element, { altBoundary: p0, autoUpdate: p1, boundary: p2, defaultOpen: p3, dismissOnEscape: p4, editor: p5 ?? p5Fallback, elementContext: p6, fitViewport: p7, flip: p8, hide: p9, hoist: p10, inline: p11, offset: p12, open: p13, overflowPadding: p14, overlap: p15, placement: p16, rootBoundary: p17, sameHeight: p18, sameWidth: p19, shift: p20, strategy: p21 })
@@ -20,7 +20,7 @@
     handlers.push(e0)
   })
 
-  $effect.pre(() => {
+  $effect(() => {
     if (!element) return
 
     const ac = new AbortController()

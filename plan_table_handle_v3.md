@@ -173,7 +173,7 @@ These are compatible. Existing consumer code listening for `'select'` events wil
 
 **`table-handle-row-positioner.ts`** and **`table-handle-row-popup.ts`** — same pattern for rows.
 
-### Phase 3: Refactor triggers
+### ~~Phase 3: Refactor triggers~~ ✅
 
 **`table-handle-column-trigger.ts`** (refactored):
 - Internally calls `setupMenuTrigger(host, triggerProps)` for menu behavior (aria-expanded, aria-controls, click toggle, anchor setting)

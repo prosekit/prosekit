@@ -215,7 +215,7 @@ export const AutocompletePopover: DefineSetupFnComponent<
       ] as const;
     });
 
-    const handlers: (Function | undefined)[] = [];
+    const handlers: Array<((event: any) => void) | undefined> = [];
 
     watchEffect(() => {
       const element = elementRef.value;

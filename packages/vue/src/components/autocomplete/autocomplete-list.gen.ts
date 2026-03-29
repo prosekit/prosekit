@@ -76,7 +76,7 @@ export const AutocompleteList: DefineSetupFnComponent<
       return [[p0, p1, e0, e1], restProps] as const;
     });
 
-    const handlers: (Function | undefined)[] = [];
+    const handlers: Array<((event: any) => void) | undefined> = [];
 
     watchEffect(() => {
       const element = elementRef.value;

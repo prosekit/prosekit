@@ -1,16 +1,16 @@
 import {
+  createSignal,
   defineCustomElement,
   defineProps,
   onMount,
   registerCustomElement,
-  useEffect,
   useEventListener,
   type HostElement,
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
 } from '@aria-ui/core'
-import { MenuStoreContext } from '@aria-ui/elements/menu'
+import { setupMenuTrigger, type MenuTriggerProps } from '@aria-ui/elements/menu'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import { selectTableColumn, type defineTableCommands } from '@prosekit/extensions/table'
@@ -35,28 +35,19 @@ export const TableHandleColumnTriggerPropsDeclaration: PropsDeclaration<TableHan
   editor: { default: null, attribute: false, type: 'json' },
 })
 
-/**
- * @internal
- */
+/** @internal */
 export function setupTableHandleColumnTrigger(
   host: HostElement,
   props: Store<TableHandleColumnTriggerProps>,
 ): void {
   const getEditor = props.editor.get
   const getStore = tableHandleStoreContext.consume(host)
-  const getMenuStore = MenuStoreContext.consume(host)
 
-  // Set anchor for menu positioning
-  useEffect(host, () => {
-    getMenuStore()?.overlayStore.setAnchorElement(host)
-  })
+  const triggerProps: Store<MenuTriggerProps> = {
+    disabled: createSignal(false),
+  }
+  setupMenuTrigger(host, triggerProps)
 
-  // Toggle menu on click
-  useEventListener(host, 'click', () => {
-    getMenuStore()?.overlayStore.requestOpenToggle()
-  })
-
-  // Select column on pointerdown
   useEventListener(host, 'pointerdown', () => {
     const editor = getEditor()
     const cellPos = getStore()?.getHoveringCell()?.cellPos
@@ -64,7 +55,6 @@ export function setupTableHandleColumnTrigger(
     editor.exec(selectTableColumn({ head: cellPos }))
   })
 
-  // Drag behavior
   onMount(host, () => {
     host.draggable = true
   })

@@ -3,9 +3,14 @@
  */
 
 export {
-  TableHandleColumnRoot,
-  type TableHandleColumnRootProps,
-} from "./table-handle-column-root.gen.ts";
+  TableHandleColumnPopup,
+  type TableHandleColumnPopupProps,
+} from "./table-handle-column-popup.gen.ts";
+
+export {
+  TableHandleColumnPositioner,
+  type TableHandleColumnPositionerProps,
+} from "./table-handle-column-positioner.gen.ts";
 
 export {
   TableHandleColumnTrigger,
@@ -23,31 +28,19 @@ export {
 } from "./table-handle-drop-indicator.gen.ts";
 
 export {
-  TableHandlePopoverItem,
-  type TableHandlePopoverItemProps,
-  type TableHandlePopoverItemEvents,
-  TableHandlePopoverItemSelectEvent,
-} from "./table-handle-popover-item.gen.ts";
-
-export {
-  TableHandlePopoverPopup,
-  type TableHandlePopoverPopupProps,
-} from "./table-handle-popover-popup.gen.ts";
-
-export {
-  TableHandlePopoverPositioner,
-  type TableHandlePopoverPositionerProps,
-} from "./table-handle-popover-positioner.gen.ts";
-
-export {
   TableHandleRoot,
   type TableHandleRootProps,
 } from "./table-handle-root.gen.ts";
 
 export {
-  TableHandleRowRoot,
-  type TableHandleRowRootProps,
-} from "./table-handle-row-root.gen.ts";
+  TableHandleRowPopup,
+  type TableHandleRowPopupProps,
+} from "./table-handle-row-popup.gen.ts";
+
+export {
+  TableHandleRowPositioner,
+  type TableHandleRowPositionerProps,
+} from "./table-handle-row-positioner.gen.ts";
 
 export {
   TableHandleRowTrigger,

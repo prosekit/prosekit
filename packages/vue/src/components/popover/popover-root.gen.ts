@@ -74,7 +74,7 @@ export const PopoverRoot: DefineSetupFnComponent<
       return [[p0, p1, p2, p3, e0], restProps] as const;
     });
 
-    const handlers: (Function | undefined)[] = [];
+    const handlers: Array<((event: any) => void) | undefined> = [];
 
     watchEffect(() => {
       const element = elementRef.value;

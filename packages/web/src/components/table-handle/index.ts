@@ -1,17 +1,25 @@
 export {
-  registerTableHandleColumnRootElement,
-  setupTableHandleColumnRoot,
-  TableHandleColumnRootElement,
-  TableHandleColumnRootPropsDeclaration,
-  type TableHandleColumnRootProps,
-} from './table-handle-column-root.ts'
+  registerTableHandleColumnPopupElement,
+  setupTableHandleColumnPopup,
+  TableHandleColumnPopupElement,
+  TableHandleColumnPopupPropsDeclaration,
+  type TableHandleColumnPopupProps
+} from './table-handle-column-popup.ts'
+
+export {
+  registerTableHandleColumnPositionerElement,
+  setupTableHandleColumnPositioner,
+  TableHandleColumnPositionerElement,
+  TableHandleColumnPositionerPropsDeclaration,
+  type TableHandleColumnPositionerProps
+} from './table-handle-column-positioner.ts'
 
 export {
   registerTableHandleColumnTriggerElement,
   setupTableHandleColumnTrigger,
   TableHandleColumnTriggerElement,
   TableHandleColumnTriggerPropsDeclaration,
-  type TableHandleColumnTriggerProps,
+  type TableHandleColumnTriggerProps
 } from './table-handle-column-trigger.ts'
 
 export {
@@ -19,7 +27,7 @@ export {
   setupTableHandleDragPreview,
   TableHandleDragPreviewElement,
   TableHandleDragPreviewPropsDeclaration,
-  type TableHandleDragPreviewProps,
+  type TableHandleDragPreviewProps
 } from './table-handle-drag-preview.ts'
 
 export {
@@ -27,102 +35,37 @@ export {
   setupTableHandleDropIndicator,
   TableHandleDropIndicatorElement,
   TableHandleDropIndicatorPropsDeclaration,
-  type TableHandleDropIndicatorProps,
+  type TableHandleDropIndicatorProps
 } from './table-handle-drop-indicator.ts'
-
-export {
-  registerTableHandlePopoverItemElement,
-  setupTableHandlePopoverItem,
-  TableHandlePopoverItemElement,
-  TableHandlePopoverItemPropsDeclaration,
-  TableHandlePopoverItemSelectEvent,
-  type TableHandlePopoverItemEvents,
-  type TableHandlePopoverItemProps,
-} from './table-handle-popover-item.ts'
-
-export {
-  registerTableHandlePopoverPopupElement,
-  setupTableHandlePopoverPopup,
-  TableHandlePopoverPopupElement,
-  TableHandlePopoverPopupPropsDeclaration,
-  type TableHandlePopoverPopupProps,
-} from './table-handle-popover-popup.ts'
-
-export {
-  registerTableHandlePopoverPositionerElement,
-  setupTableHandlePopoverPositioner,
-  TableHandlePopoverPositionerElement,
-  TableHandlePopoverPositionerPropsDeclaration,
-  type TableHandlePopoverPositionerProps,
-} from './table-handle-popover-positioner.ts'
 
 export {
   registerTableHandleRootElement,
   setupTableHandleRoot,
   TableHandleRootElement,
   TableHandleRootPropsDeclaration,
-  type TableHandleRootProps,
+  type TableHandleRootProps
 } from './table-handle-root.ts'
 
 export {
-  registerTableHandleRowRootElement,
-  setupTableHandleRowRoot,
-  TableHandleRowRootElement,
-  TableHandleRowRootPropsDeclaration,
-  type TableHandleRowRootProps,
-} from './table-handle-row-root.ts'
+  registerTableHandleRowPopupElement,
+  setupTableHandleRowPopup,
+  TableHandleRowPopupElement,
+  TableHandleRowPopupPropsDeclaration,
+  type TableHandleRowPopupProps
+} from './table-handle-row-popup.ts'
+
+export {
+  registerTableHandleRowPositionerElement,
+  setupTableHandleRowPositioner,
+  TableHandleRowPositionerElement,
+  TableHandleRowPositionerPropsDeclaration,
+  type TableHandleRowPositionerProps
+} from './table-handle-row-positioner.ts'
 
 export {
   registerTableHandleRowTriggerElement,
   setupTableHandleRowTrigger,
   TableHandleRowTriggerElement,
   TableHandleRowTriggerPropsDeclaration,
-  type TableHandleRowTriggerProps,
+  type TableHandleRowTriggerProps
 } from './table-handle-row-trigger.ts'
-
-/**
-
-TODO: use the following sturcutre:
-
-
-
-<TableHandleRoot class="contents">
-  <TableHandleDragPreview />
-  <TableHandleDropIndicator />
-
-  <!-- col -->
-  <TableHandleColumnPositioner >
-    <TableHandleColumnPopup>
-      <TableHandleMenuRoot class="contents">
-        <TableHandleMenuTrigger>
-          <div class="i-lucide-icon-xxxx" />
-        </TableHandleMenuTrigger>
-        <TableHandleMenuPositioner>
-          <TableHandleMenuPopup>
-            <TableHandleMenuItem>Action 1</TableHandleMenuItem>
-            <TableHandleMenuItem>Action 2</TableHandleMenuItem>
-          </TableHandleMenuPopup>
-        </TableHandleMenuPositioner>
-      </TableHandleMenuRoot>
-    </TableHandleColumnPopup>
-  </TableHandleColumnPositioner >
-
-  <!-- row -->
-  <TableHandleRowPositioner >
-    <TableHandleRowPopup>
-      <TableHandleMenuRoot class="contents">
-        <TableHandleMenuTrigger>
-          <div class="i-lucide-icon-xxxx" />
-        </TableHandleMenuTrigger>
-        <TableHandleMenuPositioner>
-          <TableHandleMenuPopup>
-            <TableHandleMenuItem>Action 3</TableHandleMenuItem>
-            <TableHandleMenuItem>Action 3</TableHandleMenuItem>
-          </TableHandleMenuPopup>
-        </TableHandleMenuPositioner>
-      </TableHandleMenuRoot>
-    </TableHandleRowPopup>
-  </TableHandleRowPositioner >
-</TableHandleRoot>
-
- */

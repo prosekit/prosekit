@@ -72,7 +72,7 @@ export const ResizableRoot: DefineSetupFnComponent<
       return [[p0, p1, p2, e0, e1], restProps] as const;
     });
 
-    const handlers: (Function | undefined)[] = [];
+    const handlers: Array<((event: any) => void) | undefined> = [];
 
     watchEffect(() => {
       const element = elementRef.value;

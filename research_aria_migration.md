@@ -50,7 +50,7 @@ prosekit2/
 |---------|--------|-------------|
 | `@aria-ui-v2/core` | Done | Signal reactivity, context, custom element definition, effects, event listeners |
 | `@aria-ui-v2/elements` | Partial | Listbox, Popover, Tooltip implemented; Menu missing |
-| `@aria-ui-v2/integrations` | Done | React and Preact wrappers |
+| `@aria-ui-v2/integrations` | Done | React and Preact wrappers (used by aria-ui's own element wrappers, not by prosekit) |
 | `@aria-ui-v2/cli` | Done | Generates framework wrappers (React, Preact, Solid, Vue, Svelte) |
 | `@aria-ui-v2/utils` | Done | ARIA helpers, Collection, DelayedToggle, useHover, usePress, usePresence |
 
@@ -85,11 +85,12 @@ prosekit2/
 
 | Component | Notes |
 |-----------|-------|
-| **tooltip** | Fully migrated. Uses `TooltipRootElement`, `TooltipTriggerElement`, `TooltipPopupElement`, `TooltipPositionerElement` from v2. Registered as `prosekit-tooltip-*`. React wrapper uses `ReactWrapper` from `@aria-ui-v2/integrations`. |
+| **tooltip** | Fully migrated. Uses `TooltipRootElement`, `TooltipTriggerElement`, `TooltipPopupElement`, `TooltipPositionerElement` from v2. Registered as `prosekit-tooltip-*`. Framework wrappers auto-generated via `@aria-ui-v2/cli`. |
 | **popover** | Fully migrated. Uses `PopoverRootElement`, `PopoverTriggerElement`, `PopoverPopupElement`, `PopoverPositionerElement` from v2. No v1 imports remain. |
 | **resizable** | Fully migrated. Uses `@aria-ui-v2/core` (signals, context, effects) and `@aria-ui-v2/utils` (useAttribute). No v1 imports remain. |
 | **drop-indicator** | Fully migrated. Uses `@aria-ui-v2/core` and `@aria-ui-v2/utils` (usePresence). No v1 imports remain. |
 | **inline-popover** | Fully migrated. Uses `@aria-ui-v2/core`, `@aria-ui-v2/elements/overlay` (OpenChangeEvent, updatePlacement), and `@aria-ui-v2/utils` (useAttribute, usePresence). No v1 imports remain. |
+| **table-handle** | Fully migrated. Uses `@aria-ui-v2/core`, `@aria-ui-v2/elements/overlay`, `@aria-ui-v2/utils`. No v1 imports remain. Framework wrappers auto-generated via `@aria-ui-v2/cli`. |
 
 ### Not Yet Migrated (Still Using v1)
 
@@ -97,7 +98,6 @@ prosekit2/
 |-----------|----------|----------------|---------------------|-----------------|
 | **block-handle** | 10 files | `@aria-ui/core`, `@aria-ui/overlay`, `@aria-ui/presence` | **Medium** | None — all v2 equivalents available (core, overlay positioner, presence). |
 | **autocomplete** | 13 files | `@aria-ui/core`, `@aria-ui/listbox`, `@aria-ui/overlay`, `@aria-ui/presence` | **High** | None — all v2 dependencies available (listbox setup functions, overlay positioner, presence). Complex keyboard event forwarding + context state sync. |
-| **table-handle** | 33 files | `@aria-ui/core`, `@aria-ui/menu`, `@aria-ui/overlay`, `@aria-ui/presence` | **High** | Needs **menu** component (not in v2 yet). |
 
 ---
 
@@ -112,22 +112,32 @@ V2 copies have been created for 5 of 8 v1 hooks. The v1 originals are kept until
 | `use-editor-update-event` | `use-editor-update-event.ts` | `use-editor-update-event-v2.ts` | block-handle, autocomplete, table-handle |
 | `use-keymap` | `use-keymap.ts` | `use-keymap-v2.ts` | autocomplete |
 | `use-scrolling` | `use-scrolling.ts` | `use-scrolling-v2.ts` | block-handle |
-| `use-selecting` | `use-selecting.ts` | — (no v2 yet) | table-handle |
-| `use-editor-typing` | `use-editor-typing.ts` | — (no v2 yet) | table-handle |
+| `use-selecting` | `use-selecting.ts` | `use-selecting-v2.ts` | table-handle |
+| `use-editor-typing` | `use-editor-typing.ts` | `use-editor-typing-v2.ts` | table-handle |
 | `use-first-rendering` | `use-first-rendering.ts` | — (no v2 yet) | autocomplete |
 
 ---
 
-## Vue Wrapper Patterns
+## Framework Wrapper Generation Patterns
 
 Two generation patterns coexist:
 
-| Pattern | Used by | Generator | Event handling |
-|---------|---------|-----------|----------------|
-| **New** (aria-ui CLI) | tooltip, popover, resizable, drop-indicator, inline-popover | `aria-ui/packages/cli/src/generate.ts` | `addEventListener` with exact camelCase event names via ref callback (fixes Vue `hyphenate` issue) |
-| **Old** (`createComponent`) | autocomplete, block-handle, table-handle | `packages/web/build.mjs` | `addEventListener` in `watchEffect` with `extractDetail` for `CustomEvent` |
+| Pattern | Used by | Generator |
+|---------|---------|-----------|
+| **New** (aria-ui CLI) | tooltip, popover, resizable, drop-indicator, inline-popover, table-handle | `aria-ui/packages/cli/src/generate.ts` |
+| **Old** (`createComponent`) | autocomplete, block-handle | `packages/web/build.mjs` |
 
-The old `createComponent` pattern will be removed once all components are migrated to v2. The new pattern was updated to work around Vue 3's `hyphenate` behavior that lowercases DOM event names (see `OpenChangeEvent` fix).
+The old `createComponent` pattern will be removed once all components are migrated to v2.
+
+### New pattern (aria-ui CLI)
+
+All 5 frameworks (React, Preact, Vue, Solid, Svelte) use a unified approach:
+
+1. **Props**: Set via `Object.assign(element, { ... })` inside a reactive effect (`useLayoutEffect` / `watchEffect` / `createEffect` / `$effect.pre`). This ensures element properties update reactively when component props change.
+2. **Events**: A `handlers` array is updated in the props effect. A separate mount-only effect sets up `addEventListener` with `AbortController` — listeners read handlers by index, avoiding re-subscription on handler changes.
+3. **Extensions**: All frameworks share a single `reactPropOverrides` mechanism (e.g., `editor: p5 ?? p5Fallback` for context fallback). Extension variables use `p{N}Fallback` naming (where N is the sorted prop index).
+
+Vue uses `shallowRef` + `computed` (via `splittedProps`) + `watchEffect`. Solid uses `createSignal` + `splitProps` + `createEffect`. Svelte uses `$effect.pre` + `bind:this`. React/Preact use `useRef` + `useLayoutEffect`.
 
 ---
 
@@ -155,9 +165,7 @@ v2 exports setup functions from `@aria-ui-v2/elements/listbox`: `setupListboxRoo
 
 ### 5. Missing v2 Hooks — Needed for remaining components
 
-Three v1 hooks have no v2 equivalents yet:
-- `use-selecting` — used by table-handle
-- `use-editor-typing` — used by table-handle
+One v1 hook has no v2 equivalent yet:
 - `use-first-rendering` — used by autocomplete
 
 ---
@@ -166,7 +174,7 @@ Three v1 hooks have no v2 equivalents yet:
 
 Every v1 import from `@aria-ui/*` still in `packages/web/src/`:
 
-### `@aria-ui/core` (used by block-handle, autocomplete, table-handle)
+### `@aria-ui/core` (used by block-handle, autocomplete)
 - `createSignal`, `createComputed` — reactive primitives
 - `useEffect`, `useAnimationFrame` — side effects
 - `useAttribute` — data attribute syncing
@@ -220,29 +228,18 @@ Every v1 import from `@aria-ui/*` still in `packages/web/src/`:
 - ~~Migrate `inline-popover`~~ — Done
 - **Migrate `block-handle`** — **Not started** (10 files with v1 imports, no blockers)
 
-### Phase 4: Implement Menu & Hard Migrations
+### Phase 4: Remaining Migrations
 
 **4.1 Migrate `block-handle`** — Medium complexity
 - All v2 dependencies available: core, overlay positioner, presence
 - Key challenge: virtual reference element from hover position, drag state management
 
-**4.2 Implement Menu component in v2**
-- New component: `MenuRootElement`, `MenuTriggerElement`, `MenuContentElement`, `MenuItemElement`
-- Can potentially build on top of Listbox + Popover
-- Needs: keyboard navigation, focus management, typeahead
-
-**4.3 Create missing v2 hooks**
-- `use-selecting-v2.ts` — needed by table-handle
-- `use-editor-typing-v2.ts` — needed by table-handle
+**4.2 Create missing v2 hook**
 - `use-first-rendering-v2.ts` — needed by autocomplete
 
-**4.4 Migrate `autocomplete`** — High complexity
+**4.3 Migrate `autocomplete`** — High complexity
 - All v2 dependencies available: listbox setup functions, overlay positioner, presence
 - Key challenges: keyboard event forwarding to editor, context-based query/submit state, filtering
-
-**4.5 Migrate `table-handle`** — High complexity
-- Needs: Menu (Phase 4.2). Presence and overlay positioner available in v2
-- Key challenges: complex cell-reference positioning, drag-and-drop, multiple sub-components
 
 ### Phase 5: Cleanup
 

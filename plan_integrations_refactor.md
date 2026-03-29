@@ -142,133 +142,188 @@ Svelte generates an `@attach` callback that directly sets properties and adds ev
 
 ---
 
-## 3. Proposed Solution: `ElementController`
+## 3. Proposed Solution: `setupElementProps` Pure Function
 
-Create a framework-agnostic `ElementController` class in `@aria-ui-v2/integrations` that encapsulates:
-1. Setting JS properties on a custom element
-2. Adding/removing event listeners with automatic cleanup
-3. Handling element changes (re-attach) and unmount (cleanup)
+A single pure function that sets JS properties and adds event listeners on a custom element, returning a cleanup function.
 
 ```typescript
-// @aria-ui-v2/integrations/controller
+// @aria-ui-v2/integrations/setup
 
-export class ElementController {
-  private abortController: AbortController | undefined
-  private element: HTMLElement | undefined
-
-  constructor(
-    private readonly propNames: readonly string[],
-    private readonly eventNameMap: Readonly<Record<string, string>>,
-  ) {}
-
-  /**
-   * Called when the framework obtains (or loses) a reference to the DOM element.
-   * Pass `null` on unmount.
-   */
-  attach(
-    element: HTMLElement | null | undefined,
-    props: Record<string, unknown>,
-  ): void {
-    // Clean up previous element
-    this.abortController?.abort()
-    this.abortController = undefined
-    this.element = undefined
-
-    if (!element) return
-
-    this.element = element
-    this.abortController = new AbortController()
-    const signal = this.abortController.signal
-
-    // Set properties
-    for (const name of this.propNames) {
-      if (name in props) {
-        ;(element as Record<string, unknown>)[name] = props[name]
-      }
-    }
-
-    // Add event listeners
-    for (const [handlerName, eventName] of Object.entries(this.eventNameMap)) {
-      const handler = props[handlerName]
-      if (typeof handler === 'function') {
-        element.addEventListener(eventName, handler as EventListener, { signal })
-      }
+/**
+ * Sets JS properties and adds event listeners on a custom element.
+ * Returns a cleanup function that removes all event listeners.
+ *
+ * @param element - The custom element to configure
+ * @param props - All props from the framework (element props + event handlers + passthrough)
+ * @param propNames - Names of properties to set on the element
+ * @param eventNameMap - Maps handler prop names (e.g. "onItemSelect") to DOM event names (e.g. "itemSelect")
+ */
+export function setupElementProps(
+  element: HTMLElement,
+  props: Record<string, unknown>,
+  propNames: readonly string[],
+  eventNameMap: Readonly<Record<string, string>>,
+): VoidFunction {
+  for (const name of propNames) {
+    if (name in props) {
+      ;(element as Record<string, unknown>)[name] = props[name]
     }
   }
 
-  /**
-   * Called on re-render to update properties and event handlers.
-   * Properties are updated directly; event listeners are re-registered.
-   */
-  update(props: Record<string, unknown>): void {
-    const element = this.element
-    if (!element) return
+  const ac = new AbortController()
 
-    // Update properties
-    for (const name of this.propNames) {
-      if (name in props) {
-        ;(element as Record<string, unknown>)[name] = props[name]
-      }
-    }
-
-    // Re-register event listeners (abort old, add new)
-    this.abortController?.abort()
-    this.abortController = new AbortController()
-    const signal = this.abortController.signal
-
-    for (const [handlerName, eventName] of Object.entries(this.eventNameMap)) {
-      const handler = props[handlerName]
-      if (typeof handler === 'function') {
-        element.addEventListener(eventName, handler as EventListener, { signal })
-      }
+  for (const [handlerName, eventName] of Object.entries(eventNameMap)) {
+    const handler = props[handlerName]
+    if (typeof handler === 'function') {
+      element.addEventListener(eventName, handler as EventListener, { signal: ac.signal })
     }
   }
 
-  /**
-   * Clean up all listeners. Called on unmount.
-   */
-  dispose(): void {
-    this.abortController?.abort()
-    this.abortController = undefined
-    this.element = undefined
-  }
+  return () => ac.abort()
 }
 ```
+
+No class. No stored state. The caller manages the returned cleanup function. Bundlers can tree-shake it trivially since it's a standalone export with no side effects.
 
 ### Integration with each framework
 
 #### React/Preact
 
-React/Preact already have `createComponent` in `@aria-ui-v2/integrations`. This can be refactored internally to use `ElementController`, but the external API (`createComponent`) stays the same. No change to generated code needed.
+Refactor the existing `createComponent` internals. External API unchanged — generated code stays the same.
 
-Alternatively, keep React/Preact as-is since they already work well. The main benefit is for Vue and Svelte.
+```typescript
+// integrations/react.ts — AFTER refactor (internal change only)
+import { setupElementProps } from './setup.ts'
 
-#### Solid
+// Inside the forwardRef component:
+useLayoutEffect(() => {
+  const element = elementRef.current
+  if (!element) return
+  // cleanup = abort previous listeners, then setup new ones
+  return setupElementProps(element, props, propNames, eventNameMap)
+})
+```
 
-Solid's `"prop:xxx"` and `"on:xxx"` are built-in. Using `ElementController` would mean giving up Solid's reactive property tracking in favor of manual DOM manipulation. **Not recommended** — keep Solid as-is.
+This replaces the current 3 separate `useLayoutEffect` hooks (prop setting, event handler ref update, event listener registration) with a single one.
+
+Current `createComponent` in `react.ts` (95 lines of prop/event logic):
+```typescript
+// Current: 3 useLayoutEffect hooks
+useLayoutEffect(() => {  // Set all properties
+  const element = elementRef.current
+  if (!element) return
+  for (const [name, value] of Object.entries(elementProps)) {
+    ;(element as Record<string, unknown>)[name] = value
+  }
+})
+
+useLayoutEffect(() => {  // Set all event listeners ref
+  eventHandlersRef.current = eventHandlers
+})
+
+useLayoutEffect(() => {  // Register all event listeners
+  const element = elementRef.current
+  if (!element) return
+  const eventNames: string[] = Object.values(eventNameMap)
+  const eventHandlers: Array<[string, EventHandler]> = []
+  for (const eventName of eventNames) {
+    const handler = (event: Event) => {
+      eventHandlersRef.current[eventName]?.(event)
+    }
+    eventHandlers.push([eventName, handler])
+  }
+  for (const [eventName, handler] of eventHandlers) {
+    element.addEventListener(eventName, handler)
+  }
+  return () => {
+    for (const [eventName, handler] of eventHandlers) {
+      element.removeEventListener(eventName, handler)
+    }
+  }
+}, [])
+```
+
+After:
+```typescript
+// After: 1 useLayoutEffect
+useLayoutEffect(() => {
+  const element = elementRef.current
+  if (!element) return
+  return setupElementProps(element, props, propNames, eventNameMap)
+})
+```
+
+#### Solid — keep as-is
+
+Solid's `"prop:xxx"` and `"on:xxx"` are reactive and framework-native. No change.
 
 #### Vue
 
-Replace the inline switch/case + ref callback with `ElementController`:
+Replace the inline switch/case + ref callback + `_eventHandlers` with `setupElementProps`:
 
+**Current generated code (Vue, component with events):**
 ```typescript
-// Generated code (Vue) — AFTER refactor
 (props, { slots }) => {
   registerElement()
-  const controller = new ElementController(
-    ["disabled", "value"],
-    { onItemSelect: "itemSelect" },
-  )
+  const _eventHandlers: Record<string, Function> = {}
+  let _abortController: AbortController | undefined
 
   const _ref = (element: HTMLElement | null | undefined) => {
-    controller.attach(element, props)
+    _abortController?.abort()
+    _abortController = undefined
+    if (!element) return
+    _abortController = new AbortController()
+    const abortSignal = _abortController.signal
+    element.addEventListener("itemSelect", (event) => {
+      _eventHandlers["onItemSelect"]?.(event)
+    }, { signal: abortSignal })
   }
 
   return () => {
-    controller.update(props)
     const _props: Record<string, unknown> = {}
     for (const [key, value] of Object.entries(props)) {
-      if (!propNames.includes(key) && !(key in eventNameMap)) {
+      switch (key) {
+        case "disabled":
+        case "value":
+          _props["." + key] = value
+          break
+        case "onItemSelect":
+          _eventHandlers[key] = value as Function
+          break
+        default:
+          _props[key] = value
+      }
+    }
+    _props["ref"] = _ref
+    return h("prosekit-table-handle-popover-item", _props, slots.default?.())
+  }
+}
+```
+
+**After refactor:**
+```typescript
+import { setupElementProps } from '@aria-ui-v2/integrations/setup'
+
+const _propNames = ["disabled", "value"]
+const _eventNameMap = { onItemSelect: "itemSelect" }
+const _managedKeys = new Set([..._propNames, ...Object.keys(_eventNameMap)])
+
+// ...
+(props, { slots }) => {
+  registerElement()
+  let _cleanup: VoidFunction | undefined
+
+  const _ref = (element: HTMLElement | null | undefined) => {
+    _cleanup?.()
+    _cleanup = undefined
+    if (!element) return
+    _cleanup = setupElementProps(element, props, _propNames, _eventNameMap)
+  }
+
+  return () => {
+    const _props: Record<string, unknown> = {}
+    for (const [key, value] of Object.entries(props)) {
+      if (!_managedKeys.has(key)) {
         _props[key] = value
       }
     }
@@ -278,311 +333,106 @@ Replace the inline switch/case + ref callback with `ElementController`:
 }
 ```
 
-Wait — there's a subtlety. Vue's `h()` with `"." + key` sets properties via Vue's own mechanism. If we use `ElementController` to set properties instead, we don't need `"." + key` at all. The generated code becomes much simpler — just pass through non-element props to `h()`.
+Changes:
+- No more `_eventHandlers` record
+- No more `_abortController` management
+- No more `switch/case` — replaced with `_managedKeys.has()` filter
+- No more manual `addEventListener` calls
+- The `_ref` callback is just: cleanup old → `setupElementProps` → store cleanup
 
-But there's a problem: Vue's render function runs on every reactivity change. `controller.update(props)` would re-register event listeners on every render. We need to be smarter — only re-register when handlers change.
-
-Actually, with `AbortController`, re-registering is cheap (abort all + add all). And event handlers in Vue are typically stable references. This should be fine.
+**For components WITHOUT events** (no `_eventNameMap`), the generated code is even simpler — `_ref` just calls `setupElementProps` with an empty event map, and the passthrough filter only checks `_propNames`.
 
 #### Svelte
 
-Replace the attachment function internals with `ElementController`:
-
+**Current generated code (Svelte attachment):**
 ```svelte
 <script lang="js">
-  import { ElementController } from '@aria-ui-v2/integrations/controller'
   import { registerElement } from '@prosekit/web/table-handle'
   registerElement()
 
   let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
-
-  const controller = new ElementController(
-    ["disabled", "value"],
-    { onItemSelect: "itemSelect" },
-  )
-
-  const attachment = (element) => {
-    controller.attach(element, { disabled: p0, value: p1, onItemSelect: p2 })
-    return () => controller.dispose()
-  }
-</script>
-
-<prosekit-table-handle-popover-item {...restProps} {@attach attachment}>
-  {@render children?.()}
-</prosekit-table-handle-popover-item>
-```
-
-But Svelte's `@attach` callback only runs once (on mount) and returns a cleanup function. It doesn't re-run on prop changes. So we'd need Svelte's `$effect` to handle updates:
-
-```svelte
-<script lang="js">
-  import { ElementController } from '@aria-ui-v2/integrations/controller'
-  import { registerElement } from '@prosekit/web/table-handle'
-  registerElement()
-
-  let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
-
-  const controller = new ElementController(
-    ["disabled", "value"],
-    { onItemSelect: "itemSelect" },
-  )
-
-  const attachment = (element) => {
-    controller.attach(element, { disabled: p0, value: p1, onItemSelect: p2 })
-    return () => controller.dispose()
-  }
-
-  // Re-set properties when they change
-  $effect(() => {
-    controller.update({ disabled: p0, value: p1, onItemSelect: p2 })
-  })
-</script>
-```
-
-Hmm, this is getting more complex, not simpler. The current Svelte approach is already clean because `@attach` handles both setup and cleanup.
-
----
-
-## 4. Revised Assessment
-
-After deep analysis, the refactoring benefit varies by framework:
-
-| Framework | Current State | Benefit of `ElementController` |
-|-----------|--------------|-------------------------------|
-| React | Already has `createComponent` wrapper | Low — already abstracted |
-| Preact | Already has `createComponent` wrapper | Low — already abstracted |
-| Solid | Uses Solid's built-in `"prop:xxx"` / `"on:xxx"` | Negative — would lose reactive tracking |
-| Vue | Inline switch/case + ref callback | **High** — removes ~30 lines of generated code per component |
-| Svelte | Inline attachment with direct assignment | **Medium** — `@attach` already handles lifecycle cleanly, but prop/event setup can be unified |
-
-The biggest win is **Vue**, which has the most complex and error-prone generated code (the duplicate listener bug we just fixed).
-
----
-
-## 5. Refined Proposal
-
-Instead of a single `ElementController` for all frameworks, create a targeted helper for the **common subset**: property setting + event binding + cleanup. Each framework adapts it differently.
-
-### 5.1 New module: `@aria-ui-v2/integrations/controller`
-
-```typescript
-// aria-ui/packages/integrations/src/controller.ts
-
-export interface ElementBinding {
-  /** Update properties and event handlers. */
-  update(element: HTMLElement, props: Record<string, unknown>): void
-  /** Remove all event listeners. */
-  dispose(): void
-}
-
-/**
- * Creates a reusable binding that manages element properties and event listeners.
- *
- * @param propNames - Names of properties to set on the element
- * @param eventNameMap - Maps handler prop names to DOM event names
- *                       e.g. { onItemSelect: "itemSelect" }
- */
-export function createElementBinding(
-  propNames: readonly string[],
-  eventNameMap: Readonly<Record<string, string>>,
-): ElementBinding {
-  let abortController: AbortController | undefined
-
-  return {
-    update(element, props) {
-      // Set properties
-      for (const name of propNames) {
-        if (name in props) {
-          ;(element as Record<string, unknown>)[name] = props[name]
-        }
-      }
-
-      // Re-register event listeners
-      abortController?.abort()
-      abortController = new AbortController()
-      const signal = abortController.signal
-
-      for (const [handlerName, eventName] of Object.entries(eventNameMap)) {
-        const handler = props[handlerName]
-        if (typeof handler === 'function') {
-          element.addEventListener(eventName, handler as EventListener, { signal })
-        }
-      }
-    },
-
-    dispose() {
-      abortController?.abort()
-      abortController = undefined
-    },
-  }
-}
-```
-
-### 5.2 React/Preact — refactor `createComponent` to use `createElementBinding`
-
-The existing `createComponent` in `integrations/react.ts` and `integrations/preact.ts` can internally use `createElementBinding`, replacing the 3 `useLayoutEffect` hooks with a simpler pattern:
-
-```typescript
-// integrations/react.ts — AFTER refactor
-import { createElementBinding } from './controller.ts'
-
-export function createComponent<Props, CustomElement extends HTMLElement>(
-  tagName: string,
-  displayName: string,
-  propNames: string[],
-  eventNameMap: Record<string, string>,
-  register: VoidFunction,
-) {
-  let isRegistered = false
-
-  const Component = forwardRef<CustomElement, any>((props, forwardRef) => {
-    if (!isRegistered) { register(); isRegistered = true }
-
-    const elementRef = useRef<CustomElement>(null)
-    const bindingRef = useRef<ReturnType<typeof createElementBinding>>()
-    if (!bindingRef.current) {
-      bindingRef.current = createElementBinding(propNames, eventNameMap)
-    }
-
-    const reactProps: Record<string, unknown> = {}
-    for (const [name, value] of Object.entries(props)) {
-      if (!propNames.includes(name) && !(name in eventNameMap)) {
-        reactProps[name] = value
-      }
-    }
-
-    useLayoutEffect(() => {
-      const element = elementRef.current
-      if (!element) return
-      bindingRef.current!.update(element, props)
-    })
-
-    useLayoutEffect(() => {
-      return () => bindingRef.current?.dispose()
-    }, [])
-
-    reactProps['suppressHydrationWarning'] = true
-    reactProps['ref'] = useMemo(() => mergeRefs([elementRef, forwardRef]), [forwardRef])
-
-    return createElement(tagName, reactProps)
-  })
-
-  Component.displayName = displayName
-  return Component
-}
-```
-
-**Benefit**: Removes ~30 lines from `createComponent` (the 3 separate `useLayoutEffect` hooks for props, event handler refs, and event registration). No change to generated wrapper code.
-
-### 5.3 Vue — use `createElementBinding` in generated code
-
-```typescript
-// Generated code (Vue) — AFTER refactor
-import { createElementBinding } from '@aria-ui-v2/integrations/controller'
-
-const _propNames = ["disabled", "value"] as const
-const _eventNameMap = { onItemSelect: "itemSelect" } as const
-const _allManagedKeys = new Set([..._propNames, ...Object.keys(_eventNameMap)])
-
-export const Component = defineComponent<Props & HTMLAttributes>(
-  (props, { slots }) => {
-    registerElement()
-    const binding = createElementBinding(_propNames, _eventNameMap)
-
-    const _ref = (element: HTMLElement | null | undefined) => {
-      if (!element) {
-        binding.dispose()
-        return
-      }
-      binding.update(element, props)
-    }
-
-    return () => {
-      // Pass through non-managed props to h()
-      const _props: Record<string, unknown> = {}
-      for (const [key, value] of Object.entries(props)) {
-        if (!_allManagedKeys.has(key)) {
-          _props[key] = value
-        }
-      }
-      _props["ref"] = _ref
-      return h(tagName, _props, slots.default?.())
-    }
-  },
-  { props: propsDeclaration },
-)
-```
-
-**Benefit**:
-- Eliminates the inline `switch/case` per component
-- Eliminates the manual `AbortController` management
-- Eliminates the `_eventHandlers` record pattern
-- ~20 fewer lines of generated code per component with events
-
-### 5.4 Svelte — use `createElementBinding` in attachment
-
-```svelte
-<script lang="js">
-  import { createElementBinding } from '@aria-ui-v2/integrations/controller'
-  import { registerElement } from '@prosekit/web/table-handle'
-  registerElement()
-
-  let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
-
-  const binding = createElementBinding(
-    ["disabled", "value"],
-    { onItemSelect: "itemSelect" },
-  )
 
   const attachment = (element) => {
     if (!element) return
-    binding.update(element, { disabled: p0, value: p1, onItemSelect: p2 })
-    return () => binding.dispose()
+    const abortController = new AbortController()
+    const abortSignal = abortController.signal
+    if (p0 !== undefined) { element.disabled = p0 }
+    if (p1 !== undefined) { element.value = p1 }
+    if (p2 !== undefined) { element.addEventListener('itemSelect', p2, { signal: abortSignal }) }
+    return () => { abortController.abort() }
   }
 </script>
-
-<prosekit-table-handle-popover-item {...restProps} {@attach attachment}>
-  {@render children?.()}
-</prosekit-table-handle-popover-item>
 ```
 
-**Benefit**: Removes manual `AbortController` + manual `addEventListener` + manual property assignment. Replaces with single `binding.update()` call.
+**After refactor:**
+```svelte
+<script lang="js">
+  import { setupElementProps } from '@aria-ui-v2/integrations/setup'
+  import { registerElement } from '@prosekit/web/table-handle'
+  registerElement()
 
-### 5.5 Solid — keep as-is
+  let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
 
-Solid's `"prop:xxx"` and `"on:xxx"` are reactive and framework-native. No change needed.
+  const attachment = (element) => {
+    if (!element) return
+    return setupElementProps(
+      element,
+      { disabled: p0, value: p1, onItemSelect: p2 },
+      ["disabled", "value"],
+      { onItemSelect: "itemSelect" },
+    )
+  }
+</script>
+```
+
+Changes:
+- No more manual `AbortController`
+- No more manual property assignment per prop
+- No more manual `addEventListener` per event
+- Single `setupElementProps` call replaces all of it
 
 ---
 
-## 6. Implementation Plan
+## 4. Assessment
 
-### Phase 1: Create `createElementBinding`
+| Framework | Current State | Benefit |
+|-----------|--------------|---------|
+| React | 3 `useLayoutEffect` hooks in `createComponent` | **High** — collapses to 1 hook |
+| Preact | Same as React | **High** — same benefit |
+| Solid | Uses Solid's built-in `"prop:xxx"` / `"on:xxx"` | None — keep as-is |
+| Vue | Inline switch/case + ref callback + `_eventHandlers` | **High** — removes ~20 lines per component |
+| Svelte | Inline attachment with manual prop/event setup | **Medium** — removes ~5 lines per component |
 
-- [ ] Create `aria-ui/packages/integrations/src/controller.ts`
-- [ ] Export `createElementBinding` function
-- [ ] Add `"./controller"` export to `integrations/package.json`
-- [ ] Add tests
+---
+
+## 5. Implementation Plan
+
+### Phase 1: Create `setupElementProps`
+
+- [ ] Create `aria-ui/packages/integrations/src/setup.ts`
+- [ ] Export `setupElementProps` function
+- [ ] Add `"./setup"` export to `integrations/package.json`
 
 ### Phase 2: Refactor React/Preact `createComponent`
 
-- [ ] Refactor `integrations/src/react.ts` to use `createElementBinding` internally
-- [ ] Refactor `integrations/src/preact.ts` to use `createElementBinding` internally
-- [ ] No change to generated wrapper code — `createComponent` API stays the same
+- [ ] Refactor `integrations/src/react.ts` to use `setupElementProps` internally
+- [ ] Refactor `integrations/src/preact.ts` to use `setupElementProps` internally
+- [ ] No change to generated wrapper code
 - [ ] Verify all existing tests pass
 
 ### Phase 3: Update Vue code generator
 
 - [ ] Update `generateVueComponentFile` in `cli/src/generate.ts`
-- [ ] Import `createElementBinding` from `@aria-ui-v2/integrations/controller`
-- [ ] Replace inline switch/case + ref callback with `createElementBinding`
+- [ ] Generate import of `setupElementProps` from `@aria-ui-v2/integrations/setup`
+- [ ] Replace switch/case + ref callback + `_eventHandlers` with `setupElementProps`
 - [ ] Regenerate all Vue wrappers
 - [ ] Verify all tests pass
 
 ### Phase 4: Update Svelte code generator
 
 - [ ] Update `generateSvelteComponentSvelteFile` in `cli/src/generate.ts`
-- [ ] Import `createElementBinding` in attachment function
-- [ ] Replace manual property setting + addEventListener with `binding.update()`
+- [ ] Generate import of `setupElementProps` in attachment
+- [ ] Replace manual property/event setup with `setupElementProps`
 - [ ] Regenerate all Svelte wrappers
 - [ ] Verify all tests pass
 
@@ -596,10 +446,8 @@ Solid's `"prop:xxx"` and `"on:xxx"` are reactive and framework-native. No change
 
 ---
 
-## 7. Open Questions
+## 6. Open Questions
 
-1. **Should `createElementBinding` handle prop filtering?** Currently each framework filters out managed props from passthrough. We could add a `filterProps(props)` method that returns only passthrough props. This would remove the `_allManagedKeys` set from Vue and the destructuring from Svelte.
+1. **Should `setupElementProps` also return a `filterProps` helper?** Currently each framework filters out managed props. We could export a separate `filterProps(props, propNames, eventNameMap)` to unify this too. But it's simple enough inline.
 
-2. **Should React/Preact switch to `createElementBinding`?** They already work well with `createComponent`. Refactoring them is lower priority but would make all 4 DOM-manipulating frameworks use the same core logic.
-
-3. **Event handler identity in Vue**: Vue's render function runs on every reactivity change. `binding.update()` in the ref callback re-registers all event listeners each time the ref is called. With `AbortController`, this is cheap, but we should verify there are no timing issues (event fired between abort and re-add).
+2. **Vue render-phase re-calls**: Vue's `_ref` is called from the render function on every update. With `setupElementProps`, each call aborts old listeners and creates new ones. This is correct because the event handlers may have changed between renders (e.g., the handler closure captures new state).

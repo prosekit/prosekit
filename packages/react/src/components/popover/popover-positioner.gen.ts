@@ -3,11 +3,6 @@
  */
 
 import {
-  registerPopoverPositionerElement,
-  type PopoverPositionerElement,
-  type PopoverPositionerProps as PopoverPositionerElementProps,
-} from "@prosekit/web/popover";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,6 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerPopoverPositionerElement,
+  type PopoverPositionerElement,
+  type PopoverPositionerProps as PopoverPositionerElementProps,
+} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverPositioner} React component.

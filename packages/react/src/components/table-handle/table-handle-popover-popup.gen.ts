@@ -3,11 +3,6 @@
  */
 
 import {
-  registerTableHandlePopoverPopupElement,
-  type TableHandlePopoverPopupElement,
-  type TableHandlePopoverPopupProps as TableHandlePopoverPopupElementProps,
-} from "@prosekit/web/table-handle";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,6 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerTableHandlePopoverPopupElement,
+  type TableHandlePopoverPopupElement,
+  type TableHandlePopoverPopupProps as TableHandlePopoverPopupElementProps,
+} from "@prosekit/web/table-handle";
 
 /**
  * Props for the {@link TableHandlePopoverPopup} React component.

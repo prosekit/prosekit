@@ -3,11 +3,6 @@
  */
 
 import {
-  registerPopoverTriggerElement,
-  type PopoverTriggerEvents,
-  type PopoverTriggerProps as PopoverTriggerElementProps,
-} from "@prosekit/web/popover";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -16,6 +11,11 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerPopoverTriggerElement,
+  type PopoverTriggerEvents,
+  type PopoverTriggerProps as PopoverTriggerElementProps,
+} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverTrigger} Vue component.

@@ -3,10 +3,6 @@
  */
 
 import {
-  registerResizableHandleElement,
-  type ResizableHandleProps as ResizableHandleElementProps,
-} from "@prosekit/web/resizable";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,6 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerResizableHandleElement,
+  type ResizableHandleProps as ResizableHandleElementProps,
+} from "@prosekit/web/resizable";
 
 /**
  * Props for the {@link ResizableHandle} Vue component.

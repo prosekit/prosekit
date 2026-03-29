@@ -3,11 +3,6 @@
  */
 
 import {
-  registerTooltipPositionerElement,
-  type TooltipPositionerElement,
-  type TooltipPositionerProps as TooltipPositionerElementProps,
-} from "@prosekit/web/tooltip";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,6 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerTooltipPositionerElement,
+  type TooltipPositionerElement,
+  type TooltipPositionerProps as TooltipPositionerElementProps,
+} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipPositioner} React component.

@@ -3,12 +3,6 @@
  */
 
 import {
-  registerPopoverRootElement,
-  type PopoverRootElement,
-  type PopoverRootProps as PopoverRootElementProps,
-  type PopoverRootEvents,
-} from "@prosekit/web/popover";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -19,6 +13,12 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerPopoverRootElement,
+  type PopoverRootElement,
+  type PopoverRootProps as PopoverRootElementProps,
+  type PopoverRootEvents,
+} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverRoot} React component.

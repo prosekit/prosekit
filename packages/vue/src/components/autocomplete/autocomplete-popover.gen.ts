@@ -3,11 +3,6 @@
  */
 
 import {
-  registerAutocompletePopoverElement,
-  type AutocompletePopoverEvents,
-  type AutocompletePopoverProps as AutocompletePopoverElementProps,
-} from "@prosekit/web/autocomplete";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -16,7 +11,11 @@ import {
   computed,
   watchEffect,
 } from "vue";
-
+import {
+  registerAutocompletePopoverElement,
+  type AutocompletePopoverEvents,
+  type AutocompletePopoverProps as AutocompletePopoverElementProps,
+} from "@prosekit/web/autocomplete";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

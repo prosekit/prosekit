@@ -3,12 +3,6 @@
  */
 
 import {
-  registerBlockHandlePopoverElement,
-  type BlockHandlePopoverElement,
-  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
-  type BlockHandlePopoverEvents,
-} from "@prosekit/web/block-handle";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -19,7 +13,12 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-
+import {
+  registerBlockHandlePopoverElement,
+  type BlockHandlePopoverElement,
+  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
+  type BlockHandlePopoverEvents,
+} from "@prosekit/web/block-handle";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

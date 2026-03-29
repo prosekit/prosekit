@@ -3,11 +3,6 @@
  */
 
 import {
-  registerResizableRootElement,
-  type ResizableRootEvents,
-  type ResizableRootProps as ResizableRootElementProps,
-} from "@prosekit/web/resizable";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -16,6 +11,11 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerResizableRootElement,
+  type ResizableRootEvents,
+  type ResizableRootProps as ResizableRootElementProps,
+} from "@prosekit/web/resizable";
 
 /**
  * Props for the {@link ResizableRoot} Vue component.

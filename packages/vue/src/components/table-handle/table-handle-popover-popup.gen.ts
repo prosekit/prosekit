@@ -3,10 +3,6 @@
  */
 
 import {
-  registerTableHandlePopoverPopupElement,
-  type TableHandlePopoverPopupProps as TableHandlePopoverPopupElementProps,
-} from "@prosekit/web/table-handle";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,6 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerTableHandlePopoverPopupElement,
+  type TableHandlePopoverPopupProps as TableHandlePopoverPopupElementProps,
+} from "@prosekit/web/table-handle";
 
 /**
  * Props for the {@link TableHandlePopoverPopup} Vue component.

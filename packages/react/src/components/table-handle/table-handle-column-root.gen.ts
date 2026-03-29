@@ -3,11 +3,6 @@
  */
 
 import {
-  registerTableHandleColumnRootElement,
-  type TableHandleColumnRootElement,
-  type TableHandleColumnRootProps as TableHandleColumnRootElementProps,
-} from "@prosekit/web/table-handle";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,7 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-
+import {
+  registerTableHandleColumnRootElement,
+  type TableHandleColumnRootElement,
+  type TableHandleColumnRootProps as TableHandleColumnRootElementProps,
+} from "@prosekit/web/table-handle";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

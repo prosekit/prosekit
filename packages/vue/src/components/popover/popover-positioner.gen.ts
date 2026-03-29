@@ -3,10 +3,6 @@
  */
 
 import {
-  registerPopoverPositionerElement,
-  type PopoverPositionerProps as PopoverPositionerElementProps,
-} from "@prosekit/web/popover";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,6 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerPopoverPositionerElement,
+  type PopoverPositionerProps as PopoverPositionerElementProps,
+} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverPositioner} Vue component.

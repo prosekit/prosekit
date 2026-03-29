@@ -3,10 +3,6 @@
  */
 
 import {
-  registerTooltipPositionerElement,
-  type TooltipPositionerProps as TooltipPositionerElementProps,
-} from "@prosekit/web/tooltip";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,6 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerTooltipPositionerElement,
+  type TooltipPositionerProps as TooltipPositionerElementProps,
+} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipPositioner} Vue component.

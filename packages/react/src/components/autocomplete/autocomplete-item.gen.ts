@@ -3,11 +3,6 @@
  */
 
 import {
-  registerAutocompleteItemElement,
-  type AutocompleteItemElement,
-  type AutocompleteItemProps as AutocompleteItemElementProps,
-} from "@prosekit/web/autocomplete";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,6 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerAutocompleteItemElement,
+  type AutocompleteItemElement,
+  type AutocompleteItemProps as AutocompleteItemElementProps,
+} from "@prosekit/web/autocomplete";
 
 /**
  * Props for the {@link AutocompleteItem} React component.

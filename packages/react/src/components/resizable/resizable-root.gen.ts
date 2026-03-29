@@ -3,12 +3,6 @@
  */
 
 import {
-  registerResizableRootElement,
-  type ResizableRootElement,
-  type ResizableRootProps as ResizableRootElementProps,
-  type ResizableRootEvents,
-} from "@prosekit/web/resizable";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -19,6 +13,12 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerResizableRootElement,
+  type ResizableRootElement,
+  type ResizableRootProps as ResizableRootElementProps,
+  type ResizableRootEvents,
+} from "@prosekit/web/resizable";
 
 /**
  * Props for the {@link ResizableRoot} React component.

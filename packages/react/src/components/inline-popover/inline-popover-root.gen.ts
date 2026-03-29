@@ -3,12 +3,6 @@
  */
 
 import {
-  registerInlinePopoverRootElement,
-  type InlinePopoverRootElement,
-  type InlinePopoverRootProps as InlinePopoverRootElementProps,
-  type InlinePopoverRootEvents,
-} from "@prosekit/web/inline-popover";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -19,7 +13,12 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-
+import {
+  registerInlinePopoverRootElement,
+  type InlinePopoverRootElement,
+  type InlinePopoverRootProps as InlinePopoverRootElementProps,
+  type InlinePopoverRootEvents,
+} from "@prosekit/web/inline-popover";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

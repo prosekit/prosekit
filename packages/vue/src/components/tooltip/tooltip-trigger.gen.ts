@@ -3,10 +3,6 @@
  */
 
 import {
-  registerTooltipTriggerElement,
-  type TooltipTriggerProps as TooltipTriggerElementProps,
-} from "@prosekit/web/tooltip";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,6 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerTooltipTriggerElement,
+  type TooltipTriggerProps as TooltipTriggerElementProps,
+} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipTrigger} Vue component.

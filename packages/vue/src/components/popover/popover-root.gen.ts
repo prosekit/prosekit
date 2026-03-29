@@ -3,11 +3,6 @@
  */
 
 import {
-  registerPopoverRootElement,
-  type PopoverRootEvents,
-  type PopoverRootProps as PopoverRootElementProps,
-} from "@prosekit/web/popover";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -16,6 +11,11 @@ import {
   computed,
   watchEffect,
 } from "vue";
+import {
+  registerPopoverRootElement,
+  type PopoverRootEvents,
+  type PopoverRootProps as PopoverRootElementProps,
+} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverRoot} Vue component.

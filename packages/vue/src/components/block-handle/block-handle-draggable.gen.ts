@@ -3,10 +3,6 @@
  */
 
 import {
-  registerBlockHandleDraggableElement,
-  type BlockHandleDraggableProps as BlockHandleDraggableElementProps,
-} from "@prosekit/web/block-handle";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,7 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
-
+import {
+  registerBlockHandleDraggableElement,
+  type BlockHandleDraggableProps as BlockHandleDraggableElementProps,
+} from "@prosekit/web/block-handle";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

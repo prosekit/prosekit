@@ -3,10 +3,6 @@
  */
 
 import {
-  registerPopoverPopupElement,
-  type PopoverPopupElement,
-} from "@prosekit/web/popover";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -16,6 +12,10 @@ import {
   type HTMLAttributes,
   type RefAttributes,
 } from "react";
+import {
+  registerPopoverPopupElement,
+  type PopoverPopupElement,
+} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverPopup} React component.

@@ -3,11 +3,6 @@
  */
 
 import {
-  registerTooltipTriggerElement,
-  type TooltipTriggerElement,
-  type TooltipTriggerProps as TooltipTriggerElementProps,
-} from "@prosekit/web/tooltip";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,6 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
+import {
+  registerTooltipTriggerElement,
+  type TooltipTriggerElement,
+  type TooltipTriggerProps as TooltipTriggerElementProps,
+} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipTrigger} React component.

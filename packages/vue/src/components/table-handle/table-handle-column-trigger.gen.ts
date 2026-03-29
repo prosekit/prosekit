@@ -3,10 +3,6 @@
  */
 
 import {
-  registerTableHandleColumnTriggerElement,
-  type TableHandleColumnTriggerProps as TableHandleColumnTriggerElementProps,
-} from "@prosekit/web/table-handle";
-import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -15,7 +11,10 @@ import {
   computed,
   watchEffect,
 } from "vue";
-
+import {
+  registerTableHandleColumnTriggerElement,
+  type TableHandleColumnTriggerProps as TableHandleColumnTriggerElementProps,
+} from "@prosekit/web/table-handle";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

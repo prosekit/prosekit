@@ -3,11 +3,6 @@
  */
 
 import {
-  registerBlockHandleAddElement,
-  type BlockHandleAddElement,
-  type BlockHandleAddProps as BlockHandleAddElementProps,
-} from "@prosekit/web/block-handle";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,7 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-
+import {
+  registerBlockHandleAddElement,
+  type BlockHandleAddElement,
+  type BlockHandleAddProps as BlockHandleAddElementProps,
+} from "@prosekit/web/block-handle";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

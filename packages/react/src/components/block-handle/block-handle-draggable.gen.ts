@@ -3,11 +3,6 @@
  */
 
 import {
-  registerBlockHandleDraggableElement,
-  type BlockHandleDraggableElement,
-  type BlockHandleDraggableProps as BlockHandleDraggableElementProps,
-} from "@prosekit/web/block-handle";
-import {
   createElement,
   forwardRef,
   useCallback,
@@ -18,7 +13,11 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-
+import {
+  registerBlockHandleDraggableElement,
+  type BlockHandleDraggableElement,
+  type BlockHandleDraggableProps as BlockHandleDraggableElementProps,
+} from "@prosekit/web/block-handle";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

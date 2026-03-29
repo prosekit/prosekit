@@ -4,7 +4,7 @@ import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor, useEditorDerivedValue } from 'prosekit/vue'
-import { InlinePopover } from 'prosekit/vue/inline-popover'
+import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
 
 import { Button } from '../button'

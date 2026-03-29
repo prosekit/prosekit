@@ -18,10 +18,10 @@ export interface OverlayStore {
 }
 
 export function createOverlayStore(
-    getOpen: (() => boolean | null ) ,
-    setOpen: ((open: boolean) => void) ,
-    getDefaultOpen: () => boolean, 
-    getDisabled: () => boolean,
+      getOpen: (() => boolean | null ) ,
+      setOpen: ((open: boolean) => void) ,
+      getDefaultOpen: () => boolean, 
+      getDisabled: () => boolean,
     dispatchOpenChangeEvent: (event: OpenChangeEvent) => void,
 ): OverlayStore {
 

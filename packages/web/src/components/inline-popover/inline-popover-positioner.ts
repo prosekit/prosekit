@@ -80,7 +80,7 @@ export function setupInlinePopoverPositioner(
   host: HostElement,
   props: Store<InlinePopoverPositionerProps>,
 ): void {
-  setupOverlayPositioner(host, props, InlinePopoverStoreContext)
+  setupOverlayPositioner(host, props, InlinePopoverStoreContext.consume(host))
 }
 
 const InlinePopoverPositionerElementBase: HostElementConstructor<InlinePopoverPositionerProps> = defineCustomElement(

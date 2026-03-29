@@ -3,4 +3,3 @@ export { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps
 export { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from './overlay-positioner.ts'
 export { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from './overlay-root.ts'
 export { createOverlayStore, type OverlayStore } from './overlay-store.ts'
-export { updatePlacement } from './positioning.ts'

@@ -79,3 +79,51 @@ export {
   TableHandleRowTriggerPropsDeclaration,
   type TableHandleRowTriggerProps,
 } from './table-handle-row-trigger.ts'
+
+
+/**
+
+TODO: use the following sturcutre:
+
+
+
+<TableHandleRoot class="contents">
+  <TableHandleDragPreview />
+  <TableHandleDropIndicator />
+
+  <!-- col -->
+  <TableHandleColumnPositioner >
+    <TableHandleColumnPopup>
+      <TableHandleMenuRoot class="contents">
+        <TableHandleMenuTrigger>
+          <div class="i-lucide-icon-xxxx" />
+        </TableHandleMenuTrigger>
+        <TableHandleMenuPositioner>
+          <TableHandleMenuPopup>
+            <TableHandleMenuItem>Action 1</TableHandleMenuItem>
+            <TableHandleMenuItem>Action 2</TableHandleMenuItem>
+          </TableHandleMenuPopup>
+        </TableHandleMenuPositioner>
+      </TableHandleMenuRoot>
+    </TableHandleColumnPopup>
+  </TableHandleColumnPositioner >
+   
+  <!-- row -->
+  <TableHandleRowPositioner >
+    <TableHandleRowPopup>
+      <TableHandleMenuRoot class="contents">
+        <TableHandleMenuTrigger>
+          <div class="i-lucide-icon-xxxx" />
+        </TableHandleMenuTrigger>
+        <TableHandleMenuPositioner>
+          <TableHandleMenuPopup>
+            <TableHandleMenuItem>Action 3</TableHandleMenuItem>
+            <TableHandleMenuItem>Action 3</TableHandleMenuItem>
+          </TableHandleMenuPopup>
+        </TableHandleMenuPositioner>
+      </TableHandleMenuRoot>
+    </TableHandleRowPopup>
+  </TableHandleRowPositioner >
+</TableHandleRoot>
+
+ */

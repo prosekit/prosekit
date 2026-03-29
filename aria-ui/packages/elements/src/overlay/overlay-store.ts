@@ -29,6 +29,7 @@ export function createOverlayStore(
   const getIsOpen = computed((): boolean => {
     const canOpen = !getDisabled() && anchorElement.get()
     const openValue = getOpen() ?? getDefaultOpen()
+    console.log('DEBUG getIsOpen', { canOpen, openValue })
     return canOpen ? openValue : false
   })
 

@@ -15,12 +15,11 @@ import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
 import {
   createOverlayStore,
   OverlayPositionerPropsDeclaration,
-  updatePlacement,
   type OverlayPositionerProps,
 } from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
-import { once } from '@ocavue/utils'
+import { isElement, isHTMLElement, once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
@@ -95,11 +94,12 @@ export function setupTableHandleColumnRoot(
 
   const getColFirstCellPos = computed(() => getStore()?.getHoveringCell()?.colFirstCellPos)
 
-  const getReferenceCell = computed<HTMLElement | null>(() => {
+  const getReferenceCell = computed ((): HTMLElement | undefined => {
     const pos = getColFirstCellPos()
     const view = getSafeEditorView(getEditor())
-    if (!pos || !view) return null
-    return view.nodeDOM(pos) as HTMLElement | null
+    if (!pos || !view) return  
+    const element = view.nodeDOM(pos)     
+    if (element && isHTMLElement(element)) return element 
   })
 
   const contentOpen = createSignal(false)
@@ -110,53 +110,36 @@ export function setupTableHandleColumnRoot(
     contentOpen.set(false)
   })
 
-  // Overlay positioning
-  useEffect(host, () => {
-    const ref = getReferenceCell()
-    if (!ref) return
-
-    // TODO: the root element should not handle the updatePlacement. It's positioner's job to handle updatePlacement
-    return updatePlacement(host, ref, {
-      strategy: props.strategy.get(),
-      placement: props.placement.get(),
-      autoUpdate: props.autoUpdate.get(),
-      hoist: props.hoist.get(),
-      offset: props.offset.get(),
-      flip: props.flip.get(),
-      shift: props.shift.get(),
-      overlap: props.overlap.get(),
-      fitViewport: props.fitViewport.get(),
-      sameWidth: props.sameWidth.get(),
-      sameHeight: props.sameHeight.get(),
-      inline: props.inline.get(),
-      hide: props.hide.get(),
-      boundary: props.boundary.get(),
-      rootBoundary: props.rootBoundary.get(),
-      overflowPadding: props.overflowPadding.get(),
-      elementContext: props.elementContext.get(),
-      altBoundary: props.altBoundary.get(),
-    })
-  })
 
   // Presence
   const getPresence = computed(() => !!getReferenceCell())
   useAttribute(host, 'data-state', () => (getPresence() ? 'open' : 'closed'))
   usePresence(host, getPresence)
 
+
   // Menu store
   const overlayStore = createOverlayStore(
     contentOpen.get,
     contentOpen.set,
-    () => false,
+    () => true ,
     () => false,
     (event) => host.dispatchEvent(event),
   )
   const menuStore = createMenuStore(overlayStore)
   MenuStoreContext.provide(host, menuStore)
 
+    useEffect(host, () => {
+    console.log('DEBUG COL reference cell changed:', getReferenceCell())
+  })
+
+
+  useEffect(host, () => {
+    overlayStore.setAnchorElement(getReferenceCell() )
+  })
+
   onMount(host, () => {
     // TODO: understand why we need zIndex here and if there's a better way to handle it
-    host.style.zIndex = '10'
+    host.style.zIndex = '100'
   })
 }
 

@@ -3,6 +3,7 @@ import {
   defineCustomElement,
   defineProps,
   registerCustomElement,
+  useEffect,
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
@@ -41,7 +42,23 @@ export function setupTableHandlePopoverPositioner(
   props: Store<TableHandlePopoverPositionerProps>,
 ): void {
   const getMenuStore = MenuStoreContext.consume(host)
-  setupOverlayPositioner(host, props, () => getMenuStore()?.overlayStore)
+  const getOverlayStore = () => {
+    const result = getMenuStore()?.overlayStore; 
+    console.log('DEBUG getOverlayStore called, returning:', result)
+    return result }
+
+
+    useEffect(host, () => {
+       const overlayStore = getOverlayStore()
+       if (!overlayStore) {
+        return 
+       }
+       console.log("DEBUG getAnchorElement", overlayStore.getAnchorElement())
+       console.log("DEBUG isOpen", overlayStore.getIsOpen())
+
+  })
+
+  setupOverlayPositioner(host, props, getOverlayStore)
 }
 
 const TableHandlePopoverPositionerElementBase: HostElementConstructor<TableHandlePopoverPositionerProps> = defineCustomElement(

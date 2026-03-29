@@ -173,7 +173,7 @@ function InlinePopoverComponent(
   const elementRef = useRef<InlinePopoverElement>(null);
   const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
-  const editorContext = useEditorContext();
+  const p5Fallback = useEditorContext();
 
   const {
     altBoundary: p0,
@@ -211,7 +211,7 @@ function InlinePopoverComponent(
       boundary: p2,
       defaultOpen: p3,
       dismissOnEscape: p4,
-      editor: p5 ?? editorContext,
+      editor: p5 ?? p5Fallback,
       elementContext: p6,
       fitViewport: p7,
       flip: p8,

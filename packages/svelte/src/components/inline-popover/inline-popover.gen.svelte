@@ -9,37 +9,16 @@
   let element
   const handlers = []
 
-  const editorContext = useEditorContext()
+  const p5Fallback = useEditorContext()
 
   $effect.pre(() => {
     if (!element) return
 
-    element.altBoundary = p0
-    element.autoUpdate = p1
-    element.boundary = p2
-    element.defaultOpen = p3
-    element.dismissOnEscape = p4
-    {
-      const propValue = p5
-      element.editor = propValue ?? editorContext ?? propValue
-    }
-    element.elementContext = p6
-    element.fitViewport = p7
-    element.flip = p8
-    element.hide = p9
-    element.hoist = p10
-    element.inline = p11
-    element.offset = p12
-    element.open = p13
-    element.overflowPadding = p14
-    element.overlap = p15
-    element.placement = p16
-    element.rootBoundary = p17
-    element.sameHeight = p18
-    element.sameWidth = p19
-    element.shift = p20
-    element.strategy = p21
-
+    Object.assign(element, { 
+      altBoundary: p0, autoUpdate: p1, boundary: p2, defaultOpen: p3, dismissOnEscape: p4, 
+      editor: p5 ?? p5Fallback,
+      elementContext: p6, fitViewport: p7, flip: p8, hide: p9, hoist: p10, inline: p11, offset: p12, open: p13, overflowPadding: p14, overlap: p15, placement: p16, rootBoundary: p17, sameHeight: p18, sameWidth: p19, shift: p20, strategy: p21 })
+packages/svelte/src/components/inline-popover/inline-popover.gen.svelte
     handlers.length = 0
     handlers.push(e0)
   })

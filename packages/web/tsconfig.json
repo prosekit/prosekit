@@ -2,18 +2,6 @@
   "extends": "@prosekit/config-ts/root.json",
   "references": [
     {
-      "path": "../../aria-ui/packages/cli/tsconfig.json",
-    },
-    {
-      "path": "../../aria-ui/packages/core/tsconfig.json",
-    },
-    {
-      "path": "../../aria-ui/packages/elements/tsconfig.json",
-    },
-    {
-      "path": "../../aria-ui/packages/utils/tsconfig.json",
-    },
-    {
       "path": "../config-tsdown/tsconfig.json",
     },
     {

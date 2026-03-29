@@ -7,12 +7,14 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerPopoverTriggerElement,
   type PopoverTriggerEvents,
   type PopoverTriggerProps as PopoverTriggerElementProps,
-  PopoverTriggerPropsDeclaration,
 } from "@prosekit/web/popover";
 
 /**
@@ -57,64 +59,67 @@ export const PopoverTrigger: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<PopoverTriggerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerPopoverTriggerElement();
-    const _eventHandlers: Record<string, Function> = {};
-    let _abortController: AbortController | undefined;
 
-    const _ref = (element: HTMLElement | null | undefined) => {
-      _abortController?.abort();
-      _abortController = undefined;
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      if (!element) {
-        return;
+    const splittedProps = computed(() => {
+      const {
+        closeDelay: p0,
+        delay: p1,
+        disabled: p2,
+        openOnHover: p3,
+        onOpenChange: e0,
+        ...restProps
+      } = props;
+      return [[p0, p1, p2, p3, e0], restProps] as const;
+    });
+
+    const handlers: (Function | undefined)[] = [];
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0, p1, p2, p3, e0] = splittedProps.value[0];
+
+      Object.assign(element, {
+        closeDelay: p0,
+        delay: p1,
+        disabled: p2,
+        openOnHover: p3,
+      });
+
+      handlers.length = 0;
+      handlers.push(e0);
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const ac = new AbortController();
+      for (const [index, eventName] of ["openChange"].entries()) {
+        element.addEventListener(
+          eventName,
+          (event: Event) => {
+            handlers[index]?.(event);
+          },
+          { signal: ac.signal },
+        );
       }
-
-      _abortController = new AbortController();
-      const abortSignal = _abortController.signal;
-
-      element.addEventListener(
-        "openChange",
-        (event) => {
-          _eventHandlers["onOpenChange"]?.(event);
-        },
-        { signal: abortSignal },
-      );
-    };
+      return () => ac.abort();
+    });
 
     return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "closeDelay":
-          case "delay":
-          case "disabled":
-          case "openOnHover":
-            _props["." + key] = value;
-            break;
-          case "onOpenChange":
-            _eventHandlers[key] = value as Function;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
-
-      _props["ref"] = _ref;
-      return h("prosekit-popover-trigger", _props, slots.default?.());
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-popover-trigger",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      closeDelay: {
-        default: PopoverTriggerPropsDeclaration.closeDelay.default,
-      },
-      delay: { default: PopoverTriggerPropsDeclaration.delay.default },
-      disabled: { default: PopoverTriggerPropsDeclaration.disabled.default },
-      openOnHover: {
-        default: PopoverTriggerPropsDeclaration.openOnHover.default,
-      },
-      onOpenChange: { type: Function },
-    } as Record<string, unknown>,
-  },
+  { props: ["closeDelay", "delay", "disabled", "openOnHover", "onOpenChange"] },
 );
 
 export type { PopoverTriggerEvents };

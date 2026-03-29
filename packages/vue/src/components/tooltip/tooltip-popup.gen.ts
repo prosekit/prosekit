@@ -30,7 +30,6 @@ export const TooltipPopup: DefineSetupFnComponent<
 
     return () => {
       const _props = { ...props };
-
       return h("prosekit-tooltip-popup", _props, slots.default?.());
     };
   },

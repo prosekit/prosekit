@@ -7,12 +7,14 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTableHandlePopoverItemElement,
   type TableHandlePopoverItemEvents,
   type TableHandlePopoverItemProps as TableHandlePopoverItemElementProps,
-  TableHandlePopoverItemPropsDeclaration,
 } from "@prosekit/web/table-handle";
 
 /**
@@ -41,58 +43,55 @@ export const TableHandlePopoverItem: DefineSetupFnComponent<
 >(
   (props, { slots }) => {
     registerTableHandlePopoverItemElement();
-    const _eventHandlers: Record<string, Function> = {};
-    let _abortController: AbortController | undefined;
 
-    const _ref = (element: HTMLElement | null | undefined) => {
-      _abortController?.abort();
-      _abortController = undefined;
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      if (!element) {
-        return;
+    const splittedProps = computed(() => {
+      const { disabled: p0, value: p1, onItemSelect: e0, ...restProps } = props;
+      return [[p0, p1, e0], restProps] as const;
+    });
+
+    const handlers: (Function | undefined)[] = [];
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0, p1, e0] = splittedProps.value[0];
+
+      Object.assign(element, { disabled: p0, value: p1 });
+
+      handlers.length = 0;
+      handlers.push(e0);
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const ac = new AbortController();
+      for (const [index, eventName] of ["itemSelect"].entries()) {
+        element.addEventListener(
+          eventName,
+          (event: Event) => {
+            handlers[index]?.(event);
+          },
+          { signal: ac.signal },
+        );
       }
-
-      _abortController = new AbortController();
-      const abortSignal = _abortController.signal;
-
-      element.addEventListener(
-        "itemSelect",
-        (event) => {
-          _eventHandlers["onItemSelect"]?.(event);
-        },
-        { signal: abortSignal },
-      );
-    };
+      return () => ac.abort();
+    });
 
     return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "disabled":
-          case "value":
-            _props["." + key] = value;
-            break;
-          case "onItemSelect":
-            _eventHandlers[key] = value as Function;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
-
-      _props["ref"] = _ref;
-      return h("prosekit-table-handle-popover-item", _props, slots.default?.());
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-table-handle-popover-item",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      disabled: {
-        default: TableHandlePopoverItemPropsDeclaration.disabled.default,
-      },
-      value: { default: TableHandlePopoverItemPropsDeclaration.value.default },
-      onItemSelect: { type: Function },
-    } as Record<string, unknown>,
-  },
+  { props: ["disabled", "value", "onItemSelect"] },
 );
 
 export type { TableHandlePopoverItemEvents };

@@ -7,12 +7,14 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerResizableRootElement,
   type ResizableRootEvents,
   type ResizableRootProps as ResizableRootElementProps,
-  ResizableRootPropsDeclaration,
 } from "@prosekit/web/resizable";
 
 /**
@@ -55,69 +57,63 @@ export const ResizableRoot: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<ResizableRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerResizableRootElement();
-    const _eventHandlers: Record<string, Function> = {};
-    let _abortController: AbortController | undefined;
 
-    const _ref = (element: HTMLElement | null | undefined) => {
-      _abortController?.abort();
-      _abortController = undefined;
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      if (!element) {
-        return;
+    const splittedProps = computed(() => {
+      const {
+        aspectRatio: p0,
+        height: p1,
+        width: p2,
+        onResizeEnd: e0,
+        onResizeStart: e1,
+        ...restProps
+      } = props;
+      return [[p0, p1, p2, e0, e1], restProps] as const;
+    });
+
+    const handlers: (Function | undefined)[] = [];
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0, p1, p2, e0, e1] = splittedProps.value[0];
+
+      Object.assign(element, { aspectRatio: p0, height: p1, width: p2 });
+
+      handlers.length = 0;
+      handlers.push(e0);
+      handlers.push(e1);
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const ac = new AbortController();
+      for (const [index, eventName] of ["resizeEnd", "resizeStart"].entries()) {
+        element.addEventListener(
+          eventName,
+          (event: Event) => {
+            handlers[index]?.(event);
+          },
+          { signal: ac.signal },
+        );
       }
-
-      _abortController = new AbortController();
-      const abortSignal = _abortController.signal;
-
-      element.addEventListener(
-        "resizeEnd",
-        (event) => {
-          _eventHandlers["onResizeEnd"]?.(event);
-        },
-        { signal: abortSignal },
-      );
-      element.addEventListener(
-        "resizeStart",
-        (event) => {
-          _eventHandlers["onResizeStart"]?.(event);
-        },
-        { signal: abortSignal },
-      );
-    };
+      return () => ac.abort();
+    });
 
     return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "aspectRatio":
-          case "height":
-          case "width":
-            _props["." + key] = value;
-            break;
-          case "onResizeEnd":
-          case "onResizeStart":
-            _eventHandlers[key] = value as Function;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
-
-      _props["ref"] = _ref;
-      return h("prosekit-resizable-root", _props, slots.default?.());
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-resizable-root",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      aspectRatio: {
-        default: ResizableRootPropsDeclaration.aspectRatio.default,
-      },
-      height: { default: ResizableRootPropsDeclaration.height.default },
-      width: { default: ResizableRootPropsDeclaration.width.default },
-      onResizeEnd: { type: Function },
-      onResizeStart: { type: Function },
-    } as Record<string, unknown>,
-  },
+  { props: ["aspectRatio", "height", "width", "onResizeEnd", "onResizeStart"] },
 );
 
 export type { ResizableRootEvents };

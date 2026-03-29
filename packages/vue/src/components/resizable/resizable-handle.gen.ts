@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerResizableHandleElement,
   type ResizableHandleProps as ResizableHandleElementProps,
-  ResizableHandlePropsDeclaration,
 } from "@prosekit/web/resizable";
 
 /**
@@ -39,24 +41,30 @@ export const ResizableHandle: DefineSetupFnComponent<
   (props, { slots }) => {
     registerResizableHandleElement();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "position":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      return h("prosekit-resizable-handle", _props, slots.default?.());
+    const splittedProps = computed(() => {
+      const { position: p0, ...restProps } = props;
+      return [[p0], restProps] as const;
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0] = splittedProps.value[0];
+
+      Object.assign(element, { position: p0 });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-resizable-handle",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      position: { default: ResizableHandlePropsDeclaration.position.default },
-    } as Record<string, unknown>,
-  },
+  { props: ["position"] },
 );

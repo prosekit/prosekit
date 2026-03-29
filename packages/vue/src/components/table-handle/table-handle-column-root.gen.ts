@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTableHandleColumnRootElement,
   type TableHandleColumnRootProps as TableHandleColumnRootElementProps,
-  TableHandleColumnRootPropsDeclaration,
 } from "@prosekit/web/table-handle";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
@@ -162,89 +164,139 @@ export const TableHandleColumnRoot: DefineSetupFnComponent<
 >(
   (props, { slots }) => {
     registerTableHandleColumnRootElement();
+
+    const elementRef = shallowRef<HTMLElement | null>(null);
+
     const p3Fallback = useEditorContext();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "altBoundary":
-          case "autoUpdate":
-          case "boundary":
-          case "editor":
-          case "elementContext":
-          case "fitViewport":
-          case "flip":
-          case "hide":
-          case "hoist":
-          case "inline":
-          case "offset":
-          case "overflowPadding":
-          case "overlap":
-          case "placement":
-          case "rootBoundary":
-          case "sameHeight":
-          case "sameWidth":
-          case "shift":
-          case "strategy":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const splittedProps = computed(() => {
+      const {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        editor: p3,
+        elementContext: p4,
+        fitViewport: p5,
+        flip: p6,
+        hide: p7,
+        hoist: p8,
+        inline: p9,
+        offset: p10,
+        overflowPadding: p11,
+        overlap: p12,
+        placement: p13,
+        rootBoundary: p14,
+        sameHeight: p15,
+        sameWidth: p16,
+        shift: p17,
+        strategy: p18,
+        ...restProps
+      } = props;
+      return [
+        [
+          p0,
+          p1,
+          p2,
+          p3,
+          p4,
+          p5,
+          p6,
+          p7,
+          p8,
+          p9,
+          p10,
+          p11,
+          p12,
+          p13,
+          p14,
+          p15,
+          p16,
+          p17,
+          p18,
+        ],
+        restProps,
+      ] as const;
+    });
 
-      if (_props[".editor"] == null && p3Fallback != null) {
-        _props[".editor"] = p3Fallback;
-      }
-      return h("prosekit-table-handle-column-root", _props, slots.default?.());
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [
+        p0,
+        p1,
+        p2,
+        p3,
+        p4,
+        p5,
+        p6,
+        p7,
+        p8,
+        p9,
+        p10,
+        p11,
+        p12,
+        p13,
+        p14,
+        p15,
+        p16,
+        p17,
+        p18,
+      ] = splittedProps.value[0];
+
+      Object.assign(element, {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        editor: p3 ?? p3Fallback,
+        elementContext: p4,
+        fitViewport: p5,
+        flip: p6,
+        hide: p7,
+        hoist: p8,
+        inline: p9,
+        offset: p10,
+        overflowPadding: p11,
+        overlap: p12,
+        placement: p13,
+        rootBoundary: p14,
+        sameHeight: p15,
+        sameWidth: p16,
+        shift: p17,
+        strategy: p18,
+      });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-table-handle-column-root",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
   {
-    props: {
-      altBoundary: {
-        default: TableHandleColumnRootPropsDeclaration.altBoundary.default,
-      },
-      autoUpdate: {
-        default: TableHandleColumnRootPropsDeclaration.autoUpdate.default,
-      },
-      boundary: {
-        default: TableHandleColumnRootPropsDeclaration.boundary.default,
-      },
-      editor: { default: TableHandleColumnRootPropsDeclaration.editor.default },
-      elementContext: {
-        default: TableHandleColumnRootPropsDeclaration.elementContext.default,
-      },
-      fitViewport: {
-        default: TableHandleColumnRootPropsDeclaration.fitViewport.default,
-      },
-      flip: { default: TableHandleColumnRootPropsDeclaration.flip.default },
-      hide: { default: TableHandleColumnRootPropsDeclaration.hide.default },
-      hoist: { default: TableHandleColumnRootPropsDeclaration.hoist.default },
-      inline: { default: TableHandleColumnRootPropsDeclaration.inline.default },
-      offset: { default: TableHandleColumnRootPropsDeclaration.offset.default },
-      overflowPadding: {
-        default: TableHandleColumnRootPropsDeclaration.overflowPadding.default,
-      },
-      overlap: {
-        default: TableHandleColumnRootPropsDeclaration.overlap.default,
-      },
-      placement: {
-        default: TableHandleColumnRootPropsDeclaration.placement.default,
-      },
-      rootBoundary: {
-        default: TableHandleColumnRootPropsDeclaration.rootBoundary.default,
-      },
-      sameHeight: {
-        default: TableHandleColumnRootPropsDeclaration.sameHeight.default,
-      },
-      sameWidth: {
-        default: TableHandleColumnRootPropsDeclaration.sameWidth.default,
-      },
-      shift: { default: TableHandleColumnRootPropsDeclaration.shift.default },
-      strategy: {
-        default: TableHandleColumnRootPropsDeclaration.strategy.default,
-      },
-    } as Record<string, unknown>,
+    props: [
+      "altBoundary",
+      "autoUpdate",
+      "boundary",
+      "editor",
+      "elementContext",
+      "fitViewport",
+      "flip",
+      "hide",
+      "hoist",
+      "inline",
+      "offset",
+      "overflowPadding",
+      "overlap",
+      "placement",
+      "rootBoundary",
+      "sameHeight",
+      "sameWidth",
+      "shift",
+      "strategy",
+    ],
   },
 );

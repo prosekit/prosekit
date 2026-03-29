@@ -65,7 +65,7 @@ function defineGetterSetter(
   ElementConstructor: new () => { _store: Store<any> },
   props: Record<string, PropDeclaration<unknown>>,
 ) {
-  for (const [prop, declaration] of Object.entries(props)) {
+  for (const prop of Object.keys(props)) {
     Object.defineProperty(ElementConstructor.prototype, prop, {
       enumerable: true,
       configurable: false,
@@ -76,7 +76,7 @@ function defineGetterSetter(
       set(v: unknown) {
         {
           if (v === undefined) {
-            v = declaration.default
+            return 
           }
         }
         {

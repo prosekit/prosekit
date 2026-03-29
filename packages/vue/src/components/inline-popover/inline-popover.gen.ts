@@ -7,12 +7,14 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerInlinePopoverElement,
   type InlinePopoverEvents,
   type InlinePopoverProps as InlinePopoverElementProps,
-  InlinePopoverPropsDeclaration,
 } from "@prosekit/web/inline-popover";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
@@ -169,114 +171,181 @@ export const InlinePopover: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<InlinePopoverProps & HTMLAttributes>(
   (props, { slots }) => {
     registerInlinePopoverElement();
+
+    const elementRef = shallowRef<HTMLElement | null>(null);
+
     const p5Fallback = useEditorContext();
 
-    const _eventHandlers: Record<string, Function> = {};
-    let _abortController: AbortController | undefined;
+    const splittedProps = computed(() => {
+      const {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        defaultOpen: p3,
+        dismissOnEscape: p4,
+        editor: p5,
+        elementContext: p6,
+        fitViewport: p7,
+        flip: p8,
+        hide: p9,
+        hoist: p10,
+        inline: p11,
+        offset: p12,
+        open: p13,
+        overflowPadding: p14,
+        overlap: p15,
+        placement: p16,
+        rootBoundary: p17,
+        sameHeight: p18,
+        sameWidth: p19,
+        shift: p20,
+        strategy: p21,
+        onOpenChange: e0,
+        ...restProps
+      } = props;
+      return [
+        [
+          p0,
+          p1,
+          p2,
+          p3,
+          p4,
+          p5,
+          p6,
+          p7,
+          p8,
+          p9,
+          p10,
+          p11,
+          p12,
+          p13,
+          p14,
+          p15,
+          p16,
+          p17,
+          p18,
+          p19,
+          p20,
+          p21,
+          e0,
+        ],
+        restProps,
+      ] as const;
+    });
 
-    const _ref = (element: HTMLElement | null | undefined) => {
-      _abortController?.abort();
-      _abortController = undefined;
+    const handlers: (Function | undefined)[] = [];
 
-      if (!element) {
-        return;
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [
+        p0,
+        p1,
+        p2,
+        p3,
+        p4,
+        p5,
+        p6,
+        p7,
+        p8,
+        p9,
+        p10,
+        p11,
+        p12,
+        p13,
+        p14,
+        p15,
+        p16,
+        p17,
+        p18,
+        p19,
+        p20,
+        p21,
+        e0,
+      ] = splittedProps.value[0];
+
+      Object.assign(element, {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        defaultOpen: p3,
+        dismissOnEscape: p4,
+        editor: p5 ?? p5Fallback,
+        elementContext: p6,
+        fitViewport: p7,
+        flip: p8,
+        hide: p9,
+        hoist: p10,
+        inline: p11,
+        offset: p12,
+        open: p13,
+        overflowPadding: p14,
+        overlap: p15,
+        placement: p16,
+        rootBoundary: p17,
+        sameHeight: p18,
+        sameWidth: p19,
+        shift: p20,
+        strategy: p21,
+      });
+
+      handlers.length = 0;
+      handlers.push(e0);
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const ac = new AbortController();
+      for (const [index, eventName] of ["openChange"].entries()) {
+        element.addEventListener(
+          eventName,
+          (event: Event) => {
+            handlers[index]?.(event);
+          },
+          { signal: ac.signal },
+        );
       }
-
-      _abortController = new AbortController();
-      const abortSignal = _abortController.signal;
-
-      element.addEventListener(
-        "openChange",
-        (event) => {
-          _eventHandlers["onOpenChange"]?.(event);
-        },
-        { signal: abortSignal },
-      );
-    };
+      return () => ac.abort();
+    });
 
     return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "altBoundary":
-          case "autoUpdate":
-          case "boundary":
-          case "defaultOpen":
-          case "dismissOnEscape":
-          case "editor":
-          case "elementContext":
-          case "fitViewport":
-          case "flip":
-          case "hide":
-          case "hoist":
-          case "inline":
-          case "offset":
-          case "open":
-          case "overflowPadding":
-          case "overlap":
-          case "placement":
-          case "rootBoundary":
-          case "sameHeight":
-          case "sameWidth":
-          case "shift":
-          case "strategy":
-            _props["." + key] = value;
-            break;
-          case "onOpenChange":
-            _eventHandlers[key] = value as Function;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
-
-      if (_props[".editor"] == null && p5Fallback != null) {
-        _props[".editor"] = p5Fallback;
-      }
-      _props["ref"] = _ref;
-      return h("prosekit-inline-popover", _props, slots.default?.());
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-inline-popover",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
   {
-    props: {
-      altBoundary: {
-        default: InlinePopoverPropsDeclaration.altBoundary.default,
-      },
-      autoUpdate: { default: InlinePopoverPropsDeclaration.autoUpdate.default },
-      boundary: { default: InlinePopoverPropsDeclaration.boundary.default },
-      defaultOpen: {
-        default: InlinePopoverPropsDeclaration.defaultOpen.default,
-      },
-      dismissOnEscape: {
-        default: InlinePopoverPropsDeclaration.dismissOnEscape.default,
-      },
-      editor: { default: InlinePopoverPropsDeclaration.editor.default },
-      elementContext: {
-        default: InlinePopoverPropsDeclaration.elementContext.default,
-      },
-      fitViewport: {
-        default: InlinePopoverPropsDeclaration.fitViewport.default,
-      },
-      flip: { default: InlinePopoverPropsDeclaration.flip.default },
-      hide: { default: InlinePopoverPropsDeclaration.hide.default },
-      hoist: { default: InlinePopoverPropsDeclaration.hoist.default },
-      inline: { default: InlinePopoverPropsDeclaration.inline.default },
-      offset: { default: InlinePopoverPropsDeclaration.offset.default },
-      open: { default: InlinePopoverPropsDeclaration.open.default },
-      overflowPadding: {
-        default: InlinePopoverPropsDeclaration.overflowPadding.default,
-      },
-      overlap: { default: InlinePopoverPropsDeclaration.overlap.default },
-      placement: { default: InlinePopoverPropsDeclaration.placement.default },
-      rootBoundary: {
-        default: InlinePopoverPropsDeclaration.rootBoundary.default,
-      },
-      sameHeight: { default: InlinePopoverPropsDeclaration.sameHeight.default },
-      sameWidth: { default: InlinePopoverPropsDeclaration.sameWidth.default },
-      shift: { default: InlinePopoverPropsDeclaration.shift.default },
-      strategy: { default: InlinePopoverPropsDeclaration.strategy.default },
-      onOpenChange: { type: Function },
-    } as Record<string, unknown>,
+    props: [
+      "altBoundary",
+      "autoUpdate",
+      "boundary",
+      "defaultOpen",
+      "dismissOnEscape",
+      "editor",
+      "elementContext",
+      "fitViewport",
+      "flip",
+      "hide",
+      "hoist",
+      "inline",
+      "offset",
+      "open",
+      "overflowPadding",
+      "overlap",
+      "placement",
+      "rootBoundary",
+      "sameHeight",
+      "sameWidth",
+      "shift",
+      "strategy",
+      "onOpenChange",
+    ],
   },
 );
 

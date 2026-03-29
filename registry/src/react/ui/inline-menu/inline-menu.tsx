@@ -93,6 +93,7 @@ export default function InlineMenu() {
         data-testid="inline-menu-main"
         className="CSS_INLINE_MENU_MAIN"
         onOpenChange={(event) => {
+          console.log('DEBUG open changed', event.open)
           if (!event.open) {
             setLinkMenuOpen(false)
           }

@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTableHandleRowTriggerElement,
   type TableHandleRowTriggerProps as TableHandleRowTriggerElementProps,
-  TableHandleRowTriggerPropsDeclaration,
 } from "@prosekit/web/table-handle";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
@@ -40,29 +42,33 @@ export const TableHandleRowTrigger: DefineSetupFnComponent<
 >(
   (props, { slots }) => {
     registerTableHandleRowTriggerElement();
+
+    const elementRef = shallowRef<HTMLElement | null>(null);
+
     const p0Fallback = useEditorContext();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "editor":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const splittedProps = computed(() => {
+      const { editor: p0, ...restProps } = props;
+      return [[p0], restProps] as const;
+    });
 
-      if (_props[".editor"] == null && p0Fallback != null) {
-        _props[".editor"] = p0Fallback;
-      }
-      return h("prosekit-table-handle-row-trigger", _props, slots.default?.());
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0] = splittedProps.value[0];
+
+      Object.assign(element, { editor: p0 ?? p0Fallback });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-table-handle-row-trigger",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      editor: { default: TableHandleRowTriggerPropsDeclaration.editor.default },
-    } as Record<string, unknown>,
-  },
+  { props: ["editor"] },
 );

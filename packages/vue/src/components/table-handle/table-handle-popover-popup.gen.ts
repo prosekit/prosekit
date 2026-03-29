@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTableHandlePopoverPopupElement,
   type TableHandlePopoverPopupProps as TableHandlePopoverPopupElementProps,
-  TableHandlePopoverPopupPropsDeclaration,
 } from "@prosekit/web/table-handle";
 
 /**
@@ -42,30 +44,30 @@ export const TableHandlePopoverPopup: DefineSetupFnComponent<
   (props, { slots }) => {
     registerTableHandlePopoverPopupElement();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "eventTarget":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
+    const splittedProps = computed(() => {
+      const { eventTarget: p0, ...restProps } = props;
+      return [[p0], restProps] as const;
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0] = splittedProps.value[0];
+
+      Object.assign(element, { eventTarget: p0 });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
       return h(
         "prosekit-table-handle-popover-popup",
-        _props,
+        { ...restProps, ref: elementRef },
         slots.default?.(),
       );
     };
   },
-  {
-    props: {
-      eventTarget: {
-        default: TableHandlePopoverPopupPropsDeclaration.eventTarget.default,
-      },
-    } as Record<string, unknown>,
-  },
+  { props: ["eventTarget"] },
 );

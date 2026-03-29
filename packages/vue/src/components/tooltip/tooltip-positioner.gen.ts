@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTooltipPositionerElement,
   type TooltipPositionerProps as TooltipPositionerElementProps,
-  TooltipPositionerPropsDeclaration,
 } from "@prosekit/web/tooltip";
 
 /**
@@ -160,76 +162,131 @@ export const TooltipPositioner: DefineSetupFnComponent<
   (props, { slots }) => {
     registerTooltipPositionerElement();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "altBoundary":
-          case "autoUpdate":
-          case "boundary":
-          case "elementContext":
-          case "fitViewport":
-          case "flip":
-          case "hide":
-          case "hoist":
-          case "inline":
-          case "offset":
-          case "overflowPadding":
-          case "overlap":
-          case "placement":
-          case "rootBoundary":
-          case "sameHeight":
-          case "sameWidth":
-          case "shift":
-          case "strategy":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      return h("prosekit-tooltip-positioner", _props, slots.default?.());
+    const splittedProps = computed(() => {
+      const {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        elementContext: p3,
+        fitViewport: p4,
+        flip: p5,
+        hide: p6,
+        hoist: p7,
+        inline: p8,
+        offset: p9,
+        overflowPadding: p10,
+        overlap: p11,
+        placement: p12,
+        rootBoundary: p13,
+        sameHeight: p14,
+        sameWidth: p15,
+        shift: p16,
+        strategy: p17,
+        ...restProps
+      } = props;
+      return [
+        [
+          p0,
+          p1,
+          p2,
+          p3,
+          p4,
+          p5,
+          p6,
+          p7,
+          p8,
+          p9,
+          p10,
+          p11,
+          p12,
+          p13,
+          p14,
+          p15,
+          p16,
+          p17,
+        ],
+        restProps,
+      ] as const;
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [
+        p0,
+        p1,
+        p2,
+        p3,
+        p4,
+        p5,
+        p6,
+        p7,
+        p8,
+        p9,
+        p10,
+        p11,
+        p12,
+        p13,
+        p14,
+        p15,
+        p16,
+        p17,
+      ] = splittedProps.value[0];
+
+      Object.assign(element, {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        elementContext: p3,
+        fitViewport: p4,
+        flip: p5,
+        hide: p6,
+        hoist: p7,
+        inline: p8,
+        offset: p9,
+        overflowPadding: p10,
+        overlap: p11,
+        placement: p12,
+        rootBoundary: p13,
+        sameHeight: p14,
+        sameWidth: p15,
+        shift: p16,
+        strategy: p17,
+      });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-tooltip-positioner",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
   {
-    props: {
-      altBoundary: {
-        default: TooltipPositionerPropsDeclaration.altBoundary.default,
-      },
-      autoUpdate: {
-        default: TooltipPositionerPropsDeclaration.autoUpdate.default,
-      },
-      boundary: { default: TooltipPositionerPropsDeclaration.boundary.default },
-      elementContext: {
-        default: TooltipPositionerPropsDeclaration.elementContext.default,
-      },
-      fitViewport: {
-        default: TooltipPositionerPropsDeclaration.fitViewport.default,
-      },
-      flip: { default: TooltipPositionerPropsDeclaration.flip.default },
-      hide: { default: TooltipPositionerPropsDeclaration.hide.default },
-      hoist: { default: TooltipPositionerPropsDeclaration.hoist.default },
-      inline: { default: TooltipPositionerPropsDeclaration.inline.default },
-      offset: { default: TooltipPositionerPropsDeclaration.offset.default },
-      overflowPadding: {
-        default: TooltipPositionerPropsDeclaration.overflowPadding.default,
-      },
-      overlap: { default: TooltipPositionerPropsDeclaration.overlap.default },
-      placement: {
-        default: TooltipPositionerPropsDeclaration.placement.default,
-      },
-      rootBoundary: {
-        default: TooltipPositionerPropsDeclaration.rootBoundary.default,
-      },
-      sameHeight: {
-        default: TooltipPositionerPropsDeclaration.sameHeight.default,
-      },
-      sameWidth: {
-        default: TooltipPositionerPropsDeclaration.sameWidth.default,
-      },
-      shift: { default: TooltipPositionerPropsDeclaration.shift.default },
-      strategy: { default: TooltipPositionerPropsDeclaration.strategy.default },
-    } as Record<string, unknown>,
+    props: [
+      "altBoundary",
+      "autoUpdate",
+      "boundary",
+      "elementContext",
+      "fitViewport",
+      "flip",
+      "hide",
+      "hoist",
+      "inline",
+      "offset",
+      "overflowPadding",
+      "overlap",
+      "placement",
+      "rootBoundary",
+      "sameHeight",
+      "sameWidth",
+      "shift",
+      "strategy",
+    ],
   },
 );

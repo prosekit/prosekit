@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTableHandlePopoverPositionerElement,
   type TableHandlePopoverPositionerProps as TableHandlePopoverPositionerElementProps,
-  TableHandlePopoverPositionerPropsDeclaration,
 } from "@prosekit/web/table-handle";
 
 /**
@@ -154,105 +156,131 @@ export const TableHandlePopoverPositioner: DefineSetupFnComponent<
   (props, { slots }) => {
     registerTableHandlePopoverPositionerElement();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "altBoundary":
-          case "autoUpdate":
-          case "boundary":
-          case "elementContext":
-          case "fitViewport":
-          case "flip":
-          case "hide":
-          case "hoist":
-          case "inline":
-          case "offset":
-          case "overflowPadding":
-          case "overlap":
-          case "placement":
-          case "rootBoundary":
-          case "sameHeight":
-          case "sameWidth":
-          case "shift":
-          case "strategy":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
+    const splittedProps = computed(() => {
+      const {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        elementContext: p3,
+        fitViewport: p4,
+        flip: p5,
+        hide: p6,
+        hoist: p7,
+        inline: p8,
+        offset: p9,
+        overflowPadding: p10,
+        overlap: p11,
+        placement: p12,
+        rootBoundary: p13,
+        sameHeight: p14,
+        sameWidth: p15,
+        shift: p16,
+        strategy: p17,
+        ...restProps
+      } = props;
+      return [
+        [
+          p0,
+          p1,
+          p2,
+          p3,
+          p4,
+          p5,
+          p6,
+          p7,
+          p8,
+          p9,
+          p10,
+          p11,
+          p12,
+          p13,
+          p14,
+          p15,
+          p16,
+          p17,
+        ],
+        restProps,
+      ] as const;
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [
+        p0,
+        p1,
+        p2,
+        p3,
+        p4,
+        p5,
+        p6,
+        p7,
+        p8,
+        p9,
+        p10,
+        p11,
+        p12,
+        p13,
+        p14,
+        p15,
+        p16,
+        p17,
+      ] = splittedProps.value[0];
+
+      Object.assign(element, {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        elementContext: p3,
+        fitViewport: p4,
+        flip: p5,
+        hide: p6,
+        hoist: p7,
+        inline: p8,
+        offset: p9,
+        overflowPadding: p10,
+        overlap: p11,
+        placement: p12,
+        rootBoundary: p13,
+        sameHeight: p14,
+        sameWidth: p15,
+        shift: p16,
+        strategy: p17,
+      });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
       return h(
         "prosekit-table-handle-popover-positioner",
-        _props,
+        { ...restProps, ref: elementRef },
         slots.default?.(),
       );
     };
   },
   {
-    props: {
-      altBoundary: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.altBoundary.default,
-      },
-      autoUpdate: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.autoUpdate.default,
-      },
-      boundary: {
-        default: TableHandlePopoverPositionerPropsDeclaration.boundary.default,
-      },
-      elementContext: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.elementContext.default,
-      },
-      fitViewport: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.fitViewport.default,
-      },
-      flip: {
-        default: TableHandlePopoverPositionerPropsDeclaration.flip.default,
-      },
-      hide: {
-        default: TableHandlePopoverPositionerPropsDeclaration.hide.default,
-      },
-      hoist: {
-        default: TableHandlePopoverPositionerPropsDeclaration.hoist.default,
-      },
-      inline: {
-        default: TableHandlePopoverPositionerPropsDeclaration.inline.default,
-      },
-      offset: {
-        default: TableHandlePopoverPositionerPropsDeclaration.offset.default,
-      },
-      overflowPadding: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.overflowPadding.default,
-      },
-      overlap: {
-        default: TableHandlePopoverPositionerPropsDeclaration.overlap.default,
-      },
-      placement: {
-        default: TableHandlePopoverPositionerPropsDeclaration.placement.default,
-      },
-      rootBoundary: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.rootBoundary.default,
-      },
-      sameHeight: {
-        default:
-          TableHandlePopoverPositionerPropsDeclaration.sameHeight.default,
-      },
-      sameWidth: {
-        default: TableHandlePopoverPositionerPropsDeclaration.sameWidth.default,
-      },
-      shift: {
-        default: TableHandlePopoverPositionerPropsDeclaration.shift.default,
-      },
-      strategy: {
-        default: TableHandlePopoverPositionerPropsDeclaration.strategy.default,
-      },
-    } as Record<string, unknown>,
+    props: [
+      "altBoundary",
+      "autoUpdate",
+      "boundary",
+      "elementContext",
+      "fitViewport",
+      "flip",
+      "hide",
+      "hoist",
+      "inline",
+      "offset",
+      "overflowPadding",
+      "overlap",
+      "placement",
+      "rootBoundary",
+      "sameHeight",
+      "sameWidth",
+      "shift",
+      "strategy",
+    ],
   },
 );

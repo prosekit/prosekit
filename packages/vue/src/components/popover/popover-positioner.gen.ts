@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerPopoverPositionerElement,
   type PopoverPositionerProps as PopoverPositionerElementProps,
-  PopoverPositionerPropsDeclaration,
 } from "@prosekit/web/popover";
 
 /**
@@ -160,76 +162,131 @@ export const PopoverPositioner: DefineSetupFnComponent<
   (props, { slots }) => {
     registerPopoverPositionerElement();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "altBoundary":
-          case "autoUpdate":
-          case "boundary":
-          case "elementContext":
-          case "fitViewport":
-          case "flip":
-          case "hide":
-          case "hoist":
-          case "inline":
-          case "offset":
-          case "overflowPadding":
-          case "overlap":
-          case "placement":
-          case "rootBoundary":
-          case "sameHeight":
-          case "sameWidth":
-          case "shift":
-          case "strategy":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      return h("prosekit-popover-positioner", _props, slots.default?.());
+    const splittedProps = computed(() => {
+      const {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        elementContext: p3,
+        fitViewport: p4,
+        flip: p5,
+        hide: p6,
+        hoist: p7,
+        inline: p8,
+        offset: p9,
+        overflowPadding: p10,
+        overlap: p11,
+        placement: p12,
+        rootBoundary: p13,
+        sameHeight: p14,
+        sameWidth: p15,
+        shift: p16,
+        strategy: p17,
+        ...restProps
+      } = props;
+      return [
+        [
+          p0,
+          p1,
+          p2,
+          p3,
+          p4,
+          p5,
+          p6,
+          p7,
+          p8,
+          p9,
+          p10,
+          p11,
+          p12,
+          p13,
+          p14,
+          p15,
+          p16,
+          p17,
+        ],
+        restProps,
+      ] as const;
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [
+        p0,
+        p1,
+        p2,
+        p3,
+        p4,
+        p5,
+        p6,
+        p7,
+        p8,
+        p9,
+        p10,
+        p11,
+        p12,
+        p13,
+        p14,
+        p15,
+        p16,
+        p17,
+      ] = splittedProps.value[0];
+
+      Object.assign(element, {
+        altBoundary: p0,
+        autoUpdate: p1,
+        boundary: p2,
+        elementContext: p3,
+        fitViewport: p4,
+        flip: p5,
+        hide: p6,
+        hoist: p7,
+        inline: p8,
+        offset: p9,
+        overflowPadding: p10,
+        overlap: p11,
+        placement: p12,
+        rootBoundary: p13,
+        sameHeight: p14,
+        sameWidth: p15,
+        shift: p16,
+        strategy: p17,
+      });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-popover-positioner",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
   {
-    props: {
-      altBoundary: {
-        default: PopoverPositionerPropsDeclaration.altBoundary.default,
-      },
-      autoUpdate: {
-        default: PopoverPositionerPropsDeclaration.autoUpdate.default,
-      },
-      boundary: { default: PopoverPositionerPropsDeclaration.boundary.default },
-      elementContext: {
-        default: PopoverPositionerPropsDeclaration.elementContext.default,
-      },
-      fitViewport: {
-        default: PopoverPositionerPropsDeclaration.fitViewport.default,
-      },
-      flip: { default: PopoverPositionerPropsDeclaration.flip.default },
-      hide: { default: PopoverPositionerPropsDeclaration.hide.default },
-      hoist: { default: PopoverPositionerPropsDeclaration.hoist.default },
-      inline: { default: PopoverPositionerPropsDeclaration.inline.default },
-      offset: { default: PopoverPositionerPropsDeclaration.offset.default },
-      overflowPadding: {
-        default: PopoverPositionerPropsDeclaration.overflowPadding.default,
-      },
-      overlap: { default: PopoverPositionerPropsDeclaration.overlap.default },
-      placement: {
-        default: PopoverPositionerPropsDeclaration.placement.default,
-      },
-      rootBoundary: {
-        default: PopoverPositionerPropsDeclaration.rootBoundary.default,
-      },
-      sameHeight: {
-        default: PopoverPositionerPropsDeclaration.sameHeight.default,
-      },
-      sameWidth: {
-        default: PopoverPositionerPropsDeclaration.sameWidth.default,
-      },
-      shift: { default: PopoverPositionerPropsDeclaration.shift.default },
-      strategy: { default: PopoverPositionerPropsDeclaration.strategy.default },
-    } as Record<string, unknown>,
+    props: [
+      "altBoundary",
+      "autoUpdate",
+      "boundary",
+      "elementContext",
+      "fitViewport",
+      "flip",
+      "hide",
+      "hoist",
+      "inline",
+      "offset",
+      "overflowPadding",
+      "overlap",
+      "placement",
+      "rootBoundary",
+      "sameHeight",
+      "sameWidth",
+      "shift",
+      "strategy",
+    ],
   },
 );

@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerDropIndicatorElement,
   type DropIndicatorProps as DropIndicatorElementProps,
-  DropIndicatorPropsDeclaration,
 } from "@prosekit/web/drop-indicator";
 import { useEditorContext } from "../../injection/editor-context.ts";
 
@@ -46,31 +48,33 @@ export const DropIndicator: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<DropIndicatorProps & HTMLAttributes>(
   (props, { slots }) => {
     registerDropIndicatorElement();
+
+    const elementRef = shallowRef<HTMLElement | null>(null);
+
     const p0Fallback = useEditorContext();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "editor":
-          case "width":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const splittedProps = computed(() => {
+      const { editor: p0, width: p1, ...restProps } = props;
+      return [[p0, p1], restProps] as const;
+    });
 
-      if (_props[".editor"] == null && p0Fallback != null) {
-        _props[".editor"] = p0Fallback;
-      }
-      return h("prosekit-drop-indicator", _props, slots.default?.());
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0, p1] = splittedProps.value[0];
+
+      Object.assign(element, { editor: p0 ?? p0Fallback, width: p1 });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-drop-indicator",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      editor: { default: DropIndicatorPropsDeclaration.editor.default },
-      width: { default: DropIndicatorPropsDeclaration.width.default },
-    } as Record<string, unknown>,
-  },
+  { props: ["editor", "width"] },
 );

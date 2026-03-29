@@ -32,7 +32,6 @@ export interface WrapperApplyContext extends WrapperMatchContext {
   setRenderPropsExpression(expression: string): void
   setReactPropOverride(propName: string, expression: string): void
   setSolidPropOverride(propName: string, expression: string): void
-  addVuePostBuildPropsStatement(statement: string): void
   addSvelteScriptStatement(statement: string): void
 }
 
@@ -102,7 +101,6 @@ type WrapperExtensionSlots = {
   renderPropsExpression?: string
   reactPropOverrides: Record<string, string>
   solidPropOverrides: Record<string, string>
-  vuePostBuildPropsStatements: string[]
   svelteScriptStatements: string[]
 }
 
@@ -171,6 +169,7 @@ export function propFallback(options: PropFallbackExtensionOptions): WrapperExte
       switch (context.framework) {
         case 'react':
         case 'preact':
+        case 'vue':
           context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
           context.setReactPropOverride(options.prop, `?? ${fallbackVar}`)
           break
@@ -180,15 +179,6 @@ export function propFallback(options: PropFallbackExtensionOptions): WrapperExte
           context.setSolidPropOverride(
             options.prop,
             `() => elementProps.${options.prop} ?? ${fallbackVar}`,
-          )
-          break
-
-        case 'vue':
-          context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
-          context.addVuePostBuildPropsStatement(
-            `if (_props['.${options.prop}'] == null && ${fallbackVar} != null) {
-  _props['.${options.prop}'] = ${fallbackVar};
-}`,
           )
           break
 
@@ -258,7 +248,6 @@ function getWrapperExtensionSlots(
     setupStatements: [],
     reactPropOverrides: {},
     solidPropOverrides: {},
-    vuePostBuildPropsStatements: [],
     svelteScriptStatements: [],
   }
 
@@ -322,11 +311,6 @@ function getWrapperExtensionSlots(
     },
     setSolidPropOverride(propName, expression) {
       slots.solidPropOverrides[propName] = expression
-    },
-    addVuePostBuildPropsStatement(statement) {
-      if (!slots.vuePostBuildPropsStatements.includes(statement)) {
-        slots.vuePostBuildPropsStatements.push(statement)
-      }
     },
     addSvelteScriptStatement(statement) {
       if (!slots.svelteScriptStatements.includes(statement)) {
@@ -800,17 +784,22 @@ function generateVueComponentFile(
     eventHandlers,
   } = getComponentMeta(component, options.prefix)
 
+  const needsReactiveSetup = hasProps || hasEvents
+
+  const vueImports: (string | { name: string; isTypeOnly: true })[] = [
+    'defineComponent',
+    'h',
+    { name: 'DefineSetupFnComponent', isTypeOnly: true },
+    { name: 'HTMLAttributes', isTypeOnly: true },
+  ]
+  if (needsReactiveSetup) {
+    vueImports.push('shallowRef', 'computed', 'watchEffect')
+  }
+
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'vue',
-    namedImports: [
-      'defineComponent',
-      'h',
-      { name: 'DefineSetupFnComponent', isTypeOnly: true },
-      { name: 'HTMLAttributes', isTypeOnly: true },
-    ],
+    namedImports: vueImports,
   })
-
-  const propsDeclarationName = `${componentName}PropsDeclaration`
 
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
     sourceFile,
@@ -819,7 +808,6 @@ function generateVueComponentFile(
     order: 'events-first',
     includeRegister: true,
     includeElementType: false,
-    includePropsDeclaration: true,
   })
   addWrapperImports(sourceFile, slots.imports)
 
@@ -832,102 +820,128 @@ function generateVueComponentFile(
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
 
-  const propNames = props.map((prop) => prop.name)
-  const eventHandlerNames = eventHandlers.map((handler) => handler.handlerName)
+  const propBindings = props.map((prop, index) => ({
+    name: prop.name,
+    variableName: `p${index}`,
+  }))
+  const eventBindings = eventHandlers.map((handler, index) => ({
+    eventName: handler.eventName,
+    handlerName: handler.handlerName,
+    variableName: `e${index}`,
+  }))
 
-  // Build Vue props option as object with defaults from PropsDeclaration
-  const propsEntries: string[] = []
-  for (const name of propNames) {
-    propsEntries.push(`${name}: { default: ${propsDeclarationName}.${name}.default }`)
-  }
-  for (const name of eventHandlerNames) {
-    propsEntries.push(`${name}: { type: Function }`)
-  }
-  const componentPropsInitializer = propsEntries.length > 0
-    ? `({ ${propsEntries.join(', ')} }) as Record<string, unknown>`
-    : '([])'
+  // Props option: simple array of prop/event handler names
+  const allDeclaredNames = [
+    ...propBindings.map((b) => JSON.stringify(b.name)),
+    ...eventBindings.map((b) => JSON.stringify(b.handlerName)),
+  ]
+  const propsOption = allDeclaredNames.length > 0
+    ? `[${allDeclaredNames.join(', ')}]`
+    : '[]'
 
-  let buildPropsBlock: string
-  if (propNames.length > 0 || hasEvents) {
-    const propSwitchCases = propNames.map((name) => `case ${JSON.stringify(name)}:`).join('\n          ')
-    const eventSwitchCases = eventHandlers.map((handler) => `case ${JSON.stringify(handler.handlerName)}:`).join('\n          ')
+  // Build component body
+  const bodyLines: string[] = []
+  bodyLines.push(`  register${componentName}Element()`)
 
-    const allSwitchCases: string[] = []
-    if (propNames.length > 0) {
-      allSwitchCases.push(`${propSwitchCases}
-          _props['.' + key] = value
-          break`)
+  if (needsReactiveSetup) {
+    bodyLines.push('')
+    bodyLines.push('  const elementRef = shallowRef<HTMLElement | null>(null)')
+
+    // Extension setup statements
+    const setupStatements = joinStatements(slots.setupStatements)
+    if (setupStatements.length > 0) {
+      bodyLines.push('')
+      bodyLines.push(indentBlock(setupStatements, 2))
     }
+
+    // Computed splittedProps
+    const destructureEntries = [
+      ...propBindings.map((b) => `${b.name}: ${b.variableName}`),
+      ...eventBindings.map((b) => `${b.handlerName}: ${b.variableName}`),
+    ]
+    const allVariables = [
+      ...propBindings.map((b) => b.variableName),
+      ...eventBindings.map((b) => b.variableName),
+    ]
+
+    bodyLines.push('')
+    bodyLines.push(`  const splittedProps = computed(() => {`)
+    bodyLines.push(`    const { ${destructureEntries.join(', ')}, ...restProps } = props`)
+    bodyLines.push(`    return [`)
+    bodyLines.push(`      [${allVariables.join(', ')}],`)
+    bodyLines.push(`      restProps,`)
+    bodyLines.push(`    ] as const`)
+    bodyLines.push(`  })`)
+
     if (hasEvents) {
-      allSwitchCases.push(`${eventSwitchCases}
-          _eventHandlers[key] = value as Function
-          break`)
+      bodyLines.push('')
+      bodyLines.push('  const handlers: (Function | undefined)[] = []')
     }
 
-    buildPropsBlock = `const _props: Record<string, unknown> = {}
-    for (const [key, value] of Object.entries(props)) {
-      switch (key) {
-        ${allSwitchCases.join('\n        ')}
-        default:
-          _props[key] = value
+    // First watchEffect: props + handlers
+    bodyLines.push('')
+    bodyLines.push('  watchEffect(() => {')
+    bodyLines.push('    const element = elementRef.value')
+    bodyLines.push('    if (!element) return')
+    bodyLines.push('')
+    bodyLines.push(`    const [${allVariables.join(', ')}] = splittedProps.value[0]`)
+
+    if (hasProps) {
+      const propAssignEntries = propBindings.map((b) => {
+        const override = slots.reactPropOverrides[b.name]
+        return override ? `${b.name}: ${b.variableName} ${override}` : `${b.name}: ${b.variableName}`
+      })
+      bodyLines.push('')
+      bodyLines.push(`    Object.assign(element, { ${propAssignEntries.join(', ')} })`)
+    }
+
+    if (hasEvents) {
+      bodyLines.push('')
+      bodyLines.push('    handlers.length = 0')
+      for (const binding of eventBindings) {
+        bodyLines.push(`    handlers.push(${binding.variableName})`)
       }
-    }`
-  } else {
-    buildPropsBlock = `const _props = { ...props }`
-  }
-
-  // Build event handling setup block (eventHandlers record + ref callback with addEventListener)
-  let eventSetupBlock = ''
-  let eventRefBlock = ''
-  if (hasEvents) {
-    const addEventListenerCalls = eventHandlers.map(
-      (handler) =>
-        `element.addEventListener(${JSON.stringify(handler.eventName)}, (event) => { _eventHandlers[${
-          JSON.stringify(handler.handlerName)
-        }]?.(event) }, { signal: abortSignal })`,
-    )
-
-    eventSetupBlock = `  const _eventHandlers: Record<string, Function> = {}
-  let _abortController: AbortController | undefined
-
-  const _ref = (element: HTMLElement | null | undefined) => {
-    _abortController?.abort()
-    _abortController = undefined
-
-    if (!element) {
-      return
     }
 
-    _abortController = new AbortController()
-    const abortSignal = _abortController.signal
+    bodyLines.push('  })')
 
-    ${addEventListenerCalls.join('\n    ')}
+    // Second watchEffect: event listeners
+    if (hasEvents) {
+      const eventNames = eventBindings.map((b) => JSON.stringify(b.eventName))
+
+      bodyLines.push('')
+      bodyLines.push('  watchEffect(() => {')
+      bodyLines.push('    const element = elementRef.value')
+      bodyLines.push('    if (!element) return')
+      bodyLines.push('')
+      bodyLines.push('    const ac = new AbortController()')
+      bodyLines.push(`    for (const [index, eventName] of [${eventNames.join(', ')}].entries()) {`)
+      bodyLines.push('      element.addEventListener(eventName, (event: Event) => { handlers[index]?.(event) }, { signal: ac.signal })')
+      bodyLines.push('    }')
+      bodyLines.push('    return () => ac.abort()')
+      bodyLines.push('  })')
+    }
+
+    // Return render function
+    bodyLines.push('')
+    bodyLines.push('  return () => {')
+    bodyLines.push('    const restProps = splittedProps.value[1]')
+    bodyLines.push(`    return h('${tagName}', { ...restProps, ref: elementRef }, slots.default?.())`)
+    bodyLines.push('  }')
+  } else {
+    // No props or events: simple passthrough
+    bodyLines.push('')
+    bodyLines.push('  return () => {')
+    bodyLines.push(`    const _props = { ...props }`)
+    bodyLines.push(`    return h('${tagName}', _props, slots.default?.())`)
+    bodyLines.push('  }')
   }
-
-`
-    eventRefBlock = `\n    _props["ref"] = _ref`
-  }
-
-  const setupStatements = joinStatements(slots.setupStatements)
-  const setupBlock = setupStatements.length > 0
-    ? `${indentBlock(setupStatements, 2)}\n\n`
-    : ''
-  const postBuildPropsStatements = joinStatements(slots.vuePostBuildPropsStatements)
-  const postBuildPropsBlock = postBuildPropsStatements.length > 0
-    ? `\n${indentBlock(postBuildPropsStatements, 4)}`
-    : ''
 
   const componentInitializer = `/* @__PURE__ */ defineComponent<${componentName}Props & HTMLAttributes>(
 (props, { slots }) => {
-  register${componentName}Element()
-${setupBlock}${eventSetupBlock}
-  return () => {
-    ${buildPropsBlock}
-${postBuildPropsBlock}${eventRefBlock}
-    return h('${tagName}', _props, slots.default?.())
-  }
+${bodyLines.join('\n')}
 },
-{ props: ${componentPropsInitializer} },
+{ props: ${propsOption} },
 )`
 
   sourceFile.addVariableStatement({

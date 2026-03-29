@@ -7,11 +7,13 @@ import {
   h,
   type DefineSetupFnComponent,
   type HTMLAttributes,
+  shallowRef,
+  computed,
+  watchEffect,
 } from "vue";
 import {
   registerTooltipTriggerElement,
   type TooltipTriggerProps as TooltipTriggerElementProps,
-  TooltipTriggerPropsDeclaration,
 } from "@prosekit/web/tooltip";
 
 /**
@@ -48,30 +50,35 @@ export const TooltipTrigger: DefineSetupFnComponent<
   (props, { slots }) => {
     registerTooltipTriggerElement();
 
-    return () => {
-      const _props: Record<string, unknown> = {};
-      for (const [key, value] of Object.entries(props)) {
-        switch (key) {
-          case "closeDelay":
-          case "disabled":
-          case "openDelay":
-            _props["." + key] = value;
-            break;
-          default:
-            _props[key] = value;
-        }
-      }
+    const elementRef = shallowRef<HTMLElement | null>(null);
 
-      return h("prosekit-tooltip-trigger", _props, slots.default?.());
+    const splittedProps = computed(() => {
+      const {
+        closeDelay: p0,
+        disabled: p1,
+        openDelay: p2,
+        ...restProps
+      } = props;
+      return [[p0, p1, p2], restProps] as const;
+    });
+
+    watchEffect(() => {
+      const element = elementRef.value;
+      if (!element) return;
+
+      const [p0, p1, p2] = splittedProps.value[0];
+
+      Object.assign(element, { closeDelay: p0, disabled: p1, openDelay: p2 });
+    });
+
+    return () => {
+      const restProps = splittedProps.value[1];
+      return h(
+        "prosekit-tooltip-trigger",
+        { ...restProps, ref: elementRef },
+        slots.default?.(),
+      );
     };
   },
-  {
-    props: {
-      closeDelay: {
-        default: TooltipTriggerPropsDeclaration.closeDelay.default,
-      },
-      disabled: { default: TooltipTriggerPropsDeclaration.disabled.default },
-      openDelay: { default: TooltipTriggerPropsDeclaration.openDelay.default },
-    } as Record<string, unknown>,
-  },
+  { props: ["closeDelay", "disabled", "openDelay"] },
 );

@@ -30,7 +30,6 @@ export const PopoverPopup: DefineSetupFnComponent<
 
     return () => {
       const _props = { ...props };
-
       return h("prosekit-popover-popup", _props, slots.default?.());
     };
   },

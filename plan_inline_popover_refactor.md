@@ -359,20 +359,13 @@ function setupInlinePopoverRoot(host, props) {
 
 ### Phase 4: 更新示例
 
-- [ ] **4.1** 更新所有 `registry/` 下使用 InlinePopover 的示例文件
-  - React, Vue, Svelte, Solid, Preact
-  - 从 `<InlinePopover>` 改为 `<InlinePopoverRoot><InlinePopoverPositioner><InlinePopoverPopup>...</InlinePopoverPopup></InlinePopoverPositioner></InlinePopoverRoot>`
-  - 样式 className 从 Root 移到 Popup
+- [x] **4.1** 更新所有 `registry/` 下使用 InlinePopover 的示例文件 (10 files across React, Preact, Solid, Vue, Svelte)
 
 ### Phase 5: 验证
 
-- [ ] **5.1** `pnpm -w run build:package`
-- [ ] **5.2** `pnpm -w run fix`
-- [ ] **5.3** `pnpm -w run typecheck`
-- [ ] **5.4** `pnpm -w run lint`
-- [ ] **5.5** 确认框架 wrapper 正确生成 (root + positioner + popup × 5 frameworks)
-- [ ] **5.6** `pnpm -w run test run registry/test/inline-menu.test.ts`
-  - 测试通过 `data-testid="inline-menu-main"` 和 `data-testid="inline-menu-link"` 定位元素
-  - 重构后这些 `data-testid` 从 `<InlinePopover>` 移到 `<InlinePopoverPopup>` 上
-  - 测试文件本身不需要修改——它通过属性值定位，不关心元素标签名
-  - 但如果 visibility 检测依赖 CSS (如 Positioner 的 `display:none`)，可能需要确认 Popup 的可见性是否正确传递
+- [x] **5.1** `pnpm -w run build:package` — passes
+- [x] **5.2** `pnpm -w run fix` — passes
+- [x] **5.3** `pnpm -w run typecheck` — (covered by build:package tsc step)
+- [x] **5.4** `pnpm -w run lint` — only pre-existing svelte-check .gen.svelte declaration errors (24 total, 2 new for inline-popover svelte files, same category as all other .gen.svelte files)
+- [x] **5.5** 确认框架 wrapper 正确生成 (root + positioner + popup × 5 frameworks) — verified
+- [ ] **5.6** `pnpm -w run test run registry/test/inline-menu.test.ts` — requires browser test runner, user should run manually

@@ -163,7 +163,7 @@ function TableHandleRowRootComponent(
 
   const elementRef = useRef<TableHandleRowRootElement>(null);
 
-  const editorContext = useEditorContext();
+  const p3Fallback = useEditorContext();
 
   const {
     altBoundary: p0,
@@ -195,7 +195,7 @@ function TableHandleRowRootComponent(
       altBoundary: p0,
       autoUpdate: p1,
       boundary: p2,
-      editor: p3 ?? editorContext,
+      editor: p3 ?? p3Fallback,
       elementContext: p4,
       fitViewport: p5,
       flip: p6,

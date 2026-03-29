@@ -40,7 +40,7 @@ export const TableHandleDropIndicator: DefineSetupFnComponent<
 >(
   (props, { slots }) => {
     registerTableHandleDropIndicatorElement();
-    const editorContext = useEditorContext();
+    const p0Fallback = useEditorContext();
 
     return () => {
       const _props: Record<string, unknown> = {};
@@ -54,8 +54,8 @@ export const TableHandleDropIndicator: DefineSetupFnComponent<
         }
       }
 
-      if (_props[".editor"] == null && editorContext != null) {
-        _props[".editor"] = editorContext;
+      if (_props[".editor"] == null && p0Fallback != null) {
+        _props[".editor"] = p0Fallback;
       }
       return h(
         "prosekit-table-handle-drop-indicator",

@@ -193,7 +193,7 @@ export const InlinePopover: Component<InlinePopoverProps> = (props): any => {
     ["onOpenChange"],
   );
 
-  const editorContext = useEditorContext();
+  const p5Fallback = useEditorContext();
 
   return h(
     "prosekit-inline-popover",
@@ -203,7 +203,7 @@ export const InlinePopover: Component<InlinePopoverProps> = (props): any => {
       "prop:boundary": () => elementProps.boundary,
       "prop:defaultOpen": () => elementProps.defaultOpen,
       "prop:dismissOnEscape": () => elementProps.dismissOnEscape,
-      "prop:editor": () => elementProps.editor ?? editorContext,
+      "prop:editor": () => elementProps.editor ?? p5Fallback,
       "prop:elementContext": () => elementProps.elementContext,
       "prop:fitViewport": () => elementProps.fitViewport,
       "prop:flip": () => elementProps.flip,

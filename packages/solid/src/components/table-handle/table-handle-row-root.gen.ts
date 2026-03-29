@@ -179,7 +179,7 @@ export const TableHandleRowRoot: Component<TableHandleRowRootProps> = (
     "strategy",
   ]);
 
-  const editorContext = useEditorContext();
+  const p3Fallback = useEditorContext();
 
   return h(
     "prosekit-table-handle-row-root",
@@ -187,7 +187,7 @@ export const TableHandleRowRoot: Component<TableHandleRowRootProps> = (
       "prop:altBoundary": () => elementProps.altBoundary,
       "prop:autoUpdate": () => elementProps.autoUpdate,
       "prop:boundary": () => elementProps.boundary,
-      "prop:editor": () => elementProps.editor ?? editorContext,
+      "prop:editor": () => elementProps.editor ?? p3Fallback,
       "prop:elementContext": () => elementProps.elementContext,
       "prop:fitViewport": () => elementProps.fitViewport,
       "prop:flip": () => elementProps.flip,

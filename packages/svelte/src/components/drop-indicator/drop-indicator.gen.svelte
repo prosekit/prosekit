@@ -8,16 +8,12 @@
   let { editor: p0, width: p1, children = undefined, ...restProps } = $props()
   let element
 
-  const editorContext = useEditorContext()
+  const p0Fallback = useEditorContext()
 
   $effect.pre(() => {
     if (!element) return
 
-    {
-      const propValue = p0
-      element.editor = propValue ?? editorContext ?? propValue
-    }
-    element.width = p1
+    Object.assign(element, { editor: p0 ?? p0Fallback, width: p1 })
   })
 </script>
 

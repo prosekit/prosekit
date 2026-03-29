@@ -169,7 +169,7 @@ export const InlinePopover: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<InlinePopoverProps & HTMLAttributes>(
   (props, { slots }) => {
     registerInlinePopoverElement();
-    const editorContext = useEditorContext();
+    const p5Fallback = useEditorContext();
 
     const _eventHandlers: Record<string, Function> = {};
     let _abortController: AbortController | undefined;
@@ -230,8 +230,8 @@ export const InlinePopover: DefineSetupFnComponent<
         }
       }
 
-      if (_props[".editor"] == null && editorContext != null) {
-        _props[".editor"] = editorContext;
+      if (_props[".editor"] == null && p5Fallback != null) {
+        _props[".editor"] = p5Fallback;
       }
       _props["ref"] = _ref;
       return h("prosekit-inline-popover", _props, slots.default?.());

@@ -160,7 +160,7 @@ export const TableHandleRowRoot: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<TableHandleRowRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleRowRootElement();
-    const editorContext = useEditorContext();
+    const p3Fallback = useEditorContext();
 
     return () => {
       const _props: Record<string, unknown> = {};
@@ -192,8 +192,8 @@ export const TableHandleRowRoot: DefineSetupFnComponent<
         }
       }
 
-      if (_props[".editor"] == null && editorContext != null) {
-        _props[".editor"] = editorContext;
+      if (_props[".editor"] == null && p3Fallback != null) {
+        _props[".editor"] = p3Fallback;
       }
       return h("prosekit-table-handle-row-root", _props, slots.default?.());
     };

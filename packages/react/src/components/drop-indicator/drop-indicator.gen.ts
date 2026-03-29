@@ -49,14 +49,14 @@ function DropIndicatorComponent(
 
   const elementRef = useRef<DropIndicatorElement>(null);
 
-  const editorContext = useEditorContext();
+  const p0Fallback = useEditorContext();
 
   const { editor: p0, width: p1, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { editor: p0 ?? editorContext, width: p1 });
+    Object.assign(element, { editor: p0 ?? p0Fallback, width: p1 });
   });
 
   const mergedRef = useCallback((element: DropIndicatorElement | null) => {

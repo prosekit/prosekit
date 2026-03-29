@@ -37,14 +37,14 @@ function TableHandleColumnTriggerComponent(
 
   const elementRef = useRef<TableHandleColumnTriggerElement>(null);
 
-  const editorContext = useEditorContext();
+  const p0Fallback = useEditorContext();
 
   const { editor: p0, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { editor: p0 ?? editorContext });
+    Object.assign(element, { editor: p0 ?? p0Fallback });
   });
 
   const mergedRef = useCallback(

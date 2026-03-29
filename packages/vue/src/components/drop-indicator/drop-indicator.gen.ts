@@ -46,7 +46,7 @@ export const DropIndicator: DefineSetupFnComponent<
 > = /* @__PURE__ */ defineComponent<DropIndicatorProps & HTMLAttributes>(
   (props, { slots }) => {
     registerDropIndicatorElement();
-    const editorContext = useEditorContext();
+    const p0Fallback = useEditorContext();
 
     return () => {
       const _props: Record<string, unknown> = {};
@@ -61,8 +61,8 @@ export const DropIndicator: DefineSetupFnComponent<
         }
       }
 
-      if (_props[".editor"] == null && editorContext != null) {
-        _props[".editor"] = editorContext;
+      if (_props[".editor"] == null && p0Fallback != null) {
+        _props[".editor"] = p0Fallback;
       }
       return h("prosekit-drop-indicator", _props, slots.default?.());
     };

@@ -26,6 +26,7 @@ export interface WrapperMatchContext {
 }
 
 export interface WrapperApplyContext extends WrapperMatchContext {
+  getPropVariable(propName: string): string
   addImport(moduleSpecifier: string, namedImports: string[]): void
   addSetupStatement(statement: string): void
   setRenderPropsExpression(expression: string): void
@@ -33,7 +34,6 @@ export interface WrapperApplyContext extends WrapperMatchContext {
   setSolidPropOverride(propName: string, expression: string): void
   addVuePostBuildPropsStatement(statement: string): void
   addSvelteScriptStatement(statement: string): void
-  setSveltePropExpression(propName: string, expression: string): void
 }
 
 export interface WrapperExtension {
@@ -104,7 +104,6 @@ type WrapperExtensionSlots = {
   solidPropOverrides: Record<string, string>
   vuePostBuildPropsStatements: string[]
   svelteScriptStatements: string[]
-  sveltePropExpressions: Record<string, string>
 }
 
 async function formatWithPrettier(filePath: string, contents: string): Promise<string> {
@@ -165,44 +164,37 @@ export function propFallback(options: PropFallbackExtensionOptions): WrapperExte
       }
 
       const callExpression = resolver.callExpression ?? `${resolver.importName}()`
-      const contextVariableName = `${options.prop}Context`
+      const fallbackVar = `${context.getPropVariable(options.prop)}Fallback`
 
       context.addImport(resolver.importSource, [resolver.importName])
 
       switch (context.framework) {
         case 'react':
-          context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
-          context.setReactPropOverride(options.prop, `?? ${contextVariableName}`)
-          break
-
         case 'preact':
-          context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
-          context.setReactPropOverride(options.prop, `?? ${contextVariableName}`)
+          context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
+          context.setReactPropOverride(options.prop, `?? ${fallbackVar}`)
           break
 
         case 'solid':
-          context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
+          context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
           context.setSolidPropOverride(
             options.prop,
-            `() => elementProps.${options.prop} ?? ${contextVariableName}`,
+            `() => elementProps.${options.prop} ?? ${fallbackVar}`,
           )
           break
 
         case 'vue':
-          context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
+          context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
           context.addVuePostBuildPropsStatement(
-            `if (_props['.${options.prop}'] == null && ${contextVariableName} != null) {
-  _props['.${options.prop}'] = ${contextVariableName};
+            `if (_props['.${options.prop}'] == null && ${fallbackVar} != null) {
+  _props['.${options.prop}'] = ${fallbackVar};
 }`,
           )
           break
 
         case 'svelte':
-          context.addSvelteScriptStatement(`const ${contextVariableName} = ${callExpression}`)
-          context.setSveltePropExpression(
-            options.prop,
-            `propValue ?? ${contextVariableName} ?? propValue`,
-          )
+          context.addSvelteScriptStatement(`const ${fallbackVar} = ${callExpression}`)
+          context.setReactPropOverride(options.prop, `?? ${fallbackVar}`)
           break
       }
     },
@@ -268,12 +260,18 @@ function getWrapperExtensionSlots(
     solidPropOverrides: {},
     vuePostBuildPropsStatements: [],
     svelteScriptStatements: [],
-    sveltePropExpressions: {},
   }
 
   const extensions = options.wrapperExtensions ?? []
   if (extensions.length === 0) {
     return slots
+  }
+
+  // Pre-compute sorted prop variable names for extensions
+  const sortedProps = [...component.props].sort((a, b) => a.name.localeCompare(b.name))
+  const propVariableMap = new Map<string, string>()
+  for (const [index, prop] of sortedProps.entries()) {
+    propVariableMap.set(prop.name, `p${index}`)
   }
 
   const matchContext: WrapperMatchContext = {
@@ -284,6 +282,13 @@ function getWrapperExtensionSlots(
 
   const applyContext: WrapperApplyContext = {
     ...matchContext,
+    getPropVariable(propName) {
+      const variable = propVariableMap.get(propName)
+      if (!variable) {
+        throw new Error(`Unknown prop: ${propName}`)
+      }
+      return variable
+    },
     addImport(moduleSpecifier, namedImports) {
       if (namedImports.length === 0) {
         return
@@ -327,9 +332,6 @@ function getWrapperExtensionSlots(
       if (!slots.svelteScriptStatements.includes(statement)) {
         slots.svelteScriptStatements.push(statement)
       }
-    },
-    setSveltePropExpression(propName, expression) {
-      slots.sveltePropExpressions[propName] = expression
     },
   }
 
@@ -1024,7 +1026,6 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, options: Ge
   const hasProps = propBindings.length > 0
   const hasEvents = eventBindings.length > 0
   const needsElement = hasProps || hasEvents
-  const hasExtensions = Object.keys(slots.sveltePropExpressions).length > 0
 
   // Build first $effect.pre block (props assignment + handlers update)
   const propsEffectLines: string[] = []
@@ -1033,23 +1034,12 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, options: Ge
     propsEffectLines.push('    if (!element) return')
 
     if (hasProps) {
+      const entries = propBindings.map((b) => {
+        const override = slots.reactPropOverrides[b.name]
+        return override ? `${b.name}: ${b.variableName} ${override}` : `${b.name}: ${b.variableName}`
+      })
       propsEffectLines.push('')
-      if (!hasExtensions) {
-        const entries = propBindings.map((b) => `${b.name}: ${b.variableName}`)
-        propsEffectLines.push(`    Object.assign(element, { ${entries.join(', ')} })`)
-      } else {
-        for (const binding of propBindings) {
-          const expression = slots.sveltePropExpressions[binding.name]
-          if (!expression) {
-            propsEffectLines.push(`    element.${binding.name} = ${binding.variableName}`)
-          } else {
-            propsEffectLines.push(`    {`)
-            propsEffectLines.push(`      const propValue = ${binding.variableName}`)
-            propsEffectLines.push(`      element.${binding.name} = ${expression}`)
-            propsEffectLines.push(`    }`)
-          }
-        }
-      }
+      propsEffectLines.push(`    Object.assign(element, { ${entries.join(', ')} })`)
     }
 
     if (hasEvents) {

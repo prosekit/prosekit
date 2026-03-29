@@ -43,12 +43,12 @@ export const DropIndicator: Component<DropIndicatorProps> = (props): any => {
 
   const [elementProps, restProps] = splitProps(props, ["editor", "width"]);
 
-  const editorContext = useEditorContext();
+  const p0Fallback = useEditorContext();
 
   return h(
     "prosekit-drop-indicator",
     mergeProps(restProps, {
-      "prop:editor": () => elementProps.editor ?? editorContext,
+      "prop:editor": () => elementProps.editor ?? p0Fallback,
       "prop:width": () => elementProps.width,
     }),
   );

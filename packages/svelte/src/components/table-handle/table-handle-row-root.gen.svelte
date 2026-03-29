@@ -8,33 +8,12 @@
   let { altBoundary: p0, autoUpdate: p1, boundary: p2, editor: p3, elementContext: p4, fitViewport: p5, flip: p6, hide: p7, hoist: p8, inline: p9, offset: p10, overflowPadding: p11, overlap: p12, placement: p13, rootBoundary: p14, sameHeight: p15, sameWidth: p16, shift: p17, strategy: p18, children = undefined, ...restProps } = $props()
   let element
 
-  const editorContext = useEditorContext()
+  const p3Fallback = useEditorContext()
 
   $effect.pre(() => {
     if (!element) return
 
-    element.altBoundary = p0
-    element.autoUpdate = p1
-    element.boundary = p2
-    {
-      const propValue = p3
-      element.editor = propValue ?? editorContext ?? propValue
-    }
-    element.elementContext = p4
-    element.fitViewport = p5
-    element.flip = p6
-    element.hide = p7
-    element.hoist = p8
-    element.inline = p9
-    element.offset = p10
-    element.overflowPadding = p11
-    element.overlap = p12
-    element.placement = p13
-    element.rootBoundary = p14
-    element.sameHeight = p15
-    element.sameWidth = p16
-    element.shift = p17
-    element.strategy = p18
+    Object.assign(element, { altBoundary: p0, autoUpdate: p1, boundary: p2, editor: p3 ?? p3Fallback, elementContext: p4, fitViewport: p5, flip: p6, hide: p7, hoist: p8, inline: p9, offset: p10, overflowPadding: p11, overlap: p12, placement: p13, rootBoundary: p14, sameHeight: p15, sameWidth: p16, shift: p17, strategy: p18 })
   })
 </script>
 

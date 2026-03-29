@@ -37,12 +37,12 @@ export const TableHandleDropIndicator: Component<
 
   const [elementProps, restProps] = splitProps(props, ["editor"]);
 
-  const editorContext = useEditorContext();
+  const p0Fallback = useEditorContext();
 
   return h(
     "prosekit-table-handle-drop-indicator",
     mergeProps(restProps, {
-      "prop:editor": () => elementProps.editor ?? editorContext,
+      "prop:editor": () => elementProps.editor ?? p0Fallback,
     }),
   );
 };

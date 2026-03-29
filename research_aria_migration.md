@@ -143,13 +143,9 @@ Vue uses `shallowRef` + `computed` (via `splittedProps`) + `watchEffect`. Solid 
 
 ## Missing v2 Capabilities (Blockers)
 
-### 1. Menu Component — Blocks: `table-handle`
+### ~~1. Menu Component~~ — No longer a blocker
 
-v1 provides `useMenuRoot`, `useMenuTrigger`, `useMenuContent`, `useMenuItem` from `@aria-ui/menu/elements`. Table-handle uses these for row/column context menus with keyboard navigation (arrow keys, typeahead).
-
-**Options:**
-- (A) Implement a full Menu component in v2 (`@aria-ui-v2/elements`)
-- (B) Build a simpler menu on top of Listbox (since menu items behave like listbox items with actions)
+Table-handle has been fully migrated to v2 without needing a standalone Menu component.
 
 ### ~~2. Presence/Animation~~ — DONE
 
@@ -190,20 +186,17 @@ Every v1 import from `@aria-ui/*` still in `packages/web/src/`:
 - `listboxProps`, `listboxEvents`, `listboxItemEvents` — prop/event declarations
 - `ListboxProps`, `ListboxEvents`, `ListboxItemEvents` — types
 
-### `@aria-ui/overlay` (used by autocomplete, block-handle, table-handle)
+### `@aria-ui/overlay` (used by autocomplete, block-handle)
 - `useOverlayPositionerState` — floating-ui positioning hook
 - `overlayPositionerProps` — prop declarations
 - `OverlayPositionerProps`, `OverlayPositionerEvents` — types
 
-### `@aria-ui/presence` (used by autocomplete, block-handle, table-handle)
+### `@aria-ui/presence` (used by autocomplete, block-handle)
 - `usePresence` — visibility/animation hook
 
 ### ~~`@aria-ui/popover`~~ — **No longer imported** (migrated to v2)
 
-### `@aria-ui/menu` (used by table-handle)
-- `useMenuRoot`, `useMenuTrigger`, `useMenuContent`, `useMenuItem` — hooks
-- `menuRootProps`, `menuRootEvents`, `menuContentProps`, `menuContentEvents`, `menuItemProps`, `menuItemEvents` — declarations
-- `MenuRootProps`, `MenuRootEvents`, `MenuContentProps`, `MenuContentEvents`, `MenuItemProps`, `MenuItemEvents` — types
+### ~~`@aria-ui/menu`~~ — **No longer imported** (table-handle migrated to v2)
 
 ### ~~`@aria-ui/tooltip`~~ — **No longer imported** (migrated to v2)
 

@@ -59,12 +59,11 @@ export interface SetupOverlayRootOptions {
 /**
  * @internal
  */
-export function setupOverlayRoot(
-  host: HostElement,
-  props: Store<OverlayRootProps>,
-  storeContext: Context<OverlayStore>,
-  options?: SetupOverlayRootOptions,
-): void {
+export function useOverlayStore(
+    host: HostElement,
+    props: Store<OverlayRootProps>,
+    options?: SetupOverlayRootOptions,
+): OverlayStore {
   const getOpen = computed(() => {
     const open = props.open.get()
     const defaultOpen = props.defaultOpen.get()
@@ -84,5 +83,22 @@ export function setupOverlayRoot(
 
   const store = new OverlayStore(getOpen, emitOpenChange)
   useAriaDisabled(host, getDisabled)
+
+  return store
+}
+
+
+// TODO: remove setupOverlayRoot function because it's too lightwight to justify its existence. Instead, we can just call useOverlayStore directly in the component.
+
+/**
+ * @internal
+ */
+export function setupOverlayRoot(
+  host: HostElement,
+  props: Store<OverlayRootProps>,
+  storeContext: Context<OverlayStore>,
+  options?: SetupOverlayRootOptions,
+): void {
+  const store = useOverlayStore(host, props, options)
   storeContext.provide(host, store)
 }

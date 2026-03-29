@@ -58,8 +58,6 @@ From the TODO in `index.ts`:
 </TableHandleRoot>
 ```
 
-<!-- update : 注意不要直接用 aria 的 menu root。增加一个新的 packages/web/src/components/menu/index.ts, 然后像类似 packages/web/src/components/tooltip/index.ts 的方式去 re-export aria-ui 的 components -->
-
 ---
 
 ## Current vs Desired Component Mapping
@@ -128,9 +126,8 @@ This is cleaner because the "position the handle next to the cell" concern is se
 **Current**: `TableHandlePopoverItemSelectEvent` (event name: `'select'`, bubbles, cancelable)
 **aria-ui**: `MenuItemSelectEvent` (event name: `'select'`, bubbles, cancelable)
 
-These are compatible. Existing consumer code listening for `'select'` events will still work. The event class name changes but the event type string is the same.
+These are compatible. Existing consumer code listening for `'select'` events will still work. `TableHandlePopoverItemSelectEvent` is removed from the codebase — consumers should use `MenuItemSelectEvent` from the new `@prosekit/web/menu` module instead.
 
-<!-- Update: Remove the TableHandlePopoverItemSelectEvent from the codebase -->
 ---
 
 ## Implementation Plan
@@ -146,12 +143,15 @@ These are compatible. Existing consumer code listening for `'select'` events wil
    - `MenuItemSelectEvent`
    - `MenuStoreContext`, `createMenuStore`, `closeMenuTree`
 
-2. Register aria-ui Menu elements with `prosekit-` prefixed tag names (or use aria-ui tag names directly). Decision needed:
-   - **Option**: Re-export and register with `prosekit-menu-*` names → avoids collision, consistent naming
-   - **Option**: Use `aria-ui-menu-*` names directly → less code, but mixed naming
-   - **Recommendation**: Create thin prosekit wrappers (`TableHandleMenuRoot`, `TableHandleMenuTrigger`, etc.) that just re-register with prosekit-prefixed names. This keeps the CLI wrapper generation working.
+2. Create `packages/web/src/components/menu/index.ts` following the same pattern as `packages/web/src/components/tooltip/index.ts`:
+   - Re-export all aria-ui menu types, setup functions, props declarations, and element classes from `@aria-ui-v2/elements/menu`
+   - Register each element with `prosekit-` prefix (e.g. `prosekit-menu-root`, `prosekit-menu-trigger`, `prosekit-menu-positioner`, `prosekit-menu-popup`, `prosekit-menu-item`)
+   - Export register functions (`registerMenuRootElement`, `registerMenuTriggerElement`, etc.)
+   - This keeps naming consistent with other prosekit components and ensures the CLI wrapper generation works
 
-<!-- update: as I said above, add new packages/web/src/components/menu/index.ts with prosekit prefix  -->
+3. Add `menu` to the `components` array in `packages/web/build.mjs` so framework wrappers (React/Preact/Vue/Solid/Svelte) are generated for the menu components.
+
+4. Add `"./menu": "./src/components/menu/index.ts"` to `package.json` exports.
 
 ### Phase 2: Create new positioning components
 
@@ -195,9 +195,7 @@ Update `index.ts` to:
 - Remove old exports (`TableHandlePopoverPopup`, `TableHandlePopoverItem`, `TableHandlePopoverPositioner`)
 - Remove old `TableHandleColumnRoot`, `TableHandleRowRoot`
 
-Update `build.mjs` — no changes needed since the CLI already processes `table-handle/index.ts`.
-
-<!-- update: you need to update build.mjs to add menu  -->
+Update `build.mjs` — add `'menu'` to the `components` array so framework wrappers are generated for the new menu module.
 
 ### Phase 6: Update framework wrappers
 
@@ -249,14 +247,11 @@ Update any example code that uses the old component names to the new structure.
 
 ### 2. Collection element selector
 
-**Risk**: aria-ui `MenuItemElement` rebuilds collection using `popup.querySelectorAll('aria-ui-menu-item, aria-ui-menu-submenu-trigger')`. If items are registered with `prosekit-menu-item` tag names instead, the selector won't match.
+**Risk**: aria-ui `MenuItemElement` rebuilds collection using `popup.querySelectorAll('aria-ui-menu-item, aria-ui-menu-submenu-trigger')`. Elements registered as `prosekit-menu-item` won't match this selector.
 
-**Mitigation**: Either:
-- Use aria-ui's own tag names (`aria-ui-menu-*`) — simplest
-- Or wrap MenuItem to register with both names
-- Or make the collection selector configurable in aria-ui (upstream change)
+**Mitigation**: The elements are registered with BOTH tag names — `registerCustomElement` in aria-ui registers with `aria-ui-menu-item`, and prosekit's `registerMenuItemElement` registers the same class with `prosekit-menu-item`. The `querySelectorAll` in `setupMenuItem` uses `host.closest('aria-ui-menu-popup')` and queries for `aria-ui-menu-item`. Since users will use `prosekit-menu-popup` and `prosekit-menu-item` tags, the `closest()` and `querySelectorAll()` selectors won't match.
 
-**Recommendation**: Use aria-ui's own tag names directly. The prosekit-specific elements (`TableHandleColumnPositioner`, `TableHandleColumnPopup`, triggers) use `prosekit-` prefix, but the generic menu elements use `aria-ui-` prefix. This is acceptable since the menu elements are generic and not prosekit-specific.
+**Solution**: This needs an upstream change in aria-ui to make the collection selector configurable or tag-name-agnostic. Alternatively, override `setupMenuItem`/`setupMenuPopup` in prosekit with patched selectors. This is the main blocker to investigate before implementation.
 
 ### 3. Breaking change for consumers
 

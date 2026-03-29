@@ -1007,7 +1007,7 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, options: Ge
   const eventBindings = eventHandlers.map((handler, index) => ({
     eventName: handler.eventName,
     handlerName: handler.handlerName,
-    variableName: `p${propBindings.length + index}`,
+    variableName: `e${index}`,
   }))
   const destructureEntries = [
     ...propBindings.map((binding) => `${binding.name}: ${binding.variableName}`),
@@ -1020,69 +1020,97 @@ function generateSvelteComponentSvelteFile(component: ComponentInfo, options: Ge
     (item) => `  import { ${item.namedImports.join(', ')} } from '${item.moduleSpecifier}'`,
   )
   const scriptStatements = slots.svelteScriptStatements.map((statement) => indentBlock(statement, 2))
-  const propStatements = propBindings.map((binding) => {
-    const expression = slots.sveltePropExpressions[binding.name]
-    if (!expression) {
-      return `    if (${binding.variableName} !== undefined) { element.${binding.name} = ${binding.variableName} }`
+
+  const hasProps = propBindings.length > 0
+  const hasEvents = eventBindings.length > 0
+  const needsElement = hasProps || hasEvents
+  const hasExtensions = Object.keys(slots.sveltePropExpressions).length > 0
+
+  // Build first $effect.pre block (props assignment + handlers update)
+  const propsEffectLines: string[] = []
+  if (needsElement) {
+    propsEffectLines.push('  $effect.pre(() => {')
+    propsEffectLines.push('    if (!element) return')
+
+    if (hasProps) {
+      propsEffectLines.push('')
+      if (!hasExtensions) {
+        const entries = propBindings.map((b) => `${b.name}: ${b.variableName}`)
+        propsEffectLines.push(`    Object.assign(element, { ${entries.join(', ')} })`)
+      } else {
+        for (const binding of propBindings) {
+          const expression = slots.sveltePropExpressions[binding.name]
+          if (!expression) {
+            propsEffectLines.push(`    element.${binding.name} = ${binding.variableName}`)
+          } else {
+            propsEffectLines.push(`    {`)
+            propsEffectLines.push(`      const propValue = ${binding.variableName}`)
+            propsEffectLines.push(`      element.${binding.name} = ${expression}`)
+            propsEffectLines.push(`    }`)
+          }
+        }
+      }
     }
 
-    return `    {
-      const propValue = ${binding.variableName}
-      const value = ${expression}
-      if (value !== undefined) {
-        element.${binding.name} = value
+    if (hasEvents) {
+      propsEffectLines.push('')
+      propsEffectLines.push('    handlers.length = 0')
+      for (const binding of eventBindings) {
+        propsEffectLines.push(`    handlers.push(${binding.variableName})`)
       }
-    }`
-  })
-  const eventStatements = eventBindings.map(
-    (binding) =>
-      `    if (${binding.variableName} !== undefined) { element.addEventListener('${binding.eventName}', ${binding.variableName}, { signal: abortSignal }) }`,
-  )
-  const needsAttachment = propStatements.length > 0 || eventStatements.length > 0
-  const attachmentBlocks: string[] = []
+    }
 
-  if (eventStatements.length > 0) {
-    attachmentBlocks.push(`    const abortController = new AbortController()
-    const abortSignal = abortController.signal`)
+    propsEffectLines.push('  })')
   }
 
-  if (propStatements.length > 0 || eventStatements.length > 0) {
-    attachmentBlocks.push([...propStatements, ...eventStatements].join('\n\n'))
+  // Build second $effect.pre block (event listeners)
+  const eventEffectLines: string[] = []
+  if (hasEvents) {
+    const eventNames = eventBindings.map((b) => JSON.stringify(b.eventName))
+    eventEffectLines.push('  $effect.pre(() => {')
+    eventEffectLines.push('    if (!element) return')
+    eventEffectLines.push('')
+    eventEffectLines.push('    const ac = new AbortController()')
+    eventEffectLines.push(`    for (const [index, eventName] of [${eventNames.join(', ')}].entries()) {`)
+    eventEffectLines.push('      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })')
+    eventEffectLines.push('    }')
+    eventEffectLines.push('    return () => ac.abort()')
+    eventEffectLines.push('  })')
   }
 
-  if (eventStatements.length > 0) {
-    attachmentBlocks.push(`    return () => {
-      abortController.abort()
-    }`)
-  }
-
-  const attachmentLines = needsAttachment
-    ? [
-      '',
-      `  const attachment = (element) => {`,
-      '    if (!element) return',
-      ...(attachmentBlocks.length > 0 ? ['', attachmentBlocks.join('\n\n')] : []),
-      '  }',
-    ]
-    : []
-  const openingTag = needsAttachment
-    ? `<${tagName} {...restProps} {@attach attachment}`
-    : `<${tagName} {...restProps}`
-  const scriptLines = [
+  // Build script block
+  const scriptLines: string[] = [
     `<script lang="js">`,
     `  import { register${componentName}Element } from '${options.importSource}'`,
     ...extensionImports,
     `  register${componentName}Element()`,
     '',
     destructureProps,
-    ...(
-      scriptStatements.length > 0
-        ? ['', ...scriptStatements]
-        : []
-    ),
-    ...attachmentLines,
-    `</script>`,
   ]
+
+  if (needsElement) {
+    scriptLines.push('  let element')
+  }
+  if (hasEvents) {
+    scriptLines.push('  const handlers = []')
+  }
+
+  if (scriptStatements.length > 0) {
+    scriptLines.push('', ...scriptStatements)
+  }
+
+  if (propsEffectLines.length > 0) {
+    scriptLines.push('', ...propsEffectLines)
+  }
+  if (eventEffectLines.length > 0) {
+    scriptLines.push('', ...eventEffectLines)
+  }
+
+  scriptLines.push('</script>')
+
+  // Build template
+  const bindThis = needsElement ? ' bind:this={element}' : ''
+  const openingTag = `<${tagName} {...restProps}${bindThis}`
 
   return `${scriptLines.join('\n')}
 
@@ -1223,7 +1251,6 @@ function addPropsInterface(options: PropsInterfaceOptions): void {
     })
   }
 }
-
 
 function generateIndexFile(components: ComponentInfo[]): string {
   const lines: string[] = []

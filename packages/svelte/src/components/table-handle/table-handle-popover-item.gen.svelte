@@ -4,24 +4,28 @@
   import { registerTableHandlePopoverItemElement } from '@prosekit/web/table-handle'
   registerTableHandlePopoverItemElement()
 
-  let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
+  let { disabled: p0, value: p1, onItemSelect: e0, children = undefined, ...restProps } = $props()
+  let element
+  const handlers = []
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    const abortController = new AbortController()
-    const abortSignal = abortController.signal
+    Object.assign(element, { disabled: p0, value: p1 })
 
-    if (p0 !== undefined) { element.disabled = p0 }
+    handlers.length = 0
+    handlers.push(e0)
+  })
 
-    if (p1 !== undefined) { element.value = p1 }
+  $effect.pre(() => {
+    if (!element) return
 
-    if (p2 !== undefined) { element.addEventListener('itemSelect', p2, { signal: abortSignal }) }
-
-    return () => {
-      abortController.abort()
+    const ac = new AbortController()
+    for (const [index, eventName] of ["itemSelect"].entries()) {
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
     }
-  }
+    return () => ac.abort()
+  })
 </script>
 
-<prosekit-table-handle-popover-item {...restProps} {@attach attachment}>{@render children?.()}</prosekit-table-handle-popover-item>
+<prosekit-table-handle-popover-item {...restProps} bind:this={element}>{@render children?.()}</prosekit-table-handle-popover-item>

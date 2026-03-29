@@ -4,28 +4,28 @@
   import { registerPopoverRootElement } from '@prosekit/web/popover'
   registerPopoverRootElement()
 
-  let { defaultOpen: p0, disabled: p1, modal: p2, open: p3, onOpenChange: p4, children = undefined, ...restProps } = $props()
+  let { defaultOpen: p0, disabled: p1, modal: p2, open: p3, onOpenChange: e0, children = undefined, ...restProps } = $props()
+  let element
+  const handlers = []
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    const abortController = new AbortController()
-    const abortSignal = abortController.signal
+    Object.assign(element, { defaultOpen: p0, disabled: p1, modal: p2, open: p3 })
 
-    if (p0 !== undefined) { element.defaultOpen = p0 }
+    handlers.length = 0
+    handlers.push(e0)
+  })
 
-    if (p1 !== undefined) { element.disabled = p1 }
+  $effect.pre(() => {
+    if (!element) return
 
-    if (p2 !== undefined) { element.modal = p2 }
-
-    if (p3 !== undefined) { element.open = p3 }
-
-    if (p4 !== undefined) { element.addEventListener('openChange', p4, { signal: abortSignal }) }
-
-    return () => {
-      abortController.abort()
+    const ac = new AbortController()
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
     }
-  }
+    return () => ac.abort()
+  })
 </script>
 
-<prosekit-popover-root {...restProps} {@attach attachment}>{@render children?.()}</prosekit-popover-root>
+<prosekit-popover-root {...restProps} bind:this={element}>{@render children?.()}</prosekit-popover-root>

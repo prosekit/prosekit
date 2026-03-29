@@ -6,56 +6,36 @@
   registerTableHandleColumnRootElement()
 
   let { altBoundary: p0, autoUpdate: p1, boundary: p2, editor: p3, elementContext: p4, fitViewport: p5, flip: p6, hide: p7, hoist: p8, inline: p9, offset: p10, overflowPadding: p11, overlap: p12, placement: p13, rootBoundary: p14, sameHeight: p15, sameWidth: p16, shift: p17, strategy: p18, children = undefined, ...restProps } = $props()
+  let element
 
   const editorContext = useEditorContext()
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    if (p0 !== undefined) { element.altBoundary = p0 }
-
-    if (p1 !== undefined) { element.autoUpdate = p1 }
-
-    if (p2 !== undefined) { element.boundary = p2 }
-
+    element.altBoundary = p0
+    element.autoUpdate = p1
+    element.boundary = p2
     {
       const propValue = p3
-      const value = propValue ?? editorContext ?? propValue
-      if (value !== undefined) {
-        element.editor = value
-      }
+      element.editor = propValue ?? editorContext ?? propValue
     }
-
-    if (p4 !== undefined) { element.elementContext = p4 }
-
-    if (p5 !== undefined) { element.fitViewport = p5 }
-
-    if (p6 !== undefined) { element.flip = p6 }
-
-    if (p7 !== undefined) { element.hide = p7 }
-
-    if (p8 !== undefined) { element.hoist = p8 }
-
-    if (p9 !== undefined) { element.inline = p9 }
-
-    if (p10 !== undefined) { element.offset = p10 }
-
-    if (p11 !== undefined) { element.overflowPadding = p11 }
-
-    if (p12 !== undefined) { element.overlap = p12 }
-
-    if (p13 !== undefined) { element.placement = p13 }
-
-    if (p14 !== undefined) { element.rootBoundary = p14 }
-
-    if (p15 !== undefined) { element.sameHeight = p15 }
-
-    if (p16 !== undefined) { element.sameWidth = p16 }
-
-    if (p17 !== undefined) { element.shift = p17 }
-
-    if (p18 !== undefined) { element.strategy = p18 }
-  }
+    element.elementContext = p4
+    element.fitViewport = p5
+    element.flip = p6
+    element.hide = p7
+    element.hoist = p8
+    element.inline = p9
+    element.offset = p10
+    element.overflowPadding = p11
+    element.overlap = p12
+    element.placement = p13
+    element.rootBoundary = p14
+    element.sameHeight = p15
+    element.sameWidth = p16
+    element.shift = p17
+    element.strategy = p18
+  })
 </script>
 
-<prosekit-table-handle-column-root {...restProps} {@attach attachment}>{@render children?.()}</prosekit-table-handle-column-root>
+<prosekit-table-handle-column-root {...restProps} bind:this={element}>{@render children?.()}</prosekit-table-handle-column-root>

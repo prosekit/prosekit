@@ -5,12 +5,13 @@
   registerTableHandlePopoverPopupElement()
 
   let { eventTarget: p0, children = undefined, ...restProps } = $props()
+  let element
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    if (p0 !== undefined) { element.eventTarget = p0 }
-  }
+    Object.assign(element, { eventTarget: p0 })
+  })
 </script>
 
-<prosekit-table-handle-popover-popup {...restProps} {@attach attachment}>{@render children?.()}</prosekit-table-handle-popover-popup>
+<prosekit-table-handle-popover-popup {...restProps} bind:this={element}>{@render children?.()}</prosekit-table-handle-popover-popup>

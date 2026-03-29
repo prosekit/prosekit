@@ -6,20 +6,18 @@
   registerTableHandleColumnTriggerElement()
 
   let { editor: p0, children = undefined, ...restProps } = $props()
+  let element
 
   const editorContext = useEditorContext()
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
     {
       const propValue = p0
-      const value = propValue ?? editorContext ?? propValue
-      if (value !== undefined) {
-        element.editor = value
-      }
+      element.editor = propValue ?? editorContext ?? propValue
     }
-  }
+  })
 </script>
 
-<prosekit-table-handle-column-trigger {...restProps} {@attach attachment}>{@render children?.()}</prosekit-table-handle-column-trigger>
+<prosekit-table-handle-column-trigger {...restProps} bind:this={element}>{@render children?.()}</prosekit-table-handle-column-trigger>

@@ -4,28 +4,29 @@
   import { registerResizableRootElement } from '@prosekit/web/resizable'
   registerResizableRootElement()
 
-  let { aspectRatio: p0, height: p1, width: p2, onResizeEnd: p3, onResizeStart: p4, children = undefined, ...restProps } = $props()
+  let { aspectRatio: p0, height: p1, width: p2, onResizeEnd: e0, onResizeStart: e1, children = undefined, ...restProps } = $props()
+  let element
+  const handlers = []
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    const abortController = new AbortController()
-    const abortSignal = abortController.signal
+    Object.assign(element, { aspectRatio: p0, height: p1, width: p2 })
 
-    if (p0 !== undefined) { element.aspectRatio = p0 }
+    handlers.length = 0
+    handlers.push(e0)
+    handlers.push(e1)
+  })
 
-    if (p1 !== undefined) { element.height = p1 }
+  $effect.pre(() => {
+    if (!element) return
 
-    if (p2 !== undefined) { element.width = p2 }
-
-    if (p3 !== undefined) { element.addEventListener('resizeEnd', p3, { signal: abortSignal }) }
-
-    if (p4 !== undefined) { element.addEventListener('resizeStart', p4, { signal: abortSignal }) }
-
-    return () => {
-      abortController.abort()
+    const ac = new AbortController()
+    for (const [index, eventName] of ["resizeEnd", "resizeStart"].entries()) {
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
     }
-  }
+    return () => ac.abort()
+  })
 </script>
 
-<prosekit-resizable-root {...restProps} {@attach attachment}>{@render children?.()}</prosekit-resizable-root>
+<prosekit-resizable-root {...restProps} bind:this={element}>{@render children?.()}</prosekit-resizable-root>

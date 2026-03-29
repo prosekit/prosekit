@@ -5,12 +5,13 @@
   registerResizableHandleElement()
 
   let { position: p0, children = undefined, ...restProps } = $props()
+  let element
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    if (p0 !== undefined) { element.position = p0 }
-  }
+    Object.assign(element, { position: p0 })
+  })
 </script>
 
-<prosekit-resizable-handle {...restProps} {@attach attachment}>{@render children?.()}</prosekit-resizable-handle>
+<prosekit-resizable-handle {...restProps} bind:this={element}>{@render children?.()}</prosekit-resizable-handle>

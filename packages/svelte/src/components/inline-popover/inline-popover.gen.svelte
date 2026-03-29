@@ -5,72 +5,54 @@
   import { useEditorContext } from '../../contexts/editor-context.ts'
   registerInlinePopoverElement()
 
-  let { altBoundary: p0, autoUpdate: p1, boundary: p2, defaultOpen: p3, dismissOnEscape: p4, editor: p5, elementContext: p6, fitViewport: p7, flip: p8, hide: p9, hoist: p10, inline: p11, offset: p12, open: p13, overflowPadding: p14, overlap: p15, placement: p16, rootBoundary: p17, sameHeight: p18, sameWidth: p19, shift: p20, strategy: p21, onOpenChange: p22, children = undefined, ...restProps } = $props()
+  let { altBoundary: p0, autoUpdate: p1, boundary: p2, defaultOpen: p3, dismissOnEscape: p4, editor: p5, elementContext: p6, fitViewport: p7, flip: p8, hide: p9, hoist: p10, inline: p11, offset: p12, open: p13, overflowPadding: p14, overlap: p15, placement: p16, rootBoundary: p17, sameHeight: p18, sameWidth: p19, shift: p20, strategy: p21, onOpenChange: e0, children = undefined, ...restProps } = $props()
+  let element
+  const handlers = []
 
   const editorContext = useEditorContext()
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    const abortController = new AbortController()
-    const abortSignal = abortController.signal
-
-    if (p0 !== undefined) { element.altBoundary = p0 }
-
-    if (p1 !== undefined) { element.autoUpdate = p1 }
-
-    if (p2 !== undefined) { element.boundary = p2 }
-
-    if (p3 !== undefined) { element.defaultOpen = p3 }
-
-    if (p4 !== undefined) { element.dismissOnEscape = p4 }
-
+    element.altBoundary = p0
+    element.autoUpdate = p1
+    element.boundary = p2
+    element.defaultOpen = p3
+    element.dismissOnEscape = p4
     {
       const propValue = p5
-      const value = propValue ?? editorContext ?? propValue
-      if (value !== undefined) {
-        element.editor = value
-      }
+      element.editor = propValue ?? editorContext ?? propValue
     }
+    element.elementContext = p6
+    element.fitViewport = p7
+    element.flip = p8
+    element.hide = p9
+    element.hoist = p10
+    element.inline = p11
+    element.offset = p12
+    element.open = p13
+    element.overflowPadding = p14
+    element.overlap = p15
+    element.placement = p16
+    element.rootBoundary = p17
+    element.sameHeight = p18
+    element.sameWidth = p19
+    element.shift = p20
+    element.strategy = p21
 
-    if (p6 !== undefined) { element.elementContext = p6 }
+    handlers.length = 0
+    handlers.push(e0)
+  })
 
-    if (p7 !== undefined) { element.fitViewport = p7 }
+  $effect.pre(() => {
+    if (!element) return
 
-    if (p8 !== undefined) { element.flip = p8 }
-
-    if (p9 !== undefined) { element.hide = p9 }
-
-    if (p10 !== undefined) { element.hoist = p10 }
-
-    if (p11 !== undefined) { element.inline = p11 }
-
-    if (p12 !== undefined) { element.offset = p12 }
-
-    if (p13 !== undefined) { element.open = p13 }
-
-    if (p14 !== undefined) { element.overflowPadding = p14 }
-
-    if (p15 !== undefined) { element.overlap = p15 }
-
-    if (p16 !== undefined) { element.placement = p16 }
-
-    if (p17 !== undefined) { element.rootBoundary = p17 }
-
-    if (p18 !== undefined) { element.sameHeight = p18 }
-
-    if (p19 !== undefined) { element.sameWidth = p19 }
-
-    if (p20 !== undefined) { element.shift = p20 }
-
-    if (p21 !== undefined) { element.strategy = p21 }
-
-    if (p22 !== undefined) { element.addEventListener('openChange', p22, { signal: abortSignal }) }
-
-    return () => {
-      abortController.abort()
+    const ac = new AbortController()
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
     }
-  }
+    return () => ac.abort()
+  })
 </script>
 
-<prosekit-inline-popover {...restProps} {@attach attachment}>{@render children?.()}</prosekit-inline-popover>
+<prosekit-inline-popover {...restProps} bind:this={element}>{@render children?.()}</prosekit-inline-popover>

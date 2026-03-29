@@ -6,22 +6,19 @@
   registerDropIndicatorElement()
 
   let { editor: p0, width: p1, children = undefined, ...restProps } = $props()
+  let element
 
   const editorContext = useEditorContext()
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
     {
       const propValue = p0
-      const value = propValue ?? editorContext ?? propValue
-      if (value !== undefined) {
-        element.editor = value
-      }
+      element.editor = propValue ?? editorContext ?? propValue
     }
-
-    if (p1 !== undefined) { element.width = p1 }
-  }
+    element.width = p1
+  })
 </script>
 
-<prosekit-drop-indicator {...restProps} {@attach attachment}>{@render children?.()}</prosekit-drop-indicator>
+<prosekit-drop-indicator {...restProps} bind:this={element}>{@render children?.()}</prosekit-drop-indicator>

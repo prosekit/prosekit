@@ -4,30 +4,28 @@
   import { registerTooltipRootElement } from '@prosekit/web/tooltip'
   registerTooltipRootElement()
 
-
   let { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, children = undefined, ...restProps } = $props()
-	let element
+  let element
   const handlers = []
 
   $effect.pre(() => {
-		if (!element) return;
+    if (!element) return
 
-		Object.assign(element, {      defaultOpen: p0,      disabled: p1,      open: p2    })
+    Object.assign(element, { defaultOpen: p0, disabled: p1, open: p2 })
 
-    handlers.length = 0 
-    handlers.push( e0 )
-	});
+    handlers.length = 0
+    handlers.push(e0)
+  })
 
   $effect.pre(() => {
-		if (!element) return;
+    if (!element) return
 
-    const ac = new AbortController();
+    const ac = new AbortController()
     for (const [index, eventName] of ["openChange"].entries()) {
-      element.addEventListener(        eventName,        (event) =>  handlers[index]?.(event),        { signal: ac.signal }      );
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
     }
-    return () => ac.abort();
-	});
-
+    return () => ac.abort()
+  })
 </script>
 
 <prosekit-tooltip-root {...restProps} bind:this={element}>{@render children?.()}</prosekit-tooltip-root>

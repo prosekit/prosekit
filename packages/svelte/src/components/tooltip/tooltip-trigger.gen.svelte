@@ -5,16 +5,13 @@
   registerTooltipTriggerElement()
 
   let { closeDelay: p0, disabled: p1, openDelay: p2, children = undefined, ...restProps } = $props()
+  let element
 
-  const attachment = (element) => {
+  $effect.pre(() => {
     if (!element) return
 
-    if (p0 !== undefined) { element.closeDelay = p0 }
-
-    if (p1 !== undefined) { element.disabled = p1 }
-
-    if (p2 !== undefined) { element.openDelay = p2 }
-  }
+    Object.assign(element, { closeDelay: p0, disabled: p1, openDelay: p2 })
+  })
 </script>
 
-<prosekit-tooltip-trigger {...restProps} {@attach attachment}>{@render children?.()}</prosekit-tooltip-trigger>
+<prosekit-tooltip-trigger {...restProps} bind:this={element}>{@render children?.()}</prosekit-tooltip-trigger>

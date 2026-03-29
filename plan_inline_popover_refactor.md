@@ -346,26 +346,16 @@ function setupInlinePopoverRoot(host, props) {
 
 ### Phase 2: 创建新文件
 
-- [ ] **2.1** 创建 `store.ts` — InlinePopoverStoreContext
-- [ ] **2.2** 创建 `inline-popover-root.ts`
-  - [ ] Props: extends `OverlayRootProps` + `editor`, `defaultOpen` (默认 true), `dismissOnEscape`
-  - [ ] 使用 `useOverlayStore(host, props)` 创建 store，然后 `InlinePopoverStoreContext.provide(host, store)`
-  - [ ] 编辑器跟踪逻辑: focus + selection → `store.anchorElement`
-  - [ ] Auto-open 逻辑: reference 存在 + defaultOpen → open
-  - [ ] Escape 键处理
-  - [ ] OpenChangeEvent 事件
-- [ ] **2.3** 创建 `inline-popover-positioner.ts`
-  - [ ] Props: 继承 OverlayPositionerProps，覆盖默认值
-  - [ ] Setup: 一行 `setupOverlayPositioner(host, props, InlinePopoverStoreContext)`
-- [ ] **2.4** 创建 `inline-popover-popup.ts`
-  - [ ] Props: 继承 OverlayPopupProps
-  - [ ] Setup: `setupOverlayPopup` + `usePresence`
+- [x] **2.1** 创建 `store.ts` — InlinePopoverStoreContext
+- [x] **2.2** 创建 `inline-popover-root.ts`
+- [x] **2.3** 创建 `inline-popover-positioner.ts`
+- [x] **2.4** 创建 `inline-popover-popup.ts`
 
 ### Phase 3: 更新导出和注册
 
-- [ ] **3.1** 重写 `index.ts` — 导出三个组件
-- [ ] **3.2** 删除 `inline-popover/inline-popover/inline-popover.ts`
-- [ ] **3.3** `packages/web/build.mjs` — 无需修改（'inline-popover' 已在列表中）
+- [x] **3.1** 重写 `index.ts` — 导出三个组件
+- [x] **3.2** 删除 `inline-popover/inline-popover/inline-popover.ts` + 清理各框架包中的旧 `inline-popover.gen.ts`
+- [x] **3.3** `packages/web/build.mjs` — 无需修改（'inline-popover' 已在列表中）
 
 ### Phase 4: 更新示例
 

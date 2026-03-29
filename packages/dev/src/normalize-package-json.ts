@@ -157,10 +157,6 @@ function normalizePackageJsonDocumentFields(pkg: Package): void {
 }
 
 function normalizeTypesVersions(pkg: Package): void {
-  // TODO: remove me
-  if (pkg.packageJson.name.includes('aria-ui')) {
-    return
-  }
 
   const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)

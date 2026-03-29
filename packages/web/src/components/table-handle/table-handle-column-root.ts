@@ -122,9 +122,7 @@ export function setupTableHandleColumnRoot(
   const menuStore = createMenuStore(overlayStore)
   MenuStoreContext.provide(host, menuStore)
 
-  useEffect(host, () => {
-    console.log('DEBUG COL reference cell changed:', getReferenceCell())
-  })
+
 
   useEffect(host, () => {
     overlayStore.setAnchorElement(getReferenceCell())

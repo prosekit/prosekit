@@ -16,10 +16,6 @@ export default defineConfig({
     projects: [
       './packages/*',
       './registry',
-
-      // TODO: remove me
-      './aria-ui/website',
-      './aria-ui/packages/*',
     ],
   },
 })

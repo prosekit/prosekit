@@ -10,9 +10,7 @@ import { ROOT_DIR } from './root-dir'
 export const getWorkspacePackages: () => Promise<Package[]> = once(async () => {
   debug('getWorkspacePackages start')
   const { packages } = await getPackages(ROOT_DIR)
-  // TODO: remove me
-  const filteredPackages = packages.filter((pkg) => !pkg.packageJson.name.includes('aria-ui'))
-  const sortedPackages = filteredPackages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
+  const sortedPackages = packages.toSorted((a, b) => a.packageJson.name.localeCompare(b.packageJson.name))
   debug('getWorkspacePackages done packages=%d', sortedPackages.length)
   return sortedPackages
 })

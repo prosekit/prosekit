@@ -51,7 +51,7 @@ export const TableHandlePopoverItem: DefineSetupFnComponent<
       return [[p0, p1, e0], restProps] as const;
     });
 
-    const handlers: (Function | undefined)[] = [];
+    const handlers: (((event: any) => void) | undefined)[] = [];
 
     watchEffect(() => {
       const element = elementRef.value;
@@ -73,7 +73,7 @@ export const TableHandlePopoverItem: DefineSetupFnComponent<
       for (const [index, eventName] of ["itemSelect"].entries()) {
         element.addEventListener(
           eventName,
-          (event: Event) => {
+          (event) => {
             handlers[index]?.(event);
           },
           { signal: ac.signal },

@@ -132,7 +132,9 @@ These are compatible. Existing consumer code listening for `'select'` events wil
 
 ## Implementation Plan
 
-### Phase 1: Prepare aria-ui Menu elements for prosekit use
+### ~~Phase 0: Fix aria-ui hardcoded tag name selectors~~ ✅
+
+### ~~Phase 1: Prepare aria-ui Menu elements for prosekit use~~ ✅
 
 1. Ensure `@aria-ui-v2/elements/menu` exports all necessary setup functions and types:
    - `setupMenuRoot`, `MenuRootPropsDeclaration`, `MenuRootElement`, `registerMenuRootElement`
@@ -153,7 +155,7 @@ These are compatible. Existing consumer code listening for `'select'` events wil
 
 4. Add `"./menu": "./src/components/menu/index.ts"` to `package.json` exports.
 
-### Phase 2: Create new positioning components
+### ~~Phase 2: Create new positioning components~~ ✅
 
 **`table-handle-column-positioner.ts`** (replaces positioning part of `TableHandleColumnRoot`):
 - Props: `editor`, `placement` (default "top"), overlay positioning props

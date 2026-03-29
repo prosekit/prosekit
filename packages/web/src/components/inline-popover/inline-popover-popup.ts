@@ -28,12 +28,12 @@ export function setupInlinePopoverPopup(
   _props: Store<InlinePopoverPopupProps>,
 ): void {
   const getStore = InlinePopoverStoreContext.consume(host)
-  setupOverlayPopup(host,   getStore,  )
+  setupOverlayPopup(host, getStore)
   const getOpen = computed(() => getStore()?.getIsOpen() ?? false)
   usePresence(host, getOpen)
 
   onMount(host, () => {
-    host.role = "dialog"
+    host.role = 'dialog'
   })
 }
 

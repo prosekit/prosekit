@@ -1,1 +1,1 @@
-export *  from '@prosekit/web/popover'
+export * from '@prosekit/web/popover'

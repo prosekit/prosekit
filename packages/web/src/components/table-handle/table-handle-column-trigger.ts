@@ -55,7 +55,7 @@ export function setupTableHandleColumnTrigger(
   useEventListener(host, 'click', () => {
     const store = getMenuStore()
     if (!store) return
-    store.emitOpenChange(!store.getOpen())
+    store.requestOpenToggle()
   })
 
   // Select column on pointerdown

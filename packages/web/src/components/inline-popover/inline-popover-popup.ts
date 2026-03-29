@@ -29,7 +29,7 @@ export function setupInlinePopoverPopup(
   setupOverlayPopup(host, props, InlinePopoverStoreContext, 'dialog')
 
   const getStore = InlinePopoverStoreContext.consume(host)
-  const getOpen = computed(() => getStore()?.getOpen() ?? false)
+  const getOpen = computed(() => getStore()?.getIsOpen() ?? false)
   usePresence(host, getOpen)
 }
 

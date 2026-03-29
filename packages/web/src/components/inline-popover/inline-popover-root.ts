@@ -92,16 +92,16 @@ export function setupInlinePopoverRoot(
 store.setAnchorElement(reference)
 
     if (reference && props.defaultOpen.get()) {
-      store.emitOpenChange(true)
+      store.requestOpenChange(true)
     } else if (!reference) {
-      store.emitOpenChange(false)
+      store.requestOpenChange(false)
     }
   })
 
   useKeymap(host, props.editor.get, {
     Escape: () => {
-      if (!props.dismissOnEscape.get() || !store.getOpen()) return false
-      store.emitOpenChange(false)
+      if (!props.dismissOnEscape.get() || !store.getIsOpen()) return false
+      store.requestOpenChange(false)
       return true
     },
   })

@@ -11,7 +11,7 @@ import {
   type PropsDeclaration,
   type Store,
 } from '@aria-ui-v2/core'
-import { MenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
+import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
 import { OpenChangeEvent } from '@aria-ui-v2/elements/overlay'
 import { OverlayPositionerPropsDeclaration, updatePlacement, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
@@ -146,7 +146,7 @@ export function setupTableHandleColumnRoot(
     if (event.defaultPrevented) return
     contentOpen.set(open)
   }
-  const menuStore = new MenuStore(getOpen, emitOpenChange)
+  const menuStore = createMenuStore(getOpen, emitOpenChange)
   MenuStoreContext.provide(host, menuStore)
 
   onMount(host, () => {

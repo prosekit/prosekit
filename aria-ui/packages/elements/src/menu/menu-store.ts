@@ -4,6 +4,9 @@ import { Collection } from '@aria-ui-v2/utils'
 import type { OverlayStore } from '../overlay/overlay-store.ts'
 
 
+/**
+ * @internal
+ */
 export interface MenuStore  {
   overlayStore: OverlayStore
   getParentStore(): MenuStore | undefined
@@ -15,6 +18,9 @@ export interface MenuStore  {
 
 
 
+/**
+ * @internal
+ */
 export function createMenuStore(overlayStore: OverlayStore, getParentStore?: () => MenuStore | undefined): MenuStore {
   const activeValue = createSignal<string | null>(null)
   const collection = createSignal<Collection>(new Collection([]))
@@ -30,6 +36,9 @@ export function createMenuStore(overlayStore: OverlayStore, getParentStore?: () 
 }
 
 
+/**
+ * @internal
+ */
 export const MenuStoreContext: Context<MenuStore> = createContext<MenuStore>('MenuStoreContext')
 
 

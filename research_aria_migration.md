@@ -40,6 +40,8 @@ prosekit2/
 └── ...
 ```
 
+UPDATE: aria-ui has been moved out of prosekit repo. It's now a stanalone repo.
+
 ---
 
 ## aria-ui v2: What's Implemented

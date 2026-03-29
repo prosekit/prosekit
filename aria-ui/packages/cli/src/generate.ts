@@ -491,7 +491,7 @@ ${propsEffect}${mountEffect}
   return createElement('${tagName}', { ...restProps, ref: mergedRef, suppressHydrationWarning: true })
 `
 
-  sourceFile.addStatements(`function ${componentName}Component(
+  sourceFile.addStatements(`\nfunction ${componentName}Component(
   props: ${componentName}Props,
   forwardedRef: ForwardedRef<${componentName}Element>,
 ) {${functionBody}}`)
@@ -651,7 +651,7 @@ ${propsEffect}${mountEffect}
   return createElement('${tagName}', { ...restProps, ref: mergedRef, suppressHydrationWarning: true })
 `
 
-  sourceFile.addStatements(`function ${componentName}Component(
+  sourceFile.addStatements(`\nfunction ${componentName}Component(
   props: ${componentName}Props,
   forwardedRef: Ref<${componentName}Element>,
 ) {${functionBody}}`)

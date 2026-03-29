@@ -30,6 +30,7 @@ export interface TableHandleRootProps extends HTMLAttributes<TableHandleRootElem
    */
   editor?: TableHandleRootElementProps["editor"];
 }
+
 function TableHandleRootComponent(
   props: TableHandleRootProps,
   forwardedRef: Ref<TableHandleRootElement>,

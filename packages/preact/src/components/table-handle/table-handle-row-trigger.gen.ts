@@ -28,6 +28,7 @@ export interface TableHandleRowTriggerProps extends HTMLAttributes<TableHandleRo
    */
   editor?: TableHandleRowTriggerElementProps["editor"];
 }
+
 function TableHandleRowTriggerComponent(
   props: TableHandleRowTriggerProps,
   forwardedRef: Ref<TableHandleRowTriggerElement>,

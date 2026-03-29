@@ -20,6 +20,7 @@ import {
  * @public
  */
 export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
+
 function PopoverPopupComponent(
   props: PopoverPopupProps,
   forwardedRef: Ref<PopoverPopupElement>,

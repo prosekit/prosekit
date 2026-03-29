@@ -28,6 +28,7 @@ export interface TableHandleDragPreviewProps extends HTMLAttributes<TableHandleD
    */
   editor?: TableHandleDragPreviewElementProps["editor"];
 }
+
 function TableHandleDragPreviewComponent(
   props: TableHandleDragPreviewProps,
   forwardedRef: Ref<TableHandleDragPreviewElement>,

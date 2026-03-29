@@ -141,6 +141,7 @@ export interface TableHandlePopoverPositionerProps extends HTMLAttributes<TableH
    */
   altBoundary?: TableHandlePopoverPositionerElementProps["altBoundary"];
 }
+
 function TableHandlePopoverPositionerComponent(
   props: TableHandlePopoverPositionerProps,
   forwardedRef: Ref<TableHandlePopoverPositionerElement>,

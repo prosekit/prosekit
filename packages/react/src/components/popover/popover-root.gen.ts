@@ -51,6 +51,7 @@ export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
   /** Emitted when the popover is opened or closed. */
   onOpenChange?: (event: PopoverRootEvents["openChange"]) => void;
 }
+
 function PopoverRootComponent(
   props: PopoverRootProps,
   forwardedRef: ForwardedRef<PopoverRootElement>,

@@ -23,6 +23,7 @@ import {
  * @public
  */
 export interface TooltipPopupProps extends HTMLAttributes<TooltipPopupElement> {}
+
 function TooltipPopupComponent(
   props: TooltipPopupProps,
   forwardedRef: ForwardedRef<TooltipPopupElement>,

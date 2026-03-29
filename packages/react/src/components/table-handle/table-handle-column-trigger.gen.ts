@@ -32,6 +32,7 @@ export interface TableHandleColumnTriggerProps extends HTMLAttributes<TableHandl
    */
   editor?: TableHandleColumnTriggerElementProps["editor"];
 }
+
 function TableHandleColumnTriggerComponent(
   props: TableHandleColumnTriggerProps,
   forwardedRef: ForwardedRef<TableHandleColumnTriggerElement>,

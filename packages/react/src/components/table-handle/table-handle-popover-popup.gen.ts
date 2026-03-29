@@ -33,6 +33,7 @@ export interface TableHandlePopoverPopupProps extends HTMLAttributes<TableHandle
    */
   eventTarget?: TableHandlePopoverPopupElementProps["eventTarget"];
 }
+
 function TableHandlePopoverPopupComponent(
   props: TableHandlePopoverPopupProps,
   forwardedRef: ForwardedRef<TableHandlePopoverPopupElement>,

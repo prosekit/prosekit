@@ -32,6 +32,7 @@ export interface TableHandleDropIndicatorProps extends HTMLAttributes<TableHandl
    */
   editor?: TableHandleDropIndicatorElementProps["editor"];
 }
+
 function TableHandleDropIndicatorComponent(
   props: TableHandleDropIndicatorProps,
   forwardedRef: ForwardedRef<TableHandleDropIndicatorElement>,

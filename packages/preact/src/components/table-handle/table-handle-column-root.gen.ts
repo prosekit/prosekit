@@ -150,6 +150,7 @@ export interface TableHandleColumnRootProps extends HTMLAttributes<TableHandleCo
    */
   altBoundary?: TableHandleColumnRootElementProps["altBoundary"];
 }
+
 function TableHandleColumnRootComponent(
   props: TableHandleColumnRootProps,
   forwardedRef: Ref<TableHandleColumnRootElement>,

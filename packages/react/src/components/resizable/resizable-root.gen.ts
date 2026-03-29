@@ -49,6 +49,7 @@ export interface ResizableRootProps extends HTMLAttributes<ResizableRootElement>
   /** Emitted when a resize operation ends. */
   onResizeEnd?: (event: ResizableRootEvents["resizeEnd"]) => void;
 }
+
 function ResizableRootComponent(
   props: ResizableRootProps,
   forwardedRef: ForwardedRef<ResizableRootElement>,

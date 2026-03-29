@@ -40,6 +40,7 @@ export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
   /** Emitted when the tooltip is opened or closed. */
   onOpenChange?: (event: TooltipRootEvents["openChange"]) => void;
 }
+
 function TooltipRootComponent(
   props: TooltipRootProps,
   forwardedRef: Ref<TooltipRootElement>,

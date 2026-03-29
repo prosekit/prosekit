@@ -149,6 +149,7 @@ export interface TooltipPositionerProps extends HTMLAttributes<TooltipPositioner
    */
   altBoundary?: TooltipPositionerElementProps["altBoundary"];
 }
+
 function TooltipPositionerComponent(
   props: TooltipPositionerProps,
   forwardedRef: Ref<TooltipPositionerElement>,

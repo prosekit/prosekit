@@ -149,6 +149,7 @@ export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositioner
    */
   altBoundary?: PopoverPositionerElementProps["altBoundary"];
 }
+
 function PopoverPositionerComponent(
   props: PopoverPositionerProps,
   forwardedRef: Ref<PopoverPositionerElement>,

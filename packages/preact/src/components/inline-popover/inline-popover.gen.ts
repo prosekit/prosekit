@@ -159,6 +159,7 @@ export interface InlinePopoverProps extends HTMLAttributes<InlinePopoverElement>
   /** Fired when the open state changes. */
   onOpenChange?: (event: InlinePopoverEvents["openChange"]) => void;
 }
+
 function InlinePopoverComponent(
   props: InlinePopoverProps,
   forwardedRef: Ref<InlinePopoverElement>,

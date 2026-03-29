@@ -37,6 +37,7 @@ export interface TooltipTriggerProps extends HTMLAttributes<TooltipTriggerElemen
    */
   closeDelay?: TooltipTriggerElementProps["closeDelay"];
 }
+
 function TooltipTriggerComponent(
   props: TooltipTriggerProps,
   forwardedRef: Ref<TooltipTriggerElement>,

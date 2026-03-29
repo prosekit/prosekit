@@ -28,6 +28,7 @@ export interface ResizableHandleProps extends HTMLAttributes<ResizableHandleElem
    */
   position?: ResizableHandleElementProps["position"];
 }
+
 function ResizableHandleComponent(
   props: ResizableHandleProps,
   forwardedRef: Ref<ResizableHandleElement>,

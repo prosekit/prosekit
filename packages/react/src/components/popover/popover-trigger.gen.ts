@@ -51,6 +51,7 @@ export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElemen
   /** Emitted when the popover is opened or closed. */
   onOpenChange?: (event: PopoverTriggerEvents["openChange"]) => void;
 }
+
 function PopoverTriggerComponent(
   props: PopoverTriggerProps,
   forwardedRef: ForwardedRef<PopoverTriggerElement>,

@@ -33,6 +33,7 @@ export interface TableHandlePopoverItemProps extends HTMLAttributes<TableHandleP
   /** */
   onItemSelect?: (event: TableHandlePopoverItemEvents["itemSelect"]) => void;
 }
+
 function TableHandlePopoverItemComponent(
   props: TableHandlePopoverItemProps,
   forwardedRef: ForwardedRef<TableHandlePopoverItemElement>,

@@ -40,6 +40,7 @@ export interface DropIndicatorProps extends HTMLAttributes<DropIndicatorElement>
    */
   width?: DropIndicatorElementProps["width"];
 }
+
 function DropIndicatorComponent(
   props: DropIndicatorProps,
   forwardedRef: ForwardedRef<DropIndicatorElement>,

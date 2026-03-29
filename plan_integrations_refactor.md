@@ -33,10 +33,10 @@ function TableHandleRowTriggerComponent(
   const { myValue: p0, myLabel: p1, onMyValueChange: e0, onMyLabelChange: e1, ...restProps } = props
 
   useLayoutEffect(() => {
-    handlersRef.current = [e0, e1]
     const element = elementRef.current as Record<string, unknown> | null 
     if (!element) return
     Object.assign(element, { myValue: p0, myLabel: p1 })
+    handlersRef.current = [e0, e1]
   })
 
   useLayoutEffect(() => {

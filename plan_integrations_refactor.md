@@ -146,107 +146,96 @@ Svelte generates an `@attach` callback that directly sets properties and adds ev
 
 Inspired by [Lit's `@lit/react` create-component.ts](https://github.com/lit/lit/blob/main/packages/react/src/create-component.ts), use the `EventListenerObject` pattern to avoid frequent `addEventListener`/`removeEventListener` DOM calls.
 
-### Core Idea: `EventListenerObject`
+### Core Idea: Stable Dispatcher + Mutable Handler Reference
 
-The browser's `addEventListener` accepts not only functions but also objects with a `handleEvent` method:
+Instead of adding/removing event listeners on every render, register a **stable dispatcher function** once on mount. The dispatcher reads the **current handler reference** from a mutable slot each time it fires. On re-render, only the reference is updated — zero DOM operations.
 
-```typescript
-const handler: EventListenerObject = { handleEvent: myFunction }
-element.addEventListener('click', handler)    // register once
-handler.handleEvent = newFunction             // swap handler — zero DOM calls
-element.removeEventListener('click', handler) // remove once on unmount
+```
+Mount:    addEventListener("itemSelect", dispatcher)   ← once
+Render 1: handlers["onItemSelect"] = handlerV1         ← JS assignment
+Render 2: handlers["onItemSelect"] = handlerV2         ← JS assignment
+Render 3: handlers["onItemSelect"] = undefined          ← handler removed, dispatcher no-ops
+Unmount:  removeEventListener("itemSelect", dispatcher) ← once
 ```
 
-This means on re-renders we only mutate a JS property instead of doing DOM operations.
+The dispatcher is just:
+```typescript
+(event) => {
+  const fn = handlers[handlerName]
+  if (typeof fn === 'function') fn(event)
+}
+```
 
-### Implementation: `setupElementProps` + `cleanupElementProps`
+### Implementation: `setupElementProps`
 
 ```typescript
 // @aria-ui-v2/integrations/setup
 
-// WeakMap so handlers are GC'd when the element is removed from DOM
-const elementHandlers = new WeakMap<HTMLElement, Map<string, EventListenerObject>>()
-
 /**
- * Sets JS properties and registers/updates event listeners on a custom element.
+ * Sets JS properties on a custom element and registers stable event dispatchers.
  *
- * - First call on an element: sets properties + calls addEventListener once per event.
- * - Subsequent calls: sets properties + swaps handleEvent references (no DOM calls).
- * - If a handler becomes undefined: calls removeEventListener for that event.
- *
- * Can be called on every render — it's cheap after the first call.
+ * Call once on mount. Returns:
+ * - `update(props)`: call on every re-render to update properties and handler references (no DOM calls)
+ * - `dispose()`: call on unmount to removeEventListener
  */
 export function setupElementProps(
   element: HTMLElement,
   props: Record<string, unknown>,
   propNames: readonly string[],
   eventNameMap: Readonly<Record<string, string>>,
-): void {
-  // Set properties (idempotent)
+): { update: (props: Record<string, unknown>) => void; dispose: VoidFunction } {
+  // Mutable handler references — dispatchers read from here
+  const handlers: Record<string, unknown> = {}
+
+  const ac = new AbortController()
+
+  // Set initial properties
   for (const name of propNames) {
     if (name in props) {
       ;(element as Record<string, unknown>)[name] = props[name]
     }
   }
 
-  // Get or create handler map for this element
-  let handlers = elementHandlers.get(element)
-  if (!handlers) {
-    handlers = new Map()
-    elementHandlers.set(element, handlers)
-  }
-
-  // Add or update event listeners
+  // Register stable dispatchers for ALL known events (once)
   for (const [handlerName, eventName] of Object.entries(eventNameMap)) {
-    const listener = props[handlerName]
-    const existing = handlers.get(eventName)
+    handlers[handlerName] = props[handlerName]
+    element.addEventListener(
+      eventName,
+      (event: Event) => {
+        const fn = handlers[handlerName]
+        if (typeof fn === 'function') fn(event)
+      },
+      { signal: ac.signal },
+    )
+  }
 
-    if (typeof listener === 'function') {
-      if (existing) {
-        // Just swap the handler reference — no DOM operation
-        existing.handleEvent = listener as EventListener
-      } else {
-        // First time: addEventListener once
-        const obj: EventListenerObject = { handleEvent: listener as EventListener }
-        element.addEventListener(eventName, obj)
-        handlers.set(eventName, obj)
+  return {
+    update(props: Record<string, unknown>) {
+      // Update properties (idempotent JS assignments)
+      for (const name of propNames) {
+        if (name in props) {
+          ;(element as Record<string, unknown>)[name] = props[name]
+        }
       }
-    } else if (existing) {
-      // Handler removed: removeEventListener
-      element.removeEventListener(eventName, existing)
-      handlers.delete(eventName)
-    }
+      // Update handler references (no DOM calls — dispatchers read these on next event)
+      for (const handlerName of Object.keys(eventNameMap)) {
+        handlers[handlerName] = props[handlerName]
+      }
+    },
+    dispose() {
+      ac.abort()
+    },
   }
-}
-
-/**
- * Removes all event listeners previously registered by setupElementProps.
- * Call this on unmount.
- */
-export function cleanupElementProps(
-  element: HTMLElement,
-  eventNameMap: Readonly<Record<string, string>>,
-): void {
-  const handlers = elementHandlers.get(element)
-  if (!handlers) return
-
-  for (const eventName of Object.values(eventNameMap)) {
-    const existing = handlers.get(eventName)
-    if (existing) {
-      element.removeEventListener(eventName, existing)
-    }
-  }
-
-  elementHandlers.delete(element)
 }
 ```
 
 **Key properties:**
-- No class — two plain exported functions
-- `WeakMap` state is GC-friendly — no memory leaks
-- `setupElementProps` is idempotent and cheap on subsequent calls (property writes + `handleEvent` swaps)
-- `cleanupElementProps` does the final `removeEventListener` calls
-- Tree-shakeable — if a framework doesn't use events, the event-related code is dead
+- No class, no module-level state — pure factory function with closures
+- `addEventListener` called once per event on mount; `removeEventListener` once on unmount
+- Re-renders only do JS property assignments (props + handler refs) — zero DOM operations
+- Handler can be `undefined` — dispatcher silently no-ops
+- `AbortController` for clean bulk removal on dispose
+- Tree-shakeable — standalone export, no side effects
 
 ### Integration with each framework
 
@@ -278,22 +267,23 @@ useLayoutEffect(() => {  // 3. Register all event listeners
 
 After — 2 hooks, much simpler:
 ```typescript
-// Every render: set props + swap event handlers (cheap — no DOM calls after first)
+const bindingRef = useRef<ReturnType<typeof setupElementProps>>()
+
+// Mount: register dispatchers. Unmount: dispose.
 useLayoutEffect(() => {
   const element = elementRef.current
   if (!element) return
-  setupElementProps(element, props, propNames, eventNameMap)
-})
-
-// Unmount only: removeEventListener
-useLayoutEffect(() => {
-  return () => {
-    if (elementRef.current) cleanupElementProps(elementRef.current, eventNameMap)
-  }
+  bindingRef.current = setupElementProps(element, props, propNames, eventNameMap)
+  return () => bindingRef.current?.dispose()
 }, [])
+
+// Every render: update properties + handler references (zero DOM calls)
+useLayoutEffect(() => {
+  bindingRef.current?.update(props)
+})
 ```
 
-The first `useLayoutEffect` (no deps) runs every render. On the first call, `setupElementProps` does `addEventListener` for each event. On subsequent calls, it only swaps `handleEvent` references — no DOM operations. The second hook runs cleanup on unmount.
+The first hook runs once — `addEventListener` on mount, `removeEventListener` on unmount. The second hook runs every render — just JS property assignments.
 
 #### Solid — keep as-is
 
@@ -344,7 +334,7 @@ Replace the inline switch/case + ref callback + `_eventHandlers` with `setupElem
 
 **After refactor:**
 ```typescript
-import { setupElementProps, cleanupElementProps } from '@aria-ui-v2/integrations/setup'
+import { setupElementProps } from '@aria-ui-v2/integrations/setup'
 
 const _propNames = ["disabled", "value"]
 const _eventNameMap = { onItemSelect: "itemSelect" }
@@ -353,24 +343,19 @@ const _managedKeys = new Set([..._propNames, ...Object.keys(_eventNameMap)])
 // ...
 (props, { slots }) => {
   registerElement()
-  let _element: HTMLElement | undefined
+  let _binding: ReturnType<typeof setupElementProps> | undefined
 
   const _ref = (element: HTMLElement | null | undefined) => {
+    _binding?.dispose()
+    _binding = undefined
     if (element) {
-      _element = element
-    } else if (_element) {
-      cleanupElementProps(_element, _eventNameMap)
-      _element = undefined
+      _binding = setupElementProps(element, props, _propNames, _eventNameMap)
     }
   }
 
   return () => {
-    // setupElementProps on every render:
-    //   - First call: sets properties + addEventListener once per event
-    //   - Subsequent calls: sets properties + swaps handleEvent (no DOM calls)
-    if (_element) {
-      setupElementProps(_element, props, _propNames, _eventNameMap)
-    }
+    // Update properties + handler references (zero DOM calls)
+    _binding?.update(props)
 
     const _props: Record<string, unknown> = {}
     for (const [key, value] of Object.entries(props)) {
@@ -389,8 +374,8 @@ Changes:
 - No more `AbortController` management
 - No more `switch/case` — replaced with `_managedKeys.has()` filter
 - No more manual `addEventListener` in generated code
-- `_ref` only tracks mount/unmount. Property + event updates happen in the render function via `setupElementProps` (cheap after first call).
-- On unmount, `cleanupElementProps` does the final `removeEventListener` calls.
+- `_ref` mount: `setupElementProps` registers dispatchers once. `_ref` unmount: `dispose()` removes them.
+- Render function: `_binding.update(props)` — only JS property assignments, zero DOM calls.
 
 #### Svelte
 
@@ -417,19 +402,21 @@ Changes:
 **After refactor:**
 ```svelte
 <script lang="js">
-  import { setupElementProps, cleanupElementProps } from '@aria-ui-v2/integrations/setup'
+  import { setupElementProps } from '@aria-ui-v2/integrations/setup'
   import { registerElement } from '@prosekit/web/table-handle'
   registerElement()
 
   let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
 
-  const _propNames = ["disabled", "value"]
-  const _eventNameMap = { onItemSelect: "itemSelect" }
-
   const attachment = (element) => {
     if (!element) return
-    setupElementProps(element, { disabled: p0, value: p1, onItemSelect: p2 }, _propNames, _eventNameMap)
-    return () => cleanupElementProps(element, _eventNameMap)
+    const binding = setupElementProps(
+      element,
+      { disabled: p0, value: p1, onItemSelect: p2 },
+      ["disabled", "value"],
+      { onItemSelect: "itemSelect" },
+    )
+    return () => binding.dispose()
   }
 </script>
 ```
@@ -438,7 +425,7 @@ Changes:
 - No more manual `AbortController`
 - No more manual property assignment per prop
 - No more manual `addEventListener` per event
-- `setupElementProps` handles everything; `cleanupElementProps` in the cleanup return
+- `setupElementProps` registers dispatchers; `binding.dispose()` cleans up on unmount
 
 ---
 
@@ -497,6 +484,6 @@ Changes:
 
 ## 6. Open Questions
 
-1. **Should we also export `filterProps`?** Currently each framework filters out managed props (Vue uses `_managedKeys.has()`, Svelte uses destructuring). A shared `filterProps(props, propNames, eventNameMap)` could reduce generated code further, but it's simple enough inline.
+1. **Should we also export `filterProps`?** Currently each framework filters out managed props (Vue uses `_managedKeys.has()`, Svelte uses destructuring). A shared helper could reduce generated code further, but it's simple enough inline.
 
-2. **WeakMap module-level state**: The `elementHandlers` WeakMap is module-level state. This is fine for tree-shaking (the whole module is excluded if unused) and GC (WeakMap doesn't prevent element collection). But it means two separate imports of the module would share state — which is actually desirable (same element, same handler map).
+2. **Naming**: `setupElementProps` returns `{ update, dispose }`. Alternative names: `bindElement`, `createElementBinding`, `mountElement`. The current name emphasizes what it does (sets up element props), not the lifecycle.

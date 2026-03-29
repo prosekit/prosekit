@@ -27,7 +27,7 @@ export default defineESLintConfig(
     rules: {
       "perfectionist/sort-imports": "off"
     },
-    files: [ '**/*.gen.*'],
+    files: [ '**/*.gen.ts'],
   },
   {
     rules: {

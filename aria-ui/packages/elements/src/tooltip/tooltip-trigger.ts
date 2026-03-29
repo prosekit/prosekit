@@ -58,13 +58,11 @@ export function setupTooltipTrigger(
 ) {
   const getDisabled = props.disabled.get
   const getStore = TooltipStoreContext.consume(host)
-  const getOpen = computed(() => getStore()?.getOpen())
+  const getOpen = computed(() => getStore()?.getIsOpen() )
   const getPopupId = computed(() => getStore()?.getPopupId())
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    store.anchorElement.set(host)
+    getStore()?.setAnchorElement(host)
   })
 
   const getAriaDescribedBy = computed(() => {
@@ -88,8 +86,8 @@ export function setupTooltipTrigger(
     let isFocused = false
 
     const toggle = createDelayedToggle(
-      () => store.emitOpenChange(true),
-      () => store.emitOpenChange(false),
+      () => store.requestOpenChange(true),
+      () => store.requestOpenChange(false),
     )
 
     const onMouseEnter = () => {
@@ -113,9 +111,9 @@ export function setupTooltipTrigger(
     }
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && store.getOpen()) {
+      if (event.key === 'Escape' && store.getIsOpen()) {
         toggle.dispose()
-        store.emitOpenChange(false)
+        store.requestOpenChange(false)
       }
     }
 

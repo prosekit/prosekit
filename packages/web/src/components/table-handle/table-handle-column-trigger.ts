@@ -48,8 +48,7 @@ export function setupTableHandleColumnTrigger(
 
   // Set anchor for menu positioning
   useEffect(host, () => {
-    const store = getMenuStore()
-    if (store) store.anchorElement.set(host)
+  getMenuStore()?.setAnchorElement(host)
   })
 
   // Toggle menu on click

@@ -1,19 +1,24 @@
 import type { HostElement } from '@aria-ui-v2/core'
-import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
+import {  defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
 
-import { OpenChangeEvent } from '../overlay/open-change-event.ts'
+import type { OpenChangeEvent } from '../overlay/open-change-event.ts'
+import type { OverlayRootProps} from '../overlay/overlay-root.ts';
+import   { OverlayRootPropsDeclaration } from '../overlay/overlay-root.ts'
+import { createOverlayStore } from '../overlay/overlay-store.ts';
 
-import { MenuStore, MenuStoreContext } from './menu-store.ts'
+import {  createMenuStore, MenuStoreContext } from './menu-store.ts'
 
 /**
  * @public
  */
-export interface MenuSubmenuRootProps {}
+export interface MenuSubmenuRootProps   extends OverlayRootProps {}
 
 /**
  * @internal
  */
-export const MenuSubmenuRootPropsDeclaration = /* @__PURE__ */ defineProps<MenuSubmenuRootProps>({})
+export const MenuSubmenuRootPropsDeclaration = /* @__PURE__ */ defineProps<MenuSubmenuRootProps>({
+  ...OverlayRootPropsDeclaration
+})
 
 /**
  * @public
@@ -30,49 +35,27 @@ export interface MenuSubmenuRootEvents {
  */
 export function setupMenuSubmenuRoot(
   host: HostElement,
-  _props: Store<MenuSubmenuRootProps>,
+  props: Store<MenuSubmenuRootProps>,
 ) {
   const getParentStore = MenuStoreContext.consume(host)
-
-  const open = createSignal(false)
-  const getOpen = () => open.get()
-
-  const emitOpenChange = (newOpen: boolean) => {
-    const event = new OpenChangeEvent(newOpen)
+  const overlayStore =createOverlayStore(
+    props.open.get,
+    props.open.set,
+    props.defaultOpen.get,
+    props.disabled.get,
+   (event) => {
     host.dispatchEvent(event)
-    if (event.defaultPrevented) return
-    open.set(newOpen)
-  }
-
-  const childStore = new MenuStore(getOpen, emitOpenChange)
-  MenuStoreContext.provide(host, childStore)
+   },
+  )
+  const menuStore = createMenuStore(overlayStore, getParentStore)
+    MenuStoreContext.provide(host, menuStore)
 
   useEffect(host, () => {
-    const parentStore = getParentStore()
-    if (parentStore) {
-      childStore.parentStore = parentStore
-    }
-  })
-
-  useEffect(host, () => {
-    const parentStore = getParentStore()
-    if (!parentStore) return
-    if (!parentStore.getOpen()) {
-      open.set(false)
-    }
-  })
-
-  useEffect(host, () => {
-    if (open.get()) return
-
-    const parentStore = getParentStore()
-    if (!parentStore) return
-
-    const parentPopup = host.closest('aria-ui-menu-popup')
-    if (parentPopup instanceof HTMLElement) {
-      requestAnimationFrame(() => {
-        parentPopup.focus()
-      })
+    const parentMenuStore = getParentStore()
+    const parentOverlayStore = parentMenuStore?.overlayStore
+    if (!parentOverlayStore) return
+    if (parentOverlayStore.getIsOpen() === false  ) {
+      overlayStore.requestOpenChange(false)
     }
   })
 }

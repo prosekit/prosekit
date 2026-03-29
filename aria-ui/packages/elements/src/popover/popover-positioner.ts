@@ -22,7 +22,7 @@ export function setupPopoverPositioner(
   host: HostElement,
   props: Store<PopoverPositionerProps>,
 ) {
-  setupOverlayPositioner(host, props, PopoverStoreContext)
+  setupOverlayPositioner(host, props, PopoverStoreContext.consume(host))
 }
 
 /**

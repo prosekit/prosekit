@@ -47,20 +47,17 @@ export function setupMenuTrigger(
   props: Store<MenuTriggerProps>,
 ) {
   const getDisabled = props.disabled.get
-  const getStore = MenuStoreContext.consume(host)
-  const getOpen = computed(() => getStore()?.getOpen())
-  const getPopupId = computed(() => getStore()?.getPopupId())
+  const getMenuStore = MenuStoreContext.consume(host)
+  const getOverlayStore = computed(() => getMenuStore()?.overlayStore)
+  const getOpen = computed(() => getOverlayStore()?.getIsOpen())
+  const getPopupId = computed(() => getOverlayStore()?.getPopupId())
 
   usePress(host, () => {
-    const store = getStore()
-    if (!store) return
-    if (!getDisabled()) store.emitOpenChange(!store.getOpen())
+  getOverlayStore()?.requestOpenToggle()
   })
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    store.anchorElement.set(host)
+     getOverlayStore()?.setAnchorElement(host)
   })
 
   useAriaExpanded(host, getOpen)

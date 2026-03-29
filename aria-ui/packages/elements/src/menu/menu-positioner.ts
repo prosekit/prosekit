@@ -33,7 +33,9 @@ export function setupMenuPositioner(
   host: HostElement,
   props: Store<MenuPositionerProps>,
 ) {
-  setupOverlayPositioner(host, props, MenuStoreContext)
+const   getMenuStore = MenuStoreContext.consume(host)
+const   getOverlayStore = () => getMenuStore()?.overlayStore
+  setupOverlayPositioner(host, props, getOverlayStore)
 }
 
 /**

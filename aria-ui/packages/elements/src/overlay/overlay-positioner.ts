@@ -1,4 +1,4 @@
-import type { Context, HostElement } from '@aria-ui-v2/core'
+import type {  HostElement } from '@aria-ui-v2/core'
 import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
 import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
 import type { AutoUpdateOptions, Boundary, ElementContext, OffsetOptions, Placement, RootBoundary } from '@floating-ui/dom'
@@ -187,17 +187,14 @@ export const OverlayPositionerPropsDeclaration = /* @__PURE__ */ defineProps<Ove
 export function setupOverlayPositioner(
   host: HostElement,
   props: Store<OverlayPositionerProps>,
-  storeContext: Context<OverlayStore>,
+  getStore: () => OverlayStore | undefined,
 ): void {
-  const getStore = storeContext.consume(host)
-  const getOpen = computed(() => getStore()?.getOpen() ?? false)
-  const getAnchorElement = computed(() => getStore()?.anchorElement.get())
+  const getOpen = computed(() => getStore()?.getIsOpen() )
+  const getAnchorElement = computed(() => getStore()?.getAnchorElement())
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
     const id = useElementId(host)
-    store.setPositionerId(id)
+    getStore()?.setPositionerId(id)
   })
 
   if (FeatureDetection.supportsPopover()) {

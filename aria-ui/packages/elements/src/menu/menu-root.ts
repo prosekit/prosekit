@@ -4,8 +4,9 @@ import { useAriaDisabled } from '@aria-ui-v2/utils'
 
 import { OpenChangeEvent } from '../overlay/open-change-event.ts'
 import { OverlayRootPropsDeclaration, type OverlayRootProps } from '../overlay/overlay-root.ts'
+import { createOverlayStore } from '../overlay/overlay-store.ts'
 
-import { MenuStore, MenuStoreContext } from './menu-store.ts'
+import {  createMenuStore, MenuStoreContext } from './menu-store.ts'
 
 export { OpenChangeEvent }
 
@@ -38,25 +39,18 @@ export function setupMenuRoot(
   host: HostElement,
   props: Store<MenuRootProps>,
 ) {
-  const getOpen = computed(() => {
-    const open = props.open.get()
-    const defaultOpen = props.defaultOpen.get()
-    return open ?? defaultOpen
-  })
+ 
 
   const getDisabled = computed(() => props.disabled.get())
 
-  const emitOpenChange = (open: boolean) => {
-    if (getDisabled()) return
-    const event = new OpenChangeEvent(open)
-    host.dispatchEvent(event)
-    if (event.defaultPrevented) return
-    props.open.set(open)
-  }
 
-  const store = new MenuStore(getOpen, emitOpenChange)
+
+ 
+  const overlayStore = createOverlayStore(props.open.get, props.open.set, props.defaultOpen.get, getDisabled, (event) => host.dispatchEvent(event))
+  const menuStore = createMenuStore(overlayStore,  )
+
   useAriaDisabled(host, getDisabled)
-  MenuStoreContext.provide(host, store)
+  MenuStoreContext.provide(host, menuStore)
 }
 
 /**

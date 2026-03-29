@@ -1,12 +1,13 @@
 import { createContext } from '@aria-ui-v2/core'
 
-import { OverlayStore } from '../overlay/overlay-store.ts'
+import type { OverlayStore } from '../overlay/overlay-store.ts'
 
-export { OverlayStore as PopoverStore }
+
+export interface PopoverStore extends OverlayStore {}
 
 /**
  * @internal
  */
-export const PopoverStoreContext = createContext<OverlayStore>(
+export const PopoverStoreContext = createContext<PopoverStore>(
   'PopoverStoreContext',
 )

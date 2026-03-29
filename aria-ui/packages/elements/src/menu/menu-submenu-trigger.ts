@@ -48,19 +48,18 @@ export function setupMenuSubmenuTrigger(
 
   useElementId(host)
 
-  const getStore = MenuStoreContext.consume(host)
-  const getParentStore = () => getStore()?.parentStore ?? null
+  const getMenuStore = MenuStoreContext.consume(host)
+  const getParentStore = () => getMenuStore()?.getParentStore()  
+  const getOverlayStore = () => getMenuStore()?.overlayStore
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    store.anchorElement.set(host)
+    getMenuStore()?.overlayStore.setAnchorElement(host)
   })
 
   useEffect(host, () => {
-    const store = getStore()
+    const store = getOverlayStore()
     if (!store) return
-    const open = store.getOpen()
+    const open = store.getIsOpen()
     host.setAttribute('aria-expanded', String(open))
   })
 
@@ -74,7 +73,7 @@ export function setupMenuSubmenuTrigger(
     const parentStore = getParentStore()
     if (!parentStore) return
     const value = props.value.get()
-    const isActive = parentStore.activeValue.get() === value
+    const isActive = parentStore.getActiveValue() === value
     if (isActive) {
       host.setAttribute('data-active', '')
     } else {
@@ -93,7 +92,7 @@ export function setupMenuSubmenuTrigger(
     const levelItems = [...allItems].filter(
       (el) => el.closest('aria-ui-menu-popup') === popup,
     )
-    parentStore.collection.set(new Collection(levelItems))
+    parentStore.setCollection(new Collection(levelItems))
   }
 
   onMount(host, () => {
@@ -127,13 +126,13 @@ export function setupMenuSubmenuTrigger(
 
     const parentStore = getParentStore()
     if (parentStore) {
-      parentStore.activeValue.set(props.value.get())
+      parentStore.setActiveValue(props.value.get())
     }
 
-    const store = getStore()
-    if (store && !store.getOpen()) {
+    const store = getOverlayStore()
+    if (store && !store.getIsOpen()) {
       openTimer = setTimeout(() => {
-        store.emitOpenChange(true)
+        store.requestOpenChange(true)
       }, OPEN_DELAY)
     }
   })
@@ -141,45 +140,39 @@ export function setupMenuSubmenuTrigger(
   useEventListener(host, 'mouseleave', (event: MouseEvent) => {
     clearTimers()
 
-    const store = getStore()
-    if (!store || !store.getOpen()) return
+    const store = getOverlayStore()
+    if (!store || !store.getIsOpen()) return
 
     const relatedTarget = event.relatedTarget as HTMLElement | null
     const submenuRoot = host.closest('aria-ui-menu-submenu-root')
     if (submenuRoot && relatedTarget && submenuRoot.contains(relatedTarget)) return
 
     closeTimer = setTimeout(() => {
-      store.emitOpenChange(false)
+      store.requestOpenChange(false)
     }, CLOSE_DELAY)
   })
 
   useEffect(host, () => {
     const parentStore = getParentStore()
     if (!parentStore) return
-    const store = getStore()
+    const store = getOverlayStore()
     if (!store) return
 
-    const parentActive = parentStore.activeValue.get()
+    const parentActive = parentStore.getActiveValue()
     const myValue = props.value.get()
 
-    if (parentActive !== myValue && store.getOpen()) {
-      const timer = setTimeout(() => store.emitOpenChange(false), CLOSE_DELAY)
+    if (parentActive !== myValue && store.getIsOpen()) {
+      const timer = setTimeout(() => store.requestOpenChange(false), CLOSE_DELAY)
       return () => clearTimeout(timer)
     }
   })
 
   useEventListener(host, 'aria-ui:open-submenu' as 'click', () => {
-    if (props.disabled.get()) return
-    const store = getStore()
-    if (!store) return
-    store.emitOpenChange(true)
+    getOverlayStore()?.requestOpenChange(true)
   })
 
   useEventListener(host, 'click', () => {
-    if (props.disabled.get()) return
-    const store = getStore()
-    if (!store) return
-    store.emitOpenChange(!store.getOpen())
+    getOverlayStore()?.requestOpenToggle()
   })
 
   onMount(host, () => clearTimers)

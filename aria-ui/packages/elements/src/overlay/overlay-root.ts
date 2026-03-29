@@ -2,8 +2,9 @@ import type { Context, HostElement, PropsDeclaration } from '@aria-ui-v2/core'
 import { computed, defineProps, type Store } from '@aria-ui-v2/core'
 import { useAriaDisabled } from '@aria-ui-v2/utils'
 
-import { OpenChangeEvent } from './open-change-event.ts'
-import { OverlayStore } from './overlay-store.ts'
+import type { OpenChangeEvent } from './open-change-event.ts'
+import type { OverlayStore } from './overlay-store.ts'
+import { createOverlayStore } from './overlay-store.ts'
 
 /**
  * @public
@@ -53,6 +54,7 @@ export const OverlayRootPropsDeclaration: PropsDeclaration<OverlayRootProps> = d
  * @internal
  */
 export interface SetupOverlayRootOptions {
+  // TODO: why do I need this callback?
   onBeforeOpenChange?: (open: boolean) => void
 }
 
@@ -64,24 +66,25 @@ export function useOverlayStore(
   props: Store<OverlayRootProps>,
   options?: SetupOverlayRootOptions,
 ): OverlayStore {
-  const getOpen = computed(() => {
-    const open = props.open.get()
-    const defaultOpen = props.defaultOpen.get()
-    return open ?? defaultOpen
-  })
+
+
 
   const getDisabled = computed(() => props.disabled.get())
 
-  const emitOpenChange = (open: boolean) => {
-    if (getDisabled()) return
-    options?.onBeforeOpenChange?.(open)
-    const event = new OpenChangeEvent(open)
-    host.dispatchEvent(event)
-    if (event.defaultPrevented) return
-    props.open.set(open)
+
+  const dispatchOpenChangeEvent = (event: OpenChangeEvent) => {
+        options?.onBeforeOpenChange?.(event.open)
+        host.dispatchEvent(event)
   }
 
-  const store = new OverlayStore(getOpen, emitOpenChange)
+  const store =createOverlayStore(
+    props.open.get,
+    props.open.set,
+    props.defaultOpen.get,
+    getDisabled,
+   dispatchOpenChangeEvent,
+  )
+
   useAriaDisabled(host, getDisabled)
 
   return store

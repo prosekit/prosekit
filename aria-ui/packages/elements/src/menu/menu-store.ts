@@ -1,39 +1,47 @@
-import { createContext, createSignal, type Context, type Signal } from '@aria-ui-v2/core'
+import { createContext, createSignal, type Context } from '@aria-ui-v2/core'
 import { Collection } from '@aria-ui-v2/utils'
 
-import { OverlayStore } from '../overlay/overlay-store.ts'
+import type { OverlayStore } from '../overlay/overlay-store.ts'
 
-/**
- * @internal
- */
-export class MenuStore extends OverlayStore {
-  readonly activeValue: Signal<string | null>
-  readonly collection: Signal<Collection>
-  parentStore: MenuStore | null
 
-  constructor(
-    getOpen: () => boolean,
-    emitOpenChange: (open: boolean) => void,
-  ) {
-    super(getOpen, emitOpenChange)
-    this.activeValue = createSignal<string | null>(null)
-    this.collection = createSignal(new Collection([]))
-    this.parentStore = null
+export interface MenuStore  {
+  overlayStore: OverlayStore
+  getParentStore(): MenuStore | undefined
+  getActiveValue(): string | null
+  setActiveValue(value: string | null): void
+  getCollection(): Collection
+  setCollection(collection: Collection): void
+}
+
+
+
+export function createMenuStore(overlayStore: OverlayStore, getParentStore?: () => MenuStore | undefined): MenuStore {
+  const activeValue = createSignal<string | null>(null)
+  const collection = createSignal<Collection>(new Collection([]))
+
+  return {
+    overlayStore, 
+    getParentStore: getParentStore || (() => undefined),
+    getActiveValue: activeValue.get,
+    setActiveValue: activeValue.set,
+    getCollection: collection.get,
+    setCollection: collection.set,
   }
 }
 
-/**
- * @internal
- */
+
 export const MenuStoreContext: Context<MenuStore> = createContext<MenuStore>('MenuStoreContext')
+
 
 /**
  * @internal
  */
 export function closeMenuTree(store: MenuStore): void {
-  let current: MenuStore | null = store
-  while (current?.parentStore) {
-    current = current.parentStore
+  store.overlayStore.requestOpenChange(false)
+  const parentStore = store.getParentStore()
+  if (parentStore) {
+    closeMenuTree(parentStore)
   }
-  current?.emitOpenChange(false)
 }
+
+

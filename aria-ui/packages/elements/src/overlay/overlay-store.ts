@@ -1,34 +1,64 @@
-import { createSignal } from '@aria-ui-v2/core'
+import { computed, createSignal } from '@aria-ui-v2/core'
 import type { ReferenceElement } from '@floating-ui/dom'
 
-/**
- * @internal
- */
-export class OverlayStore {
-  readonly anchorElement = createSignal<ReferenceElement | undefined>(undefined)
+import { OpenChangeEvent } from './open-change-event.ts'
 
-  private positionerId = createSignal<string>('')
 
-  private popupId = createSignal<string>('')
 
-  constructor(
-    readonly getOpen: () => boolean,
-    readonly emitOpenChange: (open: boolean) => void,
-  ) {}
+export interface OverlayStore {
+  getIsOpen(): boolean
+  requestOpenChange(open: boolean): void
+  requestOpenToggle(): void
+  getPositionerId(): string
+  setPositionerId(id: string): void
+  getPopupId(): string
+  setPopupId(id: string): void
+  getAnchorElement(): ReferenceElement | undefined
+  setAnchorElement(element: ReferenceElement | undefined): void
+}
 
-  getPositionerId(): string {
-    return this.positionerId.get()
+export function createOverlayStore(
+    getOpen: (() => boolean | null ) ,
+    setOpen: ((open: boolean) => void) ,
+    getDefaultOpen: () => boolean, 
+    getDisabled: () => boolean,
+    dispatchOpenChangeEvent: (event: OpenChangeEvent) => void,
+): OverlayStore {
+
+  const anchorElement = createSignal<ReferenceElement | undefined>(undefined)
+  const positionerId = createSignal<string>('')
+  const popupId = createSignal<string>('')
+
+  const getIsOpen = computed((): boolean => {
+    const canOpen = !getDisabled() && anchorElement.get()
+    const openValue = getOpen() ?? getDefaultOpen()
+    return canOpen ? openValue : false
+  } )
+
+
+  const requestOpenChange = (open: boolean) => {
+    if (getDisabled()) return
+    const event = new OpenChangeEvent(open)
+    dispatchOpenChangeEvent(event)
+    if (event.defaultPrevented) return
+    setOpen(open)
   }
 
-  setPositionerId(id: string): void {
-    this.positionerId.set(id)
+  const requestOpenToggle = () => {
+      requestOpenChange(!getIsOpen())
   }
 
-  getPopupId(): string {
-    return this.popupId.get()
-  }
-
-  setPopupId(id: string): void {
-    this.popupId.set(id)
+  return {
+    getIsOpen,
+   requestOpenChange, 
+    requestOpenToggle,
+    getPositionerId: positionerId.get,
+    setPositionerId: positionerId.set,
+    getPopupId: popupId.get,
+    setPopupId: popupId.set,
+    getAnchorElement: anchorElement.get,
+    setAnchorElement: anchorElement.set,
   }
 }
+
+

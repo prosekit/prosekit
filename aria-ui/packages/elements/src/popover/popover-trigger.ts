@@ -81,13 +81,11 @@ export function setupPopoverTrigger(
 ) {
   const getDisabled = props.disabled.get
   const getStore = PopoverStoreContext.consume(host)
-  const getOpen = computed(() => getStore()?.getOpen())
+  const getOpen = computed(() => getStore()?.getIsOpen())
   const getPopupId = computed(() => getStore()?.getPopupId())
 
   usePress(host, () => {
-    const store = getStore()
-    if (!store) return
-    if (!getDisabled()) store.emitOpenChange(!store.getOpen())
+ getStore()?.requestOpenToggle()
   })
 
   // Handle hover interactions
@@ -103,16 +101,13 @@ export function setupPopoverTrigger(
     return useHover(host, {
       openDelay,
       closeDelay,
-      onOpen: () => store.emitOpenChange(true),
-      onClose: () => store.emitOpenChange(false),
+      onOpen: () => store.requestOpenChange(true),
+      onClose: () => store.requestOpenChange(false),
     })
   })
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-
-    store.anchorElement.set(host)
+    getStore()?.setAnchorElement(host)
   })
 
   useAriaExpanded(host, getOpen)

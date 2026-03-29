@@ -1,5 +1,5 @@
 import type { HostElement, TypedEventTarget } from '@aria-ui-v2/core'
-import { defineCustomElement, defineProps, onMount, registerCustomElement, useEffect, useEventListener, type Store } from '@aria-ui-v2/core'
+import { computed, defineCustomElement, defineProps, onMount, registerCustomElement, useEffect, useEventListener, type Store } from '@aria-ui-v2/core'
 import { useElementId } from '@aria-ui-v2/utils'
 
 import { MenuItemSelectEvent } from './menu-item.ts'
@@ -32,13 +32,12 @@ export function setupMenuPopup(
   host: HostElement,
   props: Store<MenuPopupProps>,
 ) {
-  const getStore = MenuStoreContext.consume(host)
+  const getMenuStore = MenuStoreContext.consume(host)
+  const getOverlayStore = computed(() => getMenuStore()?.overlayStore)
   const id = useElementId(host)
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    store.setPopupId(id)
+    getOverlayStore()?.setPopupId(id)
   })
 
   onMount(host, () => {
@@ -47,20 +46,20 @@ export function setupMenuPopup(
   })
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    host.dataset.state = store.getOpen() ? 'open' : 'closed'
+    const overlayStore = getOverlayStore()
+    if (!overlayStore) return
+    host.dataset.state = overlayStore.getIsOpen() ? 'open' : 'closed'
   })
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    const activeValue = store.activeValue.get()
+    const menuStore = getMenuStore()
+    if (!menuStore) return
+    const activeValue = menuStore.getActiveValue()
     if (activeValue == null) {
       host.removeAttribute('aria-activedescendant')
       return
     }
-    const element = store.collection.get().getElement(activeValue)
+    const element = menuStore.getCollection().getElement(activeValue)
     if (element?.id) {
       host.setAttribute('aria-activedescendant', element.id)
     } else {
@@ -69,33 +68,36 @@ export function setupMenuPopup(
   })
 
   useEffect(host, () => {
-    const store = getStore()
-    if (!store) return
-    const open = store.getOpen()
+    const menuStore = getMenuStore()
+    const overlayStore = getOverlayStore()
+    if (!overlayStore || !menuStore) return
+    const open = overlayStore.getIsOpen()
 
     if (open) {
       resetTypeahead()
       requestAnimationFrame(() => {
         host.focus()
-        const collection = store.collection.get()
-        store.activeValue.set(collection.first())
+        const collection = menuStore.getCollection()
+        menuStore.setActiveValue(collection.first())
       })
     } else {
-      store.activeValue.set(null)
+      menuStore.setActiveValue(null)
     }
   })
 
   const handleKeydown = (event: KeyboardEvent) => {
     if (event.isComposing || event.defaultPrevented) return
 
-    const store = getStore()
-    if (!store) return
-    if (!store.getOpen()) return
+    const menuStore = getMenuStore()
+    const overlayStore = getOverlayStore()
+    const parentStore = menuStore?.getParentStore()
+    if (!menuStore || !overlayStore) return
+    if (!overlayStore.getIsOpen()) return
 
-    const collection = store.collection.get()
+    const collection = menuStore.getCollection()
     if (collection.size() === 0) return
 
-    const currentValue = store.activeValue.get()
+    const currentValue = menuStore.getActiveValue()
     let nextValue: string | null = null
 
     switch (event.key) {
@@ -129,10 +131,10 @@ export function setupMenuPopup(
         event.stopPropagation()
         if (currentValue != null) {
           const activeEl = collection.getElement(currentValue)
-          if (activeEl?.tagName.toLowerCase() === 'aria-ui-menu-submenu-trigger') {
+          if (activeEl ) {
             activeEl.dispatchEvent(new Event('aria-ui:open-submenu', { bubbles: false }))
           } else {
-            activateItem(store, currentValue)
+            activateItem(menuStore, currentValue)
           }
         }
         return
@@ -140,7 +142,7 @@ export function setupMenuPopup(
       case 'ArrowRight': {
         if (currentValue != null) {
           const activeEl = collection.getElement(currentValue)
-          if (activeEl?.tagName.toLowerCase() === 'aria-ui-menu-submenu-trigger') {
+          if (activeEl ) {
             event.preventDefault()
             event.stopPropagation()
             activeEl.dispatchEvent(new Event('aria-ui:open-submenu', { bubbles: false }))
@@ -150,30 +152,30 @@ export function setupMenuPopup(
       }
 
       case 'ArrowLeft': {
-        if (store.parentStore) {
+        if (parentStore) {
           event.preventDefault()
           event.stopPropagation()
-          store.emitOpenChange(false)
+          parentStore.overlayStore.requestOpenChange(false)
         }
-        return
+        return 
       }
 
       case 'Escape':
         event.preventDefault()
         event.stopPropagation()
-        store.emitOpenChange(false)
+        overlayStore.requestOpenChange(false)
         return
 
       default:
         if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
           event.stopPropagation()
-          handleTypeahead(event.key, store)
+          handleTypeahead(event.key, menuStore)
         }
         return
     }
 
     if (nextValue != null) {
-      store.activeValue.set(nextValue)
+      menuStore.setActiveValue(nextValue)
     }
   }
 
@@ -187,15 +189,16 @@ export function setupMenuPopup(
   })
 
   useEventListener(host, 'focusout', (event: FocusEvent) => {
-    const store = getStore()
-    if (!store) return
-    if (!store.getOpen()) return
+    const overlayStore = getOverlayStore()
+    const menuStore = getMenuStore()
+    if (!overlayStore || !menuStore) return
+    if (!overlayStore.getIsOpen()) return
 
     const relatedTarget = event.relatedTarget as Node | null
     const menuRoot = host.closest('aria-ui-menu-root')
     if (menuRoot && relatedTarget && menuRoot.contains(relatedTarget)) return
 
-    closeMenuTree(store)
+    closeMenuTree(menuStore)
   })
 }
 
@@ -211,7 +214,7 @@ function resetTypeahead() {
   }
 }
 
-function handleTypeahead(char: string, store: MenuStore) {
+function handleTypeahead(char: string, menuStore: MenuStore) {
   if (typeaheadTimer) clearTimeout(typeaheadTimer)
 
   typeaheadBuffer += char.toLowerCase()
@@ -219,26 +222,26 @@ function handleTypeahead(char: string, store: MenuStore) {
     typeaheadBuffer = ''
   }, TYPEAHEAD_TIMEOUT)
 
-  const collection = store.collection.get()
+  const collection = menuStore.getCollection()
   const values = collection.getValues()
 
   for (const value of values) {
     if (value.toLowerCase().startsWith(typeaheadBuffer)) {
-      store.activeValue.set(value)
+      menuStore.setActiveValue(value)
       break
     }
   }
 }
 
-function activateItem(store: MenuStore, value: string) {
-  const element = store.collection.get().getElement(value)
+function activateItem(menuStore: MenuStore, value: string) {
+  const element = menuStore.getCollection().getElement(value)
   if (!element) return
 
   const selectEvent = new MenuItemSelectEvent()
   element.dispatchEvent(selectEvent)
 
   if (!selectEvent.defaultPrevented) {
-    closeMenuTree(store)
+    closeMenuTree(menuStore)
   }
 }
 

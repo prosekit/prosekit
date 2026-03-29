@@ -22,7 +22,7 @@ export function setupTooltipPositioner(
   host: HostElement,
   props: Store<TooltipPositionerProps>,
 ) {
-  setupOverlayPositioner(host, props, TooltipStoreContext)
+  setupOverlayPositioner(host, props, TooltipStoreContext.consume(host))
 }
 
 /**

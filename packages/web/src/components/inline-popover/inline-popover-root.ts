@@ -88,8 +88,8 @@ export function setupInlinePopoverRoot(
     if (prevSelection?.eq(selection)) return
     prevSelection = selection
 
-    const reference = getVirtualSelectionElement(view) || null
-    store.anchorElement.set(reference ?? undefined)
+    const reference = getVirtualSelectionElement(view) 
+store.setAnchorElement(reference)
 
     if (reference && props.defaultOpen.get()) {
       store.emitOpenChange(true)

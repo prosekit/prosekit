@@ -35,7 +35,7 @@ export function setupOverlayPopup(
   useEffect(host, () => {
     const store = getStore()
     if (!store) return
-    const open = store.getOpen()
+    const open = store.getIsOpen()
     host.dataset.state = open ? 'open' : 'closed'
   })
 

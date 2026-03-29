@@ -126,13 +126,11 @@ function setupInlinePopoverRoot(
   host: HostElement,
   props: Store<InlinePopoverRootProps>,
 ): void {
-  // 1. 复用 setupOverlayRoot — 创建 OverlayStore, 管理 open 状态
-  setupOverlayRoot(host, props, InlinePopoverStoreContext)
+  // 1. 使用 useOverlayStore 创建 store 并 provide 到 context
+  const store = useOverlayStore(host, props)
+  InlinePopoverStoreContext.provide(host, store)
 
-  // 2. 获取 store (刚被 provide 到 context)
-  const getStore = InlinePopoverStoreContext.consume(host)
-
-  // 3. 编辑器跟踪: 选区变化 → 更新 store.anchorElement
+  // 2. 编辑器跟踪: 选区变化 → 更新 store.anchorElement
   let editorFocused = false
   useEditorFocusChangeEvent(host, props.editor.get, (focus) => {
     editorFocused = focus
@@ -148,8 +146,6 @@ function setupInlinePopoverRoot(
     prevSelection = selection
 
     const reference = getVirtualSelectionElement(view) || null
-    const store = getStore()
-    if (!store) return
 
     store.anchorElement.set(reference as any)
 
@@ -161,11 +157,9 @@ function setupInlinePopoverRoot(
     }
   })
 
-  // 4. Escape 键处理
+  // 3. Escape 键处理
   useKeymap(host, props.editor.get, {
     Escape: () => {
-      const store = getStore()
-      if (!store) return false
       if (!props.dismissOnEscape.get() || !store.getOpen()) return false
       store.emitOpenChange(false)
       return true
@@ -326,9 +320,18 @@ function setupInlinePopoverRoot(...) {
 
 这更简单也更可靠。`setupOverlayRoot` 内部也是这么做的。但如果要调用 `setupOverlayRoot`（它内部会创建 store），我们就无法直接拿到 store 引用。
 
-**最终决策**: 不调用 `setupOverlayRoot`，而是复制其逻辑（只有 ~20 行），这样可以直接持有 store 引用。这和 table-handle-row-root 的做法一致。
+**最终决策**: 使用 `useOverlayStore` 函数（已从 `aria-ui/packages/elements/src/overlay/overlay-root.ts` 导出）。它创建 `OverlayStore` 并返回引用，但不 provide 到 context——provide 由调用者自行处理。这样 root 的 setup 可以同时持有 store 引用并 provide 给子组件：
 
-<!-- update: do not call setupOverlayRoot; do not copy logic; Use the new exported useOverlayStore function in aria-ui/packages/elements/src/overlay/overlay-root.ts -->
+```typescript
+function setupInlinePopoverRoot(host, props) {
+  const store = useOverlayStore(host, props)
+  InlinePopoverStoreContext.provide(host, store)
+
+  // 现在可以直接操作 store
+  store.anchorElement.set(reference)
+  store.emitOpenChange(true)
+}
+```
 
 ---
 
@@ -345,9 +348,9 @@ function setupInlinePopoverRoot(...) {
 
 - [ ] **2.1** 创建 `store.ts` — InlinePopoverStoreContext
 - [ ] **2.2** 创建 `inline-popover-root.ts`
-  - [ ] Props: `editor`, `defaultOpen` (默认 true), `open`, `disabled`, `dismissOnEscape`
-  - [ ] 创建 OverlayStore 并 provide
-  - [ ] 编辑器跟踪逻辑: focus + selection → anchorElement
+  - [ ] Props: extends `OverlayRootProps` + `editor`, `defaultOpen` (默认 true), `dismissOnEscape`
+  - [ ] 使用 `useOverlayStore(host, props)` 创建 store，然后 `InlinePopoverStoreContext.provide(host, store)`
+  - [ ] 编辑器跟踪逻辑: focus + selection → `store.anchorElement`
   - [ ] Auto-open 逻辑: reference 存在 + defaultOpen → open
   - [ ] Escape 键处理
   - [ ] OpenChangeEvent 事件
@@ -378,8 +381,8 @@ function setupInlinePopoverRoot(...) {
 - [ ] **5.3** `pnpm -w run typecheck`
 - [ ] **5.4** `pnpm -w run lint`
 - [ ] **5.5** 确认框架 wrapper 正确生成 (root + positioner + popup × 5 frameworks)
-- [ ] **5.6** 手动测试 inline-menu 示例
-
-<!-- update 请检查 registry/test/inline-menu.test.ts 是否需要修改  -->
-
-<!-- update: `pnpm -w run test run registry/test/inline-menu.test.ts`  -->
+- [ ] **5.6** `pnpm -w run test run registry/test/inline-menu.test.ts`
+  - 测试通过 `data-testid="inline-menu-main"` 和 `data-testid="inline-menu-link"` 定位元素
+  - 重构后这些 `data-testid` 从 `<InlinePopover>` 移到 `<InlinePopoverPopup>` 上
+  - 测试文件本身不需要修改——它通过属性值定位，不关心元素标签名
+  - 但如果 visibility 检测依赖 CSS (如 Positioner 的 `display:none`)，可能需要确认 Popup 的可见性是否正确传递

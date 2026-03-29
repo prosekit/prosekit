@@ -29,7 +29,9 @@ export interface TableHandlePopoverPopupProps {
 }
 
 /** @internal */
-export const TableHandlePopoverPopupPropsDeclaration: PropsDeclaration<TableHandlePopoverPopupProps> = defineProps<TableHandlePopoverPopupProps>({
+export const TableHandlePopoverPopupPropsDeclaration: PropsDeclaration<TableHandlePopoverPopupProps> = defineProps<
+  TableHandlePopoverPopupProps
+>({
   eventTarget: { default: null, attribute: false, type: 'json' },
 })
 

@@ -16,7 +16,7 @@ import type { Editor } from '@prosekit/core'
 import { assignStyles } from '../../utils/assign-styles.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 
-import { useInitDndPosition, getDndRelatedDOMs, type OnInitParams } from './dnd-v2.ts'
+import { getDndRelatedDOMs, useInitDndPosition, type OnInitParams } from './dnd-v2.ts'
 import { clearPreviewDOM, createPreviewDOM } from './render-preview.ts'
 import { tableHandleStoreContext } from './store.ts'
 
@@ -29,7 +29,9 @@ export interface TableHandleDragPreviewProps {
 }
 
 /** @internal */
-export const TableHandleDragPreviewPropsDeclaration: PropsDeclaration<TableHandleDragPreviewProps> = defineProps<TableHandleDragPreviewProps>({
+export const TableHandleDragPreviewPropsDeclaration: PropsDeclaration<TableHandleDragPreviewProps> = defineProps<
+  TableHandleDragPreviewProps
+>({
   editor: { default: null, attribute: false, type: 'json' },
 })
 

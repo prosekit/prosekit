@@ -43,7 +43,9 @@ export interface TableHandlePopoverItemProps {
 }
 
 /** @internal */
-export const TableHandlePopoverItemPropsDeclaration: PropsDeclaration<TableHandlePopoverItemProps> = defineProps<TableHandlePopoverItemProps>({
+export const TableHandlePopoverItemPropsDeclaration: PropsDeclaration<TableHandlePopoverItemProps> = defineProps<
+  TableHandlePopoverItemProps
+>({
   value: { default: '', attribute: 'value', type: 'string' },
   disabled: { default: false, attribute: 'disabled', type: 'boolean' },
 })

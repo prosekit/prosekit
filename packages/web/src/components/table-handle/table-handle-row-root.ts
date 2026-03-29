@@ -13,11 +13,7 @@ import {
 } from '@aria-ui-v2/core'
 import { MenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
 import { OpenChangeEvent } from '@aria-ui-v2/elements/overlay'
-import {
-  OverlayPositionerPropsDeclaration,
-  updatePlacement,
-  type OverlayPositionerProps,
-} from '@aria-ui-v2/elements/overlay'
+import { OverlayPositionerPropsDeclaration, updatePlacement, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
 import { once } from '@ocavue/utils'

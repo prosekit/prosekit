@@ -18,7 +18,7 @@ import { assignStyles } from '../../utils/assign-styles.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 
 import { getDragOverColumn, getDragOverRow } from './calc-drag-over.ts'
-import { useInitDndPosition, getDndRelatedDOMs, type OnInitParams } from './dnd-v2.ts'
+import { getDndRelatedDOMs, useInitDndPosition, type OnInitParams } from './dnd-v2.ts'
 import { tableHandleStoreContext } from './store.ts'
 
 type TableCommandsExtension = ReturnType<typeof defineTableCommands>
@@ -34,7 +34,9 @@ export interface TableHandleDropIndicatorProps {
 }
 
 /** @internal */
-export const TableHandleDropIndicatorPropsDeclaration: PropsDeclaration<TableHandleDropIndicatorProps> = defineProps<TableHandleDropIndicatorProps>({
+export const TableHandleDropIndicatorPropsDeclaration: PropsDeclaration<TableHandleDropIndicatorProps> = defineProps<
+  TableHandleDropIndicatorProps
+>({
   editor: { default: null, attribute: false, type: 'json' },
 })
 

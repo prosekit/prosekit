@@ -29,6 +29,7 @@ export interface WrapperApplyContext extends WrapperMatchContext {
   addImport(moduleSpecifier: string, namedImports: string[]): void
   addSetupStatement(statement: string): void
   setRenderPropsExpression(expression: string): void
+  setReactPropOverride(propName: string, expression: string): void
   setSolidPropOverride(propName: string, expression: string): void
   addVuePostBuildPropsStatement(statement: string): void
   addSvelteScriptStatement(statement: string): void
@@ -99,6 +100,7 @@ type WrapperExtensionSlots = {
   imports: WrapperImport[]
   setupStatements: string[]
   renderPropsExpression?: string
+  reactPropOverrides: Record<string, string>
   solidPropOverrides: Record<string, string>
   vuePostBuildPropsStatements: string[]
   svelteScriptStatements: string[]
@@ -169,6 +171,10 @@ export function propFallback(options: PropFallbackExtensionOptions): WrapperExte
 
       switch (context.framework) {
         case 'react':
+          context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
+          context.setReactPropOverride(options.prop, `?? ${contextVariableName}`)
+          break
+
         case 'preact':
           context.addSetupStatement(`const componentProps: ${context.component.name}Props = { ...props };`)
           context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
@@ -264,6 +270,7 @@ function getWrapperExtensionSlots(
   const slots: WrapperExtensionSlots = {
     imports: [],
     setupStatements: [],
+    reactPropOverrides: {},
     solidPropOverrides: {},
     vuePostBuildPropsStatements: [],
     svelteScriptStatements: [],
@@ -310,6 +317,9 @@ function getWrapperExtensionSlots(
     },
     setRenderPropsExpression(expression) {
       slots.renderPropsExpression = expression
+    },
+    setReactPropOverride(propName, expression) {
+      slots.reactPropOverrides[propName] = expression
     },
     setSolidPropOverride(propName, expression) {
       slots.solidPropOverrides[propName] = expression
@@ -375,21 +385,23 @@ function generateReactComponentFile(
     eventHandlers,
   } = getComponentMeta(component, options.prefix)
 
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui-v2/integrations/react',
-    namedImports: ['ReactWrapper'],
-  })
+  const reactImports: (string | { name: string; isTypeOnly: true })[] = [
+    'createElement',
+    'forwardRef',
+    'useCallback',
+    'useRef',
+    { name: 'ForwardedRef', isTypeOnly: true },
+    { name: 'ForwardRefExoticComponent', isTypeOnly: true },
+    { name: 'HTMLAttributes', isTypeOnly: true },
+    { name: 'RefAttributes', isTypeOnly: true },
+  ]
+  if (hasProps || hasEvents) {
+    reactImports.push('useLayoutEffect')
+  }
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'react',
-    namedImports: [
-      'createElement',
-      'forwardRef',
-      { name: 'ForwardedRef', isTypeOnly: true },
-      { name: 'ForwardRefExoticComponent', isTypeOnly: true },
-      { name: 'HTMLAttributes', isTypeOnly: true },
-      { name: 'RefAttributes', isTypeOnly: true },
-    ],
+    namedImports: reactImports,
   })
 
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
@@ -402,12 +414,6 @@ function generateReactComponentFile(
   })
   addWrapperImports(sourceFile, slots.imports)
 
-  addPropNamesVariable(sourceFile, uneval(props.map((prop) => prop.name)))
-  addEventNameMapVariable(
-    sourceFile,
-    uneval(Object.fromEntries(eventHandlers.map((h) => [h.handlerName, h.eventName]))),
-  )
-
   addPropsInterface({
     sourceFile,
     component,
@@ -418,24 +424,83 @@ function generateReactComponentFile(
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
 
-  const renderPropsExpression = slots.renderPropsExpression ?? 'props'
-  const wrapperPropsArgument = renderPropsExpression === 'props'
-    ? 'props'
-    : `props: ${renderPropsExpression}`
-  const statements = [
-    `register${componentName}Element();`,
-    ...slots.setupStatements,
-    `return createElement(ReactWrapper, { as: '${tagName}', propNames, eventNameMap, ${wrapperPropsArgument}, forwardedRef });`,
+  // Build destructure entries
+  const destructureEntries = [
+    ...props.map((p, i) => `${p.name}: p${i}`),
+    ...eventHandlers.map((h, i) => `${h.handlerName}: e${i}`),
   ]
 
-  sourceFile.addFunction({
-    name: `${componentName}Component`,
-    parameters: [
-      { name: 'props', type: `${componentName}Props` },
-      { name: 'forwardedRef', type: `ForwardedRef<${componentName}Element>` },
-    ],
-    statements,
+  // Build Object.assign entries with possible overrides from extensions
+  const propAssignEntries = props.map((p, i) => {
+    const override = slots.reactPropOverrides[p.name]
+    return override ? `${p.name}: p${i} ${override}` : `${p.name}: p${i}`
   })
+
+  const handlersList = eventHandlers.map((_, i) => `e${i}`)
+  const eventNamesList = eventHandlers.map((h) => JSON.stringify(h.eventName))
+
+  const setupStatements = slots.setupStatements.length > 0
+    ? `\n  ${slots.setupStatements.join('\n  ')}\n`
+    : ''
+
+  const handlersRefDecl = hasEvents
+    ? `\n  const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([])`
+    : ''
+
+  const handlersRefUpdate = hasEvents
+    ? `\n    handlersRef.current = [${handlersList.join(', ')}] as Array<((event: Event) => void) | undefined>`
+    : ''
+
+  let mountEffect = ''
+  if (hasEvents) {
+    mountEffect = `
+  useLayoutEffect(() => {
+    const element = elementRef.current
+    if (!element) return
+    const ac = new AbortController()
+    for (const [index, eventName] of [${eventNamesList.join(', ')}].entries()) {
+      element.addEventListener(eventName, (event: Event) => { handlersRef.current[index]?.(event) }, { signal: ac.signal })
+    }
+    return () => ac.abort()
+  }, [])
+`
+  }
+
+  const destructureLine = destructureEntries.length > 0
+    ? `const { ${destructureEntries.join(', ')}, ...restProps } = props`
+    : `const { ...restProps } = props`
+
+  let propsEffect = ''
+  if (hasProps || hasEvents) {
+    const assignLine = hasProps ? `\n    Object.assign(element, { ${propAssignEntries.join(', ')} })` : ''
+    propsEffect = `
+  useLayoutEffect(() => {
+    const element = elementRef.current as Record<string, unknown> | null
+    if (!element) return${assignLine}${handlersRefUpdate}
+  })
+`
+  }
+
+  const functionBody = `
+  register${componentName}Element()
+
+  const elementRef = useRef<${componentName}Element>(null)${handlersRefDecl}
+${setupStatements}
+  ${destructureLine}
+${propsEffect}${mountEffect}
+  const mergedRef = useCallback((element: ${componentName}Element | null) => {
+    elementRef.current = element
+    if (typeof forwardedRef === 'function') { forwardedRef(element) }
+    else if (forwardedRef) { forwardedRef.current = element }
+  }, [])
+
+  return createElement('${tagName}', { ...restProps, ref: mergedRef, suppressHydrationWarning: true })
+`
+
+  sourceFile.addStatements(`function ${componentName}Component(
+  props: ${componentName}Props,
+  forwardedRef: ForwardedRef<${componentName}Element>,
+) {${functionBody}}`)
 
   sourceFile.addVariableStatement({
     isExported: true,

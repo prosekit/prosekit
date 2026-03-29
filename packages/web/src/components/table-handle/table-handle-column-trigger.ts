@@ -29,7 +29,9 @@ export interface TableHandleColumnTriggerProps {
 }
 
 /** @internal */
-export const TableHandleColumnTriggerPropsDeclaration: PropsDeclaration<TableHandleColumnTriggerProps> = defineProps<TableHandleColumnTriggerProps>({
+export const TableHandleColumnTriggerPropsDeclaration: PropsDeclaration<TableHandleColumnTriggerProps> = defineProps<
+  TableHandleColumnTriggerProps
+>({
   editor: { default: null, attribute: false, type: 'json' },
 })
 

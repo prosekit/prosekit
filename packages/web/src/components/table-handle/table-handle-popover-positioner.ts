@@ -1,5 +1,12 @@
 import type { HostElement } from '@aria-ui-v2/core'
-import { defineCustomElement, defineProps, registerCustomElement, type HostElementConstructor, type PropsDeclaration, type Store } from '@aria-ui-v2/core'
+import {
+  defineCustomElement,
+  defineProps,
+  registerCustomElement,
+  type HostElementConstructor,
+  type PropsDeclaration,
+  type Store,
+} from '@aria-ui-v2/core'
 import { MenuStoreContext } from '@aria-ui-v2/elements/menu'
 import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
 import type { OffsetOptions, Placement } from '@floating-ui/dom'
@@ -18,7 +25,9 @@ export interface TableHandlePopoverPositionerProps extends Omit<OverlayPositione
 }
 
 /** @internal */
-export const TableHandlePopoverPositionerPropsDeclaration: PropsDeclaration<TableHandlePopoverPositionerProps> = defineProps<TableHandlePopoverPositionerProps>({
+export const TableHandlePopoverPositionerPropsDeclaration: PropsDeclaration<TableHandlePopoverPositionerProps> = defineProps<
+  TableHandlePopoverPositionerProps
+>({
   ...OverlayPositionerPropsDeclaration,
   placement: { default: 'right-start', attribute: 'placement', type: 'string' },
   offset: { default: { mainAxis: -4, crossAxis: 4 }, attribute: false, type: 'json' },

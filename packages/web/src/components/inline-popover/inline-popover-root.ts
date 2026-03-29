@@ -17,7 +17,7 @@ import { useEditorFocusChangeEvent } from '../../hooks/use-editor-focus-event-v2
 import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event-v2.ts'
 import { useKeymap } from '../../hooks/use-keymap-v2.ts'
 
-import { getVirtualSelectionElement } from './inline-popover/virtual-selection-element.ts'
+import { getVirtualSelectionElement } from './virtual-selection-element.ts'
 import { InlinePopoverStoreContext } from './store.ts'
 
 /**

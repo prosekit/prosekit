@@ -6,9 +6,9 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '@aria-ui-v2/elements/overlay'
-import { usePresence } from '@aria-ui-v2/utils'
+} from '@aria-ui/core'
+import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '@aria-ui/elements/overlay'
+import { usePresence } from '@aria-ui/utils'
 import { once } from '@ocavue/utils'
 
 import { InlinePopoverStoreContext } from './store.ts'

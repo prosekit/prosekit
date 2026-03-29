@@ -10,9 +10,9 @@ import {
   type PropsDeclaration,
   type Store,
   type TypedEventTarget,
-} from '@aria-ui-v2/core'
-import { closeMenuTree, MenuStoreContext, type MenuStore } from '@aria-ui-v2/elements/menu'
-import { useElementId } from '@aria-ui-v2/utils'
+} from '@aria-ui/core'
+import { closeMenuTree, MenuStoreContext, type MenuStore } from '@aria-ui/elements/menu'
+import { useElementId } from '@aria-ui/utils'
 import { once } from '@ocavue/utils'
 
 import { tableHandleStoreContext } from './store.ts'

@@ -1,4 +1,4 @@
-import { useEffect, type HostElement } from '@aria-ui-v2/core'
+import { useEffect, type HostElement } from '@aria-ui/core'
 
 /**
  * Returns a function that returns a 1x1 transparent image. This is used to

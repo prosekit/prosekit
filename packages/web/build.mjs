@@ -1,4 +1,4 @@
-import { build, propFallback } from '@aria-ui-v2/cli'
+import { build, propFallback } from '@aria-ui/cli'
 
 const components = ['tooltip', 'popover', 'resizable', 'drop-indicator', 'inline-popover', 'table-handle', 'block-handle', 'autocomplete']
 const frameworks = ['react', 'preact', 'solid', 'vue', 'svelte']

@@ -1,5 +1,5 @@
-import { registerCustomElement } from '@aria-ui-v2/core'
-import { TooltipPopupElement, TooltipPositionerElement, TooltipRootElement, TooltipTriggerElement } from '@aria-ui-v2/elements/tooltip'
+import { registerCustomElement } from '@aria-ui/core'
+import { TooltipPopupElement, TooltipPositionerElement, TooltipRootElement, TooltipTriggerElement } from '@aria-ui/elements/tooltip'
 import { once } from '@ocavue/utils'
 
 export {
@@ -21,7 +21,7 @@ export {
   type TooltipRootEvents,
   type TooltipRootProps,
   type TooltipTriggerProps,
-} from '@aria-ui-v2/elements/tooltip'
+} from '@aria-ui/elements/tooltip'
 
 export const registerTooltipRootElement: VoidFunction = /* @__PURE__ */ once(() => {
   registerCustomElement('prosekit-tooltip-root', TooltipRootElement)

@@ -8,7 +8,7 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
+} from '@aria-ui/core'
 import { computePosition, offset } from '@floating-ui/dom'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'

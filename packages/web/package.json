@@ -46,9 +46,9 @@
     "build:aria-ui": "node build.mjs"
   },
   "dependencies": {
-    "@aria-ui-v2/core": "workspace:^",
-    "@aria-ui-v2/elements": "workspace:^",
-    "@aria-ui-v2/utils": "workspace:^",
+    "@aria-ui/core": "workspace:^",
+    "@aria-ui/elements": "workspace:^",
+    "@aria-ui/utils": "workspace:^",
     "@floating-ui/dom": "^1.7.6",
     "@ocavue/utils": "^1.6.0",
     "@prosekit/core": "workspace:^",
@@ -58,7 +58,7 @@
     "prosemirror-tables": "^1.8.5"
   },
   "devDependencies": {
-    "@aria-ui-v2/cli": "workspace:^",
+    "@aria-ui/cli": "workspace:^",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",

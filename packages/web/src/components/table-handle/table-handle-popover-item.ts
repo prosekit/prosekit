@@ -9,9 +9,9 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { closeMenuTree, MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import { Collection, useAriaDisabled, useElementId } from '@aria-ui-v2/utils'
+} from '@aria-ui/core'
+import { closeMenuTree, MenuStoreContext } from '@aria-ui/elements/menu'
+import { Collection, useAriaDisabled, useElementId } from '@aria-ui/utils'
 import { once } from '@ocavue/utils'
 
 /**

@@ -1,4 +1,4 @@
-import { useEffect, type HostElement } from '@aria-ui-v2/core'
+import { useEffect, type HostElement } from '@aria-ui/core'
 import type { Editor, Extension } from '@prosekit/core'
 
 export function useEditorExtension(

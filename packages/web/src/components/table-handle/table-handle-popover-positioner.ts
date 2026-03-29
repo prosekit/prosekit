@@ -1,4 +1,4 @@
-import type { HostElement } from '@aria-ui-v2/core'
+import type { HostElement } from '@aria-ui/core'
 import {
   defineCustomElement,
   defineProps,
@@ -7,9 +7,9 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
+} from '@aria-ui/core'
+import { MenuStoreContext } from '@aria-ui/elements/menu'
+import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from '@aria-ui/elements/overlay'
 import type { OffsetOptions, Placement } from '@floating-ui/dom'
 import { once } from '@ocavue/utils'
 

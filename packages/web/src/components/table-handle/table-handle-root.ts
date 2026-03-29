@@ -8,7 +8,7 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
+} from '@aria-ui/core'
 import { once } from '@ocavue/utils'
 import { defineDOMEventHandler, type Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'

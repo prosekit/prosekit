@@ -10,14 +10,14 @@ import {
   type PropsDeclaration,
   type Store,
   type TypedEventTarget,
-} from '@aria-ui-v2/core'
+} from '@aria-ui/core'
 import {
   defaultItemFilter,
   setupListboxRoot,
   type ItemFilter,
   type ListboxRootEvents,
   type ListboxRootProps,
-} from '@aria-ui-v2/elements/listbox'
+} from '@aria-ui/elements/listbox'
 import { once } from '@ocavue/utils'
 import { defineDOMEventHandler, withPriority, type Editor, type Priority } from '@prosekit/core'
 

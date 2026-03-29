@@ -6,9 +6,9 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import type { OpenChangeEvent } from '@aria-ui-v2/elements/overlay'
-import { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from '@aria-ui-v2/elements/overlay'
+} from '@aria-ui/core'
+import type { OpenChangeEvent } from '@aria-ui/elements/overlay'
+import { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from '@aria-ui/elements/overlay'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { Selection } from '@prosekit/pm/state'

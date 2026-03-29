@@ -10,14 +10,14 @@ import {
   type PropsDeclaration,
   type Signal,
   type Store,
-} from '@aria-ui-v2/core'
+} from '@aria-ui/core'
 import {
   createOverlayStore,
   OverlayPositionerPropsDeclaration,
   setupOverlayPositioner,
   type OverlayPositionerProps,
-} from '@aria-ui-v2/elements/overlay'
-import { useAttribute, usePresence } from '@aria-ui-v2/utils'
+} from '@aria-ui/elements/overlay'
+import { useAttribute, usePresence } from '@aria-ui/utils'
 import { once } from '@ocavue/utils'
 import { defineKeymap, withPriority, type Editor, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'

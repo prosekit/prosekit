@@ -23,4 +23,4 @@ export {
   type InlinePopoverRootProps,
 } from './inline-popover-root.ts'
 
-export { OpenChangeEvent } from '@aria-ui-v2/elements/overlay'
+export { OpenChangeEvent } from '@aria-ui/elements/overlay'

@@ -9,14 +9,14 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
+} from '@aria-ui/core'
 import {
   createOverlayStore,
   OverlayPositionerPropsDeclaration,
   setupOverlayPositioner,
   type OverlayPositionerProps,
-} from '@aria-ui-v2/elements/overlay'
-import { useAttribute, usePresence } from '@aria-ui-v2/utils'
+} from '@aria-ui/elements/overlay'
+import { useAttribute, usePresence } from '@aria-ui/utils'
 import type { Placement, VirtualElement } from '@floating-ui/dom'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'

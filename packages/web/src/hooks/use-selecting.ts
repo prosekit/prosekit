@@ -1,4 +1,4 @@
-import { createSignal, useEffect, type HostElement } from '@aria-ui-v2/core'
+import { createSignal, useEffect, type HostElement } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 
 import { getSafeEditorView } from '../utils/get-safe-editor-view.ts'

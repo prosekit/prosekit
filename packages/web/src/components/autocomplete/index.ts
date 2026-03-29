@@ -34,4 +34,4 @@ export {
   type AutocompletePopoverProps,
 } from './autocomplete-popover.ts'
 
-export { ValueChangeEvent, ValuesChangeEvent } from '@aria-ui-v2/elements/listbox'
+export { ValueChangeEvent, ValuesChangeEvent } from '@aria-ui/elements/listbox'

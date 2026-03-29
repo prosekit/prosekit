@@ -1,4 +1,4 @@
-import { computed, useEffect, type HostElement } from '@aria-ui-v2/core'
+import { computed, useEffect, type HostElement } from '@aria-ui/core'
 import { computePosition, offset } from '@floating-ui/dom'
 import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'

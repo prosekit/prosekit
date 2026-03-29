@@ -1,6 +1,6 @@
-import type { HostElement, HostElementConstructor, PropsDeclaration } from '@aria-ui-v2/core'
-import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
-import { useAttribute } from '@aria-ui-v2/utils'
+import type { HostElement, HostElementConstructor, PropsDeclaration } from '@aria-ui/core'
+import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui/core'
+import { useAttribute } from '@aria-ui/utils'
 
 import { isFinitePositiveNumber } from '../../utils/is-finite-positive-number.ts'
 

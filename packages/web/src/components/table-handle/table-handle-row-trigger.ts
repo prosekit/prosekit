@@ -9,8 +9,8 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { MenuStoreContext } from '@aria-ui-v2/elements/menu'
+} from '@aria-ui/core'
+import { MenuStoreContext } from '@aria-ui/elements/menu'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import { selectTableRow, type defineTableCommands } from '@prosekit/extensions/table'

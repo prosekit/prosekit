@@ -1,4 +1,4 @@
-import { computed, useEffect, type HostElement } from '@aria-ui-v2/core'
+import { computed, useEffect, type HostElement } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 import { moveTableColumn, moveTableRow } from '@prosekit/extensions/table'
 

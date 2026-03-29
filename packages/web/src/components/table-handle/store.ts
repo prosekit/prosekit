@@ -1,4 +1,4 @@
-import { createContext, createSignal, type Context, type Signal } from '@aria-ui-v2/core'
+import { createContext, createSignal, type Context, type Signal } from '@aria-ui/core'
 
 import type { DndInfo, HoveringCellInfo } from './utils.ts'
 

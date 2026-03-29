@@ -1,5 +1,5 @@
-import { registerCustomElement } from '@aria-ui-v2/core'
-import { PopoverPopupElement, PopoverPositionerElement, PopoverRootElement, PopoverTriggerElement } from '@aria-ui-v2/elements/popover'
+import { registerCustomElement } from '@aria-ui/core'
+import { PopoverPopupElement, PopoverPositionerElement, PopoverRootElement, PopoverTriggerElement } from '@aria-ui/elements/popover'
 import { once } from '@ocavue/utils'
 
 export {
@@ -22,7 +22,7 @@ export {
   type PopoverRootProps,
   type PopoverTriggerEvents,
   type PopoverTriggerProps,
-} from '@aria-ui-v2/elements/popover'
+} from '@aria-ui/elements/popover'
 
 export const registerPopoverRootElement: VoidFunction = /* @__PURE__ */ once(() => {
   registerCustomElement('prosekit-popover-root', PopoverRootElement)

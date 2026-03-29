@@ -1,5 +1,5 @@
-import type { HostElement, HostElementConstructor, PropsDeclaration } from '@aria-ui-v2/core'
-import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui-v2/core'
+import type { HostElement, HostElementConstructor, PropsDeclaration } from '@aria-ui/core'
+import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type Store } from '@aria-ui/core'
 import { getWindow } from '@ocavue/utils'
 
 import { calcResize } from './calc-resize.ts'

@@ -1,4 +1,4 @@
-import { createContext, type Context } from '@aria-ui-v2/core'
+import { createContext, type Context } from '@aria-ui/core'
 
 /**
  * @internal

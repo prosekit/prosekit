@@ -6,8 +6,8 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { setupListboxEmpty, type ListboxEmptyProps } from '@aria-ui-v2/elements/listbox'
+} from '@aria-ui/core'
+import { setupListboxEmpty, type ListboxEmptyProps } from '@aria-ui/elements/listbox'
 import { once } from '@ocavue/utils'
 
 /**

@@ -8,8 +8,8 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { useAttribute } from '@aria-ui-v2/utils'
+} from '@aria-ui/core'
+import { useAttribute } from '@aria-ui/utils'
 import { isHTMLElement, once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { ViewDragging } from '@prosekit/extensions/drop-indicator'

@@ -1,4 +1,4 @@
-import { createSignal, useEffect, type HostElement } from '@aria-ui-v2/core'
+import { createSignal, useEffect, type HostElement } from '@aria-ui/core'
 import { getNearestOverflowAncestor } from '@zag-js/dom-query'
 
 export function useScrolling(host: HostElement): () => boolean {

@@ -10,10 +10,10 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import { createOverlayStore, OverlayPositionerPropsDeclaration, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
-import { useAttribute, usePresence } from '@aria-ui-v2/utils'
+} from '@aria-ui/core'
+import { createMenuStore, MenuStoreContext } from '@aria-ui/elements/menu'
+import { createOverlayStore, OverlayPositionerPropsDeclaration, type OverlayPositionerProps } from '@aria-ui/elements/overlay'
+import { useAttribute, usePresence } from '@aria-ui/utils'
 import type { Placement } from '@floating-ui/dom'
 import { isHTMLElement, once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'

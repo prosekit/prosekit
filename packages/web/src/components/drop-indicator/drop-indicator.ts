@@ -9,8 +9,8 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { usePresence } from '@aria-ui-v2/utils'
+} from '@aria-ui/core'
+import { usePresence } from '@aria-ui/utils'
 import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import { defineDropIndicator, type ShowHandlerOptions } from '@prosekit/extensions/drop-indicator'

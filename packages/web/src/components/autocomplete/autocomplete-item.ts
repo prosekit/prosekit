@@ -8,8 +8,8 @@ import {
   type HostElementConstructor,
   type PropsDeclaration,
   type Store,
-} from '@aria-ui-v2/core'
-import { setupListboxItem, type ListboxItemProps } from '@aria-ui-v2/elements/listbox'
+} from '@aria-ui/core'
+import { setupListboxItem, type ListboxItemProps } from '@aria-ui/elements/listbox'
 import { once } from '@ocavue/utils'
 
 import { autocompleteStoreContext } from './context.ts'

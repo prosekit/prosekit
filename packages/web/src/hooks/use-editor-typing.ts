@@ -1,4 +1,4 @@
-import { createSignal, type HostElement } from '@aria-ui-v2/core'
+import { createSignal, type HostElement } from '@aria-ui/core'
 import { defineDOMEventHandler, union, type Editor } from '@prosekit/core'
 
 import { useEditorExtension } from './use-editor-extension.ts'

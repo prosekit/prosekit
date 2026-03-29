@@ -1,9 +1,0 @@
-- [x] Remove remix
-- [x] Implement aria-ui-v2/elements/tooltip and its test
-- [x] rewrite the CLI so that generate components can be placed in different packages. 
-- [ ] Implement listbox 
-- [ ] Implement all components 
-- [ ] Write a good test system 
-- [ ] Write a good docs
-- [ ] Use it in ProseKit 
-- [ ] svelte 生成的代码了不要写 _restProps。使用 p0 p1 防止冲突

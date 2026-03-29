@@ -8,7 +8,7 @@ import {
   type PopoverRootEvents,
   type PopoverRootProps as PopoverRootElementProps,
 } from "@prosekit/web/popover";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -52,21 +52,55 @@ export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement>
 export const PopoverRoot: Component<PopoverRootProps> = (props): any => {
   registerPopoverRootElement();
 
+  const [getElement, setElement] = createSignal<PopoverRootElement | null>(
+    null,
+  );
+  const handlers: Array<((event: any) => void) | undefined> = [];
+
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
     ["defaultOpen", "disabled", "modal", "open"],
     ["onOpenChange"],
   );
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      defaultOpen: elementProps.defaultOpen,
+      disabled: elementProps.disabled,
+      modal: elementProps.modal,
+      open: elementProps.open,
+    });
+
+    handlers.length = 0;
+    handlers.push(eventHandlers.onOpenChange);
+  });
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    const ac = new AbortController();
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          handlers[index]?.(event);
+        },
+        { signal: ac.signal },
+      );
+    }
+    return () => ac.abort();
+  });
+
   return h(
     "prosekit-popover-root",
     mergeProps(restProps, {
-      "prop:defaultOpen": () => elementProps.defaultOpen,
-      "prop:disabled": () => elementProps.disabled,
-      "prop:modal": () => elementProps.modal,
-      "prop:open": () => elementProps.open,
-      "on:openChange": (event: PopoverRootEvents["openChange"]) =>
-        eventHandlers.onOpenChange?.(event),
+      ref: (el: PopoverRootElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

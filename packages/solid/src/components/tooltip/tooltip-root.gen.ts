@@ -45,8 +45,10 @@ export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement>
 export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
   registerTooltipRootElement();
 
-  const [getElement, setElement] = createSignal<TooltipRootElement | null>(null);
-  const handlers: Array<((event: any) => void) | undefined> = []
+  const [getElement, setElement] = createSignal<TooltipRootElement | null>(
+    null,
+  );
+  const handlers: Array<((event: any) => void) | undefined> = [];
 
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
@@ -64,29 +66,32 @@ export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
       open: elementProps.open,
     });
 
-    handlers.length = 0 
-    handlers.push(eventHandlers.onOpenChange)
+    handlers.length = 0;
+    handlers.push(eventHandlers.onOpenChange);
   });
 
   createEffect(() => {
     const element = getElement();
     if (!element) return;
 
-    const ac = new AbortController()
-    for (const [index, eventName] of ['openChange'].entries()) {
-      element.addEventListener(eventName, (event) => {
-        handlers[index]?.(event)
-      }, { signal: ac.signal })
+    const ac = new AbortController();
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          handlers[index]?.(event);
+        },
+        { signal: ac.signal },
+      );
     }
-    return () => ac.abort()
-  })
-
+    return () => ac.abort();
+  });
 
   return h(
     "prosekit-tooltip-root",
     mergeProps(restProps, {
-      ref: (el: TooltipRootElement | null  ) => {
-        setElement(el)
+      ref: (el: TooltipRootElement | null) => {
+        setElement(el);
       },
     }),
   );

@@ -7,7 +7,7 @@ import {
   type DropIndicatorElement,
   type DropIndicatorProps as DropIndicatorElementProps,
 } from "@prosekit/web/drop-indicator";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 import { useEditorContext } from "../../contexts/editor-context.ts";
@@ -41,15 +41,30 @@ export interface DropIndicatorProps extends JSX.HTMLAttributes<DropIndicatorElem
 export const DropIndicator: Component<DropIndicatorProps> = (props): any => {
   registerDropIndicatorElement();
 
+  const [getElement, setElement] = createSignal<DropIndicatorElement | null>(
+    null,
+  );
+
   const [elementProps, restProps] = splitProps(props, ["editor", "width"]);
 
   const p0Fallback = useEditorContext();
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      editor: elementProps.editor ?? p0Fallback,
+      width: elementProps.width,
+    });
+  });
+
   return h(
     "prosekit-drop-indicator",
     mergeProps(restProps, {
-      "prop:editor": () => elementProps.editor ?? p0Fallback,
-      "prop:width": () => elementProps.width,
+      ref: (el: DropIndicatorElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

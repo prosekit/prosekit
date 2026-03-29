@@ -7,7 +7,7 @@ import {
   type TableHandleRowTriggerElement,
   type TableHandleRowTriggerProps as TableHandleRowTriggerElementProps,
 } from "@prosekit/web/table-handle";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 import { useEditorContext } from "../../contexts/editor-context.ts";
@@ -35,14 +35,28 @@ export const TableHandleRowTrigger: Component<TableHandleRowTriggerProps> = (
 ): any => {
   registerTableHandleRowTriggerElement();
 
+  const [getElement, setElement] =
+    createSignal<TableHandleRowTriggerElement | null>(null);
+
   const [elementProps, restProps] = splitProps(props, ["editor"]);
 
   const p0Fallback = useEditorContext();
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      editor: elementProps.editor ?? p0Fallback,
+    });
+  });
+
   return h(
     "prosekit-table-handle-row-trigger",
     mergeProps(restProps, {
-      "prop:editor": () => elementProps.editor ?? p0Fallback,
+      ref: (el: TableHandleRowTriggerElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

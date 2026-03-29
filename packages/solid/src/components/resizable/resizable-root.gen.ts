@@ -8,7 +8,7 @@ import {
   type ResizableRootEvents,
   type ResizableRootProps as ResizableRootElementProps,
 } from "@prosekit/web/resizable";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -50,22 +50,55 @@ export interface ResizableRootProps extends JSX.HTMLAttributes<ResizableRootElem
 export const ResizableRoot: Component<ResizableRootProps> = (props): any => {
   registerResizableRootElement();
 
+  const [getElement, setElement] = createSignal<ResizableRootElement | null>(
+    null,
+  );
+  const handlers: Array<((event: any) => void) | undefined> = [];
+
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
     ["aspectRatio", "height", "width"],
     ["onResizeEnd", "onResizeStart"],
   );
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      aspectRatio: elementProps.aspectRatio,
+      height: elementProps.height,
+      width: elementProps.width,
+    });
+
+    handlers.length = 0;
+    handlers.push(eventHandlers.onResizeEnd);
+    handlers.push(eventHandlers.onResizeStart);
+  });
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    const ac = new AbortController();
+    for (const [index, eventName] of ["resizeEnd", "resizeStart"].entries()) {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          handlers[index]?.(event);
+        },
+        { signal: ac.signal },
+      );
+    }
+    return () => ac.abort();
+  });
+
   return h(
     "prosekit-resizable-root",
     mergeProps(restProps, {
-      "prop:aspectRatio": () => elementProps.aspectRatio,
-      "prop:height": () => elementProps.height,
-      "prop:width": () => elementProps.width,
-      "on:resizeEnd": (event: ResizableRootEvents["resizeEnd"]) =>
-        eventHandlers.onResizeEnd?.(event),
-      "on:resizeStart": (event: ResizableRootEvents["resizeStart"]) =>
-        eventHandlers.onResizeStart?.(event),
+      ref: (el: ResizableRootElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

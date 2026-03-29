@@ -7,7 +7,7 @@ import {
   type TooltipTriggerElement,
   type TooltipTriggerProps as TooltipTriggerElementProps,
 } from "@prosekit/web/tooltip";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -42,18 +42,33 @@ export interface TooltipTriggerProps extends JSX.HTMLAttributes<TooltipTriggerEl
 export const TooltipTrigger: Component<TooltipTriggerProps> = (props): any => {
   registerTooltipTriggerElement();
 
+  const [getElement, setElement] = createSignal<TooltipTriggerElement | null>(
+    null,
+  );
+
   const [elementProps, restProps] = splitProps(props, [
     "closeDelay",
     "disabled",
     "openDelay",
   ]);
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      closeDelay: elementProps.closeDelay,
+      disabled: elementProps.disabled,
+      openDelay: elementProps.openDelay,
+    });
+  });
+
   return h(
     "prosekit-tooltip-trigger",
     mergeProps(restProps, {
-      "prop:closeDelay": () => elementProps.closeDelay,
-      "prop:disabled": () => elementProps.disabled,
-      "prop:openDelay": () => elementProps.openDelay,
+      ref: (el: TooltipTriggerElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

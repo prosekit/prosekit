@@ -8,7 +8,7 @@ import {
   type InlinePopoverEvents,
   type InlinePopoverProps as InlinePopoverElementProps,
 } from "@prosekit/web/inline-popover";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 import { useEditorContext } from "../../contexts/editor-context.ts";
@@ -164,6 +164,11 @@ export interface InlinePopoverProps extends JSX.HTMLAttributes<InlinePopoverElem
 export const InlinePopover: Component<InlinePopoverProps> = (props): any => {
   registerInlinePopoverElement();
 
+  const [getElement, setElement] = createSignal<InlinePopoverElement | null>(
+    null,
+  );
+  const handlers: Array<((event: any) => void) | undefined> = [];
+
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
     [
@@ -195,33 +200,62 @@ export const InlinePopover: Component<InlinePopoverProps> = (props): any => {
 
   const p5Fallback = useEditorContext();
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      altBoundary: elementProps.altBoundary,
+      autoUpdate: elementProps.autoUpdate,
+      boundary: elementProps.boundary,
+      defaultOpen: elementProps.defaultOpen,
+      dismissOnEscape: elementProps.dismissOnEscape,
+      editor: elementProps.editor ?? p5Fallback,
+      elementContext: elementProps.elementContext,
+      fitViewport: elementProps.fitViewport,
+      flip: elementProps.flip,
+      hide: elementProps.hide,
+      hoist: elementProps.hoist,
+      inline: elementProps.inline,
+      offset: elementProps.offset,
+      open: elementProps.open,
+      overflowPadding: elementProps.overflowPadding,
+      overlap: elementProps.overlap,
+      placement: elementProps.placement,
+      rootBoundary: elementProps.rootBoundary,
+      sameHeight: elementProps.sameHeight,
+      sameWidth: elementProps.sameWidth,
+      shift: elementProps.shift,
+      strategy: elementProps.strategy,
+    });
+
+    handlers.length = 0;
+    handlers.push(eventHandlers.onOpenChange);
+  });
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    const ac = new AbortController();
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          handlers[index]?.(event);
+        },
+        { signal: ac.signal },
+      );
+    }
+    return () => ac.abort();
+  });
+
   return h(
     "prosekit-inline-popover",
     mergeProps(restProps, {
-      "prop:altBoundary": () => elementProps.altBoundary,
-      "prop:autoUpdate": () => elementProps.autoUpdate,
-      "prop:boundary": () => elementProps.boundary,
-      "prop:defaultOpen": () => elementProps.defaultOpen,
-      "prop:dismissOnEscape": () => elementProps.dismissOnEscape,
-      "prop:editor": () => elementProps.editor ?? p5Fallback,
-      "prop:elementContext": () => elementProps.elementContext,
-      "prop:fitViewport": () => elementProps.fitViewport,
-      "prop:flip": () => elementProps.flip,
-      "prop:hide": () => elementProps.hide,
-      "prop:hoist": () => elementProps.hoist,
-      "prop:inline": () => elementProps.inline,
-      "prop:offset": () => elementProps.offset,
-      "prop:open": () => elementProps.open,
-      "prop:overflowPadding": () => elementProps.overflowPadding,
-      "prop:overlap": () => elementProps.overlap,
-      "prop:placement": () => elementProps.placement,
-      "prop:rootBoundary": () => elementProps.rootBoundary,
-      "prop:sameHeight": () => elementProps.sameHeight,
-      "prop:sameWidth": () => elementProps.sameWidth,
-      "prop:shift": () => elementProps.shift,
-      "prop:strategy": () => elementProps.strategy,
-      "on:openChange": (event: InlinePopoverEvents["openChange"]) =>
-        eventHandlers.onOpenChange?.(event),
+      ref: (el: InlinePopoverElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

@@ -76,7 +76,7 @@ function defineGetterSetter(
       set(v: unknown) {
         {
           if (v === undefined) {
-            return 
+            return
           }
         }
         {

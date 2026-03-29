@@ -7,7 +7,7 @@ import {
   type TableHandlePopoverPositionerElement,
   type TableHandlePopoverPositionerProps as TableHandlePopoverPositionerElementProps,
 } from "@prosekit/web/table-handle";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -148,6 +148,9 @@ export const TableHandlePopoverPositioner: Component<
 > = (props): any => {
   registerTableHandlePopoverPositionerElement();
 
+  const [getElement, setElement] =
+    createSignal<TableHandlePopoverPositionerElement | null>(null);
+
   const [elementProps, restProps] = splitProps(props, [
     "altBoundary",
     "autoUpdate",
@@ -169,27 +172,38 @@ export const TableHandlePopoverPositioner: Component<
     "strategy",
   ]);
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      altBoundary: elementProps.altBoundary,
+      autoUpdate: elementProps.autoUpdate,
+      boundary: elementProps.boundary,
+      elementContext: elementProps.elementContext,
+      fitViewport: elementProps.fitViewport,
+      flip: elementProps.flip,
+      hide: elementProps.hide,
+      hoist: elementProps.hoist,
+      inline: elementProps.inline,
+      offset: elementProps.offset,
+      overflowPadding: elementProps.overflowPadding,
+      overlap: elementProps.overlap,
+      placement: elementProps.placement,
+      rootBoundary: elementProps.rootBoundary,
+      sameHeight: elementProps.sameHeight,
+      sameWidth: elementProps.sameWidth,
+      shift: elementProps.shift,
+      strategy: elementProps.strategy,
+    });
+  });
+
   return h(
     "prosekit-table-handle-popover-positioner",
     mergeProps(restProps, {
-      "prop:altBoundary": () => elementProps.altBoundary,
-      "prop:autoUpdate": () => elementProps.autoUpdate,
-      "prop:boundary": () => elementProps.boundary,
-      "prop:elementContext": () => elementProps.elementContext,
-      "prop:fitViewport": () => elementProps.fitViewport,
-      "prop:flip": () => elementProps.flip,
-      "prop:hide": () => elementProps.hide,
-      "prop:hoist": () => elementProps.hoist,
-      "prop:inline": () => elementProps.inline,
-      "prop:offset": () => elementProps.offset,
-      "prop:overflowPadding": () => elementProps.overflowPadding,
-      "prop:overlap": () => elementProps.overlap,
-      "prop:placement": () => elementProps.placement,
-      "prop:rootBoundary": () => elementProps.rootBoundary,
-      "prop:sameHeight": () => elementProps.sameHeight,
-      "prop:sameWidth": () => elementProps.sameWidth,
-      "prop:shift": () => elementProps.shift,
-      "prop:strategy": () => elementProps.strategy,
+      ref: (el: TableHandlePopoverPositionerElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

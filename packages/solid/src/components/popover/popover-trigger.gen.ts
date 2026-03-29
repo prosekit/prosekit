@@ -8,7 +8,7 @@ import {
   type PopoverTriggerEvents,
   type PopoverTriggerProps as PopoverTriggerElementProps,
 } from "@prosekit/web/popover";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -52,21 +52,55 @@ export interface PopoverTriggerProps extends JSX.HTMLAttributes<PopoverTriggerEl
 export const PopoverTrigger: Component<PopoverTriggerProps> = (props): any => {
   registerPopoverTriggerElement();
 
+  const [getElement, setElement] = createSignal<PopoverTriggerElement | null>(
+    null,
+  );
+  const handlers: Array<((event: any) => void) | undefined> = [];
+
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
     ["closeDelay", "delay", "disabled", "openOnHover"],
     ["onOpenChange"],
   );
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      closeDelay: elementProps.closeDelay,
+      delay: elementProps.delay,
+      disabled: elementProps.disabled,
+      openOnHover: elementProps.openOnHover,
+    });
+
+    handlers.length = 0;
+    handlers.push(eventHandlers.onOpenChange);
+  });
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    const ac = new AbortController();
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          handlers[index]?.(event);
+        },
+        { signal: ac.signal },
+      );
+    }
+    return () => ac.abort();
+  });
+
   return h(
     "prosekit-popover-trigger",
     mergeProps(restProps, {
-      "prop:closeDelay": () => elementProps.closeDelay,
-      "prop:delay": () => elementProps.delay,
-      "prop:disabled": () => elementProps.disabled,
-      "prop:openOnHover": () => elementProps.openOnHover,
-      "on:openChange": (event: PopoverTriggerEvents["openChange"]) =>
-        eventHandlers.onOpenChange?.(event),
+      ref: (el: PopoverTriggerElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

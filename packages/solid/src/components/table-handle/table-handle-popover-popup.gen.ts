@@ -7,7 +7,7 @@ import {
   type TableHandlePopoverPopupElement,
   type TableHandlePopoverPopupProps as TableHandlePopoverPopupElementProps,
 } from "@prosekit/web/table-handle";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -36,12 +36,26 @@ export const TableHandlePopoverPopup: Component<
 > = (props): any => {
   registerTableHandlePopoverPopupElement();
 
+  const [getElement, setElement] =
+    createSignal<TableHandlePopoverPopupElement | null>(null);
+
   const [elementProps, restProps] = splitProps(props, ["eventTarget"]);
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      eventTarget: elementProps.eventTarget,
+    });
+  });
 
   return h(
     "prosekit-table-handle-popover-popup",
     mergeProps(restProps, {
-      "prop:eventTarget": () => elementProps.eventTarget,
+      ref: (el: TableHandlePopoverPopupElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

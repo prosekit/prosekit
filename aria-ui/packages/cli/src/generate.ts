@@ -31,7 +31,6 @@ export interface WrapperApplyContext extends WrapperMatchContext {
   addSetupStatement(statement: string): void
   setRenderPropsExpression(expression: string): void
   setReactPropOverride(propName: string, expression: string): void
-  setSolidPropOverride(propName: string, expression: string): void
   addSvelteScriptStatement(statement: string): void
 }
 
@@ -100,7 +99,6 @@ type WrapperExtensionSlots = {
   setupStatements: string[]
   renderPropsExpression?: string
   reactPropOverrides: Record<string, string>
-  solidPropOverrides: Record<string, string>
   svelteScriptStatements: string[]
 }
 
@@ -170,16 +168,9 @@ export function propFallback(options: PropFallbackExtensionOptions): WrapperExte
         case 'react':
         case 'preact':
         case 'vue':
-          context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
-          context.setReactPropOverride(options.prop, `?? ${fallbackVar}`)
-          break
-
         case 'solid':
           context.addSetupStatement(`const ${fallbackVar} = ${callExpression};`)
-          context.setSolidPropOverride(
-            options.prop,
-            `() => elementProps.${options.prop} ?? ${fallbackVar}`,
-          )
+          context.setReactPropOverride(options.prop, `?? ${fallbackVar}`)
           break
 
         case 'svelte':
@@ -247,7 +238,6 @@ function getWrapperExtensionSlots(
     imports: [],
     setupStatements: [],
     reactPropOverrides: {},
-    solidPropOverrides: {},
     svelteScriptStatements: [],
   }
 
@@ -308,9 +298,6 @@ function getWrapperExtensionSlots(
     },
     setReactPropOverride(propName, expression) {
       slots.reactPropOverrides[propName] = expression
-    },
-    setSolidPropOverride(propName, expression) {
-      slots.solidPropOverrides[propName] = expression
     },
     addSvelteScriptStatement(statement) {
       if (!slots.svelteScriptStatements.includes(statement)) {
@@ -684,10 +671,15 @@ function generateSolidComponentFile(
 
   const needsSplitProps = hasProps || hasEvents
 
+  const solidImports: string[] = []
   if (needsSplitProps) {
+    solidImports.push('createEffect', 'createSignal', 'mergeProps', 'splitProps')
+  }
+
+  if (solidImports.length > 0) {
     sourceFile.addImportDeclaration({
       moduleSpecifier: 'solid-js',
-      namedImports: ['mergeProps', 'splitProps'],
+      namedImports: solidImports,
     })
   }
 
@@ -727,30 +719,98 @@ function generateSolidComponentFile(
   const splitPropsStatement = splitPropsArgs.length > 0
     ? `const [ ${splitPropsTargets.join(', ')} ] = splitProps(props, ${splitPropsArgs.join(', ')})`
     : 'const restProps = props'
-  const propEntries = props.map(
-    (prop) => `"prop:${prop.name}": ${slots.solidPropOverrides[prop.name] ?? `() => elementProps.${prop.name}`}`,
-  )
-  const eventEntries = eventHandlers.map(
-    (handler) =>
-      `"on:${handler.eventName}": (event: ${eventsTypeName}['${handler.eventName}']) => eventHandlers.${handler.handlerName}?.(event)`,
-  )
-  const elementPropsObject = `{${[...propEntries, ...eventEntries].join(', ')}}`
-  const mergedProps = propEntries.length > 0 || eventEntries.length > 0
-    ? `mergeProps(restProps, ${elementPropsObject})`
-    : 'restProps'
-  const setupStatements = joinStatements(slots.setupStatements)
-  const setupBlock = setupStatements.length > 0 ? `\n\n${setupStatements}` : ''
+
+  // Build component body
+  const bodyLines: string[] = []
+  bodyLines.push(`register${componentName}Element()`)
+
+  if (needsSplitProps) {
+    bodyLines.push('')
+    bodyLines.push(`const [getElement, setElement] = createSignal<${componentName}Element | null>(null)`)
+
+    if (hasEvents) {
+      bodyLines.push('const handlers: Array<((event: any) => void) | undefined> = []')
+    }
+
+    bodyLines.push('')
+    bodyLines.push(splitPropsStatement)
+
+    // Extension setup statements
+    const setupStatements = joinStatements(slots.setupStatements)
+    if (setupStatements.length > 0) {
+      bodyLines.push('')
+      bodyLines.push(setupStatements)
+    }
+
+    // First createEffect: props + handlers
+    bodyLines.push('')
+    bodyLines.push('createEffect(() => {')
+    bodyLines.push('  const element = getElement()')
+    bodyLines.push('  if (!element) return')
+
+    if (hasProps) {
+      const propAssignEntries = props.map((prop) => {
+        const override = slots.reactPropOverrides[prop.name]
+        return override
+          ? `  ${prop.name}: elementProps.${prop.name} ${override}`
+          : `  ${prop.name}: elementProps.${prop.name}`
+      })
+      bodyLines.push('')
+      bodyLines.push(`  Object.assign(element, {`)
+      bodyLines.push(propAssignEntries.join(',\n'))
+      bodyLines.push(`  })`)
+    }
+
+    if (hasEvents) {
+      bodyLines.push('')
+      bodyLines.push('  handlers.length = 0')
+      for (const handler of eventHandlers) {
+        bodyLines.push(`  handlers.push(eventHandlers.${handler.handlerName})`)
+      }
+    }
+
+    bodyLines.push('})')
+
+    // Second createEffect: event listeners
+    if (hasEvents) {
+      const eventNames = eventHandlers.map((h) => `'${h.eventName}'`)
+
+      bodyLines.push('')
+      bodyLines.push('createEffect(() => {')
+      bodyLines.push('  const element = getElement()')
+      bodyLines.push('  if (!element) return')
+      bodyLines.push('')
+      bodyLines.push('  const ac = new AbortController()')
+      bodyLines.push(`  for (const [index, eventName] of [${eventNames.join(', ')}].entries()) {`)
+      bodyLines.push('    element.addEventListener(eventName, (event) => {')
+      bodyLines.push('      handlers[index]?.(event)')
+      bodyLines.push('    }, { signal: ac.signal })')
+      bodyLines.push('  }')
+      bodyLines.push('  return () => ac.abort()')
+      bodyLines.push('})')
+    }
+
+    // Return h() with ref
+    bodyLines.push('')
+    bodyLines.push('')
+    bodyLines.push(`return h(`)
+    bodyLines.push(`  '${tagName}',`)
+    bodyLines.push(`  mergeProps(restProps, {`)
+    bodyLines.push(`    ref: (el: ${componentName}Element | null  ) => {`)
+    bodyLines.push(`      setElement(el)`)
+    bodyLines.push(`    },`)
+    bodyLines.push(`  }),`)
+    bodyLines.push(`)`)
+  } else {
+    // No props or events: simple passthrough
+    bodyLines.push('')
+    bodyLines.push('const restProps = props')
+    bodyLines.push('')
+    bodyLines.push(`return h('${tagName}', restProps)`)
+  }
 
   const componentInitializer = `(props): any => {
-register${componentName}Element()
-
-${splitPropsStatement}
-${setupBlock}
-
-return h(
-  '${tagName}',
-  ${mergedProps},
-)
+${bodyLines.join('\n')}
 }`
 
   sourceFile.addVariableStatement({

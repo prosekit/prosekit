@@ -8,7 +8,7 @@ import {
   type TableHandlePopoverItemEvents,
   type TableHandlePopoverItemProps as TableHandlePopoverItemElementProps,
 } from "@prosekit/web/table-handle";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -36,19 +36,52 @@ export const TableHandlePopoverItem: Component<TableHandlePopoverItemProps> = (
 ): any => {
   registerTableHandlePopoverItemElement();
 
+  const [getElement, setElement] =
+    createSignal<TableHandlePopoverItemElement | null>(null);
+  const handlers: Array<((event: any) => void) | undefined> = [];
+
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
     ["disabled", "value"],
     ["onItemSelect"],
   );
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      disabled: elementProps.disabled,
+      value: elementProps.value,
+    });
+
+    handlers.length = 0;
+    handlers.push(eventHandlers.onItemSelect);
+  });
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    const ac = new AbortController();
+    for (const [index, eventName] of ["itemSelect"].entries()) {
+      element.addEventListener(
+        eventName,
+        (event) => {
+          handlers[index]?.(event);
+        },
+        { signal: ac.signal },
+      );
+    }
+    return () => ac.abort();
+  });
+
   return h(
     "prosekit-table-handle-popover-item",
     mergeProps(restProps, {
-      "prop:disabled": () => elementProps.disabled,
-      "prop:value": () => elementProps.value,
-      "on:itemSelect": (event: TableHandlePopoverItemEvents["itemSelect"]) =>
-        eventHandlers.onItemSelect?.(event),
+      ref: (el: TableHandlePopoverItemElement | null) => {
+        setElement(el);
+      },
     }),
   );
 };

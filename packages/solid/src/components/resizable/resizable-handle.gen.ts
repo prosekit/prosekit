@@ -7,7 +7,7 @@ import {
   type ResizableHandleElement,
   type ResizableHandleProps as ResizableHandleElementProps,
 } from "@prosekit/web/resizable";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -35,10 +35,27 @@ export const ResizableHandle: Component<ResizableHandleProps> = (
 ): any => {
   registerResizableHandleElement();
 
+  const [getElement, setElement] = createSignal<ResizableHandleElement | null>(
+    null,
+  );
+
   const [elementProps, restProps] = splitProps(props, ["position"]);
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      position: elementProps.position,
+    });
+  });
 
   return h(
     "prosekit-resizable-handle",
-    mergeProps(restProps, { "prop:position": () => elementProps.position }),
+    mergeProps(restProps, {
+      ref: (el: ResizableHandleElement | null) => {
+        setElement(el);
+      },
+    }),
   );
 };

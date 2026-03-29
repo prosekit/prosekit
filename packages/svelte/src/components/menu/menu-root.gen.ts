@@ -3,9 +3,9 @@
  */
 
 import MenuRootComponent from "./menu-root.gen.svelte";
-import type {
-  MenuRootEvents,
-  MenuRootProps as MenuRootElementProps,
+import {
+  type MenuRootEvents,
+  type MenuRootProps as MenuRootElementProps,
 } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 

@@ -3,7 +3,7 @@
  */
 
 import MenuItemComponent from "./menu-item.gen.svelte";
-import type { MenuItemProps as MenuItemElementProps } from "@prosekit/web/menu";
+import { type MenuItemProps as MenuItemElementProps } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 
 /**
@@ -24,6 +24,12 @@ export interface MenuItemProps {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
+  /**
+   * Whether to close the menu when the item is clicked.
+   *
+   * @default true
+   */
+  closeOnClick?: MenuItemElementProps["closeOnClick"];
   children?: Snippet;
   [key: string]: unknown;
 }

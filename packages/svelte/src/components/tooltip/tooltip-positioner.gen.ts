@@ -3,7 +3,7 @@
  */
 
 import TooltipPositionerComponent from "./tooltip-positioner.gen.svelte";
-import type { TooltipPositionerProps as TooltipPositionerElementProps } from "@prosekit/web/tooltip";
+import { type TooltipPositionerProps as TooltipPositionerElementProps } from "@prosekit/web/tooltip";
 import type { Component, Snippet } from "svelte";
 
 /**

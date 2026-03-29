@@ -3,7 +3,7 @@
  */
 
 import MenuPositionerComponent from "./menu-positioner.gen.svelte";
-import type { MenuPositionerProps as MenuPositionerElementProps } from "@prosekit/web/menu";
+import { type MenuPositionerProps as MenuPositionerElementProps } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 
 /**

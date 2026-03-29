@@ -3,9 +3,9 @@
  */
 
 import MenuTriggerComponent from "./menu-trigger.gen.svelte";
-import type {
-  MenuTriggerEvents,
-  MenuTriggerProps as MenuTriggerElementProps,
+import {
+  type MenuTriggerEvents,
+  type MenuTriggerProps as MenuTriggerElementProps,
 } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 

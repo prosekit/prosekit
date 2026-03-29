@@ -37,6 +37,12 @@ export interface MenuItemProps extends HTMLAttributes<MenuItemElement> {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
+  /**
+   * Whether to close the menu when the item is clicked.
+   *
+   * @default true
+   */
+  closeOnClick?: MenuItemElementProps["closeOnClick"];
 }
 
 function MenuItemComponent(
@@ -47,12 +53,12 @@ function MenuItemComponent(
 
   const elementRef = useRef<MenuItemElement>(null);
 
-  const { disabled: p0, value: p1, ...restProps } = props;
+  const { closeOnClick: p0, disabled: p1, value: p2, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { disabled: p0, value: p1 });
+    Object.assign(element, { closeOnClick: p0, disabled: p1, value: p2 });
   });
 
   const mergedRef = useCallback((element: MenuItemElement | null) => {

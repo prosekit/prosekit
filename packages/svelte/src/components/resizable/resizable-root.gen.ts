@@ -3,9 +3,9 @@
  */
 
 import ResizableRootComponent from "./resizable-root.gen.svelte";
-import type {
-  ResizableRootEvents,
-  ResizableRootProps as ResizableRootElementProps,
+import {
+  type ResizableRootEvents,
+  type ResizableRootProps as ResizableRootElementProps,
 } from "@prosekit/web/resizable";
 import type { Component, Snippet } from "svelte";
 

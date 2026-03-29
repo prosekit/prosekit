@@ -3,9 +3,9 @@
  */
 
 import AutocompleteListComponent from "./autocomplete-list.gen.svelte";
-import type {
-  AutocompleteListEvents,
-  AutocompleteListProps as AutocompleteListElementProps,
+import {
+  type AutocompleteListEvents,
+  type AutocompleteListProps as AutocompleteListElementProps,
 } from "@prosekit/web/autocomplete";
 import type { Component, Snippet } from "svelte";
 

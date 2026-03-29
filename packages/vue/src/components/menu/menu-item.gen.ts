@@ -34,6 +34,12 @@ export interface MenuItemProps {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
+  /**
+   * Whether to close the menu when the item is clicked.
+   *
+   * @default true
+   */
+  closeOnClick?: MenuItemElementProps["closeOnClick"];
 }
 
 /**
@@ -49,17 +55,22 @@ export const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes> =
       const elementRef = shallowRef<HTMLElement | null>(null);
 
       const splittedProps = computed(() => {
-        const { disabled: p0, value: p1, ...restProps } = props;
-        return [[p0, p1], restProps] as const;
+        const {
+          closeOnClick: p0,
+          disabled: p1,
+          value: p2,
+          ...restProps
+        } = props;
+        return [[p0, p1, p2], restProps] as const;
       });
 
       watchEffect(() => {
         const element = elementRef.value;
         if (!element) return;
 
-        const [p0, p1] = splittedProps.value[0];
+        const [p0, p1, p2] = splittedProps.value[0];
 
-        Object.assign(element, { disabled: p0, value: p1 });
+        Object.assign(element, { closeOnClick: p0, disabled: p1, value: p2 });
       });
 
       return () => {
@@ -71,5 +82,5 @@ export const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes> =
         );
       };
     },
-    { props: ["disabled", "value"] },
+    { props: ["closeOnClick", "disabled", "value"] },
   );

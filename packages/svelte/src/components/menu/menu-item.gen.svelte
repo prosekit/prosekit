@@ -4,13 +4,13 @@
   import { registerMenuItemElement } from '@prosekit/web/menu'
   registerMenuItemElement()
 
-  let { disabled: p0, value: p1, children = undefined, ...restProps } = $props()
+  let { closeOnClick: p0, disabled: p1, value: p2, children = undefined, ...restProps } = $props()
   let element
 
   $effect(() => {
     if (!element) return
 
-    Object.assign(element, { disabled: p0, value: p1 })
+    Object.assign(element, { closeOnClick: p0, disabled: p1, value: p2 })
   })
 </script>
 

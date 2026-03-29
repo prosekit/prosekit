@@ -29,6 +29,12 @@ export interface MenuItemProps extends JSX.HTMLAttributes<MenuItemElement> {
    * @default false
    */
   disabled?: MenuItemElementProps["disabled"];
+  /**
+   * Whether to close the menu when the item is clicked.
+   *
+   * @default true
+   */
+  closeOnClick?: MenuItemElementProps["closeOnClick"];
 }
 
 /**
@@ -41,13 +47,18 @@ export const MenuItem: Component<MenuItemProps> = (props): any => {
 
   const [getElement, setElement] = createSignal<MenuItemElement | null>(null);
 
-  const [elementProps, restProps] = splitProps(props, ["disabled", "value"]);
+  const [elementProps, restProps] = splitProps(props, [
+    "closeOnClick",
+    "disabled",
+    "value",
+  ]);
 
   createEffect(() => {
     const element = getElement();
     if (!element) return;
 
     Object.assign(element, {
+      closeOnClick: elementProps.closeOnClick,
       disabled: elementProps.disabled,
       value: elementProps.value,
     });

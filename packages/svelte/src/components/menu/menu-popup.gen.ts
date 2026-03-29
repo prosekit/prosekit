@@ -3,7 +3,7 @@
  */
 
 import MenuPopupComponent from "./menu-popup.gen.svelte";
-import type { MenuPopupProps as MenuPopupElementProps } from "@prosekit/web/menu";
+import { type MenuPopupProps as MenuPopupElementProps } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 
 /**

@@ -3,7 +3,7 @@
  */
 
 import TooltipTriggerComponent from "./tooltip-trigger.gen.svelte";
-import type { TooltipTriggerProps as TooltipTriggerElementProps } from "@prosekit/web/tooltip";
+import { type TooltipTriggerProps as TooltipTriggerElementProps } from "@prosekit/web/tooltip";
 import type { Component, Snippet } from "svelte";
 
 /**

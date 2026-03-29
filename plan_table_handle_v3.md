@@ -58,6 +58,8 @@ From the TODO in `index.ts`:
 </TableHandleRoot>
 ```
 
+<!-- update : 注意不要直接用 aria 的 menu root。增加一个新的 packages/web/src/components/menu/index.ts, 然后像类似 packages/web/src/components/tooltip/index.ts 的方式去 re-export aria-ui 的 components -->
+
 ---
 
 ## Current vs Desired Component Mapping
@@ -128,6 +130,7 @@ This is cleaner because the "position the handle next to the cell" concern is se
 
 These are compatible. Existing consumer code listening for `'select'` events will still work. The event class name changes but the event type string is the same.
 
+<!-- Update: Remove the TableHandlePopoverItemSelectEvent from the codebase -->
 ---
 
 ## Implementation Plan
@@ -147,6 +150,8 @@ These are compatible. Existing consumer code listening for `'select'` events wil
    - **Option**: Re-export and register with `prosekit-menu-*` names → avoids collision, consistent naming
    - **Option**: Use `aria-ui-menu-*` names directly → less code, but mixed naming
    - **Recommendation**: Create thin prosekit wrappers (`TableHandleMenuRoot`, `TableHandleMenuTrigger`, etc.) that just re-register with prosekit-prefixed names. This keeps the CLI wrapper generation working.
+
+<!-- update: as I said above, add new packages/web/src/components/menu/index.ts with prosekit prefix  -->
 
 ### Phase 2: Create new positioning components
 
@@ -191,6 +196,8 @@ Update `index.ts` to:
 - Remove old `TableHandleColumnRoot`, `TableHandleRowRoot`
 
 Update `build.mjs` — no changes needed since the CLI already processes `table-handle/index.ts`.
+
+<!-- update: you need to update build.mjs to add menu  -->
 
 ### Phase 6: Update framework wrappers
 

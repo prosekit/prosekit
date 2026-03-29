@@ -90,6 +90,10 @@
         "types": "./dist/prosekit-web-inline-popover.d.ts",
         "default": "./dist/prosekit-web-inline-popover.js"
       },
+      "./menu": {
+        "types": "./dist/prosekit-web-menu.d.ts",
+        "default": "./dist/prosekit-web-menu.js"
+      },
       "./popover": {
         "types": "./dist/prosekit-web-popover.d.ts",
         "default": "./dist/prosekit-web-popover.js"
@@ -128,6 +132,9 @@
         "inline-popover": [
           "./dist/prosekit-web-inline-popover.d.ts"
         ],
+        "menu": [
+          "./dist/prosekit-web-menu.d.ts"
+        ],
         "popover": [
           "./dist/prosekit-web-popover.d.ts"
         ],
@@ -150,6 +157,7 @@
       "prosekit-web-block-handle": "./src/components/block-handle/index.ts",
       "prosekit-web-drop-indicator": "./src/components/drop-indicator/index.ts",
       "prosekit-web-inline-popover": "./src/components/inline-popover/index.ts",
+      "prosekit-web-menu": "./src/components/menu/index.ts",
       "prosekit-web-popover": "./src/components/popover/index.ts",
       "prosekit-web-resizable": "./src/components/resizable/index.ts",
       "prosekit-web-table-handle": "./src/components/table-handle/index.ts",

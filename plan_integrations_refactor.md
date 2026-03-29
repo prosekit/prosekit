@@ -75,7 +75,7 @@ export const TableHandleRowTrigger: ForwardRefExoticComponent<
 
 1. **Props destructured with short names** (`p0`, `p1`, `e0`, `e1`) — separates element props, event handlers, and passthrough (`...restProps`) in one statement. No runtime `propNames.includes()` filtering.
 
-2. **Handlers in an array, not a record** — `handlersRef.current = [e0, e1]` is a single array assignment. Dispatchers access by index `handlersRef.current[index]`, which avoids string key lookups.
+2. **Handlers in an array, not a record** — `handlersRef.current = [e0, e1]` is a single array assignment. Dispatchers access by index `handlersRef.current[index]`. Initial value is an empty array `[]` — no need to pre-fill to the correct length since `undefined` access is safe with `?.()`. Type is `Array<((event: Event) => void) | undefined>` (no `null`).
 
 3. **`Object.assign`** — sets all element properties in one call. The object literal `{ myValue: p0, myLabel: p1 }` is constructed at code-generation time.
 
@@ -241,7 +241,7 @@ Object.assign(element, { ..., editor: p0 ?? editorContext })
 - [ ] Remove `ReactWrapper` import
 - [ ] Add `useCallback`, `useLayoutEffect`, `useRef` to react imports
 - [ ] Generate props destructuring with short names (`p0`, `p1`, `e0`, `e1`, `...restProps`)
-- [ ] Generate `handlersRef` with array type (length = number of events, or omit if no events)
+- [ ] Generate `handlersRef` with type `Array<((event: Event) => void) | undefined>` and initial value `[]` (omit entirely if no events)
 - [ ] Generate first `useLayoutEffect` (no deps): `Object.assign` + `handlersRef.current = [...]`
 - [ ] Generate second `useLayoutEffect` (`[]` deps): `addEventListener` loop with `AbortController` (only if component has events)
 - [ ] Generate inline `mergedRef` via `useCallback` (sets both `elementRef` and `forwardedRef`)

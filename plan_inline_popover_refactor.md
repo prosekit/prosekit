@@ -339,10 +339,10 @@ function setupInlinePopoverRoot(host, props) {
 
 ### Phase 1: 前置修改
 
-- [ ] **1.1** 修改 `OverlayStore.anchorElement` 类型: `HTMLElement` → `ReferenceElement`
-  - [ ] 更新 `aria-ui/packages/elements/src/overlay/overlay-store.ts`
-  - [ ] 检查所有使用者兼容性
-  - [ ] 运行测试
+- [x] **1.1** 修改 `OverlayStore.anchorElement` 类型: `HTMLElement` → `ReferenceElement`
+  - [x] 更新 `aria-ui/packages/elements/src/overlay/overlay-store.ts`
+  - [x] 检查所有使用者兼容性 — overlay-positioner.ts 的 `togglePopover` 调用需要 HTMLElement，已添加 `isNodeLike && isHTMLElement` 类型守卫
+  - [x] 构建通过
 
 ### Phase 2: 创建新文件
 

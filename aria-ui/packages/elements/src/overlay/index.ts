@@ -1,4 +1,8 @@
 export { OpenChangeEvent } from './open-change-event.ts'
+export { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from './overlay-popup.ts'
 export { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type OverlayPositionerProps } from './overlay-positioner.ts'
+export { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from './overlay-root.ts'
+export { OverlayStore } from './overlay-store.ts'
 export { updatePlacement } from './positioning.ts'
-export { useOverlayStore}from './overlay-root.ts'
+
+

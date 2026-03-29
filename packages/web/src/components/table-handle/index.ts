@@ -3,7 +3,7 @@ export {
   setupTableHandleColumnPopup,
   TableHandleColumnPopupElement,
   TableHandleColumnPopupPropsDeclaration,
-  type TableHandleColumnPopupProps
+  type TableHandleColumnPopupProps,
 } from './table-handle-column-popup.ts'
 
 export {
@@ -11,7 +11,7 @@ export {
   setupTableHandleColumnPositioner,
   TableHandleColumnPositionerElement,
   TableHandleColumnPositionerPropsDeclaration,
-  type TableHandleColumnPositionerProps
+  type TableHandleColumnPositionerProps,
 } from './table-handle-column-positioner.ts'
 
 export {
@@ -19,7 +19,7 @@ export {
   setupTableHandleColumnTrigger,
   TableHandleColumnTriggerElement,
   TableHandleColumnTriggerPropsDeclaration,
-  type TableHandleColumnTriggerProps
+  type TableHandleColumnTriggerProps,
 } from './table-handle-column-trigger.ts'
 
 export {
@@ -27,7 +27,7 @@ export {
   setupTableHandleDragPreview,
   TableHandleDragPreviewElement,
   TableHandleDragPreviewPropsDeclaration,
-  type TableHandleDragPreviewProps
+  type TableHandleDragPreviewProps,
 } from './table-handle-drag-preview.ts'
 
 export {
@@ -35,7 +35,7 @@ export {
   setupTableHandleDropIndicator,
   TableHandleDropIndicatorElement,
   TableHandleDropIndicatorPropsDeclaration,
-  type TableHandleDropIndicatorProps
+  type TableHandleDropIndicatorProps,
 } from './table-handle-drop-indicator.ts'
 
 export {
@@ -43,7 +43,7 @@ export {
   setupTableHandleRoot,
   TableHandleRootElement,
   TableHandleRootPropsDeclaration,
-  type TableHandleRootProps
+  type TableHandleRootProps,
 } from './table-handle-root.ts'
 
 export {
@@ -51,7 +51,7 @@ export {
   setupTableHandleRowPopup,
   TableHandleRowPopupElement,
   TableHandleRowPopupPropsDeclaration,
-  type TableHandleRowPopupProps
+  type TableHandleRowPopupProps,
 } from './table-handle-row-popup.ts'
 
 export {
@@ -59,7 +59,7 @@ export {
   setupTableHandleRowPositioner,
   TableHandleRowPositionerElement,
   TableHandleRowPositionerPropsDeclaration,
-  type TableHandleRowPositionerProps
+  type TableHandleRowPositionerProps,
 } from './table-handle-row-positioner.ts'
 
 export {
@@ -67,5 +67,5 @@ export {
   setupTableHandleRowTrigger,
   TableHandleRowTriggerElement,
   TableHandleRowTriggerPropsDeclaration,
-  type TableHandleRowTriggerProps
+  type TableHandleRowTriggerProps,
 } from './table-handle-row-trigger.ts'

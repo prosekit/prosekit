@@ -69,7 +69,9 @@ export interface TableHandleColumnPositionerProps extends Omit<OverlayPositioner
 }
 
 /** @internal */
-export const TableHandleColumnPositionerPropsDeclaration: PropsDeclaration<TableHandleColumnPositionerProps> = defineProps<TableHandleColumnPositionerProps>({
+export const TableHandleColumnPositionerPropsDeclaration: PropsDeclaration<TableHandleColumnPositionerProps> = defineProps<
+  TableHandleColumnPositionerProps
+>({
   ...OverlayPositionerPropsDeclaration,
   editor: { default: null, attribute: false, type: 'json' },
   placement: { default: 'top', attribute: 'placement', type: 'string' },

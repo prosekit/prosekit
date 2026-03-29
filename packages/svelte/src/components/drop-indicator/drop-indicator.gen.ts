@@ -3,7 +3,7 @@
  */
 
 import DropIndicatorComponent from "./drop-indicator.gen.svelte";
-import { type DropIndicatorProps as DropIndicatorElementProps } from "@prosekit/web/drop-indicator";
+import type { DropIndicatorProps as DropIndicatorElementProps } from "@prosekit/web/drop-indicator";
 import type { Component, Snippet } from "svelte";
 
 /**

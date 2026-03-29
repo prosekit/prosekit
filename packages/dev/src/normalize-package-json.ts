@@ -157,7 +157,6 @@ function normalizePackageJsonDocumentFields(pkg: Package): void {
 }
 
 function normalizeTypesVersions(pkg: Package): void {
-
   const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)
   packageJson.publishConfig['typesVersions'] = undefined

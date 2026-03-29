@@ -3,9 +3,9 @@
  */
 
 import AutocompletePopoverComponent from "./autocomplete-popover.gen.svelte";
-import {
-  type AutocompletePopoverEvents,
-  type AutocompletePopoverProps as AutocompletePopoverElementProps,
+import type {
+  AutocompletePopoverEvents,
+  AutocompletePopoverProps as AutocompletePopoverElementProps,
 } from "@prosekit/web/autocomplete";
 import type { Component, Snippet } from "svelte";
 

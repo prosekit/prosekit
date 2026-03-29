@@ -1,11 +1,5 @@
 import { registerCustomElement } from '@aria-ui/core'
-import {
-  MenuItemElement,
-  MenuPopupElement,
-  MenuPositionerElement,
-  MenuRootElement,
-  MenuTriggerElement,
-} from '@aria-ui/elements/menu'
+import { MenuItemElement, MenuPopupElement, MenuPositionerElement, MenuRootElement, MenuTriggerElement } from '@aria-ui/elements/menu'
 import { once } from '@ocavue/utils'
 
 export {

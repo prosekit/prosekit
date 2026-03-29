@@ -3,7 +3,7 @@
  */
 
 import TableHandleColumnPositionerComponent from "./table-handle-column-positioner.gen.svelte";
-import { type TableHandleColumnPositionerProps as TableHandleColumnPositionerElementProps } from "@prosekit/web/table-handle";
+import type { TableHandleColumnPositionerProps as TableHandleColumnPositionerElementProps } from "@prosekit/web/table-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

@@ -69,7 +69,9 @@ export interface TableHandleRowPositionerProps extends Omit<OverlayPositionerPro
 }
 
 /** @internal */
-export const TableHandleRowPositionerPropsDeclaration: PropsDeclaration<TableHandleRowPositionerProps> = defineProps<TableHandleRowPositionerProps>({
+export const TableHandleRowPositionerPropsDeclaration: PropsDeclaration<TableHandleRowPositionerProps> = defineProps<
+  TableHandleRowPositionerProps
+>({
   ...OverlayPositionerPropsDeclaration,
   editor: { default: null, attribute: false, type: 'json' },
   placement: { default: 'left', attribute: 'placement', type: 'string' },

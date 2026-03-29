@@ -1,6 +1,16 @@
 import { build, propFallback } from '@aria-ui/cli'
 
-const components = ['tooltip', 'popover', 'menu', 'resizable', 'drop-indicator', 'inline-popover', 'table-handle', 'block-handle', 'autocomplete']
+const components = [
+  'tooltip',
+  'popover',
+  'menu',
+  'resizable',
+  'drop-indicator',
+  'inline-popover',
+  'table-handle',
+  'block-handle',
+  'autocomplete',
+]
 const frameworks = ['react', 'preact', 'solid', 'vue', 'svelte']
 const editorFallback = propFallback({
   prop: 'editor',

@@ -3,7 +3,7 @@
  */
 
 import MenuItemComponent from "./menu-item.gen.svelte";
-import { type MenuItemProps as MenuItemElementProps } from "@prosekit/web/menu";
+import type { MenuItemProps as MenuItemElementProps } from "@prosekit/web/menu";
 import type { Component, Snippet } from "svelte";
 
 /**

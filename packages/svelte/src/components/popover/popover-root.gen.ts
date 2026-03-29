@@ -3,9 +3,9 @@
  */
 
 import PopoverRootComponent from "./popover-root.gen.svelte";
-import {
-  type PopoverRootEvents,
-  type PopoverRootProps as PopoverRootElementProps,
+import type {
+  PopoverRootEvents,
+  PopoverRootProps as PopoverRootElementProps,
 } from "@prosekit/web/popover";
 import type { Component, Snippet } from "svelte";
 

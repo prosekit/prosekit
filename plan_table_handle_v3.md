@@ -182,14 +182,14 @@ These are compatible. Existing consumer code listening for `'select'` events wil
 
 **`table-handle-row-trigger.ts`** — same pattern.
 
-### Phase 4: Delete reimplemented components
+### ~~Phase 4: Delete reimplemented components~~ ✅
 
 Remove:
 - `table-handle-popover-popup.ts` → replaced by `MenuPopupElement` from aria-ui
 - `table-handle-popover-item.ts` → replaced by `MenuItemElement` from aria-ui
 - `table-handle-popover-positioner.ts` → replaced by `MenuPositionerElement` from aria-ui
 
-### Phase 5: Update index.ts and build
+### ~~Phase 5: Update index.ts and build~~ ✅
 
 Update `index.ts` to:
 - Export new components (`TableHandleColumnPositioner`, `TableHandleColumnPopup`, `TableHandleRowPositioner`, `TableHandleRowPopup`)
@@ -199,11 +199,11 @@ Update `index.ts` to:
 
 Update `build.mjs` — add `'menu'` to the `components` array so framework wrappers are generated for the new menu module.
 
-### Phase 6: Update framework wrappers
+### ~~Phase 6: Update framework wrappers~~ ✅
 
 Run `pnpm -w run build:package` to regenerate React/Preact/Vue/Solid/Svelte wrappers.
 
-### Phase 7: Update examples/registry
+### ~~Phase 7: Update examples/registry~~ ✅
 
 Update any example code that uses the old component names to the new structure.
 

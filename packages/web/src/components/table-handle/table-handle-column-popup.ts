@@ -16,7 +16,9 @@ import { tableHandleStoreContext } from './store.ts'
 export interface TableHandleColumnPopupProps {}
 
 /** @internal */
-export const TableHandleColumnPopupPropsDeclaration: PropsDeclaration<TableHandleColumnPopupProps> = defineProps<TableHandleColumnPopupProps>({})
+export const TableHandleColumnPopupPropsDeclaration: PropsDeclaration<TableHandleColumnPopupProps> = defineProps<
+  TableHandleColumnPopupProps
+>({})
 
 /** @internal */
 export function setupTableHandleColumnPopup(

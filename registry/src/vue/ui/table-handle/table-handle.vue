@@ -2,12 +2,7 @@
 import type { Editor } from 'prosekit/core'
 import type { TableExtension } from 'prosekit/extensions/table'
 import { useEditorDerivedValue } from 'prosekit/vue'
-import {
-  MenuItem,
-  MenuPopup,
-  MenuPositioner,
-  MenuRoot,
-} from 'prosekit/vue/menu'
+import { MenuItem, MenuPopup, MenuPositioner, MenuRoot } from 'prosekit/vue/menu'
 import {
   TableHandleColumnPopup,
   TableHandleColumnPositioner,

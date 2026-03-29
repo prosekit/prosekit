@@ -1,12 +1,7 @@
 import type { Editor } from 'prosekit/core'
 import type { TableExtension } from 'prosekit/extensions/table'
 import { useEditorDerivedValue } from 'prosekit/react'
-import {
-  MenuItem,
-  MenuPopup,
-  MenuPositioner,
-  MenuRoot,
-} from 'prosekit/react/menu'
+import { MenuItem, MenuPopup, MenuPositioner, MenuRoot } from 'prosekit/react/menu'
 import {
   TableHandleColumnPopup,
   TableHandleColumnPositioner,

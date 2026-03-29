@@ -3,7 +3,7 @@
  */
 
 import TableHandleRootComponent from "./table-handle-root.gen.svelte";
-import { type TableHandleRootProps as TableHandleRootElementProps } from "@prosekit/web/table-handle";
+import type { TableHandleRootProps as TableHandleRootElementProps } from "@prosekit/web/table-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

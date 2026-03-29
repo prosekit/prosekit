@@ -2,12 +2,7 @@
 import type { Editor } from 'prosekit/core'
 import type { TableExtension } from 'prosekit/extensions/table'
 import { useEditorDerivedValue } from 'prosekit/svelte'
-import {
-  MenuItem,
-  MenuPopup,
-  MenuPositioner,
-  MenuRoot,
-} from 'prosekit/svelte/menu'
+import { MenuItem, MenuPopup, MenuPositioner, MenuRoot } from 'prosekit/svelte/menu'
 import {
   TableHandleColumnPopup,
   TableHandleColumnPositioner,

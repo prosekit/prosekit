@@ -3,11 +3,10 @@ import { Collection } from '@aria-ui-v2/utils'
 
 import type { OverlayStore } from '../overlay/overlay-store.ts'
 
-
 /**
  * @internal
  */
-export interface MenuStore  {
+export interface MenuStore {
   overlayStore: OverlayStore
   getParentStore(): MenuStore | undefined
   getActiveValue(): string | null
@@ -15,8 +14,6 @@ export interface MenuStore  {
   getCollection(): Collection
   setCollection(collection: Collection): void
 }
-
-
 
 /**
  * @internal
@@ -26,7 +23,7 @@ export function createMenuStore(overlayStore: OverlayStore, getParentStore?: () 
   const collection = createSignal<Collection>(new Collection([]))
 
   return {
-    overlayStore, 
+    overlayStore,
     getParentStore: getParentStore || (() => undefined),
     getActiveValue: activeValue.get,
     setActiveValue: activeValue.set,
@@ -35,12 +32,10 @@ export function createMenuStore(overlayStore: OverlayStore, getParentStore?: () 
   }
 }
 
-
 /**
  * @internal
  */
 export const MenuStoreContext: Context<MenuStore> = createContext<MenuStore>('MenuStoreContext')
-
 
 /**
  * @internal
@@ -52,5 +47,3 @@ export function closeMenuTree(store: MenuStore): void {
     closeMenuTree(parentStore)
   }
 }
-
-

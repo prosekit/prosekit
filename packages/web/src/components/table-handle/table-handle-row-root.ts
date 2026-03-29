@@ -12,7 +12,12 @@ import {
   type Store,
 } from '@aria-ui-v2/core'
 import { createMenuStore, MenuStoreContext } from '@aria-ui-v2/elements/menu'
-import { createOverlayStore, OverlayPositionerPropsDeclaration, updatePlacement, type OverlayPositionerProps } from '@aria-ui-v2/elements/overlay'
+import {
+  createOverlayStore,
+  OverlayPositionerPropsDeclaration,
+  updatePlacement,
+  type OverlayPositionerProps,
+} from '@aria-ui-v2/elements/overlay'
 import { useAttribute, usePresence } from '@aria-ui-v2/utils'
 import type { Placement } from '@floating-ui/dom'
 import { once } from '@ocavue/utils'
@@ -110,6 +115,7 @@ export function setupTableHandleRowRoot(
     const ref = getReferenceCell()
     if (!ref) return
 
+    // TODO: the root element should not handle the updatePlacement. It's positioner's job to handle updatePlacement
     return updatePlacement(host, ref, {
       strategy: props.strategy.get(),
       placement: props.placement.get(),

@@ -17,8 +17,8 @@ import { useEditorFocusChangeEvent } from '../../hooks/use-editor-focus-event-v2
 import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event-v2.ts'
 import { useKeymap } from '../../hooks/use-keymap-v2.ts'
 
-import { getVirtualSelectionElement } from './virtual-selection-element.ts'
 import { InlinePopoverStoreContext } from './store.ts'
+import { getVirtualSelectionElement } from './virtual-selection-element.ts'
 
 /**
  * @public
@@ -88,8 +88,8 @@ export function setupInlinePopoverRoot(
     if (prevSelection?.eq(selection)) return
     prevSelection = selection
 
-    const reference = getVirtualSelectionElement(view) 
-store.setAnchorElement(reference)
+    const reference = getVirtualSelectionElement(view)
+    store.setAnchorElement(reference)
 
     if (reference && props.defaultOpen.get()) {
       store.requestOpenChange(true)

@@ -1,4 +1,4 @@
-import type {  HostElement } from '@aria-ui-v2/core'
+import type { HostElement } from '@aria-ui-v2/core'
 import { computed, defineProps, useEffect, type Store } from '@aria-ui-v2/core'
 import { FeatureDetection, useElementId } from '@aria-ui-v2/utils'
 import type { AutoUpdateOptions, Boundary, ElementContext, OffsetOptions, Placement, RootBoundary } from '@floating-ui/dom'
@@ -189,7 +189,7 @@ export function setupOverlayPositioner(
   props: Store<OverlayPositionerProps>,
   getStore: () => OverlayStore | undefined,
 ): void {
-  const getOpen = computed(() => getStore()?.getIsOpen() )
+  const getOpen = computed(() => getStore()?.getIsOpen())
   const getAnchorElement = computed(() => getStore()?.getAnchorElement())
 
   useEffect(host, () => {

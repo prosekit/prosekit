@@ -49,7 +49,7 @@ export function setupMenuSubmenuTrigger(
   useElementId(host)
 
   const getMenuStore = MenuStoreContext.consume(host)
-  const getParentStore = () => getMenuStore()?.getParentStore()  
+  const getParentStore = () => getMenuStore()?.getParentStore()
   const getOverlayStore = () => getMenuStore()?.overlayStore
 
   useEffect(host, () => {

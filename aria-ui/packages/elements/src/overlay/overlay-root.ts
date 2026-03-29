@@ -66,23 +66,19 @@ export function useOverlayStore(
   props: Store<OverlayRootProps>,
   options?: SetupOverlayRootOptions,
 ): OverlayStore {
-
-
-
   const getDisabled = computed(() => props.disabled.get())
 
-
   const dispatchOpenChangeEvent = (event: OpenChangeEvent) => {
-        options?.onBeforeOpenChange?.(event.open)
-        host.dispatchEvent(event)
+    options?.onBeforeOpenChange?.(event.open)
+    host.dispatchEvent(event)
   }
 
-  const store =createOverlayStore(
+  const store = createOverlayStore(
     props.open.get,
     props.open.set,
     props.defaultOpen.get,
     getDisabled,
-   dispatchOpenChangeEvent,
+    dispatchOpenChangeEvent,
   )
 
   useAriaDisabled(host, getDisabled)

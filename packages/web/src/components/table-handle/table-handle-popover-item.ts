@@ -75,7 +75,7 @@ export function setupTableHandlePopoverItem(
     const store = getStore()
     if (!store) return
     const value = props.value.get()
-    const isActive = store.activeValue.get() === value
+    const isActive = store.getActiveValue() === value
     if (isActive) {
       host.setAttribute('data-active', '')
     } else {
@@ -92,7 +92,7 @@ export function setupTableHandlePopoverItem(
     const levelItems = [...allItems].filter(
       (el) => el.closest('prosekit-table-handle-popover-popup') === popup,
     )
-    store.collection.set(new Collection(levelItems))
+    store.setCollection(new Collection(levelItems))
   }
 
   onMount(host, () => {
@@ -110,7 +110,7 @@ export function setupTableHandlePopoverItem(
     if (props.disabled.get()) return
     const store = getStore()
     if (!store) return
-    store.activeValue.set(props.value.get())
+    store.setActiveValue(props.value.get())
   })
 
   useEventListener(host, 'click', () => {
@@ -118,7 +118,7 @@ export function setupTableHandlePopoverItem(
     const store = getStore()
     if (!store) return
 
-    store.activeValue.set(props.value.get())
+    store.setActiveValue(props.value.get())
 
     const selectEvent = new TableHandlePopoverItemSelectEvent()
     host.dispatchEvent(selectEvent)

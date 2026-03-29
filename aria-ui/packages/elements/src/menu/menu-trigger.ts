@@ -53,11 +53,11 @@ export function setupMenuTrigger(
   const getPopupId = computed(() => getOverlayStore()?.getPopupId())
 
   usePress(host, () => {
-  getOverlayStore()?.requestOpenToggle()
+    getOverlayStore()?.requestOpenToggle()
   })
 
   useEffect(host, () => {
-     getOverlayStore()?.setAnchorElement(host)
+    getOverlayStore()?.setAnchorElement(host)
   })
 
   useAriaExpanded(host, getOpen)

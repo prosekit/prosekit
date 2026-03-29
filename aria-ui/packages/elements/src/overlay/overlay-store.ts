@@ -3,8 +3,6 @@ import type { ReferenceElement } from '@floating-ui/dom'
 
 import { OpenChangeEvent } from './open-change-event.ts'
 
-
-
 export interface OverlayStore {
   getIsOpen(): boolean
   requestOpenChange(open: boolean): void
@@ -18,13 +16,12 @@ export interface OverlayStore {
 }
 
 export function createOverlayStore(
-      getOpen: (() => boolean | null ) ,
-      setOpen: ((open: boolean) => void) ,
-      getDefaultOpen: () => boolean, 
-      getDisabled: () => boolean,
-    dispatchOpenChangeEvent: (event: OpenChangeEvent) => void,
+  getOpen: () => boolean | null,
+  setOpen: (open: boolean) => void,
+  getDefaultOpen: () => boolean,
+  getDisabled: () => boolean,
+  dispatchOpenChangeEvent: (event: OpenChangeEvent) => void,
 ): OverlayStore {
-
   const anchorElement = createSignal<ReferenceElement | undefined>(undefined)
   const positionerId = createSignal<string>('')
   const popupId = createSignal<string>('')
@@ -33,8 +30,7 @@ export function createOverlayStore(
     const canOpen = !getDisabled() && anchorElement.get()
     const openValue = getOpen() ?? getDefaultOpen()
     return canOpen ? openValue : false
-  } )
-
+  })
 
   const requestOpenChange = (open: boolean) => {
     if (getDisabled()) return
@@ -45,12 +41,12 @@ export function createOverlayStore(
   }
 
   const requestOpenToggle = () => {
-      requestOpenChange(!getIsOpen())
+    requestOpenChange(!getIsOpen())
   }
 
   return {
     getIsOpen,
-   requestOpenChange, 
+    requestOpenChange,
     requestOpenToggle,
     getPositionerId: positionerId.get,
     setPositionerId: positionerId.set,
@@ -60,5 +56,3 @@ export function createOverlayStore(
     setAnchorElement: anchorElement.set,
   }
 }
-
-

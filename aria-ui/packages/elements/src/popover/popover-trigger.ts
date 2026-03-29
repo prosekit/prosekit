@@ -85,7 +85,7 @@ export function setupPopoverTrigger(
   const getPopupId = computed(() => getStore()?.getPopupId())
 
   usePress(host, () => {
- getStore()?.requestOpenToggle()
+    getStore()?.requestOpenToggle()
   })
 
   // Handle hover interactions

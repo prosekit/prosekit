@@ -58,7 +58,7 @@ export function setupTooltipTrigger(
 ) {
   const getDisabled = props.disabled.get
   const getStore = TooltipStoreContext.consume(host)
-  const getOpen = computed(() => getStore()?.getIsOpen() )
+  const getOpen = computed(() => getStore()?.getIsOpen())
   const getPopupId = computed(() => getStore()?.getPopupId())
 
   useEffect(host, () => {

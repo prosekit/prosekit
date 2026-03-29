@@ -150,7 +150,7 @@ export function setupTableHandlePopoverPopup(
       case 'Escape':
         event.preventDefault()
         event.stopPropagation()
-        store.emitOpenChange(false)
+        store.overlayStore.requestOpenChange(false)
         return
 
       default:
@@ -162,7 +162,7 @@ export function setupTableHandlePopoverPopup(
     }
 
     if (nextValue != null) {
-      store.activeValue.set(nextValue)
+      store.setActiveValue(nextValue)
     }
   }
 
@@ -178,7 +178,7 @@ export function setupTableHandlePopoverPopup(
   useEventListener(host, 'focusout', (event: FocusEvent) => {
     const store = getStore()
     if (!store) return
-    if (!store.getOpen()) return
+    if (!store.overlayStore.getIsOpen()) return
 
     const relatedTarget = event.relatedTarget as Node | null
     const menuRoot = host.closest('prosekit-table-handle-row-root, prosekit-table-handle-column-root')
@@ -208,19 +208,19 @@ function handleTypeahead(char: string, store: MenuStore) {
     typeaheadBuffer = ''
   }, TYPEAHEAD_TIMEOUT)
 
-  const collection = store.collection.get()
+  const collection = store.getCollection()
   const values = collection.getValues()
 
   for (const value of values) {
     if (value.toLowerCase().startsWith(typeaheadBuffer)) {
-      store.activeValue.set(value)
+      store.setActiveValue(value)
       break
     }
   }
 }
 
 function activateItem(store: MenuStore, value: string) {
-  const element = store.collection.get().getElement(value)
+  const element = store.getCollection().getElement(value)
   if (!element) return
 
   const selectEvent = new TableHandlePopoverItemSelectEvent()

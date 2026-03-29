@@ -1,5 +1,14 @@
 import type { HostElement, TypedEventTarget } from '@aria-ui-v2/core'
-import { computed, defineCustomElement, defineProps, onMount, registerCustomElement, useEffect, useEventListener, type Store } from '@aria-ui-v2/core'
+import {
+  computed,
+  defineCustomElement,
+  defineProps,
+  onMount,
+  registerCustomElement,
+  useEffect,
+  useEventListener,
+  type Store,
+} from '@aria-ui-v2/core'
 import { useElementId } from '@aria-ui-v2/utils'
 
 import { MenuItemSelectEvent } from './menu-item.ts'
@@ -131,7 +140,7 @@ export function setupMenuPopup(
         event.stopPropagation()
         if (currentValue != null) {
           const activeEl = collection.getElement(currentValue)
-          if (activeEl ) {
+          if (activeEl) {
             activeEl.dispatchEvent(new Event('aria-ui:open-submenu', { bubbles: false }))
           } else {
             activateItem(menuStore, currentValue)
@@ -142,7 +151,7 @@ export function setupMenuPopup(
       case 'ArrowRight': {
         if (currentValue != null) {
           const activeEl = collection.getElement(currentValue)
-          if (activeEl ) {
+          if (activeEl) {
             event.preventDefault()
             event.stopPropagation()
             activeEl.dispatchEvent(new Event('aria-ui:open-submenu', { bubbles: false }))
@@ -157,7 +166,7 @@ export function setupMenuPopup(
           event.stopPropagation()
           parentStore.overlayStore.requestOpenChange(false)
         }
-        return 
+        return
       }
 
       case 'Escape':

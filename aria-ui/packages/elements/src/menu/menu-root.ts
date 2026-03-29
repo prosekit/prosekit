@@ -6,7 +6,7 @@ import { OpenChangeEvent } from '../overlay/open-change-event.ts'
 import { OverlayRootPropsDeclaration, type OverlayRootProps } from '../overlay/overlay-root.ts'
 import { createOverlayStore } from '../overlay/overlay-store.ts'
 
-import {  createMenuStore, MenuStoreContext } from './menu-store.ts'
+import { createMenuStore, MenuStoreContext } from './menu-store.ts'
 
 export { OpenChangeEvent }
 
@@ -39,15 +39,16 @@ export function setupMenuRoot(
   host: HostElement,
   props: Store<MenuRootProps>,
 ) {
- 
-
   const getDisabled = computed(() => props.disabled.get())
 
-
-
- 
-  const overlayStore = createOverlayStore(props.open.get, props.open.set, props.defaultOpen.get, getDisabled, (event) => host.dispatchEvent(event))
-  const menuStore = createMenuStore(overlayStore,  )
+  const overlayStore = createOverlayStore(
+    props.open.get,
+    props.open.set,
+    props.defaultOpen.get,
+    getDisabled,
+    (event) => host.dispatchEvent(event),
+  )
+  const menuStore = createMenuStore(overlayStore)
 
   useAriaDisabled(host, getDisabled)
   MenuStoreContext.provide(host, menuStore)

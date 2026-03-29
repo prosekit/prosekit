@@ -3,8 +3,18 @@
  */
 
 export {
-  InlinePopover,
-  type InlinePopoverProps,
-  type InlinePopoverEvents,
+  InlinePopoverPopup,
+  type InlinePopoverPopupProps,
+} from "./inline-popover-popup.gen.ts";
+
+export {
+  InlinePopoverPositioner,
+  type InlinePopoverPositionerProps,
+} from "./inline-popover-positioner.gen.ts";
+
+export {
+  InlinePopoverRoot,
+  type InlinePopoverRootProps,
+  type InlinePopoverRootEvents,
   OpenChangeEvent,
-} from "./inline-popover.gen.ts";
+} from "./inline-popover-root.gen.ts";

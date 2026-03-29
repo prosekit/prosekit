@@ -142,48 +142,111 @@ Svelte generates an `@attach` callback that directly sets properties and adds ev
 
 ---
 
-## 3. Proposed Solution: `setupElementProps` Pure Function
+## 3. Proposed Solution: Two Pure Functions
 
-A single pure function that sets JS properties and adds event listeners on a custom element, returning a cleanup function.
+Inspired by [Lit's `@lit/react` create-component.ts](https://github.com/lit/lit/blob/main/packages/react/src/create-component.ts), use the `EventListenerObject` pattern to avoid frequent `addEventListener`/`removeEventListener` DOM calls.
+
+### Core Idea: `EventListenerObject`
+
+The browser's `addEventListener` accepts not only functions but also objects with a `handleEvent` method:
+
+```typescript
+const handler: EventListenerObject = { handleEvent: myFunction }
+element.addEventListener('click', handler)    // register once
+handler.handleEvent = newFunction             // swap handler — zero DOM calls
+element.removeEventListener('click', handler) // remove once on unmount
+```
+
+This means on re-renders we only mutate a JS property instead of doing DOM operations.
+
+### Implementation: `setupElementProps` + `cleanupElementProps`
 
 ```typescript
 // @aria-ui-v2/integrations/setup
 
+// WeakMap so handlers are GC'd when the element is removed from DOM
+const elementHandlers = new WeakMap<HTMLElement, Map<string, EventListenerObject>>()
+
 /**
- * Sets JS properties and adds event listeners on a custom element.
- * Returns a cleanup function that removes all event listeners.
+ * Sets JS properties and registers/updates event listeners on a custom element.
  *
- * @param element - The custom element to configure
- * @param props - All props from the framework (element props + event handlers + passthrough)
- * @param propNames - Names of properties to set on the element
- * @param eventNameMap - Maps handler prop names (e.g. "onItemSelect") to DOM event names (e.g. "itemSelect")
+ * - First call on an element: sets properties + calls addEventListener once per event.
+ * - Subsequent calls: sets properties + swaps handleEvent references (no DOM calls).
+ * - If a handler becomes undefined: calls removeEventListener for that event.
+ *
+ * Can be called on every render — it's cheap after the first call.
  */
 export function setupElementProps(
   element: HTMLElement,
   props: Record<string, unknown>,
   propNames: readonly string[],
   eventNameMap: Readonly<Record<string, string>>,
-): VoidFunction {
+): void {
+  // Set properties (idempotent)
   for (const name of propNames) {
     if (name in props) {
       ;(element as Record<string, unknown>)[name] = props[name]
     }
   }
 
-  const ac = new AbortController()
+  // Get or create handler map for this element
+  let handlers = elementHandlers.get(element)
+  if (!handlers) {
+    handlers = new Map()
+    elementHandlers.set(element, handlers)
+  }
 
+  // Add or update event listeners
   for (const [handlerName, eventName] of Object.entries(eventNameMap)) {
-    const handler = props[handlerName]
-    if (typeof handler === 'function') {
-      element.addEventListener(eventName, handler as EventListener, { signal: ac.signal })
+    const listener = props[handlerName]
+    const existing = handlers.get(eventName)
+
+    if (typeof listener === 'function') {
+      if (existing) {
+        // Just swap the handler reference — no DOM operation
+        existing.handleEvent = listener as EventListener
+      } else {
+        // First time: addEventListener once
+        const obj: EventListenerObject = { handleEvent: listener as EventListener }
+        element.addEventListener(eventName, obj)
+        handlers.set(eventName, obj)
+      }
+    } else if (existing) {
+      // Handler removed: removeEventListener
+      element.removeEventListener(eventName, existing)
+      handlers.delete(eventName)
+    }
+  }
+}
+
+/**
+ * Removes all event listeners previously registered by setupElementProps.
+ * Call this on unmount.
+ */
+export function cleanupElementProps(
+  element: HTMLElement,
+  eventNameMap: Readonly<Record<string, string>>,
+): void {
+  const handlers = elementHandlers.get(element)
+  if (!handlers) return
+
+  for (const eventName of Object.values(eventNameMap)) {
+    const existing = handlers.get(eventName)
+    if (existing) {
+      element.removeEventListener(eventName, existing)
     }
   }
 
-  return () => ac.abort()
+  elementHandlers.delete(element)
 }
 ```
 
-No class. No stored state. The caller manages the returned cleanup function. Bundlers can tree-shake it trivially since it's a standalone export with no side effects.
+**Key properties:**
+- No class — two plain exported functions
+- `WeakMap` state is GC-friendly — no memory leaks
+- `setupElementProps` is idempotent and cheap on subsequent calls (property writes + `handleEvent` swaps)
+- `cleanupElementProps` does the final `removeEventListener` calls
+- Tree-shakeable — if a framework doesn't use events, the event-related code is dead
 
 ### Integration with each framework
 
@@ -191,25 +254,10 @@ No class. No stored state. The caller manages the returned cleanup function. Bun
 
 Refactor the existing `createComponent` internals. External API unchanged — generated code stays the same.
 
-```typescript
-// integrations/react.ts — AFTER refactor (internal change only)
-import { setupElementProps } from './setup.ts'
-
-// Inside the forwardRef component:
-useLayoutEffect(() => {
-  const element = elementRef.current
-  if (!element) return
-  // cleanup = abort previous listeners, then setup new ones
-  return setupElementProps(element, props, propNames, eventNameMap)
-})
-```
-
-This replaces the current 3 separate `useLayoutEffect` hooks (prop setting, event handler ref update, event listener registration) with a single one.
-
-Current `createComponent` in `react.ts` (95 lines of prop/event logic):
+Current `createComponent` in `react.ts` has 3 `useLayoutEffect` hooks:
 ```typescript
 // Current: 3 useLayoutEffect hooks
-useLayoutEffect(() => {  // Set all properties
+useLayoutEffect(() => {  // 1. Set all properties
   const element = elementRef.current
   if (!element) return
   for (const [name, value] of Object.entries(elementProps)) {
@@ -217,41 +265,35 @@ useLayoutEffect(() => {  // Set all properties
   }
 })
 
-useLayoutEffect(() => {  // Set all event listeners ref
+useLayoutEffect(() => {  // 2. Store event handlers in ref
   eventHandlersRef.current = eventHandlers
 })
 
-useLayoutEffect(() => {  // Register all event listeners
+useLayoutEffect(() => {  // 3. Register all event listeners
   const element = elementRef.current
   if (!element) return
-  const eventNames: string[] = Object.values(eventNameMap)
-  const eventHandlers: Array<[string, EventHandler]> = []
-  for (const eventName of eventNames) {
-    const handler = (event: Event) => {
-      eventHandlersRef.current[eventName]?.(event)
-    }
-    eventHandlers.push([eventName, handler])
-  }
-  for (const [eventName, handler] of eventHandlers) {
-    element.addEventListener(eventName, handler)
-  }
+  // ... 20+ lines of addEventListener/removeEventListener
+}, [])
+```
+
+After — 2 hooks, much simpler:
+```typescript
+// Every render: set props + swap event handlers (cheap — no DOM calls after first)
+useLayoutEffect(() => {
+  const element = elementRef.current
+  if (!element) return
+  setupElementProps(element, props, propNames, eventNameMap)
+})
+
+// Unmount only: removeEventListener
+useLayoutEffect(() => {
   return () => {
-    for (const [eventName, handler] of eventHandlers) {
-      element.removeEventListener(eventName, handler)
-    }
+    if (elementRef.current) cleanupElementProps(elementRef.current, eventNameMap)
   }
 }, [])
 ```
 
-After:
-```typescript
-// After: 1 useLayoutEffect
-useLayoutEffect(() => {
-  const element = elementRef.current
-  if (!element) return
-  return setupElementProps(element, props, propNames, eventNameMap)
-})
-```
+The first `useLayoutEffect` (no deps) runs every render. On the first call, `setupElementProps` does `addEventListener` for each event. On subsequent calls, it only swaps `handleEvent` references — no DOM operations. The second hook runs cleanup on unmount.
 
 #### Solid — keep as-is
 
@@ -259,7 +301,7 @@ Solid's `"prop:xxx"` and `"on:xxx"` are reactive and framework-native. No change
 
 #### Vue
 
-Replace the inline switch/case + ref callback + `_eventHandlers` with `setupElementProps`:
+Replace the inline switch/case + ref callback + `_eventHandlers` with `setupElementProps` + `cleanupElementProps`.
 
 **Current generated code (Vue, component with events):**
 ```typescript
@@ -302,7 +344,7 @@ Replace the inline switch/case + ref callback + `_eventHandlers` with `setupElem
 
 **After refactor:**
 ```typescript
-import { setupElementProps } from '@aria-ui-v2/integrations/setup'
+import { setupElementProps, cleanupElementProps } from '@aria-ui-v2/integrations/setup'
 
 const _propNames = ["disabled", "value"]
 const _eventNameMap = { onItemSelect: "itemSelect" }
@@ -311,16 +353,25 @@ const _managedKeys = new Set([..._propNames, ...Object.keys(_eventNameMap)])
 // ...
 (props, { slots }) => {
   registerElement()
-  let _cleanup: VoidFunction | undefined
+  let _element: HTMLElement | undefined
 
   const _ref = (element: HTMLElement | null | undefined) => {
-    _cleanup?.()
-    _cleanup = undefined
-    if (!element) return
-    _cleanup = setupElementProps(element, props, _propNames, _eventNameMap)
+    if (element) {
+      _element = element
+    } else if (_element) {
+      cleanupElementProps(_element, _eventNameMap)
+      _element = undefined
+    }
   }
 
   return () => {
+    // setupElementProps on every render:
+    //   - First call: sets properties + addEventListener once per event
+    //   - Subsequent calls: sets properties + swaps handleEvent (no DOM calls)
+    if (_element) {
+      setupElementProps(_element, props, _propNames, _eventNameMap)
+    }
+
     const _props: Record<string, unknown> = {}
     for (const [key, value] of Object.entries(props)) {
       if (!_managedKeys.has(key)) {
@@ -335,12 +386,11 @@ const _managedKeys = new Set([..._propNames, ...Object.keys(_eventNameMap)])
 
 Changes:
 - No more `_eventHandlers` record
-- No more `_abortController` management
+- No more `AbortController` management
 - No more `switch/case` — replaced with `_managedKeys.has()` filter
-- No more manual `addEventListener` calls
-- The `_ref` callback is just: cleanup old → `setupElementProps` → store cleanup
-
-**For components WITHOUT events** (no `_eventNameMap`), the generated code is even simpler — `_ref` just calls `setupElementProps` with an empty event map, and the passthrough filter only checks `_propNames`.
+- No more manual `addEventListener` in generated code
+- `_ref` only tracks mount/unmount. Property + event updates happen in the render function via `setupElementProps` (cheap after first call).
+- On unmount, `cleanupElementProps` does the final `removeEventListener` calls.
 
 #### Svelte
 
@@ -367,20 +417,19 @@ Changes:
 **After refactor:**
 ```svelte
 <script lang="js">
-  import { setupElementProps } from '@aria-ui-v2/integrations/setup'
+  import { setupElementProps, cleanupElementProps } from '@aria-ui-v2/integrations/setup'
   import { registerElement } from '@prosekit/web/table-handle'
   registerElement()
 
   let { disabled: p0, value: p1, onItemSelect: p2, children = undefined, ...restProps } = $props()
 
+  const _propNames = ["disabled", "value"]
+  const _eventNameMap = { onItemSelect: "itemSelect" }
+
   const attachment = (element) => {
     if (!element) return
-    return setupElementProps(
-      element,
-      { disabled: p0, value: p1, onItemSelect: p2 },
-      ["disabled", "value"],
-      { onItemSelect: "itemSelect" },
-    )
+    setupElementProps(element, { disabled: p0, value: p1, onItemSelect: p2 }, _propNames, _eventNameMap)
+    return () => cleanupElementProps(element, _eventNameMap)
   }
 </script>
 ```
@@ -389,7 +438,7 @@ Changes:
 - No more manual `AbortController`
 - No more manual property assignment per prop
 - No more manual `addEventListener` per event
-- Single `setupElementProps` call replaces all of it
+- `setupElementProps` handles everything; `cleanupElementProps` in the cleanup return
 
 ---
 
@@ -448,6 +497,6 @@ Changes:
 
 ## 6. Open Questions
 
-1. **Should `setupElementProps` also return a `filterProps` helper?** Currently each framework filters out managed props. We could export a separate `filterProps(props, propNames, eventNameMap)` to unify this too. But it's simple enough inline.
+1. **Should we also export `filterProps`?** Currently each framework filters out managed props (Vue uses `_managedKeys.has()`, Svelte uses destructuring). A shared `filterProps(props, propNames, eventNameMap)` could reduce generated code further, but it's simple enough inline.
 
-2. **Vue render-phase re-calls**: Vue's `_ref` is called from the render function on every update. With `setupElementProps`, each call aborts old listeners and creates new ones. This is correct because the event handlers may have changed between renders (e.g., the handler closure captures new state).
+2. **WeakMap module-level state**: The `elementHandlers` WeakMap is module-level state. This is fine for tree-shaking (the whole module is excluded if unused) and GC (WeakMap doesn't prevent element collection). But it means two separate imports of the module would share state — which is actually desirable (same element, same handler map).

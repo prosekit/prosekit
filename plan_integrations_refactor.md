@@ -21,7 +21,10 @@ After this change: the generated React code is self-contained. No `@aria-ui-v2/i
 The user's pseudocode for what the generated React component should look like:
 
 ```tsx
-function TableHandleRowTriggerComponent(  props: TableHandleRowTriggerProps,  forwardedRef: ForwardedRef<TableHandleRowTriggerElement>,) {
+function TableHandleRowTriggerComponent(
+  props: TableHandleRowTriggerProps,
+  forwardedRef: ForwardedRef<TableHandleRowTriggerElement>,
+) {
   registerElement()
 
   const elementRef = useRef<HTMLElement>(null)
@@ -29,8 +32,6 @@ function TableHandleRowTriggerComponent(  props: TableHandleRowTriggerProps,  fo
 
   const { myValue: p0, myLabel: p1, onMyValueChange: e0, onMyLabelChange: e1, ...restProps } = props
 
-// update: delete this comment
-  // Every render: set properties + update handler refs
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null
     if (!element) return
@@ -38,8 +39,6 @@ function TableHandleRowTriggerComponent(  props: TableHandleRowTriggerProps,  fo
     handlersRef.current = [e0, e1]
   })
 
-// update: delete this comment
-  // Mount only: register dispatchers. Unmount: remove them.
   useLayoutEffect(() => {
     const element = elementRef.current
     if (!element) return
@@ -55,15 +54,16 @@ function TableHandleRowTriggerComponent(  props: TableHandleRowTriggerProps,  fo
     return () => ac.abort()
   }, [])
 
-  const mergedRef = useCallback((element: HTMLElement| null | undefined  ) => {
-    elementRef.current = element 
+  const mergedRef = useCallback((element: HTMLElement | null | undefined) => {
+    elementRef.current = element
     if (typeof forwardedRef === 'function') {
       forwardedRef(element)
     } else if (forwardedRef) {
-      forwardedRef.current = element 
+      forwardedRef.current = element
     }
   }, [])
-  return createElement('my-element', {...restProps, ref: mergedRef, suppressHydrationWarning: true  })
+
+  return createElement('my-element', { ...restProps, ref: mergedRef, suppressHydrationWarning: true })
 }
 
 export const TableHandleRowTrigger: ForwardRefExoticComponent<
@@ -83,8 +83,7 @@ export const TableHandleRowTrigger: ForwardRefExoticComponent<
    - No deps (every render): updates element properties + handler refs. All operations are JS assignments — no DOM API calls.
    - Empty deps `[]` (mount/unmount): registers stable dispatchers via `addEventListener` once, removes via `AbortController.abort()` once.
 
-<!-- update: just inline the mergedRef as shown above  -->
-5. **`mergeRefs`** — still needed for combining `elementRef` + `forwardedRef`. Will be inlined as a helper function in each generated file (or generated once per index file).
+5. **Inline `mergedRef` via `useCallback`** — combines `elementRef` + `forwardedRef` directly. No `mergeRefs` helper needed. The callback sets both refs manually.
 
 6. **No `PropsDeclaration` import** — the CLI already knows prop names and defaults. Default handling is done by the custom element itself (via `defineCustomElement`), not the framework wrapper.
 
@@ -131,7 +130,7 @@ function generateReactComponentFile(sourceFile, component, options) {
   // 1. Import react APIs (NO ReactWrapper)
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'react',
-    namedImports: ['createElement', 'forwardRef', 'useLayoutEffect', 'useMemo', 'useRef', ...types],
+    namedImports: ['createElement', 'forwardRef', 'useCallback', 'useLayoutEffect', 'useRef', ...types],
   })
 
   // 2. Import component register + types
@@ -142,12 +141,10 @@ function generateReactComponentFile(sourceFile, component, options) {
   // 4. Generate component function body:
   //    a. Destructure props: { prop0: p0, prop1: p1, onEvent0: e0, ...restProps }
   //    b. useLayoutEffect (every render): Object.assign(element, { prop0: p0, ... }) + handlersRef.current = [e0, ...]
-  //    c. useLayoutEffect (mount only): addEventListener loop with AbortController
-  //    d. mergeRefs + createElement(tagName, restProps)
+  //    c. useLayoutEffect (mount only): addEventListener loop with AbortController (omitted if no events)
+  //    d. useCallback mergedRef + createElement(tagName, { ...restProps, ref, suppressHydrationWarning })
 
   // 5. Generate forwardRef export (unchanged)
-
-  // 6. Generate mergeRefs helper (inlined in file)
 }
 ```
 
@@ -184,9 +181,24 @@ const eventNames = eventHandlers.map(h => h.eventName)
 
 If there are no events, this entire `useLayoutEffect` block is omitted.
 
-#### Step 4d: mergeRefs
+#### Step 4d: mergedRef via useCallback
 
-The `mergeRefs` + `assignRef` functions from `integrations/react.ts` will be generated as top-level helpers in each file. They're small (~20 lines total) and have no dependencies.
+```typescript
+// Generated inline:
+`const mergedRef = useCallback((element: HTMLElement | null | undefined) => {
+  elementRef.current = element
+  if (typeof forwardedRef === 'function') {
+    forwardedRef(element)
+  } else if (forwardedRef) {
+    forwardedRef.current = element
+  }
+}, [])`
+
+// Then:
+`return createElement('${tagName}', { ...restProps, ref: mergedRef, suppressHydrationWarning: true })`
+```
+
+No helper functions needed. The `useCallback` with `[]` deps ensures a stable reference.
 
 ### propFallback extension changes
 
@@ -227,14 +239,13 @@ Object.assign(element, { ..., editor: p0 ?? editorContext })
 ### 1. Update `generateReactComponentFile` in `cli/src/generate.ts`
 
 - [ ] Remove `ReactWrapper` import
-- [ ] Add `useLayoutEffect`, `useMemo`, `useRef` to react imports
+- [ ] Add `useCallback`, `useLayoutEffect`, `useRef` to react imports
 - [ ] Generate props destructuring with short names (`p0`, `p1`, `e0`, `e1`, `...restProps`)
 - [ ] Generate `handlersRef` with array type (length = number of events, or omit if no events)
 - [ ] Generate first `useLayoutEffect` (no deps): `Object.assign` + `handlersRef.current = [...]`
 - [ ] Generate second `useLayoutEffect` (`[]` deps): `addEventListener` loop with `AbortController` (only if component has events)
-- [ ] Generate `mergeRefs` + `assignRef` helpers at file level
-- [ ] Generate `restProps.ref = useMemo(...)` + `restProps.suppressHydrationWarning = true`
-- [ ] Generate `createElement(tagName, restProps)` (not `ReactWrapper`)
+- [ ] Generate inline `mergedRef` via `useCallback` (sets both `elementRef` and `forwardedRef`)
+- [ ] Generate `createElement(tagName, { ...restProps, ref: mergedRef, suppressHydrationWarning: true })`
 
 ### 2. Update propFallback extension for React
 

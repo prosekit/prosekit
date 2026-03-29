@@ -21,7 +21,7 @@ After this change: the generated React code is self-contained. No `@aria-ui-v2/i
 The user's pseudocode for what the generated React component should look like:
 
 ```tsx
-function MyReactComponent(props, forwardedRef) {
+function TableHandleRowTriggerComponent(  props: TableHandleRowTriggerProps,  forwardedRef: ForwardedRef<TableHandleRowTriggerElement>,) {
   registerElement()
 
   const elementRef = useRef<HTMLElement>(null)
@@ -29,6 +29,7 @@ function MyReactComponent(props, forwardedRef) {
 
   const { myValue: p0, myLabel: p1, onMyValueChange: e0, onMyLabelChange: e1, ...restProps } = props
 
+// update: delete this comment
   // Every render: set properties + update handler refs
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null
@@ -37,6 +38,7 @@ function MyReactComponent(props, forwardedRef) {
     handlersRef.current = [e0, e1]
   })
 
+// update: delete this comment
   // Mount only: register dispatchers. Unmount: remove them.
   useLayoutEffect(() => {
     const element = elementRef.current
@@ -53,10 +55,20 @@ function MyReactComponent(props, forwardedRef) {
     return () => ac.abort()
   }, [])
 
-  restProps.ref = useMemo(() => mergeRefs([elementRef, forwardedRef]), [forwardedRef])
-  restProps.suppressHydrationWarning = true
-  return createElement('my-element', restProps)
+  const mergedRef = useCallback((element: HTMLElement| null | undefined  ) => {
+    elementRef.current = element 
+    if (typeof forwardedRef === 'function') {
+      forwardedRef(element)
+    } else if (forwardedRef) {
+      forwardedRef.current = element 
+    }
+  }, [])
+  return createElement('my-element', {...restProps, ref: mergedRef, suppressHydrationWarning: true  })
 }
+
+export const TableHandleRowTrigger: ForwardRefExoticComponent<
+  TableHandleRowTriggerProps & RefAttributes<TableHandleRowTriggerElement>
+> = /* @__PURE__ */ forwardRef(TableHandleRowTriggerComponent);
 ```
 
 ### Key design decisions
@@ -71,6 +83,7 @@ function MyReactComponent(props, forwardedRef) {
    - No deps (every render): updates element properties + handler refs. All operations are JS assignments — no DOM API calls.
    - Empty deps `[]` (mount/unmount): registers stable dispatchers via `addEventListener` once, removes via `AbortController.abort()` once.
 
+<!-- update: just inline the mergedRef as shown above  -->
 5. **`mergeRefs`** — still needed for combining `elementRef` + `forwardedRef`. Will be inlined as a helper function in each generated file (or generated once per index file).
 
 6. **No `PropsDeclaration` import** — the CLI already knows prop names and defaults. Default handling is done by the custom element itself (via `defineCustomElement`), not the framework wrapper.

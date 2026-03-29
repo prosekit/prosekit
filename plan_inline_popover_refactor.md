@@ -379,3 +379,7 @@ function setupInlinePopoverRoot(...) {
 - [ ] **5.4** `pnpm -w run lint`
 - [ ] **5.5** 确认框架 wrapper 正确生成 (root + positioner + popup × 5 frameworks)
 - [ ] **5.6** 手动测试 inline-menu 示例
+
+<!-- update 请检查 registry/test/inline-menu.test.ts 是否需要修改  -->
+
+<!-- update: `pnpm -w run test run registry/test/inline-menu.test.ts`  -->

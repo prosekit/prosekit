@@ -8,7 +8,7 @@ import {
   type TooltipRootEvents,
   type TooltipRootProps as TooltipRootElementProps,
 } from "@prosekit/web/tooltip";
-import { mergeProps, splitProps } from "solid-js";
+import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
@@ -45,20 +45,49 @@ export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement>
 export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
   registerTooltipRootElement();
 
+  const [getElement, setElement] = createSignal<TooltipRootElement | null>(null);
+  const handlers: Array<((event: any) => void) | undefined> = []
+
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
     ["defaultOpen", "disabled", "open"],
     ["onOpenChange"],
   );
 
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    Object.assign(element, {
+      defaultOpen: elementProps.defaultOpen,
+      disabled: elementProps.disabled,
+      open: elementProps.open,
+    });
+
+    handlers.length = 0 
+    handlers.push(eventHandlers.onOpenChange)
+  });
+
+  createEffect(() => {
+    const element = getElement();
+    if (!element) return;
+
+    const ac = new AbortController()
+    for (const [index, eventName] of ['openChange'].entries()) {
+      element.addEventListener(eventName, (event) => {
+        handlers[index]?.(event)
+      }, { signal: ac.signal })
+    }
+    return () => ac.abort()
+  })
+
+
   return h(
     "prosekit-tooltip-root",
     mergeProps(restProps, {
-      "prop:defaultOpen": () => elementProps.defaultOpen,
-      "prop:disabled": () => elementProps.disabled,
-      "prop:open": () => elementProps.open,
-      "on:openChange": (event: TooltipRootEvents["openChange"]) =>
-        eventHandlers.onOpenChange?.(event),
+      ref: (el: TooltipRootElement | null  ) => {
+        setElement(el)
+      },
     }),
   );
 };

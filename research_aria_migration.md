@@ -10,8 +10,8 @@ The goal is to rewrite aria-ui as v2 (`@aria-ui-v2/*`, a temporary name) inside 
 
 - ~423 files changed, +33,959 / -3,297 lines
 - The entire `aria-ui/` directory is new (the v2 implementation)
-- **5 of 8 components fully migrated** to v2 (tooltip, popover, resizable, drop-indicator, inline-popover)
-- **3 components still on v1** (block-handle, autocomplete, table-handle)
+- **6 of 8 components fully migrated** to v2 (tooltip, popover, resizable, drop-indicator, inline-popover, table-handle)
+- **2 components still on v1** (block-handle, autocomplete)
 
 ---
 
@@ -253,20 +253,20 @@ Files still importing from `@aria-ui/` (v1) in `packages/web/src/`:
 | `utils/` | 2 files |
 | `components/autocomplete/` | 13 files |
 | `components/block-handle/` | 10 files |
-| `components/table-handle/` | 33 files |
-| **Total** | **~66 files** |
+| **Total** | **~33 files** |
 
 Files already using v2 (`@aria-ui-v2/`) in `packages/web/src/`:
 
 | Directory | Files with v2 imports |
 |-----------|-----------------------|
-| `hooks/` | 5 files (v2 copies) |
+| `hooks/` | 7 files (v2 copies) |
 | `components/tooltip/` | 1 file |
 | `components/popover/` | 1 file |
 | `components/resizable/` | 3 files |
 | `components/drop-indicator/` | 1 file |
 | `components/inline-popover/` | 2 files |
-| **Total** | **13 files** |
+| `components/table-handle/` | 14 files |
+| **Total** | **29 files** |
 
 ## Important rules!
 

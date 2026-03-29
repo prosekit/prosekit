@@ -3,6 +3,11 @@
  */
 
 import {
+  registerTableHandleRowTriggerElement,
+  type TableHandleRowTriggerElement,
+  type TableHandleRowTriggerProps as TableHandleRowTriggerElementProps,
+} from "@prosekit/web/table-handle";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,11 +18,7 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerTableHandleRowTriggerElement,
-  type TableHandleRowTriggerElement,
-  type TableHandleRowTriggerProps as TableHandleRowTriggerElementProps,
-} from "@prosekit/web/table-handle";
+
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

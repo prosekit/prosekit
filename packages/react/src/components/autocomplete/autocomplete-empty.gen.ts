@@ -3,6 +3,10 @@
  */
 
 import {
+  registerAutocompleteEmptyElement,
+  type AutocompleteEmptyElement,
+} from "@prosekit/web/autocomplete";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -12,10 +16,6 @@ import {
   type HTMLAttributes,
   type RefAttributes,
 } from "react";
-import {
-  registerAutocompleteEmptyElement,
-  type AutocompleteEmptyElement,
-} from "@prosekit/web/autocomplete";
 
 /**
  * Props for the {@link AutocompleteEmpty} React component.

@@ -3,6 +3,11 @@
  */
 
 import {
+  registerInlinePopoverPositionerElement,
+  type InlinePopoverPositionerElement,
+  type InlinePopoverPositionerProps as InlinePopoverPositionerElementProps,
+} from "@prosekit/web/inline-popover";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,11 +18,6 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerInlinePopoverPositionerElement,
-  type InlinePopoverPositionerElement,
-  type InlinePopoverPositionerProps as InlinePopoverPositionerElementProps,
-} from "@prosekit/web/inline-popover";
 
 /**
  * Props for the {@link InlinePopoverPositioner} React component.

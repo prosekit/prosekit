@@ -3,6 +3,12 @@
  */
 
 import {
+  registerTooltipRootElement,
+  type TooltipRootElement,
+  type TooltipRootProps as TooltipRootElementProps,
+  type TooltipRootEvents,
+} from "@prosekit/web/tooltip";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,12 +19,6 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerTooltipRootElement,
-  type TooltipRootElement,
-  type TooltipRootProps as TooltipRootElementProps,
-  type TooltipRootEvents,
-} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipRoot} React component.

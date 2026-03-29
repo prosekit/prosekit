@@ -3,6 +3,11 @@
  */
 
 import {
+  registerInlinePopoverRootElement,
+  type InlinePopoverRootEvents,
+  type InlinePopoverRootProps as InlinePopoverRootElementProps,
+} from "@prosekit/web/inline-popover";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,11 +16,7 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerInlinePopoverRootElement,
-  type InlinePopoverRootEvents,
-  type InlinePopoverRootProps as InlinePopoverRootElementProps,
-} from "@prosekit/web/inline-popover";
+
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

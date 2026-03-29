@@ -3,6 +3,11 @@
  */
 
 import {
+  registerAutocompleteListElement,
+  type AutocompleteListEvents,
+  type AutocompleteListProps as AutocompleteListElementProps,
+} from "@prosekit/web/autocomplete";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,11 +16,7 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerAutocompleteListElement,
-  type AutocompleteListEvents,
-  type AutocompleteListProps as AutocompleteListElementProps,
-} from "@prosekit/web/autocomplete";
+
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

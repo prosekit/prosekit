@@ -3,6 +3,11 @@
  */
 
 import {
+  registerResizableHandleElement,
+  type ResizableHandleElement,
+  type ResizableHandleProps as ResizableHandleElementProps,
+} from "@prosekit/web/resizable";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,11 +18,6 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerResizableHandleElement,
-  type ResizableHandleElement,
-  type ResizableHandleProps as ResizableHandleElementProps,
-} from "@prosekit/web/resizable";
 
 /**
  * Props for the {@link ResizableHandle} React component.

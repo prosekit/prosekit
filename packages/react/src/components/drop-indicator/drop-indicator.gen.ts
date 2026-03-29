@@ -3,6 +3,11 @@
  */
 
 import {
+  registerDropIndicatorElement,
+  type DropIndicatorElement,
+  type DropIndicatorProps as DropIndicatorElementProps,
+} from "@prosekit/web/drop-indicator";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,11 +18,7 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerDropIndicatorElement,
-  type DropIndicatorElement,
-  type DropIndicatorProps as DropIndicatorElementProps,
-} from "@prosekit/web/drop-indicator";
+
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

@@ -3,6 +3,10 @@
  */
 
 import {
+  registerTooltipPopupElement,
+  type TooltipPopupElement,
+} from "@prosekit/web/tooltip";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -12,10 +16,6 @@ import {
   type HTMLAttributes,
   type RefAttributes,
 } from "react";
-import {
-  registerTooltipPopupElement,
-  type TooltipPopupElement,
-} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipPopup} React component.

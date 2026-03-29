@@ -3,6 +3,10 @@
  */
 
 import {
+  registerDropIndicatorElement,
+  type DropIndicatorProps as DropIndicatorElementProps,
+} from "@prosekit/web/drop-indicator";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,10 +15,7 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerDropIndicatorElement,
-  type DropIndicatorProps as DropIndicatorElementProps,
-} from "@prosekit/web/drop-indicator";
+
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

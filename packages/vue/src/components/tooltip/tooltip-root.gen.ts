@@ -3,6 +3,11 @@
  */
 
 import {
+  registerTooltipRootElement,
+  type TooltipRootEvents,
+  type TooltipRootProps as TooltipRootElementProps,
+} from "@prosekit/web/tooltip";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,11 +16,6 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerTooltipRootElement,
-  type TooltipRootEvents,
-  type TooltipRootProps as TooltipRootElementProps,
-} from "@prosekit/web/tooltip";
 
 /**
  * Props for the {@link TooltipRoot} Vue component.

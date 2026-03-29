@@ -3,6 +3,11 @@
  */
 
 import {
+  registerBlockHandlePopoverElement,
+  type BlockHandlePopoverEvents,
+  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
+} from "@prosekit/web/block-handle";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,11 +16,7 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerBlockHandlePopoverElement,
-  type BlockHandlePopoverEvents,
-  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
-} from "@prosekit/web/block-handle";
+
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

@@ -3,6 +3,12 @@
  */
 
 import {
+  registerPopoverTriggerElement,
+  type PopoverTriggerElement,
+  type PopoverTriggerProps as PopoverTriggerElementProps,
+  type PopoverTriggerEvents,
+} from "@prosekit/web/popover";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,12 +19,6 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerPopoverTriggerElement,
-  type PopoverTriggerElement,
-  type PopoverTriggerProps as PopoverTriggerElementProps,
-  type PopoverTriggerEvents,
-} from "@prosekit/web/popover";
 
 /**
  * Props for the {@link PopoverTrigger} React component.

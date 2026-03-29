@@ -3,6 +3,10 @@
  */
 
 import {
+  registerTableHandleRootElement,
+  type TableHandleRootProps as TableHandleRootElementProps,
+} from "@prosekit/web/table-handle";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,10 +15,7 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerTableHandleRootElement,
-  type TableHandleRootProps as TableHandleRootElementProps,
-} from "@prosekit/web/table-handle";
+
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

@@ -3,6 +3,12 @@
  */
 
 import {
+  registerAutocompletePopoverElement,
+  type AutocompletePopoverElement,
+  type AutocompletePopoverProps as AutocompletePopoverElementProps,
+  type AutocompletePopoverEvents,
+} from "@prosekit/web/autocomplete";
+import {
   createElement,
   forwardRef,
   useCallback,
@@ -13,12 +19,7 @@ import {
   type RefAttributes,
   useLayoutEffect,
 } from "react";
-import {
-  registerAutocompletePopoverElement,
-  type AutocompletePopoverElement,
-  type AutocompletePopoverProps as AutocompletePopoverElementProps,
-  type AutocompletePopoverEvents,
-} from "@prosekit/web/autocomplete";
+
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**

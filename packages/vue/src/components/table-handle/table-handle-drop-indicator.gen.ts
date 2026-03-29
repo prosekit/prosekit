@@ -3,6 +3,10 @@
  */
 
 import {
+  registerTableHandleDropIndicatorElement,
+  type TableHandleDropIndicatorProps as TableHandleDropIndicatorElementProps,
+} from "@prosekit/web/table-handle";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,10 +15,7 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerTableHandleDropIndicatorElement,
-  type TableHandleDropIndicatorProps as TableHandleDropIndicatorElementProps,
-} from "@prosekit/web/table-handle";
+
 import { useEditorContext } from "../../injection/editor-context.ts";
 
 /**

@@ -3,6 +3,10 @@
  */
 
 import {
+  registerAutocompleteItemElement,
+  type AutocompleteItemProps as AutocompleteItemElementProps,
+} from "@prosekit/web/autocomplete";
+import {
   defineComponent,
   h,
   type DefineSetupFnComponent,
@@ -11,10 +15,6 @@ import {
   computed,
   watchEffect,
 } from "vue";
-import {
-  registerAutocompleteItemElement,
-  type AutocompleteItemProps as AutocompleteItemElementProps,
-} from "@prosekit/web/autocomplete";
 
 /**
  * Props for the {@link AutocompleteItem} Vue component.

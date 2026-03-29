@@ -39,5 +39,3 @@ function MyReactComponent(props, forwardedRef) {
   return createElement('my-element', restProps)
 }
 ```
-
-

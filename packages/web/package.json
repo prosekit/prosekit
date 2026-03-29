@@ -46,9 +46,9 @@
     "build:aria-ui": "node build.mjs"
   },
   "dependencies": {
-    "@aria-ui/core": "https://pkg.pr.new/@aria-ui/core@225",
-    "@aria-ui/elements": "https://pkg.pr.new/@aria-ui/elements@225",
-    "@aria-ui/utils": "https://pkg.pr.new/@aria-ui/utils@225",
+    "@aria-ui/core": "https://pkg.pr.new/@aria-ui/core@226",
+    "@aria-ui/elements": "https://pkg.pr.new/@aria-ui/elements@226",
+    "@aria-ui/utils": "https://pkg.pr.new/@aria-ui/utils@226",
     "@floating-ui/dom": "^1.7.6",
     "@ocavue/utils": "^1.6.0",
     "@prosekit/core": "workspace:^",
@@ -58,7 +58,7 @@
     "prosemirror-tables": "^1.8.5"
   },
   "devDependencies": {
-    "@aria-ui/cli": "https://pkg.pr.new/@aria-ui/cli@225",
+    "@aria-ui/cli": "https://pkg.pr.new/@aria-ui/cli@226",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",

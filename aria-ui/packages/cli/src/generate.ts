@@ -176,14 +176,8 @@ export function propFallback(options: PropFallbackExtensionOptions): WrapperExte
           break
 
         case 'preact':
-          context.addSetupStatement(`const componentProps: ${context.component.name}Props = { ...props };`)
           context.addSetupStatement(`const ${contextVariableName} = ${callExpression};`)
-          context.addSetupStatement(
-            `if (componentProps.${options.prop} == null && ${contextVariableName} != null) {
-  componentProps.${options.prop} = ${contextVariableName};
-}`,
-          )
-          context.setRenderPropsExpression('componentProps')
+          context.setReactPropOverride(options.prop, `?? ${contextVariableName}`)
           break
 
         case 'solid':
@@ -533,27 +527,36 @@ function generatePreactComponentFile(
     eventHandlers,
   } = getComponentMeta(component, options.prefix)
 
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: '@aria-ui-v2/integrations/preact',
-    namedImports: ['PreactWrapper'],
-  })
+  const preactImports: (string | { name: string; isTypeOnly: true })[] = [
+    'createElement',
+    { name: 'HTMLAttributes', isTypeOnly: true },
+    { name: 'Ref', isTypeOnly: true },
+  ]
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'preact',
-    namedImports: [
-      'createElement',
-      { name: 'HTMLAttributes', isTypeOnly: true },
-      { name: 'Ref', isTypeOnly: true },
-    ],
+    namedImports: preactImports,
   })
+
+  const preactCompatImports: (string | { name: string; isTypeOnly: true })[] = [
+    'forwardRef',
+    { name: 'ForwardRefExoticComponent', isTypeOnly: true },
+    { name: 'RefAttributes', isTypeOnly: true },
+  ]
 
   sourceFile.addImportDeclaration({
     moduleSpecifier: 'preact/compat',
-    namedImports: [
-      'forwardRef',
-      { name: 'ForwardRefExoticComponent', isTypeOnly: true },
-      { name: 'RefAttributes', isTypeOnly: true },
-    ],
+    namedImports: preactCompatImports,
+  })
+
+  const preactHooksImports: string[] = ['useCallback', 'useRef']
+  if (hasProps || hasEvents) {
+    preactHooksImports.push('useLayoutEffect')
+  }
+
+  sourceFile.addImportDeclaration({
+    moduleSpecifier: 'preact/hooks',
+    namedImports: preactHooksImports,
   })
 
   const { propsTypeName, eventsTypeName } = addSourceFileImports({
@@ -566,12 +569,6 @@ function generatePreactComponentFile(
   })
   addWrapperImports(sourceFile, slots.imports)
 
-  addPropNamesVariable(sourceFile, uneval(props.map((prop) => prop.name)))
-  addEventNameMapVariable(
-    sourceFile,
-    uneval(Object.fromEntries(eventHandlers.map((h) => [h.handlerName, h.eventName]))),
-  )
-
   addPropsInterface({
     sourceFile,
     component,
@@ -582,24 +579,82 @@ function generatePreactComponentFile(
     eventsTypeName: hasEvents ? eventsTypeName : undefined,
   })
 
-  const renderPropsExpression = slots.renderPropsExpression ?? 'props'
-  const wrapperPropsArgument = renderPropsExpression === 'props'
-    ? 'props'
-    : `props: ${renderPropsExpression}`
-  const statements = [
-    `register${componentName}Element();`,
-    ...slots.setupStatements,
-    `return createElement(PreactWrapper, { as: '${tagName}', propNames, eventNameMap, ${wrapperPropsArgument}, forwardedRef });`,
+  // Same inline pattern as React
+  const destructureEntries = [
+    ...props.map((p, i) => `${p.name}: p${i}`),
+    ...eventHandlers.map((h, i) => `${h.handlerName}: e${i}`),
   ]
 
-  sourceFile.addFunction({
-    name: `${componentName}Component`,
-    parameters: [
-      { name: 'props', type: `${componentName}Props` },
-      { name: 'forwardedRef', type: `Ref<${componentName}Element>` },
-    ],
-    statements,
+  const propAssignEntries = props.map((p, i) => {
+    const override = slots.reactPropOverrides[p.name]
+    return override ? `${p.name}: p${i} ${override}` : `${p.name}: p${i}`
   })
+
+  const handlersList = eventHandlers.map((_, i) => `e${i}`)
+  const eventNamesList = eventHandlers.map((h) => JSON.stringify(h.eventName))
+
+  const setupStatements = slots.setupStatements.length > 0
+    ? `\n  ${slots.setupStatements.join('\n  ')}\n`
+    : ''
+
+  const handlersRefDecl = hasEvents
+    ? `\n  const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([])`
+    : ''
+
+  const handlersRefUpdate = hasEvents
+    ? `\n    handlersRef.current = [${handlersList.join(', ')}] as Array<((event: Event) => void) | undefined>`
+    : ''
+
+  let mountEffect = ''
+  if (hasEvents) {
+    mountEffect = `
+  useLayoutEffect(() => {
+    const element = elementRef.current
+    if (!element) return
+    const ac = new AbortController()
+    for (const [index, eventName] of [${eventNamesList.join(', ')}].entries()) {
+      element.addEventListener(eventName, (event: Event) => { handlersRef.current[index]?.(event) }, { signal: ac.signal })
+    }
+    return () => ac.abort()
+  }, [])
+`
+  }
+
+  const destructureLine = destructureEntries.length > 0
+    ? `const { ${destructureEntries.join(', ')}, ...restProps } = props`
+    : `const { ...restProps } = props`
+
+  let propsEffect = ''
+  if (hasProps || hasEvents) {
+    const assignLine = hasProps ? `\n    Object.assign(element, { ${propAssignEntries.join(', ')} })` : ''
+    propsEffect = `
+  useLayoutEffect(() => {
+    const element = elementRef.current as Record<string, unknown> | null
+    if (!element) return${assignLine}${handlersRefUpdate}
+  })
+`
+  }
+
+  const functionBody = `
+  register${componentName}Element()
+
+  const elementRef = useRef<${componentName}Element>(null)${handlersRefDecl}
+${setupStatements}
+  ${destructureLine}
+${propsEffect}${mountEffect}
+  const mergedRef = useCallback((element: ${componentName}Element | null) => {
+    elementRef.current = element
+    if (typeof forwardedRef === 'function') { forwardedRef(element) }
+    else if (forwardedRef) { forwardedRef.current = element }
+  }, [])
+
+  return createElement('${tagName}', { ...restProps, ref: mergedRef, suppressHydrationWarning: true })
+`
+
+  sourceFile.addStatements(`function ${componentName}Component(
+  props: ${componentName}Props,
+  forwardedRef: Ref<${componentName}Element>,
+) {${functionBody}}`)
 
   sourceFile.addVariableStatement({
     isExported: true,
@@ -1169,37 +1224,6 @@ function addPropsInterface(options: PropsInterfaceOptions): void {
   }
 }
 
-function addPropNamesVariable(
-  sourceFile: SourceFile,
-  initializer: string,
-): void {
-  sourceFile.addVariableStatement({
-    declarationKind: VariableDeclarationKind.Const,
-    declarations: [
-      {
-        name: 'propNames',
-        type: 'string[]',
-        initializer,
-      },
-    ],
-  })
-}
-
-function addEventNameMapVariable(
-  sourceFile: SourceFile,
-  initializer: string,
-): void {
-  sourceFile.addVariableStatement({
-    declarationKind: VariableDeclarationKind.Const,
-    declarations: [
-      {
-        name: 'eventNameMap',
-        type: 'Record<string, string>',
-        initializer,
-      },
-    ],
-  })
-}
 
 function generateIndexFile(components: ComponentInfo[]): string {
   const lines: string[] = []

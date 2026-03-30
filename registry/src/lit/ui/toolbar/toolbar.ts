@@ -207,9 +207,8 @@ class LitToolbar extends LitElement {
 
     return html`
       <div class="CSS_TOOLBAR">
-        ${
-          items.undo
-            ? html`
+        ${items.undo
+          ? html`
               <lit-editor-button
                 .pressed=${items.undo.isActive}
                 .disabled=${!items.undo.canExec}
@@ -218,11 +217,9 @@ class LitToolbar extends LitElement {
                 @click=${items.undo.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.redo
-            ? html`
+          : nothing}
+        ${items.redo
+          ? html`
               <lit-editor-button
                 .pressed=${items.redo.isActive}
                 .disabled=${!items.redo.canExec}
@@ -231,12 +228,9 @@ class LitToolbar extends LitElement {
                 @click=${items.redo.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-
-        ${
-          items.bold
-            ? html`
+          : nothing}
+        ${items.bold
+          ? html`
               <lit-editor-button
                 .pressed=${items.bold.isActive}
                 .disabled=${!items.bold.canExec}
@@ -245,11 +239,9 @@ class LitToolbar extends LitElement {
                 @click=${items.bold.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.italic
-            ? html`
+          : nothing}
+        ${items.italic
+          ? html`
               <lit-editor-button
                 .pressed=${items.italic.isActive}
                 .disabled=${!items.italic.canExec}
@@ -258,11 +250,9 @@ class LitToolbar extends LitElement {
                 @click=${items.italic.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.underline
-            ? html`
+          : nothing}
+        ${items.underline
+          ? html`
               <lit-editor-button
                 .pressed=${items.underline.isActive}
                 .disabled=${!items.underline.canExec}
@@ -271,11 +261,9 @@ class LitToolbar extends LitElement {
                 @click=${items.underline.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.strike
-            ? html`
+          : nothing}
+        ${items.strike
+          ? html`
               <lit-editor-button
                 .pressed=${items.strike.isActive}
                 .disabled=${!items.strike.canExec}
@@ -284,11 +272,9 @@ class LitToolbar extends LitElement {
                 @click=${items.strike.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.code
-            ? html`
+          : nothing}
+        ${items.code
+          ? html`
               <lit-editor-button
                 .pressed=${items.code.isActive}
                 .disabled=${!items.code.canExec}
@@ -297,11 +283,9 @@ class LitToolbar extends LitElement {
                 @click=${items.code.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.codeBlock
-            ? html`
+          : nothing}
+        ${items.codeBlock
+          ? html`
               <lit-editor-button
                 .pressed=${items.codeBlock.isActive}
                 .disabled=${!items.codeBlock.canExec}
@@ -310,11 +294,9 @@ class LitToolbar extends LitElement {
                 @click=${items.codeBlock.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.heading1
-            ? html`
+          : nothing}
+        ${items.heading1
+          ? html`
               <lit-editor-button
                 .pressed=${items.heading1.isActive}
                 .disabled=${!items.heading1.canExec}
@@ -323,11 +305,9 @@ class LitToolbar extends LitElement {
                 @click=${items.heading1.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.heading2
-            ? html`
+          : nothing}
+        ${items.heading2
+          ? html`
               <lit-editor-button
                 .pressed=${items.heading2.isActive}
                 .disabled=${!items.heading2.canExec}
@@ -336,11 +316,9 @@ class LitToolbar extends LitElement {
                 @click=${items.heading2.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.heading3
-            ? html`
+          : nothing}
+        ${items.heading3
+          ? html`
               <lit-editor-button
                 .pressed=${items.heading3.isActive}
                 .disabled=${!items.heading3.canExec}
@@ -349,11 +327,9 @@ class LitToolbar extends LitElement {
                 @click=${items.heading3.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.horizontalRule
-            ? html`
+          : nothing}
+        ${items.horizontalRule
+          ? html`
               <lit-editor-button
                 .pressed=${items.horizontalRule.isActive}
                 .disabled=${!items.horizontalRule.canExec}
@@ -362,11 +338,9 @@ class LitToolbar extends LitElement {
                 @click=${items.horizontalRule.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.blockquote
-            ? html`
+          : nothing}
+        ${items.blockquote
+          ? html`
               <lit-editor-button
                 .pressed=${items.blockquote.isActive}
                 .disabled=${!items.blockquote.canExec}
@@ -375,11 +349,9 @@ class LitToolbar extends LitElement {
                 @click=${items.blockquote.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.bulletList
-            ? html`
+          : nothing}
+        ${items.bulletList
+          ? html`
               <lit-editor-button
                 .pressed=${items.bulletList.isActive}
                 .disabled=${!items.bulletList.canExec}
@@ -388,11 +360,9 @@ class LitToolbar extends LitElement {
                 @click=${items.bulletList.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.orderedList
-            ? html`
+          : nothing}
+        ${items.orderedList
+          ? html`
               <lit-editor-button
                 .pressed=${items.orderedList.isActive}
                 .disabled=${!items.orderedList.canExec}
@@ -401,11 +371,9 @@ class LitToolbar extends LitElement {
                 @click=${items.orderedList.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.taskList
-            ? html`
+          : nothing}
+        ${items.taskList
+          ? html`
               <lit-editor-button
                 .pressed=${items.taskList.isActive}
                 .disabled=${!items.taskList.canExec}
@@ -414,11 +382,9 @@ class LitToolbar extends LitElement {
                 @click=${items.taskList.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.toggleList
-            ? html`
+          : nothing}
+        ${items.toggleList
+          ? html`
               <lit-editor-button
                 .pressed=${items.toggleList.isActive}
                 .disabled=${!items.toggleList.canExec}
@@ -427,11 +393,9 @@ class LitToolbar extends LitElement {
                 @click=${items.toggleList.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.indentList
-            ? html`
+          : nothing}
+        ${items.indentList
+          ? html`
               <lit-editor-button
                 .pressed=${items.indentList.isActive}
                 .disabled=${!items.indentList.canExec}
@@ -440,11 +404,9 @@ class LitToolbar extends LitElement {
                 @click=${items.indentList.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          items.dedentList
-            ? html`
+          : nothing}
+        ${items.dedentList
+          ? html`
               <lit-editor-button
                 .pressed=${items.dedentList.isActive}
                 .disabled=${!items.dedentList.canExec}
@@ -453,11 +415,9 @@ class LitToolbar extends LitElement {
                 @click=${items.dedentList.command}
               ></lit-editor-button>
             `
-            : nothing
-        }
-        ${
-          this.uploader && items.insertImage
-            ? html`
+          : nothing}
+        ${this.uploader && items.insertImage
+          ? html`
               <lit-editor-image-upload-popover
                 .editor=${editor}
                 .uploader=${this.uploader}
@@ -466,8 +426,7 @@ class LitToolbar extends LitElement {
                 icon="CSS_ICON_IMAGE"
               ></lit-editor-image-upload-popover>
             `
-            : nothing
-        }
+          : nothing}
       </div>
     `
   }

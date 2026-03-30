@@ -800,14 +800,14 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: https://pkg.pr.new/@aria-ui/core@7ff0cea7b749f393c87f7f3921ef52092994a969
-        version: https://pkg.pr.new/@aria-ui/core@7ff0cea7b749f393c87f7f3921ef52092994a969
+        specifier: ^0.0.102
+        version: 0.0.102
       '@aria-ui/elements':
-        specifier: https://pkg.pr.new/@aria-ui/elements@7ff0cea7b749f393c87f7f3921ef52092994a969
-        version: https://pkg.pr.new/@aria-ui/elements@7ff0cea7b749f393c87f7f3921ef52092994a969
+        specifier: ^0.0.102
+        version: 0.0.102
       '@aria-ui/utils':
-        specifier: https://pkg.pr.new/@aria-ui/utils@7ff0cea7b749f393c87f7f3921ef52092994a969
-        version: https://pkg.pr.new/@aria-ui/utils@7ff0cea7b749f393c87f7f3921ef52092994a969
+        specifier: ^0.0.102
+        version: 0.0.102
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
@@ -831,8 +831,8 @@ importers:
         version: 1.8.5
     devDependencies:
       '@aria-ui/cli':
-        specifier: https://pkg.pr.new/@aria-ui/cli@7ff0cea7b749f393c87f7f3921ef52092994a969
-        version: https://pkg.pr.new/@aria-ui/cli@7ff0cea7b749f393c87f7f3921ef52092994a969(typescript@5.9.3)
+        specifier: ^0.0.102
+        version: 0.0.102(typescript@5.9.3)
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -1209,9 +1209,8 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@aria-ui/cli@https://pkg.pr.new/@aria-ui/cli@7ff0cea7b749f393c87f7f3921ef52092994a969':
-    resolution: {integrity: sha512-8RLVmyNrY/n2EWfUkN+VDTNRYojVDxKprptBxKBpiRD/nvvgPQCcPxfguxbIN4EPeY5kHP77DDa44R89sIGofQ==, tarball: https://pkg.pr.new/@aria-ui/cli@7ff0cea7b749f393c87f7f3921ef52092994a969}
-    version: 0.0.101
+  '@aria-ui/cli@0.0.102':
+    resolution: {integrity: sha512-vDTZXMKXoDCGYmyzp4Flbe6SOVWkH+BuJrFZhd6/PRgpqNRYVxjV1wZcwnRHr9E1bm2Tx6dTbEqbmDwv4vkzOw==}
     hasBin: true
     peerDependencies:
       typescript: '>= 5.8.0'
@@ -1219,20 +1218,14 @@ packages:
       typescript:
         optional: true
 
+  '@aria-ui/core@0.0.102':
+    resolution: {integrity: sha512-3ec0br/2iM5sXVyzYAa3bGDGcb3CrOS66/Hq9chPw/yOc2Gcvv14ANG5lsCtLEX27JtftVZW6c7DVDNUVsZ9Qg==}
+
   '@aria-ui/core@0.0.22':
     resolution: {integrity: sha512-N/UC2JJ8fA46WAc5TBNM9NZMcmQ3ghqDt1DNa7XdXHqHhDYkZ7Mn0Yn6KEciiIvlP+yuxLrPO/Q1oB4CNV21kg==}
 
-  '@aria-ui/core@https://pkg.pr.new/@aria-ui/core@7ff0cea7b749f393c87f7f3921ef52092994a969':
-    resolution: {integrity: sha512-B4RHSTe1YklHwxhp7CqUAkac1oOerHqSdiODQBoZ4MBvtSlptYJ5dMIHzFTEZPbHriEXsWlaBtGMKTzUeAWtgw==, tarball: https://pkg.pr.new/@aria-ui/core@7ff0cea7b749f393c87f7f3921ef52092994a969}
-    version: 0.0.101
-
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@7ff0cea':
-    resolution: {integrity: sha512-B4RHSTe1YklHwxhp7CqUAkac1oOerHqSdiODQBoZ4MBvtSlptYJ5dMIHzFTEZPbHriEXsWlaBtGMKTzUeAWtgw==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@7ff0cea}
-    version: 0.0.101
-
-  '@aria-ui/elements@https://pkg.pr.new/@aria-ui/elements@7ff0cea7b749f393c87f7f3921ef52092994a969':
-    resolution: {integrity: sha512-12lui3Dc9lEaGs62+HOMoUxWDDYcILRMc0yv8AKeAppV8MeJEb7MIeVurwq4bEOF7a1k8lS+3PDklYxrxF6MHw==, tarball: https://pkg.pr.new/@aria-ui/elements@7ff0cea7b749f393c87f7f3921ef52092994a969}
-    version: 0.0.101
+  '@aria-ui/elements@0.0.102':
+    resolution: {integrity: sha512-zxFqWFA700LkTfhnWF+132RtK0JwIV8P/6k2LyjEMcQTgcibTAerY6yDoSJJBHkITwfkABW5cF6P8H/OkxGs6Q==}
 
   '@aria-ui/overlay@0.0.25':
     resolution: {integrity: sha512-YpOFpB1KNQaGLgRsnN5BcY64A+akHOqlLhH/ft7YU/l7E/9Sm0yscriiBvEi+vVwqYUOveNuh5vDVVmWeRjLpQ==}
@@ -1243,13 +1236,8 @@ packages:
   '@aria-ui/tooltip@0.0.30':
     resolution: {integrity: sha512-XYctHrJOSRNW2iQc1IHkozlK2H6edX+uD/p1Oo5yHNMA28mFrxKUOJEiA297jAvlLwASKTaAT+40cOTZ2bTyTQ==}
 
-  '@aria-ui/utils@https://pkg.pr.new/@aria-ui/utils@7ff0cea7b749f393c87f7f3921ef52092994a969':
-    resolution: {integrity: sha512-TcE2TVM2RLB6eONlGfYAxQRBsLuj2zcg2og+vxC+s19KOGyyVIU3KOnDbObjN5f4bsO0eAAF9XZ+KY3QdKPW1A==, tarball: https://pkg.pr.new/@aria-ui/utils@7ff0cea7b749f393c87f7f3921ef52092994a969}
-    version: 0.0.101
-
-  '@aria-ui/utils@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@7ff0cea':
-    resolution: {integrity: sha512-TcE2TVM2RLB6eONlGfYAxQRBsLuj2zcg2og+vxC+s19KOGyyVIU3KOnDbObjN5f4bsO0eAAF9XZ+KY3QdKPW1A==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@7ff0cea}
-    version: 0.0.101
+  '@aria-ui/utils@0.0.102':
+    resolution: {integrity: sha512-SHIgLe1tTCi0n2jBbLi53vMunuHvz3wfdsw83aXp/B+6r5Pnv9j5B3qiHDGqEYyg2iM+8r46rro+kV4JdaBIcg==}
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.2':
     resolution: {integrity: sha512-JbbKaKkYMN/zc//irXYb6QFIMm+A4tpwgs6x4BrNtqU/Jeq2vk4i3LhnHBB1SaMfihGtcH8/Sj++o4jaIBXyCw==}
@@ -4325,17 +4313,26 @@ packages:
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
 
+  '@zag-js/dismissable@1.38.2':
+    resolution: {integrity: sha512-4B83ZGD8YKnwiXwL4J49txeXSPdS29bPt6p00v99u6nJPlQRRubzPUQo4OJr6NxUuT9cIn2kDqt5oj8ZCwhmng==}
+
   '@zag-js/dom-query@1.37.0':
     resolution: {integrity: sha512-nL3z5UOvRMDL5iBrNMs6Rm8vm5qC6Vt0FykFAhEL++mC01W0xpO/KKJNcpdooGFYQxwHBbgI/djE+sq9yY3pNw==}
 
   '@zag-js/dom-query@1.38.2':
     resolution: {integrity: sha512-E2plmm/bDjMQhi4fmyhw2uhoQv2cgNYaG+fzLrJgepLqovCOTU85lwzaLFiB7ldG2a9DVmjbAnFX4nVVWvaxGA==}
 
+  '@zag-js/interact-outside@1.38.2':
+    resolution: {integrity: sha512-jszzVoozqcO3vn1iiZ726xYXpy/mR+fLnx1tBs4Dvkg/n52Mm3Uv+pFDBfHgswqS/kRJ/U8P0fItFJjOH0yvlA==}
+
   '@zag-js/types@1.37.0':
     resolution: {integrity: sha512-auzzQI7+MtZvU8q5C9yNkg/DQqAT3ar9drE4rQFz1OERpaXtyp/JaeT3/t7IXDrocJBy0CY7vfrJSb+CIfjPzw==}
 
   '@zag-js/types@1.38.2':
     resolution: {integrity: sha512-fvUf3J4QOFAliuo5wHTO/awO0GKFAn5AHNOXbGH5IuoxIwa0oK5tSXVwdF8JE7ISOkQh4oB2fq3g4QjxmAXDyA==}
+
+  '@zag-js/utils@1.38.2':
+    resolution: {integrity: sha512-8UuWDomJ5JLX/KSDjEA4poX9rzqkGL47RiSCuVod+qZpWD0jpyXP7Lf600GUFtirRAiuN3x1+7KE6Elt/0rxtw==}
 
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -8070,7 +8067,7 @@ snapshots:
       package-manager-detector: 1.6.0
       tinyexec: 1.0.4
 
-  '@aria-ui/cli@https://pkg.pr.new/@aria-ui/cli@7ff0cea7b749f393c87f7f3921ef52092994a969(typescript@5.9.3)':
+  '@aria-ui/cli@0.0.102(typescript@5.9.3)':
     dependencies:
       '@stricli/core': 1.2.6
       devalue: 5.6.4
@@ -8080,6 +8077,13 @@ snapshots:
       ts-morph: 27.0.2
     optionalDependencies:
       typescript: 5.9.3
+
+  '@aria-ui/core@0.0.102':
+    dependencies:
+      '@ocavue/utils': 1.6.0
+      '@zag-js/dom-query': 1.38.2
+      alien-signals: 3.1.2
+      server-dom-shim: 1.1.0
 
   '@aria-ui/core@0.0.22':
     dependencies:
@@ -8091,25 +8095,13 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.1.0
 
-  '@aria-ui/core@https://pkg.pr.new/@aria-ui/core@7ff0cea7b749f393c87f7f3921ef52092994a969':
+  '@aria-ui/elements@0.0.102':
     dependencies:
-      '@ocavue/utils': 1.6.0
-      '@zag-js/dom-query': 1.38.2
-      alien-signals: 3.1.2
-      server-dom-shim: 1.1.0
-
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@7ff0cea':
-    dependencies:
-      '@ocavue/utils': 1.6.0
-      '@zag-js/dom-query': 1.38.2
-      alien-signals: 3.1.2
-      server-dom-shim: 1.1.0
-
-  '@aria-ui/elements@https://pkg.pr.new/@aria-ui/elements@7ff0cea7b749f393c87f7f3921ef52092994a969':
-    dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@7ff0cea
-      '@aria-ui/utils': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@7ff0cea
+      '@aria-ui/core': 0.0.102
+      '@aria-ui/utils': 0.0.102
       '@floating-ui/dom': 1.7.6
+      '@zag-js/dismissable': 1.38.2
+      '@zag-js/dom-query': 1.38.2
 
   '@aria-ui/overlay@0.0.25':
     dependencies:
@@ -8130,13 +8122,9 @@ snapshots:
       '@aria-ui/presence': 0.0.20
       nanoid: 5.1.6
 
-  '@aria-ui/utils@https://pkg.pr.new/@aria-ui/utils@7ff0cea7b749f393c87f7f3921ef52092994a969':
+  '@aria-ui/utils@0.0.102':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@7ff0cea
-
-  '@aria-ui/utils@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@7ff0cea':
-    dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@7ff0cea
+      '@aria-ui/core': 0.0.102
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.2': {}
 
@@ -11257,6 +11245,12 @@ snapshots:
       js-beautify: 1.15.4
       vue-component-type-helpers: 2.2.12
 
+  '@zag-js/dismissable@1.38.2':
+    dependencies:
+      '@zag-js/dom-query': 1.38.2
+      '@zag-js/interact-outside': 1.38.2
+      '@zag-js/utils': 1.38.2
+
   '@zag-js/dom-query@1.37.0':
     dependencies:
       '@zag-js/types': 1.37.0
@@ -11265,6 +11259,11 @@ snapshots:
     dependencies:
       '@zag-js/types': 1.38.2
 
+  '@zag-js/interact-outside@1.38.2':
+    dependencies:
+      '@zag-js/dom-query': 1.38.2
+      '@zag-js/utils': 1.38.2
+
   '@zag-js/types@1.37.0':
     dependencies:
       csstype: 3.2.3
@@ -11272,6 +11271,8 @@ snapshots:
   '@zag-js/types@1.38.2':
     dependencies:
       csstype: 3.2.3
+
+  '@zag-js/utils@1.38.2': {}
 
   abbrev@2.0.0: {}
 

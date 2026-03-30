@@ -1,0 +1,27 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@prosekit/basic": "0.8.0",
+    "@prosekit/config-ts": "0.0.0",
+    "@prosekit/config-tsdown": "0.0.0",
+    "@prosekit/config-vitest": "0.0.0",
+    "@prosekit/core": "0.11.0",
+    "@prosekit/dev": "0.0.0",
+    "@prosekit/extensions": "0.15.0",
+    "@prosekit/lit": "0.5.9",
+    "@prosekit/pm": "0.1.15",
+    "@prosekit/preact": "0.6.8",
+    "prosekit": "0.19.0",
+    "@prosekit/react": "0.6.9",
+    "@prosekit/solid": "0.6.8",
+    "@prosekit/svelte": "0.8.10",
+    "@prosekit/typedoc-plugin": "0.0.0",
+    "@prosekit/vfs": "0.0.0",
+    "@prosekit/vue": "0.6.8",
+    "@prosekit/web": "0.7.13",
+    "prosekit-registry": "0.0.0",
+    "prosekit-website": "0.0.0"
+  },
+  "changesets": []
+}

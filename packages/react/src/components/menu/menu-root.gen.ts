@@ -14,44 +14,44 @@ import {
   useLayoutEffect,
 } from "react";
 import {
-  registerTooltipRootElement,
-  type TooltipRootElement,
-  type TooltipRootProps as TooltipRootElementProps,
-  type TooltipRootEvents,
-} from "@prosekit/web/tooltip";
+  registerMenuRootElement,
+  type MenuRootElement,
+  type MenuRootProps as MenuRootElementProps,
+  type MenuRootEvents,
+} from "@prosekit/web/menu";
 
 /**
- * Props for the {@link TooltipRoot} React component.
+ * Props for the {@link MenuRoot} React component.
  *
  * @public
  */
-export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
+export interface MenuRootProps extends HTMLAttributes<MenuRootElement> {
   /**
    * Whether the overlay is initially open.
    * @default false
    */
-  defaultOpen?: TooltipRootElementProps["defaultOpen"];
+  defaultOpen?: MenuRootElementProps["defaultOpen"];
   /**
    * Whether the overlay is currently open.
    * @default null
    */
-  open?: TooltipRootElementProps["open"];
+  open?: MenuRootElementProps["open"];
   /**
    * Whether the component should ignore user interaction.
    * @default false
    */
-  disabled?: TooltipRootElementProps["disabled"];
-  /** Emitted when the tooltip is opened or closed. */
-  onOpenChange?: (event: TooltipRootEvents["openChange"]) => void;
+  disabled?: MenuRootElementProps["disabled"];
+  /** Emitted when the menu is opened or closed. */
+  onOpenChange?: (event: MenuRootEvents["openChange"]) => void;
 }
 
-function TooltipRootComponent(
-  props: TooltipRootProps,
-  forwardedRef: ForwardedRef<TooltipRootElement>,
+function MenuRootComponent(
+  props: MenuRootProps,
+  forwardedRef: ForwardedRef<MenuRootElement>,
 ) {
-  registerTooltipRootElement();
+  registerMenuRootElement();
 
-  const elementRef = useRef<TooltipRootElement>(null);
+  const elementRef = useRef<MenuRootElement>(null);
   const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
   const {
@@ -85,7 +85,7 @@ function TooltipRootComponent(
     return () => ac.abort();
   }, []);
 
-  const mergedRef = useCallback((element: TooltipRootElement | null) => {
+  const mergedRef = useCallback((element: MenuRootElement | null) => {
     elementRef.current = element;
     if (typeof forwardedRef === "function") {
       forwardedRef(element);
@@ -94,7 +94,7 @@ function TooltipRootComponent(
     }
   }, []);
 
-  return createElement("prosekit-tooltip-root", {
+  return createElement("prosekit-menu-root", {
     ...restProps,
     ref: mergedRef,
     suppressHydrationWarning: true,
@@ -102,13 +102,13 @@ function TooltipRootComponent(
 }
 
 /**
- * A React component that renders an `prosekit-tooltip-root` custom element.
+ * A React component that renders an `prosekit-menu-root` custom element.
  *
  * @public
  */
-export const TooltipRoot: ForwardRefExoticComponent<
-  TooltipRootProps & RefAttributes<TooltipRootElement>
-> = /* @__PURE__ */ forwardRef(TooltipRootComponent);
+export const MenuRoot: ForwardRefExoticComponent<
+  MenuRootProps & RefAttributes<MenuRootElement>
+> = /* @__PURE__ */ forwardRef(MenuRootComponent);
 
-export type { TooltipRootEvents };
-export { OpenChangeEvent } from "@prosekit/web/tooltip";
+export type { MenuRootEvents };
+export { OpenChangeEvent } from "@prosekit/web/menu";

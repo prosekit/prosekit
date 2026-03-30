@@ -14,60 +14,59 @@ import {
   useLayoutEffect,
 } from "react";
 import {
-  registerBlockHandlePopoverElement,
-  type BlockHandlePopoverElement,
-  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
-  type BlockHandlePopoverEvents,
-} from "@prosekit/web/block-handle";
+  registerTableHandleColumnPositionerElement,
+  type TableHandleColumnPositionerElement,
+  type TableHandleColumnPositionerProps as TableHandleColumnPositionerElementProps,
+} from "@prosekit/web/table-handle";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**
- * Props for the {@link BlockHandlePopover} React component.
+ * Props for the {@link TableHandleColumnPositioner} React component.
  *
  * @public
  */
-export interface BlockHandlePopoverProps extends HTMLAttributes<BlockHandlePopoverElement> {
+export interface TableHandleColumnPositionerProps extends HTMLAttributes<TableHandleColumnPositionerElement> {
   /**
    * The ProseKit editor instance.
    *
    * @default null
    * @hidden
    */
-  editor?: BlockHandlePopoverElementProps["editor"];
+  editor?: TableHandleColumnPositionerElementProps["editor"];
   /**
-   * The placement of the popover, relative to the hovered block.
+   * The placement of the popover, relative to the hovered table cell.
    *
-   * @default "left"
+   * @default "top"
    */
-  placement?: BlockHandlePopoverElementProps["placement"];
+  placement?: TableHandleColumnPositionerElementProps["placement"];
   /**
    * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
    * to place the floating element on top of other page content.
    *
    * @default false
    */
-  hoist?: BlockHandlePopoverElementProps["hoist"];
+  hoist?: TableHandleColumnPositionerElementProps["hoist"];
   /**
    * @default false
    * @hidden
    */
-  flip?: BlockHandlePopoverElementProps["flip"];
+  flip?: TableHandleColumnPositionerElementProps["flip"];
   /**
    * @default false
    * @hidden
    */
-  shift?: BlockHandlePopoverElementProps["shift"];
+  shift?: TableHandleColumnPositionerElementProps["shift"];
   /**
    * @default true
    * @hidden
    */
-  hide?: BlockHandlePopoverElementProps["hide"];
+  hide?: TableHandleColumnPositionerElementProps["hide"];
   /**
    * The strategy to use for positioning
    *
    * @default "absolute"
    */
-  strategy?: BlockHandlePopoverElementProps["strategy"];
+  strategy?: TableHandleColumnPositionerElementProps["strategy"];
   /**
    * Options to activate auto-update listeners
    *
@@ -75,69 +74,69 @@ export interface BlockHandlePopoverProps extends HTMLAttributes<BlockHandlePopov
    *
    * @default true
    */
-  autoUpdate?: BlockHandlePopoverElementProps["autoUpdate"];
+  autoUpdate?: TableHandleColumnPositionerElementProps["autoUpdate"];
   /**
    * The distance between the reference and floating element.
    *
    * @default 6
    */
-  offset?: BlockHandlePopoverElementProps["offset"];
+  offset?: TableHandleColumnPositionerElementProps["offset"];
   /**
    * Whether the floating element can overlap the reference element to keep it
    * in view.
    *
    * @default false
    */
-  overlap?: BlockHandlePopoverElementProps["overlap"];
+  overlap?: TableHandleColumnPositionerElementProps["overlap"];
   /**
    * Whether to constrain the floating element's width and height to not exceed
    * the viewport.
    *
    * @default false
    */
-  fitViewport?: BlockHandlePopoverElementProps["fitViewport"];
+  fitViewport?: TableHandleColumnPositionerElementProps["fitViewport"];
   /**
    * Whether to constrain the floating element's width so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameWidth?: BlockHandlePopoverElementProps["sameWidth"];
+  sameWidth?: TableHandleColumnPositionerElementProps["sameWidth"];
   /**
    * Whether to constrain the floating element's height so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameHeight?: BlockHandlePopoverElementProps["sameHeight"];
+  sameHeight?: TableHandleColumnPositionerElementProps["sameHeight"];
   /**
    * Whether to improve positioning for inline reference elements that span over
    * multiple lines.
    *
    * @default false
    */
-  inline?: BlockHandlePopoverElementProps["inline"];
+  inline?: TableHandleColumnPositionerElementProps["inline"];
   /**
    * Describes the clipping element(s) or area that overflow will be checked relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
    *
    * @default 'clippingAncestors'
    */
-  boundary?: BlockHandlePopoverElementProps["boundary"];
+  boundary?: TableHandleColumnPositionerElementProps["boundary"];
   /**
    * Describes the root boundary that the element will be checked for overflow relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
    *
    * @default 'viewport'
    */
-  rootBoundary?: BlockHandlePopoverElementProps["rootBoundary"];
+  rootBoundary?: TableHandleColumnPositionerElementProps["rootBoundary"];
   /**
    * Describes the virtual padding around the boundary to check for overflow.
    * Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
    *
    * @default 4
    */
-  overflowPadding?: BlockHandlePopoverElementProps["overflowPadding"];
+  overflowPadding?: TableHandleColumnPositionerElementProps["overflowPadding"];
   /**
    * The element that will be used to check for overflow. Please see
    * https://floating-ui.com/docs/detectoverflow#elementcontext for more
@@ -145,7 +144,7 @@ export interface BlockHandlePopoverProps extends HTMLAttributes<BlockHandlePopov
    *
    * @default 'floating'
    */
-  elementContext?: BlockHandlePopoverElementProps["elementContext"];
+  elementContext?: TableHandleColumnPositionerElementProps["elementContext"];
   /**
    * Whether to check the alternate elementContext's boundary. Please see
    * https://floating-ui.com/docs/detectoverflow#altboundary for more
@@ -153,19 +152,16 @@ export interface BlockHandlePopoverProps extends HTMLAttributes<BlockHandlePopov
    *
    * @default false
    */
-  altBoundary?: BlockHandlePopoverElementProps["altBoundary"];
-  /** Fired when the hovered block changes. */
-  onStateChange?: (event: BlockHandlePopoverEvents["stateChange"]) => void;
+  altBoundary?: TableHandleColumnPositionerElementProps["altBoundary"];
 }
 
-function BlockHandlePopoverComponent(
-  props: BlockHandlePopoverProps,
-  forwardedRef: ForwardedRef<BlockHandlePopoverElement>,
+function TableHandleColumnPositionerComponent(
+  props: TableHandleColumnPositionerProps,
+  forwardedRef: ForwardedRef<TableHandleColumnPositionerElement>,
 ) {
-  registerBlockHandlePopoverElement();
+  registerTableHandleColumnPositionerElement();
 
-  const elementRef = useRef<BlockHandlePopoverElement>(null);
-  const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
+  const elementRef = useRef<TableHandleColumnPositionerElement>(null);
 
   const p3Fallback = useEditorContext();
 
@@ -189,7 +185,6 @@ function BlockHandlePopoverComponent(
     sameWidth: p16,
     shift: p17,
     strategy: p18,
-    onStateChange: e0,
     ...restProps
   } = props;
 
@@ -217,35 +212,21 @@ function BlockHandlePopoverComponent(
       shift: p17,
       strategy: p18,
     });
-    handlersRef.current = [e0] as Array<((event: Event) => void) | undefined>;
   });
 
-  useLayoutEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-    const ac = new AbortController();
-    for (const [index, eventName] of ["stateChange"].entries()) {
-      element.addEventListener(
-        eventName,
-        (event: Event) => {
-          handlersRef.current[index]?.(event);
-        },
-        { signal: ac.signal },
-      );
-    }
-    return () => ac.abort();
-  }, []);
+  const mergedRef = useCallback(
+    (element: TableHandleColumnPositionerElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [],
+  );
 
-  const mergedRef = useCallback((element: BlockHandlePopoverElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
-
-  return createElement("prosekit-block-handle-popover", {
+  return createElement("prosekit-table-handle-column-positioner", {
     ...restProps,
     ref: mergedRef,
     suppressHydrationWarning: true,
@@ -253,13 +234,11 @@ function BlockHandlePopoverComponent(
 }
 
 /**
- * A React component that renders an `prosekit-block-handle-popover` custom element.
+ * A React component that renders an `prosekit-table-handle-column-positioner` custom element.
  *
  * @public
  */
-export const BlockHandlePopover: ForwardRefExoticComponent<
-  BlockHandlePopoverProps & RefAttributes<BlockHandlePopoverElement>
-> = /* @__PURE__ */ forwardRef(BlockHandlePopoverComponent);
-
-export type { BlockHandlePopoverEvents };
-export { BlockHandlePopoverStateChangeEvent } from "@prosekit/web/block-handle";
+export const TableHandleColumnPositioner: ForwardRefExoticComponent<
+  TableHandleColumnPositionerProps &
+    RefAttributes<TableHandleColumnPositionerElement>
+> = /* @__PURE__ */ forwardRef(TableHandleColumnPositionerComponent);

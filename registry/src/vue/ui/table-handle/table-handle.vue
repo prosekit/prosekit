@@ -2,15 +2,16 @@
 import type { Editor } from 'prosekit/core'
 import type { TableExtension } from 'prosekit/extensions/table'
 import { useEditorDerivedValue } from 'prosekit/vue'
+import { MenuItem, MenuPopup, MenuPositioner, MenuRoot } from 'prosekit/vue/menu'
 import {
-  TableHandleColumnRoot,
+  TableHandleColumnPopup,
+  TableHandleColumnPositioner,
   TableHandleColumnTrigger,
   TableHandleDragPreview,
   TableHandleDropIndicator,
-  TableHandlePopoverContent,
-  TableHandlePopoverItem,
   TableHandleRoot,
-  TableHandleRowRoot,
+  TableHandleRowPopup,
+  TableHandleRowPositioner,
   TableHandleRowTrigger,
 } from 'prosekit/vue/table-handle'
 
@@ -64,96 +65,108 @@ const state = useEditorDerivedValue(getTableHandleState)
   <TableHandleRoot class="contents">
     <TableHandleDragPreview />
     <TableHandleDropIndicator />
-    <TableHandleColumnRoot class="CSS_TABLE_COLUMN_HANDLE">
-      <TableHandleColumnTrigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
-        <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
-      </TableHandleColumnTrigger>
-      <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">
-        <TableHandlePopoverItem
-          v-if="state.addTableColumnBefore.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.addTableColumnBefore.command"
-        >
-          <span>Insert Left</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.addTableColumnAfter.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.addTableColumnAfter.command"
-        >
-          <span>Insert Right</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.deleteCellSelection.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.deleteCellSelection.command"
-        >
-          <span>Clear Contents</span>
-          <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.deleteTableColumn.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.deleteTableColumn.command"
-        >
-          <span>Delete Column</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.deleteTable.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          data-danger
-          @select="state.deleteTable.command"
-        >
-          <span>Delete Table</span>
-        </TableHandlePopoverItem>
-      </TableHandlePopoverContent>
-    </TableHandleColumnRoot>
-    <TableHandleRowRoot
+    <TableHandleColumnPositioner class="CSS_TABLE_COLUMN_HANDLE">
+      <TableHandleColumnPopup>
+        <MenuRoot>
+          <TableHandleColumnTrigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
+            <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
+          </TableHandleColumnTrigger>
+          <MenuPositioner>
+            <MenuPopup class="CSS_TABLE_HANDLE_MENU">
+              <MenuItem
+                v-if="state.addTableColumnBefore.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.addTableColumnBefore.command"
+              >
+                <span>Insert Left</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.addTableColumnAfter.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.addTableColumnAfter.command"
+              >
+                <span>Insert Right</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.deleteCellSelection.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.deleteCellSelection.command"
+              >
+                <span>Clear Contents</span>
+                <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.deleteTableColumn.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.deleteTableColumn.command"
+              >
+                <span>Delete Column</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.deleteTable.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                data-danger
+                @click="state.deleteTable.command"
+              >
+                <span>Delete Table</span>
+              </MenuItem>
+            </MenuPopup>
+          </MenuPositioner>
+        </MenuRoot>
+      </TableHandleColumnPopup>
+    </TableHandleColumnPositioner>
+    <TableHandleRowPositioner
       :placement="props.dir === 'rtl' ? 'right' : 'left'"
       class="CSS_TABLE_ROW_HANDLE"
     >
-      <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
-        <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
-      </TableHandleRowTrigger>
-      <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">
-        <TableHandlePopoverItem
-          v-if="state.addTableRowAbove.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.addTableRowAbove.command"
-        >
-          <span>Insert Above</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.addTableRowBelow.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.addTableRowBelow.command"
-        >
-          <span>Insert Below</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.deleteCellSelection.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.deleteCellSelection.command"
-        >
-          <span>Clear Contents</span>
-          <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.deleteTableRow.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          @select="state.deleteTableRow.command"
-        >
-          <span>Delete Row</span>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          v-if="state.deleteTable.canExec"
-          class="CSS_TABLE_CELL_MENU_ITEM"
-          data-danger
-          @select="state.deleteTable.command"
-        >
-          <span>Delete Table</span>
-        </TableHandlePopoverItem>
-      </TableHandlePopoverContent>
-    </TableHandleRowRoot>
+      <TableHandleRowPopup>
+        <MenuRoot>
+          <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
+            <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
+          </TableHandleRowTrigger>
+          <MenuPositioner>
+            <MenuPopup class="CSS_TABLE_HANDLE_MENU">
+              <MenuItem
+                v-if="state.addTableRowAbove.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.addTableRowAbove.command"
+              >
+                <span>Insert Above</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.addTableRowBelow.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.addTableRowBelow.command"
+              >
+                <span>Insert Below</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.deleteCellSelection.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.deleteCellSelection.command"
+              >
+                <span>Clear Contents</span>
+                <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.deleteTableRow.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                @click="state.deleteTableRow.command"
+              >
+                <span>Delete Row</span>
+              </MenuItem>
+              <MenuItem
+                v-if="state.deleteTable.canExec"
+                class="CSS_TABLE_CELL_MENU_ITEM"
+                data-danger
+                @click="state.deleteTable.command"
+              >
+                <span>Delete Table</span>
+              </MenuItem>
+            </MenuPopup>
+          </MenuPositioner>
+        </MenuRoot>
+      </TableHandleRowPopup>
+    </TableHandleRowPositioner>
   </TableHandleRoot>
 </template>

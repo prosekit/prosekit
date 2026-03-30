@@ -259,10 +259,10 @@ async function setup() {
 
   const rowHandle = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-row-trigger')
   const colHandle = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-column-trigger')
-  const openMenu = page.locate('prosekit-table-handle-popover-content[data-state="open"]')
+  const openMenu = page.locate('prosekit-table-handle-popover-popup[data-state="open"]')
 
-  const rowMenu = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-popover-content')
-  const colMenu = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-popover-content')
+  const rowMenu = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-popover-popup')
+  const colMenu = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-popover-popup')
 
   const getRowMenuItem = (text: string) => {
     return rowMenu.locate('prosekit-table-handle-popover-item', { hasText: text }).last()

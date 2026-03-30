@@ -3,56 +3,47 @@
  */
 
 import {
-  registerTooltipRootElement,
-  type TooltipRootElement,
-  type TooltipRootEvents,
-  type TooltipRootProps as TooltipRootElementProps,
-} from "@prosekit/web/tooltip";
+  registerMenuTriggerElement,
+  type MenuTriggerElement,
+  type MenuTriggerEvents,
+  type MenuTriggerProps as MenuTriggerElementProps,
+} from "@prosekit/web/menu";
 import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
 /**
- * Props for the {@link TooltipRoot} Solid component.
+ * Props for the {@link MenuTrigger} Solid component.
  *
  * @public
  */
-export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement> {
-  /**
-   * Whether the overlay is initially open.
-   * @default false
-   */
-  defaultOpen?: TooltipRootElementProps["defaultOpen"];
-  /**
-   * Whether the overlay is currently open.
-   * @default null
-   */
-  open?: TooltipRootElementProps["open"];
+export interface MenuTriggerProps extends JSX.HTMLAttributes<MenuTriggerElement> {
   /**
    * Whether the component should ignore user interaction.
+   *
    * @default false
    */
-  disabled?: TooltipRootElementProps["disabled"];
-  /** Emitted when the tooltip is opened or closed. */
-  onOpenChange?: (event: TooltipRootEvents["openChange"]) => void;
+  disabled?: MenuTriggerElementProps["disabled"];
+  /** Emitted when the menu is opened or closed. */
+  onOpenChange?: (event: MenuTriggerEvents["openChange"]) => void;
 }
 
 /**
- * A Solid component that renders an `prosekit-tooltip-root` custom element.
+ * A Solid component that renders an `prosekit-menu-trigger` custom element.
  *
  * @public
  */
-export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
-  registerTooltipRootElement();
+export const MenuTrigger: Component<MenuTriggerProps> = (props): any => {
+  registerMenuTriggerElement();
 
-  const [getElement, setElement] = createSignal<TooltipRootElement | null>(
+  const [getElement, setElement] = createSignal<MenuTriggerElement | null>(
     null,
   );
   const handlers: Array<((event: any) => void) | undefined> = [];
 
   const [elementProps, eventHandlers, restProps] = splitProps(
     props,
-    ["defaultOpen", "disabled", "open"],
+    ["disabled"],
     ["onOpenChange"],
   );
 
@@ -61,9 +52,7 @@ export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
     if (!element) return;
 
     Object.assign(element, {
-      defaultOpen: elementProps.defaultOpen,
       disabled: elementProps.disabled,
-      open: elementProps.open,
     });
 
     handlers.length = 0;
@@ -88,14 +77,14 @@ export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
   });
 
   return h(
-    "prosekit-tooltip-root",
+    "prosekit-menu-trigger",
     mergeProps(restProps, {
-      ref: (el: TooltipRootElement | null) => {
+      ref: (el: MenuTriggerElement | null) => {
         setElement(el);
       },
     }),
   );
 };
 
-export type { TooltipRootEvents };
-export { OpenChangeEvent } from "@prosekit/web/tooltip";
+export type { MenuTriggerEvents };
+export { OpenChangeEvent } from "@prosekit/web/menu";

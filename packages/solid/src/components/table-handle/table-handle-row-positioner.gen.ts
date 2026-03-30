@@ -3,63 +3,62 @@
  */
 
 import {
-  registerBlockHandlePopoverElement,
-  type BlockHandlePopoverElement,
-  type BlockHandlePopoverEvents,
-  type BlockHandlePopoverProps as BlockHandlePopoverElementProps,
-} from "@prosekit/web/block-handle";
+  registerTableHandleRowPositionerElement,
+  type TableHandleRowPositionerElement,
+  type TableHandleRowPositionerProps as TableHandleRowPositionerElementProps,
+} from "@prosekit/web/table-handle";
 import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 import { useEditorContext } from "../../contexts/editor-context.ts";
 
 /**
- * Props for the {@link BlockHandlePopover} Solid component.
+ * Props for the {@link TableHandleRowPositioner} Solid component.
  *
  * @public
  */
-export interface BlockHandlePopoverProps extends JSX.HTMLAttributes<BlockHandlePopoverElement> {
+export interface TableHandleRowPositionerProps extends JSX.HTMLAttributes<TableHandleRowPositionerElement> {
   /**
    * The ProseKit editor instance.
    *
    * @default null
    * @hidden
    */
-  editor?: BlockHandlePopoverElementProps["editor"];
+  editor?: TableHandleRowPositionerElementProps["editor"];
   /**
-   * The placement of the popover, relative to the hovered block.
+   * The placement of the popover, relative to the hovered table cell.
    *
    * @default "left"
    */
-  placement?: BlockHandlePopoverElementProps["placement"];
+  placement?: TableHandleRowPositionerElementProps["placement"];
   /**
    * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
    * to place the floating element on top of other page content.
    *
    * @default false
    */
-  hoist?: BlockHandlePopoverElementProps["hoist"];
+  hoist?: TableHandleRowPositionerElementProps["hoist"];
   /**
    * @default false
    * @hidden
    */
-  flip?: BlockHandlePopoverElementProps["flip"];
+  flip?: TableHandleRowPositionerElementProps["flip"];
   /**
    * @default false
    * @hidden
    */
-  shift?: BlockHandlePopoverElementProps["shift"];
+  shift?: TableHandleRowPositionerElementProps["shift"];
   /**
    * @default true
    * @hidden
    */
-  hide?: BlockHandlePopoverElementProps["hide"];
+  hide?: TableHandleRowPositionerElementProps["hide"];
   /**
    * The strategy to use for positioning
    *
    * @default "absolute"
    */
-  strategy?: BlockHandlePopoverElementProps["strategy"];
+  strategy?: TableHandleRowPositionerElementProps["strategy"];
   /**
    * Options to activate auto-update listeners
    *
@@ -67,69 +66,69 @@ export interface BlockHandlePopoverProps extends JSX.HTMLAttributes<BlockHandleP
    *
    * @default true
    */
-  autoUpdate?: BlockHandlePopoverElementProps["autoUpdate"];
+  autoUpdate?: TableHandleRowPositionerElementProps["autoUpdate"];
   /**
    * The distance between the reference and floating element.
    *
    * @default 6
    */
-  offset?: BlockHandlePopoverElementProps["offset"];
+  offset?: TableHandleRowPositionerElementProps["offset"];
   /**
    * Whether the floating element can overlap the reference element to keep it
    * in view.
    *
    * @default false
    */
-  overlap?: BlockHandlePopoverElementProps["overlap"];
+  overlap?: TableHandleRowPositionerElementProps["overlap"];
   /**
    * Whether to constrain the floating element's width and height to not exceed
    * the viewport.
    *
    * @default false
    */
-  fitViewport?: BlockHandlePopoverElementProps["fitViewport"];
+  fitViewport?: TableHandleRowPositionerElementProps["fitViewport"];
   /**
    * Whether to constrain the floating element's width so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameWidth?: BlockHandlePopoverElementProps["sameWidth"];
+  sameWidth?: TableHandleRowPositionerElementProps["sameWidth"];
   /**
    * Whether to constrain the floating element's height so that it matches the
    * reference element.
    *
    * @default false
    */
-  sameHeight?: BlockHandlePopoverElementProps["sameHeight"];
+  sameHeight?: TableHandleRowPositionerElementProps["sameHeight"];
   /**
    * Whether to improve positioning for inline reference elements that span over
    * multiple lines.
    *
    * @default false
    */
-  inline?: BlockHandlePopoverElementProps["inline"];
+  inline?: TableHandleRowPositionerElementProps["inline"];
   /**
    * Describes the clipping element(s) or area that overflow will be checked relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
    *
    * @default 'clippingAncestors'
    */
-  boundary?: BlockHandlePopoverElementProps["boundary"];
+  boundary?: TableHandleRowPositionerElementProps["boundary"];
   /**
    * Describes the root boundary that the element will be checked for overflow relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
    *
    * @default 'viewport'
    */
-  rootBoundary?: BlockHandlePopoverElementProps["rootBoundary"];
+  rootBoundary?: TableHandleRowPositionerElementProps["rootBoundary"];
   /**
    * Describes the virtual padding around the boundary to check for overflow.
    * Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
    *
    * @default 4
    */
-  overflowPadding?: BlockHandlePopoverElementProps["overflowPadding"];
+  overflowPadding?: TableHandleRowPositionerElementProps["overflowPadding"];
   /**
    * The element that will be used to check for overflow. Please see
    * https://floating-ui.com/docs/detectoverflow#elementcontext for more
@@ -137,7 +136,7 @@ export interface BlockHandlePopoverProps extends JSX.HTMLAttributes<BlockHandleP
    *
    * @default 'floating'
    */
-  elementContext?: BlockHandlePopoverElementProps["elementContext"];
+  elementContext?: TableHandleRowPositionerElementProps["elementContext"];
   /**
    * Whether to check the alternate elementContext's boundary. Please see
    * https://floating-ui.com/docs/detectoverflow#altboundary for more
@@ -145,50 +144,43 @@ export interface BlockHandlePopoverProps extends JSX.HTMLAttributes<BlockHandleP
    *
    * @default false
    */
-  altBoundary?: BlockHandlePopoverElementProps["altBoundary"];
-  /** Fired when the hovered block changes. */
-  onStateChange?: (event: BlockHandlePopoverEvents["stateChange"]) => void;
+  altBoundary?: TableHandleRowPositionerElementProps["altBoundary"];
 }
 
 /**
- * A Solid component that renders an `prosekit-block-handle-popover` custom element.
+ * A Solid component that renders an `prosekit-table-handle-row-positioner` custom element.
  *
  * @public
  */
-export const BlockHandlePopover: Component<BlockHandlePopoverProps> = (
-  props,
-): any => {
-  registerBlockHandlePopoverElement();
+export const TableHandleRowPositioner: Component<
+  TableHandleRowPositionerProps
+> = (props): any => {
+  registerTableHandleRowPositionerElement();
 
   const [getElement, setElement] =
-    createSignal<BlockHandlePopoverElement | null>(null);
-  const handlers: Array<((event: any) => void) | undefined> = [];
+    createSignal<TableHandleRowPositionerElement | null>(null);
 
-  const [elementProps, eventHandlers, restProps] = splitProps(
-    props,
-    [
-      "altBoundary",
-      "autoUpdate",
-      "boundary",
-      "editor",
-      "elementContext",
-      "fitViewport",
-      "flip",
-      "hide",
-      "hoist",
-      "inline",
-      "offset",
-      "overflowPadding",
-      "overlap",
-      "placement",
-      "rootBoundary",
-      "sameHeight",
-      "sameWidth",
-      "shift",
-      "strategy",
-    ],
-    ["onStateChange"],
-  );
+  const [elementProps, restProps] = splitProps(props, [
+    "altBoundary",
+    "autoUpdate",
+    "boundary",
+    "editor",
+    "elementContext",
+    "fitViewport",
+    "flip",
+    "hide",
+    "hoist",
+    "inline",
+    "offset",
+    "overflowPadding",
+    "overlap",
+    "placement",
+    "rootBoundary",
+    "sameHeight",
+    "sameWidth",
+    "shift",
+    "strategy",
+  ]);
 
   const p3Fallback = useEditorContext();
 
@@ -217,37 +209,14 @@ export const BlockHandlePopover: Component<BlockHandlePopoverProps> = (
       shift: elementProps.shift,
       strategy: elementProps.strategy,
     });
-
-    handlers.length = 0;
-    handlers.push(eventHandlers.onStateChange);
-  });
-
-  createEffect(() => {
-    const element = getElement();
-    if (!element) return;
-
-    const ac = new AbortController();
-    for (const [index, eventName] of ["stateChange"].entries()) {
-      element.addEventListener(
-        eventName,
-        (event) => {
-          handlers[index]?.(event);
-        },
-        { signal: ac.signal },
-      );
-    }
-    return () => ac.abort();
   });
 
   return h(
-    "prosekit-block-handle-popover",
+    "prosekit-table-handle-row-positioner",
     mergeProps(restProps, {
-      ref: (el: BlockHandlePopoverElement | null) => {
+      ref: (el: TableHandleRowPositionerElement | null) => {
         setElement(el);
       },
     }),
   );
 };
-
-export type { BlockHandlePopoverEvents };
-export { BlockHandlePopoverStateChangeEvent } from "@prosekit/web/block-handle";

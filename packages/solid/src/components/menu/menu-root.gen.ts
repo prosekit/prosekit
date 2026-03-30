@@ -3,51 +3,49 @@
  */
 
 import {
-  registerTooltipRootElement,
-  type TooltipRootElement,
-  type TooltipRootEvents,
-  type TooltipRootProps as TooltipRootElementProps,
-} from "@prosekit/web/tooltip";
+  registerMenuRootElement,
+  type MenuRootElement,
+  type MenuRootEvents,
+  type MenuRootProps as MenuRootElementProps,
+} from "@prosekit/web/menu";
 import { createEffect, createSignal, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
 import h from "solid-js/h";
 
 /**
- * Props for the {@link TooltipRoot} Solid component.
+ * Props for the {@link MenuRoot} Solid component.
  *
  * @public
  */
-export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement> {
+export interface MenuRootProps extends JSX.HTMLAttributes<MenuRootElement> {
   /**
    * Whether the overlay is initially open.
    * @default false
    */
-  defaultOpen?: TooltipRootElementProps["defaultOpen"];
+  defaultOpen?: MenuRootElementProps["defaultOpen"];
   /**
    * Whether the overlay is currently open.
    * @default null
    */
-  open?: TooltipRootElementProps["open"];
+  open?: MenuRootElementProps["open"];
   /**
    * Whether the component should ignore user interaction.
    * @default false
    */
-  disabled?: TooltipRootElementProps["disabled"];
-  /** Emitted when the tooltip is opened or closed. */
-  onOpenChange?: (event: TooltipRootEvents["openChange"]) => void;
+  disabled?: MenuRootElementProps["disabled"];
+  /** Emitted when the menu is opened or closed. */
+  onOpenChange?: (event: MenuRootEvents["openChange"]) => void;
 }
 
 /**
- * A Solid component that renders an `prosekit-tooltip-root` custom element.
+ * A Solid component that renders an `prosekit-menu-root` custom element.
  *
  * @public
  */
-export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
-  registerTooltipRootElement();
+export const MenuRoot: Component<MenuRootProps> = (props): any => {
+  registerMenuRootElement();
 
-  const [getElement, setElement] = createSignal<TooltipRootElement | null>(
-    null,
-  );
+  const [getElement, setElement] = createSignal<MenuRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
   const [elementProps, eventHandlers, restProps] = splitProps(
@@ -88,14 +86,14 @@ export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
   });
 
   return h(
-    "prosekit-tooltip-root",
+    "prosekit-menu-root",
     mergeProps(restProps, {
-      ref: (el: TooltipRootElement | null) => {
+      ref: (el: MenuRootElement | null) => {
         setElement(el);
       },
     }),
   );
 };
 
-export type { TooltipRootEvents };
-export { OpenChangeEvent } from "@prosekit/web/tooltip";
+export type { MenuRootEvents };
+export { OpenChangeEvent } from "@prosekit/web/menu";

@@ -96,14 +96,17 @@ function AutocompleteListComponent(
     return () => ac.abort();
   }, []);
 
-  const mergedRef = useCallback((element: AutocompleteListElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: AutocompleteListElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-autocomplete-list", {
     ...restProps,

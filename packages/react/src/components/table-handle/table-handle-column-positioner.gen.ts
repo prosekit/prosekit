@@ -223,7 +223,7 @@ function TableHandleColumnPositionerComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-table-handle-column-positioner", {

@@ -831,8 +831,8 @@ importers:
         version: 1.8.5
     devDependencies:
       '@aria-ui/cli':
-        specifier: ^0.0.102
-        version: 0.0.102(typescript@5.9.3)
+        specifier: https://pkg.pr.new/@aria-ui/cli@230
+        version: https://pkg.pr.new/@aria-ui/cli@230(typescript@5.9.3)
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -1209,8 +1209,9 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@aria-ui/cli@0.0.102':
-    resolution: {integrity: sha512-vDTZXMKXoDCGYmyzp4Flbe6SOVWkH+BuJrFZhd6/PRgpqNRYVxjV1wZcwnRHr9E1bm2Tx6dTbEqbmDwv4vkzOw==}
+  '@aria-ui/cli@https://pkg.pr.new/@aria-ui/cli@230':
+    resolution: {integrity: sha512-3uf7UTndmHj5dROwJ/v8LIJ1kJkYIdHku0MtmrG1wzU+efSZfsLqrwSPyQgm8kkFH+kj3qu92G/Si5cbMPk5CA==, tarball: https://pkg.pr.new/@aria-ui/cli@230}
+    version: 0.0.103
     hasBin: true
     peerDependencies:
       typescript: '>= 5.8.0'
@@ -7971,7 +7972,7 @@ snapshots:
       package-manager-detector: 1.6.0
       tinyexec: 1.0.4
 
-  '@aria-ui/cli@0.0.102(typescript@5.9.3)':
+  '@aria-ui/cli@https://pkg.pr.new/@aria-ui/cli@230(typescript@5.9.3)':
     dependencies:
       '@stricli/core': 1.2.6
       devalue: 5.6.4

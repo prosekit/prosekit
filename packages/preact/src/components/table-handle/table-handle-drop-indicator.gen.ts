@@ -56,7 +56,7 @@ function TableHandleDropIndicatorComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-table-handle-drop-indicator", {

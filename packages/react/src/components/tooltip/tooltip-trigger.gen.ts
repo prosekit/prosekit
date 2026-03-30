@@ -58,14 +58,17 @@ function TooltipTriggerComponent(
     Object.assign(element, { closeDelay: p0, disabled: p1, openDelay: p2 });
   });
 
-  const mergedRef = useCallback((element: TooltipTriggerElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: TooltipTriggerElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-tooltip-trigger", {
     ...restProps,

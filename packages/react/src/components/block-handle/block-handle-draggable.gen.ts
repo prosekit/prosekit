@@ -62,7 +62,7 @@ function BlockHandleDraggableComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-block-handle-draggable", {

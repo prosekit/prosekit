@@ -236,7 +236,7 @@ function AutocompletePopoverComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-autocomplete-popover", {

@@ -49,14 +49,17 @@ function BlockHandleAddComponent(
     Object.assign(element, { editor: p0 ?? p0Fallback });
   });
 
-  const mergedRef = useCallback((element: BlockHandleAddElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: BlockHandleAddElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-block-handle-add", {
     ...restProps,

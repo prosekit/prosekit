@@ -34,14 +34,17 @@ function TooltipPopupComponent(
 
   const { ...restProps } = props;
 
-  const mergedRef = useCallback((element: TooltipPopupElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: TooltipPopupElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-tooltip-popup", {
     ...restProps,

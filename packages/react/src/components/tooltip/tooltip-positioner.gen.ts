@@ -209,14 +209,17 @@ function TooltipPositionerComponent(
     });
   });
 
-  const mergedRef = useCallback((element: TooltipPositionerElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: TooltipPositionerElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-tooltip-positioner", {
     ...restProps,

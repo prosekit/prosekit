@@ -46,14 +46,17 @@ function MenuPopupComponent(
     Object.assign(element, { eventTarget: p0 });
   });
 
-  const mergedRef = useCallback((element: MenuPopupElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: MenuPopupElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-menu-popup", {
     ...restProps,

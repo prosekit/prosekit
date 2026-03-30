@@ -213,7 +213,7 @@ function InlinePopoverPositionerComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-inline-popover-positioner", {

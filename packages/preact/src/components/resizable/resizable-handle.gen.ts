@@ -45,14 +45,17 @@ function ResizableHandleComponent(
     Object.assign(element, { position: p0 });
   });
 
-  const mergedRef = useCallback((element: ResizableHandleElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: ResizableHandleElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-resizable-handle", {
     ...restProps,

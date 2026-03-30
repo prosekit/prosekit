@@ -49,14 +49,17 @@ function TableHandleRootComponent(
     Object.assign(element, { editor: p0 ?? p0Fallback });
   });
 
-  const mergedRef = useCallback((element: TableHandleRootElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: TableHandleRootElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-table-handle-root", {
     ...restProps,

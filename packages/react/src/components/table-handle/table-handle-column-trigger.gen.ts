@@ -60,7 +60,7 @@ function TableHandleColumnTriggerComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-table-handle-column-trigger", {

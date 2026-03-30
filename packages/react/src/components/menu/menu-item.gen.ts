@@ -61,14 +61,17 @@ function MenuItemComponent(
     Object.assign(element, { closeOnClick: p0, disabled: p1, value: p2 });
   });
 
-  const mergedRef = useCallback((element: MenuItemElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: MenuItemElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-menu-item", {
     ...restProps,

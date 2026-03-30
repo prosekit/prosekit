@@ -53,14 +53,17 @@ function AutocompleteItemComponent(
     Object.assign(element, { disabled: p0, value: p1 });
   });
 
-  const mergedRef = useCallback((element: AutocompleteItemElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: AutocompleteItemElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-autocomplete-item", {
     ...restProps,

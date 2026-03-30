@@ -60,7 +60,7 @@ function TableHandleDragPreviewComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-table-handle-drag-preview", {

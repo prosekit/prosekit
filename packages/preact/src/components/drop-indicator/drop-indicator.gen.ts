@@ -55,14 +55,17 @@ function DropIndicatorComponent(
     Object.assign(element, { editor: p0 ?? p0Fallback, width: p1 });
   });
 
-  const mergedRef = useCallback((element: DropIndicatorElement | null) => {
-    elementRef.current = element;
-    if (typeof forwardedRef === "function") {
-      forwardedRef(element);
-    } else if (forwardedRef) {
-      forwardedRef.current = element;
-    }
-  }, []);
+  const mergedRef = useCallback(
+    (element: DropIndicatorElement | null) => {
+      elementRef.current = element;
+      if (typeof forwardedRef === "function") {
+        forwardedRef(element);
+      } else if (forwardedRef) {
+        forwardedRef.current = element;
+      }
+    },
+    [forwardedRef],
+  );
 
   return createElement("prosekit-drop-indicator", {
     ...restProps,

@@ -31,8 +31,8 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
   <AutocompletePopover
     :regex="regex"
     class="CSS_AUTOCOMPLETE_MENU"
-    @query-change="props.onQueryChange"
-    @open-change="props.onOpenChange"
+    @query-change="(event) => props.onQueryChange?.(event.query)"
+    @open-change="(event) => props.onOpenChange?.(event.open)"
   >
     <AutocompleteList>
       <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">

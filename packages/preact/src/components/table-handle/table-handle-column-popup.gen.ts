@@ -40,7 +40,7 @@ function TableHandleColumnPopupComponent(
         forwardedRef.current = element;
       }
     },
-    [],
+    [forwardedRef],
   );
 
   return createElement("prosekit-table-handle-column-popup", {

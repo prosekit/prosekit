@@ -23,4 +23,11 @@ export default defineESLintConfig(
     },
     ignores: ['**/*.md', '**/*.md/**/*'],
   },
+  {
+    rules: {
+      // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-function-scoping.md
+      'unicorn/consistent-function-scoping': 'error',
+    },
+    ignores: ['**/*.test.*', '**/*.spec.*'],
+  },
 )

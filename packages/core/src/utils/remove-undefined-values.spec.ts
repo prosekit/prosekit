@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { removeUndefinedValues } from './remove-undefined-values'
+import { removeUndefinedValues } from './remove-undefined-values.ts'
 
 test('removeUndefinedValues', () => {
   const obj1 = { a: 1, b: undefined, c: null }

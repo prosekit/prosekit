@@ -9,9 +9,9 @@ import { ProseKit } from 'prosekit/svelte'
 import { InlineMenu } from '../../ui/inline-menu'
 import ExtensionComponent from './extension-component.svelte'
 
-const props = $props<{
+const props: {
   placeholder: string
-}>()
+} = $props()
 
 const extension = defineBasicExtension()
 const editor = createEditor({ extension })

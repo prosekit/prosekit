@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link TooltipTrigger} component.
  */
 export interface TooltipTriggerProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const TooltipTrigger: ForwardRefExoticComponent<
   TooltipTriggerProps &
   RefAttributes<TooltipTriggerElement> &
   HTMLAttributes<TooltipTriggerElement>
 > = createComponent<
-  TooltipTriggerProps, 
+  TooltipTriggerProps,
   TooltipTriggerElement
 >(
   'prosekit-tooltip-trigger',

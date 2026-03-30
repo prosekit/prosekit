@@ -2,10 +2,10 @@ import { useEffect, useEventListener, type ConnectableElement, type SetupOptions
 import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableRow } from '@prosekit/extensions/table'
 
-import { tableHandleDndContext, tableHandleRootContext } from '../context'
-import { useEmptyImage } from '../hooks/use-empty-image'
+import { tableHandleDndContext, tableHandleRootContext } from '../context.ts'
+import { useEmptyImage } from '../hooks/use-empty-image.ts'
 
-import type { TableHandleRowTriggerEvents, TableHandleRowTriggerProps } from './types'
+import type { TableHandleRowTriggerEvents, TableHandleRowTriggerProps } from './types.ts'
 
 /**
  * @internal

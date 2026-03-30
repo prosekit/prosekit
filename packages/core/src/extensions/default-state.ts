@@ -1,10 +1,10 @@
 import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 
-import { defineFacetPayload } from '../facets/facet-extension'
-import { stateFacet } from '../facets/state'
-import type { PlainExtension } from '../types/extension'
-import type { NodeJSON, SelectionJSON } from '../types/model'
-import { getEditorContentJSON } from '../utils/editor-content'
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { stateFacet } from '../facets/state.ts'
+import type { PlainExtension } from '../types/extension.ts'
+import type { NodeJSON, SelectionJSON } from '../types/model.ts'
+import { getEditorContentJSON } from '../utils/editor-content.ts'
 
 /**
  * @public

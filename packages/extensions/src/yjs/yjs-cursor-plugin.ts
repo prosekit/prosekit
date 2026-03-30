@@ -2,7 +2,7 @@ import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import { yCursorPlugin } from 'y-prosemirror'
 
-import type { Awareness } from './yjs-types'
+import type { Awareness } from './yjs-types.ts'
 
 /**
  * Options for `y-prosemirror`'s `yCursorPlugin`.

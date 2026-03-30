@@ -1,9 +1,9 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineCodeBlockCommands, type CodeBlockCommandsExtension } from './code-block-commands'
-import { defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule'
-import { defineCodeBlockKeymap } from './code-block-keymap'
-import { defineCodeBlockSpec, type CodeBlockSpecExtension } from './code-block-spec'
+import { defineCodeBlockCommands, type CodeBlockCommandsExtension } from './code-block-commands.ts'
+import { defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule.ts'
+import { defineCodeBlockKeymap } from './code-block-keymap.ts'
+import { defineCodeBlockSpec, type CodeBlockSpecExtension } from './code-block-spec.ts'
 
 /**
  * @internal

@@ -1,7 +1,7 @@
 import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
 import { useEffect, useReducer } from 'react'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.

@@ -1,6 +1,6 @@
 import { expect, test, vi } from 'vitest'
 
-import { maybeRun } from './maybe-run'
+import { maybeRun } from './maybe-run.ts'
 
 test('executes function argument', () => {
   const fn = vi.fn((x: number) => x + 1)

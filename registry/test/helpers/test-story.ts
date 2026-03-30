@@ -1,4 +1,5 @@
 import '../../src/tailwind.css'
+import './test-style.css'
 
 import { DefaultMap, isHTMLElement } from '@ocavue/utils'
 import { formatHTML } from 'diffable-html-snapshot'
@@ -36,7 +37,9 @@ function testSingleStory(
     const shouldSkip = frameworks ? !frameworks.includes(example.framework) : false
     describe.skipIf(shouldSkip)(example.framework + '/' + example.story, () => {
       beforeEach(async () => {
-        await renderExample(example.framework, example.story, emptyContent)
+        const screen = await renderExample(example.framework, example.story, emptyContent)
+        const container: HTMLElement = screen.container
+        container.classList.add('prosekit-registry-test-container')
       })
       callback(example)
     })
@@ -298,6 +301,15 @@ const cloneElementTransforms: ElementTransform[] = [
     apply: (element) => element.setAttribute('id', 'SOME_ID'),
   },
 
+  // Replace "name" attributes
+  {
+    matches: (element) => {
+      const value = element.getAttribute('name')
+      return !!value && value.startsWith('id-')
+    },
+    apply: (element) => element.setAttribute('name', 'SOME_NAME'),
+  },
+
   // Replace "for" attributes in <label> elements
   {
     matches: (element) => element.tagName === 'LABEL' && !!element.getAttribute('for'),
@@ -311,6 +323,15 @@ const cloneElementTransforms: ElementTransform[] = [
       return !!value && /^[\w-]{21}$/.test(value)
     },
     apply: (element) => element.setAttribute('value', 'SOME_NANOID_WITH_LENGTH_21'),
+  },
+
+  // Replace data-group attributes
+  {
+    matches: (element) => {
+      const value = element.tagName.toLowerCase() === 'pm-page-chunk' && element.getAttribute('data-group')
+      return !!value
+    },
+    apply: (element) => element.setAttribute('data-group', 'SOME_GROUP'),
   },
 
   // Remove React suppressHydrationWarning attribute

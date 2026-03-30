@@ -1,8 +1,8 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineTableCommands, type TableCommandsExtension } from './table-commands'
-import { defineTableDropIndicator } from './table-drop-indicator'
-import { defineTablePlugins } from './table-plugins'
+import { defineTableCommands, type TableCommandsExtension } from './table-commands.ts'
+import { defineTableDropIndicator } from './table-drop-indicator.ts'
+import { defineTablePlugins } from './table-plugins.ts'
 import {
   defineTableCellSpec,
   defineTableHeaderCellSpec,
@@ -12,7 +12,7 @@ import {
   type TableHeaderCellSpecExtension,
   type TableRowSpecExtension,
   type TableSpecExtension,
-} from './table-spec'
+} from './table-spec.ts'
 
 /**
  * @internal

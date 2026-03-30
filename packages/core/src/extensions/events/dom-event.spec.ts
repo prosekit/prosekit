@@ -1,9 +1,9 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { createEditor } from '../../editor/editor'
-import { defineTestExtension } from '../../testing'
+import { createEditor } from '../../editor/editor.ts'
+import { defineTestExtension } from '../../testing/index.ts'
 
-import { defineDOMEventHandler } from './dom-event'
+import { defineDOMEventHandler } from './dom-event.ts'
 
 describe('defineDOMEventHandler', () => {
   it('should register and unregister event handlers dynamically', () => {

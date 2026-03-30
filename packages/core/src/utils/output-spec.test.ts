@@ -1,7 +1,7 @@
 import type { DOMOutputSpec } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
-import { insertOutputSpecAttrs } from './output-spec'
+import { insertOutputSpecAttrs } from './output-spec.ts'
 
 describe('insertOutputSpecAttrs', () => {
   it('should insert attrs into an array without attributes', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { LINK_MARK_RE } from './link-regex'
+import { LINK_MARK_RE } from './link-regex.ts'
 
 describe('LINK_MARK_RE', () => {
   const cases = [

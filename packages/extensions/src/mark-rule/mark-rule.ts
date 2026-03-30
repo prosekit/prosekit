@@ -1,8 +1,8 @@
 import { defineFacet, defineFacetPayload, pluginFacet, type PlainExtension, type PluginPayload } from '@prosekit/core'
 import { PluginKey, ProseMirrorPlugin, type EditorState, type Transaction } from '@prosekit/pm/state'
 
-import { applyMarkRules } from './apply'
-import type { MarkRuleOptions } from './types'
+import { applyMarkRules } from './apply.ts'
+import type { MarkRuleOptions } from './types.ts'
 
 /**
  * A mark rule is something that can automatically apply marks to text if it

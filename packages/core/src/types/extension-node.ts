@@ -1,4 +1,4 @@
-import type { NodeAction } from '../editor/action'
+import type { NodeAction } from '../editor/action.ts'
 
 /**
  * @internal

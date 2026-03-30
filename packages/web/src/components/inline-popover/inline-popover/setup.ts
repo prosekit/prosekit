@@ -13,12 +13,12 @@ import type { ReferenceElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 import type { Selection } from '@prosekit/pm/state'
 
-import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event'
-import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
-import { useKeymap } from '../../../hooks/use-keymap'
+import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event.ts'
+import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event.ts'
+import { useKeymap } from '../../../hooks/use-keymap.ts'
 
-import type { InlinePopoverEvents, InlinePopoverProps } from './types'
-import { getVirtualSelectionElement } from './virtual-selection-element'
+import type { InlinePopoverEvents, InlinePopoverProps } from './types.ts'
+import { getVirtualSelectionElement } from './virtual-selection-element.ts'
 
 /**
  * @internal

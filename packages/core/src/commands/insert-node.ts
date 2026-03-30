@@ -2,9 +2,9 @@ import { Fragment, Slice, type Attrs, type NodeType, type ProseMirrorNode } from
 import type { Command } from '@prosekit/pm/state'
 import { dropPoint } from '@prosekit/pm/transform'
 
-import { assert } from '../utils/assert'
-import { getNodeType } from '../utils/get-node-type'
-import { setSelectionAround } from '../utils/set-selection-around'
+import { assert } from '../utils/assert.ts'
+import { getNodeType } from '../utils/get-node-type.ts'
+import { setSelectionAround } from '../utils/set-selection-around.ts'
 
 /**
  * @public

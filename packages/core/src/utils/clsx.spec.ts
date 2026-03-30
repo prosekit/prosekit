@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { clsx } from './clsx'
+import { clsx } from './clsx.ts'
 
 test('joins class names', () => {
   expect(clsx('foo', 'bar')).toBe('foo bar')

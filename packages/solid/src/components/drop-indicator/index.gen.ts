@@ -1,1 +1,1 @@
-export { DropIndicator, type DropIndicatorProps } from './drop-indicator.gen'
+export { DropIndicator, type DropIndicatorProps } from './drop-indicator.gen.ts'

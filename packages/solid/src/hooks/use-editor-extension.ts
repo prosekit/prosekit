@@ -1,9 +1,9 @@
 import { EditorNotFoundError, type Editor, type Extension } from '@prosekit/core'
 import { createEffect, onCleanup, type Accessor } from 'solid-js'
 
-import { useEditorContext } from '../contexts/editor-context'
-import type { MaybeAccessor } from '../types'
-import { toValue } from '../utils/to-value'
+import { useEditorContext } from '../contexts/editor-context.ts'
+import type { MaybeAccessor } from '../types.ts'
+import { toValue } from '../utils/to-value.ts'
 
 /**
  * @internal

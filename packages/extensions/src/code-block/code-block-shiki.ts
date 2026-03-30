@@ -1,10 +1,10 @@
 import type { Extension } from '@prosekit/core'
 import type { SpecialLanguage } from 'shiki'
 
-import { defineCodeBlockHighlight } from './code-block-highlight'
-import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle'
-import type { ShikiHighlighterOptions } from './shiki-highlighter-chunk'
-import { createLazyParser } from './shiki-parser'
+import { defineCodeBlockHighlight } from './code-block-highlight.ts'
+import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle.ts'
+import type { ShikiHighlighterOptions } from './shiki-highlighter-chunk.ts'
+import { createLazyParser } from './shiki-parser.ts'
 
 /**
  * The options to configure the Shiki highlighter.
@@ -12,6 +12,13 @@ import { createLazyParser } from './shiki-parser'
  * @public
  */
 export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'themes' | 'langs' | 'engine'> {
+  /**
+   * ProseMirror node types to highlight.
+   *
+   * @default ['codeBlock', 'mathBlock']
+   */
+  nodeTypes?: string[]
+
   /**
    * A list of Shiki themes to pre-load. The first theme in the list will be
    * used to render the code block.
@@ -46,10 +53,11 @@ export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'th
  * @public
  */
 export function defineCodeBlockShiki({
+  nodeTypes,
   themes = ['one-dark-pro'],
   langs = ['text'],
   ...rest
 }: CodeBlockShikiOptions = {}): Extension {
   const parser = createLazyParser({ themes, langs, ...rest })
-  return defineCodeBlockHighlight({ parser })
+  return defineCodeBlockHighlight({ parser, nodeTypes })
 }

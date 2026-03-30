@@ -1,12 +1,12 @@
 import { Plugin, PluginKey } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 
-import { union } from '../editor/union'
-import { withPriority } from '../editor/with-priority'
-import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing'
-import { Priority } from '../types/priority'
+import { union } from '../editor/union.ts'
+import { withPriority } from '../editor/with-priority.ts'
+import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
+import { Priority } from '../types/priority.ts'
 
-import { definePlugin } from './plugin'
+import { definePlugin } from './plugin.ts'
 
 describe('plugin', () => {
   it('maintains plugin order in state based on priority', () => {

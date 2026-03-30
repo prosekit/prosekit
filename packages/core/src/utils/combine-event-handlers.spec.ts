@@ -1,6 +1,6 @@
 import { expect, test, vi } from 'vitest'
 
-import { combineEventHandlers } from './combine-event-handlers'
+import { combineEventHandlers } from './combine-event-handlers.ts'
 
 test('runs handlers in reverse order and stops on true', () => {
   const handler1 = vi.fn(() => false)

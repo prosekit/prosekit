@@ -1,8 +1,8 @@
 import { defineCommands, type Extension } from '@prosekit/core'
 
-import { insertImage } from './image-commands/insert-image'
-import { uploadImage, type UploadImageOptions } from './image-commands/upload-image'
-import type { ImageAttrs } from './image-spec'
+import { insertImage } from './image-commands/insert-image.ts'
+import { uploadImage, type UploadImageOptions } from './image-commands/upload-image.ts'
+import type { ImageAttrs } from './image-spec.ts'
 
 /**
  * @internal

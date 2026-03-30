@@ -1,16 +1,13 @@
 import { defineMarkViewComponent, defineMarkViewFactory, type Extension } from '@prosekit/core'
-import type { MarkViewConstructor } from '@prosekit/pm/view'
 import type { CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import {
-  useMarkViewContext,
-  useMarkViewFactory,
+  AbstractVueMarkView,
+  buildVueMarkViewCreator,
   type MarkViewContext,
-  type MarkViewFactory,
-  type VueMarkViewUserOptions,
+  type VueRendererComponent,
+  type VueRendererResult,
 } from '@prosemirror-adapter/vue'
-import { computed, defineComponent, h, type DefineComponent } from 'vue'
-
-import { useExtension } from '../hooks/use-extension'
+import { defineComponent, h, markRaw, Teleport, type DefineComponent } from 'vue'
 
 /**
  * @public
@@ -34,30 +31,36 @@ export interface VueMarkViewOptions extends CoreMarkViewUserOptions<VueMarkViewC
   name: string
 }
 
-function withMarkViewProps(component: VueMarkViewComponent) {
-  return defineComponent({
-    name: 'MarkViewPropsWrapper',
-    setup: () => {
-      const props: Readonly<VueMarkViewProps> = useMarkViewContext()
-      return () => h(component, props)
-    },
-  })
+class ProseKitVueMarkView extends AbstractVueMarkView<VueMarkViewComponent> {
+  render = (): VueRendererComponent => {
+    const UserComponent = this.component
+    const render = () => {
+      const props = this.context
+      return h(Teleport, { key: this.key, to: this.dom }, [h(UserComponent, props)])
+    }
+    const RendererComponent: VueRendererComponent = defineComponent({
+      name: 'ProsemirrorMarkView',
+      setup: () => {
+        return render
+      },
+    })
+    return markRaw(RendererComponent)
+  }
 }
 
 /**
  * @internal
  */
-export const VueMarkViewsConsumer: DefineComponent = /* @__PURE__ */ defineComponent({
-  name: 'VueMarkViewsConsumer',
-  setup: () => {
-    const markViewFactory: MarkViewFactory = useMarkViewFactory()
-    const extension = computed(() => {
-      return defineVueMarkViewFactory(markViewFactory)
-    })
-    useExtension(extension)
-    return (): null => null
-  },
-})
+export function defineVueMarkViewFactory(
+  renderVueRenderer: VueRendererResult['renderVueRenderer'],
+  removeVueRenderer: VueRendererResult['removeVueRenderer'],
+): Extension {
+  const factory = buildVueMarkViewCreator(renderVueRenderer, removeVueRenderer, ProseKitVueMarkView)
+  return defineMarkViewFactory<VueMarkViewOptions>({
+    group: 'vue',
+    factory,
+  })
+}
 
 /**
  * Defines a mark view using a Vue component.
@@ -65,25 +68,9 @@ export const VueMarkViewsConsumer: DefineComponent = /* @__PURE__ */ defineCompo
  * @public
  */
 export function defineVueMarkView(options: VueMarkViewOptions): Extension {
-  const { name, component, ...userOptions } = options
-
-  const args: VueMarkViewUserOptions = {
-    ...userOptions,
-    component: withMarkViewProps(component),
-  }
-
-  return defineMarkViewComponent<VueMarkViewUserOptions>({
+  return defineMarkViewComponent<VueMarkViewOptions>({
     group: 'vue',
-    name,
-    args,
-  })
-}
-
-function defineVueMarkViewFactory(
-  factory: (options: VueMarkViewUserOptions) => MarkViewConstructor,
-) {
-  return defineMarkViewFactory<VueMarkViewUserOptions>({
-    group: 'vue',
-    factory,
+    name: options.name,
+    args: options,
   })
 }

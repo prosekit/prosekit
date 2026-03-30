@@ -2,8 +2,8 @@ import { insertNode, ProseKitError } from '@prosekit/core'
 import type { Command, EditorState, Transaction } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { UploadTask, type Uploader } from '../../file'
-import type { ImageAttrs } from '../image-spec'
+import { UploadTask, type Uploader } from '../../file/index.ts'
+import type { ImageAttrs } from '../image-spec.ts'
 
 /**
  * Options for {@link uploadImage}.

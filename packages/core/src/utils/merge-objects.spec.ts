@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { mergeObjects } from './merge-objects'
+import { mergeObjects } from './merge-objects.ts'
 
 // basic merge
 test('merge simple objects', () => {

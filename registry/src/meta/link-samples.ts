@@ -49,11 +49,17 @@ async function hardLinkFiles(sourceFile: string, targetFile: string) {
 
 async function linkFileGroup(files: string[]) {
   if (files.length < 2) {
-    console.warn(`[registry] Not enough files to link: ${files.join(', ')}`)
+    console.warn(`[link-samples.ts] Warning: Not enough files to link: ${files.join(', ')}`)
     return
   }
 
-  const [sourceFile, ...targetFiles] = files
+  // Use the most recently modified file as the source
+  const stats = await Promise.all(
+    files.map(async (file) => ({ file, mtimeMs: (await fs.lstat(file)).mtimeMs })),
+  )
+  stats.sort((a, b) => b.mtimeMs - a.mtimeMs)
+
+  const [sourceFile, ...targetFiles] = stats.map((s) => s.file)
 
   for (const targetFile of targetFiles) {
     if (await areHardLinked(sourceFile, targetFile)) continue

@@ -2,12 +2,12 @@ import { isNotNullish } from '@ocavue/utils'
 import { DOMSerializer, type DOMOutputSpec, type Mark, type ProseMirrorNode, type Schema } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
-import { defineFacet } from '../facets/facet'
-import { defineFacetPayload } from '../facets/facet-extension'
-import type { AnyFunction } from '../types/any-function'
-import type { PlainExtension } from '../types/extension'
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { defineFacet } from '../facets/facet.ts'
+import type { AnyFunction } from '../types/any-function.ts'
+import type { PlainExtension } from '../types/extension.ts'
 
-import { pluginFacet, type PluginPayload } from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin.ts'
 
 type SerializeFragmentFunction = typeof DOMSerializer.prototype.serializeFragment
 type SerializeNodeFunction = typeof DOMSerializer.prototype.serializeNode
@@ -35,29 +35,37 @@ function wrapFunction<T extends AnyFunction>(fn: T, wrapper?: FunctionWrapper<T>
 }
 
 class CustomDOMSerializer extends DOMSerializer {
+  private serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>
+  private serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>
+
   constructor(
     nodes: Record<string, (node: ProseMirrorNode) => DOMOutputSpec>,
     marks: Record<string, (mark: Mark, inline: boolean) => DOMOutputSpec>,
-    private serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>,
-    private serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>,
+    serializeFragmentWrapper?: FunctionWrapper<SerializeFragmentFunction>,
+    serializeNodeWrapper?: FunctionWrapper<SerializeNodeFunction>,
   ) {
     super(nodes, marks)
+    this.serializeFragmentWrapper = serializeFragmentWrapper
+    this.serializeNodeWrapper = serializeNodeWrapper
   }
 
   override serializeFragment(...args: Parameters<SerializeFragmentFunction>): ReturnType<SerializeFragmentFunction> {
+    // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
     const fn: SerializeFragmentFunction = (...args) => super.serializeFragment(...args)
     return wrapFunction(fn, this.serializeFragmentWrapper)(...args)
   }
 
   override serializeNode(...args: Parameters<SerializeNodeFunction>): ReturnType<SerializeNodeFunction> {
+    // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
     const fn: SerializeNodeFunction = (...args) => super.serializeNode(...args)
     return wrapFunction(fn, this.serializeNodeWrapper)(...args)
   }
 }
 
+const nodesFromSchema = /* @__PURE__ */ DOMSerializer.nodesFromSchema.bind(DOMSerializer)
+const marksFromSchema = /* @__PURE__ */ DOMSerializer.marksFromSchema.bind(DOMSerializer)
+
 function createCustomDOMSerializer(schema: Schema, options: ClipboardSerializerOptions) {
-  const nodesFromSchema: NodesFromSchemaFunction = (...args) => DOMSerializer.nodesFromSchema(...args)
-  const marksFromSchema: MarksFromSchemaFunction = (...args) => DOMSerializer.marksFromSchema(...args)
   const nodes = wrapFunction(nodesFromSchema, options.nodesFromSchemaWrapper)(schema)
   const marks = wrapFunction(marksFromSchema, options.marksFromSchemaWrapper)(schema)
   return new CustomDOMSerializer(nodes, marks, options.serializeFragmentWrapper, options.serializeNodeWrapper)

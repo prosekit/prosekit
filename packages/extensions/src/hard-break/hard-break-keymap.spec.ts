@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
-import { setupTest } from '../testing'
-import { inputText } from '../testing/keyboard'
+import { setupTest } from '../testing/index.ts'
+import { inputText } from '../testing/keyboard.ts'
 
 describe('defineHardBreakKeymap', () => {
   it('should insert hard break', async () => {

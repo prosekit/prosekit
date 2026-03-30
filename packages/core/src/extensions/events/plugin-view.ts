@@ -1,10 +1,10 @@
 import { PluginKey, ProseMirrorPlugin, type EditorState } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { defineFacet } from '../../facets/facet'
-import { defineFacetPayload } from '../../facets/facet-extension'
-import type { PlainExtension } from '../../types/extension'
-import { pluginFacet, type PluginPayload } from '../plugin'
+import { defineFacetPayload } from '../../facets/facet-extension.ts'
+import { defineFacet } from '../../facets/facet.ts'
+import type { PlainExtension } from '../../types/extension.ts'
+import { pluginFacet, type PluginPayload } from '../plugin.ts'
 
 /**
  * A function that is called when the editor view is mounted.

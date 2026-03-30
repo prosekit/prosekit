@@ -2,7 +2,7 @@ import type { ReadonlySignal } from '@aria-ui/core'
 import { createSignal, useEffect, type ConnectableElement } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 
-import { getSafeEditorView } from '../utils/get-safe-editor-view'
+import { getSafeEditorView } from '../utils/get-safe-editor-view.ts'
 
 /**
  * Detect if the user is selecting text inside the editor, in which case some

@@ -1,6 +1,6 @@
 import { defineKeymap, type Keymap } from '@prosekit/core'
 
-import { useExtension, type UseExtensionOptions } from './use-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension.ts'
 
 export function useKeymap(keymap: () => Keymap, options?: UseExtensionOptions): void {
   const extension = () => defineKeymap(keymap())

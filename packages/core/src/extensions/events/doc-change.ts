@@ -1,9 +1,9 @@
 import type { EditorState } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import type { PlainExtension } from '../../types/extension'
+import type { PlainExtension } from '../../types/extension.ts'
 
-import { defineUpdateHandler } from './plugin-view'
+import { defineUpdateHandler } from './plugin-view.ts'
 
 /**
  * A function that is called when the editor document is changed.

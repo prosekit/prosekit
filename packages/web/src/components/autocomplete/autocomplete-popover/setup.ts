@@ -11,16 +11,16 @@ import {
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
-import { defineKeymap, Priority, withPriority, type Editor } from '@prosekit/core'
+import { defineKeymap, withPriority, type Editor, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
-import { useEditorExtension } from '../../../hooks/use-editor-extension'
-import { useFirstRendering } from '../../../hooks/use-first-rendering'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { onSubmitContext, openContext, queryContext } from '../context'
+import { useEditorExtension } from '../../../hooks/use-editor-extension.ts'
+import { useFirstRendering } from '../../../hooks/use-first-rendering.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { onSubmitContext, openContext, queryContext } from '../context.ts'
 
-import { defaultQueryBuilder } from './helpers'
-import type { AutocompletePopoverEvents, AutocompletePopoverProps } from './types'
+import { defaultQueryBuilder } from './helpers.ts'
+import type { AutocompletePopoverEvents, AutocompletePopoverProps } from './types.ts'
 
 /**
  * @internal
@@ -164,6 +164,6 @@ function useEscapeKeydown(
   handler: () => boolean,
 ): void {
   const keymap = { Escape: handler }
-  const extension = withPriority(defineKeymap(keymap), Priority.highest)
+  const extension = withPriority(defineKeymap(keymap), 4 satisfies typeof Priority.highest)
   useEditorExtension(host, editor, extension)
 }

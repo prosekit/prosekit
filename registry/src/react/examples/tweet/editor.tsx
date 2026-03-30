@@ -21,10 +21,10 @@ export default function Editor(props: EditorProps) {
     return createEditor({ extension: defineExtension(), defaultContent })
   }, [defaultContent])
 
-  const [method, setMethod] = useState<'iframe' | 'react'>('iframe')
+  const [method, setMethod] = useState<'basic' | 'advanced'>('basic')
 
   const reactTweetView: Extension | null = useMemo(() => {
-    if (method === 'iframe') {
+    if (method === 'basic') {
       return null
     }
     return defineReactNodeView({

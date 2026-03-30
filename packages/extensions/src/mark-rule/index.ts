@@ -1,2 +1,2 @@
-export { defineMarkRule } from './mark-rule'
-export type { MarkRuleOptions } from './types'
+export { defineMarkRule } from './mark-rule.ts'
+export type { MarkRuleOptions } from './types.ts'

@@ -1,4 +1,4 @@
-export { defineHardBreak, type HardBreakExtension } from './hard-break'
-export { defineHardBreakCommands, type HardBreakCommandsExtension } from './hard-break-commands'
-export { defineHardBreakKeymap } from './hard-break-keymap'
-export { defineHardBreakSpec, type HardBreakSpecExtension } from './hard-break-spec'
+export { defineHardBreakCommands, type HardBreakCommandsExtension } from './hard-break-commands.ts'
+export { defineHardBreakKeymap } from './hard-break-keymap.ts'
+export { defineHardBreakSpec, type HardBreakSpecExtension } from './hard-break-spec.ts'
+export { defineHardBreak, type HardBreakExtension } from './hard-break.ts'

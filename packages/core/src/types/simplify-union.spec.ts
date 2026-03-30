@@ -1,7 +1,7 @@
 import { test } from 'vitest'
 
-import { assertTypeEqual } from './assert-type-equal'
-import type { SimplifyUnion } from './simplify-union'
+import { assertTypeEqual } from './assert-type-equal.ts'
+import type { SimplifyUnion } from './simplify-union.ts'
 
 test('SimplifyUnion', () => {
   type T1 = { a: string } | { b: string }

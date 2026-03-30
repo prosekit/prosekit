@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { splitTextByRegex } from './split-text-by-regex'
+import { splitTextByRegex } from './split-text-by-regex.ts'
 
 describe('splitTextByRegex', () => {
   it('should return undefined when no matches are found', () => {

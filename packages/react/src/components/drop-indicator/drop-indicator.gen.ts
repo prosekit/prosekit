@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link DropIndicator} component.
  */
 export interface DropIndicatorProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const DropIndicator: ForwardRefExoticComponent<
   DropIndicatorProps &
   RefAttributes<DropIndicatorElement> &
   HTMLAttributes<DropIndicatorElement>
 > = createComponent<
-  DropIndicatorProps, 
+  DropIndicatorProps,
   DropIndicatorElement
 >(
   'prosekit-drop-indicator',

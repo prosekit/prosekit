@@ -11,11 +11,11 @@ import { menuRootEvents, menuRootProps, useMenuRoot } from '@aria-ui/menu/elemen
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 
-import { getStateWithDefaults } from '../../../utils/get-default-state'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { tableHandleRootContext } from '../context'
+import { getStateWithDefaults } from '../../../utils/get-default-state.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { tableHandleRootContext } from '../context.ts'
 
-import type { TableHandleRowRootEvents, TableHandleRowRootProps } from './types'
+import type { TableHandleRowRootEvents, TableHandleRowRootProps } from './types.ts'
 
 /**
  * @internal

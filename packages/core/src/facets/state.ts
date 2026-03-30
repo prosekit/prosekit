@@ -1,10 +1,10 @@
 import type { Mark, ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import type { EditorStateConfig, Plugin, Selection } from '@prosekit/pm/state'
 
-import { assert } from '../utils/assert'
+import { assert } from '../utils/assert.ts'
 
-import { defineFacet, type Facet } from './facet'
-import { rootFacet, type RootPayload } from './root'
+import { defineFacet, type Facet } from './facet.ts'
+import { rootFacet, type RootPayload } from './root.ts'
 
 export type StatePayload = (ctx: { schema: Schema }) => EditorStateConfig
 

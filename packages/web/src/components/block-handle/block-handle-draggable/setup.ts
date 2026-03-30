@@ -6,12 +6,12 @@ import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { getBoxElement } from '../../../utils/get-box-element'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context'
+import { DRAGGING_CLASS_NAME } from '../../../constants.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { blockPopoverContext, draggingContext, type BlockPopoverContext, type HoverState } from '../context.ts'
 
-import { setDragPreview } from './set-drag-preview'
-import type { BlockHandleDraggableProps } from './types'
+import { setDragPreview } from './set-drag-preview.ts'
+import type { BlockHandleDraggableProps } from './types.ts'
 
 /**
  * @internal
@@ -36,7 +36,7 @@ export function useBlockHandleDraggable(
     const hoverState = context.get()
 
     if (view && hoverState) {
-      view.dom.classList.add('prosekit-dragging')
+      view.dom.classList.add(DRAGGING_CLASS_NAME)
       createDraggingPreview(view, hoverState, event)
       setViewDragging(view, hoverState)
     }
@@ -47,7 +47,7 @@ export function useBlockHandleDraggable(
 
     const view = getSafeEditorView(state.editor.get())
     if (view) {
-      view.dom.classList.remove('prosekit-dragging')
+      view.dom.classList.remove(DRAGGING_CLASS_NAME)
     }
   })
 
@@ -92,15 +92,10 @@ function createDraggingPreview(view: EditorView, hoverState: HoverState, event: 
     return
   }
 
-  const boxElement = getBoxElement(element)
-  if (!boxElement || !isHTMLElement(boxElement)) {
-    return
-  }
-
   event.dataTransfer.clearData()
-  event.dataTransfer.setData('text/html', boxElement.outerHTML)
+  event.dataTransfer.setData('text/html', element.outerHTML)
   event.dataTransfer.effectAllowed = 'copyMove'
-  setDragPreview(event, boxElement)
+  setDragPreview(event, element)
 
   return
 }

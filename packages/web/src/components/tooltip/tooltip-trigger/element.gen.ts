@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTooltipTrigger } from "./setup"
-import { tooltipTriggerEvents, tooltipTriggerProps, type TooltipTriggerEvents, type TooltipTriggerProps } from "./types"
+import { useTooltipTrigger } from "./setup.ts"
+import { tooltipTriggerEvents, tooltipTriggerProps, type TooltipTriggerEvents, type TooltipTriggerProps } from "./types.ts"
 
 const TooltipTriggerElementBase: BaseElementConstructor<TooltipTriggerProps> = defineCustomElement<
   TooltipTriggerProps,

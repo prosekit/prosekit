@@ -1,5 +1,72 @@
 # prosekit
 
+## 0.20.0-beta.0
+
+### Minor Changes
+
+- [`ed8c69c`](https://github.com/ocavue/prosekit/commit/ed8c69c685e328e57ce74f33820a86ea70517adf) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Prepare for the component refactor.
+
+## 0.19.0
+
+### Minor Changes
+
+- [`4e3f888`](https://github.com/ocavue/prosekit/commit/4e3f88861f9a458dc245ac81cf23ea6dc0bd7c21) ![](https://prosekit.dev/b/core)
+
+  `Priority` is now a plain object instead of a TypeScript enum.
+
+  Most code can keep using `Priority.lowest` to `Priority.highest` as before.
+  If you relied on enum reverse mapping like `Priority[2]`, replace it with your own map/array.
+
+- [`4771dfd`](https://github.com/ocavue/prosekit/commit/4771dfdbcffb827b21b6c8aa86fa64ebbd443801) ![](https://prosekit.dev/b/extensions)
+
+  Add page extension with two new functions:
+  - `definePageRendering()` — renders content in fixed-size pages with configurable width, height, and margins.
+  - `definePageBreak()` — adds a `pageBreak` node with an `insertPageBreak` command and keyboard shortcut.
+
+- [`a5c10f7`](https://github.com/ocavue/prosekit/commit/a5c10f7f153dd98dfc2561b8c7832b23a8804c13) ![](https://prosekit.dev/b/basic)
+
+  Rewrite `prosekit/basic/typography.css`. Heading margins, paragraph spacing, and list marker positions have changed significantly. If your layout depends on the previous spacing, you can download the old stylesheet from [prosekit@0.18.4/basic/typography.css](https://unpkg.com/prosekit@0.18.4/basic/typography.css).
+
+### Patch Changes
+
+- [`3963c60`](https://github.com/ocavue/prosekit/commit/3963c606f83b089bb010627ace8d546f61ed8390) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview had poor performance when dragging elements with many children (e.g., syntax-highlighted code blocks).
+
+## 0.18.4
+
+### Patch Changes
+
+- [`c91074e`](https://github.com/ocavue/prosekit/commit/c91074e27b3608b3e3da0cfe36b65f32a99e472f) ![](https://prosekit.dev/b/svelte)
+
+  Fix relative imports in Svelte components.
+
+## 0.18.3
+
+### Patch Changes
+
+- [`29196a1`](https://github.com/ocavue/prosekit/commit/29196a149cf2a67cbd6e5d90c14527959c368e11) ![](https://prosekit.dev/b/extensions)
+
+  `mathBlock` nodes now also receive syntax highlighting when you use the `defineCodeBlockShiki()` extension with its default configuration (where `nodeTypes` includes both `codeBlock` and `mathBlock`). If you want to keep highlighting only code blocks, pass `['codeBlock']` explicitly as `nodeTypes` to `defineCodeBlockShiki()`.
+
+- [`73e05c2`](https://github.com/ocavue/prosekit/commit/73e05c22becc79c5723fdce5b16218858e670883) ![](https://prosekit.dev/b/basic)
+
+  `prosekit/basic/typography.css` now has styles for `mathInline` nodes. When the text cursor is inside a `mathInline` node, the source code is shown with a `$` prefix and suffix.
+
+- [`7eec87b`](https://github.com/ocavue/prosekit/commit/7eec87bb2f8f8f3a93a20aeafaaf1616337fc28a) ![](https://prosekit.dev/b/extensions)
+
+  Fix a text cursor placement issue when navigating into a `mathInline` node using keyboard arrow keys.
+
+## 0.18.2
+
+### Patch Changes
+
+- [`fcd903b`](https://github.com/ocavue/prosekit/commit/fcd903b0eb3a96c7144119e06708f45e42ca45d6) ![](https://prosekit.dev/b/extensions)
+
+  Add `prosekit/extensions/math` with support for inline and block math equations. It can work with any renderer like [KaTeX](https://katex.org/) or [Temml](https://temml.org/).
+
 ## 0.18.1
 
 ### Patch Changes

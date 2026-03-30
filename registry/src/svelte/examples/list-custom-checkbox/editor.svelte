@@ -5,6 +5,7 @@ import './custom-list.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+import { untrack } from 'svelte'
 
 import { sampleContent } from '../../sample/sample-doc-list-custom-checkbox'
 import { Toolbar } from '../../ui/toolbar'
@@ -16,7 +17,7 @@ const props: {
 } = $props()
 
 const extension = defineExtension()
-const defaultContent = props.initialContent ?? sampleContent
+const defaultContent = untrack(() => props.initialContent ?? sampleContent)
 const editor = createEditor({ extension, defaultContent })
 </script>
 

@@ -1,7 +1,7 @@
 import { defineMountHandler, defineUpdateHandler, EditorNotFoundError, union, type Editor, type Extension } from '@prosekit/core'
 import { useMemo, useSyncExternalStore } from 'react'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 export interface UseEditorDerivedOptions<E extends Extension = any> {
   /**

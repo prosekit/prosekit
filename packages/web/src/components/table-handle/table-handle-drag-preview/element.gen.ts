@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTableHandleDragPreview } from "./setup"
-import { tableHandleDragPreviewEvents, tableHandleDragPreviewProps, type TableHandleDragPreviewEvents, type TableHandleDragPreviewProps } from "./types"
+import { useTableHandleDragPreview } from "./setup.ts"
+import { tableHandleDragPreviewEvents, tableHandleDragPreviewProps, type TableHandleDragPreviewEvents, type TableHandleDragPreviewProps } from "./types.ts"
 
 const TableHandleDragPreviewElementBase: BaseElementConstructor<TableHandleDragPreviewProps> = defineCustomElement<
   TableHandleDragPreviewProps,

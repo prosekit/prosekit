@@ -3,7 +3,7 @@
   "include": [
     "./*.js",
     "./*.ts",
-    ".changeset/*.cjs",
+    ".changeset/*.mjs",
   ],
   "files": [],
   "references": [
@@ -24,9 +24,6 @@
     },
     {
       "path": "./packages/extensions/tsconfig.json",
-    },
-    {
-      "path": "./packages/vfs/tsconfig.json",
     },
     {
       "path": "./packages/lit/tsconfig.json",
@@ -51,6 +48,9 @@
     },
     {
       "path": "./packages/typedoc-plugin/tsconfig.json",
+    },
+    {
+      "path": "./packages/vfs/tsconfig.json",
     },
     {
       "path": "./packages/vue/tsconfig.json",

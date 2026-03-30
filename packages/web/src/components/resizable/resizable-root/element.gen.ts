@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useResizableRoot } from "./setup"
-import { resizableRootEvents, resizableRootProps, type ResizableRootEvents, type ResizableRootProps } from "./types"
+import { useResizableRoot } from "./setup.ts"
+import { resizableRootEvents, resizableRootProps, type ResizableRootEvents, type ResizableRootProps } from "./types.ts"
 
 const ResizableRootElementBase: BaseElementConstructor<ResizableRootProps> = defineCustomElement<
   ResizableRootProps,

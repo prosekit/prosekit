@@ -1,6 +1,6 @@
 import { TextSelection, type Command } from '@prosekit/pm/state'
 
-import { isTextSelection } from '../utils/type-assertion'
+import { isTextSelection } from '../utils/type-assertion.ts'
 
 // Based on https://github.com/ProseMirror/prosemirror-commands/blob/1.7.1/src/commands.ts#L507-L521
 function getTextblockEndpoint(selection: TextSelection, side: number): number | undefined {

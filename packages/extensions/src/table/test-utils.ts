@@ -1,7 +1,7 @@
 import type { Command, Selection } from '@prosekit/pm/state'
 import { CellSelection } from 'prosemirror-tables'
 
-import { isCellSelection } from './table-utils'
+import { isCellSelection } from './table-utils.ts'
 
 // Helper to create a cell selection between two positions
 export function setCellSelection(from: number, to: number): Command {

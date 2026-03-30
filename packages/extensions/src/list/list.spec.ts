@@ -3,13 +3,13 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { formatHTML } from 'diffable-html-snapshot'
 import { describe, expect, it } from 'vitest'
 
-import { defineDoc } from '../doc'
-import { defineParagraph } from '../paragraph'
-import { setupTest } from '../testing'
-import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown'
-import { defineText } from '../text'
+import { defineDoc } from '../doc/index.ts'
+import { defineParagraph } from '../paragraph/index.ts'
+import { setupTest } from '../testing/index.ts'
+import { htmlFromMarkdown, markdownFromHTML } from '../testing/markdown.ts'
+import { defineText } from '../text/index.ts'
 
-import { defineList } from './index'
+import { defineList } from './index.ts'
 
 describe('defineList', () => {
   it('can add list node', () => {

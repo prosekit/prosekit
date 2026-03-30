@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { defaultQueryBuilder } from './helpers'
+import { defaultQueryBuilder } from './helpers.ts'
 
 describe('defaultQueryBuilder', () => {
   it('can remove extra spaces', () => {

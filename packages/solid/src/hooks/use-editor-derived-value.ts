@@ -1,10 +1,10 @@
 import type { Editor, Extension } from '@prosekit/core'
 import { createMemo, type Accessor } from 'solid-js'
 
-import type { MaybeAccessor } from '../types'
-import { toValue } from '../utils/to-value'
+import type { MaybeAccessor } from '../types.ts'
+import { toValue } from '../utils/to-value.ts'
 
-import { useEditor } from './use-editor'
+import { useEditor } from './use-editor.ts'
 
 export interface UseEditorDerivedOptions<E extends Extension = any> {
   /**

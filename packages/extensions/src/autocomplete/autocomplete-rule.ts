@@ -1,6 +1,6 @@
 import type { EditorState } from '@prosekit/pm/state'
 
-import { defaultCanMatch } from './autocomplete-helpers'
+import { defaultCanMatch } from './autocomplete-helpers.ts'
 
 /**
  * Options for the {@link MatchHandler} callback.

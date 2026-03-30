@@ -198,9 +198,9 @@ function formatPrimitiveIndexCode(components: string[]): string {
     const pascal = pascalCase(kebab)
     const camel = camelCase(kebab)
     return [
-      `export { ${pascal}Element } from './${kebab}/element.gen'`,
-      `export { ${camel}Events, ${camel}Props, type ${pascal}Events, type ${pascal}Props } from './${kebab}/types'`,
-      `export { use${pascal} } from './${kebab}/setup'`,
+      `export { ${pascal}Element } from './${kebab}/element.gen.ts'`,
+      `export { ${camel}Events, ${camel}Props, type ${pascal}Events, type ${pascal}Props } from './${kebab}/types.ts'`,
+      `export { use${pascal} } from './${kebab}/setup.ts'`,
       '',
     ]
   })
@@ -220,8 +220,8 @@ function formatPrimitiveElementCode(kebab: string): string {
     `
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { use${pascal} } from "./setup"
-import { ${camel}Events, ${camel}Props, type ${pascal}Events, type ${pascal}Props } from "./types"
+import { use${pascal} } from "./setup.ts"
+import { ${camel}Events, ${camel}Props, type ${pascal}Events, type ${pascal}Props } from "./types.ts"
 
 const ${pascal}ElementBase: BaseElementConstructor<${pascal}Props> = defineCustomElement<
   ${pascal}Props,
@@ -246,7 +246,7 @@ function formatReactIndexCode(components: string[]): string {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
     return [
-      `export { ${pascal}, type ${pascal}Props } from './${kebab}.gen'`,
+      `export { ${pascal}, type ${pascal}Props } from './${kebab}.gen.ts'`,
       '',
     ]
   })
@@ -258,7 +258,7 @@ function formatVueIndexCode(components: string[]): string {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
     return [
-      `export { ${pascal}, type ${pascal}Props, type ${pascal}Emits } from './${kebab}.gen'`,
+      `export { ${pascal}, type ${pascal}Props, type ${pascal}Emits } from './${kebab}.gen.ts'`,
       '',
     ]
   })
@@ -316,20 +316,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link ${pascal}} component.
  */
 export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const ${pascal}: ForwardRefExoticComponent<
   ${pascal}Props &
   RefAttributes<${pascal}Element> &
   HTMLAttributes<${pascal}Element>
 > = createComponent<
-  ${pascal}Props, 
+  ${pascal}Props,
   ${pascal}Element
 >(
   'prosekit-${kebab}',
@@ -355,8 +355,8 @@ import {
 } from '@prosekit/web/${group}'
 import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
-import { createComponent } from '../create-component'
-import type { CreateEmits } from '../create-emits'
+import { createComponent } from '../create-component.ts'
+import type { CreateEmits } from '../create-emits.ts'
 
 /**
  * Props for the {@link ${pascal}} component.
@@ -453,9 +453,9 @@ import {
 } from '@prosekit/web/${group}'
 import type { Component } from 'solid-js'
 
-import type { PropsWithElement } from '../../types'
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import type { PropsWithElement } from '../../types.ts'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link ${pascal}} component.
@@ -496,20 +496,20 @@ import type {
   RefAttributes,
 } from 'preact/compat'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link ${pascal}} component.
  */
 export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const ${pascal}: ForwardRefExoticComponent<
   Partial<${pascal}Props> &
   RefAttributes<${pascal}Element> &
   HTMLAttributes<${pascal}Element>
 > = createComponent<
-  ${pascal}Props, 
+  ${pascal}Props,
   ${pascal}Element
 >(
   'prosekit-${kebab}',

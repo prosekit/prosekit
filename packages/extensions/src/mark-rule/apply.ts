@@ -2,8 +2,8 @@ import { getMarkType, maybeRun, OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/c
 import type { Mark, ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorState, Transaction } from '@prosekit/pm/state'
 
-import { getCheckRanges } from './range'
-import type { MarkRuleOptions } from './types'
+import { getCheckRanges } from './range.ts'
+import type { MarkRuleOptions } from './types.ts'
 
 type MarkRange = [from: number, to: number, mark: Mark]
 

@@ -2,12 +2,12 @@ import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal
 import { computePosition, offset } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-import { assignStyles } from '../../../utils/assign-styles'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { tableHandleDndContext, tableHandleRootContext } from '../context'
-import { getDndRelatedDOMs } from '../dnd'
+import { assignStyles } from '../../../utils/assign-styles.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { tableHandleDndContext, tableHandleRootContext } from '../context.ts'
+import { getDndRelatedDOMs } from '../dnd.ts'
 
-import { getDragOverColumn, getDragOverRow } from './calc-drag-over'
+import { getDragOverColumn, getDragOverRow } from './calc-drag-over.ts'
 
 export function useUpdateIndicatorPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>, handleWidth: number): void {
   const dndContext = tableHandleDndContext.consume(host)

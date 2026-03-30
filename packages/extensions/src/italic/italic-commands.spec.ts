@@ -1,11 +1,11 @@
 import { createEditor, defineBaseCommands, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 
-import { defineDoc } from '../doc'
-import { defineParagraph } from '../paragraph'
-import { defineText } from '../text'
+import { defineDoc } from '../doc/index.ts'
+import { defineParagraph } from '../paragraph/index.ts'
+import { defineText } from '../text/index.ts'
 
-import { defineItalic } from './index'
+import { defineItalic } from './index.ts'
 
 describe('command', () => {
   const extension = union(

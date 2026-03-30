@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'preact/compat'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link InlinePopover} component.
  */
 export interface InlinePopoverProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const InlinePopover: ForwardRefExoticComponent<
   Partial<InlinePopoverProps> &
   RefAttributes<InlinePopoverElement> &
   HTMLAttributes<InlinePopoverElement>
 > = createComponent<
-  InlinePopoverProps, 
+  InlinePopoverProps,
   InlinePopoverElement
 >(
   'prosekit-inline-popover',

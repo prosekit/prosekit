@@ -1,8 +1,9 @@
-import { Priority, union, withPriority, type Union } from '@prosekit/core'
+import type { Priority } from '@prosekit/core'
+import { union, withPriority, type Union } from '@prosekit/core'
 
-import { defineParagraphCommands, type ParagraphCommandsExtension } from './paragraph-commands'
-import { defineParagraphKeymap } from './paragraph-keymap'
-import { defineParagraphSpec, type ParagraphSpecExtension } from './paragraph-spec'
+import { defineParagraphCommands, type ParagraphCommandsExtension } from './paragraph-commands.ts'
+import { defineParagraphKeymap } from './paragraph-keymap.ts'
+import { defineParagraphSpec, type ParagraphSpecExtension } from './paragraph-spec.ts'
 
 /**
  * @internal
@@ -19,7 +20,7 @@ export type ParagraphExtension = Union<[ParagraphSpecExtension, ParagraphCommand
  */
 export function defineParagraph(): ParagraphExtension {
   return union(
-    withPriority(defineParagraphSpec(), Priority.highest),
+    withPriority(defineParagraphSpec(), 4 satisfies typeof Priority.highest),
     defineParagraphCommands(),
     defineParagraphKeymap(),
   )

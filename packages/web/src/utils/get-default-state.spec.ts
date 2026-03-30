@@ -1,7 +1,7 @@
 import { createSignal, type PropDeclarations, type SignalState } from '@aria-ui/core'
 import { describe, expect, it } from 'vitest'
 
-import { getStateWithDefaults } from './get-default-state'
+import { getStateWithDefaults } from './get-default-state.ts'
 
 type TestProps = {
   bool: boolean

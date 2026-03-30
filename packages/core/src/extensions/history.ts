@@ -1,12 +1,12 @@
 import { history, redo, undo } from '@prosekit/pm/history'
 
-import { union } from '../editor/union'
-import type { Extension } from '../types/extension'
-import { isApple } from '../utils/env'
+import { union } from '../editor/union.ts'
+import type { Extension } from '../types/extension.ts'
+import { isApple } from '../utils/env.ts'
 
-import { defineCommands } from './command'
-import { defineKeymap, type Keymap } from './keymap'
-import { definePlugin } from './plugin'
+import { defineCommands } from './command.ts'
+import { defineKeymap, type Keymap } from './keymap.ts'
+import { definePlugin } from './plugin.ts'
 
 const keymap: Keymap = {
   'Mod-z': undo,

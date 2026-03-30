@@ -1,10 +1,10 @@
 import { DOMParser, DOMSerializer, type ParseOptions, type ProseMirrorNode, type Schema } from '@prosekit/pm/model'
 import { EditorState } from '@prosekit/pm/state'
 
-import type { DOMNode } from '../types/dom-node'
-import type { NodeJSON, StateJSON } from '../types/model'
+import type { DOMNode } from '../types/dom-node.ts'
+import type { NodeJSON, StateJSON } from '../types/model.ts'
 
-import { getBrowserDocument, getBrowserWindow } from './get-dom-api'
+import { getBrowserDocument, getBrowserWindow } from './get-dom-api.ts'
 
 /** @public */
 export interface DOMParserOptions extends ParseOptions {

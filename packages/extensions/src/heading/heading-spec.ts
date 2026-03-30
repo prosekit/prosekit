@@ -1,6 +1,6 @@
 import { defineNodeSpec, type Extension } from '@prosekit/core'
 
-import type { HeadingAttrs } from './heading-types'
+import type { HeadingAttrs } from './heading-types.ts'
 
 /**
  * @internal

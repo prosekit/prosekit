@@ -1,7 +1,7 @@
 import type { ConnectableElement, ReadonlySignal } from '@aria-ui/core'
 import { defineKeymap, type Editor, type Keymap } from '@prosekit/core'
 
-import { useEditorExtension } from './use-editor-extension'
+import { useEditorExtension } from './use-editor-extension.ts'
 
 export function useKeymap(
   host: ConnectableElement,

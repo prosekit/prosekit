@@ -1,13 +1,13 @@
 import type { Schema } from '@prosekit/pm/model'
 
-import type { CommandTyping, ToCommandAction, ToCommandCreators } from './extension-command'
-import type { MarkTyping, ToMarkAction } from './extension-mark'
-import type { NodeTyping, ToNodeAction } from './extension-node'
-import type { PickStringLiteral } from './pick-string-literal'
-import type { PickSubType } from './pick-sub-type'
-import type { Priority } from './priority'
-import type { SimplifyDeeper } from './simplify-deeper'
-import type { SimplifyUnion } from './simplify-union'
+import type { CommandTyping, ToCommandAction, ToCommandCreators } from './extension-command.ts'
+import type { MarkTyping, ToMarkAction } from './extension-mark.ts'
+import type { NodeTyping, ToNodeAction } from './extension-node.ts'
+import type { PickStringLiteral } from './pick-string-literal.ts'
+import type { PickSubType } from './pick-sub-type.ts'
+import type { Priority } from './priority.ts'
+import type { SimplifyDeeper } from './simplify-deeper.ts'
+import type { SimplifyUnion } from './simplify-union.ts'
 
 /**
  * @internal

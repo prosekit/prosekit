@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { createEditor } from '../editor/editor'
-import { defineTestExtension } from '../testing'
+import { createEditor } from '../editor/editor.ts'
+import { defineTestExtension } from '../testing/index.ts'
 
-import type { DefaultStateOptions } from './default-state'
+import type { DefaultStateOptions } from './default-state.ts'
 
 describe('defineDefaultState', () => {
   const docJSON = {

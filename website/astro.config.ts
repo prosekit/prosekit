@@ -12,9 +12,9 @@ import vue from '@astrojs/vue'
 import tailwindcss from '@tailwindcss/vite'
 import type { AstroIntegrationLogger, AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
-import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
+import { rehypeResolveMarkdownLinks } from 'rehype-resolve-markdown-links'
 import starlightThemeNova from 'starlight-theme-nova'
 import { exec } from 'tinyexec'
 import wasm from 'vite-plugin-wasm'
@@ -46,6 +46,7 @@ function generateExtensionsSidebarItems() {
       'horizontal-rule',
       'image',
       'list',
+      'math',
       'mention',
       'table',
       'doc',
@@ -53,7 +54,16 @@ function generateExtensionsSidebarItems() {
       'text',
       'hard-break',
     ],
-    mark: ['bold', 'code', 'italic', 'link', 'strike', 'underline', 'text-color', 'background-color'],
+    mark: [
+      'bold',
+      'code',
+      'italic',
+      'link',
+      'strike',
+      'underline',
+      'text-color',
+      'background-color',
+    ],
     other: [
       'commit',
       'drop-cursor',
@@ -62,6 +72,7 @@ function generateExtensionsSidebarItems() {
       'gap-cursor',
       'input-rule',
       'loro',
+      'page',
       'placeholder',
       'readonly',
       'search',
@@ -195,7 +206,7 @@ const config: AstroUserConfig = {
     // It seems that I have to put `react` before `preact` as a workaround for the following issue:
     // https://github.com/withastro/astro/issues/15341
     react({
-      include: ['src/*/react/**/*.tsx', 'src/components/**/*.tsx'],
+      include: ['src/*/react/**/*.tsx', '**/src/components/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],
@@ -241,11 +252,8 @@ const config: AstroUserConfig = {
     smartypants: false,
 
     rehypePlugins: [
-      [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
+      [rehypeResolveMarkdownLinks, { rootDir: './src/content/docs' }],
     ],
-  },
-  experimental: {
-    headingIdCompat: true,
   },
 }
 

@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useBlockHandleDraggable } from "./setup"
-import { blockHandleDraggableEvents, blockHandleDraggableProps, type BlockHandleDraggableEvents, type BlockHandleDraggableProps } from "./types"
+import { useBlockHandleDraggable } from "./setup.ts"
+import { blockHandleDraggableEvents, blockHandleDraggableProps, type BlockHandleDraggableEvents, type BlockHandleDraggableProps } from "./types.ts"
 
 const BlockHandleDraggableElementBase: BaseElementConstructor<BlockHandleDraggableProps> = defineCustomElement<
   BlockHandleDraggableProps,

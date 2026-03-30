@@ -1,6 +1,6 @@
 import { isNotNullish } from '@ocavue/utils'
 
-import { removeUndefinedValues } from './remove-undefined-values'
+import { removeUndefinedValues } from './remove-undefined-values.ts'
 
 export function mergeObjects<T extends object>(
   ...objects: Array<Partial<T> | null | undefined>

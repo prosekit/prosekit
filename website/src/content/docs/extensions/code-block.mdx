@@ -98,9 +98,9 @@ If you want to use a different syntax highlighter or have more control over the 
 
 ```ts twoslash
 // @filename: my-prosemirror-highlight-parser.ts
-import type { Parser } from 'prosemirror-highlight'
+import type { HighlightParser } from 'prosekit/extensions/code-block'
 
-export const parser: Parser = () => {
+export const parser: HighlightParser = () => {
   return []
 }
 // @filename: demo.ts

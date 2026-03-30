@@ -1,6 +1,6 @@
 import { canUseRegexLookbehind, type PlainExtension } from '@prosekit/core'
 
-import { defineMarkInputRule } from '../input-rule'
+import { defineMarkInputRule } from '../input-rule/index.ts'
 
 /**
  * @internal

@@ -16,11 +16,16 @@ function css(text) {
  */
 const config = {
   exclude: ['optionalPeerDependencies', 'binaries'],
-  ignoreDependencies: ['wrangler'],
+  ignoreDependencies: ['wrangler', '@changesets/types'],
   workspaces: {
     './packages/prosekit': {
       entry: [
         'src/**/*-css.ts',
+      ],
+    },
+    './packages/basic': {
+      entry: [
+        'src/**/*.scss',
       ],
     },
     './registry': {
@@ -41,7 +46,6 @@ const config = {
         'sharp',
 
         // Required by code blocks in documentation
-        'prosemirror-highlight',
         'y-websocket',
       ],
     },

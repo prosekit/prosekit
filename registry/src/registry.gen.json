@@ -15,8 +15,7 @@
         "https://prosekit.dev/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -69,8 +68,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -120,8 +118,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -170,8 +167,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -219,8 +215,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -273,8 +268,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -329,8 +323,7 @@
         "https://prosekit.dev/r/react-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -389,8 +382,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -432,8 +424,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -477,6 +468,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-katex.json",
         "https://prosekit.dev/r/react-sample-sample-doc-full.json",
         "https://prosekit.dev/r/react-sample-sample-tag-data.json",
         "https://prosekit.dev/r/react-sample-sample-uploader.json",
@@ -493,8 +485,7 @@
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -506,6 +497,11 @@
           "path": "registry/src/react/examples/full/extension.ts",
           "type": "registry:component",
           "target": "components/editor/examples/full/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/full/html.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/full/html.ts"
         },
         {
           "path": "registry/src/react/examples/full/index.ts",
@@ -521,7 +517,9 @@
         "accumulatedFiles": [
           "registry/src/react/examples/full/editor.tsx",
           "registry/src/react/examples/full/extension.ts",
+          "registry/src/react/examples/full/html.ts",
           "registry/src/react/examples/full/index.ts",
+          "registry/src/react/sample/katex.ts",
           "registry/src/react/sample/sample-doc-full.ts",
           "registry/src/react/sample/sample-tag-data.ts",
           "registry/src/react/sample/sample-uploader.ts",
@@ -554,6 +552,7 @@
           "registry/src/react/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
+          "react-sample-katex",
           "react-sample-sample-doc-full",
           "react-sample-sample-tag-data",
           "react-sample-sample-uploader",
@@ -580,8 +579,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -626,8 +624,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -681,8 +678,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -733,8 +729,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -785,8 +780,7 @@
         "https://prosekit.dev/r/react-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -836,8 +830,7 @@
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -887,8 +880,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -939,8 +931,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -998,8 +989,7 @@
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1048,8 +1038,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1100,8 +1089,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1153,8 +1141,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1213,8 +1200,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1267,8 +1253,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1313,8 +1298,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1361,8 +1345,7 @@
         "@base-ui/react",
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1493,14 +1476,69 @@
       }
     },
     {
+      "name": "react-example-page",
+      "title": "react-example-page",
+      "type": "registry:block",
+      "description": "Page layout with configurable paper settings.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-page.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/page/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/page/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/page/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/react/examples/page/paper-controller.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/paper-controller.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/page/zoom.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/zoom.css"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "page",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/page/editor.tsx",
+          "registry/src/react/examples/page/extension.ts",
+          "registry/src/react/examples/page/index.ts",
+          "registry/src/react/examples/page/paper-controller.tsx",
+          "registry/src/react/examples/page/zoom.css",
+          "registry/src/react/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-page"
+        ]
+      }
+    },
+    {
       "name": "react-example-placeholder",
       "title": "react-example-placeholder",
       "type": "registry:block",
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1542,8 +1580,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1609,8 +1646,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1672,8 +1708,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1706,8 +1741,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1741,7 +1775,6 @@
       "registryDependencies": [],
       "dependencies": [
         "prosekit",
-        "react",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -1790,8 +1823,7 @@
         "https://prosekit.dev/r/react-ui-search.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1840,8 +1872,7 @@
         "https://prosekit.dev/r/react-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1889,8 +1920,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1944,8 +1974,7 @@
         "https://prosekit.dev/r/react-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -1984,6 +2013,53 @@
       }
     },
     {
+      "name": "react-example-temml",
+      "title": "react-example-temml",
+      "type": "registry:block",
+      "description": "Math equation rendering using the Temml library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/react-sample-sample-doc-tex.json",
+        "https://prosekit.dev/r/react-sample-temml.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/examples/temml/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/temml/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/extension.ts"
+        },
+        {
+          "path": "registry/src/react/examples/temml/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "temml",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/examples/temml/editor.tsx",
+          "registry/src/react/examples/temml/extension.ts",
+          "registry/src/react/examples/temml/index.ts",
+          "registry/src/react/sample/sample-doc-tex.ts",
+          "registry/src/react/sample/temml.ts"
+        ],
+        "internalDependencies": [
+          "react-sample-sample-doc-tex",
+          "react-sample-temml"
+        ]
+      }
+    },
+    {
       "name": "react-example-text-align",
       "title": "react-example-text-align",
       "type": "registry:block",
@@ -1993,8 +2069,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2048,8 +2123,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2103,8 +2177,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2156,8 +2229,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "react",
-        "react-parallax-tilt",
         "react-tweet"
       ],
       "files": [
@@ -2182,11 +2253,6 @@
           "target": "components/editor/examples/tweet/method-select.tsx"
         },
         {
-          "path": "registry/src/react/examples/tweet/tilt.tsx",
-          "type": "registry:component",
-          "target": "components/editor/examples/tweet/tilt.tsx"
-        },
-        {
           "path": "registry/src/react/examples/tweet/tweet-view.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/tweet/tweet-view.tsx"
@@ -2202,7 +2268,6 @@
           "registry/src/react/examples/tweet/extension.ts",
           "registry/src/react/examples/tweet/index.ts",
           "registry/src/react/examples/tweet/method-select.tsx",
-          "registry/src/react/examples/tweet/tilt.tsx",
           "registry/src/react/examples/tweet/tweet-view.tsx",
           "registry/src/react/sample/sample-doc-tweet.ts"
         ],
@@ -2217,17 +2282,24 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/react-sample-katex.json",
+        "https://prosekit.dev/r/react-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/react-ui-block-handle.json",
+        "https://prosekit.dev/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
           "path": "registry/src/react/examples/typography/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/react/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/react/examples/typography/index.ts",
@@ -2242,11 +2314,20 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/examples/typography/editor.tsx",
+          "registry/src/react/examples/typography/extension.ts",
           "registry/src/react/examples/typography/index.ts",
-          "registry/src/react/sample/sample-doc-typography.ts"
+          "registry/src/react/sample/katex.ts",
+          "registry/src/react/sample/sample-doc-typography.ts",
+          "registry/src/react/ui/block-handle/block-handle.tsx",
+          "registry/src/react/ui/block-handle/index.ts",
+          "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/react/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "react-sample-sample-doc-typography"
+          "react-sample-katex",
+          "react-sample-sample-doc-typography",
+          "react-ui-block-handle",
+          "react-ui-drop-indicator"
         ]
       }
     },
@@ -2260,8 +2341,7 @@
         "https://prosekit.dev/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2312,8 +2392,7 @@
         "https://prosekit.dev/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2369,8 +2448,7 @@
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2423,8 +2501,7 @@
         "https://prosekit.dev/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2485,8 +2562,7 @@
         "https://prosekit.dev/r/react-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2539,8 +2615,7 @@
         "https://prosekit.dev/r/react-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -2588,7 +2663,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "react",
         "y-websocket",
         "yjs"
       ],
@@ -2659,6 +2733,33 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-katex",
+      "title": "react-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -3123,6 +3224,33 @@
       }
     },
     {
+      "name": "react-sample-sample-doc-page",
+      "title": "react-sample-sample-doc-page",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-page.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-page.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "react-sample-sample-doc-readonly",
       "title": "react-sample-sample-doc-readonly",
       "type": "registry:component",
@@ -3253,6 +3381,33 @@
         "framework": "react",
         "accumulatedFiles": [
           "registry/src/react/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "react-sample-sample-doc-tex",
+      "title": "react-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/sample-doc-tex.ts"
         ],
         "internalDependencies": []
       }
@@ -3554,6 +3709,33 @@
       }
     },
     {
+      "name": "react-sample-temml",
+      "title": "react-sample-temml",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "temml"
+      ],
+      "files": [
+        {
+          "path": "registry/src/react/sample/temml.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/temml.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "react",
+        "accumulatedFiles": [
+          "registry/src/react/sample/temml.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "react-ui-block-handle",
       "title": "react-ui-block-handle",
       "type": "registry:component",
@@ -3598,8 +3780,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -3700,8 +3881,7 @@
         "https://prosekit.dev/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -3740,8 +3920,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -3781,8 +3960,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -3826,8 +4004,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "react"
+        "prosekit"
       ],
       "files": [
         {
@@ -4102,7 +4279,6 @@
         "https://prosekit.dev/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4156,7 +4332,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4207,7 +4382,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4257,7 +4431,6 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4306,7 +4479,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4360,7 +4532,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4416,7 +4587,6 @@
         "https://prosekit.dev/r/preact-ui-code-block-view.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4476,7 +4646,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4519,7 +4688,6 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4564,6 +4732,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-katex.json",
         "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
         "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
         "https://prosekit.dev/r/preact-sample-sample-uploader.json",
@@ -4580,7 +4749,6 @@
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4609,6 +4777,7 @@
           "registry/src/preact/examples/full/editor.tsx",
           "registry/src/preact/examples/full/extension.ts",
           "registry/src/preact/examples/full/index.ts",
+          "registry/src/preact/sample/katex.ts",
           "registry/src/preact/sample/sample-doc-full.ts",
           "registry/src/preact/sample/sample-tag-data.ts",
           "registry/src/preact/sample/sample-uploader.ts",
@@ -4641,6 +4810,7 @@
           "registry/src/preact/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
+          "preact-sample-katex",
           "preact-sample-sample-doc-full",
           "preact-sample-sample-tag-data",
           "preact-sample-sample-uploader",
@@ -4667,7 +4837,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4713,7 +4882,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4768,7 +4936,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4820,7 +4987,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4872,7 +5038,6 @@
         "https://prosekit.dev/r/preact-ui-image-view.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4923,7 +5088,6 @@
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -4974,7 +5138,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5026,7 +5189,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5085,7 +5247,6 @@
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5135,7 +5296,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5187,7 +5347,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5240,7 +5399,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5300,7 +5458,6 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5354,7 +5511,6 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5400,7 +5556,6 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5434,7 +5589,6 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5477,7 +5631,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5544,7 +5697,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5607,7 +5759,6 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5641,7 +5792,6 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5675,7 +5825,6 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit",
         "rehype-parse",
         "rehype-remark",
@@ -5725,7 +5874,6 @@
         "https://prosekit.dev/r/preact-ui-search.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5775,7 +5923,6 @@
         "https://prosekit.dev/r/preact-ui-slash-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5824,7 +5971,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5879,7 +6025,6 @@
         "https://prosekit.dev/r/preact-ui-table-handle.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5919,6 +6064,53 @@
       }
     },
     {
+      "name": "preact-example-temml",
+      "title": "preact-example-temml",
+      "type": "registry:block",
+      "description": "Math equation rendering using the Temml library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/preact-sample-sample-doc-tex.json",
+        "https://prosekit.dev/r/preact-sample-temml.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/examples/temml/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/temml/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/extension.ts"
+        },
+        {
+          "path": "registry/src/preact/examples/temml/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "temml",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/examples/temml/editor.tsx",
+          "registry/src/preact/examples/temml/extension.ts",
+          "registry/src/preact/examples/temml/index.ts",
+          "registry/src/preact/sample/sample-doc-tex.ts",
+          "registry/src/preact/sample/temml.ts"
+        ],
+        "internalDependencies": [
+          "preact-sample-sample-doc-tex",
+          "preact-sample-temml"
+        ]
+      }
+    },
+    {
       "name": "preact-example-text-align",
       "title": "preact-example-text-align",
       "type": "registry:block",
@@ -5928,7 +6120,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -5983,7 +6174,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6038,7 +6228,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6087,10 +6276,12 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/preact-sample-katex.json",
+        "https://prosekit.dev/r/preact-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/preact-ui-block-handle.json",
+        "https://prosekit.dev/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6098,6 +6289,11 @@
           "path": "registry/src/preact/examples/typography/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/preact/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/preact/examples/typography/index.ts",
@@ -6112,11 +6308,20 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/examples/typography/editor.tsx",
+          "registry/src/preact/examples/typography/extension.ts",
           "registry/src/preact/examples/typography/index.ts",
-          "registry/src/preact/sample/sample-doc-typography.ts"
+          "registry/src/preact/sample/katex.ts",
+          "registry/src/preact/sample/sample-doc-typography.ts",
+          "registry/src/preact/ui/block-handle/block-handle.tsx",
+          "registry/src/preact/ui/block-handle/index.ts",
+          "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/preact/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "preact-sample-sample-doc-typography"
+          "preact-sample-katex",
+          "preact-sample-sample-doc-typography",
+          "preact-ui-block-handle",
+          "preact-ui-drop-indicator"
         ]
       }
     },
@@ -6130,7 +6335,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6182,7 +6386,6 @@
         "https://prosekit.dev/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6239,7 +6442,6 @@
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6293,7 +6495,6 @@
         "https://prosekit.dev/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6355,7 +6556,6 @@
         "https://prosekit.dev/r/preact-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6409,7 +6609,6 @@
         "https://prosekit.dev/r/preact-ui-word-counter.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -6457,7 +6656,6 @@
         "https://prosekit.dev/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit",
         "y-websocket",
         "yjs"
@@ -6529,6 +6727,33 @@
         "framework": "preact",
         "accumulatedFiles": [
           "registry/src/preact/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "preact-sample-katex",
+      "title": "preact-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -7101,6 +7326,33 @@
       }
     },
     {
+      "name": "preact-sample-sample-doc-tex",
+      "title": "preact-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "preact-sample-sample-doc-text-align",
       "title": "preact-sample-sample-doc-text-align",
       "type": "registry:component",
@@ -7370,6 +7622,33 @@
       }
     },
     {
+      "name": "preact-sample-temml",
+      "title": "preact-sample-temml",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "temml"
+      ],
+      "files": [
+        {
+          "path": "registry/src/preact/sample/temml.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/temml.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "preact",
+        "accumulatedFiles": [
+          "registry/src/preact/sample/temml.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "preact-ui-block-handle",
       "title": "preact-ui-block-handle",
       "type": "registry:component",
@@ -7414,7 +7693,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7448,7 +7726,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7517,7 +7794,6 @@
         "https://prosekit.dev/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7557,7 +7833,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7598,7 +7873,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -7643,7 +7917,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "preact",
         "prosekit"
       ],
       "files": [
@@ -8071,8 +8344,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -8228,8 +8500,7 @@
         "https://prosekit.dev/r/vue-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -8374,6 +8645,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-katex.json",
         "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
         "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
         "https://prosekit.dev/r/vue-sample-sample-uploader.json",
@@ -8418,6 +8690,7 @@
           "registry/src/vue/examples/full/editor.vue",
           "registry/src/vue/examples/full/extension.ts",
           "registry/src/vue/examples/full/index.ts",
+          "registry/src/vue/sample/katex.ts",
           "registry/src/vue/sample/sample-doc-full.ts",
           "registry/src/vue/sample/sample-tag-data.ts",
           "registry/src/vue/sample/sample-uploader.ts",
@@ -8450,6 +8723,7 @@
           "registry/src/vue/ui/user-menu/user-menu.vue"
         ],
         "internalDependencies": [
+          "vue-sample-katex",
           "vue-sample-sample-doc-full",
           "vue-sample-sample-tag-data",
           "vue-sample-sample-uploader",
@@ -8820,6 +9094,53 @@
       }
     },
     {
+      "name": "vue-example-katex",
+      "title": "vue-example-katex",
+      "type": "registry:block",
+      "description": "Math equation rendering using the KaTeX library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-katex.json",
+        "https://prosekit.dev/r/vue-sample-sample-doc-tex.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/katex/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/katex/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/katex/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "katex",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/katex/editor.vue",
+          "registry/src/vue/examples/katex/extension.ts",
+          "registry/src/vue/examples/katex/index.ts",
+          "registry/src/vue/sample/katex.ts",
+          "registry/src/vue/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-katex",
+          "vue-sample-sample-doc-tex"
+        ]
+      }
+    },
+    {
       "name": "vue-example-keymap",
       "title": "vue-example-keymap",
       "type": "registry:block",
@@ -8828,8 +9149,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -8936,8 +9256,7 @@
         "https://prosekit.dev/r/vue-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9099,8 +9418,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9273,8 +9591,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9402,8 +9719,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9436,8 +9752,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9477,8 +9792,7 @@
         "remark-html",
         "remark-parse",
         "remark-stringify",
-        "unified",
-        "vue"
+        "unified"
       ],
       "files": [
         {
@@ -9773,8 +10087,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -9871,12 +10184,72 @@
       }
     },
     {
+      "name": "vue-example-tweet",
+      "title": "vue-example-tweet",
+      "type": "registry:block",
+      "description": "Embed and display Twitter tweets.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/vue-sample-sample-doc-tweet.json"
+      ],
+      "dependencies": [
+        "prosekit",
+        "vue-tweet"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/examples/tweet/editor.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/extension.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/index.ts"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/method-select.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/method-select.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/tweet/tweet-view.vue",
+          "type": "registry:component",
+          "target": "components/editor/examples/tweet/tweet-view.vue"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "tweet",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/examples/tweet/editor.vue",
+          "registry/src/vue/examples/tweet/extension.ts",
+          "registry/src/vue/examples/tweet/index.ts",
+          "registry/src/vue/examples/tweet/method-select.vue",
+          "registry/src/vue/examples/tweet/tweet-view.vue",
+          "registry/src/vue/sample/sample-doc-tweet.ts"
+        ],
+        "internalDependencies": [
+          "vue-sample-sample-doc-tweet"
+        ]
+      }
+    },
+    {
       "name": "vue-example-typography",
       "title": "vue-example-typography",
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/vue-sample-katex.json",
+        "https://prosekit.dev/r/vue-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/vue-ui-block-handle.json",
+        "https://prosekit.dev/r/vue-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9886,6 +10259,11 @@
           "path": "registry/src/vue/examples/typography/editor.vue",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.vue"
+        },
+        {
+          "path": "registry/src/vue/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/vue/examples/typography/index.ts",
@@ -9900,11 +10278,20 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/examples/typography/editor.vue",
+          "registry/src/vue/examples/typography/extension.ts",
           "registry/src/vue/examples/typography/index.ts",
-          "registry/src/vue/sample/sample-doc-typography.ts"
+          "registry/src/vue/sample/katex.ts",
+          "registry/src/vue/sample/sample-doc-typography.ts",
+          "registry/src/vue/ui/block-handle/block-handle.vue",
+          "registry/src/vue/ui/block-handle/index.ts",
+          "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+          "registry/src/vue/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "vue-sample-sample-doc-typography"
+          "vue-sample-katex",
+          "vue-sample-sample-doc-typography",
+          "vue-ui-block-handle",
+          "vue-ui-drop-indicator"
         ]
       }
     },
@@ -9969,8 +10356,7 @@
         "https://prosekit.dev/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -10079,8 +10465,7 @@
         "https://prosekit.dev/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -10242,7 +10627,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "vue",
         "y-websocket",
         "yjs"
       ],
@@ -10313,6 +10697,33 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-katex",
+      "title": "vue-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -10885,6 +11296,33 @@
       }
     },
     {
+      "name": "vue-sample-sample-doc-tex",
+      "title": "vue-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "vue-sample-sample-doc-text-align",
       "title": "vue-sample-sample-doc-text-align",
       "type": "registry:component",
@@ -10934,6 +11372,33 @@
         "framework": "vue",
         "accumulatedFiles": [
           "registry/src/vue/sample/sample-doc-text-color.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "vue-sample-sample-doc-tweet",
+      "title": "vue-sample-sample-doc-tweet",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/vue/sample/sample-doc-tweet.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tweet.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "vue",
+        "accumulatedFiles": [
+          "registry/src/vue/sample/sample-doc-tweet.ts"
         ],
         "internalDependencies": []
       }
@@ -11299,8 +11764,7 @@
         "https://prosekit.dev/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -11339,8 +11803,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -11380,8 +11843,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -11425,8 +11887,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "vue"
+        "prosekit"
       ],
       "files": [
         {
@@ -11746,7 +12207,6 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -11782,7 +12242,6 @@
         "https://prosekit.dev/r/lit-ui-slash-menu.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -11831,7 +12290,6 @@
         "https://prosekit.dev/r/lit-ui-toolbar.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -11908,7 +12366,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -11944,7 +12401,6 @@
         "https://prosekit.dev/r/lit-ui-button.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -11982,7 +12438,6 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12033,7 +12488,6 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12390,8 +12844,7 @@
         "https://prosekit.dev/r/svelte-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -12536,6 +12989,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-katex.json",
         "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
         "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
         "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
@@ -12580,6 +13034,7 @@
           "registry/src/svelte/examples/full/editor.svelte",
           "registry/src/svelte/examples/full/extension.ts",
           "registry/src/svelte/examples/full/index.ts",
+          "registry/src/svelte/sample/katex.ts",
           "registry/src/svelte/sample/sample-doc-full.ts",
           "registry/src/svelte/sample/sample-tag-data.ts",
           "registry/src/svelte/sample/sample-uploader.ts",
@@ -12612,6 +13067,7 @@
           "registry/src/svelte/ui/user-menu/user-menu.svelte"
         ],
         "internalDependencies": [
+          "svelte-sample-katex",
           "svelte-sample-sample-doc-full",
           "svelte-sample-sample-tag-data",
           "svelte-sample-sample-uploader",
@@ -12982,6 +13438,53 @@
       }
     },
     {
+      "name": "svelte-example-katex",
+      "title": "svelte-example-katex",
+      "type": "registry:block",
+      "description": "Math equation rendering using the KaTeX library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-katex.json",
+        "https://prosekit.dev/r/svelte-sample-sample-doc-tex.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/katex/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/katex/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/katex/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/katex/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "katex",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/katex/editor.svelte",
+          "registry/src/svelte/examples/katex/extension.ts",
+          "registry/src/svelte/examples/katex/index.ts",
+          "registry/src/svelte/sample/katex.ts",
+          "registry/src/svelte/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-katex",
+          "svelte-sample-sample-doc-tex"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-keymap",
       "title": "svelte-example-keymap",
       "type": "registry:block",
@@ -12990,8 +13493,7 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13092,8 +13594,7 @@
         "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13255,8 +13756,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13381,6 +13881,62 @@
       }
     },
     {
+      "name": "svelte-example-page",
+      "title": "svelte-example-page",
+      "type": "registry:block",
+      "description": "Page layout with configurable paper settings.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/svelte-sample-sample-doc-page.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/examples/page/editor.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/extension.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/index.ts"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/paper-controller.svelte",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/paper-controller.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/page/zoom.css",
+          "type": "registry:component",
+          "target": "components/editor/examples/page/zoom.css"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "page",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/examples/page/editor.svelte",
+          "registry/src/svelte/examples/page/extension.ts",
+          "registry/src/svelte/examples/page/index.ts",
+          "registry/src/svelte/examples/page/paper-controller.svelte",
+          "registry/src/svelte/examples/page/zoom.css",
+          "registry/src/svelte/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": [
+          "svelte-sample-sample-doc-page"
+        ]
+      }
+    },
+    {
       "name": "svelte-example-placeholder",
       "title": "svelte-example-placeholder",
       "type": "registry:block",
@@ -13429,8 +13985,7 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -13920,8 +14475,7 @@
         "https://prosekit.dev/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -14023,7 +14577,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/svelte-sample-katex.json",
+        "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/svelte-ui-block-handle.json",
+        "https://prosekit.dev/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14033,6 +14590,11 @@
           "path": "registry/src/svelte/examples/typography/editor.svelte",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.svelte"
+        },
+        {
+          "path": "registry/src/svelte/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/svelte/examples/typography/index.ts",
@@ -14047,11 +14609,20 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/examples/typography/editor.svelte",
+          "registry/src/svelte/examples/typography/extension.ts",
           "registry/src/svelte/examples/typography/index.ts",
-          "registry/src/svelte/sample/sample-doc-typography.ts"
+          "registry/src/svelte/sample/katex.ts",
+          "registry/src/svelte/sample/sample-doc-typography.ts",
+          "registry/src/svelte/ui/block-handle/block-handle.svelte",
+          "registry/src/svelte/ui/block-handle/index.ts",
+          "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+          "registry/src/svelte/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "svelte-sample-sample-doc-typography"
+          "svelte-sample-katex",
+          "svelte-sample-sample-doc-typography",
+          "svelte-ui-block-handle",
+          "svelte-ui-drop-indicator"
         ]
       }
     },
@@ -14116,8 +14687,7 @@
         "https://prosekit.dev/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -14388,7 +14958,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "svelte",
         "y-websocket",
         "yjs"
       ],
@@ -14459,6 +15028,33 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-katex",
+      "title": "svelte-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -14896,6 +15492,33 @@
       }
     },
     {
+      "name": "svelte-sample-sample-doc-page",
+      "title": "svelte-sample-sample-doc-page",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-page.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-page.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-page.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "svelte-sample-sample-doc-readonly",
       "title": "svelte-sample-sample-doc-readonly",
       "type": "registry:component",
@@ -15026,6 +15649,33 @@
         "framework": "svelte",
         "accumulatedFiles": [
           "registry/src/svelte/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "svelte-sample-sample-doc-tex",
+      "title": "svelte-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/svelte/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "svelte",
+        "accumulatedFiles": [
+          "registry/src/svelte/sample/sample-doc-tex.ts"
         ],
         "internalDependencies": []
       }
@@ -15484,8 +16134,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -15569,8 +16218,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "svelte"
+        "prosekit"
       ],
       "files": [
         {
@@ -15845,8 +16493,7 @@
         "https://prosekit.dev/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -15899,8 +16546,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -15950,8 +16596,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16000,8 +16645,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16049,8 +16693,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16103,8 +16746,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16159,8 +16801,7 @@
         "https://prosekit.dev/r/solid-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16219,8 +16860,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16262,8 +16902,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16307,6 +16946,7 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-katex.json",
         "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
         "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
         "https://prosekit.dev/r/solid-sample-sample-uploader.json",
@@ -16323,8 +16963,7 @@
         "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16352,6 +16991,7 @@
           "registry/src/solid/examples/full/editor.tsx",
           "registry/src/solid/examples/full/extension.ts",
           "registry/src/solid/examples/full/index.ts",
+          "registry/src/solid/sample/katex.ts",
           "registry/src/solid/sample/sample-doc-full.ts",
           "registry/src/solid/sample/sample-tag-data.ts",
           "registry/src/solid/sample/sample-uploader.ts",
@@ -16384,6 +17024,7 @@
           "registry/src/solid/ui/user-menu/user-menu.tsx"
         ],
         "internalDependencies": [
+          "solid-sample-katex",
           "solid-sample-sample-doc-full",
           "solid-sample-sample-tag-data",
           "solid-sample-sample-uploader",
@@ -16410,8 +17051,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16456,8 +17096,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16511,8 +17150,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16563,8 +17201,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16615,8 +17252,7 @@
         "https://prosekit.dev/r/solid-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16666,8 +17302,7 @@
         "https://prosekit.dev/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16717,8 +17352,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16769,8 +17403,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16828,8 +17461,7 @@
         "https://prosekit.dev/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16878,8 +17510,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16930,8 +17561,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -16983,8 +17613,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17043,8 +17672,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17097,8 +17725,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17143,8 +17770,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17177,8 +17803,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17220,8 +17845,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17287,8 +17911,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17350,8 +17973,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17384,8 +18006,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17425,7 +18046,6 @@
         "remark-html",
         "remark-parse",
         "remark-stringify",
-        "solid-js",
         "unified"
       ],
       "files": [
@@ -17468,8 +18088,7 @@
         "https://prosekit.dev/r/solid-ui-search.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17518,8 +18137,7 @@
         "https://prosekit.dev/r/solid-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17567,8 +18185,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17622,8 +18239,7 @@
         "https://prosekit.dev/r/solid-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17662,6 +18278,53 @@
       }
     },
     {
+      "name": "solid-example-temml",
+      "title": "solid-example-temml",
+      "type": "registry:block",
+      "description": "Math equation rendering using the Temml library.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/solid-sample-sample-doc-tex.json",
+        "https://prosekit.dev/r/solid-sample-temml.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/examples/temml/editor.tsx",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/temml/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/extension.ts"
+        },
+        {
+          "path": "registry/src/solid/examples/temml/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/temml/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "temml",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/examples/temml/editor.tsx",
+          "registry/src/solid/examples/temml/extension.ts",
+          "registry/src/solid/examples/temml/index.ts",
+          "registry/src/solid/sample/sample-doc-tex.ts",
+          "registry/src/solid/sample/temml.ts"
+        ],
+        "internalDependencies": [
+          "solid-sample-sample-doc-tex",
+          "solid-sample-temml"
+        ]
+      }
+    },
+    {
       "name": "solid-example-text-align",
       "title": "solid-example-text-align",
       "type": "registry:block",
@@ -17671,8 +18334,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17726,8 +18388,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17781,8 +18442,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17830,17 +18490,24 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json"
+        "https://prosekit.dev/r/solid-sample-katex.json",
+        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json",
+        "https://prosekit.dev/r/solid-ui-block-handle.json",
+        "https://prosekit.dev/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
           "path": "registry/src/solid/examples/typography/editor.tsx",
           "type": "registry:component",
           "target": "components/editor/examples/typography/editor.tsx"
+        },
+        {
+          "path": "registry/src/solid/examples/typography/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/typography/extension.ts"
         },
         {
           "path": "registry/src/solid/examples/typography/index.ts",
@@ -17855,11 +18522,20 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/examples/typography/editor.tsx",
+          "registry/src/solid/examples/typography/extension.ts",
           "registry/src/solid/examples/typography/index.ts",
-          "registry/src/solid/sample/sample-doc-typography.ts"
+          "registry/src/solid/sample/katex.ts",
+          "registry/src/solid/sample/sample-doc-typography.ts",
+          "registry/src/solid/ui/block-handle/block-handle.tsx",
+          "registry/src/solid/ui/block-handle/index.ts",
+          "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+          "registry/src/solid/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": [
-          "solid-sample-sample-doc-typography"
+          "solid-sample-katex",
+          "solid-sample-sample-doc-typography",
+          "solid-ui-block-handle",
+          "solid-ui-drop-indicator"
         ]
       }
     },
@@ -17873,8 +18549,7 @@
         "https://prosekit.dev/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17925,8 +18600,7 @@
         "https://prosekit.dev/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -17982,8 +18656,7 @@
         "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18036,8 +18709,7 @@
         "https://prosekit.dev/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18098,8 +18770,7 @@
         "https://prosekit.dev/r/solid-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18152,8 +18823,7 @@
         "https://prosekit.dev/r/solid-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -18201,7 +18871,6 @@
       ],
       "dependencies": [
         "prosekit",
-        "solid-js",
         "y-websocket",
         "yjs"
       ],
@@ -18272,6 +18941,33 @@
         "framework": "solid",
         "accumulatedFiles": [
           "registry/src/solid/sample/define-atom-block.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "solid-sample-katex",
+      "title": "solid-sample-katex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "katex"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/katex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/katex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/katex.ts"
         ],
         "internalDependencies": []
       }
@@ -18844,6 +19540,33 @@
       }
     },
     {
+      "name": "solid-sample-sample-doc-tex",
+      "title": "solid-sample-sample-doc-tex",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/sample-doc-tex.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-tex.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/sample-doc-tex.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-sample-sample-doc-text-align",
       "title": "solid-sample-sample-doc-text-align",
       "type": "registry:component",
@@ -19113,6 +19836,33 @@
       }
     },
     {
+      "name": "solid-sample-temml",
+      "title": "solid-sample-temml",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "temml"
+      ],
+      "files": [
+        {
+          "path": "registry/src/solid/sample/temml.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/temml.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "solid",
+        "accumulatedFiles": [
+          "registry/src/solid/sample/temml.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "solid-ui-block-handle",
       "title": "solid-ui-block-handle",
       "type": "registry:component",
@@ -19121,8 +19871,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19158,8 +19907,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19192,8 +19940,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19226,8 +19973,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19262,8 +20008,7 @@
         "https://prosekit.dev/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19302,8 +20047,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19343,8 +20087,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19388,8 +20131,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19429,8 +20171,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19477,8 +20218,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19514,8 +20254,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19553,8 +20292,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19597,8 +20335,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {
@@ -19631,8 +20368,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
-        "solid-js"
+        "prosekit"
       ],
       "files": [
         {

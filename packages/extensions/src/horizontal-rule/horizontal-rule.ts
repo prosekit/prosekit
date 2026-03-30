@@ -1,8 +1,8 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineHorizontalRuleCommands, type HorizontalRuleCommandsExtension } from './horizontal-rule-commands'
-import { defineHorizontalRuleInputRule } from './horizontal-rule-input-rule'
-import { defineHorizontalRuleSpec, type HorizontalRuleSpecExtension } from './horizontal-rule-spec'
+import { defineHorizontalRuleCommands, type HorizontalRuleCommandsExtension } from './horizontal-rule-commands.ts'
+import { defineHorizontalRuleInputRule } from './horizontal-rule-input-rule.ts'
+import { defineHorizontalRuleSpec, type HorizontalRuleSpecExtension } from './horizontal-rule-spec.ts'
 
 export type HorizontalRuleExtension = Union<
   [HorizontalRuleSpecExtension, HorizontalRuleCommandsExtension]

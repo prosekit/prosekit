@@ -1,4 +1,4 @@
-import { DOMDocumentNotFoundError } from '../error'
+import { DOMDocumentNotFoundError } from '../error.ts'
 
 function findGlobalBrowserDocument() {
   if (typeof document !== 'undefined') {

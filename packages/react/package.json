@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.6.6",
+  "version": "0.7.0-beta.0",
   "private": false,
   "description": "React components and utilities for ProseKit",
   "author": {
@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.6",
-    "@prosemirror-adapter/react": "^0.5.1"
+    "@prosemirror-adapter/core": "^0.5.2",
+    "@prosemirror-adapter/react": "^0.5.2"
   },
   "peerDependencies": {
     "react": ">= 18.2.0",
@@ -64,9 +64,10 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "@types/react": "^19.2.10",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

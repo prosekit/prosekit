@@ -1,4 +1,4 @@
-import { isFinitePositiveNumber } from '../../../utils/is-finite-positive-number'
+import { isFinitePositiveNumber } from '../../../utils/is-finite-positive-number.ts'
 
 export function calcResize(
   position:

@@ -15,11 +15,8 @@ interface Props {
 
 export function PreactRenderer(props: Props): JSX.Element {
   const Example = loaders[props.story as keyof typeof loaders]
-  if (!Example) {
-    console.warn(`[PreactRenderer] No example found for story ${props.story}`)
-  }
   const fallback = createElement('div', { 'data-testid': 'preact-renderer-fallback' }, null)
-  const children = Example ? createElement(Example, props.exampleProps ?? null) : null
+  const children = Example ? createElement(Example, props.exampleProps ?? null) : `Example ${props.story} not found`
   return createElement(Suspense, { fallback }, children)
 }
 

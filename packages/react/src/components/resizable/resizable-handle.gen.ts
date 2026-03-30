@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link ResizableHandle} component.
  */
 export interface ResizableHandleProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const ResizableHandle: ForwardRefExoticComponent<
   ResizableHandleProps &
   RefAttributes<ResizableHandleElement> &
   HTMLAttributes<ResizableHandleElement>
 > = createComponent<
-  ResizableHandleProps, 
+  ResizableHandleProps,
   ResizableHandleElement
 >(
   'prosekit-resizable-handle',

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.6.5",
+  "version": "0.7.0-beta.0",
   "private": false,
   "description": "Preact components and utilities for ProseKit",
   "author": {
@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.4.6",
-    "@prosemirror-adapter/preact": "^0.5.1"
+    "@prosemirror-adapter/core": "^0.5.2",
+    "@prosemirror-adapter/preact": "^0.5.2"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0"
@@ -60,9 +60,10 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "preact": "^10.28.3",
+    "preact": "^10.29.0",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },

@@ -37,6 +37,7 @@ export const loaders = {
   'slash-menu': lazy(() => import('./examples/slash-menu').then((m) => ({ default: m.ExampleEditor }))),
   'strike': lazy(() => import('./examples/strike').then((m) => ({ default: m.ExampleEditor }))),
   'table': lazy(() => import('./examples/table').then((m) => ({ default: m.ExampleEditor }))),
+  'temml': lazy(() => import('./examples/temml').then((m) => ({ default: m.ExampleEditor }))),
   'text-align': lazy(() => import('./examples/text-align').then((m) => ({ default: m.ExampleEditor }))),
   'text-color': lazy(() => import('./examples/text-color').then((m) => ({ default: m.ExampleEditor }))),
   'toolbar': lazy(() => import('./examples/toolbar').then((m) => ({ default: m.ExampleEditor }))),

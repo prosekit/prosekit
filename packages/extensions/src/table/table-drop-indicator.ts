@@ -1,7 +1,7 @@
 import type { PlainExtension } from '@prosekit/core'
 
-import type { DragEventHandler } from '../drop-indicator'
-import { defineDropIndicator } from '../drop-indicator'
+import type { DragEventHandler } from '../drop-indicator/index.ts'
+import { defineDropIndicator } from '../drop-indicator/index.ts'
 
 /**
  * Hides the drop indicator when dragging a table column or row by using the

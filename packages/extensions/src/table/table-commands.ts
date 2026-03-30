@@ -11,15 +11,15 @@ import {
   splitCell,
 } from 'prosemirror-tables'
 
-import { deleteCellSelection } from './table-commands/delete-cell-selection'
-import { exitTable } from './table-commands/exit-table'
-import { insertTable, type InsertTableOptions } from './table-commands/insert-table'
-import { moveTableColumn, type MoveTableColumnOptions } from './table-commands/move-table-column'
-import { moveTableRow, type MoveTableRowOptions } from './table-commands/move-table-row'
-import { selectTable, type SelectTableOptions } from './table-commands/select-table'
-import { selectTableCell, type SelectTableCellOptions } from './table-commands/select-table-cell'
-import { selectTableColumn, type SelectTableColumnOptions } from './table-commands/select-table-column'
-import { selectTableRow, type SelectTableRowOptions } from './table-commands/select-table-row'
+import { deleteCellSelection } from './table-commands/delete-cell-selection.ts'
+import { exitTable } from './table-commands/exit-table.ts'
+import { insertTable, type InsertTableOptions } from './table-commands/insert-table.ts'
+import { moveTableColumn, type MoveTableColumnOptions } from './table-commands/move-table-column.ts'
+import { moveTableRow, type MoveTableRowOptions } from './table-commands/move-table-row.ts'
+import { selectTableCell, type SelectTableCellOptions } from './table-commands/select-table-cell.ts'
+import { selectTableColumn, type SelectTableColumnOptions } from './table-commands/select-table-column.ts'
+import { selectTableRow, type SelectTableRowOptions } from './table-commands/select-table-row.ts'
+import { selectTable, type SelectTableOptions } from './table-commands/select-table.ts'
 
 /**
  * @internal

@@ -30,8 +30,8 @@ testStory('gap-cursor', () => {
     await expect.element(img2).toBeVisible()
 
     // Compute the bounding boxes so we can later assert the gap cursor position
-    const box1 = getBoundingBox(img1)
-    const box2 = getBoundingBox(img2)
+    const box1 = await getBoundingBox(img1)
+    const box2 = await getBoundingBox(img2)
 
     // Focus editor first to ensure gap cursor decoration can appear
     await img1.click()
@@ -44,7 +44,7 @@ testStory('gap-cursor', () => {
     // Expect the gap cursor decoration to exist
     await expectLocatorToHaveCount(gap, 1)
 
-    const gapBox = getBoundingBox(gap)
+    const gapBox = await getBoundingBox(gap)
     expect(gapBox.y).toBeGreaterThanOrEqual(Math.floor(box1.y + box1.height))
     expect(gapBox.y).toBeLessThan(Math.ceil(box2.y + box2.height))
   })

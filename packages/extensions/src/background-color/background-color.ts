@@ -1,7 +1,7 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineBackgroundColorCommands, type BackgroundColorCommandsExtension } from './background-color-commands'
-import { defineBackgroundColorSpec, type BackgroundColorSpecExtension } from './background-color-spec'
+import { defineBackgroundColorCommands, type BackgroundColorCommandsExtension } from './background-color-commands.ts'
+import { defineBackgroundColorSpec, type BackgroundColorSpecExtension } from './background-color-spec.ts'
 
 /**
  * @internal

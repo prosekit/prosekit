@@ -1,4 +1,5 @@
-import { Priority, union, withPriority, type PlainExtension, type Union } from '@prosekit/core'
+import type { Priority } from '@prosekit/core'
+import { union, withPriority, type PlainExtension, type Union } from '@prosekit/core'
 import type {
   CursorAwareness,
   CursorEphemeralStore,
@@ -8,11 +9,11 @@ import type {
   LoroUndoPluginProps,
 } from 'loro-prosemirror'
 
-import { defineLoroCommands, type LoroCommandsExtension } from './loro-commands'
-import { defineLoroCursorPlugin } from './loro-cursor-plugin'
-import { defineLoroKeymap } from './loro-keymap'
-import { defineLoroSyncPlugin } from './loro-sync-plugin'
-import { defineLoroUndoPlugin } from './loro-undo-plugin'
+import { defineLoroCommands, type LoroCommandsExtension } from './loro-commands.ts'
+import { defineLoroCursorPlugin } from './loro-cursor-plugin.ts'
+import { defineLoroKeymap } from './loro-keymap.ts'
+import { defineLoroSyncPlugin } from './loro-sync-plugin.ts'
+import { defineLoroUndoPlugin } from './loro-undo-plugin.ts'
 
 export interface LoroOptions {
   /**
@@ -65,6 +66,6 @@ export function defineLoro(options: LoroOptions): LoroExtension {
       defineLoroUndoPlugin({ ...undo, doc }),
       defineLoroSyncPlugin({ ...sync, doc }),
     ]),
-    Priority.high,
+    3 satisfies typeof Priority.high,
   )
 }

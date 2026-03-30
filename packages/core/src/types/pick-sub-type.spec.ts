@@ -1,7 +1,7 @@
 import { test } from 'vitest'
 
-import { assertTypeEqual } from './assert-type-equal'
-import type { PickSubType } from './pick-sub-type'
+import { assertTypeEqual } from './assert-type-equal.ts'
+import type { PickSubType } from './pick-sub-type.ts'
 
 test('PickSubType', () => {
   assertTypeEqual<PickSubType<'abc', string>, 'abc'>(true)

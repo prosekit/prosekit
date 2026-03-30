@@ -3,11 +3,11 @@ import { menuRootProps, useMenuRoot, type MenuRootProps } from '@aria-ui/menu/el
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 
-import { getStateWithDefaults } from '../../../utils/get-default-state'
-import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
-import { tableHandleRootContext } from '../context'
+import { getStateWithDefaults } from '../../../utils/get-default-state.ts'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view.ts'
+import { tableHandleRootContext } from '../context.ts'
 
-import type { TableHandleColumnRootProps } from './types'
+import type { TableHandleColumnRootProps } from './types.ts'
 
 /**
  * @internal

@@ -1,7 +1,7 @@
 import { defineMountHandler, defineUpdateHandler, ProseKitError, union, type Editor, type Extension } from '@prosekit/core'
 import { onMounted, onUnmounted, shallowRef, triggerRef, type ShallowRef } from 'vue'
 
-import { useEditorContext } from '../injection/editor-context'
+import { useEditorContext } from '../injection/editor-context.ts'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
@@ -29,8 +29,8 @@ export function useEditor<E extends Extension = any>(options?: {
   const editorRef = shallowRef<Editor<E>>(editor)
 
   if (update) {
+    const forceUpdate = () => triggerRef(editorRef)
     onMounted(() => {
-      const forceUpdate = () => triggerRef(editorRef)
       const extension = union(
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),

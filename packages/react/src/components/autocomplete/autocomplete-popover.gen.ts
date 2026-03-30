@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'react'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link AutocompletePopover} component.
  */
 export interface AutocompletePopoverProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const AutocompletePopover: ForwardRefExoticComponent<
   AutocompletePopoverProps &
   RefAttributes<AutocompletePopoverElement> &
   HTMLAttributes<AutocompletePopoverElement>
 > = createComponent<
-  AutocompletePopoverProps, 
+  AutocompletePopoverProps,
   AutocompletePopoverElement
 >(
   'prosekit-autocomplete-popover',

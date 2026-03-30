@@ -2,7 +2,7 @@ import { defineMountHandler, defineUpdateHandler, EditorNotFoundError, union, ty
 import { useSyncExternalStore } from 'preact/compat'
 import { useMemo } from 'preact/hooks'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
 export interface UseEditorDerivedOptions<E extends Extension = any> {
   /**

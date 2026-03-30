@@ -1,6 +1,6 @@
 import type { NodeType, Schema } from '@prosekit/pm/model'
 
-import { ProseKitError } from '../error'
+import { ProseKitError } from '../error.ts'
 
 /**
  * @internal

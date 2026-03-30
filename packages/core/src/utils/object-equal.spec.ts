@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { objectEqual } from './object-equal'
+import { objectEqual } from './object-equal.ts'
 
 test('objects with same keys and values are equal', () => {
   expect(objectEqual({ a: 1, b: 2 }, { a: 1, b: 2 })).toBe(true)

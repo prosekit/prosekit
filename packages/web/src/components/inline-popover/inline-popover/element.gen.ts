@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useInlinePopover } from "./setup"
-import { inlinePopoverEvents, inlinePopoverProps, type InlinePopoverEvents, type InlinePopoverProps } from "./types"
+import { useInlinePopover } from "./setup.ts"
+import { inlinePopoverEvents, inlinePopoverProps, type InlinePopoverEvents, type InlinePopoverProps } from "./types.ts"
 
 const InlinePopoverElementBase: BaseElementConstructor<InlinePopoverProps> = defineCustomElement<
   InlinePopoverProps,

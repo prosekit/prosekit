@@ -1,7 +1,7 @@
 import type { Mark, MarkType, ResolvedPos } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
 
-import { getMarkType } from '../utils/get-mark-type'
+import { getMarkType } from '../utils/get-mark-type.ts'
 
 /**
  * @public

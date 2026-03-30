@@ -1,6 +1,6 @@
 import { defineComponent, h, onMounted, ref, watchEffect, type DefineSetupFnComponent, type EmitsOptions, type HTMLAttributes } from 'vue'
 
-import { useEditorContext } from '../injection/editor-context'
+import { useEditorContext } from '../injection/editor-context.ts'
 
 export function createComponent<
   Props extends { [PropName in keyof Props]: unknown },

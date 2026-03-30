@@ -13,8 +13,8 @@ import {
   type PredictionPluginMatching,
   type PredictionPluginState,
   type PredictionTransactionMeta,
-} from './autocomplete-helpers'
-import type { AutocompleteRule } from './autocomplete-rule'
+} from './autocomplete-helpers.ts'
+import type { AutocompleteRule } from './autocomplete-rule.ts'
 
 /**
  * Creates a plugin that handles autocomplete functionality.

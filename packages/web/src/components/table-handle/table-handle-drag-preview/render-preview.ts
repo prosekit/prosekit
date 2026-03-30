@@ -1,8 +1,8 @@
-import { assignStyles } from '../../../utils/assign-styles'
-import { cloneElement, deepCloneElement } from '../../../utils/clone-element'
-import { fadeColor } from '../../../utils/fade-color'
-import { getEffectiveBackgroundColor } from '../../../utils/get-effective-background-color'
-import { injectStyle } from '../../../utils/inject-style'
+import { assignStyles } from '../../../utils/assign-styles.ts'
+import { cloneElement, deepCloneElement } from '../../../utils/clone-element.ts'
+import { fadeColor } from '../../../utils/fade-color.ts'
+import { getEffectiveBackgroundColor } from '../../../utils/get-effective-background-color.ts'
+import { injectStyle } from '../../../utils/inject-style.ts'
 
 export function clearPreviewDOM(previewRoot: HTMLElement): void {
   while (previewRoot.firstChild) {

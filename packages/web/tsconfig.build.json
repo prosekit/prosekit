@@ -1,9 +1,5 @@
 {
-  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
-  "compilerOptions": {
-    "isolatedDeclarations": true,
-    "allowJs": false
-  },
+  "extends": "@prosekit/config-ts/build.json",
   "references": [
     { "path": "../extensions/tsconfig.json" }
   ]

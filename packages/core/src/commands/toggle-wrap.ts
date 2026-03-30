@@ -2,9 +2,9 @@ import { lift } from '@prosekit/pm/commands'
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import { isNodeActive } from '../utils/is-node-active'
+import { isNodeActive } from '../utils/is-node-active.ts'
 
-import { wrap } from './wrap'
+import { wrap } from './wrap.ts'
 
 export interface ToggleWrapOptions {
   /**

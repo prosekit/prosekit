@@ -1,7 +1,7 @@
 import { defineFacet, defineFacetPayload, pluginFacet, type Extension, type PluginPayload } from '@prosekit/core'
 
-import { createAutocompletePlugin } from './autocomplete-plugin'
-import type { AutocompleteRule } from './autocomplete-rule'
+import { createAutocompletePlugin } from './autocomplete-plugin.ts'
+import type { AutocompleteRule } from './autocomplete-rule.ts'
 
 /**
  * Defines an autocomplete extension that executes logic when the text before

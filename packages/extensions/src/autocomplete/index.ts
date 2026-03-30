@@ -1,4 +1,3 @@
-export { defineAutocomplete } from './autocomplete'
 export {
   AutocompleteRule,
   type AutocompleteRuleOptions,
@@ -6,4 +5,5 @@ export {
   type CanMatchPredicate,
   type MatchHandler,
   type MatchHandlerOptions,
-} from './autocomplete-rule'
+} from './autocomplete-rule.ts'
+export { defineAutocomplete } from './autocomplete.ts'

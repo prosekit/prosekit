@@ -3,9 +3,9 @@ import { createElement } from 'preact'
 import { forwardRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'preact/compat'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context.ts'
 
-import { mergeRefs } from './merge-refs'
+import { mergeRefs } from './merge-refs.ts'
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
@@ -77,7 +77,6 @@ export function createComponent<
       for (const [name, value] of Object.entries(properties)) {
         if (value !== undefined) {
           // @ts-expect-error: we know that name is a valid property name
-          // eslint-disable-next-line react-hooks/immutability
           el[name] = value
         }
       }

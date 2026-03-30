@@ -11,20 +11,20 @@ import type {
   RefAttributes,
 } from 'preact/compat'
 
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link ResizableRoot} component.
  */
 export interface ResizableRootProps extends Partial<CreateProps<Props, Events>> {}
- 
+
 export const ResizableRoot: ForwardRefExoticComponent<
   Partial<ResizableRootProps> &
   RefAttributes<ResizableRootElement> &
   HTMLAttributes<ResizableRootElement>
 > = createComponent<
-  ResizableRootProps, 
+  ResizableRootProps,
   ResizableRootElement
 >(
   'prosekit-resizable-root',

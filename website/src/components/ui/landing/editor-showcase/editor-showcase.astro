@@ -1,7 +1,10 @@
 ---
 import { ExampleEditorClient } from './example-editor-client.tsx'
+import { getFallbackHTML } from './fallback-html'
+
+const html: string = await getFallbackHTML()
 ---
 
 <div class="py-4 md:py-8 h-[600px] w-full max-w-6xl mx-auto">
-  <ExampleEditorClient client:load />
+  <ExampleEditorClient client:load fallbackHTML={html} />
 </div>

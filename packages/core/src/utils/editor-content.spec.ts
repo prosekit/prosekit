@@ -1,9 +1,9 @@
 import { AllSelection } from '@prosekit/pm/state'
 import { expect, test } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { getEditorSelection } from './editor-content'
+import { getEditorSelection } from './editor-content.ts'
 
 test('getEditorSelection', () => {
   const { n } = setupTest()

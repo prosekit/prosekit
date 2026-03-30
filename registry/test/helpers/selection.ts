@@ -39,10 +39,7 @@ export async function moveSelection(
   await waitForSelectionUpdate()
 }
 
-/**
- * Moves the text selection to the start of the first editable element.
- */
-export async function moveSelectionToStart(): Promise<void> {
+async function moveSelectionTo(toStart: boolean): Promise<void> {
   const selection = getSelection()
   const node = selection.anchorNode
   if (!node) {
@@ -60,12 +57,26 @@ export async function moveSelectionToStart(): Promise<void> {
 
   const range = document.createRange()
   range.selectNodeContents(editable)
-  range.collapse(true)
+  range.collapse(toStart)
 
   selection.removeAllRanges()
   selection.addRange(range)
 
   await waitForSelectionUpdate()
+}
+
+/**
+ * Moves the text selection to the start of the closest editable element.
+ */
+export async function moveSelectionToStart(): Promise<void> {
+  return await moveSelectionTo(true)
+}
+
+/**
+ * Moves the text selection to the end of the closest editable element.
+ */
+export async function moveSelectionToEnd(): Promise<void> {
+  return await moveSelectionTo(false)
 }
 
 export async function extendSelection(direction: 'forward' | 'backward', count: number): Promise<void> {

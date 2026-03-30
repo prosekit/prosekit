@@ -1,7 +1,7 @@
 import { getNodeType, union, type PlainExtension } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
 
-import { defineInputRule } from '../input-rule'
+import { defineInputRule } from '../input-rule/index.ts'
 
 /**
  * @public

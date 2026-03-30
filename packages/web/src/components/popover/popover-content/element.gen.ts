@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { usePopoverContent } from "./setup"
-import { popoverContentEvents, popoverContentProps, type PopoverContentEvents, type PopoverContentProps } from "./types"
+import { usePopoverContent } from "./setup.ts"
+import { popoverContentEvents, popoverContentProps, type PopoverContentEvents, type PopoverContentProps } from "./types.ts"
 
 const PopoverContentElementBase: BaseElementConstructor<PopoverContentProps> = defineCustomElement<
   PopoverContentProps,

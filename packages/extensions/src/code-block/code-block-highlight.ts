@@ -12,7 +12,16 @@ export type HighlightParser = Parser
  * @public
  */
 export type CodeBlockHighlightOptions = {
+  /**
+   * A parser instance from the `prosemirror-highlight` package.
+   */
   parser: HighlightParser
+  /**
+   * ProseMirror node types to highlight.
+   *
+   * @default ['codeBlock', 'mathBlock']
+   */
+  nodeTypes?: string[]
 }
 
 /**
@@ -27,8 +36,9 @@ export type CodeBlockHighlightOptions = {
  */
 export function defineCodeBlockHighlight({
   parser,
+  nodeTypes = ['codeBlock', 'mathBlock'],
 }: CodeBlockHighlightOptions): Extension {
   return definePlugin(
-    createHighlightPlugin({ parser }),
+    createHighlightPlugin({ parser, nodeTypes }),
   )
 }

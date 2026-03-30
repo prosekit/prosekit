@@ -1,9 +1,9 @@
 import { NodeSelection } from '@prosekit/pm/state'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
-import { isNodeActive } from './is-node-active'
+import { isNodeActive } from './is-node-active.ts'
 
 describe('isNodeActive', () => {
   it('should return true when cursor is in a node of the specified type', () => {

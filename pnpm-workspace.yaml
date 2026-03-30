@@ -1,32 +1,38 @@
 packages:
   - website
   - registry
-  - examples/*
   - packages/*
 
+allowedDeprecatedVersions:
+  glob: "10"
+
 catalog:
-  typescript: "~5.9.0"
-  tsdown: "^0.20.0"
-  vitest: "^4.0.18"
-  "@vitest/coverage-v8": "^4.0.18"
-  "@vitest/ui": "^4.0.18"
-  "@vitest/browser-playwright": "^4.0.18"
+  "@types/node": "^24.10.13"
+  "@vitest/browser-playwright": "^4.1.1"
+  "@vitest/coverage-v8": "^4.1.1"
+  "@vitest/ui": "^4.1.1"
+  vitest: "^4.1.1"
+  tsdown: "^0.21.4"
+  "@tsdown/css": "^0.21.4"
+  typescript: "~5.9.3"
 
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
+  - "@parcel/watcher"
   - dprint
   - esbuild
   - sharp
-  - unrs-resolver
   - workerd
 
-minimumReleaseAge: 1440
+minimumReleaseAge: 600 # 10 hours
 
 minimumReleaseAgeExclude:
   - "@ocavue/*"
+  - "prosemirror-*"
+  - "astrobook"
+  - "@astrobook/*"
   - "@prosemirror-adapter/*"
-  - prosemirror-*
 
 overrides: {}
 
@@ -34,3 +40,9 @@ patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
 strictDepBuilds: true
+
+strictPeerDependencies: true
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 10080 # 7 days

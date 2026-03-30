@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useAutocompleteEmpty } from "./setup"
-import { autocompleteEmptyEvents, autocompleteEmptyProps, type AutocompleteEmptyEvents, type AutocompleteEmptyProps } from "./types"
+import { useAutocompleteEmpty } from "./setup.ts"
+import { autocompleteEmptyEvents, autocompleteEmptyProps, type AutocompleteEmptyEvents, type AutocompleteEmptyProps } from "./types.ts"
 
 const AutocompleteEmptyElementBase: BaseElementConstructor<AutocompleteEmptyProps> = defineCustomElement<
   AutocompleteEmptyProps,

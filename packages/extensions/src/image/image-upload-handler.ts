@@ -8,9 +8,9 @@ import {
   type FilePasteHandler,
   type FilePasteHandlerOptions,
   type Uploader,
-} from '../file'
+} from '../file/index.ts'
 
-import { uploadImage, type ImageUploadErrorHandler } from './image-commands/upload-image'
+import { uploadImage, type ImageUploadErrorHandler } from './image-commands/upload-image.ts'
 
 /**
  * A predicate to determine if the pasted file should be uploaded and inserted as an image.

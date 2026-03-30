@@ -8,7 +8,7 @@ registerCleanupFunction(cleanup)
 
 export async function renderVueExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
-  return render(VueRenderer, {
+  return await render(VueRenderer, {
     props: {
       story,
       exampleProps: initialContent ? { initialContent } : {},

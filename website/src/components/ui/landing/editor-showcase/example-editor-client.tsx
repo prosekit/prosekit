@@ -3,6 +3,7 @@
 import { clsx } from 'clsx/lite'
 import { lazy, Suspense, useCallback, useEffect, useState, type FC } from 'react'
 
+import { dynamicImportEditorModule } from './dynamic-import'
 import { EditorFallback } from './editor-fallback'
 
 // loading: fallback visible, editor loading in background
@@ -11,7 +12,7 @@ import { EditorFallback } from './editor-fallback'
 type Phase = 'loading' | 'ready' | 'complete'
 
 const LazyExampleEditor = lazy(() =>
-  import('prosekit-registry/react/examples/full').then((mod) => ({
+  dynamicImportEditorModule().then((mod) => ({
     default: mod.ExampleEditor,
   }))
 )
@@ -21,7 +22,7 @@ const EditorLoaded: FC<{ onReady: () => void }> = ({ onReady }) => {
   return <LazyExampleEditor />
 }
 
-export const ExampleEditorClient: FC = () => {
+export const ExampleEditorClient: FC<{ fallbackHTML: string }> = ({ fallbackHTML }) => {
   const [phase, setPhase] = useState<Phase>('loading')
   const handleReady = useCallback(() => setPhase('ready'), [])
   const handleComplete = useCallback(() => setPhase('complete'), [])
@@ -40,7 +41,7 @@ export const ExampleEditorClient: FC = () => {
           )}
           onTransitionEnd={handleComplete}
         >
-          <EditorFallback />
+          <EditorFallback fallbackHTML={fallbackHTML} />
         </div>
       )}
       <div

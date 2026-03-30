@@ -1,0 +1,43 @@
+.ProseMirror pm-page-chunk {
+  box-sizing: border-box;
+  display: flow-root;
+  position: relative;
+  width: var(--page-width, 100%);
+  margin: 0;
+  padding-top: 0;
+  padding-right: var(--page-margin-right, 0);
+  padding-bottom: 0;
+  padding-left: var(--page-margin-left, 0);
+}
+
+.ProseMirror pm-page-chunk ~ pm-page-chunk[data-page-head] {
+  margin-top: 50px;
+}
+
+@media print {
+  .ProseMirror pm-page-chunk ~ pm-page-chunk[data-page-head] {
+    margin-top: 0;
+  }
+}
+
+.ProseMirror pm-page-chunk[data-page-head]::before {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--page-height);
+  outline: 1px solid CanvasText;
+  content: "";
+  pointer-events: none;
+}
+
+@media print {
+  .ProseMirror pm-page-chunk[data-page-head]::before {
+    outline-color: transparent;
+  }
+}
+
+.ProseMirror pm-page-chunk[data-page-tail] {
+  break-after: page;
+}

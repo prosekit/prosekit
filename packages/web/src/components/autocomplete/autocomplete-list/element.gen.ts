@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useAutocompleteList } from "./setup"
-import { autocompleteListEvents, autocompleteListProps, type AutocompleteListEvents, type AutocompleteListProps } from "./types"
+import { useAutocompleteList } from "./setup.ts"
+import { autocompleteListEvents, autocompleteListProps, type AutocompleteListEvents, type AutocompleteListProps } from "./types.ts"
 
 const AutocompleteListElementBase: BaseElementConstructor<AutocompleteListProps> = defineCustomElement<
   AutocompleteListProps,

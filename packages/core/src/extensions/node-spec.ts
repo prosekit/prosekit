@@ -2,14 +2,14 @@ import { isNotNullish, mapGroupBy } from '@ocavue/utils'
 import type { AttributeSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
 
-import { defineFacet } from '../facets/facet'
-import { defineFacetPayload } from '../facets/facet-extension'
-import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AnyAttrs, AttrSpec } from '../types/attrs'
-import type { Extension } from '../types/extension'
-import { assert } from '../utils/assert'
-import { mergeSpecs } from '../utils/merge-specs'
-import { wrapOutputSpecAttrs, wrapTagParseRuleAttrs } from '../utils/output-spec'
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { defineFacet } from '../facets/facet.ts'
+import { schemaSpecFacet } from '../facets/schema-spec.ts'
+import type { AnyAttrs, AttrSpec } from '../types/attrs.ts'
+import type { Extension } from '../types/extension.ts'
+import { assert } from '../utils/assert.ts'
+import { mergeSpecs } from '../utils/merge-specs.ts'
+import { wrapOutputSpecAttrs, wrapTagParseRuleAttrs } from '../utils/output-spec.ts'
 
 /**
  * @public

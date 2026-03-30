@@ -1,6 +1,6 @@
 import { defineKeymap, type PlainExtension } from '@prosekit/core'
 
-import { setParagraph } from './paragraph-commands'
+import { setParagraph } from './paragraph-commands.ts'
 
 /**
  * @internal

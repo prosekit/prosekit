@@ -1,12 +1,11 @@
 import type { VirtualElement } from '@floating-ui/dom'
-import { isElement, isHTMLElement, isTextNode } from '@ocavue/utils'
+import { isElement, isHTMLElement, isTextNode, throttle } from '@ocavue/utils'
 import { defineDOMEventHandler, union, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { getClientRect } from '../../../utils/get-client-rect'
-import { throttle } from '../../../utils/throttle'
-import type { HoverState } from '../context'
+import { getClientRect } from '../../../utils/get-client-rect.ts'
+import type { HoverState } from '../context.ts'
 
 export type ElementHoverHandler = (
   reference: VirtualElement | null,
@@ -186,14 +185,7 @@ function findOuterRect(node: Node): Rect | undefined {
     return
   }
 
-  const rect = getClientRect(node)
-  const style = node.ownerDocument.defaultView?.getComputedStyle(node)
-  const marginLeft = style && Number.parseInt(style.marginLeft, 10) || 0
-  const marginRight = style && Number.parseInt(style.marginRight, 10) || 0
-  const left = rect.left - marginLeft
-  const right = rect.right + marginRight
-
-  return { top: rect.top, bottom: rect.bottom, left, right }
+  return getClientRect(node, { left: true, right: true })
 }
 
 function findFirstLineRectInNode(node: Node): Rect | undefined {

@@ -300,6 +300,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/math",
+    "path": "packages/prosekit/dist/prosekit-extensions-math.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/mention",
     "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
     "ignore": [
@@ -312,6 +322,26 @@
   {
     "name": "prosekit/extensions/mod-click-prevention",
     "path": "packages/prosekit/dist/prosekit-extensions-mod-click-prevention.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/page",
+    "path": "packages/prosekit/dist/prosekit-extensions-page.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/page/style.css",
+    "path": "packages/prosekit/dist/extensions/page/style.css",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",

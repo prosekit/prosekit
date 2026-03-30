@@ -1,17 +1,18 @@
 <script lang="ts">
+import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
 import { ResizableHandle, ResizableRoot } from 'prosekit/svelte/resizable'
-import { onDestroy } from 'svelte'
+import { fromStore } from 'svelte/store'
 
 interface Props extends SvelteNodeViewProps {}
 
 const props: Props = $props()
-const node = props.node
-const selected = props.selected
+const node: ProseMirrorNode = $derived(fromStore(props.node).current)
+const selected: boolean = $derived(fromStore(props.selected).current)
 
-const attrs = $derived($node.attrs as ImageAttrs)
+const attrs = $derived(node.attrs as ImageAttrs)
 const url = $derived(attrs.src || '')
 const uploading = $derived(url.startsWith('blob:'))
 
@@ -19,11 +20,8 @@ let aspectRatio = $state<number | undefined>(undefined)
 let error = $state<string | undefined>(undefined)
 let progress = $state(0)
 
-let unsubscribeProgress: (() => void) | undefined
-
 $effect(() => {
   if (!uploading) {
-    unsubscribeProgress?.()
     return
   }
 
@@ -36,15 +34,15 @@ $effect(() => {
     if (canceled) return
     error = String(err)
   })
-  unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
+  const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {
     if (canceled) return
     progress = total ? loaded / total : 0
   })
 
-  onDestroy(() => {
+  return () => {
     canceled = true
-    unsubscribeProgress?.()
-  })
+    unsubscribeProgress()
+  }
 })
 
 function handleImageLoad(event: Event) {
@@ -64,7 +62,7 @@ function handleImageLoad(event: Event) {
   width={attrs.width ?? undefined}
   height={attrs.height ?? undefined}
   {aspectRatio}
-  data-selected={$selected ? '' : undefined}
+  data-selected={selected ? '' : undefined}
   class="CSS_IMAGE_RESIZABLE"
   onResizeEnd={(event) => props.setAttrs(event.detail)}
 >

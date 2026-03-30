@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useKeymap } from 'prosekit/svelte'
-import { derived, writable } from 'svelte/store'
+import { toStore } from 'svelte/store'
 
 import { Button } from '../../ui/button'
 
@@ -12,23 +12,14 @@ const props: Props = $props()
 
 let hotkey = $state<'Shift-Enter' | 'Enter'>('Shift-Enter')
 
-// Create a store from the reactive hotkey value
-const hotkeyStore = writable<'Shift-Enter' | 'Enter'>('Shift-Enter')
-
-// Update store when hotkey changes
-$effect(() => {
-  hotkeyStore.set(hotkey)
-})
-
-// Create keymap derived from the hotkey store
-const keymap = derived(hotkeyStore, ($hotkey) => ({
-  [$hotkey]: () => {
-    props.onSubmit($hotkey)
+const keymap = $derived({
+  [hotkey]: () => {
+    props.onSubmit(hotkey)
     return true
   },
-}))
+})
 
-useKeymap(keymap)
+useKeymap(toStore(() => keymap))
 
 function setHotkey(value: 'Shift-Enter' | 'Enter') {
   hotkey = value

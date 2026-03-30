@@ -1,5 +1,4 @@
 <script lang="ts">
-import { onDestroy } from 'svelte'
 import { WebsocketProvider } from 'y-websocket'
 import * as Y from 'yjs'
 
@@ -14,9 +13,11 @@ const provider = new WebsocketProvider(
   doc,
 )
 
-onDestroy(() => {
-  provider.destroy()
-  doc.destroy()
+$effect(() => {
+  return () => {
+    provider.destroy()
+    doc.destroy()
+  }
 })
 </script>
 

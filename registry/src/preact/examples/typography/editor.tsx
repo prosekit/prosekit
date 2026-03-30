@@ -2,11 +2,14 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { useMemo } from 'preact/hooks'
-import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import { sampleContent } from '../../sample/sample-doc-typography'
+import { BlockHandle } from '../../ui/block-handle'
+import { DropIndicator } from '../../ui/drop-indicator'
+
+import { defineExtension } from './extension'
 
 interface EditorProps {
   initialContent?: NodeJSON
@@ -15,7 +18,8 @@ interface EditorProps {
 export default function Editor(props: EditorProps) {
   const defaultContent = props.initialContent ?? sampleContent
   const editor = useMemo(() => {
-    return createEditor({ extension: defineBasicExtension(), defaultContent })
+    const extension = defineExtension()
+    return createEditor({ extension, defaultContent })
   }, [defaultContent])
 
   return (
@@ -23,6 +27,8 @@ export default function Editor(props: EditorProps) {
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+          <BlockHandle />
+          <DropIndicator />
         </div>
       </div>
     </ProseKit>

@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { Facet } from './facet'
+import { Facet } from './facet.ts'
 
 type RootInput = {
   count: number

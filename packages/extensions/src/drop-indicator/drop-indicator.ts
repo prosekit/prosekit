@@ -1,7 +1,7 @@
 import type { PlainExtension } from '@prosekit/core'
 import type { DropIndicatorPluginOptions } from 'prosemirror-drop-indicator'
 
-import { defineDropIndicatorPayload } from './drop-indicator-facet'
+import { defineDropIndicatorPayload } from './drop-indicator-facet.ts'
 
 /**
  * @internal

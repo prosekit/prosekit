@@ -3,7 +3,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { Plugin, PluginKey, type EditorState } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-import { findTable } from '../table'
+import { findTable } from '../table/index.ts'
 
 export interface PlaceholderOptions {
   /**

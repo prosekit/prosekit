@@ -4,10 +4,10 @@ import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { assignStyles } from '../../utils/assign-styles'
-import { getSafeEditorView } from '../../utils/get-safe-editor-view'
+import { assignStyles } from '../../utils/assign-styles.ts'
+import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 
-import { tableHandleDndContext, tableHandleRootContext } from './context'
+import { tableHandleDndContext, tableHandleRootContext } from './context.ts'
 
 export type OnInitParams = {
   host: ConnectableElement

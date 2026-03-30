@@ -1,7 +1,7 @@
 import { addMark, defineCommands, removeMark, type Extension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
-import type { BackgroundColorAttrs } from './background-color-spec'
+import type { BackgroundColorAttrs } from './background-color-spec.ts'
 
 /**
  * @internal

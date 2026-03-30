@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
+import { setupTest } from '../testing/index.ts'
 
 describe('toggle-wrap', () => {
   it('adds the node wrapping the selection', () => {

@@ -7,9 +7,9 @@ import {
 } from '@prosekit/web/resizable'
 import type { Component } from 'solid-js'
 
-import type { PropsWithElement } from '../../types'
-import { createComponent } from '../create-component'
-import type { CreateProps } from '../create-props'
+import type { PropsWithElement } from '../../types.ts'
+import { createComponent } from '../create-component.ts'
+import type { CreateProps } from '../create-props.ts'
 
 /**
  * Props for the {@link ResizableRoot} component.

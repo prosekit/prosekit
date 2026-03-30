@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useResizableHandle } from "./setup"
-import { resizableHandleEvents, resizableHandleProps, type ResizableHandleEvents, type ResizableHandleProps } from "./types"
+import { useResizableHandle } from "./setup.ts"
+import { resizableHandleEvents, resizableHandleProps, type ResizableHandleEvents, type ResizableHandleProps } from "./types.ts"
 
 const ResizableHandleElementBase: BaseElementConstructor<ResizableHandleProps> = defineCustomElement<
   ResizableHandleProps,

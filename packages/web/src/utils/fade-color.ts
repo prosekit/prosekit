@@ -1,4 +1,4 @@
-import { isColorMixSupported } from './css-feature-detection'
+import { isColorMixSupported } from './css-feature-detection.ts'
 
 /**
  * Convert a color to a color with opacity

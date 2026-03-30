@@ -1,7 +1,7 @@
 import type { ResolvedPos } from '@prosekit/pm/model'
 import { PluginKey, type EditorState, type Transaction } from '@prosekit/pm/state'
 
-import type { AutocompleteRule } from './autocomplete-rule'
+import type { AutocompleteRule } from './autocomplete-rule.ts'
 
 export function defaultCanMatch({ state }: { state: EditorState }): boolean {
   const $pos = state.selection.$from

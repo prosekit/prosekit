@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing'
-import { jsonFromNode } from '../utils/parse'
+import { setupTest } from '../testing/index.ts'
+import { jsonFromNode } from '../utils/parse.ts'
 
-import type { NodeChild } from './action'
+import type { NodeChild } from './action.ts'
 
 describe('NodeAction', () => {
   const { editor, n } = setupTest()

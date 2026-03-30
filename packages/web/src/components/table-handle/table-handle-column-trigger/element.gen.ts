@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTableHandleColumnTrigger } from "./setup"
-import { tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents, type TableHandleColumnTriggerProps } from "./types"
+import { useTableHandleColumnTrigger } from "./setup.ts"
+import { tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents, type TableHandleColumnTriggerProps } from "./types.ts"
 
 const TableHandleColumnTriggerElementBase: BaseElementConstructor<TableHandleColumnTriggerProps> = defineCustomElement<
   TableHandleColumnTriggerProps,

@@ -6,8 +6,8 @@ import {
 } from '@prosekit/web/block-handle'
 import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
-import { createComponent } from '../create-component'
-import type { CreateEmits } from '../create-emits'
+import { createComponent } from '../create-component.ts'
+import type { CreateEmits } from '../create-emits.ts'
 
 /**
  * Props for the {@link BlockHandleDraggable} component.

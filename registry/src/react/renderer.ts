@@ -15,11 +15,8 @@ interface Props {
 
 export function ReactRenderer(props: Props): JSX.Element {
   const Example = loaders[props.story as keyof typeof loaders]
-  if (!Example) {
-    console.warn(`[ReactRenderer] No example found for story ${props.story}`)
-  }
   const fallback = createElement('div', { 'data-testid': 'react-renderer-fallback' }, null)
-  const children = Example ? createElement(Example, props.exampleProps ?? null) : null
+  const children = Example ? createElement(Example, props.exampleProps ?? null) : `Example ${props.story} not found`
   return createElement(Suspense, { fallback }, children)
 }
 

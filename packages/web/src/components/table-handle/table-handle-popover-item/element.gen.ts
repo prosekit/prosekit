@@ -1,7 +1,7 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useTableHandlePopoverItem } from "./setup"
-import { tableHandlePopoverItemEvents, tableHandlePopoverItemProps, type TableHandlePopoverItemEvents, type TableHandlePopoverItemProps } from "./types"
+import { useTableHandlePopoverItem } from "./setup.ts"
+import { tableHandlePopoverItemEvents, tableHandlePopoverItemProps, type TableHandlePopoverItemEvents, type TableHandlePopoverItemProps } from "./types.ts"
 
 const TableHandlePopoverItemElementBase: BaseElementConstructor<TableHandlePopoverItemProps> = defineCustomElement<
   TableHandlePopoverItemProps,

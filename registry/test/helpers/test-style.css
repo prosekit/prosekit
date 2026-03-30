@@ -1,0 +1,10 @@
+/*
+Ensure the editor has enough space for an empty editor, otherwise inserting an h1 element
+will cause the editor to change its height and cause the some tests to fail
+*/
+.prosekit-registry-test-container:has(.ProseMirror) {
+  height: 100%;
+}
+body:has(.prosekit-registry-test-container) {
+  height: 100vh;
+}

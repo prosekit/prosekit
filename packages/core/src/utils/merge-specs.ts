@@ -1,6 +1,6 @@
 import type { MarkSpec, NodeSpec } from '@prosekit/pm/model'
 
-import { mergeObjects } from './merge-objects'
+import { mergeObjects } from './merge-objects.ts'
 
 function mergeSpecs(a: NodeSpec, b: NodeSpec): NodeSpec
 function mergeSpecs(a: MarkSpec, b: MarkSpec): MarkSpec

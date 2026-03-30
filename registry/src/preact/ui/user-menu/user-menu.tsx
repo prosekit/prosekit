@@ -28,8 +28,8 @@ export default function UserMenu(props: {
     <AutocompletePopover
       regex={regex}
       className="CSS_AUTOCOMPLETE_MENU"
-      onQueryChange={props.onQueryChange}
-      onOpenChange={props.onOpenChange}
+      onQueryChange={(event) => props.onQueryChange?.(event.query)}
+      onOpenChange={(event) => props.onOpenChange?.(event.open)}
     >
       <AutocompleteList>
         <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">

@@ -3,7 +3,7 @@ import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor, useEditorDerivedValue } from 'prosekit/solid'
-import { InlinePopover } from 'prosekit/solid/inline-popover'
+import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/solid/inline-popover'
 import { createSignal, Show, type JSX } from 'solid-js'
 
 import { Button } from '../button'
@@ -89,127 +89,136 @@ export default function InlineMenu(): JSX.Element {
 
   return (
     <>
-      <InlinePopover
-        attr:data-testid="inline-menu-main"
-        class="CSS_INLINE_MENU_MAIN"
-        onOpenChange={(open) => {
-          if (!open) {
+      <InlinePopoverRoot
+        onOpenChange={(event) => {
+          if (!event.open) {
             setLinkMenuOpen(false)
           }
         }}
       >
-        <Show when={items().bold}>
-          {(item) => (
-            <Button
-              pressed={item().isActive}
-              disabled={!item().canExec}
-              onClick={item().command}
-              tooltip="Bold"
-            >
-              <div class="CSS_ICON_BOLD"></div>
-            </Button>
-          )}
-        </Show>
-        <Show when={items().italic}>
-          {(item) => (
-            <Button
-              pressed={item().isActive}
-              disabled={!item().canExec}
-              onClick={item().command}
-              tooltip="Italic"
-            >
-              <div class="CSS_ICON_ITALIC"></div>
-            </Button>
-          )}
-        </Show>
-        <Show when={items().underline}>
-          {(item) => (
-            <Button
-              pressed={item().isActive}
-              disabled={!item().canExec}
-              onClick={item().command}
-              tooltip="Underline"
-            >
-              <div class="CSS_ICON_UNDERLINE"></div>
-            </Button>
-          )}
-        </Show>
-        <Show when={items().strike}>
-          {(item) => (
-            <Button
-              pressed={item().isActive}
-              disabled={!item().canExec}
-              onClick={item().command}
-              tooltip="Strikethrough"
-            >
-              <div class="CSS_ICON_STRIKETHROUGH"></div>
-            </Button>
-          )}
-        </Show>
-        <Show when={items().code}>
-          {(item) => (
-            <Button
-              pressed={item().isActive}
-              disabled={!item().canExec}
-              onClick={item().command}
-              tooltip="Code"
-            >
-              <div class="CSS_ICON_CODE"></div>
-            </Button>
-          )}
-        </Show>
-        <Show when={items().link?.canExec && items().link}>
-          {(item) => (
-            <Button
-              pressed={item().isActive}
-              onClick={() => {
-                item().command()
-                toggleLinkMenuOpen()
-              }}
-              tooltip="Link"
-            >
-              <div class="CSS_ICON_LINK"></div>
-            </Button>
-          )}
-        </Show>
-      </InlinePopover>
+        <InlinePopoverPositioner>
+          <InlinePopoverPopup
+            attr:data-testid="inline-menu-main"
+            class="CSS_INLINE_MENU_MAIN"
+          >
+            <Show when={items().bold}>
+              {(item) => (
+                <Button
+                  pressed={item().isActive}
+                  disabled={!item().canExec}
+                  onClick={item().command}
+                  tooltip="Bold"
+                >
+                  <div class="CSS_ICON_BOLD"></div>
+                </Button>
+              )}
+            </Show>
+            <Show when={items().italic}>
+              {(item) => (
+                <Button
+                  pressed={item().isActive}
+                  disabled={!item().canExec}
+                  onClick={item().command}
+                  tooltip="Italic"
+                >
+                  <div class="CSS_ICON_ITALIC"></div>
+                </Button>
+              )}
+            </Show>
+            <Show when={items().underline}>
+              {(item) => (
+                <Button
+                  pressed={item().isActive}
+                  disabled={!item().canExec}
+                  onClick={item().command}
+                  tooltip="Underline"
+                >
+                  <div class="CSS_ICON_UNDERLINE"></div>
+                </Button>
+              )}
+            </Show>
+            <Show when={items().strike}>
+              {(item) => (
+                <Button
+                  pressed={item().isActive}
+                  disabled={!item().canExec}
+                  onClick={item().command}
+                  tooltip="Strikethrough"
+                >
+                  <div class="CSS_ICON_STRIKETHROUGH"></div>
+                </Button>
+              )}
+            </Show>
+            <Show when={items().code}>
+              {(item) => (
+                <Button
+                  pressed={item().isActive}
+                  disabled={!item().canExec}
+                  onClick={item().command}
+                  tooltip="Code"
+                >
+                  <div class="CSS_ICON_CODE"></div>
+                </Button>
+              )}
+            </Show>
+            <Show when={items().link?.canExec && items().link}>
+              {(item) => (
+                <Button
+                  pressed={item().isActive}
+                  onClick={() => {
+                    item().command()
+                    toggleLinkMenuOpen()
+                  }}
+                  tooltip="Link"
+                >
+                  <div class="CSS_ICON_LINK"></div>
+                </Button>
+              )}
+            </Show>
+          </InlinePopoverPopup>
+        </InlinePopoverPositioner>
+      </InlinePopoverRoot>
 
       <Show when={items().link}>
         {(item) => (
-          <InlinePopover
-            placement="bottom"
+          <InlinePopoverRoot
             defaultOpen={false}
             open={linkMenuOpen()}
-            onOpenChange={setLinkMenuOpen}
-            attr:data-testid="inline-menu-link"
-            class="CSS_INLINE_MENU_LINK"
+            onOpenChange={(event) => setLinkMenuOpen(event.open)}
           >
-            <Show when={linkMenuOpen()}>
-              <form
-                onSubmit={(event) => {
-                  event.preventDefault()
-                  const target = event.target as HTMLFormElement | null
-                  const href = target?.querySelector('input')?.value?.trim()
-                  handleLinkUpdate(href)
-                }}
+            <InlinePopoverPositioner placement="bottom">
+              <InlinePopoverPopup
+                attr:data-testid="inline-menu-link"
+                class="CSS_INLINE_MENU_LINK"
               >
-                <input
-                  placeholder="Paste the link..."
-                  value={item().currentLink || ''}
-                  class="CSS_INLINE_MENU_LINK_INPUT"
-                />
-              </form>
-            </Show>
-            <Show when={item().isActive}>
-              <button
-                onClick={() => handleLinkUpdate()}
-                onMouseDown={(event) => event.preventDefault()}
-                class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
-              >
-                Remove link
-              </button>
-            </Show>
-          </InlinePopover>
+                <Show when={linkMenuOpen()}>
+                  <form
+                    onSubmit={(event) => {
+                      event.preventDefault()
+                      const target = event.target as HTMLFormElement | null
+                      const href = target?.querySelector('input')?.value?.trim()
+                      handleLinkUpdate(href)
+                    }}
+                  >
+                    <input
+                      placeholder="Paste the link..."
+                      value={item().currentLink || ''}
+                      class="CSS_INLINE_MENU_LINK_INPUT"
+                    />
+                  </form>
+                </Show>
+                <Show when={item().isActive}>
+                  <button
+                    onClick={() => handleLinkUpdate()}
+                    onMouseDown={(event) => event.preventDefault()}
+                    class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
+                  >
+                    Remove link
+                  </button>
+                </Show>
+              </InlinePopoverPopup>
+            </InlinePopoverPositioner>
+          </InlinePopoverRoot>
         )}
       </Show>
     </>

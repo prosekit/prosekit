@@ -3,7 +3,8 @@ import { useId, useState } from 'preact/hooks'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/preact'
-import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/preact/popover'
+import type { OpenChangeEvent } from 'prosekit/preact/popover'
+import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/preact/popover'
 
 import { Button } from '../button'
 
@@ -63,11 +64,11 @@ export default function ImageUploadPopover(props: {
     deferResetState()
   }
 
-  const handleOpenChange = (nextOpen: boolean) => {
-    if (!nextOpen) {
+  const handleOpenChange = (event: OpenChangeEvent) => {
+    if (!event.open) {
       deferResetState()
     }
-    setOpen(nextOpen)
+    setOpen(event.open)
   }
 
   return (
@@ -78,50 +79,52 @@ export default function ImageUploadPopover(props: {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="CSS_IMAGE_UPLOAD_CARD">
-        {file ? null : (
-          <>
-            <label htmlFor={`id-link-${ariaId}`}>Embed Link</label>
-            <input
-              id={`id-link-${ariaId}`}
-              className="CSS_IMAGE_UPLOAD_INPUT"
-              placeholder="Paste the image link..."
-              type="url"
-              value={url}
-              onChange={handleUrlChange}
-            />
-          </>
-        )}
+      <PopoverPositioner>
+        <PopoverPopup className="CSS_IMAGE_UPLOAD_CARD">
+          {file ? null : (
+            <>
+              <label htmlFor={`id-link-${ariaId}`}>Embed Link</label>
+              <input
+                id={`id-link-${ariaId}`}
+                className="CSS_IMAGE_UPLOAD_INPUT"
+                placeholder="Paste the image link..."
+                type="url"
+                value={url}
+                onChange={handleUrlChange}
+              />
+            </>
+          )}
 
-        {url ? null : (
-          <>
-            <label htmlFor={`id-upload-${ariaId}`}>Upload</label>
-            <input
-              id={`id-upload-${ariaId}`}
-              className="CSS_IMAGE_UPLOAD_INPUT"
-              accept="image/*"
-              type="file"
-              onChange={handleFileChange}
-            />
-          </>
-        )}
+          {url ? null : (
+            <>
+              <label htmlFor={`id-upload-${ariaId}`}>Upload</label>
+              <input
+                id={`id-upload-${ariaId}`}
+                className="CSS_IMAGE_UPLOAD_INPUT"
+                accept="image/*"
+                type="file"
+                onChange={handleFileChange}
+              />
+            </>
+          )}
 
-        {url
-          ? (
-            <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
-              Insert Image
-            </button>
-          )
-          : null}
+          {url
+            ? (
+              <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+                Insert Image
+              </button>
+            )
+            : null}
 
-        {file
-          ? (
-            <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
-              Upload Image
-            </button>
-          )
-          : null}
-      </PopoverContent>
+          {file
+            ? (
+              <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+                Upload Image
+              </button>
+            )
+            : null}
+        </PopoverPopup>
+      </PopoverPositioner>
     </PopoverRoot>
   )
 }

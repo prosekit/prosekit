@@ -641,6 +641,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/menu",
+    "path": "packages/prosekit/dist/prosekit-preact-menu.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/popover",
     "path": "packages/prosekit/dist/prosekit-preact-popover.js",
     "ignore": [
@@ -703,6 +710,14 @@
   {
     "name": "prosekit/react/inline-popover",
     "path": "packages/prosekit/dist/prosekit-react-inline-popover.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/menu",
+    "path": "packages/prosekit/dist/prosekit-react-menu.js",
     "ignore": [
       "react",
       "react-dom"
@@ -776,6 +791,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/menu",
+    "path": "packages/prosekit/dist/prosekit-solid-menu.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/popover",
     "path": "packages/prosekit/dist/prosekit-solid-popover.js",
     "ignore": [
@@ -839,6 +861,13 @@
     ]
   },
   {
+    "name": "prosekit/vue/menu",
+    "path": "packages/prosekit/dist/prosekit-vue-menu.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/vue/popover",
     "path": "packages/prosekit/dist/prosekit-vue-popover.js",
     "ignore": [
@@ -885,6 +914,10 @@
   {
     "name": "prosekit/web/inline-popover",
     "path": "packages/prosekit/dist/prosekit-web-inline-popover.js"
+  },
+  {
+    "name": "prosekit/web/menu",
+    "path": "packages/prosekit/dist/prosekit-web-menu.js"
   },
   {
     "name": "prosekit/web/popover",

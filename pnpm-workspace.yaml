@@ -7,14 +7,14 @@ allowedDeprecatedVersions:
   glob: "10"
 
 catalog:
+  "@tsdown/css": "^0.21.4"
   "@types/node": "^24.10.13"
   "@vitest/browser-playwright": "^4.1.1"
   "@vitest/coverage-v8": "^4.1.1"
   "@vitest/ui": "^4.1.1"
-  vitest: "^4.1.1"
   tsdown: "^0.21.4"
-  "@tsdown/css": "^0.21.4"
   typescript: "~5.9.3"
+  vitest: "^4.1.1"
 
 ignoreWorkspaceRootCheck: true
 
@@ -33,6 +33,7 @@ minimumReleaseAgeExclude:
   - "astrobook"
   - "@astrobook/*"
   - "@prosemirror-adapter/*"
+  - "@aria-ui/*"
 
 overrides: {}
 

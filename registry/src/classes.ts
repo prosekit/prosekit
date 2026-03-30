@@ -256,6 +256,7 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 )
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
+// TODO: add block to CSS_TOOLTIP_CONTENT
 export const CSS_TOOLTIP_CONTENT = cn(
   'z-50 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
   CSS_POPOVER_ANIMATE,

@@ -19,8 +19,8 @@ export default function SlashMenu(props: Props) {
   return (
     <AutocompletePopover
       regex={regex}
-      onOpenChange={(open) => {
-        props.onOpenChange(open)
+      onOpenChange={(event) => {
+        props.onOpenChange(event.open)
       }}
       className="CSS_AUTOCOMPLETE_MENU"
     >

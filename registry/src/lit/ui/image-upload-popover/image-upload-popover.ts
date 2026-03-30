@@ -1,10 +1,10 @@
-import 'prosekit/lit/popover'
 import '../button/index'
 
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
+import type { OpenChangeEvent } from 'prosekit/lit/popover'
 
 let imageUploadId = 0
 
@@ -37,14 +37,12 @@ class LitImageUploadPopover extends LitElement {
     this.classList.add('contents')
   }
 
-  private handleOpenChange = (event: CustomEvent<boolean>) => {
-    const isOpen = event.detail
-
-    if (!isOpen) {
+  private handleOpenChange = (event: OpenChangeEvent) => {
+    if (!event.open) {
       this.deferResetState()
     }
 
-    this.open = isOpen
+    this.open = event.open
     this.requestUpdate()
   }
 
@@ -114,7 +112,8 @@ class LitImageUploadPopover extends LitElement {
           ></lit-editor-button>
         </prosekit-popover-trigger>
 
-        <prosekit-popover-content class="CSS_IMAGE_UPLOAD_CARD">
+        <prosekit-popover-positioner>
+        <prosekit-popover-popup class="CSS_IMAGE_UPLOAD_CARD">
           ${
             !this.file
               ? html`
@@ -165,7 +164,8 @@ class LitImageUploadPopover extends LitElement {
               `
               : nothing
           }
-        </prosekit-popover-content>
+        </prosekit-popover-popup>
+        </prosekit-popover-positioner>
       </prosekit-popover-root>
     `
   }

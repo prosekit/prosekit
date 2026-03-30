@@ -800,26 +800,14 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: ^0.0.22
-        version: 0.0.22
-      '@aria-ui/listbox':
-        specifier: ^0.0.25
-        version: 0.0.25
-      '@aria-ui/menu':
-        specifier: ^0.0.21
-        version: 0.0.21
-      '@aria-ui/overlay':
-        specifier: ^0.0.25
-        version: 0.0.25
-      '@aria-ui/popover':
-        specifier: ^0.0.28
-        version: 0.0.28
-      '@aria-ui/presence':
-        specifier: ^0.0.20
-        version: 0.0.20
-      '@aria-ui/tooltip':
-        specifier: ^0.0.30
-        version: 0.0.30
+        specifier: ^0.0.102
+        version: 0.0.102
+      '@aria-ui/elements':
+        specifier: ^0.0.102
+        version: 0.0.102
+      '@aria-ui/utils':
+        specifier: ^0.0.102
+        version: 0.0.102
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
@@ -842,6 +830,9 @@ importers:
         specifier: ^1.8.5
         version: 1.8.5
     devDependencies:
+      '@aria-ui/cli':
+        specifier: ^0.0.104
+        version: 0.0.104(typescript@5.9.3)
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -1218,29 +1209,35 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@aria-ui/collection@0.0.6':
-    resolution: {integrity: sha512-mx1lh6rcWqPKl84DJsngI52kFrGZp0fidI24zFPHfAf02shbRyLKgYFF4yupgSinhcQPEK8A6M2ebqfcS5M1Cw==}
+  '@aria-ui/cli@0.0.104':
+    resolution: {integrity: sha512-8DJQS08jxCtLIFje7VYHPu0U6L4YQq+UME0FdHFrlALu/i68dKazR3dX4p2U2qDeMDP7OzUss1IcdkxNy5Tbig==}
+    hasBin: true
+    peerDependencies:
+      typescript: '>= 5.8.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@aria-ui/core@0.0.102':
+    resolution: {integrity: sha512-3ec0br/2iM5sXVyzYAa3bGDGcb3CrOS66/Hq9chPw/yOc2Gcvv14ANG5lsCtLEX27JtftVZW6c7DVDNUVsZ9Qg==}
 
   '@aria-ui/core@0.0.22':
     resolution: {integrity: sha512-N/UC2JJ8fA46WAc5TBNM9NZMcmQ3ghqDt1DNa7XdXHqHhDYkZ7Mn0Yn6KEciiIvlP+yuxLrPO/Q1oB4CNV21kg==}
 
-  '@aria-ui/listbox@0.0.25':
-    resolution: {integrity: sha512-+YSuG+NLhT4ghV7n4G3bkY4e6iOdMXB6jmSTpdg+oxMNPSUHR+ERhpg0dIllMKHiQTR3D+DgNnpVsXinEYDJyw==}
-
-  '@aria-ui/menu@0.0.21':
-    resolution: {integrity: sha512-/AhxBAOtiVbuRYXKnZXgXZ0cEEgidx8j4O0ns3ykypWsOwsRm4xVFf1CV7Ngrq/2MbYUvklzuTf/i06jMLYXOw==}
+  '@aria-ui/elements@0.0.102':
+    resolution: {integrity: sha512-zxFqWFA700LkTfhnWF+132RtK0JwIV8P/6k2LyjEMcQTgcibTAerY6yDoSJJBHkITwfkABW5cF6P8H/OkxGs6Q==}
 
   '@aria-ui/overlay@0.0.25':
     resolution: {integrity: sha512-YpOFpB1KNQaGLgRsnN5BcY64A+akHOqlLhH/ft7YU/l7E/9Sm0yscriiBvEi+vVwqYUOveNuh5vDVVmWeRjLpQ==}
-
-  '@aria-ui/popover@0.0.28':
-    resolution: {integrity: sha512-tYAbRy7LZRWyCxCmC4zzI+nDpggu7jeV72AiNnUyG/mn6/gj9v2OUroK+Bj9jS0nNGm1up+lLyezrdMW15nSIQ==}
 
   '@aria-ui/presence@0.0.20':
     resolution: {integrity: sha512-K/n60HLCGG0XX+sAEJ7aOScevXrfDet7+gxt+QXlELxxjrlpP0sZq/iS6KCdr6n7piaW6zfY7EtKxOriWUv8tw==}
 
   '@aria-ui/tooltip@0.0.30':
     resolution: {integrity: sha512-XYctHrJOSRNW2iQc1IHkozlK2H6edX+uD/p1Oo5yHNMA28mFrxKUOJEiA297jAvlLwASKTaAT+40cOTZ2bTyTQ==}
+
+  '@aria-ui/utils@0.0.102':
+    resolution: {integrity: sha512-SHIgLe1tTCi0n2jBbLi53vMunuHvz3wfdsw83aXp/B+6r5Pnv9j5B3qiHDGqEYyg2iM+8r46rro+kV4JdaBIcg==}
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.2':
     resolution: {integrity: sha512-JbbKaKkYMN/zc//irXYb6QFIMm+A4tpwgs6x4BrNtqU/Jeq2vk4i3LhnHBB1SaMfihGtcH8/Sj++o4jaIBXyCw==}
@@ -3529,6 +3526,9 @@ packages:
   '@stricli/core@1.2.5':
     resolution: {integrity: sha512-+afyztQW7fwWkqmU2WQZbdc3LjnZThWYdtE0l+hykZ1Rvy7YGxZSvsVCS/wZ/2BNv117pQ9TU1GZZRIcPnB4tw==}
 
+  '@stricli/core@1.2.6':
+    resolution: {integrity: sha512-j5fa1wyOLrP9WJqqLFEJeQviqb3cK46K+FXTuISEkG/H5C820YfKDoVQ3CDVdM5WLhEx1ARdpiW6+hU4tYHjCQ==}
+
   '@sveltejs/acorn-typescript@1.0.9':
     resolution: {integrity: sha512-lVJX6qEgs/4DOcRTpo56tmKzVPtoWAaVbL4hfO7t7NVwl9AAXzQR6cihesW1BmNMPl+bK6dreu2sOKBP2Q9CIA==}
     peerDependencies:
@@ -3736,6 +3736,9 @@ packages:
     engines: {node: '>=16'}
     peerDependencies:
       svelte: ^3 || ^4 || ^5 || ^5.0.0-next.0
+
+  '@ts-morph/common@0.28.1':
+    resolution: {integrity: sha512-W74iWf7ILp1ZKNYXY5qbddNaml7e9Sedv5lvU1V8lftlitkc9Pq1A+jlH23ltDgWYeZFFEqGCD1Ies9hqu3O+g==}
 
   '@tsdown/css@0.21.4':
     resolution: {integrity: sha512-2aU44SVyShHmL6VSefFBB0H8OXPqGqd6KwZ4+SP88DyyM+kZ1nBqzs65xf+HCyL/1NnidQtpA1wWkZLKgLv2SA==}
@@ -4214,26 +4217,26 @@ packages:
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
 
-  '@zag-js/dismissable@1.36.0':
-    resolution: {integrity: sha512-4jewheDFj/Iq+XfEEz/P6lZRV017LuS8/M/WvKsZh/nNlE5Mhc1CynoKSmEBPlIqS+6n5broUbfInM8ahc3jLw==}
-
-  '@zag-js/dom-query@1.36.0':
-    resolution: {integrity: sha512-GlodCpZSQ+LKsyZ6DmgXN5dAF5CNat+4EwJ91pX4Fd7YHayXHCRca/ztpcdt+jeIWguW59BF4TiJgAilnhwf0Q==}
+  '@zag-js/dismissable@1.38.2':
+    resolution: {integrity: sha512-4B83ZGD8YKnwiXwL4J49txeXSPdS29bPt6p00v99u6nJPlQRRubzPUQo4OJr6NxUuT9cIn2kDqt5oj8ZCwhmng==}
 
   '@zag-js/dom-query@1.37.0':
     resolution: {integrity: sha512-nL3z5UOvRMDL5iBrNMs6Rm8vm5qC6Vt0FykFAhEL++mC01W0xpO/KKJNcpdooGFYQxwHBbgI/djE+sq9yY3pNw==}
 
-  '@zag-js/interact-outside@1.36.0':
-    resolution: {integrity: sha512-8DUbjaXvdyY/V8fXbqsgC3zSRAF4I7qeARRA2IrVaVLyFrjp1V5R6FfxqOzzHzVjgcWOe6i6g6bTH11rqfqBag==}
+  '@zag-js/dom-query@1.38.2':
+    resolution: {integrity: sha512-E2plmm/bDjMQhi4fmyhw2uhoQv2cgNYaG+fzLrJgepLqovCOTU85lwzaLFiB7ldG2a9DVmjbAnFX4nVVWvaxGA==}
 
-  '@zag-js/types@1.36.0':
-    resolution: {integrity: sha512-7qLMvaIfRwVLzxCi3MZ2rImkNZGJ1avtrhhQ8G9AIk19P765O9IqvfDlCXTqHGUZPUL/+fJOWcgQDkWaFM8RBw==}
+  '@zag-js/interact-outside@1.38.2':
+    resolution: {integrity: sha512-jszzVoozqcO3vn1iiZ726xYXpy/mR+fLnx1tBs4Dvkg/n52Mm3Uv+pFDBfHgswqS/kRJ/U8P0fItFJjOH0yvlA==}
 
   '@zag-js/types@1.37.0':
     resolution: {integrity: sha512-auzzQI7+MtZvU8q5C9yNkg/DQqAT3ar9drE4rQFz1OERpaXtyp/JaeT3/t7IXDrocJBy0CY7vfrJSb+CIfjPzw==}
 
-  '@zag-js/utils@1.36.0':
-    resolution: {integrity: sha512-YVOFUEoz6jAto+/pvWi52gAn27i2Kcdf1oMA0sI+wI0gTyjK8LybrKYMM6C2W72PRina6/z4BuRvypY3R6TzFw==}
+  '@zag-js/types@1.38.2':
+    resolution: {integrity: sha512-fvUf3J4QOFAliuo5wHTO/awO0GKFAn5AHNOXbGH5IuoxIwa0oK5tSXVwdF8JE7ISOkQh4oB2fq3g4QjxmAXDyA==}
+
+  '@zag-js/utils@1.38.2':
+    resolution: {integrity: sha512-8UuWDomJ5JLX/KSDjEA4poX9rzqkGL47RiSCuVod+qZpWD0jpyXP7Lf600GUFtirRAiuN3x1+7KE6Elt/0rxtw==}
 
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -4512,6 +4515,9 @@ packages:
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
+
+  code-block-writer@13.0.3:
+    resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
 
   collapse-white-space@2.1.0:
     resolution: {integrity: sha512-loKTxY1zCOuG4j9f6EPnuyyYkf58RnhhWTvRoZEokgB+WbdXehfjFviyOVYkqzEWz1Q5kRiZdBYS5SwxbQYwzw==}
@@ -5344,9 +5350,6 @@ packages:
   ignore@7.0.5:
     resolution: {integrity: sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==}
     engines: {node: '>= 4'}
-
-  immer@10.2.0:
-    resolution: {integrity: sha512-d/+XTN3zfODyjr89gM3mPq1WNX2B8pYsu7eORitdwyA2sBubnTl3laYlBk4sXY5FUa5qTZGBDPJICVbvqzjlbw==}
 
   immutable@5.1.5:
     resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
@@ -7057,6 +7060,9 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
+  ts-morph@27.0.2:
+    resolution: {integrity: sha512-fhUhgeljcrdZ+9DZND1De1029PrE+cMkIP7ooqkLRTrRLTqcki2AstsyJm0vRNbTbVCNJ0idGlbBrfqc7/nA8w==}
+
   ts-pattern@5.9.0:
     resolution: {integrity: sha512-6s5V71mX8qBUmlgbrfL33xDUwO0fq48rxAu2LBE11WBeGdpCPOsXksQbZJHvHwhrd3QjUusd3mAOM5Gg0mFBLg==}
 
@@ -7965,7 +7971,23 @@ snapshots:
       package-manager-detector: 1.6.0
       tinyexec: 1.0.4
 
-  '@aria-ui/collection@0.0.6': {}
+  '@aria-ui/cli@0.0.104(typescript@5.9.3)':
+    dependencies:
+      '@stricli/core': 1.2.6
+      devalue: 5.6.4
+      just-memoize: 2.2.0
+      obug: 2.1.1
+      prettier: 3.8.1
+      ts-morph: 27.0.2
+    optionalDependencies:
+      typescript: 5.9.3
+
+  '@aria-ui/core@0.0.102':
+    dependencies:
+      '@ocavue/utils': 1.6.0
+      '@zag-js/dom-query': 1.38.2
+      alien-signals: 3.1.2
+      server-dom-shim: 1.1.0
 
   '@aria-ui/core@0.0.22':
     dependencies:
@@ -7977,35 +7999,19 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.1.0
 
-  '@aria-ui/listbox@0.0.25':
+  '@aria-ui/elements@0.0.102':
     dependencies:
-      '@aria-ui/collection': 0.0.6
-      '@aria-ui/core': 0.0.22
-      '@aria-ui/presence': 0.0.20
-      immer: 10.2.0
-
-  '@aria-ui/menu@0.0.21':
-    dependencies:
-      '@aria-ui/collection': 0.0.6
-      '@aria-ui/core': 0.0.22
-      '@aria-ui/overlay': 0.0.25
-      '@aria-ui/popover': 0.0.28
-      '@aria-ui/presence': 0.0.20
-      nanoid: 5.1.6
+      '@aria-ui/core': 0.0.102
+      '@aria-ui/utils': 0.0.102
+      '@floating-ui/dom': 1.7.6
+      '@zag-js/dismissable': 1.38.2
+      '@zag-js/dom-query': 1.38.2
 
   '@aria-ui/overlay@0.0.25':
     dependencies:
       '@aria-ui/core': 0.0.22
       '@floating-ui/dom': 1.7.6
       '@floating-ui/utils': 0.2.11
-      '@zag-js/dom-query': 1.37.0
-
-  '@aria-ui/popover@0.0.28':
-    dependencies:
-      '@aria-ui/core': 0.0.22
-      '@aria-ui/overlay': 0.0.25
-      '@aria-ui/presence': 0.0.20
-      '@zag-js/dismissable': 1.36.0
       '@zag-js/dom-query': 1.37.0
 
   '@aria-ui/presence@0.0.20':
@@ -8019,6 +8025,10 @@ snapshots:
       '@aria-ui/overlay': 0.0.25
       '@aria-ui/presence': 0.0.20
       nanoid: 5.1.6
+
+  '@aria-ui/utils@0.0.102':
+    dependencies:
+      '@aria-ui/core': 0.0.102
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.2': {}
 
@@ -10279,6 +10289,8 @@ snapshots:
 
   '@stricli/core@1.2.5': {}
 
+  '@stricli/core@1.2.6': {}
+
   '@sveltejs/acorn-typescript@1.0.9(acorn@8.16.0)':
     dependencies:
       acorn: 8.16.0
@@ -10449,6 +10461,12 @@ snapshots:
   '@testing-library/svelte-core@1.0.0(svelte@5.55.0)':
     dependencies:
       svelte: 5.55.0
+
+  '@ts-morph/common@0.28.1':
+    dependencies:
+      minimatch: 10.2.4
+      path-browserify: 1.0.1
+      tinyglobby: 0.2.15
 
   '@tsdown/css@0.21.4(jiti@2.6.1)(postcss@8.5.8)(sass@1.98.0)(tsdown@0.21.4)(tsx@4.21.0)(yaml@2.8.2)':
     dependencies:
@@ -11135,34 +11153,34 @@ snapshots:
       js-beautify: 1.15.4
       vue-component-type-helpers: 2.2.12
 
-  '@zag-js/dismissable@1.36.0':
+  '@zag-js/dismissable@1.38.2':
     dependencies:
-      '@zag-js/dom-query': 1.36.0
-      '@zag-js/interact-outside': 1.36.0
-      '@zag-js/utils': 1.36.0
-
-  '@zag-js/dom-query@1.36.0':
-    dependencies:
-      '@zag-js/types': 1.36.0
+      '@zag-js/dom-query': 1.38.2
+      '@zag-js/interact-outside': 1.38.2
+      '@zag-js/utils': 1.38.2
 
   '@zag-js/dom-query@1.37.0':
     dependencies:
       '@zag-js/types': 1.37.0
 
-  '@zag-js/interact-outside@1.36.0':
+  '@zag-js/dom-query@1.38.2':
     dependencies:
-      '@zag-js/dom-query': 1.36.0
-      '@zag-js/utils': 1.36.0
+      '@zag-js/types': 1.38.2
 
-  '@zag-js/types@1.36.0':
+  '@zag-js/interact-outside@1.38.2':
     dependencies:
-      csstype: 3.2.3
+      '@zag-js/dom-query': 1.38.2
+      '@zag-js/utils': 1.38.2
 
   '@zag-js/types@1.37.0':
     dependencies:
       csstype: 3.2.3
 
-  '@zag-js/utils@1.36.0': {}
+  '@zag-js/types@1.38.2':
+    dependencies:
+      csstype: 3.2.3
+
+  '@zag-js/utils@1.38.2': {}
 
   abbrev@2.0.0: {}
 
@@ -11493,6 +11511,8 @@ snapshots:
       wrap-ansi: 7.0.0
 
   clsx@2.1.1: {}
+
+  code-block-writer@13.0.3: {}
 
   collapse-white-space@2.1.0: {}
 
@@ -12568,8 +12588,6 @@ snapshots:
   ignore@5.3.2: {}
 
   ignore@7.0.5: {}
-
-  immer@10.2.0: {}
 
   immutable@5.1.5: {}
 
@@ -14776,6 +14794,11 @@ snapshots:
   ts-api-utils@2.4.0(typescript@5.9.3):
     dependencies:
       typescript: 5.9.3
+
+  ts-morph@27.0.2:
+    dependencies:
+      '@ts-morph/common': 0.28.1
+      code-block-writer: 13.0.3
 
   ts-pattern@5.9.0: {}
 

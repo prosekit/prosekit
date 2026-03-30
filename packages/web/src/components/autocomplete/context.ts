@@ -1,16 +1,15 @@
-import { createContext, type Context } from '@aria-ui/core'
+import { createContext, createSignal, type Context, type Signal } from '@aria-ui/core'
 
-export const queryContext: Context<string> = createContext(
-  'prosekit/autocomplete-popover/query',
-  '',
-)
+/**
+ * @internal
+ */
+export class AutocompleteStore {
+  readonly query: Signal<string> = createSignal('')
+  readonly onSubmit: Signal<VoidFunction | null> = createSignal<VoidFunction | null>(null)
+  readonly open: Signal<boolean> = createSignal(false)
+}
 
-export const onSubmitContext: Context<VoidFunction | null> = createContext(
-  'prosekit/autocomplete-popover/onSubmit',
-  null,
-)
-
-export const openContext: Context<boolean> = createContext(
-  'prosekit/autocomplete-popover/open',
-  false,
-)
+/**
+ * @internal
+ */
+export const autocompleteStoreContext: Context<AutocompleteStore> = createContext<AutocompleteStore>('prosekit-autocomplete-store')

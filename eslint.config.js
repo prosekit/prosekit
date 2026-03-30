@@ -25,6 +25,12 @@ export default defineESLintConfig(
   },
   {
     rules: {
+      'perfectionist/sort-imports': 'off',
+    },
+    files: ['**/*.gen.ts'],
+  },
+  {
+    rules: {
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-function-scoping.md
       'unicorn/consistent-function-scoping': 'error',
     },

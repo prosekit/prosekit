@@ -33,6 +33,7 @@ minimumReleaseAgeExclude:
   - "astrobook"
   - "@astrobook/*"
   - "@prosemirror-adapter/*"
+  - "@aria-ui/*"
 
 overrides: {}
 

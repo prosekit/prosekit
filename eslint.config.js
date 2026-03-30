@@ -28,6 +28,7 @@ export default defineESLintConfig(
   {
     rules: {
       'perfectionist/sort-imports': 'off',
+      '@typescript-eslint/no-import-type-side-effects': 'off',
     },
     files: ['**/*.gen.ts'],
   },

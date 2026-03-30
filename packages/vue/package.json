@@ -143,8 +143,7 @@
           "./dist/prosekit-vue-tooltip.d.ts"
         ]
       }
-    },
-    "access": "public"
+    }
   },
   "dev": {
     "entry": {

@@ -79,8 +79,7 @@
           "./dist/prosekit-core-test.d.ts"
         ]
       }
-    },
-    "access": "public"
+    }
   },
   "dev": {
     "entry": {

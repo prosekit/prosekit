@@ -80,8 +80,7 @@
           "./dist/prosekit-basic.d.ts"
         ]
       }
-    },
-    "access": "public"
+    }
   },
   "dev": {
     "entry": {

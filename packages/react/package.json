@@ -147,8 +147,7 @@
           "./dist/prosekit-react-tooltip.d.ts"
         ]
       }
-    },
-    "access": "public"
+    }
   },
   "dev": {
     "entry": {

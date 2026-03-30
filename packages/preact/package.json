@@ -140,8 +140,7 @@
           "./dist/prosekit-preact-tooltip.d.ts"
         ]
       }
-    },
-    "access": "public"
+    }
   },
   "dev": {
     "entry": {

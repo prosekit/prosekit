@@ -43,9 +43,9 @@ jobs:
 
       - name: Publish to NPM
         run: |
-          if [ -f .changeset/pre.json ]; 
-          then pnpm ci:publish:beta; 
-          else pnpm ci:publish:latest; 
+          if [ -f .changeset/pre.json ];
+          then pnpm ci:publish:beta;
+          else pnpm ci:publish:latest;
           fi
 
       - name: Get package version

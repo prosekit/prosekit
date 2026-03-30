@@ -176,8 +176,7 @@
           "./dist/prosekit-svelte-tooltip.d.ts"
         ]
       }
-    },
-    "access": "public"
+    }
   },
   "dev": {
     "entry": {

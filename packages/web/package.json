@@ -59,7 +59,7 @@
     "prosemirror-tables": "^1.8.5"
   },
   "devDependencies": {
-    "@aria-ui/cli": "https://pkg.pr.new/@aria-ui/cli@230",
+    "@aria-ui/cli": "^0.0.104",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",

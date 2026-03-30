@@ -108,7 +108,7 @@
   frameworks: [react, preact, vue, svelte, solid]
   description: Example for strikethrough mark.
 - name: table
-  frameworks: [react, preact, vue, svelte, solid]
+  frameworks: [react, preact, vue, lit, svelte, solid]
   description: Table node with row and column operations.
 - name: temml
   frameworks: [react, preact, solid]

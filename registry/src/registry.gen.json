@@ -12160,7 +12160,6 @@
         "https://prosekit.dev/r/lit-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "lit",
         "prosekit"
       ],
       "files": [
@@ -12281,6 +12280,54 @@
       }
     },
     {
+      "name": "lit-example-table",
+      "title": "lit-example-table",
+      "type": "registry:block",
+      "description": "Table node with row and column operations.",
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/lit-ui-table-handle.json"
+      ],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/examples/table/editor.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/editor.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/table/extension.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/extension.ts"
+        },
+        {
+          "path": "registry/src/lit/examples/table/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/examples/table/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "table",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/examples/table/editor.ts",
+          "registry/src/lit/examples/table/extension.ts",
+          "registry/src/lit/examples/table/index.ts",
+          "registry/src/lit/sample/sample-doc-table.ts",
+          "registry/src/lit/ui/table-handle/index.ts",
+          "registry/src/lit/ui/table-handle/table-handle.ts"
+        ],
+        "internalDependencies": [
+          "lit-sample-sample-doc-table",
+          "lit-ui-table-handle"
+        ]
+      }
+    },
+    {
       "name": "lit-example-toolbar",
       "title": "lit-example-toolbar",
       "type": "registry:block",
@@ -12333,6 +12380,33 @@
       }
     },
     {
+      "name": "lit-sample-sample-doc-table",
+      "title": "lit-sample-sample-doc-table",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/sample/sample-doc-table.ts",
+          "type": "registry:component",
+          "target": "components/editor/sample/sample-doc-table.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/sample/sample-doc-table.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "lit-sample-sample-uploader",
       "title": "lit-sample-sample-uploader",
       "type": "registry:component",
@@ -12357,6 +12431,44 @@
           "registry/src/lit/sample/sample-uploader.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-block-handle",
+      "title": "lit-ui-block-handle",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/block-handle/block-handle.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/block-handle/block-handle.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/block-handle/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/block-handle/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/block-handle/block-handle.ts",
+          "registry/src/lit/ui/block-handle/index.ts"
+        ],
+        "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {
@@ -12388,6 +12500,39 @@
         "accumulatedFiles": [
           "registry/src/lit/ui/button/button.ts",
           "registry/src/lit/ui/button/index.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-drop-indicator",
+      "title": "lit-ui-drop-indicator",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/drop-indicator/drop-indicator.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/drop-indicator/drop-indicator.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/drop-indicator/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/drop-indicator/index.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/drop-indicator/drop-indicator.ts",
+          "registry/src/lit/ui/drop-indicator/index.ts"
         ],
         "internalDependencies": []
       }
@@ -12474,6 +12619,44 @@
           "registry/src/lit/ui/slash-menu/slash-menu.ts"
         ],
         "internalDependencies": []
+      }
+    },
+    {
+      "name": "lit-ui-table-handle",
+      "title": "lit-ui-table-handle",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "@egoist/tailwindcss-icons",
+        "@iconify-json/lucide",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/table-handle/index.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/table-handle/index.ts"
+        },
+        {
+          "path": "registry/src/lit/ui/table-handle/table-handle.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/table-handle/table-handle.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": true,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/table-handle/index.ts",
+          "registry/src/lit/ui/table-handle/table-handle.ts"
+        ],
+        "internalDependencies": []
+      },
+      "css": {
+        "@plugin @egoist/tailwindcss-icons": {}
       }
     },
     {

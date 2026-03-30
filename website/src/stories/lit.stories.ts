@@ -6,4 +6,5 @@ export default { component }
 export const BlockHandle = { args: { story: 'block-handle' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
+export const Table = { args: { story: 'table' } }
 export const Toolbar = { args: { story: 'toolbar' } }

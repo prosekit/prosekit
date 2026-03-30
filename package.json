@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@10.33.0",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -46,16 +46,16 @@
     "@size-limit/preset-small-lib": "^12.0.1",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.53.0",
+    "dprint": "^0.53.1",
     "eslint": "^10.1.0",
-    "knip": "^6.0.4",
+    "knip": "^6.1.0",
     "monorepo-typescript-references": "^1.1.1",
-    "oxfmt": "^0.41.0",
+    "oxfmt": "^0.42.0",
     "playwright": "^1.58.2",
     "size-limit": "^12.0.1",
-    "turbo": "^2.8.20",
+    "turbo": "^2.8.21",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.76.0"
+    "wrangler": "^4.78.0"
   }
 }

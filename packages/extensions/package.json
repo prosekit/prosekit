@@ -474,7 +474,8 @@
           "./dist/prosekit-extensions-yjs.d.ts"
         ]
       }
-    }
+    },
+    "access": "public"
   },
   "dev": {
     "entry": {

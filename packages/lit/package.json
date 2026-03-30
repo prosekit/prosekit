@@ -127,7 +127,8 @@
           "./dist/prosekit-lit-tooltip.d.ts"
         ]
       }
-    }
+    },
+    "access": "public"
   },
   "dev": {
     "entry": {

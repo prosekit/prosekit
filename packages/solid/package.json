@@ -140,7 +140,8 @@
           "./dist/prosekit-solid-tooltip.d.ts"
         ]
       }
-    }
+    },
+    "access": "public"
   },
   "dev": {
     "entry": {

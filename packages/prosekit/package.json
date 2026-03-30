@@ -1115,7 +1115,8 @@
           "./dist/prosekit-web-tooltip.d.ts"
         ]
       }
-    }
+    },
+    "access": "public"
   },
   "dev": {
     "entry": {

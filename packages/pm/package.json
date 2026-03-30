@@ -138,7 +138,8 @@
           "./dist/prosekit-pm-view.d.ts"
         ]
       }
-    }
+    },
+    "access": "public"
   },
   "dev": {
     "entry": {

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.20.0-beta.0
+
+### Minor Changes
+
+- [`ed8c69c`](https://github.com/ocavue/prosekit/commit/ed8c69c685e328e57ce74f33820a86ea70517adf) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Prepare for the component refactor.
+
 ## 0.19.0
 
 ### Minor Changes

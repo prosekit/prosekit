@@ -3,7 +3,7 @@
  */
 
 import TableHandleDropIndicatorComponent from "./table-handle-drop-indicator.gen.svelte";
-import type { TableHandleDropIndicatorProps as TableHandleDropIndicatorElementProps } from "@prosekit/web/table-handle";
+import { type TableHandleDropIndicatorProps as TableHandleDropIndicatorElementProps } from "@prosekit/web/table-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

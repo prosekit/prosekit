@@ -3,7 +3,7 @@
  */
 
 import ResizableHandleComponent from "./resizable-handle.gen.svelte";
-import type { ResizableHandleProps as ResizableHandleElementProps } from "@prosekit/web/resizable";
+import { type ResizableHandleProps as ResizableHandleElementProps } from "@prosekit/web/resizable";
 import type { Component, Snippet } from "svelte";
 
 /**

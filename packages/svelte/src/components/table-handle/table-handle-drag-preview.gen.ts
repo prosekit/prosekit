@@ -3,7 +3,7 @@
  */
 
 import TableHandleDragPreviewComponent from "./table-handle-drag-preview.gen.svelte";
-import type { TableHandleDragPreviewProps as TableHandleDragPreviewElementProps } from "@prosekit/web/table-handle";
+import { type TableHandleDragPreviewProps as TableHandleDragPreviewElementProps } from "@prosekit/web/table-handle";
 import type { Component, Snippet } from "svelte";
 
 /**

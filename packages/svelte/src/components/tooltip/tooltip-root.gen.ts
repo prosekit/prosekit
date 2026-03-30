@@ -3,9 +3,9 @@
  */
 
 import TooltipRootComponent from "./tooltip-root.gen.svelte";
-import type {
-  TooltipRootEvents,
-  TooltipRootProps as TooltipRootElementProps,
+import {
+  type TooltipRootEvents,
+  type TooltipRootProps as TooltipRootElementProps,
 } from "@prosekit/web/tooltip";
 import type { Component, Snippet } from "svelte";
 

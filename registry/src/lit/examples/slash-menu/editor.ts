@@ -31,7 +31,10 @@ export class LitEditor extends LitElement {
     const extension = defineExtension()
     this.editor = createEditor({ extension })
     this.ref = createRef<HTMLDivElement>()
-    this.editorProvider = new ContextProvider(this, { context: editorContext, initialValue: this.editor })
+    this.editorProvider = new ContextProvider(this, {
+      context: editorContext,
+      initialValue: this.editor,
+    })
   }
 
   override createRenderRoot() {

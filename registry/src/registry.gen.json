@@ -12189,9 +12189,11 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-editor-context.json",
         "https://prosekit.dev/r/lit-ui-slash-menu.json"
       ],
       "dependencies": [
+        "@lit/context",
         "prosekit"
       ],
       "files": [
@@ -12220,12 +12222,14 @@
           "registry/src/lit/examples/slash-menu/editor.ts",
           "registry/src/lit/examples/slash-menu/extension.ts",
           "registry/src/lit/examples/slash-menu/index.ts",
+          "registry/src/lit/ui/editor-context.ts",
           "registry/src/lit/ui/slash-menu/index.ts",
           "registry/src/lit/ui/slash-menu/slash-menu-empty.ts",
           "registry/src/lit/ui/slash-menu/slash-menu-item.ts",
           "registry/src/lit/ui/slash-menu/slash-menu.ts"
         ],
         "internalDependencies": [
+          "lit-ui-editor-context",
           "lit-ui-slash-menu"
         ]
       }
@@ -12237,9 +12241,11 @@
       "description": "Table node with row and column operations.",
       "registryDependencies": [
         "https://prosekit.dev/r/lit-sample-sample-doc-table.json",
+        "https://prosekit.dev/r/lit-ui-editor-context.json",
         "https://prosekit.dev/r/lit-ui-table-handle.json"
       ],
       "dependencies": [
+        "@lit/context",
         "prosekit"
       ],
       "files": [
@@ -12269,11 +12275,13 @@
           "registry/src/lit/examples/table/extension.ts",
           "registry/src/lit/examples/table/index.ts",
           "registry/src/lit/sample/sample-doc-table.ts",
+          "registry/src/lit/ui/editor-context.ts",
           "registry/src/lit/ui/table-handle/index.ts",
           "registry/src/lit/ui/table-handle/table-handle.ts"
         ],
         "internalDependencies": [
           "lit-sample-sample-doc-table",
+          "lit-ui-editor-context",
           "lit-ui-table-handle"
         ]
       }
@@ -12285,9 +12293,11 @@
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
         "https://prosekit.dev/r/lit-sample-sample-uploader.json",
+        "https://prosekit.dev/r/lit-ui-editor-context.json",
         "https://prosekit.dev/r/lit-ui-toolbar.json"
       ],
       "dependencies": [
+        "@lit/context",
         "prosekit"
       ],
       "files": [
@@ -12319,6 +12329,7 @@
           "registry/src/lit/sample/sample-uploader.ts",
           "registry/src/lit/ui/button/button.ts",
           "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/editor-context.ts",
           "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
           "registry/src/lit/ui/image-upload-popover/index.ts",
           "registry/src/lit/ui/toolbar/index.ts",
@@ -12326,6 +12337,7 @@
         ],
         "internalDependencies": [
           "lit-sample-sample-uploader",
+          "lit-ui-editor-context",
           "lit-ui-toolbar"
         ]
       }
@@ -12418,6 +12430,34 @@
       }
     },
     {
+      "name": "lit-ui-editor-context",
+      "title": "lit-ui-editor-context",
+      "type": "registry:component",
+      "description": "",
+      "registryDependencies": [],
+      "dependencies": [
+        "@lit/context",
+        "prosekit"
+      ],
+      "files": [
+        {
+          "path": "registry/src/lit/ui/editor-context.ts",
+          "type": "registry:component",
+          "target": "components/editor/ui/editor-context.ts"
+        }
+      ],
+      "meta": {
+        "hasIcons": false,
+        "hidden": false,
+        "story": "",
+        "framework": "lit",
+        "accumulatedFiles": [
+          "registry/src/lit/ui/editor-context.ts"
+        ],
+        "internalDependencies": []
+      }
+    },
+    {
       "name": "lit-ui-image-upload-popover",
       "title": "lit-ui-image-upload-popover",
       "type": "registry:component",
@@ -12461,8 +12501,11 @@
       "title": "lit-ui-slash-menu",
       "type": "registry:component",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-editor-context.json"
+      ],
       "dependencies": [
+        "@lit/context",
         "prosekit"
       ],
       "files": [
@@ -12493,12 +12536,15 @@
         "story": "",
         "framework": "lit",
         "accumulatedFiles": [
+          "registry/src/lit/ui/editor-context.ts",
           "registry/src/lit/ui/slash-menu/index.ts",
           "registry/src/lit/ui/slash-menu/slash-menu-empty.ts",
           "registry/src/lit/ui/slash-menu/slash-menu-item.ts",
           "registry/src/lit/ui/slash-menu/slash-menu.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "lit-ui-editor-context"
+        ]
       }
     },
     {
@@ -12506,10 +12552,13 @@
       "title": "lit-ui-table-handle",
       "type": "registry:component",
       "description": "",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://prosekit.dev/r/lit-ui-editor-context.json"
+      ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
+        "@lit/context",
         "prosekit"
       ],
       "files": [
@@ -12530,10 +12579,13 @@
         "story": "",
         "framework": "lit",
         "accumulatedFiles": [
+          "registry/src/lit/ui/editor-context.ts",
           "registry/src/lit/ui/table-handle/index.ts",
           "registry/src/lit/ui/table-handle/table-handle.ts"
         ],
-        "internalDependencies": []
+        "internalDependencies": [
+          "lit-ui-editor-context"
+        ]
       },
       "css": {
         "@plugin @egoist/tailwindcss-icons": {}
@@ -12546,11 +12598,13 @@
       "description": "",
       "registryDependencies": [
         "https://prosekit.dev/r/lit-ui-button.json",
+        "https://prosekit.dev/r/lit-ui-editor-context.json",
         "https://prosekit.dev/r/lit-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
+        "@lit/context",
         "prosekit"
       ],
       "files": [
@@ -12573,6 +12627,7 @@
         "accumulatedFiles": [
           "registry/src/lit/ui/button/button.ts",
           "registry/src/lit/ui/button/index.ts",
+          "registry/src/lit/ui/editor-context.ts",
           "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
           "registry/src/lit/ui/image-upload-popover/index.ts",
           "registry/src/lit/ui/toolbar/index.ts",
@@ -12580,6 +12635,7 @@
         ],
         "internalDependencies": [
           "lit-ui-button",
+          "lit-ui-editor-context",
           "lit-ui-image-upload-popover"
         ]
       },

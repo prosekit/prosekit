@@ -9,9 +9,8 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
-import { editorContext } from '../../ui/editor-context'
-
 import { sampleUploader } from '../../sample/sample-uploader'
+import { editorContext } from '../../ui/editor-context'
 
 import { defineExtension } from './extension'
 
@@ -33,7 +32,10 @@ export class LitEditor extends LitElement {
     const extension = defineExtension()
     this.editor = createEditor({ extension })
     this.ref = createRef<HTMLDivElement>()
-    this.editorProvider = new ContextProvider(this, { context: editorContext, initialValue: this.editor })
+    this.editorProvider = new ContextProvider(this, {
+      context: editorContext,
+      initialValue: this.editor,
+    })
   }
 
   override createRenderRoot() {

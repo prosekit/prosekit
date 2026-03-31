@@ -23,15 +23,13 @@ export class LitEditor extends LitElement {
 
   private editor: Editor
   private ref: Ref<HTMLDivElement>
-  private editorProvider: ContextProvider<typeof editorContext>
-
   constructor() {
     super()
 
     const extension = defineExtension()
     this.editor = createEditor({ extension })
     this.ref = createRef<HTMLDivElement>()
-    this.editorProvider = new ContextProvider(this, {
+    new ContextProvider(this, {
       context: editorContext,
       initialValue: this.editor,
     })

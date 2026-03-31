@@ -65,6 +65,7 @@ export class LitTableHandle extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback()
+    this.classList.add('contents')
     this.attachEditorListener()
   }
 
@@ -102,10 +103,10 @@ export class LitTableHandle extends LitElement {
     const placement = this.dir === 'rtl' ? 'right' : 'left'
 
     return html`<prosekit-table-handle-root .editor=${editor} class="contents">
-      <prosekit-table-handle-drag-preview></prosekit-table-handle-drag-preview>
-      <prosekit-table-handle-drop-indicator></prosekit-table-handle-drop-indicator>
+      <prosekit-table-handle-drag-preview .editor=${editor}></prosekit-table-handle-drag-preview>
+      <prosekit-table-handle-drop-indicator .editor=${editor}></prosekit-table-handle-drop-indicator>
       <prosekit-table-handle-column-root .editor=${editor} class="CSS_TABLE_COLUMN_HANDLE">
-        <prosekit-table-handle-column-trigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
+        <prosekit-table-handle-column-trigger .editor=${editor} class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
         </prosekit-table-handle-column-trigger>
         <prosekit-table-handle-popover-content class="CSS_TABLE_HANDLE_MENU">
@@ -168,7 +169,7 @@ export class LitTableHandle extends LitElement {
         placement=${placement}
         class="CSS_TABLE_ROW_HANDLE"
       >
-        <prosekit-table-handle-row-trigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
+        <prosekit-table-handle-row-trigger .editor=${editor} class="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </prosekit-table-handle-row-trigger>
         <prosekit-table-handle-popover-content class="CSS_TABLE_HANDLE_MENU">

@@ -3,10 +3,13 @@ import 'prosekit/basic/typography.css'
 
 import '../../ui/toolbar/index'
 
+import { ContextProvider } from '@lit/context'
 import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
+
+import { editorContext } from '../../ui/editor-context'
 
 import { sampleUploader } from '../../sample/sample-uploader'
 
@@ -22,6 +25,7 @@ export class LitEditor extends LitElement {
 
   private editor: Editor
   private ref: Ref<HTMLDivElement>
+  private editorProvider: ContextProvider<typeof editorContext>
 
   constructor() {
     super()
@@ -29,6 +33,7 @@ export class LitEditor extends LitElement {
     const extension = defineExtension()
     this.editor = createEditor({ extension })
     this.ref = createRef<HTMLDivElement>()
+    this.editorProvider = new ContextProvider(this, { context: editorContext, initialValue: this.editor })
   }
 
   override createRenderRoot() {
@@ -48,7 +53,6 @@ export class LitEditor extends LitElement {
   override render() {
     return html`<div class="CSS_EDITOR_VIEWPORT">
       <lit-editor-toolbar
-        .editor=${this.editor}
         .uploader=${sampleUploader}
       ></lit-editor-toolbar>
       <div class="CSS_EDITOR_SCROLLING">

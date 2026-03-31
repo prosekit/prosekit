@@ -1,5 +1,6 @@
 import 'prosekit/lit/table-handle'
 
+import { ContextConsumer } from '@lit/context'
 import {
   html,
   LitElement,
@@ -10,6 +11,8 @@ import {
 import type { Editor } from 'prosekit/core'
 import { defineUpdateHandler } from 'prosekit/core'
 import type { TableExtension } from 'prosekit/extensions/table'
+
+import { editorContext } from '../editor-context'
 
 function getTableHandleState(editor: Editor<TableExtension>) {
   return {
@@ -50,12 +53,15 @@ function getTableHandleState(editor: Editor<TableExtension>) {
 
 export class LitTableHandle extends LitElement {
   static override properties = {
-    editor: { attribute: false } satisfies PropertyDeclaration<Editor>,
     dir: { type: String } satisfies PropertyDeclaration<'ltr' | 'rtl'>,
   }
 
-  editor?: Editor<TableExtension>
-  dir?: 'ltr' | 'rtl'
+  override dir: string = ''
+
+  private editorConsumer = new ContextConsumer(this, {
+    context: editorContext,
+    subscribe: true,
+  })
 
   private removeUpdateExtension?: VoidFunction
 
@@ -75,18 +81,16 @@ export class LitTableHandle extends LitElement {
 
   override updated(changedProperties: PropertyValues) {
     super.updated(changedProperties)
-
-    if (changedProperties.has('editor')) {
-      this.attachEditorListener()
-    }
+    this.attachEditorListener()
   }
 
   private attachEditorListener() {
     this.detachEditorListener()
 
-    if (!this.editor) return
+    const editor = this.editorConsumer.value
+    if (!editor) return
 
-    this.removeUpdateExtension = this.editor.use(defineUpdateHandler(() => this.requestUpdate()))
+    this.removeUpdateExtension = editor.use(defineUpdateHandler(() => this.requestUpdate()))
   }
 
   private detachEditorListener() {
@@ -95,7 +99,7 @@ export class LitTableHandle extends LitElement {
   }
 
   override render() {
-    const editor = this.editor
+    const editor = this.editorConsumer.value as Editor<TableExtension> | undefined
     if (!editor) {
       return nothing
     }

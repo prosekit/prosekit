@@ -291,6 +291,7 @@
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.9.2",
+    "@lit/context": "^1.1.6",
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^1.6.0",
     "@preact/preset-vite": "^2.10.5",

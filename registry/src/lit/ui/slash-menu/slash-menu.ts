@@ -1,26 +1,28 @@
 import 'prosekit/lit/autocomplete'
 
-import { html, LitElement, type PropertyDeclaration } from 'lit'
+import { ContextConsumer } from '@lit/context'
+import { html, LitElement } from 'lit'
 import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { canUseRegexLookbehind } from 'prosekit/core'
+
+import { editorContext } from '../editor-context'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 
 class SlashMenuElement extends LitElement {
-  static override properties = {
-    editor: { attribute: false } satisfies PropertyDeclaration<Editor>,
-  }
-
-  editor?: Editor<BasicExtension>
+  private editorConsumer = new ContextConsumer(this, {
+    context: editorContext,
+    subscribe: true,
+  })
 
   override createRenderRoot() {
     return this
   }
 
   override render() {
-    const editor = this.editor
+    const editor = this.editorConsumer.value as Editor<BasicExtension> | undefined
     if (!editor) {
       return html``
     }

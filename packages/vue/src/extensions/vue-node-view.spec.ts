@@ -93,7 +93,7 @@ describe('VueNodeView', () => {
   const editor = page.getByTestId('editor')
   const imageRefresh = page.getByTestId('image-refresh-view')
 
-  it.fails('can render a single self-update image node', async () => {
+  it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [imageRefreshJSON, paragraphJSON],
@@ -122,7 +122,7 @@ describe('VueNodeView', () => {
     expect(state.imageRefresh.unmounted).toBe(1)
   })
 
-  it.fails('can render multiple self-update image nodes', async () => {
+  it('can render multiple self-update image nodes', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],

@@ -4,19 +4,13 @@ import { onDestroy, onMount } from 'svelte'
 
 import type { SvelteNodeViewProps } from '../svelte-node-view.ts'
 import { state } from './test-state.ts'
+import { fromStore } from 'svelte/store'
 
-const {
-  node,
-  setAttrs,
-  contentRef: _contentRef,
-  view: _view,
-  getPos: _getPos,
-  selected: _selected,
-  decorations: _decorations,
-  innerDecorations: _innerDecorations,
-}: SvelteNodeViewProps = $props()
+const props: SvelteNodeViewProps = $props()
 
-const url = $derived(($node.attrs as { url: string }).url)
+const node = $derived(fromStore(props.node))
+
+const url = $derived((node.current.attrs as { url: string }).url)
 
 let intervalId: ReturnType<typeof setInterval>
 
@@ -24,7 +18,7 @@ onMount(() => {
   state.imageRefresh.mounted++
   intervalId = setInterval(() => {
     state.imageRefresh.setAttrs++
-    setAttrs({ url: String(getId()) })
+    props.setAttrs({ url: String(getId()) })
   }, 50)
 })
 

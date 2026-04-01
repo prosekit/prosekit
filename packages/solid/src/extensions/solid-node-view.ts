@@ -40,14 +40,30 @@ class ProseKitSolidNodeView extends AbstractSolidNodeView<SolidNodeViewComponent
     return createComponent(Portal, {
       mount: this.dom,
       children: createComponent(UserComponent, {
-        get contentRef() { return getProps().contentRef },
-        get view() { return getProps().view },
-        get getPos() { return getProps().getPos },
-        get setAttrs() { return getProps().setAttrs },
-        get node() { return getProps().node },
-        get selected() { return getProps().selected },
-        get decorations() { return getProps().decorations },
-        get innerDecorations() { return getProps().innerDecorations },
+        get contentRef() {
+          return getProps().contentRef
+        },
+        get view() {
+          return getProps().view
+        },
+        get getPos() {
+          return getProps().getPos
+        },
+        get setAttrs() {
+          return getProps().setAttrs
+        },
+        get node() {
+          return getProps().node
+        },
+        get selected() {
+          return getProps().selected
+        },
+        get decorations() {
+          return getProps().decorations
+        },
+        get innerDecorations() {
+          return getProps().innerDecorations
+        },
       }),
       ref: hidePortalDiv,
     })

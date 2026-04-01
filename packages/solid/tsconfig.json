@@ -18,6 +18,9 @@
       "path": "../pm/tsconfig.json",
     },
     {
+      "path": "../testing/tsconfig.json",
+    },
+    {
       "path": "../web/tsconfig.json",
     },
     {

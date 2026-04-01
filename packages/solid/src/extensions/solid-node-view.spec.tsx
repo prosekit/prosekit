@@ -82,7 +82,7 @@ describe('SolidNodeView', () => {
   it.fails('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [imageRefreshJSON],
+      content: [imageRefreshJSON, paragraphJSON],
     }
     const screen = render(() => <TestEditor initialContent={initialContent} />)
     await expect.element(editor).toBeVisible()

@@ -25,7 +25,7 @@ describe('SvelteNodeView', () => {
   it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [imageRefreshJSON],
+      content: [imageRefreshJSON, paragraphJSON],
     }
     const screen = await render(TestEditor, { initialContent })
     await expect.element(editor).toBeVisible()

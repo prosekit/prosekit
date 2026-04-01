@@ -91,7 +91,7 @@ describe('PreactNodeView', () => {
   it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [imageRefreshJSON],
+      content: [imageRefreshJSON, paragraphJSON],
     }
     const screen = render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()

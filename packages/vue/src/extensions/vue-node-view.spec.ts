@@ -96,7 +96,7 @@ describe('VueNodeView', () => {
   it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [imageRefreshJSON],
+      content: [imageRefreshJSON, paragraphJSON],
     }
     const screen = await render(TestEditor, { props: { initialContent } })
     await expect.element(editor).toBeVisible()

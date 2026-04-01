@@ -13,19 +13,6 @@ import {
 
 import { ProseKit } from '../components/prosekit.ts'
 
-// Just for debugging. Remove this once the issue is resolved.
-// TODO: remove me.
-const DEBUG_FLAGS = {
-  // @ts-expect-error: no type
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  SINGLE_FIRST_NODE_VIEW: import.meta.env.VITE_DEBUG_SINGLE_FIRST_NODE_VIEW === 'true',
-  // @ts-expect-error: no type
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  MULTIPLE_FIRST_NODE_VIEW: import.meta.env.VITE_DEBUG_MULTIPLE_FIRST_NODE_VIEW === 'true',
-}
-
-console.debug('DEBUG_FLAGS', JSON.stringify(DEBUG_FLAGS))
-
 import {
   defineReactNodeView,
   type ReactNodeViewComponent,
@@ -129,7 +116,7 @@ describe('ReactNodeView', () => {
   it('can render an image that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: DEBUG_FLAGS.MULTIPLE_FIRST_NODE_VIEW ? [imageRefreshJSON, paragraphJSON] : [paragraphJSON, imageRefreshJSON],
+      content:   [paragraphJSON, imageRefreshJSON],
     }
     const screen = await render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()
@@ -158,9 +145,7 @@ describe('ReactNodeView', () => {
   it('can render multiple images that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: DEBUG_FLAGS.MULTIPLE_FIRST_NODE_VIEW
-        ? [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON]
-        : [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+      content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
     const screen = await render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()

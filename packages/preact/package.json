@@ -60,12 +60,16 @@
     }
   },
   "devDependencies": {
+    "@ocavue/utils": "^1.6.0",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "preact": "^10.29.0",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vitest-browser-preact": "^1.0.0"
   },
   "publishConfig": {
     "exports": {

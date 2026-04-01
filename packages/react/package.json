@@ -64,7 +64,6 @@
     }
   },
   "devDependencies": {
-    "@ocavue/utils": "^1.6.0",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",

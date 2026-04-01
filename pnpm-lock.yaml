@@ -465,9 +465,6 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(preact@10.29.0)
     devDependencies:
-      '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -617,9 +614,6 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -675,9 +669,6 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(solid-js@1.9.11)
     devDependencies:
-      '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -727,9 +718,6 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(svelte@5.55.0)
     devDependencies:
-      '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -839,9 +827,6 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(vue@3.5.30(typescript@5.9.3))
     devDependencies:
-      '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts

@@ -60,6 +60,7 @@
     }
   },
   "devDependencies": {
+    "@ocavue/utils": "^1.6.0",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
@@ -68,6 +69,7 @@
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
+    "vitest-browser-vue": "^2.1.0",
     "vue": "^3.5.30"
   },
   "publishConfig": {

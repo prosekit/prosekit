@@ -1,0 +1,196 @@
+import { getId } from '@ocavue/utils'
+import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
+import { defineTestExtension } from '@prosekit/testing'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { page } from 'vitest/browser'
+import { render } from 'vitest-browser-react'
+import {
+  createElement,
+  useEffect,
+  useRef,
+  useState,
+  type RefCallback,
+} from 'react'
+
+import { ProseKit } from '../components/prosekit.ts'
+
+// Just for debugging. Remove this once the issue is resolved.
+// TODO: remove me.
+const DEBUG_FLAGS = {
+  // @ts-expect-error: no type
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  SINGLE_FIRST_NODE_VIEW: import.meta.env.VITE_DEBUG_SINGLE_FIRST_NODE_VIEW === 'true',
+  // @ts-expect-error: no type
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  MULTIPLE_FIRST_NODE_VIEW: import.meta.env.VITE_DEBUG_MULTIPLE_FIRST_NODE_VIEW === 'true',
+}
+
+console.debug('DEBUG_FLAGS', JSON.stringify(DEBUG_FLAGS))
+
+import {
+  defineReactNodeView,
+  type ReactNodeViewComponent,
+  type ReactNodeViewProps,
+} from './react-node-view.ts'
+
+describe('ReactNodeView', () => {
+  const initialState = {
+    imageRefresh: {
+      mounted: 0,
+      unmounted: 0,
+      setAttrs: 0,
+    },
+  }
+
+  let state = structuredClone(initialState)
+
+  beforeEach(() => {
+    state = structuredClone(initialState)
+  })
+
+  function defineExtension() {
+    return union(
+      defineTestExtension(),
+      defineNodeSpec({
+        name: 'image-refresh',
+        attrs: {
+          url: { default: '', validate: 'string' },
+        },
+        group: 'block',
+        inline: false,
+        atom: true,
+        isolating: true,
+        selectable: true,
+        draggable: true,
+        parseDOM: [{ tag: 'node-image-refresh' }],
+        toDOM: () => ['node-image-refresh', 0],
+      }),
+      defineReactNodeView({
+        name: 'image-refresh',
+        component: ImageRefreshView as ReactNodeViewComponent,
+      }),
+    )
+  }
+
+  function ImageRefreshView(props: ReactNodeViewProps) {
+    const [url, setUrl] = useState(() => (props.node.attrs as { url: string }).url)
+
+    useEffect(() => {
+      setUrl((props.node.attrs as { url: string }).url)
+    }, [props.node.attrs])
+
+    useEffect(() => {
+      state.imageRefresh.mounted++
+      const id = setInterval(() => {
+        state.imageRefresh.setAttrs++
+        props.setAttrs({ url: String(getId()) })
+      }, 50)
+      return () => {
+        state.imageRefresh.unmounted++
+        clearInterval(id)
+      }
+    }, [props])
+
+    return createElement('div', {
+      'data-testid': 'image-refresh-view',
+      'data-url': url,
+    })
+  }
+
+  function TestEditor(props: { initialContent?: NodeJSON }) {
+    const editorRef = useRef(createEditor({
+      extension: defineExtension(),
+      defaultContent: props.initialContent,
+    }))
+
+    const editor = editorRef.current
+
+    const mountEditor: RefCallback<HTMLDivElement> = (element) => {
+      editor.mount(element)
+    }
+
+    return createElement(
+      ProseKit,
+      { editor },
+      createElement('div', {
+        'data-testid': 'editor',
+        ref: mountEditor,
+      }),
+    )
+  }
+
+  const paragraphJSON: NodeJSON = {
+    type: 'paragraph',
+    content: [{ type: 'text', text: 'Hello' }],
+  }
+  const imageRefreshJSON: NodeJSON = {
+    type: 'image-refresh',
+    attrs: { url: '' },
+  }
+
+  const editor = page.getByTestId('editor')
+  const imageRefresh = page.getByTestId('image-refresh-view')
+
+  it('can render an image that refresh periodically', async () => {
+    const initialContent: NodeJSON = {
+      type: 'doc',
+      content: DEBUG_FLAGS.MULTIPLE_FIRST_NODE_VIEW ? [imageRefreshJSON, paragraphJSON] : [paragraphJSON, imageRefreshJSON],
+    }
+    const screen = await render(createElement(TestEditor, { initialContent }))
+    await expect.element(editor).toBeVisible()
+    await expect.element(imageRefresh).toBeInTheDocument()
+
+    const urls = new Set<string>()
+    const check = () => {
+      imageRefresh.elements().forEach((element) => {
+        const url = element.getAttribute('data-url')
+        if (url) {
+          urls.add(url)
+        }
+      })
+      return urls.size >= 5
+    }
+
+    await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
+
+    await screen.unmount()
+
+    expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(5)
+    expect(state.imageRefresh.mounted).toBe(1)
+    expect(state.imageRefresh.unmounted).toBe(1)
+  })
+
+  it('can render multiple images that refresh periodically', async () => {
+    const initialContent: NodeJSON = {
+      type: 'doc',
+      content: DEBUG_FLAGS.MULTIPLE_FIRST_NODE_VIEW
+        ? [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON]
+        : [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+    }
+    const screen = await render(createElement(TestEditor, { initialContent }))
+    await expect.element(editor).toBeVisible()
+    await expect.element(imageRefresh.nth(0)).toBeInTheDocument()
+    await expect.element(imageRefresh.nth(1)).toBeInTheDocument()
+    await expect.element(imageRefresh.nth(2)).toBeInTheDocument()
+    await expect.element(imageRefresh.nth(3)).not.toBeInTheDocument()
+
+    const urls = new Set<string>()
+    const check = () => {
+      imageRefresh.elements().forEach((element) => {
+        const url = element.getAttribute('data-url')
+        if (url) {
+          urls.add(url)
+        }
+      })
+      return urls.size >= 15
+    }
+
+    await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
+
+    await screen.unmount()
+
+    expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(15)
+    expect(state.imageRefresh.mounted).toBe(3)
+    expect(state.imageRefresh.unmounted).toBe(3)
+  })
+})

@@ -36,13 +36,21 @@ export interface SolidMarkViewOptions extends CoreMarkViewUserOptions<SolidMarkV
 class ProseKitSolidMarkView extends AbstractSolidMarkView<SolidMarkViewComponent> {
   render = (): JSX.Element => {
     const UserComponent = this.component
-    const getProps = this.context
+    const getProps: () => SolidMarkViewProps = this.context
+    const props: SolidMarkViewProps = {
+      get contentRef() {
+        return getProps().contentRef
+      },
+      get view() {
+        return getProps().view
+      },
+      get mark() {
+        return getProps().mark
+      },
+    }
     return createComponent(Portal, {
       mount: this.dom,
-      get children() {
-        const props: MarkViewContextProps = getProps()
-        return createComponent(UserComponent, props)
-      },
+      children: createComponent(UserComponent, props),
       ref: hidePortalDiv,
     })
   }

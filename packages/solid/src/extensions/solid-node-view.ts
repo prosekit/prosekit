@@ -36,8 +36,8 @@ export interface SolidNodeViewOptions extends CoreNodeViewUserOptions<SolidNodeV
 class ProseKitSolidNodeView extends AbstractSolidNodeView<SolidNodeViewComponent> {
   render = (): JSX.Element => {
     const UserComponent = this.component
-    const getProps: () => NodeViewContextProps = this.context
-    const props: NodeViewContextProps = {
+    const getProps: () => SolidNodeViewProps = this.context
+    const props: SolidNodeViewProps = {
       get contentRef() {
         return getProps().contentRef
       },

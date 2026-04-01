@@ -50,8 +50,8 @@ importers:
         specifier: ^4.3.5
         version: 4.3.5(@types/estree@1.0.8)(@typescript-eslint/parser@8.57.0(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/rule-tester@8.56.1(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.0(typescript@5.9.3))(@typescript-eslint/utils@8.57.0(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3))(eslint@10.1.0(jiti@2.6.1))(jsonc-eslint-parser@2.4.2)(typescript@5.9.3)
       '@ocavue/tsconfig':
-        specifier: ^0.7.0
-        version: 0.7.0
+        specifier: ^0.7.1
+        version: 0.7.1
       '@size-limit/esbuild-why':
         specifier: ^12.0.1
         version: 12.0.1(size-limit@12.0.1(jiti@2.6.1))
@@ -706,6 +706,19 @@ importers:
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+
+  packages/testing:
+    dependencies:
+      '@prosekit/core':
+        specifier: workspace:*
+        version: link:../core
+      '@prosekit/pm':
+        specifier: workspace:*
+        version: link:../pm
+    devDependencies:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -2455,6 +2468,9 @@ packages:
 
   '@ocavue/tsconfig@0.7.0':
     resolution: {integrity: sha512-9XQKdECB9dGLoLCYZozOZ8RH7OuWJosdp0t9l5bEvoFGitorrVG/XRsB0LqKICekmQxpDNjhQ+teOGYdmEb3SA==}
+
+  '@ocavue/tsconfig@0.7.1':
+    resolution: {integrity: sha512-jw1LPUqi/f043s61WOYEWWA6P1ZSSYXR3KJXcNxBXXrxiUXhEAbuEBUmi6Qs8NduIVU3xCkbaYw5BU3UyL3G3A==}
 
   '@ocavue/utils@1.6.0':
     resolution: {integrity: sha512-8W3q1hxx9qFdrYgPtbElllG/tqYkO/dMhlRUiqasO0SuDFTj78azSQjhIrBTFWxlBPPsSZN6zXYHmb3RwN2Jtg==}
@@ -9516,6 +9532,8 @@ snapshots:
       - typescript
 
   '@ocavue/tsconfig@0.7.0': {}
+
+  '@ocavue/tsconfig@0.7.1': {}
 
   '@ocavue/utils@1.6.0': {}
 

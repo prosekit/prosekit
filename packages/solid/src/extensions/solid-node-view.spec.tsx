@@ -82,7 +82,7 @@ describe('SolidNodeView', () => {
   it.fails('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [paragraphJSON, imageRefreshJSON],
+      content: [imageRefreshJSON],
     }
     const screen = render(() => <TestEditor initialContent={initialContent} />)
     await expect.element(editor).toBeVisible()
@@ -112,7 +112,7 @@ describe('SolidNodeView', () => {
   it.fails('can render multiple self-update image nodes', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+      content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
     const screen = render(() => <TestEditor initialContent={initialContent} />)
     await expect.element(editor).toBeVisible()

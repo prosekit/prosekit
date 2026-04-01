@@ -4,13 +4,11 @@ import { render } from 'vitest-browser-svelte'
 import { page } from 'vitest/browser'
 
 import TestEditor from '../testing/image-refresh-editor.svelte'
-import { state } from '../testing/image-refresh-state'
+import { resetState, state } from '../testing/image-refresh-state'
 
 describe('SvelteNodeView', () => {
   beforeEach(() => {
-    state.imageRefresh.mounted = 0
-    state.imageRefresh.unmounted = 0
-    state.imageRefresh.setAttrs = 0
+  resetState()
   })
 
   const paragraphJSON: NodeJSON = {

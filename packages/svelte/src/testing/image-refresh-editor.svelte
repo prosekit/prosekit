@@ -1,31 +1,16 @@
 <script lang="ts">
-import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
-import { defineTestExtension } from '@prosekit/testing'
+import { createEditor, union, type NodeJSON } from '@prosekit/core';
+import { defineTestExtension } from '@prosekit/testing';
 
-import ImageRefreshView from './image-refresh-view.svelte'
-import { defineSvelteNodeView } from '../index.ts'
-import { ProseKit } from '../index.ts'
+import { defineSvelteNodeView, ProseKit } from '../index.ts';
+import ImageRefreshView from './image-refresh-view.svelte';
 
 export let initialContent: NodeJSON | undefined = undefined
 
 const extension = union(
   defineTestExtension(),
-  defineNodeSpec({
-    name: 'image-refresh',
-    attrs: {
-      url: { default: '', validate: 'string' },
-    },
-    group: 'block',
-    inline: false,
-    atom: true,
-    isolating: true,
-    selectable: true,
-    draggable: true,
-    parseDOM: [{ tag: 'node-image-refresh' }],
-    toDOM: () => ['node-image-refresh'],
-  }),
   defineSvelteNodeView({
-    name: 'image-refresh',
+    name: 'image',
     component: ImageRefreshView,
   }),
 )

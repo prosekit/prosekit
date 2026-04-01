@@ -1,7 +1,7 @@
 /* eslint-disable @eslint-react/component-hook-factories */
 
 import { getId } from '@ocavue/utils'
-import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
+import { createEditor, union, type NodeJSON } from '@prosekit/core'
 import { defineTestExtension } from '@prosekit/testing'
 import { createElement, useEffect, useState } from 'react'
 import { beforeEach, describe, expect, it } from 'vitest'
@@ -30,22 +30,8 @@ describe('ReactNodeView', () => {
   function defineExtension() {
     return union(
       defineTestExtension(),
-      defineNodeSpec({
-        name: 'image-refresh',
-        attrs: {
-          url: { default: '', validate: 'string' },
-        },
-        group: 'block',
-        inline: false,
-        atom: true,
-        isolating: true,
-        selectable: true,
-        draggable: true,
-        parseDOM: [{ tag: 'node-image-refresh' }],
-        toDOM: () => ['node-image-refresh'],
-      }),
       defineReactNodeView({
-        name: 'image-refresh',
+        name: 'image',
         component: ImageRefreshView satisfies ReactNodeViewComponent,
       }),
     )

@@ -28,22 +28,8 @@ describe('SolidNodeView', () => {
   function defineExtension() {
     return union(
       defineTestExtension(),
-      defineNodeSpec({
-        name: 'image-refresh',
-        attrs: {
-          url: { default: '', validate: 'string' },
-        },
-        group: 'block',
-        inline: false,
-        atom: true,
-        isolating: true,
-        selectable: true,
-        draggable: true,
-        parseDOM: [{ tag: 'node-image-refresh' }],
-        toDOM: () => ['node-image-refresh'],
-      }),
       defineSolidNodeView({
-        name: 'image-refresh',
+        name: 'image',
         component: ImageRefreshView satisfies SolidNodeViewComponent,
       }),
     )

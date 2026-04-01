@@ -43,7 +43,7 @@ describe('PreactNodeView', () => {
         selectable: true,
         draggable: true,
         parseDOM: [{ tag: 'node-image-refresh' }],
-        toDOM: () => ['node-image-refresh', 0],
+        toDOM: () => ['node-image-refresh'],
       }),
       definePreactNodeView({
         name: 'image-refresh',

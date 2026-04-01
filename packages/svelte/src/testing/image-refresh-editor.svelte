@@ -22,7 +22,7 @@ const extension = union(
     selectable: true,
     draggable: true,
     parseDOM: [{ tag: 'node-image-refresh' }],
-    toDOM: () => ['node-image-refresh', 0],
+    toDOM: () => ['node-image-refresh'],
   }),
   defineSvelteNodeView({
     name: 'image-refresh',

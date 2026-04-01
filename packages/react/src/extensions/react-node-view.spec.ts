@@ -42,7 +42,7 @@ describe('ReactNodeView', () => {
         selectable: true,
         draggable: true,
         parseDOM: [{ tag: 'node-image-refresh' }],
-        toDOM: () => ['node-image-refresh', 0],
+        toDOM: () => ['node-image-refresh'],
       }),
       defineReactNodeView({
         name: 'image-refresh',

@@ -465,6 +465,9 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(preact@10.29.0)
     devDependencies:
+      '@ocavue/utils':
+        specifier: ^1.6.0
+        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -474,6 +477,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       preact:
         specifier: ^10.29.0
         version: 10.29.0
@@ -483,6 +489,12 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-preact:
+        specifier: ^1.0.0
+        version: 1.0.0(preact@10.29.0)(vitest@4.1.1)
 
   packages/prosekit:
     dependencies:

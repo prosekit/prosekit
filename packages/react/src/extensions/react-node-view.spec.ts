@@ -8,7 +8,6 @@ import {
   createElement,
   useEffect,
   useRef,
-  useState,
   type RefCallback,
 } from 'react'
 
@@ -73,11 +72,7 @@ describe('ReactNodeView', () => {
   }
 
   function ImageRefreshView(props: ReactNodeViewProps) {
-    const [url, setUrl] = useState(() => (props.node.attrs as { url: string }).url)
-
-    useEffect(() => {
-      setUrl((props.node.attrs as { url: string }).url)
-    }, [props.node.attrs])
+    const url = (props.node.attrs as { url: string }).url
 
     useEffect(() => {
       state.imageRefresh.mounted++
@@ -89,7 +84,7 @@ describe('ReactNodeView', () => {
         state.imageRefresh.unmounted++
         clearInterval(id)
       }
-    }, [props])
+    }, [props.setAttrs])
 
     return createElement('div', {
       'data-testid': 'image-refresh-view',

@@ -64,15 +64,19 @@
     }
   },
   "devDependencies": {
+    "@ocavue/utils": "^1.6.0",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vitest-browser-react": "^2.1.0"
   },
   "publishConfig": {
     "exports": {

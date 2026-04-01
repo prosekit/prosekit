@@ -1,7 +1,9 @@
+/* eslint-disable @eslint-react/component-hook-factories */
+
 import { getId } from '@ocavue/utils'
 import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
 import { defineTestExtension } from '@prosekit/testing'
-import { createElement, useEffect, useRef, type RefCallback } from 'react'
+import { createElement, useEffect, useState } from 'react'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
 import { page } from 'vitest/browser'
@@ -44,25 +46,26 @@ describe('ReactNodeView', () => {
       }),
       defineReactNodeView({
         name: 'image-refresh',
-        component: ImageRefreshView as ReactNodeViewComponent,
+        component: ImageRefreshView satisfies ReactNodeViewComponent,
       }),
     )
   }
 
   function ImageRefreshView(props: ReactNodeViewProps) {
     const url = (props.node.attrs as { url: string }).url
+    const setAttrs = props.setAttrs
 
     useEffect(() => {
       state.imageRefresh.mounted++
       const id = setInterval(() => {
         state.imageRefresh.setAttrs++
-        props.setAttrs({ url: String(getId()) })
+        setAttrs({ url: String(getId()) })
       }, 50)
       return () => {
         state.imageRefresh.unmounted++
         clearInterval(id)
       }
-    }, [props.setAttrs])
+    }, [setAttrs])
 
     return createElement('div', {
       'data-testid': 'image-refresh-view',
@@ -71,23 +74,19 @@ describe('ReactNodeView', () => {
   }
 
   function TestEditor(props: { initialContent?: NodeJSON }) {
-    const editorRef = useRef(createEditor({
-      extension: defineExtension(),
-      defaultContent: props.initialContent,
-    }))
-
-    const editor = editorRef.current
-
-    const mountEditor: RefCallback<HTMLDivElement> = (element) => {
-      editor.mount(element)
-    }
+    const [editor] = useState(() => {
+      return createEditor({
+        extension: defineExtension(),
+        defaultContent: props.initialContent,
+      })
+    })
 
     return createElement(
       ProseKit,
       { editor },
       createElement('div', {
         'data-testid': 'editor',
-        'ref': mountEditor,
+        'ref': editor.mount,
       }),
     )
   }

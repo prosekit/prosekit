@@ -1,3 +1,8 @@
+/* eslint-disable @eslint-react/component-hook-factories */
+
+
+
+
 import { getId } from '@ocavue/utils'
 import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
 import { defineTestExtension } from '@prosekit/testing'
@@ -107,7 +112,7 @@ describe('PreactNodeView', () => {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON],
     }
-    const screen = await render(createElement(TestEditor, { initialContent }))
+    const screen =   render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()
     await expect.element(imageRefresh).toBeInTheDocument()
 
@@ -124,7 +129,7 @@ describe('PreactNodeView', () => {
 
     await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
 
-    await screen.unmount()
+      screen.unmount()
 
     expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(5)
     expect(state.imageRefresh.mounted).toBe(1)
@@ -136,7 +141,7 @@ describe('PreactNodeView', () => {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
-    const screen = await render(createElement(TestEditor, { initialContent }))
+    const screen =   render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()
     await expect.element(imageRefresh.nth(0)).toBeInTheDocument()
     await expect.element(imageRefresh.nth(1)).toBeInTheDocument()
@@ -156,8 +161,8 @@ describe('PreactNodeView', () => {
 
     await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
 
-    await screen.unmount()
-
+      screen.unmount()
+ 
     expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(15)
     expect(state.imageRefresh.mounted).toBe(3)
     expect(state.imageRefresh.unmounted).toBe(3)

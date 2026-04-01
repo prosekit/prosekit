@@ -1,9 +1,8 @@
 <script lang="ts">
-
-import type { ImageAttrs } from '@prosekit/testing';
-import { fromStore } from 'svelte/store';
-import type { SvelteNodeViewProps } from '../index.ts';
-import { state } from './image-refresh-state.ts';
+import type { ImageAttrs } from '@prosekit/testing'
+import { fromStore } from 'svelte/store'
+import type { SvelteNodeViewProps } from '../index.ts'
+import { state } from './image-refresh-state.ts'
 
 const props: SvelteNodeViewProps = $props()
 

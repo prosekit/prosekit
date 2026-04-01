@@ -230,7 +230,6 @@ function defineBlockquote(): BlockquoteExtension {
   })
 }
 
-
 export interface ImageAttrs {
   src: string | null
 }
@@ -240,8 +239,6 @@ type ImageExtension = Extension<{
     image: ImageAttrs
   }
 }>
-
-
 
 /**
  * @internal
@@ -258,16 +255,13 @@ export function defineImage(): ImageExtension {
     isolating: true,
     selectable: true,
     draggable: true,
-    parseDOM: [      {        tag: 'img',      },
-    ],
+    parseDOM: [{ tag: 'img' }],
     toDOM(node) {
       const attrs = node.attrs as ImageAttrs
       return ['img', attrs]
     },
   })
 }
-
-
 
 /**
  * @internal

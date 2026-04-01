@@ -8,7 +8,7 @@ import { resetState, state } from '../testing/image-refresh-state'
 
 describe('SvelteNodeView', () => {
   beforeEach(() => {
-  resetState()
+    resetState()
   })
 
   const paragraphJSON: NodeJSON = {

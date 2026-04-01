@@ -1,9 +1,9 @@
 <script lang="ts">
-import { createEditor, union, type NodeJSON } from '@prosekit/core';
-import { defineTestExtension } from '@prosekit/testing';
+import { createEditor, union, type NodeJSON } from '@prosekit/core'
+import { defineTestExtension } from '@prosekit/testing'
 
-import { defineSvelteNodeView, ProseKit } from '../index.ts';
-import ImageRefreshView from './image-refresh-view.svelte';
+import { defineSvelteNodeView, ProseKit } from '../index.ts'
+import ImageRefreshView from './image-refresh-view.svelte'
 
 export let initialContent: NodeJSON | undefined = undefined
 

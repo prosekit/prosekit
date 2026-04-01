@@ -675,6 +675,9 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(solid-js@1.9.11)
     devDependencies:
+      '@ocavue/utils':
+        specifier: ^1.6.0
+        version: 1.6.0
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -684,6 +687,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       solid-js:
         specifier: ^1.9.11
         version: 1.9.11
@@ -693,6 +699,15 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vite-plugin-solid:
+        specifier: ^2.11.11
+        version: 2.11.11(solid-js@1.9.11)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-solid:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.9.11)(vitest@4.1.1)
 
   packages/svelte:
     dependencies:

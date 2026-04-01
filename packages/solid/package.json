@@ -60,12 +60,17 @@
     }
   },
   "devDependencies": {
+    "@ocavue/utils": "^1.6.0",
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "solid-js": "^1.9.11",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vite-plugin-solid": "^2.11.11",
+    "vitest": "catalog:",
+    "vitest-browser-solid": "^1.0.1"
   },
   "publishConfig": {
     "exports": {

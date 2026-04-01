@@ -19,17 +19,8 @@ const editor = createEditor({
   extension,
   defaultContent: initialContent,
 })
-
-function mountEditor(node: HTMLElement) {
-  editor.mount(node)
-  return {
-    destroy() {
-      editor.mount(null)
-    },
-  }
-}
 </script>
 
 <ProseKit {editor}>
-  <div data-testid="editor" use:mountEditor></div>
+  <div data-testid="editor" {@attach editor.mount}></div>
 </ProseKit>

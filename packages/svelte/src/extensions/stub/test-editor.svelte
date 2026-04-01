@@ -2,9 +2,9 @@
 import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
 import { defineTestExtension } from '@prosekit/testing'
 
-import { ProseKit } from '../components/prosekit/index.ts'
-import { defineSvelteNodeView } from './svelte-node-view.ts'
-import ImageRefreshView from './SvelteNodeViewSpecImageRefreshView.svelte'
+import { ProseKit } from '../../components/prosekit/index.ts'
+import { defineSvelteNodeView } from '../svelte-node-view.ts'
+import ImageRefreshView from './image-refresh-view.svelte'
 
 export let initialContent: NodeJSON | undefined = undefined
 

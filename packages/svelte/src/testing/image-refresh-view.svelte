@@ -2,7 +2,7 @@
 import { getId } from '@ocavue/utils'
 import { onDestroy, onMount } from 'svelte'
 
-import type { SvelteNodeViewProps } from '../svelte-node-view.ts'
+import type { SvelteNodeViewProps } from '../index.ts'
 import { state } from './image-refresh-state.ts'
 import { fromStore } from 'svelte/store'
 

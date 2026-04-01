@@ -140,7 +140,7 @@ describe('VueNodeView', () => {
   it('can render multiple images that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+      content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
     const screen = await render(TestEditor, { props: { initialContent } })
     await expect.element(editor).toBeVisible()

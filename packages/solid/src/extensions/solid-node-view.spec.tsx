@@ -78,8 +78,7 @@ describe('SolidNodeView', () => {
   const editor = page.getByTestId('editor')
   const imageRefresh = page.getByTestId('image-refresh-view')
 
-  // TODO: fix this test
-  it.fails('can render a single self-update image node', async () => {
+  it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [imageRefreshJSON, paragraphJSON],
@@ -108,8 +107,7 @@ describe('SolidNodeView', () => {
     expect(state.imageRefresh.unmounted).toBe(1)
   })
 
-  // TODO: fix this test
-  it.fails('can render multiple self-update image nodes', async () => {
+  it('can render multiple self-update image nodes', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],

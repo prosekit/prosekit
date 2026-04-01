@@ -1,12 +1,12 @@
 import { getId } from '@ocavue/utils'
 import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
+import { defineTestExtension } from '@prosekit/testing'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-vue'
 import { page } from 'vitest/browser'
 import { computed, defineComponent, h, onMounted, onUnmounted } from 'vue'
 
 import { ProseKit } from '../components/prosekit.ts'
-import { defineTestExtension } from '../testing/index.ts'
 
 // Just for debugging. Remove this once the issue is resolved.
 // TODO: remove me.

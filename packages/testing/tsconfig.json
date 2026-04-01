@@ -1,5 +1,5 @@
 {
-"extends": "@ocavue/tsconfig/es/app.json",
+"extends": "@ocavue/tsconfig/dom/app.json",
 "references": [
     {
         "path": "../core/tsconfig.json"

@@ -2,22 +2,25 @@
   "extends": "@prosekit/config-ts/root.json",
   "references": [
     {
-      "path": "../config-tsdown/tsconfig.json",
+        "path": "../config-tsdown/tsconfig.json"
     },
     {
-      "path": "../config-vitest/tsconfig.json",
+        "path": "../config-vitest/tsconfig.json"
     },
     {
-      "path": "../core/tsconfig.json",
+        "path": "../core/tsconfig.json"
     },
     {
-      "path": "../pm/tsconfig.json",
+        "path": "../pm/tsconfig.json"
     },
     {
-      "path": "../web/tsconfig.json",
+        "path": "../testing/tsconfig.json"
     },
     {
-      "path": "./tsconfig.build.json",
+        "path": "../web/tsconfig.json"
     },
-  ],
+    {
+        "path": "./tsconfig.build.json"
+    }
+],
 }

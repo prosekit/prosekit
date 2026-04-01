@@ -3,8 +3,8 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-svelte'
 import { page } from 'vitest/browser'
 
-import TestEditor from './stub/test-editor.svelte'
-import { state } from './stub/test-state.ts'
+import TestEditor from '../testing/image-refresh-editor.svelte'
+import { state } from '../testing/image-refresh-state'
 
 describe('SvelteNodeView', () => {
   beforeEach(() => {

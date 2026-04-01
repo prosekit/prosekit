@@ -231,7 +231,7 @@ function defineBlockquote(): BlockquoteExtension {
 }
 
 
-interface ImageAttrs {
+export interface ImageAttrs {
   src: string | null
 }
 

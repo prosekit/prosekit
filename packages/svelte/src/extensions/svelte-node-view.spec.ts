@@ -16,14 +16,13 @@ describe('SvelteNodeView', () => {
     content: [{ type: 'text', text: 'Hello' }],
   }
   const imageRefreshJSON: NodeJSON = {
-    type: 'image-refresh',
-    attrs: { url: '' },
+    type: 'image',
   }
 
   const editor = page.getByTestId('editor')
   const imageRefresh = page.getByTestId('image-refresh-view')
 
-  it('can render an image that refresh periodically', async () => {
+  it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON],
@@ -52,7 +51,7 @@ describe('SvelteNodeView', () => {
     expect(state.imageRefresh.unmounted).toBe(1)
   })
 
-  it('can render multiple images that refresh periodically', async () => {
+  it('can render multiple self-update image nodes', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],

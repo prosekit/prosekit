@@ -1,6 +1,5 @@
-import { getId } from '@ocavue/utils'
-import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
-import { defineTestExtension } from '@prosekit/testing'
+import { createEditor, union, type NodeJSON } from '@prosekit/core'
+import { defineTestExtension, type ImageAttrs } from '@prosekit/testing'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-vue'
 import { page } from 'vitest/browser'
@@ -40,12 +39,13 @@ describe('VueNodeView', () => {
       name: 'ImageRefreshView',
       props: ['contentRef', 'view', 'getPos', 'setAttrs', 'node', 'selected', 'decorations', 'innerDecorations'],
       setup(props: VueNodeViewProps) {
-        const attrs = computed(() => props.node.value.attrs as { url: string })
+        const attrs = computed(() => props.node.value.attrs as ImageAttrs)
+        const url = computed(() => attrs.value.src)
         onMounted(() => {
           state.imageRefresh.mounted++
           const id = setInterval(() => {
             state.imageRefresh.setAttrs++
-            props.setAttrs({ url: String(getId()) })
+            props.setAttrs({ src: String(Math.random()) })
           }, 50)
           onUnmounted(() => {
             state.imageRefresh.unmounted++
@@ -55,7 +55,7 @@ describe('VueNodeView', () => {
         return () =>
           h('div', {
             'data-testid': 'image-refresh-view',
-            'data-url': attrs.value.url,
+            'data-url': url.value,
           })
       },
     },
@@ -87,14 +87,13 @@ describe('VueNodeView', () => {
     content: [{ type: 'text', text: 'Hello' }],
   }
   const imageRefreshJSON: NodeJSON = {
-    type: 'image-refresh',
-    attrs: { url: '' },
+    type: 'image',
   }
 
   const editor = page.getByTestId('editor')
   const imageRefresh = page.getByTestId('image-refresh-view')
 
-  it('can render an image that refresh periodically', async () => {
+  it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON],
@@ -123,7 +122,7 @@ describe('VueNodeView', () => {
     expect(state.imageRefresh.unmounted).toBe(1)
   })
 
-  it('can render multiple images that refresh periodically', async () => {
+  it('can render multiple self-update image nodes', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],

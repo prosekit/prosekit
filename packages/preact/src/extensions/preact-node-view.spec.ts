@@ -1,8 +1,7 @@
 /* eslint-disable @eslint-react/component-hook-factories */
 
-import { getId } from '@ocavue/utils'
 import { createEditor, union, type NodeJSON } from '@prosekit/core'
-import { defineTestExtension } from '@prosekit/testing'
+import { defineTestExtension, type ImageAttrs } from '@prosekit/testing'
 import { createElement } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 import { beforeEach, describe, expect, it } from 'vitest'
@@ -39,14 +38,14 @@ describe('PreactNodeView', () => {
   }
 
   function ImageRefreshView(props: PreactNodeViewProps) {
-    const url = (props.node.attrs as { url: string }).url
+    const url = (props.node.attrs as ImageAttrs).src
     const setAttrs = props.setAttrs
 
     useEffect(() => {
       state.imageRefresh.mounted++
       const id = setInterval(() => {
         state.imageRefresh.setAttrs++
-        setAttrs({ url: String(getId()) })
+        setAttrs({ src: String(Math.random()) })
       }, 50)
       return () => {
         state.imageRefresh.unmounted++
@@ -83,14 +82,13 @@ describe('PreactNodeView', () => {
     content: [{ type: 'text', text: 'Hello' }],
   }
   const imageRefreshJSON: NodeJSON = {
-    type: 'image-refresh',
-    attrs: { url: '' },
+    type: 'image',
   }
 
   const editor = page.getByTestId('editor')
   const imageRefresh = page.getByTestId('image-refresh-view')
 
-  it('can render an image that refresh periodically', async () => {
+  it('can render a single self-update image node', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON],
@@ -119,7 +117,7 @@ describe('PreactNodeView', () => {
     expect(state.imageRefresh.unmounted).toBe(1)
   })
 
-  it('can render multiple images that refresh periodically', async () => {
+  it('can render multiple self-update image nodes', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
       content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],

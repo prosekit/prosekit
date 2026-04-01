@@ -1,6 +1,6 @@
 <script lang="ts">
-import { getId } from '@ocavue/utils';
 
+import type { ImageAttrs } from '@prosekit/testing';
 import { fromStore } from 'svelte/store';
 import type { SvelteNodeViewProps } from '../index.ts';
 import { state } from './image-refresh-state.ts';
@@ -8,13 +8,13 @@ import { state } from './image-refresh-state.ts';
 const props: SvelteNodeViewProps = $props()
 
 const node = $derived(fromStore(props.node))
-const url = $derived((node.current.attrs as { url: string }).url)
+const url = $derived((node.current.attrs as ImageAttrs).src)
 
 $effect(() => {
   state.imageRefresh.mounted++
   const id = setInterval(() => {
     state.imageRefresh.setAttrs++
-    props.setAttrs({ url: String(getId()) })
+    props.setAttrs({ src: String(Math.random()) })
   }, 50)
 
   return () => {

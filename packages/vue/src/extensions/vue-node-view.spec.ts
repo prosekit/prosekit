@@ -8,6 +8,19 @@ import { computed, defineComponent, h, onMounted, onUnmounted } from 'vue'
 import { ProseKit } from '../components/prosekit.ts'
 import { defineTestExtension } from '../testing/index.ts'
 
+// Just for debugging. Remove this once the issue is resolved.
+// TODO: remove me.
+const DEBUG_FLAGS = {
+  // @ts-expect-error: no type
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  SINGLE_FIRST_NODE_VIEW: import.meta.env.VITE_DEBUG_SINGLE_FIRST_NODE_VIEW === 'true',
+  // @ts-expect-error: no type
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  MULTIPLE_FIRST_NODE_VIEW: import.meta.env.VITE_DEBUG_MULTIPLE_FIRST_NODE_VIEW === 'true',
+}
+
+console.debug('DEBUG_FLAGS', JSON.stringify(DEBUG_FLAGS))
+
 import { defineVueNodeView, type VueNodeViewComponent, type VueNodeViewProps } from './vue-node-view.ts'
 
 describe('VueNodeView', () => {
@@ -111,7 +124,7 @@ describe('VueNodeView', () => {
   it('can render an image that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [paragraphJSON, imageRefreshJSON],
+      content: DEBUG_FLAGS.MULTIPLE_FIRST_NODE_VIEW ? [imageRefreshJSON, paragraphJSON] : [paragraphJSON, imageRefreshJSON],
     }
     const screen = await render(TestEditor, { props: { initialContent } })
     await expect.element(editor).toBeVisible()
@@ -140,7 +153,9 @@ describe('VueNodeView', () => {
   it('can render multiple images that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+      content: DEBUG_FLAGS.MULTIPLE_FIRST_NODE_VIEW
+        ? [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON]
+        : [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
     const screen = await render(TestEditor, { props: { initialContent } })
     await expect.element(editor).toBeVisible()

@@ -230,6 +230,45 @@ function defineBlockquote(): BlockquoteExtension {
   })
 }
 
+
+interface ImageAttrs {
+  src: string | null
+}
+
+type ImageExtension = Extension<{
+  Nodes: {
+    image: ImageAttrs
+  }
+}>
+
+
+
+/**
+ * @internal
+ */
+export function defineImage(): ImageExtension {
+  return defineNodeSpec({
+    name: 'image',
+    attrs: {
+      src: { default: null, validate: 'string|null' },
+    },
+    group: 'block',
+    inline: false,
+    atom: true,
+    isolating: true,
+    selectable: true,
+    draggable: true,
+    parseDOM: [      {        tag: 'img',      },
+    ],
+    toDOM(node) {
+      const attrs = node.attrs as ImageAttrs
+      return ['img', attrs]
+    },
+  })
+}
+
+
+
 /**
  * @internal
  */
@@ -247,5 +286,6 @@ export function defineTestExtension() {
     defineHeading(),
     defineCodeBlock(),
     defineBlockquote(),
+    defineImage(),
   )
 }

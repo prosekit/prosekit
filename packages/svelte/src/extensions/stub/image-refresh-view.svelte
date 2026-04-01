@@ -14,17 +14,17 @@ const url = $derived((node.current.attrs as { url: string }).url)
 
 let intervalId: ReturnType<typeof setInterval>
 
-onMount(() => {
+$effect(() => {
   state.imageRefresh.mounted++
   intervalId = setInterval(() => {
     state.imageRefresh.setAttrs++
     props.setAttrs({ url: String(getId()) })
   }, 50)
-})
 
-onDestroy(() => {
-  state.imageRefresh.unmounted++
-  clearInterval(intervalId)
+  return () => {
+    state.imageRefresh.unmounted++
+    clearInterval(intervalId)
+  }
 })
 </script>
 

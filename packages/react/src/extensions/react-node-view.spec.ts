@@ -1,23 +1,14 @@
 import { getId } from '@ocavue/utils'
 import { createEditor, defineNodeSpec, union, type NodeJSON } from '@prosekit/core'
 import { defineTestExtension } from '@prosekit/testing'
+import { createElement, useEffect, useRef, type RefCallback } from 'react'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { page } from 'vitest/browser'
 import { render } from 'vitest-browser-react'
-import {
-  createElement,
-  useEffect,
-  useRef,
-  type RefCallback,
-} from 'react'
+import { page } from 'vitest/browser'
 
 import { ProseKit } from '../components/prosekit.ts'
 
-import {
-  defineReactNodeView,
-  type ReactNodeViewComponent,
-  type ReactNodeViewProps,
-} from './react-node-view.ts'
+import { defineReactNodeView, type ReactNodeViewComponent, type ReactNodeViewProps } from './react-node-view.ts'
 
 describe('ReactNodeView', () => {
   const initialState = {
@@ -96,7 +87,7 @@ describe('ReactNodeView', () => {
       { editor },
       createElement('div', {
         'data-testid': 'editor',
-        ref: mountEditor,
+        'ref': mountEditor,
       }),
     )
   }
@@ -116,7 +107,7 @@ describe('ReactNodeView', () => {
   it('can render an image that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content:   [paragraphJSON, imageRefreshJSON],
+      content: [paragraphJSON, imageRefreshJSON],
     }
     const screen = await render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()

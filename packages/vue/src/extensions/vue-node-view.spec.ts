@@ -7,7 +7,6 @@ import { page } from 'vitest/browser'
 import { computed, defineComponent, h, onMounted, onUnmounted } from 'vue'
 
 import { ProseKit } from '../components/prosekit.ts'
- 
 
 import { defineVueNodeView, type VueNodeViewComponent, type VueNodeViewProps } from './vue-node-view.ts'
 
@@ -141,7 +140,7 @@ describe('VueNodeView', () => {
   it('can render multiple images that refresh periodically', async () => {
     const initialContent: NodeJSON = {
       type: 'doc',
-      content:   [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+      content: [paragraphJSON, imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
     const screen = await render(TestEditor, { props: { initialContent } })
     await expect.element(editor).toBeVisible()

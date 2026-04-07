@@ -1,6 +1,6 @@
 {
   "dependencyDashboard": true,
-    "packageRules": [
+  "packageRules": [
     {
       "matchPackageNames": ["/aria-ui/"],
       "allowedVersions": ">=0.1.0"

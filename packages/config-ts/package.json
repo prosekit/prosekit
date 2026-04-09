@@ -11,6 +11,6 @@
   },
   "scripts": {},
   "devDependencies": {
-    "@ocavue/tsconfig": "^0.7.0"
+    "@ocavue/tsconfig": "^0.7.1"
   }
 }

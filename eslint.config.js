@@ -12,6 +12,7 @@ export default defineESLintConfig(
         '**/preact/**/*.tsx',
       ],
       version: '18.0',
+      reactCompiler: !!process.env.CI,
     },
     vue: true,
     markdown: true,

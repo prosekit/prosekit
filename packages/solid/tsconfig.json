@@ -1,5 +1,9 @@
 {
   "extends": "@prosekit/config-ts/root.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+  },
   "references": [
     {
       "path": "../config-tsdown/tsconfig.json",
@@ -12,6 +16,9 @@
     },
     {
       "path": "../pm/tsconfig.json",
+    },
+    {
+      "path": "../testing/tsconfig.json",
     },
     {
       "path": "../web/tsconfig.json",

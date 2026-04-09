@@ -47,6 +47,9 @@
       "path": "./packages/svelte/tsconfig.json",
     },
     {
+      "path": "./packages/testing/tsconfig.json",
+    },
+    {
       "path": "./packages/typedoc-plugin/tsconfig.json",
     },
     {

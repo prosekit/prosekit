@@ -50,8 +50,8 @@ importers:
         specifier: ^4.3.5
         version: 4.3.5(@types/estree@1.0.8)(@typescript-eslint/parser@8.57.0(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/rule-tester@8.56.1(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.0(typescript@5.9.3))(@typescript-eslint/utils@8.57.0(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3))(eslint@10.1.0(jiti@2.6.1))(jsonc-eslint-parser@2.4.2)(typescript@5.9.3)
       '@ocavue/tsconfig':
-        specifier: ^0.7.0
-        version: 0.7.0
+        specifier: ^0.7.1
+        version: 0.7.1
       '@size-limit/esbuild-why':
         specifier: ^12.0.1
         version: 12.0.1(size-limit@12.0.1(jiti@2.6.1))
@@ -459,11 +459,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.5.3
+        version: 0.5.3
       '@prosemirror-adapter/preact':
-        specifier: ^0.5.2
-        version: 0.5.2(preact@10.29.0)
+        specifier: ^0.5.3
+        version: 0.5.3(preact@10.29.0)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
@@ -474,6 +474,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       preact:
         specifier: ^10.29.0
         version: 10.29.0
@@ -483,6 +486,12 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-preact:
+        specifier: ^1.0.0
+        version: 1.0.0(preact@10.29.0)(vitest@4.1.1)
 
   packages/prosekit:
     dependencies:
@@ -599,11 +608,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.5.3
+        version: 0.5.3
       '@prosemirror-adapter/react':
-        specifier: ^0.5.2
-        version: 0.5.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^0.5.3
+        version: 0.5.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
@@ -614,6 +623,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
@@ -632,6 +644,12 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-react:
+        specifier: ^2.1.0
+        version: 2.1.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(vitest@4.1.1)
 
   packages/solid:
     dependencies:
@@ -645,11 +663,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.5.3
+        version: 0.5.3
       '@prosemirror-adapter/solid':
-        specifier: ^0.5.2
-        version: 0.5.2(solid-js@1.9.11)
+        specifier: ^0.5.3
+        version: 0.5.3(solid-js@1.9.11)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
@@ -660,6 +678,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       solid-js:
         specifier: ^1.9.11
         version: 1.9.11
@@ -669,6 +690,15 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vite-plugin-solid:
+        specifier: ^2.11.11
+        version: 2.11.11(solid-js@1.9.11)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-solid:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.9.11)(vitest@4.1.1)
 
   packages/svelte:
     dependencies:
@@ -682,18 +712,27 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.5.3
+        version: 0.5.3
       '@prosemirror-adapter/svelte':
-        specifier: ^0.5.2
-        version: 0.5.2(svelte@5.55.0)
+        specifier: ^0.5.3
+        version: 0.5.3(svelte@5.55.0)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
+      '@prosekit/config-vitest':
+        specifier: workspace:*
+        version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       '@sveltejs/package':
         specifier: ^2.5.7
         version: 2.5.7(svelte@5.55.0)(typescript@5.9.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^7.0.0
+        version: 7.0.0(svelte@5.55.0)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.13
@@ -706,6 +745,25 @@ importers:
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-svelte:
+        specifier: ^2.1.0
+        version: 2.1.0(svelte@5.55.0)(vitest@4.1.1)
+
+  packages/testing:
+    dependencies:
+      '@prosekit/core':
+        specifier: workspace:*
+        version: link:../core
+      '@prosekit/pm':
+        specifier: workspace:*
+        version: link:../pm
+    devDependencies:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -763,11 +821,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.5.3
+        version: 0.5.3
       '@prosemirror-adapter/vue':
-        specifier: ^0.5.2
-        version: 0.5.2(vue@3.5.30(typescript@5.9.3))
+        specifier: ^0.5.3
+        version: 0.5.3(vue@3.5.30(typescript@5.9.3))
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
@@ -778,6 +836,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       '@vitejs/plugin-vue':
         specifier: ^6.0.5
         version: 6.0.5(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.30(typescript@5.9.3))
@@ -793,6 +854,9 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 4.1.1(@types/node@24.10.13)(@vitest/browser-playwright@4.1.1)(@vitest/ui@4.1.1)(happy-dom@20.8.7)(jsdom@29.0.1)(vite@8.0.2(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.98.0)(tsx@4.21.0)(yaml@2.8.2))
+      vitest-browser-vue:
+        specifier: ^2.1.0
+        version: 2.1.0(vitest@4.1.1)(vue@3.5.30(typescript@5.9.3))
       vue:
         specifier: ^3.5.30
         version: 3.5.30(typescript@5.9.3)
@@ -2456,6 +2520,9 @@ packages:
   '@ocavue/tsconfig@0.7.0':
     resolution: {integrity: sha512-9XQKdECB9dGLoLCYZozOZ8RH7OuWJosdp0t9l5bEvoFGitorrVG/XRsB0LqKICekmQxpDNjhQ+teOGYdmEb3SA==}
 
+  '@ocavue/tsconfig@0.7.1':
+    resolution: {integrity: sha512-jw1LPUqi/f043s61WOYEWWA6P1ZSSYXR3KJXcNxBXXrxiUXhEAbuEBUmi6Qs8NduIVU3xCkbaYw5BU3UyL3G3A==}
+
   '@ocavue/utils@1.6.0':
     resolution: {integrity: sha512-8W3q1hxx9qFdrYgPtbElllG/tqYkO/dMhlRUiqasO0SuDFTj78azSQjhIrBTFWxlBPPsSZN6zXYHmb3RwN2Jtg==}
 
@@ -3008,19 +3075,19 @@ packages:
       preact: ^10.4.0 || ^11.0.0-0
       vite: '>=2.0.0'
 
-  '@prosemirror-adapter/core@0.5.2':
-    resolution: {integrity: sha512-zlQp5qT9wgRcXVAi0BM8qWPG9ej3xUPIE1HNQzglQvltoNx+anY1R/APX1fJSHMlgTq/ZQMvjfNMHqqDyhUbtg==}
+  '@prosemirror-adapter/core@0.5.3':
+    resolution: {integrity: sha512-jGcI/eq3USFqf1fCaejgCmifmXYDyFco6/5KjyyNBnuEhLqyLjD+020CtcduEOsnN4xPZr5ikclgHIR6kEFkQg==}
 
-  '@prosemirror-adapter/preact@0.5.2':
-    resolution: {integrity: sha512-rFhyliBpi90wdZ5RNuNYbFInV9yekimj3YqxuKqIAbPG8wB+nPIqCHEUDIZtYylyU3tNhiVYDCkDvmHs4OtYyQ==}
+  '@prosemirror-adapter/preact@0.5.3':
+    resolution: {integrity: sha512-1YUBxDSgT7reF0i1f074V0rpvZTzHUYq23SGZoJR6ZzOPFmcCLTVYpwUrVMRwFPd4282I9JtF6g9W70nIr0ZfQ==}
     peerDependencies:
       preact: ^10.0.0
     peerDependenciesMeta:
       preact:
         optional: true
 
-  '@prosemirror-adapter/react@0.5.2':
-    resolution: {integrity: sha512-IpK+5ipN1IajzjGniSamfyXamOdZE7jZLbGMDlvlk/96gAyjPHiMlKQ44O50HbJ8dCNriGPw1AuqIldNUhSqjw==}
+  '@prosemirror-adapter/react@0.5.3':
+    resolution: {integrity: sha512-k/dpqT6FrC8vH/OeX9yZswQ3Acap1In4PeKj9SAh6BfMXPWOWFclU7K1mWwpD9aC1Va1npz+FZTMmXSsiQTsnw==}
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -3030,24 +3097,24 @@ packages:
       react-dom:
         optional: true
 
-  '@prosemirror-adapter/solid@0.5.2':
-    resolution: {integrity: sha512-bqzA2Lk7krhZXWrO2fHpP0GVTx7bjSKKU+i7eJrC1AvnJg82w8DlpclobryQ1OxhBsQEIMU+cgQ4fWgsdlwL/A==}
+  '@prosemirror-adapter/solid@0.5.3':
+    resolution: {integrity: sha512-KzQ9cUmE7bRQGZU+6VxfY49Nqst2JTwhyf79f9IenYOldDfpkmON1fG0Rdxp4rbXBM1PaprzOhuCquqeaEEftA==}
     peerDependencies:
       solid-js: ^1.8.22
     peerDependenciesMeta:
       solid-js:
         optional: true
 
-  '@prosemirror-adapter/svelte@0.5.2':
-    resolution: {integrity: sha512-+H7XXCIn1DECxyFj/QjkUgkZr64E4IHuxxaJZBxscoErU3eYjO6qyw8RdBG19K+oP5+27dZWKRRZHT6ximoQ0Q==}
+  '@prosemirror-adapter/svelte@0.5.3':
+    resolution: {integrity: sha512-5sJZ7FfbvWIO9B2rHebkrW1CkcSosTKY/c2zdpDPlVbD7lOmxp0A1vc8QtIe7lQNzDC+V8xPhXs2Gtf1OaBf0w==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
       svelte:
         optional: true
 
-  '@prosemirror-adapter/vue@0.5.2':
-    resolution: {integrity: sha512-SeDSTbCPyhgxNZBFAoNItzIRQP2+HAAxtlYkl7XYjlcSn5nXceUmRZGgZPGDRDw4Btysw2n07g005cAtiPhJWg==}
+  '@prosemirror-adapter/vue@0.5.3':
+    resolution: {integrity: sha512-k+qofvyTk6XXIOSdy1nzX0dQjk8tDf+HVJAj4E9GDBICeiwMiIvHcbgcpCvL+K1BuGm2zwlNFUNIFFq5ExQQhg==}
     peerDependencies:
       vue: ^3.0.0
     peerDependenciesMeta:
@@ -9521,6 +9588,8 @@ snapshots:
 
   '@ocavue/tsconfig@0.7.0': {}
 
+  '@ocavue/tsconfig@0.7.1': {}
+
   '@ocavue/utils@1.6.0': {}
 
   '@one-ini/wasm@0.1.1': {}
@@ -9895,25 +9964,25 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@prosemirror-adapter/core@0.5.2':
+  '@prosemirror-adapter/core@0.5.3':
     dependencies:
       '@ocavue/utils': 1.6.0
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.7
 
-  '@prosemirror-adapter/preact@0.5.2(preact@10.29.0)':
+  '@prosemirror-adapter/preact@0.5.3(preact@10.29.0)':
     dependencies:
-      '@prosemirror-adapter/core': 0.5.2
+      '@prosemirror-adapter/core': 0.5.3
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.7
     optionalDependencies:
       preact: 10.29.0
 
-  '@prosemirror-adapter/react@0.5.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@prosemirror-adapter/react@0.5.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@prosemirror-adapter/core': 0.5.2
+      '@prosemirror-adapter/core': 0.5.3
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.7
@@ -9921,27 +9990,27 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@prosemirror-adapter/solid@0.5.2(solid-js@1.9.11)':
+  '@prosemirror-adapter/solid@0.5.3(solid-js@1.9.11)':
     dependencies:
-      '@prosemirror-adapter/core': 0.5.2
+      '@prosemirror-adapter/core': 0.5.3
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.7
     optionalDependencies:
       solid-js: 1.9.11
 
-  '@prosemirror-adapter/svelte@0.5.2(svelte@5.55.0)':
+  '@prosemirror-adapter/svelte@0.5.3(svelte@5.55.0)':
     dependencies:
-      '@prosemirror-adapter/core': 0.5.2
+      '@prosemirror-adapter/core': 0.5.3
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.7
     optionalDependencies:
       svelte: 5.55.0
 
-  '@prosemirror-adapter/vue@0.5.2(vue@3.5.30(typescript@5.9.3))':
+  '@prosemirror-adapter/vue@0.5.3(vue@3.5.30(typescript@5.9.3))':
     dependencies:
-      '@prosemirror-adapter/core': 0.5.2
+      '@prosemirror-adapter/core': 0.5.3
       prosemirror-model: 1.25.4
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.7

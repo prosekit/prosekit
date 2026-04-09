@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.7.0-beta.0",
+  "version": "0.7.0-beta.1",
   "private": false,
   "description": "Vue components and utilities for ProseKit",
   "author": {
@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.5.2",
-    "@prosemirror-adapter/vue": "^0.5.2"
+    "@prosemirror-adapter/core": "^0.5.3",
+    "@prosemirror-adapter/vue": "^0.5.3"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"
@@ -63,11 +63,13 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "@vitejs/plugin-vue": "^6.0.5",
     "@vue/test-utils": "^2.4.6",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
+    "vitest-browser-vue": "^2.1.0",
     "vue": "^3.5.30"
   },
   "publishConfig": {

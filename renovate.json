@@ -1,5 +1,15 @@
 {
   "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["/aria-ui/"],
+      "allowedVersions": ">=0.1.0"
+    },
+    {
+      "matchPackageNames": ["oxfmt"],
+      "allowedVersions": ">=1.0.0"
+    }
+  ],
   "ignoreDeps": [
     "@prosekit/dev",
     "prosekit-website"

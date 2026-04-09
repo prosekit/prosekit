@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.20.0-beta.1
+
+### Patch Changes
+
+- [`db055ca`](https://github.com/ocavue/prosekit/commit/db055ca320304ff6c3d7dcab5796223bd9bec54d) ![](https://prosekit.dev/b/solid)
+
+  Prevent Solid node views from being destroyed and recreated on node attribute updates.
+
+- [`9481b68`](https://github.com/ocavue/prosekit/commit/9481b680e52a29bb711f1cebcb0f88aaa8a60b98) ![](https://prosekit.dev/b/vue)
+
+  Prevent Vue node views from being destroyed and recreated when the `props.selected` changes.
+
 ## 0.20.0-beta.0
 
 ### Minor Changes

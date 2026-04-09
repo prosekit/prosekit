@@ -21,9 +21,12 @@
     "@prosekit/vue": "0.6.8",
     "@prosekit/web": "0.7.13",
     "prosekit-registry": "0.0.0",
-    "prosekit-website": "0.0.0"
+    "prosekit-website": "0.0.0",
+    "@prosekit/testing": "0.0.0"
   },
   "changesets": [
-    "100-prerelease"
+    "100-prerelease",
+    "800-view-render-solid",
+    "810-view-render-vue"
   ]
 }

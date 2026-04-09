@@ -42,7 +42,7 @@
     "@changesets/cli": "^2.30.0",
     "@changesets/types": "^6.1.0",
     "@ocavue/eslint-config": "^4.3.5",
-    "@ocavue/tsconfig": "^0.7.0",
+    "@ocavue/tsconfig": "^0.7.1",
     "@size-limit/esbuild-why": "^12.0.1",
     "@size-limit/preset-small-lib": "^12.0.1",
     "@types/node": "catalog:",

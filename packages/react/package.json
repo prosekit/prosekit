@@ -48,8 +48,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.5.2",
-    "@prosemirror-adapter/react": "^0.5.2"
+    "@prosemirror-adapter/core": "^0.5.3",
+    "@prosemirror-adapter/react": "^0.5.3"
   },
   "peerDependencies": {
     "react": ">= 18.2.0",
@@ -67,12 +67,15 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vitest-browser-react": "^2.1.0"
   },
   "publishConfig": {
     "exports": {

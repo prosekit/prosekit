@@ -75,8 +75,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.5.2",
-    "@prosemirror-adapter/svelte": "^0.5.2"
+    "@prosemirror-adapter/core": "^0.5.3",
+    "@prosemirror-adapter/svelte": "^0.5.3"
   },
   "peerDependencies": {
     "svelte": ">= 5.0.0"
@@ -88,12 +88,17 @@
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "@sveltejs/package": "^2.5.7",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@types/node": "catalog:",
     "svelte": "^5.55.0",
     "svelte-check": "^4.4.5",
     "tsx": "^4.21.0",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vitest-browser-svelte": "^2.1.0"
   },
   "publishConfig": {
     "exports": {

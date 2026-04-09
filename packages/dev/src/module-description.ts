@@ -6,10 +6,11 @@ export function extractModuleDescription(
   if (!match) return undefined
 
   const body = match[1]
-  if (!body.includes('@module')) return undefined
+  const lines = body.split('\n').map(line => line.replace(/^\s*\*\s?/, ''))
+  if (!lines.some(line => /^\s*@module\b/.test(line))) return undefined
 
-  const lines = body.split('\n').map(line => line.replace(/^\s*\*\s?/, '')).filter(line => !line.includes('@module'))
-  const description = lines.join('\n').trim()
+  const descriptionLines = lines.filter(line => !/^\s*@module\b/.test(line))
+  const description = descriptionLines.join('\n').trim()
   if (!description) return undefined
   return description + '\n'
 }

@@ -1,7 +1,8 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/solid'
-import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/solid/popover'
+import type { OpenChangeEvent } from 'prosekit/solid/popover'
+import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/solid/popover'
 import { createSignal, createUniqueId, Show, type JSX } from 'solid-js'
 
 import { Button } from '../button'
@@ -60,11 +61,11 @@ export default function ImageUploadPopover(props: {
     deferResetState()
   }
 
-  const handleOpenChange = (isOpen: boolean) => {
-    if (!isOpen) {
+  const handleOpenChange = (event: OpenChangeEvent) => {
+    if (!event.open) {
       deferResetState()
     }
-    setOpen(isOpen)
+    setOpen(event.open)
   }
 
   return (
@@ -75,42 +76,44 @@ export default function ImageUploadPopover(props: {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-        <Show when={!file()}>
-          <label for={`id-link-${ariaId}`}>Embed Link</label>
-          <input
-            id={`id-link-${ariaId}`}
-            class="CSS_IMAGE_UPLOAD_INPUT"
-            placeholder="Paste the image link..."
-            type="url"
-            value={url()}
-            onInput={handleUrlChange}
-          />
-        </Show>
+      <PopoverPositioner>
+        <PopoverPopup class="CSS_IMAGE_UPLOAD_CARD">
+          <Show when={!file()}>
+            <label for={`id-link-${ariaId}`}>Embed Link</label>
+            <input
+              id={`id-link-${ariaId}`}
+              class="CSS_IMAGE_UPLOAD_INPUT"
+              placeholder="Paste the image link..."
+              type="url"
+              value={url()}
+              onInput={handleUrlChange}
+            />
+          </Show>
 
-        <Show when={!url()}>
-          <label for={`id-upload-${ariaId}`}>Upload</label>
-          <input
-            id={`id-upload-${ariaId}`}
-            class="CSS_IMAGE_UPLOAD_INPUT"
-            accept="image/*"
-            type="file"
-            onChange={handleFileChange}
-          />
-        </Show>
+          <Show when={!url()}>
+            <label for={`id-upload-${ariaId}`}>Upload</label>
+            <input
+              id={`id-upload-${ariaId}`}
+              class="CSS_IMAGE_UPLOAD_INPUT"
+              accept="image/*"
+              type="file"
+              onChange={handleFileChange}
+            />
+          </Show>
 
-        <Show when={url()}>
-          <button class="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
-            Insert Image
-          </button>
-        </Show>
+          <Show when={url()}>
+            <button class="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+              Insert Image
+            </button>
+          </Show>
 
-        <Show when={file()}>
-          <button class="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
-            Upload Image
-          </button>
-        </Show>
-      </PopoverContent>
+          <Show when={file()}>
+            <button class="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+              Upload Image
+            </button>
+          </Show>
+        </PopoverPopup>
+      </PopoverPositioner>
     </PopoverRoot>
   )
 }

@@ -4,7 +4,7 @@ import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor, useEditorDerivedValue } from 'prosekit/svelte'
-import { InlinePopover } from 'prosekit/svelte/inline-popover'
+import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/svelte/inline-popover'
 
 import { Button } from '../button'
 
@@ -89,110 +89,119 @@ function handleLinkUpdate(href?: string) {
 }
 </script>
 
-<InlinePopover
-  data-testid="inline-menu-main"
-  class="CSS_INLINE_MENU_MAIN"
-  onOpenChange={(open) => {
-    if (!open) linkMenuOpen = false
+<InlinePopoverRoot
+  onOpenChange={(event) => {
+    if (!event.open) linkMenuOpen = false
   }}
 >
-  {#if $items.bold}
-    <Button
-      pressed={$items.bold.isActive}
-      disabled={!$items.bold.canExec}
-      onClick={$items.bold.command}
-      tooltip="Bold"
+  <InlinePopoverPositioner>
+    <InlinePopoverPopup
+      data-testid="inline-menu-main"
+      class="CSS_INLINE_MENU_MAIN"
     >
-      <div class="CSS_ICON_BOLD"></div>
-    </Button>
-  {/if}
-  {#if $items.italic}
-    <Button
-      pressed={$items.italic.isActive}
-      disabled={!$items.italic.canExec}
-      onClick={$items.italic.command}
-      tooltip="Italic"
-    >
-      <div class="CSS_ICON_ITALIC"></div>
-    </Button>
-  {/if}
-  {#if $items.underline}
-    <Button
-      pressed={$items.underline.isActive}
-      disabled={!$items.underline.canExec}
-      onClick={$items.underline.command}
-      tooltip="Underline"
-    >
-      <div class="CSS_ICON_UNDERLINE"></div>
-    </Button>
-  {/if}
-  {#if $items.strike}
-    <Button
-      pressed={$items.strike.isActive}
-      disabled={!$items.strike.canExec}
-      onClick={$items.strike.command}
-      tooltip="Strikethrough"
-    >
-      <div class="CSS_ICON_STRIKETHROUGH"></div>
-    </Button>
-  {/if}
-  {#if $items.code}
-    <Button
-      pressed={$items.code.isActive}
-      disabled={!$items.code.canExec}
-      onClick={$items.code.command}
-      tooltip="Code"
-    >
-      <div class="CSS_ICON_CODE"></div>
-    </Button>
-  {/if}
-  {#if $items.link?.canExec && $items.link}
-    <Button
-      pressed={$items.link.isActive}
-      onClick={() => {
-        $items.link!.command()
-        toggleLinkMenuOpen()
-      }}
-      tooltip="Link"
-    >
-      <div class="CSS_ICON_LINK"></div>
-    </Button>
-  {/if}
-</InlinePopover>
+      {#if $items.bold}
+        <Button
+          pressed={$items.bold.isActive}
+          disabled={!$items.bold.canExec}
+          onClick={$items.bold.command}
+          tooltip="Bold"
+        >
+          <div class="CSS_ICON_BOLD"></div>
+        </Button>
+      {/if}
+      {#if $items.italic}
+        <Button
+          pressed={$items.italic.isActive}
+          disabled={!$items.italic.canExec}
+          onClick={$items.italic.command}
+          tooltip="Italic"
+        >
+          <div class="CSS_ICON_ITALIC"></div>
+        </Button>
+      {/if}
+      {#if $items.underline}
+        <Button
+          pressed={$items.underline.isActive}
+          disabled={!$items.underline.canExec}
+          onClick={$items.underline.command}
+          tooltip="Underline"
+        >
+          <div class="CSS_ICON_UNDERLINE"></div>
+        </Button>
+      {/if}
+      {#if $items.strike}
+        <Button
+          pressed={$items.strike.isActive}
+          disabled={!$items.strike.canExec}
+          onClick={$items.strike.command}
+          tooltip="Strikethrough"
+        >
+          <div class="CSS_ICON_STRIKETHROUGH"></div>
+        </Button>
+      {/if}
+      {#if $items.code}
+        <Button
+          pressed={$items.code.isActive}
+          disabled={!$items.code.canExec}
+          onClick={$items.code.command}
+          tooltip="Code"
+        >
+          <div class="CSS_ICON_CODE"></div>
+        </Button>
+      {/if}
+      {#if $items.link?.canExec && $items.link}
+        <Button
+          pressed={$items.link.isActive}
+          onClick={() => {
+            $items.link!.command()
+            toggleLinkMenuOpen()
+          }}
+          tooltip="Link"
+        >
+          <div class="CSS_ICON_LINK"></div>
+        </Button>
+      {/if}
+    </InlinePopoverPopup>
+  </InlinePopoverPositioner>
+</InlinePopoverRoot>
 
-<InlinePopover
-  placement="bottom"
+<InlinePopoverRoot
   defaultOpen={false}
   open={linkMenuOpen}
-  data-testid="inline-menu-link"
-  class="CSS_INLINE_MENU_LINK"
-  onOpenChange={(open) => {
-    linkMenuOpen = open
+  onOpenChange={(event) => {
+    linkMenuOpen = event.open
   }}
 >
-  {#if linkMenuOpen && $items.link}
-    <form
-      onsubmit={(event) => {
-        event.preventDefault()
-        const target = event.target as HTMLFormElement | null
-        const href = target?.querySelector('input')?.value?.trim()
-        handleLinkUpdate(href)
-      }}
+  <InlinePopoverPositioner placement="bottom">
+    <InlinePopoverPopup
+      data-testid="inline-menu-link"
+      class="CSS_INLINE_MENU_LINK"
     >
-      <input
-        placeholder="Paste the link..."
-        value={$items.link.currentLink || ''}
-        class="CSS_INLINE_MENU_LINK_INPUT"
-      />
-    </form>
-  {/if}
-  {#if $items.link?.isActive}
-    <button
-      class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
-      onclick={() => handleLinkUpdate()}
-      onmousedown={(e) => e.preventDefault()}
-    >
-      Remove link
-    </button>
-  {/if}
-</InlinePopover>
+      {#if linkMenuOpen && $items.link}
+        <form
+          onsubmit={(event) => {
+            event.preventDefault()
+            const target = event.target as HTMLFormElement | null
+            const href = target?.querySelector('input')?.value?.trim()
+            handleLinkUpdate(href)
+          }}
+        >
+          <input
+            placeholder="Paste the link..."
+            value={$items.link.currentLink || ''}
+            class="CSS_INLINE_MENU_LINK_INPUT"
+          />
+        </form>
+      {/if}
+      {#if $items.link?.isActive}
+        <button
+          class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
+          onclick={() => handleLinkUpdate()}
+          onmousedown={(e) => e.preventDefault()}
+        >
+          Remove link
+        </button>
+      {/if}
+    </InlinePopoverPopup>
+  </InlinePopoverPositioner>
+</InlinePopoverRoot>

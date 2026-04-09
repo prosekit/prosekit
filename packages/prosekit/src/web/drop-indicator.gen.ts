@@ -1,4 +1,10 @@
 /**
+ * ## Anatomy
+ *
+ * ```html
+ * <prosekit-drop-indicator></prosekit-drop-indicator>
+ * ```
+ *
  * @module prosekit/web/drop-indicator
  */
 

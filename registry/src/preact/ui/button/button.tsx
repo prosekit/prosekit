@@ -1,5 +1,5 @@
 import type { ComponentChild, MouseEventHandler } from 'preact'
-import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/preact/tooltip'
+import { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/preact/tooltip'
 
 export default function Button(props: {
   pressed?: boolean
@@ -27,9 +27,11 @@ export default function Button(props: {
       </TooltipTrigger>
       {props.tooltip
         ? (
-          <TooltipContent className="CSS_TOOLTIP_CONTENT">
-            {props.tooltip}
-          </TooltipContent>
+          <TooltipPositioner>
+            <TooltipPopup className="CSS_TOOLTIP_CONTENT">
+              {props.tooltip}
+            </TooltipPopup>
+          </TooltipPositioner>
         )
         : null}
     </TooltipRoot>

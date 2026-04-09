@@ -1,0 +1,68 @@
+import {
+  computed,
+  defineCustomElement,
+  defineProps,
+  registerCustomElement,
+  useEffect,
+  type HostElement,
+  type HostElementConstructor,
+  type PropsDeclaration,
+  type State,
+} from '@aria-ui/core'
+import { setupOverlayPositioner } from '@aria-ui/elements/overlay'
+import type { Placement } from '@floating-ui/dom'
+import { once } from '@ocavue/utils'
+
+import { useHTMLElementAt } from '../../utils/use-html-element-at.ts'
+
+import { SharedTableHandlePositionerPropsDeclaration, type SharedTableHandlePositionerProps } from './shared.ts'
+import { tableHandleStoreContext } from './store.ts'
+
+export interface TableHandleRowPositionerProps extends Omit<SharedTableHandlePositionerProps, 'placement'> {
+  /**
+   * The placement of the popover, relative to the hovered table cell.
+   *
+   * @default "left"
+   */
+  placement: Placement
+}
+
+/** @internal */
+export const TableHandleRowPositionerPropsDeclaration: PropsDeclaration<TableHandleRowPositionerProps> = defineProps<
+  TableHandleRowPositionerProps
+>({
+  ...SharedTableHandlePositionerPropsDeclaration,
+  placement: { default: 'left', attribute: 'placement', type: 'string' },
+})
+
+/** @internal */
+export function setupTableHandleRowPositioner(
+  host: HostElement,
+  props: State<TableHandleRowPositionerProps>,
+): void {
+  const getStore = tableHandleStoreContext.consume(host)
+  const getOverlayStore = () => getStore()?.rowOverlayStore
+  setupOverlayPositioner(host, props, getOverlayStore)
+
+  const getEditor = props.editor.get
+  const getRowFirstCellPos = computed(() => getStore()?.getReferenceCell()?.rowFirstCellPos)
+  const getReferenceCell = useHTMLElementAt(getEditor, getRowFirstCellPos)
+  useEffect(host, () => {
+    getOverlayStore()?.setAnchorElement(getReferenceCell())
+  })
+}
+
+const TableHandleRowPositionerElementBase: HostElementConstructor<TableHandleRowPositionerProps> = defineCustomElement(
+  setupTableHandleRowPositioner,
+  TableHandleRowPositionerPropsDeclaration,
+)
+
+/**
+ * @public
+ */
+export class TableHandleRowPositionerElement extends TableHandleRowPositionerElementBase {}
+
+/** @internal */
+export const registerTableHandleRowPositionerElement: VoidFunction = once(() => {
+  registerCustomElement('prosekit-table-handle-row-positioner', TableHandleRowPositionerElement)
+})

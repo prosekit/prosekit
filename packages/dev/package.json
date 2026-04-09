@@ -22,7 +22,6 @@
     "@changesets/read": "^0.6.7",
     "@ocavue/utils": "^1.6.0",
     "@types/node": "catalog:",
-    "change-case": "^5.4.4",
     "tsx": "^4.21.0",
     "type-fest": "^5.5.0",
     "typescript": "catalog:"

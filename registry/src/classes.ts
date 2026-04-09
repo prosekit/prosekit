@@ -41,7 +41,7 @@ const CSS_POPOVER_ANIMATE = cn(
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(
-  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-focused:bg-gray-100 dark:data-focused:bg-gray-800',
+  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800',
 )
 
 const CSS_BUTTON_BASE = cn(
@@ -170,7 +170,7 @@ export const CSS_IMAGE_UPLOAD_BUTTON = cn(
 
 export const CSS_IMAGE_RESIZABLE = cn(
   'relative flex items-center justify-center box-border overflow-hidden my-2 group',
-  'max-h-[600px] max-w-full min-h-[64px] min-w-[64px]',
+  'max-h-150 max-w-full min-h-16 min-w-16',
   'outline-2 outline-transparent data-selected:outline-blue-500 outline-solid',
 )
 
@@ -199,48 +199,71 @@ export const CSS_IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 export const CSS_DROP_CURSOR = cn('transition-all bg-blue-500')
 export const CSS_DROP_INDICATOR = cn('z-50 transition-all bg-blue-500')
 
-export const CSS_BLOCK_HANDLE_POPOVER = cn(
-  'flex items-center flex-row box-border justify-center transition border-0',
-  CSS_PRESENCE_ANIMATE,
+const CSS_HANDLER_POSITIONER_BASE = cn(
+  'block overflow-visible bg-transparent w-min h-min',
+  'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
+)
+const CSS_HANDLER_POPUP_BASE = cn(
+  'flex',
+  'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
+  'motion-safe:transition-discrete motion-safe:transition-all',
+  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
+  'data-[state=closed]:scale-90 starting:scale-90 scale-100',
 )
 
+export const CSS_BLOCK_HANDLE_POSITIONER = cn(CSS_HANDLER_POSITIONER_BASE)
+
+export const CSS_BLOCK_HANDLE_POPUP = cn(CSS_HANDLER_POPUP_BASE)
+
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  // h-6 currently matches a 24px paragraph line-height (with a 16px base font size and line-height 1.5); if the base font size changes, this equivalence may no longer hold.
-  'flex items-center box-border justify-center h-6 w-6 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-pointer',
+  // "h-6" currently matches a 24px paragraph line-height (with a 16px base font size and line-height 1.5); if the base font size changes, this equivalence may no longer hold.
+  'h-6 w-6',
+  'cursor-pointer',
+  'flex items-center box-border justify-center',
+  'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50',
 )
 
 export const CSS_BLOCK_HANDLE_DRAG = cn(
-  'flex items-center box-border justify-center h-6 w-5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 cursor-grab',
+  'h-6 w-5',
+  'cursor-grab',
+  'flex items-center box-border justify-center',
+  'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50',
 )
 
-const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-500/50 border border-gray-200 dark:border-gray-800 border-solid p-0',
-  'overflow-hidden',
-  'duration-150 transition-discrete transition',
-  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
-  'data-[state=closed]:scale-95 starting:scale-95 scale-100',
+export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = cn(CSS_HANDLER_POSITIONER_BASE)
+export const CSS_TABLE_HANDLE_ROW_POSITIONER = cn(CSS_HANDLER_POSITIONER_BASE)
+
+export const CSS_TABLE_HANDLE_COLUMN_POPUP = cn(
+  'translate-y-[50%]',
+  CSS_HANDLER_POPUP_BASE,
 )
 
-export const CSS_TABLE_COLUMN_HANDLE = cn(
-  'h-[1.2em] w-[1.5em] translate-y-[80%]',
-  CSS_TABLE_HANDLE_BASE,
+export const CSS_TABLE_HANDLE_ROW_POPUP = cn(
+  'ltr:translate-x-[50%] rtl:translate-x-[-50%]',
+  CSS_HANDLER_POPUP_BASE,
 )
 
-export const CSS_TABLE_ROW_HANDLE = cn(
-  'h-[1.5em] w-[1.2em] ltr:translate-x-[80%] rtl:translate-x-[-80%]',
-  CSS_TABLE_HANDLE_BASE,
+const CSS_TABLE_HANDLE_TRIGGER_BASE = cn(
+  'flex items-center box-border justify-center bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50 border border-gray-200 dark:border-gray-800 border-solid p-0 transition-colors',
+  'overflow-clip',
 )
 
 export const CSS_TABLE_COLUMN_HANDLE_TRIGGER = cn(
-  'flex items-center justify-center',
+  'h-4.5 w-6',
+  CSS_TABLE_HANDLE_TRIGGER_BASE,
 )
 
 export const CSS_TABLE_ROW_HANDLE_TRIGGER = cn(
-  'flex items-center justify-center',
+  'h-6 w-4.5',
+  CSS_TABLE_HANDLE_TRIGGER_BASE,
 )
 
-export const CSS_TABLE_HANDLE_MENU = cn(
-  'relative block max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1',
+export const CSS_TABLE_MENU_POSITIONER = cn(
+  'overflow-visible bg-transparent',
+)
+
+export const CSS_TABLE_MENU_POPUP = cn(
+  'relative block max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1 outline-none ',
   CSS_FLOATING_MENU,
 )
 
@@ -256,6 +279,7 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 )
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
+// TODO: add block to CSS_TOOLTIP_CONTENT
 export const CSS_TOOLTIP_CONTENT = cn(
   'z-50 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
   CSS_POPOVER_ANIMATE,
@@ -324,8 +348,8 @@ export const CSS_ICON_CLOSE = cn('i-lucide-x size-5 block')
 export const CSS_ICON_ARROW_LEFT = cn('i-lucide-arrow-left size-5 block')
 export const CSS_ICON_ARROW_RIGHT = cn('i-lucide-arrow-right size-5 block')
 export const CSS_ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right size-5 block')
-export const CSS_ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal size-5 block')
-export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical size-5 block')
+export const CSS_ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal size-5 min-h-5 min-w-5 block')
+export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical size-5 min-h-5 min-w-5 block')
 export const CSS_ICON_BLOCKQUOTE = cn('i-lucide-text-quote size-5 block')
 export const CSS_ICON_MINUS = cn('i-lucide-minus size-5 block')
 export const CSS_ICON_IMAGE_ERROR = cn('i-lucide-image-off size-8 block')

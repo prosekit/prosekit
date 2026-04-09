@@ -28,36 +28,40 @@
   "exports": {
     ".": "./src/index.ts",
     "./autocomplete": {
-      "svelte": "./src/components/autocomplete/index.gen.ts",
-      "default": "./src/components/autocomplete/index.gen.ts"
+      "svelte": "./src/components/autocomplete/index.ts",
+      "default": "./src/components/autocomplete/index.ts"
     },
     "./block-handle": {
-      "svelte": "./src/components/block-handle/index.gen.ts",
-      "default": "./src/components/block-handle/index.gen.ts"
+      "svelte": "./src/components/block-handle/index.ts",
+      "default": "./src/components/block-handle/index.ts"
     },
     "./drop-indicator": {
-      "svelte": "./src/components/drop-indicator/index.gen.ts",
-      "default": "./src/components/drop-indicator/index.gen.ts"
+      "svelte": "./src/components/drop-indicator/index.ts",
+      "default": "./src/components/drop-indicator/index.ts"
     },
     "./inline-popover": {
-      "svelte": "./src/components/inline-popover/index.gen.ts",
-      "default": "./src/components/inline-popover/index.gen.ts"
+      "svelte": "./src/components/inline-popover/index.ts",
+      "default": "./src/components/inline-popover/index.ts"
+    },
+    "./menu": {
+      "svelte": "./src/components/menu/index.ts",
+      "default": "./src/components/menu/index.ts"
     },
     "./popover": {
-      "svelte": "./src/components/popover/index.gen.ts",
-      "default": "./src/components/popover/index.gen.ts"
+      "svelte": "./src/components/popover/index.ts",
+      "default": "./src/components/popover/index.ts"
     },
     "./resizable": {
-      "svelte": "./src/components/resizable/index.gen.ts",
-      "default": "./src/components/resizable/index.gen.ts"
+      "svelte": "./src/components/resizable/index.ts",
+      "default": "./src/components/resizable/index.ts"
     },
     "./table-handle": {
-      "svelte": "./src/components/table-handle/index.gen.ts",
-      "default": "./src/components/table-handle/index.gen.ts"
+      "svelte": "./src/components/table-handle/index.ts",
+      "default": "./src/components/table-handle/index.ts"
     },
     "./tooltip": {
-      "svelte": "./src/components/tooltip/index.gen.ts",
-      "default": "./src/components/tooltip/index.gen.ts"
+      "svelte": "./src/components/tooltip/index.ts",
+      "default": "./src/components/tooltip/index.ts"
     }
   },
   "files": [
@@ -126,6 +130,11 @@
         "svelte": "./dist/prosekit-svelte-inline-popover.js",
         "default": "./dist/prosekit-svelte-inline-popover.js"
       },
+      "./menu": {
+        "types": "./dist/prosekit-svelte-menu.d.ts",
+        "svelte": "./dist/prosekit-svelte-menu.js",
+        "default": "./dist/prosekit-svelte-menu.js"
+      },
       "./popover": {
         "types": "./dist/prosekit-svelte-popover.d.ts",
         "svelte": "./dist/prosekit-svelte-popover.js",
@@ -168,6 +177,9 @@
         "inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"
         ],
+        "menu": [
+          "./dist/prosekit-svelte-menu.d.ts"
+        ],
         "popover": [
           "./dist/prosekit-svelte-popover.d.ts"
         ],
@@ -186,14 +198,15 @@
   "dev": {
     "entry": {
       "prosekit-svelte": "./src/index.ts",
-      "prosekit-svelte-autocomplete": "./src/components/autocomplete/index.gen.ts",
-      "prosekit-svelte-block-handle": "./src/components/block-handle/index.gen.ts",
-      "prosekit-svelte-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
-      "prosekit-svelte-inline-popover": "./src/components/inline-popover/index.gen.ts",
-      "prosekit-svelte-popover": "./src/components/popover/index.gen.ts",
-      "prosekit-svelte-resizable": "./src/components/resizable/index.gen.ts",
-      "prosekit-svelte-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts"
+      "prosekit-svelte-autocomplete": "./src/components/autocomplete/index.ts",
+      "prosekit-svelte-block-handle": "./src/components/block-handle/index.ts",
+      "prosekit-svelte-drop-indicator": "./src/components/drop-indicator/index.ts",
+      "prosekit-svelte-inline-popover": "./src/components/inline-popover/index.ts",
+      "prosekit-svelte-menu": "./src/components/menu/index.ts",
+      "prosekit-svelte-popover": "./src/components/popover/index.ts",
+      "prosekit-svelte-resizable": "./src/components/resizable/index.ts",
+      "prosekit-svelte-table-handle": "./src/components/table-handle/index.ts",
+      "prosekit-svelte-tooltip": "./src/components/tooltip/index.ts"
     }
   }
 }

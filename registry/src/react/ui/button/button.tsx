@@ -1,4 +1,4 @@
-import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/react/tooltip'
+import { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/react/tooltip'
 import type { MouseEventHandler, ReactNode } from 'react'
 
 export default function Button(props: {
@@ -27,9 +27,11 @@ export default function Button(props: {
       </TooltipTrigger>
       {props.tooltip
         ? (
-          <TooltipContent className="CSS_TOOLTIP_CONTENT">
-            {props.tooltip}
-          </TooltipContent>
+          <TooltipPositioner>
+            <TooltipPopup className="CSS_TOOLTIP_CONTENT">
+              {props.tooltip}
+            </TooltipPopup>
+          </TooltipPositioner>
         )
         : null}
     </TooltipRoot>

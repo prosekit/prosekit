@@ -1,4 +1,5 @@
 import 'prosekit/lit/table-handle'
+import 'prosekit/web/menu'
 
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement, nothing, type PropertyDeclaration, type PropertyValues } from 'lit'
@@ -105,128 +106,140 @@ class LitTableHandle extends LitElement {
     return html`<prosekit-table-handle-root .editor=${editor} class="contents">
       <prosekit-table-handle-drag-preview .editor=${editor}></prosekit-table-handle-drag-preview>
       <prosekit-table-handle-drop-indicator .editor=${editor}></prosekit-table-handle-drop-indicator>
-      <prosekit-table-handle-column-root .editor=${editor} class="CSS_TABLE_COLUMN_HANDLE">
-        <prosekit-table-handle-column-trigger .editor=${editor} class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
-          <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
-        </prosekit-table-handle-column-trigger>
-        <prosekit-table-handle-popover-content class="CSS_TABLE_HANDLE_MENU">
-          ${
-            state.addTableColumnBefore.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.addTableColumnBefore.command}
-              >
-                <span>Insert Left</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.addTableColumnAfter.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.addTableColumnAfter.command}
-              >
-                <span>Insert Right</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.deleteCellSelection.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.deleteCellSelection.command}
-              >
-                <span>Clear Contents</span>
-                <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.deleteTableColumn.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.deleteTableColumn.command}
-              >
-                <span>Delete Column</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.deleteTable.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                data-danger=""
-                @select=${state.deleteTable.command}
-              >
-                <span>Delete Table</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-        </prosekit-table-handle-popover-content>
-      </prosekit-table-handle-column-root>
-      <prosekit-table-handle-row-root
+      <prosekit-table-handle-column-positioner .editor=${editor} class="CSS_TABLE_HANDLE_COLUMN_POSITIONER">
+        <prosekit-table-handle-column-popup class="CSS_TABLE_HANDLE_COLUMN_POPUP">
+          <prosekit-table-handle-column-menu-root class="contents">
+            <prosekit-table-handle-column-menu-trigger .editor=${editor} class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
+              <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
+            </prosekit-table-handle-column-menu-trigger>
+            <prosekit-menu-positioner class="CSS_TABLE_MENU_POSITIONER">
+              <prosekit-menu-popup class="CSS_TABLE_MENU_POPUP">
+                ${
+                  state.addTableColumnBefore.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.addTableColumnBefore.command}
+                    >
+                      <span>Insert Left</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.addTableColumnAfter.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.addTableColumnAfter.command}
+                    >
+                      <span>Insert Right</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.deleteCellSelection.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.deleteCellSelection.command}
+                    >
+                      <span>Clear Contents</span>
+                      <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.deleteTableColumn.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.deleteTableColumn.command}
+                    >
+                      <span>Delete Column</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.deleteTable.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      data-danger=""
+                      @select=${state.deleteTable.command}
+                    >
+                      <span>Delete Table</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+              </prosekit-menu-popup>
+            </prosekit-menu-positioner>
+          </prosekit-table-handle-column-menu-root>
+        </prosekit-table-handle-column-popup>
+      </prosekit-table-handle-column-positioner>
+      <prosekit-table-handle-row-positioner
         .editor=${editor}
-        placement=${placement}
-        class="CSS_TABLE_ROW_HANDLE"
+        .placement=${placement}
+        class="CSS_TABLE_HANDLE_ROW_POSITIONER"
       >
-        <prosekit-table-handle-row-trigger .editor=${editor} class="CSS_TABLE_ROW_HANDLE_TRIGGER">
-          <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
-        </prosekit-table-handle-row-trigger>
-        <prosekit-table-handle-popover-content class="CSS_TABLE_HANDLE_MENU">
-          ${
-            state.addTableRowAbove.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.addTableRowAbove.command}
-              >
-                <span>Insert Above</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.addTableRowBelow.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.addTableRowBelow.command}
-              >
-                <span>Insert Below</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.deleteCellSelection.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.deleteCellSelection.command}
-              >
-                <span>Clear Contents</span>
-                <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.deleteTableRow.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                @select=${state.deleteTableRow.command}
-              >
-                <span>Delete Row</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-          ${
-            state.deleteTable.canExec
-              ? html`<prosekit-table-handle-popover-item
-                class="CSS_TABLE_CELL_MENU_ITEM"
-                data-danger=""
-                @select=${state.deleteTable.command}
-              >
-                <span>Delete Table</span>
-              </prosekit-table-handle-popover-item>`
-              : nothing
-          }
-        </prosekit-table-handle-popover-content>
-      </prosekit-table-handle-row-root>
+        <prosekit-table-handle-row-popup class="CSS_TABLE_HANDLE_ROW_POPUP">
+          <prosekit-table-handle-row-menu-root class="contents">
+            <prosekit-table-handle-row-menu-trigger .editor=${editor} class="CSS_TABLE_ROW_HANDLE_TRIGGER">
+              <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
+            </prosekit-table-handle-row-menu-trigger>
+            <prosekit-menu-positioner class="CSS_TABLE_MENU_POSITIONER">
+              <prosekit-menu-popup class="CSS_TABLE_MENU_POPUP">
+                ${
+                  state.addTableRowAbove.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.addTableRowAbove.command}
+                    >
+                      <span>Insert Above</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.addTableRowBelow.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.addTableRowBelow.command}
+                    >
+                      <span>Insert Below</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.deleteCellSelection.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.deleteCellSelection.command}
+                    >
+                      <span>Clear Contents</span>
+                      <span class="CSS_TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.deleteTableRow.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      @select=${state.deleteTableRow.command}
+                    >
+                      <span>Delete Row</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+                ${
+                  state.deleteTable.canExec
+                    ? html`<prosekit-menu-item
+                      class="CSS_TABLE_CELL_MENU_ITEM"
+                      data-danger=""
+                      @select=${state.deleteTable.command}
+                    >
+                      <span>Delete Table</span>
+                    </prosekit-menu-item>`
+                    : nothing
+                }
+              </prosekit-menu-popup>
+            </prosekit-menu-positioner>
+          </prosekit-table-handle-row-menu-root>
+        </prosekit-table-handle-row-popup>
+      </prosekit-table-handle-row-positioner>
     </prosekit-table-handle-root>`
   }
 }

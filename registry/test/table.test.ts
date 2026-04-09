@@ -1,4 +1,5 @@
 import { beforeEach, expect, it } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 import { page, type Locator } from 'vitest/browser'
 
 import {
@@ -53,6 +54,7 @@ testStory(['table', 'full'], () => {
     const {
       rowHandle,
       colHandle,
+      openMenu,
       hoverCell,
       expectCellSelectionToBe,
     } = await setup()
@@ -69,6 +71,11 @@ testStory(['table', 'full'], () => {
       ['A2', 'B2', 'C2', 'D2'],
     )
 
+    // Dismiss the menu
+    await expectLocatorToHaveCount(openMenu, 1)
+    await keyboard.press('Escape')
+    await expectLocatorToHaveCount(openMenu, 0)
+
     // Row handle selects the second row
     await hoverCell('C2')
     await rowHandle.click()
@@ -77,6 +84,11 @@ testStory(['table', 'full'], () => {
       ['A1', 'B1', 'C1', 'D1'],
     )
 
+    // Dismiss the menu
+    await expectLocatorToHaveCount(openMenu, 1)
+    await keyboard.press('Escape')
+    await expectLocatorToHaveCount(openMenu, 0)
+
     // Column handle selects the first column
     await hoverCell('A2')
     await colHandle.click()
@@ -84,6 +96,11 @@ testStory(['table', 'full'], () => {
       ['A1', 'A2'],
       ['B1', 'B2', 'C1', 'C2', 'D1', 'D2'],
     )
+
+    // Dismiss the menu
+    await expectLocatorToHaveCount(openMenu, 1)
+    await keyboard.press('Escape')
+    await expectLocatorToHaveCount(openMenu, 0)
 
     // Column handle selects the last column
     await hoverCell('D1')
@@ -124,7 +141,8 @@ testStory(['table', 'full'], () => {
 
     // Click menu item again
     await expectLocatorToHaveCount(openMenu, 0)
-    await colHandle.click()
+    await hoverCell('A1')
+    await colHandle.click({ timeout: 10_000 })
     await expectLocatorToHaveCount(openMenu, 1)
     await expect.element(insertRight).toBeVisible()
     await insertRight.click()
@@ -257,19 +275,19 @@ async function setup() {
 
   await unhover()
 
-  const rowHandle = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-row-trigger')
-  const colHandle = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-column-trigger')
-  const openMenu = page.locate('prosekit-table-handle-popover-content[data-state="open"]')
+  const rowHandle = page.locate('prosekit-table-handle-row-popup[data-state="open"]').locate('prosekit-table-handle-row-menu-trigger')
+  const colHandle = page.locate('prosekit-table-handle-column-popup[data-state="open"]').locate('prosekit-table-handle-column-menu-trigger')
+  const openMenu = page.locate('prosekit-table-handle-root').locate('prosekit-menu-popup[data-state="open"]')
 
-  const rowMenu = page.locate('prosekit-table-handle-row-root[data-state="open"]').locate('prosekit-table-handle-popover-content')
-  const colMenu = page.locate('prosekit-table-handle-column-root[data-state="open"]').locate('prosekit-table-handle-popover-content')
+  const rowMenu = page.locate('prosekit-table-handle-row-menu-root').locate('prosekit-menu-popup')
+  const colMenu = page.locate('prosekit-table-handle-column-menu-root').locate('prosekit-menu-popup')
 
   const getRowMenuItem = (text: string) => {
-    return rowMenu.locate('prosekit-table-handle-popover-item', { hasText: text }).last()
+    return rowMenu.locate('prosekit-menu-item', { hasText: text }).last()
   }
 
   const getColumnMenuItem = (text: string) => {
-    return colMenu.locate('prosekit-table-handle-popover-item', { hasText: text }).first()
+    return colMenu.locate('prosekit-menu-item', { hasText: text }).first()
   }
 
   const getCell = (cell: string | Locator) => {
@@ -304,6 +322,13 @@ async function setup() {
   }
 
   const hoverCell = async (cell: Locator | string) => {
+    {
+      const message = 'Column and row menu should not be visible before hovering a cell'
+      const timeout = 5_000
+      await expect.element(rowMenu, { message, timeout }).not.toBeVisible()
+      await expect.element(colMenu, { message, timeout }).not.toBeVisible()
+    }
+
     const cellLocator = getCell(cell)
 
     // Reset the hover state

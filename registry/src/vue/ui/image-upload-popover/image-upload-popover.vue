@@ -2,7 +2,7 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/vue'
-import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/vue/popover'
+import { OpenChangeEvent, PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/vue/popover'
 import { ref, useId } from 'vue'
 
 import { Button } from '../button'
@@ -61,11 +61,11 @@ function handleSubmit() {
   deferResetState()
 }
 
-function handleOpenChange(isOpen: boolean) {
-  if (!isOpen) {
+function handleOpenChange(event: OpenChangeEvent) {
+  if (!event.open) {
     deferResetState()
   }
-  open.value = isOpen
+  open.value = event.open
 }
 </script>
 
@@ -77,35 +77,35 @@ function handleOpenChange(isOpen: boolean) {
       </Button>
     </PopoverTrigger>
 
-    <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-      <label v-if="!file" :for="`id-link-${ariaId}`">Embed Link</label>
-      <input
-        v-if="!file"
-        :id="`id-link-${ariaId}`"
-        class="CSS_IMAGE_UPLOAD_INPUT"
-        placeholder="Paste the image link..."
-        type="url"
-        :value="url"
-        @input="handleUrlChange"
-      />
+    <PopoverPositioner><PopoverPopup class="CSS_IMAGE_UPLOAD_CARD">
+        <label v-if="!file" :for="`id-link-${ariaId}`">Embed Link</label>
+        <input
+          v-if="!file"
+          :id="`id-link-${ariaId}`"
+          class="CSS_IMAGE_UPLOAD_INPUT"
+          placeholder="Paste the image link..."
+          type="url"
+          :value="url"
+          @input="handleUrlChange"
+        />
 
-      <label v-if="!url" :for="`id-upload-${ariaId}`">Upload</label>
-      <input
-        v-if="!url"
-        :id="`id-upload-${ariaId}`"
-        class="CSS_IMAGE_UPLOAD_INPUT"
-        accept="image/*"
-        type="file"
-        @change="handleFileChange"
-      />
+        <label v-if="!url" :for="`id-upload-${ariaId}`">Upload</label>
+        <input
+          v-if="!url"
+          :id="`id-upload-${ariaId}`"
+          class="CSS_IMAGE_UPLOAD_INPUT"
+          accept="image/*"
+          type="file"
+          @change="handleFileChange"
+        />
 
-      <button v-if="url" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
-        Insert Image
-      </button>
+        <button v-if="url" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
+          Insert Image
+        </button>
 
-      <button v-if="file" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
-        Upload Image
-      </button>
-    </PopoverContent>
+        <button v-if="file" class="CSS_IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
+          Upload Image
+        </button>
+      </PopoverPopup></PopoverPositioner>
   </PopoverRoot>
 </template>

@@ -1,7 +1,6 @@
 import 'prosekit/lit/autocomplete'
 
 import { html, LitElement } from 'lit'
-import type { AutocompleteItemEvents } from 'prosekit/web/autocomplete'
 
 class SlashMenuItemElement extends LitElement {
   static override properties = {
@@ -22,8 +21,9 @@ class SlashMenuItemElement extends LitElement {
     return this
   }
 
-  handleSelect = (event: AutocompleteItemEvents['select']) => {
-    this.dispatchEvent(new CustomEvent('select', { detail: event.detail }))
+  // TODO: maybe this should changed to valueChange event??
+  handleSelect = () => {
+    this.dispatchEvent(new CustomEvent('select'))
   }
 
   override render() {
@@ -31,8 +31,7 @@ class SlashMenuItemElement extends LitElement {
       @select=${this.handleSelect}
       class="CSS_AUTOCOMPLETE_MENU_ITEM"
     >
-      <span>${this.label}</span>
-      ${this.kbd ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>` : ''}
+      <span>${this.label}</span>${this.kbd ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>` : ''}
     </prosekit-autocomplete-item>`
   }
 }

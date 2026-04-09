@@ -1,16 +1,18 @@
-import { createContext, type Context } from '@aria-ui/core'
+import { createContext, type Context, type Signal } from '@aria-ui/core'
+import type { ItemFilter } from '@aria-ui/elements/listbox'
+import type { OverlayStore } from '@aria-ui/elements/overlay'
 
-export const queryContext: Context<string> = createContext(
-  'prosekit/autocomplete-popover/query',
-  '',
-)
+/**
+ * @internal
+ */
+export interface AutocompleteStore {
+  overlayStore: OverlayStore
+  query: Signal<string>
+  eventTarget: Signal<EventTarget | null>
+  filter: Signal<ItemFilter | null>
+}
 
-export const onSubmitContext: Context<VoidFunction | null> = createContext(
-  'prosekit/autocomplete-popover/onSubmit',
-  null,
-)
-
-export const openContext: Context<boolean> = createContext(
-  'prosekit/autocomplete-popover/open',
-  false,
-)
+/**
+ * @internal
+ */
+export const autocompleteStoreContext: Context<AutocompleteStore> = createContext<AutocompleteStore>('prosekit-autocomplete-store')

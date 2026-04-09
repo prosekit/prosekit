@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/vue/tooltip'
+import { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/vue/tooltip'
 
 const props = defineProps<{
   pressed?: boolean
@@ -23,8 +23,10 @@ const props = defineProps<{
         <span v-if="props.tooltip" class="sr-only">{{ props.tooltip }}</span>
       </button>
     </TooltipTrigger>
-    <TooltipContent v-if="props.tooltip" class="CSS_TOOLTIP_CONTENT">
-      {{ props.tooltip }}
-    </TooltipContent>
+    <TooltipPositioner v-if="props.tooltip">
+      <TooltipPopup class="CSS_TOOLTIP_CONTENT">
+        {{ props.tooltip }}
+      </TooltipPopup>
+    </TooltipPositioner>
   </TooltipRoot>
 </template>

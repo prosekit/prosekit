@@ -1,6 +1,6 @@
 import type { Editor, Keymap } from 'prosekit/core'
 import { useEditorDerivedValue, useKeymap } from 'prosekit/react'
-import { InlinePopover } from 'prosekit/react/inline-popover'
+import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/react/inline-popover'
 import { useMemo, useState } from 'react'
 
 import { Button } from '../../ui/button'
@@ -79,51 +79,54 @@ export default function InlineMenu() {
   useKeymap(keymap)
 
   return (
-    <InlinePopover
-      className="CSS_INLINE_MENU_MAIN"
+    <InlinePopoverRoot
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={(event) => setOpen(event.open)}
     >
-      <div className="flex flex-col gap-4 p-4">
-        <div className="flex flex-col gap-2">
-          <div className="text-sm">Text color</div>
-          <div className="grid grid-cols-5 gap-1">
-            {textColorState.map((color) => (
-              <Button
-                key={color.label}
-                pressed={color.isActive}
-                tooltip={`Text: ${color.label}`}
-                onClick={color.onClick}
-              >
-                <span
-                  className="text-base font-medium"
-                  style={{ color: color.value }}
-                >
-                  A
-                </span>
-              </Button>
-            ))}
+      <InlinePopoverPositioner>
+        <InlinePopoverPopup className="CSS_INLINE_MENU_MAIN">
+          <div className="flex flex-col gap-4 p-4">
+            <div className="flex flex-col gap-2">
+              <div className="text-sm">Text color</div>
+              <div className="grid grid-cols-5 gap-1">
+                {textColorState.map((color) => (
+                  <Button
+                    key={color.label}
+                    pressed={color.isActive}
+                    tooltip={`Text: ${color.label}`}
+                    onClick={color.onClick}
+                  >
+                    <span
+                      className="text-base font-medium"
+                      style={{ color: color.value }}
+                    >
+                      A
+                    </span>
+                  </Button>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="text-sm">Background color</div>
+              <div className="grid grid-cols-5 gap-1">
+                {backgroundColorState.map((color) => (
+                  <Button
+                    key={color.label}
+                    pressed={color.isActive}
+                    tooltip={`Background: ${color.label}`}
+                    onClick={color.onClick}
+                  >
+                    <div
+                      className="w-6 h-6 rounded border border-gray-200 dark:border-gray-700"
+                      style={{ backgroundColor: color.value }}
+                    />
+                  </Button>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="text-sm">Background color</div>
-          <div className="grid grid-cols-5 gap-1">
-            {backgroundColorState.map((color) => (
-              <Button
-                key={color.label}
-                pressed={color.isActive}
-                tooltip={`Background: ${color.label}`}
-                onClick={color.onClick}
-              >
-                <div
-                  className="w-6 h-6 rounded border border-gray-200 dark:border-gray-700"
-                  style={{ backgroundColor: color.value }}
-                />
-              </Button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </InlinePopover>
+        </InlinePopoverPopup>
+      </InlinePopoverPositioner>
+    </InlinePopoverRoot>
   )
 }

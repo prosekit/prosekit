@@ -48,9 +48,11 @@ class LitButton extends LitElement {
         ${
           tooltip
             ? html`
-              <prosekit-tooltip-content class="CSS_TOOLTIP_CONTENT">
-                ${tooltip}
-              </prosekit-tooltip-content>
+              <prosekit-tooltip-positioner>
+                <prosekit-tooltip-popup class="CSS_TOOLTIP_CONTENT">
+                  ${tooltip}
+                </prosekit-tooltip-popup>
+              </prosekit-tooltip-positioner>
             `
             : nothing
         }

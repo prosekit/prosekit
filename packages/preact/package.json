@@ -27,14 +27,15 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./autocomplete": "./src/components/autocomplete/index.gen.ts",
-    "./block-handle": "./src/components/block-handle/index.gen.ts",
-    "./drop-indicator": "./src/components/drop-indicator/index.gen.ts",
-    "./inline-popover": "./src/components/inline-popover/index.gen.ts",
-    "./popover": "./src/components/popover/index.gen.ts",
-    "./resizable": "./src/components/resizable/index.gen.ts",
-    "./table-handle": "./src/components/table-handle/index.gen.ts",
-    "./tooltip": "./src/components/tooltip/index.gen.ts"
+    "./autocomplete": "./src/components/autocomplete/index.ts",
+    "./block-handle": "./src/components/block-handle/index.ts",
+    "./drop-indicator": "./src/components/drop-indicator/index.ts",
+    "./inline-popover": "./src/components/inline-popover/index.ts",
+    "./menu": "./src/components/menu/index.ts",
+    "./popover": "./src/components/popover/index.ts",
+    "./resizable": "./src/components/resizable/index.ts",
+    "./table-handle": "./src/components/table-handle/index.ts",
+    "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
     "dist",
@@ -92,6 +93,10 @@
         "types": "./dist/prosekit-preact-inline-popover.d.ts",
         "default": "./dist/prosekit-preact-inline-popover.js"
       },
+      "./menu": {
+        "types": "./dist/prosekit-preact-menu.d.ts",
+        "default": "./dist/prosekit-preact-menu.js"
+      },
       "./popover": {
         "types": "./dist/prosekit-preact-popover.d.ts",
         "default": "./dist/prosekit-preact-popover.js"
@@ -130,6 +135,9 @@
         "inline-popover": [
           "./dist/prosekit-preact-inline-popover.d.ts"
         ],
+        "menu": [
+          "./dist/prosekit-preact-menu.d.ts"
+        ],
         "popover": [
           "./dist/prosekit-preact-popover.d.ts"
         ],
@@ -148,14 +156,15 @@
   "dev": {
     "entry": {
       "prosekit-preact": "./src/index.ts",
-      "prosekit-preact-autocomplete": "./src/components/autocomplete/index.gen.ts",
-      "prosekit-preact-block-handle": "./src/components/block-handle/index.gen.ts",
-      "prosekit-preact-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
-      "prosekit-preact-inline-popover": "./src/components/inline-popover/index.gen.ts",
-      "prosekit-preact-popover": "./src/components/popover/index.gen.ts",
-      "prosekit-preact-resizable": "./src/components/resizable/index.gen.ts",
-      "prosekit-preact-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-preact-tooltip": "./src/components/tooltip/index.gen.ts"
+      "prosekit-preact-autocomplete": "./src/components/autocomplete/index.ts",
+      "prosekit-preact-block-handle": "./src/components/block-handle/index.ts",
+      "prosekit-preact-drop-indicator": "./src/components/drop-indicator/index.ts",
+      "prosekit-preact-inline-popover": "./src/components/inline-popover/index.ts",
+      "prosekit-preact-menu": "./src/components/menu/index.ts",
+      "prosekit-preact-popover": "./src/components/popover/index.ts",
+      "prosekit-preact-resizable": "./src/components/resizable/index.ts",
+      "prosekit-preact-table-handle": "./src/components/table-handle/index.ts",
+      "prosekit-preact-tooltip": "./src/components/tooltip/index.ts"
     }
   }
 }

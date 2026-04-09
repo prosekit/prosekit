@@ -44,10 +44,15 @@ export async function buildUmbrellaPackageJson(): Promise<void> {
       }
 
       let description: string | undefined
-      if (sourceRelativePath && !sourceRelativePath.endsWith('.css')) {
+      if (sourceRelativePath.endsWith('.ts')) {
         const sourceFilePath = path.join(pkg.relativeDir, sourceRelativePath)
         const content = await vfs.read(sourceFilePath)
         description = extractModuleDescription(content)
+      } else if (sourceRelativePath.endsWith('.css') || !sourceRelativePath) continue
+      else {
+        throw new TypeError(
+          `Unexpected export path for entry "${entry}" in package "${packageName}": ${sourceRelativePath}`,
+        )
       }
 
       await ensureEntry({

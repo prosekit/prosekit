@@ -9,16 +9,16 @@ export function extractModuleDescription(
   if (!body.includes('@module')) return undefined
 
   const lines = body.split('\n').map(line => line.replace(/^\s*\*\s?/, '')).filter(line => !line.includes('@module'))
-  return lines.join('\n').trim() || undefined
+  const description = lines.join('\n').trim()
+  if (!description) return undefined
+  return description + "\n"
 }
 
 
 export function formatModuleDescription(moduleName: string, description?: string): string {
   return [
     `/**`,
-    ...(description
-      ? [...description.split('\n').map(line => ` * ${line}`), ` *`]
-      : []),
+    ...(description || "").split('\n').map(line => ` * ${line}`),
     ` * @module ${moduleName}`,
     ` */`,
   ].join('\n')

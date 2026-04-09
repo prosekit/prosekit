@@ -50,8 +50,7 @@ export async function buildUmbrellaPackageJson(): Promise<void> {
         description = extractModuleDescription(content)
       } else if (sourceRelativePath.endsWith('.css') || !sourceRelativePath) {
         description = undefined
-      }
-      else {
+      } else {
         throw new TypeError(
           `Unexpected export path for entry "${entry}" in package "${packageName}": ${sourceRelativePath}`,
         )

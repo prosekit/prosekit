@@ -4,6 +4,8 @@ sidebar:
   label: core
 ---
 
+The core module of ProseKit.
+
 ## Classes
 
 ### Editor {#editor}

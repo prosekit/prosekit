@@ -4,6 +4,8 @@ sidebar:
   label: extensions/readonly
 ---
 
+Marks the editor as read-only.
+
 ## Functions
 
 ### defineReadonly() {#definereadonly}

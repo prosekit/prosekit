@@ -4,6 +4,8 @@ sidebar:
   label: core/test
 ---
 
+Some utilities for testing ProseKit.
+
 ## Interfaces
 
 ### TestEditor {#testeditor}

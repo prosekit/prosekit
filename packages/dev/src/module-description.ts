@@ -16,9 +16,13 @@ export function extractModuleDescription(
 
 
 export function formatModuleDescription(moduleName: string, description?: string): string {
+  if (!description) {
+    return `/**\n * @module ${moduleName}\n */`
+  }
+
   return [
     `/**`,
-    ...(description || "").split('\n').map(line => ` * ${line}`),
+    ...(description  ).split('\n').map(line => ` * ${line}`.trimEnd()),
     ` * @module ${moduleName}`,
     ` */`,
   ].join('\n')

@@ -45,7 +45,7 @@ function getTableHandleState(editor: Editor<TableExtension>) {
   }
 }
 
-export class LitTableHandle extends LitElement {
+class LitTableHandle extends LitElement {
   static override properties = {
     dir: { type: String } satisfies PropertyDeclaration<'ltr' | 'rtl'>,
   }

@@ -17,7 +17,7 @@
     "ci:publish:latest": "pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:publish:beta": "pnpm publish --access public -r --no-git-checks --tag beta",
     "ci:publish:snapshot": "pnpx pkg-pr-new publish --pnpm './packages/*'",
-    "fix": "pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:eslint && pnpm run fix:oxfmt && pnpm run fix:dprint",
+    "fix": "pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:oxfmt && pnpm run fix:dprint && pnpm run fix:eslint",
     "fix:oxfmt": "oxfmt --write ./registry/src/lit/",
     "fix:dprint": "dprint fmt",
     "fix:eslint": "eslint . --fix --cache",

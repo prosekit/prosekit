@@ -36,10 +36,15 @@ export async function buildUmbrellaPackageJson(): Promise<void> {
     Object.assign(pkgPeerDependencies, packageJson.peerDependencies)
     Object.assign(pkgPeerDependenciesMeta, packageJson.peerDependenciesMeta)
 
-    for (const [entry, sourceRelativePath] of Object.entries(exportsMap)) {
-      if (typeof sourceRelativePath !== 'string') {
+    for (const [entry, exportValue] of Object.entries(exportsMap)) {
+      let sourceRelativePath: string
+      if (typeof exportValue === 'string') {
+        sourceRelativePath = exportValue
+      } else if (typeof exportValue === 'object' && exportValue !== null) {
+        sourceRelativePath = exportValue.import ?? exportValue.default
+      } else {
         throw new TypeError(
-          `Unexpected non-string export value for entry "${entry}" in package "${packageName}"`,
+          `Unexpected export value for entry "${entry}" in package "${packageName}": ${exportValue}`,
         )
       }
 

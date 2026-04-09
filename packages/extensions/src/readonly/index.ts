@@ -1,3 +1,9 @@
+/**
+ * Marks the editor as read-only.
+ * 
+ * @module @prosekit/extensions/readonly
+ */
+
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 

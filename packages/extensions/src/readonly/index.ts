@@ -1,7 +1,7 @@
 /**
  * Marks the editor as read-only.
  *
- * @module @prosekit/extensions/readonly
+ * @module
  */
 
 import { definePlugin, type PlainExtension } from '@prosekit/core'

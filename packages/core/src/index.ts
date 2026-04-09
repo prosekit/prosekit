@@ -1,7 +1,7 @@
 /**
  * The core module of ProseKit.
  *
- * @module @prosekit/core
+ * @module
  */
 
 export { addMark, type AddMarkOptions } from './commands/add-mark.ts'

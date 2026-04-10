@@ -864,8 +864,8 @@ importers:
         specifier: ^0.0.105
         version: 0.0.105
       '@aria-ui/elements':
-        specifier: ^0.0.110
-        version: 0.0.110
+        specifier: ^0.0.111
+        version: 0.0.111
       '@aria-ui/utils':
         specifier: ^0.0.109
         version: 0.0.109
@@ -1285,8 +1285,8 @@ packages:
   '@aria-ui/core@0.0.22':
     resolution: {integrity: sha512-N/UC2JJ8fA46WAc5TBNM9NZMcmQ3ghqDt1DNa7XdXHqHhDYkZ7Mn0Yn6KEciiIvlP+yuxLrPO/Q1oB4CNV21kg==}
 
-  '@aria-ui/elements@0.0.110':
-    resolution: {integrity: sha512-of6Y0spYvS+QhQQVcGSlqRP6gQYI5EZYHo7iAMAQW/r2nlOICIm47F0m4rVPJk+6e0aYhMoEbt9g2HcbMweq9A==}
+  '@aria-ui/elements@0.0.111':
+    resolution: {integrity: sha512-x6f8t52HQKCybBAcq64ZTDcr85t5Hu65Z6dNVOgNPozDYaQ5Kl6aNZfMZkZHMxBOP4N21Wnk9ShIDCKsE0rmtA==}
 
   '@aria-ui/overlay@0.0.25':
     resolution: {integrity: sha512-YpOFpB1KNQaGLgRsnN5BcY64A+akHOqlLhH/ft7YU/l7E/9Sm0yscriiBvEi+vVwqYUOveNuh5vDVVmWeRjLpQ==}
@@ -8153,7 +8153,7 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.1.0
 
-  '@aria-ui/elements@0.0.110':
+  '@aria-ui/elements@0.0.111':
     dependencies:
       '@aria-ui/core': 0.0.105
       '@aria-ui/utils': 0.0.109

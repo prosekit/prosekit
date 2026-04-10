@@ -76,7 +76,7 @@
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-react": "^2.1.0"
+    "vitest-browser-react": "^2.2.0"
   },
   "publishConfig": {
     "exports": {

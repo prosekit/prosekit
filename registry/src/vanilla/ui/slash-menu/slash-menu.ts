@@ -20,6 +20,7 @@ export function renderSlashMenu(
   root.regex = regex
 
   const positioner = document.createElement('prosekit-autocomplete-positioner') as AutocompletePositionerElement
+  positioner.className = 'CSS_AUTOCOMPLETE_POSITIONER'
 
   const popup = document.createElement('prosekit-autocomplete-popup') as AutocompletePopupElement
   popup.className = 'CSS_AUTOCOMPLETE_POPUP'

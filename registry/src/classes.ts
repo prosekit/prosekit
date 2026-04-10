@@ -11,10 +11,7 @@ function cn(...args: Array<string | undefined | null | false>): string {
 // displayed before SSR hydration is complete.
 const CSS_DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
 
-const CSS_FLOATING_MENU = cn(
-  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
-  CSS_DEFAULT_HIDDEN,
-)
+
 
 const CSS_PRESENCE_ANIMATE = cn(
   CSS_DEFAULT_HIDDEN,
@@ -39,6 +36,12 @@ const CSS_POPOVER_ANIMATE = cn(
   'motion-safe:data-[side=right]:slide-out-to-left-2',
   'motion-safe:data-[side=top]:slide-in-from-bottom-2',
   'motion-safe:data-[side=top]:slide-out-to-bottom-2',
+)
+
+// TODO: remove CSS_FLOATING_MENU
+const CSS_FLOATING_MENU = cn(
+  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
+  CSS_DEFAULT_HIDDEN,
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(
@@ -81,11 +84,15 @@ const CSS_POSITIONER_BASE = cn(
   'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
 )
 const CSS_POPUP_BASE = cn(
-  'flex',
+  'flex box-border',
   'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
   'motion-safe:transition-discrete motion-safe:transition-all',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
   'data-[state=closed]:scale-90 starting:scale-90 scale-100',
+)
+const CSS_MENU_POPUP = cn(
+  CSS_POPUP_BASE, 
+  'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
 )
 
 export const CSS_MINIMAL_EDITOR = cn(
@@ -131,9 +138,10 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
   CSS_BUTTON_SIZE_SM,
 )
 
+export const CSS_AUTOCOMPLETE_POSITIONER = CSS_POSITIONER_BASE
 export const CSS_AUTOCOMPLETE_POPUP = cn(
-  'relative block max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
-  CSS_POPUP_BASE,
+  CSS_MENU_POPUP,
+  'relative flex flex-col max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
 )
 
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(

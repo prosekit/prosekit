@@ -14,7 +14,7 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 </script>
 
 <AutocompleteRoot {regex}>
-  <AutocompletePositioner>
+  <AutocompletePositioner  class="CSS_AUTOCOMPLETE_POSITIONER" >
     <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
       <SlashMenuItem
         label="Text"

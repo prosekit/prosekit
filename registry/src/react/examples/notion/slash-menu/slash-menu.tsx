@@ -23,7 +23,7 @@ export default function SlashMenu(props: Props) {
         props.onOpenChange(event.detail)
       }}
     >
-      <AutocompletePositioner>
+      <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
           <SlashMenuItem
             label="Text"

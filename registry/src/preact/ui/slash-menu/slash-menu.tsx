@@ -14,7 +14,7 @@ export default function SlashMenu() {
 
   return (
     <AutocompleteRoot regex={regex}>
-      <AutocompletePositioner>
+      <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
           <SlashMenuItem
             label="Text"

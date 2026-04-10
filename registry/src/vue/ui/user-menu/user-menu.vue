@@ -33,7 +33,7 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
     @query-change="(event) => props.onQueryChange?.(event.detail)"
     @open-change="(event) => props.onOpenChange?.(event.detail)"
   >
-    <AutocompletePositioner>
+    <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
       <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
         <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
           {{ props.loading ? 'Loading...' : 'No results' }}

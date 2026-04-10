@@ -36,7 +36,7 @@ export default function UserMenu(props: {
       onQueryChange={(event) => props.onQueryChange?.(event.detail)}
       onOpenChange={(event) => props.onOpenChange?.(event.detail)}
     >
-      <AutocompletePositioner>
+      <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
           <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
             {props.loading ? 'Loading...' : 'No results'}

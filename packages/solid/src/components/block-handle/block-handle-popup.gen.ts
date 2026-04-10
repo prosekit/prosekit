@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface BlockHandlePopupProps extends JSX.HTMLAttributes<BlockHandlePopupElement> {}
+export interface BlockHandlePopupProps {}
 
 /**
  * A Solid component that renders an `prosekit-block-handle-popup` custom element.
  *
  * @public
  */
-export const BlockHandlePopup: Component<BlockHandlePopupProps> = (props): any => {
+export const BlockHandlePopup: Component<BlockHandlePopupProps & JSX.HTMLAttributes<BlockHandlePopupElement>> = (props): any => {
   registerBlockHandlePopupElement();
 
   const restProps = props;

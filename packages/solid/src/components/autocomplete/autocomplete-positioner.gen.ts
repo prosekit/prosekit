@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface AutocompletePositionerProps extends JSX.HTMLAttributes<AutocompletePositionerElement> {
+export interface AutocompletePositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
    *
@@ -122,7 +122,7 @@ export interface AutocompletePositionerProps extends JSX.HTMLAttributes<Autocomp
  *
  * @public
  */
-export const AutocompletePositioner: Component<AutocompletePositionerProps> = (props): any => {
+export const AutocompletePositioner: Component<AutocompletePositionerProps & JSX.HTMLAttributes<AutocompletePositionerElement>> = (props): any => {
   registerAutocompletePositionerElement();
 
   const [getElement, setElement] = createSignal<AutocompletePositionerElement | null>(null);

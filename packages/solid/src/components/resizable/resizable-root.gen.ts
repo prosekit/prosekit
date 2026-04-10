@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface ResizableRootProps extends JSX.HTMLAttributes<ResizableRootElement> {
+export interface ResizableRootProps {
   /**
    * The width of the resizable element.
    *
@@ -42,7 +42,7 @@ export interface ResizableRootProps extends JSX.HTMLAttributes<ResizableRootElem
  *
  * @public
  */
-export const ResizableRoot: Component<ResizableRootProps> = (props): any => {
+export const ResizableRoot: Component<ResizableRootProps & JSX.HTMLAttributes<ResizableRootElement>> = (props): any => {
   registerResizableRootElement();
 
   const [getElement, setElement] = createSignal<ResizableRootElement | null>(null);

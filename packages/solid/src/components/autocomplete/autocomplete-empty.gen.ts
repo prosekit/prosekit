@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface AutocompleteEmptyProps extends JSX.HTMLAttributes<AutocompleteEmptyElement> {}
+export interface AutocompleteEmptyProps {}
 
 /**
  * A Solid component that renders an `prosekit-autocomplete-empty` custom element.
  *
  * @public
  */
-export const AutocompleteEmpty: Component<AutocompleteEmptyProps> = (props): any => {
+export const AutocompleteEmpty: Component<AutocompleteEmptyProps & JSX.HTMLAttributes<AutocompleteEmptyElement>> = (props): any => {
   registerAutocompleteEmptyElement();
 
   const restProps = props;

@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleDragPreviewProps extends JSX.HTMLAttributes<TableHandleDragPreviewElement> {
+export interface TableHandleDragPreviewProps {
   /**
    * @default null
    * @hidden
@@ -27,7 +27,7 @@ export interface TableHandleDragPreviewProps extends JSX.HTMLAttributes<TableHan
  *
  * @public
  */
-export const TableHandleDragPreview: Component<TableHandleDragPreviewProps> = (props): any => {
+export const TableHandleDragPreview: Component<TableHandleDragPreviewProps & JSX.HTMLAttributes<TableHandleDragPreviewElement>> = (props): any => {
   registerTableHandleDragPreviewElement();
 
   const [getElement, setElement] = createSignal<TableHandleDragPreviewElement | null>(null);

@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface TooltipPopupProps extends JSX.HTMLAttributes<TooltipPopupElement> {}
+export interface TooltipPopupProps {}
 
 /**
  * A Solid component that renders an `prosekit-tooltip-popup` custom element.
  *
  * @public
  */
-export const TooltipPopup: Component<TooltipPopupProps> = (props): any => {
+export const TooltipPopup: Component<TooltipPopupProps & JSX.HTMLAttributes<TooltipPopupElement>> = (props): any => {
   registerTooltipPopupElement();
 
   const restProps = props;

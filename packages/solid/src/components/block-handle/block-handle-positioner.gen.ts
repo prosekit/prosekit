@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface BlockHandlePositionerProps extends JSX.HTMLAttributes<BlockHandlePositionerElement> {
+export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
    *
@@ -140,7 +140,7 @@ export interface BlockHandlePositionerProps extends JSX.HTMLAttributes<BlockHand
  *
  * @public
  */
-export const BlockHandlePositioner: Component<BlockHandlePositionerProps> = (props): any => {
+export const BlockHandlePositioner: Component<BlockHandlePositionerProps & JSX.HTMLAttributes<BlockHandlePositionerElement>> = (props): any => {
   registerBlockHandlePositionerElement();
 
   const [getElement, setElement] = createSignal<BlockHandlePositionerElement | null>(null);

@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface InlinePopoverPositionerProps extends JSX.HTMLAttributes<InlinePopoverPositionerElement> {
+export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
    *
@@ -146,7 +146,7 @@ export interface InlinePopoverPositionerProps extends JSX.HTMLAttributes<InlineP
  *
  * @public
  */
-export const InlinePopoverPositioner: Component<InlinePopoverPositionerProps> = (props): any => {
+export const InlinePopoverPositioner: Component<InlinePopoverPositionerProps & JSX.HTMLAttributes<InlinePopoverPositionerElement>> = (props): any => {
   registerInlinePopoverPositionerElement();
 
   const [getElement, setElement] = createSignal<InlinePopoverPositionerElement | null>(null);

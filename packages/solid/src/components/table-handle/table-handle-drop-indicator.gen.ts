@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleDropIndicatorProps extends JSX.HTMLAttributes<TableHandleDropIndicatorElement> {
+export interface TableHandleDropIndicatorProps {
   /**
    * @default null
    * @hidden
@@ -27,7 +27,7 @@ export interface TableHandleDropIndicatorProps extends JSX.HTMLAttributes<TableH
  *
  * @public
  */
-export const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps> = (props): any => {
+export const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps & JSX.HTMLAttributes<TableHandleDropIndicatorElement>> = (props): any => {
   registerTableHandleDropIndicatorElement();
 
   const [getElement, setElement] = createSignal<TableHandleDropIndicatorElement | null>(null);

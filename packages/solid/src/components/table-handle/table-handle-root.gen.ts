@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleRootProps extends JSX.HTMLAttributes<TableHandleRootElement> {
+export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
    *
@@ -29,7 +29,7 @@ export interface TableHandleRootProps extends JSX.HTMLAttributes<TableHandleRoot
  *
  * @public
  */
-export const TableHandleRoot: Component<TableHandleRootProps> = (props): any => {
+export const TableHandleRoot: Component<TableHandleRootProps & JSX.HTMLAttributes<TableHandleRootElement>> = (props): any => {
   registerTableHandleRootElement();
 
   const [getElement, setElement] = createSignal<TableHandleRootElement | null>(null);

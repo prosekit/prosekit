@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface BlockHandleAddProps  {
+export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
    *

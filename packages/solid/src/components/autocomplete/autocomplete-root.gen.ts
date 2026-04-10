@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface AutocompleteRootProps extends JSX.HTMLAttributes<AutocompleteRootElement> {
+export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
    *
@@ -56,7 +56,7 @@ export interface AutocompleteRootProps extends JSX.HTMLAttributes<AutocompleteRo
  *
  * @public
  */
-export const AutocompleteRoot: Component<AutocompleteRootProps> = (props): any => {
+export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttributes<AutocompleteRootElement>> = (props): any => {
   registerAutocompleteRootElement();
 
   const [getElement, setElement] = createSignal<AutocompleteRootElement | null>(null);

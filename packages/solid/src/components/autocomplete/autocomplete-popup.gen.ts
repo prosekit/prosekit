@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface AutocompletePopupProps extends JSX.HTMLAttributes<AutocompletePopupElement> {
+export interface AutocompletePopupProps {
   /**
    * Emitted when the selected value changes. Only available when multiple is
    * false.
@@ -30,7 +30,7 @@ export interface AutocompletePopupProps extends JSX.HTMLAttributes<AutocompleteP
  *
  * @public
  */
-export const AutocompletePopup: Component<AutocompletePopupProps> = (props): any => {
+export const AutocompletePopup: Component<AutocompletePopupProps & JSX.HTMLAttributes<AutocompletePopupElement>> = (props): any => {
   registerAutocompletePopupElement();
 
   const [getElement, setElement] = createSignal<AutocompletePopupElement | null>(null);

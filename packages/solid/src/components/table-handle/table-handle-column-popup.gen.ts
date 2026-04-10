@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface TableHandleColumnPopupProps extends JSX.HTMLAttributes<TableHandleColumnPopupElement> {}
+export interface TableHandleColumnPopupProps {}
 
 /**
  * A Solid component that renders an `prosekit-table-handle-column-popup` custom element.
  *
  * @public
  */
-export const TableHandleColumnPopup: Component<TableHandleColumnPopupProps> = (props): any => {
+export const TableHandleColumnPopup: Component<TableHandleColumnPopupProps & JSX.HTMLAttributes<TableHandleColumnPopupElement>> = (props): any => {
   registerTableHandleColumnPopupElement();
 
   const restProps = props;

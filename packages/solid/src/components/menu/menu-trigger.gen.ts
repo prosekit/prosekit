@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuTriggerProps extends JSX.HTMLAttributes<MenuTriggerElement> {
+export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
    *
@@ -28,7 +28,7 @@ export interface MenuTriggerProps extends JSX.HTMLAttributes<MenuTriggerElement>
  *
  * @public
  */
-export const MenuTrigger: Component<MenuTriggerProps> = (props): any => {
+export const MenuTrigger: Component<MenuTriggerProps & JSX.HTMLAttributes<MenuTriggerElement>> = (props): any => {
   registerMenuTriggerElement();
 
   const [getElement, setElement] = createSignal<MenuTriggerElement | null>(null);

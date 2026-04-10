@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface PopoverPopupProps extends JSX.HTMLAttributes<PopoverPopupElement> {}
+export interface PopoverPopupProps {}
 
 /**
  * A Solid component that renders an `prosekit-popover-popup` custom element.
  *
  * @public
  */
-export const PopoverPopup: Component<PopoverPopupProps> = (props): any => {
+export const PopoverPopup: Component<PopoverPopupProps & JSX.HTMLAttributes<PopoverPopupElement>> = (props): any => {
   registerPopoverPopupElement();
 
   const restProps = props;

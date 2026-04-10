@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface BlockHandleDraggableProps extends JSX.HTMLAttributes<BlockHandleDraggableElement> {
+export interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
    *
@@ -29,7 +29,7 @@ export interface BlockHandleDraggableProps extends JSX.HTMLAttributes<BlockHandl
  *
  * @public
  */
-export const BlockHandleDraggable: Component<BlockHandleDraggableProps> = (props): any => {
+export const BlockHandleDraggable: Component<BlockHandleDraggableProps & JSX.HTMLAttributes<BlockHandleDraggableElement>> = (props): any => {
   registerBlockHandleDraggableElement();
 
   const [getElement, setElement] = createSignal<BlockHandleDraggableElement | null>(null);

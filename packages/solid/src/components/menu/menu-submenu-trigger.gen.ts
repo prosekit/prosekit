@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuSubmenuTriggerProps extends JSX.HTMLAttributes<MenuSubmenuTriggerElement> {}
+export interface MenuSubmenuTriggerProps {}
 
 /**
  * A Solid component that renders an `prosekit-menu-submenu-trigger` custom element.
  *
  * @public
  */
-export const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps> = (props): any => {
+export const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps & JSX.HTMLAttributes<MenuSubmenuTriggerElement>> = (props): any => {
   registerMenuSubmenuTriggerElement();
 
   const restProps = props;

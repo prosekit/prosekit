@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface TableHandleRowMenuRootProps extends JSX.HTMLAttributes<TableHandleRowMenuRootElement> {
+export interface TableHandleRowMenuRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -35,7 +35,7 @@ export interface TableHandleRowMenuRootProps extends JSX.HTMLAttributes<TableHan
  *
  * @public
  */
-export const TableHandleRowMenuRoot: Component<TableHandleRowMenuRootProps> = (props): any => {
+export const TableHandleRowMenuRoot: Component<TableHandleRowMenuRootProps & JSX.HTMLAttributes<TableHandleRowMenuRootElement>> = (props): any => {
   registerTableHandleRowMenuRootElement();
 
   const [getElement, setElement] = createSignal<TableHandleRowMenuRootElement | null>(null);

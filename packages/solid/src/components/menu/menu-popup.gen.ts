@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuPopupProps extends JSX.HTMLAttributes<MenuPopupElement> {
+export interface MenuPopupProps {
   /**
    * By default, the MenuPopup element will listen for keydown events.
    * You can pass a different element to listen for keydown events.
@@ -27,7 +27,7 @@ export interface MenuPopupProps extends JSX.HTMLAttributes<MenuPopupElement> {
  *
  * @public
  */
-export const MenuPopup: Component<MenuPopupProps> = (props): any => {
+export const MenuPopup: Component<MenuPopupProps & JSX.HTMLAttributes<MenuPopupElement>> = (props): any => {
   registerMenuPopupElement();
 
   const [getElement, setElement] = createSignal<MenuPopupElement | null>(null);

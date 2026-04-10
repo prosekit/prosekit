@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuItemProps extends JSX.HTMLAttributes<MenuItemElement> {
+export interface MenuItemProps {
   /**
    * The unique value for this menu item.
    *
@@ -40,7 +40,7 @@ export interface MenuItemProps extends JSX.HTMLAttributes<MenuItemElement> {
  *
  * @public
  */
-export const MenuItem: Component<MenuItemProps> = (props): any => {
+export const MenuItem: Component<MenuItemProps & JSX.HTMLAttributes<MenuItemElement>> = (props): any => {
   registerMenuItemElement();
 
   const [getElement, setElement] = createSignal<MenuItemElement | null>(null);

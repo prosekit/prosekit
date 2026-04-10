@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface PopoverTriggerProps extends JSX.HTMLAttributes<PopoverTriggerElement> {
+export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -44,7 +44,7 @@ export interface PopoverTriggerProps extends JSX.HTMLAttributes<PopoverTriggerEl
  *
  * @public
  */
-export const PopoverTrigger: Component<PopoverTriggerProps> = (props): any => {
+export const PopoverTrigger: Component<PopoverTriggerProps & JSX.HTMLAttributes<PopoverTriggerElement>> = (props): any => {
   registerPopoverTriggerElement();
 
   const [getElement, setElement] = createSignal<PopoverTriggerElement | null>(null);

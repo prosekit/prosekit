@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuRootProps extends JSX.HTMLAttributes<MenuRootElement> {
+export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -37,7 +37,7 @@ export interface MenuRootProps extends JSX.HTMLAttributes<MenuRootElement> {
  *
  * @public
  */
-export const MenuRoot: Component<MenuRootProps> = (props): any => {
+export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElement>> = (props): any => {
   registerMenuRootElement();
 
   const [getElement, setElement] = createSignal<MenuRootElement | null>(null);

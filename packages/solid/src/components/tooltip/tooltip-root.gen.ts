@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement> {
+export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -37,7 +37,7 @@ export interface TooltipRootProps extends JSX.HTMLAttributes<TooltipRootElement>
  *
  * @public
  */
-export const TooltipRoot: Component<TooltipRootProps> = (props): any => {
+export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<TooltipRootElement>> = (props): any => {
   registerTooltipRootElement();
 
   const [getElement, setElement] = createSignal<TooltipRootElement | null>(null);

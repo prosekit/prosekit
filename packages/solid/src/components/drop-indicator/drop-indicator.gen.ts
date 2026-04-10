@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface DropIndicatorProps extends JSX.HTMLAttributes<DropIndicatorElement> {
+export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
    *
@@ -35,7 +35,7 @@ export interface DropIndicatorProps extends JSX.HTMLAttributes<DropIndicatorElem
  *
  * @public
  */
-export const DropIndicator: Component<DropIndicatorProps> = (props): any => {
+export const DropIndicator: Component<DropIndicatorProps & JSX.HTMLAttributes<DropIndicatorElement>> = (props): any => {
   registerDropIndicatorElement();
 
   const [getElement, setElement] = createSignal<DropIndicatorElement | null>(null);

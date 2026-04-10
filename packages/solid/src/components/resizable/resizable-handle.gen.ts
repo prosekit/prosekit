@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface ResizableHandleProps extends JSX.HTMLAttributes<ResizableHandleElement> {
+export interface ResizableHandleProps {
   /**
    * The position of the handle.
    *
@@ -26,7 +26,7 @@ export interface ResizableHandleProps extends JSX.HTMLAttributes<ResizableHandle
  *
  * @public
  */
-export const ResizableHandle: Component<ResizableHandleProps> = (props): any => {
+export const ResizableHandle: Component<ResizableHandleProps & JSX.HTMLAttributes<ResizableHandleElement>> = (props): any => {
   registerResizableHandleElement();
 
   const [getElement, setElement] = createSignal<ResizableHandleElement | null>(null);

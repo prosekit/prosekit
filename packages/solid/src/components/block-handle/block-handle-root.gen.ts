@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface BlockHandleRootProps extends JSX.HTMLAttributes<BlockHandleRootElement> {
+export interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
    *
@@ -31,7 +31,7 @@ export interface BlockHandleRootProps extends JSX.HTMLAttributes<BlockHandleRoot
  *
  * @public
  */
-export const BlockHandleRoot: Component<BlockHandleRootProps> = (props): any => {
+export const BlockHandleRoot: Component<BlockHandleRootProps & JSX.HTMLAttributes<BlockHandleRootElement>> = (props): any => {
   registerBlockHandleRootElement();
 
   const [getElement, setElement] = createSignal<BlockHandleRootElement | null>(null);

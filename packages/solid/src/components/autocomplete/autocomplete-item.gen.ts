@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface AutocompleteItemProps extends JSX.HTMLAttributes<AutocompleteItemElement> {
+export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
    *
@@ -36,7 +36,7 @@ export interface AutocompleteItemProps extends JSX.HTMLAttributes<AutocompleteIt
  *
  * @public
  */
-export const AutocompleteItem: Component<AutocompleteItemProps> = (props): any => {
+export const AutocompleteItem: Component<AutocompleteItemProps & JSX.HTMLAttributes<AutocompleteItemElement>> = (props): any => {
   registerAutocompleteItemElement();
 
   const [getElement, setElement] = createSignal<AutocompleteItemElement | null>(null);

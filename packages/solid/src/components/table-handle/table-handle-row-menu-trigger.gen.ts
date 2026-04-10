@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleRowMenuTriggerProps extends JSX.HTMLAttributes<TableHandleRowMenuTriggerElement> {
+export interface TableHandleRowMenuTriggerProps {
   /**
    * @default null
    * @hidden
@@ -27,7 +27,7 @@ export interface TableHandleRowMenuTriggerProps extends JSX.HTMLAttributes<Table
  *
  * @public
  */
-export const TableHandleRowMenuTrigger: Component<TableHandleRowMenuTriggerProps> = (props): any => {
+export const TableHandleRowMenuTrigger: Component<TableHandleRowMenuTriggerProps & JSX.HTMLAttributes<TableHandleRowMenuTriggerElement>> = (props): any => {
   registerTableHandleRowMenuTriggerElement();
 
   const [getElement, setElement] = createSignal<TableHandleRowMenuTriggerElement | null>(null);

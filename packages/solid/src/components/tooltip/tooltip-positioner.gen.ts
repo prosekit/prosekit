@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface TooltipPositionerProps extends JSX.HTMLAttributes<TooltipPositionerElement> {
+export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
    *
@@ -147,7 +147,7 @@ export interface TooltipPositionerProps extends JSX.HTMLAttributes<TooltipPositi
  *
  * @public
  */
-export const TooltipPositioner: Component<TooltipPositionerProps> = (props): any => {
+export const TooltipPositioner: Component<TooltipPositionerProps & JSX.HTMLAttributes<TooltipPositionerElement>> = (props): any => {
   registerTooltipPositionerElement();
 
   const [getElement, setElement] = createSignal<TooltipPositionerElement | null>(null);

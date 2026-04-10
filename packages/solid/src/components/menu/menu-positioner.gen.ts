@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuPositionerProps extends JSX.HTMLAttributes<MenuPositionerElement> {
+export interface MenuPositionerProps {
   /**
    * The initial placement of the floating element
    *
@@ -147,7 +147,7 @@ export interface MenuPositionerProps extends JSX.HTMLAttributes<MenuPositionerEl
  *
  * @public
  */
-export const MenuPositioner: Component<MenuPositionerProps> = (props): any => {
+export const MenuPositioner: Component<MenuPositionerProps & JSX.HTMLAttributes<MenuPositionerElement>> = (props): any => {
   registerMenuPositionerElement();
 
   const [getElement, setElement] = createSignal<MenuPositionerElement | null>(null);

@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface TooltipTriggerProps extends JSX.HTMLAttributes<TooltipTriggerElement> {
+export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -35,7 +35,7 @@ export interface TooltipTriggerProps extends JSX.HTMLAttributes<TooltipTriggerEl
  *
  * @public
  */
-export const TooltipTrigger: Component<TooltipTriggerProps> = (props): any => {
+export const TooltipTrigger: Component<TooltipTriggerProps & JSX.HTMLAttributes<TooltipTriggerElement>> = (props): any => {
   registerTooltipTriggerElement();
 
   const [getElement, setElement] = createSignal<TooltipTriggerElement | null>(null);

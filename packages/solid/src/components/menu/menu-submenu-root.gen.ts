@@ -11,14 +11,14 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface MenuSubmenuRootProps extends JSX.HTMLAttributes<MenuSubmenuRootElement> {}
+export interface MenuSubmenuRootProps {}
 
 /**
  * A Solid component that renders an `prosekit-menu-submenu-root` custom element.
  *
  * @public
  */
-export const MenuSubmenuRoot: Component<MenuSubmenuRootProps> = (props): any => {
+export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttributes<MenuSubmenuRootElement>> = (props): any => {
   registerMenuSubmenuRootElement();
 
   const restProps = props;

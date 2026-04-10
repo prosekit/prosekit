@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositionerElement> {
+export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
    *
@@ -147,7 +147,7 @@ export interface PopoverPositionerProps extends JSX.HTMLAttributes<PopoverPositi
  *
  * @public
  */
-export const PopoverPositioner: Component<PopoverPositionerProps> = (props): any => {
+export const PopoverPositioner: Component<PopoverPositionerProps & JSX.HTMLAttributes<PopoverPositionerElement>> = (props): any => {
   registerPopoverPositionerElement();
 
   const [getElement, setElement] = createSignal<PopoverPositionerElement | null>(null);

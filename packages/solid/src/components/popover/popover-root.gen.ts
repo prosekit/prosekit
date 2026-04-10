@@ -12,7 +12,7 @@ import h from 'solid-js/h';
  *
  * @public
  */
-export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement> {
+export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
    * When true, the popover will trap focus and prevent interaction with the rest of the page.
@@ -44,7 +44,7 @@ export interface PopoverRootProps extends JSX.HTMLAttributes<PopoverRootElement>
  *
  * @public
  */
-export const PopoverRoot: Component<PopoverRootProps> = (props): any => {
+export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<PopoverRootElement>> = (props): any => {
   registerPopoverRootElement();
 
   const [getElement, setElement] = createSignal<PopoverRootElement | null>(null);

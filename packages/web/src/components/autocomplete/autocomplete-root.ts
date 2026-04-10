@@ -63,10 +63,14 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
  * @public
  */
 export class QueryChangeEvent extends Event {
-  query: string
+  /**
+   * The current query string.
+   */
+  readonly detail: string
+
   constructor(query: string) {
     super('queryChange', { bubbles: true })
-    this.query = query
+    this.detail = query
   }
 }
 

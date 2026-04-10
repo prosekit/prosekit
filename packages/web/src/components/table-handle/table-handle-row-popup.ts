@@ -37,6 +37,6 @@ const TableHandleRowPopupElementBase: HostElementConstructor<TableHandleRowPopup
 export class TableHandleRowPopupElement extends TableHandleRowPopupElementBase {}
 
 /** @internal */
-export function registerTableHandleRowPopupElement (): void {
+export function registerTableHandleRowPopupElement(): void {
   registerCustomElement('prosekit-table-handle-row-popup', TableHandleRowPopupElement)
 }

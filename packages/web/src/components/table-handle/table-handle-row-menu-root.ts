@@ -46,6 +46,6 @@ const TableHandleRowMenuRootElementBase: HostElementConstructor<TableHandleRowMe
 export class TableHandleRowMenuRootElement extends TableHandleRowMenuRootElementBase {}
 
 /** @internal */
-export function registerTableHandleRowMenuRootElement (): void {
+export function registerTableHandleRowMenuRootElement(): void {
   registerCustomElement('prosekit-table-handle-row-menu-root', TableHandleRowMenuRootElement)
 }

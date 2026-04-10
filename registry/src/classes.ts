@@ -48,7 +48,7 @@ const CSS_POPUP = cn(
   'data-[state=closed]:scale-95 starting:scale-95 scale-100',
 )
 const CSS_MENU_POPUP = cn(
-  CSS_POPUP, 
+  CSS_POPUP,
   'motion-safe:duration-40',
   'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
 )
@@ -135,7 +135,6 @@ export const CSS_TOGGLE_BUTTON = cn(
   'text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50',
   'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700',
 )
-
 
 export const CSS_IMAGE_UPLOAD_POSITIONER = CSS_POSITIONER
 export const CSS_IMAGE_UPLOAD_CARD = cn(

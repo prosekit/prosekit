@@ -78,7 +78,10 @@ function handleOpenChange(event: OpenChangeEvent) {
     </Button>
   </PopoverTrigger>
 
-  <PopoverPositioner placement='bottom' class="CSS_IMAGE_UPLOAD_POSITIONER"><PopoverPopup class="CSS_IMAGE_UPLOAD_CARD">
+  <PopoverPositioner
+    placement="bottom"
+    class="CSS_IMAGE_UPLOAD_POSITIONER"
+  ><PopoverPopup class="CSS_IMAGE_UPLOAD_CARD">
       {#if !file}
         <label for="id-link-{ariaId}">Embed Link</label>
         <input

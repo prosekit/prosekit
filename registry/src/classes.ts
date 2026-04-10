@@ -79,11 +79,11 @@ const CSS_INPUT = cn(
   'disabled:cursor-not-allowed disabled:opacity-50',
 )
 
-const CSS_POSITIONER_BASE = cn(
+const CSS_POSITIONER = cn(
   'block overflow-visible bg-transparent w-min h-min z-50',
   'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
 )
-const CSS_POPUP_BASE = cn(
+const CSS_POPUP = cn(
   'flex box-border',
   'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
   'motion-safe:transition-discrete motion-safe:transition-all',
@@ -91,7 +91,7 @@ const CSS_POPUP_BASE = cn(
   'data-[state=closed]:scale-90 starting:scale-90 scale-100',
 )
 const CSS_MENU_POPUP = cn(
-  CSS_POPUP_BASE, 
+  CSS_POPUP, 
   'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
 )
 
@@ -118,7 +118,7 @@ export const CSS_EDITOR_CONTENT = cn(
   '[&_span[data-mention=tag]]:text-violet-500',
 )
 
-export const CSS_INLINE_MENU_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_INLINE_MENU_POSITIONER = CSS_POSITIONER
 
 export const CSS_INLINE_MENU_MAIN = cn(
   CSS_FLOATING_MENU,
@@ -138,7 +138,7 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
   CSS_BUTTON_SIZE_SM,
 )
 
-export const CSS_AUTOCOMPLETE_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_AUTOCOMPLETE_POSITIONER = CSS_POSITIONER
 export const CSS_AUTOCOMPLETE_POPUP = cn(
   CSS_MENU_POPUP,
   'relative flex flex-col max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
@@ -222,8 +222,8 @@ export const CSS_IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 export const CSS_DROP_CURSOR = cn('transition-all bg-blue-500')
 export const CSS_DROP_INDICATOR = cn('z-50 transition-all bg-blue-500')
 
-export const CSS_BLOCK_HANDLE_POSITIONER = CSS_POSITIONER_BASE
-export const CSS_BLOCK_HANDLE_POPUP = CSS_POPUP_BASE
+export const CSS_BLOCK_HANDLE_POSITIONER = CSS_POSITIONER
+export const CSS_BLOCK_HANDLE_POPUP = CSS_POPUP
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
   // "h-6" currently matches a 24px paragraph line-height (with a 16px base font size and line-height 1.5); if the base font size changes, this equivalence may no longer hold.
@@ -240,17 +240,17 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
   'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50',
 )
 
-export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = CSS_POSITIONER_BASE
-export const CSS_TABLE_HANDLE_ROW_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = CSS_POSITIONER
+export const CSS_TABLE_HANDLE_ROW_POSITIONER = CSS_POSITIONER
 
 export const CSS_TABLE_HANDLE_COLUMN_POPUP = cn(
   'translate-y-[50%]',
-  CSS_POPUP_BASE,
+  CSS_POPUP,
 )
 
 export const CSS_TABLE_HANDLE_ROW_POPUP = cn(
   'ltr:translate-x-[50%] rtl:translate-x-[-50%]',
-  CSS_POPUP_BASE,
+  CSS_POPUP,
 )
 
 const CSS_TABLE_HANDLE_TRIGGER_BASE = cn(
@@ -289,9 +289,9 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 )
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
-export const CSS_TOOLTIP_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_TOOLTIP_POSITIONER = CSS_POSITIONER
 export const CSS_TOOLTIP_POPUP = cn(
-  CSS_POPUP_BASE,
+  CSS_POPUP,
   'overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs text-nowrap',
 )
 

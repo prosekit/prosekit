@@ -91,5 +91,3 @@ function PopoverTriggerComponent(props: PopoverTriggerProps, forwardedRef: Ref<P
  * @public
  */
 export const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement> & RefAttributes<PopoverTriggerElement>> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);
-
-export type { PopoverTriggerEvents };

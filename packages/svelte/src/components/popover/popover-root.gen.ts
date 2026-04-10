@@ -47,5 +47,3 @@ export interface PopoverRootProps {
  * @public
  */
 export const PopoverRoot: Component<PopoverRootProps & HTMLAttributes<PopoverRootElement>> = PopoverRootComponent as Component<PopoverRootProps & HTMLAttributes<PopoverRootElement>>;
-
-export type { PopoverRootEvents };

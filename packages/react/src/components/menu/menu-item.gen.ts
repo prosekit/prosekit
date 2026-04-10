@@ -85,5 +85,3 @@ function MenuItemComponent(props: MenuItemProps, forwardedRef: ForwardedRef<Menu
  * @public
  */
 export const MenuItem: ForwardRefExoticComponent<MenuItemProps & Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> & RefAttributes<MenuItemElement>> = /* @__PURE__ */ forwardRef(MenuItemComponent);
-
-export type { MenuItemEvents };

@@ -45,5 +45,3 @@ export interface ResizableRootProps {
  * @public
  */
 export const ResizableRoot: Component<ResizableRootProps & HTMLAttributes<ResizableRootElement>> = ResizableRootComponent as Component<ResizableRootProps & HTMLAttributes<ResizableRootElement>>;
-
-export type { ResizableRootEvents };

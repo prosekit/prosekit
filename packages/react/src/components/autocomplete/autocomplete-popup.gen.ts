@@ -74,5 +74,3 @@ function AutocompletePopupComponent(props: AutocompletePopupProps, forwardedRef:
  * @public
  */
 export const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>> = /* @__PURE__ */ forwardRef(AutocompletePopupComponent);
-
-export type { AutocompletePopupEvents };

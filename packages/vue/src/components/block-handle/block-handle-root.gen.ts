@@ -80,5 +80,3 @@ export const BlockHandleRoot: DefineSetupFnComponent<BlockHandleRootProps & HTML
   },
   { props: ['editor', 'onStateChange'] },
 );
-
-export type { BlockHandleRootEvents };

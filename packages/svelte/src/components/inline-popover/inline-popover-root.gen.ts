@@ -45,7 +45,7 @@ export interface InlinePopoverRootProps {
    * @default false
    */
   disabled?: InlinePopoverRootElementProps['disabled'];
-  /** */
+  /** Emitted when the open state of the popover changes. */
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
   children?: Snippet;
 }
@@ -56,5 +56,3 @@ export interface InlinePopoverRootProps {
  * @public
  */
 export const InlinePopoverRoot: Component<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement>> = InlinePopoverRootComponent as Component<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement>>;
-
-export type { InlinePopoverRootEvents };

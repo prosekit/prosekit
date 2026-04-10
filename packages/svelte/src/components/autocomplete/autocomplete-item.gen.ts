@@ -39,5 +39,3 @@ export interface AutocompleteItemProps {
  * @public
  */
 export const AutocompleteItem: Component<AutocompleteItemProps & HTMLAttributes<AutocompleteItemElement>> = AutocompleteItemComponent as Component<AutocompleteItemProps & HTMLAttributes<AutocompleteItemElement>>;
-
-export type { AutocompleteItemEvents };

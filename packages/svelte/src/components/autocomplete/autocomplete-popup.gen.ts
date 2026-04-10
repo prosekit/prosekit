@@ -33,5 +33,3 @@ export interface AutocompletePopupProps {
  * @public
  */
 export const AutocompletePopup: Component<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement>> = AutocompletePopupComponent as Component<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement>>;
-
-export type { AutocompletePopupEvents };

@@ -82,5 +82,3 @@ export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElem
       }),
     );
 };
-
-export type { MenuRootEvents };

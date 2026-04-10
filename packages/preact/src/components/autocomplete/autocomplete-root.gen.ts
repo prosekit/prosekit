@@ -105,5 +105,3 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: R
  * @public
  */
 export const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>> = /* @__PURE__ */ forwardRef(AutocompleteRootComponent);
-
-export type { AutocompleteRootEvents };

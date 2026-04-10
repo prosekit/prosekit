@@ -87,5 +87,3 @@ export const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes> = 
   },
   { props: ['closeOnSelect', 'disabled', 'value', 'onSelect'] },
 );
-
-export type { MenuItemEvents };

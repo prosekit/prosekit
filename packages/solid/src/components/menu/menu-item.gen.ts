@@ -85,5 +85,3 @@ export const MenuItem: Component<MenuItemProps & JSX.HTMLAttributes<MenuItemElem
       }),
     );
 };
-
-export type { MenuItemEvents };

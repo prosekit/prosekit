@@ -84,5 +84,3 @@ export const TooltipRoot: DefineSetupFnComponent<TooltipRootProps & HTMLAttribut
   },
   { props: ['defaultOpen', 'disabled', 'open', 'onOpenChange'] },
 );
-
-export type { TooltipRootEvents };

@@ -91,5 +91,3 @@ export const PopoverTrigger: DefineSetupFnComponent<PopoverTriggerProps & HTMLAt
   },
   { props: ['closeDelay', 'delay', 'disabled', 'openOnHover', 'onOpenChange'] },
 );
-
-export type { PopoverTriggerEvents };

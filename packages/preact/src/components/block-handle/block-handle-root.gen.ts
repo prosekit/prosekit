@@ -80,5 +80,3 @@ function BlockHandleRootComponent(props: BlockHandleRootProps, forwardedRef: Ref
  * @public
  */
 export const BlockHandleRoot: ForwardRefExoticComponent<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement> & RefAttributes<BlockHandleRootElement>> = /* @__PURE__ */ forwardRef(BlockHandleRootComponent);
-
-export type { BlockHandleRootEvents };

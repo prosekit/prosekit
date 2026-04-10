@@ -75,5 +75,3 @@ function MenuTriggerComponent(props: MenuTriggerProps, forwardedRef: Ref<MenuTri
  * @public
  */
 export const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & HTMLAttributes<MenuTriggerElement> & RefAttributes<MenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuTriggerComponent);
-
-export type { MenuTriggerEvents };

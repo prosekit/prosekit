@@ -84,5 +84,3 @@ function TooltipRootComponent(props: TooltipRootProps, forwardedRef: Ref<Tooltip
  * @public
  */
 export const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & HTMLAttributes<TooltipRootElement> & RefAttributes<TooltipRootElement>> = /* @__PURE__ */ forwardRef(TooltipRootComponent);
-
-export type { TooltipRootEvents };

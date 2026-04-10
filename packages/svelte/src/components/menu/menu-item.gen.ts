@@ -43,5 +43,3 @@ export interface MenuItemProps {
  * @public
  */
 export const MenuItem: Component<MenuItemProps & HTMLAttributes<MenuItemElement>> = MenuItemComponent as Component<MenuItemProps & HTMLAttributes<MenuItemElement>>;
-
-export type { MenuItemEvents };

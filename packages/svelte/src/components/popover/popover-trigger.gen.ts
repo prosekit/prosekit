@@ -47,5 +47,3 @@ export interface PopoverTriggerProps {
  * @public
  */
 export const PopoverTrigger: Component<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement>> = PopoverTriggerComponent as Component<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement>>;
-
-export type { PopoverTriggerEvents };

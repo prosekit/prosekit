@@ -108,5 +108,3 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
   },
   { props: ['editor', 'filter', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
 );
-
-export type { AutocompleteRootEvents };

@@ -78,5 +78,3 @@ export const BlockHandleRoot: Component<BlockHandleRootProps & JSX.HTMLAttribute
       }),
     );
 };
-
-export type { BlockHandleRootEvents };

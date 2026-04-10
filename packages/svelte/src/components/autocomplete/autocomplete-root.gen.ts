@@ -57,5 +57,3 @@ export interface AutocompleteRootProps {
  * @public
  */
 export const AutocompleteRoot: Component<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement>> = AutocompleteRootComponent as Component<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement>>;
-
-export type { AutocompleteRootEvents };

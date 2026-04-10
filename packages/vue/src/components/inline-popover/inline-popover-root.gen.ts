@@ -44,7 +44,7 @@ export interface InlinePopoverRootProps {
    * @default false
    */
   disabled?: InlinePopoverRootElementProps['disabled'];
-  /** */
+  /** Emitted when the open state of the popover changes. */
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 
@@ -104,5 +104,3 @@ export const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & 
   },
   { props: ['defaultOpen', 'disabled', 'dismissOnEscape', 'editor', 'open', 'onOpenChange'] },
 );
-
-export type { InlinePopoverRootEvents };

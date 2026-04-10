@@ -31,5 +31,3 @@ export interface MenuTriggerProps {
  * @public
  */
 export const MenuTrigger: Component<MenuTriggerProps & HTMLAttributes<MenuTriggerElement>> = MenuTriggerComponent as Component<MenuTriggerProps & HTMLAttributes<MenuTriggerElement>>;
-
-export type { MenuTriggerEvents };

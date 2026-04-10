@@ -4,12 +4,12 @@
 
 export { AutocompleteEmpty, type AutocompleteEmptyProps } from './autocomplete-empty.gen.ts';
 
-export { AutocompleteItem, type AutocompleteItemProps, type AutocompleteItemEvents } from './autocomplete-item.gen.ts';
+export { AutocompleteItem, type AutocompleteItemProps } from './autocomplete-item.gen.ts';
 
-export { AutocompletePopup, type AutocompletePopupProps, type AutocompletePopupEvents } from './autocomplete-popup.gen.ts';
+export { AutocompletePopup, type AutocompletePopupProps } from './autocomplete-popup.gen.ts';
 
 export { AutocompletePositioner, type AutocompletePositionerProps } from './autocomplete-positioner.gen.ts';
 
-export { AutocompleteRoot, type AutocompleteRootProps, type AutocompleteRootEvents } from './autocomplete-root.gen.ts';
+export { AutocompleteRoot, type AutocompleteRootProps } from './autocomplete-root.gen.ts';
 
 export { OpenChangeEvent, QueryChangeEvent, SelectEvent, ValueChangeEvent, ValuesChangeEvent } from '@prosekit/web/autocomplete';

@@ -90,5 +90,3 @@ export const ResizableRoot: DefineSetupFnComponent<ResizableRootProps & HTMLAttr
   },
   { props: ['aspectRatio', 'height', 'width', 'onResizeEnd', 'onResizeStart'] },
 );
-
-export type { ResizableRootEvents };

@@ -40,5 +40,3 @@ export interface MenuRootProps {
  * @public
  */
 export const MenuRoot: Component<MenuRootProps & HTMLAttributes<MenuRootElement>> = MenuRootComponent as Component<MenuRootProps & HTMLAttributes<MenuRootElement>>;
-
-export type { MenuRootEvents };

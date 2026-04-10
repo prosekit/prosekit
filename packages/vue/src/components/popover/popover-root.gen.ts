@@ -91,5 +91,3 @@ export const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttribut
   },
   { props: ['defaultOpen', 'disabled', 'modal', 'open', 'onOpenChange'] },
 );
-
-export type { PopoverRootEvents };

@@ -81,5 +81,3 @@ export const AutocompleteItem: Component<AutocompleteItemProps & JSX.HTMLAttribu
       }),
     );
 };
-
-export type { AutocompleteItemEvents };

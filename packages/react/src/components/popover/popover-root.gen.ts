@@ -89,5 +89,3 @@ function PopoverRootComponent(props: PopoverRootProps, forwardedRef: ForwardedRe
  * @public
  */
 export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);
-
-export type { PopoverRootEvents };

@@ -88,5 +88,3 @@ export const ResizableRoot: Component<ResizableRootProps & JSX.HTMLAttributes<Re
       }),
     );
 };
-
-export type { ResizableRootEvents };

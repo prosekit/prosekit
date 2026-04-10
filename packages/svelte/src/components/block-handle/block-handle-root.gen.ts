@@ -32,5 +32,3 @@ export interface BlockHandleRootProps {
  * @public
  */
 export const BlockHandleRoot: Component<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement>> = BlockHandleRootComponent as Component<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement>>;
-
-export type { BlockHandleRootEvents };

@@ -83,5 +83,3 @@ export const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HT
   },
   { props: ['disabled', 'value', 'onSelect'] },
 );
-
-export type { AutocompleteItemEvents };

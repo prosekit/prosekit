@@ -89,5 +89,3 @@ function ResizableRootComponent(props: ResizableRootProps, forwardedRef: Ref<Res
  * @public
  */
 export const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & HTMLAttributes<ResizableRootElement> & RefAttributes<ResizableRootElement>> = /* @__PURE__ */ forwardRef(ResizableRootComponent);
-
-export type { ResizableRootEvents };

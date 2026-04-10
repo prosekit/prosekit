@@ -84,5 +84,3 @@ export const MenuRoot: DefineSetupFnComponent<MenuRootProps & HTMLAttributes> = 
   },
   { props: ['defaultOpen', 'disabled', 'open', 'onOpenChange'] },
 );
-
-export type { MenuRootEvents };

@@ -82,5 +82,3 @@ export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<Toolti
       }),
     );
 };
-
-export type { TooltipRootEvents };

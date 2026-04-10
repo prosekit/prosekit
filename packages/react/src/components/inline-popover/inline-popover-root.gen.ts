@@ -44,7 +44,7 @@ export interface InlinePopoverRootProps {
    * @default false
    */
   disabled?: InlinePopoverRootElementProps['disabled'];
-  /** */
+  /** Emitted when the open state of the popover changes. */
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 
@@ -102,5 +102,3 @@ function InlinePopoverRootComponent(props: InlinePopoverRootProps, forwardedRef:
  * @public
  */
 export const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement> & RefAttributes<InlinePopoverRootElement>> = /* @__PURE__ */ forwardRef(InlinePopoverRootComponent);
-
-export type { InlinePopoverRootEvents };

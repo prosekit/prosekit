@@ -73,5 +73,3 @@ export const MenuTrigger: Component<MenuTriggerProps & JSX.HTMLAttributes<MenuTr
       }),
     );
 };
-
-export type { MenuTriggerEvents };

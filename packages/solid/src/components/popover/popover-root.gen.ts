@@ -89,5 +89,3 @@ export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<Popove
       }),
     );
 };
-
-export type { PopoverRootEvents };

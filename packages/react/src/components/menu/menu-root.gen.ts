@@ -82,5 +82,3 @@ function MenuRootComponent(props: MenuRootProps, forwardedRef: ForwardedRef<Menu
  * @public
  */
 export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);
-
-export type { MenuRootEvents };

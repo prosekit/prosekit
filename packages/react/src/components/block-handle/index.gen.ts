@@ -10,6 +10,6 @@ export { BlockHandlePopup, type BlockHandlePopupProps } from './block-handle-pop
 
 export { BlockHandlePositioner, type BlockHandlePositionerProps } from './block-handle-positioner.gen.ts';
 
-export { BlockHandleRoot, type BlockHandleRootProps, type BlockHandleRootEvents } from './block-handle-root.gen.ts';
+export { BlockHandleRoot, type BlockHandleRootProps } from './block-handle-root.gen.ts';
 
 export { BlockHandleStateChangeEvent } from '@prosekit/web/block-handle';

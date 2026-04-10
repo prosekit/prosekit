@@ -89,5 +89,3 @@ export const PopoverTrigger: Component<PopoverTriggerProps & JSX.HTMLAttributes<
       }),
     );
 };
-
-export type { PopoverTriggerEvents };

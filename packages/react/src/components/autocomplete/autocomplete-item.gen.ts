@@ -81,5 +81,3 @@ function AutocompleteItemComponent(props: AutocompleteItemProps, forwardedRef: F
  * @public
  */
 export const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>> = /* @__PURE__ */ forwardRef(AutocompleteItemComponent);
-
-export type { AutocompleteItemEvents };

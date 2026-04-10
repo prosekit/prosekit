@@ -76,5 +76,3 @@ export const AutocompletePopup: DefineSetupFnComponent<AutocompletePopupProps & 
   },
   { props: ['onValueChange', 'onValuesChange'] },
 );
-
-export type { AutocompletePopupEvents };

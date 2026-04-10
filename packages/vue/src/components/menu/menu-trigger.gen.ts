@@ -75,5 +75,3 @@ export const MenuTrigger: DefineSetupFnComponent<MenuTriggerProps & HTMLAttribut
   },
   { props: ['disabled', 'onOpenChange'] },
 );
-
-export type { MenuTriggerEvents };

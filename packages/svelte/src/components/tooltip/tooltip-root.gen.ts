@@ -40,5 +40,3 @@ export interface TooltipRootProps {
  * @public
  */
 export const TooltipRoot: Component<TooltipRootProps & HTMLAttributes<TooltipRootElement>> = TooltipRootComponent as Component<TooltipRootProps & HTMLAttributes<TooltipRootElement>>;
-
-export type { TooltipRootEvents };

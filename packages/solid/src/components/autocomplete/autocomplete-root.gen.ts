@@ -106,5 +106,3 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
       }),
     );
 };
-
-export type { AutocompleteRootEvents };

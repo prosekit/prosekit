@@ -74,5 +74,3 @@ export const AutocompletePopup: Component<AutocompletePopupProps & JSX.HTMLAttri
       }),
     );
 };
-
-export type { AutocompletePopupEvents };

@@ -65,10 +65,10 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "solid-js": "^1.9.11",
+    "solid-js": "^1.9.12",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "vite-plugin-solid": "^2.11.11",
+    "vite-plugin-solid": "^2.11.12",
     "vitest": "catalog:",
     "vitest-browser-solid": "^1.0.1"
   },

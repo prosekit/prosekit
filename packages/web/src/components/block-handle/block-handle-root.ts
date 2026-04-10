@@ -41,15 +41,12 @@ export const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootPr
  * @public
  */
 export class BlockHandleStateChangeEvent extends Event {
-  state: { node: ProseMirrorNode; pos: number } | null
   /**
-   * Alias of {@link BlockHandleStateChangeEvent.state}, kept for backwards
-   * compatibility with the previous `CustomEvent<{ node, pos } | null>` shape.
+   * The currently hovered block's node and position, or `null` if no block is hovered.
    */
   detail: { node: ProseMirrorNode; pos: number } | null
   constructor(state: { node: ProseMirrorNode; pos: number } | null) {
     super('stateChange', { bubbles: true })
-    this.state = state
     this.detail = state
   }
 }

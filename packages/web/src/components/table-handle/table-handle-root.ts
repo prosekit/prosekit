@@ -98,6 +98,6 @@ export class TableHandleRootElement extends TableHandleRootElementBase {}
 /**
  * @internal
  */
-export function registerTableHandleRootElement (): void {
+export function registerTableHandleRootElement(): void {
   registerCustomElement('prosekit-table-handle-root', TableHandleRootElement)
 }

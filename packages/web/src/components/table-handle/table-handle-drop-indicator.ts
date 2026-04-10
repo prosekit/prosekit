@@ -161,6 +161,6 @@ export class TableHandleDropIndicatorElement extends TableHandleDropIndicatorEle
 /**
  * @internal
  */
-export function registerTableHandleDropIndicatorElement (): void {
+export function registerTableHandleDropIndicatorElement(): void {
   registerCustomElement('prosekit-table-handle-drop-indicator', TableHandleDropIndicatorElement)
 }

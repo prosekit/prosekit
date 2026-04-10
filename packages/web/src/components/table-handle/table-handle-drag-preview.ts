@@ -164,6 +164,6 @@ export class TableHandleDragPreviewElement extends TableHandleDragPreviewElement
 /**
  * @internal
  */
-export function registerTableHandleDragPreviewElement (): void {
+export function registerTableHandleDragPreviewElement(): void {
   registerCustomElement('prosekit-table-handle-drag-preview', TableHandleDragPreviewElement)
 }

@@ -102,6 +102,6 @@ export class TableHandleRowMenuTriggerElement extends TableHandleRowMenuTriggerE
 /**
  * @internal
  */
-export function registerTableHandleRowMenuTriggerElement (): void {
+export function registerTableHandleRowMenuTriggerElement(): void {
   registerCustomElement('prosekit-table-handle-row-menu-trigger', TableHandleRowMenuTriggerElement)
 }

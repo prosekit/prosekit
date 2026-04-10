@@ -62,6 +62,6 @@ const TableHandleRowPositionerElementBase: HostElementConstructor<TableHandleRow
 export class TableHandleRowPositionerElement extends TableHandleRowPositionerElementBase {}
 
 /** @internal */
-export function registerTableHandleRowPositionerElement (): void {
+export function registerTableHandleRowPositionerElement(): void {
   registerCustomElement('prosekit-table-handle-row-positioner', TableHandleRowPositionerElement)
 }

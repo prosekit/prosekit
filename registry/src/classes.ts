@@ -5,47 +5,6 @@ function cn(...args: Array<string | undefined | null | false>): string {
   return twMerge(clsx(...args))
 }
 
-// TODO: remove CSS_DEFAULT_HIDDEN
-// For those elements that need to toggle visibility based on the `data-state`
-// attribute, we hide them by default. This ensures that they do not get
-// displayed before SSR hydration is complete.
-const CSS_DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
-
-
-
-const CSS_PRESENCE_ANIMATE = cn(
-  CSS_DEFAULT_HIDDEN,
-  'will-change-transform',
-  'motion-safe:data-[state=open]:animate-in',
-  'motion-safe:data-[state=closed]:animate-out',
-  'motion-safe:data-[state=open]:fade-in-0',
-  'motion-safe:data-[state=closed]:fade-out-0',
-  'motion-safe:data-[state=open]:zoom-in-95',
-  'motion-safe:data-[state=closed]:zoom-out-95',
-  'motion-safe:data-[state=open]:animate-duration-150',
-  'motion-safe:data-[state=closed]:animate-duration-200',
-)
-
-const CSS_POPOVER_ANIMATE = cn(
-  CSS_PRESENCE_ANIMATE,
-  'motion-safe:data-[side=bottom]:slide-in-from-top-2',
-  'motion-safe:data-[side=bottom]:slide-out-to-top-2',
-  'motion-safe:data-[side=left]:slide-in-from-right-2',
-  'motion-safe:data-[side=left]:slide-out-to-right-2',
-  'motion-safe:data-[side=right]:slide-in-from-left-2',
-  'motion-safe:data-[side=right]:slide-out-to-left-2',
-  'motion-safe:data-[side=top]:slide-in-from-bottom-2',
-  'motion-safe:data-[side=top]:slide-out-to-bottom-2',
-)
-
-// TODO: remove CSS_FLOATING_MENU
-const CSS_FLOATING_MENU = cn(
-  'z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
-  CSS_DEFAULT_HIDDEN,
-)
-
- 
-
 const CSS_BUTTON_BASE = cn(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )

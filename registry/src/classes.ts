@@ -133,7 +133,7 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 
 export const CSS_AUTOCOMPLETE_POPUP = cn(
   'relative block max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
-  CSS_FLOATING_MENU,
+  CSS_POPUP_BASE,
 )
 
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(

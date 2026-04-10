@@ -1,7 +1,7 @@
 {
   "CSS_AUTOCOMPLETE_MENU_ITEM": "relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800",
   "CSS_AUTOCOMPLETE_MENU_KEYBOARD": "text-xs font-mono text-gray-400 dark:text-gray-500",
-  "CSS_AUTOCOMPLETE_POPUP": "relative block max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1 z-10 box-border rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg [&:not([data-state])]:hidden",
+  "CSS_AUTOCOMPLETE_POPUP": "relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1 flex motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-90 starting:scale-90 scale-100",
   "CSS_BLOCK_HANDLE_ADD": "h-6 w-6 cursor-pointer flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50",
   "CSS_BLOCK_HANDLE_DRAG": "h-6 w-5 cursor-grab flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50",
   "CSS_BLOCK_HANDLE_POPUP": "flex motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-90 starting:scale-90 scale-100",

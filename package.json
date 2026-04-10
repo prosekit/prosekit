@@ -47,7 +47,7 @@
     "@size-limit/preset-small-lib": "^12.0.1",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.53.0",
+    "dprint": "^0.54.0",
     "eslint": "^10.2.0",
     "knip": "^6.0.4",
     "monorepo-typescript-references": "^1.1.1",

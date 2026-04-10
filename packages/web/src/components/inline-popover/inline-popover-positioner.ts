@@ -38,6 +38,14 @@ export interface InlinePopoverPositionerProps extends OverlayPositionerProps {
   hide: OverlayPositionerProps['hide']
 
   /**
+   * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+   * to place the floating element on top of other page content.
+   *
+   * @default false
+   */
+  hoist: boolean
+
+  /**
    * Whether the floating element can overlap the reference element to keep it
    * in view.
    *
@@ -69,6 +77,7 @@ export const InlinePopoverPositionerPropsDeclaration: PropsDeclaration<InlinePop
   placement: { default: 'top', attribute: 'placement', type: 'string' },
   offset: { default: 12, attribute: false, type: 'json' },
   hide: { default: true, attribute: 'hide', type: 'boolean' },
+  hoist: { default: false, attribute: 'hoist', type: 'boolean' },
   overlap: { default: true, attribute: 'overlap', type: 'boolean' },
   inline: { default: true, attribute: 'inline', type: 'boolean' },
   overflowPadding: { default: 8, attribute: 'overflow-padding', type: 'number' },

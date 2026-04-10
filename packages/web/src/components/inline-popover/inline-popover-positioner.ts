@@ -14,8 +14,17 @@ import { InlinePopoverStoreContext } from './store.ts'
 /**
  * @public
  */
-export interface InlinePopoverPositionerProps
-  extends Omit<OverlayPositionerProps, 'placement' | 'offset' | 'hide' | 'hoist' | 'overlap' | 'inline' | 'overflowPadding'>
+export interface InlinePopoverPositionerProps extends
+  Omit<
+    OverlayPositionerProps,
+    | 'placement'
+    | 'offset'
+    | 'hide'
+    | 'hoist'
+    | 'overlap'
+    | 'inline'
+    | 'overflowPadding'
+  >
 {
   /**
    * The initial placement of the floating element

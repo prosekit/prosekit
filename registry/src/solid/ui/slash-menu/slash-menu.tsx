@@ -14,7 +14,7 @@ export default function SlashMenu(): JSX.Element {
   const editor = useEditor<BasicExtension>()
 
   return (
-    <AutocompleteRoot regex={regex} class="contents">
+    <AutocompleteRoot regex={regex}  >
       <AutocompletePositioner>
         <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
           <SlashMenuItem

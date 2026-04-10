@@ -63,12 +63,12 @@ const props: Props = $props()
 const state = useEditorDerivedValue(getTableHandleState)
 </script>
 
-<TableHandleRoot class="contents">
+<TableHandleRoot  >
   <TableHandleDragPreview />
   <TableHandleDropIndicator />
   <TableHandleColumnPositioner class="CSS_TABLE_HANDLE_COLUMN_POSITIONER">
     <TableHandleColumnPopup class="CSS_TABLE_HANDLE_COLUMN_POPUP">
-      <TableHandleColumnMenuRoot class="contents">
+      <TableHandleColumnMenuRoot  >
         <TableHandleColumnMenuTrigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
         </TableHandleColumnMenuTrigger>
@@ -126,7 +126,7 @@ const state = useEditorDerivedValue(getTableHandleState)
     class="CSS_TABLE_HANDLE_ROW_POSITIONER"
   >
     <TableHandleRowPopup class="CSS_TABLE_HANDLE_ROW_POPUP">
-      <TableHandleRowMenuRoot class="contents">
+      <TableHandleRowMenuRoot  >
         <TableHandleRowMenuTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </TableHandleRowMenuTrigger>

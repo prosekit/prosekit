@@ -31,7 +31,7 @@ function handleTagInsert(id: number, label: string) {
 const regex = /#[\da-z]*$/i
 </script>
 
-<AutocompleteRoot {regex} class="contents">
+<AutocompleteRoot {regex} >
   <AutocompletePositioner>
     <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
       <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">

@@ -103,7 +103,7 @@ class LitTableHandle extends LitElement {
     const state = getTableHandleState(editor)
     const placement = this.dir === 'rtl' ? 'right' : 'left'
 
-    return html`<prosekit-table-handle-root .editor=${editor} class="contents">
+    return html`<prosekit-table-handle-root .editor=${editor} >
       <prosekit-table-handle-drag-preview .editor=${editor}></prosekit-table-handle-drag-preview>
       <prosekit-table-handle-drop-indicator
         .editor=${editor}
@@ -113,7 +113,7 @@ class LitTableHandle extends LitElement {
         class="CSS_TABLE_HANDLE_COLUMN_POSITIONER"
       >
         <prosekit-table-handle-column-popup class="CSS_TABLE_HANDLE_COLUMN_POPUP">
-          <prosekit-table-handle-column-menu-root class="contents">
+          <prosekit-table-handle-column-menu-root >
             <prosekit-table-handle-column-menu-trigger
               .editor=${editor}
               class="CSS_TABLE_COLUMN_HANDLE_TRIGGER"
@@ -175,7 +175,7 @@ class LitTableHandle extends LitElement {
         class="CSS_TABLE_HANDLE_ROW_POSITIONER"
       >
         <prosekit-table-handle-row-popup class="CSS_TABLE_HANDLE_ROW_POPUP">
-          <prosekit-table-handle-row-menu-root class="contents">
+          <prosekit-table-handle-row-menu-root  >
             <prosekit-table-handle-row-menu-trigger
               .editor=${editor}
               class="CSS_TABLE_ROW_HANDLE_TRIGGER"

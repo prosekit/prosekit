@@ -30,7 +30,6 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 <template>
   <AutocompleteRoot
     :regex="regex"
-    class="contents"
     @query-change="(event) => props.onQueryChange?.(event.detail)"
     @open-change="(event) => props.onOpenChange?.(event.detail)"
   >

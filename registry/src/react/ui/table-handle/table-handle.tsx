@@ -61,12 +61,12 @@ export default function TableHandle(props: Props) {
   const state = useEditorDerivedValue(getTableHandleState)
 
   return (
-    <TableHandleRoot className="contents">
+    <TableHandleRoot  >
       <TableHandleDragPreview />
       <TableHandleDropIndicator />
       <TableHandleColumnPositioner className="CSS_TABLE_HANDLE_COLUMN_POSITIONER">
         <TableHandleColumnPopup className="CSS_TABLE_HANDLE_COLUMN_POPUP">
-          <TableHandleColumnMenuRoot className="contents">
+          <TableHandleColumnMenuRoot >
             <TableHandleColumnMenuTrigger className="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
               <div className="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
             </TableHandleColumnMenuTrigger>
@@ -124,7 +124,7 @@ export default function TableHandle(props: Props) {
         className="CSS_TABLE_HANDLE_ROW_POSITIONER"
       >
         <TableHandleRowPopup className="CSS_TABLE_HANDLE_ROW_POPUP">
-          <TableHandleRowMenuRoot className="contents">
+          <TableHandleRowMenuRoot  >
             <TableHandleRowMenuTrigger className="CSS_TABLE_ROW_HANDLE_TRIGGER">
               <div className="CSS_ICON_TABLE_ROW_HANDLE"></div>
             </TableHandleRowMenuTrigger>

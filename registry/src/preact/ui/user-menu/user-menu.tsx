@@ -33,7 +33,6 @@ export default function UserMenu(props: {
   return (
     <AutocompleteRoot
       regex={regex}
-      className="contents"
       onQueryChange={(event) => props.onQueryChange?.(event.detail)}
       onOpenChange={(event) => props.onOpenChange?.(event.detail)}
     >

@@ -88,11 +88,15 @@ const CSS_POPUP = cn(
   'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
   'motion-safe:transition-discrete motion-safe:transition-all',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
-  'data-[state=closed]:scale-90 starting:scale-90 scale-100',
+  'data-[state=closed]:scale-95 starting:scale-95 scale-100',
 )
 const CSS_MENU_POPUP = cn(
   CSS_POPUP, 
+  'flex flex-col',
   'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
+)
+const CSS_MENU_ITEM = cn(
+  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800',
 )
 
 export const CSS_MINIMAL_EDITOR = cn(
@@ -141,14 +145,12 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 export const CSS_AUTOCOMPLETE_POSITIONER = CSS_POSITIONER
 export const CSS_AUTOCOMPLETE_POPUP = cn(
   CSS_MENU_POPUP,
-  'relative flex flex-col max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
+  'relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
 )
-
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
   'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5',
-  CSS_FLOATING_MENU_ITEM,
+  CSS_MENU_ITEM,
 )
-
 export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(
   'text-xs font-mono text-gray-400 dark:text-gray-500',
 )
@@ -274,14 +276,14 @@ export const CSS_TABLE_MENU_POSITIONER = cn(
 
 export const CSS_TABLE_MENU_POPUP = cn(
   'relative block max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1 outline-none ',
-  CSS_FLOATING_MENU,
+  CSS_MENU_POPUP,
 )
 
 export const CSS_TABLE_CELL_MENU_ITEM = cn(
   'relative min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
   'data-danger:text-red-500',
-  CSS_FLOATING_MENU_ITEM,
+  CSS_MENU_ITEM,
 )
 
 export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(

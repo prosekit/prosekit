@@ -23,7 +23,6 @@ import { version } from '../packages/prosekit/package.json'
 
 type Sidebar = StarlightUserConfig['sidebar']
 
-
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = fs.globSync('**/*.{md,mdx}', { cwd: 'src/content/docs/references' }).sort()
@@ -229,14 +228,14 @@ const config: AstroUserConfig = {
       previewSubpath: '-/',
       homeContent: {
         title: 'ProseKit',
-        subtitle:          false, 
-          repo: {
-href: "https://github.com/prosekit/prosekit"
-          }, 
-          version: {
-            label: "v" + version, 
-            href: "https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md"
-          }
+        subtitle: false,
+        repo: {
+          href: 'https://github.com/prosekit/prosekit',
+        },
+        version: {
+          label: 'v' + version,
+          href: 'https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md',
+        },
       },
     }),
     minifyHTML(),

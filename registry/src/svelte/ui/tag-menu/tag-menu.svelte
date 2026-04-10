@@ -33,7 +33,7 @@ const regex = /#[\da-z]*$/i
 
 <AutocompleteRoot {regex}>
   <AutocompletePositioner>
-    <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
+    <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
       <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>

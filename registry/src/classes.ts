@@ -130,7 +130,7 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
   CSS_BUTTON_SIZE_SM,
 )
 
-export const CSS_AUTOCOMPLETE_MENU = cn(
+export const CSS_AUTOCOMPLETE_POPUP = cn(
   'relative block max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
   CSS_FLOATING_MENU,
 )
@@ -215,9 +215,8 @@ export const CSS_DROP_INDICATOR = cn('z-50 transition-all bg-blue-500')
 
 
 
-export const CSS_BLOCK_HANDLE_POSITIONER = cn(CSS_POSITIONER_BASE)
-
-export const CSS_BLOCK_HANDLE_POPUP = cn(CSS_POPUP_BASE)
+export const CSS_BLOCK_HANDLE_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_BLOCK_HANDLE_POPUP = CSS_POPUP_BASE
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
   // "h-6" currently matches a 24px paragraph line-height (with a 16px base font size and line-height 1.5); if the base font size changes, this equivalence may no longer hold.
@@ -234,8 +233,8 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
   'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50',
 )
 
-export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = cn(CSS_POSITIONER_BASE)
-export const CSS_TABLE_HANDLE_ROW_POSITIONER = cn(CSS_POSITIONER_BASE)
+export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_TABLE_HANDLE_ROW_POSITIONER = CSS_POSITIONER_BASE
 
 export const CSS_TABLE_HANDLE_COLUMN_POPUP = cn(
   'translate-y-[50%]',

@@ -15,7 +15,7 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 
 <AutocompleteRoot {regex}>
   <AutocompletePositioner>
-    <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
+    <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
       <SlashMenuItem
         label="Text"
         onSelect={() => $editor.commands.setParagraph()}

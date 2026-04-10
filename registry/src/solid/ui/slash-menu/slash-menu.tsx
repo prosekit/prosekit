@@ -16,7 +16,7 @@ export default function SlashMenu(): JSX.Element {
   return (
     <AutocompleteRoot regex={regex}>
       <AutocompletePositioner>
-        <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
+        <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
           <SlashMenuItem
             label="Text"
             onSelect={() => editor().commands.setParagraph()}

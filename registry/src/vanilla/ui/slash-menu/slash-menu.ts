@@ -22,7 +22,7 @@ export function renderSlashMenu(
   const positioner = document.createElement('prosekit-autocomplete-positioner') as AutocompletePositionerElement
 
   const popup = document.createElement('prosekit-autocomplete-popup') as AutocompletePopupElement
-  popup.className = 'CSS_AUTOCOMPLETE_MENU'
+  popup.className = 'CSS_AUTOCOMPLETE_POPUP'
 
   popup.append(renderSlashMenuItem({ label: 'Text', kbd: undefined, onSelect: () => editor.commands.setParagraph() }))
   popup.append(renderSlashMenuItem({ label: 'Heading 1', kbd: '#', onSelect: () => editor.commands.setHeading({ level: 1 }) }))

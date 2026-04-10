@@ -1229,8 +1229,8 @@ importers:
         specifier: ^1.9.12
         version: 1.9.12
       starlight-theme-nova:
-        specifier: ^0.11.7
-        version: 0.11.7(@astrojs/starlight@0.38.3(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
+        specifier: ^0.11.8
+        version: 0.11.8(@astrojs/starlight@0.38.3(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3)
       svelte:
         specifier: ^5.55.2
         version: 5.55.2
@@ -1279,68 +1279,17 @@ packages:
       typescript:
         optional: true
 
-  '@aria-ui/core@0.0.22':
-    resolution: {integrity: sha512-N/UC2JJ8fA46WAc5TBNM9NZMcmQ3ghqDt1DNa7XdXHqHhDYkZ7Mn0Yn6KEciiIvlP+yuxLrPO/Q1oB4CNV21kg==}
-
   '@aria-ui/core@0.1.0':
     resolution: {integrity: sha512-uKxomB53dAF2OkNav72ewlExtbTMItOwU+X1sMsN/ORc4xEeNTUy3BI3klCJ7XKY2/aAp+D0r8/F7XfabZ6NGQ==}
 
   '@aria-ui/elements@0.1.0':
     resolution: {integrity: sha512-yENW3S1Efv0KN47akL3bFajmCFSlkoOEdPjKTNm364ZmQmQ4KemXmtNU5C9hkvu1rIMb762gmVXU30bAPDLq2g==}
 
-  '@aria-ui/overlay@0.0.25':
-    resolution: {integrity: sha512-YpOFpB1KNQaGLgRsnN5BcY64A+akHOqlLhH/ft7YU/l7E/9Sm0yscriiBvEi+vVwqYUOveNuh5vDVVmWeRjLpQ==}
-
-  '@aria-ui/presence@0.0.20':
-    resolution: {integrity: sha512-K/n60HLCGG0XX+sAEJ7aOScevXrfDet7+gxt+QXlELxxjrlpP0sZq/iS6KCdr6n7piaW6zfY7EtKxOriWUv8tw==}
-
-  '@aria-ui/tooltip@0.0.30':
-    resolution: {integrity: sha512-XYctHrJOSRNW2iQc1IHkozlK2H6edX+uD/p1Oo5yHNMA28mFrxKUOJEiA297jAvlLwASKTaAT+40cOTZ2bTyTQ==}
+  '@aria-ui/elements@0.1.1':
+    resolution: {integrity: sha512-a4pmfo8C5URtL7qCY4h/uErbhMDbwMoErwd5tgBySLIrkA3/i2LlBNpnEmjupr3JcHbTC+57HgBcp1cogIdh/g==}
 
   '@aria-ui/utils@0.1.0':
     resolution: {integrity: sha512-wBLP8sdhiS3ZbkmlIlMFmlbhNpYAAEKvvkfbXHUhXVnFxNzJYqY4FuLGUBbrGR+k+K7FU6LhmtVvjRta/hlTsQ==}
-
-  '@ariatype/aria-attributes-drag-and-drop@1.0.2':
-    resolution: {integrity: sha512-JbbKaKkYMN/zc//irXYb6QFIMm+A4tpwgs6x4BrNtqU/Jeq2vk4i3LhnHBB1SaMfihGtcH8/Sj++o4jaIBXyCw==}
-
-  '@ariatype/aria-attributes-global@1.0.2':
-    resolution: {integrity: sha512-7SFhMMqiO8bd1/bePd+QTxJTkRKQpl1nsgFSpfeXFV3bypl93JYTkQyspbmkmSSqV6yQDwgfOA4XPapWDKiU9Q==}
-
-  '@ariatype/aria-attributes-live-region@1.0.2':
-    resolution: {integrity: sha512-WXlPVXAtaOShNnthxYAeA0L1OdJyMORyg+fOVdgQPw5hVI0zkF4tq/TA/k39QZOc82Ox5hDJBZqSTmg0pfk45g==}
-
-  '@ariatype/aria-attributes-relationship@1.0.2':
-    resolution: {integrity: sha512-pMhhosfqc42Pp0mQ5zMoyLNnrLTqB3dHrxD2hPyd4ahLjn7uty2SBvfjpEMRUmVpYzVskk3TkOogceQdGE1dCQ==}
-
-  '@ariatype/aria-attributes-widget@1.0.2':
-    resolution: {integrity: sha512-jhTD9Hsjj3s/UpCX1/0JeEVyH/MlSspwxMkdrUjjYN2fOZuScSlv2uhxQs7L7CAYprcESu7ze9PCILOwaIcuWw==}
-
-  '@ariatype/aria-attributes@1.0.2':
-    resolution: {integrity: sha512-fI6gnJwPaspKbpDruU21P/2RE5AGj7ZUtMXXfsTAHV+IFodd16HCBvifF8yQpFCU8bDvJjhaDaUoBt+89okE0w==}
-
-  '@ariatype/aria-roles-composite@1.0.2':
-    resolution: {integrity: sha512-PchMV4wxWsFeR2b774ZYXgUdBCDwpVUOGrhxgVG2NLK4y6BNbL4NvGgujvxEa3US5QHaeDk9nXF1t2HGprXtbg==}
-
-  '@ariatype/aria-roles-document-structure@1.0.2':
-    resolution: {integrity: sha512-luBB23nVL8jdfLZZBjZ7SaNTs7cgiEMqsfPdJGgvXFUjWPYC46pDwkz7GoFgkgCTUB4/PuDh/DzYw3ySUHYNWQ==}
-
-  '@ariatype/aria-roles-generic@1.0.2':
-    resolution: {integrity: sha512-dYmVwqWZ4vKR8dygp60JHbVbjorEOSK72Tktpfw7q35bcH455Fj81GtMtw4Mq/71RWsTaR7coQRwBbqwsGCOpw==}
-
-  '@ariatype/aria-roles-landmark@1.0.2':
-    resolution: {integrity: sha512-f8SoNedYsZp2R9+huGFkkAbb2AgI7ofMSnPdjRpcNrM2hkqqrIVzpbDazkV0YtoEpbgHdmRnFE3xxWknKRIOoQ==}
-
-  '@ariatype/aria-roles-live-region@1.0.2':
-    resolution: {integrity: sha512-k/HxYoquWwyHS11lm4+M1UHgH0UFEvtxU/DQZGaUOIFG7gjDDX1e+M9hsgGgEHMEsD1ev75PLdNRTAmZwbH+kA==}
-
-  '@ariatype/aria-roles-widget@1.0.2':
-    resolution: {integrity: sha512-uGEIXgu0dnDtBahcBHoo8mT+OZOXj3sZhPH067p+D+WViumb0yLbPtdqnVaLVeCDeuyLopWMp7OW6SD6h+5IDw==}
-
-  '@ariatype/aria-roles-window@1.0.2':
-    resolution: {integrity: sha512-zd1f5nzc+3FfrpjSz8HfbOyiVxlRfi2Xrs8Rk5JHIw9kkZIa5Mf2M55bBlTZVNLCO8l5oUrIPxhi0seR3kN9bA==}
-
-  '@ariatype/aria-roles@1.0.2':
-    resolution: {integrity: sha512-ZhQTwM1Q5TdoJlFIdaveZMjE0sMGZ4qTpZLbn1b9HqXoixHLzbWWZlmeAPXpSrYjQsCsJlnuIlL9LeYCLT61ag==}
 
   '@asamuzakjp/css-color@5.1.9':
     resolution: {integrity: sha512-zd9c/Wdso6v1U7v6w3i/hbAr4K7NaSHImdpvmLt+Y9ea5BhilnIGNkfhOJ7FEIuPipAnE9tZeDOll05WDT0kgg==}
@@ -5591,12 +5540,6 @@ packages:
   just-group-by@2.2.0:
     resolution: {integrity: sha512-brZocDSmkvDYc+FOr07GiTar4cp7K6OB9huVOrj5LX+iXfCe3hTvn2KGM811LE/SBQkCzuYDDEcG8HA/dKDrnw==}
 
-  just-kebab-case@4.2.0:
-    resolution: {integrity: sha512-p2BdO7o4BI+pMun3J+dhaOfYan5JsZrw9wjshRjkWY9+p+u+kKSMhNWYnot2yHDR9CSahZ9iT3dcqJ+V72qHMw==}
-
-  just-map-values@3.2.0:
-    resolution: {integrity: sha512-TyqCKtK3NxiUgOjRYMIKURvBTHesi3XzomDY0QVPZ3rYzLCF+nNq5rSi0B/L5aOd/WMTZo6ukzA4wih4HUbrDg==}
-
   just-memoize@2.2.0:
     resolution: {integrity: sha512-zriv+MY+61RXT0QsrO1ZJtL5umouqqSWmCGBkp2wJm35kniunBAA4qhUKx8Lvg/QcwrF9xuw9E6PkevKFf4boQ==}
 
@@ -6780,8 +6723,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki-twoslash-renderer@0.2.1:
-    resolution: {integrity: sha512-15qdao4a8LLXuwYtdC5a7Xf0LxGrDNrCowJOYX1gMPE6isQcDOL1GAXw4J7uE/aOMjK1L1UcU8nil42Hozrngw==}
+  shiki-twoslash-renderer@0.3.2:
+    resolution: {integrity: sha512-LSfrkL5HB1DM75QX66V62GeBYEmA4ealx9dL3hnmdlS6Hvkqh+uH1RNZKCpkI+oeoy4dG8c4u2iLZBVixzerag==}
 
   shiki@3.23.0:
     resolution: {integrity: sha512-55Dj73uq9ZXL5zyeRPzHQsK7Nbyt6Y10k5s7OjuFZGMhpp4r/rsLBH0o/0fstIzX1Lep9VxefWljK/SKCzygIA==}
@@ -6886,8 +6829,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.11.7:
-    resolution: {integrity: sha512-mmW/tDEtN0bpFp2c3Kkj1WIKnV8eZYUL17Zvb/6/QFtQkx2RPzkRqbsEfaPv0urRNche6i7KrvMPhnqUB2J8xA==}
+  starlight-theme-nova@0.11.8:
+    resolution: {integrity: sha512-8XR4i3gAin1c5BYiBSZO2zbhVWCoNflOHwzGMgNLeQUOLxnUO5okkuSiGXW+NgIkxRS6JStr1IMDMipZYYtsqQ==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -8008,16 +7951,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  '@aria-ui/core@0.0.22':
-    dependencies:
-      '@ariatype/aria-attributes': 1.0.2
-      '@ariatype/aria-roles': 1.0.2
-      '@preact/signals-core': 1.14.0
-      '@zag-js/dom-query': 1.39.1
-      just-kebab-case: 4.2.0
-      just-map-values: 3.2.0
-      server-dom-shim: 1.1.0
-
   '@aria-ui/core@0.1.0':
     dependencies:
       '@ocavue/utils': 1.6.0
@@ -8033,83 +7966,18 @@ snapshots:
       '@zag-js/dismissable': 1.39.1
       '@zag-js/dom-query': 1.39.1
 
-  '@aria-ui/overlay@0.0.25':
+  '@aria-ui/elements@0.1.1':
     dependencies:
-      '@aria-ui/core': 0.0.22
+      '@aria-ui/core': 0.1.0
+      '@aria-ui/utils': 0.1.0
       '@floating-ui/dom': 1.7.6
-      '@floating-ui/utils': 0.2.11
+      '@zag-js/dismissable': 1.39.1
       '@zag-js/dom-query': 1.39.1
-
-  '@aria-ui/presence@0.0.20':
-    dependencies:
-      '@aria-ui/core': 0.0.22
-      '@zag-js/dom-query': 1.39.1
-
-  '@aria-ui/tooltip@0.0.30':
-    dependencies:
-      '@aria-ui/core': 0.0.22
-      '@aria-ui/overlay': 0.0.25
-      '@aria-ui/presence': 0.0.20
-      nanoid: 5.1.6
 
   '@aria-ui/utils@0.1.0':
     dependencies:
       '@aria-ui/core': 0.1.0
       '@zag-js/dom-query': 1.39.1
-
-  '@ariatype/aria-attributes-drag-and-drop@1.0.2': {}
-
-  '@ariatype/aria-attributes-global@1.0.2': {}
-
-  '@ariatype/aria-attributes-live-region@1.0.2': {}
-
-  '@ariatype/aria-attributes-relationship@1.0.2': {}
-
-  '@ariatype/aria-attributes-widget@1.0.2': {}
-
-  '@ariatype/aria-attributes@1.0.2':
-    dependencies:
-      '@ariatype/aria-attributes-drag-and-drop': 1.0.2
-      '@ariatype/aria-attributes-global': 1.0.2
-      '@ariatype/aria-attributes-live-region': 1.0.2
-      '@ariatype/aria-attributes-relationship': 1.0.2
-      '@ariatype/aria-attributes-widget': 1.0.2
-
-  '@ariatype/aria-roles-composite@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-generic': 1.0.2
-
-  '@ariatype/aria-roles-document-structure@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-generic': 1.0.2
-
-  '@ariatype/aria-roles-generic@1.0.2': {}
-
-  '@ariatype/aria-roles-landmark@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-generic': 1.0.2
-
-  '@ariatype/aria-roles-live-region@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-generic': 1.0.2
-
-  '@ariatype/aria-roles-widget@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-generic': 1.0.2
-
-  '@ariatype/aria-roles-window@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-generic': 1.0.2
-
-  '@ariatype/aria-roles@1.0.2':
-    dependencies:
-      '@ariatype/aria-roles-composite': 1.0.2
-      '@ariatype/aria-roles-document-structure': 1.0.2
-      '@ariatype/aria-roles-generic': 1.0.2
-      '@ariatype/aria-roles-landmark': 1.0.2
-      '@ariatype/aria-roles-live-region': 1.0.2
-      '@ariatype/aria-roles-widget': 1.0.2
-      '@ariatype/aria-roles-window': 1.0.2
 
   '@asamuzakjp/css-color@5.1.9':
     dependencies:
@@ -12789,10 +12657,6 @@ snapshots:
 
   just-group-by@2.2.0: {}
 
-  just-kebab-case@4.2.0: {}
-
-  just-map-values@3.2.0: {}
-
   just-memoize@2.2.0: {}
 
   just-pick@4.2.0: {}
@@ -14513,10 +14377,10 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki-twoslash-renderer@0.2.1(typescript@5.9.3):
+  shiki-twoslash-renderer@0.3.2(typescript@5.9.3):
     dependencies:
-      '@aria-ui/core': 0.0.22
-      '@aria-ui/tooltip': 0.0.30
+      '@aria-ui/core': 0.1.0
+      '@aria-ui/elements': 0.1.1
       '@shikijs/twoslash': 4.0.2(typescript@5.9.3)
       '@shikijs/types': 4.0.2
       '@types/hast': 3.0.4
@@ -14643,9 +14507,9 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.11.7(@astrojs/starlight@0.38.3(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
+  starlight-theme-nova@0.11.8(@astrojs/starlight@0.38.3(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
     dependencies:
-      '@aria-ui/core': 0.0.22
+      '@aria-ui/core': 0.1.0
       '@pagefind/default-ui': 1.4.0
       '@shikijs/transformers': 4.0.2
       '@shikijs/twoslash': 4.0.2(typescript@5.9.3)
@@ -14655,7 +14519,7 @@ snapshots:
       hast-util-is-element: 3.0.0
       rehype: 13.0.2
       remark-custom-header-id: 1.0.0
-      shiki-twoslash-renderer: 0.2.1(typescript@5.9.3)
+      shiki-twoslash-renderer: 0.3.2(typescript@5.9.3)
     optionalDependencies:
       '@astrojs/starlight': 0.38.3(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))
     transitivePeerDependencies:

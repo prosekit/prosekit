@@ -34,6 +34,8 @@ minimumReleaseAgeExclude:
   - "@astrobook/*"
   - "@prosemirror-adapter/*"
   - "@aria-ui/*"
+  - "starlight-theme-nova"
+  - "shiki-twoslash-renderer"
 
 overrides: {}
 

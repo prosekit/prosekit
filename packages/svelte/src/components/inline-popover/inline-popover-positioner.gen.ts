@@ -33,6 +33,13 @@ export interface InlinePopoverPositionerProps {
    */
   hide?: InlinePopoverPositionerElementProps['hide'];
   /**
+   * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+   * to place the floating element on top of other page content.
+   *
+   * @default false
+   */
+  hoist?: InlinePopoverPositionerElementProps['hoist'];
+  /**
    * Whether the floating element can overlap the reference element to keep it
    * in view.
    *
@@ -66,13 +73,6 @@ export interface InlinePopoverPositionerProps {
    * @default true
    */
   autoUpdate?: InlinePopoverPositionerElementProps['autoUpdate'];
-  /**
-   * Whether to use the browser Popover API to place the floating element on
-   * top of other page content.
-   *
-   * @default true
-   */
-  hoist?: InlinePopoverPositionerElementProps['hoist'];
   /**
    * Whether to flip the `placement` in order to keep it in view when the
    * preferred placement(s) will overflow the clipping boundary. You can also

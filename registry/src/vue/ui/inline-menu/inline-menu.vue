@@ -99,7 +99,7 @@ function handleLinkUpdate(href?: string) {
     <InlinePopoverPositioner class="CSS_INLINE_MENU_POSITIONER">
       <InlinePopoverPopup
         data-testid="inline-menu-main"
-        class="CSS_INLINE_MENU_MAIN"
+        class="CSS_INLINE_MENU_MAIN_POPUP"
       >
         <Button
           v-if="items.bold"
@@ -172,7 +172,7 @@ function handleLinkUpdate(href?: string) {
     <InlinePopoverPositioner placement="bottom" class="CSS_INLINE_MENU_POSITIONER">
       <InlinePopoverPopup
         data-testid="inline-menu-link"
-        class="CSS_INLINE_MENU_LINK"
+        class="CSS_INLINE_MENU_LINK_POPUP"
       >
         <form
           v-if="linkMenuOpen"
@@ -185,12 +185,12 @@ function handleLinkUpdate(href?: string) {
           <input
             placeholder="Paste the link..."
             :value="items.link.currentLink || ''"
-            class="CSS_INLINE_MENU_LINK_INPUT"
+            class="CSS_INLINE_MENU_LINK_POPUP_INPUT"
           >
         </form>
         <button
           v-if="items.link.isActive"
-          class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
+          class="CSS_INLINE_MENU_LINK_POPUP_REMOVE_BUTTON"
           @click="() => handleLinkUpdate()"
           @mousedown.prevent
         >

@@ -108,7 +108,7 @@ export default function InlineMenu() {
         <InlinePopoverPositioner className="CSS_INLINE_MENU_POSITIONER">
           <InlinePopoverPopup
             data-testid="inline-menu-main"
-            className="CSS_INLINE_MENU_MAIN"
+            className="CSS_INLINE_MENU_MAIN_POPUP"
           >
             {items.bold && (
               <Button
@@ -185,14 +185,14 @@ export default function InlineMenu() {
           <InlinePopoverPositioner placement="bottom" className="CSS_INLINE_MENU_POSITIONER">
             <InlinePopoverPopup
               data-testid="inline-menu-link"
-              className="CSS_INLINE_MENU_LINK"
+              className="CSS_INLINE_MENU_LINK_POPUP"
             >
               {linkMenuOpen && (
                 <form onSubmit={handleSubmit}>
                   <input
                     placeholder="Paste the link..."
                     defaultValue={items.link.currentLink}
-                    className="CSS_INLINE_MENU_LINK_INPUT"
+                    className="CSS_INLINE_MENU_LINK_POPUP_INPUT"
                   />
                 </form>
               )}
@@ -200,7 +200,7 @@ export default function InlineMenu() {
                 <button
                   onClick={() => handleLinkUpdate()}
                   onMouseDown={(event) => event.preventDefault()}
-                  className="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
+                  className="CSS_INLINE_MENU_LINK_POPUP_REMOVE_BUTTON"
                 >
                   Remove link
                 </button>

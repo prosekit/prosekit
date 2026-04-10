@@ -99,7 +99,7 @@ export default function InlineMenu(): JSX.Element {
         <InlinePopoverPositioner class="CSS_INLINE_MENU_POSITIONER">
           <InlinePopoverPopup
             attr:data-testid="inline-menu-main"
-            class="CSS_INLINE_MENU_MAIN"
+            class="CSS_INLINE_MENU_MAIN_POPUP"
           >
             <Show when={items().bold}>
               {(item) => (
@@ -189,7 +189,7 @@ export default function InlineMenu(): JSX.Element {
             <InlinePopoverPositioner placement="bottom" class="CSS_INLINE_MENU_POSITIONER">
               <InlinePopoverPopup
                 attr:data-testid="inline-menu-link"
-                class="CSS_INLINE_MENU_LINK"
+                class="CSS_INLINE_MENU_LINK_POPUP"
               >
                 <Show when={linkMenuOpen()}>
                   <form
@@ -203,7 +203,7 @@ export default function InlineMenu(): JSX.Element {
                     <input
                       placeholder="Paste the link..."
                       value={item().currentLink || ''}
-                      class="CSS_INLINE_MENU_LINK_INPUT"
+                      class="CSS_INLINE_MENU_LINK_POPUP_INPUT"
                     />
                   </form>
                 </Show>
@@ -211,7 +211,7 @@ export default function InlineMenu(): JSX.Element {
                   <button
                     onClick={() => handleLinkUpdate()}
                     onMouseDown={(event) => event.preventDefault()}
-                    class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
+                    class="CSS_INLINE_MENU_LINK_POPUP_REMOVE_BUTTON"
                   >
                     Remove link
                   </button>

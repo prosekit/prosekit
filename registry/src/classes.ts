@@ -44,9 +44,7 @@ const CSS_FLOATING_MENU = cn(
   CSS_DEFAULT_HIDDEN,
 )
 
-const CSS_FLOATING_MENU_ITEM = cn(
-  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800',
-)
+ 
 
 const CSS_BUTTON_BASE = cn(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
@@ -92,7 +90,6 @@ const CSS_POPUP = cn(
 )
 const CSS_MENU_POPUP = cn(
   CSS_POPUP, 
-  'flex flex-col',
   'motion-safe:duration-40',
   'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
 )
@@ -125,19 +122,19 @@ export const CSS_EDITOR_CONTENT = cn(
 
 export const CSS_INLINE_MENU_POSITIONER = CSS_POSITIONER
 
-export const CSS_INLINE_MENU_MAIN = cn(
-  CSS_FLOATING_MENU,
+export const CSS_INLINE_MENU_MAIN_POPUP = cn(
+  CSS_MENU_POPUP,
   'relative flex min-w-32 space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
 )
 
-export const CSS_INLINE_MENU_LINK = cn(
-  CSS_FLOATING_MENU,
+export const CSS_INLINE_MENU_LINK_POPUP = cn(
+  CSS_MENU_POPUP,
   'relative flex flex-col w-xs rounded-lg p-4 gap-y-2 items-stretch',
 )
 
-export const CSS_INLINE_MENU_LINK_INPUT = cn(CSS_INPUT)
+export const CSS_INLINE_MENU_LINK_POPUP_INPUT = cn(CSS_INPUT)
 
-export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
+export const CSS_INLINE_MENU_LINK_POPUP_REMOVE_BUTTON = cn(
   CSS_BUTTON_BASE,
   CSS_BUTTON_VARIANT_PRIMARY,
   CSS_BUTTON_SIZE_SM,
@@ -146,6 +143,7 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 export const CSS_AUTOCOMPLETE_POSITIONER = CSS_POSITIONER
 export const CSS_AUTOCOMPLETE_POPUP = cn(
   CSS_MENU_POPUP,
+  'flex flex-col',
   'relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
 )
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
@@ -276,8 +274,8 @@ export const CSS_TABLE_MENU_POSITIONER = cn(
 )
 
 export const CSS_TABLE_MENU_POPUP = cn(
-  'relative block max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1 outline-none ',
   CSS_MENU_POPUP,
+  'relative flex flex-col max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1 outline-none ',
 )
 
 export const CSS_TABLE_CELL_MENU_ITEM = cn(

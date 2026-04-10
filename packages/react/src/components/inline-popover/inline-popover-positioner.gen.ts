@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface InlinePopoverPositionerProps extends HTMLAttributes<InlinePopoverPositionerElement> {
+export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
    *
@@ -172,4 +172,4 @@ function InlinePopoverPositionerComponent(props: InlinePopoverPositionerProps, f
  *
  * @public
  */
-export const InlinePopoverPositioner: ForwardRefExoticComponent<InlinePopoverPositionerProps & RefAttributes<InlinePopoverPositionerElement>> = /* @__PURE__ */ forwardRef(InlinePopoverPositionerComponent);
+export const InlinePopoverPositioner: ForwardRefExoticComponent<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement> & RefAttributes<InlinePopoverPositionerElement>> = /* @__PURE__ */ forwardRef(InlinePopoverPositionerComponent);

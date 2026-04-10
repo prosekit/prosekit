@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleRootProps extends HTMLAttributes<TableHandleRootElement> {
+export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
    *
@@ -59,4 +59,4 @@ function TableHandleRootComponent(props: TableHandleRootProps, forwardedRef: Ref
  *
  * @public
  */
-export const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & RefAttributes<TableHandleRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRootComponent);
+export const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & HTMLAttributes<TableHandleRootElement> & RefAttributes<TableHandleRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRootComponent);

@@ -12,7 +12,7 @@ import { useCallback, useRef } from 'preact/hooks';
  *
  * @public
  */
-export interface AutocompleteEmptyProps extends HTMLAttributes<AutocompleteEmptyElement> {}
+export interface AutocompleteEmptyProps {}
 
 function AutocompleteEmptyComponent(props: AutocompleteEmptyProps, forwardedRef: Ref<AutocompleteEmptyElement>) {
   registerAutocompleteEmptyElement();
@@ -41,4 +41,4 @@ function AutocompleteEmptyComponent(props: AutocompleteEmptyProps, forwardedRef:
  *
  * @public
  */
-export const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & RefAttributes<AutocompleteEmptyElement>> = /* @__PURE__ */ forwardRef(AutocompleteEmptyComponent);
+export const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>> = /* @__PURE__ */ forwardRef(AutocompleteEmptyComponent);

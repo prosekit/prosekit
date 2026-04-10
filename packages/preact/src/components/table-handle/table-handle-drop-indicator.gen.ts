@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleDropIndicatorProps extends HTMLAttributes<TableHandleDropIndicatorElement> {
+export interface TableHandleDropIndicatorProps {
   /**
    * @default null
    * @hidden
@@ -57,4 +57,4 @@ function TableHandleDropIndicatorComponent(props: TableHandleDropIndicatorProps,
  *
  * @public
  */
-export const TableHandleDropIndicator: ForwardRefExoticComponent<TableHandleDropIndicatorProps & RefAttributes<TableHandleDropIndicatorElement>> = /* @__PURE__ */ forwardRef(TableHandleDropIndicatorComponent);
+export const TableHandleDropIndicator: ForwardRefExoticComponent<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement> & RefAttributes<TableHandleDropIndicatorElement>> = /* @__PURE__ */ forwardRef(TableHandleDropIndicatorComponent);

@@ -57,4 +57,4 @@ function BlockHandleAddComponent(props: BlockHandleAddProps, forwardedRef: Forwa
  *
  * @public
  */
-export const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps &  HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>> = /* @__PURE__ */ forwardRef(BlockHandleAddComponent);
+export const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>> = /* @__PURE__ */ forwardRef(BlockHandleAddComponent);

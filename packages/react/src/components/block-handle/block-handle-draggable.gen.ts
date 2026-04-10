@@ -12,7 +12,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface BlockHandleDraggableProps extends HTMLAttributes<BlockHandleDraggableElement> {
+export interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
    *
@@ -57,4 +57,4 @@ function BlockHandleDraggableComponent(props: BlockHandleDraggableProps, forward
  *
  * @public
  */
-export const BlockHandleDraggable: ForwardRefExoticComponent<BlockHandleDraggableProps & RefAttributes<BlockHandleDraggableElement>> = /* @__PURE__ */ forwardRef(BlockHandleDraggableComponent);
+export const BlockHandleDraggable: ForwardRefExoticComponent<BlockHandleDraggableProps & HTMLAttributes<BlockHandleDraggableElement> & RefAttributes<BlockHandleDraggableElement>> = /* @__PURE__ */ forwardRef(BlockHandleDraggableComponent);

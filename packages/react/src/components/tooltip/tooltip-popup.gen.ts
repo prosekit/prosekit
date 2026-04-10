@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface TooltipPopupProps extends HTMLAttributes<TooltipPopupElement> {}
+export interface TooltipPopupProps {}
 
 function TooltipPopupComponent(props: TooltipPopupProps, forwardedRef: ForwardedRef<TooltipPopupElement>) {
   registerTooltipPopupElement();
@@ -39,4 +39,4 @@ function TooltipPopupComponent(props: TooltipPopupProps, forwardedRef: Forwarded
  *
  * @public
  */
-export const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & RefAttributes<TooltipPopupElement>> = /* @__PURE__ */ forwardRef(TooltipPopupComponent);
+export const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & HTMLAttributes<TooltipPopupElement> & RefAttributes<TooltipPopupElement>> = /* @__PURE__ */ forwardRef(TooltipPopupComponent);

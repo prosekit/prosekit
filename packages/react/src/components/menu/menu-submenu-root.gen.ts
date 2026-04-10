@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface MenuSubmenuRootProps extends HTMLAttributes<MenuSubmenuRootElement> {}
+export interface MenuSubmenuRootProps {}
 
 function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: ForwardedRef<MenuSubmenuRootElement>) {
   registerMenuSubmenuRootElement();
@@ -39,4 +39,4 @@ function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: For
  *
  * @public
  */
-export const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & RefAttributes<MenuSubmenuRootElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuRootComponent);
+export const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement> & RefAttributes<MenuSubmenuRootElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuRootComponent);

@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface MenuItemProps extends Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> {
+export interface MenuItemProps {
   /**
    * The unique value for this menu item.
    *
@@ -84,6 +84,6 @@ function MenuItemComponent(props: MenuItemProps, forwardedRef: ForwardedRef<Menu
  *
  * @public
  */
-export const MenuItem: ForwardRefExoticComponent<MenuItemProps & RefAttributes<MenuItemElement>> = /* @__PURE__ */ forwardRef(MenuItemComponent);
+export const MenuItem: ForwardRefExoticComponent<MenuItemProps & Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> & RefAttributes<MenuItemElement>> = /* @__PURE__ */ forwardRef(MenuItemComponent);
 
 export type { MenuItemEvents };

@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface MenuRootProps extends HTMLAttributes<MenuRootElement> {
+export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -83,6 +83,6 @@ function MenuRootComponent(props: MenuRootProps, forwardedRef: Ref<MenuRootEleme
  *
  * @public
  */
-export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);
+export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);
 
 export type { MenuRootEvents };

@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface ResizableHandleProps extends HTMLAttributes<ResizableHandleElement> {
+export interface ResizableHandleProps {
   /**
    * The position of the handle.
    *
@@ -52,4 +52,4 @@ function ResizableHandleComponent(props: ResizableHandleProps, forwardedRef: For
  *
  * @public
  */
-export const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & RefAttributes<ResizableHandleElement>> = /* @__PURE__ */ forwardRef(ResizableHandleComponent);
+export const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & HTMLAttributes<ResizableHandleElement> & RefAttributes<ResizableHandleElement>> = /* @__PURE__ */ forwardRef(ResizableHandleComponent);

@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface BlockHandlePositionerProps extends HTMLAttributes<BlockHandlePositionerElement> {
+export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
    *
@@ -166,4 +166,4 @@ function BlockHandlePositionerComponent(props: BlockHandlePositionerProps, forwa
  *
  * @public
  */
-export const BlockHandlePositioner: ForwardRefExoticComponent<BlockHandlePositionerProps & RefAttributes<BlockHandlePositionerElement>> = /* @__PURE__ */ forwardRef(BlockHandlePositionerComponent);
+export const BlockHandlePositioner: ForwardRefExoticComponent<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement> & RefAttributes<BlockHandlePositionerElement>> = /* @__PURE__ */ forwardRef(BlockHandlePositionerComponent);

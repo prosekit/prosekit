@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleRowPositionerProps extends HTMLAttributes<TableHandleRowPositionerElement> {
+export interface TableHandleRowPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
    *
@@ -198,4 +198,4 @@ function TableHandleRowPositionerComponent(props: TableHandleRowPositionerProps,
  *
  * @public
  */
-export const TableHandleRowPositioner: ForwardRefExoticComponent<TableHandleRowPositionerProps & RefAttributes<TableHandleRowPositionerElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPositionerComponent);
+export const TableHandleRowPositioner: ForwardRefExoticComponent<TableHandleRowPositionerProps & HTMLAttributes<TableHandleRowPositionerElement> & RefAttributes<TableHandleRowPositionerElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPositionerComponent);

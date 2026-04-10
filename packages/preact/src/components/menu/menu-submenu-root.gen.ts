@@ -12,7 +12,7 @@ import { useCallback, useRef } from 'preact/hooks';
  *
  * @public
  */
-export interface MenuSubmenuRootProps extends HTMLAttributes<MenuSubmenuRootElement> {}
+export interface MenuSubmenuRootProps {}
 
 function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: Ref<MenuSubmenuRootElement>) {
   registerMenuSubmenuRootElement();
@@ -41,4 +41,4 @@ function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: Ref
  *
  * @public
  */
-export const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & RefAttributes<MenuSubmenuRootElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuRootComponent);
+export const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement> & RefAttributes<MenuSubmenuRootElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuRootComponent);

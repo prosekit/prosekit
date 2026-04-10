@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface TooltipTriggerProps extends HTMLAttributes<TooltipTriggerElement> {
+export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -61,4 +61,4 @@ function TooltipTriggerComponent(props: TooltipTriggerProps, forwardedRef: Forwa
  *
  * @public
  */
-export const TooltipTrigger: ForwardRefExoticComponent<TooltipTriggerProps & RefAttributes<TooltipTriggerElement>> = /* @__PURE__ */ forwardRef(TooltipTriggerComponent);
+export const TooltipTrigger: ForwardRefExoticComponent<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement> & RefAttributes<TooltipTriggerElement>> = /* @__PURE__ */ forwardRef(TooltipTriggerComponent);

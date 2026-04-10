@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface AutocompleteItemProps extends Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> {
+export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
    *
@@ -80,6 +80,6 @@ function AutocompleteItemComponent(props: AutocompleteItemProps, forwardedRef: F
  *
  * @public
  */
-export const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & RefAttributes<AutocompleteItemElement>> = /* @__PURE__ */ forwardRef(AutocompleteItemComponent);
+export const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>> = /* @__PURE__ */ forwardRef(AutocompleteItemComponent);
 
 export type { AutocompleteItemEvents };

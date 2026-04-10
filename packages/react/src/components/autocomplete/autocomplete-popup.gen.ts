@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface AutocompletePopupProps extends HTMLAttributes<AutocompletePopupElement> {
+export interface AutocompletePopupProps {
   /**
    * Emitted when the selected value changes. Only available when multiple is
    * false.
@@ -73,6 +73,6 @@ function AutocompletePopupComponent(props: AutocompletePopupProps, forwardedRef:
  *
  * @public
  */
-export const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & RefAttributes<AutocompletePopupElement>> = /* @__PURE__ */ forwardRef(AutocompletePopupComponent);
+export const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>> = /* @__PURE__ */ forwardRef(AutocompletePopupComponent);
 
 export type { AutocompletePopupEvents };

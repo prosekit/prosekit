@@ -12,7 +12,7 @@ import { useCallback, useRef } from 'preact/hooks';
  *
  * @public
  */
-export interface BlockHandlePopupProps extends HTMLAttributes<BlockHandlePopupElement> {}
+export interface BlockHandlePopupProps {}
 
 function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: Ref<BlockHandlePopupElement>) {
   registerBlockHandlePopupElement();
@@ -41,4 +41,4 @@ function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: R
  *
  * @public
  */
-export const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & RefAttributes<BlockHandlePopupElement>> = /* @__PURE__ */ forwardRef(BlockHandlePopupComponent);
+export const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement> & RefAttributes<BlockHandlePopupElement>> = /* @__PURE__ */ forwardRef(BlockHandlePopupComponent);

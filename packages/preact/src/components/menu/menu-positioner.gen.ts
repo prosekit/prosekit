@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface MenuPositionerProps extends HTMLAttributes<MenuPositionerElement> {
+export interface MenuPositionerProps {
   /**
    * The initial placement of the floating element
    *
@@ -175,4 +175,4 @@ function MenuPositionerComponent(props: MenuPositionerProps, forwardedRef: Ref<M
  *
  * @public
  */
-export const MenuPositioner: ForwardRefExoticComponent<MenuPositionerProps & RefAttributes<MenuPositionerElement>> = /* @__PURE__ */ forwardRef(MenuPositionerComponent);
+export const MenuPositioner: ForwardRefExoticComponent<MenuPositionerProps & HTMLAttributes<MenuPositionerElement> & RefAttributes<MenuPositionerElement>> = /* @__PURE__ */ forwardRef(MenuPositionerComponent);

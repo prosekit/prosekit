@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface TableHandleRowMenuRootProps extends HTMLAttributes<TableHandleRowMenuRootElement> {
+export interface TableHandleRowMenuRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -63,4 +63,4 @@ function TableHandleRowMenuRootComponent(props: TableHandleRowMenuRootProps, for
  *
  * @public
  */
-export const TableHandleRowMenuRoot: ForwardRefExoticComponent<TableHandleRowMenuRootProps & RefAttributes<TableHandleRowMenuRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRowMenuRootComponent);
+export const TableHandleRowMenuRoot: ForwardRefExoticComponent<TableHandleRowMenuRootProps & HTMLAttributes<TableHandleRowMenuRootElement> & RefAttributes<TableHandleRowMenuRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRowMenuRootComponent);

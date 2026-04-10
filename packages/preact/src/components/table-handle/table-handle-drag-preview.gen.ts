@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface TableHandleDragPreviewProps extends HTMLAttributes<TableHandleDragPreviewElement> {
+export interface TableHandleDragPreviewProps {
   /**
    * @default null
    * @hidden
@@ -57,4 +57,4 @@ function TableHandleDragPreviewComponent(props: TableHandleDragPreviewProps, for
  *
  * @public
  */
-export const TableHandleDragPreview: ForwardRefExoticComponent<TableHandleDragPreviewProps & RefAttributes<TableHandleDragPreviewElement>> = /* @__PURE__ */ forwardRef(TableHandleDragPreviewComponent);
+export const TableHandleDragPreview: ForwardRefExoticComponent<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement> & RefAttributes<TableHandleDragPreviewElement>> = /* @__PURE__ */ forwardRef(TableHandleDragPreviewComponent);

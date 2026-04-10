@@ -12,7 +12,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface DropIndicatorProps extends HTMLAttributes<DropIndicatorElement> {
+export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
    *
@@ -63,4 +63,4 @@ function DropIndicatorComponent(props: DropIndicatorProps, forwardedRef: Forward
  *
  * @public
  */
-export const DropIndicator: ForwardRefExoticComponent<DropIndicatorProps & RefAttributes<DropIndicatorElement>> = /* @__PURE__ */ forwardRef(DropIndicatorComponent);
+export const DropIndicator: ForwardRefExoticComponent<DropIndicatorProps & HTMLAttributes<DropIndicatorElement> & RefAttributes<DropIndicatorElement>> = /* @__PURE__ */ forwardRef(DropIndicatorComponent);

@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface PopoverPositionerProps extends HTMLAttributes<PopoverPositionerElement> {
+export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
    *
@@ -173,4 +173,4 @@ function PopoverPositionerComponent(props: PopoverPositionerProps, forwardedRef:
  *
  * @public
  */
-export const PopoverPositioner: ForwardRefExoticComponent<PopoverPositionerProps & RefAttributes<PopoverPositionerElement>> = /* @__PURE__ */ forwardRef(PopoverPositionerComponent);
+export const PopoverPositioner: ForwardRefExoticComponent<PopoverPositionerProps & HTMLAttributes<PopoverPositionerElement> & RefAttributes<PopoverPositionerElement>> = /* @__PURE__ */ forwardRef(PopoverPositionerComponent);

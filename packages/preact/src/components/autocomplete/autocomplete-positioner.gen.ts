@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface AutocompletePositionerProps extends HTMLAttributes<AutocompletePositionerElement> {
+export interface AutocompletePositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
    *
@@ -150,4 +150,4 @@ function AutocompletePositionerComponent(props: AutocompletePositionerProps, for
  *
  * @public
  */
-export const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & RefAttributes<AutocompletePositionerElement>> = /* @__PURE__ */ forwardRef(AutocompletePositionerComponent);
+export const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement> & RefAttributes<AutocompletePositionerElement>> = /* @__PURE__ */ forwardRef(AutocompletePositionerComponent);

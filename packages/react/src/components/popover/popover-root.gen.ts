@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
+export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
    * When true, the popover will trap focus and prevent interaction with the rest of the page.
@@ -88,6 +88,6 @@ function PopoverRootComponent(props: PopoverRootProps, forwardedRef: ForwardedRe
  *
  * @public
  */
-export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);
+export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);
 
 export type { PopoverRootEvents };

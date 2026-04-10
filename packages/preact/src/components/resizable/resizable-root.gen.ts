@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface ResizableRootProps extends HTMLAttributes<ResizableRootElement> {
+export interface ResizableRootProps {
   /**
    * The width of the resizable element.
    *
@@ -88,6 +88,6 @@ function ResizableRootComponent(props: ResizableRootProps, forwardedRef: Ref<Res
  *
  * @public
  */
-export const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & RefAttributes<ResizableRootElement>> = /* @__PURE__ */ forwardRef(ResizableRootComponent);
+export const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & HTMLAttributes<ResizableRootElement> & RefAttributes<ResizableRootElement>> = /* @__PURE__ */ forwardRef(ResizableRootComponent);
 
 export type { ResizableRootEvents };

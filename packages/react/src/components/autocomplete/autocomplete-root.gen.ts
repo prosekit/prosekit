@@ -12,7 +12,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface AutocompleteRootProps extends HTMLAttributes<AutocompleteRootElement> {
+export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
    *
@@ -102,6 +102,6 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: F
  *
  * @public
  */
-export const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & RefAttributes<AutocompleteRootElement>> = /* @__PURE__ */ forwardRef(AutocompleteRootComponent);
+export const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>> = /* @__PURE__ */ forwardRef(AutocompleteRootComponent);
 
 export type { AutocompleteRootEvents };

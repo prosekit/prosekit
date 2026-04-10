@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface MenuRootProps extends HTMLAttributes<MenuRootElement> {
+export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -81,6 +81,6 @@ function MenuRootComponent(props: MenuRootProps, forwardedRef: ForwardedRef<Menu
  *
  * @public
  */
-export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);
+export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);
 
 export type { MenuRootEvents };

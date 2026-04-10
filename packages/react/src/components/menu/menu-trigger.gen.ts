@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface MenuTriggerProps extends HTMLAttributes<MenuTriggerElement> {
+export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
    *
@@ -72,6 +72,6 @@ function MenuTriggerComponent(props: MenuTriggerProps, forwardedRef: ForwardedRe
  *
  * @public
  */
-export const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & RefAttributes<MenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuTriggerComponent);
+export const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & HTMLAttributes<MenuTriggerElement> & RefAttributes<MenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuTriggerComponent);
 
 export type { MenuTriggerEvents };

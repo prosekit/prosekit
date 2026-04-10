@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface MenuSubmenuTriggerProps extends HTMLAttributes<MenuSubmenuTriggerElement> {}
+export interface MenuSubmenuTriggerProps {}
 
 function MenuSubmenuTriggerComponent(props: MenuSubmenuTriggerProps, forwardedRef: ForwardedRef<MenuSubmenuTriggerElement>) {
   registerMenuSubmenuTriggerElement();
@@ -39,4 +39,4 @@ function MenuSubmenuTriggerComponent(props: MenuSubmenuTriggerProps, forwardedRe
  *
  * @public
  */
-export const MenuSubmenuTrigger: ForwardRefExoticComponent<MenuSubmenuTriggerProps & RefAttributes<MenuSubmenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuTriggerComponent);
+export const MenuSubmenuTrigger: ForwardRefExoticComponent<MenuSubmenuTriggerProps & HTMLAttributes<MenuSubmenuTriggerElement> & RefAttributes<MenuSubmenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuTriggerComponent);

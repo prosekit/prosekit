@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface ResizableHandleProps extends HTMLAttributes<ResizableHandleElement> {
+export interface ResizableHandleProps {
   /**
    * The position of the handle.
    *
@@ -54,4 +54,4 @@ function ResizableHandleComponent(props: ResizableHandleProps, forwardedRef: Ref
  *
  * @public
  */
-export const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & RefAttributes<ResizableHandleElement>> = /* @__PURE__ */ forwardRef(ResizableHandleComponent);
+export const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & HTMLAttributes<ResizableHandleElement> & RefAttributes<ResizableHandleElement>> = /* @__PURE__ */ forwardRef(ResizableHandleComponent);

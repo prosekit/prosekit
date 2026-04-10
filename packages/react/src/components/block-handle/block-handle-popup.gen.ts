@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface BlockHandlePopupProps extends HTMLAttributes<BlockHandlePopupElement> {}
+export interface BlockHandlePopupProps {}
 
 function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: ForwardedRef<BlockHandlePopupElement>) {
   registerBlockHandlePopupElement();
@@ -39,4 +39,4 @@ function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: F
  *
  * @public
  */
-export const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & RefAttributes<BlockHandlePopupElement>> = /* @__PURE__ */ forwardRef(BlockHandlePopupComponent);
+export const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement> & RefAttributes<BlockHandlePopupElement>> = /* @__PURE__ */ forwardRef(BlockHandlePopupComponent);

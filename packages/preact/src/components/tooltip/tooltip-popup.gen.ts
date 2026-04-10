@@ -12,7 +12,7 @@ import { useCallback, useRef } from 'preact/hooks';
  *
  * @public
  */
-export interface TooltipPopupProps extends HTMLAttributes<TooltipPopupElement> {}
+export interface TooltipPopupProps {}
 
 function TooltipPopupComponent(props: TooltipPopupProps, forwardedRef: Ref<TooltipPopupElement>) {
   registerTooltipPopupElement();
@@ -41,4 +41,4 @@ function TooltipPopupComponent(props: TooltipPopupProps, forwardedRef: Ref<Toolt
  *
  * @public
  */
-export const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & RefAttributes<TooltipPopupElement>> = /* @__PURE__ */ forwardRef(TooltipPopupComponent);
+export const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & HTMLAttributes<TooltipPopupElement> & RefAttributes<TooltipPopupElement>> = /* @__PURE__ */ forwardRef(TooltipPopupComponent);

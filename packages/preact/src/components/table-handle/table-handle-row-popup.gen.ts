@@ -12,7 +12,7 @@ import { useCallback, useRef } from 'preact/hooks';
  *
  * @public
  */
-export interface TableHandleRowPopupProps extends HTMLAttributes<TableHandleRowPopupElement> {}
+export interface TableHandleRowPopupProps {}
 
 function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwardedRef: Ref<TableHandleRowPopupElement>) {
   registerTableHandleRowPopupElement();
@@ -41,4 +41,4 @@ function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwarded
  *
  * @public
  */
-export const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & RefAttributes<TableHandleRowPopupElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPopupComponent);
+export const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement> & RefAttributes<TableHandleRowPopupElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPopupComponent);

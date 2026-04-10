@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface PopoverTriggerProps extends HTMLAttributes<PopoverTriggerElement> {
+export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
    * @default false
@@ -88,6 +88,6 @@ function PopoverTriggerComponent(props: PopoverTriggerProps, forwardedRef: Forwa
  *
  * @public
  */
-export const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & RefAttributes<PopoverTriggerElement>> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);
+export const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement> & RefAttributes<PopoverTriggerElement>> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);
 
 export type { PopoverTriggerEvents };

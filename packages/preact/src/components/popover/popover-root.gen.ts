@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface PopoverRootProps extends HTMLAttributes<PopoverRootElement> {
+export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
    * When true, the popover will trap focus and prevent interaction with the rest of the page.
@@ -90,6 +90,6 @@ function PopoverRootComponent(props: PopoverRootProps, forwardedRef: Ref<Popover
  *
  * @public
  */
-export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);
+export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);
 
 export type { PopoverRootEvents };

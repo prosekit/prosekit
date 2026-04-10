@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface TooltipRootProps extends HTMLAttributes<TooltipRootElement> {
+export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -83,6 +83,6 @@ function TooltipRootComponent(props: TooltipRootProps, forwardedRef: Ref<Tooltip
  *
  * @public
  */
-export const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & RefAttributes<TooltipRootElement>> = /* @__PURE__ */ forwardRef(TooltipRootComponent);
+export const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & HTMLAttributes<TooltipRootElement> & RefAttributes<TooltipRootElement>> = /* @__PURE__ */ forwardRef(TooltipRootComponent);
 
 export type { TooltipRootEvents };

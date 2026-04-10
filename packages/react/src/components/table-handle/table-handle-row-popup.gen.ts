@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface TableHandleRowPopupProps extends HTMLAttributes<TableHandleRowPopupElement> {}
+export interface TableHandleRowPopupProps {}
 
 function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwardedRef: ForwardedRef<TableHandleRowPopupElement>) {
   registerTableHandleRowPopupElement();
@@ -39,4 +39,4 @@ function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwarded
  *
  * @public
  */
-export const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & RefAttributes<TableHandleRowPopupElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPopupComponent);
+export const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement> & RefAttributes<TableHandleRowPopupElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPopupComponent);

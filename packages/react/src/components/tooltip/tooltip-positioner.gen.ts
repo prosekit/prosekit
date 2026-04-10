@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface TooltipPositionerProps extends HTMLAttributes<TooltipPositionerElement> {
+export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
    *
@@ -173,4 +173,4 @@ function TooltipPositionerComponent(props: TooltipPositionerProps, forwardedRef:
  *
  * @public
  */
-export const TooltipPositioner: ForwardRefExoticComponent<TooltipPositionerProps & RefAttributes<TooltipPositionerElement>> = /* @__PURE__ */ forwardRef(TooltipPositionerComponent);
+export const TooltipPositioner: ForwardRefExoticComponent<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement> & RefAttributes<TooltipPositionerElement>> = /* @__PURE__ */ forwardRef(TooltipPositionerComponent);

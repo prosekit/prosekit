@@ -14,7 +14,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface InlinePopoverRootProps extends HTMLAttributes<InlinePopoverRootElement> {
+export interface InlinePopoverRootProps {
   /**
    * The ProseKit editor instance.
    *
@@ -103,6 +103,6 @@ function InlinePopoverRootComponent(props: InlinePopoverRootProps, forwardedRef:
  *
  * @public
  */
-export const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & RefAttributes<InlinePopoverRootElement>> = /* @__PURE__ */ forwardRef(InlinePopoverRootComponent);
+export const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement> & RefAttributes<InlinePopoverRootElement>> = /* @__PURE__ */ forwardRef(InlinePopoverRootComponent);
 
 export type { InlinePopoverRootEvents };

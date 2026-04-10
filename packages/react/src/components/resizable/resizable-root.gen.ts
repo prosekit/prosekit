@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface ResizableRootProps extends HTMLAttributes<ResizableRootElement> {
+export interface ResizableRootProps {
   /**
    * The width of the resizable element.
    *
@@ -86,6 +86,6 @@ function ResizableRootComponent(props: ResizableRootProps, forwardedRef: Forward
  *
  * @public
  */
-export const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & RefAttributes<ResizableRootElement>> = /* @__PURE__ */ forwardRef(ResizableRootComponent);
+export const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & HTMLAttributes<ResizableRootElement> & RefAttributes<ResizableRootElement>> = /* @__PURE__ */ forwardRef(ResizableRootComponent);
 
 export type { ResizableRootEvents };

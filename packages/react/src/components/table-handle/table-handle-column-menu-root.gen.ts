@@ -10,7 +10,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
  *
  * @public
  */
-export interface TableHandleColumnMenuRootProps extends HTMLAttributes<TableHandleColumnMenuRootElement> {
+export interface TableHandleColumnMenuRootProps {
   /**
    * Whether the overlay is initially open.
    * @default false
@@ -61,4 +61,4 @@ function TableHandleColumnMenuRootComponent(props: TableHandleColumnMenuRootProp
  *
  * @public
  */
-export const TableHandleColumnMenuRoot: ForwardRefExoticComponent<TableHandleColumnMenuRootProps & RefAttributes<TableHandleColumnMenuRootElement>> = /* @__PURE__ */ forwardRef(TableHandleColumnMenuRootComponent);
+export const TableHandleColumnMenuRoot: ForwardRefExoticComponent<TableHandleColumnMenuRootProps & HTMLAttributes<TableHandleColumnMenuRootElement> & RefAttributes<TableHandleColumnMenuRootElement>> = /* @__PURE__ */ forwardRef(TableHandleColumnMenuRootComponent);

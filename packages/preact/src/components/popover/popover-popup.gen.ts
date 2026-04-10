@@ -12,7 +12,7 @@ import { useCallback, useRef } from 'preact/hooks';
  *
  * @public
  */
-export interface PopoverPopupProps extends HTMLAttributes<PopoverPopupElement> {}
+export interface PopoverPopupProps {}
 
 function PopoverPopupComponent(props: PopoverPopupProps, forwardedRef: Ref<PopoverPopupElement>) {
   registerPopoverPopupElement();
@@ -41,4 +41,4 @@ function PopoverPopupComponent(props: PopoverPopupProps, forwardedRef: Ref<Popov
  *
  * @public
  */
-export const PopoverPopup: ForwardRefExoticComponent<PopoverPopupProps & RefAttributes<PopoverPopupElement>> = /* @__PURE__ */ forwardRef(PopoverPopupComponent);
+export const PopoverPopup: ForwardRefExoticComponent<PopoverPopupProps & HTMLAttributes<PopoverPopupElement> & RefAttributes<PopoverPopupElement>> = /* @__PURE__ */ forwardRef(PopoverPopupComponent);

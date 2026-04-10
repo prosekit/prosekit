@@ -12,7 +12,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
  *
  * @public
  */
-export interface MenuPopupProps extends HTMLAttributes<MenuPopupElement> {
+export interface MenuPopupProps {
   /**
    * By default, the MenuPopup element will listen for keydown events.
    * You can pass a different element to listen for keydown events.
@@ -55,4 +55,4 @@ function MenuPopupComponent(props: MenuPopupProps, forwardedRef: Ref<MenuPopupEl
  *
  * @public
  */
-export const MenuPopup: ForwardRefExoticComponent<MenuPopupProps & RefAttributes<MenuPopupElement>> = /* @__PURE__ */ forwardRef(MenuPopupComponent);
+export const MenuPopup: ForwardRefExoticComponent<MenuPopupProps & HTMLAttributes<MenuPopupElement> & RefAttributes<MenuPopupElement>> = /* @__PURE__ */ forwardRef(MenuPopupComponent);

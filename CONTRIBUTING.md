@@ -22,7 +22,7 @@ ProseKit is a monorepo using pnpm workspaces:
   - `prosekit/` - Main umbrella package that re-exports functionality
 - `website/` - Documentation and examples
   - `src/content/` - Documentation markdown
-- `registry/` - Framework examples and shared UI components
+- `registry/` - Framework examples and shared UI components (please read `registry/DEV.md` for more information)
   - `src/` - Examples and components
   - `test/` - Tests
 

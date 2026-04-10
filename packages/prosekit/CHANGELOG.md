@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.20.0-beta.4
+
+### Patch Changes
+
+- [`7ab6681`](https://github.com/ocavue/prosekit/commit/7ab6681c9720796fc4568b2773fa7608c865c9c7) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Remove some duplicated API re-exports.
+
 ## 0.20.0-beta.3
 
 ### Patch Changes

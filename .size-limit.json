@@ -550,6 +550,10 @@
     "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
   },
   {
+    "name": "prosekit/lit/menu",
+    "path": "packages/prosekit/dist/prosekit-lit-menu.js"
+  },
+  {
     "name": "prosekit/lit/popover",
     "path": "packages/prosekit/dist/prosekit-lit-popover.js"
   },

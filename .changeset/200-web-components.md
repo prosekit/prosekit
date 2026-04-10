@@ -39,10 +39,10 @@ Every primitive that has been split into anatomy parts follows the same conventi
 - **`open`, `defaultOpen`, `disabled`** live on the `Root` part.
 - **`openOnHover`, `delay`, `closeDelay`** for popovers and tooltips live on the `Trigger` part. `PopoverTrigger` and `TooltipTrigger` also expose their own `onOpenChange` callback in addition to the one on `Root`, so you can listen for hover-driven open changes directly on the trigger.
 - **Visual styling** (`className` / `class`, `data-*`, ...) for the floating element belongs on the `Popup` part rather than the old `Content` / single component.
-- **Event callbacks now receive an event object instead of a plain value.** Each `*Change` event now dispatches a dedicated `Event` subclass (`OpenChangeEvent`, `QueryChangeEvent`, `ValueChangeEvent`, ...) whose payload is exposed as a named property on the event:
-  - `onOpenChange={(open) => ...}` becomes `onOpenChange={(event) => ... event.open ...}`
-  - `onQueryChange={(query) => ...}` becomes `onQueryChange={(event) => ... event.query ...}`
-  - `onValueChange={(value) => ...}` becomes `onValueChange={(event) => ... event.value ...}`
+- **Event callbacks now receive an event object instead of a plain value.** Each `*Change` event now dispatches a dedicated `Event` subclass (`OpenChangeEvent`, `QueryChangeEvent`, `ValueChangeEvent`, ...) whose payload is exposed on the standard `detail` property of the event:
+  - `onOpenChange={(open) => ...}` becomes `onOpenChange={(event) => ... event.detail ...}`
+  - `onQueryChange={(query) => ...}` becomes `onQueryChange={(event) => ... event.detail ...}`
+  - `onValueChange={(value) => ...}` becomes `onValueChange={(event) => ... event.detail ...}`
 
 ## New `Menu` component
 
@@ -117,7 +117,7 @@ The sections below walk through each primitive in detail. The examples are writt
 + } from 'prosekit/react/popover'
 
 - <PopoverRoot open={open} onOpenChange={(open) => setOpen(open)}>
-+ <PopoverRoot open={open} onOpenChange={(event) => setOpen(event.open)}>
++ <PopoverRoot open={open} onOpenChange={(event) => setOpen(event.detail)}>
     <PopoverTrigger>...</PopoverTrigger>
 -   <PopoverContent placement="bottom" className="my-popover">...</PopoverContent>
 +   <PopoverPositioner placement="bottom">
@@ -149,7 +149,7 @@ The sections below walk through each primitive in detail. The examples are writt
 - </InlinePopover>
 + <InlinePopoverRoot
 +   open={open}
-+   onOpenChange={(event) => { setOpen(event.open) }}
++   onOpenChange={(event) => { setOpen(event.detail) }}
 + >
 +   <InlinePopoverPositioner placement="bottom">
 +     <InlinePopoverPopup className="my-popover">
@@ -256,8 +256,8 @@ The sections below walk through each primitive in detail. The examples are writt
 - </AutocompletePopover>
 + <AutocompleteRoot
 +   regex={regex}
-+   onQueryChange={(event) => setQuery(event.query)}
-+   onValueChange={(event) => setValue(event.value)}
++   onQueryChange={(event) => setQuery(event.detail)}
++   onValueChange={(event) => setValue(event.detail)}
 + >
 +   <AutocompletePositioner>
 +     <AutocompletePopup className="my-menu">

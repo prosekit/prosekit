@@ -1,7 +1,7 @@
 {
   "name": "prosekit-registry",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "The registry of ProseKit examples",
   "license": "MIT",
@@ -349,5 +349,10 @@
     "vitest-browser-vue": "^2.1.0",
     "vue-tsc": "^3.2.6",
     "vue-tweet": "^2.4.0"
+  },
+  "publishConfig": {
+    "exports": {
+      "./dist/r/*.json": "./dist/r/*.json"
+    }
   }
 }

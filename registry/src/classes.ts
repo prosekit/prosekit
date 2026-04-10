@@ -5,6 +5,7 @@ function cn(...args: Array<string | undefined | null | false>): string {
   return twMerge(clsx(...args))
 }
 
+// TODO: remove CSS_DEFAULT_HIDDEN
 // For those elements that need to toggle visibility based on the `data-state`
 // attribute, we hide them by default. This ensures that they do not get
 // displayed before SSR hydration is complete.

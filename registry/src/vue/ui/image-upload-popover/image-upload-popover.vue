@@ -62,10 +62,10 @@ function handleSubmit() {
 }
 
 function handleOpenChange(event: OpenChangeEvent) {
-  if (!event.open) {
+  if (!event.detail) {
     deferResetState()
   }
-  open.value = event.open
+  open.value = event.detail
 }
 </script>
 

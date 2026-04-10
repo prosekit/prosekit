@@ -20,7 +20,7 @@ export default function SlashMenu(props: Props) {
     <AutocompleteRoot
       regex={regex}
       onOpenChange={(event) => {
-        props.onOpenChange(event.open)
+        props.onOpenChange(event.detail)
       }}
       className="contents"
     >

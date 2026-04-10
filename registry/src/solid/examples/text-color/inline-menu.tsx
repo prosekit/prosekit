@@ -87,7 +87,7 @@ export default function InlineMenu(): JSX.Element {
   return (
     <InlinePopoverRoot
       open={open()}
-      onOpenChange={(event) => setOpen(event.open)}
+      onOpenChange={(event) => setOpen(event.detail)}
     >
       <InlinePopoverPositioner>
         <InlinePopoverPopup class="CSS_INLINE_MENU_MAIN">

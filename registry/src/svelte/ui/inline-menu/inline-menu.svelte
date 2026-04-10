@@ -91,7 +91,7 @@ function handleLinkUpdate(href?: string) {
 
 <InlinePopoverRoot
   onOpenChange={(event) => {
-    if (!event.open) linkMenuOpen = false
+    if (!event.detail) linkMenuOpen = false
   }}
 >
   <InlinePopoverPositioner>
@@ -169,7 +169,7 @@ function handleLinkUpdate(href?: string) {
   defaultOpen={false}
   open={linkMenuOpen}
   onOpenChange={(event) => {
-    linkMenuOpen = event.open
+    linkMenuOpen = event.detail
   }}
 >
   <InlinePopoverPositioner placement="bottom">

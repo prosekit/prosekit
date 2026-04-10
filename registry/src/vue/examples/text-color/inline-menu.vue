@@ -80,7 +80,7 @@ useKeymap({
 <template>
   <InlinePopoverRoot
     :open="open"
-    @open-change="(event) => open = event.open"
+    @open-change="(event) => open = event.detail"
   >
     <InlinePopoverPositioner>
       <InlinePopoverPopup class="CSS_INLINE_MENU_MAIN">

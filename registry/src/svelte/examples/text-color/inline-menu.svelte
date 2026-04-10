@@ -82,7 +82,7 @@ useKeymap(toStore(() => keymap))
 
 <InlinePopoverRoot
   {open}
-  onOpenChange={(event) => open = event.open}
+  onOpenChange={(event) => open = event.detail}
 >
   <InlinePopoverPositioner>
     <InlinePopoverPopup class="CSS_INLINE_MENU_MAIN">

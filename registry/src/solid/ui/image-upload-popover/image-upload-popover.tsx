@@ -62,10 +62,10 @@ export default function ImageUploadPopover(props: {
   }
 
   const handleOpenChange = (event: OpenChangeEvent) => {
-    if (!event.open) {
+    if (!event.detail) {
       deferResetState()
     }
-    setOpen(event.open)
+    setOpen(event.detail)
   }
 
   return (

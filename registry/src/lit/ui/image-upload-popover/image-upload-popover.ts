@@ -38,11 +38,11 @@ class LitImageUploadPopover extends LitElement {
   }
 
   private handleOpenChange = (event: OpenChangeEvent) => {
-    if (!event.open) {
+    if (!event.detail) {
       this.deferResetState()
     }
 
-    this.open = event.open
+    this.open = event.detail
     this.requestUpdate()
   }
 

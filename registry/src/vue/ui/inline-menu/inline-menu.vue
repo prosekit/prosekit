@@ -93,7 +93,7 @@ function handleLinkUpdate(href?: string) {
 <template>
   <InlinePopoverRoot
     @open-change="(event) => {
-      if (!event.open) linkMenuOpen = false
+      if (!event.detail) linkMenuOpen = false
     }"
   >
     <InlinePopoverPositioner>
@@ -166,7 +166,7 @@ function handleLinkUpdate(href?: string) {
     :default-open="false"
     :open="linkMenuOpen"
     @open-change="(event) => {
-      linkMenuOpen = event.open
+      linkMenuOpen = event.detail
     }"
   >
     <InlinePopoverPositioner placement="bottom">

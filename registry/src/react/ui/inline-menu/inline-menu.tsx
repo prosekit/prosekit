@@ -91,7 +91,7 @@ export default function InlineMenu() {
     <>
       <InlinePopoverRoot
         onOpenChange={(event) => {
-          if (!event.open) {
+          if (!event.detail) {
             setLinkMenuOpen(false)
           }
         }}
@@ -171,7 +171,7 @@ export default function InlineMenu() {
         <InlinePopoverRoot
           defaultOpen={false}
           open={linkMenuOpen}
-          onOpenChange={(event) => setLinkMenuOpen(event.open)}
+          onOpenChange={(event) => setLinkMenuOpen(event.detail)}
         >
           <InlinePopoverPositioner placement="bottom">
             <InlinePopoverPopup

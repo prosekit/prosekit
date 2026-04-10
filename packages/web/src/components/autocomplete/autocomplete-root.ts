@@ -231,16 +231,16 @@ function createAutocompleteRule(
 
     handlers.submit = options.deleteMatch
     handlers.dismiss = options.ignoreMatch
-    requestOpenChange(true)
     setQuery(defaultQueryBuilder(options.match))
+    requestOpenChange(true)
   }
 
   const handleLeave = () => {
-    requestOpenChange(false)
     reference.set(undefined)
     setQuery('')
     handlers.submit = undefined
     handlers.dismiss = undefined
+    requestOpenChange(false)
   }
 
   return new AutocompleteRule({

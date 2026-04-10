@@ -10,6 +10,7 @@ function cloneKeyboardEvent(source: KeyboardEvent): KeyboardEvent {
     shiftKey: source.shiftKey,
 
     view: source.view,
+    // internal bridge target; events don't need to bubble"
     bubbles: false,
     cancelable: true,
   })

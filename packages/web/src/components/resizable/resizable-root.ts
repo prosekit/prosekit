@@ -109,8 +109,8 @@ export function setupResizableRoot(
       aspectRatio = 0
     }
 
-    host.dispatchEvent(new ResizeStartEvent(width, height))
     resizing.set(true)
+    host.dispatchEvent(new ResizeStartEvent(width, height))
     return [width, height, aspectRatio]
   }
 
@@ -121,8 +121,8 @@ export function setupResizableRoot(
 
   const onResizeEnd: OnResizeEnd = () => {
     const { width, height } = host.getBoundingClientRect()
-    host.dispatchEvent(new ResizeEndEvent(width, height))
     resizing.set(false)
+    host.dispatchEvent(new ResizeEndEvent(width, height))
   }
 
   onResizeStartContext.provide(host, onResizeStart)

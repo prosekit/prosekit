@@ -11,6 +11,8 @@ prosekit-menu-root {
 prosekit-tooltip-positioner,
 prosekit-autocomplete-positioner,
 prosekit-menu-positioner,
+prosekit-popover-positioner,
+prosekit-inline-popover-positioner,
 prosekit-block-handle-positioner,
 prosekit-table-handle-column-positioner,
 prosekit-table-handle-row-positioner {

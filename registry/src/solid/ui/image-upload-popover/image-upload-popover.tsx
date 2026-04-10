@@ -1,8 +1,8 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/solid'
-import type { OpenChangeEvent } from 'prosekit/solid/popover'
 import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/solid/popover'
+import type { OpenChangeEvent } from 'prosekit/web/popover'
 import { createSignal, createUniqueId, Show, type JSX } from 'solid-js'
 
 import { Button } from '../button'

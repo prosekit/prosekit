@@ -1,8 +1,8 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/react'
-import type { OpenChangeEvent } from 'prosekit/react/popover'
 import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/react/popover'
+import type { OpenChangeEvent } from 'prosekit/web/popover'
 import { useId, useState, type ReactNode } from 'react'
 
 import { Button } from '../button'

@@ -3,8 +3,8 @@ import { useId, useState } from 'preact/hooks'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/preact'
-import type { OpenChangeEvent } from 'prosekit/preact/popover'
 import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/preact/popover'
+import type { OpenChangeEvent } from 'prosekit/web/popover'
 
 import { Button } from '../button'
 

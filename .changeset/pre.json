@@ -26,6 +26,7 @@
   },
   "changesets": [
     "100-prerelease",
+    "200-web-components",
     "800-view-render-solid",
     "810-view-render-vue"
   ]

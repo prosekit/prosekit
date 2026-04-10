@@ -22,9 +22,9 @@ export default function Editor(props: EditorProps): JSX.Element {
   return (
     <ProseKit editor={editor}>
       <div class="CSS_EDITOR_VIEWPORT">
-        <InlineMenu />
         <div class="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} class="CSS_EDITOR_CONTENT"></div>
+          <InlineMenu />
         </div>
       </div>
     </ProseKit>

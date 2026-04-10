@@ -7,23 +7,16 @@ import { prefersReducedMotion } from '../../utils/prefers-reduced-motion.ts'
 import { isHoverStateEqual, type HoverState } from './hover-state.ts'
 import { defineElementHoverHandler, type ElementHoverHandler } from './pointer-move.ts'
 
-let invalidTimeoutId: ReturnType<typeof setTimeout> | undefined
-
-function clearInvalidTimeout() {
-  if (invalidTimeoutId != null) {
-    clearTimeout(invalidTimeoutId)
-    invalidTimeoutId = undefined
-  }
-}
-
 export function useHoverExtension(
   host: HostElement,
   getEditor: () => Editor | null,
   handler: ElementHoverHandler,
 ): void {
-  let prevHoverState: HoverState | undefined
-
   const invalidTimeoutMs = prefersReducedMotion() ? 0 : 180
+
+  let invalidTimeoutId: ReturnType<typeof setTimeout> | undefined
+
+  let prevHoverState: HoverState | undefined
 
   const callHandler: ElementHoverHandler = (reference, hoverState) => {
     prevHoverState = hoverState
@@ -31,8 +24,9 @@ export function useHoverExtension(
   }
 
   const extension = defineElementHoverHandler((reference, hoverState) => {
-    if (hoverState) {
-      clearInvalidTimeout()
+    if (hoverState && invalidTimeoutId != null) {
+      clearTimeout(invalidTimeoutId)
+      invalidTimeoutId = undefined
     }
 
     if (prevHoverState && hoverState) {

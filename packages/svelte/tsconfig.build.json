@@ -1,7 +1,7 @@
 {
   "extends": "@prosekit/config-ts/build.json",
   "compilerOptions": {
-    "isolatedDeclarations": false 
+    "isolatedDeclarations": false
   },
   "references": [
     { "path": "../web/tsconfig.json" }

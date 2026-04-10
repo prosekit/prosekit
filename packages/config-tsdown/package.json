@@ -11,7 +11,7 @@
   "scripts": {},
   "devDependencies": {
     "@tsdown/css": "catalog:",
-    "defu": "^6.1.4",
+    "defu": "^6.1.7",
     "read-package-up": "^12.0.0",
     "tsdown": "catalog:",
     "typescript": "catalog:"

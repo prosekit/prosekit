@@ -15,7 +15,7 @@
     "@vitest/browser-playwright": "catalog:"
   },
   "devDependencies": {
-    "defu": "^6.1.4",
+    "defu": "^6.1.7",
     "typescript": "catalog:",
     "vitest-fail-on-console": "^0.10.1"
   }

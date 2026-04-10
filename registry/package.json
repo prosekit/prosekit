@@ -310,7 +310,7 @@
     "colorjs.io": "^0.6.1",
     "diffable-html-snapshot": "^0.2.0",
     "fast-fuzzy": "^1.12.0",
-    "katex": "^0.16.40",
+    "katex": "^0.16.45",
     "lit": "^3.3.2",
     "magic-string": "^0.30.21",
     "parse-imports-exports": "^0.2.4",

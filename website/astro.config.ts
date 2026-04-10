@@ -224,6 +224,10 @@ const config: AstroUserConfig = {
       css: ['./src/styles/tailwind.css'],
       dashboardSubpath: '/',
       previewSubpath: '-/',
+      homeContent: {
+        "title": "Welcome to the ProseKit Playground",
+        "subtitle": "This is a playground for testing and showcasing ProseKit components. You can find the source code for each example in https://github.com/prosekit/examples."
+      }
     }),
     minifyHTML(),
     {

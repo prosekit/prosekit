@@ -27,8 +27,8 @@ export default function Button(props: {
       </TooltipTrigger>
       {props.tooltip
         ? (
-          <TooltipPositioner>
-            <TooltipPopup className="CSS_TOOLTIP_CONTENT">
+          <TooltipPositioner className="CSS_TOOLTIP_POSITIONER">
+            <TooltipPopup className="CSS_TOOLTIP_POPUP">
               {props.tooltip}
             </TooltipPopup>
           </TooltipPositioner>

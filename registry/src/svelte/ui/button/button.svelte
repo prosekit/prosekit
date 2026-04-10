@@ -30,8 +30,8 @@ const disabled = $derived(props.disabled ?? false)
     </button>
   </TooltipTrigger>
   {#if props.tooltip}
-    <TooltipPositioner>
-      <TooltipPopup class="CSS_TOOLTIP_CONTENT">
+    <TooltipPositioner class="CSS_TOOLTIP_POSITIONER">
+      <TooltipPopup class="CSS_TOOLTIP_POPUP">
         {props.tooltip}
       </TooltipPopup>
     </TooltipPositioner>

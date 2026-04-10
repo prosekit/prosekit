@@ -23,8 +23,8 @@ const props = defineProps<{
         <span v-if="props.tooltip" class="sr-only">{{ props.tooltip }}</span>
       </button>
     </TooltipTrigger>
-    <TooltipPositioner v-if="props.tooltip">
-      <TooltipPopup class="CSS_TOOLTIP_CONTENT">
+    <TooltipPositioner v-if="props.tooltip" class="CSS_TOOLTIP_POSITIONER">
+      <TooltipPopup class="CSS_TOOLTIP_POPUP">
         {{ props.tooltip }}
       </TooltipPopup>
     </TooltipPositioner>

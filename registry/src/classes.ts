@@ -76,7 +76,7 @@ const CSS_INPUT = cn(
 )
 
 const CSS_POSITIONER_BASE = cn(
-  'block overflow-visible bg-transparent w-min h-min',
+  'block overflow-visible bg-transparent w-min h-min z-50' ,
   'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
 )
 const CSS_POPUP_BASE = cn(
@@ -283,10 +283,10 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 )
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
-// TODO: add block to CSS_TOOLTIP_CONTENT
-export const CSS_TOOLTIP_CONTENT = cn(
-  'z-50 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs',
-  CSS_POPOVER_ANIMATE,
+export const CSS_TOOLTIP_POSITIONER = CSS_POSITIONER_BASE
+export const CSS_TOOLTIP_POPUP = cn(
+  CSS_POPUP_BASE, 
+  'overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs text-nowrap',
 )
 
 export const CSS_SEARCH = cn(

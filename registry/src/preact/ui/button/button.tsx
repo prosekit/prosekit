@@ -28,7 +28,7 @@ export default function Button(props: {
       {props.tooltip
         ? (
           <TooltipPositioner>
-            <TooltipPopup className="CSS_TOOLTIP_CONTENT">
+            <TooltipPopup className="CSS_TOOLTIP_POPUP">
               {props.tooltip}
             </TooltipPopup>
           </TooltipPositioner>

@@ -53,9 +53,7 @@ export class LitEditor extends LitElement {
     return html`<div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
         <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
-        <lit-editor-slash-menu
-          style="display: contents;"
-        ></lit-editor-slash-menu>
+        <lit-editor-slash-menu style="display: contents;"></lit-editor-slash-menu>
       </div>
     </div>`
   }

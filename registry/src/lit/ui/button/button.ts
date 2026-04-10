@@ -45,17 +45,15 @@ class LitButton extends LitElement {
             ${tooltip ? html`<span class="sr-only">${tooltip}</span>` : nothing}
           </button>
         </prosekit-tooltip-trigger>
-        ${
-          tooltip
-            ? html`
+        ${tooltip
+          ? html`
               <prosekit-tooltip-positioner>
                 <prosekit-tooltip-popup class="CSS_TOOLTIP_CONTENT">
                   ${tooltip}
                 </prosekit-tooltip-popup>
               </prosekit-tooltip-positioner>
             `
-            : nothing
-        }
+          : nothing}
       </prosekit-tooltip-root>
     `
   }

@@ -52,9 +52,7 @@ export class LitEditor extends LitElement {
 
   override render() {
     return html`<div class="CSS_EDITOR_VIEWPORT">
-      <lit-editor-toolbar
-        .uploader=${sampleUploader}
-      ></lit-editor-toolbar>
+      <lit-editor-toolbar .uploader=${sampleUploader}></lit-editor-toolbar>
       <div class="CSS_EDITOR_SCROLLING">
         <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
       </div>

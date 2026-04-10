@@ -31,7 +31,9 @@ class SlashMenuItemElement extends LitElement {
       @select=${this.handleSelect}
       class="CSS_AUTOCOMPLETE_MENU_ITEM"
     >
-      <span>${this.label}</span>${this.kbd ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>` : ''}
+      <span>${this.label}</span>${this.kbd
+        ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>`
+        : ''}
     </prosekit-autocomplete-item>`
   }
 }

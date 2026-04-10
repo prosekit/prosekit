@@ -93,6 +93,7 @@ const CSS_POPUP = cn(
 const CSS_MENU_POPUP = cn(
   CSS_POPUP, 
   'flex flex-col',
+  'motion-safe:duration-40',
   'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
 )
 const CSS_MENU_ITEM = cn(

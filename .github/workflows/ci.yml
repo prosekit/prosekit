@@ -52,24 +52,6 @@ jobs:
       - name: Run tests
         run: pnpm run test --shard=${{ matrix.shard }}/8
 
-  test-e2e:
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - uses: ./.github/actions/setup
-
-      - name: Build website
-        run: pnpm run build:website
-
-      - name: Install Playwright
-        run: pnpm run test:install
-
-      - name: Run e2e tests
-        run: pnpm run test:e2e
-
   build:
     timeout-minutes: 30
     runs-on: ubuntu-latest

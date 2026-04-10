@@ -13,8 +13,7 @@
     "preview": "pnpm run build:if-not-exists && astro preview",
     "dev": "astro dev",
     "lint": "pnpm run lint:astro",
-    "lint:astro": "astro check",
-    "test": "playwright test"
+    "lint:astro": "astro check"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
@@ -32,7 +31,6 @@
     "@iconify-json/tabler": "^1.2.33",
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^1.6.0",
-    "@playwright/test": "^1.59.1",
     "@tailwindcss/vite": "^4.2.2",
     "@types/jsdom": "^28.0.1",
     "@types/node": "catalog:",

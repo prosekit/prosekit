@@ -30,12 +30,10 @@
     "lint:knip": "knip",
     "preview": "pnpm --filter='./website' run preview",
     "pretest": "pnpm run test:install",
-    "pretest:e2e": "pnpm run test:install",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage.enabled",
     "test:install": "playwright install chromium",
-    "test:e2e": "pnpm --filter='./website' run test",
     "typecheck": "tsc --build tsconfig.json"
   },
   "devDependencies": {

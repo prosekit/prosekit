@@ -2,6 +2,8 @@
 # https://developers.cloudflare.com/pages/configuration/redirects/
 
 /chat                https://discord.gg/nzBgtm5ryH
+/github              https://github.com/prosekit/prosekit
+/changelog           https://github.com/prosekit/prosekit/blob/master/packages/prosekit/CHANGELOG.md
 
 /b/prosekit          https://img.shields.io/badge/prosekit-444444?style=flat-square&logoColor=ffffff
 /b/pm                https://img.shields.io/badge/prosekit%2Fpm-444444?style=flat-square&logoColor=ffffff

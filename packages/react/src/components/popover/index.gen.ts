@@ -9,5 +9,3 @@ export { PopoverPositioner, type PopoverPositionerProps } from './popover-positi
 export { PopoverRoot, type PopoverRootProps } from './popover-root.gen.ts';
 
 export { PopoverTrigger, type PopoverTriggerProps } from './popover-trigger.gen.ts';
-
-export { OpenChangeEvent } from '@prosekit/web/popover';

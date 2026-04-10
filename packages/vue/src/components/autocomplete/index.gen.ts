@@ -11,5 +11,3 @@ export { AutocompletePopup, type AutocompletePopupProps } from './autocomplete-p
 export { AutocompletePositioner, type AutocompletePositionerProps } from './autocomplete-positioner.gen.ts';
 
 export { AutocompleteRoot, type AutocompleteRootProps } from './autocomplete-root.gen.ts';
-
-export { OpenChangeEvent, QueryChangeEvent, SelectEvent, ValueChangeEvent, ValuesChangeEvent } from '@prosekit/web/autocomplete';

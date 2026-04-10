@@ -9,5 +9,3 @@ export { TooltipPositioner, type TooltipPositionerProps } from './tooltip-positi
 export { TooltipRoot, type TooltipRootProps } from './tooltip-root.gen.ts';
 
 export { TooltipTrigger, type TooltipTriggerProps } from './tooltip-trigger.gen.ts';
-
-export { OpenChangeEvent } from '@prosekit/web/tooltip';

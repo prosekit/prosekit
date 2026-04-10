@@ -7,5 +7,3 @@ export { InlinePopoverPopup, type InlinePopoverPopupProps } from './inline-popov
 export { InlinePopoverPositioner, type InlinePopoverPositionerProps } from './inline-popover-positioner.gen.ts';
 
 export { InlinePopoverRoot, type InlinePopoverRootProps } from './inline-popover-root.gen.ts';
-
-export { OpenChangeEvent } from '@prosekit/web/inline-popover';

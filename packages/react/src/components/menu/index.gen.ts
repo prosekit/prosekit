@@ -15,5 +15,3 @@ export { MenuSubmenuRoot, type MenuSubmenuRootProps } from './menu-submenu-root.
 export { MenuSubmenuTrigger, type MenuSubmenuTriggerProps } from './menu-submenu-trigger.gen.ts';
 
 export { MenuTrigger, type MenuTriggerProps } from './menu-trigger.gen.ts';
-
-export { OpenChangeEvent, SelectEvent } from '@prosekit/web/menu';

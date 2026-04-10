@@ -5,5 +5,3 @@
 export { ResizableRoot, type ResizableRootProps } from './resizable-root.gen.ts';
 
 export { ResizableHandle, type ResizableHandleProps } from './resizable-handle.gen.ts';
-
-export { ResizeEndEvent, ResizeStartEvent } from '@prosekit/web/resizable';

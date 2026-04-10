@@ -94,7 +94,7 @@ function handleLinkUpdate(href?: string) {
     if (!event.detail) linkMenuOpen = false
   }}
 >
-  <InlinePopoverPositioner>
+  <InlinePopoverPositioner class ="CSS_INLINE_MENU_POSITIONER" >
     <InlinePopoverPopup
       data-testid="inline-menu-main"
       class="CSS_INLINE_MENU_MAIN"
@@ -172,7 +172,7 @@ function handleLinkUpdate(href?: string) {
     linkMenuOpen = event.detail
   }}
 >
-  <InlinePopoverPositioner placement="bottom">
+  <InlinePopoverPositioner placement="bottom" class ="CSS_INLINE_MENU_POSITIONER" >
     <InlinePopoverPopup
       data-testid="inline-menu-link"
       class="CSS_INLINE_MENU_LINK"

@@ -96,7 +96,7 @@ export default function InlineMenu(): JSX.Element {
           }
         }}
       >
-        <InlinePopoverPositioner>
+        <InlinePopoverPositioner class ="CSS_INLINE_MENU_POSITIONER">
           <InlinePopoverPopup
             attr:data-testid="inline-menu-main"
             class="CSS_INLINE_MENU_MAIN"
@@ -186,7 +186,7 @@ export default function InlineMenu(): JSX.Element {
             open={linkMenuOpen()}
             onOpenChange={(event) => setLinkMenuOpen(event.detail)}
           >
-            <InlinePopoverPositioner placement="bottom">
+            <InlinePopoverPositioner placement="bottom" class ="CSS_INLINE_MENU_POSITIONER">
               <InlinePopoverPopup
                 attr:data-testid="inline-menu-link"
                 class="CSS_INLINE_MENU_LINK"

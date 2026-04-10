@@ -75,6 +75,18 @@ const CSS_INPUT = cn(
   'disabled:cursor-not-allowed disabled:opacity-50',
 )
 
+const CSS_POSITIONER_BASE = cn(
+  'block overflow-visible bg-transparent w-min h-min',
+  'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
+)
+const CSS_POPUP_BASE = cn(
+  'flex',
+  'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
+  'motion-safe:transition-discrete motion-safe:transition-all',
+  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
+  'data-[state=closed]:scale-90 starting:scale-90 scale-100',
+)
+
 export const CSS_MINIMAL_EDITOR = cn(
   'outline-solid p-4',
 )
@@ -97,6 +109,8 @@ export const CSS_EDITOR_CONTENT = cn(
   '[&_span[data-mention=user]]:text-blue-500',
   '[&_span[data-mention=tag]]:text-violet-500',
 )
+
+export const CSS_INLINE_MENU_POSITIONER = CSS_POSITIONER_BASE
 
 export const CSS_INLINE_MENU_MAIN = cn(
   CSS_FLOATING_MENU,
@@ -199,21 +213,11 @@ export const CSS_IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 export const CSS_DROP_CURSOR = cn('transition-all bg-blue-500')
 export const CSS_DROP_INDICATOR = cn('z-50 transition-all bg-blue-500')
 
-const CSS_HANDLER_POSITIONER_BASE = cn(
-  'block overflow-visible bg-transparent w-min h-min',
-  'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
-)
-const CSS_HANDLER_POPUP_BASE = cn(
-  'flex',
-  'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
-  'motion-safe:transition-discrete motion-safe:transition-all',
-  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
-  'data-[state=closed]:scale-90 starting:scale-90 scale-100',
-)
 
-export const CSS_BLOCK_HANDLE_POSITIONER = cn(CSS_HANDLER_POSITIONER_BASE)
 
-export const CSS_BLOCK_HANDLE_POPUP = cn(CSS_HANDLER_POPUP_BASE)
+export const CSS_BLOCK_HANDLE_POSITIONER = cn(CSS_POSITIONER_BASE)
+
+export const CSS_BLOCK_HANDLE_POPUP = cn(CSS_POPUP_BASE)
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
   // "h-6" currently matches a 24px paragraph line-height (with a 16px base font size and line-height 1.5); if the base font size changes, this equivalence may no longer hold.
@@ -230,17 +234,17 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
   'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50',
 )
 
-export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = cn(CSS_HANDLER_POSITIONER_BASE)
-export const CSS_TABLE_HANDLE_ROW_POSITIONER = cn(CSS_HANDLER_POSITIONER_BASE)
+export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = cn(CSS_POSITIONER_BASE)
+export const CSS_TABLE_HANDLE_ROW_POSITIONER = cn(CSS_POSITIONER_BASE)
 
 export const CSS_TABLE_HANDLE_COLUMN_POPUP = cn(
   'translate-y-[50%]',
-  CSS_HANDLER_POPUP_BASE,
+  CSS_POPUP_BASE,
 )
 
 export const CSS_TABLE_HANDLE_ROW_POPUP = cn(
   'ltr:translate-x-[50%] rtl:translate-x-[-50%]',
-  CSS_HANDLER_POPUP_BASE,
+  CSS_POPUP_BASE,
 )
 
 const CSS_TABLE_HANDLE_TRIGGER_BASE = cn(

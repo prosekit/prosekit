@@ -96,7 +96,7 @@ export default function InlineMenu() {
           }
         }}
       >
-        <InlinePopoverPositioner className="CSS_BLOCK_HANDLE_POSITIONER">
+        <InlinePopoverPositioner className="CSS_INLINE_MENU_POSITIONER">
           <InlinePopoverPopup
             data-testid="inline-menu-main"
             className="CSS_INLINE_MENU_MAIN"
@@ -173,7 +173,7 @@ export default function InlineMenu() {
           open={linkMenuOpen}
           onOpenChange={(event) => setLinkMenuOpen(event.detail)}
         >
-          <InlinePopoverPositioner placement="bottom">
+          <InlinePopoverPositioner placement="bottom" className="CSS_INLINE_MENU_POSITIONER">
             <InlinePopoverPopup
               data-testid="inline-menu-link"
               className="CSS_INLINE_MENU_LINK"

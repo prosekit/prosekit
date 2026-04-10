@@ -96,7 +96,7 @@ export default function InlineMenu() {
           }
         }}
       >
-        <InlinePopoverPositioner>
+        <InlinePopoverPositioner className="CSS_BLOCK_HANDLE_POSITIONER">
           <InlinePopoverPopup
             data-testid="inline-menu-main"
             className="CSS_INLINE_MENU_MAIN"

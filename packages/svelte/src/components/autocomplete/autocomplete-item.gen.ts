@@ -4,6 +4,7 @@
 
 import type { AutocompleteItemEvents, AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/web/autocomplete';
 import type { Component, Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
 
 import AutocompleteItemComponent from './autocomplete-item.gen.svelte';
 
@@ -30,7 +31,6 @@ export interface AutocompleteItemProps {
   /** Emitted when the the item is selected. */
   onSelect?: (event: AutocompleteItemEvents['select']) => void;
   children?: Snippet;
-  [key: string]: unknown;
 }
 
 /**
@@ -38,6 +38,6 @@ export interface AutocompleteItemProps {
  *
  * @public
  */
-export const AutocompleteItem: Component<AutocompleteItemProps> = AutocompleteItemComponent as unknown as Component<AutocompleteItemProps>;
+export const AutocompleteItem: Component<AutocompleteItemProps & HTMLAttributes<HTMLElement>> = AutocompleteItemComponent as Component<AutocompleteItemProps & HTMLAttributes<HTMLElement>>;
 
 export type { AutocompleteItemEvents };

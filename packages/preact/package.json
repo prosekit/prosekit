@@ -65,7 +65,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "preact": "^10.29.0",
+    "preact": "^10.29.1",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",

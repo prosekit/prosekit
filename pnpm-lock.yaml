@@ -861,11 +861,11 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: https://pkg.pr.new/@aria-ui/core@274
-        version: https://pkg.pr.new/@aria-ui/core@274
+        specifier: ^0.1.0
+        version: 0.1.0
       '@aria-ui/elements':
-        specifier: https://pkg.pr.new/@aria-ui/elements@274
-        version: https://pkg.pr.new/@aria-ui/elements@274
+        specifier: ^0.1.2
+        version: 0.1.2
       '@aria-ui/utils':
         specifier: ^0.1.0
         version: 0.1.0
@@ -1282,27 +1282,11 @@ packages:
   '@aria-ui/core@0.1.0':
     resolution: {integrity: sha512-uKxomB53dAF2OkNav72ewlExtbTMItOwU+X1sMsN/ORc4xEeNTUy3BI3klCJ7XKY2/aAp+D0r8/F7XfabZ6NGQ==}
 
-  '@aria-ui/core@https://pkg.pr.new/@aria-ui/core@274':
-    resolution: {tarball: https://pkg.pr.new/@aria-ui/core@274}
-    version: 0.1.0
-
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@748d7ac':
-    resolution: {integrity: sha512-uKxomB53dAF2OkNav72ewlExtbTMItOwU+X1sMsN/ORc4xEeNTUy3BI3klCJ7XKY2/aAp+D0r8/F7XfabZ6NGQ==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@748d7ac}
-    version: 0.1.0
-
-  '@aria-ui/elements@0.1.1':
-    resolution: {integrity: sha512-a4pmfo8C5URtL7qCY4h/uErbhMDbwMoErwd5tgBySLIrkA3/i2LlBNpnEmjupr3JcHbTC+57HgBcp1cogIdh/g==}
-
-  '@aria-ui/elements@https://pkg.pr.new/@aria-ui/elements@274':
-    resolution: {integrity: sha512-o/Zq/7EwDvcmE5ZItn5olW/K7WuA6c1ghLxxXrlsmYwLMM5wmODu+tOWwmN7JhCFpxTAJukcmCKnCThAsTmk0g==, tarball: https://pkg.pr.new/@aria-ui/elements@274}
-    version: 0.1.1
+  '@aria-ui/elements@0.1.2':
+    resolution: {integrity: sha512-Uy7r4juZgt2i5A0ixneH8PsJ1uwy6vlG5+tVJ2bTAUkvkF6qhwhDNjkU1QLYMpESN5KXQDzUVaQqpKoMaZFmxg==}
 
   '@aria-ui/utils@0.1.0':
     resolution: {integrity: sha512-wBLP8sdhiS3ZbkmlIlMFmlbhNpYAAEKvvkfbXHUhXVnFxNzJYqY4FuLGUBbrGR+k+K7FU6LhmtVvjRta/hlTsQ==}
-
-  '@aria-ui/utils@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@748d7ac':
-    resolution: {integrity: sha512-+rWpaoiQ5A03EptXITT9Fya308qnlzI06dcAzv1Lewi10hA01MBanSjEr212bOi6wpAeSuGLZo4gfeS/g3NVYw==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@748d7ac}
-    version: 0.1.0
 
   '@asamuzakjp/css-color@5.1.9':
     resolution: {integrity: sha512-zd9c/Wdso6v1U7v6w3i/hbAr4K7NaSHImdpvmLt+Y9ea5BhilnIGNkfhOJ7FEIuPipAnE9tZeDOll05WDT0kgg==}
@@ -7971,21 +7955,7 @@ snapshots:
       alien-signals: 3.1.2
       server-dom-shim: 1.1.0
 
-  '@aria-ui/core@https://pkg.pr.new/@aria-ui/core@274':
-    dependencies:
-      '@ocavue/utils': 1.6.0
-      '@zag-js/dom-query': 1.39.1
-      alien-signals: 3.1.2
-      server-dom-shim: 1.1.0
-
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@748d7ac':
-    dependencies:
-      '@ocavue/utils': 1.6.0
-      '@zag-js/dom-query': 1.39.1
-      alien-signals: 3.1.2
-      server-dom-shim: 1.1.0
-
-  '@aria-ui/elements@0.1.1':
+  '@aria-ui/elements@0.1.2':
     dependencies:
       '@aria-ui/core': 0.1.0
       '@aria-ui/utils': 0.1.0
@@ -7993,22 +7963,9 @@ snapshots:
       '@zag-js/dismissable': 1.39.1
       '@zag-js/dom-query': 1.39.1
 
-  '@aria-ui/elements@https://pkg.pr.new/@aria-ui/elements@274':
-    dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@748d7ac
-      '@aria-ui/utils': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@748d7ac
-      '@floating-ui/dom': 1.7.6
-      '@zag-js/dismissable': 1.39.1
-      '@zag-js/dom-query': 1.39.1
-
   '@aria-ui/utils@0.1.0':
     dependencies:
       '@aria-ui/core': 0.1.0
-      '@zag-js/dom-query': 1.39.1
-
-  '@aria-ui/utils@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@748d7ac':
-    dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@748d7ac
       '@zag-js/dom-query': 1.39.1
 
   '@asamuzakjp/css-color@5.1.9':
@@ -14412,7 +14369,7 @@ snapshots:
   shiki-twoslash-renderer@0.3.2(typescript@5.9.3):
     dependencies:
       '@aria-ui/core': 0.1.0
-      '@aria-ui/elements': 0.1.1
+      '@aria-ui/elements': 0.1.2
       '@shikijs/twoslash': 4.0.2(typescript@5.9.3)
       '@shikijs/types': 4.0.2
       '@types/hast': 3.0.4

@@ -109,7 +109,7 @@ class LitImageUploadPopover extends LitElement {
           ></lit-editor-button>
         </prosekit-popover-trigger>
 
-        <prosekit-popover-positioner>
+        <prosekit-popover-positioner placement="bottom" class="CSS_IMAGE_UPLOAD_POSITIONER">
           <prosekit-popover-popup class="CSS_IMAGE_UPLOAD_CARD">
             ${!this.file
               ? html`

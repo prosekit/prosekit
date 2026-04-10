@@ -177,10 +177,11 @@ export const CSS_TOGGLE_BUTTON = cn(
   'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700',
 )
 
+
+export const CSS_IMAGE_UPLOAD_POSITIONER = CSS_POSITIONER
 export const CSS_IMAGE_UPLOAD_CARD = cn(
+  CSS_MENU_POPUP,
   'flex flex-col gap-y-4 p-6 text-sm w-sm',
-  CSS_FLOATING_MENU,
-  CSS_POPOVER_ANIMATE,
 )
 
 export const CSS_IMAGE_UPLOAD_INPUT = cn(CSS_INPUT)

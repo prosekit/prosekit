@@ -76,7 +76,7 @@ export default function ImageUploadPopover(props: {
         </Button>
       </PopoverTrigger>
 
-      <PopoverPositioner>
+      <PopoverPositioner placement='bottom' class="CSS_IMAGE_UPLOAD_POSITIONER">
         <PopoverPopup class="CSS_IMAGE_UPLOAD_CARD">
           <Show when={!file()}>
             <label for={`id-link-${ariaId}`}>Embed Link</label>

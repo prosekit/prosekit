@@ -79,7 +79,7 @@ export default function ImageUploadPopover(props: {
         </Button>
       </PopoverTrigger>
 
-      <PopoverPositioner>
+      <PopoverPositioner placement='bottom' className="CSS_IMAGE_UPLOAD_POSITIONER">
         <PopoverPopup className="CSS_IMAGE_UPLOAD_CARD">
           {file ? null : (
             <>

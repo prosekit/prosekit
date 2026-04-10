@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.20.0-beta.3
+
+### Patch Changes
+
+- [`7f60013`](https://github.com/ocavue/prosekit/commit/7f60013ebbfb22a5a003ea3ced2a28d911e326e5) ![](https://prosekit.dev/b/basic)
+
+  Add essential styles for web component elements to `prosekit/basic/style.css`.
+
+- [`dbccc47`](https://github.com/ocavue/prosekit/commit/dbccc474e746762f57d5eef7cc7d4b90c2cfc4ae) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the inline popover could overflow the clipping area.
+
 ## 0.20.0-beta.2
 
 ### Minor Changes

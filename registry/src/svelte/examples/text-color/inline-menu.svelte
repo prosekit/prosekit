@@ -84,7 +84,7 @@ useKeymap(toStore(() => keymap))
   {open}
   onOpenChange={(event) => open = event.detail}
 >
-  <InlinePopoverPositioner class ="CSS_INLINE_MENU_POSITIONER" >
+  <InlinePopoverPositioner class="CSS_INLINE_MENU_POSITIONER">
     <InlinePopoverPopup class="CSS_INLINE_MENU_MAIN">
       <div class="flex flex-col gap-4 p-4">
         <div class="flex flex-col gap-2">

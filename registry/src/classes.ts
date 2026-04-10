@@ -77,7 +77,7 @@ const CSS_INPUT = cn(
 )
 
 const CSS_POSITIONER_BASE = cn(
-  'block overflow-visible bg-transparent w-min h-min z-50' ,
+  'block overflow-visible bg-transparent w-min h-min z-50',
   'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
 )
 const CSS_POPUP_BASE = cn(
@@ -214,8 +214,6 @@ export const CSS_IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 export const CSS_DROP_CURSOR = cn('transition-all bg-blue-500')
 export const CSS_DROP_INDICATOR = cn('z-50 transition-all bg-blue-500')
 
-
-
 export const CSS_BLOCK_HANDLE_POSITIONER = CSS_POSITIONER_BASE
 export const CSS_BLOCK_HANDLE_POPUP = CSS_POPUP_BASE
 
@@ -285,7 +283,7 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 export const CSS_TOOLTIP_TRIGGER = cn('block')
 export const CSS_TOOLTIP_POSITIONER = CSS_POSITIONER_BASE
 export const CSS_TOOLTIP_POPUP = cn(
-  CSS_POPUP_BASE, 
+  CSS_POPUP_BASE,
   'overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs text-nowrap',
 )
 

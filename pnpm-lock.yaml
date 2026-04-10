@@ -861,8 +861,8 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: https://pkg.pr.new/@aria-ui/core@274
+        version: https://pkg.pr.new/@aria-ui/core@274
       '@aria-ui/elements':
         specifier: ^0.1.1
         version: 0.1.1
@@ -1281,6 +1281,10 @@ packages:
 
   '@aria-ui/core@0.1.0':
     resolution: {integrity: sha512-uKxomB53dAF2OkNav72ewlExtbTMItOwU+X1sMsN/ORc4xEeNTUy3BI3klCJ7XKY2/aAp+D0r8/F7XfabZ6NGQ==}
+
+  '@aria-ui/core@https://pkg.pr.new/@aria-ui/core@274':
+    resolution: {integrity: sha512-uKxomB53dAF2OkNav72ewlExtbTMItOwU+X1sMsN/ORc4xEeNTUy3BI3klCJ7XKY2/aAp+D0r8/F7XfabZ6NGQ==, tarball: https://pkg.pr.new/@aria-ui/core@274}
+    version: 0.1.0
 
   '@aria-ui/elements@0.1.1':
     resolution: {integrity: sha512-a4pmfo8C5URtL7qCY4h/uErbhMDbwMoErwd5tgBySLIrkA3/i2LlBNpnEmjupr3JcHbTC+57HgBcp1cogIdh/g==}
@@ -7949,6 +7953,13 @@ snapshots:
       typescript: 5.9.3
 
   '@aria-ui/core@0.1.0':
+    dependencies:
+      '@ocavue/utils': 1.6.0
+      '@zag-js/dom-query': 1.39.1
+      alien-signals: 3.1.2
+      server-dom-shim: 1.1.0
+
+  '@aria-ui/core@https://pkg.pr.new/@aria-ui/core@274':
     dependencies:
       '@ocavue/utils': 1.6.0
       '@zag-js/dom-query': 1.39.1

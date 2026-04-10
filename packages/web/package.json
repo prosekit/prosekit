@@ -47,7 +47,7 @@
     "build:aria-ui": "node build.mjs"
   },
   "dependencies": {
-    "@aria-ui/core": "^0.1.0",
+    "@aria-ui/core": "https://pkg.pr.new/@aria-ui/core@274",
     "@aria-ui/elements": "^0.1.1",
     "@aria-ui/utils": "^0.1.0",
     "@floating-ui/dom": "^1.7.6",

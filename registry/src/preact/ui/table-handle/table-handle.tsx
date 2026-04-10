@@ -66,7 +66,7 @@ export default function TableHandle(props: Props) {
       <TableHandleDropIndicator />
       <TableHandleColumnPositioner className="CSS_TABLE_HANDLE_COLUMN_POSITIONER">
         <TableHandleColumnPopup className="CSS_TABLE_HANDLE_COLUMN_POPUP">
-          <TableHandleColumnMenuRoot >
+          <TableHandleColumnMenuRoot>
             <TableHandleColumnMenuTrigger className="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
               <div className="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
             </TableHandleColumnMenuTrigger>

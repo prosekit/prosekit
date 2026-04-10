@@ -1,9 +1,9 @@
 prosekit-autocomplete-root,
 prosekit-block-handle-root,
 prosekit-table-handle-root,
-prosekit-tooltip-root,
 prosekit-table-handle-column-menu-root,
-prosekit-table-handle-row-menu-root {
+prosekit-table-handle-row-menu-root,
+prosekit-tooltip-root {
   display: contents;
 }
 prosekit-tooltip-positioner {

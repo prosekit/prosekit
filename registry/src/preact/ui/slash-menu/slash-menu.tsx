@@ -13,7 +13,7 @@ export default function SlashMenu() {
   const editor = useEditor<BasicExtension>()
 
   return (
-    <AutocompleteRoot regex={regex}  >
+    <AutocompleteRoot regex={regex}>
       <AutocompletePositioner>
         <AutocompletePopup className="CSS_AUTOCOMPLETE_MENU">
           <SlashMenuItem

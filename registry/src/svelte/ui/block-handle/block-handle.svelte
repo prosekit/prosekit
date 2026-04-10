@@ -14,7 +14,7 @@ interface Props {
 const props: Props = $props()
 </script>
 
-<BlockHandleRoot >
+<BlockHandleRoot>
   <BlockHandlePositioner placement={props.dir === 'rtl' ? 'right' : 'left'} class="CSS_BLOCK_HANDLE_POSITIONER">
     <BlockHandlePopup class="CSS_BLOCK_HANDLE_POPUP">
       <BlockHandleAdd class="CSS_BLOCK_HANDLE_ADD">

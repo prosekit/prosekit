@@ -22,7 +22,7 @@ const regex = /#[\da-z]*$/i
 </script>
 
 <template>
-  <AutocompleteRoot :regex="regex" >
+  <AutocompleteRoot :regex="regex">
     <AutocompletePositioner>
       <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
         <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">

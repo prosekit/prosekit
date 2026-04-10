@@ -12,7 +12,7 @@ interface Props {
 
 export default function BlockHandle(props: Props) {
   return (
-    <BlockHandleRoot  >
+    <BlockHandleRoot>
       <BlockHandlePositioner
         placement={props.dir === 'rtl' ? 'right' : 'left'}
         className="CSS_BLOCK_HANDLE_POSITIONER"

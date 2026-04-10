@@ -1,6 +1,11 @@
-prosekit-autocomplete-root,  prosekit-block-handle-root, prosekit-table-handle-root, prosekit-tooltip-root, prosekit-table-handle-column-menu-root , prosekit-table-handle-row-menu-root   {
-    display: contents;
+prosekit-autocomplete-root,
+prosekit-block-handle-root,
+prosekit-table-handle-root,
+prosekit-tooltip-root,
+prosekit-table-handle-column-menu-root,
+prosekit-table-handle-row-menu-root {
+  display: contents;
 }
 prosekit-tooltip-positioner {
-    background: transparent;
+  background: transparent;
 }

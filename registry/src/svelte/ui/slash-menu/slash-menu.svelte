@@ -13,7 +13,7 @@ const editor = useEditor<BasicExtension>()
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 </script>
 
-<AutocompleteRoot {regex} >
+<AutocompleteRoot {regex}>
   <AutocompletePositioner>
     <AutocompletePopup class="CSS_AUTOCOMPLETE_MENU">
       <SlashMenuItem

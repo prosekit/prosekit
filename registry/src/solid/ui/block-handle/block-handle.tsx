@@ -7,7 +7,7 @@ interface Props {
 
 export default function BlockHandle(props: Props): JSX.Element {
   return (
-    <BlockHandleRoot  >
+    <BlockHandleRoot>
       <BlockHandlePositioner
         placement={props.dir === 'rtl' ? 'right' : 'left'}
         class="CSS_BLOCK_HANDLE_POSITIONER"

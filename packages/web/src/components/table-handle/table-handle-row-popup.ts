@@ -8,7 +8,6 @@ import {
   type State,
 } from '@aria-ui/core'
 import { setupOverlayPopup } from '@aria-ui/elements/overlay'
-import { once } from '@ocavue/utils'
 
 import { tableHandleStoreContext } from './store.ts'
 
@@ -38,6 +37,6 @@ const TableHandleRowPopupElementBase: HostElementConstructor<TableHandleRowPopup
 export class TableHandleRowPopupElement extends TableHandleRowPopupElementBase {}
 
 /** @internal */
-export const registerTableHandleRowPopupElement: VoidFunction = once(() => {
+export function registerTableHandleRowPopupElement (): void {
   registerCustomElement('prosekit-table-handle-row-popup', TableHandleRowPopupElement)
-})
+}

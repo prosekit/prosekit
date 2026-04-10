@@ -11,7 +11,6 @@ import {
 } from '@aria-ui/core'
 import { setupOverlayPositioner } from '@aria-ui/elements/overlay'
 import type { Placement } from '@floating-ui/dom'
-import { once } from '@ocavue/utils'
 
 import { useHTMLElementAt } from '../../utils/use-html-element-at.ts'
 
@@ -63,6 +62,6 @@ const TableHandleColumnPositionerElementBase: HostElementConstructor<TableHandle
 export class TableHandleColumnPositionerElement extends TableHandleColumnPositionerElementBase {}
 
 /** @internal */
-export const registerTableHandleColumnPositionerElement: VoidFunction = once(() => {
+export function registerTableHandleColumnPositionerElement (): void {
   registerCustomElement('prosekit-table-handle-column-positioner', TableHandleColumnPositionerElement)
-})
+}

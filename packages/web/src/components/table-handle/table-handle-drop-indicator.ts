@@ -9,7 +9,6 @@ import {
   type State,
 } from '@aria-ui/core'
 import { computePosition, offset } from '@floating-ui/dom'
-import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { defineTableCommands } from '@prosekit/extensions/table'
 
@@ -162,6 +161,6 @@ export class TableHandleDropIndicatorElement extends TableHandleDropIndicatorEle
 /**
  * @internal
  */
-export const registerTableHandleDropIndicatorElement: VoidFunction = once(() => {
+export function registerTableHandleDropIndicatorElement (): void {
   registerCustomElement('prosekit-table-handle-drop-indicator', TableHandleDropIndicatorElement)
-})
+}

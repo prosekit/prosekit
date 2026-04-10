@@ -9,7 +9,6 @@ import {
   type State,
 } from '@aria-ui/core'
 import { computePosition, type ReferenceElement } from '@floating-ui/dom'
-import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 
 import { assignStyles } from '../../utils/assign-styles.ts'
@@ -165,6 +164,6 @@ export class TableHandleDragPreviewElement extends TableHandleDragPreviewElement
 /**
  * @internal
  */
-export const registerTableHandleDragPreviewElement: VoidFunction = once(() => {
+export function registerTableHandleDragPreviewElement (): void {
   registerCustomElement('prosekit-table-handle-drag-preview', TableHandleDragPreviewElement)
-})
+}

@@ -11,7 +11,6 @@ import {
   type State,
 } from '@aria-ui/core'
 import { setupMenuTrigger, type MenuTriggerProps } from '@aria-ui/elements/menu'
-import { once } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import { selectTableColumn, type defineTableCommands } from '@prosekit/extensions/table'
 
@@ -103,6 +102,6 @@ export class TableHandleColumnMenuTriggerElement extends TableHandleColumnMenuTr
 /**
  * @internal
  */
-export const registerTableHandleColumnMenuTriggerElement: VoidFunction = once(() => {
+export function registerTableHandleColumnMenuTriggerElement(): void {
   registerCustomElement('prosekit-table-handle-column-menu-trigger', TableHandleColumnMenuTriggerElement)
-})
+}

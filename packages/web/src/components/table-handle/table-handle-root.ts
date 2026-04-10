@@ -9,7 +9,6 @@ import {
   type PropsDeclaration,
   type State,
 } from '@aria-ui/core'
-import { once } from '@ocavue/utils'
 import { defineDOMEventHandler, type Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -99,6 +98,6 @@ export class TableHandleRootElement extends TableHandleRootElementBase {}
 /**
  * @internal
  */
-export const registerTableHandleRootElement: VoidFunction = once(() => {
+export function registerTableHandleRootElement (): void {
   registerCustomElement('prosekit-table-handle-root', TableHandleRootElement)
-})
+}

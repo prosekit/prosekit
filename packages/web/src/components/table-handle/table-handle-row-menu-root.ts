@@ -9,7 +9,6 @@ import {
   type State,
 } from '@aria-ui/core'
 import { MenuRootPropsDeclaration, setupMenuRoot, type MenuRootProps } from '@aria-ui/elements/menu'
-import { once } from '@ocavue/utils'
 
 import { tableHandleStoreContext } from './store.ts'
 
@@ -47,6 +46,6 @@ const TableHandleRowMenuRootElementBase: HostElementConstructor<TableHandleRowMe
 export class TableHandleRowMenuRootElement extends TableHandleRowMenuRootElementBase {}
 
 /** @internal */
-export const registerTableHandleRowMenuRootElement: VoidFunction = once(() => {
+export function registerTableHandleRowMenuRootElement (): void {
   registerCustomElement('prosekit-table-handle-row-menu-root', TableHandleRowMenuRootElement)
-})
+}

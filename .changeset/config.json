@@ -7,9 +7,6 @@
   "access": "public",
   "baseBranch": "master",
   "ignore": [
-    "@prosekit/dev",
-    "@prosekit/vfs",
-    "prosekit-registry",
     "prosekit-website"
   ],
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {

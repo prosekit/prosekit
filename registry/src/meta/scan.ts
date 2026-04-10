@@ -9,6 +9,8 @@ import { loadStoryMeta, type StoryMeta } from './story-meta'
 import type { Framework, ItemAccumulator, ItemCategory } from './types'
 import { FRAMEWORKS, REGISTRY_SRC_DIR } from './types'
 
+const REGISTRY_BASE_URL = 'https://unpkg.com/prosekit-registry/dist/r'
+
 const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   react: path.join(REGISTRY_SRC_DIR, 'react'),
   preact: path.join(REGISTRY_SRC_DIR, 'preact'),
@@ -391,7 +393,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
           continue
         }
 
-        item.registryDependencies.add(`https://prosekit.dev/r/${targetItemName}.json`)
+        item.registryDependencies.add(`${REGISTRY_BASE_URL}/${targetItemName}.json`)
         item.meta.internalDependencies.add(targetItemName)
       } else {
         const dependency = normalizeExternalDependency(specifier)

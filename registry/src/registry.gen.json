@@ -9,10 +9,10 @@
       "type": "registry:block",
       "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-block-handle.json",
-        "https://prosekit.dev/r/react-ui-block-handle.json",
-        "https://prosekit.dev/r/react-ui-code-block-view.json",
-        "https://prosekit.dev/r/react-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -65,7 +65,7 @@
       "type": "registry:block",
       "description": "Example for blockquote node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -114,8 +114,8 @@
       "type": "registry:block",
       "description": "Example for bold mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-bold.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-bold.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -211,8 +211,8 @@
       "type": "registry:block",
       "description": "Example for inline code mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-code.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-code.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -263,9 +263,9 @@
       "type": "registry:block",
       "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/react-ui-code-block-view.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -319,8 +319,8 @@
       "type": "registry:block",
       "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/react-ui-code-block-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -379,7 +379,7 @@
       "type": "registry:block",
       "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-drop-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -468,21 +468,21 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-katex.json",
-        "https://prosekit.dev/r/react-sample-sample-doc-full.json",
-        "https://prosekit.dev/r/react-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/react-sample-sample-uploader.json",
-        "https://prosekit.dev/r/react-sample-sample-user-data.json",
-        "https://prosekit.dev/r/react-ui-block-handle.json",
-        "https://prosekit.dev/r/react-ui-code-block-view.json",
-        "https://prosekit.dev/r/react-ui-drop-indicator.json",
-        "https://prosekit.dev/r/react-ui-image-view.json",
-        "https://prosekit.dev/r/react-ui-inline-menu.json",
-        "https://prosekit.dev/r/react-ui-slash-menu.json",
-        "https://prosekit.dev/r/react-ui-table-handle.json",
-        "https://prosekit.dev/r/react-ui-tag-menu.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json",
-        "https://prosekit.dev/r/react-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-full.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-image-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -576,7 +576,7 @@
       "type": "registry:block",
       "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-gap-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -620,8 +620,8 @@
       "type": "registry:block",
       "description": "Example for hard line break node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-hard-break.json",
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-hard-break.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -674,8 +674,8 @@
       "type": "registry:block",
       "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-heading.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-heading.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -726,7 +726,7 @@
       "type": "registry:block",
       "description": "Example for horizontal rule node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -775,9 +775,9 @@
       "type": "registry:block",
       "description": "Custom image node views with resize support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-image.json",
-        "https://prosekit.dev/r/react-sample-sample-uploader.json",
-        "https://prosekit.dev/r/react-ui-image-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-image.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-image-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -826,8 +826,8 @@
       "type": "registry:block",
       "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-inline-menu.json",
-        "https://prosekit.dev/r/react-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -876,8 +876,8 @@
       "type": "registry:block",
       "description": "Example for italic mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-italic.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-italic.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -928,7 +928,7 @@
       "type": "registry:block",
       "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -985,8 +985,8 @@
       "type": "registry:block",
       "description": "Example for link mark with URL input.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-link.json",
-        "https://prosekit.dev/r/react-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-link.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1035,7 +1035,7 @@
       "type": "registry:block",
       "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-link-mark-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1085,8 +1085,8 @@
       "type": "registry:block",
       "description": "Example for list node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-list.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-list.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1137,8 +1137,8 @@
       "type": "registry:block",
       "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-list-custom-checkbox.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-list-custom-checkbox.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1195,7 +1195,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "loro-crdt",
@@ -1330,16 +1330,16 @@
       "type": "registry:block",
       "description": "Notion-style editor with block-based editing.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-notion.json",
-        "https://prosekit.dev/r/react-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/react-sample-sample-uploader.json",
-        "https://prosekit.dev/r/react-sample-sample-user-data.json",
-        "https://prosekit.dev/r/react-ui-code-block-view.json",
-        "https://prosekit.dev/r/react-ui-drop-indicator.json",
-        "https://prosekit.dev/r/react-ui-inline-menu.json",
-        "https://prosekit.dev/r/react-ui-table-handle.json",
-        "https://prosekit.dev/r/react-ui-tag-menu.json",
-        "https://prosekit.dev/r/react-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-notion.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "@base-ui/react",
@@ -1481,7 +1481,7 @@
       "type": "registry:block",
       "description": "Page layout with configurable paper settings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-page.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-page.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1576,8 +1576,8 @@
       "type": "registry:block",
       "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-readonly.json",
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-readonly.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1636,14 +1636,14 @@
       "type": "registry:block",
       "description": "Right-to-left text direction support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-rtl.json",
-        "https://prosekit.dev/r/react-sample-sample-uploader.json",
-        "https://prosekit.dev/r/react-ui-block-handle.json",
-        "https://prosekit.dev/r/react-ui-drop-indicator.json",
-        "https://prosekit.dev/r/react-ui-inline-menu.json",
-        "https://prosekit.dev/r/react-ui-slash-menu.json",
-        "https://prosekit.dev/r/react-ui-table-handle.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-rtl.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1819,8 +1819,8 @@
       "type": "registry:block",
       "description": "Search and highlight text with navigation.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-search.json",
-        "https://prosekit.dev/r/react-ui-search.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-search.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-search.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1869,7 +1869,7 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1916,8 +1916,8 @@
       "type": "registry:block",
       "description": "Example for strikethrough mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-strike.json",
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-strike.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -1970,8 +1970,8 @@
       "type": "registry:block",
       "description": "Table node with row and column operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-table.json",
-        "https://prosekit.dev/r/react-ui-table-handle.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-table.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-table-handle.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2018,8 +2018,8 @@
       "type": "registry:block",
       "description": "Math equation rendering using the Temml library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-tex.json",
-        "https://prosekit.dev/r/react-sample-temml.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-tex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-temml.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2065,8 +2065,8 @@
       "type": "registry:block",
       "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-text-align.json",
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-text-align.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2119,8 +2119,8 @@
       "type": "registry:block",
       "description": "Change text and background color.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-text-color.json",
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-text-color.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2173,8 +2173,8 @@
       "type": "registry:block",
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-uploader.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2225,7 +2225,7 @@
       "type": "registry:block",
       "description": "Embed and display Twitter tweets.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-tweet.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-tweet.json"
       ],
       "dependencies": [
         "prosekit",
@@ -2282,10 +2282,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-katex.json",
-        "https://prosekit.dev/r/react-sample-sample-doc-typography.json",
-        "https://prosekit.dev/r/react-ui-block-handle.json",
-        "https://prosekit.dev/r/react-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-typography.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2337,8 +2337,8 @@
       "type": "registry:block",
       "description": "Example for underline mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-underline.json",
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-underline.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2389,7 +2389,7 @@
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2442,10 +2442,10 @@
       "type": "registry:block",
       "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/react-sample-sample-user-data.json",
-        "https://prosekit.dev/r/react-ui-tag-menu.json",
-        "https://prosekit.dev/r/react-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2497,8 +2497,8 @@
       "type": "registry:block",
       "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-query-users.json",
-        "https://prosekit.dev/r/react-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-query-users.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2558,8 +2558,8 @@
       "type": "registry:block",
       "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-define-atom-block.json",
-        "https://prosekit.dev/r/react-sample-sample-doc-view-adapter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-define-atom-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2611,8 +2611,8 @@
       "type": "registry:block",
       "description": "Display word and character count statistics.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-doc-word-counter.json",
-        "https://prosekit.dev/r/react-ui-word-counter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-word-counter.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-word-counter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -2659,7 +2659,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -3607,7 +3607,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-sample-sample-user-data.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-user-data.json"
       ],
       "dependencies": [],
       "files": [
@@ -3878,7 +3878,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -3955,7 +3955,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -3999,7 +3999,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -4159,8 +4159,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/react-ui-button.json",
-        "https://prosekit.dev/r/react-ui-image-upload-popover.json"
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json",
+        "https://unpkg.com/prosekit-registry/dist/r/react-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -4273,10 +4273,10 @@
       "type": "registry:block",
       "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-block-handle.json",
-        "https://prosekit.dev/r/preact-ui-block-handle.json",
-        "https://prosekit.dev/r/preact-ui-code-block-view.json",
-        "https://prosekit.dev/r/preact-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4329,7 +4329,7 @@
       "type": "registry:block",
       "description": "Example for blockquote node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4378,8 +4378,8 @@
       "type": "registry:block",
       "description": "Example for bold mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-bold.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-bold.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4475,8 +4475,8 @@
       "type": "registry:block",
       "description": "Example for inline code mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-code.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-code.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4527,9 +4527,9 @@
       "type": "registry:block",
       "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/preact-ui-code-block-view.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4583,8 +4583,8 @@
       "type": "registry:block",
       "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/preact-ui-code-block-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-code-block-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4643,7 +4643,7 @@
       "type": "registry:block",
       "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-drop-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4732,21 +4732,21 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-katex.json",
-        "https://prosekit.dev/r/preact-sample-sample-doc-full.json",
-        "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
-        "https://prosekit.dev/r/preact-sample-sample-user-data.json",
-        "https://prosekit.dev/r/preact-ui-block-handle.json",
-        "https://prosekit.dev/r/preact-ui-code-block-view.json",
-        "https://prosekit.dev/r/preact-ui-drop-indicator.json",
-        "https://prosekit.dev/r/preact-ui-image-view.json",
-        "https://prosekit.dev/r/preact-ui-inline-menu.json",
-        "https://prosekit.dev/r/preact-ui-slash-menu.json",
-        "https://prosekit.dev/r/preact-ui-table-handle.json",
-        "https://prosekit.dev/r/preact-ui-tag-menu.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json",
-        "https://prosekit.dev/r/preact-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-full.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-image-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4834,7 +4834,7 @@
       "type": "registry:block",
       "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-gap-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4878,8 +4878,8 @@
       "type": "registry:block",
       "description": "Example for hard line break node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-hard-break.json",
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-hard-break.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4932,8 +4932,8 @@
       "type": "registry:block",
       "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-heading.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-heading.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -4984,7 +4984,7 @@
       "type": "registry:block",
       "description": "Example for horizontal rule node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5033,9 +5033,9 @@
       "type": "registry:block",
       "description": "Custom image node views with resize support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-image.json",
-        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
-        "https://prosekit.dev/r/preact-ui-image-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-image.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-image-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5084,8 +5084,8 @@
       "type": "registry:block",
       "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-inline-menu.json",
-        "https://prosekit.dev/r/preact-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5134,8 +5134,8 @@
       "type": "registry:block",
       "description": "Example for italic mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-italic.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-italic.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5186,7 +5186,7 @@
       "type": "registry:block",
       "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5243,8 +5243,8 @@
       "type": "registry:block",
       "description": "Example for link mark with URL input.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-link.json",
-        "https://prosekit.dev/r/preact-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-link.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5293,7 +5293,7 @@
       "type": "registry:block",
       "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-link-mark-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5343,8 +5343,8 @@
       "type": "registry:block",
       "description": "Example for list node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-list.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-list.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5395,8 +5395,8 @@
       "type": "registry:block",
       "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-list-custom-checkbox.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-list-custom-checkbox.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5453,7 +5453,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "loro-crdt",
@@ -5627,8 +5627,8 @@
       "type": "registry:block",
       "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-readonly.json",
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-readonly.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5687,14 +5687,14 @@
       "type": "registry:block",
       "description": "Right-to-left text direction support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-rtl.json",
-        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
-        "https://prosekit.dev/r/preact-ui-block-handle.json",
-        "https://prosekit.dev/r/preact-ui-drop-indicator.json",
-        "https://prosekit.dev/r/preact-ui-inline-menu.json",
-        "https://prosekit.dev/r/preact-ui-slash-menu.json",
-        "https://prosekit.dev/r/preact-ui-table-handle.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-rtl.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5870,8 +5870,8 @@
       "type": "registry:block",
       "description": "Search and highlight text with navigation.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-search.json",
-        "https://prosekit.dev/r/preact-ui-search.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-search.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-search.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5920,7 +5920,7 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -5967,8 +5967,8 @@
       "type": "registry:block",
       "description": "Example for strikethrough mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-strike.json",
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-strike.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6021,8 +6021,8 @@
       "type": "registry:block",
       "description": "Table node with row and column operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-table.json",
-        "https://prosekit.dev/r/preact-ui-table-handle.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-table.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-table-handle.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6069,8 +6069,8 @@
       "type": "registry:block",
       "description": "Math equation rendering using the Temml library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-tex.json",
-        "https://prosekit.dev/r/preact-sample-temml.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-tex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-temml.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6116,8 +6116,8 @@
       "type": "registry:block",
       "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-text-align.json",
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-text-align.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6170,8 +6170,8 @@
       "type": "registry:block",
       "description": "Change text and background color.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-text-color.json",
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-text-color.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6224,8 +6224,8 @@
       "type": "registry:block",
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-uploader.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6276,10 +6276,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-katex.json",
-        "https://prosekit.dev/r/preact-sample-sample-doc-typography.json",
-        "https://prosekit.dev/r/preact-ui-block-handle.json",
-        "https://prosekit.dev/r/preact-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-typography.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6331,8 +6331,8 @@
       "type": "registry:block",
       "description": "Example for underline mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-underline.json",
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-underline.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6383,7 +6383,7 @@
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6436,10 +6436,10 @@
       "type": "registry:block",
       "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/preact-sample-sample-user-data.json",
-        "https://prosekit.dev/r/preact-ui-tag-menu.json",
-        "https://prosekit.dev/r/preact-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6491,8 +6491,8 @@
       "type": "registry:block",
       "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-query-users.json",
-        "https://prosekit.dev/r/preact-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-query-users.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6552,8 +6552,8 @@
       "type": "registry:block",
       "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-define-atom-block.json",
-        "https://prosekit.dev/r/preact-sample-sample-doc-view-adapter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-define-atom-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6605,8 +6605,8 @@
       "type": "registry:block",
       "description": "Display word and character count statistics.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-doc-word-counter.json",
-        "https://prosekit.dev/r/preact-ui-word-counter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-word-counter.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-word-counter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -6653,7 +6653,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -7520,7 +7520,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-sample-sample-user-data.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-user-data.json"
       ],
       "dependencies": [],
       "files": [
@@ -7791,7 +7791,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -7868,7 +7868,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -7912,7 +7912,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -8072,8 +8072,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/preact-ui-button.json",
-        "https://prosekit.dev/r/preact-ui-image-upload-popover.json"
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json",
+        "https://unpkg.com/prosekit-registry/dist/r/preact-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -8186,10 +8186,10 @@
       "type": "registry:block",
       "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-block-handle.json",
-        "https://prosekit.dev/r/vue-ui-block-handle.json",
-        "https://prosekit.dev/r/vue-ui-code-block-view.json",
-        "https://prosekit.dev/r/vue-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8242,7 +8242,7 @@
       "type": "registry:block",
       "description": "Example for blockquote node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8291,8 +8291,8 @@
       "type": "registry:block",
       "description": "Example for bold mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-bold.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-bold.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8388,8 +8388,8 @@
       "type": "registry:block",
       "description": "Example for inline code mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-code.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-code.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8440,9 +8440,9 @@
       "type": "registry:block",
       "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/vue-ui-code-block-view.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8496,8 +8496,8 @@
       "type": "registry:block",
       "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/vue-ui-code-block-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-code-block-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8556,7 +8556,7 @@
       "type": "registry:block",
       "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-drop-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8645,21 +8645,21 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-katex.json",
-        "https://prosekit.dev/r/vue-sample-sample-doc-full.json",
-        "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
-        "https://prosekit.dev/r/vue-sample-sample-user-data.json",
-        "https://prosekit.dev/r/vue-ui-block-handle.json",
-        "https://prosekit.dev/r/vue-ui-code-block-view.json",
-        "https://prosekit.dev/r/vue-ui-drop-indicator.json",
-        "https://prosekit.dev/r/vue-ui-image-view.json",
-        "https://prosekit.dev/r/vue-ui-inline-menu.json",
-        "https://prosekit.dev/r/vue-ui-slash-menu.json",
-        "https://prosekit.dev/r/vue-ui-table-handle.json",
-        "https://prosekit.dev/r/vue-ui-tag-menu.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json",
-        "https://prosekit.dev/r/vue-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-full.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-image-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8747,7 +8747,7 @@
       "type": "registry:block",
       "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-gap-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8791,8 +8791,8 @@
       "type": "registry:block",
       "description": "Example for hard line break node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-hard-break.json",
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-hard-break.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8845,8 +8845,8 @@
       "type": "registry:block",
       "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-heading.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-heading.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8897,7 +8897,7 @@
       "type": "registry:block",
       "description": "Example for horizontal rule node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8946,9 +8946,9 @@
       "type": "registry:block",
       "description": "Custom image node views with resize support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-image.json",
-        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
-        "https://prosekit.dev/r/vue-ui-image-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-image.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-image-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -8997,8 +8997,8 @@
       "type": "registry:block",
       "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-inline-menu.json",
-        "https://prosekit.dev/r/vue-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9047,8 +9047,8 @@
       "type": "registry:block",
       "description": "Example for italic mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-italic.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-italic.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9099,8 +9099,8 @@
       "type": "registry:block",
       "description": "Math equation rendering using the KaTeX library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-katex.json",
-        "https://prosekit.dev/r/vue-sample-sample-doc-tex.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-tex.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9146,7 +9146,7 @@
       "type": "registry:block",
       "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9203,8 +9203,8 @@
       "type": "registry:block",
       "description": "Example for link mark with URL input.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-link.json",
-        "https://prosekit.dev/r/vue-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-link.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9253,7 +9253,7 @@
       "type": "registry:block",
       "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-link-mark-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9303,8 +9303,8 @@
       "type": "registry:block",
       "description": "Example for list node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-list.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-list.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9355,8 +9355,8 @@
       "type": "registry:block",
       "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-list-custom-checkbox.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-list-custom-checkbox.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9413,7 +9413,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "loro-crdt",
@@ -9587,8 +9587,8 @@
       "type": "registry:block",
       "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-readonly.json",
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-readonly.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9647,14 +9647,14 @@
       "type": "registry:block",
       "description": "Right-to-left text direction support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-rtl.json",
-        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
-        "https://prosekit.dev/r/vue-ui-block-handle.json",
-        "https://prosekit.dev/r/vue-ui-drop-indicator.json",
-        "https://prosekit.dev/r/vue-ui-inline-menu.json",
-        "https://prosekit.dev/r/vue-ui-slash-menu.json",
-        "https://prosekit.dev/r/vue-ui-table-handle.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-rtl.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9830,8 +9830,8 @@
       "type": "registry:block",
       "description": "Search and highlight text with navigation.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-search.json",
-        "https://prosekit.dev/r/vue-ui-search.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-search.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-search.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9880,7 +9880,7 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9927,8 +9927,8 @@
       "type": "registry:block",
       "description": "Example for strikethrough mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-strike.json",
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-strike.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -9981,8 +9981,8 @@
       "type": "registry:block",
       "description": "Table node with row and column operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-table.json",
-        "https://prosekit.dev/r/vue-ui-table-handle.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-table.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-table-handle.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10029,8 +10029,8 @@
       "type": "registry:block",
       "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-text-align.json",
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-text-align.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10083,8 +10083,8 @@
       "type": "registry:block",
       "description": "Change text and background color.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-text-color.json",
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-text-color.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10137,8 +10137,8 @@
       "type": "registry:block",
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-uploader.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10189,7 +10189,7 @@
       "type": "registry:block",
       "description": "Embed and display Twitter tweets.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-tweet.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-tweet.json"
       ],
       "dependencies": [
         "prosekit",
@@ -10246,10 +10246,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-katex.json",
-        "https://prosekit.dev/r/vue-sample-sample-doc-typography.json",
-        "https://prosekit.dev/r/vue-ui-block-handle.json",
-        "https://prosekit.dev/r/vue-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-typography.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10301,8 +10301,8 @@
       "type": "registry:block",
       "description": "Example for underline mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-underline.json",
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-underline.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10353,7 +10353,7 @@
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10406,10 +10406,10 @@
       "type": "registry:block",
       "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/vue-sample-sample-user-data.json",
-        "https://prosekit.dev/r/vue-ui-tag-menu.json",
-        "https://prosekit.dev/r/vue-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10461,8 +10461,8 @@
       "type": "registry:block",
       "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-query-users.json",
-        "https://prosekit.dev/r/vue-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-query-users.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10522,8 +10522,8 @@
       "type": "registry:block",
       "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-define-atom-block.json",
-        "https://prosekit.dev/r/vue-sample-sample-doc-view-adapter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-define-atom-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10575,8 +10575,8 @@
       "type": "registry:block",
       "description": "Display word and character count statistics.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-doc-word-counter.json",
-        "https://prosekit.dev/r/vue-ui-word-counter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-word-counter.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-word-counter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -10623,7 +10623,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -11517,7 +11517,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-sample-sample-user-data.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-user-data.json"
       ],
       "dependencies": [],
       "files": [
@@ -11761,7 +11761,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -11838,7 +11838,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -11882,7 +11882,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -12042,8 +12042,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/vue-ui-button.json",
-        "https://prosekit.dev/r/vue-ui-image-upload-popover.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json",
+        "https://unpkg.com/prosekit-registry/dist/r/vue-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -12189,8 +12189,8 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-ui-editor-context.json",
-        "https://prosekit.dev/r/lit-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-editor-context.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-slash-menu.json"
       ],
       "dependencies": [
         "@lit/context",
@@ -12240,9 +12240,9 @@
       "type": "registry:block",
       "description": "Table node with row and column operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-sample-sample-doc-table.json",
-        "https://prosekit.dev/r/lit-ui-editor-context.json",
-        "https://prosekit.dev/r/lit-ui-table-handle.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-sample-sample-doc-table.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-editor-context.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-table-handle.json"
       ],
       "dependencies": [
         "@lit/context",
@@ -12292,9 +12292,9 @@
       "type": "registry:block",
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-sample-sample-uploader.json",
-        "https://prosekit.dev/r/lit-ui-editor-context.json",
-        "https://prosekit.dev/r/lit-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-editor-context.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-toolbar.json"
       ],
       "dependencies": [
         "@lit/context",
@@ -12463,7 +12463,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -12502,7 +12502,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-ui-editor-context.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-editor-context.json"
       ],
       "dependencies": [
         "@lit/context",
@@ -12553,7 +12553,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-ui-editor-context.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-editor-context.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -12597,9 +12597,9 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/lit-ui-button.json",
-        "https://prosekit.dev/r/lit-ui-editor-context.json",
-        "https://prosekit.dev/r/lit-ui-image-upload-popover.json"
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-button.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-editor-context.json",
+        "https://unpkg.com/prosekit-registry/dist/r/lit-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -12649,10 +12649,10 @@
       "type": "registry:block",
       "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-block-handle.json",
-        "https://prosekit.dev/r/svelte-ui-block-handle.json",
-        "https://prosekit.dev/r/svelte-ui-code-block-view.json",
-        "https://prosekit.dev/r/svelte-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -12705,7 +12705,7 @@
       "type": "registry:block",
       "description": "Example for blockquote node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -12754,8 +12754,8 @@
       "type": "registry:block",
       "description": "Example for bold mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-bold.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-bold.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -12851,8 +12851,8 @@
       "type": "registry:block",
       "description": "Example for inline code mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-code.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-code.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -12903,9 +12903,9 @@
       "type": "registry:block",
       "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/svelte-ui-code-block-view.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -12959,8 +12959,8 @@
       "type": "registry:block",
       "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/svelte-ui-code-block-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-code-block-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13019,7 +13019,7 @@
       "type": "registry:block",
       "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-drop-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13108,21 +13108,21 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-katex.json",
-        "https://prosekit.dev/r/svelte-sample-sample-doc-full.json",
-        "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
-        "https://prosekit.dev/r/svelte-sample-sample-user-data.json",
-        "https://prosekit.dev/r/svelte-ui-block-handle.json",
-        "https://prosekit.dev/r/svelte-ui-code-block-view.json",
-        "https://prosekit.dev/r/svelte-ui-drop-indicator.json",
-        "https://prosekit.dev/r/svelte-ui-image-view.json",
-        "https://prosekit.dev/r/svelte-ui-inline-menu.json",
-        "https://prosekit.dev/r/svelte-ui-slash-menu.json",
-        "https://prosekit.dev/r/svelte-ui-table-handle.json",
-        "https://prosekit.dev/r/svelte-ui-tag-menu.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json",
-        "https://prosekit.dev/r/svelte-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-full.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-image-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13210,7 +13210,7 @@
       "type": "registry:block",
       "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-gap-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13254,8 +13254,8 @@
       "type": "registry:block",
       "description": "Example for hard line break node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-hard-break.json",
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-hard-break.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13308,8 +13308,8 @@
       "type": "registry:block",
       "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-heading.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-heading.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13360,7 +13360,7 @@
       "type": "registry:block",
       "description": "Example for horizontal rule node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13409,9 +13409,9 @@
       "type": "registry:block",
       "description": "Custom image node views with resize support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-image.json",
-        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
-        "https://prosekit.dev/r/svelte-ui-image-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-image.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-image-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13460,8 +13460,8 @@
       "type": "registry:block",
       "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-inline-menu.json",
-        "https://prosekit.dev/r/svelte-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13510,8 +13510,8 @@
       "type": "registry:block",
       "description": "Example for italic mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-italic.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-italic.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13562,8 +13562,8 @@
       "type": "registry:block",
       "description": "Math equation rendering using the KaTeX library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-katex.json",
-        "https://prosekit.dev/r/svelte-sample-sample-doc-tex.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-tex.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13609,7 +13609,7 @@
       "type": "registry:block",
       "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13660,8 +13660,8 @@
       "type": "registry:block",
       "description": "Example for link mark with URL input.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-link.json",
-        "https://prosekit.dev/r/svelte-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-link.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13710,7 +13710,7 @@
       "type": "registry:block",
       "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-link-mark-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13760,8 +13760,8 @@
       "type": "registry:block",
       "description": "Example for list node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-list.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-list.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13812,8 +13812,8 @@
       "type": "registry:block",
       "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-list-custom-checkbox.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-list-custom-checkbox.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -13870,7 +13870,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "loro-crdt",
@@ -14005,7 +14005,7 @@
       "type": "registry:block",
       "description": "Page layout with configurable paper settings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-page.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-page.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14100,8 +14100,8 @@
       "type": "registry:block",
       "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-readonly.json",
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-readonly.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14154,14 +14154,14 @@
       "type": "registry:block",
       "description": "Right-to-left text direction support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-rtl.json",
-        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
-        "https://prosekit.dev/r/svelte-ui-block-handle.json",
-        "https://prosekit.dev/r/svelte-ui-drop-indicator.json",
-        "https://prosekit.dev/r/svelte-ui-inline-menu.json",
-        "https://prosekit.dev/r/svelte-ui-slash-menu.json",
-        "https://prosekit.dev/r/svelte-ui-table-handle.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-rtl.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14337,8 +14337,8 @@
       "type": "registry:block",
       "description": "Search and highlight text with navigation.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-search.json",
-        "https://prosekit.dev/r/svelte-ui-search.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-search.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-search.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14387,7 +14387,7 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14434,8 +14434,8 @@
       "type": "registry:block",
       "description": "Example for strikethrough mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-strike.json",
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-strike.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14488,8 +14488,8 @@
       "type": "registry:block",
       "description": "Table node with row and column operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-table.json",
-        "https://prosekit.dev/r/svelte-ui-table-handle.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-table.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-table-handle.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14536,8 +14536,8 @@
       "type": "registry:block",
       "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-text-align.json",
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-text-align.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14590,8 +14590,8 @@
       "type": "registry:block",
       "description": "Change text and background color.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-text-color.json",
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-text-color.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14644,8 +14644,8 @@
       "type": "registry:block",
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-uploader.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14696,10 +14696,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-katex.json",
-        "https://prosekit.dev/r/svelte-sample-sample-doc-typography.json",
-        "https://prosekit.dev/r/svelte-ui-block-handle.json",
-        "https://prosekit.dev/r/svelte-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-typography.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14751,8 +14751,8 @@
       "type": "registry:block",
       "description": "Example for underline mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-underline.json",
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-underline.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14803,7 +14803,7 @@
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14856,10 +14856,10 @@
       "type": "registry:block",
       "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/svelte-sample-sample-user-data.json",
-        "https://prosekit.dev/r/svelte-ui-tag-menu.json",
-        "https://prosekit.dev/r/svelte-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14911,8 +14911,8 @@
       "type": "registry:block",
       "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-query-users.json",
-        "https://prosekit.dev/r/svelte-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-query-users.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -14972,8 +14972,8 @@
       "type": "registry:block",
       "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-define-atom-block.json",
-        "https://prosekit.dev/r/svelte-sample-sample-doc-view-adapter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-define-atom-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -15025,8 +15025,8 @@
       "type": "registry:block",
       "description": "Display word and character count statistics.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-doc-word-counter.json",
-        "https://prosekit.dev/r/svelte-ui-word-counter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-word-counter.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-word-counter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -15073,7 +15073,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -15967,7 +15967,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-sample-sample-user-data.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-user-data.json"
       ],
       "dependencies": [],
       "files": [
@@ -16211,7 +16211,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16288,7 +16288,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -16332,7 +16332,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -16492,8 +16492,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/svelte-ui-button.json",
-        "https://prosekit.dev/r/svelte-ui-image-upload-popover.json"
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json",
+        "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -16606,10 +16606,10 @@
       "type": "registry:block",
       "description": "A handle that appears on hover, allowing you to drag and re-order blocks.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-block-handle.json",
-        "https://prosekit.dev/r/solid-ui-block-handle.json",
-        "https://prosekit.dev/r/solid-ui-code-block-view.json",
-        "https://prosekit.dev/r/solid-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16662,7 +16662,7 @@
       "type": "registry:block",
       "description": "Example for blockquote node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16711,8 +16711,8 @@
       "type": "registry:block",
       "description": "Example for bold mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-bold.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-bold.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16808,8 +16808,8 @@
       "type": "registry:block",
       "description": "Example for inline code mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-code.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-code.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16860,9 +16860,9 @@
       "type": "registry:block",
       "description": "Example for code block node with syntax highlighting.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/solid-ui-code-block-view.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16916,8 +16916,8 @@
       "type": "registry:block",
       "description": "Code block with multiple syntax highlighting themes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-code-block.json",
-        "https://prosekit.dev/r/solid-ui-code-block-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-code-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-code-block-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -16976,7 +16976,7 @@
       "type": "registry:block",
       "description": "Visual cursor indicator during drag-and-drop operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-drop-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17065,21 +17065,21 @@
       "type": "registry:block",
       "description": "Full-featured editor with most available features enabled.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-katex.json",
-        "https://prosekit.dev/r/solid-sample-sample-doc-full.json",
-        "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
-        "https://prosekit.dev/r/solid-sample-sample-user-data.json",
-        "https://prosekit.dev/r/solid-ui-block-handle.json",
-        "https://prosekit.dev/r/solid-ui-code-block-view.json",
-        "https://prosekit.dev/r/solid-ui-drop-indicator.json",
-        "https://prosekit.dev/r/solid-ui-image-view.json",
-        "https://prosekit.dev/r/solid-ui-inline-menu.json",
-        "https://prosekit.dev/r/solid-ui-slash-menu.json",
-        "https://prosekit.dev/r/solid-ui-table-handle.json",
-        "https://prosekit.dev/r/solid-ui-tag-menu.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json",
-        "https://prosekit.dev/r/solid-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-full.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-code-block-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-image-view.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17167,7 +17167,7 @@
       "type": "registry:block",
       "description": "Cursor navigation between non-text block elements.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-gap-cursor.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17211,8 +17211,8 @@
       "type": "registry:block",
       "description": "Example for hard line break node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-hard-break.json",
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-hard-break.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17265,8 +17265,8 @@
       "type": "registry:block",
       "description": "Example for heading node with multiple levels.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-heading.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-heading.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17317,7 +17317,7 @@
       "type": "registry:block",
       "description": "Example for horizontal rule node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17366,9 +17366,9 @@
       "type": "registry:block",
       "description": "Custom image node views with resize support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-image.json",
-        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
-        "https://prosekit.dev/r/solid-ui-image-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-image.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-image-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17417,8 +17417,8 @@
       "type": "registry:block",
       "description": "Inline formatting menu that appears on text selection.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-inline-menu.json",
-        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17467,8 +17467,8 @@
       "type": "registry:block",
       "description": "Example for italic mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-italic.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-italic.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17519,7 +17519,7 @@
       "type": "registry:block",
       "description": "Custom keyboard shortcuts and key bindings.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17576,8 +17576,8 @@
       "type": "registry:block",
       "description": "Example for link mark with URL input.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-link.json",
-        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-link.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17626,7 +17626,7 @@
       "type": "registry:block",
       "description": "An example showing how to render a mark as a custom component.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-link-mark-view.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17676,8 +17676,8 @@
       "type": "registry:block",
       "description": "Example for list node.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-list.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-list.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17728,8 +17728,8 @@
       "type": "registry:block",
       "description": "Custom checkbox styling for task lists.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-list-custom-checkbox.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-list-custom-checkbox.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -17786,7 +17786,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Loro CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "loro-crdt",
@@ -17960,8 +17960,8 @@
       "type": "registry:block",
       "description": "Toggle between read-only and editable mode.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-readonly.json",
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-readonly.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18020,14 +18020,14 @@
       "type": "registry:block",
       "description": "Right-to-left text direction support.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-rtl.json",
-        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
-        "https://prosekit.dev/r/solid-ui-block-handle.json",
-        "https://prosekit.dev/r/solid-ui-drop-indicator.json",
-        "https://prosekit.dev/r/solid-ui-inline-menu.json",
-        "https://prosekit.dev/r/solid-ui-slash-menu.json",
-        "https://prosekit.dev/r/solid-ui-table-handle.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-rtl.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-drop-indicator.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-slash-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-table-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18203,8 +18203,8 @@
       "type": "registry:block",
       "description": "Search and highlight text with navigation.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-search.json",
-        "https://prosekit.dev/r/solid-ui-search.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-search.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-search.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18253,7 +18253,7 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18300,8 +18300,8 @@
       "type": "registry:block",
       "description": "Example for strikethrough mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-strike.json",
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-strike.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18354,8 +18354,8 @@
       "type": "registry:block",
       "description": "Table node with row and column operations.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-table.json",
-        "https://prosekit.dev/r/solid-ui-table-handle.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-table.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-table-handle.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18402,8 +18402,8 @@
       "type": "registry:block",
       "description": "Math equation rendering using the Temml library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-tex.json",
-        "https://prosekit.dev/r/solid-sample-temml.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-tex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-temml.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18449,8 +18449,8 @@
       "type": "registry:block",
       "description": "Text alignment options (left, center, right, justify).",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-text-align.json",
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-text-align.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18503,8 +18503,8 @@
       "type": "registry:block",
       "description": "Change text and background color.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-text-color.json",
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-text-color.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18557,8 +18557,8 @@
       "type": "registry:block",
       "description": "Formatting toolbar with common editing actions.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-uploader.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-uploader.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18609,10 +18609,10 @@
       "type": "registry:block",
       "description": "Typography enhancements like smart quotes and dashes.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-katex.json",
-        "https://prosekit.dev/r/solid-sample-sample-doc-typography.json",
-        "https://prosekit.dev/r/solid-ui-block-handle.json",
-        "https://prosekit.dev/r/solid-ui-drop-indicator.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-katex.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-typography.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-block-handle.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18664,8 +18664,8 @@
       "type": "registry:block",
       "description": "Example for underline mark.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-underline.json",
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-underline.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18716,7 +18716,7 @@
       "type": "registry:block",
       "description": "Properly unmount and remount editor instances.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-inline-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18769,10 +18769,10 @@
       "type": "registry:block",
       "description": "Autocomplete menu for @mentions and #hashtag",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-tag-data.json",
-        "https://prosekit.dev/r/solid-sample-sample-user-data.json",
-        "https://prosekit.dev/r/solid-ui-tag-menu.json",
-        "https://prosekit.dev/r/solid-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-tag-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-user-data.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-tag-menu.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18824,8 +18824,8 @@
       "type": "registry:block",
       "description": "Dynamic autocomplete menu with async data loading.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-query-users.json",
-        "https://prosekit.dev/r/solid-ui-user-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-query-users.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18885,8 +18885,8 @@
       "type": "registry:block",
       "description": "Custom node and mark views using view adapters.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-define-atom-block.json",
-        "https://prosekit.dev/r/solid-sample-sample-doc-view-adapter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-define-atom-block.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18938,8 +18938,8 @@
       "type": "registry:block",
       "description": "Display word and character count statistics.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-doc-word-counter.json",
-        "https://prosekit.dev/r/solid-ui-word-counter.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-word-counter.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-word-counter.json"
       ],
       "dependencies": [
         "prosekit"
@@ -18986,7 +18986,7 @@
       "type": "registry:block",
       "description": "Real-time collaboration using Yjs CRDT library.",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-toolbar.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
         "prosekit",
@@ -19853,7 +19853,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-sample-sample-user-data.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-user-data.json"
       ],
       "dependencies": [],
       "files": [
@@ -20124,7 +20124,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "prosekit"
@@ -20201,7 +20201,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -20245,7 +20245,7 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-button.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -20405,8 +20405,8 @@
       "type": "registry:component",
       "description": "",
       "registryDependencies": [
-        "https://prosekit.dev/r/solid-ui-button.json",
-        "https://prosekit.dev/r/solid-ui-image-upload-popover.json"
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json",
+        "https://unpkg.com/prosekit-registry/dist/r/solid-ui-image-upload-popover.json"
       ],
       "dependencies": [
         "@egoist/tailwindcss-icons",
@@ -20552,7 +20552,7 @@
       "type": "registry:block",
       "description": "Command menu triggered by typing slash (/).",
       "registryDependencies": [
-        "https://prosekit.dev/r/vanilla-ui-slash-menu.json"
+        "https://unpkg.com/prosekit-registry/dist/r/vanilla-ui-slash-menu.json"
       ],
       "dependencies": [
         "prosekit"

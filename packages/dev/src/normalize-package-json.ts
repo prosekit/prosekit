@@ -12,7 +12,7 @@ import { findExistingFileInPackage, getExistingFileInPackage } from './package-f
 import { sortObject } from './sort-object'
 
 export async function normalizePackageJson(pkg: Package): Promise<Record<string, string>> {
-  if (isPrivatePackage(pkg)) {
+  if (isPrivatePackage(pkg) || pkg.packageJson.name === 'prosekit-registry') {
     return {}
   }
 

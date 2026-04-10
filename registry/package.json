@@ -1,9 +1,17 @@
 {
   "name": "prosekit-registry",
   "type": "module",
-  "version": "0.0.0",
-  "private": true,
-  "description": "ProseKit registry",
+  "version": "0.0.1",
+  "private": false,
+  "description": "The registry of ProseKit examples",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
+    "directory": "registry"
+  },
   "exports": {
     "./lit/examples/minimal": "./src/lit/examples/minimal/index.ts",
     "./lit/examples/slash-menu": "./src/lit/examples/slash-menu/index.ts",
@@ -262,6 +270,9 @@
     "./vue/examples/yjs": "./src/vue/examples/yjs/index.ts",
     "./vue/renderer": "./src/vue/renderer.ts"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "gen": "tsx src/gen.ts",
     "gen:classes": "tsx src/gen-classes.ts",

@@ -1,6 +1,4 @@
 import fs from 'node:fs'
-import path from 'node:path'
-import { styleText } from 'node:util'
 
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
@@ -10,13 +8,13 @@ import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import tailwindcss from '@tailwindcss/vite'
-import type { AstroIntegrationLogger, AstroUserConfig } from 'astro'
+import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import astrobook from 'astrobook'
 import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import { rehypeResolveMarkdownLinks } from 'rehype-resolve-markdown-links'
 import starlightThemeNova from 'starlight-theme-nova'
-import { exec } from 'tinyexec'
+
 import wasm from 'vite-plugin-wasm'
 
 import { version } from '../packages/prosekit/package.json'
@@ -134,36 +132,6 @@ const sidebar: Sidebar = [
   },
 ]
 
-async function copiedRegistry(logger: AstroIntegrationLogger) {
-  const startTime = Date.now()
-  const rootDir = path.join(import.meta.dirname, '..')
-  const sourceDir = path.join(rootDir, 'registry', 'dist', 'r')
-  const targetDir = path.join(rootDir, 'website', 'public', 'r')
-
-  const maxAttempts = 2
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      fs.accessSync(sourceDir)
-    } catch {
-      if (attempt === maxAttempts) {
-        throw new Error(`sourceDir does not exist: ${styleText('blue', sourceDir)}`)
-      }
-
-      logger.warn(`sourceDir does not exist: ${styleText('blue', sourceDir)}, trying to build it...`)
-      await exec('pnpm', ['-w', 'build:registry'], { timeout: 20_000, throwOnError: true })
-      break
-    }
-  }
-  fs.cpSync(sourceDir, targetDir, { recursive: true })
-  const endTime = Date.now()
-  const duration = endTime - startTime
-  logger.info(
-    `copied registry from ${styleText('blue', sourceDir)} `
-      + `to ${styleText('blue', targetDir)} `
-      + `in ${styleText('green', `${duration}ms`)}`,
-  )
-}
-
 // https://astro.build/config
 const config: AstroUserConfig = {
   site: 'https://prosekit.dev',
@@ -239,14 +207,6 @@ const config: AstroUserConfig = {
       },
     }),
     minifyHTML(),
-    {
-      name: 'copy-registry',
-      hooks: {
-        'astro:config:done': async ({ logger }) => {
-          await copiedRegistry(logger)
-        },
-      },
-    },
   ],
   vite: {
     plugins: [

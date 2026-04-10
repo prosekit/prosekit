@@ -15,21 +15,7 @@
 
 Splitting each overlay primitive into a `Root` / `Trigger` / `Positioner` / `Popup` anatomy unlocks proper enter and exit animations, which the previous single-component API could not express cleanly. The `Popup` is now a separate element from the `Positioner`, so you can apply transforms, opacity transitions, and CSS animations to the `Popup` without fighting the absolute positioning that `Positioner` controls.
 
-The mount state is exposed as a `data-state` attribute on the `Popup` (values: `"open"` or `"closed"`), and the element stays in the DOM long enough for an exit animation to finish before it is removed. That means you can drive both enter and exit transitions directly in CSS:
-
-```css
-.my-popup {
-  transition: opacity 150ms, transform 150ms;
-}
-.my-popup[data-state='open'] {
-  opacity: 1;
-  transform: scale(1);
-}
-.my-popup[data-state='closed'] {
-  opacity: 0;
-  transform: scale(0.95);
-}
-```
+The mount state is exposed as a `data-state` attribute on the `Popup` (values: `"open"` or `"closed"`), and the element stays in the DOM long enough for an exit animation to finish before it is removed. That means smoother enter and exit animations are possible.
 
 ## Common patterns
 

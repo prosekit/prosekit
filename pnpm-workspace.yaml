@@ -36,6 +36,8 @@ minimumReleaseAgeExclude:
   - "@aria-ui/*"
   - "starlight-theme-nova"
   - "shiki-twoslash-renderer"
+  - "twoslash"
+  - "twoslash-protocol"
 
 overrides: {}
 

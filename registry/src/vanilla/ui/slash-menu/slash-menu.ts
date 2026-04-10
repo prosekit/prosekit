@@ -15,7 +15,6 @@ export function renderSlashMenu(
   editor: Editor<BasicExtension>,
 ) {
   const root = document.createElement('prosekit-autocomplete-root') as AutocompleteRootElement
-  root.className = 'contents'
   root.editor = editor
   root.regex = regex
 

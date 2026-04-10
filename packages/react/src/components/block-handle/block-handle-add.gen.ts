@@ -12,7 +12,7 @@ import { useEditorContext } from '../../contexts/editor-context.ts';
  *
  * @public
  */
-export interface BlockHandleAddProps extends HTMLAttributes<BlockHandleAddElement> {
+export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
    *
@@ -57,4 +57,4 @@ function BlockHandleAddComponent(props: BlockHandleAddProps, forwardedRef: Forwa
  *
  * @public
  */
-export const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps & RefAttributes<BlockHandleAddElement>> = /* @__PURE__ */ forwardRef(BlockHandleAddComponent);
+export const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps &  HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>> = /* @__PURE__ */ forwardRef(BlockHandleAddComponent);

@@ -62,6 +62,9 @@ export const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRo
  * @public
  */
 export interface InlinePopoverRootEvents {
+  /**
+   * Emitted when the open state of the popover changes.
+   */
   openChange: OpenChangeEvent
 }
 

@@ -154,8 +154,6 @@ export const MenuSubmenuTriggerPropsDeclaration: PropsDeclaration<MenuSubmenuTri
 /** @internal */
 export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> = Base.MenuTriggerPropsDeclaration
 
-
-
 export function registerMenuRootElement(): void {
   registerCustomElement('prosekit-menu-root', MenuRootElement)
 }

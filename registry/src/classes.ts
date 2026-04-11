@@ -38,18 +38,19 @@ const CSS_INPUT = cn(
 
 const CSS_POSITIONER = cn(
   'block overflow-visible bg-transparent w-min h-min z-50',
-  'motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100',
+  'ease-out transition-transform duration-100 motion-reduce:transition-none',
 )
 const CSS_POPUP = cn(
   'flex box-border',
-  'motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150',
-  'motion-safe:transition-discrete motion-safe:transition-all',
-  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
-  'data-[state=closed]:scale-95 starting:scale-95 scale-100',
+  'origin-(--transform-origin)',
+  'transition transition-discrete motion-reduce:transition-none',
+  'duration-100 data-[state=closed]:duration-150',
+  'data-[state=closed]:opacity-0 starting:opacity-0',
+  'data-[state=closed]:scale-95 starting:scale-95',
 )
 const CSS_MENU_POPUP = cn(
   CSS_POPUP,
-  'motion-safe:duration-40',
+  'duration-40',
   'rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg',
 )
 const CSS_MENU_ITEM = cn(

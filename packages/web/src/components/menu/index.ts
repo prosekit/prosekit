@@ -25,40 +25,45 @@
 */
 
 import { registerCustomElement, type PropsDeclaration } from '@aria-ui/core'
-import {
-  MenuItemElement,
-  MenuPopupElement,
-  MenuPositionerElement,
-  MenuSubmenuRootElement,
-  MenuSubmenuTriggerElement,
-} from '@aria-ui/elements/menu'
 import * as Base from '@aria-ui/elements/menu'
 
+export class MenuItemElement extends Base.MenuItemElement {}
+export class MenuPopupElement extends Base.MenuPopupElement {}
+export class MenuPositionerElement extends Base.MenuPositionerElement {}
 export class MenuRootElement extends Base.MenuRootElement {}
+export class MenuSubmenuRootElement extends Base.MenuSubmenuRootElement {}
+export class MenuSubmenuTriggerElement extends Base.MenuSubmenuTriggerElement {}
 export class MenuTriggerElement extends Base.MenuTriggerElement {}
 
+export interface MenuItemProps extends Base.MenuItemProps {}
+export interface MenuPopupProps extends Base.MenuPopupProps {}
+export interface MenuPositionerProps extends Base.MenuPositionerProps {}
 export interface MenuRootProps extends Base.MenuRootProps {}
+export interface MenuSubmenuRootProps extends Base.MenuSubmenuRootProps {}
+export interface MenuSubmenuTriggerProps extends Base.MenuSubmenuTriggerProps {}
 export interface MenuTriggerProps extends Base.MenuTriggerProps {}
 
+export interface MenuItemEvents extends Base.MenuItemEvents {}
 export interface MenuRootEvents extends Base.MenuRootEvents {}
+export interface MenuSubmenuRootEvents extends Base.MenuSubmenuRootEvents {}
 export interface MenuTriggerEvents extends Base.MenuTriggerEvents {}
 
 /** @internal */
+export const MenuItemPropsDeclaration: PropsDeclaration<MenuItemProps> = Base.MenuItemPropsDeclaration
+/** @internal */
+export const MenuPopupPropsDeclaration: PropsDeclaration<MenuPopupProps> = Base.MenuPopupPropsDeclaration
+/** @internal */
+export const MenuPositionerPropsDeclaration: PropsDeclaration<MenuPositionerProps> = Base.MenuPositionerPropsDeclaration
+/** @internal */
 export const MenuRootPropsDeclaration: PropsDeclaration<MenuRootProps> = Base.MenuRootPropsDeclaration
 /** @internal */
-export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> =  Base.MenuTriggerPropsDeclaration
+export const MenuSubmenuRootPropsDeclaration: PropsDeclaration<MenuSubmenuRootProps> = Base.MenuSubmenuRootPropsDeclaration
+/** @internal */
+export const MenuSubmenuTriggerPropsDeclaration: PropsDeclaration<MenuSubmenuTriggerProps> = Base.MenuSubmenuTriggerPropsDeclaration
+/** @internal */
+export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> = Base.MenuTriggerPropsDeclaration
 
 export {
-  MenuItemElement,
-  MenuItemPropsDeclaration,
-  MenuPopupElement,
-  MenuPopupPropsDeclaration,
-  MenuPositionerElement,
-  MenuPositionerPropsDeclaration,
-  MenuSubmenuRootElement,
-  MenuSubmenuRootPropsDeclaration,
-  MenuSubmenuTriggerElement,
-  MenuSubmenuTriggerPropsDeclaration,
   OpenChangeEvent,
   SelectEvent,
   setupMenuItem,
@@ -68,10 +73,6 @@ export {
   setupMenuSubmenuRoot,
   setupMenuSubmenuTrigger,
   setupMenuTrigger,
-  type MenuItemEvents,
-  type MenuItemProps,
-  type MenuPopupProps,
-  type MenuPositionerProps,
 } from '@aria-ui/elements/menu'
 
 export function registerMenuRootElement(): void {

@@ -9,7 +9,8 @@ function isSlowTest(testFilePath: string): boolean {
 }
 
 class TestSequencer extends BaseSequencer {
-  override shard(files: TestSpecification[]): TestSpecification[] {
+  // eslint-disable-next-line @typescript-eslint/require-await
+  override async shard(files: TestSpecification[]): Promise<TestSpecification[]> {
     const { index, count } = this.ctx.config.shard!
 
     const sorted = [...files].sort((a, b) => {
@@ -19,7 +20,7 @@ class TestSequencer extends BaseSequencer {
       return a.moduleId.localeCompare(b.moduleId)
     })
 
-    const chunks = Array.from(
+    const chunks: TestSpecification[][] = Array.from(
       { length: count },
       (): TestSpecification[] => [],
     )

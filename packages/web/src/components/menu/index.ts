@@ -29,16 +29,15 @@ import {
   MenuItemElement,
   MenuPopupElement,
   MenuPositionerElement,
-  MenuRootElement as BaseMenuRootElement,
   MenuSubmenuRootElement,
   MenuSubmenuTriggerElement,
   MenuTriggerElement,
-  type MenuRootProps as BaseMenuRootProps,
 } from '@aria-ui/elements/menu'
+import * as Base from '@aria-ui/elements/menu'
 
-export class MenuRootElement extends BaseMenuRootElement {}
+export class MenuRootElement extends Base.MenuRootElement {}
 
-export interface MenuRootProps extends BaseMenuRootProps {}
+export interface MenuRootProps extends Base.MenuRootProps {}
 
 export {
   MenuItemElement,

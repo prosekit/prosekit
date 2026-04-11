@@ -32,6 +32,7 @@
     "700-reduce-re-export",
     "750-react-use-client",
     "800-view-render-solid",
-    "810-view-render-vue"
+    "810-view-render-vue",
+    "900-update-deps"
   ]
 }

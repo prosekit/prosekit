@@ -3,11 +3,7 @@
 import { registerAutocompletePositionerElement, type AutocompletePositionerElement, type AutocompletePositionerProps as AutocompletePositionerElementProps } from '@prosekit/web/autocomplete';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link AutocompletePositioner} React component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePositioner} React component. */
 export interface AutocompletePositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
@@ -141,9 +137,5 @@ function AutocompletePositionerComponent(props: AutocompletePositionerProps, for
   return createElement('prosekit-autocomplete-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-autocomplete-positioner` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-autocomplete-positioner` custom element. */
 export const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement> & RefAttributes<AutocompletePositionerElement>> = /* @__PURE__ */ forwardRef(AutocompletePositionerComponent);

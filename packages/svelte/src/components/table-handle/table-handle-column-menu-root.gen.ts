@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleColumnMenuRootComponent from './table-handle-column-menu-root.gen.svelte';
 
-/**
- * Props for the {@link TableHandleColumnMenuRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnMenuRoot} Svelte component. */
 export interface TableHandleColumnMenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -30,9 +26,5 @@ export interface TableHandleColumnMenuRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-column-menu-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-column-menu-root` custom element. */
 export const TableHandleColumnMenuRoot: Component<TableHandleColumnMenuRootProps & HTMLAttributes<TableHandleColumnMenuRootElement>> = TableHandleColumnMenuRootComponent as Component<TableHandleColumnMenuRootProps & HTMLAttributes<TableHandleColumnMenuRootElement>>;

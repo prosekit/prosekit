@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link AutocompleteRoot} React component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteRoot} React component. */
 export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
@@ -95,9 +91,5 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: F
   return createElement('prosekit-autocomplete-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-autocomplete-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-autocomplete-root` custom element. */
 export const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>> = /* @__PURE__ */ forwardRef(AutocompleteRootComponent);

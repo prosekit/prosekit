@@ -3,11 +3,7 @@
 import { registerPopoverTriggerElement, type PopoverTriggerEvents, type PopoverTriggerProps as PopoverTriggerElementProps } from '@prosekit/web/popover';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link PopoverTrigger} Vue component.
- *
- * @public
- */
+/** Props for the {@link PopoverTrigger} Vue component. */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -35,11 +31,7 @@ export interface PopoverTriggerProps {
   onOpenChange?: (event: PopoverTriggerEvents['openChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-popover-trigger` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-popover-trigger` custom element. */
 export const PopoverTrigger: DefineSetupFnComponent<PopoverTriggerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<PopoverTriggerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerPopoverTriggerElement();

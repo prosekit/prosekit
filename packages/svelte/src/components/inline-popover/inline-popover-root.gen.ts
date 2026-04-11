@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import InlinePopoverRootComponent from './inline-popover-root.gen.svelte';
 
-/**
- * Props for the {@link InlinePopoverRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverRoot} Svelte component. */
 export interface InlinePopoverRootProps {
   /**
    * The ProseKit editor instance.
@@ -48,9 +44,5 @@ export interface InlinePopoverRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-inline-popover-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-inline-popover-root` custom element. */
 export const InlinePopoverRoot: Component<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement>> = InlinePopoverRootComponent as Component<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement>>;

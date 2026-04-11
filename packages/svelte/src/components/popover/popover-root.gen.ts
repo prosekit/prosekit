@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import PopoverRootComponent from './popover-root.gen.svelte';
 
-/**
- * Props for the {@link PopoverRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link PopoverRoot} Svelte component. */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -39,9 +35,5 @@ export interface PopoverRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-popover-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-popover-root` custom element. */
 export const PopoverRoot: Component<PopoverRootProps & HTMLAttributes<PopoverRootElement>> = PopoverRootComponent as Component<PopoverRootProps & HTMLAttributes<PopoverRootElement>>;

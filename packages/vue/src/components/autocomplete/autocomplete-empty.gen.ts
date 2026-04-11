@@ -3,18 +3,10 @@
 import { registerAutocompleteEmptyElement } from '@prosekit/web/autocomplete';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link AutocompleteEmpty} Vue component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteEmpty} Vue component. */
 export interface AutocompleteEmptyProps {}
 
-/**
- * A Vue component that renders an `prosekit-autocomplete-empty` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-autocomplete-empty` custom element. */
 export const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<AutocompleteEmptyProps & HTMLAttributes>(
   (props, { slots }) => {
     registerAutocompleteEmptyElement();

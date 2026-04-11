@@ -148,7 +148,15 @@ const BlockHandleDraggableElementBase: HostElementConstructor<BlockHandleDraggab
 )
 
 /**
- * @public
+ * `<prosekit-block-handle-draggable>` custom element.
+ *
+ * Properties: {@link BlockHandleDraggableProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-dragging` | Present when the element is being dragged |
  */
 export class BlockHandleDraggableElement extends BlockHandleDraggableElementBase {}
 

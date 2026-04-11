@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import InlinePopoverPositionerComponent from './inline-popover-positioner.gen.svelte';
 
-/**
- * Props for the {@link InlinePopoverPositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverPositioner} Svelte component. */
 export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
@@ -141,9 +137,5 @@ export interface InlinePopoverPositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-inline-popover-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-inline-popover-positioner` custom element. */
 export const InlinePopoverPositioner: Component<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement>> = InlinePopoverPositionerComponent as Component<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement>>;

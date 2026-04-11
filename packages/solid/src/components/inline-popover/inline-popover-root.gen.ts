@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link InlinePopoverRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverRoot} Solid component. */
 export interface InlinePopoverRootProps {
   /**
    * The ProseKit editor instance.
@@ -48,11 +44,7 @@ export interface InlinePopoverRootProps {
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-inline-popover-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-inline-popover-root` custom element. */
 export const InlinePopoverRoot: Component<InlinePopoverRootProps & JSX.HTMLAttributes<InlinePopoverRootElement>> = (props): any => {
   registerInlinePopoverRootElement();
 

@@ -3,11 +3,7 @@
 import { registerResizableHandleElement, type ResizableHandleProps as ResizableHandleElementProps } from '@prosekit/web/resizable';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link ResizableHandle} Vue component.
- *
- * @public
- */
+/** Props for the {@link ResizableHandle} Vue component. */
 export interface ResizableHandleProps {
   /**
    * The position of the handle.
@@ -17,11 +13,7 @@ export interface ResizableHandleProps {
   position?: ResizableHandleElementProps['position'];
 }
 
-/**
- * A Vue component that renders an `prosekit-resizable-handle` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-resizable-handle` custom element. */
 export const ResizableHandle: DefineSetupFnComponent<ResizableHandleProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<ResizableHandleProps & HTMLAttributes>(
   (props, { slots }) => {
     registerResizableHandleElement();

@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link BlockHandlePositioner} Preact component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePositioner} Preact component. */
 export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
@@ -161,9 +157,5 @@ function BlockHandlePositionerComponent(props: BlockHandlePositionerProps, forwa
   return createElement('prosekit-block-handle-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-block-handle-positioner` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-block-handle-positioner` custom element. */
 export const BlockHandlePositioner: ForwardRefExoticComponent<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement> & RefAttributes<BlockHandlePositionerElement>> = /* @__PURE__ */ forwardRef(BlockHandlePositionerComponent);

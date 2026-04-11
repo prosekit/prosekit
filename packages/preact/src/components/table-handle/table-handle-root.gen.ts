@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRoot} Preact component. */
 export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -52,9 +48,5 @@ function TableHandleRootComponent(props: TableHandleRootProps, forwardedRef: Ref
   return createElement('prosekit-table-handle-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-root` custom element. */
 export const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & HTMLAttributes<TableHandleRootElement> & RefAttributes<TableHandleRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRootComponent);

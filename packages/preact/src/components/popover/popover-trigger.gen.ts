@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link PopoverTrigger} Preact component.
- *
- * @public
- */
+/** Props for the {@link PopoverTrigger} Preact component. */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -83,9 +79,5 @@ function PopoverTriggerComponent(props: PopoverTriggerProps, forwardedRef: Ref<P
   return createElement('prosekit-popover-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-popover-trigger` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-popover-trigger` custom element. */
 export const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement> & RefAttributes<PopoverTriggerElement>> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);

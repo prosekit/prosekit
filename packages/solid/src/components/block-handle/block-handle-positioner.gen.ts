@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link BlockHandlePositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePositioner} Solid component. */
 export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
@@ -133,11 +129,7 @@ export interface BlockHandlePositionerProps {
   altBoundary?: BlockHandlePositionerElementProps['altBoundary'];
 }
 
-/**
- * A Solid component that renders an `prosekit-block-handle-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-block-handle-positioner` custom element. */
 export const BlockHandlePositioner: Component<BlockHandlePositionerProps & JSX.HTMLAttributes<BlockHandlePositionerElement>> = (props): any => {
   registerBlockHandlePositionerElement();
 

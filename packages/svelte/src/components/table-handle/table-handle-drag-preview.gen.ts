@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleDragPreviewComponent from './table-handle-drag-preview.gen.svelte';
 
-/**
- * Props for the {@link TableHandleDragPreview} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDragPreview} Svelte component. */
 export interface TableHandleDragPreviewProps {
   /**
    * @default null
@@ -20,9 +16,5 @@ export interface TableHandleDragPreviewProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-drag-preview` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-drag-preview` custom element. */
 export const TableHandleDragPreview: Component<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement>> = TableHandleDragPreviewComponent as Component<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement>>;

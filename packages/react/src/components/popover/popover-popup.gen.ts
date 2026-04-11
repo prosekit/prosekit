@@ -3,11 +3,7 @@
 import { registerPopoverPopupElement, type PopoverPopupElement } from '@prosekit/web/popover';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'react';
 
-/**
- * Props for the {@link PopoverPopup} React component.
- *
- * @public
- */
+/** Props for the {@link PopoverPopup} React component. */
 export interface PopoverPopupProps {}
 
 function PopoverPopupComponent(props: PopoverPopupProps, forwardedRef: ForwardedRef<PopoverPopupElement>) {
@@ -32,9 +28,5 @@ function PopoverPopupComponent(props: PopoverPopupProps, forwardedRef: Forwarded
   return createElement('prosekit-popover-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-popover-popup` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-popover-popup` custom element. */
 export const PopoverPopup: ForwardRefExoticComponent<PopoverPopupProps & HTMLAttributes<PopoverPopupElement> & RefAttributes<PopoverPopupElement>> = /* @__PURE__ */ forwardRef(PopoverPopupComponent);

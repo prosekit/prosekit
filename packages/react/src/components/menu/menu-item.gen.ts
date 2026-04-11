@@ -3,11 +3,7 @@
 import { registerMenuItemElement, type MenuItemElement, type MenuItemProps as MenuItemElementProps, type MenuItemEvents } from '@prosekit/web/menu';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link MenuItem} React component.
- *
- * @public
- */
+/** Props for the {@link MenuItem} React component. */
 export interface MenuItemProps {
   /**
    * The unique value for this menu item.
@@ -77,9 +73,5 @@ function MenuItemComponent(props: MenuItemProps, forwardedRef: ForwardedRef<Menu
   return createElement('prosekit-menu-item', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-menu-item` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-menu-item` custom element. */
 export const MenuItem: ForwardRefExoticComponent<MenuItemProps & Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> & RefAttributes<MenuItemElement>> = /* @__PURE__ */ forwardRef(MenuItemComponent);

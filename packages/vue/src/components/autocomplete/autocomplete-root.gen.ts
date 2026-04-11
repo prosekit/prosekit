@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link AutocompleteRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteRoot} Vue component. */
 export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
@@ -47,11 +43,7 @@ export interface AutocompleteRootProps {
   onValuesChange?: (event: AutocompleteRootEvents['valuesChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-autocomplete-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-autocomplete-root` custom element. */
 export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<AutocompleteRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerAutocompleteRootElement();

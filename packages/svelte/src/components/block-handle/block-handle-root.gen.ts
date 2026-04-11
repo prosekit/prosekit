@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import BlockHandleRootComponent from './block-handle-root.gen.svelte';
 
-/**
- * Props for the {@link BlockHandleRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleRoot} Svelte component. */
 export interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -24,9 +20,5 @@ export interface BlockHandleRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-block-handle-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-block-handle-root` custom element. */
 export const BlockHandleRoot: Component<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement>> = BlockHandleRootComponent as Component<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement>>;

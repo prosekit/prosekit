@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuItem} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuItem} Solid component. */
 export interface MenuItemProps {
   /**
    * The unique value for this menu item.
@@ -33,11 +29,7 @@ export interface MenuItemProps {
   onSelect?: (event: MenuItemEvents['select']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-menu-item` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-item` custom element. */
 export const MenuItem: Component<MenuItemProps & JSX.HTMLAttributes<MenuItemElement>> = (props): any => {
   registerMenuItemElement();
 

@@ -4,18 +4,10 @@ import { registerTooltipPopupElement, type TooltipPopupElement } from '@prosekit
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link TooltipPopup} Solid component.
- *
- * @public
- */
+/** Props for the {@link TooltipPopup} Solid component. */
 export interface TooltipPopupProps {}
 
-/**
- * A Solid component that renders an `prosekit-tooltip-popup` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-tooltip-popup` custom element. */
 export const TooltipPopup: Component<TooltipPopupProps & JSX.HTMLAttributes<TooltipPopupElement>> = (props): any => {
   registerTooltipPopupElement();
 

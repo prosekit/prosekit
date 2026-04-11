@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuRoot} Solid component. */
 export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -30,11 +26,7 @@ export interface MenuRootProps {
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-menu-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-root` custom element. */
 export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElement>> = (props): any => {
   registerMenuRootElement();
 

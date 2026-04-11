@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link ResizableRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link ResizableRoot} Preact component. */
 export interface ResizableRootProps {
   /**
    * The width of the resizable element.
@@ -81,9 +77,5 @@ function ResizableRootComponent(props: ResizableRootProps, forwardedRef: Ref<Res
   return createElement('prosekit-resizable-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-resizable-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-resizable-root` custom element. */
 export const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & HTMLAttributes<ResizableRootElement> & RefAttributes<ResizableRootElement>> = /* @__PURE__ */ forwardRef(ResizableRootComponent);

@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link ResizableHandle} Solid component.
- *
- * @public
- */
+/** Props for the {@link ResizableHandle} Solid component. */
 export interface ResizableHandleProps {
   /**
    * The position of the handle.
@@ -19,11 +15,7 @@ export interface ResizableHandleProps {
   position?: ResizableHandleElementProps['position'];
 }
 
-/**
- * A Solid component that renders an `prosekit-resizable-handle` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-resizable-handle` custom element. */
 export const ResizableHandle: Component<ResizableHandleProps & JSX.HTMLAttributes<ResizableHandleElement>> = (props): any => {
   registerResizableHandleElement();
 

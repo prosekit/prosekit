@@ -3,11 +3,7 @@
 import { registerTooltipRootElement, type TooltipRootEvents, type TooltipRootProps as TooltipRootElementProps } from '@prosekit/web/tooltip';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link TooltipRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link TooltipRoot} Vue component. */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -28,11 +24,7 @@ export interface TooltipRootProps {
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-tooltip-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-tooltip-root` custom element. */
 export const TooltipRoot: DefineSetupFnComponent<TooltipRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TooltipRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTooltipRootElement();

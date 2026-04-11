@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuPositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuPositioner} Solid component. */
 export interface MenuPositionerProps {
   /**
    * The initial placement of the floating element
@@ -140,11 +136,7 @@ export interface MenuPositionerProps {
   altBoundary?: MenuPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Solid component that renders an `prosekit-menu-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-positioner` custom element. */
 export const MenuPositioner: Component<MenuPositionerProps & JSX.HTMLAttributes<MenuPositionerElement>> = (props): any => {
   registerMenuPositionerElement();
 

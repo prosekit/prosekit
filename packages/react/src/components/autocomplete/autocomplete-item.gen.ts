@@ -3,11 +3,7 @@
 import { registerAutocompleteItemElement, type AutocompleteItemElement, type AutocompleteItemProps as AutocompleteItemElementProps, type AutocompleteItemEvents } from '@prosekit/web/autocomplete';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link AutocompleteItem} React component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteItem} React component. */
 export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
@@ -73,9 +69,5 @@ function AutocompleteItemComponent(props: AutocompleteItemProps, forwardedRef: F
   return createElement('prosekit-autocomplete-item', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-autocomplete-item` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-autocomplete-item` custom element. */
 export const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>> = /* @__PURE__ */ forwardRef(AutocompleteItemComponent);

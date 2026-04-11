@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link ResizableRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link ResizableRoot} Solid component. */
 export interface ResizableRootProps {
   /**
    * The width of the resizable element.
@@ -35,11 +31,7 @@ export interface ResizableRootProps {
   onResizeEnd?: (event: ResizableRootEvents['resizeEnd']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-resizable-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-resizable-root` custom element. */
 export const ResizableRoot: Component<ResizableRootProps & JSX.HTMLAttributes<ResizableRootElement>> = (props): any => {
   registerResizableRootElement();
 

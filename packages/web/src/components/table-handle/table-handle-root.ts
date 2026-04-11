@@ -91,7 +91,9 @@ const TableHandleRootElementBase: HostElementConstructor<TableHandleRootProps> =
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-root>` custom element.
+ *
+ * Properties: {@link TableHandleRootProps}
  */
 export class TableHandleRootElement extends TableHandleRootElementBase {}
 

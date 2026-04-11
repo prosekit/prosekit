@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuTriggerComponent from './menu-trigger.gen.svelte';
 
-/**
- * Props for the {@link MenuTrigger} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuTrigger} Svelte component. */
 export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -23,9 +19,5 @@ export interface MenuTriggerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-trigger` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-trigger` custom element. */
 export const MenuTrigger: Component<MenuTriggerProps & HTMLAttributes<MenuTriggerElement>> = MenuTriggerComponent as Component<MenuTriggerProps & HTMLAttributes<MenuTriggerElement>>;

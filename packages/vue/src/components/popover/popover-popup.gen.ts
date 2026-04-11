@@ -3,18 +3,10 @@
 import { registerPopoverPopupElement } from '@prosekit/web/popover';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link PopoverPopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link PopoverPopup} Vue component. */
 export interface PopoverPopupProps {}
 
-/**
- * A Vue component that renders an `prosekit-popover-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-popover-popup` custom element. */
 export const PopoverPopup: DefineSetupFnComponent<PopoverPopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<PopoverPopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerPopoverPopupElement();

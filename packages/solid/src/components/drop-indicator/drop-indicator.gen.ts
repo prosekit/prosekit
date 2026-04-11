@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link DropIndicator} Solid component.
- *
- * @public
- */
+/** Props for the {@link DropIndicator} Solid component. */
 export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
@@ -28,11 +24,7 @@ export interface DropIndicatorProps {
   width?: DropIndicatorElementProps['width'];
 }
 
-/**
- * A Solid component that renders an `prosekit-drop-indicator` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-drop-indicator` custom element. */
 export const DropIndicator: Component<DropIndicatorProps & JSX.HTMLAttributes<DropIndicatorElement>> = (props): any => {
   registerDropIndicatorElement();
 

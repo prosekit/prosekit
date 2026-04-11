@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link PopoverTrigger} Solid component.
- *
- * @public
- */
+/** Props for the {@link PopoverTrigger} Solid component. */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -37,11 +33,7 @@ export interface PopoverTriggerProps {
   onOpenChange?: (event: PopoverTriggerEvents['openChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-popover-trigger` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-popover-trigger` custom element. */
 export const PopoverTrigger: Component<PopoverTriggerProps & JSX.HTMLAttributes<PopoverTriggerElement>> = (props): any => {
   registerPopoverTriggerElement();
 

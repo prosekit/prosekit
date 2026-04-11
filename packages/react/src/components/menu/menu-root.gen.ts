@@ -3,11 +3,7 @@
 import { registerMenuRootElement, type MenuRootElement, type MenuRootProps as MenuRootElementProps, type MenuRootEvents } from '@prosekit/web/menu';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link MenuRoot} React component.
- *
- * @public
- */
+/** Props for the {@link MenuRoot} React component. */
 export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -74,9 +70,5 @@ function MenuRootComponent(props: MenuRootProps, forwardedRef: ForwardedRef<Menu
   return createElement('prosekit-menu-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-menu-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-menu-root` custom element. */
 export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);

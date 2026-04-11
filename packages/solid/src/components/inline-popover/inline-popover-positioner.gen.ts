@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link InlinePopoverPositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverPositioner} Solid component. */
 export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
@@ -139,11 +135,7 @@ export interface InlinePopoverPositionerProps {
   altBoundary?: InlinePopoverPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Solid component that renders an `prosekit-inline-popover-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-inline-popover-positioner` custom element. */
 export const InlinePopoverPositioner: Component<InlinePopoverPositionerProps & JSX.HTMLAttributes<InlinePopoverPositionerElement>> = (props): any => {
   registerInlinePopoverPositionerElement();
 

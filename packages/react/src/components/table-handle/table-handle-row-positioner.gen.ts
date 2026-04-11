@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRowPositioner} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPositioner} React component. */
 export interface TableHandleRowPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -189,9 +185,5 @@ function TableHandleRowPositionerComponent(props: TableHandleRowPositionerProps,
   return createElement('prosekit-table-handle-row-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-row-positioner` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-row-positioner` custom element. */
 export const TableHandleRowPositioner: ForwardRefExoticComponent<TableHandleRowPositionerProps & HTMLAttributes<TableHandleRowPositionerElement> & RefAttributes<TableHandleRowPositionerElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPositionerComponent);

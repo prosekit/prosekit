@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link MenuRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link MenuRoot} Preact component. */
 export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -76,9 +72,5 @@ function MenuRootComponent(props: MenuRootProps, forwardedRef: Ref<MenuRootEleme
   return createElement('prosekit-menu-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-menu-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-menu-root` custom element. */
 export const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>> = /* @__PURE__ */ forwardRef(MenuRootComponent);

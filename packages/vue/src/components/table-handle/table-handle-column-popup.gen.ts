@@ -3,18 +3,10 @@
 import { registerTableHandleColumnPopupElement } from '@prosekit/web/table-handle';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link TableHandleColumnPopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnPopup} Vue component. */
 export interface TableHandleColumnPopupProps {}
 
-/**
- * A Vue component that renders an `prosekit-table-handle-column-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-column-popup` custom element. */
 export const TableHandleColumnPopup: DefineSetupFnComponent<TableHandleColumnPopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleColumnPopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleColumnPopupElement();

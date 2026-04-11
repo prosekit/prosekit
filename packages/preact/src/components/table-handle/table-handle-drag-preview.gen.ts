@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDragPreview} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDragPreview} Preact component. */
 export interface TableHandleDragPreviewProps {
   /**
    * @default null
@@ -50,9 +46,5 @@ function TableHandleDragPreviewComponent(props: TableHandleDragPreviewProps, for
   return createElement('prosekit-table-handle-drag-preview', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-drag-preview` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-drag-preview` custom element. */
 export const TableHandleDragPreview: ForwardRefExoticComponent<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement> & RefAttributes<TableHandleDragPreviewElement>> = /* @__PURE__ */ forwardRef(TableHandleDragPreviewComponent);

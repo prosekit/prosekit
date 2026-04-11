@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRowPositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPositioner} Vue component. */
 export interface TableHandleRowPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -139,11 +135,7 @@ export interface TableHandleRowPositionerProps {
   editor?: TableHandleRowPositionerElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-table-handle-row-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-row-positioner` custom element. */
 export const TableHandleRowPositioner: DefineSetupFnComponent<TableHandleRowPositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleRowPositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleRowPositionerElement();

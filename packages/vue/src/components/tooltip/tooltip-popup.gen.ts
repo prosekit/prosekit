@@ -3,18 +3,10 @@
 import { registerTooltipPopupElement } from '@prosekit/web/tooltip';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link TooltipPopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link TooltipPopup} Vue component. */
 export interface TooltipPopupProps {}
 
-/**
- * A Vue component that renders an `prosekit-tooltip-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-tooltip-popup` custom element. */
 export const TooltipPopup: DefineSetupFnComponent<TooltipPopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TooltipPopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTooltipPopupElement();

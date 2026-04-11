@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleRootComponent from './table-handle-root.gen.svelte';
 
-/**
- * Props for the {@link TableHandleRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRoot} Svelte component. */
 export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -22,9 +18,5 @@ export interface TableHandleRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-root` custom element. */
 export const TableHandleRoot: Component<TableHandleRootProps & HTMLAttributes<TableHandleRootElement>> = TableHandleRootComponent as Component<TableHandleRootProps & HTMLAttributes<TableHandleRootElement>>;

@@ -95,7 +95,9 @@ const TableHandleColumnMenuTriggerElementBase: HostElementConstructor<TableHandl
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-column-menu-trigger>` custom element.
+ *
+ * Properties: {@link TableHandleColumnMenuTriggerProps}
  */
 export class TableHandleColumnMenuTriggerElement extends TableHandleColumnMenuTriggerElementBase {}
 

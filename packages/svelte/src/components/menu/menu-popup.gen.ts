@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuPopupComponent from './menu-popup.gen.svelte';
 
-/**
- * Props for the {@link MenuPopup} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuPopup} Svelte component. */
 export interface MenuPopupProps {
   /**
    * By default, the MenuPopup element will listen for keydown events.
@@ -22,9 +18,5 @@ export interface MenuPopupProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-popup` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-popup` custom element. */
 export const MenuPopup: Component<MenuPopupProps & HTMLAttributes<MenuPopupElement>> = MenuPopupComponent as Component<MenuPopupProps & HTMLAttributes<MenuPopupElement>>;

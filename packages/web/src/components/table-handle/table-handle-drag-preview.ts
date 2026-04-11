@@ -157,7 +157,9 @@ const TableHandleDragPreviewElementBase: HostElementConstructor<TableHandleDragP
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-drag-preview>` custom element.
+ *
+ * Properties: {@link TableHandleDragPreviewProps}
  */
 export class TableHandleDragPreviewElement extends TableHandleDragPreviewElementBase {}
 

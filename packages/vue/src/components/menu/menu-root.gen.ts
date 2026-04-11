@@ -3,11 +3,7 @@
 import { registerMenuRootElement, type MenuRootEvents, type MenuRootProps as MenuRootElementProps } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link MenuRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuRoot} Vue component. */
 export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -28,11 +24,7 @@ export interface MenuRootProps {
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-menu-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-root` custom element. */
 export const MenuRoot: DefineSetupFnComponent<MenuRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuRootElement();

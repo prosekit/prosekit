@@ -3,11 +3,7 @@
 import { registerMenuPositionerElement, type MenuPositionerProps as MenuPositionerElementProps } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link MenuPositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuPositioner} Vue component. */
 export interface MenuPositionerProps {
   /**
    * The initial placement of the floating element
@@ -138,11 +134,7 @@ export interface MenuPositionerProps {
   altBoundary?: MenuPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Vue component that renders an `prosekit-menu-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-positioner` custom element. */
 export const MenuPositioner: DefineSetupFnComponent<MenuPositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuPositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuPositionerElement();

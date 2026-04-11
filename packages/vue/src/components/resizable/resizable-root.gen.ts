@@ -3,11 +3,7 @@
 import { registerResizableRootElement, type ResizableRootEvents, type ResizableRootProps as ResizableRootElementProps } from '@prosekit/web/resizable';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link ResizableRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link ResizableRoot} Vue component. */
 export interface ResizableRootProps {
   /**
    * The width of the resizable element.
@@ -33,11 +29,7 @@ export interface ResizableRootProps {
   onResizeEnd?: (event: ResizableRootEvents['resizeEnd']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-resizable-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-resizable-root` custom element. */
 export const ResizableRoot: DefineSetupFnComponent<ResizableRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<ResizableRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerResizableRootElement();

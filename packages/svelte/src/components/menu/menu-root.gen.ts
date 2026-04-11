@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuRootComponent from './menu-root.gen.svelte';
 
-/**
- * Props for the {@link MenuRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuRoot} Svelte component. */
 export interface MenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -32,9 +28,5 @@ export interface MenuRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-root` custom element. */
 export const MenuRoot: Component<MenuRootProps & HTMLAttributes<MenuRootElement>> = MenuRootComponent as Component<MenuRootProps & HTMLAttributes<MenuRootElement>>;

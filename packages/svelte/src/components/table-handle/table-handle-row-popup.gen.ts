@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleRowPopupComponent from './table-handle-row-popup.gen.svelte';
 
-/**
- * Props for the {@link TableHandleRowPopup} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPopup} Svelte component. */
 export interface TableHandleRowPopupProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-row-popup` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-row-popup` custom element. */
 export const TableHandleRowPopup: Component<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement>> = TableHandleRowPopupComponent as Component<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement>>;

@@ -61,7 +61,9 @@ const BlockHandleAddElementBase: HostElementConstructor<BlockHandleAddProps> = d
 )
 
 /**
- * @public
+ * `<prosekit-block-handle-add>` custom element.
+ *
+ * Properties: {@link BlockHandleAddProps}
  */
 export class BlockHandleAddElement extends BlockHandleAddElementBase {}
 

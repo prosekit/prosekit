@@ -4,18 +4,10 @@ import { registerTableHandleColumnPopupElement, type TableHandleColumnPopupEleme
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link TableHandleColumnPopup} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnPopup} Solid component. */
 export interface TableHandleColumnPopupProps {}
 
-/**
- * A Solid component that renders an `prosekit-table-handle-column-popup` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-column-popup` custom element. */
 export const TableHandleColumnPopup: Component<TableHandleColumnPopupProps & JSX.HTMLAttributes<TableHandleColumnPopupElement>> = (props): any => {
   registerTableHandleColumnPopupElement();
 

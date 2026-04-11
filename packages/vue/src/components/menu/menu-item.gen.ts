@@ -3,11 +3,7 @@
 import { registerMenuItemElement, type MenuItemEvents, type MenuItemProps as MenuItemElementProps } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link MenuItem} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuItem} Vue component. */
 export interface MenuItemProps {
   /**
    * The unique value for this menu item.
@@ -31,11 +27,7 @@ export interface MenuItemProps {
   onSelect?: (event: MenuItemEvents['select']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-menu-item` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-item` custom element. */
 export const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuItemProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuItemElement();

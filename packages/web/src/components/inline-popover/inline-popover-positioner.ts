@@ -108,7 +108,23 @@ const InlinePopoverPositionerElementBase: HostElementConstructor<InlinePopoverPo
 )
 
 /**
- * @public
+ * `<prosekit-inline-popover-positioner>` custom element.
+ *
+ * Properties: {@link InlinePopoverPositionerProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the inline popover is visible, `"closed"` otherwise |
+ * | `data-side` | The side of the anchor element the positioner is on |
+ * | `data-align` | The alignment of the positioner relative to the anchor element |
+ *
+ * CSS variables:
+ *
+ * | Variable | Description |
+ * | --- | --- |
+ * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
 export class InlinePopoverPositionerElement extends InlinePopoverPositionerElementBase {}
 

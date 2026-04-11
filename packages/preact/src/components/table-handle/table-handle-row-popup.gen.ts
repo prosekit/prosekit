@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef } from 'preact/hooks';
 
-/**
- * Props for the {@link TableHandleRowPopup} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPopup} Preact component. */
 export interface TableHandleRowPopupProps {}
 
 function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwardedRef: Ref<TableHandleRowPopupElement>) {
@@ -34,9 +30,5 @@ function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwarded
   return createElement('prosekit-table-handle-row-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-row-popup` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-row-popup` custom element. */
 export const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement> & RefAttributes<TableHandleRowPopupElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPopupComponent);

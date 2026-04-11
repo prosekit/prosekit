@@ -3,11 +3,7 @@
 import { registerAutocompleteEmptyElement, type AutocompleteEmptyElement } from '@prosekit/web/autocomplete';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'react';
 
-/**
- * Props for the {@link AutocompleteEmpty} React component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteEmpty} React component. */
 export interface AutocompleteEmptyProps {}
 
 function AutocompleteEmptyComponent(props: AutocompleteEmptyProps, forwardedRef: ForwardedRef<AutocompleteEmptyElement>) {
@@ -32,9 +28,5 @@ function AutocompleteEmptyComponent(props: AutocompleteEmptyProps, forwardedRef:
   return createElement('prosekit-autocomplete-empty', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-autocomplete-empty` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-autocomplete-empty` custom element. */
 export const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>> = /* @__PURE__ */ forwardRef(AutocompleteEmptyComponent);

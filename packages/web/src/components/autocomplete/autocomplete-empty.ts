@@ -9,9 +9,6 @@ import {
 } from '@aria-ui/core'
 import { setupListboxEmpty, type ListboxEmptyProps } from '@aria-ui/elements/listbox'
 
-/**
- * @internal
- */
 export interface AutocompleteEmptyProps extends ListboxEmptyProps {}
 
 /** @internal */
@@ -35,7 +32,9 @@ const AutocompleteEmptyElementBase: HostElementConstructor<AutocompleteEmptyProp
 )
 
 /**
- * @public
+ * `<prosekit-autocomplete-empty>` custom element.
+ *
+ * Properties: {@link AutocompleteEmptyProps}
  */
 export class AutocompleteEmptyElement extends AutocompleteEmptyElementBase {}
 

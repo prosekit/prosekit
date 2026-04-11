@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleRowMenuTriggerComponent from './table-handle-row-menu-trigger.gen.svelte';
 
-/**
- * Props for the {@link TableHandleRowMenuTrigger} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowMenuTrigger} Svelte component. */
 export interface TableHandleRowMenuTriggerProps {
   /**
    * @default null
@@ -20,9 +16,5 @@ export interface TableHandleRowMenuTriggerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-row-menu-trigger` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-row-menu-trigger` custom element. */
 export const TableHandleRowMenuTrigger: Component<TableHandleRowMenuTriggerProps & HTMLAttributes<TableHandleRowMenuTriggerElement>> = TableHandleRowMenuTriggerComponent as Component<TableHandleRowMenuTriggerProps & HTMLAttributes<TableHandleRowMenuTriggerElement>>;

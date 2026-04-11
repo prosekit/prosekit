@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link PopoverRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link PopoverRoot} Solid component. */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -37,11 +33,7 @@ export interface PopoverRootProps {
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-popover-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-popover-root` custom element. */
 export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<PopoverRootElement>> = (props): any => {
   registerPopoverRootElement();
 

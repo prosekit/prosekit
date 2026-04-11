@@ -3,11 +3,7 @@
 import { registerAutocompletePositionerElement, type AutocompletePositionerProps as AutocompletePositionerElementProps } from '@prosekit/web/autocomplete';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link AutocompletePositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePositioner} Vue component. */
 export interface AutocompletePositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
@@ -113,11 +109,7 @@ export interface AutocompletePositionerProps {
   altBoundary?: AutocompletePositionerElementProps['altBoundary'];
 }
 
-/**
- * A Vue component that renders an `prosekit-autocomplete-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-autocomplete-positioner` custom element. */
 export const AutocompletePositioner: DefineSetupFnComponent<AutocompletePositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<AutocompletePositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerAutocompletePositionerElement();

@@ -3,11 +3,7 @@
 import { registerBlockHandlePositionerElement, type BlockHandlePositionerProps as BlockHandlePositionerElementProps } from '@prosekit/web/block-handle';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link BlockHandlePositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePositioner} Vue component. */
 export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
@@ -131,11 +127,7 @@ export interface BlockHandlePositionerProps {
   altBoundary?: BlockHandlePositionerElementProps['altBoundary'];
 }
 
-/**
- * A Vue component that renders an `prosekit-block-handle-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-block-handle-positioner` custom element. */
 export const BlockHandlePositioner: DefineSetupFnComponent<BlockHandlePositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<BlockHandlePositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerBlockHandlePositionerElement();

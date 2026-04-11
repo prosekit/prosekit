@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRowMenuTrigger} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowMenuTrigger} Preact component. */
 export interface TableHandleRowMenuTriggerProps {
   /**
    * @default null
@@ -50,9 +46,5 @@ function TableHandleRowMenuTriggerComponent(props: TableHandleRowMenuTriggerProp
   return createElement('prosekit-table-handle-row-menu-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-row-menu-trigger` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-row-menu-trigger` custom element. */
 export const TableHandleRowMenuTrigger: ForwardRefExoticComponent<TableHandleRowMenuTriggerProps & HTMLAttributes<TableHandleRowMenuTriggerElement> & RefAttributes<TableHandleRowMenuTriggerElement>> = /* @__PURE__ */ forwardRef(TableHandleRowMenuTriggerComponent);

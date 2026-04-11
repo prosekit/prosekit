@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import PopoverTriggerComponent from './popover-trigger.gen.svelte';
 
-/**
- * Props for the {@link PopoverTrigger} Svelte component.
- *
- * @public
- */
+/** Props for the {@link PopoverTrigger} Svelte component. */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -39,9 +35,5 @@ export interface PopoverTriggerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-popover-trigger` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-popover-trigger` custom element. */
 export const PopoverTrigger: Component<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement>> = PopoverTriggerComponent as Component<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement>>;

@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleRoot} Preact component. */
 export interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -72,9 +68,5 @@ function BlockHandleRootComponent(props: BlockHandleRootProps, forwardedRef: Ref
   return createElement('prosekit-block-handle-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-block-handle-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-block-handle-root` custom element. */
 export const BlockHandleRoot: ForwardRefExoticComponent<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement> & RefAttributes<BlockHandleRootElement>> = /* @__PURE__ */ forwardRef(BlockHandleRootComponent);

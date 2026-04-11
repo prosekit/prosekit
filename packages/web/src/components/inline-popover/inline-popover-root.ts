@@ -115,7 +115,11 @@ const InlinePopoverRootElementBase: HostElementConstructor<InlinePopoverRootProp
 )
 
 /**
- * @public
+ * `<prosekit-inline-popover-root>` custom element.
+ *
+ * Properties: {@link InlinePopoverRootProps}
+ *
+ * Events: {@link InlinePopoverRootEvents}
  */
 export class InlinePopoverRootElement extends InlinePopoverRootElementBase {}
 

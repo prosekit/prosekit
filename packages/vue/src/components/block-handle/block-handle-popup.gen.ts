@@ -3,18 +3,10 @@
 import { registerBlockHandlePopupElement } from '@prosekit/web/block-handle';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link BlockHandlePopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePopup} Vue component. */
 export interface BlockHandlePopupProps {}
 
-/**
- * A Vue component that renders an `prosekit-block-handle-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-block-handle-popup` custom element. */
 export const BlockHandlePopup: DefineSetupFnComponent<BlockHandlePopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<BlockHandlePopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerBlockHandlePopupElement();

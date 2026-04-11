@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TooltipTriggerComponent from './tooltip-trigger.gen.svelte';
 
-/**
- * Props for the {@link TooltipTrigger} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TooltipTrigger} Svelte component. */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -30,9 +26,5 @@ export interface TooltipTriggerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-tooltip-trigger` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-tooltip-trigger` custom element. */
 export const TooltipTrigger: Component<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement>> = TooltipTriggerComponent as Component<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement>>;

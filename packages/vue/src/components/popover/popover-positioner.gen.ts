@@ -3,11 +3,7 @@
 import { registerPopoverPositionerElement, type PopoverPositionerProps as PopoverPositionerElementProps } from '@prosekit/web/popover';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link PopoverPositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link PopoverPositioner} Vue component. */
 export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
@@ -138,11 +134,7 @@ export interface PopoverPositionerProps {
   altBoundary?: PopoverPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Vue component that renders an `prosekit-popover-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-popover-positioner` custom element. */
 export const PopoverPositioner: DefineSetupFnComponent<PopoverPositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<PopoverPositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerPopoverPositionerElement();

@@ -85,7 +85,17 @@ const AutocompletePopupElementBase: HostElementConstructor<AutocompletePopupProp
 )
 
 /**
- * @public
+ * `<prosekit-autocomplete-popup>` custom element.
+ *
+ * Properties: {@link AutocompletePopupProps}
+ *
+ * Events: {@link AutocompletePopupEvents}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the autocomplete is visible, `"closed"` otherwise |
  */
 export class AutocompletePopupElement extends AutocompletePopupElementBase {}
 

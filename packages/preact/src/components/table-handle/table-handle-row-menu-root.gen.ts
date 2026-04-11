@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link TableHandleRowMenuRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowMenuRoot} Preact component. */
 export interface TableHandleRowMenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -56,9 +52,5 @@ function TableHandleRowMenuRootComponent(props: TableHandleRowMenuRootProps, for
   return createElement('prosekit-table-handle-row-menu-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-row-menu-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-row-menu-root` custom element. */
 export const TableHandleRowMenuRoot: ForwardRefExoticComponent<TableHandleRowMenuRootProps & HTMLAttributes<TableHandleRowMenuRootElement> & RefAttributes<TableHandleRowMenuRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRowMenuRootComponent);

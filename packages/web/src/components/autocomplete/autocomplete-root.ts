@@ -270,7 +270,11 @@ const AutocompleteRootElementBase: HostElementConstructor<AutocompleteRootProps>
 )
 
 /**
- * @public
+ * `<prosekit-autocomplete-root>` custom element.
+ *
+ * Properties: {@link AutocompleteRootProps}
+ *
+ * Events: {@link AutocompleteRootEvents}
  */
 export class AutocompleteRootElement extends AutocompleteRootElementBase {}
 

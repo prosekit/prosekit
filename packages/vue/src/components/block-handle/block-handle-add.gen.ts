@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleAdd} Vue component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleAdd} Vue component. */
 export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
@@ -20,11 +16,7 @@ export interface BlockHandleAddProps {
   editor?: BlockHandleAddElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-block-handle-add` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-block-handle-add` custom element. */
 export const BlockHandleAdd: DefineSetupFnComponent<BlockHandleAddProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<BlockHandleAddProps & HTMLAttributes>(
   (props, { slots }) => {
     registerBlockHandleAddElement();

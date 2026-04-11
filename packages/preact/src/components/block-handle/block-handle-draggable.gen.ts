@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleDraggable} Preact component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleDraggable} Preact component. */
 export interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
@@ -52,9 +48,5 @@ function BlockHandleDraggableComponent(props: BlockHandleDraggableProps, forward
   return createElement('prosekit-block-handle-draggable', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-block-handle-draggable` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-block-handle-draggable` custom element. */
 export const BlockHandleDraggable: ForwardRefExoticComponent<BlockHandleDraggableProps & HTMLAttributes<BlockHandleDraggableElement> & RefAttributes<BlockHandleDraggableElement>> = /* @__PURE__ */ forwardRef(BlockHandleDraggableComponent);

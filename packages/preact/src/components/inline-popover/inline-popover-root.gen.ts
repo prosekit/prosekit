@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link InlinePopoverRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverRoot} Preact component. */
 export interface InlinePopoverRootProps {
   /**
    * The ProseKit editor instance.
@@ -96,9 +92,5 @@ function InlinePopoverRootComponent(props: InlinePopoverRootProps, forwardedRef:
   return createElement('prosekit-inline-popover-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-inline-popover-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-inline-popover-root` custom element. */
 export const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement> & RefAttributes<InlinePopoverRootElement>> = /* @__PURE__ */ forwardRef(InlinePopoverRootComponent);

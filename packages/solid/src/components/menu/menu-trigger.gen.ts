@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuTrigger} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuTrigger} Solid component. */
 export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -21,11 +17,7 @@ export interface MenuTriggerProps {
   onOpenChange?: (event: MenuTriggerEvents['openChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-menu-trigger` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-trigger` custom element. */
 export const MenuTrigger: Component<MenuTriggerProps & JSX.HTMLAttributes<MenuTriggerElement>> = (props): any => {
   registerMenuTriggerElement();
 

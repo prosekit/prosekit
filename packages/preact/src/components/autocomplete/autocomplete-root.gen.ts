@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link AutocompleteRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteRoot} Preact component. */
 export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
@@ -97,9 +93,5 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: R
   return createElement('prosekit-autocomplete-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-autocomplete-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-autocomplete-root` custom element. */
 export const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>> = /* @__PURE__ */ forwardRef(AutocompleteRootComponent);

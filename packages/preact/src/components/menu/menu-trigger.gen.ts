@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link MenuTrigger} Preact component.
- *
- * @public
- */
+/** Props for the {@link MenuTrigger} Preact component. */
 export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -67,9 +63,5 @@ function MenuTriggerComponent(props: MenuTriggerProps, forwardedRef: Ref<MenuTri
   return createElement('prosekit-menu-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-menu-trigger` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-menu-trigger` custom element. */
 export const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & HTMLAttributes<MenuTriggerElement> & RefAttributes<MenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuTriggerComponent);

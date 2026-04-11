@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link TooltipRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link TooltipRoot} Solid component. */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -30,11 +26,7 @@ export interface TooltipRootProps {
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-tooltip-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-tooltip-root` custom element. */
 export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<TooltipRootElement>> = (props): any => {
   registerTooltipRootElement();
 

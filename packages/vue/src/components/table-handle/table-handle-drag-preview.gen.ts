@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDragPreview} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDragPreview} Vue component. */
 export interface TableHandleDragPreviewProps {
   /**
    * @default null
@@ -18,11 +14,7 @@ export interface TableHandleDragPreviewProps {
   editor?: TableHandleDragPreviewElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-table-handle-drag-preview` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-drag-preview` custom element. */
 export const TableHandleDragPreview: DefineSetupFnComponent<TableHandleDragPreviewProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleDragPreviewProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleDragPreviewElement();

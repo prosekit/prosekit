@@ -3,18 +3,10 @@
 import { registerInlinePopoverPopupElement } from '@prosekit/web/inline-popover';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link InlinePopoverPopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverPopup} Vue component. */
 export interface InlinePopoverPopupProps {}
 
-/**
- * A Vue component that renders an `prosekit-inline-popover-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-inline-popover-popup` custom element. */
 export const InlinePopoverPopup: DefineSetupFnComponent<InlinePopoverPopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<InlinePopoverPopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerInlinePopoverPopupElement();

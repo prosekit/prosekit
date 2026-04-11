@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDropIndicator} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDropIndicator} Vue component. */
 export interface TableHandleDropIndicatorProps {
   /**
    * @default null
@@ -18,11 +14,7 @@ export interface TableHandleDropIndicatorProps {
   editor?: TableHandleDropIndicatorElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-table-handle-drop-indicator` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-drop-indicator` custom element. */
 export const TableHandleDropIndicator: DefineSetupFnComponent<TableHandleDropIndicatorProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleDropIndicatorProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleDropIndicatorElement();

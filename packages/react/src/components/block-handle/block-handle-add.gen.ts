@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleAdd} React component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleAdd} React component. */
 export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
@@ -50,9 +46,5 @@ function BlockHandleAddComponent(props: BlockHandleAddProps, forwardedRef: Forwa
   return createElement('prosekit-block-handle-add', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-block-handle-add` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-block-handle-add` custom element. */
 export const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>> = /* @__PURE__ */ forwardRef(BlockHandleAddComponent);

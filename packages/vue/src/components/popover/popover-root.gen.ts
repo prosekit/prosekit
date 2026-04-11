@@ -3,11 +3,7 @@
 import { registerPopoverRootElement, type PopoverRootEvents, type PopoverRootProps as PopoverRootElementProps } from '@prosekit/web/popover';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link PopoverRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link PopoverRoot} Vue component. */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -35,11 +31,7 @@ export interface PopoverRootProps {
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-popover-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-popover-root` custom element. */
 export const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<PopoverRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerPopoverRootElement();

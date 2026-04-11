@@ -3,11 +3,7 @@
 import { registerBlockHandlePositionerElement, type BlockHandlePositionerElement, type BlockHandlePositionerProps as BlockHandlePositionerElementProps } from '@prosekit/web/block-handle';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link BlockHandlePositioner} React component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePositioner} React component. */
 export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
@@ -159,9 +155,5 @@ function BlockHandlePositionerComponent(props: BlockHandlePositionerProps, forwa
   return createElement('prosekit-block-handle-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-block-handle-positioner` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-block-handle-positioner` custom element. */
 export const BlockHandlePositioner: ForwardRefExoticComponent<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement> & RefAttributes<BlockHandlePositionerElement>> = /* @__PURE__ */ forwardRef(BlockHandlePositionerComponent);

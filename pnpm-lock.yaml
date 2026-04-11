@@ -851,14 +851,14 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
       '@aria-ui/elements':
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.1.4
+        version: 0.1.4
       '@aria-ui/utils':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
@@ -879,8 +879,8 @@ importers:
         version: 1.8.5
     devDependencies:
       '@aria-ui/cli':
-        specifier: ^0.1.4
-        version: 0.1.4(typescript@5.9.3)
+        specifier: ^0.1.5
+        version: 0.1.5(typescript@5.9.3)
       '@prosekit/config-ts':
         specifier: workspace:*
         version: link:../config-ts
@@ -1248,8 +1248,8 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@aria-ui/cli@0.1.4':
-    resolution: {integrity: sha512-w8j2Sr1t1gVVLkfHX0jAJVCiW2klqVJzxc9078VUexr8tX62EfGtMOyjQkz2DO0B3VpGKERz1SXkBoAdKCCwnA==}
+  '@aria-ui/cli@0.1.5':
+    resolution: {integrity: sha512-KY8j1B0H/q4yOgnCUZZqLUOxSZq8NKduodbt1p6VjqiviIoi/ynXqMYuWrAIyyQTS0K/KtiSel98GBq0yi9JHQ==}
     hasBin: true
     peerDependencies:
       typescript: '>= 5.8.0'
@@ -1257,14 +1257,14 @@ packages:
       typescript:
         optional: true
 
-  '@aria-ui/core@0.1.0':
-    resolution: {integrity: sha512-uKxomB53dAF2OkNav72ewlExtbTMItOwU+X1sMsN/ORc4xEeNTUy3BI3klCJ7XKY2/aAp+D0r8/F7XfabZ6NGQ==}
+  '@aria-ui/core@0.1.1':
+    resolution: {integrity: sha512-h6bpSB0jw8nlWx4lKUJl7vfqEEmmba9R/0TSOukgRofEMctJYWmvqkdNCUiTihM0bvoGdi9Mc6aR90dc1jylrw==}
 
-  '@aria-ui/elements@0.1.2':
-    resolution: {integrity: sha512-Uy7r4juZgt2i5A0ixneH8PsJ1uwy6vlG5+tVJ2bTAUkvkF6qhwhDNjkU1QLYMpESN5KXQDzUVaQqpKoMaZFmxg==}
+  '@aria-ui/elements@0.1.4':
+    resolution: {integrity: sha512-uYBMx/TF09AZPm62Yb0H3CrbAJt6yB0BNA/6Puggkxf+4CKVpPagh9tLrSQ0RGlrR0VqbALrl5Bi2Qq3ofWODw==}
 
-  '@aria-ui/utils@0.1.0':
-    resolution: {integrity: sha512-wBLP8sdhiS3ZbkmlIlMFmlbhNpYAAEKvvkfbXHUhXVnFxNzJYqY4FuLGUBbrGR+k+K7FU6LhmtVvjRta/hlTsQ==}
+  '@aria-ui/utils@0.1.1':
+    resolution: {integrity: sha512-bXPG+q79FtU4yYql4CXx4mB1lc2W7CknliFtY/QscIomvxnFBE3Ppx52Bc/6dsDHYU7BjnxONhfFdtKFCJZ0UA==}
 
   '@asamuzakjp/css-color@5.1.9':
     resolution: {integrity: sha512-zd9c/Wdso6v1U7v6w3i/hbAr4K7NaSHImdpvmLt+Y9ea5BhilnIGNkfhOJ7FEIuPipAnE9tZeDOll05WDT0kgg==}
@@ -7912,7 +7912,7 @@ snapshots:
       package-manager-detector: 1.6.0
       tinyexec: 1.1.1
 
-  '@aria-ui/cli@0.1.4(typescript@5.9.3)':
+  '@aria-ui/cli@0.1.5(typescript@5.9.3)':
     dependencies:
       '@stricli/core': 1.2.6
       devalue: 5.7.1
@@ -7923,24 +7923,24 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  '@aria-ui/core@0.1.0':
+  '@aria-ui/core@0.1.1':
     dependencies:
       '@ocavue/utils': 1.6.0
       '@zag-js/dom-query': 1.39.1
       alien-signals: 3.1.2
       server-dom-shim: 1.1.0
 
-  '@aria-ui/elements@0.1.2':
+  '@aria-ui/elements@0.1.4':
     dependencies:
-      '@aria-ui/core': 0.1.0
-      '@aria-ui/utils': 0.1.0
+      '@aria-ui/core': 0.1.1
+      '@aria-ui/utils': 0.1.1
       '@floating-ui/dom': 1.7.6
       '@zag-js/dismissable': 1.39.1
       '@zag-js/dom-query': 1.39.1
 
-  '@aria-ui/utils@0.1.0':
+  '@aria-ui/utils@0.1.1':
     dependencies:
-      '@aria-ui/core': 0.1.0
+      '@aria-ui/core': 0.1.1
       '@zag-js/dom-query': 1.39.1
 
   '@asamuzakjp/css-color@5.1.9':
@@ -14343,8 +14343,8 @@ snapshots:
 
   shiki-twoslash-renderer@0.3.2(typescript@5.9.3):
     dependencies:
-      '@aria-ui/core': 0.1.0
-      '@aria-ui/elements': 0.1.2
+      '@aria-ui/core': 0.1.1
+      '@aria-ui/elements': 0.1.4
       '@shikijs/twoslash': 4.0.2(typescript@5.9.3)
       '@shikijs/types': 4.0.2
       '@types/hast': 3.0.4
@@ -14473,7 +14473,7 @@ snapshots:
 
   starlight-theme-nova@0.11.8(@astrojs/starlight@0.38.3(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)))(typescript@5.9.3):
     dependencies:
-      '@aria-ui/core': 0.1.0
+      '@aria-ui/core': 0.1.1
       '@pagefind/default-ui': 1.4.0
       '@shikijs/transformers': 4.0.2
       '@shikijs/twoslash': 4.0.2(typescript@5.9.3)

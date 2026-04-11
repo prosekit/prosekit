@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDragPreview} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDragPreview} Solid component. */
 export interface TableHandleDragPreviewProps {
   /**
    * @default null
@@ -20,11 +16,7 @@ export interface TableHandleDragPreviewProps {
   editor?: TableHandleDragPreviewElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-table-handle-drag-preview` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-drag-preview` custom element. */
 export const TableHandleDragPreview: Component<TableHandleDragPreviewProps & JSX.HTMLAttributes<TableHandleDragPreviewElement>> = (props): any => {
   registerTableHandleDragPreviewElement();
 

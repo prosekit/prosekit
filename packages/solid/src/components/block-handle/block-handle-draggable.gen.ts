@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleDraggable} Solid component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleDraggable} Solid component. */
 export interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
@@ -22,11 +18,7 @@ export interface BlockHandleDraggableProps {
   editor?: BlockHandleDraggableElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-block-handle-draggable` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-block-handle-draggable` custom element. */
 export const BlockHandleDraggable: Component<BlockHandleDraggableProps & JSX.HTMLAttributes<BlockHandleDraggableElement>> = (props): any => {
   registerBlockHandleDraggableElement();
 

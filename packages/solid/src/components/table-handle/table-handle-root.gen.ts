@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRoot} Solid component. */
 export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -22,11 +18,7 @@ export interface TableHandleRootProps {
   editor?: TableHandleRootElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-table-handle-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-root` custom element. */
 export const TableHandleRoot: Component<TableHandleRootProps & JSX.HTMLAttributes<TableHandleRootElement>> = (props): any => {
   registerTableHandleRootElement();
 

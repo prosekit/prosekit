@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link TooltipTrigger} Solid component.
- *
- * @public
- */
+/** Props for the {@link TooltipTrigger} Solid component. */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -28,11 +24,7 @@ export interface TooltipTriggerProps {
   closeDelay?: TooltipTriggerElementProps['closeDelay'];
 }
 
-/**
- * A Solid component that renders an `prosekit-tooltip-trigger` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-tooltip-trigger` custom element. */
 export const TooltipTrigger: Component<TooltipTriggerProps & JSX.HTMLAttributes<TooltipTriggerElement>> = (props): any => {
   registerTooltipTriggerElement();
 

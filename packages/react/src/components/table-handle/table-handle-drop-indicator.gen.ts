@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDropIndicator} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDropIndicator} React component. */
 export interface TableHandleDropIndicatorProps {
   /**
    * @default null
@@ -48,9 +44,5 @@ function TableHandleDropIndicatorComponent(props: TableHandleDropIndicatorProps,
   return createElement('prosekit-table-handle-drop-indicator', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-drop-indicator` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-drop-indicator` custom element. */
 export const TableHandleDropIndicator: ForwardRefExoticComponent<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement> & RefAttributes<TableHandleDropIndicatorElement>> = /* @__PURE__ */ forwardRef(TableHandleDropIndicatorComponent);

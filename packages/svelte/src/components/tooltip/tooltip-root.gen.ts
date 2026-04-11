@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TooltipRootComponent from './tooltip-root.gen.svelte';
 
-/**
- * Props for the {@link TooltipRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TooltipRoot} Svelte component. */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -32,9 +28,5 @@ export interface TooltipRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-tooltip-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-tooltip-root` custom element. */
 export const TooltipRoot: Component<TooltipRootProps & HTMLAttributes<TooltipRootElement>> = TooltipRootComponent as Component<TooltipRootProps & HTMLAttributes<TooltipRootElement>>;

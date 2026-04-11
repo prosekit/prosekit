@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import AutocompleteEmptyComponent from './autocomplete-empty.gen.svelte';
 
-/**
- * Props for the {@link AutocompleteEmpty} Svelte component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteEmpty} Svelte component. */
 export interface AutocompleteEmptyProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-autocomplete-empty` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-autocomplete-empty` custom element. */
 export const AutocompleteEmpty: Component<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement>> = AutocompleteEmptyComponent as Component<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement>>;

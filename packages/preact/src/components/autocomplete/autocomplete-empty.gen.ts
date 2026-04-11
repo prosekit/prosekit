@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef } from 'preact/hooks';
 
-/**
- * Props for the {@link AutocompleteEmpty} Preact component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteEmpty} Preact component. */
 export interface AutocompleteEmptyProps {}
 
 function AutocompleteEmptyComponent(props: AutocompleteEmptyProps, forwardedRef: Ref<AutocompleteEmptyElement>) {
@@ -34,9 +30,5 @@ function AutocompleteEmptyComponent(props: AutocompleteEmptyProps, forwardedRef:
   return createElement('prosekit-autocomplete-empty', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-autocomplete-empty` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-autocomplete-empty` custom element. */
 export const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>> = /* @__PURE__ */ forwardRef(AutocompleteEmptyComponent);

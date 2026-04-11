@@ -3,11 +3,7 @@
 import { registerAutocompleteItemElement, type AutocompleteItemEvents, type AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/web/autocomplete';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link AutocompleteItem} Vue component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteItem} Vue component. */
 export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
@@ -27,11 +23,7 @@ export interface AutocompleteItemProps {
   onSelect?: (event: AutocompleteItemEvents['select']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-autocomplete-item` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-autocomplete-item` custom element. */
 export const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<AutocompleteItemProps & HTMLAttributes>(
   (props, { slots }) => {
     registerAutocompleteItemElement();

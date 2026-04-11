@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import BlockHandlePositionerComponent from './block-handle-positioner.gen.svelte';
 
-/**
- * Props for the {@link BlockHandlePositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePositioner} Svelte component. */
 export interface BlockHandlePositionerProps {
   /**
    * The placement of the popover, relative to the hovered block.
@@ -135,9 +131,5 @@ export interface BlockHandlePositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-block-handle-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-block-handle-positioner` custom element. */
 export const BlockHandlePositioner: Component<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement>> = BlockHandlePositionerComponent as Component<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement>>;

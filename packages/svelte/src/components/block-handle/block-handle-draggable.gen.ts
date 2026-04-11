@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import BlockHandleDraggableComponent from './block-handle-draggable.gen.svelte';
 
-/**
- * Props for the {@link BlockHandleDraggable} Svelte component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleDraggable} Svelte component. */
 export interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
@@ -22,9 +18,5 @@ export interface BlockHandleDraggableProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-block-handle-draggable` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-block-handle-draggable` custom element. */
 export const BlockHandleDraggable: Component<BlockHandleDraggableProps & HTMLAttributes<BlockHandleDraggableElement>> = BlockHandleDraggableComponent as Component<BlockHandleDraggableProps & HTMLAttributes<BlockHandleDraggableElement>>;

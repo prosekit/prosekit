@@ -45,6 +45,8 @@ class TestSequencer extends BaseSequencer {
       fastChunks[i % fastChunks.length].push(fastFile)
     }
 
+    console.debug(`chunks: ${JSON.stringify(chunks.map((chunk) => chunk.map((file) => file.moduleId)), null, 2)}`)
+
     return Promise.resolve(chunks[index - 1])
   }
 }

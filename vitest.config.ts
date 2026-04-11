@@ -33,16 +33,21 @@ class TestSequencer extends BaseSequencer {
 
     const chunks: TestSpecification[][] = Array.from({ length: count }, (): TestSpecification[] => [])
 
-    // Each slow test gets its own shard
-    for (const [i, slowFile] of slowFiles.entries()) {
-      chunks[i % chunks.length].push(slowFile)
-    }
-
-    // Distribute fast tests across remaining shards, or all shards if slow tests filled them all
-    const emptyChunks = chunks.filter((chunk) => chunk.length === 0)
-    const fastChunks = emptyChunks.length > 0 ? emptyChunks : chunks
-    for (const [i, fastFile] of fastFiles.entries()) {
-      fastChunks[i % fastChunks.length].push(fastFile)
+    if (slowFiles.length < count) {
+      // Each slow test gets its own shard, and the remaining shards are filled with fast tests
+      const slowChunks = chunks.slice(0, slowFiles.length)
+      const fastChunks = chunks.slice(slowFiles.length)
+      for (const [i, slowFile] of slowFiles.entries()) {
+        slowChunks[i].push(slowFile)
+      }
+      for (const [i, fastFile] of fastFiles.entries()) {
+        fastChunks[i % fastChunks.length].push(fastFile)
+      }
+    } else {
+      // Evenly distribute slow tests across all shards, and fill remaining space with fast tests
+      for (const [i, file] of [...slowFiles, ...fastFiles].entries()) {
+        chunks[i % chunks.length].push(file)
+      }
     }
 
     console.debug(`chunks: ${JSON.stringify(chunks.map((chunk) => chunk.map((file) => file.moduleId)), null, 2)}`)

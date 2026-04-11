@@ -24,20 +24,29 @@
 ```
 */
 
-import { registerCustomElement } from '@aria-ui/core'
+import { registerCustomElement, type PropsDeclaration } from '@aria-ui/core'
 import {
   MenuItemElement,
   MenuPopupElement,
   MenuPositionerElement,
   MenuSubmenuRootElement,
   MenuSubmenuTriggerElement,
-  MenuTriggerElement,
 } from '@aria-ui/elements/menu'
 import * as Base from '@aria-ui/elements/menu'
 
 export class MenuRootElement extends Base.MenuRootElement {}
+export class MenuTriggerElement extends Base.MenuTriggerElement {}
 
 export interface MenuRootProps extends Base.MenuRootProps {}
+export interface MenuTriggerProps extends Base.MenuTriggerProps {}
+
+export interface MenuRootEvents extends Base.MenuRootEvents {}
+export interface MenuTriggerEvents extends Base.MenuTriggerEvents {}
+
+/** @internal */
+export const MenuRootPropsDeclaration: PropsDeclaration<MenuRootProps> = Base.MenuRootPropsDeclaration
+/** @internal */
+export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> =  Base.MenuTriggerPropsDeclaration
 
 export {
   MenuItemElement,
@@ -46,13 +55,10 @@ export {
   MenuPopupPropsDeclaration,
   MenuPositionerElement,
   MenuPositionerPropsDeclaration,
-  MenuRootPropsDeclaration,
   MenuSubmenuRootElement,
   MenuSubmenuRootPropsDeclaration,
   MenuSubmenuTriggerElement,
   MenuSubmenuTriggerPropsDeclaration,
-  MenuTriggerElement,
-  MenuTriggerPropsDeclaration,
   OpenChangeEvent,
   SelectEvent,
   setupMenuItem,
@@ -66,9 +72,6 @@ export {
   type MenuItemProps,
   type MenuPopupProps,
   type MenuPositionerProps,
-  type MenuRootEvents,
-  type MenuTriggerEvents,
-  type MenuTriggerProps,
 } from '@aria-ui/elements/menu'
 
 export function registerMenuRootElement(): void {

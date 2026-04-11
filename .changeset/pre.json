@@ -30,6 +30,7 @@
     "300-basic-web-css",
     "400-inline-popover-floating",
     "700-reduce-re-export",
+    "750-react-use-client",
     "800-view-render-solid",
     "810-view-render-vue"
   ]

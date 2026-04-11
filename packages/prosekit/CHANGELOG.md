@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.20.0-beta.5
+
+### Patch Changes
+
+- [`098cfa5`](https://github.com/ocavue/prosekit/commit/098cfa54dfac7f2cf26915470742c9382608c715) ![](https://prosekit.dev/b/react)
+
+  Add 'use client' directive.
+
 ## 0.20.0-beta.4
 
 ### Patch Changes

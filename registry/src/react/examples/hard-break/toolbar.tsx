@@ -1,3 +1,5 @@
+'use client'
+
 import { useEditor } from 'prosekit/react'
 
 import { Button } from '../../ui/button'

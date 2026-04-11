@@ -1,3 +1,5 @@
+'use client'
+
 import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind, type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'

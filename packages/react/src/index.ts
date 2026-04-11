@@ -1,3 +1,5 @@
+'use client'
+
 export { ProseKit, type ProseKitProps } from './components/prosekit.ts'
 export {
   defineReactMarkView,

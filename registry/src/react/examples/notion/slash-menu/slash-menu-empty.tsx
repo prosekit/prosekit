@@ -1,3 +1,5 @@
+'use client'
+
 import { AutocompleteEmpty } from 'prosekit/react/autocomplete'
 
 export default function SlashMenuEmpty() {

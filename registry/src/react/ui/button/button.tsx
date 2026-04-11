@@ -1,3 +1,5 @@
+'use client'
+
 import { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/react/tooltip'
 import type { MouseEventHandler, ReactNode } from 'react'
 

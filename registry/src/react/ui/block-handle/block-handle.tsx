@@ -1,3 +1,5 @@
+'use client'
+
 import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/react/block-handle'
 
 interface Props {

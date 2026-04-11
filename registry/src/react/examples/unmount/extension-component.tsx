@@ -1,3 +1,5 @@
+'use client'
+
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { useExtension } from 'prosekit/react'
 import { useMemo } from 'react'

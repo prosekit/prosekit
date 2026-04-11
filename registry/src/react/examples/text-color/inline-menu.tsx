@@ -1,3 +1,5 @@
+'use client'
+
 import type { Editor, Keymap } from 'prosekit/core'
 import { useEditorDerivedValue, useKeymap } from 'prosekit/react'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/react/inline-popover'

@@ -1,3 +1,5 @@
+'use client'
+
 import { definePageRendering, type PageRenderingOptions } from 'prosekit/extensions/page'
 import { useExtension } from 'prosekit/react'
 import { useEffect, useId, useMemo, useState } from 'react'

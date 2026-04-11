@@ -1,3 +1,5 @@
+'use client'
+
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { Tweet } from 'react-tweet'
 

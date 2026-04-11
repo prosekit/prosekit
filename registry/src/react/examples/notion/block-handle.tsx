@@ -1,3 +1,5 @@
+'use client'
+
 import { Tooltip } from '@base-ui/react/tooltip'
 import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/react/block-handle'
 

@@ -1,3 +1,5 @@
+'use client'
+
 import { AutocompleteItem } from 'prosekit/react/autocomplete'
 
 export default function SlashMenuItem(props: {

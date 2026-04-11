@@ -1,3 +1,5 @@
+'use client'
+
 import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/react'
 import { useMemo, useState } from 'react'

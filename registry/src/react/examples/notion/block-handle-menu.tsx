@@ -1,3 +1,5 @@
+'use client'
+
 import { Menu } from '@base-ui/react'
 import type { Editor } from 'prosekit/core'
 import { clsx } from 'prosekit/core'

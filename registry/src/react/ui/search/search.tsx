@@ -1,3 +1,5 @@
+'use client'
+
 import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/react'
 import { useMemo, useState } from 'react'

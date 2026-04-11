@@ -81,7 +81,6 @@ export const TooltipRootPropsDeclaration: PropsDeclaration<TooltipRootProps> = B
 /** @internal */
 export const TooltipTriggerPropsDeclaration: PropsDeclaration<TooltipTriggerProps> = Base.TooltipTriggerPropsDeclaration
 
-
 export function registerTooltipRootElement(): void {
   registerCustomElement('prosekit-tooltip-root', TooltipRootElement)
 }
@@ -94,7 +93,6 @@ export function registerTooltipPopupElement(): void {
 export function registerTooltipPositionerElement(): void {
   registerCustomElement('prosekit-tooltip-positioner', TooltipPositionerElement)
 }
-
 
 export {
   OpenChangeEvent,

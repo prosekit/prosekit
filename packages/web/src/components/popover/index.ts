@@ -97,8 +97,6 @@ export function registerPopoverPositionerElement(): void {
   registerCustomElement('prosekit-popover-positioner', PopoverPositionerElement)
 }
 
-
-
 export {
   OpenChangeEvent,
   setupPopoverPopup,

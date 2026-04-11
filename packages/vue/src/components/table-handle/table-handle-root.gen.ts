@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRoot} Vue component. */
 export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -20,11 +16,7 @@ export interface TableHandleRootProps {
   editor?: TableHandleRootElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-table-handle-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-root` custom element. */
 export const TableHandleRoot: DefineSetupFnComponent<TableHandleRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleRootElement();

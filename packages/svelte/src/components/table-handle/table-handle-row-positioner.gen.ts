@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleRowPositionerComponent from './table-handle-row-positioner.gen.svelte';
 
-/**
- * Props for the {@link TableHandleRowPositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPositioner} Svelte component. */
 export interface TableHandleRowPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -141,9 +137,5 @@ export interface TableHandleRowPositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-row-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-row-positioner` custom element. */
 export const TableHandleRowPositioner: Component<TableHandleRowPositionerProps & HTMLAttributes<TableHandleRowPositionerElement>> = TableHandleRowPositionerComponent as Component<TableHandleRowPositionerProps & HTMLAttributes<TableHandleRowPositionerElement>>;

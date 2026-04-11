@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link InlinePopoverRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverRoot} Vue component. */
 export interface InlinePopoverRootProps {
   /**
    * The ProseKit editor instance.
@@ -46,11 +42,7 @@ export interface InlinePopoverRootProps {
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-inline-popover-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-inline-popover-root` custom element. */
 export const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<InlinePopoverRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerInlinePopoverRootElement();

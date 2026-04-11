@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import AutocompletePopupComponent from './autocomplete-popup.gen.svelte';
 
-/**
- * Props for the {@link AutocompletePopup} Svelte component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePopup} Svelte component. */
 export interface AutocompletePopupProps {
   /**
    * Emitted when the selected value changes. Only available when multiple is
@@ -25,9 +21,5 @@ export interface AutocompletePopupProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-autocomplete-popup` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-autocomplete-popup` custom element. */
 export const AutocompletePopup: Component<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement>> = AutocompletePopupComponent as Component<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement>>;

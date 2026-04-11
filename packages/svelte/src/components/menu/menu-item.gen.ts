@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuItemComponent from './menu-item.gen.svelte';
 
-/**
- * Props for the {@link MenuItem} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuItem} Svelte component. */
 export interface MenuItemProps {
   /**
    * The unique value for this menu item.
@@ -35,9 +31,5 @@ export interface MenuItemProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-item` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-item` custom element. */
 export const MenuItem: Component<MenuItemProps & HTMLAttributes<MenuItemElement>> = MenuItemComponent as Component<MenuItemProps & HTMLAttributes<MenuItemElement>>;

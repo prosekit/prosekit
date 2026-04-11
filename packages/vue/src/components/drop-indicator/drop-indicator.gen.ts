@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link DropIndicator} Vue component.
- *
- * @public
- */
+/** Props for the {@link DropIndicator} Vue component. */
 export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
@@ -26,11 +22,7 @@ export interface DropIndicatorProps {
   width?: DropIndicatorElementProps['width'];
 }
 
-/**
- * A Vue component that renders an `prosekit-drop-indicator` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-drop-indicator` custom element. */
 export const DropIndicator: DefineSetupFnComponent<DropIndicatorProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<DropIndicatorProps & HTMLAttributes>(
   (props, { slots }) => {
     registerDropIndicatorElement();

@@ -3,18 +3,10 @@
 import { registerMenuSubmenuRootElement } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link MenuSubmenuRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuRoot} Vue component. */
 export interface MenuSubmenuRootProps {}
 
-/**
- * A Vue component that renders an `prosekit-menu-submenu-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-submenu-root` custom element. */
 export const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuSubmenuRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuSubmenuRootElement();

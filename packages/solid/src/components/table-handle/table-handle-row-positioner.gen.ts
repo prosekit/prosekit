@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRowPositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPositioner} Solid component. */
 export interface TableHandleRowPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -141,11 +137,7 @@ export interface TableHandleRowPositionerProps {
   editor?: TableHandleRowPositionerElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-table-handle-row-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-row-positioner` custom element. */
 export const TableHandleRowPositioner: Component<TableHandleRowPositionerProps & JSX.HTMLAttributes<TableHandleRowPositionerElement>> = (props): any => {
   registerTableHandleRowPositionerElement();
 

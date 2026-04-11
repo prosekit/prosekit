@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleColumnMenuTrigger} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnMenuTrigger} Preact component. */
 export interface TableHandleColumnMenuTriggerProps {
   /**
    * @default null
@@ -50,9 +46,5 @@ function TableHandleColumnMenuTriggerComponent(props: TableHandleColumnMenuTrigg
   return createElement('prosekit-table-handle-column-menu-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-column-menu-trigger` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-column-menu-trigger` custom element. */
 export const TableHandleColumnMenuTrigger: ForwardRefExoticComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes<TableHandleColumnMenuTriggerElement> & RefAttributes<TableHandleColumnMenuTriggerElement>> = /* @__PURE__ */ forwardRef(TableHandleColumnMenuTriggerComponent);

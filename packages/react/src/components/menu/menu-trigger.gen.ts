@@ -3,11 +3,7 @@
 import { registerMenuTriggerElement, type MenuTriggerElement, type MenuTriggerProps as MenuTriggerElementProps, type MenuTriggerEvents } from '@prosekit/web/menu';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link MenuTrigger} React component.
- *
- * @public
- */
+/** Props for the {@link MenuTrigger} React component. */
 export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -65,9 +61,5 @@ function MenuTriggerComponent(props: MenuTriggerProps, forwardedRef: ForwardedRe
   return createElement('prosekit-menu-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-menu-trigger` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-menu-trigger` custom element. */
 export const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & HTMLAttributes<MenuTriggerElement> & RefAttributes<MenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuTriggerComponent);

@@ -3,11 +3,7 @@
 import { registerAutocompletePopupElement, type AutocompletePopupEvents } from '@prosekit/web/autocomplete';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link AutocompletePopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePopup} Vue component. */
 export interface AutocompletePopupProps {
   /**
    * Emitted when the selected value changes. Only available when multiple is
@@ -21,11 +17,7 @@ export interface AutocompletePopupProps {
   onValuesChange?: (event: AutocompletePopupEvents['valuesChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-autocomplete-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-autocomplete-popup` custom element. */
 export const AutocompletePopup: DefineSetupFnComponent<AutocompletePopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<AutocompletePopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerAutocompletePopupElement();

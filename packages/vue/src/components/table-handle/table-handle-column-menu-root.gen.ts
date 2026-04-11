@@ -3,11 +3,7 @@
 import { registerTableHandleColumnMenuRootElement, type TableHandleColumnMenuRootProps as TableHandleColumnMenuRootElementProps } from '@prosekit/web/table-handle';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link TableHandleColumnMenuRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnMenuRoot} Vue component. */
 export interface TableHandleColumnMenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -26,11 +22,7 @@ export interface TableHandleColumnMenuRootProps {
   disabled?: TableHandleColumnMenuRootElementProps['disabled'];
 }
 
-/**
- * A Vue component that renders an `prosekit-table-handle-column-menu-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-column-menu-root` custom element. */
 export const TableHandleColumnMenuRoot: DefineSetupFnComponent<TableHandleColumnMenuRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleColumnMenuRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleColumnMenuRootElement();

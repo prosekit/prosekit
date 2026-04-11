@@ -3,11 +3,7 @@
 import { registerInlinePopoverPositionerElement, type InlinePopoverPositionerElement, type InlinePopoverPositionerProps as InlinePopoverPositionerElementProps } from '@prosekit/web/inline-popover';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link InlinePopoverPositioner} React component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverPositioner} React component. */
 export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
@@ -165,9 +161,5 @@ function InlinePopoverPositionerComponent(props: InlinePopoverPositionerProps, f
   return createElement('prosekit-inline-popover-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-inline-popover-positioner` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-inline-popover-positioner` custom element. */
 export const InlinePopoverPositioner: ForwardRefExoticComponent<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement> & RefAttributes<InlinePopoverPositionerElement>> = /* @__PURE__ */ forwardRef(InlinePopoverPositionerComponent);

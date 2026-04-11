@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRowMenuTrigger} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowMenuTrigger} React component. */
 export interface TableHandleRowMenuTriggerProps {
   /**
    * @default null
@@ -48,9 +44,5 @@ function TableHandleRowMenuTriggerComponent(props: TableHandleRowMenuTriggerProp
   return createElement('prosekit-table-handle-row-menu-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-row-menu-trigger` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-row-menu-trigger` custom element. */
 export const TableHandleRowMenuTrigger: ForwardRefExoticComponent<TableHandleRowMenuTriggerProps & HTMLAttributes<TableHandleRowMenuTriggerElement> & RefAttributes<TableHandleRowMenuTriggerElement>> = /* @__PURE__ */ forwardRef(TableHandleRowMenuTriggerComponent);

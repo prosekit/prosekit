@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link TooltipRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link TooltipRoot} Preact component. */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -76,9 +72,5 @@ function TooltipRootComponent(props: TooltipRootProps, forwardedRef: Ref<Tooltip
   return createElement('prosekit-tooltip-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-tooltip-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-tooltip-root` custom element. */
 export const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & HTMLAttributes<TooltipRootElement> & RefAttributes<TooltipRootElement>> = /* @__PURE__ */ forwardRef(TooltipRootComponent);

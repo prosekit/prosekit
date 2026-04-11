@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDragPreview} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDragPreview} React component. */
 export interface TableHandleDragPreviewProps {
   /**
    * @default null
@@ -48,9 +44,5 @@ function TableHandleDragPreviewComponent(props: TableHandleDragPreviewProps, for
   return createElement('prosekit-table-handle-drag-preview', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-drag-preview` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-drag-preview` custom element. */
 export const TableHandleDragPreview: ForwardRefExoticComponent<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement> & RefAttributes<TableHandleDragPreviewElement>> = /* @__PURE__ */ forwardRef(TableHandleDragPreviewComponent);

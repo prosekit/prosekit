@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleDropIndicatorComponent from './table-handle-drop-indicator.gen.svelte';
 
-/**
- * Props for the {@link TableHandleDropIndicator} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDropIndicator} Svelte component. */
 export interface TableHandleDropIndicatorProps {
   /**
    * @default null
@@ -20,9 +16,5 @@ export interface TableHandleDropIndicatorProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-drop-indicator` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-drop-indicator` custom element. */
 export const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement>> = TableHandleDropIndicatorComponent as Component<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement>>;

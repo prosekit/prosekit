@@ -3,11 +3,7 @@
 import { registerTooltipRootElement, type TooltipRootElement, type TooltipRootProps as TooltipRootElementProps, type TooltipRootEvents } from '@prosekit/web/tooltip';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link TooltipRoot} React component.
- *
- * @public
- */
+/** Props for the {@link TooltipRoot} React component. */
 export interface TooltipRootProps {
   /**
    * Whether the overlay is initially open.
@@ -74,9 +70,5 @@ function TooltipRootComponent(props: TooltipRootProps, forwardedRef: ForwardedRe
   return createElement('prosekit-tooltip-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-tooltip-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-tooltip-root` custom element. */
 export const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & HTMLAttributes<TooltipRootElement> & RefAttributes<TooltipRootElement>> = /* @__PURE__ */ forwardRef(TooltipRootComponent);

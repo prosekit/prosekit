@@ -3,11 +3,7 @@
 import { registerPopoverTriggerElement, type PopoverTriggerElement, type PopoverTriggerProps as PopoverTriggerElementProps, type PopoverTriggerEvents } from '@prosekit/web/popover';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link PopoverTrigger} React component.
- *
- * @public
- */
+/** Props for the {@link PopoverTrigger} React component. */
 export interface PopoverTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -81,9 +77,5 @@ function PopoverTriggerComponent(props: PopoverTriggerProps, forwardedRef: Forwa
   return createElement('prosekit-popover-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-popover-trigger` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-popover-trigger` custom element. */
 export const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement> & RefAttributes<PopoverTriggerElement>> = /* @__PURE__ */ forwardRef(PopoverTriggerComponent);

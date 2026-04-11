@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import AutocompletePositionerComponent from './autocomplete-positioner.gen.svelte';
 
-/**
- * Props for the {@link AutocompletePositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePositioner} Svelte component. */
 export interface AutocompletePositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
@@ -117,9 +113,5 @@ export interface AutocompletePositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-autocomplete-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-autocomplete-positioner` custom element. */
 export const AutocompletePositioner: Component<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement>> = AutocompletePositionerComponent as Component<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement>>;

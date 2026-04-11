@@ -3,11 +3,7 @@
 import { registerInlinePopoverPositionerElement, type InlinePopoverPositionerProps as InlinePopoverPositionerElementProps } from '@prosekit/web/inline-popover';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link InlinePopoverPositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverPositioner} Vue component. */
 export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
@@ -137,11 +133,7 @@ export interface InlinePopoverPositionerProps {
   altBoundary?: InlinePopoverPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Vue component that renders an `prosekit-inline-popover-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-inline-popover-positioner` custom element. */
 export const InlinePopoverPositioner: DefineSetupFnComponent<InlinePopoverPositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<InlinePopoverPositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerInlinePopoverPositionerElement();

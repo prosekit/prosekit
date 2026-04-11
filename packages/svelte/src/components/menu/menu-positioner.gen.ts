@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuPositionerComponent from './menu-positioner.gen.svelte';
 
-/**
- * Props for the {@link MenuPositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuPositioner} Svelte component. */
 export interface MenuPositionerProps {
   /**
    * The initial placement of the floating element
@@ -142,9 +138,5 @@ export interface MenuPositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-positioner` custom element. */
 export const MenuPositioner: Component<MenuPositionerProps & HTMLAttributes<MenuPositionerElement>> = MenuPositionerComponent as Component<MenuPositionerProps & HTMLAttributes<MenuPositionerElement>>;

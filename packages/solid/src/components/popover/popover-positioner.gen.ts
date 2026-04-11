@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link PopoverPositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link PopoverPositioner} Solid component. */
 export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
@@ -140,11 +136,7 @@ export interface PopoverPositionerProps {
   altBoundary?: PopoverPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Solid component that renders an `prosekit-popover-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-popover-positioner` custom element. */
 export const PopoverPositioner: Component<PopoverPositionerProps & JSX.HTMLAttributes<PopoverPositionerElement>> = (props): any => {
   registerPopoverPositionerElement();
 

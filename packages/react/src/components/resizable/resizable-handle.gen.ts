@@ -3,11 +3,7 @@
 import { registerResizableHandleElement, type ResizableHandleElement, type ResizableHandleProps as ResizableHandleElementProps } from '@prosekit/web/resizable';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link ResizableHandle} React component.
- *
- * @public
- */
+/** Props for the {@link ResizableHandle} React component. */
 export interface ResizableHandleProps {
   /**
    * The position of the handle.
@@ -45,9 +41,5 @@ function ResizableHandleComponent(props: ResizableHandleProps, forwardedRef: For
   return createElement('prosekit-resizable-handle', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-resizable-handle` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-resizable-handle` custom element. */
 export const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & HTMLAttributes<ResizableHandleElement> & RefAttributes<ResizableHandleElement>> = /* @__PURE__ */ forwardRef(ResizableHandleComponent);

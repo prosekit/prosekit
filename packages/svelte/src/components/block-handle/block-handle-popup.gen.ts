@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import BlockHandlePopupComponent from './block-handle-popup.gen.svelte';
 
-/**
- * Props for the {@link BlockHandlePopup} Svelte component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePopup} Svelte component. */
 export interface BlockHandlePopupProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-block-handle-popup` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-block-handle-popup` custom element. */
 export const BlockHandlePopup: Component<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement>> = BlockHandlePopupComponent as Component<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement>>;

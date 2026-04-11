@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link AutocompletePositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePositioner} Solid component. */
 export interface AutocompletePositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
@@ -115,11 +111,7 @@ export interface AutocompletePositionerProps {
   altBoundary?: AutocompletePositionerElementProps['altBoundary'];
 }
 
-/**
- * A Solid component that renders an `prosekit-autocomplete-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-autocomplete-positioner` custom element. */
 export const AutocompletePositioner: Component<AutocompletePositionerProps & JSX.HTMLAttributes<AutocompletePositionerElement>> = (props): any => {
   registerAutocompletePositionerElement();
 

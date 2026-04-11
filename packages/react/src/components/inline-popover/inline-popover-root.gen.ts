@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link InlinePopoverRoot} React component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverRoot} React component. */
 export interface InlinePopoverRootProps {
   /**
    * The ProseKit editor instance.
@@ -94,9 +90,5 @@ function InlinePopoverRootComponent(props: InlinePopoverRootProps, forwardedRef:
   return createElement('prosekit-inline-popover-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-inline-popover-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-inline-popover-root` custom element. */
 export const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement> & RefAttributes<InlinePopoverRootElement>> = /* @__PURE__ */ forwardRef(InlinePopoverRootComponent);

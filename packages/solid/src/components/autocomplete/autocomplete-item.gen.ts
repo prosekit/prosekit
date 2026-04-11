@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link AutocompleteItem} Solid component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteItem} Solid component. */
 export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
@@ -29,11 +25,7 @@ export interface AutocompleteItemProps {
   onSelect?: (event: AutocompleteItemEvents['select']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-autocomplete-item` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-autocomplete-item` custom element. */
 export const AutocompleteItem: Component<AutocompleteItemProps & JSX.HTMLAttributes<AutocompleteItemElement>> = (props): any => {
   registerAutocompleteItemElement();
 

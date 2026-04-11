@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link AutocompleteItem} Preact component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteItem} Preact component. */
 export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
@@ -75,9 +71,5 @@ function AutocompleteItemComponent(props: AutocompleteItemProps, forwardedRef: R
   return createElement('prosekit-autocomplete-item', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-autocomplete-item` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-autocomplete-item` custom element. */
 export const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>> = /* @__PURE__ */ forwardRef(AutocompleteItemComponent);

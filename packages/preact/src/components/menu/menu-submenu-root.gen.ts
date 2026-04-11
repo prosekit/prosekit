@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef } from 'preact/hooks';
 
-/**
- * Props for the {@link MenuSubmenuRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuRoot} Preact component. */
 export interface MenuSubmenuRootProps {}
 
 function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: Ref<MenuSubmenuRootElement>) {
@@ -34,9 +30,5 @@ function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: Ref
   return createElement('prosekit-menu-submenu-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-menu-submenu-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-menu-submenu-root` custom element. */
 export const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement> & RefAttributes<MenuSubmenuRootElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuRootComponent);

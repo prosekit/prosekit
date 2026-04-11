@@ -4,18 +4,10 @@ import { registerMenuSubmenuTriggerElement, type MenuSubmenuTriggerElement } fro
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuSubmenuTrigger} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuTrigger} Solid component. */
 export interface MenuSubmenuTriggerProps {}
 
-/**
- * A Solid component that renders an `prosekit-menu-submenu-trigger` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-submenu-trigger` custom element. */
 export const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps & JSX.HTMLAttributes<MenuSubmenuTriggerElement>> = (props): any => {
   registerMenuSubmenuTriggerElement();
 

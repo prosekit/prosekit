@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link PopoverRoot} Preact component.
- *
- * @public
- */
+/** Props for the {@link PopoverRoot} Preact component. */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -83,9 +79,5 @@ function PopoverRootComponent(props: PopoverRootProps, forwardedRef: Ref<Popover
   return createElement('prosekit-popover-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-popover-root` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-popover-root` custom element. */
 export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);

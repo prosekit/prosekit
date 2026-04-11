@@ -3,11 +3,7 @@
 import { registerMenuSubmenuTriggerElement, type MenuSubmenuTriggerElement } from '@prosekit/web/menu';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'react';
 
-/**
- * Props for the {@link MenuSubmenuTrigger} React component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuTrigger} React component. */
 export interface MenuSubmenuTriggerProps {}
 
 function MenuSubmenuTriggerComponent(props: MenuSubmenuTriggerProps, forwardedRef: ForwardedRef<MenuSubmenuTriggerElement>) {
@@ -32,9 +28,5 @@ function MenuSubmenuTriggerComponent(props: MenuSubmenuTriggerProps, forwardedRe
   return createElement('prosekit-menu-submenu-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-menu-submenu-trigger` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-menu-submenu-trigger` custom element. */
 export const MenuSubmenuTrigger: ForwardRefExoticComponent<MenuSubmenuTriggerProps & HTMLAttributes<MenuSubmenuTriggerElement> & RefAttributes<MenuSubmenuTriggerElement>> = /* @__PURE__ */ forwardRef(MenuSubmenuTriggerComponent);

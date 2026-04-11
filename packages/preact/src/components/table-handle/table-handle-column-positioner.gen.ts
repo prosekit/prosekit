@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleColumnPositioner} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnPositioner} Preact component. */
 export interface TableHandleColumnPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -191,9 +187,5 @@ function TableHandleColumnPositionerComponent(props: TableHandleColumnPositioner
   return createElement('prosekit-table-handle-column-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-column-positioner` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-column-positioner` custom element. */
 export const TableHandleColumnPositioner: ForwardRefExoticComponent<TableHandleColumnPositionerProps & HTMLAttributes<TableHandleColumnPositionerElement> & RefAttributes<TableHandleColumnPositionerElement>> = /* @__PURE__ */ forwardRef(TableHandleColumnPositionerComponent);

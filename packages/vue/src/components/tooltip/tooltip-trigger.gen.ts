@@ -3,11 +3,7 @@
 import { registerTooltipTriggerElement, type TooltipTriggerProps as TooltipTriggerElementProps } from '@prosekit/web/tooltip';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link TooltipTrigger} Vue component.
- *
- * @public
- */
+/** Props for the {@link TooltipTrigger} Vue component. */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -26,11 +22,7 @@ export interface TooltipTriggerProps {
   closeDelay?: TooltipTriggerElementProps['closeDelay'];
 }
 
-/**
- * A Vue component that renders an `prosekit-tooltip-trigger` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-tooltip-trigger` custom element. */
 export const TooltipTrigger: DefineSetupFnComponent<TooltipTriggerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TooltipTriggerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTooltipTriggerElement();

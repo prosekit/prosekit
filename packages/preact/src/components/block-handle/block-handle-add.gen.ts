@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleAdd} Preact component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleAdd} Preact component. */
 export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
@@ -52,9 +48,5 @@ function BlockHandleAddComponent(props: BlockHandleAddProps, forwardedRef: Ref<B
   return createElement('prosekit-block-handle-add', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-block-handle-add` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-block-handle-add` custom element. */
 export const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>> = /* @__PURE__ */ forwardRef(BlockHandleAddComponent);

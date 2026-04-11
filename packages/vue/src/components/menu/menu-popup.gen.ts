@@ -3,11 +3,7 @@
 import { registerMenuPopupElement, type MenuPopupProps as MenuPopupElementProps } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link MenuPopup} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuPopup} Vue component. */
 export interface MenuPopupProps {
   /**
    * By default, the MenuPopup element will listen for keydown events.
@@ -18,11 +14,7 @@ export interface MenuPopupProps {
   eventTarget?: MenuPopupElementProps['eventTarget'];
 }
 
-/**
- * A Vue component that renders an `prosekit-menu-popup` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-popup` custom element. */
 export const MenuPopup: DefineSetupFnComponent<MenuPopupProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuPopupProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuPopupElement();

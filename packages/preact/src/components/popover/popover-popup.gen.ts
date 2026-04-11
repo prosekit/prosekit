@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef } from 'preact/hooks';
 
-/**
- * Props for the {@link PopoverPopup} Preact component.
- *
- * @public
- */
+/** Props for the {@link PopoverPopup} Preact component. */
 export interface PopoverPopupProps {}
 
 function PopoverPopupComponent(props: PopoverPopupProps, forwardedRef: Ref<PopoverPopupElement>) {
@@ -34,9 +30,5 @@ function PopoverPopupComponent(props: PopoverPopupProps, forwardedRef: Ref<Popov
   return createElement('prosekit-popover-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-popover-popup` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-popover-popup` custom element. */
 export const PopoverPopup: ForwardRefExoticComponent<PopoverPopupProps & HTMLAttributes<PopoverPopupElement> & RefAttributes<PopoverPopupElement>> = /* @__PURE__ */ forwardRef(PopoverPopupComponent);

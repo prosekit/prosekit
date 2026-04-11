@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TooltipPositionerComponent from './tooltip-positioner.gen.svelte';
 
-/**
- * Props for the {@link TooltipPositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TooltipPositioner} Svelte component. */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -142,9 +138,5 @@ export interface TooltipPositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-tooltip-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-tooltip-positioner` custom element. */
 export const TooltipPositioner: Component<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement>> = TooltipPositionerComponent as Component<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement>>;

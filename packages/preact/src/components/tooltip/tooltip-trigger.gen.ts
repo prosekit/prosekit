@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link TooltipTrigger} Preact component.
- *
- * @public
- */
+/** Props for the {@link TooltipTrigger} Preact component. */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -56,9 +52,5 @@ function TooltipTriggerComponent(props: TooltipTriggerProps, forwardedRef: Ref<T
   return createElement('prosekit-tooltip-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-tooltip-trigger` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-tooltip-trigger` custom element. */
 export const TooltipTrigger: ForwardRefExoticComponent<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement> & RefAttributes<TooltipTriggerElement>> = /* @__PURE__ */ forwardRef(TooltipTriggerComponent);

@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link AutocompletePopup} Preact component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePopup} Preact component. */
 export interface AutocompletePopupProps {
   /**
    * Emitted when the selected value changes. Only available when multiple is
@@ -68,9 +64,5 @@ function AutocompletePopupComponent(props: AutocompletePopupProps, forwardedRef:
   return createElement('prosekit-autocomplete-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-autocomplete-popup` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-autocomplete-popup` custom element. */
 export const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>> = /* @__PURE__ */ forwardRef(AutocompletePopupComponent);

@@ -3,11 +3,7 @@
 import { registerTooltipPositionerElement, type TooltipPositionerElement, type TooltipPositionerProps as TooltipPositionerElementProps } from '@prosekit/web/tooltip';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link TooltipPositioner} React component.
- *
- * @public
- */
+/** Props for the {@link TooltipPositioner} React component. */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -166,9 +162,5 @@ function TooltipPositionerComponent(props: TooltipPositionerProps, forwardedRef:
   return createElement('prosekit-tooltip-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-tooltip-positioner` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-tooltip-positioner` custom element. */
 export const TooltipPositioner: ForwardRefExoticComponent<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement> & RefAttributes<TooltipPositionerElement>> = /* @__PURE__ */ forwardRef(TooltipPositionerComponent);

@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link MenuPositioner} Preact component.
- *
- * @public
- */
+/** Props for the {@link MenuPositioner} Preact component. */
 export interface MenuPositionerProps {
   /**
    * The initial placement of the floating element
@@ -168,9 +164,5 @@ function MenuPositionerComponent(props: MenuPositionerProps, forwardedRef: Ref<M
   return createElement('prosekit-menu-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-menu-positioner` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-menu-positioner` custom element. */
 export const MenuPositioner: ForwardRefExoticComponent<MenuPositionerProps & HTMLAttributes<MenuPositionerElement> & RefAttributes<MenuPositionerElement>> = /* @__PURE__ */ forwardRef(MenuPositionerComponent);

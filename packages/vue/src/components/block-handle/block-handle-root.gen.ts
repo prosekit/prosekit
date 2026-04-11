@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleRoot} Vue component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleRoot} Vue component. */
 export interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -22,11 +18,7 @@ export interface BlockHandleRootProps {
   onStateChange?: (event: BlockHandleRootEvents['stateChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-block-handle-root` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-block-handle-root` custom element. */
 export const BlockHandleRoot: DefineSetupFnComponent<BlockHandleRootProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<BlockHandleRootProps & HTMLAttributes>(
   (props, { slots }) => {
     registerBlockHandleRootElement();

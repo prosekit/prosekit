@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link InlinePopoverPositioner} Preact component.
- *
- * @public
- */
+/** Props for the {@link InlinePopoverPositioner} Preact component. */
 export interface InlinePopoverPositionerProps {
   /**
    * The initial placement of the floating element
@@ -167,9 +163,5 @@ function InlinePopoverPositionerComponent(props: InlinePopoverPositionerProps, f
   return createElement('prosekit-inline-popover-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-inline-popover-positioner` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-inline-popover-positioner` custom element. */
 export const InlinePopoverPositioner: ForwardRefExoticComponent<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement> & RefAttributes<InlinePopoverPositionerElement>> = /* @__PURE__ */ forwardRef(InlinePopoverPositionerComponent);

@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link MenuPopup} Preact component.
- *
- * @public
- */
+/** Props for the {@link MenuPopup} Preact component. */
 export interface MenuPopupProps {
   /**
    * By default, the MenuPopup element will listen for keydown events.
@@ -48,9 +44,5 @@ function MenuPopupComponent(props: MenuPopupProps, forwardedRef: Ref<MenuPopupEl
   return createElement('prosekit-menu-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-menu-popup` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-menu-popup` custom element. */
 export const MenuPopup: ForwardRefExoticComponent<MenuPopupProps & HTMLAttributes<MenuPopupElement> & RefAttributes<MenuPopupElement>> = /* @__PURE__ */ forwardRef(MenuPopupComponent);

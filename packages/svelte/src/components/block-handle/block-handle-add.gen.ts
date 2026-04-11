@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import BlockHandleAddComponent from './block-handle-add.gen.svelte';
 
-/**
- * Props for the {@link BlockHandleAdd} Svelte component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleAdd} Svelte component. */
 export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
@@ -22,9 +18,5 @@ export interface BlockHandleAddProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-block-handle-add` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-block-handle-add` custom element. */
 export const BlockHandleAdd: Component<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement>> = BlockHandleAddComponent as Component<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement>>;

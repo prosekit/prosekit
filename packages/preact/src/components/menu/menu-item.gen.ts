@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link MenuItem} Preact component.
- *
- * @public
- */
+/** Props for the {@link MenuItem} Preact component. */
 export interface MenuItemProps {
   /**
    * The unique value for this menu item.
@@ -79,9 +75,5 @@ function MenuItemComponent(props: MenuItemProps, forwardedRef: Ref<MenuItemEleme
   return createElement('prosekit-menu-item', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-menu-item` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-menu-item` custom element. */
 export const MenuItem: ForwardRefExoticComponent<MenuItemProps & Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> & RefAttributes<MenuItemElement>> = /* @__PURE__ */ forwardRef(MenuItemComponent);

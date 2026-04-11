@@ -3,11 +3,7 @@
 import { registerPopoverPositionerElement, type PopoverPositionerElement, type PopoverPositionerProps as PopoverPositionerElementProps } from '@prosekit/web/popover';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link PopoverPositioner} React component.
- *
- * @public
- */
+/** Props for the {@link PopoverPositioner} React component. */
 export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
@@ -166,9 +162,5 @@ function PopoverPositionerComponent(props: PopoverPositionerProps, forwardedRef:
   return createElement('prosekit-popover-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-popover-positioner` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-popover-positioner` custom element. */
 export const PopoverPositioner: ForwardRefExoticComponent<PopoverPositionerProps & HTMLAttributes<PopoverPositionerElement> & RefAttributes<PopoverPositionerElement>> = /* @__PURE__ */ forwardRef(PopoverPositionerComponent);

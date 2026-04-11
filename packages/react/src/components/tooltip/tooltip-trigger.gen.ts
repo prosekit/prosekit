@@ -3,11 +3,7 @@
 import { registerTooltipTriggerElement, type TooltipTriggerElement, type TooltipTriggerProps as TooltipTriggerElementProps } from '@prosekit/web/tooltip';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link TooltipTrigger} React component.
- *
- * @public
- */
+/** Props for the {@link TooltipTrigger} React component. */
 export interface TooltipTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -54,9 +50,5 @@ function TooltipTriggerComponent(props: TooltipTriggerProps, forwardedRef: Forwa
   return createElement('prosekit-tooltip-trigger', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-tooltip-trigger` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-tooltip-trigger` custom element. */
 export const TooltipTrigger: ForwardRefExoticComponent<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement> & RefAttributes<TooltipTriggerElement>> = /* @__PURE__ */ forwardRef(TooltipTriggerComponent);

@@ -4,18 +4,10 @@ import { registerMenuSubmenuRootElement, type MenuSubmenuRootElement } from '@pr
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuSubmenuRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuRoot} Solid component. */
 export interface MenuSubmenuRootProps {}
 
-/**
- * A Solid component that renders an `prosekit-menu-submenu-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-submenu-root` custom element. */
 export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttributes<MenuSubmenuRootElement>> = (props): any => {
   registerMenuSubmenuRootElement();
 

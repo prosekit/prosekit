@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link TooltipPositioner} Solid component.
- *
- * @public
- */
+/** Props for the {@link TooltipPositioner} Solid component. */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -140,11 +136,7 @@ export interface TooltipPositionerProps {
   altBoundary?: TooltipPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Solid component that renders an `prosekit-tooltip-positioner` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-tooltip-positioner` custom element. */
 export const TooltipPositioner: Component<TooltipPositionerProps & JSX.HTMLAttributes<TooltipPositionerElement>> = (props): any => {
   registerTooltipPositionerElement();
 

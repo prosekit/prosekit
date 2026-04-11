@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import AutocompleteRootComponent from './autocomplete-root.gen.svelte';
 
-/**
- * Props for the {@link AutocompleteRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteRoot} Svelte component. */
 export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
@@ -49,9 +45,5 @@ export interface AutocompleteRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-autocomplete-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-autocomplete-root` custom element. */
 export const AutocompleteRoot: Component<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement>> = AutocompleteRootComponent as Component<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement>>;

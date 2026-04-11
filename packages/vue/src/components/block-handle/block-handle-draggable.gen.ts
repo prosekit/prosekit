@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleDraggable} Vue component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleDraggable} Vue component. */
 export interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
@@ -20,11 +16,7 @@ export interface BlockHandleDraggableProps {
   editor?: BlockHandleDraggableElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-block-handle-draggable` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-block-handle-draggable` custom element. */
 export const BlockHandleDraggable: DefineSetupFnComponent<BlockHandleDraggableProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<BlockHandleDraggableProps & HTMLAttributes>(
   (props, { slots }) => {
     registerBlockHandleDraggableElement();

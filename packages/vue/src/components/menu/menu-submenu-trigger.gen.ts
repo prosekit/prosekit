@@ -3,18 +3,10 @@
 import { registerMenuSubmenuTriggerElement } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes } from 'vue';
 
-/**
- * Props for the {@link MenuSubmenuTrigger} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuTrigger} Vue component. */
 export interface MenuSubmenuTriggerProps {}
 
-/**
- * A Vue component that renders an `prosekit-menu-submenu-trigger` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-submenu-trigger` custom element. */
 export const MenuSubmenuTrigger: DefineSetupFnComponent<MenuSubmenuTriggerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuSubmenuTriggerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuSubmenuTriggerElement();

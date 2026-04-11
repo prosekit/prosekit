@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link AutocompleteRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteRoot} Solid component. */
 export interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
@@ -49,11 +45,7 @@ export interface AutocompleteRootProps {
   onValuesChange?: (event: AutocompleteRootEvents['valuesChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-autocomplete-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-autocomplete-root` custom element. */
 export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttributes<AutocompleteRootElement>> = (props): any => {
   registerAutocompleteRootElement();
 

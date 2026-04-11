@@ -3,11 +3,7 @@
 import { registerTableHandleRowPopupElement, type TableHandleRowPopupElement } from '@prosekit/web/table-handle';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'react';
 
-/**
- * Props for the {@link TableHandleRowPopup} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowPopup} React component. */
 export interface TableHandleRowPopupProps {}
 
 function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwardedRef: ForwardedRef<TableHandleRowPopupElement>) {
@@ -32,9 +28,5 @@ function TableHandleRowPopupComponent(props: TableHandleRowPopupProps, forwarded
   return createElement('prosekit-table-handle-row-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-row-popup` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-row-popup` custom element. */
 export const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement> & RefAttributes<TableHandleRowPopupElement>> = /* @__PURE__ */ forwardRef(TableHandleRowPopupComponent);

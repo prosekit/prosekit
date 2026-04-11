@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import ResizableHandleComponent from './resizable-handle.gen.svelte';
 
-/**
- * Props for the {@link ResizableHandle} Svelte component.
- *
- * @public
- */
+/** Props for the {@link ResizableHandle} Svelte component. */
 export interface ResizableHandleProps {
   /**
    * The position of the handle.
@@ -21,9 +17,5 @@ export interface ResizableHandleProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-resizable-handle` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-resizable-handle` custom element. */
 export const ResizableHandle: Component<ResizableHandleProps & HTMLAttributes<ResizableHandleElement>> = ResizableHandleComponent as Component<ResizableHandleProps & HTMLAttributes<ResizableHandleElement>>;

@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleRoot} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRoot} React component. */
 export interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -50,9 +46,5 @@ function TableHandleRootComponent(props: TableHandleRootProps, forwardedRef: For
   return createElement('prosekit-table-handle-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-root` custom element. */
 export const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & HTMLAttributes<TableHandleRootElement> & RefAttributes<TableHandleRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRootComponent);

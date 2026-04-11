@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import PopoverPopupComponent from './popover-popup.gen.svelte';
 
-/**
- * Props for the {@link PopoverPopup} Svelte component.
- *
- * @public
- */
+/** Props for the {@link PopoverPopup} Svelte component. */
 export interface PopoverPopupProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-popover-popup` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-popover-popup` custom element. */
 export const PopoverPopup: Component<PopoverPopupProps & HTMLAttributes<PopoverPopupElement>> = PopoverPopupComponent as Component<PopoverPopupProps & HTMLAttributes<PopoverPopupElement>>;

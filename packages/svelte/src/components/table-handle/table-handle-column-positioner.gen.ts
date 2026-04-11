@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TableHandleColumnPositionerComponent from './table-handle-column-positioner.gen.svelte';
 
-/**
- * Props for the {@link TableHandleColumnPositioner} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnPositioner} Svelte component. */
 export interface TableHandleColumnPositionerProps {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -141,9 +137,5 @@ export interface TableHandleColumnPositionerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-table-handle-column-positioner` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-table-handle-column-positioner` custom element. */
 export const TableHandleColumnPositioner: Component<TableHandleColumnPositionerProps & HTMLAttributes<TableHandleColumnPositionerElement>> = TableHandleColumnPositionerComponent as Component<TableHandleColumnPositionerProps & HTMLAttributes<TableHandleColumnPositionerElement>>;

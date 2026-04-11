@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link DropIndicator} Preact component.
- *
- * @public
- */
+/** Props for the {@link DropIndicator} Preact component. */
 export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
@@ -58,9 +54,5 @@ function DropIndicatorComponent(props: DropIndicatorProps, forwardedRef: Ref<Dro
   return createElement('prosekit-drop-indicator', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-drop-indicator` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-drop-indicator` custom element. */
 export const DropIndicator: ForwardRefExoticComponent<DropIndicatorProps & HTMLAttributes<DropIndicatorElement> & RefAttributes<DropIndicatorElement>> = /* @__PURE__ */ forwardRef(DropIndicatorComponent);

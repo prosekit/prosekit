@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link MenuPopup} Solid component.
- *
- * @public
- */
+/** Props for the {@link MenuPopup} Solid component. */
 export interface MenuPopupProps {
   /**
    * By default, the MenuPopup element will listen for keydown events.
@@ -20,11 +16,7 @@ export interface MenuPopupProps {
   eventTarget?: MenuPopupElementProps['eventTarget'];
 }
 
-/**
- * A Solid component that renders an `prosekit-menu-popup` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-menu-popup` custom element. */
 export const MenuPopup: Component<MenuPopupProps & JSX.HTMLAttributes<MenuPopupElement>> = (props): any => {
   registerMenuPopupElement();
 

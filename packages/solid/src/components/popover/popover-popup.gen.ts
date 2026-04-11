@@ -4,18 +4,10 @@ import { registerPopoverPopupElement, type PopoverPopupElement } from '@prosekit
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link PopoverPopup} Solid component.
- *
- * @public
- */
+/** Props for the {@link PopoverPopup} Solid component. */
 export interface PopoverPopupProps {}
 
-/**
- * A Solid component that renders an `prosekit-popover-popup` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-popover-popup` custom element. */
 export const PopoverPopup: Component<PopoverPopupProps & JSX.HTMLAttributes<PopoverPopupElement>> = (props): any => {
   registerPopoverPopupElement();
 

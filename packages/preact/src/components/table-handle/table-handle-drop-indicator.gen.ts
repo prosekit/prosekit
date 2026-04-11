@@ -7,11 +7,7 @@ import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDropIndicator} Preact component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDropIndicator} Preact component. */
 export interface TableHandleDropIndicatorProps {
   /**
    * @default null
@@ -50,9 +46,5 @@ function TableHandleDropIndicatorComponent(props: TableHandleDropIndicatorProps,
   return createElement('prosekit-table-handle-drop-indicator', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-table-handle-drop-indicator` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-table-handle-drop-indicator` custom element. */
 export const TableHandleDropIndicator: ForwardRefExoticComponent<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement> & RefAttributes<TableHandleDropIndicatorElement>> = /* @__PURE__ */ forwardRef(TableHandleDropIndicatorComponent);

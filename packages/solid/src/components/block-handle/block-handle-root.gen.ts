@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleRoot} Solid component. */
 export interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -24,11 +20,7 @@ export interface BlockHandleRootProps {
   onStateChange?: (event: BlockHandleRootEvents['stateChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-block-handle-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-block-handle-root` custom element. */
 export const BlockHandleRoot: Component<BlockHandleRootProps & JSX.HTMLAttributes<BlockHandleRootElement>> = (props): any => {
   registerBlockHandleRootElement();
 

@@ -3,11 +3,7 @@
 import { registerTooltipPositionerElement, type TooltipPositionerProps as TooltipPositionerElementProps } from '@prosekit/web/tooltip';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link TooltipPositioner} Vue component.
- *
- * @public
- */
+/** Props for the {@link TooltipPositioner} Vue component. */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -138,11 +134,7 @@ export interface TooltipPositionerProps {
   altBoundary?: TooltipPositionerElementProps['altBoundary'];
 }
 
-/**
- * A Vue component that renders an `prosekit-tooltip-positioner` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-tooltip-positioner` custom element. */
 export const TooltipPositioner: DefineSetupFnComponent<TooltipPositionerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TooltipPositionerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTooltipPositionerElement();

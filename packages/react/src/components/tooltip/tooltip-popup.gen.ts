@@ -3,11 +3,7 @@
 import { registerTooltipPopupElement, type TooltipPopupElement } from '@prosekit/web/tooltip';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'react';
 
-/**
- * Props for the {@link TooltipPopup} React component.
- *
- * @public
- */
+/** Props for the {@link TooltipPopup} React component. */
 export interface TooltipPopupProps {}
 
 function TooltipPopupComponent(props: TooltipPopupProps, forwardedRef: ForwardedRef<TooltipPopupElement>) {
@@ -32,9 +28,5 @@ function TooltipPopupComponent(props: TooltipPopupProps, forwardedRef: Forwarded
   return createElement('prosekit-tooltip-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-tooltip-popup` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-tooltip-popup` custom element. */
 export const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & HTMLAttributes<TooltipPopupElement> & RefAttributes<TooltipPopupElement>> = /* @__PURE__ */ forwardRef(TooltipPopupComponent);

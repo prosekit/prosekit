@@ -3,11 +3,7 @@
 import { registerMenuTriggerElement, type MenuTriggerEvents, type MenuTriggerProps as MenuTriggerElementProps } from '@prosekit/web/menu';
 import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, shallowRef, computed, watchEffect } from 'vue';
 
-/**
- * Props for the {@link MenuTrigger} Vue component.
- *
- * @public
- */
+/** Props for the {@link MenuTrigger} Vue component. */
 export interface MenuTriggerProps {
   /**
    * Whether the component should ignore user interaction.
@@ -19,11 +15,7 @@ export interface MenuTriggerProps {
   onOpenChange?: (event: MenuTriggerEvents['openChange']) => void;
 }
 
-/**
- * A Vue component that renders an `prosekit-menu-trigger` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-menu-trigger` custom element. */
 export const MenuTrigger: DefineSetupFnComponent<MenuTriggerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<MenuTriggerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerMenuTriggerElement();

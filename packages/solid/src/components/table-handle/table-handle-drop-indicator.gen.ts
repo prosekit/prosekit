@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleDropIndicator} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleDropIndicator} Solid component. */
 export interface TableHandleDropIndicatorProps {
   /**
    * @default null
@@ -20,11 +16,7 @@ export interface TableHandleDropIndicatorProps {
   editor?: TableHandleDropIndicatorElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-table-handle-drop-indicator` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-drop-indicator` custom element. */
 export const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps & JSX.HTMLAttributes<TableHandleDropIndicatorElement>> = (props): any => {
   registerTableHandleDropIndicatorElement();
 

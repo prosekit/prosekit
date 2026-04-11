@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import DropIndicatorComponent from './drop-indicator.gen.svelte';
 
-/**
- * Props for the {@link DropIndicator} Svelte component.
- *
- * @public
- */
+/** Props for the {@link DropIndicator} Svelte component. */
 export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
@@ -28,9 +24,5 @@ export interface DropIndicatorProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-drop-indicator` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-drop-indicator` custom element. */
 export const DropIndicator: Component<DropIndicatorProps & HTMLAttributes<DropIndicatorElement>> = DropIndicatorComponent as Component<DropIndicatorProps & HTMLAttributes<DropIndicatorElement>>;

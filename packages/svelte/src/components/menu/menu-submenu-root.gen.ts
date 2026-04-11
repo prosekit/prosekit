@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuSubmenuRootComponent from './menu-submenu-root.gen.svelte';
 
-/**
- * Props for the {@link MenuSubmenuRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuRoot} Svelte component. */
 export interface MenuSubmenuRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-submenu-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-submenu-root` custom element. */
 export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement>> = MenuSubmenuRootComponent as Component<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement>>;

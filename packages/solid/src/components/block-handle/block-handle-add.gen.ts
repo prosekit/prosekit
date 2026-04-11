@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link BlockHandleAdd} Solid component.
- *
- * @public
- */
+/** Props for the {@link BlockHandleAdd} Solid component. */
 export interface BlockHandleAddProps {
   /**
    * The ProseKit editor instance.
@@ -22,11 +18,7 @@ export interface BlockHandleAddProps {
   editor?: BlockHandleAddElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-block-handle-add` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-block-handle-add` custom element. */
 export const BlockHandleAdd: Component<BlockHandleAddProps & JSX.HTMLAttributes<BlockHandleAddElement>> = (props): any => {
   registerBlockHandleAddElement();
 

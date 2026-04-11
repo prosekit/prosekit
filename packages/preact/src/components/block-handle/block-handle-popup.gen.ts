@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef } from 'preact/hooks';
 
-/**
- * Props for the {@link BlockHandlePopup} Preact component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePopup} Preact component. */
 export interface BlockHandlePopupProps {}
 
 function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: Ref<BlockHandlePopupElement>) {
@@ -34,9 +30,5 @@ function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: R
   return createElement('prosekit-block-handle-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-block-handle-popup` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-block-handle-popup` custom element. */
 export const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement> & RefAttributes<BlockHandlePopupElement>> = /* @__PURE__ */ forwardRef(BlockHandlePopupComponent);

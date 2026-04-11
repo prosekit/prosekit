@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import AutocompleteItemComponent from './autocomplete-item.gen.svelte';
 
-/**
- * Props for the {@link AutocompleteItem} Svelte component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteItem} Svelte component. */
 export interface AutocompleteItemProps {
   /**
    * The value of the item, which will be matched against the query.
@@ -31,9 +27,5 @@ export interface AutocompleteItemProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-autocomplete-item` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-autocomplete-item` custom element. */
 export const AutocompleteItem: Component<AutocompleteItemProps & HTMLAttributes<AutocompleteItemElement>> = AutocompleteItemComponent as Component<AutocompleteItemProps & HTMLAttributes<AutocompleteItemElement>>;

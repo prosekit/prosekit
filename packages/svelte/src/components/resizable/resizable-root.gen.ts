@@ -6,11 +6,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import ResizableRootComponent from './resizable-root.gen.svelte';
 
-/**
- * Props for the {@link ResizableRoot} Svelte component.
- *
- * @public
- */
+/** Props for the {@link ResizableRoot} Svelte component. */
 export interface ResizableRootProps {
   /**
    * The width of the resizable element.
@@ -37,9 +33,5 @@ export interface ResizableRootProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-resizable-root` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-resizable-root` custom element. */
 export const ResizableRoot: Component<ResizableRootProps & HTMLAttributes<ResizableRootElement>> = ResizableRootComponent as Component<ResizableRootProps & HTMLAttributes<ResizableRootElement>>;

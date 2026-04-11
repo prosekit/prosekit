@@ -3,11 +3,7 @@
 import { registerTableHandleRowMenuRootElement, type TableHandleRowMenuRootElement, type TableHandleRowMenuRootProps as TableHandleRowMenuRootElementProps } from '@prosekit/web/table-handle';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link TableHandleRowMenuRoot} React component.
- *
- * @public
- */
+/** Props for the {@link TableHandleRowMenuRoot} React component. */
 export interface TableHandleRowMenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -54,9 +50,5 @@ function TableHandleRowMenuRootComponent(props: TableHandleRowMenuRootProps, for
   return createElement('prosekit-table-handle-row-menu-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-table-handle-row-menu-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-table-handle-row-menu-root` custom element. */
 export const TableHandleRowMenuRoot: ForwardRefExoticComponent<TableHandleRowMenuRootProps & HTMLAttributes<TableHandleRowMenuRootElement> & RefAttributes<TableHandleRowMenuRootElement>> = /* @__PURE__ */ forwardRef(TableHandleRowMenuRootComponent);

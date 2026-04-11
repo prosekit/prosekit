@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import TooltipPopupComponent from './tooltip-popup.gen.svelte';
 
-/**
- * Props for the {@link TooltipPopup} Svelte component.
- *
- * @public
- */
+/** Props for the {@link TooltipPopup} Svelte component. */
 export interface TooltipPopupProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-tooltip-popup` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-tooltip-popup` custom element. */
 export const TooltipPopup: Component<TooltipPopupProps & HTMLAttributes<TooltipPopupElement>> = TooltipPopupComponent as Component<TooltipPopupProps & HTMLAttributes<TooltipPopupElement>>;

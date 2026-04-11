@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link PopoverPositioner} Preact component.
- *
- * @public
- */
+/** Props for the {@link PopoverPositioner} Preact component. */
 export interface PopoverPositionerProps {
   /**
    * The strategy to use for positioning
@@ -168,9 +164,5 @@ function PopoverPositionerComponent(props: PopoverPositionerProps, forwardedRef:
   return createElement('prosekit-popover-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-popover-positioner` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-popover-positioner` custom element. */
 export const PopoverPositioner: ForwardRefExoticComponent<PopoverPositionerProps & HTMLAttributes<PopoverPositionerElement> & RefAttributes<PopoverPositionerElement>> = /* @__PURE__ */ forwardRef(PopoverPositionerComponent);

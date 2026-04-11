@@ -4,18 +4,10 @@ import { registerBlockHandlePopupElement, type BlockHandlePopupElement } from '@
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link BlockHandlePopup} Solid component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePopup} Solid component. */
 export interface BlockHandlePopupProps {}
 
-/**
- * A Solid component that renders an `prosekit-block-handle-popup` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-block-handle-popup` custom element. */
 export const BlockHandlePopup: Component<BlockHandlePopupProps & JSX.HTMLAttributes<BlockHandlePopupElement>> = (props): any => {
   registerBlockHandlePopupElement();
 

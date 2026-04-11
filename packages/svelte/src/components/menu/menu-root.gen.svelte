@@ -4,12 +4,14 @@
   import type { MenuRootElement } from '@prosekit/web/menu'
   registerMenuRootElement()
 
-  let { onOpenChange: e0, children = undefined, ...restProps } = $props()
+  let { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, children = undefined, ...restProps } = $props()
   let element: MenuRootElement | undefined
   const handlers: EventListener[] = []
 
   $effect(() => {
     if (!element) return
+
+    Object.assign(element, { defaultOpen: p0, disabled: p1, open: p2 })
 
     handlers.length = 0
     handlers.push(e0)

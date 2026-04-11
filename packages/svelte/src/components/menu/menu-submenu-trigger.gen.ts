@@ -6,18 +6,10 @@ import type { HTMLAttributes } from 'svelte/elements';
 
 import MenuSubmenuTriggerComponent from './menu-submenu-trigger.gen.svelte';
 
-/**
- * Props for the {@link MenuSubmenuTrigger} Svelte component.
- *
- * @public
- */
+/** Props for the {@link MenuSubmenuTrigger} Svelte component. */
 export interface MenuSubmenuTriggerProps {
   children?: Snippet;
 }
 
-/**
- * A Svelte component that renders an `prosekit-menu-submenu-trigger` custom element.
- *
- * @public
- */
+/** A Svelte component that renders an `prosekit-menu-submenu-trigger` custom element. */
 export const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps & HTMLAttributes<MenuSubmenuTriggerElement>> = MenuSubmenuTriggerComponent as Component<MenuSubmenuTriggerProps & HTMLAttributes<MenuSubmenuTriggerElement>>;

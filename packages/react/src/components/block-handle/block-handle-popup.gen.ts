@@ -3,11 +3,7 @@
 import { registerBlockHandlePopupElement, type BlockHandlePopupElement } from '@prosekit/web/block-handle';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes } from 'react';
 
-/**
- * Props for the {@link BlockHandlePopup} React component.
- *
- * @public
- */
+/** Props for the {@link BlockHandlePopup} React component. */
 export interface BlockHandlePopupProps {}
 
 function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: ForwardedRef<BlockHandlePopupElement>) {
@@ -32,9 +28,5 @@ function BlockHandlePopupComponent(props: BlockHandlePopupProps, forwardedRef: F
   return createElement('prosekit-block-handle-popup', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-block-handle-popup` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-block-handle-popup` custom element. */
 export const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement> & RefAttributes<BlockHandlePopupElement>> = /* @__PURE__ */ forwardRef(BlockHandlePopupComponent);

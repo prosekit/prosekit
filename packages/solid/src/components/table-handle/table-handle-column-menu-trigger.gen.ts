@@ -7,11 +7,7 @@ import h from 'solid-js/h';
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleColumnMenuTrigger} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnMenuTrigger} Solid component. */
 export interface TableHandleColumnMenuTriggerProps {
   /**
    * @default null
@@ -20,11 +16,7 @@ export interface TableHandleColumnMenuTriggerProps {
   editor?: TableHandleColumnMenuTriggerElementProps['editor'];
 }
 
-/**
- * A Solid component that renders an `prosekit-table-handle-column-menu-trigger` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-column-menu-trigger` custom element. */
 export const TableHandleColumnMenuTrigger: Component<TableHandleColumnMenuTriggerProps & JSX.HTMLAttributes<TableHandleColumnMenuTriggerElement>> = (props): any => {
   registerTableHandleColumnMenuTriggerElement();
 

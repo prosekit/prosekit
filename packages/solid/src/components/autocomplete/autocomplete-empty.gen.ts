@@ -4,18 +4,10 @@ import { registerAutocompleteEmptyElement, type AutocompleteEmptyElement } from 
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link AutocompleteEmpty} Solid component.
- *
- * @public
- */
+/** Props for the {@link AutocompleteEmpty} Solid component. */
 export interface AutocompleteEmptyProps {}
 
-/**
- * A Solid component that renders an `prosekit-autocomplete-empty` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-autocomplete-empty` custom element. */
 export const AutocompleteEmpty: Component<AutocompleteEmptyProps & JSX.HTMLAttributes<AutocompleteEmptyElement>> = (props): any => {
   registerAutocompleteEmptyElement();
 

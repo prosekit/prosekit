@@ -5,11 +5,7 @@ import { defineComponent, h, type DefineSetupFnComponent, type HTMLAttributes, s
 
 import { useEditorContext } from '../../injection/editor-context.ts';
 
-/**
- * Props for the {@link TableHandleColumnMenuTrigger} Vue component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnMenuTrigger} Vue component. */
 export interface TableHandleColumnMenuTriggerProps {
   /**
    * @default null
@@ -18,11 +14,7 @@ export interface TableHandleColumnMenuTriggerProps {
   editor?: TableHandleColumnMenuTriggerElementProps['editor'];
 }
 
-/**
- * A Vue component that renders an `prosekit-table-handle-column-menu-trigger` custom element.
- *
- * @public
- */
+/** A Vue component that renders an `prosekit-table-handle-column-menu-trigger` custom element. */
 export const TableHandleColumnMenuTrigger: DefineSetupFnComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes> = /* @__PURE__ */ defineComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes>(
   (props, { slots }) => {
     registerTableHandleColumnMenuTriggerElement();

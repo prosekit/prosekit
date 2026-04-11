@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link AutocompletePopup} Solid component.
- *
- * @public
- */
+/** Props for the {@link AutocompletePopup} Solid component. */
 export interface AutocompletePopupProps {
   /**
    * Emitted when the selected value changes. Only available when multiple is
@@ -23,11 +19,7 @@ export interface AutocompletePopupProps {
   onValuesChange?: (event: AutocompletePopupEvents['valuesChange']) => void;
 }
 
-/**
- * A Solid component that renders an `prosekit-autocomplete-popup` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-autocomplete-popup` custom element. */
 export const AutocompletePopup: Component<AutocompletePopupProps & JSX.HTMLAttributes<AutocompletePopupElement>> = (props): any => {
   registerAutocompletePopupElement();
 

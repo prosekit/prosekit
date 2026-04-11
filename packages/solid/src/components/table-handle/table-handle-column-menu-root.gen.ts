@@ -5,11 +5,7 @@ import { createEffect, createSignal, mergeProps, splitProps } from 'solid-js';
 import type { Component, JSX } from 'solid-js';
 import h from 'solid-js/h';
 
-/**
- * Props for the {@link TableHandleColumnMenuRoot} Solid component.
- *
- * @public
- */
+/** Props for the {@link TableHandleColumnMenuRoot} Solid component. */
 export interface TableHandleColumnMenuRootProps {
   /**
    * Whether the overlay is initially open.
@@ -28,11 +24,7 @@ export interface TableHandleColumnMenuRootProps {
   disabled?: TableHandleColumnMenuRootElementProps['disabled'];
 }
 
-/**
- * A Solid component that renders an `prosekit-table-handle-column-menu-root` custom element.
- *
- * @public
- */
+/** A Solid component that renders an `prosekit-table-handle-column-menu-root` custom element. */
 export const TableHandleColumnMenuRoot: Component<TableHandleColumnMenuRootProps & JSX.HTMLAttributes<TableHandleColumnMenuRootElement>> = (props): any => {
   registerTableHandleColumnMenuRootElement();
 

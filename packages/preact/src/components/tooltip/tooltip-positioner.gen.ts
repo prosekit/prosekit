@@ -5,11 +5,7 @@ import { createElement, type HTMLAttributes, type Ref } from 'preact';
 import { forwardRef, type ForwardRefExoticComponent, type RefAttributes } from 'preact/compat';
 import { useCallback, useRef, useLayoutEffect } from 'preact/hooks';
 
-/**
- * Props for the {@link TooltipPositioner} Preact component.
- *
- * @public
- */
+/** Props for the {@link TooltipPositioner} Preact component. */
 export interface TooltipPositionerProps {
   /**
    * The strategy to use for positioning
@@ -168,9 +164,5 @@ function TooltipPositionerComponent(props: TooltipPositionerProps, forwardedRef:
   return createElement('prosekit-tooltip-positioner', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A Preact component that renders an `prosekit-tooltip-positioner` custom element.
- *
- * @public
- */
+/** A Preact component that renders an `prosekit-tooltip-positioner` custom element. */
 export const TooltipPositioner: ForwardRefExoticComponent<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement> & RefAttributes<TooltipPositionerElement>> = /* @__PURE__ */ forwardRef(TooltipPositionerComponent);

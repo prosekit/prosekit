@@ -3,11 +3,7 @@
 import { registerPopoverRootElement, type PopoverRootElement, type PopoverRootProps as PopoverRootElementProps, type PopoverRootEvents } from '@prosekit/web/popover';
 import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type ForwardRefExoticComponent, type HTMLAttributes, type RefAttributes, useLayoutEffect } from 'react';
 
-/**
- * Props for the {@link PopoverRoot} React component.
- *
- * @public
- */
+/** Props for the {@link PopoverRoot} React component. */
 export interface PopoverRootProps {
   /**
    * Whether the popover should be modal.
@@ -81,9 +77,5 @@ function PopoverRootComponent(props: PopoverRootProps, forwardedRef: ForwardedRe
   return createElement('prosekit-popover-root', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-popover-root` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-popover-root` custom element. */
 export const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>> = /* @__PURE__ */ forwardRef(PopoverRootComponent);

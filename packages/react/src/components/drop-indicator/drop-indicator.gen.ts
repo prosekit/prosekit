@@ -5,11 +5,7 @@ import { createElement, forwardRef, useCallback, useRef, type ForwardedRef, type
 
 import { useEditorContext } from '../../contexts/editor-context.ts';
 
-/**
- * Props for the {@link DropIndicator} React component.
- *
- * @public
- */
+/** Props for the {@link DropIndicator} React component. */
 export interface DropIndicatorProps {
   /**
    * The ProseKit editor instance.
@@ -56,9 +52,5 @@ function DropIndicatorComponent(props: DropIndicatorProps, forwardedRef: Forward
   return createElement('prosekit-drop-indicator', { ...restProps, ref: mergedRef, suppressHydrationWarning: true });
 }
 
-/**
- * A React component that renders an `prosekit-drop-indicator` custom element.
- *
- * @public
- */
+/** A React component that renders an `prosekit-drop-indicator` custom element. */
 export const DropIndicator: ForwardRefExoticComponent<DropIndicatorProps & HTMLAttributes<DropIndicatorElement> & RefAttributes<DropIndicatorElement>> = /* @__PURE__ */ forwardRef(DropIndicatorComponent);

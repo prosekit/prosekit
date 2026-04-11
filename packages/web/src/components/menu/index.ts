@@ -33,9 +33,12 @@ import {
   MenuSubmenuRootElement,
   MenuSubmenuTriggerElement,
   MenuTriggerElement,
+  type MenuRootProps as BaseMenuRootProps,
 } from '@aria-ui/elements/menu'
 
 export class MenuRootElement extends BaseMenuRootElement {}
+
+export interface MenuRootProps extends BaseMenuRootProps {}
 
 export {
   MenuItemElement,
@@ -65,7 +68,6 @@ export {
   type MenuPopupProps,
   type MenuPositionerProps,
   type MenuRootEvents,
-  type MenuRootProps,
   type MenuTriggerEvents,
   type MenuTriggerProps,
 } from '@aria-ui/elements/menu'

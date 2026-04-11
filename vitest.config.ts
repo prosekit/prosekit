@@ -1,8 +1,6 @@
-
 import { defineConfig } from 'vitest/config'
 import type { TestSpecification } from 'vitest/node'
 import { BaseSequencer } from 'vitest/node'
-
 
 const SLOW_TEST_FILE_NAMES = ['table.test.ts', 'slash-menu.test.ts']
 
@@ -21,15 +19,14 @@ class TestSequencer extends BaseSequencer {
     const sorted = [...files].sort(
       (a, b) => {
         return a.moduleId.localeCompare(b.moduleId)
-      }
+      },
     ).sort((a, b) => {
       const aSlow = isSlowTest(a.moduleId) ? 1 : -1
       const bSlow = isSlowTest(b.moduleId) ? 1 : -1
-      return aSlow - bSlow 
+      return aSlow - bSlow
     })
 
-
-    let pos = 0 
+    let pos = 0
     for (const file of sorted) {
       chunks[pos].push(file)
       pos = (pos + 1) % count

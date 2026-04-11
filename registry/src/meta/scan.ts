@@ -4,6 +4,8 @@ import { once } from '@ocavue/utils'
 import { vfs } from '@prosekit/dev'
 import { parseImportsExports, type ImportsExports } from 'parse-imports-exports'
 
+import { version as prosekitVersion } from '../../../packages/prosekit/package.json'
+
 import { debug } from './debug'
 import { storyMeta } from './story-meta'
 import type { Framework, ItemAccumulator, ItemCategory } from './types'
@@ -396,7 +398,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
       } else {
         const dependency = normalizeExternalDependency(specifier)
         if (dependency) {
-          item.dependencies.add(dependency)
+          item.dependencies.add(dependency === 'prosekit' ? `prosekit@^${prosekitVersion}` : dependency)
         }
       }
     }

@@ -5,7 +5,7 @@ import type { RegistryItem } from 'shadcn-schema'
 
 import { FRAMEWORKS, type Framework, type ItemAccumulator } from './types'
 
-export interface ExamplesJson {
+interface ExamplesJson {
   stories: Record<string, {
     frameworks: string[]
     hidden: boolean

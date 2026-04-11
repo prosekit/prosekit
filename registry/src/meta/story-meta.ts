@@ -1,11 +1,14 @@
 import { stories } from '../stories.ts'
 
-export type StoryMeta = Map<string, { hidden: boolean; description: string }>
-
-export const storyMeta: StoryMeta = new Map(stories.map(entry => [entry.name, {
-  hidden: entry.hidden ?? false,
-  description: entry.description ?? '',
-}]))
+export const storyMeta = new Map<string, { hidden: boolean; description: string }>(
+  stories.map(entry => [
+    entry.name,
+    {
+      hidden: entry.hidden ?? false,
+      description: entry.description ?? '',
+    },
+  ]),
+)
 
 export function checkStoryMeta(items: ReadonlyArray<{ story?: string }>) {
   const scannedStories = new Set<string>()

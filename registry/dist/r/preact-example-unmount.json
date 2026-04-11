@@ -1,0 +1,58 @@
+{
+  "name": "preact-example-unmount",
+  "title": "preact-example-unmount",
+  "type": "registry:block",
+  "description": "Properly unmount and remount editor instances.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/examples/unmount/editor-component.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/editor-component.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { useMemo } from 'preact/hooks'\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/preact'\n\nimport { InlineMenu } from '../../ui/inline-menu'\n\nimport ExtensionComponent from './extension-component'\n\nexport default function EditorComponent(props: {\n  placeholder: string\n}) {\n  const editor = useMemo(() => {\n    return createEditor({ extension: defineBasicExtension() })\n  }, [])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n          <InlineMenu />\n        </div>\n      </div>\n      <ExtensionComponent placeholder={props.placeholder} />\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/unmount/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/editor.tsx",
+      "content": "import { useCallback, useRef, useState } from 'preact/hooks'\n\nimport EditorComponent from './editor-component'\n\nfunction EditorGroup() {\n  const nextKeyRef = useRef(1)\n  const [editorKeys, setEditorKeys] = useState<number[]>([])\n\n  const addEditor = useCallback(() => {\n    const key = nextKeyRef.current\n    nextKeyRef.current += 1\n    setEditorKeys((keys) => [...keys, key])\n  }, [])\n\n  const removeEditor = useCallback((key: number) => {\n    setEditorKeys((keys) => keys.filter((k) => k !== key))\n  }, [])\n\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <div className=\"flex gap-2\">\n        <button onClick={addEditor} className=\"border p-2\">\n          Add editor\n        </button>\n        {editorKeys.map((key) => (\n          <button\n            key={key}\n            onClick={() => removeEditor(key)}\n            className=\"border p-2\"\n          >\n            Unmount No.{key}\n          </button>\n        ))}\n      </div>\n      {editorKeys.map((key) => (\n        <div key={key}>\n          <EditorComponent\n            placeholder={`Editor No.${key}`}\n          />\n        </div>\n      ))}\n    </div>\n  )\n}\n\nexport default EditorGroup\n"
+    },
+    {
+      "path": "registry/src/preact/examples/unmount/extension-component.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/extension-component.tsx",
+      "content": "import { useMemo } from 'preact/hooks'\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\nimport { useExtension } from 'prosekit/preact'\n\nexport default function ExtensionComponent(props: {\n  placeholder: string\n}) {\n  const extension = useMemo(\n    () => definePlaceholder({ placeholder: props.placeholder }),\n    [props.placeholder],\n  )\n\n  useExtension(extension)\n\n  return null\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/unmount/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "unmount",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/examples/unmount/editor-component.tsx",
+      "registry/src/preact/examples/unmount/editor.tsx",
+      "registry/src/preact/examples/unmount/extension-component.tsx",
+      "registry/src/preact/examples/unmount/index.ts",
+      "registry/src/preact/ui/button/button.tsx",
+      "registry/src/preact/ui/button/index.ts",
+      "registry/src/preact/ui/inline-menu/index.ts",
+      "registry/src/preact/ui/inline-menu/inline-menu.tsx"
+    ],
+    "internalDependencies": [
+      "preact-ui-inline-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

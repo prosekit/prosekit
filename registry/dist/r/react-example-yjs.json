@@ -1,0 +1,62 @@
+{
+  "name": "react-example-yjs",
+  "title": "react-example-yjs",
+  "type": "registry:block",
+  "description": "Real-time collaboration using Yjs CRDT library.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit",
+    "y-websocket",
+    "yjs"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/yjs/editor-component.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/editor-component.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\nimport 'prosekit/extensions/yjs/style.css'\n\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo } from 'react'\nimport { WebsocketProvider } from 'y-websocket'\nimport * as Y from 'yjs'\n\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\nexport default function EditorComponent(props: { room?: string }) {\n  const editor = useMemo(() => {\n    const doc = new Y.Doc()\n    const provider = new WebsocketProvider(\n      'wss://demos.yjs.dev/ws',\n      `github.com/prosekit/room_${props.room}`,\n      doc,\n    )\n\n    const extension = defineExtension(doc, provider.awareness)\n    return createEditor({ extension })\n  }, [props.room])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <Toolbar />\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/yjs/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/editor.tsx",
+      "content": "import { useState } from 'react'\n\nimport EditorComponent from './editor-component'\n\nexport default function Page() {\n  const [room] = useState(() => {\n    return Math.random().toString(36).substring(2, 15)\n  })\n\n  return (\n    <div className=\"h-full flex flex-col gap-2\">\n      <EditorComponent room={room} />\n      <EditorComponent room={room} />\n    </div>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/yjs/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/extension.ts",
+      "content": "import { defineBaseCommands, defineBaseKeymap, union } from 'prosekit/core'\nimport { defineBlockquote } from 'prosekit/extensions/blockquote'\nimport { defineBold } from 'prosekit/extensions/bold'\nimport { defineCode } from 'prosekit/extensions/code'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineDropCursor } from 'prosekit/extensions/drop-cursor'\nimport { defineHeading } from 'prosekit/extensions/heading'\nimport { defineImage } from 'prosekit/extensions/image'\nimport { defineItalic } from 'prosekit/extensions/italic'\nimport { defineLink } from 'prosekit/extensions/link'\nimport { defineList } from 'prosekit/extensions/list'\nimport { defineModClickPrevention } from 'prosekit/extensions/mod-click-prevention'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineStrike } from 'prosekit/extensions/strike'\nimport { defineTable } from 'prosekit/extensions/table'\nimport { defineText } from 'prosekit/extensions/text'\nimport { defineUnderline } from 'prosekit/extensions/underline'\nimport { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'\nimport { defineYjs } from 'prosekit/extensions/yjs'\nimport type { Awareness } from 'prosekit/extensions/yjs'\nimport type * as Y from 'yjs'\n\nexport function defineExtension(doc: Y.Doc, awareness: Awareness) {\n  return union([\n    defineDoc(),\n    defineText(),\n    defineHeading(),\n    defineList(),\n    defineBlockquote(),\n    defineBaseKeymap(),\n    defineBaseCommands(),\n    defineItalic(),\n    defineBold(),\n    defineUnderline(),\n    defineStrike(),\n    defineCode(),\n    defineLink(),\n    defineImage(),\n    defineParagraph(),\n    defineDropCursor(),\n    defineVirtualSelection(),\n    defineModClickPrevention(),\n    defineTable(),\n    defineYjs({ doc, awareness }),\n  ])\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/react/examples/yjs/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/index.ts",
+      "content": "'use client'\n\nexport { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "yjs",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/yjs/editor-component.tsx",
+      "registry/src/react/examples/yjs/editor.tsx",
+      "registry/src/react/examples/yjs/extension.ts",
+      "registry/src/react/examples/yjs/index.ts",
+      "registry/src/react/ui/button/button.tsx",
+      "registry/src/react/ui/button/index.ts",
+      "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+      "registry/src/react/ui/image-upload-popover/index.ts",
+      "registry/src/react/ui/toolbar/index.ts",
+      "registry/src/react/ui/toolbar/toolbar.tsx"
+    ],
+    "internalDependencies": [
+      "react-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "preact-ui-code-block-view",
+  "title": "preact-ui-code-block-view",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+      "type": "registry:component",
+      "target": "components/editor/ui/code-block-view/code-block-view.tsx",
+      "content": "import type { JSX } from 'preact'\nimport type { CodeBlockAttrs } from 'prosekit/extensions/code-block'\nimport { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'\nimport type { PreactNodeViewProps } from 'prosekit/preact'\n\nexport default function CodeBlockView(props: PreactNodeViewProps) {\n  const attrs = props.node.attrs as CodeBlockAttrs\n  const language = attrs.language || ''\n\n  const setLanguage = (language: string) => {\n    const attrs: CodeBlockAttrs = { language }\n    props.setAttrs(attrs)\n  }\n\n  const handleChange = (\n    event: JSX.TargetedEvent<HTMLSelectElement, Event>,\n  ) => {\n    setLanguage(event.currentTarget.value)\n  }\n\n  return (\n    <>\n      <div className=\"relative mx-2 top-3 h-0 select-none overflow-visible text-xs\" contentEditable={false}>\n        <select\n          aria-label=\"Code block language\"\n          className=\"outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight) opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80\"\n          onChange={handleChange}\n          value={language || ''}\n        >\n          <option value=\"\">Plain Text</option>\n          {shikiBundledLanguagesInfo.map((info) => (\n            <option key={info.id} value={info.id}>\n              {info.name}\n            </option>\n          ))}\n        </select>\n      </div>\n      <pre ref={props.contentRef} data-language={language}></pre>\n    </>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/ui/code-block-view/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/code-block-view/index.ts",
+      "content": "import type { Extension } from 'prosekit/core'\nimport { definePreactNodeView, type PreactNodeViewComponent } from 'prosekit/preact'\n\nimport CodeBlockView from './code-block-view'\n\nexport function defineCodeBlockView(): Extension {\n  return definePreactNodeView({\n    name: 'codeBlock',\n    contentAs: 'code',\n    component: CodeBlockView satisfies PreactNodeViewComponent,\n  })\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+      "registry/src/preact/ui/code-block-view/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

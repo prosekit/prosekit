@@ -1,0 +1,62 @@
+{
+  "name": "react-example-page",
+  "title": "react-example-page",
+  "type": "registry:block",
+  "description": "Page layout with configurable paper settings.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-page.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/page/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/page/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\nimport 'prosekit/extensions/page/style.css'\nimport './zoom.css'\n\nimport { clsx, createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo, useState } from 'react'\n\nimport { sampleContent } from '../../sample/sample-doc-page'\n\nimport { defineExtension } from './extension'\nimport PaperController from './paper-controller'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    const extension = defineExtension()\n    return createEditor({\n      extension,\n      defaultContent,\n    })\n  }, [defaultContent])\n\n  const [zoom, setZoom] = useState(50)\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"relative w-max min-w-full flex flex-col flex-1 box-border overflow-auto\">\n        <PaperController zoom={zoom} setZoom={setZoom} />\n        <div\n          data-editor-zoom=\"true\"\n          style={{ '--zoom': zoom / 100 } as React.CSSProperties}\n          ref={editor.mount}\n          className={clsx('ProseMirror', 'self-center box-border min-h-full m-0 p-10 print:p-0 outline-hidden')}\n        />\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/page/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/page/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { definePageBreak } from 'prosekit/extensions/page'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    definePageBreak(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/react/examples/page/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/page/index.ts",
+      "content": "'use client'\n\nexport { default as ExampleEditor } from './editor'\n"
+    },
+    {
+      "path": "registry/src/react/examples/page/paper-controller.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/page/paper-controller.tsx",
+      "content": "import { definePageRendering, type PageRenderingOptions } from 'prosekit/extensions/page'\nimport { useExtension } from 'prosekit/react'\nimport { useEffect, useId, useMemo, useState } from 'react'\n\n// Paper sizes in pixels at 96 DPI\nconst PAPER_SIZES = {\n  A3: { short: 1123, long: 1587 },\n  A4: { short: 794, long: 1123 },\n  A5: { short: 559, long: 794 },\n  B4: { short: 945, long: 1334 },\n  B5: { short: 665, long: 945 },\n  letter: { short: 816, long: 1056 },\n} as const\n\ntype PaperSize = keyof typeof PAPER_SIZES\ntype Orientation = 'portrait' | 'landscape'\n\nexport default function PaperController({\n  zoom,\n  setZoom,\n}: {\n  zoom: number\n  setZoom: (zoom: number) => void\n}) {\n  const id = useId()\n  const [paperSize, setPaperSize] = useState<PaperSize>('A4')\n  const [orientation, setOrientation] = useState<Orientation>('portrait')\n  const [margin, setMargin] = useState(70)\n  const [enablePageLayout, setEnablePageLayout] = useState(true)\n\n  const pageRenderingOptions: PageRenderingOptions = useMemo(() => {\n    const { short, long } = PAPER_SIZES[paperSize]\n    const pageWidth = orientation === 'portrait' ? short : long\n    const pageHeight = orientation === 'portrait' ? long : short\n\n    return {\n      pageWidth,\n      pageHeight,\n      marginTop: margin,\n      marginRight: margin,\n      marginBottom: margin,\n      marginLeft: margin,\n    }\n  }, [paperSize, orientation, margin])\n\n  useEffect(() => {\n    const styleId = 'print-page-style'\n    let style = document.getElementById(styleId) as HTMLStyleElement | null\n    if (!style) {\n      style = document.createElement('style')\n      style.id = styleId\n      document.head.appendChild(style)\n    }\n    style.textContent = `@page { size: ${paperSize} ${orientation}; margin: 0; }`\n\n    return () => {\n      style.textContent = ''\n    }\n  }, [paperSize, orientation])\n\n  const extension = useMemo(() => {\n    return enablePageLayout ? definePageRendering(pageRenderingOptions) : null\n  }, [pageRenderingOptions, enablePageLayout])\n\n  useExtension(extension)\n\n  return (\n    <div\n      data-paper-controller={paperSize}\n      className=\"grid grid-cols-[auto_1fr] gap-2 w-min border p-2 bg-[Canvas] sticky top-2 left-2 z-10 print:hidden text-xs\"\n    >\n      <label htmlFor={`${id}-page`}>Page</label>\n      <select\n        id={`${id}-page`}\n        value={enablePageLayout ? 'Enabled' : 'Disabled'}\n        onChange={(e) => setEnablePageLayout(e.target.value === 'Enabled')}\n        className=\"rounded border disabled:opacity-50\"\n      >\n        <option value=\"Enabled\">Enabled</option>\n        <option value=\"Disabled\">Disabled</option>\n      </select>\n      <label htmlFor={`${id}-paper`}>Paper Size</label>\n      <select\n        id={`${id}-paper`}\n        value={paperSize}\n        onChange={(e) => setPaperSize(e.target.value as PaperSize)}\n        disabled={!enablePageLayout}\n        className=\"rounded border disabled:opacity-50\"\n      >\n        <option value=\"A3\">A3</option>\n        <option value=\"A4\">A4</option>\n        <option value=\"A5\">A5</option>\n        <option value=\"B4\">B4</option>\n        <option value=\"B5\">B5</option>\n        <option value=\"letter\">Letter</option>\n      </select>\n      <label htmlFor={`${id}-orientation`}>Orientation</label>\n      <select\n        id={`${id}-orientation`}\n        value={orientation}\n        onChange={(e) => setOrientation(e.target.value as Orientation)}\n        disabled={!enablePageLayout}\n        className=\"rounded border disabled:opacity-50\"\n      >\n        <option value=\"portrait\">Portrait</option>\n        <option value=\"landscape\">Landscape</option>\n      </select>\n      <label htmlFor={`${id}-margin`}>Margin</label>\n      <select\n        id={`${id}-margin`}\n        value={String(margin)}\n        onChange={(e) => setMargin(Number.parseInt(e.target.value, 10))}\n        disabled={!enablePageLayout}\n        className=\"rounded border disabled:opacity-50\"\n      >\n        <option value=\"30\">Narrow</option>\n        <option value=\"70\">Normal</option>\n        <option value=\"120\">Wide</option>\n      </select>\n      <label htmlFor={`${id}-zoom`}>Zoom</label>\n      <select\n        id={`${id}-zoom`}\n        value={String(zoom)}\n        onChange={(e) => setZoom(Number.parseInt(e.target.value, 10))}\n        className=\"rounded border disabled:opacity-50\"\n      >\n        <option value=\"25\">25%</option>\n        <option value=\"50\">50%</option>\n        <option value=\"75\">75%</option>\n        <option value=\"100\">100%</option>\n        <option value=\"125\">125%</option>\n        <option value=\"150\">150%</option>\n        <option value=\"200\">200%</option>\n      </select>\n    </div>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/page/zoom.css",
+      "type": "registry:component",
+      "target": "components/editor/examples/page/zoom.css",
+      "content": "div[data-editor-zoom] {\n  zoom: var(--zoom);\n}\n\n@media print {\n  div[data-editor-zoom] {\n    zoom: 1;\n  }\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "page",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/page/editor.tsx",
+      "registry/src/react/examples/page/extension.ts",
+      "registry/src/react/examples/page/index.ts",
+      "registry/src/react/examples/page/paper-controller.tsx",
+      "registry/src/react/examples/page/zoom.css",
+      "registry/src/react/sample/sample-doc-page.ts"
+    ],
+    "internalDependencies": [
+      "react-sample-sample-doc-page"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

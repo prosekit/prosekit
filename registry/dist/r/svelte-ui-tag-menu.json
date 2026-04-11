@@ -1,0 +1,36 @@
+{
+  "name": "svelte-ui-tag-menu",
+  "title": "svelte-ui-tag-menu",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/ui/tag-menu/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/tag-menu/index.ts",
+      "content": "export { default as TagMenu } from './tag-menu.svelte'\n"
+    },
+    {
+      "path": "registry/src/svelte/ui/tag-menu/tag-menu.svelte",
+      "type": "registry:component",
+      "target": "components/editor/ui/tag-menu/tag-menu.svelte",
+      "content": "<script lang=\"ts\">\nimport type { BasicExtension } from 'prosekit/basic'\nimport type { Union } from 'prosekit/core'\nimport type { MentionExtension } from 'prosekit/extensions/mention'\nimport { useEditor } from 'prosekit/svelte'\nimport {\n  AutocompleteEmpty,\n  AutocompleteItem,\n  AutocompletePopup,\n  AutocompletePositioner,\n  AutocompleteRoot,\n} from 'prosekit/svelte/autocomplete'\n\ninterface Props {\n  tags: { id: number; label: string }[]\n}\n\nconst props: Props = $props()\n\nconst editor = useEditor<Union<[MentionExtension, BasicExtension]>>()\n\nfunction handleTagInsert(id: number, label: string) {\n  $editor.commands.insertMention({\n    id: id.toString(),\n    value: '#' + label,\n    kind: 'tag',\n  })\n  $editor.commands.insertText({ text: ' ' })\n}\n\nconst regex = /#[\\da-z]*$/i\n</script>\n\n<AutocompleteRoot {regex}>\n  <AutocompletePositioner class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n    <AutocompletePopup class=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1\">\n      <AutocompleteEmpty class=\"relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800\">\n        No results\n      </AutocompleteEmpty>\n\n      {#each props.tags as tag (tag.id)}\n        <AutocompleteItem\n          class=\"relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800\"\n          onSelect={() => handleTagInsert(tag.id, tag.label)}\n        >\n          #{tag.label}\n        </AutocompleteItem>\n      {/each}\n    </AutocompletePopup>\n  </AutocompletePositioner>\n</AutocompleteRoot>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/ui/tag-menu/index.ts",
+      "registry/src/svelte/ui/tag-menu/tag-menu.svelte"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "react-example-code-block-themes",
+  "title": "react-example-code-block-themes",
+  "type": "registry:block",
+  "description": "Code block with multiple syntax highlighting themes.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-code-block.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/code-block-themes/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/code-block-themes/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo } from 'react'\n\nimport { sampleContent } from '../../sample/sample-doc-code-block'\n\nimport { defineExtension } from './extension'\nimport Toolbar from './toolbar'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    const extension = defineExtension()\n    return createEditor({ extension, defaultContent })\n  }, [defaultContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <Toolbar />\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/code-block-themes/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/code-block-themes/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\n\nimport { defineCodeBlockView } from '../../ui/code-block-view'\n\nexport function defineExtension() {\n  return union(defineBasicExtension(), defineCodeBlockView())\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/react/examples/code-block-themes/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/code-block-themes/index.ts",
+      "content": "'use client'\n\nexport { default as ExampleEditor } from './editor'\n"
+    },
+    {
+      "path": "registry/src/react/examples/code-block-themes/theme-selector.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/code-block-themes/theme-selector.tsx",
+      "content": "import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'\nimport { useExtension } from 'prosekit/react'\nimport { useMemo, useState } from 'react'\n\nexport function ThemeSelector() {\n  const [theme, setTheme] = useState('github-dark')\n  const extension = useMemo(() => {\n    return defineCodeBlockShiki({ themes: [theme as ShikiBundledTheme] })\n  }, [theme])\n  useExtension(extension)\n\n  return (\n    <>\n      <label htmlFor=\"code-block-theme-selector\">Theme</label>\n      <select\n        id=\"code-block-theme-selector\"\n        value={theme}\n        onChange={(event) => setTheme(event.target.value)}\n        className=\"outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9 text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700\"\n      >\n        {shikiBundledThemesInfo.map((info) => (\n          <option key={info.id} value={info.id}>\n            {info.id}\n          </option>\n        ))}\n      </select>\n    </>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/code-block-themes/toolbar.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/code-block-themes/toolbar.tsx",
+      "content": "import { ThemeSelector } from './theme-selector'\n\nexport default function Toolbar() {\n  return (\n    <div className=\"z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center\">\n      <ThemeSelector />\n    </div>\n  )\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "code-block-themes",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/code-block-themes/editor.tsx",
+      "registry/src/react/examples/code-block-themes/extension.ts",
+      "registry/src/react/examples/code-block-themes/index.ts",
+      "registry/src/react/examples/code-block-themes/theme-selector.tsx",
+      "registry/src/react/examples/code-block-themes/toolbar.tsx",
+      "registry/src/react/sample/sample-doc-code-block.ts",
+      "registry/src/react/ui/code-block-view/code-block-view.tsx",
+      "registry/src/react/ui/code-block-view/index.ts"
+    ],
+    "internalDependencies": [
+      "react-sample-sample-doc-code-block",
+      "react-ui-code-block-view"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

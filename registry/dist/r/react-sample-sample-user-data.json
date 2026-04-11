@@ -1,0 +1,27 @@
+{
+  "name": "react-sample-sample-user-data",
+  "title": "react-sample-sample-user-data",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/src/react/sample/sample-user-data.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-user-data.ts",
+      "content": "export const users = [\n  { id: 1, name: 'Alex' },\n  { id: 2, name: 'Alice' },\n  { id: 3, name: 'Ben' },\n  { id: 4, name: 'Bob' },\n  { id: 5, name: 'Charlie' },\n  { id: 6, name: 'Cara' },\n  { id: 7, name: 'Derek' },\n  { id: 8, name: 'Diana' },\n  { id: 9, name: 'Ethan' },\n  { id: 10, name: 'Eva' },\n  { id: 11, name: 'Frank' },\n  { id: 12, name: 'Fiona' },\n  { id: 13, name: 'George' },\n  { id: 14, name: 'Gina' },\n  { id: 15, name: 'Harry' },\n  { id: 16, name: 'Hannah' },\n  { id: 17, name: 'Ivan' },\n  { id: 18, name: 'Iris' },\n  { id: 19, name: 'Jack' },\n  { id: 20, name: 'Jasmine' },\n  { id: 21, name: 'Kevin' },\n  { id: 22, name: 'Kate' },\n  { id: 23, name: 'Leo' },\n  { id: 24, name: 'Lily' },\n  { id: 25, name: 'Mike' },\n  { id: 26, name: 'Mia' },\n  { id: 27, name: 'Nathan' },\n  { id: 28, name: 'Nancy' },\n  { id: 29, name: 'Oscar' },\n  { id: 30, name: 'Olivia' },\n  { id: 31, name: 'Paul' },\n  { id: 32, name: 'Penny' },\n  { id: 33, name: 'Quentin' },\n  { id: 34, name: 'Queen' },\n  { id: 35, name: 'Roger' },\n  { id: 36, name: 'Rita' },\n  { id: 37, name: 'Sam' },\n  { id: 38, name: 'Sara' },\n  { id: 39, name: 'Tom' },\n  { id: 40, name: 'Tina' },\n  { id: 41, name: 'Ulysses' },\n  { id: 42, name: 'Una' },\n  { id: 43, name: 'Victor' },\n  { id: 44, name: 'Vera' },\n  { id: 45, name: 'Walter' },\n  { id: 46, name: 'Wendy' },\n  { id: 47, name: 'Xavier' },\n  { id: 48, name: 'Xena' },\n  { id: 49, name: 'Yan' },\n  { id: 50, name: 'Yvonne' },\n  { id: 51, name: 'Zack' },\n  { id: 52, name: 'Zara' },\n]\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/sample/sample-user-data.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

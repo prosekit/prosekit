@@ -1,0 +1,50 @@
+{
+  "name": "svelte-example-change-tracking",
+  "title": "svelte-example-change-tracking",
+  "type": "registry:block",
+  "description": "Track and commit document changes with version history.",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/change-tracking/editor-diff.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/editor-diff.svelte",
+      "content": "<script lang=\"ts\">\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor, union } from 'prosekit/core'\nimport { defineCommitViewer, type Commit } from 'prosekit/extensions/commit'\nimport { defineReadonly } from 'prosekit/extensions/readonly'\nimport { ProseKit } from 'prosekit/svelte'\n\ninterface Props {\n  commit: Commit\n}\n\nconst props: Props = $props()\n\nconst extension = $derived(union(\n  defineBasicExtension(),\n  defineReadonly(),\n  defineCommitViewer(props.commit),\n))\nconst editor = $derived(createEditor({ extension }))\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/change-tracking/editor-main.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/editor-main.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor, union, type NodeJSON } from 'prosekit/core'\nimport { defineCommitRecorder, type CommitRecorder } from 'prosekit/extensions/commit'\nimport { ProseKit } from 'prosekit/svelte'\n\ninterface Props {\n  commitRecorder: CommitRecorder\n  initialContent?: NodeJSON\n  key?: number\n}\n\nconst props: Props = $props()\n\nconst extension = $derived(union(\n  defineBasicExtension(),\n  defineCommitRecorder(props.commitRecorder),\n))\nconst defaultContent = $derived(props.initialContent)\nconst editor = $derived(createEditor({ extension, defaultContent }))\n</script>\n\n{#key props.key}\n  <ProseKit {editor}>\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n      </div>\n    </div>\n  </ProseKit>\n{/key}\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/change-tracking/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport type { NodeJSON } from 'prosekit/core'\nimport { CommitRecorder, type Commit } from 'prosekit/extensions/commit'\n\nimport EditorDiff from './editor-diff.svelte'\nimport EditorMain from './editor-main.svelte'\n\nlet commits: { id: string; date: Date; commit: Commit }[] = []\nlet key = 0\nlet initialContent: NodeJSON | undefined = undefined\nconst commitRecorder = new CommitRecorder()\n\nfunction handleCommit() {\n  const commit = commitRecorder.commit()\n  if (!commit) return\n  const id = Math.random().toString(36).slice(2, 9)\n  commits = [{ id, date: new Date(), commit }, ...commits]\n}\n\nfunction handleRestore(id: string) {\n  const index = commits.findIndex((commit) => commit.id === id)\n  const commit = commits[index]\n  if (index === -1 || !commit) return\n  const doc = commit.commit.doc\n  initialContent = doc\n  commits = commits.slice(index)\n  key = key + 1\n}\n</script>\n\n<div class=\"grid grid-cols-2 gap-2\">\n  <div class=\"flex flex-col gap-4\">\n    <div class=\"max-h-md\">\n      <EditorMain {key} {initialContent} {commitRecorder} />\n    </div>\n    <button onclick={handleCommit} class=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2\">\n      Save\n    </button>\n  </div>\n  <div class=\"flex flex-col gap-4\">\n    {#each commits as commit (commit.id)}\n      <div>\n        <div class=\"max-h-md\">\n          <EditorDiff commit={commit.commit} />\n        </div>\n        <div class=\"w-full inline-flex justify-between p-1 text-sm\">\n          <span class=\"opacity-50\">\n            {commit.date.toLocaleTimeString()}\n          </span>\n          <button\n            class=\"underline opacity-50 hover:opacity-100\"\n            onclick={() => handleRestore(commit.id)}\n          >\n            Restore\n          </button>\n        </div>\n      </div>\n    {/each}\n  </div>\n</div>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/change-tracking/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "change-tracking",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/change-tracking/editor-diff.svelte",
+      "registry/src/svelte/examples/change-tracking/editor-main.svelte",
+      "registry/src/svelte/examples/change-tracking/editor.svelte",
+      "registry/src/svelte/examples/change-tracking/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

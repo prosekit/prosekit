@@ -1,0 +1,29 @@
+{
+  "name": "solid-sample-sample-doc-search",
+  "title": "solid-sample-sample-doc-search",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/sample/sample-doc-search.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-search.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'Baa, baa, black sheep,',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'Have you any wool?',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'Yes, sir, yes, sir,',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'Three bags full;',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'One for the master,',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'And one for the dame,',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'And one for the little boy',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'Who lives down the lane.',\n        },\n      ],\n    },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/sample/sample-doc-search.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

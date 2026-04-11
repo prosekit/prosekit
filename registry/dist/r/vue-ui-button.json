@@ -1,0 +1,36 @@
+{
+  "name": "vue-ui-button",
+  "title": "vue-ui-button",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/ui/button/button.vue",
+      "type": "registry:component",
+      "target": "components/editor/ui/button/button.vue",
+      "content": "<script setup lang=\"ts\">\nimport { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/vue/tooltip'\n\nconst props = defineProps<{\n  pressed?: boolean\n  disabled?: boolean\n  onClick?: () => void\n  tooltip?: string\n}>()\n</script>\n\n<template>\n  <TooltipRoot>\n    <TooltipTrigger class=\"block\">\n      <button\n        :data-state=\"props.pressed ? 'on' : 'off'\"\n        :disabled=\"props.disabled\"\n        class=\"outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9 text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700\"\n        @click=\"props.onClick\"\n        @mousedown.prevent\n      >\n        <slot />\n        <span v-if=\"props.tooltip\" class=\"sr-only\">{{ props.tooltip }}</span>\n      </button>\n    </TooltipTrigger>\n    <TooltipPositioner v-if=\"props.tooltip\" class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n      <TooltipPopup class=\"flex box-border motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs text-nowrap\">\n        {{ props.tooltip }}\n      </TooltipPopup>\n    </TooltipPositioner>\n  </TooltipRoot>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/ui/button/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/button/index.ts",
+      "content": "export { default as Button } from './button.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

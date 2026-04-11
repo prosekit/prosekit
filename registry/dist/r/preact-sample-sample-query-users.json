@@ -1,0 +1,32 @@
+{
+  "name": "preact-sample-sample-query-users",
+  "title": "preact-sample-sample-query-users",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-user-data.json"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/src/preact/sample/sample-query-users.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-query-users.ts",
+      "content": "import { users } from './sample-user-data'\n\nexport interface User {\n  id: number\n  name: string\n}\n\nconst connectHandlers: VoidFunction[] = []\nlet networkStatus: 'fast' | 'slow' | 'offline' = 'slow'\n\n/**\n * A utility function to simulate different network states. Useful for testing.\n *\n * @internal\n */\nexport function simulateNetworkStatus(status: 'fast' | 'slow' | 'offline') {\n  networkStatus = status\n  if (status !== 'offline') {\n    connectHandlers.forEach((handler) => handler())\n    connectHandlers.length = 0\n  }\n}\n\n/**\n * Simulate a user searching with some delay.\n */\nexport async function queryUsers(query: string): Promise<User[]> {\n  if (networkStatus === 'offline') {\n    await new Promise<void>((resolve) => connectHandlers.push(resolve))\n  }\n  if (networkStatus === 'slow') {\n    await new Promise<void>((resolve) => setTimeout(resolve, 300))\n  }\n\n  const normalizedQuery = query.toLowerCase().trim()\n  const filteredUsers = users\n    .filter((user) => user.name.toLowerCase().includes(normalizedQuery))\n    .slice(0, 10)\n  return filteredUsers\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/sample/sample-query-users.ts",
+      "registry/src/preact/sample/sample-user-data.ts"
+    ],
+    "internalDependencies": [
+      "preact-sample-sample-user-data"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "react-example-change-tracking",
+  "title": "react-example-change-tracking",
+  "type": "registry:block",
+  "description": "Track and commit document changes with version history.",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/change-tracking/editor-diff.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/editor-diff.tsx",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor, union } from 'prosekit/core'\nimport { defineCommitViewer, type Commit } from 'prosekit/extensions/commit'\nimport { defineReadonly } from 'prosekit/extensions/readonly'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo } from 'react'\n\nexport default function EditorDiff(props: { commit: Commit }) {\n  const editor = useMemo(() => {\n    const extension = union(\n      defineBasicExtension(),\n      defineReadonly(),\n      defineCommitViewer(props.commit),\n    )\n    return createEditor({ extension })\n  }, [props.commit])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/change-tracking/editor-main.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/editor-main.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor, union, type NodeJSON } from 'prosekit/core'\nimport { defineCommitRecorder, type CommitRecorder } from 'prosekit/extensions/commit'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo } from 'react'\n\nexport default function EditorMain(props: {\n  commitRecorder: CommitRecorder\n  initialContent?: NodeJSON\n}) {\n  const editor = useMemo(() => {\n    const extension = union(\n      defineBasicExtension(),\n      defineCommitRecorder(props.commitRecorder),\n    )\n    return createEditor({ extension, defaultContent: props.initialContent })\n  }, [props.commitRecorder, props.initialContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/change-tracking/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport type { NodeJSON } from 'prosekit/core'\nimport { CommitRecorder, type Commit } from 'prosekit/extensions/commit'\nimport { useCallback, useMemo, useState } from 'react'\n\nimport EditorDiff from './editor-diff'\nimport EditorMain from './editor-main'\n\nexport default function Editor() {\n  const [commits, setCommits] = useState<\n    { id: string; date: Date; commit: Commit }[]\n  >([])\n  const [key, setKey] = useState(0)\n  const [initialContent, setInitialContent] = useState<NodeJSON | undefined>()\n  const commitRecorder = useMemo(() => new CommitRecorder(), [])\n\n  const handleCommit = useCallback(() => {\n    const commit = commitRecorder.commit()\n    if (!commit) return\n    const id = Math.random().toString(36).slice(2, 9)\n    setCommits((commits) => [{ id, date: new Date(), commit }, ...commits])\n  }, [commitRecorder])\n\n  const handleRestore = useCallback(\n    (id: string) => {\n      const index = commits.findIndex((commit) => commit.id === id)\n      const commit = commits[index]\n      if (index === -1 || !commit) return\n      const doc = commit.commit.doc\n      setInitialContent(doc)\n      setCommits((commits) => commits.slice(index))\n      setKey((key) => key + 1)\n    },\n    [commits],\n  )\n\n  return (\n    <div className=\"grid grid-cols-2 gap-2\">\n      <div className=\"flex flex-col gap-4\">\n        <div className=\"max-h-md\">\n          <EditorMain\n            key={key}\n            initialContent={initialContent}\n            commitRecorder={commitRecorder}\n          />\n        </div>\n        <button onClick={handleCommit} className=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2\">\n          Save\n        </button>\n      </div>\n      <div className=\"flex flex-col gap-4\">\n        {commits.map((commit) => (\n          <div key={commit.id}>\n            <div className=\"max-h-md\">\n              <EditorDiff commit={commit.commit} />\n            </div>\n            <div className=\"w-full inline-flex justify-between p-1 text-sm\">\n              <span className=\"opacity-50\">\n                {commit.date.toLocaleTimeString()}\n              </span>\n              <button\n                className=\"underline opacity-50 hover:opacity-100\"\n                onClick={() => handleRestore(commit.id)}\n              >\n                Restore\n              </button>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/change-tracking/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/change-tracking/index.ts",
+      "content": "'use client'\n\nexport { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "change-tracking",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/change-tracking/editor-diff.tsx",
+      "registry/src/react/examples/change-tracking/editor-main.tsx",
+      "registry/src/react/examples/change-tracking/editor.tsx",
+      "registry/src/react/examples/change-tracking/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

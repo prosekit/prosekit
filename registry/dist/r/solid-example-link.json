@@ -1,0 +1,54 @@
+{
+  "name": "solid-example-link",
+  "title": "solid-example-link",
+  "type": "registry:block",
+  "description": "Example for link mark with URL input.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-link.json",
+    "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/examples/link/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/link/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/solid'\nimport type { JSX } from 'solid-js'\n\nimport { sampleContent } from '../../sample/sample-doc-link'\nimport { InlineMenu } from '../../ui/inline-menu'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps): JSX.Element {\n  const defaultContent = props.initialContent ?? sampleContent\n  const extension = defineExtension()\n  const editor = createEditor({ extension, defaultContent })\n\n  return (\n    <ProseKit editor={editor}>\n      <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n          <InlineMenu />\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/solid/examples/link/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/link/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineLink } from 'prosekit/extensions/link'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineLink(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/solid/examples/link/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/link/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "link",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/examples/link/editor.tsx",
+      "registry/src/solid/examples/link/extension.ts",
+      "registry/src/solid/examples/link/index.ts",
+      "registry/src/solid/sample/sample-doc-link.ts",
+      "registry/src/solid/ui/button/button.tsx",
+      "registry/src/solid/ui/button/index.ts",
+      "registry/src/solid/ui/inline-menu/index.ts",
+      "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+    ],
+    "internalDependencies": [
+      "solid-sample-sample-doc-link",
+      "solid-ui-inline-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

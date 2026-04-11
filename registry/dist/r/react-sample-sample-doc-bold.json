@@ -1,0 +1,29 @@
+{
+  "name": "react-sample-sample-doc-bold",
+  "title": "react-sample-sample-doc-bold",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/sample/sample-doc-bold.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-bold.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'bold',\n            },\n          ],\n          text: 'This is bold',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'bold',\n            },\n          ],\n          text: 'This is bold too',\n        },\n      ],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'This is normal text',\n        },\n      ],\n    },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/sample/sample-doc-bold.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

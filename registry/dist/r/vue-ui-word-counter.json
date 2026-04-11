@@ -1,0 +1,36 @@
+{
+  "name": "vue-ui-word-counter",
+  "title": "vue-ui-word-counter",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/ui/word-counter/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/word-counter/index.ts",
+      "content": "export { default as WordCounter } from './word-counter.vue'\n"
+    },
+    {
+      "path": "registry/src/vue/ui/word-counter/word-counter.vue",
+      "type": "registry:component",
+      "target": "components/editor/ui/word-counter/word-counter.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Editor } from 'prosekit/core'\nimport { useEditorDerivedValue } from 'prosekit/vue'\n\nfunction getCounts(editor: Editor) {\n  const doc = editor.state.doc\n  const words = doc ? doc.textBetween(0, doc.content.size, ' ') : ''\n  const wordCount = words.split(/\\s+/).filter((s) => s).length\n  const characterCount = doc ? doc.textContent.length : 0\n  return { wordCount, characterCount }\n}\n\nconst counts = useEditorDerivedValue(getCounts)\n</script>\n\n<template>\n  <div class=\"p-4 text-center italic tabular-nums\">\n    Word Count: {{ counts.wordCount }}\n    <br>\n    Character Count: {{ counts.characterCount }}\n  </div>\n</template>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/ui/word-counter/index.ts",
+      "registry/src/vue/ui/word-counter/word-counter.vue"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

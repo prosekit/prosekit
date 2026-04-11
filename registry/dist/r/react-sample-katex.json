@@ -1,0 +1,29 @@
+{
+  "name": "react-sample-katex",
+  "title": "react-sample-katex",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "katex"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/sample/katex.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/katex.ts",
+      "content": "import { render } from 'katex'\n\nexport function renderKaTeXMathBlock(text: string, element: HTMLElement) {\n  render(text, element, { displayMode: true, throwOnError: false, output: 'mathml' })\n}\n\nexport function renderKaTeXMathInline(text: string, element: HTMLElement) {\n  render(text, element, { displayMode: false, throwOnError: false, output: 'mathml' })\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/sample/katex.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "svelte-example-yjs",
+  "title": "svelte-example-yjs",
+  "type": "registry:block",
+  "description": "Real-time collaboration using Yjs CRDT library.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit",
+    "y-websocket",
+    "yjs"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/yjs/editor-component.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/editor-component.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\nimport 'prosekit/extensions/yjs/style.css'\n\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\nimport type { Awareness } from 'prosekit/extensions/yjs'\nimport type * as Y from 'yjs'\n\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\ninterface Props {\n  doc: Y.Doc\n  awareness: Awareness\n}\n\nconst props: Props = $props()\n\nconst extension = $derived(defineExtension(props.doc, props.awareness))\nconst editor = $derived(createEditor({ extension }))\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <Toolbar />\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/yjs/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport { WebsocketProvider } from 'y-websocket'\nimport * as Y from 'yjs'\n\nimport EditorComponent from './editor-component.svelte'\n\nconst room = Math.random().toString(36).substring(2, 15)\n\nconst doc = new Y.Doc()\nconst provider = new WebsocketProvider(\n  'wss://demos.yjs.dev/ws',\n  `github.com/prosekit/room_${room}`,\n  doc,\n)\n\n$effect(() => {\n  return () => {\n    provider.destroy()\n    doc.destroy()\n  }\n})\n</script>\n\n<div class=\"h-full flex flex-col gap-2\">\n  <EditorComponent doc={doc} awareness={provider.awareness} />\n  <EditorComponent doc={doc} awareness={provider.awareness} />\n</div>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/yjs/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/extension.ts",
+      "content": "import { defineBaseCommands, defineBaseKeymap, union } from 'prosekit/core'\nimport { defineBlockquote } from 'prosekit/extensions/blockquote'\nimport { defineBold } from 'prosekit/extensions/bold'\nimport { defineCode } from 'prosekit/extensions/code'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineDropCursor } from 'prosekit/extensions/drop-cursor'\nimport { defineHeading } from 'prosekit/extensions/heading'\nimport { defineImage } from 'prosekit/extensions/image'\nimport { defineItalic } from 'prosekit/extensions/italic'\nimport { defineLink } from 'prosekit/extensions/link'\nimport { defineList } from 'prosekit/extensions/list'\nimport { defineModClickPrevention } from 'prosekit/extensions/mod-click-prevention'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineStrike } from 'prosekit/extensions/strike'\nimport { defineTable } from 'prosekit/extensions/table'\nimport { defineText } from 'prosekit/extensions/text'\nimport { defineUnderline } from 'prosekit/extensions/underline'\nimport { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'\nimport { defineYjs } from 'prosekit/extensions/yjs'\nimport type { Awareness } from 'prosekit/extensions/yjs'\nimport type * as Y from 'yjs'\n\nexport function defineExtension(doc: Y.Doc, awareness: Awareness) {\n  return union(\n    defineDoc(),\n    defineText(),\n    defineHeading(),\n    defineList(),\n    defineBlockquote(),\n    defineBaseKeymap(),\n    defineBaseCommands(),\n    defineItalic(),\n    defineBold(),\n    defineUnderline(),\n    defineStrike(),\n    defineCode(),\n    defineLink(),\n    defineImage(),\n    defineParagraph(),\n    defineDropCursor(),\n    defineVirtualSelection(),\n    defineModClickPrevention(),\n    defineTable(),\n    defineYjs({ doc, awareness }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/yjs/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/yjs/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "yjs",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/yjs/editor-component.svelte",
+      "registry/src/svelte/examples/yjs/editor.svelte",
+      "registry/src/svelte/examples/yjs/extension.ts",
+      "registry/src/svelte/examples/yjs/index.ts",
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts",
+      "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+      "registry/src/svelte/ui/image-upload-popover/index.ts",
+      "registry/src/svelte/ui/toolbar/index.ts",
+      "registry/src/svelte/ui/toolbar/toolbar.svelte"
+    ],
+    "internalDependencies": [
+      "svelte-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "vue-ui-image-upload-popover",
+  "title": "vue-ui-image-upload-popover",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-upload-popover/image-upload-popover.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Uploader } from 'prosekit/extensions/file'\nimport type { ImageExtension } from 'prosekit/extensions/image'\nimport { useEditor } from 'prosekit/vue'\nimport { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/vue/popover'\nimport type { OpenChangeEvent } from 'prosekit/web/popover'\nimport { ref, useId } from 'vue'\n\nimport { Button } from '../button'\n\nconst props = defineProps<{\n  uploader: Uploader<string>\n  tooltip: string\n  disabled: boolean\n}>()\n\nconst open = ref(false)\nconst url = ref('')\nconst file = ref<File | null>(null)\nconst ariaId = useId()\n\nconst editor = useEditor<ImageExtension>()\n\nfunction handleFileChange(event: Event) {\n  const target = event.target as HTMLInputElement\n  const selectedFile = target.files?.[0]\n\n  if (selectedFile) {\n    file.value = selectedFile\n    url.value = ''\n  } else {\n    file.value = null\n  }\n}\n\nfunction handleUrlChange(event: Event) {\n  const target = event.target as HTMLInputElement\n  const inputUrl = target.value\n\n  if (inputUrl) {\n    url.value = inputUrl\n    file.value = null\n  } else {\n    url.value = ''\n  }\n}\n\nfunction deferResetState() {\n  setTimeout(() => {\n    url.value = ''\n    file.value = null\n  }, 300)\n}\n\nfunction handleSubmit() {\n  if (url.value) {\n    editor.value.commands.insertImage({ src: url.value })\n  } else if (file.value) {\n    editor.value.commands.uploadImage({ file: file.value, uploader: props.uploader })\n  }\n  open.value = false\n  deferResetState()\n}\n\nfunction handleOpenChange(event: OpenChangeEvent) {\n  if (!event.detail) {\n    deferResetState()\n  }\n  open.value = event.detail\n}\n</script>\n\n<template>\n  <PopoverRoot :open=\"open\" @open-change=\"handleOpenChange\">\n    <PopoverTrigger>\n      <Button :pressed=\"open\" :disabled=\"props.disabled\" :tooltip=\"props.tooltip\">\n        <slot />\n      </Button>\n    </PopoverTrigger>\n\n    <PopoverPositioner\n      placement=\"bottom\"\n      class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\"\n    ><PopoverPopup class=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col gap-y-4 p-6 text-sm w-sm\">\n        <label v-if=\"!file\" :for=\"`id-link-${ariaId}`\">Embed Link</label>\n        <input\n          v-if=\"!file\"\n          :id=\"`id-link-${ariaId}`\"\n          class=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50\"\n          placeholder=\"Paste the image link...\"\n          type=\"url\"\n          :value=\"url\"\n          @input=\"handleUrlChange\"\n        />\n\n        <label v-if=\"!url\" :for=\"`id-upload-${ariaId}`\">Upload</label>\n        <input\n          v-if=\"!url\"\n          :id=\"`id-upload-${ariaId}`\"\n          class=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50\"\n          accept=\"image/*\"\n          type=\"file\"\n          @change=\"handleFileChange\"\n        />\n\n        <button v-if=\"url\" class=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2 w-full\" @click=\"handleSubmit\">\n          Insert Image\n        </button>\n\n        <button v-if=\"file\" class=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2 w-full\" @click=\"handleSubmit\">\n          Upload Image\n        </button>\n      </PopoverPopup></PopoverPositioner>\n  </PopoverRoot>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/ui/image-upload-popover/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-upload-popover/index.ts",
+      "content": "export { default as ImageUploadPopover } from './image-upload-popover.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts",
+      "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+      "registry/src/vue/ui/image-upload-popover/index.ts"
+    ],
+    "internalDependencies": [
+      "vue-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

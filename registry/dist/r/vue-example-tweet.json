@@ -1,0 +1,63 @@
+{
+  "name": "vue-example-tweet",
+  "title": "vue-example-tweet",
+  "type": "registry:block",
+  "description": "Embed and display Twitter tweets.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-tweet.json"
+  ],
+  "dependencies": [
+    "prosekit",
+    "vue-tweet"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/tweet/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { defineVueNodeView, ProseKit, useExtension, type VueNodeViewComponent } from 'prosekit/vue'\nimport { computed, ref } from 'vue'\n\nimport { sampleContent } from '../../sample/sample-doc-tweet'\n\nimport { defineExtension } from './extension'\nimport MethodSelect from './method-select.vue'\nimport TweetView from './tweet-view.vue'\n\nconst props = defineProps<{\n  initialContent?: NodeJSON\n}>()\n\nconst defaultContent = props.initialContent ?? sampleContent\nconst editor = createEditor({ extension: defineExtension(), defaultContent })\n\nconst method = ref<'basic' | 'advanced'>('basic')\n\nconst vueTweetView = computed(() => {\n  if (method.value === 'basic') {\n    return null\n  }\n  return defineVueNodeView({\n    name: 'tweet',\n    component: TweetView as VueNodeViewComponent,\n  })\n})\n\nuseExtension(vueTweetView, { editor })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <MethodSelect :value=\"method\" :on-change=\"(newMethod) => (method = newMethod)\" />\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/tweet/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { defineNodeSpec, union } from 'prosekit/core'\n\nfunction defineTweetSpec() {\n  return defineNodeSpec({\n    name: 'tweet',\n    group: 'block',\n    attrs: {\n      tweetId: { default: null },\n    },\n    parseDOM: [{\n      tag: 'iframe[src^=\"https://platform.twitter.com/embed/Tweet.html\"]',\n      getAttrs: (node) => {\n        const src = node.getAttribute('src')\n        const match = src?.match(/id=([^&]+)/)\n        return {\n          tweetId: match?.[1] ?? null,\n        }\n      },\n    }],\n    toDOM: (node) => {\n      return [\n        'iframe',\n        {\n          src: `https://platform.twitter.com/embed/Tweet.html?id=${node.attrs.tweetId}&theme=dark`,\n          style: 'height: 300px',\n        },\n      ]\n    },\n  })\n}\n\nfunction defineTweet() {\n  return union(\n    defineTweetSpec(),\n  )\n}\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    defineTweet(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/tweet/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    },
+    {
+      "path": "registry/src/vue/examples/tweet/method-select.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/method-select.vue",
+      "content": "<script setup lang=\"ts\">\nimport { useId } from 'vue'\n\nconst props = defineProps<{\n  value: 'basic' | 'advanced'\n  onChange: (value: 'basic' | 'advanced') => void\n}>()\n\nconst id = 'id-' + useId()\nconst basicId = `${id}-basic`\nconst advancedId = `${id}-advanced`\n</script>\n\n<template>\n  <fieldset class=\"not-content\">\n    <legend>Select a render method:</legend>\n\n    <div>\n      <input\n        :id=\"basicId\"\n        type=\"radio\"\n        :name=\"id\"\n        value=\"basic\"\n        :checked=\"props.value === 'basic'\"\n        @change=\"props.onChange('basic')\"\n      />\n      <label :for=\"basicId\">basic</label>\n    </div>\n\n    <div>\n      <input\n        :id=\"advancedId\"\n        type=\"radio\"\n        :name=\"id\"\n        value=\"advanced\"\n        :checked=\"props.value === 'advanced'\"\n        @change=\"props.onChange('advanced')\"\n      />\n      <label :for=\"advancedId\">advanced</label>\n    </div>\n  </fieldset>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/tweet/tweet-view.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/tweet-view.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { VueNodeViewProps } from 'prosekit/vue'\nimport Tweet from 'vue-tweet'\n\nconst props = defineProps<VueNodeViewProps>()\n\nconst tweetId = props.node.value.attrs.tweetId as string\n</script>\n\n<template>\n  <div>\n    <div>\n      <strong>Rendered in Vue using library <span><a\n            href=\"https://github.com/DannyFeliz/vue-tweet\"\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n          >vue-tweet</a></span></strong>\n    </div>\n    <Tweet :tweet-id=\"tweetId\" />\n  </div>\n</template>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "tweet",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/tweet/editor.vue",
+      "registry/src/vue/examples/tweet/extension.ts",
+      "registry/src/vue/examples/tweet/index.ts",
+      "registry/src/vue/examples/tweet/method-select.vue",
+      "registry/src/vue/examples/tweet/tweet-view.vue",
+      "registry/src/vue/sample/sample-doc-tweet.ts"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-doc-tweet"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

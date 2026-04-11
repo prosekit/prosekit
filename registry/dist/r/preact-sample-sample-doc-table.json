@@ -1,0 +1,29 @@
+{
+  "name": "preact-sample-sample-doc-table",
+  "title": "preact-sample-sample-doc-table",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/sample/sample-doc-table.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-table.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'table',\n      content: [\n        {\n          type: 'tableRow',\n          content: [\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'A1',\n                    },\n                  ],\n                },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'B1',\n                    },\n                  ],\n                },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'C1',\n                    },\n                  ],\n                },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'D1',\n                    },\n                  ],\n                },\n              ],\n            },\n          ],\n        },\n        {\n          type: 'tableRow',\n          content: [\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'A2',\n                    },\n                  ],\n                },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'B2',\n                    },\n                  ],\n                },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'C2',\n                    },\n                  ],\n                },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {\n                colspan: 1,\n                rowspan: 1,\n                colwidth: null,\n              },\n              content: [\n                {\n                  type: 'paragraph',\n                  content: [\n                    {\n                      type: 'text',\n                      text: 'D2',\n                    },\n                  ],\n                },\n              ],\n            },\n          ],\n        },\n      ],\n    },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/sample/sample-doc-table.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

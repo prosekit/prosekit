@@ -1,0 +1,58 @@
+{
+  "name": "svelte-example-unmount",
+  "title": "svelte-example-unmount",
+  "type": "registry:block",
+  "description": "Properly unmount and remount editor instances.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/unmount/editor-component.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/editor-component.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\n\nimport { InlineMenu } from '../../ui/inline-menu'\nimport ExtensionComponent from './extension-component.svelte'\n\nconst props: {\n  placeholder: string\n} = $props()\n\nconst extension = defineBasicExtension()\nconst editor = createEditor({ extension })\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n      <InlineMenu />\n    </div>\n  </div>\n  <ExtensionComponent placeholder={props.placeholder} />\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/unmount/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport EditorComponent from './editor-component.svelte'\n\nlet nextKey = $state(1)\nlet editorKeys = $state<number[]>([])\n\nfunction addEditor() {\n  const key = nextKey\n  nextKey += 1\n  editorKeys = [...editorKeys, key]\n}\n\nfunction removeEditor(key: number) {\n  editorKeys = editorKeys.filter((k) => k !== key)\n}\n</script>\n\n<div class=\"flex flex-col gap-2\">\n  <div class=\"flex gap-2\">\n    <button class=\"border p-2\" onclick={addEditor}>\n      Add editor\n    </button>\n    {#each editorKeys as key (key)}\n      <button\n        class=\"border p-2\"\n        onclick={() => removeEditor(key)}\n      >\n        Unmount No.{key}\n      </button>\n    {/each}\n  </div>\n  {#each editorKeys as key (key)}\n    <div>\n      <EditorComponent placeholder={`Editor No.${key}`} />\n    </div>\n  {/each}\n</div>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/unmount/extension-component.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/extension-component.svelte",
+      "content": "<script lang=\"ts\">\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\nimport { useExtension } from 'prosekit/svelte'\nimport { toStore } from 'svelte/store'\n\nconst props: {\n  placeholder: string\n} = $props()\n\nconst extension = $derived(definePlaceholder({ placeholder: props.placeholder }))\n\nuseExtension(toStore(() => extension))\n</script>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/unmount/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "unmount",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/unmount/editor-component.svelte",
+      "registry/src/svelte/examples/unmount/editor.svelte",
+      "registry/src/svelte/examples/unmount/extension-component.svelte",
+      "registry/src/svelte/examples/unmount/index.ts",
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts",
+      "registry/src/svelte/ui/inline-menu/index.ts",
+      "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+    ],
+    "internalDependencies": [
+      "svelte-ui-inline-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

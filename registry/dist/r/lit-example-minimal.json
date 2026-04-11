@@ -1,0 +1,36 @@
+{
+  "name": "lit-example-minimal",
+  "title": "lit-example-minimal",
+  "type": "registry:block",
+  "description": "Minimal editor setup with basic functionality.",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/lit/examples/minimal/editor.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/minimal/editor.ts",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'\nimport { createRef, ref, type Ref } from 'lit/directives/ref.js'\nimport { defineBasicExtension } from 'prosekit/basic'\nimport type { Editor } from 'prosekit/core'\nimport { createEditor } from 'prosekit/core'\n\nexport class LitEditor extends LitElement {\n  static override properties = {\n    editor: { state: true, attribute: false } satisfies PropertyDeclaration<Editor>,\n  }\n\n  private editor: Editor\n  private ref: Ref<HTMLDivElement>\n\n  constructor() {\n    super()\n\n    const extension = defineBasicExtension()\n    this.editor = createEditor({ extension })\n    this.ref = createRef<HTMLDivElement>()\n  }\n\n  override createRenderRoot() {\n    return this\n  }\n\n  override disconnectedCallback() {\n    this.editor.unmount()\n    super.disconnectedCallback()\n  }\n\n  override updated(changedProperties: PropertyValues) {\n    super.updated(changedProperties)\n    this.editor.mount(this.ref.value)\n  }\n\n  override render() {\n    return html`<div class=\"outline-solid p-4\" ${ref(this.ref)}></div>`\n  }\n}\n\nexport function registerLitEditor() {\n  if (customElements.get('lit-editor-example-minimal')) return\n  customElements.define('lit-editor-example-minimal', LitEditor)\n}\n\ndeclare global {\n  interface HTMLElementTagNameMap {\n    'lit-editor-example-minimal': LitEditor\n  }\n}\n"
+    },
+    {
+      "path": "registry/src/lit/examples/minimal/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/minimal/index.ts",
+      "content": "export { LitEditor as ExampleEditor, registerLitEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "minimal",
+    "framework": "lit",
+    "accumulatedFiles": [
+      "registry/src/lit/examples/minimal/editor.ts",
+      "registry/src/lit/examples/minimal/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

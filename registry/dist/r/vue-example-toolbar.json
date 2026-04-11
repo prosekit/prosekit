@@ -1,0 +1,56 @@
+{
+  "name": "vue-example-toolbar",
+  "title": "vue-example-toolbar",
+  "type": "registry:block",
+  "description": "Formatting toolbar with common editing actions.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-uploader.json",
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/toolbar/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/toolbar/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { sampleUploader } from '../../sample/sample-uploader'\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\nconst extension = defineExtension()\nconst editor = createEditor({ extension })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <Toolbar :uploader=\"sampleUploader\" />\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/toolbar/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/toolbar/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\n\nexport function defineExtension() {\n  return union(defineBasicExtension())\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/toolbar/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/toolbar/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "toolbar",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/toolbar/editor.vue",
+      "registry/src/vue/examples/toolbar/extension.ts",
+      "registry/src/vue/examples/toolbar/index.ts",
+      "registry/src/vue/sample/sample-uploader.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts",
+      "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+      "registry/src/vue/ui/image-upload-popover/index.ts",
+      "registry/src/vue/ui/toolbar/index.ts",
+      "registry/src/vue/ui/toolbar/toolbar.vue"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-uploader",
+      "vue-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

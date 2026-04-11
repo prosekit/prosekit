@@ -1,0 +1,74 @@
+{
+  "name": "svelte-example-rtl",
+  "title": "svelte-example-rtl",
+  "type": "registry:block",
+  "description": "Right-to-left text direction support.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-rtl.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-uploader.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-block-handle.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-slash-menu.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-table-handle.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/rtl/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/rtl/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\nimport { untrack } from 'svelte'\n\nimport { sampleContent } from '../../sample/sample-doc-rtl'\nimport { sampleUploader } from '../../sample/sample-uploader'\nimport { BlockHandle } from '../../ui/block-handle'\nimport { DropIndicator } from '../../ui/drop-indicator'\nimport { InlineMenu } from '../../ui/inline-menu'\nimport { SlashMenu } from '../../ui/slash-menu'\nimport { TableHandle } from '../../ui/table-handle'\nimport { Toolbar } from '../../ui/toolbar'\n\nconst props: {\n  initialContent?: NodeJSON\n} = $props()\n\nconst extension = defineBasicExtension()\nconst defaultContent = untrack(() => props.initialContent ?? sampleContent)\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<ProseKit {editor}>\n  <div dir=\"rtl\" class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <Toolbar uploader={sampleUploader} />\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n      <InlineMenu />\n      <SlashMenu />\n      <BlockHandle dir=\"rtl\" />\n      <TableHandle dir=\"rtl\" />\n      <DropIndicator />\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/rtl/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/rtl/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "rtl",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/rtl/editor.svelte",
+      "registry/src/svelte/examples/rtl/index.ts",
+      "registry/src/svelte/sample/sample-doc-rtl.ts",
+      "registry/src/svelte/sample/sample-uploader.ts",
+      "registry/src/svelte/ui/block-handle/block-handle.svelte",
+      "registry/src/svelte/ui/block-handle/index.ts",
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts",
+      "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+      "registry/src/svelte/ui/drop-indicator/index.ts",
+      "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+      "registry/src/svelte/ui/image-upload-popover/index.ts",
+      "registry/src/svelte/ui/inline-menu/index.ts",
+      "registry/src/svelte/ui/inline-menu/inline-menu.svelte",
+      "registry/src/svelte/ui/slash-menu/index.ts",
+      "registry/src/svelte/ui/slash-menu/slash-menu-empty.svelte",
+      "registry/src/svelte/ui/slash-menu/slash-menu-item.svelte",
+      "registry/src/svelte/ui/slash-menu/slash-menu.svelte",
+      "registry/src/svelte/ui/table-handle/index.ts",
+      "registry/src/svelte/ui/table-handle/table-handle.svelte",
+      "registry/src/svelte/ui/toolbar/index.ts",
+      "registry/src/svelte/ui/toolbar/toolbar.svelte"
+    ],
+    "internalDependencies": [
+      "svelte-sample-sample-doc-rtl",
+      "svelte-sample-sample-uploader",
+      "svelte-ui-block-handle",
+      "svelte-ui-drop-indicator",
+      "svelte-ui-inline-menu",
+      "svelte-ui-slash-menu",
+      "svelte-ui-table-handle",
+      "svelte-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

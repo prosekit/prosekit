@@ -1,0 +1,50 @@
+{
+  "name": "vanilla-ui-slash-menu",
+  "title": "vanilla-ui-slash-menu",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vanilla/ui/slash-menu/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/slash-menu/index.ts",
+      "content": "export { renderSlashMenu } from './slash-menu'\n"
+    },
+    {
+      "path": "registry/src/vanilla/ui/slash-menu/slash-menu-empty.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/slash-menu/slash-menu-empty.ts",
+      "content": "import 'prosekit/web/autocomplete'\n\nimport type { AutocompleteEmptyElement } from 'prosekit/web/autocomplete'\n\nexport function renderSlashMenuEmpty() {\n  const empty = document.createElement('prosekit-autocomplete-empty') as AutocompleteEmptyElement\n  empty.className = 'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800'\n\n  const span = document.createElement('span')\n  span.textContent = 'No results'\n  empty.append(span)\n\n  return empty\n}\n"
+    },
+    {
+      "path": "registry/src/vanilla/ui/slash-menu/slash-menu-item.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/slash-menu/slash-menu-item.ts",
+      "content": "import 'prosekit/web/autocomplete'\n\nimport type { AutocompleteItemElement } from 'prosekit/web/autocomplete'\n\nexport function renderSlashMenuItem(options: {\n  label: string\n  kbd?: string\n  onSelect: () => void\n}) {\n  const item = document.createElement('prosekit-autocomplete-item') as AutocompleteItemElement\n  item.className = 'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800'\n  item.addEventListener('select', () => options.onSelect())\n\n  const span = document.createElement('span')\n  span.textContent = options.label\n  item.append(span)\n\n  if (options.kbd) {\n    const kbd = document.createElement('kbd')\n    kbd.className = 'text-xs font-mono text-gray-400 dark:text-gray-500'\n    kbd.textContent = options.kbd\n    item.append(kbd)\n  }\n\n  return item\n}\n"
+    },
+    {
+      "path": "registry/src/vanilla/ui/slash-menu/slash-menu.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/slash-menu/slash-menu.ts",
+      "content": "import 'prosekit/web/autocomplete'\n\nimport type { BasicExtension } from 'prosekit/basic'\nimport type { Editor } from 'prosekit/core'\nimport { canUseRegexLookbehind } from 'prosekit/core'\nimport type { AutocompletePopupElement, AutocompletePositionerElement, AutocompleteRootElement } from 'prosekit/web/autocomplete'\n\nimport { renderSlashMenuEmpty } from './slash-menu-empty'\nimport { renderSlashMenuItem } from './slash-menu-item'\n\n// Match inputs like \"/\", \"/table\", \"/heading 1\" etc. Do not match \"/ heading\".\nconst regex = canUseRegexLookbehind() ? /(?<!\\S)\\/(\\S.*)?$/u : /\\/(\\S.*)?$/u\n\nexport function renderSlashMenu(\n  editor: Editor<BasicExtension>,\n) {\n  const root = document.createElement('prosekit-autocomplete-root') as AutocompleteRootElement\n  root.editor = editor\n  root.regex = regex\n\n  const positioner = document.createElement('prosekit-autocomplete-positioner') as AutocompletePositionerElement\n  positioner.className = 'block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100'\n\n  const popup = document.createElement('prosekit-autocomplete-popup') as AutocompletePopupElement\n  popup.className = 'box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1'\n\n  popup.append(renderSlashMenuItem({ label: 'Text', kbd: undefined, onSelect: () => editor.commands.setParagraph() }))\n  popup.append(renderSlashMenuItem({ label: 'Heading 1', kbd: '#', onSelect: () => editor.commands.setHeading({ level: 1 }) }))\n  popup.append(renderSlashMenuItem({ label: 'Heading 2', kbd: '##', onSelect: () => editor.commands.setHeading({ level: 2 }) }))\n  popup.append(renderSlashMenuItem({ label: 'Heading 3', kbd: '###', onSelect: () => editor.commands.setHeading({ level: 3 }) }))\n  popup.append(renderSlashMenuItem({ label: 'Bullet list', kbd: '-', onSelect: () => editor.commands.wrapInList({ kind: 'bullet' }) }))\n  popup.append(renderSlashMenuItem({ label: 'Ordered list', kbd: '1.', onSelect: () => editor.commands.wrapInList({ kind: 'ordered' }) }))\n  popup.append(renderSlashMenuItem({ label: 'Task list', kbd: '[]', onSelect: () => editor.commands.wrapInList({ kind: 'task' }) }))\n  popup.append(renderSlashMenuItem({ label: 'Toggle list', kbd: '>>', onSelect: () => editor.commands.wrapInList({ kind: 'toggle' }) }))\n  popup.append(renderSlashMenuItem({ label: 'Quote', kbd: '>', onSelect: () => editor.commands.setBlockquote() }))\n  popup.append(renderSlashMenuItem({ label: 'Table', onSelect: () => editor.commands.insertTable({ row: 3, col: 3 }) }))\n  popup.append(renderSlashMenuItem({ label: 'Divider', kbd: '---', onSelect: () => editor.commands.insertHorizontalRule() }))\n  popup.append(renderSlashMenuItem({ label: 'Code', kbd: '```', onSelect: () => editor.commands.setCodeBlock() }))\n  popup.append(renderSlashMenuEmpty())\n\n  positioner.append(popup)\n  root.append(positioner)\n\n  return root\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vanilla",
+    "accumulatedFiles": [
+      "registry/src/vanilla/ui/slash-menu/index.ts",
+      "registry/src/vanilla/ui/slash-menu/slash-menu-empty.ts",
+      "registry/src/vanilla/ui/slash-menu/slash-menu-item.ts",
+      "registry/src/vanilla/ui/slash-menu/slash-menu.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

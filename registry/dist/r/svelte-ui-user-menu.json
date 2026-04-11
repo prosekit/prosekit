@@ -1,0 +1,36 @@
+{
+  "name": "svelte-ui-user-menu",
+  "title": "svelte-ui-user-menu",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/ui/user-menu/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/user-menu/index.ts",
+      "content": "export { default as UserMenu } from './user-menu.svelte'\n"
+    },
+    {
+      "path": "registry/src/svelte/ui/user-menu/user-menu.svelte",
+      "type": "registry:component",
+      "target": "components/editor/ui/user-menu/user-menu.svelte",
+      "content": "<script lang=\"ts\">\nimport type { BasicExtension } from 'prosekit/basic'\nimport { canUseRegexLookbehind, type Union } from 'prosekit/core'\nimport type { MentionExtension } from 'prosekit/extensions/mention'\nimport { useEditor } from 'prosekit/svelte'\nimport {\n  AutocompleteEmpty,\n  AutocompleteItem,\n  AutocompletePopup,\n  AutocompletePositioner,\n  AutocompleteRoot,\n} from 'prosekit/svelte/autocomplete'\n\ninterface Props {\n  users: { id: number; name: string }[]\n  loading?: boolean\n  onQueryChange?: (query: string) => void\n  onOpenChange?: (open: boolean) => void\n}\n\nconst props: Props = $props()\nconst loading = $derived(props.loading ?? false)\n\nconst editor = useEditor<Union<[MentionExtension, BasicExtension]>>()\n\nfunction handleUserInsert(id: number, username: string) {\n  $editor.commands.insertMention({\n    id: id.toString(),\n    value: '@' + username,\n    kind: 'user',\n  })\n  $editor.commands.insertText({ text: ' ' })\n}\n\n// Match inputs like \"@\", \"@foo\", \"@foo bar\" etc. Do not match \"@ foo\".\nconst regex = canUseRegexLookbehind() ? /(?<!\\S)@(\\S.*)?$/u : /@(\\S.*)?$/u\n</script>\n\n<AutocompleteRoot\n  {regex}\n  onQueryChange={(event) => props.onQueryChange?.(event.detail)}\n  onOpenChange={(event) => props.onOpenChange?.(event.detail)}\n>\n  <AutocompletePositioner class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n    <AutocompletePopup class=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1\">\n      <AutocompleteEmpty class=\"relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800\">\n        {loading ? 'Loading...' : 'No results'}\n      </AutocompleteEmpty>\n\n      {#each props.users as user (user.id)}\n        <AutocompleteItem\n          class=\"relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800\"\n          onSelect={() => handleUserInsert(user.id, user.name)}\n        >\n          {#if loading}\n            <span class=\"opacity-50\">\n              {user.name}\n            </span>\n          {:else}\n            <span>\n              {user.name}\n            </span>\n          {/if}\n        </AutocompleteItem>\n      {/each}\n    </AutocompletePopup>\n  </AutocompletePositioner>\n</AutocompleteRoot>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/ui/user-menu/index.ts",
+      "registry/src/svelte/ui/user-menu/user-menu.svelte"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

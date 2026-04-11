@@ -1,0 +1,58 @@
+{
+  "name": "vue-example-unmount",
+  "title": "vue-example-unmount",
+  "type": "registry:block",
+  "description": "Properly unmount and remount editor instances.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/unmount/editor-component.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/editor-component.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { InlineMenu } from '../../ui/inline-menu'\n\nimport ExtensionComponent from './extension-component.vue'\n\nconst props = defineProps<{\n  placeholder: string\n}>()\n\nconst extension = defineBasicExtension()\nconst editor = createEditor({ extension })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n        <InlineMenu />\n      </div>\n    </div>\n    <ExtensionComponent :placeholder=\"props.placeholder\" />\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/unmount/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\n\nimport EditorComponent from './editor-component.vue'\n\nconst nextKey = ref(1)\nconst editorKeys = ref<number[]>([])\n\nfunction addEditor() {\n  const key = nextKey.value\n  nextKey.value += 1\n  editorKeys.value = [...editorKeys.value, key]\n}\n\nfunction removeEditor(key: number) {\n  editorKeys.value = editorKeys.value.filter((k) => k !== key)\n}\n</script>\n\n<template>\n  <div class=\"flex flex-col gap-2\">\n    <div class=\"flex gap-2\">\n      <button class=\"border p-2\" @click=\"addEditor\">\n        Add editor\n      </button>\n      <button\n        v-for=\"key in editorKeys\"\n        :key=\"key\"\n        class=\"border p-2\"\n        @click=\"removeEditor(key)\"\n      >\n        Unmount No.{{ key }}\n      </button>\n    </div>\n    <div v-for=\"key in editorKeys\" :key=\"key\">\n      <EditorComponent :placeholder=\"`Editor No.${key}`\" />\n    </div>\n  </div>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/unmount/extension-component.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/extension-component.vue",
+      "content": "<script setup lang=\"ts\">\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\nimport { useExtension } from 'prosekit/vue'\nimport { computed } from 'vue'\n\nconst props = defineProps<{\n  placeholder: string\n}>()\n\nconst extension = computed(() => {\n  return definePlaceholder({ placeholder: props.placeholder })\n})\n\nuseExtension(extension)\n</script>\n\n<template>\n  <slot />\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/unmount/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/unmount/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "unmount",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/unmount/editor-component.vue",
+      "registry/src/vue/examples/unmount/editor.vue",
+      "registry/src/vue/examples/unmount/extension-component.vue",
+      "registry/src/vue/examples/unmount/index.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts",
+      "registry/src/vue/ui/inline-menu/index.ts",
+      "registry/src/vue/ui/inline-menu/inline-menu.vue"
+    ],
+    "internalDependencies": [
+      "vue-ui-inline-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

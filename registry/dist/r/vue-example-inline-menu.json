@@ -1,0 +1,54 @@
+{
+  "name": "vue-example-inline-menu",
+  "title": "vue-example-inline-menu",
+  "type": "registry:block",
+  "description": "Inline formatting menu that appears on text selection.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-inline-menu.json",
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/inline-menu/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/inline-menu/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { sampleContent } from '../../sample/sample-doc-inline-menu'\nimport { InlineMenu } from '../../ui/inline-menu'\n\nimport { defineExtension } from './extension'\n\nconst props = defineProps<{\n  initialContent?: NodeJSON\n}>()\n\nconst extension = defineExtension()\nconst defaultContent = props.initialContent ?? sampleContent\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n        <InlineMenu />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/inline-menu/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/inline-menu/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\n\nexport function defineExtension() {\n  return defineBasicExtension()\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/inline-menu/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/inline-menu/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "inline-menu",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/inline-menu/editor.vue",
+      "registry/src/vue/examples/inline-menu/extension.ts",
+      "registry/src/vue/examples/inline-menu/index.ts",
+      "registry/src/vue/sample/sample-doc-inline-menu.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts",
+      "registry/src/vue/ui/inline-menu/index.ts",
+      "registry/src/vue/ui/inline-menu/inline-menu.vue"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-doc-inline-menu",
+      "vue-ui-inline-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

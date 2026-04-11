@@ -1,0 +1,51 @@
+{
+  "name": "svelte-example-katex",
+  "title": "svelte-example-katex",
+  "type": "registry:block",
+  "description": "Math equation rendering using the KaTeX library.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-katex.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-tex.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/katex/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/katex/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\nimport { untrack } from 'svelte'\n\nimport { sampleContent } from '../../sample/sample-doc-tex'\n\nimport { defineExtension } from './extension'\n\nconst props: {\n  initialContent?: NodeJSON\n} = $props()\n\nconst extension = defineExtension()\nconst defaultContent = untrack(() => props.initialContent ?? sampleContent)\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/katex/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/katex/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { defineMath } from 'prosekit/extensions/math'\n\nimport { renderKaTeXMathBlock, renderKaTeXMathInline } from '../../sample/katex'\n\nexport function defineExtension() {\n  return union(defineBasicExtension(), defineMath({ renderMathBlock: renderKaTeXMathBlock, renderMathInline: renderKaTeXMathInline }))\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/katex/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/katex/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "katex",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/katex/editor.svelte",
+      "registry/src/svelte/examples/katex/extension.ts",
+      "registry/src/svelte/examples/katex/index.ts",
+      "registry/src/svelte/sample/katex.ts",
+      "registry/src/svelte/sample/sample-doc-tex.ts"
+    ],
+    "internalDependencies": [
+      "svelte-sample-katex",
+      "svelte-sample-sample-doc-tex"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

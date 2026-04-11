@@ -1,0 +1,36 @@
+{
+  "name": "svelte-ui-drop-indicator",
+  "title": "svelte-ui-drop-indicator",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+      "type": "registry:component",
+      "target": "components/editor/ui/drop-indicator/drop-indicator.svelte",
+      "content": "<script lang=\"ts\">\nimport { DropIndicator as BaseDropIndicator } from 'prosekit/svelte/drop-indicator'\n</script>\n\n<BaseDropIndicator class=\"z-50 transition-all bg-blue-500\" />\n"
+    },
+    {
+      "path": "registry/src/svelte/ui/drop-indicator/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/drop-indicator/index.ts",
+      "content": "export { default as DropIndicator } from './drop-indicator.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+      "registry/src/svelte/ui/drop-indicator/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

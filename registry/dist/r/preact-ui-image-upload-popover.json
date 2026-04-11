@@ -1,0 +1,42 @@
+{
+  "name": "preact-ui-image-upload-popover",
+  "title": "preact-ui-image-upload-popover",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-upload-popover/image-upload-popover.tsx",
+      "content": "import type { ComponentChild, JSX } from 'preact'\nimport { useId, useState } from 'preact/hooks'\nimport type { Uploader } from 'prosekit/extensions/file'\nimport type { ImageExtension } from 'prosekit/extensions/image'\nimport { useEditor } from 'prosekit/preact'\nimport { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/preact/popover'\nimport type { OpenChangeEvent } from 'prosekit/web/popover'\n\nimport { Button } from '../button'\n\nexport default function ImageUploadPopover(props: {\n  uploader: Uploader<string>\n  tooltip: string\n  disabled: boolean\n  children: ComponentChild\n}) {\n  const [open, setOpen] = useState(false)\n  const [url, setUrl] = useState('')\n  const [file, setFile] = useState<File | null>(null)\n  const ariaId = useId()\n\n  const editor = useEditor<ImageExtension>()\n\n  const handleFileChange = (\n    event: JSX.TargetedEvent<HTMLInputElement, Event>,\n  ) => {\n    const file = event.currentTarget.files?.[0]\n\n    if (file) {\n      setFile(file)\n      setUrl('')\n    } else {\n      setFile(null)\n    }\n  }\n\n  const handleUrlChange = (\n    event: JSX.TargetedEvent<HTMLInputElement, Event>,\n  ) => {\n    const url = event.currentTarget.value\n\n    if (url) {\n      setUrl(url)\n      setFile(null)\n    } else {\n      setUrl('')\n    }\n  }\n\n  const deferResetState = () => {\n    setTimeout(() => {\n      setUrl('')\n      setFile(null)\n    }, 300)\n  }\n\n  const handleSubmit = () => {\n    if (url) {\n      editor.commands.insertImage({ src: url })\n    } else if (file) {\n      editor.commands.uploadImage({ file, uploader: props.uploader })\n    }\n    setOpen(false)\n    deferResetState()\n  }\n\n  const handleOpenChange = (event: OpenChangeEvent) => {\n    if (!event.detail) {\n      deferResetState()\n    }\n    setOpen(event.detail)\n  }\n\n  return (\n    <PopoverRoot open={open} onOpenChange={handleOpenChange}>\n      <PopoverTrigger>\n        <Button pressed={open} disabled={props.disabled} tooltip={props.tooltip}>\n          {props.children}\n        </Button>\n      </PopoverTrigger>\n\n      <PopoverPositioner placement=\"bottom\" className=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n        <PopoverPopup className=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col gap-y-4 p-6 text-sm w-sm\">\n          {file ? null : (\n            <>\n              <label htmlFor={`id-link-${ariaId}`}>Embed Link</label>\n              <input\n                id={`id-link-${ariaId}`}\n                className=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50\"\n                placeholder=\"Paste the image link...\"\n                type=\"url\"\n                value={url}\n                onChange={handleUrlChange}\n              />\n            </>\n          )}\n\n          {url ? null : (\n            <>\n              <label htmlFor={`id-upload-${ariaId}`}>Upload</label>\n              <input\n                id={`id-upload-${ariaId}`}\n                className=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50\"\n                accept=\"image/*\"\n                type=\"file\"\n                onChange={handleFileChange}\n              />\n            </>\n          )}\n\n          {url\n            ? (\n              <button className=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2 w-full\" onClick={handleSubmit}>\n                Insert Image\n              </button>\n            )\n            : null}\n\n          {file\n            ? (\n              <button className=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2 w-full\" onClick={handleSubmit}>\n                Upload Image\n              </button>\n            )\n            : null}\n        </PopoverPopup>\n      </PopoverPositioner>\n    </PopoverRoot>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/ui/image-upload-popover/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-upload-popover/index.ts",
+      "content": "export { default as ImageUploadPopover } from './image-upload-popover'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/ui/button/button.tsx",
+      "registry/src/preact/ui/button/index.ts",
+      "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+      "registry/src/preact/ui/image-upload-popover/index.ts"
+    ],
+    "internalDependencies": [
+      "preact-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

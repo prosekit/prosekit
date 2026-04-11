@@ -1,0 +1,29 @@
+{
+  "name": "solid-sample-sample-uploader",
+  "title": "solid-sample-sample-uploader",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/sample/sample-uploader.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-uploader.ts",
+      "content": "import type { Uploader } from 'prosekit/extensions/file'\n\n/**\n * Uploads the given file to https://tmpfiles.org/ and returns the URL of the\n * uploaded file.\n *\n * This function is only for demonstration purposes. All uploaded files will be\n * deleted by the server after 1 hour.\n */\nexport const sampleUploader: Uploader<string> = ({ file, onProgress }): Promise<string> => {\n  return new Promise((resolve, reject) => {\n    const xhr = new XMLHttpRequest()\n    const formData = new FormData()\n    formData.append('file', file)\n\n    xhr.upload.addEventListener('progress', (event) => {\n      if (event.lengthComputable) {\n        onProgress({\n          loaded: event.loaded,\n          total: event.total,\n        })\n      }\n    })\n\n    xhr.addEventListener('load', () => {\n      if (xhr.status === 200) {\n        try {\n          const json = JSON.parse(xhr.responseText) as { data: { url: string } }\n          const url: string = json.data.url.replace('tmpfiles.org/', 'tmpfiles.org/dl/')\n\n          // Simulate a larger delay\n          setTimeout(() => resolve(url), 1000)\n        } catch (error) {\n          reject(new Error('Failed to parse response', { cause: error }))\n        }\n      } else {\n        reject(new Error(`Upload failed with status ${xhr.status}`))\n      }\n    })\n\n    xhr.addEventListener('error', () => {\n      reject(new Error('Upload failed'))\n    })\n\n    xhr.open('POST', 'https://tmpfiles.org/api/v1/upload', true)\n    xhr.send(formData)\n  })\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/sample/sample-uploader.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

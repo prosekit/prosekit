@@ -1,0 +1,67 @@
+{
+  "name": "vue-example-user-menu-dynamic",
+  "title": "vue-example-user-menu-dynamic",
+  "type": "registry:block",
+  "description": "Dynamic autocomplete menu with async data loading.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-query-users.json",
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { defineExtension } from './extension'\nimport UserMenuDynamic from './user-menu-dynamic.vue'\n\nconst extension = defineExtension()\nconst editor = createEditor({ extension })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        <UserMenuDynamic />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { defineMention } from 'prosekit/extensions/mention'\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    definePlaceholder({\n      placeholder: 'Type @ to mention someone...',\n    }),\n    defineMention(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/user-menu-dynamic/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    },
+    {
+      "path": "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/use-user-query.ts",
+      "content": "import type { Ref } from 'vue'\nimport { ref, watchEffect } from 'vue'\n\nimport { queryUsers, type User } from '../../sample/sample-query-users'\n\n/**\n * Simulate a user searching with some delay.\n */\nexport function useUserQuery(query: Ref<string>, enabled: Ref<boolean>) {\n  const users = ref<User[]>([])\n  const loading = ref(true)\n\n  watchEffect(\n    (onCleanup) => {\n      if (!enabled.value) {\n        users.value = []\n        return\n      }\n\n      loading.value = true\n      let cancelled = false\n      void queryUsers(query.value).then((result) => {\n        if (cancelled) {\n          return\n        }\n        users.value = result\n        loading.value = false\n      })\n      onCleanup(() => {\n        cancelled = true\n      })\n    },\n  )\n\n  return { loading, users }\n}\n"
+    },
+    {
+      "path": "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\n\nimport { UserMenu } from '../../ui/user-menu'\n\nimport { useUserQuery } from './use-user-query'\n\nconst query = ref('')\nconst open = ref(false)\n\nconst { loading, users } = useUserQuery(query, open)\n\nfunction handleQueryChange(q: string) {\n  query.value = q\n}\n\nfunction handleOpenChange(o: boolean) {\n  open.value = o\n}\n</script>\n\n<template>\n  <UserMenu\n    :users=\"users\"\n    :loading=\"loading\"\n    @query-change=\"handleQueryChange\"\n    @open-change=\"handleOpenChange\"\n  />\n</template>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "user-menu-dynamic",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+      "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+      "registry/src/vue/examples/user-menu-dynamic/index.ts",
+      "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+      "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+      "registry/src/vue/sample/sample-query-users.ts",
+      "registry/src/vue/sample/sample-user-data.ts",
+      "registry/src/vue/ui/user-menu/index.ts",
+      "registry/src/vue/ui/user-menu/user-menu.vue"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-query-users",
+      "vue-ui-user-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

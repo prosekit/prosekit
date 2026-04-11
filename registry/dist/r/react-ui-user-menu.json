@@ -1,0 +1,36 @@
+{
+  "name": "react-ui-user-menu",
+  "title": "react-ui-user-menu",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/ui/user-menu/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/user-menu/index.ts",
+      "content": "export { default as UserMenu } from './user-menu'\n"
+    },
+    {
+      "path": "registry/src/react/ui/user-menu/user-menu.tsx",
+      "type": "registry:component",
+      "target": "components/editor/ui/user-menu/user-menu.tsx",
+      "content": "import type { BasicExtension } from 'prosekit/basic'\nimport { canUseRegexLookbehind, type Union } from 'prosekit/core'\nimport type { MentionExtension } from 'prosekit/extensions/mention'\nimport { useEditor } from 'prosekit/react'\nimport {\n  AutocompleteEmpty,\n  AutocompleteItem,\n  AutocompletePopup,\n  AutocompletePositioner,\n  AutocompleteRoot,\n} from 'prosekit/react/autocomplete'\n\n// Match inputs like \"@\", \"@foo\", \"@foo bar\" etc. Do not match \"@ foo\".\nconst regex = canUseRegexLookbehind() ? /(?<!\\S)@(\\S.*)?$/u : /@(\\S.*)?$/u\n\nexport default function UserMenu(props: {\n  users: { id: number; name: string }[]\n  loading?: boolean\n  onQueryChange?: (query: string) => void\n  onOpenChange?: (open: boolean) => void\n}) {\n  const editor = useEditor<Union<[MentionExtension, BasicExtension]>>()\n\n  const handleUserInsert = (id: number, username: string) => {\n    editor.commands.insertMention({\n      id: id.toString(),\n      value: '@' + username,\n      kind: 'user',\n    })\n    editor.commands.insertText({ text: ' ' })\n  }\n\n  return (\n    <AutocompleteRoot\n      regex={regex}\n      onQueryChange={(event) => props.onQueryChange?.(event.detail)}\n      onOpenChange={(event) => props.onOpenChange?.(event.detail)}\n    >\n      <AutocompletePositioner className=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n        <AutocompletePopup className=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1\">\n          <AutocompleteEmpty className=\"relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800\">\n            {props.loading ? 'Loading...' : 'No results'}\n          </AutocompleteEmpty>\n\n          {props.users.map((user) => (\n            <AutocompleteItem\n              key={user.id}\n              className=\"relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800\"\n              onSelect={() => handleUserInsert(user.id, user.name)}\n            >\n              <span className={props.loading ? 'opacity-50' : undefined}>\n                {user.name}\n              </span>\n            </AutocompleteItem>\n          ))}\n        </AutocompletePopup>\n      </AutocompletePositioner>\n    </AutocompleteRoot>\n  )\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/ui/user-menu/index.ts",
+      "registry/src/react/ui/user-menu/user-menu.tsx"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "svelte-ui-search",
+  "title": "svelte-ui-search",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
+  ],
+  "dependencies": [
+    "@egoist/tailwindcss-icons",
+    "@iconify-json/lucide",
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/ui/search/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/search/index.ts",
+      "content": "export { default as Search } from './search.svelte'\n"
+    },
+    {
+      "path": "registry/src/svelte/ui/search/search.svelte",
+      "type": "registry:component",
+      "target": "components/editor/ui/search/search.svelte",
+      "content": "<script lang=\"ts\">\nimport { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'\nimport { useEditor, useExtension } from 'prosekit/svelte'\nimport { toStore } from 'svelte/store'\n\nimport { Button } from '../button'\n\ninterface Props {\n  onClose?: () => void\n}\n\nconst props: Props = $props()\n\nlet showReplace = $state(false)\nlet searchText = $state('')\nlet replaceText = $state('')\n\nconst editor = useEditor<SearchCommandsExtension>()\n\nconst extension = $derived(\n  searchText\n    ? defineSearchQuery({ search: searchText, replace: replaceText })\n    : null,\n)\n\nuseExtension(toStore(() => extension))\n\nfunction toggleReplace() {\n  showReplace = !showReplace\n}\n\nfunction isPlainEnter(event: KeyboardEvent) {\n  return (\n    event.key === 'Enter'\n    && !event.shiftKey\n    && !event.metaKey\n    && !event.altKey\n    && !event.ctrlKey\n    && !event.isComposing\n  )\n}\n\nfunction isShiftEnter(event: KeyboardEvent) {\n  return (\n    event.key === 'Enter'\n    && event.shiftKey\n    && !event.metaKey\n    && !event.altKey\n    && !event.ctrlKey\n    && !event.isComposing\n  )\n}\n\nfunction handleSearchKeyDown(event: KeyboardEvent) {\n  if (isPlainEnter(event)) {\n    event.preventDefault()\n    $editor.commands.findNext()\n  } else if (isShiftEnter(event)) {\n    event.preventDefault()\n    $editor.commands.findPrev()\n  }\n}\n\nfunction handleReplaceKeyDown(event: KeyboardEvent) {\n  if (isPlainEnter(event)) {\n    event.preventDefault()\n    $editor.commands.replaceNext()\n  } else if (isShiftEnter(event)) {\n    event.preventDefault()\n    $editor.commands.replaceAll()\n  }\n}\n</script>\n\n<div class=\"z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b grid grid-cols-[min-content_1fr_min-content] gap-2 p-2\">\n  <Button tooltip=\"Toggle Replace\" onClick={toggleReplace}>\n    <span\n      data-rotate={showReplace ? '' : undefined}\n      class=\"i-lucide-chevron-right size-5 block transition-transform data-rotate:rotate-90\"\n    ></span>\n  </Button>\n  <input\n    bind:value={searchText}\n    placeholder=\"Search\"\n    type=\"text\"\n    class=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50 col-start-2\"\n    onkeydown={handleSearchKeyDown}\n  />\n  <div class=\"flex items-center justify-between gap-1\">\n    <Button\n      tooltip=\"Previous (Shift Enter)\"\n      onClick={$editor.commands.findPrev}\n    >\n      <span class=\"i-lucide-arrow-left size-5 block\"></span>\n    </Button>\n    <Button\n      tooltip=\"Next (Enter)\"\n      onClick={$editor.commands.findNext}\n    >\n      <span class=\"i-lucide-arrow-right size-5 block\"></span>\n    </Button>\n    <Button tooltip=\"Close\" onClick={props.onClose}>\n      <span class=\"i-lucide-x size-5 block\"></span>\n    </Button>\n  </div>\n  {#if showReplace}\n    <input\n      bind:value={replaceText}\n      placeholder=\"Replace\"\n      type=\"text\"\n      class=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50 col-start-2\"\n      onkeydown={handleReplaceKeyDown}\n    />\n    <div class=\"flex items-center justify-between gap-1\">\n      <Button\n        tooltip=\"Replace (Enter)\"\n        onClick={$editor.commands.replaceNext}\n      >\n        Replace\n      </Button>\n      <Button\n        tooltip=\"Replace All (Shift Enter)\"\n        onClick={$editor.commands.replaceAll}\n      >\n        All\n      </Button>\n    </div>\n  {/if}\n</div>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": true,
+    "hidden": false,
+    "story": "",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts",
+      "registry/src/svelte/ui/search/index.ts",
+      "registry/src/svelte/ui/search/search.svelte"
+    ],
+    "internalDependencies": [
+      "svelte-ui-button"
+    ]
+  },
+  "css": {
+    "@plugin @egoist/tailwindcss-icons": {}
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

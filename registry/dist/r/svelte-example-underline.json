@@ -1,0 +1,56 @@
+{
+  "name": "svelte-example-underline",
+  "title": "svelte-example-underline",
+  "type": "registry:block",
+  "description": "Example for underline mark.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-underline.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/underline/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/underline/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\nimport { untrack } from 'svelte'\n\nimport { sampleContent } from '../../sample/sample-doc-underline'\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\nconst props: {\n  initialContent?: NodeJSON\n} = $props()\n\nconst extension = defineExtension()\nconst defaultContent = untrack(() => props.initialContent ?? sampleContent)\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <Toolbar />\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/underline/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/underline/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\nimport { defineUnderline } from 'prosekit/extensions/underline'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineUnderline(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/underline/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/underline/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "underline",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/underline/editor.svelte",
+      "registry/src/svelte/examples/underline/extension.ts",
+      "registry/src/svelte/examples/underline/index.ts",
+      "registry/src/svelte/sample/sample-doc-underline.ts",
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts",
+      "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+      "registry/src/svelte/ui/image-upload-popover/index.ts",
+      "registry/src/svelte/ui/toolbar/index.ts",
+      "registry/src/svelte/ui/toolbar/toolbar.svelte"
+    ],
+    "internalDependencies": [
+      "svelte-sample-sample-doc-underline",
+      "svelte-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

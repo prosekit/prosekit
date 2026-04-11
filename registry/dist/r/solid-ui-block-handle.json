@@ -1,0 +1,41 @@
+{
+  "name": "solid-ui-block-handle",
+  "title": "solid-ui-block-handle",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "@egoist/tailwindcss-icons",
+    "@iconify-json/lucide",
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/ui/block-handle/block-handle.tsx",
+      "type": "registry:component",
+      "target": "components/editor/ui/block-handle/block-handle.tsx",
+      "content": "import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/solid/block-handle'\nimport type { JSX } from 'solid-js'\n\ninterface Props {\n  dir?: 'ltr' | 'rtl'\n}\n\nexport default function BlockHandle(props: Props): JSX.Element {\n  return (\n    <BlockHandleRoot>\n      <BlockHandlePositioner\n        placement={props.dir === 'rtl' ? 'right' : 'left'}\n        class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\"\n      >\n        <BlockHandlePopup class=\"flex box-border motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100\">\n          <BlockHandleAdd class=\"h-6 w-6 cursor-pointer flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50\">\n            <div class=\"i-lucide-plus size-5 block\" />\n          </BlockHandleAdd>\n          <BlockHandleDraggable class=\"h-6 w-5 cursor-grab flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50\">\n            <div class=\"i-lucide-grip-vertical size-5 block\" />\n          </BlockHandleDraggable>\n        </BlockHandlePopup>\n      </BlockHandlePositioner>\n    </BlockHandleRoot>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/solid/ui/block-handle/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/block-handle/index.ts",
+      "content": "export { default as BlockHandle } from './block-handle'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": true,
+    "hidden": false,
+    "story": "",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/ui/block-handle/block-handle.tsx",
+      "registry/src/solid/ui/block-handle/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "css": {
+    "@plugin @egoist/tailwindcss-icons": {}
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

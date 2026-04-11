@@ -1,0 +1,55 @@
+{
+  "name": "preact-example-link-mark-view",
+  "title": "preact-example-link-mark-view",
+  "type": "registry:block",
+  "description": "An example showing how to render a mark as a custom component.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-link-mark-view.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/examples/link-mark-view/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/link-mark-view/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { useMemo } from 'preact/hooks'\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/preact'\n\nimport { sampleContent } from '../../sample/sample-doc-link-mark-view'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    const extension = defineExtension()\n    return createEditor({ extension, defaultContent })\n  }, [defaultContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/link-mark-view/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/link-mark-view/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { definePreactMarkView } from 'prosekit/preact'\n\nimport LinkView from './link-view'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    definePreactMarkView({\n      name: 'link',\n      component: LinkView,\n    }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/preact/examples/link-mark-view/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/link-mark-view/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    },
+    {
+      "path": "registry/src/preact/examples/link-mark-view/link-view.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/link-mark-view/link-view.tsx",
+      "content": "import { useEffect, useState } from 'preact/hooks'\nimport type { PreactMarkViewProps } from 'prosekit/preact'\n\nconst colors = [\n  '#f06292',\n  '#ba68c8',\n  '#9575cd',\n  '#7986cb',\n  '#64b5f6',\n  '#4fc3f7',\n  '#4dd0e1',\n  '#4db6ac',\n  '#81c784',\n  '#aed581',\n  '#ffb74d',\n  '#ffa726',\n  '#ff8a65',\n  '#d4e157',\n  '#ffd54f',\n  '#ffecb3',\n] as const\n\nfunction pickRandomColor() {\n  return colors[Math.floor(Math.random() * colors.length)]\n}\n\nexport default function Link(props: PreactMarkViewProps) {\n  const [color, setColor] = useState<string>(colors[0])\n  const href = props.mark.attrs.href as string\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setColor(pickRandomColor())\n    }, 1000)\n    return () => clearInterval(interval)\n  }, [])\n\n  return (\n    <a\n      href={href}\n      ref={props.contentRef}\n      style={{ color, transition: 'color 1s ease-in-out' }}\n    >\n    </a>\n  )\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "link-mark-view",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/examples/link-mark-view/editor.tsx",
+      "registry/src/preact/examples/link-mark-view/extension.ts",
+      "registry/src/preact/examples/link-mark-view/index.ts",
+      "registry/src/preact/examples/link-mark-view/link-view.tsx",
+      "registry/src/preact/sample/sample-doc-link-mark-view.ts"
+    ],
+    "internalDependencies": [
+      "preact-sample-sample-doc-link-mark-view"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

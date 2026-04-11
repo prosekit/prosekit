@@ -1,0 +1,36 @@
+{
+  "name": "vue-ui-code-block-view",
+  "title": "vue-ui-code-block-view",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/ui/code-block-view/code-block-view.vue",
+      "type": "registry:component",
+      "target": "components/editor/ui/code-block-view/code-block-view.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { CodeBlockAttrs } from 'prosekit/extensions/code-block'\nimport { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'\nimport type { VueNodeViewProps } from 'prosekit/vue'\n\nconst props = defineProps<VueNodeViewProps>()\n\nconst attrs = () => props.node.value.attrs as CodeBlockAttrs\nconst language = () => attrs().language\n\nfunction setLanguage(lang: string) {\n  const newAttrs: CodeBlockAttrs = { language: lang }\n  props.setAttrs(newAttrs)\n}\n</script>\n\n<template>\n  <div class=\"relative mx-2 top-3 h-0 select-none overflow-visible text-xs\" contentEditable=\"false\">\n    <select\n      aria-label=\"Code block language\"\n      class=\"outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight) opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80\"\n      :value=\"language() || ''\"\n      @change=\"(event) => setLanguage((event.target as HTMLSelectElement).value)\"\n    >\n      <option value=\"\">Plain Text</option>\n      <option\n        v-for=\"info in shikiBundledLanguagesInfo\"\n        :key=\"info.id\"\n        :value=\"info.id\"\n      >\n        {{ info.name }}\n      </option>\n    </select>\n  </div>\n  <pre :ref=\"contentRef\" :data-language=\"language()\"></pre>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/ui/code-block-view/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/code-block-view/index.ts",
+      "content": "import type { Extension } from 'prosekit/core'\nimport { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'\n\nimport CodeBlockView from './code-block-view.vue'\n\nexport function defineCodeBlockView(): Extension {\n  return defineVueNodeView({\n    name: 'codeBlock',\n    contentAs: 'code',\n    component: CodeBlockView as VueNodeViewComponent,\n  })\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/ui/code-block-view/code-block-view.vue",
+      "registry/src/vue/ui/code-block-view/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

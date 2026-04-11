@@ -1,0 +1,53 @@
+{
+  "name": "preact-example-blockquote",
+  "title": "preact-example-blockquote",
+  "type": "registry:block",
+  "description": "Example for blockquote node.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/examples/blockquote/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/blockquote/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { useMemo } from 'preact/hooks'\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/preact'\n\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\nexport default function Editor() {\n  const editor = useMemo(() => {\n    return createEditor({ extension: defineExtension() })\n  }, [])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <Toolbar />\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/blockquote/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/blockquote/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineBlockquote } from 'prosekit/extensions/blockquote'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineBlockquote(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/preact/examples/blockquote/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/blockquote/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "blockquote",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/examples/blockquote/editor.tsx",
+      "registry/src/preact/examples/blockquote/extension.ts",
+      "registry/src/preact/examples/blockquote/index.ts",
+      "registry/src/preact/ui/button/button.tsx",
+      "registry/src/preact/ui/button/index.ts",
+      "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+      "registry/src/preact/ui/image-upload-popover/index.ts",
+      "registry/src/preact/ui/toolbar/index.ts",
+      "registry/src/preact/ui/toolbar/toolbar.tsx"
+    ],
+    "internalDependencies": [
+      "preact-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "react-ui-button",
+  "title": "react-ui-button",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/ui/button/button.tsx",
+      "type": "registry:component",
+      "target": "components/editor/ui/button/button.tsx",
+      "content": "import { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/react/tooltip'\nimport type { MouseEventHandler, ReactNode } from 'react'\n\nexport default function Button(props: {\n  pressed?: boolean\n  disabled?: boolean\n  onClick?: MouseEventHandler<HTMLButtonElement>\n  tooltip?: string\n  children: ReactNode\n}) {\n  return (\n    <TooltipRoot>\n      <TooltipTrigger className=\"block\">\n        <button\n          data-state={props.pressed ? 'on' : 'off'}\n          disabled={props.disabled}\n          onClick={props.onClick}\n          onMouseDown={(event) => {\n            // Prevent the editor from being blurred when the button is clicked\n            event.preventDefault()\n          }}\n          className=\"outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9 text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700\"\n        >\n          {props.children}\n          {props.tooltip ? <span className=\"sr-only\">{props.tooltip}</span> : null}\n        </button>\n      </TooltipTrigger>\n      {props.tooltip\n        ? (\n          <TooltipPositioner className=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n            <TooltipPopup className=\"flex box-border motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs text-nowrap\">\n              {props.tooltip}\n            </TooltipPopup>\n          </TooltipPositioner>\n        )\n        : null}\n    </TooltipRoot>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/ui/button/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/button/index.ts",
+      "content": "export { default as Button } from './button'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/ui/button/button.tsx",
+      "registry/src/react/ui/button/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

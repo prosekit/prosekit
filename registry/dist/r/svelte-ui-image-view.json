@@ -1,0 +1,41 @@
+{
+  "name": "svelte-ui-image-view",
+  "title": "svelte-ui-image-view",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "@egoist/tailwindcss-icons",
+    "@iconify-json/lucide",
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/ui/image-view/image-view.svelte",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-view/image-view.svelte",
+      "content": "<script lang=\"ts\">\nimport type { ProseMirrorNode } from 'prosekit/pm/model'\nimport { UploadTask } from 'prosekit/extensions/file'\nimport type { ImageAttrs } from 'prosekit/extensions/image'\nimport type { SvelteNodeViewProps } from 'prosekit/svelte'\nimport { ResizableHandle, ResizableRoot } from 'prosekit/svelte/resizable'\nimport { fromStore } from 'svelte/store'\n\ninterface Props extends SvelteNodeViewProps {}\n\nconst props: Props = $props()\nconst node: ProseMirrorNode = $derived(fromStore(props.node).current)\nconst selected: boolean = $derived(fromStore(props.selected).current)\n\nconst attrs = $derived(node.attrs as ImageAttrs)\nconst url = $derived(attrs.src || '')\nconst uploading = $derived(url.startsWith('blob:'))\n\nlet aspectRatio = $state<number | undefined>(undefined)\nlet error = $state<string | undefined>(undefined)\nlet progress = $state(0)\n\n$effect(() => {\n  if (!uploading) {\n    return\n  }\n\n  const uploadTask = UploadTask.get<string>(url)\n  if (!uploadTask) return\n\n  let canceled = false\n\n  uploadTask.finished.catch((err) => {\n    if (canceled) return\n    error = String(err)\n  })\n  const unsubscribeProgress = uploadTask.subscribeProgress(({ loaded, total }) => {\n    if (canceled) return\n    progress = total ? loaded / total : 0\n  })\n\n  return () => {\n    canceled = true\n    unsubscribeProgress()\n  }\n})\n\nfunction handleImageLoad(event: Event) {\n  const img = event.target as HTMLImageElement\n  const { naturalWidth, naturalHeight } = img\n  const ratio = naturalWidth / naturalHeight\n  if (ratio && Number.isFinite(ratio)) {\n    aspectRatio = ratio\n  }\n  if (naturalWidth && naturalHeight && (!attrs.width || !attrs.height)) {\n    props.setAttrs({ width: naturalWidth, height: naturalHeight })\n  }\n}\n</script>\n\n<ResizableRoot\n  width={attrs.width ?? undefined}\n  height={attrs.height ?? undefined}\n  {aspectRatio}\n  data-selected={selected ? '' : undefined}\n  class=\"relative flex items-center justify-center box-border overflow-hidden my-2 group max-h-150 max-w-full min-h-16 min-w-16 outline-2 outline-transparent data-selected:outline-blue-500 outline-solid\"\n  onResizeEnd={(event) => props.setAttrs(event.detail)}\n>\n  {#if url && !error}\n    <img\n      src={url}\n      alt=\"upload preview\"\n      class=\"h-full w-full max-w-full max-h-full object-contain\"\n      onload={handleImageLoad}\n    />\n  {/if}\n  {#if uploading && !error}\n    <div class=\"absolute bottom-0 left-0 m-1 flex content-center items-center gap-2 rounded-sm bg-gray-800/60 p-1.5 text-xs text-white/80 transition\">\n      <div class=\"i-lucide-loader-circle size-4 animate-spin block\"></div>\n      <div>{Math.round(progress * 100)}%</div>\n    </div>\n  {/if}\n  {#if error}\n    <div class=\"absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center gap-4 bg-gray-200 p-2 text-sm dark:bg-gray-800 @container\">\n      <div class=\"i-lucide-image-off size-8 block\"></div>\n      <div class=\"hidden opacity-80 @xs:block\">\n        Failed to upload image\n      </div>\n    </div>\n  {/if}\n  <ResizableHandle\n    class=\"absolute bottom-0 right-0 rounded-sm m-1.5 p-1 transition bg-gray-900/30 active:bg-gray-800/60 hover:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5 opacity-0 hover:opacity-100 group-hover:opacity-100 group-data-resizing:opacity-100\"\n    position=\"bottom-right\"\n  >\n    <div class=\"i-lucide-arrow-down-right size-4 block\"></div>\n  </ResizableHandle>\n</ResizableRoot>\n"
+    },
+    {
+      "path": "registry/src/svelte/ui/image-view/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-view/index.ts",
+      "content": "import type { Extension } from 'prosekit/core'\nimport { defineSvelteNodeView, type SvelteNodeViewComponent } from 'prosekit/svelte'\n\nimport ImageView from './image-view.svelte'\n\nexport function defineImageView(): Extension {\n  return defineSvelteNodeView({\n    name: 'image',\n    component: ImageView as SvelteNodeViewComponent,\n  })\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": true,
+    "hidden": false,
+    "story": "",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/ui/image-view/image-view.svelte",
+      "registry/src/svelte/ui/image-view/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "css": {
+    "@plugin @egoist/tailwindcss-icons": {}
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

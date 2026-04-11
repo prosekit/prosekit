@@ -1,0 +1,59 @@
+{
+  "name": "svelte-example-readonly",
+  "title": "svelte-example-readonly",
+  "type": "registry:block",
+  "description": "Toggle between read-only and editable mode.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-readonly.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/readonly/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\nimport { untrack } from 'svelte'\n\nimport { sampleContent } from '../../sample/sample-doc-readonly'\n\nimport { defineExtension } from './extension'\nimport Toolbar from './toolbar.svelte'\n\nconst props: {\n  initialContent?: NodeJSON\n} = $props()\n\nconst extension = defineExtension()\nconst defaultContent = untrack(() => props.initialContent ?? sampleContent)\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <Toolbar />\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/readonly/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\n\nexport function defineExtension() {\n  return defineBasicExtension()\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/readonly/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/readonly/toolbar.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/toolbar.svelte",
+      "content": "<script lang=\"ts\">\nimport { defineReadonly } from 'prosekit/extensions/readonly'\nimport { useExtension } from 'prosekit/svelte'\nimport { toStore } from 'svelte/store'\n\nimport { Button } from '../../ui/button'\n\nlet readonly = $state(true)\n\nconst extension = $derived(readonly ? defineReadonly() : null)\n\nuseExtension(toStore(() => extension))\n\nfunction setReadonly(value: boolean) {\n  readonly = value\n}\n</script>\n\n<div class=\"z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center\">\n  <Button pressed={readonly} onClick={() => setReadonly(true)}>\n    Readonly\n  </Button>\n\n  <Button pressed={!readonly} onClick={() => setReadonly(false)}>\n    Editable\n  </Button>\n</div>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "readonly",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/readonly/editor.svelte",
+      "registry/src/svelte/examples/readonly/extension.ts",
+      "registry/src/svelte/examples/readonly/index.ts",
+      "registry/src/svelte/examples/readonly/toolbar.svelte",
+      "registry/src/svelte/sample/sample-doc-readonly.ts",
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts"
+    ],
+    "internalDependencies": [
+      "svelte-sample-sample-doc-readonly",
+      "svelte-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

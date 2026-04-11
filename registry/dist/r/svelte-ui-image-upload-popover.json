@@ -1,0 +1,42 @@
+{
+  "name": "svelte-ui-image-upload-popover",
+  "title": "svelte-ui-image-upload-popover",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-upload-popover/image-upload-popover.svelte",
+      "content": "<script lang=\"ts\">\nimport type { Uploader } from 'prosekit/extensions/file'\nimport type { ImageExtension } from 'prosekit/extensions/image'\nimport { useEditor } from 'prosekit/svelte'\nimport { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/svelte/popover'\nimport type { OpenChangeEvent } from 'prosekit/web/popover'\n\nimport { Button } from '../button'\n\ninterface Props {\n  uploader: Uploader<string>\n  tooltip: string\n  disabled: boolean\n  children?: import('svelte').Snippet\n}\n\nconst props: Props = $props()\n\nlet open = $state(false)\nlet url = $state('')\nlet file = $state<File | null>(null)\nconst ariaId = $props.id()\n\nconst editor = useEditor<ImageExtension>()\n\nfunction handleFileChange(event: Event) {\n  const target = event.target as HTMLInputElement\n  const selectedFile = target.files?.[0]\n\n  if (selectedFile) {\n    file = selectedFile\n    url = ''\n  } else {\n    file = null\n  }\n}\n\nfunction handleUrlChange(event: Event) {\n  const target = event.target as HTMLInputElement\n  const inputUrl = target.value\n\n  if (inputUrl) {\n    url = inputUrl\n    file = null\n  } else {\n    url = ''\n  }\n}\n\nfunction deferResetState() {\n  setTimeout(() => {\n    url = ''\n    file = null\n  }, 300)\n}\n\nfunction handleSubmit() {\n  if (url) {\n    $editor.commands.insertImage({ src: url })\n  } else if (file) {\n    $editor.commands.uploadImage({ file, uploader: props.uploader })\n  }\n  open = false\n  deferResetState()\n}\n\nfunction handleOpenChange(event: OpenChangeEvent) {\n  if (!event.detail) {\n    deferResetState()\n  }\n  open = event.detail\n}\n</script>\n\n<PopoverRoot {open} onOpenChange={handleOpenChange}>\n  <PopoverTrigger>\n    <Button pressed={open} disabled={props.disabled} tooltip={props.tooltip}>\n      {@render props.children?.()}\n    </Button>\n  </PopoverTrigger>\n\n  <PopoverPositioner\n    placement=\"bottom\"\n    class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\"\n  ><PopoverPopup class=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg flex flex-col gap-y-4 p-6 text-sm w-sm\">\n      {#if !file}\n        <label for=\"id-link-{ariaId}\">Embed Link</label>\n        <input\n          id=\"id-link-{ariaId}\"\n          class=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50\"\n          placeholder=\"Paste the image link...\"\n          type=\"url\"\n          value={url}\n          oninput={handleUrlChange}\n        />\n      {/if}\n\n      {#if !url}\n        <label for=\"id-upload-{ariaId}\">Upload</label>\n        <input\n          id=\"id-upload-{ariaId}\"\n          class=\"flex h-9 rounded-md w-full bg-white dark:bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition border box-border border-gray-200 dark:border-gray-800 border-solid ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-0 outline-hidden focus-visible:outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50\"\n          accept=\"image/*\"\n          type=\"file\"\n          onchange={handleFileChange}\n        />\n      {/if}\n\n      {#if url}\n        <button class=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2 w-full\" onclick={handleSubmit}>\n          Insert Image\n        </button>\n      {/if}\n\n      {#if file}\n        <button class=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2 w-full\" onclick={handleSubmit}>\n          Upload Image\n        </button>\n      {/if}\n    </PopoverPopup></PopoverPositioner>\n</PopoverRoot>\n"
+    },
+    {
+      "path": "registry/src/svelte/ui/image-upload-popover/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/image-upload-popover/index.ts",
+      "content": "export { default as ImageUploadPopover } from './image-upload-popover.svelte'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/ui/button/button.svelte",
+      "registry/src/svelte/ui/button/index.ts",
+      "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+      "registry/src/svelte/ui/image-upload-popover/index.ts"
+    ],
+    "internalDependencies": [
+      "svelte-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

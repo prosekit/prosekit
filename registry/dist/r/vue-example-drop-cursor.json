@@ -1,0 +1,48 @@
+{
+  "name": "vue-example-drop-cursor",
+  "title": "vue-example-drop-cursor",
+  "type": "registry:block",
+  "description": "Visual cursor indicator during drag-and-drop operations.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-drop-cursor.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/drop-cursor/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/drop-cursor/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { sampleContent } from '../../sample/sample-doc-drop-cursor'\n\nimport { defineExtension } from './extension'\n\nconst props = defineProps<{\n  initialContent?: NodeJSON\n}>()\n\nconst extension = defineExtension()\nconst defaultContent = props.initialContent ?? sampleContent\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/drop-cursor/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/drop-cursor/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineDropCursor } from 'prosekit/extensions/drop-cursor'\nimport { defineImage } from 'prosekit/extensions/image'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineImage(),\n    defineDropCursor({\n      color: false,\n      width: 4,\n      class: 'transition-all bg-blue-500',\n    }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/drop-cursor/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/drop-cursor/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "drop-cursor",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/drop-cursor/editor.vue",
+      "registry/src/vue/examples/drop-cursor/extension.ts",
+      "registry/src/vue/examples/drop-cursor/index.ts",
+      "registry/src/vue/sample/sample-doc-drop-cursor.ts"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-doc-drop-cursor"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

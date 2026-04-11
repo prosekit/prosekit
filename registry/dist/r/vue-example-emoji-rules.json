@@ -1,0 +1,50 @@
+{
+  "name": "vue-example-emoji-rules",
+  "title": "vue-example-emoji-rules",
+  "type": "registry:block",
+  "description": "Auto-convert text shortcuts to emojis using input rules.",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/emoji-rules/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/emoji-rules/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { defineExtension } from './extension'\n\nconst extension = defineExtension()\nconst editor = createEditor({ extension })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/emoji-rules/emoji.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/emoji-rules/emoji.ts",
+      "content": "import { defineEnterRule } from 'prosekit/extensions/enter-rule'\n\n/**\n * Converts the text before the text cursor into an emoji when pressing `Enter`.\n */\nexport function defineEmojiEnterRule() {\n  return defineEnterRule({\n    regex: /:(apple|banana):$/,\n    handler: ({ match, from, to, state }) => {\n      const text = match[1] as 'apple' | 'banana'\n      const emoji = text === 'apple' ? '🍎' : '🍌'\n      return state.tr.replaceWith(from, to, state.schema.text(emoji))\n    },\n  })\n}\n"
+    },
+    {
+      "path": "registry/src/vue/examples/emoji-rules/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/emoji-rules/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\n\nimport { defineEmojiEnterRule } from './emoji'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    defineEmojiEnterRule(),\n    definePlaceholder({ placeholder: 'Try typing :apple: then press Enter' }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/emoji-rules/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/emoji-rules/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "emoji-rules",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/emoji-rules/editor.vue",
+      "registry/src/vue/examples/emoji-rules/emoji.ts",
+      "registry/src/vue/examples/emoji-rules/extension.ts",
+      "registry/src/vue/examples/emoji-rules/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

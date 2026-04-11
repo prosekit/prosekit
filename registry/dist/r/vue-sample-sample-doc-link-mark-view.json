@@ -1,0 +1,29 @@
+{
+  "name": "vue-sample-sample-doc-link-mark-view",
+  "title": "vue-sample-sample-doc-link-mark-view",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/sample/sample-doc-link-mark-view.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-link-mark-view.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          text: 'Here is a link that changes color every second: ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'link',\n              attrs: {\n                href: 'https://www.example.com',\n                target: null,\n                rel: null,\n              },\n            },\n          ],\n          text: 'example link',\n        },\n      ],\n    },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/sample/sample-doc-link-mark-view.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

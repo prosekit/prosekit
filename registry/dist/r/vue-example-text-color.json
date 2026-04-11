@@ -1,0 +1,59 @@
+{
+  "name": "vue-example-text-color",
+  "title": "vue-example-text-color",
+  "type": "registry:block",
+  "description": "Change text and background color.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-text-color.json",
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/text-color/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-color/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { sampleContent } from '../../sample/sample-doc-text-color'\n\nimport { defineExtension } from './extension'\nimport InlineMenu from './inline-menu.vue'\n\nconst props = defineProps<{\n  initialContent?: NodeJSON\n}>()\n\nconst extension = defineExtension()\nconst defaultContent = props.initialContent ?? sampleContent\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n        <InlineMenu />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/text-color/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-color/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { defineBackgroundColor } from 'prosekit/extensions/background-color'\nimport { defineTextColor } from 'prosekit/extensions/text-color'\n\nexport function defineExtension() {\n  return union(defineBasicExtension(), defineTextColor(), defineBackgroundColor())\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/text-color/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-color/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    },
+    {
+      "path": "registry/src/vue/examples/text-color/inline-menu.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-color/inline-menu.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Editor } from 'prosekit/core'\nimport { useEditorDerivedValue, useKeymap } from 'prosekit/vue'\nimport { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/vue/inline-popover'\nimport { ref } from 'vue'\n\nimport { Button } from '../../ui/button'\n\nimport type { EditorExtension } from './extension'\n\nconst textColors = [\n  { label: 'Gray', value: '#9ca3af' },\n  { label: 'Brown', value: '#92400e' },\n  { label: 'Orange', value: '#ea580c' },\n  { label: 'Yellow', value: '#ca8a04' },\n  { label: 'Green', value: '#16a34a' },\n  { label: 'Blue', value: '#2563eb' },\n  { label: 'Purple', value: '#9333ea' },\n  { label: 'Magenta', value: '#c026d3' },\n  { label: 'Red', value: '#dc2626' },\n]\n\nconst backgroundColors = [\n  { label: 'Gray', value: '#f3f4f6' },\n  { label: 'Brown', value: '#fef3c7' },\n  { label: 'Orange', value: '#ffedd5' },\n  { label: 'Yellow', value: '#fef9c3' },\n  { label: 'Green', value: '#d1fae5' },\n  { label: 'Blue', value: '#dbeafe' },\n  { label: 'Purple', value: '#e9d5ff' },\n  { label: 'Pink', value: '#fce7f3' },\n  { label: 'Red', value: '#fecaca' },\n]\n\nfunction getTextColorState(editor: Editor<EditorExtension>) {\n  return [{\n    label: 'Default',\n    value: 'currentColor',\n    isActive: !editor.marks.textColor.isActive(),\n    onClick: () => editor.commands.removeTextColor(),\n  }].concat(textColors.map((color) => ({\n    label: color.label,\n    value: color.value,\n    isActive: editor.marks.textColor.isActive({ color: color.value }),\n    onClick: () => editor.commands.addTextColor({ color: color.value }),\n  })))\n}\n\nfunction getBackgroundColorState(editor: Editor<EditorExtension>) {\n  return [{\n    label: 'Default',\n    value: 'canvas',\n    isActive: !editor.marks.backgroundColor.isActive(),\n    onClick: () => editor.commands.removeBackgroundColor(),\n  }].concat(\n    backgroundColors.map((color) => ({\n      label: color.label,\n      value: color.value,\n      isActive: editor.marks.backgroundColor.isActive({ color: color.value }),\n      onClick: () => editor.commands.addBackgroundColor({ color: color.value }),\n    })),\n  )\n}\n\nconst textColorState = useEditorDerivedValue(getTextColorState)\nconst backgroundColorState = useEditorDerivedValue(getBackgroundColorState)\nconst open = ref(false)\n\nuseKeymap({\n  Escape: () => {\n    if (open.value) {\n      open.value = false\n      return true\n    }\n    return false\n  },\n})\n</script>\n\n<template>\n  <InlinePopoverRoot\n    :open=\"open\"\n    @open-change=\"(event) => open = event.detail\"\n  >\n    <InlinePopoverPositioner class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n      <InlinePopoverPopup class=\"box-border data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 motion-safe:duration-40 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg relative flex min-w-32 space-x-1 overflow-auto whitespace-nowrap rounded-md p-1\">\n        <div class=\"flex flex-col gap-4 p-4\">\n          <div class=\"flex flex-col gap-2\">\n            <div class=\"text-sm\">\n              Text color\n            </div>\n            <div class=\"grid grid-cols-5 gap-1\">\n              <Button\n                v-for=\"color in textColorState\"\n                :key=\"color.label\"\n                :pressed=\"color.isActive\"\n                :tooltip=\"`Text: ${color.label}`\"\n                @click=\"color.onClick\"\n              >\n                <span\n                  class=\"text-base font-medium\"\n                  :style=\"{ color: color.value }\"\n                >\n                  A\n                </span>\n              </Button>\n            </div>\n          </div>\n          <div class=\"flex flex-col gap-2\">\n            <div class=\"text-sm\">\n              Background color\n            </div>\n            <div class=\"grid grid-cols-5 gap-1\">\n              <Button\n                v-for=\"color in backgroundColorState\"\n                :key=\"color.label\"\n                :pressed=\"color.isActive\"\n                :tooltip=\"`Background: ${color.label}`\"\n                @click=\"color.onClick\"\n              >\n                <div\n                  class=\"w-6 h-6 rounded border border-gray-200 dark:border-gray-700\"\n                  :style=\"{ backgroundColor: color.value }\"\n                />\n              </Button>\n            </div>\n          </div>\n        </div>\n      </InlinePopoverPopup>\n    </InlinePopoverPositioner>\n  </InlinePopoverRoot>\n</template>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "text-color",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/text-color/editor.vue",
+      "registry/src/vue/examples/text-color/extension.ts",
+      "registry/src/vue/examples/text-color/index.ts",
+      "registry/src/vue/examples/text-color/inline-menu.vue",
+      "registry/src/vue/sample/sample-doc-text-color.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-doc-text-color",
+      "vue-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

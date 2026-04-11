@@ -1,0 +1,29 @@
+{
+  "name": "solid-sample-sample-doc-text-color",
+  "title": "solid-sample-sample-doc-text-color",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/sample/sample-doc-text-color.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-text-color.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#ef4444',\n              },\n            },\n          ],\n          text: 'Select',\n        },\n        {\n          type: 'text',\n          text: ' ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#f97316',\n              },\n            },\n          ],\n          text: 'some',\n        },\n        {\n          type: 'text',\n          text: ' ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#eab308',\n              },\n            },\n          ],\n          text: 'text',\n        },\n        {\n          type: 'text',\n          text: ' ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#22c55e',\n              },\n            },\n          ],\n          text: 'to',\n        },\n        {\n          type: 'text',\n          text: ' ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#3b82f6',\n              },\n            },\n          ],\n          text: 'change',\n        },\n        {\n          type: 'text',\n          text: ' ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#6366f1',\n              },\n            },\n          ],\n          text: 'the',\n        },\n        {\n          type: 'text',\n          text: ' ',\n        },\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'textColor',\n              attrs: {\n                color: '#a855f7',\n              },\n            },\n          ],\n          text: 'color',\n        },\n      ],\n    },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/sample/sample-doc-text-color.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

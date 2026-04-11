@@ -1,0 +1,59 @@
+{
+  "name": "solid-example-hard-break",
+  "title": "solid-example-hard-break",
+  "type": "registry:block",
+  "description": "Example for hard line break node.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-hard-break.json",
+    "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/examples/hard-break/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/hard-break/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/solid'\nimport type { JSX } from 'solid-js'\n\nimport { sampleContent } from '../../sample/sample-doc-hard-break'\n\nimport { defineExtension } from './extension'\nimport Toolbar from './toolbar'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps): JSX.Element {\n  const defaultContent = props.initialContent ?? sampleContent\n  const extension = defineExtension()\n  const editor = createEditor({ extension, defaultContent })\n\n  return (\n    <ProseKit editor={editor}>\n      <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <Toolbar />\n        <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/solid/examples/hard-break/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/hard-break/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineHardBreak } from 'prosekit/extensions/hard-break'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineHardBreak(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/solid/examples/hard-break/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/hard-break/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    },
+    {
+      "path": "registry/src/solid/examples/hard-break/toolbar.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/hard-break/toolbar.tsx",
+      "content": "import { useEditor } from 'prosekit/solid'\nimport type { JSX } from 'solid-js'\n\nimport { Button } from '../../ui/button'\n\nimport type { EditorExtension } from './extension'\n\nexport default function Toolbar(): JSX.Element {\n  const editor = useEditor<EditorExtension>({ update: true })\n\n  return (\n    <div class=\"z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center\">\n      <Button\n        pressed={false}\n        disabled={!editor().commands.insertHardBreak.canExec()}\n        onClick={() => editor().commands.insertHardBreak()}\n      >\n        Insert Hard Break\n      </Button>\n    </div>\n  )\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "hard-break",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/examples/hard-break/editor.tsx",
+      "registry/src/solid/examples/hard-break/extension.ts",
+      "registry/src/solid/examples/hard-break/index.ts",
+      "registry/src/solid/examples/hard-break/toolbar.tsx",
+      "registry/src/solid/sample/sample-doc-hard-break.ts",
+      "registry/src/solid/ui/button/button.tsx",
+      "registry/src/solid/ui/button/index.ts"
+    ],
+    "internalDependencies": [
+      "solid-sample-sample-doc-hard-break",
+      "solid-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

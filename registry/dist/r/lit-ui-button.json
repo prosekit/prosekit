@@ -1,0 +1,36 @@
+{
+  "name": "lit-ui-button",
+  "title": "lit-ui-button",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/lit/ui/button/button.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/button/button.ts",
+      "content": "import 'prosekit/lit/tooltip'\n\nimport { html, LitElement, nothing, type PropertyDeclaration } from 'lit'\n\nclass LitButton extends LitElement {\n  static override properties = {\n    pressed: { type: Boolean },\n    disabled: { type: Boolean },\n    tooltip: { type: String },\n    icon: { type: String },\n  } satisfies Record<string, PropertyDeclaration>\n\n  pressed = false\n  disabled = false\n  tooltip = ''\n  icon = ''\n\n  override createRenderRoot() {\n    return this\n  }\n\n  override connectedCallback() {\n    super.connectedCallback()\n    this.classList.add('contents')\n  }\n\n  private handleMouseDown = (event: MouseEvent) => {\n    // Prevent the editor from being blurred when the button is clicked\n    event.preventDefault()\n  }\n\n  override render() {\n    const tooltip = this.tooltip\n\n    return html`\n      <prosekit-tooltip-root>\n        <prosekit-tooltip-trigger class=\"block\">\n          <button\n            data-state=${this.pressed ? 'on' : 'off'}\n            class=\"outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 disabled:pointer-events-none min-w-9 min-h-9 text-gray-900 dark:text-gray-50 disabled:text-gray-900/50 dark:disabled:text-gray-50/50 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 data-[state=on]:bg-gray-200 dark:data-[state=on]:bg-gray-700\"\n            ?disabled=${this.disabled}\n            @mousedown=${this.handleMouseDown}\n          >\n            ${this.icon ? html`<div class=\"${this.icon}\"></div>` : nothing}\n            ${tooltip ? html`<span class=\"sr-only\">${tooltip}</span>` : nothing}\n          </button>\n        </prosekit-tooltip-trigger>\n        ${tooltip\n          ? html`\n              <prosekit-tooltip-positioner class=\"block overflow-visible bg-transparent w-min h-min z-50 motion-safe:ease-out motion-safe:transition-transform motion-safe:duration-100\">\n                <prosekit-tooltip-popup class=\"flex box-border motion-safe:duration-100 data-[state=closed]:motion-safe:duration-150 motion-safe:transition-discrete motion-safe:transition-all data-[state=closed]:opacity-0 starting:opacity-0 opacity-100 data-[state=closed]:scale-95 starting:scale-95 scale-100 overflow-hidden rounded-md border border-solid bg-gray-900 dark:bg-gray-50 px-3 py-1.5 text-xs text-gray-50 dark:text-gray-900 shadow-xs text-nowrap\">\n                  ${tooltip}\n                </prosekit-tooltip-popup>\n              </prosekit-tooltip-positioner>\n            `\n          : nothing}\n      </prosekit-tooltip-root>\n    `\n  }\n}\n\ncustomElements.define('lit-editor-button', LitButton)\n\ndeclare global {\n  interface HTMLElementTagNameMap {\n    'lit-editor-button': LitButton\n  }\n}\n"
+    },
+    {
+      "path": "registry/src/lit/ui/button/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/button/index.ts",
+      "content": "import './button'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "lit",
+    "accumulatedFiles": [
+      "registry/src/lit/ui/button/button.ts",
+      "registry/src/lit/ui/button/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

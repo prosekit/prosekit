@@ -1,0 +1,27 @@
+{
+  "name": "preact-sample-sample-tag-data",
+  "title": "preact-sample-sample-tag-data",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/src/preact/sample/sample-tag-data.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-tag-data.ts",
+      "content": "export const tags = [\n  { id: 1, label: 'book' },\n  { id: 2, label: 'movie' },\n  { id: 3, label: 'trip' },\n  { id: 4, label: 'music' },\n  { id: 5, label: 'art' },\n  { id: 6, label: 'food' },\n  { id: 7, label: 'sport' },\n  { id: 8, label: 'technology' },\n  { id: 9, label: 'fashion' },\n  { id: 10, label: 'nature' },\n]\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/sample/sample-tag-data.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

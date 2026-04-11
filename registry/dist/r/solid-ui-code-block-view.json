@@ -1,0 +1,36 @@
+{
+  "name": "solid-ui-code-block-view",
+  "title": "solid-ui-code-block-view",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+      "type": "registry:component",
+      "target": "components/editor/ui/code-block-view/code-block-view.tsx",
+      "content": "import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'\nimport { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'\nimport type { SolidNodeViewProps } from 'prosekit/solid'\nimport { For, type JSX } from 'solid-js'\n\nexport default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {\n  const attrs = () => props.node.attrs as CodeBlockAttrs\n  const language = () => attrs().language\n\n  const setLanguage = (lang: string) => {\n    const newAttrs: CodeBlockAttrs = { language: lang }\n    props.setAttrs(newAttrs)\n  }\n\n  return (\n    <>\n      <div class=\"relative mx-2 top-3 h-0 select-none overflow-visible text-xs\" contentEditable={false}>\n        <select\n          aria-label=\"Code block language\"\n          class=\"outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight) opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80\"\n          onChange={(event) => setLanguage(event.target.value)}\n          value={language() || ''}\n        >\n          <option value=\"\">Plain Text</option>\n          <For each={shikiBundledLanguagesInfo}>\n            {(info) => (\n              <option value={info.id}>\n                {info.name}\n              </option>\n            )}\n          </For>\n        </select>\n      </div>\n      <pre ref={props.contentRef} data-language={language()}></pre>\n    </>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/solid/ui/code-block-view/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/code-block-view/index.ts",
+      "content": "import type { Extension } from 'prosekit/core'\nimport { defineSolidNodeView, type SolidNodeViewComponent } from 'prosekit/solid'\n\nimport CodeBlockView from './code-block-view'\n\nexport function defineCodeBlockView(): Extension {\n  return defineSolidNodeView({\n    name: 'codeBlock',\n    contentAs: 'code',\n    component: CodeBlockView satisfies SolidNodeViewComponent,\n  })\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+      "registry/src/solid/ui/code-block-view/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

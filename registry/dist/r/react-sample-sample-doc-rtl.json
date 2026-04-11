@@ -1,0 +1,29 @@
+{
+  "name": "react-sample-sample-doc-rtl",
+  "title": "react-sample-sample-doc-rtl",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/sample/sample-doc-rtl.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-rtl.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nconst translation = {\n  'Paragraph': 'فقرة',\n  'Root list item': 'عنصر قائمة جذري',\n  'Sub list item': 'عنصر قائمة فرعي',\n  'Completed task': 'مهمة مكتملة',\n  'Pending task': 'مهمة قيد الانتظار',\n  'Quote': 'اقتباس',\n} as const\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'heading',\n      attrs: { level: 1 },\n      content: [{ type: 'text', text: 'Right to Left' }],\n    },\n    {\n      type: 'paragraph',\n      content: [\n        { type: 'text', text: translation['Paragraph'] },\n      ],\n    },\n    {\n      type: 'list',\n      attrs: { kind: 'bullet' },\n      content: [\n        { type: 'paragraph', content: [{ type: 'text', text: translation['Root list item'] }] },\n        {\n          type: 'list',\n          attrs: { kind: 'ordered' },\n          content: [\n            { type: 'paragraph', content: [{ type: 'text', text: translation['Sub list item'] }] },\n          ],\n        },\n        {\n          type: 'list',\n          attrs: { kind: 'ordered' },\n          content: [\n            { type: 'paragraph', content: [{ type: 'text', text: translation['Sub list item'] }] },\n            {\n              type: 'list',\n              attrs: { kind: 'task', checked: true },\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: translation['Completed task'] }] },\n              ],\n            },\n            {\n              type: 'list',\n              attrs: { kind: 'task', checked: false },\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: translation['Pending task'] }] },\n              ],\n            },\n          ],\n        },\n      ],\n    },\n    {\n      type: 'codeBlock',\n      attrs: { language: 'javascript' },\n      content: [\n        {\n          type: 'text',\n          text: 'hello world',\n        },\n      ],\n    },\n\n    {\n      type: 'table',\n      content: [\n        {\n          type: 'tableRow',\n          content: [\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'A1' }] },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'B1' }] },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'C1' }] },\n              ],\n            },\n          ],\n        },\n        {\n          type: 'tableRow',\n          content: [\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'A2' }] },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'B2' }] },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'C2' }] },\n              ],\n            },\n          ],\n        },\n        {\n          type: 'tableRow',\n          content: [\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'A3' }] },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'B3' }] },\n              ],\n            },\n            {\n              type: 'tableCell',\n              attrs: {},\n              content: [\n                { type: 'paragraph', content: [{ type: 'text', text: 'C3' }] },\n              ],\n            },\n          ],\n        },\n      ],\n    },\n    {\n      type: 'blockquote',\n      content: [\n        {\n          type: 'paragraph',\n          content: [\n            {\n              type: 'text',\n              text: translation['Quote'],\n            },\n          ],\n        },\n      ],\n    },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/sample/sample-doc-rtl.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "vue-example-loro",
+  "title": "vue-example-loro",
+  "type": "registry:block",
+  "description": "Real-time collaboration using Loro CRDT library.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "loro-crdt",
+    "loro-prosemirror",
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/loro/editor-component.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/loro/editor-component.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\nimport 'prosekit/extensions/loro/style.css'\n\nimport type { CursorAwareness, LoroDocType } from 'loro-prosemirror'\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\nconst props = defineProps<{\n  loro: LoroDocType\n  awareness: CursorAwareness\n}>()\n\nconst extension = defineExtension(props.loro, props.awareness)\nconst editor = createEditor({ extension })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <Toolbar />\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/loro/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/loro/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport { LoroDoc, type AwarenessListener } from 'loro-crdt'\nimport { CursorAwareness, type LoroDocType } from 'loro-prosemirror'\nimport { onBeforeUnmount } from 'vue'\n\nimport EditorComponent from './editor-component.vue'\n\nconst loroA: LoroDocType = new LoroDoc()\nconst loroB: LoroDocType = new LoroDoc()\n\nconst idA = loroA.peerIdStr\nconst idB = loroB.peerIdStr\n\nconst awarenessA = new CursorAwareness(idA)\nconst awarenessB = new CursorAwareness(idB)\n\nloroA.import(loroB.export({ mode: 'update' }))\nloroB.import(loroA.export({ mode: 'update' }))\n\nconst unsubscribeA = loroA.subscribeLocalUpdates((updates) => {\n  loroB.import(updates)\n})\n\nconst unsubscribeB = loroB.subscribeLocalUpdates((updates) => {\n  loroA.import(updates)\n})\n\nconst awarenessAListener: AwarenessListener = (_, origin) => {\n  if (origin === 'local') {\n    awarenessB.apply(awarenessA.encode([idA]))\n  }\n}\n\nconst awarenessBListener: AwarenessListener = (_, origin) => {\n  if (origin === 'local') {\n    awarenessA.apply(awarenessB.encode([idB]))\n  }\n}\n\nawarenessA.addListener(awarenessAListener)\nawarenessB.addListener(awarenessBListener)\n\nonBeforeUnmount(() => {\n  awarenessA.removeListener(awarenessAListener)\n  awarenessB.removeListener(awarenessBListener)\n  unsubscribeA()\n  unsubscribeB()\n})\n</script>\n\n<template>\n  <div class=\"h-full flex flex-col gap-2\">\n    <EditorComponent :loro=\"loroA\" :awareness=\"awarenessA\" />\n    <EditorComponent :loro=\"loroB\" :awareness=\"awarenessB\" />\n  </div>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/loro/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/loro/extension.ts",
+      "content": "import type { CursorAwareness, LoroDocType } from 'loro-prosemirror'\nimport { defineBaseCommands, defineBaseKeymap, union } from 'prosekit/core'\nimport { defineBlockquote } from 'prosekit/extensions/blockquote'\nimport { defineBold } from 'prosekit/extensions/bold'\nimport { defineCode } from 'prosekit/extensions/code'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineDropCursor } from 'prosekit/extensions/drop-cursor'\nimport { defineHeading } from 'prosekit/extensions/heading'\nimport { defineImage } from 'prosekit/extensions/image'\nimport { defineItalic } from 'prosekit/extensions/italic'\nimport { defineLink } from 'prosekit/extensions/link'\nimport { defineList } from 'prosekit/extensions/list'\nimport { defineLoro } from 'prosekit/extensions/loro'\nimport { defineModClickPrevention } from 'prosekit/extensions/mod-click-prevention'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineStrike } from 'prosekit/extensions/strike'\nimport { defineTable } from 'prosekit/extensions/table'\nimport { defineText } from 'prosekit/extensions/text'\nimport { defineUnderline } from 'prosekit/extensions/underline'\nimport { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'\n\nexport function defineExtension(doc: LoroDocType, awareness: CursorAwareness) {\n  return union([\n    defineDoc(),\n    defineText(),\n    defineHeading(),\n    defineList(),\n    defineBlockquote(),\n    defineBaseKeymap(),\n    defineBaseCommands(),\n    defineItalic(),\n    defineBold(),\n    defineUnderline(),\n    defineStrike(),\n    defineCode(),\n    defineLink(),\n    defineImage(),\n    defineParagraph(),\n    defineDropCursor(),\n    defineVirtualSelection(),\n    defineModClickPrevention(),\n    defineTable(),\n    defineLoro({ doc, awareness }),\n  ])\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/loro/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/loro/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "loro",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/loro/editor-component.vue",
+      "registry/src/vue/examples/loro/editor.vue",
+      "registry/src/vue/examples/loro/extension.ts",
+      "registry/src/vue/examples/loro/index.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts",
+      "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+      "registry/src/vue/ui/image-upload-popover/index.ts",
+      "registry/src/vue/ui/toolbar/index.ts",
+      "registry/src/vue/ui/toolbar/toolbar.vue"
+    ],
+    "internalDependencies": [
+      "vue-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

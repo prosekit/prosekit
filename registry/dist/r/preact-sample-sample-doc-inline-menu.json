@@ -1,0 +1,29 @@
+{
+  "name": "preact-sample-sample-doc-inline-menu",
+  "title": "preact-sample-sample-doc-inline-menu",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/sample/sample-doc-inline-menu.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-inline-menu.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nconst loremText =\n  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet nec ullamcorper sit amet risus. Nam aliquam sem et tortor consequat id porta. Interdum posuere lorem ipsum dolor sit amet. Lectus sit amet est placerat in egestas erat. Egestas sed tempus urna et pharetra pharetra. Sit amet cursus sit amet dictum sit amet. Porttitor leo a diam sollicitudin. Tellus orci ac auctor augue. Tellus in hac habitasse platea dictumst vestibulum. At elementum eu facilisis sed odio morbi. Dolor magna eget est lorem ipsum. Et malesuada fames ac turpis egestas. Arcu risus quis varius quam quisque id diam. Purus viverra accumsan in nisl nisi scelerisque eu ultrices. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae.'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    {\n      type: 'paragraph',\n      content: [\n        {\n          type: 'text',\n          marks: [\n            {\n              type: 'bold',\n            },\n          ],\n          text: 'Try to select some text',\n        },\n      ],\n    },\n    ...Array.from({ length: 10 }, () => ({\n      type: 'paragraph' as const,\n      content: [\n        {\n          type: 'text' as const,\n          text: loremText,\n        },\n      ],\n    })),\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/sample/sample-doc-inline-menu.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

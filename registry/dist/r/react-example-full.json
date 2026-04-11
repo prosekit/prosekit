@@ -1,0 +1,113 @@
+{
+  "name": "react-example-full",
+  "title": "react-example-full",
+  "type": "registry:block",
+  "description": "Full-featured editor with most available features enabled.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-katex.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-full.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-tag-data.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-uploader.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-user-data.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-block-handle.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-image-view.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-slash-menu.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-table-handle.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-tag-menu.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json",
+    "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/full/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/full/editor.tsx",
+      "content": "'use client'\n\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo } from 'react'\n\nimport { sampleContent } from '../../sample/sample-doc-full'\nimport { tags } from '../../sample/sample-tag-data'\nimport { sampleUploader } from '../../sample/sample-uploader'\nimport { users } from '../../sample/sample-user-data'\nimport { BlockHandle } from '../../ui/block-handle'\nimport { DropIndicator } from '../../ui/drop-indicator'\nimport { InlineMenu } from '../../ui/inline-menu'\nimport { SlashMenu } from '../../ui/slash-menu'\nimport { TableHandle } from '../../ui/table-handle'\nimport { TagMenu } from '../../ui/tag-menu'\nimport { Toolbar } from '../../ui/toolbar'\nimport { UserMenu } from '../../ui/user-menu'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    const extension = defineExtension()\n    return createEditor({ extension, defaultContent })\n  }, [defaultContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <Toolbar uploader={sampleUploader} />\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n          <InlineMenu />\n          <SlashMenu />\n          <UserMenu users={users} />\n          <TagMenu tags={tags} />\n          <BlockHandle />\n          <TableHandle />\n          <DropIndicator />\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/full/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/full/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { defineCodeBlockShiki } from 'prosekit/extensions/code-block'\nimport { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'\nimport { defineImageUploadHandler } from 'prosekit/extensions/image'\nimport { defineMath } from 'prosekit/extensions/math'\nimport { defineMention } from 'prosekit/extensions/mention'\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\n\nimport { renderKaTeXMathBlock, renderKaTeXMathInline } from '../../sample/katex'\nimport { sampleUploader } from '../../sample/sample-uploader'\nimport { defineCodeBlockView } from '../../ui/code-block-view'\nimport { defineImageView } from '../../ui/image-view'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    definePlaceholder({ placeholder: 'Press / for commands...' }),\n    defineMention(),\n    defineMath({ renderMathBlock: renderKaTeXMathBlock, renderMathInline: renderKaTeXMathInline }),\n    defineCodeBlockShiki(),\n    defineHorizontalRule(),\n    defineCodeBlockView(),\n    defineImageView(),\n    defineImageUploadHandler({\n      uploader: sampleUploader,\n    }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/react/examples/full/html.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/full/html.ts",
+      "content": "import { createEditor, type NodeJSON } from 'prosekit/core'\n\nimport { sampleContent } from '../../sample/sample-doc-full'\n\nimport { defineExtension } from './extension'\n\n/**\n * Renders a ProseMirror document JSON object to an HTML string.\n *\n * This is useful for server-side rendering.\n *\n * @example\n *\n * ```js\n * import { JSDOM } from 'jsdom'\n * const dom = new JSDOM('')\n * const document = dom.window.document\n * const html = renderHTML(document, myContentJSON)\n * ```\n */\nexport function renderHTML(document: Document, content: NodeJSON = sampleContent): string {\n  const extension = defineExtension()\n  const editor = createEditor({ extension })\n  editor.setContent(content)\n  const html: string = editor.getDocHTML({ document })\n  if (html.startsWith('<div>') && html.endsWith('</div>')) {\n    return html.slice(5, -6) // Remove the wrapping <div> tags\n  } else {\n    console.error('Unexpected HTML format: expected a single <div> wrapper')\n    return html\n  }\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/full/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/full/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\nexport { renderHTML } from './html'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "full",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/full/editor.tsx",
+      "registry/src/react/examples/full/extension.ts",
+      "registry/src/react/examples/full/html.ts",
+      "registry/src/react/examples/full/index.ts",
+      "registry/src/react/sample/katex.ts",
+      "registry/src/react/sample/sample-doc-full.ts",
+      "registry/src/react/sample/sample-tag-data.ts",
+      "registry/src/react/sample/sample-uploader.ts",
+      "registry/src/react/sample/sample-user-data.ts",
+      "registry/src/react/ui/block-handle/block-handle.tsx",
+      "registry/src/react/ui/block-handle/index.ts",
+      "registry/src/react/ui/button/button.tsx",
+      "registry/src/react/ui/button/index.ts",
+      "registry/src/react/ui/code-block-view/code-block-view.tsx",
+      "registry/src/react/ui/code-block-view/index.ts",
+      "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+      "registry/src/react/ui/drop-indicator/index.ts",
+      "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+      "registry/src/react/ui/image-upload-popover/index.ts",
+      "registry/src/react/ui/image-view/image-view.tsx",
+      "registry/src/react/ui/image-view/index.ts",
+      "registry/src/react/ui/inline-menu/index.ts",
+      "registry/src/react/ui/inline-menu/inline-menu.tsx",
+      "registry/src/react/ui/slash-menu/index.ts",
+      "registry/src/react/ui/slash-menu/slash-menu-empty.tsx",
+      "registry/src/react/ui/slash-menu/slash-menu-item.tsx",
+      "registry/src/react/ui/slash-menu/slash-menu.tsx",
+      "registry/src/react/ui/table-handle/index.ts",
+      "registry/src/react/ui/table-handle/table-handle.tsx",
+      "registry/src/react/ui/tag-menu/index.ts",
+      "registry/src/react/ui/tag-menu/tag-menu.tsx",
+      "registry/src/react/ui/toolbar/index.ts",
+      "registry/src/react/ui/toolbar/toolbar.tsx",
+      "registry/src/react/ui/user-menu/index.ts",
+      "registry/src/react/ui/user-menu/user-menu.tsx"
+    ],
+    "internalDependencies": [
+      "react-sample-katex",
+      "react-sample-sample-doc-full",
+      "react-sample-sample-tag-data",
+      "react-sample-sample-uploader",
+      "react-sample-sample-user-data",
+      "react-ui-block-handle",
+      "react-ui-code-block-view",
+      "react-ui-drop-indicator",
+      "react-ui-image-view",
+      "react-ui-inline-menu",
+      "react-ui-slash-menu",
+      "react-ui-table-handle",
+      "react-ui-tag-menu",
+      "react-ui-toolbar",
+      "react-ui-user-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

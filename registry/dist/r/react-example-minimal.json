@@ -1,0 +1,36 @@
+{
+  "name": "react-example-minimal",
+  "title": "react-example-minimal",
+  "type": "registry:block",
+  "description": "Minimal editor setup with basic functionality.",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/minimal/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/minimal/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { defineBasicExtension } from 'prosekit/basic'\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/react'\nimport { useMemo } from 'react'\n\nexport default function Editor() {\n  const editor = useMemo(() => {\n    const extension = defineBasicExtension()\n    return createEditor({ extension })\n  }, [])\n\n  return (\n    <ProseKit editor={editor}>\n      <div ref={editor.mount} className=\"outline-solid p-4\"></div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/minimal/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/minimal/index.ts",
+      "content": "'use client'\n\nexport { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "minimal",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/minimal/editor.tsx",
+      "registry/src/react/examples/minimal/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

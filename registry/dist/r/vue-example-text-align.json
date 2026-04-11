@@ -1,0 +1,59 @@
+{
+  "name": "vue-example-text-align",
+  "title": "vue-example-text-align",
+  "type": "registry:block",
+  "description": "Text alignment options (left, center, right, justify).",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-text-align.json",
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/text-align/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-align/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { sampleContent } from '../../sample/sample-doc-text-align'\n\nimport { defineExtension } from './extension'\nimport Toolbar from './toolbar.vue'\n\nconst props = defineProps<{\n  initialContent?: NodeJSON\n}>()\n\nconst extension = defineExtension()\nconst defaultContent = props.initialContent ?? sampleContent\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <Toolbar />\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/text-align/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-align/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { defineTextAlign } from 'prosekit/extensions/text-align'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    defineTextAlign({ types: ['paragraph', 'heading'] }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/text-align/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-align/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    },
+    {
+      "path": "registry/src/vue/examples/text-align/toolbar.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/text-align/toolbar.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Editor } from 'prosekit/core'\nimport { useEditorDerivedValue } from 'prosekit/vue'\n\nimport { Button } from '../../ui/button'\n\nimport type { EditorExtension } from './extension'\n\nfunction isTextAlignActive(editor: Editor<EditorExtension>, value: string) {\n  return Object.values(editor.nodes).some((node) => {\n    // @ts-expect-error textAlign may not be available on every node\n    return node.isActive({ textAlign: value })\n  })\n}\n\nfunction getToolbarItems(editor: Editor<EditorExtension>) {\n  return {\n    left: {\n      isActive: isTextAlignActive(editor, 'left'),\n      canExec: editor.commands.setTextAlign.canExec('left'),\n      command: () => editor.commands.setTextAlign('left'),\n    },\n    center: {\n      isActive: isTextAlignActive(editor, 'center'),\n      canExec: editor.commands.setTextAlign.canExec('center'),\n      command: () => editor.commands.setTextAlign('center'),\n    },\n    right: {\n      isActive: isTextAlignActive(editor, 'right'),\n      canExec: editor.commands.setTextAlign.canExec('right'),\n      command: () => editor.commands.setTextAlign('right'),\n    },\n    justify: {\n      isActive: isTextAlignActive(editor, 'justify'),\n      canExec: editor.commands.setTextAlign.canExec('justify'),\n      command: () => editor.commands.setTextAlign('justify'),\n    },\n  }\n}\n\nconst items = useEditorDerivedValue(getToolbarItems)\n</script>\n\n<template>\n  <div class=\"z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center\">\n    <Button\n      :pressed=\"items.left.isActive\"\n      :disabled=\"!items.left.canExec\"\n      @click=\"items.left.command\"\n    >\n      Left\n    </Button>\n\n    <Button\n      :pressed=\"items.center.isActive\"\n      :disabled=\"!items.center.canExec\"\n      @click=\"items.center.command\"\n    >\n      Center\n    </Button>\n\n    <Button\n      :pressed=\"items.right.isActive\"\n      :disabled=\"!items.right.canExec\"\n      @click=\"items.right.command\"\n    >\n      Right\n    </Button>\n\n    <Button\n      :pressed=\"items.justify.isActive\"\n      :disabled=\"!items.justify.canExec\"\n      @click=\"items.justify.command\"\n    >\n      Justify\n    </Button>\n  </div>\n</template>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "text-align",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/text-align/editor.vue",
+      "registry/src/vue/examples/text-align/extension.ts",
+      "registry/src/vue/examples/text-align/index.ts",
+      "registry/src/vue/examples/text-align/toolbar.vue",
+      "registry/src/vue/sample/sample-doc-text-align.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-doc-text-align",
+      "vue-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,63 @@
+{
+  "name": "react-example-tweet",
+  "title": "react-example-tweet",
+  "type": "registry:block",
+  "description": "Embed and display Twitter tweets.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-tweet.json"
+  ],
+  "dependencies": [
+    "prosekit",
+    "react-tweet"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/examples/tweet/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type Extension, type NodeJSON } from 'prosekit/core'\nimport { defineReactNodeView, ProseKit, useExtension } from 'prosekit/react'\nimport { useMemo, useState } from 'react'\n\nimport { sampleContent } from '../../sample/sample-doc-tweet'\n\nimport { defineExtension } from './extension'\nimport { MethodSelect } from './method-select'\nimport { TweetView } from './tweet-view'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    return createEditor({ extension: defineExtension(), defaultContent })\n  }, [defaultContent])\n\n  const [method, setMethod] = useState<'basic' | 'advanced'>('basic')\n\n  const reactTweetView: Extension | null = useMemo(() => {\n    if (method === 'basic') {\n      return null\n    }\n    return defineReactNodeView({\n      name: 'tweet',\n      component: TweetView,\n    })\n  }, [method])\n\n  useExtension(reactTweetView, { editor })\n\n  return (\n    <ProseKit editor={editor}>\n      <MethodSelect value={method} onChange={setMethod} />\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/tweet/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { defineNodeSpec, union } from 'prosekit/core'\n\nfunction defineTweetSpec() {\n  return defineNodeSpec({\n    name: 'tweet',\n    group: 'block',\n    attrs: {\n      tweetId: { default: null },\n    },\n    parseDOM: [{\n      tag: 'iframe[src^=\"https://platform.twitter.com/embed/Tweet.html\"]',\n      getAttrs: (node) => {\n        const src = node.getAttribute('src')\n        const match = src?.match(/id=([^&]+)/)\n        return {\n          tweetId: match?.[1] ?? null,\n        }\n      },\n    }],\n    toDOM: (node) => {\n      return [\n        'iframe',\n        {\n          src: `https://platform.twitter.com/embed/Tweet.html?id=${node.attrs.tweetId}&theme=dark`,\n          style: 'height: 300px',\n        },\n      ]\n    },\n  })\n}\n\nfunction defineTweet() {\n  return union(\n    defineTweetSpec(),\n  )\n}\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    defineTweet(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/react/examples/tweet/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/index.ts",
+      "content": "'use client'\n\nexport { default as ExampleEditor } from './editor'\n"
+    },
+    {
+      "path": "registry/src/react/examples/tweet/method-select.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/method-select.tsx",
+      "content": "import { useId } from 'react'\n\nexport function MethodSelect(props: {\n  value: 'basic' | 'advanced'\n  onChange: (value: 'basic' | 'advanced') => void\n}) {\n  const id = 'id-' + useId()\n  const basicId = `${id}-basic`\n  const advancedId = `${id}-advanced`\n\n  return (\n    <fieldset className=\"not-content\">\n      <legend>Select a render method:</legend>\n\n      <div>\n        <input\n          type=\"radio\"\n          id={basicId}\n          name={id}\n          value=\"basic\"\n          checked={props.value === 'basic'}\n          onChange={() => props.onChange('basic')}\n        />\n        <label htmlFor={basicId}>basic</label>\n      </div>\n\n      <div>\n        <input\n          type=\"radio\"\n          id={advancedId}\n          name={id}\n          value=\"advanced\"\n          checked={props.value === 'advanced'}\n          onChange={() => props.onChange('advanced')}\n        />\n        <label htmlFor={advancedId}>advanced</label>\n      </div>\n    </fieldset>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/react/examples/tweet/tweet-view.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/tweet/tweet-view.tsx",
+      "content": "import type { ReactNodeViewProps } from 'prosekit/react'\nimport { Tweet } from 'react-tweet'\n\nexport function TweetView({ node }: ReactNodeViewProps) {\n  const tweetId = node.attrs.tweetId as string\n  return (\n    <div className=\"[&_img]:m-0!\">\n      <div>\n        <strong>\n          Rendered in React using library{' '}\n          <span>\n            <a href=\"https://github.com/vercel/react-tweet\" target=\"_blank\" rel=\"noopener noreferrer\">react-tweet</a>\n          </span>\n        </strong>\n      </div>\n      <Tweet id={tweetId} />\n    </div>\n  )\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "tweet",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/examples/tweet/editor.tsx",
+      "registry/src/react/examples/tweet/extension.ts",
+      "registry/src/react/examples/tweet/index.ts",
+      "registry/src/react/examples/tweet/method-select.tsx",
+      "registry/src/react/examples/tweet/tweet-view.tsx",
+      "registry/src/react/sample/sample-doc-tweet.ts"
+    ],
+    "internalDependencies": [
+      "react-sample-sample-doc-tweet"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

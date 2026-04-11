@@ -1,0 +1,56 @@
+{
+  "name": "preact-example-list",
+  "title": "preact-example-list",
+  "type": "registry:block",
+  "description": "Example for list node.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-list.json",
+    "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/examples/list/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/list/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { useMemo } from 'preact/hooks'\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/preact'\n\nimport { sampleContent } from '../../sample/sample-doc-list'\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    const extension = defineExtension()\n    return createEditor({ extension, defaultContent })\n  }, [defaultContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <Toolbar />\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/list/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/list/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineList } from 'prosekit/extensions/list'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineList(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/preact/examples/list/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/list/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "list",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/examples/list/editor.tsx",
+      "registry/src/preact/examples/list/extension.ts",
+      "registry/src/preact/examples/list/index.ts",
+      "registry/src/preact/sample/sample-doc-list.ts",
+      "registry/src/preact/ui/button/button.tsx",
+      "registry/src/preact/ui/button/index.ts",
+      "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+      "registry/src/preact/ui/image-upload-popover/index.ts",
+      "registry/src/preact/ui/toolbar/index.ts",
+      "registry/src/preact/ui/toolbar/toolbar.tsx"
+    ],
+    "internalDependencies": [
+      "preact-sample-sample-doc-list",
+      "preact-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

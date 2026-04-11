@@ -1,0 +1,63 @@
+{
+  "name": "solid-example-list-custom-checkbox",
+  "title": "solid-example-list-custom-checkbox",
+  "type": "registry:block",
+  "description": "Custom checkbox styling for task lists.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-list-custom-checkbox.json",
+    "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+      "type": "registry:component",
+      "target": "components/editor/examples/list-custom-checkbox/custom-list.css",
+      "content": "div[data-custom-list-css-enabled] .ProseMirror .prosemirror-flat-list[data-list-kind=\"task\"] {\n  & > .list-marker label {\n    box-sizing: border-box;\n    display: flex;\n    position: relative;\n    left: calc(var(--spacing) * -0.5);\n    align-items: center;\n    cursor: pointer;\n    transition: transform 0.15s ease-in-out;\n\n    &:hover {\n      transform: scale(1.1);\n    }\n\n    &::after {\n      position: absolute;\n      width: calc(var(--spacing) * 5);\n      height: calc(var(--spacing) * 5);\n      content: \"\";\n      color: var(--color-white);\n      opacity: 0;\n    }\n\n    /* https://api.iconify.design/lucide.css?icons=check */\n    &::after {\n      display: inline-block;\n      background-color: currentColor;\n      -webkit-mask-image: var(--svg);\n      mask-image: var(--svg);\n      -webkit-mask-repeat: no-repeat;\n      mask-repeat: no-repeat;\n      -webkit-mask-size: 100% 100%;\n      mask-size: 100% 100%;\n      --svg: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 6L9 17l-5-5'/%3E%3C/svg%3E\");\n    }\n\n    & input {\n      box-sizing: border-box;\n      appearance: none;\n      width: calc(var(--spacing) * 5);\n      height: calc(var(--spacing) * 5);\n      margin: 0;\n      border-width: 1px;\n      border-style: solid;\n      border-radius: var(--radius-md);\n      border-color: color-mix(in srgb, var(--color-gray-300) 50%, transparent);\n      box-shadow: var(--shadow-sm);\n      cursor: pointer;\n      transition: all 0.15s ease-in-out;\n\n      &:hover {\n        box-shadow: var(--shadow-md);\n      }\n\n      &:checked {\n        border-color: var(--color-red-500);\n        background-color: var(--color-red-500);\n      }\n    }\n  }\n\n  &[data-list-checked] > .list-marker label {\n    &::after {\n      opacity: 1;\n    }\n  }\n\n  &[data-list-checked] {\n    color: var(--color-gray-400);\n    text-decoration: line-through;\n    text-decoration-color: var(--color-gray-400);\n  }\n}\n"
+    },
+    {
+      "path": "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/list-custom-checkbox/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\nimport './custom-list.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/solid'\nimport type { JSX } from 'solid-js'\n\nimport { sampleContent } from '../../sample/sample-doc-list-custom-checkbox'\nimport { Toolbar } from '../../ui/toolbar'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps): JSX.Element {\n  const defaultContent = props.initialContent ?? sampleContent\n  const extension = defineExtension()\n  const editor = createEditor({\n    extension,\n    defaultContent,\n  })\n\n  return (\n    <ProseKit editor={editor}>\n      <div\n        class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\"\n        attr:data-custom-list-css-enabled=\"true\"\n      >\n        <Toolbar />\n        <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/list-custom-checkbox/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\n\nexport function defineExtension() {\n  return union(defineBasicExtension())\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/solid/examples/list-custom-checkbox/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/list-custom-checkbox/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "list-custom-checkbox",
+    "framework": "solid",
+    "accumulatedFiles": [
+      "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+      "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+      "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+      "registry/src/solid/examples/list-custom-checkbox/index.ts",
+      "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts",
+      "registry/src/solid/ui/button/button.tsx",
+      "registry/src/solid/ui/button/index.ts",
+      "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+      "registry/src/solid/ui/image-upload-popover/index.ts",
+      "registry/src/solid/ui/toolbar/index.ts",
+      "registry/src/solid/ui/toolbar/toolbar.tsx"
+    ],
+    "internalDependencies": [
+      "solid-sample-sample-doc-list-custom-checkbox",
+      "solid-ui-toolbar"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

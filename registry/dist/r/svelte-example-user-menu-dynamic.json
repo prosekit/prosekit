@@ -1,0 +1,67 @@
+{
+  "name": "svelte-example-user-menu-dynamic",
+  "title": "svelte-example-user-menu-dynamic",
+  "type": "registry:block",
+  "description": "Dynamic autocomplete menu with async data loading.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-query-users.json",
+    "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/svelte/examples/user-menu-dynamic/editor.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/editor.svelte",
+      "content": "<script lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/svelte'\n\nimport UserMenuDynamic from './user-menu-dynamic.svelte'\nimport { defineExtension } from './extension'\n\nconst extension = defineExtension()\nconst editor = createEditor({ extension })\n</script>\n\n<ProseKit {editor}>\n  <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n    <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n      <div {@attach editor.mount} class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n      <UserMenuDynamic />\n    </div>\n  </div>\n</ProseKit>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/user-menu-dynamic/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { defineMention } from 'prosekit/extensions/mention'\nimport { definePlaceholder } from 'prosekit/extensions/placeholder'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    definePlaceholder({\n      placeholder: 'Type @ to mention someone...',\n    }),\n    defineMention(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/user-menu-dynamic/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.svelte'\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/user-menu-dynamic/use-user-query.svelte.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/use-user-query.svelte.ts",
+      "content": "import { queryUsers, type User } from '../../sample/sample-query-users'\n\nexport function useUserQuery(\n  getQuery: () => string,\n  getEnabled: () => boolean,\n) {\n  let loading = $state(true)\n  let users = $state<User[]>([])\n\n  $effect(() => {\n    const query = getQuery()\n    const enabled = getEnabled()\n\n    if (!enabled) {\n      users = []\n      return\n    }\n\n    loading = true\n    let cancelled = false\n    void queryUsers(query).then((result) => {\n      if (cancelled) {\n        return\n      }\n      users = result\n      loading = false\n    })\n    return () => {\n      cancelled = true\n    }\n  })\n\n  return {\n    getLoading: () => loading,\n    getUsers: () => users,\n  }\n}\n"
+    },
+    {
+      "path": "registry/src/svelte/examples/user-menu-dynamic/user-menu-dynamic.svelte",
+      "type": "registry:component",
+      "target": "components/editor/examples/user-menu-dynamic/user-menu-dynamic.svelte",
+      "content": "<script lang=\"ts\">\nimport { UserMenu } from '../../ui/user-menu'\n\nimport { useUserQuery } from './use-user-query.svelte.js'\n\nlet query = $state('')\nlet open = $state(false)\n\nconst { getLoading, getUsers } = useUserQuery(() => query, () => open)\n\nfunction handleQueryChange(value: string) {\n  query = value\n}\n\nfunction handleOpenChange(value: boolean) {\n  open = value\n}\n</script>\n\n<UserMenu\n  users={getUsers()}\n  loading={getLoading()}\n  onQueryChange={handleQueryChange}\n  onOpenChange={handleOpenChange}\n/>\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "user-menu-dynamic",
+    "framework": "svelte",
+    "accumulatedFiles": [
+      "registry/src/svelte/examples/user-menu-dynamic/editor.svelte",
+      "registry/src/svelte/examples/user-menu-dynamic/extension.ts",
+      "registry/src/svelte/examples/user-menu-dynamic/index.ts",
+      "registry/src/svelte/examples/user-menu-dynamic/use-user-query.svelte.ts",
+      "registry/src/svelte/examples/user-menu-dynamic/user-menu-dynamic.svelte",
+      "registry/src/svelte/sample/sample-query-users.ts",
+      "registry/src/svelte/sample/sample-user-data.ts",
+      "registry/src/svelte/ui/user-menu/index.ts",
+      "registry/src/svelte/ui/user-menu/user-menu.svelte"
+    ],
+    "internalDependencies": [
+      "svelte-sample-sample-query-users",
+      "svelte-ui-user-menu"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

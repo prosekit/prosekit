@@ -1,0 +1,58 @@
+{
+  "name": "preact-example-view-adapter",
+  "title": "preact-example-view-adapter",
+  "type": "registry:block",
+  "description": "Custom node and mark views using view adapters.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-sample-define-atom-block.json",
+    "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-view-adapter.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/examples/view-adapter/atom-block-view.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/view-adapter/atom-block-view.tsx",
+      "content": "import { useCallback } from 'preact/hooks'\nimport { useEditorDerivedValue, type PreactNodeViewProps } from 'prosekit/preact'\n\nexport function AtomBlockView(props: PreactNodeViewProps) {\n  const docJSON = useEditorDerivedValue(useCallback((editor) => {\n    return JSON.stringify(editor.getDocJSON(), null, 2)\n  }, []))\n\n  return (\n    <div data-atom-block=\"true\" data-atom-block-view=\"true\" className=\"bg-green-500/30\">\n      <div data-testid=\"atom-block-view-label\">Atom Block View</div>\n      <div data-testid=\"atom-block-view-pos\">{props.getPos()}</div>\n      <div data-testid=\"atom-block-view-context\">\n        <pre>{docJSON}</pre>\n      </div>\n    </div>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/view-adapter/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/view-adapter/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { useMemo } from 'preact/hooks'\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/preact'\n\nimport { sampleContent } from '../../sample/sample-doc-view-adapter'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    return createEditor({ extension: defineExtension(), defaultContent })\n  }, [defaultContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/view-adapter/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/view-adapter/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\nimport { union } from 'prosekit/core'\nimport { definePreactNodeView } from 'prosekit/preact'\n\nimport { defineAtomBlock } from '../../sample/define-atom-block'\n\nimport { AtomBlockView } from './atom-block-view'\n\nexport function defineExtension() {\n  return union(\n    defineBasicExtension(),\n    defineAtomBlock(),\n    definePreactNodeView({\n      name: 'atomBlock',\n      component: AtomBlockView,\n    }),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/preact/examples/view-adapter/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/view-adapter/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": true,
+    "story": "view-adapter",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/examples/view-adapter/atom-block-view.tsx",
+      "registry/src/preact/examples/view-adapter/editor.tsx",
+      "registry/src/preact/examples/view-adapter/extension.ts",
+      "registry/src/preact/examples/view-adapter/index.ts",
+      "registry/src/preact/sample/define-atom-block.ts",
+      "registry/src/preact/sample/sample-doc-view-adapter.ts"
+    ],
+    "internalDependencies": [
+      "preact-sample-define-atom-block",
+      "preact-sample-sample-doc-view-adapter"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "react-sample-sample-doc-heading",
+  "title": "react-sample-sample-doc-heading",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/react/sample/sample-doc-heading.ts",
+      "type": "registry:component",
+      "target": "components/editor/sample/sample-doc-heading.ts",
+      "content": "import type { NodeJSON } from 'prosekit/core'\n\nexport const sampleContent: NodeJSON = {\n  type: 'doc',\n  content: [\n    { type: 'heading', attrs: { level: 1 }, content: [{ type: 'text', text: 'H1' }] },\n    { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: 'H2' }] },\n    { type: 'heading', attrs: { level: 3 }, content: [{ type: 'text', text: 'H3' }] },\n    { type: 'paragraph', content: [] },\n  ],\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "react",
+    "accumulatedFiles": [
+      "registry/src/react/sample/sample-doc-heading.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

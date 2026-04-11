@@ -1,0 +1,48 @@
+{
+  "name": "preact-example-gap-cursor",
+  "title": "preact-example-gap-cursor",
+  "type": "registry:block",
+  "description": "Cursor navigation between non-text block elements.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-gap-cursor.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/preact/examples/gap-cursor/editor.tsx",
+      "type": "registry:component",
+      "target": "components/editor/examples/gap-cursor/editor.tsx",
+      "content": "import 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { useMemo } from 'preact/hooks'\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/preact'\n\nimport { sampleContent } from '../../sample/sample-doc-gap-cursor'\n\nimport { defineExtension } from './extension'\n\ninterface EditorProps {\n  initialContent?: NodeJSON\n}\n\nexport default function Editor(props: EditorProps) {\n  const defaultContent = props.initialContent ?? sampleContent\n  const editor = useMemo(() => {\n    return createEditor({ extension: defineExtension(), defaultContent })\n  }, [defaultContent])\n\n  return (\n    <ProseKit editor={editor}>\n      <div className=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n        <div className=\"relative w-full flex-1 box-border overflow-y-auto\">\n          <div ref={editor.mount} className=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\"></div>\n        </div>\n      </div>\n    </ProseKit>\n  )\n}\n"
+    },
+    {
+      "path": "registry/src/preact/examples/gap-cursor/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/gap-cursor/extension.ts",
+      "content": "import { defineBaseKeymap, union } from 'prosekit/core'\nimport { defineDoc } from 'prosekit/extensions/doc'\nimport { defineGapCursor } from 'prosekit/extensions/gap-cursor'\nimport { defineImage } from 'prosekit/extensions/image'\nimport { defineParagraph } from 'prosekit/extensions/paragraph'\nimport { defineText } from 'prosekit/extensions/text'\n\nexport function defineExtension() {\n  return union(\n    defineBaseKeymap(),\n    defineDoc(),\n    defineText(),\n    defineParagraph(),\n    defineGapCursor(),\n    defineImage(),\n  )\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/preact/examples/gap-cursor/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/gap-cursor/index.ts",
+      "content": "export { default as ExampleEditor } from './editor'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "gap-cursor",
+    "framework": "preact",
+    "accumulatedFiles": [
+      "registry/src/preact/examples/gap-cursor/editor.tsx",
+      "registry/src/preact/examples/gap-cursor/extension.ts",
+      "registry/src/preact/examples/gap-cursor/index.ts",
+      "registry/src/preact/sample/sample-doc-gap-cursor.ts"
+    ],
+    "internalDependencies": [
+      "preact-sample-sample-doc-gap-cursor"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

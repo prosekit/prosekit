@@ -1,0 +1,36 @@
+{
+  "name": "vue-ui-drop-indicator",
+  "title": "vue-ui-drop-indicator",
+  "type": "registry:component",
+  "description": "",
+  "registryDependencies": [],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+      "type": "registry:component",
+      "target": "components/editor/ui/drop-indicator/drop-indicator.vue",
+      "content": "<script setup lang=\"ts\">\nimport { DropIndicator as BaseDropIndicator } from 'prosekit/vue/drop-indicator'\n</script>\n\n<template>\n  <BaseDropIndicator class=\"z-50 transition-all bg-blue-500\" />\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/ui/drop-indicator/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/ui/drop-indicator/index.ts",
+      "content": "export { default as DropIndicator } from './drop-indicator.vue'\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+      "registry/src/vue/ui/drop-indicator/index.ts"
+    ],
+    "internalDependencies": []
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "vue-example-readonly",
+  "title": "vue-example-readonly",
+  "type": "registry:block",
+  "description": "Toggle between read-only and editable mode.",
+  "registryDependencies": [
+    "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-readonly.json",
+    "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
+  ],
+  "dependencies": [
+    "prosekit"
+  ],
+  "files": [
+    {
+      "path": "registry/src/vue/examples/readonly/editor.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/editor.vue",
+      "content": "<script setup lang=\"ts\">\nimport 'prosekit/basic/style.css'\nimport 'prosekit/basic/typography.css'\n\nimport { createEditor, type NodeJSON } from 'prosekit/core'\nimport { ProseKit } from 'prosekit/vue'\n\nimport { sampleContent } from '../../sample/sample-doc-readonly'\n\nimport { defineExtension } from './extension'\nimport Toolbar from './toolbar.vue'\n\nconst props = defineProps<{\n  initialContent?: NodeJSON\n}>()\n\nconst extension = defineExtension()\nconst defaultContent = props.initialContent ?? sampleContent\nconst editor = createEditor({ extension, defaultContent })\n</script>\n\n<template>\n  <ProseKit :editor=\"editor\">\n    <div class=\"box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white\">\n      <Toolbar />\n      <div class=\"relative w-full flex-1 box-border overflow-y-auto\">\n        <div :ref=\"(el) => editor.mount(el as HTMLElement | null)\" class=\"ProseMirror box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500\" />\n      </div>\n    </div>\n  </ProseKit>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/readonly/extension.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/extension.ts",
+      "content": "import { defineBasicExtension } from 'prosekit/basic'\n\nexport function defineExtension() {\n  return defineBasicExtension()\n}\n\nexport type EditorExtension = ReturnType<typeof defineExtension>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/readonly/index.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/index.ts",
+      "content": "export { default as ExampleEditor } from './editor.vue'\n"
+    },
+    {
+      "path": "registry/src/vue/examples/readonly/toolbar.vue",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/toolbar.vue",
+      "content": "<script setup lang=\"ts\">\nimport { Button } from '../../ui/button'\n\nimport { useReadonly } from './use-readonly'\n\nconst { readonly, setReadonly } = useReadonly()\n</script>\n\n<template>\n  <div class=\"z-2 box-border border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center\">\n    <Button :pressed=\"readonly\" @click=\"setReadonly(true)\">\n      Readonly\n    </Button>\n\n    <Button :pressed=\"!readonly\" @click=\"setReadonly(false)\">\n      Editable\n    </Button>\n  </div>\n</template>\n"
+    },
+    {
+      "path": "registry/src/vue/examples/readonly/use-readonly.ts",
+      "type": "registry:component",
+      "target": "components/editor/examples/readonly/use-readonly.ts",
+      "content": "import { defineReadonly } from 'prosekit/extensions/readonly'\nimport { useExtension } from 'prosekit/vue'\nimport { computed, ref } from 'vue'\n\nexport function useReadonly() {\n  const readonly = ref(true)\n\n  const extension = computed(() => {\n    return readonly.value ? defineReadonly() : null\n  })\n  useExtension(extension)\n\n  function setReadonly(value: boolean) {\n    readonly.value = value\n  }\n\n  return { readonly, setReadonly }\n}\n"
+    }
+  ],
+  "meta": {
+    "hasIcons": false,
+    "hidden": false,
+    "story": "readonly",
+    "framework": "vue",
+    "accumulatedFiles": [
+      "registry/src/vue/examples/readonly/editor.vue",
+      "registry/src/vue/examples/readonly/extension.ts",
+      "registry/src/vue/examples/readonly/index.ts",
+      "registry/src/vue/examples/readonly/toolbar.vue",
+      "registry/src/vue/examples/readonly/use-readonly.ts",
+      "registry/src/vue/sample/sample-doc-readonly.ts",
+      "registry/src/vue/ui/button/button.vue",
+      "registry/src/vue/ui/button/index.ts"
+    ],
+    "internalDependencies": [
+      "vue-sample-sample-doc-readonly",
+      "vue-ui-button"
+    ]
+  },
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json"
+}

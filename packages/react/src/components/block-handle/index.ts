@@ -1,4 +1,3 @@
-
 /**
 
 @module
@@ -25,9 +24,6 @@ import {
 ```
 */
 
-
 'use client'
-
-
 
 export * from './index.gen.ts'

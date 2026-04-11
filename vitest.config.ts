@@ -17,6 +17,8 @@ class TestSequencer extends BaseSequencer {
   override shard(files: TestSpecification[]): Promise<TestSpecification[]> {
     const { index, count } = this.ctx.config.shard!
 
+    console.debug(`[DEBUG] index: ${index}, count: ${count}, total files: ${files.length}`)
+
     const slowFiles: TestSpecification[] = []
     const fastFiles: TestSpecification[] = []
 

@@ -118,7 +118,9 @@ const ResizableHandleElementBase: HostElementConstructor<ResizableHandleProps> =
 )
 
 /**
- * @public
+ * `<prosekit-resizable-handle>` custom element.
+ *
+ * Properties: {@link ResizableHandleProps}
  */
 export class ResizableHandleElement extends ResizableHandleElementBase {}
 

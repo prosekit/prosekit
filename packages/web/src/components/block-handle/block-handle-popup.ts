@@ -33,7 +33,15 @@ const BlockHandlePopupElementBase: HostElementConstructor<BlockHandlePopupProps>
 )
 
 /**
- * @public
+ * `<prosekit-block-handle-popup>` custom element.
+ *
+ * Properties: {@link BlockHandlePopupProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the block handle is visible, `"closed"` otherwise |
  */
 export class BlockHandlePopupElement extends BlockHandlePopupElementBase {}
 

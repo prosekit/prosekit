@@ -116,7 +116,9 @@ const DropIndicatorElementBase: HostElementConstructor<DropIndicatorProps> = def
 )
 
 /**
- * @public
+ * `<prosekit-drop-indicator>` custom element.
+ *
+ * Properties: {@link DropIndicatorProps}
  */
 export class DropIndicatorElement extends DropIndicatorElementBase {}
 

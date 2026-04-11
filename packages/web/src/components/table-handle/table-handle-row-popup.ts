@@ -32,7 +32,15 @@ const TableHandleRowPopupElementBase: HostElementConstructor<TableHandleRowPopup
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-row-popup>` custom element.
+ *
+ * Properties: {@link TableHandleRowPopupProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when visible, `"closed"` otherwise |
  */
 export class TableHandleRowPopupElement extends TableHandleRowPopupElementBase {}
 

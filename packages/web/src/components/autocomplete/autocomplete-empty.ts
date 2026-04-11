@@ -35,7 +35,9 @@ const AutocompleteEmptyElementBase: HostElementConstructor<AutocompleteEmptyProp
 )
 
 /**
- * @public
+ * `<prosekit-autocomplete-empty>` custom element.
+ *
+ * Properties: {@link AutocompleteEmptyProps}
  */
 export class AutocompleteEmptyElement extends AutocompleteEmptyElementBase {}
 

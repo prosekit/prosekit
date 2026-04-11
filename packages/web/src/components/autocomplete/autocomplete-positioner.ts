@@ -88,7 +88,23 @@ const AutocompletePositionerElementBase: HostElementConstructor<AutocompletePosi
 )
 
 /**
- * @public
+ * `<prosekit-autocomplete-positioner>` custom element.
+ *
+ * Properties: {@link AutocompletePositionerProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the autocomplete is visible, `"closed"` otherwise |
+ * | `data-side` | The side of the anchor element the positioner is on |
+ * | `data-align` | The alignment of the positioner relative to the anchor element |
+ *
+ * CSS variables:
+ *
+ * | Variable | Description |
+ * | --- | --- |
+ * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
 export class AutocompletePositionerElement extends AutocompletePositionerElementBase {}
 

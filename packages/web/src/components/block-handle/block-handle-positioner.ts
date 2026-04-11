@@ -79,7 +79,23 @@ const BlockHandlePositionerElementBase: HostElementConstructor<BlockHandlePositi
 )
 
 /**
- * @public
+ * `<prosekit-block-handle-positioner>` custom element.
+ *
+ * Properties: {@link BlockHandlePositionerProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the block handle is visible, `"closed"` otherwise |
+ * | `data-side` | The side of the anchor element the positioner is on |
+ * | `data-align` | The alignment of the positioner relative to the anchor element |
+ *
+ * CSS variables:
+ *
+ * | Variable | Description |
+ * | --- | --- |
+ * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
 export class BlockHandlePositionerElement extends BlockHandlePositionerElementBase {}
 

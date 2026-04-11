@@ -154,7 +154,9 @@ const TableHandleDropIndicatorElementBase: HostElementConstructor<TableHandleDro
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-drop-indicator>` custom element.
+ *
+ * Properties: {@link TableHandleDropIndicatorProps}
  */
 export class TableHandleDropIndicatorElement extends TableHandleDropIndicatorElementBase {}
 

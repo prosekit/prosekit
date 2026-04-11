@@ -41,7 +41,9 @@ const TableHandleColumnMenuRootElementBase: HostElementConstructor<TableHandleCo
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-column-menu-root>` custom element.
+ *
+ * Properties: {@link TableHandleColumnMenuRootProps}
  */
 export class TableHandleColumnMenuRootElement extends TableHandleColumnMenuRootElementBase {}
 

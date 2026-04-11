@@ -106,7 +106,11 @@ const BlockHandleRootElementBase: HostElementConstructor<BlockHandleRootProps> =
 )
 
 /**
- * @public
+ * `<prosekit-block-handle-root>` custom element.
+ *
+ * Properties: {@link BlockHandleRootProps}
+ *
+ * Events: {@link BlockHandleRootEvents}
  */
 export class BlockHandleRootElement extends BlockHandleRootElementBase {}
 

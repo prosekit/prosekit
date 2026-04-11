@@ -55,7 +55,17 @@ const AutocompleteItemElementBase: HostElementConstructor<AutocompleteItemProps>
 )
 
 /**
- * @public
+ * `<prosekit-autocomplete-item>` custom element.
+ *
+ * Properties: {@link AutocompleteItemProps}
+ *
+ * Events: {@link AutocompleteItemEvents}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-highlighted` | Present when the item is the currently highlighted option |
  */
 export class AutocompleteItemElement extends AutocompleteItemElementBase {}
 

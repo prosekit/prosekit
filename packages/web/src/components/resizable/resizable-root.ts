@@ -168,7 +168,17 @@ const ResizableRootElementBase: HostElementConstructor<ResizableRootProps> = def
 )
 
 /**
- * @public
+ * `<prosekit-resizable-root>` custom element.
+ *
+ * Properties: {@link ResizableRootProps}
+ *
+ * Events: {@link ResizableRootEvents}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-resizing` | Present when the element is being resized |
  */
 export class ResizableRootElement extends ResizableRootElementBase {}
 

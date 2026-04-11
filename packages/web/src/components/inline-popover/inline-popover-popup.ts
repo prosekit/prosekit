@@ -42,7 +42,15 @@ const InlinePopoverPopupElementBase: HostElementConstructor<InlinePopoverPopupPr
 )
 
 /**
- * @public
+ * `<prosekit-inline-popover-popup>` custom element.
+ *
+ * Properties: {@link InlinePopoverPopupProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the inline popover is visible, `"closed"` otherwise |
  */
 export class InlinePopoverPopupElement extends InlinePopoverPopupElementBase {}
 

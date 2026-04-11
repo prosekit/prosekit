@@ -34,7 +34,15 @@ const TableHandleColumnPopupElementBase: HostElementConstructor<TableHandleColum
 )
 
 /**
- * @public
+ * `<prosekit-table-handle-column-popup>` custom element.
+ *
+ * Properties: {@link TableHandleColumnPopupProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when visible, `"closed"` otherwise |
  */
 export class TableHandleColumnPopupElement extends TableHandleColumnPopupElementBase {}
 

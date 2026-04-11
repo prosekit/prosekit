@@ -4,25 +4,20 @@ import { BaseSequencer } from 'vitest/node'
 
 const SLOW_TEST_FILE_NAMES = ['table.test.ts', 'slash-menu.test.ts']
 
-function isSlowTest(testFilePath: string): boolean {
-  return SLOW_TEST_FILE_NAMES.some((name) => testFilePath.endsWith('/' + name))
+function isSlowTest(testFilePath: string): number {
+  const fileName = testFilePath.split('/').pop() || ''
+  return SLOW_TEST_FILE_NAMES.includes(fileName) ? 1 : 0
 }
 
 class TestSequencer extends BaseSequencer {
   override shard(files: TestSpecification[]): Promise<TestSpecification[]> {
     const { index, count } = this.ctx.config.shard!
 
-    const sorted = [...files].sort((a, b) => {
-      const slowDiff =
-        Number(isSlowTest(a.moduleId)) - Number(isSlowTest(b.moduleId))
-      if (slowDiff !== 0) return slowDiff
-      return a.moduleId.localeCompare(b.moduleId)
-    })
+    const sorted = [...files]
+      .sort((a, b) => a.moduleId.localeCompare(b.moduleId))
+      .sort((a, b) => isSlowTest(a.moduleId) - isSlowTest(b.moduleId))
 
-    const chunks: TestSpecification[][] = Array.from(
-      { length: count },
-      (): TestSpecification[] => [],
-    )
+    const chunks: TestSpecification[][] = Array.from({ length: count }, (): TestSpecification[] => [])
 
     let pos = 0
     for (const file of sorted) {

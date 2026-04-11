@@ -19,9 +19,9 @@ ProseKit provides a set of components that you can copy and paste into your proj
 
 2. **Install recommended plugins**
 
-   You’ll need a few extra Tailwind CSS plugins for these components to work properly. Install the following:
+   We use [`@egoist/tailwindcss-icons`](https://npmx.dev/package/@egoist/tailwindcss-icons) for icons. Install the following:
 
-   <CodePackageManagers packages="tw-animate-css @egoist/tailwindcss-icons @iconify-json/lucide" />
+   <CodePackageManagers packages="@egoist/tailwindcss-icons @iconify-json/lucide" />
 
 3. **Configure Tailwind CSS**
 
@@ -29,7 +29,6 @@ ProseKit provides a set of components that you can copy and paste into your proj
 
    ```css {2,3}
    @import "tailwindcss";
-   @import "tw-animate-css";
    @plugin "@egoist/tailwindcss-icons";
    ```
 

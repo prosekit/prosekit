@@ -44,34 +44,34 @@ export function DropdownMenu({ story, framework }: DropdownMenuProps) {
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner sideOffset={6}>
-          <Menu.Popup className="w-[220px] rounded-lg border border-border bg-background p-1 shadow-lg outline-none focus-visible:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2">
-            <Menu.Item
-              className="flex h-8 select-none items-center rounded py-3 pl-3 pr-1.5 text-sm outline-none ring-transparent data-highlighted:bg-muted"
-              onClick={handleOpenCodeSandbox}
-            >
-              Open in CodeSandbox
-            </Menu.Item>
-            <Menu.Item
-              className="flex h-8 select-none items-center rounded py-3 pl-3 pr-1.5 text-sm outline-none ring-transparent data-highlighted:bg-muted"
-              onClick={handleOpenStackBlitz}
-            >
-              Open in StackBlitz
-            </Menu.Item>
-            <Menu.Item
-              className="flex h-8 select-none items-center rounded py-3 pl-3 pr-1.5 text-sm outline-none ring-transparent data-highlighted:bg-muted"
-              onClick={handleOpenInNewPage}
-            >
-              Open in New Page
-            </Menu.Item>
-            <Menu.Item
-              className="flex h-8 select-none items-center rounded py-3 pl-3 pr-1.5 text-sm outline-none ring-transparent data-highlighted:bg-muted"
-              onClick={handleDownload}
-            >
-              Download
-            </Menu.Item>
+          <Menu.Popup className="
+            border rounded-lg border-border bg-background p-1 shadow-lg outline-none
+            transition-[transform,scale,opacity]
+            origin-(--transform-origin) 
+            data-ending-style:scale-90 
+            data-ending-style:opacity-0 
+            data-starting-style:scale-90 
+            data-starting-style:opacity-0">
+            <DropdownMenuItem text="Open in CodeSandbox" onClick={handleOpenCodeSandbox} />
+            <DropdownMenuItem text="Open in StackBlitz" onClick={handleOpenStackBlitz} />
+            <DropdownMenuItem text="Open in New Page" onClick={handleOpenInNewPage} />
+            <DropdownMenuItem text="Download" onClick={handleDownload} />
           </Menu.Popup>
         </Menu.Positioner>
       </Menu.Portal>
     </Menu.Root>
+  )
+}
+
+function DropdownMenuItem({ text, onClick }: { text: string; onClick: () => void }) {
+  return (
+    <Menu.Item
+      className="flex items-center cursor-default py-2 pl-3 pr-2 text-sm leading-4 outline-hidden select-none outline-none ring-transparent data-highlighted:bg-muted relative"
+      onClick={onClick}
+    >
+      <span>{text}</span>
+      <span className="flex-1 inline-flex w-3"></span>
+      <span className="size-4 inline-flex opacity-50 i-lucide-square-arrow-out-up-right"></span>
+    </Menu.Item>
   )
 }

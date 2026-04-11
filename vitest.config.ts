@@ -35,15 +35,14 @@ class TestSequencer extends BaseSequencer {
 
     // Each slow test gets its own shard
     for (const [i, slowFile] of slowFiles.entries()) {
-      chunks[i % count].push(slowFile)
+      chunks[i % chunks.length].push(slowFile)
     }
 
     // Distribute fast tests across remaining shards, or all shards if slow tests filled them all
-    const startPos = Math.min(slowFiles.length, count)
-    let pos = startPos % count
-    for (const file of fastFiles) {
-      chunks[pos].push(file)
-      pos = (pos + 1) % count
+    const emptyChunks = chunks.filter((chunk) => chunk.length === 0)
+    const fastChunks = emptyChunks.length > 0 ? emptyChunks : chunks
+    for (const [i, fastFile] of fastFiles.entries()) {
+      fastChunks[i % fastChunks.length].push(fastFile)
     }
 
     return Promise.resolve(chunks[index - 1])

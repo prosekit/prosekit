@@ -154,17 +154,7 @@ export const MenuSubmenuTriggerPropsDeclaration: PropsDeclaration<MenuSubmenuTri
 /** @internal */
 export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> = Base.MenuTriggerPropsDeclaration
 
-export {
-  OpenChangeEvent,
-  SelectEvent,
-  setupMenuItem,
-  setupMenuPopup,
-  setupMenuPositioner,
-  setupMenuRoot,
-  setupMenuSubmenuRoot,
-  setupMenuSubmenuTrigger,
-  setupMenuTrigger,
-} from '@aria-ui/elements/menu'
+
 
 export function registerMenuRootElement(): void {
   registerCustomElement('prosekit-menu-root', MenuRootElement)
@@ -187,3 +177,15 @@ export function registerMenuSubmenuRootElement(): void {
 export function registerMenuSubmenuTriggerElement(): void {
   registerCustomElement('prosekit-menu-submenu-trigger', MenuSubmenuTriggerElement)
 }
+
+export {
+  OpenChangeEvent,
+  SelectEvent,
+  setupMenuItem,
+  setupMenuPopup,
+  setupMenuPositioner,
+  setupMenuRoot,
+  setupMenuSubmenuRoot,
+  setupMenuSubmenuTrigger,
+  setupMenuTrigger,
+} from '@aria-ui/elements/menu'

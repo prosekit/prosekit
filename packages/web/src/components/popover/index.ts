@@ -84,14 +84,6 @@ export const PopoverRootPropsDeclaration: PropsDeclaration<PopoverRootProps> = B
 /** @internal */
 export const PopoverTriggerPropsDeclaration: PropsDeclaration<PopoverTriggerProps> = Base.PopoverTriggerPropsDeclaration
 
-export {
-  OpenChangeEvent,
-  setupPopoverPopup,
-  setupPopoverPositioner,
-  setupPopoverRoot,
-  setupPopoverTrigger,
-} from '@aria-ui/elements/popover'
-
 export function registerPopoverRootElement(): void {
   registerCustomElement('prosekit-popover-root', PopoverRootElement)
 }
@@ -104,3 +96,13 @@ export function registerPopoverPopupElement(): void {
 export function registerPopoverPositionerElement(): void {
   registerCustomElement('prosekit-popover-positioner', PopoverPositionerElement)
 }
+
+
+
+export {
+  OpenChangeEvent,
+  setupPopoverPopup,
+  setupPopoverPositioner,
+  setupPopoverRoot,
+  setupPopoverTrigger,
+} from '@aria-ui/elements/popover'

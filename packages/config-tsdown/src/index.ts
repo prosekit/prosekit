@@ -35,6 +35,11 @@ export function config(userConfig?: UserConfig): UserConfig {
       'es2023',
       'firefox116', // firefox116 is the latest version that doesn't support CSS nesting.
     ],
+    inputOptions: {
+      experimental: {
+        attachDebugInfo: 'none',
+      },
+    },
   }
 
   return defu(userConfig, defaultConfig)

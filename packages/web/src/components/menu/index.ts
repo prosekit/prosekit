@@ -27,12 +27,103 @@
 import { registerCustomElement, type PropsDeclaration } from '@aria-ui/core'
 import * as Base from '@aria-ui/elements/menu'
 
+/**
+ * `<prosekit-menu-item>` custom element.
+ *
+ * Properties: {@link MenuItemProps}
+ *
+ * Events: {@link MenuItemEvents}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-highlighted` | Present when the item is the currently highlighted option |
+ */
 export class MenuItemElement extends Base.MenuItemElement {}
+
+/**
+ * `<prosekit-menu-popup>` custom element.
+ *
+ * Properties: {@link MenuPopupProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the menu is visible, `"closed"` otherwise |
+ */
 export class MenuPopupElement extends Base.MenuPopupElement {}
+
+/**
+ * `<prosekit-menu-positioner>` custom element.
+ *
+ * Properties: {@link MenuPositionerProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-state` | `"open"` when the menu is visible, `"closed"` otherwise |
+ *
+ * CSS variables:
+ *
+ * | Variable | Description |
+ * | --- | --- |
+ * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
+ */
 export class MenuPositionerElement extends Base.MenuPositionerElement {}
+
+/**
+ * `<prosekit-menu-root>` custom element.
+ *
+ * Properties: {@link MenuRootProps}
+ *
+ * Events: {@link MenuRootEvents}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-menu-root` | Always present on the element |
+ */
 export class MenuRootElement extends Base.MenuRootElement {}
+
+/**
+ * `<prosekit-menu-submenu-root>` custom element.
+ *
+ * Properties: {@link MenuSubmenuRootProps}
+ *
+ * Events: {@link MenuSubmenuRootEvents}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-menu-submenu-root` | Always present on the element |
+ */
 export class MenuSubmenuRootElement extends Base.MenuSubmenuRootElement {}
+
+/**
+ * `<prosekit-menu-submenu-trigger>` custom element.
+ *
+ * Properties: {@link MenuSubmenuTriggerProps}
+ *
+ * Data attributes:
+ *
+ * | Attribute | Description |
+ * | --- | --- |
+ * | `data-highlighted` | Present when the item is the currently highlighted option |
+ */
 export class MenuSubmenuTriggerElement extends Base.MenuSubmenuTriggerElement {}
+
+/**
+ * `<prosekit-menu-trigger>` custom element.
+ *
+ * Properties: {@link MenuTriggerProps}
+ *
+ * Events: {@link MenuTriggerEvents}
+ */
 export class MenuTriggerElement extends Base.MenuTriggerElement {}
 
 export interface MenuItemProps extends Base.MenuItemProps {}

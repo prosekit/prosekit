@@ -2,25 +2,39 @@ import { defineConfig } from 'vitest/config'
 import type { TestSpecification } from 'vitest/node'
 import { BaseSequencer } from 'vitest/node'
 
-const SLOW_TEST_FILE_NAMES = ['table.test.ts', 'slash-menu.test.ts']
+const SLOW_TEST_FILE_NAMES = ['table.test.ts', 'slash-menu.test.ts', 'block-handle.test.ts']
 
-function isSlowTest(testFilePath: string): number {
+function isSlowTest(testFilePath: string): boolean {
   const fileName = testFilePath.split('/').pop() || ''
-  return SLOW_TEST_FILE_NAMES.includes(fileName) ? 1 : 0
+  return SLOW_TEST_FILE_NAMES.includes(fileName)
 }
 
 class TestSequencer extends BaseSequencer {
   override shard(files: TestSpecification[]): Promise<TestSpecification[]> {
     const { index, count } = this.ctx.config.shard!
 
-    const sorted = [...files]
-      .sort((a, b) => a.moduleId.localeCompare(b.moduleId))
-      .sort((a, b) => isSlowTest(a.moduleId) - isSlowTest(b.moduleId))
+    const slowFiles: TestSpecification[] = []
+    const fastFiles: TestSpecification[] = []
+
+    for (const file of files.toSorted((a, b) => a.moduleId.localeCompare(b.moduleId))) {
+      if (isSlowTest(file.moduleId)) {
+        slowFiles.push(file)
+      } else {
+        fastFiles.push(file)
+      }
+    }
 
     const chunks: TestSpecification[][] = Array.from({ length: count }, (): TestSpecification[] => [])
 
-    let pos = 0
-    for (const file of sorted) {
+    // Each slow test gets its own shard
+    for (const [i, slowFile] of slowFiles.entries()) {
+      chunks[i % count].push(slowFile)
+    }
+
+    // Distribute fast tests across remaining shards, or all shards if slow tests filled them all
+    const startPos = Math.min(slowFiles.length, count)
+    let pos = startPos % count
+    for (const file of fastFiles) {
       chunks[pos].push(file)
       pos = (pos + 1) % count
     }

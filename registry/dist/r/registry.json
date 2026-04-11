@@ -15,7 +15,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -68,7 +68,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -118,7 +118,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -167,7 +167,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -215,7 +215,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -268,7 +268,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -323,7 +323,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -382,7 +382,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -424,7 +424,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -485,7 +485,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -579,7 +579,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -624,7 +624,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -678,7 +678,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -729,7 +729,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -780,7 +780,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -830,7 +830,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -880,7 +880,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -931,7 +931,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -989,7 +989,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1038,7 +1038,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1089,7 +1089,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1141,7 +1141,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1200,7 +1200,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1253,7 +1253,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1298,7 +1298,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1345,7 +1345,7 @@
         "@base-ui/react",
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1484,7 +1484,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-page.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1538,7 +1538,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1580,7 +1580,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1646,7 +1646,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1708,7 +1708,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1741,7 +1741,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1774,7 +1774,7 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -1823,7 +1823,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-search.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1872,7 +1872,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1920,7 +1920,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -1974,7 +1974,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2022,7 +2022,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-temml.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2069,7 +2069,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2123,7 +2123,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2177,7 +2177,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2228,7 +2228,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-tweet.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "react-tweet"
       ],
       "files": [
@@ -2288,7 +2288,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2341,7 +2341,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2392,7 +2392,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2448,7 +2448,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2501,7 +2501,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2562,7 +2562,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2615,7 +2615,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2662,7 +2662,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "y-websocket",
         "yjs"
       ],
@@ -2717,7 +2717,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2771,7 +2771,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2798,7 +2798,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2825,7 +2825,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2852,7 +2852,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2879,7 +2879,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2906,7 +2906,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2933,7 +2933,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2960,7 +2960,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -2987,7 +2987,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3014,7 +3014,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3041,7 +3041,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3068,7 +3068,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3095,7 +3095,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3122,7 +3122,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3149,7 +3149,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3176,7 +3176,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3203,7 +3203,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3230,7 +3230,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3257,7 +3257,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3284,7 +3284,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3311,7 +3311,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3338,7 +3338,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3365,7 +3365,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3392,7 +3392,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3419,7 +3419,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3446,7 +3446,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3473,7 +3473,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3500,7 +3500,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3527,7 +3527,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3554,7 +3554,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3581,7 +3581,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3663,7 +3663,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3744,7 +3744,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3780,7 +3780,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3813,7 +3813,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3846,7 +3846,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3881,7 +3881,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/react-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3920,7 +3920,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -3960,7 +3960,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4004,7 +4004,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4044,7 +4044,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4091,7 +4091,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4127,7 +4127,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4165,7 +4165,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4208,7 +4208,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4241,7 +4241,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4279,7 +4279,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4332,7 +4332,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4382,7 +4382,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4431,7 +4431,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4479,7 +4479,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4532,7 +4532,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4587,7 +4587,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4646,7 +4646,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4688,7 +4688,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4749,7 +4749,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4837,7 +4837,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4882,7 +4882,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4936,7 +4936,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -4987,7 +4987,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5038,7 +5038,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5088,7 +5088,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5138,7 +5138,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5189,7 +5189,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5247,7 +5247,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5296,7 +5296,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5347,7 +5347,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5399,7 +5399,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5458,7 +5458,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5511,7 +5511,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5556,7 +5556,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5589,7 +5589,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5631,7 +5631,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5697,7 +5697,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5759,7 +5759,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5792,7 +5792,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5825,7 +5825,7 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -5874,7 +5874,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-search.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5923,7 +5923,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -5971,7 +5971,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6025,7 +6025,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6073,7 +6073,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-sample-temml.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6120,7 +6120,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6174,7 +6174,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6228,7 +6228,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6282,7 +6282,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6335,7 +6335,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6386,7 +6386,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6442,7 +6442,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6495,7 +6495,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6556,7 +6556,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6609,7 +6609,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6656,7 +6656,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "y-websocket",
         "yjs"
       ],
@@ -6711,7 +6711,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6765,7 +6765,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6792,7 +6792,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6819,7 +6819,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6846,7 +6846,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6873,7 +6873,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6900,7 +6900,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6927,7 +6927,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6954,7 +6954,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -6981,7 +6981,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7008,7 +7008,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7035,7 +7035,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7062,7 +7062,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7089,7 +7089,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7116,7 +7116,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7143,7 +7143,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7170,7 +7170,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7197,7 +7197,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7224,7 +7224,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7251,7 +7251,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7278,7 +7278,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7305,7 +7305,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7332,7 +7332,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7359,7 +7359,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7386,7 +7386,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7413,7 +7413,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7440,7 +7440,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7467,7 +7467,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7494,7 +7494,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7576,7 +7576,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7657,7 +7657,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7693,7 +7693,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7726,7 +7726,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7759,7 +7759,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7794,7 +7794,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/preact-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7833,7 +7833,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7873,7 +7873,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7917,7 +7917,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -7957,7 +7957,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8004,7 +8004,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8040,7 +8040,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8078,7 +8078,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8121,7 +8121,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8154,7 +8154,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8192,7 +8192,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8245,7 +8245,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8295,7 +8295,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8344,7 +8344,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8392,7 +8392,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8445,7 +8445,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8500,7 +8500,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8559,7 +8559,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8601,7 +8601,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8662,7 +8662,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8750,7 +8750,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8795,7 +8795,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8849,7 +8849,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8900,7 +8900,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -8951,7 +8951,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9001,7 +9001,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9051,7 +9051,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9103,7 +9103,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-tex.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9149,7 +9149,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9207,7 +9207,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9256,7 +9256,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9307,7 +9307,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9359,7 +9359,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9418,7 +9418,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9471,7 +9471,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9516,7 +9516,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9549,7 +9549,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9591,7 +9591,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9657,7 +9657,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9719,7 +9719,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9752,7 +9752,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9785,7 +9785,7 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -9834,7 +9834,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-search.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9883,7 +9883,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9931,7 +9931,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -9985,7 +9985,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10033,7 +10033,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10087,7 +10087,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10141,7 +10141,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10192,7 +10192,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-tweet.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "vue-tweet"
       ],
       "files": [
@@ -10252,7 +10252,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10305,7 +10305,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10356,7 +10356,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10412,7 +10412,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10465,7 +10465,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10526,7 +10526,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10579,7 +10579,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10626,7 +10626,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "y-websocket",
         "yjs"
       ],
@@ -10681,7 +10681,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10735,7 +10735,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10762,7 +10762,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10789,7 +10789,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10816,7 +10816,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10843,7 +10843,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10870,7 +10870,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10897,7 +10897,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10924,7 +10924,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10951,7 +10951,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -10978,7 +10978,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11005,7 +11005,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11032,7 +11032,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11059,7 +11059,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11086,7 +11086,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11113,7 +11113,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11140,7 +11140,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11167,7 +11167,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11194,7 +11194,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11221,7 +11221,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11248,7 +11248,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11275,7 +11275,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11302,7 +11302,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11329,7 +11329,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11356,7 +11356,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11383,7 +11383,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11410,7 +11410,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11437,7 +11437,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11464,7 +11464,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11491,7 +11491,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11573,7 +11573,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11627,7 +11627,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11663,7 +11663,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11696,7 +11696,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11729,7 +11729,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11764,7 +11764,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vue-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11803,7 +11803,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11843,7 +11843,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11887,7 +11887,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11927,7 +11927,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -11974,7 +11974,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12010,7 +12010,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12048,7 +12048,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12091,7 +12091,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12124,7 +12124,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12157,7 +12157,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12194,7 +12194,7 @@
       ],
       "dependencies": [
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12246,7 +12246,7 @@
       ],
       "dependencies": [
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12298,7 +12298,7 @@
       ],
       "dependencies": [
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12349,7 +12349,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12376,7 +12376,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12403,7 +12403,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12437,7 +12437,7 @@
       "registryDependencies": [],
       "dependencies": [
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12466,7 +12466,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/lit-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12506,7 +12506,7 @@
       ],
       "dependencies": [
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12559,7 +12559,7 @@
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12605,7 +12605,7 @@
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
         "@lit/context",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12655,7 +12655,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12708,7 +12708,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12758,7 +12758,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12807,7 +12807,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12855,7 +12855,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12908,7 +12908,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -12963,7 +12963,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13022,7 +13022,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13064,7 +13064,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13125,7 +13125,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13213,7 +13213,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13258,7 +13258,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13312,7 +13312,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13363,7 +13363,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13414,7 +13414,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13464,7 +13464,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13514,7 +13514,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13566,7 +13566,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-tex.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13612,7 +13612,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13664,7 +13664,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13713,7 +13713,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13764,7 +13764,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13816,7 +13816,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13875,7 +13875,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13928,7 +13928,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -13973,7 +13973,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14008,7 +14008,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-page.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14062,7 +14062,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14104,7 +14104,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14164,7 +14164,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14226,7 +14226,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14259,7 +14259,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14292,7 +14292,7 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -14341,7 +14341,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-search.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14390,7 +14390,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14438,7 +14438,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14492,7 +14492,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14540,7 +14540,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14594,7 +14594,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14648,7 +14648,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14702,7 +14702,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14755,7 +14755,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14806,7 +14806,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14862,7 +14862,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14915,7 +14915,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -14976,7 +14976,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15029,7 +15029,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15076,7 +15076,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "y-websocket",
         "yjs"
       ],
@@ -15131,7 +15131,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15185,7 +15185,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15212,7 +15212,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15239,7 +15239,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15266,7 +15266,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15293,7 +15293,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15320,7 +15320,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15347,7 +15347,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15374,7 +15374,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15401,7 +15401,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15428,7 +15428,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15455,7 +15455,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15482,7 +15482,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15509,7 +15509,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15536,7 +15536,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15563,7 +15563,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15590,7 +15590,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15617,7 +15617,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15644,7 +15644,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15671,7 +15671,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15698,7 +15698,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15725,7 +15725,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15752,7 +15752,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15779,7 +15779,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15806,7 +15806,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15833,7 +15833,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15860,7 +15860,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15887,7 +15887,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15914,7 +15914,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -15941,7 +15941,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16023,7 +16023,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16077,7 +16077,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16113,7 +16113,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16146,7 +16146,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16179,7 +16179,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16214,7 +16214,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/svelte-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16253,7 +16253,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16293,7 +16293,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16337,7 +16337,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16377,7 +16377,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16424,7 +16424,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16460,7 +16460,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16498,7 +16498,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16541,7 +16541,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16574,7 +16574,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16612,7 +16612,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16665,7 +16665,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16715,7 +16715,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16764,7 +16764,7 @@
       "description": "Track and commit document changes with version history.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16812,7 +16812,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16865,7 +16865,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16920,7 +16920,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-code-block-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -16979,7 +16979,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-drop-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17021,7 +17021,7 @@
       "description": "Auto-convert text shortcuts to emojis using input rules.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17082,7 +17082,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17170,7 +17170,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-gap-cursor.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17215,7 +17215,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17269,7 +17269,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17320,7 +17320,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17371,7 +17371,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-image-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17421,7 +17421,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17471,7 +17471,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17522,7 +17522,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17580,7 +17580,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17629,7 +17629,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-link-mark-view.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17680,7 +17680,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17732,7 +17732,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17791,7 +17791,7 @@
       "dependencies": [
         "loro-crdt",
         "loro-prosemirror",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17844,7 +17844,7 @@
       "description": "Input rules for automatic mark formatting.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17889,7 +17889,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17922,7 +17922,7 @@
       "description": "Placeholder text displayed.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -17964,7 +17964,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18030,7 +18030,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18092,7 +18092,7 @@
       "description": "Save and load documents as HTML format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18125,7 +18125,7 @@
       "description": "Save and load documents as JSON format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18158,7 +18158,7 @@
       "description": "Save and load documents as Markdown format.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "rehype-parse",
         "rehype-remark",
         "remark-gfm",
@@ -18207,7 +18207,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-search.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18256,7 +18256,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18304,7 +18304,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18358,7 +18358,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-table-handle.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18406,7 +18406,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-sample-temml.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18453,7 +18453,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18507,7 +18507,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18561,7 +18561,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18615,7 +18615,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-drop-indicator.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18668,7 +18668,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18719,7 +18719,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-inline-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18775,7 +18775,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18828,7 +18828,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-user-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18889,7 +18889,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-sample-sample-doc-view-adapter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18942,7 +18942,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-word-counter.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -18989,7 +18989,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-toolbar.json"
       ],
       "dependencies": [
-        "prosekit",
+        "prosekit@^0.20.0-beta.4",
         "y-websocket",
         "yjs"
       ],
@@ -19044,7 +19044,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19098,7 +19098,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19125,7 +19125,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19152,7 +19152,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19179,7 +19179,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19206,7 +19206,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19233,7 +19233,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19260,7 +19260,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19287,7 +19287,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19314,7 +19314,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19341,7 +19341,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19368,7 +19368,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19395,7 +19395,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19422,7 +19422,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19449,7 +19449,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19476,7 +19476,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19503,7 +19503,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19530,7 +19530,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19557,7 +19557,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19584,7 +19584,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19611,7 +19611,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19638,7 +19638,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19665,7 +19665,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19692,7 +19692,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19719,7 +19719,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19746,7 +19746,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19773,7 +19773,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19800,7 +19800,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19827,7 +19827,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19909,7 +19909,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -19990,7 +19990,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20026,7 +20026,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20059,7 +20059,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20092,7 +20092,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20127,7 +20127,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/solid-ui-button.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20166,7 +20166,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20206,7 +20206,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20250,7 +20250,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20290,7 +20290,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20337,7 +20337,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20373,7 +20373,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20411,7 +20411,7 @@
       "dependencies": [
         "@egoist/tailwindcss-icons",
         "@iconify-json/lucide",
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20454,7 +20454,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20487,7 +20487,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20520,7 +20520,7 @@
       "description": "Minimal editor setup with basic functionality.",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20555,7 +20555,7 @@
         "https://unpkg.com/prosekit-registry/dist/r/vanilla-ui-slash-menu.json"
       ],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {
@@ -20600,7 +20600,7 @@
       "description": "",
       "registryDependencies": [],
       "dependencies": [
-        "prosekit"
+        "prosekit@^0.20.0-beta.4"
       ],
       "files": [
         {

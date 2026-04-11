@@ -7,7 +7,7 @@
     "https://unpkg.com/prosekit-registry/dist/r/svelte-sample-sample-doc-gap-cursor.json"
   ],
   "dependencies": [
-    "prosekit"
+    "prosekit@^0.20.0-beta.4"
   ],
   "files": [
     {

@@ -9,7 +9,7 @@
   "dependencies": [
     "loro-crdt",
     "loro-prosemirror",
-    "prosekit"
+    "prosekit@^0.20.0-beta.4"
   ],
   "files": [
     {

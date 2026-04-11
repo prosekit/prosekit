@@ -6,7 +6,7 @@
   "registryDependencies": [],
   "dependencies": [
     "@lit/context",
-    "prosekit"
+    "prosekit@^0.20.0-beta.4"
   ],
   "files": [
     {

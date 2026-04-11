@@ -1,4 +1,3 @@
-
 /**
  * A tiny utility for constructing `className` strings conditionally.
  *
@@ -9,5 +8,5 @@
  * @public
  */
 export function clsx(...args: Array<string | boolean | null | undefined>): string {
-  return args.filter(Boolean).join(" ")
+  return args.filter(Boolean).join(' ')
 }

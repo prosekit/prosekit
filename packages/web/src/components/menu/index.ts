@@ -25,35 +25,7 @@
 */
 
 import { registerCustomElement, type PropsDeclaration } from '@aria-ui/core'
-import type {
-  MenuItemEvents as BaseMenuItemEvents,
-  MenuItemProps as BaseMenuItemProps,
-  MenuPopupProps as BaseMenuPopupProps,
-  MenuPositionerProps as BaseMenuPositionerProps,
-  MenuRootEvents as BaseMenuRootEvents,
-  MenuRootProps as BaseMenuRootProps,
-  MenuSubmenuRootEvents as BaseMenuSubmenuRootEvents,
-  MenuSubmenuRootProps as BaseMenuSubmenuRootProps,
-  MenuSubmenuTriggerProps as BaseMenuSubmenuTriggerProps,
-  MenuTriggerEvents as BaseMenuTriggerEvents,
-  MenuTriggerProps as BaseMenuTriggerProps,
-} from '@aria-ui/elements/menu'
-import {
-  MenuItemElement as BaseMenuItemElement,
-  MenuItemPropsDeclaration as BaseMenuItemPropsDeclaration,
-  MenuPopupElement as BaseMenuPopupElement,
-  MenuPopupPropsDeclaration as BaseMenuPopupPropsDeclaration,
-  MenuPositionerElement as BaseMenuPositionerElement,
-  MenuPositionerPropsDeclaration as BaseMenuPositionerPropsDeclaration,
-  MenuRootElement as BaseMenuRootElement,
-  MenuRootPropsDeclaration as BaseMenuRootPropsDeclaration,
-  MenuSubmenuRootElement as BaseMenuSubmenuRootElement,
-  MenuSubmenuRootPropsDeclaration as BaseMenuSubmenuRootPropsDeclaration,
-  MenuSubmenuTriggerElement as BaseMenuSubmenuTriggerElement,
-  MenuSubmenuTriggerPropsDeclaration as BaseMenuSubmenuTriggerPropsDeclaration,
-  MenuTriggerElement as BaseMenuTriggerElement,
-  MenuTriggerPropsDeclaration as BaseMenuTriggerPropsDeclaration,
-} from '@aria-ui/elements/menu'
+import * as Base from '@aria-ui/elements/menu'
 
 /**
  * `<prosekit-menu-item>` custom element.
@@ -68,7 +40,7 @@ import {
  * | --- | --- |
  * | `data-highlighted` | Present when the item is the currently highlighted option |
  */
-export class MenuItemElement extends BaseMenuItemElement {}
+export class MenuItemElement extends Base.MenuItemElement {}
 
 /**
  * `<prosekit-menu-popup>` custom element.
@@ -81,7 +53,7 @@ export class MenuItemElement extends BaseMenuItemElement {}
  * | --- | --- |
  * | `data-state` | `"open"` when the menu is visible, `"closed"` otherwise |
  */
-export class MenuPopupElement extends BaseMenuPopupElement {}
+export class MenuPopupElement extends Base.MenuPopupElement {}
 
 /**
  * `<prosekit-menu-positioner>` custom element.
@@ -100,7 +72,7 @@ export class MenuPopupElement extends BaseMenuPopupElement {}
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-export class MenuPositionerElement extends BaseMenuPositionerElement {}
+export class MenuPositionerElement extends Base.MenuPositionerElement {}
 
 /**
  * `<prosekit-menu-root>` custom element.
@@ -115,7 +87,7 @@ export class MenuPositionerElement extends BaseMenuPositionerElement {}
  * | --- | --- |
  * | `data-menu-root` | Always present on the element |
  */
-export class MenuRootElement extends BaseMenuRootElement {}
+export class MenuRootElement extends Base.MenuRootElement {}
 
 /**
  * `<prosekit-menu-submenu-root>` custom element.
@@ -130,7 +102,7 @@ export class MenuRootElement extends BaseMenuRootElement {}
  * | --- | --- |
  * | `data-menu-submenu-root` | Always present on the element |
  */
-export class MenuSubmenuRootElement extends BaseMenuSubmenuRootElement {}
+export class MenuSubmenuRootElement extends Base.MenuSubmenuRootElement {}
 
 /**
  * `<prosekit-menu-submenu-trigger>` custom element.
@@ -143,7 +115,7 @@ export class MenuSubmenuRootElement extends BaseMenuSubmenuRootElement {}
  * | --- | --- |
  * | `data-highlighted` | Present when the item is the currently highlighted option |
  */
-export class MenuSubmenuTriggerElement extends BaseMenuSubmenuTriggerElement {}
+export class MenuSubmenuTriggerElement extends Base.MenuSubmenuTriggerElement {}
 
 /**
  * `<prosekit-menu-trigger>` custom element.
@@ -152,35 +124,35 @@ export class MenuSubmenuTriggerElement extends BaseMenuSubmenuTriggerElement {}
  *
  * Events: {@link MenuTriggerEvents}
  */
-export class MenuTriggerElement extends BaseMenuTriggerElement {}
+export class MenuTriggerElement extends Base.MenuTriggerElement {}
 
-export interface MenuItemProps extends BaseMenuItemProps {}
-export interface MenuPopupProps extends BaseMenuPopupProps {}
-export interface MenuPositionerProps extends BaseMenuPositionerProps {}
-export interface MenuRootProps extends BaseMenuRootProps {}
-export interface MenuSubmenuRootProps extends BaseMenuSubmenuRootProps {}
-export interface MenuSubmenuTriggerProps extends BaseMenuSubmenuTriggerProps {}
-export interface MenuTriggerProps extends BaseMenuTriggerProps {}
+export interface MenuItemProps extends Base.MenuItemProps {}
+export interface MenuPopupProps extends Base.MenuPopupProps {}
+export interface MenuPositionerProps extends Base.MenuPositionerProps {}
+export interface MenuRootProps extends Base.MenuRootProps {}
+export interface MenuSubmenuRootProps extends Base.MenuSubmenuRootProps {}
+export interface MenuSubmenuTriggerProps extends Base.MenuSubmenuTriggerProps {}
+export interface MenuTriggerProps extends Base.MenuTriggerProps {}
 
-export interface MenuItemEvents extends BaseMenuItemEvents {}
-export interface MenuRootEvents extends BaseMenuRootEvents {}
-export interface MenuSubmenuRootEvents extends BaseMenuSubmenuRootEvents {}
-export interface MenuTriggerEvents extends BaseMenuTriggerEvents {}
+export interface MenuItemEvents extends Base.MenuItemEvents {}
+export interface MenuRootEvents extends Base.MenuRootEvents {}
+export interface MenuSubmenuRootEvents extends Base.MenuSubmenuRootEvents {}
+export interface MenuTriggerEvents extends Base.MenuTriggerEvents {}
 
 /** @internal */
-export const MenuItemPropsDeclaration: PropsDeclaration<MenuItemProps> = BaseMenuItemPropsDeclaration
+export const MenuItemPropsDeclaration: PropsDeclaration<MenuItemProps> = Base.MenuItemPropsDeclaration
 /** @internal */
-export const MenuPopupPropsDeclaration: PropsDeclaration<MenuPopupProps> = BaseMenuPopupPropsDeclaration
+export const MenuPopupPropsDeclaration: PropsDeclaration<MenuPopupProps> = Base.MenuPopupPropsDeclaration
 /** @internal */
-export const MenuPositionerPropsDeclaration: PropsDeclaration<MenuPositionerProps> = BaseMenuPositionerPropsDeclaration
+export const MenuPositionerPropsDeclaration: PropsDeclaration<MenuPositionerProps> = Base.MenuPositionerPropsDeclaration
 /** @internal */
-export const MenuRootPropsDeclaration: PropsDeclaration<MenuRootProps> = BaseMenuRootPropsDeclaration
+export const MenuRootPropsDeclaration: PropsDeclaration<MenuRootProps> = Base.MenuRootPropsDeclaration
 /** @internal */
-export const MenuSubmenuRootPropsDeclaration: PropsDeclaration<MenuSubmenuRootProps> = BaseMenuSubmenuRootPropsDeclaration
+export const MenuSubmenuRootPropsDeclaration: PropsDeclaration<MenuSubmenuRootProps> = Base.MenuSubmenuRootPropsDeclaration
 /** @internal */
-export const MenuSubmenuTriggerPropsDeclaration: PropsDeclaration<MenuSubmenuTriggerProps> = BaseMenuSubmenuTriggerPropsDeclaration
+export const MenuSubmenuTriggerPropsDeclaration: PropsDeclaration<MenuSubmenuTriggerProps> = Base.MenuSubmenuTriggerPropsDeclaration
 /** @internal */
-export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> = BaseMenuTriggerPropsDeclaration
+export const MenuTriggerPropsDeclaration: PropsDeclaration<MenuTriggerProps> = Base.MenuTriggerPropsDeclaration
 
 export function registerMenuRootElement(): void {
   registerCustomElement('prosekit-menu-root', MenuRootElement)

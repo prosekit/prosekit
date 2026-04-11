@@ -24,7 +24,7 @@
 ```
 */
 
-import { registerCustomElement, type PropsDeclaration } from '@aria-ui/core';
+import { registerCustomElement, type PropsDeclaration } from '@aria-ui/core'
 import type {
   MenuItemEvents as BaseMenuItemEvents,
   MenuItemProps as BaseMenuItemProps,
@@ -36,8 +36,8 @@ import type {
   MenuSubmenuRootProps as BaseMenuSubmenuRootProps,
   MenuSubmenuTriggerProps as BaseMenuSubmenuTriggerProps,
   MenuTriggerEvents as BaseMenuTriggerEvents,
-  MenuTriggerProps as BaseMenuTriggerProps
-} from '@aria-ui/elements/menu';
+  MenuTriggerProps as BaseMenuTriggerProps,
+} from '@aria-ui/elements/menu'
 import {
   MenuItemElement as BaseMenuItemElement,
   MenuItemPropsDeclaration as BaseMenuItemPropsDeclaration,
@@ -52,8 +52,8 @@ import {
   MenuSubmenuTriggerElement as BaseMenuSubmenuTriggerElement,
   MenuSubmenuTriggerPropsDeclaration as BaseMenuSubmenuTriggerPropsDeclaration,
   MenuTriggerElement as BaseMenuTriggerElement,
-  MenuTriggerPropsDeclaration as BaseMenuTriggerPropsDeclaration
-} from '@aria-ui/elements/menu';
+  MenuTriggerPropsDeclaration as BaseMenuTriggerPropsDeclaration,
+} from '@aria-ui/elements/menu'
 
 /**
  * `<prosekit-menu-item>` custom element.
@@ -213,6 +213,5 @@ export {
   setupMenuRoot,
   setupMenuSubmenuRoot,
   setupMenuSubmenuTrigger,
-  setupMenuTrigger
-} from '@aria-ui/elements/menu';
-
+  setupMenuTrigger,
+} from '@aria-ui/elements/menu'

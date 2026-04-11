@@ -3,7 +3,7 @@ import './test-style.css'
 
 import { DefaultMap, isHTMLElement } from '@ocavue/utils'
 import { formatHTML } from 'diffable-html-snapshot'
-import registry from 'prosekit-registry/registry.gen.json'
+import examples from 'prosekit-registry/examples.gen.json'
 import type { NodeJSON } from 'prosekit/core'
 import { beforeEach, describe, expect, it } from 'vitest'
 
@@ -11,20 +11,17 @@ import { locateEditor } from './editor'
 import { waitForStableElement } from './query'
 
 function getExamples(story: string) {
-  const examples = registry.items.filter((item) => item.meta.story === story)
+  const storyData = examples.stories[story as keyof typeof examples.stories]
 
-  if (examples.length === 0) {
+  if (!storyData) {
     throw new Error(`No examples found for story "${story}"`)
   }
 
-  return examples.map((item) => {
-    const { framework, story } = item.meta
-    return {
-      framework,
-      story,
-      example: framework + '-' + story,
-    }
-  })
+  return storyData.frameworks.map((framework) => ({
+    framework,
+    story,
+    example: framework + '-' + story,
+  }))
 }
 
 function testSingleStory(

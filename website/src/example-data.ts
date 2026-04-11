@@ -1,6 +1,6 @@
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import { DefaultMap } from '@ocavue/utils'
-import registry from 'prosekit-registry/registry.gen.json'
+import examples from 'prosekit-registry/examples.gen.json'
 
 interface Story {
   name: string
@@ -16,19 +16,15 @@ export const storyMap = new DefaultMap<string, Story>(() => ({
   frameworks: [],
 }))
 
-for (const item of registry.items) {
-  if (item.meta.hidden) {
-    continue
-  }
-  const name = item.meta.story
-  if (!name) {
+for (const [name, storyData] of Object.entries(examples.stories)) {
+  if (storyData.hidden) {
     continue
   }
   const story = storyMap.get(name)
   story.name = name
   story.link = `/examples/${name}`
-  story.description = item.description
-  story.frameworks.push(item.meta.framework)
+  story.description = storyData.description
+  story.frameworks = storyData.frameworks
 }
 
 type Sidebar = StarlightUserConfig['sidebar']

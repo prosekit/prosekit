@@ -789,9 +789,6 @@ importers:
       execa:
         specifier: ^9.6.1
         version: 9.6.1
-      js-yaml:
-        specifier: ^4.1.1
-        version: 4.1.1
       json5:
         specifier: ^2.2.3
         version: 2.2.3
@@ -801,10 +798,6 @@ importers:
       path-exists:
         specifier: ^5.0.0
         version: 5.0.0
-    devDependencies:
-      '@types/js-yaml':
-        specifier: ^4.0.9
-        version: 4.0.9
 
   packages/vue:
     dependencies:

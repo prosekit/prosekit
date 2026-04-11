@@ -49,7 +49,7 @@ async function hardLinkFiles(sourceFile: string, targetFile: string) {
 
 async function linkFileGroup(files: string[]) {
   if (files.length < 2) {
-    console.warn(`[link-samples.ts] Warning: Not enough files to link: ${files.join(', ')}`)
+    console.warn(`[${import.meta.filename}] Warning: Not enough files to link: ${files.join(', ')}`)
     return
   }
 

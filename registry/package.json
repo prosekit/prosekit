@@ -13,6 +13,7 @@
     "directory": "registry"
   },
   "exports": {
+    "./examples.gen.json": "./src/examples.gen.json",
     "./lit/examples/minimal": "./src/lit/examples/minimal/index.ts",
     "./lit/examples/slash-menu": "./src/lit/examples/slash-menu/index.ts",
     "./lit/examples/table": "./src/lit/examples/table/index.ts",
@@ -117,7 +118,6 @@
     "./react/examples/word-counter": "./src/react/examples/word-counter/index.ts",
     "./react/examples/yjs": "./src/react/examples/yjs/index.ts",
     "./react/renderer": "./src/react/renderer.ts",
-    "./registry.gen.json": "./src/registry.gen.json",
     "./replace-class-names": "./src/meta/replace-classes.ts",
     "./solid/examples/block-handle": "./src/solid/examples/block-handle/index.ts",
     "./solid/examples/blockquote": "./src/solid/examples/blockquote/index.ts",

@@ -1,6 +1,6 @@
 ---
 import { MultipleFrameworksDemo } from './multiple-frameworks-demo.tsx'
-import registry from 'prosekit-registry/registry.gen.json'
+import examples from 'prosekit-registry/examples.gen.json'
 import PreactStory from '../../../stories/preact.astro'
 import ReactStory from '../../../stories/react.astro'
 import SolidStory from '../../../stories/solid.astro'
@@ -17,13 +17,13 @@ interface Props {
 
 const { story, showCode }: Props = Astro.props
 
-const examples = registry.items.filter((example) => example.meta.story === story)
+const storyData = examples.stories[story as keyof typeof examples.stories]
 
-if (examples.length === 0) {
+if (!storyData) {
   throw new Error(`Unable to find examples for story ${story}`)
 }
 
-const frameworks = examples.map((example) => example.meta.framework)
+const frameworks = storyData.frameworks
 ---
 
 {frameworks.includes('lit') && <script src="../../../stories/lit-register.ts"></script>}

@@ -197,11 +197,11 @@ const config: AstroUserConfig = {
         title: 'ProseKit',
         subtitle: false,
         repo: {
-          href: 'https://github.com/prosekit/prosekit',
+          href: 'https://prosekit.dev/github',
         },
         version: {
           label: 'v' + version,
-          href: 'https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md',
+          href: 'https://prosekit.dev/changelog',
         },
       },
     }),

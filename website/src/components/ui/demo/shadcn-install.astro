@@ -1,5 +1,5 @@
 ---
-import registry from 'prosekit-registry/registry.gen.json'
+import examples from 'prosekit-registry/examples.gen.json'
 import { CurrentFrameworkContent } from './current-framework-content.tsx'
 import Code from 'starlight-theme-nova/components/Code.astro'
 
@@ -9,13 +9,13 @@ interface Props {
 
 const { story }: Props = Astro.props
 
-const examples = registry.items.filter((example) => example.meta.story === story)
+const storyData = examples.stories[story as keyof typeof examples.stories]
 
-if (examples.length === 0) {
+if (!storyData) {
   throw new Error(`Unable to find examples for story ${story}`)
 }
 
-const frameworks = examples.map((example) => example.meta.framework)
+const frameworks = storyData.frameworks
 ---
 
 <div class="mb-6 flex flex-col">

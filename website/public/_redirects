@@ -18,6 +18,6 @@
 /b/svelte            https://img.shields.io/badge/prosekit%2Fsvelte-444444?style=flat-square&logoColor=ffffff&logo=svelte
 /b/web               https://img.shields.io/badge/prosekit%2Fweb-444444?style=flat-square&logoColor=ffffff&logo=webcomponentsdotorg
 
-/r                   https://unpkg.com/prosekit-registry/dist/r/registry.json  301
-/r/                  https://unpkg.com/prosekit-registry/dist/r/registry.json  301
-/r/*                 https://unpkg.com/prosekit-registry/dist/r/:splat         301
+/r                   https://unpkg.com/prosekit-registry/dist/r/registry.json
+/r/                  https://unpkg.com/prosekit-registry/dist/r/registry.json
+/r/*                 https://unpkg.com/prosekit-registry/dist/r/:splat

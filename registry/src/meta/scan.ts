@@ -5,7 +5,7 @@ import { vfs } from '@prosekit/dev'
 import { parseImportsExports, type ImportsExports } from 'parse-imports-exports'
 
 import { debug } from './debug'
-import { loadStoryMeta, type StoryMeta } from './story-meta'
+import { storyMeta } from './story-meta'
 import type { Framework, ItemAccumulator, ItemCategory } from './types'
 import { FRAMEWORKS, REGISTRY_SRC_DIR } from './types'
 
@@ -118,7 +118,6 @@ function createItemAccumulator(
   framework: Framework,
   category: ItemCategory,
   slug: string,
-  storyMeta: StoryMeta,
 ): ItemAccumulator {
   const name = toItemName(framework, category, slug)
   const story = category === 'example' ? slug : ''
@@ -337,7 +336,6 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
   const itemsByName = new Map<string, ItemAccumulator>()
   const fileToItemName = new Map<string, string>()
-  const storyMeta = await loadStoryMeta()
 
   for (const filePath of registryFiles) {
     const classification = classifyRegistryFile(filePath)
@@ -351,7 +349,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
     let item = itemsByName.get(name)
     if (!item) {
-      item = createItemAccumulator(framework, category, slug, storyMeta)
+      item = createItemAccumulator(framework, category, slug)
       itemsByName.set(name, item)
     }
 

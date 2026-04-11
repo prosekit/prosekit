@@ -37,7 +37,7 @@ const CSS_INPUT = cn(
 )
 
 const CSS_POSITIONER = cn(
-  'block overflow-visible bg-transparent w-min h-min z-50',
+  'block overflow-visible w-min h-min z-50',
   'ease-out transition-transform duration-100 motion-reduce:transition-none',
 )
 const CSS_POPUP = cn(
@@ -229,9 +229,7 @@ export const CSS_TABLE_ROW_HANDLE_TRIGGER = cn(
   CSS_TABLE_HANDLE_TRIGGER_BASE,
 )
 
-export const CSS_TABLE_MENU_POSITIONER = cn(
-  'overflow-visible bg-transparent',
-)
+export const CSS_TABLE_MENU_POSITIONER = CSS_POSITIONER
 
 export const CSS_TABLE_MENU_POPUP = cn(
   CSS_MENU_POPUP,

@@ -9,9 +9,6 @@ import {
 } from '@aria-ui/core'
 import { setupListboxEmpty, type ListboxEmptyProps } from '@aria-ui/elements/listbox'
 
-/**
- * @internal
- */
 export interface AutocompleteEmptyProps extends ListboxEmptyProps {}
 
 /** @internal */

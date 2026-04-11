@@ -26,10 +26,10 @@
 
 import { registerCustomElement } from '@aria-ui/core'
 import {
-  MenuRootElement as BaseMenuRootElement,
   MenuItemElement,
   MenuPopupElement,
   MenuPositionerElement,
+  MenuRootElement as BaseMenuRootElement,
   MenuSubmenuRootElement,
   MenuSubmenuTriggerElement,
   MenuTriggerElement,
@@ -67,7 +67,7 @@ export {
   type MenuRootEvents,
   type MenuRootProps,
   type MenuTriggerEvents,
-  type MenuTriggerProps
+  type MenuTriggerProps,
 } from '@aria-ui/elements/menu'
 
 export function registerMenuRootElement(): void {

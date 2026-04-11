@@ -1,61 +1,42 @@
 # Contributing to ProseKit
 
-Thanks for your interest in contributing to ProseKit! This guide will help you get started.
-
 ## Setup
 
-1. Install [Node.js](https://nodejs.org/) v24.0.0 or later
-2. Install [pnpm](https://pnpm.io/)
-3. Clone the ProseKit repository
-4. Run `pnpm install` in the repository root directory
+1. Install [Node.js](https://nodejs.org/) v24.0.0 or later and [pnpm](https://pnpm.io/)
+2. Clone the repository and run `pnpm install`
 
 ## Project Structure
 
-ProseKit is a monorepo using pnpm workspaces:
-
-- `packages/` - All packages published to npm:
-  - `core/` - Core editor functionality
-  - `extensions/` - Editor features (bold, italic, tables, etc.)
-  - `web/` - Web components
-  - `react/`, `vue/`, `preact/`, `svelte/`, `solid/` - Framework integrations
-  - `basic/` - Simple starter kit
-  - `prosekit/` - Main umbrella package that re-exports functionality
-- `website/` - Documentation and examples
-  - `src/content/` - Documentation markdown
-- `registry/` - Framework examples and shared UI components (please read `registry/DEV.md` for more information)
-  - `src/` - Examples and components
-  - `test/` - Tests
+- `packages/` — npm packages (`core`, `extensions`, `web`, `react`, `vue`, `preact`, `svelte`, `solid`, `basic`, `prosekit`)
+- `registry/` — Framework examples and shared UI components (see [`registry/CONTRIBUTING.md`](registry/CONTRIBUTING.md) for guidelines)
+- `website/` — Documentation site (`src/content/` for Markdown)
 
 ## Development
 
-Run `pnpm run dev` to start the development server:
+Start the dev server with `pnpm run dev`:
 
 - Website: https://localhost:4321
 - Playground: https://localhost:4321/playground
 
-## Common Commands
+Useful commands:
 
-- Build: `pnpm run build` (all) or `pnpm run build:package` (packages only)
-- Lint: `pnpm run lint`
-- Fix issues: `pnpm run fix` (runs code generation, linting, and formatting)
-- Type check: `pnpm run typecheck`
+- `pnpm run build` — Build all packages (or `pnpm run build:package` for packages only)
+- `pnpm run fix` — Run code generation, linting, and formatting
+- `pnpm run lint` — Lint without auto-fixing
+- `pnpm run typecheck` — Type check
+- `pnpm run test:run` — Run all tests
+- `pnpm run test [path]` — Run a specific test
+- `pnpm run test:coverage` — Run tests with coverage report
 
-## Testing
-
-- Run all: `pnpm run test:run`
-- Run specific test: `pnpm run test [test-file-path]`
-- Run with coverage report: `pnpm run test:coverage`
-- Files: Unit tests located in `packages/` with `.spec.ts` suffix, and integration tests in `registry/test/` with `.test.ts` suffix
-- Coverage report: `coverage/` directory
+Unit tests are in `packages/` (`*.spec.ts`). Integration tests are in `registry/test/` (`*.test.ts`).
 
 ## Pull Requests
 
-1. Use [Conventional Commits](https://www.conventionalcommits.org/) style for PR titles and Git commit messages.
-2. If your changes need to be published, run `pnpm run change` to start an interactive session to create a changeset. Alternatively, you can manually create a changeset file in the `.changeset/` directory.
-3. Run `pnpm run fix` to fix linting and formatting issues.
-4. Run `pnpm run typecheck` to check for type errors.
-5. Make sure all tests pass before submitting a PR.
+1. Use [Conventional Commits](https://www.conventionalcommits.org/) for PR titles and commit messages.
+2. Run `pnpm run fix` and `pnpm run typecheck`.
+3. Make sure all tests pass.
+4. If publishing changes, run `pnpm run change` to create a changeset.
 
 ## Community
 
-Join our Discord server for help and to discuss development: [ProseKit Discord](https://prosekit.dev/chat)
+Join the [ProseKit Discord](https://prosekit.dev/chat) for help and discussion.

@@ -1,12 +1,10 @@
-import { defineConfig } from 'vitest/config';
-
-
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
     sequence: {
-            shuffle: {files: true},
-            seed: 1
+      shuffle: { files: true },
+      seed: 1,
     },
     slowTestThreshold: 2000,
     reporters: ['verbose'],

@@ -5,26 +5,24 @@ import { BaseSequencer } from 'vitest/node'
 const SLOW_TEST_FILE_NAMES = ['table.test.ts', 'slash-menu.test.ts']
 
 function isSlowTest(testFilePath: string): boolean {
-  return SLOW_TEST_FILE_NAMES.some(name => testFilePath.endsWith(name))
+  return SLOW_TEST_FILE_NAMES.some((name) => testFilePath.endsWith('/' + name))
 }
 
 class TestSequencer extends BaseSequencer {
-  override shard(files: TestSpecification[]): Promise<TestSpecification[]> {
+  override shard(files: TestSpecification[]): TestSpecification[] {
     const { index, count } = this.ctx.config.shard!
-    const chunks: TestSpecification[][] = []
-    for (let i = 0; i < count; i++) {
-      chunks.push([])
-    }
 
-    const sorted = [...files].sort(
-      (a, b) => {
-        return a.moduleId.localeCompare(b.moduleId)
-      },
-    ).sort((a, b) => {
-      const aSlow = isSlowTest(a.moduleId) ? 1 : -1
-      const bSlow = isSlowTest(b.moduleId) ? 1 : -1
-      return aSlow - bSlow
+    const sorted = [...files].sort((a, b) => {
+      const slowDiff =
+        Number(isSlowTest(a.moduleId)) - Number(isSlowTest(b.moduleId))
+      if (slowDiff !== 0) return slowDiff
+      return a.moduleId.localeCompare(b.moduleId)
     })
+
+    const chunks = Array.from(
+      { length: count },
+      (): TestSpecification[] => [],
+    )
 
     let pos = 0
     for (const file of sorted) {
@@ -32,7 +30,7 @@ class TestSequencer extends BaseSequencer {
       pos = (pos + 1) % count
     }
 
-    return Promise.resolve(chunks[index - 1])
+    return chunks[index - 1]
   }
 }
 

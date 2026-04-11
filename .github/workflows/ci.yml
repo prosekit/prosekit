@@ -148,7 +148,10 @@ jobs:
 
     needs: [build]
 
-    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message || '', 'version packages'))
+    if: >-
+      github.event_name == 'pull_request' ||
+      contains(github.event.head_commit.message || '', 'version packages') ||
+      contains(github.event.head_commit.message || '', '(website)')
 
     env:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

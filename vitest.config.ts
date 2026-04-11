@@ -12,6 +12,7 @@ function isSlowTest(testFilePath: string): boolean {
 class TestSequencer extends BaseSequencer {
   override sort(files: TestSpecification[]): Promise<TestSpecification[]> {
     const sorted = files.toSorted((a, b) => a.moduleId.localeCompare(b.moduleId))
+    console.debug(`[DEBUG] sorted files: ${sorted.map((file) => file.moduleId).join(', ')}`)
     return Promise.resolve(sorted)
   }
   override shard(files: TestSpecification[]): Promise<TestSpecification[]> {

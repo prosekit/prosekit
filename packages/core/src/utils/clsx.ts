@@ -8,5 +8,5 @@
  * @public
  */
 export function clsx(...args: Array<string | boolean | null | undefined>): string {
-  return args.filter(x => typeof x === 'string').join(' ');
+  return args.filter(x => typeof x === 'string').join(' ')
 }

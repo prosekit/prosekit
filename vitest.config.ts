@@ -12,14 +12,10 @@ function isSlowTest(testFilePath: string): boolean {
 class TestSequencer extends BaseSequencer {
   override sort(files: TestSpecification[]): Promise<TestSpecification[]> {
     const sorted = files.toSorted((a, b) => a.moduleId.localeCompare(b.moduleId))
-    console.debug(`[DEBUG] sorted files: ${sorted.map((file) => file.moduleId).join(', ')}`)
     return Promise.resolve(sorted)
   }
   override shard(files: TestSpecification[]): Promise<TestSpecification[]> {
     const { index, count } = this.ctx.config.shard!
-
-    console.debug(`[DEBUG] index: ${index}, count: ${count}, total files: ${files.length}`)
-
     const slowFiles: TestSpecification[] = []
     const fastFiles: TestSpecification[] = []
 
@@ -50,9 +46,6 @@ class TestSequencer extends BaseSequencer {
         chunks[i % chunks.length].push(file)
       }
     }
-
-    console.debug(`chunks: ${JSON.stringify(chunks.map((chunk) => chunk.map((file) => file.moduleId)), null, 2)}`)
-
     return Promise.resolve(chunks[index - 1])
   }
 }

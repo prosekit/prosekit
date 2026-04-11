@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -56,5 +55,10 @@ import {
 </TableHandleRoot>
 ```
 */
+
+
+'use client'
+
+
 
 export * from './index.gen.ts'

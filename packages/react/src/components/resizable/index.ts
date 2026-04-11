@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -18,5 +17,10 @@ import {
 </ResizableRoot>
 ```
 */
+
+
+'use client'
+
+
 
 export * from './index.gen.ts'

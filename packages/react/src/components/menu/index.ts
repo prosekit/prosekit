@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -35,5 +34,10 @@ import {
 </MenuRoot>
 ```
 */
+
+
+'use client'
+
+
 
 export * from './index.gen.ts'

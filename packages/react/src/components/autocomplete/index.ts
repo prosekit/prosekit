@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -25,5 +24,8 @@ import {
 </AutocompleteRoot>
 ```
 */
+
+'use client'
+
 
 export * from './index.gen.ts'

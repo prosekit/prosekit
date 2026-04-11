@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -22,5 +21,10 @@ import {
 </PopoverRoot>
 ```
 */
+
+
+'use client'
+
+
 
 export * from './index.gen.ts'

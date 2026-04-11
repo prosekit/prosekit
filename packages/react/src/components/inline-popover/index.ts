@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -20,5 +19,11 @@ import {
 </InlinePopoverRoot>
 ```
 */
+
+
+'use client'
+
+
+
 
 export * from './index.gen.ts'

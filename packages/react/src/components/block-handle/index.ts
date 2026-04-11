@@ -1,4 +1,3 @@
-'use client'
 
 /**
 
@@ -25,5 +24,10 @@ import {
 </BlockHandleRoot>
 ```
 */
+
+
+'use client'
+
+
 
 export * from './index.gen.ts'

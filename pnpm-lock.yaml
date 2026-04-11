@@ -189,9 +189,6 @@ importers:
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       orderedmap:
         specifier: ^2.1.1
         version: 2.1.1

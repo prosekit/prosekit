@@ -854,11 +854,11 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1
       '@aria-ui/elements':
-        specifier: ^0.1.4
-        version: 0.1.4
+        specifier: ^0.1.5
+        version: 0.1.5
       '@aria-ui/utils':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.2
+        version: 0.1.2
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
@@ -1260,11 +1260,11 @@ packages:
   '@aria-ui/core@0.1.1':
     resolution: {integrity: sha512-h6bpSB0jw8nlWx4lKUJl7vfqEEmmba9R/0TSOukgRofEMctJYWmvqkdNCUiTihM0bvoGdi9Mc6aR90dc1jylrw==}
 
-  '@aria-ui/elements@0.1.4':
-    resolution: {integrity: sha512-uYBMx/TF09AZPm62Yb0H3CrbAJt6yB0BNA/6Puggkxf+4CKVpPagh9tLrSQ0RGlrR0VqbALrl5Bi2Qq3ofWODw==}
+  '@aria-ui/elements@0.1.5':
+    resolution: {integrity: sha512-HzhoOjOaYXjy8r0jQ1jX1h/cA9ShT2wRGls3s6FENL9fgyAZFDOXOasw8ZAUR6JY8/qBKhR631C/HwjsAOlyWg==}
 
-  '@aria-ui/utils@0.1.1':
-    resolution: {integrity: sha512-bXPG+q79FtU4yYql4CXx4mB1lc2W7CknliFtY/QscIomvxnFBE3Ppx52Bc/6dsDHYU7BjnxONhfFdtKFCJZ0UA==}
+  '@aria-ui/utils@0.1.2':
+    resolution: {integrity: sha512-6QiD5v+Jg6YFAxfiilK3jWF6GYmIEjssuib3K3WwurYYE0Jd2BK40wZ6+ZUiQPO7WtGb1biK9hN9pVbm/78nNg==}
 
   '@asamuzakjp/css-color@5.1.9':
     resolution: {integrity: sha512-zd9c/Wdso6v1U7v6w3i/hbAr4K7NaSHImdpvmLt+Y9ea5BhilnIGNkfhOJ7FEIuPipAnE9tZeDOll05WDT0kgg==}
@@ -7925,15 +7925,15 @@ snapshots:
       alien-signals: 3.1.2
       server-dom-shim: 1.1.0
 
-  '@aria-ui/elements@0.1.4':
+  '@aria-ui/elements@0.1.5':
     dependencies:
       '@aria-ui/core': 0.1.1
-      '@aria-ui/utils': 0.1.1
+      '@aria-ui/utils': 0.1.2
       '@floating-ui/dom': 1.7.6
       '@zag-js/dismissable': 1.39.1
       '@zag-js/dom-query': 1.39.1
 
-  '@aria-ui/utils@0.1.1':
+  '@aria-ui/utils@0.1.2':
     dependencies:
       '@aria-ui/core': 0.1.1
       '@zag-js/dom-query': 1.39.1
@@ -14335,7 +14335,7 @@ snapshots:
   shiki-twoslash-renderer@0.3.2(typescript@5.9.3):
     dependencies:
       '@aria-ui/core': 0.1.1
-      '@aria-ui/elements': 0.1.4
+      '@aria-ui/elements': 0.1.5
       '@shikijs/twoslash': 4.0.2(typescript@5.9.3)
       '@shikijs/types': 4.0.2
       '@types/hast': 3.0.4

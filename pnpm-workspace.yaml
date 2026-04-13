@@ -38,6 +38,7 @@ minimumReleaseAgeExclude:
   - "shiki-twoslash-renderer"
   - "twoslash"
   - "twoslash-protocol"
+  - "vitest-browser-svelte"
 
 overrides: {}
 

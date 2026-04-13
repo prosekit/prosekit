@@ -344,7 +344,7 @@
     "vitest-browser-preact": "^1.0.0",
     "vitest-browser-react": "^2.2.0",
     "vitest-browser-solid": "^1.0.1",
-    "vitest-browser-svelte": "^2.1.0",
+    "vitest-browser-svelte": "^2.1.1",
     "vitest-browser-vue": "^2.1.0",
     "vue-tsc": "^3.2.6",
     "vue-tweet": "^2.4.0"

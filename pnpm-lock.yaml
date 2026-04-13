@@ -746,8 +746,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.4(@types/node@24.10.13)(@vitest/browser-playwright@4.1.4)(@vitest/coverage-v8@4.1.4)(@vitest/ui@4.1.4)(happy-dom@20.8.9)(jsdom@29.0.2)(vite@8.0.8(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.2))
       vitest-browser-svelte:
-        specifier: ^2.1.0
-        version: 2.1.0(svelte@5.55.2)(vitest@4.1.4)
+        specifier: ^2.1.1
+        version: 2.1.1(svelte@5.55.2)(vitest@4.1.4)
 
   packages/testing:
     dependencies:
@@ -1087,8 +1087,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(solid-js@1.9.12)(vitest@4.1.4)
       vitest-browser-svelte:
-        specifier: ^2.1.0
-        version: 2.1.0(svelte@5.55.2)(vitest@4.1.4)
+        specifier: ^2.1.1
+        version: 2.1.1(svelte@5.55.2)(vitest@4.1.4)
       vitest-browser-vue:
         specifier: ^2.1.0
         version: 2.1.0(vitest@4.1.4)(vue@3.5.32(typescript@5.9.3))
@@ -2947,11 +2947,6 @@ packages:
   '@pkgr/core@0.2.9':
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
-
-  '@playwright/test@1.59.1':
-    resolution: {integrity: sha512-PG6q63nQg5c9rIi4/Z5lR5IVF7yU5MqmKaPOe0HSc0O2cX1fPi96sUQu5j7eo4gKCkB2AnNGoWt7y4/Xx3Kcqg==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -7514,8 +7509,8 @@ packages:
       solid-js: ^1.8.0
       vitest: ^4.0.0
 
-  vitest-browser-svelte@2.1.0:
-    resolution: {integrity: sha512-Uqcqn9gKhYoNOn5uGOQHSPIEGHgIz25zPP6R63LQ5+yEVHfDXdOKBMba9pBlPIgp31AxYbV9h43j9+W+5M5y+A==}
+  vitest-browser-svelte@2.1.1:
+    resolution: {integrity: sha512-qbunYRSm+N92r9bfTkdDTpBZESLmp4QFz2SluV3n/x8U7ysosfeXYJZ4vXbJ0Y0LzoqqDnV5LHprmFgn4Eo+Ug==}
     peerDependencies:
       svelte: ^3 || ^4 || ^5 || ^5.0.0-next.0
       vitest: ^4.0.0
@@ -9705,10 +9700,6 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.2.9': {}
-
-  '@playwright/test@1.59.1':
-    dependencies:
-      playwright: 1.59.1
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -15142,9 +15133,8 @@ snapshots:
       solid-js: 1.9.12
       vitest: 4.1.4(@types/node@24.10.13)(@vitest/browser-playwright@4.1.4)(@vitest/coverage-v8@4.1.4)(@vitest/ui@4.1.4)(happy-dom@20.8.9)(jsdom@29.0.2)(vite@8.0.8(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.2))
 
-  vitest-browser-svelte@2.1.0(svelte@5.55.2)(vitest@4.1.4):
+  vitest-browser-svelte@2.1.1(svelte@5.55.2)(vitest@4.1.4):
     dependencies:
-      '@playwright/test': 1.59.1
       '@testing-library/svelte-core': 1.0.0(svelte@5.55.2)
       svelte: 5.55.2
       vitest: 4.1.4(@types/node@24.10.13)(@vitest/browser-playwright@4.1.4)(@vitest/coverage-v8@4.1.4)(@vitest/ui@4.1.4)(happy-dom@20.8.9)(jsdom@29.0.2)(vite@8.0.8(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.2))

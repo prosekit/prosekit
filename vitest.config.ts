@@ -51,6 +51,9 @@ class TestSequencer extends BaseSequencer {
 }
 
 export default defineConfig({
+  resolve: {
+    conditions: ['prosekit-source', 'import', 'browser', 'svelte'],
+  },
   test: {
     sequence: {
       sequencer: TestSequencer,

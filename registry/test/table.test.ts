@@ -1,21 +1,47 @@
-import { beforeEach, expect, it } from 'vitest'
+import type { NodeJSON } from 'prosekit/core'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 import { page, type Locator } from 'vitest/browser'
 
 import {
   dragAndDrop,
-  emptyEditor,
   expectLocatorToBeHidden,
   expectLocatorToHaveCount,
-  getBoundingBox,
   hover,
-  pasteHtmlToEditor,
   testStory,
   testStoryConsistency,
   unhover,
   waitForEditor,
 } from './helpers'
 import { waitForStableElement } from './helpers/query'
+
+const INITIAL_CONTENT: NodeJSON = (() => {
+  const paragraph = (text: string): NodeJSON => ({
+    type: 'paragraph',
+    content: [{ type: 'text', text }],
+  })
+  const cell = (text: string): NodeJSON => ({
+    type: 'tableCell',
+    content: [paragraph(text)],
+  })
+  const row = (cells: string[]): NodeJSON => ({
+    type: 'tableRow',
+    content: cells.map(cell),
+  })
+  const table = (rows: string[][]): NodeJSON => ({
+    type: 'table',
+    content: rows.map(row),
+  })
+  return Object.freeze({
+    type: 'doc',
+    content: [
+      table([
+        ['A1', 'B1', 'C1', 'D1'],
+        ['A2', 'B2', 'C2', 'D2'],
+      ]),
+    ],
+  })
+})()
 
 testStoryConsistency('table')
 
@@ -29,25 +55,16 @@ testStory('table', () => {
   })
 })
 
-testStory(['table', 'full'], () => {
-  beforeEach(async () => {
-    await emptyEditor()
-    await pasteHtmlToEditor(`
-      <table>
-        <tr>
-          <td>A1</td>
-          <td>B1</td>
-          <td>C1</td>
-          <td>D1</td>
-        </tr>
-        <tr>
-          <td>A2</td>
-          <td>B2</td>
-          <td>C2</td>
-          <td>D2</td>
-        </tr>
-      </table>
-    `)
+testStory({
+  story: ['table', 'full'],
+  initialContent: INITIAL_CONTENT,
+}, () => {
+  it('smoke test', async () => {
+    const { expectTableContentToBe } = await setup()
+    await expectTableContentToBe([
+      ['A1', 'B1', 'C1', 'D1'],
+      ['A2', 'B2', 'C2', 'D2'],
+    ])
   })
 
   it('select cells by clicking handles', async () => {
@@ -338,10 +355,10 @@ async function setup() {
     await expectLocatorToHaveCount(rowHandle, 1)
     await expectLocatorToHaveCount(colHandle, 1)
 
-    const positionIsAligned = async () => {
-      const cellBox = await getBoundingBox(cellLocator)
-      const rowHandleBox = await getBoundingBox(rowHandle)
-      const colHandleBox = await getBoundingBox(colHandle)
+    const positionIsAligned = () => {
+      const cellBox = cellLocator.element().getBoundingClientRect()
+      const rowHandleBox = rowHandle.element().getBoundingClientRect()
+      const colHandleBox = colHandle.element().getBoundingClientRect()
 
       const rowHandleCenterY = rowHandleBox.y + rowHandleBox.height / 2
       const colHandleCenterX = colHandleBox.x + colHandleBox.width / 2

@@ -65,93 +65,47 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-pm.d.ts",
-        "default": "./dist/prosekit-pm.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./commands": {
-        "types": "./dist/prosekit-pm-commands.d.ts",
-        "default": "./dist/prosekit-pm-commands.js"
+        "types": "./dist/commands.d.ts",
+        "default": "./dist/commands.js"
       },
       "./history": {
-        "types": "./dist/prosekit-pm-history.d.ts",
-        "default": "./dist/prosekit-pm-history.js"
+        "types": "./dist/history.d.ts",
+        "default": "./dist/history.js"
       },
       "./inputrules": {
-        "types": "./dist/prosekit-pm-inputrules.d.ts",
-        "default": "./dist/prosekit-pm-inputrules.js"
+        "types": "./dist/inputrules.d.ts",
+        "default": "./dist/inputrules.js"
       },
       "./keymap": {
-        "types": "./dist/prosekit-pm-keymap.d.ts",
-        "default": "./dist/prosekit-pm-keymap.js"
+        "types": "./dist/keymap.d.ts",
+        "default": "./dist/keymap.js"
       },
       "./model": {
-        "types": "./dist/prosekit-pm-model.d.ts",
-        "default": "./dist/prosekit-pm-model.js"
+        "types": "./dist/model.d.ts",
+        "default": "./dist/model.js"
       },
       "./state": {
-        "types": "./dist/prosekit-pm-state.d.ts",
-        "default": "./dist/prosekit-pm-state.js"
+        "types": "./dist/state.d.ts",
+        "default": "./dist/state.js"
       },
       "./transform": {
-        "types": "./dist/prosekit-pm-transform.d.ts",
-        "default": "./dist/prosekit-pm-transform.js"
+        "types": "./dist/transform.d.ts",
+        "default": "./dist/transform.js"
       },
       "./view": {
-        "types": "./dist/prosekit-pm-view.d.ts",
-        "default": "./dist/prosekit-pm-view.js"
+        "types": "./dist/view.d.ts",
+        "default": "./dist/view.js"
       },
       "./view/style/prosemirror.css": {
         "default": "./dist/view/style/prosemirror.css"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-pm.js",
-    "module": "./dist/prosekit-pm.js",
-    "types": "./dist/prosekit-pm.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/prosekit-pm.d.ts"
-        ],
-        "commands": [
-          "./dist/prosekit-pm-commands.d.ts"
-        ],
-        "history": [
-          "./dist/prosekit-pm-history.d.ts"
-        ],
-        "inputrules": [
-          "./dist/prosekit-pm-inputrules.d.ts"
-        ],
-        "keymap": [
-          "./dist/prosekit-pm-keymap.d.ts"
-        ],
-        "model": [
-          "./dist/prosekit-pm-model.d.ts"
-        ],
-        "state": [
-          "./dist/prosekit-pm-state.d.ts"
-        ],
-        "transform": [
-          "./dist/prosekit-pm-transform.d.ts"
-        ],
-        "view": [
-          "./dist/prosekit-pm-view.d.ts"
-        ]
-      }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-pm": "./src/index.ts",
-      "prosekit-pm-commands": "./src/commands.ts",
-      "prosekit-pm-history": "./src/history.ts",
-      "prosekit-pm-inputrules": "./src/inputrules.ts",
-      "prosekit-pm-keymap": "./src/keymap.ts",
-      "prosekit-pm-model": "./src/model.ts",
-      "prosekit-pm-state": "./src/state.ts",
-      "prosekit-pm-transform": "./src/transform.ts",
-      "prosekit-pm-view": "./src/view.ts",
-      "view/style/prosemirror": "./src/view/style/prosemirror.css"
-    }
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   }
 }

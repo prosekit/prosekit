@@ -70,97 +70,48 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-web.d.ts",
-        "default": "./dist/prosekit-web.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./autocomplete": {
-        "types": "./dist/prosekit-web-autocomplete.d.ts",
-        "default": "./dist/prosekit-web-autocomplete.js"
+        "types": "./dist/autocomplete.d.ts",
+        "default": "./dist/autocomplete.js"
       },
       "./block-handle": {
-        "types": "./dist/prosekit-web-block-handle.d.ts",
-        "default": "./dist/prosekit-web-block-handle.js"
+        "types": "./dist/block-handle.d.ts",
+        "default": "./dist/block-handle.js"
       },
       "./drop-indicator": {
-        "types": "./dist/prosekit-web-drop-indicator.d.ts",
-        "default": "./dist/prosekit-web-drop-indicator.js"
+        "types": "./dist/drop-indicator.d.ts",
+        "default": "./dist/drop-indicator.js"
       },
       "./inline-popover": {
-        "types": "./dist/prosekit-web-inline-popover.d.ts",
-        "default": "./dist/prosekit-web-inline-popover.js"
+        "types": "./dist/inline-popover.d.ts",
+        "default": "./dist/inline-popover.js"
       },
       "./menu": {
-        "types": "./dist/prosekit-web-menu.d.ts",
-        "default": "./dist/prosekit-web-menu.js"
+        "types": "./dist/menu.d.ts",
+        "default": "./dist/menu.js"
       },
       "./popover": {
-        "types": "./dist/prosekit-web-popover.d.ts",
-        "default": "./dist/prosekit-web-popover.js"
+        "types": "./dist/popover.d.ts",
+        "default": "./dist/popover.js"
       },
       "./resizable": {
-        "types": "./dist/prosekit-web-resizable.d.ts",
-        "default": "./dist/prosekit-web-resizable.js"
+        "types": "./dist/resizable.d.ts",
+        "default": "./dist/resizable.js"
       },
       "./table-handle": {
-        "types": "./dist/prosekit-web-table-handle.d.ts",
-        "default": "./dist/prosekit-web-table-handle.js"
+        "types": "./dist/table-handle.d.ts",
+        "default": "./dist/table-handle.js"
       },
       "./tooltip": {
-        "types": "./dist/prosekit-web-tooltip.d.ts",
-        "default": "./dist/prosekit-web-tooltip.js"
+        "types": "./dist/tooltip.d.ts",
+        "default": "./dist/tooltip.js"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-web.js",
-    "module": "./dist/prosekit-web.js",
-    "types": "./dist/prosekit-web.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/prosekit-web.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/prosekit-web-autocomplete.d.ts"
-        ],
-        "block-handle": [
-          "./dist/prosekit-web-block-handle.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/prosekit-web-drop-indicator.d.ts"
-        ],
-        "inline-popover": [
-          "./dist/prosekit-web-inline-popover.d.ts"
-        ],
-        "menu": [
-          "./dist/prosekit-web-menu.d.ts"
-        ],
-        "popover": [
-          "./dist/prosekit-web-popover.d.ts"
-        ],
-        "resizable": [
-          "./dist/prosekit-web-resizable.d.ts"
-        ],
-        "table-handle": [
-          "./dist/prosekit-web-table-handle.d.ts"
-        ],
-        "tooltip": [
-          "./dist/prosekit-web-tooltip.d.ts"
-        ]
-      }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-web": "./src/index.ts",
-      "prosekit-web-autocomplete": "./src/components/autocomplete/index.ts",
-      "prosekit-web-block-handle": "./src/components/block-handle/index.ts",
-      "prosekit-web-drop-indicator": "./src/components/drop-indicator/index.ts",
-      "prosekit-web-inline-popover": "./src/components/inline-popover/index.ts",
-      "prosekit-web-menu": "./src/components/menu/index.ts",
-      "prosekit-web-popover": "./src/components/popover/index.ts",
-      "prosekit-web-resizable": "./src/components/resizable/index.ts",
-      "prosekit-web-table-handle": "./src/components/table-handle/index.ts",
-      "prosekit-web-tooltip": "./src/components/tooltip/index.ts"
-    }
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   }
 }

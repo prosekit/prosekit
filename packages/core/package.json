@@ -57,33 +57,16 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-core.d.ts",
-        "default": "./dist/prosekit-core.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./test": {
-        "types": "./dist/prosekit-core-test.d.ts",
-        "default": "./dist/prosekit-core-test.js"
+        "types": "./dist/test.d.ts",
+        "default": "./dist/test.js"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-core.js",
-    "module": "./dist/prosekit-core.js",
-    "types": "./dist/prosekit-core.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/prosekit-core.d.ts"
-        ],
-        "test": [
-          "./dist/prosekit-core-test.d.ts"
-        ]
-      }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-core": "./src/index.ts",
-      "prosekit-core-test": "./src/test/index.ts"
-    }
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   }
 }

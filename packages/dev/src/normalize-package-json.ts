@@ -2,7 +2,6 @@ import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
-import slugify from '@sindresorhus/slugify'
 import type { PackageJson } from 'type-fest'
 
 import { getPackageJsonExports, getPackageJsonPublishExports } from './get-package-json-exports'
@@ -11,43 +10,39 @@ import { maybeUndefined } from './maybe-undefined'
 import { findExistingFileInPackage, getExistingFileInPackage } from './package-files'
 import { sortObject } from './sort-object'
 
-export async function normalizePackageJson(pkg: Package): Promise<Record<string, string>> {
+export async function normalizePackageJson(pkg: Package): Promise<void> {
   if (isPrivatePackage(pkg) || pkg.packageJson.name === 'prosekit-registry') {
-    return {}
+    return
   }
 
   const packageJson = pkg.packageJson as PackageJson
-  const slugPackageName = slugify(pkg.packageJson.name)
 
   const publishExports: Record<string, any> = {}
-  const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
+  const publishConfig: Record<string, any> = { exports: publishExports }
   packageJson.publishConfig = publishConfig
 
   const exports = getPackageJsonExports(pkg) || {}
   packageJson.exports = exports
 
-  const entryPoints: Record<string, string> = {}
-  packageJson.dev = { entry: entryPoints }
-
-  for (const path of Object.keys(exports)) {
+  for (const exportName of Object.keys(exports)) {
     let sourcePath: string
     let distName: string
+    let isSvelte: boolean = false
 
-    if (!isValidEntry(path)) {
-      throw new Error(`exports["${path}"] is not allowed`)
+    if (!isValidEntry(exportName)) {
+      throw new Error(`exports["${exportName}"] is not allowed`)
     }
 
-    if (path === '.') {
+    if (exportName === '.') {
       sourcePath = await getExistingFileInPackage(pkg, [
         `./src/index.ts`,
         `./src/index.tsx`,
         `./src/index.gen.ts`,
         `./src/index.gen.tsx`,
       ])
-      distName = slugPackageName
+      distName = 'index'
 
       packageJson.type = 'module'
-
       packageJson.main = sourcePath
       packageJson.module = sourcePath
       packageJson.types = undefined
@@ -56,21 +51,21 @@ export async function normalizePackageJson(pkg: Package): Promise<Record<string,
       publishConfig.module = `./dist/${distName}.js`
       publishConfig.types = `./dist/${distName}.d.ts`
 
-      exports[path] = sourcePath
-      publishExports[path] = {
+      exports[exportName] = sourcePath
+      publishExports[exportName] = {
         types: `./dist/${distName}.d.ts`,
         default: `./dist/${distName}.js`,
       }
-    } else if (path.endsWith('.css')) {
-      distName = path.slice(2, -4)
+    } else if (exportName.endsWith('.css')) {
+      distName = exportName.slice(2, -4)
       sourcePath = './src/' + distName + '.css'
 
-      exports[path] = sourcePath
-      publishExports[path] = {
+      exports[exportName] = sourcePath
+      publishExports[exportName] = {
         default: `./dist/${distName}.css`,
       }
     } else {
-      const subPath = path.slice(2)
+      const subPath = exportName.slice(2)
       const foundFilePath = await findExistingFileInPackage(pkg, [
         `./src/${subPath}.ts`,
         `./src/${subPath}.tsx`,
@@ -91,30 +86,25 @@ export async function normalizePackageJson(pkg: Package): Promise<Record<string,
       ])
 
       if (!foundFilePath) {
-        delete exports[path]
-        delete publishExports[path]
+        delete exports[exportName]
+        delete publishExports[exportName]
         continue
       }
 
       sourcePath = foundFilePath
-      distName = slugify(`${slugPackageName}-${subPath}`)
+      distName = subPath
 
       // Svelte requires the export key "svelte" to be present in the
       // conditional export object.
       // See https://kit.svelte.dev/docs/packaging#anatomy-of-a-package-json-exports
-      const isSvelte = pkg.packageJson.name.includes('svelte')
-
-      exports[path] = isSvelte
-        ? { svelte: sourcePath, default: sourcePath }
-        : sourcePath
-
-      publishExports[path] = {
+      isSvelte = pkg.packageJson.name.includes('svelte')
+      exports[exportName] = isSvelte ? { svelte: sourcePath, default: sourcePath } : sourcePath
+      publishExports[exportName] = {
         types: `./dist/${distName}.d.ts`,
         svelte: isSvelte ? `./dist/${distName}.js` : undefined,
         default: `./dist/${distName}.js`,
       }
     }
-    entryPoints[distName] = sourcePath
   }
 
   packageJson.exports = maybeUndefined(sortObject(getPackageJsonExports(pkg) ?? {}))
@@ -122,8 +112,6 @@ export async function normalizePackageJson(pkg: Package): Promise<Record<string,
 
   normalizePackageJsonDocumentFields(pkg)
   normalizeTypesVersions(pkg)
-
-  return entryPoints
 }
 
 function isValidEntry(entry: string): boolean {
@@ -152,6 +140,8 @@ function normalizePackageJsonDocumentFields(pkg: Package): void {
   })
 }
 
+
+
 function normalizeTypesVersions(pkg: Package): void {
   const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)
@@ -172,3 +162,4 @@ function normalizeTypesVersions(pkg: Package): void {
     packageJson.publishConfig['typesVersions'] = { '*': typesVersions }
   }
 }
+

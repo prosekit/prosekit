@@ -76,97 +76,48 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-vue.d.ts",
-        "default": "./dist/prosekit-vue.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./autocomplete": {
-        "types": "./dist/prosekit-vue-autocomplete.d.ts",
-        "default": "./dist/prosekit-vue-autocomplete.js"
+        "types": "./dist/autocomplete.d.ts",
+        "default": "./dist/autocomplete.js"
       },
       "./block-handle": {
-        "types": "./dist/prosekit-vue-block-handle.d.ts",
-        "default": "./dist/prosekit-vue-block-handle.js"
+        "types": "./dist/block-handle.d.ts",
+        "default": "./dist/block-handle.js"
       },
       "./drop-indicator": {
-        "types": "./dist/prosekit-vue-drop-indicator.d.ts",
-        "default": "./dist/prosekit-vue-drop-indicator.js"
+        "types": "./dist/drop-indicator.d.ts",
+        "default": "./dist/drop-indicator.js"
       },
       "./inline-popover": {
-        "types": "./dist/prosekit-vue-inline-popover.d.ts",
-        "default": "./dist/prosekit-vue-inline-popover.js"
+        "types": "./dist/inline-popover.d.ts",
+        "default": "./dist/inline-popover.js"
       },
       "./menu": {
-        "types": "./dist/prosekit-vue-menu.d.ts",
-        "default": "./dist/prosekit-vue-menu.js"
+        "types": "./dist/menu.d.ts",
+        "default": "./dist/menu.js"
       },
       "./popover": {
-        "types": "./dist/prosekit-vue-popover.d.ts",
-        "default": "./dist/prosekit-vue-popover.js"
+        "types": "./dist/popover.d.ts",
+        "default": "./dist/popover.js"
       },
       "./resizable": {
-        "types": "./dist/prosekit-vue-resizable.d.ts",
-        "default": "./dist/prosekit-vue-resizable.js"
+        "types": "./dist/resizable.d.ts",
+        "default": "./dist/resizable.js"
       },
       "./table-handle": {
-        "types": "./dist/prosekit-vue-table-handle.d.ts",
-        "default": "./dist/prosekit-vue-table-handle.js"
+        "types": "./dist/table-handle.d.ts",
+        "default": "./dist/table-handle.js"
       },
       "./tooltip": {
-        "types": "./dist/prosekit-vue-tooltip.d.ts",
-        "default": "./dist/prosekit-vue-tooltip.js"
+        "types": "./dist/tooltip.d.ts",
+        "default": "./dist/tooltip.js"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-vue.js",
-    "module": "./dist/prosekit-vue.js",
-    "types": "./dist/prosekit-vue.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/prosekit-vue.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/prosekit-vue-autocomplete.d.ts"
-        ],
-        "block-handle": [
-          "./dist/prosekit-vue-block-handle.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/prosekit-vue-drop-indicator.d.ts"
-        ],
-        "inline-popover": [
-          "./dist/prosekit-vue-inline-popover.d.ts"
-        ],
-        "menu": [
-          "./dist/prosekit-vue-menu.d.ts"
-        ],
-        "popover": [
-          "./dist/prosekit-vue-popover.d.ts"
-        ],
-        "resizable": [
-          "./dist/prosekit-vue-resizable.d.ts"
-        ],
-        "table-handle": [
-          "./dist/prosekit-vue-table-handle.d.ts"
-        ],
-        "tooltip": [
-          "./dist/prosekit-vue-tooltip.d.ts"
-        ]
-      }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-vue": "./src/index.ts",
-      "prosekit-vue-autocomplete": "./src/components/autocomplete/index.ts",
-      "prosekit-vue-block-handle": "./src/components/block-handle/index.ts",
-      "prosekit-vue-drop-indicator": "./src/components/drop-indicator/index.ts",
-      "prosekit-vue-inline-popover": "./src/components/inline-popover/index.ts",
-      "prosekit-vue-menu": "./src/components/menu/index.ts",
-      "prosekit-vue-popover": "./src/components/popover/index.ts",
-      "prosekit-vue-resizable": "./src/components/resizable/index.ts",
-      "prosekit-vue-table-handle": "./src/components/table-handle/index.ts",
-      "prosekit-vue-tooltip": "./src/components/tooltip/index.ts"
-    }
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   }
 }

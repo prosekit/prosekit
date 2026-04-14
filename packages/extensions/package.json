@@ -150,385 +150,202 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-extensions.d.ts",
-        "default": "./dist/prosekit-extensions.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./autocomplete": {
-        "types": "./dist/prosekit-extensions-autocomplete.d.ts",
-        "default": "./dist/prosekit-extensions-autocomplete.js"
+        "types": "./dist/autocomplete.d.ts",
+        "default": "./dist/autocomplete.js"
       },
       "./background-color": {
-        "types": "./dist/prosekit-extensions-background-color.d.ts",
-        "default": "./dist/prosekit-extensions-background-color.js"
+        "types": "./dist/background-color.d.ts",
+        "default": "./dist/background-color.js"
       },
       "./blockquote": {
-        "types": "./dist/prosekit-extensions-blockquote.d.ts",
-        "default": "./dist/prosekit-extensions-blockquote.js"
+        "types": "./dist/blockquote.d.ts",
+        "default": "./dist/blockquote.js"
       },
       "./bold": {
-        "types": "./dist/prosekit-extensions-bold.d.ts",
-        "default": "./dist/prosekit-extensions-bold.js"
+        "types": "./dist/bold.d.ts",
+        "default": "./dist/bold.js"
       },
       "./code": {
-        "types": "./dist/prosekit-extensions-code.d.ts",
-        "default": "./dist/prosekit-extensions-code.js"
+        "types": "./dist/code.d.ts",
+        "default": "./dist/code.js"
       },
       "./code-block": {
-        "types": "./dist/prosekit-extensions-code-block.d.ts",
-        "default": "./dist/prosekit-extensions-code-block.js"
+        "types": "./dist/code-block.d.ts",
+        "default": "./dist/code-block.js"
       },
       "./commit": {
-        "types": "./dist/prosekit-extensions-commit.d.ts",
-        "default": "./dist/prosekit-extensions-commit.js"
+        "types": "./dist/commit.d.ts",
+        "default": "./dist/commit.js"
       },
       "./commit/style.css": {
         "default": "./dist/commit/style.css"
       },
       "./doc": {
-        "types": "./dist/prosekit-extensions-doc.d.ts",
-        "default": "./dist/prosekit-extensions-doc.js"
+        "types": "./dist/doc.d.ts",
+        "default": "./dist/doc.js"
       },
       "./drop-cursor": {
-        "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
-        "default": "./dist/prosekit-extensions-drop-cursor.js"
+        "types": "./dist/drop-cursor.d.ts",
+        "default": "./dist/drop-cursor.js"
       },
       "./drop-indicator": {
-        "types": "./dist/prosekit-extensions-drop-indicator.d.ts",
-        "default": "./dist/prosekit-extensions-drop-indicator.js"
+        "types": "./dist/drop-indicator.d.ts",
+        "default": "./dist/drop-indicator.js"
       },
       "./enter-rule": {
-        "types": "./dist/prosekit-extensions-enter-rule.d.ts",
-        "default": "./dist/prosekit-extensions-enter-rule.js"
+        "types": "./dist/enter-rule.d.ts",
+        "default": "./dist/enter-rule.js"
       },
       "./file": {
-        "types": "./dist/prosekit-extensions-file.d.ts",
-        "default": "./dist/prosekit-extensions-file.js"
+        "types": "./dist/file.d.ts",
+        "default": "./dist/file.js"
       },
       "./gap-cursor": {
-        "types": "./dist/prosekit-extensions-gap-cursor.d.ts",
-        "default": "./dist/prosekit-extensions-gap-cursor.js"
+        "types": "./dist/gap-cursor.d.ts",
+        "default": "./dist/gap-cursor.js"
       },
       "./gap-cursor/style.css": {
         "default": "./dist/gap-cursor/style.css"
       },
       "./hard-break": {
-        "types": "./dist/prosekit-extensions-hard-break.d.ts",
-        "default": "./dist/prosekit-extensions-hard-break.js"
+        "types": "./dist/hard-break.d.ts",
+        "default": "./dist/hard-break.js"
       },
       "./heading": {
-        "types": "./dist/prosekit-extensions-heading.d.ts",
-        "default": "./dist/prosekit-extensions-heading.js"
+        "types": "./dist/heading.d.ts",
+        "default": "./dist/heading.js"
       },
       "./horizontal-rule": {
-        "types": "./dist/prosekit-extensions-horizontal-rule.d.ts",
-        "default": "./dist/prosekit-extensions-horizontal-rule.js"
+        "types": "./dist/horizontal-rule.d.ts",
+        "default": "./dist/horizontal-rule.js"
       },
       "./image": {
-        "types": "./dist/prosekit-extensions-image.d.ts",
-        "default": "./dist/prosekit-extensions-image.js"
+        "types": "./dist/image.d.ts",
+        "default": "./dist/image.js"
       },
       "./input-rule": {
-        "types": "./dist/prosekit-extensions-input-rule.d.ts",
-        "default": "./dist/prosekit-extensions-input-rule.js"
+        "types": "./dist/input-rule.d.ts",
+        "default": "./dist/input-rule.js"
       },
       "./italic": {
-        "types": "./dist/prosekit-extensions-italic.d.ts",
-        "default": "./dist/prosekit-extensions-italic.js"
+        "types": "./dist/italic.d.ts",
+        "default": "./dist/italic.js"
       },
       "./link": {
-        "types": "./dist/prosekit-extensions-link.d.ts",
-        "default": "./dist/prosekit-extensions-link.js"
+        "types": "./dist/link.d.ts",
+        "default": "./dist/link.js"
       },
       "./list": {
-        "types": "./dist/prosekit-extensions-list.d.ts",
-        "default": "./dist/prosekit-extensions-list.js"
+        "types": "./dist/list.d.ts",
+        "default": "./dist/list.js"
       },
       "./list/style.css": {
         "default": "./dist/list/style.css"
       },
       "./loro": {
-        "types": "./dist/prosekit-extensions-loro.d.ts",
-        "default": "./dist/prosekit-extensions-loro.js"
+        "types": "./dist/loro.d.ts",
+        "default": "./dist/loro.js"
       },
       "./loro/style.css": {
         "default": "./dist/loro/style.css"
       },
       "./mark-rule": {
-        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
-        "default": "./dist/prosekit-extensions-mark-rule.js"
+        "types": "./dist/mark-rule.d.ts",
+        "default": "./dist/mark-rule.js"
       },
       "./math": {
-        "types": "./dist/prosekit-extensions-math.d.ts",
-        "default": "./dist/prosekit-extensions-math.js"
+        "types": "./dist/math.d.ts",
+        "default": "./dist/math.js"
       },
       "./mention": {
-        "types": "./dist/prosekit-extensions-mention.d.ts",
-        "default": "./dist/prosekit-extensions-mention.js"
+        "types": "./dist/mention.d.ts",
+        "default": "./dist/mention.js"
       },
       "./mod-click-prevention": {
-        "types": "./dist/prosekit-extensions-mod-click-prevention.d.ts",
-        "default": "./dist/prosekit-extensions-mod-click-prevention.js"
+        "types": "./dist/mod-click-prevention.d.ts",
+        "default": "./dist/mod-click-prevention.js"
       },
       "./page": {
-        "types": "./dist/prosekit-extensions-page.d.ts",
-        "default": "./dist/prosekit-extensions-page.js"
+        "types": "./dist/page.d.ts",
+        "default": "./dist/page.js"
       },
       "./page/style.css": {
         "default": "./dist/page/style.css"
       },
       "./paragraph": {
-        "types": "./dist/prosekit-extensions-paragraph.d.ts",
-        "default": "./dist/prosekit-extensions-paragraph.js"
+        "types": "./dist/paragraph.d.ts",
+        "default": "./dist/paragraph.js"
       },
       "./paste-rule": {
-        "types": "./dist/prosekit-extensions-paste-rule.d.ts",
-        "default": "./dist/prosekit-extensions-paste-rule.js"
+        "types": "./dist/paste-rule.d.ts",
+        "default": "./dist/paste-rule.js"
       },
       "./placeholder": {
-        "types": "./dist/prosekit-extensions-placeholder.d.ts",
-        "default": "./dist/prosekit-extensions-placeholder.js"
+        "types": "./dist/placeholder.d.ts",
+        "default": "./dist/placeholder.js"
       },
       "./placeholder/style.css": {
         "default": "./dist/placeholder/style.css"
       },
       "./readonly": {
-        "types": "./dist/prosekit-extensions-readonly.d.ts",
-        "default": "./dist/prosekit-extensions-readonly.js"
+        "types": "./dist/readonly.d.ts",
+        "default": "./dist/readonly.js"
       },
       "./search": {
-        "types": "./dist/prosekit-extensions-search.d.ts",
-        "default": "./dist/prosekit-extensions-search.js"
+        "types": "./dist/search.d.ts",
+        "default": "./dist/search.js"
       },
       "./search/style.css": {
         "default": "./dist/search/style.css"
       },
       "./strike": {
-        "types": "./dist/prosekit-extensions-strike.d.ts",
-        "default": "./dist/prosekit-extensions-strike.js"
+        "types": "./dist/strike.d.ts",
+        "default": "./dist/strike.js"
       },
       "./table": {
-        "types": "./dist/prosekit-extensions-table.d.ts",
-        "default": "./dist/prosekit-extensions-table.js"
+        "types": "./dist/table.d.ts",
+        "default": "./dist/table.js"
       },
       "./table/style.css": {
         "default": "./dist/table/style.css"
       },
       "./text": {
-        "types": "./dist/prosekit-extensions-text.d.ts",
-        "default": "./dist/prosekit-extensions-text.js"
+        "types": "./dist/text.d.ts",
+        "default": "./dist/text.js"
       },
       "./text-align": {
-        "types": "./dist/prosekit-extensions-text-align.d.ts",
-        "default": "./dist/prosekit-extensions-text-align.js"
+        "types": "./dist/text-align.d.ts",
+        "default": "./dist/text-align.js"
       },
       "./text-color": {
-        "types": "./dist/prosekit-extensions-text-color.d.ts",
-        "default": "./dist/prosekit-extensions-text-color.js"
+        "types": "./dist/text-color.d.ts",
+        "default": "./dist/text-color.js"
       },
       "./underline": {
-        "types": "./dist/prosekit-extensions-underline.d.ts",
-        "default": "./dist/prosekit-extensions-underline.js"
+        "types": "./dist/underline.d.ts",
+        "default": "./dist/underline.js"
       },
       "./virtual-selection": {
-        "types": "./dist/prosekit-extensions-virtual-selection.d.ts",
-        "default": "./dist/prosekit-extensions-virtual-selection.js"
+        "types": "./dist/virtual-selection.d.ts",
+        "default": "./dist/virtual-selection.js"
       },
       "./virtual-selection/style.css": {
         "default": "./dist/virtual-selection/style.css"
       },
       "./yjs": {
-        "types": "./dist/prosekit-extensions-yjs.d.ts",
-        "default": "./dist/prosekit-extensions-yjs.js"
+        "types": "./dist/yjs.d.ts",
+        "default": "./dist/yjs.js"
       },
       "./yjs/style.css": {
         "default": "./dist/yjs/style.css"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-extensions.js",
-    "module": "./dist/prosekit-extensions.js",
-    "types": "./dist/prosekit-extensions.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/prosekit-extensions.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/prosekit-extensions-autocomplete.d.ts"
-        ],
-        "background-color": [
-          "./dist/prosekit-extensions-background-color.d.ts"
-        ],
-        "blockquote": [
-          "./dist/prosekit-extensions-blockquote.d.ts"
-        ],
-        "bold": [
-          "./dist/prosekit-extensions-bold.d.ts"
-        ],
-        "code": [
-          "./dist/prosekit-extensions-code.d.ts"
-        ],
-        "code-block": [
-          "./dist/prosekit-extensions-code-block.d.ts"
-        ],
-        "commit": [
-          "./dist/prosekit-extensions-commit.d.ts"
-        ],
-        "doc": [
-          "./dist/prosekit-extensions-doc.d.ts"
-        ],
-        "drop-cursor": [
-          "./dist/prosekit-extensions-drop-cursor.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/prosekit-extensions-drop-indicator.d.ts"
-        ],
-        "enter-rule": [
-          "./dist/prosekit-extensions-enter-rule.d.ts"
-        ],
-        "file": [
-          "./dist/prosekit-extensions-file.d.ts"
-        ],
-        "gap-cursor": [
-          "./dist/prosekit-extensions-gap-cursor.d.ts"
-        ],
-        "hard-break": [
-          "./dist/prosekit-extensions-hard-break.d.ts"
-        ],
-        "heading": [
-          "./dist/prosekit-extensions-heading.d.ts"
-        ],
-        "horizontal-rule": [
-          "./dist/prosekit-extensions-horizontal-rule.d.ts"
-        ],
-        "image": [
-          "./dist/prosekit-extensions-image.d.ts"
-        ],
-        "input-rule": [
-          "./dist/prosekit-extensions-input-rule.d.ts"
-        ],
-        "italic": [
-          "./dist/prosekit-extensions-italic.d.ts"
-        ],
-        "link": [
-          "./dist/prosekit-extensions-link.d.ts"
-        ],
-        "list": [
-          "./dist/prosekit-extensions-list.d.ts"
-        ],
-        "loro": [
-          "./dist/prosekit-extensions-loro.d.ts"
-        ],
-        "mark-rule": [
-          "./dist/prosekit-extensions-mark-rule.d.ts"
-        ],
-        "math": [
-          "./dist/prosekit-extensions-math.d.ts"
-        ],
-        "mention": [
-          "./dist/prosekit-extensions-mention.d.ts"
-        ],
-        "mod-click-prevention": [
-          "./dist/prosekit-extensions-mod-click-prevention.d.ts"
-        ],
-        "page": [
-          "./dist/prosekit-extensions-page.d.ts"
-        ],
-        "paragraph": [
-          "./dist/prosekit-extensions-paragraph.d.ts"
-        ],
-        "paste-rule": [
-          "./dist/prosekit-extensions-paste-rule.d.ts"
-        ],
-        "placeholder": [
-          "./dist/prosekit-extensions-placeholder.d.ts"
-        ],
-        "readonly": [
-          "./dist/prosekit-extensions-readonly.d.ts"
-        ],
-        "search": [
-          "./dist/prosekit-extensions-search.d.ts"
-        ],
-        "strike": [
-          "./dist/prosekit-extensions-strike.d.ts"
-        ],
-        "table": [
-          "./dist/prosekit-extensions-table.d.ts"
-        ],
-        "text": [
-          "./dist/prosekit-extensions-text.d.ts"
-        ],
-        "text-align": [
-          "./dist/prosekit-extensions-text-align.d.ts"
-        ],
-        "text-color": [
-          "./dist/prosekit-extensions-text-color.d.ts"
-        ],
-        "underline": [
-          "./dist/prosekit-extensions-underline.d.ts"
-        ],
-        "virtual-selection": [
-          "./dist/prosekit-extensions-virtual-selection.d.ts"
-        ],
-        "yjs": [
-          "./dist/prosekit-extensions-yjs.d.ts"
-        ]
-      }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-extensions": "./src/index.ts",
-      "prosekit-extensions-autocomplete": "./src/autocomplete/index.ts",
-      "prosekit-extensions-background-color": "./src/background-color/index.ts",
-      "prosekit-extensions-blockquote": "./src/blockquote/index.ts",
-      "prosekit-extensions-bold": "./src/bold/index.ts",
-      "prosekit-extensions-code": "./src/code/index.ts",
-      "prosekit-extensions-code-block": "./src/code-block/index.ts",
-      "prosekit-extensions-commit": "./src/commit/index.ts",
-      "commit/style": "./src/commit/style.css",
-      "prosekit-extensions-doc": "./src/doc/index.ts",
-      "prosekit-extensions-drop-cursor": "./src/drop-cursor/index.ts",
-      "prosekit-extensions-drop-indicator": "./src/drop-indicator/index.ts",
-      "prosekit-extensions-enter-rule": "./src/enter-rule/index.ts",
-      "prosekit-extensions-file": "./src/file/index.ts",
-      "prosekit-extensions-gap-cursor": "./src/gap-cursor/index.ts",
-      "gap-cursor/style": "./src/gap-cursor/style.css",
-      "prosekit-extensions-hard-break": "./src/hard-break/index.ts",
-      "prosekit-extensions-heading": "./src/heading/index.ts",
-      "prosekit-extensions-horizontal-rule": "./src/horizontal-rule/index.ts",
-      "prosekit-extensions-image": "./src/image/index.ts",
-      "prosekit-extensions-input-rule": "./src/input-rule/index.ts",
-      "prosekit-extensions-italic": "./src/italic/index.ts",
-      "prosekit-extensions-link": "./src/link/index.ts",
-      "prosekit-extensions-list": "./src/list/index.ts",
-      "list/style": "./src/list/style.css",
-      "prosekit-extensions-loro": "./src/loro/index.ts",
-      "loro/style": "./src/loro/style.css",
-      "prosekit-extensions-mark-rule": "./src/mark-rule/index.ts",
-      "prosekit-extensions-math": "./src/math/index.ts",
-      "prosekit-extensions-mention": "./src/mention/index.ts",
-      "prosekit-extensions-mod-click-prevention": "./src/mod-click-prevention/index.ts",
-      "prosekit-extensions-page": "./src/page/index.ts",
-      "page/style": "./src/page/style.css",
-      "prosekit-extensions-paragraph": "./src/paragraph/index.ts",
-      "prosekit-extensions-paste-rule": "./src/paste-rule/index.ts",
-      "prosekit-extensions-placeholder": "./src/placeholder/index.ts",
-      "placeholder/style": "./src/placeholder/style.css",
-      "prosekit-extensions-readonly": "./src/readonly/index.ts",
-      "prosekit-extensions-search": "./src/search/index.ts",
-      "search/style": "./src/search/style.css",
-      "prosekit-extensions-strike": "./src/strike/index.ts",
-      "prosekit-extensions-table": "./src/table/index.ts",
-      "table/style": "./src/table/style.css",
-      "prosekit-extensions-text": "./src/text/index.ts",
-      "prosekit-extensions-text-align": "./src/text-align/index.ts",
-      "prosekit-extensions-text-color": "./src/text-color/index.ts",
-      "prosekit-extensions-underline": "./src/underline/index.ts",
-      "prosekit-extensions-virtual-selection": "./src/virtual-selection/index.ts",
-      "virtual-selection/style": "./src/virtual-selection/style.css",
-      "prosekit-extensions-yjs": "./src/yjs/index.ts",
-      "yjs/style": "./src/yjs/style.css"
-    }
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   }
 }

@@ -74,97 +74,48 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-preact.d.ts",
-        "default": "./dist/prosekit-preact.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./autocomplete": {
-        "types": "./dist/prosekit-preact-autocomplete.d.ts",
-        "default": "./dist/prosekit-preact-autocomplete.js"
+        "types": "./dist/autocomplete.d.ts",
+        "default": "./dist/autocomplete.js"
       },
       "./block-handle": {
-        "types": "./dist/prosekit-preact-block-handle.d.ts",
-        "default": "./dist/prosekit-preact-block-handle.js"
+        "types": "./dist/block-handle.d.ts",
+        "default": "./dist/block-handle.js"
       },
       "./drop-indicator": {
-        "types": "./dist/prosekit-preact-drop-indicator.d.ts",
-        "default": "./dist/prosekit-preact-drop-indicator.js"
+        "types": "./dist/drop-indicator.d.ts",
+        "default": "./dist/drop-indicator.js"
       },
       "./inline-popover": {
-        "types": "./dist/prosekit-preact-inline-popover.d.ts",
-        "default": "./dist/prosekit-preact-inline-popover.js"
+        "types": "./dist/inline-popover.d.ts",
+        "default": "./dist/inline-popover.js"
       },
       "./menu": {
-        "types": "./dist/prosekit-preact-menu.d.ts",
-        "default": "./dist/prosekit-preact-menu.js"
+        "types": "./dist/menu.d.ts",
+        "default": "./dist/menu.js"
       },
       "./popover": {
-        "types": "./dist/prosekit-preact-popover.d.ts",
-        "default": "./dist/prosekit-preact-popover.js"
+        "types": "./dist/popover.d.ts",
+        "default": "./dist/popover.js"
       },
       "./resizable": {
-        "types": "./dist/prosekit-preact-resizable.d.ts",
-        "default": "./dist/prosekit-preact-resizable.js"
+        "types": "./dist/resizable.d.ts",
+        "default": "./dist/resizable.js"
       },
       "./table-handle": {
-        "types": "./dist/prosekit-preact-table-handle.d.ts",
-        "default": "./dist/prosekit-preact-table-handle.js"
+        "types": "./dist/table-handle.d.ts",
+        "default": "./dist/table-handle.js"
       },
       "./tooltip": {
-        "types": "./dist/prosekit-preact-tooltip.d.ts",
-        "default": "./dist/prosekit-preact-tooltip.js"
+        "types": "./dist/tooltip.d.ts",
+        "default": "./dist/tooltip.js"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-preact.js",
-    "module": "./dist/prosekit-preact.js",
-    "types": "./dist/prosekit-preact.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/prosekit-preact.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/prosekit-preact-autocomplete.d.ts"
-        ],
-        "block-handle": [
-          "./dist/prosekit-preact-block-handle.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/prosekit-preact-drop-indicator.d.ts"
-        ],
-        "inline-popover": [
-          "./dist/prosekit-preact-inline-popover.d.ts"
-        ],
-        "menu": [
-          "./dist/prosekit-preact-menu.d.ts"
-        ],
-        "popover": [
-          "./dist/prosekit-preact-popover.d.ts"
-        ],
-        "resizable": [
-          "./dist/prosekit-preact-resizable.d.ts"
-        ],
-        "table-handle": [
-          "./dist/prosekit-preact-table-handle.d.ts"
-        ],
-        "tooltip": [
-          "./dist/prosekit-preact-tooltip.d.ts"
-        ]
-      }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-preact": "./src/index.ts",
-      "prosekit-preact-autocomplete": "./src/components/autocomplete/index.ts",
-      "prosekit-preact-block-handle": "./src/components/block-handle/index.ts",
-      "prosekit-preact-drop-indicator": "./src/components/drop-indicator/index.ts",
-      "prosekit-preact-inline-popover": "./src/components/inline-popover/index.ts",
-      "prosekit-preact-menu": "./src/components/menu/index.ts",
-      "prosekit-preact-popover": "./src/components/popover/index.ts",
-      "prosekit-preact-resizable": "./src/components/resizable/index.ts",
-      "prosekit-preact-table-handle": "./src/components/table-handle/index.ts",
-      "prosekit-preact-tooltip": "./src/components/tooltip/index.ts"
-    }
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   }
 }

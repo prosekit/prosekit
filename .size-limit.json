@@ -1,7 +1,7 @@
 [
   {
     "name": "prosekit/basic",
-    "path": "packages/prosekit/dist/prosekit-basic.js"
+    "path": "packages/prosekit/dist/basic.js"
   },
   {
     "name": "prosekit/basic/style.css",
@@ -13,15 +13,15 @@
   },
   {
     "name": "prosekit/core",
-    "path": "packages/prosekit/dist/prosekit-core.js"
+    "path": "packages/prosekit/dist/core.js"
   },
   {
     "name": "prosekit/core/test",
-    "path": "packages/prosekit/dist/prosekit-core-test.js"
+    "path": "packages/prosekit/dist/core/test.js"
   },
   {
     "name": "prosekit/extensions",
-    "path": "packages/prosekit/dist/prosekit-extensions.js",
+    "path": "packages/prosekit/dist/extensions.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -31,7 +31,7 @@
   },
   {
     "name": "prosekit/extensions/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js",
+    "path": "packages/prosekit/dist/extensions/autocomplete.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -41,7 +41,7 @@
   },
   {
     "name": "prosekit/extensions/background-color",
-    "path": "packages/prosekit/dist/prosekit-extensions-background-color.js",
+    "path": "packages/prosekit/dist/extensions/background-color.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -51,7 +51,7 @@
   },
   {
     "name": "prosekit/extensions/blockquote",
-    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
+    "path": "packages/prosekit/dist/extensions/blockquote.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -61,7 +61,7 @@
   },
   {
     "name": "prosekit/extensions/bold",
-    "path": "packages/prosekit/dist/prosekit-extensions-bold.js",
+    "path": "packages/prosekit/dist/extensions/bold.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -71,7 +71,7 @@
   },
   {
     "name": "prosekit/extensions/code",
-    "path": "packages/prosekit/dist/prosekit-extensions-code.js",
+    "path": "packages/prosekit/dist/extensions/code.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -81,7 +81,7 @@
   },
   {
     "name": "prosekit/extensions/code-block",
-    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js",
+    "path": "packages/prosekit/dist/extensions/code-block.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -91,7 +91,7 @@
   },
   {
     "name": "prosekit/extensions/commit",
-    "path": "packages/prosekit/dist/prosekit-extensions-commit.js",
+    "path": "packages/prosekit/dist/extensions/commit.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -111,7 +111,7 @@
   },
   {
     "name": "prosekit/extensions/doc",
-    "path": "packages/prosekit/dist/prosekit-extensions-doc.js",
+    "path": "packages/prosekit/dist/extensions/doc.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -121,7 +121,7 @@
   },
   {
     "name": "prosekit/extensions/drop-cursor",
-    "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js",
+    "path": "packages/prosekit/dist/extensions/drop-cursor.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -131,7 +131,7 @@
   },
   {
     "name": "prosekit/extensions/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-extensions-drop-indicator.js",
+    "path": "packages/prosekit/dist/extensions/drop-indicator.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -141,7 +141,7 @@
   },
   {
     "name": "prosekit/extensions/enter-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js",
+    "path": "packages/prosekit/dist/extensions/enter-rule.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -151,7 +151,7 @@
   },
   {
     "name": "prosekit/extensions/file",
-    "path": "packages/prosekit/dist/prosekit-extensions-file.js",
+    "path": "packages/prosekit/dist/extensions/file.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -161,7 +161,7 @@
   },
   {
     "name": "prosekit/extensions/gap-cursor",
-    "path": "packages/prosekit/dist/prosekit-extensions-gap-cursor.js",
+    "path": "packages/prosekit/dist/extensions/gap-cursor.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -181,7 +181,7 @@
   },
   {
     "name": "prosekit/extensions/hard-break",
-    "path": "packages/prosekit/dist/prosekit-extensions-hard-break.js",
+    "path": "packages/prosekit/dist/extensions/hard-break.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -191,7 +191,7 @@
   },
   {
     "name": "prosekit/extensions/heading",
-    "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
+    "path": "packages/prosekit/dist/extensions/heading.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -201,7 +201,7 @@
   },
   {
     "name": "prosekit/extensions/horizontal-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-horizontal-rule.js",
+    "path": "packages/prosekit/dist/extensions/horizontal-rule.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -211,7 +211,7 @@
   },
   {
     "name": "prosekit/extensions/image",
-    "path": "packages/prosekit/dist/prosekit-extensions-image.js",
+    "path": "packages/prosekit/dist/extensions/image.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -221,7 +221,7 @@
   },
   {
     "name": "prosekit/extensions/input-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js",
+    "path": "packages/prosekit/dist/extensions/input-rule.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -231,7 +231,7 @@
   },
   {
     "name": "prosekit/extensions/italic",
-    "path": "packages/prosekit/dist/prosekit-extensions-italic.js",
+    "path": "packages/prosekit/dist/extensions/italic.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -241,7 +241,7 @@
   },
   {
     "name": "prosekit/extensions/link",
-    "path": "packages/prosekit/dist/prosekit-extensions-link.js",
+    "path": "packages/prosekit/dist/extensions/link.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -251,7 +251,7 @@
   },
   {
     "name": "prosekit/extensions/list",
-    "path": "packages/prosekit/dist/prosekit-extensions-list.js",
+    "path": "packages/prosekit/dist/extensions/list.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -271,7 +271,7 @@
   },
   {
     "name": "prosekit/extensions/loro",
-    "path": "packages/prosekit/dist/prosekit-extensions-loro.js",
+    "path": "packages/prosekit/dist/extensions/loro.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -291,7 +291,7 @@
   },
   {
     "name": "prosekit/extensions/mark-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-mark-rule.js",
+    "path": "packages/prosekit/dist/extensions/mark-rule.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -301,7 +301,7 @@
   },
   {
     "name": "prosekit/extensions/math",
-    "path": "packages/prosekit/dist/prosekit-extensions-math.js",
+    "path": "packages/prosekit/dist/extensions/math.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -311,7 +311,7 @@
   },
   {
     "name": "prosekit/extensions/mention",
-    "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
+    "path": "packages/prosekit/dist/extensions/mention.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -321,7 +321,7 @@
   },
   {
     "name": "prosekit/extensions/mod-click-prevention",
-    "path": "packages/prosekit/dist/prosekit-extensions-mod-click-prevention.js",
+    "path": "packages/prosekit/dist/extensions/mod-click-prevention.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -331,7 +331,7 @@
   },
   {
     "name": "prosekit/extensions/page",
-    "path": "packages/prosekit/dist/prosekit-extensions-page.js",
+    "path": "packages/prosekit/dist/extensions/page.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -351,7 +351,7 @@
   },
   {
     "name": "prosekit/extensions/paragraph",
-    "path": "packages/prosekit/dist/prosekit-extensions-paragraph.js",
+    "path": "packages/prosekit/dist/extensions/paragraph.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -361,7 +361,7 @@
   },
   {
     "name": "prosekit/extensions/paste-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-paste-rule.js",
+    "path": "packages/prosekit/dist/extensions/paste-rule.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -371,7 +371,7 @@
   },
   {
     "name": "prosekit/extensions/placeholder",
-    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
+    "path": "packages/prosekit/dist/extensions/placeholder.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -391,7 +391,7 @@
   },
   {
     "name": "prosekit/extensions/readonly",
-    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js",
+    "path": "packages/prosekit/dist/extensions/readonly.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -401,7 +401,7 @@
   },
   {
     "name": "prosekit/extensions/search",
-    "path": "packages/prosekit/dist/prosekit-extensions-search.js",
+    "path": "packages/prosekit/dist/extensions/search.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -421,7 +421,7 @@
   },
   {
     "name": "prosekit/extensions/strike",
-    "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
+    "path": "packages/prosekit/dist/extensions/strike.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -431,7 +431,7 @@
   },
   {
     "name": "prosekit/extensions/table",
-    "path": "packages/prosekit/dist/prosekit-extensions-table.js",
+    "path": "packages/prosekit/dist/extensions/table.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -451,7 +451,7 @@
   },
   {
     "name": "prosekit/extensions/text",
-    "path": "packages/prosekit/dist/prosekit-extensions-text.js",
+    "path": "packages/prosekit/dist/extensions/text.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -461,7 +461,7 @@
   },
   {
     "name": "prosekit/extensions/text-align",
-    "path": "packages/prosekit/dist/prosekit-extensions-text-align.js",
+    "path": "packages/prosekit/dist/extensions/text-align.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -471,7 +471,7 @@
   },
   {
     "name": "prosekit/extensions/text-color",
-    "path": "packages/prosekit/dist/prosekit-extensions-text-color.js",
+    "path": "packages/prosekit/dist/extensions/text-color.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -481,7 +481,7 @@
   },
   {
     "name": "prosekit/extensions/underline",
-    "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
+    "path": "packages/prosekit/dist/extensions/underline.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -491,7 +491,7 @@
   },
   {
     "name": "prosekit/extensions/virtual-selection",
-    "path": "packages/prosekit/dist/prosekit-extensions-virtual-selection.js",
+    "path": "packages/prosekit/dist/extensions/virtual-selection.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -511,7 +511,7 @@
   },
   {
     "name": "prosekit/extensions/yjs",
-    "path": "packages/prosekit/dist/prosekit-extensions-yjs.js",
+    "path": "packages/prosekit/dist/extensions/yjs.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",
@@ -531,79 +531,79 @@
   },
   {
     "name": "prosekit/lit",
-    "path": "packages/prosekit/dist/prosekit-lit.js"
+    "path": "packages/prosekit/dist/lit.js"
   },
   {
     "name": "prosekit/lit/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-lit-autocomplete.js"
+    "path": "packages/prosekit/dist/lit/autocomplete.js"
   },
   {
     "name": "prosekit/lit/block-handle",
-    "path": "packages/prosekit/dist/prosekit-lit-block-handle.js"
+    "path": "packages/prosekit/dist/lit/block-handle.js"
   },
   {
     "name": "prosekit/lit/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-lit-drop-indicator.js"
+    "path": "packages/prosekit/dist/lit/drop-indicator.js"
   },
   {
     "name": "prosekit/lit/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
+    "path": "packages/prosekit/dist/lit/inline-popover.js"
   },
   {
     "name": "prosekit/lit/menu",
-    "path": "packages/prosekit/dist/prosekit-lit-menu.js"
+    "path": "packages/prosekit/dist/lit/menu.js"
   },
   {
     "name": "prosekit/lit/popover",
-    "path": "packages/prosekit/dist/prosekit-lit-popover.js"
+    "path": "packages/prosekit/dist/lit/popover.js"
   },
   {
     "name": "prosekit/lit/resizable",
-    "path": "packages/prosekit/dist/prosekit-lit-resizable.js"
+    "path": "packages/prosekit/dist/lit/resizable.js"
   },
   {
     "name": "prosekit/lit/table-handle",
-    "path": "packages/prosekit/dist/prosekit-lit-table-handle.js"
+    "path": "packages/prosekit/dist/lit/table-handle.js"
   },
   {
     "name": "prosekit/lit/tooltip",
-    "path": "packages/prosekit/dist/prosekit-lit-tooltip.js"
+    "path": "packages/prosekit/dist/lit/tooltip.js"
   },
   {
     "name": "prosekit/pm",
-    "path": "packages/prosekit/dist/prosekit-pm.js"
+    "path": "packages/prosekit/dist/pm.js"
   },
   {
     "name": "prosekit/pm/commands",
-    "path": "packages/prosekit/dist/prosekit-pm-commands.js"
+    "path": "packages/prosekit/dist/pm/commands.js"
   },
   {
     "name": "prosekit/pm/history",
-    "path": "packages/prosekit/dist/prosekit-pm-history.js"
+    "path": "packages/prosekit/dist/pm/history.js"
   },
   {
     "name": "prosekit/pm/inputrules",
-    "path": "packages/prosekit/dist/prosekit-pm-inputrules.js"
+    "path": "packages/prosekit/dist/pm/inputrules.js"
   },
   {
     "name": "prosekit/pm/keymap",
-    "path": "packages/prosekit/dist/prosekit-pm-keymap.js"
+    "path": "packages/prosekit/dist/pm/keymap.js"
   },
   {
     "name": "prosekit/pm/model",
-    "path": "packages/prosekit/dist/prosekit-pm-model.js"
+    "path": "packages/prosekit/dist/pm/model.js"
   },
   {
     "name": "prosekit/pm/state",
-    "path": "packages/prosekit/dist/prosekit-pm-state.js"
+    "path": "packages/prosekit/dist/pm/state.js"
   },
   {
     "name": "prosekit/pm/transform",
-    "path": "packages/prosekit/dist/prosekit-pm-transform.js"
+    "path": "packages/prosekit/dist/pm/transform.js"
   },
   {
     "name": "prosekit/pm/view",
-    "path": "packages/prosekit/dist/prosekit-pm-view.js"
+    "path": "packages/prosekit/dist/pm/view.js"
   },
   {
     "name": "prosekit/pm/view/style/prosemirror.css",
@@ -611,77 +611,77 @@
   },
   {
     "name": "prosekit/preact",
-    "path": "packages/prosekit/dist/prosekit-preact.js",
+    "path": "packages/prosekit/dist/preact.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-preact-autocomplete.js",
+    "path": "packages/prosekit/dist/preact/autocomplete.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/block-handle",
-    "path": "packages/prosekit/dist/prosekit-preact-block-handle.js",
+    "path": "packages/prosekit/dist/preact/block-handle.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-preact-drop-indicator.js",
+    "path": "packages/prosekit/dist/preact/drop-indicator.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js",
+    "path": "packages/prosekit/dist/preact/inline-popover.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/menu",
-    "path": "packages/prosekit/dist/prosekit-preact-menu.js",
+    "path": "packages/prosekit/dist/preact/menu.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/popover",
-    "path": "packages/prosekit/dist/prosekit-preact-popover.js",
+    "path": "packages/prosekit/dist/preact/popover.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/resizable",
-    "path": "packages/prosekit/dist/prosekit-preact-resizable.js",
+    "path": "packages/prosekit/dist/preact/resizable.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/table-handle",
-    "path": "packages/prosekit/dist/prosekit-preact-table-handle.js",
+    "path": "packages/prosekit/dist/preact/table-handle.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/preact/tooltip",
-    "path": "packages/prosekit/dist/prosekit-preact-tooltip.js",
+    "path": "packages/prosekit/dist/preact/tooltip.js",
     "ignore": [
       "preact"
     ]
   },
   {
     "name": "prosekit/react",
-    "path": "packages/prosekit/dist/prosekit-react.js",
+    "path": "packages/prosekit/dist/react.js",
     "ignore": [
       "react",
       "react-dom"
@@ -689,7 +689,7 @@
   },
   {
     "name": "prosekit/react/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-react-autocomplete.js",
+    "path": "packages/prosekit/dist/react/autocomplete.js",
     "ignore": [
       "react",
       "react-dom"
@@ -697,7 +697,7 @@
   },
   {
     "name": "prosekit/react/block-handle",
-    "path": "packages/prosekit/dist/prosekit-react-block-handle.js",
+    "path": "packages/prosekit/dist/react/block-handle.js",
     "ignore": [
       "react",
       "react-dom"
@@ -705,7 +705,7 @@
   },
   {
     "name": "prosekit/react/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-react-drop-indicator.js",
+    "path": "packages/prosekit/dist/react/drop-indicator.js",
     "ignore": [
       "react",
       "react-dom"
@@ -713,7 +713,7 @@
   },
   {
     "name": "prosekit/react/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-react-inline-popover.js",
+    "path": "packages/prosekit/dist/react/inline-popover.js",
     "ignore": [
       "react",
       "react-dom"
@@ -721,7 +721,7 @@
   },
   {
     "name": "prosekit/react/menu",
-    "path": "packages/prosekit/dist/prosekit-react-menu.js",
+    "path": "packages/prosekit/dist/react/menu.js",
     "ignore": [
       "react",
       "react-dom"
@@ -729,7 +729,7 @@
   },
   {
     "name": "prosekit/react/popover",
-    "path": "packages/prosekit/dist/prosekit-react-popover.js",
+    "path": "packages/prosekit/dist/react/popover.js",
     "ignore": [
       "react",
       "react-dom"
@@ -737,7 +737,7 @@
   },
   {
     "name": "prosekit/react/resizable",
-    "path": "packages/prosekit/dist/prosekit-react-resizable.js",
+    "path": "packages/prosekit/dist/react/resizable.js",
     "ignore": [
       "react",
       "react-dom"
@@ -745,7 +745,7 @@
   },
   {
     "name": "prosekit/react/table-handle",
-    "path": "packages/prosekit/dist/prosekit-react-table-handle.js",
+    "path": "packages/prosekit/dist/react/table-handle.js",
     "ignore": [
       "react",
       "react-dom"
@@ -753,7 +753,7 @@
   },
   {
     "name": "prosekit/react/tooltip",
-    "path": "packages/prosekit/dist/prosekit-react-tooltip.js",
+    "path": "packages/prosekit/dist/react/tooltip.js",
     "ignore": [
       "react",
       "react-dom"
@@ -761,182 +761,182 @@
   },
   {
     "name": "prosekit/solid",
-    "path": "packages/prosekit/dist/prosekit-solid.js",
+    "path": "packages/prosekit/dist/solid.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-solid-autocomplete.js",
+    "path": "packages/prosekit/dist/solid/autocomplete.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/block-handle",
-    "path": "packages/prosekit/dist/prosekit-solid-block-handle.js",
+    "path": "packages/prosekit/dist/solid/block-handle.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-solid-drop-indicator.js",
+    "path": "packages/prosekit/dist/solid/drop-indicator.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js",
+    "path": "packages/prosekit/dist/solid/inline-popover.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/menu",
-    "path": "packages/prosekit/dist/prosekit-solid-menu.js",
+    "path": "packages/prosekit/dist/solid/menu.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/popover",
-    "path": "packages/prosekit/dist/prosekit-solid-popover.js",
+    "path": "packages/prosekit/dist/solid/popover.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/resizable",
-    "path": "packages/prosekit/dist/prosekit-solid-resizable.js",
+    "path": "packages/prosekit/dist/solid/resizable.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/table-handle",
-    "path": "packages/prosekit/dist/prosekit-solid-table-handle.js",
+    "path": "packages/prosekit/dist/solid/table-handle.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/solid/tooltip",
-    "path": "packages/prosekit/dist/prosekit-solid-tooltip.js",
+    "path": "packages/prosekit/dist/solid/tooltip.js",
     "ignore": [
       "solid-js"
     ]
   },
   {
     "name": "prosekit/vue",
-    "path": "packages/prosekit/dist/prosekit-vue.js",
+    "path": "packages/prosekit/dist/vue.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-vue-autocomplete.js",
+    "path": "packages/prosekit/dist/vue/autocomplete.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/block-handle",
-    "path": "packages/prosekit/dist/prosekit-vue-block-handle.js",
+    "path": "packages/prosekit/dist/vue/block-handle.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-vue-drop-indicator.js",
+    "path": "packages/prosekit/dist/vue/drop-indicator.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-vue-inline-popover.js",
+    "path": "packages/prosekit/dist/vue/inline-popover.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/menu",
-    "path": "packages/prosekit/dist/prosekit-vue-menu.js",
+    "path": "packages/prosekit/dist/vue/menu.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/popover",
-    "path": "packages/prosekit/dist/prosekit-vue-popover.js",
+    "path": "packages/prosekit/dist/vue/popover.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/resizable",
-    "path": "packages/prosekit/dist/prosekit-vue-resizable.js",
+    "path": "packages/prosekit/dist/vue/resizable.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/table-handle",
-    "path": "packages/prosekit/dist/prosekit-vue-table-handle.js",
+    "path": "packages/prosekit/dist/vue/table-handle.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/vue/tooltip",
-    "path": "packages/prosekit/dist/prosekit-vue-tooltip.js",
+    "path": "packages/prosekit/dist/vue/tooltip.js",
     "ignore": [
       "vue"
     ]
   },
   {
     "name": "prosekit/web",
-    "path": "packages/prosekit/dist/prosekit-web.js"
+    "path": "packages/prosekit/dist/web.js"
   },
   {
     "name": "prosekit/web/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-web-autocomplete.js"
+    "path": "packages/prosekit/dist/web/autocomplete.js"
   },
   {
     "name": "prosekit/web/block-handle",
-    "path": "packages/prosekit/dist/prosekit-web-block-handle.js"
+    "path": "packages/prosekit/dist/web/block-handle.js"
   },
   {
     "name": "prosekit/web/drop-indicator",
-    "path": "packages/prosekit/dist/prosekit-web-drop-indicator.js"
+    "path": "packages/prosekit/dist/web/drop-indicator.js"
   },
   {
     "name": "prosekit/web/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-web-inline-popover.js"
+    "path": "packages/prosekit/dist/web/inline-popover.js"
   },
   {
     "name": "prosekit/web/menu",
-    "path": "packages/prosekit/dist/prosekit-web-menu.js"
+    "path": "packages/prosekit/dist/web/menu.js"
   },
   {
     "name": "prosekit/web/popover",
-    "path": "packages/prosekit/dist/prosekit-web-popover.js"
+    "path": "packages/prosekit/dist/web/popover.js"
   },
   {
     "name": "prosekit/web/resizable",
-    "path": "packages/prosekit/dist/prosekit-web-resizable.js"
+    "path": "packages/prosekit/dist/web/resizable.js"
   },
   {
     "name": "prosekit/web/table-handle",
-    "path": "packages/prosekit/dist/prosekit-web-table-handle.js"
+    "path": "packages/prosekit/dist/web/table-handle.js"
   },
   {
     "name": "prosekit/web/tooltip",
-    "path": "packages/prosekit/dist/prosekit-web-tooltip.js"
+    "path": "packages/prosekit/dist/web/tooltip.js"
   }
 ]

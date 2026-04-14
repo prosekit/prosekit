@@ -9,19 +9,39 @@ export function config(userConfig?: UserConfig): UserConfig {
   }
 
   const packageJson = pkg.packageJson as {
-    dev?: {
-      entry: Record<string, string>
-    }
+    exports?: Record<string, string | Record<string, string>>
   }
 
-  const entry = packageJson.dev?.entry
+  const tsdownEntry: Record<string, string> = {}
+  for (const [exportName, exportValue] of Object.entries(packageJson.exports ?? {})) {
+    let entryName: string = exportName
+    let entryValue: string | undefined = undefined
 
-  if (!entry) {
-    throw new Error(`Unable to find the field "dev.entry" in ${pkg.path}`)
+    if (entryName === '.') {
+      entryName = 'index'
+    }
+    if (entryName.startsWith('./')) {
+      entryName = entryName.slice(2)
+    }
+    if (entryName.endsWith('.css')) {
+      entryName = entryName.slice(0, -4)
+    }
+
+    if (typeof exportValue === 'string') {
+      entryValue = exportValue
+    } else if (exportValue && typeof exportValue === 'object') {
+      entryValue = exportValue['import'] || exportValue['default']
+    }
+
+    if (!entryValue) {
+      throw new Error(`Invalid export value for ${exportName}: ${JSON.stringify(exportValue)}`)
+    }
+
+    tsdownEntry[entryName] = entryValue
   }
 
   const defaultConfig: UserConfig = {
-    entry,
+    entry: userConfig?.entry || tsdownEntry,
     sourcemap: true,
     clean: false,
     failOnWarn: true,

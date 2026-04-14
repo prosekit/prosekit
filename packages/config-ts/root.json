@@ -3,7 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "types": ["node"],
-    "customConditions": ["prosekit-source", "import", "browser", "svelte"]
+    "customConditions": ["prosekit-source", "import", "browser", "svelte", "default"]
   },
   "include": [
     "${configDir}/*",

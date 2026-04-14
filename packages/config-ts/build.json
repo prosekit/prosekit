@@ -2,6 +2,7 @@
   "extends": "@ocavue/tsconfig/dom/build-bundler.json",
   "compilerOptions": {
     "composite": true,
+    "customConditions": ["prosekit-source", "import", "browser", "svelte", "default"],
     "outDir": "${configDir}/node_modules/.cache/prosekit-ts-out/",
     "tsBuildInfoFile": "${configDir}/node_modules/.cache/prosekit-ts-info/tsbuildinfo.json",
     "allowJs": false,

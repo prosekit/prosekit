@@ -13,7 +13,7 @@ const debug = !!process.env.debug && !process.env.CI
 function getDefaultConfig() {
   return {
     resolve: {
-      conditions: ['prosekit-source', 'import', 'browser', 'svelte'],
+      conditions: ['prosekit-source', 'import', 'browser', 'svelte', 'default'],
     },
     test: {
       maxWorkers: process.env.CI ? 1 : 2,

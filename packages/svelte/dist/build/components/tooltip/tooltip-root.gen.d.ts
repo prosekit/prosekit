@@ -1,0 +1,27 @@
+import type { TooltipRootElement, TooltipRootEvents, TooltipRootProps as TooltipRootElementProps } from '@prosekit/web/tooltip';
+import type { Component, Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+/** Props for the {@link TooltipRoot} Svelte component. */
+export interface TooltipRootProps {
+    /**
+     * Whether the overlay is initially open.
+     * @default false
+     */
+    defaultOpen?: TooltipRootElementProps['defaultOpen'];
+    /**
+     * Whether the overlay is currently open.
+     * @default null
+     */
+    open?: TooltipRootElementProps['open'];
+    /**
+     * Whether the component should ignore user interaction.
+     * @default false
+     */
+    disabled?: TooltipRootElementProps['disabled'];
+    /** Emitted when the tooltip is opened or closed. */
+    onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
+    children?: Snippet;
+}
+/** A Svelte component that renders an `prosekit-tooltip-root` custom element. */
+export declare const TooltipRoot: Component<TooltipRootProps & HTMLAttributes<TooltipRootElement>>;
+//# sourceMappingURL=tooltip-root.gen.d.ts.map

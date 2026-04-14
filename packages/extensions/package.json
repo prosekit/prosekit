@@ -27,7 +27,7 @@
   "module": "./src/index.ts",
   "exports": {
     ".": { "prosekit-source": "./src/index.ts", "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-    "./autocomplete": { "prosekit-source": "./src/autocomplete/index.ts", "types": "./dist/autocomplete/index.d.ts", "default": "./dist/autocomplete/index.js" },
+    "./autocomplete": { "prosekit-source": "./src/autocomplete/index.ts", "types": "./dist/autocomplete.d.ts", "default": "./dist/autocomplete.js" },
     "./background-color": "./src/background-color/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",

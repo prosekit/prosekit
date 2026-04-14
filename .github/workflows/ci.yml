@@ -63,6 +63,9 @@ jobs:
 
       - uses: ./.github/actions/cache
 
+      - name: Build types
+        run: pnpm run typecheck
+
       - name: Build packages
         run: pnpm run build:package
 

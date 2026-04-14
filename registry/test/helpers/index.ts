@@ -1,7 +1,7 @@
 import './locator'
 
 export { waitForAnimationEnd } from './animation'
-export { emptyEditor, expectEditorToBeFocused, focusEditor, getEditorHTML, locateEditor, pasteHtmlToEditor, waitForEditor } from './editor'
+export { emptyEditor, expectEditorToBeFocused, focusEditor, getEditorHTML, locateEditor, waitForEditor } from './editor'
 export { expectLocatorToBeHidden, expectLocatorToHaveCount, expectLocatorToNotExist } from './expect'
 export { inputText } from './keyboard'
 export { dragAndDrop, hover, unhover } from './mouse'

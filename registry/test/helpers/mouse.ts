@@ -62,4 +62,3 @@ export async function dragAndDrop(
   await hover(endLocator, { position: options?.endPosition })
   await mouse.up()
 }
-

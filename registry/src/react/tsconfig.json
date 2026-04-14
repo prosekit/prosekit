@@ -1,5 +1,5 @@
 {
-  "extends": "@prosekit/config-ts/root.json",
+  "extends": "@prosekit/config-ts/app.json",
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "react",

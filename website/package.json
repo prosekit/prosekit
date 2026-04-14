@@ -36,7 +36,7 @@
     "@types/node": "catalog:",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.5",
+    "astro": "^6.1.6",
     "astro-minify-html-swc": "^0.1.11",
     "astrobook": "^0.13.0",
     "babel-plugin-react-compiler": "^1.0.0",

@@ -2829,9 +2829,6 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  '@pagefind/default-ui@1.4.0':
-    resolution: {integrity: sha512-wie82VWn3cnGEdIjh4YwNESyS1G6vRHwL6cNjy9CFgNnWW/PGRjsLq300xjVH5sfPFK3iK36UxvIBymtQIEiSQ==}
-
   '@pagefind/default-ui@1.5.2':
     resolution: {integrity: sha512-pm1LMnQg8N2B3n2TnjKlhaFihpz6zTiA4HiGQ6/slKO/+8K9CAU5kcjdSSPgpuk1PMuuN4hxLipUIifnrkl3Sg==}
 
@@ -8186,7 +8183,7 @@ snapshots:
       '@astrojs/markdown-remark': 7.1.0
       '@astrojs/mdx': 5.0.2(astro@6.1.5(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/sitemap': 3.7.1
-      '@pagefind/default-ui': 1.4.0
+      '@pagefind/default-ui': 1.5.2
       '@types/hast': 3.0.4
       '@types/js-yaml': 4.0.9
       '@types/mdast': 4.0.4
@@ -9623,8 +9620,6 @@ snapshots:
 
   '@pagefind/darwin-x64@1.4.0':
     optional: true
-
-  '@pagefind/default-ui@1.4.0': {}
 
   '@pagefind/default-ui@1.5.2': {}
 

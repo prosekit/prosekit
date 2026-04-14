@@ -1,7 +1,6 @@
 {
-  "extends": "@ocavue/tsconfig/es/app.json",
+  "extends": "@prosekit/config-ts/root.json",
   "compilerOptions": {
-    "types": ["node"],
   },
   "references": [
     {

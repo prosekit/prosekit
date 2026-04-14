@@ -523,6 +523,9 @@ importers:
         specifier: workspace:*
         version: link:../web
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown

@@ -231,6 +231,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/typedoc-plugin": "workspace:*",
     "@types/react": "^19.2.14",

@@ -13,7 +13,7 @@ export function config(userConfig?: UserConfig): UserConfig {
   const packageJson = pkg.packageJson as {
     dev?: {
       entry: Record<string, string>
-    },
+    }
     exports?: Record<string, Record<string, string> | string>
   }
 
@@ -24,7 +24,7 @@ export function config(userConfig?: UserConfig): UserConfig {
   if (!entry && packageJson.exports) {
     entry = {}
     for (const [key, value] of Object.entries(packageJson.exports)) {
-      let normalizedKey = key 
+      let normalizedKey = key
       if (normalizedKey.startsWith('./')) {
         normalizedKey = normalizedKey.slice(2)
       }
@@ -32,10 +32,10 @@ export function config(userConfig?: UserConfig): UserConfig {
         normalizedKey = 'index'
       }
 
-      let normalizedValue : string | undefined
+      let normalizedValue: string | undefined
       if (typeof value === 'string') {
         normalizedValue = value
-      } else if (value && typeof value === 'object' ) {
+      } else if (value && typeof value === 'object') {
         normalizedValue = value['prosekit-source']
       }
       if (!normalizedValue) {

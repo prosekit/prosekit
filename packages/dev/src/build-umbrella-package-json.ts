@@ -41,7 +41,7 @@ export async function buildUmbrellaPackageJson(): Promise<void> {
       if (typeof exportValue === 'string') {
         sourceRelativePath = exportValue
       } else if (typeof exportValue === 'object' && exportValue !== null) {
-        sourceRelativePath =exportValue['prosekit-source']  ??  exportValue.import ?? exportValue.default 
+        sourceRelativePath = exportValue['prosekit-source'] ?? exportValue.import ?? exportValue.default
       } else {
         throw new TypeError(
           `Unexpected export value for entry "${entry}" in package "${packageName}": ${exportValue}`,

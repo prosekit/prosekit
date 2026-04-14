@@ -1,3 +1,0 @@
-import { MenuItemElement as MenuItem, MenuPopupElement as MenuPopup, MenuPositionerElement as MenuPositioner, MenuRootElement as MenuRoot, MenuSubmenuRootElement as MenuSubmenuRoot, MenuSubmenuTriggerElement as MenuSubmenuTrigger, MenuTriggerElement as MenuTrigger } from "@prosekit/web/menu";
-export * from "@prosekit/web/menu";
-export { MenuItem, MenuPopup, MenuPositioner, MenuRoot, MenuSubmenuRoot, MenuSubmenuTrigger, MenuTrigger };

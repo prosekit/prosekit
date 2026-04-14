@@ -55,10 +55,10 @@ export async function dragAndDrop(
     endPosition?: { x: number; y: number }
   },
 ) {
-  const startPosition = await hover(startLocator, { position: options?.startPosition })
+  const { x: startX, y: startY } = await hover(startLocator, { position: options?.startPosition })
   await mouse.down()
   // Move a bit to trigger the dragstart event.
-  await mouse.move(startPosition.x + 5, startPosition.y + 5)
+  await mouse.move(startX > 10 ? startX - 5 : startX + 5, startY > 10 ? startY - 5 : startY + 5)
   await hover(endLocator, { position: options?.endPosition })
   await mouse.up()
 }

@@ -6,6 +6,7 @@
   "description": "Internal package for ProseKit",
   "sideEffects": false,
   "exports": {
+    "./app.json": "./app.json",
     "./build.json": "./build.json",
     "./root.json": "./root.json"
   },

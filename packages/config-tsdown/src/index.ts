@@ -1,6 +1,6 @@
 import { defu } from 'defu'
 import { readPackageUpSync } from 'read-package-up'
-import type { UserConfig } from 'tsdown'
+import type { TsdownInputOption, UserConfig } from 'tsdown'
 
 export function config(userConfig?: UserConfig): UserConfig {
   const pkg = readPackageUpSync({ cwd: userConfig?.cwd })
@@ -8,13 +8,42 @@ export function config(userConfig?: UserConfig): UserConfig {
     throw new Error('No package.json found')
   }
 
+  let entry: TsdownInputOption | undefined = userConfig?.entry
+
   const packageJson = pkg.packageJson as {
     dev?: {
       entry: Record<string, string>
-    }
+    },
+    exports?: Record<string, Record<string, string> | string>
   }
 
-  const entry = packageJson.dev?.entry
+  // TODO: remove "packageJson.dev?.entry"
+  if (!entry) {
+    entry = packageJson.dev?.entry
+  }
+  if (!entry && packageJson.exports) {
+    entry = {}
+    for (const [key, value] of Object.entries(packageJson.exports)) {
+      let normalizedKey = key 
+      if (normalizedKey.startsWith('./')) {
+        normalizedKey = normalizedKey.slice(2)
+      }
+      if (normalizedKey === '.') {
+        normalizedKey = 'index'
+      }
+
+      let normalizedValue : string | undefined
+      if (typeof value === 'string') {
+        normalizedValue = value
+      } else if (value && typeof value === 'object' ) {
+        normalizedValue = value['prosekit-source']
+      }
+      if (!normalizedValue) {
+        throw new Error(`Unable to find the field "prosekit-source" in the export "${key}" of ${pkg.path}`)
+      }
+      entry[normalizedKey] = normalizedValue
+    }
+  }
 
   if (!entry) {
     throw new Error(`Unable to find the field "dev.entry" in ${pkg.path}`)

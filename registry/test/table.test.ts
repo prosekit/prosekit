@@ -349,7 +349,7 @@ async function setup() {
     const cellLocator = getCell(cell)
 
     // Reset the hover state
-    await hover(editor, { position: { x: 0, y: 0 } })
+    await unhover()
 
     await hover(cellLocator)
     await expectLocatorToHaveCount(rowHandle, 1)

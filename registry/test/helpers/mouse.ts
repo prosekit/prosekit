@@ -27,12 +27,13 @@ export async function hover(locator: Locator, options?: {
   const relativeX = options?.position?.x ?? Math.floor(box.width / 2)
   const relativeY = options?.position?.y ?? Math.floor(box.height / 2)
 
-  const steps = options?.steps ?? 3
+  const steps = options?.steps ?? 2
 
   const targetX = box.x + relativeX
   const targetY = box.y + relativeY
 
   await mouse.move(targetX, targetY, { steps })
+  return { x: targetX, y: targetY }
 }
 
 export async function unhover(): Promise<void> {
@@ -54,8 +55,11 @@ export async function dragAndDrop(
     endPosition?: { x: number; y: number }
   },
 ) {
-  await hover(startLocator, { position: options?.startPosition })
+  const startPosition = await hover(startLocator, { position: options?.startPosition })
   await mouse.down()
-  await hover(endLocator, { position: options?.endPosition, steps: 5 })
+  // Move a bit to trigger the dragstart event.
+  await mouse.move(startPosition.x + 5, startPosition.y + 5)
+  await hover(endLocator, { position: options?.endPosition })
   await mouse.up()
 }
+

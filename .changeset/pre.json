@@ -33,6 +33,7 @@
     "750-react-use-client",
     "800-view-render-solid",
     "810-view-render-vue",
-    "900-update-deps"
+    "900-update-deps",
+    "910-update-deps"
   ]
 }

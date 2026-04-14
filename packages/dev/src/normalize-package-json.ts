@@ -25,79 +25,70 @@ export async function normalizePackageJson(pkg: Package): Promise<void> {
   packageJson.exports = exports
 
   for (const exportName of Object.keys(exports)) {
-    let sourcePath: string
-    let distName: string
-    let isSvelte: boolean = false
-
     if (!isValidEntry(exportName)) {
       throw new Error(`exports["${exportName}"] is not allowed`)
     }
 
     if (exportName === '.') {
-      sourcePath = await getExistingFileInPackage(pkg, [
+      const sourcePath = await getExistingFileInPackage(pkg, [
         `./src/index.ts`,
         `./src/index.tsx`,
         `./src/index.gen.ts`,
         `./src/index.gen.tsx`,
       ])
-      distName = 'index'
 
       packageJson.type = 'module'
+
       packageJson.main = sourcePath
       packageJson.module = sourcePath
       packageJson.types = undefined
 
-      publishConfig.main = `./dist/${distName}.js`
-      publishConfig.module = `./dist/${distName}.js`
-      publishConfig.types = `./dist/${distName}.d.ts`
+      publishConfig.main = `./dist/index.js`
+      publishConfig.module = `./dist/index.js`
+      publishConfig.types = `./dist/index.d.ts`
 
       exports[exportName] = sourcePath
       publishExports[exportName] = {
-        types: `./dist/${distName}.d.ts`,
-        default: `./dist/${distName}.js`,
+        types: `./dist/index.d.ts`,
+        default: `./dist/index.js`,
       }
     } else if (exportName.endsWith('.css')) {
-      distName = exportName.slice(2, -4)
-      sourcePath = './src/' + distName + '.css'
-
-      exports[exportName] = sourcePath
+      const distName = exportName.slice(2, -4)
+      exports[exportName] = `./src/${distName}.css`
       publishExports[exportName] = {
         default: `./dist/${distName}.css`,
       }
     } else {
-      const subPath = exportName.slice(2)
-      const foundFilePath = await findExistingFileInPackage(pkg, [
-        `./src/${subPath}.ts`,
-        `./src/${subPath}.tsx`,
-        `./src/${subPath}.gen.ts`,
-        `./src/${subPath}.gen.tsx`,
-        `./src/${subPath}/index.ts`,
-        `./src/${subPath}/index.tsx`,
-        `./src/${subPath}/index.gen.ts`,
-        `./src/${subPath}/index.gen.tsx`,
-        `./src/components/${subPath}.ts`,
-        `./src/components/${subPath}.tsx`,
-        `./src/components/${subPath}.gen.ts`,
-        `./src/components/${subPath}.gen.tsx`,
-        `./src/components/${subPath}/index.ts`,
-        `./src/components/${subPath}/index.tsx`,
-        `./src/components/${subPath}/index.gen.ts`,
-        `./src/components/${subPath}/index.gen.tsx`,
+      const distName = exportName.slice(2)
+      const sourcePath = await findExistingFileInPackage(pkg, [
+        `./src/${distName}.ts`,
+        `./src/${distName}.tsx`,
+        `./src/${distName}.gen.ts`,
+        `./src/${distName}.gen.tsx`,
+        `./src/${distName}/index.ts`,
+        `./src/${distName}/index.tsx`,
+        `./src/${distName}/index.gen.ts`,
+        `./src/${distName}/index.gen.tsx`,
+        `./src/components/${distName}.ts`,
+        `./src/components/${distName}.tsx`,
+        `./src/components/${distName}.gen.ts`,
+        `./src/components/${distName}.gen.tsx`,
+        `./src/components/${distName}/index.ts`,
+        `./src/components/${distName}/index.tsx`,
+        `./src/components/${distName}/index.gen.ts`,
+        `./src/components/${distName}/index.gen.tsx`,
       ])
 
-      if (!foundFilePath) {
+      if (!sourcePath) {
         delete exports[exportName]
         delete publishExports[exportName]
         continue
       }
 
-      sourcePath = foundFilePath
-      distName = subPath
-
       // Svelte requires the export key "svelte" to be present in the
       // conditional export object.
       // See https://kit.svelte.dev/docs/packaging#anatomy-of-a-package-json-exports
-      isSvelte = pkg.packageJson.name.includes('svelte')
+      const isSvelte = pkg.packageJson.name.includes('svelte')
       exports[exportName] = isSvelte ? { svelte: sourcePath, default: sourcePath } : sourcePath
       publishExports[exportName] = {
         types: `./dist/${distName}.d.ts`,
@@ -140,8 +131,6 @@ function normalizePackageJsonDocumentFields(pkg: Package): void {
   })
 }
 
-
-
 function normalizeTypesVersions(pkg: Package): void {
   const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)
@@ -162,4 +151,3 @@ function normalizeTypesVersions(pkg: Package): void {
     packageJson.publishConfig['typesVersions'] = { '*': typesVersions }
   }
 }
-

@@ -313,7 +313,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "@vitejs/plugin-vue": "^6.0.5",
+    "@vitejs/plugin-vue": "^6.0.6",
     "@vitest/browser-playwright": "catalog:",
     "@vitest/ui": "catalog:",
     "change-case": "^5.4.4",

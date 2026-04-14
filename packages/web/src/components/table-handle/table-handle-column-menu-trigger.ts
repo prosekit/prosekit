@@ -10,9 +10,9 @@ import {
   type State,
 } from '@aria-ui/core'
 import { setupMenuTrigger, type MenuTriggerProps } from '@aria-ui/elements/menu'
+import { useEventListener } from '@aria-ui/utils'
 import type { Editor } from '@prosekit/core'
 import { selectTableColumn, type defineTableCommands } from '@prosekit/extensions/table'
-import { useEventListener } from '@aria-ui/utils'
 
 import { tableHandleStoreContext } from './store.ts'
 import { useEmptyImage } from './use-empty-image.ts'

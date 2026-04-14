@@ -12,9 +12,9 @@ import {
 } from '@aria-ui/core'
 import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@aria-ui/elements/listbox'
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
+import { useEventListener } from '@aria-ui/utils'
 import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
-import { useEventListener } from '@aria-ui/utils'
 
 import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
 import { KeyboardEventTarget } from '../../utils/event.ts'

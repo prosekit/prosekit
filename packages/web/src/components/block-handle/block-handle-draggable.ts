@@ -9,13 +9,13 @@ import {
   type State,
 } from '@aria-ui/core'
 import { useAttribute } from '@aria-ui/utils'
+import { useEventListener } from '@aria-ui/utils'
 import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { ViewDragging } from '@prosekit/extensions/drop-indicator'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-import { useEventListener } from '@aria-ui/utils'
 
 import { DRAGGING_CLASS_NAME } from '../../constants.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'

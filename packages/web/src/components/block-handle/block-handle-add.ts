@@ -8,7 +8,7 @@ import {
   type State,
 } from '@aria-ui/core'
 import { insertDefaultBlock, type Editor } from '@prosekit/core'
-import {useEventListener} from '@aria-ui/utils'
+import { useEventListener } from '@aria-ui/utils'
 
 import { blockHandleStoreContext } from './context.ts'
 

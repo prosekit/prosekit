@@ -3,7 +3,6 @@ import {
   defineProps,
   onMount,
   registerCustomElement,
-
   type HostElement,
   type HostElementConstructor,
   type PropsDeclaration,
@@ -16,7 +15,7 @@ import type { ViewDragging } from '@prosekit/extensions/drop-indicator'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-import {useEventListener} from '@aria-ui/utils'
+import { useEventListener } from '@aria-ui/utils'
 
 import { DRAGGING_CLASS_NAME } from '../../constants.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'

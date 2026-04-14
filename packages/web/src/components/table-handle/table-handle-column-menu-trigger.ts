@@ -4,7 +4,6 @@ import {
   defineProps,
   onMount,
   registerCustomElement,
-
   type HostElement,
   type HostElementConstructor,
   type PropsDeclaration,
@@ -13,7 +12,7 @@ import {
 import { setupMenuTrigger, type MenuTriggerProps } from '@aria-ui/elements/menu'
 import type { Editor } from '@prosekit/core'
 import { selectTableColumn, type defineTableCommands } from '@prosekit/extensions/table'
-import {useEventListener} from '@aria-ui/utils'
+import { useEventListener } from '@aria-ui/utils'
 
 import { tableHandleStoreContext } from './store.ts'
 import { useEmptyImage } from './use-empty-image.ts'

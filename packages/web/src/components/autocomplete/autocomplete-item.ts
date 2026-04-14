@@ -8,7 +8,7 @@ import {
   type State,
 } from '@aria-ui/core'
 import { SelectEvent, setupListboxItem, type ListboxItemEvents, type ListboxItemProps } from '@aria-ui/elements/listbox'
-import {useEventListener} from '@aria-ui/utils'
+import { useEventListener } from '@aria-ui/utils'
 
 import { preventDefault } from '../../utils/prevent-default.ts'
 

@@ -31,6 +31,7 @@
     "@iconify-json/tabler": "^1.2.33",
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^1.6.0",
+    "@prosekit/config-ts": "workspace:*",
     "@tailwindcss/vite": "^4.2.2",
     "@types/jsdom": "^28.0.1",
     "@types/node": "catalog:",

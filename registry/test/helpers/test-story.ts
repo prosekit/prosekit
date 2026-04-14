@@ -212,7 +212,7 @@ async function getStableHTML({
   shouldWaitForImageToLoad: boolean
   setup?: () => Promise<void>
 }): Promise<string> {
-  const screen = await renderExample(framework, story, false)
+  const screen = await renderExample(framework, story)
 
   if (setup) {
     await setup()

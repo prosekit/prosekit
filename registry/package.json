@@ -306,6 +306,7 @@
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^1.6.0",
     "@preact/preset-vite": "^2.10.5",
+    "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",

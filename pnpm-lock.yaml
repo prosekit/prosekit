@@ -975,6 +975,9 @@ importers:
       '@preact/preset-vite':
         specifier: ^2.10.5
         version: 2.10.5(@babel/core@7.29.0)(preact@10.29.1)(rollup@4.57.1)(vite@8.0.8(@types/node@24.10.13)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../packages/config-ts
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../packages/config-vitest

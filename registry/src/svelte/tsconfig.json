@@ -1,5 +1,5 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app.json",
+  "extends": "@prosekit/config-ts/root.json",
   "compilerOptions": {
     "jsx": "preserve",
   },

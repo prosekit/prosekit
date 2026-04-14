@@ -235,9 +235,6 @@ importers:
       '@prosekit/vfs':
         specifier: workspace:*
         version: link:../vfs
-      '@sindresorhus/slugify':
-        specifier: ^3.0.0
-        version: 3.0.0
       obug:
         specifier: ^2.1.1
         version: 2.1.1
@@ -3491,14 +3488,6 @@ packages:
   '@sindresorhus/merge-streams@4.0.0':
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
-
-  '@sindresorhus/slugify@3.0.0':
-    resolution: {integrity: sha512-SCrKh1zS96q+CuH5GumHcyQEVPsM4Ve8oE0E6tw7AAhGq50K8ojbTUOQnX/j9Mhcv/AXiIsbCfquovyGOo5fGw==}
-    engines: {node: '>=20'}
-
-  '@sindresorhus/transliterate@2.3.1':
-    resolution: {integrity: sha512-gVaaGtKYMYAMmI8buULVH3A2TXVJ98QiwGwI7ddrWGuGidGC2uRt4FHs22+8iROJ0QTzju9CuMjlVsrvpqsdhA==}
-    engines: {node: '>=20'}
 
   '@size-limit/esbuild-why@12.0.1':
     resolution: {integrity: sha512-qDl22nt2MSMyqLKpW9/G9/3VegzpdM/l/Bq23gUF/ZxFebxh6SOFap3dbET/hXfuhDAs3ZirR+Y2rzlVtMHkoA==}
@@ -10169,13 +10158,6 @@ snapshots:
   '@sindresorhus/is@7.2.0': {}
 
   '@sindresorhus/merge-streams@4.0.0': {}
-
-  '@sindresorhus/slugify@3.0.0':
-    dependencies:
-      '@sindresorhus/transliterate': 2.3.1
-      escape-string-regexp: 5.0.0
-
-  '@sindresorhus/transliterate@2.3.1': {}
 
   '@size-limit/esbuild-why@12.0.1(size-limit@12.0.1(jiti@2.6.1))':
     dependencies:

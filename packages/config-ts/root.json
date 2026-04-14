@@ -2,7 +2,8 @@
   "extends": "@ocavue/tsconfig/dom/root.json",
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "customConditions": ["prosekit-source", "import","browser", "svelte"]
   },
   "include": [
     "${configDir}/*",

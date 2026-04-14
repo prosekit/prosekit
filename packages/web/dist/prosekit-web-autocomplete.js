@@ -1,7 +1,8 @@
 import { t as useEditorExtension } from "./use-editor-extension.js";
 import { t as getSafeEditorView } from "./get-safe-editor-view.js";
-import { createContext, createSignal, defineCustomElement, defineProps, onMount, registerCustomElement, useEffect, useEventListener } from "@aria-ui/core";
+import { createContext, createSignal, defineCustomElement, defineProps, onMount, registerCustomElement, useEffect } from "@aria-ui/core";
 import { SelectEvent, ValueChangeEvent, ValuesChangeEvent, defaultItemFilter, setupListboxEmpty, setupListboxItem, setupListboxRoot } from "@aria-ui/elements/listbox";
+import { useEventListener } from "@aria-ui/utils";
 import { OpenChangeEvent, OverlayPopupPropsDeclaration, OverlayPositionerPropsDeclaration, createOverlayStore, setupOverlayPopup, setupOverlayPositioner } from "@aria-ui/elements/overlay";
 import { defineDOMEventHandler, defineKeymap, withPriority } from "@prosekit/core";
 import { AutocompleteRule, defineAutocomplete } from "@prosekit/extensions/autocomplete";

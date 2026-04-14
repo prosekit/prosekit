@@ -1,8 +1,8 @@
 import { t as useEditorExtension } from "./use-editor-extension.js";
 import { computed, createContext, defineCustomElement, defineProps, onMount, registerCustomElement } from "@aria-ui/core";
+import { usePresence } from "@aria-ui/utils";
 import { OpenChangeEvent, OverlayPopupPropsDeclaration, OverlayPositionerPropsDeclaration, OverlayRootPropsDeclaration, setupOverlayPopup, setupOverlayPositioner, useOverlayStore } from "@aria-ui/elements/overlay";
 import { containsInlineNode, defineFocusChangeHandler, defineKeymap, defineUpdateHandler, isInCodeBlock, isTextSelection } from "@prosekit/core";
-import { usePresence } from "@aria-ui/utils";
 const InlinePopoverStoreContext = createContext("prosekit-inline-popover-store");
 /** @internal */
 const InlinePopoverPopupPropsDeclaration = OverlayPopupPropsDeclaration;

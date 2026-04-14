@@ -1,7 +1,8 @@
 import { t as useEditorExtension } from "./use-editor-extension.js";
 import { t as getSafeEditorView } from "./get-safe-editor-view.js";
 import { n as assignStyles, t as useScrolling } from "./use-scrolling.js";
-import { computed, createContext, createSignal, defineCustomElement, defineProps, onMount, registerCustomElement, useEffect, useEventListener } from "@aria-ui/core";
+import { computed, createContext, createSignal, defineCustomElement, defineProps, onMount, registerCustomElement, useEffect } from "@aria-ui/core";
+import { useEventListener } from "@aria-ui/utils";
 import { OverlayPositionerPropsDeclaration, createOverlayStore, setupOverlayPopup, setupOverlayPositioner } from "@aria-ui/elements/overlay";
 import { defineDOMEventHandler, union } from "@prosekit/core";
 import { getDocument, getId, isHTMLElement, once } from "@ocavue/utils";

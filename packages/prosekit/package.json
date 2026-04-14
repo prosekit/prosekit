@@ -794,6 +794,382 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/index.d.ts"
+        ],
+        "basic": [
+          "./dist/basic.d.ts"
+        ],
+        "core": [
+          "./dist/core.d.ts"
+        ],
+        "core/test": [
+          "./dist/core/test.d.ts"
+        ],
+        "extensions": [
+          "./dist/extensions.d.ts"
+        ],
+        "extensions/autocomplete": [
+          "./dist/extensions/autocomplete.d.ts"
+        ],
+        "extensions/background-color": [
+          "./dist/extensions/background-color.d.ts"
+        ],
+        "extensions/blockquote": [
+          "./dist/extensions/blockquote.d.ts"
+        ],
+        "extensions/bold": [
+          "./dist/extensions/bold.d.ts"
+        ],
+        "extensions/code": [
+          "./dist/extensions/code.d.ts"
+        ],
+        "extensions/code-block": [
+          "./dist/extensions/code-block.d.ts"
+        ],
+        "extensions/commit": [
+          "./dist/extensions/commit.d.ts"
+        ],
+        "extensions/doc": [
+          "./dist/extensions/doc.d.ts"
+        ],
+        "extensions/drop-cursor": [
+          "./dist/extensions/drop-cursor.d.ts"
+        ],
+        "extensions/drop-indicator": [
+          "./dist/extensions/drop-indicator.d.ts"
+        ],
+        "extensions/enter-rule": [
+          "./dist/extensions/enter-rule.d.ts"
+        ],
+        "extensions/file": [
+          "./dist/extensions/file.d.ts"
+        ],
+        "extensions/gap-cursor": [
+          "./dist/extensions/gap-cursor.d.ts"
+        ],
+        "extensions/hard-break": [
+          "./dist/extensions/hard-break.d.ts"
+        ],
+        "extensions/heading": [
+          "./dist/extensions/heading.d.ts"
+        ],
+        "extensions/horizontal-rule": [
+          "./dist/extensions/horizontal-rule.d.ts"
+        ],
+        "extensions/image": [
+          "./dist/extensions/image.d.ts"
+        ],
+        "extensions/input-rule": [
+          "./dist/extensions/input-rule.d.ts"
+        ],
+        "extensions/italic": [
+          "./dist/extensions/italic.d.ts"
+        ],
+        "extensions/link": [
+          "./dist/extensions/link.d.ts"
+        ],
+        "extensions/list": [
+          "./dist/extensions/list.d.ts"
+        ],
+        "extensions/loro": [
+          "./dist/extensions/loro.d.ts"
+        ],
+        "extensions/mark-rule": [
+          "./dist/extensions/mark-rule.d.ts"
+        ],
+        "extensions/math": [
+          "./dist/extensions/math.d.ts"
+        ],
+        "extensions/mention": [
+          "./dist/extensions/mention.d.ts"
+        ],
+        "extensions/mod-click-prevention": [
+          "./dist/extensions/mod-click-prevention.d.ts"
+        ],
+        "extensions/page": [
+          "./dist/extensions/page.d.ts"
+        ],
+        "extensions/paragraph": [
+          "./dist/extensions/paragraph.d.ts"
+        ],
+        "extensions/paste-rule": [
+          "./dist/extensions/paste-rule.d.ts"
+        ],
+        "extensions/placeholder": [
+          "./dist/extensions/placeholder.d.ts"
+        ],
+        "extensions/readonly": [
+          "./dist/extensions/readonly.d.ts"
+        ],
+        "extensions/search": [
+          "./dist/extensions/search.d.ts"
+        ],
+        "extensions/strike": [
+          "./dist/extensions/strike.d.ts"
+        ],
+        "extensions/table": [
+          "./dist/extensions/table.d.ts"
+        ],
+        "extensions/text": [
+          "./dist/extensions/text.d.ts"
+        ],
+        "extensions/text-align": [
+          "./dist/extensions/text-align.d.ts"
+        ],
+        "extensions/text-color": [
+          "./dist/extensions/text-color.d.ts"
+        ],
+        "extensions/underline": [
+          "./dist/extensions/underline.d.ts"
+        ],
+        "extensions/virtual-selection": [
+          "./dist/extensions/virtual-selection.d.ts"
+        ],
+        "extensions/yjs": [
+          "./dist/extensions/yjs.d.ts"
+        ],
+        "lit": [
+          "./dist/lit.d.ts"
+        ],
+        "lit/autocomplete": [
+          "./dist/lit/autocomplete.d.ts"
+        ],
+        "lit/block-handle": [
+          "./dist/lit/block-handle.d.ts"
+        ],
+        "lit/drop-indicator": [
+          "./dist/lit/drop-indicator.d.ts"
+        ],
+        "lit/inline-popover": [
+          "./dist/lit/inline-popover.d.ts"
+        ],
+        "lit/menu": [
+          "./dist/lit/menu.d.ts"
+        ],
+        "lit/popover": [
+          "./dist/lit/popover.d.ts"
+        ],
+        "lit/resizable": [
+          "./dist/lit/resizable.d.ts"
+        ],
+        "lit/table-handle": [
+          "./dist/lit/table-handle.d.ts"
+        ],
+        "lit/tooltip": [
+          "./dist/lit/tooltip.d.ts"
+        ],
+        "pm": [
+          "./dist/pm.d.ts"
+        ],
+        "pm/commands": [
+          "./dist/pm/commands.d.ts"
+        ],
+        "pm/history": [
+          "./dist/pm/history.d.ts"
+        ],
+        "pm/inputrules": [
+          "./dist/pm/inputrules.d.ts"
+        ],
+        "pm/keymap": [
+          "./dist/pm/keymap.d.ts"
+        ],
+        "pm/model": [
+          "./dist/pm/model.d.ts"
+        ],
+        "pm/state": [
+          "./dist/pm/state.d.ts"
+        ],
+        "pm/transform": [
+          "./dist/pm/transform.d.ts"
+        ],
+        "pm/view": [
+          "./dist/pm/view.d.ts"
+        ],
+        "preact": [
+          "./dist/preact.d.ts"
+        ],
+        "preact/autocomplete": [
+          "./dist/preact/autocomplete.d.ts"
+        ],
+        "preact/block-handle": [
+          "./dist/preact/block-handle.d.ts"
+        ],
+        "preact/drop-indicator": [
+          "./dist/preact/drop-indicator.d.ts"
+        ],
+        "preact/inline-popover": [
+          "./dist/preact/inline-popover.d.ts"
+        ],
+        "preact/menu": [
+          "./dist/preact/menu.d.ts"
+        ],
+        "preact/popover": [
+          "./dist/preact/popover.d.ts"
+        ],
+        "preact/resizable": [
+          "./dist/preact/resizable.d.ts"
+        ],
+        "preact/table-handle": [
+          "./dist/preact/table-handle.d.ts"
+        ],
+        "preact/tooltip": [
+          "./dist/preact/tooltip.d.ts"
+        ],
+        "react": [
+          "./dist/react.d.ts"
+        ],
+        "react/autocomplete": [
+          "./dist/react/autocomplete.d.ts"
+        ],
+        "react/block-handle": [
+          "./dist/react/block-handle.d.ts"
+        ],
+        "react/drop-indicator": [
+          "./dist/react/drop-indicator.d.ts"
+        ],
+        "react/inline-popover": [
+          "./dist/react/inline-popover.d.ts"
+        ],
+        "react/menu": [
+          "./dist/react/menu.d.ts"
+        ],
+        "react/popover": [
+          "./dist/react/popover.d.ts"
+        ],
+        "react/resizable": [
+          "./dist/react/resizable.d.ts"
+        ],
+        "react/table-handle": [
+          "./dist/react/table-handle.d.ts"
+        ],
+        "react/tooltip": [
+          "./dist/react/tooltip.d.ts"
+        ],
+        "solid": [
+          "./dist/solid.d.ts"
+        ],
+        "solid/autocomplete": [
+          "./dist/solid/autocomplete.d.ts"
+        ],
+        "solid/block-handle": [
+          "./dist/solid/block-handle.d.ts"
+        ],
+        "solid/drop-indicator": [
+          "./dist/solid/drop-indicator.d.ts"
+        ],
+        "solid/inline-popover": [
+          "./dist/solid/inline-popover.d.ts"
+        ],
+        "solid/menu": [
+          "./dist/solid/menu.d.ts"
+        ],
+        "solid/popover": [
+          "./dist/solid/popover.d.ts"
+        ],
+        "solid/resizable": [
+          "./dist/solid/resizable.d.ts"
+        ],
+        "solid/table-handle": [
+          "./dist/solid/table-handle.d.ts"
+        ],
+        "solid/tooltip": [
+          "./dist/solid/tooltip.d.ts"
+        ],
+        "svelte": [
+          "./dist/svelte.d.ts"
+        ],
+        "svelte/autocomplete": [
+          "./dist/svelte/autocomplete.d.ts"
+        ],
+        "svelte/block-handle": [
+          "./dist/svelte/block-handle.d.ts"
+        ],
+        "svelte/drop-indicator": [
+          "./dist/svelte/drop-indicator.d.ts"
+        ],
+        "svelte/inline-popover": [
+          "./dist/svelte/inline-popover.d.ts"
+        ],
+        "svelte/menu": [
+          "./dist/svelte/menu.d.ts"
+        ],
+        "svelte/popover": [
+          "./dist/svelte/popover.d.ts"
+        ],
+        "svelte/resizable": [
+          "./dist/svelte/resizable.d.ts"
+        ],
+        "svelte/table-handle": [
+          "./dist/svelte/table-handle.d.ts"
+        ],
+        "svelte/tooltip": [
+          "./dist/svelte/tooltip.d.ts"
+        ],
+        "vue": [
+          "./dist/vue.d.ts"
+        ],
+        "vue/autocomplete": [
+          "./dist/vue/autocomplete.d.ts"
+        ],
+        "vue/block-handle": [
+          "./dist/vue/block-handle.d.ts"
+        ],
+        "vue/drop-indicator": [
+          "./dist/vue/drop-indicator.d.ts"
+        ],
+        "vue/inline-popover": [
+          "./dist/vue/inline-popover.d.ts"
+        ],
+        "vue/menu": [
+          "./dist/vue/menu.d.ts"
+        ],
+        "vue/popover": [
+          "./dist/vue/popover.d.ts"
+        ],
+        "vue/resizable": [
+          "./dist/vue/resizable.d.ts"
+        ],
+        "vue/table-handle": [
+          "./dist/vue/table-handle.d.ts"
+        ],
+        "vue/tooltip": [
+          "./dist/vue/tooltip.d.ts"
+        ],
+        "web": [
+          "./dist/web.d.ts"
+        ],
+        "web/autocomplete": [
+          "./dist/web/autocomplete.d.ts"
+        ],
+        "web/block-handle": [
+          "./dist/web/block-handle.d.ts"
+        ],
+        "web/drop-indicator": [
+          "./dist/web/drop-indicator.d.ts"
+        ],
+        "web/inline-popover": [
+          "./dist/web/inline-popover.d.ts"
+        ],
+        "web/menu": [
+          "./dist/web/menu.d.ts"
+        ],
+        "web/popover": [
+          "./dist/web/popover.d.ts"
+        ],
+        "web/resizable": [
+          "./dist/web/resizable.d.ts"
+        ],
+        "web/table-handle": [
+          "./dist/web/table-handle.d.ts"
+        ],
+        "web/tooltip": [
+          "./dist/web/tooltip.d.ts"
+        ]
+      }
+    }
   }
 }

@@ -116,6 +116,40 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/index.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/autocomplete.d.ts"
+        ],
+        "block-handle": [
+          "./dist/block-handle.d.ts"
+        ],
+        "drop-indicator": [
+          "./dist/drop-indicator.d.ts"
+        ],
+        "inline-popover": [
+          "./dist/inline-popover.d.ts"
+        ],
+        "menu": [
+          "./dist/menu.d.ts"
+        ],
+        "popover": [
+          "./dist/popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/table-handle.d.ts"
+        ],
+        "tooltip": [
+          "./dist/tooltip.d.ts"
+        ]
+      }
+    }
   }
 }

@@ -346,6 +346,133 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/index.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/autocomplete.d.ts"
+        ],
+        "background-color": [
+          "./dist/background-color.d.ts"
+        ],
+        "blockquote": [
+          "./dist/blockquote.d.ts"
+        ],
+        "bold": [
+          "./dist/bold.d.ts"
+        ],
+        "code": [
+          "./dist/code.d.ts"
+        ],
+        "code-block": [
+          "./dist/code-block.d.ts"
+        ],
+        "commit": [
+          "./dist/commit.d.ts"
+        ],
+        "doc": [
+          "./dist/doc.d.ts"
+        ],
+        "drop-cursor": [
+          "./dist/drop-cursor.d.ts"
+        ],
+        "drop-indicator": [
+          "./dist/drop-indicator.d.ts"
+        ],
+        "enter-rule": [
+          "./dist/enter-rule.d.ts"
+        ],
+        "file": [
+          "./dist/file.d.ts"
+        ],
+        "gap-cursor": [
+          "./dist/gap-cursor.d.ts"
+        ],
+        "hard-break": [
+          "./dist/hard-break.d.ts"
+        ],
+        "heading": [
+          "./dist/heading.d.ts"
+        ],
+        "horizontal-rule": [
+          "./dist/horizontal-rule.d.ts"
+        ],
+        "image": [
+          "./dist/image.d.ts"
+        ],
+        "input-rule": [
+          "./dist/input-rule.d.ts"
+        ],
+        "italic": [
+          "./dist/italic.d.ts"
+        ],
+        "link": [
+          "./dist/link.d.ts"
+        ],
+        "list": [
+          "./dist/list.d.ts"
+        ],
+        "loro": [
+          "./dist/loro.d.ts"
+        ],
+        "mark-rule": [
+          "./dist/mark-rule.d.ts"
+        ],
+        "math": [
+          "./dist/math.d.ts"
+        ],
+        "mention": [
+          "./dist/mention.d.ts"
+        ],
+        "mod-click-prevention": [
+          "./dist/mod-click-prevention.d.ts"
+        ],
+        "page": [
+          "./dist/page.d.ts"
+        ],
+        "paragraph": [
+          "./dist/paragraph.d.ts"
+        ],
+        "paste-rule": [
+          "./dist/paste-rule.d.ts"
+        ],
+        "placeholder": [
+          "./dist/placeholder.d.ts"
+        ],
+        "readonly": [
+          "./dist/readonly.d.ts"
+        ],
+        "search": [
+          "./dist/search.d.ts"
+        ],
+        "strike": [
+          "./dist/strike.d.ts"
+        ],
+        "table": [
+          "./dist/table.d.ts"
+        ],
+        "text": [
+          "./dist/text.d.ts"
+        ],
+        "text-align": [
+          "./dist/text-align.d.ts"
+        ],
+        "text-color": [
+          "./dist/text-color.d.ts"
+        ],
+        "underline": [
+          "./dist/underline.d.ts"
+        ],
+        "virtual-selection": [
+          "./dist/virtual-selection.d.ts"
+        ],
+        "yjs": [
+          "./dist/yjs.d.ts"
+        ]
+      }
+    }
   }
 }

@@ -106,6 +106,37 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/index.d.ts"
+        ],
+        "commands": [
+          "./dist/commands.d.ts"
+        ],
+        "history": [
+          "./dist/history.d.ts"
+        ],
+        "inputrules": [
+          "./dist/inputrules.d.ts"
+        ],
+        "keymap": [
+          "./dist/keymap.d.ts"
+        ],
+        "model": [
+          "./dist/model.d.ts"
+        ],
+        "state": [
+          "./dist/state.d.ts"
+        ],
+        "transform": [
+          "./dist/transform.d.ts"
+        ],
+        "view": [
+          "./dist/view.d.ts"
+        ]
+      }
+    }
   }
 }

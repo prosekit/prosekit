@@ -54,8 +54,8 @@ export async function dragAndDrop(
     endPosition?: { x: number; y: number }
   },
 ) {
-  await hover(startLocator, { position: options?.startPosition, steps: 10 })
+  await hover(startLocator, { position: options?.startPosition })
   await mouse.down()
-  await hover(endLocator, { position: options?.endPosition, steps: 10 })
+  await hover(endLocator, { position: options?.endPosition, steps: 5 })
   await mouse.up()
 }

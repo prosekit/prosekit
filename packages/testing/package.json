@@ -13,6 +13,7 @@
     "@prosekit/pm": "workspace:*"
   },
   "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
     "typescript": "catalog:"
   }
 }

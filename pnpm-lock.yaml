@@ -761,6 +761,9 @@ importers:
         specifier: workspace:*
         version: link:../pm
     devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
       typescript:
         specifier: 'catalog:'
         version: 5.9.3

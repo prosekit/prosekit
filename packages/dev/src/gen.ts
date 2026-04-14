@@ -5,7 +5,6 @@ import { genPackageJson } from './gen-package-json'
 import { genSizeLimitJson } from './gen-size-limit-json'
 import { skipGen } from './skip-gen'
 import { vfs } from './vfs'
-import { syncWorkspacePackages } from './workspace-sync'
 
 async function gen(): Promise<boolean> {
   debug('gen start')
@@ -23,9 +22,6 @@ async function gen(): Promise<boolean> {
 
   await genChangeset()
   debug('gen gen-changeset done')
-
-  await syncWorkspacePackages()
-  debug('gen sync-workspace-packages done')
 
   const updated = await vfs.commit()
   debug('gen commit done')

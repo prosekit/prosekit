@@ -52,3 +52,9 @@ strictPeerDependencies: true
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 7 days
+
+# TODO: remove this
+peerDependencyRules:
+  allowedVersions:
+    typescript: "6"
+    vite: "8"

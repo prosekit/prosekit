@@ -31,6 +31,9 @@ export function config(userConfig?: UserConfig): UserConfig {
       if (normalizedKey === '.') {
         normalizedKey = 'index'
       }
+      if (normalizedKey.endsWith('.css')) {
+        normalizedKey = normalizedKey.slice(0, -4)
+      }
 
       let normalizedValue: string | undefined
       if (typeof value === 'string') {

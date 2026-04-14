@@ -1,0 +1,1 @@
+{"version":3,"file":"prosekit.js","names":[],"sources":["../package.json","../src/index.ts"],"sourcesContent":["","import { version } from '../package.json' with { type: 'json' }\n\n/** @internal */\nconst VERSION = version\n\nexport {VERSION}\n"],"mappings":";;;ACGA,MAAM"}

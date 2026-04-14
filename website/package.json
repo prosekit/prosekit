@@ -53,7 +53,7 @@
     "rehype-resolve-markdown-links": "^0.1.0",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.12",
-    "starlight-theme-nova": "^0.11.8",
+    "starlight-theme-nova": "^0.11.9",
     "svelte": "^5.55.2",
     "tailwindcss": "^4.2.2",
     "typescript": "catalog:",

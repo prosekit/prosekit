@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.20.0-beta.8
+
+### Patch Changes
+
+- [`3df3e7d`](https://github.com/ocavue/prosekit/commit/3df3e7d9b87d6989df148213786939ab0483ffcb) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
 ## 0.20.0-beta.7
 
 ### Patch Changes

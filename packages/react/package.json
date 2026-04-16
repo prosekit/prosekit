@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.7.0-beta.6",
+  "version": "0.7.0-beta.7",
   "private": false,
   "description": "React components and utilities for ProseKit",
   "author": {

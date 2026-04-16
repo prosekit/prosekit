@@ -101,7 +101,7 @@
     "prosemirror-search": "^1.1.0",
     "prosemirror-tables": "^1.8.5",
     "server-dom-shim": "^1.1.0",
-    "shiki": "^3.22.0 || ^4.0.2"
+    "shiki": "^3.23.0 || ^4.0.2"
   },
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",

@@ -23,6 +23,7 @@ export async function genChangesetConfigJson(): Promise<void> {
  * dependencies, etc.
  */
 async function getVisiblePackages(): Promise<Set<string>> {
+  return new Set()
   const packages = await getWorkspacePackages()
   const packageToDependencies = new DefaultMap<string, string[]>(() => [])
   for (const pkg of packages) {

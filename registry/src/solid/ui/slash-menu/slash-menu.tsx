@@ -8,7 +8,7 @@ import SlashMenuEmpty from './slash-menu-empty'
 import SlashMenuItem from './slash-menu-item'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex =   /(?<!\S)\/(\S.*)?$/u 
+const regex = /(?<!\S)\/(\S.*)?$/u
 
 export default function SlashMenu(): JSX.Element {
   const editor = useEditor<BasicExtension>()

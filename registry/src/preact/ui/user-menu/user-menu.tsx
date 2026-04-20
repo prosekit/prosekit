@@ -11,7 +11,7 @@ import {
 } from 'prosekit/preact/autocomplete'
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex =   /(?<!\S)@(\S.*)?$/u  
+const regex = /(?<!\S)@(\S.*)?$/u
 
 export default function UserMenu(props: {
   users: { id: number; name: string }[]

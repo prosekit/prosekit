@@ -1,7 +1,7 @@
 'use client'
 
 import type { BasicExtension } from 'prosekit/basic'
-import type {  Union } from 'prosekit/core'
+import type { Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/react'
 import {

@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { BasicExtension } from 'prosekit/basic'
-import { canUseRegexLookbehind, type Union } from 'prosekit/core'
+import { type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/svelte'
 import {

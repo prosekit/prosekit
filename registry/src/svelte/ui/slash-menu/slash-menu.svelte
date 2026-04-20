@@ -1,6 +1,5 @@
 <script lang="ts">
 import type { BasicExtension } from 'prosekit/basic'
-import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/svelte'
 import { AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/svelte/autocomplete'
 

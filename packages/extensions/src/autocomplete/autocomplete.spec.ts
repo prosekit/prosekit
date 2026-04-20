@@ -9,7 +9,7 @@ import { AutocompleteRule, type MatchHandler, type MatchHandlerOptions } from '.
 import { defineAutocomplete } from './autocomplete.ts'
 
 function setupSlashMenu() {
-  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+  const regex =   /(?<!\S)\/(\S.*)?$/u  
 
   let matching: MatchHandlerOptions | null = null
 

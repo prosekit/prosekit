@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { BasicExtension } from 'prosekit/basic'
-import { canUseRegexLookbehind, type Union } from 'prosekit/core'
+import {   type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/vue'
 import { AutocompleteEmpty, AutocompleteItem, AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/vue/autocomplete'
@@ -24,7 +24,7 @@ function handleUserInsert(id: number, username: string) {
 }
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
+const regex =   /(?<!\S)@(\S.*)?$/u  
 </script>
 
 <template>

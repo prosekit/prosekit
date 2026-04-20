@@ -9,7 +9,7 @@ import { renderSlashMenuEmpty } from './slash-menu-empty'
 import { renderSlashMenuItem } from './slash-menu-item'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+const regex =   /(?<!\S)\/(\S.*)?$/u  
 
 export function renderSlashMenu(
   editor: Editor<BasicExtension>,

@@ -9,7 +9,7 @@ import { canUseRegexLookbehind } from 'prosekit/core'
 import { editorContext } from '../editor-context'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+const regex =   /(?<!\S)\/(\S.*)?$/u  
 
 class SlashMenuElement extends LitElement {
   private editorConsumer = new ContextConsumer(this, {

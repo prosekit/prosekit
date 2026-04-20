@@ -9,7 +9,7 @@ import SlashMenuEmpty from './slash-menu-empty'
 import SlashMenuItem from './slash-menu-item'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+const regex =  /(?<!\S)\/(\S.*)?$/u  
 
 interface Props {
   onOpenChange: (open: boolean) => void

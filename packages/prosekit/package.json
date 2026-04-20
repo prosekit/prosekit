@@ -241,7 +241,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "solid-js": "^1.9.12",
-    "svelte": "^5.55.3",
+    "svelte": "^5.55.4",
     "tsdown": "catalog:",
     "typedoc": "^0.28.19",
     "typedoc-plugin-external-package-links": "^0.2.0",

@@ -11,7 +11,7 @@
   "editor.formatOnSave": true,
   "dprint.path": "./node_modules/.bin/dprint",
   "dprint.experimentalLsp": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "[typescript]": {
     "editor.defaultFormatter": "dprint.dprint",
   },

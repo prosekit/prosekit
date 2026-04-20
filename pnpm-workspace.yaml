@@ -7,12 +7,12 @@ allowedDeprecatedVersions:
   glob: "10"
 
 catalog:
-  "@tsdown/css": "^0.21.8"
+  "@tsdown/css": "^0.21.9"
   "@types/node": "^24.10.13"
   "@vitest/browser-playwright": "^4.1.4"
   "@vitest/coverage-v8": "^4.1.4"
   "@vitest/ui": "^4.1.4"
-  tsdown: "^0.21.8"
+  tsdown: "^0.21.9"
   typescript: "~5.9.3"
   vitest: "^4.1.4"
 
@@ -39,6 +39,7 @@ minimumReleaseAgeExclude:
   - "twoslash"
   - "twoslash-protocol"
   - "vitest-browser-svelte"
+  - "vite"
 
 overrides: {}
 

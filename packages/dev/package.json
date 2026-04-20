@@ -22,7 +22,7 @@
     "@ocavue/utils": "^1.6.0",
     "@types/node": "catalog:",
     "tsx": "^4.21.0",
-    "type-fest": "^5.5.0",
+    "type-fest": "^5.6.0",
     "typescript": "catalog:"
   }
 }

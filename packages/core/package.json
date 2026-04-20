@@ -42,7 +42,7 @@
     "@prosekit/pm": "workspace:^",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^5.5.0"
+    "type-fest": "^5.6.0"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",

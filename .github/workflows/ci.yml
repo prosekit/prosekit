@@ -63,9 +63,6 @@ jobs:
 
       - uses: ./.github/actions/cache
 
-      - name: Build types
-        run: pnpm run typecheck
-
       - name: Build packages
         run: pnpm run build:package
 
@@ -165,7 +162,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
         if: ${{ env.CLOUDFLARE_ACCOUNT_ID != '' }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}

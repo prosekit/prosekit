@@ -1,4 +1,4 @@
-import { canUseRegexLookbehind, union } from '@prosekit/core'
+import {  union } from '@prosekit/core'
 import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 

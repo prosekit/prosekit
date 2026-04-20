@@ -1,5 +1,4 @@
 import type { BasicExtension } from 'prosekit/basic'
-import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/preact'
 import { AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/preact/autocomplete'
 

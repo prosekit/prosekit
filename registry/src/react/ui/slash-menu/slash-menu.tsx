@@ -1,7 +1,6 @@
 'use client'
 
 import type { BasicExtension } from 'prosekit/basic'
-import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/react'
 import { AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/react/autocomplete'
 

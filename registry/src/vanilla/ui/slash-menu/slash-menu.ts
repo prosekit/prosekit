@@ -2,7 +2,6 @@ import 'prosekit/web/autocomplete'
 
 import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
-import { canUseRegexLookbehind } from 'prosekit/core'
 import type { AutocompletePopupElement, AutocompletePositionerElement, AutocompleteRootElement } from 'prosekit/web/autocomplete'
 
 import { renderSlashMenuEmpty } from './slash-menu-empty'

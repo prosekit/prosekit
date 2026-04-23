@@ -19,11 +19,13 @@ const config = {
   ignoreDependencies: ['wrangler', '@changesets/types'],
   workspaces: {
     './packages/prosekit': {
+      project: ['src/**'],
       entry: [
         'src/**/*-css.ts',
       ],
     },
     './packages/basic': {
+      project: ['src/**'],
       entry: [
         'src/**/*.scss',
       ],
@@ -36,6 +38,7 @@ const config = {
       ],
     },
     './website': {
+      project: ['src/**'],
       entry: [
         'src/stories/*.stories.ts',
         'src/styles/*.css',

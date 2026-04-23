@@ -9,12 +9,12 @@ allowedDeprecatedVersions:
 catalog:
   "@tsdown/css": "^0.21.9"
   "@types/node": "^24.10.13"
-  "@vitest/browser-playwright": "^4.1.4"
-  "@vitest/coverage-v8": "^4.1.4"
-  "@vitest/ui": "^4.1.4"
+  "@vitest/browser-playwright": "^4.1.5"
+  "@vitest/coverage-v8": "^4.1.5"
+  "@vitest/ui": "^4.1.5"
   tsdown: "^0.21.9"
   typescript: "~5.9.3"
-  vitest: "^4.1.4"
+  vitest: "^4.1.5"
 
 ignoreWorkspaceRootCheck: true
 

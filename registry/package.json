@@ -282,8 +282,8 @@
     "lint:vue": "vue-tsc --build src/vue/tsconfig.lint.json"
   },
   "dependencies": {
-    "@base-ui/react": "^1.4.0",
-    "loro-crdt": "^1.11.0",
+    "@base-ui/react": "^1.4.1",
+    "loro-crdt": "^1.11.1",
     "loro-prosemirror": "^0.4.3",
     "obug": "^2.1.1",
     "preact": "^10.29.1",
@@ -296,7 +296,7 @@
     "solid-js": "^1.9.12",
     "svelte": "^5.55.4",
     "unified": "^11.0.5",
-    "vue": "^3.5.32",
+    "vue": "^3.5.33",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.30"
   },
@@ -309,7 +309,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
@@ -332,7 +332,7 @@
     "shadcn-schema": "^0.4.0",
     "svelte-check": "^4.4.6",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.2.4",
     "temml": "^0.13.2",
     "tinyexec": "^1.1.1",
     "tsx": "^4.21.0",
@@ -346,7 +346,7 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.1.1",
     "vitest-browser-vue": "^2.1.0",
-    "vue-tsc": "^3.2.6",
+    "vue-tsc": "^3.2.7",
     "vue-tweet": "^2.4.0"
   },
   "publishConfig": {

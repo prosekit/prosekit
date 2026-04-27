@@ -51,7 +51,7 @@ const CSS_POPUP = cn(
 const CSS_MENU_POPUP = cn(
   CSS_POPUP,
   'duration-40',
-  'rounded-lg border border-gray-200 dark:border-gray-800 shadow-lg',
+  'rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg',
   'bg-[Canvas]',
   // TODO: Update "overscroll-none" to "overscroll-contain" once this Chrome issue is resolved: https://issues.chromium.org/issues/501657370
   'overscroll-none',
@@ -112,7 +112,7 @@ export const CSS_AUTOCOMPLETE_POPUP = cn(
 export const CSS_AUTOCOMPLETE_POPUP_CONTENT = cn('overflow-y-auto bg-red-100')
 
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
-  'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 text-sm',
+  'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-md px-3 py-1.5 text-sm',
   CSS_MENU_ITEM,
 )
 export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(

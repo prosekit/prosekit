@@ -28,9 +28,17 @@ export interface AutocompletePositionerProps extends OverlayPositionerProps {
   /**
    * The distance between the popover and the hovered block.
    *
-   * @default 4
+   * @default { mainAxis: 8, crossAxis: -4 }
    */
   offset: OverlayPositionerProps['offset']
+
+  /**
+   * Whether to hide the floating element when the reference element or the
+   * floating element is fully clipped.
+   *
+   * @default true
+   */
+  hide: OverlayPositionerProps['hide']
 
   /**
    * @default true
@@ -64,7 +72,8 @@ export const AutocompletePositionerPropsDeclaration: PropsDeclaration<Autocomple
 >({
   ...OverlayPositionerPropsDeclaration,
   placement: { default: 'bottom-start', attribute: 'placement', type: 'string' },
-  offset: { default: 4, attribute: false, type: 'json' },
+  offset: { default: { mainAxis: 8, crossAxis: -4 }, attribute: false, type: 'json' },
+  hide: { default: true, attribute: false, type: 'boolean' },
   inline: { default: true, attribute: 'inline', type: 'boolean' },
   hoist: { default: true, attribute: 'hoist', type: 'boolean' },
   fitViewport: { default: true, attribute: 'fit-viewport', type: 'boolean' },

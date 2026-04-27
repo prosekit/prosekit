@@ -87,7 +87,7 @@ export const CSS_INLINE_MENU_POSITIONER = CSS_POSITIONER
 
 export const CSS_INLINE_MENU_MAIN_POPUP = cn(
   CSS_MENU_POPUP,
-  'relative flex min-w-32 space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
+  'relative flex min-w-32 space-x-1 overflow-auto whitespace-nowrap rounded-lg p-1',
 )
 
 export const CSS_INLINE_MENU_LINK_POPUP = cn(

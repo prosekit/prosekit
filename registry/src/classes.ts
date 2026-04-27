@@ -53,8 +53,6 @@ const CSS_MENU_POPUP = cn(
   'duration-40',
   'rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg',
   'bg-[canvas]',
-  // TODO: Update "overscroll-none" to "overscroll-contain" once this Chrome issue is resolved: https://issues.chromium.org/issues/501657370
-  'overscroll-none',
 )
 const CSS_MENU_ITEM = cn(
   'box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800',

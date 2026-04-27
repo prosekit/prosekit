@@ -108,7 +108,7 @@ export const CSS_AUTOCOMPLETE_POPUP = cn(
   'relative max-h-100 min-h-0 min-w-60 select-none overflow-hidden whitespace-nowrap',
 )
 export const CSS_AUTOCOMPLETE_POPUP_CONTENT = cn(
-  'flex-1 min-h-0 overflow-y-auto p-1 bg-[canvas] overscroll-contain',
+  'flex flex-1 min-h-0 overflow-y-auto p-1 bg-[canvas] overscroll-contain',
 )
 
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(

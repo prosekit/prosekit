@@ -109,7 +109,7 @@ export const CSS_AUTOCOMPLETE_POPUP = cn(
   'relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
 )
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
-  'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5',
+  'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 text-sm',
   CSS_MENU_ITEM,
 )
 export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(

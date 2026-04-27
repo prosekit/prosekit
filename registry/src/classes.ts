@@ -43,7 +43,7 @@ const CSS_POSITIONER = cn(
 const CSS_POPUP = cn(
   'flex box-border',
   'origin-(--transform-origin)',
-  'transition transition-discrete motion-reduce:transition-none',
+  'transition-[opacity,scale] transition-discrete motion-reduce:transition-none',
   'duration-100 data-[state=closed]:duration-150',
   'data-[state=closed]:opacity-0 starting:opacity-0',
   'data-[state=closed]:scale-95 starting:scale-95',

@@ -36,23 +36,23 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
     <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
       <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
         <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
-        <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-          {{ props.loading ? 'Loading...' : 'No results' }}
-        </AutocompleteEmpty>
+          <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+            {{ props.loading ? 'Loading...' : 'No results' }}
+          </AutocompleteEmpty>
 
-        <AutocompleteItem
-          v-for="user in props.users"
-          :key="user.id"
-          class="CSS_AUTOCOMPLETE_MENU_ITEM"
-          @select="() => handleUserInsert(user.id, user.name)"
-        >
-          <span v-if="props.loading" class="opacity-50">
-            {{ user.name }}
-          </span>
-          <span v-else>
-            {{ user.name }}
-          </span>
-        </AutocompleteItem>
+          <AutocompleteItem
+            v-for="user in props.users"
+            :key="user.id"
+            class="CSS_AUTOCOMPLETE_MENU_ITEM"
+            @select="() => handleUserInsert(user.id, user.name)"
+          >
+            <span v-if="props.loading" class="opacity-50">
+              {{ user.name }}
+            </span>
+            <span v-else>
+              {{ user.name }}
+            </span>
+          </AutocompleteItem>
         </div>
       </AutocompletePopup>
     </AutocompletePositioner>

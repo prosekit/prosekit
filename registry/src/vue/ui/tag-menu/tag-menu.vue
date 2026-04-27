@@ -26,18 +26,18 @@ const regex = /#[\da-z]*$/i
     <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
       <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
         <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
-        <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-          No results
-        </AutocompleteEmpty>
+          <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+            No results
+          </AutocompleteEmpty>
 
-        <AutocompleteItem
-          v-for="tag in props.tags"
-          :key="tag.id"
-          class="CSS_AUTOCOMPLETE_MENU_ITEM"
-          @select="() => handleTagInsert(tag.id, tag.label)"
-        >
-          #{{ tag.label }}
-        </AutocompleteItem>
+          <AutocompleteItem
+            v-for="tag in props.tags"
+            :key="tag.id"
+            class="CSS_AUTOCOMPLETE_MENU_ITEM"
+            @select="() => handleTagInsert(tag.id, tag.label)"
+          >
+            #{{ tag.label }}
+          </AutocompleteItem>
         </div>
       </AutocompletePopup>
     </AutocompletePositioner>

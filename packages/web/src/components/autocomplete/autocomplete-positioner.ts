@@ -26,7 +26,7 @@ export interface AutocompletePositionerProps extends OverlayPositionerProps {
   placement: OverlayPositionerProps['placement']
 
   /**
-   * The distance between the popover and the hovered block.
+   * The distance between the popover and the text selection.
    *
    * @default { mainAxis: 8, crossAxis: -4 }
    */

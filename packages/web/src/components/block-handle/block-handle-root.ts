@@ -19,6 +19,7 @@ import { useScrolling } from '../../hooks/use-scrolling.ts'
 
 import { blockHandleOverlayStoreContext, BlockHandleStore, blockHandleStoreContext } from './context.ts'
 import { useHoverExtension } from './use-hover-extension.ts'
+import { useHasTextSelection } from './use-has-text-selection.ts'
 
 export interface BlockHandleRootProps {
   /**
@@ -75,8 +76,10 @@ export function setupBlockHandleRoot(
 
   const reference = createSignal<VirtualElement | undefined>(undefined)
   const getScrolling = useScrolling(host)
+  // Hide the block handle when there is a text selection to avoid the block handle overlapping with inline menu
+  const getHasTextSelection = useHasTextSelection(host, getEditor)
 
-  const getOpen = computed(() => !!store.hoverState.get() && !getScrolling())
+  const getOpen = computed(() => !!store.hoverState.get() && !getScrolling() && !getHasTextSelection())
 
   const overlayStore = createOverlayStore(
     getOpen,

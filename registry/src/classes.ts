@@ -23,7 +23,7 @@ const CSS_BUTTON_SIZE_SM = 'h-9 px-3'
 const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const CSS_INPUT = cn(
-  'flex h-9 rounded-md w-full bg-[Canvas] px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition',
+  'flex h-9 rounded-md w-full bg-[canvas] px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-500 transition',
   // border
   'border box-border border-gray-200 dark:border-gray-800 border-solid',
   // ring
@@ -52,7 +52,7 @@ const CSS_MENU_POPUP = cn(
   CSS_POPUP,
   'duration-40',
   'rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg',
-  'bg-[Canvas]',
+  'bg-[canvas]',
   // TODO: Update "overscroll-none" to "overscroll-contain" once this Chrome issue is resolved: https://issues.chromium.org/issues/501657370
   'overscroll-none',
 )
@@ -66,7 +66,7 @@ export const CSS_MINIMAL_EDITOR = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const CSS_EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-[Canvas] text-black dark:text-white',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-[canvas] text-black dark:text-white',
 )
 
 // A scrolling container for the editor content and floating menus.
@@ -220,7 +220,7 @@ export const CSS_TABLE_HANDLE_ROW_POPUP = cn(
 )
 
 const CSS_TABLE_HANDLE_TRIGGER_BASE = cn(
-  'flex items-center box-border justify-center bg-[Canvas] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50 border border-gray-200 dark:border-gray-800 border-solid p-0 transition-colors',
+  'flex items-center box-border justify-center bg-[canvas] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50 border border-gray-200 dark:border-gray-800 border-solid p-0 transition-colors',
   'overflow-clip',
 )
 

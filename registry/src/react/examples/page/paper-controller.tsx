@@ -69,7 +69,7 @@ export default function PaperController({
   return (
     <div
       data-paper-controller={paperSize}
-      className="grid grid-cols-[auto_1fr] gap-2 w-min border p-2 bg-[Canvas] sticky top-2 left-2 z-10 print:hidden text-xs"
+      className="grid grid-cols-[auto_1fr] gap-2 w-min border p-2 bg-[canvas] sticky top-2 left-2 z-10 print:hidden text-xs"
     >
       <label htmlFor={`${id}-page`}>Page</label>
       <select

@@ -35,7 +35,7 @@ export interface BlockHandleRootProps {
 export const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootProps> = /* @__PURE__ */ defineProps<
   BlockHandleRootProps
 >({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false   },
 })
 
 /**

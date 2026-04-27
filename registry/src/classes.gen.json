@@ -1,8 +1,8 @@
 {
   "CSS_AUTOCOMPLETE_MENU_ITEM": "relative flex items-center justify-between min-w-32 scroll-my-1 rounded-md px-3 py-1.5 text-sm box-border cursor-default select-none whitespace-nowrap outline-hidden data-highlighted:bg-gray-100 dark:data-highlighted:bg-gray-800",
   "CSS_AUTOCOMPLETE_MENU_KEYBOARD": "text-xs font-mono text-gray-400 dark:text-gray-500",
-  "CSS_AUTOCOMPLETE_POPUP": "box-border origin-(--transform-origin) transition-[opacity,scale] transition-discrete motion-reduce:transition-none data-[state=closed]:duration-150 data-[state=closed]:opacity-0 starting:opacity-0 data-[state=closed]:scale-95 starting:scale-95 duration-40 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg bg-[canvas] flex flex-col relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap",
-  "CSS_AUTOCOMPLETE_POPUP_CONTENT": "overflow-y-auto p-1 bg-[canvas] overscroll-contain",
+  "CSS_AUTOCOMPLETE_POPUP": "box-border origin-(--transform-origin) transition-[opacity,scale] transition-discrete motion-reduce:transition-none data-[state=closed]:duration-150 data-[state=closed]:opacity-0 starting:opacity-0 data-[state=closed]:scale-95 starting:scale-95 duration-40 rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg bg-[canvas] flex flex-col relative max-h-100 min-h-0 min-w-60 select-none overflow-hidden whitespace-nowrap",
+  "CSS_AUTOCOMPLETE_POPUP_CONTENT": "flex flex-1 min-h-0 overflow-y-auto p-1 bg-[canvas] overscroll-contain",
   "CSS_AUTOCOMPLETE_POSITIONER": "block overflow-visible w-min h-min z-50 ease-out transition-transform duration-100 motion-reduce:transition-none",
   "CSS_BLOCK_HANDLE_ADD": "h-6 w-6 cursor-pointer flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50",
   "CSS_BLOCK_HANDLE_DRAG": "h-6 w-5 cursor-grab flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50",

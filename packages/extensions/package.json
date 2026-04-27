@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.16.0-beta.1",
+  "version": "0.16.0",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {

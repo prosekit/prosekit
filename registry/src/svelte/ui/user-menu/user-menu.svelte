@@ -43,6 +43,7 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 >
   <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
     <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
+      <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
       <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
         {loading ? 'Loading...' : 'No results'}
       </AutocompleteEmpty>
@@ -63,6 +64,7 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
           {/if}
         </AutocompleteItem>
       {/each}
+      </div>
     </AutocompletePopup>
   </AutocompletePositioner>
 </AutocompleteRoot>

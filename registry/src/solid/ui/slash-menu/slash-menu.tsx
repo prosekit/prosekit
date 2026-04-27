@@ -17,6 +17,7 @@ export default function SlashMenu(): JSX.Element {
     <AutocompleteRoot regex={regex}>
       <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
+          <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
           <SlashMenuItem
             label="Text"
             onSelect={() => editor().commands.setParagraph()}
@@ -88,6 +89,7 @@ export default function SlashMenu(): JSX.Element {
           />
 
           <SlashMenuEmpty />
+          </div>
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

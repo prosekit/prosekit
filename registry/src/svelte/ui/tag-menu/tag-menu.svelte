@@ -34,6 +34,7 @@ const regex = /#[\da-z]*$/i
 <AutocompleteRoot {regex}>
   <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
     <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
+      <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
       <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
@@ -46,6 +47,7 @@ const regex = /#[\da-z]*$/i
           #{tag.label}
         </AutocompleteItem>
       {/each}
+      </div>
     </AutocompletePopup>
   </AutocompletePositioner>
 </AutocompleteRoot>

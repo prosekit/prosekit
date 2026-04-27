@@ -30,6 +30,7 @@ class SlashMenuElement extends LitElement {
     return html`<prosekit-autocomplete-root .editor=${editor} .regex=${regex}>
       <prosekit-autocomplete-positioner class="CSS_AUTOCOMPLETE_POSITIONER">
         <prosekit-autocomplete-popup class="CSS_AUTOCOMPLETE_POPUP">
+          <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
           <lit-editor-slash-menu-item
             class="contents"
             label="Text"
@@ -101,6 +102,7 @@ class SlashMenuElement extends LitElement {
             @select=${() => editor.commands.setCodeBlock()}
           ></lit-editor-slash-menu-item>
           <lit-editor-slash-menu-empty class="contents"></lit-editor-slash-menu-empty>
+          </div>
         </prosekit-autocomplete-popup>
       </prosekit-autocomplete-positioner>
     </prosekit-autocomplete-root>`

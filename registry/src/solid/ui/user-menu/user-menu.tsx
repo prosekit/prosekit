@@ -39,6 +39,7 @@ export default function UserMenu(props: {
     >
       <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
+          <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
           <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
             {props.loading ? 'Loading...' : 'No results'}
           </AutocompleteEmpty>
@@ -55,6 +56,7 @@ export default function UserMenu(props: {
               </AutocompleteItem>
             )}
           </For>
+          </div>
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

@@ -88,7 +88,7 @@ export default function SlashMenu() {
             onSelect={() => editor.commands.setCodeBlock()}
           />
 
-          <SlashMenuEmpty />
+            <SlashMenuEmpty />
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

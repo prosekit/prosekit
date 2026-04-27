@@ -102,7 +102,7 @@ export default function SlashMenu(props: Props) {
             onSelect={() => editor.commands.insertImage({ src: '' })}
           />
 
-          <SlashMenuEmpty />
+            <SlashMenuEmpty />
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

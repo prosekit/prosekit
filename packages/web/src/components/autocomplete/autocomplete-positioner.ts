@@ -73,7 +73,7 @@ export const AutocompletePositionerPropsDeclaration: PropsDeclaration<Autocomple
   ...OverlayPositionerPropsDeclaration,
   placement: { default: 'bottom-start', attribute: 'placement', type: 'string' },
   offset: { default: { mainAxis: 8, crossAxis: -4 }, attribute: false },
-  hide: { default: true, attribute: false },
+  hide: { default: true, attribute: 'hide', type: 'boolean' },
   inline: { default: true, attribute: 'inline', type: 'boolean' },
   hoist: { default: true, attribute: 'hoist', type: 'boolean' },
   fitViewport: { default: true, attribute: 'fit-viewport', type: 'boolean' },

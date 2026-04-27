@@ -105,9 +105,11 @@ export const CSS_AUTOCOMPLETE_POSITIONER = CSS_POSITIONER
 export const CSS_AUTOCOMPLETE_POPUP = cn(
   CSS_MENU_POPUP,
   'flex flex-col',
-  'relative max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap',
+  'relative max-h-100 min-h-0 min-w-60 select-none overflow-hidden whitespace-nowrap',
 )
-export const CSS_AUTOCOMPLETE_POPUP_CONTENT = cn('overflow-y-auto p-1 bg-[canvas] overscroll-contain')
+export const CSS_AUTOCOMPLETE_POPUP_CONTENT = cn(
+  'flex-1 min-h-0 overflow-y-auto p-1 bg-[canvas] overscroll-contain',
+)
 
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
   'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-md px-3 py-1.5 text-sm',

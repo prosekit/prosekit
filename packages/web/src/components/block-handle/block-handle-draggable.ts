@@ -37,7 +37,7 @@ export interface BlockHandleDraggableProps {
 export const BlockHandleDraggablePropsDeclaration: PropsDeclaration<BlockHandleDraggableProps> = /* @__PURE__ */ defineProps<
   BlockHandleDraggableProps
 >({
-  editor: { default: null, attribute: false   },
+  editor: { default: null, attribute: false },
 })
 
 /**

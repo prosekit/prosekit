@@ -18,8 +18,8 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { useScrolling } from '../../hooks/use-scrolling.ts'
 
 import { blockHandleOverlayStoreContext, BlockHandleStore, blockHandleStoreContext } from './context.ts'
-import { useHoverExtension } from './use-hover-extension.ts'
 import { useHasTextSelection } from './use-has-text-selection.ts'
+import { useHoverExtension } from './use-hover-extension.ts'
 
 export interface BlockHandleRootProps {
   /**
@@ -35,7 +35,7 @@ export interface BlockHandleRootProps {
 export const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootProps> = /* @__PURE__ */ defineProps<
   BlockHandleRootProps
 >({
-  editor: { default: null, attribute: false   },
+  editor: { default: null, attribute: false },
 })
 
 /**

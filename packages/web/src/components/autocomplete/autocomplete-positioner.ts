@@ -72,12 +72,12 @@ export const AutocompletePositionerPropsDeclaration: PropsDeclaration<Autocomple
 >({
   ...OverlayPositionerPropsDeclaration,
   placement: { default: 'bottom-start', attribute: 'placement', type: 'string' },
-  offset: { default: { mainAxis: 8, crossAxis: -4 }, attribute: false   },
-  hide: { default: true, attribute: false   },
+  offset: { default: { mainAxis: 8, crossAxis: -4 }, attribute: false },
+  hide: { default: true, attribute: false },
   inline: { default: true, attribute: 'inline', type: 'boolean' },
   hoist: { default: true, attribute: 'hoist', type: 'boolean' },
   fitViewport: { default: true, attribute: 'fit-viewport', type: 'boolean' },
-  boundary: { default: defaultBoundary, attribute: false   },
+  boundary: { default: defaultBoundary, attribute: false },
   overflowPadding: { default: 8, attribute: 'overflow-padding', type: 'number' },
 })
 

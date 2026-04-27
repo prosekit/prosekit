@@ -1,6 +1,7 @@
-import { createSignal, type HostElement } from "@aria-ui/core";
-import { isTextSelection, type Editor } from "@prosekit/core";
-import { useEditorUpdateEvent } from "../../hooks/use-editor-update-event.ts";
+import { createSignal, type HostElement } from '@aria-ui/core'
+import { isTextSelection, type Editor } from '@prosekit/core'
+
+import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event.ts'
 
 export function useHasTextSelection(host: HostElement, getEditor: () => Editor | null): () => boolean {
   const state = createSignal(false)

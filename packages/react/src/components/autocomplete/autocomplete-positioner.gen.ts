@@ -12,11 +12,18 @@ export interface AutocompletePositionerProps {
    */
   placement?: AutocompletePositionerElementProps['placement'];
   /**
-   * The distance between the popover and the hovered block.
+   * The distance between the popover and the text selection.
    *
-   * @default 4
+   * @default { mainAxis: 8, crossAxis: -4 }
    */
   offset?: AutocompletePositionerElementProps['offset'];
+  /**
+   * Whether to hide the floating element when the reference element or the
+   * floating element is fully clipped.
+   *
+   * @default true
+   */
+  hide?: AutocompletePositionerElementProps['hide'];
   /** @default true */
   inline?: AutocompletePositionerElementProps['inline'];
   /** @default true */
@@ -77,13 +84,6 @@ export interface AutocompletePositionerProps {
    * @default false
    */
   sameHeight?: AutocompletePositionerElementProps['sameHeight'];
-  /**
-   * Whether to hide the floating element when the reference element or the
-   * floating element is fully clipped.
-   *
-   * @default false
-   */
-  hide?: AutocompletePositionerElementProps['hide'];
   /**
    * Describes the root boundary that the element will be checked for overflow relative to.
    * Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.

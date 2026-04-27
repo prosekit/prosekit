@@ -27,82 +27,84 @@ export default function SlashMenu(props: Props) {
     >
       <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
-          <SlashMenuItem
-            label="Text"
-            onSelect={() => editor.commands.setParagraph()}
-          />
+          <div className="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+            <SlashMenuItem
+              label="Text"
+              onSelect={() => editor.commands.setParagraph()}
+            />
 
-          <SlashMenuItem
-            label="Heading 1"
-            kbd="#"
-            onSelect={() => editor.commands.setHeading({ level: 1 })}
-          />
+            <SlashMenuItem
+              label="Heading 1"
+              kbd="#"
+              onSelect={() => editor.commands.setHeading({ level: 1 })}
+            />
 
-          <SlashMenuItem
-            label="Heading 2"
-            kbd="##"
-            onSelect={() => editor.commands.setHeading({ level: 2 })}
-          />
+            <SlashMenuItem
+              label="Heading 2"
+              kbd="##"
+              onSelect={() => editor.commands.setHeading({ level: 2 })}
+            />
 
-          <SlashMenuItem
-            label="Heading 3"
-            kbd="###"
-            onSelect={() => editor.commands.setHeading({ level: 3 })}
-          />
+            <SlashMenuItem
+              label="Heading 3"
+              kbd="###"
+              onSelect={() => editor.commands.setHeading({ level: 3 })}
+            />
 
-          <SlashMenuItem
-            label="Bullet list"
-            kbd="-"
-            onSelect={() => editor.commands.wrapInList({ kind: 'bullet' })}
-          />
+            <SlashMenuItem
+              label="Bullet list"
+              kbd="-"
+              onSelect={() => editor.commands.wrapInList({ kind: 'bullet' })}
+            />
 
-          <SlashMenuItem
-            label="Ordered list"
-            kbd="1."
-            onSelect={() => editor.commands.wrapInList({ kind: 'ordered' })}
-          />
+            <SlashMenuItem
+              label="Ordered list"
+              kbd="1."
+              onSelect={() => editor.commands.wrapInList({ kind: 'ordered' })}
+            />
 
-          <SlashMenuItem
-            label="Task list"
-            kbd="[]"
-            onSelect={() => editor.commands.wrapInList({ kind: 'task' })}
-          />
+            <SlashMenuItem
+              label="Task list"
+              kbd="[]"
+              onSelect={() => editor.commands.wrapInList({ kind: 'task' })}
+            />
 
-          <SlashMenuItem
-            label="Toggle list"
-            kbd=">>"
-            onSelect={() => editor.commands.wrapInList({ kind: 'toggle' })}
-          />
+            <SlashMenuItem
+              label="Toggle list"
+              kbd=">>"
+              onSelect={() => editor.commands.wrapInList({ kind: 'toggle' })}
+            />
 
-          <SlashMenuItem
-            label="Quote"
-            kbd=">"
-            onSelect={() => editor.commands.setBlockquote()}
-          />
+            <SlashMenuItem
+              label="Quote"
+              kbd=">"
+              onSelect={() => editor.commands.setBlockquote()}
+            />
 
-          <SlashMenuItem
-            label="Table"
-            onSelect={() => editor.commands.insertTable({ row: 3, col: 3 })}
-          />
+            <SlashMenuItem
+              label="Table"
+              onSelect={() => editor.commands.insertTable({ row: 3, col: 3 })}
+            />
 
-          <SlashMenuItem
-            label="Divider"
-            kbd="---"
-            onSelect={() => editor.commands.insertHorizontalRule()}
-          />
+            <SlashMenuItem
+              label="Divider"
+              kbd="---"
+              onSelect={() => editor.commands.insertHorizontalRule()}
+            />
 
-          <SlashMenuItem
-            label="Code"
-            kbd="```"
-            onSelect={() => editor.commands.setCodeBlock()}
-          />
+            <SlashMenuItem
+              label="Code"
+              kbd="```"
+              onSelect={() => editor.commands.setCodeBlock()}
+            />
 
-          <SlashMenuItem
-            label="Image"
-            onSelect={() => editor.commands.insertImage({ src: '' })}
-          />
+            <SlashMenuItem
+              label="Image"
+              onSelect={() => editor.commands.insertImage({ src: '' })}
+            />
 
-          <SlashMenuEmpty />
+            <SlashMenuEmpty />
+          </div>
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

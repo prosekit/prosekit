@@ -24,7 +24,7 @@ export interface BlockHandleAddProps {
 
 /** @internal */
 export const BlockHandleAddPropsDeclaration: PropsDeclaration<BlockHandleAddProps> = /* @__PURE__ */ defineProps<BlockHandleAddProps>({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
 })
 
 /**

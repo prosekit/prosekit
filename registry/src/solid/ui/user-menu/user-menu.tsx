@@ -39,22 +39,24 @@ export default function UserMenu(props: {
     >
       <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
-          <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-            {props.loading ? 'Loading...' : 'No results'}
-          </AutocompleteEmpty>
+          <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+            <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+              {props.loading ? 'Loading...' : 'No results'}
+            </AutocompleteEmpty>
 
-          <For each={props.users}>
-            {(user) => (
-              <AutocompleteItem
-                class="CSS_AUTOCOMPLETE_MENU_ITEM"
-                onSelect={() => handleUserInsert(user.id, user.name)}
-              >
-                <span class={props.loading ? 'opacity-50' : undefined}>
-                  {user.name}
-                </span>
-              </AutocompleteItem>
-            )}
-          </For>
+            <For each={props.users}>
+              {(user) => (
+                <AutocompleteItem
+                  class="CSS_AUTOCOMPLETE_MENU_ITEM"
+                  onSelect={() => handleUserInsert(user.id, user.name)}
+                >
+                  <span class={props.loading ? 'opacity-50' : undefined}>
+                    {user.name}
+                  </span>
+                </AutocompleteItem>
+              )}
+            </For>
+          </div>
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

@@ -33,7 +33,7 @@ export interface TableHandleRootProps {
 
 /** @internal */
 export const TableHandleRootPropsDeclaration: PropsDeclaration<TableHandleRootProps> = defineProps<TableHandleRootProps>({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
 })
 
 /**

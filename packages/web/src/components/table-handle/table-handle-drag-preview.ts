@@ -30,7 +30,7 @@ export interface TableHandleDragPreviewProps {
 export const TableHandleDragPreviewPropsDeclaration: PropsDeclaration<TableHandleDragPreviewProps> = defineProps<
   TableHandleDragPreviewProps
 >({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
 })
 
 /**

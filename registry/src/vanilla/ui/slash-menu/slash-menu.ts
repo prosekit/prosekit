@@ -24,20 +24,24 @@ export function renderSlashMenu(
   const popup = document.createElement('prosekit-autocomplete-popup') as AutocompletePopupElement
   popup.className = 'CSS_AUTOCOMPLETE_POPUP'
 
-  popup.append(renderSlashMenuItem({ label: 'Text', kbd: undefined, onSelect: () => editor.commands.setParagraph() }))
-  popup.append(renderSlashMenuItem({ label: 'Heading 1', kbd: '#', onSelect: () => editor.commands.setHeading({ level: 1 }) }))
-  popup.append(renderSlashMenuItem({ label: 'Heading 2', kbd: '##', onSelect: () => editor.commands.setHeading({ level: 2 }) }))
-  popup.append(renderSlashMenuItem({ label: 'Heading 3', kbd: '###', onSelect: () => editor.commands.setHeading({ level: 3 }) }))
-  popup.append(renderSlashMenuItem({ label: 'Bullet list', kbd: '-', onSelect: () => editor.commands.wrapInList({ kind: 'bullet' }) }))
-  popup.append(renderSlashMenuItem({ label: 'Ordered list', kbd: '1.', onSelect: () => editor.commands.wrapInList({ kind: 'ordered' }) }))
-  popup.append(renderSlashMenuItem({ label: 'Task list', kbd: '[]', onSelect: () => editor.commands.wrapInList({ kind: 'task' }) }))
-  popup.append(renderSlashMenuItem({ label: 'Toggle list', kbd: '>>', onSelect: () => editor.commands.wrapInList({ kind: 'toggle' }) }))
-  popup.append(renderSlashMenuItem({ label: 'Quote', kbd: '>', onSelect: () => editor.commands.setBlockquote() }))
-  popup.append(renderSlashMenuItem({ label: 'Table', onSelect: () => editor.commands.insertTable({ row: 3, col: 3 }) }))
-  popup.append(renderSlashMenuItem({ label: 'Divider', kbd: '---', onSelect: () => editor.commands.insertHorizontalRule() }))
-  popup.append(renderSlashMenuItem({ label: 'Code', kbd: '```', onSelect: () => editor.commands.setCodeBlock() }))
-  popup.append(renderSlashMenuEmpty())
+  const content = document.createElement('div')
+  content.className = 'CSS_AUTOCOMPLETE_POPUP_CONTENT'
 
+  content.append(renderSlashMenuItem({ label: 'Text', kbd: undefined, onSelect: () => editor.commands.setParagraph() }))
+  content.append(renderSlashMenuItem({ label: 'Heading 1', kbd: '#', onSelect: () => editor.commands.setHeading({ level: 1 }) }))
+  content.append(renderSlashMenuItem({ label: 'Heading 2', kbd: '##', onSelect: () => editor.commands.setHeading({ level: 2 }) }))
+  content.append(renderSlashMenuItem({ label: 'Heading 3', kbd: '###', onSelect: () => editor.commands.setHeading({ level: 3 }) }))
+  content.append(renderSlashMenuItem({ label: 'Bullet list', kbd: '-', onSelect: () => editor.commands.wrapInList({ kind: 'bullet' }) }))
+  content.append(renderSlashMenuItem({ label: 'Ordered list', kbd: '1.', onSelect: () => editor.commands.wrapInList({ kind: 'ordered' }) }))
+  content.append(renderSlashMenuItem({ label: 'Task list', kbd: '[]', onSelect: () => editor.commands.wrapInList({ kind: 'task' }) }))
+  content.append(renderSlashMenuItem({ label: 'Toggle list', kbd: '>>', onSelect: () => editor.commands.wrapInList({ kind: 'toggle' }) }))
+  content.append(renderSlashMenuItem({ label: 'Quote', kbd: '>', onSelect: () => editor.commands.setBlockquote() }))
+  content.append(renderSlashMenuItem({ label: 'Table', onSelect: () => editor.commands.insertTable({ row: 3, col: 3 }) }))
+  content.append(renderSlashMenuItem({ label: 'Divider', kbd: '---', onSelect: () => editor.commands.insertHorizontalRule() }))
+  content.append(renderSlashMenuItem({ label: 'Code', kbd: '```', onSelect: () => editor.commands.setCodeBlock() }))
+  content.append(renderSlashMenuEmpty())
+
+  popup.append(content)
   positioner.append(popup)
   root.append(positioner)
 

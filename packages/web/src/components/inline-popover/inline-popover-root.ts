@@ -53,7 +53,7 @@ export const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRo
   InlinePopoverRootProps
 >({
   ...OverlayRootPropsDeclaration,
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
   defaultOpen: { default: true, attribute: 'default-open', type: 'boolean' },
   dismissOnEscape: { default: true, attribute: 'dismiss-on-escape', type: 'boolean' },
 })

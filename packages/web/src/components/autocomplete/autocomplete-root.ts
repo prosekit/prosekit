@@ -54,9 +54,9 @@ export interface AutocompleteRootProps {
 export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRootProps> = /* @__PURE__ */ defineProps<
   AutocompleteRootProps
 >({
-  editor: { default: null, attribute: false, type: 'json' },
-  regex: { default: null, attribute: false, type: 'json' },
-  filter: { default: defaultItemFilter, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
+  regex: { default: null, attribute: false },
+  filter: { default: defaultItemFilter, attribute: false },
 })
 
 /**

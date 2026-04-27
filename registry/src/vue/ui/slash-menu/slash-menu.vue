@@ -17,77 +17,79 @@ const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
   <AutocompleteRoot :regex="regex">
     <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
       <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
-        <SlashMenuItem
-          label="Text"
-          @select="() => editor.commands.setParagraph()"
-        />
+        <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+          <SlashMenuItem
+            label="Text"
+            @select="() => editor.commands.setParagraph()"
+          />
 
-        <SlashMenuItem
-          label="Heading 1"
-          kbd="#"
-          @select="() => editor.commands.setHeading({ level: 1 })"
-        />
+          <SlashMenuItem
+            label="Heading 1"
+            kbd="#"
+            @select="() => editor.commands.setHeading({ level: 1 })"
+          />
 
-        <SlashMenuItem
-          label="Heading 2"
-          kbd="##"
-          @select="() => editor.commands.setHeading({ level: 2 })"
-        />
+          <SlashMenuItem
+            label="Heading 2"
+            kbd="##"
+            @select="() => editor.commands.setHeading({ level: 2 })"
+          />
 
-        <SlashMenuItem
-          label="Heading 3"
-          kbd="###"
-          @select="() => editor.commands.setHeading({ level: 3 })"
-        />
+          <SlashMenuItem
+            label="Heading 3"
+            kbd="###"
+            @select="() => editor.commands.setHeading({ level: 3 })"
+          />
 
-        <SlashMenuItem
-          label="Bullet list"
-          kbd="-"
-          @select="() => editor.commands.wrapInList({ kind: 'bullet' })"
-        />
+          <SlashMenuItem
+            label="Bullet list"
+            kbd="-"
+            @select="() => editor.commands.wrapInList({ kind: 'bullet' })"
+          />
 
-        <SlashMenuItem
-          label="Ordered list"
-          kbd="1."
-          @select="() => editor.commands.wrapInList({ kind: 'ordered' })"
-        />
+          <SlashMenuItem
+            label="Ordered list"
+            kbd="1."
+            @select="() => editor.commands.wrapInList({ kind: 'ordered' })"
+          />
 
-        <SlashMenuItem
-          label="Task list"
-          kbd="[]"
-          @select="() => editor.commands.wrapInList({ kind: 'task' })"
-        />
+          <SlashMenuItem
+            label="Task list"
+            kbd="[]"
+            @select="() => editor.commands.wrapInList({ kind: 'task' })"
+          />
 
-        <SlashMenuItem
-          label="Toggle list"
-          kbd=">>"
-          @select="() => editor.commands.wrapInList({ kind: 'toggle' })"
-        />
+          <SlashMenuItem
+            label="Toggle list"
+            kbd=">>"
+            @select="() => editor.commands.wrapInList({ kind: 'toggle' })"
+          />
 
-        <SlashMenuItem
-          label="Quote"
-          kbd=">"
-          @select="() => editor.commands.setBlockquote()"
-        />
+          <SlashMenuItem
+            label="Quote"
+            kbd=">"
+            @select="() => editor.commands.setBlockquote()"
+          />
 
-        <SlashMenuItem
-          label="Table"
-          @select="() => editor.commands.insertTable({ row: 3, col: 3 })"
-        />
+          <SlashMenuItem
+            label="Table"
+            @select="() => editor.commands.insertTable({ row: 3, col: 3 })"
+          />
 
-        <SlashMenuItem
-          label="Divider"
-          kbd="---"
-          @select="() => editor.commands.insertHorizontalRule()"
-        />
+          <SlashMenuItem
+            label="Divider"
+            kbd="---"
+            @select="() => editor.commands.insertHorizontalRule()"
+          />
 
-        <SlashMenuItem
-          label="Code"
-          kbd="```"
-          @select="() => editor.commands.setCodeBlock()"
-        />
+          <SlashMenuItem
+            label="Code"
+            kbd="```"
+            @select="() => editor.commands.setCodeBlock()"
+          />
 
-        <SlashMenuEmpty />
+          <SlashMenuEmpty />
+        </div>
       </AutocompletePopup>
     </AutocompletePositioner>
   </AutocompleteRoot>

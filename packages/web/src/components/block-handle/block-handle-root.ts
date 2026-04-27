@@ -18,6 +18,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { useScrolling } from '../../hooks/use-scrolling.ts'
 
 import { blockHandleOverlayStoreContext, BlockHandleStore, blockHandleStoreContext } from './context.ts'
+import { useHasTextSelection } from './use-has-text-selection.ts'
 import { useHoverExtension } from './use-hover-extension.ts'
 
 export interface BlockHandleRootProps {
@@ -34,7 +35,7 @@ export interface BlockHandleRootProps {
 export const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootProps> = /* @__PURE__ */ defineProps<
   BlockHandleRootProps
 >({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
 })
 
 /**
@@ -75,8 +76,10 @@ export function setupBlockHandleRoot(
 
   const reference = createSignal<VirtualElement | undefined>(undefined)
   const getScrolling = useScrolling(host)
+  // Hide the block handle when there is a text selection to avoid the block handle overlapping with inline menu
+  const getHasTextSelection = useHasTextSelection(host, getEditor)
 
-  const getOpen = computed(() => !!store.hoverState.get() && !getScrolling())
+  const getOpen = computed(() => !!store.hoverState.get() && !getScrolling() && !getHasTextSelection())
 
   const overlayStore = createOverlayStore(
     getOpen,

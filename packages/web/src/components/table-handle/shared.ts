@@ -52,10 +52,10 @@ export const SharedTableHandlePositionerPropsDeclaration: PropsDeclaration<Share
   SharedTableHandlePositionerProps
 >({
   ...OverlayPositionerPropsDeclaration,
-  editor: { default: null, attribute: false, type: 'json' },
-  hoist: { default: false, attribute: false, type: 'boolean' },
-  flip: { default: false, attribute: false, type: 'json' },
-  shift: { default: false, attribute: false, type: 'boolean' },
-  hide: { default: true, attribute: false, type: 'boolean' },
-  offset: { default: 0, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
+  hoist: { default: false, attribute: false },
+  flip: { default: false, attribute: false },
+  shift: { default: false, attribute: false },
+  hide: { default: true, attribute: false },
+  offset: { default: 0, attribute: false },
 })

@@ -59,7 +59,7 @@ export const BlockHandlePositionerPropsDeclaration: PropsDeclaration<BlockHandle
   // Enabling `hoist` will cause the popover to have a small delay when
   // scrolling the page.
   hoist: { default: false, attribute: 'hoist', type: 'boolean' },
-  flip: { default: false, attribute: false, type: 'json' },
+  flip: { default: false, attribute: false },
   shift: { default: false, attribute: 'shift', type: 'boolean' },
   hide: { default: true, attribute: 'hide', type: 'boolean' },
 })

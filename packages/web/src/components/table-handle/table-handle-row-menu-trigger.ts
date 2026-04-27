@@ -31,7 +31,7 @@ export interface TableHandleRowMenuTriggerProps {
 export const TableHandleRowMenuTriggerPropsDeclaration: PropsDeclaration<TableHandleRowMenuTriggerProps> = defineProps<
   TableHandleRowMenuTriggerProps
 >({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
 })
 
 /** @internal */

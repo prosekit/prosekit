@@ -34,18 +34,20 @@ const regex = /#[\da-z]*$/i
 <AutocompleteRoot {regex}>
   <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
     <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
-      <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-        No results
-      </AutocompleteEmpty>
+      <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+        <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+          No results
+        </AutocompleteEmpty>
 
-      {#each props.tags as tag (tag.id)}
-        <AutocompleteItem
-          class="CSS_AUTOCOMPLETE_MENU_ITEM"
-          onSelect={() => handleTagInsert(tag.id, tag.label)}
-        >
-          #{tag.label}
-        </AutocompleteItem>
-      {/each}
+        {#each props.tags as tag (tag.id)}
+          <AutocompleteItem
+            class="CSS_AUTOCOMPLETE_MENU_ITEM"
+            onSelect={() => handleTagInsert(tag.id, tag.label)}
+          >
+            #{tag.label}
+          </AutocompleteItem>
+        {/each}
+      </div>
     </AutocompletePopup>
   </AutocompletePositioner>
 </AutocompleteRoot>

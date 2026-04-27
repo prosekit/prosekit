@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@aria-ui/core": "^0.2.0",
-    "@aria-ui/elements": "^0.1.8",
+    "@aria-ui/elements": "^0.1.9",
     "@aria-ui/utils": "^0.1.5",
     "@floating-ui/dom": "^1.7.6",
     "@ocavue/utils": "^1.6.0",

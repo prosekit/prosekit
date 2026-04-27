@@ -30,19 +30,21 @@ export default function TagMenu(props: { tags: { id: number; label: string }[] }
     <AutocompleteRoot regex={regex}>
       <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
         <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
-          <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
-            No results
-          </AutocompleteEmpty>
+          <div className="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+            <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
+              No results
+            </AutocompleteEmpty>
 
-          {props.tags.map((tag) => (
-            <AutocompleteItem
-              key={tag.id}
-              className="CSS_AUTOCOMPLETE_MENU_ITEM"
-              onSelect={() => handleTagInsert(tag.id, tag.label)}
-            >
-              #{tag.label}
-            </AutocompleteItem>
-          ))}
+            {props.tags.map((tag) => (
+              <AutocompleteItem
+                key={tag.id}
+                className="CSS_AUTOCOMPLETE_MENU_ITEM"
+                onSelect={() => handleTagInsert(tag.id, tag.label)}
+              >
+                #{tag.label}
+              </AutocompleteItem>
+            ))}
+          </div>
         </AutocompletePopup>
       </AutocompletePositioner>
     </AutocompleteRoot>

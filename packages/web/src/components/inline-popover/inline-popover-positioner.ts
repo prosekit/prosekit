@@ -86,7 +86,7 @@ export const InlinePopoverPositionerPropsDeclaration: PropsDeclaration<InlinePop
 >({
   ...OverlayPositionerPropsDeclaration,
   placement: { default: 'top', attribute: 'placement', type: 'string' },
-  offset: { default: 12, attribute: false, type: 'json' },
+  offset: { default: 12, attribute: false },
   hide: { default: true, attribute: 'hide', type: 'boolean' },
   hoist: { default: false, attribute: 'hoist', type: 'boolean' },
   overlap: { default: true, attribute: 'overlap', type: 'boolean' },

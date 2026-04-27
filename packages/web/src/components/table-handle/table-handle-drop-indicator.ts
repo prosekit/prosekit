@@ -35,7 +35,7 @@ export interface TableHandleDropIndicatorProps {
 export const TableHandleDropIndicatorPropsDeclaration: PropsDeclaration<TableHandleDropIndicatorProps> = defineProps<
   TableHandleDropIndicatorProps
 >({
-  editor: { default: null, attribute: false, type: 'json' },
+  editor: { default: null, attribute: false },
 })
 
 /**

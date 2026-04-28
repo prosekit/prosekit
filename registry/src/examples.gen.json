@@ -2475,6 +2475,20 @@
         "registry/src/vue/ui/toolbar/toolbar.vue"
       ]
     },
+    "lit-example-block-handle": {
+      "story": "block-handle",
+      "files": [
+        "registry/src/lit/examples/block-handle/editor.ts",
+        "registry/src/lit/examples/block-handle/extension.ts",
+        "registry/src/lit/examples/block-handle/index.ts",
+        "registry/src/lit/sample/sample-doc-block-handle.ts",
+        "registry/src/lit/ui/block-handle/block-handle.ts",
+        "registry/src/lit/ui/block-handle/index.ts",
+        "registry/src/lit/ui/drop-indicator/drop-indicator.ts",
+        "registry/src/lit/ui/drop-indicator/index.ts",
+        "registry/src/lit/ui/editor-context.ts"
+      ]
+    },
     "lit-example-code-block": {
       "story": "code-block",
       "files": [

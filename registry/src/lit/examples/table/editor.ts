@@ -6,7 +6,7 @@ import '../../ui/table-handle/index'
 import { ContextProvider } from '@lit/context'
 import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
-import type { Editor } from 'prosekit/core'
+import type { Editor, NodeJSON } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
 import { sampleContent } from '../../sample/sample-doc-table'
@@ -16,30 +16,47 @@ import { defineExtension } from './extension'
 
 export class LitEditor extends LitElement {
   static override properties = {
-    editor: { state: true, attribute: false } satisfies PropertyDeclaration<Editor>,
+    initialContent: { attribute: false } satisfies PropertyDeclaration<NodeJSON | undefined>,
   }
 
-  private editor: Editor
+  initialContent?: NodeJSON
+
+  private editor?: Editor
   private ref: Ref<HTMLDivElement>
+
   constructor() {
     super()
-
-    const extension = defineExtension()
-    this.editor = createEditor({ extension, defaultContent: sampleContent })
     this.ref = createRef<HTMLDivElement>()
-    new ContextProvider(this, {
-      context: editorContext,
-      initialValue: this.editor,
-    })
   }
 
   override createRenderRoot() {
     return this
   }
 
+  override disconnectedCallback() {
+    this.editor?.unmount()
+    super.disconnectedCallback()
+  }
+
+  override willUpdate() {
+    if (this.editor) {
+      return
+    }
+
+    const extension = defineExtension()
+    this.editor = createEditor({
+      extension,
+      defaultContent: this.initialContent ?? sampleContent,
+    })
+    new ContextProvider(this, {
+      context: editorContext,
+      initialValue: this.editor,
+    })
+  }
+
   override updated(changedProperties: PropertyValues) {
     super.updated(changedProperties)
-    this.editor.mount(this.ref.value)
+    this.editor?.mount(this.ref.value)
   }
 
   override render() {

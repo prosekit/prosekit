@@ -284,7 +284,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
-    "loro-crdt": "^1.11.1",
+    "loro-crdt": "^1.12.0",
     "loro-prosemirror": "^0.4.3",
     "obug": "^2.1.1",
     "preact": "^10.29.1",

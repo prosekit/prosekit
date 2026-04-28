@@ -47,14 +47,14 @@
     "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.54.0",
     "eslint": "^10.2.1",
-    "knip": "^6.6.2",
+    "knip": "^6.7.0",
     "monorepo-typescript-references": "^1.1.1",
-    "oxfmt": "^0.46.0",
+    "oxfmt": "^0.47.0",
     "playwright": "^1.59.1",
     "size-limit": "^12.1.0",
     "turbo": "^2.9.6",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.84.1"
+    "wrangler": "^4.85.0"
   }
 }

@@ -13,6 +13,11 @@ export class LitBlockHandle extends LitElement {
     subscribe: true,
   })
 
+  override connectedCallback() {
+    super.connectedCallback()
+    this.classList.add('contents')
+  }
+
   override createRenderRoot() {
     return this
   }

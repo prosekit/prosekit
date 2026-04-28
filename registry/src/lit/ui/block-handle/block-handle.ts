@@ -5,6 +5,7 @@ import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
+/** @public */
 export class LitBlockHandle extends LitElement {
   declare dir: 'ltr' | 'rtl' | 'auto'
 
@@ -27,7 +28,7 @@ export class LitBlockHandle extends LitElement {
     const editor = this._editorConsumer.value ?? null
 
     return html`<prosekit-block-handle-root .editor=${editor}>
-      <prosekit-block-handle-positioner placement=${placement} class="CSS_BLOCK_HANDLE_POSITIONER">
+      <prosekit-block-handle-positioner .placement=${placement} class="CSS_BLOCK_HANDLE_POSITIONER">
         <prosekit-block-handle-popup class="CSS_BLOCK_HANDLE_POPUP">
           <prosekit-block-handle-add .editor=${editor} class="CSS_BLOCK_HANDLE_ADD">
             <div class="CSS_ICON_PLUS"></div>

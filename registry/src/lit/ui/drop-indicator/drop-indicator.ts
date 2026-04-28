@@ -1,13 +1,7 @@
 import 'prosekit/lit/drop-indicator'
 
 import { ContextConsumer } from '@lit/context'
-import {
-  html,
-  LitElement,
-  type PropertyDeclaration,
-  type PropertyValues,
-} from 'lit'
-import type { Editor } from 'prosekit/core'
+import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
@@ -19,15 +13,6 @@ export class LitDropIndicator extends LitElement {
 
   override createRenderRoot() {
     return this
-  }
-
-  override updated(changedProperties: PropertyValues) {
-    super.updated(changedProperties)
-    // Force the prosekit-drop-indicator to update when editor becomes available
-    const dropIndicator = this.querySelector('prosekit-drop-indicator')
-    if (dropIndicator && this._editorConsumer.value) {
-      ;(dropIndicator as any).editor = this._editorConsumer.value
-    }
   }
 
   override render() {

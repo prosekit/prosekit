@@ -1,22 +1,12 @@
 import 'prosekit/lit/block-handle'
 
 import { ContextConsumer } from '@lit/context'
-import {
-  html,
-  LitElement,
-  type PropertyDeclaration,
-  type PropertyValues,
-} from 'lit'
-import type { Editor } from 'prosekit/core'
+import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
 export class LitBlockHandle extends LitElement {
-  static override properties = {
-    dir: { type: String } satisfies PropertyDeclaration<'ltr' | 'rtl'>,
-  }
-
-  dir?: 'ltr' | 'rtl'
+  override dir: 'ltr' | 'rtl' = 'ltr'
 
   private _editorConsumer = new ContextConsumer(this, {
     context: editorContext,
@@ -31,24 +21,13 @@ export class LitBlockHandle extends LitElement {
     const placement = this.dir === 'rtl' ? 'right' : 'left'
     const editor = this._editorConsumer.value ?? null
 
-    return html`<prosekit-block-handle-root
-      .editor=${editor}
-    >
-      <prosekit-block-handle-positioner
-        placement=${placement}
-        class="CSS_BLOCK_HANDLE_POSITIONER"
-      >
+    return html`<prosekit-block-handle-root .editor=${editor}>
+      <prosekit-block-handle-positioner placement=${placement} class="CSS_BLOCK_HANDLE_POSITIONER">
         <prosekit-block-handle-popup class="CSS_BLOCK_HANDLE_POPUP">
-          <prosekit-block-handle-add
-            .editor=${editor}
-            class="CSS_BLOCK_HANDLE_ADD"
-          >
+          <prosekit-block-handle-add .editor=${editor} class="CSS_BLOCK_HANDLE_ADD">
             <div class="CSS_ICON_PLUS"></div>
           </prosekit-block-handle-add>
-          <prosekit-block-handle-draggable
-            .editor=${editor}
-            class="CSS_BLOCK_HANDLE_DRAG"
-          >
+          <prosekit-block-handle-draggable .editor=${editor} class="CSS_BLOCK_HANDLE_DRAG">
             <div class="CSS_ICON_DRAG_HANDLE"></div>
           </prosekit-block-handle-draggable>
         </prosekit-block-handle-popup>

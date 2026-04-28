@@ -71,7 +71,7 @@ async function renderExample(framework: string, story: string, initialContent?: 
 
   if (framework === 'lit') {
     const { renderLitExample } = await import('./render-lit')
-    return await renderLitExample(story)
+    return await renderLitExample(story, initialContent)
   }
 
   if (framework === 'vanilla') {

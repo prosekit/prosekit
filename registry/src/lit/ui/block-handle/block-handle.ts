@@ -6,7 +6,7 @@ import { html, LitElement } from 'lit'
 import { editorContext } from '../editor-context'
 
 export class LitBlockHandle extends LitElement {
-  override dir: 'ltr' | 'rtl' = 'ltr'
+  declare dir: 'ltr' | 'rtl' | 'auto'
 
   private _editorConsumer = new ContextConsumer(this, {
     context: editorContext,

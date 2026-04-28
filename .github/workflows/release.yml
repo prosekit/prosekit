@@ -8,8 +8,28 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
+  detect:
+    name: Detect changes
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      registry: ${{ steps.filter.outputs.registry }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - id: filter
+        uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+        with:
+          filters: |
+            registry:
+              - 'registry/src/**'
+
   prepare:
     name: Prepare
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -29,8 +49,9 @@ jobs:
 
   publish:
     name: Publish
+    needs: detect
     permissions:
-      contents: write
+      contents: read
       id-token: write
     runs-on: ubuntu-latest
     steps:
@@ -38,26 +59,43 @@ jobs:
 
       - uses: ./.github/actions/setup
 
+      - name: Update registry version
+        if: needs.detect.outputs.registry == 'true'
+        run: |
+          cd registry
+          VERSION="0.0.$(date -u +%Y%m%d%H%M%S)"
+          echo "Setting registry version to ${VERSION}"
+          npm pkg set version="${VERSION}"
+
       - name: Build packages
         run: pnpm build:package
 
       - name: Publish to NPM
         run: |
-          if [ -f .changeset/pre.json ];
-          then pnpm ci:publish:beta;
-          else pnpm ci:publish:latest;
+          if [ -f .changeset/pre.json ]; then
+            pnpm ci:publish:beta
+          else
+            pnpm ci:publish:latest
           fi
 
-      - name: Get package version
-        run: |
-          PROSEKIT_VERSION=$(jq -r ".version" packages/prosekit/package.json)
-          echo "PROSEKIT_RELEASE_TAG=v${PROSEKIT_VERSION}" >> "$GITHUB_ENV"
+  github-release:
+    name: Create GitHub release
+    needs: publish
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - name: Create GitHub release
-        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
+      - name: Read release tag
+        run: |
+          v=$(jq -r .version packages/prosekit/package.json)
+          echo "RELEASE_TAG=v${v}" >> "$GITHUB_ENV"
+
+      - uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
-          commit: master
-          tag: "${{ env.PROSEKIT_RELEASE_TAG }}"
-          body: "Please refer to [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/${{ env.PROSEKIT_RELEASE_TAG }}/packages/prosekit/CHANGELOG.md) for details."
+          commit: ${{ github.sha }}
+          tag: ${{ env.RELEASE_TAG }}
+          body: "Please refer to [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/${{ env.RELEASE_TAG }}/packages/prosekit/CHANGELOG.md) for details."
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true

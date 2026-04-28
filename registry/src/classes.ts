@@ -8,18 +8,15 @@ function cn(...args: Array<string | undefined | null | false>): string {
 const CSS_BUTTON_BASE = cn(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
-
 const CSS_BUTTON_VARIANT_PRIMARY = cn(
   'bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90',
 )
-
 const CSS_BUTTON_VARIANT_SECONDARY = cn(
   'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 hover:bg-gray-100/80 dark:hover:bg-gray-800/80',
 )
 
 const CSS_BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
 const CSS_BUTTON_SIZE_SM = 'h-9 px-3'
-// const CSS_BUTTON_SIZE_LG = 'h-1 px-8'
 const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const CSS_INPUT = cn(

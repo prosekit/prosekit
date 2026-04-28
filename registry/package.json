@@ -15,6 +15,7 @@
   "exports": {
     "./examples.gen.json": "./src/examples.gen.json",
     "./lit/examples/block-handle": "./src/lit/examples/block-handle/index.ts",
+    "./lit/examples/code-block": "./src/lit/examples/code-block/index.ts",
     "./lit/examples/minimal": "./src/lit/examples/minimal/index.ts",
     "./lit/examples/slash-menu": "./src/lit/examples/slash-menu/index.ts",
     "./lit/examples/table": "./src/lit/examples/table/index.ts",
@@ -284,7 +285,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
-    "loro-crdt": "^1.11.1",
+    "loro-crdt": "^1.12.0",
     "loro-prosemirror": "^0.4.3",
     "obug": "^2.1.1",
     "preact": "^10.29.1",

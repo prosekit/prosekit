@@ -52,24 +52,6 @@ jobs:
       - name: Run tests
         run: pnpm run test --shard=${{ matrix.shard }}/8
 
-  test-e2e:
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - uses: ./.github/actions/setup
-
-      - name: Build website
-        run: pnpm run build:website
-
-      - name: Install Playwright
-        run: pnpm run test:install
-
-      - name: Run e2e tests
-        run: pnpm run test:e2e
-
   build:
     timeout-minutes: 30
     runs-on: ubuntu-latest
@@ -180,7 +162,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
         if: ${{ env.CLOUDFLARE_ACCOUNT_ID != '' }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}

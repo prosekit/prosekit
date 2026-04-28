@@ -11,8 +11,5 @@ const props: Props = $props()
 </script>
 
 <AutocompleteItem class="CSS_AUTOCOMPLETE_MENU_ITEM" onSelect={props.onSelect}>
-  <span>{props.label}</span>
-  {#if props.kbd}
-    <kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">{props.kbd}</kbd>
-  {/if}
+  <span>{props.label}</span>{#if props.kbd}<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">{props.kbd}</kbd>{/if}
 </AutocompleteItem>

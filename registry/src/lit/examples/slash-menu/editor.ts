@@ -3,10 +3,13 @@ import 'prosekit/basic/typography.css'
 
 import '../../ui/slash-menu/index'
 
+import { ContextProvider } from '@lit/context'
 import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
+
+import { editorContext } from '../../ui/editor-context'
 
 import { defineExtension } from './extension'
 
@@ -20,13 +23,16 @@ export class LitEditor extends LitElement {
 
   private editor: Editor
   private ref: Ref<HTMLDivElement>
-
   constructor() {
     super()
 
     const extension = defineExtension()
     this.editor = createEditor({ extension })
     this.ref = createRef<HTMLDivElement>()
+    new ContextProvider(this, {
+      context: editorContext,
+      initialValue: this.editor,
+    })
   }
 
   override createRenderRoot() {
@@ -47,10 +53,7 @@ export class LitEditor extends LitElement {
     return html`<div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
         <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
-        <lit-editor-slash-menu
-          .editor=${this.editor}
-          style="display: contents;"
-        ></lit-editor-slash-menu>
+        <lit-editor-slash-menu style="display: contents;"></lit-editor-slash-menu>
       </div>
     </div>`
   }

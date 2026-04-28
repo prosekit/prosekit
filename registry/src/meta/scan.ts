@@ -4,10 +4,14 @@ import { once } from '@ocavue/utils'
 import { vfs } from '@prosekit/dev'
 import { parseImportsExports, type ImportsExports } from 'parse-imports-exports'
 
+import { version as prosekitVersion } from '../../../packages/prosekit/package.json'
+
 import { debug } from './debug'
-import { loadStoryMeta, type StoryMeta } from './story-meta'
+import { storyMeta } from './story-meta'
 import type { Framework, ItemAccumulator, ItemCategory } from './types'
 import { FRAMEWORKS, REGISTRY_SRC_DIR } from './types'
+
+const REGISTRY_BASE_URL = 'https://unpkg.com/prosekit-registry/dist/r'
 
 const REGISTRY_FRAMEWORK_DIR: Record<Framework, string> = {
   react: path.join(REGISTRY_SRC_DIR, 'react'),
@@ -116,7 +120,6 @@ function createItemAccumulator(
   framework: Framework,
   category: ItemCategory,
   slug: string,
-  storyMeta: StoryMeta,
 ): ItemAccumulator {
   const name = toItemName(framework, category, slug)
   const story = category === 'example' ? slug : ''
@@ -335,7 +338,6 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
   const itemsByName = new Map<string, ItemAccumulator>()
   const fileToItemName = new Map<string, string>()
-  const storyMeta = await loadStoryMeta()
 
   for (const filePath of registryFiles) {
     const classification = classifyRegistryFile(filePath)
@@ -349,7 +351,7 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
 
     let item = itemsByName.get(name)
     if (!item) {
-      item = createItemAccumulator(framework, category, slug, storyMeta)
+      item = createItemAccumulator(framework, category, slug)
       itemsByName.set(name, item)
     }
 
@@ -391,12 +393,12 @@ async function scanRegistryImpl(): Promise<ItemAccumulator[]> {
           continue
         }
 
-        item.registryDependencies.add(`https://prosekit.dev/r/${targetItemName}.json`)
+        item.registryDependencies.add(`${REGISTRY_BASE_URL}/${targetItemName}.json`)
         item.meta.internalDependencies.add(targetItemName)
       } else {
         const dependency = normalizeExternalDependency(specifier)
         if (dependency) {
-          item.dependencies.add(dependency)
+          item.dependencies.add(dependency === 'prosekit' ? `prosekit@^${prosekitVersion}` : dependency)
         }
       }
     }

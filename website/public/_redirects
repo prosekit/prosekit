@@ -2,6 +2,8 @@
 # https://developers.cloudflare.com/pages/configuration/redirects/
 
 /chat                https://discord.gg/nzBgtm5ryH
+/github              https://github.com/prosekit/prosekit
+/changelog           https://github.com/prosekit/prosekit/blob/master/packages/prosekit/CHANGELOG.md
 
 /b/prosekit          https://img.shields.io/badge/prosekit-444444?style=flat-square&logoColor=ffffff
 /b/pm                https://img.shields.io/badge/prosekit%2Fpm-444444?style=flat-square&logoColor=ffffff
@@ -16,5 +18,6 @@
 /b/svelte            https://img.shields.io/badge/prosekit%2Fsvelte-444444?style=flat-square&logoColor=ffffff&logo=svelte
 /b/web               https://img.shields.io/badge/prosekit%2Fweb-444444?style=flat-square&logoColor=ffffff&logo=webcomponentsdotorg
 
-/r                   /r/registry.json
-/r/                  /r/registry.json
+/r                   https://unpkg.com/prosekit-registry/dist/r/registry.json
+/r/                  https://unpkg.com/prosekit-registry/dist/r/registry.json
+/r/*                 https://unpkg.com/prosekit-registry/dist/r/:splat

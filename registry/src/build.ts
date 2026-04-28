@@ -11,7 +11,7 @@ async function build() {
 
   debug('build start')
   const items = await scanRegistry()
-  updateRegistry(items, 'registry/dist/r/registry.json')
+  updateRegistry(items)
   await updateRegistryItems(items, 'registry/dist/r/', replaceClassNames)
 
   debug('commit start')

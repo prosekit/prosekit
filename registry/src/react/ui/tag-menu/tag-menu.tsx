@@ -1,8 +1,16 @@
+'use client'
+
 import type { BasicExtension } from 'prosekit/basic'
 import type { Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/react'
-import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/react/autocomplete'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompletePopup,
+  AutocompletePositioner,
+  AutocompleteRoot,
+} from 'prosekit/react/autocomplete'
 
 const regex = /#[\da-z]*$/i
 
@@ -19,25 +27,26 @@ export default function TagMenu(props: { tags: { id: number; label: string }[] }
   }
 
   return (
-    <AutocompletePopover
-      regex={regex}
-      className="CSS_AUTOCOMPLETE_MENU"
-    >
-      <AutocompleteList>
-        <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
-          No results
-        </AutocompleteEmpty>
+    <AutocompleteRoot regex={regex}>
+      <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
+        <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
+          <div className="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+            <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
+              No results
+            </AutocompleteEmpty>
 
-        {props.tags.map((tag) => (
-          <AutocompleteItem
-            key={tag.id}
-            className="CSS_AUTOCOMPLETE_MENU_ITEM"
-            onSelect={() => handleTagInsert(tag.id, tag.label)}
-          >
-            #{tag.label}
-          </AutocompleteItem>
-        ))}
-      </AutocompleteList>
-    </AutocompletePopover>
+            {props.tags.map((tag) => (
+              <AutocompleteItem
+                key={tag.id}
+                className="CSS_AUTOCOMPLETE_MENU_ITEM"
+                onSelect={() => handleTagInsert(tag.id, tag.label)}
+              >
+                #{tag.label}
+              </AutocompleteItem>
+            ))}
+          </div>
+        </AutocompletePopup>
+      </AutocompletePositioner>
+    </AutocompleteRoot>
   )
 }

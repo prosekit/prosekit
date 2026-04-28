@@ -1,1 +1,1 @@
-Please read CONTRIBUTING.md for more information.
+Please read CONTRIBUTING.md and registry/CONTRIBUTING.md for more information.

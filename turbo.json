@@ -3,7 +3,7 @@
   "globalDependencies": ["tsconfig.json"],
   "tasks": {
     "build": {
-      "dependsOn": ["gen", "^build", "build:tsc", "build:tsdown"],
+      "dependsOn": ["gen", "^build", "build:tsc", "build:tsdown", "build:aria-ui"],
       "inputs": ["src/", "public/", "*.ts", "*.js"],
       "outputs": ["dist/", "lib/"],
       "outputLogs": "new-only"
@@ -19,10 +19,14 @@
       "outputs": ["dist/"],
       "outputLogs": "new-only"
     },
+    "build:aria-ui": {
+      "dependsOn": ["^build", "build:tsdown"],
+      "inputs": ["src/", "public/", "*.ts", "*.js"],
+      "outputs": ["dist/"],
+      "outputLogs": "new-only"
+    },
     "gen": {
       "dependsOn": ["^gen"],
-      "inputs": ["src/"],
-      "outputs": ["../*/tsconfig.json", "./src/*.gen.*"],
       "outputLogs": "new-only"
     }
   }

@@ -3,7 +3,7 @@ import type { BasicExtension } from 'prosekit/basic'
 import type { Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/vue'
-import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/vue/autocomplete'
+import { AutocompleteEmpty, AutocompleteItem, AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/vue/autocomplete'
 
 const props = defineProps<{ tags: { id: number; label: string }[] }>()
 
@@ -22,23 +22,24 @@ const regex = /#[\da-z]*$/i
 </script>
 
 <template>
-  <AutocompletePopover
-    :regex="regex"
-    class="CSS_AUTOCOMPLETE_MENU"
-  >
-    <AutocompleteList>
-      <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-        No results
-      </AutocompleteEmpty>
+  <AutocompleteRoot :regex="regex">
+    <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
+      <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
+        <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+          <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+            No results
+          </AutocompleteEmpty>
 
-      <AutocompleteItem
-        v-for="tag in props.tags"
-        :key="tag.id"
-        class="CSS_AUTOCOMPLETE_MENU_ITEM"
-        @select="() => handleTagInsert(tag.id, tag.label)"
-      >
-        #{{ tag.label }}
-      </AutocompleteItem>
-    </AutocompleteList>
-  </AutocompletePopover>
+          <AutocompleteItem
+            v-for="tag in props.tags"
+            :key="tag.id"
+            class="CSS_AUTOCOMPLETE_MENU_ITEM"
+            @select="() => handleTagInsert(tag.id, tag.label)"
+          >
+            #{{ tag.label }}
+          </AutocompleteItem>
+        </div>
+      </AutocompletePopup>
+    </AutocompletePositioner>
+  </AutocompleteRoot>
 </template>

@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import YAML from 'js-yaml'
 import JSON5 from 'json5'
 
 import { removePath, writeJson, writeText } from './file-utils'
@@ -51,15 +50,6 @@ export class VirtualFile {
   }
 
   /**
-   * Reads and parses the file as YAML.
-   */
-  async readYAML<T = unknown>(): Promise<T> {
-    const text = await this.read()
-    const parsed = YAML.load(text)
-    return parsed as T
-  }
-
-  /**
    * Marks the file as deleted.
    */
   delete(): void {
@@ -82,13 +72,6 @@ export class VirtualFile {
    */
   updateJSON(json: unknown): void {
     this.update(JSON.stringify(json, null, 2) + '\n')
-  }
-
-  /**
-   * Serializes and stores YAML data.
-   */
-  updateYAML(yaml: unknown, options?: YAML.DumpOptions): void {
-    this.update(YAML.dump(yaml, options))
   }
 
   /**

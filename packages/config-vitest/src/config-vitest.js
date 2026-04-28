@@ -15,6 +15,7 @@ function getDefaultConfig() {
     test: {
       maxWorkers: process.env.CI ? 1 : 2,
       retry: process.env.CI ? 2 : 0,
+      bail: process.env.CI ? 0 : 1,
       setupFiles: [path.join(import.meta.dirname, 'setup-vitest.js')],
       browser: {
         enabled: true,

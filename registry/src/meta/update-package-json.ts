@@ -26,7 +26,7 @@ export async function updatePackageJSON(items: ItemAccumulator[]): Promise<void>
   const exports: Record<string, unknown> = {
     './vite-plugin-class-replace': './src/meta/vite-plugin-class-replace.ts',
     './replace-class-names': './src/meta/replace-classes.ts',
-    './registry.gen.json': './src/registry.gen.json',
+    './examples.gen.json': './src/examples.gen.json',
   }
   for (const framework of FRAMEWORKS) {
     exports[`./${framework}/renderer`] = `./src/${framework}/renderer.ts`

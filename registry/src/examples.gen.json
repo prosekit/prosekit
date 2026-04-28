@@ -1,0 +1,3785 @@
+{
+  "stories": {
+    "block-handle": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "A handle that appears on hover, allowing you to drag and re-order blocks."
+    },
+    "blockquote": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for blockquote node."
+    },
+    "bold": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for bold mark."
+    },
+    "change-tracking": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Track and commit document changes with version history."
+    },
+    "code": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for inline code mark."
+    },
+    "code-block": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for code block node with syntax highlighting."
+    },
+    "code-block-themes": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Code block with multiple syntax highlighting themes."
+    },
+    "drop-cursor": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Visual cursor indicator during drag-and-drop operations."
+    },
+    "emoji-rules": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Auto-convert text shortcuts to emojis using input rules."
+    },
+    "full": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Full-featured editor with most available features enabled."
+    },
+    "gap-cursor": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Cursor navigation between non-text block elements."
+    },
+    "hard-break": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for hard line break node."
+    },
+    "heading": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for heading node with multiple levels."
+    },
+    "horizontal-rule": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for horizontal rule node."
+    },
+    "image-view": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Custom image node views with resize support."
+    },
+    "inline-menu": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Inline formatting menu that appears on text selection."
+    },
+    "italic": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for italic mark."
+    },
+    "keymap": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Custom keyboard shortcuts and key bindings."
+    },
+    "link": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for link mark with URL input."
+    },
+    "link-mark-view": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "An example showing how to render a mark as a custom component."
+    },
+    "list": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for list node."
+    },
+    "list-custom-checkbox": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Custom checkbox styling for task lists."
+    },
+    "loro": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Real-time collaboration using Loro CRDT library."
+    },
+    "mark-rule": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Input rules for automatic mark formatting."
+    },
+    "minimal": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "lit",
+        "svelte",
+        "solid",
+        "vanilla"
+      ],
+      "hidden": false,
+      "description": "Minimal editor setup with basic functionality."
+    },
+    "notion": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": true,
+      "description": "Notion-style editor with block-based editing."
+    },
+    "page": {
+      "frameworks": [
+        "react",
+        "svelte"
+      ],
+      "hidden": false,
+      "description": "Page layout with configurable paper settings."
+    },
+    "placeholder": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Placeholder text displayed."
+    },
+    "readonly": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Toggle between read-only and editable mode."
+    },
+    "rtl": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Right-to-left text direction support."
+    },
+    "save-html": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Save and load documents as HTML format."
+    },
+    "save-json": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Save and load documents as JSON format."
+    },
+    "save-markdown": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Save and load documents as Markdown format."
+    },
+    "search": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Search and highlight text with navigation."
+    },
+    "slash-menu": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "lit",
+        "svelte",
+        "solid",
+        "vanilla"
+      ],
+      "hidden": false,
+      "description": "Command menu triggered by typing slash (/)."
+    },
+    "strike": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for strikethrough mark."
+    },
+    "table": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "lit",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Table node with row and column operations."
+    },
+    "temml": {
+      "frameworks": [
+        "react",
+        "preact",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Math equation rendering using the Temml library."
+    },
+    "text-align": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Text alignment options (left, center, right, justify)."
+    },
+    "text-color": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Change text and background color."
+    },
+    "toolbar": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "lit",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Formatting toolbar with common editing actions."
+    },
+    "tweet": {
+      "frameworks": [
+        "react",
+        "vue"
+      ],
+      "hidden": false,
+      "description": "Embed and display Twitter tweets."
+    },
+    "typography": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Typography enhancements like smart quotes and dashes."
+    },
+    "underline": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for underline mark."
+    },
+    "unmount": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Properly unmount and remount editor instances."
+    },
+    "user-menu": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Autocomplete menu for @mentions and #hashtag"
+    },
+    "user-menu-dynamic": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Dynamic autocomplete menu with async data loading."
+    },
+    "view-adapter": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": true,
+      "description": "Custom node and mark views using view adapters."
+    },
+    "word-counter": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Display word and character count statistics."
+    },
+    "yjs": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Real-time collaboration using Yjs CRDT library."
+    },
+    "katex": {
+      "frameworks": [
+        "vue",
+        "svelte"
+      ],
+      "hidden": false,
+      "description": "Math equation rendering using the KaTeX library."
+    }
+  },
+  "examples": {
+    "react-example-block-handle": {
+      "story": "block-handle",
+      "files": [
+        "registry/src/react/examples/block-handle/editor.tsx",
+        "registry/src/react/examples/block-handle/extension.ts",
+        "registry/src/react/examples/block-handle/index.ts",
+        "registry/src/react/sample/sample-doc-block-handle.ts",
+        "registry/src/react/ui/block-handle/block-handle.tsx",
+        "registry/src/react/ui/block-handle/index.ts",
+        "registry/src/react/ui/code-block-view/code-block-view.tsx",
+        "registry/src/react/ui/code-block-view/index.ts",
+        "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/react/ui/drop-indicator/index.ts"
+      ]
+    },
+    "react-example-blockquote": {
+      "story": "blockquote",
+      "files": [
+        "registry/src/react/examples/blockquote/editor.tsx",
+        "registry/src/react/examples/blockquote/extension.ts",
+        "registry/src/react/examples/blockquote/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-bold": {
+      "story": "bold",
+      "files": [
+        "registry/src/react/examples/bold/editor.tsx",
+        "registry/src/react/examples/bold/extension.ts",
+        "registry/src/react/examples/bold/index.ts",
+        "registry/src/react/sample/sample-doc-bold.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-change-tracking": {
+      "story": "change-tracking",
+      "files": [
+        "registry/src/react/examples/change-tracking/editor-diff.tsx",
+        "registry/src/react/examples/change-tracking/editor-main.tsx",
+        "registry/src/react/examples/change-tracking/editor.tsx",
+        "registry/src/react/examples/change-tracking/index.ts"
+      ]
+    },
+    "react-example-code": {
+      "story": "code",
+      "files": [
+        "registry/src/react/examples/code/editor.tsx",
+        "registry/src/react/examples/code/extension.ts",
+        "registry/src/react/examples/code/index.ts",
+        "registry/src/react/sample/sample-doc-code.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-code-block": {
+      "story": "code-block",
+      "files": [
+        "registry/src/react/examples/code-block/editor.tsx",
+        "registry/src/react/examples/code-block/extension.ts",
+        "registry/src/react/examples/code-block/index.ts",
+        "registry/src/react/sample/sample-doc-code-block.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/code-block-view/code-block-view.tsx",
+        "registry/src/react/ui/code-block-view/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-code-block-themes": {
+      "story": "code-block-themes",
+      "files": [
+        "registry/src/react/examples/code-block-themes/editor.tsx",
+        "registry/src/react/examples/code-block-themes/extension.ts",
+        "registry/src/react/examples/code-block-themes/index.ts",
+        "registry/src/react/examples/code-block-themes/theme-selector.tsx",
+        "registry/src/react/examples/code-block-themes/toolbar.tsx",
+        "registry/src/react/sample/sample-doc-code-block.ts",
+        "registry/src/react/ui/code-block-view/code-block-view.tsx",
+        "registry/src/react/ui/code-block-view/index.ts"
+      ]
+    },
+    "react-example-drop-cursor": {
+      "story": "drop-cursor",
+      "files": [
+        "registry/src/react/examples/drop-cursor/editor.tsx",
+        "registry/src/react/examples/drop-cursor/extension.ts",
+        "registry/src/react/examples/drop-cursor/index.ts",
+        "registry/src/react/sample/sample-doc-drop-cursor.ts"
+      ]
+    },
+    "react-example-emoji-rules": {
+      "story": "emoji-rules",
+      "files": [
+        "registry/src/react/examples/emoji-rules/editor.tsx",
+        "registry/src/react/examples/emoji-rules/emoji.ts",
+        "registry/src/react/examples/emoji-rules/extension.ts",
+        "registry/src/react/examples/emoji-rules/index.ts"
+      ]
+    },
+    "react-example-full": {
+      "story": "full",
+      "files": [
+        "registry/src/react/examples/full/editor.tsx",
+        "registry/src/react/examples/full/extension.ts",
+        "registry/src/react/examples/full/html.ts",
+        "registry/src/react/examples/full/index.ts",
+        "registry/src/react/sample/katex.ts",
+        "registry/src/react/sample/sample-doc-full.ts",
+        "registry/src/react/sample/sample-tag-data.ts",
+        "registry/src/react/sample/sample-uploader.ts",
+        "registry/src/react/sample/sample-user-data.ts",
+        "registry/src/react/ui/block-handle/block-handle.tsx",
+        "registry/src/react/ui/block-handle/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/code-block-view/code-block-view.tsx",
+        "registry/src/react/ui/code-block-view/index.ts",
+        "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/react/ui/drop-indicator/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/image-view/image-view.tsx",
+        "registry/src/react/ui/image-view/index.ts",
+        "registry/src/react/ui/inline-menu/index.ts",
+        "registry/src/react/ui/inline-menu/inline-menu.tsx",
+        "registry/src/react/ui/slash-menu/index.ts",
+        "registry/src/react/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/react/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/react/ui/slash-menu/slash-menu.tsx",
+        "registry/src/react/ui/table-handle/index.ts",
+        "registry/src/react/ui/table-handle/table-handle.tsx",
+        "registry/src/react/ui/tag-menu/index.ts",
+        "registry/src/react/ui/tag-menu/tag-menu.tsx",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx",
+        "registry/src/react/ui/user-menu/index.ts",
+        "registry/src/react/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "react-example-gap-cursor": {
+      "story": "gap-cursor",
+      "files": [
+        "registry/src/react/examples/gap-cursor/editor.tsx",
+        "registry/src/react/examples/gap-cursor/extension.ts",
+        "registry/src/react/examples/gap-cursor/index.ts",
+        "registry/src/react/sample/sample-doc-gap-cursor.ts"
+      ]
+    },
+    "react-example-hard-break": {
+      "story": "hard-break",
+      "files": [
+        "registry/src/react/examples/hard-break/editor.tsx",
+        "registry/src/react/examples/hard-break/extension.ts",
+        "registry/src/react/examples/hard-break/index.ts",
+        "registry/src/react/examples/hard-break/toolbar.tsx",
+        "registry/src/react/sample/sample-doc-hard-break.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
+    "react-example-heading": {
+      "story": "heading",
+      "files": [
+        "registry/src/react/examples/heading/editor.tsx",
+        "registry/src/react/examples/heading/extension.ts",
+        "registry/src/react/examples/heading/index.ts",
+        "registry/src/react/sample/sample-doc-heading.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-horizontal-rule": {
+      "story": "horizontal-rule",
+      "files": [
+        "registry/src/react/examples/horizontal-rule/editor.tsx",
+        "registry/src/react/examples/horizontal-rule/extension.ts",
+        "registry/src/react/examples/horizontal-rule/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-image-view": {
+      "story": "image-view",
+      "files": [
+        "registry/src/react/examples/image-view/editor.tsx",
+        "registry/src/react/examples/image-view/extension.ts",
+        "registry/src/react/examples/image-view/index.ts",
+        "registry/src/react/sample/sample-doc-image.ts",
+        "registry/src/react/sample/sample-uploader.ts",
+        "registry/src/react/ui/image-view/image-view.tsx",
+        "registry/src/react/ui/image-view/index.ts"
+      ]
+    },
+    "react-example-inline-menu": {
+      "story": "inline-menu",
+      "files": [
+        "registry/src/react/examples/inline-menu/editor.tsx",
+        "registry/src/react/examples/inline-menu/extension.ts",
+        "registry/src/react/examples/inline-menu/index.ts",
+        "registry/src/react/sample/sample-doc-inline-menu.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/inline-menu/index.ts",
+        "registry/src/react/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "react-example-italic": {
+      "story": "italic",
+      "files": [
+        "registry/src/react/examples/italic/editor.tsx",
+        "registry/src/react/examples/italic/extension.ts",
+        "registry/src/react/examples/italic/index.ts",
+        "registry/src/react/sample/sample-doc-italic.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-keymap": {
+      "story": "keymap",
+      "files": [
+        "registry/src/react/examples/keymap/editor.tsx",
+        "registry/src/react/examples/keymap/extension.ts",
+        "registry/src/react/examples/keymap/index.ts",
+        "registry/src/react/examples/keymap/toolbar.tsx",
+        "registry/src/react/examples/keymap/use-submit-keymap.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
+    "react-example-link": {
+      "story": "link",
+      "files": [
+        "registry/src/react/examples/link/editor.tsx",
+        "registry/src/react/examples/link/extension.ts",
+        "registry/src/react/examples/link/index.ts",
+        "registry/src/react/sample/sample-doc-link.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/inline-menu/index.ts",
+        "registry/src/react/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "react-example-link-mark-view": {
+      "story": "link-mark-view",
+      "files": [
+        "registry/src/react/examples/link-mark-view/editor.tsx",
+        "registry/src/react/examples/link-mark-view/extension.ts",
+        "registry/src/react/examples/link-mark-view/index.ts",
+        "registry/src/react/examples/link-mark-view/link-view.tsx",
+        "registry/src/react/sample/sample-doc-link-mark-view.ts"
+      ]
+    },
+    "react-example-list": {
+      "story": "list",
+      "files": [
+        "registry/src/react/examples/list/editor.tsx",
+        "registry/src/react/examples/list/extension.ts",
+        "registry/src/react/examples/list/index.ts",
+        "registry/src/react/sample/sample-doc-list.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-list-custom-checkbox": {
+      "story": "list-custom-checkbox",
+      "files": [
+        "registry/src/react/examples/list-custom-checkbox/custom-list.css",
+        "registry/src/react/examples/list-custom-checkbox/editor.tsx",
+        "registry/src/react/examples/list-custom-checkbox/extension.ts",
+        "registry/src/react/examples/list-custom-checkbox/index.ts",
+        "registry/src/react/sample/sample-doc-list-custom-checkbox.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-loro": {
+      "story": "loro",
+      "files": [
+        "registry/src/react/examples/loro/editor-component.tsx",
+        "registry/src/react/examples/loro/editor.tsx",
+        "registry/src/react/examples/loro/extension.ts",
+        "registry/src/react/examples/loro/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-mark-rule": {
+      "story": "mark-rule",
+      "files": [
+        "registry/src/react/examples/mark-rule/editor.tsx",
+        "registry/src/react/examples/mark-rule/extension.ts",
+        "registry/src/react/examples/mark-rule/index.ts",
+        "registry/src/react/examples/mark-rule/issue-link.ts"
+      ]
+    },
+    "react-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/react/examples/minimal/editor.tsx",
+        "registry/src/react/examples/minimal/index.ts"
+      ]
+    },
+    "react-example-notion": {
+      "story": "notion",
+      "files": [
+        "registry/src/react/examples/notion/block-handle-menu.tsx",
+        "registry/src/react/examples/notion/block-handle.tsx",
+        "registry/src/react/examples/notion/editor.tsx",
+        "registry/src/react/examples/notion/extension.ts",
+        "registry/src/react/examples/notion/image-view/image-view-content.tsx",
+        "registry/src/react/examples/notion/image-view/image-view-placeholder.tsx",
+        "registry/src/react/examples/notion/image-view/image-view.tsx",
+        "registry/src/react/examples/notion/image-view/index.ts",
+        "registry/src/react/examples/notion/index.ts",
+        "registry/src/react/examples/notion/slash-menu/index.ts",
+        "registry/src/react/examples/notion/slash-menu/slash-menu-empty.tsx",
+        "registry/src/react/examples/notion/slash-menu/slash-menu-item.tsx",
+        "registry/src/react/examples/notion/slash-menu/slash-menu.tsx",
+        "registry/src/react/examples/notion/style.css",
+        "registry/src/react/sample/sample-doc-notion.ts",
+        "registry/src/react/sample/sample-tag-data.ts",
+        "registry/src/react/sample/sample-uploader.ts",
+        "registry/src/react/sample/sample-user-data.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/code-block-view/code-block-view.tsx",
+        "registry/src/react/ui/code-block-view/index.ts",
+        "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/react/ui/drop-indicator/index.ts",
+        "registry/src/react/ui/inline-menu/index.ts",
+        "registry/src/react/ui/inline-menu/inline-menu.tsx",
+        "registry/src/react/ui/table-handle/index.ts",
+        "registry/src/react/ui/table-handle/table-handle.tsx",
+        "registry/src/react/ui/tag-menu/index.ts",
+        "registry/src/react/ui/tag-menu/tag-menu.tsx",
+        "registry/src/react/ui/user-menu/index.ts",
+        "registry/src/react/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "react-example-page": {
+      "story": "page",
+      "files": [
+        "registry/src/react/examples/page/editor.tsx",
+        "registry/src/react/examples/page/extension.ts",
+        "registry/src/react/examples/page/index.ts",
+        "registry/src/react/examples/page/paper-controller.tsx",
+        "registry/src/react/examples/page/zoom.css",
+        "registry/src/react/sample/sample-doc-page.ts"
+      ]
+    },
+    "react-example-placeholder": {
+      "story": "placeholder",
+      "files": [
+        "registry/src/react/examples/placeholder/editor.tsx",
+        "registry/src/react/examples/placeholder/extension.ts",
+        "registry/src/react/examples/placeholder/index.ts"
+      ]
+    },
+    "react-example-readonly": {
+      "story": "readonly",
+      "files": [
+        "registry/src/react/examples/readonly/editor.tsx",
+        "registry/src/react/examples/readonly/extension.ts",
+        "registry/src/react/examples/readonly/index.ts",
+        "registry/src/react/examples/readonly/toolbar.tsx",
+        "registry/src/react/examples/readonly/use-readonly.ts",
+        "registry/src/react/sample/sample-doc-readonly.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
+    "react-example-rtl": {
+      "story": "rtl",
+      "files": [
+        "registry/src/react/examples/rtl/editor.tsx",
+        "registry/src/react/examples/rtl/index.ts",
+        "registry/src/react/sample/sample-doc-rtl.ts",
+        "registry/src/react/sample/sample-uploader.ts",
+        "registry/src/react/ui/block-handle/block-handle.tsx",
+        "registry/src/react/ui/block-handle/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/react/ui/drop-indicator/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/inline-menu/index.ts",
+        "registry/src/react/ui/inline-menu/inline-menu.tsx",
+        "registry/src/react/ui/slash-menu/index.ts",
+        "registry/src/react/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/react/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/react/ui/slash-menu/slash-menu.tsx",
+        "registry/src/react/ui/table-handle/index.ts",
+        "registry/src/react/ui/table-handle/table-handle.tsx",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-save-html": {
+      "story": "save-html",
+      "files": [
+        "registry/src/react/examples/save-html/editor.tsx",
+        "registry/src/react/examples/save-html/index.ts"
+      ]
+    },
+    "react-example-save-json": {
+      "story": "save-json",
+      "files": [
+        "registry/src/react/examples/save-json/editor.tsx",
+        "registry/src/react/examples/save-json/index.ts"
+      ]
+    },
+    "react-example-save-markdown": {
+      "story": "save-markdown",
+      "files": [
+        "registry/src/react/examples/save-markdown/editor.tsx",
+        "registry/src/react/examples/save-markdown/index.ts",
+        "registry/src/react/examples/save-markdown/markdown.ts"
+      ]
+    },
+    "react-example-search": {
+      "story": "search",
+      "files": [
+        "registry/src/react/examples/search/editor.tsx",
+        "registry/src/react/examples/search/extension.ts",
+        "registry/src/react/examples/search/index.ts",
+        "registry/src/react/sample/sample-doc-search.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/search/index.ts",
+        "registry/src/react/ui/search/search.tsx"
+      ]
+    },
+    "react-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/react/examples/slash-menu/editor.tsx",
+        "registry/src/react/examples/slash-menu/extension.ts",
+        "registry/src/react/examples/slash-menu/index.ts",
+        "registry/src/react/ui/slash-menu/index.ts",
+        "registry/src/react/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/react/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/react/ui/slash-menu/slash-menu.tsx"
+      ]
+    },
+    "react-example-strike": {
+      "story": "strike",
+      "files": [
+        "registry/src/react/examples/strike/editor.tsx",
+        "registry/src/react/examples/strike/extension.ts",
+        "registry/src/react/examples/strike/index.ts",
+        "registry/src/react/examples/strike/toolbar.tsx",
+        "registry/src/react/sample/sample-doc-strike.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
+    "react-example-table": {
+      "story": "table",
+      "files": [
+        "registry/src/react/examples/table/editor.tsx",
+        "registry/src/react/examples/table/extension.ts",
+        "registry/src/react/examples/table/index.ts",
+        "registry/src/react/sample/sample-doc-table.ts",
+        "registry/src/react/ui/table-handle/index.ts",
+        "registry/src/react/ui/table-handle/table-handle.tsx"
+      ]
+    },
+    "react-example-temml": {
+      "story": "temml",
+      "files": [
+        "registry/src/react/examples/temml/editor.tsx",
+        "registry/src/react/examples/temml/extension.ts",
+        "registry/src/react/examples/temml/index.ts",
+        "registry/src/react/sample/sample-doc-tex.ts",
+        "registry/src/react/sample/temml.ts"
+      ]
+    },
+    "react-example-text-align": {
+      "story": "text-align",
+      "files": [
+        "registry/src/react/examples/text-align/editor.tsx",
+        "registry/src/react/examples/text-align/extension.ts",
+        "registry/src/react/examples/text-align/index.ts",
+        "registry/src/react/examples/text-align/toolbar.tsx",
+        "registry/src/react/sample/sample-doc-text-align.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
+    "react-example-text-color": {
+      "story": "text-color",
+      "files": [
+        "registry/src/react/examples/text-color/editor.tsx",
+        "registry/src/react/examples/text-color/extension.ts",
+        "registry/src/react/examples/text-color/index.ts",
+        "registry/src/react/examples/text-color/inline-menu.tsx",
+        "registry/src/react/sample/sample-doc-text-color.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
+    "react-example-toolbar": {
+      "story": "toolbar",
+      "files": [
+        "registry/src/react/examples/toolbar/editor.tsx",
+        "registry/src/react/examples/toolbar/extension.ts",
+        "registry/src/react/examples/toolbar/index.ts",
+        "registry/src/react/sample/sample-uploader.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-tweet": {
+      "story": "tweet",
+      "files": [
+        "registry/src/react/examples/tweet/editor.tsx",
+        "registry/src/react/examples/tweet/extension.ts",
+        "registry/src/react/examples/tweet/index.ts",
+        "registry/src/react/examples/tweet/method-select.tsx",
+        "registry/src/react/examples/tweet/tweet-view.tsx",
+        "registry/src/react/sample/sample-doc-tweet.ts"
+      ]
+    },
+    "react-example-typography": {
+      "story": "typography",
+      "files": [
+        "registry/src/react/examples/typography/editor.tsx",
+        "registry/src/react/examples/typography/extension.ts",
+        "registry/src/react/examples/typography/index.ts",
+        "registry/src/react/sample/katex.ts",
+        "registry/src/react/sample/sample-doc-typography.ts",
+        "registry/src/react/ui/block-handle/block-handle.tsx",
+        "registry/src/react/ui/block-handle/index.ts",
+        "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/react/ui/drop-indicator/index.ts"
+      ]
+    },
+    "react-example-underline": {
+      "story": "underline",
+      "files": [
+        "registry/src/react/examples/underline/editor.tsx",
+        "registry/src/react/examples/underline/extension.ts",
+        "registry/src/react/examples/underline/index.ts",
+        "registry/src/react/sample/sample-doc-underline.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-unmount": {
+      "story": "unmount",
+      "files": [
+        "registry/src/react/examples/unmount/editor-component.tsx",
+        "registry/src/react/examples/unmount/editor.tsx",
+        "registry/src/react/examples/unmount/extension-component.tsx",
+        "registry/src/react/examples/unmount/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/inline-menu/index.ts",
+        "registry/src/react/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "react-example-user-menu": {
+      "story": "user-menu",
+      "files": [
+        "registry/src/react/examples/user-menu/editor.tsx",
+        "registry/src/react/examples/user-menu/extension.ts",
+        "registry/src/react/examples/user-menu/index.ts",
+        "registry/src/react/sample/sample-tag-data.ts",
+        "registry/src/react/sample/sample-user-data.ts",
+        "registry/src/react/ui/tag-menu/index.ts",
+        "registry/src/react/ui/tag-menu/tag-menu.tsx",
+        "registry/src/react/ui/user-menu/index.ts",
+        "registry/src/react/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "react-example-user-menu-dynamic": {
+      "story": "user-menu-dynamic",
+      "files": [
+        "registry/src/react/examples/user-menu-dynamic/editor.tsx",
+        "registry/src/react/examples/user-menu-dynamic/extension.ts",
+        "registry/src/react/examples/user-menu-dynamic/index.ts",
+        "registry/src/react/examples/user-menu-dynamic/use-user-query.ts",
+        "registry/src/react/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+        "registry/src/react/sample/sample-query-users.ts",
+        "registry/src/react/sample/sample-user-data.ts",
+        "registry/src/react/ui/user-menu/index.ts",
+        "registry/src/react/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "react-example-view-adapter": {
+      "story": "view-adapter",
+      "files": [
+        "registry/src/react/examples/view-adapter/atom-block-view.tsx",
+        "registry/src/react/examples/view-adapter/editor.tsx",
+        "registry/src/react/examples/view-adapter/extension.ts",
+        "registry/src/react/examples/view-adapter/index.ts",
+        "registry/src/react/sample/define-atom-block.ts",
+        "registry/src/react/sample/sample-doc-view-adapter.ts"
+      ]
+    },
+    "react-example-word-counter": {
+      "story": "word-counter",
+      "files": [
+        "registry/src/react/examples/word-counter/editor.tsx",
+        "registry/src/react/examples/word-counter/extension.ts",
+        "registry/src/react/examples/word-counter/index.ts",
+        "registry/src/react/sample/sample-doc-word-counter.ts",
+        "registry/src/react/ui/word-counter/index.ts",
+        "registry/src/react/ui/word-counter/word-counter.tsx"
+      ]
+    },
+    "react-example-yjs": {
+      "story": "yjs",
+      "files": [
+        "registry/src/react/examples/yjs/editor-component.tsx",
+        "registry/src/react/examples/yjs/editor.tsx",
+        "registry/src/react/examples/yjs/extension.ts",
+        "registry/src/react/examples/yjs/index.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-block-handle": {
+      "story": "block-handle",
+      "files": [
+        "registry/src/preact/examples/block-handle/editor.tsx",
+        "registry/src/preact/examples/block-handle/extension.ts",
+        "registry/src/preact/examples/block-handle/index.ts",
+        "registry/src/preact/sample/sample-doc-block-handle.ts",
+        "registry/src/preact/ui/block-handle/block-handle.tsx",
+        "registry/src/preact/ui/block-handle/index.ts",
+        "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+        "registry/src/preact/ui/code-block-view/index.ts",
+        "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/preact/ui/drop-indicator/index.ts"
+      ]
+    },
+    "preact-example-blockquote": {
+      "story": "blockquote",
+      "files": [
+        "registry/src/preact/examples/blockquote/editor.tsx",
+        "registry/src/preact/examples/blockquote/extension.ts",
+        "registry/src/preact/examples/blockquote/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-bold": {
+      "story": "bold",
+      "files": [
+        "registry/src/preact/examples/bold/editor.tsx",
+        "registry/src/preact/examples/bold/extension.ts",
+        "registry/src/preact/examples/bold/index.ts",
+        "registry/src/preact/sample/sample-doc-bold.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-change-tracking": {
+      "story": "change-tracking",
+      "files": [
+        "registry/src/preact/examples/change-tracking/editor-diff.tsx",
+        "registry/src/preact/examples/change-tracking/editor-main.tsx",
+        "registry/src/preact/examples/change-tracking/editor.tsx",
+        "registry/src/preact/examples/change-tracking/index.ts"
+      ]
+    },
+    "preact-example-code": {
+      "story": "code",
+      "files": [
+        "registry/src/preact/examples/code/editor.tsx",
+        "registry/src/preact/examples/code/extension.ts",
+        "registry/src/preact/examples/code/index.ts",
+        "registry/src/preact/sample/sample-doc-code.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-code-block": {
+      "story": "code-block",
+      "files": [
+        "registry/src/preact/examples/code-block/editor.tsx",
+        "registry/src/preact/examples/code-block/extension.ts",
+        "registry/src/preact/examples/code-block/index.ts",
+        "registry/src/preact/sample/sample-doc-code-block.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+        "registry/src/preact/ui/code-block-view/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-code-block-themes": {
+      "story": "code-block-themes",
+      "files": [
+        "registry/src/preact/examples/code-block-themes/editor.tsx",
+        "registry/src/preact/examples/code-block-themes/extension.ts",
+        "registry/src/preact/examples/code-block-themes/index.ts",
+        "registry/src/preact/examples/code-block-themes/theme-selector.tsx",
+        "registry/src/preact/examples/code-block-themes/toolbar.tsx",
+        "registry/src/preact/sample/sample-doc-code-block.ts",
+        "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+        "registry/src/preact/ui/code-block-view/index.ts"
+      ]
+    },
+    "preact-example-drop-cursor": {
+      "story": "drop-cursor",
+      "files": [
+        "registry/src/preact/examples/drop-cursor/editor.tsx",
+        "registry/src/preact/examples/drop-cursor/extension.ts",
+        "registry/src/preact/examples/drop-cursor/index.ts",
+        "registry/src/preact/sample/sample-doc-drop-cursor.ts"
+      ]
+    },
+    "preact-example-emoji-rules": {
+      "story": "emoji-rules",
+      "files": [
+        "registry/src/preact/examples/emoji-rules/editor.tsx",
+        "registry/src/preact/examples/emoji-rules/emoji.ts",
+        "registry/src/preact/examples/emoji-rules/extension.ts",
+        "registry/src/preact/examples/emoji-rules/index.ts"
+      ]
+    },
+    "preact-example-full": {
+      "story": "full",
+      "files": [
+        "registry/src/preact/examples/full/editor.tsx",
+        "registry/src/preact/examples/full/extension.ts",
+        "registry/src/preact/examples/full/index.ts",
+        "registry/src/preact/sample/katex.ts",
+        "registry/src/preact/sample/sample-doc-full.ts",
+        "registry/src/preact/sample/sample-tag-data.ts",
+        "registry/src/preact/sample/sample-uploader.ts",
+        "registry/src/preact/sample/sample-user-data.ts",
+        "registry/src/preact/ui/block-handle/block-handle.tsx",
+        "registry/src/preact/ui/block-handle/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+        "registry/src/preact/ui/code-block-view/index.ts",
+        "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/preact/ui/drop-indicator/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/image-view/image-view.tsx",
+        "registry/src/preact/ui/image-view/index.ts",
+        "registry/src/preact/ui/inline-menu/index.ts",
+        "registry/src/preact/ui/inline-menu/inline-menu.tsx",
+        "registry/src/preact/ui/slash-menu/index.ts",
+        "registry/src/preact/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/preact/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/preact/ui/slash-menu/slash-menu.tsx",
+        "registry/src/preact/ui/table-handle/index.ts",
+        "registry/src/preact/ui/table-handle/table-handle.tsx",
+        "registry/src/preact/ui/tag-menu/index.ts",
+        "registry/src/preact/ui/tag-menu/tag-menu.tsx",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx",
+        "registry/src/preact/ui/user-menu/index.ts",
+        "registry/src/preact/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "preact-example-gap-cursor": {
+      "story": "gap-cursor",
+      "files": [
+        "registry/src/preact/examples/gap-cursor/editor.tsx",
+        "registry/src/preact/examples/gap-cursor/extension.ts",
+        "registry/src/preact/examples/gap-cursor/index.ts",
+        "registry/src/preact/sample/sample-doc-gap-cursor.ts"
+      ]
+    },
+    "preact-example-hard-break": {
+      "story": "hard-break",
+      "files": [
+        "registry/src/preact/examples/hard-break/editor.tsx",
+        "registry/src/preact/examples/hard-break/extension.ts",
+        "registry/src/preact/examples/hard-break/index.ts",
+        "registry/src/preact/examples/hard-break/toolbar.tsx",
+        "registry/src/preact/sample/sample-doc-hard-break.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
+    "preact-example-heading": {
+      "story": "heading",
+      "files": [
+        "registry/src/preact/examples/heading/editor.tsx",
+        "registry/src/preact/examples/heading/extension.ts",
+        "registry/src/preact/examples/heading/index.ts",
+        "registry/src/preact/sample/sample-doc-heading.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-horizontal-rule": {
+      "story": "horizontal-rule",
+      "files": [
+        "registry/src/preact/examples/horizontal-rule/editor.tsx",
+        "registry/src/preact/examples/horizontal-rule/extension.ts",
+        "registry/src/preact/examples/horizontal-rule/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-image-view": {
+      "story": "image-view",
+      "files": [
+        "registry/src/preact/examples/image-view/editor.tsx",
+        "registry/src/preact/examples/image-view/extension.ts",
+        "registry/src/preact/examples/image-view/index.ts",
+        "registry/src/preact/sample/sample-doc-image.ts",
+        "registry/src/preact/sample/sample-uploader.ts",
+        "registry/src/preact/ui/image-view/image-view.tsx",
+        "registry/src/preact/ui/image-view/index.ts"
+      ]
+    },
+    "preact-example-inline-menu": {
+      "story": "inline-menu",
+      "files": [
+        "registry/src/preact/examples/inline-menu/editor.tsx",
+        "registry/src/preact/examples/inline-menu/extension.ts",
+        "registry/src/preact/examples/inline-menu/index.ts",
+        "registry/src/preact/sample/sample-doc-inline-menu.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/inline-menu/index.ts",
+        "registry/src/preact/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "preact-example-italic": {
+      "story": "italic",
+      "files": [
+        "registry/src/preact/examples/italic/editor.tsx",
+        "registry/src/preact/examples/italic/extension.ts",
+        "registry/src/preact/examples/italic/index.ts",
+        "registry/src/preact/sample/sample-doc-italic.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-keymap": {
+      "story": "keymap",
+      "files": [
+        "registry/src/preact/examples/keymap/editor.tsx",
+        "registry/src/preact/examples/keymap/extension.ts",
+        "registry/src/preact/examples/keymap/index.ts",
+        "registry/src/preact/examples/keymap/toolbar.tsx",
+        "registry/src/preact/examples/keymap/use-submit-keymap.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
+    "preact-example-link": {
+      "story": "link",
+      "files": [
+        "registry/src/preact/examples/link/editor.tsx",
+        "registry/src/preact/examples/link/extension.ts",
+        "registry/src/preact/examples/link/index.ts",
+        "registry/src/preact/sample/sample-doc-link.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/inline-menu/index.ts",
+        "registry/src/preact/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "preact-example-link-mark-view": {
+      "story": "link-mark-view",
+      "files": [
+        "registry/src/preact/examples/link-mark-view/editor.tsx",
+        "registry/src/preact/examples/link-mark-view/extension.ts",
+        "registry/src/preact/examples/link-mark-view/index.ts",
+        "registry/src/preact/examples/link-mark-view/link-view.tsx",
+        "registry/src/preact/sample/sample-doc-link-mark-view.ts"
+      ]
+    },
+    "preact-example-list": {
+      "story": "list",
+      "files": [
+        "registry/src/preact/examples/list/editor.tsx",
+        "registry/src/preact/examples/list/extension.ts",
+        "registry/src/preact/examples/list/index.ts",
+        "registry/src/preact/sample/sample-doc-list.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-list-custom-checkbox": {
+      "story": "list-custom-checkbox",
+      "files": [
+        "registry/src/preact/examples/list-custom-checkbox/custom-list.css",
+        "registry/src/preact/examples/list-custom-checkbox/editor.tsx",
+        "registry/src/preact/examples/list-custom-checkbox/extension.ts",
+        "registry/src/preact/examples/list-custom-checkbox/index.ts",
+        "registry/src/preact/sample/sample-doc-list-custom-checkbox.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-loro": {
+      "story": "loro",
+      "files": [
+        "registry/src/preact/examples/loro/editor-component.tsx",
+        "registry/src/preact/examples/loro/editor.tsx",
+        "registry/src/preact/examples/loro/extension.ts",
+        "registry/src/preact/examples/loro/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-mark-rule": {
+      "story": "mark-rule",
+      "files": [
+        "registry/src/preact/examples/mark-rule/editor.tsx",
+        "registry/src/preact/examples/mark-rule/extension.ts",
+        "registry/src/preact/examples/mark-rule/index.ts",
+        "registry/src/preact/examples/mark-rule/issue-link.ts"
+      ]
+    },
+    "preact-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/preact/examples/minimal/editor.tsx",
+        "registry/src/preact/examples/minimal/index.ts"
+      ]
+    },
+    "preact-example-placeholder": {
+      "story": "placeholder",
+      "files": [
+        "registry/src/preact/examples/placeholder/editor.tsx",
+        "registry/src/preact/examples/placeholder/extension.ts",
+        "registry/src/preact/examples/placeholder/index.ts"
+      ]
+    },
+    "preact-example-readonly": {
+      "story": "readonly",
+      "files": [
+        "registry/src/preact/examples/readonly/editor.tsx",
+        "registry/src/preact/examples/readonly/extension.ts",
+        "registry/src/preact/examples/readonly/index.ts",
+        "registry/src/preact/examples/readonly/toolbar.tsx",
+        "registry/src/preact/examples/readonly/use-readonly.ts",
+        "registry/src/preact/sample/sample-doc-readonly.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
+    "preact-example-rtl": {
+      "story": "rtl",
+      "files": [
+        "registry/src/preact/examples/rtl/editor.tsx",
+        "registry/src/preact/examples/rtl/index.ts",
+        "registry/src/preact/sample/sample-doc-rtl.ts",
+        "registry/src/preact/sample/sample-uploader.ts",
+        "registry/src/preact/ui/block-handle/block-handle.tsx",
+        "registry/src/preact/ui/block-handle/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/preact/ui/drop-indicator/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/inline-menu/index.ts",
+        "registry/src/preact/ui/inline-menu/inline-menu.tsx",
+        "registry/src/preact/ui/slash-menu/index.ts",
+        "registry/src/preact/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/preact/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/preact/ui/slash-menu/slash-menu.tsx",
+        "registry/src/preact/ui/table-handle/index.ts",
+        "registry/src/preact/ui/table-handle/table-handle.tsx",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-save-html": {
+      "story": "save-html",
+      "files": [
+        "registry/src/preact/examples/save-html/editor.tsx",
+        "registry/src/preact/examples/save-html/index.ts"
+      ]
+    },
+    "preact-example-save-json": {
+      "story": "save-json",
+      "files": [
+        "registry/src/preact/examples/save-json/editor.tsx",
+        "registry/src/preact/examples/save-json/index.ts"
+      ]
+    },
+    "preact-example-save-markdown": {
+      "story": "save-markdown",
+      "files": [
+        "registry/src/preact/examples/save-markdown/editor.tsx",
+        "registry/src/preact/examples/save-markdown/index.ts",
+        "registry/src/preact/examples/save-markdown/markdown.ts"
+      ]
+    },
+    "preact-example-search": {
+      "story": "search",
+      "files": [
+        "registry/src/preact/examples/search/editor.tsx",
+        "registry/src/preact/examples/search/extension.ts",
+        "registry/src/preact/examples/search/index.ts",
+        "registry/src/preact/sample/sample-doc-search.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/search/index.ts",
+        "registry/src/preact/ui/search/search.tsx"
+      ]
+    },
+    "preact-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/preact/examples/slash-menu/editor.tsx",
+        "registry/src/preact/examples/slash-menu/extension.ts",
+        "registry/src/preact/examples/slash-menu/index.ts",
+        "registry/src/preact/ui/slash-menu/index.ts",
+        "registry/src/preact/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/preact/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/preact/ui/slash-menu/slash-menu.tsx"
+      ]
+    },
+    "preact-example-strike": {
+      "story": "strike",
+      "files": [
+        "registry/src/preact/examples/strike/editor.tsx",
+        "registry/src/preact/examples/strike/extension.ts",
+        "registry/src/preact/examples/strike/index.ts",
+        "registry/src/preact/examples/strike/toolbar.tsx",
+        "registry/src/preact/sample/sample-doc-strike.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
+    "preact-example-table": {
+      "story": "table",
+      "files": [
+        "registry/src/preact/examples/table/editor.tsx",
+        "registry/src/preact/examples/table/extension.ts",
+        "registry/src/preact/examples/table/index.ts",
+        "registry/src/preact/sample/sample-doc-table.ts",
+        "registry/src/preact/ui/table-handle/index.ts",
+        "registry/src/preact/ui/table-handle/table-handle.tsx"
+      ]
+    },
+    "preact-example-temml": {
+      "story": "temml",
+      "files": [
+        "registry/src/preact/examples/temml/editor.tsx",
+        "registry/src/preact/examples/temml/extension.ts",
+        "registry/src/preact/examples/temml/index.ts",
+        "registry/src/preact/sample/sample-doc-tex.ts",
+        "registry/src/preact/sample/temml.ts"
+      ]
+    },
+    "preact-example-text-align": {
+      "story": "text-align",
+      "files": [
+        "registry/src/preact/examples/text-align/editor.tsx",
+        "registry/src/preact/examples/text-align/extension.ts",
+        "registry/src/preact/examples/text-align/index.ts",
+        "registry/src/preact/examples/text-align/toolbar.tsx",
+        "registry/src/preact/sample/sample-doc-text-align.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
+    "preact-example-text-color": {
+      "story": "text-color",
+      "files": [
+        "registry/src/preact/examples/text-color/editor.tsx",
+        "registry/src/preact/examples/text-color/extension.ts",
+        "registry/src/preact/examples/text-color/index.ts",
+        "registry/src/preact/examples/text-color/inline-menu.tsx",
+        "registry/src/preact/sample/sample-doc-text-color.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
+    "preact-example-toolbar": {
+      "story": "toolbar",
+      "files": [
+        "registry/src/preact/examples/toolbar/editor.tsx",
+        "registry/src/preact/examples/toolbar/extension.ts",
+        "registry/src/preact/examples/toolbar/index.ts",
+        "registry/src/preact/sample/sample-uploader.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-typography": {
+      "story": "typography",
+      "files": [
+        "registry/src/preact/examples/typography/editor.tsx",
+        "registry/src/preact/examples/typography/extension.ts",
+        "registry/src/preact/examples/typography/index.ts",
+        "registry/src/preact/sample/katex.ts",
+        "registry/src/preact/sample/sample-doc-typography.ts",
+        "registry/src/preact/ui/block-handle/block-handle.tsx",
+        "registry/src/preact/ui/block-handle/index.ts",
+        "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/preact/ui/drop-indicator/index.ts"
+      ]
+    },
+    "preact-example-underline": {
+      "story": "underline",
+      "files": [
+        "registry/src/preact/examples/underline/editor.tsx",
+        "registry/src/preact/examples/underline/extension.ts",
+        "registry/src/preact/examples/underline/index.ts",
+        "registry/src/preact/sample/sample-doc-underline.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-unmount": {
+      "story": "unmount",
+      "files": [
+        "registry/src/preact/examples/unmount/editor-component.tsx",
+        "registry/src/preact/examples/unmount/editor.tsx",
+        "registry/src/preact/examples/unmount/extension-component.tsx",
+        "registry/src/preact/examples/unmount/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/inline-menu/index.ts",
+        "registry/src/preact/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "preact-example-user-menu": {
+      "story": "user-menu",
+      "files": [
+        "registry/src/preact/examples/user-menu/editor.tsx",
+        "registry/src/preact/examples/user-menu/extension.ts",
+        "registry/src/preact/examples/user-menu/index.ts",
+        "registry/src/preact/sample/sample-tag-data.ts",
+        "registry/src/preact/sample/sample-user-data.ts",
+        "registry/src/preact/ui/tag-menu/index.ts",
+        "registry/src/preact/ui/tag-menu/tag-menu.tsx",
+        "registry/src/preact/ui/user-menu/index.ts",
+        "registry/src/preact/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "preact-example-user-menu-dynamic": {
+      "story": "user-menu-dynamic",
+      "files": [
+        "registry/src/preact/examples/user-menu-dynamic/editor.tsx",
+        "registry/src/preact/examples/user-menu-dynamic/extension.ts",
+        "registry/src/preact/examples/user-menu-dynamic/index.ts",
+        "registry/src/preact/examples/user-menu-dynamic/use-user-query.ts",
+        "registry/src/preact/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+        "registry/src/preact/sample/sample-query-users.ts",
+        "registry/src/preact/sample/sample-user-data.ts",
+        "registry/src/preact/ui/user-menu/index.ts",
+        "registry/src/preact/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "preact-example-view-adapter": {
+      "story": "view-adapter",
+      "files": [
+        "registry/src/preact/examples/view-adapter/atom-block-view.tsx",
+        "registry/src/preact/examples/view-adapter/editor.tsx",
+        "registry/src/preact/examples/view-adapter/extension.ts",
+        "registry/src/preact/examples/view-adapter/index.ts",
+        "registry/src/preact/sample/define-atom-block.ts",
+        "registry/src/preact/sample/sample-doc-view-adapter.ts"
+      ]
+    },
+    "preact-example-word-counter": {
+      "story": "word-counter",
+      "files": [
+        "registry/src/preact/examples/word-counter/editor.tsx",
+        "registry/src/preact/examples/word-counter/extension.ts",
+        "registry/src/preact/examples/word-counter/index.ts",
+        "registry/src/preact/sample/sample-doc-word-counter.ts",
+        "registry/src/preact/ui/word-counter/index.ts",
+        "registry/src/preact/ui/word-counter/word-counter.tsx"
+      ]
+    },
+    "preact-example-yjs": {
+      "story": "yjs",
+      "files": [
+        "registry/src/preact/examples/yjs/editor-component.tsx",
+        "registry/src/preact/examples/yjs/editor.tsx",
+        "registry/src/preact/examples/yjs/extension.ts",
+        "registry/src/preact/examples/yjs/index.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts",
+        "registry/src/preact/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/preact/ui/image-upload-popover/index.ts",
+        "registry/src/preact/ui/toolbar/index.ts",
+        "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "vue-example-block-handle": {
+      "story": "block-handle",
+      "files": [
+        "registry/src/vue/examples/block-handle/editor.vue",
+        "registry/src/vue/examples/block-handle/extension.ts",
+        "registry/src/vue/examples/block-handle/index.ts",
+        "registry/src/vue/sample/sample-doc-block-handle.ts",
+        "registry/src/vue/ui/block-handle/block-handle.vue",
+        "registry/src/vue/ui/block-handle/index.ts",
+        "registry/src/vue/ui/code-block-view/code-block-view.vue",
+        "registry/src/vue/ui/code-block-view/index.ts",
+        "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+        "registry/src/vue/ui/drop-indicator/index.ts"
+      ]
+    },
+    "vue-example-blockquote": {
+      "story": "blockquote",
+      "files": [
+        "registry/src/vue/examples/blockquote/editor.vue",
+        "registry/src/vue/examples/blockquote/extension.ts",
+        "registry/src/vue/examples/blockquote/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-bold": {
+      "story": "bold",
+      "files": [
+        "registry/src/vue/examples/bold/editor.vue",
+        "registry/src/vue/examples/bold/extension.ts",
+        "registry/src/vue/examples/bold/index.ts",
+        "registry/src/vue/sample/sample-doc-bold.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-change-tracking": {
+      "story": "change-tracking",
+      "files": [
+        "registry/src/vue/examples/change-tracking/editor-diff.vue",
+        "registry/src/vue/examples/change-tracking/editor-main.vue",
+        "registry/src/vue/examples/change-tracking/editor.vue",
+        "registry/src/vue/examples/change-tracking/index.ts"
+      ]
+    },
+    "vue-example-code": {
+      "story": "code",
+      "files": [
+        "registry/src/vue/examples/code/editor.vue",
+        "registry/src/vue/examples/code/extension.ts",
+        "registry/src/vue/examples/code/index.ts",
+        "registry/src/vue/sample/sample-doc-code.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-code-block": {
+      "story": "code-block",
+      "files": [
+        "registry/src/vue/examples/code-block/editor.vue",
+        "registry/src/vue/examples/code-block/extension.ts",
+        "registry/src/vue/examples/code-block/index.ts",
+        "registry/src/vue/sample/sample-doc-code-block.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/code-block-view/code-block-view.vue",
+        "registry/src/vue/ui/code-block-view/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-code-block-themes": {
+      "story": "code-block-themes",
+      "files": [
+        "registry/src/vue/examples/code-block-themes/editor.vue",
+        "registry/src/vue/examples/code-block-themes/extension.ts",
+        "registry/src/vue/examples/code-block-themes/index.ts",
+        "registry/src/vue/examples/code-block-themes/theme-selector.vue",
+        "registry/src/vue/examples/code-block-themes/toolbar.vue",
+        "registry/src/vue/sample/sample-doc-code-block.ts",
+        "registry/src/vue/ui/code-block-view/code-block-view.vue",
+        "registry/src/vue/ui/code-block-view/index.ts"
+      ]
+    },
+    "vue-example-drop-cursor": {
+      "story": "drop-cursor",
+      "files": [
+        "registry/src/vue/examples/drop-cursor/editor.vue",
+        "registry/src/vue/examples/drop-cursor/extension.ts",
+        "registry/src/vue/examples/drop-cursor/index.ts",
+        "registry/src/vue/sample/sample-doc-drop-cursor.ts"
+      ]
+    },
+    "vue-example-emoji-rules": {
+      "story": "emoji-rules",
+      "files": [
+        "registry/src/vue/examples/emoji-rules/editor.vue",
+        "registry/src/vue/examples/emoji-rules/emoji.ts",
+        "registry/src/vue/examples/emoji-rules/extension.ts",
+        "registry/src/vue/examples/emoji-rules/index.ts"
+      ]
+    },
+    "vue-example-full": {
+      "story": "full",
+      "files": [
+        "registry/src/vue/examples/full/editor.vue",
+        "registry/src/vue/examples/full/extension.ts",
+        "registry/src/vue/examples/full/index.ts",
+        "registry/src/vue/sample/katex.ts",
+        "registry/src/vue/sample/sample-doc-full.ts",
+        "registry/src/vue/sample/sample-tag-data.ts",
+        "registry/src/vue/sample/sample-uploader.ts",
+        "registry/src/vue/sample/sample-user-data.ts",
+        "registry/src/vue/ui/block-handle/block-handle.vue",
+        "registry/src/vue/ui/block-handle/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/code-block-view/code-block-view.vue",
+        "registry/src/vue/ui/code-block-view/index.ts",
+        "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+        "registry/src/vue/ui/drop-indicator/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/image-view/image-view.vue",
+        "registry/src/vue/ui/image-view/index.ts",
+        "registry/src/vue/ui/inline-menu/index.ts",
+        "registry/src/vue/ui/inline-menu/inline-menu.vue",
+        "registry/src/vue/ui/slash-menu/index.ts",
+        "registry/src/vue/ui/slash-menu/slash-menu-empty.vue",
+        "registry/src/vue/ui/slash-menu/slash-menu-item.vue",
+        "registry/src/vue/ui/slash-menu/slash-menu.vue",
+        "registry/src/vue/ui/table-handle/index.ts",
+        "registry/src/vue/ui/table-handle/table-handle.vue",
+        "registry/src/vue/ui/tag-menu/index.ts",
+        "registry/src/vue/ui/tag-menu/tag-menu.vue",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue",
+        "registry/src/vue/ui/user-menu/index.ts",
+        "registry/src/vue/ui/user-menu/user-menu.vue"
+      ]
+    },
+    "vue-example-gap-cursor": {
+      "story": "gap-cursor",
+      "files": [
+        "registry/src/vue/examples/gap-cursor/editor.vue",
+        "registry/src/vue/examples/gap-cursor/extension.ts",
+        "registry/src/vue/examples/gap-cursor/index.ts",
+        "registry/src/vue/sample/sample-doc-gap-cursor.ts"
+      ]
+    },
+    "vue-example-hard-break": {
+      "story": "hard-break",
+      "files": [
+        "registry/src/vue/examples/hard-break/editor.vue",
+        "registry/src/vue/examples/hard-break/extension.ts",
+        "registry/src/vue/examples/hard-break/index.ts",
+        "registry/src/vue/examples/hard-break/toolbar.vue",
+        "registry/src/vue/sample/sample-doc-hard-break.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-heading": {
+      "story": "heading",
+      "files": [
+        "registry/src/vue/examples/heading/editor.vue",
+        "registry/src/vue/examples/heading/extension.ts",
+        "registry/src/vue/examples/heading/index.ts",
+        "registry/src/vue/sample/sample-doc-heading.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-horizontal-rule": {
+      "story": "horizontal-rule",
+      "files": [
+        "registry/src/vue/examples/horizontal-rule/editor.vue",
+        "registry/src/vue/examples/horizontal-rule/extension.ts",
+        "registry/src/vue/examples/horizontal-rule/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-image-view": {
+      "story": "image-view",
+      "files": [
+        "registry/src/vue/examples/image-view/editor.vue",
+        "registry/src/vue/examples/image-view/extension.ts",
+        "registry/src/vue/examples/image-view/index.ts",
+        "registry/src/vue/sample/sample-doc-image.ts",
+        "registry/src/vue/sample/sample-uploader.ts",
+        "registry/src/vue/ui/image-view/image-view.vue",
+        "registry/src/vue/ui/image-view/index.ts"
+      ]
+    },
+    "vue-example-inline-menu": {
+      "story": "inline-menu",
+      "files": [
+        "registry/src/vue/examples/inline-menu/editor.vue",
+        "registry/src/vue/examples/inline-menu/extension.ts",
+        "registry/src/vue/examples/inline-menu/index.ts",
+        "registry/src/vue/sample/sample-doc-inline-menu.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/inline-menu/index.ts",
+        "registry/src/vue/ui/inline-menu/inline-menu.vue"
+      ]
+    },
+    "vue-example-italic": {
+      "story": "italic",
+      "files": [
+        "registry/src/vue/examples/italic/editor.vue",
+        "registry/src/vue/examples/italic/extension.ts",
+        "registry/src/vue/examples/italic/index.ts",
+        "registry/src/vue/sample/sample-doc-italic.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-katex": {
+      "story": "katex",
+      "files": [
+        "registry/src/vue/examples/katex/editor.vue",
+        "registry/src/vue/examples/katex/extension.ts",
+        "registry/src/vue/examples/katex/index.ts",
+        "registry/src/vue/sample/katex.ts",
+        "registry/src/vue/sample/sample-doc-tex.ts"
+      ]
+    },
+    "vue-example-keymap": {
+      "story": "keymap",
+      "files": [
+        "registry/src/vue/examples/keymap/editor.vue",
+        "registry/src/vue/examples/keymap/extension.ts",
+        "registry/src/vue/examples/keymap/index.ts",
+        "registry/src/vue/examples/keymap/toolbar.vue",
+        "registry/src/vue/examples/keymap/use-submit-keymap.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-link": {
+      "story": "link",
+      "files": [
+        "registry/src/vue/examples/link/editor.vue",
+        "registry/src/vue/examples/link/extension.ts",
+        "registry/src/vue/examples/link/index.ts",
+        "registry/src/vue/sample/sample-doc-link.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/inline-menu/index.ts",
+        "registry/src/vue/ui/inline-menu/inline-menu.vue"
+      ]
+    },
+    "vue-example-link-mark-view": {
+      "story": "link-mark-view",
+      "files": [
+        "registry/src/vue/examples/link-mark-view/editor.vue",
+        "registry/src/vue/examples/link-mark-view/extension.ts",
+        "registry/src/vue/examples/link-mark-view/index.ts",
+        "registry/src/vue/examples/link-mark-view/link-view.vue",
+        "registry/src/vue/sample/sample-doc-link-mark-view.ts"
+      ]
+    },
+    "vue-example-list": {
+      "story": "list",
+      "files": [
+        "registry/src/vue/examples/list/editor.vue",
+        "registry/src/vue/examples/list/extension.ts",
+        "registry/src/vue/examples/list/index.ts",
+        "registry/src/vue/sample/sample-doc-list.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-list-custom-checkbox": {
+      "story": "list-custom-checkbox",
+      "files": [
+        "registry/src/vue/examples/list-custom-checkbox/custom-list.css",
+        "registry/src/vue/examples/list-custom-checkbox/editor.vue",
+        "registry/src/vue/examples/list-custom-checkbox/extension.ts",
+        "registry/src/vue/examples/list-custom-checkbox/index.ts",
+        "registry/src/vue/sample/sample-doc-list-custom-checkbox.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-loro": {
+      "story": "loro",
+      "files": [
+        "registry/src/vue/examples/loro/editor-component.vue",
+        "registry/src/vue/examples/loro/editor.vue",
+        "registry/src/vue/examples/loro/extension.ts",
+        "registry/src/vue/examples/loro/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-mark-rule": {
+      "story": "mark-rule",
+      "files": [
+        "registry/src/vue/examples/mark-rule/editor.vue",
+        "registry/src/vue/examples/mark-rule/extension.ts",
+        "registry/src/vue/examples/mark-rule/index.ts",
+        "registry/src/vue/examples/mark-rule/issue-link.ts"
+      ]
+    },
+    "vue-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/vue/examples/minimal/editor.vue",
+        "registry/src/vue/examples/minimal/index.ts"
+      ]
+    },
+    "vue-example-placeholder": {
+      "story": "placeholder",
+      "files": [
+        "registry/src/vue/examples/placeholder/editor.vue",
+        "registry/src/vue/examples/placeholder/extension.ts",
+        "registry/src/vue/examples/placeholder/index.ts"
+      ]
+    },
+    "vue-example-readonly": {
+      "story": "readonly",
+      "files": [
+        "registry/src/vue/examples/readonly/editor.vue",
+        "registry/src/vue/examples/readonly/extension.ts",
+        "registry/src/vue/examples/readonly/index.ts",
+        "registry/src/vue/examples/readonly/toolbar.vue",
+        "registry/src/vue/examples/readonly/use-readonly.ts",
+        "registry/src/vue/sample/sample-doc-readonly.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-rtl": {
+      "story": "rtl",
+      "files": [
+        "registry/src/vue/examples/rtl/editor.vue",
+        "registry/src/vue/examples/rtl/index.ts",
+        "registry/src/vue/sample/sample-doc-rtl.ts",
+        "registry/src/vue/sample/sample-uploader.ts",
+        "registry/src/vue/ui/block-handle/block-handle.vue",
+        "registry/src/vue/ui/block-handle/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+        "registry/src/vue/ui/drop-indicator/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/inline-menu/index.ts",
+        "registry/src/vue/ui/inline-menu/inline-menu.vue",
+        "registry/src/vue/ui/slash-menu/index.ts",
+        "registry/src/vue/ui/slash-menu/slash-menu-empty.vue",
+        "registry/src/vue/ui/slash-menu/slash-menu-item.vue",
+        "registry/src/vue/ui/slash-menu/slash-menu.vue",
+        "registry/src/vue/ui/table-handle/index.ts",
+        "registry/src/vue/ui/table-handle/table-handle.vue",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-save-html": {
+      "story": "save-html",
+      "files": [
+        "registry/src/vue/examples/save-html/editor.vue",
+        "registry/src/vue/examples/save-html/index.ts"
+      ]
+    },
+    "vue-example-save-json": {
+      "story": "save-json",
+      "files": [
+        "registry/src/vue/examples/save-json/editor.vue",
+        "registry/src/vue/examples/save-json/index.ts"
+      ]
+    },
+    "vue-example-save-markdown": {
+      "story": "save-markdown",
+      "files": [
+        "registry/src/vue/examples/save-markdown/editor.vue",
+        "registry/src/vue/examples/save-markdown/index.ts",
+        "registry/src/vue/examples/save-markdown/markdown.ts"
+      ]
+    },
+    "vue-example-search": {
+      "story": "search",
+      "files": [
+        "registry/src/vue/examples/search/editor.vue",
+        "registry/src/vue/examples/search/extension.ts",
+        "registry/src/vue/examples/search/index.ts",
+        "registry/src/vue/sample/sample-doc-search.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/search/index.ts",
+        "registry/src/vue/ui/search/search.vue"
+      ]
+    },
+    "vue-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/vue/examples/slash-menu/editor.vue",
+        "registry/src/vue/examples/slash-menu/extension.ts",
+        "registry/src/vue/examples/slash-menu/index.ts",
+        "registry/src/vue/ui/slash-menu/index.ts",
+        "registry/src/vue/ui/slash-menu/slash-menu-empty.vue",
+        "registry/src/vue/ui/slash-menu/slash-menu-item.vue",
+        "registry/src/vue/ui/slash-menu/slash-menu.vue"
+      ]
+    },
+    "vue-example-strike": {
+      "story": "strike",
+      "files": [
+        "registry/src/vue/examples/strike/editor.vue",
+        "registry/src/vue/examples/strike/extension.ts",
+        "registry/src/vue/examples/strike/index.ts",
+        "registry/src/vue/examples/strike/toolbar.vue",
+        "registry/src/vue/sample/sample-doc-strike.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-table": {
+      "story": "table",
+      "files": [
+        "registry/src/vue/examples/table/editor.vue",
+        "registry/src/vue/examples/table/extension.ts",
+        "registry/src/vue/examples/table/index.ts",
+        "registry/src/vue/sample/sample-doc-table.ts",
+        "registry/src/vue/ui/table-handle/index.ts",
+        "registry/src/vue/ui/table-handle/table-handle.vue"
+      ]
+    },
+    "vue-example-text-align": {
+      "story": "text-align",
+      "files": [
+        "registry/src/vue/examples/text-align/editor.vue",
+        "registry/src/vue/examples/text-align/extension.ts",
+        "registry/src/vue/examples/text-align/index.ts",
+        "registry/src/vue/examples/text-align/toolbar.vue",
+        "registry/src/vue/sample/sample-doc-text-align.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-text-color": {
+      "story": "text-color",
+      "files": [
+        "registry/src/vue/examples/text-color/editor.vue",
+        "registry/src/vue/examples/text-color/extension.ts",
+        "registry/src/vue/examples/text-color/index.ts",
+        "registry/src/vue/examples/text-color/inline-menu.vue",
+        "registry/src/vue/sample/sample-doc-text-color.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-toolbar": {
+      "story": "toolbar",
+      "files": [
+        "registry/src/vue/examples/toolbar/editor.vue",
+        "registry/src/vue/examples/toolbar/extension.ts",
+        "registry/src/vue/examples/toolbar/index.ts",
+        "registry/src/vue/sample/sample-uploader.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-tweet": {
+      "story": "tweet",
+      "files": [
+        "registry/src/vue/examples/tweet/editor.vue",
+        "registry/src/vue/examples/tweet/extension.ts",
+        "registry/src/vue/examples/tweet/index.ts",
+        "registry/src/vue/examples/tweet/method-select.vue",
+        "registry/src/vue/examples/tweet/tweet-view.vue",
+        "registry/src/vue/sample/sample-doc-tweet.ts"
+      ]
+    },
+    "vue-example-typography": {
+      "story": "typography",
+      "files": [
+        "registry/src/vue/examples/typography/editor.vue",
+        "registry/src/vue/examples/typography/extension.ts",
+        "registry/src/vue/examples/typography/index.ts",
+        "registry/src/vue/sample/katex.ts",
+        "registry/src/vue/sample/sample-doc-typography.ts",
+        "registry/src/vue/ui/block-handle/block-handle.vue",
+        "registry/src/vue/ui/block-handle/index.ts",
+        "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+        "registry/src/vue/ui/drop-indicator/index.ts"
+      ]
+    },
+    "vue-example-underline": {
+      "story": "underline",
+      "files": [
+        "registry/src/vue/examples/underline/editor.vue",
+        "registry/src/vue/examples/underline/extension.ts",
+        "registry/src/vue/examples/underline/index.ts",
+        "registry/src/vue/sample/sample-doc-underline.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "vue-example-unmount": {
+      "story": "unmount",
+      "files": [
+        "registry/src/vue/examples/unmount/editor-component.vue",
+        "registry/src/vue/examples/unmount/editor.vue",
+        "registry/src/vue/examples/unmount/extension-component.vue",
+        "registry/src/vue/examples/unmount/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/inline-menu/index.ts",
+        "registry/src/vue/ui/inline-menu/inline-menu.vue"
+      ]
+    },
+    "vue-example-user-menu": {
+      "story": "user-menu",
+      "files": [
+        "registry/src/vue/examples/user-menu/editor.vue",
+        "registry/src/vue/examples/user-menu/extension.ts",
+        "registry/src/vue/examples/user-menu/index.ts",
+        "registry/src/vue/sample/sample-tag-data.ts",
+        "registry/src/vue/sample/sample-user-data.ts",
+        "registry/src/vue/ui/tag-menu/index.ts",
+        "registry/src/vue/ui/tag-menu/tag-menu.vue",
+        "registry/src/vue/ui/user-menu/index.ts",
+        "registry/src/vue/ui/user-menu/user-menu.vue"
+      ]
+    },
+    "vue-example-user-menu-dynamic": {
+      "story": "user-menu-dynamic",
+      "files": [
+        "registry/src/vue/examples/user-menu-dynamic/editor.vue",
+        "registry/src/vue/examples/user-menu-dynamic/extension.ts",
+        "registry/src/vue/examples/user-menu-dynamic/index.ts",
+        "registry/src/vue/examples/user-menu-dynamic/use-user-query.ts",
+        "registry/src/vue/examples/user-menu-dynamic/user-menu-dynamic.vue",
+        "registry/src/vue/sample/sample-query-users.ts",
+        "registry/src/vue/sample/sample-user-data.ts",
+        "registry/src/vue/ui/user-menu/index.ts",
+        "registry/src/vue/ui/user-menu/user-menu.vue"
+      ]
+    },
+    "vue-example-view-adapter": {
+      "story": "view-adapter",
+      "files": [
+        "registry/src/vue/examples/view-adapter/atom-block-view.vue",
+        "registry/src/vue/examples/view-adapter/editor.vue",
+        "registry/src/vue/examples/view-adapter/extension.ts",
+        "registry/src/vue/examples/view-adapter/index.ts",
+        "registry/src/vue/sample/define-atom-block.ts",
+        "registry/src/vue/sample/sample-doc-view-adapter.ts"
+      ]
+    },
+    "vue-example-word-counter": {
+      "story": "word-counter",
+      "files": [
+        "registry/src/vue/examples/word-counter/editor.vue",
+        "registry/src/vue/examples/word-counter/extension.ts",
+        "registry/src/vue/examples/word-counter/index.ts",
+        "registry/src/vue/sample/sample-doc-word-counter.ts",
+        "registry/src/vue/ui/word-counter/index.ts",
+        "registry/src/vue/ui/word-counter/word-counter.vue"
+      ]
+    },
+    "vue-example-yjs": {
+      "story": "yjs",
+      "files": [
+        "registry/src/vue/examples/yjs/editor-component.vue",
+        "registry/src/vue/examples/yjs/editor.vue",
+        "registry/src/vue/examples/yjs/extension.ts",
+        "registry/src/vue/examples/yjs/index.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts",
+        "registry/src/vue/ui/image-upload-popover/image-upload-popover.vue",
+        "registry/src/vue/ui/image-upload-popover/index.ts",
+        "registry/src/vue/ui/toolbar/index.ts",
+        "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "lit-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/lit/examples/minimal/editor.ts",
+        "registry/src/lit/examples/minimal/index.ts"
+      ]
+    },
+    "lit-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/lit/examples/slash-menu/editor.ts",
+        "registry/src/lit/examples/slash-menu/extension.ts",
+        "registry/src/lit/examples/slash-menu/index.ts",
+        "registry/src/lit/ui/editor-context.ts",
+        "registry/src/lit/ui/slash-menu/index.ts",
+        "registry/src/lit/ui/slash-menu/slash-menu-empty.ts",
+        "registry/src/lit/ui/slash-menu/slash-menu-item.ts",
+        "registry/src/lit/ui/slash-menu/slash-menu.ts"
+      ]
+    },
+    "lit-example-table": {
+      "story": "table",
+      "files": [
+        "registry/src/lit/examples/table/editor.ts",
+        "registry/src/lit/examples/table/extension.ts",
+        "registry/src/lit/examples/table/index.ts",
+        "registry/src/lit/sample/sample-doc-table.ts",
+        "registry/src/lit/ui/editor-context.ts",
+        "registry/src/lit/ui/table-handle/index.ts",
+        "registry/src/lit/ui/table-handle/table-handle.ts"
+      ]
+    },
+    "lit-example-toolbar": {
+      "story": "toolbar",
+      "files": [
+        "registry/src/lit/examples/toolbar/editor.ts",
+        "registry/src/lit/examples/toolbar/extension.ts",
+        "registry/src/lit/examples/toolbar/index.ts",
+        "registry/src/lit/sample/sample-uploader.ts",
+        "registry/src/lit/ui/button/button.ts",
+        "registry/src/lit/ui/button/index.ts",
+        "registry/src/lit/ui/editor-context.ts",
+        "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+        "registry/src/lit/ui/image-upload-popover/index.ts",
+        "registry/src/lit/ui/toolbar/index.ts",
+        "registry/src/lit/ui/toolbar/toolbar.ts"
+      ]
+    },
+    "svelte-example-block-handle": {
+      "story": "block-handle",
+      "files": [
+        "registry/src/svelte/examples/block-handle/editor.svelte",
+        "registry/src/svelte/examples/block-handle/extension.ts",
+        "registry/src/svelte/examples/block-handle/index.ts",
+        "registry/src/svelte/sample/sample-doc-block-handle.ts",
+        "registry/src/svelte/ui/block-handle/block-handle.svelte",
+        "registry/src/svelte/ui/block-handle/index.ts",
+        "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+        "registry/src/svelte/ui/code-block-view/index.ts",
+        "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+        "registry/src/svelte/ui/drop-indicator/index.ts"
+      ]
+    },
+    "svelte-example-blockquote": {
+      "story": "blockquote",
+      "files": [
+        "registry/src/svelte/examples/blockquote/editor.svelte",
+        "registry/src/svelte/examples/blockquote/extension.ts",
+        "registry/src/svelte/examples/blockquote/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-bold": {
+      "story": "bold",
+      "files": [
+        "registry/src/svelte/examples/bold/editor.svelte",
+        "registry/src/svelte/examples/bold/extension.ts",
+        "registry/src/svelte/examples/bold/index.ts",
+        "registry/src/svelte/sample/sample-doc-bold.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-change-tracking": {
+      "story": "change-tracking",
+      "files": [
+        "registry/src/svelte/examples/change-tracking/editor-diff.svelte",
+        "registry/src/svelte/examples/change-tracking/editor-main.svelte",
+        "registry/src/svelte/examples/change-tracking/editor.svelte",
+        "registry/src/svelte/examples/change-tracking/index.ts"
+      ]
+    },
+    "svelte-example-code": {
+      "story": "code",
+      "files": [
+        "registry/src/svelte/examples/code/editor.svelte",
+        "registry/src/svelte/examples/code/extension.ts",
+        "registry/src/svelte/examples/code/index.ts",
+        "registry/src/svelte/sample/sample-doc-code.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-code-block": {
+      "story": "code-block",
+      "files": [
+        "registry/src/svelte/examples/code-block/editor.svelte",
+        "registry/src/svelte/examples/code-block/extension.ts",
+        "registry/src/svelte/examples/code-block/index.ts",
+        "registry/src/svelte/sample/sample-doc-code-block.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+        "registry/src/svelte/ui/code-block-view/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-code-block-themes": {
+      "story": "code-block-themes",
+      "files": [
+        "registry/src/svelte/examples/code-block-themes/editor.svelte",
+        "registry/src/svelte/examples/code-block-themes/extension.ts",
+        "registry/src/svelte/examples/code-block-themes/index.ts",
+        "registry/src/svelte/examples/code-block-themes/theme-selector.svelte",
+        "registry/src/svelte/examples/code-block-themes/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-code-block.ts",
+        "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+        "registry/src/svelte/ui/code-block-view/index.ts"
+      ]
+    },
+    "svelte-example-drop-cursor": {
+      "story": "drop-cursor",
+      "files": [
+        "registry/src/svelte/examples/drop-cursor/editor.svelte",
+        "registry/src/svelte/examples/drop-cursor/extension.ts",
+        "registry/src/svelte/examples/drop-cursor/index.ts",
+        "registry/src/svelte/sample/sample-doc-drop-cursor.ts"
+      ]
+    },
+    "svelte-example-emoji-rules": {
+      "story": "emoji-rules",
+      "files": [
+        "registry/src/svelte/examples/emoji-rules/editor.svelte",
+        "registry/src/svelte/examples/emoji-rules/emoji.ts",
+        "registry/src/svelte/examples/emoji-rules/extension.ts",
+        "registry/src/svelte/examples/emoji-rules/index.ts"
+      ]
+    },
+    "svelte-example-full": {
+      "story": "full",
+      "files": [
+        "registry/src/svelte/examples/full/editor.svelte",
+        "registry/src/svelte/examples/full/extension.ts",
+        "registry/src/svelte/examples/full/index.ts",
+        "registry/src/svelte/sample/katex.ts",
+        "registry/src/svelte/sample/sample-doc-full.ts",
+        "registry/src/svelte/sample/sample-tag-data.ts",
+        "registry/src/svelte/sample/sample-uploader.ts",
+        "registry/src/svelte/sample/sample-user-data.ts",
+        "registry/src/svelte/ui/block-handle/block-handle.svelte",
+        "registry/src/svelte/ui/block-handle/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+        "registry/src/svelte/ui/code-block-view/index.ts",
+        "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+        "registry/src/svelte/ui/drop-indicator/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/image-view/image-view.svelte",
+        "registry/src/svelte/ui/image-view/index.ts",
+        "registry/src/svelte/ui/inline-menu/index.ts",
+        "registry/src/svelte/ui/inline-menu/inline-menu.svelte",
+        "registry/src/svelte/ui/slash-menu/index.ts",
+        "registry/src/svelte/ui/slash-menu/slash-menu-empty.svelte",
+        "registry/src/svelte/ui/slash-menu/slash-menu-item.svelte",
+        "registry/src/svelte/ui/slash-menu/slash-menu.svelte",
+        "registry/src/svelte/ui/table-handle/index.ts",
+        "registry/src/svelte/ui/table-handle/table-handle.svelte",
+        "registry/src/svelte/ui/tag-menu/index.ts",
+        "registry/src/svelte/ui/tag-menu/tag-menu.svelte",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte",
+        "registry/src/svelte/ui/user-menu/index.ts",
+        "registry/src/svelte/ui/user-menu/user-menu.svelte"
+      ]
+    },
+    "svelte-example-gap-cursor": {
+      "story": "gap-cursor",
+      "files": [
+        "registry/src/svelte/examples/gap-cursor/editor.svelte",
+        "registry/src/svelte/examples/gap-cursor/extension.ts",
+        "registry/src/svelte/examples/gap-cursor/index.ts",
+        "registry/src/svelte/sample/sample-doc-gap-cursor.ts"
+      ]
+    },
+    "svelte-example-hard-break": {
+      "story": "hard-break",
+      "files": [
+        "registry/src/svelte/examples/hard-break/editor.svelte",
+        "registry/src/svelte/examples/hard-break/extension.ts",
+        "registry/src/svelte/examples/hard-break/index.ts",
+        "registry/src/svelte/examples/hard-break/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-hard-break.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
+    "svelte-example-heading": {
+      "story": "heading",
+      "files": [
+        "registry/src/svelte/examples/heading/editor.svelte",
+        "registry/src/svelte/examples/heading/extension.ts",
+        "registry/src/svelte/examples/heading/index.ts",
+        "registry/src/svelte/sample/sample-doc-heading.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-horizontal-rule": {
+      "story": "horizontal-rule",
+      "files": [
+        "registry/src/svelte/examples/horizontal-rule/editor.svelte",
+        "registry/src/svelte/examples/horizontal-rule/extension.ts",
+        "registry/src/svelte/examples/horizontal-rule/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-image-view": {
+      "story": "image-view",
+      "files": [
+        "registry/src/svelte/examples/image-view/editor.svelte",
+        "registry/src/svelte/examples/image-view/extension.ts",
+        "registry/src/svelte/examples/image-view/index.ts",
+        "registry/src/svelte/sample/sample-doc-image.ts",
+        "registry/src/svelte/sample/sample-uploader.ts",
+        "registry/src/svelte/ui/image-view/image-view.svelte",
+        "registry/src/svelte/ui/image-view/index.ts"
+      ]
+    },
+    "svelte-example-inline-menu": {
+      "story": "inline-menu",
+      "files": [
+        "registry/src/svelte/examples/inline-menu/editor.svelte",
+        "registry/src/svelte/examples/inline-menu/extension.ts",
+        "registry/src/svelte/examples/inline-menu/index.ts",
+        "registry/src/svelte/sample/sample-doc-inline-menu.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/inline-menu/index.ts",
+        "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+      ]
+    },
+    "svelte-example-italic": {
+      "story": "italic",
+      "files": [
+        "registry/src/svelte/examples/italic/editor.svelte",
+        "registry/src/svelte/examples/italic/extension.ts",
+        "registry/src/svelte/examples/italic/index.ts",
+        "registry/src/svelte/sample/sample-doc-italic.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-katex": {
+      "story": "katex",
+      "files": [
+        "registry/src/svelte/examples/katex/editor.svelte",
+        "registry/src/svelte/examples/katex/extension.ts",
+        "registry/src/svelte/examples/katex/index.ts",
+        "registry/src/svelte/sample/katex.ts",
+        "registry/src/svelte/sample/sample-doc-tex.ts"
+      ]
+    },
+    "svelte-example-keymap": {
+      "story": "keymap",
+      "files": [
+        "registry/src/svelte/examples/keymap/editor.svelte",
+        "registry/src/svelte/examples/keymap/extension.ts",
+        "registry/src/svelte/examples/keymap/index.ts",
+        "registry/src/svelte/examples/keymap/toolbar.svelte",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
+    "svelte-example-link": {
+      "story": "link",
+      "files": [
+        "registry/src/svelte/examples/link/editor.svelte",
+        "registry/src/svelte/examples/link/extension.ts",
+        "registry/src/svelte/examples/link/index.ts",
+        "registry/src/svelte/sample/sample-doc-link.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/inline-menu/index.ts",
+        "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+      ]
+    },
+    "svelte-example-link-mark-view": {
+      "story": "link-mark-view",
+      "files": [
+        "registry/src/svelte/examples/link-mark-view/editor.svelte",
+        "registry/src/svelte/examples/link-mark-view/extension.ts",
+        "registry/src/svelte/examples/link-mark-view/index.ts",
+        "registry/src/svelte/examples/link-mark-view/link-view.svelte",
+        "registry/src/svelte/sample/sample-doc-link-mark-view.ts"
+      ]
+    },
+    "svelte-example-list": {
+      "story": "list",
+      "files": [
+        "registry/src/svelte/examples/list/editor.svelte",
+        "registry/src/svelte/examples/list/extension.ts",
+        "registry/src/svelte/examples/list/index.ts",
+        "registry/src/svelte/sample/sample-doc-list.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-list-custom-checkbox": {
+      "story": "list-custom-checkbox",
+      "files": [
+        "registry/src/svelte/examples/list-custom-checkbox/custom-list.css",
+        "registry/src/svelte/examples/list-custom-checkbox/editor.svelte",
+        "registry/src/svelte/examples/list-custom-checkbox/extension.ts",
+        "registry/src/svelte/examples/list-custom-checkbox/index.ts",
+        "registry/src/svelte/sample/sample-doc-list-custom-checkbox.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-loro": {
+      "story": "loro",
+      "files": [
+        "registry/src/svelte/examples/loro/editor-component.svelte",
+        "registry/src/svelte/examples/loro/editor.svelte",
+        "registry/src/svelte/examples/loro/extension.ts",
+        "registry/src/svelte/examples/loro/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-mark-rule": {
+      "story": "mark-rule",
+      "files": [
+        "registry/src/svelte/examples/mark-rule/editor.svelte",
+        "registry/src/svelte/examples/mark-rule/extension.ts",
+        "registry/src/svelte/examples/mark-rule/index.ts",
+        "registry/src/svelte/examples/mark-rule/issue-link.ts"
+      ]
+    },
+    "svelte-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/svelte/examples/minimal/editor.svelte",
+        "registry/src/svelte/examples/minimal/index.ts"
+      ]
+    },
+    "svelte-example-page": {
+      "story": "page",
+      "files": [
+        "registry/src/svelte/examples/page/editor.svelte",
+        "registry/src/svelte/examples/page/extension.ts",
+        "registry/src/svelte/examples/page/index.ts",
+        "registry/src/svelte/examples/page/paper-controller.svelte",
+        "registry/src/svelte/examples/page/zoom.css",
+        "registry/src/svelte/sample/sample-doc-page.ts"
+      ]
+    },
+    "svelte-example-placeholder": {
+      "story": "placeholder",
+      "files": [
+        "registry/src/svelte/examples/placeholder/editor.svelte",
+        "registry/src/svelte/examples/placeholder/extension.ts",
+        "registry/src/svelte/examples/placeholder/index.ts"
+      ]
+    },
+    "svelte-example-readonly": {
+      "story": "readonly",
+      "files": [
+        "registry/src/svelte/examples/readonly/editor.svelte",
+        "registry/src/svelte/examples/readonly/extension.ts",
+        "registry/src/svelte/examples/readonly/index.ts",
+        "registry/src/svelte/examples/readonly/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-readonly.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
+    "svelte-example-rtl": {
+      "story": "rtl",
+      "files": [
+        "registry/src/svelte/examples/rtl/editor.svelte",
+        "registry/src/svelte/examples/rtl/index.ts",
+        "registry/src/svelte/sample/sample-doc-rtl.ts",
+        "registry/src/svelte/sample/sample-uploader.ts",
+        "registry/src/svelte/ui/block-handle/block-handle.svelte",
+        "registry/src/svelte/ui/block-handle/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+        "registry/src/svelte/ui/drop-indicator/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/inline-menu/index.ts",
+        "registry/src/svelte/ui/inline-menu/inline-menu.svelte",
+        "registry/src/svelte/ui/slash-menu/index.ts",
+        "registry/src/svelte/ui/slash-menu/slash-menu-empty.svelte",
+        "registry/src/svelte/ui/slash-menu/slash-menu-item.svelte",
+        "registry/src/svelte/ui/slash-menu/slash-menu.svelte",
+        "registry/src/svelte/ui/table-handle/index.ts",
+        "registry/src/svelte/ui/table-handle/table-handle.svelte",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-save-html": {
+      "story": "save-html",
+      "files": [
+        "registry/src/svelte/examples/save-html/editor.svelte",
+        "registry/src/svelte/examples/save-html/index.ts"
+      ]
+    },
+    "svelte-example-save-json": {
+      "story": "save-json",
+      "files": [
+        "registry/src/svelte/examples/save-json/editor.svelte",
+        "registry/src/svelte/examples/save-json/index.ts"
+      ]
+    },
+    "svelte-example-save-markdown": {
+      "story": "save-markdown",
+      "files": [
+        "registry/src/svelte/examples/save-markdown/editor.svelte",
+        "registry/src/svelte/examples/save-markdown/index.ts",
+        "registry/src/svelte/examples/save-markdown/markdown.ts"
+      ]
+    },
+    "svelte-example-search": {
+      "story": "search",
+      "files": [
+        "registry/src/svelte/examples/search/editor.svelte",
+        "registry/src/svelte/examples/search/extension.ts",
+        "registry/src/svelte/examples/search/index.ts",
+        "registry/src/svelte/sample/sample-doc-search.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/search/index.ts",
+        "registry/src/svelte/ui/search/search.svelte"
+      ]
+    },
+    "svelte-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/svelte/examples/slash-menu/editor.svelte",
+        "registry/src/svelte/examples/slash-menu/extension.ts",
+        "registry/src/svelte/examples/slash-menu/index.ts",
+        "registry/src/svelte/ui/slash-menu/index.ts",
+        "registry/src/svelte/ui/slash-menu/slash-menu-empty.svelte",
+        "registry/src/svelte/ui/slash-menu/slash-menu-item.svelte",
+        "registry/src/svelte/ui/slash-menu/slash-menu.svelte"
+      ]
+    },
+    "svelte-example-strike": {
+      "story": "strike",
+      "files": [
+        "registry/src/svelte/examples/strike/editor.svelte",
+        "registry/src/svelte/examples/strike/extension.ts",
+        "registry/src/svelte/examples/strike/index.ts",
+        "registry/src/svelte/examples/strike/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-strike.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
+    "svelte-example-table": {
+      "story": "table",
+      "files": [
+        "registry/src/svelte/examples/table/editor.svelte",
+        "registry/src/svelte/examples/table/extension.ts",
+        "registry/src/svelte/examples/table/index.ts",
+        "registry/src/svelte/sample/sample-doc-table.ts",
+        "registry/src/svelte/ui/table-handle/index.ts",
+        "registry/src/svelte/ui/table-handle/table-handle.svelte"
+      ]
+    },
+    "svelte-example-text-align": {
+      "story": "text-align",
+      "files": [
+        "registry/src/svelte/examples/text-align/editor.svelte",
+        "registry/src/svelte/examples/text-align/extension.ts",
+        "registry/src/svelte/examples/text-align/index.ts",
+        "registry/src/svelte/examples/text-align/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-text-align.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
+    "svelte-example-text-color": {
+      "story": "text-color",
+      "files": [
+        "registry/src/svelte/examples/text-color/editor.svelte",
+        "registry/src/svelte/examples/text-color/extension.ts",
+        "registry/src/svelte/examples/text-color/index.ts",
+        "registry/src/svelte/examples/text-color/inline-menu.svelte",
+        "registry/src/svelte/sample/sample-doc-text-color.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
+    "svelte-example-toolbar": {
+      "story": "toolbar",
+      "files": [
+        "registry/src/svelte/examples/toolbar/editor.svelte",
+        "registry/src/svelte/examples/toolbar/extension.ts",
+        "registry/src/svelte/examples/toolbar/index.ts",
+        "registry/src/svelte/sample/sample-uploader.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-typography": {
+      "story": "typography",
+      "files": [
+        "registry/src/svelte/examples/typography/editor.svelte",
+        "registry/src/svelte/examples/typography/extension.ts",
+        "registry/src/svelte/examples/typography/index.ts",
+        "registry/src/svelte/sample/katex.ts",
+        "registry/src/svelte/sample/sample-doc-typography.ts",
+        "registry/src/svelte/ui/block-handle/block-handle.svelte",
+        "registry/src/svelte/ui/block-handle/index.ts",
+        "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+        "registry/src/svelte/ui/drop-indicator/index.ts"
+      ]
+    },
+    "svelte-example-underline": {
+      "story": "underline",
+      "files": [
+        "registry/src/svelte/examples/underline/editor.svelte",
+        "registry/src/svelte/examples/underline/extension.ts",
+        "registry/src/svelte/examples/underline/index.ts",
+        "registry/src/svelte/sample/sample-doc-underline.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "svelte-example-unmount": {
+      "story": "unmount",
+      "files": [
+        "registry/src/svelte/examples/unmount/editor-component.svelte",
+        "registry/src/svelte/examples/unmount/editor.svelte",
+        "registry/src/svelte/examples/unmount/extension-component.svelte",
+        "registry/src/svelte/examples/unmount/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/inline-menu/index.ts",
+        "registry/src/svelte/ui/inline-menu/inline-menu.svelte"
+      ]
+    },
+    "svelte-example-user-menu": {
+      "story": "user-menu",
+      "files": [
+        "registry/src/svelte/examples/user-menu/editor.svelte",
+        "registry/src/svelte/examples/user-menu/extension.ts",
+        "registry/src/svelte/examples/user-menu/index.ts",
+        "registry/src/svelte/sample/sample-tag-data.ts",
+        "registry/src/svelte/sample/sample-user-data.ts",
+        "registry/src/svelte/ui/tag-menu/index.ts",
+        "registry/src/svelte/ui/tag-menu/tag-menu.svelte",
+        "registry/src/svelte/ui/user-menu/index.ts",
+        "registry/src/svelte/ui/user-menu/user-menu.svelte"
+      ]
+    },
+    "svelte-example-user-menu-dynamic": {
+      "story": "user-menu-dynamic",
+      "files": [
+        "registry/src/svelte/examples/user-menu-dynamic/editor.svelte",
+        "registry/src/svelte/examples/user-menu-dynamic/extension.ts",
+        "registry/src/svelte/examples/user-menu-dynamic/index.ts",
+        "registry/src/svelte/examples/user-menu-dynamic/use-user-query.svelte.ts",
+        "registry/src/svelte/examples/user-menu-dynamic/user-menu-dynamic.svelte",
+        "registry/src/svelte/sample/sample-query-users.ts",
+        "registry/src/svelte/sample/sample-user-data.ts",
+        "registry/src/svelte/ui/user-menu/index.ts",
+        "registry/src/svelte/ui/user-menu/user-menu.svelte"
+      ]
+    },
+    "svelte-example-view-adapter": {
+      "story": "view-adapter",
+      "files": [
+        "registry/src/svelte/examples/view-adapter/atom-block-view.svelte",
+        "registry/src/svelte/examples/view-adapter/editor.svelte",
+        "registry/src/svelte/examples/view-adapter/extension.ts",
+        "registry/src/svelte/examples/view-adapter/index.ts",
+        "registry/src/svelte/sample/define-atom-block.ts",
+        "registry/src/svelte/sample/sample-doc-view-adapter.ts"
+      ]
+    },
+    "svelte-example-word-counter": {
+      "story": "word-counter",
+      "files": [
+        "registry/src/svelte/examples/word-counter/editor.svelte",
+        "registry/src/svelte/examples/word-counter/extension.ts",
+        "registry/src/svelte/examples/word-counter/index.ts",
+        "registry/src/svelte/sample/sample-doc-word-counter.ts",
+        "registry/src/svelte/ui/word-counter/index.ts",
+        "registry/src/svelte/ui/word-counter/word-counter.svelte"
+      ]
+    },
+    "svelte-example-yjs": {
+      "story": "yjs",
+      "files": [
+        "registry/src/svelte/examples/yjs/editor-component.svelte",
+        "registry/src/svelte/examples/yjs/editor.svelte",
+        "registry/src/svelte/examples/yjs/extension.ts",
+        "registry/src/svelte/examples/yjs/index.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts",
+        "registry/src/svelte/ui/image-upload-popover/image-upload-popover.svelte",
+        "registry/src/svelte/ui/image-upload-popover/index.ts",
+        "registry/src/svelte/ui/toolbar/index.ts",
+        "registry/src/svelte/ui/toolbar/toolbar.svelte"
+      ]
+    },
+    "solid-example-block-handle": {
+      "story": "block-handle",
+      "files": [
+        "registry/src/solid/examples/block-handle/editor.tsx",
+        "registry/src/solid/examples/block-handle/extension.ts",
+        "registry/src/solid/examples/block-handle/index.ts",
+        "registry/src/solid/sample/sample-doc-block-handle.ts",
+        "registry/src/solid/ui/block-handle/block-handle.tsx",
+        "registry/src/solid/ui/block-handle/index.ts",
+        "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+        "registry/src/solid/ui/code-block-view/index.ts",
+        "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/solid/ui/drop-indicator/index.ts"
+      ]
+    },
+    "solid-example-blockquote": {
+      "story": "blockquote",
+      "files": [
+        "registry/src/solid/examples/blockquote/editor.tsx",
+        "registry/src/solid/examples/blockquote/extension.ts",
+        "registry/src/solid/examples/blockquote/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-bold": {
+      "story": "bold",
+      "files": [
+        "registry/src/solid/examples/bold/editor.tsx",
+        "registry/src/solid/examples/bold/extension.ts",
+        "registry/src/solid/examples/bold/index.ts",
+        "registry/src/solid/sample/sample-doc-bold.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-change-tracking": {
+      "story": "change-tracking",
+      "files": [
+        "registry/src/solid/examples/change-tracking/editor-diff.tsx",
+        "registry/src/solid/examples/change-tracking/editor-main.tsx",
+        "registry/src/solid/examples/change-tracking/editor.tsx",
+        "registry/src/solid/examples/change-tracking/index.ts"
+      ]
+    },
+    "solid-example-code": {
+      "story": "code",
+      "files": [
+        "registry/src/solid/examples/code/editor.tsx",
+        "registry/src/solid/examples/code/extension.ts",
+        "registry/src/solid/examples/code/index.ts",
+        "registry/src/solid/sample/sample-doc-code.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-code-block": {
+      "story": "code-block",
+      "files": [
+        "registry/src/solid/examples/code-block/editor.tsx",
+        "registry/src/solid/examples/code-block/extension.ts",
+        "registry/src/solid/examples/code-block/index.ts",
+        "registry/src/solid/sample/sample-doc-code-block.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+        "registry/src/solid/ui/code-block-view/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-code-block-themes": {
+      "story": "code-block-themes",
+      "files": [
+        "registry/src/solid/examples/code-block-themes/editor.tsx",
+        "registry/src/solid/examples/code-block-themes/extension.ts",
+        "registry/src/solid/examples/code-block-themes/index.ts",
+        "registry/src/solid/examples/code-block-themes/theme-selector.tsx",
+        "registry/src/solid/examples/code-block-themes/toolbar.tsx",
+        "registry/src/solid/sample/sample-doc-code-block.ts",
+        "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+        "registry/src/solid/ui/code-block-view/index.ts"
+      ]
+    },
+    "solid-example-drop-cursor": {
+      "story": "drop-cursor",
+      "files": [
+        "registry/src/solid/examples/drop-cursor/editor.tsx",
+        "registry/src/solid/examples/drop-cursor/extension.ts",
+        "registry/src/solid/examples/drop-cursor/index.ts",
+        "registry/src/solid/sample/sample-doc-drop-cursor.ts"
+      ]
+    },
+    "solid-example-emoji-rules": {
+      "story": "emoji-rules",
+      "files": [
+        "registry/src/solid/examples/emoji-rules/editor.tsx",
+        "registry/src/solid/examples/emoji-rules/emoji.ts",
+        "registry/src/solid/examples/emoji-rules/extension.ts",
+        "registry/src/solid/examples/emoji-rules/index.ts"
+      ]
+    },
+    "solid-example-full": {
+      "story": "full",
+      "files": [
+        "registry/src/solid/examples/full/editor.tsx",
+        "registry/src/solid/examples/full/extension.ts",
+        "registry/src/solid/examples/full/index.ts",
+        "registry/src/solid/sample/katex.ts",
+        "registry/src/solid/sample/sample-doc-full.ts",
+        "registry/src/solid/sample/sample-tag-data.ts",
+        "registry/src/solid/sample/sample-uploader.ts",
+        "registry/src/solid/sample/sample-user-data.ts",
+        "registry/src/solid/ui/block-handle/block-handle.tsx",
+        "registry/src/solid/ui/block-handle/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+        "registry/src/solid/ui/code-block-view/index.ts",
+        "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/solid/ui/drop-indicator/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/image-view/image-view.tsx",
+        "registry/src/solid/ui/image-view/index.ts",
+        "registry/src/solid/ui/inline-menu/index.ts",
+        "registry/src/solid/ui/inline-menu/inline-menu.tsx",
+        "registry/src/solid/ui/slash-menu/index.ts",
+        "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/solid/ui/slash-menu/slash-menu.tsx",
+        "registry/src/solid/ui/table-handle/index.ts",
+        "registry/src/solid/ui/table-handle/table-handle.tsx",
+        "registry/src/solid/ui/tag-menu/index.ts",
+        "registry/src/solid/ui/tag-menu/tag-menu.tsx",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx",
+        "registry/src/solid/ui/user-menu/index.ts",
+        "registry/src/solid/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "solid-example-gap-cursor": {
+      "story": "gap-cursor",
+      "files": [
+        "registry/src/solid/examples/gap-cursor/editor.tsx",
+        "registry/src/solid/examples/gap-cursor/extension.ts",
+        "registry/src/solid/examples/gap-cursor/index.ts",
+        "registry/src/solid/sample/sample-doc-gap-cursor.ts"
+      ]
+    },
+    "solid-example-hard-break": {
+      "story": "hard-break",
+      "files": [
+        "registry/src/solid/examples/hard-break/editor.tsx",
+        "registry/src/solid/examples/hard-break/extension.ts",
+        "registry/src/solid/examples/hard-break/index.ts",
+        "registry/src/solid/examples/hard-break/toolbar.tsx",
+        "registry/src/solid/sample/sample-doc-hard-break.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-heading": {
+      "story": "heading",
+      "files": [
+        "registry/src/solid/examples/heading/editor.tsx",
+        "registry/src/solid/examples/heading/extension.ts",
+        "registry/src/solid/examples/heading/index.ts",
+        "registry/src/solid/sample/sample-doc-heading.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-horizontal-rule": {
+      "story": "horizontal-rule",
+      "files": [
+        "registry/src/solid/examples/horizontal-rule/editor.tsx",
+        "registry/src/solid/examples/horizontal-rule/extension.ts",
+        "registry/src/solid/examples/horizontal-rule/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-image-view": {
+      "story": "image-view",
+      "files": [
+        "registry/src/solid/examples/image-view/editor.tsx",
+        "registry/src/solid/examples/image-view/extension.ts",
+        "registry/src/solid/examples/image-view/index.ts",
+        "registry/src/solid/sample/sample-doc-image.ts",
+        "registry/src/solid/sample/sample-uploader.ts",
+        "registry/src/solid/ui/image-view/image-view.tsx",
+        "registry/src/solid/ui/image-view/index.ts"
+      ]
+    },
+    "solid-example-inline-menu": {
+      "story": "inline-menu",
+      "files": [
+        "registry/src/solid/examples/inline-menu/editor.tsx",
+        "registry/src/solid/examples/inline-menu/extension.ts",
+        "registry/src/solid/examples/inline-menu/index.ts",
+        "registry/src/solid/sample/sample-doc-inline-menu.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/inline-menu/index.ts",
+        "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "solid-example-italic": {
+      "story": "italic",
+      "files": [
+        "registry/src/solid/examples/italic/editor.tsx",
+        "registry/src/solid/examples/italic/extension.ts",
+        "registry/src/solid/examples/italic/index.ts",
+        "registry/src/solid/sample/sample-doc-italic.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-keymap": {
+      "story": "keymap",
+      "files": [
+        "registry/src/solid/examples/keymap/editor.tsx",
+        "registry/src/solid/examples/keymap/extension.ts",
+        "registry/src/solid/examples/keymap/index.ts",
+        "registry/src/solid/examples/keymap/toolbar.tsx",
+        "registry/src/solid/examples/keymap/use-submit-keymap.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-link": {
+      "story": "link",
+      "files": [
+        "registry/src/solid/examples/link/editor.tsx",
+        "registry/src/solid/examples/link/extension.ts",
+        "registry/src/solid/examples/link/index.ts",
+        "registry/src/solid/sample/sample-doc-link.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/inline-menu/index.ts",
+        "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "solid-example-link-mark-view": {
+      "story": "link-mark-view",
+      "files": [
+        "registry/src/solid/examples/link-mark-view/editor.tsx",
+        "registry/src/solid/examples/link-mark-view/extension.ts",
+        "registry/src/solid/examples/link-mark-view/index.ts",
+        "registry/src/solid/examples/link-mark-view/link-view.tsx",
+        "registry/src/solid/sample/sample-doc-link-mark-view.ts"
+      ]
+    },
+    "solid-example-list": {
+      "story": "list",
+      "files": [
+        "registry/src/solid/examples/list/editor.tsx",
+        "registry/src/solid/examples/list/extension.ts",
+        "registry/src/solid/examples/list/index.ts",
+        "registry/src/solid/sample/sample-doc-list.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-list-custom-checkbox": {
+      "story": "list-custom-checkbox",
+      "files": [
+        "registry/src/solid/examples/list-custom-checkbox/custom-list.css",
+        "registry/src/solid/examples/list-custom-checkbox/editor.tsx",
+        "registry/src/solid/examples/list-custom-checkbox/extension.ts",
+        "registry/src/solid/examples/list-custom-checkbox/index.ts",
+        "registry/src/solid/sample/sample-doc-list-custom-checkbox.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-loro": {
+      "story": "loro",
+      "files": [
+        "registry/src/solid/examples/loro/editor-component.tsx",
+        "registry/src/solid/examples/loro/editor.tsx",
+        "registry/src/solid/examples/loro/extension.ts",
+        "registry/src/solid/examples/loro/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-mark-rule": {
+      "story": "mark-rule",
+      "files": [
+        "registry/src/solid/examples/mark-rule/editor.tsx",
+        "registry/src/solid/examples/mark-rule/extension.ts",
+        "registry/src/solid/examples/mark-rule/index.ts",
+        "registry/src/solid/examples/mark-rule/issue-link.ts"
+      ]
+    },
+    "solid-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/solid/examples/minimal/editor.tsx",
+        "registry/src/solid/examples/minimal/index.ts"
+      ]
+    },
+    "solid-example-placeholder": {
+      "story": "placeholder",
+      "files": [
+        "registry/src/solid/examples/placeholder/editor.tsx",
+        "registry/src/solid/examples/placeholder/extension.ts",
+        "registry/src/solid/examples/placeholder/index.ts"
+      ]
+    },
+    "solid-example-readonly": {
+      "story": "readonly",
+      "files": [
+        "registry/src/solid/examples/readonly/editor.tsx",
+        "registry/src/solid/examples/readonly/extension.ts",
+        "registry/src/solid/examples/readonly/index.ts",
+        "registry/src/solid/examples/readonly/toolbar.tsx",
+        "registry/src/solid/examples/readonly/use-readonly.ts",
+        "registry/src/solid/sample/sample-doc-readonly.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-rtl": {
+      "story": "rtl",
+      "files": [
+        "registry/src/solid/examples/rtl/editor.tsx",
+        "registry/src/solid/examples/rtl/index.ts",
+        "registry/src/solid/sample/sample-doc-rtl.ts",
+        "registry/src/solid/sample/sample-uploader.ts",
+        "registry/src/solid/ui/block-handle/block-handle.tsx",
+        "registry/src/solid/ui/block-handle/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/solid/ui/drop-indicator/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/inline-menu/index.ts",
+        "registry/src/solid/ui/inline-menu/inline-menu.tsx",
+        "registry/src/solid/ui/slash-menu/index.ts",
+        "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/solid/ui/slash-menu/slash-menu.tsx",
+        "registry/src/solid/ui/table-handle/index.ts",
+        "registry/src/solid/ui/table-handle/table-handle.tsx",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-save-html": {
+      "story": "save-html",
+      "files": [
+        "registry/src/solid/examples/save-html/editor.tsx",
+        "registry/src/solid/examples/save-html/index.ts"
+      ]
+    },
+    "solid-example-save-json": {
+      "story": "save-json",
+      "files": [
+        "registry/src/solid/examples/save-json/editor.tsx",
+        "registry/src/solid/examples/save-json/index.ts"
+      ]
+    },
+    "solid-example-save-markdown": {
+      "story": "save-markdown",
+      "files": [
+        "registry/src/solid/examples/save-markdown/editor.tsx",
+        "registry/src/solid/examples/save-markdown/index.ts",
+        "registry/src/solid/examples/save-markdown/markdown.ts"
+      ]
+    },
+    "solid-example-search": {
+      "story": "search",
+      "files": [
+        "registry/src/solid/examples/search/editor.tsx",
+        "registry/src/solid/examples/search/extension.ts",
+        "registry/src/solid/examples/search/index.ts",
+        "registry/src/solid/sample/sample-doc-search.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/search/index.ts",
+        "registry/src/solid/ui/search/search.tsx"
+      ]
+    },
+    "solid-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/solid/examples/slash-menu/editor.tsx",
+        "registry/src/solid/examples/slash-menu/extension.ts",
+        "registry/src/solid/examples/slash-menu/index.ts",
+        "registry/src/solid/ui/slash-menu/index.ts",
+        "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
+        "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
+        "registry/src/solid/ui/slash-menu/slash-menu.tsx"
+      ]
+    },
+    "solid-example-strike": {
+      "story": "strike",
+      "files": [
+        "registry/src/solid/examples/strike/editor.tsx",
+        "registry/src/solid/examples/strike/extension.ts",
+        "registry/src/solid/examples/strike/index.ts",
+        "registry/src/solid/examples/strike/toolbar.tsx",
+        "registry/src/solid/sample/sample-doc-strike.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-table": {
+      "story": "table",
+      "files": [
+        "registry/src/solid/examples/table/editor.tsx",
+        "registry/src/solid/examples/table/extension.ts",
+        "registry/src/solid/examples/table/index.ts",
+        "registry/src/solid/sample/sample-doc-table.ts",
+        "registry/src/solid/ui/table-handle/index.ts",
+        "registry/src/solid/ui/table-handle/table-handle.tsx"
+      ]
+    },
+    "solid-example-temml": {
+      "story": "temml",
+      "files": [
+        "registry/src/solid/examples/temml/editor.tsx",
+        "registry/src/solid/examples/temml/extension.ts",
+        "registry/src/solid/examples/temml/index.ts",
+        "registry/src/solid/sample/sample-doc-tex.ts",
+        "registry/src/solid/sample/temml.ts"
+      ]
+    },
+    "solid-example-text-align": {
+      "story": "text-align",
+      "files": [
+        "registry/src/solid/examples/text-align/editor.tsx",
+        "registry/src/solid/examples/text-align/extension.ts",
+        "registry/src/solid/examples/text-align/index.ts",
+        "registry/src/solid/examples/text-align/toolbar.tsx",
+        "registry/src/solid/sample/sample-doc-text-align.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-text-color": {
+      "story": "text-color",
+      "files": [
+        "registry/src/solid/examples/text-color/editor.tsx",
+        "registry/src/solid/examples/text-color/extension.ts",
+        "registry/src/solid/examples/text-color/index.ts",
+        "registry/src/solid/examples/text-color/inline-menu.tsx",
+        "registry/src/solid/sample/sample-doc-text-color.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-toolbar": {
+      "story": "toolbar",
+      "files": [
+        "registry/src/solid/examples/toolbar/editor.tsx",
+        "registry/src/solid/examples/toolbar/extension.ts",
+        "registry/src/solid/examples/toolbar/index.ts",
+        "registry/src/solid/sample/sample-uploader.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-typography": {
+      "story": "typography",
+      "files": [
+        "registry/src/solid/examples/typography/editor.tsx",
+        "registry/src/solid/examples/typography/extension.ts",
+        "registry/src/solid/examples/typography/index.ts",
+        "registry/src/solid/sample/katex.ts",
+        "registry/src/solid/sample/sample-doc-typography.ts",
+        "registry/src/solid/ui/block-handle/block-handle.tsx",
+        "registry/src/solid/ui/block-handle/index.ts",
+        "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/solid/ui/drop-indicator/index.ts"
+      ]
+    },
+    "solid-example-underline": {
+      "story": "underline",
+      "files": [
+        "registry/src/solid/examples/underline/editor.tsx",
+        "registry/src/solid/examples/underline/extension.ts",
+        "registry/src/solid/examples/underline/index.ts",
+        "registry/src/solid/sample/sample-doc-underline.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-unmount": {
+      "story": "unmount",
+      "files": [
+        "registry/src/solid/examples/unmount/editor-component.tsx",
+        "registry/src/solid/examples/unmount/editor.tsx",
+        "registry/src/solid/examples/unmount/extension-component.tsx",
+        "registry/src/solid/examples/unmount/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/inline-menu/index.ts",
+        "registry/src/solid/ui/inline-menu/inline-menu.tsx"
+      ]
+    },
+    "solid-example-user-menu": {
+      "story": "user-menu",
+      "files": [
+        "registry/src/solid/examples/user-menu/editor.tsx",
+        "registry/src/solid/examples/user-menu/extension.ts",
+        "registry/src/solid/examples/user-menu/index.ts",
+        "registry/src/solid/sample/sample-tag-data.ts",
+        "registry/src/solid/sample/sample-user-data.ts",
+        "registry/src/solid/ui/tag-menu/index.ts",
+        "registry/src/solid/ui/tag-menu/tag-menu.tsx",
+        "registry/src/solid/ui/user-menu/index.ts",
+        "registry/src/solid/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "solid-example-user-menu-dynamic": {
+      "story": "user-menu-dynamic",
+      "files": [
+        "registry/src/solid/examples/user-menu-dynamic/editor.tsx",
+        "registry/src/solid/examples/user-menu-dynamic/extension.ts",
+        "registry/src/solid/examples/user-menu-dynamic/index.ts",
+        "registry/src/solid/examples/user-menu-dynamic/use-user-query.ts",
+        "registry/src/solid/examples/user-menu-dynamic/user-menu-dynamic.tsx",
+        "registry/src/solid/sample/sample-query-users.ts",
+        "registry/src/solid/sample/sample-user-data.ts",
+        "registry/src/solid/ui/user-menu/index.ts",
+        "registry/src/solid/ui/user-menu/user-menu.tsx"
+      ]
+    },
+    "solid-example-view-adapter": {
+      "story": "view-adapter",
+      "files": [
+        "registry/src/solid/examples/view-adapter/atom-block-view.tsx",
+        "registry/src/solid/examples/view-adapter/editor.tsx",
+        "registry/src/solid/examples/view-adapter/extension.ts",
+        "registry/src/solid/examples/view-adapter/index.ts",
+        "registry/src/solid/sample/define-atom-block.ts",
+        "registry/src/solid/sample/sample-doc-view-adapter.ts"
+      ]
+    },
+    "solid-example-word-counter": {
+      "story": "word-counter",
+      "files": [
+        "registry/src/solid/examples/word-counter/editor.tsx",
+        "registry/src/solid/examples/word-counter/extension.ts",
+        "registry/src/solid/examples/word-counter/index.ts",
+        "registry/src/solid/sample/sample-doc-word-counter.ts",
+        "registry/src/solid/ui/word-counter/index.ts",
+        "registry/src/solid/ui/word-counter/word-counter.tsx"
+      ]
+    },
+    "solid-example-yjs": {
+      "story": "yjs",
+      "files": [
+        "registry/src/solid/examples/yjs/editor-component.tsx",
+        "registry/src/solid/examples/yjs/editor.tsx",
+        "registry/src/solid/examples/yjs/extension.ts",
+        "registry/src/solid/examples/yjs/index.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts",
+        "registry/src/solid/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/solid/ui/image-upload-popover/index.ts",
+        "registry/src/solid/ui/toolbar/index.ts",
+        "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "vanilla-example-minimal": {
+      "story": "minimal",
+      "files": [
+        "registry/src/vanilla/examples/minimal/editor.ts",
+        "registry/src/vanilla/examples/minimal/index.ts"
+      ]
+    },
+    "vanilla-example-slash-menu": {
+      "story": "slash-menu",
+      "files": [
+        "registry/src/vanilla/examples/slash-menu/editor.ts",
+        "registry/src/vanilla/examples/slash-menu/extension.ts",
+        "registry/src/vanilla/examples/slash-menu/index.ts",
+        "registry/src/vanilla/ui/slash-menu/index.ts",
+        "registry/src/vanilla/ui/slash-menu/slash-menu-empty.ts",
+        "registry/src/vanilla/ui/slash-menu/slash-menu-item.ts",
+        "registry/src/vanilla/ui/slash-menu/slash-menu.ts"
+      ]
+    }
+  }
+}

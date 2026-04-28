@@ -1,4 +1,4 @@
-import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal } from '@aria-ui/core'
+import { useEffect, type HostElement } from '@aria-ui/core'
 import { computePosition, offset } from '@floating-ui/dom'
 import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
@@ -7,10 +7,10 @@ import type { EditorView } from '@prosekit/pm/view'
 import { assignStyles } from '../../utils/assign-styles.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 
-import { tableHandleDndContext, tableHandleRootContext } from './context.ts'
+import { tableHandleStoreContext } from './store.ts'
 
 export type OnInitParams = {
-  host: ConnectableElement
+  host: HostElement
   direction: 'row' | 'col'
   dragging: boolean
   draggingIndex: number
@@ -19,41 +19,30 @@ export type OnInitParams = {
 }
 
 export function useInitDndPosition(
-  host: ConnectableElement,
-  editor: ReadonlySignal<Editor | null>,
+  host: HostElement,
+  getEditor: () => Editor | null,
   onInit: (params: OnInitParams) => void,
 ): void {
-  const dndContext = tableHandleDndContext.consume(host)
-  const rootContext = tableHandleRootContext.consume(host)
-
-  const draggingSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.dragging
-  })
-
-  const directionSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.direction
-  })
-
-  const draggingIndexSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.draggingIndex
-  })
+  const getStore = tableHandleStoreContext.consume(host)
 
   useEffect(host, () => {
-    const view = getSafeEditorView(editor.get())
+    const view = getSafeEditorView(getEditor())
     if (!view) return
 
-    const dragging = draggingSignal.get()
-    const direction = directionSignal.get()
+    const store = getStore()
+    if (!store) return
+
+    const dndStore = store.dndStore
+
+    const dragging = dndStore.dragging.get()
+    const direction = dndStore.direction.get()
 
     host.dataset.direction = direction
     host.dataset.dragging = dragging.toString()
 
-    const draggingIndex = draggingIndexSignal.get()
+    const draggingIndex = dndStore.draggingIndex.get()
 
-    const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
+    const relatedDOMs = getDndRelatedDOMs(view, store.getReferenceCell()?.cellPos, draggingIndex, direction)
     if (!relatedDOMs) return
     const { table, cell } = relatedDOMs
 

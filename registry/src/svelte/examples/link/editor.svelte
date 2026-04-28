@@ -22,9 +22,9 @@ const editor = createEditor({ extension, defaultContent })
 
 <ProseKit {editor}>
   <div class="CSS_EDITOR_VIEWPORT">
-    <InlineMenu />
     <div class="CSS_EDITOR_SCROLLING">
       <div {@attach editor.mount} class="CSS_EDITOR_CONTENT"></div>
+      <InlineMenu />
     </div>
   </div>
 </ProseKit>

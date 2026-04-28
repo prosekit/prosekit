@@ -3,6 +3,7 @@ import path from 'node:path'
 import type { PackageJson } from 'type-fest'
 
 import { getPackageJsonExports } from './get-package-json-exports'
+import { extractModuleDescription, formatModuleDescription } from './module-description'
 import { cleanGeneratedFilesInPackage } from './package-files'
 import { vfs } from './vfs'
 import { getPackageByName, getScopedPublicPackages } from './workspace-packages'
@@ -28,20 +29,44 @@ export async function buildUmbrellaPackageJson(): Promise<void> {
   for (const pkg of scopedPackages) {
     const packageJson = pkg.packageJson as PackageJson
     const packageName = pkg.packageJson.name
-
-    const entries = Object.keys(getPackageJsonExports(pkg) ?? {})
+    const exportsMap = getPackageJsonExports(pkg) ?? {}
 
     pkgDependencies[packageName] = 'workspace:*'
 
     Object.assign(pkgPeerDependencies, packageJson.peerDependencies)
     Object.assign(pkgPeerDependenciesMeta, packageJson.peerDependenciesMeta)
 
-    for (const entry of entries) {
+    for (const [entry, exportValue] of Object.entries(exportsMap)) {
+      let sourceRelativePath: string
+      if (typeof exportValue === 'string') {
+        sourceRelativePath = exportValue
+      } else if (typeof exportValue === 'object' && exportValue !== null) {
+        sourceRelativePath = exportValue.import ?? exportValue.default
+      } else {
+        throw new TypeError(
+          `Unexpected export value for entry "${entry}" in package "${packageName}": ${exportValue}`,
+        )
+      }
+
+      let description: string | undefined
+      if (sourceRelativePath.endsWith('.ts')) {
+        const sourceFilePath = path.join(pkg.relativeDir, sourceRelativePath)
+        const content = await vfs.read(sourceFilePath)
+        description = extractModuleDescription(content)
+      } else if (sourceRelativePath.endsWith('.css') || !sourceRelativePath) {
+        description = undefined
+      } else {
+        throw new TypeError(
+          `Unexpected export path for entry "${entry}" in package "${packageName}": ${sourceRelativePath}`,
+        )
+      }
+
       await ensureEntry({
         cwd: umbrellaPackage.relativeDir,
         entry,
         packageName,
         exports: pkgExports,
+        description,
       })
     }
   }
@@ -52,6 +77,7 @@ async function ensureEntry({
   packageName,
   entry,
   exports,
+  description,
 }: {
   cwd: string
   // Example: @prosekit/extension-foo
@@ -63,6 +89,8 @@ async function ensureEntry({
   entry: string
   // Where the result will be written to
   exports: Record<string, string>
+  // The module description to include in the generated file, if any
+  description: string | undefined
 }): Promise<void> {
   // Example: extension-foo
   const packageSubName = packageName.split('/')[1]
@@ -94,7 +122,7 @@ async function ensureEntry({
   if (reExportFilePath.endsWith('.css')) {
     vfs.updateText(targetPath, formatCssReExportFile(importName))
   } else {
-    vfs.updateText(targetPath, formatTsReExportFile(importName))
+    vfs.updateText(targetPath, formatTsReExportFile(importName, description))
   }
 }
 
@@ -102,20 +130,16 @@ function ensureFileExtension(filePath: string, defaultExtension = '.ts'): string
   return filePath + (path.extname(filePath) ? '' : defaultExtension)
 }
 
-function formatTsReExportFile(importName: string): string {
+function formatTsReExportFile(
+  importName: string,
+  description?: string,
+): string {
   const importNameWithoutPrefix = importName.startsWith('@')
     ? importName.slice(1)
     : importName
 
-  return (
-    `
-/**
- * @module ${importNameWithoutPrefix}
- */
-
-export * from '${importName}'
-  `.trim() + '\n'
-  )
+  const doc = formatModuleDescription(importNameWithoutPrefix, description)
+  return [doc, '', `export * from '${importName}'`, ''].join('\n')
 }
 
 function formatCssReExportFile(importName: string): string {

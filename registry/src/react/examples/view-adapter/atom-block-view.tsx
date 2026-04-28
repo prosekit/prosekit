@@ -1,3 +1,5 @@
+'use client'
+
 import { useEditorDerivedValue, type ReactNodeViewProps } from 'prosekit/react'
 import { useCallback } from 'react'
 

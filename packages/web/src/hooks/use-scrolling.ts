@@ -1,30 +1,33 @@
-import { createSignal, useEffect, type ConnectableElement, type ReadonlySignal } from '@aria-ui/core'
-import { getNearestOverflowAncestor } from '@zag-js/dom-query'
+import { createSignal, useEffect, type HostElement } from '@aria-ui/core'
+import { getNearestOverflowAncestor, useGlobalEventListener } from '@aria-ui/utils'
 
-export function useScrolling(host: ConnectableElement): ReadonlySignal<boolean> {
-  const scrolling = createSignal(false)
+export function useScrolling(host: HostElement): () => boolean {
+  const { get: getScrolling, set: setScrolling } = createSignal(false)
+  const handleMouseMove = () => {
+    setScrolling(false)
+  }
+  const handleScroll = () => {
+    setScrolling(true)
+  }
+
+  useGlobalEventListener(host, 'mousemove', handleMouseMove)
+  useGlobalEventListener(host, 'pointermove', handleMouseMove)
 
   useEffect(host, () => {
     const scrollableParent = getNearestOverflowAncestor(host)
 
-    const handleScroll = () => {
-      scrolling.set(true)
-    }
+    const abortController = new AbortController()
+    const abortSignal = abortController.signal
 
-    const handleMouseMove = () => {
-      scrolling.set(false)
-    }
-
-    scrollableParent.addEventListener('scroll', handleScroll, { passive: true })
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
-    window.addEventListener('pointermove', handleMouseMove, { passive: true })
+    scrollableParent.addEventListener('scroll', handleScroll, {
+      passive: true,
+      signal: abortSignal,
+    })
 
     return () => {
-      scrollableParent.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('pointermove', handleMouseMove)
+      abortController.abort()
     }
   })
 
-  return scrolling
+  return getScrolling
 }

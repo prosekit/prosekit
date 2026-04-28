@@ -1,3 +1,9 @@
+/**
+ * The core module of ProseKit.
+ *
+ * @module
+ */
+
 export { addMark, type AddMarkOptions } from './commands/add-mark.ts'
 export { expandMark, type ExpandMarkOptions } from './commands/expand-mark.ts'
 export { insertDefaultBlock, type InsertDefaultBlockOptions } from './commands/insert-default-block.ts'

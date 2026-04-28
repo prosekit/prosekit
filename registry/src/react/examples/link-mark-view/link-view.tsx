@@ -1,3 +1,5 @@
+'use client'
+
 import type { ReactMarkViewProps } from 'prosekit/react'
 import { useEffect, useState } from 'react'
 

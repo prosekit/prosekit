@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/core",
   "type": "module",
-  "version": "0.12.0-beta.0",
+  "version": "0.12.0",
   "private": false,
   "description": "Core features for ProseKit",
   "author": {
@@ -40,10 +40,9 @@
   "dependencies": {
     "@ocavue/utils": "^1.6.0",
     "@prosekit/pm": "workspace:^",
-    "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^5.5.0"
+    "type-fest": "^5.6.0"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",
@@ -58,33 +57,26 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-core.d.ts",
-        "default": "./dist/prosekit-core.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./test": {
-        "types": "./dist/prosekit-core-test.d.ts",
-        "default": "./dist/prosekit-core-test.js"
+        "types": "./dist/test.d.ts",
+        "default": "./dist/test.js"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-core.js",
-    "module": "./dist/prosekit-core.js",
-    "types": "./dist/prosekit-core.d.ts",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "typesVersions": {
       "*": {
         ".": [
-          "./dist/prosekit-core.d.ts"
+          "./dist/index.d.ts"
         ],
         "test": [
-          "./dist/prosekit-core-test.d.ts"
+          "./dist/test.d.ts"
         ]
       }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-core": "./src/index.ts",
-      "prosekit-core-test": "./src/test/index.ts"
     }
   }
 }

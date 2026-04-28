@@ -1,7 +1,6 @@
 import { debug } from './debug'
 import { genChangeset } from './gen-changeset'
 import { genChangesetConfigJson } from './gen-changeset-config-json'
-import { genComponents } from './gen-components'
 import { genPackageJson } from './gen-package-json'
 import { genSizeLimitJson } from './gen-size-limit-json'
 import { skipGen } from './skip-gen'
@@ -12,9 +11,6 @@ async function gen(): Promise<boolean> {
   debug('gen start')
 
   if (skipGen()) return false
-
-  await genComponents()
-  debug('gen gen-components done')
 
   await genPackageJson()
   debug('gen gen-package-json done')

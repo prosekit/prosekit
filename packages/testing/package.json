@@ -1,0 +1,18 @@
+{
+  "name": "@prosekit/testing",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal package for ProseKit",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@prosekit/core": "workspace:*",
+    "@prosekit/pm": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}

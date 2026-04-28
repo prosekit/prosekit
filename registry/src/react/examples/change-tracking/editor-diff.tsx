@@ -1,3 +1,5 @@
+'use client'
+
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, union } from 'prosekit/core'
 import { defineCommitViewer, type Commit } from 'prosekit/extensions/commit'

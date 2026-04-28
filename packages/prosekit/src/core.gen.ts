@@ -1,4 +1,6 @@
 /**
+ * The core module of ProseKit.
+ *
  * @module prosekit/core
  */
 

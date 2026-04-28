@@ -11,13 +11,13 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     const editor = await waitForEditor()
     await editor.click()
 
-    const menu = page.locate('prosekit-autocomplete-popover')
+    const menu = page.locate('prosekit-autocomplete-popup')
     const menuItems = page.locate('prosekit-autocomplete-item, prosekit-autocomplete-empty')
     const itemAlice = menuItems.getByText('Alice')
     const itemBob = menuItems.getByText('Bob')
     const itemLoading = menuItems.getByText('Loading...')
     const itemNoResults = menuItems.getByText('No results')
-    const itemFocused = menu.locate('[role="option"][data-focused="true"]')
+    const itemHighlighted = menu.locate('[role="option"][data-highlighted]')
 
     // Reset the mouse position
     await unhover()
@@ -46,7 +46,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
       await expectLocatorToBeHidden(itemAlice)
       await expectLocatorToBeHidden(itemBob)
-      await expectLocatorToBeHidden(itemFocused)
+      await expectLocatorToBeHidden(itemHighlighted)
       await expect.element(itemLoading).toBeVisible()
       await expectLocatorToBeHidden(itemNoResults)
 
@@ -60,8 +60,8 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expect.element(itemBob, { timeout: 5000 }).toBeVisible()
-      await expect.element(itemFocused, { timeout: 5000 }).toBeVisible()
-      await expect.element(itemFocused, { timeout: 5000 }).toHaveTextContent('A')
+      await expect.element(itemHighlighted, { timeout: 5000 }).toBeVisible()
+      await expect.element(itemHighlighted, { timeout: 5000 }).toHaveTextContent('A')
 
       await expect.element(menu).toBeVisible()
       await checkMenuPosition()
@@ -73,8 +73,8 @@ testStory({ story: 'user-menu-dynamic' }, () => {
 
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expectLocatorToBeHidden(itemBob)
-      await expect.element(itemFocused, { timeout: 5000 }).toBeVisible()
-      await expect.element(itemFocused, { timeout: 5000 }).toHaveTextContent('Alice')
+      await expect.element(itemHighlighted, { timeout: 5000 }).toBeVisible()
+      await expect.element(itemHighlighted, { timeout: 5000 }).toHaveTextContent('Alice')
 
       await expect.element(menu).toBeVisible()
       await checkMenuPosition()
@@ -83,11 +83,11 @@ testStory({ story: 'user-menu-dynamic' }, () => {
     // Press Backspace and show all users again
     {
       await keyboard.press('Backspace')
-      await expect.element(itemFocused).toBeVisible()
+      await expect.element(itemHighlighted).toBeVisible()
       await keyboard.press('Backspace')
-      await expect.element(itemFocused).toBeVisible()
+      await expect.element(itemHighlighted).toBeVisible()
       await keyboard.press('Backspace')
-      await expect.element(itemFocused).toBeVisible()
+      await expect.element(itemHighlighted).toBeVisible()
 
       await expect.element(itemAlice).toBeVisible()
       await expect.element(itemBob).toBeVisible()
@@ -156,7 +156,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expectLocatorToBeHidden(itemBob)
       await expectLocatorToBeHidden(itemNoResults)
       await expectLocatorToBeHidden(itemLoading)
-      await expect.element(itemFocused).toHaveTextContent('Alice')
+      await expect.element(itemHighlighted).toHaveTextContent('Alice')
 
       await checkMenuPosition()
 

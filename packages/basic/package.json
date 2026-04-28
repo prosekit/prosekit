@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/basic",
   "type": "module",
-  "version": "0.9.0-beta.0",
+  "version": "0.9.0",
   "private": false,
   "description": "A quick starter for ProseKit",
   "author": {
@@ -50,9 +50,9 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^28.0.1",
-    "happy-dom": "^20.8.7",
-    "jsdom": "^29.0.1",
-    "sass": "^1.98.0",
+    "happy-dom": "^20.9.0",
+    "jsdom": "^29.0.2",
+    "sass": "^1.99.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
@@ -60,8 +60,8 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-basic.d.ts",
-        "default": "./dist/prosekit-basic.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "./style.css": {
         "default": "./dist/style.css"
@@ -70,23 +70,15 @@
         "default": "./dist/typography.css"
       }
     },
-    "dev": {},
-    "main": "./dist/prosekit-basic.js",
-    "module": "./dist/prosekit-basic.js",
-    "types": "./dist/prosekit-basic.d.ts",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "typesVersions": {
       "*": {
         ".": [
-          "./dist/prosekit-basic.d.ts"
+          "./dist/index.d.ts"
         ]
       }
-    }
-  },
-  "dev": {
-    "entry": {
-      "prosekit-basic": "./src/index.ts",
-      "style": "./src/style.css",
-      "typography": "./src/typography.css"
     }
   }
 }

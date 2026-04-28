@@ -3,7 +3,7 @@ import './test-style.css'
 
 import { DefaultMap, isHTMLElement } from '@ocavue/utils'
 import { formatHTML } from 'diffable-html-snapshot'
-import registry from 'prosekit-registry/registry.gen.json'
+import examples from 'prosekit-registry/examples.gen.json'
 import type { NodeJSON } from 'prosekit/core'
 import { beforeEach, describe, expect, it } from 'vitest'
 
@@ -11,33 +11,30 @@ import { locateEditor } from './editor'
 import { waitForStableElement } from './query'
 
 function getExamples(story: string) {
-  const examples = registry.items.filter((item) => item.meta.story === story)
+  const storyData = examples.stories[story as keyof typeof examples.stories]
 
-  if (examples.length === 0) {
+  if (!storyData) {
     throw new Error(`No examples found for story "${story}"`)
   }
 
-  return examples.map((item) => {
-    const { framework, story } = item.meta
-    return {
-      framework,
-      story,
-      example: framework + '-' + story,
-    }
-  })
+  return storyData.frameworks.map((framework) => ({
+    framework,
+    story,
+    example: framework + '-' + story,
+  }))
 }
 
 function testSingleStory(
   story: string,
-  emptyContent: boolean,
   frameworks: string[] | undefined,
+  initialContent: NodeJSON | undefined,
   callback: (options: { framework: string; story: string; example: string }) => void,
 ) {
   for (const example of getExamples(story)) {
     const shouldSkip = frameworks ? !frameworks.includes(example.framework) : false
     describe.skipIf(shouldSkip)(example.framework + '/' + example.story, () => {
       beforeEach(async () => {
-        const screen = await renderExample(example.framework, example.story, emptyContent)
+        const screen = await renderExample(example.framework, example.story, initialContent)
         const container: HTMLElement = screen.container
         container.classList.add('prosekit-registry-test-container')
       })
@@ -46,13 +43,7 @@ function testSingleStory(
   }
 }
 
-async function renderExample(framework: string, story: string, empty: boolean) {
-  const emptyContent: NodeJSON = {
-    type: 'doc',
-    content: [{ type: 'paragraph', content: [] }],
-  }
-  const initialContent = empty ? emptyContent : undefined
-
+async function renderExample(framework: string, story: string, initialContent?: NodeJSON) {
   if (framework === 'react') {
     const { renderReactExample } = await import('./render-react')
     return await renderReactExample(story, initialContent)
@@ -104,10 +95,19 @@ interface TestStoryOptions {
    */
   emptyContent?: boolean
   /**
+   * The initial content to render in the editor. You should only pass one of `emptyContent` or `initialContent`.
+   */
+  initialContent?: NodeJSON
+  /**
    * If provided, only test the story for the given frameworks.
    */
   frameworks?: string[]
 }
+
+const EMPTY_CONTENT_JSON: NodeJSON = Object.freeze({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [] }],
+})
 
 export function testStory(
   options: string | string[] | TestStoryOptions,
@@ -116,12 +116,13 @@ export function testStory(
   const {
     story,
     emptyContent = false,
+    initialContent,
     frameworks,
   } = typeof options === 'string' || Array.isArray(options) ? { story: options } : options
   const stories = Array.isArray(story) ? story : [story]
 
   for (const story of stories) {
-    testSingleStory(story, emptyContent, frameworks, callback)
+    testSingleStory(story, frameworks, emptyContent ? EMPTY_CONTENT_JSON : initialContent, callback)
   }
 }
 
@@ -211,7 +212,7 @@ async function getStableHTML({
   shouldWaitForImageToLoad: boolean
   setup?: () => Promise<void>
 }): Promise<string> {
-  const screen = await renderExample(framework, story, false)
+  const screen = await renderExample(framework, story)
 
   if (setup) {
     await setup()

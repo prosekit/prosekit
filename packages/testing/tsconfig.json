@@ -1,0 +1,11 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "references": [
+    {
+      "path": "../core/tsconfig.json",
+    },
+    {
+      "path": "../pm/tsconfig.json",
+    },
+  ],
+}

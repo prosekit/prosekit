@@ -4,23 +4,9 @@ import type { Package } from '@manypkg/get-packages'
 
 import { vfs } from './vfs'
 
-/** Returns file paths inside a package directory. */
-export async function getFilePathsByPackage(pkg: Package): Promise<string[]> {
-  return await vfs.getFilePathsByDir(pkg.relativeDir)
-}
-
 /** Removes generated files inside a package directory. */
 export async function cleanGeneratedFilesInPackage(pkg: Package): Promise<void> {
   await vfs.cleanFilesInDir(pkg.relativeDir, true)
-}
-
-/** Updates a file inside a package. */
-export function updateTextInPackage(
-  pkg: Package,
-  filePath: string,
-  content: string,
-): void {
-  vfs.updateText(path.join(pkg.relativeDir, filePath), content)
 }
 
 /** Returns the first existing file inside a package from a list of candidates. */

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { TooltipContent, TooltipRoot, TooltipTrigger } from 'prosekit/svelte/tooltip'
+import { TooltipPopup, TooltipPositioner, TooltipRoot, TooltipTrigger } from 'prosekit/svelte/tooltip'
 
 interface Props {
   pressed?: boolean
@@ -30,8 +30,10 @@ const disabled = $derived(props.disabled ?? false)
     </button>
   </TooltipTrigger>
   {#if props.tooltip}
-    <TooltipContent class="CSS_TOOLTIP_CONTENT">
-      {props.tooltip}
-    </TooltipContent>
+    <TooltipPositioner class="CSS_TOOLTIP_POSITIONER">
+      <TooltipPopup class="CSS_TOOLTIP_POPUP">
+        {props.tooltip}
+      </TooltipPopup>
+    </TooltipPositioner>
   {/if}
 </TooltipRoot>

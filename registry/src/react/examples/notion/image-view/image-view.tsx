@@ -1,3 +1,5 @@
+'use client'
+
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { ReactNodeViewProps } from 'prosekit/react'
 

@@ -1,3 +1,5 @@
+'use client'
+
 import { LoroDoc, type AwarenessListener } from 'loro-crdt'
 import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
 import { useEffect, useState } from 'react'

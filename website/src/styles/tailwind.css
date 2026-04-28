@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "starlight-theme-nova/tailwind.css";
-@import "tw-animate-css";
 @import "./starlight.css";
 
 @source "../../../registry/src/";

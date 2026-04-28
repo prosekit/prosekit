@@ -28,13 +28,13 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     await editor.click()
     await unhover()
 
-    const blockHandle = page.locate('prosekit-block-handle-popover')
+    const blockHandlePositioner = page.locate('prosekit-block-handle-positioner')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 
     // Hover over a block and measure the position of the block handle
     const measure = async (block: Locator) => {
       await expect.element(block).toBeVisible()
-      await expectLocatorToHaveCount(blockHandle, 1)
+      await expectLocatorToHaveCount(blockHandlePositioner, 1)
       await hover(block)
       await expectBlockHandleToOpen()
       const box = await getBoundingBox(blockHandleDraggable)
@@ -95,7 +95,7 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     await editor.click()
     await unhover()
 
-    const blockHandle = page.locate('prosekit-block-handle-popover')
+    const blockHandlePositioner = page.locate('prosekit-block-handle-positioner')
     const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 
     // Insert a list node with two paragraphs
@@ -114,12 +114,12 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
     await hover(p1)
     await expectBlockHandleToOpen()
-    const box1 = await getBoundingBox(blockHandle)
+    const box1 = await getBoundingBox(blockHandlePositioner)
     expect(box1.width).toBeGreaterThan(0)
 
     await hover(p2)
     await expectBlockHandleToOpen()
-    const box2 = await getBoundingBox(blockHandle)
+    const box2 = await getBoundingBox(blockHandlePositioner)
     expect(box2.width).toBeGreaterThan(0)
 
     // box1 should be positioned above box2
@@ -141,21 +141,29 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 })
 
 async function expectBlockHandleToOpen() {
-  const blockHandle = page.locate('prosekit-block-handle-popover')
+  const blockHandlePositioner = page.locate('prosekit-block-handle-positioner')
+  const blockHandlePopup = page.locate('prosekit-block-handle-popup')
   const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 
-  await expect.poll(() => blockHandle.query()?.getAttribute('data-state')).toBe('open')
-  await waitForAnimationEnd(blockHandle)
-  await waitForAnimationEnd(blockHandleDraggable)
+  await expect.element(blockHandlePopup).toHaveAttribute('data-state', 'open')
+  await Promise.all([
+    waitForAnimationEnd(blockHandlePositioner),
+    waitForAnimationEnd(blockHandlePopup),
+    waitForAnimationEnd(blockHandleDraggable),
+  ])
 }
 
 async function expectBlockHandleToClose() {
-  const blockHandle = page.locate('prosekit-block-handle-popover')
+  const blockHandlePositioner = page.locate('prosekit-block-handle-positioner')
+  const blockHandlePopup = page.locate('prosekit-block-handle-popup')
   const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
 
-  await expect.poll(() => blockHandle.query()?.getAttribute('data-state')).toBe('closed')
-  await waitForAnimationEnd(blockHandle)
-  await waitForAnimationEnd(blockHandleDraggable)
+  await expect.element(blockHandlePopup).toHaveAttribute('data-state', 'closed')
+  await Promise.all([
+    waitForAnimationEnd(blockHandlePositioner),
+    waitForAnimationEnd(blockHandlePopup),
+    waitForAnimationEnd(blockHandleDraggable),
+  ])
 }
 
 async function closeBlockHandle() {

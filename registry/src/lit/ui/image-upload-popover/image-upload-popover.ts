@@ -1,10 +1,10 @@
-import 'prosekit/lit/popover'
 import '../button/index'
 
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
+import type { OpenChangeEvent } from 'prosekit/lit/popover'
 
 let imageUploadId = 0
 
@@ -37,14 +37,12 @@ class LitImageUploadPopover extends LitElement {
     this.classList.add('contents')
   }
 
-  private handleOpenChange = (event: CustomEvent<boolean>) => {
-    const isOpen = event.detail
-
-    if (!isOpen) {
+  private handleOpenChange = (event: OpenChangeEvent) => {
+    if (!event.detail) {
       this.deferResetState()
     }
 
-    this.open = isOpen
+    this.open = event.detail
     this.requestUpdate()
   }
 
@@ -101,10 +99,7 @@ class LitImageUploadPopover extends LitElement {
 
   override render() {
     return html`
-      <prosekit-popover-root
-        .open=${this.open}
-        @open-change=${this.handleOpenChange}
-      >
+      <prosekit-popover-root .open=${this.open} @open-change=${this.handleOpenChange}>
         <prosekit-popover-trigger>
           <lit-editor-button
             .pressed=${this.open}
@@ -114,58 +109,49 @@ class LitImageUploadPopover extends LitElement {
           ></lit-editor-button>
         </prosekit-popover-trigger>
 
-        <prosekit-popover-content class="CSS_IMAGE_UPLOAD_CARD">
-          ${
-            !this.file
+        <prosekit-popover-positioner placement="bottom" class="CSS_IMAGE_UPLOAD_POSITIONER">
+          <prosekit-popover-popup class="CSS_IMAGE_UPLOAD_CARD">
+            ${!this.file
               ? html`
-                <label for="id-link-${this.ariaId}">Embed Link</label>
-                <input
-                  id="id-link-${this.ariaId}"
-                  class="CSS_IMAGE_UPLOAD_INPUT"
-                  placeholder="Paste the image link..."
-                  type="url"
-                  .value=${this.url}
-                  @input=${this.handleUrlChange}
-                />
-              `
-              : nothing
-          }
-
-          ${
-            !this.url
+                  <label for="id-link-${this.ariaId}">Embed Link</label>
+                  <input
+                    id="id-link-${this.ariaId}"
+                    class="CSS_IMAGE_UPLOAD_INPUT"
+                    placeholder="Paste the image link..."
+                    type="url"
+                    .value=${this.url}
+                    @input=${this.handleUrlChange}
+                  />
+                `
+              : nothing}
+            ${!this.url
               ? html`
-                <label for="id-upload-${this.ariaId}">Upload</label>
-                <input
-                  id="id-upload-${this.ariaId}"
-                  class="CSS_IMAGE_UPLOAD_INPUT"
-                  accept="image/*"
-                  type="file"
-                  @change=${this.handleFileChange}
-                />
-              `
-              : nothing
-          }
-
-          ${
-            this.url
+                  <label for="id-upload-${this.ariaId}">Upload</label>
+                  <input
+                    id="id-upload-${this.ariaId}"
+                    class="CSS_IMAGE_UPLOAD_INPUT"
+                    accept="image/*"
+                    type="file"
+                    @change=${this.handleFileChange}
+                  />
+                `
+              : nothing}
+            ${this.url
               ? html`
-                <button class="CSS_IMAGE_UPLOAD_BUTTON" @click=${this.handleSubmit}>
-                  Insert Image
-                </button>
-              `
-              : nothing
-          }
-
-          ${
-            this.file
+                  <button class="CSS_IMAGE_UPLOAD_BUTTON" @click=${this.handleSubmit}>
+                    Insert Image
+                  </button>
+                `
+              : nothing}
+            ${this.file
               ? html`
-                <button class="CSS_IMAGE_UPLOAD_BUTTON" @click=${this.handleSubmit}>
-                  Upload Image
-                </button>
-              `
-              : nothing
-          }
-        </prosekit-popover-content>
+                  <button class="CSS_IMAGE_UPLOAD_BUTTON" @click=${this.handleSubmit}>
+                    Upload Image
+                  </button>
+                `
+              : nothing}
+          </prosekit-popover-popup>
+        </prosekit-popover-positioner>
       </prosekit-popover-root>
     `
   }

@@ -3,7 +3,7 @@ import path from 'node:path'
 
 import { findRoot } from '@manypkg/find-root'
 import memoize from 'just-memoize'
-import registry from 'prosekit-registry/registry.gen.json'
+import examples from 'prosekit-registry/examples.gen.json'
 
 import { replaceClassNames } from './replace-class-names'
 
@@ -24,12 +24,13 @@ async function loadDemoFileImpl(
 async function loadDemoFilesImpl(
   { framework, story }: { framework: string; story: string },
 ) {
-  const example = registry.items.find(item => item.name === `${framework}-example-${story}`)
+  const exampleKey = `${framework}-example-${story}`
+  const example = examples.examples[exampleKey as keyof typeof examples.examples]
   if (!example) {
     throw new Error(`Unable to find example for story ${story} and framework ${framework}`)
   }
-  const codes = await Promise.all(example.meta.accumulatedFiles.map(file => loadDemoFileImpl(file)))
-  const commonPrefix = findCommonPrefix(example.meta.accumulatedFiles)
+  const codes = await Promise.all(example.files.map(file => loadDemoFileImpl(file)))
+  const commonPrefix = findCommonPrefix(example.files)
 
   return codes.map(code => ({
     ...code,

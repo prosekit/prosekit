@@ -3,7 +3,13 @@ import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind, type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/svelte'
-import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/svelte/autocomplete'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompletePopup,
+  AutocompletePositioner,
+  AutocompleteRoot,
+} from 'prosekit/svelte/autocomplete'
 
 interface Props {
   users: { id: number; name: string }[]
@@ -30,32 +36,35 @@ function handleUserInsert(id: number, username: string) {
 const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 </script>
 
-<AutocompletePopover
+<AutocompleteRoot
   {regex}
-  class="CSS_AUTOCOMPLETE_MENU"
-  onQueryChange={props.onQueryChange}
-  onOpenChange={props.onOpenChange}
+  onQueryChange={(event) => props.onQueryChange?.(event.detail)}
+  onOpenChange={(event) => props.onOpenChange?.(event.detail)}
 >
-  <AutocompleteList>
-    <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
-      {loading ? 'Loading...' : 'No results'}
-    </AutocompleteEmpty>
+  <AutocompletePositioner class="CSS_AUTOCOMPLETE_POSITIONER">
+    <AutocompletePopup class="CSS_AUTOCOMPLETE_POPUP">
+      <div class="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+        <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
+          {loading ? 'Loading...' : 'No results'}
+        </AutocompleteEmpty>
 
-    {#each props.users as user (user.id)}
-      <AutocompleteItem
-        class="CSS_AUTOCOMPLETE_MENU_ITEM"
-        onSelect={() => handleUserInsert(user.id, user.name)}
-      >
-        {#if loading}
-          <span class="opacity-50">
-            {user.name}
-          </span>
-        {:else}
-          <span>
-            {user.name}
-          </span>
-        {/if}
-      </AutocompleteItem>
-    {/each}
-  </AutocompleteList>
-</AutocompletePopover>
+        {#each props.users as user (user.id)}
+          <AutocompleteItem
+            class="CSS_AUTOCOMPLETE_MENU_ITEM"
+            onSelect={() => handleUserInsert(user.id, user.name)}
+          >
+            {#if loading}
+              <span class="opacity-50">
+                {user.name}
+              </span>
+            {:else}
+              <span>
+                {user.name}
+              </span>
+            {/if}
+          </AutocompleteItem>
+        {/each}
+      </div>
+    </AutocompletePopup>
+  </AutocompletePositioner>
+</AutocompleteRoot>

@@ -1,3 +1,5 @@
+'use client'
+
 import { DropIndicator as BaseDropIndicator } from 'prosekit/react/drop-indicator'
 
 export default function DropIndicator() {

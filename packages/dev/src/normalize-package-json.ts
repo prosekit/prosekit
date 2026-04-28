@@ -2,7 +2,6 @@ import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
-import slugify from '@sindresorhus/slugify'
 import type { PackageJson } from 'type-fest'
 
 import { getPackageJsonExports, getPackageJsonPublishExports } from './get-package-json-exports'
@@ -11,40 +10,32 @@ import { maybeUndefined } from './maybe-undefined'
 import { findExistingFileInPackage, getExistingFileInPackage } from './package-files'
 import { sortObject } from './sort-object'
 
-export async function normalizePackageJson(pkg: Package): Promise<Record<string, string>> {
-  if (isPrivatePackage(pkg)) {
-    return {}
+export async function normalizePackageJson(pkg: Package): Promise<void> {
+  if (isPrivatePackage(pkg) || pkg.packageJson.name === 'prosekit-registry') {
+    return
   }
 
   const packageJson = pkg.packageJson as PackageJson
-  const slugPackageName = slugify(pkg.packageJson.name)
 
   const publishExports: Record<string, any> = {}
-  const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
+  const publishConfig: Record<string, any> = { exports: publishExports }
   packageJson.publishConfig = publishConfig
 
   const exports = getPackageJsonExports(pkg) || {}
   packageJson.exports = exports
 
-  const entryPoints: Record<string, string> = {}
-  packageJson.dev = { entry: entryPoints }
-
-  for (const path of Object.keys(exports)) {
-    let sourcePath: string
-    let distName: string
-
-    if (!isValidEntry(path)) {
-      throw new Error(`exports["${path}"] is not allowed`)
+  for (const exportName of Object.keys(exports)) {
+    if (!isValidEntry(exportName)) {
+      throw new Error(`exports["${exportName}"] is not allowed`)
     }
 
-    if (path === '.') {
-      sourcePath = await getExistingFileInPackage(pkg, [
+    if (exportName === '.') {
+      const sourcePath = await getExistingFileInPackage(pkg, [
         `./src/index.ts`,
         `./src/index.tsx`,
         `./src/index.gen.ts`,
         `./src/index.gen.tsx`,
       ])
-      distName = slugPackageName
 
       packageJson.type = 'module'
 
@@ -52,69 +43,59 @@ export async function normalizePackageJson(pkg: Package): Promise<Record<string,
       packageJson.module = sourcePath
       packageJson.types = undefined
 
-      publishConfig.main = `./dist/${distName}.js`
-      publishConfig.module = `./dist/${distName}.js`
-      publishConfig.types = `./dist/${distName}.d.ts`
+      publishConfig.main = `./dist/index.js`
+      publishConfig.module = `./dist/index.js`
+      publishConfig.types = `./dist/index.d.ts`
 
-      exports[path] = sourcePath
-      publishExports[path] = {
-        types: `./dist/${distName}.d.ts`,
-        default: `./dist/${distName}.js`,
+      exports[exportName] = sourcePath
+      publishExports[exportName] = {
+        types: `./dist/index.d.ts`,
+        default: `./dist/index.js`,
       }
-    } else if (path.endsWith('.css')) {
-      distName = path.slice(2, -4)
-      sourcePath = './src/' + distName + '.css'
-
-      exports[path] = sourcePath
-      publishExports[path] = {
+    } else if (exportName.endsWith('.css')) {
+      const distName = exportName.slice(2, -4)
+      exports[exportName] = `./src/${distName}.css`
+      publishExports[exportName] = {
         default: `./dist/${distName}.css`,
       }
     } else {
-      const subPath = path.slice(2)
-      const foundFilePath = await findExistingFileInPackage(pkg, [
-        `./src/${subPath}.ts`,
-        `./src/${subPath}.tsx`,
-        `./src/${subPath}.gen.ts`,
-        `./src/${subPath}.gen.tsx`,
-        `./src/${subPath}/index.ts`,
-        `./src/${subPath}/index.tsx`,
-        `./src/${subPath}/index.gen.ts`,
-        `./src/${subPath}/index.gen.tsx`,
-        `./src/components/${subPath}.ts`,
-        `./src/components/${subPath}.tsx`,
-        `./src/components/${subPath}.gen.ts`,
-        `./src/components/${subPath}.gen.tsx`,
-        `./src/components/${subPath}/index.ts`,
-        `./src/components/${subPath}/index.tsx`,
-        `./src/components/${subPath}/index.gen.ts`,
-        `./src/components/${subPath}/index.gen.tsx`,
+      const distName = exportName.slice(2)
+      const sourcePath = await findExistingFileInPackage(pkg, [
+        `./src/${distName}.ts`,
+        `./src/${distName}.tsx`,
+        `./src/${distName}.gen.ts`,
+        `./src/${distName}.gen.tsx`,
+        `./src/${distName}/index.ts`,
+        `./src/${distName}/index.tsx`,
+        `./src/${distName}/index.gen.ts`,
+        `./src/${distName}/index.gen.tsx`,
+        `./src/components/${distName}.ts`,
+        `./src/components/${distName}.tsx`,
+        `./src/components/${distName}.gen.ts`,
+        `./src/components/${distName}.gen.tsx`,
+        `./src/components/${distName}/index.ts`,
+        `./src/components/${distName}/index.tsx`,
+        `./src/components/${distName}/index.gen.ts`,
+        `./src/components/${distName}/index.gen.tsx`,
       ])
 
-      if (!foundFilePath) {
-        delete exports[path]
-        delete publishExports[path]
+      if (!sourcePath) {
+        delete exports[exportName]
+        delete publishExports[exportName]
         continue
       }
-
-      sourcePath = foundFilePath
-      distName = slugify(`${slugPackageName}-${subPath}`)
 
       // Svelte requires the export key "svelte" to be present in the
       // conditional export object.
       // See https://kit.svelte.dev/docs/packaging#anatomy-of-a-package-json-exports
       const isSvelte = pkg.packageJson.name.includes('svelte')
-
-      exports[path] = isSvelte
-        ? { svelte: sourcePath, default: sourcePath }
-        : sourcePath
-
-      publishExports[path] = {
+      exports[exportName] = isSvelte ? { svelte: sourcePath, default: sourcePath } : sourcePath
+      publishExports[exportName] = {
         types: `./dist/${distName}.d.ts`,
         svelte: isSvelte ? `./dist/${distName}.js` : undefined,
         default: `./dist/${distName}.js`,
       }
     }
-    entryPoints[distName] = sourcePath
   }
 
   packageJson.exports = maybeUndefined(sortObject(getPackageJsonExports(pkg) ?? {}))
@@ -122,8 +103,6 @@ export async function normalizePackageJson(pkg: Package): Promise<Record<string,
 
   normalizePackageJsonDocumentFields(pkg)
   normalizeTypesVersions(pkg)
-
-  return entryPoints
 }
 
 function isValidEntry(entry: string): boolean {

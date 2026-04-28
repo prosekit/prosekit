@@ -2,7 +2,8 @@
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import { useEditor } from 'prosekit/svelte'
-import { PopoverContent, PopoverRoot, PopoverTrigger } from 'prosekit/svelte/popover'
+import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/svelte/popover'
+import type { OpenChangeEvent } from 'prosekit/web/popover'
 
 import { Button } from '../button'
 
@@ -63,11 +64,11 @@ function handleSubmit() {
   deferResetState()
 }
 
-function handleOpenChange(isOpen: boolean) {
-  if (!isOpen) {
+function handleOpenChange(event: OpenChangeEvent) {
+  if (!event.detail) {
     deferResetState()
   }
-  open = isOpen
+  open = event.detail
 }
 </script>
 
@@ -78,40 +79,43 @@ function handleOpenChange(isOpen: boolean) {
     </Button>
   </PopoverTrigger>
 
-  <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
-    {#if !file}
-      <label for="id-link-{ariaId}">Embed Link</label>
-      <input
-        id="id-link-{ariaId}"
-        class="CSS_IMAGE_UPLOAD_INPUT"
-        placeholder="Paste the image link..."
-        type="url"
-        value={url}
-        oninput={handleUrlChange}
-      />
-    {/if}
+  <PopoverPositioner
+    placement="bottom"
+    class="CSS_IMAGE_UPLOAD_POSITIONER"
+  ><PopoverPopup class="CSS_IMAGE_UPLOAD_CARD">
+      {#if !file}
+        <label for="id-link-{ariaId}">Embed Link</label>
+        <input
+          id="id-link-{ariaId}"
+          class="CSS_IMAGE_UPLOAD_INPUT"
+          placeholder="Paste the image link..."
+          type="url"
+          value={url}
+          oninput={handleUrlChange}
+        />
+      {/if}
 
-    {#if !url}
-      <label for="id-upload-{ariaId}">Upload</label>
-      <input
-        id="id-upload-{ariaId}"
-        class="CSS_IMAGE_UPLOAD_INPUT"
-        accept="image/*"
-        type="file"
-        onchange={handleFileChange}
-      />
-    {/if}
+      {#if !url}
+        <label for="id-upload-{ariaId}">Upload</label>
+        <input
+          id="id-upload-{ariaId}"
+          class="CSS_IMAGE_UPLOAD_INPUT"
+          accept="image/*"
+          type="file"
+          onchange={handleFileChange}
+        />
+      {/if}
 
-    {#if url}
-      <button class="CSS_IMAGE_UPLOAD_BUTTON" onclick={handleSubmit}>
-        Insert Image
-      </button>
-    {/if}
+      {#if url}
+        <button class="CSS_IMAGE_UPLOAD_BUTTON" onclick={handleSubmit}>
+          Insert Image
+        </button>
+      {/if}
 
-    {#if file}
-      <button class="CSS_IMAGE_UPLOAD_BUTTON" onclick={handleSubmit}>
-        Upload Image
-      </button>
-    {/if}
-  </PopoverContent>
+      {#if file}
+        <button class="CSS_IMAGE_UPLOAD_BUTTON" onclick={handleSubmit}>
+          Upload Image
+        </button>
+      {/if}
+    </PopoverPopup></PopoverPositioner>
 </PopoverRoot>

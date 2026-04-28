@@ -128,21 +128,21 @@ testStory(['slash-menu', 'full'], () => {
   })
 
   it('prevent focus loss when clicking menu items', async () => {
-    const { editor, focusedItem } = await setup()
+    const { editor, highlightedItem } = await setup()
     const blockquote = editor.locate('blockquote')
 
     // Show the menu
-    await expectLocatorToBeHidden(focusedItem)
+    await expectLocatorToBeHidden(highlightedItem)
     await editor.click()
     await inputText('/')
     await inputText('quote')
-    await expect.element(focusedItem).toBeVisible()
-    await expect.element(focusedItem).toHaveTextContent('Quote')
+    await expect.element(highlightedItem).toBeVisible()
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
 
     // Click the menu item to insert a blockquote
     await expectLocatorToHaveCount(blockquote, 0)
-    await focusedItem.click()
-    await expectLocatorToBeHidden(focusedItem)
+    await highlightedItem.click()
+    await expectLocatorToBeHidden(highlightedItem)
     await expectLocatorToHaveCount(blockquote, 1)
 
     // Ensure that the editor is still focused
@@ -150,21 +150,21 @@ testStory(['slash-menu', 'full'], () => {
   })
 
   it('prevent focus loss when pressing Enter', async () => {
-    const { editor, focusedItem } = await setup()
+    const { editor, highlightedItem } = await setup()
     const blockquote = editor.locate('blockquote')
 
     // Show the menu
-    await expectLocatorToBeHidden(focusedItem)
+    await expectLocatorToBeHidden(highlightedItem)
     await editor.click()
     await inputText('/')
     await inputText('quote')
-    await expect.element(focusedItem).toBeVisible()
-    await expect.element(focusedItem).toHaveTextContent('Quote')
+    await expect.element(highlightedItem).toBeVisible()
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
 
     // Press Enter to insert a blockquote
     await expectLocatorToHaveCount(blockquote, 0)
     await keyboard.press('Enter')
-    await expectLocatorToBeHidden(focusedItem)
+    await expectLocatorToBeHidden(highlightedItem)
     await expectLocatorToHaveCount(blockquote, 1)
 
     // Ensure that the editor is still focused
@@ -172,7 +172,7 @@ testStory(['slash-menu', 'full'], () => {
   })
 
   it('insert list', async () => {
-    const { editor, focusedItem } = await setup()
+    const { editor, highlightedItem } = await setup()
 
     const taskList = editor.locate('div[data-list-kind="task"]')
     const orderedList = editor.locate('div[data-list-kind="ordered"]')
@@ -181,7 +181,7 @@ testStory(['slash-menu', 'full'], () => {
     await expectLocatorToHaveCount(orderedList, 0)
 
     await inputText('/task')
-    await expect.element(focusedItem).toHaveTextContent('Task list')
+    await expect.element(highlightedItem).toHaveTextContent('Task list')
 
     await keyboard.press('Enter')
     await expect.element(taskList).toBeVisible()
@@ -192,28 +192,28 @@ testStory(['slash-menu', 'full'], () => {
     await keyboard.press('Backspace')
     await inputText('Some text ')
     await inputText('/order')
-    await expect.element(focusedItem).toHaveTextContent('Ordered list')
+    await expect.element(highlightedItem).toHaveTextContent('Ordered list')
 
     await keyboard.press('Enter')
     await expect.element(orderedList).toBeVisible()
   })
 
   it('insert blockquote', async () => {
-    const { editor, focusedItem } = await setup()
+    const { editor, highlightedItem } = await setup()
 
     const blockquote = editor.locate('blockquote')
 
     await expectLocatorToHaveCount(blockquote, 0)
 
     await inputText('/quote')
-    await expect.element(focusedItem).toHaveTextContent('Quote')
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
 
     await keyboard.press('Enter')
     await expectLocatorToHaveCount(blockquote, 1)
   })
 
   it('press arrow keys to select item', async () => {
-    const { editor, itemText, itemH1, itemH2, focusedItem } = await setup()
+    const { editor, itemText, itemH1, itemH2, highlightedItem } = await setup()
 
     await editor.click()
     await inputText('/')
@@ -223,19 +223,19 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(itemText).toHaveTextContent('Text')
 
     await keyboard.press('ArrowDown')
-    await expect.element(focusedItem).toHaveTextContent('Heading 1')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 1')
 
     await keyboard.press('ArrowDown')
-    await expect.element(focusedItem).toHaveTextContent('Heading 2')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 2')
 
     await keyboard.press('ArrowDown')
-    await expect.element(focusedItem).toHaveTextContent('Heading 3')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 3')
 
     await keyboard.press('ArrowDown')
-    await expect.element(focusedItem).not.toHaveTextContent(/Heading/)
+    await expect.element(highlightedItem).not.toHaveTextContent(/Heading/)
 
     await keyboard.press('ArrowUp')
-    await expect.element(focusedItem).toHaveTextContent('Heading 3')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 3')
 
     await expectLocatorToHaveCount(editor.locate('h3'), 0)
     await keyboard.press('Enter')
@@ -270,10 +270,10 @@ async function setup() {
   const itemH1 = item.filter({ hasText: 'Heading 1' }).first()
   const itemH2 = item.filter({ hasText: 'Heading 2' }).first()
 
-  const focusedItem = page.locate('prosekit-autocomplete-item[data-focused="true"] > span')
+  const highlightedItem = page.locate('prosekit-autocomplete-item[data-highlighted] > span')
 
   const menu = page
-    .locate('prosekit-autocomplete-popover')
+    .locate('prosekit-autocomplete-popup')
     .filter({ has: itemH1 })
 
   return {
@@ -282,6 +282,6 @@ async function setup() {
     itemText,
     itemH1,
     itemH2,
-    focusedItem,
+    highlightedItem,
   }
 }

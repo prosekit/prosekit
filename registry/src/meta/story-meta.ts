@@ -1,51 +1,38 @@
-import { vfs } from '@prosekit/dev'
+import { stories } from '../stories.ts'
 
-import type { ItemAccumulator } from './types'
+export const storyMeta = new Map<string, { hidden: boolean; description: string }>(
+  stories.map(entry => [
+    entry.name,
+    {
+      hidden: entry.hidden ?? false,
+      description: entry.description ?? '',
+    },
+  ]),
+)
 
-const STORY_META_PATH = 'registry/src/story-meta.gen.yaml'
-
-// Sync data from passed ItemAccumulators to story-meta.gen.yaml
-export async function updateStoryMeta(items: ItemAccumulator[]): Promise<void> {
-  const metaMap = await loadStoryMeta()
-  const metaItems: StoryItem[] = []
-  const itemsByStory = Map.groupBy(items, item => item.story)
-
-  for (const [storyName, items] of itemsByStory) {
-    if (!storyName) continue
-    const frameworks = items.map(item => item.framework)
-    const description = metaMap.get(storyName)?.description || undefined
-    const hidden = metaMap.get(storyName)?.hidden || undefined
-    metaItems.push({ name: storyName, frameworks, hidden, description })
+export function checkStoryMeta(items: ReadonlyArray<{ story?: string }>) {
+  const scannedStories = new Set<string>()
+  for (const item of items) {
+    if (item.story) {
+      scannedStories.add(item.story)
+    }
   }
 
-  writeStoryMeta(metaItems)
-}
-
-type StoryItem = {
-  name: string
-  frameworks: string[]
-  description?: string
-  hidden?: boolean
-}
-
-export type StoryMeta = Map<string, { hidden: boolean; description: string }>
-
-export async function loadStoryMeta(): Promise<StoryMeta> {
-  const items = await readStoryItems()
-  return new Map(items.map(item => [item.name, {
-    hidden: item.hidden || false,
-    description: item.description || '',
-  }]))
-}
-
-async function readStoryItems(): Promise<StoryItem[]> {
-  try {
-    return await vfs.readYAML(STORY_META_PATH)
-  } catch {
-    return []
+  for (const story of scannedStories) {
+    if (!storyMeta.has(story)) {
+      console.warn(
+        `[${import.meta.filename}] Warning: Story "${story}" is not defined in registry/src/stories.ts. `
+          + `Please add an entry for it.`,
+      )
+    }
   }
-}
 
-function writeStoryMeta(items: StoryItem[]): void {
-  vfs.updateYAML(STORY_META_PATH, items, { flowLevel: 2 })
+  for (const name of storyMeta.keys()) {
+    if (!scannedStories.has(name)) {
+      console.warn(
+        `[${import.meta.filename}] Warning: Story "${name}" is defined in registry/src/stories.ts `
+          + `but no matching example was found.`,
+      )
+    }
+  }
 }

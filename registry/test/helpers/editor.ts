@@ -41,23 +41,3 @@ export async function focusEditor(options?: { editor?: Locator }) {
   const editor = options?.editor ?? (await waitForEditor())
   editor.element().focus()
 }
-
-export async function pasteHtmlToEditor(
-  html: string,
-  options?: { editor?: Locator },
-) {
-  const editor = options?.editor ?? (await waitForEditor())
-  const element = editor.element()
-  element.focus()
-
-  const data = new DataTransfer()
-  data.setData('text/html', html)
-
-  const event = new ClipboardEvent('paste', {
-    clipboardData: data,
-    bubbles: true,
-    cancelable: true,
-  })
-
-  element.dispatchEvent(event)
-}

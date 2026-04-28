@@ -1,8 +1,16 @@
+'use client'
+
 import type { BasicExtension } from 'prosekit/basic'
 import { canUseRegexLookbehind, type Union } from 'prosekit/core'
 import type { MentionExtension } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/react'
-import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/react/autocomplete'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompletePopup,
+  AutocompletePositioner,
+  AutocompleteRoot,
+} from 'prosekit/react/autocomplete'
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
@@ -25,29 +33,32 @@ export default function UserMenu(props: {
   }
 
   return (
-    <AutocompletePopover
+    <AutocompleteRoot
       regex={regex}
-      className="CSS_AUTOCOMPLETE_MENU"
-      onQueryChange={props.onQueryChange}
-      onOpenChange={props.onOpenChange}
+      onQueryChange={(event) => props.onQueryChange?.(event.detail)}
+      onOpenChange={(event) => props.onOpenChange?.(event.detail)}
     >
-      <AutocompleteList>
-        <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
-          {props.loading ? 'Loading...' : 'No results'}
-        </AutocompleteEmpty>
+      <AutocompletePositioner className="CSS_AUTOCOMPLETE_POSITIONER">
+        <AutocompletePopup className="CSS_AUTOCOMPLETE_POPUP">
+          <div className="CSS_AUTOCOMPLETE_POPUP_CONTENT">
+            <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
+              {props.loading ? 'Loading...' : 'No results'}
+            </AutocompleteEmpty>
 
-        {props.users.map((user) => (
-          <AutocompleteItem
-            key={user.id}
-            className="CSS_AUTOCOMPLETE_MENU_ITEM"
-            onSelect={() => handleUserInsert(user.id, user.name)}
-          >
-            <span className={props.loading ? 'opacity-50' : undefined}>
-              {user.name}
-            </span>
-          </AutocompleteItem>
-        ))}
-      </AutocompleteList>
-    </AutocompletePopover>
+            {props.users.map((user) => (
+              <AutocompleteItem
+                key={user.id}
+                className="CSS_AUTOCOMPLETE_MENU_ITEM"
+                onSelect={() => handleUserInsert(user.id, user.name)}
+              >
+                <span className={props.loading ? 'opacity-50' : undefined}>
+                  {user.name}
+                </span>
+              </AutocompleteItem>
+            ))}
+          </div>
+        </AutocompletePopup>
+      </AutocompletePositioner>
+    </AutocompleteRoot>
   )
 }

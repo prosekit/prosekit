@@ -1,14 +1,12 @@
-import clsxLite from 'clsx/lite'
-
-// This type declaration can be removed if https://github.com/lukeed/clsx/pull/110 gets merged and released
-
 /**
- * A utility for constructing `className` strings conditionally.
+ * A tiny utility for constructing `className` strings conditionally.
  *
- * It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with stricter types.
+ * It accepts a variable number of arguments, which can be a string, boolean,
+ * null, or undefined. The function concatenates the string arguments and
+ * ignores the falsy values (false, null, undefined).
  *
  * @public
  */
-export const clsx: (
-  ...args: Array<string | boolean | null | undefined>
-) => string = clsxLite
+export function clsx(...args: Array<string | boolean | null | undefined>): string {
+  return args.filter(x => typeof x === 'string').join(' ')
+}

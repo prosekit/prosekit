@@ -5,6 +5,43 @@ import type { RegistryItem } from 'shadcn-schema'
 
 import { FRAMEWORKS, type Framework, type ItemAccumulator } from './types'
 
+interface ExamplesJson {
+  stories: Record<string, {
+    frameworks: string[]
+    hidden: boolean
+    description: string
+  }>
+  examples: Record<string, {
+    story: string
+    files: string[]
+  }>
+}
+
+export function serializeExamplesJson(items: ItemAccumulator[]): ExamplesJson {
+  const exampleItems = items.filter(item => item.story)
+
+  const stories: ExamplesJson['stories'] = {}
+  const examples: ExamplesJson['examples'] = {}
+
+  for (const item of exampleItems) {
+    if (!stories[item.story]) {
+      stories[item.story] = {
+        frameworks: [],
+        hidden: item.meta.hidden,
+        description: item.description,
+      }
+    }
+    stories[item.story].frameworks.push(item.framework)
+
+    examples[item.name] = {
+      story: item.story,
+      files: Array.from(item.meta.accumulatedFiles).sort(),
+    }
+  }
+
+  return { stories, examples }
+}
+
 /**
  * Convert an accumulator into a JSON-friendly shape expected by the registry file.
  */

@@ -1,0 +1,150 @@
+/* eslint-disable @eslint-react/component-hook-factories */
+
+import { createEditor, union, type NodeJSON } from '@prosekit/core'
+import { defineTestExtension, type ImageAttrs } from '@prosekit/testing'
+import { createElement, useEffect, useState } from 'react'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { render } from 'vitest-browser-react'
+import { page } from 'vitest/browser'
+
+import { ProseKit } from '../components/prosekit.ts'
+
+import { defineReactNodeView, type ReactNodeViewComponent, type ReactNodeViewProps } from './react-node-view.ts'
+
+describe('ReactNodeView', () => {
+  const initialState = {
+    imageRefresh: {
+      mounted: 0,
+      unmounted: 0,
+      setAttrs: 0,
+    },
+  }
+
+  let state = structuredClone(initialState)
+
+  beforeEach(() => {
+    state = structuredClone(initialState)
+  })
+
+  function defineExtension() {
+    return union(
+      defineTestExtension(),
+      defineReactNodeView({
+        name: 'image',
+        component: ImageRefreshView satisfies ReactNodeViewComponent,
+      }),
+    )
+  }
+
+  function ImageRefreshView(props: ReactNodeViewProps) {
+    const url = (props.node.attrs as ImageAttrs).src
+    const setAttrs = props.setAttrs
+
+    useEffect(() => {
+      state.imageRefresh.mounted++
+      const id = setInterval(() => {
+        state.imageRefresh.setAttrs++
+        setAttrs({ src: String(Math.random()) })
+      }, 50)
+      return () => {
+        state.imageRefresh.unmounted++
+        clearInterval(id)
+      }
+    }, [setAttrs])
+
+    return createElement('div', {
+      'data-testid': 'image-refresh-view',
+      'data-url': url,
+    })
+  }
+
+  function TestEditor(props: { initialContent?: NodeJSON }) {
+    const [editor] = useState(() => {
+      return createEditor({
+        extension: defineExtension(),
+        defaultContent: props.initialContent,
+      })
+    })
+
+    return createElement(
+      ProseKit,
+      { editor },
+      createElement('div', {
+        'data-testid': 'editor',
+        'ref': editor.mount,
+      }),
+    )
+  }
+
+  const paragraphJSON: NodeJSON = {
+    type: 'paragraph',
+    content: [{ type: 'text', text: 'Hello' }],
+  }
+  const imageRefreshJSON: NodeJSON = {
+    type: 'image',
+  }
+
+  const editor = page.getByTestId('editor')
+  const imageRefresh = page.getByTestId('image-refresh-view')
+
+  it('can render a single self-update image node', async () => {
+    const initialContent: NodeJSON = {
+      type: 'doc',
+      content: [imageRefreshJSON, paragraphJSON],
+    }
+    const screen = await render(createElement(TestEditor, { initialContent }))
+    await expect.element(editor).toBeVisible()
+    await expect.element(imageRefresh).toBeInTheDocument()
+
+    const urls = new Set<string>()
+    const check = () => {
+      imageRefresh.elements().forEach((element) => {
+        const url = element.getAttribute('data-url')
+        if (url) {
+          urls.add(url)
+        }
+      })
+      return urls.size >= 5
+    }
+
+    await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
+
+    await screen.unmount()
+
+    expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(5)
+    expect(state.imageRefresh.mounted).toBe(1)
+    expect(state.imageRefresh.unmounted).toBe(1)
+  })
+
+  it('can render multiple self-update image nodes', async () => {
+    const initialContent: NodeJSON = {
+      type: 'doc',
+      content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
+    }
+    const screen = await render(createElement(TestEditor, { initialContent }))
+    await expect.element(editor).toBeVisible()
+    await expect.element(imageRefresh.nth(0)).toBeInTheDocument()
+    await expect.element(imageRefresh.nth(1)).toBeInTheDocument()
+    await expect.element(imageRefresh.nth(2)).toBeInTheDocument()
+    await expect.element(imageRefresh.nth(3)).not.toBeInTheDocument()
+
+    const urls = new Set<string>()
+    const check = () => {
+      imageRefresh.elements().forEach((element) => {
+        const url = element.getAttribute('data-url')
+        if (url) {
+          urls.add(url)
+        }
+      })
+      return urls.size >= 15
+    }
+
+    await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
+
+    await screen.unmount()
+
+    expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(15)
+    expect(state.imageRefresh.mounted).toBe(3)
+    expect(state.imageRefresh.unmounted).toBe(3)
+  })
+})

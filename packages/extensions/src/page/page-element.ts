@@ -9,10 +9,10 @@ export const PAGE_CHUNK_TAG_NAME = 'pm-page-chunk'
 /**
  * @internal
  */
-export const registerPageChunkElement: VoidFunction = /* @__PURE__ */ once(() => {
+export function registerPageChunkElement(): void {
   if (typeof window === 'undefined' || customElements.get(PAGE_CHUNK_TAG_NAME)) return
   customElements.define(PAGE_CHUNK_TAG_NAME, PageChunkElement)
-})
+}
 
 class PageChunkElement extends HTMLElement {
   static observedAttributes = [

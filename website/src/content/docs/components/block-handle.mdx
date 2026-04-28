@@ -19,13 +19,15 @@ The block handle system provides two main capabilities:
 
 ### Block Handle
 
-The `BlockHandle` consists of three main components:
+The `BlockHandle` consists of five main components:
 
-- **`BlockHandlePopover`**: A popover container that appears on the left side when hovering over a block
+- **`BlockHandleRoot`**: Tracks the active block and coordinates block-handle state
+- **`BlockHandlePositioner`**: Positions the floating handle on the left side of the active block
+- **`BlockHandlePopup`**: The visible floating container for block-handle controls
 - **`BlockHandleAdd`**: An add button (+) that inserts a new block below the current one
 - **`BlockHandleDraggable`**: A drag handle (⋮⋮) that allows users to reorder blocks by dragging
 
-You can use `BlockHandleAdd`, `BlockHandleDraggable`, or both together depending on your needs.
+Use `BlockHandleAdd`, `BlockHandleDraggable`, or both inside `BlockHandlePopup` depending on your needs.
 
 ### Drop Indicator
 

@@ -1,8 +1,6 @@
 import { access } from 'node:fs/promises'
 import { join, normalize } from 'node:path'
 
-import type { DumpOptions } from 'js-yaml'
-
 import { isSubDirectory } from './is-sub-directory'
 import { listGitFiles } from './list-git-files'
 import { VirtualFile } from './virtual-file'
@@ -28,12 +26,6 @@ export class VirtualFileSystem {
     return await file.readJSON<T>()
   }
 
-  /** Reads and parses a YAML file. */
-  async readYAML<T = unknown>(filePath: string): Promise<T> {
-    const file = this.ensureFile(filePath)
-    return await file.readYAML<T>()
-  }
-
   /** Updates a file with raw text. */
   updateText(filePath: string, content: string): void {
     const file = this.ensureFile(filePath)
@@ -44,12 +36,6 @@ export class VirtualFileSystem {
   updateJSON(filePath: string, json: unknown): void {
     const file = this.ensureFile(filePath)
     file.updateJSON(json)
-  }
-
-  /** Updates a YAML file. */
-  updateYAML(filePath: string, yaml: unknown, options?: DumpOptions): void {
-    const file = this.ensureFile(filePath)
-    file.updateYAML(yaml, options)
   }
 
   /** Checks if a path exists inside the virtual file map. */

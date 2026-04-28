@@ -1,3 +1,5 @@
+'use client'
+
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/react'
 

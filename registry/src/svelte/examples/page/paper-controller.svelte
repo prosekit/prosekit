@@ -65,7 +65,7 @@ useExtension(extensionStore)
 
 <div
   data-paper-controller={paperSize}
-  class="grid grid-cols-[auto_1fr] gap-2 w-min border p-2 bg-[Canvas] sticky top-2 left-2 z-10 print:hidden text-xs"
+  class="grid grid-cols-[auto_1fr] gap-2 w-min border p-2 bg-[canvas] sticky top-2 left-2 z-10 print:hidden text-xs"
 >
   <label for="{id}-page">Page</label>
   <select

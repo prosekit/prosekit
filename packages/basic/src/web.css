@@ -1,0 +1,25 @@
+prosekit-autocomplete-root,
+prosekit-block-handle-root,
+prosekit-table-handle-root,
+prosekit-table-handle-column-menu-root,
+prosekit-table-handle-row-menu-root,
+prosekit-tooltip-root,
+prosekit-menu-root {
+  display: contents;
+}
+
+prosekit-tooltip-positioner,
+prosekit-autocomplete-positioner,
+prosekit-menu-positioner,
+prosekit-popover-positioner,
+prosekit-inline-popover-positioner,
+prosekit-block-handle-positioner,
+prosekit-table-handle-column-positioner,
+prosekit-table-handle-row-positioner {
+  background: transparent;
+
+  /* Only show when the web component is mounted */
+  &:not([data-state]) {
+    display: none;
+  }
+}

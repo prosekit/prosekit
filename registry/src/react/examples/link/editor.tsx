@@ -1,3 +1,5 @@
+'use client'
+
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
@@ -24,9 +26,9 @@ export default function Editor(props: EditorProps) {
   return (
     <ProseKit editor={editor}>
       <div className="CSS_EDITOR_VIEWPORT">
-        <InlineMenu />
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+          <InlineMenu />
         </div>
       </div>
     </ProseKit>

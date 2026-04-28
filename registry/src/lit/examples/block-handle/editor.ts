@@ -1,7 +1,8 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import '../../ui/table-handle/index'
+import '../../ui/block-handle'
+import '../../ui/drop-indicator'
 
 import { ContextProvider } from '@lit/context'
 import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
@@ -9,14 +10,16 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor, NodeJSON } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
-import { sampleContent } from '../../sample/sample-doc-table'
+import { sampleContent } from '../../sample/sample-doc-block-handle'
 import { editorContext } from '../../ui/editor-context'
 
 import { defineExtension } from './extension'
 
 export class LitEditor extends LitElement {
   static override properties = {
-    initialContent: { attribute: false } satisfies PropertyDeclaration<NodeJSON | undefined>,
+    initialContent: {
+      attribute: false,
+    } satisfies PropertyDeclaration<NodeJSON | undefined>,
   }
 
   initialContent?: NodeJSON
@@ -63,19 +66,20 @@ export class LitEditor extends LitElement {
     return html`<div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">
         <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
-        <lit-editor-table-handle></lit-editor-table-handle>
+        <lit-editor-block-handle></lit-editor-block-handle>
+        <lit-editor-drop-indicator></lit-editor-drop-indicator>
       </div>
     </div>`
   }
 }
 
 export function registerLitEditor() {
-  if (customElements.get('lit-editor-example-table')) return
-  customElements.define('lit-editor-example-table', LitEditor)
+  if (customElements.get('lit-editor-example-block-handle')) return
+  customElements.define('lit-editor-example-block-handle', LitEditor)
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'lit-editor-example-table': LitEditor
+    'lit-editor-example-block-handle': LitEditor
   }
 }

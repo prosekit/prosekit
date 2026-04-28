@@ -1,3 +1,4 @@
+import type { NodeJSON } from 'prosekit/core'
 import { expect } from 'vitest'
 import { page } from 'vitest/browser'
 
@@ -16,16 +17,20 @@ function cleanup() {
 
 registerCleanupFunction(cleanup)
 
-export async function renderLitExample(story: string) {
+export async function renderLitExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
   const container = document.body.appendChild(document.createElement('div'))
   containers.add(container)
 
   registerLitRenderer()
 
-  const renderer = document.createElement('lit-renderer')
+  const renderer = document.createElement('lit-renderer') as HTMLElement & {
+    story: string
+    exampleProps?: { initialContent?: NodeJSON }
+  }
   renderer.style.display = 'contents'
   renderer.story = story
+  renderer.exampleProps = initialContent ? { initialContent } : {}
   container.appendChild(renderer)
 
   const fallback = page.getByTestId('lit-renderer-fallback')

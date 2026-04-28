@@ -3,6 +3,7 @@ import component from './lit.astro'
 
 export default { component }
 
+export const CodeBlock = { args: { story: 'code-block' } }
 export const Minimal = { args: { story: 'minimal' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
 export const Table = { args: { story: 'table' } }

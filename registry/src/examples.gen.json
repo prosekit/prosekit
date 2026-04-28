@@ -60,6 +60,7 @@
         "react",
         "preact",
         "vue",
+        "lit",
         "svelte",
         "solid"
       ],
@@ -2471,6 +2472,25 @@
         "registry/src/vue/ui/image-upload-popover/index.ts",
         "registry/src/vue/ui/toolbar/index.ts",
         "registry/src/vue/ui/toolbar/toolbar.vue"
+      ]
+    },
+    "lit-example-code-block": {
+      "story": "code-block",
+      "files": [
+        "registry/src/lit/examples/code-block/editor.ts",
+        "registry/src/lit/examples/code-block/extension.ts",
+        "registry/src/lit/examples/code-block/index.ts",
+        "registry/src/lit/sample/sample-doc-code-block.ts",
+        "registry/src/lit/sample/sample-uploader.ts",
+        "registry/src/lit/ui/button/button.ts",
+        "registry/src/lit/ui/button/index.ts",
+        "registry/src/lit/ui/code-block-view/code-block-view.ts",
+        "registry/src/lit/ui/code-block-view/index.ts",
+        "registry/src/lit/ui/editor-context.ts",
+        "registry/src/lit/ui/image-upload-popover/image-upload-popover.ts",
+        "registry/src/lit/ui/image-upload-popover/index.ts",
+        "registry/src/lit/ui/toolbar/index.ts",
+        "registry/src/lit/ui/toolbar/toolbar.ts"
       ]
     },
     "lit-example-minimal": {

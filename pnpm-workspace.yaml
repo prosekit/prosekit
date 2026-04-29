@@ -18,12 +18,12 @@ catalog:
 
 ignoreWorkspaceRootCheck: true
 
-ignoredBuiltDependencies:
-  - "@parcel/watcher"
-  - dprint
-  - esbuild
-  - sharp
-  - workerd
+allowBuilds:
+  "@parcel/watcher": false
+  dprint: false
+  esbuild: false
+  sharp: false
+  workerd: false
 
 minimumReleaseAge: 600 # 10 hours
 

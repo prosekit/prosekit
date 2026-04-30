@@ -1,3 +1,8 @@
+import { ContextConsumer } from '@lit/context'
+import { html, LitElement } from 'lit'
+import type { BasicExtension } from 'prosekit/basic'
+import type { Editor } from 'prosekit/core'
+import { canUseRegexLookbehind } from 'prosekit/core'
 import {
   registerAutocompleteEmptyElement,
   registerAutocompleteItemElement,
@@ -5,12 +10,6 @@ import {
   registerAutocompletePositionerElement,
   registerAutocompleteRootElement,
 } from 'prosekit/lit/autocomplete'
-
-import { ContextConsumer } from '@lit/context'
-import { html, LitElement } from 'lit'
-import type { BasicExtension } from 'prosekit/basic'
-import type { Editor } from 'prosekit/core'
-import { canUseRegexLookbehind } from 'prosekit/core'
 
 import { editorContext } from '../editor-context'
 

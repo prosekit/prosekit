@@ -1,13 +1,12 @@
-import {
-registerBlockHandleAddElement,
-registerBlockHandleDraggableElement,
-registerBlockHandlePopupElement,
-registerBlockHandlePositionerElement,
-registerBlockHandleRootElement  ,
-} from  'prosekit/lit/block-handle'
-
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
+import {
+  registerBlockHandleAddElement,
+  registerBlockHandleDraggableElement,
+  registerBlockHandlePopupElement,
+  registerBlockHandlePositionerElement,
+  registerBlockHandleRootElement,
+} from 'prosekit/lit/block-handle'
 
 import { editorContext } from '../editor-context'
 

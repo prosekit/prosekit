@@ -1,3 +1,8 @@
+import { ContextConsumer } from '@lit/context'
+import { html, LitElement, nothing, type PropertyDeclaration, type PropertyValues } from 'lit'
+import type { Editor } from 'prosekit/core'
+import { defineUpdateHandler } from 'prosekit/core'
+import type { TableExtension } from 'prosekit/extensions/table'
 import {
   registerMenuItemElement,
   registerMenuPopupElement,
@@ -16,12 +21,6 @@ import {
   registerTableHandleRowPopupElement,
   registerTableHandleRowPositionerElement,
 } from 'prosekit/lit/table-handle'
-
-import { ContextConsumer } from '@lit/context'
-import { html, LitElement, nothing, type PropertyDeclaration, type PropertyValues } from 'lit'
-import type { Editor } from 'prosekit/core'
-import { defineUpdateHandler } from 'prosekit/core'
-import type { TableExtension } from 'prosekit/extensions/table'
 
 import { editorContext } from '../editor-context'
 

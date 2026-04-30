@@ -1,7 +1,6 @@
-import { registerDropIndicatorElement } from 'prosekit/lit/drop-indicator'
-
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
+import { registerDropIndicatorElement } from 'prosekit/lit/drop-indicator'
 
 import { editorContext } from '../editor-context'
 

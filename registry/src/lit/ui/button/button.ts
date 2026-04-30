@@ -1,11 +1,10 @@
+import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 import {
   registerTooltipPopupElement,
   registerTooltipPositionerElement,
   registerTooltipRootElement,
   registerTooltipTriggerElement,
 } from 'prosekit/lit/tooltip'
-
-import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 
 class LitButton extends LitElement {
   static override properties = {

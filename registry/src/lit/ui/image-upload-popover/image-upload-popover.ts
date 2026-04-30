@@ -3,6 +3,7 @@ import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import type { OpenChangeEvent } from 'prosekit/lit/popover'
+import { registryLitEditorButton } from '../button'
 
 let imageUploadId = 0
 
@@ -152,5 +153,18 @@ export class LitImageUploadPopover extends LitElement {
         </prosekit-popover-positioner>
       </prosekit-popover-root>
     `
+  }
+}
+
+export function registryLitEditorImageUploadPopover() {
+  registryLitEditorButton()
+
+  if (customElements.get('lit-editor-image-upload-popover')) return
+  customElements.define('lit-editor-image-upload-popover', LitImageUploadPopover)
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'lit-editor-image-upload-popover': LitImageUploadPopover
   }
 }

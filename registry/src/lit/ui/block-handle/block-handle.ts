@@ -1,4 +1,10 @@
-import 'prosekit/lit/block-handle'
+import {
+registerBlockHandleAddElement,
+registerBlockHandleDraggableElement,
+registerBlockHandlePopupElement,
+registerBlockHandlePositionerElement,
+registerBlockHandleRootElement  ,
+} from  'prosekit/lit/block-handle'
 
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
@@ -42,6 +48,12 @@ class LitBlockHandle extends LitElement {
 }
 
 export function registerLitEditorBlockHandle() {
+  registerBlockHandleAddElement()
+  registerBlockHandleDraggableElement()
+  registerBlockHandlePopupElement()
+  registerBlockHandlePositionerElement()
+  registerBlockHandleRootElement()
+
   if (customElements.get('lit-editor-block-handle')) return
   customElements.define('lit-editor-block-handle', LitBlockHandle)
 }

@@ -14,7 +14,7 @@ import { SlashMenuItemElement } from './slash-menu-item'
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 
-export class SlashMenuElement extends LitElement {
+class SlashMenuElement extends LitElement {
   private editorConsumer = new ContextConsumer(this, {
     context: editorContext,
     subscribe: true,

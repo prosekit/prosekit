@@ -5,7 +5,7 @@ import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
-export class LitDropIndicator extends LitElement {
+class LitDropIndicator extends LitElement {
   private _editorConsumer = new ContextConsumer(this, {
     context: editorContext,
     subscribe: true,

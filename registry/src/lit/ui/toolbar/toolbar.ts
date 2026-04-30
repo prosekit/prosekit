@@ -152,7 +152,7 @@ function getToolbarItems(editor: Editor<BasicExtension>) {
   }
 }
 
-export class LitToolbar extends LitElement {
+class LitToolbar extends LitElement {
   static override properties = {
     uploader: { attribute: false } satisfies PropertyDeclaration<Uploader<string>>,
   }

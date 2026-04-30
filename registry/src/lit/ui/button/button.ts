@@ -2,7 +2,7 @@ import 'prosekit/lit/tooltip'
 
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 
-export class LitButton extends LitElement {
+class LitButton extends LitElement {
   static override properties = {
     pressed: { type: Boolean },
     disabled: { type: Boolean },

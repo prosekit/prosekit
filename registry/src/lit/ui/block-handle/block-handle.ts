@@ -5,7 +5,7 @@ import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
-export class LitBlockHandle extends LitElement {
+class LitBlockHandle extends LitElement {
   declare dir: 'ltr' | 'rtl' | 'auto'
 
   private _editorConsumer = new ContextConsumer(this, {

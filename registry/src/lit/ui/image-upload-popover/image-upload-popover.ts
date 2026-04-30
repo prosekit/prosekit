@@ -8,7 +8,7 @@ import { registerLitEditorButton } from '../button'
 
 let imageUploadId = 0
 
-export class LitImageUploadPopover extends LitElement {
+class LitImageUploadPopover extends LitElement {
   static override properties = {
     editor: { attribute: false } satisfies PropertyDeclaration<Editor>,
     uploader: { attribute: false } satisfies PropertyDeclaration<Uploader<string>>,

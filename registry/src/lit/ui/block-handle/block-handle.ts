@@ -5,7 +5,6 @@ import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
-/** @public */
 export class LitBlockHandle extends LitElement {
   declare dir: 'ltr' | 'rtl' | 'auto'
 
@@ -39,13 +38,5 @@ export class LitBlockHandle extends LitElement {
         </prosekit-block-handle-popup>
       </prosekit-block-handle-positioner>
     </prosekit-block-handle-root>`
-  }
-}
-
-customElements.define('lit-editor-block-handle', LitBlockHandle)
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-editor-block-handle': LitBlockHandle
   }
 }

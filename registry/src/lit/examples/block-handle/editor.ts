@@ -1,7 +1,7 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import '../../ui/block-handle'
+import { registryLitEditorBlockHandle } from '../../ui/block-handle'
 import '../../ui/drop-indicator'
 
 import { ContextProvider } from '@lit/context'
@@ -74,6 +74,8 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
+  registryLitEditorBlockHandle()
+
   if (customElements.get('lit-editor-example-block-handle')) return
   customElements.define('lit-editor-example-block-handle', LitEditor)
 }

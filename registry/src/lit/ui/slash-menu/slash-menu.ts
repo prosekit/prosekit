@@ -1,12 +1,20 @@
-import 'prosekit/lit/autocomplete'
-
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
 import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
 import { canUseRegexLookbehind } from 'prosekit/core'
+import {
+  registerAutocompleteEmptyElement,
+  registerAutocompleteItemElement,
+  registerAutocompletePopupElement,
+  registerAutocompletePositionerElement,
+  registerAutocompleteRootElement,
+} from 'prosekit/lit/autocomplete'
 
 import { editorContext } from '../editor-context'
+
+import { SlashMenuEmptyElement } from './slash-menu-empty'
+import { SlashMenuItemElement } from './slash-menu-item'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
@@ -109,4 +117,19 @@ class SlashMenuElement extends LitElement {
   }
 }
 
-customElements.define('lit-editor-slash-menu', SlashMenuElement)
+export function registerLitEditorSlashMenu() {
+  registerAutocompleteEmptyElement()
+  registerAutocompleteItemElement()
+  registerAutocompletePopupElement()
+  registerAutocompletePositionerElement()
+  registerAutocompleteRootElement()
+
+  if (!customElements.get('lit-editor-slash-menu-item')) {
+    customElements.define('lit-editor-slash-menu-item', SlashMenuItemElement)
+  }
+  if (!customElements.get('lit-editor-slash-menu-empty')) {
+    customElements.define('lit-editor-slash-menu-empty', SlashMenuEmptyElement)
+  }
+  if (customElements.get('lit-editor-slash-menu')) return
+  customElements.define('lit-editor-slash-menu', SlashMenuElement)
+}

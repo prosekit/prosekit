@@ -1,8 +1,6 @@
-import 'prosekit/lit/autocomplete'
-
 import { html, LitElement } from 'lit'
 
-class SlashMenuEmptyElement extends LitElement {
+export class SlashMenuEmptyElement extends LitElement {
   override createRenderRoot() {
     return this
   }
@@ -15,5 +13,3 @@ class SlashMenuEmptyElement extends LitElement {
     `
   }
 }
-
-customElements.define('lit-editor-slash-menu-empty', SlashMenuEmptyElement)

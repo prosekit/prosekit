@@ -1,1 +1,1 @@
-import './drop-indicator'
+export { registerLitEditorDropIndicator } from './drop-indicator'

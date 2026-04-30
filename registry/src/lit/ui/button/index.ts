@@ -1,1 +1,1 @@
-import './button'
+export { registerLitEditorButton } from './button'

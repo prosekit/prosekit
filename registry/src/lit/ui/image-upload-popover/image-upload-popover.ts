@@ -1,10 +1,16 @@
-import '../button/index'
-
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
-import type { OpenChangeEvent } from 'prosekit/lit/popover'
+import {
+  registerPopoverPopupElement,
+  registerPopoverPositionerElement,
+  registerPopoverRootElement,
+  registerPopoverTriggerElement,
+  type OpenChangeEvent,
+} from 'prosekit/lit/popover'
+
+import { registerLitEditorButton } from '../button'
 
 let imageUploadId = 0
 
@@ -157,7 +163,16 @@ class LitImageUploadPopover extends LitElement {
   }
 }
 
-customElements.define('lit-editor-image-upload-popover', LitImageUploadPopover)
+export function registerLitEditorImageUploadPopover() {
+  registerLitEditorButton()
+  registerPopoverPopupElement()
+  registerPopoverPositionerElement()
+  registerPopoverRootElement()
+  registerPopoverTriggerElement()
+
+  if (customElements.get('lit-editor-image-upload-popover')) return
+  customElements.define('lit-editor-image-upload-popover', LitImageUploadPopover)
+}
 
 declare global {
   interface HTMLElementTagNameMap {

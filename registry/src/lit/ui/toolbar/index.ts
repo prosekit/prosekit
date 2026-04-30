@@ -1,1 +1,1 @@
-import './toolbar'
+export { registerLitEditorToolbar } from './toolbar'

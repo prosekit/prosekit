@@ -1,1 +1,1 @@
-import './table-handle'
+export { registerLitEditorTableHandle } from './table-handle'

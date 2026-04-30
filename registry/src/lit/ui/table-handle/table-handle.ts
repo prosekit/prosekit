@@ -1,11 +1,26 @@
-import 'prosekit/lit/table-handle'
-import 'prosekit/web/menu'
-
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement, nothing, type PropertyDeclaration, type PropertyValues } from 'lit'
 import type { Editor } from 'prosekit/core'
 import { defineUpdateHandler } from 'prosekit/core'
 import type { TableExtension } from 'prosekit/extensions/table'
+import {
+  registerMenuItemElement,
+  registerMenuPopupElement,
+  registerMenuPositionerElement,
+} from 'prosekit/lit/menu'
+import {
+  registerTableHandleColumnMenuRootElement,
+  registerTableHandleColumnMenuTriggerElement,
+  registerTableHandleColumnPopupElement,
+  registerTableHandleColumnPositionerElement,
+  registerTableHandleDragPreviewElement,
+  registerTableHandleDropIndicatorElement,
+  registerTableHandleRootElement,
+  registerTableHandleRowMenuRootElement,
+  registerTableHandleRowMenuTriggerElement,
+  registerTableHandleRowPopupElement,
+  registerTableHandleRowPositionerElement,
+} from 'prosekit/lit/table-handle'
 
 import { editorContext } from '../editor-context'
 
@@ -235,7 +250,25 @@ class LitTableHandle extends LitElement {
   }
 }
 
-customElements.define('lit-editor-table-handle', LitTableHandle)
+export function registerLitEditorTableHandle() {
+  registerMenuItemElement()
+  registerMenuPopupElement()
+  registerMenuPositionerElement()
+  registerTableHandleColumnMenuRootElement()
+  registerTableHandleColumnMenuTriggerElement()
+  registerTableHandleColumnPopupElement()
+  registerTableHandleColumnPositionerElement()
+  registerTableHandleDragPreviewElement()
+  registerTableHandleDropIndicatorElement()
+  registerTableHandleRootElement()
+  registerTableHandleRowMenuRootElement()
+  registerTableHandleRowMenuTriggerElement()
+  registerTableHandleRowPopupElement()
+  registerTableHandleRowPositionerElement()
+
+  if (customElements.get('lit-editor-table-handle')) return
+  customElements.define('lit-editor-table-handle', LitTableHandle)
+}
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,1 +1,1 @@
-import './block-handle'
+export { registerLitEditorBlockHandle } from './block-handle'

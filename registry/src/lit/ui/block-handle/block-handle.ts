@@ -1,12 +1,16 @@
-import 'prosekit/lit/block-handle'
-
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
+import {
+  registerBlockHandleAddElement,
+  registerBlockHandleDraggableElement,
+  registerBlockHandlePopupElement,
+  registerBlockHandlePositionerElement,
+  registerBlockHandleRootElement,
+} from 'prosekit/lit/block-handle'
 
 import { editorContext } from '../editor-context'
 
-/** @public */
-export class LitBlockHandle extends LitElement {
+class LitBlockHandle extends LitElement {
   declare dir: 'ltr' | 'rtl' | 'auto'
 
   private _editorConsumer = new ContextConsumer(this, {
@@ -42,7 +46,16 @@ export class LitBlockHandle extends LitElement {
   }
 }
 
-customElements.define('lit-editor-block-handle', LitBlockHandle)
+export function registerLitEditorBlockHandle() {
+  registerBlockHandleAddElement()
+  registerBlockHandleDraggableElement()
+  registerBlockHandlePopupElement()
+  registerBlockHandlePositionerElement()
+  registerBlockHandleRootElement()
+
+  if (customElements.get('lit-editor-block-handle')) return
+  customElements.define('lit-editor-block-handle', LitBlockHandle)
+}
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,8 +1,6 @@
-import 'prosekit/lit/autocomplete'
-
 import { html, LitElement } from 'lit'
 
-class SlashMenuItemElement extends LitElement {
+export class SlashMenuItemElement extends LitElement {
   static override properties = {
     label: { type: String },
     kbd: { type: String },
@@ -37,5 +35,3 @@ class SlashMenuItemElement extends LitElement {
     </prosekit-autocomplete-item>`
   }
 }
-
-customElements.define('lit-editor-slash-menu-item', SlashMenuItemElement)

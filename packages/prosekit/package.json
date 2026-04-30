@@ -24,6 +24,7 @@
   ],
   "sideEffects": [
     "./**/*.css",
+    "./src/lit/**/*",
     "./dist/lit/**/*"
   ],
   "main": "./src/index.ts",

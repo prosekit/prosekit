@@ -1,4 +1,10 @@
-import 'prosekit/lit/autocomplete'
+import {
+  registerAutocompleteEmptyElement,
+  registerAutocompleteItemElement,
+  registerAutocompletePopupElement,
+  registerAutocompletePositionerElement,
+  registerAutocompleteRootElement,
+} from 'prosekit/lit/autocomplete'
 
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
@@ -113,6 +119,12 @@ class SlashMenuElement extends LitElement {
 }
 
 export function registerLitEditorSlashMenu() {
+  registerAutocompleteEmptyElement()
+  registerAutocompleteItemElement()
+  registerAutocompletePopupElement()
+  registerAutocompletePositionerElement()
+  registerAutocompleteRootElement()
+
   if (!customElements.get('lit-editor-slash-menu-item')) {
     customElements.define('lit-editor-slash-menu-item', SlashMenuItemElement)
   }

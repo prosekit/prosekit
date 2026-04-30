@@ -1,5 +1,3 @@
-import 'prosekit/lit/autocomplete'
-
 import { html, LitElement } from 'lit'
 
 export class SlashMenuEmptyElement extends LitElement {

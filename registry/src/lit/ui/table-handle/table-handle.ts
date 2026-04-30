@@ -1,5 +1,21 @@
-import 'prosekit/lit/table-handle'
-import 'prosekit/web/menu'
+import {
+  registerMenuItemElement,
+  registerMenuPopupElement,
+  registerMenuPositionerElement,
+} from 'prosekit/lit/menu'
+import {
+  registerTableHandleColumnMenuRootElement,
+  registerTableHandleColumnMenuTriggerElement,
+  registerTableHandleColumnPopupElement,
+  registerTableHandleColumnPositionerElement,
+  registerTableHandleDragPreviewElement,
+  registerTableHandleDropIndicatorElement,
+  registerTableHandleRootElement,
+  registerTableHandleRowMenuRootElement,
+  registerTableHandleRowMenuTriggerElement,
+  registerTableHandleRowPopupElement,
+  registerTableHandleRowPositionerElement,
+} from 'prosekit/lit/table-handle'
 
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement, nothing, type PropertyDeclaration, type PropertyValues } from 'lit'
@@ -236,6 +252,21 @@ class LitTableHandle extends LitElement {
 }
 
 export function registerLitEditorTableHandle() {
+  registerMenuItemElement()
+  registerMenuPopupElement()
+  registerMenuPositionerElement()
+  registerTableHandleColumnMenuRootElement()
+  registerTableHandleColumnMenuTriggerElement()
+  registerTableHandleColumnPopupElement()
+  registerTableHandleColumnPositionerElement()
+  registerTableHandleDragPreviewElement()
+  registerTableHandleDropIndicatorElement()
+  registerTableHandleRootElement()
+  registerTableHandleRowMenuRootElement()
+  registerTableHandleRowMenuTriggerElement()
+  registerTableHandleRowPopupElement()
+  registerTableHandleRowPositionerElement()
+
   if (customElements.get('lit-editor-table-handle')) return
   customElements.define('lit-editor-table-handle', LitTableHandle)
 }

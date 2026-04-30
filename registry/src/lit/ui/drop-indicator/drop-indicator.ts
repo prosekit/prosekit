@@ -1,4 +1,4 @@
-import 'prosekit/lit/drop-indicator'
+import { registerDropIndicatorElement } from 'prosekit/lit/drop-indicator'
 
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
@@ -29,6 +29,8 @@ class LitDropIndicator extends LitElement {
 }
 
 export function registerLitEditorDropIndicator() {
+  registerDropIndicatorElement()
+
   if (customElements.get('lit-editor-drop-indicator')) return
   customElements.define('lit-editor-drop-indicator', LitDropIndicator)
 }

@@ -1,4 +1,9 @@
-import 'prosekit/lit/tooltip'
+import {
+  registerTooltipPopupElement,
+  registerTooltipPositionerElement,
+  registerTooltipRootElement,
+  registerTooltipTriggerElement,
+} from 'prosekit/lit/tooltip'
 
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 
@@ -60,6 +65,11 @@ class LitButton extends LitElement {
 }
 
 export function registerLitEditorButton() {
+  registerTooltipPopupElement()
+  registerTooltipPositionerElement()
+  registerTooltipRootElement()
+  registerTooltipTriggerElement()
+
   if (customElements.get('lit-editor-button')) return
   customElements.define('lit-editor-button', LitButton)
 }

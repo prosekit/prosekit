@@ -22,7 +22,10 @@
   "keywords": [
     "ProseMirror"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "./**/*.css",
+    "./dist/lit/**/*"
+  ],
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {

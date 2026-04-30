@@ -1,6 +1,3 @@
-import '../button/index'
-import '../image-upload-popover/index'
-
 import { ContextConsumer } from '@lit/context'
 import { html, LitElement, nothing, type PropertyDeclaration, type PropertyValues } from 'lit'
 import type { BasicExtension } from 'prosekit/basic'
@@ -153,7 +150,7 @@ function getToolbarItems(editor: Editor<BasicExtension>) {
   }
 }
 
-class LitToolbar extends LitElement {
+export class LitToolbar extends LitElement {
   static override properties = {
     uploader: { attribute: false } satisfies PropertyDeclaration<Uploader<string>>,
   }
@@ -433,13 +430,5 @@ class LitToolbar extends LitElement {
           : nothing}
       </div>
     `
-  }
-}
-
-customElements.define('lit-editor-toolbar', LitToolbar)
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-editor-toolbar': LitToolbar
   }
 }

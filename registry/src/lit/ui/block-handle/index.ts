@@ -1,4 +1,4 @@
-import { LitBlockHandle } from "./block-handle"
+import { LitBlockHandle } from './block-handle'
 
 export function registryLitEditorBlockHandle() {
   if (customElements.get('lit-editor-block-handle')) return

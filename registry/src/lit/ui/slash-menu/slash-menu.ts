@@ -11,7 +11,7 @@ import { editorContext } from '../editor-context'
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 
-class SlashMenuElement extends LitElement {
+export class SlashMenuElement extends LitElement {
   private editorConsumer = new ContextConsumer(this, {
     context: editorContext,
     subscribe: true,
@@ -108,5 +108,3 @@ class SlashMenuElement extends LitElement {
     </prosekit-autocomplete-root>`
   }
 }
-
-customElements.define('lit-editor-slash-menu', SlashMenuElement)

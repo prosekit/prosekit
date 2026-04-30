@@ -46,7 +46,7 @@ function getTableHandleState(editor: Editor<TableExtension>) {
   }
 }
 
-class LitTableHandle extends LitElement {
+export class LitTableHandle extends LitElement {
   static override properties = {
     dir: { type: String } satisfies PropertyDeclaration<'ltr' | 'rtl'>,
   }
@@ -232,13 +232,5 @@ class LitTableHandle extends LitElement {
         </prosekit-table-handle-row-popup>
       </prosekit-table-handle-row-positioner>
     </prosekit-table-handle-root>`
-  }
-}
-
-customElements.define('lit-editor-table-handle', LitTableHandle)
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-editor-table-handle': LitTableHandle
   }
 }

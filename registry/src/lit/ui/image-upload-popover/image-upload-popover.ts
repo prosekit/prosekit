@@ -1,5 +1,3 @@
-import '../button/index'
-
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
@@ -8,7 +6,7 @@ import type { OpenChangeEvent } from 'prosekit/lit/popover'
 
 let imageUploadId = 0
 
-class LitImageUploadPopover extends LitElement {
+export class LitImageUploadPopover extends LitElement {
   static override properties = {
     editor: { attribute: false } satisfies PropertyDeclaration<Editor>,
     uploader: { attribute: false } satisfies PropertyDeclaration<Uploader<string>>,
@@ -154,13 +152,5 @@ class LitImageUploadPopover extends LitElement {
         </prosekit-popover-positioner>
       </prosekit-popover-root>
     `
-  }
-}
-
-customElements.define('lit-editor-image-upload-popover', LitImageUploadPopover)
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-editor-image-upload-popover': LitImageUploadPopover
   }
 }

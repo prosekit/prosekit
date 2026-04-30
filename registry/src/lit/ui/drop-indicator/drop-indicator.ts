@@ -5,7 +5,6 @@ import { html, LitElement } from 'lit'
 
 import { editorContext } from '../editor-context'
 
-/** @public */
 export class LitDropIndicator extends LitElement {
   private _editorConsumer = new ContextConsumer(this, {
     context: editorContext,
@@ -26,13 +25,5 @@ export class LitDropIndicator extends LitElement {
       .editor=${this._editorConsumer.value ?? null}
       class="CSS_DROP_INDICATOR"
     ></prosekit-drop-indicator>`
-  }
-}
-
-customElements.define('lit-editor-drop-indicator', LitDropIndicator)
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-editor-drop-indicator': LitDropIndicator
   }
 }

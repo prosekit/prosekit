@@ -2,7 +2,7 @@ import 'prosekit/lit/tooltip'
 
 import { html, LitElement, nothing, type PropertyDeclaration } from 'lit'
 
-class LitButton extends LitElement {
+export class LitButton extends LitElement {
   static override properties = {
     pressed: { type: Boolean },
     disabled: { type: Boolean },
@@ -56,13 +56,5 @@ class LitButton extends LitElement {
           : nothing}
       </prosekit-tooltip-root>
     `
-  }
-}
-
-customElements.define('lit-editor-button', LitButton)
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-editor-button': LitButton
   }
 }

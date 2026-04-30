@@ -4,7 +4,9 @@ import type { BasicExtension } from 'prosekit/basic'
 import { defineUpdateHandler, type Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 
+import { registryLitEditorButton } from '../button'
 import { editorContext } from '../editor-context'
+import { registryLitEditorImageUploadPopover } from '../image-upload-popover'
 
 function getToolbarItems(editor: Editor<BasicExtension>) {
   return {
@@ -430,5 +432,19 @@ export class LitToolbar extends LitElement {
           : nothing}
       </div>
     `
+  }
+}
+
+export function registryLitEditorToolbar() {
+  registryLitEditorButton()
+  registryLitEditorImageUploadPopover()
+
+  if (customElements.get('lit-editor-toolbar')) return
+  customElements.define('lit-editor-toolbar', LitToolbar)
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'lit-editor-toolbar': LitToolbar
   }
 }

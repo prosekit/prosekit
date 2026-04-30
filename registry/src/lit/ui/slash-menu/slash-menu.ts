@@ -8,6 +8,9 @@ import { canUseRegexLookbehind } from 'prosekit/core'
 
 import { editorContext } from '../editor-context'
 
+import { SlashMenuEmptyElement } from './slash-menu-empty'
+import { SlashMenuItemElement } from './slash-menu-item'
+
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
 
@@ -107,4 +110,15 @@ export class SlashMenuElement extends LitElement {
       </prosekit-autocomplete-positioner>
     </prosekit-autocomplete-root>`
   }
+}
+
+export function registryLitEditorSlashMenu() {
+  if (!customElements.get('lit-editor-slash-menu-item')) {
+    customElements.define('lit-editor-slash-menu-item', SlashMenuItemElement)
+  }
+  if (!customElements.get('lit-editor-slash-menu-empty')) {
+    customElements.define('lit-editor-slash-menu-empty', SlashMenuEmptyElement)
+  }
+  if (customElements.get('lit-editor-slash-menu')) return
+  customElements.define('lit-editor-slash-menu', SlashMenuElement)
 }

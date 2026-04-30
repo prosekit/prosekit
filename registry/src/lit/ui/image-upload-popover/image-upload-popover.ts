@@ -3,6 +3,7 @@ import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import type { OpenChangeEvent } from 'prosekit/lit/popover'
+
 import { registryLitEditorButton } from '../button'
 
 let imageUploadId = 0

@@ -1,1 +1,1 @@
-export {registryLitEditorImageUploadPopover}from './image-upload-popover'
+export { registryLitEditorImageUploadPopover } from './image-upload-popover'

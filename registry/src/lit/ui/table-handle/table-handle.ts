@@ -234,3 +234,14 @@ export class LitTableHandle extends LitElement {
     </prosekit-table-handle-root>`
   }
 }
+
+export function registryLitEditorTableHandle() {
+  if (customElements.get('lit-editor-table-handle')) return
+  customElements.define('lit-editor-table-handle', LitTableHandle)
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'lit-editor-table-handle': LitTableHandle
+  }
+}

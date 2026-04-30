@@ -112,7 +112,7 @@ export class SlashMenuElement extends LitElement {
   }
 }
 
-export function registryLitEditorSlashMenu() {
+export function registerLitEditorSlashMenu() {
   if (!customElements.get('lit-editor-slash-menu-item')) {
     customElements.define('lit-editor-slash-menu-item', SlashMenuItemElement)
   }

@@ -1,1 +1,1 @@
-export { registryLitEditorSlashMenu } from './slash-menu'
+export { registerLitEditorSlashMenu } from './slash-menu'

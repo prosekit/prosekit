@@ -1,1 +1,1 @@
-export { registryLitEditorBlockHandle } from './block-handle'
+export { registerLitEditorBlockHandle } from './block-handle'

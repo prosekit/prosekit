@@ -1,1 +1,1 @@
-export { registryLitEditorTableHandle } from './table-handle'
+export { registerLitEditorTableHandle } from './table-handle'

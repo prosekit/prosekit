@@ -235,7 +235,7 @@ export class LitTableHandle extends LitElement {
   }
 }
 
-export function registryLitEditorTableHandle() {
+export function registerLitEditorTableHandle() {
   if (customElements.get('lit-editor-table-handle')) return
   customElements.define('lit-editor-table-handle', LitTableHandle)
 }

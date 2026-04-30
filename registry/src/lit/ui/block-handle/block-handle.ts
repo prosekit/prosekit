@@ -41,7 +41,7 @@ export class LitBlockHandle extends LitElement {
   }
 }
 
-export function registryLitEditorBlockHandle() {
+export function registerLitEditorBlockHandle() {
   if (customElements.get('lit-editor-block-handle')) return
   customElements.define('lit-editor-block-handle', LitBlockHandle)
 }

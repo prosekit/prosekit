@@ -4,7 +4,7 @@ import type { Uploader } from 'prosekit/extensions/file'
 import type { ImageExtension } from 'prosekit/extensions/image'
 import type { OpenChangeEvent } from 'prosekit/lit/popover'
 
-import { registryLitEditorButton } from '../button'
+import { registerLitEditorButton } from '../button'
 
 let imageUploadId = 0
 
@@ -157,8 +157,8 @@ export class LitImageUploadPopover extends LitElement {
   }
 }
 
-export function registryLitEditorImageUploadPopover() {
-  registryLitEditorButton()
+export function registerLitEditorImageUploadPopover() {
+  registerLitEditorButton()
 
   if (customElements.get('lit-editor-image-upload-popover')) return
   customElements.define('lit-editor-image-upload-popover', LitImageUploadPopover)

@@ -8,8 +8,8 @@ import type { Editor, NodeJSON } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
 import { sampleContent } from '../../sample/sample-doc-block-handle'
-import { registryLitEditorBlockHandle } from '../../ui/block-handle'
-import { registryLitEditorDropIndicator } from '../../ui/drop-indicator'
+import { registerLitEditorBlockHandle } from '../../ui/block-handle'
+import { registerLitEditorDropIndicator } from '../../ui/drop-indicator'
 import { editorContext } from '../../ui/editor-context'
 
 import { defineExtension } from './extension'
@@ -73,8 +73,8 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
-  registryLitEditorBlockHandle()
-  registryLitEditorDropIndicator()
+  registerLitEditorBlockHandle()
+  registerLitEditorDropIndicator()
 
   if (customElements.get('lit-editor-example-block-handle')) return
   customElements.define('lit-editor-example-block-handle', LitEditor)

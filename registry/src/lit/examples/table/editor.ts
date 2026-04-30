@@ -9,7 +9,7 @@ import { createEditor } from 'prosekit/core'
 
 import { sampleContent } from '../../sample/sample-doc-table'
 import { editorContext } from '../../ui/editor-context'
-import { registryLitEditorTableHandle } from '../../ui/table-handle'
+import { registerLitEditorTableHandle } from '../../ui/table-handle'
 
 import { defineExtension } from './extension'
 
@@ -69,7 +69,7 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
-  registryLitEditorTableHandle()
+  registerLitEditorTableHandle()
 
   if (customElements.get('lit-editor-example-table')) return
   customElements.define('lit-editor-example-table', LitEditor)

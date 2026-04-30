@@ -1,1 +1,1 @@
-export { registryLitEditorToolbar } from './toolbar'
+export { registerLitEditorToolbar } from './toolbar'

@@ -59,7 +59,7 @@ export class LitButton extends LitElement {
   }
 }
 
-export function registryLitEditorButton() {
+export function registerLitEditorButton() {
   if (customElements.get('lit-editor-button')) return
   customElements.define('lit-editor-button', LitButton)
 }

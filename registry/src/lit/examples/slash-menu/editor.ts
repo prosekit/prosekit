@@ -8,7 +8,7 @@ import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
 import { editorContext } from '../../ui/editor-context'
-import { registryLitEditorSlashMenu } from '../../ui/slash-menu'
+import { registerLitEditorSlashMenu } from '../../ui/slash-menu'
 
 import { defineExtension } from './extension'
 
@@ -59,7 +59,7 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
-  registryLitEditorSlashMenu()
+  registerLitEditorSlashMenu()
 
   if (customElements.get('lit-editor-example-slash-menu')) return
   customElements.define('lit-editor-example-slash-menu', LitEditor)

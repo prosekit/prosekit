@@ -9,7 +9,7 @@ import { createEditor } from 'prosekit/core'
 
 import { sampleUploader } from '../../sample/sample-uploader'
 import { editorContext } from '../../ui/editor-context'
-import { registryLitEditorToolbar } from '../../ui/toolbar'
+import { registerLitEditorToolbar } from '../../ui/toolbar'
 
 import { defineExtension } from './extension'
 
@@ -60,7 +60,7 @@ export class LitEditor extends LitElement {
 }
 
 export function registerLitEditor() {
-  registryLitEditorToolbar()
+  registerLitEditorToolbar()
 
   if (customElements.get('lit-editor-example-toolbar')) return
   customElements.define('lit-editor-example-toolbar', LitEditor)

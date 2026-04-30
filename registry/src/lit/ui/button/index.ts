@@ -1,1 +1,1 @@
-export { registryLitEditorButton } from './button'
+export { registerLitEditorButton } from './button'

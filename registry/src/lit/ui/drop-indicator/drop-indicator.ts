@@ -28,7 +28,7 @@ export class LitDropIndicator extends LitElement {
   }
 }
 
-export function registryLitEditorDropIndicator() {
+export function registerLitEditorDropIndicator() {
   if (customElements.get('lit-editor-drop-indicator')) return
   customElements.define('lit-editor-drop-indicator', LitDropIndicator)
 }

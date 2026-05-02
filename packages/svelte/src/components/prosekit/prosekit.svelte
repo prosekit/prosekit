@@ -1,13 +1,14 @@
 <script lang="ts">
 import type { Editor } from '@prosekit/core'
+import type { Snippet } from 'svelte'
 import { setEditorContext } from '../../contexts/editor-context.ts'
 import { ViewRenderer } from '../view-renderer/index.ts'
 
-export let editor: Editor
+let props: { editor: Editor; children?: Snippet } = $props()
 
-setEditorContext(editor)
+setEditorContext(() => props.editor)
 </script>
 
-<ViewRenderer {editor}>
-  <slot />
+<ViewRenderer editor={props.editor}>
+  {@render props.children?.()}
 </ViewRenderer>

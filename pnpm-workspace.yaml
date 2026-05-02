@@ -36,10 +36,6 @@ minimumReleaseAgeExclude:
   - "@aria-ui/*"
   - "starlight-theme-nova"
   - "shiki-twoslash-renderer"
-  - "twoslash"
-  - "twoslash-protocol"
-  - "vitest-browser-svelte"
-  - "vite"
 
 overrides: {}
 
@@ -60,4 +56,3 @@ trustPolicyIgnoreAfter: 10080 # 7 days
 peerDependencyRules:
   allowedVersions:
     typescript: "6"
-    vite: "8"

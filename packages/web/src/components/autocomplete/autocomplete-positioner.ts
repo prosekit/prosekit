@@ -88,7 +88,7 @@ export function setupAutocompletePositioner(
 ): void {
   const getStore = autocompleteStoreContext.consume(host)
   const getOverlayStore = () => getStore()?.overlayStore
-  setupOverlayPositioner(host, props as unknown as State<OverlayPositionerProps>, getOverlayStore)
+  setupOverlayPositioner(host, props satisfies State<OverlayPositionerProps>, getOverlayStore)
 }
 
 const AutocompletePositionerElementBase: HostElementConstructor<AutocompletePositionerProps> = defineCustomElement(

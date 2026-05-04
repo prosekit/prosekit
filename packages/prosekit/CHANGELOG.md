@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.20.1
+
+### Patch Changes
+
+- [`e6ba453`](https://github.com/ocavue/prosekit/commit/e6ba4536af2d07aea24d6748a04583cce3f87a11) ![](https://prosekit.dev/b/lit)
+
+  Add Lit entry points to the side effect list to prevent tree shaking from removing them.
+
 ## 0.20.0
 
 ### Minor Changes

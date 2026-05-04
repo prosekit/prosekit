@@ -1,7 +1,8 @@
 ---
-title: Keyboard Shortcuts
+title: Keyboard shortcuts
+description: Bind editor commands to keyboard shortcuts with defineKeymap or framework-specific useKeymap hooks
 sidebar:
-  order: 55
+  order: 30
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
@@ -50,11 +51,11 @@ A **[`KeyboardEvent.key`]** string. Use lowercase letters for letter keys, or up
 
 - `"Enter"`: ✅ Triggers when <Keyboard key="Enter" /> is pressed
 - `"Shift-Enter"`: ✅ Triggers when <Keyboard key="Shift+Enter" /> is pressed
-- `"Shift-enter"`: ❌ Invalid — `"enter"` is not a valid [`KeyboardEvent.key`] value
+- `"Shift-enter"`: ❌ Invalid because `"enter"` is not a valid [`KeyboardEvent.key`] value
 - `"Ctrl-a"`: ✅ Triggers when <Keyboard key="Ctrl+A" /> is pressed
 - `"Ctrl-A"`: ✅ Triggers when <Keyboard key="Ctrl+Shift+A" /> is pressed
-- `"Ctrl-Shift-A"`: ❌ Invalid — `"Shift"` modifier is implicit with uppercase letters
-- `"Ctrl-Shift-a"`: ❌ Invalid — when <Keyboard key="Shift" /> is held, [`KeyboardEvent.key`] is `"A"`, not `"a"`
+- `"Ctrl-Shift-A"`: ❌ Invalid because `"Shift"` modifier is implicit with uppercase letters
+- `"Ctrl-Shift-a"`: ❌ Invalid because when <Keyboard key="Shift" /> is held, [`KeyboardEvent.key`] is `"A"`, not `"a"`
 - `"Shift- "`: ✅ Triggers when <Keyboard key="Shift+Space" /> is pressed
 - `"Shift-Space"`: ✅ Valid (equivalent to the above)
 
@@ -87,8 +88,8 @@ An example of how to use `useKeymap` to define shortcuts:
 
 ## API Reference
 
-- [defineKeymap](/references/core#definekeymap) - Define custom keyboard shortcuts
-- [useKeymap](/references/react#usekeymap) - React hook for dynamic keyboard shortcuts
+- [defineKeymap](/references/core#definekeymap): Define custom keyboard shortcuts
+- [useKeymap](/references/react#usekeymap): React hook for dynamic keyboard shortcuts
 
 [Command]: /references/pm/state/#command
 [`KeyboardEvent.key`]: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values

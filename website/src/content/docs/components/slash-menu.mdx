@@ -1,26 +1,43 @@
 ---
-title: Slash Menu
+title: Slash menu
+description: A command palette that appears after the user types a slash, with fuzzy search and keyboard navigation
+sidebar:
+  order: 120
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
 
-A popup that shows a list of command suggestions after pressing `/`.
+A slash menu is a popup of editor commands triggered by typing `/`. It filters the list as the user types and lets them pick with arrow keys or the mouse.
 
 <Demo story="slash-menu" />
 
-## Installation
+## Install
 
-Copy and paste the component source files linked above into your project.
+<InstallTabs component="slash-menu" />
+
+## Structure
+
+The slash menu is built on the `autocomplete` primitive, which detects the trigger character (`/`), tracks the query text after it, anchors the floating list to the cursor, and handles arrow-key navigation, Enter, and Escape.
+
+```
+AutocompleteRoot                 # root component
+└── AutocompletePositioner       # anchors the popup to the cursor
+    └── AutocompletePopup        # the floating panel
+        ├── AutocompleteItem     # one per command (heading, list, table, …)
+        └── AutocompleteEmpty    # shown when no item matches the query
+```
+
+Each `AutocompleteItem`'s `onSelect` runs an editor command. The regex you pass to `AutocompleteRoot` decides what counts as the trigger.
+
+## API reference
+
+- [prosekit/react/autocomplete](/references/react/autocomplete)
+- [prosekit/vue/autocomplete](/references/vue/autocomplete)
+- [prosekit/preact/autocomplete](/references/preact/autocomplete)
+- [prosekit/svelte/autocomplete](/references/svelte/autocomplete)
+- [prosekit/solid/autocomplete](/references/solid/autocomplete)
 
 ## See also
 
-- [User Menu](/components/user-menu)
-
-## API Reference
-
-- autocomplete
-  - [prosekit/react/autocomplete](/references/react/autocomplete)
-  - [prosekit/vue/autocomplete](/references/vue/autocomplete)
-  - [prosekit/preact/autocomplete](/references/preact/autocomplete)
-  - [prosekit/svelte/autocomplete](/references/svelte/autocomplete)
-  - [prosekit/solid/autocomplete](/references/solid/autocomplete)
+- [Mention menu](/components/mention-menu): same primitive, with `@` or `#` as the trigger character.

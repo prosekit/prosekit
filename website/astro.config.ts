@@ -1,5 +1,3 @@
-import fs from 'node:fs'
-
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -18,122 +16,61 @@ import wasm from 'vite-plugin-wasm'
 
 import { version } from '../packages/prosekit/package.json'
 
+import { generateExtensionsSidebar } from './src/sidebar/extensions.ts'
+import { generateReferencesSidebar } from './src/sidebar/references.ts'
+
 type Sidebar = StarlightUserConfig['sidebar']
-
-function generateReferenceSidebarItems() {
-  // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
-  const filePaths = fs.globSync('**/*.{md,mdx}', { cwd: 'src/content/docs/references' }).sort()
-  return filePaths.map(filePath => {
-    // Remove the file extension
-    let name = filePath.replace(/\.mdx?/, '')
-
-    // Remove the dot because Starlight doesn't allow '.' in the slug
-    name = name.replaceAll('.', '')
-
-    const isLeaf = name.includes('/')
-    const style = isLeaf ? 'margin-inline-start: 1rem;' : 'font-weight: 600;'
-    return { slug: `references/${name}`, attrs: { style } }
-  })
-}
-
-function generateExtensionsSidebarItems() {
-  const classification = {
-    node: [
-      'blockquote',
-      'code-block',
-      'heading',
-      'horizontal-rule',
-      'image',
-      'list',
-      'math',
-      'mention',
-      'table',
-      'doc',
-      'paragraph',
-      'text',
-      'hard-break',
-    ],
-    mark: [
-      'bold',
-      'code',
-      'italic',
-      'link',
-      'strike',
-      'underline',
-      'text-color',
-      'background-color',
-    ],
-    other: [
-      'commit',
-      'drop-cursor',
-      'enter-rule',
-      'file',
-      'gap-cursor',
-      'input-rule',
-      'loro',
-      'page',
-      'placeholder',
-      'readonly',
-      'search',
-      'text-align',
-      'yjs',
-    ],
-  }
-
-  const nodeItems: string[] = []
-  const markItems: string[] = []
-  const otherItems: string[] = []
-
-  // filePaths is an array like ['bold.mdx', 'code.mdx']
-  const filePaths = fs.globSync('**/*.{md,mdx}', { cwd: 'src/content/docs/extensions' }).sort()
-  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
-
-  for (const name of names) {
-    const item = `extensions/${name}`
-    if (classification.node.includes(name)) {
-      nodeItems.push(item)
-    } else if (classification.mark.includes(name)) {
-      markItems.push(item)
-    } else if (classification.other.includes(name)) {
-      otherItems.push(item)
-    } else {
-      throw new Error(`Unable to classify extension ${name}. Please update ${import.meta.filename} to fix it`)
-    }
-  }
-
-  return [
-    { label: 'Nodes', items: nodeItems },
-    { label: 'Marks', items: markItems },
-    { label: 'Others', items: otherItems },
-  ]
-}
 
 const sidebar: Sidebar = [
   {
     label: 'Getting Started',
-    collapsed: true,
     autogenerate: { directory: 'getting-started' },
   },
   {
-    label: 'Extensions',
-    collapsed: true,
-    items: generateExtensionsSidebarItems(),
+    label: 'Guides',
+    autogenerate: { directory: 'guides' },
+  },
+  {
+    label: 'Concepts',
+    autogenerate: { directory: 'concepts' },
+  },
+  {
+    label: 'Frameworks',
+    autogenerate: { directory: 'frameworks' },
   },
   {
     label: 'Components',
-    collapsed: true,
     autogenerate: { directory: 'components', collapsed: true },
+  },
+  {
+    label: 'Extensions',
+    items: [
+      'extensions/overview',
+      ...generateExtensionsSidebar(),
+    ],
   },
   {
     label: 'References',
     collapsed: true,
-    items: generateReferenceSidebarItems(),
+    items: generateReferencesSidebar(),
   },
 ]
 
 // https://astro.build/config
 const config: AstroUserConfig = {
   site: 'https://prosekit.dev',
+  redirects: {
+    '/getting-started/running-on-nodejs': '/guides/server-side-rendering',
+    '/getting-started/saving-and-loading': '/guides/saving-and-loading',
+    '/getting-started/styling': '/guides/styling',
+    '/getting-started/keyboard-shortcuts': '/guides/keyboard-shortcuts',
+    '/getting-started/using-extensions': '/concepts/extensions',
+    '/components/': '/components/overview',
+    '/components/button': '/components/toolbar',
+    '/components/user-menu': '/components/mention-menu',
+    '/guides/custom-mark-views': '/guides/custom-node-views',
+    '/frameworks/lit': '/frameworks/vanilla',
+  },
   integrations: [
     starlight({
       title: 'ProseKit',

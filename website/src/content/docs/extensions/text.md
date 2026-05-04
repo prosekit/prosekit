@@ -1,5 +1,6 @@
 ---
 title: Text
+description: The text node every schema requires
 ---
 
 The text node.

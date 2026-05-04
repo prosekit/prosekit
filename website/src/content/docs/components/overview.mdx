@@ -1,0 +1,59 @@
+---
+title: Components overview
+description: Headless, copy/paste UI components for ProseKit, including toolbars, menus, handles, and popovers
+sidebar:
+  order: 10
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { CodePackageManagers } from 'starlight-theme-nova/components';
+
+ProseKit ships a set of UI components you can copy and paste into your project (toolbars, menus, drag handles, popovers) with framework bindings for React, Vue, Preact, Svelte, and Solid. They're styled with [Tailwind CSS](https://tailwindcss.com) by default, but every part is headless so you can restyle freely.
+
+## Components
+
+| Page                                         | What you build with it                                   |
+| -------------------------------------------- | -------------------------------------------------------- |
+| [Toolbar](/components/toolbar)               | Persistent button bar at the top of the editor.          |
+| [Inline menu](/components/inline-menu)       | Floating menu over the current text selection.           |
+| [Slash menu](/components/slash-menu)         | Command palette triggered by `/`.                        |
+| [Mention menu](/components/mention-menu)     | Mention popup triggered by `@` or `#`.                   |
+| [Block handle](/components/block-handle)     | Drag and add handles in the gutter beside each block.    |
+| [Drop indicator](/components/drop-indicator) | Line shown between blocks during drag-and-drop.          |
+| [Table handle](/components/table-handle)     | Row and column handles for selecting and editing tables. |
+| [Resizable](/components/resizable)           | Drag handles for resizing atomic nodes (images, embeds). |
+
+## Setup
+
+The shadcn registry components are built with Tailwind v4.
+
+<Steps>
+
+1. **Install Tailwind CSS**
+
+   Follow the official [Tailwind installation guide](https://tailwindcss.com/docs/installation) for your bundler.
+
+2. **Install the icon plugin**
+
+   We use [`@egoist/tailwindcss-icons`](https://npmx.dev/package/@egoist/tailwindcss-icons) for icons. Install it alongside the Lucide icon set:
+
+   <CodePackageManagers packages="@egoist/tailwindcss-icons @iconify-json/lucide" />
+
+3. **Register the plugin**
+
+   Add the plugin in your global stylesheet:
+
+   ```css {2}
+   @import "tailwindcss";
+   @plugin "@egoist/tailwindcss-icons";
+   ```
+
+4. **Import ProseKit's base styles**
+
+   The registry components rely on the [base styles](/guides/styling#base-styles-required):
+
+   ```ts twoslash
+   import 'prosekit/basic/style.css'
+   ```
+
+</Steps>

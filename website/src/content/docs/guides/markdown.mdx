@@ -1,0 +1,78 @@
+---
+title: Markdown
+description: Persist editor content as Markdown
+sidebar:
+  order: 90
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+ProseKit doesn't ship a Markdown serializer because different teams want different Markdown flavors, and ProseMirror's HTML representation is already lossless for the document tree. The recommended path is to serialize to HTML first, then convert HTML ↔ Markdown with [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype).
+
+<Demo story="save-markdown" />
+
+## HTML → Markdown
+
+```ts
+import rehypeParse from 'rehype-parse'
+import rehypeRemark from 'rehype-remark'
+import remarkStringify from 'remark-stringify'
+import { unified } from 'unified'
+
+export async function htmlToMarkdown(html: string): Promise<string> {
+  const file = await unified()
+    .use(rehypeParse, { fragment: true })
+    .use(rehypeRemark)
+    .use(remarkStringify)
+    .process(html)
+  return String(file)
+}
+```
+
+## Markdown → HTML
+
+```ts
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import { unified } from 'unified'
+
+export async function markdownToHtml(markdown: string): Promise<string> {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(markdown)
+  return String(file)
+}
+```
+
+## Wiring it to the editor
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+declare function htmlToMarkdown(html: string): Promise<string>
+declare function markdownToHtml(md: string): Promise<string>
+const editor = createEditor({ extension: defineBasicExtension() })
+// ---cut---
+
+// Save
+async function save() {
+  const html = editor.getDocHTML()
+  const md = await htmlToMarkdown(html)
+  localStorage.setItem('doc.md', md)
+}
+
+// Load
+async function load() {
+  const md = localStorage.getItem('doc.md') ?? ''
+  const html = await markdownToHtml(md)
+  editor.setContent(html)
+}
+```
+
+## See also
+
+- [Saving and loading](/guides/saving-and-loading)
+- [Concepts → Content](/concepts/content)

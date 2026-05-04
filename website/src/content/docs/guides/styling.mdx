@@ -1,0 +1,60 @@
+---
+title: Styling your editor
+description: Required base styles, optional typography, and how to write your own CSS
+sidebar:
+  order: 40
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+ProseKit is a headless editor framework, so you decide what the editor looks like. This page covers the base styles every editor needs, then shows how to layer your own CSS on top.
+
+Looking for a ready-made toolbar, slash menu, or block handle? Skip to [Components overview](/components/overview).
+
+## Base styles (required)
+
+`prosekit/basic/style.css` provides the structural CSS the editor relies on (focus outline, selection rendering, list bullets, etc.). **Always import it.**
+
+```ts twoslash
+import 'prosekit/basic/style.css'
+```
+
+<Aside type="caution">Without the base styles your editor will mis-render selections, lose list bullets, and behave inconsistently across browsers.</Aside>
+
+## Typography (optional)
+
+`prosekit/basic/typography.css` styles headings, paragraphs, lists, quotes, and code so the document content looks polished with no extra work.
+
+```ts twoslash
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+```
+
+Here's what the default typography looks like:
+
+<Demo story="typography" showCode={false} />
+
+## Per-extension stylesheets
+
+Some extensions (lists, tables, placeholders, search, gap-cursor, collaboration, page) ship a small CSS file you import alongside the extension. Each extension page tells you whether to import one. For example, the [`list`](/extensions/list) page calls out `prosekit/extensions/list/style.css`.
+
+## Custom CSS
+
+The editor mounts on whatever element you pass to `editor.mount(...)`. Style its container however you like:
+
+```css
+.my-editor {
+  min-height: 200px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+}
+
+.my-editor:focus-within {
+  border-color: var(--color-accent);
+}
+```
+
+To target nodes inside the document, use standard HTML selectors (`p`, `h1`, `ul`, etc.). The basic stylesheet doesn't add any wrapper class.

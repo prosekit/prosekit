@@ -1,13 +1,17 @@
 ---
 title: Toolbar
+description: A button bar that runs editor commands, with active and disabled state per button
+sidebar:
+  order: 100
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
 
-A customizable toolbar providing quick access to various commands.
+A toolbar is a row of buttons that run editor commands. Each button shows its active state (e.g. "is bold currently applied?") and is disabled when the command can't be executed. Use it whenever you want a persistent button bar at the top of the editor.
 
 <Demo story="toolbar" />
 
-## Installation
+## Install
 
-Copy and paste the component source files linked above into your project.
+<InstallTabs component="toolbar" />

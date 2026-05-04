@@ -1,22 +1,52 @@
 ---
-title: Table Handle
+title: Table handle
+description: Row and column handles that let users select, insert, and delete rows or columns inside tables
+sidebar:
+  order: 220
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
 
-A group of handle components that contains a column handle and a row handle. These handles are used for tables to execute actions on the table.
+Table handles are floating controls that appear alongside the rows and columns of a table. They let users select an entire row or column and trigger table commands (insert above/below, delete, move). Use them whenever you've enabled the [`table` extension](/extensions/table) and want users to manipulate table structure with the mouse instead of remembering keyboard commands.
 
 <Demo story="table" />
 
-## Installation
+## Install
 
-Copy and paste the component source files linked above into your project.
+<InstallTabs component="table-handle" />
 
-## API Reference
+## Structure
 
-- table-handle
-  - [prosekit/react/table-handle](/references/react/table-handle)
-  - [prosekit/vue/table-handle](/references/vue/table-handle)
-  - [prosekit/preact/table-handle](/references/preact/table-handle)
-  - [prosekit/svelte/table-handle](/references/svelte/table-handle)
-  - [prosekit/solid/table-handle](/references/solid/table-handle)
+```py
+TableHandleRoot                              # root component
+├── TableHandleDragPreview                   # ghost row/col shown while dragging
+├── TableHandleDropIndicator                 # line that previews the drop target
+├── TableHandleColumnPositioner              # floating container above the active column
+│   └── TableHandleColumnPopup               # container for the column trigger + menu
+│       └── TableHandleColumnMenuRoot        # binds the trigger to its menu
+│           ├── TableHandleColumnMenuTrigger # the visible column "grip" handle
+│           └── MenuPositioner               # anchors the dropdown to the trigger
+│               └── MenuPopup                # the dropdown panel
+│                   └── MenuItem             # one per column action (insert / delete / …)
+└── TableHandleRowPositioner                 # floating container beside the active row
+    └── TableHandleRowPopup                  # container for the row trigger + menu
+        └── TableHandleRowMenuRoot           # binds the trigger to its menu
+            ├── TableHandleRowMenuTrigger    # the visible row "grip" handle
+            └── MenuPositioner               # anchors the dropdown to the trigger
+                └── MenuPopup                # the dropdown panel
+                    └── MenuItem             # one per row action
+```
+
+## API reference
+
+- [prosekit/react/table-handle](/references/react/table-handle)
+- [prosekit/vue/table-handle](/references/vue/table-handle)
+- [prosekit/preact/table-handle](/references/preact/table-handle)
+- [prosekit/svelte/table-handle](/references/svelte/table-handle)
+- [prosekit/solid/table-handle](/references/solid/table-handle)
+
+## See also
+
+- [`table` extension](/extensions/table): provides the commands the handle triggers.
+- [Block handle](/components/block-handle): sibling primitive for block-level selection.

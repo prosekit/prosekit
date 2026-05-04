@@ -25,7 +25,7 @@ const editor = createEditor({ extension })
 </script>
 
 <ProseKit {editor}>
-  <div bind:this={editor.mount} class="editor" />
+  <div {@attach editor.mount} class="editor"></div>
 </ProseKit>
 ```
 

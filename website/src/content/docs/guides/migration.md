@@ -231,7 +231,7 @@ defineCommands({
 ### Sharp edges
 
 - **`createEditor` doesn't take a `state` directly.** Pass your initial doc as `defaultContent` (JSON, HTML, or a DOM element).
-- **`editor.view` is `null` until you call `editor.mount(...)`.** Don't read it during construction.
+- **`editor.view` throws until you call `editor.mount(...)`.** Use `editor.mounted` to check before reading view-dependent state, and don't read `view` during construction.
 - **Plugins added via `editor.use(...)`** persist until you call the returned dispose function. Don't `use(...)` inside a command. Wire it from your component / setup code instead.
 
 ## See also

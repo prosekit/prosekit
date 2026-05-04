@@ -12,7 +12,6 @@
       "list",
       "math",
       "mention",
-      "page",
       "paragraph",
       "table",
       "text"
@@ -40,6 +39,7 @@
       "file",
       "gap-cursor",
       "input-rule",
+      "page",
       "placeholder",
       "readonly",
       "search",

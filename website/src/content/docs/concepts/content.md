@@ -86,7 +86,7 @@ function defineMyEditorExtension() {
 import { htmlFromJSON, jsonFromHTML } from 'prosekit/core'
 
 const extension = defineMyEditorExtension()
-const schema = editor.schema
+const schema = extension.schema
 const json = jsonFromHTML('<p>Hello</p>', { schema })
 const html = htmlFromJSON(json, { schema })
 ```

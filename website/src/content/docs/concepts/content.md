@@ -87,6 +87,7 @@ import { htmlFromJSON, jsonFromHTML } from 'prosekit/core'
 
 const extension = defineMyEditorExtension()
 const schema = extension.schema
+if (!schema) throw new Error('Extension is missing a schema')
 const json = jsonFromHTML('<p>Hello</p>', { schema })
 const html = htmlFromJSON(json, { schema })
 ```

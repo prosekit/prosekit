@@ -87,7 +87,7 @@ export default function InlineMenu() {
     >
       <InlinePopoverPositioner className="CSS_INLINE_MENU_POSITIONER">
         <InlinePopoverPopup className="CSS_INLINE_MENU_MAIN_POPUP">
-          <div className="flex flex-col gap-4 p-4">
+          <div className="flex flex-col gap-4 p-4 w-60">
             <div className="flex flex-col gap-2">
               <div className="text-sm">Text color</div>
               <div className="grid grid-cols-5 gap-1">

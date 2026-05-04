@@ -1,7 +1,8 @@
 ---
-title: Saving and Loading Content
+title: Saving and loading content
+description: Persist editor content as JSON or HTML, detect changes, and round-trip Markdown
 sidebar:
-  order: 40
+  order: 10
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
@@ -157,7 +158,7 @@ useDocChange(() => {
 </Tabs>
 
 <Aside type="caution">
-  For performance reasons, avoid saving after every single change if your document is large. Consider debouncing the save operation to reduce the number of writes.
+For performance reasons, avoid saving after every single change if your document is large. Consider debouncing the save operation to reduce the number of writes.
 </Aside>
 
 ### JSON Example
@@ -207,7 +208,7 @@ const editor = createEditor({
 ```
 
 <Aside>
-  ProseKit automatically detects if the content is HTML or JSON based on the type. If you pass a string, it's treated as HTML. If you pass an object, it's treated as JSON.
+ProseKit automatically detects if the content is HTML or JSON based on the type. If you pass a string, it's treated as HTML. If you pass an object, it's treated as JSON.
 </Aside>
 
 ### HTML Example
@@ -218,13 +219,7 @@ Here's an example of saving and loading content using HTML:
 
 ## Working with Markdown
 
-While ProseKit doesn't directly support Markdown as a storage format, you can add Markdown support using additional libraries.
-
-### Markdown Example
-
-Here's an example of using Markdown for saving and loading. It uses the [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype) libraries to convert between Markdown and HTML.
-
-<Demo story="save-markdown" />
+ProseKit doesn't ship a Markdown serializer, but you can convert HTML to and from Markdown with [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype). See the [Markdown guide](/guides/markdown) for the full setup and a runnable example.
 
 ## Conversion Utilities
 

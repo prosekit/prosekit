@@ -1,53 +1,42 @@
 ---
-title: Block Handle
+title: Block handle
+description: Drag and add handles that appear next to the active block, plus a drop indicator for drag-and-drop
+sidebar:
+  order: 200
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
 
-Block handle components enable users to interact with, reorder, and insert blocks in your editor through drag-and-drop operations.
+Block handles are floating controls that appear in the gutter next to whichever block currently contains the cursor or pointer. Use them to let users insert new blocks (`+` button) or reorder existing ones (drag handle).
 
 <Demo story="block-handle" />
 
-## Overview
+## Install
 
-The block handle system provides two main capabilities:
+<InstallTabs component="block-handle" />
 
-- **Block manipulation**: Add new blocks or drag existing blocks to reorder content
-- **Visual feedback**: Show users exactly where content will be placed during drag operations
+## Structure
 
-## Components
+```
+BlockHandleRoot                  # root component
+└── BlockHandlePositioner        # anchors the popup to the gutter 
+    └── BlockHandlePopup         # the floating container
+        ├── BlockHandleAdd       # "+" button that inserts a new block below
+        └── BlockHandleDraggable # "⋮⋮" drag handle that reorders by dragging
+```
 
-### Block Handle
+You can keep both `BlockHandleAdd` and `BlockHandleDraggable`, or only one. The popup is just the visible container. Pair this with the [Drop indicator](/components/drop-indicator) component to draw a horizontal line where the dragged block will land.
 
-The `BlockHandle` consists of five main components:
+## API reference
 
-- **`BlockHandleRoot`**: Tracks the active block and coordinates block-handle state
-- **`BlockHandlePositioner`**: Positions the floating handle on the left side of the active block
-- **`BlockHandlePopup`**: The visible floating container for block-handle controls
-- **`BlockHandleAdd`**: An add button (+) that inserts a new block below the current one
-- **`BlockHandleDraggable`**: A drag handle (⋮⋮) that allows users to reorder blocks by dragging
+- [prosekit/react/block-handle](/references/react/block-handle)
+- [prosekit/vue/block-handle](/references/vue/block-handle)
+- [prosekit/preact/block-handle](/references/preact/block-handle)
+- [prosekit/svelte/block-handle](/references/svelte/block-handle)
+- [prosekit/solid/block-handle](/references/solid/block-handle)
 
-Use `BlockHandleAdd`, `BlockHandleDraggable`, or both inside `BlockHandlePopup` depending on your needs.
+## See also
 
-### Drop Indicator
-
-The `DropIndicator` provides visual feedback during drag-and-drop operations by showing a horizontal line where the dragged content will be inserted. It automatically appears when dragging and disappears when the drag operation completes.
-
-## Installation
-
-Copy and paste the component source files linked above into your project.
-
-## API Reference
-
-- block-handle
-  - [prosekit/react/block-handle](/references/react/block-handle)
-  - [prosekit/vue/block-handle](/references/vue/block-handle)
-  - [prosekit/preact/block-handle](/references/preact/block-handle)
-  - [prosekit/svelte/block-handle](/references/svelte/block-handle)
-  - [prosekit/solid/block-handle](/references/solid/block-handle)
-- drop-indicator
-  - [prosekit/react/drop-indicator](/references/react/drop-indicator)
-  - [prosekit/vue/drop-indicator](/references/vue/drop-indicator)
-  - [prosekit/preact/drop-indicator](/references/preact/drop-indicator)
-  - [prosekit/svelte/drop-indicator](/references/svelte/drop-indicator)
-  - [prosekit/solid/drop-indicator](/references/solid/drop-indicator)
+- [Drop indicator](/components/drop-indicator): companion overlay that shows the drop target during a drag.
+- [Table handle](/components/table-handle): sibling primitive for table-row and table-column selection.

@@ -28,21 +28,6 @@ function Foo({ foo }: FooProps) {
 }
 ```
 
-### Union Call Convention
-
-The `union` function should be called with individual arguments, not an array.
-
-**Correct:**
-
-```ts
-return union(defineBasicExtension(), defineCodeBlockView());
-```
-
-**Incorrect:**
-
-```ts
-return union([defineBasicExtension(), defineCodeBlockView()]);
-```
 
 ### Default Content Location
 

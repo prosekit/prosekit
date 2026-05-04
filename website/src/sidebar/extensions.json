@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Nodes",
+    "items": [
+      "blockquote",
+      "code-block",
+      "doc",
+      "hard-break",
+      "heading",
+      "horizontal-rule",
+      "image",
+      "list",
+      "math",
+      "mention",
+      "page",
+      "paragraph",
+      "table",
+      "text"
+    ]
+  },
+  {
+    "label": "Marks",
+    "items": [
+      "background-color",
+      "bold",
+      "code",
+      "italic",
+      "link",
+      "strike",
+      "text-color",
+      "underline"
+    ]
+  },
+  {
+    "label": "Editing",
+    "items": [
+      "commit",
+      "drop-cursor",
+      "enter-rule",
+      "file",
+      "gap-cursor",
+      "input-rule",
+      "placeholder",
+      "readonly",
+      "search",
+      "text-align"
+    ]
+  },
+  {
+    "label": "Collaboration",
+    "items": [
+      "loro",
+      "yjs"
+    ]
+  }
+]

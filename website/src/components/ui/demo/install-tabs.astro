@@ -1,0 +1,19 @@
+---
+import { TabItem, Tabs } from '@astrojs/starlight/components'
+import ShadcnInstallCodeBlock from './shadcn-install-code-block.astro'
+
+interface Props {
+  component: string
+}
+
+const { component }: Props = Astro.props
+---
+
+<Tabs syncKey="install-method">
+  <TabItem label="CLI">
+    <ShadcnInstallCodeBlock frameworks={['react', 'preact', 'vue', 'svelte', 'solid']} registryName={`ui-${component}`} />
+  </TabItem>
+  <TabItem label="Manual">
+    <p>Copy and paste the code from the demo above into your project.</p>
+  </TabItem>
+</Tabs>

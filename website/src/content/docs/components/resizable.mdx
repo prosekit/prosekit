@@ -1,0 +1,34 @@
+---
+title: Resizable
+description: Resize handles for atomic nodes like images and embeds
+sidebar:
+  order: 230
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The resizable component wraps an atomic node (typically an image or embed) with drag handles that update the node's `width` (and optionally `height`) attribute as the user drags. Mount it inside a [custom node view](/concepts/views) so the new dimensions persist on the node.
+
+<Demo story="image-view" />
+
+## Structure
+
+```
+ResizableRoot                    # holds the current dimensions and forwards drag events
+├── <your content>               # the node view (e.g. an <img>, <iframe>, …)
+└── ResizableHandle              # one per resize edge (corners or sides)
+```
+
+Mount one `ResizableHandle` per edge you want draggable (typically four corners for free resize, or just the right edge for width-only). Persist the dimensions back to the node by writing them to the node's attributes from inside the node view.
+
+## API reference
+
+- [prosekit/react/resizable](/references/react/resizable)
+- [prosekit/vue/resizable](/references/vue/resizable)
+- [prosekit/preact/resizable](/references/preact/resizable)
+- [prosekit/svelte/resizable](/references/svelte/resizable)
+- [prosekit/solid/resizable](/references/solid/resizable)
+
+## See also
+
+- [Custom node views](/concepts/views): how to render an atomic node with a framework component so resizing can persist.

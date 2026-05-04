@@ -1,0 +1,45 @@
+---
+title: Mention menu
+description: "A mention popup triggered by @ or # that lets users insert references to other entities"
+sidebar:
+  order: 130
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
+
+A mention menu is a popup of suggestion candidates triggered by typing `@` (for users), `#` (for tags), or any other character you choose. The selected candidate is inserted as a `mention` node from the [`mention` extension](/extensions/mention).
+
+<Demo story="user-menu" />
+
+## Install
+
+<InstallTabs component="user-menu" />
+
+## Structure
+
+The mention menu uses the same `autocomplete` primitive as the [Slash menu](/components/slash-menu). The difference is the regex (matches `@` or `#` instead of `/`) and the `onSelect` callback (inserts a mention node instead of running a command).
+
+```
+AutocompleteRoot                 # root component
+└── AutocompletePositioner       # anchors the popup to the cursor
+    └── AutocompletePopup        # the floating panel
+        ├── AutocompleteEmpty    # "Loading…" while fetching, "No results" otherwise
+        └── AutocompleteItem     # one per candidate; onSelect calls insertMention()
+```
+
+`AutocompleteRoot` exposes `onQueryChange` and `onOpenChange` so you can fetch candidates from a remote source and reset the list when the popup closes. The `kind` you pass to `insertMention` (e.g. `'user'` or `'tag'`) lets the same component back several trigger characters.
+
+## API reference
+
+- [prosekit/react/autocomplete](/references/react/autocomplete)
+- [prosekit/vue/autocomplete](/references/vue/autocomplete)
+- [prosekit/preact/autocomplete](/references/preact/autocomplete)
+- [prosekit/svelte/autocomplete](/references/svelte/autocomplete)
+- [prosekit/solid/autocomplete](/references/solid/autocomplete)
+
+## See also
+
+- [`mention` extension](/extensions/mention): provides the `mention` node and `insertMention` command.
+- [Slash menu](/components/slash-menu): same primitive, with `/` as the trigger character.
+- [Dynamic user search example](/examples/user-menu-dynamic): wires the menu to an async fetcher so candidates load from a remote source as the user types.

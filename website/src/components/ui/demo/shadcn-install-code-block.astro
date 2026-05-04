@@ -1,0 +1,35 @@
+---
+import { CurrentFrameworkContent } from './current-framework-content.tsx'
+import Code from 'starlight-theme-nova/components/Code.astro'
+
+interface Props {
+  frameworks: string[]
+  registryName: string
+}
+
+const { frameworks, registryName }: Props = Astro.props
+---
+
+<CurrentFrameworkContent frameworks={frameworks} className="overflow-y-hidden not-content" client:idle>
+  <Fragment slot="lit">{frameworks.includes('lit') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/lit-${registryName}`} />
+  ) : null}</Fragment>
+  <Fragment slot="preact">{frameworks.includes('preact') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/preact-${registryName}`} />
+  ) : null}</Fragment>
+  <Fragment slot="react">{frameworks.includes('react') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/react-${registryName}`} />
+  ) : null}</Fragment>
+  <Fragment slot="solid">{frameworks.includes('solid') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/solid-${registryName}`} />
+  ) : null}</Fragment>
+  <Fragment slot="svelte">{frameworks.includes('svelte') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/svelte-${registryName}`} />
+  ) : null}</Fragment>
+  <Fragment slot="vanilla">{frameworks.includes('vanilla') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/vanilla-${registryName}`} />
+  ) : null}</Fragment>
+  <Fragment slot="vue">{frameworks.includes('vue') ? (
+    <Code lang="bash" code={`npx shadcn@latest add @prosekit/vue-${registryName}`} />
+  ) : null}</Fragment>
+</CurrentFrameworkContent>

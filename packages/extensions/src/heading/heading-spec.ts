@@ -12,7 +12,7 @@ export type HeadingSpecExtension = Extension<{
 }>
 
 /**
- * @internal
+ * @public
  */
 export function defineHeadingSpec(): HeadingSpecExtension {
   return defineNodeSpec({

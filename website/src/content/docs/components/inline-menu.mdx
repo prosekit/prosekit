@@ -1,22 +1,36 @@
 ---
-title: Inline Menu
+title: Inline menu
+description: A floating menu that appears over the current text selection, ideal for inline formatting
+sidebar:
+  order: 110
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
 
-A popup floating around the current selected text. It can be used to built an inline menu.
+An inline menu is a floating panel that appears over the current selection and disappears when the selection collapses. Use it for selection-relative actions: format the highlighted text, link it, or wrap it in a node.
 
 <Demo story="inline-menu" />
 
-## Installation
+## Install
 
-Copy and paste the component source files linked above into your project.
+<InstallTabs component="inline-menu" />
 
-## API Reference
+## Structure
 
-- inline-popover
-  - [prosekit/react/inline-popover](/references/react/inline-popover)
-  - [prosekit/vue/inline-popover](/references/vue/inline-popover)
-  - [prosekit/preact/inline-popover](/references/preact/inline-popover)
-  - [prosekit/svelte/inline-popover](/references/svelte/inline-popover)
-  - [prosekit/solid/inline-popover](/references/solid/inline-popover)
+```
+InlinePopoverRoot                # tracks the current selection and toggles the popover
+└── InlinePopoverPositioner      # anchors the popup to the selection rect
+    └── InlinePopoverPopup       # the floating button bar
+        └── Button               # actions like "toggle bold", "open link", etc.
+```
+
+The primitive itself only handles positioning and visibility. You supply the buttons and form. Use `useEditorDerivedValue` to subscribe to `isActive` / `canExec` for each command, exactly like a [toolbar](/components/toolbar).
+
+## API reference
+
+- [prosekit/react/inline-popover](/references/react/inline-popover)
+- [prosekit/vue/inline-popover](/references/vue/inline-popover)
+- [prosekit/preact/inline-popover](/references/preact/inline-popover)
+- [prosekit/svelte/inline-popover](/references/svelte/inline-popover)
+- [prosekit/solid/inline-popover](/references/solid/inline-popover)

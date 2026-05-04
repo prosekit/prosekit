@@ -1,0 +1,87 @@
+---
+title: Custom extensions
+description: Compose your own extensions from the building blocks in prosekit/core
+sidebar:
+  order: 60
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Most editor features in ProseKit are themselves extensions. When the official ones don't fit, you write your own and `union` them in.
+
+## When you actually need a custom extension
+
+| Goal                                     | Reach for                                           |
+| ---------------------------------------- | --------------------------------------------------- |
+| Bind a key                               | [`defineKeymap`](/references/core#definekeymap)     |
+| Run a command                            | [`defineCommands`](/references/core#definecommands) |
+| Listen to events                         | `defineKeyDownHandler`, `definePasteHandler`, …     |
+| Add a node or mark                       | `defineNodeSpec`, `defineMarkSpec`                  |
+| Add an attribute to an existing node     | `defineNodeAttr`                                    |
+| Drop in a raw ProseMirror plugin         | `definePlugin`                                      |
+| Render a node with a framework component | [Custom node views](/guides/custom-node-views)      |
+
+Most of those are one-call extensions. You only need a "full" custom extension when you're combining several of them.
+
+## Anatomy of a typical extension
+
+The official extensions follow a consistent shape. Here's what [`defineBold`](/extensions/bold) looks like, simplified:
+
+```ts twoslash
+import { defineCommands, defineKeymap, defineMarkSpec, union, type Extension, type Union } from 'prosekit/core'
+import { toggleMark } from 'prosekit/core'
+
+const myBoldSpec: Extension = defineMarkSpec({
+  name: 'bold',
+  parseDOM: [{ tag: 'strong' }, { tag: 'b' }],
+  toDOM: () => ['strong', 0],
+})
+
+const myBoldCommands = defineCommands({
+  toggleBold: () => toggleMark({ type: 'bold' }),
+})
+
+const myBoldKeymap = defineKeymap({
+  'Mod-b': toggleMark({ type: 'bold' }),
+})
+
+export function defineMyBold() {
+  return union(
+    myBoldSpec,
+    myBoldCommands,
+    myBoldKeymap,
+  )
+}
+```
+
+Three building blocks (`spec`, `commands`, `keymap`) joined by `union`. Same pattern works for any feature: define each piece in isolation, then compose. See [Concepts → Extensions](/concepts/extensions) for the full story.
+
+## Adding to an existing editor
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor, defineKeymap, union } from 'prosekit/core'
+
+const myKeymap = defineKeymap({
+  'Mod-Shift-x': () => {
+    console.log('custom shortcut')
+    return true
+  },
+})
+
+const editor = createEditor({
+  extension: union(defineBasicExtension(), myKeymap),
+})
+```
+
+Or, after the editor exists, hot-add it with `editor.use(extension)` (see [Concepts → The Editor](/concepts/editor)).
+
+<Aside>
+If you're going to share an extension with other people, export the individual pieces (`defineMyXSpec`, `defineMyXCommands`, …) *and* the bundled `defineMyX`. That lets users override or omit any one piece without copy-pasting your whole module.
+</Aside>
+
+## See also
+
+- [Concepts → Extensions](/concepts/extensions)
+- [Custom node views](/guides/custom-node-views)
+- [`prosekit/core` reference](/references/core)

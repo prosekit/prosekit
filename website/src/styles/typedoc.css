@@ -1,3 +1,5 @@
+/* Styles for the TypeDoc-generated reference pages. */
+
 code[data-typedoc-code] {
   display: inline-block;
   border-color: transparent;

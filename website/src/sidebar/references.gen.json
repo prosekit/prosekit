@@ -1,0 +1,176 @@
+[
+  "references/core",
+  "references/core/test",
+  "references/basic",
+  "references/basic/stylecss",
+  "references/basic/typographycss",
+  {
+    "label": "extensions",
+    "collapsed": true,
+    "items": [
+      "references/extensions",
+      "references/extensions/autocomplete",
+      "references/extensions/background-color",
+      "references/extensions/blockquote",
+      "references/extensions/bold",
+      "references/extensions/code",
+      "references/extensions/code-block",
+      "references/extensions/commit",
+      "references/extensions/commit/stylecss",
+      "references/extensions/doc",
+      "references/extensions/drop-cursor",
+      "references/extensions/drop-indicator",
+      "references/extensions/enter-rule",
+      "references/extensions/file",
+      "references/extensions/gap-cursor",
+      "references/extensions/gap-cursor/stylecss",
+      "references/extensions/hard-break",
+      "references/extensions/heading",
+      "references/extensions/horizontal-rule",
+      "references/extensions/image",
+      "references/extensions/input-rule",
+      "references/extensions/italic",
+      "references/extensions/link",
+      "references/extensions/list",
+      "references/extensions/list/stylecss",
+      "references/extensions/loro",
+      "references/extensions/loro/stylecss",
+      "references/extensions/mark-rule",
+      "references/extensions/math",
+      "references/extensions/mention",
+      "references/extensions/mod-click-prevention",
+      "references/extensions/page",
+      "references/extensions/page/stylecss",
+      "references/extensions/paragraph",
+      "references/extensions/paste-rule",
+      "references/extensions/placeholder",
+      "references/extensions/placeholder/stylecss",
+      "references/extensions/readonly",
+      "references/extensions/search",
+      "references/extensions/search/stylecss",
+      "references/extensions/strike",
+      "references/extensions/table",
+      "references/extensions/table/stylecss",
+      "references/extensions/text",
+      "references/extensions/text-align",
+      "references/extensions/text-color",
+      "references/extensions/underline",
+      "references/extensions/virtual-selection",
+      "references/extensions/virtual-selection/stylecss",
+      "references/extensions/yjs",
+      "references/extensions/yjs/stylecss"
+    ]
+  },
+  {
+    "label": "pm",
+    "collapsed": true,
+    "items": [
+      "references/pm",
+      "references/pm/commands",
+      "references/pm/history",
+      "references/pm/inputrules",
+      "references/pm/keymap",
+      "references/pm/model",
+      "references/pm/state",
+      "references/pm/transform",
+      "references/pm/view",
+      "references/pm/view/style/prosemirrorcss"
+    ]
+  },
+  {
+    "label": "preact",
+    "collapsed": true,
+    "items": [
+      "references/preact",
+      "references/preact/autocomplete",
+      "references/preact/block-handle",
+      "references/preact/drop-indicator",
+      "references/preact/inline-popover",
+      "references/preact/menu",
+      "references/preact/popover",
+      "references/preact/resizable",
+      "references/preact/table-handle",
+      "references/preact/tooltip"
+    ]
+  },
+  {
+    "label": "react",
+    "collapsed": true,
+    "items": [
+      "references/react",
+      "references/react/autocomplete",
+      "references/react/block-handle",
+      "references/react/drop-indicator",
+      "references/react/inline-popover",
+      "references/react/menu",
+      "references/react/popover",
+      "references/react/resizable",
+      "references/react/table-handle",
+      "references/react/tooltip"
+    ]
+  },
+  {
+    "label": "solid",
+    "collapsed": true,
+    "items": [
+      "references/solid",
+      "references/solid/autocomplete",
+      "references/solid/block-handle",
+      "references/solid/drop-indicator",
+      "references/solid/inline-popover",
+      "references/solid/menu",
+      "references/solid/popover",
+      "references/solid/resizable",
+      "references/solid/table-handle",
+      "references/solid/tooltip"
+    ]
+  },
+  {
+    "label": "svelte",
+    "collapsed": true,
+    "items": [
+      "references/svelte",
+      "references/svelte/autocomplete",
+      "references/svelte/block-handle",
+      "references/svelte/drop-indicator",
+      "references/svelte/inline-popover",
+      "references/svelte/menu",
+      "references/svelte/popover",
+      "references/svelte/resizable",
+      "references/svelte/table-handle",
+      "references/svelte/tooltip"
+    ]
+  },
+  {
+    "label": "vue",
+    "collapsed": true,
+    "items": [
+      "references/vue",
+      "references/vue/autocomplete",
+      "references/vue/block-handle",
+      "references/vue/drop-indicator",
+      "references/vue/inline-popover",
+      "references/vue/menu",
+      "references/vue/popover",
+      "references/vue/resizable",
+      "references/vue/table-handle",
+      "references/vue/tooltip"
+    ]
+  },
+  {
+    "label": "web",
+    "collapsed": true,
+    "items": [
+      "references/web",
+      "references/web/autocomplete",
+      "references/web/block-handle",
+      "references/web/drop-indicator",
+      "references/web/inline-popover",
+      "references/web/menu",
+      "references/web/popover",
+      "references/web/resizable",
+      "references/web/table-handle",
+      "references/web/tooltip"
+    ]
+  }
+]

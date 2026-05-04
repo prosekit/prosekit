@@ -134,9 +134,15 @@ jobs:
             --retry-wait-time 5
             --max-retries 5
             --exclude 'https://floating-ui.com'
-            --remap "^https://prosekit\.dev\/examples file://$(pwd)/examples"
-            --remap "^https://prosekit\.dev\/references file://$(pwd)/references"
+            --remap "^https://prosekit\.dev\/components file://$(pwd)/components"
+            --remap "^https://prosekit\.dev\/concepts file://$(pwd)/concepts"
             --remap "^https://prosekit\.dev\/extensions file://$(pwd)/extensions"
+            --remap "^https://prosekit\.dev\/examples file://$(pwd)/examples"
+            --remap "^https://prosekit\.dev\/frameworks file://$(pwd)/frameworks"
+            --remap "^https://prosekit\.dev\/getting-started file://$(pwd)/getting-started"
+            --remap "^https://prosekit\.dev\/guides file://$(pwd)/guides"
+            --remap "^https://prosekit\.dev\/migrating-from file://$(pwd)/migrating-from"
+            --remap "^https://prosekit\.dev\/references file://$(pwd)/references"
             './**/*.html'
           debug: false
           fail: true

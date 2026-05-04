@@ -1,0 +1,30 @@
+---
+title: Drop indicator
+description: A horizontal line that appears between blocks during drag-and-drop to show the drop position
+sidebar:
+  order: 210
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import InstallTabs from '@/components/ui/demo/install-tabs.astro';
+
+The drop indicator is a thin line drawn between blocks while a drag is in progress, signaling where the dragged content will land when the user releases. Use it whenever the editor accepts drops, whether that's block reordering via the [Block handle](/components/block-handle) or external drops like file uploads.
+
+<Demo story="block-handle" />
+
+## Install
+
+<InstallTabs component="drop-indicator" />
+
+## API reference
+
+- [prosekit/react/drop-indicator](/references/react/drop-indicator)
+- [prosekit/vue/drop-indicator](/references/vue/drop-indicator)
+- [prosekit/preact/drop-indicator](/references/preact/drop-indicator)
+- [prosekit/svelte/drop-indicator](/references/svelte/drop-indicator)
+- [prosekit/solid/drop-indicator](/references/solid/drop-indicator)
+
+## See also
+
+- [Block handle](/components/block-handle): the most common source of drag-and-drop in the editor.
+- [`file` extension](/extensions/file): handles file uploads via drop.

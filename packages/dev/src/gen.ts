@@ -2,6 +2,7 @@ import { debug } from './debug'
 import { genChangeset } from './gen-changeset'
 import { genChangesetConfigJson } from './gen-changeset-config-json'
 import { genPackageJson } from './gen-package-json'
+import { genReferencesSidebarJson } from './gen-references-sidebar-json'
 import { genSizeLimitJson } from './gen-size-limit-json'
 import { skipGen } from './skip-gen'
 import { vfs } from './vfs'
@@ -23,6 +24,9 @@ async function gen(): Promise<boolean> {
 
   await genChangeset()
   debug('gen gen-changeset done')
+
+  await genReferencesSidebarJson()
+  debug('gen gen-references-sidebar-json done')
 
   await syncWorkspacePackages()
   debug('gen sync-workspace-packages done')

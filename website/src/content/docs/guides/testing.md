@@ -1,0 +1,116 @@
+---
+title: Testing your editor
+description: Use prosekit/core/test to run editor commands in unit tests with builder syntax for documents
+sidebar:
+  order: 110
+---
+
+`prosekit/core/test` provides a small layer for unit-testing extensions and editors without spinning up a browser.
+
+## `createTestEditor`
+
+`createTestEditor(options)` is a drop-in alternative to `createEditor` that returns a `TestEditor`. It exposes the same API as `Editor`, plus helpers for setting the document and selection from a builder syntax.
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import { createTestEditor } from 'prosekit/core/test'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+
+const editor = createTestEditor({
+  extension: union(defineDoc(), defineText(), defineParagraph()),
+})
+```
+
+You don't call `editor.mount(...)`. The test editor manages a detached view internally.
+
+## Using the builder syntax
+
+`editor.nodes.<name>(...)` and `editor.marks.<name>(...)` are typed factories generated from your schema. Use them to build a document and hand it to `editor.set(...)`.
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import { createTestEditor } from 'prosekit/core/test'
+import { defineBold } from 'prosekit/extensions/bold'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+
+const editor = createTestEditor({
+  extension: union(
+    defineDoc(),
+    defineText(),
+    defineParagraph(),
+    defineBold(),
+  ),
+})
+
+const n = editor.nodes
+const m = editor.marks
+const doc = n.doc(
+  n.paragraph('Hello, ', m.bold('world'), '!'),
+)
+editor.set(doc)
+```
+
+## Selection markers
+
+The `set` helper recognizes two special tokens in text content:
+
+- `<a>` marks the start of the selection.
+- `<b>` marks the end of the selection.
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import { createTestEditor } from 'prosekit/core/test'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+
+const editor = createTestEditor({
+  extension: union(defineDoc(), defineText(), defineParagraph()),
+})
+
+const n = editor.nodes
+const doc = n.doc(n.paragraph('<a>Hello<b> world!'))
+editor.set(doc)
+// "Hello" is now selected.
+```
+
+## A complete unit test
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import { createTestEditor } from 'prosekit/core/test'
+import { defineBold } from 'prosekit/extensions/bold'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+import { describe, expect, it } from 'vitest'
+
+describe('toggleBold', () => {
+  it('wraps the selection in a bold mark', () => {
+    const editor = createTestEditor({
+      extension: union(
+        defineDoc(),
+        defineText(),
+        defineParagraph(),
+        defineBold(),
+      ),
+    })
+
+    const n = editor.nodes
+    editor.set(n.doc(n.paragraph('<a>hi<b>')))
+
+    expect(editor.commands.toggleBold.canExec()).toBe(true)
+    editor.commands.toggleBold()
+    expect(editor.marks.bold.isActive()).toBe(true)
+  })
+})
+```
+
+## See also
+
+- [Concepts → The Editor](/concepts/editor)
+- [`prosekit/core/test` reference](/references/core/test)

@@ -1163,13 +1163,13 @@ importers:
         specifier: ^0.1.11
         version: 0.1.11
       astrobook:
-        specifier: ^0.13.1
+        specifier: ^0.13.0
         version: 0.13.1(astro@6.2.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(typescript@6.0.3)
       babel-plugin-react-compiler:
         specifier: ^1.0.0
         version: 1.0.0
       clsx:
-        specifier: ^2.1.1
+        specifier: ^2.1.0
         version: 2.1.1
       jsdom:
         specifier: ^29.1.1

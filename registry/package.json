@@ -348,7 +348,7 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.1.1",
     "vitest-browser-vue": "^2.1.0",
-    "vue-tsc": "^3.2.7",
+    "vue-tsc": "^3.2.8",
     "vue-tweet": "^2.4.0"
   },
   "publishConfig": {

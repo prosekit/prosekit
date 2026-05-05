@@ -50,7 +50,7 @@
     "knip": "^6.11.0",
     "monorepo-typescript-references": "^1.1.1",
     "oxfmt": "^0.47.0",
-    "playwright": "^1.59.1",
+    "playwright": "^1.59.0",
     "size-limit": "^12.1.0",
     "turbo": "^2.9.9",
     "typescript": "catalog:",

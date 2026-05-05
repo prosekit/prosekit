@@ -78,7 +78,7 @@ importers:
         specifier: ^0.47.0
         version: 0.47.0
       playwright:
-        specifier: ^1.59.1
+        specifier: ^1.59.0
         version: 1.59.1
       size-limit:
         specifier: ^12.1.0
@@ -234,7 +234,7 @@ importers:
         specifier: workspace:*
         version: link:../vfs
       obug:
-        specifier: ^2.1.1
+        specifier: ^2.1.0
         version: 2.1.1
     devDependencies:
       '@changesets/read':

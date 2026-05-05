@@ -25,7 +25,9 @@ allowBuilds:
   sharp: false
   workerd: false
 
-overrides: {}
+overrides: {
+  "astro": "https://pkg.pr.new/astro@16505"
+}
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

@@ -26,7 +26,7 @@ allowBuilds:
   workerd: false
 
 overrides: {
-  "astro": "https://pkg.pr.new/astro@16505"
+  "astro": "https://pkg.pr.new/astro@16505",
 }
 
 patchedDependencies:

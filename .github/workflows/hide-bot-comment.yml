@@ -10,7 +10,7 @@ jobs:
     steps:
       - id: hide-comment
         if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: int128/hide-comment-action@d38cf5901fbb26e4d5790890955713b0ec539087 # v1.57.0
+        uses: int128/hide-comment-action@392bc214093dafaebdf99c7d6298245262832d15 # v1.58.0
         with:
           authors: |
             github-actions

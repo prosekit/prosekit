@@ -20,7 +20,7 @@
     "@astrojs/preact": "^5.1.2",
     "@astrojs/react": "^5.0.4",
     "@astrojs/solid-js": "^6.0.1",
-    "@astrojs/starlight": "^0.38.4",
+    "@astrojs/starlight": "^0.38.5",
     "@astrojs/svelte": "^8.1.0",
     "@astrojs/vue": "^6.0.1",
     "@base-ui/react": "^1.4.1",

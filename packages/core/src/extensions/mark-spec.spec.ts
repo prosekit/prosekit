@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { union } from '../editor/union.ts'
 import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
 
-import { defineMarkAttr, defineMarkSpec } from './mark-spec.ts'
+import { defineMarkAttr, defineMarkSpec, defineMarkSpecPatch } from './mark-spec.ts'
 
 describe('defineMarkSpec', () => {
   it('can merge mark specs', () => {
@@ -56,6 +56,34 @@ describe('defineMarkSpec', () => {
         baz: { default: 'baz:2' },
       },
     })
+  })
+
+  it('can patch mark spec', () => {
+    const extension = union(
+      defineMarkSpec({
+        name: 'bold',
+        parseDOM: [{ tag: 'strong' }],
+        toDOM: () => ['strong', 0],
+      }),
+      defineMarkSpecPatch({
+        type: 'bold',
+        patch: (spec) => ({
+          ...spec,
+          parseDOM: [
+            ...(spec.parseDOM ?? []),
+            { tag: 'b' },
+          ],
+        }),
+      }),
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+    )
+
+    expect(extension.schema?.spec.marks.get('bold')?.parseDOM).toEqual([
+      { tag: 'strong' },
+      { tag: 'b' },
+    ])
   })
 })
 

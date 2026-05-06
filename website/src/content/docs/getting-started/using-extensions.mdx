@@ -1,0 +1,189 @@
+---
+title: Using Extensions
+sidebar:
+  order: 50
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import { Aside, CardGrid } from '@astrojs/starlight/components';
+import LinkCard from 'starlight-theme-nova/components/LinkCard.astro';
+
+Extensions are at the heart of ProseKit's flexibility and power. They allow you to add functionality to your editor in a modular way, making it easy to build exactly the editing experience you need.
+
+## What are extensions?
+
+Extensions in ProseKit are modular pieces of functionality that you can add to your editor. They can provide:
+
+- **Nodes** (paragraphs, headings, lists, code blocks, etc.)
+- **Marks** (bold, italic, underline, etc.)
+- **Commands** (functions that modify the document)
+- **Keyboard shortcuts**
+- **Input rules** (automatic transformations as you type)
+- **Custom behaviors** and much more
+
+## Basic extension usage
+
+ProseKit provides a `defineBasicExtension()` function that includes the most common features:
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+
+// Create an editor with the extension
+const editor = createEditor({ extension: defineBasicExtension() })
+```
+
+## Composing extensions with `union`
+
+A key concept in ProseKit is that all extensions are composed of other extensions using the `union` function. This composability lets you create complex functionality by combining simpler building blocks.
+
+For example, `defineBasicExtension` is simply a composition of many smaller extensions:
+
+```ts twoslash
+import {
+  defineBaseCommands,
+  defineBaseKeymap,
+  defineHistory,
+  union,
+} from 'prosekit/core'
+import { defineBlockquote } from 'prosekit/extensions/blockquote'
+import { defineBold } from 'prosekit/extensions/bold'
+import { defineCode } from 'prosekit/extensions/code'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineGapCursor } from 'prosekit/extensions/gap-cursor'
+import { defineHeading } from 'prosekit/extensions/heading'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+import { defineImage } from 'prosekit/extensions/image'
+import { defineItalic } from 'prosekit/extensions/italic'
+import { defineLink } from 'prosekit/extensions/link'
+import { defineList } from 'prosekit/extensions/list'
+import { defineModClickPrevention } from 'prosekit/extensions/mod-click-prevention'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineStrike } from 'prosekit/extensions/strike'
+import { defineTable } from 'prosekit/extensions/table'
+import { defineText } from 'prosekit/extensions/text'
+import { defineUnderline } from 'prosekit/extensions/underline'
+import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
+
+function defineBasicExtension() {
+  return union(
+    // Nodes
+    defineDoc(),
+    defineText(),
+    defineParagraph(),
+    defineHeading(),
+    defineList(),
+    defineBlockquote(),
+    defineImage(),
+    defineHorizontalRule(),
+    defineTable(),
+    defineCodeBlock(),
+    // Marks
+    defineItalic(),
+    defineBold(),
+    defineUnderline(),
+    defineStrike(),
+    defineCode(),
+    defineLink(),
+    // Others
+    defineBaseKeymap(),
+    defineBaseCommands(),
+    defineHistory(),
+    defineGapCursor(),
+    defineVirtualSelection(),
+    defineModClickPrevention(),
+  )
+}
+```
+
+This compositional pattern allows you to build on existing extensions and add exactly the features you need. For example, if you want all the functionality of the basic extension plus syntax highlighting for code blocks, you can simply combine them:
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import {
+  createEditor,
+  union,
+} from 'prosekit/core'
+import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
+
+function defineMyExtension() {
+  return union(
+    defineBasicExtension(),
+    defineCodeBlockShiki(),
+  )
+}
+
+const editor = createEditor({ extension: defineMyExtension() })
+```
+
+## Customizing extensions
+
+Since each extension is composed of smaller parts, you can easily customize functionality by picking exactly which components you want. For example, the `defineCode()` extension defines a mark spec, commands, keyboard shortcut, and input rule.
+
+If you want to keep everything except the keyboard shortcut, you can inspect the source code of the `defineCode()` extension, and create a custom version:
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import {
+  defineCodeCommands,
+  defineCodeInputRule,
+  defineCodeSpec,
+  // Omitting defineCodeKeymap
+} from 'prosekit/extensions/code'
+
+function defineMyCode() {
+  return union(
+    defineCodeSpec(),
+    defineCodeCommands(),
+    defineCodeInputRule(),
+    // No keyboard shortcut
+  )
+}
+```
+
+<Aside>
+
+`defineCodeCommands`, `defineCodeInputRule`, and `defineCodeSpec` are exported from the `prosekit/extensions/code` module, but they are marked as `@internal` APIs thus they are not visible in the [reference documentation](/references/extensions/code).
+
+</Aside>
+
+### Patching existing specs
+
+If you only need to tweak part of an existing node or mark spec, you can patch the merged spec instead of rewriting it from scratch.
+
+```ts twoslash
+import { union, defineNodeSpecPatch } from 'prosekit/core'
+import { defineHeading } from 'prosekit/extensions/heading'
+
+function defineMyHeading() {
+  return union(
+    defineHeading(),
+    defineNodeSpecPatch({
+      type: 'heading',
+      patch: (spec) => ({
+        ...spec,
+        toDOM(node) {
+          return [`h${node.attrs.level}`, { 'data-custom': '1' }, 0]
+        },
+        parseDOM: [
+          ...(spec.parseDOM ?? []),
+          { tag: 'h1[data-custom]' },
+        ],
+      }),
+    }),
+  )
+}
+```
+
+Spec patches run after node specs or mark specs are merged, and after attributes added with `defineNodeAttr()` or `defineMarkAttr()`.
+
+<Aside>
+
+Use spec patches for small changes to fields like `toDOM`, `parseDOM`, or `attrs`. If you need to add or remove larger pieces of behavior such as commands, keymaps, or input rules, compose a custom extension from smaller parts instead.
+
+</Aside>
+
+{/* Link References */}
+
+[Shiki]: https://github.com/shikijs/shiki

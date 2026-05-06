@@ -7,7 +7,7 @@ import { defineDoc, defineParagraph, defineText, setupTestFromExtension } from '
 
 import { defineHistory } from './history.ts'
 import { defineBaseKeymap } from './keymap-base.ts'
-import { defineNodeAttr, defineNodeSpec } from './node-spec.ts'
+import { defineNodeAttr, defineNodeSpec, defineNodeSpecPatch } from './node-spec.ts'
 
 describe('defineNodeSpec', () => {
   it('can merge node specs', () => {
@@ -106,6 +106,68 @@ describe('defineNodeSpec', () => {
 
     expect(schema6 === schema5).toBe(true)
   })
+
+  it('can patch node spec toDOM and parseDOM', () => {
+    const extension = union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+      defineNodeSpecPatch({
+        type: 'paragraph',
+        patch: (spec) => ({
+          ...spec,
+          toDOM: () => ['p', { 'data-patched': 'yes' }, 0],
+          parseDOM: [
+            ...(spec.parseDOM ?? []),
+            { tag: 'p[data-patched="yes"]' },
+          ],
+        }),
+      }),
+    )
+
+    const spec = extension.schema?.spec.nodes.get('paragraph')
+    expect(spec?.parseDOM).toEqual([
+      { tag: 'p' },
+      { tag: 'p[data-patched="yes"]' },
+    ])
+    expect(spec?.toDOM?.(null as never)).toEqual([
+      'p',
+      { 'data-patched': 'yes' },
+      0,
+    ])
+  })
+
+  it('applies multiple node spec patches in order', () => {
+    const extension = union(
+      defineDoc(),
+      defineText(),
+      defineNodeSpec({
+        name: 'paragraph',
+        content: 'text*',
+        parseDOM: [{ tag: 'p' }],
+        toDOM: () => ['p', 0],
+      }),
+      defineNodeSpecPatch({
+        type: 'paragraph',
+        patch: (spec) => ({
+          ...spec,
+          group: 'block',
+        }),
+      }),
+      defineNodeSpecPatch({
+        type: 'paragraph',
+        patch: (spec) => ({
+          ...spec,
+          defining: true,
+        }),
+      }),
+    )
+
+    expect(extension.schema?.spec.nodes.get('paragraph')).toMatchObject({
+      group: 'block',
+      defining: true,
+    })
+  })
 })
 
 describe('defineNodeAttr', () => {
@@ -181,6 +243,30 @@ describe('defineNodeAttr', () => {
     editor.setContent(html1)
     const json2 = editor.getDocJSON()
     expect(json2).toEqual(json1)
+  })
+
+  it('applies node spec patch after node attrs', () => {
+    const extension = union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+      defineNodeAttr({
+        type: 'paragraph',
+        attr: 'nodeId',
+        default: null,
+        toDOM: (value) => (value ? ['data-node-id', value] : null),
+        parseDOM: (node: HTMLElement) => node.dataset.nodeId ?? null,
+      }),
+      defineNodeSpecPatch({
+        type: 'paragraph',
+        patch: (spec) => {
+          expect(spec.attrs?.nodeId).toBeTruthy()
+          return spec
+        },
+      }),
+    )
+
+    expect(extension.schema?.spec.nodes.get('paragraph')?.attrs?.nodeId).toBeTruthy()
   })
 })
 

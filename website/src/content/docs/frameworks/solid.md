@@ -5,7 +5,7 @@ sidebar:
   order: 50
 ---
 
-ProseKit has first-class support for [Solid](https://solidjs.com) via `prosekit/solid`.
+ProseKit has first-class support for [Solid](https://github.com/solidjs/solid) via `prosekit/solid`.
 
 ## Provider
 

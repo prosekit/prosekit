@@ -27,6 +27,12 @@ export interface AutocompleteRootProps {
    * @default defaultItemFilter
    */
   filter?: AutocompleteRootElementProps['filter'];
+  /**
+   * An element to position the popup against. By default, the popup will be positioned against the text content that triggers the autocomplete.
+   *
+   * @default null
+   */
+  anchor?: AutocompleteRootElementProps['anchor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */
@@ -50,11 +56,11 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
 
     const elementRef = shallowRef<HTMLElement | null>(null);
 
-    const p0Fallback = useEditorContext();
+    const p1Fallback = useEditorContext();
 
     const splittedProps = computed(() => {
-      const { editor: p0, filter: p1, regex: p2, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
-      return [[p0, p1, p2, e0, e1, e2, e3], restProps] as const;
+      const { anchor: p0, editor: p1, filter: p2, regex: p3, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
+      return [[p0, p1, p2, p3, e0, e1, e2, e3], restProps] as const;
     });
 
     const handlers: Array<((event: any) => void) | undefined> = [];
@@ -63,9 +69,9 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
       const element = elementRef.value;
       if (!element) return;
 
-      const [p0, p1, p2, e0, e1, e2, e3] = splittedProps.value[0];
+      const [p0, p1, p2, p3, e0, e1, e2, e3] = splittedProps.value[0];
 
-      Object.assign(element, { editor: p0 ?? p0Fallback, filter: p1, regex: p2 });
+      Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, regex: p3 });
 
       handlers.length = 0;
       handlers.push(e0);
@@ -96,5 +102,5 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
       return h('prosekit-autocomplete-root', { ...restProps, ref: elementRef }, slots.default?.());
     };
   },
-  { props: ['editor', 'filter', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
+  { props: ['anchor', 'editor', 'filter', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
 );

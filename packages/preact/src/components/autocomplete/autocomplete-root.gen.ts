@@ -29,6 +29,12 @@ export interface AutocompleteRootProps {
    * @default defaultItemFilter
    */
   filter?: AutocompleteRootElementProps['filter'];
+  /**
+   * An element to position the popup against. By default, the popup will be positioned against the text content that triggers the autocomplete.
+   *
+   * @default null
+   */
+  anchor?: AutocompleteRootElementProps['anchor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */
@@ -51,14 +57,14 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: R
   const elementRef = useRef<AutocompleteRootElement>(null);
   const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
-  const p0Fallback = useEditorContext();
+  const p1Fallback = useEditorContext();
 
-  const { editor: p0, filter: p1, regex: p2, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
+  const { anchor: p0, editor: p1, filter: p2, regex: p3, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { editor: p0 ?? p0Fallback, filter: p1, regex: p2 });
+    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, regex: p3 });
     handlersRef.current = [e0, e1, e2, e3] as Array<((event: Event) => void) | undefined>;
   });
 

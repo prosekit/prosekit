@@ -1109,8 +1109,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(sass@1.99.0)(solid-js@1.9.12)(tsx@4.21.0)(yaml@2.8.3)
       '@astrojs/starlight':
-        specifier: ^0.38.5
-        version: 0.38.5(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))
+        specifier: ^0.39.1
+        version: 0.39.1(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(typescript@6.0.3)
       '@astrojs/svelte':
         specifier: ^8.1.0
         version: 8.1.0(@types/node@24.12.2)(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(jiti@2.7.0)(lightningcss@1.32.0)(sass@1.99.0)(svelte@5.55.5)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)
@@ -1209,7 +1209,7 @@ importers:
         version: 1.9.12
       starlight-theme-nova:
         specifier: ^0.11.9
-        version: 0.11.9(@astrojs/starlight@0.38.5(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3)))(typescript@6.0.3)
+        version: 0.11.9(@astrojs/starlight@0.39.1(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(typescript@6.0.3))(typescript@6.0.3)
       svelte:
         specifier: ^5.55.5
         version: 5.55.5
@@ -1371,8 +1371,8 @@ packages:
       solid-devtools:
         optional: true
 
-  '@astrojs/starlight@0.38.5':
-    resolution: {integrity: sha512-35xLSOtZDAMAilHG2zAEZoJ4AaPb+doYOvxuuRTAnmIBSOvujffOAHv3/rr6W/LJtkhBU38PjRDJ4i8QT1uGVw==}
+  '@astrojs/starlight@0.39.1':
+    resolution: {integrity: sha512-9kIAXBwcqAuFQ7Ft419fr6rz6p0SPg7Yfgc28TfzoCcuOH9utZgIola9yOq5YIMDrR8rmm8kyl7pCsfrPVmLhQ==}
     peerDependencies:
       astro: ^6.0.0
 
@@ -5518,8 +5518,13 @@ packages:
     resolution: {integrity: sha512-eKCa6bwnJhvxj14kZk5NCPc6Hb6BdsU9DZcOnmQKSnO1VKrfV0zCvtttPZUsBvjmNDn8rpcJfpwSYnHBjc95MQ==}
     engines: {node: '>=18.18.0'}
 
-  i18next@23.16.8:
-    resolution: {integrity: sha512-06r/TitrM88Mg5FdUXAKL96dJMzgqLE5dv3ryBAra4KCwD9mJ4ndOTS95ZuymIGoE+2hzfdaMak2X11/es7ZWg==}
+  i18next@26.0.9:
+    resolution: {integrity: sha512-htjWlK5lGpjIDJxUdDLD6dO2jPl/RZHBpeZC80T5yr6Lci/tN3Oq9Doh9110ihliAIb4xmb45ngM76WcbP6GjA==}
+    peerDependencies:
+      typescript: ^5 || ^6
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   iconv-lite@0.7.2:
     resolution: {integrity: sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw==}
@@ -8448,7 +8453,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/starlight@0.38.5(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))':
+  '@astrojs/starlight@0.39.1(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(typescript@6.0.3)':
     dependencies:
       '@astrojs/markdown-remark': 7.1.1
       '@astrojs/mdx': 5.0.4(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))
@@ -8464,7 +8469,7 @@ snapshots:
       hast-util-select: 6.0.4
       hast-util-to-string: 3.0.1
       hastscript: 9.0.1
-      i18next: 23.16.8
+      i18next: 26.0.9(typescript@6.0.3)
       js-yaml: 4.1.1
       klona: 2.0.6
       magic-string: 0.30.21
@@ -8481,6 +8486,7 @@ snapshots:
       vfile: 6.0.3
     transitivePeerDependencies:
       - supports-color
+      - typescript
 
   '@astrojs/svelte@8.1.0(@types/node@24.12.2)(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(jiti@2.7.0)(lightningcss@1.32.0)(sass@1.99.0)(svelte@5.55.5)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)':
     dependencies:
@@ -9438,8 +9444,8 @@ snapshots:
       hast-util-to-html: 9.0.5
       hast-util-to-text: 4.0.2
       hastscript: 9.0.1
-      postcss: 8.5.10
-      postcss-nested: 6.2.0(postcss@8.5.10)
+      postcss: 8.5.14
+      postcss-nested: 6.2.0(postcss@8.5.14)
       unist-util-visit: 5.1.0
       unist-util-visit-parents: 6.0.2
 
@@ -12881,9 +12887,9 @@ snapshots:
 
   human-signals@8.0.1: {}
 
-  i18next@23.16.8:
-    dependencies:
-      '@babel/runtime': 7.29.2
+  i18next@26.0.9(typescript@6.0.3):
+    optionalDependencies:
+      typescript: 6.0.3
 
   iconv-lite@0.7.2:
     dependencies:
@@ -14187,9 +14193,9 @@ snapshots:
       tsx: 4.21.0
       yaml: 2.8.3
 
-  postcss-nested@6.2.0(postcss@8.5.10):
+  postcss-nested@6.2.0(postcss@8.5.14):
     dependencies:
-      postcss: 8.5.10
+      postcss: 8.5.14
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.1.2:
@@ -14936,7 +14942,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.11.9(@astrojs/starlight@0.38.5(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3)))(typescript@6.0.3):
+  starlight-theme-nova@0.11.9(@astrojs/starlight@0.39.1(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(typescript@6.0.3))(typescript@6.0.3):
     dependencies:
       '@aria-ui/core': 0.2.0
       '@aria-ui/utils': 0.1.5
@@ -14951,7 +14957,7 @@ snapshots:
       remark-custom-header-id: 1.0.0
       shiki-twoslash-renderer: 0.3.3(typescript@6.0.3)
     optionalDependencies:
-      '@astrojs/starlight': 0.38.5(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))
+      '@astrojs/starlight': 0.39.1(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.3))(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
       - typescript

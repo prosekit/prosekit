@@ -30,7 +30,10 @@ export interface AutocompleteRootProps {
    */
   filter?: AutocompleteRootElementProps['filter'];
   /**
-   * An element to position the popup against. By default, the popup will be positioned against the text content that triggers the autocomplete.
+   * The reference to position the popup against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   * By default, the popup will be positioned against the text content that
+   * triggers the autocomplete.
    *
    * @default null
    */

@@ -24,23 +24,23 @@ type Sidebar = StarlightUserConfig['sidebar']
 const sidebar: Sidebar = [
   {
     label: 'Getting Started',
-    autogenerate: { directory: 'getting-started' },
+    items: [{ autogenerate: { directory: 'getting-started' } }],
   },
   {
     label: 'Guides',
-    autogenerate: { directory: 'guides' },
+    items: [{ autogenerate: { directory: 'guides' } }],
   },
   {
     label: 'Concepts',
-    autogenerate: { directory: 'concepts' },
+    items: [{ autogenerate: { directory: 'concepts' } }],
   },
   {
     label: 'Frameworks',
-    autogenerate: { directory: 'frameworks' },
+    items: [{ autogenerate: { directory: 'frameworks' } }],
   },
   {
     label: 'Components',
-    autogenerate: { directory: 'components', collapsed: true },
+    items: [{ autogenerate: { directory: 'components', collapsed: true } }],
   },
   {
     label: 'Extensions',

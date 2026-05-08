@@ -13,7 +13,7 @@ import {
 import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@aria-ui/elements/listbox'
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
-import type { VirtualElement } from '@floating-ui/dom'
+import type { ReferenceElement, VirtualElement } from '@floating-ui/dom'
 import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
@@ -104,7 +104,7 @@ interface RuleHandlers {
 }
 
 interface AutocompleteRuleDeps {
-  reference: Signal<Element | VirtualElement | undefined>
+  reference: Signal<ReferenceElement | undefined>
   handlers: RuleHandlers
   setQuery: (next: string) => void
   requestOpenChange: (open: boolean) => void
@@ -119,7 +119,7 @@ export function setupAutocompleteRoot(
 ): void {
   const getEditor = props.editor.get
 
-  const reference = createSignal<Element | VirtualElement | undefined>(undefined)
+  const reference = createSignal<ReferenceElement | undefined>(undefined)
   const open = createSignal(false)
   const query = createSignal('')
   const keyboardTarget = new KeyboardEventTarget()
@@ -168,17 +168,17 @@ export function setupAutocompleteRoot(
     host.dispatchEvent(new QueryChangeEvent(next))
   }
 
-  const getAnchor = (): Element | VirtualElement | undefined => {
+  const getAnchor = (): ReferenceElement | null => {
     const customAnchor = props.anchor.get()
     if (customAnchor) {
       if (typeof customAnchor === 'function') {
-        return customAnchor() ?? undefined
+        return customAnchor() || null
       } else {
         return customAnchor
       }
     }
     const view = getSafeEditorView(getEditor())
-    return view?.dom.querySelector('.prosekit-autocomplete-match') ?? undefined
+    return view?.dom.querySelector('.prosekit-autocomplete-match') || null
   }
 
   useAutocompleteExtension(host, getEditor, props.regex.get, getAnchor, {
@@ -224,7 +224,7 @@ function useAutocompleteExtension(
   host: HostElement,
   getEditor: () => Editor | null,
   getRegex: () => RegExp | null,
-  getAnchor: () => Element | VirtualElement | undefined,
+  getAnchor: () => ReferenceElement | null,
   deps: AutocompleteRuleDeps,
 ) {
   useEffect(host, () => {
@@ -244,7 +244,7 @@ function useAutocompleteExtension(
 function createAutocompleteRule(
   editor: Editor,
   regex: RegExp,
-  getAnchor: () => Element | VirtualElement | undefined,
+  getAnchor: () => ReferenceElement | null,
   deps: AutocompleteRuleDeps,
 ) {
   const { reference, handlers, setQuery, requestOpenChange } = deps

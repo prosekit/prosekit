@@ -251,10 +251,7 @@ function createAutocompleteRule(
 
   const handleEnter: MatchHandler = (options) => {
     const anchor = getAnchor()
-
-    if (anchor) {
-      reference.set(anchor)
-    }
+    reference.set(anchor || undefined)
 
     handlers.submit = options.deleteMatch
     handlers.dismiss = options.ignoreMatch

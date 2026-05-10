@@ -13,6 +13,7 @@ import {
 import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@aria-ui/elements/listbox'
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
+import type { ReferenceElement, VirtualElement } from '@floating-ui/dom'
 import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
@@ -48,6 +49,16 @@ export interface AutocompleteRootProps {
    * @default defaultItemFilter
    */
   filter: ItemFilter | null
+
+  /**
+   * The reference to position the popup against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   * By default, the popup will be positioned against the text content that
+   * triggers the autocomplete.
+   *
+   * @default null
+   */
+  anchor: Element | VirtualElement | (() => Element | VirtualElement | null) | null
 }
 
 /** @internal */
@@ -57,6 +68,7 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
   editor: { default: null, attribute: false },
   regex: { default: null, attribute: false },
   filter: { default: defaultItemFilter, attribute: false },
+  anchor: { default: null, attribute: false },
 })
 
 /**
@@ -95,7 +107,7 @@ interface RuleHandlers {
 }
 
 interface AutocompleteRuleDeps {
-  reference: Signal<Element | undefined>
+  reference: Signal<ReferenceElement | undefined>
   handlers: RuleHandlers
   setQuery: (next: string) => void
   requestOpenChange: (open: boolean) => void
@@ -110,7 +122,7 @@ export function setupAutocompleteRoot(
 ): void {
   const getEditor = props.editor.get
 
-  const reference = createSignal<Element | undefined>(undefined)
+  const reference = createSignal<ReferenceElement | undefined>(undefined)
   const open = createSignal(false)
   const query = createSignal('')
   const keyboardTarget = new KeyboardEventTarget()
@@ -159,7 +171,20 @@ export function setupAutocompleteRoot(
     host.dispatchEvent(new QueryChangeEvent(next))
   }
 
-  useAutocompleteExtension(host, getEditor, props.regex.get, {
+  const getAnchor = (): ReferenceElement | null => {
+    const customAnchor = props.anchor.get()
+    if (customAnchor) {
+      if (typeof customAnchor === 'function') {
+        return customAnchor() || null
+      } else {
+        return customAnchor
+      }
+    }
+    const view = getSafeEditorView(getEditor())
+    return view?.dom.querySelector('.prosekit-autocomplete-match') || null
+  }
+
+  useAutocompleteExtension(host, getEditor, props.regex.get, getAnchor, {
     reference,
     handlers,
     setQuery,
@@ -202,6 +227,7 @@ function useAutocompleteExtension(
   host: HostElement,
   getEditor: () => Editor | null,
   getRegex: () => RegExp | null,
+  getAnchor: () => ReferenceElement | null,
   deps: AutocompleteRuleDeps,
 ) {
   useEffect(host, () => {
@@ -212,7 +238,7 @@ function useAutocompleteExtension(
       return
     }
 
-    const rule = createAutocompleteRule(editor, regex, deps)
+    const rule = createAutocompleteRule(editor, regex, getAnchor, deps)
     const extension = defineAutocomplete(rule)
     return editor.use(extension)
   })
@@ -221,17 +247,14 @@ function useAutocompleteExtension(
 function createAutocompleteRule(
   editor: Editor,
   regex: RegExp,
+  getAnchor: () => ReferenceElement | null,
   deps: AutocompleteRuleDeps,
 ) {
   const { reference, handlers, setQuery, requestOpenChange } = deps
 
   const handleEnter: MatchHandler = (options) => {
-    const view = getSafeEditorView(editor)
-    const span = view?.dom.querySelector('.prosekit-autocomplete-match')
-
-    if (span) {
-      reference.set(span)
-    }
+    const anchor = getAnchor()
+    reference.set(anchor || undefined)
 
     handlers.submit = options.deleteMatch
     handlers.dismiss = options.ignoreMatch

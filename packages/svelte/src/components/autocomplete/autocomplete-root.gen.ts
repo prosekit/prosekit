@@ -28,6 +28,15 @@ export interface AutocompleteRootProps {
    * @default defaultItemFilter
    */
   filter?: AutocompleteRootElementProps['filter'];
+  /**
+   * The reference to position the popup against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   * By default, the popup will be positioned against the text content that
+   * triggers the autocomplete.
+   *
+   * @default null
+   */
+  anchor?: AutocompleteRootElementProps['anchor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */

@@ -29,6 +29,15 @@ export interface AutocompleteRootProps {
    * @default defaultItemFilter
    */
   filter?: AutocompleteRootElementProps['filter'];
+  /**
+   * The reference to position the popup against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   * By default, the popup will be positioned against the text content that
+   * triggers the autocomplete.
+   *
+   * @default null
+   */
+  anchor?: AutocompleteRootElementProps['anchor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */
@@ -52,15 +61,15 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
   const [getElement, setElement] = createSignal<AutocompleteRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['editor', 'filter', 'regex'], ['onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['anchor', 'editor', 'filter', 'regex'], ['onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange']);
 
-  const p0Fallback = useEditorContext();
+  const p1Fallback = useEditorContext();
 
   createEffect(() => {
     const element = getElement();
     if (!element) return;
 
-    Object.assign(element, { editor: elementProps.editor ?? p0Fallback, filter: elementProps.filter, regex: elementProps.regex });
+    Object.assign(element, { anchor: elementProps.anchor, editor: elementProps.editor ?? p1Fallback, filter: elementProps.filter, regex: elementProps.regex });
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.20.2
+
+### Patch Changes
+
+- [`da8e84b`](https://github.com/ocavue/prosekit/commit/da8e84b9fc40fad007746746a1e5fbab33fbd968) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Allow `AutocompleteRoot` to accept a custom `anchor` for popup positioning.
+
 ## 0.20.1
 
 ### Patch Changes

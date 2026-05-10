@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.0.8",
+  "packageManager": "pnpm@11.0.9",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "@changesets/types": "^6.1.0",
-    "@ocavue/eslint-config": "^4.5.5",
+    "@ocavue/eslint-config": "^4.5.6",
     "@ocavue/tsconfig": "^0.7.1",
     "@size-limit/esbuild-why": "^12.1.0",
     "@size-limit/preset-small-lib": "^12.1.0",
@@ -47,12 +47,12 @@
     "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.54.0",
     "eslint": "^10.3.0",
-    "knip": "^6.12.1",
+    "knip": "^6.12.2",
     "monorepo-typescript-references": "^1.1.1",
     "oxfmt": "^0.48.0",
     "playwright": "^1.59.1",
     "size-limit": "^12.1.0",
-    "turbo": "^2.9.10",
+    "turbo": "^2.9.12",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "wrangler": "^4.90.0"

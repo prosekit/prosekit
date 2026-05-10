@@ -4,8 +4,5 @@
     "@prosekit/dev",
     "prosekit-website"
   ],
-  "toolSettings": {
-    "nodeMaxMemory": 1500
-  },
   "extends": ["github>ocavue/config-renovate"]
 }

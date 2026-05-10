@@ -1,5 +1,3 @@
-/* eslint-disable @eslint-react/component-hook-factories */
-
 import { createEditor, union, type NodeJSON } from '@prosekit/core'
 import { defineTestExtension, type ImageAttrs } from '@prosekit/testing'
 import { createElement, useEffect, useState } from 'react'

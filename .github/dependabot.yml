@@ -9,6 +9,8 @@ updates:
       default-days: 1
       exclude:
         - "@ocavue/eslint-config"
+        - "@ocavue/tsconfig"
+        - "@ocavue/utils"
     groups:
       non-major:
         update-types:

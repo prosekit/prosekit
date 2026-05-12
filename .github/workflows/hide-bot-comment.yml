@@ -13,7 +13,9 @@ jobs:
 
     steps:
       - id: hide-comment
-        if: github.event.pull_request.head.repo.full_name == github.repository
+        if: >-
+          github.event.pull_request.head.repo.full_name == github.repository &&
+          github.event.pull_request.user.login != 'dependabot[bot]'
         uses: int128/hide-comment-action@392bc214093dafaebdf99c7d6298245262832d15 # v1.58.0
         with:
           authors: |

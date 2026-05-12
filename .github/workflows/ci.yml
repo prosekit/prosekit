@@ -8,6 +8,22 @@ on:
   pull_request:
 
 jobs:
+  zizmor:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Run zizmor
+        uses: zizmorcore/zizmor-action@b1d7e1fb5de872772f31590499237e7cce841e8e # v0.5.3
+        with:
+          advanced-security: false
+          annotations: true
+
   lint:
     timeout-minutes: 30
     runs-on: ubuntu-latest
@@ -104,6 +120,7 @@ jobs:
             sleep "${sleep_duration}"
           done
 
+
   linkcheck:
     timeout-minutes: 30
     runs-on: ubuntu-latest
@@ -147,6 +164,7 @@ jobs:
           debug: false
           fail: true
           failIfEmpty: true
+
 
   deploy:
     timeout-minutes: 30

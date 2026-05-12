@@ -1,0 +1,29 @@
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    # Only consider versions that have been published for more than 24 hours.
+    cooldown:
+      default-days: 1
+    # Combine all non-major (minor and patch) updates into a single pull request.
+    groups:
+      non-major:
+        update-types:
+          - minor
+          - patch
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 1
+    groups:
+      non-major:
+        update-types:
+          - minor
+          - patch

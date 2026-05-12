@@ -46,7 +46,7 @@
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.54.0",
-    "eslint":  "^10.3.0",
+    "eslint": "^10.3.0",
     "knip": "^6.12.2",
     "monorepo-typescript-references": "^1.1.1",
     "oxfmt": "^0.48.0",

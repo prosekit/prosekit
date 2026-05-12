@@ -5,10 +5,10 @@ updates:
     directory: /
     schedule:
       interval: daily
-    # Only consider versions that have been published for more than 24 hours.
     cooldown:
       default-days: 1
-    # Combine all non-major (minor and patch) updates into a single pull request.
+      exclude:
+        - "@ocavue/eslint-config"
     groups:
       non-major:
         update-types:

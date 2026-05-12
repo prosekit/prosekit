@@ -8,9 +8,9 @@ updates:
     cooldown:
       default-days: 1
       exclude:
-        - "@ocavue/eslint-config"
-        - "@ocavue/tsconfig"
-        - "@ocavue/utils"
+        - "@ocavue/*"
+        - "@aria-ui/*"
+        - "astrobook"
     groups:
       non-major:
         update-types:

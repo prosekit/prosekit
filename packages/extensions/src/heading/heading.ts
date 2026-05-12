@@ -12,9 +12,6 @@ export type HeadingExtension = Union<
   [HeadingSpecExtension, HeadingCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineHeading(): HeadingExtension {
   return union(
     defineHeadingSpec(),

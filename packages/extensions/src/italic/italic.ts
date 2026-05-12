@@ -12,9 +12,6 @@ export type ItalicExtension = Union<
   [ItalicSpecExtension, ItalicCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineItalic(): ItalicExtension {
   return union(
     defineItalicSpec(),

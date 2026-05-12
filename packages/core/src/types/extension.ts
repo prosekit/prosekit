@@ -22,9 +22,6 @@ export interface ExtensionTyping<
   Commands?: C
 }
 
-/**
- * @public
- */
 export interface Extension<
   T extends ExtensionTyping<any, any, any> = ExtensionTyping<any, any, any>,
 > {
@@ -32,8 +29,6 @@ export interface Extension<
   priority?: Priority
 
   /**
-   * @public
-   *
    * The schema that this extension represents.
    */
   schema: Schema | null
@@ -63,30 +58,18 @@ export type PlainExtension = Extension<{
   Commands: never
 }>
 
-/**
- * @public
- */
 export type ExtractNodes<E extends Extension> = SimplifyDeeper<
   SimplifyUnion<ExtractTyping<E>['Nodes']>
 >
 
-/**
- * @public
- */
 export type ExtractNodeNames<E extends Extension> = PickStringLiteral<
   keyof ExtractNodes<E>
 >
 
-/**
- * @public
- */
 export type ExtractMarks<E extends Extension> = SimplifyDeeper<
   SimplifyUnion<ExtractTyping<E>['Marks']>
 >
 
-/**
- * @public
- */
 export type ExtractMarkNames<E extends Extension> = PickStringLiteral<
   keyof ExtractMarks<E>
 >
@@ -98,17 +81,12 @@ export type ExtractCommands<E extends Extension> = SimplifyUnion<
   ExtractTyping<E>['Commands']
 >
 
-/**
- * @public
- */
 export type ExtractCommandCreators<E extends Extension> = ToCommandCreators<
   ExtractCommands<E>
 >
 
 /**
  * Extracts the {@link CommandAction}s from an extension type.
- *
- * @public
  */
 export type ExtractCommandActions<E extends Extension> = ToCommandAction<
   ExtractCommands<E>
@@ -116,8 +94,6 @@ export type ExtractCommandActions<E extends Extension> = ToCommandAction<
 
 /**
  * Extracts the {@link NodeAction}s from an extension type.
- *
- * @public
  */
 export type ExtractNodeActions<E extends Extension> = ToNodeAction<
   ExtractNodes<E>
@@ -125,8 +101,6 @@ export type ExtractNodeActions<E extends Extension> = ToNodeAction<
 
 /**
  * Extracts the {@link MarkAction}s from an extension type.
- *
- * @public
  */
 export type ExtractMarkActions<E extends Extension> = ToMarkAction<
   ExtractMarks<E>

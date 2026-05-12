@@ -13,9 +13,6 @@ import { defineListSpec, type ListSpecExtension } from './list-spec.ts'
  */
 export type ListExtension = Union<[ListSpecExtension, ListCommandsExtension]>
 
-/**
- * @public
- */
 export function defineList(): ListExtension {
   return union(
     defineListSpec(),

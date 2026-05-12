@@ -10,8 +10,6 @@ import { defineUpdateHandler } from './plugin-view.ts'
  *
  * @param view - The editor view.
  * @param prevState - The previous editor state.
- *
- * @public
  */
 export type DocChangeHandler = (
   view: EditorView,
@@ -20,8 +18,6 @@ export type DocChangeHandler = (
 
 /**
  * Registers a event handler that is called when the editor document is changed.
- *
- * @public
  */
 export function defineDocChangeHandler(
   handler: DocChangeHandler,

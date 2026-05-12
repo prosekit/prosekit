@@ -7,8 +7,6 @@ import type { ImageAttrs } from '../image-spec.ts'
 
 /**
  * Options for {@link uploadImage}.
- *
- * @public
  */
 export interface UploadImageOptions {
   /**
@@ -40,8 +38,6 @@ export interface UploadImageOptions {
 
 /**
  * Options for the {@link ImageUploadErrorHandler} callback.
- *
- * @public
  */
 export interface ImageUploadErrorHandlerOptions {
   /**
@@ -60,8 +56,6 @@ export interface ImageUploadErrorHandlerOptions {
 
 /**
  * A handler to be called when an error occurs during the upload.
- *
- * @public
  */
 export type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) => void
 
@@ -70,8 +64,6 @@ export type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) 
  * temporary URL which is replaced once the upload completes.
  *
  * @param options
- *
- * @public
  */
 export function uploadImage({
   uploader,

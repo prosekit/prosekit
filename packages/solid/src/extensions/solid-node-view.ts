@@ -11,20 +11,12 @@ import { Portal } from 'solid-js/web'
 
 import { hidePortalDiv } from './helpers.ts'
 
-/**
- * @public
- */
 export interface SolidNodeViewProps extends NodeViewContextProps {}
 
-/**
- * @public
- */
 export type SolidNodeViewComponent = Component<SolidNodeViewProps>
 
 /**
  * Options for {@link defineSolidNodeView}.
- *
- * @public
  */
 export interface SolidNodeViewOptions extends CoreNodeViewUserOptions<SolidNodeViewComponent> {
   /**
@@ -87,8 +79,6 @@ export function defineSolidNodeViewFactory(
 
 /**
  * Defines a node view using a Solid component.
- *
- * @public
  */
 export function defineSolidNodeView(options: SolidNodeViewOptions): Extension {
   return defineNodeViewComponent<SolidNodeViewOptions>({

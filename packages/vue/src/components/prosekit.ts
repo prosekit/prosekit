@@ -11,8 +11,6 @@ export interface ProseKitProps {
 
 /**
  * The root component for a ProseKit editor.
- *
- * @public
  */
 export const ProseKit: DefineSetupFnComponent<ProseKitProps> = defineComponent<ProseKitProps>({
   name: 'ProseKit',

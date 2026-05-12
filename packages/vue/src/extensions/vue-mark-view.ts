@@ -9,20 +9,12 @@ import {
 } from '@prosemirror-adapter/vue'
 import { defineComponent, h, markRaw, Teleport, type DefineComponent } from 'vue'
 
-/**
- * @public
- */
 export interface VueMarkViewProps extends MarkViewContext {}
 
-/**
- * @public
- */
 export type VueMarkViewComponent = DefineComponent<VueMarkViewProps, any, any>
 
 /**
  * Options for {@link defineVueMarkView}.
- *
- * @public
  */
 export interface VueMarkViewOptions extends CoreMarkViewUserOptions<VueMarkViewComponent> {
   /**
@@ -64,8 +56,6 @@ export function defineVueMarkViewFactory(
 
 /**
  * Defines a mark view using a Vue component.
- *
- * @public
  */
 export function defineVueMarkView(options: VueMarkViewOptions): Extension {
   return defineMarkViewComponent<VueMarkViewOptions>({

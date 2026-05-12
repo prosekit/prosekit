@@ -10,8 +10,6 @@ export type BackgroundColorExtension = Union<[BackgroundColorSpecExtension, Back
 
 /**
  * Defines the `backgroundColor` mark and some commands for it.
- *
- * @public
  */
 export function defineBackgroundColor(): BackgroundColorExtension {
   return union(

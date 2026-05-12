@@ -48,8 +48,6 @@ export const selectBlockCommand: Command = (state, dispatch) => {
  * Returns a command to expand the text selection to cover the current block
  * node. If the text selection spans multiple blocks, it will select all
  * blocks in the selection.
- *
- * @public
  */
 export function selectBlock(): Command {
   return selectBlockCommand

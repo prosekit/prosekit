@@ -17,8 +17,6 @@
  *
  * const myExtensionWithHighPriority = withPriority(myExtension, Priority.high)
  * ```
- *
- * @public
  */
 const Priority = {
   lowest: 0,
@@ -47,8 +45,6 @@ const Priority = {
  *
  * const myExtensionWithHighPriority = withPriority(myExtension, Priority.high)
  * ```
- *
- * @public
  */
 type Priority = typeof Priority[keyof typeof Priority]
 

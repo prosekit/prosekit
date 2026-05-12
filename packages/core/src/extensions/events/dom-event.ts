@@ -14,8 +14,6 @@ import { pluginFacet, type PluginPayload } from '../plugin.ts'
  * `true` to indicate that it handled the given event. When returning `true`,
  * you are responsible for calling `event.preventDefault()` yourself (or not, if
  * you want to allow the default behavior).
- *
- * @public
  */
 export type DOMEventHandler<Event extends keyof DOMEventMap = string> = (
   view: EditorView,
@@ -36,8 +34,6 @@ export function defineDomEventFacetPayload(
 
 /**
  * Register a new event handler for the given event type.
- *
- * @public
  */
 export function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(
   event: Event,

@@ -1,7 +1,5 @@
 /**
  * The attributes of a list node.
- *
- * @public
  */
 export interface ListAttrs {
   /**

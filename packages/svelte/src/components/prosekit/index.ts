@@ -10,7 +10,5 @@ export interface ProseKitProps {
 
 /**
  * The root component for a ProseKit editor.
- *
- * @public
  */
 export const ProseKit = Comp as Component<ProseKitProps>

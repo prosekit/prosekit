@@ -4,9 +4,6 @@ import { tableNodes } from 'prosemirror-tables'
 
 const cellContent = 'block+'
 
-/**
- * @public
- */
 export interface CellAttrs {
   colspan?: number
   rowspan?: number

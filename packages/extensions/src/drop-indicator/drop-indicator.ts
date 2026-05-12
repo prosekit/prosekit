@@ -18,8 +18,6 @@ export type DropIndicatorExtension = PlainExtension
  * You can add this extension multiple times. If any extension has `onDrag`
  * callback defined, and it returns `false`, then the drop point will be
  * discarded.
- *
- * @public
  */
 export function defineDropIndicator(
   options?: DropIndicatorOptions,
@@ -29,7 +27,5 @@ export function defineDropIndicator(
 
 /**
  * Options for {@link defineDropIndicator}.
- *
- * @public
  */
 export interface DropIndicatorOptions extends DropIndicatorPluginOptions {}

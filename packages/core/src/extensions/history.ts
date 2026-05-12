@@ -24,8 +24,6 @@ const commands = {
 
 /**
  * Options for {@link defineHistory}.
- *
- * @public
  */
 export interface HistoryOptions {
   /**
@@ -59,8 +57,6 @@ export type HistoryExtension = Extension<{
  * Add undo/redo history to the editor.
  *
  * @param options
- *
- * @public
  */
 export function defineHistory({
   depth = 200,

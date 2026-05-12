@@ -5,9 +5,6 @@ import type { Command } from '@prosekit/pm/state'
 import type { CommandCreator } from '../types/extension-command.ts'
 import { getMarkType } from '../utils/get-mark-type.ts'
 
-/**
- * @public
- */
 export interface ToggleMarkOptions {
   /**
    * The mark type to toggle.
@@ -42,8 +39,6 @@ export interface ToggleMarkOptions {
  * Returns a command that toggles the given mark with the given attributes.
  *
  * @param options
- *
- * @public
  */
 export function toggleMark({
   type,

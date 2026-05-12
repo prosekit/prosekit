@@ -3,9 +3,6 @@ import { CellSelection } from 'prosemirror-tables'
 
 import { findCellPos } from '../table-utils.ts'
 
-/**
- * @public
- */
 export interface SelectTableCellOptions {
   /**
    * A hit position of the table cell to select from. By default, the selection
@@ -14,9 +11,6 @@ export interface SelectTableCellOptions {
   pos?: number
 }
 
-/**
- * @public
- */
 export function selectTableCell(options?: SelectTableCellOptions): Command {
   return (state, dispatch) => {
     const $cellPos = findCellPos(

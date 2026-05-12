@@ -54,8 +54,6 @@ export type TableCommandsExtension = Extension<{
 
 /**
  * Adds commands for working with `table` nodes.
- *
- * @public
  */
 export function defineTableCommands(): TableCommandsExtension {
   return defineCommands({

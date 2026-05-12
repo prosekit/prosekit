@@ -11,9 +11,6 @@ export type PageBreakExtension = Union<
   [PageBreakSpecExtension, PageBreakCommandsExtension, PageBreakKeymapExtension]
 >
 
-/**
- * @public
- */
 export function definePageBreak(): PageBreakExtension {
   return union(
     definePageBreakSpec(),

@@ -1,8 +1,5 @@
 import { defineNodeSpec, type Extension } from '@prosekit/core'
 
-/**
- * @public
- */
 export interface ImageAttrs {
   src?: string | null
   width?: number | null

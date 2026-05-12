@@ -4,9 +4,6 @@ import type { Command } from '@prosekit/pm/state'
 import type { CommandCreator } from '../types/extension-command.ts'
 import { findParentNodeOfType } from '../utils/find-parent-node-of-type.ts'
 
-/**
- * @public
- */
 export interface RemoveNodeOptions {
   /**
    * The type of the node to remove.
@@ -22,8 +19,6 @@ export interface RemoveNodeOptions {
 
 /**
  * Returns a command to remove the nearest ancestor node of a specific type from the current position.
- *
- * @public
  */
 export function removeNode(options: RemoveNodeOptions): Command {
   return (state, dispatch) => {

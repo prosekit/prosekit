@@ -11,20 +11,12 @@ import { Portal } from 'solid-js/web'
 
 import { hidePortalDiv } from './helpers.ts'
 
-/**
- * @public
- */
 export interface SolidMarkViewProps extends MarkViewContextProps {}
 
-/**
- * @public
- */
 export type SolidMarkViewComponent = Component<SolidMarkViewProps>
 
 /**
  * Options for {@link defineSolidMarkView}.
- *
- * @public
  */
 export interface SolidMarkViewOptions extends CoreMarkViewUserOptions<SolidMarkViewComponent> {
   /**
@@ -72,8 +64,6 @@ export function defineSolidMarkViewFactory(
 
 /**
  * Defines a mark view using a Solid component.
- *
- * @public
  */
 export function defineSolidMarkView(options: SolidMarkViewOptions): Extension {
   return defineMarkViewComponent<SolidMarkViewOptions>({

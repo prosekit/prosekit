@@ -47,9 +47,6 @@ export interface YjsOptions {
  */
 export type YjsExtension = Union<[YjsCommandsExtension, PlainExtension]>
 
-/**
- * @public
- */
 export function defineYjs(options: YjsOptions): YjsExtension {
   const { doc, awareness, sync, undo, cursor } = options
   const fragment = options.fragment ?? doc.getXmlFragment('prosemirror')

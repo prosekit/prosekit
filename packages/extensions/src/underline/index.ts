@@ -71,9 +71,6 @@ export type UnderlineExtension = Union<
   [UnderlineSpecExtension, UnderlineCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineUnderline(): UnderlineExtension {
   return union(
     defineUnderlineSpec(),

@@ -6,8 +6,6 @@ import type { TableRole } from 'prosemirror-tables'
 /**
  * When the selection is in a table node, create a default block after the table
  * table, and move the cursor there.
- *
- * @public
  */
 export const exitTable: Command = (state, dispatch) => {
   const { $head, $anchor } = state.selection

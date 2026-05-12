@@ -10,8 +10,6 @@ export type TextColorExtension = Union<[TextColorSpecExtension, TextColorCommand
 
 /**
  * Defines the `textColor` mark and some commands for it.
- *
- * @public
  */
 export function defineTextColor(): TextColorExtension {
   return union(

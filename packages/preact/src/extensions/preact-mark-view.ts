@@ -9,20 +9,12 @@ import {
 import { createElement, type ComponentType } from 'preact'
 import { createPortal } from 'preact/compat'
 
-/**
- * @public
- */
 export interface PreactMarkViewProps extends MarkViewContext {}
 
-/**
- * @public
- */
 export type PreactMarkViewComponent = ComponentType<PreactMarkViewProps>
 
 /**
  * Options for {@link definePreactMarkView}.
- *
- * @public
  */
 export interface PreactMarkViewOptions extends CoreMarkViewUserOptions<PreactMarkViewComponent> {
   /**
@@ -58,8 +50,6 @@ export function definePreactMarkViewFactory(
 
 /**
  * Defines a mark view using a Preact component.
- *
- * @public
  */
 export function definePreactMarkView(options: PreactMarkViewOptions): Extension {
   return defineMarkViewComponent<PreactMarkViewOptions>({

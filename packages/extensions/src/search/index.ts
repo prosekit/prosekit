@@ -16,8 +16,6 @@ import {
 
 /**
  * Options for {@link defineSearchQuery}
- *
- * @public
  */
 export interface SearchQueryOptions {
   /**
@@ -63,8 +61,6 @@ export interface SearchQueryOptions {
 
 /**
  * Defines an extension that stores a current search query and replace string.
- *
- * @public
  */
 export function defineSearchQuery(options: SearchQueryOptions): PlainExtension {
   const query = new SearchQuery(options)
@@ -118,8 +114,6 @@ export type SearchCommandsExtension = Extension<{
 
 /**
  * Defines commands for search and replace.
- *
- * @public
  */
 export function defineSearchCommands(): SearchCommandsExtension {
   return defineCommands({

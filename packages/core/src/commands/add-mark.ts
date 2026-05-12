@@ -4,9 +4,6 @@ import type { Command } from '@prosekit/pm/state'
 import type { CommandCreator } from '../types/extension-command.ts'
 import { getMarkType } from '../utils/get-mark-type.ts'
 
-/**
- * @public
- */
 export interface AddMarkOptions {
   /**
    * The type of the mark to add.
@@ -31,8 +28,6 @@ export interface AddMarkOptions {
 
 /**
  * Returns a command that adds the given mark with the given attributes.
- *
- * @public
  */
 export function addMark(options: AddMarkOptions): Command {
   return (state, dispatch) => {

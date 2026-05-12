@@ -12,8 +12,6 @@ import { union } from './union.ts'
  *
  * const extension = withPriority(defineMyExtension(), Priority.high)
  * ```
- *
- * @public
  */
 export function withPriority<T extends Extension>(
   extension: T,

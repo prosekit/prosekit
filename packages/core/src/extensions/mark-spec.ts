@@ -11,9 +11,6 @@ import { assert } from '../utils/assert.ts'
 import { mergeSpecs } from '../utils/merge-specs.ts'
 import { wrapOutputSpecAttrs, wrapParseRuleAttrs } from '../utils/output-spec.ts'
 
-/**
- * @public
- */
 export interface MarkSpecOptions<
   MarkName extends string = string,
   Attrs extends AnyAttrs = AnyAttrs,
@@ -29,9 +26,6 @@ export interface MarkSpecOptions<
   attrs?: { [K in keyof Attrs]: AttrSpec<Attrs[K]> }
 }
 
-/**
- * @public
- */
 export interface MarkAttrOptions<
   MarkName extends string = string,
   AttrName extends string = string,
@@ -66,8 +60,6 @@ export interface MarkAttrOptions<
 /**
  * Defines a mark type into the editor schema.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -97,9 +89,6 @@ export function defineMarkSpec<
   }>
 }
 
-/**
- * @public
- */
 export function defineMarkAttr<
   MarkType extends string = string,
   AttrName extends string = string,

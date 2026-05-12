@@ -15,9 +15,6 @@ export type MentionSpecExtension = Extension<{
   }
 }>
 
-/**
- * @public
- */
 export function defineMentionSpec(): MentionSpecExtension {
   return defineNodeSpec<'mention', MentionAttrs>({
     name: 'mention',
@@ -75,9 +72,6 @@ export function defineMentionCommands(): MentionCommandsExtension {
  */
 export type MentionExtension = Union<[MentionSpecExtension, MentionCommandsExtension]>
 
-/**
- * @public
- */
 export function defineMention(): MentionExtension {
   return union(defineMentionSpec(), defineMentionCommands())
 }

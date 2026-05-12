@@ -6,9 +6,6 @@ import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 import { PAGE_CHUNK_TAG_NAME, registerPageChunkElement } from './page-element.ts'
 
-/**
- * @public
- */
 export interface PageRenderingOptions {
   /**
    * The width of the page in px.
@@ -53,9 +50,6 @@ export interface PageRenderingOptions {
   marginLeft?: number
 }
 
-/**
- * @public
- */
 export function definePageRendering(options: PageRenderingOptions = {}): PageRenderingExtension {
   return definePlugin(
     createPageRenderingPlugin(options),

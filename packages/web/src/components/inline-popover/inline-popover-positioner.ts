@@ -11,9 +11,6 @@ import { OverlayPositionerPropsDeclaration, setupOverlayPositioner, type Overlay
 
 import { InlinePopoverStoreContext } from './store.ts'
 
-/**
- * @public
- */
 export interface InlinePopoverPositionerProps extends
   Omit<
     OverlayPositionerProps,

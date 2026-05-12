@@ -10,8 +10,6 @@ export function isProseMirrorNode(value: unknown): value is ProseMirrorNode {
 
 /**
  * Checks if the given object is a {@link Mark} instance.
- *
- * @public
  */
 export function isMark(value: unknown): value is Mark {
   return value instanceof Mark
@@ -19,8 +17,6 @@ export function isMark(value: unknown): value is Mark {
 
 /**
  * Checks if the given object is a {@link Fragment} instance.
- *
- * @public
  */
 export function isFragment(value: unknown): value is Fragment {
   return value instanceof Fragment
@@ -28,8 +24,6 @@ export function isFragment(value: unknown): value is Fragment {
 
 /**
  * Checks if the given object is a {@link Slice} instance.
- *
- * @public
  */
 export function isSlice(value: unknown): value is Slice {
   return value instanceof Slice
@@ -37,8 +31,6 @@ export function isSlice(value: unknown): value is Slice {
 
 /**
  * Checks if the given object is a {@link Selection} instance.
- *
- * @public
  */
 export function isSelection(value: unknown): value is Selection {
   return value instanceof Selection
@@ -46,8 +38,6 @@ export function isSelection(value: unknown): value is Selection {
 
 /**
  * Checks if the given object is a {@link TextSelection} instance.
- *
- * @public
  */
 export function isTextSelection(value: Selection): value is TextSelection {
   return value instanceof TextSelection
@@ -55,8 +45,6 @@ export function isTextSelection(value: Selection): value is TextSelection {
 
 /**
  * Checks if the given object is a {@link NodeSelection} instance.
- *
- * @public
  */
 export function isNodeSelection(value: Selection): value is NodeSelection {
   return value instanceof NodeSelection
@@ -64,8 +52,6 @@ export function isNodeSelection(value: Selection): value is NodeSelection {
 
 /**
  * Checks if the given object is a {@link AllSelection} instance.
- *
- * @public
  */
 export function isAllSelection(value: Selection): value is AllSelection {
   return value instanceof AllSelection

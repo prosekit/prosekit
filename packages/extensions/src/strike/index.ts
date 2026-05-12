@@ -88,9 +88,6 @@ export type StrikeExtension = Union<
   [StrikeSpecExtension, StrikeCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineStrike(): StrikeExtension {
   return union(
     defineStrikeSpec(),

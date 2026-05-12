@@ -13,9 +13,6 @@ import { usePresence } from '@aria-ui/utils'
 
 import { InlinePopoverStoreContext } from './store.ts'
 
-/**
- * @public
- */
 export interface InlinePopoverPopupProps extends OverlayPopupProps {}
 
 /** @internal */

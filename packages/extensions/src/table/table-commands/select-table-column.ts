@@ -3,9 +3,6 @@ import { CellSelection } from 'prosemirror-tables'
 
 import { findCellRange } from '../table-utils.ts'
 
-/**
- * @public
- */
 export interface SelectTableColumnOptions {
   /**
    * A hit position of the table cell to select from. By default, the selection
@@ -20,9 +17,6 @@ export interface SelectTableColumnOptions {
   head?: number
 }
 
-/**
- * @public
- */
 export function selectTableColumn(options?: SelectTableColumnOptions): Command {
   return (state, dispatch) => {
     const range = findCellRange(state.selection, options?.anchor, options?.head)

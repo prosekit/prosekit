@@ -10,9 +10,6 @@ import { defineCodeSpec, type CodeSpecExtension } from './code-spec.ts'
  */
 export type CodeExtension = Union<[CodeSpecExtension, CodeCommandsExtension]>
 
-/**
- * @public
- */
 export function defineCode(): CodeExtension {
   return union(
     defineCodeSpec(),

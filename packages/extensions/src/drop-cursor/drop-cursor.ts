@@ -33,8 +33,6 @@ export type DropCursorExtension = PlainExtension
  * See [prosemirror-dropcursor](https://github.com/ProseMirror/prosemirror-dropcursor) for more information.
  *
  * You probably want to use `<DropIndicator />` component instead of this extension.
- *
- * @public
  */
 export function defineDropCursor(
   options?: DropCursorOptions,

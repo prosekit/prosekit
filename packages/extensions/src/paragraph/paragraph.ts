@@ -11,8 +11,6 @@ import { defineParagraphSpec, type ParagraphSpecExtension } from './paragraph-sp
 export type ParagraphExtension = Union<[ParagraphSpecExtension, ParagraphCommandsExtension]>
 
 /**
- * @public
- *
  * Defines a paragraph node.
  *
  * The paragraph node spec has the highest priority, because it should be the

@@ -23,8 +23,6 @@ export interface ToggleWrapOptions {
  * lifting it up into its parent.
  *
  * @param options
- *
- * @public
  */
 export function toggleWrap(options: ToggleWrapOptions): Command {
   const { type, attrs } = options

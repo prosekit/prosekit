@@ -4,9 +4,6 @@ import type { Command } from '@prosekit/pm/state'
 import type { CommandCreator } from '../types/extension-command.ts'
 import { getMarkType } from '../utils/get-mark-type.ts'
 
-/**
- * @public
- */
 export interface RemoveMarkOptions {
   /**
    * The type of the mark to remove.
@@ -31,8 +28,6 @@ export interface RemoveMarkOptions {
 
 /**
  * Returns a command that removes the given mark.
- *
- * @public
  */
 export function removeMark(options: RemoveMarkOptions): Command {
   return (state, dispatch) => {

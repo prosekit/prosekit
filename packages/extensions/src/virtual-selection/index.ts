@@ -14,8 +14,6 @@ export type VirtualSelectionExtension = PlainExtension
  *
  * This is useful when you want to move the focus to an element outside the
  * editor, but still want to show the selection.
- *
- * @public
  */
 export function defineVirtualSelection(): VirtualSelectionExtension {
   return definePlugin(virtualSelectionPlugin)

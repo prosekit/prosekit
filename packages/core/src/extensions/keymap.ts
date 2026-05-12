@@ -11,8 +11,6 @@ import { pluginFacet, type PluginPayload } from './plugin.ts'
 /**
  * A set of keybindings. Please read the
  * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
- *
- * @public
  */
 export interface Keymap {
   [key: string]: Command
@@ -21,8 +19,6 @@ export interface Keymap {
 /**
  * Adds a set of keybindings to the editor. Please read the
  * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
- *
- * @public
  */
 export function defineKeymap(keymap: Keymap): PlainExtension {
   return defineFacetPayload(keymapFacet, [keymap]) as PlainExtension

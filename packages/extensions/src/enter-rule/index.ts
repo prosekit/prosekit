@@ -12,15 +12,11 @@ export type { EnterRuleHandler, EnterRuleHandlerOptions }
 
 /**
  * Options for {@link defineEnterRule}.
- *
- * @public
  */
 export interface EnterRuleOptions extends EnterRule {}
 
 /**
  * Options for {@link defineTextBlockEnterRule}.
- *
- * @public
  */
 export interface TextBlockEnterRuleOptions extends TextBlockEnterRuleOptionsBase {}
 
@@ -30,8 +26,6 @@ export interface TextBlockEnterRuleOptions extends TextBlockEnterRuleOptionsBase
  * with `$`.
  *
  * @param options
- *
- * @public
  */
 export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
   return defineFacetPayload(enterRuleFacet, [options]) as PlainExtension
@@ -43,8 +37,6 @@ export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
  * See also {@link defineEnterRule}.
  *
  * @param options
- *
- * @public
  */
 export function defineTextBlockEnterRule(options: TextBlockEnterRuleOptions): PlainExtension {
   return defineEnterRule(createTextBlockEnterRule(options))

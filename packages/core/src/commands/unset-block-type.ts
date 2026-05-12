@@ -4,9 +4,6 @@ import { ReplaceAroundStep } from '@prosekit/pm/transform'
 
 import type { CommandCreator } from '../types/extension-command.ts'
 
-/**
- * @public
- */
 export interface UnsetBlockTypeOptions {
   /**
    * The start position of the document. By default it will be the start position of current selection.
@@ -22,8 +19,6 @@ export interface UnsetBlockTypeOptions {
 /**
  * Returns a command that set the type of all textblocks between the given range
  * to the default type (usually `paragraph`).
- *
- * @public
  */
 export function unsetBlockType(options?: UnsetBlockTypeOptions): Command {
   return (state, dispatch) => {

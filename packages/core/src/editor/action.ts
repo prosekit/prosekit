@@ -11,8 +11,6 @@ import { isProseMirrorNode } from '../utils/type-assertion.ts'
 
 /**
  * Available children parameters for {@link NodeAction} and {@link MarkAction}.
- *
- * @public
  */
 export type NodeChild = ProseMirrorNode | string | NodeChild[]
 
@@ -22,8 +20,6 @@ export type NodeChild = ProseMirrorNode | string | NodeChild[]
  *
  * It also has a `isActive` method for checking if the node is active in the
  * current editor selection.
- *
- * @public
  */
 export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
   /**
@@ -50,8 +46,6 @@ export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
  *
  * It also has a `isActive` method for checking if the mark is active in the
  * current editor selection.
- *
- * @public
  */
 export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
   /**

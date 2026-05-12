@@ -3,8 +3,6 @@ import type { Command } from '@prosekit/pm/state'
 import type { CommandCreator } from '../types/extension-command.ts'
 
 /**
- * @public
- *
  * Options for {@link unsetMark}.
  */
 export interface UnsetMarkOptions {
@@ -21,8 +19,6 @@ export interface UnsetMarkOptions {
 
 /**
  * Returns a command that removes all marks.
- *
- * @public
  */
 export function unsetMark(options?: UnsetMarkOptions): Command {
   return (state, dispatch) => {

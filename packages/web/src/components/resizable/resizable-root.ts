@@ -13,9 +13,6 @@ import {
   type OnResizeStart,
 } from './context.ts'
 
-/**
- * @public
- */
 export interface ResizableRootProps {
   /**
    * The width of the resizable element.
@@ -48,9 +45,6 @@ export const ResizableRootPropsDeclaration: PropsDeclaration<ResizableRootProps>
   aspectRatio: { default: null, attribute: 'data-aspect-ratio', type: 'json' },
 })
 
-/**
- * @public
- */
 export interface ResizableRootEvents {
   /**
    * Emitted when a resize operation starts.
@@ -63,9 +57,6 @@ export interface ResizableRootEvents {
   resizeEnd: ResizeEndEvent
 }
 
-/**
- * @public
- */
 export class ResizeStartEvent extends Event {
   readonly detail: {
     readonly width: number
@@ -77,9 +68,6 @@ export class ResizeStartEvent extends Event {
   }
 }
 
-/**
- * @public
- */
 export class ResizeEndEvent extends Event {
   readonly detail: {
     readonly width: number

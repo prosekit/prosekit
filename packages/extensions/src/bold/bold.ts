@@ -10,9 +10,6 @@ import { defineBoldSpec, type BoldSpecExtension } from './bold-spec.ts'
  */
 export type BoldExtension = Union<[BoldSpecExtension, BoldCommandsExtension]>
 
-/**
- * @public
- */
 export function defineBold(): BoldExtension {
   return union(
     defineBoldSpec(),

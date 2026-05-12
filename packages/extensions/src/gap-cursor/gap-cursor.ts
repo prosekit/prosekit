@@ -17,8 +17,6 @@ export type GapCursorExtension = PlainExtension
  * See
  * [prosemirror-gapcursor](https://github.com/ProseMirror/prosemirror-gapcursor)
  * for more information.
- *
- * @public
  */
 export function defineGapCursor(): GapCursorExtension {
   return definePlugin(() => gapCursor())

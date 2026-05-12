@@ -11,8 +11,6 @@ export type ProseKitProps = ParentProps<{
 
 /**
  * The root component for a ProseKit editor.
- *
- * @public
  */
 export const ProseKit: Component<ProseKitProps> = (props) => {
   return createComponent(EditorContextProvider, {

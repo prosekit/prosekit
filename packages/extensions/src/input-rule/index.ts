@@ -17,8 +17,6 @@ import type { Plugin } from '@prosekit/pm/state'
  * Defines an input rule extension.
  *
  * @param rule - The ProseMirror input rule to add.
- *
- * @public
  */
 export function defineInputRule(rule: InputRule): PlainExtension {
   return defineInputRuleFacetPayload(() => rule)
@@ -26,8 +24,6 @@ export function defineInputRule(rule: InputRule): PlainExtension {
 
 /**
  * Options for {@link defineMarkInputRule}.
- *
- * @public
  */
 export interface MarkInputRuleOptions {
   /**
@@ -113,8 +109,6 @@ export function createMarkInputRule({
 /**
  * Defines an input rule for automatically adding inline marks when a given
  * pattern is typed.
- *
- * @public
  */
 export function defineMarkInputRule(
   options: MarkInputRuleOptions,
@@ -129,8 +123,6 @@ export function defineMarkInputRule(
  * See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.textblockTypeInputRule)
  *
  * @param options
- *
- * @public
  */
 export function defineTextBlockInputRule({
   regex,
@@ -167,8 +159,6 @@ export function defineTextBlockInputRule({
  * See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappingInputRule)
  *
  * @param options
- *
- * @public
  */
 export function defineWrappingInputRule({
   regex,

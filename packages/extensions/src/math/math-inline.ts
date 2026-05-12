@@ -78,7 +78,6 @@ export type MathInlineExtension = Union<[MathInlineSpecExtension]>
  * Defines node `mathInline` and related functionalities.
  *
  * @param options
- * @public
  */
 export function defineMathInline(options: MathInlineOptions): MathInlineExtension {
   return union(

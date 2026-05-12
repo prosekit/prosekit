@@ -8,9 +8,6 @@ import { defineImageSpec, type ImageSpecExtension } from './image-spec.ts'
  */
 export type ImageExtension = Union<[ImageSpecExtension, ImageCommandsExtension]>
 
-/**
- * @public
- */
 export function defineImage(): ImageExtension {
   return union(defineImageSpec(), defineImageCommands())
 }

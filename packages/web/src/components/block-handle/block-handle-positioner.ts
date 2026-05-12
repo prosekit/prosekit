@@ -12,9 +12,6 @@ import type { Placement } from '@floating-ui/dom'
 
 import { blockHandleOverlayStoreContext } from './context.ts'
 
-/**
- * @public
- */
 export interface BlockHandlePositionerProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist' | 'flip' | 'shift' | 'hide'> {
   /**
    * The placement of the popover, relative to the hovered block.

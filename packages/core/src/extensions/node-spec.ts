@@ -11,9 +11,6 @@ import { assert } from '../utils/assert.ts'
 import { mergeSpecs } from '../utils/merge-specs.ts'
 import { wrapOutputSpecAttrs, wrapTagParseRuleAttrs } from '../utils/output-spec.ts'
 
-/**
- * @public
- */
 export interface NodeSpecOptions<
   NodeName extends string = string,
   Attrs extends AnyAttrs = AnyAttrs,
@@ -37,9 +34,6 @@ export interface NodeSpecOptions<
   }
 }
 
-/**
- * @public
- */
 export interface NodeAttrOptions<
   NodeName extends string = string,
   AttrName extends string = string,
@@ -83,8 +77,6 @@ export interface NodeAttrOptions<
 /**
  * Defines a node type into the editor schema.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -115,8 +107,6 @@ export function defineNodeSpec<
 
 /**
  * Defines an attribute for a node type.
- *
- * @public
  */
 export function defineNodeAttr<
   NodeType extends string = string,

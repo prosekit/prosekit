@@ -6,17 +6,14 @@ import type { NodeJSON, StateJSON } from '../types/model.ts'
 
 import { getBrowserDocument, getBrowserWindow } from './get-dom-api.ts'
 
-/** @public */
 export interface DOMParserOptions extends ParseOptions {
   DOMParser?: typeof DOMParser
 }
 
-/** @public */
 export interface DOMSerializerOptions {
   DOMSerializer?: { fromSchema: typeof DOMSerializer.fromSchema }
 }
 
-/** @public */
 export interface DOMDocumentOptions {
   /**
    * The Document object to use for DOM operations. If not provided, defaults to
@@ -26,7 +23,6 @@ export interface DOMDocumentOptions {
   document?: Document
 }
 
-/** @public */
 export interface JSONParserOptions {
   /**
    * The editor schema to use.
@@ -38,8 +34,6 @@ export interface JSONParserOptions {
 
 /**
  * Return a JSON object representing this state.
- *
- * @public
  *
  * @example
  *
@@ -54,8 +48,6 @@ export function jsonFromState(state: EditorState): StateJSON {
 
 /**
  * Parse a JSON object to a ProseMirror state.
- *
- * @public
  *
  * @example
  *
@@ -76,8 +68,6 @@ export function stateFromJSON(
 /**
  * Return a JSON object representing this node.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -91,8 +81,6 @@ export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
 
 /**
  * Parse a JSON object to a ProseMirror node.
- *
- * @public
  *
  * @example
  *
@@ -113,8 +101,6 @@ export function nodeFromJSON(
 /**
  * Parse a DOM node to a ProseMirror node.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -134,8 +120,6 @@ export function nodeFromElement(
 
 /**
  * Serialize a ProseMirror node to an HTML element.
- *
- * @public
  *
  * @example
  *
@@ -193,8 +177,6 @@ function htmlFromElement(element: HTMLElement): string {
 /**
  * Parse an HTML string to a ProseMirror node.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -211,8 +193,6 @@ export function nodeFromHTML(
 
 /**
  * Serialize a ProseMirror node to an HTML string
- *
- * @public
  *
  * @example
  *
@@ -233,8 +213,6 @@ export function htmlFromNode(
 /**
  * Serialize an HTML element to a ProseMirror document JSON object.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -251,8 +229,6 @@ export function jsonFromElement(
 
 /**
  * Parse a ProseMirror document JSON object to an HTML element.
- *
- * @public
  *
  * @example
  *
@@ -273,8 +249,6 @@ export function elementFromJSON(
 /**
  * Parse an HTML string to a ProseMirror document JSON object.
  *
- * @public
- *
  * @example
  *
  * ```ts
@@ -291,8 +265,6 @@ export function jsonFromHTML(
 
 /**
  * Parse a ProseMirror document JSON object to an HTML string.
- *
- * @public
  *
  * @example
  *

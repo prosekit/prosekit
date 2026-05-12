@@ -3,9 +3,6 @@ import { InputRule } from '@prosekit/pm/inputrules'
 
 import { defineInputRule } from '../input-rule/index.ts'
 
-/**
- * @public
- */
 export function defineHorizontalRuleInputRule(): PlainExtension {
   return union(
     defineInputRule(

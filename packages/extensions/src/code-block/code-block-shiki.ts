@@ -8,8 +8,6 @@ import { createLazyParser } from './shiki-parser.ts'
 
 /**
  * The options to configure the Shiki highlighter.
- *
- * @public
  */
 export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'themes' | 'langs' | 'engine'> {
   /**
@@ -49,8 +47,6 @@ export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'th
  * - `--prosemirror-highlight-bg`: sets background color
  *
  * @param options - The options to configure the Shiki highlighter.
- *
- * @public
  */
 export function defineCodeBlockShiki({
   nodeTypes,

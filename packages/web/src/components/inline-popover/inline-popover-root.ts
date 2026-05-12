@@ -19,9 +19,6 @@ import { useKeymap } from '../../hooks/use-keymap.ts'
 import { InlinePopoverStoreContext } from './store.ts'
 import { getVirtualSelectionElement } from './virtual-selection-element.ts'
 
-/**
- * @public
- */
 export interface InlinePopoverRootProps extends OverlayRootProps {
   /**
    * The ProseKit editor instance.
@@ -58,9 +55,6 @@ export const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRo
   dismissOnEscape: { default: true, attribute: 'dismiss-on-escape', type: 'boolean' },
 })
 
-/**
- * @public
- */
 export interface InlinePopoverRootEvents {
   /**
    * Emitted when the open state of the popover changes.

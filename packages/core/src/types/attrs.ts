@@ -2,14 +2,9 @@ import type { Attrs } from '@prosekit/pm/model'
 
 /**
  * An object holding the attributes of a node.
-
- * @public
  */
 export type AnyAttrs = Attrs
 
-/**
- * @public
- */
 export type AttrSpec<AttrType = any> = {
   /**
    * The default value for this attribute, to use when no explicit value is

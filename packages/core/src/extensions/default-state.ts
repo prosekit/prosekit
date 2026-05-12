@@ -6,9 +6,6 @@ import type { PlainExtension } from '../types/extension.ts'
 import type { NodeJSON, SelectionJSON } from '../types/model.ts'
 import { getEditorContentJSON } from '../utils/editor-content.ts'
 
-/**
- * @public
- */
 export interface DefaultStateOptions {
   /**
    * The starting document to use when creating the editor. It can be a
@@ -27,8 +24,6 @@ export interface DefaultStateOptions {
  * Define a default state for the editor.
  *
  * @param options
- *
- * @public
  */
 export function defineDefaultState({
   defaultSelection,

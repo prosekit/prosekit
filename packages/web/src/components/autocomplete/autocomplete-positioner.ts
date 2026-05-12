@@ -14,9 +14,6 @@ import { autocompleteStoreContext } from './context.ts'
 const body = typeof document !== 'undefined' && document.querySelector('body')
 const defaultBoundary = body || 'clippingAncestors'
 
-/**
- * @public
- */
 export interface AutocompletePositionerProps extends OverlayPositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.

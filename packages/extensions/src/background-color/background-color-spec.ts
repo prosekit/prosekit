@@ -2,8 +2,6 @@ import { defineMarkSpec, type Extension } from '@prosekit/core'
 
 /**
  * Attributes for the `backgroundColor` mark.
- *
- * @public
  */
 export interface BackgroundColorAttrs {
   color: string

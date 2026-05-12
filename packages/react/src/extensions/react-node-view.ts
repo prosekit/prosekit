@@ -9,20 +9,12 @@ import {
 import { createElement, type ComponentType, type ReactPortal } from 'react'
 import { createPortal } from 'react-dom'
 
-/**
- * @public
- */
 export interface ReactNodeViewProps extends NodeViewContext {}
 
-/**
- * @public
- */
 export type ReactNodeViewComponent = ComponentType<ReactNodeViewProps>
 
 /**
  * Options for {@link defineReactNodeView}.
- *
- * @public
  */
 export interface ReactNodeViewOptions extends CoreNodeViewUserOptions<ReactNodeViewComponent> {
   /**
@@ -59,8 +51,6 @@ export function defineReactNodeViewFactory(
 
 /**
  * Defines a node view using a React component.
- *
- * @public
  */
 export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
   return defineNodeViewComponent<ReactNodeViewOptions>({

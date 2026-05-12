@@ -71,9 +71,6 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
   anchor: { default: null, attribute: false },
 })
 
-/**
- * @public
- */
 export class QueryChangeEvent extends Event {
   /**
    * The current query string.
@@ -86,9 +83,6 @@ export class QueryChangeEvent extends Event {
   }
 }
 
-/**
- * @public
- */
 export interface AutocompleteRootEvents extends ListboxRootEvents {
   /**
    * Fired when the open state changes.

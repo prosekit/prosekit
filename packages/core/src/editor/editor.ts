@@ -24,9 +24,6 @@ import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '../utils/pa
 import { createMarkActions, createNodeActions, type MarkAction, type NodeAction } from './action.ts'
 import { union } from './union.ts'
 
-/**
- * @public
- */
 export interface EditorOptions<E extends Extension> {
   /**
    * The extension to use when creating the editor.
@@ -46,9 +43,6 @@ export interface EditorOptions<E extends Extension> {
   defaultSelection?: SelectionJSON
 }
 
-/**
- * @public
- */
 export interface getDocHTMLOptions extends DOMDocumentOptions {}
 
 /**
@@ -66,9 +60,6 @@ export function setupEditorExtension<E extends Extension>(
   return options.extension
 }
 
-/**
- * @public
- */
 export function createEditor<E extends Extension>(
   options: EditorOptions<E>,
 ): Editor<E> {
@@ -337,9 +328,6 @@ export class EditorInstance {
   }
 }
 
-/**
- * @public
- */
 export class Editor<E extends Extension = any> {
   private instance: EditorInstance
 

@@ -6,9 +6,6 @@ import type { Attrs } from '@prosekit/pm/model'
  */
 export type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
 
-/**
- * @public
- */
 export function defineDoc(): DocExtension {
   return defineNodeSpec({
     name: 'doc',

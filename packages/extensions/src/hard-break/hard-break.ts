@@ -11,9 +11,6 @@ export type HardBreakExtension = Union<
   [HardBreakSpecExtension, HardBreakCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineHardBreak(): HardBreakExtension {
   return union(
     defineHardBreakSpec(),

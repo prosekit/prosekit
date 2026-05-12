@@ -3,9 +3,6 @@ import type { Command } from '@prosekit/pm/state'
 
 import { getNodeTypes } from '../utils/get-node-types.ts'
 
-/**
- * @public
- */
 export interface SetNodeAttrsBetweenOptions {
   /**
    * The type of node to set the attributes of.
@@ -33,8 +30,6 @@ export interface SetNodeAttrsBetweenOptions {
  * `from` and `to` positions.
  *
  * @param options
- *
- * @public
  */
 export function setNodeAttrsBetween(options: SetNodeAttrsBetweenOptions): Command {
   return (state, dispatch) => {

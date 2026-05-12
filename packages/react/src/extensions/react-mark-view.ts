@@ -9,20 +9,12 @@ import {
 import { createElement, type ComponentType, type ReactPortal } from 'react'
 import { createPortal } from 'react-dom'
 
-/**
- * @public
- */
 export interface ReactMarkViewProps extends MarkViewContext {}
 
-/**
- * @public
- */
 export type ReactMarkViewComponent = ComponentType<ReactMarkViewProps>
 
 /**
  * Options for {@link defineReactMarkView}.
- *
- * @public
  */
 export interface ReactMarkViewOptions extends CoreMarkViewUserOptions<ReactMarkViewComponent> {
   /**
@@ -59,8 +51,6 @@ export function defineReactMarkViewFactory(
 
 /**
  * Defines a mark view using a React component.
- *
- * @public
  */
 export function defineReactMarkView(options: ReactMarkViewOptions): Extension {
   return defineMarkViewComponent<ReactMarkViewOptions>({

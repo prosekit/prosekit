@@ -9,20 +9,12 @@ import {
 } from '@prosemirror-adapter/vue'
 import { defineComponent, h, markRaw, Teleport, type DefineComponent } from 'vue'
 
-/**
- * @public
- */
 export interface VueNodeViewProps extends NodeViewContext {}
 
-/**
- * @public
- */
 export type VueNodeViewComponent = DefineComponent<VueNodeViewProps, any, any>
 
 /**
  * Options for {@link defineVueNodeView}.
- *
- * @public
  */
 export interface VueNodeViewOptions extends CoreNodeViewUserOptions<VueNodeViewComponent> {
   /**
@@ -64,8 +56,6 @@ export function defineVueNodeViewFactory(
 
 /**
  * Defines a node view using a Vue component.
- *
- * @public
  */
 export function defineVueNodeView(options: VueNodeViewOptions): Extension {
   return defineNodeViewComponent<VueNodeViewOptions>({

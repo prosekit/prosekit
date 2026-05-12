@@ -85,7 +85,6 @@ export type MathBlockExtension = Union<[MathBlockSpecExtension]>
  * Defines node `mathBlock` and related functionalities.
  *
  * @param options
- * @public
  */
 export function defineMathBlock(options: MathBlockOptions): MathBlockExtension {
   return union(

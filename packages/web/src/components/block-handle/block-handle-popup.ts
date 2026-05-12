@@ -10,9 +10,6 @@ import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps
 
 import { blockHandleOverlayStoreContext } from './context.ts'
 
-/**
- * @public
- */
 export interface BlockHandlePopupProps extends OverlayPopupProps {}
 
 /** @internal */

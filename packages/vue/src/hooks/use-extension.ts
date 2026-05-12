@@ -19,8 +19,6 @@ export interface UseExtensionOptions {
 
 /**
  * Add an extension to the editor.
- *
- * @public
  */
 export function useExtension(
   /**

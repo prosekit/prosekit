@@ -1,7 +1,5 @@
 /**
  * A JSON representation of the prosemirror node.
- *
- * @public
  */
 export interface NodeJSON {
   type: string
@@ -13,8 +11,6 @@ export interface NodeJSON {
 
 /**
  * A JSON representation of the prosemirror selection.
- *
- * @public
  */
 export interface SelectionJSON {
   anchor: number
@@ -24,8 +20,6 @@ export interface SelectionJSON {
 
 /**
  * A JSON representation of the prosemirror state.
- *
- * @public
  */
 export interface StateJSON {
   /**
@@ -41,8 +35,6 @@ export interface StateJSON {
 
 /**
  * A JSON representation of the prosemirror step.
- *
- * @public
  */
 export interface StepJSON {
   /**

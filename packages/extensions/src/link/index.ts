@@ -138,9 +138,6 @@ export function defineLinkMarkRule(): PlainExtension {
  */
 export type LinkExtension = Union<[LinkSpecExtension, LinkCommandsExtension]>
 
-/**
- * @public
- */
 export function defineLink(): LinkExtension {
   return union(
     defineLinkSpec(),

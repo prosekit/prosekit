@@ -10,9 +10,6 @@ import {
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
-/**
- * @public
- */
 export interface TextAlignOptions<NodeName extends string = string> {
   /**
    * The names of node to add the attribute to.
@@ -119,8 +116,6 @@ export type TextAlignExtension<NodeName extends string> = Union<
 /**
  * Adds a `textAlign` attribute to the specified nodes. This will be rendered as
  * a CSS `text-align` style.
- *
- * @public
  */
 export function defineTextAlign<NodeName extends string = string>(
   options: TextAlignOptions<NodeName>,

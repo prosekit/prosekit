@@ -8,9 +8,6 @@ export type HorizontalRuleExtension = Union<
   [HorizontalRuleSpecExtension, HorizontalRuleCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineHorizontalRule(): HorizontalRuleExtension {
   return union(
     defineHorizontalRuleSpec(),

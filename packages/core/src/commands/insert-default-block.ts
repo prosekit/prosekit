@@ -2,9 +2,6 @@ import { TextSelection, type Command } from '@prosekit/pm/state'
 
 import { defaultBlockAt } from '../utils/default-block-at.ts'
 
-/**
- * @public
- */
 export interface InsertDefaultBlockOptions {
   /**
    * The position to insert the node at. By default it will insert after the
@@ -16,8 +13,6 @@ export interface InsertDefaultBlockOptions {
 /**
  * Returns a command that inserts a default block after current selection or at
  * the given position.
- *
- * @public
  */
 export function insertDefaultBlock(
   options?: InsertDefaultBlockOptions,

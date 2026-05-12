@@ -55,8 +55,6 @@ export type BaseCommandsExtension = Extension<{
 
 /**
  * Add some base commands
- *
- * @public
  */
 export function defineBaseCommands(): BaseCommandsExtension {
   return defineCommands({

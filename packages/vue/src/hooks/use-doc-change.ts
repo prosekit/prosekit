@@ -5,8 +5,6 @@ import { useExtension, type UseExtensionOptions } from './use-extension.ts'
 
 /**
  * Calls the given handler whenever the editor document changes.
- *
- * @public
  */
 export function useDocChange(
   handler: (doc: ProseMirrorNode) => void,

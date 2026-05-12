@@ -4,9 +4,6 @@ import type { Command } from '@prosekit/pm/state'
 import { findParentNodeOfType } from '../utils/find-parent-node-of-type.ts'
 import { getNodeTypes } from '../utils/get-node-types.ts'
 
-/**
- * @public
- */
 export interface SetNodeAttrsOptions {
   /**
    * The type of node to set the attributes of.
@@ -30,8 +27,6 @@ export interface SetNodeAttrsOptions {
  * Returns a command that sets the attributes of the current node.
  *
  * @param options
- *
- * @public
  */
 export function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command {
   return (state, dispatch) => {

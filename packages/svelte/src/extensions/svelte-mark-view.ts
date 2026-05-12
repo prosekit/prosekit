@@ -8,20 +8,12 @@ import {
 } from '@prosemirror-adapter/svelte'
 import { flushSync, mount, unmount, type Component } from 'svelte'
 
-/**
- * @public
- */
 export interface SvelteMarkViewProps extends MarkViewContext {}
 
-/**
- * @public
- */
 export type SvelteMarkViewComponent = Component<SvelteMarkViewProps>
 
 /**
  * Options for {@link defineSvelteMarkView}.
- *
- * @public
  */
 export interface SvelteMarkViewOptions extends CoreMarkViewUserOptions<SvelteMarkViewComponent> {
   /**
@@ -63,8 +55,6 @@ export function defineSvelteMarkViewFactory(
 
 /**
  * Defines a mark view using a Svelte component.
- *
- * @public
  */
 export function defineSvelteMarkView(
   options: SvelteMarkViewOptions,

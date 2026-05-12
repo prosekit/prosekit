@@ -27,9 +27,6 @@ export type TableExtension = Union<
   ]
 >
 
-/**
- * @public
- */
 export function defineTable(): TableExtension {
   return union(
     defineTableSpec(),

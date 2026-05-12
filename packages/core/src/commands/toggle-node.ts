@@ -5,9 +5,6 @@ import type { Command } from '@prosekit/pm/state'
 import { getNodeType } from '../utils/get-node-type.ts'
 import { isNodeActive } from '../utils/is-node-active.ts'
 
-/**
- * @public
- */
 export interface ToggleNodeOptions {
   /**
    * The type of the node to toggle.
@@ -25,8 +22,6 @@ export interface ToggleNodeOptions {
  * with the given attributes.
  *
  * @param options
- *
- * @public
  */
 export function toggleNode({ type, attrs }: ToggleNodeOptions): Command {
   return (state, dispatch, view) => {

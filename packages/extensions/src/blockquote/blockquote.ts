@@ -12,9 +12,6 @@ export type BlockquoteExtension = Union<
   [BlockquoteSpecExtension, BlockquoteCommandsExtension]
 >
 
-/**
- * @public
- */
 export function defineBlockquote(): BlockquoteExtension {
   return union(
     defineBlockquoteSpec(),

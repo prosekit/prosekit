@@ -10,8 +10,6 @@ export type ModClickPreventionExtension = PlainExtension
 /**
  * By default, clicking a node while holding the mod key will select the node. This
  * extension disables that behavior.
- *
- * @public
  */
 export function defineModClickPrevention(): ModClickPreventionExtension {
   return definePlugin(new Plugin({ key, props: { handleClick } }))

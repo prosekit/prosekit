@@ -9,20 +9,12 @@ import {
 import { createElement, type ComponentType } from 'preact'
 import { createPortal } from 'preact/compat'
 
-/**
- * @public
- */
 export interface PreactNodeViewProps extends NodeViewContext {}
 
-/**
- * @public
- */
 export type PreactNodeViewComponent = ComponentType<PreactNodeViewProps>
 
 /**
  * Options for {@link definePreactNodeView}.
- *
- * @public
  */
 export interface PreactNodeViewOptions extends CoreNodeViewUserOptions<PreactNodeViewComponent> {
   /**
@@ -58,8 +50,6 @@ export function definePreactNodeViewFactory(
 
 /**
  * Defines a node view using a Preact component.
- *
- * @public
  */
 export function definePreactNodeView(options: PreactNodeViewOptions): Extension {
   return defineNodeViewComponent<PreactNodeViewOptions>({

@@ -30,8 +30,6 @@ import { assert } from '../utils/assert.ts'
  *   ])
  * }
  * ```
- *
- * @public
  */
 function union<const E extends readonly Extension[]>(...exts: E): Union<E>
 function union<const E extends readonly Extension[]>(exts: E): Union<E>

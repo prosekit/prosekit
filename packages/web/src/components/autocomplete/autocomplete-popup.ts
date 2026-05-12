@@ -23,14 +23,8 @@ import { useNoFocus } from '../../utils/use-no-focus.ts'
 
 import { autocompleteStoreContext } from './context.ts'
 
-/**
- * @public
- */
 export interface AutocompletePopupProps extends OverlayPopupProps {}
 
-/**
- * @public
- */
 export interface AutocompletePopupEvents extends ListboxRootEvents {}
 
 /** @internal */

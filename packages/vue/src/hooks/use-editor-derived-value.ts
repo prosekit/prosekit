@@ -20,8 +20,6 @@ export interface UseEditorDerivedOptions<E extends Extension = any> {
  *
  * It returns a shallow ref of the derived value that updates whenever the editor
  * state changes.
- *
- * @public
  */
 export function useEditorDerivedValue<E extends Extension, Derived>(
   /**

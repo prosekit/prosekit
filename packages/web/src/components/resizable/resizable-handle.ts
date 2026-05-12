@@ -5,9 +5,6 @@ import { getWindow } from '@ocavue/utils'
 import { calcResize } from './calc-resize.ts'
 import { onResizeContext, onResizeEndContext, onResizeStartContext } from './context.ts'
 
-/**
- * @public
- */
 export interface ResizableHandleProps {
   /**
    * The position of the handle.

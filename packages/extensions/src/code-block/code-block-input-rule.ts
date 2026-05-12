@@ -7,8 +7,6 @@ import type { CodeBlockAttrs } from './code-block-types.ts'
 
 /**
  * Adds input rules for `codeBlock` nodes.
- *
- * @public
  */
 export function defineCodeBlockInputRule(): PlainExtension {
   return defineTextBlockInputRule({
@@ -20,8 +18,6 @@ export function defineCodeBlockInputRule(): PlainExtension {
 
 /**
  * Adds enter rules for `codeBlock` nodes.
- *
- * @public
  */
 export function defineCodeBlockEnterRule(): PlainExtension {
   return defineTextBlockEnterRule({

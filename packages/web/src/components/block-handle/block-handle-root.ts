@@ -38,9 +38,6 @@ export const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootPr
   editor: { default: null, attribute: false },
 })
 
-/**
- * @public
- */
 export class BlockHandleStateChangeEvent extends Event {
   /**
    * The currently hovered block's node and position, or `null` if no block is hovered.
@@ -52,9 +49,6 @@ export class BlockHandleStateChangeEvent extends Event {
   }
 }
 
-/**
- * @public
- */
 export interface BlockHandleRootEvents {
   /**
    * Fired when the hovered block changes.

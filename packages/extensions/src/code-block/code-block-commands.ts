@@ -16,8 +16,6 @@ export type CodeBlockCommandsExtension = Extension<{
 
 /**
  * Adds commands for working with `codeBlock` nodes.
- *
- * @public
  */
 export function defineCodeBlockCommands(): CodeBlockCommandsExtension {
   return defineCommands({

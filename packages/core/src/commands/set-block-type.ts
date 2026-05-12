@@ -4,9 +4,6 @@ import type { Command } from '@prosekit/pm/state'
 import { getCustomSelection } from '../utils/get-custom-selection.ts'
 import { getNodeType } from '../utils/get-node-type.ts'
 
-/**
- * @public
- */
 export interface SetBlockTypeOptions {
   type: NodeType | string
   attrs?: Attrs | null
@@ -17,8 +14,6 @@ export interface SetBlockTypeOptions {
 /**
  * Returns a command that tries to set the selected textblocks to the given node
  * type with the given attributes.
- *
- * @public
  */
 export function setBlockType(options: SetBlockTypeOptions): Command {
   return (state, dispatch) => {

@@ -10,8 +10,6 @@ import { pluginFacet, type PluginPayload } from '../plugin.ts'
  * A function that is called when the editor view is mounted.
  *
  * @param view - The editor view.
- *
- * @public
  */
 export type MountHandler = (view: EditorView) => void
 
@@ -20,22 +18,16 @@ export type MountHandler = (view: EditorView) => void
  *
  * @param view - The editor view.
  * @param prevState - The previous editor state.
- *
- * @public
  */
 export type UpdateHandler = (view: EditorView, prevState: EditorState) => void
 
 /**
  * A function that is called when the editor view is unmounted.
- *
- * @public
  */
 export type UnmountHandler = () => void
 
 /**
  * Registers a event handler that is called when the editor view is mounted.
- *
- * @public
  */
 export function defineMountHandler(handler: MountHandler): PlainExtension {
   return definePluginViewFacetPayload(['mount', handler])
@@ -43,8 +35,6 @@ export function defineMountHandler(handler: MountHandler): PlainExtension {
 
 /**
  * Registers a event handler that is called when the editor state is updated.
- *
- * @public
  */
 export function defineUpdateHandler(handler: UpdateHandler): PlainExtension {
   return definePluginViewFacetPayload(['update', handler])
@@ -52,8 +42,6 @@ export function defineUpdateHandler(handler: UpdateHandler): PlainExtension {
 
 /**
  * Registers a event handler that is called when the editor view is unmounted.
- *
- * @public
  */
 export function defineUnmountHandler(handler: UnmountHandler): PlainExtension {
   return definePluginViewFacetPayload(['unmount', handler])

@@ -38,9 +38,6 @@ const customBackspace = chainCommands(
  */
 export type BaseKeymapExtension = PlainExtension
 
-/**
- * @public
- */
 export interface BaseKeymapOptions {
   /**
    * The priority of the keymap.
@@ -64,8 +61,6 @@ export interface BaseKeymapOptions {
  * Defines some basic key bindings.
  *
  * @param options
- *
- * @public
  */
 export function defineBaseKeymap({
   priority = (1 satisfies typeof Priority.low),

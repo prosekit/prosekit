@@ -13,8 +13,6 @@ export type CodeBlockSpecExtension = Extension<{
 
 /**
  * Defines the `codeBlock` node spec.
- *
- * @public
  */
 export function defineCodeBlockSpec(): CodeBlockSpecExtension {
   return defineNodeSpec({

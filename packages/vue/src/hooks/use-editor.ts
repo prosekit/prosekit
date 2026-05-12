@@ -5,8 +5,6 @@ import { useEditorContext } from '../injection/editor-context.ts'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
- *
- * @public
  */
 export function useEditor<E extends Extension = any>(options?: {
   /**

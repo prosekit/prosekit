@@ -12,8 +12,6 @@ import type { PlainExtension } from '../types/extension.ts'
  *
  * @param plugin - The ProseMirror plugin to add, or an array of plugins, or a
  * function that returns one or multiple plugins.
- *
- * @public
  */
 export function definePlugin(
   plugin:

@@ -92,8 +92,6 @@ export type BasicExtension = Union<
  * - {@link defineGapCursor}
  * - {@link defineVirtualSelection}
  * - {@link defineModClickPrevention}
- *
- * @public
  */
 export function defineBasicExtension(): BasicExtension {
   return union(

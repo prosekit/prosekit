@@ -7,8 +7,6 @@ import { splitTextByRegex } from './split-text-by-regex.ts'
 
 /**
  * The options for {@link defineMarkPasteRule}.
- *
- * @public
  */
 export interface MarkPasteRuleOptions {
   /**
@@ -39,8 +37,6 @@ export interface MarkPasteRuleOptions {
 
 /**
  * Defines a paste rule that applies marks based on regex patterns.
- *
- * @public
  */
 export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension {
   return definePasteRule({

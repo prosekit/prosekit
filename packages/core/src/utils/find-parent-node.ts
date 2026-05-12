@@ -1,8 +1,5 @@
 import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 
-/**
- * @public
- */
 export interface FindParentNodeResult {
   /**
    * The closest parent node that satisfies the predicate.
@@ -27,8 +24,6 @@ export interface FindParentNodeResult {
 
 /**
  * Find the closest parent node that satisfies the predicate.
- *
- * @public
  */
 export function findParentNode(
   /**

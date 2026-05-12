@@ -6,8 +6,6 @@ import { useExtension, type UseExtensionOptions } from './use-extension.ts'
 
 /**
  * Calls the given handler whenever the editor state changes.
- *
- * @public
  */
 export function useStateUpdate(
   handler: (state: EditorState) => void,

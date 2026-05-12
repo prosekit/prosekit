@@ -20,8 +20,6 @@ export type CodeBlockExtension = Union<
  * - {@link defineCodeBlockEnterRule}
  * - {@link defineCodeBlockKeymap}
  * - {@link defineCodeBlockCommands}.
- *
- * @public
  */
 export function defineCodeBlock(): CodeBlockExtension {
   return union(

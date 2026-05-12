@@ -95,8 +95,6 @@ export interface AutocompleteRuleOptions {
 
 /**
  * An autocomplete rule that can be used to create an autocomplete extension.
- *
- * @public
  */
 export class AutocompleteRule {
   /** @internal */

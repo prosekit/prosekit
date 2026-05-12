@@ -53,7 +53,6 @@ class TestEditorInstance extends EditorInstance {
 
 /**
  * An editor for testing purposes.
- * @public
  */
 export class TestEditor<E extends Extension = Extension> extends Editor<E> {
   constructor(instance: EditorInstance) {
@@ -82,9 +81,6 @@ export class TestEditor<E extends Extension = Extension> extends Editor<E> {
   }
 }
 
-/**
- * @public
- */
 export function createTestEditor<E extends Extension>(
   options: EditorOptions<E>,
 ): TestEditor<E> {

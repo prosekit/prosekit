@@ -52,9 +52,6 @@ export interface LoroOptions {
  */
 export type LoroExtension = Union<[LoroCommandsExtension, PlainExtension]>
 
-/**
- * @public
- */
 export function defineLoro(options: LoroOptions): LoroExtension {
   const { doc, awareness, presence, sync, undo, cursor } = options
 

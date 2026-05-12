@@ -4,9 +4,6 @@ import { findWrapping } from '@prosekit/pm/transform'
 
 import { getNodeType } from '../utils/get-node-type.ts'
 
-/**
- * @public
- */
 export interface WrapOptions {
   /**
    * The node type to wrap the selected textblock with.
@@ -23,8 +20,6 @@ export interface WrapOptions {
  * Returns a command that wraps the selected textblock with the given node type.
  *
  * @param options
- *
- * @public
  */
 export function wrap(options: WrapOptions): Command {
   return (state, dispatch) => {

@@ -10,9 +10,6 @@ export type TextExtension = Extension<{
   }
 }>
 
-/**
- * @public
- */
 export function defineText(): TextExtension {
   return defineNodeSpec({
     name: 'text',

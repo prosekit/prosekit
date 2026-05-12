@@ -8,20 +8,12 @@ import {
 } from '@prosemirror-adapter/svelte'
 import { flushSync, mount, unmount, type Component } from 'svelte'
 
-/**
- * @public
- */
 export interface SvelteNodeViewProps extends NodeViewContext {}
 
-/**
- * @public
- */
 export type SvelteNodeViewComponent = Component<SvelteNodeViewProps>
 
 /**
  * Options for {@link defineSvelteNodeView}.
- *
- * @public
  */
 export interface SvelteNodeViewOptions extends CoreNodeViewUserOptions<SvelteNodeViewComponent> {
   /**
@@ -63,8 +55,6 @@ export function defineSvelteNodeViewFactory(
 
 /**
  * Defines a node view using a Svelte component.
- *
- * @public
  */
 export function defineSvelteNodeView(
   options: SvelteNodeViewOptions,

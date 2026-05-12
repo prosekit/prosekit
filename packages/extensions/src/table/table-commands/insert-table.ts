@@ -38,9 +38,6 @@ function repeat<T>(node: T, length: number): T[] {
   return Array<T>(length).fill(node)
 }
 
-/**
- * @public
- */
 export interface InsertTableOptions {
   /**
    * The number of rows in the table.
@@ -65,8 +62,6 @@ export interface InsertTableOptions {
  * a header row.
  *
  * @param options
- *
- * @public
  */
 export function insertTable(options: InsertTableOptions): Command {
   return (state, dispatch, view) => {

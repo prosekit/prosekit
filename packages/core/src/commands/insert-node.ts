@@ -6,9 +6,6 @@ import { assert } from '../utils/assert.ts'
 import { getNodeType } from '../utils/get-node-type.ts'
 import { setSelectionAround } from '../utils/set-selection-around.ts'
 
-/**
- * @public
- */
 export interface InsertNodeOptions {
   /**
    * The node to insert. Either this or `type` must be provided.
@@ -35,8 +32,6 @@ export interface InsertNodeOptions {
 /**
  * Returns a command that inserts the given node at the current selection or at
  * the given position.
- *
- * @public
  */
 function insertNode(options: InsertNodeOptions): Command {
   return (state, dispatch) => {

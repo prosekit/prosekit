@@ -81,16 +81,12 @@ function defineEventFacetPayload(payload: EditorEventPayload): PlainExtension {
 }
 
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown}
  */
 export function defineKeyDownHandler(handler: KeyDownHandler): PlainExtension {
   return defineEventFacetPayload(['keyDown', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress}
  */
 export function defineKeyPressHandler(
@@ -99,8 +95,6 @@ export function defineKeyPressHandler(
   return defineEventFacetPayload(['keyPress', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput}
  */
 export function defineTextInputHandler(
@@ -109,24 +103,18 @@ export function defineTextInputHandler(
   return defineEventFacetPayload(['textInput', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn}
  */
 export function defineClickOnHandler(handler: ClickOnHandler): PlainExtension {
   return defineEventFacetPayload(['clickOn', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClick}
  */
 export function defineClickHandler(handler: ClickHandler): PlainExtension {
   return defineEventFacetPayload(['click', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn}
  */
 export function defineDoubleClickOnHandler(
@@ -135,8 +123,6 @@ export function defineDoubleClickOnHandler(
   return defineEventFacetPayload(['doubleClickOn', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick}
  */
 export function defineDoubleClickHandler(
@@ -145,8 +131,6 @@ export function defineDoubleClickHandler(
   return defineEventFacetPayload(['doubleClick', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn}
  */
 export function defineTripleClickOnHandler(
@@ -155,8 +139,6 @@ export function defineTripleClickOnHandler(
   return defineEventFacetPayload(['tripleClickOn', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick}
  */
 export function defineTripleClickHandler(
@@ -165,24 +147,18 @@ export function defineTripleClickHandler(
   return defineEventFacetPayload(['tripleClick', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste}
  */
 export function definePasteHandler(handler: PasteHandler): PlainExtension {
   return defineEventFacetPayload(['paste', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop}
  */
 export function defineDropHandler(handler: DropHandler): PlainExtension {
   return defineEventFacetPayload(['drop', handler])
 }
 /**
- * @public
- *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection}
  */
 export function defineScrollToSelectionHandler(

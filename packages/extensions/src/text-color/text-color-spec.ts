@@ -2,8 +2,6 @@ import { defineMarkSpec, type Extension } from '@prosekit/core'
 
 /**
  * Attributes for the `textColor` mark.
- *
- * @public
  */
 export interface TextColorAttrs {
   color: string

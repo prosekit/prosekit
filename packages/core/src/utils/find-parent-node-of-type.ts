@@ -5,8 +5,6 @@ import { getNodeTypes } from './get-node-types.ts'
 
 /**
  * Finds the closest parent node that matches the given node type.
- *
- * @public
  */
 export function findParentNodeOfType(
   /**

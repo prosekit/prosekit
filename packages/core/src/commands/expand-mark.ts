@@ -3,9 +3,6 @@ import { TextSelection, type Command } from '@prosekit/pm/state'
 
 import { getMarkType } from '../utils/get-mark-type.ts'
 
-/**
- * @public
- */
 export interface ExpandMarkOptions {
   /**
    * The type of the mark to expand.
@@ -15,8 +12,6 @@ export interface ExpandMarkOptions {
 
 /**
  * Expands the selection to include the entire mark at the current position.
- *
- * @public
  */
 export function expandMark(options: ExpandMarkOptions): Command {
   return (state, dispatch) => {

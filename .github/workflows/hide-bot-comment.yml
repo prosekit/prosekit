@@ -3,6 +3,10 @@ name: hide-bot-comment
 on:
   pull_request:
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   hide-bot-comment:
     runs-on: ubuntu-latest

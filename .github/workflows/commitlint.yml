@@ -1,11 +1,13 @@
 name: "commitlint"
 
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - edited
       - synchronize
+
+permissions: {}
 
 jobs:
   lint-pr-title:

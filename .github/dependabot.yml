@@ -6,7 +6,7 @@ updates:
     schedule:
       interval: daily
     cooldown:
-      default-days: 1
+      default-days: 7
       exclude:
         - "@ocavue/*"
         - "@aria-ui/*"
@@ -24,7 +24,7 @@ updates:
     schedule:
       interval: daily
     cooldown:
-      default-days: 1
+      default-days: 7
     groups:
       non-major:
         update-types:

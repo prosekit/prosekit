@@ -1043,8 +1043,8 @@ importers:
         specifier: ^4.4.8
         version: 4.4.8(picomatch@4.0.4)(svelte@5.55.5)(typescript@6.0.3)
       tailwind-merge:
-        specifier: ^3.5.0
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -1130,11 +1130,11 @@ importers:
         specifier: ^1.2.11
         version: 1.2.11
       '@iconify-json/lucide':
-        specifier: ^1.2.105
-        version: 1.2.105
+        specifier: ^1.2.106
+        version: 1.2.106
       '@iconify-json/tabler':
-        specifier: ^1.2.34
-        version: 1.2.34
+        specifier: ^1.2.35
+        version: 1.2.35
       '@manypkg/find-root':
         specifier: ^3.1.0
         version: 3.1.0
@@ -2357,11 +2357,11 @@ packages:
   '@iconify-json/logos@1.2.11':
     resolution: {integrity: sha512-fOo4pGEatuyuCFNL+cwquYMa2Im0oJHRHV7lt/Qqs5Ode/lPImHCQcfTtPzZj7qYMPb/h8YHN3TG54uEowrjNQ==}
 
-  '@iconify-json/lucide@1.2.105':
-    resolution: {integrity: sha512-tbE+cGEixWcRFtW8xkzX1HaGRqp7CDhZb01uPBh7PnRoxXzVET9E73rHOXDdsLKUGoTuYGZKhhX6oirvoy5NDg==}
+  '@iconify-json/lucide@1.2.106':
+    resolution: {integrity: sha512-5nuejHR29A0iQjvLZRRPtuMyj1DA9pzcDMuHD4vmhG7GgLen8haMKiZcZ1IpKVZDwR8wxfcbCv9MsoWHBBAa+g==}
 
-  '@iconify-json/tabler@1.2.34':
-    resolution: {integrity: sha512-WSlE5QrptidM57sCnXkpxZKcrk+oue6OlSJD5+gw8rIjuovOeNlejL/zABBM5kASsxLjoSy738Q8hmKrVzODuA==}
+  '@iconify-json/tabler@1.2.35':
+    resolution: {integrity: sha512-/sJMqHvh5ZWrEERVfDCT5NjVDeKJdhosFtKjJofAVl+P/3AzLiryOQw7WvrfDF25Xa5N/eoOQ15Y1jnhYXxBoQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -4395,6 +4395,9 @@ packages:
 
   ajv@6.14.0:
     resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
+
+  ajv@6.15.0:
+    resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
@@ -6900,6 +6903,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.0:
+    resolution: {integrity: sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   seroval-plugins@1.5.0:
     resolution: {integrity: sha512-EAHqADIQondwRZIdeW2I636zgsODzoBDwb3PT/+7TLDWyw1Dy/Xv7iGUIEXXav7usHDE9HVhOU61irI3EnyyHA==}
     engines: {node: '>=10'}
@@ -7136,8 +7144,8 @@ packages:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
 
-  tailwind-merge@3.5.0:
-    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
@@ -9415,11 +9423,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.105':
+  '@iconify-json/lucide@1.2.106':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.2.34':
+  '@iconify-json/tabler@1.2.35':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -10806,11 +10814,11 @@ snapshots:
       '@typescript-eslint/parser': 8.58.1(eslint@10.3.0(jiti@2.7.0))(typescript@6.0.3)
       '@typescript-eslint/typescript-estree': 8.58.1(typescript@6.0.3)
       '@typescript-eslint/utils': 8.58.1(eslint@10.3.0(jiti@2.7.0))(typescript@6.0.3)
-      ajv: 6.14.0
+      ajv: 6.15.0
       eslint: 10.3.0(jiti@2.7.0)
       json-stable-stringify-without-jsonify: 1.0.1
       lodash.merge: 4.6.2
-      semver: 7.7.4
+      semver: 7.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -10857,7 +10865,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.58.1
       debug: 4.4.3
       minimatch: 10.2.5
-      semver: 7.7.4
+      semver: 7.8.0
       tinyglobby: 0.2.16
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
@@ -11326,6 +11334,13 @@ snapshots:
       ajv: 8.18.0
 
   ajv@6.14.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.4.1
+
+  ajv@6.15.0:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-json-stable-stringify: 2.1.0
@@ -12947,7 +12962,7 @@ snapshots:
       acorn: 8.16.0
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
-      semver: 7.7.4
+      semver: 7.8.0
 
   jsonc-parser@2.3.1: {}
 
@@ -14629,6 +14644,8 @@ snapshots:
 
   semver@7.7.4: {}
 
+  semver@7.8.0: {}
+
   seroval-plugins@1.5.0(seroval@1.5.0):
     dependencies:
       seroval: 1.5.0
@@ -14935,7 +14952,7 @@ snapshots:
 
   tagged-tag@1.0.0: {}
 
-  tailwind-merge@3.5.0: {}
+  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.3.0: {}
 

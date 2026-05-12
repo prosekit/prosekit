@@ -17,6 +17,8 @@ jobs:
       registry: ${{ steps.filter.outputs.registry }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - id: filter
         uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
@@ -33,6 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - uses: ./.github/actions/setup
 
@@ -56,6 +60,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - uses: ./.github/actions/setup
 
@@ -86,16 +92,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Read release tag
         run: |
           v=$(jq -r .version packages/prosekit/package.json)
           echo "RELEASE_TAG=v${v}" >> "$GITHUB_ENV"
 
-      - uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
-        with:
-          commit: ${{ github.sha }}
-          tag: ${{ env.RELEASE_TAG }}
-          body: "Please refer to [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/${{ env.RELEASE_TAG }}/packages/prosekit/CHANGELOG.md) for details."
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create GitHub release
         continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_SHA: ${{ github.sha }}
+        run: |
+          gh release create "${RELEASE_TAG}" \
+            --target "${TARGET_SHA}" \
+            --title "${RELEASE_TAG}" \
+            --notes "Please refer to [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/${RELEASE_TAG}/packages/prosekit/CHANGELOG.md) for details."

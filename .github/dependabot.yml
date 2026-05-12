@@ -16,6 +16,9 @@ updates:
         update-types:
           - minor
           - patch
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
     open-pull-requests-limit: 10
 
   - package-ecosystem: github-actions
@@ -29,3 +32,5 @@ updates:
         update-types:
           - minor
           - patch
+    commit-message:
+      prefix: "chore"

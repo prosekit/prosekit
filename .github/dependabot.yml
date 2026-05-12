@@ -1,0 +1,34 @@
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 1
+      exclude:
+        - "@ocavue/*"
+        - "@aria-ui/*"
+        - "astrobook"
+    groups:
+      non-major:
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: "chore"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 1
+    groups:
+      non-major:
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: "chore"

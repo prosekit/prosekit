@@ -333,7 +333,7 @@
     "react-tweet": "^3.3.0",
     "shadcn-schema": "^0.4.0",
     "svelte-check": "^4.4.8",
-    "tailwind-merge": "^3.5.0",
+    "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "temml": "^0.13.2",
     "tinyexec": "^1.1.2",

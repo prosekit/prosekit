@@ -8,13 +8,13 @@ allowedDeprecatedVersions:
 
 catalog:
   "@tsdown/css": "^0.22.0"
-  "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.5"
-  "@vitest/coverage-v8": "^4.1.5"
-  "@vitest/ui": "^4.1.5"
+  "@types/node": "^25.7.0"
+  "@vitest/browser-playwright": "^4.1.6"
+  "@vitest/coverage-v8": "^4.1.6"
+  "@vitest/ui": "^4.1.6"
   tsdown: "^0.22.0"
   typescript: "~6.0.3"
-  vitest: "^4.1.5"
+  vitest: "^4.1.6"
 
 ignoreWorkspaceRootCheck: true
 
@@ -24,8 +24,6 @@ allowBuilds:
   esbuild: false
   sharp: false
   workerd: false
-
-overrides: {}
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch

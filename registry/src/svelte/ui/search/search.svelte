@@ -24,13 +24,13 @@ const editor = useEditor<SearchCommandsExtension>()
 const extension = $derived(
   searchText
     ? defineSearchQuery({
-        search: searchText,
-        replace: replaceText,
-        caseSensitive,
-        wholeWord,
-        regexp,
-        literal,
-      })
+      search: searchText,
+      replace: replaceText,
+      caseSensitive,
+      wholeWord,
+      regexp,
+      literal,
+    })
     : null,
 )
 

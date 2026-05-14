@@ -39,7 +39,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "@changesets/types": "^6.1.0",
-    "@ocavue/eslint-config": "^4.5.6",
+    "@ocavue/eslint-config": "^4.5.7",
     "@ocavue/tsconfig": "^0.7.1",
     "@size-limit/esbuild-why": "^12.1.0",
     "@size-limit/preset-small-lib": "^12.1.0",

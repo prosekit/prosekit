@@ -26,7 +26,8 @@ const { frameworks, registryName }: Props = Astro.props
   <Fragment slot="svelte">{frameworks.includes('svelte') ? (
     <div>
       <div class="not-content mb-2 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-200">
-        Svelte projects use the <a href="https://www.shadcn-svelte.com/docs/cli" target="_blank" rel="noopener noreferrer"><code>shadcn-svelte</code></a> CLI instead of <code>shadcn</code>.
+        Svelte projects use the <a href="https://www.shadcn-svelte.com/docs/cli" target="_blank" rel="noopener noreferrer"><code
+          >shadcn-svelte</code></a> CLI instead of <code>shadcn</code>.
       </div>
       <Code lang="bash" code={`npx shadcn-svelte@latest add https://unpkg.com/prosekit-registry/dist/r/svelte-${registryName}.json`} />
     </div>
@@ -37,7 +38,8 @@ const { frameworks, registryName }: Props = Astro.props
   <Fragment slot="vue">{frameworks.includes('vue') ? (
     <div>
       <div class="not-content mb-2 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-200">
-        Vue projects use the <a href="https://www.shadcn-vue.com/docs/cli" target="_blank" rel="noopener noreferrer"><code>shadcn-vue</code></a> CLI instead of <code>shadcn</code>.
+        Vue projects use the <a href="https://www.shadcn-vue.com/docs/cli" target="_blank" rel="noopener noreferrer"><code
+          >shadcn-vue</code></a> CLI instead of <code>shadcn</code>.
       </div>
       <Code lang="bash" code={`npx shadcn-vue@latest add https://unpkg.com/prosekit-registry/dist/r/vue-${registryName}.json`} />
     </div>

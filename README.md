@@ -6,19 +6,19 @@ The ultimate toolkit for text editing. Based on [ProseMirror](https://prosemirro
 
 ## Quick Start
 
-You can install a full-featured example with a single command using [shadcn/ui](https://ui.shadcn.com):
+You can install a full-featured example with a single command:
 
 ```bash
-# Use React
+# Use React (shadcn)
 npx shadcn@latest add @prosekit/react-example-full
-# Use Vue
-npx shadcn@latest add @prosekit/vue-example-full
-# Use Preact
+# Use Preact (shadcn)
 npx shadcn@latest add @prosekit/preact-example-full
-# Use Svelte
-npx shadcn@latest add @prosekit/svelte-example-full
-# Use Solid
+# Use Solid (shadcn)
 npx shadcn@latest add @prosekit/solid-example-full
+# Use Vue (shadcn-vue)
+npx shadcn-vue@latest add https://unpkg.com/prosekit-registry/dist/r/vue-example-full.json
+# Use Svelte (shadcn-svelte)
+npx shadcn-svelte@latest add https://unpkg.com/prosekit-registry/dist/r/svelte-example-full.json
 ```
 
 ## Documentation

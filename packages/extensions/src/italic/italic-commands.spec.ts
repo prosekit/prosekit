@@ -1,9 +1,21 @@
+import { defineBaseCommands, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing/index.ts'
+import { defineDoc } from '../doc/index.ts'
+import { defineParagraph } from '../paragraph/index.ts'
+import { setupTestFromExtension } from '../testing/index.ts'
+import { defineText } from '../text/index.ts'
+
+import { defineItalic } from './index.ts'
 
 describe('command', () => {
-  const { editor } = setupTest()
+  const { editor } = setupTestFromExtension(union(
+    defineDoc(),
+    defineParagraph(),
+    defineText(),
+    defineItalic(),
+    defineBaseCommands(),
+  ))
 
   describe('toggleItalic', () => {
     it('can add and remove italic', () => {

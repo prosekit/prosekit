@@ -1208,8 +1208,8 @@ importers:
         specifier: ^1.9.12
         version: 1.9.12
       starlight-theme-nova:
-        specifier: ^0.11.9
-        version: 0.11.9(@astrojs/starlight@0.39.2(astro@6.3.3(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))(typescript@6.0.3))(typescript@6.0.3)
+        specifier: ^0.11.10
+        version: 0.11.10(@astrojs/starlight@0.39.2(astro@6.3.3(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))(typescript@6.0.3))(typescript@6.0.3)
       svelte:
         specifier: ^5.55.5
         version: 5.55.5
@@ -1255,20 +1255,11 @@ packages:
       typescript:
         optional: true
 
-  '@aria-ui/core@0.2.0':
-    resolution: {integrity: sha512-TjgmdWBk1PCV3a0xco0ivcrKnyblCq49pxl9LwJRUsy+8UMBIBHQNmvAlLdaaJw19ulUKgeLzbzBhfcYhnxLeQ==}
-
   '@aria-ui/core@0.2.1':
     resolution: {integrity: sha512-EEh2mIHL4HnfjIgZocxhCCqPRU6EE5eLFQcGw4FOfomil11jIBKtmqCQkz8qJ9Ni3IBoh/5DvUFaY206X0oY6A==}
 
   '@aria-ui/elements@0.1.10':
     resolution: {integrity: sha512-XdykJS7m8cOv2vUAzGmuqWzQksBkqh4GEx4WY3N1zCHFB5tVZ9Omfc4vHDoJOfnI2pux64vJIAi+FWb9hUCKdw==}
-
-  '@aria-ui/elements@0.1.9':
-    resolution: {integrity: sha512-wHEJvqAhM4Dlt6y6Mu5by9uGcVXZ0u/L6qdH9uoZs9/RjYR0vpxVG9MjNsvjJAj4+AXnMugl+tb9BLMXFuieQQ==}
-
-  '@aria-ui/utils@0.1.5':
-    resolution: {integrity: sha512-cgKotjkyeVV1dlTa3Ms6PYc6UURsCSdewlTj0gVjCSCDZrGxZSfe/rYCv6vxagdDTTtsH1KNpDuCU6bO4dlzIw==}
 
   '@aria-ui/utils@0.1.6':
     resolution: {integrity: sha512-zdbOstUfJ6Hq92EZZhGT3CLQgnIl3keBkhoFz//6L8l0IMbtdBjYOkd/4nlSCrppQllQNrGOsUSfYSrWOPr9ZA==}
@@ -6838,8 +6829,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki-twoslash-renderer@0.3.3:
-    resolution: {integrity: sha512-ufQS6JT6XJeUv8aKcHaX5JAcPem9Ai+QJTM/8M6VWeggWxaBe8ZmSeMY8IFl7Qr+X7Xrdl0ibZkOn0hOok6Wdw==}
+  shiki-twoslash-renderer@0.3.4:
+    resolution: {integrity: sha512-YK8co9RVCqAda5uhf6pMmP1AA2LkzhWycZdSKHHSAiX6qS+tLgYfmMpg6OpYR0I3STRELR48Eopd/UMaIMCheA==}
 
   shiki@4.0.2:
     resolution: {integrity: sha512-eAVKTMedR5ckPo4xne/PjYQYrU3qx78gtJZ+sHlXEg5IHhhoQhMfZVzetTYuaJS0L2Ef3AcCRzCHV8T0WI6nIQ==}
@@ -6941,8 +6932,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.11.9:
-    resolution: {integrity: sha512-ClQbGaqU97vhog89dXQoLDVGx9eWCSOGUkFNjLw68rlQDZ7/2AutM9jFXqzD7NSRbxjO5GYox18Ld/6mzMFlrw==}
+  starlight-theme-nova@0.11.10:
+    resolution: {integrity: sha512-Ts6mnYooQXrilowlKmTrTdUjigkyISIf9eTEornD6HoylLjbrZWi/AxAGTRvDzDC9Uv16viuLkBa9AoTDL7/7g==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -7184,11 +7175,11 @@ packages:
     resolution: {integrity: sha512-BQqXRr4UoWI3UPFrtznCLykYHxwxWh53iCB57x092jPMjIlW1wnm3N895g5irpiXmnxUhREBB0n6+y8BHhs4nw==}
     hasBin: true
 
-  twoslash-protocol@0.3.7:
-    resolution: {integrity: sha512-mwDFdclG7DbFW3aZA/CGATzV2efV2uPai90mmRSblqPbrc1Z1cu+DpI5oKMNciGY4rw8EOXc7QGY8O0iw1hnzg==}
+  twoslash-protocol@0.3.8:
+    resolution: {integrity: sha512-HmvAHoiEviK8LqvAQyc9/irkdvwTUiR1fHmNwH/0gq8EHxyBt4PWVPixjEXg6wJu1u6yBrILEWXGK9Kw58/8yQ==}
 
-  twoslash@0.3.7:
-    resolution: {integrity: sha512-f7YgM+6G5e3wRGwMiOV8Z0wfusR4zCcdDPSqgGjpLSiW0ymT9r/dM6g++IvOMtSO0KnP/yGTUFhH04y6uqpL6g==}
+  twoslash@0.3.8:
+    resolution: {integrity: sha512-OeDz0kDl8sqPUN3nr7gqcvOs70f5lZsdhKYTX3/SgB9OvdadzzoYJI/4SBXhXV1HG8E9fLc+e17itoRYTxmoig==}
     peerDependencies:
       typescript: ^5.5.0 || ^6.0.0
 
@@ -8044,13 +8035,6 @@ snapshots:
       oxfmt: 0.49.0(svelte@5.55.5)
       typescript: 6.0.3
 
-  '@aria-ui/core@0.2.0':
-    dependencies:
-      '@ocavue/utils': 1.6.0
-      '@zag-js/dom-query': 1.40.0
-      alien-signals: 3.2.0
-      server-dom-shim: 1.1.0
-
   '@aria-ui/core@0.2.1':
     dependencies:
       '@ocavue/utils': 1.6.0
@@ -8064,19 +8048,6 @@ snapshots:
       '@aria-ui/utils': 0.1.6
       '@floating-ui/dom': 1.7.6
       '@zag-js/dismissable': 1.40.0
-      '@zag-js/dom-query': 1.40.0
-
-  '@aria-ui/elements@0.1.9':
-    dependencies:
-      '@aria-ui/core': 0.2.0
-      '@aria-ui/utils': 0.1.5
-      '@floating-ui/dom': 1.7.6
-      '@zag-js/dismissable': 1.40.0
-      '@zag-js/dom-query': 1.40.0
-
-  '@aria-ui/utils@0.1.5':
-    dependencies:
-      '@aria-ui/core': 0.2.0
       '@zag-js/dom-query': 1.40.0
 
   '@aria-ui/utils@0.1.6':
@@ -10252,7 +10223,7 @@ snapshots:
     dependencies:
       '@shikijs/core': 4.0.2
       '@shikijs/types': 4.0.2
-      twoslash: 0.3.7(typescript@6.0.3)
+      twoslash: 0.3.8(typescript@6.0.3)
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
@@ -14539,14 +14510,14 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki-twoslash-renderer@0.3.3(typescript@6.0.3):
+  shiki-twoslash-renderer@0.3.4(typescript@6.0.3):
     dependencies:
-      '@aria-ui/core': 0.2.0
-      '@aria-ui/elements': 0.1.9
+      '@aria-ui/core': 0.2.1
+      '@aria-ui/elements': 0.1.10
       '@shikijs/twoslash': 4.0.2(typescript@6.0.3)
       '@shikijs/types': 4.0.2
       '@types/hast': 3.0.4
-      twoslash: 0.3.7(typescript@6.0.3)
+      twoslash: 0.3.8(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -14659,10 +14630,10 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.11.9(@astrojs/starlight@0.39.2(astro@6.3.3(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))(typescript@6.0.3))(typescript@6.0.3):
+  starlight-theme-nova@0.11.10(@astrojs/starlight@0.39.2(astro@6.3.3(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))(typescript@6.0.3))(typescript@6.0.3):
     dependencies:
-      '@aria-ui/core': 0.2.0
-      '@aria-ui/utils': 0.1.5
+      '@aria-ui/core': 0.2.1
+      '@aria-ui/utils': 0.1.6
       '@pagefind/default-ui': 1.5.2
       '@shikijs/transformers': 4.0.2
       '@shikijs/twoslash': 4.0.2(typescript@6.0.3)
@@ -14672,7 +14643,7 @@ snapshots:
       hast-util-is-element: 3.0.0
       rehype: 13.0.2
       remark-custom-header-id: 1.0.0
-      shiki-twoslash-renderer: 0.3.3(typescript@6.0.3)
+      shiki-twoslash-renderer: 0.3.4(typescript@6.0.3)
     optionalDependencies:
       '@astrojs/starlight': 0.39.2(astro@6.3.3(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.57.1)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))(typescript@6.0.3)
     transitivePeerDependencies:
@@ -14905,12 +14876,12 @@ snapshots:
       '@turbo/windows-64': 2.9.14
       '@turbo/windows-arm64': 2.9.14
 
-  twoslash-protocol@0.3.7: {}
+  twoslash-protocol@0.3.8: {}
 
-  twoslash@0.3.7(typescript@6.0.3):
+  twoslash@0.3.8(typescript@6.0.3):
     dependencies:
       '@typescript/vfs': 1.6.4(typescript@6.0.3)
-      twoslash-protocol: 0.3.7
+      twoslash-protocol: 0.3.8
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color

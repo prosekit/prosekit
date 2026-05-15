@@ -38,9 +38,5 @@ trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 7 days
 
-# TODO: remove this after the following issues are resolved:
-# https://github.com/sveltejs/language-tools/pull/2985
-# https://github.com/withastro/astro/pull/16433
 peerDependencyRules:
-  allowedVersions:
-    typescript: "6"
+  allowedVersions: {}

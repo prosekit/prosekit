@@ -35,7 +35,7 @@ Unit tests are in `packages/` (`*.spec.ts`). Integration tests are in `registry/
 1. Use [Conventional Commits](https://www.conventionalcommits.org/) for PR titles and commit messages.
 2. Run `pnpm run fix` and `pnpm run typecheck`.
 3. Make sure all tests pass.
-4. If publishing changes, run `pnpm run change` to create a changeset.
+4. If publishing changes, run `pnpm run change` to create a changeset. Write entries as full sentences.
 
 ## Community
 

@@ -34,6 +34,7 @@ export function defineSubSupSpec(): SubSupSpecExtension {
     defineMarkSpec({
       name: 'superscript',
       excludes: 'subscript',
+      inclusive: true,
       parseDOM: [
         { tag: 'sup' },
         {

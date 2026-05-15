@@ -40,3 +40,6 @@ trustPolicyIgnoreAfter: 10080 # 7 days
 
 peerDependencyRules:
   allowedVersions: {}
+
+minimumReleaseAgeExclude:
+  - 'prosemirror-*'

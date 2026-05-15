@@ -1,5 +1,6 @@
-import { defineBaseKeymap, union } from 'prosekit/core'
+import { canUseRegexLookbehind, defineBaseKeymap, union } from 'prosekit/core'
 import { defineDoc } from 'prosekit/extensions/doc'
+import { defineMarkInputRule } from 'prosekit/extensions/input-rule'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineSubscript } from 'prosekit/extensions/subscript'
 import { defineSuperscript } from 'prosekit/extensions/superscript'
@@ -13,6 +14,18 @@ export function defineExtension() {
     defineParagraph(),
     defineSubscript(),
     defineSuperscript(),
+    defineMarkInputRule({
+      regex: canUseRegexLookbehind()
+        ? /(?<=\s|^)~([^\s~]|[^\s~][^~]*[^\s~])~$/
+        : /~([^\s~]|[^\s~][^~]*[^\s~])~$/,
+      type: 'subscript',
+    }),
+    defineMarkInputRule({
+      regex: canUseRegexLookbehind()
+        ? /(?<=\s|^)\^([^\s^]|[^\s^][^^]*[^\s^])\^$/
+        : /\^([^\s^]|[^\s^][^^]*[^\s^])\^$/,
+      type: 'superscript',
+    }),
   )
 }
 

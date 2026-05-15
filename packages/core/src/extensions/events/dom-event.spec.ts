@@ -1,19 +1,16 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { createEditor } from '../../editor/editor.ts'
-import { defineTestExtension } from '../../testing/index.ts'
+import { setupTest } from '../../testing/index.ts'
 
 import { defineDOMEventHandler } from './dom-event.ts'
 
 describe('defineDOMEventHandler', () => {
   it('should register and unregister event handlers dynamically', () => {
-    const div = document.body.appendChild(document.createElement('div'))
+    const { editor } = setupTest()
+    editor.blur()
+
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
-
-    const extension = defineTestExtension()
-    const editor = createEditor({ extension })
-    editor.mount(div)
 
     expect(handleFocus).toHaveBeenCalledTimes(0)
     expect(handleBlur).toHaveBeenCalledTimes(0)

@@ -1,22 +1,16 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { createEditor } from '../../editor/editor.ts'
-import { union } from '../../editor/union.ts'
-import { defineTestExtension } from '../../testing/index.ts'
+import { setupTest } from '../../testing/index.ts'
 
 import { defineFocusChangeHandler } from './focus.ts'
 
 describe('defineFocusChangeHandler', () => {
   it('should call the handler when the editor is focused or blurred', () => {
-    const div = document.body.appendChild(document.createElement('div'))
-    const handleFocusChange = vi.fn()
+    const { editor } = setupTest()
+    editor.blur()
 
-    const extension = union(
-      defineTestExtension(),
-      defineFocusChangeHandler(handleFocusChange),
-    )
-    const editor = createEditor({ extension })
-    editor.mount(div)
+    const handleFocusChange = vi.fn()
+    editor.use(defineFocusChangeHandler(handleFocusChange))
 
     expect(handleFocusChange).toHaveBeenCalledTimes(0)
 

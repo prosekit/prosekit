@@ -47,9 +47,9 @@
     "build:aria-ui": "node build.mjs"
   },
   "dependencies": {
-    "@aria-ui/core": "^0.2.0",
-    "@aria-ui/elements": "^0.1.9",
-    "@aria-ui/utils": "^0.1.5",
+    "@aria-ui/core": "^0.2.1",
+    "@aria-ui/elements": "^0.1.10",
+    "@aria-ui/utils": "^0.1.6",
     "@floating-ui/dom": "^1.7.6",
     "@ocavue/utils": "^1.6.0",
     "@prosekit/core": "workspace:^",

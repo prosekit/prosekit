@@ -15,6 +15,7 @@ export const loaders = {
   'gap-cursor': lazy(() => import('./examples/gap-cursor').then((m) => ({ default: m.ExampleEditor }))),
   'hard-break': lazy(() => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor }))),
   'heading': lazy(() => import('./examples/heading').then((m) => ({ default: m.ExampleEditor }))),
+  'highlight': lazy(() => import('./examples/highlight').then((m) => ({ default: m.ExampleEditor }))),
   'horizontal-rule': lazy(() => import('./examples/horizontal-rule').then((m) => ({ default: m.ExampleEditor }))),
   'image-view': lazy(() => import('./examples/image-view').then((m) => ({ default: m.ExampleEditor }))),
   'inline-menu': lazy(() => import('./examples/inline-menu').then((m) => ({ default: m.ExampleEditor }))),

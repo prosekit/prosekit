@@ -15,6 +15,7 @@ export const loaders = {
   'gap-cursor': defineAsyncComponent(() => import('./examples/gap-cursor').then((m) => m.ExampleEditor)),
   'hard-break': defineAsyncComponent(() => import('./examples/hard-break').then((m) => m.ExampleEditor)),
   'heading': defineAsyncComponent(() => import('./examples/heading').then((m) => m.ExampleEditor)),
+  'highlight': defineAsyncComponent(() => import('./examples/highlight').then((m) => m.ExampleEditor)),
   'horizontal-rule': defineAsyncComponent(() => import('./examples/horizontal-rule').then((m) => m.ExampleEditor)),
   'image-view': defineAsyncComponent(() => import('./examples/image-view').then((m) => m.ExampleEditor)),
   'inline-menu': defineAsyncComponent(() => import('./examples/inline-menu').then((m) => m.ExampleEditor)),

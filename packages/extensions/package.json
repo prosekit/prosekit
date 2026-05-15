@@ -44,6 +44,7 @@
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
     "./hard-break": "./src/hard-break/index.ts",
     "./heading": "./src/heading/index.ts",
+    "./highlight": "./src/highlight/index.ts",
     "./horizontal-rule": "./src/horizontal-rule/index.ts",
     "./image": "./src/image/index.ts",
     "./input-rule": "./src/input-rule/index.ts",
@@ -218,6 +219,10 @@
       "./heading": {
         "types": "./dist/heading.d.ts",
         "default": "./dist/heading.js"
+      },
+      "./highlight": {
+        "types": "./dist/highlight.d.ts",
+        "default": "./dist/highlight.js"
       },
       "./horizontal-rule": {
         "types": "./dist/horizontal-rule.d.ts",
@@ -396,6 +401,9 @@
         ],
         "heading": [
           "./dist/heading.d.ts"
+        ],
+        "highlight": [
+          "./dist/highlight.d.ts"
         ],
         "horizontal-rule": [
           "./dist/horizontal-rule.d.ts"

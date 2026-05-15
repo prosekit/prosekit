@@ -118,28 +118,28 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
       tooltip="Case Sensitive"
       onClick={() => (caseSensitive = !caseSensitive)}
     >
-      <span class="i-lucide-case-sensitive size-5 block"></span>
+      <span class="CSS_CASE_SENSITIVE"></span>
     </Button>
     <Button
       pressed={wholeWord}
       tooltip="Whole Word"
       onClick={() => (wholeWord = !wholeWord)}
     >
-      <span class="i-lucide-whole-word size-5 block"></span>
+      <span class="CSS_ICON_WHOLE_WORD"></span>
     </Button>
     <Button
       pressed={regexp}
       tooltip="Regular Expression"
       onClick={() => (regexp = !regexp)}
     >
-      <span class="i-lucide-braces size-5 block"></span>
+      <span class="CSS_ICON_REGEXP"></span>
     </Button>
     <Button
       pressed={literal}
       tooltip="Literal Escape Sequences"
       onClick={() => (literal = !literal)}
     >
-      <span class="i-lucide-quote size-5 block"></span>
+      <span class="CSS_ICON_LITERAL"></span>
     </Button>
   </div>
   {#if showReplace}

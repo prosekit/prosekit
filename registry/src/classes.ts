@@ -324,3 +324,7 @@ export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical size-5 min-h
 export const CSS_ICON_BLOCKQUOTE = cn('i-lucide-text-quote size-5 block')
 export const CSS_ICON_MINUS = cn('i-lucide-minus size-5 block')
 export const CSS_ICON_IMAGE_ERROR = cn('i-lucide-image-off size-8 block')
+export const CSS_ICON_WHOLE_WORD = cn('i-lucide-whole-word size-5 block')
+export const CSS_ICON_LITERAL = cn("i-lucide-quote size-5 block")
+export const CSS_ICON_REGEXP = cn('i-lucide-braces size-5 block')
+export const CSS_CASE_SENSITIVE = cn('i-lucide-case-sensitive size-5 block') 

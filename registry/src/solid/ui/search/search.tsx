@@ -87,28 +87,28 @@ export default function Search(props: { onClose?: VoidFunction }): JSX.Element {
           tooltip="Case Sensitive"
           onClick={() => setCaseSensitive((value) => !value)}
         >
-          <span class="i-lucide-case-sensitive size-5 block" />
+          <span class="CSS_CASE_SENSITIVE" />
         </Button>
         <Button
           pressed={wholeWord()}
           tooltip="Whole Word"
           onClick={() => setWholeWord((value) => !value)}
         >
-          <span class="i-lucide-whole-word size-5 block" />
+          <span class="CSS_ICON_WHOLE_WORD" />
         </Button>
         <Button
           pressed={regexp()}
           tooltip="Regular Expression"
           onClick={() => setRegexp((value) => !value)}
         >
-          <span class="i-lucide-braces size-5 block" />
+          <span class="CSS_ICON_REGEXP" />
         </Button>
         <Button
           pressed={literal()}
           tooltip="Literal Escape Sequences"
           onClick={() => setLiteral((value) => !value)}
         >
-          <span class="i-lucide-quote size-5 block" />
+          <span class="CSS_ICON_LITERAL" />
         </Button>
       </div>
       {showReplace() && (

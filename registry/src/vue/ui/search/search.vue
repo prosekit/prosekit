@@ -116,28 +116,28 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
         tooltip="Case Sensitive"
         @click="caseSensitive = !caseSensitive"
       >
-        <span class="i-lucide-case-sensitive size-5 block" />
+        <span class="CSS_CASE_SENSITIVE" />
       </Button>
       <Button
         :pressed="wholeWord"
         tooltip="Whole Word"
         @click="wholeWord = !wholeWord"
       >
-        <span class="i-lucide-whole-word size-5 block" />
+        <span class="CSS_ICON_WHOLE_WORD" />
       </Button>
       <Button
         :pressed="regexp"
         tooltip="Regular Expression"
         @click="regexp = !regexp"
       >
-        <span class="i-lucide-braces size-5 block" />
+        <span class="CSS_ICON_REGEXP" />
       </Button>
       <Button
         :pressed="literal"
         tooltip="Literal Escape Sequences"
         @click="literal = !literal"
       >
-        <span class="i-lucide-quote size-5 block" />
+        <span class="CSS_ICON_LITERAL" />
       </Button>
     </div>
     <template v-if="showReplace">

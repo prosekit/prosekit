@@ -3,4 +3,4 @@
 "prosekit": patch
 ---
 
-add subscript and superscript extension
+Add subscript and superscript extensions

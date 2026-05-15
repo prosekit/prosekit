@@ -5,7 +5,12 @@ import { defineMarkInputRule } from '../input-rule/index.ts'
 /**
  * @internal
  */
-export function defineSubSupInputRule(): PlainExtension {
+export type SubSupInputRuleExtension = PlainExtension
+
+/**
+ * @internal
+ */
+export function defineSubSupInputRule(): SubSupInputRuleExtension {
   return union(
     defineMarkInputRule({
       regex: canUseRegexLookbehind()

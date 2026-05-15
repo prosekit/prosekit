@@ -93,8 +93,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.6(@types/node@24.12.2)(@vitest/browser-playwright@4.1.6)(@vitest/coverage-v8@4.1.6)(@vitest/ui@4.1.6)(happy-dom@20.9.0)(jsdom@29.1.1)(vite@8.0.13(@types/node@24.12.2)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))
       wrangler:
-        specifier: ^4.90.0
-        version: 4.90.0
+        specifier: ^4.90.1
+        version: 4.90.1
 
   packages/basic:
     dependencies:
@@ -131,7 +131,7 @@ importers:
         version: 1.99.0
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -158,7 +158,7 @@ importers:
         version: 12.0.0
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -211,7 +211,7 @@ importers:
         version: 0.2.0
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -320,8 +320,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       katex:
-        specifier: ^0.16.45
-        version: 0.16.45
+        specifier: ^0.16.46
+        version: 0.16.46
       loro-crdt:
         specifier: ^1.12.1
         version: 1.12.1
@@ -348,7 +348,7 @@ importers:
         version: 11.0.0
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       type-fest:
         specifier: ^5.6.0
         version: 5.6.0
@@ -388,7 +388,7 @@ importers:
         version: link:../config-vitest
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -431,7 +431,7 @@ importers:
         version: link:../config-vitest
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -471,7 +471,7 @@ importers:
         version: 10.29.1
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -553,7 +553,7 @@ importers:
         version: 5.55.5
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typedoc:
         specifier: ^0.28.19
         version: 0.28.19(typescript@6.0.3)
@@ -629,7 +629,7 @@ importers:
         version: 19.2.6(react@19.2.6)
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -675,7 +675,7 @@ importers:
         version: 1.9.12
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -771,7 +771,7 @@ importers:
         version: 24.12.2
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -829,7 +829,7 @@ importers:
         version: 2.4.10(@vue/compiler-dom@3.5.34)(@vue/server-renderer@3.5.34(vue@3.5.34(typescript@6.0.3)))(vue@3.5.34(typescript@6.0.3))
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -887,7 +887,7 @@ importers:
         version: link:../config-vitest
       tsdown:
         specifier: 'catalog:'
-        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       type-fest:
         specifier: ^5.6.0
         version: 5.6.0
@@ -1013,8 +1013,8 @@ importers:
         specifier: ^1.12.0
         version: 1.12.0
       katex:
-        specifier: ^0.16.45
-        version: 0.16.45
+        specifier: ^0.16.46
+        version: 0.16.46
       lit:
         specifier: ^3.3.2
         version: 3.3.2
@@ -1088,8 +1088,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0(@vue/compiler-dom@3.5.34)(@vue/server-renderer@3.5.34(vue@3.5.34(typescript@6.0.3)))(vitest@4.1.6)(vue@3.5.34(typescript@6.0.3))
       vue-tsc:
-        specifier: ^3.2.8
-        version: 3.2.8(typescript@6.0.3)
+        specifier: ^3.2.9
+        version: 3.2.9(typescript@6.0.3)
       vue-tweet:
         specifier: ^2.4.0
         version: 2.4.0(vue@3.5.34(typescript@6.0.3))
@@ -1130,11 +1130,11 @@ importers:
         specifier: ^1.2.11
         version: 1.2.11
       '@iconify-json/lucide':
-        specifier: ^1.2.105
-        version: 1.2.105
+        specifier: ^1.2.107
+        version: 1.2.107
       '@iconify-json/tabler':
-        specifier: ^1.2.34
-        version: 1.2.34
+        specifier: ^1.2.35
+        version: 1.2.35
       '@manypkg/find-root':
         specifier: ^3.1.0
         version: 3.1.0
@@ -1145,7 +1145,7 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0(vite@7.3.3(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.9.0))
       '@types/jsdom':
-        specifier: ^28.0.1
+        specifier: ^28.0.3
         version: 28.0.3
       '@types/node':
         specifier: 'catalog:'
@@ -1707,32 +1707,32 @@ packages:
       workerd:
         optional: true
 
-  '@cloudflare/workerd-darwin-64@1.20260507.1':
-    resolution: {integrity: sha512-S85aMwcaPJUjKWDiG6iMMnioKWtPLACa6m0j/EhHR1GYfVpnxb974cBc6d25L+sf7jHWHJI2u5hGp0UTJ7MtXQ==}
+  '@cloudflare/workerd-darwin-64@1.20260508.1':
+    resolution: {integrity: sha512-IT3r6VgiSwIesL4AJbxjgxvIxwWZqM7BKkhYAzOKHl4GF2M0TxeOahUIXd+CYXVZgHX8ceEg+MXbEehPelJyNg==}
     engines: {node: '>=16'}
     cpu: [x64]
     os: [darwin]
 
-  '@cloudflare/workerd-darwin-arm64@1.20260507.1':
-    resolution: {integrity: sha512-GMEBu8Zp9Q97HLnf7bWJN4KjWpN5MxpeqdvHjBGWNl8UYprJI0k+Jkp89+Wh5S8vIon+HoVbDfOzPa7VwgL6Eg==}
+  '@cloudflare/workerd-darwin-arm64@1.20260508.1':
+    resolution: {integrity: sha512-JTVsisOJPcNKw0qovPjqyBWYahfdhUh7/9NICiG5wxaEQ45PYKdoqNq0hOAAIqvqoxsKZBvTgcPTJREPqk7avA==}
     engines: {node: '>=16'}
     cpu: [arm64]
     os: [darwin]
 
-  '@cloudflare/workerd-linux-64@1.20260507.1':
-    resolution: {integrity: sha512-QlrKEBdgA3uVc0Ok0Q3+0/CW0CTjgj5ySir1i1YY5FXVv0X6GpwtnB5umjunjF2MFprss+L+iFGZzxcSvMC1nA==}
+  '@cloudflare/workerd-linux-64@1.20260508.1':
+    resolution: {integrity: sha512-zO38pCc27YlsZiPYcaZnosy0/t7abXrRU3VEO1oKfUvnaCpHgphDG+VsrmHL+kntda6hrtNwg2jLeMAqqIjnjw==}
     engines: {node: '>=16'}
     cpu: [x64]
     os: [linux]
 
-  '@cloudflare/workerd-linux-arm64@1.20260507.1':
-    resolution: {integrity: sha512-eGbbupEtK2nh9V9Dhcx3vv3GTKeXqSVNgAEYVCCN0NGS9tl9HbMoHRX/4JL181FKXROMigWBCQVL//qPhsAzBQ==}
+  '@cloudflare/workerd-linux-arm64@1.20260508.1':
+    resolution: {integrity: sha512-XhJa780Ia6MNIrtxn/ruZHS79b9pu5EKPfRNReaUqxy8erPT2fs93axMfFoS9kIkcaRRj/1TOUKcTeAMoywY7w==}
     engines: {node: '>=16'}
     cpu: [arm64]
     os: [linux]
 
-  '@cloudflare/workerd-windows-64@1.20260507.1':
-    resolution: {integrity: sha512-dmClJ/E0BAcuDetQIZFqbeAXejWrG5pysGRMQ6T83Y0IW/7IAamY2zFEkAJ10I5xwZsdHuYsZtzlOxpEXpJs7A==}
+  '@cloudflare/workerd-windows-64@1.20260508.1':
+    resolution: {integrity: sha512-QdDOK3B/Ul1s3QmIwDrFyx9230to6LsNmWcVR8w+TYjNZuRPzqQBgusp78LO7MlqCoEl9dvIcN00jkJnLtBSfw==}
     engines: {node: '>=16'}
     cpu: [x64]
     os: [win32]
@@ -2357,11 +2357,11 @@ packages:
   '@iconify-json/logos@1.2.11':
     resolution: {integrity: sha512-fOo4pGEatuyuCFNL+cwquYMa2Im0oJHRHV7lt/Qqs5Ode/lPImHCQcfTtPzZj7qYMPb/h8YHN3TG54uEowrjNQ==}
 
-  '@iconify-json/lucide@1.2.105':
-    resolution: {integrity: sha512-tbE+cGEixWcRFtW8xkzX1HaGRqp7CDhZb01uPBh7PnRoxXzVET9E73rHOXDdsLKUGoTuYGZKhhX6oirvoy5NDg==}
+  '@iconify-json/lucide@1.2.107':
+    resolution: {integrity: sha512-Q4JmCICVwHqaGhB3ugDFdb4uGXuU/o8OJrJuo1YjeZhGeT3jX5fc//7qMNsCb10VuL2PVDM/CkaqO9chnmI3gg==}
 
-  '@iconify-json/tabler@1.2.34':
-    resolution: {integrity: sha512-WSlE5QrptidM57sCnXkpxZKcrk+oue6OlSJD5+gw8rIjuovOeNlejL/zABBM5kASsxLjoSy738Q8hmKrVzODuA==}
+  '@iconify-json/tabler@1.2.35':
+    resolution: {integrity: sha512-/sJMqHvh5ZWrEERVfDCT5NjVDeKJdhosFtKjJofAVl+P/3AzLiryOQw7WvrfDF25Xa5N/eoOQ15Y1jnhYXxBoQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -4225,8 +4225,8 @@ packages:
   '@vue/devtools-shared@8.1.0':
     resolution: {integrity: sha512-h8uCb4Qs8UT8VdTT5yjY6tOJ//qH7EpxToixR0xqejR55t5OdISIg7AJ7eBkhBs8iu1qG5gY3QQNN1DF1EelAA==}
 
-  '@vue/language-core@3.2.8':
-    resolution: {integrity: sha512-9OiSPQFiAAWNVnXb0d2dcTmcKnFQamhuNES6ayyISrb/mwPWVgoGdAqSfCWqKhQpa3D5gDTcYD+w7ObiheZ81g==}
+  '@vue/language-core@3.2.9':
+    resolution: {integrity: sha512-ie0ojt/0fU/GfIogh+zgHbaYRPlt9S+cLOxcWwF7nTSFh897BVgnFKL2byT4kpp1mlqYWZ2psGwSniyE2xsxYw==}
 
   '@vue/reactivity@3.5.34':
     resolution: {integrity: sha512-y9XDjCEuBp+98k+UL5dbYkh57AHU4o6cxZedOPXw3bmrZZYLQsVHguGurq7hVrPCSrQtrnz1f9dssyFr+dMXfQ==}
@@ -4298,8 +4298,8 @@ packages:
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
 
-  alien-signals@3.1.2:
-    resolution: {integrity: sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw==}
+  alien-signals@3.2.0:
+    resolution: {integrity: sha512-5J9+NpCLHgic4xnZtI8SznvNagwJsZSvRFsAwoLlLw+Edaqa4upCiOC19P8Vx2DqmEvqK2qJBMtI8+9eXOEb/A==}
 
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -5642,8 +5642,8 @@ packages:
   just-pick@4.2.0:
     resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
 
-  katex@0.16.45:
-    resolution: {integrity: sha512-pQpZbdBu7wCTmQUh7ufPmLr0pFoObnGUoL/yhtwJDgmmQpbkg/0HSVti25Fu4rmd1oCR6NGWe9vqTWuWv3GcNA==}
+  katex@0.16.46:
+    resolution: {integrity: sha512-WHy4Coo+bGZyH7NwJKHkS04YFsFcarWbAEOAC3EMndzdN6VSZqklLLIgfxzyaW9jDoeGYJX9SWbJPKpecox0Uw==}
     hasBin: true
 
   keyv@4.5.4:
@@ -6021,8 +6021,8 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
-  miniflare@4.20260507.1:
-    resolution: {integrity: sha512-PSXBiLExTdZ4UGO/raKCHQauUpYL7F880ZRB7j0+78Rv8h7TsdN2E/iEDK9sK2Y+SPQ5wJSeAa+rDeVKoZZoEw==}
+  miniflare@4.20260508.0:
+    resolution: {integrity: sha512-h3aG+PA8jEH76V4ZtBAbs3g7kjMfHJUF8hPvxeeajLTKwir+G+dqfBODg5yF9MT29LqrZKCRQRqzfHPWX4kCIg==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -7779,8 +7779,8 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
 
-  vue-tsc@3.2.8:
-    resolution: {integrity: sha512-27vTLJ6Q2370obOd0PFYoYoKnmXJ521uUIedrs3Zhhhg/8YG10VOCMmwt+JQslatpAMTDbnWiitLnoD5VlIvog==}
+  vue-tsc@3.2.9:
+    resolution: {integrity: sha512-qm8/nbo+9eZc1SCndm9wT+gq23pM+wRIdHY0wjm83B3lIginHTwcdrLUyTrKjDWXbMVNjKegNrnymhpdqnCL3A==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -7846,17 +7846,17 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
-  workerd@1.20260507.1:
-    resolution: {integrity: sha512-z7JhsFSe6+X1b5fUHaVpo15VM1IRMJiLofEkq8iKdCo+Veqc+FUg5lIsuz8NwePxuSKrXtO4ZQpGkQLbPVXFhg==}
+  workerd@1.20260508.1:
+    resolution: {integrity: sha512-VlnjyH3AjVddpSK7J54nsCVgf8i2733pl8GjKttfNi7vN/hEjjAk20d2b1nDToOLKvRQpTewRnVkqaaeGHCaAw==}
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.90.0:
-    resolution: {integrity: sha512-bmNIykl59TfCUn5xQgU7IWylSsPx3LQaPLMSAq2VQHt89CBrcj9qXQ0eYfjBCWA5XTBVgten391evt7xxtXwcA==}
+  wrangler@4.90.1:
+    resolution: {integrity: sha512-u2KrieKSMfRM0toTst/CfDtcRraeoVjmcExcMWgILM/ytq3qcDhuOAULoZSyPHzma43lfLJy1BC544drFyqe1A==}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
-      '@cloudflare/workers-types': ^4.20260507.1
+      '@cloudflare/workers-types': ^4.20260508.1
     peerDependenciesMeta:
       '@cloudflare/workers-types':
         optional: true
@@ -8032,7 +8032,7 @@ snapshots:
     dependencies:
       '@ocavue/utils': 1.6.0
       '@zag-js/dom-query': 1.40.0
-      alien-signals: 3.1.2
+      alien-signals: 3.2.0
       server-dom-shim: 1.1.0
 
   '@aria-ui/elements@0.1.9':
@@ -8796,25 +8796,25 @@ snapshots:
 
   '@cloudflare/kv-asset-handler@0.5.0': {}
 
-  '@cloudflare/unenv-preset@2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260507.1)':
+  '@cloudflare/unenv-preset@2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260508.1)':
     dependencies:
       unenv: 2.0.0-rc.24
     optionalDependencies:
-      workerd: 1.20260507.1
+      workerd: 1.20260508.1
 
-  '@cloudflare/workerd-darwin-64@1.20260507.1':
+  '@cloudflare/workerd-darwin-64@1.20260508.1':
     optional: true
 
-  '@cloudflare/workerd-darwin-arm64@1.20260507.1':
+  '@cloudflare/workerd-darwin-arm64@1.20260508.1':
     optional: true
 
-  '@cloudflare/workerd-linux-64@1.20260507.1':
+  '@cloudflare/workerd-linux-64@1.20260508.1':
     optional: true
 
-  '@cloudflare/workerd-linux-arm64@1.20260507.1':
+  '@cloudflare/workerd-linux-arm64@1.20260508.1':
     optional: true
 
-  '@cloudflare/workerd-windows-64@1.20260507.1':
+  '@cloudflare/workerd-windows-64@1.20260508.1':
     optional: true
 
   '@cspotcode/source-map-support@0.8.1':
@@ -9309,11 +9309,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.105':
+  '@iconify-json/lucide@1.2.107':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.2.34':
+  '@iconify-json/tabler@1.2.35':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -10447,7 +10447,7 @@ snapshots:
       lightningcss: 1.32.0
       postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.14)(tsx@4.21.0)(yaml@2.9.0)
       rolldown: 1.0.1
-      tsdown: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+      tsdown: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
     optionalDependencies:
       postcss: 8.5.14
       sass: 1.99.0
@@ -11090,12 +11090,12 @@ snapshots:
 
   '@vue/devtools-shared@8.1.0': {}
 
-  '@vue/language-core@3.2.8':
+  '@vue/language-core@3.2.9':
     dependencies:
       '@volar/language-core': 2.4.28
       '@vue/compiler-dom': 3.5.34
       '@vue/shared': 3.5.34
-      alien-signals: 3.1.2
+      alien-signals: 3.2.0
       muggle-string: 0.4.1
       path-browserify: 1.0.1
       picomatch: 4.0.4
@@ -11180,7 +11180,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  alien-signals@3.1.2: {}
+  alien-signals@3.2.0: {}
 
   ansi-colors@4.1.3: {}
 
@@ -12804,7 +12804,7 @@ snapshots:
 
   just-pick@4.2.0: {}
 
-  katex@0.16.45:
+  katex@0.16.46:
     dependencies:
       commander: 8.3.0
 
@@ -13297,7 +13297,7 @@ snapshots:
     dependencies:
       '@types/katex': 0.16.8
       devlop: 1.1.0
-      katex: 0.16.45
+      katex: 0.16.46
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
@@ -13495,12 +13495,12 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
 
-  miniflare@4.20260507.1:
+  miniflare@4.20260508.0:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       sharp: 0.34.5
       undici: 7.24.8
-      workerd: 1.20260507.1
+      workerd: 1.20260508.1
       ws: 8.18.0
       youch: 4.1.0-beta.10
     transitivePeerDependencies:
@@ -14344,7 +14344,7 @@ snapshots:
 
   reusify@1.1.0: {}
 
-  rolldown-plugin-dts@0.25.0(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(rolldown@1.0.1)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3)):
+  rolldown-plugin-dts@0.25.0(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(rolldown@1.0.1)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3)):
     dependencies:
       '@babel/generator': 8.0.0-rc.4
       '@babel/helper-validator-identifier': 8.0.0-rc.4
@@ -14357,7 +14357,7 @@ snapshots:
       rolldown: 1.0.1
     optionalDependencies:
       typescript: 6.0.3
-      vue-tsc: 3.2.8(typescript@6.0.3)
+      vue-tsc: 3.2.9(typescript@6.0.3)
     transitivePeerDependencies:
       - oxc-resolver
 
@@ -14821,7 +14821,7 @@ snapshots:
 
   ts-pattern@5.9.0: {}
 
-  tsdown@0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3)):
+  tsdown@0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(tsx@4.21.0)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3)):
     dependencies:
       ansis: 4.2.0
       cac: 7.0.0
@@ -14832,7 +14832,7 @@ snapshots:
       obug: 2.1.1
       picomatch: 4.0.4
       rolldown: 1.0.1
-      rolldown-plugin-dts: 0.25.0(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(rolldown@1.0.1)(typescript@6.0.3)(vue-tsc@3.2.8(typescript@6.0.3))
+      rolldown-plugin-dts: 0.25.0(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(rolldown@1.0.1)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
       semver: 7.7.4
       tinyexec: 1.1.2
       tinyglobby: 0.2.16
@@ -15439,10 +15439,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-tsc@3.2.8(typescript@6.0.3):
+  vue-tsc@3.2.9(typescript@6.0.3):
     dependencies:
       '@volar/typescript': 2.4.28
-      '@vue/language-core': 3.2.8
+      '@vue/language-core': 3.2.9
       typescript: 6.0.3
 
   vue-tweet@2.4.0(vue@3.5.34(typescript@6.0.3)):
@@ -15496,24 +15496,24 @@ snapshots:
 
   word-wrap@1.2.5: {}
 
-  workerd@1.20260507.1:
+  workerd@1.20260508.1:
     optionalDependencies:
-      '@cloudflare/workerd-darwin-64': 1.20260507.1
-      '@cloudflare/workerd-darwin-arm64': 1.20260507.1
-      '@cloudflare/workerd-linux-64': 1.20260507.1
-      '@cloudflare/workerd-linux-arm64': 1.20260507.1
-      '@cloudflare/workerd-windows-64': 1.20260507.1
+      '@cloudflare/workerd-darwin-64': 1.20260508.1
+      '@cloudflare/workerd-darwin-arm64': 1.20260508.1
+      '@cloudflare/workerd-linux-64': 1.20260508.1
+      '@cloudflare/workerd-linux-arm64': 1.20260508.1
+      '@cloudflare/workerd-windows-64': 1.20260508.1
 
-  wrangler@4.90.0:
+  wrangler@4.90.1:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
-      '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260507.1)
+      '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260508.1)
       blake3-wasm: 2.1.5
       esbuild: 0.27.3
-      miniflare: 4.20260507.1
+      miniflare: 4.20260508.0
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
-      workerd: 1.20260507.1
+      workerd: 1.20260508.1
     optionalDependencies:
       fsevents: 2.3.3
     transitivePeerDependencies:

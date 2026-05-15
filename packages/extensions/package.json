@@ -67,7 +67,8 @@
     "./search": "./src/search/index.ts",
     "./search/style.css": "./src/search/style.css",
     "./strike": "./src/strike/index.ts",
-    "./sub-sup": "./src/sub-sup/index.ts",
+    "./subscript": "./src/subscript/index.ts",
+    "./superscript": "./src/superscript/index.ts",
     "./table": "./src/table/index.ts",
     "./table/style.css": "./src/table/style.css",
     "./text": "./src/text/index.ts",
@@ -307,9 +308,13 @@
         "types": "./dist/strike.d.ts",
         "default": "./dist/strike.js"
       },
-      "./sub-sup": {
-        "types": "./dist/sub-sup.d.ts",
-        "default": "./dist/sub-sup.js"
+      "./subscript": {
+        "types": "./dist/subscript.d.ts",
+        "default": "./dist/subscript.js"
+      },
+      "./superscript": {
+        "types": "./dist/superscript.d.ts",
+        "default": "./dist/superscript.js"
       },
       "./table": {
         "types": "./dist/table.d.ts",
@@ -456,8 +461,11 @@
         "strike": [
           "./dist/strike.d.ts"
         ],
-        "sub-sup": [
-          "./dist/sub-sup.d.ts"
+        "subscript": [
+          "./dist/subscript.d.ts"
+        ],
+        "superscript": [
+          "./dist/superscript.d.ts"
         ],
         "table": [
           "./dist/table.d.ts"

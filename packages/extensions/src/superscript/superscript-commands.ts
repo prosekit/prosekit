@@ -3,9 +3,8 @@ import { defineCommands, toggleMark, type Extension } from '@prosekit/core'
 /**
  * @internal
  */
-export type SubSupCommandsExtension = Extension<{
+export type SuperscriptCommandsExtension = Extension<{
   Commands: {
-    toggleSubscript: []
     toggleSuperscript: []
   }
 }>
@@ -13,9 +12,8 @@ export type SubSupCommandsExtension = Extension<{
 /**
  * @internal
  */
-export function defineSubSupCommands(): SubSupCommandsExtension {
+export function defineSuperscriptCommands(): SuperscriptCommandsExtension {
   return defineCommands({
-    toggleSubscript: () => toggleMark({ type: 'subscript' }),
     toggleSuperscript: () => toggleMark({ type: 'superscript' }),
   })
 }

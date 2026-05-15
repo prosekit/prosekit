@@ -44,3 +44,5 @@ trustPolicyIgnoreAfter: 10080 # 7 days
 peerDependencyRules:
   allowedVersions:
     typescript: "6"
+    vite: "8"
+    astro: ">=7.0.0-alpha.0"

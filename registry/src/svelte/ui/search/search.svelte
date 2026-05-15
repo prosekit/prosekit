@@ -14,12 +14,23 @@ const props: Props = $props()
 let showReplace = $state(false)
 let searchText = $state('')
 let replaceText = $state('')
+let caseSensitive = $state(false)
+let wholeWord = $state(false)
+let regexp = $state(false)
+let literal = $state(false)
 
 const editor = useEditor<SearchCommandsExtension>()
 
 const extension = $derived(
   searchText
-    ? defineSearchQuery({ search: searchText, replace: replaceText })
+    ? defineSearchQuery({
+      search: searchText,
+      replace: replaceText,
+      caseSensitive,
+      wholeWord,
+      regexp,
+      literal,
+    })
     : null,
 )
 
@@ -101,6 +112,34 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
     </Button>
     <Button tooltip="Close" onClick={props.onClose}>
       <span class="CSS_ICON_CLOSE"></span>
+    </Button>
+    <Button
+      pressed={caseSensitive}
+      tooltip="Case Sensitive"
+      onClick={() => (caseSensitive = !caseSensitive)}
+    >
+      <span class="CSS_CASE_SENSITIVE"></span>
+    </Button>
+    <Button
+      pressed={wholeWord}
+      tooltip="Whole Word"
+      onClick={() => (wholeWord = !wholeWord)}
+    >
+      <span class="CSS_ICON_WHOLE_WORD"></span>
+    </Button>
+    <Button
+      pressed={regexp}
+      tooltip="Regular Expression"
+      onClick={() => (regexp = !regexp)}
+    >
+      <span class="CSS_ICON_REGEXP"></span>
+    </Button>
+    <Button
+      pressed={literal}
+      tooltip="Literal Escape Sequences"
+      onClick={() => (literal = !literal)}
+    >
+      <span class="CSS_ICON_LITERAL"></span>
     </Button>
   </div>
   {#if showReplace}

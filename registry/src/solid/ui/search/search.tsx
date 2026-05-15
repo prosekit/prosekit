@@ -10,12 +10,23 @@ export default function Search(props: { onClose?: VoidFunction }): JSX.Element {
 
   const [searchText, setSearchText] = createSignal('')
   const [replaceText, setReplaceText] = createSignal('')
+  const [caseSensitive, setCaseSensitive] = createSignal(false)
+  const [wholeWord, setWholeWord] = createSignal(false)
+  const [regexp, setRegexp] = createSignal(false)
+  const [literal, setLiteral] = createSignal(false)
 
   const extension = createMemo(() => {
     if (!searchText()) {
       return null
     }
-    return defineSearchQuery({ search: searchText(), replace: replaceText() })
+    return defineSearchQuery({
+      search: searchText(),
+      replace: replaceText(),
+      caseSensitive: caseSensitive(),
+      wholeWord: wholeWord(),
+      regexp: regexp(),
+      literal: literal(),
+    })
   })
 
   useExtension(extension)
@@ -70,6 +81,34 @@ export default function Search(props: { onClose?: VoidFunction }): JSX.Element {
         </Button>
         <Button tooltip="Close" onClick={() => props.onClose?.()}>
           <span class="CSS_ICON_CLOSE" />
+        </Button>
+        <Button
+          pressed={caseSensitive()}
+          tooltip="Case Sensitive"
+          onClick={() => setCaseSensitive((value) => !value)}
+        >
+          <span class="CSS_CASE_SENSITIVE" />
+        </Button>
+        <Button
+          pressed={wholeWord()}
+          tooltip="Whole Word"
+          onClick={() => setWholeWord((value) => !value)}
+        >
+          <span class="CSS_ICON_WHOLE_WORD" />
+        </Button>
+        <Button
+          pressed={regexp()}
+          tooltip="Regular Expression"
+          onClick={() => setRegexp((value) => !value)}
+        >
+          <span class="CSS_ICON_REGEXP" />
+        </Button>
+        <Button
+          pressed={literal()}
+          tooltip="Literal Escape Sequences"
+          onClick={() => setLiteral((value) => !value)}
+        >
+          <span class="CSS_ICON_LITERAL" />
         </Button>
       </div>
       {showReplace() && (

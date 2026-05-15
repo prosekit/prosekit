@@ -10,13 +10,24 @@ export default function Search(props: { onClose?: VoidFunction }) {
 
   const [searchText, setSearchText] = useState('')
   const [replaceText, setReplaceText] = useState('')
+  const [caseSensitive, setCaseSensitive] = useState(false)
+  const [wholeWord, setWholeWord] = useState(false)
+  const [regexp, setRegexp] = useState(false)
+  const [literal, setLiteral] = useState(false)
 
   const extension = useMemo(() => {
     if (!searchText) {
       return null
     }
-    return defineSearchQuery({ search: searchText, replace: replaceText })
-  }, [searchText, replaceText])
+    return defineSearchQuery({
+      search: searchText,
+      replace: replaceText,
+      caseSensitive,
+      wholeWord,
+      regexp,
+      literal,
+    })
+  }, [searchText, replaceText, caseSensitive, wholeWord, regexp, literal])
 
   useExtension(extension)
 
@@ -70,6 +81,34 @@ export default function Search(props: { onClose?: VoidFunction }) {
         </Button>
         <Button tooltip="Close" onClick={props.onClose}>
           <span className="CSS_ICON_CLOSE" />
+        </Button>
+        <Button
+          pressed={caseSensitive}
+          tooltip="Case Sensitive"
+          onClick={() => setCaseSensitive((value) => !value)}
+        >
+          <span className="CSS_CASE_SENSITIVE" />
+        </Button>
+        <Button
+          pressed={wholeWord}
+          tooltip="Whole Word"
+          onClick={() => setWholeWord((value) => !value)}
+        >
+          <span className="CSS_ICON_WHOLE_WORD" />
+        </Button>
+        <Button
+          pressed={regexp}
+          tooltip="Regular Expression"
+          onClick={() => setRegexp((value) => !value)}
+        >
+          <span className="CSS_ICON_REGEXP" />
+        </Button>
+        <Button
+          pressed={literal}
+          tooltip="Literal Escape Sequences"
+          onClick={() => setLiteral((value) => !value)}
+        >
+          <span className="CSS_ICON_LITERAL" />
         </Button>
       </div>
       {showReplace && (

@@ -80,11 +80,7 @@ editor.set(doc)
 
 ## Reading a selection back with `extractSelection`
 
-`extractSelection(doc)` is the inverse of the `<a>`/`<b>` tokens recognized by `editor.set`. It returns a [`Selection`](https://prosemirror.net/docs/ref/#state.Selection) resolved against the document — useful in tests for asserting that the current selection matches an expected tagged document, without computing positions by hand.
-
-- A `<a>` token inside inline content produces a `TextSelection`. If `<b>` is also present, it becomes the head; otherwise the selection is collapsed at `<a>`.
-- A `<a>` token between block nodes produces a `NodeSelection` on the following node.
-- A document with no tags returns `undefined`.
+`extractSelection(doc)` reads the `<a>`/`<b>` tokens out of a tagged document and returns the matching [`Selection`](https://prosemirror.net/docs/ref/#state.Selection). Use it in tests to assert against an expected tagged document instead of hand-counting positions.
 
 ```ts twoslash
 import { union } from 'prosekit/core'

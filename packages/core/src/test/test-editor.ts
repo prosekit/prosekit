@@ -1,5 +1,5 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { NodeSelection, TextSelection, type Selection } from '@prosekit/pm/state'
+import type { Selection } from '@prosekit/pm/state'
 
 import { createMarkActions, createNodeActions } from '../editor/action.ts'
 import { Editor, EditorInstance, setupEditorExtension, type EditorOptions } from '../editor/editor.ts'
@@ -7,29 +7,8 @@ import type { Extension } from '../types/extension.ts'
 import type { NodeJSON, SelectionJSON } from '../types/model.ts'
 import { isProseMirrorNode } from '../utils/type-assertion.ts'
 
-import { applyMarkForTest, createNodeForTest, type TaggedProseMirrorNode } from './test-builder.ts'
-
-function maybeResolve(doc: ProseMirrorNode, pos?: number) {
-  if (pos != null) {
-    return doc.resolve(pos)
-  }
-  return undefined
-}
-
-function getSelection(doc: TaggedProseMirrorNode): Selection {
-  const tags = doc.tags
-  const $a = maybeResolve(doc, tags?.a)
-  const $b = maybeResolve(doc, tags?.b)
-
-  if ($a) {
-    if ($a.parent.inlineContent) {
-      return new TextSelection($a, $b)
-    } else {
-      return new NodeSelection($a)
-    }
-  }
-  return TextSelection.atStart(doc)
-}
+import { applyMarkForTest, createNodeForTest } from './test-builder.ts'
+import { getSelection } from './test-selection.ts'
 
 class TestEditorInstance extends EditorInstance {
   constructor(extension: Extension) {

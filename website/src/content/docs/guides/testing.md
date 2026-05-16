@@ -78,6 +78,34 @@ editor.set(doc)
 // "Hello" is now selected.
 ```
 
+## Reading a selection back with `extractSelection`
+
+`extractSelection(doc)` reads the `<a>`/`<b>` tokens out of a tagged document and returns the matching [`Selection`](https://prosemirror.net/docs/ref/#state.Selection). Use it in tests to assert against an expected tagged document instead of hand-counting positions.
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import { createTestEditor, extractSelection } from 'prosekit/core/test'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+import { expect, it } from 'vitest'
+
+const editor = createTestEditor({
+  extension: union(defineDoc(), defineText(), defineParagraph()),
+})
+
+const n = editor.nodes
+
+it('preserves the selection that <a> and <b> describe', () => {
+  const doc = n.doc(n.paragraph('<a>Hello<b> world!'))
+  editor.set(doc)
+
+  expect(editor.state.selection.toJSON()).toEqual(
+    extractSelection(doc)?.toJSON(),
+  )
+})
+```
+
 ## A complete unit test
 
 ```ts twoslash

@@ -53,6 +53,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for heading node with multiple levels.',
   },
   {
+    name: 'highlight',
+    description: 'Example for highlighting text (like a highlighter pen).',
+  },
+  {
     name: 'horizontal-rule',
     description: 'Example for horizontal rule node.',
   },

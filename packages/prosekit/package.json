@@ -53,6 +53,7 @@
     "./extensions/gap-cursor/style.css": "./src/extensions/gap-cursor/style.css",
     "./extensions/hard-break": "./src/extensions/hard-break.gen.ts",
     "./extensions/heading": "./src/extensions/heading.gen.ts",
+    "./extensions/highlight": "./src/extensions/highlight.gen.ts",
     "./extensions/horizontal-rule": "./src/extensions/horizontal-rule.gen.ts",
     "./extensions/image": "./src/extensions/image.gen.ts",
     "./extensions/input-rule": "./src/extensions/input-rule.gen.ts",
@@ -350,6 +351,10 @@
       "./extensions/heading": {
         "types": "./dist/extensions/heading.d.ts",
         "default": "./dist/extensions/heading.js"
+      },
+      "./extensions/highlight": {
+        "types": "./dist/extensions/highlight.d.ts",
+        "default": "./dist/extensions/highlight.js"
       },
       "./extensions/horizontal-rule": {
         "types": "./dist/extensions/horizontal-rule.d.ts",
@@ -859,6 +864,9 @@
         ],
         "extensions/heading": [
           "./dist/extensions/heading.d.ts"
+        ],
+        "extensions/highlight": [
+          "./dist/extensions/highlight.d.ts"
         ],
         "extensions/horizontal-rule": [
           "./dist/extensions/horizontal-rule.d.ts"

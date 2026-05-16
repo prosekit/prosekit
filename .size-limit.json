@@ -200,6 +200,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/highlight",
+    "path": "packages/prosekit/dist/extensions/highlight.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/horizontal-rule",
     "path": "packages/prosekit/dist/extensions/horizontal-rule.js",
     "ignore": [

@@ -21,6 +21,7 @@ import { defineCode } from '../code/index.ts'
 import { defineDoc } from '../doc/index.ts'
 import { defineHardBreak } from '../hard-break/index.ts'
 import { defineHeading } from '../heading/index.ts'
+import { defineHighlight } from '../highlight/index.ts'
 import { defineHorizontalRule } from '../horizontal-rule/index.ts'
 import { defineImage } from '../image/index.ts'
 import { defineItalic } from '../italic/index.ts'
@@ -46,6 +47,7 @@ export function defineTestExtension() {
     defineDoc(),
     defineText(),
     defineHeading(),
+    defineHighlight(),
     defineHistory(),
     defineList(),
     defineBlockquote(),

@@ -1,26 +1,42 @@
 <script setup lang="ts">
-import { useEditor } from 'prosekit/vue'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/vue'
 
 import { Button } from '../../ui/button'
 
 import type { EditorExtension } from './extension'
 
-const editor = useEditor<EditorExtension>({ update: true })
+function getToolbarItems(editor: Editor<EditorExtension>) {
+  return {
+    subscript: {
+      isActive: editor.marks.subscript.isActive(),
+      canExec: editor.commands.toggleSubscript.canExec(),
+      command: () => editor.commands.toggleSubscript(),
+    },
+    superscript: {
+      isActive: editor.marks.superscript.isActive(),
+      canExec: editor.commands.toggleSuperscript.canExec(),
+      command: () => editor.commands.toggleSuperscript(),
+    },
+  }
+}
+
+const items = useEditorDerivedValue(getToolbarItems)
 </script>
 
 <template>
   <div class="CSS_TOOLBAR">
     <Button
-      :pressed="false"
-      :disabled="!editor.commands.toggleSubscript.canExec()"
-      @click="editor.commands.toggleSubscript()"
+      :pressed="items.subscript.isActive"
+      :disabled="!items.subscript.canExec"
+      @click="items.subscript.command"
     >
       Subscript
     </Button>
     <Button
-      :pressed="false"
-      :disabled="!editor.commands.toggleSuperscript.canExec()"
-      @click="editor.commands.toggleSuperscript()"
+      :pressed="items.superscript.isActive"
+      :disabled="!items.superscript.canExec"
+      @click="items.superscript.command"
     >
       Superscript
     </Button>

@@ -1,18 +1,29 @@
 <script lang="ts">
-import { useEditor } from 'prosekit/svelte'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/svelte'
 
 import { Button } from '../../ui/button'
 
 import type { EditorExtension } from './extension'
 
-const editor = useEditor<EditorExtension>({ update: true })
+function getToolbarItems(editor: Editor<EditorExtension>) {
+  return {
+    highlight: {
+      isActive: editor.marks.highlight.isActive(),
+      canExec: editor.commands.toggleHighlight.canExec(),
+      command: () => editor.commands.toggleHighlight(),
+    },
+  }
+}
+
+const items = useEditorDerivedValue(getToolbarItems)
 </script>
 
 <div class="CSS_TOOLBAR">
   <Button
-    pressed={false}
-    disabled={!$editor.commands.toggleHighlight.canExec()}
-    onClick={() => $editor.commands.toggleHighlight()}
+    pressed={$items.highlight.isActive}
+    disabled={!$items.highlight.canExec}
+    onClick={$items.highlight.command}
   >
     Highlight
   </Button>

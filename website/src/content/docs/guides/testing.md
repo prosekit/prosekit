@@ -78,6 +78,44 @@ editor.set(doc)
 // "Hello" is now selected.
 ```
 
+## Reading a selection back with `extractSelection`
+
+`extractSelection(doc)` is the inverse of the `<a>`/`<b>` tokens recognized by `editor.set`. It returns a [`Selection`](https://prosemirror.net/docs/ref/#state.Selection) resolved against the document — useful for asserting that a command produced the expected selection, or for asking "where would `<a>` land in this expected document?" without mounting an editor.
+
+- A `<a>` token inside inline content produces a `TextSelection`. If `<b>` is also present, it becomes the head; otherwise the selection is collapsed at `<a>`.
+- A `<a>` token between block nodes produces a `NodeSelection` on the following node.
+- A document with no tags returns `undefined`.
+
+```ts twoslash
+import { defineBaseCommands, union } from 'prosekit/core'
+import { createTestEditor, extractSelection } from 'prosekit/core/test'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+import { expect, it } from 'vitest'
+
+const editor = createTestEditor({
+  extension: union(
+    defineDoc(),
+    defineText(),
+    defineParagraph(),
+    defineBaseCommands(),
+  ),
+})
+
+const n = editor.nodes
+
+it('leaves the cursor after the inserted text', () => {
+  editor.set(n.doc(n.paragraph('<a>')))
+  editor.commands.insertText({ text: 'hi' })
+
+  const expected = n.doc(n.paragraph('hi<a>'))
+  expect(editor.state.selection.toJSON()).toEqual(
+    extractSelection(expected)?.toJSON(),
+  )
+})
+```
+
 ## A complete unit test
 
 ```ts twoslash

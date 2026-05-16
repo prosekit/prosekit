@@ -1,4 +1,4 @@
-import { isElementLike, isNotNullish } from '@ocavue/utils'
+import { isElementLike, isHTMLElement, isNodeLike, isNotNullish } from '@ocavue/utils'
 import type { DOMOutputSpec, Mark, ParseRule, ProseMirrorNode, TagParseRule } from '@prosekit/pm/model'
 
 interface AttrOptions {
@@ -84,12 +84,15 @@ export function insertOutputSpecAttrs(
     return [dom[0], newAttrs, ...rest]
   }
 
-  if (isElementLike(dom)) {
+  if (isNodeLike(dom) && isHTMLElement(dom)) {
     return setElementAttributes(dom, attrs)
   }
 
-  if (typeof dom === 'object' && 'dom' in dom && isElementLike(dom.dom)) {
-    return { ...dom, dom: setElementAttributes(dom.dom, attrs) }
+  if (typeof dom === 'object' && 'dom' in dom) {
+    const element = dom.dom
+    if (isNodeLike(element) && isHTMLElement(element)) {
+      return { ...dom, dom: setElementAttributes(element, attrs) }
+    }
   }
 
   return dom
@@ -111,10 +114,10 @@ function setObjectAttributes(
 }
 
 function setElementAttributes(
-  element: Element,
+  element: HTMLElement,
   attrs: Array<[key: string, value: string]>,
-): Element {
-  element = element.cloneNode(true) as Element
+): HTMLElement {
+  element = element.cloneNode(true) as HTMLElement
   for (const [key, value] of attrs) {
     const oldValue = element.getAttribute(key)
     const newValue = key === 'style'

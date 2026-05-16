@@ -16,7 +16,10 @@ function maybeResolve(doc: ProseMirrorNode, pos?: number) {
   return undefined
 }
 
-function getSelection(doc: TaggedProseMirrorNode): Selection {
+/**
+ * @internal
+ */
+export function maybeGetSelection(doc: TaggedProseMirrorNode): Selection | undefined {
   const tags = doc.tags
   const $a = maybeResolve(doc, tags?.a)
   const $b = maybeResolve(doc, tags?.b)
@@ -28,7 +31,10 @@ function getSelection(doc: TaggedProseMirrorNode): Selection {
       return new NodeSelection($a)
     }
   }
-  return TextSelection.atStart(doc)
+}
+
+function getSelection(doc: TaggedProseMirrorNode): Selection {
+  return maybeGetSelection(doc) || TextSelection.atStart(doc)
 }
 
 class TestEditorInstance extends EditorInstance {

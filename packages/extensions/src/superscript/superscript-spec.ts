@@ -22,7 +22,7 @@ export function defineSuperscriptSpec(): SuperscriptSpecExtension {
       { tag: 'sup' },
       {
         style: 'vertical-align',
-        getAttrs: (value) => (value === 'sup' ? null : false),
+        getAttrs: (value) => (value === 'super' ? null : false),
       },
     ],
     toDOM: () => {

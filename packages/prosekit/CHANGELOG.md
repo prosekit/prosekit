@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.21.1
+
+### Patch Changes
+
+- [`031c430`](https://github.com/ocavue/prosekit/commit/031c4301cd8240c7674e88ea90a6feae5a916aef) ![](https://prosekit.dev/b/core)
+
+  Add the `extractSelection` test utility to `prosekit/core/test`, which reads the `<a>`/`<b>` selection tokens from a tagged ProseMirror document and returns the corresponding `Selection`.
+
 ## 0.21.0
 
 ### Minor Changes

@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
-import { defineText } from '../text/index.ts'
 import { setupTestFromExtension } from '../testing/index.ts'
+import { defineText } from '../text/index.ts'
 
 import { defineHighlight } from './index.ts'
 

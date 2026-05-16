@@ -1,19 +1,30 @@
 <script setup lang="ts">
-import { useEditor } from 'prosekit/vue'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/vue'
 
 import { Button } from '../../ui/button'
 
 import type { EditorExtension } from './extension'
 
-const editor = useEditor<EditorExtension>({ update: true })
+function getToolbarItems(editor: Editor<EditorExtension>) {
+  return {
+    highlight: {
+      isActive: editor.marks.highlight.isActive(),
+      canExec: editor.commands.toggleHighlight.canExec(),
+      command: () => editor.commands.toggleHighlight(),
+    },
+  }
+}
+
+const items = useEditorDerivedValue(getToolbarItems)
 </script>
 
 <template>
   <div class="CSS_TOOLBAR">
     <Button
-      :pressed="false"
-      :disabled="!editor.commands.toggleHighlight.canExec()"
-      @click="() => editor.commands.toggleHighlight()"
+      :pressed="items.highlight.isActive"
+      :disabled="!items.highlight.canExec"
+      @click="items.highlight.command"
     >
       Highlight
     </Button>

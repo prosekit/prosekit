@@ -1,25 +1,41 @@
 <script lang="ts">
-import { useEditor } from 'prosekit/svelte'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/svelte'
 
 import { Button } from '../../ui/button'
 
 import type { EditorExtension } from './extension'
 
-const editor = useEditor<EditorExtension>({ update: true })
+function getToolbarItems(editor: Editor<EditorExtension>) {
+  return {
+    subscript: {
+      isActive: editor.marks.subscript.isActive(),
+      canExec: editor.commands.toggleSubscript.canExec(),
+      command: () => editor.commands.toggleSubscript(),
+    },
+    superscript: {
+      isActive: editor.marks.superscript.isActive(),
+      canExec: editor.commands.toggleSuperscript.canExec(),
+      command: () => editor.commands.toggleSuperscript(),
+    },
+  }
+}
+
+const items = useEditorDerivedValue(getToolbarItems)
 </script>
 
 <div class="CSS_TOOLBAR">
   <Button
-    pressed={false}
-    disabled={!$editor.commands.toggleSubscript.canExec()}
-    onClick={() => $editor.commands.toggleSubscript()}
+    pressed={$items.subscript.isActive}
+    disabled={!$items.subscript.canExec}
+    onClick={$items.subscript.command}
   >
     Subscript
   </Button>
   <Button
-    pressed={false}
-    disabled={!$editor.commands.toggleSuperscript.canExec()}
-    onClick={() => $editor.commands.toggleSuperscript()}
+    pressed={$items.superscript.isActive}
+    disabled={!$items.superscript.canExec}
+    onClick={$items.superscript.command}
   >
     Superscript
   </Button>

@@ -1,5 +1,23 @@
 # prosekit
 
+## 0.21.0
+
+### Minor Changes
+
+- [`8213beb`](https://github.com/ocavue/prosekit/commit/8213bebc6d1edf37c9f6af6660ee6089523710db) ![](https://prosekit.dev/b/extensions)
+
+  Add subscript and superscript extensions.
+
+- [`b0327c2`](https://github.com/ocavue/prosekit/commit/b0327c2a78046c459ec90e9dbdef6cc8999f1648) ![](https://prosekit.dev/b/extensions)
+
+  Add highlight extension.
+
+### Patch Changes
+
+- [`b8bf3b6`](https://github.com/ocavue/prosekit/commit/b8bf3b627c7561014f93003a3700cc98e7e70f51) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
 ## 0.20.2
 
 ### Patch Changes

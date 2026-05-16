@@ -1,6 +1,6 @@
 ---
-"@prosekit/extensions": patch
-"prosekit": patch
+"@prosekit/extensions": minor
+"prosekit": minor
 ---
 
-Add subscript and superscript extensions
+Add subscript and superscript extensions.

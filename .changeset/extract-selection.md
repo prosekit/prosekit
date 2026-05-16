@@ -3,4 +3,4 @@
 "@prosekit/core": patch
 ---
 
-Export `extractSelection` from `prosekit/core/test` for reading the `<a>`/`<b>` selection tokens out of a tagged ProseMirror document.
+Add the `extractSelection` test utility to `prosekit/core/test`, which reads the `<a>`/`<b>` selection tokens from a tagged ProseMirror document and returns the corresponding `Selection`.

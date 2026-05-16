@@ -429,15 +429,6 @@
       "hidden": false,
       "description": "Table node with row and column operations."
     },
-    "temml": {
-      "frameworks": [
-        "react",
-        "preact",
-        "solid"
-      ],
-      "hidden": false,
-      "description": "Math equation rendering using the Temml library."
-    },
     "text-align": {
       "frameworks": [
         "react",
@@ -1111,16 +1102,6 @@
         "registry/src/react/ui/table-handle/table-handle.tsx"
       ]
     },
-    "react-example-temml": {
-      "story": "temml",
-      "files": [
-        "registry/src/react/examples/temml/editor.tsx",
-        "registry/src/react/examples/temml/extension.ts",
-        "registry/src/react/examples/temml/index.ts",
-        "registry/src/react/sample/sample-doc-tex.ts",
-        "registry/src/react/sample/temml.ts"
-      ]
-    },
     "react-example-text-align": {
       "story": "text-align",
       "files": [
@@ -1760,16 +1741,6 @@
         "registry/src/preact/sample/sample-doc-table.ts",
         "registry/src/preact/ui/table-handle/index.ts",
         "registry/src/preact/ui/table-handle/table-handle.tsx"
-      ]
-    },
-    "preact-example-temml": {
-      "story": "temml",
-      "files": [
-        "registry/src/preact/examples/temml/editor.tsx",
-        "registry/src/preact/examples/temml/extension.ts",
-        "registry/src/preact/examples/temml/index.ts",
-        "registry/src/preact/sample/sample-doc-tex.ts",
-        "registry/src/preact/sample/temml.ts"
       ]
     },
     "preact-example-text-align": {
@@ -3783,16 +3754,6 @@
         "registry/src/solid/sample/sample-doc-table.ts",
         "registry/src/solid/ui/table-handle/index.ts",
         "registry/src/solid/ui/table-handle/table-handle.tsx"
-      ]
-    },
-    "solid-example-temml": {
-      "story": "temml",
-      "files": [
-        "registry/src/solid/examples/temml/editor.tsx",
-        "registry/src/solid/examples/temml/extension.ts",
-        "registry/src/solid/examples/temml/index.ts",
-        "registry/src/solid/sample/sample-doc-tex.ts",
-        "registry/src/solid/sample/temml.ts"
       ]
     },
     "solid-example-text-align": {

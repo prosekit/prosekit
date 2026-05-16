@@ -162,10 +162,6 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Table node with row and column operations.',
   },
   {
-    name: 'temml',
-    description: 'Math equation rendering using the Temml library.',
-  },
-  {
     name: 'text-align',
     description: 'Text alignment options (left, center, right, justify).',
   },

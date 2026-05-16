@@ -1,7 +1,6 @@
 ---
-"@prosekit/extensions": patch
-"prosekit": patch
-"prosekit-registry": patch
+"@prosekit/extensions": minor
+"prosekit": minor
 ---
 
 Add highlight extension.

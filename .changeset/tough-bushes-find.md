@@ -4,4 +4,4 @@
 "prosekit-registry": patch
 ---
 
-Add highlight extension
+Add highlight extension.

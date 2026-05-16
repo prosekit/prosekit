@@ -18,16 +18,6 @@ export function defineHighlightSpec(): HighlightSpecExtension {
     name: 'highlight',
     parseDOM: [
       { tag: 'mark' },
-      {
-        tag: 'span',
-        getAttrs: (node: string | HTMLElement): null | false => {
-          return (
-            typeof node !== 'string'
-            && node.dataset.highlight !== undefined
-            && null
-          )
-        },
-      },
     ],
     toDOM() {
       return ['mark', 0]

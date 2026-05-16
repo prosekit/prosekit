@@ -324,7 +324,7 @@
     "diffable-html-snapshot": "^0.2.0",
     "fast-fuzzy": "^1.12.0",
     "katex": "^0.16.46",
-    "lit": "^3.3.2",
+    "lit": "^3.3.3",
     "magic-string": "^0.30.21",
     "parse-imports-exports": "^0.2.4",
     "prosekit": "workspace:*",

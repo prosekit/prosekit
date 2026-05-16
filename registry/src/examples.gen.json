@@ -200,6 +200,17 @@
       "hidden": false,
       "description": "Example for italic mark."
     },
+    "katex": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Math equation rendering using the KaTeX library."
+    },
     "keymap": {
       "frameworks": [
         "react",
@@ -558,14 +569,6 @@
       ],
       "hidden": false,
       "description": "Real-time collaboration using Yjs CRDT library."
-    },
-    "katex": {
-      "frameworks": [
-        "vue",
-        "svelte"
-      ],
-      "hidden": false,
-      "description": "Math equation rendering using the KaTeX library."
     }
   },
   "examples": {
@@ -825,6 +828,16 @@
         "registry/src/react/ui/image-upload-popover/index.ts",
         "registry/src/react/ui/toolbar/index.ts",
         "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-katex": {
+      "story": "katex",
+      "files": [
+        "registry/src/react/examples/katex/editor.tsx",
+        "registry/src/react/examples/katex/extension.ts",
+        "registry/src/react/examples/katex/index.ts",
+        "registry/src/react/sample/katex.ts",
+        "registry/src/react/sample/sample-doc-tex.ts"
       ]
     },
     "react-example-keymap": {
@@ -1514,6 +1527,16 @@
         "registry/src/preact/ui/image-upload-popover/index.ts",
         "registry/src/preact/ui/toolbar/index.ts",
         "registry/src/preact/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "preact-example-katex": {
+      "story": "katex",
+      "files": [
+        "registry/src/preact/examples/katex/editor.tsx",
+        "registry/src/preact/examples/katex/extension.ts",
+        "registry/src/preact/examples/katex/index.ts",
+        "registry/src/preact/sample/katex.ts",
+        "registry/src/preact/sample/sample-doc-tex.ts"
       ]
     },
     "preact-example-keymap": {
@@ -3527,6 +3550,16 @@
         "registry/src/solid/ui/image-upload-popover/index.ts",
         "registry/src/solid/ui/toolbar/index.ts",
         "registry/src/solid/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "solid-example-katex": {
+      "story": "katex",
+      "files": [
+        "registry/src/solid/examples/katex/editor.tsx",
+        "registry/src/solid/examples/katex/extension.ts",
+        "registry/src/solid/examples/katex/index.ts",
+        "registry/src/solid/sample/katex.ts",
+        "registry/src/solid/sample/sample-doc-tex.ts"
       ]
     },
     "solid-example-keymap": {

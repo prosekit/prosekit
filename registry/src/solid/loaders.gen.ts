@@ -20,6 +20,7 @@ export const loaders = {
   'image-view': lazy(() => import('./examples/image-view').then((m) => ({ default: m.ExampleEditor }))),
   'inline-menu': lazy(() => import('./examples/inline-menu').then((m) => ({ default: m.ExampleEditor }))),
   'italic': lazy(() => import('./examples/italic').then((m) => ({ default: m.ExampleEditor }))),
+  'katex': lazy(() => import('./examples/katex').then((m) => ({ default: m.ExampleEditor }))),
   'keymap': lazy(() => import('./examples/keymap').then((m) => ({ default: m.ExampleEditor }))),
   'link': lazy(() => import('./examples/link').then((m) => ({ default: m.ExampleEditor }))),
   'link-mark-view': lazy(() => import('./examples/link-mark-view').then((m) => ({ default: m.ExampleEditor }))),

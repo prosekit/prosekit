@@ -1,0 +1,50 @@
+---
+title: Subscript
+description: "Subscript text formatting backed by the standard <sub> mark"
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `subscript` mark is used to represent text that is subscripted (lowered below the baseline). It will be rendered as `<sub>` element in HTML.
+
+<Demo story="sub-sup" />
+
+## Commands
+
+### `toggleSubscript`
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSubscript } from 'prosekit/extensions/subscript'
+
+const extension = defineSubscript()
+const editor = createEditor({ extension })
+// ---cut---
+editor.commands.toggleSubscript()
+```
+
+## Input Rules
+
+Input rules are not included by default. You can add them manually using `defineMarkInputRule` from `prosekit/extensions/input-rule`:
+
+```ts twoslash
+import { canUseRegexLookbehind, union } from 'prosekit/core'
+import { defineMarkInputRule } from 'prosekit/extensions/input-rule'
+import { defineSubscript } from 'prosekit/extensions/subscript'
+
+const extension = union(
+  defineSubscript(),
+  defineMarkInputRule({
+    regex: canUseRegexLookbehind()
+      ? /(?<=\s|^)~([^\s~]|[^\s~][^~]*[^\s~])~$/
+      : /~([^\s~]|[^\s~][^~]*[^\s~])~$/,
+    type: 'subscript',
+  }),
+)
+```
+
+Typing `~text~` followed by a space will automatically convert the text to subscript.
+
+## API Reference
+
+- [prosekit/extensions/subscript](/references/extensions/subscript)

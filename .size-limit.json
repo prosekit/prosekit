@@ -440,6 +440,26 @@
     ]
   },
   {
+    "name": "prosekit/extensions/subscript",
+    "path": "packages/prosekit/dist/extensions/subscript.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/superscript",
+    "path": "packages/prosekit/dist/extensions/superscript.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/table",
     "path": "packages/prosekit/dist/extensions/table.js",
     "ignore": [

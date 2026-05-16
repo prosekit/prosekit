@@ -406,6 +406,17 @@
       "hidden": false,
       "description": "Example for strikethrough mark."
     },
+    "sub-sup": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "Example for subscript and superscript marks."
+    },
     "table": {
       "frameworks": [
         "react",
@@ -1077,6 +1088,18 @@
         "registry/src/react/ui/button/index.ts"
       ]
     },
+    "react-example-sub-sup": {
+      "story": "sub-sup",
+      "files": [
+        "registry/src/react/examples/sub-sup/editor.tsx",
+        "registry/src/react/examples/sub-sup/extension.ts",
+        "registry/src/react/examples/sub-sup/index.ts",
+        "registry/src/react/examples/sub-sup/toolbar.tsx",
+        "registry/src/react/sample/sample-doc-sub-sup.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts"
+      ]
+    },
     "react-example-table": {
       "story": "table",
       "files": [
@@ -1716,6 +1739,18 @@
         "registry/src/preact/ui/button/index.ts"
       ]
     },
+    "preact-example-sub-sup": {
+      "story": "sub-sup",
+      "files": [
+        "registry/src/preact/examples/sub-sup/editor.tsx",
+        "registry/src/preact/examples/sub-sup/extension.ts",
+        "registry/src/preact/examples/sub-sup/index.ts",
+        "registry/src/preact/examples/sub-sup/toolbar.tsx",
+        "registry/src/preact/sample/sample-doc-sub-sup.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
     "preact-example-table": {
       "story": "table",
       "files": [
@@ -2350,6 +2385,18 @@
         "registry/src/vue/examples/strike/index.ts",
         "registry/src/vue/examples/strike/toolbar.vue",
         "registry/src/vue/sample/sample-doc-strike.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
+      ]
+    },
+    "vue-example-sub-sup": {
+      "story": "sub-sup",
+      "files": [
+        "registry/src/vue/examples/sub-sup/editor.vue",
+        "registry/src/vue/examples/sub-sup/extension.ts",
+        "registry/src/vue/examples/sub-sup/index.ts",
+        "registry/src/vue/examples/sub-sup/toolbar.vue",
+        "registry/src/vue/sample/sample-doc-sub-sup.ts",
         "registry/src/vue/ui/button/button.vue",
         "registry/src/vue/ui/button/index.ts"
       ]
@@ -3085,6 +3132,18 @@
         "registry/src/svelte/ui/button/index.ts"
       ]
     },
+    "svelte-example-sub-sup": {
+      "story": "sub-sup",
+      "files": [
+        "registry/src/svelte/examples/sub-sup/editor.svelte",
+        "registry/src/svelte/examples/sub-sup/extension.ts",
+        "registry/src/svelte/examples/sub-sup/index.ts",
+        "registry/src/svelte/examples/sub-sup/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-sub-sup.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
     "svelte-example-table": {
       "story": "table",
       "files": [
@@ -3699,6 +3758,18 @@
         "registry/src/solid/examples/strike/index.ts",
         "registry/src/solid/examples/strike/toolbar.tsx",
         "registry/src/solid/sample/sample-doc-strike.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
+      ]
+    },
+    "solid-example-sub-sup": {
+      "story": "sub-sup",
+      "files": [
+        "registry/src/solid/examples/sub-sup/editor.tsx",
+        "registry/src/solid/examples/sub-sup/extension.ts",
+        "registry/src/solid/examples/sub-sup/index.ts",
+        "registry/src/solid/examples/sub-sup/toolbar.tsx",
+        "registry/src/solid/sample/sample-doc-sub-sup.ts",
         "registry/src/solid/ui/button/button.tsx",
         "registry/src/solid/ui/button/index.ts"
       ]

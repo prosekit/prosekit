@@ -38,6 +38,7 @@ export const loaders = {
   'search': defineAsyncComponent(() => import('./examples/search').then((m) => m.ExampleEditor)),
   'slash-menu': defineAsyncComponent(() => import('./examples/slash-menu').then((m) => m.ExampleEditor)),
   'strike': defineAsyncComponent(() => import('./examples/strike').then((m) => m.ExampleEditor)),
+  'sub-sup': defineAsyncComponent(() => import('./examples/sub-sup').then((m) => m.ExampleEditor)),
   'table': defineAsyncComponent(() => import('./examples/table').then((m) => m.ExampleEditor)),
   'text-align': defineAsyncComponent(() => import('./examples/text-align').then((m) => m.ExampleEditor)),
   'text-color': defineAsyncComponent(() => import('./examples/text-color').then((m) => m.ExampleEditor)),

@@ -77,6 +77,8 @@
     "./extensions/search": "./src/extensions/search.gen.ts",
     "./extensions/search/style.css": "./src/extensions/search/style.css",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
+    "./extensions/subscript": "./src/extensions/subscript.gen.ts",
+    "./extensions/superscript": "./src/extensions/superscript.gen.ts",
     "./extensions/table": "./src/extensions/table.gen.ts",
     "./extensions/table/style.css": "./src/extensions/table/style.css",
     "./extensions/text": "./src/extensions/text.gen.ts",
@@ -442,6 +444,14 @@
       "./extensions/strike": {
         "types": "./dist/extensions/strike.d.ts",
         "default": "./dist/extensions/strike.js"
+      },
+      "./extensions/subscript": {
+        "types": "./dist/extensions/subscript.d.ts",
+        "default": "./dist/extensions/subscript.js"
+      },
+      "./extensions/superscript": {
+        "types": "./dist/extensions/superscript.d.ts",
+        "default": "./dist/extensions/superscript.js"
       },
       "./extensions/table": {
         "types": "./dist/extensions/table.d.ts",
@@ -921,6 +931,12 @@
         ],
         "extensions/strike": [
           "./dist/extensions/strike.d.ts"
+        ],
+        "extensions/subscript": [
+          "./dist/extensions/subscript.d.ts"
+        ],
+        "extensions/superscript": [
+          "./dist/extensions/superscript.d.ts"
         ],
         "extensions/table": [
           "./dist/extensions/table.d.ts"

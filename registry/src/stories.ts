@@ -154,6 +154,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for strikethrough mark.',
   },
   {
+    name: 'sub-sup',
+    description: 'Example for subscript and superscript marks.',
+  },
+  {
     name: 'table',
     description: 'Table node with row and column operations.',
   },

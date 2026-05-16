@@ -30,6 +30,8 @@ import { defineList, type ListAttrs } from '../list/index.ts'
 import { defineMath } from '../math/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
 import { defineStrike } from '../strike/index.ts'
+import { defineSubscript } from '../subscript/index.ts'
+import { defineSuperscript } from '../superscript/index.ts'
 import { defineTable } from '../table/index.ts'
 import type { CellAttrs } from '../table/table-spec.ts'
 import { defineTextColor } from '../text-color/index.ts'
@@ -57,6 +59,8 @@ export function defineTestExtension() {
     defineBold(),
     defineUnderline(),
     defineStrike(),
+    defineSubscript(),
+    defineSuperscript(),
     defineCode(),
     defineTextColor(),
     defineBackgroundColor(),

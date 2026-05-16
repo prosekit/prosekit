@@ -40,6 +40,7 @@ export const SaveMarkdown = { args: { story: 'save-markdown' } }
 export const Search = { args: { story: 'search' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
 export const Strike = { args: { story: 'strike' } }
+export const SubSup = { args: { story: 'sub-sup' } }
 export const Table = { args: { story: 'table' } }
 export const TextAlign = { args: { story: 'text-align' } }
 export const TextColor = { args: { story: 'text-color' } }

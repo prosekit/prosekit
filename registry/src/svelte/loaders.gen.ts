@@ -38,6 +38,7 @@ export const loaders = {
   'search': () => import('./examples/search').then((m) => ({ default: m.ExampleEditor })),
   'slash-menu': () => import('./examples/slash-menu').then((m) => ({ default: m.ExampleEditor })),
   'strike': () => import('./examples/strike').then((m) => ({ default: m.ExampleEditor })),
+  'sub-sup': () => import('./examples/sub-sup').then((m) => ({ default: m.ExampleEditor })),
   'table': () => import('./examples/table').then((m) => ({ default: m.ExampleEditor })),
   'text-align': () => import('./examples/text-align').then((m) => ({ default: m.ExampleEditor })),
   'text-color': () => import('./examples/text-color').then((m) => ({ default: m.ExampleEditor })),

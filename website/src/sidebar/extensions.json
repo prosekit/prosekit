@@ -27,6 +27,8 @@
       "italic",
       "link",
       "strike",
+      "subscript",
+      "superscript",
       "text-color",
       "underline"
     ]

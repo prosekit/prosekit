@@ -351,7 +351,7 @@
     "vite-plugin-solid": "^2.11.12",
     "vite-plugin-wasm": "^3.6.0",
     "vitest": "catalog:",
-    "vitest-browser-commands": "^0.2.0",
+    "vitest-browser-commands": "^0.2.1",
     "vitest-browser-preact": "^1.0.0",
     "vitest-browser-react": "^2.2.0",
     "vitest-browser-solid": "^1.0.1",

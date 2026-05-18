@@ -160,6 +160,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/font-family",
+    "path": "packages/prosekit/dist/extensions/font-family.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/gap-cursor",
     "path": "packages/prosekit/dist/extensions/gap-cursor.js",
     "ignore": [

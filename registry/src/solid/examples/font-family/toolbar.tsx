@@ -23,7 +23,8 @@ function loadGoogleFonts() {
   const link = document.createElement('link')
   link.id = linkId
   link.rel = 'stylesheet'
-  link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap'
+  link.href =
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap'
   document.head.appendChild(link)
 }
 

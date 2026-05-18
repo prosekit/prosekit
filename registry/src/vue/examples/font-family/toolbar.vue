@@ -24,7 +24,8 @@ function loadGoogleFonts() {
   const link = document.createElement('link')
   link.id = linkId
   link.rel = 'stylesheet'
-  link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap'
+  link.href =
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap'
   document.head.appendChild(link)
 }
 
@@ -63,8 +64,8 @@ onMounted(() => {
   <div class="CSS_TOOLBAR">
     <select
       :value="state.activeFont"
-      @change="state.handleChange(($event.target as HTMLSelectElement).value)"
       class="px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm"
+      @change="state.handleChange(($event.target as HTMLSelectElement).value)"
     >
       <option value="">
         Default Font

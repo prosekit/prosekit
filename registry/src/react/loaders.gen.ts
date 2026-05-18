@@ -11,6 +11,7 @@ export const loaders = {
   'code-block-themes': lazy(() => import('./examples/code-block-themes').then((m) => ({ default: m.ExampleEditor }))),
   'drop-cursor': lazy(() => import('./examples/drop-cursor').then((m) => ({ default: m.ExampleEditor }))),
   'emoji-rules': lazy(() => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor }))),
+  'font-family': lazy(() => import('./examples/font-family').then((m) => ({ default: m.ExampleEditor }))),
   'full': lazy(() => import('./examples/full').then((m) => ({ default: m.ExampleEditor }))),
   'gap-cursor': lazy(() => import('./examples/gap-cursor').then((m) => ({ default: m.ExampleEditor }))),
   'hard-break': lazy(() => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor }))),

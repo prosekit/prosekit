@@ -37,6 +37,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Auto-convert text shortcuts to emojis using input rules.',
   },
   {
+    name: 'font-family',
+    description: 'Change the font family of text.',
+  },
+  {
     name: 'full',
     description: 'Full-featured editor with most available features enabled.',
   },

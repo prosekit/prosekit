@@ -49,6 +49,7 @@
     "./extensions/drop-indicator": "./src/extensions/drop-indicator.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
+    "./extensions/font-family": "./src/extensions/font-family.gen.ts",
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
     "./extensions/gap-cursor/style.css": "./src/extensions/gap-cursor/style.css",
     "./extensions/hard-break": "./src/extensions/hard-break.gen.ts",
@@ -195,20 +196,26 @@
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
     "loro-prosemirror": ">= 0.4.1",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
       "optional": true
     },
     "loro-prosemirror": {
+      "optional": true
+    },
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
       "optional": true
     },
     "preact": {
@@ -227,12 +234,6 @@
       "optional": true
     },
     "vue": {
-      "optional": true
-    },
-    "y-prosemirror": {
-      "optional": true
-    },
-    "yjs": {
       "optional": true
     }
   },
@@ -338,6 +339,10 @@
       "./extensions/file": {
         "types": "./dist/extensions/file.d.ts",
         "default": "./dist/extensions/file.js"
+      },
+      "./extensions/font-family": {
+        "types": "./dist/extensions/font-family.d.ts",
+        "default": "./dist/extensions/font-family.js"
       },
       "./extensions/gap-cursor": {
         "types": "./dist/extensions/gap-cursor.d.ts",
@@ -865,6 +870,9 @@
         ],
         "extensions/file": [
           "./dist/extensions/file.d.ts"
+        ],
+        "extensions/font-family": [
+          "./dist/extensions/font-family.d.ts"
         ],
         "extensions/gap-cursor": [
           "./dist/extensions/gap-cursor.d.ts"

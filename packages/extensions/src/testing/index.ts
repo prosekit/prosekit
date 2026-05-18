@@ -34,6 +34,7 @@ import { defineSubscript } from '../subscript/index.ts'
 import { defineSuperscript } from '../superscript/index.ts'
 import { defineTable } from '../table/index.ts'
 import type { CellAttrs } from '../table/table-spec.ts'
+import { defineFontFamily } from '../font-family/index.ts'
 import { defineTextColor } from '../text-color/index.ts'
 import { defineText } from '../text/index.ts'
 import { defineUnderline } from '../underline/index.ts'
@@ -62,6 +63,7 @@ export function defineTestExtension() {
     defineSubscript(),
     defineSuperscript(),
     defineCode(),
+    defineFontFamily(),
     defineTextColor(),
     defineBackgroundColor(),
     defineLink(),

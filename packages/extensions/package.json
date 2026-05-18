@@ -40,6 +40,7 @@
     "./drop-indicator": "./src/drop-indicator/index.ts",
     "./enter-rule": "./src/enter-rule/index.ts",
     "./file": "./src/file/index.ts",
+    "./font-family": "./src/font-family/index.ts",
     "./gap-cursor": "./src/gap-cursor/index.ts",
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
     "./hard-break": "./src/hard-break/index.ts",
@@ -206,6 +207,10 @@
       "./file": {
         "types": "./dist/file.d.ts",
         "default": "./dist/file.js"
+      },
+      "./font-family": {
+        "types": "./dist/font-family.d.ts",
+        "default": "./dist/font-family.js"
       },
       "./gap-cursor": {
         "types": "./dist/gap-cursor.d.ts",
@@ -402,6 +407,9 @@
         ],
         "file": [
           "./dist/file.d.ts"
+        ],
+        "font-family": [
+          "./dist/font-family.d.ts"
         ],
         "gap-cursor": [
           "./dist/gap-cursor.d.ts"

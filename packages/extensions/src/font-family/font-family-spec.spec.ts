@@ -29,13 +29,13 @@ describe('defineFontFamilySpec', () => {
         </span>
         <span
           data-font-family="Times New Roman"
-          style="font-family: Times New Roman;"
+          style="font-family: &quot;Times New Roman&quot;;
         >
           times
         </span>
         <span
           data-font-family="Courier New, monospace"
-          style="font-family: Courier New, monospace;"
+          style="font-family: &quot;Courier New&quot;, monospace;"
         >
           monospace
         </span>
@@ -154,7 +154,7 @@ describe('defineFontFamilySpec', () => {
             "marks": [
               {
                 "attrs": {
-                  "family": "Courier New",
+                  "family": "\"Courier New\"",
                 },
                 "type": "fontFamily",
               },

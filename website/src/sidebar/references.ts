@@ -22,6 +22,10 @@ export function generateReferencesSidebar() {
       .map(f => f.replaceAll(path.sep, '/').replace(/\.mdx?$/, '').replaceAll('.', '')),
   )
 
+  if (availableItems.size === 0) {
+    return []
+  }
+
   const missingItems = [...expectedItems].filter(item => !availableItems.has(item))
 
   if (missingItems.length > 0) {

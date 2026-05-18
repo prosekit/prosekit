@@ -68,7 +68,7 @@ export default function Toolbar() {
       >
         <option value="">Default Font</option>
         {fonts.map((font) => (
-          <option value={font.family} style={{ fontFamily: font.family }}>
+          <option key={font.family} value={font.family} style={{ fontFamily: font.family }}>
             {font.label}
           </option>
         ))}

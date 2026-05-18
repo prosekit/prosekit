@@ -1,0 +1,73 @@
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+
+import { ContextProvider } from '@lit/context'
+import { html, LitElement, type PropertyDeclaration, type PropertyValues } from 'lit'
+import { createRef, ref, type Ref } from 'lit/directives/ref.js'
+import type { Editor } from 'prosekit/core'
+import { createEditor } from 'prosekit/core'
+
+import { sampleContent } from '../../sample/sample-doc-inline-menu'
+import { editorContext } from '../../ui/editor-context'
+import { registerLitEditorInlineMenu } from '../../ui/inline-menu'
+
+import { defineExtension } from './extension'
+
+export class LitEditor extends LitElement {
+  static override properties = {
+    editor: {
+      state: true,
+      attribute: false,
+    } satisfies PropertyDeclaration<Editor>,
+  }
+
+  private editor: Editor
+  private ref: Ref<HTMLDivElement>
+  constructor() {
+    super()
+
+    const extension = defineExtension()
+    this.editor = createEditor({ extension, defaultContent: sampleContent })
+    this.ref = createRef<HTMLDivElement>()
+    new ContextProvider(this, {
+      context: editorContext,
+      initialValue: this.editor,
+    })
+  }
+
+  override createRenderRoot() {
+    return this
+  }
+
+  override disconnectedCallback() {
+    this.editor.unmount()
+    super.disconnectedCallback()
+  }
+
+  override updated(changedProperties: PropertyValues) {
+    super.updated(changedProperties)
+    this.editor.mount(this.ref.value)
+  }
+
+  override render() {
+    return html`<div class="CSS_EDITOR_VIEWPORT">
+      <div class="CSS_EDITOR_SCROLLING">
+        <div ${ref(this.ref)} class="CSS_EDITOR_CONTENT"></div>
+        <lit-editor-inline-menu style="display: contents;"></lit-editor-inline-menu>
+      </div>
+    </div>`
+  }
+}
+
+export function registerLitEditor() {
+  registerLitEditorInlineMenu()
+
+  if (customElements.get('lit-editor-example-inline-menu')) return
+  customElements.define('lit-editor-example-inline-menu', LitEditor)
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'lit-editor-example-inline-menu': LitEditor
+  }
+}

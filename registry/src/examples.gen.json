@@ -183,6 +183,7 @@
         "react",
         "preact",
         "vue",
+        "lit",
         "svelte",
         "solid"
       ],
@@ -2596,6 +2597,20 @@
         "registry/src/lit/ui/image-upload-popover/index.ts",
         "registry/src/lit/ui/toolbar/index.ts",
         "registry/src/lit/ui/toolbar/toolbar.ts"
+      ]
+    },
+    "lit-example-inline-menu": {
+      "story": "inline-menu",
+      "files": [
+        "registry/src/lit/examples/inline-menu/editor.ts",
+        "registry/src/lit/examples/inline-menu/extension.ts",
+        "registry/src/lit/examples/inline-menu/index.ts",
+        "registry/src/lit/sample/sample-doc-inline-menu.ts",
+        "registry/src/lit/ui/button/button.ts",
+        "registry/src/lit/ui/button/index.ts",
+        "registry/src/lit/ui/editor-context.ts",
+        "registry/src/lit/ui/inline-menu/index.ts",
+        "registry/src/lit/ui/inline-menu/inline-menu.ts"
       ]
     },
     "lit-example-minimal": {

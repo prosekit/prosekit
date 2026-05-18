@@ -29,7 +29,7 @@ describe('defineFontFamilySpec', () => {
         </span>
         <span
           data-font-family="Times New Roman"
-          style="font-family: &quot;Times New Roman&quot;;
+          style="font-family: &quot;Times New Roman&quot;;"
         >
           times
         </span>

@@ -52,7 +52,7 @@
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-commands": "^0.2.0"
+    "vitest-browser-commands": "^0.2.1"
   },
   "publishConfig": {
     "exports": {

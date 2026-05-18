@@ -346,7 +346,7 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "tinyexec": "^1.1.2",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.1",
     "vite": "^8.0.13",
     "vite-plugin-solid": "^2.11.12",
     "vite-plugin-wasm": "^3.6.0",

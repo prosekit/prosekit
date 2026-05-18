@@ -25,7 +25,7 @@ export function generateReferencesSidebar() {
   const missingItems = [...expectedItems].filter(item => !availableItems.has(item))
 
   if (missingItems.length > 0) {
-    const message = `[${import.meta.filename}] Warning: Missing sidebar items:\n\n${missingItems.slice(0, 5).join('\n')}\n`
+    const message = `[${import.meta.filename}] Missing sidebar items:\n\n${missingItems.slice(0, 5).join('\n')}\n`
     if (process.env.CI) {
       throw new Error(message)
     } else {

@@ -1,12 +1,38 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import sidebar from './references.gen.json' with { type: 'json' }
+import sidebarJson from './references.gen.json' with { type: 'json' }
 
-const REF_DIR = path.join('src', 'content', 'docs', 'references')
+const DOCS_DIR = path.join('src', 'content', 'docs')
+
+const expectedItems = new Set<string>()
+for (const item of sidebarJson) {
+  if (typeof item === 'string') {
+    expectedItems.add(item)
+  } else {
+    for (const slug of item.items) {
+      expectedItems.add(slug)
+    }
+  }
+}
 
 export function generateReferencesSidebar() {
-  if (!fs.existsSync(REF_DIR)) return []
-  if (fs.globSync('**/*.{md,mdx}', { cwd: REF_DIR }).length === 0) return []
-  return sidebar
+  const availableItems = new Set(
+    fs.globSync('references/**/*.{md,mdx}', { cwd: DOCS_DIR })
+      .map(f => f.replaceAll(path.sep, '/').replace(/\.mdx?$/, '').replaceAll('.', '')),
+  )
+
+  const missingItems = [...expectedItems].filter(item => !availableItems.has(item))
+
+  if (missingItems.length > 0) {
+    const message = `[${import.meta.filename}] Warning: Missing sidebar items:\n\n${missingItems.slice(0, 5).join('\n')}\n`
+    if (process.env.CI) {
+      throw new Error(message)
+    } else {
+      console.warn(message)
+    }
+    return []
+  }
+
+  return sidebarJson
 }

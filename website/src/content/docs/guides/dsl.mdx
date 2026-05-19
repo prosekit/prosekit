@@ -65,10 +65,9 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
   const displayRef = useRef<HTMLDivElement>(null)
   const pos = props.getPos()
 
-  const showPreview =
-    typeof pos === 'number' &&
-    language === 'mermaid' &&
-    !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+  const showPreview = typeof pos === 'number'
+    && language === 'mermaid'
+    && !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
 
   // Track selection changes to re-evaluate showPreview
   useEffect(() => {
@@ -99,7 +98,9 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
         display.textContent = error instanceof Error ? error.message : String(error)
       })
 
-    return () => { stale = true }
+    return () => {
+      stale = true
+    }
   }, [props.node, showPreview])
 
   // --- markup abbreviated for brevity ---
@@ -195,10 +196,9 @@ export default function DotCodeBlockView(props: ReactNodeViewProps) {
   const displayRef = useRef<HTMLDivElement>(null)
   const pos = props.getPos()
 
-  const showPreview =
-    typeof pos === 'number' &&
-    language === 'dot' &&
-    !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+  const showPreview = typeof pos === 'number'
+    && language === 'dot'
+    && !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
 
   useEffect(() => {
     const doc = props.view.dom.ownerDocument
@@ -228,7 +228,9 @@ export default function DotCodeBlockView(props: ReactNodeViewProps) {
         display.textContent = error instanceof Error ? error.message : String(error)
       })
 
-    return () => { stale = true }
+    return () => {
+      stale = true
+    }
   }, [props.node, showPreview])
 
   return null as any
@@ -317,10 +319,9 @@ export default function TypstCodeBlockView(props: ReactNodeViewProps) {
   const displayRef = useRef<HTMLDivElement>(null)
   const pos = props.getPos()
 
-  const showPreview =
-    typeof pos === 'number' &&
-    language === 'typst' &&
-    !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+  const showPreview = typeof pos === 'number'
+    && language === 'typst'
+    && !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
 
   useEffect(() => {
     const doc = props.view.dom.ownerDocument
@@ -341,7 +342,9 @@ export default function TypstCodeBlockView(props: ReactNodeViewProps) {
       display.textContent = error instanceof Error ? error.message : String(error)
     })
 
-    return () => { stale = true }
+    return () => {
+      stale = true
+    }
   }, [props.node, showPreview])
 
   return null as any
@@ -365,13 +368,13 @@ You can use this pattern to add support for any text-to-diagram DSL. Swap the re
 
 The examples above use React. Replace `defineReactNodeView` with the equivalent for your framework:
 
-| Framework | Wrapper |
-| --------- | ------- |
-| React     | `defineReactNodeView` |
-| Vue       | `defineVueNodeView` |
+| Framework | Wrapper                |
+| --------- | ---------------------- |
+| React     | `defineReactNodeView`  |
+| Vue       | `defineVueNodeView`    |
 | Preact    | `definePreactNodeView` |
 | Svelte    | `defineSvelteNodeView` |
-| Solid     | `defineSolidNodeView` |
+| Solid     | `defineSolidNodeView`  |
 
 ## Live examples
 

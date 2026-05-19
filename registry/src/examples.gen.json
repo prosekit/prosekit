@@ -90,6 +90,27 @@
       "hidden": false,
       "description": "Visual cursor indicator during drag-and-drop operations."
     },
+    "dsl-dot": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Graphviz DOT rendering via the DSL extension factory."
+    },
+    "dsl-mermaid": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Mermaid diagram rendering via the DSL extension factory."
+    },
+    "dsl-typst": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Typst rendering via the DSL extension factory."
+    },
     "emoji-rules": {
       "frameworks": [
         "react",
@@ -689,6 +710,36 @@
         "registry/src/react/examples/drop-cursor/extension.ts",
         "registry/src/react/examples/drop-cursor/index.ts",
         "registry/src/react/sample/sample-doc-drop-cursor.ts"
+      ]
+    },
+    "react-example-dsl-dot": {
+      "story": "dsl-dot",
+      "files": [
+        "registry/src/react/examples/dsl-dot/code-block-view.tsx",
+        "registry/src/react/examples/dsl-dot/editor.tsx",
+        "registry/src/react/examples/dsl-dot/extension.ts",
+        "registry/src/react/examples/dsl-dot/index.ts",
+        "registry/src/react/sample/dsl-dot.ts"
+      ]
+    },
+    "react-example-dsl-mermaid": {
+      "story": "dsl-mermaid",
+      "files": [
+        "registry/src/react/examples/dsl-mermaid/code-block-view.tsx",
+        "registry/src/react/examples/dsl-mermaid/editor.tsx",
+        "registry/src/react/examples/dsl-mermaid/extension.ts",
+        "registry/src/react/examples/dsl-mermaid/index.ts",
+        "registry/src/react/sample/dsl-mermaid.ts"
+      ]
+    },
+    "react-example-dsl-typst": {
+      "story": "dsl-typst",
+      "files": [
+        "registry/src/react/examples/dsl-typst/code-block-view.tsx",
+        "registry/src/react/examples/dsl-typst/editor.tsx",
+        "registry/src/react/examples/dsl-typst/extension.ts",
+        "registry/src/react/examples/dsl-typst/index.ts",
+        "registry/src/react/sample/dsl-typst.ts"
       ]
     },
     "react-example-emoji-rules": {

@@ -1,0 +1,380 @@
+---
+title: DSL diagram rendering
+description: Render Mermaid, Graphviz DOT, and Typst diagrams inside code blocks with live preview
+sidebar:
+  order: 70
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+ProseKit lets you turn fenced code blocks into live-rendered diagrams. When a code block uses a recognised language (`mermaid`, `dot`, or `typst`), a preview pane appears above the source while you are not editing inside the block. Click the preview to jump back to the source.
+
+<Demo story="dsl-mermaid" />
+
+## How it works
+
+A React node view overrides the default `codeBlock` rendering. It checks `attrs.language` and the current selection:
+
+- If the language matches a known DSL **and** the cursor is outside the code block, the preview is shown.
+- While the cursor is inside the block, only the raw source is visible.
+- Clicking the preview moves focus back to the source so you can edit.
+
+The three built-in examples (Mermaid, DOT, Typst) all follow the same pattern. Copy one and swap the renderer to add your own DSL.
+
+## Mermaid
+
+Renders [Mermaid](https://mermaid.js.org) diagrams (flowcharts, sequence diagrams, Gantt charts, etc.).
+
+```bash
+pnpm add mermaid
+```
+
+```tsx twoslash
+// @filename: mermaid.d.ts
+declare module 'mermaid' {
+  const mermaid: {
+    initialize: (config: { startOnLoad: boolean }) => void
+    render: (id: string, code: string) => Promise<{ svg: string }> | { svg: string }
+  }
+  export default mermaid
+}
+// @filename: mermaid-code-block-view.tsx
+'use client'
+
+import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { TextSelection } from 'prosekit/pm/state'
+import type { ReactNodeViewProps } from 'prosekit/react'
+import { useEffect, useRef, useState } from 'react'
+import mermaid from 'mermaid'
+
+function isSelectionInsideCodeBlock(
+  state: any,
+  pos: number,
+  node: any,
+): boolean {
+  const from = pos
+  const to = pos + node.nodeSize
+  const { selection } = state
+  return selection.from < to && selection.to > from
+}
+
+export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
+  const attrs = props.node.attrs as CodeBlockAttrs
+  const language = attrs.language || ''
+  const [, setSelectionVersion] = useState(0)
+  const displayRef = useRef<HTMLDivElement>(null)
+  const pos = props.getPos()
+
+  const showPreview =
+    typeof pos === 'number' &&
+    language === 'mermaid' &&
+    !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+
+  // Track selection changes to re-evaluate showPreview
+  useEffect(() => {
+    const doc = props.view.dom.ownerDocument
+    const handler = () => setSelectionVersion((v) => v + 1)
+    doc.addEventListener('selectionchange', handler)
+    return () => doc.removeEventListener('selectionchange', handler)
+  }, [props.view])
+
+  // Render the diagram when preview is visible
+  useEffect(() => {
+    const display = displayRef.current
+    if (!showPreview || !display) return
+
+    let stale = false
+    display.innerHTML = ''
+
+    mermaid.initialize({ startOnLoad: false })
+    const id = 'mermaid-' + Math.random().toString(36).slice(2, 8)
+
+    Promise.resolve(mermaid.render(id, props.node.textContent))
+      .then(({ svg }: { svg: string }) => {
+        if (stale) return
+        display.innerHTML = svg
+      })
+      .catch((error) => {
+        if (stale) return
+        display.textContent = error instanceof Error ? error.message : String(error)
+      })
+
+    return () => { stale = true }
+  }, [props.node, showPreview])
+
+  // --- markup abbreviated for brevity ---
+  return null as any
+}
+
+// @filename: extension.ts
+// ---cut---
+import { union } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+import { defineReactNodeView } from 'prosekit/react'
+
+import MermaidCodeBlockView from './mermaid-code-block-view'
+
+export function defineExtension() {
+  return union(
+    defineCodeBlock(),
+    defineReactNodeView({
+      name: 'codeBlock',
+      contentAs: 'code',
+      component: MermaidCodeBlockView,
+    }),
+  )
+}
+```
+
+## Graphviz DOT
+
+Renders [Graphviz](https://graphviz.org) DOT diagrams (directed graphs, architecture diagrams).
+
+```bash
+pnpm add @viz-js/viz
+```
+
+```tsx twoslash
+// @filename: viz.d.ts
+declare module '@viz-js/viz' {
+  interface VizInstance {
+    renderSVGElement: (
+      input: string,
+      options?: {
+        engine?: string
+        graphAttributes?: Record<string, string>
+        nodeAttributes?: Record<string, string>
+        edgeAttributes?: Record<string, string>
+      },
+    ) => SVGSVGElement
+  }
+  export function instance(): Promise<VizInstance>
+  export type { VizInstance }
+}
+// @filename: dot-code-block-view.tsx
+'use client'
+
+import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { TextSelection } from 'prosekit/pm/state'
+import type { ReactNodeViewProps } from 'prosekit/react'
+import { useEffect, useRef, useState } from 'react'
+import { instance } from '@viz-js/viz'
+import type { VizInstance } from '@viz-js/viz'
+
+function isSelectionInsideCodeBlock(
+  state: any,
+  pos: number,
+  node: any,
+): boolean {
+  const from = pos
+  const to = pos + node.nodeSize
+  const { selection } = state
+  return selection.from < to && selection.to > from
+}
+
+let vizPromise: Promise<VizInstance> | undefined
+
+function getViz(): Promise<VizInstance> {
+  vizPromise ??= instance()
+  return vizPromise
+}
+
+function mountSvgElement(container: HTMLElement, svg: SVGSVGElement): void {
+  container.replaceChildren(svg)
+  container.style.overflowX = 'auto'
+  svg.style.display = 'block'
+  svg.style.width = '100%'
+  svg.style.height = 'auto'
+  svg.style.maxWidth = '100%'
+}
+
+export default function DotCodeBlockView(props: ReactNodeViewProps) {
+  const attrs = props.node.attrs as CodeBlockAttrs
+  const language = attrs.language || ''
+  const [, setSelectionVersion] = useState(0)
+  const displayRef = useRef<HTMLDivElement>(null)
+  const pos = props.getPos()
+
+  const showPreview =
+    typeof pos === 'number' &&
+    language === 'dot' &&
+    !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+
+  useEffect(() => {
+    const doc = props.view.dom.ownerDocument
+    const handler = () => setSelectionVersion((v) => v + 1)
+    doc.addEventListener('selectionchange', handler)
+    return () => doc.removeEventListener('selectionchange', handler)
+  }, [props.view])
+
+  useEffect(() => {
+    const display = displayRef.current
+    if (!showPreview || !display) return
+
+    let stale = false
+    display.innerHTML = ''
+
+    getViz()
+      .then((viz) => {
+        const svg = viz.renderSVGElement(props.node.textContent, {
+          engine: 'dot',
+          graphAttributes: { bgcolor: 'transparent' },
+        })
+        if (stale) return
+        mountSvgElement(display, svg)
+      })
+      .catch((error) => {
+        if (stale) return
+        display.textContent = error instanceof Error ? error.message : String(error)
+      })
+
+    return () => { stale = true }
+  }, [props.node, showPreview])
+
+  return null as any
+}
+```
+
+The extension setup is identical to Mermaid — swap `MermaidCodeBlockView` for `DotCodeBlockView` in the `defineReactNodeView` call.
+
+## Typst
+
+Renders [Typst](https://typst.app) markup (a modern LaTeX alternative) with live SVG output.
+
+```bash
+pnpm add @myriaddreamin/typst.ts @myriaddreamin/typst-ts-renderer @myriaddreamin/typst-ts-web-compiler
+```
+
+```tsx twoslash
+// @filename: typst.d.ts
+declare module '@myriaddreamin/typst.ts' {
+  const $typst: {
+    setCompilerInitOptions: (options: { getModule: () => string }) => void
+    setRendererInitOptions: (options: { getModule: () => string }) => void
+    svg: (options: { mainContent: string }) => Promise<string> | string
+  }
+  export { $typst }
+}
+declare module '@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm?url' {
+  const url: string
+  export default url
+}
+declare module '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm?url' {
+  const url: string
+  export default url
+}
+// @filename: typst-code-block-view.tsx
+'use client'
+
+import rendererWasmUrl from '@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm?url'
+import compilerWasmUrl from '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm?url'
+import { $typst } from '@myriaddreamin/typst.ts'
+import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { TextSelection } from 'prosekit/pm/state'
+import type { ReactNodeViewProps } from 'prosekit/react'
+import { useEffect, useRef, useState } from 'react'
+
+function isSelectionInsideCodeBlock(
+  state: any,
+  pos: number,
+  node: any,
+): boolean {
+  const from = pos
+  const to = pos + node.nodeSize
+  const { selection } = state
+  return selection.from < to && selection.to > from
+}
+
+let typstPromise: Promise<any> | undefined
+
+function getTypst(): Promise<any> {
+  if (!typstPromise) {
+    const typst = $typst
+    typst.setCompilerInitOptions({ getModule: () => compilerWasmUrl })
+    typst.setRendererInitOptions({ getModule: () => rendererWasmUrl })
+    typstPromise = Promise.resolve(typst)
+  }
+  return typstPromise
+}
+
+async function renderTypst(code: string, container: HTMLElement): Promise<void> {
+  const typst = await getTypst()
+  const mainContent = `#set page(width: 640pt, height: auto, margin: 24pt)\n${code}`
+  const svg = await typst.svg({ mainContent })
+  container.innerHTML = svg
+  const svgEl = container.querySelector('svg')
+  if (svgEl) {
+    svgEl.style.maxWidth = '100%'
+    svgEl.style.height = 'auto'
+    svgEl.style.display = 'block'
+  }
+}
+
+export default function TypstCodeBlockView(props: ReactNodeViewProps) {
+  const attrs = props.node.attrs as CodeBlockAttrs
+  const language = attrs.language || ''
+  const [, setSelectionVersion] = useState(0)
+  const displayRef = useRef<HTMLDivElement>(null)
+  const pos = props.getPos()
+
+  const showPreview =
+    typeof pos === 'number' &&
+    language === 'typst' &&
+    !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+
+  useEffect(() => {
+    const doc = props.view.dom.ownerDocument
+    const handler = () => setSelectionVersion((v) => v + 1)
+    doc.addEventListener('selectionchange', handler)
+    return () => doc.removeEventListener('selectionchange', handler)
+  }, [props.view])
+
+  useEffect(() => {
+    const display = displayRef.current
+    if (!showPreview || !display) return
+
+    let stale = false
+    display.innerHTML = ''
+
+    renderTypst(props.node.textContent, display).catch((error) => {
+      if (stale) return
+      display.textContent = error instanceof Error ? error.message : String(error)
+    })
+
+    return () => { stale = true }
+  }, [props.node, showPreview])
+
+  return null as any
+}
+```
+
+Typst uses WebAssembly for compilation and rendering, hence the `?url` imports for the `.wasm` files. Make sure your bundler supports WASM imports (Vite works out of the box with `vite-plugin-wasm`).
+
+## Common pattern
+
+All three examples share the same architecture:
+
+1. **`defineReactNodeView`** overrides the `codeBlock` node with a custom component.
+2. The component checks `language` and **selection position** (`isSelectionInsideCodeBlock`) to decide whether to show the preview or the raw source.
+3. The renderer is called **lazily** — the library is only loaded when the preview becomes visible.
+4. A `selectionchange` listener ensures the preview hides as soon as the cursor enters the code block.
+
+You can use this pattern to add support for any text-to-diagram DSL. Swap the renderer and the language string, and the rest stays the same.
+
+## Framework support
+
+The examples above use React. Replace `defineReactNodeView` with the equivalent for your framework:
+
+| Framework | Wrapper |
+| --------- | ------- |
+| React     | `defineReactNodeView` |
+| Vue       | `defineVueNodeView` |
+| Preact    | `definePreactNodeView` |
+| Svelte    | `defineSvelteNodeView` |
+| Solid     | `defineSolidNodeView` |
+
+## Live examples
+
+- [Mermaid example](/examples/dsl-mermaid)
+- [Graphviz DOT example](/examples/dsl-dot)
+- [Typst example](/examples/dsl-typst)

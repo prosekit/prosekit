@@ -6,7 +6,7 @@ import type { ReactNodeViewProps } from 'prosekit/react'
 
 export default function CodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
-  const language = attrs.language
+  const language = attrs.language || ''
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }
@@ -30,7 +30,10 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
           ))}
         </select>
       </div>
-      <pre ref={props.contentRef} data-language={language}></pre>
+      <pre
+        ref={props.contentRef}
+        data-language={language}
+      ></pre>
     </>
   )
 }

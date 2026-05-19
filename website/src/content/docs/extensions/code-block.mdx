@@ -112,6 +112,12 @@ import { parser } from './my-prosemirror-highlight-parser'
 const extension = defineCodeBlockHighlight({ parser })
 ```
 
+## DSL Rendering
+
+You can render diagrams, math, and documents inside code blocks by combining `defineCodeBlock` with a custom node view. ProseKit ships with built-in examples for [Mermaid](https://mermaid.js.org), [Graphviz DOT](https://graphviz.org), and [Typst](https://typst.app).
+
+See the [DSL diagram rendering](/guides/dsl) guide for complete setup instructions and code examples.
+
 ## API Reference
 
 - [prosekit/extensions/code-block](/references/extensions/code-block)

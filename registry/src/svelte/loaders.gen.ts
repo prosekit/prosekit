@@ -10,6 +10,7 @@ export const loaders = {
   'code-block-themes': () => import('./examples/code-block-themes').then((m) => ({ default: m.ExampleEditor })),
   'drop-cursor': () => import('./examples/drop-cursor').then((m) => ({ default: m.ExampleEditor })),
   'emoji-rules': () => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor })),
+  'font-family': () => import('./examples/font-family').then((m) => ({ default: m.ExampleEditor })),
   'full': () => import('./examples/full').then((m) => ({ default: m.ExampleEditor })),
   'gap-cursor': () => import('./examples/gap-cursor').then((m) => ({ default: m.ExampleEditor })),
   'hard-break': () => import('./examples/hard-break').then((m) => ({ default: m.ExampleEditor })),

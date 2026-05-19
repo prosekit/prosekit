@@ -19,6 +19,7 @@ import { defineBold } from '../bold/index.ts'
 import { defineCodeBlock } from '../code-block/index.ts'
 import { defineCode } from '../code/index.ts'
 import { defineDoc } from '../doc/index.ts'
+import { defineFontFamily } from '../font-family/index.ts'
 import { defineHardBreak } from '../hard-break/index.ts'
 import { defineHeading } from '../heading/index.ts'
 import { defineHighlight } from '../highlight/index.ts'
@@ -62,6 +63,7 @@ export function defineTestExtension() {
     defineSubscript(),
     defineSuperscript(),
     defineCode(),
+    defineFontFamily(),
     defineTextColor(),
     defineBackgroundColor(),
     defineLink(),

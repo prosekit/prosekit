@@ -22,6 +22,7 @@
       "references/extensions/drop-indicator",
       "references/extensions/enter-rule",
       "references/extensions/file",
+      "references/extensions/font-family",
       "references/extensions/gap-cursor",
       "references/extensions/gap-cursor/stylecss",
       "references/extensions/hard-break",

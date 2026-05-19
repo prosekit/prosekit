@@ -11,6 +11,7 @@ export const loaders = {
   'code-block-themes': defineAsyncComponent(() => import('./examples/code-block-themes').then((m) => m.ExampleEditor)),
   'drop-cursor': defineAsyncComponent(() => import('./examples/drop-cursor').then((m) => m.ExampleEditor)),
   'emoji-rules': defineAsyncComponent(() => import('./examples/emoji-rules').then((m) => m.ExampleEditor)),
+  'font-family': defineAsyncComponent(() => import('./examples/font-family').then((m) => m.ExampleEditor)),
   'full': defineAsyncComponent(() => import('./examples/full').then((m) => m.ExampleEditor)),
   'gap-cursor': defineAsyncComponent(() => import('./examples/gap-cursor').then((m) => m.ExampleEditor)),
   'hard-break': defineAsyncComponent(() => import('./examples/hard-break').then((m) => m.ExampleEditor)),

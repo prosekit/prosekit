@@ -49,6 +49,7 @@
     "./extensions/drop-indicator": "./src/extensions/drop-indicator.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
+    "./extensions/font-family": "./src/extensions/font-family.gen.ts",
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
     "./extensions/gap-cursor/style.css": "./src/extensions/gap-cursor/style.css",
     "./extensions/hard-break": "./src/extensions/hard-break.gen.ts",
@@ -338,6 +339,10 @@
       "./extensions/file": {
         "types": "./dist/extensions/file.d.ts",
         "default": "./dist/extensions/file.js"
+      },
+      "./extensions/font-family": {
+        "types": "./dist/extensions/font-family.d.ts",
+        "default": "./dist/extensions/font-family.js"
       },
       "./extensions/gap-cursor": {
         "types": "./dist/extensions/gap-cursor.d.ts",
@@ -865,6 +870,9 @@
         ],
         "extensions/file": [
           "./dist/extensions/file.d.ts"
+        ],
+        "extensions/font-family": [
+          "./dist/extensions/font-family.d.ts"
         ],
         "extensions/gap-cursor": [
           "./dist/extensions/gap-cursor.d.ts"

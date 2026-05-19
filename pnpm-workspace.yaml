@@ -16,6 +16,8 @@ catalog:
   typescript: "~6.0.3"
   vitest: "^4.1.6"
 
+dedupePeers: true
+
 ignoreWorkspaceRootCheck: true
 
 allowBuilds:

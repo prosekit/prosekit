@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.21.2
+
+### Patch Changes
+
+- [`6fda244`](https://github.com/ocavue/prosekit/commit/6fda244b9e9fb2aa0a75a244e0b3bc2bdb734a35) ![](https://prosekit.dev/b/extensions)
+
+  Add font-family extension.
+
 ## 0.21.1
 
 ### Patch Changes

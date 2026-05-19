@@ -7,6 +7,7 @@ import {
   registerInlinePopoverPopupElement,
   registerInlinePopoverPositionerElement,
   registerInlinePopoverRootElement,
+  type OpenChangeEvent,
 } from 'prosekit/lit/inline-popover'
 import type { EditorState } from 'prosekit/pm/state'
 
@@ -144,7 +145,7 @@ class LitInlineMenu extends LitElement {
     return html`
       <prosekit-inline-popover-root
         .editor=${editor}
-        @openChange=${(event: CustomEvent<boolean>) => {
+        @openChange=${(event: OpenChangeEvent) => {
           if (!event.detail) {
             this.linkMenuOpen = false
           }
@@ -233,7 +234,7 @@ class LitInlineMenu extends LitElement {
               .editor=${editor}
               .defaultOpen=${false}
               .open=${this.linkMenuOpen}
-              @openChange=${(event: CustomEvent<boolean>) => {
+              @openChange=${(event: OpenChangeEvent) => {
                 this.linkMenuOpen = event.detail
               }}
             >

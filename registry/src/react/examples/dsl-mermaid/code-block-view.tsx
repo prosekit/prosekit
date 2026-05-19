@@ -1,5 +1,6 @@
 'use client'
 
+import mermaid from 'mermaid'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
@@ -7,8 +8,6 @@ import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef, useState } from 'react'
 
 import { isSelectionInsideCodeBlock } from '../../utils/is-selection-inside-code-block'
-
-import mermaid from 'mermaid'
 
 const previewErrorClass = 'CSS_CODE_BLOCK_PREVIEW_ERROR'
 
@@ -21,7 +20,7 @@ function togglePreviewError(element: HTMLElement, force: boolean): void {
 export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const [, setSelectionVersion] = useState(0)
+  const [_selectionVersion, setSelectionVersion] = useState(0)
   const displayRef = useRef<HTMLDivElement>(null)
   const pos = props.getPos()
   const showPreview = typeof pos === 'number'

@@ -1,18 +1,18 @@
 'use client'
 
+import { instance } from '@viz-js/viz'
+import type { Viz } from '@viz-js/viz'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef, useState } from 'react'
 
-import { instance } from '@viz-js/viz'
-import type { VizInstance } from '@viz-js/viz'
 import { isSelectionInsideCodeBlock } from '../../utils/is-selection-inside-code-block'
 
-let vizPromise: Promise<VizInstance> | undefined
+let vizPromise: Promise<Viz> | undefined
 
-function getViz(): Promise<VizInstance> {
+function getViz(): Promise<Viz> {
   vizPromise ??= instance()
   return vizPromise
 }
@@ -37,7 +37,7 @@ function togglePreviewError(element: HTMLElement, force: boolean): void {
 export default function DotCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const [, setSelectionVersion] = useState(0)
+  const [_selectionVersion, setSelectionVersion] = useState(0)
   const displayRef = useRef<HTMLDivElement>(null)
   const pos = props.getPos()
   const showPreview = typeof pos === 'number'

@@ -66,7 +66,7 @@ function togglePreviewError(element: HTMLElement, force: boolean): void {
 export default function TypstCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const [, setSelectionVersion] = useState(0)
+  const [_selectionVersion, setSelectionVersion] = useState(0)
   const displayRef = useRef<HTMLDivElement>(null)
   const pos = props.getPos()
   const showPreview = typeof pos === 'number'

@@ -7,9 +7,9 @@ import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
-import { isSelectionInsideCodeBlock } from '../../utils/is-selection-inside-code-block'
+import { hideCodeBlockPreviewDecorationKey } from '../../utils/code-block-preview-decorations'
 
 interface TypstSvgOptions {
   mainContent: string
@@ -66,12 +66,9 @@ function togglePreviewError(element: HTMLElement, force: boolean): void {
 export default function TypstCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const [_selectionVersion, setSelectionVersion] = useState(0)
   const displayRef = useRef<HTMLDivElement>(null)
-  const pos = props.getPos()
-  const showPreview = typeof pos === 'number'
-    && language === 'typst'
-    && !isSelectionInsideCodeBlock(props.view.state, pos, props.node)
+  const showPreview = language === 'typst'
+    && !props.decorations.some((decoration) => decoration.spec[hideCodeBlockPreviewDecorationKey])
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }
@@ -87,18 +84,6 @@ export default function TypstCodeBlockView(props: ReactNodeViewProps) {
     dispatch(state.tr.setSelection(selection as never))
     props.view.focus()
   }
-
-  useEffect(() => {
-    const doc = props.view.dom.ownerDocument
-    const handleSelectionChange = () => {
-      setSelectionVersion((value) => value + 1)
-    }
-
-    doc.addEventListener('selectionchange', handleSelectionChange)
-    return () => {
-      doc.removeEventListener('selectionchange', handleSelectionChange)
-    }
-  }, [props.view])
 
   useEffect(() => {
     const display = displayRef.current

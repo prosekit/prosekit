@@ -6,12 +6,14 @@ import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 import { defineReactNodeView, type ReactNodeViewComponent } from 'prosekit/react'
 
+import { defineCodeBlockPreviewDecorations } from '../../utils/code-block-preview-decorations'
 import TypstCodeBlockView from './code-block-view'
 
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
     defineCodeBlock(),
+    defineCodeBlockPreviewDecorations(),
     defineReactNodeView({
       name: 'codeBlock',
       contentAs: 'code',

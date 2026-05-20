@@ -7,6 +7,7 @@ import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 import { defineReactNodeView, type ReactNodeViewComponent } from 'prosekit/react'
 
+import { defineCodeBlockPreviewDecorations } from '../../utils/code-block-preview-decorations'
 import MermaidCodeBlockView from './code-block-view'
 
 export function defineExtension() {
@@ -16,6 +17,7 @@ export function defineExtension() {
     defineText(),
     defineCode(),
     defineCodeBlock(),
+    defineCodeBlockPreviewDecorations(),
     defineReactNodeView({
       name: 'codeBlock',
       contentAs: 'code',

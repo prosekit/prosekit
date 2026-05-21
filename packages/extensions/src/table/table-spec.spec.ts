@@ -1,5 +1,4 @@
 import { union } from '@prosekit/core'
-import pick from 'just-pick'
 import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc/index.ts'
@@ -21,12 +20,11 @@ describe('table spec', () => {
     )
 
     const nodes = extension.schema?.spec.nodes.toObject() || {}
-    const pickedNodes = pick(nodes, [
-      'table',
-      'tableCell',
-      'tableHeaderCell',
-      'tableRow',
-    ])
+    const pickedNodes = Object.fromEntries(
+      ['table', 'tableCell', 'tableHeaderCell', 'tableRow']
+        .filter((key) => Object.hasOwn(nodes, key))
+        .map((key) => [key, nodes[key]]),
+    )
 
     expect(pickedNodes).toMatchInlineSnapshot(`
       {

@@ -317,9 +317,6 @@ importers:
       diffable-html-snapshot:
         specifier: ^0.2.0
         version: 0.2.0
-      just-pick:
-        specifier: ^4.2.0
-        version: 4.2.0
       katex:
         specifier: ^0.16.47
         version: 0.16.47
@@ -5624,9 +5621,6 @@ packages:
 
   just-memoize@2.2.0:
     resolution: {integrity: sha512-zriv+MY+61RXT0QsrO1ZJtL5umouqqSWmCGBkp2wJm35kniunBAA4qhUKx8Lvg/QcwrF9xuw9E6PkevKFf4boQ==}
-
-  just-pick@4.2.0:
-    resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
 
   katex@0.16.47:
     resolution: {integrity: sha512-Eeo8Ys1doU1z+x8AZsPpQu+p/QcZBI5PeOo7QGQdy2x2m0MU/hYagBbGOmXwr5KVbEfVuWv9LpnQWeehogurjg==}
@@ -12775,8 +12769,6 @@ snapshots:
   just-group-by@2.2.0: {}
 
   just-memoize@2.2.0: {}
-
-  just-pick@4.2.0: {}
 
   katex@0.16.47:
     dependencies:

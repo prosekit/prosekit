@@ -956,15 +956,6 @@ importers:
       '@manypkg/find-root':
         specifier: ^3.1.0
         version: 3.1.0
-      '@myriaddreamin/typst-ts-renderer':
-        specifier: 0.6.0
-        version: 0.6.0
-      '@myriaddreamin/typst-ts-web-compiler':
-        specifier: 0.6.0
-        version: 0.6.0
-      '@myriaddreamin/typst.ts':
-        specifier: 0.6.0
-        version: 0.6.0(@myriaddreamin/typst-ts-renderer@0.6.0)(@myriaddreamin/typst-ts-web-compiler@0.6.0)
       '@ocavue/utils':
         specifier: ^1.6.0
         version: 1.6.0
@@ -1001,9 +992,6 @@ importers:
       '@vitest/ui':
         specifier: 'catalog:'
         version: 4.1.7(vitest@4.1.7)
-      '@viz-js/viz':
-        specifier: ^3.17.0
-        version: 3.27.0
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
@@ -2600,23 +2588,6 @@ packages:
 
   '@mermaid-js/parser@1.1.1':
     resolution: {integrity: sha512-VuHdsYMK1bT6X2JbcAaWAhugTRvRBRyuZgd+c22swUeI9g/ntaxF7CY7dYarhZovofCbUNO0G7JesfmNtjYOCw==}
-
-  '@myriaddreamin/typst-ts-renderer@0.6.0':
-    resolution: {integrity: sha512-56Mids4E5Ob6LeEeXDedvmsVnEWnLmc1qeUOeUSruL/zI3S9QXleF/c3Os1FXwJmLuCFbWTEIq8Quh2cXlnxKw==}
-
-  '@myriaddreamin/typst-ts-web-compiler@0.6.0':
-    resolution: {integrity: sha512-P/eIJ5RnfElj0NYzn5PI296t/IwWtgqUyyTMi5Jm5X3V5kZfskkH+LI7mSQe8tEyxwgCvxbxvFe5adinA3K8Gg==}
-
-  '@myriaddreamin/typst.ts@0.6.0':
-    resolution: {integrity: sha512-IUpetG0NyF2H6eXRm4j+NsbanJHIvyrffHEijqYb6q128sLWQgT1FYJS+h7dtjXmrBEfnIl1mI80DyfDR6kB/w==}
-    peerDependencies:
-      '@myriaddreamin/typst-ts-renderer': ^0.6.0
-      '@myriaddreamin/typst-ts-web-compiler': ^0.6.0
-    peerDependenciesMeta:
-      '@myriaddreamin/typst-ts-renderer':
-        optional: true
-      '@myriaddreamin/typst-ts-web-compiler':
-        optional: true
 
   '@napi-rs/wasm-runtime@1.1.4':
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
@@ -4256,9 +4227,6 @@ packages:
   '@vitest/utils@4.1.7':
     resolution: {integrity: sha512-T532WBu791cBxJlCl6SO+J14l81DQx6uQHm1bQbmCDY7nqlEIgkza/UFnSBNaUtSf41unldDFjdOBYEQC4b5Hw==}
 
-  '@viz-js/viz@3.27.0':
-    resolution: {integrity: sha512-XjU8elLpbRieto/kHYWqT01yXDDYBTZB/Ny8ZUuheQw3Kc61I5Eto5+3Lb1PMdjEkh+DKA4Or5b2kxUY3cEfnA==}
-
   '@volar/kit@2.4.28':
     resolution: {integrity: sha512-cKX4vK9dtZvDRaAzeoUdaAJEew6IdxHNCRrdp5Kvcl6zZOqb6jTOfk3kXkIkG3T7oTFXguEMt5+9ptyqYR84Pg==}
     peerDependencies:
@@ -5675,9 +5643,6 @@ packages:
   iconv-lite@0.7.2:
     resolution: {integrity: sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw==}
     engines: {node: '>=0.10.0'}
-
-  idb@7.1.1:
-    resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -9818,17 +9783,6 @@ snapshots:
     dependencies:
       '@chevrotain/types': 11.1.2
 
-  '@myriaddreamin/typst-ts-renderer@0.6.0': {}
-
-  '@myriaddreamin/typst-ts-web-compiler@0.6.0': {}
-
-  '@myriaddreamin/typst.ts@0.6.0(@myriaddreamin/typst-ts-renderer@0.6.0)(@myriaddreamin/typst-ts-web-compiler@0.6.0)':
-    dependencies:
-      idb: 7.1.1
-    optionalDependencies:
-      '@myriaddreamin/typst-ts-renderer': 0.6.0
-      '@myriaddreamin/typst-ts-web-compiler': 0.6.0
-
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
       '@emnapi/core': 1.10.0
@@ -11344,8 +11298,6 @@ snapshots:
       '@vitest/pretty-format': 4.1.7
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
-
-  '@viz-js/viz@3.27.0': {}
 
   '@volar/kit@2.4.28(typescript@6.0.3)':
     dependencies:
@@ -13190,8 +13142,6 @@ snapshots:
   iconv-lite@0.7.2:
     dependencies:
       safer-buffer: 2.1.2
-
-  idb@7.1.1: {}
 
   ignore@5.3.2: {}
 

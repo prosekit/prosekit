@@ -1,13 +1,13 @@
 ---
 title: DSL preview rendering
-description: Render Mermaid, Graphviz DOT, Typst, and other text-based DSLs inside code blocks with live preview
+description: Render Mermaid and other text-based DSLs inside code blocks with live preview
 sidebar:
   order: 70
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
 
-ProseKit lets you turn fenced code blocks into live previews for text-based DSLs. When a code block uses a recognised language (`mermaid`, `dot`, or `typst`), a preview pane appears above the source while you are not editing inside the block. Click the preview to jump back to the source.
+ProseKit lets you turn fenced code blocks into live previews for text-based DSLs. When a code block uses a recognised language (e.g., `mermaid`), a preview pane appears above the source while you are not editing inside the block. Click the preview to jump back to the source.
 
 <Demo story="dsl-mermaid" />
 
@@ -19,7 +19,7 @@ A React node view overrides the default `codeBlock` rendering. It checks `attrs.
 - While the cursor is inside the block, only the raw source is visible.
 - Clicking the preview moves focus back to the source so you can edit.
 
-The three built-in examples (Mermaid, DOT, Typst) all follow the same pattern. Copy one and swap the renderer to add your own previewable DSL.
+The Mermaid example below demonstrates the pattern. Copy it and swap the renderer to add your own previewable DSL.
 
 If you need math rendering for LaTeX-style `$...$` and `$$...$$` syntax, use the built-in [`math` extension](/extensions/math) instead of the code-block preview pattern shown here. ProseKit already handles dedicated `mathInline` and `mathBlock` nodes for that workflow. For API details, see [`prosekit/extensions/math`](/references/extensions/math).
 
@@ -116,211 +116,9 @@ export function defineExtension() {
 }
 ```
 
-## Graphviz DOT
-
-Renders [Graphviz](https://graphviz.org) DOT diagrams (directed graphs, architecture diagrams).
-
-```bash
-pnpm add @viz-js/viz
-```
-
-```tsx twoslash
-// @filename: viz.d.ts
-declare module '@viz-js/viz' {
-  interface VizInstance {
-    renderSVGElement: (
-      input: string,
-      options?: {
-        engine?: string
-        graphAttributes?: Record<string, string>
-        nodeAttributes?: Record<string, string>
-        edgeAttributes?: Record<string, string>
-      },
-    ) => SVGSVGElement
-  }
-  export function instance(): Promise<VizInstance>
-}
-// @filename: dot-code-block-view.tsx
-'use client'
-
-import { instance } from '@viz-js/viz'
-import { hasCodeBlockPreviewHiddenDecoration, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
-import { TextSelection } from 'prosekit/pm/state'
-import type { ReactNodeViewProps } from 'prosekit/react'
-import { useEffect, useRef } from 'react'
-
-type VizInstance = Awaited<ReturnType<typeof instance>>
-
-let vizPromise: Promise<VizInstance> | undefined
-
-function getViz(): Promise<VizInstance> {
-  vizPromise ??= instance()
-  return vizPromise
-}
-
-function mountSvgElement(container: HTMLElement, svg: SVGSVGElement): void {
-  container.replaceChildren(svg)
-  container.style.overflowX = 'auto'
-  svg.style.display = 'block'
-  svg.style.width = '100%'
-  svg.style.height = 'auto'
-  svg.style.maxWidth = '100%'
-}
-
-export default function DotCodeBlockView(props: ReactNodeViewProps) {
-  const attrs = props.node.attrs as CodeBlockAttrs
-  const language = attrs.language || ''
-  const displayRef = useRef<HTMLDivElement>(null)
-  const showPreview = language === 'dot'
-    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
-
-  const focusSource = (event: React.MouseEvent | React.KeyboardEvent) => {
-    event.preventDefault()
-    const pos = props.getPos()
-    if (typeof pos !== 'number') return
-    const { state, dispatch } = props.view
-    const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
-    dispatch(state.tr.setSelection(selection as never))
-    props.view.focus()
-  }
-
-  useEffect(() => {
-    const display = displayRef.current
-    if (!showPreview || !display) return
-
-    let stale = false
-    display.innerHTML = ''
-
-    getViz()
-      .then((viz) => {
-        const svg = viz.renderSVGElement(props.node.textContent, {
-          engine: 'dot',
-          graphAttributes: { bgcolor: 'transparent' },
-        })
-        if (stale) return
-        mountSvgElement(display, svg)
-      })
-      .catch((error) => {
-        if (stale) return
-        display.textContent = error instanceof Error ? error.message : String(error)
-      })
-
-    return () => {
-      stale = true
-    }
-  }, [props.node, showPreview])
-
-  return null as any
-}
-```
-
-The extension setup is identical to Mermaid: keep `defineCodeBlockPreviewDecorations()` and swap `MermaidCodeBlockView` for `DotCodeBlockView` in the `defineReactNodeView` call.
-
-## Typst
-
-Renders [Typst](https://typst.app) markup (a modern LaTeX alternative) with live SVG output.
-
-```bash
-pnpm add @myriaddreamin/typst.ts @myriaddreamin/typst-ts-renderer @myriaddreamin/typst-ts-web-compiler
-```
-
-```tsx twoslash
-// @filename: typst.d.ts
-declare module '@myriaddreamin/typst.ts' {
-  const $typst: {
-    setCompilerInitOptions: (options: { getModule: () => string }) => void
-    setRendererInitOptions: (options: { getModule: () => string }) => void
-    svg: (options: { mainContent: string }) => Promise<string> | string
-  }
-  export { $typst }
-}
-declare module '@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm?url' {
-  const url: string
-  export default url
-}
-declare module '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm?url' {
-  const url: string
-  export default url
-}
-// @filename: typst-code-block-view.tsx
-'use client'
-
-import rendererWasmUrl from '@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm?url'
-import compilerWasmUrl from '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm?url'
-import { $typst } from '@myriaddreamin/typst.ts'
-import { hasCodeBlockPreviewHiddenDecoration, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
-import { TextSelection } from 'prosekit/pm/state'
-import type { ReactNodeViewProps } from 'prosekit/react'
-import { useEffect, useRef } from 'react'
-
-let typstPromise: Promise<any> | undefined
-
-function getTypst(): Promise<any> {
-  if (!typstPromise) {
-    const typst = $typst
-    typst.setCompilerInitOptions({ getModule: () => compilerWasmUrl })
-    typst.setRendererInitOptions({ getModule: () => rendererWasmUrl })
-    typstPromise = Promise.resolve(typst)
-  }
-  return typstPromise
-}
-
-async function renderTypst(code: string, container: HTMLElement): Promise<void> {
-  const typst = await getTypst()
-  const mainContent = `#set page(width: 640pt, height: auto, margin: 24pt)\n${code}`
-  const svg = await typst.svg({ mainContent })
-  container.innerHTML = svg
-  const svgEl = container.querySelector('svg')
-  if (svgEl) {
-    svgEl.style.maxWidth = '100%'
-    svgEl.style.height = 'auto'
-    svgEl.style.display = 'block'
-  }
-}
-
-export default function TypstCodeBlockView(props: ReactNodeViewProps) {
-  const attrs = props.node.attrs as CodeBlockAttrs
-  const language = attrs.language || ''
-  const displayRef = useRef<HTMLDivElement>(null)
-  const showPreview = language === 'typst'
-    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
-
-  const focusSource = (event: React.MouseEvent | React.KeyboardEvent) => {
-    event.preventDefault()
-    const pos = props.getPos()
-    if (typeof pos !== 'number') return
-    const { state, dispatch } = props.view
-    const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
-    dispatch(state.tr.setSelection(selection as never))
-    props.view.focus()
-  }
-
-  useEffect(() => {
-    const display = displayRef.current
-    if (!showPreview || !display) return
-
-    let stale = false
-    display.innerHTML = ''
-
-    renderTypst(props.node.textContent, display).catch((error) => {
-      if (stale) return
-      display.textContent = error instanceof Error ? error.message : String(error)
-    })
-
-    return () => {
-      stale = true
-    }
-  }, [props.node, showPreview])
-
-  return null as any
-}
-```
-
-Typst uses WebAssembly for compilation and rendering, hence the `?url` imports for the `.wasm` files. Make sure your bundler supports WASM imports.
-
 ## Common pattern
 
-All three examples share the same architecture:
+The Mermaid example uses the following architecture:
 
 1. **`defineReactNodeView`** overrides the `codeBlock` node with a custom component.
 2. **`defineCodeBlockPreviewDecorations`** adds node decorations to code blocks that overlap the current selection.
@@ -331,7 +129,7 @@ This avoids subscribing every previewable code block to `props.view.state`, so o
 
 You can use this pattern for any text-based DSL that needs a source/preview split, not just diagrams. Swap the renderer and the language string, and the rest stays the same.
 
-Typical candidates include chart and graph DSLs such as Mermaid, Graphviz DOT, and Vega-Lite; notation DSLs such as ABC notation via `abcjs`; chemistry notations such as SMILES; and document or layout DSLs such as Typst, PlantUML, WaveDrom, or Structurizr DSL.
+Typical candidates include chart and graph DSLs such as Mermaid and Vega-Lite; notation DSLs such as ABC notation via `abcjs`; chemistry notations such as SMILES; and document or layout DSLs such as PlantUML, WaveDrom, or Structurizr DSL.
 
 ## Framework support
 
@@ -348,5 +146,3 @@ The examples above use React. Replace `defineReactNodeView` with the equivalent 
 ## Live examples
 
 - [Mermaid example](/examples/dsl-mermaid)
-- [Graphviz DOT example](/examples/dsl-dot)
-- [Typst example](/examples/dsl-typst)

@@ -33,16 +33,8 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Visual cursor indicator during drag-and-drop operations.',
   },
   {
-    name: 'dsl-dot',
-    description: 'Graphviz DOT rendering via the DSL extension factory.',
-  },
-  {
     name: 'dsl-mermaid',
     description: 'Mermaid diagram rendering via the DSL extension factory.',
-  },
-  {
-    name: 'dsl-typst',
-    description: 'Typst rendering via the DSL extension factory.',
   },
   {
     name: 'emoji-rules',

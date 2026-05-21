@@ -1,15 +1,12 @@
-import { defineMarkSpec, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 
-import { defineBold } from '../bold/index.ts'
-import { defineDoc } from '../doc/index.ts'
-import { defineParagraph } from '../paragraph/index.ts'
-import { pasteHTML, pasteText } from '../testing/clipboard.ts'
-import { setupTestFromExtension } from '../testing/index.ts'
-import { defineText } from '../text/index.ts'
+import { union } from '../editor/union.ts'
+import { pasteHTML, pasteText } from '../test/index.ts'
+import { defineBold, defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
 
 import type { MarkPasteRuleOptions } from './mark-paste-rule.ts'
 import { defineMarkPasteRule } from './mark-paste-rule.ts'
+import { defineMarkSpec } from './mark-spec.ts'
 
 function setup(options?: Partial<MarkPasteRuleOptions>) {
   return setupTestFromExtension(union(

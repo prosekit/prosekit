@@ -1,0 +1,151 @@
+---
+title: Columns
+description: Multi-column content blocks with editable layout, width controls, and custom resize UI
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The columns extension adds a block-level `columnGroup` layout node that groups
+regular block content into side-by-side columns. Each column remains normal
+editor content, so paragraphs, headings, lists, images, and other block nodes
+continue to work inside the layout.
+
+<Demo story="columns" />
+
+## Usage
+
+```ts twoslash
+import 'prosekit/extensions/columns/style.css'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup({
+  minColumnWidth: 160,
+})
+```
+
+## Commands
+
+### `insertColumnGroup`
+
+Replace the current selection with a new column group.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.insertColumnGroup({ count: 2 })
+```
+
+### `addColumnBefore`
+
+Insert a new column before the current column.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.addColumnBefore()
+```
+
+### `addColumnAfter`
+
+Insert a new column after the current column.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.addColumnAfter()
+```
+
+### `removeColumn`
+
+Remove the current column. When only one column would remain, the container is
+unwrapped back into regular block content.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.removeColumn()
+```
+
+### `setColumnWidth`
+
+Set the width of the current column.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setColumnWidth(50)
+```
+
+### `distributeColumnGroup`
+
+Reset the current column group to equal widths.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.distributeColumnGroup()
+```
+
+### `normalizeColumnGroup`
+
+Normalize the current column group so all column widths add up to 100.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineColumnGroup } from 'prosekit/extensions/columns'
+
+const extension = defineColumnGroup()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.normalizeColumnGroup()
+```
+
+## Styling
+
+Import `prosekit/extensions/columns/style.css` to get the default layout styles.
+The stylesheet uses these CSS variables:
+
+- `--prosekit-column-group-gap` — gap between columns (default: `1rem`)
+- `--prosekit-column-width` — width of an individual column
+
+You can override `--prosekit-column-group-gap` via custom CSS to adjust the spacing
+between columns.
+
+The built-in plugin renders resize handles and add-column controls. The demo
+shows one way to combine those controls with a framework toolbar.
+
+## API Reference
+
+- [prosekit/extensions/columns](/references/extensions/columns)
+- [prosekit/extensions/columns/style.css](/references/extensions/columns/stylecss)

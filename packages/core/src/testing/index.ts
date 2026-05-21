@@ -79,7 +79,7 @@ type BoldExtension = Extension<{
 /**
  * @internal
  */
-function defineBold(): BoldExtension {
+export function defineBold(): BoldExtension {
   return defineMarkSpec({
     name: 'bold',
     parseDOM: [{ tag: 'strong' }],

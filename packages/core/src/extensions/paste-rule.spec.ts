@@ -1,9 +1,12 @@
-import { Priority, union, withPriority, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
+import { union } from '../editor/union.ts'
+import { withPriority } from '../editor/with-priority.ts'
 import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
+import type { PlainExtension } from '../types/extension.ts'
+import { Priority } from '../types/priority.ts'
 
 import { definePasteRule } from './paste-rule.ts'
 

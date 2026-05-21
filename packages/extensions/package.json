@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.17.3",
+  "version": "0.17.4",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {
@@ -33,6 +33,8 @@
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
+    "./columns": "./src/columns/index.ts",
+    "./columns/style.css": "./src/columns/style.css",
     "./commit": "./src/commit/index.ts",
     "./commit/style.css": "./src/commit/style.css",
     "./doc": "./src/doc/index.ts",
@@ -186,6 +188,13 @@
       },
       "./commit/style.css": {
         "default": "./dist/commit/style.css"
+      },
+      "./columns": {
+        "types": "./dist/columns.d.ts",
+        "default": "./dist/columns.js"
+      },
+      "./columns/style.css": {
+        "default": "./dist/columns/style.css"
       },
       "./doc": {
         "types": "./dist/doc.d.ts",
@@ -391,6 +400,9 @@
         ],
         "commit": [
           "./dist/commit.d.ts"
+        ],
+        "columns": [
+          "./dist/columns.d.ts"
         ],
         "doc": [
           "./dist/doc.d.ts"

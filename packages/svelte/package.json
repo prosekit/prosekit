@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "private": false,
   "description": "Svelte components and utilities for ProseKit",
   "author": {
@@ -34,6 +34,10 @@
     "./block-handle": {
       "svelte": "./src/components/block-handle/index.ts",
       "default": "./src/components/block-handle/index.ts"
+    },
+    "./columns-popover": {
+      "svelte": "./src/components/columns-popover/index.ts",
+      "default": "./src/components/columns-popover/index.ts"
     },
     "./drop-indicator": {
       "svelte": "./src/components/drop-indicator/index.ts",
@@ -120,6 +124,11 @@
         "svelte": "./dist/block-handle.js",
         "default": "./dist/block-handle.js"
       },
+      "./columns-popover": {
+        "types": "./dist/columns-popover.d.ts",
+        "svelte": "./dist/columns-popover.js",
+        "default": "./dist/columns-popover.js"
+      },
       "./drop-indicator": {
         "types": "./dist/drop-indicator.d.ts",
         "svelte": "./dist/drop-indicator.js",
@@ -169,6 +178,9 @@
         ],
         "block-handle": [
           "./dist/block-handle.d.ts"
+        ],
+        "columns-popover": [
+          "./dist/columns-popover.d.ts"
         ],
         "drop-indicator": [
           "./dist/drop-indicator.d.ts"

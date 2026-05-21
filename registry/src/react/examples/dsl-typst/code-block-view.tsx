@@ -3,13 +3,10 @@
 import rendererWasmUrl from '@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm?url'
 import compilerWasmUrl from '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm?url'
 import { $typst } from '@myriaddreamin/typst.ts'
-import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
-import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
+import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef } from 'react'
-
-import { hideCodeBlockPreviewDecorationKey } from '../../utils/code-block-preview-decorations'
 
 interface TypstSvgOptions {
   mainContent: string
@@ -68,7 +65,7 @@ export default function TypstCodeBlockView(props: ReactNodeViewProps) {
   const language = attrs.language || ''
   const displayRef = useRef<HTMLDivElement>(null)
   const showPreview = language === 'typst'
-    && !props.decorations.some((decoration) => decoration.spec[hideCodeBlockPreviewDecorationKey])
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }

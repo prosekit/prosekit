@@ -1,13 +1,12 @@
 import { defineBaseKeymap, union } from 'prosekit/core'
 import { defineCode } from 'prosekit/extensions/code'
-import { defineCodeBlock } from 'prosekit/extensions/code-block'
+import { defineCodeBlock, defineCodeBlockPreviewDecorations } from 'prosekit/extensions/code-block'
 import { defineDoc } from 'prosekit/extensions/doc'
 import { defineHeading } from 'prosekit/extensions/heading'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 import { defineReactNodeView, type ReactNodeViewComponent } from 'prosekit/react'
 
-import { defineCodeBlockPreviewDecorations } from '../../utils/code-block-preview-decorations'
 import MermaidCodeBlockView from './code-block-view'
 
 export function defineExtension() {

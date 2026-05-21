@@ -1,13 +1,10 @@
 'use client'
 
 import { instance } from '@viz-js/viz'
-import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
-import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
+import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef } from 'react'
-
-import { hideCodeBlockPreviewDecorationKey } from '../../utils/code-block-preview-decorations'
 
 type Viz = Awaited<ReturnType<typeof instance>>
 
@@ -39,7 +36,7 @@ export default function DotCodeBlockView(props: ReactNodeViewProps) {
   const language = attrs.language || ''
   const displayRef = useRef<HTMLDivElement>(null)
   const showPreview = language === 'dot'
-    && !props.decorations.some((decoration) => decoration.spec[hideCodeBlockPreviewDecorationKey])
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }

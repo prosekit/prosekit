@@ -1,13 +1,10 @@
 'use client'
 
 import mermaid from 'mermaid'
-import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
-import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
+import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef } from 'react'
-
-import { hideCodeBlockPreviewDecorationKey } from '../../utils/code-block-preview-decorations'
 
 const previewErrorClass = 'CSS_CODE_BLOCK_PREVIEW_ERROR'
 
@@ -22,7 +19,7 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
   const language = attrs.language || ''
   const displayRef = useRef<HTMLDivElement>(null)
   const showPreview = language === 'mermaid'
-    && !props.decorations.some((decoration) => decoration.spec[hideCodeBlockPreviewDecorationKey])
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }

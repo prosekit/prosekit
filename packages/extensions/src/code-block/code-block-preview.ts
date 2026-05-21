@@ -1,22 +1,31 @@
-import { definePlugin } from 'prosekit/core'
-import type { ProseMirrorNode } from 'prosekit/pm/model'
-import { Plugin, PluginKey, type EditorState, type Selection } from 'prosekit/pm/state'
-import { Decoration, DecorationSet } from 'prosekit/pm/view'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
+import { Plugin, PluginKey, type EditorState, type Selection } from '@prosekit/pm/state'
+import { Decoration, DecorationSet, type DecorationSource } from '@prosekit/pm/view'
 
-export const hideCodeBlockPreviewDecorationKey = 'hideCodeBlockPreview'
+export const HIDE_CODE_BLOCK_PREVIEW = 'prosekitHideCodeBlockPreview' as const
 
-export function defineCodeBlockPreviewDecorations() {
+export function defineCodeBlockPreviewDecorations(): PlainExtension {
   return definePlugin(
     new Plugin({
-      key: new PluginKey('registry-code-block-preview-decorations'),
+      key: new PluginKey('prosekit-code-block-preview-decorations'),
       props: {
-        decorations: (state) => createCodeBlockPreviewDecorations(state),
+        decorations: createCodeBlockPreviewDecorations,
       },
     }),
   )
 }
 
-function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet {
+export function hasCodeBlockPreviewHiddenDecoration(
+  decorations: readonly Decoration[],
+): boolean {
+  return decorations.some((decoration) => {
+    const spec = decoration.spec as Record<string, unknown>
+    return spec[HIDE_CODE_BLOCK_PREVIEW] === true
+  })
+}
+
+function createCodeBlockPreviewDecorations(state: EditorState): DecorationSource {
   const codeBlocks = getOverlappingCodeBlocks(state)
   if (codeBlocks.length === 0) {
     return DecorationSet.empty
@@ -26,8 +35,9 @@ function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet {
     state.doc,
     codeBlocks.map(([pos, node]) =>
       Decoration.node(pos, pos + node.nodeSize, {}, {
-        [hideCodeBlockPreviewDecorationKey]: true,
-      })),
+        [HIDE_CODE_BLOCK_PREVIEW]: true,
+      })
+    ),
   )
 }
 

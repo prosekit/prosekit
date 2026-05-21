@@ -68,6 +68,13 @@
       "hidden": false,
       "description": "Example for code block node with syntax highlighting."
     },
+    "code-block-mermaid": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Mermaid diagram rendering via the DSL extension factory."
+    },
     "code-block-themes": {
       "frameworks": [
         "react",
@@ -89,13 +96,6 @@
       ],
       "hidden": false,
       "description": "Visual cursor indicator during drag-and-drop operations."
-    },
-    "dsl-mermaid": {
-      "frameworks": [
-        "react"
-      ],
-      "hidden": false,
-      "description": "Mermaid diagram rendering via the DSL extension factory."
     },
     "emoji-rules": {
       "frameworks": [
@@ -676,6 +676,16 @@
         "registry/src/react/ui/toolbar/toolbar.tsx"
       ]
     },
+    "react-example-code-block-mermaid": {
+      "story": "code-block-mermaid",
+      "files": [
+        "registry/src/react/examples/code-block-mermaid/code-block-view.tsx",
+        "registry/src/react/examples/code-block-mermaid/editor.tsx",
+        "registry/src/react/examples/code-block-mermaid/extension.ts",
+        "registry/src/react/examples/code-block-mermaid/index.ts",
+        "registry/src/react/sample/sample-code-block-mermaid.ts"
+      ]
+    },
     "react-example-code-block-themes": {
       "story": "code-block-themes",
       "files": [
@@ -696,16 +706,6 @@
         "registry/src/react/examples/drop-cursor/extension.ts",
         "registry/src/react/examples/drop-cursor/index.ts",
         "registry/src/react/sample/sample-doc-drop-cursor.ts"
-      ]
-    },
-    "react-example-dsl-mermaid": {
-      "story": "dsl-mermaid",
-      "files": [
-        "registry/src/react/examples/dsl-mermaid/code-block-view.tsx",
-        "registry/src/react/examples/dsl-mermaid/editor.tsx",
-        "registry/src/react/examples/dsl-mermaid/extension.ts",
-        "registry/src/react/examples/dsl-mermaid/index.ts",
-        "registry/src/react/sample/dsl-mermaid.ts"
       ]
     },
     "react-example-emoji-rules": {

@@ -2,7 +2,7 @@ export { defineCodeBlockCommands, type CodeBlockCommandsExtension } from './code
 export { defineCodeBlockHighlight, type CodeBlockHighlightOptions, type HighlightParser } from './code-block-highlight.ts'
 export { defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule.ts'
 export { defineCodeBlockKeymap } from './code-block-keymap.ts'
-export { defineCodeBlockPreviewDecorations, hasCodeBlockPreviewHiddenDecoration, HIDE_CODE_BLOCK_PREVIEW } from './code-block-preview.ts'
+export { defineCodeBlockPreviewDecorations, hasCodeBlockPreviewHiddenDecoration } from './code-block-preview.ts'
 export { defineCodeBlockShiki, type CodeBlockShikiOptions } from './code-block-shiki.ts'
 export { defineCodeBlockSpec, type CodeBlockSpecExtension } from './code-block-spec.ts'
 export type { CodeBlockAttrs } from './code-block-types.ts'

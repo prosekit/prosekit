@@ -1,9 +1,6 @@
-import type { NodeType } from '@prosekit/pm/model'
 import type { Selection } from '@prosekit/pm/state'
 
-function isCodeBlockType(type: NodeType): boolean {
-  return !!(type.spec.code && type.isBlock)
-}
+import { isCodeBlockType } from './is-code-block.ts'
 
 /**
  * Check if the selection is in a code block.

@@ -33,7 +33,7 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Visual cursor indicator during drag-and-drop operations.',
   },
   {
-    name: 'dsl-mermaid',
+    name: 'code-block-mermaid',
     description: 'Mermaid diagram rendering via the DSL extension factory.',
   },
   {

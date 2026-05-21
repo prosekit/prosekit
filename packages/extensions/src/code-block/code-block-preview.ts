@@ -1,6 +1,7 @@
 import { definePlugin, type PlainExtension } from '@prosekit/core'
-import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { Plugin, PluginKey, type EditorState, type Selection } from '@prosekit/pm/state'
+import { isCodeBlockType } from '@prosekit/core'
+import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
+import { Plugin, PluginKey, type EditorState } from '@prosekit/pm/state'
 import { Decoration, DecorationSet, type DecorationSource } from '@prosekit/pm/view'
 
 export const HIDE_CODE_BLOCK_PREVIEW = 'prosekitHideCodeBlockPreview' as const
@@ -20,7 +21,7 @@ export function hasCodeBlockPreviewHiddenDecoration(
   decorations: readonly Decoration[],
 ): boolean {
   return decorations.some((decoration) => {
-    const spec = decoration.spec
+    const spec = decoration.spec as Record<string, unknown>
     return spec != null && typeof spec === 'object' && spec[HIDE_CODE_BLOCK_PREVIEW] === true
   })
 }
@@ -45,12 +46,12 @@ function getOverlappingCodeBlocks(state: EditorState): Array<[pos: number, node:
   const codeBlocks = new Map<number, ProseMirrorNode>()
   const { selection } = state
 
-  collectCodeBlockAncestors(codeBlocks, selection, '$from')
-  collectCodeBlockAncestors(codeBlocks, selection, '$to')
+  collectCodeBlockAncestors(codeBlocks, selection['$from'])
+  collectCodeBlockAncestors(codeBlocks, selection['$to'])
 
   if (!selection.empty) {
     state.doc.nodesBetween(selection.from, selection.to, (node, pos) => {
-      if (node.type.name === 'codeBlock') {
+      if (isCodeBlockType(node.type)) {
         codeBlocks.set(pos, node)
       }
     })
@@ -61,14 +62,11 @@ function getOverlappingCodeBlocks(state: EditorState): Array<[pos: number, node:
 
 function collectCodeBlockAncestors(
   codeBlocks: Map<number, ProseMirrorNode>,
-  selection: Selection,
-  key: '$from' | '$to',
+  $pos: ResolvedPos,
 ): void {
-  const $pos = selection[key]
-
   for (let depth = $pos.depth; depth >= 0; depth--) {
     const node = $pos.node(depth)
-    if (node.type.name !== 'codeBlock') continue
+    if (!isCodeBlockType(node.type)) continue
     codeBlocks.set($pos.before(depth), node)
     break
   }

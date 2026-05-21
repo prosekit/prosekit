@@ -7,7 +7,7 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { sampleContent } from '../../sample/dsl-mermaid'
+import { sampleContent } from '../../sample/sample-code-block-mermaid'
 
 import { defineExtension } from './extension'
 

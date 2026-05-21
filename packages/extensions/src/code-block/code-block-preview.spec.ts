@@ -6,8 +6,8 @@ import { describe, expect, it } from 'vitest'
 import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
 
 import {
-  defineCodeBlockPreviewDecorations,
   codeBlockPreviewDecorationsPluginKey,
+  defineCodeBlockPreviewDecorations,
   hasCodeBlockPreviewHiddenDecoration,
   HIDE_CODE_BLOCK_PREVIEW,
 } from './code-block-preview.ts'

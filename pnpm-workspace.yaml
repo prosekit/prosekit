@@ -9,12 +9,12 @@ allowedDeprecatedVersions:
 catalog:
   "@tsdown/css": "^0.22.0"
   "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.6"
-  "@vitest/coverage-v8": "^4.1.6"
-  "@vitest/ui": "^4.1.6"
+  "@vitest/browser-playwright": "^4.1.7"
+  "@vitest/coverage-v8": "^4.1.7"
+  "@vitest/ui": "^4.1.7"
   tsdown: "^0.22.0"
   typescript: "~6.0.3"
-  vitest: "^4.1.6"
+  vitest: "^4.1.7"
 
 dedupePeers: true
 
@@ -27,8 +27,6 @@ allowBuilds:
   sharp: false
   workerd: false
 
-overrides: {}
-
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
 
@@ -40,8 +38,5 @@ trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 7 days
 
-peerDependencyRules:
-  allowedVersions: {}
-
 minimumReleaseAgeExclude:
-  - "prosemirror-*"
+  - prosemirror-model@1.25.7

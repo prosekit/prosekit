@@ -55,6 +55,6 @@
     "turbo": "^2.9.14",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.1.0"
+    "wrangler": "^4.0.0"
   }
 }

@@ -2,16 +2,21 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { findRoot } from '@manypkg/find-root'
-import memoize from 'just-memoize'
 import examples from 'prosekit-registry/examples.gen.json'
 
 import { replaceClassNames } from './replace-class-names'
+
+interface DemoFile {
+  title: string
+  code: string
+  lang: 'plaintext'
+}
 
 const rootDir: string = (await findRoot(process.cwd())).rootDir
 
 async function loadDemoFileImpl(
   filePath: string,
-) {
+): Promise<DemoFile> {
   const absFilePath = path.join(rootDir, filePath)
   const fileContent = await fs.readFile(absFilePath, 'utf-8')
   return ({
@@ -23,7 +28,7 @@ async function loadDemoFileImpl(
 
 async function loadDemoFilesImpl(
   { framework, story }: { framework: string; story: string },
-) {
+): Promise<DemoFile[]> {
   const exampleKey = `${framework}-example-${story}`
   const example = examples.examples[exampleKey as keyof typeof examples.examples]
   if (!example) {
@@ -57,4 +62,17 @@ function findCommonPrefix(filePaths: string[]): string {
   return chunks[chunks.length - 1]
 }
 
-export const loadDemoFiles = memoize(loadDemoFilesImpl)
+const loadDemoFilesCache = new Map<string, Promise<DemoFile[]>>()
+
+export function loadDemoFiles(
+  options: { framework: string; story: string },
+): Promise<DemoFile[]> {
+  const key = `${options.framework}-${options.story}`
+  const cached = loadDemoFilesCache.get(key)
+  if (cached) {
+    return cached
+  }
+  const result = loadDemoFilesImpl(options)
+  loadDemoFilesCache.set(key, result)
+  return result
+}

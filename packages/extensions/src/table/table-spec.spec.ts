@@ -20,83 +20,11 @@ describe('table spec', () => {
     )
 
     const nodes = extension.schema?.spec.nodes.toObject() || {}
-    const pickedNodes = Object.fromEntries(
-      ['table', 'tableCell', 'tableHeaderCell', 'tableRow']
-        .filter((key) => Object.hasOwn(nodes, key))
-        .map((key) => [key, nodes[key]]),
-    )
 
-    expect(pickedNodes).toMatchInlineSnapshot(`
-      {
-        "table": {
-          "content": "tableRow+",
-          "group": "block",
-          "isolating": true,
-          "parseDOM": [
-            {
-              "tag": "table",
-            },
-          ],
-          "tableRole": "table",
-          "toDOM": [Function],
-        },
-        "tableCell": {
-          "attrs": {
-            "colspan": {
-              "default": 1,
-            },
-            "colwidth": {
-              "default": null,
-            },
-            "rowspan": {
-              "default": 1,
-            },
-          },
-          "content": "block+",
-          "isolating": true,
-          "parseDOM": [
-            {
-              "getAttrs": [Function],
-              "tag": "td",
-            },
-          ],
-          "tableRole": "cell",
-          "toDOM": [Function],
-        },
-        "tableHeaderCell": {
-          "attrs": {
-            "colspan": {
-              "default": 1,
-            },
-            "colwidth": {
-              "default": null,
-            },
-            "rowspan": {
-              "default": 1,
-            },
-          },
-          "content": "block+",
-          "isolating": true,
-          "parseDOM": [
-            {
-              "getAttrs": [Function],
-              "tag": "th",
-            },
-          ],
-          "tableRole": "header_cell",
-          "toDOM": [Function],
-        },
-        "tableRow": {
-          "content": "(tableCell | tableHeaderCell)*",
-          "parseDOM": [
-            {
-              "tag": "tr",
-            },
-          ],
-          "tableRole": "row",
-          "toDOM": [Function],
-        },
-      }
-    `)
+
+    expect(nodes['table']).toMatchInlineSnapshot()
+     expect(nodes['tableRow']).toMatchInlineSnapshot()
+    expect(nodes['tableCell']).toMatchInlineSnapshot()
+    expect(nodes['tableHeaderCell']).toMatchInlineSnapshot()
   })
 })

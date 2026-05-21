@@ -1,7 +1,18 @@
-import Color from 'colorjs.io'
 import { expect, it } from 'vitest'
 
 import { testStory, testStoryConsistency, waitForEditor } from './helpers'
+
+/**
+ * Parses the red, green and blue channels from a CSS color string returned by
+ * `getComputedStyle`, which is always in `rgb(...)` / `rgba(...)` form.
+ */
+function parseRgb(color: string): [number, number, number] {
+  const nums = color.match(/-?[\d.]+/g)?.map(Number)
+  if (!nums || nums.length < 3) {
+    throw new Error(`Cannot parse color: ${color}`)
+  }
+  return [nums[0], nums[1], nums[2]]
+}
 
 testStoryConsistency('list-custom-checkbox')
 
@@ -20,10 +31,7 @@ testStory('list-custom-checkbox', () => {
 
     const isRedDominant = () => {
       const backgroundColor = window.getComputedStyle(inputElement).backgroundColor
-      const parsed = new Color(backgroundColor)
-      const r = parsed.srgb.r || 0
-      const g = parsed.srgb.g || 0
-      const b = parsed.srgb.b || 0
+      const [r, g, b] = parseRgb(backgroundColor)
       return r > g && r > b
     }
 

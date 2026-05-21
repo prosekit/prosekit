@@ -20,8 +20,8 @@ export function hasCodeBlockPreviewHiddenDecoration(
   decorations: readonly Decoration[],
 ): boolean {
   return decorations.some((decoration) => {
-    const spec = decoration.spec as Record<string, unknown>
-    return spec[HIDE_CODE_BLOCK_PREVIEW] === true
+    const spec = decoration.spec
+    return spec != null && typeof spec === 'object' && spec[HIDE_CODE_BLOCK_PREVIEW] === true
   })
 }
 

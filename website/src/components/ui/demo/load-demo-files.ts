@@ -9,7 +9,7 @@ import { replaceClassNames } from './replace-class-names'
 interface DemoFile {
   title: string
   code: string
-  lang: 'plaintext'
+  lang: string
 }
 
 const rootDir: string = (await findRoot(process.cwd())).rootDir
@@ -22,7 +22,7 @@ async function loadDemoFileImpl(
   return ({
     title: filePath,
     code: replaceClassNames(fileContent, absFilePath),
-    lang: (absFilePath.split('.').pop() || 'plaintext') as 'plaintext',
+    lang: (absFilePath.split('.').pop() || 'plaintext')
   })
 }
 

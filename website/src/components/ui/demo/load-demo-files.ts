@@ -22,7 +22,7 @@ async function loadDemoFileImpl(
   return ({
     title: filePath,
     code: replaceClassNames(fileContent, absFilePath),
-    lang: (absFilePath.split('.').pop() || 'plaintext')
+    lang: absFilePath.split('.').pop() || 'plaintext',
   })
 }
 

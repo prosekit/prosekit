@@ -7,10 +7,6 @@ updates:
       interval: daily
     cooldown:
       default-days: 7
-      exclude:
-        - "@ocavue/*"
-        - "@aria-ui/*"
-        - "astrobook"
     groups:
       non-major:
         update-types:

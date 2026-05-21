@@ -17,6 +17,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Track and commit document changes with version history.',
   },
   {
+    name: 'code-block-mermaid',
+    description: 'Mermaid diagram rendering via the DSL extension factory.',
+  },
+  {
     name: 'code-block-themes',
     description: 'Code block with multiple syntax highlighting themes.',
   },
@@ -31,10 +35,6 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
   {
     name: 'drop-cursor',
     description: 'Visual cursor indicator during drag-and-drop operations.',
-  },
-  {
-    name: 'code-block-mermaid',
-    description: 'Mermaid diagram rendering via the DSL extension factory.',
   },
   {
     name: 'emoji-rules',

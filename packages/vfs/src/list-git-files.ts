@@ -1,7 +1,7 @@
 import { join, normalize, resolve } from 'node:path'
 
-import { execa } from 'execa'
 import { pathExists } from 'path-exists'
+import { exec } from 'tinyexec'
 
 import { debug } from './debug'
 
@@ -15,11 +15,17 @@ async function runGit(dir: string): Promise<string> {
     '--exclude-standard', // respect .gitignore
   ]
   try {
-    const { stdout } = await execa('git', args, { cwd: dir })
+    const { stdout } = await exec('git', args, {
+      throwOnError: true,
+      nodeOptions: { cwd: dir },
+    })
     return stdout
   } catch (error) {
     console.warn(`Failed to run "git ${args.join(' ')}" in ${dir}:`, error)
-    const { stdout } = await execa('git', ['ls-files'], { cwd: dir })
+    const { stdout } = await exec('git', ['ls-files'], {
+      throwOnError: true,
+      nodeOptions: { cwd: dir },
+    })
     return stdout
   }
 }

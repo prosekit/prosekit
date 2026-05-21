@@ -1,0 +1,28 @@
+.ProseMirror .prosekit-columns {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--prosekit-columns-gap, 1rem);
+  margin: 0.5rem 0;
+}
+
+.ProseMirror .prosekit-column {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  min-width: 10rem;
+  min-height: 72px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  width: var(--prosekit-column-width, 100%);
+}
+
+.ProseMirror .prosekit-column:hover {
+  background-color: rgb(243 244 246 / 0.6);
+}
+
+.ProseMirror .prosekit-column > *:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror .prosekit-column > *:last-child {
+  margin-bottom: 0;
+}

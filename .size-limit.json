@@ -120,6 +120,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/columns/style.css",
+    "path": "packages/prosekit/dist/extensions/columns/style.css",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/doc",
     "path": "packages/prosekit/dist/extensions/doc.js",
     "ignore": [

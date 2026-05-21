@@ -5,7 +5,6 @@ import {
   clampColumnWidth,
   columnsPluginKey,
   findColumnBoundaryAtCoords,
-  findParentColumn,
   getColumnsRuntimeState,
   setActiveColumnHandle,
   setColumnWidthAt,
@@ -19,31 +18,27 @@ import { useEffect, useMemo } from 'react'
 
 import type { EditorExtension } from './extension'
 
-function getColumnsUiState(editor: Editor<EditorExtension>) {
-  const runtime = getColumnsRuntimeState(editor.state)
-  const currentColumn = findParentColumn(editor.state.selection.$anchor)
-  const currentGap = currentColumn
-    ? (editor.state.doc.nodeAt(currentColumn.containerPos)?.attrs.gap as number | null | undefined) ?? null
-    : null
-
-  return {
-    runtime,
-    currentColumn,
-    currentGap,
-    canAddBefore: editor.commands.addColumnBefore.canExec(),
-    canAddAfter: editor.commands.addColumnAfter.canExec(),
-    canRemove: editor.commands.removeColumn.canExec(),
-    canDistribute: editor.commands.distributeColumns.canExec(),
-  }
+interface HandleRect {
+  x: number
+  y: number
+  height: number
 }
 
-function getHandleRect(editor: Editor<EditorExtension>, handle: ColumnHandleInfo | null) {
+function getHandleRect(
+  editor: Editor<EditorExtension>,
+  handle: ColumnHandleInfo | null,
+): HandleRect | null {
   if (!handle) return null
   const dom = editor.view.nodeDOM(handle.columnPos)
   if (!(dom instanceof HTMLElement)) return null
+
   const rect = dom.getBoundingClientRect()
+  const next = dom.nextElementSibling
+  const nextRect = next instanceof HTMLElement ? next.getBoundingClientRect() : null
+  const x = nextRect ? rect.right + (nextRect.left - rect.right) / 2 : rect.right
+
   return {
-    x: rect.right,
+    x,
     y: rect.top,
     height: rect.height,
   }
@@ -51,7 +46,6 @@ function getHandleRect(editor: Editor<EditorExtension>, handle: ColumnHandleInfo
 
 export default function ColumnsUi() {
   const editor = useEditor<EditorExtension>()
-  const state = useEditorDerivedValue(getColumnsUiState)
   const handleRect = useEditorDerivedValue(useMemo(() => {
     return (currentEditor: Editor<EditorExtension>) => getHandleRect(
       currentEditor,
@@ -68,21 +62,22 @@ export default function ColumnsUi() {
     }
 
     const handleMouseMove = (event: MouseEvent) => {
-      const runtime = getColumnsRuntimeState(view.state)
-      if (runtime?.dragging) {
-        const width = clampColumnWidth(runtime.dragging.startWidth + event.clientX - runtime.dragging.startX, {
-          minColumnWidth: 160,
-        })
-        setColumnWidthAt(runtime.dragging.columnPos, width)(view.state, view.dispatch, view)
-        return
-      }
-
-      const hit = findColumnBoundaryAtCoords(view, event)
+      const hit = findColumnBoundaryAtCoords(view, event, { handleWidth: 8 })
       view.dispatch(view.state.tr.setMeta(columnsPluginKey, setActiveColumnHandle(hit)))
     }
 
+    const handleDragMove = (event: MouseEvent) => {
+      const runtime = getColumnsRuntimeState(view.state)
+      if (!runtime?.dragging) return
+      const width = clampColumnWidth(
+        runtime.dragging.startWidth + event.clientX - runtime.dragging.startX,
+        { minColumnWidth: 160 },
+      )
+      setColumnWidthAt(runtime.dragging.columnPos, width)(view.state, view.dispatch, view)
+    }
+
     const handleMouseDown = (event: MouseEvent) => {
-      const hit = findColumnBoundaryAtCoords(view, event)
+      const hit = findColumnBoundaryAtCoords(view, event, { handleWidth: 8 })
       if (!hit) return
       const dom = view.nodeDOM(hit.columnPos)
       if (!(dom instanceof HTMLElement)) return
@@ -104,20 +99,20 @@ export default function ColumnsUi() {
     root.addEventListener('mousemove', handleMouseMove)
     root.addEventListener('mouseleave', clearHandle)
     root.addEventListener('mousedown', handleMouseDown)
-    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousemove', handleDragMove)
     window.addEventListener('mouseup', handleMouseUp)
 
     return () => {
       root.removeEventListener('mousemove', handleMouseMove)
       root.removeEventListener('mouseleave', clearHandle)
       root.removeEventListener('mousedown', handleMouseDown)
-      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mousemove', handleDragMove)
       window.removeEventListener('mouseup', handleMouseUp)
     }
   }, [editor])
 
   const addColumnAfterAtHandle = () => {
-    const handle = state.runtime?.activeHandle
+    const handle = getColumnsRuntimeState(editor.state)?.activeHandle
     if (!handle) return
     editor.view.dispatch(
       editor.view.state.tr.setSelection(
@@ -127,86 +122,44 @@ export default function ColumnsUi() {
     editor.commands.addColumnAfter()
   }
 
+  if (!handleRect) return null
+
   return (
     <>
       <div
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '8px',
-          marginTop: '12px',
-          alignItems: 'center',
+          position: 'fixed',
+          left: `${handleRect.x - 1}px`,
+          top: `${handleRect.y}px`,
+          width: '2px',
+          height: `${handleRect.height}px`,
+          background: '#9ca3af',
+          pointerEvents: 'none',
+          zIndex: 20,
         }}
+      />
+      <button
+        type="button"
+        aria-label="Add column"
+        style={{
+          position: 'fixed',
+          left: `${handleRect.x - 10}px`,
+          top: `${handleRect.y - 10}px`,
+          width: '20px',
+          height: '20px',
+          borderRadius: '9999px',
+          border: '1px solid #d1d5db',
+          background: '#ffffff',
+          color: '#374151',
+          fontSize: '14px',
+          lineHeight: 1,
+          zIndex: 21,
+        }}
+        onMouseDown={(event) => event.preventDefault()}
+        onClick={addColumnAfterAtHandle}
       >
-        <button type="button" onClick={() => editor.commands.insertColumns({ count: 2 })}>
-          Insert 2 Columns
-        </button>
-        <button type="button" onClick={() => editor.commands.insertColumns({ count: 3 })}>
-          Insert 3 Columns
-        </button>
-        <button type="button" disabled={!state.canAddBefore} onClick={() => editor.commands.addColumnBefore()}>
-          Add Before
-        </button>
-        <button type="button" disabled={!state.canAddAfter} onClick={() => editor.commands.addColumnAfter()}>
-          Add After
-        </button>
-        <button type="button" disabled={!state.canRemove} onClick={() => editor.commands.removeColumn()}>
-          Remove Column
-        </button>
-        <button type="button" disabled={!state.canDistribute} onClick={() => editor.commands.distributeColumns()}>
-          Equalize Widths
-        </button>
-        <label style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-          Gap
-          <input
-            type="range"
-            min={0}
-            max={48}
-            step={4}
-            value={state.currentGap ?? 20}
-            disabled={!state.currentColumn}
-            onChange={(event) => editor.commands.setColumnsGap(Number(event.target.value))}
-          />
-          <span style={{ minWidth: '2ch', textAlign: 'right' }}>{state.currentGap ?? 20}</span>
-        </label>
-      </div>
-      {handleRect && (
-        <>
-          <div
-            style={{
-              position: 'fixed',
-              left: `${handleRect.x - 1}px`,
-              top: `${handleRect.y}px`,
-              width: '2px',
-              height: `${handleRect.height}px`,
-              background: '#0f766e',
-              pointerEvents: 'none',
-              zIndex: 20,
-            }}
-          />
-          <button
-            type="button"
-            style={{
-              position: 'fixed',
-              left: `${handleRect.x - 10}px`,
-              top: `${handleRect.y - 14}px`,
-              width: '20px',
-              height: '20px',
-              borderRadius: '9999px',
-              border: '1px solid #0f766e',
-              background: 'white',
-              color: '#0f766e',
-              fontSize: '14px',
-              lineHeight: 1,
-              zIndex: 21,
-            }}
-            onMouseDown={(event) => event.preventDefault()}
-            onClick={addColumnAfterAtHandle}
-          >
-            +
-          </button>
-        </>
-      )}
+        +
+      </button>
     </>
   )
 }

@@ -84,7 +84,7 @@
         "react"
       ],
       "hidden": false,
-      "description": ""
+      "description": "Example for columns layout with resizable columns and drag handles."
     },
     "drop-cursor": {
       "frameworks": [
@@ -696,6 +696,7 @@
         "registry/src/react/examples/columns/editor.tsx",
         "registry/src/react/examples/columns/extension.ts",
         "registry/src/react/examples/columns/index.ts",
+        "registry/src/react/examples/columns/toolbar.tsx",
         "registry/src/react/sample/sample-doc-columns.ts"
       ]
     },

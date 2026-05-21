@@ -130,7 +130,10 @@ export function findColumnBoundaryAtCoords(
   for (let index = 0; index < columns.length; index += 1) {
     const column = columns[index] as HTMLElement
     const rect = column.getBoundingClientRect()
-    if (event.clientX < rect.right - handleWidth || event.clientX > rect.right + handleWidth) {
+    const nextColumn = columns[index + 1] as HTMLElement | undefined
+    const nextRect = nextColumn?.getBoundingClientRect()
+    const handleX = nextRect ? rect.right + (nextRect.left - rect.right) / 2 : rect.right
+    if (event.clientX < handleX - handleWidth || event.clientX > handleX + handleWidth) {
       continue
     }
     const columnPos = view.posAtDOM(column, 0)

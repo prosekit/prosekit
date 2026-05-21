@@ -13,7 +13,7 @@
   "dprint.experimentalLsp": true,
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "[typescript]": {
-    "editor.defaultFormatter": "gplane.dprint2",
+    "editor.defaultFormatter": "dprint.dprint",
   },
   "[javascript]": {
     "editor.defaultFormatter": "dprint.dprint",
@@ -40,5 +40,8 @@
     "./registry/src/tailwind.css": "./registry/src/**",
     "./website/src/styles/tailwind.css": "./website/src/**",
   },
-  "tailwindCSS.classFunctions": ["clsx", "cn"],
+  "tailwindCSS.classFunctions": [
+    "clsx",
+    "cn"
+  ],
 }

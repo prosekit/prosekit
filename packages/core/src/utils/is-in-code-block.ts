@@ -1,6 +1,6 @@
 import type { Selection } from '@prosekit/pm/state'
 
-import { isCodeBlockType } from './is-code-block.ts'
+import { isCodeBlockType } from './is-code-block-type.ts'
 
 /**
  * Check if the selection is in a code block.

@@ -44,6 +44,7 @@
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
     "./extensions/commit": "./src/extensions/commit.gen.ts",
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
+    "./extensions/columns": "./src/extensions/columns.gen.ts",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
     "./extensions/drop-indicator": "./src/extensions/drop-indicator.gen.ts",
@@ -319,6 +320,10 @@
       },
       "./extensions/commit/style.css": {
         "default": "./dist/extensions/commit/style.css"
+      },
+      "./extensions/columns": {
+        "types": "./dist/extensions/columns.d.ts",
+        "default": "./dist/extensions/columns.js"
       },
       "./extensions/doc": {
         "types": "./dist/extensions/doc.d.ts",
@@ -855,6 +860,9 @@
         ],
         "extensions/commit": [
           "./dist/extensions/commit.d.ts"
+        ],
+        "extensions/columns": [
+          "./dist/extensions/columns.d.ts"
         ],
         "extensions/doc": [
           "./dist/extensions/doc.d.ts"

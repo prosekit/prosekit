@@ -10,6 +10,7 @@ export const ChangeTracking = { args: { story: 'change-tracking' } }
 export const Code = { args: { story: 'code' } }
 export const CodeBlock = { args: { story: 'code-block' } }
 export const CodeBlockThemes = { args: { story: 'code-block-themes' } }
+export const Columns = { args: { story: 'columns' } }
 export const DropCursor = { args: { story: 'drop-cursor' } }
 export const EmojiRules = { args: { story: 'emoji-rules' } }
 export const FontFamily = { args: { story: 'font-family' } }

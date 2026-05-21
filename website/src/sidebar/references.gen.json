@@ -15,6 +15,7 @@
       "references/extensions/bold",
       "references/extensions/code",
       "references/extensions/code-block",
+      "references/extensions/columns",
       "references/extensions/commit",
       "references/extensions/commit/stylecss",
       "references/extensions/doc",

@@ -79,6 +79,13 @@
       "hidden": false,
       "description": "Code block with multiple syntax highlighting themes."
     },
+    "columns": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": ""
+    },
     "drop-cursor": {
       "frameworks": [
         "react",
@@ -680,6 +687,16 @@
         "registry/src/react/sample/sample-doc-code-block.ts",
         "registry/src/react/ui/code-block-view/code-block-view.tsx",
         "registry/src/react/ui/code-block-view/index.ts"
+      ]
+    },
+    "react-example-columns": {
+      "story": "columns",
+      "files": [
+        "registry/src/react/examples/columns/columns-ui.tsx",
+        "registry/src/react/examples/columns/editor.tsx",
+        "registry/src/react/examples/columns/extension.ts",
+        "registry/src/react/examples/columns/index.ts",
+        "registry/src/react/sample/sample-doc-columns.ts"
       ]
     },
     "react-example-drop-cursor": {

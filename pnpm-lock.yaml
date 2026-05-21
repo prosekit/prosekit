@@ -1169,9 +1169,6 @@ importers:
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1
-      just-memoize:
-        specifier: ^2.2.0
-        version: 2.2.0
       loro-crdt:
         specifier: ^1.12.1
         version: 1.12.1

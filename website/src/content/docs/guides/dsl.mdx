@@ -43,10 +43,7 @@ declare module 'mermaid' {
 // @filename: mermaid-code-block-view.tsx
 'use client'
 
-import {
-  hasCodeBlockPreviewHiddenDecoration,
-  type CodeBlockAttrs,
-} from 'prosekit/extensions/code-block'
+import { hasCodeBlockPreviewHiddenDecoration, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef } from 'react'
@@ -56,9 +53,8 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
   const displayRef = useRef<HTMLDivElement>(null)
-  const showPreview =
-    language === 'mermaid' &&
-    !hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const showPreview = language === 'mermaid'
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
 
   const focusSource = (event: React.MouseEvent | React.KeyboardEvent) => {
     event.preventDefault()
@@ -148,10 +144,7 @@ declare module '@viz-js/viz' {
 'use client'
 
 import { instance } from '@viz-js/viz'
-import {
-  hasCodeBlockPreviewHiddenDecoration,
-  type CodeBlockAttrs,
-} from 'prosekit/extensions/code-block'
+import { hasCodeBlockPreviewHiddenDecoration, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef } from 'react'
@@ -178,9 +171,8 @@ export default function DotCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
   const displayRef = useRef<HTMLDivElement>(null)
-  const showPreview =
-    language === 'dot' &&
-    !hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const showPreview = language === 'dot'
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
 
   const focusSource = (event: React.MouseEvent | React.KeyboardEvent) => {
     event.preventDefault()
@@ -256,10 +248,7 @@ declare module '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_b
 import rendererWasmUrl from '@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm?url'
 import compilerWasmUrl from '@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm?url'
 import { $typst } from '@myriaddreamin/typst.ts'
-import {
-  hasCodeBlockPreviewHiddenDecoration,
-  type CodeBlockAttrs,
-} from 'prosekit/extensions/code-block'
+import { hasCodeBlockPreviewHiddenDecoration, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useEffect, useRef } from 'react'
@@ -293,9 +282,8 @@ export default function TypstCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
   const displayRef = useRef<HTMLDivElement>(null)
-  const showPreview =
-    language === 'typst' &&
-    !hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const showPreview = language === 'typst'
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
 
   const focusSource = (event: React.MouseEvent | React.KeyboardEvent) => {
     event.preventDefault()

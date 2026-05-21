@@ -21,9 +21,8 @@ describe('table spec', () => {
 
     const nodes = extension.schema?.spec.nodes.toObject() || {}
 
-
     expect(nodes['table']).toMatchInlineSnapshot()
-     expect(nodes['tableRow']).toMatchInlineSnapshot()
+    expect(nodes['tableRow']).toMatchInlineSnapshot()
     expect(nodes['tableCell']).toMatchInlineSnapshot()
     expect(nodes['tableHeaderCell']).toMatchInlineSnapshot()
   })

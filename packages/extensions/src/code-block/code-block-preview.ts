@@ -1,15 +1,17 @@
-import { definePlugin, type PlainExtension } from '@prosekit/core'
-import { isCodeBlockType } from '@prosekit/core'
+import { definePlugin, isCodeBlockType, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 import { Plugin, PluginKey, type EditorState } from '@prosekit/pm/state'
 import { Decoration, DecorationSet, type DecorationSource } from '@prosekit/pm/view'
 
 export const HIDE_CODE_BLOCK_PREVIEW = 'prosekitHideCodeBlockPreview' as const
+export const codeBlockPreviewDecorationsPluginKey: PluginKey<undefined> = new PluginKey<undefined>(
+  'prosekit-code-block-preview-decorations',
+)
 
 export function defineCodeBlockPreviewDecorations(): PlainExtension {
   return definePlugin(
-    new Plugin({
-      key: new PluginKey('prosekit-code-block-preview-decorations'),
+    new Plugin<undefined>({
+      key: codeBlockPreviewDecorationsPluginKey,
       props: {
         decorations: createCodeBlockPreviewDecorations,
       },

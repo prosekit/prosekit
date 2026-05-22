@@ -66,7 +66,12 @@ export function defineColumnSpec(): ColumnSpecExtension {
       getAttrs(dom) {
         if (!(dom instanceof HTMLElement)) return false
         const width = dom.style.getPropertyValue('--prosekit-column-width')
-          || dom.style.getPropertyValue('width')
+          || dom.style.getPropertyValue('flex-grow')
+          || (
+            dom.style.getPropertyValue('width').trim().endsWith('%')
+              ? dom.style.getPropertyValue('width')
+              : ''
+          )
         if (!width) return { width: null }
         const value = Number.parseFloat(width)
         return { width: Number.isFinite(value) ? value : null }
@@ -76,7 +81,7 @@ export function defineColumnSpec(): ColumnSpecExtension {
       const attrs = node.attrs as ColumnAttrs
       const width = attrs.width
       const style = width != null
-        ? `--prosekit-column-width:${width}px;width:${width}px;flex:0 0 ${width}px;`
+        ? `--prosekit-column-width:${width};flex:${width} 1 0;`
         : null
       return ['div', { class: 'prosekit-column', style }, 0]
     },

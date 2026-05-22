@@ -1,19 +1,28 @@
 import { union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { defineDoc } from '../doc/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
 import { setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
 
+import {
+  columnsPluginKey,
+  getColumnsRuntimeState,
+  setActiveColumnHandle,
+  startColumnDragging,
+  updateColumnDragging,
+} from './columns-plugin.ts'
+import { findParentColumn } from './columns-utils.ts'
 import { defineColumns } from './columns.ts'
 
-function setup() {
+function setup(options?: Parameters<typeof defineColumns>[0]) {
   const extension = union(
     defineDoc(),
     defineText(),
     defineParagraph(),
-    defineColumns(),
+    defineColumns(options),
   )
   return setupTestFromExtension(extension)
 }
@@ -70,7 +79,7 @@ describe('columns spec', () => {
     `)
   })
 
-  it('should render fixed-width columns with explicit width and flex basis', () => {
+  it('should render column width as a flex share', () => {
     const extension = union(
       defineDoc(),
       defineText(),
@@ -81,12 +90,12 @@ describe('columns spec', () => {
     const columnType = extension.schema?.nodes.column
     expect(columnType).toBeTruthy()
 
-    const dom = columnType!.spec.toDOM?.(columnType!.create({ width: 240 }))
+    const dom = columnType!.spec.toDOM?.(columnType!.create({ width: 25 }))
     expect(dom).toEqual([
       'div',
       {
         class: 'prosekit-column',
-        style: '--prosekit-column-width:240px;width:240px;flex:0 0 240px;',
+        style: '--prosekit-column-width:25;flex:25 1 0;',
       },
       0,
     ])
@@ -103,6 +112,47 @@ describe('columns commands', () => {
         n.columns(
           n.column(n.paragraph()),
           n.column(n.paragraph()),
+        ),
+      ).toJSON(),
+    )
+  })
+
+  it('should apply default width and gap when inserting columns', () => {
+    const { editor, n } = setup({
+      defaultColumnWidth: 25,
+      defaultGap: 16,
+    })
+    editor.set(n.doc(n.paragraph('<a>')))
+    editor.commands.insertColumns({ count: 3 })
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          { gap: 16 },
+          n.column({ width: 25 }, n.paragraph()),
+          n.column({ width: 25 }, n.paragraph()),
+          n.column({ width: 25 }, n.paragraph()),
+        ),
+      ).toJSON(),
+    )
+  })
+
+  it('should add a column before the current one', () => {
+    const { editor, n } = setup({
+      defaultColumnWidth: 25,
+    })
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('one')),
+        n.column(n.paragraph('tw<a>o')),
+      ),
+    ))
+    editor.commands.addColumnBefore()
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          n.column(n.paragraph('one')),
+          n.column({ width: 25 }, n.paragraph()),
+          n.column(n.paragraph('two')),
         ),
       ).toJSON(),
     )
@@ -128,6 +178,22 @@ describe('columns commands', () => {
     )
   })
 
+  it('should respect maxColumns when adding a column', () => {
+    const { editor, n } = setup({
+      maxColumns: 2,
+    })
+    const doc = n.doc(
+      n.columns(
+        n.column(n.paragraph('one<a>')),
+        n.column(n.paragraph('two')),
+      ),
+    )
+    editor.set(doc)
+    expect(editor.commands.addColumnAfter.canExec()).toBe(false)
+    expect(editor.commands.addColumnAfter()).toBe(false)
+    expect(editor.view.state.doc.toJSON()).toEqual(doc.toJSON())
+  })
+
   it('should unwrap when removing down to one column', () => {
     const { editor, n } = setup()
     editor.set(n.doc(
@@ -150,16 +216,195 @@ describe('columns commands', () => {
         n.column(n.paragraph('right')),
       ),
     ))
-    editor.commands.setColumnWidth(280)
+    editor.commands.setColumnWidth(40)
     editor.commands.setColumnsGap(24)
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(
         n.columns(
           { gap: 24 },
-          n.column({ width: 280 }, n.paragraph('left')),
+          n.column({ width: 40 }, n.paragraph('left')),
           n.column(n.paragraph('right')),
         ),
       ).toJSON(),
     )
+  })
+
+  it('should distribute columns to equal percentage widths', () => {
+    const { editor, n } = setup({
+      minColumnWidth: 160,
+      defaultColumnWidth: 30,
+    })
+    editor.set(n.doc(
+      n.columns(
+        n.column({ width: 10 }, n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+        n.column({ width: 50 }, n.paragraph('three')),
+      ),
+    ))
+    editor.commands.distributeColumns()
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          n.column({ width: 33.333 }, n.paragraph('one')),
+          n.column({ width: 33.333 }, n.paragraph('two')),
+          n.column({ width: 33.334 }, n.paragraph('three')),
+        ),
+      ).toJSON(),
+    )
+  })
+
+  it('should normalize columns to percentage widths', () => {
+    const { editor, n } = setup({
+      minColumnWidth: 160,
+    })
+    editor.set(n.doc(
+      n.columns(
+        n.column({ width: 25 }, n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+    editor.commands.normalizeColumns()
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          n.column({ width: 33.333 }, n.paragraph('one')),
+          n.column({ width: 66.667 }, n.paragraph('two')),
+        ),
+      ).toJSON(),
+    )
+  })
+})
+
+describe('columns keymap', () => {
+  it('should select the current column content on Mod-a when enabled', async () => {
+    const { editor, n } = setup({
+      enableModAWithinColumn: true,
+    })
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    await keyboard.press('ControlOrMeta+a')
+
+    expect(editor.state.selection.content().content.toString()).toBe('<columns(column(paragraph("one")))>')
+  })
+})
+
+describe('columns plugin state', () => {
+  it('should remap active handle when the document changes', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    const handle = {
+      pos: found!.pos + found!.node.nodeSize,
+      columnPos: found!.pos,
+      containerPos: found!.containerPos,
+      index: found!.index,
+    }
+    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, setActiveColumnHandle(handle)))
+    editor.view.dispatch(editor.state.tr.insertText('X', found!.start + 1))
+
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toEqual({
+      ...handle,
+      pos: handle.pos + 1,
+    })
+  })
+
+  it('should clear active handle when the referenced column is deleted', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, setActiveColumnHandle({
+      pos: found!.pos + found!.node.nodeSize,
+      columnPos: found!.pos,
+      containerPos: found!.containerPos,
+      index: found!.index,
+    })))
+    editor.commands.removeColumn()
+
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(null)
+  })
+
+  it('should remap dragging state when the document changes', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    const dragging = {
+      handlePos: found!.pos + found!.node.nodeSize,
+      columnPos: found!.pos,
+      startX: 100,
+      startWidth: 40,
+    }
+
+    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, startColumnDragging(dragging)))
+    editor.view.dispatch(editor.state.tr.insertText('X', found!.start + 1))
+
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual({
+      ...dragging,
+      handlePos: dragging.handlePos + 1,
+    })
+  })
+
+  it('should keep dragging state when updating column width during drag', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    const dragging = {
+      handlePos: found!.pos + found!.node.nodeSize,
+      columnPos: found!.pos,
+      startX: 100,
+      startWidth: 40,
+    }
+
+    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, startColumnDragging(dragging)))
+    editor.view.dispatch(
+      editor.state.tr
+        .setNodeMarkup(dragging.columnPos, undefined, {
+          ...found!.node.attrs,
+          width: 60,
+        })
+        .setMeta(columnsPluginKey, updateColumnDragging(dragging)),
+    )
+
+    expect(editor.state.doc.nodeAt(dragging.columnPos)?.attrs.width).toBe(60)
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual(dragging)
   })
 })

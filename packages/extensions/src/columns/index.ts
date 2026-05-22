@@ -52,6 +52,7 @@ export {
   findParentColumn,
   findParentColumns,
   getColumnCount,
+  getEqualColumnWidths,
   getColumnLayoutAtPos,
   normalizeColumnWidths,
 } from './columns-utils.ts'

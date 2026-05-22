@@ -2,18 +2,19 @@ import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
 import { Fragment, type NodeType, type ProseMirrorNode } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import {
-  findParentColumn,
-  findParentColumns,
-  getColumnLayoutAtPos,
-  normalizeColumnWidths,
-} from './columns-utils.ts'
 import type {
   ColumnAttrs,
   ColumnsAttrs,
   ColumnsOptions,
   InsertColumnsOptions,
 } from './columns-types.ts'
+import {
+  findParentColumn,
+  findParentColumns,
+  getColumnLayoutAtPos,
+  getEqualColumnWidths,
+  normalizeColumnWidths,
+} from './columns-utils.ts'
 
 function createDefaultBlock(state: Parameters<Command>[0]): ProseMirrorNode {
   const paragraphType = getNodeType(state.schema, 'paragraph')
@@ -166,23 +167,25 @@ export function addColumnAfter(options: ColumnsOptions = {}): Command {
  * @internal
  */
 export function removeColumn(): Command {
-  return (state, dispatch) => {
-    const found = findParentColumn(state.selection.$anchor)
-    if (!found) return false
-    const container = state.doc.nodeAt(found.containerPos)
-    if (!container) return false
+  return removeColumnCommand
+}
 
-    const nextChildren = getChildNodes(container)
-    nextChildren.splice(found.index, 1)
+const removeColumnCommand: Command = (state, dispatch) => {
+  const found = findParentColumn(state.selection.$anchor)
+  if (!found) return false
+  const container = state.doc.nodeAt(found.containerPos)
+  if (!container) return false
 
-    return replaceColumnsChildren(
-      state,
-      dispatch,
-      found.containerPos,
-      nextChildren,
-      container.attrs as ColumnsAttrs,
-    )
-  }
+  const nextChildren = getChildNodes(container)
+  nextChildren.splice(found.index, 1)
+
+  return replaceColumnsChildren(
+    state,
+    dispatch,
+    found.containerPos,
+    nextChildren,
+    container.attrs as ColumnsAttrs,
+  )
 }
 
 /**
@@ -225,30 +228,24 @@ export function setColumnsGap(gap: number | null): Command {
 /**
  * @internal
  */
-export function distributeColumns(options: ColumnsOptions = {}): Command {
-  const defaults = getOptionsWithDefaults(options)
-  return (state, dispatch) => {
-    const found = findParentColumns(state.selection.$anchor)
-    if (!found) return false
-    const widths = normalizeColumnWidths(
-      getChildNodes(found.node).map((node) => (node.attrs as ColumnAttrs).width ?? defaults.defaultColumnWidth),
-      { minColumnWidth: defaults.minColumnWidth },
-    )
-    const width = Math.max(
-      defaults.minColumnWidth,
-      Math.round(widths.reduce((sum, value) => sum + value, 0) / widths.length),
-    )
-    if (!dispatch) return true
+export function distributeColumns(_options: ColumnsOptions = {}): Command {
+  return distributeColumnsCommand
+}
 
-    const tr = state.tr
-    let pos = found.start
-    found.node.forEach((node) => {
-      tr.setNodeMarkup(pos, undefined, { ...node.attrs, width })
-      pos += node.nodeSize
-    })
-    dispatch(tr.scrollIntoView())
-    return true
-  }
+const distributeColumnsCommand: Command = (state, dispatch) => {
+  const found = findParentColumns(state.selection.$anchor)
+  if (!found) return false
+  const widths = getEqualColumnWidths(found.node.childCount)
+  if (!dispatch) return true
+
+  const tr = state.tr
+  let pos = found.start
+  found.node.forEach((node, _offset, index) => {
+    tr.setNodeMarkup(pos, undefined, { ...node.attrs, width: widths[index] })
+    pos += node.nodeSize
+  })
+  dispatch(tr.scrollIntoView())
+  return true
 }
 
 /**
@@ -283,7 +280,7 @@ export function normalizeColumns(options: ColumnsOptions = {}): Command {
 export function defineColumnsCommands(options: ColumnsOptions = {}): ColumnsCommandsExtension {
   const defaults = getOptionsWithDefaults(options)
   return defineCommands({
-    insertColumns: (commandOptions) => (state, dispatch) => {
+    insertColumns: (commandOptions: InsertColumnsOptions) => (state, dispatch) => {
       if (commandOptions.count < 1) return false
       const node = createColumnsNode(state, commandOptions, defaults)
       const { from, to } = state.selection

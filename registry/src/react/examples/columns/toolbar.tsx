@@ -27,11 +27,19 @@ function getToolbarItems(editor: Editor<EditorExtension>) {
     },
     addBefore: {
       canExec: editor.commands.addColumnBefore.canExec(),
-      command: () => editor.commands.addColumnBefore(),
+      command: () => {
+        if (editor.commands.addColumnBefore()) {
+          editor.commands.distributeColumns()
+        }
+      },
     },
     addAfter: {
       canExec: editor.commands.addColumnAfter.canExec(),
-      command: () => editor.commands.addColumnAfter(),
+      command: () => {
+        if (editor.commands.addColumnAfter()) {
+          editor.commands.distributeColumns()
+        }
+      },
     },
     remove: {
       canExec: editor.commands.removeColumn.canExec(),

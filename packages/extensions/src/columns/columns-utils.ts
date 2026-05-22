@@ -7,10 +7,29 @@ import type {
   ColumnBoundaryHit,
   ColumnLayoutInfo,
   ColumnAttrs,
-  ColumnsAttrs,
   FindColumnResult,
   FindColumnsResult,
 } from './columns-types.ts'
+
+const TOTAL_COLUMN_WIDTH = 100
+const COLUMN_WIDTH_PRECISION = 1000
+
+function roundColumnWidth(width: number): number {
+  return Math.round(width * COLUMN_WIDTH_PRECISION) / COLUMN_WIDTH_PRECISION
+}
+
+function finishColumnWidths(widths: number[]): number[] {
+  if (widths.length === 0) return []
+  const rounded = widths.map(roundColumnWidth)
+  const total = rounded.reduce((sum, width) => sum + width, 0)
+  rounded[rounded.length - 1] = roundColumnWidth(rounded[rounded.length - 1] + TOTAL_COLUMN_WIDTH - total)
+  return rounded
+}
+
+export function getEqualColumnWidths(count: number): number[] {
+  if (count <= 0) return []
+  return finishColumnWidths(Array.from({ length: count }, () => TOTAL_COLUMN_WIDTH / count))
+}
 
 export function findParentColumns($pos: ResolvedPos): FindColumnsResult | undefined {
   const found = findParentNode((node) => node.type.name === 'columns', $pos)
@@ -90,26 +109,29 @@ export function getColumnLayoutAtPos(
 
   return {
     containerPos: found.pos,
-    gap: (found.node.attrs as ColumnsAttrs).gap ?? null,
+    gap: found.node.attrs.gap ?? null,
     columns,
   }
 }
 
 export function clampColumnWidth(
   width: number,
-  options: { minColumnWidth: number },
+  _options: { minColumnWidth: number },
 ): number {
-  return Math.max(options.minColumnWidth, Math.round(width))
+  return Math.max(0, roundColumnWidth(width))
 }
 
 export function normalizeColumnWidths(
   widths: Array<number | null>,
-  options: { minColumnWidth: number },
+  _options: { minColumnWidth: number },
 ): number[] {
-  return widths.map((width) => {
-    const fallback = width ?? options.minColumnWidth
-    return clampColumnWidth(fallback, options)
-  })
+  if (widths.length === 0) return []
+  const fallback = TOTAL_COLUMN_WIDTH / widths.length
+  const values = widths.map((width) => Math.max(0, width ?? fallback))
+  const total = values.reduce((sum, width) => sum + width, 0)
+  if (total <= 0) return getEqualColumnWidths(widths.length)
+
+  return finishColumnWidths(values.map((width) => width / total * TOTAL_COLUMN_WIDTH))
 }
 
 export function findColumnBoundaryAtCoords(

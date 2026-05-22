@@ -2,19 +2,8 @@ import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
 import { Fragment, type NodeType, type ProseMirrorNode } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import type {
-  ColumnAttrs,
-  ColumnsAttrs,
-  ColumnsOptions,
-  InsertColumnsOptions,
-} from './columns-types.ts'
-import {
-  findParentColumn,
-  findParentColumns,
-  getColumnLayoutAtPos,
-  getEqualColumnWidths,
-  normalizeColumnWidths,
-} from './columns-utils.ts'
+import type { ColumnAttrs, ColumnsAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
+import { findParentColumn, findParentColumns, getColumnLayoutAtPos, getEqualColumnWidths, normalizeColumnWidths } from './columns-utils.ts'
 
 function createDefaultBlock(state: Parameters<Command>[0]): ProseMirrorNode {
   const paragraphType = getNodeType(state.schema, 'paragraph')
@@ -41,8 +30,10 @@ function createColumnsNode(
   const columnType = getNodeType(state.schema, 'column')
   const count = Math.max(1, options.count)
   const widths = options.widths ?? []
-  const children = Array.from({ length: count }, (_, index) =>
-    createColumnNode(columnType, state, { width: widths[index] ?? defaults.defaultColumnWidth }))
+  const children = Array.from(
+    { length: count },
+    (_, index) => createColumnNode(columnType, state, { width: widths[index] ?? defaults.defaultColumnWidth }),
+  )
 
   return columnsType.createAndFill(
     { gap: options.gap ?? defaults.defaultGap },

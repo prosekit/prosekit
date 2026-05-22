@@ -3,13 +3,7 @@ import type { ResolvedPos } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import type {
-  ColumnBoundaryHit,
-  ColumnLayoutInfo,
-  ColumnAttrs,
-  FindColumnResult,
-  FindColumnsResult,
-} from './columns-types.ts'
+import type { ColumnAttrs, ColumnBoundaryHit, ColumnLayoutInfo, FindColumnResult, FindColumnsResult } from './columns-types.ts'
 
 const TOTAL_COLUMN_WIDTH = 100
 const COLUMN_WIDTH_PRECISION = 1000
@@ -140,14 +134,12 @@ export function findColumnBoundaryAtCoords(
   options: { handleWidth?: number } = {},
 ): ColumnBoundaryHit | null {
   const handleWidth = options.handleWidth ?? 6
-  const container = event.composedPath().find((el) =>
-    (el as HTMLElement).classList?.contains('prosekit-columns'),
-  ) as HTMLElement | undefined
+  const container = event.composedPath().find((el) => (el as HTMLElement).classList?.contains('prosekit-columns')) as
+    | HTMLElement
+    | undefined
   if (!container) return null
 
-  const columns = Array.from(container.children).filter((el) =>
-    el.classList.contains('prosekit-column'),
-  )
+  const columns = Array.from(container.children).filter((el) => el.classList.contains('prosekit-column'))
 
   for (let index = 0; index < columns.length; index += 1) {
     const column = columns[index] as HTMLElement

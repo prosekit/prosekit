@@ -1,15 +1,11 @@
 import type { Transaction } from '@prosekit/pm/state'
 
-import type {
-  ColumnDragSession,
-  ColumnHandleInfo,
-  ColumnsRuntimeState,
-} from './columns-types.ts'
+import type { ColumnDragSession, ColumnHandleInfo, ColumnsRuntimeState } from './columns-types.ts'
 
 export type ColumnsMetaAction =
-  | { type: 'setActiveHandle', handle: ColumnHandleInfo | null }
-  | { type: 'startDragging', dragging: ColumnDragSession }
-  | { type: 'updateDragging', dragging: ColumnDragSession }
+  | { type: 'setActiveHandle'; handle: ColumnHandleInfo | null }
+  | { type: 'startDragging'; dragging: ColumnDragSession }
+  | { type: 'updateDragging'; dragging: ColumnDragSession }
   | { type: 'stopDragging' }
 
 function remapHandle(

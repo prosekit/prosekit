@@ -15,7 +15,8 @@ export const sampleContent: NodeJSON = {
       content: [
         {
           type: 'text',
-          text: 'Move the pointer to a column edge to reveal the handle. The extension stores structure and runtime state; the UI here is a React layer on top.',
+          text:
+            'Move the pointer to a column edge to reveal the handle. The extension stores structure and runtime state; the UI here is a React layer on top.',
         },
       ],
     },

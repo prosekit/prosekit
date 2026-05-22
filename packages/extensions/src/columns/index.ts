@@ -11,13 +11,10 @@ export {
   setColumnWidthAt,
   type ColumnsCommandsExtension,
 } from './columns-commands.ts'
+export { defineColumnsKeymap, type ColumnsKeymapExtension } from './columns-keymap.ts'
 export {
-  defineColumnsKeymap,
-  type ColumnsKeymapExtension,
-} from './columns-keymap.ts'
-export {
-  defineColumnsPlugin,
   columnsPluginKey,
+  defineColumnsPlugin,
   getColumnsRuntimeState,
   setActiveColumnHandle,
   startColumnDragging,
@@ -25,13 +22,7 @@ export {
   updateColumnDragging,
   type ColumnsPluginExtension,
 } from './columns-plugin.ts'
-export {
-  defineColumnSpec,
-  defineColumnsSpec,
-  type ColumnSpecExtension,
-  type ColumnsSpecExtension,
-} from './columns-spec.ts'
-export { defineColumns, type ColumnsExtension } from './columns.ts'
+export { defineColumnSpec, defineColumnsSpec, type ColumnSpecExtension, type ColumnsSpecExtension } from './columns-spec.ts'
 export type {
   ColumnAttrs,
   ColumnBoundaryHit,
@@ -52,7 +43,8 @@ export {
   findParentColumn,
   findParentColumns,
   getColumnCount,
-  getEqualColumnWidths,
   getColumnLayoutAtPos,
+  getEqualColumnWidths,
   normalizeColumnWidths,
 } from './columns-utils.ts'
+export { defineColumns, type ColumnsExtension } from './columns.ts'

@@ -104,7 +104,7 @@ function getColumnPos(editor: Editor<EditorExtension>, element: HTMLElement): nu
 function getColumnElements(
   editor: Editor<EditorExtension>,
   handle: ColumnHandleInfo,
-): { container: HTMLElement, columns: HTMLElement[], leftIndex: number } | null {
+): { container: HTMLElement; columns: HTMLElement[]; leftIndex: number } | null {
   const column = getColumnElement(editor, handle.columnPos)
   const container = column?.parentElement
   if (!column || !isColumnsElement(container)) return null
@@ -119,7 +119,7 @@ function getColumnElements(
 function getColumnElementsInContainer(
   editor: Editor<EditorExtension>,
   containerPos: number,
-): { container: HTMLElement, columns: HTMLElement[] } | null {
+): { container: HTMLElement; columns: HTMLElement[] } | null {
   const container = editor.view.nodeDOM(containerPos)
   if (!isColumnsElement(container)) return null
 
@@ -309,12 +309,15 @@ function startDraggingAtHandle(
   const dom = getColumnElement(editor, handle.columnPos)
   if (!dom) return
 
-  editor.view.dispatch(editor.view.state.tr.setMeta(columnsPluginKey, startColumnDragging({
-    handlePos: handle.pos,
-    columnPos: handle.columnPos,
-    startX,
-    startWidth: dom.getBoundingClientRect().width,
-  })))
+  editor.view.dispatch(editor.view.state.tr.setMeta(
+    columnsPluginKey,
+    startColumnDragging({
+      handlePos: handle.pos,
+      columnPos: handle.columnPos,
+      startX,
+      startWidth: dom.getBoundingClientRect().width,
+    }),
+  ))
 }
 
 function createColumnResizeSession(
@@ -434,10 +437,11 @@ export default function ColumnsUi() {
   const [focused, setFocused] = useState(() => editor.focused)
 
   const handleRect = useEditorDerivedValue(useMemo(() => {
-    return (currentEditor: Editor<EditorExtension>) => getBoundaryHandleRect(
-      currentEditor,
-      getColumnsRuntimeState(currentEditor.state)?.activeHandle ?? null,
-    )
+    return (currentEditor: Editor<EditorExtension>) =>
+      getBoundaryHandleRect(
+        currentEditor,
+        getColumnsRuntimeState(currentEditor.state)?.activeHandle ?? null,
+      )
   }, []))
 
   const handleActions = useEditorDerivedValue(useMemo(() => {
@@ -478,7 +482,7 @@ export default function ColumnsUi() {
     const view = editor.view
     const root = view.dom
     let animationFrame: number | null = null
-    let pendingResize: { dragging: ColumnDragSession, columns: ResizeColumn[] } | null = null
+    let pendingResize: { dragging: ColumnDragSession; columns: ResizeColumn[] } | null = null
 
     const flushResize = () => {
       animationFrame = null
@@ -488,7 +492,7 @@ export default function ColumnsUi() {
       setColumnWidths(editor, resize.columns, resize.dragging)
     }
 
-    const scheduleResize = (resize: { dragging: ColumnDragSession, columns: ResizeColumn[] }) => {
+    const scheduleResize = (resize: { dragging: ColumnDragSession; columns: ResizeColumn[] }) => {
       pendingResize = resize
       if (animationFrame != null) return
       animationFrame = requestAnimationFrame(flushResize)
@@ -593,10 +597,12 @@ export default function ColumnsUi() {
           ref={inlineMenuRef}
           style={{
             position: 'fixed',
-            left: `${Math.min(
-              Math.max(menuState.rect.x, overlayBounds.left + 72),
-              overlayBounds.right - 72,
-            )}px`,
+            left: `${
+              Math.min(
+                Math.max(menuState.rect.x, overlayBounds.left + 72),
+                overlayBounds.right - 72,
+              )
+            }px`,
             top: `${Math.max(menuState.rect.y - 40, overlayBounds.top + 8)}px`,
             transform: 'translate(-50%, -100%)',
             zIndex: 21,
@@ -645,17 +651,21 @@ export default function ColumnsUi() {
             ref={dragHandleRef}
             style={{
               position: 'fixed',
-              left: `${Math.min(
-                Math.max(handleRect.x - 6, overlayBounds.left + 2),
-                overlayBounds.right - 14,
-              )}px`,
+              left: `${
+                Math.min(
+                  Math.max(handleRect.x - 6, overlayBounds.left + 2),
+                  overlayBounds.right - 14,
+                )
+              }px`,
               top: `${Math.max(handleRect.y, overlayBounds.top)}px`,
               width: '12px',
-              height: `${Math.max(
-                0,
-                Math.min(handleRect.y + handleRect.height, overlayBounds.bottom)
-                  - Math.max(handleRect.y, overlayBounds.top),
-              )}px`,
+              height: `${
+                Math.max(
+                  0,
+                  Math.min(handleRect.y + handleRect.height, overlayBounds.bottom)
+                    - Math.max(handleRect.y, overlayBounds.top),
+                )
+              }px`,
               cursor: handleActions?.canResize ? 'col-resize' : 'default',
               zIndex: 20,
             }}
@@ -686,11 +696,13 @@ export default function ColumnsUi() {
               left: `${handleRect.x - 1}px`,
               top: `${Math.max(handleRect.y, overlayBounds.top)}px`,
               width: '2px',
-              height: `${Math.max(
-                0,
-                Math.min(handleRect.y + handleRect.height, overlayBounds.bottom)
-                  - Math.max(handleRect.y, overlayBounds.top),
-              )}px`,
+              height: `${
+                Math.max(
+                  0,
+                  Math.min(handleRect.y + handleRect.height, overlayBounds.bottom)
+                    - Math.max(handleRect.y, overlayBounds.top),
+                )
+              }px`,
               background: '#9ca3af',
               pointerEvents: 'none',
               zIndex: 20,
@@ -703,10 +715,12 @@ export default function ColumnsUi() {
             disabled={!handleActions?.canAddAfter}
             style={{
               position: 'fixed',
-              left: `${Math.min(
-                Math.max(handleRect.x - 10, overlayBounds.left + 4),
-                overlayBounds.right - 24,
-              )}px`,
+              left: `${
+                Math.min(
+                  Math.max(handleRect.x - 10, overlayBounds.left + 4),
+                  overlayBounds.right - 24,
+                )
+              }px`,
               top: `${Math.max(handleRect.y - 10, overlayBounds.top + 8)}px`,
               width: '20px',
               height: '20px',

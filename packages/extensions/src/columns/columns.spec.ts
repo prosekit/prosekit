@@ -336,12 +336,15 @@ describe('columns plugin state', () => {
     const found = findParentColumn(editor.state.selection.$from)
     expect(found).toBeTruthy()
 
-    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, setActiveColumnHandle({
-      pos: found!.pos + found!.node.nodeSize,
-      columnPos: found!.pos,
-      containerPos: found!.containerPos,
-      index: found!.index,
-    })))
+    editor.view.dispatch(editor.state.tr.setMeta(
+      columnsPluginKey,
+      setActiveColumnHandle({
+        pos: found!.pos + found!.node.nodeSize,
+        columnPos: found!.pos,
+        containerPos: found!.containerPos,
+        index: found!.index,
+      }),
+    ))
     editor.commands.removeColumn()
 
     expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(null)

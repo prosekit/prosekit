@@ -2,11 +2,7 @@ import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { Plugin, PluginKey, type EditorState } from '@prosekit/pm/state'
 
 import { applyColumnsMetaAction, type ColumnsMetaAction } from './columns-state.ts'
-import type {
-  ColumnDragSession,
-  ColumnHandleInfo,
-  ColumnsRuntimeState,
-} from './columns-types.ts'
+import type { ColumnDragSession, ColumnHandleInfo, ColumnsRuntimeState } from './columns-types.ts'
 
 export const columnsPluginKey: PluginKey<ColumnsRuntimeState> = new PluginKey<ColumnsRuntimeState>('columns')
 
@@ -42,17 +38,19 @@ export function stopColumnDragging(): ColumnsMetaAction {
  * @internal
  */
 export function defineColumnsPlugin(): ColumnsPluginExtension {
-  return definePlugin(new Plugin<ColumnsRuntimeState>({
-    key: columnsPluginKey,
-    state: {
-      init: () => ({
-        activeHandle: null,
-        dragging: null,
-      }),
-      apply(tr, prev) {
-        const action = tr.getMeta(columnsPluginKey) as ColumnsMetaAction | undefined
-        return applyColumnsMetaAction(prev, tr, action)
+  return definePlugin(
+    new Plugin<ColumnsRuntimeState>({
+      key: columnsPluginKey,
+      state: {
+        init: () => ({
+          activeHandle: null,
+          dragging: null,
+        }),
+        apply(tr, prev) {
+          const action = tr.getMeta(columnsPluginKey) as ColumnsMetaAction | undefined
+          return applyColumnsMetaAction(prev, tr, action)
+        },
       },
-    },
-  }))
+    }),
+  )
 }

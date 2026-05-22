@@ -75,7 +75,9 @@ export function defineColumnSpec(): ColumnSpecExtension {
     toDOM(node) {
       const attrs = node.attrs as ColumnAttrs
       const width = attrs.width
-      const style = width != null ? `--prosekit-column-width:${width}px;` : null
+      const style = width != null
+        ? `--prosekit-column-width:${width}px;width:${width}px;flex:0 0 ${width}px;`
+        : null
       return ['div', { class: 'prosekit-column', style }, 0]
     },
   })

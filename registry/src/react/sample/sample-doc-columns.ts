@@ -25,29 +25,27 @@ export const sampleContent: NodeJSON = {
       content: [
         {
           type: 'column',
-          attrs: { width: 240 },
           content: [
             {
               type: 'paragraph',
-              content: [{ type: 'text', text: 'Column one starts with a fixed width.' }],
+              content: [{ type: 'text', text: 'Columns start by dividing the available width evenly.' }],
             },
             {
               type: 'paragraph',
-              content: [{ type: 'text', text: 'Use the buttons below or drag the boundary handle.' }],
+              content: [{ type: 'text', text: 'Use the center plus handle to add a column or drag the boundary to resize.' }],
             },
           ],
         },
         {
           type: 'column',
-          attrs: { width: 260 },
           content: [
             {
               type: 'paragraph',
-              content: [{ type: 'text', text: 'Column two is slightly wider.' }],
+              content: [{ type: 'text', text: 'Focus inside a column to reveal its inline menu.' }],
             },
             {
               type: 'paragraph',
-              content: [{ type: 'text', text: 'Add or remove columns without embedding UI in the extension.' }],
+              content: [{ type: 'text', text: 'The extension owns the structure; this example owns the React controls.' }],
             },
           ],
         },

@@ -1,5 +1,4 @@
 import { union } from '@prosekit/core'
-import pick from 'just-pick'
 import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc/index.ts'
@@ -29,7 +28,10 @@ describe('columns spec', () => {
     )
 
     const nodes = extension.schema?.spec.nodes.toObject() || {}
-    const pickedNodes = pick(nodes, ['columns', 'column'])
+    const pickedNodes = {
+      column: nodes.column,
+      columns: nodes.columns,
+    }
 
     expect(pickedNodes).toMatchInlineSnapshot(`
       {
@@ -66,6 +68,28 @@ describe('columns spec', () => {
         },
       }
     `)
+  })
+
+  it('should render fixed-width columns with explicit width and flex basis', () => {
+    const extension = union(
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+      defineColumns(),
+    )
+
+    const columnType = extension.schema?.nodes.column
+    expect(columnType).toBeTruthy()
+
+    const dom = columnType!.spec.toDOM?.(columnType!.create({ width: 240 }))
+    expect(dom).toEqual([
+      'div',
+      {
+        class: 'prosekit-column',
+        style: '--prosekit-column-width:240px;width:240px;flex:0 0 240px;',
+      },
+      0,
+    ])
   })
 })
 

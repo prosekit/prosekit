@@ -1,6 +1,6 @@
 import { union } from '@prosekit/core'
 import type { EditorState } from '@prosekit/pm/state'
-import type { DecorationSet } from '@prosekit/pm/view';
+import type { DecorationSet } from '@prosekit/pm/view'
 import { Decoration } from '@prosekit/pm/view'
 import { describe, expect, it } from 'vitest'
 

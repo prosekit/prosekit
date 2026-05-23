@@ -1,18 +1,10 @@
 'use client'
 
-import mermaid from 'mermaid'
+import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
 import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
-import { useEffect, useRef } from 'react'
-
-const previewErrorClass = 'CSS_CODE_BLOCK_PREVIEW_ERROR'
-
-function togglePreviewError(element: HTMLElement, force: boolean): void {
-  for (const className of previewErrorClass.split(/\s+/)) {
-    element.classList.toggle(className, force)
-  }
-}
+import { useMemo, useRef } from 'react'
 
 export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
@@ -36,32 +28,18 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
     props.view.focus()
   }
 
-  useEffect(() => {
-    const display = displayRef.current
-    if (!showPreview || !display) return
+  const code = props.node.textContent
 
-    let stale = false
-    display.innerHTML = ''
-    togglePreviewError(display, false)
-
-    mermaid.initialize({ startOnLoad: false })
-    const id = 'mermaid-' + Math.random().toString(36).slice(2, 8)
-
-    Promise.resolve(mermaid.render(id, props.node.textContent))
-      .then(({ svg }: { svg: string }) => {
-        if (stale) return
-        display.innerHTML = svg
-      })
-      .catch((error: unknown) => {
-        if (stale) return
-        display.textContent = error instanceof Error ? error.message : String(error)
-        togglePreviewError(display, true)
-      })
-
-    return () => {
-      stale = true
+  const { svg, error } = useMemo(() => {
+    try {
+      return {
+        svg: renderMermaidSVG(code, THEMES['tokyo-night']),
+        error: null,
+      }
+    } catch (err) {
+      return { svg: null, error: err instanceof Error ? err : new Error(String(err)) }
     }
-  }, [props.node, showPreview])
+  }, [code])
 
   return (
     <>
@@ -85,21 +63,24 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
         className={showPreview ? 'CSS_CODE_BLOCK_PREVIEW_SOURCE' : undefined}
         data-language={language}
       ></pre>
-      {showPreview && (
-        <div
-          ref={displayRef}
-          aria-label="Edit code block source"
-          className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
-          contentEditable={false}
-          onMouseDown={focusSource}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') focusSource(event)
-          }}
-          role="button"
-          tabIndex={0}
-        >
-        </div>
-      )}
+      {showPreview && (error
+        ? <pre>{error.message}</pre>
+        : (
+          <div
+            ref={displayRef}
+            dangerouslySetInnerHTML={{ __html: svg }}
+            aria-label="Edit code block source"
+            className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
+            contentEditable={false}
+            onMouseDown={focusSource}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') focusSource(event)
+            }}
+            role="button"
+            tabIndex={0}
+          >
+          </div>
+        ))}
     </>
   )
 }

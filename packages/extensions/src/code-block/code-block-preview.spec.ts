@@ -1,5 +1,7 @@
 import { union } from '@prosekit/core'
-import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import type { EditorState } from '@prosekit/pm/state'
+import type { DecorationSet } from '@prosekit/pm/view';
+import { Decoration } from '@prosekit/pm/view'
 import { describe, expect, it } from 'vitest'
 
 import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
@@ -10,7 +12,6 @@ import {
   hasCodeBlockPreviewHiddenDecoration,
   HIDE_CODE_BLOCK_PREVIEW,
 } from './code-block-preview.ts'
-import type { EditorState } from '@prosekit/pm/state'
 
 function setupEditor() {
   const extension = union(

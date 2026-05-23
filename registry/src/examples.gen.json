@@ -683,7 +683,7 @@
         "registry/src/react/examples/code-block-mermaid/editor.tsx",
         "registry/src/react/examples/code-block-mermaid/extension.ts",
         "registry/src/react/examples/code-block-mermaid/index.ts",
-        "registry/src/react/sample/sample-code-block-mermaid.ts"
+        "registry/src/react/sample/sample-doc-code-block-mermaid.ts"
       ]
     },
     "react-example-code-block-themes": {

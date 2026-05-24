@@ -41,36 +41,38 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
 
   return (
     <>
-      {!showMermaidPreview && <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
-        <select
-          aria-label="Code block language"
-          className="CSS_LANGUAGE_SELECT"
-          onChange={(event) => setLanguage(event.target.value)}
-          value={language}
-        >
-          <option value="">Plain Text</option>
-          {shikiBundledLanguagesInfo.map((info) => (
-            <option key={info.id} value={info.id}>
-              {info.name}
-            </option>
-          ))}
-        </select>
-      </div>}
+      {!showMermaidPreview && (
+        <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
+          <select
+            aria-label="Code block language"
+            className="CSS_LANGUAGE_SELECT"
+            onChange={(event) => setLanguage(event.target.value)}
+            value={language}
+          >
+            <option value="">Plain Text</option>
+            {shikiBundledLanguagesInfo.map((info) => (
+              <option key={info.id} value={info.id}>
+                {info.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       <pre
         ref={props.contentRef}
         className={showMermaidPreview ? 'CSS_CODE_BLOCK_PREVIEW_SOURCE' : undefined}
         data-language={language}
       ></pre>
-      {showMermaidPreview &&   (
-          <div
-            className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
-            contentEditable={false}
-            onMouseDown={focusSource}
-            tabIndex={0}
-          >
+      {showMermaidPreview && (
+        <div
+          className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
+          contentEditable={false}
+          onMouseDown={focusSource}
+          tabIndex={0}
+        >
           {mermaidPreview.error ? <pre>{mermaidPreview.error.message}</pre> : null}
-          {mermaidPreview.svg ? <div dangerouslySetInnerHTML={{__html: mermaidPreview.svg}}></div> : null}
-          </div>
+          {mermaidPreview.svg ? <div dangerouslySetInnerHTML={{ __html: mermaidPreview.svg }}></div> : null}
+        </div>
       )}
     </>
   )

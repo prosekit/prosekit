@@ -1,6 +1,5 @@
 import { union } from '@prosekit/core'
 import type { EditorState } from '@prosekit/pm/state'
-import type { DecorationSet } from '@prosekit/pm/view'
 import { Decoration } from '@prosekit/pm/view'
 import { describe, expect, it } from 'vitest'
 
@@ -11,6 +10,7 @@ import {
   defineCodeBlockPreviewDecorations,
   hasCodeBlockPreviewHiddenDecoration,
   HIDE_CODE_BLOCK_PREVIEW,
+  isCodeBlockPreviewHiddenDecoration,
 } from './code-block-preview.ts'
 
 function setupEditor() {
@@ -57,9 +57,7 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const found = getCodeBlockPreviewDecorations(editor.view.state)?.find()
-    expect(found?.length).toBeGreaterThan(0)
-    expect(hasCodeBlockPreviewHiddenDecoration(found ?? [])).toBe(true)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(1)
   })
 
   it('does not add decorations when cursor is outside a code block', () => {
@@ -71,8 +69,7 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const found = getCodeBlockPreviewDecorations(editor.view.state)?.find()
-    expect(hasCodeBlockPreviewHiddenDecoration(found ?? [])).toBe(false)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(0)
   })
 
   it('adds decorations for code blocks overlapped by a non-empty selection', () => {
@@ -85,8 +82,7 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const found = getCodeBlockPreviewDecorations(editor.view.state)?.find()
-    expect(hasCodeBlockPreviewHiddenDecoration(found ?? [])).toBe(true)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(1)
   })
 
   it('only decorates the code block where the cursor is', () => {
@@ -99,12 +95,7 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const found = getCodeBlockPreviewDecorations(editor.view.state)?.find()
-    const hideDecorations = found?.filter((d) => {
-      const spec = d.spec as string | undefined
-      return spec === HIDE_CODE_BLOCK_PREVIEW
-    })
-    expect(hideDecorations?.length).toBe(1)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(1)
   })
 
   it('returns empty decoration set when document has no code blocks', () => {
@@ -115,8 +106,7 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const decorations = getCodeBlockPreviewDecorations(editor.view.state)
-    expect(decorations?.find().length).toBe(0)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(0)
   })
 
   it('handles cursor at the start of a code block', () => {
@@ -128,8 +118,7 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const found = getCodeBlockPreviewDecorations(editor.view.state)?.find()
-    expect(hasCodeBlockPreviewHiddenDecoration(found ?? [])).toBe(true)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(1)
   })
 
   it('handles cursor at the end of a code block', () => {
@@ -141,16 +130,15 @@ describe('defineCodeBlockPreviewDecorations', () => {
     )
     editor.set(doc)
 
-    const found = getCodeBlockPreviewDecorations(editor.view.state)?.find()
-    expect(hasCodeBlockPreviewHiddenDecoration(found ?? [])).toBe(true)
+    expect(getCodeBlockPreviewDecorations(editor.view.state).length).toBe(1)
   })
 })
 
-/**
- * Extracts the code-block-preview decorations from the editor state.
- * Uses the public {@link EditorState.plugins} API to find the plugin
- * and calls its decorations function.
- */
-function getCodeBlockPreviewDecorations(state: EditorState): DecorationSet | undefined {
-  return codeBlockPreviewDecorationsPluginKey.getState(state)
+function getCodeBlockPreviewDecorations(state: EditorState):  Decoration[]  {
+  const pluginState = codeBlockPreviewDecorationsPluginKey.getState(state)
+  if (!pluginState) {
+    return []
+  }
+  const decorations = pluginState.find()
+  return decorations.filter(isCodeBlockPreviewHiddenDecoration)
 }

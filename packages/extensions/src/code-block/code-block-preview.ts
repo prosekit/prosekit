@@ -1,11 +1,13 @@
-import { definePlugin, isCodeBlockType, type PlainExtension } from '@prosekit/core'
-import type { ProseMirrorNode } from '@prosekit/pm/model'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { Plugin, PluginKey, type EditorState } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-type PluginState = DecorationSet
+type PluginState = DecorationSet | undefined
 
+/** @interface */
 export const HIDE_CODE_BLOCK_PREVIEW = 'prosekitHideCodeBlockPreview' as const
+
+/** @interface */
 export const codeBlockPreviewDecorationsPluginKey: PluginKey<PluginState> = new PluginKey<PluginState>(
   'prosekit-code-block-preview-decorations',
 )
@@ -20,7 +22,7 @@ export function defineCodeBlockPreviewDecorations(): PlainExtension {
         },
         apply(tr, oldValue, oldState, newState) {
           if (
-            oldState.selection.head === newState.selection.head
+            oldState.selection.anchor === newState.selection.anchor
             && !tr.docChanged
           ) {
             return oldValue
@@ -41,33 +43,19 @@ export function hasCodeBlockPreviewHiddenDecoration(
   decorations: readonly Decoration[],
 ): boolean {
   return decorations.some((decoration) => {
-    const spec = decoration.spec as string | undefined
+    const spec: unknown = decoration.spec
     return spec === HIDE_CODE_BLOCK_PREVIEW
   })
 }
 
-function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet {
-  const isHeadInside = isHeadInsideCodeBlock(state)
-  const isAnchorInside = isAnchorInsideCodeBlock(state)
-
-  const isInside = isHeadInside || isAnchorInside
-
-  if (!isInside) {
-    return DecorationSet.empty
+function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet | undefined {
+  const $anchor = state.selection.$anchor
+  const parent  = $anchor.parent
+  if (!parent.isTextblock || !parent.type.spec.code) {
+    return
   }
 
-  let parent: ProseMirrorNode
-  let before: number
-  if (isHeadInside) {
-    const { $head } = state.selection
-    parent = $head.parent
-    before = $head.before()
-  } else {
-    const { $anchor } = state.selection
-    parent = $anchor.parent
-    before = $anchor.before()
-  }
-
+  const before = $anchor.before()
   const deco = Decoration.node(
     before,
     before + parent.nodeSize,
@@ -75,18 +63,4 @@ function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet {
     HIDE_CODE_BLOCK_PREVIEW,
   )
   return DecorationSet.create(state.doc, [deco])
-}
-
-function isHeadInsideCodeBlock(state: EditorState) {
-  const { $head } = state.selection
-  const node = $head.parent
-
-  return isCodeBlockType(node.type) && node.isTextblock
-}
-
-function isAnchorInsideCodeBlock(state: EditorState) {
-  const { $anchor } = state.selection
-  const node = $anchor.parent
-
-  return isCodeBlockType(node.type) && node.isTextblock
 }

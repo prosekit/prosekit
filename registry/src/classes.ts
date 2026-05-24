@@ -117,7 +117,7 @@ export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(
 )
 
 export const CSS_LANGUAGE_WRAPPER = cn(
-  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs',
+  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs data-preview:hidden',
 )
 
 export const CSS_LANGUAGE_SELECT = cn(

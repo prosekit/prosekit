@@ -41,8 +41,8 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
 
   return (
     <>
-      {!showMermaidPreview && (
-        <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
+      (
+        <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false} data-preview={showMermaidPreview ? '' : undefined} >
           <select
             aria-label="Code block language"
             className="CSS_LANGUAGE_SELECT"
@@ -57,7 +57,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
             ))}
           </select>
         </div>
-      )}
+      )
       <pre
         ref={props.contentRef}
         className="CSS_CODE_BLOCK_PREVIEW_SOURCE"

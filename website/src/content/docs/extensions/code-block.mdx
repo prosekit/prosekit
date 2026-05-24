@@ -112,11 +112,11 @@ import { parser } from './my-prosemirror-highlight-parser'
 const extension = defineCodeBlockHighlight({ parser })
 ```
 
-## DSL Rendering
+## Live rendering
 
-You can render diagram-oriented DSL previews inside code blocks by combining `defineCodeBlock` with a custom node view. ProseKit includes a built-in example for [Mermaid](https://mermaid.js.org).
+`defineCodeBlockPreviewPlugin()` marks the code block containing the current selection with a node decoration. A custom node view can check for that decoration with `hasCodeBlockPreviewHiddenDecoration` and render a custom view (for example a [Mermaid](https://mermaid.js.org) diagram) when the cursor is elsewhere, or the editable source when the cursor is inside.
 
-See the [DSL diagram rendering](/guides/dsl) guide for complete setup instructions and code examples. For LaTeX-style math, prefer the dedicated `math` extension instead of rendering it inside a code block.
+See [examples/code-block](/examples/code-block) for a runnable implementation that renders Mermaid diagrams inside the standard code-block view.
 
 ## API Reference
 

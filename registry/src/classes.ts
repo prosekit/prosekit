@@ -117,7 +117,7 @@ export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(
 )
 
 export const CSS_LANGUAGE_WRAPPER = cn(
-  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs',
+  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs data-preview:hidden',
 )
 
 export const CSS_LANGUAGE_SELECT = cn(
@@ -127,11 +127,11 @@ export const CSS_LANGUAGE_SELECT = cn(
 )
 
 export const CSS_CODE_BLOCK_PREVIEW_SOURCE = cn(
-  'hidden',
+  'data-preview:hidden',
 )
 
 export const CSS_CODE_BLOCK_PREVIEW_DISPLAY = cn(
-  'block p-4 overflow-auto',
+  'block py-2 overflow-auto',
 )
 
 const CSS_TOP_BAR = cn(

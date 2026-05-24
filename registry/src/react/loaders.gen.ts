@@ -8,7 +8,6 @@ export const loaders = {
   'change-tracking': lazy(() => import('./examples/change-tracking').then((m) => ({ default: m.ExampleEditor }))),
   'code': lazy(() => import('./examples/code').then((m) => ({ default: m.ExampleEditor }))),
   'code-block': lazy(() => import('./examples/code-block').then((m) => ({ default: m.ExampleEditor }))),
-  'code-block-mermaid': lazy(() => import('./examples/code-block-mermaid').then((m) => ({ default: m.ExampleEditor }))),
   'code-block-themes': lazy(() => import('./examples/code-block-themes').then((m) => ({ default: m.ExampleEditor }))),
   'drop-cursor': lazy(() => import('./examples/drop-cursor').then((m) => ({ default: m.ExampleEditor }))),
   'emoji-rules': lazy(() => import('./examples/emoji-rules').then((m) => ({ default: m.ExampleEditor }))),

@@ -127,7 +127,7 @@ export const CSS_LANGUAGE_SELECT = cn(
 )
 
 export const CSS_CODE_BLOCK_PREVIEW_SOURCE = cn(
-  'hidden',
+  'data-preview:hidden',
 )
 
 export const CSS_CODE_BLOCK_PREVIEW_DISPLAY = cn(

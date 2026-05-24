@@ -43,7 +43,16 @@ function focusSource(event: MouseEvent) {
   if (typeof pos !== 'number') return
   const { state, dispatch } = props.view
   const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
-  dispatch(state.tr.setSelection(selection))
+  // TODO: remove this `as never` cast.
+  // svelte-check follows project-reference redirects into @prosekit/pm, whose
+  // build tsconfig uses `module: NodeNext`. Combined with our SourceFiles being
+  // parsed in bundler mode (so impliedNodeFormat is undefined), the resolver
+  // falls back to CJS and loads `prosemirror-state/dist/index.d.cts` for some
+  // import chains while loading `dist/index.d.ts` for others. The `Selection`
+  // class has a `private curSelection` field, so the two declarations are
+  // nominally distinct and the assignment fails. `tsc --build` and `vue-tsc`
+  // are not affected.
+  dispatch(state.tr.setSelection(selection as never))
   props.view.focus()
 }
 </script>

@@ -1,0 +1,148 @@
+---
+title: DSL preview rendering
+description: Render Mermaid and other text-based DSLs inside code blocks with live preview
+sidebar:
+  order: 70
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+ProseKit lets you turn fenced code blocks into live previews for text-based DSLs. When a code block uses a recognised language (e.g., `mermaid`), a preview pane appears above the source while you are not editing inside the block. Click the preview to jump back to the source.
+
+<Demo story="code-block-mermaid" />
+
+## How it works
+
+A React node view overrides the default `codeBlock` rendering. It checks `attrs.language` and preview-related decorations on the current node:
+
+- If the language matches a known DSL and the current code block is not marked as editing, the preview is shown.
+- While the cursor is inside the block, only the raw source is visible.
+- Clicking the preview moves focus back to the source so you can edit.
+
+The Mermaid example below demonstrates the pattern. Copy it and swap the renderer to add your own previewable DSL.
+
+If you need math rendering for LaTeX-style `$...$` and `$$...$$` syntax, use the built-in [`math` extension](/extensions/math) instead of the code-block preview pattern shown here. ProseKit already handles dedicated `mathInline` and `mathBlock` nodes for that workflow. For API details, see [`prosekit/extensions/math`](/references/extensions/math).
+
+## Mermaid
+
+Renders [Mermaid](https://mermaid.js.org) diagrams (flowcharts, sequence diagrams, Gantt charts, etc.).
+
+```bash
+pnpm add mermaid
+```
+
+```tsx twoslash
+// @filename: mermaid.d.ts
+declare module 'mermaid' {
+  const mermaid: {
+    initialize: (config: { startOnLoad: boolean }) => void
+    render: (id: string, code: string) => Promise<{ svg: string }> | { svg: string }
+  }
+  export default mermaid
+}
+// @filename: mermaid-code-block-view.tsx
+'use client'
+
+import { hasCodeBlockPreviewHiddenDecoration, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { TextSelection } from 'prosekit/pm/state'
+import type { ReactNodeViewProps } from 'prosekit/react'
+import { useEffect, useRef } from 'react'
+import mermaid from 'mermaid'
+
+export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
+  const attrs = props.node.attrs as CodeBlockAttrs
+  const language = attrs.language || ''
+  const displayRef = useRef<HTMLDivElement>(null)
+  const showPreview = language === 'mermaid'
+    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
+
+  const focusSource = (event: React.MouseEvent | React.KeyboardEvent) => {
+    event.preventDefault()
+    const pos = props.getPos()
+    if (typeof pos !== 'number') return
+    const { state, dispatch } = props.view
+    const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
+    dispatch(state.tr.setSelection(selection as never))
+    props.view.focus()
+  }
+
+  useEffect(() => {
+    const display = displayRef.current
+    if (!showPreview || !display) return
+
+    let stale = false
+    display.innerHTML = ''
+
+    mermaid.initialize({ startOnLoad: false })
+    const id = 'mermaid-' + Math.random().toString(36).slice(2, 8)
+
+    Promise.resolve(mermaid.render(id, props.node.textContent))
+      .then(({ svg }: { svg: string }) => {
+        if (stale) return
+        display.innerHTML = svg
+      })
+      .catch((error) => {
+        if (stale) return
+        display.textContent = error instanceof Error ? error.message : String(error)
+      })
+
+    return () => {
+      stale = true
+    }
+  }, [props.node, showPreview])
+
+  // --- markup abbreviated for brevity ---
+  return null as any
+}
+
+// @filename: extension.ts
+// ---cut---
+import { union } from 'prosekit/core'
+import { defineCodeBlock, defineCodeBlockPreviewDecorations } from 'prosekit/extensions/code-block'
+import { defineReactNodeView } from 'prosekit/react'
+
+import MermaidCodeBlockView from './mermaid-code-block-view'
+
+export function defineExtension() {
+  return union(
+    defineCodeBlock(),
+    defineCodeBlockPreviewDecorations(),
+    defineReactNodeView({
+      name: 'codeBlock',
+      contentAs: 'code',
+      component: MermaidCodeBlockView,
+    }),
+  )
+}
+```
+
+## Common pattern
+
+The Mermaid example uses the following architecture:
+
+1. **`defineReactNodeView`** overrides the `codeBlock` node with a custom component.
+2. **`defineCodeBlockPreviewDecorations`** adds node decorations to the code block containing the current selection, so that block can switch between preview and source modes.
+3. The component checks `language` and **its own** `props.decorations` via `hasCodeBlockPreviewHiddenDecoration` to decide whether to show the preview or the raw source.
+4. In this example, the Mermaid renderer is imported by the module up front; the preview is shown conditionally, but the library is not lazy-loaded here.
+
+This avoids subscribing every previewable code block to `props.view.state`; instead, decoration changes cause only the relevant node view to re-render when the selection enters or leaves that block.
+
+You can use this pattern for any text-based DSL that needs a source/preview split, not just diagrams. Swap the renderer and the language string, and the rest stays the same.
+
+Typical candidates include chart and graph DSLs such as Mermaid and Vega-Lite; notation DSLs such as ABC notation via `abcjs`; chemistry notations such as SMILES; and document or layout DSLs such as PlantUML, WaveDrom, or Structurizr DSL.
+
+## Framework support
+
+The examples above use React. Replace `defineReactNodeView` with the equivalent for your framework:
+
+| Framework | Wrapper                |
+| --------- | ---------------------- |
+| React     | `defineReactNodeView`  |
+| Vue       | `defineVueNodeView`    |
+| Preact    | `definePreactNodeView` |
+| Svelte    | `defineSvelteNodeView` |
+| Solid     | `defineSolidNodeView`  |
+
+## Live examples
+
+- [Mermaid example](/examples/code-block-mermaid)

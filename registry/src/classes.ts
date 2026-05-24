@@ -126,6 +126,14 @@ export const CSS_LANGUAGE_SELECT = cn(
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80',
 )
 
+export const CSS_CODE_BLOCK_PREVIEW_SOURCE = cn(
+  'hidden',
+)
+
+export const CSS_CODE_BLOCK_PREVIEW_DISPLAY = cn(
+  'block p-4 overflow-auto',
+)
+
 const CSS_TOP_BAR = cn(
   'z-2 box-border',
   'border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b',

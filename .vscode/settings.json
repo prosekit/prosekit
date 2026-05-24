@@ -40,5 +40,8 @@
     "./registry/src/tailwind.css": "./registry/src/**",
     "./website/src/styles/tailwind.css": "./website/src/**",
   },
-  "tailwindCSS.classFunctions": ["clsx", "cn"],
+  "tailwindCSS.classFunctions": [
+    "clsx",
+    "cn",
+  ],
 }

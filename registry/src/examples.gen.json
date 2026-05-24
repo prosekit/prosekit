@@ -68,6 +68,13 @@
       "hidden": false,
       "description": "Example for code block node with syntax highlighting."
     },
+    "code-block-mermaid": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Mermaid diagram rendering via the DSL extension factory."
+    },
     "code-block-themes": {
       "frameworks": [
         "react",
@@ -667,6 +674,16 @@
         "registry/src/react/ui/image-upload-popover/index.ts",
         "registry/src/react/ui/toolbar/index.ts",
         "registry/src/react/ui/toolbar/toolbar.tsx"
+      ]
+    },
+    "react-example-code-block-mermaid": {
+      "story": "code-block-mermaid",
+      "files": [
+        "registry/src/react/examples/code-block-mermaid/code-block-view.tsx",
+        "registry/src/react/examples/code-block-mermaid/editor.tsx",
+        "registry/src/react/examples/code-block-mermaid/extension.ts",
+        "registry/src/react/examples/code-block-mermaid/index.ts",
+        "registry/src/react/sample/sample-doc-code-block-mermaid.ts"
       ]
     },
     "react-example-code-block-themes": {

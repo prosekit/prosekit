@@ -44,7 +44,7 @@ export function defineCodeBlockPreviewPlugin(): PlainExtension {
 
 /** @internal */
 export function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): boolean {
-    return decoration.spec === HIDE_CODE_BLOCK_PREVIEW
+  return decoration.spec === HIDE_CODE_BLOCK_PREVIEW
 }
 
 /**
@@ -58,7 +58,7 @@ export function hasCodeBlockPreviewHiddenDecoration(
 
 function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet | undefined {
   const $anchor = state.selection.$anchor
-  const parent  = $anchor.parent
+  const parent = $anchor.parent
   if (!parent.isTextblock || !parent.type.spec.code) {
     return
   }

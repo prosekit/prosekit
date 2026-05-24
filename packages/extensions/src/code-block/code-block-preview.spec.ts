@@ -134,7 +134,7 @@ describe('defineCodeBlockPreviewPlugin', () => {
   })
 })
 
-function getCodeBlockPreviewDecorations(state: EditorState):  Decoration[]  {
+function getCodeBlockPreviewDecorations(state: EditorState): Decoration[] {
   const pluginState = codeBlockPreviewDecorationsPluginKey.getState(state)
   if (!pluginState) {
     return []

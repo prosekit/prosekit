@@ -43,10 +43,7 @@ function focusSource(event: MouseEvent) {
   if (typeof pos !== 'number') return
   const { state, dispatch } = props.view
   const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
-  // svelte-check resolves `prosemirror-state` types via a different path than
-  // `prosekit/pm/state`, so the same `Selection` interface is seen as two
-  // unrelated types. The cast bridges them.
-  dispatch(state.tr.setSelection(selection as never))
+  dispatch(state.tr.setSelection(selection))
   props.view.focus()
 }
 </script>

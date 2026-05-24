@@ -38,7 +38,11 @@ function focusSource(event: MouseEvent) {
 </script>
 
 <template>
-  <div v-if="!showMermaidPreview" class="CSS_LANGUAGE_WRAPPER" contentEditable="false">
+  <div
+    class="CSS_LANGUAGE_WRAPPER"
+    contentEditable="false"
+    :data-preview="showMermaidPreview ? '' : undefined"
+  >
     <select
       aria-label="Code block language"
       class="CSS_LANGUAGE_SELECT"

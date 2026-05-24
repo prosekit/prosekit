@@ -1,4 +1,5 @@
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
+import { html, render } from 'lit'
 import type { Extension } from 'prosekit/core'
 import { defineNodeView } from 'prosekit/core'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
@@ -18,7 +19,6 @@ class CodeBlockNodeView {
   private getPos: () => number | undefined
   private decorations: readonly Decoration[]
   private wrapper: HTMLDivElement
-  private select: HTMLSelectElement
   private pre: HTMLPreElement
   private preview: HTMLDivElement
 
@@ -40,25 +40,6 @@ class CodeBlockNodeView {
     this.wrapper.className = 'CSS_LANGUAGE_WRAPPER'
     this.wrapper.setAttribute('contenteditable', 'false')
 
-    this.select = document.createElement('select')
-    this.select.setAttribute('aria-label', 'Code block language')
-    this.select.className = 'CSS_LANGUAGE_SELECT'
-
-    const plain = document.createElement('option')
-    plain.value = ''
-    plain.textContent = 'Plain Text'
-    this.select.appendChild(plain)
-
-    for (const info of shikiBundledLanguagesInfo) {
-      const option = document.createElement('option')
-      option.value = info.id
-      option.textContent = info.name
-      this.select.appendChild(option)
-    }
-
-    this.select.addEventListener('change', this.handleChange)
-    this.wrapper.appendChild(this.select)
-
     this.pre = document.createElement('pre')
     this.pre.className = 'CSS_CODE_BLOCK_PREVIEW_SOURCE'
     this.contentDOM = document.createElement('code')
@@ -74,7 +55,6 @@ class CodeBlockNodeView {
 
     root.appendChild(this.wrapper)
     root.appendChild(this.pre)
-    root.appendChild(this.preview)
 
     this.dom = root
     this.sync()
@@ -102,7 +82,23 @@ class CodeBlockNodeView {
     const forceShowSource = hasCodeBlockPreviewHiddenDecoration(this.decorations)
     const showMermaidPreview = !forceShowSource && language === 'mermaid'
 
-    this.select.value = language
+    render(
+      html`
+        <select
+          aria-label="Code block language"
+          class="CSS_LANGUAGE_SELECT"
+          .value=${language}
+          @change=${this.handleChange}
+        >
+          <option value="">Plain Text</option>
+          ${shikiBundledLanguagesInfo.map(
+            (info) => html`<option value=${info.id}>${info.name}</option>`,
+          )}
+        </select>
+      `,
+      this.wrapper,
+    )
+
     if (language) {
       this.pre.setAttribute('data-language', language)
     } else {
@@ -110,15 +106,19 @@ class CodeBlockNodeView {
     }
 
     if (showMermaidPreview) {
-      this.wrapper.style.display = 'none'
+      this.wrapper.setAttribute('data-preview', '')
       this.pre.setAttribute('data-preview', '')
-      this.preview.style.display = ''
       this.renderPreview()
+      if (!this.preview.isConnected) {
+        this.dom.appendChild(this.preview)
+      }
     } else {
-      this.wrapper.style.display = ''
+      this.wrapper.removeAttribute('data-preview')
       this.pre.removeAttribute('data-preview')
-      this.preview.style.display = 'none'
       this.preview.replaceChildren()
+      if (this.preview.isConnected) {
+        this.preview.remove()
+      }
     }
   }
 
@@ -146,8 +146,8 @@ class CodeBlockNodeView {
   }
 
   destroy() {
-    this.select.removeEventListener('change', this.handleChange)
     this.preview.removeEventListener('mousedown', this.handlePreviewMouseDown)
+    render(null, this.wrapper)
   }
 }
 

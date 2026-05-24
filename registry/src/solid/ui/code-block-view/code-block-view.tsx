@@ -36,25 +36,27 @@ export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
 
   return (
     <>
-      <Show when={!showMermaidPreview()}>
-        <div class="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
-          <select
-            aria-label="Code block language"
-            class="CSS_LANGUAGE_SELECT"
-            onChange={(event) => setLanguage(event.target.value)}
-            value={language()}
-          >
-            <option value="">Plain Text</option>
-            <For each={shikiBundledLanguagesInfo}>
-              {(info) => (
-                <option value={info.id}>
-                  {info.name}
-                </option>
-              )}
-            </For>
-          </select>
-        </div>
-      </Show>
+      <div
+        class="CSS_LANGUAGE_WRAPPER"
+        contentEditable={false}
+        data-preview={showMermaidPreview() ? '' : undefined}
+      >
+        <select
+          aria-label="Code block language"
+          class="CSS_LANGUAGE_SELECT"
+          onChange={(event) => setLanguage(event.target.value)}
+          value={language()}
+        >
+          <option value="">Plain Text</option>
+          <For each={shikiBundledLanguagesInfo}>
+            {(info) => (
+              <option value={info.id}>
+                {info.name}
+              </option>
+            )}
+          </For>
+        </select>
+      </div>
       <pre
         ref={props.contentRef}
         class="CSS_CODE_BLOCK_PREVIEW_SOURCE"

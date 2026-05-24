@@ -48,23 +48,25 @@ function focusSource(event: MouseEvent) {
 }
 </script>
 
-{#if !showMermaidPreview}
-  <div class="CSS_LANGUAGE_WRAPPER" contentEditable="false">
-    <select
-      aria-label="Code block language"
-      class="CSS_LANGUAGE_SELECT"
-      value={language}
-      onchange={(event) => setLanguage((event.target as HTMLSelectElement).value)}
-    >
-      <option value="">Plain Text</option>
-      {#each shikiBundledLanguagesInfo as info (info.id)}
-        <option value={info.id}>
-          {info.name}
-        </option>
-      {/each}
-    </select>
-  </div>
-{/if}
+<div
+  class="CSS_LANGUAGE_WRAPPER"
+  contentEditable="false"
+  data-preview={showMermaidPreview ? '' : undefined}
+>
+  <select
+    aria-label="Code block language"
+    class="CSS_LANGUAGE_SELECT"
+    value={language}
+    onchange={(event) => setLanguage((event.target as HTMLSelectElement).value)}
+  >
+    <option value="">Plain Text</option>
+    {#each shikiBundledLanguagesInfo as info (info.id)}
+      <option value={info.id}>
+        {info.name}
+      </option>
+    {/each}
+  </select>
+</div>
 <pre
   use:bindContentRef
   class="CSS_CODE_BLOCK_PREVIEW_SOURCE"

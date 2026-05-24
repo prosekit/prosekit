@@ -41,23 +41,25 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
 
   return (
     <>
-      (
-        <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false} data-preview={showMermaidPreview ? '' : undefined} >
-          <select
-            aria-label="Code block language"
-            className="CSS_LANGUAGE_SELECT"
-            onChange={(event) => setLanguage(event.target.value)}
-            value={language}
-          >
-            <option value="">Plain Text</option>
-            {shikiBundledLanguagesInfo.map((info) => (
-              <option key={info.id} value={info.id}>
-                {info.name}
-              </option>
-            ))}
-          </select>
-        </div>
-      )
+      <div
+        className="CSS_LANGUAGE_WRAPPER"
+        contentEditable={false}
+        data-preview={showMermaidPreview ? '' : undefined}
+      >
+        <select
+          aria-label="Code block language"
+          className="CSS_LANGUAGE_SELECT"
+          onChange={(event) => setLanguage(event.target.value)}
+          value={language}
+        >
+          <option value="">Plain Text</option>
+          {shikiBundledLanguagesInfo.map((info) => (
+            <option key={info.id} value={info.id}>
+              {info.name}
+            </option>
+          ))}
+        </select>
+      </div>
       <pre
         ref={props.contentRef}
         className="CSS_CODE_BLOCK_PREVIEW_SOURCE"

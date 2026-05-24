@@ -39,13 +39,15 @@ export function defineCodeBlockPreviewDecorations(): PlainExtension {
   )
 }
 
+/** @internal */
+export function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): boolean {
+    return decoration.spec === HIDE_CODE_BLOCK_PREVIEW
+}
+
 export function hasCodeBlockPreviewHiddenDecoration(
   decorations: readonly Decoration[],
 ): boolean {
-  return decorations.some((decoration) => {
-    const spec: unknown = decoration.spec
-    return spec === HIDE_CODE_BLOCK_PREVIEW
-  })
+  return decorations.some(isCodeBlockPreviewHiddenDecoration)
 }
 
 function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet | undefined {

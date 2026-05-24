@@ -131,7 +131,7 @@ export const CSS_CODE_BLOCK_PREVIEW_SOURCE = cn(
 )
 
 export const CSS_CODE_BLOCK_PREVIEW_DISPLAY = cn(
-  'block p-4 overflow-auto',
+  'block py-2 overflow-auto',
 )
 
 const CSS_TOP_BAR = cn(

@@ -9,8 +9,9 @@ import { useMemo } from 'react'
 export default function CodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const showPreview = language === 'mermaid'
-    && !hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const forceShowSource = hasCodeBlockPreviewHiddenDecoration(props.decorations)
+
+  const showMermaidPreview = !forceShowSource && language === 'mermaid'
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }
@@ -28,7 +29,8 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
   }
 
   const code = props.node.textContent
-  const { svg, error } = useMemo(() => {
+
+  const mermaidPreview = useMemo(() => {
     if (language !== 'mermaid') return { svg: null, error: null }
     try {
       return { svg: renderMermaidSVG(code, THEMES['tokyo-night']), error: null }
@@ -39,7 +41,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
 
   return (
     <>
-      <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
+      {!showMermaidPreview && <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
         <select
           aria-label="Code block language"
           className="CSS_LANGUAGE_SELECT"
@@ -53,28 +55,23 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
             </option>
           ))}
         </select>
-      </div>
+      </div>}
       <pre
         ref={props.contentRef}
-        className={showPreview ? 'CSS_CODE_BLOCK_PREVIEW_SOURCE' : undefined}
+        className={showMermaidPreview ? 'CSS_CODE_BLOCK_PREVIEW_SOURCE' : undefined}
         data-language={language}
       ></pre>
-      {showPreview && (error
-        ? <pre>{error.message}</pre>
-        : (
+      {showMermaidPreview &&   (
           <div
-            aria-label="Edit code block source"
             className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
             contentEditable={false}
-            dangerouslySetInnerHTML={{ __html: svg || '' }}
             onMouseDown={focusSource}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') focusSource(event)
-            }}
-            role="button"
             tabIndex={0}
-          />
-        ))}
+          >
+          {mermaidPreview.error ? <pre>{mermaidPreview.error.message}</pre> : null}
+          {mermaidPreview.svg ? <div dangerouslySetInnerHTML={{__html: mermaidPreview.svg}}></div> : null}
+          </div>
+      )}
     </>
   )
 }

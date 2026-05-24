@@ -3,4 +3,4 @@
 "@prosekit/extensions": patch
 ---
 
-Add `defineCodeBlockPreviewPlugin` and `hasCodeBlockPreviewHiddenDecoration`.
+Add `defineCodeBlockPreviewPlugin()` and `hasCodeBlockPreviewHiddenDecoration()` to `prosekit/extensions/code-block`. A node view for `codeBlock` can use them to swap between an editable source view and a rendered view based on whether the cursor is inside.

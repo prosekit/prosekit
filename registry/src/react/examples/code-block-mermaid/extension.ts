@@ -14,7 +14,6 @@ export function defineExtension() {
     defineBaseKeymap(),
     defineDoc(),
     defineText(),
-    defineText(),
     defineCode(),
     defineCodeBlock(),
     defineCodeBlockShiki({ themes: ['tokyo-night'], langs: ['mermaid'] }),

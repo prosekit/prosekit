@@ -121,11 +121,11 @@ export function defineExtension() {
 The Mermaid example uses the following architecture:
 
 1. **`defineReactNodeView`** overrides the `codeBlock` node with a custom component.
-2. **`defineCodeBlockPreviewDecorations`** adds node decorations to code blocks that overlap the current selection.
+2. **`defineCodeBlockPreviewDecorations`** adds node decorations to the code block containing the current selection, so that block can switch between preview and source modes.
 3. The component checks `language` and **its own** `props.decorations` via `hasCodeBlockPreviewHiddenDecoration` to decide whether to show the preview or the raw source.
-4. The renderer is called **lazily** — the library is only loaded when the preview becomes visible.
+4. In this example, the Mermaid renderer is imported by the module up front; the preview is shown conditionally, but the library is not lazy-loaded here.
 
-This avoids subscribing every previewable code block to `props.view.state`, so only the relevant node view re-renders when the selection enters or leaves that block.
+This avoids subscribing every previewable code block to `props.view.state`; instead, decoration changes cause only the relevant node view to re-render when the selection enters or leaves that block.
 
 You can use this pattern for any text-based DSL that needs a source/preview split, not just diagrams. Swap the renderer and the language string, and the rest stays the same.
 

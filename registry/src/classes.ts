@@ -134,10 +134,6 @@ export const CSS_CODE_BLOCK_PREVIEW_DISPLAY = cn(
   'block p-4 overflow-auto',
 )
 
-export const CSS_CODE_BLOCK_PREVIEW_ERROR = cn(
-  'text-red-500 dark:text-red-400',
-)
-
 const CSS_TOP_BAR = cn(
   'z-2 box-border',
   'border-gray-200 dark:border-gray-800 border-solid border-l-0 border-r-0 border-t-0 border-b',

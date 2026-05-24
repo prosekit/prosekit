@@ -71,7 +71,7 @@ function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet {
   const deco = Decoration.node(
     before,
     before + parent.nodeSize,
-    { class: 'prosemirror-code-block-head-inside' },
+    {},
     HIDE_CODE_BLOCK_PREVIEW,
   )
   return DecorationSet.create(state.doc, [deco])

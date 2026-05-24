@@ -17,16 +17,12 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Track and commit document changes with version history.',
   },
   {
-    name: 'code-block-mermaid',
-    description: 'Mermaid diagram rendering via the DSL extension factory.',
-  },
-  {
     name: 'code-block-themes',
     description: 'Code block with multiple syntax highlighting themes.',
   },
   {
     name: 'code-block',
-    description: 'Example for code block node with syntax highlighting.',
+    description: 'Code block with syntax highlighting and a Mermaid diagram preview.',
   },
   {
     name: 'code',

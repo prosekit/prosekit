@@ -60,6 +60,7 @@ class CodeBlockNodeView {
     this.wrapper.appendChild(this.select)
 
     this.pre = document.createElement('pre')
+    this.pre.className = 'CSS_CODE_BLOCK_PREVIEW_SOURCE'
     this.contentDOM = document.createElement('code')
     this.contentDOM.setAttribute('data-node-view-content', 'true')
     this.contentDOM.style.whiteSpace = 'inherit'
@@ -110,12 +111,12 @@ class CodeBlockNodeView {
 
     if (showMermaidPreview) {
       this.wrapper.style.display = 'none'
-      this.pre.classList.add('CSS_CODE_BLOCK_PREVIEW_SOURCE')
+      this.pre.setAttribute('data-preview', '')
       this.preview.style.display = ''
       this.renderPreview()
     } else {
       this.wrapper.style.display = ''
-      this.pre.classList.remove('CSS_CODE_BLOCK_PREVIEW_SOURCE')
+      this.pre.removeAttribute('data-preview')
       this.preview.style.display = 'none'
       this.preview.replaceChildren()
     }

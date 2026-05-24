@@ -60,8 +60,8 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
       )}
       <pre
         ref={props.contentRef}
-        className='CSS_CODE_BLOCK_PREVIEW_SOURCE'
-        data-preview={showMermaidPreview ? '' :undefined}
+        className="CSS_CODE_BLOCK_PREVIEW_SOURCE"
+        data-preview={showMermaidPreview ? '' : undefined}
         data-language={language}
       ></pre>
       {showMermaidPreview && (

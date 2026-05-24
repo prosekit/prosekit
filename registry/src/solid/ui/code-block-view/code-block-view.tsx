@@ -57,7 +57,8 @@ export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
       </Show>
       <pre
         ref={props.contentRef}
-        class={showMermaidPreview() ? 'CSS_CODE_BLOCK_PREVIEW_SOURCE' : undefined}
+        class="CSS_CODE_BLOCK_PREVIEW_SOURCE"
+        data-preview={showMermaidPreview() ? '' : undefined}
         data-language={language()}
       ></pre>
       <Show when={showMermaidPreview()}>

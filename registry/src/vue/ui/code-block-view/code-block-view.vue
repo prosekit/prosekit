@@ -32,7 +32,7 @@ function focusSource(event: MouseEvent) {
   if (typeof pos !== 'number') return
   const { state, dispatch } = props.view
   const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
-  dispatch(state.tr.setSelection(selection as never))
+  dispatch(state.tr.setSelection(selection))
   props.view.focus()
 }
 </script>

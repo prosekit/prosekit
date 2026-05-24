@@ -3,4 +3,4 @@
 "@prosekit/extensions": patch
 ---
 
-Add `defineCodeBlockPreviewDecorations` and `hasCodeBlockPreviewHiddenDecoration`.
+Add `defineCodeBlockPreviewPlugin` and `hasCodeBlockPreviewHiddenDecoration`.

@@ -7,7 +7,7 @@ import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts
 
 import {
   codeBlockPreviewDecorationsPluginKey,
-  defineCodeBlockPreviewDecorations,
+  defineCodeBlockPreviewPlugin,
   hasCodeBlockPreviewHiddenDecoration,
   HIDE_CODE_BLOCK_PREVIEW,
   isCodeBlockPreviewHiddenDecoration,
@@ -16,7 +16,7 @@ import {
 function setupEditor() {
   const extension = union(
     defineTestExtension(),
-    defineCodeBlockPreviewDecorations(),
+    defineCodeBlockPreviewPlugin(),
   )
   return setupTestFromExtension(extension)
 }
@@ -48,7 +48,7 @@ describe('hasCodeBlockPreviewHiddenDecoration', () => {
   })
 })
 
-describe('defineCodeBlockPreviewDecorations', () => {
+describe('defineCodeBlockPreviewPlugin', () => {
   it('adds hide-preview decoration when cursor is inside a code block', () => {
     const { editor, n } = setupEditor()
 

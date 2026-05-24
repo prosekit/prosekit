@@ -12,7 +12,10 @@ export const codeBlockPreviewDecorationsPluginKey: PluginKey<PluginState> = new 
   'prosekit-code-block-preview-decorations',
 )
 
-export function defineCodeBlockPreviewDecorations(): PlainExtension {
+/**
+ * Defines a plugin that adds a decoration to hide the code block preview when the cursor is inside a code block.
+ */
+export function defineCodeBlockPreviewPlugin(): PlainExtension {
   return definePlugin(
     new Plugin<PluginState>({
       key: codeBlockPreviewDecorationsPluginKey,
@@ -44,6 +47,9 @@ export function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): bool
     return decoration.spec === HIDE_CODE_BLOCK_PREVIEW
 }
 
+/**
+ * Whether the given decorations include a decoration that hides the code block preview.
+ */
 export function hasCodeBlockPreviewHiddenDecoration(
   decorations: readonly Decoration[],
 ): boolean {

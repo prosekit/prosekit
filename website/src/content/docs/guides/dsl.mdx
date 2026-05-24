@@ -98,7 +98,7 @@ export default function MermaidCodeBlockView(props: ReactNodeViewProps) {
 // @filename: extension.ts
 // ---cut---
 import { union } from 'prosekit/core'
-import { defineCodeBlock, defineCodeBlockPreviewDecorations } from 'prosekit/extensions/code-block'
+import { defineCodeBlock, defineCodeBlockPreviewPlugin } from 'prosekit/extensions/code-block'
 import { defineReactNodeView } from 'prosekit/react'
 
 import MermaidCodeBlockView from './mermaid-code-block-view'
@@ -106,7 +106,7 @@ import MermaidCodeBlockView from './mermaid-code-block-view'
 export function defineExtension() {
   return union(
     defineCodeBlock(),
-    defineCodeBlockPreviewDecorations(),
+    defineCodeBlockPreviewPlugin(),
     defineReactNodeView({
       name: 'codeBlock',
       contentAs: 'code',
@@ -121,7 +121,7 @@ export function defineExtension() {
 The Mermaid example uses the following architecture:
 
 1. **`defineReactNodeView`** overrides the `codeBlock` node with a custom component.
-2. **`defineCodeBlockPreviewDecorations`** adds node decorations to the code block containing the current selection, so that block can switch between preview and source modes.
+2. **`defineCodeBlockPreviewPlugin`** adds node decorations to the code block containing the current selection, so that block can switch between preview and source modes.
 3. The component checks `language` and **its own** `props.decorations` via `hasCodeBlockPreviewHiddenDecoration` to decide whether to show the preview or the raw source.
 4. In this example, the Mermaid renderer is imported by the module up front; the preview is shown conditionally, but the library is not lazy-loaded here.
 

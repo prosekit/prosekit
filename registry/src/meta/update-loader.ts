@@ -138,7 +138,7 @@ function genVanillaLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'vanilla')
-      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => m.setupVanillaEditor()),`),
+      .map((example) => `  '${example.story}': () => import('./examples/${example.story}/index.ts').then((m) => m.setupVanillaEditor()),`),
     '}',
   ]
   return lines.join('\n') + '\n'

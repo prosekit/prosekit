@@ -1,1 +1,1 @@
-export { renderSlashMenu } from './slash-menu'
+export { renderSlashMenu } from './slash-menu.ts'

@@ -4,14 +4,15 @@ import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
 import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 
 export default function CodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const forceShowSource = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
+  const hidePreview = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
+  const preRef = useRef<HTMLElement|null>(null)
 
-  const showMermaidPreview = !forceShowSource && language === 'mermaid'
+  const showMermaidPreview = !hidePreview && language === 'mermaid'
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }
@@ -26,6 +27,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
     const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
     dispatch(state.tr.setSelection(selection))
     props.view.focus()
+    preRef.current?.scrollIntoView({behavior: 'smooth', block: 'nearest'})
   }
 
   const code = props.node.textContent
@@ -61,17 +63,20 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
         </select>
       </div>
       <pre
-        ref={props.contentRef}
+        ref={(element) => {
+          props.contentRef(element)
+          preRef.current = element
+        }}
         className="CSS_CODE_BLOCK_PREVIEW_SOURCE"
         data-preview={showMermaidPreview ? '' : undefined}
         data-language={language}
       ></pre>
       {showMermaidPreview && (
         <div
+          aria-label="Edit source"
           className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
           contentEditable={false}
           onMouseDown={focusSource}
-          tabIndex={0}
         >
           {mermaidPreview.error ? <pre>{mermaidPreview.error.message}</pre> : null}
           {mermaidPreview.svg ? <div dangerouslySetInnerHTML={{ __html: mermaidPreview.svg }}></div> : null}

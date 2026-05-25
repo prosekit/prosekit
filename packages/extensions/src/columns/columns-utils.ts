@@ -130,9 +130,9 @@ export function getColumnLayoutAtPos(
  */
 export function clampColumnWidth(
   width: number,
-  _options: { minColumnWidth: number },
+  options: { minColumnWidth: number },
 ): number {
-  return Math.max(0, roundColumnWidth(width))
+  return Math.max(options.minColumnWidth, roundColumnWidth(width))
 }
 
 /**
@@ -140,13 +140,16 @@ export function clampColumnWidth(
  */
 export function normalizeColumnWidths(
   widths: Array<number | null>,
-  _options: { minColumnWidth: number },
+  options: { minColumnWidth: number },
 ): number[] {
   if (widths.length === 0) return []
+  const { minColumnWidth } = options
   const fallback = TOTAL_COLUMN_WIDTH / widths.length
-  const values = widths.map((width) => Math.max(0, width ?? fallback))
+  const values = widths.map((width) => Math.max(minColumnWidth, width ?? fallback))
   const total = values.reduce((sum, width) => sum + width, 0)
-  if (total <= 0) return getEqualColumnWidths(widths.length)
+  if (total <= 0 || total > TOTAL_COLUMN_WIDTH) {
+    return getEqualColumnWidths(widths.length)
+  }
 
   return finishColumnWidths(values.map((width) => width / total * TOTAL_COLUMN_WIDTH))
 }

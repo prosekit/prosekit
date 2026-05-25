@@ -140,12 +140,10 @@ export function clampColumnWidth(
  */
 export function normalizeColumnWidths(
   widths: Array<number | null>,
-  options: { minColumnWidth: number },
 ): number[] {
   if (widths.length === 0) return []
-  const { minColumnWidth } = options
   const fallback = TOTAL_COLUMN_WIDTH / widths.length
-  const values = widths.map((width) => Math.max(minColumnWidth, width ?? fallback))
+  const values = widths.map((width) => width ?? fallback)
   const total = values.reduce((sum, width) => sum + width, 0)
   if (total <= 0 || total > TOTAL_COLUMN_WIDTH) {
     return getEqualColumnWidths(widths.length)

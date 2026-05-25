@@ -258,7 +258,6 @@ export function normalizeColumns(options: ColumnsOptions = {}): Command {
     if (!layout) return false
     const widths = normalizeColumnWidths(
       layout.columns.map((column) => column.width),
-      { minColumnWidth: defaults.minColumnWidth },
     )
     if (!dispatch) return true
 

@@ -273,24 +273,26 @@ const distributeColumnsCommand: Command = (state, dispatch) => {
  * add up to 100.
  */
 export function normalizeColumns(_options: ColumnsOptions = {}): Command {
-  return (state, dispatch) => {
-    const layout = getColumnLayoutAtPos(state, state.selection.anchor)
-    if (!layout) return false
-    const widths = normalizeColumnWidths(
-      layout.columns.map((column) => column.width),
-    )
-    if (!dispatch) return true
+  return normalizeColumnsCommand
+}
 
-    const tr = state.tr
-    for (let index = 0; index < layout.columns.length; index += 1) {
-      const column = layout.columns[index]
-      const node = state.doc.nodeAt(column.pos)
-      if (!node) continue
-      tr.setNodeMarkup(column.pos, undefined, { ...node.attrs, width: widths[index] })
-    }
-    dispatch(tr.scrollIntoView())
-    return true
+const normalizeColumnsCommand: Command = (state, dispatch) => {
+  const layout = getColumnLayoutAtPos(state, state.selection.anchor)
+  if (!layout) return false
+  const widths = normalizeColumnWidths(
+    layout.columns.map((column) => column.width),
+  )
+  if (!dispatch) return true
+
+  const tr = state.tr
+  for (let index = 0; index < layout.columns.length; index += 1) {
+    const column = layout.columns[index]
+    const node = state.doc.nodeAt(column.pos)
+    if (!node) continue
+    tr.setNodeMarkup(column.pos, undefined, { ...node.attrs, width: widths[index] })
   }
+  dispatch(tr.scrollIntoView())
+  return true
 }
 
 /**

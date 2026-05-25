@@ -200,6 +200,7 @@ export function setColumnWidth(width: number | null): Command {
  */
 export function setColumnWidthAt(pos: number, width: number | null): Command {
   return (state, dispatch) => {
+    if (width != null && (!Number.isFinite(width) || width < 0)) return false
     const node = state.doc.nodeAt(pos)
     if (!node || node.type.name !== 'column') return false
     if (!dispatch) return true
@@ -213,6 +214,7 @@ export function setColumnWidthAt(pos: number, width: number | null): Command {
  */
 export function setColumnsGap(gap: number | null): Command {
   return (state, dispatch) => {
+    if (gap != null && (!Number.isFinite(gap) || gap < 0)) return false
     const found = findParentColumns(state.selection.$anchor)
     if (!found) return false
     if (!dispatch) return true

@@ -229,6 +229,50 @@ describe('columns commands', () => {
     )
   })
 
+  it('should reject invalid column width values', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('left<a>')),
+        n.column(n.paragraph('right')),
+      ),
+    ))
+
+    expect(editor.commands.setColumnWidth(-1)).toBe(false)
+    expect(editor.commands.setColumnWidth(Number.NaN)).toBe(false)
+
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          n.column(n.paragraph('left')),
+          n.column(n.paragraph('right')),
+        ),
+      ).toJSON(),
+    )
+  })
+
+  it('should reject invalid column gap values', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('left<a>')),
+        n.column(n.paragraph('right')),
+      ),
+    ))
+
+    expect(editor.commands.setColumnsGap(-1)).toBe(false)
+    expect(editor.commands.setColumnsGap(Number.POSITIVE_INFINITY)).toBe(false)
+
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          n.column(n.paragraph('left')),
+          n.column(n.paragraph('right')),
+        ),
+      ).toJSON(),
+    )
+  })
+
   it('should distribute columns to equal percentage widths', () => {
     const { editor, n } = setup({
       minColumnWidth: 160,

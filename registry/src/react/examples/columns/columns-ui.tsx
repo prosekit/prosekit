@@ -85,11 +85,11 @@ function getColumnElement(
   return dom instanceof HTMLElement ? dom : null
 }
 
-function isColumnElement(element: Element): element is HTMLElement {
+function isColumnElement(element: Node | null | undefined): element is HTMLElement {
   return element instanceof HTMLElement && element.classList.contains('prosekit-column')
 }
 
-function isColumnsElement(element: Element | null): element is HTMLElement {
+function isColumnsElement(element: Node | null | undefined): element is HTMLElement {
   return element instanceof HTMLElement && element.classList.contains('prosekit-columns')
 }
 

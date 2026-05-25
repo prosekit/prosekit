@@ -21,7 +21,7 @@ export type ColumnSpecExtension = Extension<{
 }>
 
 /**
- * @internal
+ * Define the `columns` container node spec.
  */
 export function defineColumnsSpec(): ColumnsSpecExtension {
   return defineNodeSpec<'columns', ColumnsAttrs>({
@@ -52,7 +52,7 @@ export function defineColumnsSpec(): ColumnsSpecExtension {
 }
 
 /**
- * @internal
+ * Define the `column` child node spec.
  */
 export function defineColumnSpec(): ColumnSpecExtension {
   return defineNodeSpec<'column', ColumnAttrs>({

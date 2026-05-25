@@ -12,30 +12,44 @@ export const columnsPluginKey: PluginKey<ColumnsRuntimeState> = new PluginKey<Co
 export type ColumnsPluginExtension = PlainExtension
 
 /**
- * @internal
+ * Read the runtime state used by the columns plugin.
  */
 export function getColumnsRuntimeState(state: EditorState): ColumnsRuntimeState | undefined {
   return columnsPluginKey.getState(state)
 }
 
+/**
+ * Create a transaction meta action that marks a column handle as active.
+ */
 export function setActiveColumnHandle(handle: ColumnHandleInfo | null): ColumnsMetaAction {
   return { type: 'setActiveHandle', handle }
 }
 
+/**
+ * Create a transaction meta action that starts a column drag session.
+ */
 export function startColumnDragging(dragging: ColumnDragSession): ColumnsMetaAction {
   return { type: 'startDragging', dragging }
 }
 
+/**
+ * Create a transaction meta action that updates the current column drag
+ * session.
+ */
 export function updateColumnDragging(dragging: ColumnDragSession): ColumnsMetaAction {
   return { type: 'updateDragging', dragging }
 }
 
+/**
+ * Create a transaction meta action that clears the current column drag
+ * session.
+ */
 export function stopColumnDragging(): ColumnsMetaAction {
   return { type: 'stopDragging' }
 }
 
 /**
- * @internal
+ * Register the columns runtime plugin.
  */
 export function defineColumnsPlugin(): ColumnsPluginExtension {
   return definePlugin(

@@ -7,7 +7,10 @@ import { TextSelection } from '@prosekit/pm/state'
 export type ColumnsKeymapExtension = PlainExtension
 
 /**
- * @internal
+ * Register keyboard shortcuts for the columns extension.
+ *
+ * When `enableModAWithinColumn` is enabled, pressing `Mod-a` inside a column
+ * selects only the current column content.
  */
 export function defineColumnsKeymap(options: {
   enableModAWithinColumn?: boolean

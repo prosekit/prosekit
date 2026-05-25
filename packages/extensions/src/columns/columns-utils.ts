@@ -25,11 +25,17 @@ export function getEqualColumnWidths(count: number): number[] {
   return finishColumnWidths(Array.from({ length: count }, () => TOTAL_COLUMN_WIDTH / count))
 }
 
+/**
+ * Find the nearest ancestor `columns` node for the given position.
+ */
 export function findParentColumns($pos: ResolvedPos): FindColumnsResult | undefined {
   const found = findParentNode((node) => node.type.name === 'columns', $pos)
   return found as FindColumnsResult | undefined
 }
 
+/**
+ * Find the nearest ancestor `column` node for the given position.
+ */
 export function findParentColumn($pos: ResolvedPos): FindColumnResult | undefined {
   const found = findParentNode((node) => node.type.name === 'column', $pos)
   if (!found) return
@@ -44,6 +50,9 @@ export function findParentColumn($pos: ResolvedPos): FindColumnResult | undefine
   }
 }
 
+/**
+ * Find a column inside a `columns` container by child index.
+ */
 export function findColumnByIndex(
   state: EditorState,
   containerPos: number,
@@ -74,6 +83,10 @@ export function findColumnByIndex(
   }
 }
 
+/**
+ * Return the number of columns in the container at the given document
+ * position.
+ */
 export function getColumnCount(
   state: EditorState,
   containerPos: number,
@@ -82,6 +95,10 @@ export function getColumnCount(
   return container?.type.name === 'columns' ? container.childCount : 0
 }
 
+/**
+ * Return the current gap and child widths for the `columns` container around
+ * the given position.
+ */
 export function getColumnLayoutAtPos(
   state: EditorState,
   pos: number,
@@ -108,6 +125,9 @@ export function getColumnLayoutAtPos(
   }
 }
 
+/**
+ * Clamp a column width to a valid non-negative value.
+ */
 export function clampColumnWidth(
   width: number,
   _options: { minColumnWidth: number },
@@ -115,6 +135,9 @@ export function clampColumnWidth(
   return Math.max(0, roundColumnWidth(width))
 }
 
+/**
+ * Normalize column widths so they sum to 100.
+ */
 export function normalizeColumnWidths(
   widths: Array<number | null>,
   _options: { minColumnWidth: number },
@@ -128,6 +151,10 @@ export function normalizeColumnWidths(
   return finishColumnWidths(values.map((width) => width / total * TOTAL_COLUMN_WIDTH))
 }
 
+/**
+ * Detect whether a pointer event is close enough to a rendered column boundary
+ * to activate a resize handle.
+ */
 export function findColumnBoundaryAtCoords(
   view: EditorView,
   event: MouseEvent,

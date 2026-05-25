@@ -19,6 +19,17 @@ export type ColumnsExtension = Union<
   ]
 >
 
+/**
+ * Define a two-level block structure composed of a `columns` container and one
+ * or more `column` children.
+ *
+ * This extension includes:
+ *
+ * - node specs for `columns` and `column`
+ * - commands for inserting, resizing, distributing, and removing columns
+ * - plugin state for column resize UI
+ * - an optional `Mod-a` keymap that selects the current column
+ */
 export function defineColumns(options: ColumnsOptions = {}): ColumnsExtension {
   return union(
     defineColumnsSpec(),

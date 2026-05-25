@@ -98,7 +98,8 @@ export type ColumnsCommandsExtension = Extension<{
 }>
 
 /**
- * @internal
+ * Create a command that replaces the current selection with a new columns
+ * container.
  */
 export function insertColumns(options: InsertColumnsOptions): Command {
   return (state, dispatch) => {
@@ -141,21 +142,24 @@ function addColumn(side: 'before' | 'after', options: ColumnsOptions): Command {
 }
 
 /**
- * @internal
+ * Create a command that inserts a new column before the current column.
  */
 export function addColumnBefore(options: ColumnsOptions = {}): Command {
   return addColumn('before', options)
 }
 
 /**
- * @internal
+ * Create a command that inserts a new column after the current column.
  */
 export function addColumnAfter(options: ColumnsOptions = {}): Command {
   return addColumn('after', options)
 }
 
 /**
- * @internal
+ * Create a command that removes the current column.
+ *
+ * When the container would only have one column left, the remaining column
+ * content is unwrapped back into regular blocks.
  */
 export function removeColumn(): Command {
   return removeColumnCommand
@@ -180,7 +184,7 @@ const removeColumnCommand: Command = (state, dispatch) => {
 }
 
 /**
- * @internal
+ * Create a command that updates the width of the current column.
  */
 export function setColumnWidth(width: number | null): Command {
   return (state, dispatch) => {
@@ -191,7 +195,8 @@ export function setColumnWidth(width: number | null): Command {
 }
 
 /**
- * @internal
+ * Create a command that updates the width of the column at the given document
+ * position.
  */
 export function setColumnWidthAt(pos: number, width: number | null): Command {
   return (state, dispatch) => {
@@ -204,7 +209,7 @@ export function setColumnWidthAt(pos: number, width: number | null): Command {
 }
 
 /**
- * @internal
+ * Create a command that updates the gap of the current columns container.
  */
 export function setColumnsGap(gap: number | null): Command {
   return (state, dispatch) => {
@@ -217,7 +222,8 @@ export function setColumnsGap(gap: number | null): Command {
 }
 
 /**
- * @internal
+ * Create a command that redistributes the current columns container to equal
+ * widths.
  */
 export function distributeColumns(_options: ColumnsOptions = {}): Command {
   return distributeColumnsCommand
@@ -240,7 +246,8 @@ const distributeColumnsCommand: Command = (state, dispatch) => {
 }
 
 /**
- * @internal
+ * Create a command that normalizes the current columns container so all widths
+ * add up to 100.
  */
 export function normalizeColumns(options: ColumnsOptions = {}): Command {
   const defaults = getOptionsWithDefaults(options)
@@ -266,7 +273,7 @@ export function normalizeColumns(options: ColumnsOptions = {}): Command {
 }
 
 /**
- * @internal
+ * Register editor commands for the columns extension.
  */
 export function defineColumnsCommands(options: ColumnsOptions = {}): ColumnsCommandsExtension {
   const defaults = getOptionsWithDefaults(options)

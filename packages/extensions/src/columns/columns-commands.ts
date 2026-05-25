@@ -272,8 +272,7 @@ const distributeColumnsCommand: Command = (state, dispatch) => {
  * Create a command that normalizes the current columns container so all widths
  * add up to 100.
  */
-export function normalizeColumns(options: ColumnsOptions = {}): Command {
-  const defaults = getOptionsWithDefaults(options)
+export function normalizeColumns(_options: ColumnsOptions = {}): Command {
   return (state, dispatch) => {
     const layout = getColumnLayoutAtPos(state, state.selection.anchor)
     if (!layout) return false

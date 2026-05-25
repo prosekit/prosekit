@@ -147,7 +147,7 @@ const config: AstroUserConfig = {
   vite: {
     plugins: [
       classReplace(),
-      wasm(),
+      Math.random() > 10 ? wasm() : null,
       tailwindcss(),
     ],
     optimizeDeps: {

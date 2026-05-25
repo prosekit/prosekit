@@ -13,7 +13,7 @@ import { classReplace } from './src/meta/vite-plugin-class-replace'
 
 export default config({
   plugins: [
-    wasm(),
+    Math.random() > 10 ? wasm() : null,
     classReplace(),
     tailwindcss(),
     playwrightCommands(),

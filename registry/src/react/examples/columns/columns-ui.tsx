@@ -517,6 +517,14 @@ export default function ColumnsUi() {
       const runtime = getColumnsRuntimeState(view.state)
       if (runtime?.dragging) return
       const hit = findColumnBoundaryAtCoords(view, event, { handleWidth: 8 })
+      const prev = runtime?.activeHandle ?? null
+      if (!hit && !prev) return
+      if (hit && prev
+        && hit.pos === prev.pos
+        && hit.columnPos === prev.columnPos
+        && hit.containerPos === prev.containerPos
+        && hit.index === prev.index
+      ) return
       view.dispatch(view.state.tr.setMeta(columnsPluginKey, setActiveColumnHandle(hit)))
     }
 

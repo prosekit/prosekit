@@ -10,7 +10,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
   const hidePreview = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
-  const preRef = useRef<HTMLElement|null>(null)
+  const preRef = useRef<HTMLElement | null>(null)
 
   const showMermaidPreview = !hidePreview && language === 'mermaid'
 
@@ -27,7 +27,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
     const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
     dispatch(state.tr.setSelection(selection))
     props.view.focus()
-    preRef.current?.scrollIntoView({behavior: 'smooth', block: 'nearest'})
+    preRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }
 
   const code = props.node.textContent

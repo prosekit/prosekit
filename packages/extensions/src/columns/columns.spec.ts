@@ -1,4 +1,4 @@
-import { union } from '@prosekit/core'
+import { defineBaseKeymap, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
@@ -27,6 +27,17 @@ function setup(options?: Parameters<typeof defineColumns>[0]) {
   return setupTestFromExtension(extension)
 }
 
+function setupWithKeymap(options?: Parameters<typeof defineColumns>[0]) {
+  const extension = union(
+    defineDoc(),
+    defineText(),
+    defineParagraph(),
+    defineColumns(options),
+    defineBaseKeymap(),
+  )
+  return setupTestFromExtension(extension)
+}
+
 describe('columns spec', () => {
   it('should be defined', () => {
     const extension = union(
@@ -51,6 +62,7 @@ describe('columns spec', () => {
             },
           },
           "content": "block+",
+          "isolating": true,
           "parseDOM": [
             {
               "getAttrs": [Function],
@@ -337,6 +349,28 @@ describe('columns keymap', () => {
     await keyboard.press('ControlOrMeta+a')
 
     expect(editor.state.selection.content().content.toString()).toBe('<columns(column(paragraph("one")))>')
+  })
+
+  it('should not exit column after pressing Enter twice at end', async () => {
+    const { editor, n } = setupWithKeymap()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('hello<a>')),
+        n.column(n.paragraph('world')),
+      ),
+    ))
+
+    await keyboard.press('Enter')
+    await keyboard.press('Enter')
+
+    // Cursor should still be inside a column
+    const stillInColumn = findParentColumn(editor.state.selection.$from)
+    expect(stillInColumn).toBeTruthy()
+
+    // The columns container should still exist with 2 columns
+    const firstNode = editor.view.state.doc.firstChild
+    expect(firstNode?.type.name).toBe('columns')
+    expect(firstNode?.childCount).toBe(2)
   })
 })
 

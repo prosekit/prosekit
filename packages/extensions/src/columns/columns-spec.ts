@@ -57,6 +57,7 @@ export function defineColumnsSpec(): ColumnsSpecExtension {
 export function defineColumnSpec(): ColumnSpecExtension {
   return defineNodeSpec<'column', ColumnAttrs>({
     name: 'column',
+    isolating: true,
     content: 'block+',
     attrs: {
       width: { default: null },

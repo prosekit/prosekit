@@ -353,7 +353,7 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "tinyexec": "^1.1.2",
-    "tsx": "^4.22.1",
+    "tsx": "^4.22.2",
     "vite": "^8.0.13",
     "vite-plugin-solid": "^2.11.12",
     "vite-plugin-wasm": "^3.6.0",
@@ -364,7 +364,7 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.1.1",
     "vitest-browser-vue": "^2.1.0",
-    "vue-tsc": "^3.2.9",
+    "vue-tsc": "^3.3.0",
     "vue-tweet": "^2.4.0"
   },
   "publishConfig": {

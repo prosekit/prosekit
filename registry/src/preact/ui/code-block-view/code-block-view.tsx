@@ -1,6 +1,6 @@
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
 import type { JSX } from 'preact'
-import { useMemo } from 'preact/hooks'
+import { useMemo, useRef } from 'preact/hooks'
 import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { PreactNodeViewProps } from 'prosekit/preact'
@@ -8,9 +8,10 @@ import type { PreactNodeViewProps } from 'prosekit/preact'
 export default function CodeBlockView(props: PreactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const forceShowSource = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
+  const hidePreview = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
+  const preRef = useRef<HTMLPreElement | null>(null)
 
-  const showMermaidPreview = !forceShowSource && language === 'mermaid'
+  const showMermaidPreview = !hidePreview && language === 'mermaid'
 
   const setLanguage = (language: string) => {
     const attrs: CodeBlockAttrs = { language }
@@ -31,6 +32,7 @@ export default function CodeBlockView(props: PreactNodeViewProps) {
     const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
     dispatch(state.tr.setSelection(selection))
     props.view.focus()
+    preRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }
 
   const code = props.node.textContent
@@ -66,17 +68,20 @@ export default function CodeBlockView(props: PreactNodeViewProps) {
         </select>
       </div>
       <pre
-        ref={props.contentRef}
+        ref={(element) => {
+          props.contentRef(element)
+          preRef.current = element
+        }}
         className="CSS_CODE_BLOCK_PREVIEW_SOURCE"
         data-preview={showMermaidPreview ? '' : undefined}
         data-language={language}
       ></pre>
       {showMermaidPreview && (
         <div
+          aria-label="Edit source"
           className="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
           contentEditable={false}
           onMouseDown={focusSource}
-          tabIndex={0}
         >
           {mermaidPreview.error ? <pre>{mermaidPreview.error.message}</pre> : null}
           {mermaidPreview.svg

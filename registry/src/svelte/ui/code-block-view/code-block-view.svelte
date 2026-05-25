@@ -16,8 +16,9 @@ const decorations: readonly Decoration[] = $derived(fromStore(props.decorations)
 
 const attrs = $derived(node.attrs as CodeBlockAttrs)
 const language = $derived(attrs.language || '')
-const forceShowSource = $derived(decorations.some(isCodeBlockPreviewHiddenDecoration))
-const showMermaidPreview = $derived(!forceShowSource && language === 'mermaid')
+const hidePreview = $derived(decorations.some(isCodeBlockPreviewHiddenDecoration))
+const showMermaidPreview = $derived(!hidePreview && language === 'mermaid')
+let preElement: HTMLPreElement | null = null
 
 const mermaidPreview = $derived.by<{ svg: string | null; error: Error | null }>(() => {
   if (language !== 'mermaid') return { svg: null, error: null }
@@ -35,6 +36,7 @@ function setLanguage(lang: string) {
 
 function bindContentRef(element: HTMLPreElement) {
   props.contentRef(element)
+  preElement = element
 }
 
 function focusSource(event: MouseEvent) {
@@ -45,6 +47,7 @@ function focusSource(event: MouseEvent) {
   const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
   dispatch(state.tr.setSelection(selection))
   props.view.focus()
+  preElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
 }
 </script>
 
@@ -74,10 +77,11 @@ function focusSource(event: MouseEvent) {
   data-language={language}
 ></pre>
 {#if showMermaidPreview}
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
+    aria-label="Edit source"
     class="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
     contentEditable="false"
-    tabindex={0}
     onmousedown={focusSource}
   >
     {#if mermaidPreview.error}

@@ -38,4 +38,21 @@ export default defineESLintConfig(
       'unicorn/prefer-add-event-listener': 'off',
     },
   },
+  {
+    files: [
+      'registry/src/react/ui/code-block-view/code-block-view.tsx',
+      'registry/src/preact/ui/code-block-view/code-block-view.tsx',
+    ],
+    rules: {
+      '@eslint-react/dom-no-dangerously-set-innerhtml': 'off',
+    },
+  },
+  {
+    files: [
+      'registry/src/vue/ui/code-block-view/code-block-view.vue',
+    ],
+    rules: {
+      'vue/no-v-html': 'off',
+    },
+  },
 )

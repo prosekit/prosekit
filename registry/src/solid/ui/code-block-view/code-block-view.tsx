@@ -7,8 +7,9 @@ import { createMemo, For, Show, type JSX } from 'solid-js'
 export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
   const attrs = () => props.node.attrs as CodeBlockAttrs
   const language = () => attrs().language || ''
-  const forceShowSource = () => props.decorations.some(isCodeBlockPreviewHiddenDecoration)
-  const showMermaidPreview = () => !forceShowSource() && language() === 'mermaid'
+  const hidePreview = () => props.decorations.some(isCodeBlockPreviewHiddenDecoration)
+  const showMermaidPreview = () => !hidePreview() && language() === 'mermaid'
+  let preRef: HTMLPreElement | undefined
 
   const mermaidPreview = createMemo<{ svg: string | null; error: Error | null }>(() => {
     if (language() !== 'mermaid') return { svg: null, error: null }
@@ -32,6 +33,7 @@ export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
     const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
     dispatch(state.tr.setSelection(selection))
     props.view.focus()
+    preRef?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }
 
   return (
@@ -58,17 +60,20 @@ export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
         </select>
       </div>
       <pre
-        ref={props.contentRef}
+        ref={(element) => {
+          props.contentRef(element)
+          preRef = element
+        }}
         class="CSS_CODE_BLOCK_PREVIEW_SOURCE"
         data-preview={showMermaidPreview() ? '' : undefined}
         data-language={language()}
       ></pre>
       <Show when={showMermaidPreview()}>
         <div
+          aria-label="Edit source"
           class="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
           contentEditable={false}
           onMouseDown={focusSource}
-          tabIndex={0}
         >
           <Show when={mermaidPreview().error}>
             <pre>{mermaidPreview().error?.message}</pre>

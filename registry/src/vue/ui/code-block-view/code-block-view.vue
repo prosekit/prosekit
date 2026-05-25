@@ -3,14 +3,15 @@ import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
 import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { VueNodeViewProps } from 'prosekit/vue'
-import { computed } from 'vue'
+import { computed, type ComponentPublicInstance } from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
 
 const attrs = computed(() => props.node.value.attrs as CodeBlockAttrs)
 const language = computed(() => attrs.value.language || '')
-const forceShowSource = computed(() => props.decorations.value.some(isCodeBlockPreviewHiddenDecoration))
-const showMermaidPreview = computed(() => !forceShowSource.value && language.value === 'mermaid')
+const hidePreview = computed(() => props.decorations.value.some(isCodeBlockPreviewHiddenDecoration))
+const showMermaidPreview = computed(() => !hidePreview.value && language.value === 'mermaid')
+let preElement: HTMLPreElement | null = null
 
 const mermaidPreview = computed<{ svg: string | null; error: Error | null }>(() => {
   if (language.value !== 'mermaid') return { svg: null, error: null }
@@ -34,6 +35,14 @@ function focusSource(event: MouseEvent) {
   const selection = TextSelection.near(state.doc.resolve(pos + 1), 1)
   dispatch(state.tr.setSelection(selection))
   props.view.focus()
+  preElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+}
+
+function bindContentRef(element: Element | ComponentPublicInstance | null, refs: Record<string, unknown>) {
+  if (typeof props.contentRef === 'function') {
+    props.contentRef(element, refs)
+  }
+  preElement = element instanceof HTMLPreElement ? element : null
 }
 </script>
 
@@ -60,16 +69,16 @@ function focusSource(event: MouseEvent) {
     </select>
   </div>
   <pre
-    :ref="contentRef"
+    :ref="bindContentRef"
     class="CSS_CODE_BLOCK_PREVIEW_SOURCE"
     :data-preview="showMermaidPreview ? '' : undefined"
     :data-language="language"
   ></pre>
   <div
     v-if="showMermaidPreview"
+    aria-label="Edit source"
     class="CSS_CODE_BLOCK_PREVIEW_DISPLAY"
     contentEditable="false"
-    :tabindex="0"
     @mousedown="focusSource"
   >
     <pre v-if="mermaidPreview.error">{{ mermaidPreview.error.message }}</pre>

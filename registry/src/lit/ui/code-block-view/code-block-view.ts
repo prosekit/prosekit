@@ -50,7 +50,7 @@ class CodeBlockNodeView {
     this.preview = document.createElement('div')
     this.preview.className = 'CSS_CODE_BLOCK_PREVIEW_DISPLAY'
     this.preview.setAttribute('contenteditable', 'false')
-    this.preview.setAttribute('tabindex', '0')
+    this.preview.setAttribute('aria-label', 'Edit source')
     this.preview.addEventListener('mousedown', this.handlePreviewMouseDown)
 
     root.appendChild(this.wrapper)
@@ -75,12 +75,13 @@ class CodeBlockNodeView {
     const selection = TextSelection.near(this.view.state.doc.resolve(pos + 1), 1)
     this.view.dispatch(this.view.state.tr.setSelection(selection))
     this.view.focus()
+    this.pre.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }
 
   private sync() {
     const language = (this.node.attrs as CodeBlockAttrs).language || ''
-    const forceShowSource = this.decorations.some(isCodeBlockPreviewHiddenDecoration)
-    const showMermaidPreview = !forceShowSource && language === 'mermaid'
+    const hidePreview = this.decorations.some(isCodeBlockPreviewHiddenDecoration)
+    const showMermaidPreview = !hidePreview && language === 'mermaid'
 
     render(
       html`

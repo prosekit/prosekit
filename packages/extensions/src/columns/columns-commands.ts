@@ -97,13 +97,25 @@ export type ColumnsCommandsExtension = Extension<{
   }
 }>
 
+function validateInsertColumnsOptions(options: InsertColumnsOptions): boolean {
+  if (!Number.isFinite(options.count) || !Number.isInteger(options.count) || options.count < 1) return false
+  if (options.widths != null) {
+    if (!Array.isArray(options.widths)) return false
+    for (const width of options.widths) {
+      if (width != null && (!Number.isFinite(width) || width < 0)) return false
+    }
+  }
+  if (options.gap != null && (!Number.isFinite(options.gap) || options.gap < 0)) return false
+  return true
+}
+
 /**
  * Create a command that replaces the current selection with a new columns
  * container.
  */
 export function insertColumns(options: InsertColumnsOptions): Command {
   return (state, dispatch) => {
-    if (options.count < 1) return false
+    if (!validateInsertColumnsOptions(options)) return false
     const node = createColumnsNode(state, options)
     const { from, to } = state.selection
     dispatch?.(state.tr.replaceRangeWith(from, to, node).scrollIntoView())
@@ -289,7 +301,7 @@ export function defineColumnsCommands(options: ColumnsOptions = {}): ColumnsComm
   const defaults = getOptionsWithDefaults(options)
   return defineCommands({
     insertColumns: (commandOptions: InsertColumnsOptions) => (state, dispatch) => {
-      if (commandOptions.count < 1) return false
+      if (!validateInsertColumnsOptions(commandOptions)) return false
       const node = createColumnsNode(state, commandOptions, defaults)
       const { from, to } = state.selection
       dispatch?.(state.tr.replaceRangeWith(from, to, node).scrollIntoView())

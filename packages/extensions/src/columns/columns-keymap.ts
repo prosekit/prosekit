@@ -23,7 +23,11 @@ export function defineColumnsKeymap(options: {
     'Mod-a': (state, dispatch) => {
       const found = findParentNode((node) => node.type.name === 'column', state.selection.$from)
       if (!found) return false
-      dispatch?.(state.tr.setSelection(TextSelection.between(state.doc.resolve(found.start), state.doc.resolve(found.start + found.node.content.size))))
+      dispatch?.(
+        state.tr.setSelection(
+          TextSelection.between(state.doc.resolve(found.start), state.doc.resolve(found.start + found.node.content.size)),
+        ),
+      )
       return true
     },
   })

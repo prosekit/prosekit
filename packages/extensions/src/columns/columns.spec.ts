@@ -107,7 +107,7 @@ describe('columns spec', () => {
       'div',
       {
         class: 'prosekit-column',
-        style: '--prosekit-column-width:25;flex:25 1 0;',
+        style: '--prosekit-column-width:25;',
       },
       0,
     ])

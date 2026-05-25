@@ -45,7 +45,7 @@ export function defineColumnsSpec(): ColumnsSpecExtension {
     toDOM(node) {
       const attrs = node.attrs as ColumnsAttrs
       const gap = attrs.gap
-      const style = gap != null ? `--prosekit-columns-gap:${gap}px;gap:${gap}px;` : null
+      const style = gap != null ? `--prosekit-columns-gap:${gap}px;` : null
       return ['div', { class: 'prosekit-columns', style }, 0]
     },
   })
@@ -82,7 +82,7 @@ export function defineColumnSpec(): ColumnSpecExtension {
       const attrs = node.attrs as ColumnAttrs
       const width = attrs.width
       const style = width != null
-        ? `--prosekit-column-width:${width};flex:${width} 1 0;`
+        ? `--prosekit-column-width:${width};`
         : null
       return ['div', { class: 'prosekit-column', style }, 0]
     },

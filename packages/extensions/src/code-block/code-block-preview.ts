@@ -13,7 +13,7 @@ export const codeBlockPreviewDecorationsPluginKey: PluginKey<PluginState> = new 
 )
 
 /**
- * Defines a plugin that adds a decoration to hide the code block preview when the cursor is inside a code block.
+ * Defines a plugin that adds a decoration to hide the code block preview when the cursor is inside a code block. Use {@link isCodeBlockPreviewHiddenDecoration} to check whether a given decoration hides the code block preview.
  */
 export function defineCodeBlockPreviewPlugin(): PlainExtension {
   return definePlugin(
@@ -42,18 +42,12 @@ export function defineCodeBlockPreviewPlugin(): PlainExtension {
   )
 }
 
-/** @internal */
+/**
+ * Returns whether the given decoration hides the code block preview (i.e.
+ * the cursor is inside the code block it decorates).
+ */
 export function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): boolean {
   return decoration.spec === HIDE_CODE_BLOCK_PREVIEW
-}
-
-/**
- * Whether the given decorations include a decoration that hides the code block preview.
- */
-export function hasCodeBlockPreviewHiddenDecoration(
-  decorations: readonly Decoration[],
-): boolean {
-  return decorations.some(isCodeBlockPreviewHiddenDecoration)
 }
 
 function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet | undefined {

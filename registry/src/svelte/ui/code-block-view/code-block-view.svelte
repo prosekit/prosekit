@@ -2,7 +2,7 @@
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
-import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
+import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { Decoration } from 'prosekit/pm/view'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
@@ -16,7 +16,7 @@ const decorations: readonly Decoration[] = $derived(fromStore(props.decorations)
 
 const attrs = $derived(node.attrs as CodeBlockAttrs)
 const language = $derived(attrs.language || '')
-const forceShowSource = $derived(hasCodeBlockPreviewHiddenDecoration(decorations))
+const forceShowSource = $derived(decorations.some(isCodeBlockPreviewHiddenDecoration))
 const showMermaidPreview = $derived(!forceShowSource && language === 'mermaid')
 
 const mermaidPreview = $derived.by<{ svg: string | null; error: Error | null }>(() => {

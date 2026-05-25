@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
-import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { VueNodeViewProps } from 'prosekit/vue'
 import { computed } from 'vue'
@@ -9,7 +9,7 @@ const props = defineProps<VueNodeViewProps>()
 
 const attrs = computed(() => props.node.value.attrs as CodeBlockAttrs)
 const language = computed(() => attrs.value.language || '')
-const forceShowSource = computed(() => hasCodeBlockPreviewHiddenDecoration(props.decorations.value))
+const forceShowSource = computed(() => props.decorations.value.some(isCodeBlockPreviewHiddenDecoration))
 const showMermaidPreview = computed(() => !forceShowSource.value && language.value === 'mermaid')
 
 const mermaidPreview = computed<{ svg: string | null; error: Error | null }>(() => {

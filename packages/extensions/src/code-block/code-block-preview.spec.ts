@@ -8,7 +8,6 @@ import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts
 import {
   codeBlockPreviewDecorationsPluginKey,
   defineCodeBlockPreviewPlugin,
-  hasCodeBlockPreviewHiddenDecoration,
   HIDE_CODE_BLOCK_PREVIEW,
   isCodeBlockPreviewHiddenDecoration,
 } from './code-block-preview.ts'
@@ -21,30 +20,20 @@ function setupEditor() {
   return setupTestFromExtension(extension)
 }
 
-describe('hasCodeBlockPreviewHiddenDecoration', () => {
-  it('returns false for an empty array', () => {
-    expect(hasCodeBlockPreviewHiddenDecoration([])).toBe(false)
-  })
-
-  it('returns true when a decoration has the HIDE_CODE_BLOCK_PREVIEW spec', () => {
+describe('isCodeBlockPreviewHiddenDecoration', () => {
+  it('returns true for a decoration with the HIDE_CODE_BLOCK_PREVIEW spec', () => {
     const deco = Decoration.node(0, 1, {}, HIDE_CODE_BLOCK_PREVIEW)
-    expect(hasCodeBlockPreviewHiddenDecoration([deco])).toBe(true)
+    expect(isCodeBlockPreviewHiddenDecoration(deco)).toBe(true)
   })
 
-  it('returns false when no decoration has the HIDE spec', () => {
+  it('returns false for a decoration with a different spec', () => {
     const deco = Decoration.node(0, 1, {}, { someOtherProp: true })
-    expect(hasCodeBlockPreviewHiddenDecoration([deco])).toBe(false)
+    expect(isCodeBlockPreviewHiddenDecoration(deco)).toBe(false)
   })
 
-  it('returns true when one of multiple decorations has the HIDE spec', () => {
-    const deco1 = Decoration.node(0, 1, {}, { someOther: true })
-    const deco2 = Decoration.node(2, 3, {}, HIDE_CODE_BLOCK_PREVIEW)
-    expect(hasCodeBlockPreviewHiddenDecoration([deco1, deco2])).toBe(true)
-  })
-
-  it('returns false for inline decorations without spec', () => {
+  it('returns false for an inline decoration without spec', () => {
     const deco = Decoration.inline(0, 1, { class: 'foo' })
-    expect(hasCodeBlockPreviewHiddenDecoration([deco])).toBe(false)
+    expect(isCodeBlockPreviewHiddenDecoration(deco)).toBe(false)
   })
 })
 

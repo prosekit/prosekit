@@ -1,5 +1,5 @@
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
-import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { SolidNodeViewProps } from 'prosekit/solid'
 import { createMemo, For, Show, type JSX } from 'solid-js'
@@ -7,7 +7,7 @@ import { createMemo, For, Show, type JSX } from 'solid-js'
 export default function CodeBlockView(props: SolidNodeViewProps): JSX.Element {
   const attrs = () => props.node.attrs as CodeBlockAttrs
   const language = () => attrs().language || ''
-  const forceShowSource = () => hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const forceShowSource = () => props.decorations.some(isCodeBlockPreviewHiddenDecoration)
   const showMermaidPreview = () => !forceShowSource() && language() === 'mermaid'
 
   const mermaidPreview = createMemo<{ svg: string | null; error: Error | null }>(() => {

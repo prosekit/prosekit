@@ -519,7 +519,8 @@ export default function ColumnsUi() {
       const hit = findColumnBoundaryAtCoords(view, event, { handleWidth: 8 })
       const prev = runtime?.activeHandle ?? null
       if (!hit && !prev) return
-      if (hit && prev
+      if (
+        hit && prev
         && hit.pos === prev.pos
         && hit.columnPos === prev.columnPos
         && hit.containerPos === prev.containerPos

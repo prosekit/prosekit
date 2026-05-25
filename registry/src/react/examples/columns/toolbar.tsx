@@ -4,9 +4,9 @@ import type { Editor } from 'prosekit/core'
 import { findParentColumn } from 'prosekit/extensions/columns'
 import { useEditorDerivedValue } from 'prosekit/react'
 
-import { Button } from '../../ui/button'
+import Button from '../../ui/button/button.tsx'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 function getToolbarItems(editor: Editor<EditorExtension>) {
   const currentColumn = findParentColumn(editor.state.selection.$anchor)

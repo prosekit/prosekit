@@ -18,9 +18,9 @@ import { TextSelection } from 'prosekit/pm/state'
 import { useEditor, useEditorDerivedValue } from 'prosekit/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-import { Button } from '../../ui/button'
+import Button from '../../ui/button/button.tsx'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 interface BoundaryHandleRect {
   x: number

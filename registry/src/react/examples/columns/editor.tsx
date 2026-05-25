@@ -8,11 +8,11 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { sampleContent } from '../../sample/sample-doc-columns'
+import { sampleContent } from '../../sample/sample-doc-columns.ts'
 
-import ColumnsUi from './columns-ui'
-import { defineExtension } from './extension'
-import Toolbar from './toolbar'
+import ColumnsUi from './columns-ui.tsx'
+import { defineExtension } from './extension.ts'
+import Toolbar from './toolbar.tsx'
 
 interface EditorProps {
   initialContent?: NodeJSON

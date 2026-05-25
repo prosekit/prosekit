@@ -1,4 +1,4 @@
-import { ThemeSelector } from './theme-selector'
+import { ThemeSelector } from './theme-selector.tsx'
 
 export default function Toolbar() {
   return (

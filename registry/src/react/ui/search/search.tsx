@@ -4,7 +4,7 @@ import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extens
 import { useEditor, useExtension } from 'prosekit/react'
 import { useMemo, useState } from 'react'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 export default function Search(props: { onClose?: VoidFunction }) {
   const [showReplace, setShowReplace] = useState(false)

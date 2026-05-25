@@ -6,7 +6,7 @@ import { useEditor } from 'prosekit/preact'
 import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/preact/popover'
 import type { OpenChangeEvent } from 'prosekit/web/popover'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 export default function ImageUploadPopover(props: {
   uploader: Uploader<string>

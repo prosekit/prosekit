@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import EditorComponent from './editor-component'
+import EditorComponent from './editor-component.tsx'
 
 export default function Page() {
   const [room] = useState(() => {

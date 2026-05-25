@@ -7,7 +7,7 @@ import { useEditor, useEditorDerivedValue } from 'prosekit/vue'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 function getInlineMenuItems(editor: Editor<BasicExtension>) {
   return {

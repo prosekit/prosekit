@@ -1,8 +1,8 @@
 import { useState } from 'preact/hooks'
 
-import { UserMenu } from '../../ui/user-menu'
+import { UserMenu } from '../../ui/user-menu/index.ts'
 
-import { useUserQuery } from './use-user-query'
+import { useUserQuery } from './use-user-query.ts'
 
 export default function UserMenuDynamic() {
   const [query, setQuery] = useState('')

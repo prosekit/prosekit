@@ -2,7 +2,7 @@ import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/solid'
 import { onMount, type JSX } from 'solid-js'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 const fonts = [
   { label: 'Arial', family: 'Arial, sans-serif' },

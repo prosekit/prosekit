@@ -1,1 +1,1 @@
-export { registerLitEditorInlineMenu } from './inline-menu'
+export { registerLitEditorInlineMenu } from './inline-menu.ts'

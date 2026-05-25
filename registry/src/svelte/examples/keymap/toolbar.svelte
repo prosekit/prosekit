@@ -2,7 +2,7 @@
 import { useKeymap } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
 interface Props {
   onSubmit: (hotkey: string) => void

@@ -1,1 +1,1 @@
-export { default as WordCounter } from './word-counter'
+export { default as WordCounter } from './word-counter.tsx'

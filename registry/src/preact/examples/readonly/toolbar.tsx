@@ -1,6 +1,6 @@
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import { useReadonly } from './use-readonly'
+import { useReadonly } from './use-readonly.ts'
 
 export default function Toolbar() {
   const { readonly, setReadonly } = useReadonly()

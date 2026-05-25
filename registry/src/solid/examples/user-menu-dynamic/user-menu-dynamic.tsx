@@ -1,8 +1,8 @@
 import { createSignal, type JSX } from 'solid-js'
 
-import { UserMenu } from '../../ui/user-menu'
+import { UserMenu } from '../../ui/user-menu/index.ts'
 
-import { useUserQuery } from './use-user-query'
+import { useUserQuery } from './use-user-query.ts'
 
 export default function UserMenuDynamic(): JSX.Element {
   const [query, setQuery] = createSignal('')

@@ -22,7 +22,7 @@ import {
   registerTableHandleRowPositionerElement,
 } from 'prosekit/lit/table-handle'
 
-import { editorContext } from '../editor-context'
+import { editorContext } from '../editor-context.ts'
 
 function getTableHandleState(editor: Editor<TableExtension>) {
   return {

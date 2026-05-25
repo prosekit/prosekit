@@ -5,10 +5,10 @@ import { useMemo } from 'preact/hooks'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { sampleContent } from '../../sample/sample-doc-link'
-import { InlineMenu } from '../../ui/inline-menu'
+import { sampleContent } from '../../sample/sample-doc-link.ts'
+import { InlineMenu } from '../../ui/inline-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface EditorProps {
   initialContent?: NodeJSON

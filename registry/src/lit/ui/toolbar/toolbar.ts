@@ -4,9 +4,9 @@ import type { BasicExtension } from 'prosekit/basic'
 import { defineUpdateHandler, type Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 
-import { registerLitEditorButton } from '../button'
-import { editorContext } from '../editor-context'
-import { registerLitEditorImageUploadPopover } from '../image-upload-popover'
+import { registerLitEditorButton } from '../button/index.ts'
+import { editorContext } from '../editor-context.ts'
+import { registerLitEditorImageUploadPopover } from '../image-upload-popover/index.ts'
 
 function getToolbarItems(editor: Editor<BasicExtension>) {
   return {

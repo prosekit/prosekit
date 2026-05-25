@@ -6,10 +6,10 @@ import './custom-list.css'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleContent } from '../../sample/sample-doc-list-custom-checkbox'
-import { Toolbar } from '../../ui/toolbar'
+import { sampleContent } from '../../sample/sample-doc-list-custom-checkbox.ts'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props = defineProps<{
   initialContent?: NodeJSON

@@ -1,1 +1,1 @@
-export { default as InlineMenu } from './inline-menu'
+export { default as InlineMenu } from './inline-menu.tsx'

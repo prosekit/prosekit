@@ -1,1 +1,1 @@
-export { LitEditor as ExampleEditor, registerLitEditor } from './editor'
+export { LitEditor as ExampleEditor, registerLitEditor } from './editor.ts'

@@ -5,8 +5,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import { createSignal, For, Show, type JSX } from 'solid-js'
 
-import { defineExtension } from './extension'
-import Toolbar from './toolbar'
+import { defineExtension } from './extension.ts'
+import Toolbar from './toolbar.tsx'
 
 export default function Editor(): JSX.Element {
   const extension = defineExtension()

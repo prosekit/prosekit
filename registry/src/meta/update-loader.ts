@@ -44,7 +44,7 @@ function genPreactLoaders(items: ItemAccumulator[]): string {
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'preact')
       .map((example) =>
-        `  '${example.story}': lazy(() => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor }))),`
+        `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),`
       ),
     '}',
   ]
@@ -61,7 +61,7 @@ function genReactLoaders(items: ItemAccumulator[]): string {
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'react')
       .map((example) =>
-        `  '${example.story}': lazy(() => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor }))),`
+        `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),`
       ),
     '}',
   ]
@@ -78,7 +78,7 @@ function genVueLoaders(items: ItemAccumulator[]): string {
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'vue')
       .map((example) =>
-        `  '${example.story}': defineAsyncComponent(() => import('./examples/${example.story}').then((m) => m.ExampleEditor)),`
+        `  '${example.story}': defineAsyncComponent(() => import('./examples/${example.story}/index.ts').then((m) => m.ExampleEditor)),`
       ),
     '}',
   ]
@@ -95,7 +95,7 @@ function genSolidLoaders(items: ItemAccumulator[]): string {
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'solid')
       .map((example) =>
-        `  '${example.story}': lazy(() => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor }))),`
+        `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),`
       ),
     '}',
   ]
@@ -110,7 +110,9 @@ function genSvelteLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'svelte')
-      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => ({ default: m.ExampleEditor })),`),
+      .map((example) =>
+        `  '${example.story}': () => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor })),`
+      ),
     '}',
   ]
   return lines.join('\n') + '\n'
@@ -124,7 +126,7 @@ function genLitLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'lit')
-      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => m.registerLitEditor()),`),
+      .map((example) => `  '${example.story}': () => import('./examples/${example.story}/index.ts').then((m) => m.registerLitEditor()),`),
     '}',
   ]
   return lines.join('\n') + '\n'
@@ -138,7 +140,7 @@ function genVanillaLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'vanilla')
-      .map((example) => `  '${example.story}': () => import('./examples/${example.story}').then((m) => m.setupVanillaEditor()),`),
+      .map((example) => `  '${example.story}': () => import('./examples/${example.story}/index.ts').then((m) => m.setupVanillaEditor()),`),
     '}',
   ]
   return lines.join('\n') + '\n'

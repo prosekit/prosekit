@@ -3,7 +3,7 @@ import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extens
 import { useEditor, useExtension } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 interface Props {
   onClose?: () => void

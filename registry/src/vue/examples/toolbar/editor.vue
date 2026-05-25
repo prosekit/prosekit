@@ -5,10 +5,10 @@ import 'prosekit/basic/typography.css'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleUploader } from '../../sample/sample-uploader'
-import { Toolbar } from '../../ui/toolbar'
+import { sampleUploader } from '../../sample/sample-uploader.ts'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const extension = defineExtension()
 const editor = createEditor({ extension })

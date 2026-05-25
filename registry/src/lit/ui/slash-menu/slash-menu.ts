@@ -11,10 +11,10 @@ import {
   registerAutocompleteRootElement,
 } from 'prosekit/lit/autocomplete'
 
-import { editorContext } from '../editor-context'
+import { editorContext } from '../editor-context.ts'
 
-import { SlashMenuEmptyElement } from './slash-menu-empty'
-import { SlashMenuItemElement } from './slash-menu-item'
+import { SlashMenuEmptyElement } from './slash-menu-empty.ts'
+import { SlashMenuItemElement } from './slash-menu-item.ts'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u

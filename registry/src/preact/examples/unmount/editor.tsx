@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'preact/hooks'
 
-import EditorComponent from './editor-component'
+import EditorComponent from './editor-component.tsx'
 
 function EditorGroup() {
   const nextKeyRef = useRef(1)

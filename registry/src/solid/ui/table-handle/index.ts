@@ -1,1 +1,1 @@
-export { default as TableHandle } from './table-handle'
+export { default as TableHandle } from './table-handle.tsx'

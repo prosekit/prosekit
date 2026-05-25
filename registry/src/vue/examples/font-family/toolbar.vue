@@ -3,7 +3,7 @@ import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/vue'
 import { onMounted } from 'vue'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 const fonts = [
   { label: 'Arial', family: 'Arial, sans-serif' },

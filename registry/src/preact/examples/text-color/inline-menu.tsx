@@ -3,9 +3,9 @@ import type { Editor, Keymap } from 'prosekit/core'
 import { useEditorDerivedValue, useKeymap } from 'prosekit/preact'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/preact/inline-popover'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 const textColors = [
   { label: 'Gray', value: '#9ca3af' },

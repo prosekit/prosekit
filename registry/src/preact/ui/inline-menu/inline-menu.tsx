@@ -7,7 +7,7 @@ import type { EditorState } from 'prosekit/pm/state'
 import { useEditor, useEditorDerivedValue } from 'prosekit/preact'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/preact/inline-popover'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 function getInlineMenuItems(editor: Editor<BasicExtension>) {
   return {

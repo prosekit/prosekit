@@ -1,1 +1,1 @@
-export { default as ExampleEditor } from './editor'
+export { default as ExampleEditor } from './editor.tsx'

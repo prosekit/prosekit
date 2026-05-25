@@ -5,9 +5,9 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { sampleContent } from '../../sample/sample-doc-drop-cursor'
+import { sampleContent } from '../../sample/sample-doc-drop-cursor.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface EditorProps {
   initialContent?: NodeJSON

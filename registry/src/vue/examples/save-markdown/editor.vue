@@ -7,7 +7,7 @@ import { createEditor, jsonFromHTML } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { ref } from 'vue'
 
-import { htmlFromMarkdown, markdownFromHTML } from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown.ts'
 
 // A list of saved documents, stored as Markdown strings
 const records = ref<string[]>([])

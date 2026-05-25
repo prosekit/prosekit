@@ -1,1 +1,1 @@
-export { defineCodeBlockView } from './code-block-view'
+export { defineCodeBlockView } from './code-block-view.ts'

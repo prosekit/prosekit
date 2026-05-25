@@ -6,7 +6,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, jsonFromHTML } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/preact'
 
-import { htmlFromMarkdown, markdownFromHTML } from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown.ts'
 
 export default function Editor() {
   // A list of saved documents, stored as Markdown strings

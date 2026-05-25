@@ -114,7 +114,7 @@ const extension = defineCodeBlockHighlight({ parser })
 
 ## Live rendering
 
-`defineCodeBlockPreviewPlugin()` marks the code block containing the current selection with a node decoration. A custom node view can check for that decoration with `hasCodeBlockPreviewHiddenDecoration` and render a custom view (for example a [Mermaid](https://mermaid.js.org) diagram) when the cursor is elsewhere, or the editable source when the cursor is inside.
+`defineCodeBlockPreviewPlugin()` marks the code block containing the current selection with a node decoration. A custom node view can detect that decoration by checking whether `decorations.some(isCodeBlockPreviewHiddenDecoration)` is true and render a custom view (for example a [Mermaid](https://mermaid.js.org) diagram) when the cursor is elsewhere, or the editable source when the cursor is inside.
 
 See [examples/code-block](/examples/code-block) for a runnable implementation that renders Mermaid diagrams inside the standard code-block view.
 

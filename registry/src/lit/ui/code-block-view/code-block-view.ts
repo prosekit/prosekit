@@ -4,7 +4,7 @@ import type { Extension } from 'prosekit/core'
 import { defineNodeView } from 'prosekit/core'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import {
-  hasCodeBlockPreviewHiddenDecoration,
+  isCodeBlockPreviewHiddenDecoration,
   shikiBundledLanguagesInfo,
 } from 'prosekit/extensions/code-block'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
@@ -79,7 +79,7 @@ class CodeBlockNodeView {
 
   private sync() {
     const language = (this.node.attrs as CodeBlockAttrs).language || ''
-    const forceShowSource = hasCodeBlockPreviewHiddenDecoration(this.decorations)
+    const forceShowSource = this.decorations.some(isCodeBlockPreviewHiddenDecoration)
     const showMermaidPreview = !forceShowSource && language === 'mermaid'
 
     render(

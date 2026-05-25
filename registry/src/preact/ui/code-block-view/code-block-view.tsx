@@ -1,14 +1,14 @@
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
 import type { JSX } from 'preact'
 import { useMemo } from 'preact/hooks'
-import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { PreactNodeViewProps } from 'prosekit/preact'
 
 export default function CodeBlockView(props: PreactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const forceShowSource = hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const forceShowSource = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
 
   const showMermaidPreview = !forceShowSource && language === 'mermaid'
 

@@ -42,18 +42,14 @@ export function defineCodeBlockPreviewPlugin(): PlainExtension {
   )
 }
 
-/** @internal */
+/**
+ * Returns whether the given decoration hides the code block preview (i.e.
+ * the cursor is inside the code block it decorates). Combine with
+ * `Array.prototype.some` to check a list of decorations:
+ * `decorations.some(isCodeBlockPreviewHiddenDecoration)`.
+ */
 export function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): boolean {
   return decoration.spec === HIDE_CODE_BLOCK_PREVIEW
-}
-
-/**
- * Whether the given decorations include a decoration that hides the code block preview.
- */
-export function hasCodeBlockPreviewHiddenDecoration(
-  decorations: readonly Decoration[],
-): boolean {
-  return decorations.some(isCodeBlockPreviewHiddenDecoration)
 }
 
 function createCodeBlockPreviewDecorations(state: EditorState): DecorationSet | undefined {

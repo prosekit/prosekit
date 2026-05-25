@@ -1,7 +1,7 @@
 'use client'
 
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
-import { hasCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { useMemo } from 'react'
@@ -9,7 +9,7 @@ import { useMemo } from 'react'
 export default function CodeBlockView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
   const language = attrs.language || ''
-  const forceShowSource = hasCodeBlockPreviewHiddenDecoration(props.decorations)
+  const forceShowSource = props.decorations.some(isCodeBlockPreviewHiddenDecoration)
 
   const showMermaidPreview = !forceShowSource && language === 'mermaid'
 

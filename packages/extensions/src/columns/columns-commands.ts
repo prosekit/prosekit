@@ -172,7 +172,16 @@ const removeColumnCommand: Command = (state, dispatch) => {
   if (!container) return false
 
   const nextChildren = getChildNodes(container)
-  nextChildren.splice(found.index, 1)
+  const [removed] = nextChildren.splice(found.index, 1)
+
+  // When removing the last column from a single-column container, unwrap
+  // the column's content so user content isn't lost.
+  if (nextChildren.length === 0) {
+    if (!dispatch) return true
+    const content = removed?.content ?? Fragment.empty
+    dispatch(state.tr.replaceWith(found.containerPos, found.containerPos + container.nodeSize, content).scrollIntoView())
+    return true
+  }
 
   return replaceColumnsChildren(
     state,

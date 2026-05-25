@@ -7,11 +7,11 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor, NodeJSON } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
-import { sampleContent } from '../../sample/sample-doc-table'
-import { editorContext } from '../../ui/editor-context'
-import { registerLitEditorTableHandle } from '../../ui/table-handle'
+import { sampleContent } from '../../sample/sample-doc-table.ts'
+import { editorContext } from '../../ui/editor-context.ts'
+import { registerLitEditorTableHandle } from '../../ui/table-handle/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export class LitEditor extends LitElement {
   static override properties = {

@@ -11,8 +11,8 @@ import {
 } from 'prosekit/lit/inline-popover'
 import type { EditorState } from 'prosekit/pm/state'
 
-import { registerLitEditorButton } from '../button'
-import { editorContext } from '../editor-context'
+import { registerLitEditorButton } from '../button/index.ts'
+import { editorContext } from '../editor-context.ts'
 
 function getInlineMenuItems(editor: Editor<BasicExtension>) {
   return {

@@ -4,8 +4,8 @@ import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import { useEditorDerivedValue } from 'prosekit/svelte'
 
-import { Button } from '../button'
-import { ImageUploadPopover } from '../image-upload-popover'
+import { Button } from '../button/index.ts'
+import { ImageUploadPopover } from '../image-upload-popover/index.ts'
 
 interface Props {
   uploader?: Uploader<string>

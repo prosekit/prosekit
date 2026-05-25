@@ -6,7 +6,7 @@ import { createEditor, jsonFromHTML } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/solid'
 import { createSignal, For, type JSX } from 'solid-js'
 
-import { htmlFromMarkdown, markdownFromHTML } from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown.ts'
 
 export default function Editor(): JSX.Element {
   const [records, setRecords] = createSignal<string[]>([])

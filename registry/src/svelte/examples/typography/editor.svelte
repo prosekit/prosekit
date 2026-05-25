@@ -6,11 +6,11 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { untrack } from 'svelte'
 
-import { sampleContent } from '../../sample/sample-doc-typography'
-import { BlockHandle } from '../../ui/block-handle'
-import { DropIndicator } from '../../ui/drop-indicator'
+import { sampleContent } from '../../sample/sample-doc-typography.ts'
+import { BlockHandle } from '../../ui/block-handle/index.ts'
+import { DropIndicator } from '../../ui/drop-indicator/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props: {
   initialContent?: NodeJSON

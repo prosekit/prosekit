@@ -1,4 +1,4 @@
-import { users } from './sample-user-data'
+import { users } from './sample-user-data.ts'
 
 export interface User {
   id: number

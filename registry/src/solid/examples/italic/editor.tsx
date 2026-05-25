@@ -5,10 +5,10 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { sampleContent } from '../../sample/sample-doc-italic'
-import { Toolbar } from '../../ui/toolbar'
+import { sampleContent } from '../../sample/sample-doc-italic.ts'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface EditorProps {
   initialContent?: NodeJSON

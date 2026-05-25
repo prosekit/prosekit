@@ -2,7 +2,7 @@ import { useEffect } from 'preact/hooks'
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/preact'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 const fonts = [
   { label: 'Arial', family: 'Arial, sans-serif' },

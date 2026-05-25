@@ -1,7 +1,7 @@
 import type { NodeJSON } from 'prosekit/core'
 import { defineComponent, h } from 'vue'
 
-import { loaders } from './loaders.gen'
+import { loaders } from './loaders.gen.ts'
 
 interface ExampleProps {
   initialContent?: NodeJSON

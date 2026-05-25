@@ -5,9 +5,9 @@ import 'prosekit/basic/typography.css'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleContent } from '../../sample/sample-doc-tex'
+import { sampleContent } from '../../sample/sample-doc-tex.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props = defineProps<{
   initialContent?: NodeJSON

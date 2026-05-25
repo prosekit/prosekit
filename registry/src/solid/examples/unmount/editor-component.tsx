@@ -6,7 +6,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { InlineMenu } from '../../ui/inline-menu'
+import { InlineMenu } from '../../ui/inline-menu/index.ts'
 
 import ExtensionComponent from './extension-component.tsx'
 

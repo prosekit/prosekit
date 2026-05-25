@@ -7,10 +7,10 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { sampleContent } from '../../sample/sample-doc-word-counter'
-import { WordCounter } from '../../ui/word-counter'
+import { sampleContent } from '../../sample/sample-doc-word-counter.ts'
+import { WordCounter } from '../../ui/word-counter/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface EditorProps {
   initialContent?: NodeJSON

@@ -5,8 +5,8 @@ import { useCallback, useMemo, useState } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { defineExtension } from './extension'
-import Toolbar from './toolbar'
+import { defineExtension } from './extension.ts'
+import Toolbar from './toolbar.tsx'
 
 export default function Editor() {
   const editor = useMemo(() => {

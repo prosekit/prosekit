@@ -7,10 +7,10 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
-import { editorContext } from '../../ui/editor-context'
-import { registerLitEditorSlashMenu } from '../../ui/slash-menu'
+import { editorContext } from '../../ui/editor-context.ts'
+import { registerLitEditorSlashMenu } from '../../ui/slash-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export class LitEditor extends LitElement {
   static override properties = {

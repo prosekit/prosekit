@@ -10,7 +10,7 @@ import {
   type OpenChangeEvent,
 } from 'prosekit/lit/popover'
 
-import { registerLitEditorButton } from '../button'
+import { registerLitEditorButton } from '../button/index.ts'
 
 let imageUploadId = 0
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { UserMenu } from '../../ui/user-menu'
+import { UserMenu } from '../../ui/user-menu/index.ts'
 
 import { useUserQuery } from './use-user-query.svelte.js'
 

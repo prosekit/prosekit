@@ -5,7 +5,7 @@ import 'prosekit/basic/typography.css'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 import Toolbar from './toolbar.svelte'
 
 const extension = defineExtension()

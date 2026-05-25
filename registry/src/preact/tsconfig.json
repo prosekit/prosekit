@@ -3,6 +3,8 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "preact",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
   },
   "references": [
     { "path": "../../../packages/prosekit" },

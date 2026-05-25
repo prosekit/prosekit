@@ -7,10 +7,10 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { sampleContent } from '../../sample/sample-doc-text-color'
+import { sampleContent } from '../../sample/sample-doc-text-color.ts'
 
-import { defineExtension } from './extension'
-import InlineMenu from './inline-menu'
+import { defineExtension } from './extension.ts'
+import InlineMenu from './inline-menu.tsx'
 
 interface EditorProps {
   initialContent?: NodeJSON

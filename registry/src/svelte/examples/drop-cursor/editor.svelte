@@ -6,9 +6,9 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { untrack } from 'svelte'
 
-import { sampleContent } from '../../sample/sample-doc-drop-cursor'
+import { sampleContent } from '../../sample/sample-doc-drop-cursor.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props: {
   initialContent?: NodeJSON

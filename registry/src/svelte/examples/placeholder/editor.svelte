@@ -7,7 +7,7 @@ import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/svelte'
 import { untrack } from 'svelte'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props: {
   initialContent?: NodeJSON

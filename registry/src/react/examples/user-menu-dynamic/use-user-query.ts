@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-import type { User } from '../../sample/sample-query-users'
-import { queryUsers } from '../../sample/sample-query-users'
+import type { User } from '../../sample/sample-query-users.ts'
+import { queryUsers } from '../../sample/sample-query-users.ts'
 
 /**
  * Simulate a user searching with some delay.

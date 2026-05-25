@@ -6,7 +6,7 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { defineText } from 'prosekit/extensions/text'
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 
-import { defineIssueLink } from './issue-link'
+import { defineIssueLink } from './issue-link.ts'
 
 export function defineExtension() {
   return union(

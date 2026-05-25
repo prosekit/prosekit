@@ -10,9 +10,9 @@ import { useMemo } from 'react'
 import { WebsocketProvider } from 'y-websocket'
 import * as Y from 'yjs'
 
-import { Toolbar } from '../../ui/toolbar'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function EditorComponent(props: { room?: string }) {
   const editor = useMemo(() => {

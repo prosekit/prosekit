@@ -1,1 +1,1 @@
-export { registerLitEditorImageUploadPopover } from './image-upload-popover'
+export { registerLitEditorImageUploadPopover } from './image-upload-popover.ts'

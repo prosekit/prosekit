@@ -7,7 +7,7 @@ import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'pr
 import type { OpenChangeEvent } from 'prosekit/web/popover'
 import { useId, useState, type ReactNode } from 'react'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 export default function ImageUploadPopover(props: {
   uploader: Uploader<string>

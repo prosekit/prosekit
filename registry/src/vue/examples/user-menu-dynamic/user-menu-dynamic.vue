@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { UserMenu } from '../../ui/user-menu'
+import { UserMenu } from '../../ui/user-menu/index.ts'
 
-import { useUserQuery } from './use-user-query'
+import { useUserQuery } from './use-user-query.ts'
 
 const query = ref('')
 const open = ref(false)

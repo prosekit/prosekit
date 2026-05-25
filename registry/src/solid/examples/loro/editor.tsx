@@ -2,7 +2,7 @@ import { LoroDoc, type AwarenessListener } from 'loro-crdt'
 import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
 import { onCleanup, type JSX } from 'solid-js'
 
-import EditorComponent from './editor-component'
+import EditorComponent from './editor-component.tsx'
 
 export default function Editor(): JSX.Element {
   const loroA: LoroDocType = new LoroDoc()

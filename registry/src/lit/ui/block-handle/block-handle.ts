@@ -8,7 +8,7 @@ import {
   registerBlockHandleRootElement,
 } from 'prosekit/lit/block-handle'
 
-import { editorContext } from '../editor-context'
+import { editorContext } from '../editor-context.ts'
 
 class LitBlockHandle extends LitElement {
   declare dir: 'ltr' | 'rtl' | 'auto'

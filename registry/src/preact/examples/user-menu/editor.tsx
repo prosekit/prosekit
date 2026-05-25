@@ -5,12 +5,12 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { tags } from '../../sample/sample-tag-data'
-import { users } from '../../sample/sample-user-data'
-import { TagMenu } from '../../ui/tag-menu'
-import { UserMenu } from '../../ui/user-menu'
+import { tags } from '../../sample/sample-tag-data.ts'
+import { users } from '../../sample/sample-user-data.ts'
+import { TagMenu } from '../../ui/tag-menu/index.ts'
+import { UserMenu } from '../../ui/user-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor() {
   const editor = useMemo(() => {

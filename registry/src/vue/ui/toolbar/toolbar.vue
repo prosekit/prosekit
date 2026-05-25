@@ -4,8 +4,8 @@ import type { Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import { useEditorDerivedValue } from 'prosekit/vue'
 
-import { Button } from '../button'
-import { ImageUploadPopover } from '../image-upload-popover'
+import { Button } from '../button/index.ts'
+import { ImageUploadPopover } from '../image-upload-popover/index.ts'
 
 const props = defineProps<{ uploader?: Uploader<string> }>()
 

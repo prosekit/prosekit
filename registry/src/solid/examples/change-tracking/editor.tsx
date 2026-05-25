@@ -5,8 +5,8 @@ import type { NodeJSON } from 'prosekit/core'
 import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
 import { createSignal, For, type JSX } from 'solid-js'
 
-import EditorDiff from './editor-diff'
-import EditorMain from './editor-main'
+import EditorDiff from './editor-diff.tsx'
+import EditorMain from './editor-main.tsx'
 
 export default function Editor(): JSX.Element {
   const [commits, setCommits] = createSignal<

@@ -5,9 +5,9 @@ import 'prosekit/basic/typography.css'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleContent } from '../../sample/sample-doc-code-block'
+import { sampleContent } from '../../sample/sample-doc-code-block.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 import Toolbar from './toolbar.vue'
 
 const props = defineProps<{

@@ -2,9 +2,9 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import { defineReactNodeView } from 'prosekit/react'
 
-import { defineAtomBlock } from '../../sample/define-atom-block'
+import { defineAtomBlock } from '../../sample/define-atom-block.ts'
 
-import { AtomBlockView } from './atom-block-view'
+import { AtomBlockView } from './atom-block-view.tsx'
 
 export function defineExtension() {
   return union(

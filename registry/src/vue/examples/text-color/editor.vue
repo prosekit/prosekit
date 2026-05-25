@@ -5,9 +5,9 @@ import 'prosekit/basic/typography.css'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleContent } from '../../sample/sample-doc-text-color'
+import { sampleContent } from '../../sample/sample-doc-text-color.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 import InlineMenu from './inline-menu.vue'
 
 const props = defineProps<{

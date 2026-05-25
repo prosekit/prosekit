@@ -1,1 +1,1 @@
-export { default as BlockHandle } from './block-handle'
+export { default as BlockHandle } from './block-handle.tsx'

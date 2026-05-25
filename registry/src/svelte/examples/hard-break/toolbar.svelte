@@ -2,9 +2,9 @@
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/svelte'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 function getToolbarItems(editor: Editor<EditorExtension>) {
   return {

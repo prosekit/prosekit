@@ -7,12 +7,12 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor, NodeJSON } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
-import { sampleContent } from '../../sample/sample-doc-block-handle'
-import { registerLitEditorBlockHandle } from '../../ui/block-handle'
-import { registerLitEditorDropIndicator } from '../../ui/drop-indicator'
-import { editorContext } from '../../ui/editor-context'
+import { sampleContent } from '../../sample/sample-doc-block-handle.ts'
+import { registerLitEditorBlockHandle } from '../../ui/block-handle/index.ts'
+import { registerLitEditorDropIndicator } from '../../ui/drop-indicator/index.ts'
+import { editorContext } from '../../ui/editor-context.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export class LitEditor extends LitElement {
   static override properties = {

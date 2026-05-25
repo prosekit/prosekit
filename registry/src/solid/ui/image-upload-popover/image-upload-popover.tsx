@@ -5,7 +5,7 @@ import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'pr
 import type { OpenChangeEvent } from 'prosekit/web/popover'
 import { createSignal, createUniqueId, Show, type JSX } from 'solid-js'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 export default function ImageUploadPopover(props: {
   uploader: Uploader<string>

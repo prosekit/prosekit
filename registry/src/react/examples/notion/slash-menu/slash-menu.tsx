@@ -1,6 +1,6 @@
 'use client'
 
-import type { BasicExtension } from 'prosekit/basic'
+import type { EditorExtension } from '../extension.ts'
 import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/react'
 import { AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/react/autocomplete'
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function SlashMenu(props: Props) {
-  const editor = useEditor<BasicExtension>()
+  const editor = useEditor<EditorExtension>()
 
   return (
     <AutocompleteRoot
@@ -73,6 +73,12 @@ export default function SlashMenu(props: Props) {
               label="Toggle list"
               kbd=">>"
               onSelect={() => editor.commands.wrapInList({ kind: 'toggle' })}
+            />
+
+            <SlashMenuItem
+              label="Callout"
+              kbd="[!NOTE]"
+              onSelect={() => editor.commands.setCallout({ variant: 'note' })}
             />
 
             <SlashMenuItem

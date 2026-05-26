@@ -330,9 +330,31 @@ export const CSS_ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right size-5 block')
 export const CSS_ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal size-5 min-h-5 min-w-5 block')
 export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical size-5 min-h-5 min-w-5 block')
 export const CSS_ICON_BLOCKQUOTE = cn('i-lucide-text-quote size-5 block')
+export const CSS_ICON_CALLOUT = cn('i-lucide-megaphone size-5 block')
 export const CSS_ICON_MINUS = cn('i-lucide-minus size-5 block')
 export const CSS_ICON_IMAGE_ERROR = cn('i-lucide-image-off size-8 block')
 export const CSS_ICON_WHOLE_WORD = cn('i-lucide-whole-word size-5 block')
 export const CSS_ICON_LITERAL = cn('i-lucide-quote size-5 block')
 export const CSS_ICON_REGEXP = cn('i-lucide-braces size-5 block')
 export const CSS_CASE_SENSITIVE = cn('i-lucide-case-sensitive size-5 block')
+
+export const CSS_ICON_CALLOUT_NOTE = cn('i-lucide-info size-4 block')
+export const CSS_ICON_CALLOUT_TIP = cn('i-lucide-lightbulb size-4 block')
+export const CSS_ICON_CALLOUT_IMPORTANT = cn('i-lucide-message-square-warning size-4 block')
+export const CSS_ICON_CALLOUT_WARNING = cn('i-lucide-triangle-alert size-4 block')
+export const CSS_ICON_CALLOUT_CAUTION = cn('i-lucide-octagon-alert size-4 block')
+
+export const CSS_CALLOUT = cn(
+  'box-border relative my-4 rounded-lg border border-l-[3px] py-3 pl-4 pr-4',
+  'transition-colors',
+)
+export const CSS_CALLOUT_HEADER = cn(
+  'flex items-center gap-2 mb-2 select-none',
+)
+export const CSS_CALLOUT_VARIANT_BUTTON = cn(
+  'text-[11px] font-medium px-2.5 py-0.5 rounded-full border cursor-pointer',
+  'transition-colors',
+)
+export const CSS_CALLOUT_CONTENT = cn(
+  'text-sm',
+)

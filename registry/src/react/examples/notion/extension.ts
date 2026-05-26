@@ -1,5 +1,6 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
+import { defineCallout } from 'prosekit/extensions/callout'
 import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 import { defineImageUploadHandler } from 'prosekit/extensions/image'
@@ -18,6 +19,7 @@ export function defineExtension() {
     definePlaceholder({ placeholder: 'Press / for commands...' }),
     defineMention(),
     defineCodeBlockShiki(),
+    defineCallout(),
     defineHorizontalRule(),
     defineCodeBlockView(),
     defineImageView(),

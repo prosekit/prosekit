@@ -9,7 +9,7 @@ export const sampleContent: NodeJSON = {
     },
     {
       type: 'details',
-      attrs: { open: true },
+      attrs: { open: false },
       content: [
         {
           type: 'detailsSummary',

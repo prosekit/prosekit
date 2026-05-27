@@ -24,9 +24,9 @@ function findCollapsedDetails($pos: Parameters<typeof TextSelection.near>[0]) {
   for (let depth = $pos.depth; depth >= 0; depth--) {
     const node = $pos.node(depth)
     if (node.type.name !== 'details') continue
-    if (node.attrs.open) return null
-    if ($pos.depth < depth + 1) return null
-    if ($pos.node(depth + 1).type.name !== 'detailsContent') return null
+    if (node.attrs.open) continue
+    if ($pos.depth < depth + 1) continue
+    if ($pos.node(depth + 1).type.name !== 'detailsContent') continue
 
     return {
       node,

@@ -11,7 +11,6 @@ export {
   setColumnWidthAt,
   type ColumnsCommandsExtension,
 } from './columns-commands.ts'
-export { defineColumnsKeymap, type ColumnsKeymapExtension } from './columns-keymap.ts'
 export {
   columnsPluginKey,
   defineColumnsPlugin,

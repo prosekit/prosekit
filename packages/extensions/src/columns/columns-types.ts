@@ -56,18 +56,6 @@ export interface ColumnsOptions {
    */
   maxColumns?: number | null
 
-  /**
-   * When enabled, `Mod-a` selects the current column instead of the whole
-   * document.
-   *
-   * @default false
-   */
-  enableModAWithinColumn?: boolean
-
-  /**
-   * Reserved for future runtime normalization behavior.
-   */
-  normalizeOnTransaction?: boolean
 }
 
 /**

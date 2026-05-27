@@ -332,25 +332,6 @@ describe('columns commands', () => {
 })
 
 describe('columns keymap', () => {
-  it('should select the current column content on Mod-a when enabled', async () => {
-    const { editor, n } = setup({
-      enableModAWithinColumn: true,
-    })
-    editor.set(n.doc(
-      n.columns(
-        n.column(n.paragraph('o<a>ne')),
-        n.column(n.paragraph('two')),
-      ),
-    ))
-
-    const found = findParentColumn(editor.state.selection.$from)
-    expect(found).toBeTruthy()
-
-    await keyboard.press('ControlOrMeta+a')
-
-    expect(editor.state.selection.content().content.toString()).toBe('<columns(column(paragraph("one")))>')
-  })
-
   it('should not exit column after pressing Enter twice at end', async () => {
     const { editor, n } = setupWithKeymap()
     editor.set(n.doc(

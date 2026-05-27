@@ -1,7 +1,6 @@
 import { union, type Union } from '@prosekit/core'
 
 import { defineColumnsCommands, type ColumnsCommandsExtension } from './columns-commands.ts'
-import { defineColumnsKeymap, type ColumnsKeymapExtension } from './columns-keymap.ts'
 import { defineColumnsPlugin, type ColumnsPluginExtension } from './columns-plugin.ts'
 import { defineColumnSpec, defineColumnsSpec, type ColumnSpecExtension, type ColumnsSpecExtension } from './columns-spec.ts'
 import type { ColumnsOptions } from './columns-types.ts'
@@ -15,7 +14,6 @@ export type ColumnsExtension = Union<
     ColumnSpecExtension,
     ColumnsCommandsExtension,
     ColumnsPluginExtension,
-    ColumnsKeymapExtension,
   ]
 >
 
@@ -28,7 +26,6 @@ export type ColumnsExtension = Union<
  * - node specs for `columns` and `column`
  * - commands for inserting, resizing, distributing, and removing columns
  * - plugin state for column resize UI
- * - an optional `Mod-a` keymap that selects the current column
  */
 export function defineColumns(options: ColumnsOptions = {}): ColumnsExtension {
   return union(
@@ -36,6 +33,5 @@ export function defineColumns(options: ColumnsOptions = {}): ColumnsExtension {
     defineColumnSpec(),
     defineColumnsPlugin(),
     defineColumnsCommands(options),
-    defineColumnsKeymap(options),
   )
 }

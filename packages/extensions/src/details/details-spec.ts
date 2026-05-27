@@ -24,16 +24,18 @@ function createDetailsParseContent(element: HTMLElement): HTMLElement {
 
   content.setAttribute('data-type', 'detailsContent')
 
-  if (!Array.from(element.children).some(
-    (child) => child.tagName === 'DIV' && child.getAttribute('data-type') === 'detailsContent',
-  )) {
+  if (
+    !Array.from(element.children).some(
+      (child) => child.tagName === 'DIV' && child.getAttribute('data-type') === 'detailsContent',
+    )
+  ) {
     for (const child of element.childNodes) {
       if (child.nodeType === Node.ELEMENT_NODE && (child as HTMLElement).tagName === 'SUMMARY') continue
       content.appendChild(child.cloneNode(true))
     }
   }
 
-  if (!content.childNodes.length) {
+  if (content.childNodes.length === 0) {
     content.appendChild(document.createElement('p'))
   }
 
@@ -69,7 +71,7 @@ export function defineDetailsSpec(): DetailsSpecExtension {
         tag: 'details',
         contentElement: (element) => {
           if (typeof element === 'string') {
-            throw new Error('Expected details element when parsing details node')
+            throw new TypeError('Expected details element when parsing details node')
           }
           return createDetailsParseContent(element)
         },

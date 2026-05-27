@@ -1,5 +1,5 @@
-import { union } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'
+import { union } from 'prosekit/core'
 import { defineDetails, defineDetailsNodeView } from 'prosekit/extensions/details'
 
 /**

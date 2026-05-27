@@ -1,6 +1,6 @@
-import { nodeFromHTML, union } from '@prosekit/core'
-import { describe, expect, it } from 'vitest'
+import { nodeFromHTML, union, type NodeJSON } from '@prosekit/core'
 import { Selection, TextSelection } from '@prosekit/pm/state'
+import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc/index.ts'
 import { defineGapCursor } from '../gap-cursor/index.ts'
@@ -9,8 +9,13 @@ import { defineParagraph } from '../paragraph/index.ts'
 import { setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
 
-import { defineDetails } from './details.ts'
 import { defineDetailsNodeView } from './details-node-view.ts'
+import { defineDetails } from './details.ts'
+
+function getContent(node: NodeJSON): NodeJSON[] {
+  expect(node.content).toBeDefined()
+  return node.content ?? []
+}
 
 describe('defineDetails', () => {
   const extension = union(
@@ -22,6 +27,10 @@ describe('defineDetails', () => {
 
   const { editor, n } = setupTestFromExtension(extension)
   const schema = editor.schema
+
+  function getDocJSON(): NodeJSON {
+    return editor.view.state.doc.toJSON() as NodeJSON
+  }
 
   it('registers details, detailsSummary, and detailsContent node types', () => {
     const nodeNames = Object.keys(schema.nodes)
@@ -53,7 +62,7 @@ describe('defineDetails', () => {
     const doc = nodeFromHTML(
       '<details open><summary>Title</summary><p>Content</p></details>',
       { schema },
-    ).toJSON()
+    ).toJSON() as NodeJSON
 
     expect(doc).toEqual(
       n.doc(
@@ -72,7 +81,7 @@ describe('defineDetails', () => {
     const doc = nodeFromHTML(
       '<details><summary>Title</summary><p>Content</p></details>',
       { schema },
-    ).toJSON()
+    ).toJSON() as NodeJSON
 
     expect(doc).toEqual(
       n.doc(
@@ -117,15 +126,17 @@ describe('defineDetails', () => {
     editor.set(doc)
 
     editor.commands.insertDetails()
-    const json = editor.view.state.doc.toJSON()
+    const json = getDocJSON()
+    const docContent = getContent(json)
+    const detailsContent = getContent(docContent[0])
+    const wrappedContent = getContent(detailsContent[1])
 
     // Should have a details node with summary and content wrapper
-    expect(json.content).toHaveLength(1)
-    expect(json.content[0].type).toBe('details')
-    expect(json.content[0].content).toBeDefined()
-    expect(json.content[0].content[0].type).toBe('detailsSummary')
-    expect(json.content[0].content[1].type).toBe('detailsContent')
-    expect(json.content[0].content[1].content[0].type).toBe('paragraph')
+    expect(docContent).toHaveLength(1)
+    expect(docContent[0].type).toBe('details')
+    expect(detailsContent[0].type).toBe('detailsSummary')
+    expect(detailsContent[1].type).toBe('detailsContent')
+    expect(wrappedContent[0].type).toBe('paragraph')
   })
 
   it('sets the current block selection as details', () => {
@@ -218,12 +229,12 @@ describe('defineDetails', () => {
     editor.set(doc)
 
     editor.commands.toggleDetailsOpen()
-    let json = editor.view.state.doc.toJSON()
-    expect(json.content[0].attrs.open).toBe(true)
+    let json = getDocJSON()
+    expect(getContent(json)[0].attrs?.open).toBe(true)
 
     editor.commands.toggleDetailsOpen()
-    json = editor.view.state.doc.toJSON()
-    expect(json.content[0].attrs.open).toBe(false)
+    json = getDocJSON()
+    expect(getContent(json)[0].attrs?.open).toBe(false)
   })
 
   it('sets the open attribute explicitly', () => {
@@ -239,8 +250,8 @@ describe('defineDetails', () => {
     editor.set(doc)
 
     editor.commands.setDetailsOpen({ open: true })
-    const json = editor.view.state.doc.toJSON()
-    expect(json.content[0].attrs.open).toBe(true)
+    const json = getDocJSON()
+    expect(getContent(json)[0].attrs?.open).toBe(true)
   })
 
   it('unwraps details, converting summary to paragraph', () => {
@@ -256,12 +267,13 @@ describe('defineDetails', () => {
     editor.set(doc)
 
     editor.commands.unwrapDetails()
-    const json = editor.view.state.doc.toJSON()
+    const json = getDocJSON()
+    const docContent = getContent(json)
 
     // Should have two paragraphs: former summary and former content
-    expect(json.content).toHaveLength(2)
-    expect(json.content[0].type).toBe('paragraph')
-    expect(json.content[1].type).toBe('paragraph')
+    expect(docContent).toHaveLength(2)
+    expect(docContent[0].type).toBe('paragraph')
+    expect(docContent[1].type).toBe('paragraph')
   })
 
   it('enforces detailsSummary as first child via createChecked', () => {
@@ -438,7 +450,7 @@ describe('defineDetails', () => {
       ),
     )
 
-    const summary = nodeViewEditor.view.dom.querySelector('summary') as HTMLElement | null
+    const summary = nodeViewEditor.view.dom.querySelector('summary')
     expect(summary).not.toBeNull()
 
     summary!.getBoundingClientRect = () => ({

@@ -4,8 +4,8 @@ import { defineDetailsCommands, type DetailsCommandsExtension } from './details-
 import { defineDetailsContentSpec, type DetailsContentSpecExtension } from './details-content-spec.ts'
 import { defineDetailsKeymap } from './details-keymap.ts'
 import { defineDetailsPlugin } from './details-plugin.ts'
-import { defineDetailsSummarySpec, type DetailsSummarySpecExtension } from './details-summary-spec.ts'
 import { defineDetailsSpec, type DetailsSpecExtension } from './details-spec.ts'
+import { defineDetailsSummarySpec, type DetailsSummarySpecExtension } from './details-summary-spec.ts'
 
 /**
  * @internal

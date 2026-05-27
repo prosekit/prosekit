@@ -1,14 +1,28 @@
 'use client'
 
 import type { BasicExtension } from 'prosekit/basic'
-import type { Editor } from 'prosekit/core'
+import type { CommandAction, Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import { useEditorDerivedValue } from 'prosekit/react'
 
 import { Button } from '../button/index.ts'
 import { ImageUploadPopover } from '../image-upload-popover/index.ts'
 
+type DetailsToolbarSupport = {
+  commands: {
+    toggleDetails?: CommandAction<[]>
+    insertDetails?: CommandAction<[]>
+  }
+  nodes: {
+    details?: {
+      isActive(): boolean
+    }
+  }
+}
+
 function getToolbarItems(editor: Editor<BasicExtension>) {
+  const detailsEditor = editor as Editor<BasicExtension> & DetailsToolbarSupport
+
   return {
     undo: editor.commands.undo
       ? {
@@ -96,24 +110,24 @@ function getToolbarItems(editor: Editor<BasicExtension>) {
       : undefined,
     blockquote: editor.commands.toggleBlockquote
       ? {
-          isActive: editor.nodes.blockquote.isActive(),
-          canExec: editor.commands.toggleBlockquote.canExec(),
-          command: () => editor.commands.toggleBlockquote(),
-        }
+        isActive: editor.nodes.blockquote.isActive(),
+        canExec: editor.commands.toggleBlockquote.canExec(),
+        command: () => editor.commands.toggleBlockquote(),
+      }
       : undefined,
-    details: (editor.commands as any)?.toggleDetails
+    details: detailsEditor.commands.toggleDetails
       ? {
-          isActive: (editor.nodes as any).details?.isActive() ?? false,
-          canExec: (editor.commands as any).toggleDetails.canExec(),
-          command: () => (editor.commands as any).toggleDetails(),
-        }
+        isActive: detailsEditor.nodes.details?.isActive() ?? false,
+        canExec: detailsEditor.commands.toggleDetails.canExec(),
+        command: () => detailsEditor.commands.toggleDetails!(),
+      }
       : undefined,
-    insertDetails: (editor.commands as any)?.insertDetails
+    insertDetails: detailsEditor.commands.insertDetails
       ? {
-          isActive: false,
-          canExec: (editor.commands as any).insertDetails.canExec(),
-          command: () => (editor.commands as any).insertDetails(),
-        }
+        isActive: false,
+        canExec: detailsEditor.commands.insertDetails.canExec(),
+        command: () => detailsEditor.commands.insertDetails!(),
+      }
       : undefined,
     bulletList: editor.commands.toggleList
       ? {

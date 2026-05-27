@@ -1,5 +1,5 @@
 import { defineCommands, type Extension } from '@prosekit/core'
-import { Fragment, type ProseMirrorNode, Slice } from '@prosekit/pm/model'
+import { Fragment, Slice, type ProseMirrorNode } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
 
 import type { DetailsAttrs } from './details-types.ts'
@@ -86,22 +86,55 @@ function setDetailsOpenCommand(attrs: DetailsAttrs): Command {
   }
 }
 
+const toggleDetailsOpen: Command = (state, dispatch) => {
+  const details = findAncestorDetails(state)
+  if (!details) return false
+
+  if (dispatch) {
+    const { tr } = state
+    tr.setNodeAttribute(details.pos, 'open', !details.node.attrs.open)
+    dispatch(tr)
+  }
+  return true
+}
+
 /**
  * Returns a command that toggles the `open` attribute of the nearest ancestor
  * `details` node.
  */
 function toggleDetailsOpenCommand(): Command {
-  return (state, dispatch) => {
-    const details = findAncestorDetails(state)
-    if (!details) return false
+  return toggleDetailsOpen
+}
 
-    if (dispatch) {
-      const { tr } = state
-      tr.setNodeAttribute(details.pos, 'open', !details.node.attrs.open)
-      dispatch(tr)
-    }
-    return true
+const unwrapDetails: Command = (state, dispatch) => {
+  const details = findAncestorDetails(state)
+  if (!details) return false
+
+  if (dispatch) {
+    const { tr } = state
+    const children: ProseMirrorNode[] = []
+    const defaultBlockType = state.schema.topNodeType.contentMatch.defaultType
+
+    details.node.forEach((child) => {
+      if (child.type.name === 'detailsSummary' && defaultBlockType) {
+        if (child.content.size > 0) {
+          const paragraph = defaultBlockType.createChecked(null, child.content)
+          children.push(paragraph)
+        }
+        return
+      }
+
+      if (child.type.name === 'detailsContent') {
+        child.forEach((grandchild) => {
+          children.push(grandchild.copy(grandchild.content))
+        })
+      }
+    })
+
+    tr.replaceWith(details.pos, details.pos + details.node.nodeSize, Fragment.from(children))
+    dispatch(tr.scrollIntoView())
   }
+  return true
 }
 
 /**
@@ -109,36 +142,7 @@ function toggleDetailsOpenCommand(): Command {
  * its `detailsSummary` into a paragraph and moving the rest of its content up.
  */
 function unwrapDetailsCommand(): Command {
-  return (state, dispatch) => {
-    const details = findAncestorDetails(state)
-    if (!details) return false
-
-    if (dispatch) {
-      const { tr } = state
-      const children: ProseMirrorNode[] = []
-      const defaultBlockType = state.schema.topNodeType.contentMatch.defaultType
-
-      details.node.forEach((child) => {
-        if (child.type.name === 'detailsSummary' && defaultBlockType) {
-          if (child.content.size > 0) {
-            const paragraph = defaultBlockType.createChecked(null, child.content)
-            children.push(paragraph)
-          }
-          return
-        }
-
-        if (child.type.name === 'detailsContent') {
-          child.forEach((grandchild) => {
-            children.push(grandchild.copy(grandchild.content))
-          })
-        }
-      })
-
-      tr.replaceWith(details.pos, details.pos + details.node.nodeSize, Fragment.from(children))
-      dispatch(tr.scrollIntoView())
-    }
-    return true
-  }
+  return unwrapDetails
 }
 
 function toggleDetailsCommand(attrs?: DetailsAttrs): Command {
@@ -157,7 +161,7 @@ function toggleDetailsCommand(attrs?: DetailsAttrs): Command {
  */
 function findAncestorDetails(
   state: Parameters<Command>[0],
-): { node: ProseMirrorNode, pos: number, depth: number } | null {
+): { node: ProseMirrorNode; pos: number; depth: number } | null {
   const { $from } = state.selection
   for (let depth = $from.depth; depth >= 0; depth--) {
     const node = $from.node(depth)
@@ -170,7 +174,7 @@ function findAncestorDetails(
 
 function getSelectedBlockRange(
   state: Parameters<Command>[0],
-): { from: number, to: number, content: Fragment } | null {
+): { from: number; to: number; content: Fragment } | null {
   const { $from, $to } = state.selection
   const range = $from.blockRange($to)
   if (!range) return null

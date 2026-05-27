@@ -1,6 +1,6 @@
 import { defineNodeSpec, type Extension } from '@prosekit/core'
 
-import type { CalloutAttrs } from './callout-types.ts'
+import { isCalloutVariant, type CalloutAttrs } from './callout-types.ts'
 
 export type CalloutSpecExtension = Extension<{
   Nodes: {
@@ -9,7 +9,7 @@ export type CalloutSpecExtension = Extension<{
 }>
 
 export function defineCalloutSpec(): CalloutSpecExtension {
-  return defineNodeSpec({
+  return defineNodeSpec<'callout', CalloutAttrs>({
     name: 'callout',
     content: 'block+',
     group: 'block',
@@ -21,6 +21,7 @@ export function defineCalloutSpec(): CalloutSpecExtension {
     parseDOM: [
       {
         tag: 'div[data-callout]',
+        contentElement: '[data-callout-content]',
         getAttrs: (element) => {
           if (typeof element === 'string') {
             return { variant: 'note', icon: null }
@@ -30,7 +31,7 @@ export function defineCalloutSpec(): CalloutSpecExtension {
           const icon = element.getAttribute('data-callout-icon')
 
           return {
-            variant: variant || 'note',
+            variant: isCalloutVariant(variant) ? variant : 'note',
             icon: icon || null,
           } satisfies CalloutAttrs
         },

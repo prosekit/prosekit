@@ -1,9 +1,10 @@
 import type { PlainExtension } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
+import { findWrapping } from '@prosekit/pm/transform'
 
 import { defineInputRule } from '../input-rule/index.ts'
 
-import { CALLOUT_VARIANTS, type CalloutVariant } from './callout-types.ts'
+import { CALLOUT_VARIANTS, isCalloutVariant, type CalloutVariant } from './callout-types.ts'
 
 const VARIANTS_ALT = CALLOUT_VARIANTS.join('|')
 
@@ -15,12 +16,12 @@ const VARIANTS_ALT = CALLOUT_VARIANTS.join('|')
  * textblock is already inside a blockquote, so we only need to match
  * the remaining `[!TYPE] ` pattern.
  */
-const REGEX = new RegExp(`^\\[!(${VARIANTS_ALT})\\]\\s$`, 'i')
+const REGEX = new RegExp(String.raw`^\[!(${VARIANTS_ALT})\]\s$`, 'i')
 
 function toVariant(s: string): CalloutVariant {
   const lower = s.toLowerCase()
-  if ((CALLOUT_VARIANTS as ReadonlyArray<string>).includes(lower)) {
-    return lower as CalloutVariant
+  if (isCalloutVariant(lower)) {
+    return lower
   }
   return 'note'
 }
@@ -35,7 +36,7 @@ function toVariant(s: string): CalloutVariant {
  */
 export function defineCalloutInputRule(): PlainExtension {
   const rule = new InputRule(REGEX, (state, match, start, end) => {
-    const variant = toVariant(match[1]!)
+    const variant = toVariant(match[1])
     const { tr } = state
     const calloutType = state.schema.nodes.callout
 
@@ -58,11 +59,19 @@ export function defineCalloutInputRule(): PlainExtension {
       tr.setNodeMarkup(blockquotePos, calloutType, { variant })
     } else {
       // No surrounding blockquote – wrap the textblock directly.
-      const blockStart = tr.mapping.map($start.start($start.depth))
-      const blockEnd = tr.mapping.map($start.end($start.depth))
-      tr.wrap(blockStart, blockEnd, [
-        { type: calloutType, attrs: { variant } },
-      ])
+      const mappedStart = tr.mapping.map(start)
+      const $mappedStart = tr.doc.resolve(mappedStart)
+      const range = $mappedStart.blockRange($mappedStart)
+      if (!range) {
+        return null
+      }
+
+      const wrapping = findWrapping(range, calloutType, { variant })
+      if (!wrapping) {
+        return null
+      }
+
+      tr.wrap(range, wrapping)
     }
 
     return tr

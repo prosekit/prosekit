@@ -32,4 +32,9 @@ export default config({
       babel: {},
     }),
   ],
+  optimizeDeps: {
+    // Exclude loro-crdt so its WASM file is served from node_modules instead
+    // of being pre-bundled (where the .wasm sibling would be missing).
+    exclude: ['loro-crdt'],
+  },
 })

@@ -1,8 +1,10 @@
 import { nodeFromHTML, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
-import { TextSelection } from '@prosekit/pm/state'
+import { Selection, TextSelection } from '@prosekit/pm/state'
 
 import { defineDoc } from '../doc/index.ts'
+import { defineGapCursor } from '../gap-cursor/index.ts'
+import { defineHorizontalRule } from '../horizontal-rule/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
 import { setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
@@ -362,6 +364,60 @@ describe('defineDetails', () => {
     editor.view.dispatch(tr)
 
     const { selection } = editor.view.state
+    expect(selection.$from.parent.type.name).toBe('detailsSummary')
+    expect(selection.$from.parentOffset).toBe(selection.$from.parent.content.size)
+  })
+
+  it('moves a hidden gap cursor selection back to the summary', () => {
+    const gapExtension = union(
+      defineDetails(),
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+      defineHorizontalRule(),
+      defineGapCursor(),
+    )
+    const { editor: gapEditor, n: gapNodes } = setupTestFromExtension(gapExtension)
+
+    gapEditor.set(
+      gapNodes.doc(
+        gapNodes.details(
+          { open: false },
+          gapNodes.detailsSummary('Title'),
+          gapNodes.detailsContent(
+            gapNodes.horizontalRule(),
+          ),
+        ),
+      ),
+    )
+
+    let hiddenGapPos: number | null = null
+    for (let pos = 0; pos <= gapEditor.view.state.doc.content.size; pos++) {
+      const $pos = gapEditor.view.state.doc.resolve(pos)
+
+      for (let depth = $pos.depth; depth >= 1; depth--) {
+        if (
+          $pos.node(depth).type.name === 'detailsContent'
+          && $pos.node(depth - 1).type.name === 'details'
+          && !$pos.node(depth - 1).attrs.open
+        ) {
+          hiddenGapPos = pos
+          break
+        }
+      }
+
+      if (hiddenGapPos != null) break
+    }
+
+    expect(hiddenGapPos).not.toBeNull()
+
+    gapEditor.view.dispatch(
+      gapEditor.view.state.tr.setSelection(
+        Selection.fromJSON(gapEditor.view.state.doc, { type: 'gapcursor', pos: hiddenGapPos! }),
+      ),
+    )
+
+    const { selection } = gapEditor.view.state
     expect(selection.$from.parent.type.name).toBe('detailsSummary')
     expect(selection.$from.parentOffset).toBe(selection.$from.parent.content.size)
   })

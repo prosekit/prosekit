@@ -4,9 +4,9 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: daily
+      interval: monthly
     cooldown:
-      default-days: 7
+      default-days: 30
     groups:
       non-major:
         update-types:
@@ -18,9 +18,9 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: daily
+      interval: monthly
     cooldown:
-      default-days: 7
+      default-days: 30
     groups:
       non-major:
         update-types:

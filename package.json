@@ -54,7 +54,6 @@
     "size-limit": "^12.1.0",
     "turbo": "^2.9.14",
     "typescript": "catalog:",
-    "vite": "^7.3.3",
     "vitest": "catalog:",
     "wrangler": "^4.0.0"
   }

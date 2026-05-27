@@ -1,9 +1,10 @@
 'use client'
 
-import type { EditorExtension } from '../extension.ts'
 import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/react'
 import { AutocompletePopup, AutocompletePositioner, AutocompleteRoot } from 'prosekit/react/autocomplete'
+
+import type { EditorExtension } from '../extension.ts'
 
 import SlashMenuEmpty from './slash-menu-empty.tsx'
 import SlashMenuItem from './slash-menu-item.tsx'

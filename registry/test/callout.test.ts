@@ -1,5 +1,6 @@
 import { expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
+
 import { emptyEditor, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('callout')

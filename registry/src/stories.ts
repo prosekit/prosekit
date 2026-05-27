@@ -9,12 +9,12 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for blockquote node.',
   },
   {
-    name: 'callout',
-    description: 'Callout block with GitHub Alert-style input rules.',
-  },
-  {
     name: 'bold',
     description: 'Example for bold mark.',
+  },
+  {
+    name: 'callout',
+    description: 'Callout block with GitHub Alert-style input rules.',
   },
   {
     name: 'change-tracking',

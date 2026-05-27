@@ -1,10 +1,11 @@
 'use client'
 
-import type { EditorExtension } from './extension.ts'
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/react'
 
 import { Button } from '../../ui/button/index.ts'
+
+import type { EditorExtension } from './extension.ts'
 
 function getToolbarItems(editor: Editor<EditorExtension>) {
   return {

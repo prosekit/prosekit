@@ -638,15 +638,13 @@
     "react-example-callout": {
       "story": "callout",
       "files": [
+        "registry/src/react/examples/callout/callout-view.tsx",
         "registry/src/react/examples/callout/editor.tsx",
         "registry/src/react/examples/callout/extension.ts",
         "registry/src/react/examples/callout/index.ts",
+        "registry/src/react/examples/callout/toolbar.tsx",
         "registry/src/react/ui/button/button.tsx",
-        "registry/src/react/ui/button/index.ts",
-        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
-        "registry/src/react/ui/image-upload-popover/index.ts",
-        "registry/src/react/ui/toolbar/index.ts",
-        "registry/src/react/ui/toolbar/toolbar.tsx"
+        "registry/src/react/ui/button/index.ts"
       ]
     },
     "react-example-change-tracking": {

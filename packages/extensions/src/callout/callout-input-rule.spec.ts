@@ -1,11 +1,13 @@
-import { describe, expect, it } from 'vitest'
 import { defineBaseCommands, defineBaseKeymap, union } from '@prosekit/core'
+import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
+
+import { defineBlockquote } from '../blockquote/index.ts'
 import { defineDoc } from '../doc/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
-import { defineText } from '../text/index.ts'
-import { defineBlockquote } from '../blockquote/index.ts'
 import { setupTestFromExtension } from '../testing/index.ts'
+import { defineText } from '../text/index.ts'
+
 import { defineCallout } from './callout.ts'
 
 function setup() {

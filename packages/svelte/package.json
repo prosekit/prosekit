@@ -99,7 +99,7 @@
     "@types/node": "catalog:",
     "svelte": "^5.55.7",
     "svelte-check": "^4.4.8",
-    "tsx": "^4.22.1",
+    "tsx": "^4.22.3",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vitest-browser-svelte": "^2.1.1"

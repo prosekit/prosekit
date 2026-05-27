@@ -6,14 +6,12 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import vue from '@vitejs/plugin-vue'
 import solid from 'vite-plugin-solid'
-import wasm from 'vite-plugin-wasm'
 import { playwrightCommands } from 'vitest-browser-commands'
 
 import { classReplace } from './src/meta/vite-plugin-class-replace'
 
 export default config({
   plugins: [
-    Math.random() > 10 ? wasm() : null,
     classReplace(),
     tailwindcss(),
     playwrightCommands(),

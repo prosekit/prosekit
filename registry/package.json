@@ -356,7 +356,6 @@
     "tsx": "^4.22.1",
     "vite": "^8.0.13",
     "vite-plugin-solid": "^2.11.12",
-    "vite-plugin-wasm": "^3.6.0",
     "vitest": "catalog:",
     "vitest-browser-commands": "^0.2.1",
     "vitest-browser-preact": "^1.0.0",

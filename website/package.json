@@ -57,7 +57,6 @@
     "tailwindcss": "^4.3.0",
     "typescript": "catalog:",
     "vite": "^7.3.3",
-    "vite-plugin-wasm": "^3.6.0",
     "vue": "^3.5.34",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.30"

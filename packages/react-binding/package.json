@@ -1,0 +1,49 @@
+{
+  "name": "@prosekit/react-binding",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ProseKit binding for react-prosemirror",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@ocavue/utils": "^1.6.0",
+    "@prosekit/core": "workspace:^",
+    "@prosekit/pm": "workspace:^",
+    "@handlewithcare/react-prosemirror": "^3.0.6"
+  },
+  "peerDependencies": {
+    "react": ">= 18.2.0",
+    "react-dom": ">= 18.2.0",
+    "react-reconciler": ">= 0.29.0",
+    "prosemirror-model": "^1.0.0",
+    "prosemirror-state": "^1.0.0",
+    "prosemirror-view": "1.41.7"
+  },
+  "devDependencies": {
+    "@prosekit/config-ts": "workspace:*",
+    "@prosekit/config-tsdown": "workspace:*",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-reconciler": "^0.32.0",
+    "prosemirror-model": "^1.25.7",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "1.41.7",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}

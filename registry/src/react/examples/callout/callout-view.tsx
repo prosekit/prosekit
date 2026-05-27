@@ -32,13 +32,19 @@ const VARIANT_OPTIONS: CalloutVariant[] = ['note', 'tip', 'important', 'warning'
 export default function CalloutView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as CalloutAttrs
   const variant: CalloutVariant = attrs.variant || 'note'
+  const icon = attrs.icon || undefined
 
   const handleVariantChange = (value: CalloutVariant) => {
     props.setAttrs({ variant: value })
   }
 
   return (
-    <div className={`CSS_CALLOUT ${VARIANT_CLASSES[variant]}`} data-callout-variant={variant}>
+    <div
+      className={`CSS_CALLOUT ${VARIANT_CLASSES[variant]}`}
+      data-callout=""
+      data-callout-variant={variant}
+      data-callout-icon={icon}
+    >
       <div className="CSS_CALLOUT_HEADER" contentEditable={false}>
         <div className={`${VARIANT_ICONS[variant]} ${VARIANT_TEXT_CLASSES[variant]}`} />
         <div className="flex items-center gap-0.5">
@@ -58,7 +64,7 @@ export default function CalloutView(props: ReactNodeViewProps) {
           ))}
         </div>
       </div>
-      <div ref={props.contentRef} className="CSS_CALLOUT_CONTENT" />
+      <div ref={props.contentRef} className="CSS_CALLOUT_CONTENT" data-callout-content="" />
     </div>
   )
 }

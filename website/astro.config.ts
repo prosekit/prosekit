@@ -12,7 +12,6 @@ import astrobook from 'astrobook'
 import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import { rehypeResolveMarkdownLinks } from 'rehype-resolve-markdown-links'
 import starlightThemeNova from 'starlight-theme-nova'
-import wasm from 'vite-plugin-wasm'
 
 import { version } from '../packages/prosekit/package.json'
 
@@ -147,7 +146,6 @@ const config: AstroUserConfig = {
   vite: {
     plugins: [
       classReplace(),
-      wasm(),
       tailwindcss(),
     ],
     optimizeDeps: {

@@ -1,0 +1,8 @@
+export { defineDetailsCommands, type DetailsCommandsExtension } from './details-commands.ts'
+export { defineDetailsContentSpec, type DetailsContentSpecExtension } from './details-content-spec.ts'
+export { defineDetailsKeymap } from './details-keymap.ts'
+export { defineDetailsNodeView } from './details-node-view.ts'
+export { defineDetailsSummarySpec, type DetailsSummarySpecExtension } from './details-summary-spec.ts'
+export { defineDetailsSpec, type DetailsSpecExtension } from './details-spec.ts'
+export type { DetailsAttrs } from './details-types.ts'
+export { defineDetails, type DetailsExtension } from './details.ts'

@@ -9,6 +9,7 @@ export const loaders = {
   'code': lazy(() => import('./examples/code/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'code-block': lazy(() => import('./examples/code-block/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'code-block-themes': lazy(() => import('./examples/code-block-themes/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'details': lazy(() => import('./examples/details/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'drop-cursor': lazy(() => import('./examples/drop-cursor/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'emoji-rules': lazy(() => import('./examples/emoji-rules/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'font-family': lazy(() => import('./examples/font-family/index.ts').then((m) => ({ default: m.ExampleEditor }))),

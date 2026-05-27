@@ -44,6 +44,7 @@
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
     "./extensions/commit": "./src/extensions/commit.gen.ts",
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
+    "./extensions/details": "./src/extensions/details.gen.ts",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
     "./extensions/drop-indicator": "./src/extensions/drop-indicator.gen.ts",
@@ -196,20 +197,26 @@
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
     "loro-prosemirror": ">= 0.4.1",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
       "optional": true
     },
     "loro-prosemirror": {
+      "optional": true
+    },
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
       "optional": true
     },
     "preact": {
@@ -228,12 +235,6 @@
       "optional": true
     },
     "vue": {
-      "optional": true
-    },
-    "y-prosemirror": {
-      "optional": true
-    },
-    "yjs": {
       "optional": true
     }
   },
@@ -319,6 +320,10 @@
       },
       "./extensions/commit/style.css": {
         "default": "./dist/extensions/commit/style.css"
+      },
+      "./extensions/details": {
+        "types": "./dist/extensions/details.d.ts",
+        "default": "./dist/extensions/details.js"
       },
       "./extensions/doc": {
         "types": "./dist/extensions/doc.d.ts",
@@ -855,6 +860,9 @@
         ],
         "extensions/commit": [
           "./dist/extensions/commit.d.ts"
+        ],
+        "extensions/details": [
+          "./dist/extensions/details.d.ts"
         ],
         "extensions/doc": [
           "./dist/extensions/doc.d.ts"

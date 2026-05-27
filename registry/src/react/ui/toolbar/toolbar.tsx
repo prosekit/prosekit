@@ -96,10 +96,24 @@ function getToolbarItems(editor: Editor<BasicExtension>) {
       : undefined,
     blockquote: editor.commands.toggleBlockquote
       ? {
-        isActive: editor.nodes.blockquote.isActive(),
-        canExec: editor.commands.toggleBlockquote.canExec(),
-        command: () => editor.commands.toggleBlockquote(),
-      }
+          isActive: editor.nodes.blockquote.isActive(),
+          canExec: editor.commands.toggleBlockquote.canExec(),
+          command: () => editor.commands.toggleBlockquote(),
+        }
+      : undefined,
+    details: (editor.commands as any)?.toggleDetails
+      ? {
+          isActive: (editor.nodes as any).details?.isActive() ?? false,
+          canExec: (editor.commands as any).toggleDetails.canExec(),
+          command: () => (editor.commands as any).toggleDetails(),
+        }
+      : undefined,
+    insertDetails: (editor.commands as any)?.insertDetails
+      ? {
+          isActive: false,
+          canExec: (editor.commands as any).insertDetails.canExec(),
+          command: () => (editor.commands as any).insertDetails(),
+        }
       : undefined,
     bulletList: editor.commands.toggleList
       ? {
@@ -286,6 +300,26 @@ export default function Toolbar(props: { uploader?: Uploader<string> }) {
           tooltip="Blockquote"
         >
           <div className="CSS_ICON_BLOCKQUOTE" />
+        </Button>
+      )}
+      {items.details && (
+        <Button
+          pressed={items.details.isActive}
+          disabled={!items.details.canExec}
+          onClick={items.details.command}
+          tooltip="Toggle Details"
+        >
+          <div className="CSS_ICON_DETAILS" />
+        </Button>
+      )}
+      {items.insertDetails && (
+        <Button
+          pressed={items.insertDetails.isActive}
+          disabled={!items.insertDetails.canExec}
+          onClick={items.insertDetails.command}
+          tooltip="Insert Details"
+        >
+          <div className="CSS_ICON_PLUS" />
         </Button>
       )}
       {items.bulletList && (

@@ -79,6 +79,13 @@
       "hidden": false,
       "description": "Code block with multiple syntax highlighting themes."
     },
+    "details": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Collapsible details and summary blocks."
+    },
     "drop-cursor": {
       "frameworks": [
         "react",
@@ -680,6 +687,21 @@
         "registry/src/react/sample/sample-doc-code-block.ts",
         "registry/src/react/ui/code-block-view/code-block-view.tsx",
         "registry/src/react/ui/code-block-view/index.ts"
+      ]
+    },
+    "react-example-details": {
+      "story": "details",
+      "files": [
+        "registry/src/react/examples/details/editor.tsx",
+        "registry/src/react/examples/details/extension.ts",
+        "registry/src/react/examples/details/index.ts",
+        "registry/src/react/sample/sample-doc-details.ts",
+        "registry/src/react/ui/button/button.tsx",
+        "registry/src/react/ui/button/index.ts",
+        "registry/src/react/ui/image-upload-popover/image-upload-popover.tsx",
+        "registry/src/react/ui/image-upload-popover/index.ts",
+        "registry/src/react/ui/toolbar/index.ts",
+        "registry/src/react/ui/toolbar/toolbar.tsx"
       ]
     },
     "react-example-drop-cursor": {

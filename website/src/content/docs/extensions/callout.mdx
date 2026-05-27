@@ -20,7 +20,7 @@ const extension = defineCallout()
 Supported variants:
 
 ```ts
-['note', 'tip', 'important', 'warning', 'caution']
+;['note', 'tip', 'important', 'warning', 'caution']
 ```
 
 ## Commands
@@ -87,9 +87,9 @@ editor.commands.updateCallout({ variant: 'caution' })
 
 ## Keyboard Interaction
 
-Type `> ` at the start of a line, then type a GitHub Alert marker such as `[!NOTE] `, `[!TIP] `, or `[!WARNING] `. The surrounding blockquote will be converted into a `callout` node with the matching variant.
+Type `>` at the start of a line, then type a GitHub Alert marker such as `[!NOTE]`, `[!TIP]`, or `[!WARNING]`. The surrounding blockquote will be converted into a `callout` node with the matching variant.
 
-If there is no surrounding blockquote, typing `[!NOTE] ` at the start of a line can also wrap the current text block directly in a `callout`.
+If there is no surrounding blockquote, typing `[!NOTE]` at the start of a line can also wrap the current text block directly in a `callout`.
 
 ## API Reference
 

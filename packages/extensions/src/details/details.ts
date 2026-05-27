@@ -3,6 +3,7 @@ import { union, type Union } from '@prosekit/core'
 import { defineDetailsCommands, type DetailsCommandsExtension } from './details-commands.ts'
 import { defineDetailsContentSpec, type DetailsContentSpecExtension } from './details-content-spec.ts'
 import { defineDetailsKeymap } from './details-keymap.ts'
+import { defineDetailsPlugin } from './details-plugin.ts'
 import { defineDetailsSummarySpec, type DetailsSummarySpecExtension } from './details-summary-spec.ts'
 import { defineDetailsSpec, type DetailsSpecExtension } from './details-spec.ts'
 
@@ -27,6 +28,7 @@ export type DetailsExtension = Union<
  * - {@link defineDetailsContentSpec}
  * - {@link defineDetailsCommands}
  * - {@link defineDetailsKeymap}
+ * - {@link defineDetailsPlugin}
  */
 export function defineDetails(): DetailsExtension {
   return union(
@@ -35,5 +37,6 @@ export function defineDetails(): DetailsExtension {
     defineDetailsContentSpec(),
     defineDetailsCommands(),
     defineDetailsKeymap(),
+    defineDetailsPlugin(),
   )
 }

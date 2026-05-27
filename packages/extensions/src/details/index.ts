@@ -2,6 +2,7 @@ export { defineDetailsCommands, type DetailsCommandsExtension } from './details-
 export { defineDetailsContentSpec, type DetailsContentSpecExtension } from './details-content-spec.ts'
 export { defineDetailsKeymap } from './details-keymap.ts'
 export { defineDetailsNodeView } from './details-node-view.ts'
+export { defineDetailsPlugin } from './details-plugin.ts'
 export { defineDetailsSummarySpec, type DetailsSummarySpecExtension } from './details-summary-spec.ts'
 export { defineDetailsSpec, type DetailsSpecExtension } from './details-spec.ts'
 export type { DetailsAttrs } from './details-types.ts'

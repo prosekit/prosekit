@@ -1,5 +1,6 @@
 import { nodeFromHTML, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
+import { TextSelection } from '@prosekit/pm/state'
 
 import { defineDoc } from '../doc/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
@@ -314,6 +315,55 @@ describe('defineDetails', () => {
         ),
       ).toJSON(),
     )
+  })
+
+  it('moves the cursor out of hidden details content when collapsing', () => {
+    editor.set(
+      n.doc(
+        n.details(
+          { open: true },
+          n.detailsSummary('Title'),
+          n.detailsContent(
+            n.paragraph('Body<a>'),
+          ),
+        ),
+      ),
+    )
+
+    editor.commands.setDetailsOpen({ open: false })
+
+    const { selection } = editor.view.state
+    expect(selection.empty).toBe(true)
+    expect(selection.$from.parent.type.name).toBe('detailsSummary')
+    expect(selection.$from.parentOffset).toBe(selection.$from.parent.content.size)
+  })
+
+  it('moves a hidden details content selection back to the summary', () => {
+    editor.set(
+      n.doc(
+        n.details(
+          { open: false },
+          n.detailsSummary('Title'),
+          n.detailsContent(
+            n.paragraph('Body'),
+          ),
+        ),
+      ),
+    )
+
+    const detailsPos = 0
+    const summaryNode = editor.view.state.doc.nodeAt(detailsPos + 1)
+    expect(summaryNode?.type.name).toBe('detailsSummary')
+
+    const hiddenTextPos = detailsPos + 1 + summaryNode!.nodeSize + 2
+    const tr = editor.view.state.tr.setSelection(
+      TextSelection.create(editor.view.state.doc, hiddenTextPos),
+    )
+    editor.view.dispatch(tr)
+
+    const { selection } = editor.view.state
+    expect(selection.$from.parent.type.name).toBe('detailsSummary')
+    expect(selection.$from.parentOffset).toBe(selection.$from.parent.content.size)
   })
 
   it('toggles details from summary marker clicks through the optional node view', () => {

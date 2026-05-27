@@ -55,7 +55,6 @@ export interface ColumnsOptions {
    * @default null
    */
   maxColumns?: number | null
-
 }
 
 /**

@@ -77,7 +77,7 @@ function getOptionsWithDefaults(options: ColumnsOptions = {}) {
     minColumnWidth: options.minColumnWidth ?? 120,
     defaultColumnWidth: options.defaultColumnWidth ?? null,
     defaultGap: options.defaultGap ?? null,
-    maxColumns: options.maxColumns ?? null,
+    maxColumns: options.maxColumns ?? Infinity,
   }
 }
 
@@ -131,7 +131,7 @@ function addColumn(side: 'before' | 'after', options: ColumnsOptions): Command {
     const container = state.doc.nodeAt(found.containerPos)
     const columnType = getNodeType(state.schema, 'column')
     if (!container) return false
-    if (defaults.maxColumns != null && container.childCount >= defaults.maxColumns) {
+    if (container.childCount >= defaults.maxColumns) {
       return false
     }
 

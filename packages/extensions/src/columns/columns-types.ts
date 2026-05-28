@@ -52,9 +52,9 @@ export interface ColumnsOptions {
   /**
    * Maximum number of columns allowed in one container.
    *
-   * @default null
+   * @default Infinity
    */
-  maxColumns?: number | null
+  maxColumns?: number
 }
 
 /**

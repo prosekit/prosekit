@@ -656,6 +656,12 @@ importers:
       '@prosekit/config-tsdown':
         specifier: workspace:*
         version: link:../config-tsdown
+      '@prosekit/config-vitest':
+        specifier: workspace:*
+        version: link:../config-vitest
+      '@prosekit/testing':
+        specifier: workspace:*
+        version: link:../testing
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
@@ -686,6 +692,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.7(@types/node@24.12.2)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(@vitest/ui@4.1.7)(happy-dom@20.9.0)(jsdom@29.1.1)(vite@8.0.13)
 
   packages/solid:
     dependencies:

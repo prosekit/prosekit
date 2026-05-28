@@ -45,10 +45,6 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Full-featured editor with most available features enabled.',
   },
   {
-    name: 'react-binding-full',
-    description: 'Full-featured editor built with the experimental react-binding package.',
-  },
-  {
     name: 'gap-cursor',
     description: 'Cursor navigation between non-text block elements.',
   },
@@ -128,6 +124,20 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
   {
     name: 'placeholder',
     description: 'Placeholder text displayed.',
+  },
+  {
+    name: 'react-binding-full',
+    description: 'Full-featured editor built with the experimental react-binding package.',
+  },
+  {
+    name: 'react-binding-input-view',
+    description: 'Input node view comparison case for the experimental react-binding package.',
+    hidden: true,
+  },
+  {
+    name: 'react-input-view',
+    description: 'Input node view comparison case for prosekit/react.',
+    hidden: true,
   },
   {
     name: 'readonly',

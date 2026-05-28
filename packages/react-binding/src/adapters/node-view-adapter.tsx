@@ -2,6 +2,7 @@ import type { NodeViewComponentProps as ReactProseMirrorNodeViewComponentProps }
 import { useIsNodeSelected } from '@handlewithcare/react-prosemirror'
 import { EditorNotFoundError } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
+import type { ViewMutationRecord } from 'prosemirror-view'
 import type { ComponentType } from 'react'
 import { createElement, useMemo } from 'react'
 
@@ -17,6 +18,8 @@ export interface ReactNodeViewProps {
   selected: boolean
   decorations: readonly any[]
   innerDecorations: any
+  stopEvent: (event: Event) => boolean
+  ignoreMutation: (mutation: ViewMutationRecord) => boolean
 }
 
 export type ReactNodeViewComponent = ComponentType<ReactNodeViewProps>
@@ -71,6 +74,12 @@ export function adaptNodeView(
       selected,
       decorations: nodeProps.decorations,
       innerDecorations: nodeProps.innerDecorations,
+      stopEvent: (event: Event) => {
+        return event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement
+      },
+      ignoreMutation: (mutation: ViewMutationRecord) => {
+        return mutation.type === 'selection' || mutation.target instanceof HTMLInputElement || mutation.target instanceof HTMLTextAreaElement
+      },
     }
 
     return createElement(ProsekitComponent, adaptedProps)

@@ -34,6 +34,8 @@ export const loaders = {
   'page': lazy(() => import('./examples/page/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'react-binding-full': lazy(() => import('./examples/react-binding-full/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'react-binding-input-view': lazy(() => import('./examples/react-binding-input-view/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'react-input-view': lazy(() => import('./examples/react-input-view/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'readonly': lazy(() => import('./examples/readonly/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'rtl': lazy(() => import('./examples/rtl/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'save-html': lazy(() => import('./examples/save-html/index.ts').then((m) => ({ default: m.ExampleEditor }))),

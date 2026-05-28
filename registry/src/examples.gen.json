@@ -343,8 +343,22 @@
       "frameworks": [
         "react"
       ],
-      "hidden": true,
+      "hidden": false,
       "description": "Full-featured editor built with the experimental react-binding package."
+    },
+    "react-binding-input-view": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": true,
+      "description": "Input node view comparison case for the experimental react-binding package."
+    },
+    "react-input-view": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": true,
+      "description": "Input node view comparison case for prosekit/react."
     },
     "readonly": {
       "frameworks": [
@@ -1029,7 +1043,30 @@
         "registry/src/react/examples/react-binding-full/extension.ts",
         "registry/src/react/examples/react-binding-full/image-view.tsx",
         "registry/src/react/examples/react-binding-full/index.ts",
+        "registry/src/react/examples/react-binding-full/link-view.tsx",
         "registry/src/react/examples/react-binding-full/toolbar.tsx"
+      ]
+    },
+    "react-example-react-binding-input-view": {
+      "story": "react-binding-input-view",
+      "files": [
+        "registry/src/react/examples/react-binding-input-view/editor.tsx",
+        "registry/src/react/examples/react-binding-input-view/extension.ts",
+        "registry/src/react/examples/react-binding-input-view/index.ts",
+        "registry/src/react/examples/react-binding-input-view/input-block-view.tsx",
+        "registry/src/react/sample/define-input-block.ts",
+        "registry/src/react/sample/sample-doc-input-view.ts"
+      ]
+    },
+    "react-example-react-input-view": {
+      "story": "react-input-view",
+      "files": [
+        "registry/src/react/examples/react-input-view/editor.tsx",
+        "registry/src/react/examples/react-input-view/extension.ts",
+        "registry/src/react/examples/react-input-view/index.ts",
+        "registry/src/react/examples/react-input-view/input-block-view.tsx",
+        "registry/src/react/sample/define-input-block.ts",
+        "registry/src/react/sample/sample-doc-input-view.ts"
       ]
     },
     "react-example-readonly": {

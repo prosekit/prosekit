@@ -90,9 +90,10 @@ function createPlaceholderDecoration(
 
   const $pos = selection.$anchor
   const node = $pos.parent
-  if (node.content.size > 0) return null
+  if (!node.isTextblock || node.content.size > 0) return null
+  if ($pos.depth === 0) return null
 
-  const before = $pos.before()
+  const before = $pos.before($pos.depth)
 
   return Decoration.node(before, before + node.nodeSize, {
     'class': 'prosekit-placeholder',

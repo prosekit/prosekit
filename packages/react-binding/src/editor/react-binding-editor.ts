@@ -1,5 +1,6 @@
 import { isDeepEqual } from '@ocavue/utils'
 import type { MarkViewComponentProps, NodeViewComponentProps } from '@handlewithcare/react-prosemirror'
+import { reactKeys } from '@handlewithcare/react-prosemirror'
 import type { Schema } from '@prosekit/pm/model'
 import {
   EditorState,
@@ -26,8 +27,10 @@ import {
   type FacetNode,
   type MarkAction,
   type NodeAction,
+  type NodeJSON,
 } from '@prosekit/core'
 import type { ComponentType } from 'react'
+import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '@prosekit/core'
 
 import {
   extractMarkViewComponents,
@@ -39,6 +42,8 @@ export interface ReactBindingEditorOptions<E extends Extension> {
   defaultContent?: DefaultStateOptions['defaultContent']
   defaultSelection?: DefaultStateOptions['defaultSelection']
 }
+
+export interface GetDocHTMLOptions extends DOMDocumentOptions {}
 
 export interface ReactBindingEditorSnapshot {
   state: EditorState
@@ -85,6 +90,7 @@ function setupReactBindingEditorExtension<E extends Extension>(
  */
 export class ReactBindingEditor<E extends Extension = any> {
   private _view: EditorView | null = null
+  private _reactKeysPlugin = reactKeys()
   private _state: EditorState
   private _tree: FacetNode
   private _afterMounted: Array<VoidFunction> = []
@@ -95,6 +101,7 @@ export class ReactBindingEditor<E extends Extension = any> {
   private _plugins: readonly Plugin[]
   private _nodeViewComponents: Record<string, ComponentType<NodeViewComponentProps>>
   private _markViewComponents: Record<string, ComponentType<MarkViewComponentProps>>
+  private _snapshot: ReactBindingEditorSnapshot
   private _listeners = new Set<(event: ReactBindingEditorEvent) => void>()
 
   constructor(extension: Extension) {
@@ -108,13 +115,22 @@ export class ReactBindingEditor<E extends Extension = any> {
       throw new ProseKitError('Schema must be defined')
     }
 
-    const state = EditorState.create(stateConfig)
+    const state = EditorState.create({
+      ...stateConfig,
+      plugins: [this._reactKeysPlugin, ...(stateConfig.plugins ?? [])],
+    })
 
     this._schema = state.schema
     this._state = state
     this._plugins = state.plugins
-    this._nodeViewComponents = extractNodeViewComponents(this._plugins)
-    this._markViewComponents = extractMarkViewComponents(this._plugins)
+    this._nodeViewComponents = extractNodeViewComponents(this._tree)
+    this._markViewComponents = extractMarkViewComponents(this._tree)
+    this._snapshot = {
+      state: this._state,
+      plugins: this._plugins,
+      nodeViewComponents: this._nodeViewComponents,
+      markViewComponents: this._markViewComponents,
+    }
 
     this.rebuildCommands(payload.commands)
 
@@ -130,7 +146,7 @@ export class ReactBindingEditor<E extends Extension = any> {
   }
 
   get state(): EditorState {
-    return this._view?.state ?? this._state
+    return this._state
   }
 
   get schema(): Schema {
@@ -173,16 +189,19 @@ export class ReactBindingEditor<E extends Extension = any> {
   }
 
   getSnapshot = (): ReactBindingEditorSnapshot => {
-    return {
-      state: this.state,
-      plugins: this._plugins,
-      nodeViewComponents: this._nodeViewComponents,
-      markViewComponents: this._markViewComponents,
-    }
+    return this._snapshot
   }
 
   getState = (): EditorState => {
     return this.state
+  }
+
+  getDocJSON = (): NodeJSON => {
+    return jsonFromNode(this.state.doc)
+  }
+
+  getDocHTML = (options?: GetDocHTMLOptions): string => {
+    return htmlFromNode(this.state.doc, options)
   }
 
   attachView(view: EditorView): void {
@@ -201,14 +220,12 @@ export class ReactBindingEditor<E extends Extension = any> {
 
     this._state = currentState
     this._plugins = currentState.plugins
-    this._nodeViewComponents = extractNodeViewComponents(this._plugins)
-    this._markViewComponents = extractMarkViewComponents(this._plugins)
+    this.refreshSnapshot()
 
     this._afterMounted.forEach((cb) => cb())
     this._afterMounted.length = 0
 
     this.emit('mount')
-    this.emit('state')
     if (pluginsChanged) {
       this.emit('plugins')
       this.emit('views')
@@ -223,22 +240,15 @@ export class ReactBindingEditor<E extends Extension = any> {
     this._state = view.state
     this._view = null
     this._plugins = this._state.plugins
-    this._nodeViewComponents = extractNodeViewComponents(this._plugins)
-    this._markViewComponents = extractMarkViewComponents(this._plugins)
+    this.refreshSnapshot()
 
     this.emit('unmount')
-    this.emit('state')
   }
 
   onTransaction(tr: Transaction): void {
-    if (this._view && !this._view.isDestroyed) {
-      this._state = this._view.state.apply(tr)
-    } else {
-      this._state = this._state.apply(tr)
-    }
+    this._state = this._state.apply(tr)
     this._plugins = this._state.plugins
-    this._nodeViewComponents = extractNodeViewComponents(this._plugins)
-    this._markViewComponents = extractMarkViewComponents(this._plugins)
+    this.refreshSnapshot()
     this.emit('state')
   }
 
@@ -273,7 +283,11 @@ export class ReactBindingEditor<E extends Extension = any> {
     return command(this.state, undefined, this._view ?? undefined)
   }
 
-  private dispatch = (tr: Transaction): void => {
+  dispatch(tr: Transaction): void {
+    this.dispatchTransaction(tr)
+  }
+
+  private dispatchTransaction = (tr: Transaction): void => {
     if (this._view) {
       this._view.dispatch(tr)
       return
@@ -281,6 +295,7 @@ export class ReactBindingEditor<E extends Extension = any> {
 
     this._state = this._state.apply(tr)
     this._plugins = this._state.plugins
+    this.refreshSnapshot()
     this.emit('state')
   }
 
@@ -348,7 +363,9 @@ export class ReactBindingEditor<E extends Extension = any> {
       : subtractFacetNode(this._tree, tree)
 
     const newPayload = this._tree.getRootOutput()
-    const nextState = view.state.reconfigure({ plugins: newPayload.state?.plugins ?? [] })
+    const nextState = view.state.reconfigure({
+      plugins: [this._reactKeysPlugin, ...(newPayload.state?.plugins ?? [])],
+    })
     const newPlugins = [...nextState.plugins]
 
     const pluginsChanged = !isDeepEqual(oldPlugins, newPlugins)
@@ -362,8 +379,9 @@ export class ReactBindingEditor<E extends Extension = any> {
       this._plugins = view.state.plugins
     }
 
-    this._nodeViewComponents = extractNodeViewComponents(this._plugins)
-    this._markViewComponents = extractMarkViewComponents(this._plugins)
+    this._nodeViewComponents = extractNodeViewComponents(this._tree)
+    this._markViewComponents = extractMarkViewComponents(this._tree)
+    this.refreshSnapshot()
 
     const nodeViewsChanged = !isDeepEqual(oldNodeViews, this._nodeViewComponents)
     const markViewsChanged = !isDeepEqual(oldMarkViews, this._markViewComponents)
@@ -379,6 +397,15 @@ export class ReactBindingEditor<E extends Extension = any> {
 
     if (nodeViewsChanged || markViewsChanged) {
       this.emit('views')
+    }
+  }
+
+  private refreshSnapshot(): void {
+    this._snapshot = {
+      state: this._state,
+      plugins: this._plugins,
+      nodeViewComponents: this._nodeViewComponents,
+      markViewComponents: this._markViewComponents,
     }
   }
 }

@@ -218,6 +218,7 @@ Same as `defineReactNodeView` but for marks.
 
 - [The Editor concept page](/concepts/editor)
 - [Extensions & union](/concepts/extensions)
+- [React ProseMirror binding guide](/guides/react-prosemirror-binding)
 - [Components](/components/overview): pre-built React components for toolbar, inline menu, slash menu, and friends.
 - [`prosekit/react` reference](/references/react)
 - [Minimal example](/examples/minimal?framework=react)

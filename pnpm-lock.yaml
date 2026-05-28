@@ -1002,6 +1002,9 @@ importers:
       '@egoist/tailwindcss-icons':
         specifier: ^1.9.2
         version: 1.9.2(tailwindcss@4.3.0)
+      '@handlewithcare/react-prosemirror':
+        specifier: ^3.0.6
+        version: 3.0.6(prosemirror-model@1.25.7)(prosemirror-state@1.4.4)(prosemirror-view@1.41.7)(react-dom@19.2.6)(react-reconciler@0.32.0)(react@19.2.6)
       '@lit/context':
         specifier: ^1.1.6
         version: 1.1.6
@@ -1020,6 +1023,9 @@ importers:
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
+      '@prosekit/react-binding':
+        specifier: workspace:*
+        version: link:../packages/react-binding
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.1.2
         version: 7.1.2(svelte@5.55.7)(vite@8.0.13)

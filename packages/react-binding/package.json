@@ -35,6 +35,8 @@
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "@prosekit/testing": "workspace:*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.6",
@@ -44,6 +46,7 @@
     "prosemirror-state": "^1.4.4",
     "prosemirror-view": "1.41.7",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

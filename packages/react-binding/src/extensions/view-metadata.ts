@@ -1,13 +1,9 @@
-import { Plugin, PluginKey } from '@prosekit/pm/state'
-import { definePlugin, type Extension } from '@prosekit/core'
+import { defineFacet, defineFacetPayload, pluginFacet, type Extension, type FacetNode, type PluginPayload } from '@prosekit/core'
 import type { MarkViewComponentProps, NodeViewComponentProps } from '@handlewithcare/react-prosemirror'
 import type { ComponentType } from 'react'
 
 import { adaptMarkView, type ReactMarkViewComponent } from '../adapters/mark-view-adapter.tsx'
 import { adaptNodeView, type ReactNodeViewComponent } from '../adapters/node-view-adapter.tsx'
-
-const NODE_VIEW_PLUGIN_KEY_PREFIX = 'prosekit-react-binding-node-view:'
-const MARK_VIEW_PLUGIN_KEY_PREFIX = 'prosekit-react-binding-mark-view:'
 
 type NodeViewMetadata = {
   kind: 'node'
@@ -23,81 +19,74 @@ type MarkViewMetadata = {
 
 type ViewMetadata = NodeViewMetadata | MarkViewMetadata
 
-function isViewMetadata(value: unknown): value is ViewMetadata {
-  if (!value || typeof value !== 'object') {
-    return false
-  }
-
-  const metadata = value as Partial<ViewMetadata>
-  return (
-    (metadata.kind === 'node' || metadata.kind === 'mark')
-    && typeof metadata.name === 'string'
-    && typeof metadata.component === 'function'
-  )
+type ViewMetadataPluginPayload = PluginPayload & {
+  reactBindingNodeViewComponents: Record<string, ComponentType<NodeViewComponentProps>>
+  reactBindingMarkViewComponents: Record<string, ComponentType<MarkViewComponentProps>>
 }
 
-function defineViewMetadataPlugin(
-  key: string,
+const viewMetadataFacet = defineFacet<ViewMetadata, ViewMetadataPluginPayload>({
+  parent: pluginFacet,
+  singleton: true,
+  reducer: (inputs) => {
+    const nodeViewComponents: Record<string, ComponentType<NodeViewComponentProps>> = {}
+    const markViewComponents: Record<string, ComponentType<MarkViewComponentProps>> = {}
+
+    for (const input of inputs) {
+      if (input.kind === 'node') {
+        nodeViewComponents[input.name] = adaptNodeView(input.component)
+      } else {
+        markViewComponents[input.name] = adaptMarkView(input.component)
+      }
+    }
+
+    const payload = (() => []) as unknown as ViewMetadataPluginPayload
+    payload.reactBindingNodeViewComponents = nodeViewComponents
+    payload.reactBindingMarkViewComponents = markViewComponents
+    return payload
+  },
+})
+
+function defineViewMetadata(
   metadata: ViewMetadata,
 ): Extension {
-  return definePlugin(
-    new Plugin({
-      key: new PluginKey(key),
-      spec: {
-        reactBindingViewMetadata: metadata,
-      },
-    }),
-  )
+  return defineFacetPayload(viewMetadataFacet, [metadata])
 }
 
 export function defineNodeViewMetadata(
   name: string,
   component: ReactNodeViewComponent,
 ): Extension {
-  return defineViewMetadataPlugin(
-    `${NODE_VIEW_PLUGIN_KEY_PREFIX}${name}`,
-    { kind: 'node', name, component },
-  )
+  return defineViewMetadata({ kind: 'node', name, component })
 }
 
 export function defineMarkViewMetadata(
   name: string,
   component: ReactMarkViewComponent,
 ): Extension {
-  return defineViewMetadataPlugin(
-    `${MARK_VIEW_PLUGIN_KEY_PREFIX}${name}`,
-    { kind: 'mark', name, component },
-  )
+  return defineViewMetadata({ kind: 'mark', name, component })
+}
+
+function getViewMetadataPayload(
+  tree: FacetNode,
+): ViewMetadataPluginPayload | null {
+  let node: FacetNode | undefined = tree
+
+  for (const index of viewMetadataFacet.path) {
+    node = node?.children.get(index)
+  }
+
+  const output = node?.getSingletonOutput()
+  return output ? output as ViewMetadataPluginPayload : null
 }
 
 export function extractNodeViewComponents(
-  plugins: readonly Plugin[],
+  tree: FacetNode,
 ): Record<string, ComponentType<NodeViewComponentProps>> {
-  const components: Record<string, ComponentType<NodeViewComponentProps>> = {}
-
-  for (const plugin of plugins) {
-    const metadata = (plugin.spec as { reactBindingViewMetadata?: unknown }).reactBindingViewMetadata
-    if (!isViewMetadata(metadata) || metadata.kind !== 'node') {
-      continue
-    }
-    components[metadata.name] = adaptNodeView(metadata.component)
-  }
-
-  return components
+  return getViewMetadataPayload(tree)?.reactBindingNodeViewComponents ?? {}
 }
 
 export function extractMarkViewComponents(
-  plugins: readonly Plugin[],
+  tree: FacetNode,
 ): Record<string, ComponentType<MarkViewComponentProps>> {
-  const components: Record<string, ComponentType<MarkViewComponentProps>> = {}
-
-  for (const plugin of plugins) {
-    const metadata = (plugin.spec as { reactBindingViewMetadata?: unknown }).reactBindingViewMetadata
-    if (!isViewMetadata(metadata) || metadata.kind !== 'mark') {
-      continue
-    }
-    components[metadata.name] = adaptMarkView(metadata.component)
-  }
-
-  return components
+  return getViewMetadataPayload(tree)?.reactBindingMarkViewComponents ?? {}
 }

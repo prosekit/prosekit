@@ -33,6 +33,7 @@ export const loaders = {
   'notion': lazy(() => import('./examples/notion/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'page': lazy(() => import('./examples/page/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'placeholder': lazy(() => import('./examples/placeholder/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'react-binding-full': lazy(() => import('./examples/react-binding-full/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'readonly': lazy(() => import('./examples/readonly/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'rtl': lazy(() => import('./examples/rtl/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'save-html': lazy(() => import('./examples/save-html/index.ts').then((m) => ({ default: m.ExampleEditor }))),

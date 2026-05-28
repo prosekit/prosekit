@@ -1,6 +1,4 @@
 import type { EditorView } from '@prosekit/pm/view'
-import { useLayoutEffect, useRef } from 'react'
-
 import { useEditorEffect } from '@handlewithcare/react-prosemirror'
 
 export function ViewMountHandler(props: {
@@ -8,17 +6,9 @@ export function ViewMountHandler(props: {
   onUnmount: (view: EditorView) => void
 }) {
   const { onMount, onUnmount } = props
-  const viewRef = useRef<EditorView | null>(null)
 
   useEditorEffect((view) => {
-    viewRef.current = view as unknown as EditorView
-  }, [])
-
-  useLayoutEffect(() => {
-    const editorView = viewRef.current
-    if (!editorView) {
-      return
-    }
+    const editorView = view as unknown as EditorView
     onMount(editorView)
 
     return () => {

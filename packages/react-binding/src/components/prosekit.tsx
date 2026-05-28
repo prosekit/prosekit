@@ -2,11 +2,10 @@
 
 import type { EditorView } from '@prosekit/pm/view'
 import type { Transaction } from '@prosekit/pm/state'
-import { ProseMirror, ProseMirrorDoc, reactKeys } from '@handlewithcare/react-prosemirror'
+import { ProseMirror } from '@handlewithcare/react-prosemirror'
 import {
   createElement,
   useCallback,
-  useMemo,
   useSyncExternalStore,
   type ComponentType,
   type ReactNode,
@@ -25,19 +24,13 @@ export interface ProseKitProps {
   children?: ReactNode
 }
 
-function ensureReactKeys(plugins: readonly any[]): readonly any[] {
-  const hasReactKeys = plugins.some(
-    (p: any) => p.spec?.key?.startsWith?.('@handlewithcare/react-prosemirror'),
-  )
-  if (hasReactKeys) {
-    return plugins
-  }
-  return [reactKeys(), ...plugins]
-}
-
 function useEditorBindingSnapshot(editor: ReactBindingEditor): ReactBindingEditorSnapshot {
   return useSyncExternalStore(
-    (onStoreChange) => editor.subscribe(() => onStoreChange()),
+    (onStoreChange) => editor.subscribe((event) => {
+      if (event === 'state' || event === 'plugins' || event === 'views') {
+        onStoreChange()
+      }
+    }),
     editor.getSnapshot,
     editor.getSnapshot,
   )
@@ -47,13 +40,8 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   const { editor, children } = props
   const snapshot = useEditorBindingSnapshot(editor)
 
-  const plugins = useMemo(
-    () => ensureReactKeys(snapshot.plugins),
-    [snapshot.plugins],
-  )
-
   const handleTransaction = useCallback(
-    function (_this: unknown, tr: Transaction) {
+    function (this: unknown, tr: Transaction) {
       editor.onTransaction(tr)
     },
     [editor],
@@ -80,8 +68,7 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
       ProseMirror,
       {
         state: snapshot.state,
-        plugins,
-        dispatchTransaction: handleTransaction as (this: any, tr: Transaction) => void,
+        dispatchTransaction: handleTransaction,
         nodeViewComponents: snapshot.nodeViewComponents,
         markViewComponents: snapshot.markViewComponents,
       },
@@ -89,7 +76,6 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
         onMount: handleViewMount,
         onUnmount: handleViewUnmount,
       }),
-      createElement(ProseMirrorDoc),
       children,
     ),
   )

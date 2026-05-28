@@ -1,8 +1,9 @@
 import { EditorNotFoundError, type Extension } from '@prosekit/core'
-import { useEffect, useReducer } from 'react'
+import { useSyncExternalStore } from 'react'
 
 import { useEditorContext } from '../contexts/editor-context.ts'
 import type { ReactBindingEditor } from '../editor/react-binding-editor.ts'
+import { subscribeEditorUpdate } from './subscribe-editor-update.ts'
 
 export function useEditor<E extends Extension = any>(options?: {
   update?: boolean
@@ -14,22 +15,17 @@ export function useEditor<E extends Extension = any>(options?: {
     throw new EditorNotFoundError()
   }
 
-  const forceUpdate = useForceUpdate()
+  useSyncExternalStore(
+    (onStoreChange) => {
+      if (!update) {
+        return () => {}
+      }
 
-  useEffect(() => {
-    if (!update) {
-      return
-    }
-
-    return editor.subscribe(() => {
-      forceUpdate()
-    })
-  }, [editor, update, forceUpdate])
+      return subscribeEditorUpdate(editor, onStoreChange)
+    },
+    editor.getSnapshot,
+    editor.getSnapshot,
+  )
 
   return editor
-}
-
-function useForceUpdate() {
-  const [, dispatch] = useReducer((x: number) => x + 1, 0)
-  return dispatch
 }

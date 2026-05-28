@@ -34,6 +34,7 @@ export const Minimal = { args: { story: 'minimal' } }
 export const Notion = { args: { story: 'notion' } }
 export const Page = { args: { story: 'page' } }
 export const Placeholder = { args: { story: 'placeholder' } }
+export const ReactBindingFull = { args: { story: 'react-binding-full' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const Rtl = { args: { story: 'rtl' } }
 export const SaveHtml = { args: { story: 'save-html' } }

@@ -635,6 +635,58 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(@types/react-dom@19.2.3)(@types/react@19.2.14)(react-dom@19.2.6)(react@19.2.6)(vitest@4.1.7)
 
+  packages/react-binding:
+    dependencies:
+      '@handlewithcare/react-prosemirror':
+        specifier: ^3.0.6
+        version: 3.0.6(prosemirror-model@1.25.7)(prosemirror-state@1.4.4)(prosemirror-view@1.41.7)(react-dom@19.2.6)(react-reconciler@0.32.0)(react@19.2.6)
+      '@ocavue/utils':
+        specifier: ^1.6.0
+        version: 1.6.0
+      '@prosekit/core':
+        specifier: workspace:^
+        version: link:../core
+      '@prosekit/pm':
+        specifier: workspace:^
+        version: link:../pm
+    devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
+      '@types/react':
+        specifier: ^19.2.14
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.14)
+      prosemirror-model:
+        specifier: ^1.25.7
+        version: 1.25.7
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: 1.41.7
+        version: 1.41.7
+      react:
+        specifier: ^19.2.6
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.2.6
+        version: 19.2.6(react@19.2.6)
+      react-reconciler:
+        specifier: ^0.32.0
+        version: 0.32.0(react@19.2.6)
+      tsdown:
+        specifier: 'catalog:'
+        version: 0.22.0(@tsdown/css@0.22.0)(oxc-resolver@11.19.1)(tsx@4.22.1)(typescript@6.0.3)(vue-tsc@3.2.9)
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+
   packages/solid:
     dependencies:
       '@prosekit/core':
@@ -2326,6 +2378,17 @@ packages:
 
   '@gerrit0/mini-shiki@3.23.0':
     resolution: {integrity: sha512-bEMORlG0cqdjVyCEuU0cDQbORWX+kYCeo0kV1lbxF5bt4r7SID2l9bqsxJEM0zndaxpOUT7riCyIVEuqq/Ynxg==}
+
+  '@handlewithcare/react-prosemirror@3.0.6':
+    resolution: {integrity: sha512-7HNwItwpi1dZ0lq2KvqCvGhZaP3QXDFQOcyap3mNb9HyFPYXWdTQm1XQEGQ1sZ5656OOwAzzYU/q7ncRvIJ45w==}
+    engines: {node: '>=16.9'}
+    peerDependencies:
+      prosemirror-model: ^1.0.0
+      prosemirror-state: ^1.0.0
+      prosemirror-view: 1.41.7
+      react: '>=17 <20'
+      react-dom: '>=17 <20'
+      react-reconciler: '>=0.26.1 <=0.33.0'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4514,6 +4577,9 @@ packages:
     resolution: {integrity: sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg==}
     engines: {node: '>=8'}
 
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
+
   clean-regexp@1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
     engines: {node: '>=4'}
@@ -6451,6 +6517,9 @@ packages:
   prosemirror-transform@1.12.0:
     resolution: {integrity: sha512-GxboyN4AMIsoHNtz5uf2r2Ru551i5hWeCMD6E2Ib4Eogqoub0NflniaBPVQ4MrGE5yZ8JV9tUHg9qcZTTrcN4w==}
 
+  prosemirror-view@1.41.7:
+    resolution: {integrity: sha512-jUwKNCEIGiqdvhlS91/2QAg21e4dfU5bH2iwmSDQeosXJgKF7smG0YSplOWK0cjSNgIqXe7VXqo7EIfUFJdt3w==}
+
   prosemirror-view@1.41.8:
     resolution: {integrity: sha512-TnKDdohEatgyZNGCDWIdccOHXhYloJwbwU+phw/a23KBvJIR9lWQWW7WHHK3vBdOLDNuF7TaX98GObUZOWkOnA==}
 
@@ -6481,6 +6550,12 @@ packages:
     resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
       react: ^19.2.6
+
+  react-reconciler@0.32.0:
+    resolution: {integrity: sha512-2NPMOzgTlG0ZWdIf3qG+dcbLSoAc/uLfOwckc3ofy5sSK0pLJqnQLpUFxvGcN2rlXSjnVtGeeFLNimCQEj5gOQ==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      react: ^19.1.0
 
   react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
@@ -6696,6 +6771,9 @@ packages:
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
+
+  scheduler@0.26.0:
+    resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
@@ -9188,6 +9266,16 @@ snapshots:
       '@shikijs/types': 3.23.0
       '@shikijs/vscode-textmate': 10.0.2
 
+  '@handlewithcare/react-prosemirror@3.0.6(prosemirror-model@1.25.7)(prosemirror-state@1.4.4)(prosemirror-view@1.41.7)(react-dom@19.2.6)(react-reconciler@0.32.0)(react@19.2.6)':
+    dependencies:
+      classnames: 2.5.1
+      prosemirror-model: 1.25.7
+      prosemirror-state: 1.4.4
+      prosemirror-view: 1.41.7
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      react-reconciler: 0.32.0(react@19.2.6)
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -11362,6 +11450,8 @@ snapshots:
       readdirp: 5.0.0
 
   ci-info@4.4.0: {}
+
+  classnames@2.5.1: {}
 
   clean-regexp@1.0.0:
     dependencies:
@@ -13892,6 +13982,12 @@ snapshots:
     dependencies:
       prosemirror-model: 1.25.7
 
+  prosemirror-view@1.41.7:
+    dependencies:
+      prosemirror-model: 1.25.7
+      prosemirror-state: 1.4.4
+      prosemirror-transform: 1.12.0
+
   prosemirror-view@1.41.8:
     dependencies:
       prosemirror-model: 1.25.7
@@ -13916,6 +14012,11 @@ snapshots:
     dependencies:
       react: 19.2.6
       scheduler: 0.27.0
+
+  react-reconciler@0.32.0(react@19.2.6):
+    dependencies:
+      react: 19.2.6
+      scheduler: 0.26.0
 
   react-refresh@0.18.0: {}
 
@@ -14254,6 +14355,8 @@ snapshots:
   saxes@6.0.0:
     dependencies:
       xmlchars: 2.2.0
+
+  scheduler@0.26.0: {}
 
   scheduler@0.27.0: {}
 

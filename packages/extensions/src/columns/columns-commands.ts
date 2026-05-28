@@ -5,6 +5,11 @@ import type { Command } from '@prosekit/pm/state'
 import type { ColumnAttrs, ColumnsAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
 import { findParentColumn, findParentColumns, getColumnLayoutAtPos, getEqualColumnWidths, normalizeColumnWidths } from './columns-utils.ts'
 
+function distributeColumnNodeWidths(nodes: readonly ProseMirrorNode[]): ProseMirrorNode[] {
+  const widths = getEqualColumnWidths(nodes.length)
+  return nodes.map((node, i) => node.type.create({ ...node.attrs, width: widths[i] }, node.content, node.marks))
+}
+
 function createColumnNode(
   columnType: NodeType,
   attrs: ColumnAttrs,

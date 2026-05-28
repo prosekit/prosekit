@@ -2,13 +2,8 @@ import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
 import { Fragment, type NodeType, type ProseMirrorNode } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import type { ColumnAttrs, ColumnsAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
+import type { ColumnAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
 import { findParentColumn, findParentColumns, getColumnLayoutAtPos, getEqualColumnWidths, normalizeColumnWidths } from './columns-utils.ts'
-
-function distributeColumnNodeWidths(nodes: readonly ProseMirrorNode[]): ProseMirrorNode[] {
-  const widths = getEqualColumnWidths(nodes.length)
-  return nodes.map((node, i) => node.type.create({ ...node.attrs, width: widths[i] }, node.content, node.marks))
-}
 
 function createColumnNode(
   columnType: NodeType,
@@ -39,27 +34,24 @@ function createColumnsNode(
   )!
 }
 
-function replaceColumnsChildren(
-  state: Parameters<Command>[0],
-  dispatch: Parameters<Command>[1],
-  containerPos: number,
-  nextColumns: ProseMirrorNode[],
-  containerAttrs: ColumnsAttrs,
-): boolean {
-  const container = state.doc.nodeAt(containerPos)
-  const columnsType = getNodeType(state.schema, 'columns')
-  if (!container || container.type !== columnsType) return false
-  if (!dispatch) return true
+function roundColumnWidth(width: number): number {
+  return Math.round(width * 1000) / 1000
+}
 
-  if (nextColumns.length <= 1) {
-    const content = nextColumns[0]?.content ?? Fragment.empty
-    dispatch(state.tr.replaceWith(containerPos, containerPos + container.nodeSize, content).scrollIntoView())
-    return true
-  }
+function resolveColumnWidth(node: ProseMirrorNode, index: number, count: number): number {
+  return (node.attrs as ColumnAttrs).width ?? getEqualColumnWidths(count)[index]
+}
 
-  const nextContainer = columnsType.createChecked(containerAttrs, nextColumns)
-  dispatch(state.tr.replaceWith(containerPos, containerPos + container.nodeSize, nextContainer).scrollIntoView())
-  return true
+function splitColumnWidth(
+  width: number,
+  requestedWidth: number | null,
+): [currentWidth: number, insertedWidth: number] {
+  const safeRequestedWidth = requestedWidth != null && requestedWidth > 0 && requestedWidth < width
+    ? requestedWidth
+    : width / 2
+  const insertedWidth = roundColumnWidth(safeRequestedWidth)
+  const currentWidth = roundColumnWidth(width - insertedWidth)
+  return [currentWidth, roundColumnWidth(width - currentWidth)]
 }
 
 function getOptionsWithDefaults(options: ColumnsOptions = {}) {
@@ -116,22 +108,21 @@ function addColumn(side: 'before' | 'after', options: ColumnsOptions): Command {
     if (container.childCount >= defaults.maxColumns) {
       return false
     }
+    if (!dispatch) return true
 
-    const nextChildren = [...container.children]
-    const insertIndex = side === 'before' ? found.index : found.index + 1
-    nextChildren.splice(
-      insertIndex,
-      0,
-      createColumnNode(columnType, { width: defaults.defaultColumnWidth }),
-    )
+    const currentWidth = resolveColumnWidth(found.node, found.index, container.childCount)
+    const [nextCurrentWidth, insertedWidth] = splitColumnWidth(currentWidth, defaults.defaultColumnWidth)
+    const insertPos = side === 'before' ? found.pos : found.pos + found.node.nodeSize
+    const insertedColumn = createColumnNode(columnType, { width: insertedWidth })
 
-    return replaceColumnsChildren(
-      state,
-      dispatch,
-      found.containerPos,
-      distributeColumnNodeWidths(nextChildren),
-      container.attrs as ColumnsAttrs,
-    )
+    const tr = state.tr.insert(insertPos, insertedColumn)
+    const currentPos = side === 'before' ? tr.mapping.map(found.pos, 1) : found.pos
+    const currentNode = tr.doc.nodeAt(currentPos)
+    if (currentNode) {
+      tr.setNodeMarkup(currentPos, undefined, { ...currentNode.attrs, width: nextCurrentWidth })
+    }
+    dispatch(tr.scrollIntoView())
+    return true
   }
 }
 
@@ -165,25 +156,36 @@ const removeColumnCommand: Command = (state, dispatch) => {
   const container = state.doc.nodeAt(found.containerPos)
   if (!container) return false
 
-  const nextChildren = [...container.children]
-  const [removed] = nextChildren.splice(found.index, 1)
-
   // When removing the last column from a single-column container, unwrap
   // the column's content so user content isn't lost.
-  if (nextChildren.length === 0) {
+  if (container.childCount <= 2) {
     if (!dispatch) return true
-    const content = removed?.content ?? Fragment.empty
+    const remainingIndex = found.index === 0 ? 1 : 0
+    const content = container.child(remainingIndex)?.content ?? Fragment.empty
     dispatch(state.tr.replaceWith(found.containerPos, found.containerPos + container.nodeSize, content).scrollIntoView())
     return true
   }
+  if (!dispatch) return true
 
-  return replaceColumnsChildren(
-    state,
-    dispatch,
-    found.containerPos,
-    distributeColumnNodeWidths(nextChildren),
-    container.attrs as ColumnsAttrs,
-  )
+  const removedWidth = resolveColumnWidth(found.node, found.index, container.childCount)
+  const targetIndex = found.index < container.childCount - 1 ? found.index + 1 : found.index - 1
+  const targetNode = container.child(targetIndex)
+  const targetWidth = resolveColumnWidth(targetNode, targetIndex, container.childCount)
+  let targetPos = found.containerPos + 1
+  for (let index = 0; index < targetIndex; index += 1) {
+    targetPos += container.child(index).nodeSize
+  }
+  const tr = state.tr.delete(found.pos, found.pos + found.node.nodeSize)
+  const mappedTargetPos = targetIndex < found.index ? targetPos : found.pos
+  const mappedTargetNode = tr.doc.nodeAt(mappedTargetPos)
+  if (mappedTargetNode) {
+    tr.setNodeMarkup(mappedTargetPos, undefined, {
+      ...mappedTargetNode.attrs,
+      width: roundColumnWidth(targetWidth + removedWidth),
+    })
+  }
+  dispatch(tr.scrollIntoView())
+  return true
 }
 
 /**

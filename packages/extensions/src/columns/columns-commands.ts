@@ -64,14 +64,6 @@ function replaceColumnsChildren(
   return true
 }
 
-function getChildNodes(node: ProseMirrorNode): ProseMirrorNode[] {
-  const children: ProseMirrorNode[] = []
-  node.forEach((child) => {
-    children.push(child)
-  })
-  return children
-}
-
 function getOptionsWithDefaults(options: ColumnsOptions = {}) {
   return {
     minColumnWidth: options.minColumnWidth ?? 120,
@@ -135,7 +127,7 @@ function addColumn(side: 'before' | 'after', options: ColumnsOptions): Command {
       return false
     }
 
-    const nextChildren = getChildNodes(container)
+    const nextChildren = [...container.children]
     const insertIndex = side === 'before' ? found.index : found.index + 1
     nextChildren.splice(
       insertIndex,
@@ -183,7 +175,7 @@ const removeColumnCommand: Command = (state, dispatch) => {
   const container = state.doc.nodeAt(found.containerPos)
   if (!container) return false
 
-  const nextChildren = getChildNodes(container)
+  const nextChildren = [...container.children]
   const [removed] = nextChildren.splice(found.index, 1)
 
   // When removing the last column from a single-column container, unwrap

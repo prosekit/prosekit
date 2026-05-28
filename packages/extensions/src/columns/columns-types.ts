@@ -65,16 +65,6 @@ export interface InsertColumnsOptions {
    * Number of columns to insert.
    */
   count: number
-
-  /**
-   * Optional widths for each inserted column.
-   */
-  widths?: number[]
-
-  /**
-   * Optional gap between inserted columns, in CSS pixels.
-   */
-  gap?: number | null
 }
 
 /**

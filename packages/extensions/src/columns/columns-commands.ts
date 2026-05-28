@@ -5,17 +5,11 @@ import type { Command } from '@prosekit/pm/state'
 import type { ColumnAttrs, ColumnsAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
 import { findParentColumn, findParentColumns, getColumnLayoutAtPos, getEqualColumnWidths, normalizeColumnWidths } from './columns-utils.ts'
 
-function createDefaultBlock(state: Parameters<Command>[0]): ProseMirrorNode {
-  const paragraphType = getNodeType(state.schema, 'paragraph')
-  return paragraphType.createAndFill()!
-}
-
 function createColumnNode(
   columnType: NodeType,
-  state: Parameters<Command>[0],
   attrs: ColumnAttrs,
 ): ProseMirrorNode {
-  return columnType.createAndFill(attrs, Fragment.from(createDefaultBlock(state)))!
+  return columnType.createAndFill(attrs)!
 }
 
 function createColumnsNode(
@@ -29,14 +23,13 @@ function createColumnsNode(
   const columnsType = getNodeType(state.schema, 'columns')
   const columnType = getNodeType(state.schema, 'column')
   const count = Math.max(1, options.count)
-  const widths = options.widths ?? []
   const children = Array.from(
     { length: count },
-    (_, index) => createColumnNode(columnType, state, { width: widths[index] ?? defaults.defaultColumnWidth }),
+    () => createColumnNode(columnType, { width: defaults.defaultColumnWidth }),
   )
 
   return columnsType.createAndFill(
-    { gap: options.gap ?? defaults.defaultGap },
+    { gap: defaults.defaultGap },
     Fragment.from(children),
   )!
 }
@@ -90,15 +83,7 @@ export type ColumnsCommandsExtension = Extension<{
 }>
 
 function validateInsertColumnsOptions(options: InsertColumnsOptions): boolean {
-  if (!Number.isFinite(options.count) || !Number.isInteger(options.count) || options.count < 1) return false
-  if (options.widths != null) {
-    if (!Array.isArray(options.widths)) return false
-    for (const width of options.widths) {
-      if (width != null && (!Number.isFinite(width) || width < 0)) return false
-    }
-  }
-  if (options.gap != null && (!Number.isFinite(options.gap) || options.gap < 0)) return false
-  return true
+  return Number.isFinite(options.count) && Number.isInteger(options.count) && options.count >= 1
 }
 
 /**
@@ -132,7 +117,7 @@ function addColumn(side: 'before' | 'after', options: ColumnsOptions): Command {
     nextChildren.splice(
       insertIndex,
       0,
-      createColumnNode(columnType, state, { width: defaults.defaultColumnWidth }),
+      createColumnNode(columnType, { width: defaults.defaultColumnWidth }),
     )
 
     return replaceColumnsChildren(

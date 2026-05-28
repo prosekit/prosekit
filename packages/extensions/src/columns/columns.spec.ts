@@ -162,9 +162,9 @@ describe('columns commands', () => {
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(
         n.columns(
-          n.column(n.paragraph('one')),
-          n.column({ width: 25 }, n.paragraph()),
-          n.column(n.paragraph('two')),
+          n.column({ width: 33.333 }, n.paragraph('one')),
+          n.column({ width: 33.333 }, n.paragraph()),
+          n.column({ width: 33.334 }, n.paragraph('two')),
         ),
       ).toJSON(),
     )
@@ -182,9 +182,9 @@ describe('columns commands', () => {
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(
         n.columns(
-          n.column(n.paragraph('one')),
-          n.column(n.paragraph()),
-          n.column(n.paragraph('two')),
+          n.column({ width: 33.333 }, n.paragraph('one')),
+          n.column({ width: 33.333 }, n.paragraph()),
+          n.column({ width: 33.334 }, n.paragraph('two')),
         ),
       ).toJSON(),
     )
@@ -204,6 +204,28 @@ describe('columns commands', () => {
     expect(editor.commands.addColumnAfter.canExec()).toBe(false)
     expect(editor.commands.addColumnAfter()).toBe(false)
     expect(editor.view.state.doc.toJSON()).toEqual(doc.toJSON())
+  })
+
+  it('should allow adding columns by default without an explicit maxColumns limit', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('one<a>')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    expect(editor.commands.addColumnAfter.canExec()).toBe(true)
+    expect(editor.commands.addColumnAfter()).toBe(true)
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(
+        n.columns(
+          n.column({ width: 33.333 }, n.paragraph('one')),
+          n.column({ width: 33.333 }, n.paragraph()),
+          n.column({ width: 33.334 }, n.paragraph('two')),
+        ),
+      ).toJSON(),
+    )
   })
 
   it('should unwrap when removing down to one column', () => {

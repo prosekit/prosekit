@@ -6,7 +6,6 @@ export function defineExtension() {
   return union(
     defineBasicExtension(),
     defineColumns({
-      enableModAWithinColumn: true,
       minColumnWidth: 160,
       defaultGap: 20,
     }),

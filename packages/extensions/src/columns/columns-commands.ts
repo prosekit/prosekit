@@ -62,7 +62,7 @@ function getOptionsWithDefaults(options: ColumnsOptions = {}) {
     minColumnWidth: options.minColumnWidth ?? 120,
     defaultColumnWidth: options.defaultColumnWidth ?? null,
     defaultGap: options.defaultGap ?? null,
-    maxColumns: options.maxColumns ?? Infinity,
+    maxColumns: options.maxColumns ?? Number.POSITIVE_INFINITY,
   }
 }
 
@@ -124,7 +124,7 @@ function addColumn(side: 'before' | 'after', options: ColumnsOptions): Command {
       state,
       dispatch,
       found.containerPos,
-      nextChildren,
+      distributeColumnNodeWidths(nextChildren),
       container.attrs as ColumnsAttrs,
     )
   }
@@ -176,7 +176,7 @@ const removeColumnCommand: Command = (state, dispatch) => {
     state,
     dispatch,
     found.containerPos,
-    nextChildren,
+    distributeColumnNodeWidths(nextChildren),
     container.attrs as ColumnsAttrs,
   )
 }

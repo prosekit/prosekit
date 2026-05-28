@@ -19,7 +19,6 @@ import 'prosekit/extensions/columns/style.css'
 import { defineColumns } from 'prosekit/extensions/columns'
 
 const extension = defineColumns({
-  enableModAWithinColumn: true,
   minColumnWidth: 160,
   defaultGap: 20,
 })
@@ -35,8 +34,7 @@ const extension = defineColumns({
 - `distributeColumns` resets the current columns container to equal widths.
 - `setColumnsGap` updates the gap between columns.
 
-The extension ships with the node specs, commands, plugin state for resize UI,
-and an optional `Mod-a` keymap that selects only the current column content.
+The extension ships with the node specs, commands, and plugin state for resize UI.
 
 ## Styling
 

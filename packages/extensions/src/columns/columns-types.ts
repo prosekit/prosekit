@@ -55,6 +55,14 @@ export interface ColumnsOptions {
    * @default Infinity
    */
   maxColumns?: number
+
+  /**
+   * Width of the hotspot zone on each side of a column boundary used to
+   * detect a resize handle, in CSS pixels.
+   *
+   * @default 8
+   */
+  handleWidth?: number
 }
 
 /**
@@ -84,37 +92,78 @@ export interface FindColumnResult extends FindParentNodeResult {
 }
 
 /**
- * Information about the resize handle attached to a column boundary.
+ * Snapshot of column widths captured when a resize drag starts.
  */
-export interface ColumnHandleInfo {
-  pos: number
-  columnPos: number
-  containerPos: number
-  index: number
-}
-
-/**
- * Runtime data for an active drag gesture on a column boundary.
- */
-export interface ColumnDragSession {
-  handlePos: number
-  columnPos: number
+export interface ColumnDragState {
+  /**
+   * The initial mouse X position.
+   */
   startX: number
-  startWidth: number
+
+  /**
+   * Rendered pixel widths of every column in the container at drag start.
+   * This is a snapshot used for delta computation during the drag.
+   */
+  columns: Array<{ width: number }>
+
+  /**
+   * Total rendered width of all columns in the container, in pixels.
+   */
+  totalWidth: number
+
+  /**
+   * Index of the column to the left of the dragged boundary.
+   */
+  leftIndex: number
+
+  /**
+   * Minimum width a column can have, expressed as a percentage of the
+   * container.
+   */
+  minPercent: number
 }
 
 /**
- * Plugin state used by custom column UI, such as resize handles.
+ * Plugin state used by the columns resize plugin.
+ *
+ * The plugin handles resize detection and drag gestures automatically via
+ * `handleDOMEvents`. `activeHandle` is a document position pointing to the
+ * left-side column at the boundary under the mouse cursor.
  */
 export interface ColumnsRuntimeState {
-  activeHandle: ColumnHandleInfo | null
-  dragging: ColumnDragSession | null
+  /**
+   * Document position of the column whose right edge is the active resize
+   * boundary, or `null` when no handle is active.
+   *
+   * This position is remapped automatically when the document changes.
+   */
+  activeHandle: number | null
+
+  /**
+   * Drag session snapshot, or `null` when not dragging.
+   */
+  dragging: ColumnDragState | null
 }
 
 /**
  * Information about a column boundary detected from pointer coordinates.
  */
-export interface ColumnBoundaryHit extends ColumnHandleInfo {}
+export interface ColumnBoundaryHit {
+  /**
+   * Document position of the left-side column.
+   */
+  columnPos: number
+
+  /**
+   * Position of the columns container.
+   */
+  containerPos: number
+
+  /**
+   * Index of the left-side column within the container.
+   */
+  index: number
+}
 
 /**
  * The current layout data for a `columns` container.

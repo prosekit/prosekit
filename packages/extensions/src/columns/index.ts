@@ -15,18 +15,21 @@ export {
   columnsPluginKey,
   defineColumnsPlugin,
   getColumnsRuntimeState,
-  setActiveColumnHandle,
-  startColumnDragging,
-  stopColumnDragging,
-  updateColumnDragging,
   type ColumnsPluginExtension,
+  type ColumnsPluginOptions,
 } from './columns-plugin.ts'
-export { defineColumnSpec, defineColumnsSpec, type ColumnSpecExtension, type ColumnsSpecExtension } from './columns-spec.ts'
+export {
+  defineColumnNodeView,
+  defineColumnSpec,
+  defineColumnsSpec,
+  type ColumnNodeViewExtension,
+  type ColumnSpecExtension,
+  type ColumnsSpecExtension,
+} from './columns-spec.ts'
 export type {
   ColumnAttrs,
   ColumnBoundaryHit,
-  ColumnDragSession,
-  ColumnHandleInfo,
+  ColumnDragState,
   ColumnLayoutInfo,
   ColumnsAttrs,
   ColumnsOptions,
@@ -45,5 +48,7 @@ export {
   getColumnLayoutAtPos,
   getEqualColumnWidths,
   normalizeColumnWidths,
+  roundColumnWidth,
+  TOTAL_COLUMN_WIDTH,
 } from './columns-utils.ts'
 export { defineColumns, type ColumnsExtension } from './columns.ts'

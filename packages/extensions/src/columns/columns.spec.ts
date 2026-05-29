@@ -7,14 +7,9 @@ import { defineParagraph } from '../paragraph/index.ts'
 import { setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
 
-import {
-  columnsPluginKey,
-  getColumnsRuntimeState,
-  setActiveColumnHandle,
-  startColumnDragging,
-  updateColumnDragging,
-} from './columns-plugin.ts'
+import { columnsPluginKey, getColumnsRuntimeState } from './columns-plugin.ts'
 import { findParentColumn } from './columns-utils.ts'
+import type { ColumnDragState } from './columns-types.ts'
 import { defineColumns } from './columns.ts'
 
 function setup(options?: Parameters<typeof defineColumns>[0]) {
@@ -378,6 +373,64 @@ describe('columns keymap', () => {
 })
 
 describe('columns plugin state', () => {
+  it('should resize columns by dragging a column boundary', async () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('left')),
+        n.column(n.paragraph('right')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.doc.resolve(2))
+    expect(found).toBeTruthy()
+
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'setActiveHandle',
+        pos: found!.pos,
+      }),
+    )
+
+    const handle = editor.view.dom.querySelector('.prosekit-column-resize-handle')
+    expect(handle).toBeInstanceOf(HTMLElement)
+
+    const handleRect = (handle as HTMLElement).getBoundingClientRect()
+    const dragX = handleRect.left + handleRect.width / 2
+    const dragY = handleRect.top + handleRect.height / 2
+
+    ;(handle as HTMLElement).dispatchEvent(new MouseEvent('mousedown', {
+      bubbles: true,
+      clientX: dragX,
+      clientY: dragY,
+    }))
+
+    expect(getColumnsRuntimeState(editor.state)?.dragging).not.toBeNull()
+
+    window.dispatchEvent(new MouseEvent('mousemove', {
+      bubbles: true,
+      clientX: dragX + 40,
+      clientY: dragY,
+    }))
+    window.dispatchEvent(new MouseEvent('mouseup', {
+      bubbles: true,
+      clientX: dragX + 40,
+      clientY: dragY,
+    }))
+
+    const columnsNode = editor.view.state.doc.firstChild
+    expect(columnsNode?.type.name).toBe('columns')
+
+    const leftWidth = columnsNode?.child(0).attrs.width
+    const rightWidth = columnsNode?.child(1).attrs.width
+
+    expect(leftWidth).toBeTypeOf('number')
+    expect(rightWidth).toBeTypeOf('number')
+    expect(leftWidth).toBeGreaterThan(50)
+    expect(rightWidth).toBeLessThan(50)
+    expect(Number(((leftWidth as number) + (rightWidth as number)).toFixed(3))).toBe(100)
+  })
+
   it('should remap active handle when the document changes', () => {
     const { editor, n } = setup()
     editor.set(n.doc(
@@ -390,19 +443,20 @@ describe('columns plugin state', () => {
     const found = findParentColumn(editor.state.selection.$from)
     expect(found).toBeTruthy()
 
-    const handle = {
-      pos: found!.pos + found!.node.nodeSize,
-      columnPos: found!.pos,
-      containerPos: found!.containerPos,
-      index: found!.index,
-    }
-    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, setActiveColumnHandle(handle)))
-    editor.view.dispatch(editor.state.tr.insertText('X', found!.start + 1))
+    const columnPos = found!.pos
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'setActiveHandle',
+        pos: columnPos,
+      }),
+    )
 
-    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toEqual({
-      ...handle,
-      pos: handle.pos + 1,
-    })
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(columnPos)
+
+    // Insert text inside the column. The column node itself is still at the
+    // same document position, so the handle shouldn't move.
+    editor.view.dispatch(editor.state.tr.insertText('X', found!.start + 1))
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(columnPos)
   })
 
   it('should clear active handle when the referenced column is deleted', () => {
@@ -417,78 +471,159 @@ describe('columns plugin state', () => {
     const found = findParentColumn(editor.state.selection.$from)
     expect(found).toBeTruthy()
 
-    editor.view.dispatch(editor.state.tr.setMeta(
-      columnsPluginKey,
-      setActiveColumnHandle({
-        pos: found!.pos + found!.node.nodeSize,
-        columnPos: found!.pos,
-        containerPos: found!.containerPos,
-        index: found!.index,
-      }),
-    ))
-    editor.commands.removeColumn()
-
-    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(null)
-  })
-
-  it('should remap dragging state when the document changes', () => {
-    const { editor, n } = setup()
-    editor.set(n.doc(
-      n.columns(
-        n.column(n.paragraph('o<a>ne')),
-        n.column(n.paragraph('two')),
-      ),
-    ))
-
-    const found = findParentColumn(editor.state.selection.$from)
-    expect(found).toBeTruthy()
-
-    const dragging = {
-      handlePos: found!.pos + found!.node.nodeSize,
-      columnPos: found!.pos,
-      startX: 100,
-      startWidth: 40,
-    }
-
-    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, startColumnDragging(dragging)))
-    editor.view.dispatch(editor.state.tr.insertText('X', found!.start + 1))
-
-    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual({
-      ...dragging,
-      handlePos: dragging.handlePos + 1,
-    })
-  })
-
-  it('should keep dragging state when updating column width during drag', () => {
-    const { editor, n } = setup()
-    editor.set(n.doc(
-      n.columns(
-        n.column(n.paragraph('o<a>ne')),
-        n.column(n.paragraph('two')),
-      ),
-    ))
-
-    const found = findParentColumn(editor.state.selection.$from)
-    expect(found).toBeTruthy()
-
-    const dragging = {
-      handlePos: found!.pos + found!.node.nodeSize,
-      columnPos: found!.pos,
-      startX: 100,
-      startWidth: 40,
-    }
-
-    editor.view.dispatch(editor.state.tr.setMeta(columnsPluginKey, startColumnDragging(dragging)))
     editor.view.dispatch(
-      editor.state.tr
-        .setNodeMarkup(dragging.columnPos, undefined, {
-          ...found!.node.attrs,
-          width: 60,
-        })
-        .setMeta(columnsPluginKey, updateColumnDragging(dragging)),
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'setActiveHandle',
+        pos: found!.pos,
+      }),
     )
 
-    expect(editor.state.doc.nodeAt(dragging.columnPos)?.attrs.width).toBe(60)
-    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual(dragging)
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(found!.pos)
+
+    editor.commands.removeColumn()
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBeNull()
+  })
+
+  it('should remap active handle when columns shift', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.paragraph('before'),
+      n.columns(
+        n.column(n.paragraph('left<a>')),
+        n.column(n.paragraph('right')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    const columnPos = found!.pos
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'setActiveHandle',
+        pos: columnPos,
+      }),
+    )
+
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(columnPos)
+
+    // Insert text before the columns container. The column should shift.
+    editor.view.dispatch(editor.state.tr.insertText('X', 1))
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(columnPos + 1)
+  })
+
+  it('should set and clear dragging state', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const dragState: ColumnDragState = {
+      startX: 100,
+      columns: [{ width: 250 }, { width: 250 }],
+      totalWidth: 500,
+      leftIndex: 0,
+      minPercent: 4,
+    }
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'startDragging',
+        pos: found!.pos,
+        state: dragState,
+      }),
+    )
+
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual(dragState)
+
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'stopDragging',
+      }),
+    )
+
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toBeNull()
+  })
+
+  it('should cancel dragging when the document changes during drag', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    const dragState: ColumnDragState = {
+      startX: 100,
+      columns: [{ width: 250 }, { width: 250 }],
+      totalWidth: 500,
+      leftIndex: 0,
+      minPercent: 4,
+    }
+
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'startDragging',
+        pos: found!.pos,
+        state: dragState,
+      }),
+    )
+
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual(dragState)
+
+    // A document change during a drag should cancel the drag.
+    editor.view.dispatch(editor.state.tr.insertText('X', found!.start + 1))
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toBeNull()
+  })
+
+  it('should keep activeHandle during drag', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(
+      n.columns(
+        n.column(n.paragraph('o<a>ne')),
+        n.column(n.paragraph('two')),
+      ),
+    ))
+
+    const found = findParentColumn(editor.state.selection.$from)
+    expect(found).toBeTruthy()
+
+    const columnPos = found!.pos
+
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'setActiveHandle',
+        pos: columnPos,
+      }),
+    )
+
+    const dragState: ColumnDragState = {
+      startX: 100,
+      columns: [{ width: 250 }, { width: 250 }],
+      totalWidth: 500,
+      leftIndex: 0,
+      minPercent: 4,
+    }
+
+    editor.view.dispatch(
+      editor.state.tr.setMeta(columnsPluginKey, {
+        type: 'startDragging',
+        pos: columnPos,
+        state: dragState,
+      }),
+    )
+
+    // activeHandle should be preserved during drag.
+    expect(getColumnsRuntimeState(editor.state)?.activeHandle).toBe(columnPos)
+    expect(getColumnsRuntimeState(editor.state)?.dragging).toEqual(dragState)
   })
 })

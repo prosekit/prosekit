@@ -4,9 +4,12 @@
   max-width: 100%;
   margin: 0.5rem 0;
   gap: var(--prosekit-columns-gap, 1rem);
+  position: relative;
+
 }
 
 .ProseMirror .prosekit-column {
+  position: relative;
   box-sizing: border-box;
   flex: var(--prosekit-column-width, 1) 1 0;
   width: auto;
@@ -27,4 +30,64 @@
 
 .ProseMirror .prosekit-column > *:last-child {
   margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Resize handle (rendered as a widget decoration inside the column)  */
+/* ------------------------------------------------------------------ */
+
+.prosekit-column-resize-handle {
+  position: absolute;
+  right: calc(0px - var(--prosekit-columns-gap, 1rem) / 2 - 6px);
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  cursor: col-resize;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+/* Show the handle when the editor is in column-resizing mode. */
+.ProseMirror.prosekit-column-resizing .prosekit-column-resize-handle {
+  opacity: 1;
+}
+
+/* During an active drag, keep the handle visible regardless. */
+.prosekit-column-resize-handle-dragging {
+  opacity: 1;
+}
+
+/* Thin visual line at the column boundary. */
+.prosekit-column-resize-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #9ca3af;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* + button for adding a column at the boundary. */
+.prosekit-column-resize-add {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }

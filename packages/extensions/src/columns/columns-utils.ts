@@ -3,12 +3,15 @@ import type { ResolvedPos } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import type { ColumnAttrs, ColumnBoundaryHit, ColumnLayoutInfo, FindColumnResult, FindColumnsResult } from './columns-types.ts'
+import type { ColumnAttrs, ColumnLayoutInfo, FindColumnResult, FindColumnsResult } from './columns-types.ts'
 
-const TOTAL_COLUMN_WIDTH = 100
+export const TOTAL_COLUMN_WIDTH = 100
 const COLUMN_WIDTH_PRECISION = 1000
 
-function roundColumnWidth(width: number): number {
+/**
+ * Round a column width percentage to a fixed precision.
+ */
+export function roundColumnWidth(width: number): number {
   return Math.round(width * COLUMN_WIDTH_PRECISION) / COLUMN_WIDTH_PRECISION
 }
 
@@ -155,12 +158,15 @@ export function normalizeColumnWidths(
 /**
  * Detect whether a pointer event is close enough to a rendered column boundary
  * to activate a resize handle.
+ *
+ * @returns The document position of the left-side column at the boundary, or
+ *          `null` when no boundary is close enough.
  */
 export function findColumnBoundaryAtCoords(
   view: EditorView,
   event: MouseEvent,
   options: { handleWidth?: number } = {},
-): ColumnBoundaryHit | null {
+): number | null {
   const handleWidth = options.handleWidth ?? 6
   const container = event.composedPath().find((el) => (el as HTMLElement).classList?.contains('prosekit-columns')) as
     | HTMLElement
@@ -183,12 +189,7 @@ export function findColumnBoundaryAtCoords(
     const $column = view.state.doc.resolve(columnPos + 1)
     const found = findParentColumn($column)
     if (!found) continue
-    return {
-      pos: found.pos + found.node.nodeSize,
-      columnPos: found.pos,
-      containerPos: found.containerPos,
-      index: found.index,
-    }
+    return found.pos
   }
 
   return null

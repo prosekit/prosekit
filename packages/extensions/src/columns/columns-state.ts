@@ -1,47 +1,29 @@
 import type { Transaction } from '@prosekit/pm/state'
 
-import type { ColumnDragSession, ColumnHandleInfo, ColumnsRuntimeState } from './columns-types.ts'
+import type { ColumnDragState, ColumnsRuntimeState } from './columns-types.ts'
 
 export type ColumnsMetaAction =
-  | { type: 'setActiveHandle'; handle: ColumnHandleInfo | null }
-  | { type: 'startDragging'; dragging: ColumnDragSession }
-  | { type: 'updateDragging'; dragging: ColumnDragSession }
+  | { type: 'setActiveHandle'; pos: number | null }
+  | { type: 'startDragging'; pos: number; state: ColumnDragState }
   | { type: 'stopDragging' }
 
-function remapHandle(
-  handle: ColumnHandleInfo | null,
-  tr: Transaction,
-): ColumnHandleInfo | null {
-  if (!handle) return null
-  const handleResult = tr.mapping.mapResult(handle.pos)
-  const columnResult = tr.mapping.mapResult(handle.columnPos)
-  const containerResult = tr.mapping.mapResult(handle.containerPos)
-  if (handleResult.deleted || columnResult.deleted || containerResult.deleted) {
-    return null
-  }
-  return {
-    ...handle,
-    pos: handleResult.pos,
-    columnPos: columnResult.pos,
-    containerPos: containerResult.pos,
+function isValidColumn(doc: Transaction['doc'], pos: number): boolean {
+  try {
+    return doc.nodeAt(pos)?.type.name === 'column'
+  } catch {
+    return false
   }
 }
 
-function remapDragging(
-  dragging: ColumnDragSession | null,
+function remapActiveHandle(
+  pos: number | null,
   tr: Transaction,
-): ColumnDragSession | null {
-  if (!dragging) return null
-  const handleResult = tr.mapping.mapResult(dragging.handlePos)
-  const columnResult = tr.mapping.mapResult(dragging.columnPos)
-  if (handleResult.deleted || columnResult.deleted) {
-    return null
-  }
-  return {
-    ...dragging,
-    handlePos: handleResult.pos,
-    columnPos: columnResult.pos,
-  }
+): number | null {
+  if (pos == null) return null
+  const result = tr.mapping.mapResult(pos)
+  if (result.deleted) return null
+  const mapped = result.pos
+  return isValidColumn(tr.doc, mapped) ? mapped : null
 }
 
 export function applyColumnsMetaAction(
@@ -51,14 +33,14 @@ export function applyColumnsMetaAction(
 ): ColumnsRuntimeState {
   if (action?.type === 'setActiveHandle') {
     return {
-      activeHandle: action.handle,
+      activeHandle: action.pos,
       dragging: prev.dragging,
     }
   }
-  if (action?.type === 'startDragging' || action?.type === 'updateDragging') {
+  if (action?.type === 'startDragging') {
     return {
-      activeHandle: prev.activeHandle,
-      dragging: action.dragging,
+      activeHandle: action.pos,
+      dragging: action.state,
     }
   }
   if (action?.type === 'stopDragging') {
@@ -67,9 +49,15 @@ export function applyColumnsMetaAction(
       dragging: null,
     }
   }
+
+  // No explicit meta action — remap positions when the document changes.
   if (!tr.docChanged) return prev
+
+  // Cancel the drag if the document changes during a drag gesture.
+  const dragging = prev.dragging && tr.docChanged ? null : prev.dragging
+
   return {
-    activeHandle: remapHandle(prev.activeHandle, tr),
-    dragging: remapDragging(prev.dragging, tr),
+    activeHandle: remapActiveHandle(prev.activeHandle, tr),
+    dragging,
   }
 }

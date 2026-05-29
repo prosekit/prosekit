@@ -2,7 +2,7 @@ import { union, type Union } from '@prosekit/core'
 
 import { defineColumnsCommands, type ColumnsCommandsExtension } from './columns-commands.ts'
 import { defineColumnsPlugin, type ColumnsPluginExtension } from './columns-plugin.ts'
-import { defineColumnSpec, defineColumnsSpec, type ColumnSpecExtension, type ColumnsSpecExtension } from './columns-spec.ts'
+import { defineColumnNodeView, defineColumnSpec, defineColumnsSpec, type ColumnNodeViewExtension, type ColumnSpecExtension, type ColumnsSpecExtension } from './columns-spec.ts'
 import type { ColumnsOptions } from './columns-types.ts'
 
 /**
@@ -12,6 +12,7 @@ export type ColumnsExtension = Union<
   [
     ColumnsSpecExtension,
     ColumnSpecExtension,
+    ColumnNodeViewExtension,
     ColumnsCommandsExtension,
     ColumnsPluginExtension,
   ]
@@ -31,7 +32,10 @@ export function defineColumns(options: ColumnsOptions = {}): ColumnsExtension {
   return union(
     defineColumnsSpec(),
     defineColumnSpec(),
-    defineColumnsPlugin(),
+    defineColumnNodeView(),
+    defineColumnsPlugin({
+      handleWidth: options.handleWidth,
+    }),
     defineColumnsCommands(options),
   )
 }

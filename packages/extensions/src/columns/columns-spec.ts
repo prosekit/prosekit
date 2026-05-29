@@ -1,4 +1,6 @@
-import { defineNodeSpec, type Extension } from '@prosekit/core'
+import { defineNodeSpec, defineNodeView, type Extension } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
+import type { NodeViewConstructor } from '@prosekit/pm/view'
 
 import type { ColumnAttrs, ColumnsAttrs } from './columns-types.ts'
 
@@ -19,6 +21,11 @@ export type ColumnSpecExtension = Extension<{
     column: ColumnAttrs
   }
 }>
+
+/**
+ * @internal
+ */
+export type ColumnNodeViewExtension = Extension
 
 /**
  * Define the `columns` container node spec.
@@ -87,4 +94,55 @@ export function defineColumnSpec(): ColumnSpecExtension {
       return ['div', { class: 'prosekit-column', style }, 0]
     },
   })
+}
+
+/**
+ * Apply a column's width attribute to its DOM element as a CSS custom property.
+ */
+function applyColumnWidth(dom: HTMLElement, node: ProseMirrorNode): void {
+  const width = (node.attrs as ColumnAttrs).width
+  if (width != null) {
+    dom.style.setProperty('--prosekit-column-width', String(width))
+  } else {
+    dom.style.removeProperty('--prosekit-column-width')
+  }
+}
+
+/**
+ * Define a node view for the `column` node.
+ *
+ * The column resize plugin previews a drag by writing the new width directly to
+ * each column's `--prosekit-column-width` style. Without this node view,
+ * ProseMirror's `DOMObserver` treats those style mutations as external DOM
+ * changes, marks the node dirty, and redraws it from the stored `width`
+ * attribute — reverting the preview on every mouse move. The result is a handle
+ * that cannot move smoothly and a width that never visibly changes mid-drag.
+ *
+ * `ignoreMutation` tells ProseMirror to ignore attribute mutations on the
+ * column element (the live preview), while content edits still arrive as
+ * `childList`/`characterData` mutations and are processed normally. `update`
+ * keeps the same DOM element across transactions and re-syncs the width from
+ * the node's attributes once the drag is committed.
+ */
+export function defineColumnNodeView(): ColumnNodeViewExtension {
+  const constructor: NodeViewConstructor = (node) => {
+    const dom = document.createElement('div')
+    dom.className = 'prosekit-column'
+    applyColumnWidth(dom, node)
+
+    return {
+      dom,
+      contentDOM: dom,
+      update: (updatedNode) => {
+        if (updatedNode.type.name !== 'column') return false
+        applyColumnWidth(dom, updatedNode)
+        return true
+      },
+      ignoreMutation: (record: MutationRecord) => {
+        return record.type === 'attributes' && record.target === dom
+      },
+    }
+  }
+
+  return defineNodeView({ name: 'column', constructor })
 }

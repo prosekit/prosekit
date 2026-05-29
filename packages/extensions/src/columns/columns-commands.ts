@@ -4,7 +4,8 @@ import type { Command } from '@prosekit/pm/state'
 
 import type { ColumnAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
 import { findParentColumn, findParentColumns, getColumnLayoutAtPos, getEqualColumnWidths, normalizeColumnWidths } from './columns-utils.ts'
-
+import { ReplaceAroundStep } from '@prosekit/pm/transform'
+import { Slice } from '@prosekit/pm/model'
 function createColumnNode(
   columnType: NodeType,
   attrs: ColumnAttrs,
@@ -160,9 +161,47 @@ const removeColumnCommand: Command = (state, dispatch) => {
   // the column's content so user content isn't lost.
   if (container.childCount <= 2) {
     if (!dispatch) return true
+    // const remainingIndex = found.index === 0 ? 1 : 0
+    // const content = container.child(remainingIndex)?.content ?? Fragment.empty
+    // dispatch(state.tr.replaceWith(found.containerPos, found.containerPos + container.nodeSize, content).scrollIntoView())
+    //
     const remainingIndex = found.index === 0 ? 1 : 0
-    const content = container.child(remainingIndex)?.content ?? Fragment.empty
-    dispatch(state.tr.replaceWith(found.containerPos, found.containerPos + container.nodeSize, content).scrollIntoView())
+    const remainingNode = container.child(remainingIndex)
+    if (!remainingNode) return false
+
+    let remainingNodePos = found.containerPos + 1
+    if (remainingIndex === 1) {
+      remainingNodePos += container.child(0).nodeSize
+    }
+
+    const origFrom = found.containerPos
+    const origTo = found.containerPos + container.nodeSize
+    const origGapFrom = remainingNodePos + 1
+    const origGapTo = origGapFrom + remainingNode.content.size
+
+    const tr = state.tr
+
+    tr.delete(found.pos, found.pos + found.node.nodeSize)
+
+    const from = tr.mapping.map(origFrom)
+    const to = tr.mapping.map(origTo)
+    const gapFrom = tr.mapping.map(origGapFrom)
+    const gapTo = tr.mapping.map(origGapTo)
+
+    const unwrapStep = new ReplaceAroundStep(
+      from,
+      to,
+      gapFrom,
+      gapTo,
+      Slice.empty,
+      0,
+      true // 此时结构性校验完美通过！
+    )
+
+    tr.step(unwrapStep)
+
+    dispatch(tr.scrollIntoView())
+
     return true
   }
   if (!dispatch) return true

@@ -1,11 +1,11 @@
 import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
 import { Fragment, type NodeType, type ProseMirrorNode } from '@prosekit/pm/model'
+import { Slice } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
+import { ReplaceAroundStep } from '@prosekit/pm/transform'
 
 import type { ColumnAttrs, ColumnsOptions, InsertColumnsOptions } from './columns-types.ts'
 import { findParentColumn, findParentColumns, getColumnLayoutAtPos, getEqualColumnWidths, normalizeColumnWidths } from './columns-utils.ts'
-import { ReplaceAroundStep } from '@prosekit/pm/transform'
-import { Slice } from '@prosekit/pm/model'
 function createColumnNode(
   columnType: NodeType,
   attrs: ColumnAttrs,
@@ -195,7 +195,7 @@ const removeColumnCommand: Command = (state, dispatch) => {
       gapTo,
       Slice.empty,
       0,
-      true // 此时结构性校验完美通过！
+      true, // 此时结构性校验完美通过！
     )
 
     tr.step(unwrapStep)

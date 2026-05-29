@@ -162,8 +162,8 @@ describe('columns commands', () => {
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(
         n.columns(
-          n.column({ width: 12.5 }, n.paragraph('one')),
-          n.column({ width: 12.5 }, n.paragraph()),
+          n.column(n.paragraph('one')),
+          n.column({ width: 25 }, n.paragraph()),
           n.column({ width: 25 }, n.paragraph('two')),
         ),
       ).toJSON(),
@@ -184,7 +184,7 @@ describe('columns commands', () => {
         n.columns(
           n.column({ width: 25 }, n.paragraph('one')),
           n.column({ width: 25 }, n.paragraph()),
-          n.column({ width: 1 }, n.paragraph('two')),
+          n.column(n.paragraph('two')),
         ),
       ).toJSON(),
     )
@@ -222,7 +222,7 @@ describe('columns commands', () => {
         n.columns(
           n.column({ width: 25 }, n.paragraph('one')),
           n.column({ width: 25 }, n.paragraph()),
-          n.column({ width: 1 }, n.paragraph('two')),
+          n.column(n.paragraph('two')),
         ),
       ).toJSON(),
     )

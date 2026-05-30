@@ -149,7 +149,7 @@ describe('columns commands', () => {
     })
     editor.set(n.doc(
       n.columns(
-       n.column(n.paragraph('one')),
+        n.column(n.paragraph('one')),
         n.column(n.paragraph('tw<a>o')),
       ),
     ))

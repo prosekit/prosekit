@@ -125,7 +125,6 @@ function applyColumnWidth(dom: HTMLElement, node: ProseMirrorNode): void {
  * the node's attributes once the drag is committed.
  */
 export function defineColumnNodeView(): ColumnNodeViewExtension {
-
   return defineNodeView({
     name: 'column',
     constructor: (node) => {
@@ -145,6 +144,6 @@ export function defineColumnNodeView(): ColumnNodeViewExtension {
           return record.type === 'attributes' && record.target === dom
         },
       }
-    }
+    },
   })
 }

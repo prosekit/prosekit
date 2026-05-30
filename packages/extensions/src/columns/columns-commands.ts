@@ -1,5 +1,5 @@
 import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
-import { Fragment, type NodeType, type ProseMirrorNode, Slice } from '@prosekit/pm/model'
+import { Fragment, Slice, type NodeType, type ProseMirrorNode } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 import { ReplaceAroundStep } from '@prosekit/pm/transform'
 

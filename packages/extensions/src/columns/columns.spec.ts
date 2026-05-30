@@ -401,8 +401,7 @@ describe('columns plugin state', () => {
     expect(container).toBeInstanceOf(HTMLElement)
     expect(columns).toHaveLength(2)
 
-    const makeRect = (left: number, width: number): DOMRect =>
-      DOMRect.fromRect({ x: left, y: 0, width, height: 100 })
+    const makeRect = (left: number, width: number): DOMRect => DOMRect.fromRect({ x: left, y: 0, width, height: 100 })
 
     Object.defineProperty(container as HTMLElement, 'getBoundingClientRect', {
       configurable: true,

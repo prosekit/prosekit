@@ -10,13 +10,24 @@
 .ProseMirror .prosekit-column {
   box-sizing: border-box;
   position: relative;
-  flex: var(--prosekit-column-width, 1) 1 0;
-  width: auto;
   min-width: 0;
   min-height: 72px;
   padding: 0.5rem 0.75rem;
   border-radius: 0.375rem;
   overflow-wrap: anywhere;
+}
+
+/* 1. 默认状态：没有任何拖拽时，开启均分 */
+.ProseMirror .prosekit-column {
+  /* flex-grow: 1, flex-shrink: 1, flex-basis: 0% -> 完美均分容器 */
+  flex: 1 1 0%;
+}
+
+/* 2. 受控状态：只要 DOM 的 style 里包含了宽度变量，就锁定它 */
+.ProseMirror .prosekit-column[style*="--prosekit-column-width"] {
+  /* 此时必须关闭弹性和压缩，绝对服从变量 */
+  flex: 0 0 calc(var(--prosekit-column-width) * 1%) !important;
+  max-width: calc(var(--prosekit-column-width) * 1%) !important;
 }
 
 .ProseMirror .prosekit-column:hover {

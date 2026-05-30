@@ -88,17 +88,21 @@ function snapshotColumns(container: Element, leftIndex: number): {
   totalWidth: number
   leftIndex: number
   minPct: number
+  containerWidth: number
 } | null {
   const els = getColumnElements(container)
   if (leftIndex < 0 || leftIndex >= els.length - 1) return null
 
   const measured = els.map((el) => ({ width: el.getBoundingClientRect().width }))
   const totalWidth = measured.reduce((a, b) => a + b.width, 0)
+
+  const containerWidth = container.getBoundingClientRect().width
+
   if (totalWidth <= 0) return null
 
   const minPct = Math.min(DEFAULT_MIN_COLUMN_PERCENT, TOTAL_COLUMN_WIDTH / els.length / 2)
 
-  return { columns: measured, totalWidth, leftIndex, minPct }
+  return { columns: measured, totalWidth, leftIndex, minPct, containerWidth }
 }
 
 // ---------------------------------------------------------------------------
@@ -117,19 +121,19 @@ function getResizedColumnWidths(
   clientX: number,
   minColumnPercent: number,
 ): number[] {
-  const { startX, totalWidth, leftIndex, columns } = dragState
+  const { startX, totalWidth, leftIndex, columns, containerWidth } = dragState
 
   // Compute the delta in percentage units.
-  const deltaPct = (clientX - startX) / totalWidth * TOTAL_COLUMN_WIDTH
+  const deltaPct = (clientX - startX) / containerWidth * TOTAL_COLUMN_WIDTH
 
   // The pair of columns being resized.
   const leftPx = columns[leftIndex].width
   const rightPx = columns[leftIndex + 1].width
-  const pairPct = (leftPx + rightPx) / totalWidth * TOTAL_COLUMN_WIDTH
+  const pairPct = (leftPx + rightPx) / containerWidth * TOTAL_COLUMN_WIDTH
 
   const min = Math.min(minColumnPercent, dragState.minPercent, pairPct / 2)
   const max = pairPct - min
-  const curLeftPct = leftPx / totalWidth * TOTAL_COLUMN_WIDTH
+  const curLeftPct = leftPx / containerWidth * TOTAL_COLUMN_WIDTH
 
   const newLeftPct = roundPct(Math.max(min, Math.min(max, curLeftPct + deltaPct)))
   const newRightPct = roundPct(pairPct - newLeftPct)
@@ -149,15 +153,23 @@ function startDrag(
   columnEls: HTMLElement[],
   minColumnPercent: number,
 ): DragContext {
-  const onMove = (event: MouseEvent) => {
-    const state = getColumnsRuntimeState(view.state)
-    if (!state?.dragging) return
+  let ticking = false
 
-    // Normalize and apply to DOM as a live preview.
-    const normalized = getResizedColumnWidths(state.dragging, event.clientX, minColumnPercent)
-    for (const [i, element] of normalized.entries()) {
-      columnEls[i]?.style.setProperty('--prosekit-column-width', String(element))
-    }
+  const onMove = (event: MouseEvent) => {
+    if (ticking) return
+    ticking = true
+
+    window.requestAnimationFrame(() => {
+      const state = getColumnsRuntimeState(view.state)
+      if (!state?.dragging) return
+
+      // Normalize and apply to DOM as a live preview.
+      const normalized = getResizedColumnWidths(state.dragging, event.clientX, minColumnPercent)
+      for (const [i, element] of normalized.entries()) {
+        columnEls[i]?.style.setProperty('--prosekit-column-width', String(element))
+      }
+      ticking = false
+    })
   }
 
   const onEnd = (event: MouseEvent) => {
@@ -343,6 +355,7 @@ function beginColumnDrag(
     totalWidth: snap.totalWidth,
     leftIndex: snap.leftIndex,
     minPercent: snap.minPct,
+    containerWidth: snap.containerWidth,
   }
 
   view.dispatch(

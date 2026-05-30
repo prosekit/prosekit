@@ -121,6 +121,8 @@ export interface ColumnDragState {
    * container.
    */
   minPercent: number
+
+  containerWidth: number
 }
 
 /**

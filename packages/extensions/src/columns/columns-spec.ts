@@ -1,6 +1,6 @@
 import { defineNodeSpec, defineNodeView, type Extension } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import type { NodeViewConstructor } from '@prosekit/pm/view'
+import type { ViewMutationRecord } from '@prosekit/pm/view'
 
 import type { ColumnAttrs, ColumnsAttrs } from './columns-types.ts'
 
@@ -125,24 +125,26 @@ function applyColumnWidth(dom: HTMLElement, node: ProseMirrorNode): void {
  * the node's attributes once the drag is committed.
  */
 export function defineColumnNodeView(): ColumnNodeViewExtension {
-  const constructor: NodeViewConstructor = (node) => {
-    const dom = document.createElement('div')
-    dom.className = 'prosekit-column'
-    applyColumnWidth(dom, node)
 
-    return {
-      dom,
-      contentDOM: dom,
-      update: (updatedNode) => {
-        if (updatedNode.type.name !== 'column') return false
-        applyColumnWidth(dom, updatedNode)
-        return true
-      },
-      ignoreMutation: (record: MutationRecord) => {
-        return record.type === 'attributes' && record.target === dom
-      },
+  return defineNodeView({
+    name: 'column',
+    constructor: (node) => {
+      const dom = document.createElement('div')
+      dom.className = 'prosekit-column'
+      applyColumnWidth(dom, node)
+
+      return {
+        dom,
+        contentDOM: dom,
+        update: (updatedNode) => {
+          if (updatedNode.type.name !== 'column') return false
+          applyColumnWidth(dom, updatedNode)
+          return true
+        },
+        ignoreMutation: (record: ViewMutationRecord) => {
+          return record.type === 'attributes' && record.target === dom
+        },
+      }
     }
-  }
-
-  return defineNodeView({ name: 'column', constructor })
+  })
 }

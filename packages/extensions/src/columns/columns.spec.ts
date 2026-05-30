@@ -8,8 +8,8 @@ import { setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
 
 import { columnsPluginKey, getColumnsRuntimeState } from './columns-plugin.ts'
-import { findParentColumn } from './columns-utils.ts'
 import type { ColumnDragState } from './columns-types.ts'
+import { findParentColumn } from './columns-utils.ts'
 import { defineColumns } from './columns.ts'
 
 function setup(options?: Parameters<typeof defineColumns>[0]) {
@@ -149,7 +149,7 @@ describe('columns commands', () => {
     })
     editor.set(n.doc(
       n.columns(
-        n.column(n.paragraph('one')),
+       n.column(n.paragraph('one')),
         n.column(n.paragraph('tw<a>o')),
       ),
     ))
@@ -373,7 +373,7 @@ describe('columns keymap', () => {
 })
 
 describe('columns plugin state', () => {
-  it('should resize columns by dragging a column boundary', async () => {
+  it('should resize columns by dragging a column boundary', () => {
     const { editor, n } = setup()
     editor.set(n.doc(
       n.columns(
@@ -398,31 +398,41 @@ describe('columns plugin state', () => {
     const handleRect = (handle as HTMLElement).getBoundingClientRect()
     const dragX = handleRect.left + handleRect.width / 2
     const dragY = handleRect.top + handleRect.height / 2
-
-    ;(handle as HTMLElement).dispatchEvent(new MouseEvent('mousedown', {
-      bubbles: true,
-      clientX: dragX,
-      clientY: dragY,
-    }))
+    ;(handle as HTMLElement).dispatchEvent(
+      new MouseEvent('mousedown', {
+        bubbles: true,
+        clientX: dragX,
+        clientY: dragY,
+      }),
+    )
 
     expect(getColumnsRuntimeState(editor.state)?.dragging).not.toBeNull()
 
-    window.dispatchEvent(new MouseEvent('mousemove', {
-      bubbles: true,
-      clientX: dragX + 40,
-      clientY: dragY,
-    }))
-    window.dispatchEvent(new MouseEvent('mouseup', {
-      bubbles: true,
-      clientX: dragX + 40,
-      clientY: dragY,
-    }))
+    window.dispatchEvent(
+      new MouseEvent('mousemove', {
+        bubbles: true,
+        clientX: dragX + 40,
+        clientY: dragY,
+      }),
+    )
+    window.dispatchEvent(
+      new MouseEvent('mouseup', {
+        bubbles: true,
+        clientX: dragX + 40,
+        clientY: dragY,
+      }),
+    )
 
     const columnsNode = editor.view.state.doc.firstChild
     expect(columnsNode?.type.name).toBe('columns')
 
-    const leftWidth = columnsNode?.child(0).attrs.width
-    const rightWidth = columnsNode?.child(1).attrs.width
+    const getNumericWidth = (index: number): number | undefined => {
+      const width: unknown = columnsNode?.child(index).attrs.width
+      return typeof width === 'number' ? width : undefined
+    }
+
+    const leftWidth = getNumericWidth(0)
+    const rightWidth = getNumericWidth(1)
 
     expect(leftWidth).toBeTypeOf('number')
     expect(rightWidth).toBeTypeOf('number')

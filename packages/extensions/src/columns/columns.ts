@@ -2,7 +2,14 @@ import { union, type Union } from '@prosekit/core'
 
 import { defineColumnsCommands, type ColumnsCommandsExtension } from './columns-commands.ts'
 import { defineColumnsPlugin, type ColumnsPluginExtension } from './columns-plugin.ts'
-import { defineColumnNodeView, defineColumnSpec, defineColumnsSpec, type ColumnNodeViewExtension, type ColumnSpecExtension, type ColumnsSpecExtension } from './columns-spec.ts'
+import {
+  defineColumnNodeView,
+  defineColumnSpec,
+  defineColumnsSpec,
+  type ColumnNodeViewExtension,
+  type ColumnSpecExtension,
+  type ColumnsSpecExtension,
+} from './columns-spec.ts'
 import type { ColumnsOptions } from './columns-types.ts'
 
 /**

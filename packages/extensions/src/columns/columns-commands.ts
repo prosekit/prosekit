@@ -1,6 +1,5 @@
 import { defineCommands, getNodeType, type Extension } from '@prosekit/core'
-import { Fragment, type NodeType, type ProseMirrorNode } from '@prosekit/pm/model'
-import { Slice } from '@prosekit/pm/model'
+import { Fragment, type NodeType, type ProseMirrorNode, Slice } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 import { ReplaceAroundStep } from '@prosekit/pm/transform'
 
@@ -157,14 +156,9 @@ const removeColumnCommand: Command = (state, dispatch) => {
   const container = state.doc.nodeAt(found.containerPos)
   if (!container) return false
 
-  // When removing the last column from a single-column container, unwrap
-  // the column's content so user content isn't lost.
   if (container.childCount <= 2) {
     if (!dispatch) return true
-    // const remainingIndex = found.index === 0 ? 1 : 0
-    // const content = container.child(remainingIndex)?.content ?? Fragment.empty
-    // dispatch(state.tr.replaceWith(found.containerPos, found.containerPos + container.nodeSize, content).scrollIntoView())
-    //
+
     const remainingIndex = found.index === 0 ? 1 : 0
     const remainingNode = container.child(remainingIndex)
     if (!remainingNode) return false

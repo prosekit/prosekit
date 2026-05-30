@@ -6,12 +6,7 @@ import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 import { addColumnAfter as createAddColumnAfter } from './columns-commands.ts'
 import { applyColumnsMetaAction, type ColumnsMetaAction } from './columns-state.ts'
 import type { ColumnAttrs, ColumnDragState, ColumnsRuntimeState } from './columns-types.ts'
-import {
-  findColumnBoundaryAtCoords,
-  findParentColumn,
-  normalizeColumnWidths,
-  TOTAL_COLUMN_WIDTH,
-} from './columns-utils.ts'
+import { findColumnBoundaryAtCoords, findParentColumn, normalizeColumnWidths, TOTAL_COLUMN_WIDTH } from './columns-utils.ts'
 
 export const columnsPluginKey: PluginKey<ColumnsRuntimeState> = new PluginKey<ColumnsRuntimeState>('columns')
 
@@ -160,8 +155,8 @@ function startDrag(
 
     // Normalize and apply to DOM as a live preview.
     const normalized = getResizedColumnWidths(state.dragging, event.clientX, minColumnPercent)
-    for (let i = 0; i < normalized.length; i++) {
-      columnEls[i]?.style.setProperty('--prosekit-column-width', String(normalized[i]))
+    for (const [i, element] of normalized.entries()) {
+      columnEls[i]?.style.setProperty('--prosekit-column-width', String(element))
     }
   }
 
@@ -236,10 +231,13 @@ function handleMouseMove(
   if (columnPos === state.activeHandle) return false
 
   view.dispatch(
-    view.state.tr.setMeta(columnsPluginKey, {
-      type: 'setActiveHandle',
-      pos: columnPos,
-    } satisfies ColumnsMetaAction),
+    view.state.tr.setMeta(
+      columnsPluginKey,
+      {
+        type: 'setActiveHandle',
+        pos: columnPos,
+      } satisfies ColumnsMetaAction,
+    ),
   )
   return false
 }
@@ -251,10 +249,13 @@ function handleMouseLeave(view: EditorView) {
   if (state.activeHandle == null) return false
 
   view.dispatch(
-    view.state.tr.setMeta(columnsPluginKey, {
-      type: 'setActiveHandle',
-      pos: null,
-    } satisfies ColumnsMetaAction),
+    view.state.tr.setMeta(
+      columnsPluginKey,
+      {
+        type: 'setActiveHandle',
+        pos: null,
+      } satisfies ColumnsMetaAction,
+    ),
   )
   return false
 }
@@ -345,11 +346,14 @@ function beginColumnDrag(
   }
 
   view.dispatch(
-    view.state.tr.setMeta(columnsPluginKey, {
-      type: 'startDragging',
-      pos: columnPos,
-      state: dragState,
-    } satisfies ColumnsMetaAction),
+    view.state.tr.setMeta(
+      columnsPluginKey,
+      {
+        type: 'startDragging',
+        pos: columnPos,
+        state: dragState,
+      } satisfies ColumnsMetaAction,
+    ),
   )
 
   startDrag(view, columnEls, minColumnPercent)
@@ -479,17 +483,18 @@ export function defineColumnsPlugin(options: ColumnsPluginOptions = {}): Columns
         },
       },
       props: {
-        attributes: (state) => {
+        attributes: (state): Record<string, string> => {
           const runtime = getColumnsRuntimeState(state)
-          return runtime?.activeHandle != null
-            ? { class: 'prosekit-column-resizing' }
-            : ({} as Record<string, string>)
+          if (runtime?.activeHandle != null) {
+            return { class: 'prosekit-column-resizing' }
+          }
+
+          return {}
         },
         handleDOMEvents: {
           mousemove: (view, event) => handleMouseMove(view, event, handleWidth),
           mouseleave: (view) => handleMouseLeave(view),
-          mousedown: (view, event) =>
-            handleMouseDown(view, event, handleWidth, minColumnPercent, defaultColumnWidth),
+          mousedown: (view, event) => handleMouseDown(view, event, handleWidth, minColumnPercent, defaultColumnWidth),
         },
         decorations: (state) =>
           columnResizeDecorations(state, {

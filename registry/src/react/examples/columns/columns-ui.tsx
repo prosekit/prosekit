@@ -1,5 +1,7 @@
 'use client'
 
+import 'prosekit/extensions/columns/style.css'
+
 import type { Editor } from 'prosekit/core'
 import { findParentColumn } from 'prosekit/extensions/columns'
 import { useEditor, useEditorDerivedValue } from 'prosekit/react'
@@ -8,7 +10,6 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import Button from '../../ui/button/button.tsx'
 
 import type { EditorExtension } from './extension.ts'
-import 'prosekit/extensions/columns/style.css'
 
 interface ColumnMenuRect {
   x: number
@@ -96,15 +97,13 @@ export default function ColumnsUi() {
 
   const menuState = useEditorDerivedValue(
     useMemo(() => {
-      return (currentEditor: Editor<EditorExtension>) =>
-        getColumnMenuState(currentEditor)
+      return (currentEditor: Editor<EditorExtension>) => getColumnMenuState(currentEditor)
     }, []),
   )
 
   const overlayBounds = useEditorDerivedValue(
     useMemo(() => {
-      return (currentEditor: Editor<EditorExtension>) =>
-        getOverlayBounds(currentEditor)
+      return (currentEditor: Editor<EditorExtension>) => getOverlayBounds(currentEditor)
     }, []),
   )
 
@@ -139,10 +138,12 @@ export default function ColumnsUi() {
       ref={inlineMenuRef}
       style={{
         position: 'fixed',
-        left: `${Math.min(
-          Math.max(menuState.rect.x, overlayBounds.left + 72),
-          overlayBounds.right - 72,
-        )}px`,
+        left: `${
+          Math.min(
+            Math.max(menuState.rect.x, overlayBounds.left + 72),
+            overlayBounds.right - 72,
+          )
+        }px`,
         top: `${Math.max(menuState.rect.y - 40, overlayBounds.top + 8)}px`,
         transform: 'translate(-50%, -100%)',
         zIndex: 21,

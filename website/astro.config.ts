@@ -1,4 +1,4 @@
-import { unified } from '@astrojs/markdown-remark'
+import { satteri } from '@astrojs/markdown-satteri'
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -14,7 +14,6 @@ import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
 import { satteriResolveMarkdownLinks } from 'rehype-resolve-markdown-links/satteri'
 import starlightThemeNova from 'starlight-theme-nova'
 import wasm from 'vite-plugin-wasm'
-import { satteri } from '@astrojs/markdown-satteri';
 
 import { version } from '../packages/prosekit/package.json'
 
@@ -162,7 +161,7 @@ const config: AstroUserConfig = {
     processor: satteri({
       features: {
         // Disable smartypants to prevent converting "..." into "…"
-        smartPunctuation: false
+        smartPunctuation: false,
       },
 
       hastPlugins: [

@@ -38,5 +38,7 @@ trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 7 days
 
+trustLockfile: true
+
 minimumReleaseAgeExclude:
   - prosemirror-model@1.25.7

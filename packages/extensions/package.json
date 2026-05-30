@@ -132,7 +132,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "diffable-html-snapshot": "^0.2.0",
-    "katex": "^0.16.47",
+    "katex": "^0.17.0",
     "loro-crdt": "^1.12.3",
     "loro-prosemirror": "^0.4.3",
     "rehype-parse": "^9.0.1",

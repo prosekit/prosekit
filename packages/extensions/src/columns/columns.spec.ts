@@ -395,9 +395,30 @@ describe('columns plugin state', () => {
     const handle = editor.view.dom.querySelector('.prosekit-column-resize-handle')
     expect(handle).toBeInstanceOf(HTMLElement)
 
-    const handleRect = (handle as HTMLElement).getBoundingClientRect()
-    const dragX = handleRect.left + handleRect.width / 2
-    const dragY = handleRect.top + handleRect.height / 2
+    const container = editor.view.dom.querySelector('.prosekit-columns')
+    const columns = Array.from(editor.view.dom.querySelectorAll('.prosekit-column'))
+
+    expect(container).toBeInstanceOf(HTMLElement)
+    expect(columns).toHaveLength(2)
+
+    const makeRect = (left: number, width: number): DOMRect =>
+      DOMRect.fromRect({ x: left, y: 0, width, height: 100 })
+
+    Object.defineProperty(container as HTMLElement, 'getBoundingClientRect', {
+      configurable: true,
+      value: () => makeRect(0, 200),
+    })
+    Object.defineProperty(columns[0] as HTMLElement, 'getBoundingClientRect', {
+      configurable: true,
+      value: () => makeRect(0, 100),
+    })
+    Object.defineProperty(columns[1] as HTMLElement, 'getBoundingClientRect', {
+      configurable: true,
+      value: () => makeRect(100, 100),
+    })
+
+    const dragX = 100
+    const dragY = 50
     ;(handle as HTMLElement).dispatchEvent(
       new MouseEvent('mousedown', {
         bubbles: true,

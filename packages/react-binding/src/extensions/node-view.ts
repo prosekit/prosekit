@@ -29,5 +29,7 @@ export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
   return defineNodeViewMetadata(options.name, options.component, {
     stopEvent: options.stopEvent,
     ignoreMutation: options.ignoreMutation,
+    selectNode: options.selectNode,
+    deselectNode: options.deselectNode,
   })
 }

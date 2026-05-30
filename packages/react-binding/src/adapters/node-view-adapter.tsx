@@ -1,5 +1,5 @@
 import type { NodeViewComponentProps as ReactProseMirrorNodeViewComponentProps } from '@handlewithcare/react-prosemirror'
-import { useIgnoreMutation, useIsNodeSelected, useStopEvent } from '@handlewithcare/react-prosemirror'
+import { useIgnoreMutation, useIsNodeSelected, useSelectNode, useStopEvent } from '@handlewithcare/react-prosemirror'
 import { EditorNotFoundError } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
@@ -8,7 +8,7 @@ import type { ComponentType, HTMLAttributes, Ref } from 'react'
 import { createElement, useMemo } from 'react'
 
 import { useEditorContext } from '../contexts/editor-context.ts'
-import type { ReactBindingEditor } from '../editor/react-binding-editor.ts'
+import { createEditorViewProxy } from './view-proxy.ts'
 
 /**
  * Event handlers that control how the editor reacts to DOM events and mutations
@@ -26,6 +26,14 @@ export interface ReactNodeViewEventOptions {
    * Mutations for which this returns `true` are not handled by the editor.
    */
   ignoreMutation?: (mutation: ViewMutationRecord) => boolean
+  /**
+   * Called when the node is selected.
+   */
+  selectNode?: () => void
+  /**
+   * Called when the node is deselected.
+   */
+  deselectNode?: () => void
 }
 
 export interface ReactNodeViewProps {
@@ -53,30 +61,6 @@ export interface ReactNodeViewProps {
 
 export type ReactNodeViewComponent = ComponentType<ReactNodeViewProps>
 
-function createEditorViewProxy(editor: ReactBindingEditor): EditorView {
-  return new Proxy({} as EditorView, {
-    get(_target, prop) {
-      const view = editor.view
-      const value = Reflect.get(view, prop)
-
-      if (typeof value === 'function') {
-        return value.bind(view)
-      }
-
-      return value
-    },
-    has(_target, prop) {
-      return prop in editor.view
-    },
-    ownKeys() {
-      return Reflect.ownKeys(editor.view)
-    },
-    getOwnPropertyDescriptor(_target, prop) {
-      return Object.getOwnPropertyDescriptor(editor.view, prop)
-    },
-  })
-}
-
 export function adaptNodeView(
   ProsekitComponent: ReactNodeViewComponent,
   options?: ReactNodeViewEventOptions,
@@ -99,6 +83,14 @@ export function adaptNodeView(
     const ignoreMutation = options?.ignoreMutation
     useStopEvent((_view, event) => (stopEvent ? stopEvent(event) : false))
     useIgnoreMutation((_view, mutation) => (ignoreMutation ? ignoreMutation(mutation) : false))
+
+    // Wire select/deselect callbacks via react-prosemirror's useSelectNode hook.
+    const selectNode = options?.selectNode
+    const deselectNode = options?.deselectNode
+    useSelectNode(
+      () => selectNode?.(),
+      () => deselectNode?.(),
+    )
 
     const adaptedProps: ReactNodeViewProps = {
       contentRef: nodeProps.contentDOMRef as (element: HTMLElement | null) => void,

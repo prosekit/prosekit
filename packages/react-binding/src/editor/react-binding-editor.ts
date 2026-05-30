@@ -1,9 +1,10 @@
-import { isDeepEqual } from '@ocavue/utils'
+import { isDeepEqual, isElementLike } from '@ocavue/utils'
 import type { MarkViewComponentProps, NodeViewComponentProps } from '@handlewithcare/react-prosemirror'
 import { reactKeys } from '@handlewithcare/react-prosemirror'
-import type { Schema } from '@prosekit/pm/model'
+import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import {
   EditorState,
+  Selection,
   type Command,
   type Plugin,
   type Transaction,
@@ -14,6 +15,9 @@ import {
   createMarkActions,
   createNodeActions,
   defineDefaultState,
+  nodeFromElement,
+  nodeFromHTML,
+  nodeFromJSON,
   ProseKitError,
   subtractFacetNode,
   union,
@@ -28,6 +32,7 @@ import {
   type MarkAction,
   type NodeAction,
   type NodeJSON,
+  type SelectionJSON,
 } from '@prosekit/core'
 import type { ComponentType } from 'react'
 import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '@prosekit/core'
@@ -90,7 +95,6 @@ function setupReactBindingEditorExtension<E extends Extension>(
  */
 export class ReactBindingEditor<E extends Extension = any> {
   private _view: EditorView | null = null
-  private _reactKeysPlugin = reactKeys()
   private _state: EditorState
   private _tree: FacetNode
   private _afterMounted: Array<VoidFunction> = []
@@ -115,9 +119,10 @@ export class ReactBindingEditor<E extends Extension = any> {
       throw new ProseKitError('Schema must be defined')
     }
 
+    const reactKeysPlugin = reactKeys()
     const state = EditorState.create({
       ...stateConfig,
-      plugins: [this._reactKeysPlugin, ...(stateConfig.plugins ?? [])],
+      plugins: [reactKeysPlugin, ...(stateConfig.plugins ?? [])],
     })
 
     this._schema = state.schema
@@ -201,7 +206,90 @@ export class ReactBindingEditor<E extends Extension = any> {
   }
 
   getDocHTML = (options?: GetDocHTMLOptions): string => {
-    return htmlFromNode(this.state.doc, options)
+    const serializer = this._view?.someProp('clipboardSerializer') as any
+    const DOMSerializer = serializer
+      ? { fromSchema: () => serializer }
+      : undefined
+    return htmlFromNode(this.state.doc, { ...options, DOMSerializer })
+  }
+
+  get focused(): boolean {
+    return this._view?.hasFocus() ?? false
+  }
+
+  focus(): void {
+    this._view?.focus()
+  }
+
+  blur(): void {
+    this._view?.dom.blur()
+  }
+
+  setContent(
+    content: ProseMirrorNode | NodeJSON | string | Element,
+    selection?: SelectionJSON | Selection | 'start' | 'end',
+  ): void {
+    const schema = this._schema
+    let doc: ProseMirrorNode
+
+    if (typeof content === 'string') {
+      doc = nodeFromHTML(content, { schema })
+    } else if (isElementLike(content)) {
+      doc = nodeFromElement(content as HTMLElement, { schema })
+    } else {
+      // ProseMirrorNode instances have `attrs` (always an object),
+      // while NodeJSON has `attrs` as an optional plain object.
+      // As a simple heuristic, we check for `nodeSize` which only
+      // exists on ProseMirrorNode instances.
+      if ('nodeSize' in (content as object)) {
+        doc = content as ProseMirrorNode
+        if (doc.type !== schema.topNodeType) {
+          throw new ProseKitError(
+            `Document type does not match top node type. ` +
+            `Expected ${schema.topNodeType.name}, got ${doc.type.name}`,
+          )
+        }
+      } else {
+        doc = nodeFromJSON(content as NodeJSON, { schema })
+      }
+    }
+
+    doc.check()
+
+    let sel: Selection
+    if (typeof selection === 'string') {
+      sel = selection === 'end' ? Selection.atEnd(doc) : Selection.atStart(doc)
+    } else if (selection instanceof Selection) {
+      sel = selection
+    } else if (selection) {
+      sel = Selection.fromJSON(doc, selection)
+    } else {
+      sel = Selection.atStart(doc)
+    }
+
+    const newState = EditorState.create({
+      doc,
+      selection: sel,
+      plugins: this._state.plugins,
+    })
+
+    if (this._view && !this._view.isDestroyed) {
+      this._view.updateState(newState)
+    }
+    this._state = newState
+    this._plugins = newState.plugins
+    this.refreshSnapshot()
+    this.emit('state')
+  }
+
+  updateState(state: EditorState): void {
+    if (this._view && !this._view.isDestroyed) {
+      this._view.updateState(state)
+    }
+    this._state = state
+    this._plugins = state.plugins
+    this.refreshSnapshot()
+    this.emit('state')
   }
 
   attachView(view: EditorView): void {
@@ -284,10 +372,6 @@ export class ReactBindingEditor<E extends Extension = any> {
   }
 
   dispatch = (tr: Transaction): void => {
-    this.dispatchTransaction(tr)
-  }
-
-  private dispatchTransaction = (tr: Transaction): void => {
     if (this._view) {
       this._view.dispatch(tr)
       return
@@ -364,7 +448,7 @@ export class ReactBindingEditor<E extends Extension = any> {
 
     const newPayload = this._tree.getRootOutput()
     const nextState = view.state.reconfigure({
-      plugins: [this._reactKeysPlugin, ...(newPayload.state?.plugins ?? [])],
+      plugins: [reactKeys(), ...(newPayload.state?.plugins ?? [])],
     })
     const newPlugins = [...nextState.plugins]
 

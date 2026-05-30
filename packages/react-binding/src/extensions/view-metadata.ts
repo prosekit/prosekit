@@ -2,7 +2,7 @@ import { defineFacet, defineFacetPayload, pluginFacet, type Extension, type Face
 import type { MarkViewComponentProps, NodeViewComponentProps } from '@handlewithcare/react-prosemirror'
 import type { ComponentType } from 'react'
 
-import { adaptMarkView, type ReactMarkViewComponent } from '../adapters/mark-view-adapter.tsx'
+import { adaptMarkView, type ReactMarkViewComponent, type ReactMarkViewEventOptions } from '../adapters/mark-view-adapter.tsx'
 import { adaptNodeView, type ReactNodeViewComponent, type ReactNodeViewEventOptions } from '../adapters/node-view-adapter.tsx'
 
 type NodeViewMetadata = {
@@ -16,6 +16,7 @@ type MarkViewMetadata = {
   kind: 'mark'
   name: string
   component: ReactMarkViewComponent
+  options?: ReactMarkViewEventOptions
 }
 
 type ViewMetadata = NodeViewMetadata | MarkViewMetadata
@@ -40,7 +41,7 @@ function getAdaptedNodeView(metadata: NodeViewMetadata): ComponentType<NodeViewC
 function getAdaptedMarkView(metadata: MarkViewMetadata): ComponentType<MarkViewComponentProps> {
   let adapted = adaptedMarkViewCache.get(metadata)
   if (!adapted) {
-    adapted = adaptMarkView(metadata.component)
+    adapted = adaptMarkView(metadata.component, metadata.options)
     adaptedMarkViewCache.set(metadata, adapted)
   }
   return adapted
@@ -90,8 +91,9 @@ export function defineNodeViewMetadata(
 export function defineMarkViewMetadata(
   name: string,
   component: ReactMarkViewComponent,
+  options?: ReactMarkViewEventOptions,
 ): Extension {
-  return defineViewMetadata({ kind: 'mark', name, component })
+  return defineViewMetadata({ kind: 'mark', name, component, options })
 }
 
 function getViewMetadataPayload(

@@ -2,8 +2,8 @@
 
 export { ProseKit, type ProseKitProps } from './components/prosekit.tsx'
 export { ReactBindingEditor, createReactBindingEditor, type ReactBindingEditorOptions } from './editor/react-binding-editor.ts'
-export type { ReactNodeViewComponent, ReactNodeViewProps } from './adapters/node-view-adapter.tsx'
-export type { ReactMarkViewComponent, ReactMarkViewProps } from './adapters/mark-view-adapter.tsx'
+export type { ReactNodeViewComponent, ReactNodeViewProps, ReactNodeViewEventOptions } from './adapters/node-view-adapter.tsx'
+export type { ReactMarkViewComponent, ReactMarkViewProps, ReactMarkViewEventOptions } from './adapters/mark-view-adapter.tsx'
 export {
   defineReactNodeView,
   type ReactNodeViewOptions,

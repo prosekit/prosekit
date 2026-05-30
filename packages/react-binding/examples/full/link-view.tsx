@@ -12,6 +12,8 @@ export function LinkView(props: LinkViewProps) {
 
   return (
     <a
+      ref={props.viewRef}
+      {...props.domProps}
       href={href}
       rel="noreferrer"
       target="_blank"

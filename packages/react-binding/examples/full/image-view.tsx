@@ -7,7 +7,11 @@ export function ImageView(props: ReactNodeViewProps) {
   const src = String(props.node.attrs.src ?? '')
 
   return (
-    <figure data-selected={props.selected ? '' : undefined}>
+    <figure
+      ref={props.viewRef}
+      {...props.domProps}
+      data-selected={props.selected ? '' : undefined}
+    >
       <img
         src={src || undefined}
         alt={String(props.node.attrs.alt ?? '')}

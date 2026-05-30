@@ -1,7 +1,7 @@
 import { ProseMirrorDoc } from '@handlewithcare/react-prosemirror'
 import { type NodeJSON, union } from '@prosekit/core'
 import { defineTestExtension } from '../../testing/src/index.ts'
-import { createElement, useState } from 'react'
+import { createElement, Suspense, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { page } from 'vitest/browser'
@@ -104,6 +104,52 @@ describe('react-binding', () => {
             : 'https://example.com/image-a.png',
         }),
       }, 'Toggle src'),
+    )
+  }
+
+  let suspenseResolved = false
+  let suspensePromise: Promise<void> | null = null
+
+  function SuspendingImageView(props: ReactNodeViewProps) {
+    if (!suspenseResolved) {
+      suspensePromise ??= new Promise<void>((resolve) => {
+        setTimeout(() => {
+          suspenseResolved = true
+          resolve()
+        }, 20)
+      })
+      throw suspensePromise
+    }
+
+    return createElement('figure', {
+      'data-testid': 'suspense-view',
+      ref: props.viewRef,
+      ...props.domProps,
+    }, 'resolved')
+  }
+
+  function SuspenseTestEditor(props: { initialContent: NodeJSON }) {
+    const [editor] = useState(() => {
+      return createReactBindingEditor({
+        extension: union(
+          defineTestExtension(),
+          defineReactNodeView({
+            name: 'image',
+            component: SuspendingImageView,
+          }),
+        ),
+        defaultContent: props.initialContent,
+      })
+    })
+
+    return createElement(
+      ProseKit,
+      { editor },
+      createElement(
+        Suspense,
+        { fallback: createElement('div', { 'data-testid': 'suspense-fallback' }, 'loading') },
+        createElement(ProseMirrorDoc, { className: 'ProseMirror' }),
+      ),
     )
   }
 
@@ -221,6 +267,29 @@ describe('react-binding', () => {
     await page.getByRole('button', { name: 'Toggle src' }).click()
     await expect.element(imageSrcProbe).toHaveTextContent('https://example.com/image-b.png')
     await expect.element(image).toHaveAttribute('src', 'https://example.com/image-b.png')
+
+    screen.unmount()
+  })
+
+  it('catches a suspending node view at an editor-level Suspense boundary', async () => {
+    const initialContent: NodeJSON = {
+      type: 'doc',
+      content: [{
+        type: 'image',
+        attrs: {
+          src: 'https://example.com/image-a.png',
+        },
+      }],
+    }
+
+    const screen = await renderEditor(createElement(SuspenseTestEditor, { initialContent }))
+
+    // The node view suspends on first render. Because the document is part of
+    // the same React tree, the editor-level Suspense boundary catches it and
+    // then renders the resolved node view inline. If the suspension escaped the
+    // boundary, React would throw instead of rendering this element.
+    await expect.element(page.getByTestId('suspense-view')).toBeVisible()
+    await expect.element(page.getByTestId('suspense-view')).toHaveTextContent('resolved')
 
     screen.unmount()
   })

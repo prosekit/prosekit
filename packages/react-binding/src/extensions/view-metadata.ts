@@ -3,12 +3,13 @@ import type { MarkViewComponentProps, NodeViewComponentProps } from '@handlewith
 import type { ComponentType } from 'react'
 
 import { adaptMarkView, type ReactMarkViewComponent } from '../adapters/mark-view-adapter.tsx'
-import { adaptNodeView, type ReactNodeViewComponent } from '../adapters/node-view-adapter.tsx'
+import { adaptNodeView, type ReactNodeViewComponent, type ReactNodeViewEventOptions } from '../adapters/node-view-adapter.tsx'
 
 type NodeViewMetadata = {
   kind: 'node'
   name: string
   component: ReactNodeViewComponent
+  options?: ReactNodeViewEventOptions
 }
 
 type MarkViewMetadata = {
@@ -18,6 +19,32 @@ type MarkViewMetadata = {
 }
 
 type ViewMetadata = NodeViewMetadata | MarkViewMetadata
+
+// Cache the adapted (react-prosemirror compatible) components, keyed by the
+// metadata object they were derived from. The facet reducer can run multiple
+// times with the same metadata inputs; without this cache every run would
+// produce new component identities and force react-prosemirror to remount all
+// node/mark views.
+const adaptedNodeViewCache = new WeakMap<NodeViewMetadata, ComponentType<NodeViewComponentProps>>()
+const adaptedMarkViewCache = new WeakMap<MarkViewMetadata, ComponentType<MarkViewComponentProps>>()
+
+function getAdaptedNodeView(metadata: NodeViewMetadata): ComponentType<NodeViewComponentProps> {
+  let adapted = adaptedNodeViewCache.get(metadata)
+  if (!adapted) {
+    adapted = adaptNodeView(metadata.component, metadata.options)
+    adaptedNodeViewCache.set(metadata, adapted)
+  }
+  return adapted
+}
+
+function getAdaptedMarkView(metadata: MarkViewMetadata): ComponentType<MarkViewComponentProps> {
+  let adapted = adaptedMarkViewCache.get(metadata)
+  if (!adapted) {
+    adapted = adaptMarkView(metadata.component)
+    adaptedMarkViewCache.set(metadata, adapted)
+  }
+  return adapted
+}
 
 type ViewMetadataPluginPayload = PluginPayload & {
   reactBindingNodeViewComponents: Record<string, ComponentType<NodeViewComponentProps>>
@@ -33,9 +60,9 @@ const viewMetadataFacet = defineFacet<ViewMetadata, ViewMetadataPluginPayload>({
 
     for (const input of inputs) {
       if (input.kind === 'node') {
-        nodeViewComponents[input.name] = adaptNodeView(input.component)
+        nodeViewComponents[input.name] = getAdaptedNodeView(input)
       } else {
-        markViewComponents[input.name] = adaptMarkView(input.component)
+        markViewComponents[input.name] = getAdaptedMarkView(input)
       }
     }
 
@@ -55,8 +82,9 @@ function defineViewMetadata(
 export function defineNodeViewMetadata(
   name: string,
   component: ReactNodeViewComponent,
+  options?: ReactNodeViewEventOptions,
 ): Extension {
-  return defineViewMetadata({ kind: 'node', name, component })
+  return defineViewMetadata({ kind: 'node', name, component, options })
 }
 
 export function defineMarkViewMetadata(

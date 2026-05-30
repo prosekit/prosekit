@@ -71,7 +71,7 @@ export function createReactBindingEditor<E extends Extension>(
 function setupReactBindingEditorExtension<E extends Extension>(
   options: ReactBindingEditorOptions<E>,
 ): E {
-  if (options.defaultContent) {
+  if (options.defaultContent || options.defaultSelection) {
     return union(
       options.extension,
       defineDefaultState(options),
@@ -283,7 +283,7 @@ export class ReactBindingEditor<E extends Extension = any> {
     return command(this.state, undefined, this._view ?? undefined)
   }
 
-  dispatch(tr: Transaction): void {
+  dispatch = (tr: Transaction): void => {
     this.dispatchTransaction(tr)
   }
 

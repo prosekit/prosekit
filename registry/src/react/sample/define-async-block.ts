@@ -1,28 +1,24 @@
 import { defineNodeSpec } from 'prosekit/core'
 
-export interface InputBlockAttrs {
-  value?: string | null
-}
-
-export function defineInputBlock() {
+export function defineAsyncBlock() {
   return defineNodeSpec({
-    name: 'inputBlock',
+    name: 'asyncBlock',
     group: 'block',
     atom: true,
     isolating: true,
     selectable: true,
     attrs: {
-      value: { default: '', validate: 'string' },
+      seed: { default: 'seed-0', validate: 'string' },
     },
     parseDOM: [{
-      tag: 'div[data-input-block]',
+      tag: 'div[data-async-block]',
       getAttrs: (element) => {
         if (typeof element === 'string') {
-          return { value: '' }
+          return { seed: 'seed-0' }
         }
 
         return {
-          value: element.getAttribute('data-value') ?? '',
+          seed: element.getAttribute('data-seed') ?? 'seed-0',
         }
       },
     }],
@@ -30,8 +26,8 @@ export function defineInputBlock() {
       return [
         'div',
         {
-          'data-input-block': 'true',
-          'data-value': String(node.attrs.value ?? ''),
+          'data-async-block': 'true',
+          'data-seed': String(node.attrs.seed ?? 'seed-0'),
         },
       ]
     },

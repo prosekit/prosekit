@@ -1,3 +1,4 @@
+import { unified } from '@astrojs/markdown-remark'
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -157,12 +158,14 @@ const config: AstroUserConfig = {
     },
   },
   markdown: {
-    // Disable smartypants to prevent converting "..." into "…"
-    smartypants: false,
+    processor: unified({
+      // Disable smartypants to prevent converting "..." into "…"
+      smartypants: false,
 
-    rehypePlugins: [
-      [rehypeResolveMarkdownLinks, { rootDir: './src/content/docs' }],
-    ],
+      rehypePlugins: [
+        [rehypeResolveMarkdownLinks, { rootDir: './src/content/docs' }],
+      ],
+    }),
   },
 }
 

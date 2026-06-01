@@ -555,7 +555,6 @@ describe('columns plugin state', () => {
       startX: 100,
       columns: [{ width: 250 }, { width: 250 }],
       totalWidth: 500,
-      containerWidth: 500,
       leftIndex: 0,
       minPercent: 4,
     }
@@ -597,7 +596,6 @@ describe('columns plugin state', () => {
       startX: 100,
       columns: [{ width: 250 }, { width: 250 }],
       totalWidth: 500,
-      containerWidth: 500,
       leftIndex: 0,
       minPercent: 4,
     }
@@ -642,7 +640,6 @@ describe('columns plugin state', () => {
       startX: 100,
       columns: [{ width: 250 }, { width: 250 }],
       totalWidth: 500,
-      containerWidth: 500,
       leftIndex: 0,
       minPercent: 4,
     }

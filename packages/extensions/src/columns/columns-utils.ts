@@ -99,7 +99,7 @@ export function getColumnCount(
 }
 
 /**
- * Return the current gap and child widths for the `columns` container around
+ * Return the current child widths for the `columns` container around
  * the given position.
  */
 export function getColumnLayoutAtPos(
@@ -123,7 +123,6 @@ export function getColumnLayoutAtPos(
 
   return {
     containerPos: found.pos,
-    gap: found.node.attrs.gap ?? null,
     columns,
   }
 }

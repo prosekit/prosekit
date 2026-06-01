@@ -4,12 +4,7 @@ import type { Attrs } from '@prosekit/pm/model'
 /**
  * Attributes stored on the `columns` container node.
  */
-export interface ColumnsAttrs extends Attrs {
-  /**
-   * Gap between adjacent columns, in CSS pixels.
-   */
-  gap: number | null
-}
+export interface ColumnsAttrs extends Attrs {}
 
 /**
  * Attributes stored on an individual `column` node.
@@ -41,13 +36,6 @@ export interface ColumnsOptions {
    * @default null
    */
   defaultColumnWidth?: number | null
-
-  /**
-   * Gap assigned to newly inserted columns, in CSS pixels.
-   *
-   * @default null
-   */
-  defaultGap?: number | null
 
   /**
    * Maximum number of columns allowed in one container.
@@ -170,7 +158,6 @@ export interface ColumnBoundaryHit {
  */
 export interface ColumnLayoutInfo {
   containerPos: number
-  gap: number | null
   columns: Array<{
     pos: number
     index: number

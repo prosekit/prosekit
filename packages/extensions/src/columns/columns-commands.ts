@@ -15,9 +15,8 @@ function createColumnNode(
 function createColumnsNode(
   state: Parameters<Command>[0],
   options: InsertColumnsOptions,
-  defaults: Pick<ReturnType<typeof getOptionsWithDefaults>, 'defaultColumnWidth' | 'defaultGap'> = {
+  defaults: Pick<ReturnType<typeof getOptionsWithDefaults>, 'defaultColumnWidth'> = {
     defaultColumnWidth: null,
-    defaultGap: null,
   },
 ): ProseMirrorNode {
   const columnsType = getNodeType(state.schema, 'columns')
@@ -29,7 +28,7 @@ function createColumnsNode(
   )
 
   return columnsType.createAndFill(
-    { gap: defaults.defaultGap },
+    {},
     Fragment.from(children),
   )!
 }
@@ -58,7 +57,6 @@ function getOptionsWithDefaults(options: ColumnsOptions = {}) {
   return {
     minColumnWidth: options.minColumnWidth ?? 120,
     defaultColumnWidth: options.defaultColumnWidth ?? null,
-    defaultGap: options.defaultGap ?? null,
     maxColumns: options.maxColumns ?? Number.POSITIVE_INFINITY,
   }
 }
@@ -73,7 +71,6 @@ export type ColumnsCommandsExtension = Extension<{
     addColumnAfter: []
     removeColumn: []
     setColumnWidth: [width: number | null]
-    setColumnsGap: [gap: number | null]
     distributeColumns: []
     normalizeColumns: []
   }
@@ -248,20 +245,6 @@ export function setColumnWidthAt(pos: number, width: number | null): Command {
 }
 
 /**
- * Create a command that updates the gap of the current columns container.
- */
-export function setColumnsGap(gap: number | null): Command {
-  return (state, dispatch) => {
-    if (gap != null && (!Number.isFinite(gap) || gap < 0)) return false
-    const found = findParentColumns(state.selection.$anchor)
-    if (!found) return false
-    if (!dispatch) return true
-    dispatch(state.tr.setNodeMarkup(found.pos, undefined, { ...found.node.attrs, gap }).scrollIntoView())
-    return true
-  }
-}
-
-/**
  * Create a command that redistributes the current columns container to equal
  * widths.
  */
@@ -329,7 +312,6 @@ export function defineColumnsCommands(options: ColumnsOptions = {}): ColumnsComm
     addColumnAfter: () => addColumnAfter(options),
     removeColumn,
     setColumnWidth,
-    setColumnsGap,
     distributeColumns: () => distributeColumns(options),
     normalizeColumns: () => normalizeColumns(options),
   })

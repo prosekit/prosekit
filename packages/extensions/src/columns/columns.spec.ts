@@ -67,16 +67,10 @@ describe('columns spec', () => {
           "toDOM": [Function],
         },
         "columns": {
-          "attrs": {
-            "gap": {
-              "default": null,
-            },
-          },
           "content": "column+",
           "group": "block",
           "parseDOM": [
             {
-              "getAttrs": [Function],
               "tag": "div.prosekit-columns",
             },
           ],
@@ -124,17 +118,15 @@ describe('columns commands', () => {
     )
   })
 
-  it('should apply default width and gap when inserting columns', () => {
+  it('should apply default width when inserting columns', () => {
     const { editor, n } = setup({
       defaultColumnWidth: 25,
-      defaultGap: 16,
     })
     editor.set(n.doc(n.paragraph('<a>')))
     editor.commands.insertColumns({ count: 3 })
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(
         n.columns(
-          { gap: 16 },
           n.column({ width: 25 }, n.paragraph()),
           n.column({ width: 25 }, n.paragraph()),
           n.column({ width: 25 }, n.paragraph()),
@@ -237,27 +229,6 @@ describe('columns commands', () => {
     )
   })
 
-  it('should update column width and container gap', () => {
-    const { editor, n } = setup()
-    editor.set(n.doc(
-      n.columns(
-        n.column(n.paragraph('left<a>')),
-        n.column(n.paragraph('right')),
-      ),
-    ))
-    editor.commands.setColumnWidth(40)
-    editor.commands.setColumnsGap(24)
-    expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(
-        n.columns(
-          { gap: 24 },
-          n.column({ width: 40 }, n.paragraph('left')),
-          n.column(n.paragraph('right')),
-        ),
-      ).toJSON(),
-    )
-  })
-
   it('should reject invalid column width values', () => {
     const { editor, n } = setup()
     editor.set(n.doc(
@@ -269,28 +240,6 @@ describe('columns commands', () => {
 
     expect(editor.commands.setColumnWidth(-1)).toBe(false)
     expect(editor.commands.setColumnWidth(Number.NaN)).toBe(false)
-
-    expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(
-        n.columns(
-          n.column(n.paragraph('left')),
-          n.column(n.paragraph('right')),
-        ),
-      ).toJSON(),
-    )
-  })
-
-  it('should reject invalid column gap values', () => {
-    const { editor, n } = setup()
-    editor.set(n.doc(
-      n.columns(
-        n.column(n.paragraph('left<a>')),
-        n.column(n.paragraph('right')),
-      ),
-    ))
-
-    expect(editor.commands.setColumnsGap(-1)).toBe(false)
-    expect(editor.commands.setColumnsGap(Number.POSITIVE_INFINITY)).toBe(false)
 
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(

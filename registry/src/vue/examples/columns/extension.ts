@@ -7,7 +7,6 @@ export function defineExtension() {
     defineBasicExtension(),
     defineColumns({
       minColumnWidth: 160,
-      defaultGap: 20,
     }),
   )
 }

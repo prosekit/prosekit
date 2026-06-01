@@ -1,6 +1,5 @@
 <script lang="ts">
 import type { Editor } from 'prosekit/core'
-import { findParentColumn } from 'prosekit/extensions/columns'
 import { useEditorDerivedValue } from 'prosekit/svelte'
 
 import Button from '../../ui/button/button.svelte'
@@ -8,14 +7,7 @@ import Button from '../../ui/button/button.svelte'
 import type { EditorExtension } from './extension.ts'
 
 function getToolbarItems(editor: Editor<EditorExtension>) {
-  const currentColumn = findParentColumn(editor.state.selection.$anchor)
-  const currentGap = currentColumn
-    ? (editor.state.doc.nodeAt(currentColumn.containerPos)?.attrs.gap as number | null | undefined) ?? null
-    : null
-
   return {
-    canSetGap: !!currentColumn,
-    currentGap,
     insertTwo: {
       canExec: editor.commands.insertColumns.canExec({ count: 2 }),
       command: () => editor.commands.insertColumns({ count: 2 }),
@@ -48,7 +40,6 @@ function getToolbarItems(editor: Editor<EditorExtension>) {
       canExec: editor.commands.distributeColumns.canExec(),
       command: () => editor.commands.distributeColumns(),
     },
-    setGap: (value: number) => editor.commands.setColumnsGap(value),
   }
 }
 
@@ -98,16 +89,4 @@ const items = useEditorDerivedValue(getToolbarItems)
   >
     Equalize
   </Button>
-  <label class="flex items-center gap-2 px-2 text-sm text-gray-700 dark:text-gray-300">
-    Gap
-    <input
-      type="range"
-      min={0}
-      max={48}
-      step={4}
-      value={$items.currentGap ?? 20}
-      disabled={!$items.canSetGap}
-      oninput={(event) => $items.setGap(Number((event.target as HTMLInputElement).value))}
-    />
-  </label>
 </div>

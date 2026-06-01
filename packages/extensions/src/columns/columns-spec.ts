@@ -35,25 +35,11 @@ export function defineColumnsSpec(): ColumnsSpecExtension {
     name: 'columns',
     group: 'block',
     content: 'column+',
-    attrs: {
-      gap: { default: null },
-    },
     parseDOM: [{
       tag: 'div.prosekit-columns',
-      getAttrs(dom) {
-        if (!(dom instanceof HTMLElement)) return false
-        const gap = dom.style.getPropertyValue('--prosekit-columns-gap')
-          || dom.style.getPropertyValue('gap')
-        if (!gap) return { gap: null }
-        const value = Number.parseFloat(gap)
-        return { gap: Number.isFinite(value) ? value : null }
-      },
     }],
-    toDOM(node) {
-      const attrs = node.attrs as ColumnsAttrs
-      const gap = attrs.gap
-      const style = gap != null ? `--prosekit-columns-gap:${gap}px;` : null
-      return ['div', { class: 'prosekit-columns', style }, 0]
+    toDOM() {
+      return ['div', { class: 'prosekit-columns' }, 0]
     },
   })
 }

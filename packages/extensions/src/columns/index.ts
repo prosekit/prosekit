@@ -6,7 +6,6 @@ export {
   insertColumns,
   normalizeColumns,
   removeColumn,
-  setColumnsGap,
   setColumnWidth,
   setColumnWidthAt,
   type ColumnsCommandsExtension,

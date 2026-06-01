@@ -150,9 +150,15 @@ function applyColumnWidthPreview(
   columnEls: HTMLElement[],
   widths: number[],
 ): void {
-  for (const [index, width] of widths.entries()) {
-    columnEls[index]?.style.setProperty('--prosekit-column-width', String(width))
+  const gridTemplate = widths.map(w => `${w}%`).join(' ')
+
+  const container = columnEls[0]?.parentElement
+  if (container) {
+    container.style.gridTemplateColumns = gridTemplate
   }
+  // for (const [index, width] of widths.entries()) {
+  //   columnEls[index]?.style.setProperty('--prosekit-column-width', String(width))
+  // }
 }
 
 function startDrag(

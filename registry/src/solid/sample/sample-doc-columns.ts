@@ -22,7 +22,6 @@ export const sampleContent: NodeJSON = {
     },
     {
       type: 'columns',
-      attrs: { gap: 20 },
       content: [
         {
           type: 'column',

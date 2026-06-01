@@ -312,11 +312,11 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.9.13",
-    "svelte": "^5.55.7",
+    "svelte": "^5.56.0",
     "unified": "^11.0.5",
-    "vue": "^3.5.34",
+    "vue": "^3.5.35",
     "y-websocket": "^3.0.0",
-    "yjs": "^13.6.30"
+    "yjs": "^13.6.31"
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.9.2",
@@ -353,7 +353,7 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "tinyexec": "^1.2.4",
-    "tsx": "^4.22.3",
+    "tsx": "^4.22.4",
     "vite": "^8.0.16",
     "vite-plugin-solid": "^2.11.12",
     "vite-plugin-wasm": "^3.6.0",
@@ -364,7 +364,7 @@
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^2.1.1",
     "vitest-browser-vue": "^2.1.0",
-    "vue-tsc": "^3.2.9",
+    "vue-tsc": "^3.3.3",
     "vue-tweet": "^2.4.0"
   },
   "publishConfig": {

@@ -54,13 +54,13 @@
     "sharp": "^0.34.5",
     "solid-js": "^1.9.13",
     "starlight-theme-nova": "^0.11.11",
-    "svelte": "^5.55.7",
+    "svelte": "^5.56.0",
     "tailwindcss": "^4.3.0",
     "typescript": "catalog:",
     "vite": "^7.3.5",
     "vite-plugin-wasm": "^3.6.0",
-    "vue": "^3.5.34",
+    "vue": "^3.5.35",
     "y-websocket": "^3.0.0",
-    "yjs": "^13.6.30"
+    "yjs": "^13.6.31"
   }
 }

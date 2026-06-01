@@ -64,6 +64,7 @@
     "@prosekit/extensions": "workspace:^",
     "@types/react": "^19.2.15",
     "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

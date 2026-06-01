@@ -978,5 +978,37 @@
   {
     "name": "prosekit/web/tooltip",
     "path": "packages/prosekit/dist/web/tooltip.js"
+  },
+  {
+    "name": "prosekit/static-renderer",
+    "path": "packages/prosekit/dist/static-renderer.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/static-renderer/html",
+    "path": "packages/prosekit/dist/static-renderer/html.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/static-renderer/markdown",
+    "path": "packages/prosekit/dist/static-renderer/markdown.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/static-renderer/react",
+    "path": "packages/prosekit/dist/static-renderer/react.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
   }
 ]

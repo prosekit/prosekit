@@ -3,11 +3,13 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { createEditor, type NodeJSON } from 'prosekit/core'
-import { ProseKit, useDocChange } from 'prosekit/react'
+import type { BasicExtension } from 'prosekit/basic'
+import { createEditor, type NodeJSON, type Union } from 'prosekit/core'
+import { ProseKit, useDocChange, useEditorDerivedValue } from 'prosekit/react'
 import { renderToHTMLString } from 'prosekit/static-renderer/html'
 import { renderToMarkdown } from 'prosekit/static-renderer/markdown'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
+import { renderToReactElement } from '@prosekit/static-renderer'
 
 import { defineExtension } from './extension.ts'
 import { sampleContent } from './sample-content.ts'
@@ -35,10 +37,15 @@ export default function Editor() {
     [extension],
   )
 
+  const htmlOutput = useMemo(() => {
+    const doc = editorRef.current?.getDocJSON()
+    return doc ? renderToHTMLString({ extension, content: doc }) : ''
+  }, [])
+
   // Initialize preview with sample content
-  useEffect(() => {
-    updatePreview(sampleContent)
-  }, [updatePreview])
+  // useEffect(() => {
+  //   updatePreview(sampleContent)
+  // }, [updatePreview])
 
   const handleDocChange = useCallback(() => {
     const doc = editorRef.current?.getDocJSON()
@@ -82,6 +89,42 @@ export default function Editor() {
           {markdownOutput}
         </pre>
       </div>
+    </div>
+  )
+}
+
+interface RenderJsonProps {
+  type: 'html' | 'markdown' | 'react'
+  extension: Union<readonly [BasicExtension]>
+}
+
+function RenderJson(props: RenderJsonProps) {
+  const { type, extension } = props
+  const docJSON = useEditorDerivedValue(useCallback((editor) => {
+    return editor.getDocJSON()
+  }, []))
+
+  const jsonOutput = useMemo(() => {
+    if (type === 'html') {
+      return renderToHTMLString({ extension, content: docJSON })
+    } else if (type === 'markdown') {
+      return renderToMarkdown({ extension, content: docJSON })
+    } else if (type === 'react') {
+      return renderToReactElement({ extension, content: docJSON })
+    }
+    return ''
+  }, [type, extension, docJSON])
+
+  return (
+    <div className="border border-solid border-gray-300 rounded">
+      <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300">
+        {type === 'html' && 'renderToHTMLString Output'}
+        {type === 'markdown' && 'renderToMarkdown Output'}
+        {type === 'react' && 'renderToReactElement Output'}
+      </div>
+      <pre className="p-3 text-xs overflow-x-auto whitespace-pre-wrap">
+          {jsonOutput}
+      </pre>
     </div>
   )
 }

@@ -38,8 +38,9 @@ export function defineColumnsSpec(): ColumnsSpecExtension {
     parseDOM: [{
       tag: 'div.prosekit-columns',
     }],
-    toDOM() {
-      return ['div', { class: 'prosekit-columns' }, 0]
+    toDOM(node) {
+      const colCount = node.childCount
+      return ['div', { class: 'prosekit-columns', style: `--prosekit-col-count: ${colCount};` }, 0]
     },
   })
 }

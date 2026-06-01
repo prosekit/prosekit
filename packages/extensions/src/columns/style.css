@@ -22,8 +22,10 @@
 }
 
 .ProseMirror .prosekit-column[style*="--prosekit-column-width"] {
-  flex: 0 0 calc(var(--prosekit-column-width) * 1%) !important;
-  max-width: calc(var(--prosekit-column-width) * 1%) !important;
+  --gap-deduction: calc(var(--prosekit-column-width) / 100 * (var(--prosekit-col-count) - 1) * var(--prosekit-columns-gap));
+  flex: 0 0 calc(var(--prosekit-column-width) * 1% - var(--gap-deduction));
+  width: calc(var(--prosekit-column-width) * 1% - var(--gap-deduction));
+  max-width: calc(var(--prosekit-column-width) * 1% - var(--gap-deduction));
 }
 
 .ProseMirror .prosekit-column:hover {

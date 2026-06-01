@@ -92,7 +92,7 @@ class UserMenuElement extends LitElement {
                   class="CSS_AUTOCOMPLETE_MENU_ITEM"
                   @select=${() => this.handleUserInsert(editor, user.id, user.name)}
                 >
-                  <span class=${this.loading ? 'opacity-50' : ''}>${user.name}</span>
+                  <span class=${this.loading ? 'opacity-50' : nothing}>${user.name}</span>
                 </prosekit-autocomplete-item>
               `,
             )}

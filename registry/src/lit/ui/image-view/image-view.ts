@@ -1,4 +1,4 @@
-import { html, render } from 'lit'
+import { html, nothing, render } from 'lit'
 import type { Extension } from 'prosekit/core'
 import { defineNodeView } from 'prosekit/core'
 import { UploadTask } from 'prosekit/extensions/file'
@@ -119,7 +119,7 @@ class ImageNodeView {
           .width=${attrs.width ?? null}
           .height=${attrs.height ?? null}
           .aspectRatio=${this.aspectRatio ?? null}
-          data-selected=${this.selected ? '' : (undefined)}
+          ?data-selected=${this.selected}
           @resizeEnd=${this.handleResizeEnd}
         >
           ${url && !this.error
@@ -148,7 +148,7 @@ class ImageNodeView {
                 </div>
               `
             : ''}
-          <prosekit-resizable-handle class="CSS_IMAGE_RESIZABLE_HANDLE" position="bottom-right"
+          <prosekit-resizable-handle class="CSS_IMAGE_RESIZABLE_HANDLE"
             ><div class="CSS_ICON_CORNER_HANDLE"></div
           ></prosekit-resizable-handle>
         </prosekit-resizable-root>

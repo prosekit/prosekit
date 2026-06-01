@@ -73,7 +73,7 @@ class TagMenuElement extends LitElement {
                   class="CSS_AUTOCOMPLETE_MENU_ITEM"
                   @select=${() => this.handleTagInsert(editor, tag.id, tag.label)}
                 >
-                  #${tag.label}
+                  ${'#' + tag.label}
                 </prosekit-autocomplete-item>
               `,
             )}

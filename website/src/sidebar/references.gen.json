@@ -136,7 +136,11 @@
       "references/static-renderer",
       "references/static-renderer/html",
       "references/static-renderer/markdown",
-      "references/static-renderer/react"
+      "references/static-renderer/preact",
+      "references/static-renderer/react",
+      "references/static-renderer/solid",
+      "references/static-renderer/svelte",
+      "references/static-renderer/vue"
     ]
   },
   {

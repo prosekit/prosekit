@@ -873,32 +873,48 @@
     "name": "prosekit/static-renderer",
     "path": "packages/prosekit/dist/static-renderer.js",
     "ignore": [
+      "preact",
       "react",
-      "react-dom"
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
     ]
   },
   {
     "name": "prosekit/static-renderer/html",
     "path": "packages/prosekit/dist/static-renderer/html.js",
     "ignore": [
+      "preact",
       "react",
-      "react-dom"
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
     ]
   },
   {
     "name": "prosekit/static-renderer/markdown",
     "path": "packages/prosekit/dist/static-renderer/markdown.js",
     "ignore": [
+      "preact",
       "react",
-      "react-dom"
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
     ]
   },
   {
     "name": "prosekit/static-renderer/react",
     "path": "packages/prosekit/dist/static-renderer/react.js",
     "ignore": [
+      "preact",
       "react",
-      "react-dom"
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
     ]
   },
   {

@@ -7,7 +7,7 @@ import type {
   NodeMapping,
   StaticRendererOptions,
 } from './types.ts'
-import { createHTMLRenderer, renderToHTMLString } from './html.ts'
+import { createHTMLRenderer } from './html.ts'
 import { serializeChildrenToHTMLString } from './dom-output-spec.ts'
 
 export type { StaticRendererOptions, CustomMappingOptions }

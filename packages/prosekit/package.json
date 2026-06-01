@@ -143,7 +143,11 @@
     "./static-renderer": "./src/static-renderer.ts",
     "./static-renderer/html": "./src/static-renderer/html.gen.ts",
     "./static-renderer/markdown": "./src/static-renderer/markdown.gen.ts",
+    "./static-renderer/preact": "./src/static-renderer/preact.gen.ts",
     "./static-renderer/react": "./src/static-renderer/react.gen.ts",
+    "./static-renderer/solid": "./src/static-renderer/solid.gen.ts",
+    "./static-renderer/svelte": "./src/static-renderer/svelte.gen.ts",
+    "./static-renderer/vue": "./src/static-renderer/vue.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete": "./src/svelte/autocomplete.gen.ts",
     "./svelte/block-handle": "./src/svelte/block-handle.gen.ts",
@@ -711,9 +715,25 @@
         "types": "./dist/static-renderer/markdown.d.ts",
         "default": "./dist/static-renderer/markdown.js"
       },
+      "./static-renderer/preact": {
+        "types": "./dist/static-renderer/preact.d.ts",
+        "default": "./dist/static-renderer/preact.js"
+      },
       "./static-renderer/react": {
         "types": "./dist/static-renderer/react.d.ts",
         "default": "./dist/static-renderer/react.js"
+      },
+      "./static-renderer/solid": {
+        "types": "./dist/static-renderer/solid.d.ts",
+        "default": "./dist/static-renderer/solid.js"
+      },
+      "./static-renderer/svelte": {
+        "types": "./dist/static-renderer/svelte.d.ts",
+        "default": "./dist/static-renderer/svelte.js"
+      },
+      "./static-renderer/vue": {
+        "types": "./dist/static-renderer/vue.d.ts",
+        "default": "./dist/static-renderer/vue.js"
       },
       "./svelte": {
         "types": "./dist/svelte.d.ts",
@@ -1144,8 +1164,20 @@
         "static-renderer/markdown": [
           "./dist/static-renderer/markdown.d.ts"
         ],
+        "static-renderer/preact": [
+          "./dist/static-renderer/preact.d.ts"
+        ],
         "static-renderer/react": [
           "./dist/static-renderer/react.d.ts"
+        ],
+        "static-renderer/solid": [
+          "./dist/static-renderer/solid.d.ts"
+        ],
+        "static-renderer/svelte": [
+          "./dist/static-renderer/svelte.d.ts"
+        ],
+        "static-renderer/vue": [
+          "./dist/static-renderer/vue.d.ts"
         ],
         "svelte": [
           "./dist/svelte.d.ts"

@@ -1,6 +1,6 @@
 import type { NodeJSON } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { createElement, Fragment, type ReactNode } from 'react'
+import { createElement, cloneElement, Fragment, type ReactElement, type ReactNode } from 'react'
 
 import { createRenderer } from './renderer.ts'
 import type { CustomMappingOptions, DOMOutputSpecArray, DomOutputSpecToElement, StaticRendererOptions } from './types.ts'
@@ -39,12 +39,26 @@ function mapAttrsToReactProps(
         }
       }
       result.style = styleObj
+    } else if (name === 'checked') {
+      result.defaultChecked = value === true || value === 'checked' || value === ''
+    } else if (name === 'value') {
+      result.defaultValue = String(value)
     } else {
       result[name] = String(value)
     }
   }
 
   return result
+}
+
+/**
+ * Add a key to a React element if it doesn't have one.
+ */
+function addKeyToElement(element: ReactNode, key: number): ReactNode {
+  if (element && typeof element === 'object' && 'type' in element && 'props' in element) {
+    return cloneElement(element as ReactElement, { key })
+  }
+  return element
 }
 
 /**
@@ -82,7 +96,7 @@ const domOutputSpecToReactElement: DomOutputSpecToElement<ReactNode> = (
 
     // No attributes, content placeholder is 0
     if (attrs === 0) {
-      return (child) => createElement(tag, mapAttrsToReactProps(undefined, undefined), child)
+      return (child) => createElement(tag, mapAttrsToReactProps(undefined, undefined), ...(Array.isArray(child) ? child : [child]))
     }
 
     // Object attrs
@@ -107,15 +121,20 @@ const domOutputSpecToReactElement: DomOutputSpecToElement<ReactNode> = (
               renderChild(child),
             )
         }
-        return (child) =>
-          createElement(
+        return (child) => {
+          const childElements = [children]
+            .concat(rest)
+            .map((s, i) => {
+              const element = domOutputSpecToReactElement(s)(child)
+              return addKeyToElement(element, i)
+            })
+          return createElement(
             tag,
             mapAttrsToReactProps(undefined, undefined),
             renderChild(child),
-            ...[children]
-              .concat(rest)
-              .map((s) => domOutputSpecToReactElement(s)(child)),
+            ...childElements,
           )
+        }
       }
 
       // attrs is an attributes object
@@ -123,16 +142,21 @@ const domOutputSpecToReactElement: DomOutputSpecToElement<ReactNode> = (
         return () => createElement(tag, mapAttrsToReactProps(attrs))
       }
       if (children === 0) {
-        return (child) => createElement(tag, mapAttrsToReactProps(attrs), child)
+        return (child) => createElement(tag, mapAttrsToReactProps(attrs), ...(Array.isArray(child) ? child : [child]))
       }
-      return (child) =>
-        createElement(
+      return (child) => {
+        const childElements = [children]
+          .concat(rest)
+          .map((s, i) => {
+            const element = domOutputSpecToReactElement(s)(child)
+            return addKeyToElement(element, i)
+          })
+        return createElement(
           tag,
           mapAttrsToReactProps(attrs),
-          ...[children]
-            .concat(rest)
-            .map((s) => domOutputSpecToReactElement(s)(child)),
+          ...childElements,
         )
+      }
     }
   }
 

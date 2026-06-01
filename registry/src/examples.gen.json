@@ -420,7 +420,10 @@
     },
     "static-renderer": {
       "frameworks": [
-        "react"
+        "react",
+        "preact",
+        "vue",
+        "solid"
       ],
       "hidden": false,
       "description": "Render JSON content to HTML or Markdown without an editor instance using the static renderer."
@@ -1779,6 +1782,15 @@
         "registry/src/preact/ui/slash-menu/slash-menu.tsx"
       ]
     },
+    "preact-example-static-renderer": {
+      "story": "static-renderer",
+      "files": [
+        "registry/src/preact/examples/static-renderer/editor.tsx",
+        "registry/src/preact/examples/static-renderer/extension.ts",
+        "registry/src/preact/examples/static-renderer/index.ts",
+        "registry/src/preact/examples/static-renderer/sample-content.ts"
+      ]
+    },
     "preact-example-strike": {
       "story": "strike",
       "files": [
@@ -2427,6 +2439,15 @@
         "registry/src/vue/ui/slash-menu/slash-menu-empty.vue",
         "registry/src/vue/ui/slash-menu/slash-menu-item.vue",
         "registry/src/vue/ui/slash-menu/slash-menu.vue"
+      ]
+    },
+    "vue-example-static-renderer": {
+      "story": "static-renderer",
+      "files": [
+        "registry/src/vue/examples/static-renderer/editor.vue",
+        "registry/src/vue/examples/static-renderer/extension.ts",
+        "registry/src/vue/examples/static-renderer/index.ts",
+        "registry/src/vue/examples/static-renderer/sample-content.ts"
       ]
     },
     "vue-example-strike": {
@@ -3844,6 +3865,13 @@
         "registry/src/solid/ui/slash-menu/slash-menu-empty.tsx",
         "registry/src/solid/ui/slash-menu/slash-menu-item.tsx",
         "registry/src/solid/ui/slash-menu/slash-menu.tsx"
+      ]
+    },
+    "solid-example-static-renderer": {
+      "story": "static-renderer",
+      "files": [
+        "registry/src/solid/examples/static-renderer/extension.ts",
+        "registry/src/solid/examples/static-renderer/sample-content.ts"
       ]
     },
     "solid-example-strike": {

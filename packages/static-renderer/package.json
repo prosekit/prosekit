@@ -31,7 +31,11 @@
     ".": "./src/index.ts",
     "./html": "./src/html.ts",
     "./markdown": "./src/markdown.ts",
-    "./react": "./src/react.ts"
+    "./preact": "./src/preact.ts",
+    "./react": "./src/react.ts",
+    "./solid": "./src/solid.ts",
+    "./svelte": "./src/svelte.ts",
+    "./vue": "./src/vue.ts"
   },
   "files": [
     "dist",
@@ -46,14 +50,30 @@
     "@prosekit/pm": "workspace:^"
   },
   "peerDependencies": {
+    "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
-    "react-dom": ">= 18.2.0"
+    "react-dom": ">= 18.2.0",
+    "solid-js": ">= 1.7.0",
+    "svelte": ">= 5.0.0",
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
+    "preact": {
+      "optional": true
+    },
     "react": {
       "optional": true
     },
     "react-dom": {
+      "optional": true
+    },
+    "solid-js": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "vue": {
       "optional": true
     }
   },
@@ -65,9 +85,13 @@
     "@types/react": "^19.2.15",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "solid-js": "^1.9.13",
+    "svelte": "^5.55.7",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "vue": "^3.5.34",
+    "preact": "^10.29.2"
   },
   "publishConfig": {
     "exports": {
@@ -83,9 +107,25 @@
         "types": "./dist/markdown.d.ts",
         "default": "./dist/markdown.js"
       },
+      "./preact": {
+        "types": "./dist/preact.d.ts",
+        "default": "./dist/preact.js"
+      },
       "./react": {
         "types": "./dist/react.d.ts",
         "default": "./dist/react.js"
+      },
+      "./solid": {
+        "types": "./dist/solid.d.ts",
+        "default": "./dist/solid.js"
+      },
+      "./svelte": {
+        "types": "./dist/svelte.d.ts",
+        "default": "./dist/svelte.js"
+      },
+      "./vue": {
+        "types": "./dist/vue.d.ts",
+        "default": "./dist/vue.js"
       }
     },
     "main": "./dist/index.js",
@@ -96,7 +136,11 @@
         ".": ["./dist/index.d.ts"],
         "html": ["./dist/html.d.ts"],
         "markdown": ["./dist/markdown.d.ts"],
-        "react": ["./dist/react.d.ts"]
+        "preact": ["./dist/preact.d.ts"],
+        "react": ["./dist/react.d.ts"],
+        "solid": ["./dist/solid.d.ts"],
+        "svelte": ["./dist/svelte.d.ts"],
+        "vue": ["./dist/vue.d.ts"]
       }
     }
   }

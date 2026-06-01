@@ -711,12 +711,21 @@ importers:
       '@types/react':
         specifier: ^19.2.15
         version: 19.2.15
+      preact:
+        specifier: ^10.29.2
+        version: 10.29.2
       react:
         specifier: ^19.2.6
         version: 19.2.6
       react-dom:
         specifier: ^19.2.6
         version: 19.2.6(react@19.2.6)
+      solid-js:
+        specifier: ^1.9.13
+        version: 1.9.13
+      svelte:
+        specifier: ^5.55.7
+        version: 5.55.7
       tsdown:
         specifier: 'catalog:'
         version: 0.22.1(@tsdown/css@0.22.1)(oxc-resolver@11.19.1)(tsx@4.22.3)(typescript@6.0.3)(vue-tsc@3.2.9)
@@ -726,6 +735,9 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 4.1.7(@types/node@24.12.2)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(@vitest/ui@4.1.7)(happy-dom@20.9.0)(jsdom@29.1.1)(vite@8.0.14)
+      vue:
+        specifier: ^3.5.34
+        version: 3.5.34(typescript@6.0.3)
 
   packages/svelte:
     dependencies:

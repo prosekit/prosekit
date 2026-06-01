@@ -602,6 +602,10 @@
     "path": "packages/prosekit/dist/lit/block-handle.js"
   },
   {
+    "name": "prosekit/lit/columns-popover",
+    "path": "packages/prosekit/dist/lit/columns-popover.js"
+  },
+  {
     "name": "prosekit/lit/drop-indicator",
     "path": "packages/prosekit/dist/lit/drop-indicator.js"
   },
@@ -691,6 +695,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/columns-popover",
+    "path": "packages/prosekit/dist/preact/columns-popover.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/drop-indicator",
     "path": "packages/prosekit/dist/preact/drop-indicator.js",
     "ignore": [
@@ -758,6 +769,14 @@
   {
     "name": "prosekit/react/block-handle",
     "path": "packages/prosekit/dist/react/block-handle.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/columns-popover",
+    "path": "packages/prosekit/dist/react/columns-popover.js",
     "ignore": [
       "react",
       "react-dom"
@@ -841,6 +860,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/columns-popover",
+    "path": "packages/prosekit/dist/solid/columns-popover.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/drop-indicator",
     "path": "packages/prosekit/dist/solid/drop-indicator.js",
     "ignore": [
@@ -911,6 +937,13 @@
     ]
   },
   {
+    "name": "prosekit/vue/columns-popover",
+    "path": "packages/prosekit/dist/vue/columns-popover.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/vue/drop-indicator",
     "path": "packages/prosekit/dist/vue/drop-indicator.js",
     "ignore": [
@@ -970,6 +1003,10 @@
   {
     "name": "prosekit/web/block-handle",
     "path": "packages/prosekit/dist/web/block-handle.js"
+  },
+  {
+    "name": "prosekit/web/columns-popover",
+    "path": "packages/prosekit/dist/web/columns-popover.js"
   },
   {
     "name": "prosekit/web/drop-indicator",

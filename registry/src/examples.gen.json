@@ -81,7 +81,11 @@
     },
     "columns": {
       "frameworks": [
-        "react"
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
       ],
       "hidden": false,
       "description": "Example for columns layout with resizable columns and drag handles."
@@ -1412,6 +1416,19 @@
         "registry/src/preact/ui/code-block-view/index.ts"
       ]
     },
+    "preact-example-columns": {
+      "story": "columns",
+      "files": [
+        "registry/src/preact/examples/columns/columns-ui.tsx",
+        "registry/src/preact/examples/columns/editor.tsx",
+        "registry/src/preact/examples/columns/extension.ts",
+        "registry/src/preact/examples/columns/index.ts",
+        "registry/src/preact/examples/columns/toolbar.tsx",
+        "registry/src/preact/sample/sample-doc-columns.ts",
+        "registry/src/preact/ui/button/button.tsx",
+        "registry/src/preact/ui/button/index.ts"
+      ]
+    },
     "preact-example-drop-cursor": {
       "story": "drop-cursor",
       "files": [
@@ -2060,6 +2077,19 @@
         "registry/src/vue/sample/sample-doc-code-block.ts",
         "registry/src/vue/ui/code-block-view/code-block-view.vue",
         "registry/src/vue/ui/code-block-view/index.ts"
+      ]
+    },
+    "vue-example-columns": {
+      "story": "columns",
+      "files": [
+        "registry/src/vue/examples/columns/columns-ui.vue",
+        "registry/src/vue/examples/columns/editor.vue",
+        "registry/src/vue/examples/columns/extension.ts",
+        "registry/src/vue/examples/columns/index.ts",
+        "registry/src/vue/examples/columns/toolbar.vue",
+        "registry/src/vue/sample/sample-doc-columns.ts",
+        "registry/src/vue/ui/button/button.vue",
+        "registry/src/vue/ui/button/index.ts"
       ]
     },
     "vue-example-drop-cursor": {
@@ -2820,6 +2850,19 @@
         "registry/src/svelte/ui/code-block-view/index.ts"
       ]
     },
+    "svelte-example-columns": {
+      "story": "columns",
+      "files": [
+        "registry/src/svelte/examples/columns/columns-ui.svelte",
+        "registry/src/svelte/examples/columns/editor.svelte",
+        "registry/src/svelte/examples/columns/extension.ts",
+        "registry/src/svelte/examples/columns/index.ts",
+        "registry/src/svelte/examples/columns/toolbar.svelte",
+        "registry/src/svelte/sample/sample-doc-columns.ts",
+        "registry/src/svelte/ui/button/button.svelte",
+        "registry/src/svelte/ui/button/index.ts"
+      ]
+    },
     "svelte-example-drop-cursor": {
       "story": "drop-cursor",
       "files": [
@@ -3477,6 +3520,19 @@
         "registry/src/solid/sample/sample-doc-code-block.ts",
         "registry/src/solid/ui/code-block-view/code-block-view.tsx",
         "registry/src/solid/ui/code-block-view/index.ts"
+      ]
+    },
+    "solid-example-columns": {
+      "story": "columns",
+      "files": [
+        "registry/src/solid/examples/columns/columns-ui.tsx",
+        "registry/src/solid/examples/columns/editor.tsx",
+        "registry/src/solid/examples/columns/extension.ts",
+        "registry/src/solid/examples/columns/index.ts",
+        "registry/src/solid/examples/columns/toolbar.tsx",
+        "registry/src/solid/sample/sample-doc-columns.ts",
+        "registry/src/solid/ui/button/button.tsx",
+        "registry/src/solid/ui/button/index.ts"
       ]
     },
     "solid-example-drop-cursor": {

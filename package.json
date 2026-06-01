@@ -48,7 +48,7 @@
     "dprint": "^0.54.0",
     "eslint": "^10.4.0",
     "knip": "^6.14.1",
-    "monorepo-typescript-references": "^1.1.1",
+    "monorepo-typescript-references": "^1.1.2",
     "oxfmt": "^0.50.0",
     "playwright": "^1.60.0",
     "size-limit": "^12.1.0",

@@ -503,6 +503,9 @@ importers:
       '@prosekit/solid':
         specifier: workspace:*
         version: link:../solid
+      '@prosekit/static-renderer':
+        specifier: workspace:*
+        version: link:../static-renderer
       '@prosekit/svelte':
         specifier: workspace:*
         version: link:../svelte
@@ -683,6 +686,46 @@ importers:
       vitest-browser-solid:
         specifier: ^1.0.1
         version: 1.0.1(solid-js@1.9.13)(vitest@4.1.7)
+
+  packages/static-renderer:
+    dependencies:
+      '@prosekit/core':
+        specifier: workspace:^
+        version: link:../core
+      '@prosekit/pm':
+        specifier: workspace:^
+        version: link:../pm
+      react-dom:
+        specifier: '>= 18.2.0'
+        version: 19.2.6(react@19.2.6)
+    devDependencies:
+      '@prosekit/config-ts':
+        specifier: workspace:*
+        version: link:../config-ts
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
+      '@prosekit/config-vitest':
+        specifier: workspace:*
+        version: link:../config-vitest
+      '@prosekit/extensions':
+        specifier: workspace:^
+        version: link:../extensions
+      '@types/react':
+        specifier: ^19.2.15
+        version: 19.2.15
+      react:
+        specifier: ^19.2.6
+        version: 19.2.6
+      tsdown:
+        specifier: 'catalog:'
+        version: 0.22.1(@tsdown/css@0.22.1)(oxc-resolver@11.19.1)(tsx@4.22.3)(typescript@6.0.3)(vue-tsc@3.2.9)
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.7(@types/node@24.12.2)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(@vitest/ui@4.1.7)(happy-dom@20.9.0)(jsdom@29.1.1)(vite@8.0.14)
 
   packages/svelte:
     dependencies:

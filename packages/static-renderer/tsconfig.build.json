@@ -1,0 +1,7 @@
+{
+  "extends": "@prosekit/config-ts/build.json",
+  "references": [
+    { "path": "../core/tsconfig.json" },
+    { "path": "../pm/tsconfig.json" }
+  ]
+}

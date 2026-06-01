@@ -169,7 +169,11 @@
     "./web/popover": "./src/web/popover.gen.ts",
     "./web/resizable": "./src/web/resizable.gen.ts",
     "./web/table-handle": "./src/web/table-handle.gen.ts",
-    "./web/tooltip": "./src/web/tooltip.gen.ts"
+    "./web/tooltip": "./src/web/tooltip.gen.ts",
+    "./static-renderer": "./src/static-renderer.ts",
+    "./static-renderer/html": "./src/static-renderer/html.ts",
+    "./static-renderer/markdown": "./src/static-renderer/markdown.ts",
+    "./static-renderer/react": "./src/static-renderer/react.tsx"
   },
   "files": [
     "dist",
@@ -186,6 +190,7 @@
     "@prosekit/extensions": "workspace:*",
     "@prosekit/lit": "workspace:*",
     "@prosekit/pm": "workspace:*",
+    "@prosekit/static-renderer": "workspace:*",
     "@prosekit/preact": "workspace:*",
     "@prosekit/react": "workspace:*",
     "@prosekit/solid": "workspace:*",
@@ -813,6 +818,22 @@
       "./web/tooltip": {
         "types": "./dist/web/tooltip.d.ts",
         "default": "./dist/web/tooltip.js"
+      },
+      "./static-renderer": {
+        "types": "./dist/static-renderer.d.ts",
+        "default": "./dist/static-renderer.js"
+      },
+      "./static-renderer/html": {
+        "types": "./dist/static-renderer/html.d.ts",
+        "default": "./dist/static-renderer/html.js"
+      },
+      "./static-renderer/markdown": {
+        "types": "./dist/static-renderer/markdown.d.ts",
+        "default": "./dist/static-renderer/markdown.js"
+      },
+      "./static-renderer/react": {
+        "types": "./dist/static-renderer/react.d.ts",
+        "default": "./dist/static-renderer/react.js"
       }
     },
     "main": "./dist/index.js",
@@ -1203,6 +1224,18 @@
         ],
         "web/tooltip": [
           "./dist/web/tooltip.d.ts"
+        ],
+        "static-renderer": [
+          "./dist/static-renderer.d.ts"
+        ],
+        "static-renderer/html": [
+          "./dist/static-renderer/html.d.ts"
+        ],
+        "static-renderer/markdown": [
+          "./dist/static-renderer/markdown.d.ts"
+        ],
+        "static-renderer/react": [
+          "./dist/static-renderer/react.d.ts"
         ]
       }
     }

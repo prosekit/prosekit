@@ -15,7 +15,10 @@ export const sampleContent: NodeJSON = {
     {
       type: 'paragraph',
       content: [
-        { type: 'text', text: 'Every keystroke flows naturally. Every feature appears exactly when you need it. This is ' },
+        {
+          type: 'text',
+          text: 'Every keystroke flows naturally. Every feature appears exactly when you need it. This is ',
+        },
         { type: 'text', marks: [{ type: 'bold' }], text: 'writing without barriers' },
         { type: 'text', text: '.' },
       ],
@@ -72,7 +75,10 @@ export const sampleContent: NodeJSON = {
       type: 'list',
       attrs: { kind: 'bullet', order: null, checked: false, collapsed: false },
       content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Bullet points that guide thoughts' }] },
+        {
+          type: 'paragraph',
+          content: [{ type: 'text', text: 'Bullet points that guide thoughts' }],
+        },
       ],
     },
     {
@@ -97,39 +103,29 @@ export const sampleContent: NodeJSON = {
         {
           type: 'list',
           attrs: { kind: 'task', order: null, checked: true, collapsed: false },
-          content: [
-            { type: 'paragraph', content: [{ type: 'text', text: 'Done feels good' }] },
-          ],
+          content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Done feels good' }] }],
         },
         {
           type: 'list',
           attrs: { kind: 'task', order: null, checked: false, collapsed: false },
-          content: [
-            { type: 'paragraph', content: [{ type: 'text', text: 'Todo drives action' }] },
-          ],
+          content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Todo drives action' }] }],
         },
       ],
     },
     {
       type: 'list',
       attrs: { kind: 'ordered', order: null, checked: false, collapsed: false },
-      content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Numbered steps' }] },
-      ],
+      content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Numbered steps' }] }],
     },
     {
       type: 'list',
       attrs: { kind: 'ordered', order: null, checked: false, collapsed: false },
-      content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Sequential thinking' }] },
-      ],
+      content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Sequential thinking' }] }],
     },
     {
       type: 'list',
       attrs: { kind: 'ordered', order: null, checked: false, collapsed: false },
-      content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Clear progress' }] },
-      ],
+      content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Clear progress' }] }],
     },
     {
       type: 'heading',
@@ -159,9 +155,7 @@ export const sampleContent: NodeJSON = {
     },
     {
       type: 'paragraph',
-      content: [
-        { type: 'text', text: 'Drag the handle in the bottom right corner to resize.' },
-      ],
+      content: [{ type: 'text', text: 'Drag the handle in the bottom right corner to resize.' }],
     },
     {
       type: 'heading',
@@ -212,9 +206,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'tableCell',
               attrs: {},
-              content: [
-                { type: 'paragraph', content: [{ type: 'text', text: 'Format text' }] },
-              ],
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Format text' }] }],
             },
             {
               type: 'tableCell',
@@ -238,9 +230,7 @@ export const sampleContent: NodeJSON = {
             {
               type: 'tableCell',
               attrs: {},
-              content: [
-                { type: 'paragraph', content: [{ type: 'text', text: 'Add mentions' }] },
-              ],
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Add mentions' }] }],
             },
             {
               type: 'tableCell',

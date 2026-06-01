@@ -1,4 +1,4 @@
-import { html, nothing, render } from 'lit'
+import { html, render } from 'lit'
 import type { Extension } from 'prosekit/core'
 import { defineNodeView } from 'prosekit/core'
 import { UploadTask } from 'prosekit/extensions/file'

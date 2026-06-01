@@ -112,6 +112,7 @@
     "./react/examples/search": "./src/react/examples/search/index.ts",
     "./react/examples/slash-menu": "./src/react/examples/slash-menu/index.ts",
     "./react/examples/strike": "./src/react/examples/strike/index.ts",
+    "./react/examples/static-renderer": "./src/react/examples/static-renderer/index.ts",
     "./react/examples/sub-sup": "./src/react/examples/sub-sup/index.ts",
     "./react/examples/table": "./src/react/examples/table/index.ts",
     "./react/examples/text-align": "./src/react/examples/text-align/index.ts",

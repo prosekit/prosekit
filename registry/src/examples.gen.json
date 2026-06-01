@@ -418,6 +418,13 @@
       "hidden": false,
       "description": "Command menu triggered by typing slash (/)."
     },
+    "static-renderer": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Render JSON content to HTML or Markdown without an editor instance using the static renderer."
+    },
     "strike": {
       "frameworks": [
         "react",

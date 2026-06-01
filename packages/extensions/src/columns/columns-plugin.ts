@@ -6,7 +6,13 @@ import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 import { addColumnAfter as createAddColumnAfter } from './columns-commands.ts'
 import { applyColumnsMetaAction, type ColumnsMetaAction } from './columns-state.ts'
 import type { ColumnAttrs, ColumnDragState, ColumnsRuntimeState } from './columns-types.ts'
-import { findColumnBoundaryAtCoords, findParentColumn, measureColumnsGap, normalizeColumnWidths, TOTAL_COLUMN_WIDTH } from './columns-utils.ts'
+import {
+  findColumnBoundaryAtCoords,
+  findParentColumn,
+  measureColumnsGap,
+  normalizeColumnWidths,
+  TOTAL_COLUMN_WIDTH,
+} from './columns-utils.ts'
 
 export const columnsPluginKey: PluginKey<ColumnsRuntimeState> = new PluginKey<ColumnsRuntimeState>('columns')
 

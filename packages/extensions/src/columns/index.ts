@@ -23,8 +23,8 @@ export {
   defineColumnSpec,
   defineColumnsSpec,
   type ColumnNodeViewExtension,
-  type ColumnSpecExtension,
   type ColumnsNodeViewExtension,
+  type ColumnSpecExtension,
   type ColumnsSpecExtension,
 } from './columns-spec.ts'
 export type {

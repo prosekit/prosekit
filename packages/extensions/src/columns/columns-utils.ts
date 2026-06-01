@@ -159,7 +159,7 @@ export function normalizeColumnWidths(
  */
 export function measureColumnsGap(container: Element): number {
   const style = getComputedStyle(container)
-  const gap = parseFloat(style.gap || '0')
+  const gap = Number.parseFloat(style.gap || '0')
   return Number.isFinite(gap) ? gap : 0
 }
 

@@ -8,8 +8,8 @@ import {
   defineColumnSpec,
   defineColumnsSpec,
   type ColumnNodeViewExtension,
-  type ColumnSpecExtension,
   type ColumnsNodeViewExtension,
+  type ColumnSpecExtension,
   type ColumnsSpecExtension,
 } from './columns-spec.ts'
 import type { ColumnsOptions } from './columns-types.ts'

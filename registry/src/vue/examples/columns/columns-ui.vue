@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/vue'
-import {
-  ColumnsPopoverPopup,
-  ColumnsPopoverPositioner,
-  ColumnsPopoverRoot,
-} from 'prosekit/vue/columns-popover'
+import { ColumnsPopoverPopup, ColumnsPopoverPositioner, ColumnsPopoverRoot } from 'prosekit/vue/columns-popover'
 
 import Button from '../../ui/button/button.vue'
 

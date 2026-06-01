@@ -1,11 +1,7 @@
+import { useMemo } from 'preact/hooks'
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/preact'
-import {
-  ColumnsPopoverPopup,
-  ColumnsPopoverPositioner,
-  ColumnsPopoverRoot,
-} from 'prosekit/preact/columns-popover'
-import { useMemo } from 'preact/hooks'
+import { ColumnsPopoverPopup, ColumnsPopoverPositioner, ColumnsPopoverRoot } from 'prosekit/preact/columns-popover'
 
 import Button from '../../ui/button/button.tsx'
 

@@ -1,10 +1,6 @@
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/solid'
-import {
-  ColumnsPopoverPopup,
-  ColumnsPopoverPositioner,
-  ColumnsPopoverRoot,
-} from 'prosekit/solid/columns-popover'
+import { ColumnsPopoverPopup, ColumnsPopoverPositioner, ColumnsPopoverRoot } from 'prosekit/solid/columns-popover'
 import type { JSX } from 'solid-js'
 
 import Button from '../../ui/button/button.tsx'

@@ -1,11 +1,7 @@
 <script lang="ts">
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/svelte'
-import {
-  ColumnsPopoverPopup,
-  ColumnsPopoverPositioner,
-  ColumnsPopoverRoot,
-} from 'prosekit/svelte/columns-popover'
+import { ColumnsPopoverPopup, ColumnsPopoverPositioner, ColumnsPopoverRoot } from 'prosekit/svelte/columns-popover'
 
 import Button from '../../ui/button/button.svelte'
 

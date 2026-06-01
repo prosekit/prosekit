@@ -33,7 +33,7 @@ export function getEqualColumnWidths(count: number): number[] {
  */
 export function findParentColumns($pos: ResolvedPos): FindColumnsResult | undefined {
   const found = findParentNode((node) => node.type.name === 'columns', $pos)
-  return found as FindColumnsResult | undefined
+  return found
 }
 
 /**

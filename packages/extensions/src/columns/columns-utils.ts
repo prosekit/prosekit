@@ -155,6 +155,15 @@ export function normalizeColumnWidths(
 }
 
 /**
+ * Measure the rendered CSS `gap` value from a columns container element.
+ */
+export function measureColumnsGap(container: Element): number {
+  const style = getComputedStyle(container)
+  const gap = parseFloat(style.gap || '0')
+  return Number.isFinite(gap) ? gap : 0
+}
+
+/**
  * Detect whether a pointer event is close enough to a rendered column boundary
  * to activate a resize handle.
  *

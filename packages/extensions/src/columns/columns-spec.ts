@@ -28,6 +28,11 @@ export type ColumnSpecExtension = Extension<{
 export type ColumnNodeViewExtension = Extension
 
 /**
+ * @internal
+ */
+export type ColumnsNodeViewExtension = Extension
+
+/**
  * Define the `columns` container node spec.
  */
 export function defineColumnsSpec(): ColumnsSpecExtension {
@@ -96,6 +101,20 @@ function applyColumnWidth(dom: HTMLElement, node: ProseMirrorNode): void {
 }
 
 /**
+ * Sync the `--prosekit-col-count` CSS custom property on the columns container
+ * to match the current number of child columns.
+ *
+ * Without a node view, ProseMirror only reconciles the container's children
+ * when the document changes — the inline `style` written by `toDOM` is not
+ * re-applied on structural changes like adding or removing a column.  This
+ * keeps the CSS variable in sync so `--gap-deduction` and other formulas that
+ * depend on it always reflect the correct count.
+ */
+function applyColumnsColCount(dom: HTMLElement, node: ProseMirrorNode): void {
+  dom.style.setProperty('--prosekit-col-count', String(node.childCount))
+}
+
+/**
  * Define a node view for the `column` node.
  *
  * The column resize plugin previews a drag by writing the new width directly to
@@ -125,6 +144,41 @@ export function defineColumnNodeView(): ColumnNodeViewExtension {
         update: (updatedNode) => {
           if (updatedNode.type.name !== 'column') return false
           applyColumnWidth(dom, updatedNode)
+          return true
+        },
+        ignoreMutation: (record: ViewMutationRecord) => {
+          return record.type === 'attributes' && record.target === dom
+        },
+      }
+    },
+  })
+}
+
+/**
+ * Define a node view for the `columns` container.
+ *
+ * The container's inline `style` sets `--prosekit-col-count` via `toDOM`, but
+ * ProseMirror does not re-apply container attributes when only children change
+ * (e.g. after `addColumnAfter` or `removeColumn`).  This node view keeps the
+ * CSS variable in sync whenever the child count changes.
+ *
+ * `ignoreMutation` prevents the plugin's own style writes (drag preview,
+ * handle detection class) from triggering a node update.
+ */
+export function defineColumnsNodeView(): ColumnsNodeViewExtension {
+  return defineNodeView({
+    name: 'columns',
+    constructor: (node) => {
+      const dom = document.createElement('div')
+      dom.className = 'prosekit-columns'
+      applyColumnsColCount(dom, node)
+
+      return {
+        dom,
+        contentDOM: dom,
+        update: (updatedNode) => {
+          if (updatedNode.type.name !== 'columns') return false
+          applyColumnsColCount(dom, updatedNode)
           return true
         },
         ignoreMutation: (record: ViewMutationRecord) => {

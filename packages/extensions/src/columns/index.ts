@@ -19,10 +19,12 @@ export {
 } from './columns-plugin.ts'
 export {
   defineColumnNodeView,
+  defineColumnsNodeView,
   defineColumnSpec,
   defineColumnsSpec,
   type ColumnNodeViewExtension,
   type ColumnSpecExtension,
+  type ColumnsNodeViewExtension,
   type ColumnsSpecExtension,
 } from './columns-spec.ts'
 export type {
@@ -46,6 +48,7 @@ export {
   getColumnCount,
   getColumnLayoutAtPos,
   getEqualColumnWidths,
+  measureColumnsGap,
   normalizeColumnWidths,
   roundColumnWidth,
   TOTAL_COLUMN_WIDTH,

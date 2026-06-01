@@ -109,6 +109,16 @@ export interface ColumnDragState {
    * container.
    */
   minPercent: number
+
+  /**
+   * Full rendered width of the columns container (including gaps), in pixels.
+   */
+  containerWidth: number
+
+  /**
+   * Measured CSS gap between columns, in pixels.
+   */
+  gapPx: number
 }
 
 /**

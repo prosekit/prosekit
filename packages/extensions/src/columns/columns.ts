@@ -4,10 +4,12 @@ import { defineColumnsCommands, type ColumnsCommandsExtension } from './columns-
 import { defineColumnsPlugin, type ColumnsPluginExtension } from './columns-plugin.ts'
 import {
   defineColumnNodeView,
+  defineColumnsNodeView,
   defineColumnSpec,
   defineColumnsSpec,
   type ColumnNodeViewExtension,
   type ColumnSpecExtension,
+  type ColumnsNodeViewExtension,
   type ColumnsSpecExtension,
 } from './columns-spec.ts'
 import type { ColumnsOptions } from './columns-types.ts'
@@ -18,6 +20,7 @@ import type { ColumnsOptions } from './columns-types.ts'
 export type ColumnsExtension = Union<
   [
     ColumnsSpecExtension,
+    ColumnsNodeViewExtension,
     ColumnSpecExtension,
     ColumnNodeViewExtension,
     ColumnsCommandsExtension,
@@ -38,6 +41,7 @@ export type ColumnsExtension = Union<
 export function defineColumns(options: ColumnsOptions = {}): ColumnsExtension {
   return union(
     defineColumnsSpec(),
+    defineColumnsNodeView(),
     defineColumnSpec(),
     defineColumnNodeView(),
     defineColumnsPlugin({

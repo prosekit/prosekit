@@ -6,7 +6,7 @@ import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 import { addColumnAfter as createAddColumnAfter } from './columns-commands.ts'
 import { applyColumnsMetaAction, type ColumnsMetaAction } from './columns-state.ts'
 import type { ColumnAttrs, ColumnDragState, ColumnsRuntimeState } from './columns-types.ts'
-import { findColumnBoundaryAtCoords, findParentColumn, normalizeColumnWidths, TOTAL_COLUMN_WIDTH } from './columns-utils.ts'
+import { findColumnBoundaryAtCoords, findParentColumn, measureColumnsGap, normalizeColumnWidths, TOTAL_COLUMN_WIDTH } from './columns-utils.ts'
 
 export const columnsPluginKey: PluginKey<ColumnsRuntimeState> = new PluginKey<ColumnsRuntimeState>('columns')
 
@@ -86,6 +86,8 @@ function getColumnElements(container: Element): HTMLElement[] {
 function snapshotColumns(container: Element, leftIndex: number): {
   columns: Array<{ width: number }>
   totalWidth: number
+  containerWidth: number
+  gapPx: number
   leftIndex: number
   minPct: number
 } | null {
@@ -97,9 +99,11 @@ function snapshotColumns(container: Element, leftIndex: number): {
 
   if (totalWidth <= 0) return null
 
+  const containerWidth = container.getBoundingClientRect().width
+  const gapPx = measureColumnsGap(container)
   const minPct = Math.min(DEFAULT_MIN_COLUMN_PERCENT, TOTAL_COLUMN_WIDTH / els.length / 2)
 
-  return { columns: measured, totalWidth, leftIndex, minPct }
+  return { columns: measured, totalWidth, containerWidth, gapPx, leftIndex, minPct }
 }
 
 // ---------------------------------------------------------------------------
@@ -118,11 +122,11 @@ function getResizedColumnWidths(
   clientX: number,
   minColumnPercent: number,
 ): number[] {
-  const { startX, totalWidth, leftIndex, columns } = dragState
+  const { startX, totalWidth, containerWidth, leftIndex, columns } = dragState
 
-  // Use the rendered column content width as the reference so a fixed `gap`
-  // does not cause the first controlled frame to jump.
-  const deltaPct = (clientX - startX) / totalWidth * TOTAL_COLUMN_WIDTH
+  // Use containerWidth (including gaps) for delta so the visual drag matches
+  // the actual pixel displacement relative to the full container.
+  const deltaPct = (clientX - startX) / containerWidth * TOTAL_COLUMN_WIDTH
 
   // The pair of columns being resized.
   const leftPx = columns[leftIndex].width
@@ -366,6 +370,8 @@ function beginColumnDrag(
     startX: clientX,
     columns: snap.columns,
     totalWidth: snap.totalWidth,
+    containerWidth: snap.containerWidth,
+    gapPx: snap.gapPx,
     leftIndex: snap.leftIndex,
     minPercent: snap.minPct,
   }

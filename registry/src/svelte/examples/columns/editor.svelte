@@ -13,7 +13,7 @@ import ColumnsUi from './columns-ui.svelte'
 import { defineExtension } from './extension.ts'
 import Toolbar from './toolbar.svelte'
 
-interface Props {
+export interface Props {
   initialContent?: NodeJSON
 }
 

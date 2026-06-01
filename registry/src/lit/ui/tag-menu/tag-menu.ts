@@ -37,7 +37,11 @@ class TagMenuElement extends LitElement {
     return this
   }
 
-  private handleTagInsert(editor: Editor<Union<[MentionExtension, BasicExtension]>>, id: number, label: string) {
+  private handleTagInsert(
+    editor: Editor<Union<[MentionExtension, BasicExtension]>>,
+    id: number,
+    label: string,
+  ) {
     editor.commands.insertMention({
       id: id.toString(),
       value: '#' + label,
@@ -47,7 +51,9 @@ class TagMenuElement extends LitElement {
   }
 
   override render() {
-    const editor = this.editorConsumer.value as Editor<Union<[MentionExtension, BasicExtension]>> | undefined
+    const editor = this.editorConsumer.value as
+      | Editor<Union<[MentionExtension, BasicExtension]>>
+      | undefined
     if (!editor) {
       return nothing
     }

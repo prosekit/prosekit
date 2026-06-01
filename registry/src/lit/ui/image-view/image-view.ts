@@ -30,11 +30,7 @@ class ImageNodeView {
   private canceled = false
   private lastUrl = ''
 
-  constructor(
-    node: ProseMirrorNode,
-    view: EditorView,
-    getPos: () => number | undefined,
-  ) {
+  constructor(node: ProseMirrorNode, view: EditorView, getPos: () => number | undefined) {
     this.node = node
     this.view = view
     this.getPos = getPos
@@ -123,7 +119,7 @@ class ImageNodeView {
           .width=${attrs.width ?? null}
           .height=${attrs.height ?? null}
           .aspectRatio=${this.aspectRatio ?? null}
-          data-selected=${this.selected ? '' : (undefined as unknown as string)}
+          data-selected=${this.selected ? '' : (undefined)}
           @resizeEnd=${this.handleResizeEnd}
         >
           ${url && !this.error
@@ -152,10 +148,9 @@ class ImageNodeView {
                 </div>
               `
             : ''}
-          <prosekit-resizable-handle
-            class="CSS_IMAGE_RESIZABLE_HANDLE"
-            position="bottom-right"
-          ><div class="CSS_ICON_CORNER_HANDLE"></div></prosekit-resizable-handle>
+          <prosekit-resizable-handle class="CSS_IMAGE_RESIZABLE_HANDLE" position="bottom-right"
+            ><div class="CSS_ICON_CORNER_HANDLE"></div
+          ></prosekit-resizable-handle>
         </prosekit-resizable-root>
       `,
       this.dom,

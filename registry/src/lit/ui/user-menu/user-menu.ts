@@ -41,7 +41,11 @@ class UserMenuElement extends LitElement {
     return this
   }
 
-  private handleUserInsert(editor: Editor<Union<[MentionExtension, BasicExtension]>>, id: number, username: string) {
+  private handleUserInsert(
+    editor: Editor<Union<[MentionExtension, BasicExtension]>>,
+    id: number,
+    username: string,
+  ) {
     editor.commands.insertMention({
       id: id.toString(),
       value: '@' + username,
@@ -61,7 +65,9 @@ class UserMenuElement extends LitElement {
   }
 
   override render() {
-    const editor = this.editorConsumer.value as Editor<Union<[MentionExtension, BasicExtension]>> | undefined
+    const editor = this.editorConsumer.value as
+      | Editor<Union<[MentionExtension, BasicExtension]>>
+      | undefined
     if (!editor) {
       return nothing
     }

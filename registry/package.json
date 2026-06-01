@@ -352,7 +352,7 @@
     "svelte-check": "^4.4.8",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
-    "tinyexec": "^1.2.0",
+    "tinyexec": "^1.2.4",
     "tsx": "^4.22.3",
     "vite": "^8.0.14",
     "vite-plugin-solid": "^2.11.12",

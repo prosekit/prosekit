@@ -12,6 +12,6 @@
     "json5": "^2.2.3",
     "obug": "^2.1.1",
     "path-exists": "^5.0.0",
-    "tinyexec": "^1.2.0"
+    "tinyexec": "^1.2.4"
   }
 }

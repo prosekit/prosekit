@@ -1109,6 +1109,14 @@
         "registry/src/react/ui/slash-menu/slash-menu.tsx"
       ]
     },
+    "react-example-static-renderer": {
+      "story": "static-renderer",
+      "files": [
+        "registry/src/react/examples/static-renderer/editor.tsx",
+        "registry/src/react/examples/static-renderer/extension.ts",
+        "registry/src/react/examples/static-renderer/index.ts"
+      ]
+    },
     "react-example-strike": {
       "story": "strike",
       "files": [

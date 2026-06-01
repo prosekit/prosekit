@@ -7,33 +7,45 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/react'
 import { renderToHTMLString } from 'prosekit/static-renderer/html'
 import { renderToMarkdown } from 'prosekit/static-renderer/markdown'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { defineExtension } from './extension.ts'
+import { sampleContent } from './sample-content.ts'
 
 export default function Editor() {
   const [htmlOutput, setHtmlOutput] = useState('')
   const [markdownOutput, setMarkdownOutput] = useState('')
+  const editorRef = useRef<ReturnType<typeof createEditor> | null>(null)
+
+  const extension = useMemo(() => defineExtension(), [])
 
   const editor = useMemo(() => {
-    const extension = defineExtension()
-    return createEditor({ extension })
-  }, [])
+    const editor = createEditor({ extension, defaultContent: sampleContent })
+    editorRef.current = editor
+    return editor
+  }, [extension])
 
   const updatePreview = useCallback(
     (doc: NodeJSON) => {
-      const html = renderToHTMLString({ extension: defineExtension(), content: doc })
-      const markdown = renderToMarkdown({ extension: defineExtension(), content: doc })
+      const html = renderToHTMLString({ extension, content: doc })
+      const md = renderToMarkdown({ extension, content: doc })
       setHtmlOutput(html)
-      setMarkdownOutput(markdown)
+      setMarkdownOutput(md)
     },
-    [],
+    [extension],
   )
 
+  // Initialize preview with sample content
+  useEffect(() => {
+    updatePreview(sampleContent)
+  }, [updatePreview])
+
   const handleDocChange = useCallback(() => {
-    const doc = editor.getDocJSON()
-    updatePreview(doc)
-  }, [editor, updatePreview])
+    const doc = editorRef.current?.getDocJSON()
+    if (doc) {
+      updatePreview(doc)
+    }
+  }, [updatePreview])
 
   useDocChange(handleDocChange, { editor })
 

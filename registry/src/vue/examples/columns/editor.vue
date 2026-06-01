@@ -12,7 +12,7 @@ import ColumnsUi from './columns-ui.vue'
 import { defineExtension } from './extension.ts'
 import Toolbar from './toolbar.vue'
 
-interface Props {
+export interface Props {
   initialContent?: NodeJSON
 }
 

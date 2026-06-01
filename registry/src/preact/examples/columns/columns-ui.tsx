@@ -1,11 +1,11 @@
-'use client'
-
-import 'prosekit/extensions/columns/style.css'
-
 import type { Editor } from 'prosekit/core'
-import { useEditorDerivedValue } from 'prosekit/react'
-import { ColumnsPopoverPopup, ColumnsPopoverPositioner, ColumnsPopoverRoot } from 'prosekit/react/columns-popover'
-import { useMemo } from 'react'
+import { useEditorDerivedValue } from 'prosekit/preact'
+import {
+  ColumnsPopoverPopup,
+  ColumnsPopoverPositioner,
+  ColumnsPopoverRoot,
+} from 'prosekit/preact/columns-popover'
+import { useMemo } from 'preact/hooks'
 
 import Button from '../../ui/button/button.tsx'
 

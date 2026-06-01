@@ -1,0 +1,36 @@
+<script setup lang="ts">
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+import 'prosekit/extensions/columns/style.css'
+
+import { createEditor, type NodeJSON } from 'prosekit/core'
+import { ProseKit } from 'prosekit/vue'
+
+import { sampleContent } from '../../sample/sample-doc-columns.ts'
+
+import ColumnsUi from './columns-ui.vue'
+import { defineExtension } from './extension.ts'
+import Toolbar from './toolbar.vue'
+
+interface Props {
+  initialContent?: NodeJSON
+}
+
+const props = defineProps<Props>()
+
+const extension = defineExtension()
+const defaultContent = props.initialContent ?? sampleContent
+const editor = createEditor({ extension, defaultContent })
+</script>
+
+<template>
+  <ProseKit :editor="editor">
+    <div class="CSS_EDITOR_VIEWPORT">
+      <Toolbar />
+      <div class="CSS_EDITOR_SCROLLING">
+        <div :ref="(el) => editor.mount(el as HTMLElement | null)" class="CSS_EDITOR_CONTENT" />
+        <ColumnsUi />
+      </div>
+    </div>
+  </ProseKit>
+</template>

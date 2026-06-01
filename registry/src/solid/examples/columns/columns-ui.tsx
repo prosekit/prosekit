@@ -1,11 +1,11 @@
-'use client'
-
-import 'prosekit/extensions/columns/style.css'
-
 import type { Editor } from 'prosekit/core'
-import { useEditorDerivedValue } from 'prosekit/react'
-import { ColumnsPopoverPopup, ColumnsPopoverPositioner, ColumnsPopoverRoot } from 'prosekit/react/columns-popover'
-import { useMemo } from 'react'
+import { useEditorDerivedValue } from 'prosekit/solid'
+import {
+  ColumnsPopoverPopup,
+  ColumnsPopoverPositioner,
+  ColumnsPopoverRoot,
+} from 'prosekit/solid/columns-popover'
+import type { JSX } from 'solid-js'
 
 import Button from '../../ui/button/button.tsx'
 
@@ -44,48 +44,44 @@ function getColumnMenuItems(editor: Editor<EditorExtension>) {
   }
 }
 
-export default function ColumnsUi() {
-  const items = useEditorDerivedValue(
-    useMemo(() => {
-      return (currentEditor: Editor<EditorExtension>) => getColumnMenuItems(currentEditor)
-    }, []),
-  )
+export default function ColumnsUi(): JSX.Element {
+  const items = useEditorDerivedValue(getColumnMenuItems)
 
   return (
     <ColumnsPopoverRoot>
-      <ColumnsPopoverPositioner className="CSS_INLINE_MENU_POSITIONER">
-        <ColumnsPopoverPopup className="CSS_INLINE_MENU_MAIN_POPUP">
+      <ColumnsPopoverPositioner class="CSS_INLINE_MENU_POSITIONER">
+        <ColumnsPopoverPopup class="CSS_INLINE_MENU_MAIN_POPUP">
           <Button
             pressed={false}
-            disabled={!items.addBefore.canExec}
-            onClick={items.addBefore.command}
+            disabled={!items().addBefore.canExec}
+            onClick={items().addBefore.command}
             tooltip="Add column before"
           >
-            <div className="CSS_ICON_ARROW_LEFT"></div>
+            <div class="CSS_ICON_ARROW_LEFT"></div>
           </Button>
           <Button
             pressed={false}
-            disabled={!items.addAfter.canExec}
-            onClick={items.addAfter.command}
+            disabled={!items().addAfter.canExec}
+            onClick={items().addAfter.command}
             tooltip="Add column after"
           >
-            <div className="CSS_ICON_PLUS"></div>
+            <div class="CSS_ICON_PLUS"></div>
           </Button>
           <Button
             pressed={false}
-            disabled={!items.distribute.canExec}
-            onClick={items.distribute.command}
+            disabled={!items().distribute.canExec}
+            onClick={items().distribute.command}
             tooltip="Equalize columns"
           >
-            <span className="text-sm leading-none">=</span>
+            <span class="text-sm leading-none">=</span>
           </Button>
           <Button
             pressed={false}
-            disabled={!items.remove.canExec}
-            onClick={items.remove.command}
+            disabled={!items().remove.canExec}
+            onClick={items().remove.command}
             tooltip="Remove column"
           >
-            <div className="CSS_ICON_MINUS"></div>
+            <div class="CSS_ICON_MINUS"></div>
           </Button>
         </ColumnsPopoverPopup>
       </ColumnsPopoverPositioner>

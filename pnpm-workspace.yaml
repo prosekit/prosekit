@@ -53,3 +53,5 @@ minimumReleaseAgeExclude:
   - '@vitest/ui@4.1.8'
   - '@vitest/utils@4.1.8'
   - vitest@4.1.8
+  - vite@7.3.5
+  - vite@8.0.16

@@ -906,8 +906,44 @@
     ]
   },
   {
+    "name": "prosekit/static-renderer/preact",
+    "path": "packages/prosekit/dist/static-renderer/preact.js",
+    "ignore": [
+      "preact",
+      "react",
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/static-renderer/react",
     "path": "packages/prosekit/dist/static-renderer/react.js",
+    "ignore": [
+      "preact",
+      "react",
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/static-renderer/solid",
+    "path": "packages/prosekit/dist/static-renderer/solid.js",
+    "ignore": [
+      "preact",
+      "react",
+      "react-dom",
+      "solid-js",
+      "svelte",
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/static-renderer/vue",
+    "path": "packages/prosekit/dist/static-renderer/vue.js",
     "ignore": [
       "preact",
       "react",

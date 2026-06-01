@@ -423,6 +423,7 @@
         "react",
         "preact",
         "vue",
+        "svelte",
         "solid"
       ],
       "hidden": false,
@@ -3217,6 +3218,16 @@
         "registry/src/svelte/ui/slash-menu/slash-menu.svelte"
       ]
     },
+    "svelte-example-static-renderer": {
+      "story": "static-renderer",
+      "files": [
+        "registry/src/svelte/examples/static-renderer/ProseMirrorRenderer.svelte",
+        "registry/src/svelte/examples/static-renderer/editor.svelte",
+        "registry/src/svelte/examples/static-renderer/extension.ts",
+        "registry/src/svelte/examples/static-renderer/index.ts",
+        "registry/src/svelte/examples/static-renderer/sample-content.ts"
+      ]
+    },
     "svelte-example-strike": {
       "story": "strike",
       "files": [
@@ -3870,7 +3881,9 @@
     "solid-example-static-renderer": {
       "story": "static-renderer",
       "files": [
+        "registry/src/solid/examples/static-renderer/editor.tsx",
         "registry/src/solid/examples/static-renderer/extension.ts",
+        "registry/src/solid/examples/static-renderer/index.ts",
         "registry/src/solid/examples/static-renderer/sample-content.ts"
       ]
     },

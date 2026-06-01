@@ -38,6 +38,7 @@ export const loaders = {
   'save-markdown': () => import('./examples/save-markdown/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'search': () => import('./examples/search/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'slash-menu': () => import('./examples/slash-menu/index.ts').then((m) => ({ default: m.ExampleEditor })),
+  'static-renderer': () => import('./examples/static-renderer/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'strike': () => import('./examples/strike/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'sub-sup': () => import('./examples/sub-sup/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'table': () => import('./examples/table/index.ts').then((m) => ({ default: m.ExampleEditor })),

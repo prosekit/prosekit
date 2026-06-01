@@ -695,9 +695,6 @@ importers:
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
-      react-dom:
-        specifier: '>= 18.2.0'
-        version: 19.2.6(react@19.2.6)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
@@ -717,6 +714,9 @@ importers:
       react:
         specifier: ^19.2.6
         version: 19.2.6
+      react-dom:
+        specifier: ^19.2.6
+        version: 19.2.6(react@19.2.6)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.1(@tsdown/css@0.22.1)(oxc-resolver@11.19.1)(tsx@4.22.3)(typescript@6.0.3)(vue-tsc@3.2.9)

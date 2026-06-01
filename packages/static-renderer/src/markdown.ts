@@ -1,10 +1,13 @@
+import type { NodeJSON } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
+
 import type {
   CustomMappingOptions,
   MarkMapping,
   NodeMapping,
   StaticRendererOptions,
 } from './types.ts'
-import { renderToHTMLString } from './html.ts'
+import { createHTMLRenderer, renderToHTMLString } from './html.ts'
 import { serializeChildrenToHTMLString } from './dom-output-spec.ts'
 
 export type { StaticRendererOptions, CustomMappingOptions }
@@ -120,6 +123,55 @@ const defaultMarkdownMarkMapping: MarkMapping<string> = {
 }
 
 /**
+ * Create a reusable renderer function that converts ProseMirror document JSON
+ * to Markdown strings. The renderer can be used multiple times with different
+ * content, avoiding repeated schema initialization.
+ *
+ * This reuses the HTML renderer internally, overriding node and mark mappings
+ * with Markdown-specific defaults. You can further customize the output by
+ * providing your own `nodeMapping` and `markMapping`.
+ *
+ * @example
+ * ```ts
+ * import { createMarkdownRenderer } from '@prosekit/static-renderer/markdown'
+ * import { defineExtension } from './my-extension'
+ *
+ * const render = createMarkdownRenderer({
+ *   extension: defineExtension(),
+ * })
+ *
+ * const markdown1 = render({
+ *   type: 'doc',
+ *   content: [
+ *     { type: 'heading', attrs: { level: 1 }, content: [{ type: 'text', text: 'Title' }] },
+ *   ],
+ * })
+ *
+ * const markdown2 = render({
+ *   type: 'doc',
+ *   content: [
+ *     { type: 'paragraph', content: [{ type: 'text', text: 'Hello World' }] },
+ *   ],
+ * })
+ * ```
+ */
+export function createMarkdownRenderer(
+  options: Omit<StaticRendererOptions, 'content'> & CustomMappingOptions<string>,
+): (content: NodeJSON | ProseMirrorNode) => string {
+  return createHTMLRenderer({
+    ...options,
+    nodeMapping: {
+      ...defaultMarkdownNodeMapping,
+      ...options.nodeMapping,
+    },
+    markMapping: {
+      ...defaultMarkdownMarkMapping,
+      ...options.markMapping,
+    },
+  })
+}
+
+/**
  * Render a ProseMirror document JSON to a Markdown string without creating
  * an editor instance.
  *
@@ -155,15 +207,13 @@ const defaultMarkdownMarkMapping: MarkMapping<string> = {
 export function renderToMarkdown(
   options: StaticRendererOptions & CustomMappingOptions<string>,
 ): string {
-  return renderToHTMLString({
-    ...options,
-    nodeMapping: {
-      ...defaultMarkdownNodeMapping,
-      ...options.nodeMapping,
-    },
-    markMapping: {
-      ...defaultMarkdownMarkMapping,
-      ...options.markMapping,
-    },
-  })
+  const render = createMarkdownRenderer(options)
+
+  if (!options.content) {
+    throw new Error(
+      '[prosekit error]: content is required for renderToMarkdown. Use createMarkdownRenderer() if you want to create a reusable renderer.',
+    )
+  }
+
+  return render(options.content)
 }

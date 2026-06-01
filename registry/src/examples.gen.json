@@ -1114,7 +1114,8 @@
       "files": [
         "registry/src/react/examples/static-renderer/editor.tsx",
         "registry/src/react/examples/static-renderer/extension.ts",
-        "registry/src/react/examples/static-renderer/index.ts"
+        "registry/src/react/examples/static-renderer/index.ts",
+        "registry/src/react/examples/static-renderer/sample-content.ts"
       ]
     },
     "react-example-strike": {

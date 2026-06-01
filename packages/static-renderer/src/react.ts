@@ -1,3 +1,5 @@
+import type { NodeJSON } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { createElement, Fragment, type ReactNode } from 'react'
 
 import { createRenderer } from './renderer.ts'
@@ -141,6 +143,52 @@ const domOutputSpecToReactElement: DomOutputSpecToElement<ReactNode> = (
 }
 
 /**
+ * Create a reusable renderer function that converts ProseMirror document JSON
+ * to React elements. The renderer can be used multiple times with different
+ * content, avoiding repeated schema initialization.
+ *
+ * @example
+ * ```tsx
+ * import { createReactRenderer } from '@prosekit/static-renderer/react'
+ * import { defineExtension } from './my-extension'
+ *
+ * const render = createReactRenderer({
+ *   extension: defineExtension(),
+ * })
+ *
+ * const element1 = render({
+ *   type: 'doc',
+ *   content: [
+ *     { type: 'paragraph', content: [{ type: 'text', text: 'Hello' }] },
+ *   ],
+ * })
+ *
+ * const element2 = render({
+ *   type: 'doc',
+ *   content: [
+ *     { type: 'paragraph', content: [{ type: 'text', text: 'World' }] },
+ *   ],
+ * })
+ * ```
+ */
+export function createReactRenderer(
+  options: Omit<StaticRendererOptions, 'content'> & CustomMappingOptions<ReactNode>,
+): (content: NodeJSON | ProseMirrorNode) => ReactNode {
+  return createRenderer<ReactNode>({
+    extension: options.extension,
+    domOutputSpecToElement: domOutputSpecToReactElement,
+    mapDefinedTypes: {
+      doc: ({ children }) => createElement(Fragment, null, ...children),
+      text: ({ node }) => node.text ?? '',
+    },
+    nodeMapping: options.nodeMapping,
+    markMapping: options.markMapping,
+    unhandledNode: options.unhandledNode,
+    unhandledMark: options.unhandledMark,
+  })
+}
+
+/**
  * Render a ProseMirror document JSON to a React element without creating
  * an editor instance.
  *
@@ -164,18 +212,13 @@ const domOutputSpecToReactElement: DomOutputSpecToElement<ReactNode> = (
 export function renderToReactElement(
   options: StaticRendererOptions & CustomMappingOptions<ReactNode>,
 ): ReactNode {
-  const render = createRenderer<ReactNode>({
-    extension: options.extension,
-    domOutputSpecToElement: domOutputSpecToReactElement,
-    mapDefinedTypes: {
-      doc: ({ children }) => createElement(Fragment, null, ...children),
-      text: ({ node }) => node.text ?? '',
-    },
-    nodeMapping: options.nodeMapping,
-    markMapping: options.markMapping,
-    unhandledNode: options.unhandledNode,
-    unhandledMark: options.unhandledMark,
-  })
+  const render = createReactRenderer(options)
+
+  if (!options.content) {
+    throw new Error(
+      '[prosekit error]: content is required for renderToReactElement. Use createReactRenderer() if you want to create a reusable renderer.',
+    )
+  }
 
   return render(options.content)
 }

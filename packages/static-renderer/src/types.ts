@@ -12,8 +12,10 @@ export interface StaticRendererOptions {
 
   /**
    * The content to render. Can be a ProseMirror node or a JSON object.
+   * Required for one-shot render functions, optional for create* functions
+   * that return a reusable render function.
    */
-  content: NodeJSON | ProseMirrorNode
+  content?: NodeJSON | ProseMirrorNode
 
   /**
    * The Document object to use for DOM operations. If not provided, defaults

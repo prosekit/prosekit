@@ -7,14 +7,7 @@
  * @module
  */
 
-export { renderToHTMLString } from './html.ts'
-export { renderToMarkdown } from './markdown.ts'
-export { renderToReactElement } from './react.ts'
-export type {
-  CustomMappingOptions,
-  MarkMapping,
-  MarkProps,
-  NodeMapping,
-  NodeProps,
-  StaticRendererOptions,
-} from './types.ts'
+export { createHTMLRenderer, renderToHTMLString } from './html.ts'
+export { createMarkdownRenderer, renderToMarkdown } from './markdown.ts'
+export { createReactRenderer, renderToReactElement } from './react.ts'
+export type { CustomMappingOptions, MarkMapping, MarkProps, NodeMapping, NodeProps, StaticRendererOptions } from './types.ts'

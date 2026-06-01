@@ -140,6 +140,10 @@
     "./solid/resizable": "./src/solid/resizable.gen.ts",
     "./solid/table-handle": "./src/solid/table-handle.gen.ts",
     "./solid/tooltip": "./src/solid/tooltip.gen.ts",
+    "./static-renderer": "./src/static-renderer.ts",
+    "./static-renderer/html": "./src/static-renderer/html.gen.ts",
+    "./static-renderer/markdown": "./src/static-renderer/markdown.gen.ts",
+    "./static-renderer/react": "./src/static-renderer/react.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete": "./src/svelte/autocomplete.gen.ts",
     "./svelte/block-handle": "./src/svelte/block-handle.gen.ts",
@@ -169,11 +173,7 @@
     "./web/popover": "./src/web/popover.gen.ts",
     "./web/resizable": "./src/web/resizable.gen.ts",
     "./web/table-handle": "./src/web/table-handle.gen.ts",
-    "./web/tooltip": "./src/web/tooltip.gen.ts",
-    "./static-renderer": "./src/static-renderer.ts",
-    "./static-renderer/html": "./src/static-renderer/html.ts",
-    "./static-renderer/markdown": "./src/static-renderer/markdown.ts",
-    "./static-renderer/react": "./src/static-renderer/react.tsx"
+    "./web/tooltip": "./src/web/tooltip.gen.ts"
   },
   "files": [
     "dist",
@@ -190,10 +190,10 @@
     "@prosekit/extensions": "workspace:*",
     "@prosekit/lit": "workspace:*",
     "@prosekit/pm": "workspace:*",
-    "@prosekit/static-renderer": "workspace:*",
     "@prosekit/preact": "workspace:*",
     "@prosekit/react": "workspace:*",
     "@prosekit/solid": "workspace:*",
+    "@prosekit/static-renderer": "workspace:*",
     "@prosekit/svelte": "workspace:*",
     "@prosekit/vue": "workspace:*",
     "@prosekit/web": "workspace:*"
@@ -201,20 +201,26 @@
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
     "loro-prosemirror": ">= 0.4.1",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
       "optional": true
     },
     "loro-prosemirror": {
+      "optional": true
+    },
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
       "optional": true
     },
     "preact": {
@@ -233,12 +239,6 @@
       "optional": true
     },
     "vue": {
-      "optional": true
-    },
-    "y-prosemirror": {
-      "optional": true
-    },
-    "yjs": {
       "optional": true
     }
   },
@@ -699,6 +699,22 @@
         "types": "./dist/solid/tooltip.d.ts",
         "default": "./dist/solid/tooltip.js"
       },
+      "./static-renderer": {
+        "types": "./dist/static-renderer.d.ts",
+        "default": "./dist/static-renderer.js"
+      },
+      "./static-renderer/html": {
+        "types": "./dist/static-renderer/html.d.ts",
+        "default": "./dist/static-renderer/html.js"
+      },
+      "./static-renderer/markdown": {
+        "types": "./dist/static-renderer/markdown.d.ts",
+        "default": "./dist/static-renderer/markdown.js"
+      },
+      "./static-renderer/react": {
+        "types": "./dist/static-renderer/react.d.ts",
+        "default": "./dist/static-renderer/react.js"
+      },
       "./svelte": {
         "types": "./dist/svelte.d.ts",
         "default": "./dist/svelte.js"
@@ -818,22 +834,6 @@
       "./web/tooltip": {
         "types": "./dist/web/tooltip.d.ts",
         "default": "./dist/web/tooltip.js"
-      },
-      "./static-renderer": {
-        "types": "./dist/static-renderer.d.ts",
-        "default": "./dist/static-renderer.js"
-      },
-      "./static-renderer/html": {
-        "types": "./dist/static-renderer/html.d.ts",
-        "default": "./dist/static-renderer/html.js"
-      },
-      "./static-renderer/markdown": {
-        "types": "./dist/static-renderer/markdown.d.ts",
-        "default": "./dist/static-renderer/markdown.js"
-      },
-      "./static-renderer/react": {
-        "types": "./dist/static-renderer/react.d.ts",
-        "default": "./dist/static-renderer/react.js"
       }
     },
     "main": "./dist/index.js",
@@ -1135,6 +1135,18 @@
         "solid/tooltip": [
           "./dist/solid/tooltip.d.ts"
         ],
+        "static-renderer": [
+          "./dist/static-renderer.d.ts"
+        ],
+        "static-renderer/html": [
+          "./dist/static-renderer/html.d.ts"
+        ],
+        "static-renderer/markdown": [
+          "./dist/static-renderer/markdown.d.ts"
+        ],
+        "static-renderer/react": [
+          "./dist/static-renderer/react.d.ts"
+        ],
         "svelte": [
           "./dist/svelte.d.ts"
         ],
@@ -1224,18 +1236,6 @@
         ],
         "web/tooltip": [
           "./dist/web/tooltip.d.ts"
-        ],
-        "static-renderer": [
-          "./dist/static-renderer.d.ts"
-        ],
-        "static-renderer/html": [
-          "./dist/static-renderer/html.d.ts"
-        ],
-        "static-renderer/markdown": [
-          "./dist/static-renderer/markdown.d.ts"
-        ],
-        "static-renderer/react": [
-          "./dist/static-renderer/react.d.ts"
         ]
       }
     }

@@ -4,19 +4,16 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import type { BasicExtension } from 'prosekit/basic'
-import { createEditor, type NodeJSON, type Union } from 'prosekit/core'
-import { ProseKit, useDocChange, useEditorDerivedValue } from 'prosekit/react'
-import { renderToHTMLString } from 'prosekit/static-renderer/html'
-import { renderToMarkdown } from 'prosekit/static-renderer/markdown'
-import { useCallback, useMemo, useRef, useState } from 'react'
-import { renderToReactElement } from '@prosekit/static-renderer'
+import { createEditor, type Union } from 'prosekit/core'
+import { ProseKit, useEditorDerivedValue } from 'prosekit/react'
+import { createMarkdownRenderer } from 'prosekit/static-renderer/markdown'
+import { useCallback, useMemo, useRef } from 'react'
+import { createHTMLRenderer, createReactRenderer } from 'prosekit/static-renderer'
 
 import { defineExtension } from './extension.ts'
 import { sampleContent } from './sample-content.ts'
 
 export default function Editor() {
-  const [htmlOutput, setHtmlOutput] = useState('')
-  const [markdownOutput, setMarkdownOutput] = useState('')
   const editorRef = useRef<ReturnType<typeof createEditor> | null>(null)
 
   const extension = useMemo(() => defineExtension(), [])
@@ -27,69 +24,29 @@ export default function Editor() {
     return editor
   }, [extension])
 
-  const updatePreview = useCallback(
-    (doc: NodeJSON) => {
-      const html = renderToHTMLString({ extension, content: doc })
-      const md = renderToMarkdown({ extension, content: doc })
-      setHtmlOutput(html)
-      setMarkdownOutput(md)
-    },
-    [extension],
-  )
-
-  const htmlOutput = useMemo(() => {
-    const doc = editorRef.current?.getDocJSON()
-    return doc ? renderToHTMLString({ extension, content: doc }) : ''
-  }, [])
-
-  // Initialize preview with sample content
-  // useEffect(() => {
-  //   updatePreview(sampleContent)
-  // }, [updatePreview])
-
-  const handleDocChange = useCallback(() => {
-    const doc = editorRef.current?.getDocJSON()
-    if (doc) {
-      updatePreview(doc)
-    }
-  }, [updatePreview])
-
-  useDocChange(handleDocChange, { editor })
-
   return (
-    <div className="flex flex-col gap-4">
-      {/* Editor */}
-      <div className="border border-solid border-gray-300 rounded">
-        <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300">
-          Editor
-        </div>
-        <ProseKit editor={editor}>
-          <div className="CSS_EDITOR_SCROLLING">
-            <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+    <ProseKit editor={editor}>
+      <div className="flex flex-col gap-4 max-h-[80vh] overflow-y-auto p-4">
+        {/* Editor */}
+        <div className="border border-solid border-gray-300 rounded flex flex-col" style={{ minHeight: '200px' }}>
+          <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300 shrink-0">
+            Editor
           </div>
-        </ProseKit>
-      </div>
 
-      {/* HTML Output */}
-      <div className="border border-solid border-gray-300 rounded">
-        <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300">
-          renderToHTMLString Output
+          <div className="overflow-y-auto flex-1" style={{ maxHeight: '300px' }}>
+            <div ref={editor.mount} className="ProseMirror box-border min-h-full px-4 py-4 outline-hidden"></div>
+          </div>
         </div>
-        <pre className="p-3 text-xs overflow-x-auto whitespace-pre-wrap">
-          {htmlOutput}
-        </pre>
-      </div>
+        {/* HTML Output */}
+        <RenderJson type="html" extension={extension} />
 
-      {/* Markdown Output */}
-      <div className="border border-solid border-gray-300 rounded">
-        <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300">
-          renderToMarkdown Output
-        </div>
-        <pre className="p-3 text-xs overflow-x-auto whitespace-pre-wrap">
-          {markdownOutput}
-        </pre>
+        {/* Markdown Output */}
+        <RenderJson type="markdown" extension={extension} />
+
+        {/* React Output */}
+        <RenderJson type="react" extension={extension} />
       </div>
-    </div>
+    </ProseKit>
   )
 }
 
@@ -104,26 +61,31 @@ function RenderJson(props: RenderJsonProps) {
     return editor.getDocJSON()
   }, []))
 
-  const jsonOutput = useMemo(() => {
+  const render = useMemo(() => {
     if (type === 'html') {
-      return renderToHTMLString({ extension, content: docJSON })
+      return createHTMLRenderer({ extension })
     } else if (type === 'markdown') {
-      return renderToMarkdown({ extension, content: docJSON })
+      return createMarkdownRenderer({ extension })
     } else if (type === 'react') {
-      return renderToReactElement({ extension, content: docJSON })
+      return createReactRenderer({ extension })
     }
-    return ''
-  }, [type, extension, docJSON])
+    return null
+  }, [type, extension])
+
+  const jsonOutput = useMemo(() => {
+    if (!render || !docJSON) return ''
+    return render(docJSON)
+  }, [render, docJSON])
 
   return (
-    <div className="border border-solid border-gray-300 rounded">
-      <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300">
+    <div className="border border-solid border-gray-300 rounded flex flex-col" style={{ minHeight: '150px', maxHeight: '300px' }}>
+      <div className="bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 border-b border-solid border-gray-300 shrink-0">
         {type === 'html' && 'renderToHTMLString Output'}
         {type === 'markdown' && 'renderToMarkdown Output'}
         {type === 'react' && 'renderToReactElement Output'}
       </div>
-      <pre className="p-3 text-xs overflow-x-auto whitespace-pre-wrap">
-          {jsonOutput}
+      <pre className="p-3 text-xs overflow-auto whitespace-pre-wrap flex-1 m-0">
+        {jsonOutput}
       </pre>
     </div>
   )

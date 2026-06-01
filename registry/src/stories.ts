@@ -154,6 +154,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Command menu triggered by typing slash (/).',
   },
   {
+    name: 'static-renderer',
+    description: 'Render JSON content to HTML or Markdown without an editor instance using the static renderer.',
+  },
+  {
     name: 'strike',
     description: 'Example for strikethrough mark.',
   },

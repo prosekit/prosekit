@@ -1194,8 +1194,8 @@ importers:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
       rehype-resolve-markdown-links:
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.2.0
+        version: 0.2.0
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -6577,8 +6577,13 @@ packages:
   rehype-remark@10.0.1:
     resolution: {integrity: sha512-EmDndlb5NVwXGfUa4c9GPK+lXeItTilLhE6ADSaQuHr4JUlKw9MidzGzx4HpqZrNCt6vnHmEifXQiiA+CEnjYQ==}
 
-  rehype-resolve-markdown-links@0.1.0:
-    resolution: {integrity: sha512-1N9YXjWsVKTh25rf5q+6u3hdcoc5EO6njCckr6VlY48qf5vFri72rsf1jxS4nyUryfH4tSTyo4tpqKEliyGL6g==}
+  rehype-resolve-markdown-links@0.2.0:
+    resolution: {integrity: sha512-iCH0ud/ip0RAdy5T98lIv6A5vEhV7pin/74mU0e+CXDCcDLF00e833ErV8lM+upcg1ZwP/9ue5JfpXyaRro80A==}
+    peerDependencies:
+      satteri: ^0.6.3
+    peerDependenciesMeta:
+      satteri:
+        optional: true
 
   rehype-stringify@10.0.1:
     resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
@@ -14090,7 +14095,7 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  rehype-resolve-markdown-links@0.1.0:
+  rehype-resolve-markdown-links@0.2.0:
     dependencies:
       '@types/hast': 3.0.4
       slash: 5.1.0

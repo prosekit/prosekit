@@ -12,11 +12,9 @@ import ColumnsUi from './columns-ui.vue'
 import { defineExtension } from './extension.ts'
 import Toolbar from './toolbar.vue'
 
-export interface Props {
+const props = defineProps<{
   initialContent?: NodeJSON
-}
-
-const props = defineProps<Props>()
+}>()
 
 const extension = defineExtension()
 const defaultContent = props.initialContent ?? sampleContent

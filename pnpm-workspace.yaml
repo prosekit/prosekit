@@ -42,3 +42,4 @@ trustLockfile: true
 
 minimumReleaseAgeExclude:
   - prosemirror-model@1.25.7
+  - rehype-resolve-markdown-links@0.2.0

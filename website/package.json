@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@astrojs/markdown-remark": "^7.2.0",
+    "@astrojs/markdown-satteri": "^0.2.1",
     "@astrojs/preact": "^5.1.4",
     "@astrojs/react": "^5.0.6",
     "@astrojs/solid-js": "^6.0.1",
@@ -50,7 +50,7 @@
     "prosekit-registry": "workspace:*",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "rehype-resolve-markdown-links": "^0.1.0",
+    "rehype-resolve-markdown-links": "^0.2.0",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.13",
     "starlight-theme-nova": "^0.11.11",

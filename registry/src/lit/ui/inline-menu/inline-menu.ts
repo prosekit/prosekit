@@ -88,6 +88,7 @@ class LitInlineMenu extends LitElement {
   })
 
   private removeUpdateExtension?: VoidFunction
+  private attachedEditor?: Editor
 
   override createRenderRoot() {
     return this
@@ -110,9 +111,12 @@ class LitInlineMenu extends LitElement {
   }
 
   private attachEditorListener() {
-    this.detachEditorListener()
-
     const editor = this.editorConsumer.value
+    if (editor === this.attachedEditor) return
+
+    this.detachEditorListener()
+    this.attachedEditor = editor
+
     if (!editor) return
 
     this.removeUpdateExtension = editor.use(defineUpdateHandler(() => this.requestUpdate()))
@@ -121,6 +125,7 @@ class LitInlineMenu extends LitElement {
   private detachEditorListener() {
     this.removeUpdateExtension?.()
     this.removeUpdateExtension = undefined
+    this.attachedEditor = undefined
   }
 
   private handleLinkUpdate(editor: Editor<BasicExtension>, href?: string) {

@@ -13,8 +13,8 @@ npm install prosekit
 ## Usage
 
 ```ts
-import { createEditor } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
 
 const editor = createEditor({ extension: defineBasicExtension() })
 ```
@@ -24,8 +24,8 @@ Then mount the editor in your framework of choice. See the [Quick Start](https:/
 `prosekit` bundles every `@prosekit/*` package under a single dependency, and each entry point re-exports its scoped counterpart. So these two imports are equivalent:
 
 ```ts
-import { defineItalic } from 'prosekit/extensions/italic'
 import { defineItalic } from '@prosekit/extensions/italic'
+import { defineItalic } from 'prosekit/extensions/italic'
 ```
 
 ## Documentation

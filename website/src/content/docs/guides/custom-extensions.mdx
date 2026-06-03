@@ -80,8 +80,15 @@ Or, after the editor exists, hot-add it with `editor.use(extension)` (see [Conce
 If you're going to share an extension with other people, export the individual pieces (`defineMyXSpec`, `defineMyXCommands`, …) *and* the bundled `defineMyX`. That lets users override or omit any one piece without copy-pasting your whole module.
 </Aside>
 
+## Publishing as a package
+
+Ready to share your extension on npm? The [`prosekit-extension-template`](https://github.com/prosekit/prosekit-extension-template) repository is a complete, working example. It packages a small YouTube-embed extension and wires up everything you need to ship it and **release new versions**: a TypeScript build, browser-based tests, and an automated pipeline that publishes to npm from [Conventional Commits](https://www.conventionalcommits.org/) via [release-please](https://github.com/googleapis/release-please-action) and npm trusted publishing (OIDC).
+
+Clone it, rename the package in `package.json`, and follow its README to cut your first release.
+
 ## See also
 
 - [Concepts → Extensions](/concepts/extensions)
 - [Custom node views](/guides/custom-node-views)
 - [`prosekit/core` reference](/references/core)
+- [`prosekit-extension-template`](https://github.com/prosekit/prosekit-extension-template) — a publishable extension package with an automated npm release setup

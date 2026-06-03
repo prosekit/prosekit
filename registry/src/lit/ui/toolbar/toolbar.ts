@@ -165,6 +165,7 @@ class LitToolbar extends LitElement {
   })
 
   private removeUpdateExtension?: VoidFunction
+  private attachedEditor?: Editor
 
   override createRenderRoot() {
     return this
@@ -187,9 +188,12 @@ class LitToolbar extends LitElement {
   }
 
   private attachEditorListener() {
-    this.detachEditorListener()
-
     const editor = this.editorConsumer.value
+    if (editor === this.attachedEditor) return
+
+    this.detachEditorListener()
+    this.attachedEditor = editor
+
     if (!editor) return
 
     this.removeUpdateExtension = editor.use(defineUpdateHandler(() => this.requestUpdate()))
@@ -198,6 +202,7 @@ class LitToolbar extends LitElement {
   private detachEditorListener() {
     this.removeUpdateExtension?.()
     this.removeUpdateExtension = undefined
+    this.attachedEditor = undefined
   }
 
   override render() {

@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@prosekit/extensions)](https://www.npmjs.com/package/@prosekit/extensions)
 
-A collection of common extensions for [ProseKit](https://prosekit.dev), the toolkit for building rich text editors on the web. Each feature — bold, italic, headings, lists, links, tables, code blocks, and many more — ships as its own entry point, so you only bundle what you use.
+A collection of common extensions for [ProseKit](https://prosekit.dev), the toolkit for building rich text editors on the web. Each feature (bold, italic, headings, lists, links, tables, code blocks, and many more) ships as its own entry point, so you only bundle what you use.
 
 ```ts
 import { defineBold } from '@prosekit/extensions/bold'

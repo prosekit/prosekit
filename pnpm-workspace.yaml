@@ -9,12 +9,12 @@ allowedDeprecatedVersions:
 catalog:
   "@tsdown/css": "^0.22.1"
   "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.7"
-  "@vitest/coverage-v8": "^4.1.7"
-  "@vitest/ui": "^4.1.7"
+  "@vitest/browser-playwright": "^4.1.8"
+  "@vitest/coverage-v8": "^4.1.8"
+  "@vitest/ui": "^4.1.8"
   tsdown: "^0.22.1"
   typescript: "~6.0.3"
-  vitest: "^4.1.7"
+  vitest: "^4.1.8"
 
 dedupePeers: true
 
@@ -41,4 +41,4 @@ trustPolicyIgnoreAfter: 10080 # 7 days
 trustLockfile: true
 
 minimumReleaseAgeExclude:
-  - prosemirror-model@1.25.7
+  - rehype-resolve-markdown-links@0.3.0

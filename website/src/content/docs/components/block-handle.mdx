@@ -28,6 +28,40 @@ BlockHandleRoot                  # root component
 
 You can keep both `BlockHandleAdd` and `BlockHandleDraggable`, or only one. The popup is just the visible container. Pair this with the [Drop indicator](/components/drop-indicator) component to draw a horizontal line where the dragged block will land.
 
+## Framework side menu
+
+Use `BlockHandleRoot`, `BlockHandlePositioner`, and `BlockHandlePopup` for the hover state and floating position. If you need a Notion-style side menu, render that menu with your framework instead of using a web-component menu primitive.
+
+`BlockHandleRoot` emits the hovered block through `onStateChange`. The event detail is `{ node, pos } | null`.
+
+```tsx
+const [blockState, setBlockState] = useState(null)
+
+<BlockHandleRoot onStateChange={(event) => setBlockState(event.detail)}>
+  <BlockHandlePositioner>
+    <BlockHandlePopup>
+      <BlockHandleAdd />
+      <YourFrameworkDraggable blockState={blockState} />
+    </BlockHandlePopup>
+  </BlockHandlePositioner>
+</BlockHandleRoot>
+```
+
+In Vue, pass the generated wrapper handler as a prop:
+
+```vue
+<BlockHandleRoot :on-state-change="(event) => blockState = event.detail">
+  <BlockHandlePositioner>
+    <BlockHandlePopup>
+      <BlockHandleAdd />
+      <YourFrameworkDraggable :block-state="blockState" />
+    </BlockHandlePopup>
+  </BlockHandlePositioner>
+</BlockHandleRoot>
+```
+
+See the `block-side-menu` example for a framework-rendered draggable handle that also opens a side menu.
+
 ## API reference
 
 - [prosekit/react/block-handle](/references/react/block-handle)

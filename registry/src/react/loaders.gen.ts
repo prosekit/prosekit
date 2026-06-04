@@ -3,6 +3,7 @@ import { lazy } from 'react'
 
 export const loaders = {
   'block-handle': lazy(() => import('./examples/block-handle/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'block-side-menu': lazy(() => import('./examples/block-side-menu/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'blockquote': lazy(() => import('./examples/blockquote/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'bold': lazy(() => import('./examples/bold/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'change-tracking': lazy(() => import('./examples/change-tracking/index.ts').then((m) => ({ default: m.ExampleEditor }))),

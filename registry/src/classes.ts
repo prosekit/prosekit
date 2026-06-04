@@ -211,6 +211,15 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
   'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50',
 )
 
+export const CSS_BLOCK_SIDE_MENU = cn(
+  'absolute left-full top-0 ml-2 min-w-36 rounded-md border border-solid border-gray-200 bg-[canvas] p-1 text-sm text-gray-900 shadow-lg shadow-gray-200 dark:border-gray-800 dark:text-gray-50 dark:shadow-none',
+  'data-[state=closed]:hidden',
+)
+
+export const CSS_BLOCK_SIDE_MENU_ITEM = cn(
+  'block w-full rounded-sm border-0 bg-transparent px-2 py-1.5 text-left text-sm text-current hover:bg-gray-100 dark:hover:bg-gray-800',
+)
+
 export const CSS_TABLE_HANDLE_COLUMN_POSITIONER = CSS_POSITIONER
 export const CSS_TABLE_HANDLE_ROW_POSITIONER = CSS_POSITIONER
 

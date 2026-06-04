@@ -12,6 +12,17 @@
       "hidden": false,
       "description": "A handle that appears on hover, allowing you to drag and re-order blocks."
     },
+    "block-side-menu": {
+      "frameworks": [
+        "react",
+        "preact",
+        "vue",
+        "svelte",
+        "solid"
+      ],
+      "hidden": false,
+      "description": "A framework-rendered side menu attached to the hovered block handle."
+    },
     "blockquote": {
       "frameworks": [
         "react",
@@ -591,6 +602,24 @@
         "registry/src/react/examples/block-handle/editor.tsx",
         "registry/src/react/examples/block-handle/extension.ts",
         "registry/src/react/examples/block-handle/index.ts",
+        "registry/src/react/sample/sample-doc-block-handle.ts",
+        "registry/src/react/ui/block-handle/block-handle.tsx",
+        "registry/src/react/ui/block-handle/index.ts",
+        "registry/src/react/ui/code-block-view/code-block-view.tsx",
+        "registry/src/react/ui/code-block-view/index.ts",
+        "registry/src/react/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/react/ui/drop-indicator/index.ts"
+      ]
+    },
+    "react-example-block-side-menu": {
+      "story": "block-side-menu",
+      "files": [
+        "registry/src/react/examples/block-handle/editor.tsx",
+        "registry/src/react/examples/block-handle/extension.ts",
+        "registry/src/react/examples/block-handle/index.ts",
+        "registry/src/react/examples/block-side-menu/block-side-menu.tsx",
+        "registry/src/react/examples/block-side-menu/editor.tsx",
+        "registry/src/react/examples/block-side-menu/index.ts",
         "registry/src/react/sample/sample-doc-block-handle.ts",
         "registry/src/react/ui/block-handle/block-handle.tsx",
         "registry/src/react/ui/block-handle/index.ts",
@@ -1310,6 +1339,24 @@
         "registry/src/preact/ui/drop-indicator/index.ts"
       ]
     },
+    "preact-example-block-side-menu": {
+      "story": "block-side-menu",
+      "files": [
+        "registry/src/preact/examples/block-handle/editor.tsx",
+        "registry/src/preact/examples/block-handle/extension.ts",
+        "registry/src/preact/examples/block-handle/index.ts",
+        "registry/src/preact/examples/block-side-menu/block-side-menu.tsx",
+        "registry/src/preact/examples/block-side-menu/editor.tsx",
+        "registry/src/preact/examples/block-side-menu/index.ts",
+        "registry/src/preact/sample/sample-doc-block-handle.ts",
+        "registry/src/preact/ui/block-handle/block-handle.tsx",
+        "registry/src/preact/ui/block-handle/index.ts",
+        "registry/src/preact/ui/code-block-view/code-block-view.tsx",
+        "registry/src/preact/ui/code-block-view/index.ts",
+        "registry/src/preact/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/preact/ui/drop-indicator/index.ts"
+      ]
+    },
     "preact-example-blockquote": {
       "story": "blockquote",
       "files": [
@@ -1951,6 +1998,24 @@
         "registry/src/vue/examples/block-handle/editor.vue",
         "registry/src/vue/examples/block-handle/extension.ts",
         "registry/src/vue/examples/block-handle/index.ts",
+        "registry/src/vue/sample/sample-doc-block-handle.ts",
+        "registry/src/vue/ui/block-handle/block-handle.vue",
+        "registry/src/vue/ui/block-handle/index.ts",
+        "registry/src/vue/ui/code-block-view/code-block-view.vue",
+        "registry/src/vue/ui/code-block-view/index.ts",
+        "registry/src/vue/ui/drop-indicator/drop-indicator.vue",
+        "registry/src/vue/ui/drop-indicator/index.ts"
+      ]
+    },
+    "vue-example-block-side-menu": {
+      "story": "block-side-menu",
+      "files": [
+        "registry/src/vue/examples/block-handle/editor.vue",
+        "registry/src/vue/examples/block-handle/extension.ts",
+        "registry/src/vue/examples/block-handle/index.ts",
+        "registry/src/vue/examples/block-side-menu/block-side-menu.vue",
+        "registry/src/vue/examples/block-side-menu/editor.vue",
+        "registry/src/vue/examples/block-side-menu/index.ts",
         "registry/src/vue/sample/sample-doc-block-handle.ts",
         "registry/src/vue/ui/block-handle/block-handle.vue",
         "registry/src/vue/ui/block-handle/index.ts",
@@ -2758,6 +2823,24 @@
         "registry/src/svelte/ui/drop-indicator/index.ts"
       ]
     },
+    "svelte-example-block-side-menu": {
+      "story": "block-side-menu",
+      "files": [
+        "registry/src/svelte/examples/block-handle/editor.svelte",
+        "registry/src/svelte/examples/block-handle/extension.ts",
+        "registry/src/svelte/examples/block-handle/index.ts",
+        "registry/src/svelte/examples/block-side-menu/block-side-menu.svelte",
+        "registry/src/svelte/examples/block-side-menu/editor.svelte",
+        "registry/src/svelte/examples/block-side-menu/index.ts",
+        "registry/src/svelte/sample/sample-doc-block-handle.ts",
+        "registry/src/svelte/ui/block-handle/block-handle.svelte",
+        "registry/src/svelte/ui/block-handle/index.ts",
+        "registry/src/svelte/ui/code-block-view/code-block-view.svelte",
+        "registry/src/svelte/ui/code-block-view/index.ts",
+        "registry/src/svelte/ui/drop-indicator/drop-indicator.svelte",
+        "registry/src/svelte/ui/drop-indicator/index.ts"
+      ]
+    },
     "svelte-example-blockquote": {
       "story": "blockquote",
       "files": [
@@ -3408,6 +3491,24 @@
         "registry/src/solid/examples/block-handle/editor.tsx",
         "registry/src/solid/examples/block-handle/extension.ts",
         "registry/src/solid/examples/block-handle/index.ts",
+        "registry/src/solid/sample/sample-doc-block-handle.ts",
+        "registry/src/solid/ui/block-handle/block-handle.tsx",
+        "registry/src/solid/ui/block-handle/index.ts",
+        "registry/src/solid/ui/code-block-view/code-block-view.tsx",
+        "registry/src/solid/ui/code-block-view/index.ts",
+        "registry/src/solid/ui/drop-indicator/drop-indicator.tsx",
+        "registry/src/solid/ui/drop-indicator/index.ts"
+      ]
+    },
+    "solid-example-block-side-menu": {
+      "story": "block-side-menu",
+      "files": [
+        "registry/src/solid/examples/block-handle/editor.tsx",
+        "registry/src/solid/examples/block-handle/extension.ts",
+        "registry/src/solid/examples/block-handle/index.ts",
+        "registry/src/solid/examples/block-side-menu/block-side-menu.tsx",
+        "registry/src/solid/examples/block-side-menu/editor.tsx",
+        "registry/src/solid/examples/block-side-menu/index.ts",
         "registry/src/solid/sample/sample-doc-block-handle.ts",
         "registry/src/solid/ui/block-handle/block-handle.tsx",
         "registry/src/solid/ui/block-handle/index.ts",

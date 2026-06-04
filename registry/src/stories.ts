@@ -5,6 +5,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'A handle that appears on hover, allowing you to drag and re-order blocks.',
   },
   {
+    name: 'block-side-menu',
+    description: 'A framework-rendered side menu attached to the hovered block handle.',
+  },
+  {
     name: 'blockquote',
     description: 'Example for blockquote node.',
   },

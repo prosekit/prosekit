@@ -12,11 +12,9 @@ import { DropIndicator } from '../../ui/drop-indicator/index.ts'
 import BlockSideMenu from './block-side-menu.svelte'
 import { defineExtension } from '../block-handle/extension.ts'
 
-interface Props {
+const props: {
   initialContent?: NodeJSON
-}
-
-const props: Props = $props()
+} = $props()
 
 const extension = defineExtension()
 const defaultContent = untrack(() => props.initialContent ?? sampleContent)

@@ -1,5 +1,5 @@
 import { definePlugin, type PlainExtension } from '@prosekit/core'
-import { PluginKey, ProseMirrorPlugin, type EditorState, type Transaction } from '@prosekit/pm/state'
+import { PluginKey, ProseMirrorPlugin, type Selection, type SelectionBookmark, type Transaction } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 /**
@@ -19,35 +19,56 @@ export function defineVirtualSelection(): VirtualSelectionExtension {
   return definePlugin(virtualSelectionPlugin)
 }
 
-// Show the decoration when this is true.
-type PluginState = boolean
+type PluginState = {
+  bookmark: SelectionBookmark
+  from: number
+  to: number
+} | null
 
 const key = new PluginKey<PluginState>('prosekit-virtual-selection')
+const activeClass = 'prosekit-virtual-selection-active'
 
-function getFocusMeta(tr: Transaction): PluginState | undefined {
+function getSelectionMeta(tr: Transaction): PluginState | undefined {
   return tr.getMeta(key) as PluginState | undefined
 }
 
-function setFocusMeta(tr: Transaction, value: PluginState) {
+function setSelectionMeta(tr: Transaction, value: PluginState) {
   return tr.setMeta(key, value)
 }
 
-function getFocusState(state: EditorState): PluginState | undefined {
-  return key.getState(state)
+function shouldDecorate(selection: Selection): boolean {
+  return !selection.empty && selection.visible
+}
+
+function toPluginState(selection: Selection): PluginState {
+  if (!shouldDecorate(selection)) return null
+
+  return {
+    bookmark: selection.getBookmark(),
+    from: selection.from,
+    to: selection.to,
+  }
 }
 
 const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
   key,
   state: {
-    init: () => false,
+    init: () => null,
     apply: (tr, value) => {
-      return getFocusMeta(tr) ?? value
+      const meta = getSelectionMeta(tr)
+      if (meta !== undefined) return meta
+      if (!value) return null
+      if (!tr.docChanged) return value
+
+      const bookmark = value.bookmark.map(tr.mapping)
+      const selection = bookmark.resolve(tr.doc)
+      return toPluginState(selection)
     },
   },
   props: {
     handleDOMEvents: {
       focus: (view) => {
-        view.dispatch(setFocusMeta(view.state.tr, false))
+        view.dispatch(setSelectionMeta(view.state.tr, null))
       },
 
       blur: (view) => {
@@ -58,30 +79,32 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
         // moved outside the browser window.
         if (activeElement === dom) return
 
-        view.dispatch(setFocusMeta(view.state.tr, true))
+        view.dispatch(setSelectionMeta(view.state.tr, toPluginState(view.state.selection)))
       },
     },
     decorations: (state) => {
-      const { selection, doc } = state
+      const pluginState = key.getState(state)
+      if (!pluginState) return null
 
-      if (
-        selection.empty
-        || !getFocusState(state)
-        // When `selection.visible` is false, it indicates that the selection is
-        // rendered by the editor and it's not a native browser selection. An
-        // example of this is `NodeSelection`. In this situation, since the
-        // editor already shows the selection, we don't need to display a
-        // virtual selection.
-        || !selection.visible
-      ) {
-        return null
-      }
-
-      return DecorationSet.create(doc, [
-        Decoration.inline(selection.from, selection.to, {
+      return DecorationSet.create(state.doc, [
+        Decoration.inline(pluginState.from, pluginState.to, {
           class: 'prosekit-virtual-selection',
         }),
       ])
     },
+  },
+  view: (view) => {
+    const updateClass = () => {
+      view.dom.classList.toggle(activeClass, Boolean(key.getState(view.state)))
+    }
+
+    updateClass()
+
+    return {
+      update: updateClass,
+      destroy: () => {
+        view.dom.classList.remove(activeClass)
+      },
+    }
   },
 })

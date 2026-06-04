@@ -6,32 +6,76 @@ import { BlockHandleAdd, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoo
 import type { BlockHandleState, BlockHandleStateChangeEvent } from 'prosekit/web/block-handle'
 import { computed, ref } from 'vue'
 
-const editor = useEditor()
+import type { EditorExtension } from '../block-handle/extension.ts'
+
+const editorRef = useEditor<EditorExtension>()
 const blockState = ref<BlockHandleState>(null)
 const menuOpen = ref(false)
 const stateLabel = computed(() => blockState.value ? `${blockState.value.node.type.name}:${blockState.value.pos}` : 'none')
 const isMenuOpen = computed(() => menuOpen.value && !!blockState.value)
 
-function handleStateChange(event: BlockHandleStateChangeEvent) {
-  blockState.value = event.detail
-  if (!event.detail) {
-    menuOpen.value = false
+function isSameBlockState(a: BlockHandleState, b: BlockHandleState) {
+  if (!a || !b) {
+    return a === b
   }
+
+  return a.pos === b.pos && a.node.eq(b.node)
 }
 
-function selectBlock() {
+function handleStateChange(event: BlockHandleStateChangeEvent) {
+  if (!isSameBlockState(blockState.value, event.detail)) {
+    menuOpen.value = false
+  }
+  blockState.value = event.detail
+}
+
+function selectBlock(): boolean {
   const state = blockState.value
+  const editor = editorRef.value
   if (!state || !editor.view) {
-    return
+    return false
   }
 
   const { view } = editor
   view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, state.pos)))
   requestAnimationFrame(() => view.focus())
+  return true
+}
+
+function setText() {
+  if (!selectBlock()) {
+    return
+  }
+
+  const editor = editorRef.value
+  editor.commands.setParagraph()
+  menuOpen.value = false
+}
+
+function setHeading1() {
+  if (!selectBlock()) {
+    return
+  }
+
+  const editor = editorRef.value
+  editor.commands.setHeading({ level: 1 })
+  menuOpen.value = false
+}
+
+function deleteBlock() {
+  const editor = editorRef.value
+  if (!selectBlock() || !editor.view) {
+    return
+  }
+
+  const { view } = editor
+  view.dispatch(view.state.tr.deleteSelection())
+  menuOpen.value = false
 }
 
 function handleDragStart(event: DragEvent) {
   const state = blockState.value
+  const editor = editorRef.value
   if (!state || !editor.view || !event.dataTransfer) {
     return
   }
@@ -53,7 +97,7 @@ function handleDragStart(event: DragEvent) {
 }
 
 function handleDragEnd() {
-  editor.view?.dom.classList.remove('prosekit-dragging')
+  editorRef.value.view?.dom.classList.remove('prosekit-dragging')
 }
 </script>
 
@@ -82,8 +126,20 @@ function handleDragEnd() {
           role="menu"
           :hidden="!isMenuOpen"
         >
-          <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" @click="menuOpen = false">
-            {{ blockState ? `Block ${blockState.node.type.name}` : 'Block' }}
+          <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" @click="setText">
+            Text
+          </button>
+          <button
+            data-testid="block-side-menu-heading-1"
+            class="CSS_BLOCK_SIDE_MENU_ITEM"
+            type="button"
+            role="menuitem"
+            @click="setHeading1"
+          >
+            Heading 1
+          </button>
+          <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" @click="deleteBlock">
+            Delete
           </button>
         </div>
       </BlockHandlePopup>

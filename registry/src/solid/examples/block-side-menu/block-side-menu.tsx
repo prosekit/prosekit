@@ -6,8 +6,18 @@ import type { BlockHandleState, BlockHandleStateChangeEvent } from 'prosekit/web
 import { createSignal } from 'solid-js'
 import type { JSX } from 'solid-js'
 
+import type { EditorExtension } from '../block-handle/extension.ts'
+
+function isSameBlockState(a: BlockHandleState, b: BlockHandleState) {
+  if (!a || !b) {
+    return a === b
+  }
+
+  return a.pos === b.pos && a.node.eq(b.node)
+}
+
 export default function BlockSideMenu(): JSX.Element {
-  const editor = useEditor()
+  const editor = useEditor<EditorExtension>()
   const [blockState, setBlockState] = createSignal<BlockHandleState>(null)
   const [menuOpen, setMenuOpen] = createSignal(false)
   const stateLabel = () => {
@@ -17,22 +27,52 @@ export default function BlockSideMenu(): JSX.Element {
   const isMenuOpen = () => menuOpen() && !!blockState()
 
   const handleStateChange = (event: BlockHandleStateChangeEvent) => {
-    setBlockState(event.detail)
-    if (!event.detail) {
+    if (!isSameBlockState(blockState(), event.detail)) {
       setMenuOpen(false)
     }
+    setBlockState(event.detail)
   }
 
-  const selectBlock = () => {
+  const selectBlock = (): boolean => {
     const state = blockState()
     const editorInstance = editor()
     if (!state || !editorInstance.view) {
-      return
+      return false
     }
 
     const { view } = editorInstance
     view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, state.pos)))
     requestAnimationFrame(() => view.focus())
+    return true
+  }
+
+  const setText = () => {
+    if (!selectBlock()) {
+      return
+    }
+
+    editor().commands.setParagraph()
+    setMenuOpen(false)
+  }
+
+  const setHeading1 = () => {
+    if (!selectBlock()) {
+      return
+    }
+
+    editor().commands.setHeading({ level: 1 })
+    setMenuOpen(false)
+  }
+
+  const deleteBlock = () => {
+    const editorInstance = editor()
+    if (!selectBlock() || !editorInstance.view) {
+      return
+    }
+
+    const { view } = editorInstance
+    view.dispatch(view.state.tr.deleteSelection())
+    setMenuOpen(false)
   }
 
   const handleDragStart = (event: DragEvent) => {
@@ -87,8 +127,20 @@ export default function BlockSideMenu(): JSX.Element {
             role="menu"
             hidden={!isMenuOpen()}
           >
-            <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" onClick={() => setMenuOpen(false)}>
-              {blockState() ? `Block ${blockState()!.node.type.name}` : 'Block'}
+            <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" onClick={setText}>
+              Text
+            </button>
+            <button
+              attr:data-testid="block-side-menu-heading-1"
+              class="CSS_BLOCK_SIDE_MENU_ITEM"
+              type="button"
+              role="menuitem"
+              onClick={setHeading1}
+            >
+              Heading 1
+            </button>
+            <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" onClick={deleteBlock}>
+              Delete
             </button>
           </div>
         </BlockHandlePopup>

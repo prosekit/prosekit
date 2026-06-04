@@ -5,27 +5,66 @@ import { useEditor } from 'prosekit/svelte'
 import { BlockHandleAdd, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/svelte/block-handle'
 import type { BlockHandleState, BlockHandleStateChangeEvent } from 'prosekit/web/block-handle'
 
-const editor = useEditor()
+import type { EditorExtension } from '../block-handle/extension.ts'
+
+const editor = useEditor<EditorExtension>()
 let blockState = $state<BlockHandleState>(null)
 let menuOpen = $state(false)
 const stateLabel = $derived(blockState ? `${blockState.node.type.name}:${blockState.pos}` : 'none')
 const isMenuOpen = $derived(menuOpen && !!blockState)
 
-function handleStateChange(event: BlockHandleStateChangeEvent) {
-  blockState = event.detail
-  if (!event.detail) {
-    menuOpen = false
+function isSameBlockState(a: BlockHandleState, b: BlockHandleState) {
+  if (!a || !b) {
+    return a === b
   }
+
+  return a.pos === b.pos && a.node.eq(b.node)
 }
 
-function selectBlock() {
+function handleStateChange(event: BlockHandleStateChangeEvent) {
+  if (!isSameBlockState(blockState, event.detail)) {
+    menuOpen = false
+  }
+  blockState = event.detail
+}
+
+function selectBlock(): boolean {
   if (!blockState || !$editor.view) {
-    return
+    return false
   }
 
   const { view } = $editor
   view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, blockState.pos)))
   requestAnimationFrame(() => view.focus())
+  return true
+}
+
+function setText() {
+  if (!selectBlock()) {
+    return
+  }
+
+  $editor.commands.setParagraph()
+  menuOpen = false
+}
+
+function setHeading1() {
+  if (!selectBlock()) {
+    return
+  }
+
+  $editor.commands.setHeading({ level: 1 })
+  menuOpen = false
+}
+
+function deleteBlock() {
+  if (!selectBlock() || !$editor.view) {
+    return
+  }
+
+  const { view } = $editor
+  view.dispatch(view.state.tr.deleteSelection())
+  menuOpen = false
 }
 
 function handleDragStart(event: DragEvent) {
@@ -90,8 +129,20 @@ function handleKeyDown(event: KeyboardEvent) {
         role="menu"
         hidden={!isMenuOpen}
       >
-        <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" onclick={() => (menuOpen = false)}>
-          {blockState ? `Block ${blockState.node.type.name}` : 'Block'}
+        <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" onclick={setText}>
+          Text
+        </button>
+        <button
+          data-testid="block-side-menu-heading-1"
+          class="CSS_BLOCK_SIDE_MENU_ITEM"
+          type="button"
+          role="menuitem"
+          onclick={setHeading1}
+        >
+          Heading 1
+        </button>
+        <button class="CSS_BLOCK_SIDE_MENU_ITEM" type="button" role="menuitem" onclick={deleteBlock}>
+          Delete
         </button>
       </div>
     </BlockHandlePopup>

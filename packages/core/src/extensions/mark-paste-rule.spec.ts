@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
-import { union } from '../../editor/union.ts'
-import { defineMarkSpec } from '../../extensions/mark-spec.ts'
-import { pasteHTML, pasteText } from '../../testing/clipboard.ts'
-import { defineBold, defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../../testing/index.ts'
+import { union } from '../editor/union.ts'
+import { pasteHTML, pasteText } from '../testing/clipboard.ts'
+import { defineBold, defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
 
 import type { MarkPasteRuleOptions } from './mark-paste-rule.ts'
 import { defineMarkPasteRule } from './mark-paste-rule.ts'
+import { defineMarkSpec } from './mark-spec.ts'
 
 function setup(options?: Partial<MarkPasteRuleOptions>) {
   return setupTestFromExtension(union(

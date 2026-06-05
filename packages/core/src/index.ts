@@ -87,13 +87,13 @@ export {
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect.ts'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view.ts'
-export { defineMarkPasteRule, type MarkPasteRuleOptions } from './extensions/paste-rule/mark-paste-rule.ts'
+export { defineMarkPasteRule, type MarkPasteRuleOptions } from './extensions/mark-paste-rule.ts'
 export {
   definePasteRule,
   type PasteRuleHandler,
   type PasteRuleHandlerOptions,
   type PasteRuleOptions,
-} from './extensions/paste-rule/paste-rule.ts'
+} from './extensions/paste-rule.ts'
 export { definePlugin, pluginFacet, type PluginPayload } from './extensions/plugin.ts'
 export { defineFacetPayload } from './facets/facet-extension.ts'
 export { defineFacet, type Facet } from './facets/facet.ts'

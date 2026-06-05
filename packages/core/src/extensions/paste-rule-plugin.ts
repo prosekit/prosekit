@@ -2,10 +2,11 @@ import type { Slice } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { defineFacetPayload } from '../../facets/facet-extension.ts'
-import { defineFacet } from '../../facets/facet.ts'
-import type { PlainExtension } from '../../types/extension.ts'
-import { pluginFacet, type PluginPayload } from '../plugin.ts'
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { defineFacet } from '../facets/facet.ts'
+import type { PlainExtension } from '../types/extension.ts'
+
+import { pluginFacet, type PluginPayload } from './plugin.ts'
 
 type PasteRulePayload = (options: { slice: Slice; view: EditorView; plain: boolean }) => Slice
 

@@ -1,11 +1,11 @@
 import type { Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
 import { Fragment, Slice } from '@prosekit/pm/model'
 
-import type { PlainExtension } from '../../types/extension.ts'
-import { getMarkType } from '../../utils/get-mark-type.ts'
+import type { PlainExtension } from '../types/extension.ts'
+import { getMarkType } from '../utils/get-mark-type.ts'
+import { splitTextByRegex } from '../utils/split-text-by-regex.ts'
 
 import { definePasteRule } from './paste-rule.ts'
-import { splitTextByRegex } from './split-text-by-regex.ts'
 
 /**
  * The options for {@link defineMarkPasteRule}.

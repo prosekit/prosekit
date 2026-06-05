@@ -2,15 +2,13 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
-import { union } from '../../editor/union.ts'
-import { withPriority } from '../../editor/with-priority.ts'
-import { defineTestExtension, setupTestFromExtension } from '../../testing/index.ts'
-import type { PlainExtension } from '../../types/extension.ts'
-import { Priority } from '../../types/priority.ts'
+import { union } from '../editor/union.ts'
+import { withPriority } from '../editor/with-priority.ts'
+import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
+import type { PlainExtension } from '../types/extension.ts'
+import { Priority } from '../types/priority.ts'
 
 import { definePasteRule } from './paste-rule.ts'
-
-// PR_REVIEW: do not add a seperate dir packages/core/src/extensions/paste-rule/. Just put these files under packages/core/src/extensions/
 
 function replaceTextInSlice(slice: Slice, from: string, to: string): Slice {
   return new Slice(

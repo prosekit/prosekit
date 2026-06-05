@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.21.4
+
+### Patch Changes
+
+- [`eb29f6a`](https://github.com/ocavue/prosekit/commit/eb29f6a3026094aa0c4f1a23f837665d851e2467) ![](https://prosekit.dev/b/pm)
+
+  Add `EditorNode` and `EditorFragment` as aliases for ProseMirror's `Node` and `Fragment`.
+
+- [`64f0066`](https://github.com/ocavue/prosekit/commit/64f006618eb04137c9f1f85bf0a6f4362ad27c7d) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/extensions)
+
+  `definePasteRule` and `defineMarkPasteRule` can now be imported from `prosekit/core`.
+
 ## 0.21.3
 
 ### Patch Changes

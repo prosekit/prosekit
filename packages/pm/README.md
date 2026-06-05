@@ -1,8 +1,10 @@
 # @prosekit/pm
 
-This package provides a convenient way to install all the core ProseMirror packages at once. It simply re-exports the following packages:
+[![npm](https://img.shields.io/npm/v/@prosekit/pm)](https://www.npmjs.com/package/@prosekit/pm)
 
-| Entry points              | Package                                                                          |
+The core [ProseMirror](https://prosemirror.net/) packages that [ProseKit](https://prosekit.dev) builds on, re-exported under a single dependency with consistent versions. Import each module from its own entry point:
+
+| Entry point               | Re-exports                                                                       |
 | ------------------------- | -------------------------------------------------------------------------------- |
 | `@prosekit/pm/model`      | [`prosemirror-model`](https://www.npmjs.com/package/prosemirror-model)           |
 | `@prosekit/pm/state`      | [`prosemirror-state`](https://www.npmjs.com/package/prosemirror-state)           |
@@ -12,8 +14,22 @@ This package provides a convenient way to install all the core ProseMirror packa
 | `@prosekit/pm/keymap`     | [`prosemirror-keymap`](https://www.npmjs.com/package/prosemirror-keymap)         |
 | `@prosekit/pm/inputrules` | [`prosemirror-inputrules`](https://www.npmjs.com/package/prosemirror-inputrules) |
 
-You can import the individual packages using the entry points listed above. For example, to import the `Schema` from `prosemirror-model` package, you can do:
+For example, to import `Schema` from `prosemirror-model`:
 
-```js
+```ts
 import { Schema } from '@prosekit/pm/model'
 ```
+
+> **Note:** This package is bundled into the main [`prosekit`](https://www.npmjs.com/package/prosekit) package, where the same modules are available as `prosekit/pm/*`.
+
+## Documentation
+
+See the [`prosekit/pm` reference](https://prosekit.dev/references/pm) on [prosekit.dev](https://prosekit.dev).
+
+## Sponsors
+
+<p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
+
+## License
+
+[MIT](https://github.com/prosekit/prosekit/blob/master/LICENSE)

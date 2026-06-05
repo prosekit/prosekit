@@ -33,6 +33,10 @@ Join the community on [Discord](https://prosekit.dev/chat).
 
 Detailed changes for each release are documented in the [CHANGELOG.md](https://github.com/prosekit/prosekit/blob/master/packages/prosekit/CHANGELOG.md).
 
+## Sponsors
+
+<p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
+
 ## License
 
 [MIT](https://github.com/prosekit/prosekit/blob/master/LICENSE)

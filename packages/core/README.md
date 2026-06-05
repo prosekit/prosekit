@@ -10,6 +10,10 @@ The core editor engine and extension system for [ProseKit](https://prosekit.dev)
 
 See the [`prosekit/core` reference](https://prosekit.dev/references/core) and the [Extensions concept](https://prosekit.dev/concepts/extensions) on [prosekit.dev](https://prosekit.dev).
 
+## Sponsors
+
+<p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
+
 ## License
 
 [MIT](https://github.com/prosekit/prosekit/blob/master/LICENSE)

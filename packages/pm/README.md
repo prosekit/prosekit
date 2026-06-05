@@ -26,6 +26,10 @@ import { Schema } from '@prosekit/pm/model'
 
 See the [`prosekit/pm` reference](https://prosekit.dev/references/pm) on [prosekit.dev](https://prosekit.dev).
 
+## Sponsors
+
+<p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
+
 ## License
 
 [MIT](https://github.com/prosekit/prosekit/blob/master/LICENSE)

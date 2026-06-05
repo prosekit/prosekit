@@ -58,6 +58,6 @@ describe('clipboard test helpers', () => {
     await keyboard.press('ControlOrMeta+C')
 
     expect(await readPlainTextFromClipboard()).toBe('hello world')
-    expect(await readHtmlTextFromClipboard()).toContain('hello world')
+    expect(await readHtmlTextFromClipboard()).toContain('hello world') // PR_REVIEW: "toContain('hello world')" is too week as a test.
   })
 })

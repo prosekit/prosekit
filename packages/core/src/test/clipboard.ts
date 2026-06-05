@@ -58,6 +58,7 @@ export function pasteFiles(view: EditorView, files: File[]): void {
 
 async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined> {
   const clipboardItems = await navigator.clipboard.read()
+  // PR_REVIEW: I feel clipboardItems[0] is not the correct way to read from the clipboard, since clipboardItems might contain multiple items.
   const clipboardItem = clipboardItems[0]
   if (!clipboardItem) {
     return
@@ -68,6 +69,9 @@ async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined
   return await clipboardItem.getType(mimeType)
 }
 
+// PR_PR_REVIEW:
+// remove the "readPlainTextFromClipboard" function below. Export this "readTextFromClipboard" function as an @internal API.
+// The parameter "mimeType" is a string and the default value is "text/plain" so that users can call it without passing the parameter when they want to read plain text from the clipboard.
 async function readTextFromClipboard(mimeType: string): Promise<string | undefined> {
   const blob = await readBlobFromClipboard(mimeType)
   if (!blob) {
@@ -90,6 +94,9 @@ async function readTextFromClipboard(mimeType: string): Promise<string | undefin
 export async function readPlainTextFromClipboard(): Promise<string> {
   return await readTextFromClipboard('text/plain') || ''
 }
+
+
+// PR_PR_REVIEW: rename "readHtmlTextFromClipboard" to "readHTMLFromClipboard"
 
 /**
  * Reads raw HTML from the clipboard.

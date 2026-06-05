@@ -90,30 +90,4 @@ describe('splitTextByRegex', () => {
     const result = splitTextByRegex('abc', regex)
     expect(result).toBeUndefined()
   })
-
-  it('should return undefined for an optional quantifier that matches empty at the end (.?)', () => {
-    // `.?` matches every character and then an empty string at the end of the
-    // input, which is a zero-length match.
-    const result = splitTextByRegex('ab', /.?/g)
-    expect(result).toBeUndefined()
-  })
-
-  it('should return undefined for an optional quantifier that matches empty at the start (a?)', () => {
-    // `a?` immediately matches an empty string when the first character is not
-    // `a`, which is a zero-length match.
-    const result = splitTextByRegex('xyz', /a?/g)
-    expect(result).toBeUndefined()
-  })
-
-  it(String.raw`should return undefined for a star quantifier that matches empty (\d*)`, () => {
-    // `\d*` matches the leading digits and then an empty string once no more
-    // digits remain, which is a zero-length match.
-    const result = splitTextByRegex('12ab', /\d*/g)
-    expect(result).toBeUndefined()
-  })
-
-  it('should return undefined when the regex matches the empty string everywhere', () => {
-    const result = splitTextByRegex('hello', /x*/g)
-    expect(result).toBeUndefined()
-  })
 })

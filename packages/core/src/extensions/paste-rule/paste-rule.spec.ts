@@ -10,6 +10,8 @@ import { Priority } from '../../types/priority.ts'
 
 import { definePasteRule } from './paste-rule.ts'
 
+// PR_REVIEW: do not add a seperate dir packages/core/src/extensions/paste-rule/. Just put these files under packages/core/src/extensions/
+
 function replaceTextInSlice(slice: Slice, from: string, to: string): Slice {
   return new Slice(
     replaceTextInFragment(slice.content, from, to),

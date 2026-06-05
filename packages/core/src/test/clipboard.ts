@@ -71,7 +71,7 @@ async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined
 }
 
 // PR_PR_REVIEW:
-// remove the "readPlainTextFromClipboard" function below. Export this "readTextFromClipboard" function as an @internal API.
+// remove the "readPlainTextFromClipboard" function below. Export this "readClipboardText" function as an @internal API.
 // The parameter "mimeType" is a string and the default value is "text/plain" so that users can call it without passing the parameter when they want to read plain text from the clipboard.
 async function readTextFromClipboard(mimeType: string): Promise<string | undefined> {
   const blob = await readBlobFromClipboard(mimeType)

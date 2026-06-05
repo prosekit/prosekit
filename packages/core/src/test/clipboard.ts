@@ -56,6 +56,7 @@ export function pasteFiles(view: EditorView, files: File[]): void {
   view.pasteHTML('<div></div>', event)
 }
 
+// PR_PR_REVIEW: rename APIs to readClipboardText, readClipboardHTML, readClipboardBlob etc
 async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined> {
   const clipboardItems = await navigator.clipboard.read()
   // PR_REVIEW: I feel clipboardItems[0] is not the correct way to read from the clipboard, since clipboardItems might contain multiple items.

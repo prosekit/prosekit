@@ -3,6 +3,10 @@
  * Returns an array of tuples where each tuple contains a text segment and either the match data
  * (for matched segments) or undefined (for unmatched segments).
  */
+
+
+ // PR_REVIEW : MOVE splitTextByRegex packages/core/src/utils/
+ // PR_REVIEW: add more test cases for splitTextByRegex to ensure that zero-length matches are handled correctly (e.g. .?) and that the function behaves as expected in various scenarios.
 export function splitTextByRegex(
   text: string,
   regex: RegExp,

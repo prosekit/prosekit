@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/prosekit)](https://www.npmjs.com/package/prosekit)
 
-The ultimate toolkit for building rich text editors on the web. Headless, type-safe, and composable, built on [ProseMirror](https://prosemirror.net/) with first-class support for React, Vue, Preact, Svelte, Solid, and vanilla JavaScript.
+The ultimate toolkit for building rich text editors on the web. Headless, type-safe, and composable, built on [ProseMirror](https://prosemirror.net/) with first-class support for [React](https://react.dev/), [Vue](https://vuejs.org/), [Preact](https://preactjs.com/), [Svelte](https://svelte.dev/), [Solid](https://www.solidjs.com/), and vanilla JavaScript.
 
 ## Quick Start
 

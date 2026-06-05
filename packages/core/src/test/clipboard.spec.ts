@@ -47,6 +47,7 @@ describe('clipboard test helpers', () => {
 
     expect(files).toHaveLength(1)
     expect(files[0].name).toBe('hi.txt')
+    // PR_REVIEW: you did not check the file content. Do not be lazy.
   })
 
   it('reads back text copied from the editor', async () => {

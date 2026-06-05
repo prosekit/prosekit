@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union.ts'
-import { pasteHTML, pasteText } from '../testing/clipboard.ts'
+import { pasteHTML, pasteText } from '../test/index.ts'
 import { defineBold, defineDoc, defineParagraph, defineText, setupTestFromExtension } from '../testing/index.ts'
 
 import type { MarkPasteRuleOptions } from './mark-paste-rule.ts'

@@ -1,21 +1,13 @@
 import type { EditorView } from '@prosekit/pm/view'
 
 /**
- * Simulates pasting plain text into the given editor view.
- *
- * It builds a synthetic clipboard `paste` event carrying `text` as
- * `text/plain` data and feeds it through `view.pasteText`, so the editor runs
- * the same paste-handling pipeline (including paste rules) that a real user
- * paste would trigger. Intended for use in tests.
+ * Pastes plain text into the editor.
  *
  * @example
  *
  * ```ts
- * pasteText(editor.view, 'Hello world')
+ * pasteText(editor.view, 'Hello')
  * ```
- *
- * @param view - The editor view to paste into.
- * @param text - The plain text content to paste.
  *
  * @internal
  */
@@ -27,21 +19,13 @@ export function pasteText(view: EditorView, text: string): void {
 }
 
 /**
- * Simulates pasting HTML into the given editor view.
- *
- * It builds a synthetic clipboard `paste` event carrying `html` as
- * `text/html` data and feeds it through `view.pasteHTML`, so the editor runs
- * the same paste-handling pipeline (including paste rules) that a real user
- * paste would trigger. Intended for use in tests.
+ * Pastes HTML into the editor.
  *
  * @example
  *
  * ```ts
  * pasteHTML(editor.view, '<p>Hello <strong>world</strong></p>')
  * ```
- *
- * @param view - The editor view to paste into.
- * @param html - The HTML markup to paste.
  *
  * @internal
  */
@@ -50,4 +34,74 @@ export function pasteHTML(view: EditorView, html: string): void {
   clipboardData.setData('text/html', html)
   const event = new ClipboardEvent('paste', { clipboardData })
   view.pasteHTML(html, event)
+}
+
+/**
+ * Pastes files into the editor.
+ *
+ * @example
+ *
+ * ```ts
+ * pasteFiles(editor.view, [new File(['hi'], 'hi.txt')])
+ * ```
+ *
+ * @internal
+ */
+export function pasteFiles(view: EditorView, files: File[]): void {
+  const clipboardData = new DataTransfer()
+  for (const file of files) {
+    clipboardData.items.add(file)
+  }
+  const event = new ClipboardEvent('paste', { clipboardData })
+  view.pasteHTML('<div></div>', event)
+}
+
+async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined> {
+  const clipboardItems = await navigator.clipboard.read()
+  const clipboardItem = clipboardItems[0]
+  if (!clipboardItem) {
+    return
+  }
+  if (!clipboardItem.types.includes(mimeType)) {
+    return
+  }
+  return await clipboardItem.getType(mimeType)
+}
+
+async function readTextFromClipboard(mimeType: string): Promise<string | undefined> {
+  const blob = await readBlobFromClipboard(mimeType)
+  if (!blob) {
+    return
+  }
+  return await blob.text()
+}
+
+/**
+ * Reads plain text from the clipboard.
+ *
+ * @example
+ *
+ * ```ts
+ * const text = await readPlainTextFromClipboard()
+ * ```
+ *
+ * @internal
+ */
+export async function readPlainTextFromClipboard(): Promise<string> {
+  return await readTextFromClipboard('text/plain') || ''
+}
+
+/**
+ * Reads raw HTML from the clipboard.
+ *
+ * @example
+ *
+ * ```ts
+ * const html = await readHtmlTextFromClipboard()
+ * ```
+ *
+ * @internal
+ */
+export async function readHtmlTextFromClipboard(): Promise<string> {
+  return await readTextFromClipboard('text/html') || ''
 }

@@ -10,7 +10,7 @@ import {
   type ExtractNodeActions,
   type NodeChild,
 } from '@prosekit/core'
-import { createTestEditor, readHtmlTextFromClipboard, readPlainTextFromClipboard, type TestEditor } from '@prosekit/core/test'
+import { createTestEditor, readClipboardHTML, readClipboardText, type TestEditor } from '@prosekit/core/test'
 import { formatHTML } from 'diffable-html-snapshot'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
@@ -131,8 +131,8 @@ export function setupTest() {
   const copy = async () => {
     editor.view.dom.focus()
     await keyboard.press('ControlOrMeta+C')
-    const html = formatHTML(await readHtmlTextFromClipboard())
-    const plain = await readPlainTextFromClipboard()
+    const html = formatHTML((await readClipboardHTML()) ?? '')
+    const plain = (await readClipboardText()) ?? ''
     return { html, plain }
   }
 

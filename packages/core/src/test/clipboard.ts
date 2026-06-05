@@ -56,25 +56,29 @@ export function pasteFiles(view: EditorView, files: File[]): void {
   view.pasteHTML('<div></div>', event)
 }
 
-// PR_PR_REVIEW: rename APIs to readClipboardText, readClipboardHTML, readClipboardBlob etc
-async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined> {
+async function readClipboardBlob(mimeType: string): Promise<Blob | undefined> {
   const clipboardItems = await navigator.clipboard.read()
-  // PR_REVIEW: I feel clipboardItems[0] is not the correct way to read from the clipboard, since clipboardItems might contain multiple items.
-  const clipboardItem = clipboardItems[0]
-  if (!clipboardItem) {
-    return
+  for (const clipboardItem of clipboardItems) {
+    if (clipboardItem.types.includes(mimeType)) {
+      return await clipboardItem.getType(mimeType)
+    }
   }
-  if (!clipboardItem.types.includes(mimeType)) {
-    return
-  }
-  return await clipboardItem.getType(mimeType)
+  return
 }
 
-// PR_PR_REVIEW:
-// remove the "readPlainTextFromClipboard" function below. Export this "readClipboardText" function as an @internal API.
-// The parameter "mimeType" is a string and the default value is "text/plain" so that users can call it without passing the parameter when they want to read plain text from the clipboard.
-async function readTextFromClipboard(mimeType: string): Promise<string | undefined> {
-  const blob = await readBlobFromClipboard(mimeType)
+/**
+ * Reads text of the given MIME type from the clipboard (defaults to plain text).
+ *
+ * @example
+ *
+ * ```ts
+ * const text = await readClipboardText()
+ * ```
+ *
+ * @internal
+ */
+export async function readClipboardText(mimeType: string = 'text/plain'): Promise<string | undefined> {
+  const blob = await readClipboardBlob(mimeType)
   if (!blob) {
     return
   }
@@ -82,34 +86,16 @@ async function readTextFromClipboard(mimeType: string): Promise<string | undefin
 }
 
 /**
- * Reads plain text from the clipboard.
- *
- * @example
- *
- * ```ts
- * const text = await readPlainTextFromClipboard()
- * ```
- *
- * @internal
- */
-export async function readPlainTextFromClipboard(): Promise<string> {
-  return await readTextFromClipboard('text/plain') || ''
-}
-
-
-// PR_PR_REVIEW: rename "readHtmlTextFromClipboard" to "readHTMLFromClipboard"
-
-/**
  * Reads raw HTML from the clipboard.
  *
  * @example
  *
  * ```ts
- * const html = await readHtmlTextFromClipboard()
+ * const html = await readClipboardHTML()
  * ```
  *
  * @internal
  */
-export async function readHtmlTextFromClipboard(): Promise<string> {
-  return await readTextFromClipboard('text/html') || ''
+export async function readClipboardHTML(): Promise<string | undefined> {
+  return await readClipboardText('text/html')
 }

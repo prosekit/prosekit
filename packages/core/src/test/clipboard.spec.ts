@@ -1,66 +1,62 @@
-import { describe, expect, it } from 'vitest'
+import { expect, it } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { union } from '../editor/union.ts'
 import { definePasteHandler } from '../extensions/events/editor-event.ts'
 import { defineDoc, defineParagraph, defineText, setupTest, setupTestFromExtension } from '../testing/index.ts'
 
-import { pasteFiles, pasteHTML, pasteText, readHtmlTextFromClipboard, readPlainTextFromClipboard } from './clipboard.ts'
+import { pasteFiles, pasteHTML, pasteText, readClipboardHTML, readClipboardText } from './clipboard.ts'
 
-// PR_REVIEW: remove the "describe" layer. Just use "it" directly, Notice that the "it" should become a sentence that starts with "it".
-describe('clipboard test helpers', () => {
-  it('pasteText inserts plain text', () => {
-    const { editor, n } = setupTest()
-    editor.set(n.doc(n.p('<a>')))
+it('pastes plain text into the editor', () => {
+  const { editor, n } = setupTest()
+  editor.set(n.doc(n.p('<a>')))
 
-    pasteText(editor.view, 'hello world')
+  pasteText(editor.view, 'hello world')
 
-    expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(n.p('hello world')).toJSON(),
-    )
-  })
+  expect(editor.view.state.doc.toJSON()).toEqual(
+    n.doc(n.p('hello world')).toJSON(),
+  )
+})
 
-  it('pasteHTML inserts rich content', () => {
-    const { editor, n, m } = setupTest()
-    editor.set(n.doc(n.p('<a>')))
+it('pastes HTML into the editor', () => {
+  const { editor, n, m } = setupTest()
+  editor.set(n.doc(n.p('<a>')))
 
-    pasteHTML(editor.view, '<p>hello <strong>world</strong></p>')
+  pasteHTML(editor.view, '<p>hello <strong>world</strong></p>')
 
-    expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(n.p('hello ', m.bold('world'))).toJSON(),
-    )
-  })
+  expect(editor.view.state.doc.toJSON()).toEqual(
+    n.doc(n.p('hello ', m.bold('world'))).toJSON(),
+  )
+})
 
-  it('pasteFiles delivers files to the paste event', () => {
-    const files: File[] = []
-    const { editor } = setupTestFromExtension(union(
-      defineDoc(),
-      defineText(),
-      defineParagraph(),
-      definePasteHandler((_view, event) => {
-        for (const file of event.clipboardData?.files ?? []) {
-          files.push(file)
-        }
-      }),
-    ))
+it('pastes files into the editor', async () => {
+  const files: File[] = []
+  const { editor } = setupTestFromExtension(union(
+    defineDoc(),
+    defineText(),
+    defineParagraph(),
+    definePasteHandler((_view, event) => {
+      for (const file of event.clipboardData?.files ?? []) {
+        files.push(file)
+      }
+    }),
+  ))
 
-    // PR_REVIEW: question: why do you have "{type:type: 'text/plain'}" here? Is it necessary? It doesn't match your JSdoc comemnt in the pasteFiles function.
-    pasteFiles(editor.view, [new File(['hi'], 'hi.txt', { type: 'text/plain' })])
+  pasteFiles(editor.view, [new File(['hi there'], 'hi.txt')])
 
-    expect(files).toHaveLength(1)
-    expect(files[0].name).toBe('hi.txt')
-    // PR_REVIEW: you did not check the file content. Do not be lazy.
-  })
+  expect(files).toHaveLength(1)
+  expect(files[0].name).toBe('hi.txt')
+  expect(await files[0].text()).toBe('hi there')
+})
 
-  it('reads back text copied from the editor', async () => {
-    const { editor, n } = setupTest()
-    editor.set(n.doc(n.p('hello world')))
+it('reads back text copied from the editor', async () => {
+  const { editor, n } = setupTest()
+  editor.set(n.doc(n.p('hello world')))
 
-    editor.view.dom.focus()
-    await keyboard.press('ControlOrMeta+A')
-    await keyboard.press('ControlOrMeta+C')
+  editor.view.dom.focus()
+  await keyboard.press('ControlOrMeta+A')
+  await keyboard.press('ControlOrMeta+C')
 
-    expect(await readPlainTextFromClipboard()).toBe('hello world')
-    expect(await readHtmlTextFromClipboard()).toContain('hello world') // PR_REVIEW: "toContain('hello world')" is too week as a test.
-  })
+  expect(await readClipboardText()).toBe('hello world')
+  expect(await readClipboardHTML()).toMatch(/<p[^>]*>hello world<\/p>/)
 })

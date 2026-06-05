@@ -21,16 +21,14 @@ pnpm run build:typedoc
 cd "$WEBSITE_DIR/src/content/docs"
 src_dir="$ROOT/packages/prosekit/.temp/typedoc/prosekit/"
 dest_dir="$WEBSITE_DIR/src/content/docs/references/"
-# Mirror the generated markdown into the docs dir. Prefer rsync: its --checksum
-# --no-times avoids churning mtimes, keeping local `pnpm dev` rebuilds fast.
-# Some build images (e.g. Vercel) don't ship rsync, so fall back to coreutils:
-# removing dest first reproduces rsync's --delete, and the trailing "/." copies
-# the directory contents like rsync's "src/".
 mkdir -p "$dest_dir"
+# -a: archive mode (preserve permissions, timestamps, etc.)
+# -v: verbose output
+# --checksum: use checksums instead of file size/time for comparison
+# --no-times: don't preserve timestamps
+# --delete: remove files in dest that don't exist in source
+# rsync isn't available in every build image (e.g. Vercel), so fall back to cp.
 if command -v rsync >/dev/null 2>&1; then
-  # --checksum: compare by content, not size/time
-  # --no-times: don't preserve timestamps
-  # --delete: remove files in dest that no longer exist in source
   rsync -av --checksum --no-times --delete "$src_dir" "$dest_dir"
 else
   echo "rsync not found; falling back to cp"

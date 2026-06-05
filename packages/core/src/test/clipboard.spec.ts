@@ -7,6 +7,7 @@ import { defineDoc, defineParagraph, defineText, setupTest, setupTestFromExtensi
 
 import { pasteFiles, pasteHTML, pasteText, readHtmlTextFromClipboard, readPlainTextFromClipboard } from './clipboard.ts'
 
+// PR_REVIEW: remove the "describe" layer. Just use "it" directly, Notice that the "it" should become a sentence that starts with "it".
 describe('clipboard test helpers', () => {
   it('pasteText inserts plain text', () => {
     const { editor, n } = setupTest()

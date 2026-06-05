@@ -44,6 +44,7 @@ describe('clipboard test helpers', () => {
       }),
     ))
 
+    // PR_REVIEW: question: why do you have "{type:type: 'text/plain'}" here? Is it necessary? It doesn't match your JSdoc comemnt in the pasteFiles function.
     pasteFiles(editor.view, [new File(['hi'], 'hi.txt', { type: 'text/plain' })])
 
     expect(files).toHaveLength(1)

@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@prosekit/pm)](https://www.npmjs.com/package/@prosekit/pm)
 
-The [ProseMirror](https://prosemirror.net/) packages that [ProseKit](https://prosekit.dev) builds on, re-exported under a single dependency with consistent versions. Import each module from its own entry point:
+The core [ProseMirror](https://prosemirror.net/) packages that [ProseKit](https://prosekit.dev) builds on, re-exported under a single dependency with consistent versions. Import each module from its own entry point:
 
 | Entry point               | Re-exports                                                                       |
 | ------------------------- | -------------------------------------------------------------------------------- |

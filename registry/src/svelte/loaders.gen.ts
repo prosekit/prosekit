@@ -2,7 +2,6 @@
 
 export const loaders = {
   'block-handle': () => import('./examples/block-handle/index.ts').then((m) => ({ default: m.ExampleEditor })),
-  'block-side-menu': () => import('./examples/block-side-menu/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'blockquote': () => import('./examples/blockquote/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'bold': () => import('./examples/bold/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'change-tracking': () => import('./examples/change-tracking/index.ts').then((m) => ({ default: m.ExampleEditor })),

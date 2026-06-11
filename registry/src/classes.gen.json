@@ -8,8 +8,6 @@
   "CSS_BLOCK_HANDLE_DRAG": "h-6 w-5 cursor-grab flex items-center box-border justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm text-gray-500/50 dark:text-gray-400/50",
   "CSS_BLOCK_HANDLE_POPUP": "flex box-border origin-(--transform-origin) transition-[opacity,scale] transition-discrete motion-reduce:transition-none duration-100 data-[state=closed]:duration-150 data-[state=closed]:opacity-0 starting:opacity-0 data-[state=closed]:scale-95 starting:scale-95",
   "CSS_BLOCK_HANDLE_POSITIONER": "block overflow-visible w-min h-min z-50 ease-out transition-transform duration-100 motion-reduce:transition-none",
-  "CSS_BLOCK_SIDE_MENU": "absolute left-full top-0 ml-2 min-w-36 rounded-md border border-solid border-gray-200 bg-[canvas] p-1 text-sm text-gray-900 shadow-lg shadow-gray-200 dark:border-gray-800 dark:text-gray-50 dark:shadow-none data-[state=closed]:hidden",
-  "CSS_BLOCK_SIDE_MENU_ITEM": "block w-full rounded-sm border-0 bg-transparent px-2 py-1.5 text-left text-sm text-current hover:bg-gray-100 dark:hover:bg-gray-800",
   "CSS_BUTTON_PRIMARY": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2",
   "CSS_CASE_SENSITIVE": "i-lucide-case-sensitive size-5 block",
   "CSS_CODE_BLOCK_PREVIEW_DISPLAY": "block py-2 overflow-auto",

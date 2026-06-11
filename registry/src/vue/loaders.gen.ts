@@ -3,7 +3,6 @@ import { defineAsyncComponent } from 'vue'
 
 export const loaders = {
   'block-handle': defineAsyncComponent(() => import('./examples/block-handle/index.ts').then((m) => m.ExampleEditor)),
-  'block-side-menu': defineAsyncComponent(() => import('./examples/block-side-menu/index.ts').then((m) => m.ExampleEditor)),
   'blockquote': defineAsyncComponent(() => import('./examples/blockquote/index.ts').then((m) => m.ExampleEditor)),
   'bold': defineAsyncComponent(() => import('./examples/bold/index.ts').then((m) => m.ExampleEditor)),
   'change-tracking': defineAsyncComponent(() => import('./examples/change-tracking/index.ts').then((m) => m.ExampleEditor)),

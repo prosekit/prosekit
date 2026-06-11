@@ -4,7 +4,6 @@ import component from './react.astro'
 export default { component }
 
 export const BlockHandle = { args: { story: 'block-handle' } }
-export const BlockSideMenu = { args: { story: 'block-side-menu' } }
 export const Blockquote = { args: { story: 'blockquote' } }
 export const Bold = { args: { story: 'bold' } }
 export const ChangeTracking = { args: { story: 'change-tracking' } }

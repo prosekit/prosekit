@@ -128,7 +128,7 @@ export default function BlockHandle(props: Props) {
               <BlockHandleMenu open={menuOpen} onOpenChange={setMenuOpen}>
                 <Tooltip.Trigger
                   className="m-0 p-0"
-                  render={(
+                  render={
                     <div
                       className="CSS_BLOCK_HANDLE_DRAG"
                       data-testid="notion-block-side-menu-drag"
@@ -139,7 +139,7 @@ export default function BlockHandle(props: Props) {
                     >
                       <div className="CSS_ICON_DRAG_HANDLE" />
                     </div>
-                  )}
+                  }
                 />
               </BlockHandleMenu>
               <Tooltip.Portal>

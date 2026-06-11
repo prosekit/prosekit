@@ -35,4 +35,3 @@ testStory({ story: 'notion', emptyContent: true }, () => {
     await expect.element(editor.locate('h1', { hasText: 'Paragraph 2' })).toBeVisible()
   })
 })
-

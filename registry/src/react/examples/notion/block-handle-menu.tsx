@@ -261,7 +261,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
     return null
   } else if (props.item.children) {
     return (
-        <Menu.SubmenuRoot>
+      <Menu.SubmenuRoot>
         <Menu.SubmenuTrigger className={ITEM_CLASSNAME} data-testid={`notion-block-menu-${props.item.key}`}>
           {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
           <span className="flex-1">{props.item.label}</span>

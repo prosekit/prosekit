@@ -20,7 +20,7 @@ import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosek
 import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
 import { KeyboardEventTarget } from '../../utils/event.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
-import { resolveAnchor, type AnchorProp } from '../../utils/resolve-anchor.ts'
+import { resolveAnchor, type AnchorReference } from '../../utils/resolve-anchor.ts'
 
 import { autocompleteStoreContext, type AutocompleteStore } from './context.ts'
 import { defaultQueryBuilder } from './helpers.ts'
@@ -59,7 +59,7 @@ export interface AutocompleteRootProps {
    *
    * @default null
    */
-  anchor: AnchorProp
+  anchor: AnchorReference
 }
 
 /** @internal */

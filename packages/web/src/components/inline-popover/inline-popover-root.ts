@@ -16,7 +16,7 @@ import type { Selection } from '@prosekit/pm/state'
 import { useEditorFocusChangeEvent } from '../../hooks/use-editor-focus-event.ts'
 import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event.ts'
 import { useKeymap } from '../../hooks/use-keymap.ts'
-import { resolveAnchor, type AnchorProp } from '../../utils/resolve-anchor.ts'
+import { resolveAnchor, type AnchorReference } from '../../utils/resolve-anchor.ts'
 
 import { InlinePopoverStoreContext } from './store.ts'
 import { getVirtualSelectionElement } from './virtual-selection-element.ts'
@@ -56,7 +56,7 @@ export interface InlinePopoverRootProps extends OverlayRootProps {
    *
    * @default null
    */
-  anchor: AnchorProp
+  anchor: AnchorReference
 }
 
 /** @internal */

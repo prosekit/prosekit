@@ -7,7 +7,7 @@ import type { ReferenceElement, VirtualElement } from '@floating-ui/dom'
 export type AnchorReference =
   | Element
   | VirtualElement
-  | (() => Element | VirtualElement | null)
+  | (() => Element | VirtualElement | null | undefined)
   | null
 
 /**

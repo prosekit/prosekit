@@ -1,4 +1,5 @@
 import {
+  computed,
   defineCustomElement,
   defineProps,
   registerCustomElement,
@@ -6,7 +7,7 @@ import {
   type HostElement,
   type HostElementConstructor,
   type PropsDeclaration,
-  type State, computed
+  type State,
 } from '@aria-ui/core'
 import type { OpenChangeEvent } from '@aria-ui/elements/overlay'
 import { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from '@aria-ui/elements/overlay'
@@ -85,7 +86,6 @@ export function setupInlinePopoverRoot(
   const store = useOverlayStore(host, props)
   InlinePopoverStoreContext.provide(host, store)
 
-
   let editorFocused = false
   useEditorFocusChangeEvent(host, props.editor.get, (focus) => {
     editorFocused = focus
@@ -99,7 +99,6 @@ export function setupInlinePopoverRoot(
     if (!anchor) return
     store.setAnchorElement(anchor)
   })
-
 
   let prevSelection: Selection | undefined
   useEditorUpdateEvent(host, props.editor.get, (view) => {

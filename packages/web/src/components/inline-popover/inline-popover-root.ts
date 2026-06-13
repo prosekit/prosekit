@@ -6,7 +6,7 @@ import {
   type HostElement,
   type HostElementConstructor,
   type PropsDeclaration,
-  type State,
+  type State, computed
 } from '@aria-ui/core'
 import type { OpenChangeEvent } from '@aria-ui/elements/overlay'
 import { OverlayRootPropsDeclaration, useOverlayStore, type OverlayRootProps } from '@aria-ui/elements/overlay'
@@ -85,23 +85,25 @@ export function setupInlinePopoverRoot(
   const store = useOverlayStore(host, props)
   InlinePopoverStoreContext.provide(host, store)
 
-  // Custom-anchor mode: the consumer supplies the reference element and controls
-  // the open state. Re-runs whenever the `anchor` property changes.
-  useEffect(host, () => {
-    const anchor = resolveAnchor(props.anchor.get())
-    if (!anchor) return
-    store.setAnchorElement(anchor)
-  })
 
   let editorFocused = false
   useEditorFocusChangeEvent(host, props.editor.get, (focus) => {
     editorFocused = focus
   })
 
-  // Selection mode (default): only active while no custom anchor is set.
+  const hasCustomAnchor = computed(() => !!props.anchor.get())
+
+  useEffect(host, () => {
+    if (!hasCustomAnchor()) return
+    const anchor = resolveAnchor(props.anchor.get())
+    if (!anchor) return
+    store.setAnchorElement(anchor)
+  })
+
+
   let prevSelection: Selection | undefined
   useEditorUpdateEvent(host, props.editor.get, (view) => {
-    if (props.anchor.get()) return
+    if (hasCustomAnchor()) return
 
     const isPopoverFocused = !editorFocused && host.contains(host.ownerDocument.activeElement)
     if (isPopoverFocused) return

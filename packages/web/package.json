@@ -29,6 +29,7 @@
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.ts",
     "./block-handle": "./src/components/block-handle/index.ts",
+    "./columns-popover": "./src/components/columns-popover/index.ts",
     "./drop-indicator": "./src/components/drop-indicator/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./menu": "./src/components/menu/index.ts",
@@ -81,6 +82,10 @@
         "types": "./dist/block-handle.d.ts",
         "default": "./dist/block-handle.js"
       },
+      "./columns-popover": {
+        "types": "./dist/columns-popover.d.ts",
+        "default": "./dist/columns-popover.js"
+      },
       "./drop-indicator": {
         "types": "./dist/drop-indicator.d.ts",
         "default": "./dist/drop-indicator.js"
@@ -123,6 +128,9 @@
         ],
         "block-handle": [
           "./dist/block-handle.d.ts"
+        ],
+        "columns-popover": [
+          "./dist/columns-popover.d.ts"
         ],
         "drop-indicator": [
           "./dist/drop-indicator.d.ts"

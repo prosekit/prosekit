@@ -13,13 +13,14 @@ import {
 import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@aria-ui/elements/listbox'
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
-import type { ReferenceElement, VirtualElement } from '@floating-ui/dom'
+import type { ReferenceElement } from '@floating-ui/dom'
 import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
 import { KeyboardEventTarget } from '../../utils/event.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
+import { resolveAnchor, type AnchorProp } from '../../utils/resolve-anchor.ts'
 
 import { autocompleteStoreContext, type AutocompleteStore } from './context.ts'
 import { defaultQueryBuilder } from './helpers.ts'
@@ -58,7 +59,7 @@ export interface AutocompleteRootProps {
    *
    * @default null
    */
-  anchor: Element | VirtualElement | (() => Element | VirtualElement | null) | null
+  anchor: AnchorProp
 }
 
 /** @internal */
@@ -166,13 +167,9 @@ export function setupAutocompleteRoot(
   }
 
   const getAnchor = (): ReferenceElement | null => {
-    const customAnchor = props.anchor.get()
+    const customAnchor = resolveAnchor(props.anchor.get())
     if (customAnchor) {
-      if (typeof customAnchor === 'function') {
-        return customAnchor() || null
-      } else {
-        return customAnchor
-      }
+      return customAnchor
     }
     const view = getSafeEditorView(getEditor())
     return view?.dom.querySelector('.prosekit-autocomplete-match') || null

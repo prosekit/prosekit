@@ -31,6 +31,17 @@ export interface InlinePopoverRootProps {
    */
   dismissOnEscape?: InlinePopoverRootElementProps['dismissOnEscape'];
   /**
+   * The reference to position the popover against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   *
+   * When set, the popover is anchored to this reference instead of the current
+   * text selection, and the text selection no longer drives the open state, so
+   * control it with the `open` property.
+   *
+   * @default null
+   */
+  anchor?: InlinePopoverRootElementProps['anchor'];
+  /**
    * Whether the overlay is currently open.
    * @default null
    */
@@ -51,15 +62,15 @@ export const InlinePopoverRoot: Component<InlinePopoverRootProps & JSX.HTMLAttri
   const [getElement, setElement] = createSignal<InlinePopoverRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'dismissOnEscape', 'editor', 'open'], ['onOpenChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['anchor', 'defaultOpen', 'disabled', 'dismissOnEscape', 'editor', 'open'], ['onOpenChange']);
 
-  const p3Fallback = useEditorContext();
+  const p4Fallback = useEditorContext();
 
   createEffect(() => {
     const element = getElement();
     if (!element) return;
 
-    Object.assign(element, { defaultOpen: elementProps.defaultOpen, disabled: elementProps.disabled, dismissOnEscape: elementProps.dismissOnEscape, editor: elementProps.editor ?? p3Fallback, open: elementProps.open });
+    Object.assign(element, { anchor: elementProps.anchor, defaultOpen: elementProps.defaultOpen, disabled: elementProps.disabled, dismissOnEscape: elementProps.dismissOnEscape, editor: elementProps.editor ?? p4Fallback, open: elementProps.open });
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);

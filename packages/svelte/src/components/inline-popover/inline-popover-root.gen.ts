@@ -30,6 +30,17 @@ export interface InlinePopoverRootProps {
    */
   dismissOnEscape?: InlinePopoverRootElementProps['dismissOnEscape'];
   /**
+   * The reference to position the popover against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   *
+   * When set, the popover is anchored to this reference instead of the current
+   * text selection, and the text selection no longer drives the open state, so
+   * control it with the `open` property.
+   *
+   * @default null
+   */
+  anchor?: InlinePopoverRootElementProps['anchor'];
+  /**
    * Whether the overlay is currently open.
    * @default null
    */

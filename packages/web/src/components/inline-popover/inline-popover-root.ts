@@ -2,6 +2,7 @@ import {
   defineCustomElement,
   defineProps,
   registerCustomElement,
+  useEffect,
   type HostElement,
   type HostElementConstructor,
   type PropsDeclaration,
@@ -15,6 +16,7 @@ import type { Selection } from '@prosekit/pm/state'
 import { useEditorFocusChangeEvent } from '../../hooks/use-editor-focus-event.ts'
 import { useEditorUpdateEvent } from '../../hooks/use-editor-update-event.ts'
 import { useKeymap } from '../../hooks/use-keymap.ts'
+import { resolveAnchor, type AnchorProp } from '../../utils/resolve-anchor.ts'
 
 import { InlinePopoverStoreContext } from './store.ts'
 import { getVirtualSelectionElement } from './virtual-selection-element.ts'
@@ -43,6 +45,18 @@ export interface InlinePopoverRootProps extends OverlayRootProps {
    * @default true
    */
   dismissOnEscape: boolean
+
+  /**
+   * The reference to position the popover against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   *
+   * When set, the popover is anchored to this reference instead of the current
+   * text selection, and the text selection no longer drives the open state, so
+   * control it with the `open` property.
+   *
+   * @default null
+   */
+  anchor: AnchorProp
 }
 
 /** @internal */
@@ -53,6 +67,7 @@ export const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRo
   editor: { default: null, attribute: false },
   defaultOpen: { default: true, attribute: 'default-open', type: 'boolean' },
   dismissOnEscape: { default: true, attribute: 'dismiss-on-escape', type: 'boolean' },
+  anchor: { default: null, attribute: false },
 })
 
 export interface InlinePopoverRootEvents {
@@ -70,13 +85,24 @@ export function setupInlinePopoverRoot(
   const store = useOverlayStore(host, props)
   InlinePopoverStoreContext.provide(host, store)
 
+  // Custom-anchor mode: the consumer supplies the reference element and controls
+  // the open state. Re-runs whenever the `anchor` property changes.
+  useEffect(host, () => {
+    const anchor = resolveAnchor(props.anchor.get())
+    if (!anchor) return
+    store.setAnchorElement(anchor)
+  })
+
   let editorFocused = false
   useEditorFocusChangeEvent(host, props.editor.get, (focus) => {
     editorFocused = focus
   })
 
+  // Selection mode (default): only active while no custom anchor is set.
   let prevSelection: Selection | undefined
   useEditorUpdateEvent(host, props.editor.get, (view) => {
+    if (props.anchor.get()) return
+
     const isPopoverFocused = !editorFocused && host.contains(host.ownerDocument.activeElement)
     if (isPopoverFocused) return
 

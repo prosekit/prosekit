@@ -12,6 +12,7 @@ export {
   defineColumnResizingPlugin,
   defineTableEditingPlugin,
   defineTablePlugins,
+  TableView,
   type ColumnResizingOptions,
   type TableEditingOptions,
 } from './table-plugins.ts'

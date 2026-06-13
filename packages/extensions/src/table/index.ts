@@ -8,7 +8,14 @@ export { selectTableColumn, type SelectTableColumnOptions } from './table-comman
 export { selectTableRow, type SelectTableRowOptions } from './table-commands/select-table-row.ts'
 export { selectTable, type SelectTableOptions } from './table-commands/select-table.ts'
 export { defineTableDropIndicator } from './table-drop-indicator.ts'
-export { defineTablePlugins } from './table-plugins.ts'
+export {
+  defineColumnResizingPlugin,
+  defineTableEditingPlugin,
+  defineTablePlugins,
+  TableView,
+  type ColumnResizingOptions,
+  type TableEditingOptions,
+} from './table-plugins.ts'
 export {
   defineTableCellSpec,
   defineTableHeaderCellSpec,

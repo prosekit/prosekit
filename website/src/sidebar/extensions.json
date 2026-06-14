@@ -3,6 +3,7 @@
     "label": "Nodes",
     "items": [
       "blockquote",
+      "callout",
       "code-block",
       "doc",
       "hard-break",

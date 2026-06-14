@@ -5,6 +5,7 @@ export const loaders = {
   'block-handle': lazy(() => import('./examples/block-handle/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'blockquote': lazy(() => import('./examples/blockquote/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'bold': lazy(() => import('./examples/bold/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'callout': lazy(() => import('./examples/callout/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'change-tracking': lazy(() => import('./examples/change-tracking/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'code': lazy(() => import('./examples/code/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'code-block': lazy(() => import('./examples/code-block/index.ts').then((m) => ({ default: m.ExampleEditor }))),

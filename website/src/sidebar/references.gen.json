@@ -13,6 +13,7 @@
       "references/extensions/background-color",
       "references/extensions/blockquote",
       "references/extensions/bold",
+      "references/extensions/callout",
       "references/extensions/code",
       "references/extensions/code-block",
       "references/extensions/commit",

@@ -1,0 +1,96 @@
+---
+title: Callout
+description: GitHub Alert-style callout blocks with variant support
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `callout` node represents a highlighted block with a semantic variant such as `note`, `tip`, or `warning`. It supports GitHub Alert-style input rules and can be rendered with a custom node view.
+
+<Demo story="callout" />
+
+## Usage
+
+```ts twoslash
+import { defineCallout } from 'prosekit/extensions/callout'
+
+const extension = defineCallout()
+```
+
+Supported variants:
+
+```ts
+;['note', 'tip', 'important', 'warning', 'caution']
+```
+
+## Commands
+
+### `setCallout`
+
+Wrap the selection in a `callout` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCallout } from 'prosekit/extensions/callout'
+
+const extension = defineCallout()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setCallout({ variant: 'tip' })
+```
+
+### `insertCallout`
+
+Insert a new `callout` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCallout } from 'prosekit/extensions/callout'
+
+const extension = defineCallout()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.insertCallout({ variant: 'warning' })
+```
+
+### `toggleCallout`
+
+Toggle the selected node between a `callout` node and a default node such as `paragraph`.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCallout } from 'prosekit/extensions/callout'
+
+const extension = defineCallout()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.toggleCallout({ variant: 'note' })
+```
+
+### `updateCallout`
+
+Update the attributes of the current `callout` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCallout } from 'prosekit/extensions/callout'
+
+const extension = defineCallout()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.updateCallout({ variant: 'caution' })
+```
+
+## Keyboard Interaction
+
+Type `>` at the start of a line, then type a GitHub Alert marker such as `[!NOTE]`, `[!TIP]`, or `[!WARNING]`. The surrounding blockquote will be converted into a `callout` node with the matching variant.
+
+If there is no surrounding blockquote, typing `[!NOTE]` at the start of a line can also wrap the current text block directly in a `callout`.
+
+## API Reference
+
+- [prosekit/extensions/callout](/references/extensions/callout)

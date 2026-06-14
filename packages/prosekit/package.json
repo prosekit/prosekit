@@ -40,6 +40,7 @@
     "./extensions/background-color": "./src/extensions/background-color.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
     "./extensions/bold": "./src/extensions/bold.gen.ts",
+    "./extensions/callout": "./src/extensions/callout.gen.ts",
     "./extensions/code": "./src/extensions/code.gen.ts",
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
     "./extensions/commit": "./src/extensions/commit.gen.ts",
@@ -304,6 +305,10 @@
       "./extensions/bold": {
         "types": "./dist/extensions/bold.d.ts",
         "default": "./dist/extensions/bold.js"
+      },
+      "./extensions/callout": {
+        "types": "./dist/extensions/callout.d.ts",
+        "default": "./dist/extensions/callout.js"
       },
       "./extensions/code": {
         "types": "./dist/extensions/code.d.ts",
@@ -846,6 +851,9 @@
         ],
         "extensions/bold": [
           "./dist/extensions/bold.d.ts"
+        ],
+        "extensions/callout": [
+          "./dist/extensions/callout.d.ts"
         ],
         "extensions/code": [
           "./dist/extensions/code.d.ts"

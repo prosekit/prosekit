@@ -13,6 +13,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for bold mark.',
   },
   {
+    name: 'callout',
+    description: 'Callout block with GitHub Alert-style input rules.',
+  },
+  {
     name: 'change-tracking',
     description: 'Track and commit document changes with version history.',
   },

@@ -27,7 +27,15 @@ mkdir -p "$dest_dir"
 # --checksum: use checksums instead of file size/time for comparison
 # --no-times: don't preserve timestamps
 # --delete: remove files in dest that don't exist in source
-rsync -av --checksum --no-times --delete "$src_dir" "$dest_dir"
+# rsync isn't available in every build image (e.g. Vercel), so fall back to cp.
+if command -v rsync >/dev/null 2>&1; then
+  rsync -av --checksum --no-times --delete "$src_dir" "$dest_dir"
+else
+  echo "rsync not found; falling back to cp"
+  rm -rf "$dest_dir"
+  mkdir -p "$dest_dir"
+  cp -R "$src_dir." "$dest_dir"
+fi
 
 # Find the substring "__namedParameters" and throw an error if found
 cd "$WEBSITE_DIR/src/content/docs"

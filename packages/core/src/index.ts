@@ -71,6 +71,7 @@ export {
 export { defineHistory, type HistoryExtension, type HistoryOptions } from './extensions/history.ts'
 export { defineBaseKeymap, type BaseKeymapExtension, type BaseKeymapOptions } from './extensions/keymap-base.ts'
 export { defineKeymap, keymapFacet, type Keymap, type KeymapPayload } from './extensions/keymap.ts'
+export { defineMarkPasteRule, type MarkPasteRuleOptions } from './extensions/mark-paste-rule.ts'
 export { defineMarkAttr, defineMarkSpec, type MarkAttrOptions, type MarkSpecOptions } from './extensions/mark-spec.ts'
 export {
   defineMarkViewComponent,
@@ -87,6 +88,7 @@ export {
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect.ts'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view.ts'
+export { definePasteRule, type PasteRuleHandler, type PasteRuleHandlerOptions, type PasteRuleOptions } from './extensions/paste-rule.ts'
 export { definePlugin, pluginFacet, type PluginPayload } from './extensions/plugin.ts'
 export { defineFacetPayload } from './facets/facet-extension.ts'
 export { defineFacet, type Facet } from './facets/facet.ts'

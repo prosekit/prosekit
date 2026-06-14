@@ -1,6 +1,7 @@
-import type { PlainExtension } from '@prosekit/core'
 import type { Slice } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
+
+import type { PlainExtension } from '../types/extension.ts'
 
 import { definePasteRulePlugin } from './paste-rule-plugin.ts'
 

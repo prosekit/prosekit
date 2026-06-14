@@ -1,5 +1,31 @@
 # prosekit
 
+## 0.22.0-beta.0
+
+### Minor Changes
+
+- [`45f91d5`](https://github.com/ocavue/prosekit/commit/45f91d5f3d9a0146f144685cb42a93e300fb15ed) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Allow `InlinePopoverRoot` to accept a custom `anchor` for popup positioning. When set, the inline popover is positioned against the provided element or virtual element instead of the current text selection.
+
+### Patch Changes
+
+- [`ca473f1`](https://github.com/ocavue/prosekit/commit/ca473f1f90d838b2ff8ee8b108185280f520cde6) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineTableEditingPlugin` and `defineColumnResizingPlugin` for composing table plugins individually.
+
+## 0.21.4
+
+### Patch Changes
+
+- [`eb29f6a`](https://github.com/ocavue/prosekit/commit/eb29f6a3026094aa0c4f1a23f837665d851e2467) ![](https://prosekit.dev/b/pm)
+
+  Add `EditorNode` and `EditorFragment` as aliases for ProseMirror's `Node` and `Fragment`.
+
+- [`64f0066`](https://github.com/ocavue/prosekit/commit/64f006618eb04137c9f1f85bf0a6f4362ad27c7d) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/extensions)
+
+  `definePasteRule` and `defineMarkPasteRule` can now be imported from `prosekit/core`.
+
 ## 0.21.3
 
 ### Patch Changes

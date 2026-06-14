@@ -10,7 +10,8 @@ import {
   type ExtractNodeActions,
   type NodeChild,
 } from '@prosekit/core'
-import { createTestEditor, type TestEditor } from '@prosekit/core/test'
+import { createTestEditor, readClipboardHTML, readClipboardText, type TestEditor } from '@prosekit/core/test'
+import { formatHTML } from 'diffable-html-snapshot'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { defineBackgroundColor } from '../background-color/index.ts'
@@ -39,7 +40,6 @@ import { defineTextColor } from '../text-color/index.ts'
 import { defineText } from '../text/index.ts'
 import { defineUnderline } from '../underline/index.ts'
 
-import { readHtmlTextFromClipboard, readPlainTextFromClipboard } from './clipboard.ts'
 import { renderMathBlock, renderMathInline } from './katex.ts'
 
 /**
@@ -131,8 +131,8 @@ export function setupTest() {
   const copy = async () => {
     editor.view.dom.focus()
     await keyboard.press('ControlOrMeta+C')
-    const html = await readHtmlTextFromClipboard()
-    const plain = await readPlainTextFromClipboard()
+    const html = formatHTML((await readClipboardHTML()) ?? '')
+    const plain = (await readClipboardText()) ?? ''
     return { html, plain }
   }
 

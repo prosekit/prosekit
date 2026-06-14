@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/basic",
   "type": "module",
-  "version": "0.9.4",
+  "version": "0.9.6-beta.0",
   "private": false,
   "description": "A quick starter for ProseKit",
   "author": {
@@ -50,7 +50,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^28.0.3",
-    "happy-dom": "^20.9.0",
+    "happy-dom": "^20.10.1",
     "jsdom": "^29.1.1",
     "sass": "^1.100.0",
     "tsdown": "catalog:",

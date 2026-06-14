@@ -1,0 +1,31 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@prosekit/basic": "0.9.5",
+    "@prosekit/config-ts": "0.0.0",
+    "@prosekit/config-tsdown": "0.0.0",
+    "@prosekit/config-vitest": "0.0.0",
+    "@prosekit/core": "0.12.3",
+    "@prosekit/dev": "0.0.0",
+    "@prosekit/extensions": "0.17.4",
+    "@prosekit/lit": "0.6.7",
+    "@prosekit/pm": "0.1.18",
+    "@prosekit/preact": "0.7.6",
+    "prosekit": "0.21.4",
+    "@prosekit/react": "0.7.6",
+    "@prosekit/solid": "0.7.6",
+    "@prosekit/svelte": "0.9.6",
+    "@prosekit/testing": "0.0.0",
+    "@prosekit/typedoc-plugin": "0.0.0",
+    "@prosekit/vfs": "0.0.0",
+    "@prosekit/vue": "0.7.6",
+    "@prosekit/web": "0.8.6",
+    "prosekit-registry": "0.0.22",
+    "prosekit-website": "0.0.0"
+  },
+  "changesets": [
+    "inline-popover-anchor",
+    "table-editing-plugins"
+  ]
+}

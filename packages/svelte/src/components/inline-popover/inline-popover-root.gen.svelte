@@ -5,16 +5,16 @@
   import { useEditorContext } from '../../contexts/editor-context.ts'
   registerInlinePopoverRootElement()
 
-  let { defaultOpen: p0, disabled: p1, dismissOnEscape: p2, editor: p3, open: p4, onOpenChange: e0, children = undefined, ...restProps } = $props()
+  let { anchor: p0, defaultOpen: p1, disabled: p2, dismissOnEscape: p3, editor: p4, open: p5, onOpenChange: e0, children = undefined, ...restProps } = $props()
   let element: InlinePopoverRootElement | undefined
   const handlers: EventListener[] = []
 
-  const p3Fallback = useEditorContext()
+  const p4Fallback = useEditorContext()
 
   $effect(() => {
     if (!element) return
 
-    Object.assign(element, { defaultOpen: p0, disabled: p1, dismissOnEscape: p2, editor: p3 ?? p3Fallback, open: p4 })
+    Object.assign(element, { anchor: p0, defaultOpen: p1, disabled: p2, dismissOnEscape: p3, editor: p4 ?? p4Fallback, open: p5 })
 
     handlers.length = 0
     handlers.push(e0)

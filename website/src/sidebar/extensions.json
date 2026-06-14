@@ -4,6 +4,7 @@
     "items": [
       "blockquote",
       "code-block",
+      "details",
       "doc",
       "hard-break",
       "heading",

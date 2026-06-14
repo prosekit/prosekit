@@ -29,6 +29,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for inline code mark.',
   },
   {
+    name: 'details',
+    description: 'Collapsible details and summary blocks.',
+  },
+  {
     name: 'drop-cursor',
     description: 'Visual cursor indicator during drag-and-drop operations.',
   },

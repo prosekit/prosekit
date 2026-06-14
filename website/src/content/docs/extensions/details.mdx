@@ -1,0 +1,173 @@
+---
+title: Details
+description: Collapsible details and summary blocks
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
+
+The `details` node represents a collapsible disclosure widget, using the native HTML `<details>` and `<summary>` elements. It can be used to hide and reveal content on demand.
+
+<Demo story="details" />
+
+## Usage
+
+```ts twoslash
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+```
+
+`defineDetails()` adds three node types:
+
+- `details` is the wrapper node and stores the `open` attribute.
+- `detailsSummary` is the first child and maps to the native `<summary>` element.
+- `detailsContent` wraps the collapsible body content.
+
+The resulting DOM shape is:
+
+```html
+<details open>
+  <summary>Summary</summary>
+  <div data-type="detailsContent">
+    <p>Hidden content</p>
+  </div>
+</details>
+```
+
+## Optional Node View
+
+`defineDetails()` provides the schema, commands, keymap, and plugin. If you also want the editor state to stay in sync when users click the native disclosure marker in the browser, add `defineDetailsNodeView()`.
+
+```ts twoslash
+import { union } from 'prosekit/core'
+import { defineDetails, defineDetailsNodeView } from 'prosekit/extensions/details'
+
+const extension = union(defineDetails(), defineDetailsNodeView())
+```
+
+The node view keeps the native `<details open>` state and the ProseMirror document attribute synchronized in both directions.
+
+## Commands
+
+### `setDetails`
+
+Wrap the selected block range in a `details` node. If the selection is already inside `details`, update its attributes instead.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setDetails({ open: true })
+```
+
+### `toggleDetails`
+
+Wrap the current block selection in `details`, or unwrap the nearest ancestor `details` node if the selection is already inside one.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.toggleDetails()
+```
+
+### `insertDetails`
+
+Insert a new `details` node with a `detailsSummary` and a default block.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.insertDetails()
+```
+
+### `unsetDetails`
+
+Unwrap the nearest ancestor `details` node. This is an alias of `unwrapDetails()`.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.unsetDetails()
+```
+
+### `toggleDetailsOpen`
+
+Toggle the `open` attribute of the nearest ancestor `details` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.toggleDetailsOpen()
+```
+
+### `setDetailsOpen`
+
+Set the `open` attribute of the nearest ancestor `details` node explicitly.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setDetailsOpen({ open: true })
+```
+
+### `unwrapDetails`
+
+Unwrap the nearest ancestor `details` node, converting its `detailsSummary` into a paragraph.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineDetails } from 'prosekit/extensions/details'
+
+const extension = defineDetails()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.unwrapDetails()
+```
+
+## Keyboard Interaction
+
+Press <Keyboard key="Enter" /> inside a `detailsSummary` to jump to the first content block.
+
+If the `detailsContent` container is empty, the keymap inserts a default block first and then moves the cursor into it.
+
+## Behavior Notes
+
+- `details` always contains exactly two children: `detailsSummary` followed by `detailsContent`.
+- `insertDetails()` creates an empty summary plus one default block in the content area.
+- `unwrapDetails()` turns the summary text into a default top-level block, then lifts the content blocks out after it.
+- The `open` attribute is stored on the `details` node as `DetailsAttrs`.
+
+## API Reference
+
+- [prosekit/extensions/details](/references/extensions/details)

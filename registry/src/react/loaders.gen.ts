@@ -40,6 +40,7 @@ export const loaders = {
   'save-markdown': lazy(() => import('./examples/save-markdown/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'search': lazy(() => import('./examples/search/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'slash-menu': lazy(() => import('./examples/slash-menu/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'static-renderer': lazy(() => import('./examples/static-renderer/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'strike': lazy(() => import('./examples/strike/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'sub-sup': lazy(() => import('./examples/sub-sup/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'table': lazy(() => import('./examples/table/index.ts').then((m) => ({ default: m.ExampleEditor }))),

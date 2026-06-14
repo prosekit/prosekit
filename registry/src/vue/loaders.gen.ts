@@ -38,6 +38,7 @@ export const loaders = {
   'save-markdown': defineAsyncComponent(() => import('./examples/save-markdown/index.ts').then((m) => m.ExampleEditor)),
   'search': defineAsyncComponent(() => import('./examples/search/index.ts').then((m) => m.ExampleEditor)),
   'slash-menu': defineAsyncComponent(() => import('./examples/slash-menu/index.ts').then((m) => m.ExampleEditor)),
+  'static-renderer': defineAsyncComponent(() => import('./examples/static-renderer/index.ts').then((m) => m.ExampleEditor)),
   'strike': defineAsyncComponent(() => import('./examples/strike/index.ts').then((m) => m.ExampleEditor)),
   'sub-sup': defineAsyncComponent(() => import('./examples/sub-sup/index.ts').then((m) => m.ExampleEditor)),
   'table': defineAsyncComponent(() => import('./examples/table/index.ts').then((m) => m.ExampleEditor)),

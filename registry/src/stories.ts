@@ -126,6 +126,20 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Placeholder text displayed.',
   },
   {
+    name: 'react-binding-full',
+    description: 'Full-featured editor built with the experimental react-binding package.',
+  },
+  {
+    name: 'react-binding-suspense-view',
+    description: 'Suspense node view comparison case for the experimental react-binding package.',
+    hidden: true,
+  },
+  {
+    name: 'react-suspense-view',
+    description: 'Suspense node view comparison case for prosekit/react.',
+    hidden: true,
+  },
+  {
     name: 'readonly',
     description: 'Toggle between read-only and editable mode.',
   },

@@ -11,6 +11,7 @@
     "@prosekit/config-tsdown",
     "@prosekit/config-vitest",
     "@prosekit/dev",
+    "@prosekit/react-binding",
     "@prosekit/testing",
     "@prosekit/typedoc-plugin",
     "@prosekit/vfs",

@@ -1,0 +1,10 @@
+{
+  "extends": "@prosekit/config-ts/build.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
+  "references": [
+    { "path": "../core/tsconfig.json" },
+    { "path": "../pm/tsconfig.json" }
+  ]
+}

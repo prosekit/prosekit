@@ -340,6 +340,27 @@
       "hidden": false,
       "description": "Placeholder text displayed."
     },
+    "react-binding-full": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": false,
+      "description": "Full-featured editor built with the experimental react-binding package."
+    },
+    "react-binding-suspense-view": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": true,
+      "description": "Suspense node view comparison case for the experimental react-binding package."
+    },
+    "react-suspense-view": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": true,
+      "description": "Suspense node view comparison case for prosekit/react."
+    },
     "readonly": {
       "frameworks": [
         "react",
@@ -1014,6 +1035,43 @@
         "registry/src/react/examples/placeholder/editor.tsx",
         "registry/src/react/examples/placeholder/extension.ts",
         "registry/src/react/examples/placeholder/index.ts"
+      ]
+    },
+    "react-example-react-binding-full": {
+      "story": "react-binding-full",
+      "files": [
+        "registry/src/react/examples/react-binding-full/editor.tsx",
+        "registry/src/react/examples/react-binding-full/extension.ts",
+        "registry/src/react/examples/react-binding-full/image-view.tsx",
+        "registry/src/react/examples/react-binding-full/index.ts",
+        "registry/src/react/examples/react-binding-full/link-view.tsx",
+        "registry/src/react/examples/react-binding-full/toolbar.tsx"
+      ]
+    },
+    "react-example-react-binding-suspense-view": {
+      "story": "react-binding-suspense-view",
+      "files": [
+        "registry/src/react/examples/react-binding-suspense-view/async-block-view.tsx",
+        "registry/src/react/examples/react-binding-suspense-view/editor.tsx",
+        "registry/src/react/examples/react-binding-suspense-view/extension.ts",
+        "registry/src/react/examples/react-binding-suspense-view/index.ts",
+        "registry/src/react/sample/async-block-view-content.tsx",
+        "registry/src/react/sample/async-resource.ts",
+        "registry/src/react/sample/define-async-block.ts",
+        "registry/src/react/sample/sample-doc-suspense-view.ts"
+      ]
+    },
+    "react-example-react-suspense-view": {
+      "story": "react-suspense-view",
+      "files": [
+        "registry/src/react/examples/react-suspense-view/async-block-view.tsx",
+        "registry/src/react/examples/react-suspense-view/editor.tsx",
+        "registry/src/react/examples/react-suspense-view/extension.ts",
+        "registry/src/react/examples/react-suspense-view/index.ts",
+        "registry/src/react/sample/async-block-view-content.tsx",
+        "registry/src/react/sample/async-resource.ts",
+        "registry/src/react/sample/define-async-block.ts",
+        "registry/src/react/sample/sample-doc-suspense-view.ts"
       ]
     },
     "react-example-readonly": {

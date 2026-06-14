@@ -5,8 +5,12 @@
     "jsxImportSource": "react",
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "paths": {
+      "@prosekit/react-binding": ["../../../packages/react-binding/src/index.ts"]
+    }
   },
   "references": [
     { "path": "../../../packages/prosekit" },
+    { "path": "../../../packages/react-binding" },
   ],
 }

@@ -13,6 +13,7 @@ ProseKit ships an extension for every common editor feature. Each one lives at `
 | -------------------------------------------------- | ---------------------------------------------------------- |
 | [Blockquote](/extensions/blockquote)               | Quote blocks for citing or highlighting passages           |
 | [CodeBlock](/extensions/code-block)                | Code blocks with optional syntax highlighting              |
+| [Columns](/extensions/columns)                     | Side-by-side block content with adjustable column widths   |
 | [Doc](/extensions/doc)                             | The top-level document node every editor needs             |
 | [Hard Break](/extensions/hard-break)               | Inline line break, rendered as `<br>`                      |
 | [Heading](/extensions/heading)                     | Heading nodes h1 through h6 with Markdown-style input rules |

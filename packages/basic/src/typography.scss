@@ -61,6 +61,7 @@ $pre-border-radius: 0.375rem;
   --prosekit-border-color: hsl(0 0% 60% / 0.2);
   --prosekit-blockquote-color: hsl(0 0% 60% / 0.4);
   --prosekit-autocomplete-color: hsl(0 0% 50% / 0.1);
+  --prosekit-columns-gap: 1rem;
 
   // Prefer oklch over hsl
   @supports (color: oklch(0.7 0.2 240)) {

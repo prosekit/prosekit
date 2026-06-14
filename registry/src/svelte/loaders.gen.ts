@@ -8,6 +8,7 @@ export const loaders = {
   'code': () => import('./examples/code/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'code-block': () => import('./examples/code-block/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'code-block-themes': () => import('./examples/code-block-themes/index.ts').then((m) => ({ default: m.ExampleEditor })),
+  'columns': () => import('./examples/columns/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'drop-cursor': () => import('./examples/drop-cursor/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'emoji-rules': () => import('./examples/emoji-rules/index.ts').then((m) => ({ default: m.ExampleEditor })),
   'font-family': () => import('./examples/font-family/index.ts').then((m) => ({ default: m.ExampleEditor })),

@@ -94,7 +94,7 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "@sveltejs/package": "^2.5.7",
+    "@sveltejs/package": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@types/node": "catalog:",
     "svelte": "^5.56.1",

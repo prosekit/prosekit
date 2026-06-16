@@ -59,7 +59,7 @@ editor.set(doc)
 When you only need to build a document and not run commands, you can skip the editor entirely. `createNodeBuilders(schema)` and `createMarkBuilders(schema)` return the same typed factories as `editor.nodes` / `editor.marks`, but they take a schema directly and omit `isActive`. Pass your extension type as the type argument to type them to your schema.
 
 ```ts twoslash
-import { createEditor, createMarkBuilders, createNodeBuilders, union } from 'prosekit/core'
+import { createMarkBuilders, createNodeBuilders, union } from 'prosekit/core'
 import { defineBold } from 'prosekit/extensions/bold'
 import { defineDoc } from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'

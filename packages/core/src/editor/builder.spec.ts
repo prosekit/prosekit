@@ -3,7 +3,6 @@ import { describe, expect, expectTypeOf, it } from 'vitest'
 import { defineTestExtension } from '../testing/index.ts'
 
 import { createMarkBuilders, createNodeBuilders } from './builder.ts'
-import { createEditor } from './editor.ts'
 
 describe('createNodeBuilders', () => {
   type TestExtension = ReturnType<typeof defineTestExtension>
@@ -64,10 +63,11 @@ describe('createNodeBuilders', () => {
 })
 
 describe('createMarkBuilders', () => {
-  const extension = defineTestExtension()
-  const schema = createEditor({ extension }).schema
-  const n = createNodeBuilders<typeof extension>(schema)
-  const m = createMarkBuilders<typeof extension>(schema)
+  type TestExtension = ReturnType<typeof defineTestExtension>
+  const extension: TestExtension = defineTestExtension()
+  const schema = extension.schema!
+  const n = createNodeBuilders<TestExtension>(schema)
+  const m = createMarkBuilders<TestExtension>(schema)
 
   it('applies a mark to text', () => {
     expect(n.paragraph(m.bold('foo')).toJSON()).toEqual({

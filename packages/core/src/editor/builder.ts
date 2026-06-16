@@ -25,11 +25,11 @@ import { createMarkBuildersRaw, createNodeBuildersRaw } from './action.ts'
  * @example
  *
  * ```ts
- * import { createEditor, createNodeBuilders } from 'prosekit/core'
+ * import { createNodeBuilders } from 'prosekit/core'
  * import { defineBasicExtension } from 'prosekit/basic'
  *
  * const extension = defineBasicExtension()
- * const schema = createEditor({ extension }).schema
+ * const schema = extension.schema!
  *
  * const n = createNodeBuilders<typeof extension>(schema)
  *
@@ -65,11 +65,11 @@ export function createNodeBuilders<E extends Extension>(
  * @example
  *
  * ```ts
- * import { createEditor, createNodeBuilders, createMarkBuilders } from 'prosekit/core'
+ * import { createNodeBuilders, createMarkBuilders } from 'prosekit/core'
  * import { defineBasicExtension } from 'prosekit/basic'
  *
  * const extension = defineBasicExtension()
- * const schema = createEditor({ extension }).schema
+ * const schema = extension.schema!
  *
  * const n = createNodeBuilders<typeof extension>(schema)
  * const m = createMarkBuilders<typeof extension>(schema)

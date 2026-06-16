@@ -10,7 +10,7 @@ import { isNodeActive } from '../utils/is-node-active.ts'
 import { isProseMirrorNode } from '../utils/type-assertion.ts'
 
 /**
- * Available children parameters for {@link NodeBuilder}, {@link NodeAction}, and {@link MarkAction}.
+ * Available children parameters for {@link NodeBuilder} and {@link MarkBuilder}.
  */
 export type NodeChild = ProseMirrorNode | string | NodeChild[]
 

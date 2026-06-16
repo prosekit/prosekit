@@ -65,16 +65,21 @@ import { defineDoc } from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 
-const extension = union(
-  defineDoc(),
-  defineText(),
-  defineParagraph(),
-  defineBold(),
-)
-const schema = createEditor({ extension }).schema
+function defineTestExtension() {
+  return union(
+    defineDoc(),
+    defineText(),
+    defineParagraph(),
+    defineBold(),
+  )  
+}
 
-const n = createNodeBuilders<typeof extension>(schema)
-const m = createMarkBuilders<typeof extension>(schema)
+type TestExtension = ReturnType<typeof defineTestExtension>
+const extension: TestExtension = defineTestExtension()
+const schema = extension.schema!
+
+const n = createNodeBuilders<TestExtension>(schema)
+const m = createMarkBuilders<TestExtension>(schema)
 
 const doc = n.doc(
   n.paragraph('Hello, ', m.bold('world'), '!'),

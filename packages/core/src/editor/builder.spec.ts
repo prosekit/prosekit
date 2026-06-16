@@ -6,9 +6,10 @@ import { createMarkBuilders, createNodeBuilders } from './builder.ts'
 import { createEditor } from './editor.ts'
 
 describe('createNodeBuilders', () => {
-  const extension = defineTestExtension()
-  const schema = createEditor({ extension }).schema
-  const n = createNodeBuilders<typeof extension>(schema)
+  type TestExtension = ReturnType<typeof defineTestExtension>
+  const extension: TestExtension = defineTestExtension()
+  const schema = extension.schema!
+  const n = createNodeBuilders<TestExtension>(schema)
 
   it('builds a node from a string child', () => {
     expect(n.heading('foo').toJSON()).toEqual({

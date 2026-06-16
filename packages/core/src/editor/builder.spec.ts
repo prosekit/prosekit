@@ -89,6 +89,17 @@ describe('createMarkBuilders', () => {
     })
   })
 
+  it('nests mark builders as children', () => {
+    expect(n.paragraph('Hello ', m.bold('world', m.italic('!'))).toJSON()).toEqual({
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'Hello ' },
+        { type: 'text', text: 'world', marks: [{ type: 'bold' }] },
+        { type: 'text', text: '!', marks: [{ type: 'italic' }, { type: 'bold' }] },
+      ],
+    })
+  })
+
   it('returns an array of nodes', () => {
     expect(Array.isArray(m.bold('foo'))).toBe(true)
   })

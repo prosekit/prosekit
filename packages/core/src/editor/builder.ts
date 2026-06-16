@@ -7,13 +7,12 @@ import { createMarkBuildersRaw, createNodeBuildersRaw } from './action.ts'
 /**
  * Creates a set of typed node builders from a {@link Schema}.
  *
- * Each returned builder creates a {@link ProseMirrorNode} for one node type in
+ * Each returned builder creates a ProseMirror node for one node type in
  * the schema. A builder accepts an optional attributes object followed by any
  * number of children, where a child is a node, a string, or a nested array of
  * children.
  *
- * Unlike the {@link NodeAction}s exposed by `editor.nodes`, these builders are
- * not bound to an editor and have no `isActive` method, so you can use them
+ * You can use these builders
  * without creating an editor, for example in tests or when rendering on the
  * server.
  *

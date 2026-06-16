@@ -7,14 +7,13 @@ import { createMarkBuildersRaw, createNodeBuildersRaw } from './action.ts'
 /**
  * Creates a set of typed node builders from a {@link Schema}.
  *
- * Each returned builder creates a ProseMirror node for one node type in
- * the schema. A builder accepts an optional attributes object followed by any
+ * Each returned builder creates a ProseMirror node for one node type in the
+ * schema. A builder accepts an optional attributes object followed by any
  * number of children, where a child is a node, a string, or a nested array of
  * children.
  *
- * You can use these builders
- * without creating an editor, for example in tests or when rendering on the
- * server.
+ * You can use these builders without creating an editor, for example in tests
+ * or when rendering on the server.
  *
  * Pass your extension type as the type argument to type the builders to your
  * schema's node names and attributes.
@@ -47,13 +46,12 @@ export function createNodeBuilders<E extends Extension>(
  * Creates a set of typed mark builders from a {@link Schema}.
  *
  * Each returned builder applies one mark type from the schema to its children
- * and returns the resulting array of ProseMirror nodes. A builder accepts
- * an optional attributes object followed by any number of children, where a
- * child is a node, a string, or a nested array of children.
+ * and returns the resulting array of ProseMirror nodes. A builder accepts an
+ * optional attributes object followed by any number of children, where a child
+ * is a node, a string, or a nested array of children.
  *
- * You can use these builders
- * without creating an editor, for example in tests or when rendering on the
- * server.
+ * You can use these builders without creating an editor, for example in tests
+ * or when rendering on the server.
  *
  * Pass your extension type as the type argument to type the builders to your
  * schema's mark names and attributes.

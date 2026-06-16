@@ -26,6 +26,7 @@
   },
   "changesets": [
     "inline-popover-anchor",
+    "node-mark-builders",
     "table-editing-plugins"
   ]
 }

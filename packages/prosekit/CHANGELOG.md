@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.2
+
+### Minor Changes
+
+- [`5e750c7`](https://github.com/ocavue/prosekit/commit/5e750c798588cd94cb1b1c2440bfb809dc4136e0) ![](https://prosekit.dev/b/core)
+
+  Add a `create` method to mark builders (`editor.marks.<name>.create(attrs?)` and the builders returned by `createMarkBuilders`). It returns a bare `Mark` instance with optional, typed attributes, without applying it to any children.
+
 ## 0.22.0-beta.1
 
 ### Minor Changes

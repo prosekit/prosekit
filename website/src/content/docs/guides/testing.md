@@ -62,8 +62,8 @@ When you only need to build a document and not run commands, you can skip the ed
 import { createMarkBuilders, createNodeBuilders, union } from 'prosekit/core'
 import { defineBold } from 'prosekit/extensions/bold'
 import { defineDoc } from 'prosekit/extensions/doc'
-import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineHeading } from 'prosekit/extensions/heading'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 
 function defineTestExtension() {

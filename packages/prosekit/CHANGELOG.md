@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.1
+
+### Minor Changes
+
+- [`026daed`](https://github.com/ocavue/prosekit/commit/026daedafa6ecfd7f429d56a2f40d5113946ab47) ![](https://prosekit.dev/b/core)
+
+  Add `createNodeBuilders` and `createMarkBuilders`, which turn a schema into typed node and mark factory functions without needing an editor instance. They behave like `editor.nodes` and `editor.marks` but omit `isActive`, so they are convenient for building documents in tests or on the server.
+
 ## 0.22.0-beta.0
 
 ### Minor Changes

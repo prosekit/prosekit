@@ -21,7 +21,8 @@ export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap.ts'
 export { unsetBlockType, type UnsetBlockTypeOptions } from './commands/unset-block-type.ts'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark.ts'
 export { wrap, type WrapOptions } from './commands/wrap.ts'
-export type { MarkAction, NodeAction, NodeChild } from './editor/action.ts'
+export type { MarkAction, MarkBuilder, NodeAction, NodeBuilder, NodeChild } from './editor/action.ts'
+export { createMarkBuilders, createNodeBuilders } from './editor/builder.ts'
 export { createEditor, Editor, type EditorOptions } from './editor/editor.ts'
 export { union } from './editor/union.ts'
 export { withPriority } from './editor/with-priority.ts'
@@ -104,8 +105,10 @@ export type {
   ExtractCommandCreators,
   ExtractCommands,
   ExtractMarkActions,
+  ExtractMarkBuilders,
   ExtractMarks,
   ExtractNodeActions,
+  ExtractNodeBuilders,
   ExtractNodes,
   ExtractTyping,
   PlainExtension,

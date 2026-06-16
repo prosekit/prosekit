@@ -1,7 +1,7 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { Selection } from '@prosekit/pm/state'
 
-import { createMarkActions, createNodeActions } from '../editor/action.ts'
+import { createMarkActionsRaw, createNodeActionsRaw } from '../editor/action.ts'
 import { Editor, EditorInstance, setupEditorExtension, type EditorOptions } from '../editor/editor.ts'
 import type { Extension } from '../types/extension.ts'
 import type { NodeJSON, SelectionJSON } from '../types/model.ts'
@@ -13,8 +13,8 @@ import { getSelection } from './test-selection.ts'
 class TestEditorInstance extends EditorInstance {
   constructor(extension: Extension) {
     super(extension)
-    this.nodes = createNodeActions(this.schema, this.getState, createNodeForTest)
-    this.marks = createMarkActions(this.schema, this.getState, applyMarkForTest)
+    this.nodes = createNodeActionsRaw(this.schema, this.getState, createNodeForTest)
+    this.marks = createMarkActionsRaw(this.schema, this.getState, applyMarkForTest)
   }
 
   override setContent(

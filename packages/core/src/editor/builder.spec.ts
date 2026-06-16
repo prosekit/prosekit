@@ -112,4 +112,23 @@ describe('createMarkBuilders', () => {
     expectTypeOf(m.bold).toBeFunction()
     expectTypeOf(m).not.toHaveProperty('nonExistentMark')
   })
+
+  describe('create', () => {
+    it('returns a bare mark without applying it to children', () => {
+      const mark = m.bold.create()
+      expect(mark.type.name).toBe('bold')
+      expect(mark.attrs).toEqual({})
+    })
+
+    it('creates a mark with attributes', () => {
+      const mark = m.link.create({ href: 'https://example.com' })
+      expect(mark.type.name).toBe('link')
+      expect(mark.attrs).toEqual({ href: 'https://example.com', target: null, rel: null })
+    })
+
+    it('is typed per mark name', () => {
+      expectTypeOf(m.bold.create).toBeFunction()
+      expectTypeOf(m.link.create).toBeCallableWith({ href: 'https://example.com' })
+    })
+  })
 })

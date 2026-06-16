@@ -57,6 +57,13 @@ export interface MarkBuilder<Attrs extends AnyAttrs = AnyAttrs> {
    * Applies a mark with any number of children.
    */
   (...children: NodeChild[]): ProseMirrorNode[]
+
+  /**
+   * Creates a {@link Mark} of this type with optional attributes, without
+   * applying it to any children. Unlike calling the builder, which returns
+   * nodes with the mark applied, this returns the bare mark instance.
+   */
+  create: (attrs?: Attrs | null) => Mark
 }
 
 /**
@@ -119,9 +126,11 @@ export function createMarkBuildersRaw(
 }
 
 function createMarkBuilder(type: MarkType, applyMark: ApplyMarkFunction): MarkBuilder {
-  return function markBuilder(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+  function markBuilder(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
     return buildMark(type, args, applyMark)
   }
+  markBuilder.create = (attrs?: Attrs | null): Mark => type.create(attrs)
+  return markBuilder
 }
 
 /**
@@ -143,6 +152,7 @@ function createMarkAction(
   function markAction(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
     return buildMark(type, args, applyMark)
   }
+  markAction.create = (attrs?: Attrs | null): Mark => type.create(attrs)
   markAction.isActive = (attrs?: Attrs) => {
     const state = getState()
     return state ? isMarkActive(state, type, attrs) : false

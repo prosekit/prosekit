@@ -63,6 +63,7 @@ import { createEditor, createMarkBuilders, createNodeBuilders, union } from 'pro
 import { defineBold } from 'prosekit/extensions/bold'
 import { defineDoc } from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineHeading } from 'prosekit/extensions/heading'
 import { defineText } from 'prosekit/extensions/text'
 
 function defineTestExtension() {
@@ -70,6 +71,7 @@ function defineTestExtension() {
     defineDoc(),
     defineText(),
     defineParagraph(),
+    defineHeading(),
     defineBold(),
   )  
 }
@@ -82,6 +84,7 @@ const n = createNodeBuilders<TestExtension>(schema)
 const m = createMarkBuilders<TestExtension>(schema)
 
 const doc = n.doc(
+  n.heading({ level: 1 }, 'Title'),
   n.paragraph('Hello, ', m.bold('world'), '!'),
 )
 ```

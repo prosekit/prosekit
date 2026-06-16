@@ -1,10 +1,17 @@
-import type { MarkAction } from '../editor/action.ts'
+import type { MarkAction, MarkBuilder } from '../editor/action.ts'
 
 /**
  * @internal
  */
 export interface MarkTyping {
   [name: string]: Record<string, any>
+}
+
+/**
+ * @internal
+ */
+export type ToMarkBuilder<T extends MarkTyping> = {
+  [K in keyof T]: MarkBuilder<T[K]>
 }
 
 /**

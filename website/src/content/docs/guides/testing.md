@@ -54,6 +54,33 @@ const doc = n.doc(
 editor.set(doc)
 ```
 
+## Building documents without an editor
+
+When you only need to build a document and not run commands, you can skip the editor entirely. `createNodeBuilders(schema)` and `createMarkBuilders(schema)` return the same typed factories as `editor.nodes` / `editor.marks`, but they take a schema directly and omit `isActive`. Pass your extension type as the type argument to type them to your schema.
+
+```ts twoslash
+import { createEditor, createMarkBuilders, createNodeBuilders, union } from 'prosekit/core'
+import { defineBold } from 'prosekit/extensions/bold'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineParagraph } from 'prosekit/extensions/paragraph'
+import { defineText } from 'prosekit/extensions/text'
+
+const extension = union(
+  defineDoc(),
+  defineText(),
+  defineParagraph(),
+  defineBold(),
+)
+const schema = createEditor({ extension }).schema
+
+const n = createNodeBuilders<typeof extension>(schema)
+const m = createMarkBuilders<typeof extension>(schema)
+
+const doc = n.doc(
+  n.paragraph('Hello, ', m.bold('world'), '!'),
+)
+```
+
 ## Selection markers
 
 The `set` helper recognizes two special tokens in text content:

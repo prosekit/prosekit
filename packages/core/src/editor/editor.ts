@@ -21,7 +21,7 @@ import { assert } from '../utils/assert.ts'
 import { getEditorContentDoc, getEditorSelection } from '../utils/editor-content.ts'
 import { htmlFromNode, jsonFromNode, type DOMDocumentOptions } from '../utils/parse.ts'
 
-import { createMarkActions, createNodeActions, type MarkAction, type NodeAction } from './action.ts'
+import { createMarkActions, createNodeActionsRaw, type MarkAction, type NodeAction } from './action.ts'
 import { union } from './union.ts'
 
 export interface EditorOptions<E extends Extension> {
@@ -101,7 +101,7 @@ export class EditorInstance {
       }
     }
 
-    this.nodes = createNodeActions(state.schema, this.getState)
+    this.nodes = createNodeActionsRaw(state.schema, this.getState)
     this.marks = createMarkActions(state.schema, this.getState)
 
     this.schema = state.schema

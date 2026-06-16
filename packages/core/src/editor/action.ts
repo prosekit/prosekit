@@ -17,11 +17,8 @@ export type NodeChild = ProseMirrorNode | string | NodeChild[]
 /**
  * A function for creating a node with optional attributes and any number of
  * children.
- *
- * It also has a `isActive` method for checking if the node is active in the
- * current editor selection.
  */
-export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
+export interface NodeBuilder<Attrs extends AnyAttrs = AnyAttrs> {
   /**
    * Creates a node with attributes and any number of children.
    */
@@ -31,7 +28,13 @@ export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
    * Creates a node with any number of children.
    */
   (...children: NodeChild[]): ProseMirrorNode
+}
 
+/**
+ * A {@link NodeBuilder} function that also has an `isActive` method for checking if
+ * the node is active in the current editor selection.
+ */
+export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> extends NodeBuilder<Attrs> {
   /**
    * Checks if the node is active in the current editor selection. If the
    * optional `attrs` parameter is provided, it will check if the node is active
@@ -66,10 +69,23 @@ export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
   isActive: (attrs?: Attrs) => boolean
 }
 
+export function createNodeBuildersRaw(
+  schema: Schema,
+  createNode: CreateNodeFunction = defaultCreateNode,
+): Record<string, NodeBuilder> {
+  return mapValues(schema.nodes, (type) => createNodeBuilder(type, createNode))
+}
+
+function createNodeBuilder(type: NodeType, createNode: CreateNodeFunction): NodeBuilder {
+  return function nodeBuilder(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+    return buildNode(type, args, createNode)
+  }
+}
+
 /**
  * @internal
  */
-export function createNodeActions(
+export function createNodeActionsRaw(
   schema: Schema,
   getState: GetStateFunction,
   createNode: CreateNodeFunction = defaultCreateNode,
@@ -82,14 +98,14 @@ function createNodeAction(
   getState: GetStateFunction,
   createNode: CreateNodeFunction,
 ): NodeAction {
-  const action = (
-    ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
-  ) => buildNode(type, args, createNode)
-  action.isActive = (attrs?: Attrs) => {
+  function nodeAction(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+    return buildNode(type, args, createNode)
+  }
+  nodeAction.isActive = (attrs?: Attrs) => {
     const state = getState()
     return state ? isNodeActive(state, type, attrs) : false
   }
-  return action
+  return nodeAction
 }
 
 /**

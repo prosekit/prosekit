@@ -25,6 +25,7 @@
     "prosekit-website": "0.0.0"
   },
   "changesets": [
+    "get-mark-range",
     "inline-popover-anchor",
     "mark-builder-create",
     "node-mark-builders",

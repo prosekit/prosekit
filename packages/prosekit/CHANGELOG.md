@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.3
+
+### Minor Changes
+
+- [`59b7648`](https://github.com/ocavue/prosekit/commit/59b76483cccda6f30eb0c4e87063068f405b3759) ![](https://prosekit.dev/b/core)
+
+  Add `getMarkRange`, which returns the contiguous range of a mark touching a resolved position. A position at either edge of the run counts as touching it, and a neighbouring mark that differs in attributes starts a new run.
+
 ## 0.22.0-beta.2
 
 ### Minor Changes

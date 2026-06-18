@@ -15,12 +15,13 @@ export interface ExpandMarkOptions {
  */
 export function expandMark(options: ExpandMarkOptions): Command {
   return (state, dispatch) => {
-    const { $from, $to, from: selectionFrom, to: selectionTo } = state.selection
+    const { $from, $to, empty, from: selectionFrom, to: selectionTo } = state.selection
 
-    // REVIEW: use a shorter path if selectionFrom===selectionTo
-
-    const from = getMarkRange($from, options.type)?.from ?? selectionFrom
-    const to = getMarkRange($to, options.type)?.to ?? selectionTo
+    // A collapsed selection shares one position, so one lookup covers both ends.
+    const fromRange = getMarkRange($from, options.type)
+    const toRange = empty ? fromRange : getMarkRange($to, options.type)
+    const from = fromRange?.from ?? selectionFrom
+    const to = toRange?.to ?? selectionTo
 
     if (from === selectionFrom && to === selectionTo) {
       return false

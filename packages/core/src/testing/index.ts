@@ -283,5 +283,6 @@ export function setupTest() {
     editor,
     m,
     n: { ...n, p: n.paragraph },
+    getSelectionString: () => editor.state.selection.content().content.toString(),
   }
 }

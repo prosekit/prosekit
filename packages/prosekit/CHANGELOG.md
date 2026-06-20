@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.5
+
+### Patch Changes
+
+- [`bb984ad`](https://github.com/ocavue/prosekit/commit/bb984adf38501d6e4d7ecb279a51bc2f5954969e) ![](https://prosekit.dev/b/web)
+
+  Avoid focusing the editor view from the block handle after the view has been destroyed.
+
 ## 0.22.0-beta.4
 
 ### Patch Changes

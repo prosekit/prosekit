@@ -27,6 +27,7 @@
   "changesets": [
     "block-handle-focus-check",
     "get-mark-range",
+    "horizontal-rule-attr-roundtrip",
     "inline-popover-anchor",
     "mark-builder-create",
     "node-mark-builders",

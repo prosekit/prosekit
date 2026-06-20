@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.6
+
+### Patch Changes
+
+- [`b62da03`](https://github.com/ocavue/prosekit/commit/b62da03a2df1aa498cee2e6bd3ac022ec8863aa1) ![](https://prosekit.dev/b/extensions)
+
+  Recognize the rendered `<div>` wrapper in the `horizontalRule` node's `parseDOM`. Its `toDOM` renders `['div', ['hr']]`, but `parseDOM` only matched `hr`, so an attribute added with `defineNodeAttr` (written onto the outer `<div>`) was dropped when the node was parsed back from the DOM. The node now parses its own rendered output, with a bare `<hr>` kept as a fallback.
+
 ## 0.22.0-beta.5
 
 ### Patch Changes

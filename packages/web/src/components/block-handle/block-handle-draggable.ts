@@ -91,11 +91,15 @@ function usePointerDownHandler(
     const hoverState = getHoverState()
     const editor = getEditor()
 
-    if (hoverState?.pos == null || !editor?.view) {
+    if (hoverState?.pos == null) {
       return
     }
 
-    const { view } = editor
+    const view = editor?.view
+    if (!view || view.isDestroyed) {
+      return
+    }
+
     view.dispatch(
       view.state.tr.setSelection(NodeSelection.create(view.state.doc, hoverState.pos)),
     )
@@ -104,6 +108,9 @@ function usePointerDownHandler(
     // We cannot call `event.preventDefault()` here to prevent the blur
     // because it will prevent the drag event from firing.
     requestAnimationFrame(() => {
+      if (view.isDestroyed) {
+        return
+      }
       view.focus()
     })
   })

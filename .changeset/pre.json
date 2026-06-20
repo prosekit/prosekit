@@ -25,6 +25,7 @@
     "prosekit-website": "0.0.0"
   },
   "changesets": [
+    "block-handle-focus-check",
     "get-mark-range",
     "inline-popover-anchor",
     "mark-builder-create",

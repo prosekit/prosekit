@@ -1,4 +1,17 @@
-export { defineTableCommands, type TableCommandsExtension } from './table-commands.ts'
+export {
+  addTableColumnAfter,
+  addTableColumnBefore,
+  addTableRowAbove,
+  addTableRowBelow,
+  defineTableCommands,
+  deleteTable,
+  deleteTableColumn,
+  deleteTableRow,
+  mergeTableCells,
+  splitTableCell,
+  type TableCommandsExtension,
+} from './table-commands.ts'
+export { deleteCellSelection } from './table-commands/delete-cell-selection.ts'
 export { exitTable } from './table-commands/exit-table.ts'
 export { insertTable, type InsertTableOptions } from './table-commands/insert-table.ts'
 export { moveTableColumn, type MoveTableColumnOptions } from './table-commands/move-table-column.ts'

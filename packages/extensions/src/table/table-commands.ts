@@ -1,14 +1,14 @@
 import { defineCommands, type Extension } from '@prosekit/core'
 import {
-  addColumnAfter,
-  addColumnBefore,
-  addRowAfter,
-  addRowBefore,
-  deleteColumn,
-  deleteRow,
+  addColumnAfter as addTableColumnAfter,
+  addColumnBefore as addTableColumnBefore,
+  addRowAfter as addTableRowBelow,
+  addRowBefore as addTableRowAbove,
+  deleteColumn as deleteTableColumn,
+  deleteRow as deleteTableRow,
   deleteTable,
-  mergeCells,
-  splitCell,
+  mergeCells as mergeTableCells,
+  splitCell as splitTableCell,
 } from 'prosemirror-tables'
 
 import { deleteCellSelection } from './table-commands/delete-cell-selection.ts'
@@ -20,6 +20,18 @@ import { selectTableCell, type SelectTableCellOptions } from './table-commands/s
 import { selectTableColumn, type SelectTableColumnOptions } from './table-commands/select-table-column.ts'
 import { selectTableRow, type SelectTableRowOptions } from './table-commands/select-table-row.ts'
 import { selectTable, type SelectTableOptions } from './table-commands/select-table.ts'
+
+export {
+  addTableColumnAfter,
+  addTableColumnBefore,
+  addTableRowAbove,
+  addTableRowBelow,
+  deleteTable,
+  deleteTableColumn,
+  deleteTableRow,
+  mergeTableCells,
+  splitTableCell,
+}
 
 /**
  * @internal
@@ -65,18 +77,18 @@ export function defineTableCommands(): TableCommandsExtension {
     selectTableColumn,
     selectTableRow,
 
-    addTableColumnBefore: () => addColumnBefore,
-    addTableColumnAfter: () => addColumnAfter,
-    addTableRowAbove: () => addRowBefore,
-    addTableRowBelow: () => addRowAfter,
+    addTableColumnBefore: () => addTableColumnBefore,
+    addTableColumnAfter: () => addTableColumnAfter,
+    addTableRowAbove: () => addTableRowAbove,
+    addTableRowBelow: () => addTableRowBelow,
 
     deleteTable: () => deleteTable,
-    deleteTableColumn: () => deleteColumn,
-    deleteTableRow: () => deleteRow,
+    deleteTableColumn: () => deleteTableColumn,
+    deleteTableRow: () => deleteTableRow,
     deleteCellSelection: () => deleteCellSelection,
 
-    mergeTableCells: () => mergeCells,
-    splitTableCell: () => splitCell,
+    mergeTableCells: () => mergeTableCells,
+    splitTableCell: () => splitTableCell,
 
     moveTableRow,
     moveTableColumn,

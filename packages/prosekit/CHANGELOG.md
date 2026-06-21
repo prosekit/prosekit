@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.8
+
+### Patch Changes
+
+- [`5ff866e`](https://github.com/ocavue/prosekit/commit/5ff866e0376440461a58477bf557758893823836) ![](https://prosekit.dev/b/web)
+
+  Position the drop indicator relative to its offset parent.
+
 ## 0.22.0-beta.7
 
 ### Patch Changes

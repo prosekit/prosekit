@@ -26,6 +26,7 @@
   },
   "changesets": [
     "block-handle-focus-check",
+    "drop-indicator-hoist",
     "export-table-edit-commands",
     "get-mark-range",
     "horizontal-rule-attr-roundtrip",

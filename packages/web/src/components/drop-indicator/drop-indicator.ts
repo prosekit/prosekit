@@ -80,14 +80,8 @@ export function setupDropIndicator(
     const { p1, p2 } = line
     const horizontal = p1.y === p2.y
 
-    // The drop point is a line in viewport coordinates (from
-    // `getBoundingClientRect`). Applying those directly to a `position: fixed`
-    // element breaks whenever an ancestor establishes a containing block for
-    // fixed descendants (e.g. a virtualized list item with `transform`), which
-    // offsets the line. Instead, describe the line as a Floating UI virtual
-    // element and let `computePosition` resolve it into the host's offset-parent
-    // space, the same way the table drop indicator and block handle position
-    // themselves. This is correct regardless of any transformed ancestor.
+    // Use a Floating UI virtual element for the line so it's positioned relative
+    // to the offset parent, not the (possibly transformed) viewport.
     const reference: VirtualElement = {
       getBoundingClientRect: () => ({
         x: p1.x,

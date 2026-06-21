@@ -1,5 +1,23 @@
 # prosekit
 
+## 0.22.0-beta.7
+
+### Patch Changes
+
+- [`c9a3e30`](https://github.com/ocavue/prosekit/commit/c9a3e30bad0afe4948ecb325d8a02d8258cc8dee) ![](https://prosekit.dev/b/extensions)
+
+  Export the following table command functions:
+  - `deleteTable`
+  - `deleteTableColumn`
+  - `deleteTableRow`
+  - `addTableColumnBefore`
+  - `addTableColumnAfter`
+  - `addTableRowAbove`
+  - `addTableRowBelow`
+  - `mergeTableCells`
+  - `splitTableCell`
+  - `deleteCellSelection`
+
 ## 0.22.0-beta.6
 
 ### Patch Changes

@@ -26,6 +26,7 @@
   },
   "changesets": [
     "block-handle-focus-check",
+    "export-table-edit-commands",
     "get-mark-range",
     "horizontal-rule-attr-roundtrip",
     "inline-popover-anchor",

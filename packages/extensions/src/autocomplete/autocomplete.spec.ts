@@ -5,9 +5,8 @@ import { keyboard } from 'vitest-browser-commands/playwright'
 import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
 import { inputText } from '../testing/keyboard.ts'
 
-import { triggerAutocomplete } from './autocomplete-commands.ts'
 import { AutocompleteRule, type MatchHandler, type MatchHandlerOptions } from './autocomplete-rule.ts'
-import { defineAutocomplete } from './autocomplete.ts'
+import { defineAutocomplete, triggerAutocomplete } from './autocomplete.ts'
 
 function setupSlashMenu() {
   const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
@@ -240,7 +239,7 @@ describe('defineAutocomplete', () => {
     expect(onEnter).not.toHaveBeenCalled()
 
     // `triggerAutocomplete` re-scans at the cursor and opens the menu.
-    editor.exec(triggerAutocomplete())
+    editor.view.dispatch(triggerAutocomplete(editor.state.tr))
     expect(isMatching()).toBe(true)
     expect(onEnter).toHaveBeenCalledTimes(1)
     expect(getMatchingText()).toBe('/')
@@ -250,7 +249,7 @@ describe('defineAutocomplete', () => {
     const { editor, onEnter, isMatching } = setupSlashMenu()
 
     editor.commands.insertText({ text: 'hello' })
-    editor.exec(triggerAutocomplete())
+    editor.view.dispatch(triggerAutocomplete(editor.state.tr))
     expect(isMatching()).toBe(false)
     expect(onEnter).not.toHaveBeenCalled()
   })

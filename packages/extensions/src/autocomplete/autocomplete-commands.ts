@@ -12,9 +12,7 @@ const scanCommand: Command = (state, dispatch) => {
  * match and opens the menu if a rule matches.
  *
  * Autocomplete normally only opens while the user is typing. Use this command to
- * open a slash, mention, or tag menu imperatively, for example from a toolbar
- * button or a keyboard shortcut after inserting the trigger text. It is intended
- * for an empty (cursor) selection.
+ * open a menu imperatively. It is intended for an empty (cursor) selection.
  */
 export function triggerAutocomplete(): Command {
   return scanCommand

@@ -55,3 +55,5 @@ export function defineListCommands(): ListCommandsExtension {
     insertList,
   })
 }
+
+export { dedentList, indentList, insertList, moveList, splitList, toggleCollapsed, toggleList, unwrapList, wrapInList }

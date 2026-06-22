@@ -181,9 +181,7 @@ function handleTransaction(
     return { matching: null, ignores }
   }
 
-  // If a scan is requested, look for a new matching at the cursor. Mirrors
-  // `handleTextInput`, but runs against the already-updated state so the menu
-  // can be opened imperatively after the trigger text is inserted.
+  // If a scan is requested, look for a new matching at the cursor.
   if (meta.type === 'scan') {
     const $head = newState.selection.$head
     const textBackward = getTextBackward($head)

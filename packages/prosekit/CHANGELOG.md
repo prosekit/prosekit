@@ -1,5 +1,22 @@
 # prosekit
 
+## 0.22.0-beta.9
+
+### Patch Changes
+
+- [`8f6f498`](https://github.com/ocavue/prosekit/commit/8f6f498827e5b7e7aedbfa56b75bc55c82ef7a51) ![](https://prosekit.dev/b/extensions)
+
+  Export the following list command functions:
+  - `dedentList`
+  - `indentList`
+  - `moveList`
+  - `splitList`
+  - `toggleCollapsed`
+  - `unwrapList`
+  - `toggleList`
+  - `wrapInList`
+  - `insertList`
+
 ## 0.22.0-beta.8
 
 ### Patch Changes

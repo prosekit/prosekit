@@ -189,8 +189,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       prosemirror-splittable:
-        specifier: ^0.1.1
-        version: 0.1.1(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
+        specifier: ^1.0.0
+        version: 1.0.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
       type-fest:
         specifier: ^5.7.0
         version: 5.7.0
@@ -1194,8 +1194,8 @@ importers:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
       rehype-resolve-markdown-links:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.1
+        version: 0.4.1
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -6449,8 +6449,8 @@ packages:
   prosemirror-search@1.1.1:
     resolution: {integrity: sha512-1dbxbF1YYlP9mYJnFbfdOb9+RTdFHeZ/GwgEyHD4jg9szA8EVitMCnfXUBYLmFun500FMZBkRvcV0gp5BpLw4Q==}
 
-  prosemirror-splittable@0.1.1:
-    resolution: {integrity: sha512-mUaOrp4aT2rPZNyZMRCSd+JrVuUU+w7+SFg+l8r6JFtF/ECkA+ZVXxXO0c9vLQ0VWG8UcfszQaD+X+cxKuA2Uw==}
+  prosemirror-splittable@1.0.0:
+    resolution: {integrity: sha512-ItHOL57msNnu6G5IBAvZDglPrlBAI3404vhe2yVWW73jSAKCH76bh5TzMA6hYWi4vB+Y6popf+kxSXrMDWye+w==}
     peerDependencies:
       prosemirror-model: ^1.21.0
       prosemirror-state: ^1.4.3
@@ -6581,13 +6581,8 @@ packages:
   rehype-remark@10.0.1:
     resolution: {integrity: sha512-EmDndlb5NVwXGfUa4c9GPK+lXeItTilLhE6ADSaQuHr4JUlKw9MidzGzx4HpqZrNCt6vnHmEifXQiiA+CEnjYQ==}
 
-  rehype-resolve-markdown-links@0.3.0:
-    resolution: {integrity: sha512-7RPSNcXMOJTozT4bt1gxNJUrSMPpA4ELCZ2vLmNRcRuBr0XJ+pWzoIFdIa2WW6f4h+JVAZCf2GKRARXskuHCBg==}
-    peerDependencies:
-      satteri: ^0.7.0
-    peerDependenciesMeta:
-      satteri:
-        optional: true
+  rehype-resolve-markdown-links@0.4.1:
+    resolution: {integrity: sha512-NXr/jU2DqM2gSTUkTOulciuAUPDAW6xL1SGdbf26fNEq/rkxxJxpbAcycP1KsR+Hrmjbc2C1YBrit8QzFQ+Brw==}
 
   rehype-stringify@10.0.1:
     resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
@@ -13933,7 +13928,7 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.9
 
-  prosemirror-splittable@0.1.1(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0):
+  prosemirror-splittable@1.0.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0):
     optionalDependencies:
       prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
@@ -14092,7 +14087,7 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  rehype-resolve-markdown-links@0.3.0:
+  rehype-resolve-markdown-links@0.4.1:
     dependencies:
       '@types/hast': 3.0.4
       slash: 5.1.0

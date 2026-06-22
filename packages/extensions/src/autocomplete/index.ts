@@ -1,3 +1,4 @@
+export { triggerAutocomplete } from './autocomplete-commands.ts'
 export {
   AutocompleteRule,
   type AutocompleteRuleOptions,

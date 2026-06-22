@@ -180,8 +180,8 @@ importers:
   packages/core:
     dependencies:
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
@@ -189,8 +189,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       prosemirror-splittable:
-        specifier: ^0.1.1
-        version: 0.1.1(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
+        specifier: ^1.0.0
+        version: 1.0.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
       type-fest:
         specifier: ^5.7.0
         version: 5.7.0
@@ -205,8 +205,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       diffable-html-snapshot:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.3.0
+        version: 0.3.0
       tsdown:
         specifier: 'catalog:'
         version: 0.22.1(@tsdown/css@0.22.1)(oxc-resolver@11.20.0)(tsx@4.22.4)(typescript@6.0.3)
@@ -239,8 +239,8 @@ importers:
         specifier: ^0.6.7
         version: 0.6.7
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@types/node':
         specifier: 'catalog:'
         version: 24.12.2
@@ -257,8 +257,8 @@ importers:
   packages/extensions:
     dependencies:
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -312,8 +312,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       diffable-html-snapshot:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.3.0
+        version: 0.3.0
       katex:
         specifier: ^0.17.0
         version: 0.17.0
@@ -853,8 +853,8 @@ importers:
         specifier: ^1.7.6
         version: 1.7.6
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -957,8 +957,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@preact/preset-vite':
         specifier: ^2.10.5
         version: 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.57.1)(vite@8.0.16)
@@ -1005,8 +1005,8 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1
       diffable-html-snapshot:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.3.0
+        version: 0.3.0
       fast-fuzzy:
         specifier: ^1.12.0
         version: 1.12.0
@@ -1035,8 +1035,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(react-dom@19.2.7)(react@19.2.7)
       shadcn-schema:
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: ^0.6.0
+        version: 0.6.0
       svelte-check:
         specifier: ^4.5.0
         version: 4.5.0(picomatch@4.0.4)(svelte@5.56.1)(typescript@6.0.3)
@@ -1137,8 +1137,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@tailwindcss/vite':
         specifier: ^4.3.0
         version: 4.3.0(vite@7.3.5)
@@ -1194,8 +1194,8 @@ importers:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
       rehype-resolve-markdown-links:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.1
+        version: 0.4.1
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -2618,8 +2618,8 @@ packages:
   '@ocavue/tsconfig@0.7.1':
     resolution: {integrity: sha512-jw1LPUqi/f043s61WOYEWWA6P1ZSSYXR3KJXcNxBXXrxiUXhEAbuEBUmi6Qs8NduIVU3xCkbaYw5BU3UyL3G3A==}
 
-  '@ocavue/utils@1.6.0':
-    resolution: {integrity: sha512-8W3q1hxx9qFdrYgPtbElllG/tqYkO/dMhlRUiqasO0SuDFTj78azSQjhIrBTFWxlBPPsSZN6zXYHmb3RwN2Jtg==}
+  '@ocavue/utils@1.7.0':
+    resolution: {integrity: sha512-yEk9ATNBjTZTtuVFMB/MAIF6zJBvJ2+lVNQvK2+O+ggEBGTgx2tp27d4FPgmD5bRsNHHP3D0SleQia/bvIeV8w==}
 
   '@one-ini/wasm@0.1.1':
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
@@ -4721,8 +4721,8 @@ packages:
     resolution: {integrity: sha512-qejHi7bcSD4hQAZE0tNAawRK1ZtafHDmMTMkrrIGgSLl7hTnQHmKCeB45xAcbfTqK2zowkM3j3bHt/4b/ARbYQ==}
     engines: {node: '>=0.3.1'}
 
-  diffable-html-snapshot@0.2.0:
-    resolution: {integrity: sha512-1PKqn4juSXrvZGbpjvS4HYzGqDwNCCaB4fbwAygC2nclPa8sBn6CiCVnbA4kPwCg8jCSOt7cwVcgpYAeRZw89g==}
+  diffable-html-snapshot@0.3.0:
+    resolution: {integrity: sha512-Aksm9/N3TicWeNhBmd8NjA5bBmOZoLBfOzmbCtnDUm/exmCrzB5TbvjHxxTgwi5/dqcLjpLZHu5ho1wRrK5U7Q==}
 
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -4735,15 +4735,31 @@ packages:
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
 
+  dom-serializer@3.1.1:
+    resolution: {integrity: sha512-4MEa38/QexBob6gFNwu+EGdWvhJ1OKuNwdYY3Y3NyeWDQfnGeDYQUDfIRzWu5B5gsv03so2Uxd28YC6zrsx3Lw==}
+    engines: {node: '>=20.19.0'}
+
   domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+
+  domelementtype@3.0.0:
+    resolution: {integrity: sha512-umCQid3jKbDmVjx8jGaW7uUykm4DEUeyV21hPxNMo2nV955DhUThwqyOIDtreepP31hl84X7G5U9ZfsWvIB3Pg==}
+    engines: {node: '>=20.19.0'}
 
   domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
 
+  domhandler@6.0.1:
+    resolution: {integrity: sha512-gYzvtM72ZtxQO0T048kd6HWSbbGCNOUwcnfQ01cqIJ4X2IYKFFHZ5mKvrQETcFXxsRObZulDaKmy//R7TPtsBg==}
+    engines: {node: '>=20.19.0'}
+
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
+
+  domutils@4.0.2:
+    resolution: {integrity: sha512-qI4JLRKnSzqFqr7hAlS5xQDusBCjKSEG4t4+7aNrIQMHBcsC2TGEhuyABJdYkgSewL57PNLYEiibY2iPKhKpaA==}
+    engines: {node: '>=20.19.0'}
 
   dprint@0.54.0:
     resolution: {integrity: sha512-sIy25poR2gRP/tWPTgP0MPeJoJcpv0xzYDcsboapvthbEt1Qw3Al252CA0xFyIh2cYEGGKyBJtKokryv4ERlJw==}
@@ -5349,8 +5365,9 @@ packages:
   html-whitespace-sensitive-tag-names@3.0.1:
     resolution: {integrity: sha512-q+310vW8zmymYHALr1da4HyXUQ0zgiIwIicEfotYPWGN0OJVEN/58IJ3A4GBYcEq3LGAZqKb+ugvP0GNB9CEAA==}
 
-  htmlparser2@10.1.0:
-    resolution: {integrity: sha512-VTZkM9GWRAtEpveh7MSF6SjjrpNVNNVJfFup7xTY3UpFtm67foy9HDVXneLtFVt4pMz5kZtgNcvCniNFb1hlEQ==}
+  htmlparser2@12.0.0:
+    resolution: {integrity: sha512-Tz7u1i95/g2x2jz81+x0FBVhBhY5aRTvD3tXXdFaljuNdzDLJ8UGNRrTcj2cgQvAg3iW/h77Fz15nLW0L0CrZw==}
+    engines: {node: '>=20.19.0'}
 
   http-cache-semantics@4.2.0:
     resolution: {integrity: sha512-dTxcvPXqPvXBQpq5dUr6mEMJX4oIEFv6bwom3FDwKRDsuIjjJGANqhBuoAn9c1RQJIdAKav33ED65E2ys+87QQ==}
@@ -6449,8 +6466,8 @@ packages:
   prosemirror-search@1.1.1:
     resolution: {integrity: sha512-1dbxbF1YYlP9mYJnFbfdOb9+RTdFHeZ/GwgEyHD4jg9szA8EVitMCnfXUBYLmFun500FMZBkRvcV0gp5BpLw4Q==}
 
-  prosemirror-splittable@0.1.1:
-    resolution: {integrity: sha512-mUaOrp4aT2rPZNyZMRCSd+JrVuUU+w7+SFg+l8r6JFtF/ECkA+ZVXxXO0c9vLQ0VWG8UcfszQaD+X+cxKuA2Uw==}
+  prosemirror-splittable@1.0.0:
+    resolution: {integrity: sha512-ItHOL57msNnu6G5IBAvZDglPrlBAI3404vhe2yVWW73jSAKCH76bh5TzMA6hYWi4vB+Y6popf+kxSXrMDWye+w==}
     peerDependencies:
       prosemirror-model: ^1.21.0
       prosemirror-state: ^1.4.3
@@ -6581,13 +6598,8 @@ packages:
   rehype-remark@10.0.1:
     resolution: {integrity: sha512-EmDndlb5NVwXGfUa4c9GPK+lXeItTilLhE6ADSaQuHr4JUlKw9MidzGzx4HpqZrNCt6vnHmEifXQiiA+CEnjYQ==}
 
-  rehype-resolve-markdown-links@0.3.0:
-    resolution: {integrity: sha512-7RPSNcXMOJTozT4bt1gxNJUrSMPpA4ELCZ2vLmNRcRuBr0XJ+pWzoIFdIa2WW6f4h+JVAZCf2GKRARXskuHCBg==}
-    peerDependencies:
-      satteri: ^0.7.0
-    peerDependenciesMeta:
-      satteri:
-        optional: true
+  rehype-resolve-markdown-links@0.4.1:
+    resolution: {integrity: sha512-NXr/jU2DqM2gSTUkTOulciuAUPDAW6xL1SGdbf26fNEq/rkxxJxpbAcycP1KsR+Hrmjbc2C1YBrit8QzFQ+Brw==}
 
   rehype-stringify@10.0.1:
     resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
@@ -6771,8 +6783,8 @@ packages:
   server-dom-shim@1.1.0:
     resolution: {integrity: sha512-oyKhBZtkr/SGB9YE2r0VtQxQCxaVx/Ix1fMz0XMd6K4T1/TMfDs9K2GR9QjpUtD+siyeLXr+3CzzGSvhTI1sEw==}
 
-  shadcn-schema@0.5.0:
-    resolution: {integrity: sha512-jokIqScgcmk+W0xxiDO9Q0vclmfJ+bXE+jp1LK6KqfCDlZVDfopxPk6o9QoxAosvtR9RuCb6jU4I2T0lOssBAA==}
+  shadcn-schema@0.6.0:
+    resolution: {integrity: sha512-HtdLwJ1gpI8NwvcoR8yExPOc1CBvnQmC9Oa8uY4xPNFaqggwZXwVrQpBZJBe5sQgVBQ7WeqjiHBh+AgUL0Qedg==}
 
   sharp@0.34.5:
     resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==}
@@ -7950,7 +7962,7 @@ snapshots:
 
   '@aria-ui/cli@0.1.9(oxfmt@0.53.0)(typescript@6.0.3)':
     dependencies:
-      '@ocavue/utils': 1.6.0
+      '@ocavue/utils': 1.7.0
       '@stricli/core': 1.2.7
       devalue: 5.8.1
       just-memoize: 2.2.0
@@ -7962,7 +7974,7 @@ snapshots:
 
   '@aria-ui/core@0.2.1':
     dependencies:
-      '@ocavue/utils': 1.6.0
+      '@ocavue/utils': 1.7.0
       '@zag-js/dom-query': 1.40.0
       alien-signals: 3.2.1
       server-dom-shim: 1.1.0
@@ -9551,7 +9563,7 @@ snapshots:
 
   '@ocavue/tsconfig@0.7.1': {}
 
-  '@ocavue/utils@1.6.0': {}
+  '@ocavue/utils@1.7.0': {}
 
   '@one-ini/wasm@0.1.1': {}
 
@@ -9920,7 +9932,7 @@ snapshots:
 
   '@prosemirror-adapter/core@0.5.3':
     dependencies:
-      '@ocavue/utils': 1.6.0
+      '@ocavue/utils': 1.7.0
       prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.9
@@ -11191,7 +11203,7 @@ snapshots:
 
   astro-minify-html-swc@0.1.11:
     dependencies:
-      '@ocavue/utils': 1.6.0
+      '@ocavue/utils': 1.7.0
       '@swc/html': 1.15.18
       fast-glob: 3.3.3
 
@@ -11586,9 +11598,9 @@ snapshots:
 
   diff@8.0.3: {}
 
-  diffable-html-snapshot@0.2.0:
+  diffable-html-snapshot@0.3.0:
     dependencies:
-      htmlparser2: 10.1.0
+      htmlparser2: 12.0.0
 
   dir-glob@3.0.1:
     dependencies:
@@ -11602,17 +11614,35 @@ snapshots:
       domhandler: 5.0.3
       entities: 4.5.0
 
+  dom-serializer@3.1.1:
+    dependencies:
+      domelementtype: 3.0.0
+      domhandler: 6.0.1
+      entities: 8.0.0
+
   domelementtype@2.3.0: {}
+
+  domelementtype@3.0.0: {}
 
   domhandler@5.0.3:
     dependencies:
       domelementtype: 2.3.0
+
+  domhandler@6.0.1:
+    dependencies:
+      domelementtype: 3.0.0
 
   domutils@3.2.2:
     dependencies:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+
+  domutils@4.0.2:
+    dependencies:
+      dom-serializer: 3.1.1
+      domelementtype: 3.0.0
+      domhandler: 6.0.1
 
   dprint@0.54.0:
     optionalDependencies:
@@ -12514,12 +12544,12 @@ snapshots:
 
   html-whitespace-sensitive-tag-names@3.0.1: {}
 
-  htmlparser2@10.1.0:
+  htmlparser2@12.0.0:
     dependencies:
-      domelementtype: 2.3.0
-      domhandler: 5.0.3
-      domutils: 3.2.2
-      entities: 7.0.1
+      domelementtype: 3.0.0
+      domhandler: 6.0.1
+      domutils: 4.0.2
+      entities: 8.0.0
 
   http-cache-semantics@4.2.0: {}
 
@@ -13848,7 +13878,7 @@ snapshots:
 
   prosemirror-drop-indicator@0.1.4:
     dependencies:
-      '@ocavue/utils': 1.6.0
+      '@ocavue/utils': 1.7.0
       prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.9
@@ -13911,7 +13941,7 @@ snapshots:
 
   prosemirror-math@0.2.2:
     dependencies:
-      '@ocavue/utils': 1.6.0
+      '@ocavue/utils': 1.7.0
       prosemirror-enter-rules: 0.1.5
       prosemirror-inputrules: 1.5.1
       prosemirror-model: 1.25.9
@@ -13933,7 +13963,7 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.41.9
 
-  prosemirror-splittable@0.1.1(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0):
+  prosemirror-splittable@1.0.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0):
     optionalDependencies:
       prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
@@ -14092,7 +14122,7 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  rehype-resolve-markdown-links@0.3.0:
+  rehype-resolve-markdown-links@0.4.1:
     dependencies:
       '@types/hast': 3.0.4
       slash: 5.1.0
@@ -14352,7 +14382,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.5.1
 
-  shadcn-schema@0.5.0:
+  shadcn-schema@0.6.0:
     dependencies:
       zod: 4.4.3
 

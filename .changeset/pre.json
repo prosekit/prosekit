@@ -35,7 +35,6 @@
     "mark-builder-create",
     "node-mark-builders",
     "table-editing-plugins",
-    "trigger-autocomplete",
     "update-deps"
   ]
 }

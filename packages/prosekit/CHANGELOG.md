@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.10
+
+### Minor Changes
+
+- [`ccc2946`](https://github.com/ocavue/prosekit/commit/ccc29469db4ad4bf5e2c1bdde14817e424f3eba7) ![](https://prosekit.dev/b/extensions)
+
+  Add `triggerAutocomplete`, a command that re-scans the text before the cursor and opens the autocomplete menu if a rule matches.
+
 ## 0.22.0-beta.9
 
 ### Patch Changes

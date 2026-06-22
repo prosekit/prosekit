@@ -181,6 +181,26 @@ function handleTransaction(
     return { matching: null, ignores }
   }
 
+  // If a scan is requested, look for a new matching at the cursor.
+  if (meta.type === 'scan') {
+    const $head = newState.selection.$head
+    const textBackward = getTextBackward($head)
+    const textTo = $head.pos
+    const textFrom = textTo - textBackward.length
+    const currMatching = matchRule(
+      newState,
+      getRules(),
+      textBackward,
+      textFrom,
+      textTo,
+      ignores,
+    )
+    if (currMatching && prevMatching && prevMatching.from !== currMatching.from) {
+      ignores.push(prevMatching.from)
+    }
+    return { matching: currMatching ?? null, ignores }
+  }
+
   throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
 }
 

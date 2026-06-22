@@ -59,6 +59,8 @@ export type PredictionTransactionMeta = {
   matching: PredictionPluginMatching
 } | {
   type: 'leave'
+} | {
+  type: 'scan'
 }
 
 export function getPluginState(state: EditorState): PredictionPluginState | undefined {

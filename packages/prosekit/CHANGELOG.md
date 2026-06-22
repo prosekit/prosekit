@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.11
+
+### Minor Changes
+
+- [`625bba6`](https://github.com/ocavue/prosekit/commit/625bba60995c316dd5a4a1c89d10bb2dc995da9f) ![](https://prosekit.dev/b/extensions)
+
+  Add `triggerAutocomplete` to open the autocomplete menu programmatically.
+
 ## 0.22.0-beta.10
 
 ### Minor Changes

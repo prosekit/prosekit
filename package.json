@@ -54,6 +54,7 @@
     "size-limit": "^12.1.0",
     "turbo": "^2.9.16",
     "typescript": "catalog:",
+    "typescript7": "catalog:",
     "vitest": "catalog:",
     "wrangler": "^4.94.0"
   }

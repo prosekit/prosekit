@@ -13,7 +13,8 @@ catalog:
   "@vitest/coverage-v8": "^4.1.8"
   "@vitest/ui": "^4.1.8"
   tsdown: "^0.22.1"
-  typescript: "~6.0.3"
+  typescript: "npm:@typescript/typescript6@^6.0.0"
+  "typescript7": "npm:typescript@rc"
   vitest: "^4.1.8"
 
 dedupePeers: true

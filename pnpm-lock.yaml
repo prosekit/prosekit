@@ -1094,9 +1094,6 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.9
         version: 0.9.9(prettier@3.8.1)(typescript@6.0.3)
-      '@astrojs/markdown-remark':
-        specifier: ^7.2.0
-        version: 7.2.0
       '@astrojs/markdown-satteri':
         specifier: ^0.3.2
         version: 0.3.2
@@ -1196,9 +1193,6 @@ importers:
       react-dom:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
-      rehype-resolve-markdown-links:
-        specifier: ^0.4.1
-        version: 0.4.1
       satteri-resolve-markdown-links:
         specifier: ^0.1.2
         version: 0.1.2
@@ -6738,9 +6732,6 @@ packages:
 
   rehype-remark@10.0.1:
     resolution: {integrity: sha512-EmDndlb5NVwXGfUa4c9GPK+lXeItTilLhE6ADSaQuHr4JUlKw9MidzGzx4HpqZrNCt6vnHmEifXQiiA+CEnjYQ==}
-
-  rehype-resolve-markdown-links@0.4.1:
-    resolution: {integrity: sha512-NXr/jU2DqM2gSTUkTOulciuAUPDAW6xL1SGdbf26fNEq/rkxxJxpbAcycP1KsR+Hrmjbc2C1YBrit8QzFQ+Brw==}
 
   rehype-stringify@10.0.1:
     resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
@@ -14290,13 +14281,6 @@ snapshots:
       '@types/mdast': 4.0.4
       hast-util-to-mdast: 10.1.2
       unified: 11.0.5
-      vfile: 6.0.3
-
-  rehype-resolve-markdown-links@0.4.1:
-    dependencies:
-      '@types/hast': 3.0.4
-      slash: 5.1.0
-      unist-util-visit: 5.1.0
       vfile: 6.0.3
 
   rehype-stringify@10.0.1:

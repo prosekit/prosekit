@@ -51,7 +51,10 @@ export function config(userConfig?: UserConfig): UserConfig {
     entry: userConfig?.entry || tsdownEntry,
     sourcemap: true,
     clean: false,
-    failOnWarn: true,
+    // TODO: turn on failOnWarn once the following issues are resolved:
+    // https://github.com/rolldown/tsdown/issues/977
+    // https://github.com/rolldown/tsdown/issues/975
+    failOnWarn: false,
     dts: { build: true, incremental: true, sourcemap: true },
     hash: false,
     css: {

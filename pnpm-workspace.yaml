@@ -4,7 +4,7 @@ packages:
   - packages/*
 
 allowedDeprecatedVersions:
-  glob: "10"
+  glob: "10.5.0"
 
 catalog:
   "@tsdown/css": "^0.22.1"

@@ -42,3 +42,4 @@ trustLockfile: true
 
 minimumReleaseAgeExclude:
   - prosemirror-splittable@1.0.0
+  - starlight-theme-nova@0.12.0

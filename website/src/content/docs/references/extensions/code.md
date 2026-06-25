@@ -1,0 +1,19 @@
+---
+title: prosekit/extensions/code
+sidebar:
+  label: extensions/code
+---
+
+## Functions
+
+### defineCode() {#definecode}
+
+<dl>
+
+<dt>
+
+<code data-typedoc-code><i>function</i> <a id="definecode" href="#definecode">defineCode</a>(): `CodeExtension`</code>
+
+</dt>
+
+</dl>

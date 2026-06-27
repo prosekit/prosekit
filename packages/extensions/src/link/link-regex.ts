@@ -10,7 +10,7 @@ const PUNCTUATION_CHAR_PATTERN = '\\.\\,\\;\\!\\?'
 
 const STOP_CHAR_PATTERN = '[' + PUNCTUATION_CHAR_PATTERN + ']'
 
-const END_CHAR_PATTERN = '[^' + '\\s' + PUNCTUATION_CHAR_PATTERN + ']'
+const END_CHAR_PATTERN = '[^\\s' + PUNCTUATION_CHAR_PATTERN + ']'
 
 // dprint-ignore
 const LINK_RE_BASE_PATTERN = (
@@ -68,9 +68,9 @@ const LINK_RE_BASE_PATTERN = (
 )
 
 // dprint-ignore
-const LINK_ENTER_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '$'
+const LINK_ENTER_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?$'
 // dprint-ignore
-const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '\\s$'
+const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?\\s$'
 // dprint-ignore
 const LINK_MARK_PATTERN = LINK_RE_BASE_PATTERN + '(?=' + STOP_CHAR_PATTERN + '|\\s|$)'
 

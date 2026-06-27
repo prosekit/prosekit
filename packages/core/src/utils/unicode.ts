@@ -1,4 +1,4 @@
 /**
  * @internal
  */
-export const OBJECT_REPLACEMENT_CHARACTER = '\uFFFC'
+export const OBJECT_REPLACEMENT_CHARACTER = '\u{FFFC}'

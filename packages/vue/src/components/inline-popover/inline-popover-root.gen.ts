@@ -29,6 +29,17 @@ export interface InlinePopoverRootProps {
    */
   dismissOnEscape?: InlinePopoverRootElementProps['dismissOnEscape'];
   /**
+   * The reference to position the popover against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   *
+   * When set, the popover is anchored to this reference instead of the current
+   * text selection, and the text selection no longer drives the open state, so
+   * control it with the `open` property.
+   *
+   * @default null
+   */
+  anchor?: InlinePopoverRootElementProps['anchor'];
+  /**
    * Whether the overlay is currently open.
    * @default null
    */
@@ -49,11 +60,11 @@ export const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & 
 
     const elementRef = shallowRef<HTMLElement | null>(null);
 
-    const p3Fallback = useEditorContext();
+    const p4Fallback = useEditorContext();
 
     const splittedProps = computed(() => {
-      const { defaultOpen: p0, disabled: p1, dismissOnEscape: p2, editor: p3, open: p4, onOpenChange: e0, ...restProps } = props;
-      return [[p0, p1, p2, p3, p4, e0], restProps] as const;
+      const { anchor: p0, defaultOpen: p1, disabled: p2, dismissOnEscape: p3, editor: p4, open: p5, onOpenChange: e0, ...restProps } = props;
+      return [[p0, p1, p2, p3, p4, p5, e0], restProps] as const;
     });
 
     const handlers: Array<((event: any) => void) | undefined> = [];
@@ -62,9 +73,9 @@ export const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & 
       const element = elementRef.value;
       if (!element) return;
 
-      const [p0, p1, p2, p3, p4, e0] = splittedProps.value[0];
+      const [p0, p1, p2, p3, p4, p5, e0] = splittedProps.value[0];
 
-      Object.assign(element, { defaultOpen: p0, disabled: p1, dismissOnEscape: p2, editor: p3 ?? p3Fallback, open: p4 });
+      Object.assign(element, { anchor: p0, defaultOpen: p1, disabled: p2, dismissOnEscape: p3, editor: p4 ?? p4Fallback, open: p5 });
 
       handlers.length = 0;
       handlers.push(e0);
@@ -92,5 +103,5 @@ export const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & 
       return h('prosekit-inline-popover-root', { ...restProps, ref: elementRef }, slots.default?.());
     };
   },
-  { props: ['defaultOpen', 'disabled', 'dismissOnEscape', 'editor', 'open', 'onOpenChange'] },
+  { props: ['anchor', 'defaultOpen', 'disabled', 'dismissOnEscape', 'editor', 'open', 'onOpenChange'] },
 );

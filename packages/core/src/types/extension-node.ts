@@ -1,10 +1,17 @@
-import type { NodeAction } from '../editor/action.ts'
+import type { NodeAction, NodeBuilder } from '../editor/action.ts'
 
 /**
  * @internal
  */
 export interface NodeTyping {
   [name: string]: Record<string, any>
+}
+
+/**
+ * @internal
+ */
+export type ToNodeBuilder<T extends NodeTyping> = {
+  [K in keyof T]: NodeBuilder<T[K]>
 }
 
 /**

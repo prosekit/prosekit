@@ -1,5 +1,126 @@
 # prosekit
 
+## 0.22.0-beta.11
+
+### Minor Changes
+
+- [`625bba6`](https://github.com/ocavue/prosekit/commit/625bba60995c316dd5a4a1c89d10bb2dc995da9f) ![](https://prosekit.dev/b/extensions)
+
+  Add `triggerAutocomplete` to open the autocomplete menu programmatically.
+
+## 0.22.0-beta.10
+
+### Minor Changes
+
+- [`ccc2946`](https://github.com/ocavue/prosekit/commit/ccc29469db4ad4bf5e2c1bdde14817e424f3eba7) ![](https://prosekit.dev/b/extensions)
+
+  Add `triggerAutocomplete`, a command that re-scans the text before the cursor and opens the autocomplete menu if a rule matches.
+
+## 0.22.0-beta.9
+
+### Patch Changes
+
+- [`8f6f498`](https://github.com/ocavue/prosekit/commit/8f6f498827e5b7e7aedbfa56b75bc55c82ef7a51) ![](https://prosekit.dev/b/extensions)
+
+  Export the following list command functions:
+  - `dedentList`
+  - `indentList`
+  - `moveList`
+  - `splitList`
+  - `toggleCollapsed`
+  - `unwrapList`
+  - `toggleList`
+  - `wrapInList`
+  - `insertList`
+
+## 0.22.0-beta.8
+
+### Patch Changes
+
+- [`5ff866e`](https://github.com/ocavue/prosekit/commit/5ff866e0376440461a58477bf557758893823836) ![](https://prosekit.dev/b/web)
+
+  Position the drop indicator relative to its offset parent.
+
+## 0.22.0-beta.7
+
+### Patch Changes
+
+- [`c9a3e30`](https://github.com/ocavue/prosekit/commit/c9a3e30bad0afe4948ecb325d8a02d8258cc8dee) ![](https://prosekit.dev/b/extensions)
+
+  Export the following table command functions:
+  - `deleteTable`
+  - `deleteTableColumn`
+  - `deleteTableRow`
+  - `addTableColumnBefore`
+  - `addTableColumnAfter`
+  - `addTableRowAbove`
+  - `addTableRowBelow`
+  - `mergeTableCells`
+  - `splitTableCell`
+  - `deleteCellSelection`
+
+## 0.22.0-beta.6
+
+### Patch Changes
+
+- [`b62da03`](https://github.com/ocavue/prosekit/commit/b62da03a2df1aa498cee2e6bd3ac022ec8863aa1) ![](https://prosekit.dev/b/extensions)
+
+  Recognize the rendered `<div>` wrapper in the `horizontalRule` node's `parseDOM`. Its `toDOM` renders `['div', ['hr']]`, but `parseDOM` only matched `hr`, so an attribute added with `defineNodeAttr` (written onto the outer `<div>`) was dropped when the node was parsed back from the DOM. The node now parses its own rendered output, with a bare `<hr>` kept as a fallback.
+
+## 0.22.0-beta.5
+
+### Patch Changes
+
+- [`bb984ad`](https://github.com/ocavue/prosekit/commit/bb984adf38501d6e4d7ecb279a51bc2f5954969e) ![](https://prosekit.dev/b/web)
+
+  Avoid focusing the editor view from the block handle after the view has been destroyed.
+
+## 0.22.0-beta.4
+
+### Patch Changes
+
+- [`08d3aa4`](https://github.com/ocavue/prosekit/commit/08d3aa4178d88a79d82d69da87d4800635c82013) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+## 0.22.0-beta.3
+
+### Minor Changes
+
+- [`59b7648`](https://github.com/ocavue/prosekit/commit/59b76483cccda6f30eb0c4e87063068f405b3759) ![](https://prosekit.dev/b/core)
+
+  Add `getMarkRange`, which returns the contiguous range of a mark touching a resolved position. A position at either edge of the run counts as touching it, and a neighbouring mark that differs in attributes starts a new run.
+
+## 0.22.0-beta.2
+
+### Minor Changes
+
+- [`5e750c7`](https://github.com/ocavue/prosekit/commit/5e750c798588cd94cb1b1c2440bfb809dc4136e0) ![](https://prosekit.dev/b/core)
+
+  Add a `create` method to mark builders (`editor.marks.<name>.create(attrs?)` and the builders returned by `createMarkBuilders`). It returns a bare `Mark` instance with optional, typed attributes, without applying it to any children.
+
+## 0.22.0-beta.1
+
+### Minor Changes
+
+- [`026daed`](https://github.com/ocavue/prosekit/commit/026daedafa6ecfd7f429d56a2f40d5113946ab47) ![](https://prosekit.dev/b/core)
+
+  Add `createNodeBuilders` and `createMarkBuilders`, which turn a schema into typed node and mark factory functions without needing an editor instance. They behave like `editor.nodes` and `editor.marks` but omit `isActive`, so they are convenient for building documents in tests or on the server.
+
+## 0.22.0-beta.0
+
+### Minor Changes
+
+- [`45f91d5`](https://github.com/ocavue/prosekit/commit/45f91d5f3d9a0146f144685cb42a93e300fb15ed) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Allow `InlinePopoverRoot` to accept a custom `anchor` for popup positioning. When set, the inline popover is positioned against the provided element or virtual element instead of the current text selection.
+
+### Patch Changes
+
+- [`ca473f1`](https://github.com/ocavue/prosekit/commit/ca473f1f90d838b2ff8ee8b108185280f520cde6) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineTableEditingPlugin` and `defineColumnResizingPlugin` for composing table plugins individually.
+
 ## 0.21.4
 
 ### Patch Changes

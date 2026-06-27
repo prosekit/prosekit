@@ -1,4 +1,4 @@
-import { unified } from '@astrojs/markdown-remark'
+import { satteri } from '@astrojs/markdown-satteri'
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -11,9 +11,8 @@ import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import astrobook from 'astrobook'
 import { classReplace } from 'prosekit-registry/vite-plugin-class-replace'
-import { rehypeResolveMarkdownLinks } from 'rehype-resolve-markdown-links'
+import { satteriResolveMarkdownLinks } from 'satteri-resolve-markdown-links'
 import starlightThemeNova from 'starlight-theme-nova'
-import wasm from 'vite-plugin-wasm'
 
 import { version } from '../packages/prosekit/package.json'
 
@@ -148,7 +147,6 @@ const config: AstroUserConfig = {
   vite: {
     plugins: [
       classReplace(),
-      wasm(),
       tailwindcss(),
     ],
     optimizeDeps: {
@@ -158,12 +156,9 @@ const config: AstroUserConfig = {
     },
   },
   markdown: {
-    processor: unified({
-      // Disable smartypants to prevent converting "..." into "…"
-      smartypants: false,
-
-      rehypePlugins: [
-        [rehypeResolveMarkdownLinks, { rootDir: './src/content/docs' }],
+    processor: satteri({
+      hastPlugins: [
+        satteriResolveMarkdownLinks({ rootDir: './src/content/docs' }),
       ],
     }),
   },

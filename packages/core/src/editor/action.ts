@@ -10,18 +10,15 @@ import { isNodeActive } from '../utils/is-node-active.ts'
 import { isProseMirrorNode } from '../utils/type-assertion.ts'
 
 /**
- * Available children parameters for {@link NodeAction} and {@link MarkAction}.
+ * Available children parameters for {@link NodeBuilder} and {@link MarkBuilder}.
  */
 export type NodeChild = ProseMirrorNode | string | NodeChild[]
 
 /**
  * A function for creating a node with optional attributes and any number of
  * children.
- *
- * It also has a `isActive` method for checking if the node is active in the
- * current editor selection.
  */
-export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
+export interface NodeBuilder<Attrs extends AnyAttrs = AnyAttrs> {
   /**
    * Creates a node with attributes and any number of children.
    */
@@ -31,7 +28,13 @@ export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
    * Creates a node with any number of children.
    */
   (...children: NodeChild[]): ProseMirrorNode
+}
 
+/**
+ * A {@link NodeBuilder} function that also has an `isActive` method for checking if
+ * the node is active in the current editor selection.
+ */
+export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> extends NodeBuilder<Attrs> {
   /**
    * Checks if the node is active in the current editor selection. If the
    * optional `attrs` parameter is provided, it will check if the node is active
@@ -43,11 +46,8 @@ export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
 /**
  * A function for applying a mark with optional attributes and any number of
  * children.
- *
- * It also has a `isActive` method for checking if the mark is active in the
- * current editor selection.
  */
-export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
+export interface MarkBuilder<Attrs extends AnyAttrs = AnyAttrs> {
   /**
    * Applies a mark with attributes and any number of children.
    */
@@ -59,6 +59,19 @@ export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
   (...children: NodeChild[]): ProseMirrorNode[]
 
   /**
+   * Creates a {@link Mark} of this type with optional attributes, without
+   * applying it to any children. Unlike calling the builder, which returns
+   * nodes with the mark applied, this returns the bare mark instance.
+   */
+  create: (attrs?: Attrs | null) => Mark
+}
+
+/**
+ * A {@link MarkBuilder} function that also has an `isActive` method for checking
+ * if the mark is active in the current editor selection.
+ */
+export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> extends MarkBuilder<Attrs> {
+  /**
    * Checks if the mark is active in the current editor selection. If the
    * optional `attrs` parameter is provided, it will check if the mark is active
    * with the given attributes.
@@ -66,10 +79,23 @@ export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
   isActive: (attrs?: Attrs) => boolean
 }
 
+export function createNodeBuildersRaw(
+  schema: Schema,
+  createNode: CreateNodeFunction = defaultCreateNode,
+): Record<string, NodeBuilder> {
+  return mapValues(schema.nodes, (type) => createNodeBuilder(type, createNode))
+}
+
+function createNodeBuilder(type: NodeType, createNode: CreateNodeFunction): NodeBuilder {
+  return function nodeBuilder(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+    return buildNode(type, args, createNode)
+  }
+}
+
 /**
  * @internal
  */
-export function createNodeActions(
+export function createNodeActionsRaw(
   schema: Schema,
   getState: GetStateFunction,
   createNode: CreateNodeFunction = defaultCreateNode,
@@ -82,20 +108,35 @@ function createNodeAction(
   getState: GetStateFunction,
   createNode: CreateNodeFunction,
 ): NodeAction {
-  const action = (
-    ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
-  ) => buildNode(type, args, createNode)
-  action.isActive = (attrs?: Attrs) => {
+  function nodeAction(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+    return buildNode(type, args, createNode)
+  }
+  nodeAction.isActive = (attrs?: Attrs) => {
     const state = getState()
     return state ? isNodeActive(state, type, attrs) : false
   }
-  return action
+  return nodeAction
+}
+
+export function createMarkBuildersRaw(
+  schema: Schema,
+  applyMark: ApplyMarkFunction = defaultApplyMark,
+): Record<string, MarkBuilder> {
+  return mapValues(schema.marks, (type) => createMarkBuilder(type, applyMark))
+}
+
+function createMarkBuilder(type: MarkType, applyMark: ApplyMarkFunction): MarkBuilder {
+  function markBuilder(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+    return buildMark(type, args, applyMark)
+  }
+  markBuilder.create = (attrs?: Attrs | null): Mark => type.create(attrs)
+  return markBuilder
 }
 
 /**
  * @internal
  */
-export function createMarkActions(
+export function createMarkActionsRaw(
   schema: Schema,
   getState: GetStateFunction,
   applyMark: ApplyMarkFunction = defaultApplyMark,
@@ -108,14 +149,15 @@ function createMarkAction(
   getState: GetStateFunction,
   applyMark: ApplyMarkFunction,
 ): MarkAction {
-  const action = (
-    ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
-  ) => buildMark(type, args, applyMark)
-  action.isActive = (attrs?: Attrs) => {
+  function markAction(...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]) {
+    return buildMark(type, args, applyMark)
+  }
+  markAction.create = (attrs?: Attrs | null): Mark => type.create(attrs)
+  markAction.isActive = (attrs?: Attrs) => {
     const state = getState()
     return state ? isMarkActive(state, type, attrs) : false
   }
-  return action
+  return markAction
 }
 
 function buildMark(

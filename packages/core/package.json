@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/core",
   "type": "module",
-  "version": "0.12.3",
+  "version": "0.13.0-beta.3",
   "private": false,
   "description": "Core features for ProseKit",
   "author": {
@@ -38,17 +38,17 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.6.0",
+    "@ocavue/utils": "^1.7.0",
     "@prosekit/pm": "workspace:^",
     "orderedmap": "^2.1.1",
-    "prosemirror-splittable": "^0.1.1",
+    "prosemirror-splittable": "^1.0.0",
     "type-fest": "^5.7.0"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "diffable-html-snapshot": "^0.2.0",
+    "diffable-html-snapshot": "^0.3.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",

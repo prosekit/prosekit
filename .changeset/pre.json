@@ -24,5 +24,18 @@
     "prosekit-registry": "0.0.22",
     "prosekit-website": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "block-handle-focus-check",
+    "drop-indicator-hoist",
+    "export-list-commands",
+    "export-table-edit-commands",
+    "get-mark-range",
+    "horizontal-rule-attr-roundtrip",
+    "inline-popover-anchor",
+    "mark-builder-create",
+    "node-mark-builders",
+    "table-editing-plugins",
+    "trigger-autocomplete-transaction",
+    "update-deps"
+  ]
 }

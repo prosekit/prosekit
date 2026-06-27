@@ -6,7 +6,7 @@ import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts
 import { inputText } from '../testing/keyboard.ts'
 
 import { AutocompleteRule, type MatchHandler, type MatchHandlerOptions } from './autocomplete-rule.ts'
-import { defineAutocomplete } from './autocomplete.ts'
+import { defineAutocomplete, triggerAutocomplete } from './autocomplete.ts'
 
 function setupSlashMenu() {
   const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
@@ -227,6 +227,31 @@ describe('defineAutocomplete', () => {
     expect(showSelection()).toMatchInlineSnapshot(`"a /b /c<cursor>"`)
     expect(isMatching()).toBe(true)
     expect(getMatchingText()).toBe('/c')
+  })
+
+  it('does not open from a programmatic insert, but opens via triggerAutocomplete', () => {
+    const { editor, onEnter, isMatching, getMatchingText } = setupSlashMenu()
+
+    // A programmatic insert bypasses `handleTextInput`, so the menu stays closed.
+    editor.commands.insertText({ text: '/' })
+    expect(editor.state.doc.textContent).toBe('/')
+    expect(isMatching()).toBe(false)
+    expect(onEnter).not.toHaveBeenCalled()
+
+    // `triggerAutocomplete` re-scans at the cursor and opens the menu.
+    editor.view.dispatch(triggerAutocomplete(editor.state.tr))
+    expect(isMatching()).toBe(true)
+    expect(onEnter).toHaveBeenCalledTimes(1)
+    expect(getMatchingText()).toBe('/')
+  })
+
+  it('triggerAutocomplete does nothing when no rule matches at the cursor', () => {
+    const { editor, onEnter, isMatching } = setupSlashMenu()
+
+    editor.commands.insertText({ text: 'hello' })
+    editor.view.dispatch(triggerAutocomplete(editor.state.tr))
+    expect(isMatching()).toBe(false)
+    expect(onEnter).not.toHaveBeenCalled()
   })
 
   it('can dismiss the match by creating a new paragraph', async () => {

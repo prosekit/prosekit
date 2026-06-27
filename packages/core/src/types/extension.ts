@@ -1,8 +1,8 @@
 import type { Schema } from '@prosekit/pm/model'
 
 import type { CommandTyping, ToCommandAction, ToCommandCreators } from './extension-command.ts'
-import type { MarkTyping, ToMarkAction } from './extension-mark.ts'
-import type { NodeTyping, ToNodeAction } from './extension-node.ts'
+import type { MarkTyping, ToMarkAction, ToMarkBuilder } from './extension-mark.ts'
+import type { NodeTyping, ToNodeAction, ToNodeBuilder } from './extension-node.ts'
 import type { PickStringLiteral } from './pick-string-literal.ts'
 import type { PickSubType } from './pick-sub-type.ts'
 import type { Priority } from './priority.ts'
@@ -93,10 +93,24 @@ export type ExtractCommandActions<E extends Extension> = ToCommandAction<
 >
 
 /**
+ * Extracts the {@link NodeBuilder}s from an extension type.
+ */
+export type ExtractNodeBuilders<E extends Extension> = ToNodeBuilder<
+  ExtractNodes<E>
+>
+
+/**
  * Extracts the {@link NodeAction}s from an extension type.
  */
 export type ExtractNodeActions<E extends Extension> = ToNodeAction<
   ExtractNodes<E>
+>
+
+/**
+ * Extracts the {@link MarkBuilder}s from an extension type.
+ */
+export type ExtractMarkBuilders<E extends Extension> = ToMarkBuilder<
+  ExtractMarks<E>
 >
 
 /**

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.17.4",
+  "version": "0.18.0-beta.9",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {
@@ -93,16 +93,16 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.6.0",
+    "@ocavue/utils": "^1.7.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "prosemirror-changeset": "^2.4.1",
-    "prosemirror-drop-indicator": "^0.1.3",
+    "prosemirror-drop-indicator": "^0.1.4",
     "prosemirror-dropcursor": "^1.8.2",
     "prosemirror-enter-rules": "^0.1.5",
     "prosemirror-flat-list": "^0.6.0",
     "prosemirror-gapcursor": "^1.4.1",
-    "prosemirror-highlight": "^0.15.1",
+    "prosemirror-highlight": "^0.15.2",
     "prosemirror-math": "^0.2.2",
     "prosemirror-search": "^1.1.1",
     "prosemirror-tables": "^1.8.5",
@@ -133,7 +133,7 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "diffable-html-snapshot": "^0.2.0",
+    "diffable-html-snapshot": "^0.3.0",
     "katex": "^0.17.0",
     "loro-crdt": "^1.12.3",
     "loro-prosemirror": "^0.4.3",

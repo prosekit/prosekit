@@ -21,7 +21,8 @@ export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap.ts'
 export { unsetBlockType, type UnsetBlockTypeOptions } from './commands/unset-block-type.ts'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark.ts'
 export { wrap, type WrapOptions } from './commands/wrap.ts'
-export type { MarkAction, NodeAction, NodeChild } from './editor/action.ts'
+export type { MarkAction, MarkBuilder, NodeAction, NodeBuilder, NodeChild } from './editor/action.ts'
+export { createMarkBuilders, createNodeBuilders } from './editor/builder.ts'
 export { createEditor, Editor, type EditorOptions } from './editor/editor.ts'
 export { union } from './editor/union.ts'
 export { withPriority } from './editor/with-priority.ts'
@@ -104,8 +105,10 @@ export type {
   ExtractCommandCreators,
   ExtractCommands,
   ExtractMarkActions,
+  ExtractMarkBuilders,
   ExtractMarks,
   ExtractNodeActions,
+  ExtractNodeBuilders,
   ExtractNodes,
   ExtractTyping,
   PlainExtension,
@@ -125,6 +128,7 @@ export { isApple } from './utils/env.ts'
 export { findNode, findNodes, type FindNodeResult } from './utils/find-node.ts'
 export { findParentNodeOfType } from './utils/find-parent-node-of-type.ts'
 export { findParentNode, type FindParentNodeResult } from './utils/find-parent-node.ts'
+export { getMarkRange, type MarkRange } from './utils/get-mark-range.ts'
 export { getMarkType } from './utils/get-mark-type.ts'
 export { getNodeType } from './utils/get-node-type.ts'
 export { isAtBlockStart } from './utils/is-at-block-start.ts'

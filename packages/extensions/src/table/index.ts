@@ -1,4 +1,17 @@
-export { defineTableCommands, type TableCommandsExtension } from './table-commands.ts'
+export {
+  addTableColumnAfter,
+  addTableColumnBefore,
+  addTableRowAbove,
+  addTableRowBelow,
+  defineTableCommands,
+  deleteTable,
+  deleteTableColumn,
+  deleteTableRow,
+  mergeTableCells,
+  splitTableCell,
+  type TableCommandsExtension,
+} from './table-commands.ts'
+export { deleteCellSelection } from './table-commands/delete-cell-selection.ts'
 export { exitTable } from './table-commands/exit-table.ts'
 export { insertTable, type InsertTableOptions } from './table-commands/insert-table.ts'
 export { moveTableColumn, type MoveTableColumnOptions } from './table-commands/move-table-column.ts'
@@ -8,7 +21,14 @@ export { selectTableColumn, type SelectTableColumnOptions } from './table-comman
 export { selectTableRow, type SelectTableRowOptions } from './table-commands/select-table-row.ts'
 export { selectTable, type SelectTableOptions } from './table-commands/select-table.ts'
 export { defineTableDropIndicator } from './table-drop-indicator.ts'
-export { defineTablePlugins } from './table-plugins.ts'
+export {
+  defineColumnResizingPlugin,
+  defineTableEditingPlugin,
+  defineTablePlugins,
+  TableView,
+  type ColumnResizingOptions,
+  type TableEditingOptions,
+} from './table-plugins.ts'
 export {
   defineTableCellSpec,
   defineTableHeaderCellSpec,

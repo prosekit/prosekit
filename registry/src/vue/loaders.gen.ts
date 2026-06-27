@@ -9,6 +9,7 @@ export const loaders = {
   'code': defineAsyncComponent(() => import('./examples/code/index.ts').then((m) => m.ExampleEditor)),
   'code-block': defineAsyncComponent(() => import('./examples/code-block/index.ts').then((m) => m.ExampleEditor)),
   'code-block-themes': defineAsyncComponent(() => import('./examples/code-block-themes/index.ts').then((m) => m.ExampleEditor)),
+  'columns': defineAsyncComponent(() => import('./examples/columns/index.ts').then((m) => m.ExampleEditor)),
   'drop-cursor': defineAsyncComponent(() => import('./examples/drop-cursor/index.ts').then((m) => m.ExampleEditor)),
   'emoji-rules': defineAsyncComponent(() => import('./examples/emoji-rules/index.ts').then((m) => m.ExampleEditor)),
   'font-family': defineAsyncComponent(() => import('./examples/font-family/index.ts').then((m) => m.ExampleEditor)),

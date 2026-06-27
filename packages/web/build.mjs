@@ -9,6 +9,7 @@ const components = [
   'inline-popover',
   'table-handle',
   'block-handle',
+  'columns-popover',
   'autocomplete',
 ]
 const frameworks = ['react', 'preact', 'solid', 'vue', 'svelte']

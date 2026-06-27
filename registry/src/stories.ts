@@ -29,6 +29,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for inline code mark.',
   },
   {
+    name: 'columns',
+    description: 'Example for columns layout with resizable columns and drag handles.',
+  },
+  {
     name: 'drop-cursor',
     description: 'Visual cursor indicator during drag-and-drop operations.',
   },

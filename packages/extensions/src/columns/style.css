@@ -1,0 +1,105 @@
+.ProseMirror {
+  --prosekit-column-group-gap: 1rem;
+}
+
+.ProseMirror .prosekit-column-group {
+  display: flex;
+  position: relative;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  gap: var(--prosekit-column-group-gap);
+}
+
+.ProseMirror .prosekit-column {
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+  min-height: 72px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  overflow-wrap: anywhere;
+}
+
+.ProseMirror .prosekit-column {
+  flex: 1 1 0%;
+}
+
+.ProseMirror .prosekit-column[style*="--prosekit-column-width"] {
+  --gap-deduction: calc(var(--prosekit-column-width) / 100 * (var(--prosekit-column-group-count) - 1) * var(--prosekit-column-group-gap));
+  flex: 0 0 calc(var(--prosekit-column-width) * 1% - var(--gap-deduction));
+  width: calc(var(--prosekit-column-width) * 1% - var(--gap-deduction));
+  max-width: calc(var(--prosekit-column-width) * 1% - var(--gap-deduction));
+}
+
+.ProseMirror .prosekit-column:hover {
+  background-color: color-mix(in srgb, Highlight 12%, transparent);
+}
+
+.ProseMirror .prosekit-column > *:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror .prosekit-column > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Resize handle (rendered as a widget decoration inside the column)  */
+/* ------------------------------------------------------------------ */
+
+.prosekit-column-resize-handle {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  right: calc(0px - var(--prosekit-column-group-gap) / 2 - 6px);
+  bottom: 0;
+  width: 12px;
+  cursor: col-resize;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+/* Show the handle when the editor is in column-resizing mode. */
+.ProseMirror.prosekit-column-group-resizing .prosekit-column-resize-handle {
+  opacity: 1;
+}
+
+/* During an active drag, keep the handle visible regardless. */
+.prosekit-column-resize-handle-dragging {
+  opacity: 1;
+}
+
+/* Thin visual line at the column boundary. */
+.prosekit-column-resize-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: GrayText;
+  pointer-events: none;
+}
+
+/* + button for adding a column at the boundary. */
+.prosekit-column-resize-add {
+  display: flex;
+  z-index: 21;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translateX(-50%);
+  border: 1px solid ButtonBorder;
+  border-radius: 50%;
+  background: ButtonFace;
+  color: ButtonText;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}

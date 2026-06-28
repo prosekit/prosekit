@@ -31,6 +31,7 @@
     "./background-color": "./src/background-color/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
+    "./callout": "./src/callout/index.ts",
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
     "./commit": "./src/commit/index.ts",
@@ -171,6 +172,10 @@
       "./bold": {
         "types": "./dist/bold.d.ts",
         "default": "./dist/bold.js"
+      },
+      "./callout": {
+        "types": "./dist/callout.d.ts",
+        "default": "./dist/callout.js"
       },
       "./code": {
         "types": "./dist/code.d.ts",
@@ -382,6 +387,9 @@
         ],
         "bold": [
           "./dist/bold.d.ts"
+        ],
+        "callout": [
+          "./dist/callout.d.ts"
         ],
         "code": [
           "./dist/code.d.ts"

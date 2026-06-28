@@ -77,6 +77,7 @@
     "./react/examples/block-handle": "./src/react/examples/block-handle/index.ts",
     "./react/examples/blockquote": "./src/react/examples/blockquote/index.ts",
     "./react/examples/bold": "./src/react/examples/bold/index.ts",
+    "./react/examples/callout": "./src/react/examples/callout/index.ts",
     "./react/examples/change-tracking": "./src/react/examples/change-tracking/index.ts",
     "./react/examples/code": "./src/react/examples/code/index.ts",
     "./react/examples/code-block": "./src/react/examples/code-block/index.ts",

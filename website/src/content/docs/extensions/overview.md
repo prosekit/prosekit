@@ -12,6 +12,7 @@ ProseKit ships an extension for every common editor feature. Each one lives at `
 | Extension                                          | Description                                                |
 | -------------------------------------------------- | ---------------------------------------------------------- |
 | [Blockquote](/extensions/blockquote)               | Quote blocks for citing or highlighting passages           |
+| [Callout](/extensions/callout)                     | GitHub Alert-style callout blocks with variant support     |
 | [CodeBlock](/extensions/code-block)                | Code blocks with optional syntax highlighting              |
 | [Doc](/extensions/doc)                             | The top-level document node every editor needs             |
 | [Hard Break](/extensions/hard-break)               | Inline line break, rendered as `<br>`                      |

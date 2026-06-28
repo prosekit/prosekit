@@ -70,6 +70,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/callout",
+    "path": "packages/prosekit/dist/extensions/callout.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/code",
     "path": "packages/prosekit/dist/extensions/code.js",
     "ignore": [

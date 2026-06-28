@@ -56,6 +56,19 @@ describe('defineHorizontalRuleInputRule', () => {
     )
   })
 
+  it('should insert inside when the parent allows a horizontal rule', async () => {
+    const { editor, n } = setupTestFromExtension(
+      union(defineTestExtension()),
+    )
+    const doc = n.doc(n.table(n.tableRow(n.tableCell(n.paragraph('<a>')))))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.table(n.tableRow(n.tableCell(n.horizontalRule(), n.paragraph())))).toJSON(),
+    )
+  })
+
   it('should not insert when the parent forbids a horizontal rule', async () => {
     // Restrict table cells to a single paragraph so they cannot hold a
     // horizontal rule, the way GFM table cells work.

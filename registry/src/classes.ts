@@ -76,6 +76,21 @@ export const CSS_EDITOR_CONTENT = cn(
   'box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0',
   '[&_span[data-mention=user]]:text-blue-500',
   '[&_span[data-mention=tag]]:text-violet-500',
+  '[&_details]:my-4',
+  '[&_details]:rounded-xl',
+  '[&_details]:border',
+  '[&_details]:border-slate-300/80',
+  '[&_details]:bg-slate-50/80',
+  '[&_details]:px-4',
+  '[&_details]:py-3',
+  '[&_details]:shadow-sm',
+  '[&_details>summary]:cursor-pointer',
+  '[&_details>summary]:font-semibold',
+  '[&_details>summary]:text-slate-900',
+  '[&_[data-type=detailsContent]]:mt-3',
+  '[&_[data-type=detailsContent]]:border-t',
+  '[&_[data-type=detailsContent]]:border-slate-200',
+  '[&_[data-type=detailsContent]]:pt-3',
 )
 
 export const CSS_INLINE_MENU_POSITIONER = CSS_POSITIONER
@@ -330,6 +345,7 @@ export const CSS_ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right size-5 block')
 export const CSS_ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal size-5 min-h-5 min-w-5 block')
 export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical size-5 min-h-5 min-w-5 block')
 export const CSS_ICON_BLOCKQUOTE = cn('i-lucide-text-quote size-5 block')
+export const CSS_ICON_DETAILS = cn('i-lucide-chevron-down size-5 block')
 export const CSS_ICON_MINUS = cn('i-lucide-minus size-5 block')
 export const CSS_ICON_IMAGE_ERROR = cn('i-lucide-image-off size-8 block')
 export const CSS_ICON_WHOLE_WORD = cn('i-lucide-whole-word size-5 block')

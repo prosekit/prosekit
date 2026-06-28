@@ -1,14 +1,28 @@
 'use client'
 
 import type { BasicExtension } from 'prosekit/basic'
-import type { Editor } from 'prosekit/core'
+import type { CommandAction, Editor } from 'prosekit/core'
 import type { Uploader } from 'prosekit/extensions/file'
 import { useEditorDerivedValue } from 'prosekit/react'
 
 import { Button } from '../button/index.ts'
 import { ImageUploadPopover } from '../image-upload-popover/index.ts'
 
+type DetailsToolbarSupport = {
+  commands: {
+    toggleDetails?: CommandAction<[]>
+    insertDetails?: CommandAction<[]>
+  }
+  nodes: {
+    details?: {
+      isActive(): boolean
+    }
+  }
+}
+
 function getToolbarItems(editor: Editor<BasicExtension>) {
+  const detailsEditor = editor as Editor<BasicExtension> & DetailsToolbarSupport
+
   return {
     undo: editor.commands.undo
       ? {
@@ -99,6 +113,20 @@ function getToolbarItems(editor: Editor<BasicExtension>) {
         isActive: editor.nodes.blockquote.isActive(),
         canExec: editor.commands.toggleBlockquote.canExec(),
         command: () => editor.commands.toggleBlockquote(),
+      }
+      : undefined,
+    details: detailsEditor.commands.toggleDetails
+      ? {
+        isActive: detailsEditor.nodes.details?.isActive() ?? false,
+        canExec: detailsEditor.commands.toggleDetails.canExec(),
+        command: () => detailsEditor.commands.toggleDetails!(),
+      }
+      : undefined,
+    insertDetails: detailsEditor.commands.insertDetails
+      ? {
+        isActive: false,
+        canExec: detailsEditor.commands.insertDetails.canExec(),
+        command: () => detailsEditor.commands.insertDetails!(),
       }
       : undefined,
     bulletList: editor.commands.toggleList
@@ -286,6 +314,26 @@ export default function Toolbar(props: { uploader?: Uploader<string> }) {
           tooltip="Blockquote"
         >
           <div className="CSS_ICON_BLOCKQUOTE" />
+        </Button>
+      )}
+      {items.details && (
+        <Button
+          pressed={items.details.isActive}
+          disabled={!items.details.canExec}
+          onClick={items.details.command}
+          tooltip="Toggle Details"
+        >
+          <div className="CSS_ICON_DETAILS" />
+        </Button>
+      )}
+      {items.insertDetails && (
+        <Button
+          pressed={items.insertDetails.isActive}
+          disabled={!items.insertDetails.canExec}
+          onClick={items.insertDetails.command}
+          tooltip="Insert Details"
+        >
+          <div className="CSS_ICON_PLUS" />
         </Button>
       )}
       {items.bulletList && (

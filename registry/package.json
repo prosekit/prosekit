@@ -81,6 +81,7 @@
     "./react/examples/code": "./src/react/examples/code/index.ts",
     "./react/examples/code-block": "./src/react/examples/code-block/index.ts",
     "./react/examples/code-block-themes": "./src/react/examples/code-block-themes/index.ts",
+    "./react/examples/details": "./src/react/examples/details/index.ts",
     "./react/examples/drop-cursor": "./src/react/examples/drop-cursor/index.ts",
     "./react/examples/emoji-rules": "./src/react/examples/emoji-rules/index.ts",
     "./react/examples/font-family": "./src/react/examples/font-family/index.ts",

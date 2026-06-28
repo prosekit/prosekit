@@ -1,0 +1,55 @@
+---
+title: Columns
+description: Multi-column content blocks with editable layout, width controls, and custom resize UI
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The columns extension adds a block-level layout node that groups regular block
+content into side-by-side columns. Each column remains normal editor content,
+so paragraphs, headings, lists, images, and other block nodes continue to work
+inside the layout.
+
+<Demo story="columns" />
+
+## Usage
+
+```ts twoslash
+import 'prosekit/extensions/columns/style.css'
+import { defineColumns } from 'prosekit/extensions/columns'
+
+const extension = defineColumns({
+  minColumnWidth: 160,
+})
+```
+
+## Behavior
+
+- `insertColumns` replaces the current selection with a new columns container.
+- `addColumnBefore` and `addColumnAfter` insert adjacent columns around the
+  current one.
+- `removeColumn` deletes the current column. When only one column would remain,
+  the container is unwrapped back into regular block content.
+- `distributeColumns` resets the current columns container to equal widths.
+
+The extension ships with the node specs, commands, and plugin state for resize UI.
+
+## Styling
+
+Import `prosekit/extensions/columns/style.css` to get the default layout styles.
+The stylesheet uses these CSS variables:
+
+- `--prosekit-columns-gap` — gap between columns (default: `1rem`, defined in `prosekit/basic` typography)
+- `--prosekit-column-width` — width of an individual column
+
+You can override `--prosekit-columns-gap` via custom CSS to adjust the spacing
+between columns.
+
+The built-in stylesheet only handles the rendered column layout. Resize handles
+and drag affordances are application UI. The demo shows one way to build that
+UI on top of the exported plugin state and helpers.
+
+## API Reference
+
+- [prosekit/extensions/columns](/references/extensions/columns)
+- [prosekit/extensions/columns/style.css](/references/extensions/columns/stylecss)

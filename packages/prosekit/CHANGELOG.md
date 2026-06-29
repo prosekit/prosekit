@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.12
+
+### Patch Changes
+
+- [`c2e94f9`](https://github.com/ocavue/prosekit/commit/c2e94f9863203d8662e29e576f0f7f4086fd863d) ![](https://prosekit.dev/b/extensions)
+
+  Guard the `---` horizontal rule input rule against parents that cannot hold a horizontal rule.
+
 ## 0.22.0-beta.11
 
 ### Minor Changes

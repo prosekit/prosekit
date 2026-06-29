@@ -1,6 +1,7 @@
+import { defineNodeSpec, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../testing/index.ts'
+import { defineTestExtension, setupTest, setupTestFromExtension } from '../testing/index.ts'
 import { inputText } from '../testing/keyboard.ts'
 
 describe('defineHorizontalRuleInputRule', () => {
@@ -52,6 +53,38 @@ describe('defineHorizontalRuleInputRule', () => {
     await inputText('---')
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(n.codeBlock('---')).toJSON(),
+    )
+  })
+
+  it('should insert inside when the parent allows a horizontal rule', async () => {
+    const { editor, n } = setupTestFromExtension(
+      union(defineTestExtension()),
+    )
+    const doc = n.doc(n.table(n.tableRow(n.tableCell(n.paragraph('<a>')))))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.table(n.tableRow(n.tableCell(n.horizontalRule(), n.paragraph())))).toJSON(),
+    )
+  })
+
+  it('should not insert when the parent forbids a horizontal rule', async () => {
+    // Restrict table cells to a single paragraph so they cannot hold a
+    // horizontal rule, the way GFM table cells work.
+    const { editor, n } = setupTestFromExtension(
+      union(
+        defineTestExtension(),
+        defineNodeSpec({ name: 'tableCell', content: 'paragraph' }),
+        defineNodeSpec({ name: 'tableHeaderCell', content: 'paragraph' }),
+      ),
+    )
+    const doc = n.doc(n.table(n.tableRow(n.tableCell(n.paragraph('<a>')))))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.table(n.tableRow(n.tableCell(n.paragraph('---'))))).toJSON(),
     )
   })
 })

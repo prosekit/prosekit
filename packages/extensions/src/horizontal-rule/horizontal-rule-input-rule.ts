@@ -10,6 +10,14 @@ export function defineHorizontalRuleInputRule(): PlainExtension {
         const { schema } = state
         const { tr } = state
         const type = getNodeType(schema, 'horizontalRule')
+        const $start = state.doc.resolve(start)
+        const index = $start.index(-1)
+        // Bail when the parent (e.g. an inline-only table cell) cannot hold a
+        // horizontal rule, so typing "---" there leaves the text untouched
+        // instead of deleting it.
+        if (!$start.node(-1).canReplaceWith(index, index, type)) {
+          return null
+        }
         const node = type.createChecked()
         tr.delete(start, end).insert(start - 1, node)
         return tr.scrollIntoView()

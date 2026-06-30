@@ -3,15 +3,13 @@ import { describe, expect, it } from 'vitest'
 import { defaultQueryBuilder } from './helpers.ts'
 
 describe('defaultQueryBuilder', () => {
-  it('can remove extra spaces', () => {
-    const str = '   a   '
-    const match = /.*/.exec(str)!
-    expect(defaultQueryBuilder(match)).toMatchInlineSnapshot('"a"')
+  it('trims surrounding whitespace', () => {
+    const match = /.*/.exec('   hello   ')!
+    expect(defaultQueryBuilder(match)).toBe('hello')
   })
 
-  it('can remove punctuations', () => {
-    const str = '   a   ~!@#$%^&*()_+`-={}|[]\\:;"\'<>?,./     b  '
-    const match = /.*/.exec(str)!
-    expect(defaultQueryBuilder(match)).toMatchInlineSnapshot('"a b"')
+  it('preserves casing and punctuation', () => {
+    const match = /.*/.exec('  C++ Notes  ')!
+    expect(defaultQueryBuilder(match)).toBe('C++ Notes')
   })
 })

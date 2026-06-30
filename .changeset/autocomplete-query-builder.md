@@ -8,4 +8,4 @@
 "prosekit": minor
 ---
 
-Add a `queryBuilder` prop to `AutocompleteRoot`. It builds the query string from the regex match found before the cursor, letting you control the query exposed via the `queryChange` event (and used by the built-in item filter). The default still lowercases the match and strips punctuation; provide a custom builder to preserve the casing and punctuation the user typed. The `defaultQueryBuilder` helper and the `QueryBuilder` type are now exported so you can compose with the default.
+Add a `queryBuilder` prop to `AutocompleteRoot` to control the query built from the regex match. The default no longer lowercases or strips punctuation, so `queryChange` gives you the text the user typed.

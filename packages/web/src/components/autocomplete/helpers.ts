@@ -6,9 +6,5 @@
 export type QueryBuilder = (match: RegExpExecArray) => string
 
 export function defaultQueryBuilder(match: RegExpExecArray): string {
-  return match[0]
-    .toLowerCase()
-    .replaceAll(/[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/g, '')
-    .replaceAll(/\s\s+/g, ' ')
-    .trim()
+  return match[0].trim()
 }

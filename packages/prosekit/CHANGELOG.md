@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.13
+
+### Patch Changes
+
+- [`0659db8`](https://github.com/ocavue/prosekit/commit/0659db81cf04f29615f9cda974714d72520fc0e1) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/pm) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Remove the redundant `typesVersions` field from the published `package.json` files. TypeScript resolves type declarations from the `exports` field, so this field is no longer needed.
+
 ## 0.22.0-beta.12
 
 ### Patch Changes

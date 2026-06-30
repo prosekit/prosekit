@@ -35,6 +35,7 @@
     "inline-popover-anchor",
     "mark-builder-create",
     "node-mark-builders",
+    "remove-types-versions",
     "table-editing-plugins",
     "trigger-autocomplete-transaction",
     "update-deps"

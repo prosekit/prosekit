@@ -1247,9 +1247,6 @@ packages:
   '@aria-ui/core@0.2.1':
     resolution: {integrity: sha512-EEh2mIHL4HnfjIgZocxhCCqPRU6EE5eLFQcGw4FOfomil11jIBKtmqCQkz8qJ9Ni3IBoh/5DvUFaY206X0oY6A==}
 
-  '@aria-ui/elements@0.1.10':
-    resolution: {integrity: sha512-XdykJS7m8cOv2vUAzGmuqWzQksBkqh4GEx4WY3N1zCHFB5tVZ9Omfc4vHDoJOfnI2pux64vJIAi+FWb9hUCKdw==}
-
   '@aria-ui/elements@0.1.11':
     resolution: {integrity: sha512-NNqFOnS4nGeWzSmFgCuuEoFkf5uIGHyzon8g/Robm/IdtDgIPCcjVVOhiB+ajgHgWQep9jOMSVdIYR8QgIH2Ow==}
 
@@ -4361,32 +4358,17 @@ packages:
       '@vue/server-renderer':
         optional: true
 
-  '@zag-js/dismissable@1.40.0':
-    resolution: {integrity: sha512-bBkFvPg/zbYn31ZgEfx8not6s2Ekx7zU2sO8tGXb8rYPnHBfGDYEzVQansUStJn0Atzw+y7XR7B3G3u5AFQJKw==}
-
   '@zag-js/dismissable@1.41.2':
     resolution: {integrity: sha512-hO/tFhRZ7S+LOOljGOQJIubbc3MXg41+iWR1yUXKl76cAenbxaCit1LZmUCwQPvRN0GndK6bDQo5ETjHZz/k7A==}
-
-  '@zag-js/dom-query@1.40.0':
-    resolution: {integrity: sha512-4J3EO2gHpZ1VZiGLuMlH6G1Tsp4gKB8PPt2yKeNQWYGEXyrHUXrvMhRUzv7Z4/2I1s1tnxlFG4F8ovB3kTpz/Q==}
 
   '@zag-js/dom-query@1.41.2':
     resolution: {integrity: sha512-+eBk1nlJA312mNmY/GSThLRwcCRqMIL+A1pLsWvTlQLQjmH1/UxoAuv6l2yvRCT33XmC8FBlBIKnXhOCpDvIZA==}
 
-  '@zag-js/interact-outside@1.40.0':
-    resolution: {integrity: sha512-Fws+O4uD9vS0I5KVcf3U2tNjLKvqlv+RExFbTywckDLOCJ145M/pMQWTr1FHil04jk5PFyM1iGfsbom8tozHpQ==}
-
   '@zag-js/interact-outside@1.41.2':
     resolution: {integrity: sha512-dM4Fn9iyqQeqkCMRYZP+bAgWEPKRVQRqMmcPsN0OXBhhFKC31Em15LTIZXaOtVKAjH+iwx+UvSYFRiWwEjkOEA==}
 
-  '@zag-js/types@1.40.0':
-    resolution: {integrity: sha512-LVvxEyqFv/u9SEe5xdivvG2vYb9cCmbkD+5r6s+IGljpDLaRgv4BYyxEh40ri1ai070tL08ZKmoLfx2/xfvY/A==}
-
   '@zag-js/types@1.41.2':
     resolution: {integrity: sha512-L6CNvK06lIVpy0X8eG3kbDIx8Uuv+3KHElxXYSzRXSJ7/OLCv1sTRgEvnxNtdIWOrksGgxF4JtT7PXtoClGqNQ==}
-
-  '@zag-js/utils@1.40.0':
-    resolution: {integrity: sha512-XUpqDtXfHe7CySjOhLPLj9H8rxbiFUJAGgmBzNdpsGPP4wx12cpOXrpSjRXZ2kMwooMPz/P7RPDBteto8sqhAQ==}
 
   '@zag-js/utils@1.41.2':
     resolution: {integrity: sha512-Yj8FSrR7vGA6ahUhjrThfHAF+PM2Y1Yv2lkXkqZZd60mPBhixcot1+SHOfEMV63JimQcWrmQ8QbeYYMmF+ZpLQ==}
@@ -8092,17 +8074,9 @@ snapshots:
   '@aria-ui/core@0.2.1':
     dependencies:
       '@ocavue/utils': 1.7.0
-      '@zag-js/dom-query': 1.40.0
+      '@zag-js/dom-query': 1.41.2
       alien-signals: 3.2.1
       server-dom-shim: 1.1.0
-
-  '@aria-ui/elements@0.1.10':
-    dependencies:
-      '@aria-ui/core': 0.2.1
-      '@aria-ui/utils': 0.1.6
-      '@floating-ui/dom': 1.7.6
-      '@zag-js/dismissable': 1.40.0
-      '@zag-js/dom-query': 1.40.0
 
   '@aria-ui/elements@0.1.11':
     dependencies:
@@ -8115,7 +8089,7 @@ snapshots:
   '@aria-ui/utils@0.1.6':
     dependencies:
       '@aria-ui/core': 0.2.1
-      '@zag-js/dom-query': 1.40.0
+      '@zag-js/dom-query': 1.41.2
 
   '@asamuzakjp/css-color@5.1.11':
     dependencies:
@@ -11278,45 +11252,24 @@ snapshots:
     optionalDependencies:
       '@vue/server-renderer': 3.5.35(vue@3.5.35)
 
-  '@zag-js/dismissable@1.40.0':
-    dependencies:
-      '@zag-js/dom-query': 1.40.0
-      '@zag-js/interact-outside': 1.40.0
-      '@zag-js/utils': 1.40.0
-
   '@zag-js/dismissable@1.41.2':
     dependencies:
       '@zag-js/dom-query': 1.41.2
       '@zag-js/interact-outside': 1.41.2
       '@zag-js/utils': 1.41.2
 
-  '@zag-js/dom-query@1.40.0':
-    dependencies:
-      '@zag-js/types': 1.40.0
-
   '@zag-js/dom-query@1.41.2':
     dependencies:
       '@zag-js/types': 1.41.2
-
-  '@zag-js/interact-outside@1.40.0':
-    dependencies:
-      '@zag-js/dom-query': 1.40.0
-      '@zag-js/utils': 1.40.0
 
   '@zag-js/interact-outside@1.41.2':
     dependencies:
       '@zag-js/dom-query': 1.41.2
       '@zag-js/utils': 1.41.2
 
-  '@zag-js/types@1.40.0':
-    dependencies:
-      csstype: 3.2.3
-
   '@zag-js/types@1.41.2':
     dependencies:
       csstype: 3.2.3
-
-  '@zag-js/utils@1.40.0': {}
 
   '@zag-js/utils@1.41.2': {}
 
@@ -14645,7 +14598,7 @@ snapshots:
   shiki-twoslash-renderer@0.3.5(typescript@6.0.3):
     dependencies:
       '@aria-ui/core': 0.2.1
-      '@aria-ui/elements': 0.1.10
+      '@aria-ui/elements': 0.1.11
       '@shikijs/twoslash': 4.2.0(typescript@6.0.3)
       '@shikijs/types': 4.2.0
       '@types/hast': 3.0.4

@@ -38,9 +38,8 @@ export interface AutocompleteRootProps {
 
   /**
    * The regular expression to match the query text to autocomplete. Capture the
-   * query in the first group (e.g. `/(?<!\S)@(\S.*)?$/u`); that group becomes
-   * the query exposed via the `queryChange` event, with its casing and
-   * punctuation preserved.
+   * query in the first group; that group becomes the query exposed via the
+   * `queryChange` event, with its casing and punctuation preserved.
    *
    * @default null
    */

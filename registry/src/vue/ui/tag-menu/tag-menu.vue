@@ -18,7 +18,7 @@ function handleTagInsert(id: number, label: string) {
   editor.value.commands.insertText({ text: ' ' })
 }
 
-const regex = /#([\da-z]*)$/i
+const regex = /#[\da-z]*$/i
 </script>
 
 <template>

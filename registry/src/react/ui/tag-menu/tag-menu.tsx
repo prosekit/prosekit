@@ -12,7 +12,7 @@ import {
   AutocompleteRoot,
 } from 'prosekit/react/autocomplete'
 
-const regex = /#([\da-z]*)$/i
+const regex = /#[\da-z]*$/i
 
 export default function TagMenu(props: { tags: { id: number; label: string }[] }) {
   const editor = useEditor<Union<[MentionExtension, BasicExtension]>>()

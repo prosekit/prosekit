@@ -28,7 +28,7 @@ function handleTagInsert(id: number, label: string) {
   $editor.commands.insertText({ text: ' ' })
 }
 
-const regex = /#([\da-z]*)$/i
+const regex = /#[\da-z]*$/i
 </script>
 
 <AutocompleteRoot {regex}>

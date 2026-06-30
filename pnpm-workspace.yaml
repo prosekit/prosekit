@@ -42,6 +42,7 @@ trustLockfile: true
 
 minimumReleaseAgeExclude:
   - starlight-theme-nova@0.12.0
+  - '@aria-ui/elements@0.1.11'
 
 peerDependencyRules:
   allowedVersions:

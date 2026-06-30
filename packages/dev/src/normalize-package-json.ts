@@ -1,4 +1,3 @@
-import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
@@ -102,7 +101,6 @@ export async function normalizePackageJson(pkg: Package): Promise<void> {
   packageJson.publishConfig.exports = maybeUndefined(sortObject(getPackageJsonPublishExports(pkg) ?? {}))
 
   normalizePackageJsonDocumentFields(pkg)
-  normalizeTypesVersions(pkg)
 }
 
 function isValidEntry(entry: string): boolean {
@@ -129,25 +127,4 @@ function normalizePackageJsonDocumentFields(pkg: Package): void {
       url: 'https://github.com/prosekit/prosekit/issues',
     },
   })
-}
-
-function normalizeTypesVersions(pkg: Package): void {
-  const packageJson = pkg.packageJson as PackageJson
-  assert(packageJson.publishConfig)
-  packageJson.publishConfig['typesVersions'] = undefined
-  const typesVersions: Record<string, string[]> = {}
-
-  const exports = getPackageJsonPublishExports(pkg) as Record<string, Record<string, string>>
-  assert(exports)
-
-  for (const key of Object.keys(exports)) {
-    const types = exports[key]?.['types']
-    if (types) {
-      typesVersions[key.replace(/^\.\//, '')] = [types]
-    }
-  }
-
-  if (Object.keys(typesVersions).length > 0) {
-    packageJson.publishConfig['typesVersions'] = { '*': typesVersions }
-  }
 }

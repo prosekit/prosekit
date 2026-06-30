@@ -14,7 +14,7 @@ import {
 
 import { editorContext } from '../editor-context.ts'
 
-const regex = /#[\da-z]*$/i
+const regex = /#([\da-z]*)$/i
 
 interface Tag {
   id: number

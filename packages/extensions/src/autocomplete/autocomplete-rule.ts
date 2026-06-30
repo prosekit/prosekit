@@ -70,7 +70,7 @@ export interface AutocompleteRuleOptions {
    * last match before the cursor is used.
    *
    * For a slash menu, you might use `/(?<!\S)\/(\S.*)?$/u`.
-   * For a mention, you might use `/@\w*$/`
+   * For a mention, you might use `/@(\w*)$/`
    */
   regex: RegExp
 

@@ -11,7 +11,7 @@ import {
 } from 'prosekit/solid/autocomplete'
 import { For, type JSX } from 'solid-js'
 
-const regex = /#[\da-z]*$/i
+const regex = /#([\da-z]*)$/i
 
 export default function TagMenu(props: { tags: { id: number; label: string }[] }): JSX.Element {
   const editor = useEditor<Union<[MentionExtension, BasicExtension]>>()

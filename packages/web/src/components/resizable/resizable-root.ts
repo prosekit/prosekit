@@ -120,8 +120,8 @@ export function setupResizableRoot(
   useEffect(host, () => {
     updateResizableRootStyles(
       host,
-      Math.max(props.width.get() || 0, 1),
-      Math.max(props.height.get() || 0, 1),
+      props.width.get(),
+      props.height.get(),
       props.aspectRatio.get(),
     )
   })
@@ -131,20 +131,28 @@ export function setupResizableRoot(
 
 function updateResizableRootStyles(
   host: HostElement,
-  width: number,
-  height: number,
+  width: number | null,
+  height: number | null,
   aspectRatio: number | null,
 ) {
-  host.style.width = isFinitePositiveNumber(width) ? `${width}px` : ''
+  const hasWidth = isFinitePositiveNumber(width)
+  const hasHeight = isFinitePositiveNumber(height)
 
-  host.style.height = isFinitePositiveNumber(height) ? `${height}px` : ''
+  host.style.width = `${Math.max(width || 0, 1)}px`
+
+  host.style.height = `${Math.max(height || 0, 1)}px`
 
   if (isFinitePositiveNumber(aspectRatio)) {
     host.style.aspectRatio = `${aspectRatio}`
 
-    if (width && width > 0 && aspectRatio >= 1) {
+    // A known width drives the box in both orientations: `height: auto` lets the
+    // aspect ratio derive the height. Only when no width is known does the box
+    // derive its width from the height via `min-content`. Driving a portrait box
+    // with `min-content` relied on the aspect-ratio transferred size, which
+    // WebKit does not resolve, so the box collapsed to its minimum size.
+    if (hasWidth) {
       host.style.height = 'auto'
-    } else if (height && height > 0 && aspectRatio <= 1) {
+    } else if (hasHeight) {
       host.style.width = 'min-content'
     }
   }

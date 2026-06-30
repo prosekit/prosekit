@@ -30,6 +30,16 @@ export interface AutocompleteRootProps {
    */
   filter?: AutocompleteRootElementProps['filter'];
   /**
+   * Builds the query string from the regex match found before the cursor. The
+   * query is exposed via the `queryChange` event and used by the built-in item
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
+   *
+   * @default defaultQueryBuilder
+   */
+  queryBuilder?: AutocompleteRootElementProps['queryBuilder'];
+  /**
    * The reference to position the popup against. This can be a DOM element, a
    * Floating UI virtual element, or a function that returns either of them.
    * By default, the popup will be positioned against the text content that
@@ -62,12 +72,12 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: R
 
   const p1Fallback = useEditorContext();
 
-  const { anchor: p0, editor: p1, filter: p2, regex: p3, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
+  const { anchor: p0, editor: p1, filter: p2, queryBuilder: p3, regex: p4, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, regex: p3 });
+    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, queryBuilder: p3, regex: p4 });
     handlersRef.current = [e0, e1, e2, e3] as Array<((event: Event) => void) | undefined>;
   });
 

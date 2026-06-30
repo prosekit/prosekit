@@ -23,7 +23,7 @@ import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 import { resolveAnchor, type AnchorReference } from '../../utils/resolve-anchor.ts'
 
 import { autocompleteStoreContext, type AutocompleteStore } from './context.ts'
-import { defaultQueryBuilder } from './helpers.ts'
+import { defaultQueryBuilder, type QueryBuilder } from './helpers.ts'
 
 export { OpenChangeEvent }
 
@@ -52,6 +52,17 @@ export interface AutocompleteRootProps {
   filter: ItemFilter | null
 
   /**
+   * Builds the query string from the regex match found before the cursor. The
+   * query is exposed via the `queryChange` event and used by the built-in item
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
+   *
+   * @default defaultQueryBuilder
+   */
+  queryBuilder: QueryBuilder
+
+  /**
    * The reference to position the popup against. This can be a DOM element, a
    * Floating UI virtual element, or a function that returns either of them.
    * By default, the popup will be positioned against the text content that
@@ -69,6 +80,7 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
   editor: { default: null, attribute: false },
   regex: { default: null, attribute: false },
   filter: { default: defaultItemFilter, attribute: false },
+  queryBuilder: { default: defaultQueryBuilder, attribute: false },
   anchor: { default: null, attribute: false },
 })
 
@@ -99,13 +111,6 @@ export interface AutocompleteRootEvents extends ListboxRootEvents {
 interface RuleHandlers {
   submit?: VoidFunction
   dismiss?: VoidFunction
-}
-
-interface AutocompleteRuleDeps {
-  reference: Signal<ReferenceElement | undefined>
-  handlers: RuleHandlers
-  setQuery: (next: string) => void
-  requestOpenChange: (open: boolean) => void
 }
 
 /**
@@ -175,12 +180,17 @@ export function setupAutocompleteRoot(
     return view?.dom.querySelector('.prosekit-autocomplete-match') || null
   }
 
-  useAutocompleteExtension(host, getEditor, props.regex.get, getAnchor, {
+  useAutocompleteExtension(
+    host,
+    getEditor,
+    props.regex.get,
+    getAnchor,
     reference,
     handlers,
     setQuery,
-    requestOpenChange: (open) => overlayStore.requestOpenChange(open),
-  })
+    props.queryBuilder.get,
+    (open) => overlayStore.requestOpenChange(open),
+  )
 }
 
 const EVENT_KEYS = [
@@ -219,7 +229,11 @@ function useAutocompleteExtension(
   getEditor: () => Editor | null,
   getRegex: () => RegExp | null,
   getAnchor: () => ReferenceElement | null,
-  deps: AutocompleteRuleDeps,
+  reference: Signal<ReferenceElement | undefined>,
+  handlers: RuleHandlers,
+  setQuery: (next: string) => void,
+  getQueryBuilder: () => QueryBuilder,
+  requestOpenChange: (open: boolean) => void,
 ) {
   useEffect(host, () => {
     const editor = getEditor()
@@ -229,27 +243,36 @@ function useAutocompleteExtension(
       return
     }
 
-    const rule = createAutocompleteRule(editor, regex, getAnchor, deps)
+    const rule = createAutocompleteRule(
+      regex,
+      getAnchor,
+      reference,
+      handlers,
+      setQuery,
+      getQueryBuilder,
+      requestOpenChange,
+    )
     const extension = defineAutocomplete(rule)
     return editor.use(extension)
   })
 }
 
 function createAutocompleteRule(
-  editor: Editor,
   regex: RegExp,
   getAnchor: () => ReferenceElement | null,
-  deps: AutocompleteRuleDeps,
+  reference: Signal<ReferenceElement | undefined>,
+  handlers: RuleHandlers,
+  setQuery: (next: string) => void,
+  getQueryBuilder: () => QueryBuilder,
+  requestOpenChange: (open: boolean) => void,
 ) {
-  const { reference, handlers, setQuery, requestOpenChange } = deps
-
   const handleEnter: MatchHandler = (options) => {
     const anchor = getAnchor()
     reference.set(anchor || undefined)
 
     handlers.submit = options.deleteMatch
     handlers.dismiss = options.ignoreMatch
-    setQuery(defaultQueryBuilder(options.match))
+    setQuery(getQueryBuilder()(options.match))
     requestOpenChange(true)
   }
 

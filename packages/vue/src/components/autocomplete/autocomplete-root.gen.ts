@@ -28,6 +28,16 @@ export interface AutocompleteRootProps {
    */
   filter?: AutocompleteRootElementProps['filter'];
   /**
+   * Builds the query string from the regex match found before the cursor. The
+   * query is exposed via the `queryChange` event and used by the built-in item
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
+   *
+   * @default defaultQueryBuilder
+   */
+  queryBuilder?: AutocompleteRootElementProps['queryBuilder'];
+  /**
    * The reference to position the popup against. This can be a DOM element, a
    * Floating UI virtual element, or a function that returns either of them.
    * By default, the popup will be positioned against the text content that
@@ -62,8 +72,8 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
     const p1Fallback = useEditorContext();
 
     const splittedProps = computed(() => {
-      const { anchor: p0, editor: p1, filter: p2, regex: p3, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
-      return [[p0, p1, p2, p3, e0, e1, e2, e3], restProps] as const;
+      const { anchor: p0, editor: p1, filter: p2, queryBuilder: p3, regex: p4, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
+      return [[p0, p1, p2, p3, p4, e0, e1, e2, e3], restProps] as const;
     });
 
     const handlers: Array<((event: any) => void) | undefined> = [];
@@ -72,9 +82,9 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
       const element = elementRef.value;
       if (!element) return;
 
-      const [p0, p1, p2, p3, e0, e1, e2, e3] = splittedProps.value[0];
+      const [p0, p1, p2, p3, p4, e0, e1, e2, e3] = splittedProps.value[0];
 
-      Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, regex: p3 });
+      Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, queryBuilder: p3, regex: p4 });
 
       handlers.length = 0;
       handlers.push(e0);
@@ -105,5 +115,5 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
       return h('prosekit-autocomplete-root', { ...restProps, ref: elementRef }, slots.default?.());
     };
   },
-  { props: ['anchor', 'editor', 'filter', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
+  { props: ['anchor', 'editor', 'filter', 'queryBuilder', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
 );

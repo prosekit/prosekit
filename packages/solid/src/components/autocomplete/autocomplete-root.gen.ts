@@ -30,6 +30,16 @@ export interface AutocompleteRootProps {
    */
   filter?: AutocompleteRootElementProps['filter'];
   /**
+   * Builds the query string from the regex match found before the cursor. The
+   * query is exposed via the `queryChange` event and used by the built-in item
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
+   *
+   * @default defaultQueryBuilder
+   */
+  queryBuilder?: AutocompleteRootElementProps['queryBuilder'];
+  /**
    * The reference to position the popup against. This can be a DOM element, a
    * Floating UI virtual element, or a function that returns either of them.
    * By default, the popup will be positioned against the text content that
@@ -61,7 +71,7 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
   const [getElement, setElement] = createSignal<AutocompleteRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['anchor', 'editor', 'filter', 'regex'], ['onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['anchor', 'editor', 'filter', 'queryBuilder', 'regex'], ['onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange']);
 
   const p1Fallback = useEditorContext();
 
@@ -69,7 +79,7 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
     const element = getElement();
     if (!element) return;
 
-    Object.assign(element, { anchor: elementProps.anchor, editor: elementProps.editor ?? p1Fallback, filter: elementProps.filter, regex: elementProps.regex });
+    Object.assign(element, { anchor: elementProps.anchor, editor: elementProps.editor ?? p1Fallback, filter: elementProps.filter, queryBuilder: elementProps.queryBuilder, regex: elementProps.regex });
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);

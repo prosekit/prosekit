@@ -23,7 +23,7 @@ import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 import { resolveAnchor, type AnchorReference } from '../../utils/resolve-anchor.ts'
 
 import { autocompleteStoreContext, type AutocompleteStore } from './context.ts'
-import { defaultQueryBuilder } from './helpers.ts'
+import { defaultQueryBuilder, type QueryBuilder } from './helpers.ts'
 
 export { OpenChangeEvent }
 
@@ -52,6 +52,17 @@ export interface AutocompleteRootProps {
   filter: ItemFilter | null
 
   /**
+   * Builds the query string from the regex match found before the cursor. The
+   * query is exposed via the `queryChange` event and used by the built-in item
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
+   *
+   * @default defaultQueryBuilder
+   */
+  queryBuilder: QueryBuilder
+
+  /**
    * The reference to position the popup against. This can be a DOM element, a
    * Floating UI virtual element, or a function that returns either of them.
    * By default, the popup will be positioned against the text content that
@@ -69,6 +80,7 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
   editor: { default: null, attribute: false },
   regex: { default: null, attribute: false },
   filter: { default: defaultItemFilter, attribute: false },
+  queryBuilder: { default: defaultQueryBuilder, attribute: false },
   anchor: { default: null, attribute: false },
 })
 
@@ -105,6 +117,7 @@ interface AutocompleteRuleDeps {
   reference: Signal<ReferenceElement | undefined>
   handlers: RuleHandlers
   setQuery: (next: string) => void
+  getQueryBuilder: () => QueryBuilder
   requestOpenChange: (open: boolean) => void
 }
 
@@ -179,6 +192,7 @@ export function setupAutocompleteRoot(
     reference,
     handlers,
     setQuery,
+    getQueryBuilder: props.queryBuilder.get,
     requestOpenChange: (open) => overlayStore.requestOpenChange(open),
   })
 }
@@ -241,7 +255,7 @@ function createAutocompleteRule(
   getAnchor: () => ReferenceElement | null,
   deps: AutocompleteRuleDeps,
 ) {
-  const { reference, handlers, setQuery, requestOpenChange } = deps
+  const { reference, handlers, setQuery, getQueryBuilder, requestOpenChange } = deps
 
   const handleEnter: MatchHandler = (options) => {
     const anchor = getAnchor()
@@ -249,7 +263,7 @@ function createAutocompleteRule(
 
     handlers.submit = options.deleteMatch
     handlers.dismiss = options.ignoreMatch
-    setQuery(defaultQueryBuilder(options.match))
+    setQuery(getQueryBuilder()(options.match))
     requestOpenChange(true)
   }
 

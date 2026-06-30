@@ -62,4 +62,9 @@ export {
   type AutocompleteRootProps,
 } from './autocomplete-root.ts'
 
+export {
+  defaultQueryBuilder,
+  type QueryBuilder,
+} from './helpers.ts'
+
 export { ValueChangeEvent, ValuesChangeEvent } from '@aria-ui/elements/listbox'

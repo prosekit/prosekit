@@ -37,6 +37,7 @@
     "mark-builder-create",
     "node-mark-builders",
     "remove-types-versions",
+    "resizable-width-driven-sizing",
     "table-editing-plugins",
     "trigger-autocomplete-transaction",
     "update-deps"

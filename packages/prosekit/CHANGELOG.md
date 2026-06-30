@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.15
+
+### Patch Changes
+
+- [`1e55d8c`](https://github.com/ocavue/prosekit/commit/1e55d8c4aafaf91eb007ff65b6c67026c4019c31) ![](https://prosekit.dev/b/web)
+
+  Fix `<prosekit-resizable-root>` collapsing portrait images (aspect ratio `< 1`) in WebKit.
+
 ## 0.22.0-beta.14
 
 ### Minor Changes

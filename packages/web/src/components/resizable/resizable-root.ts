@@ -155,6 +155,7 @@ function updateResizableRootStyles(
     // derive its width from the height via `min-content`. Driving a portrait box
     // with `min-content` relied on the aspect-ratio transferred size, which
     // WebKit does not resolve, so the box collapsed to its minimum size.
+    // https://bugs.webkit.org/show_bug.cgi?id=318221
     if (hasWidth) {
       styles.height = 'auto'
     } else if (hasHeight) {

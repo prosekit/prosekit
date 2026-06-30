@@ -34,10 +34,14 @@ function handleUserInsert(id: number, username: string) {
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
+
+// Drop the "@" trigger so the query is just the typed name.
+const queryBuilder = (match: RegExpExecArray) => match[1] ?? ''
 </script>
 
 <AutocompleteRoot
   {regex}
+  {queryBuilder}
   onQueryChange={(event) => props.onQueryChange?.(event.detail)}
   onOpenChange={(event) => props.onOpenChange?.(event.detail)}
 >

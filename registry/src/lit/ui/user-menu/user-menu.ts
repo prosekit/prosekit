@@ -18,9 +18,6 @@ import { editorContext } from '../editor-context.ts'
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 
-// Drop the "@" trigger so the query is just the typed name.
-const queryBuilder = (match: RegExpExecArray) => match[1] ?? ''
-
 interface User {
   id: number
   name: string
@@ -78,7 +75,6 @@ class UserMenuElement extends LitElement {
     return html`<prosekit-autocomplete-root
       .editor=${editor}
       .regex=${regex}
-      .queryBuilder=${queryBuilder}
       @queryChange=${this.handleQueryChange}
       @openChange=${this.handleOpenChange}
     >

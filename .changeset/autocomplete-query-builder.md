@@ -8,4 +8,4 @@
 "prosekit": minor
 ---
 
-Add a `queryBuilder` prop to `AutocompleteRoot` to control the query built from the regex match. The default no longer lowercases or strips punctuation, so `queryChange` event gives you the text the user typed.
+Add a `queryBuilder` prop to `AutocompleteRoot` to customize the query string built from the regex match.

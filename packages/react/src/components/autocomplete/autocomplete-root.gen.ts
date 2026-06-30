@@ -30,9 +30,9 @@ export interface AutocompleteRootProps {
   /**
    * Builds the query string from the regex match found before the cursor. The
    * query is exposed via the `queryChange` event and used by the built-in item
-   * filter. The default builder returns the matched text as-is, preserving
-   * casing and punctuation. Provide a custom builder to shape the query, for
-   * example to drop the trigger character.
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
    *
    * @default defaultQueryBuilder
    */

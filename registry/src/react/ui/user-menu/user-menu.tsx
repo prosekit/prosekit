@@ -15,9 +15,6 @@ import {
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
 
-// Drop the "@" trigger so the query is just the typed name.
-const queryBuilder = (match: RegExpExecArray) => match[1] ?? ''
-
 export default function UserMenu(props: {
   users: { id: number; name: string }[]
   loading?: boolean
@@ -38,7 +35,6 @@ export default function UserMenu(props: {
   return (
     <AutocompleteRoot
       regex={regex}
-      queryBuilder={queryBuilder}
       onQueryChange={(event) => props.onQueryChange?.(event.detail)}
       onOpenChange={(event) => props.onOpenChange?.(event.detail)}
     >

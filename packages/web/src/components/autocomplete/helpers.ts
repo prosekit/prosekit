@@ -6,5 +6,5 @@
 export type QueryBuilder = (match: RegExpExecArray) => string
 
 export function defaultQueryBuilder(match: RegExpExecArray): string {
-  return match[0].trim()
+  return match[0]
 }

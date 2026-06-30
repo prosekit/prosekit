@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.14
+
+### Minor Changes
+
+- [`a04e5e1`](https://github.com/ocavue/prosekit/commit/a04e5e14fc31df85ba75b48641ea12beaaf1e063) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/svelte)
+
+  Add a `queryBuilder` prop to `AutocompleteRoot` to customize the query string built from the regex match.
+
 ## 0.22.0-beta.13
 
 ### Patch Changes

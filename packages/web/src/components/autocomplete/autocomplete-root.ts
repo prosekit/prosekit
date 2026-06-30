@@ -113,14 +113,6 @@ interface RuleHandlers {
   dismiss?: VoidFunction
 }
 
-interface AutocompleteRuleDeps {
-  reference: Signal<ReferenceElement | undefined>
-  handlers: RuleHandlers
-  setQuery: (next: string) => void
-  getQueryBuilder: () => QueryBuilder
-  requestOpenChange: (open: boolean) => void
-}
-
 /**
  * @internal
  */
@@ -188,13 +180,17 @@ export function setupAutocompleteRoot(
     return view?.dom.querySelector('.prosekit-autocomplete-match') || null
   }
 
-  useAutocompleteExtension(host, getEditor, props.regex.get, getAnchor, {
+  useAutocompleteExtension(
+    host,
+    getEditor,
+    props.regex.get,
+    getAnchor,
     reference,
     handlers,
     setQuery,
-    getQueryBuilder: props.queryBuilder.get,
-    requestOpenChange: (open) => overlayStore.requestOpenChange(open),
-  })
+    props.queryBuilder.get,
+    (open) => overlayStore.requestOpenChange(open),
+  )
 }
 
 const EVENT_KEYS = [
@@ -233,7 +229,11 @@ function useAutocompleteExtension(
   getEditor: () => Editor | null,
   getRegex: () => RegExp | null,
   getAnchor: () => ReferenceElement | null,
-  deps: AutocompleteRuleDeps,
+  reference: Signal<ReferenceElement | undefined>,
+  handlers: RuleHandlers,
+  setQuery: (next: string) => void,
+  getQueryBuilder: () => QueryBuilder,
+  requestOpenChange: (open: boolean) => void,
 ) {
   useEffect(host, () => {
     const editor = getEditor()
@@ -243,20 +243,29 @@ function useAutocompleteExtension(
       return
     }
 
-    const rule = createAutocompleteRule(editor, regex, getAnchor, deps)
+    const rule = createAutocompleteRule(
+      regex,
+      getAnchor,
+      reference,
+      handlers,
+      setQuery,
+      getQueryBuilder,
+      requestOpenChange,
+    )
     const extension = defineAutocomplete(rule)
     return editor.use(extension)
   })
 }
 
 function createAutocompleteRule(
-  editor: Editor,
   regex: RegExp,
   getAnchor: () => ReferenceElement | null,
-  deps: AutocompleteRuleDeps,
+  reference: Signal<ReferenceElement | undefined>,
+  handlers: RuleHandlers,
+  setQuery: (next: string) => void,
+  getQueryBuilder: () => QueryBuilder,
+  requestOpenChange: (open: boolean) => void,
 ) {
-  const { reference, handlers, setQuery, getQueryBuilder, requestOpenChange } = deps
-
   const handleEnter: MatchHandler = (options) => {
     const anchor = getAnchor()
     reference.set(anchor || undefined)

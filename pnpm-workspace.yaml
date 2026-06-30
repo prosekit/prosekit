@@ -41,7 +41,8 @@ trustPolicyIgnoreAfter: 10080 # 7 days
 trustLockfile: true
 
 minimumReleaseAgeExclude:
-  - starlight-theme-nova@0.12.0
+  - 'starlight-theme-nova'
+  - '@aria-ui/*'
 
 peerDependencyRules:
   allowedVersions:

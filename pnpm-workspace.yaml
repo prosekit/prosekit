@@ -43,8 +43,3 @@ trustLockfile: true
 minimumReleaseAgeExclude:
   - "starlight-theme-nova"
   - "@aria-ui/*"
-
-peerDependencyRules:
-  allowedVersions:
-    # TODO: remove this after https://github.com/expressive-code/expressive-code/issues/451 is resolved
-    astro: "7"

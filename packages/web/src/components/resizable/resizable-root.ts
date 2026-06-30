@@ -2,6 +2,7 @@ import type { HostElement, HostElementConstructor, PropsDeclaration } from '@ari
 import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type State } from '@aria-ui/core'
 import { useAttribute } from '@aria-ui/utils'
 
+import { assignStyles } from '../../utils/assign-styles.ts'
 import { isFinitePositiveNumber } from '../../utils/is-finite-positive-number.ts'
 
 import {
@@ -12,7 +13,6 @@ import {
   type OnResizeEnd,
   type OnResizeStart,
 } from './context.ts'
-import { assignStyles } from '../../utils/assign-styles.ts'
 
 export interface ResizableRootProps {
   /**
@@ -138,16 +138,14 @@ function updateResizableRootStyles(
 ) {
   const hasWidth = isFinitePositiveNumber(width)
   const hasHeight = isFinitePositiveNumber(height)
-
   const styles: {
     width: string
     height: string
     aspectRatio?: string
   } = {
-    width: `${Math.max(width || 0, 1)}px`,
-      height: `${Math.max(height || 0, 1)}px`
+    width: hasWidth ? `${width}px` : 'auto',
+    height: hasHeight ? `${height}px` : 'auto',
   }
-
 
   if (isFinitePositiveNumber(aspectRatio)) {
     styles.aspectRatio = `${aspectRatio}`
@@ -163,7 +161,6 @@ function updateResizableRootStyles(
       styles.width = 'min-content'
     }
   }
-
 
   assignStyles(host, styles)
 }

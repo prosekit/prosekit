@@ -2,6 +2,7 @@ import type { HostElement, HostElementConstructor, PropsDeclaration } from '@ari
 import { createSignal, defineCustomElement, defineProps, registerCustomElement, useEffect, type State } from '@aria-ui/core'
 import { useAttribute } from '@aria-ui/utils'
 
+import { assignStyles } from '../../utils/assign-styles.ts'
 import { isFinitePositiveNumber } from '../../utils/is-finite-positive-number.ts'
 
 import {
@@ -120,8 +121,8 @@ export function setupResizableRoot(
   useEffect(host, () => {
     updateResizableRootStyles(
       host,
-      Math.max(props.width.get() || 0, 1),
-      Math.max(props.height.get() || 0, 1),
+      props.width.get(),
+      props.height.get(),
       props.aspectRatio.get(),
     )
   })
@@ -131,23 +132,38 @@ export function setupResizableRoot(
 
 function updateResizableRootStyles(
   host: HostElement,
-  width: number,
-  height: number,
+  width: number | null,
+  height: number | null,
   aspectRatio: number | null,
 ) {
-  host.style.width = isFinitePositiveNumber(width) ? `${width}px` : ''
-
-  host.style.height = isFinitePositiveNumber(height) ? `${height}px` : ''
+  const hasWidth = isFinitePositiveNumber(width)
+  const hasHeight = isFinitePositiveNumber(height)
+  const styles: {
+    width: string
+    height: string
+    aspectRatio?: string
+  } = {
+    width: hasWidth ? `${width}px` : 'auto',
+    height: hasHeight ? `${height}px` : 'auto',
+  }
 
   if (isFinitePositiveNumber(aspectRatio)) {
-    host.style.aspectRatio = `${aspectRatio}`
+    styles.aspectRatio = `${aspectRatio}`
 
-    if (width && width > 0 && aspectRatio >= 1) {
-      host.style.height = 'auto'
-    } else if (height && height > 0 && aspectRatio <= 1) {
-      host.style.width = 'min-content'
+    // A known width drives the box in both orientations: `height: auto` lets the
+    // aspect ratio derive the height. Only when no width is known does the box
+    // derive its width from the height via `min-content`. Driving a portrait box
+    // with `min-content` relied on the aspect-ratio transferred size, which
+    // WebKit does not resolve, so the box collapsed to its minimum size.
+    // https://bugs.webkit.org/show_bug.cgi?id=318221
+    if (hasWidth) {
+      styles.height = 'auto'
+    } else if (hasHeight) {
+      styles.width = 'min-content'
     }
   }
+
+  assignStyles(host, styles)
 }
 
 const ResizableRootElementBase: HostElementConstructor<ResizableRootProps> = defineCustomElement(

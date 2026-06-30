@@ -12,6 +12,7 @@ import {
   type OnResizeEnd,
   type OnResizeStart,
 } from './context.ts'
+import { assignStyles } from '../../utils/assign-styles.ts'
 
 export interface ResizableRootProps {
   /**
@@ -138,12 +139,18 @@ function updateResizableRootStyles(
   const hasWidth = isFinitePositiveNumber(width)
   const hasHeight = isFinitePositiveNumber(height)
 
-  host.style.width = `${Math.max(width || 0, 1)}px`
+  const styles: {
+    width: string
+    height: string
+    aspectRatio?: string
+  } = {
+    width: `${Math.max(width || 0, 1)}px`,
+      height: `${Math.max(height || 0, 1)}px`
+  }
 
-  host.style.height = `${Math.max(height || 0, 1)}px`
 
   if (isFinitePositiveNumber(aspectRatio)) {
-    host.style.aspectRatio = `${aspectRatio}`
+    styles.aspectRatio = `${aspectRatio}`
 
     // A known width drives the box in both orientations: `height: auto` lets the
     // aspect ratio derive the height. Only when no width is known does the box
@@ -151,11 +158,14 @@ function updateResizableRootStyles(
     // with `min-content` relied on the aspect-ratio transferred size, which
     // WebKit does not resolve, so the box collapsed to its minimum size.
     if (hasWidth) {
-      host.style.height = 'auto'
+      styles.height = 'auto'
     } else if (hasHeight) {
-      host.style.width = 'min-content'
+      styles.width = 'min-content'
     }
   }
+
+
+  assignStyles(host, styles)
 }
 
 const ResizableRootElementBase: HostElementConstructor<ResizableRootProps> = defineCustomElement(

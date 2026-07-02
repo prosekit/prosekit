@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.8.0",
+  "packageManager": "pnpm@11.9.0",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -55,6 +55,6 @@
     "turbo": "^2.9.16",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.94.0"
+    "wrangler": "^4.106.0"
   }
 }

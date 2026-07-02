@@ -3,3 +3,9 @@
   background-color: #8888884d;
   box-shadow: 0 0 0 2px #8888884d;
 }
+
+.ProseMirror.prosekit-virtual-selection-active::selection,
+.ProseMirror.prosekit-virtual-selection-active *::selection {
+  background: transparent;
+  color: inherit;
+}

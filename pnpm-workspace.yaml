@@ -43,3 +43,4 @@ trustLockfile: true
 minimumReleaseAgeExclude:
   - "starlight-theme-nova"
   - "@aria-ui/*"
+  - prosemirror-view@1.42.0

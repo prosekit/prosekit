@@ -16,7 +16,7 @@ let networkStatus: 'fast' | 'slow' | 'offline' = 'slow'
 export function simulateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
   networkStatus = status
   if (status !== 'offline') {
-    connectHandlers.forEach((handler) => handler())
+    for (const handler of connectHandlers) handler()
     connectHandlers.length = 0
   }
 }

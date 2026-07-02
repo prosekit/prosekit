@@ -38,7 +38,7 @@ function unionChildren(
   b: Map<number, FacetNode>,
 ): Map<number, FacetNode> {
   const merged = new Map(a)
-  for (const [key, valueB] of b.entries()) {
+  for (const [key, valueB] of b) {
     const valueA = a.get(key)
     merged.set(key, valueA ? unionFacetNode(valueA, valueB) : valueB)
   }
@@ -50,7 +50,7 @@ function subtractChildren(
   b: Map<number, FacetNode>,
 ): Map<number, FacetNode> {
   const merged = new Map(a)
-  for (const [key, valueB] of b.entries()) {
+  for (const [key, valueB] of b) {
     const valueA = a.get(key)
     if (valueA) {
       merged.set(key, subtractFacetNode(valueA, valueB))

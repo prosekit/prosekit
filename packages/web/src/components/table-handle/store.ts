@@ -59,7 +59,7 @@ export function createTableHandleStore(
 
   const referenceCellInfo = createSignal<HoveringCellInfo | undefined>(undefined)
 
-  let prevHoveringCellInfo: HoveringCellInfo | undefined = undefined
+  let prevHoveringCellInfo: HoveringCellInfo | undefined
 
   const getReferenceCell = computed((): HoveringCellInfo | undefined => {
     if (!getCanShow()) {

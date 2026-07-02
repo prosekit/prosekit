@@ -38,7 +38,7 @@
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
     "astro": "^7.0.2",
-    "astro-minify-html-swc": "^0.1.11",
+    "astro-minify-html-swc": "^0.1.12",
     "astrobook": "^0.13.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "clsx": "^2.1.1",

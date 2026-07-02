@@ -348,7 +348,7 @@
     "prosekit": "workspace:*",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-tweet": "^3.3.0",
+    "react-tweet": "^3.3.1",
     "shadcn-schema": "^0.6.0",
     "svelte-check": "^4.5.0",
     "tailwind-merge": "^3.6.0",

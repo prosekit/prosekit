@@ -65,31 +65,31 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     const pre = editor.locate('pre', { hasText: 'code block' })
 
     await vi.waitFor(async () => {
-    const boxHandleP1 = await measure(p1)
-    const boxHandleP2 = await measure(p2)
-    const boxHandleP3 = await measure(p3)
-    const boxHandlePre = await measure(pre)
-    const boxEditor = await getBoundingBox(editor)
-    const boxPre = await getBoundingBox(pre)
+      const boxHandleP1 = await measure(p1)
+      const boxHandleP2 = await measure(p2)
+      const boxHandleP3 = await measure(p3)
+      const boxHandlePre = await measure(pre)
+      const boxEditor = await getBoundingBox(editor)
+      const boxPre = await getBoundingBox(pre)
 
-    // Expect the block handle to be inside the editor
-    expect(boxEditor.x).toBeLessThan(boxHandleP1.x)
-    expect(boxEditor.y).toBeLessThan(boxHandleP1.y)
-    expect(boxEditor.x).toBeLessThan(boxHandleP2.x)
-    expect(boxEditor.y).toBeLessThan(boxHandleP2.y)
-    expect(boxEditor.x).toBeLessThan(boxHandleP3.x)
-    expect(boxEditor.y).toBeLessThan(boxHandleP3.y)
-    expect(boxEditor.x).toBeLessThan(boxHandlePre.x)
-    expect(boxEditor.y).toBeLessThan(boxHandlePre.y)
+      // Expect the block handle to be inside the editor
+      expect(boxEditor.x).toBeLessThan(boxHandleP1.x)
+      expect(boxEditor.y).toBeLessThan(boxHandleP1.y)
+      expect(boxEditor.x).toBeLessThan(boxHandleP2.x)
+      expect(boxEditor.y).toBeLessThan(boxHandleP2.y)
+      expect(boxEditor.x).toBeLessThan(boxHandleP3.x)
+      expect(boxEditor.y).toBeLessThan(boxHandleP3.y)
+      expect(boxEditor.x).toBeLessThan(boxHandlePre.x)
+      expect(boxEditor.y).toBeLessThan(boxHandlePre.y)
 
-    // Expect the block handle moves
-    expect(boxHandleP1.y).toBeLessThan(boxHandleP2.y)
-    expect(boxHandleP1.x).toBeCloseTo(boxHandleP2.x, 0)
+      // Expect the block handle moves
+      expect(boxHandleP1.y).toBeLessThan(boxHandleP2.y)
+      expect(boxHandleP1.x).toBeCloseTo(boxHandleP2.x, 0)
 
-    // Expect the block handle aligns with the code block
-    expect(boxPre.y).toBeCloseTo(boxHandlePre.y, 0)
+      // Expect the block handle aligns with the code block
+      expect(boxPre.y).toBeCloseTo(boxHandlePre.y, 0)
       expect(boxPre.x).toBeGreaterThan(boxHandlePre.x)
-      })
+    })
   })
 
   it(`position the block handle when hovering over a list node with multiple paragraphs`, async () => {

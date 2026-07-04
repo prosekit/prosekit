@@ -48,8 +48,8 @@
   },
   "dependencies": {
     "@aria-ui/core": "^0.2.1",
-    "@aria-ui/elements": "^0.1.11",
-    "@aria-ui/utils": "^0.1.6",
+    "@aria-ui/elements": "^0.1.12",
+    "@aria-ui/utils": "^0.1.7",
     "@floating-ui/dom": "^1.7.6",
     "@ocavue/utils": "^1.7.0",
     "@prosekit/core": "workspace:^",

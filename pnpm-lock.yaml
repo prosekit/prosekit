@@ -189,8 +189,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       prosemirror-splittable:
-        specifier: ^1.0.0
-        version: 1.0.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
+        specifier: ^1.1.0
+        version: 1.1.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
       type-fest:
         specifier: ^5.7.0
         version: 5.7.0
@@ -278,8 +278,8 @@ importers:
         specifier: ^0.1.5
         version: 0.1.5
       prosemirror-flat-list:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.0
+        version: 0.7.0
       prosemirror-gapcursor:
         specifier: ^1.4.1
         version: 1.4.1
@@ -6371,8 +6371,8 @@ packages:
   prosemirror-enter-rules@0.1.5:
     resolution: {integrity: sha512-7K0r48x821Mptgx5rHDipmNRlOW+GxRtF0K7AJuoKnfhJTdtHb67WvpJ32IzSPnCG7oSNR0cbq3/eP8ule/2/A==}
 
-  prosemirror-flat-list@0.6.0:
-    resolution: {integrity: sha512-/C11nhH5gdNxj9qVKRlaox/ndK4+X1o/hGTkNCJWdzGVqBVgRkKI/dc6GdZ4/RNvudEtgnTk4QOMOB0zcFTeHQ==}
+  prosemirror-flat-list@0.7.0:
+    resolution: {integrity: sha512-i2nDk+MdHUOYjT++Etv9SfZH1KA/Cn44U8HT3DGN6W+ta5xgxmGhKOFi3SDfXBCfR4AjimWhTsM8SLLaHo3teA==}
 
   prosemirror-gapcursor@1.4.1:
     resolution: {integrity: sha512-pMdYaEnjNMSwl11yjEGtgTmLkR08m/Vl+Jj443167p9eB3HVQKhYCc4gmHVDsLPODfZfjr/MmirsdyZziXbQKw==}
@@ -6439,8 +6439,8 @@ packages:
   prosemirror-search@1.1.1:
     resolution: {integrity: sha512-1dbxbF1YYlP9mYJnFbfdOb9+RTdFHeZ/GwgEyHD4jg9szA8EVitMCnfXUBYLmFun500FMZBkRvcV0gp5BpLw4Q==}
 
-  prosemirror-splittable@1.0.0:
-    resolution: {integrity: sha512-ItHOL57msNnu6G5IBAvZDglPrlBAI3404vhe2yVWW73jSAKCH76bh5TzMA6hYWi4vB+Y6popf+kxSXrMDWye+w==}
+  prosemirror-splittable@1.1.0:
+    resolution: {integrity: sha512-UOdkczz10n/I2S4cmM/DUvFlKILDqOiFKDsYZy6Elx4TublHhTY99uzXMDK2zQO9oQqmmhEPMa44+tNxD/eAwA==}
     peerDependencies:
       prosemirror-model: ^1.21.0
       prosemirror-state: ^1.4.3
@@ -13755,12 +13755,13 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.0
 
-  prosemirror-flat-list@0.6.0:
+  prosemirror-flat-list@0.7.0:
     dependencies:
       prosemirror-commands: 1.7.1
       prosemirror-inputrules: 1.5.1
       prosemirror-model: 1.25.9
       prosemirror-safari-ime-span: 1.0.2
+      prosemirror-splittable: 1.1.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0)
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
       prosemirror-view: 1.42.0
@@ -13822,7 +13823,7 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.0
 
-  prosemirror-splittable@1.0.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0):
+  prosemirror-splittable@1.1.0(prosemirror-model@1.25.9)(prosemirror-state@1.4.4)(prosemirror-transform@1.12.0):
     optionalDependencies:
       prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4

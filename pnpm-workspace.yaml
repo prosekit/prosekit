@@ -47,8 +47,8 @@ minimumReleaseAgeExclude:
   - prosemirror-splittable@1.1.0
 
 overrides:
-  "@aria-ui/cli": "https://pkg.pr.new/@aria-ui/cli@4a85924"
-  "@aria-ui/core": "https://pkg.pr.new/@aria-ui/core@4a85924"
-  "@aria-ui/elements": "https://pkg.pr.new/@aria-ui/elements@4a85924"
-  "@aria-ui/utils": "https://pkg.pr.new/@aria-ui/utils@4a85924"
+  "@aria-ui/cli": "https://pkg.pr.new/@aria-ui/cli@d3f767d"
+  "@aria-ui/core": "https://pkg.pr.new/@aria-ui/core@d3f767d"
+  "@aria-ui/elements": "https://pkg.pr.new/@aria-ui/elements@d3f767d"
+  "@aria-ui/utils": "https://pkg.pr.new/@aria-ui/utils@d3f767d"
 blockExoticSubdeps: false

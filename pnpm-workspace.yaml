@@ -51,3 +51,4 @@ overrides:
   "@aria-ui/core": "https://pkg.pr.new/@aria-ui/core@4a85924"
   "@aria-ui/elements": "https://pkg.pr.new/@aria-ui/elements@4a85924"
   "@aria-ui/utils": "https://pkg.pr.new/@aria-ui/utils@4a85924"
+blockExoticSubdeps: false

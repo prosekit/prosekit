@@ -39,6 +39,7 @@
     "remove-types-versions",
     "resizable-width-driven-sizing",
     "table-editing-plugins",
+    "table-handle-menu-scroll",
     "trigger-autocomplete-transaction",
     "update-deps",
     "update-deps2"

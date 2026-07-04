@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.17
+
+### Patch Changes
+
+- [`2a22b7d`](https://github.com/ocavue/prosekit/commit/2a22b7dcd816ca0971def535805471661858e712) ![](https://prosekit.dev/b/web)
+
+  Keep the table handles and an open handle menu visible while scrolling.
+
 ## 0.22.0-beta.16
 
 ### Patch Changes

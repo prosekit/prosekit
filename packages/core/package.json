@@ -41,7 +41,7 @@
     "@ocavue/utils": "^1.7.0",
     "@prosekit/pm": "workspace:^",
     "orderedmap": "^2.1.1",
-    "prosemirror-splittable": "^1.0.0",
+    "prosemirror-splittable": "^1.1.0",
     "type-fest": "^5.7.0"
   },
   "devDependencies": {

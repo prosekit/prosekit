@@ -1,4 +1,4 @@
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 import { page, userEvent, type Locator } from 'vitest/browser'
 
@@ -64,6 +64,7 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     const p3 = editor.locate('p', { hasText: 'Paragraph 3' })
     const pre = editor.locate('pre', { hasText: 'code block' })
 
+    await vi.waitFor(async () => {
     const boxHandleP1 = await measure(p1)
     const boxHandleP2 = await measure(p2)
     const boxHandleP3 = await measure(p3)
@@ -87,7 +88,8 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
 
     // Expect the block handle aligns with the code block
     expect(boxPre.y).toBeCloseTo(boxHandlePre.y, 0)
-    expect(boxPre.x).toBeGreaterThan(boxHandlePre.x)
+      expect(boxPre.x).toBeGreaterThan(boxHandlePre.x)
+      })
   })
 
   it(`position the block handle when hovering over a list node with multiple paragraphs`, async () => {

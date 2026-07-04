@@ -57,19 +57,20 @@ export function createTableHandleStore(
     isColumnMenuOpen.set(open)
   }
 
-  const referenceCellInfo = createSignal<HoveringCellInfo | undefined>(undefined)
-
   let prevHoveringCellInfo: HoveringCellInfo | undefined = undefined
 
   const getReferenceCell = computed((): HoveringCellInfo | undefined => {
-    if (!getCanShow()) {
-      referenceCellInfo.set(undefined)
-      return
-    }
-
-    // Do not toggle/update the menu when hovering another cell if the menu is already open
+    // Keep the handles anchored to the same cell while a menu is open: don't
+    // follow the pointer to another cell, and don't let scrolling (or the
+    // other `getCanShow` conditions) hide the handles. Hiding them would also
+    // hide the open menu without closing it, leaving a menu that is invisible
+    // but still open.
     if (getHasMenuOpen()) {
       return prevHoveringCellInfo
+    }
+
+    if (!getCanShow()) {
+      return undefined
     }
 
     prevHoveringCellInfo = getHoveringCellInfo()

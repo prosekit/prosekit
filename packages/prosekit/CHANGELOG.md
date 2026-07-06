@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.18
+
+### Patch Changes
+
+- [`1ed0635`](https://github.com/ocavue/prosekit/commit/1ed063562a03866e4f6427ffdd30fcf421310460) ![](https://prosekit.dev/b/extensions)
+
+  Fix `defineVirtualSelection` leaving a stale native selection visible on top of the virtual selection after the editor loses focus.
+
 ## 0.22.0-beta.17
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.19
+
+### Patch Changes
+
+- [`e6747b3`](https://github.com/ocavue/prosekit/commit/e6747b3ead70e85fb46ce53e021c03d6705c3d80) ![](https://prosekit.dev/b/extensions)
+
+  Typing `---` in an otherwise-empty block (e.g. an empty list item) now replaces that block with the horizontal rule instead of inserting the rule inside it.
+
 ## 0.22.0-beta.18
 
 ### Patch Changes

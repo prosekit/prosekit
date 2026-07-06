@@ -33,6 +33,7 @@
     "get-mark-range",
     "horizontal-rule-attr-roundtrip",
     "horizontal-rule-input-rule-guard",
+    "horizontal-rule-replace-empty-item",
     "inline-popover-anchor",
     "mark-builder-create",
     "node-mark-builders",

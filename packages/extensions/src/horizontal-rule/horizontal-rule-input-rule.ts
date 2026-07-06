@@ -1,12 +1,11 @@
-import { defaultBlockAt, getNodeType, isNodeSelection, union, type PlainExtension } from '@prosekit/core'
+import { defaultBlockAt, getNodeType, isNodeSelection, type PlainExtension } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
 import { TextSelection } from '@prosekit/pm/state'
 
 import { defineInputRule } from '../input-rule/index.ts'
 
 export function defineHorizontalRuleInputRule(): PlainExtension {
-  return union(
-    defineInputRule(
+  return  defineInputRule(
       new InputRule(/^---$/, (state, match, start, end) => {
         const { schema } = state
         const { tr } = state
@@ -36,6 +35,5 @@ export function defineHorizontalRuleInputRule(): PlainExtension {
         }
         return tr.scrollIntoView()
       }),
-    ),
-  )
+    )
 }

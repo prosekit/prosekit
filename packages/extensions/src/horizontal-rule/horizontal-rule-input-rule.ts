@@ -1,6 +1,6 @@
-import { defaultBlockAt, getNodeType, union, type PlainExtension } from '@prosekit/core'
+import { defaultBlockAt, getNodeType, isNodeSelection, union, type PlainExtension } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
-import { NodeSelection, TextSelection } from '@prosekit/pm/state'
+import { TextSelection } from '@prosekit/pm/state'
 
 import { defineInputRule } from '../input-rule/index.ts'
 
@@ -24,7 +24,7 @@ export function defineHorizontalRuleInputRule(): PlainExtension {
         tr.replaceRangeWith($start.before(), end, node)
         // When no textblock follows the rule, append one to hold the caret.
         const { selection } = tr
-        if (selection instanceof NodeSelection && selection.node.type === type) {
+        if (isNodeSelection(selection) && selection.node.type === type) {
           const pos = selection.$to.pos
           const $pos = tr.doc.resolve(pos)
           const blockType = defaultBlockAt($pos.parent.contentMatchAt($pos.index()))

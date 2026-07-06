@@ -1,6 +1,6 @@
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { PluginKey, ProseMirrorPlugin, type EditorState, type Transaction } from '@prosekit/pm/state'
-import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 
 /**
  * @internal
@@ -36,6 +36,27 @@ function getFocusState(state: EditorState): PluginState | undefined {
   return key.getState(state)
 }
 
+/**
+ * Removes the native selection when it's inside the editor. Otherwise the
+ * browser would keep painting it while the editor is blurred, and any DOM
+ * update dispatched while blurred (starting with the virtual selection
+ * decoration itself) re-anchors its endpoints to node boundaries, making the
+ * painted highlight drift away from the actual selection. ProseMirror
+ * restores the DOM selection from the state when the editor regains focus.
+ */
+function removeNativeSelection(view: EditorView): void {
+  const { dom, root } = view
+  const { selection } = view.state
+  if (selection.empty || !selection.visible) return
+
+  const domSelection = 'getSelection' in root
+    ? root.getSelection()
+    : window.getSelection()
+  if (domSelection?.anchorNode && dom.contains(domSelection.anchorNode)) {
+    domSelection.removeAllRanges()
+  }
+}
+
 const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
   key,
   state: {
@@ -57,6 +78,8 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
         // Don't show the decoration if the dom is blurred because the focus
         // moved outside the browser window.
         if (activeElement === dom) return
+
+        removeNativeSelection(view)
 
         view.dispatch(setFocusMeta(view.state.tr, true))
       },

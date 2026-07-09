@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ex
 
+export SKIP_SIMPLE_GIT_HOOKS=1
+export SKIP_INSTALL_SIMPLE_GIT_HOOKS=1
+
 cd "$(dirname "$0")/.."
 DEV_DIR=$(pwd)
 

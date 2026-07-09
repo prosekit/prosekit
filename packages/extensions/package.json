@@ -97,7 +97,7 @@
     "prosemirror-changeset": "^2.4.1",
     "prosemirror-drop-indicator": "^0.1.4",
     "prosemirror-dropcursor": "^1.8.3",
-    "prosemirror-enter-rules": "^0.1.5",
+    "prosemirror-enter-rules": "^0.1.6",
     "prosemirror-flat-list": "^0.7.1",
     "prosemirror-gapcursor": "^1.4.1",
     "prosemirror-highlight": "^0.15.2",

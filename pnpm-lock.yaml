@@ -281,8 +281,8 @@ importers:
         specifier: ^1.8.3
         version: 1.8.3
       prosemirror-enter-rules:
-        specifier: ^0.1.5
-        version: 0.1.5
+        specifier: ^0.1.6
+        version: 0.1.6
       prosemirror-flat-list:
         specifier: ^0.7.1
         version: 0.7.1
@@ -6531,8 +6531,8 @@ packages:
   prosemirror-dropcursor@1.8.3:
     resolution: {integrity: sha512-FoYbsJR8gK+DGlqhNoE29Loa38eIZPzQRIb1VMaDNBoo4OLP6vVof/jR8qFY/6XvUd6Dhug8MDCHl2a/h8RTfQ==}
 
-  prosemirror-enter-rules@0.1.5:
-    resolution: {integrity: sha512-7K0r48x821Mptgx5rHDipmNRlOW+GxRtF0K7AJuoKnfhJTdtHb67WvpJ32IzSPnCG7oSNR0cbq3/eP8ule/2/A==}
+  prosemirror-enter-rules@0.1.6:
+    resolution: {integrity: sha512-l/mddqScZT0FICDNu6Kijs6zpAPRnMZG4pZAlCHIl7uVg26kLSK+NM3JuKkFKBN1Zs2l1Qi/SYc2Z6dmA4elPQ==}
 
   prosemirror-flat-list@0.7.1:
     resolution: {integrity: sha512-K1rh2h5SEVURE+KEH31cCI3ckEGpjAz1DkmyO5eOD9uAFaIMfTTMyq2OrfRmM+tXo8j7zSTo2G0eARK7vAoXFg==}
@@ -14042,7 +14042,7 @@ snapshots:
       prosemirror-transform: 1.12.0
       prosemirror-view: 1.42.0
 
-  prosemirror-enter-rules@0.1.5:
+  prosemirror-enter-rules@0.1.6:
     dependencies:
       prosemirror-keymap: 1.2.3
       prosemirror-model: 1.25.10
@@ -14096,7 +14096,7 @@ snapshots:
   prosemirror-math@0.2.2:
     dependencies:
       '@ocavue/utils': 1.7.0
-      prosemirror-enter-rules: 0.1.5
+      prosemirror-enter-rules: 0.1.6
       prosemirror-inputrules: 1.5.1
       prosemirror-model: 1.25.10
       prosemirror-state: 1.4.4

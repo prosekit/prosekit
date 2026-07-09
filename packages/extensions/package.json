@@ -105,7 +105,7 @@
     "prosemirror-search": "^1.1.1",
     "prosemirror-tables": "^1.8.5",
     "server-dom-shim": "^1.1.0",
-    "shiki": "^4.3.0"
+    "shiki": "^4.3.1"
   },
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
@@ -142,7 +142,7 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "tsdown": "catalog:",
-    "type-fest": "^5.7.0",
+    "type-fest": "^5.8.0",
     "typescript": "catalog:",
     "unified": "^11.0.5",
     "vitest": "catalog:",

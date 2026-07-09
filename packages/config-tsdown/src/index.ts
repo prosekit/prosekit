@@ -22,7 +22,7 @@ export function config(userConfig?: UserConfig): UserConfig {
   const tsdownEntry: Record<string, string> = {}
   for (const [exportName, exportValue] of Object.entries(packageJson.exports ?? {})) {
     let entryName: string = exportName
-    let entryValue: string | undefined = undefined
+    let entryValue: string | undefined
 
     if (entryName === '.') {
       entryName = 'index'

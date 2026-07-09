@@ -241,7 +241,7 @@ var KeyboardEventTarget = class extends EventTarget {
 	}
 };
 function defaultQueryBuilder(match) {
-	return match[0].toLowerCase().replaceAll(/[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/g, "").replaceAll(/\s\s+/g, " ").trim();
+	return match[0].toLowerCase().replaceAll(/[!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/g, "").replaceAll(/\s{2,}/g, " ").trim();
 }
 /** @internal */
 const AutocompleteRootPropsDeclaration = /* @__PURE__ */ defineProps({

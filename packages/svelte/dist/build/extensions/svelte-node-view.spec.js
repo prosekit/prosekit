@@ -26,12 +26,12 @@ describe('SvelteNodeView', () => {
         await expect.element(imageRefresh).toBeInTheDocument();
         const urls = new Set();
         const check = () => {
-            imageRefresh.elements().forEach((element) => {
+            for (const element of imageRefresh.elements()) {
                 const url = element.getAttribute('data-url');
                 if (url) {
                     urls.add(url);
                 }
-            });
+            }
             return urls.size >= 5;
         };
         await expect.poll(check, { interval: 50, timeout: 30000 }).toBe(true);
@@ -53,12 +53,12 @@ describe('SvelteNodeView', () => {
         await expect.element(imageRefresh.nth(3)).not.toBeInTheDocument();
         const urls = new Set();
         const check = () => {
-            imageRefresh.elements().forEach((element) => {
+            for (const element of imageRefresh.elements()) {
                 const url = element.getAttribute('data-url');
                 if (url) {
                     urls.add(url);
                 }
-            });
+            }
             return urls.size >= 15;
         };
         await expect.poll(check, { interval: 50, timeout: 30000 }).toBe(true);

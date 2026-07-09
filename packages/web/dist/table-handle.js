@@ -45,7 +45,7 @@ function createTableHandleStore(getHoveringCellInfo, getCanShow) {
 	const setIsColumnMenuOpen = (open) => {
 		isColumnMenuOpen.set(open);
 	};
-	let prevHoveringCellInfo = void 0;
+	let prevHoveringCellInfo;
 	const getReferenceCell = computed(() => {
 		if (getHasMenuOpen()) return prevHoveringCellInfo;
 		if (!getCanShow()) return;

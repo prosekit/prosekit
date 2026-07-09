@@ -373,7 +373,7 @@ function subtractInput(a, b) {
 }
 function unionChildren(a, b) {
 	const merged = new Map(a);
-	for (const [key, valueB] of b.entries()) {
+	for (const [key, valueB] of b) {
 		const valueA = a.get(key);
 		merged.set(key, valueA ? unionFacetNode(valueA, valueB) : valueB);
 	}
@@ -381,7 +381,7 @@ function unionChildren(a, b) {
 }
 function subtractChildren(a, b) {
 	const merged = new Map(a);
-	for (const [key, valueB] of b.entries()) {
+	for (const [key, valueB] of b) {
 		const valueA = a.get(key);
 		if (valueA) merged.set(key, subtractFacetNode(valueA, valueB));
 	}
@@ -941,7 +941,7 @@ var EditorInstance = class {
 			throw new ProseKitError("Editor is already mounted");
 		}
 		this.view = new EditorView({ mount: place }, this.directEditorProps);
-		this.afterMounted.forEach((callback) => callback());
+		for (const callback of this.afterMounted) callback();
 		this.afterMounted.length = 0;
 	}
 	unmount() {

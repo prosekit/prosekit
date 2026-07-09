@@ -384,7 +384,8 @@ function defineElementHoverHandler(handler) {
 		if ($pos.depth > 0 && $pos.index($pos.depth) === 0) {
 			const parentPos = $pos.before($pos.depth);
 			const parentNode = $pos.parent;
-			handleElement(parentNode, parentPos, element, view.nodeDOM(parentPos));
+			const parentElement = view.nodeDOM(parentPos);
+			handleElement(parentNode, parentPos, element, parentElement);
 		} else handleElement(node, pos, element);
 	};
 	return union(defineDOMEventHandler("pointermove", throttle(handlePointerEvent, 200)), defineDOMEventHandler("pointerenter", handlePointerEvent), defineDOMEventHandler("pointerout", handlePointerEvent), defineDOMEventHandler("keypress", () => handler()));

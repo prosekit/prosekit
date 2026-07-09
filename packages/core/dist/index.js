@@ -668,13 +668,13 @@ const pluginViewFacet = defineFacet({
 		const plugin = new ProseMirrorPlugin({
 			key: pluginKey,
 			view: (view) => {
-				mountHandlers.forEach((fn) => fn(view));
+				for (const fn of mountHandlers) fn(view);
 				return {
 					update: (view, prevState) => {
-						updateHandlers.forEach((fn) => fn(view, prevState));
+						for (const fn of updateHandlers) fn(view, prevState);
 					},
 					destroy: () => {
-						unmountHandlers.forEach((fn) => fn());
+						for (const fn of unmountHandlers) fn();
 					}
 				};
 			}
@@ -745,22 +745,22 @@ function defineDOMEventHandler(event, handler) {
 */
 const domEventFacet = defineFacet({
 	reduce: () => {
-		const setHandlersMap = {};
-		const combinedHandlerMap = {};
+		const setHandlersMap = /* @__PURE__ */ new Map();
+		const combinedHandlers = {};
 		let plugin;
 		const update = (payloads) => {
 			let hasNewEvent = false;
-			for (const [event] of payloads) if (!setHandlersMap[event]) {
+			for (const [event] of payloads) if (!setHandlersMap.has(event)) {
 				hasNewEvent = true;
 				const [setHandlers, combinedHandler] = combineEventHandlers();
-				setHandlersMap[event] = setHandlers;
-				combinedHandlerMap[event] = combinedHandler;
+				setHandlersMap.set(event, setHandlers);
+				combinedHandlers[event] = combinedHandler;
 			}
 			const map = groupEntries(payloads);
-			for (const [event, setHandlers] of Object.entries(setHandlersMap)) setHandlers(map[event] ?? []);
+			for (const [event, setHandlers] of setHandlersMap) setHandlers(map[event] ?? []);
 			if (hasNewEvent) plugin = new ProseMirrorPlugin({
 				key: new PluginKey("prosekit-dom-event-handler"),
-				props: { handleDOMEvents: combinedHandlerMap }
+				props: { handleDOMEvents: combinedHandlers }
 			});
 		};
 		return function reducer(inputs) {
@@ -919,7 +919,7 @@ function defineFocusChangeHandler(handler) {
 *
 * @internal
 */
-const isApple = typeof navigator !== "undefined" ? /Mac|iP(hone|[ao]d)/.test(navigator.platform) : false;
+const isApple = typeof navigator !== "undefined" ? /Mac|iP(?:hone|[ao]d)/.test(navigator.platform) : false;
 /**
 * Adds a set of keybindings to the editor. Please read the
 * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
@@ -1129,7 +1129,7 @@ const schemaSpecFacet = defineFacet({
 	reducer: (specs) => {
 		let nodes = OrderedMap.from({});
 		let marks = OrderedMap.from({});
-		let topNode = void 0;
+		let topNode;
 		for (const spec of specs) {
 			nodes = nodes.append(spec.nodes);
 			marks = marks.append(spec.marks ?? {});
@@ -1273,7 +1273,7 @@ const markSpecFacet = defineFacet({
 			else specs = specs.addToStart(name, spec);
 		}
 		const groupedAttrs = mapGroupBy(attrPayloads, (payload) => payload.type);
-		for (const [type, attrs] of groupedAttrs.entries()) {
+		for (const [type, attrs] of groupedAttrs) {
 			if (!attrs) continue;
 			const oldSpec = specs.get(type);
 			assert(oldSpec, `Mark type ${type} must be defined`);
@@ -1334,7 +1334,14 @@ function defineMarkView(options) {
 const markViewFacet = defineFacet({
 	reducer: (inputs) => {
 		const markViews = {};
-		for (const input of inputs) if (!markViews[input.name]) markViews[input.name] = input.constructor;
+		const seen = /* @__PURE__ */ new Set();
+		for (const input of inputs) {
+			const { name, constructor } = input;
+			if (!seen.has(name)) {
+				seen.add(name);
+				markViews[name] = constructor;
+			}
+		}
 		return () => [new ProseMirrorPlugin({
 			key: new PluginKey("prosekit-mark-view"),
 			props: { markViews }
@@ -1371,7 +1378,7 @@ function defineNodeAttr(options) {
 const nodeSpecFacet = defineFacet({
 	reducer: (payloads) => {
 		let specs = OrderedMap.from({});
-		let topNodeName = void 0;
+		let topNodeName;
 		const specPayloads = payloads.map((input) => input[0]).filter(isNotNullish);
 		const attrPayloads = payloads.map((input) => input[1]).filter(isNotNullish);
 		for (const { name, topNode, ...spec } of specPayloads) {
@@ -1381,7 +1388,7 @@ const nodeSpecFacet = defineFacet({
 			else specs = specs.addToStart(name, spec);
 		}
 		const groupedAttrs = mapGroupBy(attrPayloads, (payload) => payload.type);
-		for (const [type, attrs] of groupedAttrs.entries()) {
+		for (const [type, attrs] of groupedAttrs) {
 			if (!attrs) continue;
 			const oldSpec = specs.get(type);
 			assert(oldSpec, `Node type ${type} must be defined`);
@@ -1443,7 +1450,14 @@ function defineNodeView(options) {
 const nodeViewFacet = defineFacet({
 	reducer: (inputs) => {
 		const nodeViews = {};
-		for (const input of inputs) if (!nodeViews[input.name]) nodeViews[input.name] = input.constructor;
+		const seen = /* @__PURE__ */ new Set();
+		for (const input of inputs) {
+			const { name, constructor } = input;
+			if (!seen.has(name)) {
+				seen.add(name);
+				nodeViews[name] = constructor;
+			}
+		}
 		return () => [new ProseMirrorPlugin({
 			key: new PluginKey("prosekit-node-view"),
 			props: { nodeViews }

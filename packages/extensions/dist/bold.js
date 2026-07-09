@@ -42,7 +42,7 @@ function defineBoldSpec() {
 			{
 				style: "font-weight",
 				getAttrs: (value) => {
-					return typeof value === "string" && /^(bold(er)?|[5-9]\d{2,})$/.test(value) && null;
+					return typeof value === "string" && /^(?:bold(?:er)?|[5-9]\d{2,})$/.test(value) && null;
 				}
 			}
 		],

@@ -224,10 +224,10 @@ function unobserveElement(element) {
 	getResizeObserver().unobserve(element);
 }
 function findLeaderChunk(element, group) {
-	return element.closest(".ProseMirror")?.querySelector(`${PAGE_CHUNK_TAG_NAME}[data-group="${group}"][data-size]`);
+	return element.closest(".ProseMirror")?.querySelector(`${PAGE_CHUNK_TAG_NAME}[data-group="${CSS.escape(group)}"][data-size]`);
 }
 function findAllChunks(element, group) {
-	const elements = element.closest(".ProseMirror")?.querySelectorAll(`${PAGE_CHUNK_TAG_NAME}[data-group="${group}"]`);
+	const elements = element.closest(".ProseMirror")?.querySelectorAll(`${PAGE_CHUNK_TAG_NAME}[data-group="${CSS.escape(group)}"]`);
 	return Array.from(elements || []);
 }
 function definePageRendering(options = {}) {

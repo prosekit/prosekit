@@ -13,7 +13,7 @@ function defineMentionSpec() {
 			}
 		},
 		inline: true,
-		leafText: (node) => node.attrs.value.toString(),
+		leafText: (node) => node.attrs.value,
 		parseDOM: [{
 			tag: `span[data-mention]`,
 			getAttrs: (dom) => ({
@@ -26,10 +26,10 @@ function defineMentionSpec() {
 			return [
 				"span",
 				{
-					"data-id": node.attrs.id.toString(),
-					"data-mention": node.attrs.kind.toString()
+					"data-id": node.attrs.id,
+					"data-mention": node.attrs.kind
 				},
-				node.attrs.value.toString()
+				node.attrs.value
 			];
 		}
 	});

@@ -97,7 +97,7 @@ function updateResizableRootStyles(host, width, height, aspectRatio) {
 		height: hasHeight ? `${height}px` : "auto"
 	};
 	if (isFinitePositiveNumber(aspectRatio)) {
-		styles.aspectRatio = `${aspectRatio}`;
+		styles.aspectRatio = String(aspectRatio);
 		if (hasWidth) styles.height = "auto";
 		else if (hasHeight) styles.width = "min-content";
 	}

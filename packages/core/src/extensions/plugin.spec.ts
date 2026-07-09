@@ -39,7 +39,7 @@ describe('plugin', () => {
           return key
         }
       }
-      return undefined
+      return
     }).filter(Boolean)
 
     // The plugins with the highest priority should be listed

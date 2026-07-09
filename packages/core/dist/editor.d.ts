@@ -111,8 +111,8 @@ type CommandCreator<Args extends any[] = any[]> = (...arg: Args) => Command;
 interface CommandTyping {
   [name: string]: any[];
 }
-type ToCommandCreators<T extends CommandTyping> = { [K in keyof T]: CommandCreator<T[K]> };
-type ToCommandAction<T extends CommandTyping> = { [K in keyof T]: CommandAction<T[K]> };
+type ToCommandCreators<T extends CommandTyping> = { [K in keyof T]: CommandCreator<T[K]>; };
+type ToCommandAction<T extends CommandTyping> = { [K in keyof T]: CommandAction<T[K]>; };
 /**
  * @internal
  */
@@ -122,11 +122,11 @@ interface MarkTyping {
 /**
  * @internal
  */
-type ToMarkBuilder<T extends MarkTyping> = { [K in keyof T]: MarkBuilder<T[K]> };
+type ToMarkBuilder<T extends MarkTyping> = { [K in keyof T]: MarkBuilder<T[K]>; };
 /**
  * @internal
  */
-type ToMarkAction<T extends MarkTyping> = { [K in keyof T]: MarkAction<T[K]> };
+type ToMarkAction<T extends MarkTyping> = { [K in keyof T]: MarkAction<T[K]>; };
 /**
  * @internal
  */
@@ -136,11 +136,11 @@ interface NodeTyping {
 /**
  * @internal
  */
-type ToNodeBuilder<T extends NodeTyping> = { [K in keyof T]: NodeBuilder<T[K]> };
+type ToNodeBuilder<T extends NodeTyping> = { [K in keyof T]: NodeBuilder<T[K]>; };
 /**
  * @internal
  */
-type ToNodeAction<T extends NodeTyping> = { [K in keyof T]: NodeAction<T[K]> };
+type ToNodeAction<T extends NodeTyping> = { [K in keyof T]: NodeAction<T[K]>; };
 /**
  * @internal
  */
@@ -200,7 +200,7 @@ type Priority = typeof Priority[keyof typeof Priority];
 /**
  * @internal
  */
-type SimplifyDeeper<T> = { [KeyType in keyof T]: Simplify<T[KeyType]> };
+type SimplifyDeeper<T> = { [KeyType in keyof T]: Simplify<T[KeyType]>; };
 /**
  * @internal
  */

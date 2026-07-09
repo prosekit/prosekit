@@ -103,10 +103,7 @@ declare class UploadTask<Result> {
    *
    * @param options - The options for the upload task.
    */
-  constructor({
-    file,
-    uploader
-  }: {
+  constructor({ file, uploader }: {
     file: File;
     uploader: Uploader<Result>;
   });

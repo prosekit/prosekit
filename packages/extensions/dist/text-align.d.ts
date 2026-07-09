@@ -22,15 +22,12 @@ interface TextAlignOptions<NodeName extends string = string> {
 type TextAlignAttrsExtension<NodeName extends string> = Extension<{
   Nodes: { [K in NodeName]: {
     textAlign: string | null;
-  } };
+  }; };
 }>;
 /**
  * @internal
  */
-declare function setTextAlign({
-  types,
-  value
-}: {
+declare function setTextAlign({ types, value }: {
   types: string[];
   value: string | null;
 }): Command;

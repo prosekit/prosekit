@@ -175,11 +175,7 @@ interface SetNodeAttrsOptions {
  *
  * @param options
  */
-declare function setNodeAttrs({
-  type,
-  attrs,
-  pos
-}: SetNodeAttrsOptions): Command;
+declare function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command;
 interface ToggleMarkOptions {
   /**
    * The mark type to toggle.
@@ -211,12 +207,7 @@ interface ToggleMarkOptions {
  *
  * @param options
  */
-declare function toggleMark({
-  type,
-  attrs,
-  removeWhenPresent,
-  enterInlineAtoms
-}: ToggleMarkOptions): Command;
+declare function toggleMark({ type, attrs, removeWhenPresent, enterInlineAtoms }: ToggleMarkOptions): Command;
 interface ToggleNodeOptions {
   /**
    * The type of the node to toggle.
@@ -233,10 +224,7 @@ interface ToggleNodeOptions {
  *
  * @param options
  */
-declare function toggleNode({
-  type,
-  attrs
-}: ToggleNodeOptions): Command;
+declare function toggleNode({ type, attrs }: ToggleNodeOptions): Command;
 interface ToggleWrapOptions {
   /**
    * The type of the node to toggle.
@@ -450,7 +438,7 @@ type InsertTextOptions = {
   to?: number;
 };
 declare function defineCommands<T extends Record<string, CommandCreator> = Record<string, CommandCreator>>(commands: T): Extension<{
-  Commands: { [K in keyof T]: Parameters<T[K]> };
+  Commands: { [K in keyof T]: Parameters<T[K]>; };
 }>;
 /**
  * @internal
@@ -495,10 +483,7 @@ interface DefaultStateOptions {
  *
  * @param options
  */
-declare function defineDefaultState({
-  defaultSelection,
-  defaultContent
-}: DefaultStateOptions): PlainExtension;
+declare function defineDefaultState({ defaultSelection, defaultContent }: DefaultStateOptions): PlainExtension;
 /**
  * A function that is called when the editor document is changed.
  *
@@ -754,10 +739,7 @@ type HistoryExtension = Extension<{
  *
  * @param options
  */
-declare function defineHistory({
-  depth,
-  newGroupDelay
-}?: HistoryOptions): HistoryExtension;
+declare function defineHistory({ depth, newGroupDelay }?: HistoryOptions): HistoryExtension;
 /**
  * @internal
  */
@@ -784,10 +766,7 @@ interface BaseKeymapOptions {
  *
  * @param options
  */
-declare function defineBaseKeymap({
-  priority,
-  preferBlockSelection
-}?: BaseKeymapOptions): BaseKeymapExtension;
+declare function defineBaseKeymap({ priority, preferBlockSelection }?: BaseKeymapOptions): BaseKeymapExtension;
 /**
  * A set of keybindings. Please read the
  * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
@@ -846,7 +825,7 @@ interface MarkSpecOptions<MarkName extends string = string, Attrs extends AnyAtt
   /**
    * The attributes that marks of this type get.
    */
-  attrs?: { [K in keyof Attrs]: AttrSpec<Attrs[K]> };
+  attrs?: { [K in keyof Attrs]: AttrSpec<Attrs[K]>; };
 }
 interface MarkAttrOptions<MarkName extends string = string, AttrName extends string = string, AttrType = any> extends AttrSpec<AttrType> {
   /**
@@ -890,10 +869,10 @@ interface MarkAttrOptions<MarkName extends string = string, AttrName extends str
  * ```
  */
 declare function defineMarkSpec<Mark extends string, Attrs extends AnyAttrs = AnyAttrs>(options: MarkSpecOptions<Mark, Attrs>): Extension<{
-  Marks: { [K in Mark]: Attrs };
+  Marks: { [K in Mark]: Attrs; };
 }>;
 declare function defineMarkAttr<MarkType extends string = string, AttrName extends string = string, AttrType = any>(options: MarkAttrOptions<MarkType, AttrName, AttrType>): Extension<{
-  Marks: { [K in MarkType]: AttrType };
+  Marks: { [K in MarkType]: AttrType; };
 }>;
 /**
  * @internal
@@ -936,7 +915,7 @@ interface NodeSpecOptions<NodeName extends string = string, Attrs extends AnyAtt
   /**
    * The attributes that nodes of this type get.
    */
-  attrs?: { [key in keyof Attrs]: AttrSpec<Attrs[key]> };
+  attrs?: { [key in keyof Attrs]: AttrSpec<Attrs[key]>; };
 }
 interface NodeAttrOptions<NodeName extends string = string, AttrName extends string = string, AttrType = any> extends AttrSpec<AttrType> {
   /**
@@ -987,13 +966,13 @@ interface NodeAttrOptions<NodeName extends string = string, AttrName extends str
  * ```
  */
 declare function defineNodeSpec<Node extends string, Attrs extends AnyAttrs = AnyAttrs>(options: NodeSpecOptions<Node, Attrs>): Extension<{
-  Nodes: { [K in Node]: Attrs };
+  Nodes: { [K in Node]: Attrs; };
 }>;
 /**
  * Defines an attribute for a node type.
  */
 declare function defineNodeAttr<NodeType extends string = string, AttrName extends string = string, AttrType = any>(options: NodeAttrOptions<NodeType, AttrName, AttrType>): Extension<{
-  Nodes: { [K in NodeType]: { [K in AttrName]: AttrType } };
+  Nodes: { [K in NodeType]: { [K in AttrName]: AttrType; }; };
 }>;
 /**
  * @internal
@@ -1061,9 +1040,7 @@ interface PasteRuleOptions {
  *
  * @param options
  */
-declare function definePasteRule({
-  handler
-}: PasteRuleOptions): PlainExtension;
+declare function definePasteRule({ handler }: PasteRuleOptions): PlainExtension;
 /**
  * @internal
  */
@@ -1158,12 +1135,10 @@ declare function findParentNode(
 /**
  * The predicate to test the parent node.
  */
-
 predicate: (node: ProseMirrorNode) => boolean,
 /**
  * The position to start searching from.
  */
-
 $pos: ResolvedPos): FindParentNodeResult | undefined;
 /**
  * Finds the closest parent node that matches the given node type.
@@ -1172,12 +1147,10 @@ declare function findParentNodeOfType(
 /**
  * The type of the node to find.
  */
-
 type: string | NodeType | string[] | NodeType[],
 /**
  * The position to start searching from.
  */
-
 $pos: ResolvedPos): FindParentNodeResult | undefined;
 interface MarkRange {
   /** The document position where the mark run starts. */
@@ -1271,7 +1244,7 @@ declare function isAllSelection(value: Selection): value is AllSelection;
 /**
  * @internal
  */
-declare const OBJECT_REPLACEMENT_CHARACTER = "\uFFFC";
+declare const OBJECT_REPLACEMENT_CHARACTER = "￼";
 /**
  * @internal
  */

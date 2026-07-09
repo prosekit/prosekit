@@ -59,13 +59,7 @@ type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) => void
  *
  * @param options
  */
-declare function uploadImage({
-  uploader,
-  file,
-  pos,
-  replace,
-  onError
-}: UploadImageOptions): Command;
+declare function uploadImage({ uploader, file, pos, replace, onError }: UploadImageOptions): Command;
 /**
  * Replaces the temporary image URL with the final uploaded URL.
  *
@@ -146,12 +140,7 @@ interface ImageUploadHandlerOptions {
  *
  * @param options
  */
-declare function defineImageUploadHandler({
-  uploader,
-  canPaste,
-  canDrop,
-  onError
-}: ImageUploadHandlerOptions): PlainExtension;
+declare function defineImageUploadHandler({ uploader, canPaste, canDrop, onError }: ImageUploadHandlerOptions): PlainExtension;
 /**
  * @internal
  */

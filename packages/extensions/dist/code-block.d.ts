@@ -48,10 +48,7 @@ type CodeBlockHighlightOptions = {
  *
  * @param options
  */
-declare function defineCodeBlockHighlight({
-  parser,
-  nodeTypes
-}: CodeBlockHighlightOptions): Extension;
+declare function defineCodeBlockHighlight({ parser, nodeTypes }: CodeBlockHighlightOptions): Extension;
 /**
  * Adds input rules for `codeBlock` nodes.
  */
@@ -112,12 +109,7 @@ interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'themes' |
  *
  * @param options - The options to configure the Shiki highlighter.
  */
-declare function defineCodeBlockShiki({
-  nodeTypes,
-  themes,
-  langs,
-  ...rest
-}?: CodeBlockShikiOptions): Extension;
+declare function defineCodeBlockShiki({ nodeTypes, themes, langs, ...rest }?: CodeBlockShikiOptions): Extension;
 /**
  * @internal
  */

@@ -41,7 +41,7 @@ declare module '@prosekit/pm/model' {
   interface NodeSpec {
     pageBreak?: boolean | undefined;
   }
-} //# sourceMappingURL=page-break-spec.d.ts.map
+}
 /**
  * @internal
  */

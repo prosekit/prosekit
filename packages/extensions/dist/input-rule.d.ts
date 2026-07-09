@@ -35,12 +35,7 @@ interface MarkInputRuleOptions {
 /**
  * @internal
  */
-declare function createMarkInputRule({
-  regex,
-  type,
-  attrs,
-  inCodeMark
-}: MarkInputRuleOptions): InputRule;
+declare function createMarkInputRule({ regex, type, attrs, inCodeMark }: MarkInputRuleOptions): InputRule;
 /**
  * Defines an input rule for automatically adding inline marks when a given
  * pattern is typed.
@@ -54,11 +49,7 @@ declare function defineMarkInputRule(options: MarkInputRuleOptions): PlainExtens
  *
  * @param options
  */
-declare function defineTextBlockInputRule({
-  regex,
-  type,
-  attrs
-}: {
+declare function defineTextBlockInputRule({ regex, type, attrs }: {
   /**
    * The regular expression to match against, which should end with `$`. It
    * usually also starts with `^` to that it is only matched at the start of a
@@ -82,12 +73,7 @@ declare function defineTextBlockInputRule({
  *
  * @param options
  */
-declare function defineWrappingInputRule({
-  regex,
-  type,
-  attrs,
-  join
-}: {
+declare function defineWrappingInputRule({ regex, type, attrs, join }: {
   /**
    * The regular expression to match against, which should end with `$`. It
    * usually also starts with `^` to that it is only matched at the start of a

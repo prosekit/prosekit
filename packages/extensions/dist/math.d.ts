@@ -30,9 +30,7 @@ interface MathBlockViewOptions {
  * @param options
  * @internal
  */
-declare function defineMathBlockView({
-  render
-}: MathBlockViewOptions): Extension;
+declare function defineMathBlockView({ render }: MathBlockViewOptions): Extension;
 /**
  * @internal
  */
@@ -87,9 +85,7 @@ interface MathInlineViewOptions {
  * @param options
  * @internal
  */
-declare function defineMathInlineView({
-  render
-}: MathInlineViewOptions): Extension;
+declare function defineMathInlineView({ render }: MathInlineViewOptions): Extension;
 /**
  * @internal
  */

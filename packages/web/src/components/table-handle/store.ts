@@ -57,7 +57,7 @@ export function createTableHandleStore(
     isColumnMenuOpen.set(open)
   }
 
-  let prevHoveringCellInfo: HoveringCellInfo | undefined = undefined
+  let prevHoveringCellInfo: HoveringCellInfo | undefined
 
   const getReferenceCell = computed((): HoveringCellInfo | undefined => {
     // Keep the handles anchored to the same cell while a menu is open: don't

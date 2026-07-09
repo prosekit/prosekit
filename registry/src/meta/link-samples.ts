@@ -13,7 +13,7 @@ export async function linkSamples(items: ItemAccumulator[]) {
   const filesByBasename = Map.groupBy(allFiles, (file) => path.basename(file))
 
   await Promise.all(
-    Array.from(filesByBasename.values()).map((files) => linkFileGroup(files)),
+    Array.from(filesByBasename.values(), (files) => linkFileGroup(files)),
   )
 }
 

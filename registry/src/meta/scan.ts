@@ -308,7 +308,7 @@ async function extractImportSpecifiersFromFilePath(
   const specifiers = new Set<string>()
 
   if (SFC_EXTENSIONS.has(ext)) {
-    const scriptRegex = /<script\b[^>]*>([\S\s]*?)<\/script>/gi
+    const scriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gi
     let match: RegExpExecArray | null
     while ((match = scriptRegex.exec(source))) {
       const scriptContent = match[1] ?? ''

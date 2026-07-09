@@ -39,24 +39,24 @@ Most extensions ship a command pair like [`toggleBold`](/extensions/bold) / [`se
 
 Useful low-level commands also live on `prosekit/core`:
 
-| Command                                                          | Notes                                           |
-| ---------------------------------------------------------------- | ----------------------------------------------- |
-| [`addMark`](/references/core#addmark)                            | Apply a mark to a range.                        |
-| [`removeMark`](/references/core#removemark)                      | Remove a mark from a range.                     |
-| [`toggleMark`](/references/core#togglemark)                      | Toggle a mark on the current selection.         |
-| [`unsetMark`](/references/core#unsetmark)                        | Drop stored marks (affects newly typed text).   |
-| [`expandMark`](/references/core#expandmark)                      | Expand the selection to cover an existing mark. |
-| [`setBlockType`](/references/core#setblocktype)                  | Change the current block to a specific type.    |
-| [`unsetBlockType`](/references/core#unsetblocktype)              | Reset the current block to the default.         |
-| [`toggleNode`](/references/core#togglenode)                      | Toggle the current block between two types.     |
-| [`toggleWrap`](/references/core#togglewrap)                      | Toggle a wrapping node (e.g. blockquote).       |
-| [`wrap`](/references/core#wrap)                                  | Wrap the selection in a node.                   |
-| [`insertNode`](/references/core#insertnode)                      | Insert a node at the selection.                 |
-| [`removeNode`](/references/core#removenode)                      | Remove the nearest node of a type.              |
-| [`setNodeAttrs`](/references/core#setnodeattrs)                  | Update attributes on the current node.          |
-| [`selectAll`](/references/core#selectall)                        | Move selection to the whole document.           |
-| [`selectBlock`](/references/core#selectblock)                    | Select the current block node.                  |
-| [`insertDefaultBlock`](/references/core#insertdefaultblock)      | Insert the default block (usually a paragraph). |
+| Command                                                     | Notes                                           |
+| ----------------------------------------------------------- | ----------------------------------------------- |
+| [`addMark`](/references/core#addmark)                       | Apply a mark to a range.                        |
+| [`removeMark`](/references/core#removemark)                 | Remove a mark from a range.                     |
+| [`toggleMark`](/references/core#togglemark)                 | Toggle a mark on the current selection.         |
+| [`unsetMark`](/references/core#unsetmark)                   | Drop stored marks (affects newly typed text).   |
+| [`expandMark`](/references/core#expandmark)                 | Expand the selection to cover an existing mark. |
+| [`setBlockType`](/references/core#setblocktype)             | Change the current block to a specific type.    |
+| [`unsetBlockType`](/references/core#unsetblocktype)         | Reset the current block to the default.         |
+| [`toggleNode`](/references/core#togglenode)                 | Toggle the current block between two types.     |
+| [`toggleWrap`](/references/core#togglewrap)                 | Toggle a wrapping node (e.g. blockquote).       |
+| [`wrap`](/references/core#wrap)                             | Wrap the selection in a node.                   |
+| [`insertNode`](/references/core#insertnode)                 | Insert a node at the selection.                 |
+| [`removeNode`](/references/core#removenode)                 | Remove the nearest node of a type.              |
+| [`setNodeAttrs`](/references/core#setnodeattrs)             | Update attributes on the current node.          |
+| [`selectAll`](/references/core#selectall)                   | Move selection to the whole document.           |
+| [`selectBlock`](/references/core#selectblock)               | Select the current block node.                  |
+| [`insertDefaultBlock`](/references/core#insertdefaultblock) | Insert the default block (usually a paragraph). |
 
 See the [`prosekit/core` reference](/references/core) for full signatures.
 

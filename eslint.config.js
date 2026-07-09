@@ -20,13 +20,15 @@ export default defineESLintConfig(
   },
   {
     rules: {
-      'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
+      'no-console': ['warn', {
+        allow: ['warn', 'error', 'assert'],
+      }],
     },
     ignores: ['**/*.md', '**/*.md/**/*'],
   },
   {
     rules: {
-      // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-function-scoping.md
+      // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v61.0.0/docs/rules/consistent-function-scoping.md
       'unicorn/consistent-function-scoping': 'error',
     },
     ignores: ['**/*.test.*', '**/*.spec.*', '**/*.md', '**/*.md/**/*'],

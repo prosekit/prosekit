@@ -56,8 +56,8 @@ type DOMEventPayload = [event: string, handler: DOMEventHandler]
 const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
   {
     reduce: () => {
-      const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}
-      const combinedHandlerMap: Record<string, DOMEventHandler> = {}
+      const setHandlersMap = new Map<string, Setter<DOMEventHandler[]>>()
+      const combinedHandlers: Record<string, DOMEventHandler> = {}
 
       let plugin: ProseMirrorPlugin | undefined
 
@@ -65,16 +65,16 @@ const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
         let hasNewEvent = false
 
         for (const [event] of payloads) {
-          if (!setHandlersMap[event]) {
+          if (!setHandlersMap.has(event)) {
             hasNewEvent = true
             const [setHandlers, combinedHandler] = combineEventHandlers<DOMEventHandler>()
-            setHandlersMap[event] = setHandlers
-            combinedHandlerMap[event] = combinedHandler
+            setHandlersMap.set(event, setHandlers)
+            combinedHandlers[event] = combinedHandler
           }
         }
 
         const map: Record<string, DOMEventHandler[] | undefined> = groupEntries<DOMEventMap>(payloads)
-        for (const [event, setHandlers] of Object.entries(setHandlersMap)) {
+        for (const [event, setHandlers] of setHandlersMap) {
           const handlers = map[event] ?? []
           setHandlers(handlers)
         }
@@ -82,7 +82,7 @@ const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
         if (hasNewEvent) {
           plugin = new ProseMirrorPlugin({
             key: new PluginKey('prosekit-dom-event-handler'),
-            props: { handleDOMEvents: combinedHandlerMap },
+            props: { handleDOMEvents: combinedHandlers },
           })
         }
       }

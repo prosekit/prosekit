@@ -286,15 +286,7 @@
   A brand new menu primitive has been added under a new entrypoint, `prosekit/<framework>/menu`. It exports `MenuRoot`, `MenuTrigger`, `MenuPositioner`, `MenuPopup`, and `MenuItem`, plus `MenuSubmenuRoot` and `MenuSubmenuTrigger` for nested menus. It is the recommended building block for any in-editor menu, and the new table handle column / row menus are built on top of it.
 
   ```jsx
-  import {
-    MenuItem,
-    MenuPopup,
-    MenuPositioner,
-    MenuRoot,
-    MenuSubmenuRoot,
-    MenuSubmenuTrigger,
-    MenuTrigger,
-  } from "prosekit/react/menu";
+  import { MenuItem, MenuPopup, MenuPositioner, MenuRoot, MenuSubmenuRoot, MenuSubmenuTrigger, MenuTrigger } from 'prosekit/react/menu'
 
   <MenuRoot>
     <MenuTrigger>...</MenuTrigger>
@@ -312,7 +304,7 @@
         </MenuSubmenuRoot>
       </MenuPopup>
     </MenuPositioner>
-  </MenuRoot>;
+  </MenuRoot>
   ```
 
   ## Item focus styling: `data-focused` is now `data-highlighted`
@@ -687,7 +679,7 @@
   To recover the previous behavior where `Mod-a` immediately selects the entire document, pass `preferBlockSelection: false` when calling `defineBaseKeymap`:
 
   ```ts
-  defineBaseKeymap({ preferBlockSelection: false });
+  defineBaseKeymap({ preferBlockSelection: false })
   ```
 
 - [`29a6eda`](https://github.com/ocavue/prosekit/commit/29a6edabffb302f5f75047a1ab69d24cd3f88bff) ![](https://prosekit.dev/b/extensions)
@@ -780,21 +772,21 @@
 
   ```ts
   editor.setContent({
-    type: "doc",
+    type: 'doc',
     content: [
       {
-        type: "list",
-        attrs: { kind: "task", checked: true },
+        type: 'list',
+        attrs: { kind: 'task', checked: true },
         content: [
           {
-            type: "paragraph",
-            content: [{ type: "text", text: "Foo" }],
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'Foo' }],
           },
         ],
       },
     ],
-  });
-  console.log(editor.getDocHTML());
+  })
+  console.log(editor.getDocHTML())
   ```
 
   The previous output was:
@@ -1069,9 +1061,9 @@
   ### Using the `derive` Function
 
   `useEditorDerivedValue` accepts a `derive` function as its first argument. This function:
-  1.  Receives the `editor` instance.
-  2.  Computes and returns a value based on the editor's current state.
-  3.  Is called when the editor mounts and whenever the editor's document or selection state changes.
+  1. Receives the `editor` instance.
+  2. Computes and returns a value based on the editor's current state.
+  3. Is called when the editor mounts and whenever the editor's document or selection state changes.
 
   Crucially, the **`derive` function must be memoized**. If it's re-created on every render, `useEditorDerivedValue` might not work as expected and could lead to performance issues.
   - **If defined inside a component, wrap `derive` with `useCallback`:**
@@ -1080,7 +1072,7 @@
     // ✅ Good: derive function is memoized
     const isBoldActive = useEditorDerivedValue(
       useCallback((editor) => editor.marks.bold.isActive(), []),
-    );
+    )
     ```
 
   - **If defined outside a component, it's naturally stable:**
@@ -1088,11 +1080,11 @@
     ```tsx
     // ✅ Good: derive function is stable (defined outside)
     function getBoldState(editor) {
-      return editor.marks.bold.isActive();
+      return editor.marks.bold.isActive()
     }
 
     function MyComponent() {
-      const isBoldActive = useEditorDerivedValue(getBoldState);
+      const isBoldActive = useEditorDerivedValue(getBoldState)
       // ...
     }
     ```
@@ -1101,9 +1093,7 @@
 
     ```tsx
     // ❌ Bad: derive function is not memoized
-    const isBoldActive = useEditorDerivedValue((editor) =>
-      editor.marks.bold.isActive(),
-    );
+    const isBoldActive = useEditorDerivedValue((editor) => editor.marks.bold.isActive())
     ```
 
   ### Migration Example
@@ -1112,13 +1102,13 @@
 
   ```tsx
   // Before
-  import { useEditor } from "prosekit/react";
+  import { useEditor } from 'prosekit/react'
 
-  import Button from "./button";
-  import type { EditorExtension } from "./extension";
+  import Button from './button'
+  import type { EditorExtension } from './extension'
 
   export default function Toolbar() {
-    const editor = useEditor<EditorExtension>({ update: true });
+    const editor = useEditor<EditorExtension>({ update: true })
 
     return (
       <div className="CSS_TOOLBAR">
@@ -1139,17 +1129,17 @@
           H2
         </Button>
       </div>
-    );
+    )
   }
   ```
 
   ```tsx
   // After
-  import type { Editor } from "prosekit/core";
-  import { useEditorDerivedValue } from "prosekit/react";
+  import type { Editor } from 'prosekit/core'
+  import { useEditorDerivedValue } from 'prosekit/react'
 
-  import Button from "./button";
-  import type { EditorExtension } from "./extension";
+  import Button from './button'
+  import type { EditorExtension } from './extension'
 
   function getToolbarItems(editor: Editor<EditorExtension>) {
     return {
@@ -1163,11 +1153,11 @@
         canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
         command: () => editor.commands.toggleHeading({ level: 2 }),
       },
-    };
+    }
   }
 
   export default function Toolbar() {
-    const items = useEditorDerivedValue(getToolbarItems);
+    const items = useEditorDerivedValue(getToolbarItems)
 
     return (
       <div className="CSS_TOOLBAR">
@@ -1189,7 +1179,7 @@
           H2
         </Button>
       </div>
-    );
+    )
   }
   ```
 
@@ -1280,15 +1270,15 @@
   _Before_:
 
   ```ts
-  import { defineDoc, defineText, defineParagraph } from "prosekit/core";
+  import { defineDoc, defineParagraph, defineText } from 'prosekit/core'
   ```
 
   _After_:
 
   ```ts
-  import { defineDoc } from "prosekit/extensions/doc";
-  import { defineParagraph } from "prosekit/extensions/paragraph";
-  import { defineText } from "prosekit/extensions/text";
+  import { defineDoc } from 'prosekit/extensions/doc'
+  import { defineParagraph } from 'prosekit/extensions/paragraph'
+  import { defineText } from 'prosekit/extensions/text'
   ```
 
 - [`581ed6f`](https://github.com/ocavue/prosekit/commit/581ed6f8e36b29d805e4b81e1b452e71454350f1) ![](https://prosekit.dev/b/extensions)
@@ -1458,7 +1448,7 @@
   // Previous code example
   <ResizableRoot
     onSizeChangeEnd={(size) => {
-      handle(size.width, size.height);
+      handle(size.width, size.height)
     }}
   />
   ```
@@ -1467,7 +1457,7 @@
   // Updated code example
   <ResizableRoot
     onResizeEnd={(event) => {
-      handle(event.size.width, event.size.height);
+      handle(event.size.width, event.size.height)
     }}
   />
   ```
@@ -2421,8 +2411,8 @@
   Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
 
   ```js
-  import "prosekit/basic/style.css";
-  import "prosekit/basic/typography.css";
+  import 'prosekit/basic/style.css'
+  import 'prosekit/basic/typography.css'
   ```
 
 ### Patch Changes
@@ -2543,9 +2533,9 @@
   Add new readonly extension.
 
   ```ts
-  import { defineReadonly } from "prosekit/extensions/readonly";
+  import { defineReadonly } from 'prosekit/extensions/readonly'
 
-  const extension = defineReadonly();
+  const extension = defineReadonly()
   ```
 
 - [`0c60503`](https://github.com/ocavue/prosekit/commit/0c60503) ![](https://prosekit.dev/b/preact) !![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)

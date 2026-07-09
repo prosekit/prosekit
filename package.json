@@ -38,7 +38,7 @@
     "prepare": "simple-git-hooks"
   },
   "nano-staged": {
-    "*": "./node_modules/.bin/dprint fmt --allow-no-files"
+    "*": "dprint fmt --allow-no-files"
   },
   "simple-git-hooks": {
     "pre-commit": "./node_modules/.bin/nano-staged"

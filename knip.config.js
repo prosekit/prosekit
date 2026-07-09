@@ -18,14 +18,25 @@ const config = {
   exclude: ['optionalPeerDependencies', 'binaries'],
   ignoreDependencies: ['wrangler', '@changesets/types'],
   workspaces: {
-
+    './packages/prosekit': {
+      project: ['src/**'],
+      entry: [
+        'src/**/*-css.ts',
+      ],
+    },
     './packages/basic': {
       project: ['src/**'],
       entry: [
         'src/**/*.scss',
       ],
     },
-
+    './registry': {
+      entry: [
+        'src/*/examples/*/index.ts',
+        'src/*/examples/*/extension.ts',
+        'src/*/shims-*.d.ts',
+      ],
+    },
     './website': {
       project: ['src/**'],
       entry: [

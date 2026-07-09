@@ -68,14 +68,14 @@ const pluginViewFacet = defineFacet<PluginViewHandlerArgs, PluginPayload>({
       key: pluginKey,
       view: (view) => {
         // Run all handlers after the view is mounted
-        mountHandlers.forEach((fn) => fn(view))
+        for (const fn of mountHandlers) fn(view)
 
         return {
           update: (view, prevState) => {
-            updateHandlers.forEach((fn) => fn(view, prevState))
+            for (const fn of updateHandlers) fn(view, prevState)
           },
           destroy: () => {
-            unmountHandlers.forEach((fn) => fn())
+            for (const fn of unmountHandlers) fn()
           },
         }
       },

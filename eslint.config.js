@@ -22,10 +22,11 @@ export default defineESLintConfig(
     rules: {
       'no-console': ['warn', {
         allow: [
-
           'assert',
 
-          'warn', 'error',]
+          'warn',
+          'error',
+        ],
       }],
     },
     ignores: ['**/*.md', '**/*.md/**/*'],

@@ -145,6 +145,11 @@ const config: AstroUserConfig = {
     minifyHTML(),
   ],
   vite: {
+    resolve: {
+      alias: {
+        'loro-crdt': 'loro-crdt/base64',
+      },
+    },
     plugins: [
       classReplace(),
       tailwindcss(),

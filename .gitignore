@@ -4,6 +4,7 @@ CHANGELOG.md
 !packages/prosekit/CHANGELOG.md
 vite.*.timestamp-*.mjs
 .astro
+!**/.astro/**/*.d.ts
 **/public/astrobook
 .yalc
 yalc.lock

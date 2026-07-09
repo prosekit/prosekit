@@ -4,6 +4,7 @@
 /* eslint-disable regexp/prefer-w */
 /* eslint-disable regexp/no-useless-escape */
 /* eslint-disable regexp/no-useless-non-capturing-group */
+/* eslint-disable regexp/strict */
 
 // All valid alpha TLDs.
 // Data source: https://data.iana.org/TLD/tlds-alpha-by-domain.txt

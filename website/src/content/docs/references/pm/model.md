@@ -5218,7 +5218,7 @@ the attribute value to be correctly inherited across different block types.
 
 <dt>
 
-<code data-typedoc-code>type <a id="domoutputspec" href="#domoutputspec">DOMOutputSpec</a> = [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| \{ `dom`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement); `contentDOM?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement); \} \| readonly \[`string`, `...any[]`\]</code>
+<code data-typedoc-code>type <a id="domoutputspec" href="#domoutputspec">DOMOutputSpec</a> = [`Element`](https://developer.mozilla.org/docs/Web/API/Element) \| \{ `dom`: [`Element`](https://developer.mozilla.org/docs/Web/API/Element); `contentDOM?`: [`Element`](https://developer.mozilla.org/docs/Web/API/Element); \} \| readonly \[`string`, `...any[]`\]</code>
 
 </dt>
 

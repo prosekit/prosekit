@@ -141,6 +141,7 @@ export class FacetNode<I = any, O = any> {
     for (const child of this.children.values()) {
       const childOutput = child.getOutput()
       for (let pri = 0; pri < 5; pri++) {
+        // eslint-disable-next-line unicorn/no-computed-property-existence-check
         if (childOutput[pri]) {
           const input = (inputs[pri] ||= [])
           input.push(childOutput[pri] as I)

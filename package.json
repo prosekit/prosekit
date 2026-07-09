@@ -49,7 +49,7 @@
     "eslint": "^10.6.0",
     "knip": "^6.25.0",
     "monorepo-typescript-references": "^1.1.2",
-    "oxfmt": "^0.53.0",
+    "oxfmt": "^0.58.0",
     "playwright": "^1.60.0",
     "size-limit": "^12.1.0",
     "turbo": "^2.9.16",

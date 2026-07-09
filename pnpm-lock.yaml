@@ -324,11 +324,11 @@ importers:
         specifier: ^0.17.0
         version: 0.17.0
       loro-crdt:
-        specifier: ^1.13.6
-        version: 1.13.6
+        specifier: ^1.12.3
+        version: 1.12.3
       loro-prosemirror:
         specifier: ^0.4.3
-        version: 0.4.3(loro-crdt@1.13.6)
+        version: 0.4.3(loro-crdt@1.12.3)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -532,11 +532,11 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.17)
       loro-crdt:
-        specifier: ^1.13.6
-        version: 1.13.6
+        specifier: ^1.12.3
+        version: 1.12.3
       loro-prosemirror:
         specifier: ^0.4.3
-        version: 0.4.3(loro-crdt@1.13.6)
+        version: 0.4.3(loro-crdt@1.12.3)
       preact:
         specifier: ^10.29.2
         version: 10.29.2
@@ -905,11 +905,11 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(@types/react@19.2.17)(react-dom@19.2.7)(react@19.2.7)
       loro-crdt:
-        specifier: ^1.13.6
-        version: 1.13.6
+        specifier: ^1.12.3
+        version: 1.12.3
       loro-prosemirror:
         specifier: ^0.4.3
-        version: 0.4.3(loro-crdt@1.13.6)
+        version: 0.4.3(loro-crdt@1.12.3)
       obug:
         specifier: ^2.1.3
         version: 2.1.3
@@ -1176,11 +1176,11 @@ importers:
         specifier: ^29.1.1
         version: 29.1.1
       loro-crdt:
-        specifier: ^1.13.6
-        version: 1.13.6
+        specifier: ^1.12.3
+        version: 1.12.3
       loro-prosemirror:
         specifier: ^0.4.3
-        version: 0.4.3(loro-crdt@1.13.6)
+        version: 0.4.3(loro-crdt@1.12.3)
       preact:
         specifier: ^10.29.2
         version: 10.29.2
@@ -5888,8 +5888,8 @@ packages:
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
-  loro-crdt@1.13.6:
-    resolution: {integrity: sha512-OsnKW64J+1XdCMafAqR+aASn/wQEgDzwcDwu6dDOVSxxbLPFgnU6LX8ja+hd5PnEcT+kuz9eXSagvlYXsRbQIw==}
+  loro-crdt@1.12.3:
+    resolution: {integrity: sha512-ZCeW0e/bo2lP4/zxSlVrJlMrX3hq9tXpeANbBDkdVS0bxoPHYx5Za3yS/A1+aWEFPJpzzI3Eac4K20cL9+BtXw==}
 
   loro-prosemirror@0.4.3:
     resolution: {integrity: sha512-stAWIWs54LfXx0mvCzXF02XpEv9AKgrhSBPt44eT4SsrBEWZaq0jTFuzs8EyBmipBBcuC2ooRRX4NQjwSeQl9Q==}
@@ -13038,12 +13038,12 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  loro-crdt@1.13.6: {}
+  loro-crdt@1.12.3: {}
 
-  loro-prosemirror@0.4.3(loro-crdt@1.13.6):
+  loro-prosemirror@0.4.3(loro-crdt@1.12.3):
     dependencies:
       lib0: 0.2.117
-      loro-crdt: 1.13.6
+      loro-crdt: 1.12.3
       prosemirror-model: 1.25.10
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.0

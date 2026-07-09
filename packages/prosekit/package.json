@@ -242,7 +242,7 @@
     "@prosekit/typedoc-plugin": "workspace:*",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "loro-crdt": "^1.13.6",
+    "loro-crdt": "^1.12.3",
     "loro-prosemirror": "^0.4.3",
     "preact": "^10.29.2",
     "react": "^19.2.7",

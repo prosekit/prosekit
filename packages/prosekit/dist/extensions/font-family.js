@@ -1,0 +1,2 @@
+export * from "@prosekit/extensions/font-family";
+export {};

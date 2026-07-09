@@ -252,7 +252,9 @@ export class EditorInstance {
       throw new ProseKitError('Editor is already mounted')
     }
     this.view = new EditorView({ mount: place }, this.directEditorProps)
-    for (const callback of this.afterMounted) callback()
+    for (const callback of this.afterMounted) {
+      callback()
+    }
     this.afterMounted.length = 0
   }
 

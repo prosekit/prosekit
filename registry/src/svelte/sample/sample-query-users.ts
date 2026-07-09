@@ -28,7 +28,9 @@ export function simulateNetworkStatus(status: 'fast' | 'slow' | 'offline') {
  */
 export async function queryUsers(query: string): Promise<User[]> {
   if (networkStatus === 'offline') {
-    await new Promise<void>((resolve) => connectHandlers.push(resolve))
+    await new Promise<void>((resolve) => {
+      connectHandlers.push(resolve)
+    })
   }
   if (networkStatus === 'slow') {
     await new Promise<void>((resolve) => setTimeout(resolve, 300))

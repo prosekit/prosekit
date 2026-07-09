@@ -60,7 +60,7 @@
     "vitest": "catalog:",
     "wrangler": "^4.106.0"
   },
-  "lint-staged": {
+  "nano-staged": {
     "*": "dprint fmt --allow-no-files"
   },
   "simple-git-hooks": {

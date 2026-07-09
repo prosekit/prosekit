@@ -49,6 +49,7 @@
     "dprint": "^0.55.1",
     "eslint": "^10.6.0",
     "knip": "^6.25.0",
+    "lint-staged": "^17.0.8",
     "monorepo-typescript-references": "^1.1.2",
     "nano-staged": "^1.0.2",
     "oxfmt": "^0.58.0",
@@ -60,10 +61,10 @@
     "vitest": "catalog:",
     "wrangler": "^4.106.0"
   },
-  "nano-staged": {
+  "lint-staged": {
     "*": "dprint fmt --allow-no-files"
   },
   "simple-git-hooks": {
-    "pre-commit": "./node_modules/.bin/nano-staged"
+    "pre-commit": "./node_modules/.bin/lint-staged"
   }
 }

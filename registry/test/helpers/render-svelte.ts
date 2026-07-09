@@ -7,12 +7,15 @@ import { registerCleanupFunction, runCleanupFunctions } from './render-cleanup'
 
 registerCleanupFunction(cleanup)
 
-export async function renderSvelteExample(story: string, initialContent?: NodeJSON) {
+type SvelteRenderResult = Awaited<ReturnType<typeof render>>
+
+export async function renderSvelteExample(story: string, initialContent?: NodeJSON): Promise<SvelteRenderResult> {
   await runCleanupFunctions()
   type Props = ComponentProps<typeof SvelteRenderer>
   const props: Props = {
     story,
     exampleProps: initialContent ? { initialContent } : {},
   }
-  return await render(SvelteRenderer, props)
+  const result: SvelteRenderResult = await render(SvelteRenderer, props)
+  return result
 }

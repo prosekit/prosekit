@@ -21,7 +21,9 @@ export default defineESLintConfig(
   {
     rules: {
       'no-console': ['warn', {
-        allow: ['assert',
+        allow: [
+
+          'assert',
 
           'warn', 'error',]
       }],

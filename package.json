@@ -58,7 +58,7 @@
     "turbo": "^2.9.16",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.106.0"
+    "wrangler": "^4.107.1"
   },
   "nano-staged": {
     "*": "dprint fmt --allow-no-files"

@@ -82,7 +82,7 @@ importers:
         specifier: ^1.60.0
         version: 1.60.0
       simple-git-hooks:
-        specifier: ^2.13.1
+        specifier: ^2.0.0
         version: 2.13.1
       size-limit:
         specifier: ^12.1.0

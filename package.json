@@ -36,11 +36,9 @@
     "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json"
   },
-  "nano-staged": {
-    },
-    "simple-git-hooks": {
-      "pre-commit": "./node_modules/.bin/nano-staged"
-    },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm run fix:dprint"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "@changesets/types": "^6.1.0",
@@ -56,6 +54,7 @@
     "monorepo-typescript-references": "^1.1.2",
     "oxfmt": "^0.58.0",
     "playwright": "^1.60.0",
+    "simple-git-hooks": "^2.13.1",
     "size-limit": "^12.1.0",
     "turbo": "^2.9.16",
     "typescript": "catalog:",

@@ -9,7 +9,7 @@ declare module 'astro:content' {
 	}
 }
 
-// DEBUG WIP
+// DEBUG WIP v2
 
 declare module 'astro:content' {
 	export interface RenderResult {

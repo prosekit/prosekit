@@ -37,7 +37,7 @@ export function defineBoldSpec(): BoldSpecExtension {
         getAttrs: (value: string | HTMLElement): null | false => {
           return (
             typeof value === 'string'
-            && /^(bold(er)?|[5-9]\d{2,})$/.test(value)
+            && /^(?:bold(?:er)?|[5-9]\d{2,})$/.test(value)
             && null
           )
         },

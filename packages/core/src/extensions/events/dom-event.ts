@@ -57,7 +57,7 @@ const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
   {
     reduce: () => {
       const setHandlersMap = new Map<string, Setter<DOMEventHandler[]>>()
-      const combinedHandlerMap: Record<string, DOMEventHandler> = {}
+      const combinedHandlers: Record<string, DOMEventHandler> = {}
 
       let plugin: ProseMirrorPlugin | undefined
 
@@ -69,7 +69,7 @@ const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
             hasNewEvent = true
             const [setHandlers, combinedHandler] = combineEventHandlers<DOMEventHandler>()
             setHandlersMap.set(event, setHandlers)
-            combinedHandlerMap[event] = combinedHandler
+            combinedHandlers[event] = combinedHandler
           }
         }
 
@@ -82,7 +82,7 @@ const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
         if (hasNewEvent) {
           plugin = new ProseMirrorPlugin({
             key: new PluginKey('prosekit-dom-event-handler'),
-            props: { handleDOMEvents: combinedHandlerMap },
+            props: { handleDOMEvents: combinedHandlers },
           })
         }
       }

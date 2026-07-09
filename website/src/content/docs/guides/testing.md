@@ -73,7 +73,7 @@ function defineTestExtension() {
     defineParagraph(),
     defineHeading(),
     defineBold(),
-  )  
+  )
 }
 
 type TestExtension = ReturnType<typeof defineTestExtension>

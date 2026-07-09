@@ -37,7 +37,7 @@
     "typecheck": "tsc --build tsconfig.json"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run fix:dprint"
+       "pre-commit": "pnpm run fix:dprint"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",

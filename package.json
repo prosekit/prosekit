@@ -36,6 +36,11 @@
     "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json"
   },
+  "nano-staged": {
+    },
+    "simple-git-hooks": {
+      "pre-commit": "./node_modules/.bin/nano-staged"
+    },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "@changesets/types": "^6.1.0",

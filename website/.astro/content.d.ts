@@ -9,8 +9,6 @@ declare module 'astro:content' {
 	}
 }
 
-// DEBUG WIP v2 v3 v4
-
 declare module 'astro:content' {
 	export interface RenderResult {
 		Content: import('astro/runtime/server/index.js').AstroComponentFactory;

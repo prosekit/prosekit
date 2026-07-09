@@ -37,8 +37,11 @@
     "typecheck": "tsc --build tsconfig.json",
     "prepare": "simple-git-hooks"
   },
+  "nano-staged": {
+    "*": "./node_modules/.bin/dprint fmt --allow-no-files"
+  },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run fix:dprint"
+    "pre-commit": "./node_modules/.bin/nano-staged"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
@@ -53,6 +56,7 @@
     "eslint": "^10.6.0",
     "knip": "^6.25.0",
     "monorepo-typescript-references": "^1.1.2",
+    "nano-staged": "^1.0.2",
     "oxfmt": "^0.58.0",
     "playwright": "^1.60.0",
     "simple-git-hooks": "^2.13.1",

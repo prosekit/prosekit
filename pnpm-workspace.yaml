@@ -9,12 +9,12 @@ allowedDeprecatedVersions:
 catalog:
   "@tsdown/css": "^0.22.4"
   "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.8"
-  "@vitest/coverage-v8": "^4.1.8"
-  "@vitest/ui": "^4.1.8"
+  "@vitest/browser-playwright": "^4.1.10"
+  "@vitest/coverage-v8": "^4.1.10"
+  "@vitest/ui": "^4.1.10"
   tsdown: "^0.22.4"
   typescript: "~6.0.3"
-  vitest: "^4.1.8"
+  vitest: "^4.1.10"
 
 dedupePeers: true
 

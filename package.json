@@ -65,6 +65,6 @@
     "*": "dprint fmt --allow-no-files"
   },
   "simple-git-hooks": {
-    "pre-commit": "./node_modules/.bin/lint-staged"
+    "pre-commit": "./node_modules/.bin/lint-staged --hide-all"
   }
 }

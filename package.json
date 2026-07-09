@@ -64,6 +64,6 @@
     "*": "dprint fmt --allow-no-files"
   },
   "simple-git-hooks": {
-    "pre-commit": "./node_modules/.bin/nano-staged --allow-empty --bail || true"
+    "pre-commit": "./node_modules/.bin/nano-staged --allow-empty || true"
   }
 }

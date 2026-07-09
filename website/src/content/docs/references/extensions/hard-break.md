@@ -1,0 +1,19 @@
+---
+title: prosekit/extensions/hard-break
+sidebar:
+  label: extensions/hard-break
+---
+
+## Functions
+
+### defineHardBreak() {#definehardbreak}
+
+<dl>
+
+<dt>
+
+<code data-typedoc-code><i>function</i> <a id="definehardbreak" href="#definehardbreak">defineHardBreak</a>(): `HardBreakExtension`</code>
+
+</dt>
+
+</dl>

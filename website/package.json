@@ -45,7 +45,7 @@
     "jsdom": "^29.1.1",
     "loro-crdt": "^1.13.6",
     "loro-prosemirror": "^0.4.3",
-    "preact": "^10.29.5",
+    "preact": "^10.29.6",
     "prosekit": "workspace:*",
     "prosekit-registry": "workspace:*",
     "react": "^19.2.7",

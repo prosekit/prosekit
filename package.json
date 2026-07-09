@@ -34,7 +34,8 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage.enabled",
     "test:install": "playwright install chromium",
-    "typecheck": "tsc --build tsconfig.json"
+    "typecheck": "tsc --build tsconfig.json",
+    "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm run fix:dprint"

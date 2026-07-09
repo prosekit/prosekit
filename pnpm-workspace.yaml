@@ -25,7 +25,7 @@ allowBuilds:
   dprint: false
   esbuild: false
   sharp: false
-  simple-git-hooks: true
+  simple-git-hooks: false
   workerd: false
 
 patchedDependencies:

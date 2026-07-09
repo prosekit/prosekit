@@ -37,12 +37,6 @@
     "typecheck": "tsc --build tsconfig.json",
     "prepare": "simple-git-hooks"
   },
-  "nano-staged": {
-    "*": "dprint fmt --allow-no-files"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "./node_modules/.bin/nano-staged"
-  },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "@changesets/types": "^6.1.0",
@@ -65,5 +59,11 @@
     "typescript": "catalog:",
     "vitest": "catalog:",
     "wrangler": "^4.106.0"
+  },
+  "nano-staged": {
+    "*": "dprint fmt --allow-no-files"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged"
   }
 }

@@ -47,6 +47,14 @@ export interface AutocompleteRootProps {
    * @default null
    */
   anchor?: AutocompleteRootElementProps['anchor'];
+  /**
+   * Whether the autocomplete match should follow the text cursor when it
+   * moves without editing, growing and shrinking the query as the cursor
+   * moves over existing text (for example with arrow keys).
+   *
+   * @default false
+   */
+  followCursor?: AutocompleteRootElementProps['followCursor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */

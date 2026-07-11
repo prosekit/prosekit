@@ -71,6 +71,15 @@ export interface AutocompleteRootProps {
    * @default null
    */
   anchor: AnchorReference
+
+  /**
+   * Whether the autocomplete match should follow the text cursor when it
+   * moves without editing, growing and shrinking the query as the cursor
+   * moves over existing text (for example with arrow keys).
+   *
+   * @default false
+   */
+  followCursor: boolean
 }
 
 /** @internal */
@@ -82,6 +91,7 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
   filter: { default: defaultItemFilter, attribute: false },
   queryBuilder: { default: defaultQueryBuilder, attribute: false },
   anchor: { default: null, attribute: false },
+  followCursor: { default: false, attribute: 'follow-cursor', type: 'boolean' },
 })
 
 export class QueryChangeEvent extends Event {
@@ -189,6 +199,7 @@ export function setupAutocompleteRoot(
     handlers,
     setQuery,
     props.queryBuilder.get,
+    props.followCursor.get,
     (open) => overlayStore.requestOpenChange(open),
   )
 }
@@ -233,11 +244,13 @@ function useAutocompleteExtension(
   handlers: RuleHandlers,
   setQuery: (next: string) => void,
   getQueryBuilder: () => QueryBuilder,
+  getFollowCursor: () => boolean,
   requestOpenChange: (open: boolean) => void,
 ) {
   useEffect(host, () => {
     const editor = getEditor()
     const regex = getRegex()
+    const followCursor = getFollowCursor()
 
     if (!editor || !regex) {
       return
@@ -250,6 +263,7 @@ function useAutocompleteExtension(
       handlers,
       setQuery,
       getQueryBuilder,
+      followCursor,
       requestOpenChange,
     )
     const extension = defineAutocomplete(rule)
@@ -264,6 +278,7 @@ function createAutocompleteRule(
   handlers: RuleHandlers,
   setQuery: (next: string) => void,
   getQueryBuilder: () => QueryBuilder,
+  followCursor: boolean,
   requestOpenChange: (open: boolean) => void,
 ) {
   const handleEnter: MatchHandler = (options) => {
@@ -288,6 +303,7 @@ function createAutocompleteRule(
     regex,
     onEnter: handleEnter,
     onLeave: handleLeave,
+    followCursor,
   })
 }
 

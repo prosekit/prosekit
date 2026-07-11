@@ -17,8 +17,7 @@ import { editorContext } from '../editor-context.ts'
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = new RegExp(
-  (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '')
-  + String.raw`@(\S.*)?$`,
+  (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`@(\S.*)?$`,
   'u',
 )
 

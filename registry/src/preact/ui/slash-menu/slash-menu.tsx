@@ -7,7 +7,11 @@ import SlashMenuEmpty from './slash-menu-empty.tsx'
 import SlashMenuItem from './slash-menu-item.tsx'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = new RegExp((canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`\/(\S.*)?$`, 'u')
+const regex = new RegExp(
+  (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '')
+    + String.raw`\/(\S.*)?$`,
+  'u',
+)
 
 export default function SlashMenu() {
   const editor = useEditor<BasicExtension>()

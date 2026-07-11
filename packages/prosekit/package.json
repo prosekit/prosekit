@@ -244,7 +244,7 @@
     "@types/react-dom": "^19.2.3",
     "loro-crdt": "^1.13.6",
     "loro-prosemirror": "^0.4.3",
-    "preact": "^10.29.6",
+    "preact": "^10.29.7",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "solid-js": "^1.9.14",

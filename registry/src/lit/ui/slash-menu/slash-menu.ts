@@ -16,9 +16,9 @@ import { editorContext } from '../editor-context.ts'
 import { SlashMenuEmptyElement } from './slash-menu-empty.ts'
 import { SlashMenuItemElement } from './slash-menu-item.ts'
 
-// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading" or "//".
+// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = new RegExp(
-  canUseRegexLookbehind() ? String.raw`(?<!\S)\/(?!\/)(\S.*)?$` : String.raw`\/(?!\/)(\S.*)?$`,
+  (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`\/(\S.*)?$`,
   'u',
 )
 

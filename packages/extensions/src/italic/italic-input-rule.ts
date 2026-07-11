@@ -7,11 +7,7 @@ import { defineMarkInputRule } from '../input-rule/index.ts'
  */
 export function defineItalicInputRule(): PlainExtension {
   return defineMarkInputRule({
-    regex: new RegExp(
-      canUseRegexLookbehind()
-        ? String.raw`(?<=\s|^)\*([^\s*]|[^\s*][^*]*[^\s*])\*$`
-        : String.raw`\*([^\s*]|[^\s*][^*]*[^\s*])\*$`,
-    ),
+    regex: new RegExp((canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '') + String.raw`\*([^\s*]|[^\s*][^*]*[^\s*])\*$`),
     type: 'italic',
   })
 }

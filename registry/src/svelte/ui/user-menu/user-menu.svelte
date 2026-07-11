@@ -33,7 +33,7 @@ function handleUserInsert(id: number, username: string) {
 }
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex = new RegExp(canUseRegexLookbehind() ? String.raw`(?<!\S)@(\S.*)?$` : String.raw`@(\S.*)?$`, 'u')
+const regex = new RegExp((canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`@(\S.*)?$`, 'u')
 </script>
 
 <AutocompleteRoot

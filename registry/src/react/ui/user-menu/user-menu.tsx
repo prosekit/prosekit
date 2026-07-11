@@ -13,7 +13,7 @@ import {
 } from 'prosekit/react/autocomplete'
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex = new RegExp(canUseRegexLookbehind() ? String.raw`(?<!\S)@(\S.*)?$` : String.raw`@(\S.*)?$`, 'u')
+const regex = new RegExp((canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`@(\S.*)?$`, 'u')
 
 export default function UserMenu(props: {
   users: { id: number; name: string }[]

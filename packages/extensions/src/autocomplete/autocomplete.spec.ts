@@ -1,4 +1,4 @@
-import { canUseRegexLookbehind, union } from '@prosekit/core'
+import { union } from '@prosekit/core'
 import { TextSelection } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
@@ -10,7 +10,7 @@ import { AutocompleteRule, type MatchHandler, type MatchHandlerOptions } from '.
 import { defineAutocomplete, triggerAutocomplete } from './autocomplete.ts'
 
 function setupSlashMenu(options?: { followCursor?: boolean }) {
-  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+  const regex = /(?<!\S)\/(\S.*)?$/u
 
   let matching: MatchHandlerOptions | null = null
 

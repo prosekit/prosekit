@@ -1,5 +1,19 @@
 # prosekit
 
+## 0.22.0-beta.20
+
+### Minor Changes
+
+- [`ea024fe`](https://github.com/ocavue/prosekit/commit/ea024fe8721eb838f074dc8a9a75bccfe968b5a3) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/svelte)
+
+  Add a `followCursor` option to `AutocompleteRule` and a matching `AutocompleteRoot` prop that keep the match end anchored to the text cursor, so cursor movement grows and shrinks the query over existing text instead of dismissing the match.
+
+### Patch Changes
+
+- [`03186d7`](https://github.com/ocavue/prosekit/commit/03186d74c46ad9f038e7d2bc9f5a478325ce6ad0) ![](https://prosekit.dev/b/web)
+
+  Write ProseMirror-native clipboard data (`data-pm-slice` HTML and plain text) when dragging a block with the block handle, so a drop into another editor keeps the block intact, and clear the stale `dragging` state on the source view after the drag ends.
+
 ## 0.22.0-beta.19
 
 ### Patch Changes

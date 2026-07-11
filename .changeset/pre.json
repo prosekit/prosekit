@@ -25,7 +25,9 @@
     "prosekit-website": "0.0.0"
   },
   "changesets": [
+    "autocomplete-follow-cursor",
     "autocomplete-query-builder",
+    "block-handle-drag-clipboard",
     "block-handle-focus-check",
     "drop-indicator-hoist",
     "export-list-commands",

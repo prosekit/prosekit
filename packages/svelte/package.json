@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.10.0-beta.19",
+  "version": "0.10.0-beta.20",
   "private": false,
   "description": "Svelte components and utilities for ProseKit",
   "author": {

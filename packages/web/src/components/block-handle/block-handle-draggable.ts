@@ -64,8 +64,7 @@ export function setupBlockHandleDraggable(
 
     if (view && hoverState) {
       view.dom.classList.add(DRAGGING_CLASS_NAME)
-      createDraggingPreview(view, hoverState, event)
-      setViewDragging(view, hoverState)
+      startViewDragging(view, hoverState, event)
     }
   })
 
@@ -76,6 +75,7 @@ export function setupBlockHandleDraggable(
     const view = getSafeEditorView(props.editor.get())
     if (view) {
       view.dom.classList.remove(DRAGGING_CLASS_NAME)
+      clearViewDragging(view)
     }
   })
 
@@ -116,36 +116,51 @@ function usePointerDownHandler(
   })
 }
 
-function createDraggingPreview(view: EditorView, hoverState: HoverState, event: DragEvent): void {
-  if (!event.dataTransfer) {
-    return
-  }
-
-  const { pos } = hoverState
-
-  const element = view.nodeDOM(pos)
-  if (!element || !isHTMLElement(element)) {
-    return
-  }
-
-  event.dataTransfer.clearData()
-  event.dataTransfer.setData('text/html', element.outerHTML)
-  event.dataTransfer.effectAllowed = 'copyMove'
-  setDragPreview(event, element)
-
-  return
-}
-
-function setViewDragging(view: EditorView, hoverState: HoverState): void {
+function startViewDragging(view: EditorView, hoverState: HoverState, event: DragEvent): void {
   const { node, pos } = hoverState
 
+  // Serialize through the editor's clipboard pipeline so the transfer carries
+  // the `data-pm-slice` envelope and a plain-text fallback: a drop into
+  // another editor parses the transfer data and never sees this view's
+  // `dragging` state.
+  const { dom, text, slice } = view.serializeForClipboard(new Slice(Fragment.from(node), 0, 0))
+
+  if (event.dataTransfer) {
+    event.dataTransfer.clearData()
+    event.dataTransfer.setData('text/html', dom.innerHTML)
+    event.dataTransfer.setData('text/plain', text)
+    event.dataTransfer.effectAllowed = 'copyMove'
+
+    const element = view.nodeDOM(pos)
+    if (element && isHTMLElement(element)) {
+      setDragPreview(event, element)
+    }
+  }
+
   const dragging: ViewDragging = {
-    slice: new Slice(Fragment.from(node), 0, 0),
+    slice,
     move: true,
     node: NodeSelection.create(view.state.doc, pos),
   }
 
   view.dragging = dragging
+}
+
+function clearViewDragging(view: EditorView): void {
+  const dragging = view.dragging
+  if (!dragging) {
+    return
+  }
+
+  // The handle lives outside `view.dom`, so ProseMirror's own dragend handler
+  // never fires for handle drags; without this, a cross-editor drop or a
+  // canceled drag would leave a stale `dragging` on the source view. Delay
+  // like ProseMirror does, in case a same-view drop is still being processed.
+  window.setTimeout(() => {
+    if (view.dragging === dragging) {
+      view.dragging = null
+    }
+  }, 50)
 }
 
 const BlockHandleDraggableElementBase: HostElementConstructor<BlockHandleDraggableProps> = defineCustomElement(

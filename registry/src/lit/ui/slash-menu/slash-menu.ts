@@ -16,8 +16,11 @@ import { editorContext } from '../editor-context.ts'
 import { SlashMenuEmptyElement } from './slash-menu-empty.ts'
 import { SlashMenuItemElement } from './slash-menu-item.ts'
 
-// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading" or "//".
+const regex = new RegExp(
+  canUseRegexLookbehind() ? String.raw`(?<!\S)\/(?!\/)(\S.*)?$` : String.raw`\/(?!\/)(\S.*)?$`,
+  'u',
+)
 
 class SlashMenuElement extends LitElement {
   private editorConsumer = new ContextConsumer(this, {

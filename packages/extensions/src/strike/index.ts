@@ -74,9 +74,11 @@ export function defineStrikeKeymap(): PlainExtension {
  */
 export function defineStrikeInputRule(): PlainExtension {
   return defineMarkInputRule({
-    regex: canUseRegexLookbehind()
-      ? /(?<=\s|^)~~([^\s~]|[^\s~][^~]*[^\s~])~~$/
-      : /~~([^\s~]|[^\s~][^~]*[^\s~])~~$/,
+    regex: new RegExp(
+      canUseRegexLookbehind()
+        ? String.raw`(?<=\s|^)~~([^\s~]|[^\s~][^~]*[^\s~])~~$`
+        : String.raw`~~([^\s~]|[^\s~][^~]*[^\s~])~~$`,
+    ),
     type: 'strike',
   })
 }

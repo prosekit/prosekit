@@ -7,9 +7,11 @@ import { defineMarkInputRule } from '../input-rule/index.ts'
  */
 export function defineCodeInputRule(): PlainExtension {
   return defineMarkInputRule({
-    regex: canUseRegexLookbehind()
-      ? /(?<=\s|^)`([^\s`]|[^\s`][^`]*[^\s`])`$/
-      : /`([^\s`]|[^\s`][^`]*[^\s`])`$/,
+    regex: new RegExp(
+      canUseRegexLookbehind()
+        ? '(?<=\\s|^)`([^\\s`]|[^\\s`][^`]*[^\\s`])`$'
+        : '`([^\\s`]|[^\\s`][^`]*[^\\s`])`$',
+    ),
     type: 'code',
   })
 }

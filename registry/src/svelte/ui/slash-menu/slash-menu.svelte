@@ -9,8 +9,8 @@ import SlashMenuItem from './slash-menu-item.svelte'
 
 const editor = useEditor<BasicExtension>()
 
-// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+// Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading" or "//".
+const regex = new RegExp(canUseRegexLookbehind() ? String.raw`(?<!\S)\/(?!\/)(\S.*)?$` : String.raw`\/(?!\/)(\S.*)?$`, 'u')
 </script>
 
 <AutocompleteRoot {regex}>

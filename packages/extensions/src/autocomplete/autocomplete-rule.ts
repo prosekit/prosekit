@@ -69,8 +69,11 @@ export interface AutocompleteRuleOptions {
    * The regular expression to match against the text before the cursor. The
    * last match before the cursor is used.
    *
-   * For a slash menu, you might use `/(?<!\S)\/(\S.*)?$/u`.
+   * For a slash menu, you might use `/(?<!\S)\/(?!\/)(\S.*)?$/u`.
    * For a mention, you might use `/@\w*$/`
+   *
+   * To keep a file parseable by engines without lookbehind support, build
+   * the expression with `new RegExp` instead of a lookbehind regex literal.
    */
   regex: RegExp
 

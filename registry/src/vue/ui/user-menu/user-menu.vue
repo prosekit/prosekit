@@ -24,7 +24,7 @@ function handleUserInsert(id: number, username: string) {
 }
 
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
-const regex = canUseRegexLookbehind() ? /(?<!\S)@(\S.*)?$/u : /@(\S.*)?$/u
+const regex = new RegExp(canUseRegexLookbehind() ? String.raw`(?<!\S)@(\S.*)?$` : String.raw`@(\S.*)?$`, 'u')
 </script>
 
 <template>

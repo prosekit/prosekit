@@ -15,15 +15,17 @@ export function defineExtension() {
     defineSubscript(),
     defineSuperscript(),
     defineMarkInputRule({
-      regex: canUseRegexLookbehind()
-        ? /(?<=\s|^)~([^\s~]|[^\s~][^~]*[^\s~])~$/
-        : /~([^\s~]|[^\s~][^~]*[^\s~])~$/,
+      regex: new RegExp(
+        (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
+          + String.raw`~([^\s~]|[^\s~][^~]*[^\s~])~$`,
+      ),
       type: 'subscript',
     }),
     defineMarkInputRule({
-      regex: canUseRegexLookbehind()
-        ? /(?<=\s|^)\^([^\s^]|[^\s^][^^]*[^\s^])\^$/
-        : /\^([^\s^]|[^\s^][^^]*[^\s^])\^$/,
+      regex: new RegExp(
+        (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
+          + String.raw`\^([^\s^]|[^\s^][^^]*[^\s^])\^$`,
+      ),
       type: 'superscript',
     }),
   )

@@ -46,6 +46,14 @@ export interface AutocompleteRootProps {
    * @default null
    */
   anchor?: AutocompleteRootElementProps['anchor'];
+  /**
+   * Whether the autocomplete match should follow the text cursor when it
+   * moves without editing, growing and shrinking the query as the cursor
+   * moves over existing text (for example with arrow keys).
+   *
+   * @default false
+   */
+  followCursor?: AutocompleteRootElementProps['followCursor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */
@@ -72,8 +80,8 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
     const p1Fallback = useEditorContext();
 
     const splittedProps = computed(() => {
-      const { anchor: p0, editor: p1, filter: p2, queryBuilder: p3, regex: p4, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
-      return [[p0, p1, p2, p3, p4, e0, e1, e2, e3], restProps] as const;
+      const { anchor: p0, editor: p1, filter: p2, followCursor: p3, queryBuilder: p4, regex: p5, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
+      return [[p0, p1, p2, p3, p4, p5, e0, e1, e2, e3], restProps] as const;
     });
 
     const handlers: Array<((event: any) => void) | undefined> = [];
@@ -82,9 +90,9 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
       const element = elementRef.value;
       if (!element) return;
 
-      const [p0, p1, p2, p3, p4, e0, e1, e2, e3] = splittedProps.value[0];
+      const [p0, p1, p2, p3, p4, p5, e0, e1, e2, e3] = splittedProps.value[0];
 
-      Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, queryBuilder: p3, regex: p4 });
+      Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, followCursor: p3, queryBuilder: p4, regex: p5 });
 
       handlers.length = 0;
       handlers.push(e0);
@@ -115,5 +123,5 @@ export const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HT
       return h('prosekit-autocomplete-root', { ...restProps, ref: elementRef }, slots.default?.());
     };
   },
-  { props: ['anchor', 'editor', 'filter', 'queryBuilder', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
+  { props: ['anchor', 'editor', 'filter', 'followCursor', 'queryBuilder', 'regex', 'onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange'] },
 );

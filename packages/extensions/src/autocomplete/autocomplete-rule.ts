@@ -91,6 +91,19 @@ export interface AutocompleteRuleOptions {
    * inside a code block or code mark.
    */
   canMatch?: CanMatchPredicate
+
+  /**
+   * Whether the match should follow the text cursor when it moves without
+   * editing. When enabled and a match is active, moving the cursor inside the
+   * same text block (for example with arrow keys) re-runs the regex against
+   * the text between the match start and the cursor: the query grows when the
+   * cursor moves right over existing text and shrinks when it moves left. If
+   * the text no longer matches, the match is closed, and typing can open it
+   * again. Mouse clicks keep the default behavior.
+   *
+   * @default false
+   */
+  followCursor?: boolean
 }
 
 /**
@@ -105,11 +118,14 @@ export class AutocompleteRule {
   readonly onLeave?: VoidFunction
   /** @internal */
   readonly canMatch: (options: { state: EditorState }) => boolean
+  /** @internal */
+  readonly followCursor: boolean
 
   constructor(options: AutocompleteRuleOptions) {
     this.regex = options.regex
     this.onMatch = options.onEnter
     this.onLeave = options.onLeave
     this.canMatch = options.canMatch ?? defaultCanMatch
+    this.followCursor = options.followCursor ?? false
   }
 }

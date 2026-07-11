@@ -48,6 +48,14 @@ export interface AutocompleteRootProps {
    * @default null
    */
   anchor?: AutocompleteRootElementProps['anchor'];
+  /**
+   * Whether the autocomplete match should follow the text cursor when it
+   * moves without editing, growing and shrinking the query as the cursor
+   * moves over existing text (for example with arrow keys).
+   *
+   * @default false
+   */
+  followCursor?: AutocompleteRootElementProps['followCursor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */
@@ -71,7 +79,7 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
   const [getElement, setElement] = createSignal<AutocompleteRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['anchor', 'editor', 'filter', 'queryBuilder', 'regex'], ['onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['anchor', 'editor', 'filter', 'followCursor', 'queryBuilder', 'regex'], ['onOpenChange', 'onQueryChange', 'onValueChange', 'onValuesChange']);
 
   const p1Fallback = useEditorContext();
 
@@ -79,7 +87,7 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
     const element = getElement();
     if (!element) return;
 
-    Object.assign(element, { anchor: elementProps.anchor, editor: elementProps.editor ?? p1Fallback, filter: elementProps.filter, queryBuilder: elementProps.queryBuilder, regex: elementProps.regex });
+    Object.assign(element, { anchor: elementProps.anchor, editor: elementProps.editor ?? p1Fallback, filter: elementProps.filter, followCursor: elementProps.followCursor, queryBuilder: elementProps.queryBuilder, regex: elementProps.regex });
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);

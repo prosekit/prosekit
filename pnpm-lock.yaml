@@ -742,8 +742,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.10(@types/node@24.12.2)(@vitest/browser-playwright@4.1.10)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(happy-dom@20.10.6)(jsdom@29.1.1)(vite@8.1.4)
       vitest-browser-svelte:
-        specifier: ^2.2.1
-        version: 2.2.1(svelte@5.56.4)(vitest@4.1.10)
+        specifier: ^3.0.0
+        version: 3.0.0(svelte@5.56.4)(vitest@4.1.10)
 
   packages/testing:
     dependencies:
@@ -1080,8 +1080,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(solid-js@1.9.14)(vitest@4.1.10)
       vitest-browser-svelte:
-        specifier: ^2.2.1
-        version: 2.2.1(svelte@5.56.4)(vitest@4.1.10)
+        specifier: ^3.0.0
+        version: 3.0.0(svelte@5.56.4)(vitest@4.1.10)
       vitest-browser-vue:
         specifier: ^2.1.0
         version: 2.1.0(@vue/compiler-dom@3.5.39)(@vue/server-renderer@3.5.39)(vitest@4.1.10)(vue@3.5.39)
@@ -7865,8 +7865,8 @@ packages:
       solid-js: ^1.8.0
       vitest: ^4.0.0
 
-  vitest-browser-svelte@2.2.1:
-    resolution: {integrity: sha512-dVjmXuk58eLSloA41Lvz5ALMqWVzK7Gk5TvY5KWFbI8VoEO1nJF1/M498NwJRbxlnjaEZrASd02h+NDS/T9mBA==}
+  vitest-browser-svelte@3.0.0:
+    resolution: {integrity: sha512-BKM9iBGNsEQzigWuSZFAiw6AJDqQqMttApoD8gM8LTI6vxfd423rDMN8GqUHJyGbhH3XcOo9N9u/4hu47Nxhsw==}
     peerDependencies:
       svelte: ^3 || ^4 || ^5 || ^5.0.0-next.0
       vitest: ^4.0.0
@@ -15630,7 +15630,7 @@ snapshots:
       solid-js: 1.9.14
       vitest: 4.1.10(@types/node@24.12.2)(@vitest/browser-playwright@4.1.10)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(happy-dom@20.10.6)(jsdom@29.1.1)(vite@8.1.4)
 
-  vitest-browser-svelte@2.2.1(svelte@5.56.4)(vitest@4.1.10):
+  vitest-browser-svelte@3.0.0(svelte@5.56.4)(vitest@4.1.10):
     dependencies:
       '@testing-library/svelte-core': 1.1.3(svelte@5.56.4)
       svelte: 5.56.4(@typescript-eslint/types@8.63.0)

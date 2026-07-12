@@ -102,7 +102,7 @@
     "tsx": "^4.23.0",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-svelte": "^2.2.1"
+    "vitest-browser-svelte": "^3.0.0"
   },
   "publishConfig": {
     "exports": {

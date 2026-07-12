@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.22.0-beta.21
+
+### Patch Changes
+
+- [`e9ab4f4`](https://github.com/ocavue/prosekit/commit/e9ab4f4e23b631660db99e064b7e1102364cac1a) ![](https://prosekit.dev/b/extensions)
+
+  Construct lookbehind trigger expressions with `new RegExp` so that modules still parse on engines without lookbehind support.
+
+- [`40fe63a`](https://github.com/ocavue/prosekit/commit/40fe63ad585cf90f23b7d1591c2749caf03a8f22) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
 ## 0.22.0-beta.20
 
 ### Minor Changes

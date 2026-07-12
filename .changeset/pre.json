@@ -37,6 +37,7 @@
     "horizontal-rule-input-rule-guard",
     "horizontal-rule-replace-empty-item",
     "inline-popover-anchor",
+    "lookbehind-regex-construction",
     "mark-builder-create",
     "node-mark-builders",
     "plenty-pants-search",
@@ -46,6 +47,7 @@
     "table-handle-menu-scroll",
     "trigger-autocomplete-transaction",
     "update-deps",
-    "update-deps2"
+    "update-deps2",
+    "update-deps3"
   ]
 }

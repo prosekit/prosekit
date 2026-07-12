@@ -1,0 +1,1 @@
+export * from "@prosekit/svelte/block-handle";

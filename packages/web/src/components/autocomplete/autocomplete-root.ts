@@ -14,7 +14,7 @@ import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@ari
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
 import type { ReferenceElement } from '@floating-ui/dom'
-import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
+import { defineDOMEventHandler, defineKeymap, union, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
@@ -23,7 +23,7 @@ import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
 import { resolveAnchor, type AnchorReference } from '../../utils/resolve-anchor.ts'
 
 import { autocompleteStoreContext, type AutocompleteStore } from './context.ts'
-import { defaultQueryBuilder, type QueryBuilder } from './helpers.ts'
+import { createCompositionEndTracker, defaultQueryBuilder, shouldIgnoreKeydownNearComposition, type QueryBuilder } from './helpers.ts'
 
 export { OpenChangeEvent }
 
@@ -220,10 +220,17 @@ function useKeyboardBridge(
   getOpen: () => boolean,
   target: EventTarget,
 ): void {
-  const extension: Extension = defineDOMEventHandler('keydown', (view, event): boolean => {
+  const tracker = createCompositionEndTracker()
+  const compositionEndExtension: Extension = defineDOMEventHandler('compositionend', (_view, event): boolean => {
+    tracker.endedAt = event.timeStamp
+    return false
+  })
+  const keydownExtension: Extension = defineDOMEventHandler('keydown', (view, event): boolean => {
+    if (shouldIgnoreKeydownNearComposition(event, view.composing, tracker)) {
+      return false
+    }
     if (
-      view.composing
-      || event.defaultPrevented
+      event.defaultPrevented
       || !getOpen()
       || !EVENT_KEYS.includes(event.key as (typeof EVENT_KEYS)[number])
     ) {
@@ -232,6 +239,7 @@ function useKeyboardBridge(
     target.dispatchEvent(event)
     return event.defaultPrevented
   })
+  const extension = union(keydownExtension, compositionEndExtension)
   useEditorExtension(host, getEditor, withPriority(extension, 4 satisfies typeof Priority.highest))
 }
 

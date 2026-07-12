@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.7.0-beta.20",
+  "version": "0.7.0-beta.21",
   "private": false,
   "description": "Lit components and utilities for ProseKit",
   "author": {

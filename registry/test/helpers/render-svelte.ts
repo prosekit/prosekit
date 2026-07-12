@@ -14,6 +14,5 @@ export async function renderSvelteExample(story: string, initialContent?: NodeJS
     story,
     exampleProps: initialContent ? { initialContent } : {},
   }
-  const result: SvelteRenderResult = await render(SvelteRenderer, props)
-  return result
+  return await render(SvelteRenderer, props)
 }

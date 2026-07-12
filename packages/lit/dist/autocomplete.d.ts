@@ -1,3 +1,0 @@
-import { AutocompleteEmptyElement as AutocompleteEmpty, AutocompleteItemElement as AutocompleteItem, AutocompletePopupElement as AutocompletePopup, AutocompletePositionerElement as AutocompletePositioner, AutocompleteRootElement as AutocompleteRoot } from "@prosekit/web/autocomplete";
-export * from "@prosekit/web/autocomplete";
-export { AutocompleteEmpty, AutocompleteItem, AutocompletePopup, AutocompletePositioner, AutocompleteRoot };

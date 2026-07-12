@@ -50,7 +50,7 @@
     "@aria-ui/core": "^0.2.1",
     "@aria-ui/elements": "^0.1.12",
     "@aria-ui/utils": "^0.1.7",
-    "@floating-ui/dom": "^1.7.6",
+    "@floating-ui/dom": "^1.8.0",
     "@ocavue/utils": "^1.7.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",

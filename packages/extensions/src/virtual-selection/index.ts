@@ -36,6 +36,18 @@ function getFocusState(state: EditorState): PluginState | undefined {
   return key.getState(state)
 }
 
+function updateFocusState(view: EditorView, value: PluginState): void {
+  if (getFocusState(view.state) === value) return
+  view.dispatch(setFocusMeta(view.state.tr, value))
+}
+
+function isEditablePrimaryPointerEvent(event: Event): boolean {
+  if (!(event instanceof PointerEvent)) return false
+  if (!event.isPrimary || event.button !== 0) return false
+  if (!(event.target instanceof Element)) return false
+  return !event.target.closest('[contenteditable="false"]')
+}
+
 /**
  * Removes the native selection when it's inside the editor. Otherwise the
  * browser would keep painting it while the editor is blurred, and any DOM
@@ -68,7 +80,17 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
   props: {
     handleDOMEvents: {
       focus: (view) => {
-        view.dispatch(setFocusMeta(view.state.tr, false))
+        updateFocusState(view, false)
+      },
+
+      pointerdown: (view, event) => {
+        if (isEditablePrimaryPointerEvent(event)) {
+          // Decorations add wrapper elements around selected text. Remove an
+          // active decoration before mousedown and focus can use that DOM for
+          // pointer selection placement.
+          updateFocusState(view, false)
+        }
+        return false
       },
 
       blur: (view) => {
@@ -81,7 +103,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
 
         removeNativeSelection(view)
 
-        view.dispatch(setFocusMeta(view.state.tr, true))
+        updateFocusState(view, true)
       },
     },
     decorations: (state) => {

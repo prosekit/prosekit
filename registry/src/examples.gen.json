@@ -561,6 +561,13 @@
       "hidden": true,
       "description": "Custom node and mark views using view adapters."
     },
+    "virtual-selection-repro": {
+      "frameworks": [
+        "react"
+      ],
+      "hidden": true,
+      "description": "Reproduces pointer refocus in an editable nested node view."
+    },
     "word-counter": {
       "frameworks": [
         "react",
@@ -1267,6 +1274,16 @@
         "registry/src/react/examples/view-adapter/index.ts",
         "registry/src/react/sample/define-atom-block.ts",
         "registry/src/react/sample/sample-doc-view-adapter.ts"
+      ]
+    },
+    "react-example-virtual-selection-repro": {
+      "story": "virtual-selection-repro",
+      "files": [
+        "registry/src/react/examples/virtual-selection-repro/editor.tsx",
+        "registry/src/react/examples/virtual-selection-repro/extension.ts",
+        "registry/src/react/examples/virtual-selection-repro/index.ts",
+        "registry/src/react/examples/virtual-selection-repro/nested-editable-view.tsx",
+        "registry/src/react/examples/virtual-selection-repro/style.css"
       ]
     },
     "react-example-word-counter": {

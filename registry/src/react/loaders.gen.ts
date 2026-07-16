@@ -53,6 +53,7 @@ export const loaders = {
   'user-menu': lazy(() => import('./examples/user-menu/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'user-menu-dynamic': lazy(() => import('./examples/user-menu-dynamic/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'view-adapter': lazy(() => import('./examples/view-adapter/index.ts').then((m) => ({ default: m.ExampleEditor }))),
+  'virtual-selection-repro': lazy(() => import('./examples/virtual-selection-repro/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'word-counter': lazy(() => import('./examples/word-counter/index.ts').then((m) => ({ default: m.ExampleEditor }))),
   'yjs': lazy(() => import('./examples/yjs/index.ts').then((m) => ({ default: m.ExampleEditor }))),
 }

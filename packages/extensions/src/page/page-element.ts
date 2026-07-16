@@ -236,11 +236,11 @@ function unobserveElement(element: PageChunkElement) {
 
 function findLeaderChunk(element: HTMLElement, group: string): PageChunkElement | null | undefined {
   const root = element.closest('.ProseMirror')
-  return root?.querySelector<PageChunkElement>(`${PAGE_CHUNK_TAG_NAME}[data-group="${group}"][data-size]`)
+  return root?.querySelector<PageChunkElement>(`${PAGE_CHUNK_TAG_NAME}[data-group="${CSS.escape(group)}"][data-size]`)
 }
 
 function findAllChunks(element: HTMLElement, group: string): PageChunkElement[] {
   const root = element.closest('.ProseMirror')
-  const elements = root?.querySelectorAll<PageChunkElement>(`${PAGE_CHUNK_TAG_NAME}[data-group="${group}"]`)
+  const elements = root?.querySelectorAll<PageChunkElement>(`${PAGE_CHUNK_TAG_NAME}[data-group="${CSS.escape(group)}"]`)
   return Array.from(elements || [])
 }

@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ex
 
+export SKIP_SIMPLE_GIT_HOOKS=1
+export SKIP_INSTALL_SIMPLE_GIT_HOOKS=1
+
 REF_DIR="website/src/content/docs/references"
 
 cd "$(dirname "$0")/.."

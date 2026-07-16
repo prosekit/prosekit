@@ -48,6 +48,14 @@ export interface AutocompleteRootProps {
    * @default null
    */
   anchor?: AutocompleteRootElementProps['anchor'];
+  /**
+   * Whether the autocomplete match should follow the text cursor when it
+   * moves without editing, growing and shrinking the query as the cursor
+   * moves over existing text (for example with arrow keys).
+   *
+   * @default false
+   */
+  followCursor?: AutocompleteRootElementProps['followCursor'];
   /** Fired when the open state changes. */
   onOpenChange?: (event: AutocompleteRootEvents['openChange']) => void;
   /** Fired when the query changes. */
@@ -72,12 +80,12 @@ function AutocompleteRootComponent(props: AutocompleteRootProps, forwardedRef: R
 
   const p1Fallback = useEditorContext();
 
-  const { anchor: p0, editor: p1, filter: p2, queryBuilder: p3, regex: p4, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
+  const { anchor: p0, editor: p1, filter: p2, followCursor: p3, queryBuilder: p4, regex: p5, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, queryBuilder: p3, regex: p4 });
+    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, followCursor: p3, queryBuilder: p4, regex: p5 });
     handlersRef.current = [e0, e1, e2, e3] as Array<((event: Event) => void) | undefined>;
   });
 

@@ -104,12 +104,12 @@ describe('VueNodeView', () => {
 
     const urls = new Set<string>()
     const check = () => {
-      imageRefresh.elements().forEach((element) => {
+      for (const element of imageRefresh.elements()) {
         const url = element.getAttribute('data-url')
         if (url) {
           urls.add(url)
         }
-      })
+      }
       return urls.size >= 5
     }
 
@@ -136,12 +136,12 @@ describe('VueNodeView', () => {
 
     const urls = new Set<string>()
     const check = () => {
-      imageRefresh.elements().forEach((element) => {
+      for (const element of imageRefresh.elements()) {
         const url = element.getAttribute('data-url')
         if (url) {
           urls.add(url)
         }
-      })
+      }
       return urls.size >= 15
     }
 

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.10.0-beta.18",
+  "version": "0.10.0-beta.21",
   "private": false,
   "description": "Svelte components and utilities for ProseKit",
   "author": {
@@ -94,15 +94,15 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "@sveltejs/package": "^2.5.7",
-    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@sveltejs/package": "^2.5.8",
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
     "@types/node": "catalog:",
-    "svelte": "^5.56.1",
-    "svelte-check": "^4.5.0",
-    "tsx": "^4.22.4",
+    "svelte": "^5.56.4",
+    "svelte-check": "^4.7.2",
+    "tsx": "^4.23.0",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-svelte": "^2.1.1"
+    "vitest-browser-svelte": "^3.0.0"
   },
   "publishConfig": {
     "exports": {

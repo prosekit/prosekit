@@ -55,7 +55,8 @@ function setup() {
   }
 
   const getVirtualSelectionText = () => {
-    return Array.from(editor.view.dom.querySelectorAll('.prosekit-virtual-selection'))
+    const elements = Array.from(editor.view.dom.querySelectorAll('.prosekit-virtual-selection'))
+    return elements
       .map((element) => element.textContent)
       .join('|')
   }

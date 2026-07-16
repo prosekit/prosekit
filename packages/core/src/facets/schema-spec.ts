@@ -8,7 +8,7 @@ export const schemaSpecFacet: Facet<SchemaSpec, SchemaSpec> = defineFacet({
   reducer: (specs): SchemaSpec => {
     let nodes = OrderedMap.from<NodeSpec>({})
     let marks = OrderedMap.from<MarkSpec>({})
-    let topNode: string | undefined = undefined
+    let topNode: string | undefined
 
     for (const spec of specs) {
       nodes = nodes.append(spec.nodes)

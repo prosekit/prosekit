@@ -1,4 +1,5 @@
-import { canUseRegexLookbehind, union } from '@prosekit/core'
+import { union } from '@prosekit/core'
+import { TextSelection } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
@@ -8,8 +9,8 @@ import { inputText } from '../testing/keyboard.ts'
 import { AutocompleteRule, type MatchHandler, type MatchHandlerOptions } from './autocomplete-rule.ts'
 import { defineAutocomplete, triggerAutocomplete } from './autocomplete.ts'
 
-function setupSlashMenu() {
-  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(\S.*)?$/u : /\/(\S.*)?$/u
+function setupSlashMenu(options?: { followCursor?: boolean }) {
+  const regex = /(?<!\S)\/(\S.*)?$/u
 
   let matching: MatchHandlerOptions | null = null
 
@@ -24,7 +25,7 @@ function setupSlashMenu() {
     }
   })
 
-  const rule = new AutocompleteRule({ regex, onEnter, onLeave })
+  const rule = new AutocompleteRule({ regex, onEnter, onLeave, followCursor: options?.followCursor })
   const extension = union(defineTestExtension(), defineAutocomplete(rule))
   const { editor, n, m } = setupTestFromExtension(extension)
 
@@ -58,7 +59,15 @@ function setupSlashMenu() {
     }
   }
 
-  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText, showSelection }
+  const moveCursor = (pos: number, options?: { pointer?: boolean }): void => {
+    const tr = editor.state.tr.setSelection(TextSelection.create(editor.state.doc, pos))
+    if (options?.pointer) {
+      tr.setMeta('pointer', true)
+    }
+    editor.view.dispatch(tr)
+  }
+
+  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText, showSelection, moveCursor }
 }
 
 describe('defineAutocomplete', () => {
@@ -356,6 +365,189 @@ describe('defineAutocomplete', () => {
 
     await keyboard.press('ArrowRight')
     expect(showSelection()).toMatchInlineSnapshot(`"a /cdb<cursor>"`)
+    expect(isMatching()).toBe(false)
+  })
+})
+
+describe('followCursor', () => {
+  it('extends the match when the cursor moves right over existing text', async () => {
+    const { editor, n, getMatchingText, showSelection } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    await expect.poll(showSelection).toBe('/<cursor>page')
+    expect(getMatchingText()).toBe('/')
+
+    await keyboard.press('ArrowRight')
+    await expect.poll(showSelection).toBe('/p<cursor>age')
+    expect(getMatchingText()).toBe('/p')
+
+    await keyboard.press('ArrowRight')
+    await keyboard.press('ArrowRight')
+    await keyboard.press('ArrowRight')
+    await expect.poll(showSelection).toBe('/page<cursor>')
+    expect(getMatchingText()).toBe('/page')
+  })
+
+  it('shrinks the match when the cursor moves left', async () => {
+    const { editor, n, getMatchingText, showSelection } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    await keyboard.press('ArrowRight')
+    await keyboard.press('ArrowRight')
+    await expect.poll(showSelection).toBe('/pa<cursor>ge')
+    expect(getMatchingText()).toBe('/pa')
+
+    await keyboard.press('ArrowLeft')
+    await expect.poll(showSelection).toBe('/p<cursor>age')
+    expect(getMatchingText()).toBe('/p')
+
+    await keyboard.press('ArrowLeft')
+    await expect.poll(showSelection).toBe('/<cursor>page')
+    expect(getMatchingText()).toBe('/')
+  })
+
+  it('deletes the traversed text together with the match', async () => {
+    const { editor, n, getMatching, getMatchingText, showSelection } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    await keyboard.press('ArrowRight')
+    await keyboard.press('ArrowRight')
+    await keyboard.press('ArrowRight')
+    await keyboard.press('ArrowRight')
+    await expect.poll(showSelection).toBe('/page<cursor>')
+    expect(getMatchingText()).toBe('/page')
+
+    getMatching().deleteMatch()
+    expect(editor.state.doc.textContent).toBe('')
+  })
+
+  it('closes without a sticky ignore when the cursor moves before the match start', async () => {
+    const { editor, n, isMatching, getMatchingText, moveCursor } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    expect(isMatching()).toBe(true)
+
+    // Move to the match start (right before the slash).
+    moveCursor(1)
+    expect(isMatching()).toBe(false)
+
+    // Movement alone never reopens the match.
+    moveCursor(2)
+    expect(isMatching()).toBe(false)
+
+    // Typing reopens it because the trigger was not ignored.
+    await inputText('x')
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/x')
+  })
+
+  it('keeps the sticky dismissal without followCursor', async () => {
+    const { editor, n, isMatching, showSelection } = setupSlashMenu()
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    expect(isMatching()).toBe(true)
+
+    await keyboard.press('ArrowRight')
+    await expect.poll(showSelection).toBe('/p<cursor>age')
+    expect(isMatching()).toBe(false)
+
+    await inputText('x')
+    expect(isMatching()).toBe(false)
+  })
+
+  it('closes without ignoring when the cursor leaves the textblock', async () => {
+    const { editor, n, isMatching, getMatchingText, moveCursor } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>abc'), n.paragraph('def')))
+
+    await inputText('/')
+    expect(isMatching()).toBe(true)
+
+    await keyboard.press('ArrowDown')
+    await expect.poll(isMatching).toBe(false)
+
+    // Move back right after the slash and type: the trigger reopens.
+    moveCursor(2)
+    expect(isMatching()).toBe(false)
+    await inputText('x')
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/x')
+  })
+
+  it('extends the match on a programmatic cursor move', async () => {
+    const { editor, n, getMatchingText, moveCursor } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    expect(getMatchingText()).toBe('/')
+
+    moveCursor(editor.state.selection.head + 4)
+    expect(getMatchingText()).toBe('/page')
+  })
+
+  it('keeps the default dismissal for pointer-driven selection', async () => {
+    const { editor, n, isMatching, moveCursor } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page')))
+
+    await inputText('/')
+    expect(isMatching()).toBe(true)
+
+    moveCursor(editor.state.selection.head + 2, { pointer: true })
+    expect(isMatching()).toBe(false)
+
+    // A pointer leave keeps the sticky ignore, matching the default behavior.
+    await inputText('x')
+    expect(isMatching()).toBe(false)
+  })
+
+  it('keeps the match while extending a selection inside it', async () => {
+    const { isMatching, getMatchingText, showSelection } = setupSlashMenu({ followCursor: true })
+
+    await inputText('/page')
+    expect(getMatchingText()).toBe('/page')
+
+    await keyboard.down('Shift')
+    await keyboard.press('ArrowLeft')
+    await keyboard.press('ArrowLeft')
+    await keyboard.up('Shift')
+    await expect.poll(showSelection).toBe('/pa<selection>ge<selection>')
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/page')
+  })
+
+  it('closes when the cursor moves more than MAX_MATCH past the match start', async () => {
+    const { editor, n, isMatching, moveCursor } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>' + 'x'.repeat(300))))
+
+    await inputText('/')
+    expect(isMatching()).toBe(true)
+
+    moveCursor(editor.state.selection.head + 250)
+    expect(isMatching()).toBe(false)
+  })
+
+  it('stays ignored after ignoreMatch', async () => {
+    const { isMatching, getMatching, showSelection } = setupSlashMenu({ followCursor: true })
+
+    await inputText('/a')
+    expect(isMatching()).toBe(true)
+
+    getMatching().ignoreMatch()
+    expect(isMatching()).toBe(false)
+
+    await keyboard.press('ArrowLeft')
+    await expect.poll(showSelection).toBe('/<cursor>a')
+    expect(isMatching()).toBe(false)
+
+    await keyboard.press('ArrowRight')
+    await expect.poll(showSelection).toBe('/a<cursor>')
+    expect(isMatching()).toBe(false)
+
+    await inputText('b')
     expect(isMatching()).toBe(false)
   })
 })

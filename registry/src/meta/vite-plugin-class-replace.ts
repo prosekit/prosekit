@@ -34,8 +34,7 @@ export function classReplace(): VitePlugin {
         server.config.logger.info('Refreshing classes from ' + styleText('blue', CLASS_TS_PATH))
         await refreshClasses()
 
-        const modulesToInvalidate = Array.from(moduleIds)
-          .map(moduleId => server.moduleGraph.getModuleById(moduleId))
+        const modulesToInvalidate = Array.from(moduleIds, moduleId => server.moduleGraph.getModuleById(moduleId))
           .filter(module => module != null)
 
         for (const module of modulesToInvalidate) {

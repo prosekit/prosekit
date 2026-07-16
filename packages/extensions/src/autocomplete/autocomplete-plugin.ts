@@ -1,4 +1,4 @@
-import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
+import { isTextSelection, OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
 import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 import { Plugin, type EditorState, type Transaction } from '@prosekit/pm/state'
 import type { Mapping } from '@prosekit/pm/transform'
@@ -140,6 +140,16 @@ function handleTransaction(
       return { matching: null, ignores }
     }
 
+    if (
+      prevMatching.rule.followCursor
+      && !tr.docChanged
+      && !tr.getMeta('pointer')
+      && isTextSelection(newState.selection)
+      && newState.selection.empty
+    ) {
+      return handleCursorMove(prevMatching, newState, getRules, ignores)
+    }
+
     const { selection } = newState
     // If the text selection is before the matching or after the matching,
     // we leave the matching
@@ -202,6 +212,28 @@ function handleTransaction(
   }
 
   throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
+}
+
+// A rule with `followCursor` re-anchors the match end at the moved text
+// cursor, so the query grows and shrinks with cursor movement. A failed
+// re-match closes the matching without ignoring it, so typing can reopen it.
+function handleCursorMove(
+  prevMatching: PredictionPluginMatching,
+  newState: EditorState,
+  getRules: () => AutocompleteRule[],
+  ignores: Array<number>,
+): PredictionPluginState {
+  const head = newState.selection.head
+  if (
+    head > prevMatching.from
+    && head - prevMatching.from <= MAX_MATCH
+    && newState.selection.$head.sameParent(newState.doc.resolve(prevMatching.from))
+  ) {
+    const text = getTextBetween(newState.doc, prevMatching.from, head)
+    const matching = matchRule(newState, getRules(), text, prevMatching.from, head, ignores)
+    return { matching: matching ?? null, ignores }
+  }
+  return { matching: null, ignores }
 }
 
 function handleUpdate(view: EditorView, prevState: EditorState): void {

@@ -93,7 +93,7 @@ export class VirtualFileSystem {
     process.chdir(this.rootDir)
     const updated = await Promise.all(this.files.values().map((file) => file.commit()))
     this.files.clear()
-    return updated.some((updated) => updated)
+    return updated.includes(true)
   }
 
   /** Ensures a file entry exists before mutating it. */

@@ -7,7 +7,7 @@ function maybeResolve(doc: ProseMirrorNode, pos?: number) {
   if (pos != null) {
     return doc.resolve(pos)
   }
-  return undefined
+  return
 }
 
 /**

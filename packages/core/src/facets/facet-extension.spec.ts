@@ -39,7 +39,9 @@ describe('facet extension', () => {
     let fooHandlers: FooHandler[] | undefined
 
     const onFoo = (value: string): void => {
-      fooHandlers?.forEach((handler) => handler(value))
+      for (const handler of fooHandlers ?? []) {
+        handler(value)
+      }
     }
 
     return (input) => {
@@ -56,7 +58,9 @@ describe('facet extension', () => {
   const barReducer: FacetReducer<BarInput, RootInput> = (input) => {
     return {
       onBar: (value: string) => {
-        input.forEach((handler) => handler(value))
+        for (const handler of input) {
+          handler(value)
+        }
       },
     }
   }
@@ -90,13 +94,17 @@ describe('facet extension', () => {
     expect(fooHandler2).toHaveBeenCalledTimes(0)
     expect(barHandler1).toHaveBeenCalledTimes(0)
 
-    rootOutput.fooHandlers.forEach((handler) => handler('a'))
+    for (const handler of rootOutput.fooHandlers) {
+      handler('a')
+    }
     expect(fooHandler1).toHaveBeenCalledWith('a')
     expect(fooHandler1).toHaveBeenCalledTimes(1)
     expect(fooHandler2).toHaveBeenCalledWith('a')
     expect(fooHandler2).toHaveBeenCalledTimes(1)
 
-    rootOutput.barHandlers.forEach((handler) => handler('b'))
+    for (const handler of rootOutput.barHandlers) {
+      handler('b')
+    }
     expect(barHandler1).toHaveBeenCalledWith('b')
     expect(barHandler1).toHaveBeenCalledTimes(1)
   })

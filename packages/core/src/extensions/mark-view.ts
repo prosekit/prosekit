@@ -19,10 +19,13 @@ export function defineMarkView(options: MarkViewOptions): Extension {
 const markViewFacet = defineFacet<MarkViewOptions, PluginPayload>({
   reducer: (inputs: MarkViewOptions[]): PluginPayload => {
     const markViews: { [markName: string]: MarkViewConstructor } = {}
+    const seen = new Set<string>()
 
     for (const input of inputs) {
-      if (!markViews[input.name]) {
-        markViews[input.name] = input.constructor
+      const { name, constructor } = input
+      if (!seen.has(name)) {
+        seen.add(name)
+        markViews[name] = constructor
       }
     }
 

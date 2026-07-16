@@ -1,4 +1,5 @@
-import { expect, it } from 'vitest'
+import type { Editor } from 'prosekit/core'
+import { expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 import { page, userEvent, type Locator } from 'vitest/browser'
 
@@ -135,6 +136,44 @@ testStory({ story: 'block-handle', emptyContent: true }, () => {
     await expect.element(listNode).toHaveClass(/ProseMirror-selectednode/)
     await expect.element(p1).not.toHaveClass(/ProseMirror-selectednode/)
     await expect.element(p2).not.toHaveClass(/ProseMirror-selectednode/)
+
+    await closeBlockHandle()
+  })
+
+  it('writes ProseMirror clipboard data when dragging the handle', async () => {
+    const editor = await waitForEditor()
+    await editor.click()
+    await unhover()
+
+    await userEvent.type(editor, 'Paragraph 1')
+    await keyboard.press('Enter')
+    await userEvent.type(editor, 'Paragraph 2')
+
+    const p1 = editor.locate('p', { hasText: 'Paragraph 1' })
+    await hover(p1)
+    await expectBlockHandleToOpen()
+
+    const blockHandleDraggable = page.locate('prosekit-block-handle-draggable')
+    const draggableElement = blockHandleDraggable.element() as HTMLElement & { editor: Editor | null }
+    const view = draggableElement.editor?.view
+    expect(view).toBeTruthy()
+
+    const dataTransfer = new DataTransfer()
+    draggableElement.dispatchEvent(
+      new DragEvent('dragstart', { bubbles: true, cancelable: true, dataTransfer }),
+    )
+
+    // A drop into another editor can only read the data transfer, so the HTML
+    // must carry the `data-pm-slice` envelope and a plain-text fallback.
+    const html = dataTransfer.getData('text/html')
+    expect(html).toContain('data-pm-slice')
+    expect(html).toContain('Paragraph 1')
+    expect(html).not.toContain('Paragraph 2')
+    expect(dataTransfer.getData('text/plain')).toBe('Paragraph 1')
+    expect(view?.dragging).toBeTruthy()
+
+    draggableElement.dispatchEvent(new DragEvent('dragend', { bubbles: true }))
+    await vi.waitFor(() => expect(view?.dragging).toBeFalsy())
 
     await closeBlockHandle()
   })

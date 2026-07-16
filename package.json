@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.10.0",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -34,27 +34,36 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage.enabled",
     "test:install": "playwright install chromium",
-    "typecheck": "tsc --build tsconfig.json"
+    "typecheck": "tsc --build tsconfig.json",
+    "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "@changesets/types": "^6.1.0",
-    "@ocavue/eslint-config": "^4.5.9",
+    "@ocavue/eslint-config": "^4.11.0",
     "@ocavue/tsconfig": "^0.7.1",
     "@size-limit/esbuild-why": "^12.1.0",
     "@size-limit/preset-small-lib": "^12.1.0",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.54.0",
-    "eslint": "^10.4.1",
-    "knip": "^6.15.0",
+    "dprint": "^0.55.1",
+    "eslint": "^10.6.0",
+    "knip": "^6.25.0",
     "monorepo-typescript-references": "^1.1.2",
-    "oxfmt": "^0.53.0",
-    "playwright": "^1.60.0",
+    "nano-staged": "^1.0.2",
+    "oxfmt": "^0.58.0",
+    "playwright": "^1.61.1",
+    "simple-git-hooks": "^2.13.1",
     "size-limit": "^12.1.0",
-    "turbo": "^2.9.16",
+    "turbo": "^2.10.4",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.106.0"
+    "wrangler": "^4.107.1"
+  },
+  "nano-staged": {
+    "*": "dprint fmt --allow-no-files"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged --allow-empty || true"
   }
 }

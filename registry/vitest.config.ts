@@ -11,6 +11,11 @@ import { playwrightCommands } from 'vitest-browser-commands'
 import { classReplace } from './src/meta/vite-plugin-class-replace'
 
 export default config({
+  resolve: {
+    alias: {
+      'loro-crdt': 'loro-crdt/base64',
+    },
+  },
   plugins: [
     classReplace(),
     tailwindcss(),

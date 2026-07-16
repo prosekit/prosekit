@@ -22,7 +22,7 @@ export function config(userConfig?: UserConfig): UserConfig {
   const tsdownEntry: Record<string, string> = {}
   for (const [exportName, exportValue] of Object.entries(packageJson.exports ?? {})) {
     let entryName: string = exportName
-    let entryValue: string | undefined = undefined
+    let entryValue: string | undefined
 
     if (entryName === '.') {
       entryName = 'index'
@@ -51,10 +51,7 @@ export function config(userConfig?: UserConfig): UserConfig {
     entry: userConfig?.entry || tsdownEntry,
     sourcemap: true,
     clean: false,
-    // TODO: turn on failOnWarn once the following issues are resolved:
-    // https://github.com/rolldown/tsdown/issues/977
-    // https://github.com/rolldown/tsdown/issues/975
-    failOnWarn: false,
+    failOnWarn: true,
     dts: { build: true, incremental: true, sourcemap: true },
     hash: false,
     css: {

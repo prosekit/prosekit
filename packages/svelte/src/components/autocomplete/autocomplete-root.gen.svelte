@@ -5,7 +5,7 @@
   import { useEditorContext } from '../../contexts/editor-context.ts'
   registerAutocompleteRootElement()
 
-  let { anchor: p0, editor: p1, filter: p2, queryBuilder: p3, regex: p4, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, children = undefined, ...restProps } = $props()
+  let { anchor: p0, editor: p1, filter: p2, followCursor: p3, queryBuilder: p4, regex: p5, onOpenChange: e0, onQueryChange: e1, onValueChange: e2, onValuesChange: e3, children = undefined, ...restProps } = $props()
   let element: AutocompleteRootElement | undefined
   const handlers: EventListener[] = []
 
@@ -14,7 +14,7 @@
   $effect(() => {
     if (!element) return
 
-    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, queryBuilder: p3, regex: p4 })
+    Object.assign(element, { anchor: p0, editor: p1 ?? p1Fallback, filter: p2, followCursor: p3, queryBuilder: p4, regex: p5 })
 
     handlers.length = 0
     handlers.push(e0)

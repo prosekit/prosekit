@@ -26,7 +26,7 @@ export function defineMentionSpec(): MentionSpecExtension {
       kind: { default: '', validate: 'string' },
     },
     inline: true,
-    leafText: (node) => (node.attrs as MentionAttrs).value.toString(),
+    leafText: (node) => (node.attrs as MentionAttrs).value,
     parseDOM: [
       {
         tag: `span[data-mention]`,
@@ -41,10 +41,10 @@ export function defineMentionSpec(): MentionSpecExtension {
       return [
         'span',
         {
-          'data-id': (node.attrs as MentionAttrs).id.toString(),
-          'data-mention': (node.attrs as MentionAttrs).kind.toString(),
+          'data-id': (node.attrs as MentionAttrs).id,
+          'data-mention': (node.attrs as MentionAttrs).kind,
         },
-        (node.attrs as MentionAttrs).value.toString(),
+        (node.attrs as MentionAttrs).value,
       ]
     },
   })

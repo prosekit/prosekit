@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.18.0-beta.13",
+  "version": "0.18.0-beta.16",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {
@@ -96,16 +96,16 @@
     "@prosekit/pm": "workspace:^",
     "prosemirror-changeset": "^2.4.1",
     "prosemirror-drop-indicator": "^0.1.4",
-    "prosemirror-dropcursor": "^1.8.2",
-    "prosemirror-enter-rules": "^0.1.5",
-    "prosemirror-flat-list": "^0.7.0",
+    "prosemirror-dropcursor": "^1.8.3",
+    "prosemirror-enter-rules": "^0.1.6",
+    "prosemirror-flat-list": "^0.7.1",
     "prosemirror-gapcursor": "^1.4.1",
-    "prosemirror-highlight": "^0.15.2",
+    "prosemirror-highlight": "^0.15.3",
     "prosemirror-math": "^0.2.2",
     "prosemirror-search": "^1.1.1",
     "prosemirror-tables": "^1.8.5",
     "server-dom-shim": "^1.1.0",
-    "shiki": "^4.3.0"
+    "shiki": "^4.3.1"
   },
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
@@ -133,7 +133,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "diffable-html-snapshot": "^0.3.0",
     "katex": "^0.17.0",
-    "loro-crdt": "^1.12.3",
+    "loro-crdt": "^1.13.6",
     "loro-prosemirror": "^0.4.3",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
@@ -142,7 +142,7 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "tsdown": "catalog:",
-    "type-fest": "^5.7.0",
+    "type-fest": "^5.8.0",
     "typescript": "catalog:",
     "unified": "^11.0.5",
     "vitest": "catalog:",

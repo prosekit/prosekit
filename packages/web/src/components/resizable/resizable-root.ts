@@ -148,7 +148,7 @@ function updateResizableRootStyles(
   }
 
   if (isFinitePositiveNumber(aspectRatio)) {
-    styles.aspectRatio = `${aspectRatio}`
+    styles.aspectRatio = String(aspectRatio)
 
     // A known width drives the box in both orientations: `height: auto` lets the
     // aspect ratio derive the height. Only when no width is known does the box

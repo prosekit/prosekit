@@ -56,6 +56,56 @@ describe('defineHorizontalRuleInputRule', () => {
     )
   })
 
+  it('should replace an otherwise-empty bullet list item', async () => {
+    const doc = n.doc(n.bullet(n.p('<a>')))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.horizontalRule(), n.p()).toJSON(),
+    )
+  })
+
+  it('should replace an otherwise-empty ordered list item', async () => {
+    const doc = n.doc(n.ordered(n.p('<a>')))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.horizontalRule(), n.p()).toJSON(),
+    )
+  })
+
+  it('should replace only the list item under the caret', async () => {
+    const doc = n.doc(n.bullet(n.p('a')), n.bullet(n.p('<a>')), n.bullet(n.p('b')))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.bullet(n.p('a')), n.horizontalRule(), n.bullet(n.p('b'))).toJSON(),
+    )
+  })
+
+  it('should keep a list item that still has other content', async () => {
+    const doc = n.doc(n.bullet(n.p('first'), n.p('<a>')))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.bullet(n.p('first'), n.horizontalRule(), n.p())).toJSON(),
+    )
+  })
+
+  it('should replace a nested list item inside its parent item', async () => {
+    const doc = n.doc(n.bullet(n.p('foo'), n.bullet(n.p('<a>'))))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.bullet(n.p('foo'), n.horizontalRule(), n.p())).toJSON(),
+    )
+  })
+
   it('should insert inside when the parent allows a horizontal rule', async () => {
     const { editor, n } = setupTestFromExtension(
       union(defineTestExtension()),

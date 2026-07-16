@@ -128,7 +128,7 @@ describe('defineCodeBlockSpec', () => {
             },
             content: [
               {
-                text: '1234' + '\n',
+                text: '1234\n',
                 type: 'text',
               },
             ],

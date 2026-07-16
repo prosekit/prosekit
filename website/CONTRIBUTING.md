@@ -38,10 +38,10 @@ The scoped `@prosekit/*` packages exist but are not the user-facing API.
 
 ## Code blocks
 
-- ` ```ts twoslash` for type-checked snippets.
-- ` ```ts` for snippets that twoslash can't process (e.g. component-only
+- `` ```ts twoslash `` for type-checked snippets.
+- `` ```ts `` for snippets that twoslash can't process (e.g. component-only
   imports).
-- ` ```bash` for shell commands.
+- `` ```bash `` for shell commands.
 
 ## Cross-links
 

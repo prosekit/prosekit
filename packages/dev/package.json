@@ -18,7 +18,7 @@
     "obug": "^2.1.4"
   },
   "devDependencies": {
-    "@changesets/read": "^0.6.7",
+    "@changesets/read": "^1.0.0-next.1",
     "@ocavue/utils": "^1.7.0",
     "@types/node": "catalog:",
     "tsx": "^4.23.1",

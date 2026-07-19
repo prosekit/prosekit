@@ -27,7 +27,7 @@ jobs:
         run: pnpm run build:package
 
       - name: Pack packages
-        run: pnpm -r pack
+        run: pnpm -r --filter='./packages/*' pack
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -51,7 +51,7 @@ jobs:
         run: pnpm run build:package
 
       - name: Pack packages
-        run: pnpm -r pack
+        run: pnpm -r --filter='./packages/*' pack
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -88,4 +88,4 @@ jobs:
         with:
           base-packages: ./base-packages/*.tgz
           source-packages: ./source-packages/*.tgz
-          pack-size-threshold: -1
+          duplicate-threshold: 100

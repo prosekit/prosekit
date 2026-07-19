@@ -1,5 +1,5 @@
 import Color from 'colorjs.io'
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 
 import { testStory, testStoryConsistency, waitForEditor } from './helpers'
 
@@ -18,15 +18,18 @@ testStory('list-custom-checkbox', () => {
     const inputElement = checkedItemInput.element() as HTMLInputElement
     expect(inputElement.checked).toBe(true)
 
-    const isRedDominant = () => {
+    const expectRedDominant = () => {
       const backgroundColor = window.getComputedStyle(inputElement).backgroundColor
       const parsed = new Color(backgroundColor)
-      const r = parsed.srgb.r || 0
-      const g = parsed.srgb.g || 0
-      const b = parsed.srgb.b || 0
-      return r > g && r > b
+      let [r, g, b] = parsed.to('srgb').coords
+      r ||= 0
+      g ||= 0
+      b ||= 0
+      expect(r).toBeGreaterThan(0)
+      expect(r).toBeGreaterThan(g)
+      expect(r).toBeGreaterThan(b)
     }
 
-    await expect.poll(() => isRedDominant(), { timeout: 8000 }).toBe(true)
+    await vi.waitFor(expectRedDominant)
   })
 })

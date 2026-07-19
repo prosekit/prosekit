@@ -65,13 +65,13 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "@vitejs/plugin-vue": "^6.0.7",
+    "@vitejs/plugin-vue": "^6.0.8",
     "@vue/test-utils": "^2.4.11",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vitest-browser-vue": "^2.1.0",
-    "vue": "^3.5.39"
+    "vue": "^3.5.40"
   },
   "publishConfig": {
     "exports": {

@@ -7,12 +7,12 @@ allowedDeprecatedVersions:
   glob: "10.5.0"
 
 catalog:
-  "@tsdown/css": "^0.22.5"
+  "@tsdown/css": "^0.22.9"
   "@types/node": "^24.12.2"
   "@vitest/browser-playwright": "^4.1.10"
   "@vitest/coverage-v8": "^4.1.10"
   "@vitest/ui": "^4.1.10"
-  tsdown: "^0.22.5"
+  tsdown: "^0.22.9"
   typescript: "~6.0.3"
   vitest: "^4.1.10"
 

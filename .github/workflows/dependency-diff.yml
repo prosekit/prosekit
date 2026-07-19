@@ -88,4 +88,3 @@ jobs:
         with:
           base-packages: ./base-packages/*.tgz
           source-packages: ./source-packages/*.tgz
-          duplicate-threshold: 100

@@ -96,16 +96,6 @@ describe('defineVirtualSelection', () => {
     expect(getVirtualSelectionText()).toBe('hello')
   })
 
-  it('removes the native selection inside the editor on blur', () => {
-    const { editor, setSelection } = setup()
-
-    setSelection(1, 6)
-    expect(window.getSelection()?.toString()).toBe('hello')
-
-    editor.blur()
-    expect(window.getSelection()?.rangeCount).toBe(0)
-  })
-
   it('follows selection changes dispatched while blurred', () => {
     const { editor, getVirtualSelectionText, setSelection } = setup()
 

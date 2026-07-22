@@ -32,12 +32,12 @@ function setFocusMeta(tr: Transaction, value: PluginState) {
   return tr.setMeta(key, value)
 }
 
-function getFocusState(state: EditorState): PluginState | undefined {
+function getPluginState(state: EditorState): PluginState | undefined {
   return key.getState(state)
 }
 
-function updateFocusState(view: EditorView, value: PluginState): void {
-  if (getFocusState(view.state) === value) return
+function updatePluginState(view: EditorView, value: PluginState): void {
+  if (getPluginState(view.state) === value) return
   view.dispatch(setFocusMeta(view.state.tr, value))
 }
 
@@ -80,7 +80,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
   props: {
     handleDOMEvents: {
       focus: (view) => {
-        updateFocusState(view, false)
+        updatePluginState(view, false)
       },
 
       pointerdown: (view, event) => {
@@ -88,7 +88,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
           // Decorations add wrapper elements around selected text. Remove an
           // active decoration before mousedown and focus can use that DOM for
           // pointer selection placement.
-          updateFocusState(view, false)
+          updatePluginState(view, false)
         }
         return false
       },
@@ -103,7 +103,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
 
         removeNativeSelection(view)
 
-        updateFocusState(view, true)
+        updatePluginState(view, true)
       },
     },
     decorations: (state) => {
@@ -111,7 +111,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
 
       if (
         selection.empty
-        || !getFocusState(state)
+        || !getPluginState(state)
         // When `selection.visible` is false, it indicates that the selection is
         // rendered by the editor and it's not a native browser selection. An
         // example of this is `NodeSelection`. In this situation, since the

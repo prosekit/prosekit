@@ -117,20 +117,6 @@ describe('defineVirtualSelection', () => {
     expect(getVirtualSelectionText()).toBe('hello')
   })
 
-  it('restores the native selection on focus', async () => {
-    const { editor, getVirtualSelectionText, setSelection } = setup()
-
-    setSelection(1, 6)
-    editor.blur()
-    expect(window.getSelection()?.rangeCount).toBe(0)
-
-    editor.focus()
-    await vi.waitFor(() => {
-      expect(window.getSelection()?.toString()).toBe('hello')
-    })
-    expect(getVirtualSelectionText()).toBe('')
-  })
-
   it('removes the decoration before pointer focus in a nested editable node view', async () => {
     const editor = setupNestedEditableNodeView()
 

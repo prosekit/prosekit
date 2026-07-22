@@ -1,6 +1,6 @@
 import { defineNodeSpec, defineNodeView, union } from '@prosekit/core'
 import { TextSelection } from '@prosekit/pm/state'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
 
 import { defineDoc } from '../doc/index.ts'

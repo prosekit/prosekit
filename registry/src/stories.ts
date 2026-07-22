@@ -207,6 +207,11 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     hidden: true,
   },
   {
+    name: 'virtual-selection-repro',
+    description: 'Reproduces pointer refocus in an editable nested node view.',
+    hidden: true,
+  },
+  {
     name: 'word-counter',
     description: 'Display word and character count statistics.',
   },

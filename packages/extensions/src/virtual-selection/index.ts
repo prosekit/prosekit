@@ -32,8 +32,20 @@ function setFocusMeta(tr: Transaction, value: PluginState) {
   return tr.setMeta(key, value)
 }
 
-function getFocusState(state: EditorState): PluginState | undefined {
+function getPluginState(state: EditorState): PluginState | undefined {
   return key.getState(state)
+}
+
+function updatePluginState(view: EditorView, value: PluginState): void {
+  if (getPluginState(view.state) === value) return
+  view.dispatch(setFocusMeta(view.state.tr, value))
+}
+
+function isEditablePrimaryPointerEvent(event: PointerEvent): boolean {
+  if (!event.isPrimary || event.button !== 0) return false
+  const target = event.target
+  if (!(target instanceof Element)) return false
+  return !target.closest('[contenteditable="false"]')
 }
 
 /**
@@ -68,7 +80,17 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
   props: {
     handleDOMEvents: {
       focus: (view) => {
-        view.dispatch(setFocusMeta(view.state.tr, false))
+        updatePluginState(view, false)
+      },
+
+      pointerdown: (view, event) => {
+        if (isEditablePrimaryPointerEvent(event)) {
+          // Decorations add wrapper elements around selected text. Remove an
+          // active decoration before mousedown and focus can use that DOM for
+          // pointer selection placement.
+          updatePluginState(view, false)
+        }
+        return false
       },
 
       blur: (view) => {
@@ -81,7 +103,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
 
         removeNativeSelection(view)
 
-        view.dispatch(setFocusMeta(view.state.tr, true))
+        updatePluginState(view, true)
       },
     },
     decorations: (state) => {
@@ -89,7 +111,7 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
 
       if (
         selection.empty
-        || !getFocusState(state)
+        || !getPluginState(state)
         // When `selection.visible` is false, it indicates that the selection is
         // rendered by the editor and it's not a native browser selection. An
         // example of this is `NodeSelection`. In this situation, since the

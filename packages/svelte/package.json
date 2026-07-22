@@ -97,9 +97,9 @@
     "@sveltejs/package": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^7.2.0",
     "@types/node": "catalog:",
-    "svelte": "^5.56.4",
-    "svelte-check": "^4.7.2",
-    "tsx": "^4.23.0",
+    "svelte": "^5.56.6",
+    "svelte-check": "^4.7.3",
+    "tsx": "^4.23.1",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vitest-browser-svelte": "^3.0.0"

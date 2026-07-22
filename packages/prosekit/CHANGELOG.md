@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.22
+
+### Patch Changes
+
+- [`d1abca7`](https://github.com/ocavue/prosekit/commit/d1abca7a5ffeb9e3987d18980079daf750b40e2f) ![](https://prosekit.dev/b/extensions)
+
+  Clear virtual-selection decorations before primary pointer focus so the browser can place the selection without a decoration DOM update race.
+
 ## 0.22.0-beta.21
 
 ### Patch Changes

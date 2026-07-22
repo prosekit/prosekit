@@ -1,7 +1,6 @@
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { PluginKey, ProseMirrorPlugin, type EditorState, type Transaction } from '@prosekit/pm/state'
-import type { EditorView } from '@prosekit/pm/view'
-import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 
 /**
  * @internal
@@ -82,7 +81,6 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
         if (activeElement === dom) return
 
         updatePluginState(view, true)
-        view.dispatch(setFocusMeta(view.state.tr, true))
       },
     },
     decorations: (state) => {

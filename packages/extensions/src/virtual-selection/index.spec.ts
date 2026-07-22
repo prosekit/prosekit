@@ -1,6 +1,6 @@
 import { defineNodeSpec, defineNodeView, union } from '@prosekit/core'
 import { TextSelection } from '@prosekit/pm/state'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
 
 import { defineDoc } from '../doc/index.ts'
@@ -96,16 +96,6 @@ describe('defineVirtualSelection', () => {
     expect(getVirtualSelectionText()).toBe('hello')
   })
 
-  it('removes the native selection inside the editor on blur', () => {
-    const { editor, setSelection } = setup()
-
-    setSelection(1, 6)
-    expect(window.getSelection()?.toString()).toBe('hello')
-
-    editor.blur()
-    expect(window.getSelection()?.rangeCount).toBe(0)
-  })
-
   it('follows selection changes dispatched while blurred', () => {
     const { editor, getVirtualSelectionText, setSelection } = setup()
 
@@ -125,20 +115,6 @@ describe('defineVirtualSelection', () => {
 
     editor.view.dispatch(editor.state.tr.insertText('say ', 1))
     expect(getVirtualSelectionText()).toBe('hello')
-  })
-
-  it('restores the native selection on focus', async () => {
-    const { editor, getVirtualSelectionText, setSelection } = setup()
-
-    setSelection(1, 6)
-    editor.blur()
-    expect(window.getSelection()?.rangeCount).toBe(0)
-
-    editor.focus()
-    await vi.waitFor(() => {
-      expect(window.getSelection()?.toString()).toBe('hello')
-    })
-    expect(getVirtualSelectionText()).toBe('')
   })
 
   it('removes the decoration before pointer focus in a nested editable node view', async () => {

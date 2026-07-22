@@ -41,11 +41,11 @@ function updatePluginState(view: EditorView, value: PluginState): void {
   view.dispatch(setFocusMeta(view.state.tr, value))
 }
 
-function isEditablePrimaryPointerEvent(event: Event): boolean {
-  if (!(event instanceof PointerEvent)) return false
+function isEditablePrimaryPointerEvent(event: PointerEvent): boolean {
   if (!event.isPrimary || event.button !== 0) return false
-  if (!(event.target instanceof Element)) return false
-  return !event.target.closest('[contenteditable="false"]')
+  const target = event.target
+  if (!(target instanceof Element)) return false
+  return !target.closest('[contenteditable="false"]')
 }
 
 /**

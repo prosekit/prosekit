@@ -133,7 +133,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "diffable-html-snapshot": "^0.3.0",
     "katex": "^0.18.0",
-    "loro-crdt": "^1.13.7",
+    "loro-crdt": "^1.13.8",
     "loro-prosemirror": "^0.4.3",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",

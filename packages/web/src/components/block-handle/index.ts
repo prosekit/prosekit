@@ -56,4 +56,5 @@ export {
   setupBlockHandleRoot,
   type BlockHandleRootEvents,
   type BlockHandleRootProps,
+  type BlockHandleState,
 } from './block-handle-root.ts'

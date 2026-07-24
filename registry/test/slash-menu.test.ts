@@ -258,7 +258,62 @@ testStory(['slash-menu', 'full'], () => {
     await inputText('/')
     await expect.element(menu).toBeVisible()
   })
+
+  it('ignore the committing IME Enter during composition', async () => {
+    const { editor, highlightedItem } = await setup()
+
+    const blockquote = editor.locate('blockquote')
+
+    await editor.click()
+    await inputText('/quote')
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
+
+    const editorElement = editor.element()
+    dispatchComposition(editorElement, 'compositionstart')
+    const enter = dispatchIMEEnter(editorElement)
+
+    expect(enter.defaultPrevented).toBe(false)
+    await expect.element(highlightedItem).toBeVisible()
+    await expectLocatorToHaveCount(blockquote, 0)
+
+    dispatchComposition(editorElement, 'compositionend')
+  })
+
+  it('confirm with Enter pressed right after the composition ends', async () => {
+    const { editor, highlightedItem } = await setup()
+
+    const blockquote = editor.locate('blockquote')
+
+    await editor.click()
+    await inputText('/quote')
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
+
+    const editorElement = editor.element()
+    dispatchComposition(editorElement, 'compositionstart')
+    dispatchComposition(editorElement, 'compositionend')
+
+    await keyboard.press('Enter')
+    await expectLocatorToHaveCount(blockquote, 1)
+  })
 })
+
+function dispatchComposition(target: Element, type: 'compositionstart' | 'compositionend'): void {
+  target.dispatchEvent(new CompositionEvent(type, { bubbles: true, cancelable: true }))
+}
+
+// The keydown that commits an IME composition, as Chromium and Firefox fire it.
+function dispatchIMEEnter(target: Element): KeyboardEvent {
+  const event = new KeyboardEvent('keydown', {
+    key: 'Enter',
+    code: 'Enter',
+    isComposing: true,
+    bubbles: true,
+    cancelable: true,
+  })
+  Object.defineProperty(event, 'keyCode', { value: 229 })
+  target.dispatchEvent(event)
+  return event
+}
 
 async function setup() {
   const editor = await waitForEditor()

@@ -17,7 +17,7 @@ export async function normalizePackageJson(pkg: Package): Promise<void> {
   const packageJson = pkg.packageJson as PackageJson
 
   const publishExports: Record<string, any> = {}
-  const publishConfig: Record<string, any> = { exports: publishExports }
+  const publishConfig: Record<string, any> = { exports: publishExports, devDependencies: {}, scripts: {} }
   packageJson.publishConfig = publishConfig
 
   const exports = getPackageJsonExports(pkg) || {}

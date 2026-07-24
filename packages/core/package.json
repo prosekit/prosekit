@@ -65,6 +65,8 @@
         "default": "./dist/test.js"
       }
     },
+    "devDependencies": {},
+    "scripts": {},
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts"

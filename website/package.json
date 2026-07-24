@@ -29,7 +29,7 @@
     "@iconify-json/bxl": "^1.2.4",
     "@iconify-json/logos": "^1.2.11",
     "@iconify-json/lucide": "^1.2.117",
-    "@iconify-json/tabler": "^1.2.35",
+    "@iconify-json/tabler": "^1.2.37",
     "@manypkg/find-root": "^3.1.0",
     "@ocavue/utils": "^1.7.0",
     "@tailwindcss/vite": "^4.3.3",

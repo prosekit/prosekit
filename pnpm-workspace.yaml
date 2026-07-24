@@ -24,7 +24,6 @@ allowBuilds:
   "@parcel/watcher": false
   dprint: false
   esbuild: false
-  sharp: false
   simple-git-hooks: false
   workerd: false
 
@@ -44,3 +43,5 @@ trustLockfile: true
 minimumReleaseAgeExclude:
   - "starlight-theme-nova"
   - "@aria-ui/*"
+  - miniflare@4.20260722.0
+  - wrangler@4.114.0

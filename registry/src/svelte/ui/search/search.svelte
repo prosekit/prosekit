@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { defineSearchStatusHandler, type SearchCommandsExtension, type SearchStatus } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
@@ -19,22 +19,24 @@ let wholeWord = $state(false)
 let regexp = $state(false)
 let literal = $state(false)
 
+let searchStatus = $state<SearchStatus>({ total: 0, active: 0 })
+const statusHandler = defineSearchStatusHandler((status) => {
+  searchStatus = status
+})
+useExtension(toStore(() => statusHandler))
+
 const editor = useEditor<SearchCommandsExtension>()
 
-const extension = $derived(
-  searchText
-    ? defineSearchQuery({
-      search: searchText,
-      replace: replaceText,
-      caseSensitive,
-      wholeWord,
-      regexp,
-      literal,
-    })
-    : null,
-)
-
-useExtension(toStore(() => extension))
+$effect(() => {
+  $editor.commands.setSearchQuery({
+    search: searchText,
+    replace: replaceText,
+    caseSensitive,
+    wholeWord,
+    regexp,
+    literal,
+  })
+})
 
 function toggleReplace() {
   showReplace = !showReplace
@@ -98,6 +100,11 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
     onkeydown={handleSearchKeyDown}
   />
   <div class="CSS_SEARCH_CONTROLLER">
+    {#if searchText}
+      <span class="CSS_SEARCH_COUNTER">
+        {searchStatus.active} / {searchStatus.total}
+      </span>
+    {/if}
     <Button
       tooltip="Previous (Shift Enter)"
       onClick={$editor.commands.findPrev}

@@ -17,23 +17,49 @@ To highlight search matches, you must load the `style.css` file or define your o
 import 'prosekit/extensions/search/style.css'
 ```
 
-Call `defineSearchCommands()` to define related commands.
+Call `defineSearchQuery()` to store the search state, and `defineSearchCommands()` to define related commands.
 
 ```ts twoslash
-import { defineSearchCommands } from 'prosekit/extensions/search'
+import { union } from 'prosekit/core'
+import { defineSearchCommands, defineSearchQuery } from 'prosekit/extensions/search'
 
-const extension = defineSearchCommands()
+const extension = union(defineSearchQuery(), defineSearchCommands())
 ```
 
-In your search component, when the search text and replace text change, you should create a new extension with the specified text. Typically, you will need to call the `useExtension()` function from various framework bindings.
+In your search component, dispatch the `setSearchQuery` command whenever the search text or a search option changes. The command is a no-op when the query is unchanged, so you can dispatch it on every input change. You can also pass options to `defineSearchQuery()` to start with a fixed query.
+
+## Search status
+
+Read the current match count with `getSearchStatus()`, or register a handler with `defineSearchStatusHandler()` to render a match counter.
 
 ```ts twoslash
-import { defineSearchQuery } from 'prosekit/extensions/search'
+import { createEditor } from 'prosekit/core'
+import { defineSearchStatusHandler, getSearchStatus } from 'prosekit/extensions/search'
 
-const extension = defineSearchQuery({ search: 'foo', replace: 'bar' })
+const extension = defineSearchStatusHandler((status) => {
+  console.log(`Match ${status.active} of ${status.total}`)
+})
+const editor = createEditor({ extension })
+
+const status = getSearchStatus(editor.state)
 ```
 
 ## Commands
+
+### `setSearchQuery`
+
+Update the search query and select the first match at or after the selection start, wrapping around to the first match in the document. When the query matches nothing, a selection left by a previous query collapses to its start. An empty query clears the highlights and leaves the selection alone.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setSearchQuery({ search: 'ProseKit' })
+```
 
 ### `findNext`
 

@@ -289,6 +289,9 @@ export const CSS_BUTTON_PRIMARY = cn(
 
 export const CSS_SEARCH_INPUT = cn(CSS_INPUT, 'col-start-2')
 export const CSS_SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
+export const CSS_SEARCH_COUNTER = cn(
+  'flex items-center px-1 text-sm whitespace-nowrap tabular-nums text-gray-500 dark:text-gray-500',
+)
 
 export const CSS_KEYMAP_FIELDSET = cn(
   'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow-sm min-w-0',

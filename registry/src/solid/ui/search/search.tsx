@@ -1,6 +1,6 @@
-import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { defineSearchStatusHandler, type SearchCommandsExtension, type SearchStatus } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/solid'
-import { createMemo, createSignal, type JSX } from 'solid-js'
+import { createEffect, createSignal, type JSX } from 'solid-js'
 
 import { Button } from '../button/index.ts'
 
@@ -15,11 +15,17 @@ export default function Search(props: { onClose?: VoidFunction }): JSX.Element {
   const [regexp, setRegexp] = createSignal(false)
   const [literal, setLiteral] = createSignal(false)
 
-  const extension = createMemo(() => {
-    if (!searchText()) {
-      return null
-    }
-    return defineSearchQuery({
+  const [searchStatus, setSearchStatus] = createSignal<SearchStatus>({
+    total: 0,
+    active: 0,
+  })
+  const statusHandler = defineSearchStatusHandler(setSearchStatus)
+  useExtension(() => statusHandler)
+
+  const editor = useEditor<SearchCommandsExtension>()
+
+  createEffect(() => {
+    editor().commands.setSearchQuery({
       search: searchText(),
       replace: replaceText(),
       caseSensitive: caseSensitive(),
@@ -28,10 +34,6 @@ export default function Search(props: { onClose?: VoidFunction }): JSX.Element {
       literal: literal(),
     })
   })
-
-  useExtension(extension)
-
-  const editor = useEditor<SearchCommandsExtension>()
 
   const handleSearchKeyDown = (event: KeyboardEvent) => {
     if (isEnter(event)) {
@@ -70,6 +72,13 @@ export default function Search(props: { onClose?: VoidFunction }): JSX.Element {
         class="CSS_SEARCH_INPUT"
       />
       <div class="CSS_SEARCH_CONTROLLER">
+        {searchText()
+          ? (
+            <span class="CSS_SEARCH_COUNTER">
+              {searchStatus().active} / {searchStatus().total}
+            </span>
+          )
+          : null}
         <Button
           tooltip="Previous (Shift Enter)"
           onClick={() => editor().commands.findPrev()}

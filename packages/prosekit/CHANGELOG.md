@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.24
+
+### Minor Changes
+
+- [`2800bb4`](https://github.com/ocavue/prosekit/commit/2800bb4d7ee79cc4f236e9595e1d07570b7789b8) ![](https://prosekit.dev/b/extensions)
+
+  Add a `setSearchQuery` command that updates the search query and selects the first match at or after the caret, plus `getSearchStatus` and `defineSearchStatusHandler` for rendering a match counter. `defineSearchQuery` can now be called without options to store an empty query.
+
 ## 0.22.0-beta.23
 
 ### Patch Changes

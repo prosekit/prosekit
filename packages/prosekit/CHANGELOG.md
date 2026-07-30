@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.0-beta.25
+
+### Patch Changes
+
+- [`53bd4e7`](https://github.com/ocavue/prosekit/commit/53bd4e71c3aaeba7bd6c3cd3fca5c7758aafa2de) ![](https://prosekit.dev/b/web)
+
+  Work around a WebKit bug where `compositionend` event fires before the committing `keydown` event.
+
 ## 0.22.0-beta.24
 
 ### Minor Changes

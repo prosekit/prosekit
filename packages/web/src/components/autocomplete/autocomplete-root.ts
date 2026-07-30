@@ -14,7 +14,7 @@ import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@ari
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
 import type { ReferenceElement } from '@floating-ui/dom'
-import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
+import { defineDOMEventHandler, defineKeymap, union, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
@@ -220,18 +220,30 @@ function useKeyboardBridge(
   getOpen: () => boolean,
   target: EventTarget,
 ): void {
-  const extension: Extension = defineDOMEventHandler('keydown', (view, event): boolean => {
+  let compostionEndedAt = 0
+  const compositionEnd: Extension = defineDOMEventHandler('compositionend', (view, event): boolean => {
+    compostionEndedAt = event.timeStamp
+    return false
+  })
+  const keyDown: Extension = defineDOMEventHandler('keydown', (view, event): boolean => {
     if (
       view.composing
       || event.defaultPrevented
       || !getOpen()
       || !EVENT_KEYS.includes(event.key as (typeof EVENT_KEYS)[number])
+      // Workaround for WebKit firing compositionend before the keydown that commits an
+      // IME composition, which makes that keydown report `isComposing` as false.
+      // https://bugs.webkit.org/show_bug.cgi?id=165004
+      // https://bugs.webkit.org/show_bug.cgi?id=311717
+      || (compostionEndedAt && (event.timeStamp - compostionEndedAt < 50))
     ) {
       return false
     }
     target.dispatchEvent(event)
     return event.defaultPrevented
   })
+
+  const extension: Extension = union(keyDown, compositionEnd)
   useEditorExtension(host, getEditor, withPriority(extension, 4 satisfies typeof Priority.highest))
 }
 

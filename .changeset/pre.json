@@ -42,6 +42,7 @@
     "node-mark-builders",
     "remove-types-versions",
     "resizable-width-driven-sizing",
+    "safari-compositionend",
     "search-query-command",
     "table-editing-plugins",
     "table-handle-menu-scroll",

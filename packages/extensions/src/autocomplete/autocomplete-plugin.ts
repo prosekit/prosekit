@@ -297,7 +297,9 @@ function getDecorations(state: EditorState): DecorationSet | null {
 
 const MAX_MATCH = 200
 
-/** Get the text before the given position at the current block. */
+/**
+ * Get the text before the given position at the current block.
+ */
 function getTextBackward($pos: ResolvedPos): string {
   const parentOffset: number = $pos.parentOffset
   return getTextBetween(

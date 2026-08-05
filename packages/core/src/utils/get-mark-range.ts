@@ -4,11 +4,17 @@ import { getMarkType } from './get-mark-type.ts'
 import { isSubset } from './is-subset.ts'
 
 export interface MarkRange {
-  /** The document position where the mark run starts. */
+  /**
+   * The document position where the mark run starts.
+   */
   from: number
-  /** The document position where the mark run ends. */
+  /**
+   * The document position where the mark run ends.
+   */
   to: number
-  /** The matched mark. */
+  /**
+   * The matched mark.
+   */
   mark: Mark
 }
 

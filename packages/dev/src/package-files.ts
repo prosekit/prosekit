@@ -4,12 +4,16 @@ import type { Package } from '@manypkg/get-packages'
 
 import { vfs } from './vfs'
 
-/** Removes generated files inside a package directory. */
+/**
+ * Removes generated files inside a package directory.
+ */
 export async function cleanGeneratedFilesInPackage(pkg: Package): Promise<void> {
   await vfs.cleanFilesInDir(pkg.relativeDir, true)
 }
 
-/** Returns the first existing file inside a package from a list of candidates. */
+/**
+ * Returns the first existing file inside a package from a list of candidates.
+ */
 export async function findExistingFileInPackage(
   pkg: Package,
   relativeFilePaths: string[],
@@ -23,7 +27,9 @@ export async function findExistingFileInPackage(
   return null
 }
 
-/** Returns an existing file or throws if none of the candidates exist. */
+/**
+ * Returns an existing file or throws if none of the candidates exist.
+ */
 export async function getExistingFileInPackage(
   pkg: Package,
   relativeFilePaths: string[],

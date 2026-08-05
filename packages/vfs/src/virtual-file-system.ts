@@ -13,32 +13,42 @@ export class VirtualFileSystem {
 
   constructor(readonly rootDir: string) {}
 
-  /** Reads a text file and caches the content. */
+  /**
+   * Reads a text file and caches the content.
+   */
   async read(filePath: string): Promise<string> {
     const file = this.ensureFile(filePath)
     const content: string = await file.read()
     return content
   }
 
-  /** Reads and parses a JSON file with JSON5 support. */
+  /**
+   * Reads and parses a JSON file with JSON5 support.
+   */
   async readJSON<T = unknown>(filePath: string): Promise<T> {
     const file = this.ensureFile(filePath)
     return await file.readJSON<T>()
   }
 
-  /** Updates a file with raw text. */
+  /**
+   * Updates a file with raw text.
+   */
   updateText(filePath: string, content: string): void {
     const file = this.ensureFile(filePath)
     file.update(content)
   }
 
-  /** Updates a JSON file by serializing the given object. */
+  /**
+   * Updates a JSON file by serializing the given object.
+   */
   updateJSON(filePath: string, json: unknown): void {
     const file = this.ensureFile(filePath)
     file.updateJSON(json)
   }
 
-  /** Checks if a path exists inside the virtual file map. */
+  /**
+   * Checks if a path exists inside the virtual file map.
+   */
   async pathExists(filePath: string): Promise<boolean> {
     const normalizedPath = normalize(filePath)
     const cached = this.files.get(normalizedPath)
@@ -60,7 +70,9 @@ export class VirtualFileSystem {
     return await listGitFiles(this.rootDir)
   }
 
-  /** Returns all tracked files under a directory. */
+  /**
+   * Returns all tracked files under a directory.
+   */
   async getFilePathsByDir(dir: string): Promise<string[]> {
     const normalizedDir = normalize(dir)
     const diskFiles = (await this.getFiles()).filter((file) => {
@@ -77,7 +89,9 @@ export class VirtualFileSystem {
     return Array.from(unique).sort()
   }
 
-  /** Removes files inside a directory; optionally limited to generated files. */
+  /**
+   * Removes files inside a directory; optionally limited to generated files.
+   */
   async cleanFilesInDir(dir: string, onlyGenerated = false): Promise<void> {
     const normalizedDir = normalize(dir)
     const targets = await this.getFilePathsByDir(normalizedDir)
@@ -88,7 +102,9 @@ export class VirtualFileSystem {
     }
   }
 
-  /** Flushes pending changes to disk. */
+  /**
+   * Flushes pending changes to disk.
+   */
   async commit(): Promise<boolean> {
     process.chdir(this.rootDir)
     const updated = await Promise.all(this.files.values().map((file) => file.commit()))
@@ -96,7 +112,9 @@ export class VirtualFileSystem {
     return updated.includes(true)
   }
 
-  /** Ensures a file entry exists before mutating it. */
+  /**
+   * Ensures a file entry exists before mutating it.
+   */
   private ensureFile(filePath: string): VirtualFile {
     const normalizedPath = normalize(filePath)
     let file = this.files.get(normalizedPath)

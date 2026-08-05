@@ -1,11 +1,13 @@
 import type { Editor, Extension } from '@prosekit/core'
 
 /**
-
-  @internal
-
-  Queues an extension to be added to the editor in the next task. Returns a
-  dispose function that can be used to remove the extension in the next task.
+ * Queues an extension to be added to the editor in the next task. Returns a
+ * dispose function that can be used to remove the extension in the next task.
+ *
+ * @internal
+ */
+export function queueExtension(editor: Editor, extension: Extension): VoidFunction {
+  /*
 
   Why?
 
@@ -72,8 +74,8 @@ import type { Editor, Extension } from '@prosekit/core'
   Although the example above is based on React, this is a general pattern for
   any async based UI framework, including Svelte.
 
- */
-export function queueExtension(editor: Editor, extension: Extension): VoidFunction {
+  */
+
   let canceled = false
   let dispose: VoidFunction | undefined
   const timeout = setTimeout(() => {

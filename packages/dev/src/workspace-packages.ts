@@ -6,7 +6,9 @@ import { debug } from './debug'
 import { isPrivatePackage, isPublicPackage } from './is-public-package'
 import { ROOT_DIR } from './root-dir'
 
-/** Returns all workspace packages sorted by name. */
+/**
+ * Returns all workspace packages sorted by name.
+ */
 export const getWorkspacePackages: () => Promise<Package[]> = once(async () => {
   debug('getWorkspacePackages start')
   const { packages } = await getPackages(ROOT_DIR)
@@ -15,7 +17,9 @@ export const getWorkspacePackages: () => Promise<Package[]> = once(async () => {
   return sortedPackages
 })
 
-/** Finds a package by its name. */
+/**
+ * Finds a package by its name.
+ */
 export async function getPackageByName(name: string): Promise<Package> {
   const packages = await getWorkspacePackages()
   const pkg = packages.find((pkg) => pkg.packageJson.name === name)
@@ -25,19 +29,25 @@ export async function getPackageByName(name: string): Promise<Package> {
   return pkg
 }
 
-/** Returns all public packages. */
+/**
+ * Returns all public packages.
+ */
 async function getPublicPackages() {
   const packages = await getWorkspacePackages()
   return packages.filter(isPublicPackage)
 }
 
-/** Returns all private packages. */
+/**
+ * Returns all private packages.
+ */
 export async function getPrivatePackages(): Promise<Package[]> {
   const packages = await getWorkspacePackages()
   return packages.filter(isPrivatePackage)
 }
 
-/** Returns scoped public packages. */
+/**
+ * Returns scoped public packages.
+ */
 export async function getScopedPublicPackages(): Promise<Package[]> {
   const packages = await getPublicPackages()
   return packages.filter((pkg) => pkg.packageJson.name.startsWith('@'))

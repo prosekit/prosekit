@@ -46,3 +46,4 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - "prosemirror-view"
+  - prosemirror-highlight@0.16.0

@@ -122,32 +122,38 @@ class ImageNodeView {
           ?data-selected=${this.selected}
           @resizeEnd=${this.handleResizeEnd}
         >
-          ${url && !this.error
-            ? html`
-                <img
-                  src=${url}
-                  alt="upload preview"
-                  class="CSS_IMAGE_RESIZABLE_IMAGE"
-                  @load=${this.handleImageLoad}
-                />
-              `
-            : ''}
-          ${uploading && !this.error
-            ? html`
-                <div class="CSS_IMAGE_UPLOAD_PROGRESS">
-                  <div class="CSS_ICON_LOADER"></div>
-                  <div>${Math.round(this.progress * 100)}%</div>
-                </div>
-              `
-            : ''}
-          ${this.error
-            ? html`
-                <div class="CSS_IMAGE_UPLOAD_ERROR">
-                  <div class="CSS_ICON_IMAGE_ERROR"></div>
-                  <div class="CSS_IMAGE_UPLOAD_ERROR_MESSAGE">Failed to upload image</div>
-                </div>
-              `
-            : ''}
+          ${
+            url && !this.error
+              ? html`
+                  <img
+                    src=${url}
+                    alt="upload preview"
+                    class="CSS_IMAGE_RESIZABLE_IMAGE"
+                    @load=${this.handleImageLoad}
+                  />
+                `
+              : ''
+          }
+          ${
+            uploading && !this.error
+              ? html`
+                  <div class="CSS_IMAGE_UPLOAD_PROGRESS">
+                    <div class="CSS_ICON_LOADER"></div>
+                    <div>${Math.round(this.progress * 100)}%</div>
+                  </div>
+                `
+              : ''
+          }
+          ${
+            this.error
+              ? html`
+                  <div class="CSS_IMAGE_UPLOAD_ERROR">
+                    <div class="CSS_ICON_IMAGE_ERROR"></div>
+                    <div class="CSS_IMAGE_UPLOAD_ERROR_MESSAGE">Failed to upload image</div>
+                  </div>
+                `
+              : ''
+          }
           <prosekit-resizable-handle class="CSS_IMAGE_RESIZABLE_HANDLE"
             ><div class="CSS_ICON_CORNER_HANDLE"></div
           ></prosekit-resizable-handle>

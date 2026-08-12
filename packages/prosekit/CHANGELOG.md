@@ -1,5 +1,138 @@
 # prosekit
 
+## 0.22.0
+
+### Minor Changes
+
+- [`ea024fe`](https://github.com/ocavue/prosekit/commit/ea024fe8721eb838f074dc8a9a75bccfe968b5a3) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/svelte)
+
+  Add a `followCursor` option to `AutocompleteRule` and a matching `AutocompleteRoot` prop that keep the match end anchored to the text cursor, so cursor movement grows and shrinks the query over existing text instead of dismissing the match.
+
+- [`a04e5e1`](https://github.com/ocavue/prosekit/commit/a04e5e14fc31df85ba75b48641ea12beaaf1e063) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/svelte)
+
+  Add a `queryBuilder` prop to `AutocompleteRoot` to customize the query string built from the regex match.
+
+- [`59b7648`](https://github.com/ocavue/prosekit/commit/59b76483cccda6f30eb0c4e87063068f405b3759) ![](https://prosekit.dev/b/core)
+
+  Add `getMarkRange`, which returns the contiguous range of a mark touching a resolved position. A position at either edge of the run counts as touching it, and a neighbouring mark that differs in attributes starts a new run.
+
+- [`45f91d5`](https://github.com/ocavue/prosekit/commit/45f91d5f3d9a0146f144685cb42a93e300fb15ed) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Allow `InlinePopoverRoot` to accept a custom `anchor` for popup positioning. When set, the inline popover is positioned against the provided element or virtual element instead of the current text selection.
+
+- [`5e750c7`](https://github.com/ocavue/prosekit/commit/5e750c798588cd94cb1b1c2440bfb809dc4136e0) ![](https://prosekit.dev/b/core)
+
+  Add a `create` method to mark builders (`editor.marks.<name>.create(attrs?)` and the builders returned by `createMarkBuilders`). It returns a bare `Mark` instance with optional, typed attributes, without applying it to any children.
+
+- [`026daed`](https://github.com/ocavue/prosekit/commit/026daedafa6ecfd7f429d56a2f40d5113946ab47) ![](https://prosekit.dev/b/core)
+
+  Add `createNodeBuilders` and `createMarkBuilders`, which turn a schema into typed node and mark factory functions without needing an editor instance. They behave like `editor.nodes` and `editor.marks` but omit `isActive`, so they are convenient for building documents in tests or on the server.
+
+- [`2800bb4`](https://github.com/ocavue/prosekit/commit/2800bb4d7ee79cc4f236e9595e1d07570b7789b8) ![](https://prosekit.dev/b/extensions)
+
+  Add a `setSearchQuery` command that updates the search query and selects the first match at or after the caret, plus `getSearchStatus` and `defineSearchStatusHandler` for rendering a match counter. `defineSearchQuery` can now be called without options to store an empty query.
+
+- [`625bba6`](https://github.com/ocavue/prosekit/commit/625bba60995c316dd5a4a1c89d10bb2dc995da9f) ![](https://prosekit.dev/b/extensions)
+
+  Add `triggerAutocomplete` to open the autocomplete menu programmatically.
+
+### Patch Changes
+
+- [`03186d7`](https://github.com/ocavue/prosekit/commit/03186d74c46ad9f038e7d2bc9f5a478325ce6ad0) ![](https://prosekit.dev/b/web)
+
+  Write ProseMirror-native clipboard data (`data-pm-slice` HTML and plain text) when dragging a block with the block handle, so a drop into another editor keeps the block intact, and clear the stale `dragging` state on the source view after the drag ends.
+
+- [`bb984ad`](https://github.com/ocavue/prosekit/commit/bb984adf38501d6e4d7ecb279a51bc2f5954969e) ![](https://prosekit.dev/b/web)
+
+  Avoid focusing the editor view from the block handle after the view has been destroyed.
+
+- [`5ff866e`](https://github.com/ocavue/prosekit/commit/5ff866e0376440461a58477bf557758893823836) ![](https://prosekit.dev/b/web)
+
+  Position the drop indicator relative to its offset parent.
+
+- [`8f6f498`](https://github.com/ocavue/prosekit/commit/8f6f498827e5b7e7aedbfa56b75bc55c82ef7a51) ![](https://prosekit.dev/b/extensions)
+
+  Export the following list command functions:
+  - `dedentList`
+  - `indentList`
+  - `moveList`
+  - `splitList`
+  - `toggleCollapsed`
+  - `unwrapList`
+  - `toggleList`
+  - `wrapInList`
+  - `insertList`
+
+- [`c9a3e30`](https://github.com/ocavue/prosekit/commit/c9a3e30bad0afe4948ecb325d8a02d8258cc8dee) ![](https://prosekit.dev/b/extensions)
+
+  Export the following table command functions:
+  - `deleteTable`
+  - `deleteTableColumn`
+  - `deleteTableRow`
+  - `addTableColumnBefore`
+  - `addTableColumnAfter`
+  - `addTableRowAbove`
+  - `addTableRowBelow`
+  - `mergeTableCells`
+  - `splitTableCell`
+  - `deleteCellSelection`
+
+- [`b62da03`](https://github.com/ocavue/prosekit/commit/b62da03a2df1aa498cee2e6bd3ac022ec8863aa1) ![](https://prosekit.dev/b/extensions)
+
+  Recognize the rendered `<div>` wrapper in the `horizontalRule` node's `parseDOM`. Its `toDOM` renders `['div', ['hr']]`, but `parseDOM` only matched `hr`, so an attribute added with `defineNodeAttr` (written onto the outer `<div>`) was dropped when the node was parsed back from the DOM. The node now parses its own rendered output, with a bare `<hr>` kept as a fallback.
+
+- [`c2e94f9`](https://github.com/ocavue/prosekit/commit/c2e94f9863203d8662e29e576f0f7f4086fd863d) ![](https://prosekit.dev/b/extensions)
+
+  Guard the `---` horizontal rule input rule against parents that cannot hold a horizontal rule.
+
+- [`e6747b3`](https://github.com/ocavue/prosekit/commit/e6747b3ead70e85fb46ce53e021c03d6705c3d80) ![](https://prosekit.dev/b/extensions)
+
+  Typing `---` in an otherwise-empty block (e.g. an empty list item) now replaces that block with the horizontal rule instead of inserting the rule inside it.
+
+- [`e9ab4f4`](https://github.com/ocavue/prosekit/commit/e9ab4f4e23b631660db99e064b7e1102364cac1a) ![](https://prosekit.dev/b/extensions)
+
+  Construct lookbehind trigger expressions with `new RegExp` so that modules still parse on engines without lookbehind support.
+
+- [`0659db8`](https://github.com/ocavue/prosekit/commit/0659db81cf04f29615f9cda974714d72520fc0e1) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/pm) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Remove the redundant `typesVersions` field from the published `package.json` files. TypeScript resolves type declarations from the `exports` field, so this field is no longer needed.
+
+- [`1e55d8c`](https://github.com/ocavue/prosekit/commit/1e55d8c4aafaf91eb007ff65b6c67026c4019c31) ![](https://prosekit.dev/b/web)
+
+  Fix `<prosekit-resizable-root>` collapsing portrait images (aspect ratio `< 1`) in WebKit.
+
+- [`53bd4e7`](https://github.com/ocavue/prosekit/commit/53bd4e71c3aaeba7bd6c3cd3fca5c7758aafa2de) ![](https://prosekit.dev/b/web)
+
+  Work around a WebKit bug where `compositionend` event fires before the committing `keydown` event.
+
+- [`ca473f1`](https://github.com/ocavue/prosekit/commit/ca473f1f90d838b2ff8ee8b108185280f520cde6) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineTableEditingPlugin` and `defineColumnResizingPlugin` for composing table plugins individually.
+
+- [`2a22b7d`](https://github.com/ocavue/prosekit/commit/2a22b7dcd816ca0971def535805471661858e712) ![](https://prosekit.dev/b/web)
+
+  Keep the table handles and an open handle menu visible while scrolling.
+
+- [`08d3aa4`](https://github.com/ocavue/prosekit/commit/08d3aa4178d88a79d82d69da87d4800635c82013) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+- [`af8d4af`](https://github.com/ocavue/prosekit/commit/af8d4af3282ae60c3ba27123c40cf148e43528dd) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+- [`40fe63a`](https://github.com/ocavue/prosekit/commit/40fe63ad585cf90f23b7d1591c2749caf03a8f22) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+- [`6238c0b`](https://github.com/ocavue/prosekit/commit/6238c0bd39a5354dac119c80cd5a93ad42966fd3) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
+- [`d1abca7`](https://github.com/ocavue/prosekit/commit/d1abca7a5ffeb9e3987d18980079daf750b40e2f) ![](https://prosekit.dev/b/extensions)
+
+  Clear virtual-selection decorations before primary pointer focus so the browser can place the selection without a decoration DOM update race.
+
 ## 0.22.0-beta.25
 
 ### Patch Changes

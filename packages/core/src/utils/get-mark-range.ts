@@ -1,7 +1,6 @@
 import type { Attrs, Mark, MarkType, ResolvedPos } from '@prosekit/pm/model'
 
 import { findMarkRange, type MarkRange } from './find-mark-range.ts'
-import { getMarkType } from './get-mark-type.ts'
 import { isSubset } from './is-subset.ts'
 
 /**
@@ -20,9 +19,9 @@ export function getMarkRange(
   type: string | MarkType,
   attrs?: Attrs | null,
 ): MarkRange | undefined {
-  const markType = getMarkType($pos.parent.type.schema, type)
+  const markTypeName = typeof type === 'string' ? type : type.name
   const predicate = attrs
-    ? (mark: Mark) => mark.type === markType && isSubset(attrs, mark.attrs)
-    : (mark: Mark) => mark.type === markType
+    ? (mark: Mark) => mark.type.name === markTypeName && isSubset(attrs, mark.attrs)
+    : (mark: Mark) => mark.type.name === markTypeName
   return findMarkRange($pos, predicate)
 }

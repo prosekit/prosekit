@@ -119,7 +119,7 @@ importers:
         specifier: ^30.0.0
         version: 30.0.0
       happy-dom:
-        specifier: ^20.12.0
+        specifier: ^20.0.0
         version: 20.12.0
       jsdom:
         specifier: ^30.0.1
@@ -315,7 +315,7 @@ importers:
         specifier: ^0.18.1
         version: 0.18.1
       loro-crdt:
-        specifier: ^1.15.1
+        specifier: ^1.0.0
         version: 1.15.1
       loro-prosemirror:
         specifier: ^0.4.4
@@ -523,7 +523,7 @@ importers:
         specifier: ^19.2.4
         version: 19.2.4(@types/react@19.2.18)
       loro-crdt:
-        specifier: ^1.15.1
+        specifier: ^1.0.0
         version: 1.15.1
       loro-prosemirror:
         specifier: ^0.4.4
@@ -896,7 +896,7 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0(@types/react@19.2.18)(react-dom@19.2.8)(react@19.2.8)
       loro-crdt:
-        specifier: ^1.15.1
+        specifier: ^1.0.1
         version: 1.15.1
       loro-prosemirror:
         specifier: ^0.4.4
@@ -1167,7 +1167,7 @@ importers:
         specifier: ^30.0.1
         version: 30.0.1
       loro-crdt:
-        specifier: ^1.15.1
+        specifier: ^1.0.0
         version: 1.15.1
       loro-prosemirror:
         specifier: ^0.4.4

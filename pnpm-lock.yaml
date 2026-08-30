@@ -538,8 +538,8 @@ importers:
         specifier: ^19.2.8
         version: 19.2.8(react@19.2.8)
       solid-js:
-        specifier: ^1.9.14
-        version: 1.9.14
+        specifier: ^1.9.15
+        version: 1.9.15
       svelte:
         specifier: ^5.57.0
         version: 5.57.0(@typescript-eslint/types@8.66.0)
@@ -648,7 +648,7 @@ importers:
         version: 0.5.5
       '@prosemirror-adapter/solid':
         specifier: ^0.5.5
-        version: 0.5.5(solid-js@1.9.14)
+        version: 0.5.5(solid-js@1.9.15)
     devDependencies:
       '@prosekit/config-ts':
         specifier: workspace:*
@@ -663,8 +663,8 @@ importers:
         specifier: workspace:*
         version: link:../testing
       solid-js:
-        specifier: ^1.9.14
-        version: 1.9.14
+        specifier: ^1.9.15
+        version: 1.9.15
       tsdown:
         specifier: 'catalog:'
         version: 0.22.14(@tsdown/css@0.22.14)(@volar/typescript@2.4.28)(oxc-resolver@11.24.2)(tsx@4.23.12)(typescript@6.0.3)(vue-tsc@3.3.11)
@@ -673,13 +673,13 @@ importers:
         version: 6.0.3
       vite-plugin-solid:
         specifier: ^2.11.14
-        version: 2.11.14(solid-js@1.9.14)(supports-color@10.2.2)(vite@8.2.2)
+        version: 2.11.14(solid-js@1.9.15)(supports-color@10.2.2)(vite@8.2.2)
       vitest:
         specifier: 'catalog:'
         version: 4.1.11(@types/node@24.12.2)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(happy-dom@20.12.0)(jsdom@30.0.1)(vite@8.2.2)
       vitest-browser-solid:
         specifier: ^1.0.1
-        version: 1.0.1(solid-js@1.9.14)(vitest@4.1.11)
+        version: 1.0.1(solid-js@1.9.15)(vitest@4.1.11)
 
   packages/svelte:
     dependencies:
@@ -721,8 +721,8 @@ importers:
         specifier: ^5.57.0
         version: 5.57.0(@typescript-eslint/types@8.66.0)
       svelte-check:
-        specifier: ^4.7.3
-        version: 4.7.3(picomatch@4.0.7)(svelte@5.57.0)(typescript@6.0.3)
+        specifier: ^4.7.6
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0)(typescript@6.0.3)
       tsx:
         specifier: ^4.23.12
         version: 4.23.12
@@ -926,8 +926,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       solid-js:
-        specifier: ^1.9.14
-        version: 1.9.14
+        specifier: ^1.9.15
+        version: 1.9.15
       svelte:
         specifier: ^5.57.0
         version: 5.57.0(@typescript-eslint/types@8.66.0)
@@ -1035,8 +1035,8 @@ importers:
         specifier: ^0.6.0
         version: 0.6.0
       svelte-check:
-        specifier: ^4.7.3
-        version: 4.7.3(picomatch@4.0.7)(svelte@5.57.0)(typescript@6.0.3)
+        specifier: ^4.7.6
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0)(typescript@6.0.3)
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -1054,7 +1054,7 @@ importers:
         version: 8.2.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(tsx@4.23.12)(yaml@2.9.0)
       vite-plugin-solid:
         specifier: ^2.11.14
-        version: 2.11.14(solid-js@1.9.14)(supports-color@10.2.2)(vite@8.2.2)
+        version: 2.11.14(solid-js@1.9.15)(supports-color@10.2.2)(vite@8.2.2)
       vitest:
         specifier: 'catalog:'
         version: 4.1.11(@types/node@24.12.2)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(happy-dom@20.12.0)(jsdom@30.0.1)(vite@8.2.2)
@@ -1069,7 +1069,7 @@ importers:
         version: 2.2.0(@types/react-dom@19.2.4)(@types/react@19.2.18)(react-dom@19.2.8)(react@19.2.8)(vitest@4.1.11)
       vitest-browser-solid:
         specifier: ^1.0.1
-        version: 1.0.1(solid-js@1.9.14)(vitest@4.1.11)
+        version: 1.0.1(solid-js@1.9.15)(vitest@4.1.11)
       vitest-browser-svelte:
         specifier: ^3.0.0
         version: 3.0.0(svelte@5.57.0)(vitest@4.1.11)
@@ -1099,7 +1099,7 @@ importers:
         version: 6.0.2(@types/node@24.12.2)(@types/react-dom@19.2.4)(@types/react@19.2.18)(esbuild@0.28.1)(jiti@2.7.0)(react-dom@19.2.8)(react@19.2.8)(sass@1.102.0)(supports-color@10.2.2)(tsx@4.23.12)(yaml@2.9.0)
       '@astrojs/solid-js':
         specifier: ^7.0.2
-        version: 7.0.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(solid-js@1.9.14)(supports-color@10.2.2)(tsx@4.23.12)(yaml@2.9.0)
+        version: 7.0.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(solid-js@1.9.15)(supports-color@10.2.2)(tsx@4.23.12)(yaml@2.9.0)
       '@astrojs/starlight':
         specifier: ^0.41.7
         version: 0.41.7(astro@7.1.3)(supports-color@10.2.2)(typescript@6.0.3)
@@ -1194,8 +1194,8 @@ importers:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@24.12.2)
       solid-js:
-        specifier: ^1.9.14
-        version: 1.9.14
+        specifier: ^1.9.15
+        version: 1.9.15
       starlight-theme-nova:
         specifier: ^0.12.2
         version: 0.12.2(@astrojs/starlight@0.41.7)(supports-color@10.2.2)(typescript@6.0.3)
@@ -3662,8 +3662,8 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
-  '@sveltejs/load-config@0.2.0':
-    resolution: {integrity: sha512-1LgZ/qUqSoq+QorD83lk2hka79Px0wXNW2q5V1nZlxGhQgw1jrsIbVz5YiCeucVLo4XvFLjXukUaQjIiqowkcg==}
+  '@sveltejs/load-config@0.2.3':
+    resolution: {integrity: sha512-VT3qmUb8pRV2QrZjd8iAmtg8lf4W0TIjZbvXtz5MKei/q96teWZgGJyyidJzOjzZzvdq616eSRVeMYIQChUTAQ==}
     engines: {node: '>= 18.0.0'}
 
   '@sveltejs/package@2.5.8':
@@ -7152,8 +7152,8 @@ packages:
     resolution: {integrity: sha512-kCZr2V3ch9i00x8zXRhjUNVcjG9ijES5dDudkXvUVCT5QlJNQWElSJdZqyPemffHoLNUYwOcou0Fy+ojN0uHSQ==}
     engines: {node: '>= 18'}
 
-  solid-js@1.9.14:
-    resolution: {integrity: sha512-sAEXC0Kk0S1EDg+8ysEWJDbYhA3RRoEjwuySUGlKIemeo0I5YZfOyumNjNs9Sv3y2nmhD+0rW66ag2HsMuQiGQ==}
+  solid-js@1.9.15:
+    resolution: {integrity: sha512-EeiY2xfpZJqPLjXspVEKjAII4yv8NyG//NxZ3IpOFHdUNnnTyL0uJOeS9LWGvA7cFCz5y94cjFwYlmw5Luncsg==}
 
   solid-refresh@0.6.3:
     resolution: {integrity: sha512-F3aPsX6hVw9ttm5LYlth8Q15x6MlI/J3Dn+o3EQyRTtTxidepSTwAYdozt01/YA+7ObcciagGEyXIopGZzQtbA==}
@@ -7273,13 +7273,13 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  svelte-check@4.7.3:
-    resolution: {integrity: sha512-DHdTCGX62R0fCxBEaT+USdASAnoaRBaaNczkRJl0K7o3WyoCeVUbVxo6fKqpOll/B+WMWCsiFK0eFrJSNBKZIg==}
+  svelte-check@4.7.6:
+    resolution: {integrity: sha512-t2scM//ZuVbSY/T2w6FSBw1v9s2NEmh/g+sy1lqtosW5ylBV5AF4wFb1Ts9Kf3MbfPDUDJDZ9L436YT0SPTdvw==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
-      typescript: '>=5.0.0'
+      typescript: ^5.0.0 || ^6.0.0
 
   svelte2tsx@0.7.55:
     resolution: {integrity: sha512-JWzgeM3lqySRNfqcsesvVEh8LhTWBxQJ9RMjzJ+VepdmXtVnNd0SbtGctG6+/fbHq0N6mhwSd823gszw9JHeGQ==}
@@ -8561,11 +8561,11 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.3
 
-  '@astrojs/solid-js@7.0.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(solid-js@1.9.14)(supports-color@10.2.2)(tsx@4.23.12)(yaml@2.9.0)':
+  '@astrojs/solid-js@7.0.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(solid-js@1.9.15)(supports-color@10.2.2)(tsx@4.23.12)(yaml@2.9.0)':
     dependencies:
-      solid-js: 1.9.14
+      solid-js: 1.9.15
       vite: 8.2.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(tsx@4.23.12)(yaml@2.9.0)
-      vite-plugin-solid: 2.11.14(solid-js@1.9.14)(supports-color@10.2.2)(vite@8.2.2)
+      vite-plugin-solid: 2.11.14(solid-js@1.9.15)(supports-color@10.2.2)(vite@8.2.2)
       vitefu: 1.1.2(vite@8.2.2)
     transitivePeerDependencies:
       - '@testing-library/jest-dom'
@@ -10334,14 +10334,14 @@ snapshots:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
-  '@prosemirror-adapter/solid@0.5.5(solid-js@1.9.14)':
+  '@prosemirror-adapter/solid@0.5.5(solid-js@1.9.15)':
     dependencies:
       '@prosemirror-adapter/core': 0.5.5
       prosemirror-model: 1.25.11
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.3
     optionalDependencies:
-      solid-js: 1.9.14
+      solid-js: 1.9.15
 
   '@prosemirror-adapter/svelte@0.5.5(svelte@5.57.0)':
     dependencies:
@@ -10607,7 +10607,7 @@ snapshots:
     dependencies:
       acorn: 8.18.0
 
-  '@sveltejs/load-config@0.2.0': {}
+  '@sveltejs/load-config@0.2.3': {}
 
   '@sveltejs/package@2.5.8(svelte@5.57.0)(typescript@6.0.3)':
     dependencies:
@@ -11684,12 +11684,12 @@ snapshots:
     dependencies:
       '@babel/core': 7.29.0(supports-color@10.2.2)
 
-  babel-preset-solid@1.9.10(@babel/core@7.29.0)(solid-js@1.9.14):
+  babel-preset-solid@1.9.10(@babel/core@7.29.0)(solid-js@1.9.15):
     dependencies:
       '@babel/core': 7.29.0(supports-color@10.2.2)
       babel-plugin-jsx-dom-expressions: 0.40.3(@babel/core@7.29.0)
     optionalDependencies:
-      solid-js: 1.9.14
+      solid-js: 1.9.15
 
   bail@2.0.2: {}
 
@@ -14908,18 +14908,18 @@ snapshots:
 
   smol-toml@1.8.0: {}
 
-  solid-js@1.9.14:
+  solid-js@1.9.15:
     dependencies:
       csstype: 3.2.3
       seroval: 1.5.4
       seroval-plugins: 1.5.4(seroval@1.5.4)
 
-  solid-refresh@0.6.3(solid-js@1.9.14)(supports-color@10.2.2):
+  solid-refresh@0.6.3(solid-js@1.9.15)(supports-color@10.2.2):
     dependencies:
       '@babel/generator': 7.29.1
       '@babel/helper-module-imports': 7.28.6(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      solid-js: 1.9.14
+      solid-js: 1.9.15
     transitivePeerDependencies:
       - supports-color
 
@@ -15049,10 +15049,10 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.7.3(picomatch@4.0.7)(svelte@5.57.0)(typescript@6.0.3):
+  svelte-check@4.7.6(picomatch@4.0.7)(svelte@5.57.0)(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
-      '@sveltejs/load-config': 0.2.0
+      '@sveltejs/load-config': 0.2.3
       chokidar: 4.0.3
       fdir: 6.5.0(picomatch@4.0.7)
       picocolors: 1.1.1
@@ -15488,14 +15488,14 @@ snapshots:
       vite: 8.2.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(tsx@4.23.12)(yaml@2.9.0)
       vite-dev-rpc: 2.0.0(vite@8.2.2)
 
-  vite-plugin-solid@2.11.14(solid-js@1.9.14)(supports-color@10.2.2)(vite@8.2.2):
+  vite-plugin-solid@2.11.14(solid-js@1.9.15)(supports-color@10.2.2)(vite@8.2.2):
     dependencies:
       '@babel/core': 7.29.0(supports-color@10.2.2)
       '@types/babel__core': 7.20.5
-      babel-preset-solid: 1.9.10(@babel/core@7.29.0)(solid-js@1.9.14)
+      babel-preset-solid: 1.9.10(@babel/core@7.29.0)(solid-js@1.9.15)
       merge-anything: 5.1.7
-      solid-js: 1.9.14
-      solid-refresh: 0.6.3(solid-js@1.9.14)(supports-color@10.2.2)
+      solid-js: 1.9.15
+      solid-refresh: 0.6.3(solid-js@1.9.15)(supports-color@10.2.2)
       vite: 8.2.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.102.0)(tsx@4.23.12)(yaml@2.9.0)
       vitefu: 1.1.2(vite@8.2.2)
     transitivePeerDependencies:
@@ -15579,9 +15579,9 @@ snapshots:
       '@types/react': 19.2.18
       '@types/react-dom': 19.2.4(@types/react@19.2.18)
 
-  vitest-browser-solid@1.0.1(solid-js@1.9.14)(vitest@4.1.11):
+  vitest-browser-solid@1.0.1(solid-js@1.9.15)(vitest@4.1.11):
     dependencies:
-      solid-js: 1.9.14
+      solid-js: 1.9.15
       vitest: 4.1.11(@types/node@24.12.2)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(happy-dom@20.12.0)(jsdom@30.0.1)(vite@8.2.2)
 
   vitest-browser-svelte@3.0.0(svelte@5.57.0)(vitest@4.1.11):

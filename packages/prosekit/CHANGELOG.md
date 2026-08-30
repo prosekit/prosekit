@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.2
+
+### Patch Changes
+
+- [`9897bb0`](https://github.com/ocavue/prosekit/commit/9897bb092d1b6b2f85806fc7d0f35e3c00d5c2ab) ![](https://prosekit.dev/b/core)
+
+  Add `isWebKit`, which detects Apple's WebKit engine via `navigator.vendor`, matching the check `prosemirror-view` uses for its Safari-specific code paths.
+
 ## 0.22.1
 
 ### Patch Changes

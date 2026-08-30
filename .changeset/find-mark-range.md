@@ -1,4 +1,5 @@
 ---
+# FIXME: change two "minor" here to "patch"
 "@prosekit/core": minor
 "prosekit": minor
 ---

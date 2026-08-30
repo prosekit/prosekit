@@ -14,7 +14,7 @@ export const isApple: boolean = typeof navigator !== 'undefined'
  * `"Google Inc."` vendor, and Node.js's global `navigator` has no `vendor`
  * field at all.
  *
- * https://github.com/ProseMirror/prosemirror-view/blob/1.42.3/src/browser.ts#L17
+ * https://code.haverbeke.berlin/prosemirror/prosemirror-view/src/tag/1.42.3/src/browser.ts#L17
  *
  * @internal
  */

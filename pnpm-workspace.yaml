@@ -7,14 +7,14 @@ allowedDeprecatedVersions:
   glob: "10.5.0"
 
 catalog:
-  "@tsdown/css": "^0.22.9"
+  "@tsdown/css": "^0.22.14"
   "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.10"
-  "@vitest/coverage-v8": "^4.1.10"
-  "@vitest/ui": "^4.1.10"
-  tsdown: "^0.22.9"
+  "@vitest/browser-playwright": "^4.1.11"
+  "@vitest/coverage-v8": "^4.1.11"
+  "@vitest/ui": "^4.1.11"
+  tsdown: "^0.22.14"
   typescript: "~6.0.3"
-  vitest: "^4.1.10"
+  vitest: "^4.1.11"
 
 dedupePeers: true
 
@@ -46,4 +46,5 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - "prosemirror-view"
-  - prosemirror-highlight@0.16.0
+  - "prosemirror-highlight"
+  - happy-dom@20.12.0

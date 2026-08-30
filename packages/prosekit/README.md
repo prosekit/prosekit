@@ -35,7 +35,9 @@ Detailed changes for each release are documented in the [CHANGELOG.md](https://g
 
 ## Sponsors
 
-<p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
+<p align="center">
+  <a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a>
+</p>
 
 ## License
 

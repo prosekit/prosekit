@@ -12,7 +12,9 @@ See the [Vue guide](https://prosekit.dev/frameworks/vue) on [prosekit.dev](https
 
 ## Sponsors
 
-<p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
+<p align="center">
+  <a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a>
+</p>
 
 ## License
 

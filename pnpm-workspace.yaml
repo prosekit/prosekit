@@ -46,6 +46,6 @@ minimumReleaseAgeExclude:
   - "@ocavue/*"
   - "@prosemirror-adapter/*"
   - "prosemirror-view"
-  - prosemirror-highlight@0.16.0
+  - "prosemirror-highlight"
   - happy-dom@20.12.0
   - loro-crdt@1.15.1

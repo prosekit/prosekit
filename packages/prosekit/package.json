@@ -247,7 +247,7 @@
     "preact": "^10.29.8",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "solid-js": "^1.9.14",
+    "solid-js": "^1.9.15",
     "svelte": "^5.57.0",
     "tsdown": "catalog:",
     "typedoc": "^0.28.20",

@@ -1,6 +1,6 @@
 const nav = typeof navigator !== 'undefined' ? navigator : undefined
-const platform = nav?.platform || ''
-const vendor = nav?.vendor || ''
+const platform = nav?.platform
+const vendor = nav?.vendor
 
 /**
  * Whether the current platform is an Apple platform (e.g., macOS, iOS, iPadOS)

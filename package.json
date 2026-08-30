@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.15.0",
+  "packageManager": "pnpm@11.24.0",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -44,7 +44,7 @@
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.55.2",
+    "dprint": "^0.56.1",
     "eslint": "^10.8.1",
     "knip": "^6.33.0",
     "monorepo-typescript-references": "^1.1.2",

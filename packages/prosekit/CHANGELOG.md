@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.22.1
+
+### Patch Changes
+
+- [`8f4e1d6`](https://github.com/ocavue/prosekit/commit/8f4e1d6691066158edc7e57d2ffd2c96bd4deaed) ![](https://prosekit.dev/b/core)
+
+  Add `findMarkRange`, which returns the contiguous range of the first mark matching a predicate that touches a resolved position.
+
 ## 0.22.0
 
 ### Minor Changes

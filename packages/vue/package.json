@@ -71,7 +71,7 @@
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vitest-browser-vue": "^2.1.0",
-    "vue": "^3.5.40"
+    "vue": "^3.5.42"
   },
   "publishConfig": {
     "exports": {

@@ -45,17 +45,17 @@
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.56.1",
-    "eslint": "^10.8.1",
+    "eslint": "^10.9.1",
     "knip": "^6.33.0",
     "monorepo-typescript-references": "^1.1.2",
     "nano-staged": "^1.0.2",
     "oxfmt": "^0.62.0",
-    "playwright": "^1.62.0",
-    "simple-git-hooks": "^2.13.1",
-    "turbo": "^2.10.9",
+    "playwright": "^1.62.1",
+    "simple-git-hooks": "^2.14.0",
+    "turbo": "^2.10.12",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.114.0"
+    "wrangler": "^4.127.1"
   },
   "nano-staged": {
     "*": "dprint fmt --allow-no-files"

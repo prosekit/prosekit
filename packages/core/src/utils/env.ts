@@ -1,4 +1,6 @@
 /**
+ * Whether the current platform is an Apple platform (e.g., macOS, iOS, iPadOS)
+ *
  * https://github.com/ProseMirror/prosemirror-keymap/blob/1.2.3/src/keymap.ts#L5
  *
  * @internal

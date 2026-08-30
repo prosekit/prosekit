@@ -47,5 +47,3 @@ minimumReleaseAgeExclude:
   - "@prosemirror-adapter/*"
   - "prosemirror-view"
   - "prosemirror-highlight"
-  - happy-dom@20.12.0
-  - loro-crdt@1.15.1

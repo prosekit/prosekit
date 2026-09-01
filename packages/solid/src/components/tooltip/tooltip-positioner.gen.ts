@@ -170,13 +170,12 @@ export const TooltipPositioner: Component<TooltipPositionerProps & JSX.HTMLAttri
     });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-tooltip-positioner',
       mergeProps(restProps, {
         ref: (el: TooltipPositionerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

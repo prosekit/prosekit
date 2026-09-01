@@ -145,13 +145,12 @@ export const AutocompletePositioner: Component<AutocompletePositionerProps & JSX
     });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-autocomplete-positioner',
       mergeProps(restProps, {
         ref: (el: AutocompletePositionerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

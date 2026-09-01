@@ -169,13 +169,12 @@ export const InlinePopoverPositioner: Component<InlinePopoverPositionerProps & J
     });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-inline-popover-positioner',
       mergeProps(restProps, {
         ref: (el: InlinePopoverPositionerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

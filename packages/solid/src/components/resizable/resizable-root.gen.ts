@@ -68,13 +68,12 @@ export const ResizableRoot: Component<ResizableRootProps & JSX.HTMLAttributes<Re
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-resizable-root',
       mergeProps(restProps, {
         ref: (el: ResizableRootElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

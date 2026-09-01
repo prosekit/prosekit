@@ -36,13 +36,12 @@ export const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps & JSX.HTMLAtt
     Object.assign(element, { disabled: elementProps.disabled, value: elementProps.value });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-menu-submenu-trigger',
       mergeProps(restProps, {
         ref: (el: MenuSubmenuTriggerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

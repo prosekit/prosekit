@@ -170,13 +170,12 @@ export const PopoverPositioner: Component<PopoverPositionerProps & JSX.HTMLAttri
     });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-popover-positioner',
       mergeProps(restProps, {
         ref: (el: PopoverPositionerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

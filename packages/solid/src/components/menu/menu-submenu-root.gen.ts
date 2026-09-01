@@ -62,13 +62,12 @@ export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttribute
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-menu-submenu-root',
       mergeProps(restProps, {
         ref: (el: MenuSubmenuRootElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

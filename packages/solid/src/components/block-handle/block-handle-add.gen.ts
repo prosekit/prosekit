@@ -35,13 +35,12 @@ export const BlockHandleAdd: Component<BlockHandleAddProps & JSX.HTMLAttributes<
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-block-handle-add',
       mergeProps(restProps, {
         ref: (el: BlockHandleAddElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

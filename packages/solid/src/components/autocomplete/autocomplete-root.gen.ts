@@ -113,13 +113,12 @@ export const AutocompleteRoot: Component<AutocompleteRootProps & JSX.HTMLAttribu
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-autocomplete-root',
       mergeProps(restProps, {
         ref: (el: AutocompleteRootElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

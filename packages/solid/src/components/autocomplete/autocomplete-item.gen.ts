@@ -61,13 +61,12 @@ export const AutocompleteItem: Component<AutocompleteItemProps & JSX.HTMLAttribu
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-autocomplete-item',
       mergeProps(restProps, {
         ref: (el: AutocompleteItemElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

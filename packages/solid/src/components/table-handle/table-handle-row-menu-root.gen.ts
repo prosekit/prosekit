@@ -39,13 +39,12 @@ export const TableHandleRowMenuRoot: Component<TableHandleRowMenuRootProps & JSX
     Object.assign(element, { defaultOpen: elementProps.defaultOpen, disabled: elementProps.disabled, open: elementProps.open });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-table-handle-row-menu-root',
       mergeProps(restProps, {
         ref: (el: TableHandleRowMenuRootElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

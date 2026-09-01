@@ -69,13 +69,12 @@ export const PopoverTrigger: Component<PopoverTriggerProps & JSX.HTMLAttributes<
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-popover-trigger',
       mergeProps(restProps, {
         ref: (el: PopoverTriggerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

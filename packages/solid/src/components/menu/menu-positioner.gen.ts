@@ -170,13 +170,12 @@ export const MenuPositioner: Component<MenuPositionerProps & JSX.HTMLAttributes<
     });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-menu-positioner',
       mergeProps(restProps, {
         ref: (el: MenuPositionerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

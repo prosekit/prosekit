@@ -39,13 +39,12 @@ export const TooltipTrigger: Component<TooltipTriggerProps & JSX.HTMLAttributes<
     Object.assign(element, { closeDelay: elementProps.closeDelay, disabled: elementProps.disabled, openDelay: elementProps.openDelay });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-tooltip-trigger',
       mergeProps(restProps, {
         ref: (el: TooltipTriggerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

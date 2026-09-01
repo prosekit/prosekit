@@ -41,13 +41,12 @@ export const DropIndicator: Component<DropIndicatorProps & JSX.HTMLAttributes<Dr
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback, width: elementProps.width });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-drop-indicator',
       mergeProps(restProps, {
         ref: (el: DropIndicatorElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

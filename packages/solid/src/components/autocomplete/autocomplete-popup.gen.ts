@@ -54,13 +54,12 @@ export const AutocompletePopup: Component<AutocompletePopupProps & JSX.HTMLAttri
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-autocomplete-popup',
       mergeProps(restProps, {
         ref: (el: AutocompletePopupElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

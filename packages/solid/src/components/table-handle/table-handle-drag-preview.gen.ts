@@ -33,13 +33,12 @@ export const TableHandleDragPreview: Component<TableHandleDragPreviewProps & JSX
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-table-handle-drag-preview',
       mergeProps(restProps, {
         ref: (el: TableHandleDragPreviewElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

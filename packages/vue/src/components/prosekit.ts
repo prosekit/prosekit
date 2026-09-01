@@ -17,11 +17,10 @@ export const ProseKit: DefineSetupFnComponent<ProseKitProps> = defineComponent<P
   props: { editor: { type: Object as PropType<Editor>, required: true } },
   setup: (props, { slots }) => {
     provideEditor(props.editor)
-    return () =>
-      h(
+    return () => { return h(
         ViewRenderer,
         { editor: props.editor },
         () => slots.default?.(),
-      )
+      ) }
   },
 })

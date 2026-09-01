@@ -31,13 +31,12 @@ export const MenuPopup: Component<MenuPopupProps & JSX.HTMLAttributes<MenuPopupE
     Object.assign(element, { eventTarget: elementProps.eventTarget });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-menu-popup',
       mergeProps(restProps, {
         ref: (el: MenuPopupElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

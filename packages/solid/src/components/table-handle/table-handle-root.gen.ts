@@ -35,13 +35,12 @@ export const TableHandleRoot: Component<TableHandleRootProps & JSX.HTMLAttribute
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback });
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-table-handle-root',
       mergeProps(restProps, {
         ref: (el: TableHandleRootElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

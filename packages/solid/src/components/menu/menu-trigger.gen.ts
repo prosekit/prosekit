@@ -53,13 +53,12 @@ export const MenuTrigger: Component<MenuTriggerProps & JSX.HTMLAttributes<MenuTr
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-menu-trigger',
       mergeProps(restProps, {
         ref: (el: MenuTriggerElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

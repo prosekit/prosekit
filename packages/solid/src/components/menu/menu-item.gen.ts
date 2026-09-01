@@ -65,13 +65,12 @@ export const MenuItem: Component<MenuItemProps & JSX.HTMLAttributes<MenuItemElem
     return () => ac.abort();
   });
 
-  return () =>
-    h(
+  return () => { return h(
       'prosekit-menu-item',
       mergeProps(restProps, {
         ref: (el: MenuItemElement | null) => {
           setElement(el);
         },
       }),
-    );
+    ) };
 };

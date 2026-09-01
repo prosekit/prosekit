@@ -42,7 +42,7 @@
     "@prosekit/pm": "workspace:^",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^1.1.0",
-    "type-fest": "^5.8.0"
+    "type-fest": "^5.9.0"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",
@@ -52,7 +52,7 @@
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-commands": "^0.2.1"
+    "vitest-browser-commands": "^0.4.1"
   },
   "publishConfig": {
     "exports": {

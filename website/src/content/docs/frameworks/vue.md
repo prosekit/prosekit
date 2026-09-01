@@ -129,8 +129,8 @@ import { computed } from 'vue'
 
 const props = defineProps<{ enabled: boolean }>()
 
-useKeymap(computed(() =>
-  props.enabled
+useKeymap(computed(() => {
+  return props.enabled
     ? {
       'Mod-s': () => {
         console.log('save')
@@ -138,7 +138,7 @@ useKeymap(computed(() =>
       },
     }
     : {}
-))
+}))
 </script>
 ```
 

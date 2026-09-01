@@ -50,9 +50,9 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/jsdom": "^30.0.0",
-    "happy-dom": "^20.11.15",
+    "happy-dom": "^20.12.0",
     "jsdom": "^30.0.1",
-    "sass": "^1.102.0",
+    "sass": "^1.103.1",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

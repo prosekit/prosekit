@@ -69,12 +69,13 @@ export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<Popove
     return () => ac.abort();
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-popover-root',
       mergeProps(restProps, {
         ref: (el: PopoverRootElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

@@ -58,12 +58,13 @@ export const BlockHandleRoot: Component<BlockHandleRootProps & JSX.HTMLAttribute
     return () => ac.abort();
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-block-handle-root',
       mergeProps(restProps, {
         ref: (el: BlockHandleRootElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

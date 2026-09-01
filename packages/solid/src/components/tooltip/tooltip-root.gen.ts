@@ -62,12 +62,13 @@ export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<Toolti
     return () => ac.abort();
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-tooltip-root',
       mergeProps(restProps, {
         ref: (el: TooltipRootElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

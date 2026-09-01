@@ -35,12 +35,13 @@ export const BlockHandleDraggable: Component<BlockHandleDraggableProps & JSX.HTM
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback });
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-block-handle-draggable',
       mergeProps(restProps, {
         ref: (el: BlockHandleDraggableElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

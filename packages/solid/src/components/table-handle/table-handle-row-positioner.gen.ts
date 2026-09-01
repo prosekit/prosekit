@@ -174,12 +174,13 @@ export const TableHandleRowPositioner: Component<TableHandleRowPositionerProps &
     });
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-table-handle-row-positioner',
       mergeProps(restProps, {
         ref: (el: TableHandleRowPositionerElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

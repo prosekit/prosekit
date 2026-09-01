@@ -33,12 +33,13 @@ export const TableHandleRowMenuTrigger: Component<TableHandleRowMenuTriggerProps
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback });
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-table-handle-row-menu-trigger',
       mergeProps(restProps, {
         ref: (el: TableHandleRowMenuTriggerElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

@@ -163,12 +163,13 @@ export const BlockHandlePositioner: Component<BlockHandlePositionerProps & JSX.H
     });
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-block-handle-positioner',
       mergeProps(restProps, {
         ref: (el: BlockHandlePositionerElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

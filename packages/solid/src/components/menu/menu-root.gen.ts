@@ -62,12 +62,13 @@ export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElem
     return () => ac.abort();
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-menu-root',
       mergeProps(restProps, {
         ref: (el: MenuRootElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

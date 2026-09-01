@@ -30,12 +30,13 @@ export const ResizableHandle: Component<ResizableHandleProps & JSX.HTMLAttribute
     Object.assign(element, { position: elementProps.position });
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-resizable-handle',
       mergeProps(restProps, {
         ref: (el: ResizableHandleElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

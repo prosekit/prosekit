@@ -33,12 +33,13 @@ export const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps &
     Object.assign(element, { editor: elementProps.editor ?? p0Fallback });
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-table-handle-drop-indicator',
       mergeProps(restProps, {
         ref: (el: TableHandleDropIndicatorElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

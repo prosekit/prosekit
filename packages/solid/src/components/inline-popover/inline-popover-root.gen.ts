@@ -93,12 +93,13 @@ export const InlinePopoverRoot: Component<InlinePopoverRootProps & JSX.HTMLAttri
     return () => ac.abort();
   });
 
-  return () => { return h(
+  return () =>
+    h(
       'prosekit-inline-popover-root',
       mergeProps(restProps, {
         ref: (el: InlinePopoverRootElement | null) => {
           setElement(el);
         },
       }),
-    ) };
+    );
 };

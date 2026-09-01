@@ -214,8 +214,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.11(@types/node@24.12.2)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(happy-dom@20.12.0)(jsdom@30.0.1)(vite@8.2.2)
       vitest-browser-commands:
-        specifier: ^0.2.1
-        version: 0.2.1(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        specifier: ^0.4.1
+        version: 0.4.1(@vitest/browser-playwright@4.1.11)(@vitest/browser@4.1.11)(playwright@1.62.1)(vite@8.2.2)(vitest@4.1.11)
 
   packages/dev:
     dependencies:
@@ -354,8 +354,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.11(@types/node@24.12.2)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(happy-dom@20.12.0)(jsdom@30.0.1)(vite@8.2.2)
       vitest-browser-commands:
-        specifier: ^0.2.1
-        version: 0.2.1(@vitest/browser-playwright@4.1.11)(vitest@4.1.11)
+        specifier: ^0.4.1
+        version: 0.4.1(@vitest/browser-playwright@4.1.11)(@vitest/browser@4.1.11)(playwright@1.62.1)(vite@8.2.2)(vitest@4.1.11)
       y-prosemirror:
         specifier: ^1.3.7
         version: 1.3.7(patch_hash=532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)(y-protocols@1.0.7)(yjs@13.6.32)
@@ -7824,17 +7824,6 @@ packages:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-beta.0
     peerDependenciesMeta:
       vite:
-        optional: true
-
-  vitest-browser-commands@0.2.1:
-    resolution: {integrity: sha512-SCA6fjcO8uPLIvkzNzT8i0y+eUHx4hthZR2g7PSzHz01iG3qAm+rjfDuD1ot4taABsXolo1WaDByjKFuQ1IVww==}
-    peerDependencies:
-      '@vitest/browser-playwright': ^4.0.3
-      vitest: ^4.0.3
-    peerDependenciesMeta:
-      '@vitest/browser-playwright':
-        optional: true
-      vitest:
         optional: true
 
   vitest-browser-commands@0.4.1:
@@ -15598,11 +15587,6 @@ snapshots:
   vitefu@1.1.2(vite@8.2.2):
     optionalDependencies:
       vite: 8.2.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.103.1)(tsx@4.23.13)(yaml@2.9.0)
-
-  vitest-browser-commands@0.2.1(@vitest/browser-playwright@4.1.11)(vitest@4.1.11):
-    optionalDependencies:
-      '@vitest/browser-playwright': 4.1.11(playwright@1.62.1)(vite@8.2.2)(vitest@4.1.11)
-      vitest: 4.1.11(@types/node@24.12.2)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(happy-dom@20.12.0)(jsdom@30.0.1)(vite@8.2.2)
 
   vitest-browser-commands@0.4.1(@vitest/browser-playwright@4.1.11)(@vitest/browser@4.1.11)(playwright@1.62.1)(vite@8.2.2)(vitest@4.1.11):
     optionalDependencies:

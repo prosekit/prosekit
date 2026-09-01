@@ -161,12 +161,13 @@ function decorateDeletion(
   const renders = decorateDeletionSlice(slice)
   const count = renders.length
 
-  return renders.map((render, index) => { return Decoration.widget(pos, render, {
+  return renders.map((render, index) => {
+    return Decoration.widget(pos, render, {
       side: -20 - count + index,
       // Ensure the text in the decoration is able to be selected.
       ignoreSelection: true,
-    }) }
-  )
+    })
+  })
 }
 
 function decorateAddition(

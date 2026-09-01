@@ -11,10 +11,11 @@ import { EditorFallback } from './editor-fallback'
 // complete: fallback unmounted, editor fully visible
 type Phase = 'loading' | 'ready' | 'complete'
 
-const LazyExampleEditor = lazy(() => { return dynamicImportEditorModule().then((mod) => ({
+const LazyExampleEditor = lazy(() => {
+  return dynamicImportEditorModule().then((mod) => ({
     default: mod.ExampleEditor,
-  })) }
-)
+  }))
+})
 
 const EditorLoaded: FC<{ onReady: () => void }> = ({ onReady }) => {
   useEffect(onReady, [onReady])

@@ -52,10 +52,12 @@ describe('VueNodeView', () => {
             clearInterval(id)
           })
         })
-        return () => { return h('div', {
+        return () => {
+          return h('div', {
             'data-testid': 'image-refresh-view',
             'data-url': url.value,
-          }) }
+          })
+        }
       },
     },
   )
@@ -70,12 +72,16 @@ describe('VueNodeView', () => {
         defaultContent: props.initialContent,
       })
 
-      return () => { return h(ProseKit, { editor }, () => { return h('div', {
+      return () => {
+        return h(ProseKit, { editor }, () => {
+          return h('div', {
             'data-testid': 'editor',
             'ref': (el) => {
               editor.mount(el as HTMLElement | null)
             },
-          }) }) }
+          })
+        })
+      }
     },
   })
 

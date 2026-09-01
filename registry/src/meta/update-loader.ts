@@ -43,8 +43,9 @@ function genPreactLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'preact')
-      .map((example) => { return `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),` }
-      ),
+      .map((example) => {
+        return `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),`
+      }),
     '}',
   ]
   return lines.join('\n') + '\n'
@@ -59,8 +60,9 @@ function genReactLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'react')
-      .map((example) => { return `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),` }
-      ),
+      .map((example) => {
+        return `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),`
+      }),
     '}',
   ]
   return lines.join('\n') + '\n'
@@ -75,8 +77,9 @@ function genVueLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'vue')
-      .map((example) => { return `  '${example.story}': defineAsyncComponent(() => import('./examples/${example.story}/index.ts').then((m) => m.ExampleEditor)),` }
-      ),
+      .map((example) => {
+        return `  '${example.story}': defineAsyncComponent(() => import('./examples/${example.story}/index.ts').then((m) => m.ExampleEditor)),`
+      }),
     '}',
   ]
   return lines.join('\n') + '\n'
@@ -91,8 +94,9 @@ function genSolidLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'solid')
-      .map((example) => { return `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),` }
-      ),
+      .map((example) => {
+        return `  '${example.story}': lazy(() => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor }))),`
+      }),
     '}',
   ]
   return lines.join('\n') + '\n'
@@ -106,8 +110,9 @@ function genSvelteLoaders(items: ItemAccumulator[]): string {
     ...items
       .filter((item) => item.category === 'example')
       .filter((example) => example.framework === 'svelte')
-      .map((example) => { return `  '${example.story}': () => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor })),` }
-      ),
+      .map((example) => {
+        return `  '${example.story}': () => import('./examples/${example.story}/index.ts').then((m) => ({ default: m.ExampleEditor })),`
+      }),
     '}',
   ]
   return lines.join('\n') + '\n'

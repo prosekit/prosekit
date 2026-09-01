@@ -155,6 +155,8 @@ class CodeBlockNodeView {
 export function defineCodeBlockView(): Extension {
   return defineNodeView({
     name: 'codeBlock',
-    constructor: (node, view, getPos, decorations) => { return new CodeBlockNodeView(node, view, getPos, decorations) },
+    constructor: (node, view, getPos, decorations) => {
+      return new CodeBlockNodeView(node, view, getPos, decorations)
+    },
   })
 }

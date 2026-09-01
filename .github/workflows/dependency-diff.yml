@@ -84,7 +84,7 @@ jobs:
           name: source-packages
           path: source-packages
 
-      - uses: e18e/action-dependency-diff@6fdf9b0581697fc0268c689d774850f95c7b2bf0 # TODO: temporally use a specific commit until the next release is tagged (2026-08-10)
+      - uses: e18e/action-dependency-diff@d3eb8eefcbecc101135419a851cb51e1cdf58508 # v1.7
         with:
           base-packages: ./base-packages/*.tgz
           source-packages: ./source-packages/*.tgz

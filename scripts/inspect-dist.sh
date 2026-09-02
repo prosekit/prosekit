@@ -24,24 +24,15 @@ build_and_commit() {
   pnpm install
   pnpm run build:package
 
-  # Remove source maps
-  find packages/*/dist -name "*.map" -delete 2>/dev/null || true
-
   # Clear index so deletions are captured
   git rm -r --cached 'packages/*/dist/' 2>/dev/null || true
 
   # Commit each file type separately for clearer diffs
-  git add --force 'packages/*/dist/**/*.d.ts' || true
-  git add --force 'packages/*/dist/*.d.ts' || true
-  git commit --allow-empty -m "chore: ${label} .d.ts"
-
-  git add --force 'packages/*/dist/**/*.js' || true
-  git add --force 'packages/*/dist/*.js' || true
-  git commit --allow-empty -m "chore: ${label} .js"
-
-  git add --force 'packages/*/dist/**/*.css' || true
-  git add --force 'packages/*/dist/*.css' || true
-  git commit --allow-empty -m "chore: ${label} .css"
+  for suffix in '.d.ts.map' '.js.map' '.css.map' '.d.ts' '.js' '.css'; do
+    git add --force "packages/*/dist/**/*${suffix}" || true
+    git add --force "packages/*/dist/*${suffix}" || true
+    git commit --allow-empty -m "chore: ${label} ${suffix}"
+  done
 
   git add --force 'packages/*/dist/' || true
   git commit --allow-empty -m "chore: ${label} other"

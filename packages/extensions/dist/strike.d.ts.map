@@ -1,1 +1,1 @@
-{"version":3,"file":"strike.d.ts","names":[],"sources":["../src/strike/index.ts"],"mappings":";;;;;KAkBY,sBAAsB;EAChC;IACE,QAAQ;;;;;;iBAOI,oBAAoB;;;;KAmBxB,0BAA0B;EACpC;IACE;;;;;;iBAOY,wBAAwB;;;;iBASxB,sBAAsB;;;;iBAUtB,yBAAyB;;;;KAa7B,kBAAkB,OAC3B,qBAAqB;iBAGR,gBAAgB"}
+{"version":3,"file":"strike.d.ts","names":[],"sources":["../src/strike/index.ts"],"mappings":";;;;;YAkBY,sBAAsB;EAChC;IACE,QAAQ;;;;;;wBAOI,oBAAoB;;;;YAmBxB,0BAA0B;EACpC;IACE;;;;;;wBAOY,wBAAwB;;;;wBASxB,sBAAsB;;;;wBAUtB,yBAAyB;;;;YAa7B,kBAAkB,OAC3B,qBAAqB;wBAGR,gBAAgB"}

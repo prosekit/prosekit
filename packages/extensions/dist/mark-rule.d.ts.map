@@ -1,1 +1,1 @@
-{"version":3,"file":"mark-rule.d.ts","names":[],"sources":["../src/mark-rule/types.ts","../src/mark-rule/mark-rule.ts"],"mappings":";;;;;UAKiB;;;;;EAKf,OAAO;;;;EAKP,eAAe;;;;;;;EAQf,QAAQ,iBAAiB,OAAO,qBAAqB;;;;;;iBCbvC,eAAe,SAAS,kBAAkB"}
+{"version":3,"file":"mark-rule.d.ts","names":[],"sources":["../src/mark-rule/types.ts","../src/mark-rule/mark-rule.ts"],"mappings":";;;;;UAKiB;;;;;EAKf,OAAO;;;;EAKP,eAAe;;;;;;;EAQf,QAAQ,iBAAiB,OAAO,qBAAqB;;;;;;wBCbvC,eAAe,SAAS,kBAAkB"}

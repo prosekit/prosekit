@@ -1,1 +1,0 @@
-{"version":3,"file":"popover-trigger.gen.svelte.d.ts","sourceRoot":"","sources":["../../../../src/components/popover/popover-trigger.gen.svelte.ts"],"names":[],"mappings":"AAyCA,QAAA,MAAM,cAAc;gBA9BsE,GAAG;WAAS,GAAG;cAAY,GAAG;iBAAe,GAAG;kBAAgB,GAAG;eAAa,GAAG;gCA8BjH,CAAC;AAC7D,KAAK,cAAc,GAAG,UAAU,CAAC,OAAO,cAAc,CAAC,CAAC;AACxD,eAAe,cAAc,CAAC"}

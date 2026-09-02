@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/prosekit/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,gBAAgB,CAAA;AAC5C,OAAO,KAAK,EAAE,SAAS,EAAE,OAAO,EAAE,MAAM,QAAQ,CAAA;AAIhD,MAAM,WAAW,aAAa;IAC5B,MAAM,EAAE,MAAM,CAAA;IACd,QAAQ,CAAC,EAAE,OAAO,CAAA;CACnB;AAED;;GAEG;AACH,eAAO,MAAM,QAAQ,EAAW,SAAS,CAAC,aAAa,CAAC,CAAA"}

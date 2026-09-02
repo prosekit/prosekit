@@ -1,1 +1,0 @@
-{"version":3,"file":"resizable.d.ts","names":[],"sources":["../src/components/resizable/resizable-root.gen.ts","../src/components/resizable/resizable-handle.gen.ts"],"mappings":";;;UAQiB;;;;;;EAMf,QAAQ;;;;;;EAMR,SAAS;;;;;;EAMT,cAAc;;EAEd,iBAAiB,OAAO;;EAExB,eAAe,OAAO;;;qBAIX,eAAe,UAAU,qBAAqB,IAAI,eAAe;;UC1B7D;;;;;;EAMf,WAAW;;;qBAIA,iBAAiB,UAAU,uBAAuB,IAAI,eAAe"}

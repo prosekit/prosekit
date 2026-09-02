@@ -1,4 +1,5 @@
 import type { Schema } from '@prosekit/pm/model'
+import type { IsAny } from 'type-fest'
 
 import type { CommandTyping, ToCommandAction, ToCommandCreators } from './extension-command.ts'
 import type { MarkTyping, ToMarkAction, ToMarkBuilder } from './extension-mark.ts'
@@ -58,17 +59,15 @@ export type PlainExtension = Extension<{
   Commands: never
 }>
 
-export type ExtractNodes<E extends Extension> = SimplifyDeeper<
-  SimplifyUnion<ExtractTyping<E>['Nodes']>
->
+export type ExtractNodes<E extends Extension> = IsAny<E> extends true ? NodeTyping
+  : SimplifyDeeper<SimplifyUnion<ExtractTyping<E>['Nodes']>>
 
 export type ExtractNodeNames<E extends Extension> = PickStringLiteral<
   keyof ExtractNodes<E>
 >
 
-export type ExtractMarks<E extends Extension> = SimplifyDeeper<
-  SimplifyUnion<ExtractTyping<E>['Marks']>
->
+export type ExtractMarks<E extends Extension> = IsAny<E> extends true ? MarkTyping
+  : SimplifyDeeper<SimplifyUnion<ExtractTyping<E>['Marks']>>
 
 export type ExtractMarkNames<E extends Extension> = PickStringLiteral<
   keyof ExtractMarks<E>
@@ -77,9 +76,8 @@ export type ExtractMarkNames<E extends Extension> = PickStringLiteral<
 /**
  * @internal
  */
-export type ExtractCommands<E extends Extension> = SimplifyUnion<
-  ExtractTyping<E>['Commands']
->
+export type ExtractCommands<E extends Extension> = IsAny<E> extends true ? CommandTyping
+  : SimplifyUnion<ExtractTyping<E>['Commands']>
 
 export type ExtractCommandCreators<E extends Extension> = ToCommandCreators<
   ExtractCommands<E>

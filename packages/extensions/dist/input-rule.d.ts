@@ -6,11 +6,11 @@ import { Attrs, MarkType, NodeType, ProseMirrorNode } from "@prosekit/pm/model";
  *
  * @param rule - The ProseMirror input rule to add.
  */
-declare function defineInputRule(rule: InputRule): PlainExtension;
+export declare function defineInputRule(rule: InputRule): PlainExtension;
 /**
  * Options for {@link defineMarkInputRule}.
  */
-interface MarkInputRuleOptions {
+export interface MarkInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$` and has
    * exactly one capture group. All other matched text outside the capture group
@@ -35,12 +35,12 @@ interface MarkInputRuleOptions {
 /**
  * @internal
  */
-declare function createMarkInputRule({ regex, type, attrs, inCodeMark }: MarkInputRuleOptions): InputRule;
+export declare function createMarkInputRule({ regex, type, attrs, inCodeMark }: MarkInputRuleOptions): InputRule;
 /**
  * Defines an input rule for automatically adding inline marks when a given
  * pattern is typed.
  */
-declare function defineMarkInputRule(options: MarkInputRuleOptions): PlainExtension;
+export declare function defineMarkInputRule(options: MarkInputRuleOptions): PlainExtension;
 /**
  * Defines an input rule that changes the type of a textblock when the matched
  * text is typed into it.
@@ -49,7 +49,7 @@ declare function defineMarkInputRule(options: MarkInputRuleOptions): PlainExtens
  *
  * @param options
  */
-declare function defineTextBlockInputRule({ regex, type, attrs }: {
+export declare function defineTextBlockInputRule({ regex, type, attrs }: {
   /**
    * The regular expression to match against, which should end with `$`. It
    * usually also starts with `^` to that it is only matched at the start of a
@@ -73,7 +73,7 @@ declare function defineTextBlockInputRule({ regex, type, attrs }: {
  *
  * @param options
  */
-declare function defineWrappingInputRule({ regex, type, attrs, join }: {
+export declare function defineWrappingInputRule({ regex, type, attrs, join }: {
   /**
    * The regular expression to match against, which should end with `$`. It
    * usually also starts with `^` to that it is only matched at the start of a
@@ -98,5 +98,4 @@ declare function defineWrappingInputRule({ regex, type, attrs, join }: {
    */
   join?: (match: RegExpMatchArray, node: ProseMirrorNode) => boolean;
 }): PlainExtension;
-export { MarkInputRuleOptions, createMarkInputRule, defineInputRule, defineMarkInputRule, defineTextBlockInputRule, defineWrappingInputRule };
 //# sourceMappingURL=input-rule.d.ts.map

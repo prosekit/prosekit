@@ -3,7 +3,7 @@ import { TableHandleColumnMenuRootElement, TableHandleColumnMenuRootProps as Tab
 /** Props for the {@link TableHandleColumnPopup} Solid component. */
 interface TableHandleColumnPopupProps {}
 /** A Solid component that renders an `prosekit-table-handle-column-popup` custom element. */
-declare const TableHandleColumnPopup: Component<TableHandleColumnPopupProps & JSX.HTMLAttributes<TableHandleColumnPopupElement>>;
+export declare const TableHandleColumnPopup: Component<TableHandleColumnPopupProps & JSX.HTMLAttributes<TableHandleColumnPopupElement>>;
 /** Props for the {@link TableHandleColumnPositioner} Solid component. */
 interface TableHandleColumnPositionerProps {
   /**
@@ -134,7 +134,7 @@ interface TableHandleColumnPositionerProps {
   editor?: TableHandleColumnPositionerProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-column-positioner` custom element. */
-declare const TableHandleColumnPositioner: Component<TableHandleColumnPositionerProps & JSX.HTMLAttributes<TableHandleColumnPositionerElement>>;
+export declare const TableHandleColumnPositioner: Component<TableHandleColumnPositionerProps & JSX.HTMLAttributes<TableHandleColumnPositionerElement>>;
 /** Props for the {@link TableHandleColumnMenuRoot} Solid component. */
 interface TableHandleColumnMenuRootProps {
   /**
@@ -154,7 +154,7 @@ interface TableHandleColumnMenuRootProps {
   disabled?: TableHandleColumnMenuRootProps$1['disabled'];
 }
 /** A Solid component that renders an `prosekit-table-handle-column-menu-root` custom element. */
-declare const TableHandleColumnMenuRoot: Component<TableHandleColumnMenuRootProps & JSX.HTMLAttributes<TableHandleColumnMenuRootElement>>;
+export declare const TableHandleColumnMenuRoot: Component<TableHandleColumnMenuRootProps & JSX.HTMLAttributes<TableHandleColumnMenuRootElement>>;
 /** Props for the {@link TableHandleColumnMenuTrigger} Solid component. */
 interface TableHandleColumnMenuTriggerProps {
   /**
@@ -164,7 +164,7 @@ interface TableHandleColumnMenuTriggerProps {
   editor?: TableHandleColumnMenuTriggerProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-column-menu-trigger` custom element. */
-declare const TableHandleColumnMenuTrigger: Component<TableHandleColumnMenuTriggerProps & JSX.HTMLAttributes<TableHandleColumnMenuTriggerElement>>;
+export declare const TableHandleColumnMenuTrigger: Component<TableHandleColumnMenuTriggerProps & JSX.HTMLAttributes<TableHandleColumnMenuTriggerElement>>;
 /** Props for the {@link TableHandleDragPreview} Solid component. */
 interface TableHandleDragPreviewProps {
   /**
@@ -174,7 +174,7 @@ interface TableHandleDragPreviewProps {
   editor?: TableHandleDragPreviewProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-drag-preview` custom element. */
-declare const TableHandleDragPreview: Component<TableHandleDragPreviewProps & JSX.HTMLAttributes<TableHandleDragPreviewElement>>;
+export declare const TableHandleDragPreview: Component<TableHandleDragPreviewProps & JSX.HTMLAttributes<TableHandleDragPreviewElement>>;
 /** Props for the {@link TableHandleDropIndicator} Solid component. */
 interface TableHandleDropIndicatorProps {
   /**
@@ -184,7 +184,7 @@ interface TableHandleDropIndicatorProps {
   editor?: TableHandleDropIndicatorProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-drop-indicator` custom element. */
-declare const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps & JSX.HTMLAttributes<TableHandleDropIndicatorElement>>;
+export declare const TableHandleDropIndicator: Component<TableHandleDropIndicatorProps & JSX.HTMLAttributes<TableHandleDropIndicatorElement>>;
 /** Props for the {@link TableHandleRoot} Solid component. */
 interface TableHandleRootProps {
   /**
@@ -196,11 +196,11 @@ interface TableHandleRootProps {
   editor?: TableHandleRootProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-root` custom element. */
-declare const TableHandleRoot: Component<TableHandleRootProps & JSX.HTMLAttributes<TableHandleRootElement>>;
+export declare const TableHandleRoot: Component<TableHandleRootProps & JSX.HTMLAttributes<TableHandleRootElement>>;
 /** Props for the {@link TableHandleRowPopup} Solid component. */
 interface TableHandleRowPopupProps {}
 /** A Solid component that renders an `prosekit-table-handle-row-popup` custom element. */
-declare const TableHandleRowPopup: Component<TableHandleRowPopupProps & JSX.HTMLAttributes<TableHandleRowPopupElement>>;
+export declare const TableHandleRowPopup: Component<TableHandleRowPopupProps & JSX.HTMLAttributes<TableHandleRowPopupElement>>;
 /** Props for the {@link TableHandleRowPositioner} Solid component. */
 interface TableHandleRowPositionerProps {
   /**
@@ -331,7 +331,7 @@ interface TableHandleRowPositionerProps {
   editor?: TableHandleRowPositionerProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-row-positioner` custom element. */
-declare const TableHandleRowPositioner: Component<TableHandleRowPositionerProps & JSX.HTMLAttributes<TableHandleRowPositionerElement>>;
+export declare const TableHandleRowPositioner: Component<TableHandleRowPositionerProps & JSX.HTMLAttributes<TableHandleRowPositionerElement>>;
 /** Props for the {@link TableHandleRowMenuRoot} Solid component. */
 interface TableHandleRowMenuRootProps {
   /**
@@ -351,7 +351,7 @@ interface TableHandleRowMenuRootProps {
   disabled?: TableHandleRowMenuRootProps$1['disabled'];
 }
 /** A Solid component that renders an `prosekit-table-handle-row-menu-root` custom element. */
-declare const TableHandleRowMenuRoot: Component<TableHandleRowMenuRootProps & JSX.HTMLAttributes<TableHandleRowMenuRootElement>>;
+export declare const TableHandleRowMenuRoot: Component<TableHandleRowMenuRootProps & JSX.HTMLAttributes<TableHandleRowMenuRootElement>>;
 /** Props for the {@link TableHandleRowMenuTrigger} Solid component. */
 interface TableHandleRowMenuTriggerProps {
   /**
@@ -361,6 +361,6 @@ interface TableHandleRowMenuTriggerProps {
   editor?: TableHandleRowMenuTriggerProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-table-handle-row-menu-trigger` custom element. */
-declare const TableHandleRowMenuTrigger: Component<TableHandleRowMenuTriggerProps & JSX.HTMLAttributes<TableHandleRowMenuTriggerElement>>;
-export { TableHandleColumnMenuRoot, type TableHandleColumnMenuRootProps, TableHandleColumnMenuTrigger, type TableHandleColumnMenuTriggerProps, TableHandleColumnPopup, type TableHandleColumnPopupProps, TableHandleColumnPositioner, type TableHandleColumnPositionerProps, TableHandleDragPreview, type TableHandleDragPreviewProps, TableHandleDropIndicator, type TableHandleDropIndicatorProps, TableHandleRoot, type TableHandleRootProps, TableHandleRowMenuRoot, type TableHandleRowMenuRootProps, TableHandleRowMenuTrigger, type TableHandleRowMenuTriggerProps, TableHandleRowPopup, type TableHandleRowPopupProps, TableHandleRowPositioner, type TableHandleRowPositionerProps };
+export declare const TableHandleRowMenuTrigger: Component<TableHandleRowMenuTriggerProps & JSX.HTMLAttributes<TableHandleRowMenuTriggerElement>>;
+export type { TableHandleColumnMenuRootProps, TableHandleColumnMenuTriggerProps, TableHandleColumnPopupProps, TableHandleColumnPositionerProps, TableHandleDragPreviewProps, TableHandleDropIndicatorProps, TableHandleRootProps, TableHandleRowMenuRootProps, TableHandleRowMenuTriggerProps, TableHandleRowPopupProps, TableHandleRowPositionerProps };
 //# sourceMappingURL=table-handle.d.ts.map

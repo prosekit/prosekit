@@ -28,6 +28,6 @@ type DropCursorExtension = PlainExtension;
  *
  * You probably want to use `<DropIndicator />` component instead of this extension.
  */
-declare function defineDropCursor(options?: DropCursorOptions): DropCursorExtension;
-export { type DropCursorExtension, type DropCursorOptions, defineDropCursor };
+export declare function defineDropCursor(options?: DropCursorOptions): DropCursorExtension;
+export type { DropCursorExtension, DropCursorOptions };
 //# sourceMappingURL=drop-cursor.d.ts.map

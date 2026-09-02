@@ -11,7 +11,7 @@ type SubscriptCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineSubscriptCommands(): SubscriptCommandsExtension;
+export declare function defineSubscriptCommands(): SubscriptCommandsExtension;
 /**
  * @internal
  */
@@ -23,11 +23,11 @@ type SubscriptSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineSubscriptSpec(): SubscriptSpecExtension;
+export declare function defineSubscriptSpec(): SubscriptSpecExtension;
 /**
  * @internal
  */
 type SubscriptExtension = Union<[SubscriptSpecExtension, SubscriptCommandsExtension]>;
-declare function defineSubscript(): SubscriptExtension;
-export { type SubscriptCommandsExtension, type SubscriptExtension, type SubscriptSpecExtension, defineSubscript, defineSubscriptCommands, defineSubscriptSpec };
+export declare function defineSubscript(): SubscriptExtension;
+export type { SubscriptCommandsExtension, SubscriptExtension, SubscriptSpecExtension };
 //# sourceMappingURL=subscript.d.ts.map

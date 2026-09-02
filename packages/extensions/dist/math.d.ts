@@ -12,7 +12,7 @@ type MathBlockSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineMathBlockSpec(): MathBlockSpecExtension;
+export declare function defineMathBlockSpec(): MathBlockSpecExtension;
 /**
  * Options for {@link defineMathBlockView}.
  *
@@ -30,11 +30,11 @@ interface MathBlockViewOptions {
  * @param options
  * @internal
  */
-declare function defineMathBlockView({ render }: MathBlockViewOptions): Extension;
+export declare function defineMathBlockView({ render }: MathBlockViewOptions): Extension;
 /**
  * @internal
  */
-declare function defineMathBlockEnterRule(): PlainExtension;
+export declare function defineMathBlockEnterRule(): PlainExtension;
 /**
  * Options for {@link defineMathBlock}.
  *
@@ -55,7 +55,7 @@ type MathBlockExtension = Union<[MathBlockSpecExtension]>;
  *
  * @param options
  */
-declare function defineMathBlock(options: MathBlockOptions): MathBlockExtension;
+export declare function defineMathBlock(options: MathBlockOptions): MathBlockExtension;
 /**
  * @internal
  */
@@ -67,7 +67,7 @@ type MathInlineSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineMathInlineSpec(): MathInlineSpecExtension;
+export declare function defineMathInlineSpec(): MathInlineSpecExtension;
 /**
  * Options for {@link defineMathInlineView}.
  *
@@ -85,11 +85,11 @@ interface MathInlineViewOptions {
  * @param options
  * @internal
  */
-declare function defineMathInlineView({ render }: MathInlineViewOptions): Extension;
+export declare function defineMathInlineView({ render }: MathInlineViewOptions): Extension;
 /**
  * @internal
  */
-declare function defineMathInlineInputRule(): PlainExtension;
+export declare function defineMathInlineInputRule(): PlainExtension;
 /**
  * Options for {@link defineMathInline}.
  *
@@ -110,8 +110,8 @@ type MathInlineExtension = Union<[MathInlineSpecExtension]>;
  *
  * @param options
  */
-declare function defineMathInline(options: MathInlineOptions): MathInlineExtension;
-declare function defineMathPlugin(): PlainExtension;
+export declare function defineMathInline(options: MathInlineOptions): MathInlineExtension;
+export declare function defineMathPlugin(): PlainExtension;
 type MathExtension = Union<[MathInlineExtension, MathBlockExtension]>;
 /**
  * Options for {@link defineMath}.
@@ -126,6 +126,6 @@ interface MathOptions {
    */
   renderMathInline: RenderMathInline;
 }
-declare function defineMath(options: MathOptions): MathExtension;
-export { type MathBlockExtension, type MathBlockOptions, type MathBlockSpecExtension, type MathBlockViewOptions, type MathExtension, type MathInlineExtension, type MathInlineOptions, type MathInlineSpecExtension, type MathInlineViewOptions, type MathOptions, defineMath, defineMathBlock, defineMathBlockEnterRule, defineMathBlockSpec, defineMathBlockView, defineMathInline, defineMathInlineInputRule, defineMathInlineSpec, defineMathInlineView, defineMathPlugin };
+export declare function defineMath(options: MathOptions): MathExtension;
+export type { MathBlockExtension, MathBlockOptions, MathBlockSpecExtension, MathBlockViewOptions, MathExtension, MathInlineExtension, MathInlineOptions, MathInlineSpecExtension, MathInlineViewOptions, MathOptions };
 //# sourceMappingURL=math.d.ts.map

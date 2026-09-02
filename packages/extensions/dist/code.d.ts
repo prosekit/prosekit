@@ -11,15 +11,15 @@ type CodeCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineCodeCommands(): CodeCommandsExtension;
+export declare function defineCodeCommands(): CodeCommandsExtension;
 /**
  * @internal
  */
-declare function defineCodeInputRule(): PlainExtension;
+export declare function defineCodeInputRule(): PlainExtension;
 /**
  * @internal
  */
-declare function defineCodeKeymap(): PlainExtension;
+export declare function defineCodeKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -31,11 +31,11 @@ type CodeSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineCodeSpec(): CodeSpecExtension;
+export declare function defineCodeSpec(): CodeSpecExtension;
 /**
  * @internal
  */
 type CodeExtension = Union<[CodeSpecExtension, CodeCommandsExtension]>;
-declare function defineCode(): CodeExtension;
-export { type CodeCommandsExtension, type CodeExtension, type CodeSpecExtension, defineCode, defineCodeCommands, defineCodeInputRule, defineCodeKeymap, defineCodeSpec };
+export declare function defineCode(): CodeExtension;
+export type { CodeCommandsExtension, CodeExtension, CodeSpecExtension };
 //# sourceMappingURL=code.d.ts.map

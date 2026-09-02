@@ -17,15 +17,15 @@ type BackgroundColorSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineBackgroundColorSpec(): BackgroundColorSpecExtension;
+export declare function defineBackgroundColorSpec(): BackgroundColorSpecExtension;
 /**
  * @internal
  */
-declare function addBackgroundColor(attrs: BackgroundColorAttrs): Command;
+export declare function addBackgroundColor(attrs: BackgroundColorAttrs): Command;
 /**
  * @internal
  */
-declare function removeBackgroundColor(): Command;
+export declare function removeBackgroundColor(): Command;
 /**
  * @internal
  */
@@ -38,7 +38,7 @@ type BackgroundColorCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineBackgroundColorCommands(): BackgroundColorCommandsExtension;
+export declare function defineBackgroundColorCommands(): BackgroundColorCommandsExtension;
 /**
  * @internal
  */
@@ -46,6 +46,6 @@ type BackgroundColorExtension = Union<[BackgroundColorSpecExtension, BackgroundC
 /**
  * Defines the `backgroundColor` mark and some commands for it.
  */
-declare function defineBackgroundColor(): BackgroundColorExtension;
-export { type BackgroundColorAttrs, type BackgroundColorCommandsExtension, type BackgroundColorExtension, type BackgroundColorSpecExtension, addBackgroundColor, defineBackgroundColor, defineBackgroundColorCommands, defineBackgroundColorSpec, removeBackgroundColor };
+export declare function defineBackgroundColor(): BackgroundColorExtension;
+export type { BackgroundColorAttrs, BackgroundColorCommandsExtension, BackgroundColorExtension, BackgroundColorSpecExtension };
 //# sourceMappingURL=background-color.d.ts.map

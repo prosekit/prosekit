@@ -1,6 +1,6 @@
 import { EditorState } from "@prosekit/pm/state";
 import { PlainExtension } from "@prosekit/core";
-interface PlaceholderOptions {
+export interface PlaceholderOptions {
   /**
    * The placeholder to use. It can be a static string or a function that
    * receives the current editor state and returns a string.
@@ -26,6 +26,5 @@ interface PlaceholderOptions {
  * Add a placeholder text to the editor when the current block or document is
  * empty.
  */
-declare function definePlaceholder(options: PlaceholderOptions): PlainExtension;
-export { PlaceholderOptions, definePlaceholder };
+export declare function definePlaceholder(options: PlaceholderOptions): PlainExtension;
 //# sourceMappingURL=placeholder.d.ts.map

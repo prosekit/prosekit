@@ -3,7 +3,7 @@ import { InlinePopoverPositionerProps as InlinePopoverPositionerProps$1, InlineP
 /** Props for the {@link InlinePopoverPopup} Vue component. */
 interface InlinePopoverPopupProps {}
 /** A Vue component that renders an `prosekit-inline-popover-popup` custom element. */
-declare const InlinePopoverPopup: DefineSetupFnComponent<InlinePopoverPopupProps & HTMLAttributes>;
+export declare const InlinePopoverPopup: DefineSetupFnComponent<InlinePopoverPopupProps & HTMLAttributes>;
 /** Props for the {@link InlinePopoverPositioner} Vue component. */
 interface InlinePopoverPositionerProps {
   /**
@@ -134,7 +134,7 @@ interface InlinePopoverPositionerProps {
   altBoundary?: InlinePopoverPositionerProps$1['altBoundary'];
 }
 /** A Vue component that renders an `prosekit-inline-popover-positioner` custom element. */
-declare const InlinePopoverPositioner: DefineSetupFnComponent<InlinePopoverPositionerProps & HTMLAttributes>;
+export declare const InlinePopoverPositioner: DefineSetupFnComponent<InlinePopoverPositionerProps & HTMLAttributes>;
 /** Props for the {@link InlinePopoverRoot} Vue component. */
 interface InlinePopoverRootProps {
   /**
@@ -183,6 +183,6 @@ interface InlinePopoverRootProps {
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-inline-popover-root` custom element. */
-declare const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & HTMLAttributes>;
-export { InlinePopoverPopup, type InlinePopoverPopupProps, InlinePopoverPositioner, type InlinePopoverPositionerProps, InlinePopoverRoot, type InlinePopoverRootProps };
+export declare const InlinePopoverRoot: DefineSetupFnComponent<InlinePopoverRootProps & HTMLAttributes>;
+export type { InlinePopoverPopupProps, InlinePopoverPositionerProps, InlinePopoverRootProps };
 //# sourceMappingURL=inline-popover.d.ts.map

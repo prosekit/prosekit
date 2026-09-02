@@ -3,11 +3,10 @@ import { Attrs } from "@prosekit/pm/model";
 /**
  * @internal
  */
-type DocExtension = Extension<{
+export type DocExtension = Extension<{
   Nodes: {
     doc: Attrs;
   };
 }>;
-declare function defineDoc(): DocExtension;
-export { DocExtension, defineDoc };
+export declare function defineDoc(): DocExtension;
 //# sourceMappingURL=doc.d.ts.map

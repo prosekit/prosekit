@@ -13,20 +13,20 @@ interface BlockHandleAddProps {
   editor: Editor | null;
 }
 /** @internal */
-declare const BlockHandleAddPropsDeclaration: PropsDeclaration<BlockHandleAddProps>;
+export declare const BlockHandleAddPropsDeclaration: PropsDeclaration<BlockHandleAddProps>;
 /**
  * @internal
  */
-declare function setupBlockHandleAdd(host: HostElement, props: State<BlockHandleAddProps>): void;
+export declare function setupBlockHandleAdd(host: HostElement, props: State<BlockHandleAddProps>): void;
 declare const BlockHandleAddElementBase: HostElementConstructor<BlockHandleAddProps>;
 /**
  * `<prosekit-block-handle-add>` custom element.
  *
  * Properties: {@link BlockHandleAddProps}
  */
-declare class BlockHandleAddElement extends BlockHandleAddElementBase {}
+export declare class BlockHandleAddElement extends BlockHandleAddElementBase {}
 /** @internal */
-declare function registerBlockHandleAddElement(): void;
+export declare function registerBlockHandleAddElement(): void;
 interface BlockHandleDraggableProps {
   /**
    * The ProseKit editor instance.
@@ -37,11 +37,11 @@ interface BlockHandleDraggableProps {
   editor: Editor | null;
 }
 /** @internal */
-declare const BlockHandleDraggablePropsDeclaration: PropsDeclaration<BlockHandleDraggableProps>;
+export declare const BlockHandleDraggablePropsDeclaration: PropsDeclaration<BlockHandleDraggableProps>;
 /**
  * @internal
  */
-declare function setupBlockHandleDraggable(host: HostElement, props: State<BlockHandleDraggableProps>): void;
+export declare function setupBlockHandleDraggable(host: HostElement, props: State<BlockHandleDraggableProps>): void;
 declare const BlockHandleDraggableElementBase: HostElementConstructor<BlockHandleDraggableProps>;
 /**
  * `<prosekit-block-handle-draggable>` custom element.
@@ -54,14 +54,14 @@ declare const BlockHandleDraggableElementBase: HostElementConstructor<BlockHandl
  * | --- | --- |
  * | `data-dragging` | Present when the element is being dragged |
  */
-declare class BlockHandleDraggableElement extends BlockHandleDraggableElementBase {}
+export declare class BlockHandleDraggableElement extends BlockHandleDraggableElementBase {}
 /** @internal */
-declare function registerBlockHandleDraggableElement(): void;
+export declare function registerBlockHandleDraggableElement(): void;
 interface BlockHandlePopupProps extends OverlayPopupProps {}
 /** @internal */
-declare const BlockHandlePopupPropsDeclaration: PropsDeclaration<BlockHandlePopupProps>;
+export declare const BlockHandlePopupPropsDeclaration: PropsDeclaration<BlockHandlePopupProps>;
 /** @internal */
-declare function setupBlockHandlePopup(host: HostElement, _props: State<BlockHandlePopupProps>): void;
+export declare function setupBlockHandlePopup(host: HostElement, _props: State<BlockHandlePopupProps>): void;
 declare const BlockHandlePopupElementBase: HostElementConstructor<BlockHandlePopupProps>;
 /**
  * `<prosekit-block-handle-popup>` custom element.
@@ -74,9 +74,9 @@ declare const BlockHandlePopupElementBase: HostElementConstructor<BlockHandlePop
  * | --- | --- |
  * | `data-state` | `"open"` when the block handle is visible, `"closed"` otherwise |
  */
-declare class BlockHandlePopupElement extends BlockHandlePopupElementBase {}
+export declare class BlockHandlePopupElement extends BlockHandlePopupElementBase {}
 /** @internal */
-declare function registerBlockHandlePopupElement(): void;
+export declare function registerBlockHandlePopupElement(): void;
 interface BlockHandlePositionerProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist' | 'flip' | 'shift' | 'hide'> {
   /**
    * The placement of the popover, relative to the hovered block.
@@ -108,9 +108,9 @@ interface BlockHandlePositionerProps extends Omit<OverlayPositionerProps, 'place
   hide: boolean;
 }
 /** @internal */
-declare const BlockHandlePositionerPropsDeclaration: PropsDeclaration<BlockHandlePositionerProps>;
+export declare const BlockHandlePositionerPropsDeclaration: PropsDeclaration<BlockHandlePositionerProps>;
 /** @internal */
-declare function setupBlockHandlePositioner(host: HostElement, props: State<BlockHandlePositionerProps>): void;
+export declare function setupBlockHandlePositioner(host: HostElement, props: State<BlockHandlePositionerProps>): void;
 declare const BlockHandlePositionerElementBase: HostElementConstructor<BlockHandlePositionerProps>;
 /**
  * `<prosekit-block-handle-positioner>` custom element.
@@ -131,9 +131,9 @@ declare const BlockHandlePositionerElementBase: HostElementConstructor<BlockHand
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class BlockHandlePositionerElement extends BlockHandlePositionerElementBase {}
+export declare class BlockHandlePositionerElement extends BlockHandlePositionerElementBase {}
 /** @internal */
-declare function registerBlockHandlePositionerElement(): void;
+export declare function registerBlockHandlePositionerElement(): void;
 interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -144,8 +144,8 @@ interface BlockHandleRootProps {
   editor: Editor | null;
 }
 /** @internal */
-declare const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootProps>;
-declare class BlockHandleStateChangeEvent extends Event {
+export declare const BlockHandleRootPropsDeclaration: PropsDeclaration<BlockHandleRootProps>;
+export declare class BlockHandleStateChangeEvent extends Event {
   /**
    * The currently hovered block's node and position, or `null` if no block is hovered.
    */
@@ -167,7 +167,7 @@ interface BlockHandleRootEvents {
 /**
  * @internal
  */
-declare function setupBlockHandleRoot(host: HostElement, props: State<BlockHandleRootProps>): void;
+export declare function setupBlockHandleRoot(host: HostElement, props: State<BlockHandleRootProps>): void;
 declare const BlockHandleRootElementBase: HostElementConstructor<BlockHandleRootProps>;
 /**
  * `<prosekit-block-handle-root>` custom element.
@@ -176,8 +176,8 @@ declare const BlockHandleRootElementBase: HostElementConstructor<BlockHandleRoot
  *
  * Events: {@link BlockHandleRootEvents}
  */
-declare class BlockHandleRootElement extends BlockHandleRootElementBase {}
+export declare class BlockHandleRootElement extends BlockHandleRootElementBase {}
 /** @internal */
-declare function registerBlockHandleRootElement(): void;
-export { BlockHandleAddElement, type BlockHandleAddProps, BlockHandleAddPropsDeclaration, BlockHandleDraggableElement, type BlockHandleDraggableProps, BlockHandleDraggablePropsDeclaration, BlockHandlePopupElement, type BlockHandlePopupProps, BlockHandlePopupPropsDeclaration, BlockHandlePositionerElement, type BlockHandlePositionerProps, BlockHandlePositionerPropsDeclaration, BlockHandleRootElement, type BlockHandleRootEvents, type BlockHandleRootProps, BlockHandleRootPropsDeclaration, BlockHandleStateChangeEvent, registerBlockHandleAddElement, registerBlockHandleDraggableElement, registerBlockHandlePopupElement, registerBlockHandlePositionerElement, registerBlockHandleRootElement, setupBlockHandleAdd, setupBlockHandleDraggable, setupBlockHandlePopup, setupBlockHandlePositioner, setupBlockHandleRoot };
+export declare function registerBlockHandleRootElement(): void;
+export type { BlockHandleAddProps, BlockHandleDraggableProps, BlockHandlePopupProps, BlockHandlePositionerProps, BlockHandleRootEvents, BlockHandleRootProps };
 //# sourceMappingURL=block-handle.d.ts.map

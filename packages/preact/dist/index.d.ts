@@ -11,7 +11,7 @@ interface ProseKitProps {
 /**
  * The root component for a ProseKit editor.
  */
-declare const ProseKit: ComponentType<ProseKitProps>;
+export declare const ProseKit: ComponentType<ProseKitProps>;
 interface PreactMarkViewProps extends MarkViewContext {}
 type PreactMarkViewComponent = ComponentType<PreactMarkViewProps>;
 /**
@@ -26,7 +26,7 @@ interface PreactMarkViewOptions extends CoreMarkViewUserOptions<PreactMarkViewCo
 /**
  * Defines a mark view using a Preact component.
  */
-declare function definePreactMarkView(options: PreactMarkViewOptions): Extension;
+export declare function definePreactMarkView(options: PreactMarkViewOptions): Extension;
 interface PreactNodeViewProps extends NodeViewContext {}
 type PreactNodeViewComponent = ComponentType<PreactNodeViewProps>;
 /**
@@ -41,7 +41,7 @@ interface PreactNodeViewOptions extends CoreNodeViewUserOptions<PreactNodeViewCo
 /**
  * Defines a node view using a Preact component.
  */
-declare function definePreactNodeView(options: PreactNodeViewOptions): Extension;
+export declare function definePreactNodeView(options: PreactNodeViewOptions): Extension;
 interface UseExtensionOptions {
   /**
    * The editor to add the extension to. If not provided, it will use the
@@ -56,7 +56,7 @@ interface UseExtensionOptions {
 /**
  * Add an extension to the editor.
  */
-declare function useExtension(
+export declare function useExtension(
 /**
  * The extension to add to the editor. If it changes, the previous
  * extension will be removed and the new one (if not null) will be added.
@@ -65,7 +65,7 @@ extension: Extension | null, options?: UseExtensionOptions): void;
 /**
  * Calls the given handler whenever the editor document changes.
  */
-declare function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void;
+export declare function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void;
 interface UseEditorDerivedOptions<E extends Extension = any> {
   /**
    * The editor to add the extension to. If not provided, it will use the
@@ -82,7 +82,7 @@ interface UseEditorDerivedOptions<E extends Extension = any> {
  *
  * It returns the derived value that updates whenever the editor state changes.
  */
-declare function useEditorDerivedValue<E extends Extension, Derived>(
+export declare function useEditorDerivedValue<E extends Extension, Derived>(
 /**
  * A function that receives the editor instance and returns a derived value.
  *
@@ -95,7 +95,7 @@ derive: (editor: Editor<E>) => Derived, options?: UseEditorDerivedOptions<E>): D
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
  */
-declare function useEditor<E extends Extension = any>(options?: {
+export declare function useEditor<E extends Extension = any>(options?: {
   /**
    * Whether to update the component when the editor is mounted or editor state
    * is updated.
@@ -104,11 +104,11 @@ declare function useEditor<E extends Extension = any>(options?: {
    */
   update?: boolean;
 }): Editor<E>;
-declare function useKeymap(keymap: Keymap, options?: UseExtensionOptions): void;
+export declare function useKeymap(keymap: Keymap, options?: UseExtensionOptions): void;
 /**
  * Calls the given handler whenever the editor state changes.
  */
-declare function useStateUpdate(handler: (state: EditorState) => void, options?: UseExtensionOptions): void;
+export declare function useStateUpdate(handler: (state: EditorState) => void, options?: UseExtensionOptions): void;
 /**
  * @internal
  */
@@ -122,5 +122,5 @@ type PropsWithClass<P = unknown> = P & {
 type PropsWithChildren<P = unknown> = P & {
   children?: ComponentChildren | undefined;
 };
-export { type PreactMarkViewComponent, type PreactMarkViewOptions, type PreactMarkViewProps, type PreactNodeViewComponent, type PreactNodeViewOptions, type PreactNodeViewProps, type PropsWithChildren, type PropsWithClass, ProseKit, type ProseKitProps, type UseEditorDerivedOptions, type UseExtensionOptions, definePreactMarkView, definePreactNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+export type { PreactMarkViewComponent, PreactMarkViewOptions, PreactMarkViewProps, PreactNodeViewComponent, PreactNodeViewOptions, PreactNodeViewProps, PropsWithChildren, PropsWithClass, ProseKitProps, UseEditorDerivedOptions, UseExtensionOptions };
 //# sourceMappingURL=index.d.ts.map

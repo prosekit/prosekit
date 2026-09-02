@@ -17,6 +17,6 @@ interface DropIndicatorProps {
   width?: DropIndicatorProps$1['width'];
 }
 /** A Vue component that renders an `prosekit-drop-indicator` custom element. */
-declare const DropIndicator: DefineSetupFnComponent<DropIndicatorProps & HTMLAttributes>;
-export { DropIndicator, type DropIndicatorProps };
+export declare const DropIndicator: DefineSetupFnComponent<DropIndicatorProps & HTMLAttributes>;
+export type { DropIndicatorProps };
 //# sourceMappingURL=drop-indicator.d.ts.map

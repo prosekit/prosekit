@@ -13,7 +13,7 @@ import { EditorView } from "@prosekit/pm/view";
  *
  * @internal
  */
-declare function pasteText(view: EditorView, text: string): void;
+export declare function pasteText(view: EditorView, text: string): void;
 /**
  * Pastes HTML into the editor.
  *
@@ -25,7 +25,7 @@ declare function pasteText(view: EditorView, text: string): void;
  *
  * @internal
  */
-declare function pasteHTML(view: EditorView, html: string): void;
+export declare function pasteHTML(view: EditorView, html: string): void;
 /**
  * Pastes files into the editor.
  *
@@ -37,7 +37,7 @@ declare function pasteHTML(view: EditorView, html: string): void;
  *
  * @internal
  */
-declare function pasteFiles(view: EditorView, files: File[]): void;
+export declare function pasteFiles(view: EditorView, files: File[]): void;
 /**
  * Reads text of the given MIME type from the clipboard (defaults to plain text).
  *
@@ -49,7 +49,7 @@ declare function pasteFiles(view: EditorView, files: File[]): void;
  *
  * @internal
  */
-declare function readClipboardText(mimeType?: string): Promise<string | undefined>;
+export declare function readClipboardText(mimeType?: string): Promise<string | undefined>;
 /**
  * Reads raw HTML from the clipboard.
  *
@@ -61,7 +61,7 @@ declare function readClipboardText(mimeType?: string): Promise<string | undefine
  *
  * @internal
  */
-declare function readClipboardHTML(): Promise<string | undefined>;
+export declare function readClipboardHTML(): Promise<string | undefined>;
 /**
  * An editor for testing purposes.
  */
@@ -83,7 +83,7 @@ declare class TestEditor<E extends Extension = Extension> extends Editor<E> {
   set(doc: ProseMirrorNode): void;
   dispatchEvent(event: Event): void;
 }
-declare function createTestEditor<E extends Extension>(options: EditorOptions<E>): TestEditor<E>;
+export declare function createTestEditor<E extends Extension>(options: EditorOptions<E>): TestEditor<E>;
 /**
  * Extracts a {@link Selection} from a tagged ProseMirror document built with
  * the test node builders. The position of the `<a>` token becomes the anchor,
@@ -124,6 +124,6 @@ declare function createTestEditor<E extends Extension>(options: EditorOptions<E>
  * const selection = extractSelection(doc) // undefined
  * ```
  */
-declare function extractSelection(doc: ProseMirrorNode): Selection | undefined;
-export { type TestEditor, createTestEditor, extractSelection, pasteFiles, pasteHTML, pasteText, readClipboardHTML, readClipboardText };
+export declare function extractSelection(doc: ProseMirrorNode): Selection | undefined;
+export type { TestEditor };
 //# sourceMappingURL=test.d.ts.map

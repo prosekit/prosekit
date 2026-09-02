@@ -5,20 +5,20 @@ import { OpenChangeEvent, OverlayPopupProps, OverlayPositionerProps } from "@ari
 import { Editor } from "@prosekit/core";
 interface AutocompleteEmptyProps extends ListboxEmptyProps {}
 /** @internal */
-declare const AutocompleteEmptyPropsDeclaration: PropsDeclaration<AutocompleteEmptyProps>;
+export declare const AutocompleteEmptyPropsDeclaration: PropsDeclaration<AutocompleteEmptyProps>;
 /**
  * @internal
  */
-declare function setupAutocompleteEmpty(host: HostElement, props: State<AutocompleteEmptyProps>): void;
+export declare function setupAutocompleteEmpty(host: HostElement, props: State<AutocompleteEmptyProps>): void;
 declare const AutocompleteEmptyElementBase: HostElementConstructor<AutocompleteEmptyProps>;
 /**
  * `<prosekit-autocomplete-empty>` custom element.
  *
  * Properties: {@link AutocompleteEmptyProps}
  */
-declare class AutocompleteEmptyElement extends AutocompleteEmptyElementBase {}
+export declare class AutocompleteEmptyElement extends AutocompleteEmptyElementBase {}
 /** @internal */
-declare function registerAutocompleteEmptyElement(): void;
+export declare function registerAutocompleteEmptyElement(): void;
 interface AutocompleteItemProps extends ListboxItemProps {
   /**
    * The value of the item, which will be matched against the query.
@@ -30,12 +30,12 @@ interface AutocompleteItemProps extends ListboxItemProps {
   value: string;
 }
 /** @internal */
-declare const AutocompleteItemPropsDeclaration: PropsDeclaration<AutocompleteItemProps>;
+export declare const AutocompleteItemPropsDeclaration: PropsDeclaration<AutocompleteItemProps>;
 interface AutocompleteItemEvents extends ListboxItemEvents {}
 /**
  * @internal
  */
-declare function setupAutocompleteItem(host: HostElement, props: State<AutocompleteItemProps>): void;
+export declare function setupAutocompleteItem(host: HostElement, props: State<AutocompleteItemProps>): void;
 declare const AutocompleteItemElementBase: HostElementConstructor<AutocompleteItemProps>;
 /**
  * `<prosekit-autocomplete-item>` custom element.
@@ -50,15 +50,15 @@ declare const AutocompleteItemElementBase: HostElementConstructor<AutocompleteIt
  * | --- | --- |
  * | `data-highlighted` | Present when the item is the currently highlighted option |
  */
-declare class AutocompleteItemElement extends AutocompleteItemElementBase {}
+export declare class AutocompleteItemElement extends AutocompleteItemElementBase {}
 /** @internal */
-declare function registerAutocompleteItemElement(): void;
+export declare function registerAutocompleteItemElement(): void;
 interface AutocompletePopupProps extends OverlayPopupProps {}
 interface AutocompletePopupEvents extends ListboxRootEvents {}
 /** @internal */
-declare const AutocompletePopupPropsDeclaration: PropsDeclaration<AutocompletePopupProps>;
+export declare const AutocompletePopupPropsDeclaration: PropsDeclaration<AutocompletePopupProps>;
 /** @internal */
-declare function setupAutocompletePopup(host: HostElement, _props: State<AutocompletePopupProps>): void;
+export declare function setupAutocompletePopup(host: HostElement, _props: State<AutocompletePopupProps>): void;
 declare const AutocompletePopupElementBase: HostElementConstructor<AutocompletePopupProps>;
 /**
  * `<prosekit-autocomplete-popup>` custom element.
@@ -73,9 +73,9 @@ declare const AutocompletePopupElementBase: HostElementConstructor<AutocompleteP
  * | --- | --- |
  * | `data-state` | `"open"` when the autocomplete is visible, `"closed"` otherwise |
  */
-declare class AutocompletePopupElement extends AutocompletePopupElementBase {}
+export declare class AutocompletePopupElement extends AutocompletePopupElementBase {}
 /** @internal */
-declare function registerAutocompletePopupElement(): void;
+export declare function registerAutocompletePopupElement(): void;
 interface AutocompletePositionerProps extends OverlayPositionerProps {
   /**
    * The placement of the popover, relative to the text cursor.
@@ -118,9 +118,9 @@ interface AutocompletePositionerProps extends OverlayPositionerProps {
   overflowPadding: OverlayPositionerProps['overflowPadding'];
 }
 /** @internal */
-declare const AutocompletePositionerPropsDeclaration: PropsDeclaration<AutocompletePositionerProps>;
+export declare const AutocompletePositionerPropsDeclaration: PropsDeclaration<AutocompletePositionerProps>;
 /** @internal */
-declare function setupAutocompletePositioner(host: HostElement, props: State<AutocompletePositionerProps>): void;
+export declare function setupAutocompletePositioner(host: HostElement, props: State<AutocompletePositionerProps>): void;
 declare const AutocompletePositionerElementBase: HostElementConstructor<AutocompletePositionerProps>;
 /**
  * `<prosekit-autocomplete-positioner>` custom element.
@@ -141,16 +141,16 @@ declare const AutocompletePositionerElementBase: HostElementConstructor<Autocomp
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class AutocompletePositionerElement extends AutocompletePositionerElementBase {}
+export declare class AutocompletePositionerElement extends AutocompletePositionerElementBase {}
 /** @internal */
-declare function registerAutocompletePositionerElement(): void;
+export declare function registerAutocompletePositionerElement(): void;
 /**
  * Builds the query string from the regex match found before the cursor. The
  * returned query is exposed via the `queryChange` event and used by the
  * built-in item filter.
  */
 type QueryBuilder = (match: RegExpExecArray) => string;
-declare function defaultQueryBuilder(match: RegExpExecArray): string;
+export declare function defaultQueryBuilder(match: RegExpExecArray): string;
 interface AutocompleteRootProps {
   /**
    * The ProseKit editor instance.
@@ -201,8 +201,8 @@ interface AutocompleteRootProps {
   followCursor: boolean;
 }
 /** @internal */
-declare const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRootProps>;
-declare class QueryChangeEvent extends Event {
+export declare const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRootProps>;
+export declare class QueryChangeEvent extends Event {
   /**
    * The current query string.
    */
@@ -222,7 +222,7 @@ interface AutocompleteRootEvents extends ListboxRootEvents {
 /**
  * @internal
  */
-declare function setupAutocompleteRoot(host: HostElement, props: State<AutocompleteRootProps>): void;
+export declare function setupAutocompleteRoot(host: HostElement, props: State<AutocompleteRootProps>): void;
 declare const AutocompleteRootElementBase: HostElementConstructor<AutocompleteRootProps>;
 /**
  * `<prosekit-autocomplete-root>` custom element.
@@ -231,8 +231,8 @@ declare const AutocompleteRootElementBase: HostElementConstructor<AutocompleteRo
  *
  * Events: {@link AutocompleteRootEvents}
  */
-declare class AutocompleteRootElement extends AutocompleteRootElementBase {}
+export declare class AutocompleteRootElement extends AutocompleteRootElementBase {}
 /** @internal */
-declare function registerAutocompleteRootElement(): void;
-export { AutocompleteEmptyElement, type AutocompleteEmptyProps, AutocompleteEmptyPropsDeclaration, AutocompleteItemElement, type AutocompleteItemEvents, type AutocompleteItemProps, AutocompleteItemPropsDeclaration, AutocompletePopupElement, type AutocompletePopupEvents, type AutocompletePopupProps, AutocompletePopupPropsDeclaration, AutocompletePositionerElement, type AutocompletePositionerProps, AutocompletePositionerPropsDeclaration, AutocompleteRootElement, type AutocompleteRootEvents, type AutocompleteRootProps, AutocompleteRootPropsDeclaration, OpenChangeEvent, type QueryBuilder, QueryChangeEvent, SelectEvent, ValueChangeEvent, ValuesChangeEvent, defaultQueryBuilder, registerAutocompleteEmptyElement, registerAutocompleteItemElement, registerAutocompletePopupElement, registerAutocompletePositionerElement, registerAutocompleteRootElement, setupAutocompleteEmpty, setupAutocompleteItem, setupAutocompletePopup, setupAutocompletePositioner, setupAutocompleteRoot };
+export declare function registerAutocompleteRootElement(): void;
+export { type AutocompleteEmptyProps, type AutocompleteItemEvents, type AutocompleteItemProps, type AutocompletePopupEvents, type AutocompletePopupProps, type AutocompletePositionerProps, type AutocompleteRootEvents, type AutocompleteRootProps, OpenChangeEvent, type QueryBuilder, SelectEvent, ValueChangeEvent, ValuesChangeEvent };
 //# sourceMappingURL=autocomplete.d.ts.map

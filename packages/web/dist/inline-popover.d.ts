@@ -4,9 +4,9 @@ import { OpenChangeEvent, OpenChangeEvent as OpenChangeEvent$1, OverlayPopupProp
 import { Editor } from "@prosekit/core";
 interface InlinePopoverPopupProps extends OverlayPopupProps {}
 /** @internal */
-declare const InlinePopoverPopupPropsDeclaration: PropsDeclaration<InlinePopoverPopupProps>;
+export declare const InlinePopoverPopupPropsDeclaration: PropsDeclaration<InlinePopoverPopupProps>;
 /** @internal */
-declare function setupInlinePopoverPopup(host: HostElement, _props: State<InlinePopoverPopupProps>): void;
+export declare function setupInlinePopoverPopup(host: HostElement, _props: State<InlinePopoverPopupProps>): void;
 declare const InlinePopoverPopupElementBase: HostElementConstructor<InlinePopoverPopupProps>;
 /**
  * `<prosekit-inline-popover-popup>` custom element.
@@ -19,9 +19,9 @@ declare const InlinePopoverPopupElementBase: HostElementConstructor<InlinePopove
  * | --- | --- |
  * | `data-state` | `"open"` when the inline popover is visible, `"closed"` otherwise |
  */
-declare class InlinePopoverPopupElement extends InlinePopoverPopupElementBase {}
+export declare class InlinePopoverPopupElement extends InlinePopoverPopupElementBase {}
 /** @internal */
-declare function registerInlinePopoverPopupElement(): void;
+export declare function registerInlinePopoverPopupElement(): void;
 interface InlinePopoverPositionerProps extends Omit<OverlayPositionerProps, 'placement' | 'offset' | 'hide' | 'hoist' | 'overlap' | 'inline' | 'overflowPadding'> {
   /**
    * The initial placement of the floating element
@@ -71,9 +71,9 @@ interface InlinePopoverPositionerProps extends Omit<OverlayPositionerProps, 'pla
   overflowPadding: OverlayPositionerProps['overflowPadding'];
 }
 /** @internal */
-declare const InlinePopoverPositionerPropsDeclaration: PropsDeclaration<InlinePopoverPositionerProps>;
+export declare const InlinePopoverPositionerPropsDeclaration: PropsDeclaration<InlinePopoverPositionerProps>;
 /** @internal */
-declare function setupInlinePopoverPositioner(host: HostElement, props: State<InlinePopoverPositionerProps>): void;
+export declare function setupInlinePopoverPositioner(host: HostElement, props: State<InlinePopoverPositionerProps>): void;
 declare const InlinePopoverPositionerElementBase: HostElementConstructor<InlinePopoverPositionerProps>;
 /**
  * `<prosekit-inline-popover-positioner>` custom element.
@@ -94,9 +94,9 @@ declare const InlinePopoverPositionerElementBase: HostElementConstructor<InlineP
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class InlinePopoverPositionerElement extends InlinePopoverPositionerElementBase {}
+export declare class InlinePopoverPositionerElement extends InlinePopoverPositionerElementBase {}
 /** @internal */
-declare function registerInlinePopoverPositionerElement(): void;
+export declare function registerInlinePopoverPositionerElement(): void;
 interface InlinePopoverRootProps extends OverlayRootProps {
   /**
    * The ProseKit editor instance.
@@ -132,7 +132,7 @@ interface InlinePopoverRootProps extends OverlayRootProps {
   anchor: AnchorReference;
 }
 /** @internal */
-declare const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRootProps>;
+export declare const InlinePopoverRootPropsDeclaration: PropsDeclaration<InlinePopoverRootProps>;
 interface InlinePopoverRootEvents {
   /**
    * Emitted when the open state of the popover changes.
@@ -140,7 +140,7 @@ interface InlinePopoverRootEvents {
   openChange: OpenChangeEvent$1;
 }
 /** @internal */
-declare function setupInlinePopoverRoot(host: HostElement, props: State<InlinePopoverRootProps>): void;
+export declare function setupInlinePopoverRoot(host: HostElement, props: State<InlinePopoverRootProps>): void;
 declare const InlinePopoverRootElementBase: HostElementConstructor<InlinePopoverRootProps>;
 /**
  * `<prosekit-inline-popover-root>` custom element.
@@ -149,8 +149,8 @@ declare const InlinePopoverRootElementBase: HostElementConstructor<InlinePopover
  *
  * Events: {@link InlinePopoverRootEvents}
  */
-declare class InlinePopoverRootElement extends InlinePopoverRootElementBase {}
+export declare class InlinePopoverRootElement extends InlinePopoverRootElementBase {}
 /** @internal */
-declare function registerInlinePopoverRootElement(): void;
-export { InlinePopoverPopupElement, type InlinePopoverPopupProps, InlinePopoverPopupPropsDeclaration, InlinePopoverPositionerElement, type InlinePopoverPositionerProps, InlinePopoverPositionerPropsDeclaration, InlinePopoverRootElement, type InlinePopoverRootEvents, type InlinePopoverRootProps, InlinePopoverRootPropsDeclaration, OpenChangeEvent, registerInlinePopoverPopupElement, registerInlinePopoverPositionerElement, registerInlinePopoverRootElement, setupInlinePopoverPopup, setupInlinePopoverPositioner, setupInlinePopoverRoot };
+export declare function registerInlinePopoverRootElement(): void;
+export { type InlinePopoverPopupProps, type InlinePopoverPositionerProps, type InlinePopoverRootEvents, type InlinePopoverRootProps, OpenChangeEvent };
 //# sourceMappingURL=inline-popover.d.ts.map

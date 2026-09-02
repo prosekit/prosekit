@@ -6,9 +6,9 @@ import { MenuRootProps } from "@aria-ui/elements/menu";
 import { defineTableCommands } from "@prosekit/extensions/table";
 interface TableHandleColumnPopupProps {}
 /** @internal */
-declare const TableHandleColumnPopupPropsDeclaration: PropsDeclaration<TableHandleColumnPopupProps>;
+export declare const TableHandleColumnPopupPropsDeclaration: PropsDeclaration<TableHandleColumnPopupProps>;
 /** @internal */
-declare function setupTableHandleColumnPopup(host: HostElement, _props: State<TableHandleColumnPopupProps>): void;
+export declare function setupTableHandleColumnPopup(host: HostElement, _props: State<TableHandleColumnPopupProps>): void;
 declare const TableHandleColumnPopupElementBase: HostElementConstructor<TableHandleColumnPopupProps>;
 /**
  * `<prosekit-table-handle-column-popup>` custom element.
@@ -21,9 +21,9 @@ declare const TableHandleColumnPopupElementBase: HostElementConstructor<TableHan
  * | --- | --- |
  * | `data-state` | `"open"` when visible, `"closed"` otherwise |
  */
-declare class TableHandleColumnPopupElement extends TableHandleColumnPopupElementBase {}
+export declare class TableHandleColumnPopupElement extends TableHandleColumnPopupElementBase {}
 /** @internal */
-declare function registerTableHandleColumnPopupElement(): void;
+export declare function registerTableHandleColumnPopupElement(): void;
 /**
  * @internal
  */
@@ -72,9 +72,9 @@ interface TableHandleColumnPositionerProps extends Omit<SharedTableHandlePositio
   placement: Placement;
 }
 /** @internal */
-declare const TableHandleColumnPositionerPropsDeclaration: PropsDeclaration<TableHandleColumnPositionerProps>;
+export declare const TableHandleColumnPositionerPropsDeclaration: PropsDeclaration<TableHandleColumnPositionerProps>;
 /** @internal */
-declare function setupTableHandleColumnPositioner(host: HostElement, props: State<TableHandleColumnPositionerProps>): void;
+export declare function setupTableHandleColumnPositioner(host: HostElement, props: State<TableHandleColumnPositionerProps>): void;
 declare const TableHandleColumnPositionerElementBase: HostElementConstructor<TableHandleColumnPositionerProps>;
 /**
  * `<prosekit-table-handle-column-positioner>` custom element.
@@ -95,23 +95,23 @@ declare const TableHandleColumnPositionerElementBase: HostElementConstructor<Tab
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class TableHandleColumnPositionerElement extends TableHandleColumnPositionerElementBase {}
+export declare class TableHandleColumnPositionerElement extends TableHandleColumnPositionerElementBase {}
 /** @internal */
-declare function registerTableHandleColumnPositionerElement(): void;
+export declare function registerTableHandleColumnPositionerElement(): void;
 interface TableHandleColumnMenuRootProps extends MenuRootProps {}
 /** @internal */
-declare const TableHandleColumnMenuRootPropsDeclaration: PropsDeclaration<TableHandleColumnMenuRootProps>;
+export declare const TableHandleColumnMenuRootPropsDeclaration: PropsDeclaration<TableHandleColumnMenuRootProps>;
 /** @internal */
-declare function setupTableHandleColumnMenuRoot(host: HostElement, props: State<TableHandleColumnMenuRootProps>): void;
+export declare function setupTableHandleColumnMenuRoot(host: HostElement, props: State<TableHandleColumnMenuRootProps>): void;
 declare const TableHandleColumnMenuRootElementBase: HostElementConstructor<TableHandleColumnMenuRootProps>;
 /**
  * `<prosekit-table-handle-column-menu-root>` custom element.
  *
  * Properties: {@link TableHandleColumnMenuRootProps}
  */
-declare class TableHandleColumnMenuRootElement extends TableHandleColumnMenuRootElementBase {}
+export declare class TableHandleColumnMenuRootElement extends TableHandleColumnMenuRootElementBase {}
 /** @internal */
-declare function registerTableHandleColumnMenuRootElement(): void;
+export declare function registerTableHandleColumnMenuRootElement(): void;
 type TableCommandsExtension$2 = ReturnType<typeof defineTableCommands>;
 interface TableHandleColumnMenuTriggerProps {
   /**
@@ -121,20 +121,20 @@ interface TableHandleColumnMenuTriggerProps {
   editor: Editor<TableCommandsExtension$2> | null;
 }
 /** @internal */
-declare const TableHandleColumnMenuTriggerPropsDeclaration: PropsDeclaration<TableHandleColumnMenuTriggerProps>;
+export declare const TableHandleColumnMenuTriggerPropsDeclaration: PropsDeclaration<TableHandleColumnMenuTriggerProps>;
 /** @internal */
-declare function setupTableHandleColumnMenuTrigger(host: HostElement, props: State<TableHandleColumnMenuTriggerProps>): void;
+export declare function setupTableHandleColumnMenuTrigger(host: HostElement, props: State<TableHandleColumnMenuTriggerProps>): void;
 declare const TableHandleColumnMenuTriggerElementBase: HostElementConstructor<TableHandleColumnMenuTriggerProps>;
 /**
  * `<prosekit-table-handle-column-menu-trigger>` custom element.
  *
  * Properties: {@link TableHandleColumnMenuTriggerProps}
  */
-declare class TableHandleColumnMenuTriggerElement extends TableHandleColumnMenuTriggerElementBase {}
+export declare class TableHandleColumnMenuTriggerElement extends TableHandleColumnMenuTriggerElementBase {}
 /**
  * @internal
  */
-declare function registerTableHandleColumnMenuTriggerElement(): void;
+export declare function registerTableHandleColumnMenuTriggerElement(): void;
 interface TableHandleDragPreviewProps {
   /**
    * @default null
@@ -143,22 +143,22 @@ interface TableHandleDragPreviewProps {
   editor: Editor | null;
 }
 /** @internal */
-declare const TableHandleDragPreviewPropsDeclaration: PropsDeclaration<TableHandleDragPreviewProps>;
+export declare const TableHandleDragPreviewPropsDeclaration: PropsDeclaration<TableHandleDragPreviewProps>;
 /**
  * @internal
  */
-declare function setupTableHandleDragPreview(host: HostElement, props: State<TableHandleDragPreviewProps>): void;
+export declare function setupTableHandleDragPreview(host: HostElement, props: State<TableHandleDragPreviewProps>): void;
 declare const TableHandleDragPreviewElementBase: HostElementConstructor<TableHandleDragPreviewProps>;
 /**
  * `<prosekit-table-handle-drag-preview>` custom element.
  *
  * Properties: {@link TableHandleDragPreviewProps}
  */
-declare class TableHandleDragPreviewElement extends TableHandleDragPreviewElementBase {}
+export declare class TableHandleDragPreviewElement extends TableHandleDragPreviewElementBase {}
 /**
  * @internal
  */
-declare function registerTableHandleDragPreviewElement(): void;
+export declare function registerTableHandleDragPreviewElement(): void;
 type TableCommandsExtension$1 = ReturnType<typeof defineTableCommands>;
 interface TableHandleDropIndicatorProps {
   /**
@@ -168,22 +168,22 @@ interface TableHandleDropIndicatorProps {
   editor: Editor<TableCommandsExtension$1> | null;
 }
 /** @internal */
-declare const TableHandleDropIndicatorPropsDeclaration: PropsDeclaration<TableHandleDropIndicatorProps>;
+export declare const TableHandleDropIndicatorPropsDeclaration: PropsDeclaration<TableHandleDropIndicatorProps>;
 /**
  * @internal
  */
-declare function setupTableHandleDropIndicator(host: HostElement, props: State<TableHandleDropIndicatorProps>): void;
+export declare function setupTableHandleDropIndicator(host: HostElement, props: State<TableHandleDropIndicatorProps>): void;
 declare const TableHandleDropIndicatorElementBase: HostElementConstructor<TableHandleDropIndicatorProps>;
 /**
  * `<prosekit-table-handle-drop-indicator>` custom element.
  *
  * Properties: {@link TableHandleDropIndicatorProps}
  */
-declare class TableHandleDropIndicatorElement extends TableHandleDropIndicatorElementBase {}
+export declare class TableHandleDropIndicatorElement extends TableHandleDropIndicatorElementBase {}
 /**
  * @internal
  */
-declare function registerTableHandleDropIndicatorElement(): void;
+export declare function registerTableHandleDropIndicatorElement(): void;
 interface TableHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -194,27 +194,27 @@ interface TableHandleRootProps {
   editor: Editor | null;
 }
 /** @internal */
-declare const TableHandleRootPropsDeclaration: PropsDeclaration<TableHandleRootProps>;
+export declare const TableHandleRootPropsDeclaration: PropsDeclaration<TableHandleRootProps>;
 /**
  * @internal
  */
-declare function setupTableHandleRoot(host: HostElement, props: State<TableHandleRootProps>): void;
+export declare function setupTableHandleRoot(host: HostElement, props: State<TableHandleRootProps>): void;
 declare const TableHandleRootElementBase: HostElementConstructor<TableHandleRootProps>;
 /**
  * `<prosekit-table-handle-root>` custom element.
  *
  * Properties: {@link TableHandleRootProps}
  */
-declare class TableHandleRootElement extends TableHandleRootElementBase {}
+export declare class TableHandleRootElement extends TableHandleRootElementBase {}
 /**
  * @internal
  */
-declare function registerTableHandleRootElement(): void;
+export declare function registerTableHandleRootElement(): void;
 interface TableHandleRowPopupProps {}
 /** @internal */
-declare const TableHandleRowPopupPropsDeclaration: PropsDeclaration<TableHandleRowPopupProps>;
+export declare const TableHandleRowPopupPropsDeclaration: PropsDeclaration<TableHandleRowPopupProps>;
 /** @internal */
-declare function setupTableHandleRowPopup(host: HostElement, _props: State<TableHandleRowPopupProps>): void;
+export declare function setupTableHandleRowPopup(host: HostElement, _props: State<TableHandleRowPopupProps>): void;
 declare const TableHandleRowPopupElementBase: HostElementConstructor<TableHandleRowPopupProps>;
 /**
  * `<prosekit-table-handle-row-popup>` custom element.
@@ -227,9 +227,9 @@ declare const TableHandleRowPopupElementBase: HostElementConstructor<TableHandle
  * | --- | --- |
  * | `data-state` | `"open"` when visible, `"closed"` otherwise |
  */
-declare class TableHandleRowPopupElement extends TableHandleRowPopupElementBase {}
+export declare class TableHandleRowPopupElement extends TableHandleRowPopupElementBase {}
 /** @internal */
-declare function registerTableHandleRowPopupElement(): void;
+export declare function registerTableHandleRowPopupElement(): void;
 interface TableHandleRowPositionerProps extends Omit<SharedTableHandlePositionerProps, 'placement'> {
   /**
    * The placement of the popover, relative to the hovered table cell.
@@ -239,9 +239,9 @@ interface TableHandleRowPositionerProps extends Omit<SharedTableHandlePositioner
   placement: Placement;
 }
 /** @internal */
-declare const TableHandleRowPositionerPropsDeclaration: PropsDeclaration<TableHandleRowPositionerProps>;
+export declare const TableHandleRowPositionerPropsDeclaration: PropsDeclaration<TableHandleRowPositionerProps>;
 /** @internal */
-declare function setupTableHandleRowPositioner(host: HostElement, props: State<TableHandleRowPositionerProps>): void;
+export declare function setupTableHandleRowPositioner(host: HostElement, props: State<TableHandleRowPositionerProps>): void;
 declare const TableHandleRowPositionerElementBase: HostElementConstructor<TableHandleRowPositionerProps>;
 /**
  * `<prosekit-table-handle-row-positioner>` custom element.
@@ -262,23 +262,23 @@ declare const TableHandleRowPositionerElementBase: HostElementConstructor<TableH
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class TableHandleRowPositionerElement extends TableHandleRowPositionerElementBase {}
+export declare class TableHandleRowPositionerElement extends TableHandleRowPositionerElementBase {}
 /** @internal */
-declare function registerTableHandleRowPositionerElement(): void;
+export declare function registerTableHandleRowPositionerElement(): void;
 interface TableHandleRowMenuRootProps extends MenuRootProps {}
 /** @internal */
-declare const TableHandleRowMenuRootPropsDeclaration: PropsDeclaration<TableHandleRowMenuRootProps>;
+export declare const TableHandleRowMenuRootPropsDeclaration: PropsDeclaration<TableHandleRowMenuRootProps>;
 /** @internal */
-declare function setupTableHandleRowMenuRoot(host: HostElement, props: State<TableHandleRowMenuRootProps>): void;
+export declare function setupTableHandleRowMenuRoot(host: HostElement, props: State<TableHandleRowMenuRootProps>): void;
 declare const TableHandleRowMenuRootElementBase: HostElementConstructor<TableHandleRowMenuRootProps>;
 /**
  * `<prosekit-table-handle-row-menu-root>` custom element.
  *
  * Properties: {@link TableHandleRowMenuRootProps}
  */
-declare class TableHandleRowMenuRootElement extends TableHandleRowMenuRootElementBase {}
+export declare class TableHandleRowMenuRootElement extends TableHandleRowMenuRootElementBase {}
 /** @internal */
-declare function registerTableHandleRowMenuRootElement(): void;
+export declare function registerTableHandleRowMenuRootElement(): void;
 type TableCommandsExtension = ReturnType<typeof defineTableCommands>;
 interface TableHandleRowMenuTriggerProps {
   /**
@@ -288,19 +288,19 @@ interface TableHandleRowMenuTriggerProps {
   editor: Editor<TableCommandsExtension> | null;
 }
 /** @internal */
-declare const TableHandleRowMenuTriggerPropsDeclaration: PropsDeclaration<TableHandleRowMenuTriggerProps>;
+export declare const TableHandleRowMenuTriggerPropsDeclaration: PropsDeclaration<TableHandleRowMenuTriggerProps>;
 /** @internal */
-declare function setupTableHandleRowMenuTrigger(host: HostElement, props: State<TableHandleRowMenuTriggerProps>): void;
+export declare function setupTableHandleRowMenuTrigger(host: HostElement, props: State<TableHandleRowMenuTriggerProps>): void;
 declare const TableHandleRowMenuTriggerElementBase: HostElementConstructor<TableHandleRowMenuTriggerProps>;
 /**
  * `<prosekit-table-handle-row-menu-trigger>` custom element.
  *
  * Properties: {@link TableHandleRowMenuTriggerProps}
  */
-declare class TableHandleRowMenuTriggerElement extends TableHandleRowMenuTriggerElementBase {}
+export declare class TableHandleRowMenuTriggerElement extends TableHandleRowMenuTriggerElementBase {}
 /**
  * @internal
  */
-declare function registerTableHandleRowMenuTriggerElement(): void;
-export { TableHandleColumnMenuRootElement, type TableHandleColumnMenuRootProps, TableHandleColumnMenuRootPropsDeclaration, TableHandleColumnMenuTriggerElement, type TableHandleColumnMenuTriggerProps, TableHandleColumnMenuTriggerPropsDeclaration, TableHandleColumnPopupElement, type TableHandleColumnPopupProps, TableHandleColumnPopupPropsDeclaration, TableHandleColumnPositionerElement, type TableHandleColumnPositionerProps, TableHandleColumnPositionerPropsDeclaration, TableHandleDragPreviewElement, type TableHandleDragPreviewProps, TableHandleDragPreviewPropsDeclaration, TableHandleDropIndicatorElement, type TableHandleDropIndicatorProps, TableHandleDropIndicatorPropsDeclaration, TableHandleRootElement, type TableHandleRootProps, TableHandleRootPropsDeclaration, TableHandleRowMenuRootElement, type TableHandleRowMenuRootProps, TableHandleRowMenuRootPropsDeclaration, TableHandleRowMenuTriggerElement, type TableHandleRowMenuTriggerProps, TableHandleRowMenuTriggerPropsDeclaration, TableHandleRowPopupElement, type TableHandleRowPopupProps, TableHandleRowPopupPropsDeclaration, TableHandleRowPositionerElement, type TableHandleRowPositionerProps, TableHandleRowPositionerPropsDeclaration, registerTableHandleColumnMenuRootElement, registerTableHandleColumnMenuTriggerElement, registerTableHandleColumnPopupElement, registerTableHandleColumnPositionerElement, registerTableHandleDragPreviewElement, registerTableHandleDropIndicatorElement, registerTableHandleRootElement, registerTableHandleRowMenuRootElement, registerTableHandleRowMenuTriggerElement, registerTableHandleRowPopupElement, registerTableHandleRowPositionerElement, setupTableHandleColumnMenuRoot, setupTableHandleColumnMenuTrigger, setupTableHandleColumnPopup, setupTableHandleColumnPositioner, setupTableHandleDragPreview, setupTableHandleDropIndicator, setupTableHandleRoot, setupTableHandleRowMenuRoot, setupTableHandleRowMenuTrigger, setupTableHandleRowPopup, setupTableHandleRowPositioner };
+export declare function registerTableHandleRowMenuTriggerElement(): void;
+export type { TableHandleColumnMenuRootProps, TableHandleColumnMenuTriggerProps, TableHandleColumnPopupProps, TableHandleColumnPositionerProps, TableHandleDragPreviewProps, TableHandleDropIndicatorProps, TableHandleRootProps, TableHandleRowMenuRootProps, TableHandleRowMenuTriggerProps, TableHandleRowPopupProps, TableHandleRowPositionerProps };
 //# sourceMappingURL=table-handle.d.ts.map

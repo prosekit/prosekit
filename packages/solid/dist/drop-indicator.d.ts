@@ -17,6 +17,6 @@ interface DropIndicatorProps {
   width?: DropIndicatorProps$1['width'];
 }
 /** A Solid component that renders an `prosekit-drop-indicator` custom element. */
-declare const DropIndicator: Component<DropIndicatorProps & JSX.HTMLAttributes<DropIndicatorElement>>;
-export { DropIndicator, type DropIndicatorProps };
+export declare const DropIndicator: Component<DropIndicatorProps & JSX.HTMLAttributes<DropIndicatorElement>>;
+export type { DropIndicatorProps };
 //# sourceMappingURL=drop-indicator.d.ts.map

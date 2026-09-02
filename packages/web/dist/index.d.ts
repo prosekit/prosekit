@@ -5,6 +5,5 @@ import { Editor, Extension } from "@prosekit/core";
  *
  * @internal
  */
-declare function queueExtension(editor: Editor, extension: Extension): VoidFunction;
-export { queueExtension };
+export declare function queueExtension(editor: Editor, extension: Extension): VoidFunction;
 //# sourceMappingURL=index.d.ts.map

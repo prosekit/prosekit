@@ -15,10 +15,10 @@ type DropIndicatorExtension = PlainExtension;
  * callback defined, and it returns `false`, then the drop point will be
  * discarded.
  */
-declare function defineDropIndicator(options?: DropIndicatorOptions): DropIndicatorExtension;
+export declare function defineDropIndicator(options?: DropIndicatorOptions): DropIndicatorExtension;
 /**
  * Options for {@link defineDropIndicator}.
  */
 interface DropIndicatorOptions extends DropIndicatorPluginOptions {}
-export { type DragEventHandler, type DragEventHandlerOptions, type DropIndicatorExtension, type DropIndicatorOptions, type Line, type Point, type ShowHandler, type ShowHandlerOptions, type ViewDragging, defineDropIndicator };
+export type { DragEventHandler, DragEventHandlerOptions, DropIndicatorExtension, DropIndicatorOptions, Line, Point, ShowHandler, ShowHandlerOptions, ViewDragging };
 //# sourceMappingURL=drop-indicator.d.ts.map

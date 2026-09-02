@@ -24,7 +24,7 @@ interface InsertTableOptions {
  *
  * @param options
  */
-declare function insertTable(options: InsertTableOptions): Command;
+export declare function insertTable(options: InsertTableOptions): Command;
 interface SelectTableCellOptions {
   /**
    * A hit position of the table cell to select from. By default, the selection
@@ -32,7 +32,7 @@ interface SelectTableCellOptions {
    */
   pos?: number;
 }
-declare function selectTableCell(options?: SelectTableCellOptions): Command;
+export declare function selectTableCell(options?: SelectTableCellOptions): Command;
 interface SelectTableColumnOptions {
   /**
    * A hit position of the table cell to select from. By default, the selection
@@ -45,7 +45,7 @@ interface SelectTableColumnOptions {
    */
   head?: number;
 }
-declare function selectTableColumn(options?: SelectTableColumnOptions): Command;
+export declare function selectTableColumn(options?: SelectTableColumnOptions): Command;
 interface SelectTableRowOptions {
   /**
    * A hit position of the table cell to select from. By default, the selection
@@ -58,7 +58,7 @@ interface SelectTableRowOptions {
    */
   head?: number;
 }
-declare function selectTableRow(options?: SelectTableRowOptions): Command;
+export declare function selectTableRow(options?: SelectTableRowOptions): Command;
 interface SelectTableOptions {
   /**
    * A hit position of the table to select from. By default, the selection
@@ -66,7 +66,7 @@ interface SelectTableOptions {
    */
   pos?: number;
 }
-declare function selectTable(options?: SelectTableOptions): Command;
+export declare function selectTable(options?: SelectTableOptions): Command;
 /**
  * @internal
  */
@@ -95,22 +95,22 @@ type TableCommandsExtension = Extension<{
 /**
  * Adds commands for working with `table` nodes.
  */
-declare function defineTableCommands(): TableCommandsExtension;
+export declare function defineTableCommands(): TableCommandsExtension;
 /**
  * When the selection is in a table node, create a default block after the table
  * table, and move the cursor there.
  */
-declare const exitTable: Command;
+export declare const exitTable: Command;
 /**
  * Hides the drop indicator when dragging a table column or row by using the
  * table handle.
  *
  * @internal
  */
-declare function defineTableDropIndicator(): PlainExtension;
-declare function defineTableEditingPlugin(options?: TableEditingOptions): PlainExtension;
-declare function defineColumnResizingPlugin(options?: ColumnResizingOptions): PlainExtension;
-declare function defineTablePlugins(): PlainExtension;
+export declare function defineTableDropIndicator(): PlainExtension;
+export declare function defineTableEditingPlugin(options?: TableEditingOptions): PlainExtension;
+export declare function defineColumnResizingPlugin(options?: ColumnResizingOptions): PlainExtension;
+export declare function defineTablePlugins(): PlainExtension;
 interface CellAttrs {
   colspan?: number;
   rowspan?: number;
@@ -127,7 +127,7 @@ type TableSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineTableSpec(): TableSpecExtension;
+export declare function defineTableSpec(): TableSpecExtension;
 /**
  * @internal
  */
@@ -139,7 +139,7 @@ type TableRowSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineTableRowSpec(): TableRowSpecExtension;
+export declare function defineTableRowSpec(): TableRowSpecExtension;
 /**
  * @internal
  */
@@ -151,7 +151,7 @@ type TableCellSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineTableCellSpec(): TableCellSpecExtension;
+export declare function defineTableCellSpec(): TableCellSpecExtension;
 /**
  * @internal
  */
@@ -160,15 +160,15 @@ type TableHeaderCellSpecExtension = Extension<{
     tableHeaderCell: CellAttrs;
   };
 }>;
-declare function defineTableHeaderCellSpec(): TableHeaderCellSpecExtension;
+export declare function defineTableHeaderCellSpec(): TableHeaderCellSpecExtension;
 /**
  * Checks if the given object is a `CellSelection` instance.
  */
-declare function isCellSelection(value: unknown): value is CellSelection;
+export declare function isCellSelection(value: unknown): value is CellSelection;
 /**
  * @internal
  */
 type TableExtension = Union<[TableSpecExtension, TableRowSpecExtension, TableCellSpecExtension, TableHeaderCellSpecExtension, TableCommandsExtension]>;
-declare function defineTable(): TableExtension;
-export { type ColumnResizingOptions, type InsertTableOptions, type MoveTableColumnOptions, type MoveTableRowOptions, type SelectTableCellOptions, type SelectTableColumnOptions, type SelectTableOptions, type SelectTableRowOptions, type TableCellSpecExtension, type TableCommandsExtension, type TableEditingOptions, type TableExtension, type TableHeaderCellSpecExtension, type TableRowSpecExtension, type TableSpecExtension, TableView, addTableColumnAfter, addTableColumnBefore, addTableRowAbove, addTableRowBelow, defineColumnResizingPlugin, defineTable, defineTableCellSpec, defineTableCommands, defineTableDropIndicator, defineTableEditingPlugin, defineTableHeaderCellSpec, defineTablePlugins, defineTableRowSpec, defineTableSpec, deleteCellSelection, deleteTable, deleteTableColumn, deleteTableRow, exitTable, findTable, insertTable, isCellSelection, mergeTableCells, moveTableColumn, moveTableRow, selectTable, selectTableCell, selectTableColumn, selectTableRow, splitTableCell };
+export declare function defineTable(): TableExtension;
+export { type ColumnResizingOptions, type InsertTableOptions, type MoveTableColumnOptions, type MoveTableRowOptions, type SelectTableCellOptions, type SelectTableColumnOptions, type SelectTableOptions, type SelectTableRowOptions, type TableCellSpecExtension, type TableCommandsExtension, type TableEditingOptions, type TableExtension, type TableHeaderCellSpecExtension, type TableRowSpecExtension, type TableSpecExtension, TableView, addTableColumnAfter, addTableColumnBefore, addTableRowAbove, addTableRowBelow, deleteCellSelection, deleteTable, deleteTableColumn, deleteTableRow, findTable, mergeTableCells, moveTableColumn, moveTableRow, splitTableCell };
 //# sourceMappingURL=table.d.ts.map

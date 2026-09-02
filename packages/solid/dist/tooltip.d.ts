@@ -3,7 +3,7 @@ import { TooltipPopupElement, TooltipPositionerElement, TooltipPositionerProps a
 /** Props for the {@link TooltipPopup} Solid component. */
 interface TooltipPopupProps {}
 /** A Solid component that renders an `prosekit-tooltip-popup` custom element. */
-declare const TooltipPopup: Component<TooltipPopupProps & JSX.HTMLAttributes<TooltipPopupElement>>;
+export declare const TooltipPopup: Component<TooltipPopupProps & JSX.HTMLAttributes<TooltipPopupElement>>;
 /** Props for the {@link TooltipPositioner} Solid component. */
 interface TooltipPositionerProps {
   /**
@@ -135,7 +135,7 @@ interface TooltipPositionerProps {
   altBoundary?: TooltipPositionerProps$1['altBoundary'];
 }
 /** A Solid component that renders an `prosekit-tooltip-positioner` custom element. */
-declare const TooltipPositioner: Component<TooltipPositionerProps & JSX.HTMLAttributes<TooltipPositionerElement>>;
+export declare const TooltipPositioner: Component<TooltipPositionerProps & JSX.HTMLAttributes<TooltipPositionerElement>>;
 /** Props for the {@link TooltipRoot} Solid component. */
 interface TooltipRootProps {
   /**
@@ -157,7 +157,7 @@ interface TooltipRootProps {
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-tooltip-root` custom element. */
-declare const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<TooltipRootElement>>;
+export declare const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<TooltipRootElement>>;
 /** Props for the {@link TooltipTrigger} Solid component. */
 interface TooltipTriggerProps {
   /**
@@ -177,6 +177,6 @@ interface TooltipTriggerProps {
   closeDelay?: TooltipTriggerProps$1['closeDelay'];
 }
 /** A Solid component that renders an `prosekit-tooltip-trigger` custom element. */
-declare const TooltipTrigger: Component<TooltipTriggerProps & JSX.HTMLAttributes<TooltipTriggerElement>>;
-export { TooltipPopup, type TooltipPopupProps, TooltipPositioner, type TooltipPositionerProps, TooltipRoot, type TooltipRootProps, TooltipTrigger, type TooltipTriggerProps };
+export declare const TooltipTrigger: Component<TooltipTriggerProps & JSX.HTMLAttributes<TooltipTriggerElement>>;
+export type { TooltipPopupProps, TooltipPositionerProps, TooltipRootProps, TooltipTriggerProps };
 //# sourceMappingURL=tooltip.d.ts.map

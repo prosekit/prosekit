@@ -26,7 +26,7 @@ interface ResizableRootProps {
   onResizeEnd?: (event: ResizableRootEvents['resizeEnd']) => void;
 }
 /** A Vue component that renders an `prosekit-resizable-root` custom element. */
-declare const ResizableRoot: DefineSetupFnComponent<ResizableRootProps & HTMLAttributes>;
+export declare const ResizableRoot: DefineSetupFnComponent<ResizableRootProps & HTMLAttributes>;
 /** Props for the {@link ResizableHandle} Vue component. */
 interface ResizableHandleProps {
   /**
@@ -37,6 +37,6 @@ interface ResizableHandleProps {
   position?: ResizableHandleProps$1['position'];
 }
 /** A Vue component that renders an `prosekit-resizable-handle` custom element. */
-declare const ResizableHandle: DefineSetupFnComponent<ResizableHandleProps & HTMLAttributes>;
-export { ResizableHandle, type ResizableHandleProps, ResizableRoot, type ResizableRootProps };
+export declare const ResizableHandle: DefineSetupFnComponent<ResizableHandleProps & HTMLAttributes>;
+export type { ResizableHandleProps, ResizableRootProps };
 //# sourceMappingURL=resizable.d.ts.map

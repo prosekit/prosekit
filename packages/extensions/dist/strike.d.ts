@@ -3,7 +3,7 @@ import { Attrs } from "@prosekit/pm/model";
 /**
  * @internal
  */
-type StrikeSpecExtension = Extension<{
+export type StrikeSpecExtension = Extension<{
   Marks: {
     strike: Attrs;
   };
@@ -11,11 +11,11 @@ type StrikeSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineStrikeSpec(): StrikeSpecExtension;
+export declare function defineStrikeSpec(): StrikeSpecExtension;
 /**
  * @internal
  */
-type StrikeCommandsExtension = Extension<{
+export type StrikeCommandsExtension = Extension<{
   Commands: {
     toggleStrike: [];
   };
@@ -23,19 +23,18 @@ type StrikeCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineStrikeCommands(): StrikeCommandsExtension;
+export declare function defineStrikeCommands(): StrikeCommandsExtension;
 /**
  * @internal
  */
-declare function defineStrikeKeymap(): PlainExtension;
+export declare function defineStrikeKeymap(): PlainExtension;
 /**
  * @internal
  */
-declare function defineStrikeInputRule(): PlainExtension;
+export declare function defineStrikeInputRule(): PlainExtension;
 /**
  * @internal
  */
-type StrikeExtension = Union<[StrikeSpecExtension, StrikeCommandsExtension]>;
-declare function defineStrike(): StrikeExtension;
-export { StrikeCommandsExtension, StrikeExtension, StrikeSpecExtension, defineStrike, defineStrikeCommands, defineStrikeInputRule, defineStrikeKeymap, defineStrikeSpec };
+export type StrikeExtension = Union<[StrikeSpecExtension, StrikeCommandsExtension]>;
+export declare function defineStrike(): StrikeExtension;
 //# sourceMappingURL=strike.d.ts.map

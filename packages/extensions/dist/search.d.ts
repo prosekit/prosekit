@@ -3,7 +3,7 @@ import { Extension, PlainExtension } from "@prosekit/core";
 /**
  * Options for {@link defineSearchQuery}
  */
-interface SearchQueryOptions {
+export interface SearchQueryOptions {
   /**
    * The search string (or regular expression).
    */
@@ -44,11 +44,11 @@ interface SearchQueryOptions {
  * When called without options, it stores an empty query, which can be updated
  * later with the `setSearchQuery` command.
  */
-declare function defineSearchQuery(options?: SearchQueryOptions): PlainExtension;
+export declare function defineSearchQuery(options?: SearchQueryOptions): PlainExtension;
 /**
  * @internal
  */
-type SearchCommandsExtension = Extension<{
+export type SearchCommandsExtension = Extension<{
   Commands: {
     setSearchQuery: [options: SearchQueryOptions];
     findNext: [];
@@ -64,12 +64,12 @@ type SearchCommandsExtension = Extension<{
 /**
  * Defines commands for search and replace.
  */
-declare function defineSearchCommands(): SearchCommandsExtension;
+export declare function defineSearchCommands(): SearchCommandsExtension;
 /**
  * The match count for the current search query, and the position of the match
  * that the selection sits on.
  */
-interface SearchStatus {
+export interface SearchStatus {
   /**
    * The total number of matches for the current search query.
    */
@@ -83,15 +83,14 @@ interface SearchStatus {
 /**
  * A function that receives the current search status.
  */
-type SearchStatusHandler = (status: SearchStatus) => void;
+export type SearchStatusHandler = (status: SearchStatus) => void;
 /**
  * Returns the current search status.
  */
-declare function getSearchStatus(state: EditorState): SearchStatus;
+export declare function getSearchStatus(state: EditorState): SearchStatus;
 /**
  * Registers a handler that is called whenever the search status changes. It
  * can be used to render a match counter.
  */
-declare function defineSearchStatusHandler(handler: SearchStatusHandler): PlainExtension;
-export { SearchCommandsExtension, SearchQueryOptions, SearchStatus, SearchStatusHandler, defineSearchCommands, defineSearchQuery, defineSearchStatusHandler, getSearchStatus };
+export declare function defineSearchStatusHandler(handler: SearchStatusHandler): PlainExtension;
 //# sourceMappingURL=search.d.ts.map

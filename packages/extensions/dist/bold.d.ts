@@ -11,15 +11,15 @@ type BoldCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineBoldCommands(): BoldCommandsExtension;
+export declare function defineBoldCommands(): BoldCommandsExtension;
 /**
  * @internal
  */
-declare function defineBoldInputRule(): PlainExtension;
+export declare function defineBoldInputRule(): PlainExtension;
 /**
  * @internal
  */
-declare function defineBoldKeymap(): PlainExtension;
+export declare function defineBoldKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -31,11 +31,11 @@ type BoldSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineBoldSpec(): BoldSpecExtension;
+export declare function defineBoldSpec(): BoldSpecExtension;
 /**
  * @internal
  */
 type BoldExtension = Union<[BoldSpecExtension, BoldCommandsExtension]>;
-declare function defineBold(): BoldExtension;
-export { type BoldCommandsExtension, type BoldExtension, type BoldSpecExtension, defineBold, defineBoldCommands, defineBoldInputRule, defineBoldKeymap, defineBoldSpec };
+export declare function defineBold(): BoldExtension;
+export type { BoldCommandsExtension, BoldExtension, BoldSpecExtension };
 //# sourceMappingURL=bold.d.ts.map

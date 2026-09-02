@@ -12,11 +12,11 @@ type ParagraphCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineParagraphCommands(): ParagraphCommandsExtension;
+export declare function defineParagraphCommands(): ParagraphCommandsExtension;
 /**
  * @internal
  */
-declare function defineParagraphKeymap(): PlainExtension;
+export declare function defineParagraphKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -30,7 +30,7 @@ type ParagraphSpecExtension = Extension<{
  *
  * @internal
  */
-declare function defineParagraphSpec(): ParagraphSpecExtension;
+export declare function defineParagraphSpec(): ParagraphSpecExtension;
 /**
  * @internal
  */
@@ -41,6 +41,6 @@ type ParagraphExtension = Union<[ParagraphSpecExtension, ParagraphCommandsExtens
  * The paragraph node spec has the highest priority, because it should be the
  * default block node for most cases.
  */
-declare function defineParagraph(): ParagraphExtension;
-export { type ParagraphCommandsExtension, type ParagraphExtension, type ParagraphSpecExtension, defineParagraph, defineParagraphCommands, defineParagraphKeymap, defineParagraphSpec };
+export declare function defineParagraph(): ParagraphExtension;
+export type { ParagraphCommandsExtension, ParagraphExtension, ParagraphSpecExtension };
 //# sourceMappingURL=paragraph.d.ts.map

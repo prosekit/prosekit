@@ -24,7 +24,7 @@ interface MenuItemProps {
   onSelect?: (event: MenuItemEvents['select']) => void;
 }
 /** A Vue component that renders an `prosekit-menu-item` custom element. */
-declare const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes>;
+export declare const MenuItem: DefineSetupFnComponent<MenuItemProps & HTMLAttributes>;
 /** Props for the {@link MenuPopup} Vue component. */
 interface MenuPopupProps {
   /**
@@ -36,7 +36,7 @@ interface MenuPopupProps {
   eventTarget?: MenuPopupProps$1['eventTarget'];
 }
 /** A Vue component that renders an `prosekit-menu-popup` custom element. */
-declare const MenuPopup: DefineSetupFnComponent<MenuPopupProps & HTMLAttributes>;
+export declare const MenuPopup: DefineSetupFnComponent<MenuPopupProps & HTMLAttributes>;
 /** Props for the {@link MenuPositioner} Vue component. */
 interface MenuPositionerProps {
   /**
@@ -168,7 +168,7 @@ interface MenuPositionerProps {
   altBoundary?: MenuPositionerProps$1['altBoundary'];
 }
 /** A Vue component that renders an `prosekit-menu-positioner` custom element. */
-declare const MenuPositioner: DefineSetupFnComponent<MenuPositionerProps & HTMLAttributes>;
+export declare const MenuPositioner: DefineSetupFnComponent<MenuPositionerProps & HTMLAttributes>;
 /** Props for the {@link MenuRoot} Vue component. */
 interface MenuRootProps {
   /**
@@ -190,7 +190,7 @@ interface MenuRootProps {
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-menu-root` custom element. */
-declare const MenuRoot: DefineSetupFnComponent<MenuRootProps & HTMLAttributes>;
+export declare const MenuRoot: DefineSetupFnComponent<MenuRootProps & HTMLAttributes>;
 /** Props for the {@link MenuSubmenuRoot} Vue component. */
 interface MenuSubmenuRootProps {
   /**
@@ -212,7 +212,7 @@ interface MenuSubmenuRootProps {
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-menu-submenu-root` custom element. */
-declare const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTMLAttributes>;
+export declare const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTMLAttributes>;
 /** Props for the {@link MenuSubmenuTrigger} Vue component. */
 interface MenuSubmenuTriggerProps {
   /**
@@ -229,7 +229,7 @@ interface MenuSubmenuTriggerProps {
   disabled?: MenuSubmenuTriggerProps$1['disabled'];
 }
 /** A Vue component that renders an `prosekit-menu-submenu-trigger` custom element. */
-declare const MenuSubmenuTrigger: DefineSetupFnComponent<MenuSubmenuTriggerProps & HTMLAttributes>;
+export declare const MenuSubmenuTrigger: DefineSetupFnComponent<MenuSubmenuTriggerProps & HTMLAttributes>;
 /** Props for the {@link MenuTrigger} Vue component. */
 interface MenuTriggerProps {
   /**
@@ -242,6 +242,6 @@ interface MenuTriggerProps {
   onOpenChange?: (event: MenuTriggerEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-menu-trigger` custom element. */
-declare const MenuTrigger: DefineSetupFnComponent<MenuTriggerProps & HTMLAttributes>;
-export { MenuItem, type MenuItemProps, MenuPopup, type MenuPopupProps, MenuPositioner, type MenuPositionerProps, MenuRoot, type MenuRootProps, MenuSubmenuRoot, type MenuSubmenuRootProps, MenuSubmenuTrigger, type MenuSubmenuTriggerProps, MenuTrigger, type MenuTriggerProps };
+export declare const MenuTrigger: DefineSetupFnComponent<MenuTriggerProps & HTMLAttributes>;
+export type { MenuItemProps, MenuPopupProps, MenuPositionerProps, MenuRootProps, MenuSubmenuRootProps, MenuSubmenuTriggerProps, MenuTriggerProps };
 //# sourceMappingURL=menu.d.ts.map

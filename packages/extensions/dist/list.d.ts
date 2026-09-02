@@ -23,7 +23,7 @@ type ListCommandsExtension = Extension<{
  *
  * @internal
  */
-declare function defineListCommands(): ListCommandsExtension;
+export declare function defineListCommands(): ListCommandsExtension;
 /**
  * Configures drop indicator to avoid unexpected drop point.
  *
@@ -32,25 +32,25 @@ declare function defineListCommands(): ListCommandsExtension;
  *
  * @internal
  */
-declare function defineListDropIndicator(): PlainExtension;
+export declare function defineListDropIndicator(): PlainExtension;
 /**
  * @internal
  */
-declare function defineListInputRules(): Extension;
+export declare function defineListInputRules(): Extension;
 /**
  * Returns a extension that adds key bindings for list.
  *
  * @internal
  */
-declare function defineListKeymap(): PlainExtension;
+export declare function defineListKeymap(): PlainExtension;
 /**
  * @internal
  */
-declare function defineListPlugins(): PlainExtension;
+export declare function defineListPlugins(): PlainExtension;
 /**
  * @internal
  */
-declare function defineListSerializer(): PlainExtension;
+export declare function defineListSerializer(): PlainExtension;
 /**
  * The attributes of a list node.
  */
@@ -83,11 +83,11 @@ type ListSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineListSpec(): ListSpecExtension;
+export declare function defineListSpec(): ListSpecExtension;
 /**
  * @internal
  */
 type ListExtension = Union<[ListSpecExtension, ListCommandsExtension]>;
-declare function defineList(): ListExtension;
-export { type DedentListOptions, type IndentListOptions, type ListAttrs, type ListCommandsExtension, ListDOMSerializer, type ListExtension, type ListSpecExtension, type ToggleCollapsedOptions, type UnwrapListOptions, type WrapInListGetAttrs, dedentList, defineList, defineListCommands, defineListDropIndicator, defineListInputRules, defineListKeymap, defineListPlugins, defineListSerializer, defineListSpec, indentList, insertList, moveList, splitList, toggleCollapsed, toggleList, unwrapList, wrapInList };
+export declare function defineList(): ListExtension;
+export { type DedentListOptions, type IndentListOptions, type ListAttrs, type ListCommandsExtension, ListDOMSerializer, type ListExtension, type ListSpecExtension, type ToggleCollapsedOptions, type UnwrapListOptions, type WrapInListGetAttrs, dedentList, indentList, insertList, moveList, splitList, toggleCollapsed, toggleList, unwrapList, wrapInList };
 //# sourceMappingURL=list.d.ts.map

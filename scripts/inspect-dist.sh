@@ -24,9 +24,6 @@ build_and_commit() {
   pnpm install
   pnpm run build:package
 
-  # Remove source maps
-  find packages/*/dist -name "*.map" -delete 2>/dev/null || true
-
   # Clear index so deletions are captured
   git rm -r --cached 'packages/*/dist/' 2>/dev/null || true
 

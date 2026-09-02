@@ -12,7 +12,7 @@ import { OpenChangeEvent, setupTooltipPopup, setupTooltipPositioner, setupToolti
  * | --- | --- |
  * | `data-state` | `"open"` when the tooltip is visible, `"closed"` otherwise |
  */
-declare class TooltipPopupElement extends Base.TooltipPopupElement {}
+export declare class TooltipPopupElement extends Base.TooltipPopupElement {}
 /**
  * `<prosekit-tooltip-positioner>` custom element.
  *
@@ -30,7 +30,7 @@ declare class TooltipPopupElement extends Base.TooltipPopupElement {}
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class TooltipPositionerElement extends Base.TooltipPositionerElement {}
+export declare class TooltipPositionerElement extends Base.TooltipPositionerElement {}
 /**
  * `<prosekit-tooltip-root>` custom element.
  *
@@ -38,29 +38,29 @@ declare class TooltipPositionerElement extends Base.TooltipPositionerElement {}
  *
  * Events: {@link TooltipRootEvents}
  */
-declare class TooltipRootElement extends Base.TooltipRootElement {}
+export declare class TooltipRootElement extends Base.TooltipRootElement {}
 /**
  * `<prosekit-tooltip-trigger>` custom element.
  *
  * Properties: {@link TooltipTriggerProps}
  */
-declare class TooltipTriggerElement extends Base.TooltipTriggerElement {}
-interface TooltipPopupProps extends Base.TooltipPopupProps {}
-interface TooltipPositionerProps extends Base.TooltipPositionerProps {}
-interface TooltipRootProps extends Base.TooltipRootProps {}
-interface TooltipTriggerProps extends Base.TooltipTriggerProps {}
-interface TooltipRootEvents extends Base.TooltipRootEvents {}
+export declare class TooltipTriggerElement extends Base.TooltipTriggerElement {}
+export interface TooltipPopupProps extends Base.TooltipPopupProps {}
+export interface TooltipPositionerProps extends Base.TooltipPositionerProps {}
+export interface TooltipRootProps extends Base.TooltipRootProps {}
+export interface TooltipTriggerProps extends Base.TooltipTriggerProps {}
+export interface TooltipRootEvents extends Base.TooltipRootEvents {}
 /** @internal */
-declare const TooltipPopupPropsDeclaration: PropsDeclaration<TooltipPopupProps>;
+export declare const TooltipPopupPropsDeclaration: PropsDeclaration<TooltipPopupProps>;
 /** @internal */
-declare const TooltipPositionerPropsDeclaration: PropsDeclaration<TooltipPositionerProps>;
+export declare const TooltipPositionerPropsDeclaration: PropsDeclaration<TooltipPositionerProps>;
 /** @internal */
-declare const TooltipRootPropsDeclaration: PropsDeclaration<TooltipRootProps>;
+export declare const TooltipRootPropsDeclaration: PropsDeclaration<TooltipRootProps>;
 /** @internal */
-declare const TooltipTriggerPropsDeclaration: PropsDeclaration<TooltipTriggerProps>;
-declare function registerTooltipRootElement(): void;
-declare function registerTooltipTriggerElement(): void;
-declare function registerTooltipPopupElement(): void;
-declare function registerTooltipPositionerElement(): void;
-export { OpenChangeEvent, TooltipPopupElement, TooltipPopupProps, TooltipPopupPropsDeclaration, TooltipPositionerElement, TooltipPositionerProps, TooltipPositionerPropsDeclaration, TooltipRootElement, TooltipRootEvents, TooltipRootProps, TooltipRootPropsDeclaration, TooltipTriggerElement, TooltipTriggerProps, TooltipTriggerPropsDeclaration, registerTooltipPopupElement, registerTooltipPositionerElement, registerTooltipRootElement, registerTooltipTriggerElement, setupTooltipPopup, setupTooltipPositioner, setupTooltipRoot, setupTooltipTrigger };
+export declare const TooltipTriggerPropsDeclaration: PropsDeclaration<TooltipTriggerProps>;
+export declare function registerTooltipRootElement(): void;
+export declare function registerTooltipTriggerElement(): void;
+export declare function registerTooltipPopupElement(): void;
+export declare function registerTooltipPositionerElement(): void;
+export { OpenChangeEvent, setupTooltipPopup, setupTooltipPositioner, setupTooltipRoot, setupTooltipTrigger };
 //# sourceMappingURL=tooltip.d.ts.map

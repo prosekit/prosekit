@@ -17,15 +17,15 @@ type FontFamilySpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineFontFamilySpec(): FontFamilySpecExtension;
+export declare function defineFontFamilySpec(): FontFamilySpecExtension;
 /**
  * @internal
  */
-declare function addFontFamily(attrs: FontFamilyAttrs): Command;
+export declare function addFontFamily(attrs: FontFamilyAttrs): Command;
 /**
  * @internal
  */
-declare function removeFontFamily(): Command;
+export declare function removeFontFamily(): Command;
 /**
  * @internal
  */
@@ -38,7 +38,7 @@ type FontFamilyCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineFontFamilyCommands(): FontFamilyCommandsExtension;
+export declare function defineFontFamilyCommands(): FontFamilyCommandsExtension;
 /**
  * @internal
  */
@@ -46,6 +46,6 @@ type FontFamilyExtension = Union<[FontFamilySpecExtension, FontFamilyCommandsExt
 /**
  * Defines the `fontFamily` mark and some commands for it.
  */
-declare function defineFontFamily(): FontFamilyExtension;
-export { type FontFamilyAttrs, type FontFamilyCommandsExtension, type FontFamilyExtension, type FontFamilySpecExtension, addFontFamily, defineFontFamily, defineFontFamilyCommands, defineFontFamilySpec, removeFontFamily };
+export declare function defineFontFamily(): FontFamilyExtension;
+export type { FontFamilyAttrs, FontFamilyCommandsExtension, FontFamilyExtension, FontFamilySpecExtension };
 //# sourceMappingURL=font-family.d.ts.map

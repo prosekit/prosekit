@@ -11,7 +11,7 @@ interface BlockHandleAddProps {
   editor?: BlockHandleAddProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-block-handle-add` custom element. */
-declare const BlockHandleAdd: Component<BlockHandleAddProps & JSX.HTMLAttributes<BlockHandleAddElement>>;
+export declare const BlockHandleAdd: Component<BlockHandleAddProps & JSX.HTMLAttributes<BlockHandleAddElement>>;
 /** Props for the {@link BlockHandleDraggable} Solid component. */
 interface BlockHandleDraggableProps {
   /**
@@ -23,11 +23,11 @@ interface BlockHandleDraggableProps {
   editor?: BlockHandleDraggableProps$1['editor'];
 }
 /** A Solid component that renders an `prosekit-block-handle-draggable` custom element. */
-declare const BlockHandleDraggable: Component<BlockHandleDraggableProps & JSX.HTMLAttributes<BlockHandleDraggableElement>>;
+export declare const BlockHandleDraggable: Component<BlockHandleDraggableProps & JSX.HTMLAttributes<BlockHandleDraggableElement>>;
 /** Props for the {@link BlockHandlePopup} Solid component. */
 interface BlockHandlePopupProps {}
 /** A Solid component that renders an `prosekit-block-handle-popup` custom element. */
-declare const BlockHandlePopup: Component<BlockHandlePopupProps & JSX.HTMLAttributes<BlockHandlePopupElement>>;
+export declare const BlockHandlePopup: Component<BlockHandlePopupProps & JSX.HTMLAttributes<BlockHandlePopupElement>>;
 /** Props for the {@link BlockHandlePositioner} Solid component. */
 interface BlockHandlePositionerProps {
   /**
@@ -152,7 +152,7 @@ interface BlockHandlePositionerProps {
   altBoundary?: BlockHandlePositionerProps$1['altBoundary'];
 }
 /** A Solid component that renders an `prosekit-block-handle-positioner` custom element. */
-declare const BlockHandlePositioner: Component<BlockHandlePositionerProps & JSX.HTMLAttributes<BlockHandlePositionerElement>>;
+export declare const BlockHandlePositioner: Component<BlockHandlePositionerProps & JSX.HTMLAttributes<BlockHandlePositionerElement>>;
 /** Props for the {@link BlockHandleRoot} Solid component. */
 interface BlockHandleRootProps {
   /**
@@ -166,6 +166,6 @@ interface BlockHandleRootProps {
   onStateChange?: (event: BlockHandleRootEvents['stateChange']) => void;
 }
 /** A Solid component that renders an `prosekit-block-handle-root` custom element. */
-declare const BlockHandleRoot: Component<BlockHandleRootProps & JSX.HTMLAttributes<BlockHandleRootElement>>;
-export { BlockHandleAdd, type BlockHandleAddProps, BlockHandleDraggable, type BlockHandleDraggableProps, BlockHandlePopup, type BlockHandlePopupProps, BlockHandlePositioner, type BlockHandlePositionerProps, BlockHandleRoot, type BlockHandleRootProps };
+export declare const BlockHandleRoot: Component<BlockHandleRootProps & JSX.HTMLAttributes<BlockHandleRootElement>>;
+export type { BlockHandleAddProps, BlockHandleDraggableProps, BlockHandlePopupProps, BlockHandlePositionerProps, BlockHandleRootProps };
 //# sourceMappingURL=block-handle.d.ts.map

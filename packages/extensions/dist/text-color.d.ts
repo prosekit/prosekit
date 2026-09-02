@@ -17,15 +17,15 @@ type TextColorSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineTextColorSpec(): TextColorSpecExtension;
+export declare function defineTextColorSpec(): TextColorSpecExtension;
 /**
  * @internal
  */
-declare function addTextColor(attrs: TextColorAttrs): Command;
+export declare function addTextColor(attrs: TextColorAttrs): Command;
 /**
  * @internal
  */
-declare function removeTextColor(): Command;
+export declare function removeTextColor(): Command;
 /**
  * @internal
  */
@@ -38,7 +38,7 @@ type TextColorCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineTextColorCommands(): TextColorCommandsExtension;
+export declare function defineTextColorCommands(): TextColorCommandsExtension;
 /**
  * @internal
  */
@@ -46,6 +46,6 @@ type TextColorExtension = Union<[TextColorSpecExtension, TextColorCommandsExtens
 /**
  * Defines the `textColor` mark and some commands for it.
  */
-declare function defineTextColor(): TextColorExtension;
-export { type TextColorAttrs, type TextColorCommandsExtension, type TextColorExtension, type TextColorSpecExtension, addTextColor, defineTextColor, defineTextColorCommands, defineTextColorSpec, removeTextColor };
+export declare function defineTextColor(): TextColorExtension;
+export type { TextColorAttrs, TextColorCommandsExtension, TextColorExtension, TextColorSpecExtension };
 //# sourceMappingURL=text-color.d.ts.map

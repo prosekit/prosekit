@@ -16,21 +16,21 @@ interface DropIndicatorProps {
   width: number;
 }
 /** @internal */
-declare const DropIndicatorPropsDeclaration: PropsDeclaration<DropIndicatorProps>;
+export declare const DropIndicatorPropsDeclaration: PropsDeclaration<DropIndicatorProps>;
 /**
  * @internal
  */
-declare function setupDropIndicator(host: HostElement, props: State<DropIndicatorProps>): void;
+export declare function setupDropIndicator(host: HostElement, props: State<DropIndicatorProps>): void;
 declare const DropIndicatorElementBase: HostElementConstructor<DropIndicatorProps>;
 /**
  * `<prosekit-drop-indicator>` custom element.
  *
  * Properties: {@link DropIndicatorProps}
  */
-declare class DropIndicatorElement extends DropIndicatorElementBase {}
+export declare class DropIndicatorElement extends DropIndicatorElementBase {}
 /**
  * @internal
  */
-declare function registerDropIndicatorElement(): void;
-export { DropIndicatorElement, type DropIndicatorProps, DropIndicatorPropsDeclaration, registerDropIndicatorElement, setupDropIndicator };
+export declare function registerDropIndicatorElement(): void;
+export type { DropIndicatorProps };
 //# sourceMappingURL=drop-indicator.d.ts.map

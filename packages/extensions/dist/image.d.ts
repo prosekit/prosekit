@@ -59,13 +59,13 @@ type ImageUploadErrorHandler = (options: ImageUploadErrorHandlerOptions) => void
  *
  * @param options
  */
-declare function uploadImage({ uploader, file, pos, replace, onError }: UploadImageOptions): Command;
+export declare function uploadImage({ uploader, file, pos, replace, onError }: UploadImageOptions): Command;
 /**
  * Replaces the temporary image URL with the final uploaded URL.
  *
  * @internal
  */
-declare function replaceImageURL(view: EditorView, oldURL: string, newURL: string): void;
+export declare function replaceImageURL(view: EditorView, oldURL: string, newURL: string): void;
 interface ImageAttrs {
   src?: string | null;
   width?: number | null;
@@ -82,7 +82,7 @@ type ImageSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineImageSpec(): ImageSpecExtension;
+export declare function defineImageSpec(): ImageSpecExtension;
 /**
  * @internal
  */
@@ -95,12 +95,12 @@ type ImageCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineImageCommands(): ImageCommandsExtension;
+export declare function defineImageCommands(): ImageCommandsExtension;
 /**
  * Returns a command that inserts an image node with the given attributes at the
  * current selection position.
  */
-declare function insertImage(attrs?: ImageAttrs): Command;
+export declare function insertImage(attrs?: ImageAttrs): Command;
 /**
  * A predicate to determine if the pasted file should be uploaded and inserted as an image.
  */
@@ -140,11 +140,11 @@ interface ImageUploadHandlerOptions {
  *
  * @param options
  */
-declare function defineImageUploadHandler({ uploader, canPaste, canDrop, onError }: ImageUploadHandlerOptions): PlainExtension;
+export declare function defineImageUploadHandler({ uploader, canPaste, canDrop, onError }: ImageUploadHandlerOptions): PlainExtension;
 /**
  * @internal
  */
 type ImageExtension = Union<[ImageSpecExtension, ImageCommandsExtension]>;
-declare function defineImage(): ImageExtension;
-export { type ImageAttrs, type ImageCanDropPredicate, type ImageCanPastePredicate, type ImageCommandsExtension, type ImageExtension, type ImageSpecExtension, type ImageUploadErrorHandler, type ImageUploadErrorHandlerOptions, type ImageUploadHandlerOptions, type UploadImageOptions, defineImage, defineImageCommands, defineImageSpec, defineImageUploadHandler, insertImage, replaceImageURL, uploadImage };
+export declare function defineImage(): ImageExtension;
+export type { ImageAttrs, ImageCanDropPredicate, ImageCanPastePredicate, ImageCommandsExtension, ImageExtension, ImageSpecExtension, ImageUploadErrorHandler, ImageUploadErrorHandlerOptions, ImageUploadHandlerOptions, UploadImageOptions };
 //# sourceMappingURL=image.d.ts.map

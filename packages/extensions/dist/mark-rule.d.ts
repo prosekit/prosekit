@@ -25,6 +25,6 @@ interface MarkRuleOptions {
  * A mark rule is something that can automatically apply marks to text if it
  * matches a certain pattern, and remove them if it doesn't match anymore.
  */
-declare function defineMarkRule(options: MarkRuleOptions): PlainExtension;
-export { type MarkRuleOptions, defineMarkRule };
+export declare function defineMarkRule(options: MarkRuleOptions): PlainExtension;
+export type { MarkRuleOptions };
 //# sourceMappingURL=mark-rule.d.ts.map

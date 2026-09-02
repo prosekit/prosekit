@@ -1,5 +1,5 @@
 import { Extension, Union } from "@prosekit/core";
-interface MentionAttrs {
+export interface MentionAttrs {
   id: string;
   value: string;
   kind: string;
@@ -7,25 +7,24 @@ interface MentionAttrs {
 /**
  * @internal
  */
-type MentionSpecExtension = Extension<{
+export type MentionSpecExtension = Extension<{
   Nodes: {
     mention: MentionAttrs;
   };
 }>;
-declare function defineMentionSpec(): MentionSpecExtension;
+export declare function defineMentionSpec(): MentionSpecExtension;
 /**
  * @internal
  */
-type MentionCommandsExtension = Extension<{
+export type MentionCommandsExtension = Extension<{
   Commands: {
     insertMention: [attrs: MentionAttrs];
   };
 }>;
-declare function defineMentionCommands(): MentionCommandsExtension;
+export declare function defineMentionCommands(): MentionCommandsExtension;
 /**
  * @internal
  */
-type MentionExtension = Union<[MentionSpecExtension, MentionCommandsExtension]>;
-declare function defineMention(): MentionExtension;
-export { MentionAttrs, MentionCommandsExtension, MentionExtension, MentionSpecExtension, defineMention, defineMentionCommands, defineMentionSpec };
+export type MentionExtension = Union<[MentionSpecExtension, MentionCommandsExtension]>;
+export declare function defineMention(): MentionExtension;
 //# sourceMappingURL=mention.d.ts.map

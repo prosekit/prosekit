@@ -1,6 +1,6 @@
 import { Command } from "@prosekit/pm/state";
 import { Extension, PlainExtension, Union } from "@prosekit/core";
-interface TextAlignOptions<NodeName extends string = string> {
+export interface TextAlignOptions<NodeName extends string = string> {
   /**
    * The names of node to add the attribute to.
    *
@@ -19,7 +19,7 @@ interface TextAlignOptions<NodeName extends string = string> {
 /**
  * @internal
  */
-type TextAlignAttrsExtension<NodeName extends string> = Extension<{
+export type TextAlignAttrsExtension<NodeName extends string> = Extension<{
   Nodes: { [K in NodeName]: {
     textAlign: string | null;
   }; };
@@ -27,14 +27,14 @@ type TextAlignAttrsExtension<NodeName extends string> = Extension<{
 /**
  * @internal
  */
-declare function setTextAlign({ types, value }: {
+export declare function setTextAlign({ types, value }: {
   types: string[];
   value: string | null;
 }): Command;
 /**
  * @internal
  */
-type TextAlignCommandsExtension = Extension<{
+export type TextAlignCommandsExtension = Extension<{
   Commands: {
     setTextAlign: [value: string | null];
   };
@@ -42,19 +42,18 @@ type TextAlignCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineTextAlignCommands(types: string[]): TextAlignCommandsExtension;
+export declare function defineTextAlignCommands(types: string[]): TextAlignCommandsExtension;
 /**
  * @internal
  */
-declare function defineTextAlignKeymap(types: string[]): PlainExtension;
+export declare function defineTextAlignKeymap(types: string[]): PlainExtension;
 /**
  * @internal
  */
-type TextAlignExtension<NodeName extends string> = Union<[TextAlignAttrsExtension<NodeName>, TextAlignCommandsExtension]>;
+export type TextAlignExtension<NodeName extends string> = Union<[TextAlignAttrsExtension<NodeName>, TextAlignCommandsExtension]>;
 /**
  * Adds a `textAlign` attribute to the specified nodes. This will be rendered as
  * a CSS `text-align` style.
  */
-declare function defineTextAlign<NodeName extends string = string>(options: TextAlignOptions<NodeName>): TextAlignExtension<NodeName>;
-export { TextAlignAttrsExtension, TextAlignCommandsExtension, TextAlignExtension, TextAlignOptions, defineTextAlign, defineTextAlignCommands, defineTextAlignKeymap, setTextAlign };
+export declare function defineTextAlign<NodeName extends string = string>(options: TextAlignOptions<NodeName>): TextAlignExtension<NodeName>;
 //# sourceMappingURL=text-align.d.ts.map

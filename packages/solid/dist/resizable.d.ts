@@ -26,7 +26,7 @@ interface ResizableRootProps {
   onResizeEnd?: (event: ResizableRootEvents['resizeEnd']) => void;
 }
 /** A Solid component that renders an `prosekit-resizable-root` custom element. */
-declare const ResizableRoot: Component<ResizableRootProps & JSX.HTMLAttributes<ResizableRootElement>>;
+export declare const ResizableRoot: Component<ResizableRootProps & JSX.HTMLAttributes<ResizableRootElement>>;
 /** Props for the {@link ResizableHandle} Solid component. */
 interface ResizableHandleProps {
   /**
@@ -37,6 +37,6 @@ interface ResizableHandleProps {
   position?: ResizableHandleProps$1['position'];
 }
 /** A Solid component that renders an `prosekit-resizable-handle` custom element. */
-declare const ResizableHandle: Component<ResizableHandleProps & JSX.HTMLAttributes<ResizableHandleElement>>;
-export { ResizableHandle, type ResizableHandleProps, ResizableRoot, type ResizableRootProps };
+export declare const ResizableHandle: Component<ResizableHandleProps & JSX.HTMLAttributes<ResizableHandleElement>>;
+export type { ResizableHandleProps, ResizableRootProps };
 //# sourceMappingURL=resizable.d.ts.map

@@ -3,7 +3,7 @@ import { InlinePopoverPopupElement, InlinePopoverPositionerElement, InlinePopove
 /** Props for the {@link InlinePopoverPopup} React component. */
 interface InlinePopoverPopupProps {}
 /** A React component that renders an `prosekit-inline-popover-popup` custom element. */
-declare const InlinePopoverPopup: ForwardRefExoticComponent<InlinePopoverPopupProps & HTMLAttributes<InlinePopoverPopupElement> & RefAttributes<InlinePopoverPopupElement>>;
+export declare const InlinePopoverPopup: ForwardRefExoticComponent<InlinePopoverPopupProps & HTMLAttributes<InlinePopoverPopupElement> & RefAttributes<InlinePopoverPopupElement>>;
 /** Props for the {@link InlinePopoverPositioner} React component. */
 interface InlinePopoverPositionerProps {
   /**
@@ -134,7 +134,7 @@ interface InlinePopoverPositionerProps {
   altBoundary?: InlinePopoverPositionerProps$1['altBoundary'];
 }
 /** A React component that renders an `prosekit-inline-popover-positioner` custom element. */
-declare const InlinePopoverPositioner: ForwardRefExoticComponent<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement> & RefAttributes<InlinePopoverPositionerElement>>;
+export declare const InlinePopoverPositioner: ForwardRefExoticComponent<InlinePopoverPositionerProps & HTMLAttributes<InlinePopoverPositionerElement> & RefAttributes<InlinePopoverPositionerElement>>;
 /** Props for the {@link InlinePopoverRoot} React component. */
 interface InlinePopoverRootProps {
   /**
@@ -183,6 +183,6 @@ interface InlinePopoverRootProps {
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 /** A React component that renders an `prosekit-inline-popover-root` custom element. */
-declare const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement> & RefAttributes<InlinePopoverRootElement>>;
-export { InlinePopoverPopup, type InlinePopoverPopupProps, InlinePopoverPositioner, type InlinePopoverPositionerProps, InlinePopoverRoot, type InlinePopoverRootProps };
+export declare const InlinePopoverRoot: ForwardRefExoticComponent<InlinePopoverRootProps & HTMLAttributes<InlinePopoverRootElement> & RefAttributes<InlinePopoverRootElement>>;
+export type { InlinePopoverPopupProps, InlinePopoverPositionerProps, InlinePopoverRootProps };
 //# sourceMappingURL=inline-popover.d.ts.map

@@ -3,7 +3,7 @@ import { Attrs } from "@prosekit/pm/model";
 /**
  * @internal
  */
-type UnderlineSpecExtension = Extension<{
+export type UnderlineSpecExtension = Extension<{
   Marks: {
     underline: Attrs;
   };
@@ -11,11 +11,11 @@ type UnderlineSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineUnderlineSpec(): UnderlineSpecExtension;
+export declare function defineUnderlineSpec(): UnderlineSpecExtension;
 /**
  * @internal
  */
-type UnderlineCommandsExtension = Extension<{
+export type UnderlineCommandsExtension = Extension<{
   Commands: {
     toggleUnderline: [];
   };
@@ -23,15 +23,14 @@ type UnderlineCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineUnderlineCommands(): UnderlineCommandsExtension;
+export declare function defineUnderlineCommands(): UnderlineCommandsExtension;
 /**
  * @internal
  */
-declare function defineUnderlineKeymap(): PlainExtension;
+export declare function defineUnderlineKeymap(): PlainExtension;
 /**
  * @internal
  */
-type UnderlineExtension = Union<[UnderlineSpecExtension, UnderlineCommandsExtension]>;
-declare function defineUnderline(): UnderlineExtension;
-export { UnderlineCommandsExtension, UnderlineExtension, UnderlineSpecExtension, defineUnderline, defineUnderlineCommands, defineUnderlineKeymap, defineUnderlineSpec };
+export type UnderlineExtension = Union<[UnderlineSpecExtension, UnderlineCommandsExtension]>;
+export declare function defineUnderline(): UnderlineExtension;
 //# sourceMappingURL=underline.d.ts.map

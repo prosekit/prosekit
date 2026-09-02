@@ -15,18 +15,18 @@ type HeadingCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineHeadingCommands(): HeadingCommandsExtension;
+export declare function defineHeadingCommands(): HeadingCommandsExtension;
 /**
  * Converts the text block to a heading when `#` is typed at the start of a new
  * line followed by a space.
  *
  * @internal
  */
-declare function defineHeadingInputRule(): PlainExtension;
+export declare function defineHeadingInputRule(): PlainExtension;
 /**
  * @internal
  */
-declare function defineHeadingKeymap(): PlainExtension;
+export declare function defineHeadingKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -38,11 +38,11 @@ type HeadingSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineHeadingSpec(): HeadingSpecExtension;
+export declare function defineHeadingSpec(): HeadingSpecExtension;
 /**
  * @internal
  */
 type HeadingExtension = Union<[HeadingSpecExtension, HeadingCommandsExtension]>;
-declare function defineHeading(): HeadingExtension;
-export { type HeadingAttrs, type HeadingCommandsExtension, type HeadingExtension, type HeadingSpecExtension, defineHeading, defineHeadingCommands, defineHeadingInputRule, defineHeadingKeymap, defineHeadingSpec };
+export declare function defineHeading(): HeadingExtension;
+export type { HeadingAttrs, HeadingCommandsExtension, HeadingExtension, HeadingSpecExtension };
 //# sourceMappingURL=heading.d.ts.map

@@ -24,7 +24,7 @@ interface MenuItemProps {
   onSelect?: (event: MenuItemEvents['select']) => void;
 }
 /** A Solid component that renders an `prosekit-menu-item` custom element. */
-declare const MenuItem: Component<MenuItemProps & JSX.HTMLAttributes<MenuItemElement>>;
+export declare const MenuItem: Component<MenuItemProps & JSX.HTMLAttributes<MenuItemElement>>;
 /** Props for the {@link MenuPopup} Solid component. */
 interface MenuPopupProps {
   /**
@@ -36,7 +36,7 @@ interface MenuPopupProps {
   eventTarget?: MenuPopupProps$1['eventTarget'];
 }
 /** A Solid component that renders an `prosekit-menu-popup` custom element. */
-declare const MenuPopup: Component<MenuPopupProps & JSX.HTMLAttributes<MenuPopupElement>>;
+export declare const MenuPopup: Component<MenuPopupProps & JSX.HTMLAttributes<MenuPopupElement>>;
 /** Props for the {@link MenuPositioner} Solid component. */
 interface MenuPositionerProps {
   /**
@@ -168,7 +168,7 @@ interface MenuPositionerProps {
   altBoundary?: MenuPositionerProps$1['altBoundary'];
 }
 /** A Solid component that renders an `prosekit-menu-positioner` custom element. */
-declare const MenuPositioner: Component<MenuPositionerProps & JSX.HTMLAttributes<MenuPositionerElement>>;
+export declare const MenuPositioner: Component<MenuPositionerProps & JSX.HTMLAttributes<MenuPositionerElement>>;
 /** Props for the {@link MenuRoot} Solid component. */
 interface MenuRootProps {
   /**
@@ -190,7 +190,7 @@ interface MenuRootProps {
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-menu-root` custom element. */
-declare const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElement>>;
+export declare const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElement>>;
 /** Props for the {@link MenuSubmenuRoot} Solid component. */
 interface MenuSubmenuRootProps {
   /**
@@ -212,7 +212,7 @@ interface MenuSubmenuRootProps {
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-menu-submenu-root` custom element. */
-declare const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttributes<MenuSubmenuRootElement>>;
+export declare const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttributes<MenuSubmenuRootElement>>;
 /** Props for the {@link MenuSubmenuTrigger} Solid component. */
 interface MenuSubmenuTriggerProps {
   /**
@@ -229,7 +229,7 @@ interface MenuSubmenuTriggerProps {
   disabled?: MenuSubmenuTriggerProps$1['disabled'];
 }
 /** A Solid component that renders an `prosekit-menu-submenu-trigger` custom element. */
-declare const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps & JSX.HTMLAttributes<MenuSubmenuTriggerElement>>;
+export declare const MenuSubmenuTrigger: Component<MenuSubmenuTriggerProps & JSX.HTMLAttributes<MenuSubmenuTriggerElement>>;
 /** Props for the {@link MenuTrigger} Solid component. */
 interface MenuTriggerProps {
   /**
@@ -242,6 +242,6 @@ interface MenuTriggerProps {
   onOpenChange?: (event: MenuTriggerEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-menu-trigger` custom element. */
-declare const MenuTrigger: Component<MenuTriggerProps & JSX.HTMLAttributes<MenuTriggerElement>>;
-export { MenuItem, type MenuItemProps, MenuPopup, type MenuPopupProps, MenuPositioner, type MenuPositionerProps, MenuRoot, type MenuRootProps, MenuSubmenuRoot, type MenuSubmenuRootProps, MenuSubmenuTrigger, type MenuSubmenuTriggerProps, MenuTrigger, type MenuTriggerProps };
+export declare const MenuTrigger: Component<MenuTriggerProps & JSX.HTMLAttributes<MenuTriggerElement>>;
+export type { MenuItemProps, MenuPopupProps, MenuPositionerProps, MenuRootProps, MenuSubmenuRootProps, MenuSubmenuTriggerProps, MenuTriggerProps };
 //# sourceMappingURL=menu.d.ts.map

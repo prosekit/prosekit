@@ -12,11 +12,11 @@ type HardBreakCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineHardBreakCommands(): HardBreakCommandsExtension;
+export declare function defineHardBreakCommands(): HardBreakCommandsExtension;
 /**
  * @internal
  */
-declare function defineHardBreakKeymap(): PlainExtension;
+export declare function defineHardBreakKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -28,11 +28,11 @@ type HardBreakSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineHardBreakSpec(): HardBreakSpecExtension;
+export declare function defineHardBreakSpec(): HardBreakSpecExtension;
 /**
  * @internal
  */
 type HardBreakExtension = Union<[HardBreakSpecExtension, HardBreakCommandsExtension]>;
-declare function defineHardBreak(): HardBreakExtension;
-export { type HardBreakCommandsExtension, type HardBreakExtension, type HardBreakSpecExtension, defineHardBreak, defineHardBreakCommands, defineHardBreakKeymap, defineHardBreakSpec };
+export declare function defineHardBreak(): HardBreakExtension;
+export type { HardBreakCommandsExtension, HardBreakExtension, HardBreakSpecExtension };
 //# sourceMappingURL=hard-break.d.ts.map

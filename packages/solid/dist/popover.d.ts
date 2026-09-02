@@ -3,7 +3,7 @@ import { PopoverPopupElement, PopoverPositionerElement, PopoverPositionerProps a
 /** Props for the {@link PopoverPopup} Solid component. */
 interface PopoverPopupProps {}
 /** A Solid component that renders an `prosekit-popover-popup` custom element. */
-declare const PopoverPopup: Component<PopoverPopupProps & JSX.HTMLAttributes<PopoverPopupElement>>;
+export declare const PopoverPopup: Component<PopoverPopupProps & JSX.HTMLAttributes<PopoverPopupElement>>;
 /** Props for the {@link PopoverPositioner} Solid component. */
 interface PopoverPositionerProps {
   /**
@@ -135,7 +135,7 @@ interface PopoverPositionerProps {
   altBoundary?: PopoverPositionerProps$1['altBoundary'];
 }
 /** A Solid component that renders an `prosekit-popover-positioner` custom element. */
-declare const PopoverPositioner: Component<PopoverPositionerProps & JSX.HTMLAttributes<PopoverPositionerElement>>;
+export declare const PopoverPositioner: Component<PopoverPositionerProps & JSX.HTMLAttributes<PopoverPositionerElement>>;
 /** Props for the {@link PopoverRoot} Solid component. */
 interface PopoverRootProps {
   /**
@@ -164,7 +164,7 @@ interface PopoverRootProps {
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-popover-root` custom element. */
-declare const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<PopoverRootElement>>;
+export declare const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<PopoverRootElement>>;
 /** Props for the {@link PopoverTrigger} Solid component. */
 interface PopoverTriggerProps {
   /**
@@ -193,6 +193,6 @@ interface PopoverTriggerProps {
   onOpenChange?: (event: PopoverTriggerEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-popover-trigger` custom element. */
-declare const PopoverTrigger: Component<PopoverTriggerProps & JSX.HTMLAttributes<PopoverTriggerElement>>;
-export { PopoverPopup, type PopoverPopupProps, PopoverPositioner, type PopoverPositionerProps, PopoverRoot, type PopoverRootProps, PopoverTrigger, type PopoverTriggerProps };
+export declare const PopoverTrigger: Component<PopoverTriggerProps & JSX.HTMLAttributes<PopoverTriggerElement>>;
+export type { PopoverPopupProps, PopoverPositionerProps, PopoverRootProps, PopoverTriggerProps };
 //# sourceMappingURL=popover.d.ts.map

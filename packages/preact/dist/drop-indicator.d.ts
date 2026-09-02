@@ -18,6 +18,6 @@ interface DropIndicatorProps {
   width?: DropIndicatorProps$1['width'];
 }
 /** A Preact component that renders an `prosekit-drop-indicator` custom element. */
-declare const DropIndicator: ForwardRefExoticComponent<DropIndicatorProps & HTMLAttributes<DropIndicatorElement> & RefAttributes<DropIndicatorElement>>;
-export { DropIndicator, type DropIndicatorProps };
+export declare const DropIndicator: ForwardRefExoticComponent<DropIndicatorProps & HTMLAttributes<DropIndicatorElement> & RefAttributes<DropIndicatorElement>>;
+export type { DropIndicatorProps };
 //# sourceMappingURL=drop-indicator.d.ts.map

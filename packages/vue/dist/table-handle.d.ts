@@ -3,7 +3,7 @@ import { TableHandleColumnMenuRootProps as TableHandleColumnMenuRootProps$1, Tab
 /** Props for the {@link TableHandleColumnPopup} Vue component. */
 interface TableHandleColumnPopupProps {}
 /** A Vue component that renders an `prosekit-table-handle-column-popup` custom element. */
-declare const TableHandleColumnPopup: DefineSetupFnComponent<TableHandleColumnPopupProps & HTMLAttributes>;
+export declare const TableHandleColumnPopup: DefineSetupFnComponent<TableHandleColumnPopupProps & HTMLAttributes>;
 /** Props for the {@link TableHandleColumnPositioner} Vue component. */
 interface TableHandleColumnPositionerProps {
   /**
@@ -134,7 +134,7 @@ interface TableHandleColumnPositionerProps {
   editor?: TableHandleColumnPositionerProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-column-positioner` custom element. */
-declare const TableHandleColumnPositioner: DefineSetupFnComponent<TableHandleColumnPositionerProps & HTMLAttributes>;
+export declare const TableHandleColumnPositioner: DefineSetupFnComponent<TableHandleColumnPositionerProps & HTMLAttributes>;
 /** Props for the {@link TableHandleColumnMenuRoot} Vue component. */
 interface TableHandleColumnMenuRootProps {
   /**
@@ -154,7 +154,7 @@ interface TableHandleColumnMenuRootProps {
   disabled?: TableHandleColumnMenuRootProps$1['disabled'];
 }
 /** A Vue component that renders an `prosekit-table-handle-column-menu-root` custom element. */
-declare const TableHandleColumnMenuRoot: DefineSetupFnComponent<TableHandleColumnMenuRootProps & HTMLAttributes>;
+export declare const TableHandleColumnMenuRoot: DefineSetupFnComponent<TableHandleColumnMenuRootProps & HTMLAttributes>;
 /** Props for the {@link TableHandleColumnMenuTrigger} Vue component. */
 interface TableHandleColumnMenuTriggerProps {
   /**
@@ -164,7 +164,7 @@ interface TableHandleColumnMenuTriggerProps {
   editor?: TableHandleColumnMenuTriggerProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-column-menu-trigger` custom element. */
-declare const TableHandleColumnMenuTrigger: DefineSetupFnComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes>;
+export declare const TableHandleColumnMenuTrigger: DefineSetupFnComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes>;
 /** Props for the {@link TableHandleDragPreview} Vue component. */
 interface TableHandleDragPreviewProps {
   /**
@@ -174,7 +174,7 @@ interface TableHandleDragPreviewProps {
   editor?: TableHandleDragPreviewProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-drag-preview` custom element. */
-declare const TableHandleDragPreview: DefineSetupFnComponent<TableHandleDragPreviewProps & HTMLAttributes>;
+export declare const TableHandleDragPreview: DefineSetupFnComponent<TableHandleDragPreviewProps & HTMLAttributes>;
 /** Props for the {@link TableHandleDropIndicator} Vue component. */
 interface TableHandleDropIndicatorProps {
   /**
@@ -184,7 +184,7 @@ interface TableHandleDropIndicatorProps {
   editor?: TableHandleDropIndicatorProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-drop-indicator` custom element. */
-declare const TableHandleDropIndicator: DefineSetupFnComponent<TableHandleDropIndicatorProps & HTMLAttributes>;
+export declare const TableHandleDropIndicator: DefineSetupFnComponent<TableHandleDropIndicatorProps & HTMLAttributes>;
 /** Props for the {@link TableHandleRoot} Vue component. */
 interface TableHandleRootProps {
   /**
@@ -196,11 +196,11 @@ interface TableHandleRootProps {
   editor?: TableHandleRootProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-root` custom element. */
-declare const TableHandleRoot: DefineSetupFnComponent<TableHandleRootProps & HTMLAttributes>;
+export declare const TableHandleRoot: DefineSetupFnComponent<TableHandleRootProps & HTMLAttributes>;
 /** Props for the {@link TableHandleRowPopup} Vue component. */
 interface TableHandleRowPopupProps {}
 /** A Vue component that renders an `prosekit-table-handle-row-popup` custom element. */
-declare const TableHandleRowPopup: DefineSetupFnComponent<TableHandleRowPopupProps & HTMLAttributes>;
+export declare const TableHandleRowPopup: DefineSetupFnComponent<TableHandleRowPopupProps & HTMLAttributes>;
 /** Props for the {@link TableHandleRowPositioner} Vue component. */
 interface TableHandleRowPositionerProps {
   /**
@@ -331,7 +331,7 @@ interface TableHandleRowPositionerProps {
   editor?: TableHandleRowPositionerProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-row-positioner` custom element. */
-declare const TableHandleRowPositioner: DefineSetupFnComponent<TableHandleRowPositionerProps & HTMLAttributes>;
+export declare const TableHandleRowPositioner: DefineSetupFnComponent<TableHandleRowPositionerProps & HTMLAttributes>;
 /** Props for the {@link TableHandleRowMenuRoot} Vue component. */
 interface TableHandleRowMenuRootProps {
   /**
@@ -351,7 +351,7 @@ interface TableHandleRowMenuRootProps {
   disabled?: TableHandleRowMenuRootProps$1['disabled'];
 }
 /** A Vue component that renders an `prosekit-table-handle-row-menu-root` custom element. */
-declare const TableHandleRowMenuRoot: DefineSetupFnComponent<TableHandleRowMenuRootProps & HTMLAttributes>;
+export declare const TableHandleRowMenuRoot: DefineSetupFnComponent<TableHandleRowMenuRootProps & HTMLAttributes>;
 /** Props for the {@link TableHandleRowMenuTrigger} Vue component. */
 interface TableHandleRowMenuTriggerProps {
   /**
@@ -361,6 +361,6 @@ interface TableHandleRowMenuTriggerProps {
   editor?: TableHandleRowMenuTriggerProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-table-handle-row-menu-trigger` custom element. */
-declare const TableHandleRowMenuTrigger: DefineSetupFnComponent<TableHandleRowMenuTriggerProps & HTMLAttributes>;
-export { TableHandleColumnMenuRoot, type TableHandleColumnMenuRootProps, TableHandleColumnMenuTrigger, type TableHandleColumnMenuTriggerProps, TableHandleColumnPopup, type TableHandleColumnPopupProps, TableHandleColumnPositioner, type TableHandleColumnPositionerProps, TableHandleDragPreview, type TableHandleDragPreviewProps, TableHandleDropIndicator, type TableHandleDropIndicatorProps, TableHandleRoot, type TableHandleRootProps, TableHandleRowMenuRoot, type TableHandleRowMenuRootProps, TableHandleRowMenuTrigger, type TableHandleRowMenuTriggerProps, TableHandleRowPopup, type TableHandleRowPopupProps, TableHandleRowPositioner, type TableHandleRowPositionerProps };
+export declare const TableHandleRowMenuTrigger: DefineSetupFnComponent<TableHandleRowMenuTriggerProps & HTMLAttributes>;
+export type { TableHandleColumnMenuRootProps, TableHandleColumnMenuTriggerProps, TableHandleColumnPopupProps, TableHandleColumnPositionerProps, TableHandleDragPreviewProps, TableHandleDropIndicatorProps, TableHandleRootProps, TableHandleRowMenuRootProps, TableHandleRowMenuTriggerProps, TableHandleRowPopupProps, TableHandleRowPositionerProps };
 //# sourceMappingURL=table-handle.d.ts.map

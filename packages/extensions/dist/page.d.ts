@@ -12,11 +12,11 @@ type PageBreakCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function insertPageBreak(): Command;
+export declare function insertPageBreak(): Command;
 /**
  * @internal
  */
-declare function definePageBreakCommands(): PageBreakCommandsExtension;
+export declare function definePageBreakCommands(): PageBreakCommandsExtension;
 /**
  * @internal
  */
@@ -24,7 +24,7 @@ type PageBreakKeymapExtension = PlainExtension;
 /**
  * @internal
  */
-declare function definePageBreakKeymap(): PageBreakKeymapExtension;
+export declare function definePageBreakKeymap(): PageBreakKeymapExtension;
 /**
  * @internal
  */
@@ -36,7 +36,7 @@ type PageBreakSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function definePageBreakSpec(): PageBreakSpecExtension;
+export declare function definePageBreakSpec(): PageBreakSpecExtension;
 declare module '@prosekit/pm/model' {
   interface NodeSpec {
     pageBreak?: boolean | undefined;
@@ -46,7 +46,7 @@ declare module '@prosekit/pm/model' {
  * @internal
  */
 type PageBreakExtension = Union<[PageBreakSpecExtension, PageBreakCommandsExtension, PageBreakKeymapExtension]>;
-declare function definePageBreak(): PageBreakExtension;
+export declare function definePageBreak(): PageBreakExtension;
 interface PageRenderingOptions {
   /**
    * The width of the page in px.
@@ -85,10 +85,10 @@ interface PageRenderingOptions {
    */
   marginLeft?: number;
 }
-declare function definePageRendering(options?: PageRenderingOptions): PageRenderingExtension;
+export declare function definePageRendering(options?: PageRenderingOptions): PageRenderingExtension;
 /**
  * @internal
  */
 type PageRenderingExtension = Extension;
-export { type PageBreakCommandsExtension, type PageBreakExtension, type PageBreakKeymapExtension, type PageBreakSpecExtension, type PageRenderingExtension, type PageRenderingOptions, definePageBreak, definePageBreakCommands, definePageBreakKeymap, definePageBreakSpec, definePageRendering, insertPageBreak };
+export type { PageBreakCommandsExtension, PageBreakExtension, PageBreakKeymapExtension, PageBreakSpecExtension, PageRenderingExtension, PageRenderingOptions };
 //# sourceMappingURL=page.d.ts.map

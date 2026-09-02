@@ -3,7 +3,7 @@ import { AutocompleteEmptyElement, AutocompleteItemElement, AutocompleteItemEven
 /** Props for the {@link AutocompleteEmpty} React component. */
 interface AutocompleteEmptyProps {}
 /** A React component that renders an `prosekit-autocomplete-empty` custom element. */
-declare const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>>;
+export declare const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>>;
 /** Props for the {@link AutocompleteItem} React component. */
 interface AutocompleteItemProps {
   /**
@@ -24,7 +24,7 @@ interface AutocompleteItemProps {
   onSelect?: (event: AutocompleteItemEvents['select']) => void;
 }
 /** A React component that renders an `prosekit-autocomplete-item` custom element. */
-declare const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>>;
+export declare const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>>;
 /** Props for the {@link AutocompletePopup} React component. */
 interface AutocompletePopupProps {
   /**
@@ -39,7 +39,7 @@ interface AutocompletePopupProps {
   onValuesChange?: (event: AutocompletePopupEvents['valuesChange']) => void;
 }
 /** A React component that renders an `prosekit-autocomplete-popup` custom element. */
-declare const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>>;
+export declare const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>>;
 /** Props for the {@link AutocompletePositioner} React component. */
 interface AutocompletePositionerProps {
   /**
@@ -146,7 +146,7 @@ interface AutocompletePositionerProps {
   altBoundary?: AutocompletePositionerProps$1['altBoundary'];
 }
 /** A React component that renders an `prosekit-autocomplete-positioner` custom element. */
-declare const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement> & RefAttributes<AutocompletePositionerElement>>;
+export declare const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement> & RefAttributes<AutocompletePositionerElement>>;
 /** Props for the {@link AutocompleteRoot} React component. */
 interface AutocompleteRootProps {
   /**
@@ -212,6 +212,6 @@ interface AutocompleteRootProps {
   onValuesChange?: (event: AutocompleteRootEvents['valuesChange']) => void;
 }
 /** A React component that renders an `prosekit-autocomplete-root` custom element. */
-declare const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>>;
-export { AutocompleteEmpty, type AutocompleteEmptyProps, AutocompleteItem, type AutocompleteItemProps, AutocompletePopup, type AutocompletePopupProps, AutocompletePositioner, type AutocompletePositionerProps, AutocompleteRoot, type AutocompleteRootProps };
+export declare const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>>;
+export type { AutocompleteEmptyProps, AutocompleteItemProps, AutocompletePopupProps, AutocompletePositionerProps, AutocompleteRootProps };
 //# sourceMappingURL=autocomplete.d.ts.map

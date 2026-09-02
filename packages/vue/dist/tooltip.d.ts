@@ -3,7 +3,7 @@ import { TooltipPositionerProps as TooltipPositionerProps$1, TooltipRootEvents, 
 /** Props for the {@link TooltipPopup} Vue component. */
 interface TooltipPopupProps {}
 /** A Vue component that renders an `prosekit-tooltip-popup` custom element. */
-declare const TooltipPopup: DefineSetupFnComponent<TooltipPopupProps & HTMLAttributes>;
+export declare const TooltipPopup: DefineSetupFnComponent<TooltipPopupProps & HTMLAttributes>;
 /** Props for the {@link TooltipPositioner} Vue component. */
 interface TooltipPositionerProps {
   /**
@@ -135,7 +135,7 @@ interface TooltipPositionerProps {
   altBoundary?: TooltipPositionerProps$1['altBoundary'];
 }
 /** A Vue component that renders an `prosekit-tooltip-positioner` custom element. */
-declare const TooltipPositioner: DefineSetupFnComponent<TooltipPositionerProps & HTMLAttributes>;
+export declare const TooltipPositioner: DefineSetupFnComponent<TooltipPositionerProps & HTMLAttributes>;
 /** Props for the {@link TooltipRoot} Vue component. */
 interface TooltipRootProps {
   /**
@@ -157,7 +157,7 @@ interface TooltipRootProps {
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-tooltip-root` custom element. */
-declare const TooltipRoot: DefineSetupFnComponent<TooltipRootProps & HTMLAttributes>;
+export declare const TooltipRoot: DefineSetupFnComponent<TooltipRootProps & HTMLAttributes>;
 /** Props for the {@link TooltipTrigger} Vue component. */
 interface TooltipTriggerProps {
   /**
@@ -177,6 +177,6 @@ interface TooltipTriggerProps {
   closeDelay?: TooltipTriggerProps$1['closeDelay'];
 }
 /** A Vue component that renders an `prosekit-tooltip-trigger` custom element. */
-declare const TooltipTrigger: DefineSetupFnComponent<TooltipTriggerProps & HTMLAttributes>;
-export { TooltipPopup, type TooltipPopupProps, TooltipPositioner, type TooltipPositionerProps, TooltipRoot, type TooltipRootProps, TooltipTrigger, type TooltipTriggerProps };
+export declare const TooltipTrigger: DefineSetupFnComponent<TooltipTriggerProps & HTMLAttributes>;
+export type { TooltipPopupProps, TooltipPositionerProps, TooltipRootProps, TooltipTriggerProps };
 //# sourceMappingURL=tooltip.d.ts.map

@@ -9,16 +9,16 @@ type HorizontalRuleCommandsExtension = Extension<{
 /**
  * Returns a command that inserts a horizontal rule at the current selection.
  */
-declare function insertHorizontalRule(): Command;
-declare function defineHorizontalRuleCommands(): HorizontalRuleCommandsExtension;
-declare function defineHorizontalRuleInputRule(): PlainExtension;
+export declare function insertHorizontalRule(): Command;
+export declare function defineHorizontalRuleCommands(): HorizontalRuleCommandsExtension;
+export declare function defineHorizontalRuleInputRule(): PlainExtension;
 type HorizontalRuleSpecExtension = Extension<{
   Nodes: {
     horizontalRule: Attrs;
   };
 }>;
-declare function defineHorizontalRuleSpec(): HorizontalRuleSpecExtension;
+export declare function defineHorizontalRuleSpec(): HorizontalRuleSpecExtension;
 type HorizontalRuleExtension = Union<[HorizontalRuleSpecExtension, HorizontalRuleCommandsExtension]>;
-declare function defineHorizontalRule(): HorizontalRuleExtension;
-export { type HorizontalRuleCommandsExtension, type HorizontalRuleExtension, type HorizontalRuleSpecExtension, defineHorizontalRule, defineHorizontalRuleCommands, defineHorizontalRuleInputRule, defineHorizontalRuleSpec, insertHorizontalRule };
+export declare function defineHorizontalRule(): HorizontalRuleExtension;
+export type { HorizontalRuleCommandsExtension, HorizontalRuleExtension, HorizontalRuleSpecExtension };
 //# sourceMappingURL=horizontal-rule.d.ts.map

@@ -93,7 +93,7 @@ interface AutocompleteRuleOptions {
 /**
  * An autocomplete rule that can be used to create an autocomplete extension.
  */
-declare class AutocompleteRule {
+export declare class AutocompleteRule {
   /** @internal */
   readonly regex: RegExp;
   /** @internal */
@@ -116,7 +116,7 @@ declare class AutocompleteRule {
  * with the class `prosekit-autocomplete-match` and a `data-autocomplete-match-text`
  * attribute containing the full matched string.
  */
-declare function defineAutocomplete(rule: AutocompleteRule): Extension;
+export declare function defineAutocomplete(rule: AutocompleteRule): Extension;
 /**
  * Tags a transaction so that, when it is applied, autocomplete re-scans the text
  * before the cursor and opens the menu if a rule matches. Returns the same
@@ -127,6 +127,6 @@ declare function defineAutocomplete(rule: AutocompleteRule): Extension;
  * trigger text in your own command, without dispatching a second transaction. It
  * is intended for an empty (cursor) selection.
  */
-declare function triggerAutocomplete(tr: Transaction): Transaction;
-export { AutocompleteRule, type AutocompleteRuleOptions, type CanMatchOptions, type CanMatchPredicate, type MatchHandler, type MatchHandlerOptions, defineAutocomplete, triggerAutocomplete };
+export declare function triggerAutocomplete(tr: Transaction): Transaction;
+export type { AutocompleteRuleOptions, CanMatchOptions, CanMatchPredicate, MatchHandler, MatchHandlerOptions };
 //# sourceMappingURL=autocomplete.d.ts.map

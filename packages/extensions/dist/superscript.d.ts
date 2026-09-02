@@ -11,7 +11,7 @@ type SuperscriptCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineSuperscriptCommands(): SuperscriptCommandsExtension;
+export declare function defineSuperscriptCommands(): SuperscriptCommandsExtension;
 /**
  * @internal
  */
@@ -23,11 +23,11 @@ type SuperscriptSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineSuperscriptSpec(): SuperscriptSpecExtension;
+export declare function defineSuperscriptSpec(): SuperscriptSpecExtension;
 /**
  * @internal
  */
 type SuperscriptExtension = Union<[SuperscriptSpecExtension, SuperscriptCommandsExtension]>;
-declare function defineSuperscript(): SuperscriptExtension;
-export { type SuperscriptCommandsExtension, type SuperscriptExtension, type SuperscriptSpecExtension, defineSuperscript, defineSuperscriptCommands, defineSuperscriptSpec };
+export declare function defineSuperscript(): SuperscriptExtension;
+export type { SuperscriptCommandsExtension, SuperscriptExtension, SuperscriptSpecExtension };
 //# sourceMappingURL=superscript.d.ts.map

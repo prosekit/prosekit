@@ -3,7 +3,7 @@ import { PopoverPositionerProps as PopoverPositionerProps$1, PopoverRootEvents, 
 /** Props for the {@link PopoverPopup} Vue component. */
 interface PopoverPopupProps {}
 /** A Vue component that renders an `prosekit-popover-popup` custom element. */
-declare const PopoverPopup: DefineSetupFnComponent<PopoverPopupProps & HTMLAttributes>;
+export declare const PopoverPopup: DefineSetupFnComponent<PopoverPopupProps & HTMLAttributes>;
 /** Props for the {@link PopoverPositioner} Vue component. */
 interface PopoverPositionerProps {
   /**
@@ -135,7 +135,7 @@ interface PopoverPositionerProps {
   altBoundary?: PopoverPositionerProps$1['altBoundary'];
 }
 /** A Vue component that renders an `prosekit-popover-positioner` custom element. */
-declare const PopoverPositioner: DefineSetupFnComponent<PopoverPositionerProps & HTMLAttributes>;
+export declare const PopoverPositioner: DefineSetupFnComponent<PopoverPositionerProps & HTMLAttributes>;
 /** Props for the {@link PopoverRoot} Vue component. */
 interface PopoverRootProps {
   /**
@@ -164,7 +164,7 @@ interface PopoverRootProps {
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-popover-root` custom element. */
-declare const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttributes>;
+export declare const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttributes>;
 /** Props for the {@link PopoverTrigger} Vue component. */
 interface PopoverTriggerProps {
   /**
@@ -193,6 +193,6 @@ interface PopoverTriggerProps {
   onOpenChange?: (event: PopoverTriggerEvents['openChange']) => void;
 }
 /** A Vue component that renders an `prosekit-popover-trigger` custom element. */
-declare const PopoverTrigger: DefineSetupFnComponent<PopoverTriggerProps & HTMLAttributes>;
-export { PopoverPopup, type PopoverPopupProps, PopoverPositioner, type PopoverPositionerProps, PopoverRoot, type PopoverRootProps, PopoverTrigger, type PopoverTriggerProps };
+export declare const PopoverTrigger: DefineSetupFnComponent<PopoverTriggerProps & HTMLAttributes>;
+export type { PopoverPopupProps, PopoverPositionerProps, PopoverRootProps, PopoverTriggerProps };
 //# sourceMappingURL=popover.d.ts.map

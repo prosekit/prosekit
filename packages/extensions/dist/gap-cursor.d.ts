@@ -15,6 +15,6 @@ type GapCursorExtension = PlainExtension;
  * [prosemirror-gapcursor](https://github.com/ProseMirror/prosemirror-gapcursor)
  * for more information.
  */
-declare function defineGapCursor(): GapCursorExtension;
-export { type GapCursorExtension, defineGapCursor };
+export declare function defineGapCursor(): GapCursorExtension;
+export type { GapCursorExtension };
 //# sourceMappingURL=gap-cursor.d.ts.map

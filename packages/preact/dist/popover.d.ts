@@ -4,7 +4,7 @@ import { PopoverPopupElement, PopoverPositionerElement, PopoverPositionerProps a
 /** Props for the {@link PopoverPopup} Preact component. */
 interface PopoverPopupProps {}
 /** A Preact component that renders an `prosekit-popover-popup` custom element. */
-declare const PopoverPopup: ForwardRefExoticComponent<PopoverPopupProps & HTMLAttributes<PopoverPopupElement> & RefAttributes<PopoverPopupElement>>;
+export declare const PopoverPopup: ForwardRefExoticComponent<PopoverPopupProps & HTMLAttributes<PopoverPopupElement> & RefAttributes<PopoverPopupElement>>;
 /** Props for the {@link PopoverPositioner} Preact component. */
 interface PopoverPositionerProps {
   /**
@@ -136,7 +136,7 @@ interface PopoverPositionerProps {
   altBoundary?: PopoverPositionerProps$1['altBoundary'];
 }
 /** A Preact component that renders an `prosekit-popover-positioner` custom element. */
-declare const PopoverPositioner: ForwardRefExoticComponent<PopoverPositionerProps & HTMLAttributes<PopoverPositionerElement> & RefAttributes<PopoverPositionerElement>>;
+export declare const PopoverPositioner: ForwardRefExoticComponent<PopoverPositionerProps & HTMLAttributes<PopoverPositionerElement> & RefAttributes<PopoverPositionerElement>>;
 /** Props for the {@link PopoverRoot} Preact component. */
 interface PopoverRootProps {
   /**
@@ -165,7 +165,7 @@ interface PopoverRootProps {
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
 }
 /** A Preact component that renders an `prosekit-popover-root` custom element. */
-declare const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>>;
+export declare const PopoverRoot: ForwardRefExoticComponent<PopoverRootProps & HTMLAttributes<PopoverRootElement> & RefAttributes<PopoverRootElement>>;
 /** Props for the {@link PopoverTrigger} Preact component. */
 interface PopoverTriggerProps {
   /**
@@ -194,6 +194,6 @@ interface PopoverTriggerProps {
   onOpenChange?: (event: PopoverTriggerEvents['openChange']) => void;
 }
 /** A Preact component that renders an `prosekit-popover-trigger` custom element. */
-declare const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement> & RefAttributes<PopoverTriggerElement>>;
-export { PopoverPopup, type PopoverPopupProps, PopoverPositioner, type PopoverPositionerProps, PopoverRoot, type PopoverRootProps, PopoverTrigger, type PopoverTriggerProps };
+export declare const PopoverTrigger: ForwardRefExoticComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement> & RefAttributes<PopoverTriggerElement>>;
+export type { PopoverPopupProps, PopoverPositionerProps, PopoverRootProps, PopoverTriggerProps };
 //# sourceMappingURL=popover.d.ts.map

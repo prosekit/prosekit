@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, expectTypeOf, it } from 'vitest'
 
 import { insertText } from '../commands/insert-text.ts'
 import { wrap } from '../commands/wrap.ts'
 import { defineTestExtension, setupTest } from '../testing/index.ts'
 import type { NodeJSON } from '../types/model.ts'
 
-import { createEditor } from './editor.ts'
+import { createEditor, type Editor } from './editor.ts'
 
 describe('createEditor', () => {
   it('can mount the editor', () => {
@@ -175,5 +175,15 @@ describe('createEditor', () => {
 
     expect(editor.canExec(wrap({ type: 'paragraph' }))).toBe(false)
     expect(editor.commands.wrap.canExec({ type: 'paragraph' })).toBe(false)
+  })
+})
+
+describe('Editor<any>', () => {
+  it('accepts any typed editor', () => {
+    const { editor } = setupTest()
+    const anyEditor: Editor = editor
+    expectTypeOf(anyEditor.commands).not.toBeNever()
+    expectTypeOf(anyEditor.nodes).not.toBeNever()
+    expectTypeOf(anyEditor.marks).not.toBeNever()
   })
 })

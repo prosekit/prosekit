@@ -45,3 +45,8 @@ minimumReleaseAgeExclude:
   - "prosemirror-view"
   - "prosemirror-highlight"
   - happy-dom@20.12.0
+
+overrides:
+  "rolldown-plugin-dts": "https://pkg.pr.new/rolldown-plugin-dts@292"
+
+blockExoticSubdeps: false

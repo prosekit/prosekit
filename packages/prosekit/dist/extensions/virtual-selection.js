@@ -1,0 +1,2 @@
+export * from "@prosekit/extensions/virtual-selection";
+export {};

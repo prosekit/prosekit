@@ -22,7 +22,7 @@ import { VirtualSelectionExtension } from "@prosekit/extensions/virtual-selectio
 /**
  * @internal
  */
-type BasicExtension = Union<[DocExtension, TextExtension, ParagraphExtension, HeadingExtension, ListExtension, BlockquoteExtension, ImageExtension, HorizontalRuleExtension, HardBreakExtension, TableExtension, CodeBlockExtension, ItalicExtension, BoldExtension, UnderlineExtension, StrikeExtension, CodeExtension, LinkExtension, BaseKeymapExtension, BaseCommandsExtension, HistoryExtension, GapCursorExtension, VirtualSelectionExtension, ModClickPreventionExtension]>;
+export type BasicExtension = Union<[DocExtension, TextExtension, ParagraphExtension, HeadingExtension, ListExtension, BlockquoteExtension, ImageExtension, HorizontalRuleExtension, HardBreakExtension, TableExtension, CodeBlockExtension, ItalicExtension, BoldExtension, UnderlineExtension, StrikeExtension, CodeExtension, LinkExtension, BaseKeymapExtension, BaseCommandsExtension, HistoryExtension, GapCursorExtension, VirtualSelectionExtension, ModClickPreventionExtension]>;
 /**
  * Define a basic extension that includes some common functionality. You can
  * copy this function and customize it to your needs.
@@ -53,6 +53,5 @@ type BasicExtension = Union<[DocExtension, TextExtension, ParagraphExtension, He
  * - {@link defineVirtualSelection}
  * - {@link defineModClickPrevention}
  */
-declare function defineBasicExtension(): BasicExtension;
-export { BasicExtension, defineBasicExtension };
+export declare function defineBasicExtension(): BasicExtension;
 //# sourceMappingURL=index.d.ts.map

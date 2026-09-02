@@ -11,7 +11,7 @@ interface BlockHandleAddProps {
   editor?: BlockHandleAddProps$1['editor'];
 }
 /** A React component that renders an `prosekit-block-handle-add` custom element. */
-declare const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>>;
+export declare const BlockHandleAdd: ForwardRefExoticComponent<BlockHandleAddProps & HTMLAttributes<BlockHandleAddElement> & RefAttributes<BlockHandleAddElement>>;
 /** Props for the {@link BlockHandleDraggable} React component. */
 interface BlockHandleDraggableProps {
   /**
@@ -23,11 +23,11 @@ interface BlockHandleDraggableProps {
   editor?: BlockHandleDraggableProps$1['editor'];
 }
 /** A React component that renders an `prosekit-block-handle-draggable` custom element. */
-declare const BlockHandleDraggable: ForwardRefExoticComponent<BlockHandleDraggableProps & HTMLAttributes<BlockHandleDraggableElement> & RefAttributes<BlockHandleDraggableElement>>;
+export declare const BlockHandleDraggable: ForwardRefExoticComponent<BlockHandleDraggableProps & HTMLAttributes<BlockHandleDraggableElement> & RefAttributes<BlockHandleDraggableElement>>;
 /** Props for the {@link BlockHandlePopup} React component. */
 interface BlockHandlePopupProps {}
 /** A React component that renders an `prosekit-block-handle-popup` custom element. */
-declare const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement> & RefAttributes<BlockHandlePopupElement>>;
+export declare const BlockHandlePopup: ForwardRefExoticComponent<BlockHandlePopupProps & HTMLAttributes<BlockHandlePopupElement> & RefAttributes<BlockHandlePopupElement>>;
 /** Props for the {@link BlockHandlePositioner} React component. */
 interface BlockHandlePositionerProps {
   /**
@@ -152,7 +152,7 @@ interface BlockHandlePositionerProps {
   altBoundary?: BlockHandlePositionerProps$1['altBoundary'];
 }
 /** A React component that renders an `prosekit-block-handle-positioner` custom element. */
-declare const BlockHandlePositioner: ForwardRefExoticComponent<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement> & RefAttributes<BlockHandlePositionerElement>>;
+export declare const BlockHandlePositioner: ForwardRefExoticComponent<BlockHandlePositionerProps & HTMLAttributes<BlockHandlePositionerElement> & RefAttributes<BlockHandlePositionerElement>>;
 /** Props for the {@link BlockHandleRoot} React component. */
 interface BlockHandleRootProps {
   /**
@@ -166,6 +166,6 @@ interface BlockHandleRootProps {
   onStateChange?: (event: BlockHandleRootEvents['stateChange']) => void;
 }
 /** A React component that renders an `prosekit-block-handle-root` custom element. */
-declare const BlockHandleRoot: ForwardRefExoticComponent<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement> & RefAttributes<BlockHandleRootElement>>;
-export { BlockHandleAdd, type BlockHandleAddProps, BlockHandleDraggable, type BlockHandleDraggableProps, BlockHandlePopup, type BlockHandlePopupProps, BlockHandlePositioner, type BlockHandlePositionerProps, BlockHandleRoot, type BlockHandleRootProps };
+export declare const BlockHandleRoot: ForwardRefExoticComponent<BlockHandleRootProps & HTMLAttributes<BlockHandleRootElement> & RefAttributes<BlockHandleRootElement>>;
+export type { BlockHandleAddProps, BlockHandleDraggableProps, BlockHandlePopupProps, BlockHandlePositionerProps, BlockHandleRootProps };
 //# sourceMappingURL=block-handle.d.ts.map

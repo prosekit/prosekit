@@ -24,7 +24,7 @@ interface AddMarkOptions {
 /**
  * Returns a command that adds the given mark with the given attributes.
  */
-declare function addMark(options: AddMarkOptions): Command;
+export declare function addMark(options: AddMarkOptions): Command;
 interface ExpandMarkOptions {
   /**
    * The type of the mark to expand.
@@ -34,7 +34,7 @@ interface ExpandMarkOptions {
 /**
  * Expands the selection to include the entire mark at the current position.
  */
-declare function expandMark(options: ExpandMarkOptions): Command;
+export declare function expandMark(options: ExpandMarkOptions): Command;
 interface InsertDefaultBlockOptions {
   /**
    * The position to insert the node at. By default it will insert after the
@@ -46,7 +46,7 @@ interface InsertDefaultBlockOptions {
  * Returns a command that inserts a default block after current selection or at
  * the given position.
  */
-declare function insertDefaultBlock(options?: InsertDefaultBlockOptions): Command;
+export declare function insertDefaultBlock(options?: InsertDefaultBlockOptions): Command;
 interface InsertNodeOptions {
   /**
    * The node to insert. Either this or `type` must be provided.
@@ -92,7 +92,7 @@ interface RemoveMarkOptions {
 /**
  * Returns a command that removes the given mark.
  */
-declare function removeMark(options: RemoveMarkOptions): Command;
+export declare function removeMark(options: RemoveMarkOptions): Command;
 interface RemoveNodeOptions {
   /**
    * The type of the node to remove.
@@ -107,17 +107,17 @@ interface RemoveNodeOptions {
 /**
  * Returns a command to remove the nearest ancestor node of a specific type from the current position.
  */
-declare function removeNode(options: RemoveNodeOptions): Command;
+export declare function removeNode(options: RemoveNodeOptions): Command;
 /**
  * Returns a command that selects the whole document.
  */
-declare function selectAll(): Command;
+export declare function selectAll(): Command;
 /**
  * Returns a command to expand the text selection to cover the current block
  * node. If the text selection spans multiple blocks, it will select all
  * blocks in the selection.
  */
-declare function selectBlock(): Command;
+export declare function selectBlock(): Command;
 interface SetBlockTypeOptions {
   type: NodeType | string;
   attrs?: Attrs | null;
@@ -128,7 +128,7 @@ interface SetBlockTypeOptions {
  * Returns a command that tries to set the selected textblocks to the given node
  * type with the given attributes.
  */
-declare function setBlockType(options: SetBlockTypeOptions): Command;
+export declare function setBlockType(options: SetBlockTypeOptions): Command;
 interface SetNodeAttrsBetweenOptions {
   /**
    * The type of node to set the attributes of.
@@ -153,7 +153,7 @@ interface SetNodeAttrsBetweenOptions {
  *
  * @param options
  */
-declare function setNodeAttrsBetween(options: SetNodeAttrsBetweenOptions): Command;
+export declare function setNodeAttrsBetween(options: SetNodeAttrsBetweenOptions): Command;
 interface SetNodeAttrsOptions {
   /**
    * The type of node to set the attributes of.
@@ -175,7 +175,7 @@ interface SetNodeAttrsOptions {
  *
  * @param options
  */
-declare function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command;
+export declare function setNodeAttrs({ type, attrs, pos }: SetNodeAttrsOptions): Command;
 interface ToggleMarkOptions {
   /**
    * The mark type to toggle.
@@ -207,7 +207,7 @@ interface ToggleMarkOptions {
  *
  * @param options
  */
-declare function toggleMark({ type, attrs, removeWhenPresent, enterInlineAtoms }: ToggleMarkOptions): Command;
+export declare function toggleMark({ type, attrs, removeWhenPresent, enterInlineAtoms }: ToggleMarkOptions): Command;
 interface ToggleNodeOptions {
   /**
    * The type of the node to toggle.
@@ -224,7 +224,7 @@ interface ToggleNodeOptions {
  *
  * @param options
  */
-declare function toggleNode({ type, attrs }: ToggleNodeOptions): Command;
+export declare function toggleNode({ type, attrs }: ToggleNodeOptions): Command;
 interface ToggleWrapOptions {
   /**
    * The type of the node to toggle.
@@ -241,7 +241,7 @@ interface ToggleWrapOptions {
  *
  * @param options
  */
-declare function toggleWrap(options: ToggleWrapOptions): Command;
+export declare function toggleWrap(options: ToggleWrapOptions): Command;
 interface UnsetBlockTypeOptions {
   /**
    * The start position of the document. By default it will be the start position of current selection.
@@ -256,7 +256,7 @@ interface UnsetBlockTypeOptions {
  * Returns a command that set the type of all textblocks between the given range
  * to the default type (usually `paragraph`).
  */
-declare function unsetBlockType(options?: UnsetBlockTypeOptions): Command;
+export declare function unsetBlockType(options?: UnsetBlockTypeOptions): Command;
 /**
  * Options for {@link unsetMark}.
  */
@@ -273,7 +273,7 @@ interface UnsetMarkOptions {
 /**
  * Returns a command that removes all marks.
  */
-declare function unsetMark(options?: UnsetMarkOptions): Command;
+export declare function unsetMark(options?: UnsetMarkOptions): Command;
 interface WrapOptions {
   /**
    * The node type to wrap the selected textblock with.
@@ -289,7 +289,7 @@ interface WrapOptions {
  *
  * @param options
  */
-declare function wrap(options: WrapOptions): Command;
+export declare function wrap(options: WrapOptions): Command;
 /**
  * Creates a set of typed node builders from a {@link Schema}.
  *
@@ -322,7 +322,7 @@ declare function wrap(options: WrapOptions): Command;
  * const doc = n.doc(heading, paragraph)
  * ```
  */
-declare function createNodeBuilders<E extends Extension>(schema: Schema): ExtractNodeBuilders<E>;
+export declare function createNodeBuilders<E extends Extension>(schema: Schema): ExtractNodeBuilders<E>;
 /**
  * Creates a set of typed mark builders from a {@link Schema}.
  *
@@ -354,7 +354,7 @@ declare function createNodeBuilders<E extends Extension>(schema: Schema): Extrac
  * const paragraph = n.paragraph('Hello ', m.bold('world', m.italic('!')))
  * ```
  */
-declare function createMarkBuilders<E extends Extension>(schema: Schema): ExtractMarkBuilders<E>;
+export declare function createMarkBuilders<E extends Extension>(schema: Schema): ExtractMarkBuilders<E>;
 /**
  * Merges multiple extensions into one. You can pass multiple extensions as
  * arguments or a single array containing multiple extensions.
@@ -395,19 +395,19 @@ declare function union<const E extends readonly Extension[]>(exts: E): Union<E>;
  * const extension = withPriority(defineMyExtension(), Priority.high)
  * ```
  */
-declare function withPriority<T extends Extension>(extension: T, priority: Priority): T;
+export declare function withPriority<T extends Extension>(extension: T, priority: Priority): T;
 /**
  * Base class for all ProseKit errors.
  *
  * @internal
  */
-declare class ProseKitError extends Error {
+export declare class ProseKitError extends Error {
   constructor(message?: string, options?: ErrorOptions);
 }
 /**
  * @internal
  */
-declare class EditorNotFoundError extends ProseKitError {
+export declare class EditorNotFoundError extends ProseKitError {
   constructor();
 }
 /**
@@ -431,13 +431,13 @@ interface ClipboardSerializerOptions {
 /**
  * @internal
  */
-declare function defineClipboardSerializer(options: ClipboardSerializerOptions): PlainExtension;
+export declare function defineClipboardSerializer(options: ClipboardSerializerOptions): PlainExtension;
 type InsertTextOptions = {
   text: string;
   from?: number;
   to?: number;
 };
-declare function defineCommands<T extends Record<string, CommandCreator> = Record<string, CommandCreator>>(commands: T): Extension<{
+export declare function defineCommands<T extends Record<string, CommandCreator> = Record<string, CommandCreator>>(commands: T): Extension<{
   Commands: { [K in keyof T]: Parameters<T[K]>; };
 }>;
 /**
@@ -465,7 +465,7 @@ type BaseCommandsExtension = Extension<{
 /**
  * Add some base commands
  */
-declare function defineBaseCommands(): BaseCommandsExtension;
+export declare function defineBaseCommands(): BaseCommandsExtension;
 interface DefaultStateOptions {
   /**
    * The starting document to use when creating the editor. It can be a
@@ -483,7 +483,7 @@ interface DefaultStateOptions {
  *
  * @param options
  */
-declare function defineDefaultState({ defaultSelection, defaultContent }: DefaultStateOptions): PlainExtension;
+export declare function defineDefaultState({ defaultSelection, defaultContent }: DefaultStateOptions): PlainExtension;
 /**
  * A function that is called when the editor document is changed.
  *
@@ -494,7 +494,7 @@ type DocChangeHandler = (view: EditorView, prevState: EditorState) => void;
 /**
  * Registers a event handler that is called when the editor document is changed.
  */
-declare function defineDocChangeHandler(handler: DocChangeHandler): PlainExtension;
+export declare function defineDocChangeHandler(handler: DocChangeHandler): PlainExtension;
 /**
  * A function to handle the events fired on the editable DOM element. Returns
  * `true` to indicate that it handled the given event. When returning `true`,
@@ -505,7 +505,7 @@ type DOMEventHandler<Event extends keyof DOMEventMap = string> = (view: EditorVi
 /**
  * Register a new event handler for the given event type.
  */
-declare function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(event: Event, handler: DOMEventHandler<Event>): PlainExtension;
+export declare function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(event: Event, handler: DOMEventHandler<Event>): PlainExtension;
 /**
  * @internal
  */
@@ -542,7 +542,7 @@ declare class Facet<Input, Output> {
 /**
  * @internal
  */
-declare function defineFacet<Input, Output>(options: {
+export declare function defineFacet<Input, Output>(options: {
   /**
    * The parent facet in the tree.
    */
@@ -572,7 +572,7 @@ type StatePayload = (ctx: {
  * @param plugin - The ProseMirror plugin to add, or an array of plugins, or a
  * function that returns one or multiple plugins.
  */
-declare function definePlugin(plugin: Plugin | Plugin[] | ((context: {
+export declare function definePlugin(plugin: Plugin | Plugin[] | ((context: {
   schema: Schema;
 }) => Plugin | Plugin[])): PlainExtension;
 /**
@@ -584,7 +584,7 @@ type PluginPayload = Plugin | Plugin[] | ((context: {
 /**
  * @internal
  */
-declare const pluginFacet: Facet<PluginPayload, StatePayload>;
+export declare const pluginFacet: Facet<PluginPayload, StatePayload>;
 type KeyDownHandler = (view: EditorView, event: KeyboardEvent) => boolean | void;
 type KeyPressHandler = (view: EditorView, event: KeyboardEvent) => boolean | void;
 type TextInputHandler = (view: EditorView, from: number, to: number, text: string) => boolean | void;
@@ -600,51 +600,51 @@ type ScrollToSelectionHandler = (view: EditorView) => boolean;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown}
  */
-declare function defineKeyDownHandler(handler: KeyDownHandler): PlainExtension;
+export declare function defineKeyDownHandler(handler: KeyDownHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress}
  */
-declare function defineKeyPressHandler(handler: KeyPressHandler): PlainExtension;
+export declare function defineKeyPressHandler(handler: KeyPressHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput}
  */
-declare function defineTextInputHandler(handler: TextInputHandler): PlainExtension;
+export declare function defineTextInputHandler(handler: TextInputHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn}
  */
-declare function defineClickOnHandler(handler: ClickOnHandler): PlainExtension;
+export declare function defineClickOnHandler(handler: ClickOnHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClick}
  */
-declare function defineClickHandler(handler: ClickHandler): PlainExtension;
+export declare function defineClickHandler(handler: ClickHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn}
  */
-declare function defineDoubleClickOnHandler(handler: DoubleClickOnHandler): PlainExtension;
+export declare function defineDoubleClickOnHandler(handler: DoubleClickOnHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick}
  */
-declare function defineDoubleClickHandler(handler: DoubleClickHandler): PlainExtension;
+export declare function defineDoubleClickHandler(handler: DoubleClickHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn}
  */
-declare function defineTripleClickOnHandler(handler: TripleClickOnHandler): PlainExtension;
+export declare function defineTripleClickOnHandler(handler: TripleClickOnHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick}
  */
-declare function defineTripleClickHandler(handler: TripleClickHandler): PlainExtension;
+export declare function defineTripleClickHandler(handler: TripleClickHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste}
  */
-declare function definePasteHandler(handler: PasteHandler): PlainExtension;
+export declare function definePasteHandler(handler: PasteHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop}
  */
-declare function defineDropHandler(handler: DropHandler): PlainExtension;
+export declare function defineDropHandler(handler: DropHandler): PlainExtension;
 /**
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection}
  */
-declare function defineScrollToSelectionHandler(handler: ScrollToSelectionHandler): PlainExtension;
+export declare function defineScrollToSelectionHandler(handler: ScrollToSelectionHandler): PlainExtension;
 interface EditorEventMap {
   keyDown: KeyDownHandler;
   keyPress: KeyPressHandler;
@@ -666,7 +666,7 @@ type EditorEventPayload = ObjectEntries<EditorEventMap>;
 /**
  * @internal
  */
-declare const editorEventFacet: Facet<EditorEventPayload, PluginPayload>;
+export declare const editorEventFacet: Facet<EditorEventPayload, PluginPayload>;
 /**
  * A function that is called when the editor gains or loses focus.
  *
@@ -676,7 +676,7 @@ type FocusChangeHandler = (hasFocus: boolean) => void;
 /**
  * Registers a event handler that is called when the editor gains or loses focus.
  */
-declare function defineFocusChangeHandler(handler: FocusChangeHandler): PlainExtension;
+export declare function defineFocusChangeHandler(handler: FocusChangeHandler): PlainExtension;
 /**
  * A function that is called when the editor view is mounted.
  *
@@ -697,15 +697,15 @@ type UnmountHandler = () => void;
 /**
  * Registers a event handler that is called when the editor view is mounted.
  */
-declare function defineMountHandler(handler: MountHandler): PlainExtension;
+export declare function defineMountHandler(handler: MountHandler): PlainExtension;
 /**
  * Registers a event handler that is called when the editor state is updated.
  */
-declare function defineUpdateHandler(handler: UpdateHandler): PlainExtension;
+export declare function defineUpdateHandler(handler: UpdateHandler): PlainExtension;
 /**
  * Registers a event handler that is called when the editor view is unmounted.
  */
-declare function defineUnmountHandler(handler: UnmountHandler): PlainExtension;
+export declare function defineUnmountHandler(handler: UnmountHandler): PlainExtension;
 /**
  * Options for {@link defineHistory}.
  */
@@ -739,7 +739,7 @@ type HistoryExtension = Extension<{
  *
  * @param options
  */
-declare function defineHistory({ depth, newGroupDelay }?: HistoryOptions): HistoryExtension;
+export declare function defineHistory({ depth, newGroupDelay }?: HistoryOptions): HistoryExtension;
 /**
  * @internal
  */
@@ -766,7 +766,7 @@ interface BaseKeymapOptions {
  *
  * @param options
  */
-declare function defineBaseKeymap({ priority, preferBlockSelection }?: BaseKeymapOptions): BaseKeymapExtension;
+export declare function defineBaseKeymap({ priority, preferBlockSelection }?: BaseKeymapOptions): BaseKeymapExtension;
 /**
  * A set of keybindings. Please read the
  * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
@@ -778,7 +778,7 @@ interface Keymap {
  * Adds a set of keybindings to the editor. Please read the
  * [documentation](https://prosemirror.net/docs/ref/#keymap) for more details.
  */
-declare function defineKeymap(keymap: Keymap): PlainExtension;
+export declare function defineKeymap(keymap: Keymap): PlainExtension;
 /**
  * @internal
  */
@@ -786,7 +786,7 @@ type KeymapPayload = Keymap;
 /**
  * @internal
  */
-declare const keymapFacet: Facet<KeymapPayload, PluginPayload>;
+export declare const keymapFacet: Facet<KeymapPayload, PluginPayload>;
 /**
  * The options for {@link defineMarkPasteRule}.
  */
@@ -816,7 +816,7 @@ interface MarkPasteRuleOptions {
 /**
  * Defines a paste rule that applies marks based on regex patterns.
  */
-declare function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension;
+export declare function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension;
 interface MarkSpecOptions<MarkName extends string = string, Attrs extends AnyAttrs = AnyAttrs> extends MarkSpec {
   /**
    * The name of the mark type.
@@ -868,10 +868,10 @@ interface MarkAttrOptions<MarkName extends string = string, AttrName extends str
  * })
  * ```
  */
-declare function defineMarkSpec<Mark extends string, Attrs extends AnyAttrs = AnyAttrs>(options: MarkSpecOptions<Mark, Attrs>): Extension<{
+export declare function defineMarkSpec<Mark extends string, Attrs extends AnyAttrs = AnyAttrs>(options: MarkSpecOptions<Mark, Attrs>): Extension<{
   Marks: { [K in Mark]: Attrs; };
 }>;
-declare function defineMarkAttr<MarkType extends string = string, AttrName extends string = string, AttrType = any>(options: MarkAttrOptions<MarkType, AttrName, AttrType>): Extension<{
+export declare function defineMarkAttr<MarkType extends string = string, AttrName extends string = string, AttrType = any>(options: MarkAttrOptions<MarkType, AttrName, AttrType>): Extension<{
   Marks: { [K in MarkType]: AttrType; };
 }>;
 /**
@@ -892,16 +892,16 @@ type MarkViewComponentOptions<T> = {
 /**
  * @internal
  */
-declare function defineMarkViewFactory<T>(options: MarkViewFactoryOptions<T>): Extension;
+export declare function defineMarkViewFactory<T>(options: MarkViewFactoryOptions<T>): Extension;
 /**
  * @internal
  */
-declare function defineMarkViewComponent<T>(options: MarkViewComponentOptions<T>): Extension;
+export declare function defineMarkViewComponent<T>(options: MarkViewComponentOptions<T>): Extension;
 interface MarkViewOptions {
   name: string;
   constructor: MarkViewConstructor;
 }
-declare function defineMarkView(options: MarkViewOptions): Extension;
+export declare function defineMarkView(options: MarkViewOptions): Extension;
 interface NodeSpecOptions<NodeName extends string = string, Attrs extends AnyAttrs = AnyAttrs> extends NodeSpec {
   /**
    * The name of the node type.
@@ -965,13 +965,13 @@ interface NodeAttrOptions<NodeName extends string = string, AttrName extends str
  * })
  * ```
  */
-declare function defineNodeSpec<Node extends string, Attrs extends AnyAttrs = AnyAttrs>(options: NodeSpecOptions<Node, Attrs>): Extension<{
+export declare function defineNodeSpec<Node extends string, Attrs extends AnyAttrs = AnyAttrs>(options: NodeSpecOptions<Node, Attrs>): Extension<{
   Nodes: { [K in Node]: Attrs; };
 }>;
 /**
  * Defines an attribute for a node type.
  */
-declare function defineNodeAttr<NodeType extends string = string, AttrName extends string = string, AttrType = any>(options: NodeAttrOptions<NodeType, AttrName, AttrType>): Extension<{
+export declare function defineNodeAttr<NodeType extends string = string, AttrName extends string = string, AttrType = any>(options: NodeAttrOptions<NodeType, AttrName, AttrType>): Extension<{
   Nodes: { [K in NodeType]: { [K in AttrName]: AttrType; }; };
 }>;
 /**
@@ -992,16 +992,16 @@ type NodeViewComponentOptions<T> = {
 /**
  * @internal
  */
-declare function defineNodeViewFactory<T>(options: NodeViewFactoryOptions<T>): Extension;
+export declare function defineNodeViewFactory<T>(options: NodeViewFactoryOptions<T>): Extension;
 /**
  * @internal
  */
-declare function defineNodeViewComponent<T>(options: NodeViewComponentOptions<T>): Extension;
+export declare function defineNodeViewComponent<T>(options: NodeViewComponentOptions<T>): Extension;
 interface NodeViewOptions {
   name: string;
   constructor: NodeViewConstructor;
 }
-declare function defineNodeView(options: NodeViewOptions): Extension;
+export declare function defineNodeView(options: NodeViewOptions): Extension;
 /**
  * Options for {@link PasteRuleHandler}.
  */
@@ -1040,19 +1040,19 @@ interface PasteRuleOptions {
  *
  * @param options
  */
-declare function definePasteRule({ handler }: PasteRuleOptions): PlainExtension;
+export declare function definePasteRule({ handler }: PasteRuleOptions): PlainExtension;
 /**
  * @internal
  */
-declare function defineFacetPayload<Input>(facet: Facet<Input, any>, payloads: Input[]): Extension;
+export declare function defineFacetPayload<Input>(facet: Facet<Input, any>, payloads: Input[]): Extension;
 /**
  * @internal
  */
-declare function assert(condition: unknown, message?: string): asserts condition;
+export declare function assert(condition: unknown, message?: string): asserts condition;
 /**
  * Checks if the browser supports [regex lookbehind assertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion).
  */
-declare const canUseRegexLookbehind: () => boolean;
+export declare const canUseRegexLookbehind: () => boolean;
 /**
  * A tiny utility for constructing `className` strings conditionally.
  *
@@ -1060,15 +1060,15 @@ declare const canUseRegexLookbehind: () => boolean;
  * null, or undefined. The function concatenates the string arguments and
  * ignores the falsy values (false, null, undefined).
  */
-declare function clsx(...args: Array<string | boolean | null | undefined>): string;
+export declare function clsx(...args: Array<string | boolean | null | undefined>): string;
 /**
  * @internal
  */
-declare function containsInlineNode(doc: ProseMirrorNode, from: number, to: number): boolean;
+export declare function containsInlineNode(doc: ProseMirrorNode, from: number, to: number): boolean;
 /**
  * @internal
  */
-declare function defaultBlockAt(match: ContentMatch): NodeType | null;
+export declare function defaultBlockAt(match: ContentMatch): NodeType | null;
 /**
  * Whether the current platform is an Apple platform (e.g., macOS, iOS, iPadOS)
  *
@@ -1076,7 +1076,7 @@ declare function defaultBlockAt(match: ContentMatch): NodeType | null;
  *
  * @internal
  */
-declare const isApple: boolean;
+export declare const isApple: boolean;
 /**
  * Whether the current browser uses Apple's WebKit engine: Safari on any
  * platform, every iOS browser, and WKWebView hosts.
@@ -1085,7 +1085,7 @@ declare const isApple: boolean;
  *
  * @internal
  */
-declare const isWebKit: boolean;
+export declare const isWebKit: boolean;
 interface MarkRange {
   /**
    * The document position where the mark run starts.
@@ -1116,19 +1116,19 @@ interface MarkRange {
  * const range = findMarkRange($pos, (mark) => mark.type.name === 'link')
  * ```
  */
-declare function findMarkRange($pos: ResolvedPos, predicate: (mark: Mark) => boolean): MarkRange | undefined;
+export declare function findMarkRange($pos: ResolvedPos, predicate: (mark: Mark) => boolean): MarkRange | undefined;
 /**
  * Finds the first node that satisfies the predicate from the given document.
  *
  * @internal
  */
-declare function findNode(doc: ProseMirrorNode, predicate: (node: ProseMirrorNode) => boolean): FindNodeResult | undefined;
+export declare function findNode(doc: ProseMirrorNode, predicate: (node: ProseMirrorNode) => boolean): FindNodeResult | undefined;
 /**
  * Finds all nodes that satisfy the predicate from the given document.
  *
  * @internal
  */
-declare function findNodes(doc: ProseMirrorNode, predicate: (node: ProseMirrorNode) => boolean): FindNodeResult[];
+export declare function findNodes(doc: ProseMirrorNode, predicate: (node: ProseMirrorNode) => boolean): FindNodeResult[];
 /**
  * The result of the {@link findNode} function.
  *
@@ -1173,7 +1173,7 @@ interface FindParentNodeResult {
 /**
  * Find the closest parent node that satisfies the predicate.
  */
-declare function findParentNode(
+export declare function findParentNode(
 /**
  * The predicate to test the parent node.
  */
@@ -1185,7 +1185,7 @@ $pos: ResolvedPos): FindParentNodeResult | undefined;
 /**
  * Finds the closest parent node that matches the given node type.
  */
-declare function findParentNodeOfType(
+export declare function findParentNodeOfType(
 /**
  * The type of the node to find.
  */
@@ -1205,27 +1205,27 @@ $pos: ResolvedPos): FindParentNodeResult | undefined;
  * attributes starts a new run. When a matching mark sits on both sides of the
  * position, the run to the right is returned.
  */
-declare function getMarkRange($pos: ResolvedPos, type: string | MarkType, attrs?: Attrs | null): MarkRange | undefined;
+export declare function getMarkRange($pos: ResolvedPos, type: string | MarkType, attrs?: Attrs | null): MarkRange | undefined;
 /**
  * @internal
  */
-declare function getMarkType(schema: Schema, type: string | MarkType): MarkType;
+export declare function getMarkType(schema: Schema, type: string | MarkType): MarkType;
 /**
  * @internal
  */
-declare function getNodeType(schema: Schema, type: string | NodeType): NodeType;
+export declare function getNodeType(schema: Schema, type: string | NodeType): NodeType;
 /**
  * Whether the selection is an empty text selection at the start of a block.
  *
  * @internal
  */
-declare function isAtBlockStart(state: EditorState, view?: EditorView): ResolvedPos | null;
+export declare function isAtBlockStart(state: EditorState, view?: EditorView): ResolvedPos | null;
 /**
  * Check if the selection is in a code block.
  *
  * @internal
  */
-declare function isInCodeBlock(selection: Selection): boolean;
+export declare function isInCodeBlock(selection: Selection): boolean;
 /**
  * Returns true if the given mark is missing in some part of the range.
  * Returns false if the entire range has the given mark.
@@ -1233,55 +1233,55 @@ declare function isInCodeBlock(selection: Selection): boolean;
  *
  * @internal
  */
-declare function isMarkAbsent(node: ProseMirrorNode, from: number, to: number, markType: MarkType, attrs?: Attrs | null): boolean;
+export declare function isMarkAbsent(node: ProseMirrorNode, from: number, to: number, markType: MarkType, attrs?: Attrs | null): boolean;
 /**
  * @internal
  */
-declare function isMarkActive(state: EditorState, type: string | MarkType, attrs?: Attrs | null): boolean;
+export declare function isMarkActive(state: EditorState, type: string | MarkType, attrs?: Attrs | null): boolean;
 /**
  * @internal
  */
-declare function maybeRun<Value, Args extends unknown[]>(value: Value | ((...args: Args) => Value), ...args: Args): Value;
-declare function setSelectionAround(tr: Transaction, pos: number): void;
+export declare function maybeRun<Value, Args extends unknown[]>(value: Value | ((...args: Args) => Value), ...args: Args): Value;
+export declare function setSelectionAround(tr: Transaction, pos: number): void;
 /**
  * Checks if the given object is a {@link ProseMirrorNode} instance.
  */
-declare function isProseMirrorNode(value: unknown): value is ProseMirrorNode;
+export declare function isProseMirrorNode(value: unknown): value is ProseMirrorNode;
 /**
  * Checks if the given object is a {@link Mark} instance.
  */
-declare function isMark(value: unknown): value is Mark;
+export declare function isMark(value: unknown): value is Mark;
 /**
  * Checks if the given object is a {@link Fragment} instance.
  */
-declare function isFragment(value: unknown): value is Fragment;
+export declare function isFragment(value: unknown): value is Fragment;
 /**
  * Checks if the given object is a {@link Slice} instance.
  */
-declare function isSlice(value: unknown): value is Slice;
+export declare function isSlice(value: unknown): value is Slice;
 /**
  * Checks if the given object is a {@link Selection} instance.
  */
-declare function isSelection(value: unknown): value is Selection;
+export declare function isSelection(value: unknown): value is Selection;
 /**
  * Checks if the given object is a {@link TextSelection} instance.
  */
-declare function isTextSelection(value: Selection): value is TextSelection;
+export declare function isTextSelection(value: Selection): value is TextSelection;
 /**
  * Checks if the given object is a {@link NodeSelection} instance.
  */
-declare function isNodeSelection(value: Selection): value is NodeSelection;
+export declare function isNodeSelection(value: Selection): value is NodeSelection;
 /**
  * Checks if the given object is a {@link AllSelection} instance.
  */
-declare function isAllSelection(value: Selection): value is AllSelection;
+export declare function isAllSelection(value: Selection): value is AllSelection;
 /**
  * @internal
  */
-declare const OBJECT_REPLACEMENT_CHARACTER = "￼";
+export declare const OBJECT_REPLACEMENT_CHARACTER = "￼";
 /**
  * @internal
  */
-declare function withSkipCodeBlock(command: Command): Command;
-export { type AddMarkOptions, type AnyAttrs, type AnyFunction, type AttrSpec, type BaseCommandsExtension, type BaseKeymapExtension, type BaseKeymapOptions, type ClickHandler, type ClickOnHandler, type ClipboardSerializerOptions, type CommandAction, type CommandTyping, type DOMDocumentOptions, type DOMEventHandler, type DOMParserOptions, type DOMSerializerOptions, type DefaultStateOptions, type DocChangeHandler, type DoubleClickHandler, type DoubleClickOnHandler, type DropHandler, Editor, type EditorEventPayload, EditorNotFoundError, type EditorOptions, type ExpandMarkOptions, type Extension, type ExtensionTyping, type ExtractCommandActions, type ExtractCommandCreators, type ExtractCommands, type ExtractMarkActions, type ExtractMarkBuilders, type ExtractMarks, type ExtractNodeActions, type ExtractNodeBuilders, type ExtractNodes, type ExtractTyping, type Facet, type FindNodeResult, type FindParentNodeResult, type FocusChangeHandler, type HistoryExtension, type HistoryOptions, type InsertDefaultBlockOptions, type InsertNodeOptions, type JSONParserOptions, type KeyDownHandler, type KeyPressHandler, type Keymap, type KeymapPayload, type MarkAction, type MarkAttrOptions, type MarkBuilder, type MarkPasteRuleOptions, type MarkRange, type MarkSpecOptions, type MarkTyping, type MarkViewComponentOptions, type MarkViewFactoryOptions, type MarkViewOptions, type MountHandler, type NodeAction, type NodeAttrOptions, type NodeBuilder, type NodeChild, type NodeJSON, type NodeSpecOptions, type NodeTyping, type NodeViewComponentOptions, type NodeViewFactoryOptions, type NodeViewOptions, OBJECT_REPLACEMENT_CHARACTER, type PasteHandler, type PasteRuleHandler, type PasteRuleHandlerOptions, type PasteRuleOptions, type PickSubType, type PlainExtension, type PluginPayload, Priority, ProseKitError, type RemoveMarkOptions, type RemoveNodeOptions, type ScrollToSelectionHandler, type SelectionJSON, type SetBlockTypeOptions, type SetNodeAttrsBetweenOptions, type SetNodeAttrsOptions, type SimplifyDeeper, type SimplifyUnion, type StateJSON, type StepJSON, type TextInputHandler, type ToMarkAction, type ToNodeAction, type ToggleMarkOptions, type ToggleNodeOptions, type ToggleWrapOptions, type TripleClickHandler, type TripleClickOnHandler, type Union, type UnmountHandler, type UnsetBlockTypeOptions, type UnsetMarkOptions, type UpdateHandler, type WrapOptions, addMark, assert, canUseRegexLookbehind, clsx, containsInlineNode, createEditor, createMarkBuilders, createNodeBuilders, defaultBlockAt, defineBaseCommands, defineBaseKeymap, defineClickHandler, defineClickOnHandler, defineClipboardSerializer, defineCommands, defineDOMEventHandler, defineDefaultState, defineDocChangeHandler, defineDoubleClickHandler, defineDoubleClickOnHandler, defineDropHandler, defineFacet, defineFacetPayload, defineFocusChangeHandler, defineHistory, defineKeyDownHandler, defineKeyPressHandler, defineKeymap, defineMarkAttr, defineMarkPasteRule, defineMarkSpec, defineMarkView, defineMarkViewComponent, defineMarkViewFactory, defineMountHandler, defineNodeAttr, defineNodeSpec, defineNodeView, defineNodeViewComponent, defineNodeViewFactory, definePasteHandler, definePasteRule, definePlugin, defineScrollToSelectionHandler, defineTextInputHandler, defineTripleClickHandler, defineTripleClickOnHandler, defineUnmountHandler, defineUpdateHandler, editorEventFacet, elementFromJSON, elementFromNode, expandMark, findMarkRange, findNode, findNodes, findParentNode, findParentNodeOfType, getMarkRange, getMarkType, getNodeType, htmlFromJSON, htmlFromNode, insertDefaultBlock, insertNode, isAllSelection, isApple, isAtBlockStart, isFragment, isInCodeBlock, isMark, isMarkAbsent, isMarkActive, isNodeSelection, isProseMirrorNode, isSelection, isSlice, isTextSelection, isWebKit, jsonFromHTML, jsonFromNode, jsonFromState, keymapFacet, maybeRun, nodeFromElement, nodeFromHTML, nodeFromJSON, pluginFacet, removeMark, removeNode, selectAll, selectBlock, setBlockType, setNodeAttrs, setNodeAttrsBetween, setSelectionAround, stateFromJSON, toggleMark, toggleNode, toggleWrap, union, unsetBlockType, unsetMark, withPriority, withSkipCodeBlock, wrap };
+export declare function withSkipCodeBlock(command: Command): Command;
+export { type AddMarkOptions, type AnyAttrs, type AnyFunction, type AttrSpec, type BaseCommandsExtension, type BaseKeymapExtension, type BaseKeymapOptions, type ClickHandler, type ClickOnHandler, type ClipboardSerializerOptions, type CommandAction, type CommandTyping, type DOMDocumentOptions, type DOMEventHandler, type DOMParserOptions, type DOMSerializerOptions, type DefaultStateOptions, type DocChangeHandler, type DoubleClickHandler, type DoubleClickOnHandler, type DropHandler, Editor, type EditorEventPayload, type EditorOptions, type ExpandMarkOptions, type Extension, type ExtensionTyping, type ExtractCommandActions, type ExtractCommandCreators, type ExtractCommands, type ExtractMarkActions, type ExtractMarkBuilders, type ExtractMarks, type ExtractNodeActions, type ExtractNodeBuilders, type ExtractNodes, type ExtractTyping, type Facet, type FindNodeResult, type FindParentNodeResult, type FocusChangeHandler, type HistoryExtension, type HistoryOptions, type InsertDefaultBlockOptions, type InsertNodeOptions, type JSONParserOptions, type KeyDownHandler, type KeyPressHandler, type Keymap, type KeymapPayload, type MarkAction, type MarkAttrOptions, type MarkBuilder, type MarkPasteRuleOptions, type MarkRange, type MarkSpecOptions, type MarkTyping, type MarkViewComponentOptions, type MarkViewFactoryOptions, type MarkViewOptions, type MountHandler, type NodeAction, type NodeAttrOptions, type NodeBuilder, type NodeChild, type NodeJSON, type NodeSpecOptions, type NodeTyping, type NodeViewComponentOptions, type NodeViewFactoryOptions, type NodeViewOptions, type PasteHandler, type PasteRuleHandler, type PasteRuleHandlerOptions, type PasteRuleOptions, type PickSubType, type PlainExtension, type PluginPayload, Priority, type RemoveMarkOptions, type RemoveNodeOptions, type ScrollToSelectionHandler, type SelectionJSON, type SetBlockTypeOptions, type SetNodeAttrsBetweenOptions, type SetNodeAttrsOptions, type SimplifyDeeper, type SimplifyUnion, type StateJSON, type StepJSON, type TextInputHandler, type ToMarkAction, type ToNodeAction, type ToggleMarkOptions, type ToggleNodeOptions, type ToggleWrapOptions, type TripleClickHandler, type TripleClickOnHandler, type Union, type UnmountHandler, type UnsetBlockTypeOptions, type UnsetMarkOptions, type UpdateHandler, type WrapOptions, createEditor, elementFromJSON, elementFromNode, htmlFromJSON, htmlFromNode, insertNode, jsonFromHTML, jsonFromNode, jsonFromState, nodeFromElement, nodeFromHTML, nodeFromJSON, stateFromJSON, union };
 //# sourceMappingURL=index.d.ts.map

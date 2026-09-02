@@ -11,7 +11,7 @@ interface BlockHandleAddProps {
   editor?: BlockHandleAddProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-block-handle-add` custom element. */
-declare const BlockHandleAdd: DefineSetupFnComponent<BlockHandleAddProps & HTMLAttributes>;
+export declare const BlockHandleAdd: DefineSetupFnComponent<BlockHandleAddProps & HTMLAttributes>;
 /** Props for the {@link BlockHandleDraggable} Vue component. */
 interface BlockHandleDraggableProps {
   /**
@@ -23,11 +23,11 @@ interface BlockHandleDraggableProps {
   editor?: BlockHandleDraggableProps$1['editor'];
 }
 /** A Vue component that renders an `prosekit-block-handle-draggable` custom element. */
-declare const BlockHandleDraggable: DefineSetupFnComponent<BlockHandleDraggableProps & HTMLAttributes>;
+export declare const BlockHandleDraggable: DefineSetupFnComponent<BlockHandleDraggableProps & HTMLAttributes>;
 /** Props for the {@link BlockHandlePopup} Vue component. */
 interface BlockHandlePopupProps {}
 /** A Vue component that renders an `prosekit-block-handle-popup` custom element. */
-declare const BlockHandlePopup: DefineSetupFnComponent<BlockHandlePopupProps & HTMLAttributes>;
+export declare const BlockHandlePopup: DefineSetupFnComponent<BlockHandlePopupProps & HTMLAttributes>;
 /** Props for the {@link BlockHandlePositioner} Vue component. */
 interface BlockHandlePositionerProps {
   /**
@@ -152,7 +152,7 @@ interface BlockHandlePositionerProps {
   altBoundary?: BlockHandlePositionerProps$1['altBoundary'];
 }
 /** A Vue component that renders an `prosekit-block-handle-positioner` custom element. */
-declare const BlockHandlePositioner: DefineSetupFnComponent<BlockHandlePositionerProps & HTMLAttributes>;
+export declare const BlockHandlePositioner: DefineSetupFnComponent<BlockHandlePositionerProps & HTMLAttributes>;
 /** Props for the {@link BlockHandleRoot} Vue component. */
 interface BlockHandleRootProps {
   /**
@@ -166,6 +166,6 @@ interface BlockHandleRootProps {
   onStateChange?: (event: BlockHandleRootEvents['stateChange']) => void;
 }
 /** A Vue component that renders an `prosekit-block-handle-root` custom element. */
-declare const BlockHandleRoot: DefineSetupFnComponent<BlockHandleRootProps & HTMLAttributes>;
-export { BlockHandleAdd, type BlockHandleAddProps, BlockHandleDraggable, type BlockHandleDraggableProps, BlockHandlePopup, type BlockHandlePopupProps, BlockHandlePositioner, type BlockHandlePositionerProps, BlockHandleRoot, type BlockHandleRootProps };
+export declare const BlockHandleRoot: DefineSetupFnComponent<BlockHandleRootProps & HTMLAttributes>;
+export type { BlockHandleAddProps, BlockHandleDraggableProps, BlockHandlePopupProps, BlockHandlePositionerProps, BlockHandleRootProps };
 //# sourceMappingURL=block-handle.d.ts.map

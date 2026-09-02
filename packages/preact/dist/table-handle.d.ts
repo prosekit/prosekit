@@ -4,7 +4,7 @@ import { TableHandleColumnMenuRootElement, TableHandleColumnMenuRootProps as Tab
 /** Props for the {@link TableHandleColumnPopup} Preact component. */
 interface TableHandleColumnPopupProps {}
 /** A Preact component that renders an `prosekit-table-handle-column-popup` custom element. */
-declare const TableHandleColumnPopup: ForwardRefExoticComponent<TableHandleColumnPopupProps & HTMLAttributes<TableHandleColumnPopupElement> & RefAttributes<TableHandleColumnPopupElement>>;
+export declare const TableHandleColumnPopup: ForwardRefExoticComponent<TableHandleColumnPopupProps & HTMLAttributes<TableHandleColumnPopupElement> & RefAttributes<TableHandleColumnPopupElement>>;
 /** Props for the {@link TableHandleColumnPositioner} Preact component. */
 interface TableHandleColumnPositionerProps {
   /**
@@ -135,7 +135,7 @@ interface TableHandleColumnPositionerProps {
   editor?: TableHandleColumnPositionerProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-column-positioner` custom element. */
-declare const TableHandleColumnPositioner: ForwardRefExoticComponent<TableHandleColumnPositionerProps & HTMLAttributes<TableHandleColumnPositionerElement> & RefAttributes<TableHandleColumnPositionerElement>>;
+export declare const TableHandleColumnPositioner: ForwardRefExoticComponent<TableHandleColumnPositionerProps & HTMLAttributes<TableHandleColumnPositionerElement> & RefAttributes<TableHandleColumnPositionerElement>>;
 /** Props for the {@link TableHandleColumnMenuRoot} Preact component. */
 interface TableHandleColumnMenuRootProps {
   /**
@@ -155,7 +155,7 @@ interface TableHandleColumnMenuRootProps {
   disabled?: TableHandleColumnMenuRootProps$1['disabled'];
 }
 /** A Preact component that renders an `prosekit-table-handle-column-menu-root` custom element. */
-declare const TableHandleColumnMenuRoot: ForwardRefExoticComponent<TableHandleColumnMenuRootProps & HTMLAttributes<TableHandleColumnMenuRootElement> & RefAttributes<TableHandleColumnMenuRootElement>>;
+export declare const TableHandleColumnMenuRoot: ForwardRefExoticComponent<TableHandleColumnMenuRootProps & HTMLAttributes<TableHandleColumnMenuRootElement> & RefAttributes<TableHandleColumnMenuRootElement>>;
 /** Props for the {@link TableHandleColumnMenuTrigger} Preact component. */
 interface TableHandleColumnMenuTriggerProps {
   /**
@@ -165,7 +165,7 @@ interface TableHandleColumnMenuTriggerProps {
   editor?: TableHandleColumnMenuTriggerProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-column-menu-trigger` custom element. */
-declare const TableHandleColumnMenuTrigger: ForwardRefExoticComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes<TableHandleColumnMenuTriggerElement> & RefAttributes<TableHandleColumnMenuTriggerElement>>;
+export declare const TableHandleColumnMenuTrigger: ForwardRefExoticComponent<TableHandleColumnMenuTriggerProps & HTMLAttributes<TableHandleColumnMenuTriggerElement> & RefAttributes<TableHandleColumnMenuTriggerElement>>;
 /** Props for the {@link TableHandleDragPreview} Preact component. */
 interface TableHandleDragPreviewProps {
   /**
@@ -175,7 +175,7 @@ interface TableHandleDragPreviewProps {
   editor?: TableHandleDragPreviewProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-drag-preview` custom element. */
-declare const TableHandleDragPreview: ForwardRefExoticComponent<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement> & RefAttributes<TableHandleDragPreviewElement>>;
+export declare const TableHandleDragPreview: ForwardRefExoticComponent<TableHandleDragPreviewProps & HTMLAttributes<TableHandleDragPreviewElement> & RefAttributes<TableHandleDragPreviewElement>>;
 /** Props for the {@link TableHandleDropIndicator} Preact component. */
 interface TableHandleDropIndicatorProps {
   /**
@@ -185,7 +185,7 @@ interface TableHandleDropIndicatorProps {
   editor?: TableHandleDropIndicatorProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-drop-indicator` custom element. */
-declare const TableHandleDropIndicator: ForwardRefExoticComponent<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement> & RefAttributes<TableHandleDropIndicatorElement>>;
+export declare const TableHandleDropIndicator: ForwardRefExoticComponent<TableHandleDropIndicatorProps & HTMLAttributes<TableHandleDropIndicatorElement> & RefAttributes<TableHandleDropIndicatorElement>>;
 /** Props for the {@link TableHandleRoot} Preact component. */
 interface TableHandleRootProps {
   /**
@@ -197,11 +197,11 @@ interface TableHandleRootProps {
   editor?: TableHandleRootProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-root` custom element. */
-declare const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & HTMLAttributes<TableHandleRootElement> & RefAttributes<TableHandleRootElement>>;
+export declare const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & HTMLAttributes<TableHandleRootElement> & RefAttributes<TableHandleRootElement>>;
 /** Props for the {@link TableHandleRowPopup} Preact component. */
 interface TableHandleRowPopupProps {}
 /** A Preact component that renders an `prosekit-table-handle-row-popup` custom element. */
-declare const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement> & RefAttributes<TableHandleRowPopupElement>>;
+export declare const TableHandleRowPopup: ForwardRefExoticComponent<TableHandleRowPopupProps & HTMLAttributes<TableHandleRowPopupElement> & RefAttributes<TableHandleRowPopupElement>>;
 /** Props for the {@link TableHandleRowPositioner} Preact component. */
 interface TableHandleRowPositionerProps {
   /**
@@ -332,7 +332,7 @@ interface TableHandleRowPositionerProps {
   editor?: TableHandleRowPositionerProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-row-positioner` custom element. */
-declare const TableHandleRowPositioner: ForwardRefExoticComponent<TableHandleRowPositionerProps & HTMLAttributes<TableHandleRowPositionerElement> & RefAttributes<TableHandleRowPositionerElement>>;
+export declare const TableHandleRowPositioner: ForwardRefExoticComponent<TableHandleRowPositionerProps & HTMLAttributes<TableHandleRowPositionerElement> & RefAttributes<TableHandleRowPositionerElement>>;
 /** Props for the {@link TableHandleRowMenuRoot} Preact component. */
 interface TableHandleRowMenuRootProps {
   /**
@@ -352,7 +352,7 @@ interface TableHandleRowMenuRootProps {
   disabled?: TableHandleRowMenuRootProps$1['disabled'];
 }
 /** A Preact component that renders an `prosekit-table-handle-row-menu-root` custom element. */
-declare const TableHandleRowMenuRoot: ForwardRefExoticComponent<TableHandleRowMenuRootProps & HTMLAttributes<TableHandleRowMenuRootElement> & RefAttributes<TableHandleRowMenuRootElement>>;
+export declare const TableHandleRowMenuRoot: ForwardRefExoticComponent<TableHandleRowMenuRootProps & HTMLAttributes<TableHandleRowMenuRootElement> & RefAttributes<TableHandleRowMenuRootElement>>;
 /** Props for the {@link TableHandleRowMenuTrigger} Preact component. */
 interface TableHandleRowMenuTriggerProps {
   /**
@@ -362,6 +362,6 @@ interface TableHandleRowMenuTriggerProps {
   editor?: TableHandleRowMenuTriggerProps$1['editor'];
 }
 /** A Preact component that renders an `prosekit-table-handle-row-menu-trigger` custom element. */
-declare const TableHandleRowMenuTrigger: ForwardRefExoticComponent<TableHandleRowMenuTriggerProps & HTMLAttributes<TableHandleRowMenuTriggerElement> & RefAttributes<TableHandleRowMenuTriggerElement>>;
-export { TableHandleColumnMenuRoot, type TableHandleColumnMenuRootProps, TableHandleColumnMenuTrigger, type TableHandleColumnMenuTriggerProps, TableHandleColumnPopup, type TableHandleColumnPopupProps, TableHandleColumnPositioner, type TableHandleColumnPositionerProps, TableHandleDragPreview, type TableHandleDragPreviewProps, TableHandleDropIndicator, type TableHandleDropIndicatorProps, TableHandleRoot, type TableHandleRootProps, TableHandleRowMenuRoot, type TableHandleRowMenuRootProps, TableHandleRowMenuTrigger, type TableHandleRowMenuTriggerProps, TableHandleRowPopup, type TableHandleRowPopupProps, TableHandleRowPositioner, type TableHandleRowPositionerProps };
+export declare const TableHandleRowMenuTrigger: ForwardRefExoticComponent<TableHandleRowMenuTriggerProps & HTMLAttributes<TableHandleRowMenuTriggerElement> & RefAttributes<TableHandleRowMenuTriggerElement>>;
+export type { TableHandleColumnMenuRootProps, TableHandleColumnMenuTriggerProps, TableHandleColumnPopupProps, TableHandleColumnPositionerProps, TableHandleDragPreviewProps, TableHandleDropIndicatorProps, TableHandleRootProps, TableHandleRowMenuRootProps, TableHandleRowMenuTriggerProps, TableHandleRowPopupProps, TableHandleRowPositionerProps };
 //# sourceMappingURL=table-handle.d.ts.map

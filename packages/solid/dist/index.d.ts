@@ -10,7 +10,7 @@ type ProseKitProps = ParentProps<{
 /**
  * The root component for a ProseKit editor.
  */
-declare const ProseKit: Component<ProseKitProps>;
+export declare const ProseKit: Component<ProseKitProps>;
 interface SolidMarkViewProps extends MarkViewContextProps {}
 type SolidMarkViewComponent = Component<SolidMarkViewProps>;
 /**
@@ -25,7 +25,7 @@ interface SolidMarkViewOptions extends CoreMarkViewUserOptions<SolidMarkViewComp
 /**
  * Defines a mark view using a Solid component.
  */
-declare function defineSolidMarkView(options: SolidMarkViewOptions): Extension;
+export declare function defineSolidMarkView(options: SolidMarkViewOptions): Extension;
 interface SolidNodeViewProps extends NodeViewContextProps {}
 type SolidNodeViewComponent = Component<SolidNodeViewProps>;
 /**
@@ -40,7 +40,7 @@ interface SolidNodeViewOptions extends CoreNodeViewUserOptions<SolidNodeViewComp
 /**
  * Defines a node view using a Solid component.
  */
-declare function defineSolidNodeView(options: SolidNodeViewOptions): Extension;
+export declare function defineSolidNodeView(options: SolidNodeViewOptions): Extension;
 /**
  * @internal
  */
@@ -75,7 +75,7 @@ interface UseExtensionOptions {
 /**
  * Add an extension to the editor.
  */
-declare function useExtension(
+export declare function useExtension(
 /**
  * The accessor to an extension to add to the editor. If it changes, the previous
  * extension will be removed and the new one (if not null) will be added.
@@ -84,7 +84,7 @@ extension: Accessor<Extension | null>, options?: UseExtensionOptions): void;
 /**
  * Calls the given handler whenever the editor document changes.
  */
-declare function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void;
+export declare function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void;
 interface UseEditorDerivedOptions<E extends Extension = any> {
   /**
    * The editor to add the extension to. If not provided, it will use the
@@ -102,7 +102,7 @@ interface UseEditorDerivedOptions<E extends Extension = any> {
  * It returns an accessor of the derived value that updates whenever the editor
  * state changes.
  */
-declare function useEditorDerivedValue<E extends Extension, Derived>(
+export declare function useEditorDerivedValue<E extends Extension, Derived>(
 /**
  * A function that receives the editor instance and returns a derived value.
  *
@@ -113,7 +113,7 @@ derive: (editor: Editor<E>) => Derived, options?: UseEditorDerivedOptions<E>): A
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
  */
-declare function useEditor<E extends Extension = any>(options?: {
+export declare function useEditor<E extends Extension = any>(options?: {
   /**
    * Whether to update the component when the editor is mounted or editor state
    * is updated.
@@ -122,10 +122,10 @@ declare function useEditor<E extends Extension = any>(options?: {
    */
   update?: boolean;
 }): () => Editor<E>;
-declare function useKeymap(keymap: () => Keymap, options?: UseExtensionOptions): void;
+export declare function useKeymap(keymap: () => Keymap, options?: UseExtensionOptions): void;
 /**
  * Calls the given handler whenever the editor state changes.
  */
-declare function useStateUpdate(handler: (state: EditorState) => void, options?: UseExtensionOptions): void;
-export { type MaybeAccessor, type PropsWithChildren, type PropsWithClass, type PropsWithElement, ProseKit, type ProseKitProps, type SolidMarkViewComponent, type SolidMarkViewOptions, type SolidMarkViewProps, type SolidNodeViewComponent, type SolidNodeViewOptions, type SolidNodeViewProps, type UseEditorDerivedOptions, type UseExtensionOptions, defineSolidMarkView, defineSolidNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+export declare function useStateUpdate(handler: (state: EditorState) => void, options?: UseExtensionOptions): void;
+export type { MaybeAccessor, PropsWithChildren, PropsWithClass, PropsWithElement, ProseKitProps, SolidMarkViewComponent, SolidMarkViewOptions, SolidMarkViewProps, SolidNodeViewComponent, SolidNodeViewOptions, SolidNodeViewProps, UseEditorDerivedOptions, UseExtensionOptions };
 //# sourceMappingURL=index.d.ts.map

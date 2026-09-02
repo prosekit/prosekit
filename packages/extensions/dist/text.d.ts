@@ -3,11 +3,10 @@ import { Attrs } from "@prosekit/pm/model";
 /**
  * @internal
  */
-type TextExtension = Extension<{
+export type TextExtension = Extension<{
   Nodes: {
     text: Attrs;
   };
 }>;
-declare function defineText(): TextExtension;
-export { TextExtension, defineText };
+export declare function defineText(): TextExtension;
 //# sourceMappingURL=text.d.ts.map

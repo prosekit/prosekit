@@ -11,15 +11,15 @@ type HighlightCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineHighlightCommands(): HighlightCommandsExtension;
+export declare function defineHighlightCommands(): HighlightCommandsExtension;
 /**
  * @internal
  */
-declare function defineHighlightInputRule(): PlainExtension;
+export declare function defineHighlightInputRule(): PlainExtension;
 /**
  * @internal
  */
-declare function defineHighlightKeymap(): PlainExtension;
+export declare function defineHighlightKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -31,11 +31,11 @@ type HighlightSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineHighlightSpec(): HighlightSpecExtension;
+export declare function defineHighlightSpec(): HighlightSpecExtension;
 /**
  * @internal
  */
 type HighlightExtension = Union<[HighlightSpecExtension, HighlightCommandsExtension]>;
-declare function defineHighlight(): HighlightExtension;
-export { type HighlightCommandsExtension, type HighlightExtension, type HighlightSpecExtension, defineHighlight, defineHighlightCommands, defineHighlightInputRule, defineHighlightKeymap, defineHighlightSpec };
+export declare function defineHighlight(): HighlightExtension;
+export type { HighlightCommandsExtension, HighlightExtension, HighlightSpecExtension };
 //# sourceMappingURL=highlight.d.ts.map

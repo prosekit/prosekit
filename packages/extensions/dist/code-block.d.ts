@@ -23,7 +23,7 @@ type CodeBlockCommandsExtension = Extension<{
 /**
  * Adds commands for working with `codeBlock` nodes.
  */
-declare function defineCodeBlockCommands(): CodeBlockCommandsExtension;
+export declare function defineCodeBlockCommands(): CodeBlockCommandsExtension;
 /**
  * An alias for the `Parser` type from the `prosemirror-highlight` package.
  */
@@ -48,28 +48,28 @@ type CodeBlockHighlightOptions = {
  *
  * @param options
  */
-declare function defineCodeBlockHighlight({ parser, nodeTypes }: CodeBlockHighlightOptions): Extension;
+export declare function defineCodeBlockHighlight({ parser, nodeTypes }: CodeBlockHighlightOptions): Extension;
 /**
  * Adds input rules for `codeBlock` nodes.
  */
-declare function defineCodeBlockInputRule(): PlainExtension;
+export declare function defineCodeBlockInputRule(): PlainExtension;
 /**
  * Adds enter rules for `codeBlock` nodes.
  */
-declare function defineCodeBlockEnterRule(): PlainExtension;
+export declare function defineCodeBlockEnterRule(): PlainExtension;
 /**
  * Defines the keymap for code blocks.
  */
-declare function defineCodeBlockKeymap(): PlainExtension;
+export declare function defineCodeBlockKeymap(): PlainExtension;
 /**
  * Defines a plugin that adds a decoration to hide the code block preview when the cursor is inside a code block. Use {@link isCodeBlockPreviewHiddenDecoration} to check whether a given decoration hides the code block preview.
  */
-declare function defineCodeBlockPreviewPlugin(): PlainExtension;
+export declare function defineCodeBlockPreviewPlugin(): PlainExtension;
 /**
  * Returns whether the given decoration hides the code block preview (i.e.
  * the cursor is inside the code block it decorates).
  */
-declare function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): boolean;
+export declare function isCodeBlockPreviewHiddenDecoration(decoration: Decoration): boolean;
 interface ShikiHighlighterOptions extends BundledHighlighterOptions<BundledLanguage, BundledTheme> {}
 /**
  * The options to configure the Shiki highlighter.
@@ -109,7 +109,7 @@ interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'themes' |
  *
  * @param options - The options to configure the Shiki highlighter.
  */
-declare function defineCodeBlockShiki({ nodeTypes, themes, langs, ...rest }?: CodeBlockShikiOptions): Extension;
+export declare function defineCodeBlockShiki({ nodeTypes, themes, langs, ...rest }?: CodeBlockShikiOptions): Extension;
 /**
  * @internal
  */
@@ -121,7 +121,7 @@ type CodeBlockSpecExtension = Extension<{
 /**
  * Defines the `codeBlock` node spec.
  */
-declare function defineCodeBlockSpec(): CodeBlockSpecExtension;
+export declare function defineCodeBlockSpec(): CodeBlockSpecExtension;
 /**
  * @internal
  */
@@ -135,6 +135,6 @@ type CodeBlockExtension = Union<[CodeBlockSpecExtension, CodeBlockCommandsExtens
  * - {@link defineCodeBlockKeymap}
  * - {@link defineCodeBlockCommands}.
  */
-declare function defineCodeBlock(): CodeBlockExtension;
-export { type CodeBlockAttrs, type CodeBlockCommandsExtension, type CodeBlockExtension, type CodeBlockHighlightOptions, type CodeBlockShikiOptions, type CodeBlockSpecExtension, type HighlightParser, type ShikiBundledLanguage, type ShikiBundledLanguageInfo, type ShikiBundledTheme, type ShikiBundledThemeInfo, defineCodeBlock, defineCodeBlockCommands, defineCodeBlockEnterRule, defineCodeBlockHighlight, defineCodeBlockInputRule, defineCodeBlockKeymap, defineCodeBlockPreviewPlugin, defineCodeBlockShiki, defineCodeBlockSpec, isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, shikiBundledThemesInfo };
+export declare function defineCodeBlock(): CodeBlockExtension;
+export { type CodeBlockAttrs, type CodeBlockCommandsExtension, type CodeBlockExtension, type CodeBlockHighlightOptions, type CodeBlockShikiOptions, type CodeBlockSpecExtension, type HighlightParser, type ShikiBundledLanguage, type ShikiBundledLanguageInfo, type ShikiBundledTheme, type ShikiBundledThemeInfo, shikiBundledLanguagesInfo, shikiBundledThemesInfo };
 //# sourceMappingURL=code-block.d.ts.map

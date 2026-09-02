@@ -11,15 +11,15 @@ type ItalicCommandsExtension = Extension<{
 /**
  * @internal
  */
-declare function defineItalicCommands(): ItalicCommandsExtension;
+export declare function defineItalicCommands(): ItalicCommandsExtension;
 /**
  * @internal
  */
-declare function defineItalicInputRule(): PlainExtension;
+export declare function defineItalicInputRule(): PlainExtension;
 /**
  * @internal
  */
-declare function defineItalicKeymap(): PlainExtension;
+export declare function defineItalicKeymap(): PlainExtension;
 /**
  * @internal
  */
@@ -31,11 +31,11 @@ type ItalicSpecExtension = Extension<{
 /**
  * @internal
  */
-declare function defineItalicSpec(): ItalicSpecExtension;
+export declare function defineItalicSpec(): ItalicSpecExtension;
 /**
  * @internal
  */
 type ItalicExtension = Union<[ItalicSpecExtension, ItalicCommandsExtension]>;
-declare function defineItalic(): ItalicExtension;
-export { type ItalicCommandsExtension, type ItalicExtension, type ItalicSpecExtension, defineItalic, defineItalicCommands, defineItalicInputRule, defineItalicKeymap, defineItalicSpec };
+export declare function defineItalic(): ItalicExtension;
+export type { ItalicCommandsExtension, ItalicExtension, ItalicSpecExtension };
 //# sourceMappingURL=italic.d.ts.map

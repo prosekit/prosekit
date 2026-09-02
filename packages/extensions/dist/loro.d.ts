@@ -9,15 +9,15 @@ type LoroCommandsExtension = Extension<{
     redo: [];
   };
 }>;
-declare function defineLoroCommands(): LoroCommandsExtension;
+export declare function defineLoroCommands(): LoroCommandsExtension;
 interface LoroCursorOptions extends CursorPluginOptions {
   awareness?: CursorAwareness;
   presence?: CursorEphemeralStore;
 }
-declare function defineLoroCursorPlugin(options: LoroCursorOptions): PlainExtension;
-declare function defineLoroKeymap(): PlainExtension;
-declare function defineLoroSyncPlugin(options: LoroSyncPluginProps$1): PlainExtension;
-declare function defineLoroUndoPlugin(options: LoroUndoPluginProps$1): PlainExtension;
+export declare function defineLoroCursorPlugin(options: LoroCursorOptions): PlainExtension;
+export declare function defineLoroKeymap(): PlainExtension;
+export declare function defineLoroSyncPlugin(options: LoroSyncPluginProps$1): PlainExtension;
+export declare function defineLoroUndoPlugin(options: LoroUndoPluginProps$1): PlainExtension;
 interface LoroOptions {
   /**
    * The Loro instance handles the state of shared data.
@@ -48,6 +48,6 @@ interface LoroOptions {
  * @internal
  */
 type LoroExtension = Union<[LoroCommandsExtension, PlainExtension]>;
-declare function defineLoro(options: LoroOptions): LoroExtension;
-export { type LoroCursorOptions, type LoroExtension, type LoroOptions, type LoroSyncPluginProps, type LoroUndoPluginProps, defineLoro, defineLoroCommands, defineLoroCursorPlugin, defineLoroKeymap, defineLoroSyncPlugin, defineLoroUndoPlugin };
+export declare function defineLoro(options: LoroOptions): LoroExtension;
+export type { LoroCursorOptions, LoroExtension, LoroOptions, LoroSyncPluginProps, LoroUndoPluginProps };
 //# sourceMappingURL=loro.d.ts.map

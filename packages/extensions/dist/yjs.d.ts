@@ -10,7 +10,7 @@ type YjsCommandsExtension = Extension<{
     redo: [];
   };
 }>;
-declare function defineYjsCommands(): YjsCommandsExtension;
+export declare function defineYjsCommands(): YjsCommandsExtension;
 /**
  * The type `Awareness` is not exported by `y-prosemirror` so we need to define it like this.
  *
@@ -24,8 +24,8 @@ type YjsCursorPluginOptions = NonNullable<Parameters<typeof yCursorPlugin>[1]>;
 interface YjsCursorOptions extends YjsCursorPluginOptions {
   awareness: Awareness;
 }
-declare function defineYjsCursorPlugin(options: YjsCursorOptions): PlainExtension;
-declare function defineYjsKeymap(): PlainExtension;
+export declare function defineYjsCursorPlugin(options: YjsCursorOptions): PlainExtension;
+export declare function defineYjsKeymap(): PlainExtension;
 /**
  * Options for `y-prosemirror`'s `ySyncPlugin`.
  */
@@ -33,7 +33,7 @@ type YjsSyncPluginOptions = NonNullable<Parameters<typeof ySyncPlugin>[1]>;
 interface YjsSyncOptions extends YjsSyncPluginOptions {
   fragment: Y.XmlFragment;
 }
-declare function defineYjsSyncPlugin(options: YjsSyncOptions): PlainExtension;
+export declare function defineYjsSyncPlugin(options: YjsSyncOptions): PlainExtension;
 /**
  * Options for the `y-prosemirror`'s `yUndoPlugin`.
  */
@@ -42,7 +42,7 @@ interface YjsUndoOptions extends YjsUndoPluginOptions {}
 /**
  * @internal
  */
-declare function defineYjsUndoPlugin(options: YjsUndoOptions): PlainExtension;
+export declare function defineYjsUndoPlugin(options: YjsUndoOptions): PlainExtension;
 interface YjsOptions {
   /**
    * The Yjs instance handles the state of shared data.
@@ -74,6 +74,6 @@ interface YjsOptions {
  * @internal
  */
 type YjsExtension = Union<[YjsCommandsExtension, PlainExtension]>;
-declare function defineYjs(options: YjsOptions): YjsExtension;
-export { type Awareness, type YjsCursorOptions, type YjsCursorPluginOptions, type YjsExtension, type YjsOptions, type YjsSyncOptions, type YjsSyncPluginOptions, type YjsUndoOptions, type YjsUndoPluginOptions, defineYjs, defineYjsCommands, defineYjsCursorPlugin, defineYjsKeymap, defineYjsSyncPlugin, defineYjsUndoPlugin };
+export declare function defineYjs(options: YjsOptions): YjsExtension;
+export type { Awareness, YjsCursorOptions, YjsCursorPluginOptions, YjsExtension, YjsOptions, YjsSyncOptions, YjsSyncPluginOptions, YjsUndoOptions, YjsUndoPluginOptions };
 //# sourceMappingURL=yjs.d.ts.map

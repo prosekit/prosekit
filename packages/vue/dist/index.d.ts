@@ -10,7 +10,7 @@ interface ProseKitProps {
 /**
  * The root component for a ProseKit editor.
  */
-declare const ProseKit: DefineSetupFnComponent<ProseKitProps>;
+export declare const ProseKit: DefineSetupFnComponent<ProseKitProps>;
 interface VueMarkViewProps extends MarkViewContext {}
 type VueMarkViewComponent = DefineComponent<VueMarkViewProps, any, any>;
 /**
@@ -25,7 +25,7 @@ interface VueMarkViewOptions extends CoreMarkViewUserOptions<VueMarkViewComponen
 /**
  * Defines a mark view using a Vue component.
  */
-declare function defineVueMarkView(options: VueMarkViewOptions): Extension;
+export declare function defineVueMarkView(options: VueMarkViewOptions): Extension;
 interface VueNodeViewProps extends NodeViewContext {}
 type VueNodeViewComponent = DefineComponent<VueNodeViewProps, any, any>;
 /**
@@ -40,7 +40,7 @@ interface VueNodeViewOptions extends CoreNodeViewUserOptions<VueNodeViewComponen
 /**
  * Defines a node view using a Vue component.
  */
-declare function defineVueNodeView(options: VueNodeViewOptions): Extension;
+export declare function defineVueNodeView(options: VueNodeViewOptions): Extension;
 interface UseExtensionOptions {
   /**
    * The editor to add the extension to. If not provided, it will use the
@@ -55,7 +55,7 @@ interface UseExtensionOptions {
 /**
  * Add an extension to the editor.
  */
-declare function useExtension(
+export declare function useExtension(
 /**
  * The ref to an extension to add to the editor. If it changes, the previous
  * extension will be removed and the new one (if not null) will be added.
@@ -64,7 +64,7 @@ extension: MaybeRefOrGetter<Extension | null>, options?: UseExtensionOptions): v
 /**
  * Calls the given handler whenever the editor document changes.
  */
-declare function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void;
+export declare function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void;
 interface UseEditorDerivedOptions<E extends Extension = any> {
   /**
    * The editor to add the extension to. If not provided, it will use the
@@ -82,7 +82,7 @@ interface UseEditorDerivedOptions<E extends Extension = any> {
  * It returns a shallow ref of the derived value that updates whenever the editor
  * state changes.
  */
-declare function useEditorDerivedValue<E extends Extension, Derived>(
+export declare function useEditorDerivedValue<E extends Extension, Derived>(
 /**
  * A function that receives the editor instance and returns a derived value.
  *
@@ -93,7 +93,7 @@ derive: (editor: Editor<E>) => Derived, options?: UseEditorDerivedOptions<E>): S
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
  */
-declare function useEditor<E extends Extension = any>(options?: {
+export declare function useEditor<E extends Extension = any>(options?: {
   /**
    * Whether to update the component when the editor is mounted or editor state
    * is updated.
@@ -102,10 +102,10 @@ declare function useEditor<E extends Extension = any>(options?: {
    */
   update?: boolean;
 }): ShallowRef<Editor<E>>;
-declare function useKeymap(keymap: MaybeRefOrGetter<Keymap>, options?: UseExtensionOptions): void;
+export declare function useKeymap(keymap: MaybeRefOrGetter<Keymap>, options?: UseExtensionOptions): void;
 /**
  * Calls the given handler whenever the editor state changes.
  */
-declare function useStateUpdate(handler: (state: EditorState) => void, options?: UseExtensionOptions): void;
-export { ProseKit, type ProseKitProps, type UseEditorDerivedOptions, type UseExtensionOptions, type VueMarkViewComponent, type VueMarkViewOptions, type VueMarkViewProps, type VueNodeViewComponent, type VueNodeViewOptions, type VueNodeViewProps, defineVueMarkView, defineVueNodeView, useDocChange, useEditor, useEditorDerivedValue, useExtension, useKeymap, useStateUpdate };
+export declare function useStateUpdate(handler: (state: EditorState) => void, options?: UseExtensionOptions): void;
+export type { ProseKitProps, UseEditorDerivedOptions, UseExtensionOptions, VueMarkViewComponent, VueMarkViewOptions, VueMarkViewProps, VueNodeViewComponent, VueNodeViewOptions, VueNodeViewProps };
 //# sourceMappingURL=index.d.ts.map

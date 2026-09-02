@@ -12,7 +12,7 @@ import { OpenChangeEvent, setupPopoverPopup, setupPopoverPositioner, setupPopove
  * | --- | --- |
  * | `data-state` | `"open"` when the popover is visible, `"closed"` otherwise |
  */
-declare class PopoverPopupElement extends Base.PopoverPopupElement {}
+export declare class PopoverPopupElement extends Base.PopoverPopupElement {}
 /**
  * `<prosekit-popover-positioner>` custom element.
  *
@@ -30,7 +30,7 @@ declare class PopoverPopupElement extends Base.PopoverPopupElement {}
  * | --- | --- |
  * | `--transform-origin` | The coordinates that this element is anchored to. Useful for scale animations. |
  */
-declare class PopoverPositionerElement extends Base.PopoverPositionerElement {}
+export declare class PopoverPositionerElement extends Base.PopoverPositionerElement {}
 /**
  * `<prosekit-popover-root>` custom element.
  *
@@ -38,7 +38,7 @@ declare class PopoverPositionerElement extends Base.PopoverPositionerElement {}
  *
  * Events: {@link PopoverRootEvents}
  */
-declare class PopoverRootElement extends Base.PopoverRootElement {}
+export declare class PopoverRootElement extends Base.PopoverRootElement {}
 /**
  * `<prosekit-popover-trigger>` custom element.
  *
@@ -46,24 +46,24 @@ declare class PopoverRootElement extends Base.PopoverRootElement {}
  *
  * Events: {@link PopoverTriggerEvents}
  */
-declare class PopoverTriggerElement extends Base.PopoverTriggerElement {}
-interface PopoverPopupProps extends Base.PopoverPopupProps {}
-interface PopoverPositionerProps extends Base.PopoverPositionerProps {}
-interface PopoverRootProps extends Base.PopoverRootProps {}
-interface PopoverTriggerProps extends Base.PopoverTriggerProps {}
-interface PopoverRootEvents extends Base.PopoverRootEvents {}
-interface PopoverTriggerEvents extends Base.PopoverTriggerEvents {}
+export declare class PopoverTriggerElement extends Base.PopoverTriggerElement {}
+export interface PopoverPopupProps extends Base.PopoverPopupProps {}
+export interface PopoverPositionerProps extends Base.PopoverPositionerProps {}
+export interface PopoverRootProps extends Base.PopoverRootProps {}
+export interface PopoverTriggerProps extends Base.PopoverTriggerProps {}
+export interface PopoverRootEvents extends Base.PopoverRootEvents {}
+export interface PopoverTriggerEvents extends Base.PopoverTriggerEvents {}
 /** @internal */
-declare const PopoverPopupPropsDeclaration: PropsDeclaration<PopoverPopupProps>;
+export declare const PopoverPopupPropsDeclaration: PropsDeclaration<PopoverPopupProps>;
 /** @internal */
-declare const PopoverPositionerPropsDeclaration: PropsDeclaration<PopoverPositionerProps>;
+export declare const PopoverPositionerPropsDeclaration: PropsDeclaration<PopoverPositionerProps>;
 /** @internal */
-declare const PopoverRootPropsDeclaration: PropsDeclaration<PopoverRootProps>;
+export declare const PopoverRootPropsDeclaration: PropsDeclaration<PopoverRootProps>;
 /** @internal */
-declare const PopoverTriggerPropsDeclaration: PropsDeclaration<PopoverTriggerProps>;
-declare function registerPopoverRootElement(): void;
-declare function registerPopoverTriggerElement(): void;
-declare function registerPopoverPopupElement(): void;
-declare function registerPopoverPositionerElement(): void;
-export { OpenChangeEvent, PopoverPopupElement, PopoverPopupProps, PopoverPopupPropsDeclaration, PopoverPositionerElement, PopoverPositionerProps, PopoverPositionerPropsDeclaration, PopoverRootElement, PopoverRootEvents, PopoverRootProps, PopoverRootPropsDeclaration, PopoverTriggerElement, PopoverTriggerEvents, PopoverTriggerProps, PopoverTriggerPropsDeclaration, registerPopoverPopupElement, registerPopoverPositionerElement, registerPopoverRootElement, registerPopoverTriggerElement, setupPopoverPopup, setupPopoverPositioner, setupPopoverRoot, setupPopoverTrigger };
+export declare const PopoverTriggerPropsDeclaration: PropsDeclaration<PopoverTriggerProps>;
+export declare function registerPopoverRootElement(): void;
+export declare function registerPopoverTriggerElement(): void;
+export declare function registerPopoverPopupElement(): void;
+export declare function registerPopoverPositionerElement(): void;
+export { OpenChangeEvent, setupPopoverPopup, setupPopoverPositioner, setupPopoverRoot, setupPopoverTrigger };
 //# sourceMappingURL=popover.d.ts.map

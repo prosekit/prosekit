@@ -4,7 +4,7 @@ import { TooltipPopupElement, TooltipPositionerElement, TooltipPositionerProps a
 /** Props for the {@link TooltipPopup} Preact component. */
 interface TooltipPopupProps {}
 /** A Preact component that renders an `prosekit-tooltip-popup` custom element. */
-declare const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & HTMLAttributes<TooltipPopupElement> & RefAttributes<TooltipPopupElement>>;
+export declare const TooltipPopup: ForwardRefExoticComponent<TooltipPopupProps & HTMLAttributes<TooltipPopupElement> & RefAttributes<TooltipPopupElement>>;
 /** Props for the {@link TooltipPositioner} Preact component. */
 interface TooltipPositionerProps {
   /**
@@ -136,7 +136,7 @@ interface TooltipPositionerProps {
   altBoundary?: TooltipPositionerProps$1['altBoundary'];
 }
 /** A Preact component that renders an `prosekit-tooltip-positioner` custom element. */
-declare const TooltipPositioner: ForwardRefExoticComponent<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement> & RefAttributes<TooltipPositionerElement>>;
+export declare const TooltipPositioner: ForwardRefExoticComponent<TooltipPositionerProps & HTMLAttributes<TooltipPositionerElement> & RefAttributes<TooltipPositionerElement>>;
 /** Props for the {@link TooltipRoot} Preact component. */
 interface TooltipRootProps {
   /**
@@ -158,7 +158,7 @@ interface TooltipRootProps {
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
 }
 /** A Preact component that renders an `prosekit-tooltip-root` custom element. */
-declare const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & HTMLAttributes<TooltipRootElement> & RefAttributes<TooltipRootElement>>;
+export declare const TooltipRoot: ForwardRefExoticComponent<TooltipRootProps & HTMLAttributes<TooltipRootElement> & RefAttributes<TooltipRootElement>>;
 /** Props for the {@link TooltipTrigger} Preact component. */
 interface TooltipTriggerProps {
   /**
@@ -178,6 +178,6 @@ interface TooltipTriggerProps {
   closeDelay?: TooltipTriggerProps$1['closeDelay'];
 }
 /** A Preact component that renders an `prosekit-tooltip-trigger` custom element. */
-declare const TooltipTrigger: ForwardRefExoticComponent<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement> & RefAttributes<TooltipTriggerElement>>;
-export { TooltipPopup, type TooltipPopupProps, TooltipPositioner, type TooltipPositionerProps, TooltipRoot, type TooltipRootProps, TooltipTrigger, type TooltipTriggerProps };
+export declare const TooltipTrigger: ForwardRefExoticComponent<TooltipTriggerProps & HTMLAttributes<TooltipTriggerElement> & RefAttributes<TooltipTriggerElement>>;
+export type { TooltipPopupProps, TooltipPositionerProps, TooltipRootProps, TooltipTriggerProps };
 //# sourceMappingURL=tooltip.d.ts.map

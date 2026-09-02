@@ -27,7 +27,7 @@ interface ResizableRootProps {
   onResizeEnd?: (event: ResizableRootEvents['resizeEnd']) => void;
 }
 /** A Preact component that renders an `prosekit-resizable-root` custom element. */
-declare const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & HTMLAttributes<ResizableRootElement> & RefAttributes<ResizableRootElement>>;
+export declare const ResizableRoot: ForwardRefExoticComponent<ResizableRootProps & HTMLAttributes<ResizableRootElement> & RefAttributes<ResizableRootElement>>;
 /** Props for the {@link ResizableHandle} Preact component. */
 interface ResizableHandleProps {
   /**
@@ -38,6 +38,6 @@ interface ResizableHandleProps {
   position?: ResizableHandleProps$1['position'];
 }
 /** A Preact component that renders an `prosekit-resizable-handle` custom element. */
-declare const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & HTMLAttributes<ResizableHandleElement> & RefAttributes<ResizableHandleElement>>;
-export { ResizableHandle, type ResizableHandleProps, ResizableRoot, type ResizableRootProps };
+export declare const ResizableHandle: ForwardRefExoticComponent<ResizableHandleProps & HTMLAttributes<ResizableHandleElement> & RefAttributes<ResizableHandleElement>>;
+export type { ResizableHandleProps, ResizableRootProps };
 //# sourceMappingURL=resizable.d.ts.map

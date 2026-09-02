@@ -22,7 +22,7 @@ interface ResizableRootProps {
 /**
  * @internal
  */
-declare const ResizableRootPropsDeclaration: PropsDeclaration<ResizableRootProps>;
+export declare const ResizableRootPropsDeclaration: PropsDeclaration<ResizableRootProps>;
 interface ResizableRootEvents {
   /**
    * Emitted when a resize operation starts.
@@ -33,14 +33,14 @@ interface ResizableRootEvents {
    */
   resizeEnd: ResizeEndEvent;
 }
-declare class ResizeStartEvent extends Event {
+export declare class ResizeStartEvent extends Event {
   readonly detail: {
     readonly width: number;
     readonly height: number;
   };
   constructor(width: number, height: number);
 }
-declare class ResizeEndEvent extends Event {
+export declare class ResizeEndEvent extends Event {
   readonly detail: {
     readonly width: number;
     readonly height: number;
@@ -50,7 +50,7 @@ declare class ResizeEndEvent extends Event {
 /**
  * @internal
  */
-declare function setupResizableRoot(host: HostElement, props: State<ResizableRootProps>): void;
+export declare function setupResizableRoot(host: HostElement, props: State<ResizableRootProps>): void;
 declare const ResizableRootElementBase: HostElementConstructor<ResizableRootProps>;
 /**
  * `<prosekit-resizable-root>` custom element.
@@ -65,11 +65,11 @@ declare const ResizableRootElementBase: HostElementConstructor<ResizableRootProp
  * | --- | --- |
  * | `data-resizing` | Present when the element is being resized |
  */
-declare class ResizableRootElement extends ResizableRootElementBase {}
+export declare class ResizableRootElement extends ResizableRootElementBase {}
 /**
  * @internal
  */
-declare function registerResizableRootElement(): void;
+export declare function registerResizableRootElement(): void;
 interface ResizableHandleProps {
   /**
    * The position of the handle.
@@ -81,21 +81,21 @@ interface ResizableHandleProps {
 /**
  * @internal
  */
-declare const ResizableHandlePropsDeclaration: PropsDeclaration<ResizableHandleProps>;
+export declare const ResizableHandlePropsDeclaration: PropsDeclaration<ResizableHandleProps>;
 /**
  * @internal
  */
-declare function setupResizableHandle(host: HostElement, props: State<ResizableHandleProps>): void;
+export declare function setupResizableHandle(host: HostElement, props: State<ResizableHandleProps>): void;
 declare const ResizableHandleElementBase: HostElementConstructor<ResizableHandleProps>;
 /**
  * `<prosekit-resizable-handle>` custom element.
  *
  * Properties: {@link ResizableHandleProps}
  */
-declare class ResizableHandleElement extends ResizableHandleElementBase {}
+export declare class ResizableHandleElement extends ResizableHandleElementBase {}
 /**
  * @internal
  */
-declare function registerResizableHandleElement(): void;
-export { ResizableHandleElement, type ResizableHandleProps, ResizableHandlePropsDeclaration, ResizableRootElement, type ResizableRootEvents, type ResizableRootProps, ResizableRootPropsDeclaration, ResizeEndEvent, ResizeStartEvent, registerResizableHandleElement, registerResizableRootElement, setupResizableHandle, setupResizableRoot };
+export declare function registerResizableHandleElement(): void;
+export type { ResizableHandleProps, ResizableRootEvents, ResizableRootProps };
 //# sourceMappingURL=resizable.d.ts.map

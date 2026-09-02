@@ -2,11 +2,10 @@ import { PlainExtension } from "@prosekit/core";
 /**
  * @internal
  */
-type ModClickPreventionExtension = PlainExtension;
+export type ModClickPreventionExtension = PlainExtension;
 /**
  * By default, clicking a node while holding the mod key will select the node. This
  * extension disables that behavior.
  */
-declare function defineModClickPrevention(): ModClickPreventionExtension;
-export { ModClickPreventionExtension, defineModClickPrevention };
+export declare function defineModClickPrevention(): ModClickPreventionExtension;
 //# sourceMappingURL=mod-click-prevention.d.ts.map

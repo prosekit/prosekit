@@ -25,7 +25,7 @@ interface MenuItemProps {
   onSelect?: (event: MenuItemEvents['select']) => void;
 }
 /** A Preact component that renders an `prosekit-menu-item` custom element. */
-declare const MenuItem: ForwardRefExoticComponent<MenuItemProps & Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> & RefAttributes<MenuItemElement>>;
+export declare const MenuItem: ForwardRefExoticComponent<MenuItemProps & Omit<HTMLAttributes<MenuItemElement>, 'onSelect'> & RefAttributes<MenuItemElement>>;
 /** Props for the {@link MenuPopup} Preact component. */
 interface MenuPopupProps {
   /**
@@ -37,7 +37,7 @@ interface MenuPopupProps {
   eventTarget?: MenuPopupProps$1['eventTarget'];
 }
 /** A Preact component that renders an `prosekit-menu-popup` custom element. */
-declare const MenuPopup: ForwardRefExoticComponent<MenuPopupProps & HTMLAttributes<MenuPopupElement> & RefAttributes<MenuPopupElement>>;
+export declare const MenuPopup: ForwardRefExoticComponent<MenuPopupProps & HTMLAttributes<MenuPopupElement> & RefAttributes<MenuPopupElement>>;
 /** Props for the {@link MenuPositioner} Preact component. */
 interface MenuPositionerProps {
   /**
@@ -169,7 +169,7 @@ interface MenuPositionerProps {
   altBoundary?: MenuPositionerProps$1['altBoundary'];
 }
 /** A Preact component that renders an `prosekit-menu-positioner` custom element. */
-declare const MenuPositioner: ForwardRefExoticComponent<MenuPositionerProps & HTMLAttributes<MenuPositionerElement> & RefAttributes<MenuPositionerElement>>;
+export declare const MenuPositioner: ForwardRefExoticComponent<MenuPositionerProps & HTMLAttributes<MenuPositionerElement> & RefAttributes<MenuPositionerElement>>;
 /** Props for the {@link MenuRoot} Preact component. */
 interface MenuRootProps {
   /**
@@ -191,7 +191,7 @@ interface MenuRootProps {
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
 }
 /** A Preact component that renders an `prosekit-menu-root` custom element. */
-declare const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>>;
+export declare const MenuRoot: ForwardRefExoticComponent<MenuRootProps & HTMLAttributes<MenuRootElement> & RefAttributes<MenuRootElement>>;
 /** Props for the {@link MenuSubmenuRoot} Preact component. */
 interface MenuSubmenuRootProps {
   /**
@@ -213,7 +213,7 @@ interface MenuSubmenuRootProps {
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
 }
 /** A Preact component that renders an `prosekit-menu-submenu-root` custom element. */
-declare const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement> & RefAttributes<MenuSubmenuRootElement>>;
+export declare const MenuSubmenuRoot: ForwardRefExoticComponent<MenuSubmenuRootProps & HTMLAttributes<MenuSubmenuRootElement> & RefAttributes<MenuSubmenuRootElement>>;
 /** Props for the {@link MenuSubmenuTrigger} Preact component. */
 interface MenuSubmenuTriggerProps {
   /**
@@ -230,7 +230,7 @@ interface MenuSubmenuTriggerProps {
   disabled?: MenuSubmenuTriggerProps$1['disabled'];
 }
 /** A Preact component that renders an `prosekit-menu-submenu-trigger` custom element. */
-declare const MenuSubmenuTrigger: ForwardRefExoticComponent<MenuSubmenuTriggerProps & HTMLAttributes<MenuSubmenuTriggerElement> & RefAttributes<MenuSubmenuTriggerElement>>;
+export declare const MenuSubmenuTrigger: ForwardRefExoticComponent<MenuSubmenuTriggerProps & HTMLAttributes<MenuSubmenuTriggerElement> & RefAttributes<MenuSubmenuTriggerElement>>;
 /** Props for the {@link MenuTrigger} Preact component. */
 interface MenuTriggerProps {
   /**
@@ -243,6 +243,6 @@ interface MenuTriggerProps {
   onOpenChange?: (event: MenuTriggerEvents['openChange']) => void;
 }
 /** A Preact component that renders an `prosekit-menu-trigger` custom element. */
-declare const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & HTMLAttributes<MenuTriggerElement> & RefAttributes<MenuTriggerElement>>;
-export { MenuItem, type MenuItemProps, MenuPopup, type MenuPopupProps, MenuPositioner, type MenuPositionerProps, MenuRoot, type MenuRootProps, MenuSubmenuRoot, type MenuSubmenuRootProps, MenuSubmenuTrigger, type MenuSubmenuTriggerProps, MenuTrigger, type MenuTriggerProps };
+export declare const MenuTrigger: ForwardRefExoticComponent<MenuTriggerProps & HTMLAttributes<MenuTriggerElement> & RefAttributes<MenuTriggerElement>>;
+export type { MenuItemProps, MenuPopupProps, MenuPositionerProps, MenuRootProps, MenuSubmenuRootProps, MenuSubmenuTriggerProps, MenuTriggerProps };
 //# sourceMappingURL=menu.d.ts.map

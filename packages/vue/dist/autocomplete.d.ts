@@ -3,7 +3,7 @@ import { AutocompleteItemEvents, AutocompleteItemProps as AutocompleteItemProps$
 /** Props for the {@link AutocompleteEmpty} Vue component. */
 interface AutocompleteEmptyProps {}
 /** A Vue component that renders an `prosekit-autocomplete-empty` custom element. */
-declare const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAttributes>;
+export declare const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAttributes>;
 /** Props for the {@link AutocompleteItem} Vue component. */
 interface AutocompleteItemProps {
   /**
@@ -24,7 +24,7 @@ interface AutocompleteItemProps {
   onSelect?: (event: AutocompleteItemEvents['select']) => void;
 }
 /** A Vue component that renders an `prosekit-autocomplete-item` custom element. */
-declare const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttributes>;
+export declare const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttributes>;
 /** Props for the {@link AutocompletePopup} Vue component. */
 interface AutocompletePopupProps {
   /**
@@ -39,7 +39,7 @@ interface AutocompletePopupProps {
   onValuesChange?: (event: AutocompletePopupEvents['valuesChange']) => void;
 }
 /** A Vue component that renders an `prosekit-autocomplete-popup` custom element. */
-declare const AutocompletePopup: DefineSetupFnComponent<AutocompletePopupProps & HTMLAttributes>;
+export declare const AutocompletePopup: DefineSetupFnComponent<AutocompletePopupProps & HTMLAttributes>;
 /** Props for the {@link AutocompletePositioner} Vue component. */
 interface AutocompletePositionerProps {
   /**
@@ -146,7 +146,7 @@ interface AutocompletePositionerProps {
   altBoundary?: AutocompletePositionerProps$1['altBoundary'];
 }
 /** A Vue component that renders an `prosekit-autocomplete-positioner` custom element. */
-declare const AutocompletePositioner: DefineSetupFnComponent<AutocompletePositionerProps & HTMLAttributes>;
+export declare const AutocompletePositioner: DefineSetupFnComponent<AutocompletePositionerProps & HTMLAttributes>;
 /** Props for the {@link AutocompleteRoot} Vue component. */
 interface AutocompleteRootProps {
   /**
@@ -212,6 +212,6 @@ interface AutocompleteRootProps {
   onValuesChange?: (event: AutocompleteRootEvents['valuesChange']) => void;
 }
 /** A Vue component that renders an `prosekit-autocomplete-root` custom element. */
-declare const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HTMLAttributes>;
-export { AutocompleteEmpty, type AutocompleteEmptyProps, AutocompleteItem, type AutocompleteItemProps, AutocompletePopup, type AutocompletePopupProps, AutocompletePositioner, type AutocompletePositionerProps, AutocompleteRoot, type AutocompleteRootProps };
+export declare const AutocompleteRoot: DefineSetupFnComponent<AutocompleteRootProps & HTMLAttributes>;
+export type { AutocompleteEmptyProps, AutocompleteItemProps, AutocompletePopupProps, AutocompletePositionerProps, AutocompleteRootProps };
 //# sourceMappingURL=autocomplete.d.ts.map

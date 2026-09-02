@@ -3,7 +3,7 @@ import { InlinePopoverPopupElement, InlinePopoverPositionerElement, InlinePopove
 /** Props for the {@link InlinePopoverPopup} Solid component. */
 interface InlinePopoverPopupProps {}
 /** A Solid component that renders an `prosekit-inline-popover-popup` custom element. */
-declare const InlinePopoverPopup: Component<InlinePopoverPopupProps & JSX.HTMLAttributes<InlinePopoverPopupElement>>;
+export declare const InlinePopoverPopup: Component<InlinePopoverPopupProps & JSX.HTMLAttributes<InlinePopoverPopupElement>>;
 /** Props for the {@link InlinePopoverPositioner} Solid component. */
 interface InlinePopoverPositionerProps {
   /**
@@ -134,7 +134,7 @@ interface InlinePopoverPositionerProps {
   altBoundary?: InlinePopoverPositionerProps$1['altBoundary'];
 }
 /** A Solid component that renders an `prosekit-inline-popover-positioner` custom element. */
-declare const InlinePopoverPositioner: Component<InlinePopoverPositionerProps & JSX.HTMLAttributes<InlinePopoverPositionerElement>>;
+export declare const InlinePopoverPositioner: Component<InlinePopoverPositionerProps & JSX.HTMLAttributes<InlinePopoverPositionerElement>>;
 /** Props for the {@link InlinePopoverRoot} Solid component. */
 interface InlinePopoverRootProps {
   /**
@@ -183,6 +183,6 @@ interface InlinePopoverRootProps {
   onOpenChange?: (event: InlinePopoverRootEvents['openChange']) => void;
 }
 /** A Solid component that renders an `prosekit-inline-popover-root` custom element. */
-declare const InlinePopoverRoot: Component<InlinePopoverRootProps & JSX.HTMLAttributes<InlinePopoverRootElement>>;
-export { InlinePopoverPopup, type InlinePopoverPopupProps, InlinePopoverPositioner, type InlinePopoverPositionerProps, InlinePopoverRoot, type InlinePopoverRootProps };
+export declare const InlinePopoverRoot: Component<InlinePopoverRootProps & JSX.HTMLAttributes<InlinePopoverRootElement>>;
+export type { InlinePopoverPopupProps, InlinePopoverPositionerProps, InlinePopoverRootProps };
 //# sourceMappingURL=inline-popover.d.ts.map

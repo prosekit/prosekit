@@ -4,7 +4,7 @@ import { AutocompleteEmptyElement, AutocompleteItemElement, AutocompleteItemEven
 /** Props for the {@link AutocompleteEmpty} Preact component. */
 interface AutocompleteEmptyProps {}
 /** A Preact component that renders an `prosekit-autocomplete-empty` custom element. */
-declare const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>>;
+export declare const AutocompleteEmpty: ForwardRefExoticComponent<AutocompleteEmptyProps & HTMLAttributes<AutocompleteEmptyElement> & RefAttributes<AutocompleteEmptyElement>>;
 /** Props for the {@link AutocompleteItem} Preact component. */
 interface AutocompleteItemProps {
   /**
@@ -25,7 +25,7 @@ interface AutocompleteItemProps {
   onSelect?: (event: AutocompleteItemEvents['select']) => void;
 }
 /** A Preact component that renders an `prosekit-autocomplete-item` custom element. */
-declare const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>>;
+export declare const AutocompleteItem: ForwardRefExoticComponent<AutocompleteItemProps & Omit<HTMLAttributes<AutocompleteItemElement>, 'onSelect'> & RefAttributes<AutocompleteItemElement>>;
 /** Props for the {@link AutocompletePopup} Preact component. */
 interface AutocompletePopupProps {
   /**
@@ -40,7 +40,7 @@ interface AutocompletePopupProps {
   onValuesChange?: (event: AutocompletePopupEvents['valuesChange']) => void;
 }
 /** A Preact component that renders an `prosekit-autocomplete-popup` custom element. */
-declare const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>>;
+export declare const AutocompletePopup: ForwardRefExoticComponent<AutocompletePopupProps & HTMLAttributes<AutocompletePopupElement> & RefAttributes<AutocompletePopupElement>>;
 /** Props for the {@link AutocompletePositioner} Preact component. */
 interface AutocompletePositionerProps {
   /**
@@ -147,7 +147,7 @@ interface AutocompletePositionerProps {
   altBoundary?: AutocompletePositionerProps$1['altBoundary'];
 }
 /** A Preact component that renders an `prosekit-autocomplete-positioner` custom element. */
-declare const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement> & RefAttributes<AutocompletePositionerElement>>;
+export declare const AutocompletePositioner: ForwardRefExoticComponent<AutocompletePositionerProps & HTMLAttributes<AutocompletePositionerElement> & RefAttributes<AutocompletePositionerElement>>;
 /** Props for the {@link AutocompleteRoot} Preact component. */
 interface AutocompleteRootProps {
   /**
@@ -213,6 +213,6 @@ interface AutocompleteRootProps {
   onValuesChange?: (event: AutocompleteRootEvents['valuesChange']) => void;
 }
 /** A Preact component that renders an `prosekit-autocomplete-root` custom element. */
-declare const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>>;
-export { AutocompleteEmpty, type AutocompleteEmptyProps, AutocompleteItem, type AutocompleteItemProps, AutocompletePopup, type AutocompletePopupProps, AutocompletePositioner, type AutocompletePositionerProps, AutocompleteRoot, type AutocompleteRootProps };
+export declare const AutocompleteRoot: ForwardRefExoticComponent<AutocompleteRootProps & HTMLAttributes<AutocompleteRootElement> & RefAttributes<AutocompleteRootElement>>;
+export type { AutocompleteEmptyProps, AutocompleteItemProps, AutocompletePopupProps, AutocompletePositionerProps, AutocompleteRootProps };
 //# sourceMappingURL=autocomplete.d.ts.map

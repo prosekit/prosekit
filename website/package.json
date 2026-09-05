@@ -24,7 +24,7 @@
     "@astrojs/starlight": "^0.42.0",
     "@astrojs/svelte": "^9.0.1",
     "@astrojs/vue": "^7.0.2",
-    "@base-ui/react": "^1.7.0",
+    "@base-ui/react": "^1.8.0",
     "@egoist/tailwindcss-icons": "^1.9.2",
     "@iconify-json/bxl": "^1.2.4",
     "@iconify-json/logos": "^1.2.13",

@@ -16,7 +16,7 @@ jobs:
         if: >-
           github.event.pull_request.head.repo.full_name == github.repository &&
           github.event.pull_request.user.login != 'dependabot[bot]'
-        uses: int128/hide-comment-action@95dd081d51b1cae55a0d089db892cea5835e4e15 # v1.67.0
+        uses: int128/hide-comment-action@d77998fe0fbeb1cafd88f2cc4549c9ffd997656b # v1.71.0
         with:
           authors: |
             github-actions

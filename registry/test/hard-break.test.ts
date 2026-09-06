@@ -21,14 +21,14 @@ testStory('hard-break', () => {
     await expectLocatorToHaveCount(brLocator, brsBefore + 1)
 
     // Insert via keyboard: Shift+Enter
-    await expect.element(editor).not.toHaveTextContent(/AAAAA/)
-    await expect.element(editor).not.toHaveTextContent(/BBBBB/)
+    await expect.element(editor).not.toMatchTextContent(/AAAAA/)
+    await expect.element(editor).not.toMatchTextContent(/BBBBB/)
     await editor.locate('p').first().click()
     await inputText('AAAAA')
     await keyboard.press('Shift+Enter')
     await inputText('BBBBB')
     await expectLocatorToHaveCount(brLocator, brsBefore + 2)
-    await expect.element(editor).toHaveTextContent(/AAAAA/)
-    await expect.element(editor).toHaveTextContent(/BBBBB/)
+    await expect.element(editor).toMatchTextContent(/AAAAA/)
+    await expect.element(editor).toMatchTextContent(/BBBBB/)
   })
 })

@@ -18,12 +18,12 @@ testStory({ story: 'heading', emptyContent: true }, () => {
     await inputText('Heading Level 1')
 
     await expect.element(editor.locate('h1')).toBeVisible()
-    await expect.element(editor.locate('h1')).toHaveTextContent('Heading Level 1')
+    await expect.element(editor.locate('h1')).toMatchTextContent('Heading Level 1')
 
     await keyboard.press('Enter')
     await inputText('## Heading Level 2')
 
     await expect.element(editor.locate('h2')).toBeVisible()
-    await expect.element(editor.locate('h2')).toHaveTextContent('Heading Level 2')
+    await expect.element(editor.locate('h2')).toMatchTextContent('Heading Level 2')
   })
 })

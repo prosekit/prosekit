@@ -13,7 +13,7 @@ testStory('view-adapter', () => {
 
     // Check label
     const label = atomBlock.getByTestId('atom-block-view-label')
-    await expect.element(label).toHaveTextContent('Atom Block View')
+    await expect.element(label).toMatchTextContent('Atom Block View')
 
     // Check position (should be a number)
     const pos = atomBlock.getByTestId('atom-block-view-pos')

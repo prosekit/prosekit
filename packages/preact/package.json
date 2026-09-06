@@ -69,7 +69,7 @@
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-preact": "^1.0.0"
+    "vitest-browser-preact": "^1.1.0"
   },
   "publishConfig": {
     "exports": {

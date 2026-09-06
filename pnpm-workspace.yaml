@@ -6,12 +6,12 @@ packages:
 catalog:
   "@tsdown/css": "^0.23.0"
   "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.11"
-  "@vitest/coverage-v8": "^4.1.11"
-  "@vitest/ui": "^4.1.11"
+  "@vitest/browser-playwright": "^5.0.0"
+  "@vitest/coverage-v8": "^5.0.0"
+  "@vitest/ui": "^5.0.0"
   tsdown: "^0.23.0"
   typescript: "~6.0.3"
-  vitest: "^4.1.11"
+  vitest: "^5.0.0"
 
 dedupePeers: true
 
@@ -30,6 +30,10 @@ patchedDependencies:
 strictDepBuilds: true
 
 strictPeerDependencies: true
+
+peerDependencyRules:
+  allowedVersions:
+    vitest: "5"
 
 trustPolicy: no-downgrade
 

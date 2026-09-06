@@ -14,20 +14,20 @@ testStory('code-block', () => {
     // Type triple backticks and press space to create a code block
     await clearEditor()
     await inputText('```')
-    await expect.element(editor).toHaveTextContent('```')
+    await expect.element(editor).toMatchTextContent('```')
     await expectNotPre()
     await keyboard.press('Space')
     await expectAnyPre()
-    await expect.element(editor).not.toHaveTextContent('```')
+    await expect.element(editor).not.toMatchTextContent('```')
 
     // Type triple backticks followed by a language and press space to create a code block
     await clearEditor()
     await inputText('```javascript')
-    await expect.element(editor).toHaveTextContent('```javascript')
+    await expect.element(editor).toMatchTextContent('```javascript')
     await expectNotPre()
     await keyboard.press('Space')
     await expectJavaScriptPre()
-    await expect.element(editor).not.toHaveTextContent('```')
+    await expect.element(editor).not.toMatchTextContent('```')
   })
 
   it('enter rule', async () => {
@@ -36,20 +36,20 @@ testStory('code-block', () => {
     // Type triple backticks and press enter to create a code block
     await clearEditor()
     await inputText('```')
-    await expect.element(editor).toHaveTextContent('```')
+    await expect.element(editor).toMatchTextContent('```')
     await expectNotPre()
     await keyboard.press('Enter')
     await expectAnyPre()
-    await expect.element(editor).not.toHaveTextContent('```')
+    await expect.element(editor).not.toMatchTextContent('```')
 
     // Type triple backticks followed by a language and press enter to create a code block
     await clearEditor()
     await inputText('```javascript')
-    await expect.element(editor).toHaveTextContent('```javascript')
+    await expect.element(editor).toMatchTextContent('```javascript')
     await expectNotPre()
     await keyboard.press('Enter')
     await expectJavaScriptPre()
-    await expect.element(editor).not.toHaveTextContent('```')
+    await expect.element(editor).not.toMatchTextContent('```')
   })
 })
 

@@ -24,7 +24,7 @@ testStory('strike', () => {
     await strikeBtn.click()
     await inputText(' world')
     await expect.element(struckHello).toBeVisible()
-    await expect.element(editor).toHaveTextContent('hello world')
+    await expect.element(editor).toMatchTextContent('hello world')
     await expectLocatorToNotExist(editor.locate('s', { hasText: /world/ }))
   })
 })

@@ -4,12 +4,12 @@ packages:
   - packages/*
 
 catalog:
-  "@tsdown/css": "^0.22.14"
+  "@tsdown/css": "^0.23.0"
   "@types/node": "^24.12.2"
   "@vitest/browser-playwright": "^4.1.11"
   "@vitest/coverage-v8": "^4.1.11"
   "@vitest/ui": "^4.1.11"
-  tsdown: "^0.22.14"
+  tsdown: "^0.23.0"
   typescript: "~6.0.3"
   vitest: "^4.1.11"
 

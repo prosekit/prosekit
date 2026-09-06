@@ -42,7 +42,7 @@ jobs:
 
       - name: Create Release Pull Request
         id: changesets
-        uses: changesets/action@v2.1.0
+        uses: changesets/action@198f833dd7d863100ea6e28967bc9a9fdefadb0a # v2.1.0
         with:
           version-script: pnpm ci:version
           commit-message: "chore: version packages"

@@ -20,9 +20,6 @@ function getDefaultConfig() {
       setupFiles: [path.join(import.meta.dirname, 'setup-vitest.js')],
       browser: {
         enabled: true,
-        locators: {
-          exact: false,
-        },
         viewport: {
           width: 900,
           height: 600,

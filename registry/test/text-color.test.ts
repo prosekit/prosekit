@@ -13,7 +13,7 @@ testStory({ story: 'text-color' }, () => {
     await selectText(editor, 7, 11, 'some')
 
     // Inline color menu should appear; click Blue button in text color section
-    const blueBtn = page.getByRole('button', { name: 'Text: Blue' })
+    const blueBtn = page.getByRole('button', { name: 'A Text: Blue' })
     await expect.element(blueBtn).toBeVisible()
     await blueBtn.click()
 
@@ -25,7 +25,7 @@ testStory({ story: 'text-color' }, () => {
     // Select again and clear color using "Default"
     await selectText(editor, 7, 11, 'some')
     await unhover()
-    const defaultBtn = page.getByRole('button', { name: 'Text: Default' })
+    const defaultBtn = page.getByRole('button', { name: 'A Text: Default' })
     await expect.element(defaultBtn).toBeVisible()
     await defaultBtn.click({ force: true })
 

@@ -24,7 +24,7 @@ testStory('italic', () => {
     await italicBtn.click()
     await userEvent.type(editor, ' world')
     await expect.element(emHello).toBeVisible()
-    await expect.element(editor).toMatchTextContent('hello world')
+    await expect.element(editor).toHaveTextContent('hello world')
     expect(editor.locate('em', { hasText: /world/ })).not.toBeInTheDocument()
   })
 })

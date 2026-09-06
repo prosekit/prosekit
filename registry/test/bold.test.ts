@@ -24,7 +24,7 @@ testStory('bold', () => {
     await boldBtn.click()
     await inputText(' world')
     await expect.element(strongHello).toBeVisible()
-    await expect.element(editor).toMatchTextContent('hello world')
+    await expect.element(editor).toHaveTextContent('hello world')
     expect(editor.locate('strong', { hasText: /world/ })).not.toBeInTheDocument()
   })
 })

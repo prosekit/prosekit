@@ -24,7 +24,7 @@ testStory('underline', () => {
     await underlineBtn.click()
     await inputText(' world')
     await expect.element(underHello).toBeVisible()
-    await expect.element(editor).toMatchTextContent('hello world')
+    await expect.element(editor).toHaveTextContent('hello world')
     await expectLocatorToNotExist(editor.locate('u', { hasText: /world/ }))
   })
 })

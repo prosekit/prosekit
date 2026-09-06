@@ -12,9 +12,9 @@ testStory('change-tracking', () => {
 
     // Start from empty and type Version A
     await emptyEditor({ editor })
-    await expect.element(editor).toMatchTextContent('')
+    await expect.element(editor).toHaveTextContent('')
     await inputText('Version A')
-    await expect.element(editor).toMatchTextContent('Version A')
+    await expect.element(editor).toHaveTextContent('Version A')
 
     const save = page.getByRole('button', { name: 'Save' })
     await expect.element(save).toBeVisible()
@@ -27,9 +27,9 @@ testStory('change-tracking', () => {
 
     // Change content to Version B and save again
     await emptyEditor({ editor })
-    await expect.element(editor).toMatchTextContent('')
+    await expect.element(editor).toHaveTextContent('')
     await inputText('Version B')
-    await expect.element(editor).toMatchTextContent('Version B')
+    await expect.element(editor).toHaveTextContent('Version B')
     await expect.element(save).toBeVisible()
     await save.click()
 
@@ -39,6 +39,6 @@ testStory('change-tracking', () => {
     await restoreButtons.nth(1).click()
 
     // The main editor should re-mount and show Version A
-    await expect.element(editor).toMatchTextContent('Version A')
+    await expect.element(editor).toHaveTextContent('Version A')
   })
 })

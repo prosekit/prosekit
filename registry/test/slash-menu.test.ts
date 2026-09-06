@@ -137,7 +137,7 @@ testStory(['slash-menu', 'full'], () => {
     await inputText('/')
     await inputText('quote')
     await expect.element(highlightedItem).toBeVisible()
-    await expect.element(highlightedItem).toMatchTextContent('Quote')
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
 
     // Click the menu item to insert a blockquote
     await expectLocatorToHaveCount(blockquote, 0)
@@ -159,7 +159,7 @@ testStory(['slash-menu', 'full'], () => {
     await inputText('/')
     await inputText('quote')
     await expect.element(highlightedItem).toBeVisible()
-    await expect.element(highlightedItem).toMatchTextContent('Quote')
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
 
     // Press Enter to insert a blockquote
     await expectLocatorToHaveCount(blockquote, 0)
@@ -181,7 +181,7 @@ testStory(['slash-menu', 'full'], () => {
     await expectLocatorToHaveCount(orderedList, 0)
 
     await inputText('/task')
-    await expect.element(highlightedItem).toMatchTextContent('Task list')
+    await expect.element(highlightedItem).toHaveTextContent('Task list')
 
     await keyboard.press('Enter')
     await expect.element(taskList).toBeVisible()
@@ -192,7 +192,7 @@ testStory(['slash-menu', 'full'], () => {
     await keyboard.press('Backspace')
     await inputText('Some text ')
     await inputText('/order')
-    await expect.element(highlightedItem).toMatchTextContent('Ordered list')
+    await expect.element(highlightedItem).toHaveTextContent('Ordered list')
 
     await keyboard.press('Enter')
     await expect.element(orderedList).toBeVisible()
@@ -206,7 +206,7 @@ testStory(['slash-menu', 'full'], () => {
     await expectLocatorToHaveCount(blockquote, 0)
 
     await inputText('/quote')
-    await expect.element(highlightedItem).toMatchTextContent('Quote')
+    await expect.element(highlightedItem).toHaveTextContent('Quote')
 
     await keyboard.press('Enter')
     await expectLocatorToHaveCount(blockquote, 1)
@@ -220,22 +220,22 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(itemText).toBeVisible()
     await expect.element(itemH1).toBeVisible()
     await expect.element(itemH2).toBeVisible()
-    await expect.element(itemText).toMatchTextContent('Text')
+    await expect.element(itemText).toHaveTextContent('Text')
 
     await keyboard.press('ArrowDown')
-    await expect.element(highlightedItem).toMatchTextContent('Heading 1')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 1')
 
     await keyboard.press('ArrowDown')
-    await expect.element(highlightedItem).toMatchTextContent('Heading 2')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 2')
 
     await keyboard.press('ArrowDown')
-    await expect.element(highlightedItem).toMatchTextContent('Heading 3')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 3')
 
     await keyboard.press('ArrowDown')
     await expect.element(highlightedItem).not.toMatchTextContent(/Heading/)
 
     await keyboard.press('ArrowUp')
-    await expect.element(highlightedItem).toMatchTextContent('Heading 3')
+    await expect.element(highlightedItem).toHaveTextContent('Heading 3')
 
     await expectLocatorToHaveCount(editor.locate('h3'), 0)
     await keyboard.press('Enter')

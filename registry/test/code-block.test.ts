@@ -14,20 +14,20 @@ testStory('code-block', () => {
     // Type triple backticks and press space to create a code block
     await clearEditor()
     await inputText('```')
-    await expect.element(editor).toMatchTextContent('```')
+    await expect.element(editor).toHaveTextContent('```')
     await expectNotPre()
     await keyboard.press('Space')
     await expectAnyPre()
-    await expect.element(editor).not.toMatchTextContent('```')
+    await expect.element(editor).not.toHaveTextContent('```')
 
     // Type triple backticks followed by a language and press space to create a code block
     await clearEditor()
     await inputText('```javascript')
-    await expect.element(editor).toMatchTextContent('```javascript')
+    await expect.element(editor).toHaveTextContent('```javascript')
     await expectNotPre()
     await keyboard.press('Space')
     await expectJavaScriptPre()
-    await expect.element(editor).not.toMatchTextContent('```')
+    await expect.element(editor).not.toHaveTextContent('```')
   })
 
   it('enter rule', async () => {
@@ -36,20 +36,20 @@ testStory('code-block', () => {
     // Type triple backticks and press enter to create a code block
     await clearEditor()
     await inputText('```')
-    await expect.element(editor).toMatchTextContent('```')
+    await expect.element(editor).toHaveTextContent('```')
     await expectNotPre()
     await keyboard.press('Enter')
     await expectAnyPre()
-    await expect.element(editor).not.toMatchTextContent('```')
+    await expect.element(editor).not.toHaveTextContent('```')
 
     // Type triple backticks followed by a language and press enter to create a code block
     await clearEditor()
     await inputText('```javascript')
-    await expect.element(editor).toMatchTextContent('```javascript')
+    await expect.element(editor).toHaveTextContent('```javascript')
     await expectNotPre()
     await keyboard.press('Enter')
     await expectJavaScriptPre()
-    await expect.element(editor).not.toMatchTextContent('```')
+    await expect.element(editor).not.toHaveTextContent('```')
   })
 })
 

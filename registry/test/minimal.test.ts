@@ -8,11 +8,11 @@ testStory('minimal', () => {
   it('typing', async () => {
     const editor = await waitForEditor()
 
-    await expect.element(editor).not.toMatchTextContent('Hello')
+    await expect.element(editor).not.toHaveTextContent('Hello')
 
     await editor.click()
     await inputText('Hello ')
 
-    await expect.element(editor).toMatchTextContent('Hello')
+    await expect.element(editor).toHaveTextContent('Hello')
   })
 })

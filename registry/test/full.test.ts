@@ -26,14 +26,14 @@ testStory({ story: 'full', emptyContent: true }, () => {
       await userEvent.type(editor, 'Hello ')
       await userEvent.type(editor, url)
 
-      await expect.element(editor).toMatchTextContent('Hello https://www.example.com?query=query#fragment')
+      await expect.element(editor).toHaveTextContent('Hello https://www.example.com?query=query#fragment')
       await expectLocatorToNotExist(link)
 
       await userEvent.type(editor, ' ')
-      await expect.element(editor).toMatchTextContent('Hello https://www.example.com?query=query#fragment')
+      await expect.element(editor).toHaveTextContent('Hello https://www.example.com?query=query#fragment')
       await expect.element(link).toBeVisible()
       await expect.element(link).toHaveAttribute('href', url)
-      await expect.element(link).toMatchTextContent(url)
+      await expect.element(link).toHaveTextContent(url)
     })
 
     it('press Space to insert a link ends with a period', async () => {
@@ -44,14 +44,14 @@ testStory({ story: 'full', emptyContent: true }, () => {
       await userEvent.type(editor, 'Hello ')
       await userEvent.type(editor, 'https://example.com.')
 
-      await expect.element(editor).toMatchTextContent('Hello https://example.com.')
+      await expect.element(editor).toHaveTextContent('Hello https://example.com.')
       await expectLocatorToNotExist(link)
 
       await userEvent.type(editor, ' ')
-      await expect.element(editor).toMatchTextContent('Hello https://example.com.')
+      await expect.element(editor).toHaveTextContent('Hello https://example.com.')
       await expect.element(link).toBeVisible()
       await expect.element(link).toHaveAttribute('href', url)
-      await expect.element(link).toMatchTextContent(url)
+      await expect.element(link).toHaveTextContent(url)
     })
 
     it('press Enter to insert', async () => {
@@ -62,14 +62,14 @@ testStory({ story: 'full', emptyContent: true }, () => {
       await userEvent.type(editor, 'Hello ')
       await userEvent.type(editor, url)
 
-      await expect.element(editor).toMatchTextContent('Hello https://www.example.com?query=query#fragment')
+      await expect.element(editor).toHaveTextContent('Hello https://www.example.com?query=query#fragment')
       await expectLocatorToNotExist(link)
 
       await keyboard.press('Enter')
-      await expect.element(editor).toMatchTextContent('Hello https://www.example.com?query=query#fragment')
+      await expect.element(editor).toHaveTextContent('Hello https://www.example.com?query=query#fragment')
       await expect.element(link).toBeVisible()
       await expect.element(link).toHaveAttribute('href', url)
-      await expect.element(link).toMatchTextContent(url)
+      await expect.element(link).toHaveTextContent(url)
     })
 
     it('press Enter to insert a link ends with a period', async () => {
@@ -80,14 +80,14 @@ testStory({ story: 'full', emptyContent: true }, () => {
       await userEvent.type(editor, 'Hello ')
       await userEvent.type(editor, 'https://example.com.')
 
-      await expect.element(editor).toMatchTextContent('Hello https://example.com.')
+      await expect.element(editor).toHaveTextContent('Hello https://example.com.')
       await expectLocatorToNotExist(link)
 
       await keyboard.press('Enter')
-      await expect.element(editor).toMatchTextContent('Hello https://example.com.')
+      await expect.element(editor).toHaveTextContent('Hello https://example.com.')
       await expect.element(link).toBeVisible()
       await expect.element(link).toHaveAttribute('href', url)
-      await expect.element(link).toMatchTextContent(url)
+      await expect.element(link).toHaveTextContent(url)
     })
   })
 

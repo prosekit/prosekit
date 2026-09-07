@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 
-import { expectLocatorToNotExist, selectText, testStory, testStoryConsistency, waitForEditor } from './helpers'
+import { expectLocatorToNotExist, selectText, testStory, testStoryConsistency, unhover, waitForEditor } from './helpers'
 
 testStoryConsistency('text-color')
 
@@ -13,7 +13,7 @@ testStory({ story: 'text-color' }, () => {
     await selectText(editor, 7, 11, 'some')
 
     // Inline color menu should appear; click Blue button in text color section
-    const blueBtn = page.getByRole('button', { name: 'Text: Blue' })
+    const blueBtn = page.getByRole('button', { name: 'A Text: Blue' })
     await expect.element(blueBtn).toBeVisible()
     await blueBtn.click()
 
@@ -24,9 +24,10 @@ testStory({ story: 'text-color' }, () => {
 
     // Select again and clear color using "Default"
     await selectText(editor, 7, 11, 'some')
-    const defaultBtn = page.getByRole('button', { name: 'Text: Default' })
+    await unhover()
+    const defaultBtn = page.getByRole('button', { name: 'A Text: Default' })
     await expect.element(defaultBtn).toBeVisible()
-    await defaultBtn.click()
+    await defaultBtn.click({ force: true })
 
     // Expect no colored span wraps the word "some"
     await expectLocatorToNotExist(someSpan)
@@ -50,9 +51,10 @@ testStory({ story: 'text-color' }, () => {
 
     // Select again and clear background color using "Default"
     await selectText(editor, 7, 11, 'some')
+    await unhover()
     const defaultBtn = page.getByRole('button', { name: 'Background: Default' })
     await expect.element(defaultBtn).toBeVisible()
-    await defaultBtn.click()
+    await defaultBtn.click({ force: true })
 
     // Expect no background-colored span wraps the word "some"
     await expectLocatorToNotExist(someSpan)

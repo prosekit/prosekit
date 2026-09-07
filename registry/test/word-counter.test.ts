@@ -13,12 +13,12 @@ testStory('word-counter', () => {
     await editor.click()
     await inputText('one two three')
 
-    await expect.element(page.getByText('Word Count: 3')).toBeVisible()
-    await expect.element(page.getByText('Character Count: 13')).toBeVisible()
+    await expect.element(page.getByText('Word Count: 3', { exact: false })).toBeVisible()
+    await expect.element(page.getByText('Character Count: 13', { exact: false })).toBeVisible()
 
     // Type more words and verify both counters update accordingly
     await inputText(' four five')
-    await expect.element(page.getByText('Word Count: 5')).toBeVisible()
-    await expect.element(page.getByText('Character Count: 23')).toBeVisible()
+    await expect.element(page.getByText('Word Count: 5', { exact: false })).toBeVisible()
+    await expect.element(page.getByText('Character Count: 23', { exact: false })).toBeVisible()
   })
 })

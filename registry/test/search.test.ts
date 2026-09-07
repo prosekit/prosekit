@@ -24,27 +24,27 @@ testStory('search', () => {
 
     await expectLocatorToHaveCount(searchMatch, 2)
     await expectLocatorToHaveCount(activeSearchMatch, 1)
-    await expect.element(page.getByText('1 / 3')).toBeVisible()
+    await expect.element(page.getByText('1 / 3', { exact: false })).toBeVisible()
 
     await keyboard.press('Enter')
 
     await expectLocatorToHaveCount(searchMatch, 2)
     await expectLocatorToHaveCount(activeSearchMatch, 1)
-    await expect.element(page.getByText('2 / 3')).toBeVisible()
+    await expect.element(page.getByText('2 / 3', { exact: false })).toBeVisible()
 
     searchInput.element().focus()
     await searchInput.fill('Onex')
 
     await expectLocatorToHaveCount(searchMatch, 0)
     await expectLocatorToHaveCount(activeSearchMatch, 0)
-    await expect.element(page.getByText('0 / 0')).toBeVisible()
+    await expect.element(page.getByText('0 / 0', { exact: false })).toBeVisible()
 
     searchInput.element().focus()
     await searchInput.fill('One')
 
     await expectLocatorToHaveCount(searchMatch, 2)
     await expectLocatorToHaveCount(activeSearchMatch, 1)
-    await expect.element(page.getByText('2 / 3')).toBeVisible()
+    await expect.element(page.getByText('2 / 3', { exact: false })).toBeVisible()
 
     await expectLocatorToHaveCount(replaceInput, 0)
     await toggleReplaceButton.click()
@@ -57,6 +57,6 @@ testStory('search', () => {
 
     await expectLocatorToHaveCount(searchMatch, 1)
     await expectLocatorToHaveCount(activeSearchMatch, 1)
-    await expect.element(page.getByText('2 / 2')).toBeVisible()
+    await expect.element(page.getByText('2 / 2', { exact: false })).toBeVisible()
   })
 })

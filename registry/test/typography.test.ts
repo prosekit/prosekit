@@ -51,8 +51,8 @@ testStory('typography', () => {
     await expect.element(page.getByText('Header 1')).toBeVisible()
 
     // Math (inline and block)
-    await expect.element(page.getByText("Inline math like Euler's identity")).toBeVisible()
-    await expect.element(page.getByText('Block-level equations')).toBeVisible()
+    await expect.element(page.getByText("Inline math like Euler's identity", { exact: false })).toBeVisible()
+    await expect.element(page.getByText('Block-level equations', { exact: false })).toBeVisible()
     await expect.element(editor.locate('.prosemirror-math-inline').first()).toBeVisible()
     await expect.element(editor.locate('.prosemirror-math-block').first()).toBeVisible()
   })

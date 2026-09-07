@@ -16,6 +16,7 @@ function getDefaultConfig() {
       maxWorkers: process.env.CI ? 1 : 2,
       retry: process.env.CI ? 2 : 0,
       bail: process.env.CI ? 0 : 1,
+      fileParallelism: true,
       setupFiles: [path.join(import.meta.dirname, 'setup-vitest.js')],
       browser: {
         enabled: true,
@@ -33,7 +34,6 @@ function getDefaultConfig() {
         }),
         headless: !debug,
         ui: debug,
-        fileParallelism: true,
         screenshotFailures: debug,
         instances: [
           {

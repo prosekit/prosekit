@@ -48,8 +48,7 @@ jobs:
           commit-message: "chore: version packages"
           pr-title: "chore: version packages"
           create-github-releases: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+          github-token: ${{ secrets.BOT_GITHUB_TOKEN }}
 
   publish:
     name: Publish

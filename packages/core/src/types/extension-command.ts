@@ -38,6 +38,6 @@ export type ToCommandCreators<T extends CommandTyping> = {
   [K in keyof T]: CommandCreator<T[K]>
 }
 
-export type ToCommandAction<T extends CommandTyping> = {
+export type ToCommandAction<T extends CommandTyping> = [T] extends [never] ? Record<never, never> : {
   [K in keyof T]: CommandAction<T[K]>
 }

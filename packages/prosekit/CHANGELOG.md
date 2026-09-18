@@ -1,5 +1,16 @@
 # prosekit
 
+## 0.22.3
+
+### Patch Changes
+
+- [`e719adb`](https://github.com/ocavue/prosekit/commit/e719adb93f470baea588b324e295843eaa7dad80) ![](https://prosekit.dev/b/extensions)
+
+  An autocomplete rule with `followCursor` now also follows the text cursor when it is moved by a mouse click.
+- [`1579c71`](https://github.com/ocavue/prosekit/commit/1579c71048c446454e670395f2b2c338ea1cfed9) ![](https://prosekit.dev/b/pm) ![](https://prosekit.dev/b/extensions)
+
+  Update ProseMirror dependencies.
+
 ## 0.22.2
 
 ### Patch Changes

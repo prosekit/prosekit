@@ -21,6 +21,8 @@ import { blockHandleOverlayStoreContext, BlockHandleStore, blockHandleStoreConte
 import { useHasTextSelection } from './use-has-text-selection.ts'
 import { useHoverExtension } from './use-hover-extension.ts'
 
+export type BlockHandleState = { node: ProseMirrorNode; pos: number } | null
+
 export interface BlockHandleRootProps {
   /**
    * The ProseKit editor instance.
@@ -42,8 +44,8 @@ export class BlockHandleStateChangeEvent extends Event {
   /**
    * The currently hovered block's node and position, or `null` if no block is hovered.
    */
-  detail: { node: ProseMirrorNode; pos: number } | null
-  constructor(state: { node: ProseMirrorNode; pos: number } | null) {
+  detail: BlockHandleState
+  constructor(state: BlockHandleState) {
     super('stateChange', { bubbles: true })
     this.detail = state
   }

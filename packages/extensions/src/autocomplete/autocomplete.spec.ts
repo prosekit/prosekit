@@ -1,7 +1,7 @@
 import { union } from '@prosekit/core'
 import { TextSelection } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
-import { keyboard } from 'vitest-browser-commands/playwright'
+import { keyboard, mouse } from 'vitest-browser-commands/playwright'
 
 import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
 import { inputText } from '../testing/keyboard.ts'
@@ -59,15 +59,17 @@ function setupSlashMenu(options?: { followCursor?: boolean }) {
     }
   }
 
-  const moveCursor = (pos: number, options?: { pointer?: boolean }): void => {
+  const moveCursor = (pos: number): void => {
     const tr = editor.state.tr.setSelection(TextSelection.create(editor.state.doc, pos))
-    if (options?.pointer) {
-      tr.setMeta('pointer', true)
-    }
     editor.view.dispatch(tr)
   }
 
-  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText, showSelection, moveCursor }
+  const clickAt = async (pos: number): Promise<void> => {
+    const { left, top, bottom } = editor.view.coordsAtPos(pos)
+    await mouse.click(left, (top + bottom) / 2)
+  }
+
+  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText, showSelection, moveCursor, clickAt }
 }
 
 describe('defineAutocomplete', () => {
@@ -489,17 +491,50 @@ describe('followCursor', () => {
     expect(getMatchingText()).toBe('/page')
   })
 
-  it('keeps the default dismissal for pointer-driven selection', async () => {
-    const { editor, n, isMatching, moveCursor } = setupSlashMenu({ followCursor: true })
+  it('extends the match when clicking after existing text', async () => {
+    const { editor, n, getMatchingText, showSelection, clickAt } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('<a>page two')))
+
+    await inputText('/')
+    expect(getMatchingText()).toBe('/')
+
+    await clickAt(editor.state.selection.head + 4)
+    await expect.poll(showSelection).toBe('/page<cursor> two')
+    expect(getMatchingText()).toBe('/page')
+
+    await inputText('s')
+    expect(getMatchingText()).toBe('/pages')
+  })
+
+  it('closes without ignoring when clicking before the match', async () => {
+    const { editor, n, isMatching, getMatchingText, showSelection, clickAt } = setupSlashMenu({ followCursor: true })
+    editor.set(n.doc(n.paragraph('ab <a>page')))
+
+    await inputText('/')
+    expect(isMatching()).toBe(true)
+
+    await clickAt(2)
+    await expect.poll(showSelection).toBe('a<cursor>b /page')
+    expect(isMatching()).toBe(false)
+
+    await clickAt(5)
+    await expect.poll(showSelection).toBe('ab /<cursor>page')
+    expect(isMatching()).toBe(false)
+    await inputText('x')
+    expect(getMatchingText()).toBe('/x')
+  })
+
+  it('keeps the sticky dismissal for a click without followCursor', async () => {
+    const { editor, n, isMatching, showSelection, clickAt } = setupSlashMenu()
     editor.set(n.doc(n.paragraph('<a>page')))
 
     await inputText('/')
     expect(isMatching()).toBe(true)
 
-    moveCursor(editor.state.selection.head + 2, { pointer: true })
+    await clickAt(editor.state.selection.head + 4)
+    await expect.poll(showSelection).toBe('/page<cursor>')
     expect(isMatching()).toBe(false)
 
-    // A pointer leave keeps the sticky ignore, matching the default behavior.
     await inputText('x')
     expect(isMatching()).toBe(false)
   })

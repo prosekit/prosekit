@@ -143,7 +143,6 @@ function handleTransaction(
     if (
       prevMatching.rule.followCursor
       && !tr.docChanged
-      && !tr.getMeta('pointer')
       && isTextSelection(newState.selection)
       && newState.selection.empty
     ) {

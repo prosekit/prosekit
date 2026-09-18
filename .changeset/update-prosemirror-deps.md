@@ -4,4 +4,4 @@
 "prosekit": patch
 ---
 
-Update ProseMirror dependencies (`prosemirror-view`, `prosemirror-changeset`).
+Update ProseMirror dependencies.

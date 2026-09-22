@@ -28,6 +28,93 @@ BlockHandleRoot                  # root component
 
 You can keep both `BlockHandleAdd` and `BlockHandleDraggable`, or only one. The popup is just the visible container. Pair this with the [Drop indicator](/components/drop-indicator) component to draw a horizontal line where the dragged block will land.
 
+## Framework side menu
+
+Use `BlockHandleRoot`, `BlockHandlePositioner`, and `BlockHandlePopup` for the hover state and floating position. If you need a Notion-style side menu, render the menu and its trigger with your framework instead of using a web-component menu primitive.
+
+`BlockHandleRoot` emits the hovered block through `onStateChange`. The event detail is `{ node, pos } | null`.
+
+The framework menu should own its own open state. Close it when `onStateChange` reports a different block or `null`, so the menu does not stay open after the user moves to another block.
+
+```tsx
+const [blockState, setBlockState] = useState(null)
+const [open, setOpen] = useState(false)
+
+function handleStateChange(event) {
+  if (event.detail?.pos !== blockState?.pos) {
+    setOpen(false)
+  }
+  setBlockState(event.detail)
+}
+
+<BlockHandleRoot onStateChange={handleStateChange}>
+  <BlockHandlePositioner>
+    <BlockHandlePopup>
+      <BlockHandleAdd />
+      <FrameworkBlockHandleDraggable
+        blockState={blockState}
+        open={open}
+        onOpenChange={setOpen}
+      />
+    </BlockHandlePopup>
+  </BlockHandlePositioner>
+</BlockHandleRoot>
+```
+
+The framework draggable trigger is responsible for selecting the current block before running menu actions:
+
+```tsx
+function selectBlock() {
+  if (!blockState || !editor.view) return false
+
+  const { view } = editor
+  view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, blockState.pos)))
+  requestAnimationFrame(() => view.focus())
+  return true
+}
+
+function setHeading1() {
+  if (!selectBlock()) return
+  editor.commands.setHeading({ level: 1 })
+  setOpen(false)
+}
+```
+
+In Vue, pass the generated wrapper handler as a prop and store the hovered block in a ref:
+
+```vue
+<script setup>
+const blockState = ref(null)
+const open = ref(false)
+
+function handleStateChange(event) {
+  if (event.detail?.pos !== blockState.value?.pos) {
+    open.value = false
+  }
+  blockState.value = event.detail
+}
+</script>
+
+<template>
+  <BlockHandleRoot :on-state-change="handleStateChange">
+    <BlockHandlePositioner>
+      <BlockHandlePopup>
+        <BlockHandleAdd />
+        <FrameworkBlockHandleDraggable
+          :block-state="blockState"
+          :open="open"
+          @open-change="open = $event"
+        />
+      </BlockHandlePopup>
+    </BlockHandlePositioner>
+  </BlockHandleRoot>
+</template>
+```
+
+Use the built-in `BlockHandleDraggable` when you only need drag-and-drop. If the same handle also opens a framework menu, implement that draggable trigger in your framework layer so the click, keyboard, menu open state, and menu actions all live in the same reactive system.
+
+See the Notion example for a framework-rendered draggable handle that also opens a side menu and runs actions like changing the block type or deleting the block.
+
 ## API reference
 
 - [prosekit/react/block-handle](/references/react/block-handle)

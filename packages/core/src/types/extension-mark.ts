@@ -17,6 +17,6 @@ export type ToMarkBuilder<T extends MarkTyping> = {
 /**
  * @internal
  */
-export type ToMarkAction<T extends MarkTyping> = {
+export type ToMarkAction<T extends MarkTyping> = [T] extends [never] ? Record<never, never> : {
   [K in keyof T]: MarkAction<T[K]>
 }

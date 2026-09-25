@@ -52,6 +52,9 @@ export function config(userConfig?: UserConfig): UserConfig {
     sourcemap: true,
     clean: false,
     failOnWarn: true,
+    checks: {
+      moduleLevelDirective: false,
+    },
     dts: { build: true, incremental: true, sourcemap: true },
     hash: false,
     css: {

@@ -229,8 +229,8 @@ importers:
         specifier: workspace:*
         version: link:../vfs
       obug:
-        specifier: ^2.1.4
-        version: 2.1.4
+        specifier: ^3.0.0
+        version: 3.0.0
     devDependencies:
       '@changesets/read':
         specifier: ^1.0.0
@@ -774,8 +774,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       obug:
-        specifier: ^2.1.4
-        version: 2.1.4
+        specifier: ^3.0.0
+        version: 3.0.0
       path-exists:
         specifier: ^5.0.0
         version: 5.0.0
@@ -902,8 +902,8 @@ importers:
         specifier: ^0.4.4
         version: 0.4.4(loro-crdt@1.15.1)
       obug:
-        specifier: ^2.1.4
-        version: 2.1.4
+        specifier: ^3.0.0
+        version: 3.0.0
       preact:
         specifier: ^10.29.8
         version: 10.29.8(preact-render-to-string@6.6.6)
@@ -6186,6 +6186,10 @@ packages:
 
   obug@2.1.4:
     resolution: {integrity: sha512-4a+OsYv9UktOJKE+l1A4OufDgdRF9PifWj+tJnHURo/P+WOxpG4GzUFL9qCalmWauao6ogiG+QvnCovwPoyAWA==}
+    engines: {node: '>=12.20.0'}
+
+  obug@3.0.0:
+    resolution: {integrity: sha512-5vvB5+W7ePv+p3uqxi+RcW1XAzLW0/hxt3/4X4Lc4qHudzOhmBiBwOY6DRob4WnanAEGvNcLjF+KNOufrUoEQw==}
     engines: {node: '>=12.20.0'}
 
   ofetch@1.5.1:
@@ -13107,6 +13111,8 @@ snapshots:
   object-deep-merge@2.0.1: {}
 
   obug@2.1.4: {}
+
+  obug@3.0.0: {}
 
   ofetch@1.5.1:
     dependencies:

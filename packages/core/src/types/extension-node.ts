@@ -17,6 +17,6 @@ export type ToNodeBuilder<T extends NodeTyping> = {
 /**
  * @internal
  */
-export type ToNodeAction<T extends NodeTyping> = {
+export type ToNodeAction<T extends NodeTyping> = [T] extends [never] ? Record<never, never> : {
   [K in keyof T]: NodeAction<T[K]>
 }

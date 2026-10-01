@@ -1,9 +1,9 @@
 {
   "name": "prosekit-website",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
   "description": "The website for ProseKit",
-  "type": "module",
   "scripts": {
     "astro": "astro",
     "build": "pnpm run build:typedoc && pnpm run build:astro",

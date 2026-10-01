@@ -306,7 +306,7 @@
     "loro-crdt": "^1.16.3",
     "loro-prosemirror": "^0.4.4",
     "obug": "^2.2.1",
-    "preact": "^10.29.8",
+    "preact": "^11.0.0",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-gfm": "^4.0.1",

@@ -48,7 +48,3 @@ minimumReleaseAgeExclude:
   - "@prosemirror-adapter/*"
   - "prosemirror-view"
   - "prosemirror-highlight"
-  - happy-dom@20.12.0
-  - astro@7.3.1
-  - satteri-custom-header-id@0.1.1
-  - vitest-browser-preact@1.1.0

@@ -1,9 +1,9 @@
 {
   "name": "prosekit-website",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
   "description": "The website for ProseKit",
+  "type": "module",
   "scripts": {
     "astro": "astro",
     "build": "pnpm run build:typedoc && pnpm run build:astro",
@@ -21,7 +21,7 @@
     "@astrojs/preact": "^6.0.5",
     "@astrojs/react": "^6.0.6",
     "@astrojs/solid-js": "^7.0.2",
-    "@astrojs/starlight": "^0.42.0",
+    "@astrojs/starlight": "^0.42.4",
     "@astrojs/svelte": "^9.0.1",
     "@astrojs/vue": "^7.0.3",
     "@base-ui/react": "^1.8.0",
@@ -37,7 +37,7 @@
     "@types/node": "catalog:",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "astro": "^7.3.1",
+    "astro": "^7.3.5",
     "astro-minify-html-swc": "^0.1.12",
     "astrobook": "^0.13.3",
     "babel-plugin-react-compiler": "^1.0.0",

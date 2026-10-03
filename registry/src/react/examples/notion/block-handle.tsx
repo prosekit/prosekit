@@ -1,23 +1,90 @@
 'use client'
 
 import { Tooltip } from '@base-ui/react/tooltip'
-import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/react/block-handle'
+import { Fragment, Slice } from 'prosekit/pm/model'
+import { NodeSelection } from 'prosekit/pm/state'
+import type { EditorView } from 'prosekit/pm/view'
+import { useEditor } from 'prosekit/react'
+import { BlockHandleAdd, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/react/block-handle'
+import type { BlockHandleState, BlockHandleStateChangeEvent } from 'prosekit/web/block-handle'
+import { useState } from 'react'
 
 import BlockHandleMenu from './block-handle-menu.tsx'
+
+type ActiveBlockHandleState = Exclude<BlockHandleState, null>
 
 interface Props {
   enabled: boolean
   dir?: 'ltr' | 'rtl'
 }
 
+function isSameBlockState(a: BlockHandleState, b: BlockHandleState) {
+  if (!a || !b) {
+    return a === b
+  }
+
+  return a.pos === b.pos && a.node.eq(b.node)
+}
+
+function setViewDragging(view: EditorView, state: ActiveBlockHandleState) {
+  view.dragging = {
+    slice: new Slice(Fragment.from(state.node), 0, 0),
+    move: true,
+  }
+}
+
 export default function BlockHandle(props: Props) {
+  const editor = useEditor()
+  const [blockState, setBlockState] = useState<BlockHandleState>(null)
+  const [menuOpen, setMenuOpen] = useState(false)
+
   if (!props.enabled) {
     return null
   }
 
+  const handleStateChange = (event: BlockHandleStateChangeEvent) => {
+    if (!isSameBlockState(blockState, event.detail)) {
+      setMenuOpen(false)
+    }
+    setBlockState(event.detail)
+  }
+
+  const selectBlock = (): boolean => {
+    if (!blockState || !editor.view) {
+      return false
+    }
+
+    const { view } = editor
+    view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, blockState.pos)))
+    requestAnimationFrame(() => view.focus())
+    return true
+  }
+
+  const handleDragStart = (event: React.DragEvent<HTMLElement>) => {
+    if (!blockState || !editor.view || !event.dataTransfer) {
+      return
+    }
+
+    const { view } = editor
+    const element = view.nodeDOM(blockState.pos)
+    if (!(element instanceof HTMLElement)) {
+      return
+    }
+
+    view.dom.classList.add('prosekit-dragging')
+    event.dataTransfer.clearData()
+    event.dataTransfer.setData('text/html', element.outerHTML)
+    event.dataTransfer.effectAllowed = 'copyMove'
+    setViewDragging(view, blockState)
+  }
+
+  const handleDragEnd = () => {
+    editor.view?.dom.classList.remove('prosekit-dragging')
+  }
+
   return (
     <Tooltip.Provider>
-      <BlockHandleRoot>
+      <BlockHandleRoot onStateChange={handleStateChange}>
         <BlockHandlePositioner
           placement={props.dir === 'rtl' ? 'right' : 'left'}
           className="CSS_BLOCK_HANDLE_POSITIONER"
@@ -58,13 +125,23 @@ export default function BlockHandle(props: Props) {
               </Tooltip.Portal>
             </Tooltip.Root>
             <Tooltip.Root>
-              <Tooltip.Trigger className="m-0 p-0">
-                <BlockHandleMenu>
-                  <BlockHandleDraggable className="CSS_BLOCK_HANDLE_DRAG">
-                    <div className="CSS_ICON_DRAG_HANDLE" />
-                  </BlockHandleDraggable>
-                </BlockHandleMenu>
-              </Tooltip.Trigger>
+              <BlockHandleMenu open={menuOpen} onOpenChange={setMenuOpen}>
+                <Tooltip.Trigger
+                  className="m-0 p-0"
+                  render={
+                    <div
+                      className="CSS_BLOCK_HANDLE_DRAG"
+                      data-testid="notion-block-side-menu-drag"
+                      draggable
+                      onPointerDown={selectBlock}
+                      onDragStart={handleDragStart}
+                      onDragEnd={handleDragEnd}
+                    >
+                      <div className="CSS_ICON_DRAG_HANDLE" />
+                    </div>
+                  }
+                />
+              </BlockHandleMenu>
               <Tooltip.Portal>
                 <Tooltip.Positioner sideOffset={10} side="bottom">
                   <Tooltip.Popup className="

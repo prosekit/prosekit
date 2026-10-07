@@ -1,10 +1,10 @@
 'use client'
 
-import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { defineSearchStatusHandler, type SearchCommandsExtension, type SearchStatus } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 export default function Search(props: { onClose?: VoidFunction }) {
   const [showReplace, setShowReplace] = useState(false)
@@ -12,17 +12,29 @@ export default function Search(props: { onClose?: VoidFunction }) {
 
   const [searchText, setSearchText] = useState('')
   const [replaceText, setReplaceText] = useState('')
+  const [caseSensitive, setCaseSensitive] = useState(false)
+  const [wholeWord, setWholeWord] = useState(false)
+  const [regexp, setRegexp] = useState(false)
+  const [literal, setLiteral] = useState(false)
 
-  const extension = useMemo(() => {
-    if (!searchText) {
-      return null
-    }
-    return defineSearchQuery({ search: searchText, replace: replaceText })
-  }, [searchText, replaceText])
-
-  useExtension(extension)
+  const [searchStatus, setSearchStatus] = useState<SearchStatus>({
+    total: 0,
+    active: 0,
+  })
+  useExtension(useMemo(() => defineSearchStatusHandler(setSearchStatus), []))
 
   const editor = useEditor<SearchCommandsExtension>()
+
+  useEffect(() => {
+    editor.commands.setSearchQuery({
+      search: searchText,
+      replace: replaceText,
+      caseSensitive,
+      wholeWord,
+      regexp,
+      literal,
+    })
+  }, [editor, searchText, replaceText, caseSensitive, wholeWord, regexp, literal])
 
   const handleSearchKeyDown = (event: React.KeyboardEvent) => {
     if (isEnter(event)) {
@@ -61,6 +73,13 @@ export default function Search(props: { onClose?: VoidFunction }) {
         className="CSS_SEARCH_INPUT"
       />
       <div className="CSS_SEARCH_CONTROLLER">
+        {searchText
+          ? (
+            <span className="CSS_SEARCH_COUNTER">
+              {searchStatus.active} / {searchStatus.total}
+            </span>
+          )
+          : null}
         <Button
           tooltip="Previous (Shift Enter)"
           onClick={editor.commands.findPrev}
@@ -72,6 +91,34 @@ export default function Search(props: { onClose?: VoidFunction }) {
         </Button>
         <Button tooltip="Close" onClick={props.onClose}>
           <span className="CSS_ICON_CLOSE" />
+        </Button>
+        <Button
+          pressed={caseSensitive}
+          tooltip="Case Sensitive"
+          onClick={() => setCaseSensitive((value) => !value)}
+        >
+          <span className="CSS_CASE_SENSITIVE" />
+        </Button>
+        <Button
+          pressed={wholeWord}
+          tooltip="Whole Word"
+          onClick={() => setWholeWord((value) => !value)}
+        >
+          <span className="CSS_ICON_WHOLE_WORD" />
+        </Button>
+        <Button
+          pressed={regexp}
+          tooltip="Regular Expression"
+          onClick={() => setRegexp((value) => !value)}
+        >
+          <span className="CSS_ICON_REGEXP" />
+        </Button>
+        <Button
+          pressed={literal}
+          tooltip="Literal Escape Sequences"
+          onClick={() => setLiteral((value) => !value)}
+        >
+          <span className="CSS_ICON_LITERAL" />
         </Button>
       </div>
       {showReplace && (

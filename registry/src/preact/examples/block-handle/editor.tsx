@@ -5,11 +5,11 @@ import { useMemo } from 'preact/hooks'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { sampleContent } from '../../sample/sample-doc-block-handle'
-import { BlockHandle } from '../../ui/block-handle'
-import { DropIndicator } from '../../ui/drop-indicator'
+import { sampleContent } from '../../sample/sample-doc-block-handle.ts'
+import { BlockHandle } from '../../ui/block-handle/index.ts'
+import { DropIndicator } from '../../ui/drop-indicator/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface EditorProps {
   initialContent?: NodeJSON

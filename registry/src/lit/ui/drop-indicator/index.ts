@@ -1,1 +1,1 @@
-export { registerLitEditorDropIndicator } from './drop-indicator'
+export { registerLitEditorDropIndicator } from './drop-indicator.ts'

@@ -1,6 +1,6 @@
 import { createSignal, type JSX } from 'solid-js'
 
-import EditorComponent from './editor-component'
+import EditorComponent from './editor-component.tsx'
 
 export default function Editor(): JSX.Element {
   const [room] = createSignal(Math.random().toString(36).substring(2, 15))

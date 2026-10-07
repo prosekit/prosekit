@@ -1,21 +1,28 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
 import { defu } from 'defu'
-import { readPackageUpSync } from 'read-package-up'
 import type { UserConfig } from 'tsdown'
 
-export function config(userConfig?: UserConfig): UserConfig {
-  const pkg = readPackageUpSync({ cwd: userConfig?.cwd })
-  if (!pkg) {
-    throw new Error('No package.json found')
-  }
+type PackageJson = {
+  exports?: Record<string, string | Record<string, string>>
+}
 
-  const packageJson = pkg.packageJson as {
-    exports?: Record<string, string | Record<string, string>>
+export function config(userConfig?: UserConfig): UserConfig {
+  const cwd = userConfig?.cwd ?? process.cwd()
+  const packageJsonPath = path.join(cwd, 'package.json')
+
+  let packageJson: PackageJson
+  try {
+    packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8')) as PackageJson
+  } catch (error) {
+    throw new Error(`Failed to read package.json at ${packageJsonPath}`, { cause: error })
   }
 
   const tsdownEntry: Record<string, string> = {}
   for (const [exportName, exportValue] of Object.entries(packageJson.exports ?? {})) {
     let entryName: string = exportName
-    let entryValue: string | undefined = undefined
+    let entryValue: string | undefined
 
     if (entryName === '.') {
       entryName = 'index'
@@ -45,6 +52,9 @@ export function config(userConfig?: UserConfig): UserConfig {
     sourcemap: true,
     clean: false,
     failOnWarn: true,
+    checks: {
+      moduleLevelDirective: false,
+    },
     dts: { build: true, incremental: true, sourcemap: true },
     hash: false,
     css: {

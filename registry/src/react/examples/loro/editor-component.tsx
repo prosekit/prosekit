@@ -9,9 +9,9 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { Toolbar } from '../../ui/toolbar'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function EditorComponent(props: {
   loro: LoroDocType

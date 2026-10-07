@@ -38,7 +38,7 @@ function unionChildren(
   b: Map<number, FacetNode>,
 ): Map<number, FacetNode> {
   const merged = new Map(a)
-  for (const [key, valueB] of b.entries()) {
+  for (const [key, valueB] of b) {
     const valueA = a.get(key)
     merged.set(key, valueA ? unionFacetNode(valueA, valueB) : valueB)
   }
@@ -50,7 +50,7 @@ function subtractChildren(
   b: Map<number, FacetNode>,
 ): Map<number, FacetNode> {
   const merged = new Map(a)
-  for (const [key, valueB] of b.entries()) {
+  for (const [key, valueB] of b) {
     const valueA = a.get(key)
     if (valueA) {
       merged.set(key, subtractFacetNode(valueA, valueB))
@@ -141,6 +141,7 @@ export class FacetNode<I = any, O = any> {
     for (const child of this.children.values()) {
       const childOutput = child.getOutput()
       for (let pri = 0; pri < 5; pri++) {
+        // eslint-disable-next-line unicorn/no-computed-property-existence-check
         if (childOutput[pri]) {
           const input = (inputs[pri] ||= [])
           input.push(childOutput[pri] as I)

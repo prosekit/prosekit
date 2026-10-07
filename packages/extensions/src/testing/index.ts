@@ -10,7 +10,8 @@ import {
   type ExtractNodeActions,
   type NodeChild,
 } from '@prosekit/core'
-import { createTestEditor, type TestEditor } from '@prosekit/core/test'
+import { createTestEditor, readClipboardHTML, readClipboardText, type TestEditor } from '@prosekit/core/test'
+import { formatHTML } from 'diffable-html-snapshot'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 import { defineBackgroundColor } from '../background-color/index.ts'
@@ -19,8 +20,10 @@ import { defineBold } from '../bold/index.ts'
 import { defineCodeBlock } from '../code-block/index.ts'
 import { defineCode } from '../code/index.ts'
 import { defineDoc } from '../doc/index.ts'
+import { defineFontFamily } from '../font-family/index.ts'
 import { defineHardBreak } from '../hard-break/index.ts'
 import { defineHeading } from '../heading/index.ts'
+import { defineHighlight } from '../highlight/index.ts'
 import { defineHorizontalRule } from '../horizontal-rule/index.ts'
 import { defineImage } from '../image/index.ts'
 import { defineItalic } from '../italic/index.ts'
@@ -29,13 +32,14 @@ import { defineList, type ListAttrs } from '../list/index.ts'
 import { defineMath } from '../math/index.ts'
 import { defineParagraph } from '../paragraph/index.ts'
 import { defineStrike } from '../strike/index.ts'
+import { defineSubscript } from '../subscript/index.ts'
+import { defineSuperscript } from '../superscript/index.ts'
 import { defineTable } from '../table/index.ts'
 import type { CellAttrs } from '../table/table-spec.ts'
 import { defineTextColor } from '../text-color/index.ts'
 import { defineText } from '../text/index.ts'
 import { defineUnderline } from '../underline/index.ts'
 
-import { readHtmlTextFromClipboard, readPlainTextFromClipboard } from './clipboard.ts'
 import { renderMathBlock, renderMathInline } from './katex.ts'
 
 /**
@@ -46,6 +50,7 @@ export function defineTestExtension() {
     defineDoc(),
     defineText(),
     defineHeading(),
+    defineHighlight(),
     defineHistory(),
     defineList(),
     defineBlockquote(),
@@ -55,7 +60,10 @@ export function defineTestExtension() {
     defineBold(),
     defineUnderline(),
     defineStrike(),
+    defineSubscript(),
+    defineSuperscript(),
     defineCode(),
+    defineFontFamily(),
     defineTextColor(),
     defineBackgroundColor(),
     defineLink(),
@@ -123,8 +131,8 @@ export function setupTest() {
   const copy = async () => {
     editor.view.dom.focus()
     await keyboard.press('ControlOrMeta+C')
-    const html = await readHtmlTextFromClipboard()
-    const plain = await readPlainTextFromClipboard()
+    const html = formatHTML((await readClipboardHTML()) ?? '')
+    const plain = (await readClipboardText()) ?? ''
     return { html, plain }
   }
 

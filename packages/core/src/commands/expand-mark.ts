@@ -1,7 +1,7 @@
-import type { Mark, MarkType, ResolvedPos } from '@prosekit/pm/model'
+import type { MarkType } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
 
-import { getMarkType } from '../utils/get-mark-type.ts'
+import { getMarkRange } from '../utils/get-mark-range.ts'
 
 export interface ExpandMarkOptions {
   /**
@@ -15,13 +15,15 @@ export interface ExpandMarkOptions {
  */
 export function expandMark(options: ExpandMarkOptions): Command {
   return (state, dispatch) => {
-    const markType = getMarkType(state.schema, options.type)
-    const predicate = (mark: Mark) => mark.type === markType
+    const { $from, $to, empty, from: selectionFrom, to: selectionTo } = state.selection
 
-    const from = expandMarkBefore(state.selection.$from, predicate)
-    const to = expandMarkAfter(state.selection.$to, predicate)
+    // A collapsed selection shares one position, so one lookup covers both ends.
+    const fromRange = getMarkRange($from, options.type)
+    const toRange = empty ? fromRange : getMarkRange($to, options.type)
+    const from = fromRange?.from ?? selectionFrom
+    const to = toRange?.to ?? selectionTo
 
-    if (from === state.selection.from && to === state.selection.to) {
+    if (from === selectionFrom && to === selectionTo) {
       return false
     }
 
@@ -30,55 +32,4 @@ export function expandMark(options: ExpandMarkOptions): Command {
     }
     return true
   }
-}
-
-function expandMarkBefore(
-  $pos: ResolvedPos,
-  predicate: (mark: Mark) => boolean,
-): number {
-  const { parent } = $pos
-
-  if (!$pos.marks().some(predicate)) {
-    return $pos.pos
-  }
-
-  const index = $pos.index()
-  let boundaryIndex = index
-
-  for (let i = index; i >= 0; i--) {
-    const node = parent.child(i)
-    if (node.marks.some(predicate)) {
-      boundaryIndex = i
-    } else {
-      break
-    }
-  }
-
-  return $pos.posAtIndex(boundaryIndex)
-}
-
-function expandMarkAfter(
-  $pos: ResolvedPos,
-  predicate: (mark: Mark) => boolean,
-): number {
-  const { parent } = $pos
-
-  if (!$pos.marks().some(predicate)) {
-    return $pos.pos
-  }
-
-  const index = Math.max(0, $pos.indexAfter() - 1)
-  const childCount = parent.childCount
-  let boundaryIndex = index
-
-  for (let i = index; i < childCount; i++) {
-    const node = parent.child(i)
-    if (node.marks.some(predicate)) {
-      boundaryIndex = i
-    } else {
-      break
-    }
-  }
-
-  return $pos.posAtIndex(boundaryIndex) + parent.child(boundaryIndex).nodeSize
 }

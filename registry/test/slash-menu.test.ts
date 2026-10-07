@@ -232,7 +232,7 @@ testStory(['slash-menu', 'full'], () => {
     await expect.element(highlightedItem).toHaveTextContent('Heading 3')
 
     await keyboard.press('ArrowDown')
-    await expect.element(highlightedItem).not.toHaveTextContent(/Heading/)
+    await expect.element(highlightedItem).not.toMatchTextContent(/Heading/)
 
     await keyboard.press('ArrowUp')
     await expect.element(highlightedItem).toHaveTextContent('Heading 3')

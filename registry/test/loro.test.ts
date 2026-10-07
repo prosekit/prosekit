@@ -17,15 +17,15 @@ testStory('loro', () => {
     await expect.element(editorA).toHaveFocus()
     await inputText('Hello')
 
-    await expect.element(editorA).toHaveTextContent('Hello')
-    await expect.element(editorB).toHaveTextContent('Hello')
+    await expect.element(editorA).toMatchTextContent('Hello')
+    await expect.element(editorB).toMatchTextContent('Hello')
 
     await emptyEditor({ editor: editorB })
     editorB.element().focus()
     await expect.element(editorB).toHaveFocus()
     await inputText('World')
 
-    await expect.element(editorA).toHaveTextContent('World')
-    await expect.element(editorB).toHaveTextContent('World')
+    await expect.element(editorA).toMatchTextContent('World')
+    await expect.element(editorB).toMatchTextContent('World')
   })
 })

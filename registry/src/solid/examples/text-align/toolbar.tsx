@@ -2,9 +2,9 @@ import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
   return Object.values(editor.nodes).some((node) => {

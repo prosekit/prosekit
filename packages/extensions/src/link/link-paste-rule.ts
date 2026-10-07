@@ -1,6 +1,4 @@
-import type { PlainExtension } from '@prosekit/core'
-
-import { defineMarkPasteRule } from '../paste-rule/index.ts'
+import { defineMarkPasteRule, type PlainExtension } from '@prosekit/core'
 
 import { LINK_MARK_RE } from './link-regex.ts'
 import type { LinkAttrs } from './link-types.ts'

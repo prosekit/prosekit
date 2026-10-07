@@ -1,1 +1,1 @@
-export { registerLitEditorButton } from './button'
+export { registerLitEditorButton } from './button.ts'

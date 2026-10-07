@@ -2,8 +2,8 @@
 
 import { useEditor } from 'prosekit/react'
 
-import { sampleUploader } from '../../../sample/sample-uploader'
-import type { EditorExtension } from '../extension'
+import { sampleUploader } from '../../../sample/sample-uploader.ts'
+import type { EditorExtension } from '../extension.ts'
 
 interface Props {
   getPos: () => number | undefined

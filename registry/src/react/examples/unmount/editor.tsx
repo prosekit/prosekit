@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState } from 'react'
 
-import EditorComponent from './editor-component'
+import EditorComponent from './editor-component.tsx'
 
 function EditorGroup() {
   const nextKeyRef = useRef(1)

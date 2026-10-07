@@ -4,9 +4,9 @@ import { useEditorDerivedValue, useKeymap } from 'prosekit/svelte'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/svelte/inline-popover'
 import { toStore } from 'svelte/store'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 const textColors = [
   { label: 'Gray', value: '#9ca3af' },

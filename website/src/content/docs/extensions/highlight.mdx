@@ -1,0 +1,39 @@
+---
+title: Highlight
+description: "Highlight text formatting backed by the standard <mark> HTML element"
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import Keyboard from '@/components/ui/keyboard.astro';
+
+The `highlight` mark is used to represent highlighted text, like using a highlighter pen. It will be rendered as `<mark>` element in HTML.
+
+<Demo story="highlight" />
+
+## Commands
+
+### `toggleHighlight`
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineHighlight } from 'prosekit/extensions/highlight'
+
+const extension = defineHighlight()
+const editor = createEditor({ extension })
+// ---cut---
+editor.commands.toggleHighlight()
+```
+
+## Keyboard Shortcuts
+
+| Non-Apple                       | Apple                              | Description                               |
+| ------------------------------- | ---------------------------------- | ----------------------------------------- |
+| <Keyboard key="Ctrl+Shift+H" /> | <Keyboard key="Command+Shift+H" /> | Toggle the current selection to highlight |
+
+## Input Rules
+
+Type `==text==` to automatically apply the highlight mark to "text".
+
+## API Reference
+
+- [prosekit/extensions/highlight](/references/extensions/highlight)

@@ -7,11 +7,11 @@ import { createEditor, type Extension, type NodeJSON } from 'prosekit/core'
 import { defineReactNodeView, ProseKit, useExtension } from 'prosekit/react'
 import { useMemo, useState } from 'react'
 
-import { sampleContent } from '../../sample/sample-doc-tweet'
+import { sampleContent } from '../../sample/sample-doc-tweet.ts'
 
-import { defineExtension } from './extension'
-import { MethodSelect } from './method-select'
-import { TweetView } from './tweet-view'
+import { defineExtension } from './extension.ts'
+import { MethodSelect } from './method-select.tsx'
+import { TweetView } from './tweet-view.tsx'
 
 interface EditorProps {
   initialContent?: NodeJSON

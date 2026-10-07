@@ -6,7 +6,7 @@ import type { EditorState } from 'prosekit/pm/state'
 import { useEditor, useEditorDerivedValue } from 'prosekit/svelte'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/svelte/inline-popover'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 function getInlineMenuItems(editor: Editor<BasicExtension>) {
   return {

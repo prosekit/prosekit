@@ -31,7 +31,7 @@ export function DropdownMenu({ story, framework }: DropdownMenuProps) {
   const handleOpenInNewPage = () => {
     const url = new URL(window.location.href)
     url.pathname = `/playground/-/${framework}/${story}/`
-    window.open(url.toString(), '_blank')
+    window.open(url.href, '_blank')
   }
 
   return (
@@ -47,10 +47,10 @@ export function DropdownMenu({ story, framework }: DropdownMenuProps) {
           <Menu.Popup className="
             border rounded-lg border-border bg-background p-1 shadow-lg outline-none
             transition-[transform,scale,opacity]
-            origin-(--transform-origin) 
-            data-ending-style:scale-90 
-            data-ending-style:opacity-0 
-            data-starting-style:scale-90 
+            origin-(--transform-origin)
+            data-ending-style:scale-90
+            data-ending-style:opacity-0
+            data-starting-style:scale-90
             data-starting-style:opacity-0">
             <DropdownMenuItem text="Open in CodeSandbox" onClick={handleOpenCodeSandbox} />
             <DropdownMenuItem text="Open in StackBlitz" onClick={handleOpenStackBlitz} />

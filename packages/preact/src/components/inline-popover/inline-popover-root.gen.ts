@@ -31,6 +31,17 @@ export interface InlinePopoverRootProps {
    */
   dismissOnEscape?: InlinePopoverRootElementProps['dismissOnEscape'];
   /**
+   * The reference to position the popover against. This can be a DOM element, a
+   * Floating UI virtual element, or a function that returns either of them.
+   *
+   * When set, the popover is anchored to this reference instead of the current
+   * text selection, and the text selection no longer drives the open state, so
+   * control it with the `open` property.
+   *
+   * @default null
+   */
+  anchor?: InlinePopoverRootElementProps['anchor'];
+  /**
    * Whether the overlay is currently open.
    * @default null
    */
@@ -50,14 +61,14 @@ function InlinePopoverRootComponent(props: InlinePopoverRootProps, forwardedRef:
   const elementRef = useRef<InlinePopoverRootElement>(null);
   const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
-  const p3Fallback = useEditorContext();
+  const p4Fallback = useEditorContext();
 
-  const { defaultOpen: p0, disabled: p1, dismissOnEscape: p2, editor: p3, open: p4, onOpenChange: e0, ...restProps } = props;
+  const { anchor: p0, defaultOpen: p1, disabled: p2, dismissOnEscape: p3, editor: p4, open: p5, onOpenChange: e0, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
-    Object.assign(element, { defaultOpen: p0, disabled: p1, dismissOnEscape: p2, editor: p3 ?? p3Fallback, open: p4 });
+    Object.assign(element, { anchor: p0, defaultOpen: p1, disabled: p2, dismissOnEscape: p3, editor: p4 ?? p4Fallback, open: p5 });
     handlersRef.current = [e0] as Array<((event: Event) => void) | undefined>;
   });
 

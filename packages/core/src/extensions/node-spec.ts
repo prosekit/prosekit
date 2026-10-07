@@ -131,7 +131,7 @@ type NodeSpecPayload = [
 const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   reducer: (payloads: NodeSpecPayload[]): SchemaSpec => {
     let specs = OrderedMap.from<NodeSpec>({})
-    let topNodeName: string | undefined = undefined
+    let topNodeName: string | undefined
 
     const specPayloads = payloads.map((input) => input[0]).filter(isNotNullish)
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNullish)
@@ -153,7 +153,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
 
     const groupedAttrs = mapGroupBy(attrPayloads, (payload) => payload.type)
 
-    for (const [type, attrs] of groupedAttrs.entries()) {
+    for (const [type, attrs] of groupedAttrs) {
       if (!attrs) continue
 
       const oldSpec = specs.get(type)

@@ -7,7 +7,7 @@ import { assert } from '../utils/assert.ts'
  * Merges multiple extensions into one. You can pass multiple extensions as
  * arguments or a single array containing multiple extensions.
  *
- * @throws If no extensions are provided.
+ * Throws if no extensions are provided.
  *
  * @example
  *

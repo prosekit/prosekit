@@ -1,29 +1,39 @@
 <script setup lang="ts">
-import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { defineSearchStatusHandler, type SearchCommandsExtension, type SearchStatus } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/vue'
-import { computed, ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 const props = defineProps<{ onClose?: () => void }>()
 
 const showReplace = ref(false)
 const searchText = ref('')
 const replaceText = ref('')
+const caseSensitive = ref(false)
+const wholeWord = ref(false)
+const regexp = ref(false)
+const literal = ref(false)
+
+const searchStatus = ref<SearchStatus>({ total: 0, active: 0 })
+useExtension(
+  defineSearchStatusHandler((status) => {
+    searchStatus.value = status
+  }),
+)
 
 const editor = useEditor<SearchCommandsExtension>()
 
-const extension = computed(() => {
-  if (!searchText.value) {
-    return null
-  }
-  return defineSearchQuery({
+watchEffect(() => {
+  editor.value.commands.setSearchQuery({
     search: searchText.value,
     replace: replaceText.value,
+    caseSensitive: caseSensitive.value,
+    wholeWord: wholeWord.value,
+    regexp: regexp.value,
+    literal: literal.value,
   })
 })
-
-useExtension(extension)
 
 function toggleReplace() {
   showReplace.value = !showReplace.value
@@ -88,6 +98,12 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
       @keydown="handleSearchKeyDown"
     >
     <div class="CSS_SEARCH_CONTROLLER">
+      <span
+        v-if="searchText"
+        class="CSS_SEARCH_COUNTER"
+      >
+        {{ searchStatus.active }} / {{ searchStatus.total }}
+      </span>
       <Button
         tooltip="Previous (Shift Enter)"
         @click="editor.commands.findPrev"
@@ -102,6 +118,34 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
       </Button>
       <Button tooltip="Close" @click="props.onClose">
         <span class="CSS_ICON_CLOSE" />
+      </Button>
+      <Button
+        :pressed="caseSensitive"
+        tooltip="Case Sensitive"
+        @click="caseSensitive = !caseSensitive"
+      >
+        <span class="CSS_CASE_SENSITIVE" />
+      </Button>
+      <Button
+        :pressed="wholeWord"
+        tooltip="Whole Word"
+        @click="wholeWord = !wholeWord"
+      >
+        <span class="CSS_ICON_WHOLE_WORD" />
+      </Button>
+      <Button
+        :pressed="regexp"
+        tooltip="Regular Expression"
+        @click="regexp = !regexp"
+      >
+        <span class="CSS_ICON_REGEXP" />
+      </Button>
+      <Button
+        :pressed="literal"
+        tooltip="Literal Escape Sequences"
+        @click="literal = !literal"
+      >
+        <span class="CSS_ICON_LITERAL" />
       </Button>
     </div>
     <template v-if="showReplace">

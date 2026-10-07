@@ -8,9 +8,9 @@ import { ProseKit } from 'prosekit/svelte'
 import type { Awareness } from 'prosekit/extensions/yjs'
 import type * as Y from 'yjs'
 
-import { Toolbar } from '../../ui/toolbar'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface Props {
   doc: Y.Doc

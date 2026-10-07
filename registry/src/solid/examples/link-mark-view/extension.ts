@@ -2,7 +2,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import { defineSolidMarkView } from 'prosekit/solid'
 
-import LinkView from './link-view'
+import LinkView from './link-view.tsx'
 
 export function defineExtension() {
   return union(

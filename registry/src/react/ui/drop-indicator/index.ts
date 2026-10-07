@@ -1,1 +1,1 @@
-export { default as DropIndicator } from './drop-indicator'
+export { default as DropIndicator } from './drop-indicator.tsx'

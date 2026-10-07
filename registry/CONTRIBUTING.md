@@ -16,7 +16,7 @@ Avoid destructuring component props across all frameworks. Destructuring breaks 
 
 ```tsx
 function Foo(props: FooProps) {
-  return <div>{props.foo}</div>;
+  return <div>{props.foo}</div>
 }
 ```
 
@@ -24,21 +24,20 @@ function Foo(props: FooProps) {
 
 ```tsx
 function Foo({ foo }: FooProps) {
-  return <div>{foo}</div>;
+  return <div>{foo}</div>
 }
 ```
-
 
 ### Default Content Location
 
 To provide default content for an example, create a file at `registry/src/<framework>/sample/sample-doc-<example-name>.ts` and export the content using the following format:
 
 ```ts
-import type { NodeJSON } from "prosekit/core";
+import type { NodeJSON } from 'prosekit/core'
 
 export const sampleContent: NodeJSON = {
   /* ... */
-};
+}
 ```
 
 ### 'use client' Directive
@@ -109,12 +108,12 @@ Prefer `watchEffect` over `watch` to track reactive dependencies automatically.
 
 ```ts
 watchEffect((onCleanup) => {
-  const value = valueRef.value;
+  const value = valueRef.value
   // do something with value
   onCleanup(() => {
     // cleanup logic
-  });
-});
+  })
+})
 ```
 
 **Bad:**
@@ -124,8 +123,8 @@ watch([valueRef], (newValue, oldValue, onCleanup) => {
   // do something with newValue
   onCleanup(() => {
     // cleanup logic
-  });
-});
+  })
+})
 ```
 
 ## Svelte-Specific Guidelines
@@ -138,12 +137,12 @@ Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead o
 
 ```svelte
 <script lang="ts">
-  interface Props {
-    name: string;
-  }
-  const props: Props = $props();
-  let count = $state(0);
-  let doubled = $derived(count * 2);
+interface Props {
+  name: string
+}
+const props: Props = $props()
+let count = $state(0)
+let doubled = $derived(count * 2)
 </script>
 
 <div>{props.name} {doubled}</div>
@@ -153,9 +152,9 @@ Use Svelte v5 runes syntax (`$state`, `$derived`, `$props`, `$effect`) instead o
 
 ```svelte
 <script lang="ts">
-  export let name = 'World';
-  let count = 0;
-  $: doubled = count * 2;
+export let name = 'World'
+let count = 0
+$: doubled = count * 2
 </script>
 
 <div>{name} {doubled}</div>
@@ -172,7 +171,7 @@ Use `attr:` for data attributes
 ```tsx
 <SolidComponent
   attr:data-testid="test-id"
-  attr:data-selected={selected ? "" : undefined}
+  attr:data-selected={selected ? '' : undefined}
 />
 ```
 
@@ -181,7 +180,7 @@ Use `attr:` for data attributes
 ```tsx
 <SolidComponent
   data-testid="test-id"
-  data-selected={selected ? "" : undefined}
+  data-selected={selected ? '' : undefined}
 />
 ```
 
@@ -210,7 +209,7 @@ export default function Foo() {
 **Good:**
 
 ```tsx
-<div> 
+<div>
   <For each={items}>
     {(item) => <div>{item}</div>}
   </For>
@@ -220,7 +219,5 @@ export default function Foo() {
 **Bad:**
 
 ```tsx
-<div>{items.map((item) => (
-  <div>{item}</div>)
-)}</div>
+<div>{items.map((item) => <div>{item}</div>)}</div>
 ```

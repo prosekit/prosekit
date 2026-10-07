@@ -1,1 +1,1 @@
-export { setupVanillaEditor } from './editor'
+export { setupVanillaEditor } from './editor.ts'

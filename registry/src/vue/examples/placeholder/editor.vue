@@ -6,7 +6,7 @@ import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props = defineProps<{
   initialContent?: NodeJSON

@@ -7,8 +7,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { defineExtension } from './extension'
-import UserMenuDynamic from './user-menu-dynamic'
+import { defineExtension } from './extension.ts'
+import UserMenuDynamic from './user-menu-dynamic.tsx'
 
 export default function Editor() {
   const editor = useMemo(() => {

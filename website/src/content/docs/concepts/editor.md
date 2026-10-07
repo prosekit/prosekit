@@ -19,11 +19,11 @@ const editor = createEditor({ extension })
 
 [`createEditor`](/references/core#createeditor) accepts:
 
-| Option             | Type                            | Notes                                                                     |
-| ------------------ | ------------------------------- | ------------------------------------------------------------------------- |
-| `extension`        | `Extension`                     | Required. Usually a `union(...)` of `define*` calls.                      |
+| Option             | Type                            | Notes                                                                                                           |
+| ------------------ | ------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `extension`        | `Extension`                     | Required. Usually a `union(...)` of `define*` calls.                                                            |
 | `defaultContent`   | `NodeJSON \| string \| Element` | Optional initial document. It can be a ProseMirror node JSON object, an HTML string, or a DOM element instance. |
-| `defaultSelection` | `SelectionJSON`                 | Optional initial selection (only used when `defaultContent` is set).      |
+| `defaultSelection` | `SelectionJSON`                 | Optional initial selection (only used when `defaultContent` is set).                                            |
 
 ## Mounting and unmounting
 
@@ -90,7 +90,7 @@ const isBold = editor.marks.bold.isActive()
 
 ```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
-import { defineKeymap, createEditor, type Extension } from 'prosekit/core'
+import { createEditor, defineKeymap, type Extension } from 'prosekit/core'
 const editor = createEditor({ extension: defineBasicExtension() })
 declare function saveDocument(json: unknown): void
 // ---cut---

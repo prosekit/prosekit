@@ -62,18 +62,18 @@ editor.setContent({ type: 'doc', content: [] }, 'start')
 
 The optional second argument selects where the cursor lands: `'start'`, `'end'`, or a `SelectionJSON`.
 
-## Conversion utilities  
+## Conversion utilities
 
 Sometimes you want to serialize content from outside the editor (e.g. on a server, or while preparing initial content). `prosekit/core` exposes pure functions you can call:
 
-| Function                                            | Input             | Output            |
-| --------------------------------------------------- | ----------------- | ----------------- |
-| [`jsonFromNode`](/references/core#jsonfromnode)     | `ProseMirrorNode` | `NodeJSON`        |
-| [`nodeFromJSON`](/references/core#nodefromjson)     | `NodeJSON`        | `ProseMirrorNode` |
-| [`jsonFromHTML`](/references/core#jsonfromhtml)     | `string`          | `NodeJSON`        |
-| [`htmlFromJSON`](/references/core#htmlfromjson)     | `NodeJSON`        | `string`          |
-| [`nodeFromHTML`](/references/core#nodefromhtml)     | `string`          | `ProseMirrorNode` |
-| [`htmlFromNode`](/references/core#htmlfromnode)     | `ProseMirrorNode` | `string`          |
+| Function                                        | Input             | Output            |
+| ----------------------------------------------- | ----------------- | ----------------- |
+| [`jsonFromNode`](/references/core#jsonfromnode) | `ProseMirrorNode` | `NodeJSON`        |
+| [`nodeFromJSON`](/references/core#nodefromjson) | `NodeJSON`        | `ProseMirrorNode` |
+| [`jsonFromHTML`](/references/core#jsonfromhtml) | `string`          | `NodeJSON`        |
+| [`htmlFromJSON`](/references/core#htmlfromjson) | `NodeJSON`        | `string`          |
+| [`nodeFromHTML`](/references/core#nodefromhtml) | `string`          | `ProseMirrorNode` |
+| [`htmlFromNode`](/references/core#htmlfromnode) | `ProseMirrorNode` | `string`          |
 
 ```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'

@@ -384,7 +384,7 @@ async function setup() {
     const table = editor.locate('table').element()
     const rows = Array.from(table.querySelectorAll('tr'))
     return rows.map((row) => {
-      return Array.from(row.querySelectorAll('td, th')).map((cell) => cell.textContent?.trim() ?? '')
+      return Array.from(row.querySelectorAll('td, th'), (cell) => cell.textContent?.trim() ?? '')
     })
   }
 

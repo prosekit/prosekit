@@ -19,10 +19,13 @@ export function defineNodeView(options: NodeViewOptions): Extension {
 const nodeViewFacet = defineFacet<NodeViewOptions, PluginPayload>({
   reducer: (inputs: NodeViewOptions[]): PluginPayload => {
     const nodeViews: { [nodeName: string]: NodeViewConstructor } = {}
+    const seen = new Set<string>()
 
     for (const input of inputs) {
-      if (!nodeViews[input.name]) {
-        nodeViews[input.name] = input.constructor
+      const { name, constructor } = input
+      if (!seen.has(name)) {
+        seen.add(name)
+        nodeViews[name] = constructor
       }
     }
 

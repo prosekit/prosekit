@@ -117,13 +117,21 @@ export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(
 )
 
 export const CSS_LANGUAGE_WRAPPER = cn(
-  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs',
+  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs data-preview:hidden',
 )
 
 export const CSS_LANGUAGE_SELECT = cn(
   'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight)',
   // Only visible when hovering the code block
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80',
+)
+
+export const CSS_CODE_BLOCK_PREVIEW_SOURCE = cn(
+  'data-preview:hidden',
+)
+
+export const CSS_CODE_BLOCK_PREVIEW_DISPLAY = cn(
+  'block py-2 overflow-auto',
 )
 
 const CSS_TOP_BAR = cn(
@@ -281,6 +289,9 @@ export const CSS_BUTTON_PRIMARY = cn(
 
 export const CSS_SEARCH_INPUT = cn(CSS_INPUT, 'col-start-2')
 export const CSS_SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
+export const CSS_SEARCH_COUNTER = cn(
+  'flex items-center px-1 text-sm whitespace-nowrap tabular-nums text-gray-500 dark:text-gray-500',
+)
 
 export const CSS_KEYMAP_FIELDSET = cn(
   'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow-sm min-w-0',
@@ -324,3 +335,7 @@ export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical size-5 min-h
 export const CSS_ICON_BLOCKQUOTE = cn('i-lucide-text-quote size-5 block')
 export const CSS_ICON_MINUS = cn('i-lucide-minus size-5 block')
 export const CSS_ICON_IMAGE_ERROR = cn('i-lucide-image-off size-8 block')
+export const CSS_ICON_WHOLE_WORD = cn('i-lucide-whole-word size-5 block')
+export const CSS_ICON_LITERAL = cn('i-lucide-quote size-5 block')
+export const CSS_ICON_REGEXP = cn('i-lucide-braces size-5 block')
+export const CSS_CASE_SENSITIVE = cn('i-lucide-case-sensitive size-5 block')

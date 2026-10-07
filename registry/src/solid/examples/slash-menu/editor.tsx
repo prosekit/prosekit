@@ -5,9 +5,9 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { SlashMenu } from '../../ui/slash-menu'
+import { SlashMenu } from '../../ui/slash-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor(): JSX.Element {
   const extension = defineExtension()

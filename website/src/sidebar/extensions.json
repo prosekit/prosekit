@@ -23,9 +23,12 @@
       "background-color",
       "bold",
       "code",
+      "highlight",
       "italic",
       "link",
       "strike",
+      "subscript",
+      "superscript",
       "text-color",
       "underline"
     ]

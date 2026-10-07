@@ -2,7 +2,7 @@ export function extractModuleDescription(
   fileContent: string,
 ): string | undefined {
   // Match the first JSDoc block at the start of file (allowing leading whitespace)
-  const match = fileContent.match(/^\s*\/\*\*([\S\s]*?)\*\//)
+  const match = fileContent.match(/^\s*\/\*\*([\s\S]*?)\*\//)
   if (!match) return undefined
 
   const body = match[1]

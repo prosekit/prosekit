@@ -1,7 +1,9 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   },
   "references": [{ "path": "../../../packages/prosekit" }]
 }

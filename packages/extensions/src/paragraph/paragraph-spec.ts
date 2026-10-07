@@ -11,9 +11,9 @@ export type ParagraphSpecExtension = Extension<{
 }>
 
 /**
- * @internal
- *
  * Defines a paragraph node spec.
+ *
+ * @internal
  */
 export function defineParagraphSpec(): ParagraphSpecExtension {
   return defineNodeSpec({

@@ -1,4 +1,5 @@
 import { html, LitElement } from 'lit'
+import type { SelectEvent } from 'prosekit/lit/autocomplete'
 
 export class SlashMenuItemElement extends LitElement {
   static override properties = {
@@ -19,9 +20,10 @@ export class SlashMenuItemElement extends LitElement {
     return this
   }
 
-  // TODO: maybe this should changed to valueChange event??
-  handleSelect = () => {
-    this.dispatchEvent(new CustomEvent('select'))
+  // Relay the inner item's non-bubbling `select` event on this element, so
+  // consumers can listen for it without reaching into the light DOM.
+  handleSelect = (event: SelectEvent) => {
+    this.dispatchEvent(new CustomEvent('select', { detail: event.detail }))
   }
 
   override render() {
@@ -29,9 +31,9 @@ export class SlashMenuItemElement extends LitElement {
       @select=${this.handleSelect}
       class="CSS_AUTOCOMPLETE_MENU_ITEM"
     >
-      <span>${this.label}</span>${this.kbd
-        ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>`
-        : ''}
+      <span>${this.label}</span>${
+        this.kbd ? html`<kbd class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">${this.kbd}</kbd>` : ''
+      }
     </prosekit-autocomplete-item>`
   }
 }

@@ -91,7 +91,7 @@ function consumeFrameworkFromQuery(): string | undefined {
     if (!url.searchParams.has('framework')) return
     const value = url.searchParams.get('framework')
     url.searchParams.delete('framework')
-    window.history.replaceState(window.history.state, '', url.toString())
+    window.history.replaceState(window.history.state, '', url.href)
     return value || undefined
   } catch (error) {
     console.error('Failed to consume framework from query:', error)

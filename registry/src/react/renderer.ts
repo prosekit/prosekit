@@ -2,7 +2,7 @@ import type { NodeJSON } from 'prosekit/core'
 import type { JSX } from 'react'
 import { createElement, Suspense } from 'react'
 
-import { loaders } from './loaders.gen'
+import { loaders } from './loaders.gen.ts'
 
 interface ExampleProps {
   initialContent?: NodeJSON

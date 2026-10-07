@@ -1,1 +1,1 @@
-export { registerLitEditorToolbar } from './toolbar'
+export { registerLitEditorToolbar } from './toolbar.ts'

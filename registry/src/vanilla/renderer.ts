@@ -1,4 +1,4 @@
-import { loaders } from './loaders.gen'
+import { loaders } from './loaders.gen.ts'
 
 class VanillaRendererElement extends HTMLElement {
   static observedAttributes = ['data-story']

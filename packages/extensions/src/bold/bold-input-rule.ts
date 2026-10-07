@@ -7,9 +7,10 @@ import { defineMarkInputRule } from '../input-rule/index.ts'
  */
 export function defineBoldInputRule(): PlainExtension {
   return defineMarkInputRule({
-    regex: canUseRegexLookbehind()
-      ? /(?<=\s|^)\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$/
-      : /\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$/,
+    regex: new RegExp(
+      (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
+        + String.raw`\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$`,
+    ),
     type: 'bold',
   })
 }

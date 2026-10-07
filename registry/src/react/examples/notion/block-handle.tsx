@@ -3,7 +3,7 @@
 import { Tooltip } from '@base-ui/react/tooltip'
 import { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopup, BlockHandlePositioner, BlockHandleRoot } from 'prosekit/react/block-handle'
 
-import BlockHandleMenu from './block-handle-menu'
+import BlockHandleMenu from './block-handle-menu.tsx'
 
 interface Props {
   enabled: boolean

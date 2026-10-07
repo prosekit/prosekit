@@ -139,13 +139,21 @@ function decorateDeletionSlice(
 }
 
 function decorateDeletion(
-  /** The doc node before the deletion */
+  /**
+   * The doc node before the deletion
+   */
   doc: ProseMirrorNode,
-  /** The start position of the deleted text in the doc node */
+  /**
+   * The start position of the deleted text in the doc node
+   */
   from: number,
-  /** The end position of the deleted text in the doc node */
+  /**
+   * The end position of the deleted text in the doc node
+   */
   to: number,
-  /** The insert position of the decoration in the doc node after the change */
+  /**
+   * The insert position of the decoration in the doc node after the change
+   */
   pos: number,
 ): Decoration[] {
   const slice = doc.slice(from, to)
@@ -153,19 +161,23 @@ function decorateDeletion(
   const renders = decorateDeletionSlice(slice)
   const count = renders.length
 
-  return renders.map((render, index) =>
-    Decoration.widget(pos, render, {
+  return renders.map((render, index) => {
+    return Decoration.widget(pos, render, {
       side: -20 - count + index,
       // Ensure the text in the decoration is able to be selected.
       ignoreSelection: true,
     })
-  )
+  })
 }
 
 function decorateAddition(
-  /** The start position of the inserted text in the doc node */
+  /**
+   * The start position of the inserted text in the doc node
+   */
   from: number,
-  /** The end position of the inserted text in the doc node */
+  /**
+   * The end position of the inserted text in the doc node
+   */
   to: number,
 ): Decoration {
   return Decoration.inline(from, to, { class: 'prosekit-commit-addition' })

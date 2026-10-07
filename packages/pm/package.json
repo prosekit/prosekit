@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/pm",
   "type": "module",
-  "version": "0.1.16",
+  "version": "0.1.20",
   "private": false,
   "description": "A re-export of ProseMirror packages",
   "author": {
@@ -46,14 +46,14 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "prosemirror-commands": "^1.7.1",
-    "prosemirror-history": "^1.5.0",
+    "prosemirror-commands": "^1.7.2",
+    "prosemirror-history": "^1.5.1",
     "prosemirror-inputrules": "^1.5.1",
     "prosemirror-keymap": "^1.2.3",
-    "prosemirror-model": "^1.25.4",
+    "prosemirror-model": "^1.25.12",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-transform": "^1.12.0",
-    "prosemirror-view": "^1.41.8"
+    "prosemirror-transform": "^1.12.2",
+    "prosemirror-view": "^1.42.6"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",
@@ -106,37 +106,6 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/index.d.ts"
-        ],
-        "commands": [
-          "./dist/commands.d.ts"
-        ],
-        "history": [
-          "./dist/history.d.ts"
-        ],
-        "inputrules": [
-          "./dist/inputrules.d.ts"
-        ],
-        "keymap": [
-          "./dist/keymap.d.ts"
-        ],
-        "model": [
-          "./dist/model.d.ts"
-        ],
-        "state": [
-          "./dist/state.d.ts"
-        ],
-        "transform": [
-          "./dist/transform.d.ts"
-        ],
-        "view": [
-          "./dist/view.d.ts"
-        ]
-      }
-    }
+    "types": "./dist/index.d.ts"
   }
 }

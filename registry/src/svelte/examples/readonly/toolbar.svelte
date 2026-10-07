@@ -3,7 +3,7 @@ import { defineReadonly } from 'prosekit/extensions/readonly'
 import { useExtension } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
 let readonly = $state(true)
 

@@ -21,7 +21,8 @@ export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap.ts'
 export { unsetBlockType, type UnsetBlockTypeOptions } from './commands/unset-block-type.ts'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark.ts'
 export { wrap, type WrapOptions } from './commands/wrap.ts'
-export type { MarkAction, NodeAction, NodeChild } from './editor/action.ts'
+export type { MarkAction, MarkBuilder, NodeAction, NodeBuilder, NodeChild } from './editor/action.ts'
+export { createMarkBuilders, createNodeBuilders } from './editor/builder.ts'
 export { createEditor, Editor, type EditorOptions } from './editor/editor.ts'
 export { union } from './editor/union.ts'
 export { withPriority } from './editor/with-priority.ts'
@@ -71,6 +72,7 @@ export {
 export { defineHistory, type HistoryExtension, type HistoryOptions } from './extensions/history.ts'
 export { defineBaseKeymap, type BaseKeymapExtension, type BaseKeymapOptions } from './extensions/keymap-base.ts'
 export { defineKeymap, keymapFacet, type Keymap, type KeymapPayload } from './extensions/keymap.ts'
+export { defineMarkPasteRule, type MarkPasteRuleOptions } from './extensions/mark-paste-rule.ts'
 export { defineMarkAttr, defineMarkSpec, type MarkAttrOptions, type MarkSpecOptions } from './extensions/mark-spec.ts'
 export {
   defineMarkViewComponent,
@@ -87,6 +89,7 @@ export {
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect.ts'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view.ts'
+export { definePasteRule, type PasteRuleHandler, type PasteRuleHandlerOptions, type PasteRuleOptions } from './extensions/paste-rule.ts'
 export { definePlugin, pluginFacet, type PluginPayload } from './extensions/plugin.ts'
 export { defineFacetPayload } from './facets/facet-extension.ts'
 export { defineFacet, type Facet } from './facets/facet.ts'
@@ -102,8 +105,10 @@ export type {
   ExtractCommandCreators,
   ExtractCommands,
   ExtractMarkActions,
+  ExtractMarkBuilders,
   ExtractMarks,
   ExtractNodeActions,
+  ExtractNodeBuilders,
   ExtractNodes,
   ExtractTyping,
   PlainExtension,
@@ -119,10 +124,12 @@ export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind.ts'
 export { clsx } from './utils/clsx.ts'
 export { containsInlineNode } from './utils/contains-inline-node.ts'
 export { defaultBlockAt } from './utils/default-block-at.ts'
-export { isApple } from './utils/env.ts'
+export { isApple, isWebKit } from './utils/env.ts'
+export { findMarkRange, type MarkRange } from './utils/find-mark-range.ts'
 export { findNode, findNodes, type FindNodeResult } from './utils/find-node.ts'
 export { findParentNodeOfType } from './utils/find-parent-node-of-type.ts'
 export { findParentNode, type FindParentNodeResult } from './utils/find-parent-node.ts'
+export { getMarkRange } from './utils/get-mark-range.ts'
 export { getMarkType } from './utils/get-mark-type.ts'
 export { getNodeType } from './utils/get-node-type.ts'
 export { isAtBlockStart } from './utils/is-at-block-start.ts'

@@ -6,7 +6,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
 import UserMenuDynamic from './user-menu-dynamic.svelte'
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const extension = defineExtension()
 const editor = createEditor({ extension })

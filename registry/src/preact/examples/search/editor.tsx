@@ -6,10 +6,10 @@ import { useMemo } from 'preact/hooks'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { sampleContent } from '../../sample/sample-doc-search'
-import { Search } from '../../ui/search'
+import { sampleContent } from '../../sample/sample-doc-search.ts'
+import { Search } from '../../ui/search/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 interface EditorProps {
   initialContent?: NodeJSON

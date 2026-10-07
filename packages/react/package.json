@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.7.1",
+  "version": "0.8.3",
   "private": false,
   "description": "React components and utilities for ProseKit",
   "author": {
@@ -49,8 +49,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.5.3",
-    "@prosemirror-adapter/react": "^0.5.3"
+    "@prosemirror-adapter/core": "^0.5.5",
+    "@prosemirror-adapter/react": "^0.5.5"
   },
   "peerDependencies": {
     "react": ">= 18.2.0",
@@ -69,14 +69,14 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-react": "^2.2.0"
+    "vitest-browser-react": "^2.3.0"
   },
   "publishConfig": {
     "exports": {
@@ -123,40 +123,6 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/index.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/autocomplete.d.ts"
-        ],
-        "block-handle": [
-          "./dist/block-handle.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/drop-indicator.d.ts"
-        ],
-        "inline-popover": [
-          "./dist/inline-popover.d.ts"
-        ],
-        "menu": [
-          "./dist/menu.d.ts"
-        ],
-        "popover": [
-          "./dist/popover.d.ts"
-        ],
-        "resizable": [
-          "./dist/resizable.d.ts"
-        ],
-        "table-handle": [
-          "./dist/table-handle.d.ts"
-        ],
-        "tooltip": [
-          "./dist/tooltip.d.ts"
-        ]
-      }
-    }
+    "types": "./dist/index.d.ts"
   }
 }

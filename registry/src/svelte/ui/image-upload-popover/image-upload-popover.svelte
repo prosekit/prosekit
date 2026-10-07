@@ -5,7 +5,7 @@ import { useEditor } from 'prosekit/svelte'
 import { PopoverPopup, PopoverPositioner, PopoverRoot, PopoverTrigger } from 'prosekit/svelte/popover'
 import type { OpenChangeEvent } from 'prosekit/web/popover'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 interface Props {
   uploader: Uploader<string>

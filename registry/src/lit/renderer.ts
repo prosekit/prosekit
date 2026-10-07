@@ -2,8 +2,8 @@ import { LitElement } from 'lit'
 import { html, unsafeStatic } from 'lit/static-html.js'
 import type { NodeJSON } from 'prosekit/core'
 
-import { loaders } from './loaders.gen'
-import { suppressLitWarnings } from './suppress-lit-warnings'
+import { loaders } from './loaders.gen.ts'
+import { suppressLitWarnings } from './suppress-lit-warnings.ts'
 
 suppressLitWarnings()
 

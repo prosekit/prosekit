@@ -8,9 +8,9 @@ import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { untrack } from 'svelte'
 
-import { sampleContent } from '../../sample/sample-doc-page'
+import { sampleContent } from '../../sample/sample-doc-page.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 import PaperController from './paper-controller.svelte'
 
 const props: {

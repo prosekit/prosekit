@@ -5,9 +5,9 @@ import 'prosekit/basic/typography.css'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 
-import { SlashMenu } from '../../ui/slash-menu'
+import { SlashMenu } from '../../ui/slash-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const extension = defineExtension()
 const editor = createEditor({ extension })

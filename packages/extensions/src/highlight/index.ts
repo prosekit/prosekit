@@ -1,0 +1,5 @@
+export { defineHighlightCommands, type HighlightCommandsExtension } from './highlight-commands.ts'
+export { defineHighlightInputRule } from './highlight-input-rule.ts'
+export { defineHighlightKeymap } from './highlight-keymap.ts'
+export { defineHighlightSpec, type HighlightSpecExtension } from './highlight-spec.ts'
+export { defineHighlight, type HighlightExtension } from './highlight.ts'

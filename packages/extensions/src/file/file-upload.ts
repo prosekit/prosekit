@@ -87,6 +87,7 @@ export class UploadTask<Result> {
           this.result = result
           resolve(result)
         },
+      ).catch(
         (err) => {
           this.done = true
           const error = new ProseKitError('[prosekit] Failed to upload file', { cause: err })

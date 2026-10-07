@@ -1,19 +1,30 @@
 <script setup lang="ts">
-import { useEditor } from 'prosekit/vue'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/vue'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
-const editor = useEditor<EditorExtension>({ update: true })
+function getToolbarItems(editor: Editor<EditorExtension>) {
+  return {
+    strike: {
+      isActive: editor.marks.strike.isActive(),
+      canExec: editor.commands.toggleStrike.canExec(),
+      command: () => editor.commands.toggleStrike(),
+    },
+  }
+}
+
+const items = useEditorDerivedValue(getToolbarItems)
 </script>
 
 <template>
   <div class="CSS_TOOLBAR">
     <Button
-      :pressed="false"
-      :disabled="!editor.commands.toggleStrike.canExec()"
-      @click="editor.commands.toggleStrike()"
+      :pressed="items.strike.isActive"
+      :disabled="!items.strike.canExec"
+      @click="items.strike.command"
     >
       Strikethrough
     </Button>

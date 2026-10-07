@@ -61,7 +61,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expect.element(itemBob, { timeout: 5000 }).toBeVisible()
       await expect.element(itemHighlighted, { timeout: 5000 }).toBeVisible()
-      await expect.element(itemHighlighted, { timeout: 5000 }).toHaveTextContent('A')
+      await expect.element(itemHighlighted, { timeout: 5000 }).toMatchTextContent('A')
 
       await expect.element(menu).toBeVisible()
       await checkMenuPosition()
@@ -74,7 +74,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expect.element(itemAlice, { timeout: 5000 }).toBeVisible()
       await expectLocatorToBeHidden(itemBob)
       await expect.element(itemHighlighted, { timeout: 5000 }).toBeVisible()
-      await expect.element(itemHighlighted, { timeout: 5000 }).toHaveTextContent('Alice')
+      await expect.element(itemHighlighted, { timeout: 5000 }).toMatchTextContent('Alice')
 
       await expect.element(menu).toBeVisible()
       await checkMenuPosition()
@@ -156,7 +156,7 @@ testStory({ story: 'user-menu-dynamic' }, () => {
       await expectLocatorToBeHidden(itemBob)
       await expectLocatorToBeHidden(itemNoResults)
       await expectLocatorToBeHidden(itemLoading)
-      await expect.element(itemHighlighted).toHaveTextContent('Alice')
+      await expect.element(itemHighlighted).toMatchTextContent('Alice')
 
       await checkMenuPosition()
 

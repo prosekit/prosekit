@@ -3,18 +3,17 @@ packages:
   - registry
   - packages/*
 
-allowedDeprecatedVersions:
-  glob: "10"
-
 catalog:
-  "@tsdown/css": "^0.22.0"
+  "@tsdown/css": "^0.23.0"
   "@types/node": "^24.12.2"
-  "@vitest/browser-playwright": "^4.1.5"
-  "@vitest/coverage-v8": "^4.1.5"
-  "@vitest/ui": "^4.1.5"
-  tsdown: "^0.22.0"
+  "@vitest/browser-playwright": "^5.0.0"
+  "@vitest/coverage-v8": "^5.0.0"
+  "@vitest/ui": "^5.0.0"
+  tsdown: "^0.23.0"
   typescript: "~6.0.3"
-  vitest: "^4.1.5"
+  vitest: "^5.0.0"
+
+dedupePeers: true
 
 ignoreWorkspaceRootCheck: true
 
@@ -22,10 +21,8 @@ allowBuilds:
   "@parcel/watcher": false
   dprint: false
   esbuild: false
-  sharp: false
+  simple-git-hooks: false
   workerd: false
-
-overrides: {}
 
 patchedDependencies:
   y-prosemirror: patches/y-prosemirror.patch
@@ -34,13 +31,20 @@ strictDepBuilds: true
 
 strictPeerDependencies: true
 
+peerDependencyRules:
+  allowedVersions:
+    "vitest-browser-solid>vitest": "5"
+
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 7 days
 
-# TODO: remove this after the following issues are resolved:
-# https://github.com/sveltejs/language-tools/pull/2985
-# https://github.com/withastro/astro/pull/16433
-peerDependencyRules:
-  allowedVersions:
-    typescript: "6"
+trustLockfile: true
+
+minimumReleaseAgeExclude:
+  - "starlight-theme-nova"
+  - "@aria-ui/*"
+  - "@ocavue/*"
+  - "@prosemirror-adapter/*"
+  - "prosemirror-view"
+  - "prosemirror-highlight"

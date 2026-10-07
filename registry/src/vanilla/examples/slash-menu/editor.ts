@@ -3,9 +3,9 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 
-import { renderSlashMenu } from '../../ui/slash-menu'
+import { renderSlashMenu } from '../../ui/slash-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export function setupVanillaEditor() {
   const extension = defineExtension()

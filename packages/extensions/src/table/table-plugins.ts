@@ -1,6 +1,19 @@
-import { definePlugin, type PlainExtension } from '@prosekit/core'
-import { columnResizing, tableEditing } from 'prosemirror-tables'
+import { definePlugin, union, type PlainExtension } from '@prosekit/core'
+import { columnResizing, tableEditing, TableView, type ColumnResizingOptions, type TableEditingOptions } from 'prosemirror-tables'
+
+export { TableView, type ColumnResizingOptions, type TableEditingOptions }
+
+export function defineTableEditingPlugin(options?: TableEditingOptions): PlainExtension {
+  return definePlugin(tableEditing(options))
+}
+
+export function defineColumnResizingPlugin(options?: ColumnResizingOptions): PlainExtension {
+  return definePlugin(columnResizing(options))
+}
 
 export function defineTablePlugins(): PlainExtension {
-  return definePlugin([tableEditing(), columnResizing()])
+  return union(
+    defineTableEditingPlugin(),
+    defineColumnResizingPlugin(),
+  )
 }

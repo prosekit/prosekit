@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.0.9",
+  "packageManager": "pnpm@11.28.2",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -20,12 +20,12 @@
     "fix": "pnpm run gen && pnpm run fix:tsconfig && pnpm run fix:oxfmt && pnpm run fix:dprint && pnpm run fix:eslint",
     "fix:oxfmt": "oxfmt --write ./registry/src/lit/",
     "fix:dprint": "dprint fmt",
-    "fix:eslint": "eslint . --fix --cache",
+    "fix:eslint": "eslint --cache --fix",
     "fix:tsconfig": "monorepo-typescript-references fix",
     "dev": "pnpm --filter='./website' run dev",
     "gen": "pnpm -r --sequential run gen",
     "lint": "pnpm run lint:eslint && pnpm run lint:packages && pnpm run lint:knip",
-    "lint:eslint": "eslint . --cache",
+    "lint:eslint": "eslint --max-warnings 0 --cache",
     "lint:packages": "pnpm -r --sequential run lint",
     "lint:knip": "knip",
     "preview": "pnpm --filter='./website' run preview",
@@ -34,27 +34,33 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage.enabled",
     "test:install": "playwright install chromium",
-    "typecheck": "tsc --build tsconfig.json"
+    "typecheck": "tsc --build tsconfig.json",
+    "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.0",
-    "@changesets/types": "^6.1.0",
-    "@ocavue/eslint-config": "^4.5.6",
+    "@changesets/cli": "^3.0.0",
+    "@changesets/types": "^7.0.0",
+    "@ocavue/eslint-config": "^4.18.0",
     "@ocavue/tsconfig": "^0.7.1",
-    "@size-limit/esbuild-why": "^12.1.0",
-    "@size-limit/preset-small-lib": "^12.1.0",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.54.0",
-    "eslint": "^10.3.0",
-    "knip": "^6.12.2",
-    "monorepo-typescript-references": "^1.1.1",
-    "oxfmt": "^0.48.0",
-    "playwright": "^1.59.1",
-    "size-limit": "^12.1.0",
-    "turbo": "^2.9.12",
+    "dprint": "^0.57.4",
+    "eslint": "^10.11.0",
+    "knip": "^6.38.0",
+    "monorepo-typescript-references": "^1.1.2",
+    "nano-staged": "^1.0.2",
+    "oxfmt": "^0.66.0",
+    "playwright": "^1.63.0",
+    "simple-git-hooks": "^2.14.0",
+    "turbo": "^2.11.3",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.90.0"
+    "wrangler": "^4.144.0"
+  },
+  "nano-staged": {
+    "*": "dprint fmt --allow-no-files"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged --allow-empty || true"
   }
 }

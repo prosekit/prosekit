@@ -9,10 +9,10 @@ import { clsx, createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo, useState } from 'react'
 
-import { sampleContent } from '../../sample/sample-doc-page'
+import { sampleContent } from '../../sample/sample-doc-page.ts'
 
-import { defineExtension } from './extension'
-import PaperController from './paper-controller'
+import { defineExtension } from './extension.ts'
+import PaperController from './paper-controller.tsx'
 
 interface EditorProps {
   initialContent?: NodeJSON

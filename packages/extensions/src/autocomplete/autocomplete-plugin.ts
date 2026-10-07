@@ -1,4 +1,4 @@
-import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
+import { isTextSelection, OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
 import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 import { Plugin, type EditorState, type Transaction } from '@prosekit/pm/state'
 import type { Mapping } from '@prosekit/pm/transform'
@@ -140,6 +140,15 @@ function handleTransaction(
       return { matching: null, ignores }
     }
 
+    if (
+      prevMatching.rule.followCursor
+      && !tr.docChanged
+      && isTextSelection(newState.selection)
+      && newState.selection.empty
+    ) {
+      return handleCursorMove(prevMatching, newState, getRules, ignores)
+    }
+
     const { selection } = newState
     // If the text selection is before the matching or after the matching,
     // we leave the matching
@@ -181,7 +190,49 @@ function handleTransaction(
     return { matching: null, ignores }
   }
 
+  // If a scan is requested, look for a new matching at the cursor.
+  if (meta.type === 'scan') {
+    const $head = newState.selection.$head
+    const textBackward = getTextBackward($head)
+    const textTo = $head.pos
+    const textFrom = textTo - textBackward.length
+    const currMatching = matchRule(
+      newState,
+      getRules(),
+      textBackward,
+      textFrom,
+      textTo,
+      ignores,
+    )
+    if (currMatching && prevMatching && prevMatching.from !== currMatching.from) {
+      ignores.push(prevMatching.from)
+    }
+    return { matching: currMatching ?? null, ignores }
+  }
+
   throw new Error(`Invalid transaction meta: ${meta satisfies never}`)
+}
+
+// A rule with `followCursor` re-anchors the match end at the moved text
+// cursor, so the query grows and shrinks with cursor movement. A failed
+// re-match closes the matching without ignoring it, so typing can reopen it.
+function handleCursorMove(
+  prevMatching: PredictionPluginMatching,
+  newState: EditorState,
+  getRules: () => AutocompleteRule[],
+  ignores: Array<number>,
+): PredictionPluginState {
+  const head = newState.selection.head
+  if (
+    head > prevMatching.from
+    && head - prevMatching.from <= MAX_MATCH
+    && newState.selection.$head.sameParent(newState.doc.resolve(prevMatching.from))
+  ) {
+    const text = getTextBetween(newState.doc, prevMatching.from, head)
+    const matching = matchRule(newState, getRules(), text, prevMatching.from, head, ignores)
+    return { matching: matching ?? null, ignores }
+  }
+  return { matching: null, ignores }
 }
 
 function handleUpdate(view: EditorView, prevState: EditorState): void {
@@ -245,7 +296,9 @@ function getDecorations(state: EditorState): DecorationSet | null {
 
 const MAX_MATCH = 200
 
-/** Get the text before the given position at the current block. */
+/**
+ * Get the text before the given position at the current block.
+ */
 function getTextBackward($pos: ResolvedPos): string {
   const parentOffset: number = $pos.parentOffset
   return getTextBetween(

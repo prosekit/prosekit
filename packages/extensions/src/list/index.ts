@@ -6,7 +6,20 @@ export type {
   UnwrapListOptions,
   WrapInListGetAttrs,
 } from 'prosemirror-flat-list'
-export { defineListCommands, type ListCommandsExtension } from './list-commands.ts'
+export {
+  dedentList,
+  defineListCommands,
+  indentList,
+  insertList,
+  moveList,
+  splitList,
+  toggleCollapsed,
+  toggleList,
+  unwrapList,
+  wrapInList,
+  type ListCommandsExtension,
+} from './list-commands.ts'
+export { defineListDropIndicator } from './list-drop-indicator.ts'
 export { defineListInputRules } from './list-input-rules.ts'
 export { defineListKeymap } from './list-keymap.ts'
 export { defineListPlugins } from './list-plugins.ts'

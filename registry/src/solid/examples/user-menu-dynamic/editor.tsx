@@ -5,8 +5,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { defineExtension } from './extension'
-import UserMenuDynamic from './user-menu-dynamic'
+import { defineExtension } from './extension.ts'
+import UserMenuDynamic from './user-menu-dynamic.tsx'
 
 export default function Editor(): JSX.Element {
   const extension = defineExtension()

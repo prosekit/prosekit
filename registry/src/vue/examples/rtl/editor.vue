@@ -6,14 +6,14 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleContent } from '../../sample/sample-doc-rtl'
-import { sampleUploader } from '../../sample/sample-uploader'
-import { BlockHandle } from '../../ui/block-handle'
-import { DropIndicator } from '../../ui/drop-indicator'
-import { InlineMenu } from '../../ui/inline-menu'
-import { SlashMenu } from '../../ui/slash-menu'
-import { TableHandle } from '../../ui/table-handle'
-import { Toolbar } from '../../ui/toolbar'
+import { sampleContent } from '../../sample/sample-doc-rtl.ts'
+import { sampleUploader } from '../../sample/sample-uploader.ts'
+import { BlockHandle } from '../../ui/block-handle/index.ts'
+import { DropIndicator } from '../../ui/drop-indicator/index.ts'
+import { InlineMenu } from '../../ui/inline-menu/index.ts'
+import { SlashMenu } from '../../ui/slash-menu/index.ts'
+import { TableHandle } from '../../ui/table-handle/index.ts'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
 const props = defineProps<{
   initialContent?: NodeJSON

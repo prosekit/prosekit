@@ -6,9 +6,9 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { defineVueNodeView, ProseKit, useExtension, type VueNodeViewComponent } from 'prosekit/vue'
 import { computed, ref } from 'vue'
 
-import { sampleContent } from '../../sample/sample-doc-tweet'
+import { sampleContent } from '../../sample/sample-doc-tweet.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 import MethodSelect from './method-select.vue'
 import TweetView from './tweet-view.vue'
 

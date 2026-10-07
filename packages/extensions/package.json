@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.16.0",
+  "version": "0.18.3",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {
@@ -40,10 +40,12 @@
     "./drop-indicator": "./src/drop-indicator/index.ts",
     "./enter-rule": "./src/enter-rule/index.ts",
     "./file": "./src/file/index.ts",
+    "./font-family": "./src/font-family/index.ts",
     "./gap-cursor": "./src/gap-cursor/index.ts",
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
     "./hard-break": "./src/hard-break/index.ts",
     "./heading": "./src/heading/index.ts",
+    "./highlight": "./src/highlight/index.ts",
     "./horizontal-rule": "./src/horizontal-rule/index.ts",
     "./image": "./src/image/index.ts",
     "./input-rule": "./src/input-rule/index.ts",
@@ -67,6 +69,8 @@
     "./search": "./src/search/index.ts",
     "./search/style.css": "./src/search/style.css",
     "./strike": "./src/strike/index.ts",
+    "./subscript": "./src/subscript/index.ts",
+    "./superscript": "./src/superscript/index.ts",
     "./table": "./src/table/index.ts",
     "./table/style.css": "./src/table/style.css",
     "./text": "./src/text/index.ts",
@@ -87,21 +91,21 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.6.0",
+    "@ocavue/utils": "^1.8.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "prosemirror-changeset": "^2.4.1",
-    "prosemirror-drop-indicator": "^0.1.3",
-    "prosemirror-dropcursor": "^1.8.2",
-    "prosemirror-enter-rules": "^0.1.5",
-    "prosemirror-flat-list": "^0.5.8",
+    "prosemirror-changeset": "^2.4.4",
+    "prosemirror-drop-indicator": "^0.1.4",
+    "prosemirror-dropcursor": "^1.8.4",
+    "prosemirror-enter-rules": "^0.1.6",
+    "prosemirror-flat-list": "^0.7.1",
     "prosemirror-gapcursor": "^1.4.1",
-    "prosemirror-highlight": "^0.15.1",
+    "prosemirror-highlight": "^0.16.0",
     "prosemirror-math": "^0.2.2",
-    "prosemirror-search": "^1.1.0",
+    "prosemirror-search": "^1.1.1",
     "prosemirror-tables": "^1.8.5",
     "server-dom-shim": "^1.1.0",
-    "shiki": "^4.0.0"
+    "shiki": "^4.4.3"
   },
   "peerDependencies": {
     "loro-crdt": ">= 1.10.0",
@@ -127,11 +131,10 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "diffable-html-snapshot": "^0.2.0",
-    "just-pick": "^4.2.0",
-    "katex": "^0.16.45",
-    "loro-crdt": "^1.12.1",
-    "loro-prosemirror": "^0.4.3",
+    "diffable-html-snapshot": "^0.3.0",
+    "katex": "^0.18.9",
+    "loro-crdt": "^1.16.3",
+    "loro-prosemirror": "^0.4.4",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-gfm": "^4.0.1",
@@ -139,13 +142,13 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "tsdown": "catalog:",
-    "type-fest": "^5.0.0",
+    "type-fest": "^5.10.0",
     "typescript": "catalog:",
     "unified": "^11.0.5",
     "vitest": "catalog:",
-    "vitest-browser-commands": "^0.2.0",
+    "vitest-browser-commands": "^0.5.0",
     "y-prosemirror": "^1.3.7",
-    "yjs": "^13.6.30"
+    "yjs": "^13.6.33"
   },
   "publishConfig": {
     "exports": {
@@ -204,6 +207,10 @@
         "types": "./dist/file.d.ts",
         "default": "./dist/file.js"
       },
+      "./font-family": {
+        "types": "./dist/font-family.d.ts",
+        "default": "./dist/font-family.js"
+      },
       "./gap-cursor": {
         "types": "./dist/gap-cursor.d.ts",
         "default": "./dist/gap-cursor.js"
@@ -218,6 +225,10 @@
       "./heading": {
         "types": "./dist/heading.d.ts",
         "default": "./dist/heading.js"
+      },
+      "./highlight": {
+        "types": "./dist/highlight.d.ts",
+        "default": "./dist/highlight.js"
       },
       "./horizontal-rule": {
         "types": "./dist/horizontal-rule.d.ts",
@@ -306,6 +317,14 @@
         "types": "./dist/strike.d.ts",
         "default": "./dist/strike.js"
       },
+      "./subscript": {
+        "types": "./dist/subscript.d.ts",
+        "default": "./dist/subscript.js"
+      },
+      "./superscript": {
+        "types": "./dist/superscript.d.ts",
+        "default": "./dist/superscript.js"
+      },
       "./table": {
         "types": "./dist/table.d.ts",
         "default": "./dist/table.js"
@@ -346,133 +365,6 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/index.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/autocomplete.d.ts"
-        ],
-        "background-color": [
-          "./dist/background-color.d.ts"
-        ],
-        "blockquote": [
-          "./dist/blockquote.d.ts"
-        ],
-        "bold": [
-          "./dist/bold.d.ts"
-        ],
-        "code": [
-          "./dist/code.d.ts"
-        ],
-        "code-block": [
-          "./dist/code-block.d.ts"
-        ],
-        "commit": [
-          "./dist/commit.d.ts"
-        ],
-        "doc": [
-          "./dist/doc.d.ts"
-        ],
-        "drop-cursor": [
-          "./dist/drop-cursor.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/drop-indicator.d.ts"
-        ],
-        "enter-rule": [
-          "./dist/enter-rule.d.ts"
-        ],
-        "file": [
-          "./dist/file.d.ts"
-        ],
-        "gap-cursor": [
-          "./dist/gap-cursor.d.ts"
-        ],
-        "hard-break": [
-          "./dist/hard-break.d.ts"
-        ],
-        "heading": [
-          "./dist/heading.d.ts"
-        ],
-        "horizontal-rule": [
-          "./dist/horizontal-rule.d.ts"
-        ],
-        "image": [
-          "./dist/image.d.ts"
-        ],
-        "input-rule": [
-          "./dist/input-rule.d.ts"
-        ],
-        "italic": [
-          "./dist/italic.d.ts"
-        ],
-        "link": [
-          "./dist/link.d.ts"
-        ],
-        "list": [
-          "./dist/list.d.ts"
-        ],
-        "loro": [
-          "./dist/loro.d.ts"
-        ],
-        "mark-rule": [
-          "./dist/mark-rule.d.ts"
-        ],
-        "math": [
-          "./dist/math.d.ts"
-        ],
-        "mention": [
-          "./dist/mention.d.ts"
-        ],
-        "mod-click-prevention": [
-          "./dist/mod-click-prevention.d.ts"
-        ],
-        "page": [
-          "./dist/page.d.ts"
-        ],
-        "paragraph": [
-          "./dist/paragraph.d.ts"
-        ],
-        "paste-rule": [
-          "./dist/paste-rule.d.ts"
-        ],
-        "placeholder": [
-          "./dist/placeholder.d.ts"
-        ],
-        "readonly": [
-          "./dist/readonly.d.ts"
-        ],
-        "search": [
-          "./dist/search.d.ts"
-        ],
-        "strike": [
-          "./dist/strike.d.ts"
-        ],
-        "table": [
-          "./dist/table.d.ts"
-        ],
-        "text": [
-          "./dist/text.d.ts"
-        ],
-        "text-align": [
-          "./dist/text-align.d.ts"
-        ],
-        "text-color": [
-          "./dist/text-color.d.ts"
-        ],
-        "underline": [
-          "./dist/underline.d.ts"
-        ],
-        "virtual-selection": [
-          "./dist/virtual-selection.d.ts"
-        ],
-        "yjs": [
-          "./dist/yjs.d.ts"
-        ]
-      }
-    }
+    "types": "./dist/index.d.ts"
   }
 }

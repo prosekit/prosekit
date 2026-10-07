@@ -129,7 +129,7 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
 
     const groupedAttrs = mapGroupBy(attrPayloads, (payload) => payload.type)
 
-    for (const [type, attrs] of groupedAttrs.entries()) {
+    for (const [type, attrs] of groupedAttrs) {
       if (!attrs) continue
 
       const oldSpec = specs.get(type)

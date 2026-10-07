@@ -2,7 +2,7 @@ import { ContextConsumer } from '@lit/context'
 import { html, LitElement } from 'lit'
 import { registerDropIndicatorElement } from 'prosekit/lit/drop-indicator'
 
-import { editorContext } from '../editor-context'
+import { editorContext } from '../editor-context.ts'
 
 class LitDropIndicator extends LitElement {
   private _editorConsumer = new ContextConsumer(this, {

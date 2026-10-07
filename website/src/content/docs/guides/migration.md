@@ -92,12 +92,12 @@ import 'remirror/styles/all.css'
 import { Remirror, useRemirror } from '@remirror/react'
 import { BoldExtension, ItalicExtension, UnderlineExtension } from 'remirror/extensions'
 
-function extensions () {
+function extensions() {
   return [
-  new BoldExtension(),
-  new ItalicExtension(),
-  new UnderlineExtension(),
-]
+    new BoldExtension(),
+    new ItalicExtension(),
+    new UnderlineExtension(),
+  ]
 }
 
 export function Editor() {

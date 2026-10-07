@@ -13,16 +13,17 @@ import {
 import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@aria-ui/elements/listbox'
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
-import type { ReferenceElement, VirtualElement } from '@floating-ui/dom'
-import { defineDOMEventHandler, defineKeymap, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
+import type { ReferenceElement } from '@floating-ui/dom'
+import { defineDOMEventHandler, defineKeymap, union, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../hooks/use-editor-extension.ts'
 import { KeyboardEventTarget } from '../../utils/event.ts'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view.ts'
+import { resolveAnchor, type AnchorReference } from '../../utils/resolve-anchor.ts'
 
 import { autocompleteStoreContext, type AutocompleteStore } from './context.ts'
-import { defaultQueryBuilder } from './helpers.ts'
+import { defaultQueryBuilder, type QueryBuilder } from './helpers.ts'
 
 export { OpenChangeEvent }
 
@@ -51,6 +52,17 @@ export interface AutocompleteRootProps {
   filter: ItemFilter | null
 
   /**
+   * Builds the query string from the regex match found before the cursor. The
+   * query is exposed via the `queryChange` event and used by the built-in item
+   * filter. The default builder lowercases the match and strips punctuation.
+   * Provide a custom builder to control the query, for example to preserve the
+   * casing and punctuation the user typed.
+   *
+   * @default defaultQueryBuilder
+   */
+  queryBuilder: QueryBuilder
+
+  /**
    * The reference to position the popup against. This can be a DOM element, a
    * Floating UI virtual element, or a function that returns either of them.
    * By default, the popup will be positioned against the text content that
@@ -58,7 +70,16 @@ export interface AutocompleteRootProps {
    *
    * @default null
    */
-  anchor: Element | VirtualElement | (() => Element | VirtualElement | null) | null
+  anchor: AnchorReference
+
+  /**
+   * Whether the autocomplete match should follow the text cursor when it
+   * moves without editing, growing and shrinking the query as the cursor
+   * moves over existing text (for example with arrow keys).
+   *
+   * @default false
+   */
+  followCursor: boolean
 }
 
 /** @internal */
@@ -68,7 +89,9 @@ export const AutocompleteRootPropsDeclaration: PropsDeclaration<AutocompleteRoot
   editor: { default: null, attribute: false },
   regex: { default: null, attribute: false },
   filter: { default: defaultItemFilter, attribute: false },
+  queryBuilder: { default: defaultQueryBuilder, attribute: false },
   anchor: { default: null, attribute: false },
+  followCursor: { default: false, attribute: 'follow-cursor', type: 'boolean' },
 })
 
 export class QueryChangeEvent extends Event {
@@ -98,13 +121,6 @@ export interface AutocompleteRootEvents extends ListboxRootEvents {
 interface RuleHandlers {
   submit?: VoidFunction
   dismiss?: VoidFunction
-}
-
-interface AutocompleteRuleDeps {
-  reference: Signal<ReferenceElement | undefined>
-  handlers: RuleHandlers
-  setQuery: (next: string) => void
-  requestOpenChange: (open: boolean) => void
 }
 
 /**
@@ -166,24 +182,26 @@ export function setupAutocompleteRoot(
   }
 
   const getAnchor = (): ReferenceElement | null => {
-    const customAnchor = props.anchor.get()
+    const customAnchor = resolveAnchor(props.anchor.get())
     if (customAnchor) {
-      if (typeof customAnchor === 'function') {
-        return customAnchor() || null
-      } else {
-        return customAnchor
-      }
+      return customAnchor
     }
     const view = getSafeEditorView(getEditor())
     return view?.dom.querySelector('.prosekit-autocomplete-match') || null
   }
 
-  useAutocompleteExtension(host, getEditor, props.regex.get, getAnchor, {
+  useAutocompleteExtension(
+    host,
+    getEditor,
+    props.regex.get,
+    getAnchor,
     reference,
     handlers,
     setQuery,
-    requestOpenChange: (open) => overlayStore.requestOpenChange(open),
-  })
+    props.queryBuilder.get,
+    props.followCursor.get,
+    (open) => overlayStore.requestOpenChange(open),
+  )
 }
 
 const EVENT_KEYS = [
@@ -202,18 +220,30 @@ function useKeyboardBridge(
   getOpen: () => boolean,
   target: EventTarget,
 ): void {
-  const extension: Extension = defineDOMEventHandler('keydown', (view, event): boolean => {
+  let compostionEndedAt = 0
+  const compositionEnd: Extension = defineDOMEventHandler('compositionend', (view, event): boolean => {
+    compostionEndedAt = event.timeStamp
+    return false
+  })
+  const keyDown: Extension = defineDOMEventHandler('keydown', (view, event): boolean => {
     if (
       view.composing
       || event.defaultPrevented
       || !getOpen()
       || !EVENT_KEYS.includes(event.key as (typeof EVENT_KEYS)[number])
+      // Workaround for WebKit firing compositionend before the keydown that commits an
+      // IME composition, which makes that keydown report `isComposing` as false.
+      // https://bugs.webkit.org/show_bug.cgi?id=165004
+      // https://bugs.webkit.org/show_bug.cgi?id=311717
+      || (compostionEndedAt && (event.timeStamp - compostionEndedAt < 50))
     ) {
       return false
     }
     target.dispatchEvent(event)
     return event.defaultPrevented
   })
+
+  const extension: Extension = union(keyDown, compositionEnd)
   useEditorExtension(host, getEditor, withPriority(extension, 4 satisfies typeof Priority.highest))
 }
 
@@ -222,37 +252,54 @@ function useAutocompleteExtension(
   getEditor: () => Editor | null,
   getRegex: () => RegExp | null,
   getAnchor: () => ReferenceElement | null,
-  deps: AutocompleteRuleDeps,
+  reference: Signal<ReferenceElement | undefined>,
+  handlers: RuleHandlers,
+  setQuery: (next: string) => void,
+  getQueryBuilder: () => QueryBuilder,
+  getFollowCursor: () => boolean,
+  requestOpenChange: (open: boolean) => void,
 ) {
   useEffect(host, () => {
     const editor = getEditor()
     const regex = getRegex()
+    const followCursor = getFollowCursor()
 
     if (!editor || !regex) {
       return
     }
 
-    const rule = createAutocompleteRule(editor, regex, getAnchor, deps)
+    const rule = createAutocompleteRule(
+      regex,
+      getAnchor,
+      reference,
+      handlers,
+      setQuery,
+      getQueryBuilder,
+      followCursor,
+      requestOpenChange,
+    )
     const extension = defineAutocomplete(rule)
     return editor.use(extension)
   })
 }
 
 function createAutocompleteRule(
-  editor: Editor,
   regex: RegExp,
   getAnchor: () => ReferenceElement | null,
-  deps: AutocompleteRuleDeps,
+  reference: Signal<ReferenceElement | undefined>,
+  handlers: RuleHandlers,
+  setQuery: (next: string) => void,
+  getQueryBuilder: () => QueryBuilder,
+  followCursor: boolean,
+  requestOpenChange: (open: boolean) => void,
 ) {
-  const { reference, handlers, setQuery, requestOpenChange } = deps
-
   const handleEnter: MatchHandler = (options) => {
     const anchor = getAnchor()
     reference.set(anchor || undefined)
 
     handlers.submit = options.deleteMatch
     handlers.dismiss = options.ignoreMatch
-    setQuery(defaultQueryBuilder(options.match))
+    setQuery(getQueryBuilder()(options.match))
     requestOpenChange(true)
   }
 
@@ -268,6 +315,7 @@ function createAutocompleteRule(
     regex,
     onEnter: handleEnter,
     onLeave: handleLeave,
+    followCursor,
   })
 }
 

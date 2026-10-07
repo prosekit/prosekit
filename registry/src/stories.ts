@@ -22,7 +22,7 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
   },
   {
     name: 'code-block',
-    description: 'Example for code block node with syntax highlighting.',
+    description: 'Code block with syntax highlighting and a Mermaid diagram preview.',
   },
   {
     name: 'code',
@@ -35,6 +35,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
   {
     name: 'emoji-rules',
     description: 'Auto-convert text shortcuts to emojis using input rules.',
+  },
+  {
+    name: 'font-family',
+    description: 'Change the font family of text.',
   },
   {
     name: 'full',
@@ -51,6 +55,10 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
   {
     name: 'heading',
     description: 'Example for heading node with multiple levels.',
+  },
+  {
+    name: 'highlight',
+    description: 'Example for highlighting text (like a highlighter pen).',
   },
   {
     name: 'horizontal-rule',
@@ -150,12 +158,12 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
     description: 'Example for strikethrough mark.',
   },
   {
-    name: 'table',
-    description: 'Table node with row and column operations.',
+    name: 'sub-sup',
+    description: 'Example for subscript and superscript marks.',
   },
   {
-    name: 'temml',
-    description: 'Math equation rendering using the Temml library.',
+    name: 'table',
+    description: 'Table node with row and column operations.',
   },
   {
     name: 'text-align',
@@ -196,6 +204,11 @@ const stories: ReadonlyArray<{ name: string; description: string; hidden?: boole
   {
     name: 'view-adapter',
     description: 'Custom node and mark views using view adapters.',
+    hidden: true,
+  },
+  {
+    name: 'virtual-selection-repro',
+    description: 'Reproduces pointer refocus in an editable nested node view.',
     hidden: true,
   },
   {

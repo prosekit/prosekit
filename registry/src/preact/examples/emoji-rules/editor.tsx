@@ -5,7 +5,7 @@ import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor() {
   const editor = useMemo(() => {

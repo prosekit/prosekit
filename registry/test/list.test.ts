@@ -7,10 +7,10 @@ async function setup() {
   const editor = await waitForEditor()
   return {
     editor,
-    bulletBtn: page.getByRole('button', { name: 'Bullet' }),
-    orderedBtn: page.getByRole('button', { name: 'Ordered' }),
-    taskBtn: page.getByRole('button', { name: 'Task' }),
-    toggleBtn: page.getByRole('button', { name: 'Toggle' }),
+    bulletBtn: page.getByRole('button', { name: 'Bullet List' }),
+    orderedBtn: page.getByRole('button', { name: 'Ordered List' }),
+    taskBtn: page.getByRole('button', { name: 'Task List' }),
+    toggleBtn: page.getByRole('button', { name: 'Toggle List' }),
     bulletList: editor.locate('.prosemirror-flat-list[data-list-kind="bullet"]'),
     orderedList: editor.locate('.prosemirror-flat-list[data-list-kind="ordered"]'),
     taskList: editor.locate('.prosemirror-flat-list[data-list-kind="task"]'),

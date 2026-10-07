@@ -6,7 +6,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { InlineMenu } from '../../ui/inline-menu'
+import { InlineMenu } from '../../ui/inline-menu/index.ts'
 
 import ExtensionComponent from './extension-component.vue'
 

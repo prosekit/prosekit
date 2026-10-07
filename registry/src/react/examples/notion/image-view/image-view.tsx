@@ -3,8 +3,8 @@
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { ReactNodeViewProps } from 'prosekit/react'
 
-import ImageViewContent from './image-view-content'
-import ImageViewPlaceholder from './image-view-placeholder'
+import ImageViewContent from './image-view-content.tsx'
+import ImageViewPlaceholder from './image-view-placeholder.tsx'
 
 export default function ImageView(props: ReactNodeViewProps) {
   const attrs = props.node.attrs as ImageAttrs

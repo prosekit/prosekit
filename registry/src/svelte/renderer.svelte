@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from 'svelte'
 
-import { loaders } from './loaders.gen'
+import { loaders } from './loaders.gen.ts'
 
 const props: {
   story: string

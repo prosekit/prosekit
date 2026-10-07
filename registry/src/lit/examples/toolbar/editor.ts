@@ -7,11 +7,11 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import type { Editor } from 'prosekit/core'
 import { createEditor } from 'prosekit/core'
 
-import { sampleUploader } from '../../sample/sample-uploader'
-import { editorContext } from '../../ui/editor-context'
-import { registerLitEditorToolbar } from '../../ui/toolbar'
+import { sampleUploader } from '../../sample/sample-uploader.ts'
+import { editorContext } from '../../ui/editor-context.ts'
+import { registerLitEditorToolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export class LitEditor extends LitElement {
   static override properties = {

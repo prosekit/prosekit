@@ -1,0 +1,49 @@
+import type { Slice } from '@prosekit/pm/model'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
+import type { EditorView } from '@prosekit/pm/view'
+
+import { defineFacetPayload } from '../facets/facet-extension.ts'
+import { defineFacet } from '../facets/facet.ts'
+import type { PlainExtension } from '../types/extension.ts'
+
+import { pluginFacet, type PluginPayload } from './plugin.ts'
+
+type PasteRulePayload = (options: { slice: Slice; view: EditorView; plain: boolean }) => Slice
+
+/**
+ * @internal
+ */
+const pasteRuleFacet = defineFacet<PasteRulePayload, PluginPayload>({
+  reduce: () => {
+    let handlers: PasteRulePayload[] = []
+
+    const transformPasted = (slice: Slice, view: EditorView, plain: boolean): Slice => {
+      for (const handler of handlers) {
+        slice = handler({ slice, view, plain })
+      }
+      return slice
+    }
+
+    const plugin = new ProseMirrorPlugin({
+      key: new PluginKey('prosekit-paste-rule'),
+      props: {
+        transformPasted,
+      },
+    })
+
+    return (inputs: PasteRulePayload[]) => {
+      // Last added rule (highest priority) is applied first
+      handlers = [...inputs].reverse()
+      return plugin
+    }
+  },
+  singleton: true,
+  parent: pluginFacet,
+})
+
+/**
+ * @internal
+ */
+export function definePasteRulePlugin(payload: PasteRulePayload): PlainExtension {
+  return defineFacetPayload(pasteRuleFacet, [payload]) as PlainExtension
+}

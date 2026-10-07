@@ -7,9 +7,9 @@ import type { CursorAwareness, LoroDocType } from 'loro-prosemirror'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { Toolbar } from '../../ui/toolbar'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props = defineProps<{
   loro: LoroDocType

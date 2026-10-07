@@ -50,15 +50,11 @@ class CustomDOMSerializer extends DOMSerializer {
   }
 
   override serializeFragment(...args: Parameters<SerializeFragmentFunction>): ReturnType<SerializeFragmentFunction> {
-    // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
-    const fn: SerializeFragmentFunction = (...args) => super.serializeFragment(...args)
-    return wrapFunction(fn, this.serializeFragmentWrapper)(...args)
+    return wrapFunction((...args) => super.serializeFragment(...args), this.serializeFragmentWrapper)(...args)
   }
 
   override serializeNode(...args: Parameters<SerializeNodeFunction>): ReturnType<SerializeNodeFunction> {
-    // eslint-disable-next-line unicorn/consistent-function-scoping -- See https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2088
-    const fn: SerializeNodeFunction = (...args) => super.serializeNode(...args)
-    return wrapFunction(fn, this.serializeNodeWrapper)(...args)
+    return wrapFunction((...args) => super.serializeNode(...args), this.serializeNodeWrapper)(...args)
   }
 }
 

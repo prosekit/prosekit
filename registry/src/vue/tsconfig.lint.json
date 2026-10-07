@@ -2,6 +2,8 @@
   "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "outDir": "${configDir}/node_modules/.cache/tsconfig_lint/out"
   },
   "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"],

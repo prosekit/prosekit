@@ -1,6 +1,6 @@
+import { pasteHTML, pasteText } from '@prosekit/core/test'
 import { describe, expect, it } from 'vitest'
 
-import { pasteHTML, pasteText } from '../testing/clipboard.ts'
 import { setupTest } from '../testing/index.ts'
 
 describe('defineLinkPasteRule', () => {

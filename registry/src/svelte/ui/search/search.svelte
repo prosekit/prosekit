@@ -1,9 +1,9 @@
 <script lang="ts">
-import { defineSearchQuery, type SearchCommandsExtension } from 'prosekit/extensions/search'
+import { defineSearchStatusHandler, type SearchCommandsExtension, type SearchStatus } from 'prosekit/extensions/search'
 import { useEditor, useExtension } from 'prosekit/svelte'
 import { toStore } from 'svelte/store'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 interface Props {
   onClose?: () => void
@@ -14,16 +14,29 @@ const props: Props = $props()
 let showReplace = $state(false)
 let searchText = $state('')
 let replaceText = $state('')
+let caseSensitive = $state(false)
+let wholeWord = $state(false)
+let regexp = $state(false)
+let literal = $state(false)
+
+let searchStatus = $state<SearchStatus>({ total: 0, active: 0 })
+const statusHandler = defineSearchStatusHandler((status) => {
+  searchStatus = status
+})
+useExtension(toStore(() => statusHandler))
 
 const editor = useEditor<SearchCommandsExtension>()
 
-const extension = $derived(
-  searchText
-    ? defineSearchQuery({ search: searchText, replace: replaceText })
-    : null,
-)
-
-useExtension(toStore(() => extension))
+$effect(() => {
+  $editor.commands.setSearchQuery({
+    search: searchText,
+    replace: replaceText,
+    caseSensitive,
+    wholeWord,
+    regexp,
+    literal,
+  })
+})
 
 function toggleReplace() {
   showReplace = !showReplace
@@ -87,6 +100,11 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
     onkeydown={handleSearchKeyDown}
   />
   <div class="CSS_SEARCH_CONTROLLER">
+    {#if searchText}
+      <span class="CSS_SEARCH_COUNTER">
+        {searchStatus.active} / {searchStatus.total}
+      </span>
+    {/if}
     <Button
       tooltip="Previous (Shift Enter)"
       onClick={$editor.commands.findPrev}
@@ -101,6 +119,34 @@ function handleReplaceKeyDown(event: KeyboardEvent) {
     </Button>
     <Button tooltip="Close" onClick={props.onClose}>
       <span class="CSS_ICON_CLOSE"></span>
+    </Button>
+    <Button
+      pressed={caseSensitive}
+      tooltip="Case Sensitive"
+      onClick={() => (caseSensitive = !caseSensitive)}
+    >
+      <span class="CSS_CASE_SENSITIVE"></span>
+    </Button>
+    <Button
+      pressed={wholeWord}
+      tooltip="Whole Word"
+      onClick={() => (wholeWord = !wholeWord)}
+    >
+      <span class="CSS_ICON_WHOLE_WORD"></span>
+    </Button>
+    <Button
+      pressed={regexp}
+      tooltip="Regular Expression"
+      onClick={() => (regexp = !regexp)}
+    >
+      <span class="CSS_ICON_REGEXP"></span>
+    </Button>
+    <Button
+      pressed={literal}
+      tooltip="Literal Escape Sequences"
+      onClick={() => (literal = !literal)}
+    >
+      <span class="CSS_ICON_LITERAL"></span>
     </Button>
   </div>
   {#if showReplace}

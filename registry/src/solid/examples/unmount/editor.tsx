@@ -1,6 +1,6 @@
 import { createSignal, For, type JSX } from 'solid-js'
 
-import EditorComponent from './editor-component'
+import EditorComponent from './editor-component.tsx'
 
 export default function Editor(): JSX.Element {
   let nextKey = 1

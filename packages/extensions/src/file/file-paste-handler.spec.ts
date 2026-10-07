@@ -1,7 +1,7 @@
 import { Priority, union, withPriority } from '@prosekit/core'
+import { pasteFiles } from '@prosekit/core/test'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { pasteFiles } from '../testing/clipboard.ts'
 import { defineTestExtension, setupTestFromExtension } from '../testing/index.ts'
 
 import { defineFilePasteHandler } from './file-paste-handler.ts'

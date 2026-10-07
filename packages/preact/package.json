@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.7.1",
+  "version": "0.8.3",
   "private": false,
   "description": "Preact components and utilities for ProseKit",
   "author": {
@@ -49,8 +49,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.5.3",
-    "@prosemirror-adapter/preact": "^0.5.3"
+    "@prosemirror-adapter/core": "^0.5.5",
+    "@prosemirror-adapter/preact": "^0.5.6"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0"
@@ -65,11 +65,11 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "preact": "^10.29.1",
+    "preact": "^10.29.8",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-preact": "^1.0.0"
+    "vitest-browser-preact": "^1.1.0"
   },
   "publishConfig": {
     "exports": {
@@ -116,40 +116,6 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/index.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/autocomplete.d.ts"
-        ],
-        "block-handle": [
-          "./dist/block-handle.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/drop-indicator.d.ts"
-        ],
-        "inline-popover": [
-          "./dist/inline-popover.d.ts"
-        ],
-        "menu": [
-          "./dist/menu.d.ts"
-        ],
-        "popover": [
-          "./dist/popover.d.ts"
-        ],
-        "resizable": [
-          "./dist/resizable.d.ts"
-        ],
-        "table-handle": [
-          "./dist/table-handle.d.ts"
-        ],
-        "tooltip": [
-          "./dist/tooltip.d.ts"
-        ]
-      }
-    }
+    "types": "./dist/index.d.ts"
   }
 }

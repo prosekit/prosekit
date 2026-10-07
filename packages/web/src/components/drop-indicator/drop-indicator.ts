@@ -11,6 +11,7 @@ import {
   type State,
 } from '@aria-ui/core'
 import { usePresence } from '@aria-ui/utils'
+import { computePosition, offset, type VirtualElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 import { defineDropIndicator, type ShowHandlerOptions } from '@prosekit/extensions/drop-indicator'
 
@@ -66,47 +67,56 @@ export function setupDropIndicator(
 
   useEditorExtension(host, props.editor.get, extension)
 
-  const getLine = computed(() => context.get()?.line)
   const getScrolling = useScrolling(host)
   const getPresence = computed(() => !!context.get() && !getScrolling())
   usePresence(host, getPresence)
 
   useEffect(host, () => {
-    const lineValue = getLine()
+    const ctx = context.get()
+    if (!ctx) return
+
+    const { view, line } = ctx
     const lineWidth = props.width.get()
+    const { p1, p2 } = line
+    const horizontal = p1.y === p2.y
 
-    if (!lineValue) return
-
-    const { p1: { x: x1, y: y1 }, p2: { x: x2, y: y2 } } = lineValue
-    const horizontal = y1 === y2
-
-    let width: number
-    let height: number
-    let top: number = y1
-    let left: number = x1
-
-    if (horizontal) {
-      width = x2 - x1
-      height = lineWidth
-      top -= lineWidth / 2
-    } else {
-      width = lineWidth
-      height = y2 - y1
-      left -= lineWidth / 2
+    // Use a Floating UI virtual element for the line so it's positioned relative
+    // to the offset parent, not the (possibly transformed) viewport.
+    const reference: VirtualElement = {
+      getBoundingClientRect: () => ({
+        x: p1.x,
+        y: p1.y,
+        left: p1.x,
+        top: p1.y,
+        right: p2.x,
+        bottom: p2.y,
+        width: p2.x - p1.x,
+        height: p2.y - p1.y,
+      }),
+      contextElement: view.dom,
     }
 
-    top = Math.round(top)
-    left = Math.round(left)
-
-    assignStyles(host, {
-      position: 'fixed',
-      pointerEvents: 'none',
-      width: `${width}px`,
-      height: `${height}px`,
-      transform: `translate(${left}px, ${top}px)`,
-      left: '0px',
-      top: '0px',
+    let cancelled = false
+    void computePosition(reference, host, {
+      // Anchor the host's leading edge to the line, then pull it back by half
+      // the thickness so the line is centered on the drop point.
+      placement: horizontal ? 'bottom-start' : 'right-start',
+      middleware: [offset(-lineWidth / 2)],
+    }).then(({ x, y }) => {
+      if (cancelled) return
+      assignStyles(host, {
+        position: 'absolute',
+        pointerEvents: 'none',
+        width: `${horizontal ? p2.x - p1.x : lineWidth}px`,
+        height: `${horizontal ? lineWidth : p2.y - p1.y}px`,
+        left: `${Math.round(x)}px`,
+        top: `${Math.round(y)}px`,
+      })
     })
+
+    return () => {
+      cancelled = true
+    }
   })
 }
 

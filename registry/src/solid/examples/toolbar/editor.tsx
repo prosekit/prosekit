@@ -5,10 +5,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { sampleUploader } from '../../sample/sample-uploader'
-import { Toolbar } from '../../ui/toolbar'
+import { sampleUploader } from '../../sample/sample-uploader.ts'
+import { Toolbar } from '../../ui/toolbar/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor(): JSX.Element {
   const extension = defineExtension()

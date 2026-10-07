@@ -1,0 +1,25 @@
+import type { ReferenceElement, VirtualElement } from '@floating-ui/dom'
+
+/**
+ * A reference for an overlay to position against. This can be a DOM element, a
+ * Floating UI virtual element, or a function that returns either of them.
+ */
+export type AnchorReference =
+  | Element
+  | VirtualElement
+  | (() => Element | VirtualElement | null | undefined)
+  | null
+
+/**
+ * Resolves an {@link AnchorReference} to a Floating UI reference element, or
+ * `undefined` when no anchor is available.
+ */
+export function resolveAnchor(anchor: AnchorReference): ReferenceElement | undefined {
+  if (!anchor) {
+    return undefined
+  }
+  if (typeof anchor === 'function') {
+    return anchor() ?? undefined
+  }
+  return anchor
+}

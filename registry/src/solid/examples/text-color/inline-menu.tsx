@@ -3,9 +3,9 @@ import { useEditorDerivedValue, useKeymap } from 'prosekit/solid'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/solid/inline-popover'
 import { createSignal, For, type JSX } from 'solid-js'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import type { EditorExtension } from './extension'
+import type { EditorExtension } from './extension.ts'
 
 const textColors = [
   { label: 'Gray', value: '#9ca3af' },

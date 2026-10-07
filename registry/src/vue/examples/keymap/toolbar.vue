@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import { useSubmitKeymap } from './use-submit-keymap'
+import { useSubmitKeymap } from './use-submit-keymap.ts'
 
 const props = defineProps<{
   onSubmit: (hotkey: string) => void

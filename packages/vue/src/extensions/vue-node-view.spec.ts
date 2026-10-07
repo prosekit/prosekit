@@ -52,11 +52,12 @@ describe('VueNodeView', () => {
             clearInterval(id)
           })
         })
-        return () =>
-          h('div', {
+        return () => {
+          return h('div', {
             'data-testid': 'image-refresh-view',
             'data-url': url.value,
           })
+        }
       },
     },
   )
@@ -71,14 +72,16 @@ describe('VueNodeView', () => {
         defaultContent: props.initialContent,
       })
 
-      return () =>
-        h(ProseKit, { editor }, () =>
-          h('div', {
+      return () => {
+        return h(ProseKit, { editor }, () => {
+          return h('div', {
             'data-testid': 'editor',
             'ref': (el) => {
               editor.mount(el as HTMLElement | null)
             },
-          }))
+          })
+        })
+      }
     },
   })
 
@@ -104,12 +107,12 @@ describe('VueNodeView', () => {
 
     const urls = new Set<string>()
     const check = () => {
-      imageRefresh.elements().forEach((element) => {
+      for (const element of imageRefresh.elements()) {
         const url = element.getAttribute('data-url')
         if (url) {
           urls.add(url)
         }
-      })
+      }
       return urls.size >= 5
     }
 
@@ -136,12 +139,12 @@ describe('VueNodeView', () => {
 
     const urls = new Set<string>()
     const check = () => {
-      imageRefresh.elements().forEach((element) => {
+      for (const element of imageRefresh.elements()) {
         const url = element.getAttribute('data-url')
         if (url) {
           urls.add(url)
         }
-      })
+      }
       return urls.size >= 15
     }
 

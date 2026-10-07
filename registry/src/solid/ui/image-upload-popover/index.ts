@@ -1,1 +1,1 @@
-export { default as ImageUploadPopover } from './image-upload-popover'
+export { default as ImageUploadPopover } from './image-upload-popover.tsx'

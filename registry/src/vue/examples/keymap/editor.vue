@@ -6,7 +6,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref } from 'vue'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 import Toolbar from './toolbar.vue'
 
 const extension = defineExtension()

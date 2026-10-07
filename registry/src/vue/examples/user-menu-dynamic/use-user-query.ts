@@ -1,7 +1,7 @@
 import type { Ref } from 'vue'
 import { ref, watchEffect } from 'vue'
 
-import { queryUsers, type User } from '../../sample/sample-query-users'
+import { queryUsers, type User } from '../../sample/sample-query-users.ts'
 
 /**
  * Simulate a user searching with some delay.

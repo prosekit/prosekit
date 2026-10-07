@@ -1,4 +1,10 @@
 /* eslint-disable unicorn/prefer-string-raw -- Don't use String.raw here for better bundler minification */
+/* eslint-disable regexp/prefer-character-class */
+/* eslint-disable regexp/no-super-linear-backtracking */
+/* eslint-disable regexp/prefer-w */
+/* eslint-disable regexp/no-useless-escape */
+/* eslint-disable regexp/no-useless-non-capturing-group */
+/* eslint-disable regexp/strict */
 
 // All valid alpha TLDs.
 // Data source: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
@@ -10,12 +16,12 @@ const PUNCTUATION_CHAR_PATTERN = '\\.\\,\\;\\!\\?'
 
 const STOP_CHAR_PATTERN = '[' + PUNCTUATION_CHAR_PATTERN + ']'
 
-const END_CHAR_PATTERN = '[^' + '\\s' + PUNCTUATION_CHAR_PATTERN + ']'
+const END_CHAR_PATTERN = '[^\\s' + PUNCTUATION_CHAR_PATTERN + ']'
 
 // dprint-ignore
 const LINK_RE_BASE_PATTERN = (
     // start of the link group
-    '(' + 
+    '(' +
         '(?:' +
             // protocol identifier (optional)
             // short syntax // is allowed
@@ -41,23 +47,23 @@ const LINK_RE_BASE_PATTERN = (
 
         // sub path (optional)
         '(?:/' +
-            '(?:' + 
+            '(?:' +
                 '\\S*' +
                 END_CHAR_PATTERN +
             ')?' +
         ')?' +
 
         // query string (optional)
-        '(?:\\?' + 
-            '(?:' + 
+        '(?:\\?' +
+            '(?:' +
                 '\\S*' +
                 END_CHAR_PATTERN +
             ')' +
         ')?' +
 
         // fragment (optional)
-        '(?:\\#' + 
-            '(?:' + 
+        '(?:\\#' +
+            '(?:' +
                 '\\S*' +
                 END_CHAR_PATTERN +
             ')?' +
@@ -68,9 +74,9 @@ const LINK_RE_BASE_PATTERN = (
 )
 
 // dprint-ignore
-const LINK_ENTER_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '$'
+const LINK_ENTER_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?$'
 // dprint-ignore
-const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '\\s$'
+const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?\\s$'
 // dprint-ignore
 const LINK_MARK_PATTERN = LINK_RE_BASE_PATTERN + '(?=' + STOP_CHAR_PATTERN + '|\\s|$)'
 

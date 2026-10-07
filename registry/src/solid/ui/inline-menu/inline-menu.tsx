@@ -6,7 +6,7 @@ import { useEditor, useEditorDerivedValue } from 'prosekit/solid'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/solid/inline-popover'
 import { createSignal, Show, type JSX } from 'solid-js'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 function getInlineMenuItems(editor: Editor<BasicExtension>) {
   return {

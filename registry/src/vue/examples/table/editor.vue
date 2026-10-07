@@ -5,10 +5,10 @@ import 'prosekit/basic/typography.css'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 
-import { sampleContent } from '../../sample/sample-doc-table'
-import { TableHandle } from '../../ui/table-handle'
+import { sampleContent } from '../../sample/sample-doc-table.ts'
+import { TableHandle } from '../../ui/table-handle/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props = defineProps<{
   initialContent?: NodeJSON

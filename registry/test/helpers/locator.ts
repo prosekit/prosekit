@@ -1,14 +1,14 @@
-import type { Locator, LocatorOptions } from 'vitest/browser'
+import type { Locator, LocatorFilterOptions } from 'vitest/browser'
 import { locators, page } from 'vitest/browser'
 
 declare module 'vitest/browser' {
   interface LocatorSelectors {
-    locate(selector: string, options?: LocatorOptions): Locator
+    locate(selector: string, options?: LocatorFilterOptions): Locator
   }
 }
 
 locators.extend({
-  locate(selector: string, options?: LocatorOptions): Locator | string {
+  locate(selector: string, options?: LocatorFilterOptions): Locator | string {
     if (!options) {
       return selector
     }

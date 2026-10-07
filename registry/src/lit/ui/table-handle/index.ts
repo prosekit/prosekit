@@ -1,1 +1,1 @@
-export { registerLitEditorTableHandle } from './table-handle'
+export { registerLitEditorTableHandle } from './table-handle.ts'

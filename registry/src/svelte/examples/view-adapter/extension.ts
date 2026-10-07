@@ -2,7 +2,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import { defineSvelteNodeView } from 'prosekit/svelte'
 
-import { defineAtomBlock } from '../../sample/define-atom-block'
+import { defineAtomBlock } from '../../sample/define-atom-block.ts'
 
 import AtomBlockView from './atom-block-view.svelte'
 

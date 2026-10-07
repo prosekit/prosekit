@@ -6,7 +6,7 @@ import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/solid'
 import type { JSX } from 'solid-js'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor(props: {
   initialContent?: NodeJSON

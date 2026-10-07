@@ -7,10 +7,10 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { untrack } from 'svelte'
 
-import { sampleContent } from '../../sample/sample-doc-search'
-import { Search } from '../../ui/search'
+import { sampleContent } from '../../sample/sample-doc-search.ts'
+import { Search } from '../../ui/search/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props: {
   initialContent?: NodeJSON

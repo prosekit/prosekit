@@ -8,7 +8,7 @@ import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo } from 'react'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor(props: {
   initialContent?: NodeJSON

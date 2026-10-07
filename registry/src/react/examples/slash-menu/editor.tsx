@@ -7,9 +7,9 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { SlashMenu } from '../../ui/slash-menu'
+import { SlashMenu } from '../../ui/slash-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 export default function Editor() {
   const editor = useMemo(() => {

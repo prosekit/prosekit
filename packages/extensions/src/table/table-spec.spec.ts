@@ -1,5 +1,4 @@
 import { union } from '@prosekit/core'
-import pick from 'just-pick'
 import { describe, expect, it } from 'vitest'
 
 import { defineDoc } from '../doc/index.ts'
@@ -21,83 +20,81 @@ describe('table spec', () => {
     )
 
     const nodes = extension.schema?.spec.nodes.toObject() || {}
-    const pickedNodes = pick(nodes, [
-      'table',
-      'tableCell',
-      'tableHeaderCell',
-      'tableRow',
-    ])
 
-    expect(pickedNodes).toMatchInlineSnapshot(`
+    expect(nodes['table']).toMatchInlineSnapshot(`
       {
-        "table": {
-          "content": "tableRow+",
-          "group": "block",
-          "isolating": true,
-          "parseDOM": [
-            {
-              "tag": "table",
-            },
-          ],
-          "tableRole": "table",
-          "toDOM": [Function],
-        },
-        "tableCell": {
-          "attrs": {
-            "colspan": {
-              "default": 1,
-            },
-            "colwidth": {
-              "default": null,
-            },
-            "rowspan": {
-              "default": 1,
-            },
+        "content": "tableRow+",
+        "group": "block",
+        "isolating": true,
+        "parseDOM": [
+          {
+            "tag": "table",
           },
-          "content": "block+",
-          "isolating": true,
-          "parseDOM": [
-            {
-              "getAttrs": [Function],
-              "tag": "td",
-            },
-          ],
-          "tableRole": "cell",
-          "toDOM": [Function],
-        },
-        "tableHeaderCell": {
-          "attrs": {
-            "colspan": {
-              "default": 1,
-            },
-            "colwidth": {
-              "default": null,
-            },
-            "rowspan": {
-              "default": 1,
-            },
+        ],
+        "tableRole": "table",
+        "toDOM": [Function],
+      }
+    `)
+    expect(nodes['tableRow']).toMatchInlineSnapshot(`
+      {
+        "content": "(tableCell | tableHeaderCell)*",
+        "parseDOM": [
+          {
+            "tag": "tr",
           },
-          "content": "block+",
-          "isolating": true,
-          "parseDOM": [
-            {
-              "getAttrs": [Function],
-              "tag": "th",
-            },
-          ],
-          "tableRole": "header_cell",
-          "toDOM": [Function],
+        ],
+        "tableRole": "row",
+        "toDOM": [Function],
+      }
+    `)
+    expect(nodes['tableCell']).toMatchInlineSnapshot(`
+      {
+        "attrs": {
+          "colspan": {
+            "default": 1,
+          },
+          "colwidth": {
+            "default": null,
+          },
+          "rowspan": {
+            "default": 1,
+          },
         },
-        "tableRow": {
-          "content": "(tableCell | tableHeaderCell)*",
-          "parseDOM": [
-            {
-              "tag": "tr",
-            },
-          ],
-          "tableRole": "row",
-          "toDOM": [Function],
+        "content": "block+",
+        "isolating": true,
+        "parseDOM": [
+          {
+            "getAttrs": [Function],
+            "tag": "td",
+          },
+        ],
+        "tableRole": "cell",
+        "toDOM": [Function],
+      }
+    `)
+    expect(nodes['tableHeaderCell']).toMatchInlineSnapshot(`
+      {
+        "attrs": {
+          "colspan": {
+            "default": 1,
+          },
+          "colwidth": {
+            "default": null,
+          },
+          "rowspan": {
+            "default": 1,
+          },
         },
+        "content": "block+",
+        "isolating": true,
+        "parseDOM": [
+          {
+            "getAttrs": [Function],
+            "tag": "th",
+          },
+        ],
+        "tableRole": "header_cell",
+        "toDOM": [Function],
       }
     `)
   })

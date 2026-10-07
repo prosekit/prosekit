@@ -24,7 +24,7 @@ export function serializeExamplesJson(items: ItemAccumulator[]): ExamplesJson {
   const examples: ExamplesJson['examples'] = {}
 
   for (const item of exampleItems) {
-    if (!stories[item.story]) {
+    if (!Object.hasOwn(stories, item.story)) {
       stories[item.story] = {
         frameworks: [],
         hidden: item.meta.hidden,

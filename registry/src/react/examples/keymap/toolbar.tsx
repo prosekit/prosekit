@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-import { Button } from '../../ui/button'
+import { Button } from '../../ui/button/index.ts'
 
-import { useSubmitKeymap } from './use-submit-keymap'
+import { useSubmitKeymap } from './use-submit-keymap.ts'
 
 export default function Toolbar(props: {
   onSubmit: (hotkey: string) => void

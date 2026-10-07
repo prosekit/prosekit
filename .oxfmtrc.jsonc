@@ -12,7 +12,6 @@
     "**/node_modules",
     "**/*-lock.json",
     "**/*-lock.yaml",
-    ".size-limit.json",
     "**/*.svg",
     "**/*.gen.*",
     "**/.astro/**/*",

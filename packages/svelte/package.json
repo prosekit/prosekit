@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.9.1",
+  "version": "0.10.3",
   "private": false,
   "description": "Svelte components and utilities for ProseKit",
   "author": {
@@ -79,8 +79,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "^0.5.3",
-    "@prosemirror-adapter/svelte": "^0.5.3"
+    "@prosemirror-adapter/core": "^0.5.5",
+    "@prosemirror-adapter/svelte": "^0.5.5"
   },
   "peerDependencies": {
     "svelte": ">= 5.0.0"
@@ -94,15 +94,15 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/testing": "workspace:*",
-    "@sveltejs/package": "^2.5.7",
-    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@sveltejs/package": "^2.5.8",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@types/node": "catalog:",
-    "svelte": "^5.55.5",
-    "svelte-check": "^4.4.8",
-    "tsx": "^4.21.0",
+    "svelte": "^5.57.1",
+    "svelte-check": "^4.7.6",
+    "tsx": "^4.23.15",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-svelte": "^2.1.1"
+    "vitest-browser-svelte": "^3.1.0"
   },
   "publishConfig": {
     "exports": {
@@ -158,40 +158,6 @@
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-      "*": {
-        ".": [
-          "./dist/index.d.ts"
-        ],
-        "autocomplete": [
-          "./dist/autocomplete.d.ts"
-        ],
-        "block-handle": [
-          "./dist/block-handle.d.ts"
-        ],
-        "drop-indicator": [
-          "./dist/drop-indicator.d.ts"
-        ],
-        "inline-popover": [
-          "./dist/inline-popover.d.ts"
-        ],
-        "menu": [
-          "./dist/menu.d.ts"
-        ],
-        "popover": [
-          "./dist/popover.d.ts"
-        ],
-        "resizable": [
-          "./dist/resizable.d.ts"
-        ],
-        "table-handle": [
-          "./dist/table-handle.d.ts"
-        ],
-        "tooltip": [
-          "./dist/tooltip.d.ts"
-        ]
-      }
-    }
+    "types": "./dist/index.d.ts"
   }
 }

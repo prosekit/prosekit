@@ -9,7 +9,7 @@ ProseKit has first-class support for [React](https://react.dev) via `prosekit/re
 
 ## Provider
 
-`<ProseKit editor={editor}>` provides context to its descendants. The component itself does not render any DOM, it only forwards children.  
+`<ProseKit editor={editor}>` provides context to its descendants. The component itself does not render any DOM, it only forwards children.
 
 ```tsx twoslash
 // @jsx: react-jsx

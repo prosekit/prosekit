@@ -79,7 +79,7 @@ type BoldExtension = Extension<{
 /**
  * @internal
  */
-function defineBold(): BoldExtension {
+export function defineBold(): BoldExtension {
   return defineMarkSpec({
     name: 'bold',
     parseDOM: [{ tag: 'strong' }],
@@ -283,5 +283,6 @@ export function setupTest() {
     editor,
     m,
     n: { ...n, p: n.paragraph },
+    getSelectionString: () => editor.state.selection.content().content.toString(),
   }
 }

@@ -81,7 +81,7 @@ editor.commands.setCodeBlockAttrs({ language: 'javascript' })
 
 ## Keyboard Interaction
 
-Input `` ``` `` followed by an optional language name and press `Enter` or `Space` to create a new `codeBlock` node.
+Input ` ``` ` followed by an optional language name and press `Enter` or `Space` to create a new `codeBlock` node.
 
 Press `Enter` three times at the end of or press `Shift-Enter` to exit the current `codeBlock` node.
 
@@ -111,6 +111,12 @@ import { parser } from './my-prosemirror-highlight-parser'
 
 const extension = defineCodeBlockHighlight({ parser })
 ```
+
+## Live rendering
+
+`defineCodeBlockPreviewPlugin()` marks the code block containing the current selection with a node decoration. A custom node view can detect that decoration by checking whether `decorations.some(isCodeBlockPreviewHiddenDecoration)` is true and render a custom view (for example a [Mermaid](https://mermaid.js.org) diagram) when the cursor is elsewhere, or the editable source when the cursor is inside.
+
+See [examples/code-block](/examples/code-block) for a runnable implementation that renders Mermaid diagrams inside the standard code-block view.
 
 ## API Reference
 

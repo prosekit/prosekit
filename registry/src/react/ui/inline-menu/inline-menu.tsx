@@ -8,7 +8,7 @@ import { useEditor, useEditorDerivedValue } from 'prosekit/react'
 import { InlinePopoverPopup, InlinePopoverPositioner, InlinePopoverRoot } from 'prosekit/react/inline-popover'
 import { useState } from 'react'
 
-import { Button } from '../button'
+import { Button } from '../button/index.ts'
 
 function getInlineMenuItems(editor: Editor<BasicExtension>) {
   return {

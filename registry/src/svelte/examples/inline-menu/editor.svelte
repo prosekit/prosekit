@@ -6,10 +6,10 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { untrack } from 'svelte'
 
-import { sampleContent } from '../../sample/sample-doc-inline-menu'
-import { InlineMenu } from '../../ui/inline-menu'
+import { sampleContent } from '../../sample/sample-doc-inline-menu.ts'
+import { InlineMenu } from '../../ui/inline-menu/index.ts'
 
-import { defineExtension } from './extension'
+import { defineExtension } from './extension.ts'
 
 const props: {
   initialContent?: NodeJSON

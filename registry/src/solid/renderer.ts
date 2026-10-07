@@ -2,7 +2,7 @@ import type { NodeJSON } from 'prosekit/core'
 import type { JSX } from 'solid-js'
 import h from 'solid-js/h'
 
-import { loaders } from './loaders.gen'
+import { loaders } from './loaders.gen.ts'
 
 interface ExampleProps {
   initialContent?: NodeJSON

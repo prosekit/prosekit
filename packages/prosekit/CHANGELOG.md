@@ -1,5 +1,16 @@
 # prosekit
 
+## 0.22.4
+
+### Patch Changes
+
+- [`d7e145e`](https://github.com/ocavue/prosekit/commit/d7e145ec04802a57a8c9331f25820a61cfe27aa4) ![](https://prosekit.dev/b/extensions)
+
+  Export `TextBlockInputRuleOptions` and `WrappingInputRuleOptions`, the option types of `defineTextBlockInputRule` and `defineWrappingInputRule`.
+- [`17aa4d8`](https://github.com/ocavue/prosekit/commit/17aa4d8614add25a23c8b62b2d61693dde785fa7) ![](https://prosekit.dev/b/extensions)
+
+  Add a `strict` option to `defineListKeymap` so that Tab on the first item of a list does nothing instead of nesting it under a hidden list node.
+
 ## 0.22.3
 
 ### Patch Changes

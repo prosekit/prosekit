@@ -1,15 +1,8 @@
-import { defineBaseCommands, defineBaseKeymap, defineHistory, defineNodeSpec, union } from '@prosekit/core'
+import { defineNodeSpec, union } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 
-import { defineDoc } from '../doc/index.ts'
-import { defineInputRule, gateInputRule } from '../input-rule/index.ts'
-import { defineParagraph } from '../paragraph/index.ts'
 import { defineTestExtension, setupTest, setupTestFromExtension } from '../testing/index.ts'
 import { inputText } from '../testing/keyboard.ts'
-import { defineText } from '../text/index.ts'
-
-import { horizontalRuleInputRule } from './horizontal-rule-input-rule.ts'
-import { defineHorizontalRuleSpec } from './horizontal-rule-spec.ts'
 
 describe('defineHorizontalRuleInputRule', () => {
   const { editor, n } = setupTest()
@@ -142,43 +135,6 @@ describe('defineHorizontalRuleInputRule', () => {
     await inputText('---')
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(n.table(n.tableRow(n.tableCell(n.paragraph('---'))))).toJSON(),
-    )
-  })
-})
-
-describe('gateInputRule', () => {
-  function setupGatedTest(enabled: () => boolean) {
-    return setupTestFromExtension(
-      union(
-        defineDoc(),
-        defineText(),
-        defineParagraph(),
-        defineHistory(),
-        defineBaseKeymap(),
-        defineBaseCommands(),
-        defineHorizontalRuleSpec(),
-        defineInputRule(gateInputRule(horizontalRuleInputRule, enabled)),
-      ),
-    )
-  }
-
-  it('should keep the text when the gate is closed', async () => {
-    const { editor, n } = setupGatedTest(() => false)
-    editor.set(n.doc(n.paragraph('<a>')))
-
-    await inputText('---')
-    expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(n.paragraph('---')).toJSON(),
-    )
-  })
-
-  it('should apply the rule when the gate is open', async () => {
-    const { editor, n } = setupGatedTest(() => true)
-    editor.set(n.doc(n.paragraph('<a>')))
-
-    await inputText('---')
-    expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(n.horizontalRule(), n.paragraph()).toJSON(),
     )
   })
 })

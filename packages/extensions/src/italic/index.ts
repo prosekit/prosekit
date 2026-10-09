@@ -1,5 +1,5 @@
 export { defineItalicCommands, type ItalicCommandsExtension } from './italic-commands.ts'
-export { defineItalicInputRule } from './italic-input-rule.ts'
+export { defineItalicInputRule, italicInputRule } from './italic-input-rule.ts'
 export { defineItalicKeymap } from './italic-keymap.ts'
 export { defineItalicSpec, type ItalicSpecExtension } from './italic-spec.ts'
 export { defineItalic, type ItalicExtension } from './italic.ts'

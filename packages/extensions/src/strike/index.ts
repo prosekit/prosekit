@@ -75,7 +75,7 @@ export function defineStrikeKeymap(): PlainExtension {
  * @internal
  */
 export const strikeInputRule: MarkInputRuleOptions = {
-  regex: new RegExp(
+  regex: /* @__PURE__ */ new RegExp(
     (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
       + String.raw`~~([^\s~]|[^\s~][^~]*[^\s~])~~$`,
   ),

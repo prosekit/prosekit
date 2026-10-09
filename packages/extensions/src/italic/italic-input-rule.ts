@@ -8,7 +8,7 @@ import { defineMarkInputRule, type MarkInputRuleOptions } from '../input-rule/in
  * @internal
  */
 export const italicInputRule: MarkInputRuleOptions = {
-  regex: new RegExp(
+  regex: /* @__PURE__ */ new RegExp(
     (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
       + String.raw`\*([^\s*]|[^\s*][^*]*[^\s*])\*$`,
   ),

@@ -12,11 +12,10 @@ import {
   type DedentListOptions,
   type IndentListOptions,
   type ListAttributes,
+  type SplitListOptions,
   type ToggleCollapsedOptions,
   type UnwrapListOptions,
 } from 'prosemirror-flat-list'
-
-import type { ListOptions } from './list-types.ts'
 
 function insertList(attrs?: ListAttributes): Command {
   return insertNode({ type: 'list', attrs })
@@ -30,7 +29,7 @@ export type ListCommandsExtension = Extension<{
     dedentList: [options?: DedentListOptions]
     indentList: [options?: IndentListOptions]
     moveList: [direction: 'up' | 'down']
-    splitList: []
+    splitList: [options?: SplitListOptions]
     toggleCollapsed: [options?: ToggleCollapsedOptions]
     unwrapList: [options?: UnwrapListOptions]
     toggleList: [attrs?: ListAttributes]
@@ -44,13 +43,12 @@ export type ListCommandsExtension = Extension<{
  *
  * @internal
  */
-export function defineListCommands(options?: ListOptions): ListCommandsExtension {
-  const strict = options?.strict ?? false
+export function defineListCommands(): ListCommandsExtension {
   return defineCommands({
-    dedentList: (options?: DedentListOptions) => dedentList({ strict, ...options }),
-    indentList: (options?: IndentListOptions) => indentList({ strict, ...options }),
+    dedentList,
+    indentList,
     moveList,
-    splitList: () => splitList({ strict }),
+    splitList,
     toggleCollapsed,
     unwrapList,
     toggleList,

@@ -7,7 +7,10 @@ import { defineParagraph } from '../paragraph/index.ts'
 import { setupTest, setupTestFromExtension } from '../testing/index.ts'
 import { defineText } from '../text/index.ts'
 
-import { defineList } from './list.ts'
+import { defineListCommands } from './list-commands.ts'
+import { defineListKeymap } from './list-keymap.ts'
+import { defineListPlugins } from './list-plugins.ts'
+import { defineListSpec } from './list-spec.ts'
 
 describe('keymap', () => {
   const { editor, n } = setupTest()
@@ -41,7 +44,15 @@ describe('keymap', () => {
 
   it('can refuse to indent the first list node in strict mode', async () => {
     const { editor, n } = setupTestFromExtension(
-      union(defineDoc(), defineText(), defineParagraph(), defineList({ strict: true })),
+      union(
+        defineDoc(),
+        defineText(),
+        defineParagraph(),
+        defineListSpec(),
+        defineListPlugins(),
+        defineListCommands(),
+        defineListKeymap({ strict: true }),
+      ),
     )
     const doc1 = n.doc(
       //
@@ -52,6 +63,6 @@ describe('keymap', () => {
 
     await keyboard.press('Tab')
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
-    expect(editor.commands.indentList.canExec()).toBe(false)
+    expect(editor.commands.indentList.canExec({ strict: true })).toBe(false)
   })
 })

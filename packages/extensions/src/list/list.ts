@@ -7,20 +7,19 @@ import { defineListKeymap } from './list-keymap.ts'
 import { defineListPlugins } from './list-plugins.ts'
 import { defineListSerializer } from './list-serializer.ts'
 import { defineListSpec, type ListSpecExtension } from './list-spec.ts'
-import type { ListOptions } from './list-types.ts'
 
 /**
  * @internal
  */
 export type ListExtension = Union<[ListSpecExtension, ListCommandsExtension]>
 
-export function defineList(options?: ListOptions): ListExtension {
+export function defineList(): ListExtension {
   return union(
     defineListSpec(),
     defineListPlugins(),
-    defineListKeymap(options),
+    defineListKeymap(),
     defineListInputRules(),
-    defineListCommands(options),
+    defineListCommands(),
     defineListSerializer(),
     defineListDropIndicator(),
   )

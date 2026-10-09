@@ -9,9 +9,10 @@ import {
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
-import { InputRule, inputRules, textblockTypeInputRule, wrappingInputRule } from '@prosekit/pm/inputrules'
+import { InputRule, inputRules } from '@prosekit/pm/inputrules'
 import type { Attrs, MarkType, NodeType, ProseMirrorNode, Schema } from '@prosekit/pm/model'
-import type { Plugin } from '@prosekit/pm/state'
+import type { EditorState, Plugin, Transaction } from '@prosekit/pm/state'
+import { canJoin, findWrapping } from '@prosekit/pm/transform'
 
 /**
  * Defines an input rule extension.
@@ -21,6 +22,18 @@ import type { Plugin } from '@prosekit/pm/state'
 export function defineInputRule(rule: InputRule): PlainExtension {
   return defineInputRuleFacetPayload(() => rule)
 }
+
+/**
+ * The function an input rule runs when its pattern matches.
+ *
+ * @internal
+ */
+export type InputRuleHandler = (
+  state: EditorState,
+  match: RegExpMatchArray,
+  start: number,
+  end: number,
+) => Transaction | null
 
 /**
  * Options for {@link defineMarkInputRule}.
@@ -146,15 +159,29 @@ export interface TextBlockInputRuleOptions {
  *
  * @param options
  */
-export function defineTextBlockInputRule({
-  regex,
+export function defineTextBlockInputRule(options: TextBlockInputRuleOptions): PlainExtension {
+  return defineInputRule(new InputRule(options.regex, createTextBlockInputRuleHandler(options)))
+}
+
+/**
+ * The handler behind {@link defineTextBlockInputRule}: it replaces the matched
+ * text and changes the textblock to `type`. The node type is resolved from the
+ * state's schema when the rule fires.
+ *
+ * @internal
+ */
+export function createTextBlockInputRuleHandler({
   type,
   attrs,
-}: TextBlockInputRuleOptions): PlainExtension {
-  return defineInputRuleFacetPayload(({ schema }): InputRule => {
-    const nodeType = getNodeType(schema, type)
-    return textblockTypeInputRule(regex, nodeType, attrs)
-  })
+}: TextBlockInputRuleOptions): InputRuleHandler {
+  return (state, match, start, end) => {
+    const nodeType = getNodeType(state.schema, type)
+    const $start = state.doc.resolve(start)
+    if (!$start.node(-1).canReplaceWith($start.index(-1), $start.indexAfter(-1), nodeType)) {
+      return null
+    }
+    return state.tr.delete(start, end).setBlockType(start, start, nodeType, maybeRun(attrs, match))
+  }
 }
 
 /**
@@ -197,16 +224,44 @@ export interface WrappingInputRuleOptions {
  *
  * @param options
  */
-export function defineWrappingInputRule({
-  regex,
+export function defineWrappingInputRule(options: WrappingInputRuleOptions): PlainExtension {
+  return defineInputRule(new InputRule(options.regex, createWrappingInputRuleHandler(options)))
+}
+
+/**
+ * The handler behind {@link defineWrappingInputRule}: it deletes the matched
+ * text and wraps the textblock in `type`, joining it with a preceding node of
+ * the same type. The node type is resolved from the state's schema when the
+ * rule fires.
+ *
+ * @internal
+ */
+export function createWrappingInputRuleHandler({
   type,
   attrs,
   join,
-}: WrappingInputRuleOptions): PlainExtension {
-  return defineInputRuleFacetPayload(({ schema }): InputRule => {
-    const nodeType = getNodeType(schema, type)
-    return wrappingInputRule(regex, nodeType, attrs, join)
-  })
+}: WrappingInputRuleOptions): InputRuleHandler {
+  return (state, match, start, end) => {
+    const nodeType = getNodeType(state.schema, type)
+    const nodeAttrs = maybeRun(attrs, match)
+    const tr = state.tr.delete(start, end)
+    const range = tr.doc.resolve(start).blockRange()
+    const wrapping = range && findWrapping(range, nodeType, nodeAttrs)
+    if (!range || !wrapping) {
+      return null
+    }
+    tr.wrap(range, wrapping)
+    const before = tr.doc.resolve(start - 1).nodeBefore
+    if (
+      before
+      && before.type === nodeType
+      && canJoin(tr.doc, start - 1)
+      && (!join || join(match, before))
+    ) {
+      tr.join(start - 1)
+    }
+    return tr
+  }
 }
 
 function defineInputRuleFacetPayload(input: InputRulePayload): PlainExtension {

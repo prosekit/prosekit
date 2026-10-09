@@ -19,3 +19,18 @@ export interface ListAttrs {
    */
   collapsed?: boolean
 }
+
+/**
+ * Options for the list keymap.
+ */
+export interface ListOptions {
+  /**
+   * Whether the indent, dedent and split key bindings run in strict mode. In
+   * strict mode a list node is never more than one level deeper than the block
+   * before it, so no list node ends up with a hidden marker. Tab on the first
+   * item of a list then does nothing.
+   *
+   * @default false
+   */
+  strict?: boolean
+}

@@ -12,6 +12,7 @@ import {
   type DedentListOptions,
   type IndentListOptions,
   type ListAttributes,
+  type SplitListOptions,
   type ToggleCollapsedOptions,
   type UnwrapListOptions,
 } from 'prosemirror-flat-list'
@@ -28,7 +29,7 @@ export type ListCommandsExtension = Extension<{
     dedentList: [options?: DedentListOptions]
     indentList: [options?: IndentListOptions]
     moveList: [direction: 'up' | 'down']
-    splitList: []
+    splitList: [options?: SplitListOptions]
     toggleCollapsed: [options?: ToggleCollapsedOptions]
     unwrapList: [options?: UnwrapListOptions]
     toggleList: [attrs?: ListAttributes]

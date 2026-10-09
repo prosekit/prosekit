@@ -1,14 +1,16 @@
-import { defineKeymap, type PlainExtension } from '@prosekit/core'
+import { defineKeymap, type Keymap, type PlainExtension } from '@prosekit/core'
 import { chainCommands, deleteSelection } from '@prosekit/pm/commands'
 import {
   createDedentListCommand,
   createIndentListCommand,
+  createSplitListCommand,
   deleteCommand,
-  enterCommand,
   joinCollapsedListBackward,
   joinListUp,
   protectCollapsed,
 } from 'prosemirror-flat-list'
+
+import type { ListOptions } from './list-types.ts'
 
 // This is different from the one exported by prosemirror-flat-list, because
 // some commands are moved to `defineBaseKeymap` in `prosekit/core`.
@@ -19,17 +21,25 @@ const backspaceCommand = chainCommands(
   joinCollapsedListBackward,
 )
 
-const dedentListCommand = createDedentListCommand()
-const indentListCommand = createIndentListCommand()
+/**
+ * Returns the key bindings for list.
+ *
+ * @internal
+ */
+export function createListKeymap(options?: ListOptions): Keymap {
+  const indentListCommand = createIndentListCommand(options)
+  const dedentListCommand = createDedentListCommand(options)
+  const enterCommand = chainCommands(protectCollapsed, createSplitListCommand(options))
 
-const listKeymap = {
-  'Enter': enterCommand,
-  'Backspace': backspaceCommand,
-  'Delete': deleteCommand,
-  'Mod-]': indentListCommand,
-  'Mod-[': dedentListCommand,
-  'Tab': indentListCommand,
-  'Shift-Tab': dedentListCommand,
+  return {
+    'Enter': enterCommand,
+    'Backspace': backspaceCommand,
+    'Delete': deleteCommand,
+    'Mod-]': indentListCommand,
+    'Mod-[': dedentListCommand,
+    'Tab': indentListCommand,
+    'Shift-Tab': dedentListCommand,
+  }
 }
 
 /**
@@ -37,6 +47,6 @@ const listKeymap = {
  *
  * @internal
  */
-export function defineListKeymap(): PlainExtension {
-  return defineKeymap(listKeymap)
+export function defineListKeymap(options?: ListOptions): PlainExtension {
+  return defineKeymap(createListKeymap(options))
 }

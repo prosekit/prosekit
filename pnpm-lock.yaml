@@ -275,8 +275,8 @@ importers:
         specifier: ^0.1.6
         version: 0.1.6
       prosemirror-flat-list:
-        specifier: ^0.7.1
-        version: 0.7.1
+        specifier: ^0.7.2
+        version: 0.7.2
       prosemirror-gapcursor:
         specifier: ^1.4.1
         version: 1.4.1
@@ -6537,8 +6537,8 @@ packages:
   prosemirror-enter-rules@0.1.6:
     resolution: {integrity: sha512-l/mddqScZT0FICDNu6Kijs6zpAPRnMZG4pZAlCHIl7uVg26kLSK+NM3JuKkFKBN1Zs2l1Qi/SYc2Z6dmA4elPQ==}
 
-  prosemirror-flat-list@0.7.1:
-    resolution: {integrity: sha512-K1rh2h5SEVURE+KEH31cCI3ckEGpjAz1DkmyO5eOD9uAFaIMfTTMyq2OrfRmM+tXo8j7zSTo2G0eARK7vAoXFg==}
+  prosemirror-flat-list@0.7.2:
+    resolution: {integrity: sha512-gKFdGfWhZz/D8MwlIN1JnUT2InjAiOI5sC11g/B4I+vxeK5hzbyjHYgyY14gvfV9TRgKFtcD0jI7fFBxF2erpQ==}
 
   prosemirror-gapcursor@1.4.1:
     resolution: {integrity: sha512-pMdYaEnjNMSwl11yjEGtgTmLkR08m/Vl+Jj443167p9eB3HVQKhYCc4gmHVDsLPODfZfjr/MmirsdyZziXbQKw==}
@@ -13592,7 +13592,7 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.6
 
-  prosemirror-flat-list@0.7.1:
+  prosemirror-flat-list@0.7.2:
     dependencies:
       prosemirror-commands: 1.7.2
       prosemirror-inputrules: 1.5.1

@@ -258,7 +258,7 @@ export function createWrappingInputRuleHandler({
       && canJoin(tr.doc, start - 1)
       && (!join || join(match, before))
     ) {
-      tr.join(start - 1)
+      return tr.join(start - 1)
     }
     return tr
   }

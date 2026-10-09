@@ -117,18 +117,9 @@ export function defineMarkInputRule(
 }
 
 /**
- * Defines an input rule that changes the type of a textblock when the matched
- * text is typed into it.
- *
- * See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.textblockTypeInputRule)
- *
- * @param options
+ * Options for {@link defineTextBlockInputRule}.
  */
-export function defineTextBlockInputRule({
-  regex,
-  type,
-  attrs,
-}: {
+export interface TextBlockInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$`. It
    * usually also starts with `^` to that it is only matched at the start of a
@@ -145,7 +136,21 @@ export function defineTextBlockInputRule({
    * Attributes to set on the node.
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
-}): PlainExtension {
+}
+
+/**
+ * Defines an input rule that changes the type of a textblock when the matched
+ * text is typed into it.
+ *
+ * See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.textblockTypeInputRule)
+ *
+ * @param options
+ */
+export function defineTextBlockInputRule({
+  regex,
+  type,
+  attrs,
+}: TextBlockInputRuleOptions): PlainExtension {
   return defineInputRuleFacetPayload(({ schema }): InputRule => {
     const nodeType = getNodeType(schema, type)
     return textblockTypeInputRule(regex, nodeType, attrs)
@@ -153,19 +158,9 @@ export function defineTextBlockInputRule({
 }
 
 /**
- * Defines an input rule for automatically wrapping a textblock when a given
- * string is typed.
- *
- * See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappingInputRule)
- *
- * @param options
+ * Options for {@link defineWrappingInputRule}.
  */
-export function defineWrappingInputRule({
-  regex,
-  type,
-  attrs,
-  join,
-}: {
+export interface WrappingInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$`. It
    * usually also starts with `^` to that it is only matched at the start of a
@@ -192,7 +187,22 @@ export function defineWrappingInputRule({
    * indicate whether a join should happen.
    */
   join?: (match: RegExpMatchArray, node: ProseMirrorNode) => boolean
-}): PlainExtension {
+}
+
+/**
+ * Defines an input rule for automatically wrapping a textblock when a given
+ * string is typed.
+ *
+ * See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappingInputRule)
+ *
+ * @param options
+ */
+export function defineWrappingInputRule({
+  regex,
+  type,
+  attrs,
+  join,
+}: WrappingInputRuleOptions): PlainExtension {
   return defineInputRuleFacetPayload(({ schema }): InputRule => {
     const nodeType = getNodeType(schema, type)
     return wrappingInputRule(regex, nodeType, attrs, join)

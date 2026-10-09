@@ -1,5 +1,5 @@
 export { defineHeadingCommands, type HeadingCommandsExtension } from './heading-commands.ts'
-export { defineHeadingInputRule } from './heading-input-rule.ts'
+export { defineHeadingInputRule, headingInputRule } from './heading-input-rule.ts'
 export { defineHeadingKeymap } from './heading-keymap.ts'
 export { defineHeadingSpec, type HeadingSpecExtension } from './heading-spec.ts'
 export type { HeadingAttrs } from './heading-types.ts'

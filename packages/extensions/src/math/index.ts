@@ -13,6 +13,7 @@ export {
   defineMathInlineInputRule,
   defineMathInlineSpec,
   defineMathInlineView,
+  mathInlineInputRule,
   type MathInlineExtension,
   type MathInlineOptions,
   type MathInlineSpecExtension,

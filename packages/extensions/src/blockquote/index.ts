@@ -1,5 +1,5 @@
 export { defineBlockquoteCommands, type BlockquoteCommandsExtension } from './blockquote-commands.ts'
-export { defineBlockquoteInputRule } from './blockquote-input-rule.ts'
+export { blockquoteInputRule, defineBlockquoteInputRule } from './blockquote-input-rule.ts'
 export { defineBlockquoteKeymap } from './blockquote-keymap.ts'
 export { defineBlockquoteSpec, type BlockquoteSpecExtension } from './blockquote-spec.ts'
 export { defineBlockquote, type BlockquoteExtension } from './blockquote.ts'

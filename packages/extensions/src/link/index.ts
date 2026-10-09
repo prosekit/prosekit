@@ -85,20 +85,25 @@ export function defineLinkCommands(): LinkCommandsExtension {
 }
 
 /**
+ * The input rule behind {@link defineLinkInputRule}.
+ *
+ * @internal
+ */
+export const linkInputRule: InputRule = /* @__PURE__ */ new InputRule(LINK_INPUT_RE, (state, match, from) => {
+  const href = match[1]
+  if (!href) return null
+
+  const mark = state.schema.marks.link.create({ href })
+  return state.tr.addMark(from, from + href.length, mark).insertText(' ')
+})
+
+/**
  * Apply link marks after pressing Space.
  *
  * @internal
  */
 export function defineLinkInputRule(): PlainExtension {
-  return defineInputRule(
-    new InputRule(LINK_INPUT_RE, (state, match, from) => {
-      const href = match[1]
-      if (!href) return null
-
-      const mark = state.schema.marks.link.create({ href })
-      return state.tr.addMark(from, from + href.length, mark).insertText(' ')
-    }),
-  )
+  return defineInputRule(linkInputRule)
 }
 
 /**

@@ -1,5 +1,5 @@
 export { defineBoldCommands, type BoldCommandsExtension } from './bold-commands.ts'
-export { defineBoldInputRule } from './bold-input-rule.ts'
+export { boldInputRule, defineBoldInputRule } from './bold-input-rule.ts'
 export { defineBoldKeymap } from './bold-keymap.ts'
 export { defineBoldSpec, type BoldSpecExtension } from './bold-spec.ts'
 export { defineBold, type BoldExtension } from './bold.ts'

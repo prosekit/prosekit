@@ -11,7 +11,7 @@ import {
 } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 
-import { defineMarkInputRule } from '../input-rule/index.ts'
+import { defineMarkInputRule, type MarkInputRuleOptions } from '../input-rule/index.ts'
 
 /**
  * @internal
@@ -70,16 +70,23 @@ export function defineStrikeKeymap(): PlainExtension {
 }
 
 /**
+ * The input rule options behind {@link defineStrikeInputRule}.
+ *
+ * @internal
+ */
+export const strikeInputRule: MarkInputRuleOptions = {
+  regex: new RegExp(
+    (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
+      + String.raw`~~([^\s~]|[^\s~][^~]*[^\s~])~~$`,
+  ),
+  type: 'strike',
+}
+
+/**
  * @internal
  */
 export function defineStrikeInputRule(): PlainExtension {
-  return defineMarkInputRule({
-    regex: new RegExp(
-      (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
-        + String.raw`~~([^\s~]|[^\s~][^~]*[^\s~])~~$`,
-    ),
-    type: 'strike',
-  })
+  return defineMarkInputRule(strikeInputRule)
 }
 
 /**

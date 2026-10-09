@@ -1,4 +1,5 @@
 import { defineNodeSpec, defineNodeView, union, type Extension, type PlainExtension, type Union } from '@prosekit/core'
+import type { InputRule } from '@prosekit/pm/inputrules'
 import type { Attrs } from '@prosekit/pm/model'
 import { createMathInlineInputRule, createMathInlineView, mathInlineSpec, type RenderMathInline } from 'prosemirror-math'
 
@@ -51,10 +52,17 @@ export function defineMathInlineView({ render }: MathInlineViewOptions): Extensi
 }
 
 /**
+ * The input rule behind {@link defineMathInlineInputRule}.
+ *
+ * @internal
+ */
+export const mathInlineInputRule: InputRule = /* @__PURE__ */ createMathInlineInputRule('mathInline')
+
+/**
  * @internal
  */
 export function defineMathInlineInputRule(): PlainExtension {
-  return defineInputRule(createMathInlineInputRule('mathInline'))
+  return defineInputRule(mathInlineInputRule)
 }
 
 /**

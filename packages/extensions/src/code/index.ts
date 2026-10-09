@@ -1,5 +1,5 @@
 export { defineCodeCommands, type CodeCommandsExtension } from './code-commands.ts'
-export { defineCodeInputRule } from './code-input-rule.ts'
+export { codeInputRule, defineCodeInputRule } from './code-input-rule.ts'
 export { defineCodeKeymap } from './code-keymap.ts'
 export { defineCodeSpec, type CodeSpecExtension } from './code-spec.ts'
 export { defineCode, type CodeExtension } from './code.ts'

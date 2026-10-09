@@ -19,7 +19,12 @@ export function defineListDropIndicator(): PlainExtension {
 
 const onDrag: DragEventHandler = ({ view, pos }): boolean => {
   const slice = view.dragging?.slice
-  if (slice && slice.openStart === 0 && slice.openEnd === 0 && slice.content.childCount === 1) {
+  if (
+    slice
+    && slice.openStart === 0
+    && slice.openEnd === 0
+    && slice.content.childCount === 1
+  ) {
     const node = slice.content.child(0)
     if (node.type.name === 'list') {
       const $pos = view.state.doc.resolve(pos)

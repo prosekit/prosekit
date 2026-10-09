@@ -18,15 +18,7 @@ function getMarkers(node: ProseMirrorNode): DOMOutputSpec[] {
   switch (attrs.kind) {
     case 'task':
       // Use a `label` element here so that the area around the checkbox is also checkable.
-      return [
-        [
-          'label',
-          [
-            'input',
-            { type: 'checkbox', checked: attrs.checked ? '' : undefined },
-          ],
-        ],
-      ]
+      return [['label', ['input', { type: 'checkbox', checked: attrs.checked ? '' : undefined }]]]
     default:
       // Always return an empty array so that the marker element is rendered. This
       // is required to make the drop indicator locate the correct position.

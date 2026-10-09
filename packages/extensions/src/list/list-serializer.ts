@@ -16,9 +16,7 @@ export function defineListSerializer(): PlainExtension {
     serializeNodeWrapper: (fn) => {
       return (...args) => {
         const dom = fn(...args)
-        return isElementLike(dom)
-          ? normalizeElementTree(joinListElements(dom))
-          : dom
+        return isElementLike(dom) ? normalizeElementTree(joinListElements(dom)) : dom
       }
     },
     nodesFromSchemaWrapper: (fn) => {
@@ -33,9 +31,7 @@ export function defineListSerializer(): PlainExtension {
   })
 }
 
-function normalizeElementTree<T extends Element | DocumentFragment>(
-  node: T,
-): T {
+function normalizeElementTree<T extends Element | DocumentFragment>(node: T): T {
   if (isElementLike(node)) {
     normalizeTaskList(node)
   }

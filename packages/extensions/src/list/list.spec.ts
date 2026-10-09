@@ -13,12 +13,7 @@ import { defineList } from './index.ts'
 
 describe('defineList', () => {
   it('can add list node', () => {
-    const extension = union(
-      defineList(),
-      defineDoc(),
-      defineText(),
-      defineParagraph(),
-    )
+    const extension = union(defineList(), defineDoc(), defineText(), defineParagraph())
     const editor = createEditor({ extension })
     const schema = editor.schema
     const nodes = Object.keys(schema.nodes)
@@ -37,10 +32,7 @@ describe('defineList', () => {
 
     expect(
       await copyAndGetHTML(
-        n.doc(
-          n.bullet(n.paragraph('Bullet 1')),
-          n.bullet(n.paragraph('Bullet 2')),
-        ),
+        n.doc(n.bullet(n.paragraph('Bullet 1')), n.bullet(n.paragraph('Bullet 2'))),
       ),
     ).toMatchInlineSnapshot(`
       "
@@ -67,10 +59,7 @@ describe('defineList', () => {
 
     expect(
       await copyAndGetHTML(
-        n.doc(
-          n.ordered(n.paragraph('Ordered 1')),
-          n.ordered(n.paragraph('Ordered 2')),
-        ),
+        n.doc(n.ordered(n.paragraph('Ordered 1')), n.ordered(n.paragraph('Ordered 2'))),
       ),
     ).toMatchInlineSnapshot(`
       "
@@ -97,10 +86,7 @@ describe('defineList', () => {
 
     expect(
       await copyAndGetHTML(
-        n.doc(
-          n.checked(n.paragraph('Checked 1')),
-          n.unchecked(n.paragraph('Unchecked 2')),
-        ),
+        n.doc(n.checked(n.paragraph('Checked 1')), n.unchecked(n.paragraph('Unchecked 2'))),
       ),
     ).toMatchInlineSnapshot(`
       "

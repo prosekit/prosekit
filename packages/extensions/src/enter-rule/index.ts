@@ -1,7 +1,7 @@
 import { defineFacet, defineFacetPayload, pluginFacet, type PlainExtension, type PluginPayload } from '@prosekit/core'
 import {
   createEnterRulePlugin,
-  createTextBlockEnterRule,
+  createTextBlockEnterRule as createTextBlockEnterRuleBase,
   type EnterRule,
   type EnterRuleHandler,
   type EnterRuleHandlerOptions,
@@ -40,6 +40,17 @@ export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
  */
 export function defineTextBlockEnterRule(options: TextBlockEnterRuleOptions): PlainExtension {
   return defineEnterRule(createTextBlockEnterRule(options))
+}
+
+/**
+ * Creates the enter rule behind {@link defineTextBlockEnterRule} without
+ * registering it, so a caller can wrap its `handler` before passing it to
+ * {@link defineEnterRule}.
+ *
+ * @internal
+ */
+export function createTextBlockEnterRule(options: TextBlockEnterRuleOptions): EnterRuleOptions {
+  return createTextBlockEnterRuleBase(options)
 }
 
 const enterRuleFacet = defineFacet<EnterRule, PluginPayload>({

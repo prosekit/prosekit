@@ -1,6 +1,6 @@
 export { defineCodeBlockCommands, type CodeBlockCommandsExtension } from './code-block-commands.ts'
 export { defineCodeBlockHighlight, type CodeBlockHighlightOptions, type HighlightParser } from './code-block-highlight.ts'
-export { codeBlockInputRule, defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule.ts'
+export { codeBlockEnterRule, codeBlockInputRule, defineCodeBlockEnterRule, defineCodeBlockInputRule } from './code-block-input-rule.ts'
 export { defineCodeBlockKeymap } from './code-block-keymap.ts'
 export { defineCodeBlockPreviewPlugin, isCodeBlockPreviewHiddenDecoration } from './code-block-preview.ts'
 export { defineCodeBlockShiki, type CodeBlockShikiOptions } from './code-block-shiki.ts'

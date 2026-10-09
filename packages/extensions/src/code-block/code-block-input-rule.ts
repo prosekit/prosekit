@@ -1,6 +1,6 @@
 import type { PlainExtension } from '@prosekit/core'
 
-import { defineTextBlockEnterRule } from '../enter-rule/index.ts'
+import { defineTextBlockEnterRule, type TextBlockEnterRuleOptions } from '../enter-rule/index.ts'
 import { defineTextBlockInputRule, type TextBlockInputRuleOptions } from '../input-rule/index.ts'
 
 import type { CodeBlockAttrs } from './code-block-types.ts'
@@ -24,14 +24,21 @@ export function defineCodeBlockInputRule(): PlainExtension {
 }
 
 /**
+ * The enter rule options behind {@link defineCodeBlockEnterRule}.
+ *
+ * @internal
+ */
+export const codeBlockEnterRule: TextBlockEnterRuleOptions = {
+  regex: /^```(\S*)$/,
+  type: 'codeBlock',
+  attrs: getAttrs,
+}
+
+/**
  * Adds enter rules for `codeBlock` nodes.
  */
 export function defineCodeBlockEnterRule(): PlainExtension {
-  return defineTextBlockEnterRule({
-    regex: /^```(\S*)$/,
-    type: 'codeBlock',
-    attrs: getAttrs,
-  })
+  return defineTextBlockEnterRule(codeBlockEnterRule)
 }
 
 function getAttrs(match: RegExpMatchArray): CodeBlockAttrs {

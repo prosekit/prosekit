@@ -13,6 +13,7 @@
     "module.sortImportDeclarations": "maintain",
   },
   "json": {
+    "packageJson.applyConventions": false,
     "jsonTrailingCommaFiles": ["tsconfig.json", ".vscode/settings.json"],
   },
   "markdown": {

@@ -5,7 +5,6 @@ import type { Editor } from 'prosekit/core'
 import { clsx } from 'prosekit/core'
 import type { ListAttrs } from 'prosekit/extensions/list'
 import { useEditorDerivedValue } from 'prosekit/react'
-import { useState } from 'react'
 
 import type { EditorExtension } from './extension.ts'
 
@@ -21,6 +20,8 @@ const TEXT_COLOR_CLASSNAME = clsx(
 
 interface Props {
   children: React.ReactElement
+  open: boolean
+  onOpenChange: (open: boolean) => void
 }
 
 interface SubmenuInfo {
@@ -261,7 +262,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
   } else if (props.item.children) {
     return (
       <Menu.SubmenuRoot>
-        <Menu.SubmenuTrigger className={ITEM_CLASSNAME}>
+        <Menu.SubmenuTrigger className={ITEM_CLASSNAME} data-testid={`notion-block-menu-${props.item.key}`}>
           {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
           <span className="flex-1">{props.item.label}</span>
           <span className="inline-block size-4 i-lucide-chevron-right opacity-50">
@@ -280,6 +281,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
     return (
       <Menu.Item
         className={clsx(ITEM_CLASSNAME, 'group')}
+        data-testid={`notion-block-menu-${props.item.key}`}
         onClick={props.item.onClick}
       >
         {props.item.iconClassName && <span className={clsx('inline-block size-5', props.item.iconClassName)} />}
@@ -292,21 +294,14 @@ function BlockHandleItem(props: { item: ItemInfo }) {
 }
 
 export default function BlockHandleMenu(props: Props) {
-  const [open, setOpen] = useState(false)
-
   const items = useEditorDerivedValue(getMenuItems)
 
   return (
     <Menu.Root
-      open={open}
-      onOpenChange={(open, details) => {
-        // ignore the event to open the menu because by default Menu is opened
-        // by a `mousedown` event but we only want to open the menu by a `click`
-        // event.
-        if (open && details.reason === 'trigger-press') {
-          return
-        }
-        setOpen(open)
+      open={props.open}
+      modal={false}
+      onOpenChange={(open, _details) => {
+        props.onOpenChange(open)
       }}
     >
       <Menu.Trigger
@@ -314,14 +309,14 @@ export default function BlockHandleMenu(props: Props) {
         nativeButton={false}
         onClick={(event) => {
           event.preventDefault()
-          setOpen(open => !open)
+          props.onOpenChange(!props.open)
         }}
       >
       </Menu.Trigger>
       <Menu.Portal>
-        <Menu.Backdrop className="size-dvw flex fixed inset-0 opacity-0" />
+        <Menu.Backdrop className="pointer-events-none size-dvw flex fixed inset-0 opacity-0" />
         <Menu.Positioner className="outline-none" side="right" align="center">
-          <Menu.Popup className={POPUP_CLASSNAME}>
+          <Menu.Popup className={POPUP_CLASSNAME} data-testid="notion-block-menu-popup">
             {items.map(item => <BlockHandleItem key={item.key} item={item} />)}
           </Menu.Popup>
         </Menu.Positioner>

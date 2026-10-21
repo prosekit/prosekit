@@ -57,6 +57,7 @@ export {
   setupTableHandleColumnMenuRoot,
   TableHandleColumnMenuRootElement,
   TableHandleColumnMenuRootPropsDeclaration,
+  type TableHandleColumnMenuRootEvents,
   type TableHandleColumnMenuRootProps,
 } from './table-handle-column-menu-root.ts'
 
@@ -113,6 +114,7 @@ export {
   setupTableHandleRowMenuRoot,
   TableHandleRowMenuRootElement,
   TableHandleRowMenuRootPropsDeclaration,
+  type TableHandleRowMenuRootEvents,
   type TableHandleRowMenuRootProps,
 } from './table-handle-row-menu-root.ts'
 

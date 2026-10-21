@@ -8,11 +8,13 @@ import {
   type PropsDeclaration,
   type State,
 } from '@aria-ui/core'
-import { MenuRootPropsDeclaration, setupMenuRoot, type MenuRootProps } from '@aria-ui/elements/menu'
+import { MenuRootPropsDeclaration, setupMenuRoot, type MenuRootEvents, type MenuRootProps } from '@aria-ui/elements/menu'
 
 import { tableHandleStoreContext } from './store.ts'
 
 export interface TableHandleRowMenuRootProps extends MenuRootProps {}
+
+export interface TableHandleRowMenuRootEvents extends MenuRootEvents {}
 
 /** @internal */
 export const TableHandleRowMenuRootPropsDeclaration: PropsDeclaration<TableHandleRowMenuRootProps> = defineProps<
@@ -44,6 +46,8 @@ const TableHandleRowMenuRootElementBase: HostElementConstructor<TableHandleRowMe
  * `<prosekit-table-handle-row-menu-root>` custom element.
  *
  * Properties: {@link TableHandleRowMenuRootProps}
+ *
+ * Events: {@link TableHandleRowMenuRootEvents}
  */
 export class TableHandleRowMenuRootElement extends TableHandleRowMenuRootElementBase {}
 

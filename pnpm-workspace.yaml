@@ -53,6 +53,6 @@ minimumReleaseAgeExclude:
 # Temporary: test unreleased @aria-ui changes from pkg.pr.new. Remove after the release.
 blockExoticSubdeps: false
 overrides:
-  "@aria-ui/core": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
-  "@aria-ui/elements": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057
-  "@aria-ui/utils": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057
+  "@aria-ui/core": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@53508eb
+  "@aria-ui/elements": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@53508eb
+  "@aria-ui/utils": https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@53508eb

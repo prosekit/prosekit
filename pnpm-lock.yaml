@@ -32,6 +32,11 @@ catalogs:
       specifier: ^5.0.3
       version: 5.0.3
 
+overrides:
+  '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
+  '@aria-ui/elements': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057
+  '@aria-ui/utils': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057
+
 patchedDependencies:
   y-prosemirror: 532a3d28ffa9ee0392f8e581e0e56cd29e84d53897db781ac65c8e95a9b2e031
 
@@ -838,14 +843,14 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/core':
-        specifier: ^0.2.1
-        version: 0.2.1
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
       '@aria-ui/elements':
-        specifier: ^0.1.14
-        version: 0.1.14
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057
       '@aria-ui/utils':
-        specifier: ^0.1.7
-        version: 0.1.7
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057
       '@floating-ui/dom':
         specifier: ^1.8.0
         version: 1.8.0
@@ -1241,14 +1246,17 @@ packages:
       typescript:
         optional: true
 
-  '@aria-ui/core@0.2.1':
-    resolution: {integrity: sha512-EEh2mIHL4HnfjIgZocxhCCqPRU6EE5eLFQcGw4FOfomil11jIBKtmqCQkz8qJ9Ni3IBoh/5DvUFaY206X0oY6A==}
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057':
+    resolution: {integrity: sha512-7UlzViANf8Z2qnc21SajmforEiNgDLwqAYkC0TONydHtsHtKo4AGCl0l1FyH1LYn4VhJI5G3A14ltJ2JkJ5eog==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057}
+    version: 0.2.1
 
-  '@aria-ui/elements@0.1.14':
-    resolution: {integrity: sha512-+6pngo3CUgDaZufZzqUrA/rx+4DKrcAq0KY2c64X9ZLt6xZ6MuXsJnMkdJQsYcDQtoenEgfGklW8NuWr4MK9Jg==}
+  '@aria-ui/elements@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057':
+    resolution: {integrity: sha512-NS36hYQddROgjHchUprIuz0NPj9xf2RdLXc5aLiZmFINcYE5X02VPw90JysYB6l/YRxcNe87WgRQ0Fg0mzSsFQ==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057}
+    version: 0.1.14
 
-  '@aria-ui/utils@0.1.7':
-    resolution: {integrity: sha512-ZKc/JOugSEYqsPUHYomxSbLyK9TcypsnhGL/yK2X14q6qyXVax5vHjLqgZmX5pwm28vYP4FOsUiUUtuSIK/eKw==}
+  '@aria-ui/utils@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057':
+    resolution: {integrity: sha512-gWa+p9MxAe1wqH2M9EqPHXmrGhAYa3vF7ovEonnJndiRdF+rDUgrfBnwTDC8MoRQW0TLajdm0RcQMLi25zyW0Q==, tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057}
+    version: 0.1.7
 
   '@asamuzakjp/css-color@7.0.1':
     resolution: {integrity: sha512-C9duntabagkBZ1LebM7FKmphR4Q1pBclLxVbZETQV0akkFjV0ooFxo8FlvAQyKj9F6l8rEnmidgcTlpyxFYizg==}
@@ -2759,6 +2767,9 @@ packages:
 
   '@ocavue/utils@1.8.0':
     resolution: {integrity: sha512-BD1ro+6Kllkmr/at+o32kvnLrVooUbk9gw3JAPaoAZXx+A5GhZ6Laa+UA38ifhG3vaamx+jcgEwX22BmTSMUVA==}
+
+  '@ocavue/utils@1.9.0':
+    resolution: {integrity: sha512-fHE+6t6Z0YfFnu5uiaKRRXoIo8NCTVBdT+b9SjMQydDTqTxHpvhNFvXsIUkYlJMyBQZjEpCyGlUfP+wscAmR1w==}
 
   '@one-ini/wasm@0.2.1':
     resolution: {integrity: sha512-TUqERXGNTifZ9y2g3wPxQrw3HpHv/02DsW3D90T9x0hhonrL1ZqpSmNrU2XkoIq0fP1N6gZfVQzy2Fw1ZvGBNg==}
@@ -8040,24 +8051,24 @@ snapshots:
       oxfmt: 0.72.0(svelte@5.57.1)
       typescript: 6.0.3
 
-  '@aria-ui/core@0.2.1':
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057':
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       '@zag-js/dom-query': 1.46.0
       alien-signals: 3.2.1
       server-dom-shim: 1.1.0
 
-  '@aria-ui/elements@0.1.14':
+  '@aria-ui/elements@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057':
     dependencies:
-      '@aria-ui/core': 0.2.1
-      '@aria-ui/utils': 0.1.7
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
+      '@aria-ui/utils': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057
       '@floating-ui/dom': 1.8.0
       '@zag-js/dismissable': 1.46.0
       '@zag-js/dom-query': 1.46.0
 
-  '@aria-ui/utils@0.1.7':
+  '@aria-ui/utils@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057':
     dependencies:
-      '@aria-ui/core': 0.2.1
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
       '@zag-js/dom-query': 1.46.0
 
   '@asamuzakjp/css-color@7.0.1':
@@ -9665,6 +9676,8 @@ snapshots:
   '@ocavue/tsconfig@0.7.1': {}
 
   '@ocavue/utils@1.8.0': {}
+
+  '@ocavue/utils@1.9.0': {}
 
   '@one-ini/wasm@0.2.1': {}
 
@@ -14134,8 +14147,8 @@ snapshots:
 
   shiki-twoslash-renderer@0.3.5(supports-color@10.2.2)(typescript@6.0.3):
     dependencies:
-      '@aria-ui/core': 0.2.1
-      '@aria-ui/elements': 0.1.14
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
+      '@aria-ui/elements': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/elements@3423057
       '@shikijs/twoslash': 4.4.3(supports-color@10.2.2)(typescript@6.0.3)
       '@shikijs/types': 4.5.0
       '@types/hast': 3.0.5
@@ -14236,8 +14249,8 @@ snapshots:
 
   starlight-theme-nova@0.12.3(@astrojs/starlight@0.42.4)(supports-color@10.2.2)(typescript@6.0.3):
     dependencies:
-      '@aria-ui/core': 0.2.1
-      '@aria-ui/utils': 0.1.7
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@3423057
+      '@aria-ui/utils': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/utils@3423057
       '@astrojs/markdown-satteri': 0.4.2
       '@pagefind/default-ui': 1.5.2
       '@shikijs/transformers': 4.4.3

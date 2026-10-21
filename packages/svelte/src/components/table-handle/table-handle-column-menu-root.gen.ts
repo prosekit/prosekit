@@ -25,6 +25,8 @@ export interface TableHandleColumnMenuRootProps {
   disabled?: TableHandleColumnMenuRootElementProps['disabled'];
   /** Emitted when the menu is opened or closed. */
   onOpenChange?: (event: TableHandleColumnMenuRootEvents['openChange']) => void;
+  /** Emitted after the menu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: TableHandleColumnMenuRootEvents['openChangeComplete']) => void;
   children?: Snippet;
 }
 

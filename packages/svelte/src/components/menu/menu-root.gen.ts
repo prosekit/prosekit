@@ -25,6 +25,8 @@ export interface MenuRootProps {
   disabled?: MenuRootElementProps['disabled'];
   /** Emitted when the menu is opened or closed. */
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
+  /** Emitted after the menu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: MenuRootEvents['openChangeComplete']) => void;
   children?: Snippet;
 }
 

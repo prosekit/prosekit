@@ -109,8 +109,6 @@ export class MenuSubmenuRootElement extends Base.MenuSubmenuRootElement {}
  *
  * Properties: {@link MenuSubmenuTriggerProps}
  *
- * Events: {@link MenuSubmenuTriggerEvents}
- *
  * Data attributes:
  *
  * | Attribute | Description |
@@ -123,8 +121,6 @@ export class MenuSubmenuTriggerElement extends Base.MenuSubmenuTriggerElement {}
  * `<prosekit-menu-trigger>` custom element.
  *
  * Properties: {@link MenuTriggerProps}
- *
- * Events: {@link MenuTriggerEvents}
  */
 export class MenuTriggerElement extends Base.MenuTriggerElement {}
 
@@ -139,8 +135,6 @@ export interface MenuTriggerProps extends Base.MenuTriggerProps {}
 export interface MenuItemEvents extends Base.MenuItemEvents {}
 export interface MenuRootEvents extends Base.MenuRootEvents {}
 export interface MenuSubmenuRootEvents extends Base.MenuSubmenuRootEvents {}
-export interface MenuSubmenuTriggerEvents extends Base.MenuSubmenuTriggerEvents {}
-export interface MenuTriggerEvents extends Base.MenuTriggerEvents {}
 
 /** @internal */
 export const MenuItemPropsDeclaration: PropsDeclaration<MenuItemProps> = Base.MenuItemPropsDeclaration

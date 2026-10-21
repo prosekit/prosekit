@@ -62,8 +62,6 @@ export class PopoverRootElement extends Base.PopoverRootElement {}
  * `<prosekit-popover-trigger>` custom element.
  *
  * Properties: {@link PopoverTriggerProps}
- *
- * Events: {@link PopoverTriggerEvents}
  */
 export class PopoverTriggerElement extends Base.PopoverTriggerElement {}
 
@@ -73,7 +71,6 @@ export interface PopoverRootProps extends Base.PopoverRootProps {}
 export interface PopoverTriggerProps extends Base.PopoverTriggerProps {}
 
 export interface PopoverRootEvents extends Base.PopoverRootEvents {}
-export interface PopoverTriggerEvents extends Base.PopoverTriggerEvents {}
 
 /** @internal */
 export const PopoverPopupPropsDeclaration: PropsDeclaration<PopoverPopupProps> = Base.PopoverPopupPropsDeclaration

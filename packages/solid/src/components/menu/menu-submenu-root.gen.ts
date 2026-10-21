@@ -24,6 +24,8 @@ export interface MenuSubmenuRootProps {
   disabled?: MenuSubmenuRootElementProps['disabled'];
   /** Emitted when the submenu is opened or closed. */
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
+  /** Emitted after the submenu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: MenuSubmenuRootEvents['openChangeComplete']) => void;
 }
 
 /** A Solid component that renders an `prosekit-menu-submenu-root` custom element. */
@@ -33,7 +35,7 @@ export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttribute
   const [getElement, setElement] = createSignal<MenuSubmenuRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'open'], ['onOpenChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'open'], ['onOpenChange', 'onOpenChangeComplete']);
 
   createEffect(() => {
     const element = getElement();
@@ -43,6 +45,7 @@ export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttribute
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);
+    handlers.push(eventHandlers.onOpenChangeComplete);
   });
 
   createEffect(() => {
@@ -50,7 +53,7 @@ export const MenuSubmenuRoot: Component<MenuSubmenuRootProps & JSX.HTMLAttribute
     if (!element) return;
 
     const ac = new AbortController();
-    for (const [index, eventName] of ['openChange'].entries()) {
+    for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
       element.addEventListener(
         eventName,
         (event) => {

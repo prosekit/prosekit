@@ -25,6 +25,8 @@ export interface MenuSubmenuRootProps {
   disabled?: MenuSubmenuRootElementProps['disabled'];
   /** Emitted when the submenu is opened or closed. */
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
+  /** Emitted after the submenu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: MenuSubmenuRootEvents['openChangeComplete']) => void;
   children?: Snippet;
 }
 

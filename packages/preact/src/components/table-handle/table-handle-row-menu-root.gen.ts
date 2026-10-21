@@ -24,6 +24,8 @@ export interface TableHandleRowMenuRootProps {
   disabled?: TableHandleRowMenuRootElementProps['disabled'];
   /** Emitted when the menu is opened or closed. */
   onOpenChange?: (event: TableHandleRowMenuRootEvents['openChange']) => void;
+  /** Emitted after the menu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: TableHandleRowMenuRootEvents['openChangeComplete']) => void;
 }
 
 function TableHandleRowMenuRootComponent(props: TableHandleRowMenuRootProps, forwardedRef: Ref<TableHandleRowMenuRootElement>) {
@@ -32,20 +34,20 @@ function TableHandleRowMenuRootComponent(props: TableHandleRowMenuRootProps, for
   const elementRef = useRef<TableHandleRowMenuRootElement>(null);
   const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
-  const { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, ...restProps } = props;
+  const { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, onOpenChangeComplete: e1, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
     Object.assign(element, { defaultOpen: p0, disabled: p1, open: p2 });
-    handlersRef.current = [e0] as Array<((event: Event) => void) | undefined>;
+    handlersRef.current = [e0, e1] as Array<((event: Event) => void) | undefined>;
   });
 
   useLayoutEffect(() => {
     const element = elementRef.current;
     if (!element) return;
     const ac = new AbortController();
-    for (const [index, eventName] of ['openChange'].entries()) {
+    for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
       element.addEventListener(
         eventName,
         (event: Event) => {

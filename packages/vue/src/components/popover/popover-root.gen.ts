@@ -29,6 +29,8 @@ export interface PopoverRootProps {
   disabled?: PopoverRootElementProps['disabled'];
   /** Emitted when the popover is opened or closed. */
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
+  /** Emitted after the popover finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: PopoverRootEvents['openChangeComplete']) => void;
 }
 
 /** A Vue component that renders an `prosekit-popover-root` custom element. */
@@ -39,8 +41,8 @@ export const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttribut
     const elementRef = shallowRef<HTMLElement | null>(null);
 
     const splittedProps = computed(() => {
-      const { defaultOpen: p0, disabled: p1, modal: p2, open: p3, onOpenChange: e0, ...restProps } = props;
-      return [[p0, p1, p2, p3, e0], restProps] as const;
+      const { defaultOpen: p0, disabled: p1, modal: p2, open: p3, onOpenChange: e0, onOpenChangeComplete: e1, ...restProps } = props;
+      return [[p0, p1, p2, p3, e0, e1], restProps] as const;
     });
 
     const handlers: Array<((event: any) => void) | undefined> = [];
@@ -49,12 +51,13 @@ export const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttribut
       const element = elementRef.value;
       if (!element) return;
 
-      const [p0, p1, p2, p3, e0] = splittedProps.value[0];
+      const [p0, p1, p2, p3, e0, e1] = splittedProps.value[0];
 
       Object.assign(element, { defaultOpen: p0, disabled: p1, modal: p2, open: p3 });
 
       handlers.length = 0;
       handlers.push(e0);
+      handlers.push(e1);
     });
 
     watchEffect(() => {
@@ -62,7 +65,7 @@ export const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttribut
       if (!element) return;
 
       const ac = new AbortController();
-      for (const [index, eventName] of ['openChange'].entries()) {
+      for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
         element.addEventListener(
           eventName,
           (event: Event) => {
@@ -79,5 +82,5 @@ export const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttribut
       return h('prosekit-popover-root', { ...restProps, ref: elementRef }, slots.default?.());
     };
   },
-  { props: ['defaultOpen', 'disabled', 'modal', 'open', 'onOpenChange'] },
+  { props: ['defaultOpen', 'disabled', 'modal', 'open', 'onOpenChange', 'onOpenChangeComplete'] },
 );

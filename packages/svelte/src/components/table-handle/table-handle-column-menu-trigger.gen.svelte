@@ -5,8 +5,9 @@
   import { useEditorContext } from '../../contexts/editor-context.ts'
   registerTableHandleColumnMenuTriggerElement()
 
-  let { editor: p0, children = undefined, ...restProps } = $props()
+  let { editor: p0, onOpenChange: e0, children = undefined, ...restProps } = $props()
   let element: TableHandleColumnMenuTriggerElement | undefined
+  const handlers: EventListener[] = []
 
   const p0Fallback = useEditorContext()
 
@@ -14,6 +15,19 @@
     if (!element) return
 
     Object.assign(element, { editor: p0 ?? p0Fallback })
+
+    handlers.length = 0
+    handlers.push(e0)
+  })
+
+  $effect(() => {
+    if (!element) return
+
+    const ac = new AbortController()
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
+    }
+    return () => ac.abort()
   })
 </script>
 

@@ -109,6 +109,8 @@ export class MenuSubmenuRootElement extends Base.MenuSubmenuRootElement {}
  *
  * Properties: {@link MenuSubmenuTriggerProps}
  *
+ * Events: {@link MenuSubmenuTriggerEvents}
+ *
  * Data attributes:
  *
  * | Attribute | Description |
@@ -137,6 +139,7 @@ export interface MenuTriggerProps extends Base.MenuTriggerProps {}
 export interface MenuItemEvents extends Base.MenuItemEvents {}
 export interface MenuRootEvents extends Base.MenuRootEvents {}
 export interface MenuSubmenuRootEvents extends Base.MenuSubmenuRootEvents {}
+export interface MenuSubmenuTriggerEvents extends Base.MenuSubmenuTriggerEvents {}
 export interface MenuTriggerEvents extends Base.MenuTriggerEvents {}
 
 /** @internal */

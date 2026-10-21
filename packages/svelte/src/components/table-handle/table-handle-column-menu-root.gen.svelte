@@ -4,13 +4,27 @@
   import type { TableHandleColumnMenuRootElement } from '@prosekit/web/table-handle'
   registerTableHandleColumnMenuRootElement()
 
-  let { defaultOpen: p0, disabled: p1, open: p2, children = undefined, ...restProps } = $props()
+  let { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, children = undefined, ...restProps } = $props()
   let element: TableHandleColumnMenuRootElement | undefined
+  const handlers: EventListener[] = []
 
   $effect(() => {
     if (!element) return
 
     Object.assign(element, { defaultOpen: p0, disabled: p1, open: p2 })
+
+    handlers.length = 0
+    handlers.push(e0)
+  })
+
+  $effect(() => {
+    if (!element) return
+
+    const ac = new AbortController()
+    for (const [index, eventName] of ["openChange"].entries()) {
+      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
+    }
+    return () => ac.abort()
   })
 </script>
 

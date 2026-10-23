@@ -74,7 +74,11 @@ export function insertOutputSpecAttrs(
     const rest = dom.slice(1) as Array<unknown>
     let oldAttrs: Record<string, unknown>
 
-    if (rest.length > 0 && (rest[0] == null || typeof rest[0] === 'object')) {
+    const first = rest[0]
+    if (
+      rest.length > 0
+      && (first == null || (typeof first === 'object' && !Array.isArray(first) && !isNodeLike(first)))
+    ) {
       oldAttrs = rest.shift() as Record<string, unknown>
     } else {
       oldAttrs = {}

@@ -45,6 +45,30 @@ describe('insertOutputSpecAttrs', () => {
     `)
   })
 
+  it('should insert attrs into an array with a child array', () => {
+    const spec: DOMOutputSpec = ['table', ['tbody', 0]]
+    const result = insertOutputSpecAttrs(spec, [['data-foo', 'foo']])
+    expect(result).toMatchInlineSnapshot(`
+      [
+        "table",
+        {
+          "data-foo": "foo",
+        },
+        [
+          "tbody",
+          0,
+        ],
+      ]
+    `)
+  })
+
+  it('should insert attrs into an array with a child element', () => {
+    const child = document.createElement('tbody')
+    const spec: DOMOutputSpec = ['table', child]
+    const result = insertOutputSpecAttrs(spec, [['data-foo', 'foo']])
+    expect(result).toEqual(['table', { 'data-foo': 'foo' }, child])
+  })
+
   it('should insert attrs into an element', () => {
     const element = document.createElement('input')
     element.type = 'checkbox'

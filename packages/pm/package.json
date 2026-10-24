@@ -52,8 +52,8 @@
     "prosemirror-keymap": "^1.2.3",
     "prosemirror-model": "^1.25.12",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-transform": "^1.12.2",
-    "prosemirror-view": "^1.42.6"
+    "prosemirror-transform": "^1.12.4",
+    "prosemirror-view": "^1.42.7"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",

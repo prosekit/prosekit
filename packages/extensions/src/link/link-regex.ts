@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-string-raw -- Don't use String.raw here for better bundler minification */
 /* eslint-disable regexp/prefer-character-class */
 /* eslint-disable regexp/no-super-linear-backtracking */
 /* eslint-disable regexp/prefer-w */

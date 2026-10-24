@@ -1,2 +1,1 @@
-import { defineMarkPasteRule, definePasteRule } from "@prosekit/core";
-export { defineMarkPasteRule, definePasteRule };
+export { defineMarkPasteRule, definePasteRule } from "@prosekit/core";

@@ -1,2 +1,1 @@
-import { n as defineFilePasteHandler, r as defineFileDropHandler, t as UploadTask } from "./file2.js";
-export { UploadTask, defineFileDropHandler, defineFilePasteHandler };
+export { t as UploadTask, r as defineFileDropHandler, n as defineFilePasteHandler } from "./file2.js";

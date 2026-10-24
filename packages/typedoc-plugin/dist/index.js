@@ -1,5 +1,5 @@
 import { MarkdownPageEvent } from "typedoc-plugin-markdown";
-//#region src/index.ts
+// src/index.ts
 function load(app) {
 	app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
 		/**
@@ -13,7 +13,6 @@ function load(app) {
 		};
 	});
 }
-//#endregion
 export { load };
 
 //# sourceMappingURL=index.js.map

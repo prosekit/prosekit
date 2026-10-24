@@ -1,2 +1,1 @@
-import { t as defineMarkRule } from "./mark-rule2.js";
-export { defineMarkRule };
+export { t as defineMarkRule } from "./mark-rule2.js";

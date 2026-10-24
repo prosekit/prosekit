@@ -1,0 +1,29 @@
+import type { TableHandleColumnMenuRootElement, TableHandleColumnMenuRootEvents, TableHandleColumnMenuRootProps as TableHandleColumnMenuRootElementProps } from '@prosekit/web/table-handle';
+import type { Component, Snippet } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+/** Props for the {@link TableHandleColumnMenuRoot} Svelte component. */
+export interface TableHandleColumnMenuRootProps {
+    /**
+     * Whether the overlay is initially open.
+     * @default false
+     */
+    defaultOpen?: TableHandleColumnMenuRootElementProps['defaultOpen'];
+    /**
+     * Whether the overlay is currently open.
+     * @default null
+     */
+    open?: TableHandleColumnMenuRootElementProps['open'];
+    /**
+     * Whether the component should ignore user interaction.
+     * @default false
+     */
+    disabled?: TableHandleColumnMenuRootElementProps['disabled'];
+    /** Emitted when the menu is opened or closed. */
+    onOpenChange?: (event: TableHandleColumnMenuRootEvents['openChange']) => void;
+    /** Emitted after the menu finishes opening or closing, including its animations. */
+    onOpenChangeComplete?: (event: TableHandleColumnMenuRootEvents['openChangeComplete']) => void;
+    children?: Snippet;
+}
+/** A Svelte component that renders an `prosekit-table-handle-column-menu-root` custom element. */
+export declare const TableHandleColumnMenuRoot: Component<TableHandleColumnMenuRootProps & HTMLAttributes<TableHandleColumnMenuRootElement>>;
+//# sourceMappingURL=table-handle-column-menu-root.gen.d.ts.map

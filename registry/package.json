@@ -342,7 +342,7 @@
     "colorjs.io": "^0.7.1",
     "diffable-html-snapshot": "^0.4.0",
     "fast-fuzzy": "^1.12.0",
-    "katex": "^0.18.9",
+    "katex": "^0.19.0",
     "lit": "^3.3.3",
     "magic-string": "^1.4.2",
     "parse-imports-exports": "^0.2.4",

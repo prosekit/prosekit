@@ -202,8 +202,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       diffable-html-snapshot:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.0
+        version: 0.4.0
       tsdown:
         specifier: 'catalog:'
         version: 0.23.0(@tsdown/css@0.23.0)(@volar/typescript@2.4.28)(oxc-resolver@11.24.2)(tsx@4.23.15)(typescript@6.0.3)(vue-tsc@3.3.12)
@@ -309,8 +309,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       diffable-html-snapshot:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.0
+        version: 0.4.0
       katex:
         specifier: ^0.18.9
         version: 0.18.9
@@ -1002,8 +1002,8 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1
       diffable-html-snapshot:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.0
+        version: 0.4.0
       fast-fuzzy:
         specifier: ^1.12.0
         version: 1.12.0
@@ -4997,8 +4997,8 @@ packages:
     resolution: {integrity: sha512-svtcdpS8CgJyqAjEQIXdb3OjhFVVYjzGAPO8WGCmRbrml64SPw/jJD4GoE98aR7r25A0XcgrK3F02yw9R/vhQw==}
     engines: {node: '>=0.3.1'}
 
-  diffable-html-snapshot@0.3.0:
-    resolution: {integrity: sha512-Aksm9/N3TicWeNhBmd8NjA5bBmOZoLBfOzmbCtnDUm/exmCrzB5TbvjHxxTgwi5/dqcLjpLZHu5ho1wRrK5U7Q==}
+  diffable-html-snapshot@0.4.0:
+    resolution: {integrity: sha512-IhaC88TpUMxLazyNVLY4RVdH87eDKZ2HCMd0F2qncmIA0F3aHxQtME6k1P2sFLCxJhAEpllBI09HBMQdfblE0Q==}
 
   direction@2.0.1:
     resolution: {integrity: sha512-9S6m9Sukh1cZNknO1CWAr2QAWsbKLafQiyM5gZ7VgXHeuaoUwffKN4q6NC4A/Mf9iiPlOXQEKW/Mv/mh9/3YFA==}
@@ -11680,7 +11680,7 @@ snapshots:
 
   diff@9.0.0: {}
 
-  diffable-html-snapshot@0.3.0:
+  diffable-html-snapshot@0.4.0:
     dependencies:
       htmlparser2: 12.0.0
 

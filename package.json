@@ -46,7 +46,7 @@
     "@vitest/coverage-v8": "catalog:",
     "dprint": "^0.61.1",
     "eslint": "^10.13.0",
-    "knip": "^6.38.0",
+    "knip": "^6.42.1",
     "monorepo-typescript-references": "^1.1.2",
     "nano-staged": "^1.0.2",
     "oxfmt": "^0.72.0",

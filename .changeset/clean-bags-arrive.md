@@ -1,6 +1,6 @@
 ---
 "prosekit": patch
-"@prosekit/extensions": patch
+"@prosekit/pm": patch
 ---
 
 Update ProseMirror dependencies.

@@ -979,7 +979,7 @@ importers:
         version: 19.3.0(@types/react@19.3.0)
       '@vitejs/plugin-react':
         specifier: ^6.1.2
-        version: 6.1.2(babel-plugin-react-compiler@1.0.0)(vite@8.3.5)
+        version: 6.1.2(babel-plugin-react-compiler@1.0.0)(oxc-transform-react@0.155.0)(vite@8.3.5)
       '@vitejs/plugin-vue':
         specifier: ^6.0.9
         version: 6.0.9(vite@8.3.5)(vue@3.5.43)
@@ -1095,8 +1095,8 @@ importers:
         specifier: ^6.0.6
         version: 6.0.6(@babel/core@7.29.0)(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(preact@10.29.8)(sass@1.105.0)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.1)
       '@astrojs/react':
-        specifier: ^6.0.6
-        version: 6.0.6(@types/node@24.12.2)(@types/react-dom@19.3.0)(@types/react@19.3.0)(esbuild@0.28.1)(jiti@2.7.0)(react-dom@19.3.0)(react@19.3.0)(sass@1.105.0)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.1)
+        specifier: ^7.1.1
+        version: 7.1.1(@types/node@24.12.2)(@types/react-dom@19.3.0)(@types/react@19.3.0)(babel-plugin-react-compiler@1.0.0)(esbuild@0.28.1)(jiti@2.7.0)(oxc-transform-react@0.155.0)(react-dom@19.3.0)(react@19.3.0)(sass@1.105.0)(tsx@4.23.15)(yaml@2.9.1)
       '@astrojs/solid-js':
         specifier: ^7.0.2
         version: 7.0.2(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.105.0)(solid-js@1.9.17)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.1)
@@ -1374,6 +1374,9 @@ packages:
   '@astrojs/internal-helpers@0.12.0':
     resolution: {integrity: sha512-pKPuwCDtO0L7zgmt1JGd9X4Aes1+0SX3IEBSqBNPHsScYdPMlfmed3Y7DTbXyF7E+8ylnb563o/0OzGQPOFehw==}
 
+  '@astrojs/internal-helpers@0.13.0':
+    resolution: {integrity: sha512-20jxQqnSmpskcGyad7N5l6Xf1gz0UCa6lNde44bEBdaXGpncEYfAZJ142r2ZgzBaG4dUyzGmhqZWv1INU2eiHQ==}
+
   '@astrojs/language-server@2.16.7':
     resolution: {integrity: sha512-b64bWT74Vq/ORcSqW7TdIjjpB6hcl+Ei/lMANIUaAGlLPiYNtPTRI/j2tzvugT+LoVwfJtE2Ukq/t2OGCyEtfQ==}
     hasBin: true
@@ -1410,14 +1413,18 @@ packages:
     resolution: {integrity: sha512-KTivpmnz6lDsC6o9H4+DNm2SrE/GHzw8cNAvEJwAvUT+eoaEnn/4NtbDNfRRaxaJHdp15gf+tfHAWiXR4wB3BA==}
     engines: {node: '>=22.12.0'}
 
-  '@astrojs/react@6.0.6':
-    resolution: {integrity: sha512-TQ9G2m2tIx9c105GmvjRAcTk+kV0QER5MsEPKUbK1Jm8SBYKzIzR89xh4L2vXAxI2zMfTMmsR7vln1TOLZpckw==}
-    engines: {node: '>=22.12.0'}
+  '@astrojs/react@7.1.1':
+    resolution: {integrity: sha512-jHan8UuXzFEbzcmsjCRrepm9Xc5XRz+Jt57MjfE568tbOEoDKVzeMuHf9YO0Y4hHwROX8iJmLzaiT3Yr5W0UbQ==}
+    engines: {node: '>=22.23.4'}
     peerDependencies:
       '@types/react': ^17.0.50 || ^18.0.21 || ^19.0.0
       '@types/react-dom': ^17.0.17 || ^18.0.6 || ^19.0.0
+      oxc-transform-react: ^0.145.0
       react: ^17.0.2 || ^18.0.0 || ^19.0.0
       react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      oxc-transform-react:
+        optional: true
 
   '@astrojs/sitemap@3.7.3':
     resolution: {integrity: sha512-f8euLVsyeAmAkSm/1M2Kb8sL8byQmfgbvBNaHFItCheTj/IpiJYSEWVcqDHZ/yEHxiS7+w87mQkzwZaPHmk5GA==}
@@ -1591,18 +1598,6 @@ packages:
 
   '@babel/plugin-transform-react-jsx-development@7.27.1':
     resolution: {integrity: sha512-ykDdF5yI4f1WrAolLqeF3hmYU12j9ntLQl/AOG1HAS21jxyg1Q0/J/tpREuYLfatGdGmXp/3yS0ZA76kOlVq9Q==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-transform-react-jsx-self@7.27.1':
-    resolution: {integrity: sha512-6UzkCs+ejGdZ5mFFC/OCUrv028ab2fp1znZmCZjAOBKiBK2jXD1O+BPSfX8X2qjJ75fZBMSnQn3Rq2mrBJK2mw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-transform-react-jsx-source@7.27.1':
-    resolution: {integrity: sha512-zbwoTsBruTeKB9hSq73ha66iFeJHuaFkUbwvqElnygoNbj/jHRsSeokowZFN3CZ64IvEqcmmkVe89OPXc7ldAw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -3569,9 +3564,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rolldown/pluginutils@1.0.0-rc.3':
-    resolution: {integrity: sha512-eybk3TjzzzV97Dlj5c+XrBFW57eTNhzod66y9HrBlzJ6NsCrWCp/2kaPS3K9wJmurBC0Tdw4yPjXKZqlznim3Q==}
-
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
@@ -4296,12 +4288,6 @@ packages:
   '@unocss/rule-utils@66.8.1':
     resolution: {integrity: sha512-EQ9bhifqIodIsl7+eOmkCVWXkZ7dnwkmTURFyAosVpUc8j4WYsfnQC+3SjKnJfT44s1rIqHJtoBBaG9X97opdA==}
 
-  '@vitejs/plugin-react@5.2.0':
-    resolution: {integrity: sha512-YmKkfhOAi3wsB1PhJq5Scj3GXMn3WvtQ/JC0xoopuHoXSdmtdStOpFrYaT1kie2YgFBcIe64ROzMYRjCrYOdYw==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-    peerDependencies:
-      vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-
   '@vitejs/plugin-react@6.1.2':
     resolution: {integrity: sha512-fhJNGUdscQa4HkI0xFxwonWyhnVReCPDbXI7FH7jmzpnVCrFQI7PRrhWecO263610vOrs9tr2Y4xcf8uAdFxbw==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -5025,6 +5011,10 @@ packages:
 
   devalue@5.9.4:
     resolution: {integrity: sha512-sPAT4pztbu6586/hrhOnMKS17IJrvg12mXiSPSS3W5qDeN2RGgvZ0diZCm31dBbnevfVmujNO3IM2wrS4Y2Rhg==}
+
+  devalue@6.0.3:
+    resolution: {integrity: sha512-3woMEITftG1wKeO/4d/QXH1DVKctTSZg3jNGPpjp9hNr5Hos8MCFF5McTML5ZtgKDObm2R591B0spRp2IVernA==}
+    engines: {node: '>=18'}
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
@@ -6745,10 +6735,6 @@ packages:
     peerDependencies:
       react: ^19.3.0
 
-  react-refresh@0.18.0:
-    resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
-    engines: {node: '>=0.10.0'}
-
   react-tweet@3.3.1:
     resolution: {integrity: sha512-0Gj1YgBTe1K85NBMoWBlUc17Rdc67gIJLlacrVgj+3jWIoXpFfxPdZ1U5OnWkkF9zxhphqs2pY1i//JBfP3Qog==}
     peerDependencies:
@@ -7023,6 +7009,10 @@ packages:
 
   smol-toml@1.8.0:
     resolution: {integrity: sha512-kCZr2V3ch9i00x8zXRhjUNVcjG9ijES5dDudkXvUVCT5QlJNQWElSJdZqyPemffHoLNUYwOcou0Fy+ojN0uHSQ==}
+    engines: {node: '>= 18'}
+
+  smol-toml@1.9.1:
+    resolution: {integrity: sha512-j7WyPdf0CJoutMzMoPLF/bVXHtKZIT9Rb4eGeEbWw8X2t5oirjPgpL+OpaENZrILYaXqYwnVH+qgUwVbl+pUJQ==}
     engines: {node: '>= 18'}
 
   solid-js@1.9.17:
@@ -7368,6 +7358,9 @@ packages:
 
   ultrahtml@1.6.0:
     resolution: {integrity: sha512-R9fBn90VTJrqqLDwyMph+HGne8eqY1iPfYhPzZrvKpIfwkWZbcYlfpsb8B9dTvBfpy1/hqAD7Wi8EKfP9e8zdw==}
+
+  ultrahtml@1.7.0:
+    resolution: {integrity: sha512-2xRd0VHoAQE4M+vF/DvFFB7pUV0ZxTW1TLi7lHQWnF/Sb5TPeEUV/l+hxcNnGO00ZXGnR0voCMmYRKQf+rvJ2g==}
 
   unbash@4.0.11:
     resolution: {integrity: sha512-FoSOKV7NEofQSkAefMVHam4ZPKYMxjAydxiV72UFEDNV/YofxjGfiZ2A9pZjdL/lRJzTjcu4PABo1JYJX8N5iQ==}
@@ -8277,6 +8270,17 @@ snapshots:
       unified: 11.0.5
       yaml: 2.9.1
 
+  '@astrojs/internal-helpers@0.13.0':
+    dependencies:
+      '@types/hast': 3.0.5
+      '@types/mdast': 4.0.4
+      picomatch: 4.0.7
+      retext-smartypants: 6.2.0
+      shiki: 4.5.0
+      smol-toml: 1.9.1
+      unified: 11.0.5
+      yaml: 2.9.1
+
   '@astrojs/language-server@2.16.7(prettier@3.8.1)(typescript@6.0.3)':
     dependencies:
       '@astrojs/compiler': 2.13.1
@@ -8346,20 +8350,24 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/react@6.0.6(@types/node@24.12.2)(@types/react-dom@19.3.0)(@types/react@19.3.0)(esbuild@0.28.1)(jiti@2.7.0)(react-dom@19.3.0)(react@19.3.0)(sass@1.105.0)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.1)':
+  '@astrojs/react@7.1.1(@types/node@24.12.2)(@types/react-dom@19.3.0)(@types/react@19.3.0)(babel-plugin-react-compiler@1.0.0)(esbuild@0.28.1)(jiti@2.7.0)(oxc-transform-react@0.155.0)(react-dom@19.3.0)(react@19.3.0)(sass@1.105.0)(tsx@4.23.15)(yaml@2.9.1)':
     dependencies:
-      '@astrojs/internal-helpers': 0.11.0
+      '@astrojs/internal-helpers': 0.13.0
       '@types/react': 19.3.0
       '@types/react-dom': 19.3.0(@types/react@19.3.0)
-      '@vitejs/plugin-react': 5.2.0(supports-color@10.2.2)(vite@8.3.5)
-      devalue: 5.9.4
+      '@vitejs/plugin-react': 6.1.2(babel-plugin-react-compiler@1.0.0)(oxc-transform-react@0.155.0)(vite@8.3.5)
+      devalue: 6.0.3
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
-      ultrahtml: 1.6.0
+      ultrahtml: 1.7.0
       vite: 8.3.5(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.105.0)(tsx@4.23.15)(yaml@2.9.1)
+    optionalDependencies:
+      oxc-transform-react: 0.155.0
     transitivePeerDependencies:
+      - '@rolldown/plugin-babel'
       - '@types/node'
       - '@vitejs/devtools'
+      - babel-plugin-react-compiler
       - esbuild
       - jiti
       - less
@@ -8367,7 +8375,6 @@ snapshots:
       - sass-embedded
       - stylus
       - sugarss
-      - supports-color
       - terser
       - tsx
       - yaml
@@ -8661,16 +8668,6 @@ snapshots:
       '@babel/plugin-transform-react-jsx': 7.28.6(@babel/core@7.29.0)(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
-
-  '@babel/plugin-transform-react-jsx-self@7.27.1(@babel/core@7.29.0)':
-    dependencies:
-      '@babel/core': 7.29.0(supports-color@10.2.2)
-      '@babel/helper-plugin-utils': 7.28.6
-
-  '@babel/plugin-transform-react-jsx-source@7.27.1(@babel/core@7.29.0)':
-    dependencies:
-      '@babel/core': 7.29.0(supports-color@10.2.2)
-      '@babel/helper-plugin-utils': 7.28.6
 
   '@babel/plugin-transform-react-jsx@7.28.6(@babel/core@7.29.0)(supports-color@10.2.2)':
     dependencies:
@@ -10242,8 +10239,6 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.2.15':
     optional: true
 
-  '@rolldown/pluginutils@1.0.0-rc.3': {}
-
   '@rolldown/pluginutils@1.0.1': {}
 
   '@rollup/pluginutils@4.2.1':
@@ -10934,24 +10929,13 @@ snapshots:
       '@unocss/core': 66.8.1
       magic-string: 1.4.2
 
-  '@vitejs/plugin-react@5.2.0(supports-color@10.2.2)(vite@8.3.5)':
-    dependencies:
-      '@babel/core': 7.29.0(supports-color@10.2.2)
-      '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
-      '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.29.0)
-      '@rolldown/pluginutils': 1.0.0-rc.3
-      '@types/babel__core': 7.20.5
-      react-refresh: 0.18.0
-      vite: 8.3.5(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.105.0)(tsx@4.23.15)(yaml@2.9.1)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@vitejs/plugin-react@6.1.2(babel-plugin-react-compiler@1.0.0)(vite@8.3.5)':
+  '@vitejs/plugin-react@6.1.2(babel-plugin-react-compiler@1.0.0)(oxc-transform-react@0.155.0)(vite@8.3.5)':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.3.5(@types/node@24.12.2)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.105.0)(tsx@4.23.15)(yaml@2.9.1)
     optionalDependencies:
       babel-plugin-react-compiler: 1.0.0
+      oxc-transform-react: 0.155.0
 
   '@vitejs/plugin-vue-jsx@5.1.5(supports-color@10.2.2)(vite@8.3.5)(vue@3.5.43)':
     dependencies:
@@ -11764,6 +11748,8 @@ snapshots:
   detect-newline@4.0.1: {}
 
   devalue@5.9.4: {}
+
+  devalue@6.0.3: {}
 
   devlop@1.1.0:
     dependencies:
@@ -13914,8 +13900,6 @@ snapshots:
       react: 19.3.0
       scheduler: 0.28.0
 
-  react-refresh@0.18.0: {}
-
   react-tweet@3.3.1(react-dom@19.3.0)(react@19.3.0):
     dependencies:
       '@swc/helpers': 0.5.18
@@ -14321,6 +14305,8 @@ snapshots:
 
   smol-toml@1.8.0: {}
 
+  smol-toml@1.9.1: {}
+
   solid-js@1.9.17:
     dependencies:
       csstype: 3.2.3
@@ -14677,6 +14663,8 @@ snapshots:
   ufo@1.6.3: {}
 
   ultrahtml@1.6.0: {}
+
+  ultrahtml@1.7.0: {}
 
   unbash@4.0.11: {}
 

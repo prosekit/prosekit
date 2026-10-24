@@ -32,6 +32,8 @@ strictDepBuilds: true
 strictPeerDependencies: true
 
 peerDependencyRules:
+  allowedVersions:
+    "vitest-browser-solid>vitest": "5"
   allowAny:
     - "oxc-transform-react"
 
@@ -49,3 +51,4 @@ minimumReleaseAgeExclude:
   - "prosemirror-view"
   - "prosemirror-highlight"
   - "prosemirror-flat-list"
+  - eslint-plugin-unicorn@79.0.0

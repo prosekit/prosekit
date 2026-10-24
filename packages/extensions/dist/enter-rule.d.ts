@@ -1,2 +1,0 @@
-import { a as defineEnterRule, i as TextBlockEnterRuleOptions, n as EnterRuleHandlerOptions, o as defineTextBlockEnterRule, r as EnterRuleOptions, t as EnterRuleHandler } from "./index2.js";
-export { type EnterRuleHandler, type EnterRuleHandlerOptions, EnterRuleOptions, TextBlockEnterRuleOptions, defineEnterRule, defineTextBlockEnterRule };

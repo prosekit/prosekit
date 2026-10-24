@@ -113,11 +113,7 @@ const config: AstroUserConfig = {
     // https://github.com/withastro/astro/issues/15341
     react({
       include: ['src/*/react/**/*.tsx', '**/src/components/**/*.tsx'],
-      babel: {
-        plugins: [
-          ['babel-plugin-react-compiler'],
-        ],
-      },
+      compiler: true,
     }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     svelte(),

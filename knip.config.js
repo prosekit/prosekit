@@ -45,7 +45,6 @@ const config = {
       ],
       ignoreDependencies: [
         /@iconify-json\/.*/,
-        'babel-plugin-react-compiler',
 
         // Required by code blocks in documentation
         'y-websocket',

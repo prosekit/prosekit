@@ -62,8 +62,6 @@ export class TooltipRootElement extends Base.TooltipRootElement {}
  * `<prosekit-tooltip-trigger>` custom element.
  *
  * Properties: {@link TooltipTriggerProps}
- *
- * Events: {@link TooltipTriggerEvents}
  */
 export class TooltipTriggerElement extends Base.TooltipTriggerElement {}
 
@@ -73,7 +71,6 @@ export interface TooltipRootProps extends Base.TooltipRootProps {}
 export interface TooltipTriggerProps extends Base.TooltipTriggerProps {}
 
 export interface TooltipRootEvents extends Base.TooltipRootEvents {}
-export interface TooltipTriggerEvents extends Base.TooltipTriggerEvents {}
 
 /** @internal */
 export const TooltipPopupPropsDeclaration: PropsDeclaration<TooltipPopupProps> = Base.TooltipPopupPropsDeclaration

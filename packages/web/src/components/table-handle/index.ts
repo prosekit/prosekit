@@ -66,7 +66,6 @@ export {
   setupTableHandleColumnMenuTrigger,
   TableHandleColumnMenuTriggerElement,
   TableHandleColumnMenuTriggerPropsDeclaration,
-  type TableHandleColumnMenuTriggerEvents,
   type TableHandleColumnMenuTriggerProps,
 } from './table-handle-column-menu-trigger.ts'
 
@@ -124,6 +123,5 @@ export {
   setupTableHandleRowMenuTrigger,
   TableHandleRowMenuTriggerElement,
   TableHandleRowMenuTriggerPropsDeclaration,
-  type TableHandleRowMenuTriggerEvents,
   type TableHandleRowMenuTriggerProps,
 } from './table-handle-row-menu-trigger.ts'

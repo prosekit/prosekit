@@ -24,6 +24,8 @@ export interface MenuRootProps {
   disabled?: MenuRootElementProps['disabled'];
   /** Emitted when the menu is opened or closed. */
   onOpenChange?: (event: MenuRootEvents['openChange']) => void;
+  /** Emitted after the menu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: MenuRootEvents['openChangeComplete']) => void;
 }
 
 /** A Solid component that renders an `prosekit-menu-root` custom element. */
@@ -33,7 +35,7 @@ export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElem
   const [getElement, setElement] = createSignal<MenuRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'open'], ['onOpenChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'open'], ['onOpenChange', 'onOpenChangeComplete']);
 
   createEffect(() => {
     const element = getElement();
@@ -43,6 +45,7 @@ export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElem
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);
+    handlers.push(eventHandlers.onOpenChangeComplete);
   });
 
   createEffect(() => {
@@ -50,7 +53,7 @@ export const MenuRoot: Component<MenuRootProps & JSX.HTMLAttributes<MenuRootElem
     if (!element) return;
 
     const ac = new AbortController();
-    for (const [index, eventName] of ['openChange'].entries()) {
+    for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
       element.addEventListener(
         eventName,
         (event) => {

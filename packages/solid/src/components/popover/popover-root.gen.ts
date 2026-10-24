@@ -31,6 +31,8 @@ export interface PopoverRootProps {
   disabled?: PopoverRootElementProps['disabled'];
   /** Emitted when the popover is opened or closed. */
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
+  /** Emitted after the popover finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: PopoverRootEvents['openChangeComplete']) => void;
 }
 
 /** A Solid component that renders an `prosekit-popover-root` custom element. */
@@ -40,7 +42,7 @@ export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<Popove
   const [getElement, setElement] = createSignal<PopoverRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'modal', 'open'], ['onOpenChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'modal', 'open'], ['onOpenChange', 'onOpenChangeComplete']);
 
   createEffect(() => {
     const element = getElement();
@@ -50,6 +52,7 @@ export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<Popove
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);
+    handlers.push(eventHandlers.onOpenChangeComplete);
   });
 
   createEffect(() => {
@@ -57,7 +60,7 @@ export const PopoverRoot: Component<PopoverRootProps & JSX.HTMLAttributes<Popove
     if (!element) return;
 
     const ac = new AbortController();
-    for (const [index, eventName] of ['openChange'].entries()) {
+    for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
       element.addEventListener(
         eventName,
         (event) => {

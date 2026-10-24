@@ -9,7 +9,7 @@ import {
   type PropsDeclaration,
   type State,
 } from '@aria-ui/core'
-import { setupMenuTrigger, type MenuTriggerEvents, type MenuTriggerProps } from '@aria-ui/elements/menu'
+import { setupMenuTrigger, type MenuTriggerProps } from '@aria-ui/elements/menu'
 import { useEventListener } from '@aria-ui/utils'
 import type { Editor } from '@prosekit/core'
 import { selectTableColumn, type defineTableCommands } from '@prosekit/extensions/table'
@@ -26,8 +26,6 @@ export interface TableHandleColumnMenuTriggerProps {
    */
   editor: Editor<TableCommandsExtension> | null
 }
-
-export interface TableHandleColumnMenuTriggerEvents extends MenuTriggerEvents {}
 
 /** @internal */
 export const TableHandleColumnMenuTriggerPropsDeclaration: PropsDeclaration<TableHandleColumnMenuTriggerProps> = defineProps<
@@ -100,8 +98,6 @@ const TableHandleColumnMenuTriggerElementBase: HostElementConstructor<TableHandl
  * `<prosekit-table-handle-column-menu-trigger>` custom element.
  *
  * Properties: {@link TableHandleColumnMenuTriggerProps}
- *
- * Events: {@link TableHandleColumnMenuTriggerEvents}
  */
 export class TableHandleColumnMenuTriggerElement extends TableHandleColumnMenuTriggerElementBase {}
 

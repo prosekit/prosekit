@@ -32,6 +32,8 @@ export interface PopoverRootProps {
   disabled?: PopoverRootElementProps['disabled'];
   /** Emitted when the popover is opened or closed. */
   onOpenChange?: (event: PopoverRootEvents['openChange']) => void;
+  /** Emitted after the popover finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: PopoverRootEvents['openChangeComplete']) => void;
   children?: Snippet;
 }
 

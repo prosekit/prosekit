@@ -22,6 +22,8 @@ export interface MenuSubmenuRootProps {
   disabled?: MenuSubmenuRootElementProps['disabled'];
   /** Emitted when the submenu is opened or closed. */
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
+  /** Emitted after the submenu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: MenuSubmenuRootEvents['openChangeComplete']) => void;
 }
 
 /** A Vue component that renders an `prosekit-menu-submenu-root` custom element. */
@@ -32,8 +34,8 @@ export const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTML
     const elementRef = shallowRef<HTMLElement | null>(null);
 
     const splittedProps = computed(() => {
-      const { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, ...restProps } = props;
-      return [[p0, p1, p2, e0], restProps] as const;
+      const { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, onOpenChangeComplete: e1, ...restProps } = props;
+      return [[p0, p1, p2, e0, e1], restProps] as const;
     });
 
     const handlers: Array<((event: any) => void) | undefined> = [];
@@ -42,12 +44,13 @@ export const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTML
       const element = elementRef.value;
       if (!element) return;
 
-      const [p0, p1, p2, e0] = splittedProps.value[0];
+      const [p0, p1, p2, e0, e1] = splittedProps.value[0];
 
       Object.assign(element, { defaultOpen: p0, disabled: p1, open: p2 });
 
       handlers.length = 0;
       handlers.push(e0);
+      handlers.push(e1);
     });
 
     watchEffect(() => {
@@ -55,7 +58,7 @@ export const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTML
       if (!element) return;
 
       const ac = new AbortController();
-      for (const [index, eventName] of ['openChange'].entries()) {
+      for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
         element.addEventListener(
           eventName,
           (event: Event) => {
@@ -72,5 +75,5 @@ export const MenuSubmenuRoot: DefineSetupFnComponent<MenuSubmenuRootProps & HTML
       return h('prosekit-menu-submenu-root', { ...restProps, ref: elementRef }, slots.default?.());
     };
   },
-  { props: ['defaultOpen', 'disabled', 'open', 'onOpenChange'] },
+  { props: ['defaultOpen', 'disabled', 'open', 'onOpenChange', 'onOpenChangeComplete'] },
 );

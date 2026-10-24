@@ -4,7 +4,7 @@
   import type { TooltipRootElement } from '@prosekit/web/tooltip'
   registerTooltipRootElement()
 
-  let { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, children = undefined, ...restProps } = $props()
+  let { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, onOpenChangeComplete: e1, children = undefined, ...restProps } = $props()
   let element: TooltipRootElement | undefined
   const handlers: EventListener[] = []
 
@@ -15,13 +15,14 @@
 
     handlers.length = 0
     handlers.push(e0)
+    handlers.push(e1)
   })
 
   $effect(() => {
     if (!element) return
 
     const ac = new AbortController()
-    for (const [index, eventName] of ["openChange"].entries()) {
+    for (const [index, eventName] of ["openChange", "openChangeComplete"].entries()) {
       element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
     }
     return () => ac.abort()

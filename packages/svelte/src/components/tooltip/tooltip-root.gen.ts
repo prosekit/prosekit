@@ -25,6 +25,8 @@ export interface TooltipRootProps {
   disabled?: TooltipRootElementProps['disabled'];
   /** Emitted when the tooltip is opened or closed. */
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
+  /** Emitted after the tooltip finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: TooltipRootEvents['openChangeComplete']) => void;
   children?: Snippet;
 }
 

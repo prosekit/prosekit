@@ -24,6 +24,8 @@ export interface TooltipRootProps {
   disabled?: TooltipRootElementProps['disabled'];
   /** Emitted when the tooltip is opened or closed. */
   onOpenChange?: (event: TooltipRootEvents['openChange']) => void;
+  /** Emitted after the tooltip finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: TooltipRootEvents['openChangeComplete']) => void;
 }
 
 /** A Solid component that renders an `prosekit-tooltip-root` custom element. */
@@ -33,7 +35,7 @@ export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<Toolti
   const [getElement, setElement] = createSignal<TooltipRootElement | null>(null);
   const handlers: Array<((event: any) => void) | undefined> = [];
 
-  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'open'], ['onOpenChange']);
+  const [elementProps, eventHandlers, restProps] = splitProps(props, ['defaultOpen', 'disabled', 'open'], ['onOpenChange', 'onOpenChangeComplete']);
 
   createEffect(() => {
     const element = getElement();
@@ -43,6 +45,7 @@ export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<Toolti
 
     handlers.length = 0;
     handlers.push(eventHandlers.onOpenChange);
+    handlers.push(eventHandlers.onOpenChangeComplete);
   });
 
   createEffect(() => {
@@ -50,7 +53,7 @@ export const TooltipRoot: Component<TooltipRootProps & JSX.HTMLAttributes<Toolti
     if (!element) return;
 
     const ac = new AbortController();
-    for (const [index, eventName] of ['openChange'].entries()) {
+    for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
       element.addEventListener(
         eventName,
         (event) => {

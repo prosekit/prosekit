@@ -178,7 +178,7 @@ importers:
     dependencies:
       '@ocavue/utils':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
@@ -237,7 +237,7 @@ importers:
         version: 1.0.1
       '@ocavue/utils':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       '@types/node':
         specifier: 'catalog:'
         version: 24.12.2
@@ -255,7 +255,7 @@ importers:
     dependencies:
       '@ocavue/utils':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -841,17 +841,17 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1
       '@aria-ui/elements':
-        specifier: ^0.1.14
-        version: 0.1.14
+        specifier: ^0.2.0
+        version: 0.2.0
       '@aria-ui/utils':
-        specifier: ^0.1.7
-        version: 0.1.7
+        specifier: ^0.1.8
+        version: 0.1.8
       '@floating-ui/dom':
         specifier: ^1.8.0
         version: 1.8.0
       '@ocavue/utils':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -955,7 +955,7 @@ importers:
         version: 3.1.0
       '@ocavue/utils':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       '@preact/preset-vite':
         specifier: ^2.10.6
         version: 2.10.6(@babel/core@7.29.0)(preact@10.29.8)(rollup@4.57.1)(supports-color@10.2.2)(vite@8.3.1)
@@ -1132,7 +1132,7 @@ importers:
         version: 3.1.0
       '@ocavue/utils':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.3.1)
@@ -1247,8 +1247,14 @@ packages:
   '@aria-ui/elements@0.1.14':
     resolution: {integrity: sha512-+6pngo3CUgDaZufZzqUrA/rx+4DKrcAq0KY2c64X9ZLt6xZ6MuXsJnMkdJQsYcDQtoenEgfGklW8NuWr4MK9Jg==}
 
+  '@aria-ui/elements@0.2.0':
+    resolution: {integrity: sha512-lld4i4TPCppLs780PzYVOIBDNCeeUQFkCucURcUo0V3iCLWo6Ag1JdzqEWsVA7sL6/6vjO6Fwq8JQhjY444ZXA==}
+
   '@aria-ui/utils@0.1.7':
     resolution: {integrity: sha512-ZKc/JOugSEYqsPUHYomxSbLyK9TcypsnhGL/yK2X14q6qyXVax5vHjLqgZmX5pwm28vYP4FOsUiUUtuSIK/eKw==}
+
+  '@aria-ui/utils@0.1.8':
+    resolution: {integrity: sha512-Qr0B9yHuZ36xZaTPttwnNunMp6K/Ugu/Oh1KZzGy7mBFWP7yRWRfWxSx4B78HGj4W3z5cuH426GVFvFDHAk3Eg==}
 
   '@asamuzakjp/css-color@7.0.1':
     resolution: {integrity: sha512-C9duntabagkBZ1LebM7FKmphR4Q1pBclLxVbZETQV0akkFjV0ooFxo8FlvAQyKj9F6l8rEnmidgcTlpyxFYizg==}
@@ -2757,8 +2763,8 @@ packages:
   '@ocavue/tsconfig@0.7.1':
     resolution: {integrity: sha512-jw1LPUqi/f043s61WOYEWWA6P1ZSSYXR3KJXcNxBXXrxiUXhEAbuEBUmi6Qs8NduIVU3xCkbaYw5BU3UyL3G3A==}
 
-  '@ocavue/utils@1.8.0':
-    resolution: {integrity: sha512-BD1ro+6Kllkmr/at+o32kvnLrVooUbk9gw3JAPaoAZXx+A5GhZ6Laa+UA38ifhG3vaamx+jcgEwX22BmTSMUVA==}
+  '@ocavue/utils@1.9.0':
+    resolution: {integrity: sha512-fHE+6t6Z0YfFnu5uiaKRRXoIo8NCTVBdT+b9SjMQydDTqTxHpvhNFvXsIUkYlJMyBQZjEpCyGlUfP+wscAmR1w==}
 
   '@one-ini/wasm@0.2.1':
     resolution: {integrity: sha512-TUqERXGNTifZ9y2g3wPxQrw3HpHv/02DsW3D90T9x0hhonrL1ZqpSmNrU2XkoIq0fP1N6gZfVQzy2Fw1ZvGBNg==}
@@ -8030,7 +8036,7 @@ snapshots:
 
   '@aria-ui/cli@0.1.9(oxfmt@0.72.0)(typescript@6.0.3)':
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       '@stricli/core': 1.2.9
       devalue: 5.9.4
       just-memoize: 2.2.0
@@ -8042,7 +8048,7 @@ snapshots:
 
   '@aria-ui/core@0.2.1':
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       '@zag-js/dom-query': 1.46.0
       alien-signals: 3.2.1
       server-dom-shim: 1.1.0
@@ -8055,7 +8061,20 @@ snapshots:
       '@zag-js/dismissable': 1.46.0
       '@zag-js/dom-query': 1.46.0
 
+  '@aria-ui/elements@0.2.0':
+    dependencies:
+      '@aria-ui/core': 0.2.1
+      '@aria-ui/utils': 0.1.8
+      '@floating-ui/dom': 1.8.0
+      '@zag-js/dismissable': 1.46.0
+      '@zag-js/dom-query': 1.46.0
+
   '@aria-ui/utils@0.1.7':
+    dependencies:
+      '@aria-ui/core': 0.2.1
+      '@zag-js/dom-query': 1.46.0
+
+  '@aria-ui/utils@0.1.8':
     dependencies:
       '@aria-ui/core': 0.2.1
       '@zag-js/dom-query': 1.46.0
@@ -9664,7 +9683,7 @@ snapshots:
 
   '@ocavue/tsconfig@0.7.1': {}
 
-  '@ocavue/utils@1.8.0': {}
+  '@ocavue/utils@1.9.0': {}
 
   '@one-ini/wasm@0.2.1': {}
 
@@ -9999,7 +10018,7 @@ snapshots:
 
   '@prosemirror-adapter/core@0.5.5':
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.6
@@ -11276,7 +11295,7 @@ snapshots:
 
   astro-minify-html-swc@0.1.12:
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       '@swc/html': 1.15.43
       fast-glob: 3.3.3
 
@@ -13635,7 +13654,7 @@ snapshots:
 
   prosemirror-drop-indicator@0.1.4:
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.6
@@ -13699,7 +13718,7 @@ snapshots:
 
   prosemirror-math@0.2.2:
     dependencies:
-      '@ocavue/utils': 1.8.0
+      '@ocavue/utils': 1.9.0
       prosemirror-enter-rules: 0.1.6
       prosemirror-inputrules: 1.5.1
       prosemirror-model: 1.25.12
@@ -14237,7 +14256,7 @@ snapshots:
   starlight-theme-nova@0.12.3(@astrojs/starlight@0.42.4)(supports-color@10.2.2)(typescript@6.0.3):
     dependencies:
       '@aria-ui/core': 0.2.1
-      '@aria-ui/utils': 0.1.7
+      '@aria-ui/utils': 0.1.8
       '@astrojs/markdown-satteri': 0.4.2
       '@pagefind/default-ui': 1.5.2
       '@shikijs/transformers': 4.4.3

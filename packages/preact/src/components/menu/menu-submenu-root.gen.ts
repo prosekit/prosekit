@@ -24,6 +24,8 @@ export interface MenuSubmenuRootProps {
   disabled?: MenuSubmenuRootElementProps['disabled'];
   /** Emitted when the submenu is opened or closed. */
   onOpenChange?: (event: MenuSubmenuRootEvents['openChange']) => void;
+  /** Emitted after the submenu finishes opening or closing, including its animations. */
+  onOpenChangeComplete?: (event: MenuSubmenuRootEvents['openChangeComplete']) => void;
 }
 
 function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: Ref<MenuSubmenuRootElement>) {
@@ -32,20 +34,20 @@ function MenuSubmenuRootComponent(props: MenuSubmenuRootProps, forwardedRef: Ref
   const elementRef = useRef<MenuSubmenuRootElement>(null);
   const handlersRef = useRef<Array<((event: Event) => void) | undefined>>([]);
 
-  const { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, ...restProps } = props;
+  const { defaultOpen: p0, disabled: p1, open: p2, onOpenChange: e0, onOpenChangeComplete: e1, ...restProps } = props;
 
   useLayoutEffect(() => {
     const element = elementRef.current as Record<string, unknown> | null;
     if (!element) return;
     Object.assign(element, { defaultOpen: p0, disabled: p1, open: p2 });
-    handlersRef.current = [e0] as Array<((event: Event) => void) | undefined>;
+    handlersRef.current = [e0, e1] as Array<((event: Event) => void) | undefined>;
   });
 
   useLayoutEffect(() => {
     const element = elementRef.current;
     if (!element) return;
     const ac = new AbortController();
-    for (const [index, eventName] of ['openChange'].entries()) {
+    for (const [index, eventName] of ['openChange', 'openChangeComplete'].entries()) {
       element.addEventListener(
         eventName,
         (event: Event) => {

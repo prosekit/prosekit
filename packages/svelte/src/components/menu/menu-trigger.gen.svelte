@@ -4,27 +4,13 @@
   import type { MenuTriggerElement } from '@prosekit/web/menu'
   registerMenuTriggerElement()
 
-  let { disabled: p0, onOpenChange: e0, children = undefined, ...restProps } = $props()
+  let { disabled: p0, children = undefined, ...restProps } = $props()
   let element: MenuTriggerElement | undefined
-  const handlers: EventListener[] = []
 
   $effect(() => {
     if (!element) return
 
     Object.assign(element, { disabled: p0 })
-
-    handlers.length = 0
-    handlers.push(e0)
-  })
-
-  $effect(() => {
-    if (!element) return
-
-    const ac = new AbortController()
-    for (const [index, eventName] of ["openChange"].entries()) {
-      element.addEventListener(eventName, (event) => handlers[index]?.(event), { signal: ac.signal })
-    }
-    return () => ac.abort()
   })
 </script>
 

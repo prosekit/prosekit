@@ -312,8 +312,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       katex:
-        specifier: ^0.18.9
-        version: 0.18.9
+        specifier: ^0.19.0
+        version: 0.19.0
       loro-crdt:
         specifier: ^1.16.3
         version: 1.16.3
@@ -1008,8 +1008,8 @@ importers:
         specifier: ^1.12.0
         version: 1.12.0
       katex:
-        specifier: ^0.18.9
-        version: 0.18.9
+        specifier: ^0.19.0
+        version: 0.19.0
       lit:
         specifier: ^3.3.3
         version: 3.3.3
@@ -5817,8 +5817,8 @@ packages:
     resolution: {integrity: sha512-Eeo8Ys1doU1z+x8AZsPpQu+p/QcZBI5PeOo7QGQdy2x2m0MU/hYagBbGOmXwr5KVbEfVuWv9LpnQWeehogurjg==}
     hasBin: true
 
-  katex@0.18.9:
-    resolution: {integrity: sha512-8ad9RyoKsb/g8/yLFE+KAlP+DhbCTRUNi/V9XGsxn0R+trJJltNwzcDNo0q/DEkOy5fQUQTAQyCXCYSE+OakTQ==}
+  katex@0.19.0:
+    resolution: {integrity: sha512-v6Tznz3zJ7u3niRCoDTsumM2+HA2XXcCu+WAacCeHD2z3p9A9Ks987o5FzfTGBN0e8A0vjEgIDvLbICrXpdw/Q==}
     hasBin: true
 
   keyv@5.6.0:
@@ -12680,7 +12680,7 @@ snapshots:
     dependencies:
       commander: 8.3.0
 
-  katex@0.18.9:
+  katex@0.19.0:
     dependencies:
       commander: 15.0.0
 

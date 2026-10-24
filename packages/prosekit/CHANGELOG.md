@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.23.0
+
+### Minor Changes
+
+- [`0116a63`](https://github.com/ocavue/prosekit/commit/0116a638d850b15bf087625cc6d7fd4d8b48ae9a) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/svelte)
+
+  Remove `onOpenChange` from `MenuTrigger`, `MenuSubmenuTrigger`, `PopoverTrigger`, `TooltipTrigger`, `TableHandleColumnMenuTrigger`, and `TableHandleRowMenuTrigger`. Use `onOpenChange` on the root instead. Add `onOpenChangeComplete` to the menu, submenu, popover, tooltip, and table handle menu roots.
+
+### Patch Changes
+
+- [`6a22c88`](https://github.com/ocavue/prosekit/commit/6a22c88c845e707bede6268dfe95a368d07af406) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror dependencies.
+- [`4ec77f9`](https://github.com/ocavue/prosekit/commit/4ec77f93d50f1edb2ea965478594866b3b90abf8) ![](https://prosekit.dev/b/core)
+
+  Fix `defineNodeAttr` and `defineMarkAttr` when `toDOM` returns an array spec whose second element is a child spec, such as `['table', ['tbody', 0]]`. The child is no longer treated as an attrs object.
+- [`20dcc8a`](https://github.com/ocavue/prosekit/commit/20dcc8a380173f73af8176e629da2dfe7600b4fe) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/svelte)
+
+  Add `onOpenChange` to `TableHandleColumnMenuRoot` and `TableHandleRowMenuRoot`.
+
 ## 0.22.4
 
 ### Patch Changes

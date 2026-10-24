@@ -1,0 +1,2 @@
+import { MarkPasteRuleOptions, PasteRuleHandler, PasteRuleHandlerOptions, PasteRuleOptions, defineMarkPasteRule, definePasteRule } from "@prosekit/core";
+export { type MarkPasteRuleOptions, type PasteRuleHandler, type PasteRuleHandlerOptions, type PasteRuleOptions, defineMarkPasteRule, definePasteRule };

@@ -52,7 +52,7 @@
     "@types/jsdom": "^30.0.0",
     "happy-dom": "^21.0.4",
     "jsdom": "^30.1.1",
-    "sass": "^1.105.0",
+    "sass": "^1.106.1",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

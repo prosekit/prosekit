@@ -1014,7 +1014,7 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       magic-string:
-        specifier: ^1.4.2
+        specifier: ^1.4.3
         version: 1.4.3
       parse-imports-exports:
         specifier: ^0.2.4

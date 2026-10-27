@@ -19,14 +19,14 @@ Using [shadcn/ui](https://ui.shadcn.com)? Scaffold a full-featured editor with a
 ```bash
 # React
 npx shadcn@latest add @prosekit/react-example-full
-# Vue
-npx shadcn@latest add @prosekit/vue-example-full
 # Preact
 npx shadcn@latest add @prosekit/preact-example-full
-# Svelte
-npx shadcn@latest add @prosekit/svelte-example-full
 # Solid
 npx shadcn@latest add @prosekit/solid-example-full
+# Use Vue (shadcn-vue)
+npx shadcn-vue@latest add https://unpkg.com/prosekit-registry/dist/r/vue-example-full.json
+# Use Svelte (shadcn-svelte)
+npx shadcn-svelte@latest add https://unpkg.com/prosekit-registry/dist/r/svelte-example-full.json
 ```
 
 ## Documentation

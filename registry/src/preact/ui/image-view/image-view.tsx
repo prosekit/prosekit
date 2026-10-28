@@ -1,4 +1,4 @@
-import type { JSX } from 'preact'
+import type { TargetedEvent } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
@@ -38,7 +38,7 @@ export default function ImageView(props: PreactNodeViewProps) {
   }, [url, uploading])
 
   const handleImageLoad = (
-    event: JSX.TargetedEvent<HTMLImageElement, Event>,
+    event: TargetedEvent<HTMLImageElement, Event>,
   ) => {
     const img = event.currentTarget
     const { naturalWidth, naturalHeight } = img

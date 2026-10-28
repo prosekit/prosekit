@@ -1,4 +1,4 @@
-import type { JSX } from 'preact'
+import type { TargetedEvent } from 'preact'
 import { useState } from 'preact/hooks'
 import type { BasicExtension } from 'prosekit/basic'
 import type { Editor } from 'prosekit/core'
@@ -89,7 +89,7 @@ export default function InlineMenu() {
   }
 
   const handleSubmit = (
-    event: JSX.TargetedEvent<HTMLFormElement, SubmitEvent>,
+    event: TargetedEvent<HTMLFormElement, SubmitEvent>,
   ) => {
     event.preventDefault()
     const href = event.currentTarget.querySelector('input')?.value?.trim()

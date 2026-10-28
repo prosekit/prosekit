@@ -1,5 +1,5 @@
 import { renderMermaidSVG, THEMES } from 'beautiful-mermaid'
-import type { JSX } from 'preact'
+import type { TargetedEvent, TargetedMouseEvent } from 'preact'
 import { useMemo, useRef } from 'preact/hooks'
 import { isCodeBlockPreviewHiddenDecoration, shikiBundledLanguagesInfo, type CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { TextSelection } from 'prosekit/pm/state'
@@ -19,12 +19,12 @@ export default function CodeBlockView(props: PreactNodeViewProps) {
   }
 
   const handleChange = (
-    event: JSX.TargetedEvent<HTMLSelectElement, Event>,
+    event: TargetedEvent<HTMLSelectElement, Event>,
   ) => {
     setLanguage(event.currentTarget.value)
   }
 
-  const focusSource = (event: JSX.TargetedMouseEvent<HTMLDivElement>) => {
+  const focusSource = (event: TargetedMouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     const pos = props.getPos()
     if (typeof pos !== 'number') return

@@ -1,4 +1,4 @@
-import type { JSX } from 'preact'
+import type { TargetedEvent } from 'preact'
 import { useMemo, useState } from 'preact/hooks'
 import { defineCodeBlockShiki, shikiBundledThemesInfo, type ShikiBundledTheme } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/preact'
@@ -11,7 +11,7 @@ export function ThemeSelector() {
   useExtension(extension)
 
   const handleChange = (
-    event: JSX.TargetedEvent<HTMLSelectElement, Event>,
+    event: TargetedEvent<HTMLSelectElement, Event>,
   ) => {
     setTheme(event.currentTarget.value)
   }

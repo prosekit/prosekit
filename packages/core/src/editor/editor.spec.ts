@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { insertText } from '../commands/insert-text.ts'
 import { wrap } from '../commands/wrap.ts'
@@ -175,5 +175,20 @@ describe('createEditor', () => {
 
     expect(editor.canExec(wrap({ type: 'paragraph' }))).toBe(false)
     expect(editor.commands.wrap.canExec({ type: 'paragraph' })).toBe(false)
+  })
+
+  it('can unmount the editor when the view throws on destroy', () => {
+    const { editor } = setupTest()
+    const view = editor.view
+    vi.spyOn(view, 'destroy').mockImplementation(() => {
+      throw new Error('destroy failed')
+    })
+
+    expect(() => editor.unmount()).toThrow('destroy failed')
+    expect(editor.mounted).toBe(false)
+
+    editor.mount(document.body.appendChild(document.createElement('div')))
+    expect(editor.mounted).toBe(true)
+    expect(editor.view).not.toBe(view)
   })
 })

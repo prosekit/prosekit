@@ -59,12 +59,10 @@ describe('useEditorExtension', () => {
     return { editor, element, hasPlugin }
   }
 
-  it('adds and removes the extension in the next task', async () => {
+  it('adds the extension at once and removes it in the next task', async () => {
     const { element, hasPlugin } = setupEditor()
 
     document.body.append(element)
-    expect(hasPlugin()).toBe(false)
-    await nextTask()
     expect(hasPlugin()).toBe(true)
 
     element.remove()
@@ -77,7 +75,6 @@ describe('useEditorExtension', () => {
     const { editor, element } = setupEditor()
 
     document.body.append(element)
-    await nextTask()
 
     const updateState = vi.spyOn(editor.view, 'updateState')
     element.remove()
@@ -90,7 +87,6 @@ describe('useEditorExtension', () => {
     const { element, hasPlugin } = setupEditor()
 
     document.body.append(element)
-    await nextTask()
     expect(hasPlugin()).toBe(true)
 
     const container = document.createElement('div')
@@ -99,7 +95,10 @@ describe('useEditorExtension', () => {
     container.append(element)
 
     await nextTask()
-    await nextTask()
     expect(hasPlugin()).toBe(true)
+
+    element.remove()
+    await nextTask()
+    expect(hasPlugin()).toBe(false)
   })
 })

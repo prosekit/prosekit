@@ -263,8 +263,11 @@ export class EditorInstance {
     if (!this.view) return
 
     this.directEditorProps.state = this.view.state
-    this.view.destroy()
-    this.view = null
+    try {
+      this.view.destroy()
+    } finally {
+      this.view = null
+    }
   }
 
   get mounted(): boolean {

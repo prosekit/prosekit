@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.23.1
+
+### Patch Changes
+
+- [`29e2bf7`](https://github.com/ocavue/prosekit/commit/29e2bf703d2831b7a6d33679a3fdb5777c042c95) ![](https://prosekit.dev/b/core)
+
+  Fix `editor.unmount()` so the editor is unmounted even when the ProseMirror view throws during `destroy()`. The error is still rethrown.
+
 ## 0.23.0
 
 ### Minor Changes

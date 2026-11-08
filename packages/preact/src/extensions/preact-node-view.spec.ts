@@ -91,7 +91,7 @@ describe('PreactNodeView', () => {
       type: 'doc',
       content: [imageRefreshJSON, paragraphJSON],
     }
-    const screen = render(createElement(TestEditor, { initialContent }))
+    const screen = await render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()
     await expect.element(imageRefresh).toBeInTheDocument()
 
@@ -108,7 +108,7 @@ describe('PreactNodeView', () => {
 
     await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
 
-    screen.unmount()
+    await screen.unmount()
 
     expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(5)
     expect(state.imageRefresh.mounted).toBe(1)
@@ -120,7 +120,7 @@ describe('PreactNodeView', () => {
       type: 'doc',
       content: [imageRefreshJSON, paragraphJSON, imageRefreshJSON, imageRefreshJSON],
     }
-    const screen = render(createElement(TestEditor, { initialContent }))
+    const screen = await render(createElement(TestEditor, { initialContent }))
     await expect.element(editor).toBeVisible()
     await expect.element(imageRefresh.nth(0)).toBeInTheDocument()
     await expect.element(imageRefresh.nth(1)).toBeInTheDocument()
@@ -140,7 +140,7 @@ describe('PreactNodeView', () => {
 
     await expect.poll(check, { interval: 50, timeout: 30_000 }).toBe(true)
 
-    screen.unmount()
+    await screen.unmount()
 
     expect(state.imageRefresh.setAttrs).toBeGreaterThanOrEqual(15)
     expect(state.imageRefresh.mounted).toBe(3)

@@ -360,7 +360,7 @@
     "vite-plugin-solid": "^2.11.14",
     "vitest": "catalog:",
     "vitest-browser-commands": "^0.5.0",
-    "vitest-browser-preact": "^1.1.0",
+    "vitest-browser-preact": "^2.0.0",
     "vitest-browser-react": "^2.3.0",
     "vitest-browser-solid": "^1.0.1",
     "vitest-browser-svelte": "^3.1.0",

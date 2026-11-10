@@ -11,7 +11,7 @@ registerCleanupFunction(cleanup)
 
 export async function renderPreactExample(story: string, initialContent?: NodeJSON) {
   await runCleanupFunctions()
-  const screen = render(createElement(PreactRenderer, {
+  const screen = await render(createElement(PreactRenderer, {
     story,
     exampleProps: initialContent ? { initialContent } : {},
   }))

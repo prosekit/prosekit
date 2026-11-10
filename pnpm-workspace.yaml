@@ -54,4 +54,4 @@ minimumReleaseAgeExclude:
   - eslint-plugin-unicorn@79.0.0
 
 overrides:
-  prosemirror-view: 1.43.0-beta1
+  prosemirror-view: 1.43.0-beta2

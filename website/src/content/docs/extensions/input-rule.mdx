@@ -56,7 +56,7 @@ import { defineWrappingInputRule } from 'prosekit/extensions/input-rule'
  */
 export function defineBlockquoteInputRule() {
   return defineWrappingInputRule({
-    regex: /^>\s/,
+    regex: /^>\s$/,
     type: 'blockquote',
   })
 }

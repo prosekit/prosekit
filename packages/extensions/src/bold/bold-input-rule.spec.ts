@@ -44,4 +44,16 @@ describe('defineBoldInputRule', () => {
       n.doc(n.p(m.code('code **word** '))).toJSON(),
     )
   })
+
+  it('should not add bold marks when the opening "**" is 500 characters before the caret', async () => {
+    // Input rules only see the last 500 characters before the caret, so the
+    // lookbehind before the opening "**" tests the start of that window.
+    const text = 'a**' + 'b'.repeat(497)
+    editor.set(n.doc(n.p(`${text}<a>`)))
+
+    await inputText('**')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.p(`${text}**`)).toJSON(),
+    )
+  })
 })

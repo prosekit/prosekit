@@ -74,6 +74,10 @@ export function createMarkInputRule({
   inCodeMark = false,
 }: MarkInputRuleOptions): InputRule {
   const rule = new InputRule(regex, (state, match, start, end) => {
+    if (isMatchAtCutOffStart(state, match, start)) {
+      return null
+    }
+
     const { tr, schema } = state
     const [fullText, markText] = match
 
@@ -175,6 +179,9 @@ export function createTextBlockInputRuleHandler({
   attrs,
 }: TextBlockInputRuleOptions): InputRuleHandler {
   return (state, match, start, end) => {
+    if (isMatchAtCutOffStart(state, match, start)) {
+      return null
+    }
     const nodeType = getNodeType(state.schema, type)
     const $start = state.doc.resolve(start)
     if (!$start.node(-1).canReplaceWith($start.index(-1), $start.indexAfter(-1), nodeType)) {
@@ -242,6 +249,9 @@ export function createWrappingInputRuleHandler({
   join,
 }: WrappingInputRuleOptions): InputRuleHandler {
   return (state, match, start, end) => {
+    if (isMatchAtCutOffStart(state, match, start)) {
+      return null
+    }
     const nodeType = getNodeType(state.schema, type)
     const nodeAttrs = maybeRun(attrs, match)
     const tr = state.tr.delete(start, end)
@@ -279,3 +289,19 @@ const inputRuleFacet = defineFacet<InputRulePayload, PluginPayload>({
   },
   parent: pluginFacet,
 })
+
+/**
+ * Returns true when the match starts at the first character of the text that
+ * `prosemirror-inputrules` matches against, and that text starts after the
+ * start of the textblock.
+ *
+ * `prosemirror-inputrules` only matches against the last 500 characters before
+ * the cursor. In a longer textblock, `^` and lookbehind assertions at the start
+ * of a regex test the start of that window, not the real text before the
+ * match.
+ *
+ * https://code.haverbeke.berlin/prosemirror/prosemirror-inputrules/src/tag/1.5.1/src/inputrules.ts#L115-L116
+ */
+function isMatchAtCutOffStart(state: EditorState, match: RegExpMatchArray, start: number): boolean {
+  return match.index === 0 && state.doc.resolve(start).parentOffset > 0
+}

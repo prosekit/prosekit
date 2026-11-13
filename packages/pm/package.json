@@ -50,10 +50,10 @@
     "prosemirror-history": "^1.5.1",
     "prosemirror-inputrules": "^1.5.1",
     "prosemirror-keymap": "^1.2.3",
-    "prosemirror-model": "^1.25.12",
+    "prosemirror-model": "^1.25.13",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-transform": "^1.12.4",
-    "prosemirror-view": "^1.42.8"
+    "prosemirror-transform": "^1.12.5",
+    "prosemirror-view": "^1.42.9"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",

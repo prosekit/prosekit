@@ -1,3 +1,4 @@
+import { returnFalse } from '@ocavue/utils'
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { PluginKey, ProseMirrorPlugin, type EditorState, type Transaction } from '@prosekit/pm/state'
 import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
@@ -51,7 +52,7 @@ function isEditablePrimaryPointerEvent(event: PointerEvent): boolean {
 const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
   key,
   state: {
-    init: () => false,
+    init: returnFalse,
     apply: (tr, value) => {
       return getFocusMeta(tr) ?? value
     },

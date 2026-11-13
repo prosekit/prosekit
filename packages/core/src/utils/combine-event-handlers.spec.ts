@@ -1,11 +1,12 @@
+import { returnFalse, returnTrue } from '@ocavue/utils'
 import { expect, test, vi } from 'vitest'
 
 import { combineEventHandlers } from './combine-event-handlers.ts'
 
 test('runs handlers in reverse order and stops on true', () => {
-  const handler1 = vi.fn(() => false)
-  const handler2 = vi.fn(() => true)
-  const handler3 = vi.fn(() => false)
+  const handler1 = vi.fn(returnFalse)
+  const handler2 = vi.fn(returnTrue)
+  const handler3 = vi.fn(returnFalse)
   const [setHandlers, run] = combineEventHandlers<() => boolean>()
   setHandlers([handler1, handler2, handler3])
   expect(run()).toBe(true)
@@ -15,8 +16,8 @@ test('runs handlers in reverse order and stops on true', () => {
 })
 
 test('returns false when all handlers return false', () => {
-  const handler1 = vi.fn(() => false)
-  const handler2 = vi.fn(() => false)
+  const handler1 = vi.fn(returnFalse)
+  const handler2 = vi.fn(returnFalse)
   const [setHandlers, run] = combineEventHandlers<() => boolean>()
   setHandlers([handler1, handler2])
   expect(run()).toBe(false)

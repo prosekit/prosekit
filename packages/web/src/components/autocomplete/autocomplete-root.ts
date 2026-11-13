@@ -14,6 +14,7 @@ import { defaultItemFilter, type ItemFilter, type ListboxRootEvents } from '@ari
 import { createOverlayStore, OpenChangeEvent, type OverlayStore } from '@aria-ui/elements/overlay'
 import { useEventListener } from '@aria-ui/utils'
 import type { ReferenceElement } from '@floating-ui/dom'
+import { returnFalse } from '@ocavue/utils'
 import { defineDOMEventHandler, defineKeymap, union, withPriority, type Editor, type Extension, type Priority } from '@prosekit/core'
 import { AutocompleteRule, defineAutocomplete, type MatchHandler } from '@prosekit/extensions/autocomplete'
 
@@ -145,8 +146,8 @@ export function setupAutocompleteRoot(
   const overlayStore: OverlayStore = createOverlayStore(
     open.get,
     open.set,
-    () => false,
-    () => false,
+    returnFalse,
+    returnFalse,
     (event) => host.dispatchEvent(event),
   )
 

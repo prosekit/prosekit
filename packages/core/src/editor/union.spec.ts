@@ -1,3 +1,4 @@
+import { returnTrue } from '@ocavue/utils'
 import type { Attrs } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 import { describe, expectTypeOf, it } from 'vitest'
@@ -86,15 +87,15 @@ describe('union', () => {
 type Command1 = (args: { arg1: string }) => Command
 
 const command1: Command1 = () => {
-  return () => true
+  return returnTrue
 }
 
 function command2(_args: { arg2: number }): Command {
-  return () => true
+  return returnTrue
 }
 
 const command3: CommandCreator<[number, boolean]> = (_num, _bool) => {
-  return () => true
+  return returnTrue
 }
 
 const extension1 = defineCommands({ command1 })

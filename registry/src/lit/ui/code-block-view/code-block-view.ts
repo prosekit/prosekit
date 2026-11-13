@@ -138,6 +138,10 @@ class CodeBlockNodeView {
     }
   }
 
+  stopEvent(event: Event): boolean {
+    return event.target instanceof Element && !!event.target.closest('select')
+  }
+
   update(node: ProseMirrorNode, decorations: readonly Decoration[]) {
     if (node.type !== this.node.type) return false
     this.node = node

@@ -43,6 +43,10 @@ export interface MarkInputRuleOptions {
    * The regular expression to match against, which should end with `$` and has
    * exactly one capture group. All other matched text outside the capture group
    * will be deleted.
+   *
+   * Input rules only see the last 500 characters before the cursor. Keep the
+   * longest possible match under 500 characters (e.g. `[^*]{0,400}` instead of
+   * `[^*]*`), so that lookbehind assertions test the real text before it.
    */
   regex: RegExp
 
@@ -74,10 +78,6 @@ export function createMarkInputRule({
   inCodeMark = false,
 }: MarkInputRuleOptions): InputRule {
   const rule = new InputRule(regex, (state, match, start, end) => {
-    if (isMatchAtCutOffStart(state, match, start)) {
-      return null
-    }
-
     const { tr, schema } = state
     const [fullText, markText] = match
 
@@ -139,8 +139,12 @@ export function defineMarkInputRule(
 export interface TextBlockInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$`. It
-   * usually also starts with `^` to that it is only matched at the start of a
+   * usually also starts with `^` so that it is only matched at the start of a
    * textblock.
+   *
+   * Input rules only see the last 500 characters before the cursor, so `^`
+   * means the start of the textblock only when the longest possible match is
+   * under 500 characters (e.g. `\S{0,50}` instead of `\S*`).
    */
   regex: RegExp
 
@@ -179,9 +183,6 @@ export function createTextBlockInputRuleHandler({
   attrs,
 }: TextBlockInputRuleOptions): InputRuleHandler {
   return (state, match, start, end) => {
-    if (isMatchAtCutOffStart(state, match, start)) {
-      return null
-    }
     const nodeType = getNodeType(state.schema, type)
     const $start = state.doc.resolve(start)
     if (!$start.node(-1).canReplaceWith($start.index(-1), $start.indexAfter(-1), nodeType)) {
@@ -197,8 +198,12 @@ export function createTextBlockInputRuleHandler({
 export interface WrappingInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$`. It
-   * usually also starts with `^` to that it is only matched at the start of a
+   * usually also starts with `^` so that it is only matched at the start of a
    * textblock.
+   *
+   * Input rules only see the last 500 characters before the cursor, so `^`
+   * means the start of the textblock only when the longest possible match is
+   * under 500 characters (e.g. `\S{0,50}` instead of `\S*`).
    */
   regex: RegExp
 
@@ -249,9 +254,6 @@ export function createWrappingInputRuleHandler({
   join,
 }: WrappingInputRuleOptions): InputRuleHandler {
   return (state, match, start, end) => {
-    if (isMatchAtCutOffStart(state, match, start)) {
-      return null
-    }
     const nodeType = getNodeType(state.schema, type)
     const nodeAttrs = maybeRun(attrs, match)
     const tr = state.tr.delete(start, end)
@@ -289,20 +291,3 @@ const inputRuleFacet = defineFacet<InputRulePayload, PluginPayload>({
   },
   parent: pluginFacet,
 })
-
-/**
- * Returns true when the regex matched from the first character of a cut-off
- * `textBefore`.
- *
- * `prosemirror-inputrules` builds `textBefore` from at most the last 500
- * characters before the cursor, then runs the regex on it:
- * https://code.haverbeke.berlin/prosemirror/prosemirror-inputrules/src/tag/1.5.1/src/inputrules.ts#L115-L116
- *
- * In a longer textblock, `textBefore` starts in the middle of the text. A match
- * at index 0 starts at that cut, so `^` and lookbehind assertions at the start
- * of the regex test the cut instead of the real text before the match.
- * `parentOffset > 0` tells that the match does not start at the textblock start.
- */
-function isMatchAtCutOffStart(state: EditorState, match: RegExpMatchArray, start: number): boolean {
-  return match.index === 0 && state.doc.resolve(start).parentOffset > 0
-}

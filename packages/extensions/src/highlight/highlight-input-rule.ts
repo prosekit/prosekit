@@ -10,7 +10,7 @@ import { defineMarkInputRule, type MarkInputRuleOptions } from '../input-rule/in
 export const highlightInputRule: MarkInputRuleOptions = {
   regex: /* @__PURE__ */ new RegExp(
     (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
-      + String.raw`==([^\s=]|[^\s=][^=]*[^\s=])==$`,
+      + String.raw`==([^\s=]|[^\s=][^=]{0,400}[^\s=])==$`,
   ),
   type: 'highlight',
 }

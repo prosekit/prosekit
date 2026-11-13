@@ -37,7 +37,7 @@ const extension = union(
   defineMarkInputRule({
     regex: new RegExp(
       (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
-        + String.raw`~([^\s~]|[^\s~][^~]*[^\s~])~$`,
+        + String.raw`~([^\s~]|[^\s~][^~]{0,400}[^\s~])~$`,
     ),
     type: 'subscript',
   }),

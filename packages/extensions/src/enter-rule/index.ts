@@ -25,6 +25,10 @@ export interface TextBlockEnterRuleOptions extends TextBlockEnterRuleOptionsBase
  * the cursor matches `regex` and user presses Enter. The `regex` should end
  * with `$`.
  *
+ * Enter rules only see the last 200 characters before the cursor, so `^`
+ * means the start of the textblock only when the longest possible match is
+ * under 200 characters (e.g. `\S{0,50}` instead of `\S*`).
+ *
  * @param options
  */
 export function defineEnterRule(options: EnterRuleOptions): PlainExtension {

@@ -36,8 +36,8 @@ const extension = union(
   defineSuperscript(),
   defineMarkInputRule({
     regex: canUseRegexLookbehind()
-      ? /(?<=\s|^)\^([^\s^]|[^\s^][^^]*[^\s^])\^$/
-      : /\^([^\s^]|[^\s^][^^]*[^\s^])\^$/,
+      ? /(?<=\s|^)\^([^\s^]|[^\s^][^^]{0,400}[^\s^])\^$/
+      : /\^([^\s^]|[^\s^][^^]{0,400}[^\s^])\^$/,
     type: 'superscript',
   }),
 )

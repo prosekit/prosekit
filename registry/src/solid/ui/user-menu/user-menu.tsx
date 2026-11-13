@@ -14,7 +14,7 @@ import { For, type JSX } from 'solid-js'
 // Match inputs like "@", "@foo", "@foo bar" etc. Do not match "@ foo".
 const regex = new RegExp(
   (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '')
-    + String.raw`@(\S.*)?$`,
+    + String.raw`@(\S.{0,100})?$`,
   'u',
 )
 

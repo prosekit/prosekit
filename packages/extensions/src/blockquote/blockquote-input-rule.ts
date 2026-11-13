@@ -8,7 +8,7 @@ import { defineWrappingInputRule, type WrappingInputRuleOptions } from '../input
  * @internal
  */
 export const blockquoteInputRule: WrappingInputRuleOptions = {
-  regex: /^>\s/,
+  regex: /^>\s$/,
   type: 'blockquote',
 }
 

@@ -332,7 +332,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.1.2",
+    "@vitejs/plugin-react": "^6.3.0",
     "@vitejs/plugin-vue": "^6.0.10",
     "@vitest/browser-playwright": "catalog:",
     "@vitest/ui": "catalog:",

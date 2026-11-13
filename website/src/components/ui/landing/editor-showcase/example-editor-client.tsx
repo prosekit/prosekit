@@ -11,8 +11,8 @@ import { EditorFallback } from './editor-fallback'
 // complete: fallback unmounted, editor fully visible
 type Phase = 'loading' | 'ready' | 'complete'
 
-const LazyExampleEditor = lazy(() => {
-  return dynamicImportEditorModule().then((mod) => ({
+const LazyExampleEditor = lazy(async () => {
+  return await dynamicImportEditorModule().then((mod) => ({
     default: mod.ExampleEditor,
   }))
 })
